@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 58a907a2ae17966f50a037f49a807ac0a3ad6867
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 2b195d865a07af9f3166c5225e8de3d0a9b0e749
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545823"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879306"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Blob-opslag functies die beschikbaar zijn in Azure Data Lake Storage Gen2
 
@@ -35,17 +35,17 @@ De volgende tabel laat zien hoe elke Blob Storage-functie wordt ondersteund met 
 |Power shell-opdrachten voor Blob-opslag|Algemeen beschikbaar|Algemeen beschikbaar|[Quickstart: Blobs uploaden, downloaden en vermelden met PowerShell](storage-quickstart-blobs-powershell.md)|
 |Azure CLI-opdrachten voor Blob Storage|Algemeen beschikbaar|Algemeen beschikbaar|[Quickstart: Blobs maken, downloaden, uploaden en weergeven met Azure CLI](storage-quickstart-blobs-cli.md)|
 |Api's voor Blob-opslag|Algemeen beschikbaar|Algemeen beschikbaar|[Snelstart: De Azure Blob Storage-clientbibliotheek v12 voor .NET](storage-quickstart-blobs-dotnet.md)<br>[Quickstart: Blobs beheren met Java v12 SDK](storage-quickstart-blobs-java.md)<br>[Quickstart: Blobs beheren met Python v12 SDK](storage-quickstart-blobs-python.md)<br>[Quickstart: Blobs beheren met JavaScript v12 SDK in Node.js](storage-quickstart-blobs-nodejs.md)|
-|Diagnostische logboeken|Algemeen beschikbaar|Preview |[Logboekregistratie van Azure Opslaganalyse](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Diagnostische logboeken|Algemeen beschikbaar|Preview |[Azure Storage-analyselogboeken](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Access-laag archiveren|Algemeen beschikbaar|Niet ondersteund|[Azure Blob-opslag: dynamische en statische toegangslagen, en archieftoegangslaag](storage-blob-storage-tiers.md)|
 |Levenscyclus beheer beleid (lagen)|Algemeen beschikbaar|Nog niet ondersteund|[De levenscyclus van Azure Blob-opslag beheren](storage-lifecycle-management-concepts.md)|
 |Levenscyclus beheer beleid (BLOB verwijderen)|Algemeen beschikbaar|Algemeen beschikbaar|[De levenscyclus van Azure Blob-opslag beheren](storage-lifecycle-management-concepts.md)|
 |Aanmelden Azure Monitor|Preview |Preview|[Bewakings Azure Storage](./monitor-blob-storage.md)|
 |Momentopnamen|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|[BLOB-moment opnamen](snapshots-overview.md)|
 |Statische websites|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|[Een statische website hosten in Azure Storage](storage-blob-static-website.md)|
-|Onveranderbare opslag|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|[Bedrijfs kritieke blobgegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md)|
+|Onveranderbare opslag|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|[Bedrijfskritieke blobgegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md)|
 |Container zacht verwijderen|Preview|Preview|[Voorlopig verwijderen voor containers (preview-versie)](soft-delete-container-overview.md)|
 |Azure Storage voorraad|Preview|Preview|[Azure Storage-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)](blob-inventory.md)|
-|BLOB zacht verwijderen|Nog niet ondersteund|Nog niet ondersteund|[Blobs voorlopig verwijderen](storage-blob-soft-delete.md)|
+|BLOB zacht verwijderen|Nog niet ondersteund|Nog niet ondersteund|[Blobs voorlopig verwijderen](./soft-delete-blob-overview.md)|
 |Blobfuse|Algemeen beschikbaar|Algemeen beschikbaar|[Blob-opslag koppelen als een bestands systeem met blobfuse](storage-how-to-mount-container-linux.md)|
 |Anonieme toegang voor iedereen |Algemeen beschikbaar|Algemeen beschikbaar| Zie [anonieme open bare Lees toegang configureren voor containers en blobs](anonymous-read-access-configure.md).|
 |Door de klant beheerde account-failover|Nog niet ondersteund|Nog niet ondersteund|[Herstel na nood gevallen en failover van accounts](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|

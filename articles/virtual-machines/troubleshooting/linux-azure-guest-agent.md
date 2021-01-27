@@ -11,23 +11,23 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/17/2020
 ms.author: axelg
-ms.openlocfilehash: 247324c30bbe0edaef78c0b0d5e6a6d593e8cac9
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 62b462d8e75fc291ac599ac99dbe4fb3a74fde2b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586394"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878694"
 ---
 # <a name="troubleshoot-the-azure-linux-agent"></a>Problemen met de Azure Linux-agent oplossen
 
-Met de [Azure Linux-agent](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) kan een virtuele machine (VM) communiceren met de infrastructuur controller (de onderliggende fysieke server waarop de virtuele machine wordt gehost) op het IP-adres 168.63.129.16.
+Met de [Azure Linux-agent](../extensions/agent-linux.md) kan een virtuele machine (VM) communiceren met de infrastructuur controller (de onderliggende fysieke server waarop de virtuele machine wordt gehost) op het IP-adres 168.63.129.16.
 
 >[!NOTE]
 >Dit IP-adres is een virtueel openbaar IP-adres dat communicatie vereenvoudigt en niet kan worden geblokkeerd. Zie [Wat is IP-adres 168.63.129.16?](../../virtual-network/what-is-ip-address-168-63-129-16.md)voor meer informatie.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Controleer de agent status en-versie om er zeker van te zijn dat deze nog steeds wordt ondersteund. Zie [minimale versie ondersteuning voor virtuele-machine agenten in azure](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/support-extensions-agent-version) om de versie ondersteuning te controleren of Raadpleeg [WALinuxAgent FAQ](https://github.com/Azure/WALinuxAgent/wiki/FAQ#what-does-goal-state-agent-mean-in-waagent---version-output) voor stappen om de status en versie te vinden.
+Controleer de agent status en-versie om er zeker van te zijn dat deze nog steeds wordt ondersteund. Zie [minimale versie ondersteuning voor virtuele-machine agenten in azure](/troubleshoot/azure/virtual-machines/support-extensions-agent-version) om de versie ondersteuning te controleren of Raadpleeg [WALinuxAgent FAQ](https://github.com/Azure/WALinuxAgent/wiki/FAQ#what-does-goal-state-agent-mean-in-waagent---version-output) voor stappen om de status en versie te vinden.
 
 ## <a name="troubleshoot-a-not-ready-status"></a>Problemen met de status niet gereed oplossen
 
@@ -64,7 +64,7 @@ Controleer de agent status en-versie om er zeker van te zijn dat deze nog steeds
    AutoUpdate.Enabled=y
    ```
 
-   Zie [How to update the Azure Linux agent op een virtuele machine](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent)voor meer informatie over het bijwerken van de Azure Linux-agent.
+   Zie [How to update the Azure Linux agent op een virtuele machine](../extensions/update-linux-agent.md)voor meer informatie over het bijwerken van de Azure Linux-agent.
 
 1. Zorg ervoor dat de virtuele machine verbinding kan maken met de infrastructuur controller. Gebruik een hulp programma zoals krul om te testen of de virtuele machine verbinding kan maken met 168.63.129.16 op de poorten 80, 443 en 32526. Als de virtuele machine niet op de verwachte manier verbinding maakt, controleert u of uitgaande communicatie via de poorten 80, 443 en 32526 is geopend in uw lokale firewall op de virtuele machine. Als dit IP-adres wordt geblokkeerd, kan de VM-agent onverwacht gedrag weer geven.
 

@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: yushwang
-ms.openlocfilehash: f52d684d1e6ef63fdf4287c610608061f30395f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db19b1ae017fa7981747b0e7b4c82e97efc61ed3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90995370"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878881"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways"></a>BGP op Azure VPN-gateways configureren
 
@@ -45,19 +45,19 @@ In deze sectie maakt en configureert u een virtueel netwerk, maakt en configuree
 
 **Diagram 2**
 
-:::image type="content" source="./media/bgp-howto/bgp-gateway.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen" border="false":::
+:::image type="content" source="./media/bgp-howto/bgp-gateway.png" alt-text="Diagram met de instellingen voor de virtuele netwerk gateway" border="false":::
 
 ### <a name="1-create-and-configure-testvnet1"></a>1. TestVNet1 maken en configureren
 
-In deze stap maakt en configureert u TestVNet1. Volg de stappen in de [zelf studie een gateway maken](vpn-gateway-tutorial-create-gateway-powershell.md) om uw virtuele Azure-netwerk en VPN-gateway te maken en te configureren. Gebruik de referentie-instellingen in de onderstaande scherm afbeeldingen.
+In deze stap maakt en configureert u TestVNet1. Volg de stappen in de [zelf studie een gateway maken](./tutorial-create-gateway-portal.md) om uw virtuele Azure-netwerk en VPN-gateway te maken en te configureren. Gebruik de referentie-instellingen in de onderstaande scherm afbeeldingen.
 
 * Virtueel netwerk:
 
-   :::image type="content" source="./media/bgp-howto/testvnet-1.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+   :::image type="content" source="./media/bgp-howto/testvnet-1.png" alt-text="TestVNet1 met bijbehorende adres voorvoegsels":::
 
 * Subnetten:
 
-   :::image type="content" source="./media/bgp-howto/testvnet-1-subnets.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+   :::image type="content" source="./media/bgp-howto/testvnet-1-subnets.png" alt-text="TestVNet1-subnetten":::
 
 ### <a name="2-create-the-vpn-gateway-for-testvnet1-with-bgp-parameters"></a>2. Maak de VPN-gateway voor TestVNet1 met BGP-para meters
 
@@ -67,11 +67,11 @@ In deze stap maakt u een VPN-gateway met de bijbehorende BGP-para meters.
 
 1. Vul de para meters in, zoals hieronder wordt weer gegeven:
 
-   :::image type="content" source="./media/bgp-howto/create-gateway-1.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+   :::image type="content" source="./media/bgp-howto/create-gateway-1.png" alt-text="VNG1 maken":::
 
 1. Configureer de volgende instellingen in het gedeelte gemarkeerde **BGP configureren** van de pagina:
 
-   :::image type="content" source="./media/bgp-howto/create-gateway-1-bgp.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+   :::image type="content" source="./media/bgp-howto/create-gateway-1-bgp.png" alt-text="BGP configureren":::
 
    * Selecteer **BGP**  -  **ingeschakeld** configureren om de sectie BGP-configuratie weer te geven.
 
@@ -79,7 +79,7 @@ In deze stap maakt u een VPN-gateway met de bijbehorende BGP-para meters.
 
    * Het veld **Azure APIPA BGP IP Address** is optioneel. Als uw on-premises VPN-apparaten APIPA-adres voor BGP gebruiken, moet u een adres selecteren in het door Azure gereserveerde APIPA-adres bereik voor VPN, dat van **169.254.21.0** tot **169.254.22.255**. In dit voor beeld wordt 169.254.21.11 gebruikt.
 
-   * Als u een actieve VPN-gateway maakt, wordt in de BGP-sectie een extra **tweede aangepast BGP-IP-adres voor Azure**weer gegeven. Geef een ander adres op dan het toegestane APIPA-bereik (**169.254.21.0** naar **169.254.22.255**).
+   * Als u een actieve VPN-gateway maakt, wordt in de BGP-sectie een extra **tweede aangepast BGP-IP-adres voor Azure** weer gegeven. Geef een ander adres op dan het toegestane APIPA-bereik (**169.254.21.0** naar **169.254.22.255**).
 
    > [!IMPORTANT]
    >
@@ -88,7 +88,7 @@ In deze stap maakt u een VPN-gateway met de bijbehorende BGP-para meters.
    > * De APIPA BGP-adressen mogen niet overlappen tussen de on-premises VPN-apparaten en alle verbonden Azure VPN-gateways.
    >
 
-1. Selecteer **controleren + maken** om validatie uit te voeren. Wanneer de validatie is geslaagd, selecteert u **maken** om de VPN-gateway te implementeren. Het kan Maxi maal 45 minuten duren voordat een gateway volledig is gemaakt en geïmplementeerd. U kunt de implementatie status zien op de overzichts pagina voor uw gateway.
+1. Selecteer **Beoordelen en maken** om de validatie uit te voeren. Wanneer de validatie is geslaagd, selecteert u **Maken** om de VPN-gateway te implementeren. Het kan tot 45 minuten duren voordat een gateway volledig is gemaakt en geïmplementeerd. U kunt de implementatiestatus bekijken op de overzichtspagina van uw gateway.
 
 ### <a name="3-obtain-the-azure-bgp-peer-ip-addresses"></a>3. de IP-adressen van de Azure BGP-peer verkrijgen
 
@@ -96,7 +96,7 @@ Zodra de gateway is gemaakt, kunt u de IP-adressen van de BGP-peer verkrijgen op
 
 1. Navigeer naar de resource van de virtuele netwerk gateway en selecteer de **configuratie** pagina om de BGP-configuratie gegevens te zien, zoals weer gegeven in de volgende scherm afbeelding. Op deze pagina kunt u alle BGP-configuratie gegevens op uw Azure VPN-gateway: ASN, openbaar IP-adres en de bijbehorende IP-adressen van de BGP-peer aan de Azure-zijde (standaard en APIPA) weer geven.
 
-   :::image type="content" source="./media/bgp-howto/vnet-1-gw-bgp.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+   :::image type="content" source="./media/bgp-howto/vnet-1-gw-bgp.png" alt-text="BGP-gateway":::
 
 1. Op de pagina **configuratie** kunt u de volgende configuratie wijzigingen aanbrengen:
 
@@ -107,22 +107,22 @@ Zodra de gateway is gemaakt, kunt u de IP-adressen van de BGP-peer verkrijgen op
 
 ## <a name="part-2-configure-bgp-on-cross-premises-s2s-connections"></a><a name ="crosspremises"></a>Deel 2: BGP configureren voor cross-premises S2S-verbindingen
 
-Als u een cross-premises verbinding tot stand wilt brengen, moet u een *lokale netwerk gateway* maken om uw on-PREMISES VPN-apparaat aan te duiden, en een *verbinding* om de VPN-gateway te verbinden met de lokale netwerk gateway, zoals wordt uitgelegd in [site-naar-site-verbinding maken](vpn-gateway-howto-site-to-site-resource-manager-portal.md). Dit artikel bevat de aanvullende eigenschappen die vereist zijn voor het opgeven van de BGP-configuratie parameters.
+Als u een cross-premises verbinding tot stand wilt brengen, moet u een *lokale netwerk gateway* maken om uw on-PREMISES VPN-apparaat aan te duiden, en een *verbinding* om de VPN-gateway te verbinden met de lokale netwerk gateway, zoals wordt uitgelegd in [site-naar-site-verbinding maken](./tutorial-site-to-site-portal.md). Dit artikel bevat de aanvullende eigenschappen die vereist zijn voor het opgeven van de BGP-configuratie parameters.
 
 **Diagram 3**
 
-:::image type="content" source="./media/bgp-howto/bgp-crosspremises.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen" border="false":::
+:::image type="content" source="./media/bgp-howto/bgp-crosspremises.png" alt-text="Diagram waarin IPsec wordt weer gegeven" border="false":::
 
 ### <a name="1-configure-bgp-on-the-local-network-gateway"></a>1. Configureer BGP op de lokale netwerk gateway
 
 In deze stap configureert u BGP op de lokale netwerk gateway. Gebruik de volgende scherm afbeelding als voor beeld. De scherm opname toont de lokale netwerk gateway (Site5) met de para meters die zijn opgegeven in diagram 3.
 
-:::image type="content" source="./media/bgp-howto/create-local-bgp.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+:::image type="content" source="./media/bgp-howto/create-local-bgp.png" alt-text="BGP configureren voor de lokale netwerk gateway":::
 
 #### <a name="important-configuration-considerations"></a>Belang rijke overwegingen met betrekking tot de configuratie
 
 * De ASN en het IP-adres van de BGP-peer moeten overeenkomen met de configuratie van uw on-premises VPN-router.
-* U kunt de **adres ruimte** alleen leeg laten als u gebruikmaakt van BGP om verbinding te maken met dit netwerk. Azure VPN-gateway voegt intern een route van uw BGP-peer-IP-adres toe aan de bijbehorende IPsec-tunnel. Als u **geen** BGP tussen de Azure VPN-gateway en dit specifieke netwerk gebruikt, **moet** u een lijst met geldige adres voorvoegsels voor de **adres ruimte**opgeven.
+* U kunt de **adres ruimte** alleen leeg laten als u gebruikmaakt van BGP om verbinding te maken met dit netwerk. Azure VPN-gateway voegt intern een route van uw BGP-peer-IP-adres toe aan de bijbehorende IPsec-tunnel. Als u **geen** BGP tussen de Azure VPN-gateway en dit specifieke netwerk gebruikt, **moet** u een lijst met geldige adres voorvoegsels voor de **adres ruimte** opgeven.
 * U kunt eventueel een **APIPA IP-adres** (169.254. x. x) gebruiken als uw on-PREMISES BGP-peer-IP, indien nodig. U moet echter ook een IP-adres van APIPA opgeven, zoals eerder in dit artikel is beschreven voor uw Azure VPN-gateway, anders kan de BGP-sessie niet tot stand worden gebracht voor deze verbinding.
 * U kunt de BGP-configuratie gegevens opgeven tijdens het maken van de gateway van het lokale netwerk, of u kunt de BGP-configuratie toevoegen of wijzigen op de pagina **configuratie** van de lokale netwerk gateway resource.
 
@@ -130,7 +130,7 @@ In deze stap configureert u BGP op de lokale netwerk gateway. Gebruik de volgend
 
 In dit voor beeld wordt een APIPA-adres (169.254.100.1) gebruikt als het IP-adres van de on-premises BGP-peer:
 
-:::image type="content" source="./media/bgp-howto/local-apipa.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+:::image type="content" source="./media/bgp-howto/local-apipa.png" alt-text="Lokale netwerk gateway APIPA en BGP":::
 
 ### <a name="2-configure-a-s2s-connection-with-bgp-enabled"></a>2. een S2S-verbinding configureren waarvoor BGP is ingeschakeld
 
@@ -140,13 +140,13 @@ In deze stap maakt u een nieuwe verbinding waarvoor BGP is ingeschakeld. Als u a
 
 Als u een nieuwe verbinding wilt maken waarvoor BGP is ingeschakeld, vult u de waarden in op de pagina **verbinding toevoegen** en schakelt u de optie **BGP inschakelen** in om BGP in te scha kelen voor deze verbinding. Selecteer **OK** om de verbinding te maken.
 
-:::image type="content" source="./media/bgp-howto/ipsec-connection-bgp.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+:::image type="content" source="./media/bgp-howto/ipsec-connection-bgp.png" alt-text="IPsec-cross-premises verbinding met BGP":::
 
 #### <a name="to-update-an-existing-connection"></a><a name ="update"></a>Een bestaande verbinding bijwerken
 
 Als u de BGP-optie voor een verbinding wilt wijzigen, gaat u naar de pagina **configuratie** van de verbindings bron en schakelt u de **BGP** -optie in als gemarkeerd in het volgende voor beeld. Selecteer **Opslaan** om de wijzigingen op te slaan.
 
-:::image type="content" source="./media/bgp-howto/update-bgp.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen":::
+:::image type="content" source="./media/bgp-howto/update-bgp.png" alt-text="BGP voor een verbinding bijwerken":::
 
 ## <a name="part-3-configure-bgp-on-vnet-to-vnet-connections"></a><a name ="v2v"></a>Deel 3: BGP configureren voor VNet-naar-VNet-verbindingen
 
@@ -160,7 +160,7 @@ Als BGP moet worden uitgeschakeld tussen TestVNet2 en TestVNet1, worden de route
 
 **Diagram 4**
 
-:::image type="content" source="./media/bgp-howto/bgp-crosspremises-v2v.png" alt-text="Diagram van weer gave van netwerk architectuur en-instellingen" border="false":::
+:::image type="content" source="./media/bgp-howto/bgp-crosspremises-v2v.png" alt-text="Diagram waarin het volledige netwerk wordt weer gegeven" border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

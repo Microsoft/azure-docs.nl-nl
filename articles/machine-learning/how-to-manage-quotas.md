@@ -11,12 +11,12 @@ ms.author: siarora
 ms.date: 12/1/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperf-fy20q4, contperf-fy21q2
-ms.openlocfilehash: 78cc0aa6beb9ab83fea2039b271b071de1662fc1
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: aa25a81068b25b7b8696a7472eb04542e8bb1a60
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629177"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878949"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Quota voor resources beheren en verg Roten met Azure Machine Learning
 
@@ -82,7 +82,7 @@ Beschik bare resources:
 + **Clusters per regio** hebben een standaard limiet van 200. Deze worden gedeeld tussen een trainings cluster en een reken instantie. (Een reken instantie wordt beschouwd als een cluster met één knoop punt voor quotum doeleinden.)
 
 > [!TIP]
-> Bekijk de [grootte van virtuele machines in azure](https://docs.microsoft.com/azure/virtual-machines/sizes)voor meer informatie over de VM-serie waarvoor een quotum verhoging moet worden aangevraagd. Voor instance GPU VM-families beginnen met een ' N ' in hun familie naam (bijvoorbeeld NCv3-serie)
+> Bekijk de [grootte van virtuele machines in azure](../virtual-machines/sizes.md)voor meer informatie over de VM-serie waarvoor een quotum verhoging moet worden aangevraagd. Voor instance GPU VM-families beginnen met een ' N ' in hun familie naam (bijvoorbeeld NCv3-serie)
 
 In de volgende tabel worden extra limieten in het platform weer gegeven. Neem contact op met het AzureML-product team via een **technische** ondersteunings ticket om een uitzonde ring aan te vragen.
 

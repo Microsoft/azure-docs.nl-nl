@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/06/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 1af80f208c72af9434d596f2c1219c08c0e3f719
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e7a4af2c18bfc2b8fbd6149dab12c0bcfc665341
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015984"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878817"
 ---
 ## <a name="create-an-image-gallery"></a>Een galerie met installatiekopieën maken
 
@@ -35,7 +35,7 @@ In het volgende voorbeeld wordt een galerie met de naam *myGallery* gemaakt in d
 
 ## <a name="create-an-image-definition"></a>Een definitie voor de installatiekopie maken 
 
-Definities van installatiekopieën maken een logische groepering voor installatiekopieën. Die worden gebruikt voor het beheren van informatie over de installatiekopieversies die daarbinnen worden gemaakt. Namen van installatiekopiedefinities kunnen bestaan uit hoofdletters, kleine letters, cijfers, streepjes en punten. Zie [Installatiekopiedefinities](../articles/virtual-machines/windows/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
+Definities van installatiekopieën maken een logische groepering voor installatiekopieën. Die worden gebruikt voor het beheren van informatie over de installatiekopieversies die daarbinnen worden gemaakt. Namen van installatiekopiedefinities kunnen bestaan uit hoofdletters, kleine letters, cijfers, streepjes en punten. Zie [Installatiekopiedefinities](../articles/virtual-machines/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
 Maak de definitie van de galerie-afbeelding in uw galerie. In dit voor beeld heeft de galerie-afbeelding de naam *myImageDefinition*.
 
@@ -44,7 +44,7 @@ Maak de definitie van de galerie-afbeelding in uw galerie. In dit voor beeld hee
 1. Typ *myImageDefinition* bij **naam van definitie van installatie kopie**.
 1. Voor **besturings systeem** selecteert u de juiste optie op basis van de bron-VM.  
 1. Voor het **genereren van vm's** selecteert u de optie op basis van de bron-VM. In de meeste gevallen is dit *gen 1*. Zie [ondersteuning voor virtuele machines van de tweede generatie](../articles/virtual-machines/generation-2.md)voor meer informatie.
-1. Selecteer de optie voor de status van het **besturings systeem** op basis van de bron-VM. Zie voor meer informatie [gegeneraliseerde en gespecialiseerde](../articles/virtual-machines/linux/shared-image-galleries.md#generalized-and-specialized-images).
+1. Selecteer de optie voor de status van het **besturings systeem** op basis van de bron-VM. Zie voor meer informatie [gegeneraliseerde en gespecialiseerde](../articles/virtual-machines/shared-image-galleries.md#generalized-and-specialized-images).
 1. Typ *myPublisher* voor **Publisher**. 
 1. Typ *myOffer* voor **aanbieding**.
 1. Typ *mySKU* voor **SKU**.

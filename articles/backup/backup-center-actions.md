@@ -3,14 +3,14 @@ title: Acties uitvoeren met behulp van Back-upcentrum
 description: In dit artikel wordt uitgelegd hoe u acties kunt uitvoeren met behulp van Back-upcentrum
 ms.topic: conceptual
 ms.date: 09/07/2020
-ms.openlocfilehash: 65ac6374b1a9571d0415bc097a6ee957874d3d44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 06229eb0b8cb76482035d3dfe1949c3ab8354f17
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91854423"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98894572"
 ---
-# <a name="perform-actions-using-backup-center"></a>Acties uitvoeren met behulp van Back-upcentrum
+# <a name="perform-actions-using-backup-center-preview"></a>Acties uitvoeren met behulp van Back-upcentrum (preview-versie)
 
 Met backup Center kunt u acties uitvoeren die betrekking hebben op sleutel back-ups vanuit een centrale interface, zonder dat u naar een afzonderlijke kluis hoeft te navigeren. U kunt de volgende acties uitvoeren vanuit het Back-upcentrum:
 
@@ -23,26 +23,28 @@ Met backup Center kunt u acties uitvoeren die betrekking hebben op sleutel back-
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup en Azure Database for PostgreSQL Server Backup.
+* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup, SQL in azure VM backup, SAP HANA in azure VM backup, Azure Files backup en Azure Database for PostgreSQL Server Backup.
 * Raadpleeg de [ondersteunings matrix](backup-center-support-matrix.md) voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's.
 
 ## <a name="configure-backup"></a>Back-up configureren
 
+Als u een back-up maakt van virtuele Azure-machines, SQL in azure-vm's, SAP HANA in azure Vm's of Azure Files, moet u een Recovery Services kluis gebruiken. Als u een back-up maakt van Azure-data bases voor PostgreSQL-server, moet u een back-upkluis gebruiken. 
+
 Afhankelijk van het type gegevens bron waarvan u een back-up wilt maken, volgt u de juiste instructies zoals hieronder wordt beschreven.
 
-### <a name="configure-backup-for-azure-virtual-machines"></a>Back-ups configureren voor virtuele Azure-machines
+### <a name="configure-backup-to-a-recovery-services-vault"></a>Back-up naar een Recovery Services kluis configureren
 
 1. Navigeer naar het Back-upcentrum en selecteer **+ Backup** boven aan het tabblad **overzicht** .
 
     ![Overzicht van Back-upcentrum](./media/backup-center-actions/backup-center-overview-configure-backup.png)
 
-2. Selecteer het type gegevens bron waarvan u een back-up wilt maken (in dit geval de virtuele machine van Azure).
+2. Selecteer het type gegevens bron waarvan u een back-up wilt maken.
 
     ![Gegevens bron selecteren voor het configureren van de VM-back-up](./media/backup-center-actions/backup-select-datasource-vm.png)
 
 3. Kies een Recovery Services kluis en selecteer **door gaan**. Hiermee wordt u naar de configuratie van de back-up geleid die identiek is aan die van een Recovery Services kluis. Meer [informatie over het configureren van back-ups voor virtuele Azure-machines met een Recovery Services kluis](tutorial-backup-vm-at-scale.md).
 
-### <a name="configure-backup-for-azure-database-for-postgresql-server"></a>Back-up configureren voor Azure Database for PostgreSQL server
+### <a name="configure-backup-to-a-backup-vault"></a>Back-up naar een back-upkluis configureren
 
 1. Navigeer naar het Back-upcentrum en selecteer **+ Backup** boven aan het tabblad **overzicht** .
 2. Selecteer het type gegevens bron waarvan u een back-up wilt maken (Azure Database for PostgreSQL server in dit geval).
@@ -55,19 +57,19 @@ Afhankelijk van het type gegevens bron waarvan u een back-up wilt maken, volgt u
 
 Afhankelijk van het type gegevens bron dat u wilt herstellen, volgt u de juiste instructies zoals hieronder wordt beschreven.
 
-### <a name="if-youre-restoring-an-azure-virtual-machine"></a>Als u een virtuele machine van Azure herstelt
+### <a name="if-youre-restoring-from-a-recovery-services-vault"></a>Als u van een Recovery Services kluis herstelt
 
 1. Ga naar het Back-upcentrum en selecteer **herstellen** bovenaan het tabblad **overzicht** .
 
     ![Overzicht van Back-upcentrum voor het herstellen van de VM](./media/backup-center-actions/backup-center-overview-restore.png)
 
-2. Selecteer het type gegevens bron dat u wilt herstellen (in dit geval de virtuele machine van Azure).
+2. Selecteer het type gegevens bron dat u wilt herstellen.
 
     ![Gegevens bron selecteren voor het terugzetten van de VM](./media/backup-center-actions/restore-select-datasource-vm.png)
 
 3. Kies een back-upexemplaar en selecteer **door gaan**. Hiermee krijgt u de mogelijkheid om de instellingen voor herstel te herstellen die identiek zijn aan die van een Recovery Services kluis. Meer [informatie over het herstellen van een virtuele machine van Azure met een Recovery Services kluis](backup-azure-arm-restore-vms.md#before-you-start).
 
-### <a name="if-youre-restoring-an-azure-database-for-postgresql-server"></a>Als u een Azure Database for PostgreSQL Server herstelt
+### <a name="if-youre-restoring-from-a-backup-vault"></a>Als u een back-upkluis terugzet
 
 1. Ga naar het Back-upcentrum en selecteer **herstellen** bovenaan het tabblad **overzicht** .
 2. Selecteer het type gegevens bron dat u wilt herstellen (Azure Database for PostgreSQL server in dit geval).
@@ -89,19 +91,19 @@ Als u een nieuwe kluis wilt maken, gaat u naar Back-upcentrum en selecteert u **
 
 Afhankelijk van het type gegevens bron waarvan u een back-up wilt maken, volgt u de juiste instructies die hieronder worden beschreven.
 
-### <a name="if-youre-backing-up-an-azure-virtual-machine"></a>Als u een back-up maakt van een virtuele machine van Azure
+### <a name="if-youre-backing-up-to-a-recovery-services-vault"></a>Als u een back-up maakt van een Recovery Services kluis
 
 1. Ga naar het Back-upcentrum en selecteer boven aan het tabblad **overzicht** **+ beleid** .
 
     ![Overzicht van Back-upcentrum voor back-upbeleid](./media/backup-center-actions/backup-center-overview-policy.png)
 
-2. Selecteer het type gegevens bron waarvan u een back-up wilt maken (in dit geval de virtuele machine van Azure).
+2. Selecteer het type gegevens bron waarvan u een back-up wilt maken.
 
     ![Gegevens bron selecteren voor beleid voor back-up van VM](./media/backup-center-actions/policy-select-datasource-vm.png)
 
 3. Kies een Recovery Services-kluis en selecteer **door gaan**. Dit leidt u naar de ervaring voor het maken van het beleid dat identiek is aan het bereik dat bereikbaar is vanuit een Recovery Services kluis. Meer [informatie over het maken van een nieuw back-upbeleid voor de virtuele machine van Azure met een Recovery Services-kluis](backup-azure-arm-vms-prepare.md#create-a-custom-policy).
 
-### <a name="if-youre-backing-up-an-azure-database-for-postgresql-server"></a>Als u een back-up maakt van een Azure Database for PostgreSQL server
+### <a name="if-youre-backing-up-to-a-backup-vault"></a>Als u een back-up maakt van een back-upkluis
 
 1. Ga naar het Back-upcentrum en selecteer boven aan het tabblad **overzicht** **+ beleid** .
 2. Selecteer het type gegevens bron waarvan u een back-up wilt maken (Azure Database for PostgreSQL server in dit geval).

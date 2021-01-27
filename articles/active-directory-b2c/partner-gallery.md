@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6af68f51e76f60c807be2008ae61e27879ebbb11
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 5012e90aae316897454ffc7933efc88d83afdf6e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703204"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893373"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -74,6 +74,7 @@ Micro soft-partners met de volgende Isv's voor beveiliging.
 | ISV-partner | Beschrijving en integratie scenario's |
 |:-------------------------|:--------------|
 | ![Scherm afbeelding van een arkose Lab-logo](./media/partner-gallery/arkose-logo.png) | [Arkose Labs](./partner-arkose-labs.md) is een oplossings provider voor het voor komen van fraude die organisaties helpt bij het beveiligen tegen bot-aanvallen, inbreuk op account overname en frauduleuze account openingen. |
+| ![Scherm afbeelding van een ping-logo](./media/partner-gallery/ping-logo.png) | Met [ping-identiteit](./partner-ping-identity.md) wordt beveiligde hybride toegang tot on-premises oudere toepassingen in meerdere clouds mogelijk. |
 | ![Scherm afbeelding van een Strata-logo](./media/partner-gallery/strata-logo.png) | [Strata](./partner-strata.md) biedt beveiligde hybride toegang tot on-premises toepassingen door het afdwingen van consistente toegangs beleid, het behoud van identiteiten en het eenvoudig maken van toepassingen van oudere identiteits systemen naar op standaarden gebaseerde verificatie en toegangs beheer van Azure AD B2C. |
 | ![Scherm afbeelding van een zscaler-logo](./media/partner-gallery/zscaler-logo.png) | [Zscaler](./partner-zscaler.md) levert op beleid gebaseerde, beveiligde toegang tot persoonlijke toepassingen en assets zonder de kosten, gedoe of beveiligings Risico's van een VPN. |
 

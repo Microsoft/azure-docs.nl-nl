@@ -1,24 +1,11 @@
 ---
-title: Trans formaties en taken in Media Services
-titleSuffix: Azure Media Services
-description: Meer informatie over het maken van een trans formaties voor het beschrijven van de regels voor het verwerken van uw Video's in Azure Media Services.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: conceptual
-ms.date: 08/19/2019
-ms.author: inhenkel
-ms.openlocfilehash: 4cb4bcf5eb205d27cbca764d5ec16890a23be5c6
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426778"
+# <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Verplichte velden. Meer informatie over aka.ms/skyeye/meta.
+Titel: trans formaties en taken in Media Services: Azure Media Services beschrijving: informatie over het maken van een trans formatie om de regels voor het verwerken van uw Video's in Azure Media Services te beschrijven.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 08/19/2019 MS. Author: inhenkel
 ---
+
 # <a name="transforms-and-jobs-in-media-services"></a>Trans formaties en taken in Media Services
 
 Dit onderwerp bevat gedetailleerde informatie over [trans formaties](/rest/api/media/transforms) en [taken](/rest/api/media/jobs) en een uitleg van de relatie tussen deze entiteiten.

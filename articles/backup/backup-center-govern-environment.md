@@ -3,14 +3,14 @@ title: Uw back-upstructuur regelen via het Backup-centrum
 description: Meer informatie over het beheren van uw Azure-omgeving om ervoor te zorgen dat al uw resources compatibel zijn met een Back-upcentrum met backup Center.
 ms.topic: conceptual
 ms.date: 09/01/2020
-ms.openlocfilehash: ebb4d72c3a3377072e185251bd642762f6876c03
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 67b0591c7d7146d162687018854365d338105d76
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173802"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893843"
 ---
-# <a name="govern-your-backup-estate-using-backup-center"></a>Uw back-upstructuur regelen via het Backup-centrum
+# <a name="govern-your-backup-estate-using-backup-center-preview"></a>Uw back-ups beheren met behulp van Back-upcentrum (preview-versie)
 
 Back-upcentrum helpt u bij het beheren van uw Azure-omgeving om ervoor te zorgen dat al uw resources compatibel zijn met een back-upperspectief. Hieronder vindt u een aantal beheer mogelijkheden van Back-upcentrum:
 
@@ -43,6 +43,11 @@ Door te klikken op het menu-item voor het maken van een back-up kunt u de [compa
 Als u het menu-item **Beveilig bare gegevens bronnen** selecteert, kunt u alle gegevens bronnen weer geven die niet zijn geconfigureerd voor back-up. U kunt de lijst filteren op Data Source-abonnement, resource groep, locatie, type en tags. Zodra u een gegevens bron hebt geïdentificeerd waarvan een back-up moet worden gemaakt, kunt u met de rechter muisknop op het bijbehorende raster item klikken en **back-up** selecteren om een back-up te configureren voor de resource.
 
 ![Menu Beveilig bare gegevens bronnen](./media/backup-center-govern-environment/protectable-datasources.png)
+
+> [!NOTE]
+> Als u **SQL in azure VM** selecteert als het gegevens bron type, wordt in de weer gave **Beveilig bare gegevens bronnen** de lijst weer gegeven van alle virtuele galerie vm's die geen SQL-data bases hebben die zijn geconfigureerd voor back-up.
+> Als u **Azure Storage (Azure files)** als gegevens bron type selecteert, wordt in de weer gave **Beveilig bare gegevens bronnen** de lijst weer gegeven met alle opslag accounts (die ondersteuning bieden voor bestands shares) die geen bestands shares bevatten die zijn geconfigureerd voor back-up.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

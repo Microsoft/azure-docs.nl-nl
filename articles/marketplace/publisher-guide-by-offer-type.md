@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 10/06/2020
-ms.openlocfilehash: 2191a4df5b319ec16a4a6116aa99cfac50c87d9b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3be967b611f6b75705a60bfa14523832b0652931
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462907"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879221"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Publicatiehandleiding op type aanbieding
 
@@ -36,7 +36,7 @@ De volgende tabel bevat de typen commerciële Marketplace-aanbiedingen in het pa
 | [**Consulting Service**](./plan-consulting-service-offer.md) | Consulting Services helpt klanten met services te verbinden om hun gebruik van Azure-, Dynamics 365-of Power suite-services te ondersteunen en uit te breiden.|
 | [**Dynamics 365**](appsource-offer-publishing-guide.md) | U kunt AppSource-aanbiedingen publiceren die voortbouwen op of uitgebreid Dynamics 365 Business Central, Dynamics 365 Customer engagement, Power apps en Finance and Operations apps.|
 | [**Module IoT Edge**](iot-edge-module.md) | Azure IoT Edge modules zijn de kleinste reken eenheden die worden beheerd door IoT Edge en kunnen micro soft-Services (zoals Azure Stream Analytics), services van derden of uw eigen oplossing-specifieke code bevatten. |
-| [**Beheerde service**](partner-center-portal/create-new-managed-service-offer.md) | U kunt beheerde service aanbiedingen maken en door de klant gedelegeerde abonnementen of resource groepen beheren via [Azure Lighthouse](../lighthouse/overview.md).|
+| [**Beheerde service**](./plan-managed-service-offer.md) | U kunt beheerde service aanbiedingen maken en door de klant gedelegeerde abonnementen of resource groepen beheren via [Azure Lighthouse](../lighthouse/overview.md).|
 | [**App Power bi** <br/> **Microsoft 365**](appsource-offer-publishing-guide.md) | U kunt AppSource-aanbiedingen publiceren die zijn gebaseerd op of uitgebreid Power BI en Microsoft 365.|
 | [**Software als een service**](plan-saas-offer.md) | Gebruik het type SaaS-aanbieding (Software as a Service) om uw klant in staat te stellen uw SaaS-gebaseerde technische oplossing als een abonnement te kopen. Zie voor meer informatie over de vereisten voor eenmalige aanmelding voor SaaS-aanbiedingen [Azure AD en transactable SaaS-aanbiedingen in de commerciële Marketplace](azure-ad-saas.md). |
 

@@ -7,19 +7,19 @@ ms.topic: conceptual
 author: navits09
 ms.author: navits
 ms.date: 01/19/2020
-ms.openlocfilehash: 6075027124352746a3adbb8f6937d3787eb22b9d
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: a1726b29c153bf680d29fe821ac34aa958064335
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602558"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879238"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Ondersteuning voor het Commercial Marketplace-programma in Partner Center
 
 Micro soft biedt ondersteuning voor een groot aantal producten en services. Het vinden van het juiste ondersteunings team is belang rijk om te zorgen voor een passend en tijdig antwoord. Houd rekening met de volgende scenario's, waarmee u uw query naar het juiste team kunt routeren:
 
 - Als u een uitgever bent en een vraag hebt van een klant, vraagt u uw klant om ondersteuning te vragen met behulp van de ondersteunings koppelingen in de [Azure Portal](https://portal.azure.com/).
-- Als u een uitgever bent en een beveiligings probleem hebt gedetecteerd met een toepassing die wordt uitgevoerd op Azure, raadpleegt u [een ondersteunings ticket voor beveiligings gebeurtenissen registreren](/azure/security/fundamentals/event-support-ticket). Uitgevers moeten verdachte beveiligings gebeurtenissen rapporteren, met inbegrip van beveiligings incidenten en beveiligings problemen van hun Azure Marketplace-software en service aanbiedingen, op de eerste mogelijkheid.
+- Als u een uitgever bent en een beveiligings probleem hebt gedetecteerd met een toepassing die wordt uitgevoerd op Azure, raadpleegt u [een ondersteunings ticket voor beveiligings gebeurtenissen registreren](../security/fundamentals/event-support-ticket.md). Uitgevers moeten verdachte beveiligings gebeurtenissen rapporteren, met inbegrip van beveiligings incidenten en beveiligings problemen van hun Azure Marketplace-software en service aanbiedingen, op de eerste mogelijkheid.
 - Als u een uitgever bent en een vraag hebt met betrekking tot uw app of service, raadpleegt u de volgende ondersteunings opties.
 
 ## <a name="get-help-or-open-a-support-ticket"></a>Hulp krijgen of een ondersteunings ticket openen

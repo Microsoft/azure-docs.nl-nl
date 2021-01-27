@@ -8,12 +8,12 @@ ms.date: 12/01/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: ea98b2d9812fb5c848c7e13b94d46a4142595cd4
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 22e4d0998cde14d4461141a53f05cbc19d1ab671
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492162"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878966"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Zacht verwijderen inschakelen op Azure-bestands shares
 
@@ -25,7 +25,7 @@ In de volgende secties ziet u hoe u met voorlopig verwijderen voor Azure-bestand
 
 ## <a name="getting-started"></a>Aan de slag
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 1. Navigeer naar uw opslag account en selecteer **voorlopig verwijderen** onder **Bestands service**.
 1. Selecteer **ingeschakeld** voor het **voorlopig verwijderen van de bestands share**.
 1. Selecteer de **Bewaar periode voor bestands shares in dagen** en voer een nummer van uw keuze in.
@@ -33,9 +33,9 @@ In de volgende secties ziet u hoe u met voorlopig verwijderen voor Azure-bestand
 
 :::image type="content" source="media/storage-how-to-recover-deleted-account/enable-soft-delete-files.png" alt-text="Scherm afbeelding van het deel venster instellingen voor voorlopig verwijderen van het opslag account. De sectie bestands shares markeren, scha kelen inschakelen, een Bewaar periode instellen en opslaan. Hiermee schakelt u tijdelijke verwijdering in voor alle bestands shares in uw opslag account.":::
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Tijdelijke Verwijder-cmdlets zijn beschikbaar in versie 2.1.3 en hoger van de [Azure cli-module](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Tijdelijke Verwijder-cmdlets zijn beschikbaar in versie 2.1.3 en hoger van de [Azure cli-module](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="getting-started-with-cli"></a>Aan de slag met CLI
 
@@ -94,7 +94,7 @@ Een voorlopig verwijderde bestands share herstellen:
 
     :::image type="content" source="media/storage-how-to-recover-deleted-account/restored-file-share.png" alt-text="Als de kolom Status, de kolom naast de kolom naam, is ingesteld op actief, is de bestands share hersteld.":::
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Tijdelijke Verwijder-cmdlets zijn beschikbaar in versie 2.1.3 van de Azure CLI. Als u een tijdelijke, verwijderde bestands share wilt herstellen, moet u eerst de `--deleted-version` waarde van de share ophalen. Als u deze waarde wilt ophalen, gebruikt u de volgende opdracht om alle verwijderde shares voor uw opslag account weer te geven:
 
@@ -135,7 +135,7 @@ Als u wilt stoppen met het gebruik van zacht verwijderen of als u een bestands s
 
     :::image type="content" source="media/storage-how-to-recover-deleted-account/disable-soft-delete-files.png" alt-text="Als u zacht verwijderen uitschakelt, kunt u de bestands shares in uw opslag account onmiddellijk en op uw gemak permanent verwijderen.":::
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Tijdelijke Verwijder-cmdlets zijn beschikbaar in versie 2.1.3 van de Azure CLI. U kunt de volgende opdracht gebruiken om de optie voor het voorlopig verwijderen van uw opslag account uit te scha kelen:
 

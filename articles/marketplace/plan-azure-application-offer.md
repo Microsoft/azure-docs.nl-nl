@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: 45bc3aaf5217c626e2593b4eda861eaace2a8be2
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: f98f128e56810e3dd710ce454c8dc34b333690d1
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620406"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879289"
 ---
 # <a name="plan-an-azure-application-offer-for-the-commercial-marketplace"></a>Een Azure-toepassing aanbieding plannen voor de commerciële Marketplace
 
@@ -42,7 +42,7 @@ Bekijk de volgende resources bij het plannen van uw Azure-toepassings aanbieding
 - Zelfstudies:
     - [Definitiebestanden maken](../azure-resource-manager/managed-applications/publish-service-catalog-app.md)
 - Voor beelden
-    - [Azure CLI](../azure-resource-manager/managed-applications/cli-samples.md)
+    - [Azure-CLI](../azure-resource-manager/managed-applications/cli-samples.md)
     - [Azure PowerShell](../azure-resource-manager/managed-applications/powershell-samples.md)
     - [Beheerde toepassingsoplossingen](../azure-resource-manager/managed-applications/sample-projects.md)
 
@@ -64,7 +64,7 @@ Kies een of beide van de volgende script omgevingen om uw Azure-toepassing te be
 
 Het is raadzaam om de volgende hulpprogram ma's toe te voegen aan uw ontwikkel omgeving:
 
-- [Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md)
+- [Azure-opslagverkenner](../vs-azure-tools-storage-manage-with-storage-explorer.md)
 - [Visual Studio Code](https://code.visualstudio.com/) met de volgende extensies:
     - Extensie: [Azure Resource Manager-Hulpprogram ma's](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
     - Extensie: [beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
@@ -210,7 +210,7 @@ Deze configuratie is vereist als u [batch-gebruiks gebeurtenis](partner-center-p
 U kunt kiezen voor marketing-en verkoop kanalen die door micro soft worden ondersteund. Wanneer u uw aanbieding in Partner Center maakt, ziet u twee tabbladen naar het einde van het proces:
 
 - **Door sturen via csp's**: gebruik deze optie om de partners van Microsoft Cloud Solution Providers (CSP) in staat te stellen uw oplossing door te verkopen als onderdeel van een gebundelde aanbieding. Zie het [Cloud Solution Provider-programma](./cloud-solution-providers.md) voor meer informatie.
-- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie, Zie [de optie voor co-sell in de commerciële Marketplace](commercial-marketplace-co-sell.md). Zie [vereisten voor co-sell status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status)voor meer informatie over de vereisten voor de samen verkoop van IP. Zie [Cloud Solution Providers](cloud-solution-providers.md)(Engelstalig) voor meer informatie over het marketing uw aanbod via de micro soft CSP-partner kanalen.
+- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie, Zie [de optie voor co-sell in de commerciële Marketplace](commercial-marketplace-co-sell.md). Zie [vereisten voor co-sell status](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status)voor meer informatie over de vereisten voor de samen verkoop van IP. Zie [Cloud Solution Providers](cloud-solution-providers.md)(Engelstalig) voor meer informatie over het marketing uw aanbod via de micro soft CSP-partner kanalen.
 
 Zie [uw Cloud activiteiten uitbreiden met Azure Marketplace](https://azuremarketplace.microsoft.com/sell)voor meer informatie.
 

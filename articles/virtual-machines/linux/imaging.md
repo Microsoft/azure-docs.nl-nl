@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/22/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: e364578cdec8696688cf19e14fd0529f1ca3fbb3
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 223fdc215bc391bea5cad5d4cb9999b9d14ba570
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842614"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878779"
 ---
 # <a name="bringing-and-creating-linux-images-in-azure"></a>Eigen inux-installatiekopieën gebruiken en maken in Azure
 
@@ -29,7 +29,7 @@ Met Azure kunt u een VHD naar het platform brengen om te gebruiken als [Beheerde
 
 Azure Managed Disks zijn enkelvoudige VHD's. U kunt een bestaande VHD nemen en hiervan een beheerde schijf maken, of zelf een lege beheerde schijf maken. U kunt VM's maken op basis van beheerde schijven door de schijf aan de virtuele machine toe te voegen, maar u kunt alleen een VHD met één virtuele machine gebruiken. U kunt geen eigenschappen van besturingssystemen wijzigen. Azure probeert nu de virtuele machine in te schakelen en te starten met die schijf. 
 
-Azure-installatiekopieën kunnen bestaan uit meerdere besturingssysteemschijven en gegevensschijven. Wanneer u een beheerde installatiekopie gebruikt om een virtuele machine te maken, maakt het platform een kopie van de installatiekopie en gebruikt deze om de virtuele machine te maken, zodat de ondersteuning voor beheerde installatiekopieën de installatiekopie voor meerdere VM's opnieuw gebruikt. Azure biedt ook geavanceerde beheermogelijkheden voor installatiekopieën, zoals globale replicatie, en versiebeheer via [Shared Image Gallery](shared-image-galleries.md). 
+Azure-installatiekopieën kunnen bestaan uit meerdere besturingssysteemschijven en gegevensschijven. Wanneer u een beheerde installatiekopie gebruikt om een virtuele machine te maken, maakt het platform een kopie van de installatiekopie en gebruikt deze om de virtuele machine te maken, zodat de ondersteuning voor beheerde installatiekopieën de installatiekopie voor meerdere VM's opnieuw gebruikt. Azure biedt ook geavanceerde beheermogelijkheden voor installatiekopieën, zoals globale replicatie, en versiebeheer via [Shared Image Gallery](../shared-image-galleries.md). 
 
 
 
@@ -65,7 +65,7 @@ Inrichtingsagenten zijn niet vereist voor deze installatiekopieën, maar u wilt 
 Wanneer u uw eigen Linux-installatiekopie gebruikt, hebt u twee opties:
 
 - Beheerde installatiekopieën voor het maken van eenvoudige VM'S in een ontwikkelings- en testomgeving.
-- [Gedeelde installatiekopiegalerie](shared-image-galleries.md) voor het maken en delen van installatiekopieën op schaal.
+- [Gedeelde installatiekopiegalerie](../shared-image-galleries.md) voor het maken en delen van installatiekopieën op schaal.
 
 
 ### <a name="managed-images"></a>Beheerde installatiekopieën
@@ -76,7 +76,7 @@ Beheerde installatiekopieën kunnen worden gebruikt voor ontwikkelings -en testo
 
 ### <a name="azure-shared-image-gallery-sig"></a>Azure Shared Image Gallery (SIG)
 
-[Gedeelde installatiekopiegalerieën](shared-image-galleries.md) worden aanbevolen voor het maken, beheren en delen van afbeeldingen op grote schaal. Met de gedeelde installatiekopiegalerieën kunt u een structuur en organisatie rond uw installatiekopieën bouwen.  
+[Gedeelde installatiekopiegalerieën](../shared-image-galleries.md) worden aanbevolen voor het maken, beheren en delen van afbeeldingen op grote schaal. Met de gedeelde installatiekopiegalerieën kunt u een structuur en organisatie rond uw installatiekopieën bouwen.  
 
 - Ondersteuning voor gegeneraliseerde en gespecialiseerde installatiekopieën.
 - Ondersteuning voor installatiekopieën van generatie 1 en 2.

@@ -1,27 +1,11 @@
 ---
-title: Live streamen met Media Services v3
-titleSuffix: Azure Media Services
-description: Leer hoe u live kunt streamen met Azure Media Services v3.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.custom: mvc, devx-track-csharp
-ms.date: 06/13/2019
-ms.author: inhenkel
-ms.openlocfilehash: b2e456474a9d052d9515c8169ce233e9577a5c53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256562"
+Titel: Stream Live met Media Services V3: Azure Media Services beschrijving: Leer hoe u Live kunt streamen met Azure Media Services v3.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: medium ms.tgt_pltfrm: na MS. devlang: na MS. topic: zelf studie MS. Custom: ' MVC, devx-track-csharp ' MS. date: 06/13/2019 MS. Author: inhenkel
+
 ---
+
 # <a name="tutorial-stream-live-with-media-services"></a>Zelfstudie: Live streamen met Media Services
 
 > [!NOTE]

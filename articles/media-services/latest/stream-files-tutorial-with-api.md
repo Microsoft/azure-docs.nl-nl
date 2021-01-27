@@ -1,25 +1,10 @@
 ---
-title: Uploaden, coderen en streamen met Media Services v3
-titleSuffix: Azure Media Services
-description: Zelfstudie waarin wordt getoond hoe u een bestand uploadt, video codeert en inhoud streamt met Azure Media Services v3.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: tutorial
-ms.custom: mvc
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: eedbb63f4928c0397150b40a47fdc7c3e87d1991
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256763"
+Titel: uploaden, coderen en streamen met Media Services V3: Azure Media Services beschrijving: zelf studie waarin wordt getoond hoe u een bestand uploadt, video versleutelt en inhoud streamt met Azure Media Services v3.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: MS. topic: zelf studie MS. Custom: MVC MS. date: 08/31/2020 MS. Author: inhenkel
 ---
+
 # <a name="tutorial-upload-encode-and-stream-videos-with-media-services-v3"></a>Zelfstudie: Video's uploaden, coderen en streamen met Media Services v3
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -68,7 +53,7 @@ In het voorbeeld worden de volgende acties uitgevoerd:
 
 1. Er wordt een nieuwe **transformatie** gemaakt (eerst wordt gecontroleerd of de opgegeven transformatie bestaat).
 2. Er wordt een **uitvoerasset** gemaakt die wordt gebruikt als uitvoer van de **coderingstaak**.
-3. Er wordt een invoer**asset** gemaakt en het opgegeven lokale videobestand wordt erin geladen. De asset wordt gebruikt als de invoer voor de taak.
+3. Er wordt een invoer **asset** gemaakt en het opgegeven lokale videobestand wordt erin geladen. De asset wordt gebruikt als de invoer voor de taak.
 4. De coderingstaak wordt met behulp van de gemaakte invoer en uitvoer verzonden.
 5. De status van de taak controleren.
 6. Er wordt een **streaming-locator** gemaakt.

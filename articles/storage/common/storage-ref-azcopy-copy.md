@@ -8,12 +8,12 @@ ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 6390aafca4937a480e4d92ff04003a294b9c0e20
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: c4e85195ace0a24aa11d4a03b8f429f2714399b0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356171"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879153"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -37,7 +37,7 @@ Zie de sectie voor beelden in dit artikel voor meer informatie.
 ## <a name="related-conceptual-articles"></a>Gerelateerde conceptuele artikelen
 
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
-- [Gegevens overdragen met AzCopy en Blob Storage](storage-use-azcopy-blobs.md)
+- [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 
@@ -284,7 +284,7 @@ Bestanden en mappen overzetten naar Azure Storage-account en de opgegeven query-
 
 **--include-patroon** teken reeks bevatten alleen deze bestanden bij het kopiëren. Deze optie biedt ondersteuning voor joker tekens (*). Scheid bestanden met behulp van een `;` .
 
-**--lijst-van-versie** teken reeks geeft een bestand op waarin elke versie-id wordt weer gegeven op een afzonderlijke regel. Zorg ervoor dat de bron moet verwijzen naar een enkele Blob en dat alle versie-Id's die zijn opgegeven in het bestand met deze vlag, alleen bij de bron-BLOB horen. AzCopy worden de opgegeven versies gedownload in de opgegeven doelmap. Zie [eerdere versies van een BLOB downloaden](storage-use-azcopy-blobs.md#download-previous-versions-of-a-blob)voor meer informatie.
+**--lijst-van-versie** teken reeks geeft een bestand op waarin elke versie-id wordt weer gegeven op een afzonderlijke regel. Zorg ervoor dat de bron moet verwijzen naar een enkele Blob en dat alle versie-Id's die zijn opgegeven in het bestand met deze vlag, alleen bij de bron-BLOB horen. AzCopy worden de opgegeven versies gedownload in de opgegeven doelmap. Zie [eerdere versies van een BLOB downloaden](./storage-use-azcopy-v10.md#transfer-data)voor meer informatie.
 
 **--** teken reeks op logboek niveau definiëren de logboek uitgebreidheids voor het logboek bestand, beschik bare niveaus: info (alle aanvragen/antwoorden), waarschuwing (trage antwoorden), fout (alleen mislukte aanvragen) en geen (geen uitvoer Logboeken). (standaard `INFO` ). 
 

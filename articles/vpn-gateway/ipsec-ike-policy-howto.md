@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: yushwang
-ms.openlocfilehash: eda920640667abc6620c5c90ee7d04a44789353e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b298185866d16da02fe8d3b3fdb41f0b0b1f726
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90995313"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878541"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections-azure-portal"></a>IPsec/IKE-beleid configureren voor S2S VPN-of VNet-naar-VNet-verbindingen: Azure Portal
 
@@ -28,10 +28,8 @@ Dit artikel bevat instructies voor het maken en configureren van een IPsec/IKE-b
 ### <a name="considerations"></a>Overwegingen
 
 * IPsec/IKE-beleid werkt alleen op de volgende gateway-Sku's:
-  * ***VpnGw1 ~ 5 en VpnGw1AZ ~ 5AZ***
-  * ***Standard*** en ***High Performance***
-* U kunt maar ***één*** beleidscombinatie opgeven voor een bepaalde verbinding.
-* U moet alle algoritmen en para meters opgeven voor zowel IKE (hoofd modus) als IPsec (snelle modus). Gedeeltelijke beleidsspecificatie is niet toegestaan.
+  * ***VpnGw1 ~ 5 en VpnGw1AZ ~ 5AZ** _ _ ***standaard** _ en _*_High Performance_*_ _ u kunt slechts **één** _ beleids combinatie voor een bepaalde verbinding opgeven.
+  _ U moet alle algoritmen en para meters opgeven voor zowel IKE (hoofd modus) als IPsec (snelle modus). Gedeeltelijke beleidsspecificatie is niet toegestaan.
 * Neem contact op met de specificaties van de leverancier van uw VPN-apparaat om ervoor te zorgen dat het beleid wordt ondersteund op uw on-premises VPN-apparaten. S2S-of VNet-naar-VNet-verbindingen kunnen niet bepalen of het beleid niet compatibel is.
 
 ## <a name="workflow"></a><a name ="workflow"></a>Werkstroom
@@ -61,7 +59,7 @@ De volgende tabel bevat de ondersteunde cryptografische algoritmen en sleutel st
 | IPsec-versleuteling | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, geen    |
 | IPsec-integriteit  | GCMASE256, GCMAES192, GCMAES128, SHA256, SHA1, MD5 |
 | PFS-groep        | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, geen   |
-| QM SA-levensduur   | (**Optioneel**: de standaard waarden worden gebruikt als er geen waarde is opgegeven)<br>Seconden (geheel getal; **min. 300 **/standaard 27000 seconden)<br>KB (geheel getal; **min. 1024**/standaard 102400000 KB)    |
+| QM SA-levensduur   | (**Optioneel**: de standaard waarden worden gebruikt als er geen waarde is opgegeven)<br>Seconden (geheel getal; **min. 300**/standaard 27000 seconden)<br>KB (geheel getal; **min. 1024**/standaard 102400000 KB)    |
 | Verkeersselector | UsePolicyBasedTrafficSelectors * * ($True/$False; **Optioneel**, standaard $false indien niet opgegeven)    |
 | DPD-out      | Seconden (geheel getal: min. 9/Max. 3600; standaard 45 seconden) |
 |  |  |
@@ -116,27 +114,27 @@ Raadpleeg [RFC3526](https://tools.ietf.org/html/rfc3526) en [RFC5114](https://to
 
 In deze sectie worden de stappen beschreven voor het maken van een site-naar-site-VPN-verbinding met een IPsec/IKE-beleid. Met de volgende stappen maakt u de verbinding, zoals weer gegeven in het volgende diagram:
 
-:::image type="content" source="./media/ipsec-ike-policy-howto/site-to-site-diagram.png" alt-text="IPsec/IKE-beleids diagram" border="false":::
+:::image type="content" source="./media/ipsec-ike-policy-howto/site-to-site-diagram.png" alt-text="Beleid voor site-naar-site" border="false":::
 
 ### <a name="step-1---create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a><a name="createvnet1"></a>Stap 1: het virtuele netwerk, de VPN-gateway en de lokale netwerk gateway maken
 
-Maak de volgende resources, zoals wordt weer gegeven in de onderstaande scherm afbeeldingen. Zie [een site-naar-site-VPN-verbinding maken](vpn-gateway-howto-site-to-site-resource-manager-portal.md)voor instructies.
+Maak de volgende resources, zoals wordt weer gegeven in de onderstaande scherm afbeeldingen. Zie [een site-naar-site-VPN-verbinding maken](./tutorial-site-to-site-portal.md)voor instructies.
 
 * **Virtueel netwerk:**  TestVNet1
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/testvnet-1.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/testvnet-1.png" alt-text="VNet":::
 
 * **VPN-gateway:** VNet1GW
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-1-gateway.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-1-gateway.png" alt-text="Gateway":::
 
 * **Lokale netwerk gateway:** Site6
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/lng-site-6.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/lng-site-6.png" alt-text="Site":::
 
 * **Verbinding:** VNet1 naar Site6
 
-    :::image type="content" source="./media/ipsec-ike-policy-howto/connection-site-6.png" alt-text="IPsec/IKE-beleids diagram":::
+    :::image type="content" source="./media/ipsec-ike-policy-howto/connection-site-6.png" alt-text="Verbinding":::
 
 ### <a name="step-2---configure-ipsecike-policy-on-the-s2s-vpn-connection"></a><a name="s2sconnection"></a>Stap 2: IPsec/IKE-beleid configureren voor de S2S-VPN-verbinding
 
@@ -147,15 +145,15 @@ In deze sectie configureert u een IPsec/IKE-beleid met de volgende algoritmen en
 
 1. Ga in het Azure Portal naar de verbindings bron **VNet1toSite6**. Selecteer **configuratie** pagina en selecteer **aangepast** IPSec/IKE-beleid om alle configuratie opties weer te geven. In de onderstaande scherm afbeelding ziet u de configuratie volgens de lijst:
 
-    :::image type="content" source="./media/ipsec-ike-policy-howto/policy-site-6.png" alt-text="IPsec/IKE-beleids diagram":::
+    :::image type="content" source="./media/ipsec-ike-policy-howto/policy-site-6.png" alt-text="Site 6":::
 
 1. Als u GCMAES voor IPsec gebruikt, moet u hetzelfde GCMAES-algoritme en dezelfde sleutel lengte gebruiken voor IPsec-versleuteling en-integriteit. In de onderstaande scherm afbeelding worden bijvoorbeeld GCMAES128 voor IPsec-versleuteling en IPsec-integriteit opgegeven:
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/gcmaes.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/gcmaes.png" alt-text="GCMAES voor IPsec":::
 
 1. U kunt optioneel **inschakelen** selecteren voor de optie **op beleid gebaseerde verkeers selectie gebruiken** om Azure VPN gateway in te scha kelen om verbinding te maken met op beleid gebaseerde VPN-apparaten op locatie, zoals hierboven wordt beschreven.
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/policy-based-selector.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/policy-based-selector.png" alt-text="Op beleid gebaseerde verkeers selectie":::
 
 1. Als alle opties zijn geselecteerd, selecteert u **Opslaan** om de wijzigingen in de verbindings bron door te voeren. Het beleid wordt in ongeveer een minuut afgedwongen.
 
@@ -170,13 +168,13 @@ In deze sectie configureert u een IPsec/IKE-beleid met de volgende algoritmen en
 
 De stappen voor het maken van een VNet-naar-VNet-verbinding met een IPsec/IKE-beleid zijn vergelijkbaar met die van een S2S-VPN-verbinding.
 
-:::image type="content" source="./media/ipsec-ike-policy-howto/vnet-policy.png" alt-text="IPsec/IKE-beleids diagram" border="false":::
+:::image type="content" source="./media/ipsec-ike-policy-howto/vnet-policy.png" alt-text="Het VNet-naar-VNet-beleids diagram" border="false":::
 
 1. Volg de stappen in het artikel [een vnet-naar-vnet-verbinding maken](vpn-gateway-vnet-vnet-rm-ps.md) om uw vnet-naar-vnet-verbinding te maken.
 
 2. Nadat u de stappen hebt voltooid, ziet u twee VNet-naar-VNet-verbindingen, zoals wordt weer gegeven in de onderstaande scherm afbeelding van de VNet2GW-resource:
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-connections.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-connections.png" alt-text="VNet-naar-VNet-verbindingen":::
 
 3. Ga naar de verbindings bron en ga naar de **configuratie** pagina op de portal. Selecteer **aangepast** in het **IPSec/IKE-beleid** om de aangepaste beleids opties weer te geven. Selecteer de cryptografische algoritmen met de bijbehorende sleutel lengten.
 
@@ -184,7 +182,7 @@ De stappen voor het maken van een VNet-naar-VNet-verbinding met een IPsec/IKE-be
    * IKE: AES128, SHA1, DHGroup14, DPD time-out 45 seconden
    * IPsec: GCMAES128, GCMAES128, PFS14, levens duur van 14400 seconden & 102400000KB
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-policy.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/vnet-vnet-policy.png" alt-text="Verbindings beleid":::
 
 4. Selecteer **Opslaan** om de beleids wijzigingen op de verbindings bron toe te passen.
 
@@ -203,7 +201,7 @@ De stappen voor het maken van een VNet-naar-VNet-verbinding met een IPsec/IKE-be
 
 2. Selecteer **standaard** in de optie **IPSec/IKE-beleid** . Hiermee verwijdert u alle eerder opgegeven aangepaste beleids regels voor de verbinding en herstelt u de standaard instellingen voor IPsec/IKE voor deze verbinding:
 
-   :::image type="content" source="./media/ipsec-ike-policy-howto/delete-policy.png" alt-text="IPsec/IKE-beleids diagram":::
+   :::image type="content" source="./media/ipsec-ike-policy-howto/delete-policy.png" alt-text="Beleid verwijderen":::
 
 3. Selecteer **Opslaan** om het aangepaste beleid te verwijderen en de standaard instellingen voor IPSec/IKE voor de verbinding te herstellen.
 

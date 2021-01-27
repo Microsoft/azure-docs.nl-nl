@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: d9e26b6388223ae252a5e85e6e9fb9783a3b8429
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 9169d691b58ad4a59796123c64f856128a0f8c83
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600409"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879323"
 ---
 # <a name="how-to-plan-a-virtual-machine-offer"></a>Een aanbieding voor een virtuele machine plannen
 
@@ -30,10 +30,10 @@ Het proces voor het ontwerpen, bouwen en testen van aanbiedingen vergt tijd en v
   - [Virtuele Windows-machines](../virtual-machines/windows/tutorial-manage-vm.md)
 
 - Voorbeelden
-  - [Azure CLI-voor beelden voor Linux Vm's](../virtual-machines/linux/cli-samples.md)
-  - [Azure PowerShell voor Linux-Vm's](../virtual-machines/linux/powershell-samples.md)
-  - [Azure CLI-voor beelden voor Windows-Vm's](../virtual-machines/windows/cli-samples.md)
-  - [Azure PowerShell voor Windows-Vm's](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-quick.md)
+  - [Azure CLI-voor beelden voor Linux Vm's](https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine)
+  - [Azure PowerShell voor Linux-Vm's](https://github.com/Azure/azure-docs-powershell-samples/tree/master/virtual-machine)
+  - [Azure CLI-voor beelden voor Windows-Vm's](https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine)
+  - [Azure PowerShell voor Windows-Vm's](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-quick)
 
 ## <a name="technical-requirements"></a>Technische vereisten
 
@@ -73,7 +73,7 @@ Voor VM-aanbiedingen is ten minste één abonnement vereist. Een plan definieert
 Vm's zijn volledig geschikt voor Commerce, met behulp van betalen per gebruik of uw eigen licentie modellen (BYOL). Micro soft host de commerce trans actie en factureert uw klant namens u. U krijgt het voor deel van het gebruik van de voorkeurs betalings relatie tussen uw klant en micro soft, inclusief alle Enter prise-overeenkomsten. Zie voor meer informatie [commerciële Marketplace Transact-mogelijkheden](./marketplace-commercial-transaction-capabilities-and-considerations.md).
 
 > [!NOTE]
-> De Azure-voor uitbetaling (voorheen monetaire toezeg ging) die is gekoppeld aan een Enterprise Agreement, kan worden gebruikt voor het Azure-gebruik van uw VM, maar niet op basis van uw software licentie kosten.
+> De Azure-voor uitbetaling (voorheen monetaire toezeg ging) die is gekoppeld aan een Enterprise Overeenkomst, kan worden gebruikt voor het Azure-gebruik van uw VM, maar niet op basis van uw software licentie kosten.
 
 ### <a name="licensing-options"></a>Licentie opties
 

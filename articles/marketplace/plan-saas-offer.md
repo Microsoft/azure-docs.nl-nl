@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/30/2020
-ms.openlocfilehash: e188c74c6eba5e4182f7b72277db8dd8e08db8d4
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 714b7bccea9b1e0c18ad78a4d98ed3526a279f5f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913925"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879255"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
@@ -250,7 +250,7 @@ In het volgende voor beeld ziet u een voor beeld van een uitsplitsing van kosten
 | Micro soft betaalt u 80% van uw licentie kosten<br>`*` Voor gekwalificeerde SaaS-apps betaalt micro soft 90% van uw licentie kosten| $80,00 per maand<br>``*`` $90,00 per maand |
 |||
 
-**`*` Lagere kosten voor Marketplace-service** : voor bepaalde SaaS-aanbiedingen die u hebt gepubliceerd op de commerciële Marketplace, verlaagt micro soft de kosten voor Marketplace-service van 20% (zoals beschreven in de overeenkomst voor micro soft Publisher) tot 10%. Voor uw aanbieding (en) die u wilt kwalificeren, moeten uw aanbieding (en) zijn aangewezen door micro soft als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de geschiktheid ten minste vijf (5) werk dagen worden voldaan om de lagere kosten voor Marketplace-service te ontvangen. Zodra aan de voor waarden is voldaan, worden de gereduceerde service kosten in rekening gebracht voor alle trans acties met ingang van de eerste dag van de volgende maand en blijven ze worden toegepast totdat de gemotiveerd-status van Azure IP co-sell gaat verloren. Zie [vereisten voor co-sell-status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen. De gereduceerde service kosten voor Marketplace zijn ook van toepassing op Azure IP-gemotiveerd Vm's, beheerde apps en alle andere gekwalificeerd transactable-IaaS die beschikbaar worden gesteld via de commerciële Marketplace.
+**`*` Lagere kosten voor Marketplace-service** : voor bepaalde SaaS-aanbiedingen die u hebt gepubliceerd op de commerciële Marketplace, verlaagt micro soft de kosten voor Marketplace-service van 20% (zoals beschreven in de overeenkomst voor micro soft Publisher) tot 10%. Voor uw aanbieding (en) die u wilt kwalificeren, moeten uw aanbieding (en) zijn aangewezen door micro soft als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de geschiktheid ten minste vijf (5) werk dagen worden voldaan om de lagere kosten voor Marketplace-service te ontvangen. Zodra aan de voor waarden is voldaan, worden de gereduceerde service kosten in rekening gebracht voor alle trans acties met ingang van de eerste dag van de volgende maand en blijven ze worden toegepast totdat de gemotiveerd-status van Azure IP co-sell gaat verloren. Zie [vereisten voor co-sell-status](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen. De gereduceerde service kosten voor Marketplace zijn ook van toepassing op Azure IP-gemotiveerd Vm's, beheerde apps en alle andere gekwalificeerd transactable-IaaS die beschikbaar worden gesteld via de commerciële Marketplace.
 
 ## <a name="additional-sales-opportunities"></a>Aanvullende verkoop kansen
 
@@ -258,7 +258,7 @@ U kunt kiezen voor marketing-en verkoop kanalen die door micro soft worden onder
 
 - **Door sturen via csp's**: gebruik deze optie om de partners van Microsoft Cloud Solution Providers (CSP) in staat te stellen uw oplossing door te verkopen als onderdeel van een gebundelde aanbieding. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md)voor meer informatie over dit programma.
 
-- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Zie [vereisten voor co-sell status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor co-sell. Voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie, Zie [optie voor co-sell in Partner Center](commercial-marketplace-co-sell.md).
+- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Zie [vereisten voor co-sell status](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor co-sell. Voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie, Zie [optie voor co-sell in Partner Center](commercial-marketplace-co-sell.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

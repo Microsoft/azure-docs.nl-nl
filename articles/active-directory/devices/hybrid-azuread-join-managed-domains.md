@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 03/06/2020
+ms.date: 01/26/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 303f02e0c6b72b7061a996b3ce8e70799954b435
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: d3da63503c80652bc8737f2cb4894e25d8bc6fc0
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861048"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893403"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Zelfstudie: Hybride Azure Active Directory-deelname configureren voor beheerde domeinen
 
@@ -90,23 +90,21 @@ Ga als volgt te werk om een hybride Azure AD-koppeling te configureren via Azure
 
 1. Start Azure AD Connect en selecteer **Configureren**.
 
-   ![Welkom](./media/hybrid-azuread-join-managed-domains/welcome-azure-ad-connect.png)
-
 1. Selecteer bij **Extra taken** de optie **Apparaatopties configureren** en selecteer daarna **Volgende**.
 
    ![Extra taken](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-additional-tasks.png)
 
 1. Selecteer **Volgende** in **Overzicht**.
 
-   ![Overzicht](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-overview.png)
-
 1. Voer bij **Verbinding maken met Azure AD** de referenties in van een globale beheerder voor uw Azure AD-tenant.  
-
-   ![Verbinding maken met Azure AD](./media/hybrid-azuread-join-managed-domains/connect-to-azure-ad-username-password.png)
 
 1. Selecteer bij **Apparaatopties** de optie **Hybride Azure AD-koppeling configureren** en selecteer daarna **Volgende**.
 
    ![Apparaatopties](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-device-options.png)
+
+1. Selecteer bij **Apparaatbesturingssystemen** de besturingssystemen die worden gebruikt door apparaten in uw Active Directory-omgeving en selecteer **Volgende**.
+
+   ![Apparaatbesturingssysteem](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-device-operating-systems.png)
 
 1. Voer bij **SCP-configuratie** de volgende stappen uit voor elke forest waarvoor u wilt dat Azure AD Connect de SCP configureert, en klik vervolgens op **Volgende**.
 
@@ -116,17 +114,9 @@ Ga als volgt te werk om een hybride Azure AD-koppeling te configureren via Azure
 
    ![SCP](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-scp-configuration.png)
 
-1. Selecteer bij **Apparaatbesturingssystemen** de besturingssystemen die worden gebruikt door apparaten in uw Active Directory-omgeving en selecteer **Volgende**.
-
-   ![Apparaatbesturingssysteem](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-device-operating-systems.png)
-
 1. Selecteer bij **Klaar om te configureren** de optie **Configureren**.
 
-   ![Klaar om te configureren](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-ready-to-configure.png)
-
 1. Selecteer bij **Configuratie voltooid** de optie **Afsluiten**.
-
-   ![Configuratie voltooid](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-configuration-complete.png)
 
 ## <a name="enable-windows-down-level-devices"></a>Downlevel Windows-apparaten inschakelen
 

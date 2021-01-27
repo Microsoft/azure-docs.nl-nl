@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f0ae4ac4cf50eb6e54d41ff25e1cc671e76819ee
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 62030d1c208fc778476f49e5b3165e46e6aa0d66
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200801"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878847"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Azure-beveiligings basislijn voor Linux Virtual Machines
 
@@ -852,7 +852,7 @@ Naast het gebruik van Wijzigingen bijhouden voor het bewaken van software toepas
 
 * [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Informatie over het downloaden van de VM-sjabloon](../windows/download-template.md)
+* [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
 **Azure Security Center bewaking**: niet beschikbaar
 
@@ -896,7 +896,7 @@ Naast het gebruik van Wijzigingen bijhouden voor het bewaken van software toepas
 
 In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in combi natie met de Azure Automation desired state Configuration worden geholpen bij het verg Roten en onderhouden van de beveiligings vereisten.
 
-* [Informatie over het downloaden van de VM-sjabloon](../windows/download-template.md)
+* [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
 * [Informatie over het maken van ARM-sjablonen](../windows/ps-template.md)
 

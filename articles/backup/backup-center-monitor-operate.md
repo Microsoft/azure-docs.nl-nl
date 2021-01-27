@@ -3,20 +3,20 @@ title: Back-ups bewaken en gebruiken in het Backup-centrum
 description: In dit artikel wordt uitgelegd hoe u back-ups op schaal kunt bewaken en gebruiken met behulp van Back-upcentrum
 ms.topic: conceptual
 ms.date: 09/01/2020
-ms.openlocfilehash: 29e09e502e83ea67af290f206ee0e68b847b2069
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ce3b0f00c51e9b466a9ed040b677df811448b1d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90995271"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893775"
 ---
-# <a name="monitor-and-operate-backups-using-backup-center"></a>Back-ups bewaken en gebruiken in het Backup-centrum
+# <a name="monitor-and-operate-backups-using-backup-center-preview"></a>Back-ups controleren en gebruiken met behulp van Back-upcentrum (preview-versie)
 
 Als back-upbeheerder kunt u het Back-upcentrum gebruiken als een enkel glas venster om uw taken en de inventaris van de back-up dagelijks te bewaken. U kunt Back-upcentrum ook gebruiken om uw normale bewerkingen uit te voeren, zoals het reageren op aanvragen voor back-ups op aanvraag, het herstellen van back-ups, het maken van back-upbeleid, enzovoort.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup en Azure Database for PostgreSQL Server Backup.
+* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup, SQL in azure VM backup, SAP HANA in azure VM backup, Azure Files backup en Azure Database for PostgreSQL Server Backup.
 * Raadpleeg de [ondersteunings matrix](backup-center-support-matrix.md) voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's.
 
 ## <a name="backup-instances"></a>Back-upinstanties

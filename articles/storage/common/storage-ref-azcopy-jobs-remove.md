@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: b1f1b58e9cce061aaa313457ec43256a766e3a2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2744c2a082b5321fb671de08301981fd17396640
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87281970"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879085"
 ---
 # <a name="azcopy-jobs-remove"></a>azcopy jobs remove
 
@@ -29,7 +29,7 @@ azcopy jobs remove [jobID] [flags]
 ## <a name="related-conceptual-articles"></a>Gerelateerde conceptuele artikelen
 
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
-- [Gegevens overdragen met AzCopy en Blob Storage](storage-use-azcopy-blobs.md)
+- [Gegevens overdragen met AzCopy en Blob Storage](./storage-use-azcopy-v10.md#transfer-data)
 - [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)
 

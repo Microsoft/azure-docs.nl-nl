@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/13/2018
 ms.author: genli
-ms.openlocfilehash: 2fd2efa9de3deff1fcf983ac0fa45e412357d312
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 512130928c8e18aad90bce351e3be85d6fbe03f0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "71057271"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878643"
 ---
 # <a name="troubleshoot-rdp-issues"></a>Problemen met RDP oplossen
 
@@ -36,7 +36,7 @@ In deze sectie komen de volgende problemen met het maken van een RDP-verbinding 
 - [Een interne fout oplossen](Troubleshoot-rdp-internal-error.md)
 - [Problemen in verband met een vaak verbroken verbinding oplossen](troubleshoot-rdp-intermittent-connectivity.md)
 - [Een algemene fout oplossen](troubleshoot-rdp-general-error.md)
-- [Verificatiefouten oplossen](troubleshoot-authentication-error-rdp-vm.md)
+- [Verificatiefouten oplossen](/troubleshoot/azure/virtual-machines/cannot-connect-rdp-azure-vm)
 - [Problemen met Azure VM RDP-verbinding oplossen op basis van gebeurtenis-id](event-id-troubleshoot-vm-rdp-connecton.md)
 - [Een RDP-fout in de VM oplossen die verband houdt met het statische IP-adres](troubleshoot-rdp-static-ip.md)
 - [Een RDP-fout in de VM oplossen die verband houdt met een uitgeschakelde NIC](troubleshoot-rdp-nic-disabled.md)
@@ -46,4 +46,3 @@ In deze sectie komen de volgende problemen met het maken van een RDP-verbinding 
 - [Firewall van gastbesturingssysteem blokkeert inkomend verkeer](guest-os-firewall-blocking-inbound-traffic.md)
 - [Firewall van gastbesturingssysteem is onjuist geconfigureerd](guest-os-firewall-misconfigured.md) 
 - [Een RDP-fout oplossen die verband houdt met netvsc.sys](troubleshoot-rdp-driver-netvsc.md)
-

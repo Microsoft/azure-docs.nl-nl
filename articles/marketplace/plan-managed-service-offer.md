@@ -8,12 +8,12 @@ author: Microsoft-BradleyWright
 ms.author: brwrigh
 ms.reviewer: anbene
 ms.date: 12/23/2020
-ms.openlocfilehash: a504969d23fce8000119aadf9e45d599da0894f0
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 57a6883a2c4fff14507df27b55ac0f6621306bf5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918117"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879272"
 ---
 # <a name="how-to-plan-a-managed-service-offer-for-the-microsoft-commercial-marketplace"></a>Een beheerde service aanbieding plannen voor de micro soft Commercial Marketplace
 
@@ -25,7 +25,7 @@ Beheerde services zijn Azure Marketplace-aanbiedingen waarmee cross-tenants en b
 
 Als u een beheerde service wilt publiceren, moet u een goud of zilver micro soft-competentie hebben behaald in het Cloud platform. Deze competentie toont uw expertise aan klanten. Zie [Microsoft Partner Network-competenties](https://partner.microsoft.com/membership/competencies)voor meer informatie.
 
-Aanbiedingen moeten voldoen aan alle toepasselijke [certificerings beleidsregels voor commerciële Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies) om te worden gepubliceerd op Azure Marketplace.
+Aanbiedingen moeten voldoen aan alle toepasselijke [certificerings beleidsregels voor commerciële Marketplace](/legal/marketplace/certification-policies) om te worden gepubliceerd op Azure Marketplace.
 
 ## <a name="customer-leads"></a>Leads van klanten
 

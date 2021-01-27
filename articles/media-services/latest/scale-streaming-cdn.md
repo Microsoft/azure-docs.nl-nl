@@ -1,24 +1,9 @@
 ---
-title: Inhoud streamen met CDN-integratie
-titleSuffix: Azure Media Services
-description: Meer informatie over het streamen van inhoud met CDN-integratie en het vooraf ophalen en Origin-Assist CDN-prefetch.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: conceptual
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: 6bdf6015ca5633c77280111a55055a7394cee5bd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001368"
+# <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Verplichte velden. Meer informatie over aka.ms/skyeye/meta.
+Titel: inhoud streamen met CDN-integratie: beschrijving van Azure Media Services: meer informatie over het streamen van inhoud met CDN-integratie en het vooraf ophalen en Origin-Assist van CDN-prefetch.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 08/31/2020 MS. Author: inhenkel
 ---
+
 # <a name="stream-content-with-cdn-integration"></a>Inhoud streamen met CDN-integratie
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

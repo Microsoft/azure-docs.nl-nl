@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philMea
-ms.openlocfilehash: bed5373cbb9967bd1d86bb80bb3a449430c3b6ae
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 2a37e716b7804b11ab396909f746af84294bb4e3
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044778"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895268"
 ---
 # <a name="drawing-package-requirements"></a>Vereisten voor tekenpakketten
 
@@ -106,7 +106,7 @@ Ongeacht het aantal entiteits tekeningen dat zich in de buiten-laag bevindt, bev
 * Buitens moeten worden getekend als veelhoek, poly lijn (gesloten), cirkel of ellips (gesloten).
 * Buiten kant kan overlappen, maar worden in één geometrie opgelost.
 * De resulterende niveau functie moet ten minste 4 vier Kante meters zijn.
-* De resulterende niveau functie mag niet groter zijn dan 400 vier Kante meters.
+* De resulterende niveau functie mag niet groter zijn dan 400.000 vier Kante meters.
 
 Als de laag meerdere overlappende polylijnen bevat, worden de polylinen opgelost in een functie met één niveau. Als de laag echter meerdere niet-overlappende polylijnen bevat, heeft de resulterende niveau functie een multi-veelhoekige weer gave.
 

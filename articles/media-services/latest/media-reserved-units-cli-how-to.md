@@ -1,5 +1,5 @@
 ---
-title: CLI gebruiken om gereserveerde media-eenheden (MRUs) te schalen-Azure | Microsoft Docs
+title: CLI gebruiken om gereserveerde media-eenheden (MRUs) te schalen-Azure
 description: In dit onderwerp wordt beschreven hoe u CLI gebruikt om media verwerking met Azure Media Services te schalen.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: bcbe5fe71e5a4d4d39a29d4a6828c104f6891c0d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41026a64d6f7549c5a268493cfb5975838002df2
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617142"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895302"
 ---
 # <a name="how-to-scale-media-reserved-units"></a>Gereserveerde media-eenheden schalen
 

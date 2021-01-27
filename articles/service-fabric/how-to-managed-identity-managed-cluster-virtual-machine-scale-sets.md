@@ -4,19 +4,19 @@ description: In dit artikel wordt uitgelegd hoe u een beheerde identiteit kunt t
 ms.topic: how-to
 ms.date: 11/24/2020
 ms.custom: references_regions
-ms.openlocfilehash: 00e679b07a44b799b6ac6677201bb59eeddcd6cf
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 9edcf75451f43f2a00cd01d5ca7f385704b1ea7f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841467"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878423"
 ---
 # <a name="add-a-managed-identity-to-a-service-fabric-managed-cluster-node-type-preview"></a>Een beheerde identiteit toevoegen aan een Service Fabric beheerd cluster knooppunt type (preview-versie)
 
-Elk knooppunt type in een door Service Fabric beheerd cluster wordt ondersteund door een schaalset voor virtuele machines. Om beheerde identiteiten te kunnen gebruiken met een beheerd cluster knooppunt type, is er een eigenschap `vmManagedIdentity` toegevoegd aan de definities van knooppunt typen met een lijst met identiteiten die kunnen worden gebruikt `userAssignedIdentities` . De functionaliteit komt overeen met de manier waarop beheerde identiteiten kunnen worden gebruikt in niet-beheerde clusters, zoals het gebruik van een beheerde identiteit met de [Azure Key Vault extensie voor virtuele-machine schaal sets](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
+Elk knooppunt type in een door Service Fabric beheerd cluster wordt ondersteund door een schaalset voor virtuele machines. Om beheerde identiteiten te kunnen gebruiken met een beheerd cluster knooppunt type, is er een eigenschap `vmManagedIdentity` toegevoegd aan de definities van knooppunt typen met een lijst met identiteiten die kunnen worden gebruikt `userAssignedIdentities` . De functionaliteit komt overeen met de manier waarop beheerde identiteiten kunnen worden gebruikt in niet-beheerde clusters, zoals het gebruik van een beheerde identiteit met de [Azure Key Vault extensie voor virtuele-machine schaal sets](../virtual-machines/extensions/key-vault-windows.md).
 
 
-Zie [deze sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-1-NT-MI)voor een voor beeld van een service Fabric beheerde cluster implementatie die gebruikmaakt van een beheerde identiteit op een knooppunt type. Raadpleeg de [Veelgestelde vragen over beheerde clusters](https://docs.microsoft.com/azure/service-fabric/faq-managed-cluster#what-regions-are-supported-in-the-preview)voor een lijst met ondersteunde regio's.
+Zie [deze sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-1-NT-MI)voor een voor beeld van een service Fabric beheerde cluster implementatie die gebruikmaakt van een beheerde identiteit op een knooppunt type. Raadpleeg de [Veelgestelde vragen over beheerde clusters](./faq-managed-cluster.md#what-regions-are-supported-in-the-preview)voor een lijst met ondersteunde regio's.
 
 > [!NOTE]
 > Er worden op dit moment alleen door de gebruiker toegewezen identiteiten ondersteund voor deze functie.
@@ -26,7 +26,7 @@ Zie [deze sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-temp
 Voordat u begint:
 
 * Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
-* Als u van plan bent Power shell te gebruiken, moet u de Azure CLI [installeren](https://docs.microsoft.com/cli/azure/install-azure-cli) om CLI-referentie opdrachten uit te voeren.
+* Als u van plan bent Power shell te gebruiken, moet u de Azure CLI [installeren](/cli/azure/install-azure-cli) om CLI-referentie opdrachten uit te voeren.
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Een door de gebruiker toegewezen beheerde identiteit maken 
 
@@ -131,4 +131,4 @@ Fout bij het goed toevoegen van een roltoewijzing wordt voldaan aan de volgende 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Een app implementeren naar een beheerde Service Fabric-cluster](https://docs.microsoft.com/azure/service-fabric/tutorial-managed-cluster-deploy-app) 
+> [Een app implementeren naar een beheerde Service Fabric-cluster](./tutorial-managed-cluster-deploy-app.md)

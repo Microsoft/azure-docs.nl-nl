@@ -12,18 +12,19 @@ ms.date: 01/12/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 63bd44140ea5c355c3bb1a891a21e6c2e73ab041
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: bf1057276a543c18b746bb60b7e7a54bf28dec6f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98679497"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98892559"
 ---
-# <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
+# <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
 Als ontwikkelaar van een toepassing kunt u de System for Cross-Domain Identity Management (SCIM)-gebruikersbeheer-API gebruiken om het automatisch inrichten van gebruikers en groepen tussen uw toepassing en Azure AD mogelijk te maken. In dit artikel wordt beschreven hoe u een SCIM-eindpunt bouwt en integreert met de Azure AD-inrichtingsservice. De SCIM-specificatie biedt een gemeenschappelijk schema voor het inrichten van gebruikers. Bij gebruik in combinatie met federatiestandaarden zoals SAML of OpenID Connect, biedt SCIM beheerders een end-to-end, op standaarden gebaseerde oplossing voor toegangsbeheer.
 
-SCIM is een gestandaardiseerde definitie van twee eindpunten: een /Users-eindpunt en een /Groups-eindpunt. Er worden algemene REST-werkwoorden gebruikt om objecten te maken, bij te werken en te verwijderen, en een vooraf gedefinieerd schema voor algemene kenmerken zoals groepsnaam, gebruikersnaam, voornaam, achternaam en e-mailadres. Apps die een SCIM 2.0-REST API bieden, kunnen de nadelen van het werken met een eigen API voor gebruikersbeheer verminderen of elimineren. Elke compatibele SCIM-client weet bijvoorbeeld hoe u een HTTP POST van een JSON-object naar het/users-eind punt kunt maken om een nieuwe gebruikersvermelding te maken. Apps die voldoen aan de SCIM-standaard kunnen direct profiteren van bestaande clients, hulpprogramma's en code, in plaats van dat ze een iets andere API voor dezelfde basisacties moeten gebruiken. 
+SCIM is een gestandaardiseerde definitie van twee eind punten: een `/Users` eind punt en een `/Groups` eind punt. Er worden algemene REST-werkwoorden gebruikt om objecten te maken, bij te werken en te verwijderen, en een vooraf gedefinieerd schema voor algemene kenmerken zoals groepsnaam, gebruikersnaam, voornaam, achternaam en e-mailadres. Apps die een SCIM 2.0-REST API bieden, kunnen de nadelen van het werken met een eigen API voor gebruikersbeheer verminderen of elimineren. Elke compatibele SCIM-client weet bijvoorbeeld hoe u een HTTP POST van een JSON-object naar het `/Users` eind punt kunt maken om een nieuwe gebruikers vermelding te maken. Apps die voldoen aan de SCIM-standaard kunnen direct profiteren van bestaande clients, hulpprogramma's en code, in plaats van dat ze een iets andere API voor dezelfde basisacties moeten gebruiken. 
 
 ![Inrichten vanuit Azure AD naar een app met SCIM](media/use-scim-to-provision-users-and-groups/scim-provisioning-overview.png)
 
@@ -748,7 +749,9 @@ De Azure AD-inrichtingsservice werkt momenteel met de IP-bereiken voor AzureActi
 
 Nu u uw schema hebt ontworpen en de Azure AD SCIM-implementatie begrijpt, kunt u aan de slag met het ontwikkelen van uw SCIM-eindpunt. In plaats van helemaal opnieuw te beginnen en de implementatie volledig zelf te bouwen, kunt u gebruikmaken van de open source SCIM-bibliotheken die zijn gepubliceerd door de SCIM-community.
 
-De open source .NET core [referentiecode](https://aka.ms/SCIMReferenceCode) die is gepubliceerd door het Azure AD-inrichtingsteam, is een van de resources die u kunt gebruiken voor het ontwikkelen. Nadat u het SCIM-eindpunt hebt gemaakt, moet u het testen. U kunt de verzameling [postman tests ](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) gebruiken die als onderdeel van de referentiecode worden gegeven, of door de voorbeeld aanvragen/antwoorden uit te voeren die [hierboven](#user-operations) worden genoemd.  
+Zie [een voor beeld scim-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md)voor meer informatie over het bouwen van een scim-eind punt met voor beelden.
+
+Het voor beeld van een open source .NET core- [referentie code](https://aka.ms/SCIMReferenceCode) gepubliceerd door het Azure AD-inrichtings team is een van de bronnen waarmee u uw ontwikkeling kunt starten. Nadat u het SCIM-eindpunt hebt gemaakt, moet u het testen. U kunt de verzameling [postman tests ](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) gebruiken die als onderdeel van de referentiecode worden gegeven, of door de voorbeeld aanvragen/antwoorden uit te voeren die [hierboven](#user-operations) worden genoemd.  
 
    > [!Note]
    > De referentiecode is bedoeld om u te helpen bij het bouwen van uw SCIM-eindpunt en wordt 'AS IS' aangeboden. Bijdragen van de community zijn welkom bij het bouwen en onderhouden van de code.
@@ -1127,11 +1130,17 @@ Toepassingen die ondersteuning bieden voor het SCIM-profiel dat in dit artikel w
 
 1. Meld u aan bij de [Azure Active Directory Portal](https://aad.portal.azure.com). U kunt toegang krijgen tot een gratis proefversie van Azure Active Directory met P2-licenties door u aan te melden voor het [ontwikkelaarsprogramma](https://developer.microsoft.com/office/dev-program)
 2. Selecteer **Enterprise-toepassingen** in het linkerdeelvenster. Er wordt een lijst met alle geconfigureerde apps weergegeven, met inbegrip van apps die zijn toegevoegd vanuit de galerie.
-3. Select **+ Nieuwe toepassing** > **Alle** > **Niet-galerie toepassing**.
-4. Voer een naam in voor uw toepassing en selecteer **Toevoegen** om een app-object te maken. De nieuwe app wordt toegevoegd aan de lijst met bedrijfstoepassingen en wordt geopend op het scherm voor het beheren van apps.
+3. Selecteer **+ nieuwe toepassing**  >  **+ Maak uw eigen toepassing**.
+4. Voer een naam in voor uw toepassing, kies de optie *een andere toepassing integreren die u niet in de galerie vindt* en selecteer **toevoegen** om een app-object te maken. De nieuwe app wordt toegevoegd aan de lijst met bedrijfstoepassingen en wordt geopend op het scherm voor het beheren van apps.
 
-   ![Schermopname van de Azure AD-toepassingsgalerie](media/use-scim-to-provision-users-and-groups/scim-figure-2a.png)<br/>
-   *Azure AD-toepassingsgalerie*
+   ![Scherm opname toont de Azure AD-toepassings galerie ](media/use-scim-to-provision-users-and-groups/scim-figure-2b-1.png)
+    *Azure AD-toepassings galerie*
+
+   > [!NOTE]
+   > Als u de oude app Gallery-ervaring gebruikt, volgt u de onderstaande scherm gids.
+   
+   ![Scherm afbeelding toont de Azure AD-galerie met oude apps die de Azure AD-ervaring voor ](media/use-scim-to-provision-users-and-groups/scim-figure-2a.png)
+    *oude apps Gallery* heeft
 
 5. Selecteer in het scherm voor het beheren van apps **Inrichting** in het linker deelvenster.
 6. Selecteer **Automatisch** in het menu **Inrichtingsmodus**.
@@ -1235,6 +1244,7 @@ We raden u aan om uw bestaande documentatie bij te werken en de integratie in uw
 
 ## <a name="related-articles"></a>Verwante artikelen:
 
+* [Een voor beeld van een SCIM-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md)
 * [Automatisch gebruikers voor SaaS-apps inrichten en de inrichting ongedaan maken](user-provisioning.md)
 * [Kenmerktoewijzingen aanpassen voor het inrichten van gebruikers](customize-application-attributes.md)
 * [Expressies schrijven voor kenmerktoewijzingen](functions-for-customizing-application-data.md)

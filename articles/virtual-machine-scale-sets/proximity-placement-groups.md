@@ -9,16 +9,16 @@ ms.subservice: availability
 ms.date: 07/01/2019
 ms.reviewer: zivr
 ms.custom: mimckitt
-ms.openlocfilehash: 1525ef7c1e19aa9821df3f111fdce3518d37afd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3a7b50c82b3deffa7526bfcfe799972c3b02762
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87011053"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98877863"
 ---
 # <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Voor beeld: proximity-plaatsings groepen maken en gebruiken met Power shell
 
-Als u virtuele machines zo dicht mogelijk wilt ophalen, moet u de schaalset binnen een [proximity-plaatsings groep](co-location.md#preview-proximity-placement-groups)implementeren.
+Als u virtuele machines zo dicht mogelijk wilt ophalen, moet u de schaalset binnen een [proximity-plaatsings groep](../virtual-machines/co-location.md#proximity-placement-groups)implementeren.
 
 Een proximity-plaatsings groep is een logische groepering die wordt gebruikt om ervoor te zorgen dat Azure Compute-resources zich fysiek dicht bij elkaar bevinden. Proximity-plaatsings groepen zijn handig voor werk belastingen waarbij lage latentie een vereiste is.
 

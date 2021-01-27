@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2499a89907eb63f01adbc80a6d206911c09c1259
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 982c33c5c55e32ce48131a4b2f0911e4f23dd408
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91265949"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98877285"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Voorwaardelijke toegang: verouderde verificatie blok keren
 
@@ -30,16 +30,16 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **insluiten**selecteert u **alle gebruikers**.
-   1. Onder **uitsluiten**selecteert u **gebruikers en groepen** en kiest u alle accounts die de mogelijkheid moeten hebben om verouderde verificatie te gebruiken. Sluit ten minste één account uit om te voor komen dat uzelf wordt vergrendeld. Als u geen account uitsluit, kunt u dit beleid niet maken.
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **insluiten** selecteert u **alle gebruikers**.
+   1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u alle accounts die de mogelijkheid moeten hebben om verouderde verificatie te gebruiken. Sluit ten minste één account uit om te voor komen dat uzelf wordt vergrendeld. Als u geen account uitsluit, kunt u dit beleid niet maken.
    1. Selecteer **Gereed**.
 1. Selecteer onder **Cloud-apps of-acties** **alle Cloud-apps**.
    1. Selecteer **Gereed**.
 1. Stel onder **voor waarden**  >  **client-apps** **configureren** in op **Ja**.
    1. Controleer alleen de vakken **Exchange ActiveSync-clients** en **andere clients**.
    1. Selecteer **Gereed**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang blok keren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang blok keren**.
    1. Kies **Selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in op **alleen rapport**.
 1. Selecteer **maken** om uw beleid in te stellen.
@@ -52,4 +52,4 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
 
 [Aanmeld gedrag simuleren met het What If hulp programma voor voorwaardelijke toegang](troubleshoot-conditional-access-what-if.md)
 
-[Een multifunctioneel apparaat of toepassing instellen om e-mail te verzenden met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)
+[Een multifunctioneel apparaat of toepassing instellen om e-mail te verzenden met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)

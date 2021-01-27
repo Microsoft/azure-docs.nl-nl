@@ -1,6 +1,5 @@
 ---
-title: Media Services architecturen
-titleSuffix: Azure Media Services
+title: Media Services-architecturen
 description: In dit artikel worden architecturen voor Media Services beschreven.
 services: media-services
 documentationcenter: ''
@@ -12,14 +11,14 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: inhenkel
-ms.openlocfilehash: c14dbe4253696e01e99111a24319e455c1d551e9
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: ad464eb1c0b6dec694c7c40868a0f95fcfeaf6e8
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533992"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98891485"
 ---
-# <a name="media-services-architectures"></a>Media Services architecturen
+# <a name="media-services-architectures"></a>Media Services-architecturen
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
@@ -29,7 +28,7 @@ Met een oplossing voor live streamen kunt u video in realtime vastleggen en deze
 
 Deze oplossing is gebouwd op basis van de door Azure beheerde services: Media Services en Content Delivery Network. Deze services worden uitgevoerd in een omgeving met hoge Beschik baarheid, patches en worden ondersteund, zodat u zich kunt concentreren op uw oplossing in plaats van de omgeving waarin ze worden uitgevoerd in.
 
-Zie [digitale media live streamen](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/digital-media-live-stream) in het Azure Architecture Center.
+Zie [digitale media live streamen](/azure/architecture/solution-ideas/articles/digital-media-live-stream) in het Azure Architecture Center.
 
 ## <a name="video-on-demand-digital-media"></a>Digitale video-on-demandmedia
 
@@ -37,13 +36,13 @@ Een eenvoudige video-on-demand-oplossing die u de mogelijkheid biedt om opgenome
 
 Deze oplossing is gebouwd op basis van de door Azure beheerde services: Blob Storage, Content Delivery Network en Azure Media Player. Deze services worden uitgevoerd in een omgeving met hoge Beschik baarheid, patches en worden ondersteund, zodat u zich kunt concentreren op uw oplossing in plaats van de omgeving waarin ze worden uitgevoerd in.
 
-Zie [video-on-demand digitale media](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/digital-media-video) in het Azure Architecture Center.
+Zie [video-on-demand digitale media](/azure/architecture/solution-ideas/articles/digital-media-video) in het Azure Architecture Center.
 
 ## <a name="gridwich-media-processing-system"></a>Gridwich-mediaverwerkingssysteem
 
 Het Gridwich-systeem bestelt aanbevolen procedures voor het verwerken en leveren van media-assets op Azure. Hoewel het Gridwich-systeem een specifiek medium is, kunnen de bericht verwerking en het gebeurtenis kader van toepassing zijn op elke stateless werk stroom voor gebeurtenis verwerking.
 
-Zie het [Gridwich-media verwerkings systeem](https://docs.microsoft.com/azure/architecture/reference-architectures/media-services/gridwich-architecture) in het Azure Architecture Center.
+Zie het [Gridwich-media verwerkings systeem](/azure/architecture/reference-architectures/media-services/gridwich-architecture) in het Azure Architecture Center.
 
 ## <a name="next-steps"></a>Volgende stappen
 

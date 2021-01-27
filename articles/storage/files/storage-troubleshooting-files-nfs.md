@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: jeffpatt
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 2a37c86268d2424971058021044c60185a25348f
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ed86cc76984388618c177590b3f6358421f09f65
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916453"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878490"
 ---
 # <a name="troubleshoot-azure-nfs-file-shares"></a>Problemen met Azure NFS-bestands shares oplossen
 
@@ -25,7 +25,7 @@ In dit artikel vindt u enkele veelvoorkomende problemen met betrekking tot Azure
 Azure Files geen alfanumerieke UID/GID toestaan. Idmapping moet daarom worden uitgeschakeld. 
 
 ### <a name="cause-2-idmapping-was-disabled-but-got-re-enabled-after-encountering-bad-filedir-name"></a>Oorzaak 2: idmapping is uitgeschakeld, maar opnieuw ingeschakeld na een onjuiste bestands-/mapnaam
-Zelfs als idmapping correct is uitgeschakeld, worden de instellingen voor het uitschakelen van idmapping in sommige gevallen overschreven. Als bijvoorbeeld de Azure Files een onjuiste bestands naam tegen komt, wordt een fout bericht weer gegeven. Als deze specifieke fout code wordt weer gegeven, besluit de NFS v 4,1 Linux-client om idmapping opnieuw in te scha kelen en de toekomstige aanvragen opnieuw te worden verzonden met een alfanumerieke UID/GID. Raadpleeg dit [artikel](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#:~:text=The%20Azure%20File%20service%20naming%20rules%20for%20directory,be%20no%20more%20than%20255%20characters%20in%20length)voor een lijst met niet-ondersteunde tekens in azure files. Dubbele punt is een van de niet-ondersteunde tekens. 
+Zelfs als idmapping correct is uitgeschakeld, worden de instellingen voor het uitschakelen van idmapping in sommige gevallen overschreven. Als bijvoorbeeld de Azure Files een onjuiste bestands naam tegen komt, wordt een fout bericht weer gegeven. Als deze specifieke fout code wordt weer gegeven, besluit de NFS v 4,1 Linux-client om idmapping opnieuw in te scha kelen en de toekomstige aanvragen opnieuw te worden verzonden met een alfanumerieke UID/GID. Raadpleeg dit [artikel](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata)voor een lijst met niet-ondersteunde tekens in azure files. Dubbele punt is een van de niet-ondersteunde tekens. 
 
 ### <a name="workaround"></a>Tijdelijke oplossing
 Controleer of idmapping is uitgeschakeld en niets opnieuw inschakelt en voer de volgende handelingen uit:
@@ -68,7 +68,7 @@ NFS is alleen beschikbaar voor opslag accounts met de volgende configuratie:
 - Laag-Premium
 - Account type-FileStorage
 - Redundantie-LRS
-- Regio's- [lijst met ondersteunde regio's](https://docs.microsoft.com/azure/storage/files/storage-files-how-to-create-nfs-shares?tabs=azure-portal#regional-availability)
+- Regio's- [lijst met ondersteunde regio's](./storage-files-how-to-create-nfs-shares.md?tabs=azure-portal#regional-availability)
 
 #### <a name="solution"></a>Oplossing
 
@@ -100,7 +100,7 @@ In het volgende diagram ziet u de connectiviteit met behulp van open bare eind p
 
 :::image type="content" source="media/storage-troubleshooting-files-nfs/connectivity-using-public-endpoints.jpg" alt-text="Diagram van connectiviteit van open bare eind punten." lightbox="media/storage-troubleshooting-files-nfs/connectivity-using-public-endpoints.jpg":::
 
-- [Privé-eindpunt](storage-files-networking-endpoints.md#create-a-private-endpoint)
+- [Persoonlijk eind punt](storage-files-networking-endpoints.md#create-a-private-endpoint)
     - De toegang is veiliger dan het service-eind punt.
     - Toegang tot de NFS-share via een persoonlijke koppeling is beschikbaar vanuit en buiten de Azure-regio van het opslag account (cross-Region, on-premises)
     - Virtual Network-peering met virtuele netwerken die worden gehost in het persoonlijke eind punt bieden NFS-share toegang tot de clients in gekoppelde virtuele netwerken.

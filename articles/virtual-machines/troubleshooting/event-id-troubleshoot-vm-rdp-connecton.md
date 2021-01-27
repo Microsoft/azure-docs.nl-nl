@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: 507cd6cfe9f251dbc304b579d634ff986b001264
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c293945a52dd810975b36144f224278163166ba8
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088594"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878440"
 ---
 # <a name="troubleshoot-azure-vm-rdp-connection-issues-by-event-id"></a>Problemen met Azure VM RDP-verbinding oplossen op basis van gebeurtenis-id 
 
@@ -156,19 +156,19 @@ Start-Service -Name "SessionEnv"
 
 Als u het certificaat niet kunt vernieuwen, voert u de volgende stappen uit om het certificaat te verwijderen:
 
-1. Open het vak **uitvoeren** op een andere virtuele machine in hetzelfde VNET, typ **MMC**en druk op **OK**. 
+1. Open het vak **uitvoeren** op een andere virtuele machine in hetzelfde VNET, typ **MMC** en druk op **OK**. 
 
 2. Selecteer in het menu **bestand** de optie **module toevoegen/verwijderen**.
 
-3. Selecteer in de lijst **beschik bare** modules de optie **certificaten**en selecteer vervolgens **toevoegen**.
+3. Selecteer in de lijst **beschik bare** modules de optie **certificaten** en selecteer vervolgens **toevoegen**.
 
-4. Selecteer **computer account**en selecteer **volgende**.
+4. Selecteer **computer account** en selecteer **volgende**.
 
-5. Selecteer **een andere computer**en voeg vervolgens het IP-adres van de virtuele machine toe die problemen ondervindt.
+5. Selecteer **een andere computer** en voeg vervolgens het IP-adres van de virtuele machine toe die problemen ondervindt.
    >[!Note]
    >Probeer het interne netwerk te gebruiken om te voor komen dat u een virtueel IP-adres gebruikt.
 
-6. Selecteer **volt ooien**en selecteer vervolgens **OK**.
+6. Selecteer **volt ooien** en selecteer vervolgens **OK**.
 
    ![Computer selecteren](./media/event-id-troubleshoot-vm-rdp-connecton/select-computer.png)
 
@@ -235,7 +235,7 @@ Dit probleem wordt veroorzaakt door beveiligings beleid. Wanneer oudere versies 
 
 RDP gebruikt TLS 1,0 als het standaard protocol. Het protocol kan echter worden gewijzigd in TLS 1,1, wat de nieuwe standaard is.
 
-Zie [problemen met verificatie fouten oplossen wanneer u RDP gebruikt om verbinding te maken met Azure VM](troubleshoot-authentication-error-rdp-vm.md#tls-version)om dit probleem op te lossen.
+Zie [problemen met verificatie fouten oplossen wanneer u RDP gebruikt om verbinding te maken met Azure VM](/troubleshoot/azure/virtual-machines/cannot-connect-rdp-azure-vm#tls-version)om dit probleem op te lossen.
 
 ## <a name="scenario-3"></a>Scenario 3
 

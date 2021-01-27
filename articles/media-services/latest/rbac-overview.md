@@ -1,5 +1,5 @@
 ---
-title: Toegangs beheer op basis van rollen voor Azure voor Media Services-accounts-Azure | Microsoft Docs
+title: Toegangs beheer op basis van rollen voor Azure voor Media Services-accounts-Azure
 description: In dit artikel wordt het toegangs beheer op basis van rollen (Azure RBAC) voor Azure Media Services-accounts beschreven.
 services: media-services
 documentationcenter: ''
@@ -12,18 +12,18 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 8fba3db14c2a950dd230a4721841b4baa9f64636
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1fab743c647c3628a79fffb3bf1060983c34d0aa
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426798"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895183"
 ---
 # <a name="azure-role-based-access-control-azure-rbac-for-media-services-accounts"></a>Op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC) voor Media Services accounts
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Op dit moment worden door Azure Media Services geen aangepaste rollen gedefinieerd die specifiek zijn voor de service. Klanten kunnen de ingebouwde rollen van **eigenaar** of **Inzender**gebruiken om volledige toegang te krijgen tot het Media Services-account. Het belangrijkste verschil tussen deze rollen is: de **eigenaar** kan bepalen wie toegang heeft tot een resource en de **mede werker** niet kan. De ingebouwde rol **lezer** kan ook worden gebruikt, maar de gebruiker of toepassing heeft alleen lees toegang tot de Media Services-api's. 
+Op dit moment worden door Azure Media Services geen aangepaste rollen gedefinieerd die specifiek zijn voor de service. Klanten kunnen de ingebouwde rollen van **eigenaar** of **Inzender** gebruiken om volledige toegang te krijgen tot het Media Services-account. Het belangrijkste verschil tussen deze rollen is: de **eigenaar** kan bepalen wie toegang heeft tot een resource en de **mede werker** niet kan. De ingebouwde rol **lezer** kan ook worden gebruikt, maar de gebruiker of toepassing heeft alleen lees toegang tot de Media Services-api's. 
 
 ## <a name="design-principles"></a>Ontwerpprincipes
 

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: c3e64b9366bb0b9f15902e571b5e5d6e7f6b3f15
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: f6ba22813139f5a4ad6c01073fe7f7b4b7d5346e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98723724"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878152"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Transact-SQL-functies die worden ondersteund in Azure Synapse SQL
 
@@ -55,7 +55,7 @@ Querytalen die in Synapse SQL worden gebruikt, kunnen afhankelijk van het verbru
 | **INSERT-instructie** | Ja | Nee |
 | **UPDATE-instructie** | Ja | Nee |
 | **DELETE-instructie** | Ja | Nee |
-| **MERGE-instructie** | Ja ([Preview-versie](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=azure-sqldw-latest&preserve-view=true)) | Nee |
+| **MERGE-instructie** | Ja ([Preview-versie](/sql/t-sql/statements/merge-transact-sql?view=azure-sqldw-latest&preserve-view=true)) | Nee |
 | **[Transacties](develop-transactions.md)** | Ja | Ja, van toepassing op metagegevensobjecten. |
 | **[Labels](develop-label.md)** | Ja | Nee |
 | **Gegevens laden** | Ja. Het hulpprogramma dat de voorkeur heeft, is de [COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-instructie, maar het systeem ondersteunt zowel BULKsgewijs laden (BCP) als [CETAS](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor het laden van gegevens. | Nee |

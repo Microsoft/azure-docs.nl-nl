@@ -1,25 +1,11 @@
 ---
-title: Ontwikkelen met v3-Api's
-titleSuffix: Azure Media Services
-description: Meer informatie over regels die van toepassing zijn op entiteiten en Api's bij het ontwikkelen met Media Services v3.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: conceptual
-ms.date: 10/23/2020
-ms.author: inhenkel
-ms.custom: seodec18
-ms.openlocfilehash: 416fb9fc4ce0622a710f2c119942edc4986ddd06
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790573"
+# <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Verplichte velden. Meer informatie over aka.ms/skyeye/meta.
+Titel: Ontwikkelen met v3 Api's: Azure Media Services beschrijving: meer informatie over regels die van toepassing zijn op entiteiten en Api's bij het ontwikkelen met Media Services v3. Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 10/23/2020 MS. Author: inhenkel MS. Custom: seodec18
+
 ---
+
 # <a name="develop-with-media-services-v3-apis"></a>Ontwikkelen met Media Services v3-API’s
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -32,10 +18,10 @@ In dit artikel worden regels beschreven die van toepassing zijn op entiteiten en
 
 Om te worden geautoriseerd voor toegang tot Media Services-resources en de API van Media Services, moet u eerst worden geverifieerd. Media Services biedt ondersteuning voor [verificatie op basis van Azure AD (Azure Active Directory)](../../active-directory/fundamentals/active-directory-whatis.md). Twee algemene verificatieopties zijn:
  
-* **Verificatie van service-principal** : Wordt gebruikt om een service te verifiëren (bijvoorbeeld: web-apps, functie-apps, logische apps, API en microservices). Toepassingen die meestal gebruikmaken van deze verificatiemethode, zijn apps waarmee daemonservices, services uit de middelste laag, of geplande taken worden uitgevoerd. Voor web-apps moet er bijvoorbeeld altijd een mid-tier zijn die verbinding maakt met Media Services met een service-principal.
-* **Gebruikersverificatie** : Wordt gebruikt om een persoon te verifiëren die de app gebruikt om te communiceren met Media Services-resources. De interactieve app moet de gebruiker eerst vragen om zijn/haar referenties. Een voorbeeld is een beheerconsole-app die door geautoriseerde gebruikers wordt gebruikt om coderingstaken of livestreams te bewaken.
+* **Verificatie van service-principal**: Wordt gebruikt om een service te verifiëren (bijvoorbeeld: web-apps, functie-apps, logische apps, API en microservices). Toepassingen die meestal gebruikmaken van deze verificatiemethode, zijn apps waarmee daemonservices, services uit de middelste laag, of geplande taken worden uitgevoerd. Voor web-apps moet er bijvoorbeeld altijd een mid-tier zijn die verbinding maakt met Media Services met een service-principal.
+* **Gebruikersverificatie**: Wordt gebruikt om een persoon te verifiëren die de app gebruikt om te communiceren met Media Services-resources. De interactieve app moet de gebruiker eerst vragen om zijn/haar referenties. Een voorbeeld is een beheerconsole-app die door geautoriseerde gebruikers wordt gebruikt om coderingstaken of livestreams te bewaken.
 
-Voor de API van Media Services is vereist dat de gebruiker of app die de REST API-aanvragen doet, toegang heeft tot het Media Services-account en beschikt over de rol **Inzender** of **Eigenaar** . Toegang tot de API met de rol **Lezer** is ook mogelijk, maar dan zijn alleen **Get** - of **List** -bewerkingen beschikbaar. Zie voor meer informatie [Azure op rollen gebaseerd toegangs beheer (Azure RBAC) voor Media Services accounts](rbac-overview.md).
+Voor de API van Media Services is vereist dat de gebruiker of app die de REST API-aanvragen doet, toegang heeft tot het Media Services-account en beschikt over de rol **Inzender** of **Eigenaar**. Toegang tot de API met de rol **Lezer** is ook mogelijk, maar dan zijn alleen **Get**- of **List**-bewerkingen beschikbaar.Zie voor meer informatie [Azure op rollen gebaseerd toegangs beheer (Azure RBAC) voor Media Services accounts](rbac-overview.md).
 
 In plaats van een service-principal te maken, kunt u overwegen beheerde identiteiten te gebruiken voor Azure-resources, om via Azure Resource Manager toegang te krijgen tot de API van Media Services. Zie [Wat zijn beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie over beheerde identiteiten voor Azure-resources.
 

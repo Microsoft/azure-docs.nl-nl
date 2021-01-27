@@ -45,6 +45,14 @@
           href: security-baseline.md
 - name: Instructiegidsen
   items:
+    - name: Klantacties
+      items:
+        - name: Serviceproviders weergeven en beheren
+          displayName: 'customer, update, visibility, control'
+          href: ./how-to/view-manage-service-providers.md
+        - name: Activiteit van serviceprovider bekijken
+          displayName: 'monitor, log, customer, visibility, transparency, control'
+          href: ./how-to/view-service-provider-activity.md
     - name: Een klant onboarden in Azure Lighthouse
       displayName: resource management
       href: ./how-to/onboard-customer.md
@@ -87,14 +95,6 @@
           href: ./how-to/deploy-policy-remediation.md
     - name: Azure Sentinel-integratie
       href: ./how-to/manage-sentinel-workspaces.md
-    - name: Klantacties
-      items:
-        - name: Serviceproviders weergeven en beheren
-          displayName: 'customer, update'
-          href: ./how-to/view-manage-service-providers.md
-        - name: Activiteit van serviceprovider bekijken
-          displayName: 'monitor, log'
-          href: ./how-to/view-service-provider-activity.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

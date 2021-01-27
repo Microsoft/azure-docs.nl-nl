@@ -1,5 +1,5 @@
 ---
-title: Meta gegevens schema voor uitvoer Azure Media Services | Microsoft Docs
+title: Meta gegevens schema voor uitvoer Azure Media Services
 description: Dit artikel geeft een overzicht van Azure Media Services v3 uitvoer van meta gegevens schema.
 author: IngridAtMicrosoft
 manager: femila
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: aa6d4edc4348fa850eeb7e8d91ce0791ee4c7170
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a27db81866760bff56c900a908162f356c01a66
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91336408"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895200"
 ---
 # <a name="output-metadata"></a>Uitvoermetagegevens
 

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.openlocfilehash: d5476bf1bfe2e222e115146c13f46e776d4bb497
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 23847c164ba59a8c46c2fdd5fb954b76ea251148
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657189"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98877676"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-postgresql"></a>Connectiviteits architectuur in Azure Database for PostgreSQL
 In dit artikel wordt uitgelegd wat de Azure Database for PostgreSQL connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for PostgreSQL data base-exemplaar van clients, zowel binnen als buiten Azure.
@@ -28,7 +28,7 @@ Wanneer de client verbinding maakt met de data base, wordt het connection string
 
 De Gateway Service wordt gehost op de groep stateless Compute-knoop punten die achter een IP-adres staan, wat uw client voor het eerst zou bereiken wanneer er verbinding wordt gemaakt met een Azure Database for PostgreSQL-server. 
 
-Als onderdeel van het onderhoud van de onderhouds beurt zullen wij Compute-hardware die als host fungeert voor de gateways periodiek vernieuwen om ervoor te zorgen dat we de veiligste en beste ervaring bieden. Wanneer de gateway-hardware wordt vernieuwd, wordt eerst een nieuwe ring van de reken knooppunten gebouwd. Deze nieuwe ring verzendt het verkeer voor alle nieuw gemaakte Azure Database for PostgreSQL servers en er is een ander IP-adres van oudere Gateway ringen in dezelfde regio om het verkeer te onderscheiden. Zodra de nieuwe ring volledig functioneel is, zijn de oudere Gateway hardware die bestaande servers levert, gepland voor het buiten gebruik stellen. Voordat u een gateway-hardware buiten gebruik stelt, worden klanten die hun servers uitvoeren en verbinding maken met oudere Gateway ringen via e-mail en in de Azure Portal, drie maanden vooraf gewaarschuwd voordat ze buiten gebruik worden gesteld. Het buiten gebruik stellen van gateways kan invloed hebben op de connectiviteit met uw servers als 
+Als onderdeel van het onderhoud van de service, zullen we de compute-hardware die als host fungeert voor de gateways periodiek vernieuwen om ervoor te zorgen dat we de veiligste en beste connectiviteits ervaring bieden. Wanneer de gateway-hardware wordt vernieuwd, wordt eerst een nieuwe ring van de reken knooppunten gebouwd. Deze nieuwe ring verzendt het verkeer voor alle nieuw gemaakte Azure Database for PostgreSQL servers en er is een ander IP-adres van oudere Gateway ringen in dezelfde regio om het verkeer te onderscheiden. De oudere Gateway-hardware blijft bestaande servers behouden, maar is gepland voor het buiten gebruik stellen in de toekomst. Voordat u een gateway-hardware buiten gebruik stelt, worden klanten die hun servers uitvoeren en verbinding maken met oudere Gateway ringen via e-mail en in de Azure Portal, drie maanden vooraf gewaarschuwd voordat ze buiten gebruik worden gesteld. Het buiten gebruik stellen van gateways kan invloed hebben op de connectiviteit met uw servers als 
 
 * U kunt de IP-adressen van de gateway in de connection string van uw toepassing. Het wordt **niet aanbevolen**. Gebruik Fully Qualified Domain Name (FQDN) van uw server in de indeling <servername> . postgres.database.Azure.com, in de Connection String voor uw toepassing. 
 * U werkt de nieuwere gateway-IP-adressen in de client-side firewall niet bij zodat uitgaand verkeer de nieuwe gateway ringen kan bereiken.
@@ -46,17 +46,17 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Australië-Central2     | 20.36.113.0  | | |
 | Australië - oost | 13.75.149.87, 40.79.161.1     |  | |
 | Australië - zuidoost |191.239.192.109, 13.73.109.251   |  | |
-| Brazil South |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
+| Brazilië - zuid |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
 | Canada - midden |40.85.224.249  | | |
 | Canada - oost | 40.86.226.166    | | |
-| Central US | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
+| VS - centraal | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
 | China East | 139.219.130.35    | | |
 | China - oost 2 | 40.73.82.1  | | |
 | China - noord | 139.219.15.17    | | |
 | China - noord 2 | 40.73.50.0     | | |
 | Azië - oost | 191.234.2.139, 52.175.33.150, 13.75.33.20, 13.75.33.21     | | |
 | VS - oost |40.71.8.203, 40.71.83.113 |40.121.158.30|191.238.6.43 |
-| US - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  | | |
+| VS - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  | | |
 | Frankrijk - centraal | 40.79.137.0, 40.79.129.1  | | |
 | Frankrijk - zuid | 40.79.177.0     | | |
 | Duitsland - centraal | 51.4.144.100     | | |
@@ -64,7 +64,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | India - centraal | 104.211.96.159     | | |
 | India - zuid | 104.211.224.146  | | |
 | India - west | 104.211.160.80    | | |
-| Japan East | 13.78.61.196, 191.237.240.43, 40.79.192.23 | | |
+| Japan - oost | 13.78.61.196, 191.237.240.43, 40.79.192.23 | | |
 | Japan - west | 104.214.148.156, 191.238.68.11, 40.74.96.6, 40.74.96.7    | | |
 | Korea - centraal | 52.231.32.42   | | |
 | Korea - zuid | 52.231.200.86    | | |
@@ -72,7 +72,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Europa - noord | 52.138.224.6, 52.138.224.7  |40.113.93.91 |191.235.193.75 |
 | Zuid-Afrika - noord  | 102.133.152.0    | | |
 | Zuid-Afrika - west | 102.133.24.0   | | |
-| South Central US |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
+| VS - zuid-centraal |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
 | Azië - zuidoost | 104.43.15.0, 23.100.117.95, 40.78.233.2, 23.98.80.12     | | |
 | UAE - centraal | 20.37.72.64  | | |
 | VAE - noord | 65.52.248.0    | | |
@@ -81,7 +81,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | VS - west-centraal | 13.78.145.25     | | |
 | Europa -west |13.69.105.208,104.40.169.187 |40.68.37.158 | 191.237.232.75|
 | VS - west |13.86.216.212, 13.86.217.212 |104.42.238.205  | 23.99.34.75|
-| West US 2 | 13.66.226.202  | | |
+| VS - west 2 | 13.66.226.202  | | |
 ||||
 
 ## <a name="next-steps"></a>Volgende stappen

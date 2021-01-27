@@ -1,5 +1,5 @@
 ---
-title: Video's coderen met een standaard encoder in Media Services-Azure | Microsoft Docs
+title: Video's coderen met het standaard coderings programma in Media Services
 description: In dit onderwerp wordt uitgelegd hoe u het standaard coderings programma in Media Services kunt gebruiken om een invoer video te coderen met een automatisch gegenereerde bitrate ladder, op basis van de invoer resolutie en bitrate.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 05accd69f1868b8b0e0f6dbd4fb5c21ee843ec5e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5b973d17e10f3dbb75f5208d9003b4f8118b37c7
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297712"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98891400"
 ---
 #  <a name="encode-with-an-auto-generated-bitrate-ladder"></a>Coderen met een automatisch gegenereerde bitrate voor bitsnelheid
 
@@ -31,7 +31,7 @@ In dit artikel wordt uitgelegd hoe u het standaard coderings programma in Media 
 
 ### <a name="encoding-for-streaming"></a>Code ring voor streaming
 
-Wanneer u de **AdaptiveStreaming** -voor instelling in **transform**gebruikt, krijgt u een uitvoer die geschikt is voor levering via streaming-protocollen zoals HLS en streepje. Wanneer u deze voor instelling gebruikt, bepaalt de service intelligent het aantal video lagen dat moet worden gegenereerd en op welke bitrate en oplossing. De uitvoer inhoud bevat MP4-bestanden waarin met AAC gecodeerde audio en H. 264 gecodeerde video niet is geleaveerd.
+Wanneer u de **AdaptiveStreaming** -voor instelling in **transform** gebruikt, krijgt u een uitvoer die geschikt is voor levering via streaming-protocollen zoals HLS en streepje. Wanneer u deze voor instelling gebruikt, bepaalt de service intelligent het aantal video lagen dat moet worden gegenereerd en op welke bitrate en oplossing. De uitvoer inhoud bevat MP4-bestanden waarin met AAC gecodeerde audio en H. 264 gecodeerde video niet is geleaveerd.
 
 Zie [een bestand streamen](stream-files-dotnet-quickstart.md)voor een voor beeld van hoe deze standaard instelling wordt gebruikt.
 

@@ -1,5 +1,5 @@
 ---
-title: Videobestanden streamen met Azure Media Services - Node.js | Microsoft Docs
+title: Video bestanden streamen met Azure Media Services-Node.js
 description: Volg de stappen in deze zelfstudie om een nieuw Azure Media Services-account te maken, een bestand te coderen en dit vervolgens te streamen naar Azure Media Player.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc, devx-track-js
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 38207ac47d2e58c689f1933a6ade6d5c86cd44ad
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: HT
+ms.openlocfilehash: 711db5135345fd9b69da9aaea5bc4dbb929d27c9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91268669"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895133"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---nodejs"></a>Zelfstudie: Extern bestand coderen op basis van URL en video streamen - Node.js
 
@@ -55,9 +55,9 @@ Open [index. js](https://github.com/Azure-Samples/media-services-v3-node-tutoria
 In het voorbeeld worden de volgende acties uitgevoerd:
 
 1. Er wordt een **transformatie** gemaakt (eerst wordt gecontroleerd of de opgegeven transformatie bestaat). 
-2. Er wordt een uitvoer**asset** gemaakt die wordt gebruikt als uitvoer van de coderings**taak**.
+2. Er wordt een uitvoer **asset** gemaakt die wordt gebruikt als uitvoer van de coderings **taak**.
 3. De invoer van de **taak** wordt gemaakt en is gebaseerd op een HTTPS-URL.
-4. De coderings**taak** wordt met behulp van de eerder gemaakte invoer en uitvoer verzonden.
+4. De coderings **taak** wordt met behulp van de eerder gemaakte invoer en uitvoer verzonden.
 5. De status van de taak wordt gecontroleerd.
 6. Er wordt een **streaming-locator** gemaakt.
 7. Er worden streaming-URL's samengesteld.

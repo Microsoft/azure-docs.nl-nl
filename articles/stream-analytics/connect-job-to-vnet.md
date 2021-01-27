@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 99563760bf37c4046e7dd81e779fedbe415380bc
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 4701cb4122b4196b08b2a427b34d49c7784b91a7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019479"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878236"
 ---
 # <a name="connect-stream-analytics-jobs-to-resources-in-an-azure-virtual-network-vnet"></a>Stream Analytics-taken verbinden met resources in een Azure Virtual Network (VNet)
 
@@ -25,9 +25,9 @@ Er zijn echter twee manieren om uw Stream Analytics-taken veilig te verbinden me
 Uw Stream Analytics-taak accepteert geen binnenkomende verbindingen.
 
 ## <a name="private-endpoints-in-stream-analytics-clusters"></a>Privé-eind punten in Stream Analytics clusters.
-[Stream Analytics clusters](https://docs.microsoft.com/azure/stream-analytics/cluster-overview) is een specifiek berekenings cluster voor tenants waarop u uw stream Analytics-taken kunt uitvoeren. U kunt beheerde privé-eind punten maken in uw Stream Analytics-cluster, zodat alle taken die op uw cluster worden uitgevoerd, een beveiligde uitgaande verbinding met uw invoer-en uitvoer bronnen kunnen maken.
+[Stream Analytics clusters](./cluster-overview.md) is een specifiek berekenings cluster voor tenants waarop u uw stream Analytics-taken kunt uitvoeren. U kunt beheerde privé-eind punten maken in uw Stream Analytics-cluster, zodat alle taken die op uw cluster worden uitgevoerd, een beveiligde uitgaande verbinding met uw invoer-en uitvoer bronnen kunnen maken.
 
-Het maken van privé-eind punten in uw Stream Analytics-cluster is een [bewerking in twee stappen](https://docs.microsoft.com/azure/stream-analytics/private-endpoints). Deze optie is het meest geschikt voor gemiddeld tot grote streaming-workloads, omdat de minimale grootte van een Stream Analytics cluster 36 SUs is (hoewel de 36 SUs kan worden gedeeld door verschillende taken in verschillende abonnementen of omgevingen, zoals ontwikkeling, testen en productie).
+Het maken van privé-eind punten in uw Stream Analytics-cluster is een [bewerking in twee stappen](./private-endpoints.md). Deze optie is het meest geschikt voor gemiddeld tot grote streaming-workloads, omdat de minimale grootte van een Stream Analytics cluster 36 SUs is (hoewel de 36 SUs kan worden gedeeld door verschillende taken in verschillende abonnementen of omgevingen, zoals ontwikkeling, testen en productie).
 
 ## <a name="managed-identity-authentication-with-allow-trusted-services-configuration"></a>Beheerde identiteits verificatie met de configuratie van vertrouwde services toestaan
 Sommige Azure-Services bieden ondersteuning voor **vertrouwde micro soft Services** -netwerk instelling, die wanneer ingeschakeld is, uw stream Analytics-taken in staat stellen om veilig verbinding te maken met uw bron met behulp van sterke verificatie. Met deze optie kunt u uw taken koppelen aan uw invoer-en uitvoer bronnen zonder dat u een Stream Analytics cluster en persoonlijke eind punten nodig hebt. Het configureren van uw taak voor het gebruik van deze techniek is een bewerking van twee stappen:
@@ -37,13 +37,13 @@ Sommige Azure-Services bieden ondersteuning voor **vertrouwde micro soft Service
 Het inschakelen van **vertrouwde micro soft-Services** verleent geen toegang tot een taak. Hiermee krijgt u volledige controle over welke specifieke Stream Analytics-taken veilig toegang hebben tot uw resources. 
 
 Uw taken kunnen met behulp van deze techniek verbinding maken met de volgende Azure-Services:
-1. [Blob Storage of Azure data Lake Storage Gen2](https://docs.microsoft.com/azure/stream-analytics/blob-output-managed-identity) : kan het opslag account van uw taak, de invoer of uitvoer van streams zijn.
-2. [Azure-Event hubs](https://docs.microsoft.com/azure/stream-analytics/event-hubs-managed-identity) : kan de stroomsgewijze invoer of uitvoer van uw taak zijn.
+1. [Blob Storage of Azure data Lake Storage Gen2](./blob-output-managed-identity.md) : kan het opslag account van uw taak, de invoer of uitvoer van streams zijn.
+2. [Azure-Event hubs](./event-hubs-managed-identity.md) : kan de stroomsgewijze invoer of uitvoer van uw taak zijn.
 
 Als uw taken verbinding moeten maken met andere invoer-of uitvoer typen, kunt u eerst van Stream Analytics naar Event Hubs uitvoer schrijven en vervolgens naar een wille keurige gewenste bestemming met behulp van Azure Functions. Als u rechtstreeks wilt schrijven van Stream Analytics naar andere uitvoer typen die zijn beveiligd in een VNet of firewall, is de enige optie om privé-eind punten in Stream Analytics clusters te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Privé-eind punten in Stream Analytics clusters maken en verwijderen](https://docs.microsoft.com/azure/stream-analytics/private-endpoints)
-* [Verbinding maken met Event Hubs in een VNet met behulp van beheerde identiteits verificatie](https://docs.microsoft.com/azure/stream-analytics/event-hubs-managed-identity)
-* [Verbinding maken met Blob Storage en ADLS Gen2 in een VNet met behulp van beheerde identiteits verificatie](https://docs.microsoft.com/azure/stream-analytics/blob-output-managed-identity)
+* [Privé-eind punten in Stream Analytics clusters maken en verwijderen](./private-endpoints.md)
+* [Verbinding maken met Event Hubs in een VNet met behulp van beheerde identiteits verificatie](./event-hubs-managed-identity.md)
+* [Verbinding maken met Blob Storage en ADLS Gen2 in een VNet met behulp van beheerde identiteits verificatie](./blob-output-managed-identity.md)

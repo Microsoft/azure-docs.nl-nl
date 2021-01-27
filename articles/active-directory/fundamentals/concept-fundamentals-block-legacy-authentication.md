@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 04/13/2020
+ms.date: 01/26/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: b50c942d2e05d7f5234a17f1cf36137309c7ce97
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 24640254f32270b8c96c790dca7db31e285cc27f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973708"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895285"
 ---
 # <a name="blocking-legacy-authentication"></a>Verouderde verificatie blok keren
  
@@ -32,11 +32,12 @@ De meeste pogingen om zich aan te melden, zijn tegenwoordig afkomstig van veroud
 
 Voordat u verouderde verificatie in uw Directory kunt blok keren, moet u eerst begrijpen of uw gebruikers apps hebben die gebruikmaken van verouderde verificatie en hoe dit van invloed is op uw algemene Directory. Aanmeld logboeken van Azure AD kunnen worden gebruikt om te begrijpen of u gebruikmaakt van verouderde verificatie.
 
-1. Navigeer naar het **Azure Portal**  >  **Azure Active Directory**  >  **-Azure Active Directory aanmeldingen**.
-1. Voeg de kolom **client** toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app  **Columns**   >  **Client App**.
+1. Navigeer naar het **Azure Portal**  >    >  **-Azure Active Directory aanmeldingen**.
+1. Voeg de kolom **client** toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app  **Columns**   >  ****.
 1. Filteren op **Client App** > alle **verouderde** opties voor verificatie-clients controleren.
 1. Filteren op **status**  >  **geslaagd**. 
 1. Breid het datum bereik uit, indien nodig, met behulp van het **datum** filter.
+1. Als u de [nieuwe preview-rapporten voor aanmeldings activiteiten](../reports-monitoring/concept-all-sign-ins.md)hebt geactiveerd, herhaalt u de bovenstaande stappen ook op het tabblad **Gebruikers aanmeldingen (niet-interactief)** .
 
 Door te filteren worden alleen geslaagde aanmeldings pogingen weer gegeven die zijn gemaakt door de geselecteerde verouderde verificatie protocollen. Als u op elke afzonderlijke aanmeldings poging klikt, wordt er meer informatie weer gegeven. In de kolom client-app of het veld client-app onder het tabblad basis informatie nadat u een afzonderlijke rij gegevens selecteert, wordt aangegeven welk verouderde verificatie protocol is gebruikt. In deze logboeken wordt aangegeven welke gebruikers nog steeds afhankelijk zijn van verouderde verificatie en welke toepassingen verouderde protocollen gebruiken om verificatie aanvragen uit te voeren. Voor gebruikers die niet in deze logboeken worden weer gegeven en worden bevestigd dat ze geen verouderde verificatie gebruiken, implementeert u een beleid voor voorwaardelijke toegang of schakelt u het basislijn beleid in: verouderde verificatie blok keren voor deze gebruikers.
 
@@ -100,4 +101,4 @@ De stappen voor het inschakelen van moderne verificatie vindt u in de volgende a
 
 - [Exchange Server on-premises configureren voor het gebruik van hybride, moderne authenticatie](/office365/enterprise/configure-exchange-server-for-hybrid-modern-authentication)
 - [Moderne verificatie (ADAL) gebruiken met Skype voor bedrijven](/skypeforbusiness/manage/authentication/use-adal)
-- [Verouderde verificatie blokkeren](../conditional-access/block-legacy-authentication.md)
+- [Verouderde verificatie blok keren](../conditional-access/block-legacy-authentication.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: contperf-fy21q1
 ms.date: 10/13/2020
 ms.author: allensu
-ms.openlocfilehash: d30998e0d99ba7b1eeb55bdc47cd5cc54690156f
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: f3c147b292ab21bd4e568f9e52acef07396acc28
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032912"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878219"
 ---
 # <a name="using-snat-for-outbound-connections"></a>SNAT gebruiken voor uitgaande verbindingen
 
@@ -22,7 +22,7 @@ De frontend-Ip's van een open bare Azure-load balancer kunnen worden gebruikt om
 SNAT maakt **IP-maskering** van het back-end-exemplaar mogelijk. Hierdoor wordt voor komen dat externe bronnen een direct adres hebben voor de back-end-exemplaren. Het delen van een IP-adres tussen back-end-instanties reduceert de kosten van statische open bare Ip's en ondersteunt scenario's zoals het vereenvoudigen van IP-lijsten met verkeer van bekende open bare Ip's. 
 
 >[!Note]
-> [Virtual Network NAT](../virtual-network/nat-overview.md) is de aanbevolen oplossing voor toepassingen waarvoor een groot aantal uitgaande verbindingen of zakelijke klanten vereist zijn die een enkele set IP-adressen nodig hebben om te kunnen worden gebruikt vanuit een bepaald virtueel netwerk. De dynamische toewijzing maakt eenvoudige configuratie mogelijk en > het meest efficiënte gebruik van de SNAT-poorten van elk IP-adres. Ook kunnen alle bronnen in het virtuele netwerk een set IP-adressen delen zonder dat ze > een load balancer hoeven te delen.
+> Voor toepassingen die een groot aantal uitgaande verbindingen of zakelijke klanten nodig hebben die een enkele set IP-adressen nodig hebben om te kunnen worden gebruikt vanuit een bepaald virtueel netwerk, is [Virtual Network NAT](../virtual-network/nat-overview.md) de aanbevolen oplossing. De dynamische toewijzing maakt eenvoudige configuratie mogelijk en > het meest efficiënte gebruik van de SNAT-poorten van elk IP-adres. Ook kunnen alle bronnen in het virtuele netwerk een set IP-adressen delen zonder dat ze > een load balancer hoeven te delen.
 
 >[!Important]
 > Zelfs als er geen uitgaande SNAT is geconfigureerd, zijn Azure Storage-accounts binnen dezelfde regio nog steeds toegankelijk en hebben back-endservers nog steeds toegang tot micro soft-Services, zoals Windows-updates.

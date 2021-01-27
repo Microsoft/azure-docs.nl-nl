@@ -3,12 +3,12 @@ title: Bekijk de maandelijkse geschatte Lab-kosten trend in Azure DevTest Labs
 description: In dit artikel vindt u informatie over het bijhouden van de kosten van uw Lab (maandelijkse geschatte kosten trend grafiek) in Azure DevTest Labs.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 220cbd1bc793e4bcfdf03a184d7463114506e6e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6a2a9bef9e54ef7deda123aad34cf0c576fd158f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87283823"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98892334"
 ---
 # <a name="track-costs-associated-with-a-lab-in-azure-devtest-labs"></a>Kosten bijhouden die zijn gekoppeld aan een lab in Azure DevTest Labs
 Dit artikel bevat informatie over het bijhouden van de kosten van uw Lab. U ziet hoe u de geschatte kosten trend voor de huidige kalender maand voor het lab weergeeft. In dit artikel ziet u ook hoe u de kosten per resource kunt weer geven in het lab.
@@ -19,7 +19,7 @@ In deze sectie leert u hoe u het **maandelijkse geschatte kosten trend** diagram
 Voer de volgende stappen uit om het diagram met maandelijkse geschatte kosten trend weer te geven: 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs uw Lab.  
 4. Selecteer **configuratie en beleid** in het menu links.  
 4. Selecteer **kosten trend** in het gedeelte **kosten bijhouden** in het menu links. De volgende scherm afbeelding toont een voor beeld van een kosten diagram. 
@@ -38,7 +38,7 @@ Voer de volgende stappen uit om het diagram met maandelijkse geschatte kosten tr
 
      De volgende kosten zijn *niet* opgenomen in de berekening van kosten:
 
-   * CSP-en DreamSpark-abonnementen worden momenteel niet ondersteund, omdat Azure DevTest Labs de [Azure billing-api's](../cost-management-billing/manage/usage-rate-card-overview.md) gebruikt om de Lab-kosten te berekenen. Dit biedt geen ondersteuning voor CSP-of DreamSpark-abonnementen.
+   * CSP-en DreamSpark-abonnementen worden momenteel niet ondersteund, omdat Azure DevTest Labs de Azure billing-Api's gebruikt om de Lab-kosten te berekenen. Dit biedt geen ondersteuning voor CSP-of DreamSpark-abonnementen.
    * Uw aanbod tarieven. Op dit moment kunt u de aanbiedings tarieven (weer gegeven onder uw abonnement) niet gebruiken die u hebt onderhandeld met micro soft-of micro soft-partners. Alleen betalen naar gebruik-tarieven worden gebruikt.
    * Uw belastingen
    * Uw kortingen
@@ -57,7 +57,7 @@ Met DevTest Labs kunt u de kosten in uw Lab beter beheren door een bestedings do
    - Selecteer een tijds periode gedurende welke de kosten doelen moeten worden bijgehouden.
       - **Maandelijks**: kosten doelen worden per maand bijgehouden.
       - **Opgelost**: de kosten doelen worden bijgehouden voor het datum bereik dat u opgeeft in de begin-en eind datum. Normaal gesp roken geven deze waarden aan hoe lang het uitvoeren van het project is gepland.
-   - Geef de **doel kosten**op. Hoeveel u bijvoorbeeld van plan bent te best Eden aan dit lab in de periode die u hebt gedefinieerd.
+   - Geef de **doel kosten** op. Hoeveel u bijvoorbeeld van plan bent te best Eden aan dit lab in de periode die u hebt gedefinieerd.
    - Selecteer deze optie om elke drempel waarde in of uit te scha kelen die u wilt rapporteren: in stappen van 25% tot 125% van de opgegeven **doel kosten**.
       - **Melding**: als aan deze drempel waarde wordt voldaan, wordt u gewaarschuwd door de webhook-URL die u opgeeft.
       - **Tekenen op diagram**: wanneer aan deze drempel waarde wordt voldaan, worden de resultaten weer gegeven in de grafiek met kosten trends die u kunt bekijken, zoals wordt beschreven in het diagram met maandelijkse geschatte kosten trend weer geven.
@@ -65,7 +65,7 @@ Met DevTest Labs kunt u de kosten in uw Lab beter beheren door een bestedings do
 
        ![Het deel venster meldingen configureren](./media/devtest-lab-configure-cost-management/configure-notification-new.png)
 
-     - Als u **melden**opgeeft, moet u een webhook-URL definiëren.
+     - Als u **melden** opgeeft, moet u een webhook-URL definiëren.
      - Als u een webhook-URL definieert, moet u **op** dezelfde manier **melding** instellen in het deel venster kosten drempel.
      - U moet een webhook maken voordat u deze hier invoert.  
 
@@ -75,7 +75,7 @@ Met DevTest Labs kunt u de kosten in uw Lab beter beheren door een bestedings do
 Met de functie maandelijkse kosten trend in Labs kunt u zien hoeveel u hebt besteed in de huidige kalender maand. Het toont ook de projectie van de besteding tot het einde van de maand, op basis van uw uitgaven in de afgelopen zeven dagen. Om u te helpen begrijpen waarom de uitgaven in het lab in de loop van een vroeg stadium voldoen aan drempel waarden, kunt u de functie **kosten per resource** gebruiken waarmee u de maand tot heden **per resource** in een tabel weergeeft.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs het gewenste Lab.  
 4. Selecteer **configuratie en beleid** in het menu links.
 5. Selecteer **kosten per resource** in het gedeelte **kosten bijhouden** van het linkermenu. U ziet de kosten voor elke resource die aan een Lab is gekoppeld. 

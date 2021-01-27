@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/05/2021
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: d601c6191da9d555e54c1d58c122420510d288fc
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 8b233211f47250d4742d35cd0782cdd241839496
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955549"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804864"
 ---
 # <a name="deploy-custom-script-extension-on-vms-running-on-your-azure-stack-edge-pro-device"></a>Aangepaste script extensie implementeren op Vm's die worden uitgevoerd op uw Azure Stack Edge Pro-apparaat
 
@@ -31,7 +31,7 @@ De aangepaste script extensie kan worden geïntegreerd met Azure Resource Manage
 
 #### <a name="supported-os-for-custom-script-extension-on-windows"></a>Ondersteund besturings systeem voor aangepaste script extensie in Windows
 
-De aangepaste script extensie voor Windows wordt uitgevoerd op de volgende OSs. Andere versies werken mogelijk wel, maar zijn niet intern getest op Vm's die worden uitgevoerd op Azure Stack Edge Pro-apparaten.
+De aangepaste script extensie voor Windows wordt uitgevoerd op de volgende OSs. Andere versies werken mogelijk wel, maar zijn niet intern getest op Vm's die op Azure Stack Edge Pro-apparaten worden uitgevoerd.
 
 | Distributie | Versie |
 |---|---|
@@ -40,7 +40,7 @@ De aangepaste script extensie voor Windows wordt uitgevoerd op de volgende OSs. 
 
 #### <a name="supported-os-for-custom-script-extension-on-linux"></a>Ondersteund besturings systeem voor aangepaste script extensie in Linux
 
-De aangepaste script extensie voor Linux wordt uitgevoerd op de volgende OSs. Andere versies werken mogelijk wel, maar zijn niet intern getest op Vm's die worden uitgevoerd op Azure Stack Edge Pro-apparaten.
+De aangepaste script extensie voor Linux wordt uitgevoerd op de volgende OSs. Andere versies werken mogelijk wel, maar zijn niet intern getest op Vm's die op Azure Stack Edge Pro-apparaten worden uitgevoerd.
 
 | Distributie | Versie |
 |---|---|
@@ -62,13 +62,13 @@ If your script is on a local server, then you may still need additional firewall
 
 ## <a name="prerequisites"></a>Vereisten
 
-1. [Down load de VM-sjablonen en parameter bestanden](https://aka.ms/ase-vm-templates) naar uw client computer. Pak het bestand uit in een map die u wilt gebruiken als werkmap.
+1. [Down load de VM-sjablonen en parameter bestanden](https://aka.ms/ase-vm-templates) naar uw client computer. Pak het downloaden uit naar een map die u als werkmap gebruikt.
 
-1. U moet een virtuele machine maken en implementeren op het apparaat. Als u Vm's wilt maken, volgt u alle stappen in de [virtuele machine implementeren op uw Azure stack Edge Pro met behulp van sjablonen](azure-stack-edge-gpu-deploy-virtual-machine-templates.md).
+1. U moet een virtuele machine maken en implementeren op het apparaat. Volg alle stappen in [virtuele machine implementeren op uw Azure stack Edge Pro met behulp van sjablonen](azure-stack-edge-gpu-deploy-virtual-machine-templates.md)om vm's te maken.
 
-    Als u een script extern moet downloaden, zoals van GitHub of Azure Storage, terwijl u het Compute-netwerk configureert, schakelt u de poort die is verbonden met internet in voor reken kracht. Hiermee kunt u het script downloaden.
+    Als u een script wilt downloaden, zoals van GitHub of Azure Storage extern, terwijl u het Compute-netwerk configureert, moet u de poort die is verbonden met Internet inschakelen voor compute. Hiermee kunt u het script downloaden.
 
-    Hier volgt een voor beeld waarin poort 2 is verbonden met internet en dat is gebruikt om het berekenings netwerk in te scha kelen. Als u hebt vastgesteld dat Kubernetes in de vorige stap niet nodig is, kunt u de IP-toewijzing van het Kubernetes-knoop punt en de externe service overs Laan.    
+    In het volgende voor beeld is poort 2 verbonden met internet en is deze gebruikt om het berekenings netwerk in te scha kelen. Als u in de vorige stap hebt vastgesteld dat Kubernetes niet nodig is, kunt u de IP-toewijzing van het Kubernetes-knoop punt en de externe service overs Laan.
 
     ![Reken instellingen inschakelen op poort die is verbonden met Internet](media/azure-stack-edge-gpu-deploy-gpu-virtual-machine/enable-compute-network-1.png)
 
@@ -115,7 +115,7 @@ Het bestand `addCSExtWindowsVM.parameters.json` heeft de volgende para meters:
 ```
 Geef de naam van de virtuele machine, de naam van de uitbrei ding en de opdracht die u wilt uitvoeren.
 
-Hier volgt een voor beeld van een parameter bestand dat in dit artikel is gebruikt. 
+Hier volgt het voor beeld-parameter bestand dat in dit artikel is gebruikt.
 
 ```powershell
 {
@@ -158,7 +158,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile $tem
 > [!NOTE]
 > De implementatie van de extensie is een langlopende taak en duurt ongeveer 10 minuten om te volt ooien.
 
-Hier volgt een voorbeeld van uitvoer:
+Hier volgt een voor beeld van uitvoer:
 
 ```powershell
 PS C:\WINDOWS\system32> $templateFile = "C:\12-09-2020\ExtensionTemplates\addCSExtensiontoVM.json"
@@ -196,7 +196,7 @@ Voer de volgende opdracht uit om de implementatie status van extensies voor een 
 ```powershell
 Get-AzureRmVMExtension -ResourceGroupName <Name of resource group> -VMName <Name of VM> -Name <Name of the extension>
 ```
-Hier volgt een voorbeeld van uitvoer:
+Hier volgt een voor beeld van uitvoer:
 
 ```powershell
 PS C:\WINDOWS\system32> Get-AzureRmVMExtension -ResourceGroupName myasegpuvm1 -VMName VM5 -Name CustomScriptExtension
@@ -293,7 +293,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile $tem
 > [!NOTE]
 > De implementatie van de extensie is een langlopende taak en duurt ongeveer 10 minuten om te volt ooien.
 
-Hier volgt een voorbeeld van uitvoer:
+Hier volgt een voor beeld van uitvoer:
 
 ```powershell
 PS C:\WINDOWS\system32> $templateFile = "C:\12-09-2020\ExtensionTemplates\addCSExtensionToVM.json"
@@ -342,7 +342,7 @@ Sjabloonimlementatie is een langlopende taak. Als u de implementatie status van 
 ```powershell
 Get-AzureRmVMExtension -ResourceGroupName myResourceGroup -VMName <VM Name> -Name <Extension Name>
 ```
-Hier volgt een voorbeeld van uitvoer: 
+Hier volgt een voor beeld van uitvoer: 
 
 ```powershell
 PS C:\WINDOWS\system32> Get-AzureRmVMExtension -ResourceGroupName myasegpuvm1 -VMName VM5 -Name CustomScriptExtension
@@ -381,7 +381,7 @@ Als u de aangepaste script extensie wilt verwijderen, gebruikt u de volgende opd
 
 `Remove-AzureRmVMExtension -ResourceGroupName <Resource group name> -VMName <VM name> -Name <Extension name>`
 
-Hier volgt een voorbeeld van uitvoer:
+Hier volgt een voor beeld van uitvoer:
 
 ```powershell
 PS C:\WINDOWS\system32> Remove-AzureRmVMExtension -ResourceGroupName myasegpuvm1 -VMName VM6 -Name LinuxCustomScriptExtension
@@ -396,4 +396,4 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

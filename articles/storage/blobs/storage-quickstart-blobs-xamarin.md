@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Azure Blob-opslagbibliotheek v12 - Xamarin'
-description: In deze quickstart leert u hoe u de Azure Blob Storage-clientbibliotheek versie 12 met Xamarin kunt gebruiken om een container te maken en een blob-in-blob-opslag (object). Hierna leert u hoe u de blob naar uw mobiele apparaat downloadt en hoe u alle blobs in een container kunt weergeven.
+title: 'Snelstartgids: Azure Blob Storage bibliotheek V12-Xamarin'
+description: In deze Quick Start leert u hoe u de Azure Blob Storage-client bibliotheek versie 12 kunt gebruiken met Xamarin om een container en een BLOB in Blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw mobiele apparaat downloadt en hoe u alle blobs in een container kunt weergeven.
 author: codemillmatt
 ms.author: masoucou
 ms.date: 10/09/2020
@@ -8,18 +8,18 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 641117414c855a044d3ed55004b6e6ea15b259ac
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: dab938a526aa89f6fe5a014e10869bd8da8b475d
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96004735"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802352"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-v12-with-xamarin"></a>Quickstart: Azure Blob Storage-clientbibliotheek v12 met Xamarin
+# <a name="quickstart-azure-blob-storage-client-library-v12-with-xamarin"></a>Snelstartgids: Azure Blob Storage-client bibliotheek V12 met Xamarin
 
-Aan de slag met de Azure Blob Storage-clientbibliotheek v12 met Xamarin. Azure Blob Storage is Microsoft's oplossing voor opslag van objecten in de cloud. Volg de stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
+Ga aan de slag met de Azure Blob Storage-client bibliotheek V12 met Xamarin. Azure Blob Storage is de oplossing voor opslag van objecten in de cloud van Microsoft. Volg de stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
 
-Gebruik de Azure Blob Storage-clientbibliotheek v12 met Xamarin voor het volgende:
+Gebruik de Azure Blob Storage-client bibliotheek V12 met Xamarin om het volgende te doen:
 
 * Een container maken
 * Een blob uploaden naar Azure Storage
@@ -44,7 +44,7 @@ Naslagkoppelingen:
 
 ## <a name="setting-up"></a>Instellen
     
-In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-clientbibliotheek v12 met Xamarin.
+In deze sectie wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-client bibliotheek V12 met Xamarin.
     
 ### <a name="create-the-project"></a>Het project maken
 
@@ -99,7 +99,7 @@ Gebruik de volgende .NET-klassen om te communiceren met deze resources:
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze voorbeeldcodefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Azure Blob Storage-clientbibliotheek voor .NET in een Xamarin.Forms-app:
+In deze voorbeeld code fragmenten ziet u hoe u de volgende taken kunt uitvoeren met de Azure Blob Storage-client bibliotheek voor .NET in een Xamarin. Forms-app:
 
 * [Variabelen op klasseniveau maken](#create-class-level-variables)
 * [Een container maken](#create-a-container)
@@ -110,7 +110,7 @@ Deze voorbeeldcodefragmenten laten zien hoe u de volgende taken kunt uitvoeren m
 
 ### <a name="create-class-level-variables"></a>Variabelen op klasseniveau maken
 
-De onderstaande code declareert verschillende variabelen op klasseniveau. Ze moesten communiceren met Azure Blob Storage voor de rest van dit voorbeeld.
+De onderstaande code declareert verschillende variabelen op klasseniveau. Ze moeten in de rest van dit voor beeld communiceren met Azure Blob Storage.
 
 Deze komen bij de verbindingsreeks voor het opslagaccount die is ingesteld in de sectie [De opslagverbindingsreeks configureren](#configure-your-storage-connection-string).
 
@@ -269,12 +269,12 @@ Nadat u de waarden hebt gecontroleerd, bevestigt u de vraag om de container te v
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart heeft u geleerd om blobs te uploaden, downloaden en weer te geven met behulp van de Azure Blob Storage-clientbibliotheek v12 met Xamarin.
+In deze Quick Start hebt u geleerd hoe u blobs kunt uploaden, downloaden en vermelden met behulp van Azure Blob Storage client library V12 met Xamarin.
 
 Als u voorbeeld-apps voor Blob-opslag wilt zien, ga dan naar:
 
 > [!div class="nextstepaction"]
-> [Voorbeeld Azure Blob SDK v12 Xamarin](https://github.com/Azure-Samples/storage-blobs-xamarin-quickstart)
+> [Voor beeld van Azure Blob Storage SDK V12 Xamarin](https://github.com/Azure-Samples/storage-blobs-xamarin-quickstart)
 
 * Ga naar [Azure voor mobiele ontwikkelaars](/azure/mobile-apps) voor zelfstudies, voorbeelden, quickstarts en andere documentatie.
 * Bekijk [Aan de slag met Xamarin](/xamarin/get-started/)voor meer informatie over Xamarin.

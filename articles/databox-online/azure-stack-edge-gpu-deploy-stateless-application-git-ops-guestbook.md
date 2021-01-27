@@ -1,31 +1,31 @@
 ---
-title: PHP-Gastenboek-app implementeren op Kubernetes met Azure Stack Edge Pro GPU-apparaat | Microsoft Docs
-description: Hierin wordt beschreven hoe u een PHP-Gastenboek met redis implementeert met behulp van GitOps op een Kubernetes-cluster met Arc-functionaliteit van uw Azure Stack Edge Pro-apparaat.
+title: '`PHP Guestbook`App implementeren op Arc enabled Kubernetes op Azure stack Edge Pro GPU-apparaat | Microsoft Docs'
+description: Hierin wordt beschreven hoe u een PHP- `Guestbook` staatloze toepassing implementeert met redis met behulp van GitOps op een Kubernetes-cluster met Arc-functionaliteit van uw Azure stack Edge Pro-apparaat.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/25/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 4e974d93b5b7550081abcd7e251c7eda265a2397
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: ba72617444a2c7ec30e4d1d25afe1edcda16ff35
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882956"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804886"
 ---
-# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Een niet-beschik bare-gastenboek toepassing met redis implementeren op een Kubernetes-cluster op basis van Azure Stack Edge Pro GPU
+# <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Implementeer een PHP- `Guestbook` staatloze toepassing met redis op het Kubernetes-cluster op basis van Azure stack Edge Pro GPU
 
 In dit artikel wordt beschreven hoe u een eenvoudige webtoepassing met meerdere lagen bouwt en implementeert met behulp van Kubernetes en Azure Arc. Dit voor beeld bestaat uit de volgende onderdelen:
 
-- Een redis-Master met één instantie om gastenboek vermeldingen op te slaan
+- Een redis-model met één instantie om vermeldingen op te slaan `guestbook`
 - Meerdere gerepliceerde redis-instanties om Lees bewerkingen te behandelen
 - Meerdere web-front-end-instanties
 
 De implementatie wordt uitgevoerd met behulp van GitOps op het Kubernetes-cluster met Arc-functionaliteit op uw Azure Stack Edge Pro-apparaat. 
 
-Deze procedure is bedoeld voor gebruikers die de Kubernetes- [workloads op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-workload-management.md) hebben bekeken en die bekend zijn met de concepten van [Wat is Azure Arc enabled Kubernetes (preview)](../azure-arc/kubernetes/overview.md).
+Deze procedure is bedoeld voor personen die de Kubernetes- [workloads op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-workload-management.md) hebben bekeken en die bekend zijn met de concepten van [Wat is Azure Arc enabled Kubernetes (preview)](../azure-arc/kubernetes/overview.md).
 
 > [!NOTE]
 > Dit artikel bevat verwijzingen naar de term slave, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
@@ -49,18 +49,18 @@ Voordat u de stateless toepassing kunt implementeren, moet u ervoor zorgen dat u
 
 1. U hebt een Windows-client systeem dat wordt gebruikt om toegang te krijgen tot het Azure Stack Edge Pro-apparaat.
   
-    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7&preserve-view = true).
     
     - U kunt ook een andere client met een [ondersteund besturings systeem](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. 
     
 1. U hebt de procedure die wordt beschreven in [toegang tot het Kubernetes-cluster op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-create-kubernetes-cluster.md)voltooid. U hebt het volgende:
     
-    - Geïnstalleerd `kubectl` op de client  <!--and saved the `kubeconfig` file with the user configuration to C:\\Users\\&lt;username&gt;\\.kube. -->
+    - Geïnstalleerd `kubectl` op de client. <!--and saved the `kubeconfig` file with the user configuration to C:\\Users\\&lt;username&gt;\\.kube. -->
     
     - Zorg ervoor dat de `kubectl` client versie niet meer dan één versie van de Kubernetes-hoofd versie die wordt uitgevoerd op uw Azure stack Edge Pro-apparaat. 
       - Gebruiken `kubectl version` om te controleren welke versie van kubectl op de client wordt uitgevoerd. Noteer de volledige versie.
       - Ga in de lokale gebruikers interface van uw Azure Stack Edge Pro-apparaat naar **overzicht** en noteer het Kubernetes-software nummer. 
-      - Controleer deze twee versies op compatibiliteit van de toewijzing die is opgenomen in de ondersteunde Kubernetes-versie <!--insert link-->.
+      - Controleer deze twee versies op compatibiliteit van de toewijzing die is opgenomen in de ondersteunde Kubernetes-versie. <!--insert link-->
 
 1. U hebt een [GitOps-configuratie die u kunt gebruiken om een implementatie van Azure Arc uit te voeren](https://github.com/kagoyal/dbehaikudemo). In dit voor beeld gebruikt u de volgende `yaml` bestanden om te implementeren op uw Azure stack Edge Pro-apparaat.
 
@@ -86,18 +86,18 @@ Volg deze stappen om de Azure Arc-resource te configureren voor het implementere
 
     ![Scherm afbeelding toont het Azure Arc enabled Kubernetes-cluster waarvoor configuratie toevoegen is geselecteerd.](media/azure-stack-edge-gpu-connect-powershell-interface/select-configurations-1.png)
 
-1. Voer in de **Configuratie toevoegen** de juiste waarden in voor de velden en selecteer **Toep assen**.
+1. In **Configuratie toevoegen** voert u de juiste waarden voor de velden in en selecteert u vervolgens **Toep assen**.
 
     |Parameter  |Beschrijving |
     |---------|---------|
     |Configuratie naam     | Naam voor de configuratie bron.        |
     |Naam operator instantie     |Exemplaar naam van de operator om een specifieke configuratie te identificeren. Name is een teken reeks van Maxi maal 253 tekens die alleen kleine letters, alfanumeriek, afbreek streepjes en punten moeten bevatten.         |
-    |Operator naam ruimte     | Ingesteld op **demotestguestbook** , omdat dit overeenkomt met de naam ruimte die is opgegeven in de implementatie `yaml` . <br> Het veld definieert de naam ruimte waarin de operator is geïnstalleerd. Name is een teken reeks van Maxi maal 253 tekens die alleen kleine letters, alfanumeriek, afbreek streepjes en punten moeten bevatten.         |
+    |Operator naam ruimte     | Ingesteld op **demotestguestbook** om overeen te komen met de naam ruimte die in de implementatie is opgegeven `yaml` . <br> Het veld definieert de naam ruimte waarin de operator is geïnstalleerd. Name is een teken reeks van Maxi maal 253 tekens die alleen kleine letters, alfanumeriek, afbreek streepjes en punten moeten bevatten.         |
     |URL van opslag plaats     |<br>Het pad naar de Git-opslag plaats in `http://github.com/username/repo` of `git://github.com/username/repo` de indeling waar uw GitOps-configuratie zich bevindt.         |
-    |Operator bereik     | Selecteer **naam ruimte**. <br>Hiermee wordt het bereik gedefinieerd waarop de operator is geïnstalleerd. Selecteer deze naam ruimte. Uw operator wordt geïnstalleerd in de naam ruimte die is opgegeven in de implementatie YAML-bestanden.       |
-    |Type operator     | Standaard behouden. <br>Hiermee wordt het type van de operator opgegeven, standaard ingesteld als stroom.        |
-    |Operator-para meters     | Laat dit leeg. <br>Dit veld bevat para meters die moeten worden door gegeven aan de stroom operator.        |
-    |Helm     | Stel dit in op **uitgeschakeld**. <br>Schakel deze optie in als u implementaties op basis van grafieken gaat uitvoeren.        |
+    |Operator bereik     | Selecteer **naam ruimte**. <br>Met deze para meter wordt het bereik gedefinieerd waarop de operator is geïnstalleerd. Selecteer naam ruimte om uw operator te installeren in de naam ruimte die is opgegeven in de implementatie YAML-bestanden.       |
+    |Type operator     | Standaard behouden. <br>Met deze para meter wordt het type van de operator opgegeven: standaard ingesteld als stroom.        |
+    |Operator-para meters     | Laat dit leeg. <br>Deze para meter bevat para meters die moeten worden door gegeven aan de stroom operator.        |
+    |Helm     | Stel deze para meter in op **uitgeschakeld**. <br>Schakel deze optie in als u implementaties op basis van een grafiek wilt uitvoeren.        |
 
 
     ![Configuratie toevoegen](media/azure-stack-edge-gpu-connect-powershell-interface/add-configuration-1.png)
@@ -111,7 +111,7 @@ Volg deze stappen om de Azure Arc-resource te configureren voor het implementere
 
     ![Scherm afbeelding toont het Azure Arc enabled Kubernetes-cluster met een geïnstalleerde status.](media/azure-stack-edge-gpu-connect-powershell-interface/view-configurations-2.png)
 
-## <a name="verify-deployment"></a>Implementatie verifiëren
+## <a name="verify-deployment"></a>Implementatie controleren
 
 De implementatie via de GitOps-configuratie maakt een `demotestguestbook` naam ruimte zoals opgegeven in de implementatie `yaml` bestanden die zich bevinden in de Git opslag plaats.
 
@@ -136,7 +136,7 @@ De implementatie via de GitOps-configuratie maakt een `demotestguestbook` naam r
     [10.128.44.240]: PS>
     ```  
 
-1. In dit voor beeld is de frontend-service geïmplementeerd als type: LoadBalancer. U moet het IP-adres van deze service vinden om het gastenboek weer te geven. Voer de volgende opdracht uit.
+1. In dit voor beeld is de frontend-service geïmplementeerd als type: LoadBalancer. U moet het IP-adres van deze service zoeken om de weer te geven `guestbook` . Voer de volgende opdracht uit.
 
     `kubectl get service -n <your-namespace>`
     
@@ -149,13 +149,13 @@ De implementatie via de GitOps-configuratie maakt een `demotestguestbook` naam r
     redis-slave    ClusterIP      10.104.215.146   <none>          6379/TCP       85m
     [10.128.44.240]: PS>
     ```
-1. De frontend-service van `type:LoadBalancer` heeft een extern IP-adres. Deze IP is afkomstig uit het IP-adres bereik dat u hebt opgegeven voor externe services bij het configureren van de instellingen van het berekenings netwerk op het apparaat. Gebruik dit IP-adres om het gastenboek te bekijken op URL: `https://<external-IP-address>` .
+1. De frontend-service van `type:LoadBalancer` heeft een extern IP-adres. Deze IP is afkomstig uit het IP-adres bereik dat u hebt opgegeven voor externe services bij het configureren van de instellingen van het berekenings netwerk op het apparaat. Gebruik dit IP-adres om de op-URL weer te geven `guestbook` : `https://<external-IP-address>` .
 
     ![Gastenboek weer geven](media/azure-stack-edge-gpu-connect-powershell-interface/view-guestbook-1.png)
 
 ## <a name="delete-deployment"></a>Implementatie verwijderen
 
-Als u de implementatie wilt verwijderen, kunt u de configuratie uit de Azure Portal verwijderen. Hiermee verwijdert u de objecten die zijn gemaakt, inclusief implementaties en services.
+Als u de implementatie wilt verwijderen, kunt u de configuratie uit de Azure Portal verwijderen. Als u de configuratie verwijdert, worden de gemaakte objecten verwijderd, inclusief implementaties en services.
 
 1. Ga in het Azure Portal naar de configuratie van de Azure Arc-resource >. 
 1. Zoek de configuratie die u wilt verwijderen. Selecteer de... om het context menu te openen en **verwijderen** te selecteren.

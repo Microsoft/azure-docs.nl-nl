@@ -1,5 +1,5 @@
 ---
-title: Gegevens in Azure Blob-opslag verkennen met Pandas-team data Science process
+title: Gegevens in Azure Blob Storage verkennen met Pandas-team data Science process
 description: Informatie over het verkennen van gegevens die zijn opgeslagen in Azure Blob-container met het python-pakket van Panda.
 services: machine-learning
 author: marktab
@@ -11,14 +11,14 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 3d80ff9f5f96bbc642aed6598c86cb682d606695
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 855998b887f1d446ee8d196ff4628e066cb5d675
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410671"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805675"
 ---
-# <a name="explore-data-in-azure-blob-storage-with-pandas"></a>Gegevens in Azure Blob-opslag verkennen met Pandas
+# <a name="explore-data-in-azure-blob-storage-with-pandas"></a>Gegevens in Azure Blob Storage verkennen met Pandas
 
 In dit artikel wordt beschreven hoe u gegevens die zijn opgeslagen in Azure Blob-container kunt verkennen met behulp van het python-pakket van [Panda](https://pandas.pydata.org/) .
 
@@ -28,7 +28,7 @@ Deze taak is een stap in het [team data Science process](overview.md).
 In dit artikel wordt ervan uitgegaan dat u het volgende hebt:
 
 * Een Azure-opslag account gemaakt. Als u instructies nodig hebt, raadpleegt u [een Azure Storage account maken](../../storage/common/storage-account-create.md)
-* Uw gegevens zijn opgeslagen in een Azure Blob-opslag account. Zie [gegevens verplaatsen van en naar Azure Storage](../../storage/common/storage-choose-data-transfer-solution.md) als u instructies nodig hebt.
+* Uw gegevens zijn opgeslagen in een Azure Blob Storage-account. Zie [gegevens verplaatsen van en naar Azure Storage](../../storage/common/storage-choose-data-transfer-solution.md) als u instructies nodig hebt.
 
 ## <a name="load-the-data-into-a-pandas-dataframe"></a>De gegevens laden in een Panda data frame
 Als u een gegevensset wilt verkennen en bewerken, moet deze eerst worden gedownload van de BLOB-bron naar een lokaal bestand, dat vervolgens in een Panda data frame kan worden geladen. Dit zijn de stappen die u moet volgen voor deze procedure:

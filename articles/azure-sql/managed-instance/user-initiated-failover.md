@@ -9,13 +9,13 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
-ms.date: 01/25/2021
-ms.openlocfilehash: c12e1f4b01b0e2dd7fa21808cf33f45f9a5be59b
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.date: 01/26/2021
+ms.openlocfilehash: 7588ce055ce0df89a7dca87a75a38c8acccf6d46
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789969"
+ms.locfileid: "98806089"
 ---
 # <a name="user-initiated-manual-failover-on-sql-managed-instance"></a>User-initiated manual failover on SQL Managed Instance (Door gebruiker geïnitieerde handmatige failover op een SQL Managed Instance)
 
@@ -125,7 +125,7 @@ De bewerkings status kan worden gevolgd door de API-antwoorden in de reactie hea
 
 ## <a name="monitor-the-failover"></a>De failover bewaken
 
-Als u de voortgang van de door de gebruiker gestarte hand matige failover wilt bewaken, voert u de volgende T-SQL-query uit in uw favoriete client (bijvoorbeeld SSMS) op SQL Managed instance. De weer gave systeem sys.dm_hadr_fabric_replica_states en rapport replica's die beschikbaar zijn op het exemplaar worden gelezen. Vernieuw dezelfde query na het initiëren van de hand matige failover.
+Als u de voortgang van de door de gebruiker geïnitieerde failover voor uw BC-exemplaar wilt bewaken, voert u de volgende T-SQL-query uit in uw favoriete client (bijvoorbeeld SSMS) op SQL Managed instance. De weer gave systeem sys.dm_hadr_fabric_replica_states en rapport replica's die beschikbaar zijn op het exemplaar worden gelezen. Vernieuw dezelfde query na het initiëren van de hand matige failover.
 
 ```T-SQL
 SELECT DISTINCT replication_endpoint_url, fabric_replica_role_desc FROM sys.dm_hadr_fabric_replica_states
@@ -133,7 +133,13 @@ SELECT DISTINCT replication_endpoint_url, fabric_replica_role_desc FROM sys.dm_h
 
 Voordat de failover wordt gestart, wordt in de uitvoer de huidige primaire replica van de service tier aangegeven met één primaire en drie secundaire zones in de AlwaysOn-beschikbaarheids groep. Wanneer de uitvoering van een failover wordt uitgevoerd, moet u deze query opnieuw uitvoeren om een wijziging van het primaire knoop punt aan te geven.
 
-Het is niet mogelijk om dezelfde uitvoer te zien met de categorie GP als hierboven wordt weer gegeven voor BC. Dit komt omdat de servicelaag van de groeps BELEIDS eenheid alleen is gebaseerd op één knoop punt. T-SQL-query uitvoer voor de GP-servicelaag toont één knoop punt alleen voor en na de failover. Het verlies van de connectiviteit van uw client tijdens de failover, doorgaans gedurende een minuut, is de indicatie van de uitvoering van de failover.
+Het is niet mogelijk om dezelfde uitvoer te zien met de categorie GP als hierboven wordt weer gegeven voor BC. Dit komt omdat de servicelaag van de groeps BELEIDS eenheid alleen is gebaseerd op één knoop punt. U kunt een alternatieve T-SQL-query gebruiken om de tijd weer te geven waarop het SQL-proces is gestart op het knoop punt voor het exemplaar van de GP-servicelaag:
+
+```T-SQL
+SELECT sqlserver_start_time, sqlserver_start_time_ms_ticks FROM sys.dm_os_sys_info
+```
+
+Het kort verlies van de connectiviteit van uw client tijdens de failover, doorgaans gedurende een minuut, is de indicatie van de uitvoering van de failover, ongeacht de servicelaag.
 
 > [!NOTE]
 > Het volt ooien van het failoverproces (niet de werkelijke korte niet-beschik baarheid) kan enkele minuten in beslag nemen in het geval van werk belastingen met een **hoge intensiteit** . Dit komt doordat de exemplaar-engine alle huidige trans acties op de primaire en op het secundaire knoop punt wordt uitgevoerd voordat failover kan worden uitgevoerd.

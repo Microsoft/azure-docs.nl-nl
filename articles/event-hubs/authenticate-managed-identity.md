@@ -2,14 +2,14 @@
 title: Een beheerde identiteit verifiëren met Azure Active Directory
 description: Dit artikel bevat informatie over het verifiëren van een beheerde identiteit met Azure Active Directory om toegang te krijgen tot Azure Event Hubs-resources
 ms.topic: conceptual
-ms.date: 06/23/2020
+ms.date: 01/25/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c6b43cc48663be28d12fa788d92286be6f47ef08
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2070cfd94b39a08afb86ffd3579f1116faac72d5
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993530"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805311"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Event Hubs bronnen
 Azure Event Hubs ondersteunt Azure Active Directory (Azure AD)-verificatie met [beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md). Beheerde identiteiten voor Azure-resources kunnen toegang tot Event Hubs resources toestaan met behulp van Azure AD-referenties van toepassingen die worden uitgevoerd in azure Virtual Machines (Vm's), functie-apps, Virtual Machine Scale Sets en andere services. Door beheerde identiteiten voor Azure-resources te gebruiken in combi natie met Azure AD-verificatie kunt u voor komen dat referenties worden opgeslagen in uw toepassingen die in de cloud worden uitgevoerd.
@@ -41,11 +41,12 @@ Wanneer de toepassing is gemaakt, voert u de volgende stappen uit:
 1. Selecteer de **status** die moet worden **ingeschakeld**. 
 1. Selecteer **Opslaan** om de instelling op te slaan. 
 
-    ![Beheerde identiteit voor een web-app](./media/authenticate-managed-identity/identity-web-app.png)
+    :::image type="content" source="./media/authenticate-managed-identity/identity-web-app.png" alt-text="Beheerde identiteit voor een web-app":::
+4. Selecteer **Ja** in het informatie bericht. 
 
-Zodra u deze instelling hebt ingeschakeld, wordt er een nieuwe service-identiteit gemaakt in uw Azure Active Directory (Azure AD) en geconfigureerd in de App Service host.
+    Zodra u deze instelling hebt ingeschakeld, wordt er een nieuwe service-identiteit gemaakt in uw Azure Active Directory (Azure AD) en geconfigureerd in de App Service host.
 
-Wijs deze service-identiteit nu toe aan een rol in het vereiste bereik in uw Event Hubs resources.
+    Wijs deze service-identiteit nu toe aan een rol in het vereiste bereik in uw Event Hubs resources.
 
 ### <a name="to-assign-azure-roles-using-the-azure-portal"></a>Azure-rollen toewijzen met behulp van de Azure Portal
 Als u een rol wilt toewijzen aan Event Hubs resources, gaat u naar die resource in de Azure Portal. Geef de Access Control (IAM)-instellingen voor de resource weer en volg deze instructies voor het beheren van roltoewijzingen:
@@ -56,15 +57,20 @@ Als u een rol wilt toewijzen aan Event Hubs resources, gaat u naar die resource 
 1. Ga in het Azure Portal naar uw Event Hubs naam ruimte en geef het **overzicht** voor de naam ruimte weer. 
 1. Selecteer **Access Control (IAM)** in het menu links om de instellingen voor toegangs beheer voor de Event hub weer te geven.
 1.  Selectter het tabblad **Roltoewijzingen** om de lijst met roltoewijzingen te zien.
-3.  Selecteer **toevoegen** om een nieuwe rol toe te voegen.
-4.  Selecteer op de pagina **roltoewijzing toevoegen** de Event hubs rollen die u wilt toewijzen. Zoek vervolgens naar de service-identiteit die u hebt geregistreerd om de rol toe te wijzen.
+3.  Selecteer **toevoegen** en selecteer vervolgens **roltoewijzing toevoegen** _.
+4.  Voer de volgende stappen uit op de pagina _ *roltoewijzing toevoegen**:
+    1. Selecteer bij **rol** de Event hubs rol die u wilt toewijzen. In dit voor beeld is de **gegevens eigenaar van Azure Event hubs**.
+    1. Selecteer **app service** onder door het **systeem toegewezen beheerde identiteit** voor het veld **toegang toewijzen aan** . 
+    1. Selecteer het **abonnement** waarin de beheerde identiteit voor de web-app is gemaakt.
+    1. Selecteer de **beheerde identiteit** voor de web-app die u hebt gemaakt. De standaard naam voor de identiteit is hetzelfde als de naam van de web-app. 
+    1. Selecteer vervolgens **Opslaan**. 
     
-    ![Pagina roltoewijzing toevoegen](./media/authenticate-managed-identity/add-role-assignment-page.png)
-5.  Selecteer **Opslaan**. De identiteit waaraan u de rol hebt toegewezen, wordt weer gegeven onder die rol. In de volgende afbeelding ziet u bijvoorbeeld dat de service-identiteit de Event Hubs gegevens eigenaar heeft.
-    
-    ![Identiteit die aan een rol is toegewezen](./media/authenticate-managed-identity/role-assigned.png)
+        ![Pagina roltoewijzing toevoegen](./media/authenticate-managed-identity/add-role-assignment-page.png)
 
-Zodra u de rol hebt toegewezen, heeft de webtoepassing toegang tot de Event Hubs resources onder het gedefinieerde bereik. 
+    Zodra u de rol hebt toegewezen, heeft de webtoepassing toegang tot de Event Hubs resources onder het gedefinieerde bereik. 
+
+    > [!NOTE]
+    > Zie [Services die beheerde identiteiten voor Azure-resources ondersteunen](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)voor een lijst met services die beheerde identiteiten ondersteunen.
 
 ### <a name="test-the-web-application"></a>De webtoepassing testen
 1. Een Event Hubs-naamruimte en een Event Hub maken. 

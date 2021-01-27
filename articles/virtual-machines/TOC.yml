@@ -6,7 +6,7 @@
       href: ./linux/overview.md
     - name: Over Windows Virtual Machines
       href: ./windows/overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Een virtuele Linux-machine maken
       items:
@@ -601,24 +601,24 @@
           href: dedicated-hosts-portal.md
         - name: PowerShell
           href: ./windows/dedicated-hosts-powershell.md
+    - name: Spot Virtual Machines
+      displayName: 'pre-empt, preempt, spot'
+      items:
+        - name: Overzicht
+          href: spot-vms.md
+        - name: CLI
+          href: ./linux/spot-cli.md
+        - name: Portal
+          href: spot-portal.md
+        - name: PowerShell
+          href: ./windows/spot-powershell.md
+        - name: ARM-sjabloon
+          displayName: template ARM
+          href: ./linux/spot-template.md
+        - name: Foutcodes
+          href: error-codes-spot.md
     - name: Aanschafmogelijkheden
       items:
-        - name: Spot-VM's
-          displayName: 'pre-empt, preempt, spot'
-          items:
-            - name: Overzicht
-              href: spot-vms.md
-            - name: CLI
-              href: ./linux/spot-cli.md
-            - name: Portal
-              href: spot-portal.md
-            - name: PowerShell
-              href: ./windows/spot-powershell.md
-            - name: ARM-sjabloon
-              displayName: template ARM
-              href: ./linux/spot-template.md
-            - name: Foutcodes
-              href: error-codes-spot.md
         - name: Azure Hybrid Benefit
           items:
             - name: Linux
@@ -1747,7 +1747,7 @@
         - name: Prijzen
           href: ../backup/azure-backup-pricing.md
         - name: Veelgestelde vragen
-          href: ../backup/backup-azure-vm-backup-faq.md
+          href: ../backup/backup-azure-vm-backup-faq.yml
     - name: Herstel na noodgeval
       items:
         - name: Overzicht

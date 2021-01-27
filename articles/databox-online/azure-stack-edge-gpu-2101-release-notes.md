@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 01/19/2021
 ms.author: alkohli
-ms.openlocfilehash: d0b7f871b2ea62c810a6d20f6e20a5e8d3f6306e
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 8158868a39bf8a1fe03a620f37e4dcb1c9adc14e
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791910"
+ms.locfileid: "98805183"
 ---
 # <a name="azure-stack-edge-2101-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2101
 
@@ -46,9 +46,9 @@ De volgende tabel bevat een samen vatting van bekende problemen in de 2101-relea
 |**2.**|Kubernetes-dash board | Het *https* -eind punt voor het Kubernetes-dash board met een SSL-certificaat wordt niet ondersteund. | |
 |**3.**|Kubernetes |Het Edge-container register werkt niet als webproxy is ingeschakeld.|De functionaliteit is beschikbaar in een toekomstige versie. |
 |**4.**|Kubernetes |Het Edge-container register werkt niet met IoT Edge-modules.| |
-|**5.**|Kubernetes |Kubernetes biedt geen ondersteuning voor ': ' in namen van omgevings variabelen die worden gebruikt door .NET-toepassingen. Dit is ook vereist voor de module Event grid IoT Edge op Azure Stack edge-apparaat en andere toepassingen te laten functioneren. Zie [ASP.net core-documentatie](/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration&view=aspnetcore-3.1&preserve-view=true#environment-variables)voor meer informatie.|Vervang ":" door dubbel onderstrepen. Zie [Kubernetes issue](https://github.com/kubernetes/kubernetes/issues/53201) (Engelstalig) voor meer informatie.|
-|**6.** |Azure Arc + Kubernetes-cluster |Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster.  |U moet `--sync-garbage-collection` in Arc OperatorParams instellen om het verwijderen van resources toe te staan wanneer deze uit de Git-opslag plaats worden verwijderd. Zie [een configuratie verwijderen](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters)voor meer informatie. |
-|**7.**|NFS |Toepassingen die gebruikmaken van NFS-shares op uw apparaat om gegevens te schrijven, moeten exclusieve schrijf bewerkingen gebruiken. Als u exclusieve schrijf bewerking gebruikt, zorgt u ervoor dat de schrijf bewerkingen naar de schijf worden geschreven.| |
+|**5.**|Kubernetes |Kubernetes biedt geen ondersteuning voor ': ' in namen van omgevings variabelen die worden gebruikt door .NET-toepassingen. Dit is ook vereist voor het functioneren van de module Event grid IoT Edge op Azure Stack edge-apparaat en andere toepassingen. Zie [ASP.net core-documentatie](/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration&view=aspnetcore-3.1&preserve-view=true#environment-variables)voor meer informatie.|Vervang ":" door dubbel onderstrepen. Zie [Kubernetes issue](https://github.com/kubernetes/kubernetes/issues/53201) (Engelstalig) voor meer informatie.|
+|**6.** |Azure Arc + Kubernetes-cluster |Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster.  |U moet `--sync-garbage-collection`  in Arc OperatorParams instellen om het verwijderen van resources toe te staan wanneer deze uit de Git-opslag plaats wordt verwijderd. Zie [een configuratie verwijderen](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters)voor meer informatie. |
+|**7.**|NFS |Toepassingen die gebruikmaken van NFS-shares op uw apparaat om gegevens te schrijven, moeten exclusieve schrijf bewerkingen gebruiken. Dit zorgt ervoor dat de schrijf bewerkingen naar de schijf worden geschreven.| |
 |**achtste.**|Compute-configuratie |De reken configuratie mislukt in netwerk configuraties waarbij gateways of switches of routers reageren op ARP-aanvragen (Address Resolution Protocol) voor systemen die niet bestaan in het netwerk.| |
 |**9,4.**|Compute en Kubernetes |Als Kubernetes eerst op uw apparaat is ingesteld, worden alle beschik bare Gpu's claimen. Daarom is het niet mogelijk om Azure Resource Manager Vm's te maken met behulp van Gpu's nadat u de Kubernetes hebt ingesteld. |Als uw apparaat 2 Gpu's heeft, kunt u één virtuele machine maken die gebruikmaakt van de GPU en vervolgens Kubernetes configureren. In dit geval maakt Kubernetes gebruik van de resterende beschik bare 1 GPU. |
 

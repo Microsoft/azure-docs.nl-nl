@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 69d5a0a69bcd820fd59da0a18b3838b65a6a0460
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 66d537b79819aecab4ce88a56ed465679363f421
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763423"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805209"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Vm's op uw Azure Stack Edge Pro GPU-apparaat implementeren via sjablonen
 
@@ -29,7 +29,7 @@ Als u Azure Stack Edge Pro-Vm's wilt implementeren op een groot aantal apparaten
 
 Het overzicht op hoog niveau van de implementatie werk stroom met behulp van sjablonen is als volgt:
 
-1. **Vereisten configureren** : er zijn drie soorten vereisten; apparaat, client en voor de virtuele machine.
+1. **Vereisten configureren** -er zijn drie soorten vereisten: apparaat, client en voor de virtuele machine.
 
     1. **Vereisten voor apparaten**
 
@@ -71,7 +71,7 @@ Configureer deze vereisten op uw client die worden gebruikt voor toegang tot het
 
 ## <a name="vm-prerequisites"></a>VM-vereisten
 
-Configureer deze vereisten voor het maken van resources die nodig zijn voor het maken van een VM. 
+Deze vereisten configureren om de resources te maken die nodig zijn voor het maken van VM'S. 
 
     
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
@@ -101,7 +101,7 @@ PS C:\windows\system32>
 
 ### <a name="create-a-storage-account"></a>Een opslagaccount maken
 
-Maak een nieuw opslag account met behulp van de resource groep die u in de vorige stap hebt gemaakt. Dit is een **lokaal opslag account** dat wordt gebruikt voor het uploaden van de installatie kopie van de virtuele schijf voor de VM.
+Maak een nieuw opslag account met behulp van de resource groep die u in de vorige stap hebt gemaakt. Dit account is een **lokaal opslag account** dat wordt gebruikt voor het uploaden van de installatie kopie van de virtuele schijf voor de VM.
 
 ```powershell
 New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resource group name> -Location DBELocal -SkuName Standard_LRS
@@ -209,7 +209,7 @@ Kopieer de schijf installatie kopieën die moeten worden gebruikt in pagina-blob
 
     ![VHD-bestand uploaden 3](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/upload-vhd-file-3.png)
 
-12. Kopieer de **URI** en sla deze op zoals u deze in de latere stappen gaat gebruiken.
+12. Kopieer de **URI** en sla deze op die u in latere stappen gaat gebruiken.
 
     ![URI kopiëren](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/copy-uri-1.png)
 
@@ -237,7 +237,7 @@ Het bestand `CreateImage.parameters.json` heeft de volgende para meters:
     }
 ```
 
-Bewerk het bestand `CreateImage.parameters.json` om het volgende toe te voegen aan uw Azure stack Edge Pro-apparaat:
+Bewerk het bestand `CreateImage.parameters.json` en voeg de volgende waarden toe voor uw Azure stack Edge Pro-apparaat:
 
 1. Geef het type besturings systeem op dat overeenkomt met de VHD die u wilt uploaden. Het type besturings systeem kan Windows of Linux zijn.
 
@@ -250,16 +250,17 @@ Bewerk het bestand `CreateImage.parameters.json` om het volgende toe te voegen a
 
 2. Wijzig de afbeeldings-URI in de URI van de afbeelding die u in de vorige stap hebt geüpload:
 
-    ```json
-    "imageUri": {
-        "value": "https://myasegpusavm.blob.myasegpu1.wdshcsso.com/windows/WindowsServer2016Datacenter.vhd"
-        },
-    ```
-    Als u *http* gebruikt met Storage Explorer, wijzigt u dit in een *http-* URI.
+   ```json
+   "imageUri": {
+       "value": "https://myasegpusavm.blob.myasegpu1.wdshcsso.com/windows/WindowsServer2016Datacenter.vhd"
+       },
+   ```
+
+   Als u *http* gebruikt met Storage Explorer, wijzigt u de URI in een *http-* URI.
 
 3. Geef een unieke naam op voor de installatie kopie. Deze installatie kopie wordt gebruikt om een virtuele machine te maken in de volgende stappen. 
 
-    Hier volgt een voor beeld van een JSON dat in dit artikel wordt gebruikt.
+   Hier volgt een voor beeld van een JSON dat in dit artikel wordt gebruikt.
 
     ```json
     {
@@ -278,6 +279,7 @@ Bewerk het bestand `CreateImage.parameters.json` om het volgende toe te voegen a
       }
     }
     ```
+
 5. Sla het parameter bestand op.
 
 
@@ -588,4 +590,4 @@ Volg deze stappen om verbinding te maken met een virtuele Linux-machine.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

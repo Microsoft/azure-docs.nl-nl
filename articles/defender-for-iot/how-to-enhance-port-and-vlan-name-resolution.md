@@ -1,5 +1,5 @@
 ---
-title: Poort-en VLAN-naam omzetting verbeteren
+title: Poort- en VLAN-naamomzetting verbeteren
 description: U kunt de naam van de poort en het VLAN op uw Sens oren aanpassen aan de resolutie van een apparaat.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/13/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 1747af77468ebe41f59892dea4bb49ce24757f37
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9c976671bccb420ae24d8def7a6574098d86ce6d
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840235"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98803579"
 ---
-# <a name="enhance-port-and-vlan-name-resolution"></a>Poort-en VLAN-naam omzetting verbeteren
+# <a name="enhance-port-and-vlan-name-resolution"></a>Poort- en VLAN-naamomzetting verbeteren
 
 U kunt de namen van de poort en VLAN op uw Sens oren aanpassen tot een verrijkende oplossing voor het apparaat.
 
@@ -84,7 +84,8 @@ VLAN'S configureren:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Uitgebreide informatie over apparaten weer geven in de rapporten voor de inventarisatie van apparaten en gegevens analyse:
+Uitgebreide informatie over apparaten weer geven in verschillende rapporten:
 
-- [Sensor detecties onderzoeken in een inventaris van een apparaat](how-to-investigate-sensor-detections-in-a-device-inventory.md)
-- [Rapporten genereren](how-to-generate-reports.md)
+- [Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+- [Sensor trends en statistieken rapporten](how-to-create-trends-and-statistics-reports.md)
+- [Sensor gegevens analyse query's](how-to-create-data-mining-queries.md)

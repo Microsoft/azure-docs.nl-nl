@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: c2a14c12baac29d73754bb17e3ca386cc48e1ba0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5704f88d8099966eedcb7143085130ad1376d742
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449230"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804902"
 ---
 # <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-a-persistentvolume-on-your-azure-stack-edge-pro-device"></a>Gebruik kubectl om een Kubernetes stateful-toepassing uit te voeren met een PersistentVolume op uw Azure Stack Edge Pro-apparaat
 
@@ -26,7 +26,7 @@ Azure Stack Edge Pro biedt ook ondersteuning voor het uitvoeren van Azure SQL Ed
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u de stateful toepassing kunt implementeren, moet u ervoor zorgen dat u de volgende vereisten hebt voltooid op uw apparaat en de client die u gaat gebruiken voor toegang tot het apparaat:
+Voordat u de stateful toepassing kunt implementeren, moet u voldoen aan de volgende vereisten op het apparaat en de client die u gaat gebruiken voor toegang tot het apparaat:
 
 ### <a name="for-device"></a>Voor het apparaat
 
@@ -37,7 +37,7 @@ Voordat u de stateful toepassing kunt implementeren, moet u ervoor zorgen dat u 
 ### <a name="for-client-accessing-the-device"></a>Voor client toegang tot het apparaat
 
 - U hebt een Windows-client systeem dat wordt gebruikt om toegang te krijgen tot het Azure Stack Edge Pro-apparaat.
-    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7&preserve-view=true).
     
     - U kunt ook een andere client met een [ondersteund besturings systeem](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. 
     
@@ -50,7 +50,7 @@ Voordat u de stateful toepassing kunt implementeren, moet u ervoor zorgen dat u 
     - Zorg ervoor dat de `kubectl` client versie niet meer dan één versie van de Kubernetes-hoofd versie die wordt uitgevoerd op uw Azure stack Edge Pro-apparaat. 
         - Gebruiken `kubectl version` om te controleren welke versie van kubectl op de client wordt uitgevoerd. Noteer de volledige versie.
         - Ga in de lokale gebruikers interface van uw Azure Stack Edge Pro-apparaat naar **overzicht** en noteer het Kubernetes-software nummer. 
-        - Controleer deze twee versies op compatibiliteit van de toewijzing die is opgenomen in de ondersteunde Kubernetes-versie <!-- insert link-->. 
+        - Controleer deze twee versies op compatibiliteit van de toewijzing die is opgenomen in de ondersteunde Kubernetes-versie.<!-- insert link--> 
 
 
 U bent klaar om een stateful toepassing te implementeren op uw Azure Stack Edge Pro-apparaat. 
@@ -176,7 +176,7 @@ U kunt nu een stateful toepassing uitvoeren door een Kubernetes-implementatie te
 
     `kubectl apply -f <URI path to the mysql-pv.yml file> -n <your-user-namespace>`
     
-    Hier volgt een voor beeld van de uitvoer van de implementatie.
+    Hier volgt een voorbeeld uitvoer van de implementatie.
 
     
     ```powershell
@@ -191,7 +191,7 @@ U kunt nu een stateful toepassing uitvoeren door een Kubernetes-implementatie te
 
     `kubectl apply -f <URI path to mysql-deployment.yml file> -n <your-user-namespace>`
 
-    Hier volgt een voor beeld van de uitvoer van de implementatie.
+    Hier volgt een voorbeeld uitvoer van de implementatie.
     
     ```powershell
     C:\Users\user>kubectl apply -f "C:\stateful-application\mysql-deployment.yml" -n userns1
@@ -335,13 +335,13 @@ deployment.apps "mysql" deleted
 service "mysql" deleted
 C:\Users\user>
 ```
-Hier volgt een voor beeld van uitvoer van wanneer u het PVC verwijdert.
+Hier volgt een voor beeld van de uitvoer van wanneer u het PVC verwijdert.
 
 ```powershell
 C:\Users\user>kubectl delete pvc mysql-pv-claim -n userns1
 persistentvolumeclaim "mysql-pv-claim" deleted
 C:\Users\user>
-```                                                                                         
+```
 
 De PV is niet meer gekoppeld aan het PVC, omdat het PVC is verwijderd. Als de HW is ingericht toen de share werd gemaakt, moet u de share verwijderen. Volg deze stappen:
 

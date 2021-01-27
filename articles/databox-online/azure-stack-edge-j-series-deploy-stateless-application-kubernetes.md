@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 6356089daed02270a14903639afee8001153b195
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b199fdbac4aca7637e07a18383cc7e254f702019
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447373"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804838"
 ---
 # <a name="deploy-a-kubernetes-stateless-application-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Een Kubernetes stateless toepassing implementeren via kubectl op uw Azure Stack Edge Pro GPU-apparaat
 
@@ -25,7 +25,7 @@ Voordat u een Kubernetes-cluster kunt maken en het `kubectl` opdracht regel prog
 
 - U hebt aanmeldings referenties naar een Azure Stack Edge Pro-apparaat met één knoop punt.
 
-- Windows Power shell 5,0 of hoger is geïnstalleerd op een Windows-client systeem om toegang te krijgen tot het Azure Stack Edge Pro-apparaat. U kunt ook een andere client met een ondersteund besturings systeem hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+- Windows Power shell 5,0 of hoger is geïnstalleerd op een Windows-client systeem om toegang te krijgen tot het Azure Stack Edge Pro-apparaat. U kunt ook een andere client met een ondersteund besturings systeem hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7&preserve-view=true).
 
 - Compute is ingeschakeld op het Azure Stack Edge Pro-apparaat. Als u Compute wilt inschakelen, gaat u naar de **Compute** -pagina in de lokale gebruikers interface van het apparaat. Selecteer vervolgens een netwerk interface die u wilt inschakelen voor compute. Selecteer **Inschakelen**. Het inschakelen van Compute-resultaten bij het maken van een virtuele switch op het apparaat op die netwerk interface. Zie [Compute Network inschakelen op uw Azure stack Edge Pro](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md)voor meer informatie.
 
@@ -55,7 +55,7 @@ Controleren van de versie van `kubectl` :
    kubectl version
    ```
     
-   Hier volgt een voor beeld van de uitvoer:
+   Hieronder ziet u een voor beeld van de uitvoer:
     
    ```powershell
    PS C:\WINDOWS\system32> C:\windows\system32\kubectl.exe version
@@ -71,7 +71,7 @@ Controleren van de versie van `kubectl` :
    kubectl get pods -n <namespace-string>
    ```
     
-   Hier volgt een voorbeeld van het gebruik van de opdracht:
+   Hieronder ziet u een voor beeld van het gebruik van de opdracht:
     
    ```powershell
    PS C:\WINDOWS\system32> kubectl get pods -n "test1"
@@ -103,7 +103,7 @@ Controleren van de versie van `kubectl` :
 
 ### <a name="create-a-stateless-application-using-a-deployment"></a>Een staatloze toepassing maken met behulp van een implementatie
 
-Nu u hebt gecontroleerd of de kubectl-opdracht regel versie juist is en de vereiste configuratie bestanden hebben, kunt u een stateless toepassings implementatie maken.
+Nu u hebt gecontroleerd of de kubectl-opdracht regel versie juist is en u de vereiste configuratie bestanden hebt, kunt u een stateless toepassings implementatie maken.
 
 Een Pod is de basis uitvoerings eenheid van een Kubernetes-toepassing, de kleinste en eenvoudigste eenheid in het Kubernetes-object model dat u maakt of implementeert. Een pod omvat ook opslag resources, een uniek netwerk-IP-adres en opties die bepalen hoe de container (s) moeten worden uitgevoerd.
 
@@ -123,7 +123,7 @@ Volg deze stappen om een nginx-implementatie te maken:
 
    In dit voor beeld is het pad naar het YAML-bestand van de toepassing een externe bron.
 
-   Hier volgt een voor beeld van het gebruik van de opdracht en uitvoer:
+   Hier volgt een voor beeld van het gebruik van de opdracht en de uitvoer:
 
    ```powershell
    PS C:\WINDOWS\system32> kubectl apply -f https://k8s.io/examples/application/deployment.yaml -n "test1"
@@ -131,7 +131,7 @@ Volg deze stappen om een nginx-implementatie te maken:
    deployment.apps/nginx-deployment created
    ```
 
-   U kunt ook de volgende prijs verlaging opslaan op uw lokale computer en het pad en de bestands naam in de para meter *-f* vervangen. Bijvoorbeeld ' C:\Kubernetes\deployment.yaml '. Hier volgt de configuratie voor de toepassings implementatie:
+   U kunt ook de volgende prijs verlaging opslaan op uw lokale computer en het pad en de bestands naam in de para meter *-f* vervangen. Bijvoorbeeld ' C:\Kubernetes\deployment.yaml '. De configuratie voor de toepassings implementatie is als volgt:
 
    ```markdown
    apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
@@ -163,7 +163,7 @@ Volg deze stappen om een nginx-implementatie te maken:
    kubectl describe deployment nginx-deployment -n <namespace-string>
    ```
 
-   Hier volgt een voor beeld van het gebruik van de opdracht en uitvoer:
+   Een voor beeld van het gebruik van de opdracht, met uitvoer, wordt hieronder weer gegeven:
     
    ```powershell
    PS C:\Users\user> kubectl describe deployment nginx-deployment -n "test1"
@@ -203,13 +203,13 @@ Volg deze stappen om een nginx-implementatie te maken:
      Normal  ScalingReplicaSet  2m22s  deployment-controller  Scaled up replica set nginx-deployment-5754944d6c to 2
    ```
 
-   Als u de instellingen voor *replica's* nauw keurig vindt, ziet u het volgende:
+   Voor de instelling *replica's* ziet u het volgende:
     
    ```powershell
    Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
    ```
 
-   De instelling *replica's* geeft aan dat uw implementatie-specificatie twee peulen vereist, die van de peulen waar ze zijn gemaakt en bijgewerkt, en dat ze gereed zijn voor gebruik.
+   De instelling *replica's* geeft aan dat uw implementatie specificatie twee peulen vereist en dat deze peulen zijn gemaakt en bijgewerkt en gereed zijn voor gebruik.
 
    > [!NOTE]
    > Een replicaset vervangt de peulen die worden verwijderd of beëindigd om een wille keurige reden, zoals in het geval van een storing in het knoop punt of een verstoring van een upgrade van het apparaat. Daarom wordt u aangeraden een replicaset te gebruiken, zelfs als uw toepassing slechts één Pod vereist.
@@ -220,7 +220,7 @@ Volg deze stappen om een nginx-implementatie te maken:
    kubectl get pods -l app=nginx -n <namespace-string>
    ```
     
-   Hier volgt een voor beeld van het gebruik van de opdracht en uitvoer:
+   Een voor beeld van het gebruik van de opdracht, met uitvoer, wordt hieronder weer gegeven:
     
    ```powershell
    PS C:\Users\user> kubectl get pods -l app=nginx -n "test1"
@@ -238,7 +238,7 @@ Volg deze stappen om een nginx-implementatie te maken:
    kubectl describe pod <podname-string> -n <namespace-string>
    ```
 
-   Hier volgt een voor beeld van het gebruik van de opdracht en uitvoer:
+  Een voor beeld van het gebruik van de opdracht, met uitvoer, wordt hieronder weer gegeven:
 
    ```powershell
    PS C:\Users\user> kubectl describe pod "nginx-deployment-5754944d6c-7wqjd" -n "test1"
@@ -295,14 +295,14 @@ Volg deze stappen om een nginx-implementatie te maken:
 
 ### <a name="rescale-the-application-deployment-by-increasing-the-replica-count"></a>De toepassings implementatie opnieuw schalen door het aantal replica's te verhogen
 
-Elk Pod is bedoeld om één exemplaar van een bepaalde toepassing uit te voeren. Als u de schaal van uw toepassing horizon taal wilt aanpassen om meerdere exemplaren uit te voeren, kunt u het aantal peulen per exemplaar verhogen. In Kubernetes wordt dit ook wel replicatie genoemd.
+Elk Pod is bedoeld om één exemplaar van een bepaalde toepassing uit te voeren. Als u de schaal van uw toepassing horizon taal wilt aanpassen om meerdere exemplaren uit te voeren, kunt u het aantal peulen voor elke instantie verhogen tot één. In Kubernetes wordt dit ook wel replicatie genoemd.
 U kunt het aantal peulen in de implementatie van uw toepassing verhogen door een nieuw YAML-bestand toe te passen. Het YAML-bestand wijzigt de instelling van replica's in 4, waardoor het aantal peulen in uw implementatie wordt verhoogd naar vier peulen. Het aantal van 2 tot 4 verhogen:
 
 ```powershell
 PS C:\WINDOWS\system32> kubectl apply -f https://k8s.io/examples/application/deployment-scale.yaml -n "test1"
 ```
 
-U kunt ook de volgende prijs verlaging op uw lokale computer opslaan en het pad en de bestands naam voor de para meter *-f* vervangen door `kubectl apply` . Bijvoorbeeld ' C:\Kubernetes\deployment-scale.yaml '. Hier volgt de configuratie voor de schaal van de toepassings implementatie:
+U kunt ook de volgende prijs verlaging op uw lokale computer opslaan en het pad en de bestands naam voor de para meter *-f* vervangen door `kubectl apply` . Bijvoorbeeld ' C:\Kubernetes\deployment-scale.yaml '. De configuratie voor de schaal van de toepassings implementatie is:
 
 ```markdown
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
@@ -332,7 +332,7 @@ Controleren of de implementatie vier peulen heeft:
 kubectl get pods -l app=nginx
 ```
 
-Hier volgt een voor beeld van de uitvoer van een implementatie met een schaal aanpassing van twee tot vier peulen:
+Voor beeld van een uitvoer van een implementatie met een schaal aanpassing van twee tot vier peulen wordt hieronder weer gegeven:
 
 ```powershell
 PS C:\WINDOWS\system32> kubectl get pods -l app=nginx
@@ -354,7 +354,7 @@ Als u de implementatie wilt verwijderen, inclusief alle peulen, moet u `kubectl 
    kubectl delete deployment nginx-deployment -n <namespace-string>
    ```
 
-Hier volgt een voor beeld van het gebruik en de uitvoer van de opdracht:
+Een voor beeld van het gebruik van de opdracht, met uitvoer, wordt hieronder weer gegeven:
 
 ```powershell
 PS C:\Users\user> kubectl delete deployment nginx-deployment -n "test1"

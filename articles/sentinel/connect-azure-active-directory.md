@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: 409a316bd9c4222dd9b8ff30e42e37d23805c38b
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: eb89d2a4e719e34ad5ea31656dc9e3c02472b07d
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757759"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802258"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad"></a>Verbinding maken met gegevens van Azure Active Directory (Azure AD)
 
@@ -28,7 +28,7 @@ U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azu
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Elke Azure AD-licentie (Free/O365/P1/P2) is voldoende voor het opnemen van aanmeldings Logboeken in azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
+- U moet een [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/) -abonnement hebben om logboek registraties in te loggen bij Azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
 
 - Aan uw gebruiker moet de rol Azure Sentinel contributor worden toegewezen in de werk ruimte.
 
@@ -46,10 +46,6 @@ U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azu
 
     - **Aanmeld logboeken**: informatie over het gebruik van beheerde toepassingen en aanmeldings activiteiten voor gebruikers.
     - **Audit logboeken**: informatie over systeem activiteit over gebruikers-en groeps beheer, beheerde toepassingen en Directory-activiteiten.
-    - **Niet-interactieve aanmelding van gebruikers Logboeken**: informatie over aanmeldingen die zijn uitgevoerd door een client namens een gebruiker, waarvoor geen interactie of verificatie factor van de gebruiker is vereist.
-    - **Logboeken voor Service-Principal-aanmelding**: informatie over aanmeldingen door apps en service-principals die geen gebruik maken van een gebruiker. In deze aanmeldingen biedt de app of service een referentie voor het verifiëren of openen van bronnen.
-    - **Aanmeldings logboeken voor beheerde identiteit**: aanmeldingen op Azure-resources met geheimen die worden beheerd door Azure.
-    - **Inrichtings logboeken**: informatie over systeem activiteit over gebruikers, groepen en rollen die worden ingericht door de Azure AD-inrichtings service.
 
 ## <a name="find-your-data"></a>Uw gegevens zoeken
 
@@ -57,10 +53,6 @@ Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **
 
 - `SigninLogs`
 - `AuditLogs`
-- `AADNonInteractiveUserSignInLogs`
-- `AADServicePrincipalSignInLogs`
-- `AADManagedIdentitySignInLogs`
-- `AADProvisioningLogs`
 
 Als u de Azure AD-logboeken wilt doorzoeken, voert u de relevante tabel naam boven in het query venster in.
 

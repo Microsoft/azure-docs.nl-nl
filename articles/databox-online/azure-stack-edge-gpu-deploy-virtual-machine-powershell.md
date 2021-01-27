@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/23/2020
+ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 32685207f8d6e81d03c90d01b186337ce79f843a
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 1d286e7661fa14dd63bd55b133c39414e04decc6
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763823"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802991"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via Azure PowerShell
 
-In dit artikel wordt beschreven hoe u een virtuele machine op uw Azure Stack Edge Pro-apparaat maakt en beheert met behulp van Azure PowerShell. Dit artikel is van toepassing op Azure Stack Edge Pro GPU, Azure Stack Edge Pro R-en Azure Stack Edge mini-R-apparaten.
+In dit artikel wordt beschreven hoe u een virtuele machine op uw Azure Stack Edge Pro-apparaat maakt en beheert met behulp van Azure PowerShell. Dit artikel is van toepassing op Azure Stack Edge Pro GPU, Azure Stack Edge Pro R en Azure Stack Edge mini-R-apparaten.
 
 ## <a name="vm-deployment-workflow"></a>VM-implementatiewerkstroom
 
@@ -37,7 +37,7 @@ Voor Azure Resource Manager wordt slechts één door de gebruiker zichtbaar vast
 Dit abonnement bevat alle resources die zijn gemaakt voor het maken van VM'S. 
 
 > [!IMPORTANT]
-> Dit abonnement wordt gemaakt wanneer u virtuele machines inschakelt op het Azure Portal en lokaal op uw apparaat is.
+> Dit abonnement wordt gemaakt wanneer u virtuele machines inschakelt op het Azure Portal en lokaal op uw apparaat woont.
 
 Dit abonnement wordt gebruikt voor het implementeren van de Vm's.
 
@@ -118,7 +118,7 @@ Successfully created Resource Group:rg191113014333
 
 ## <a name="create-a-storage-account"></a>Een opslagaccount maken
 
-Maak een nieuw opslag account met behulp van de resource groep die u in de vorige stap hebt gemaakt. Dit is een **lokaal opslag account** dat wordt gebruikt voor het uploaden van de installatie kopie van de virtuele schijf voor de VM.
+Maak een nieuw opslag account met behulp van de resource groep die u in de vorige stap hebt gemaakt. Dit account is een **lokaal opslag account** dat wordt gebruikt voor het uploaden van de installatie kopie van de virtuele schijf voor de VM.
 
 ```powershell
 New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resource group name> -Location DBELocal -SkuName Standard_LRS
@@ -177,7 +177,7 @@ key2 gd34TcaDzDgsY9JtDNMUgLDOItUU0Qur3CBo6Q...
 
 ## <a name="add-blob-uri-to-hosts-file"></a>Blob-URI toevoegen aan het hosts-bestand
 
-U hebt de BLOB-URI in het hosts-bestand al toegevoegd voor de client die u gebruikt om verbinding te maken met de Blob-opslag in de sectie [hostbestand wijzigen voor naam omzetting van het eind punt](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Dit was de vermelding voor de BLOB-URI:
+U hebt de BLOB-URI al toegevoegd in het hosts-bestand voor de client die u gebruikt om verbinding te maken met de Blob-opslag in de sectie [hostbestand wijzigen voor naam omzetting van het eind punt](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Dit item is gebruikt om de BLOB-URI toe te voegen:
 
 \<Azure consistent network services VIP \>\<storage name\>. blob. \<appliance name\> .\<dnsdomain\>
 
@@ -256,7 +256,7 @@ $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –S
 New-AzureRMDisk -ResourceGroupName <Resource group name> -DiskName <Disk name> -Disk $DiskConfig
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 ```powershell
 Tags               :
@@ -296,7 +296,7 @@ Set-AzureRmImageOsDisk -Image $imageConfig -OsType 'Linux' -OsState 'Generalized
 New-AzureRmImage -Image $imageConfig -ImageName <Image name>  -ResourceGroupName <Resource group name>
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 ```powershell
 New-AzureRmImage -Image Microsoft.Azure.Commands.Compute.Automation.Models.PSImage -ImageName ig191113014333  -ResourceGroupName rg191113014333
@@ -319,8 +319,8 @@ U moet één virtueel netwerk maken en een virtuele netwerk interface koppelen v
 > [!IMPORTANT]
 > Bij het maken van het virtuele netwerk en de virtuele netwerk interface gelden de volgende regels:
 > - Er kan slechts één Vnet worden gemaakt (zelfs over resource groepen) en het moet exact overeenkomen met het logische netwerk in termen van de adres ruimte.
-> -   Er is slechts één subnet toegestaan in het Vnet. Het subnet moet exact dezelfde adres ruimte zijn als het Vnet.
-> -   Alleen een statische toewijzings methode is toegestaan tijdens het maken van Vnic en de gebruiker moet een privé-IP-adres opgeven.
+> - Er is slechts één subnet toegestaan in het Vnet. Het subnet moet exact dezelfde adres ruimte zijn als het Vnet.
+> - Alleen een statische toewijzings methode is toegestaan tijdens het maken van Vnic en de gebruiker moet een privé-IP-adres opgeven.
 
  
 **Een query uitvoeren op de automatisch gemaakte Vnet**
@@ -498,7 +498,7 @@ Voer de volgende cmdlet uit om een virtuele machine die wordt uitgevoerd op uw a
 `Start-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>`
 
 
-Ga naar [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Ga naar [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 ### <a name="suspend-or-shut-down-the-vm"></a>De virtuele machine onderbreken of afsluiten
 
@@ -510,7 +510,7 @@ Stop-AzureRmVM [-Name] <String> [-StayProvisioned] [-ResourceGroupName] <String>
 ```
 
 
-Ga naar de [cmdlet stop-AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Ga naar de [cmdlet stop-AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 ### <a name="add-a-data-disk"></a>Een gegevens schijf toevoegen
 
@@ -530,10 +530,10 @@ Voer de volgende cmdlet uit om een virtuele machine van uw apparaat te verwijder
 Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ```
 
-Ga naar de [cmdlet Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Ga naar de [cmdlet Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0&preserve-view=true)voor meer informatie over deze cmdlet.
 
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

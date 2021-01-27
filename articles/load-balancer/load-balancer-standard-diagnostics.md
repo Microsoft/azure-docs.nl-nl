@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 08/14/2019
+ms.date: 01/25/2021
 ms.author: allensu
-ms.openlocfilehash: 90443a898ffdebf33a0c967719ba25a2ccc6f9a7
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 43d83d994c9a4ee3cf89b584f6c3835a62fa2cfe
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/26/2021
-ms.locfileid: "98792096"
+ms.locfileid: "98806000"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
 
@@ -26,7 +26,6 @@ Azure Standard Load Balancer maakt de volgende diagnostische mogelijkheden besch
 * **Multi-dimensionale metrische gegevens en waarschuwingen**: biedt multi-dimensionale diagnostische mogelijkheden via [Azure Monitor](../azure-monitor/overview.md) voor standaard Load Balancer configuraties. U kunt uw standaard load balancer-resources bewaken, beheren en problemen oplossen.
 
 * **Resource status**: de resource Health status van uw Load Balancer is beschikbaar op de pagina Resource Health onder monitor. Deze automatische controle informeert u over de huidige Beschik baarheid van uw Load Balancer-resource.
-
 Dit artikel bevat een korte rond leiding door deze mogelijkheden en biedt manieren om ze te gebruiken voor Standard Load Balancer. 
 
 ## <a name="multi-dimensional-metrics"></a><a name = "MultiDimensionalMetrics"></a>Multi-dimensionale metrische gegevens
@@ -73,7 +72,7 @@ De metrische gegevens voor uw Standard Load Balancer resources weer geven:
 
 ### <a name="retrieve-multi-dimensional-metrics-programmatically-via-apis"></a>Via Api's multi-dimensionale metrieken ophalen
 
-Zie [Azure Monitoring rest API-overzicht](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen worden geschreven naar een opslag account met behulp van de optie ' alle metrische gegevens '. 
+Zie [Azure Monitoring rest API-overzicht](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-definitions-multi-dimensional-api)voor API-richt lijnen voor het ophalen van multi-dimensionale metrische definities en waarden. Deze metrische gegevens kunnen naar een opslag account worden geschreven door een [Diagnostische instelling](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) voor de categorie alle metrische gegevens toe te voegen. 
 
 ### <a name="configure-alerts-for-multi-dimensional-metrics"></a>Waarschuwingen voor multi-dimensionale metrische gegevens configureren ###
 
@@ -85,9 +84,6 @@ Waarschuwingen configureren:
     1.  Waarschuwings voorwaarde configureren
     1.  Beschrijving Actie groep toevoegen voor automatisch herstellen
     1.  Ernst, naam en beschrijving van de waarschuwing toewijzen die intuïtieve reactie mogelijk maakt
-
-  >[!NOTE]
-  >In het venster waarschuwings voorwaarde configuratie wordt de tijd reeks weer gegeven voor de signaal geschiedenis. Er is een optie om deze tijd reeks te filteren op dimensies zoals back-end-IP. Hiermee wordt de tijd reeks grafiek gefilterd, maar **niet** de waarschuwing zelf. U kunt geen waarschuwingen configureren voor specifieke back-end-IP-adressen.
 
 ### <a name="common-diagnostic-scenarios-and-recommended-views"></a><a name = "DiagnosticScenarios"></a>Veelvoorkomende diagnostische scenario's en aanbevolen weer gaven
 
@@ -147,7 +143,7 @@ Een volume met mislukte verbindingen van meer dan nul geeft de SNAT-poort uitput
 
 Statistieken voor de SNAT-verbinding ophalen:
 1. Selecteer het metrische type voor de **SNAT-verbindingen** en **som** als aggregatie. 
-2. Groeperen op **verbindings status** voor geslaagde en mislukte SNAT-verbindings aantallen die door verschillende regels worden vertegenwoordigd. 
+2. Groeperen op **verbindings status** voor geslaagde en mislukte SNAT-verbindings aantallen die door verschillende regels worden weer gegeven. 
 
 ![SNAT-verbinding](./media/load-balancer-standard-diagnostics/LBMetrics-SNATConnection.png)
 
@@ -186,7 +182,7 @@ Het gebruik en de toewijzing van het SNAT-poort weer geven:
   <summary>Uitvouwen</summary>
 De metrische SYN-pakketten beschrijft het volume TCP SYN-pakketten, die zijn aangekomen of verzonden (voor [uitgaande stromen](./load-balancer-outbound-connections.md)) die zijn gekoppeld aan een specifieke front-end. U kunt deze metrische gegevens gebruiken om de TCP-verbindings pogingen met uw service te begrijpen.
 
-Gebruik **totaal** als de aggregatie voor de meeste scenario's.
+Gebruik **Sum** als aggregatie voor de meeste scenario's.
 
 ![SYN-verbinding](./media/load-balancer-standard-diagnostics/LBMetrics-SYNCount.png)
 
@@ -199,10 +195,10 @@ Gebruik **totaal** als de aggregatie voor de meeste scenario's.
   <summary>Uitvouwen</summary>
 De metrische gegevens voor bytes en pakket items beschrijven het volume van de bytes en pakketten die door uw service per front-end worden verzonden of ontvangen.
 
-Gebruik **totaal** als de aggregatie voor de meeste scenario's.
+Gebruik **Sum** als aggregatie voor de meeste scenario's.
 
 Statistieken voor byte of pakket aantal ophalen:
-1. Selecteer het waardetype **aantal bytes** en/of **aantal pakketten** , waarbij **Gem** als de aggregatie. 
+1. Selecteer het waardetype **aantal bytes** en/of het metrische **aantal pakketten** , met de **som** als aggregatie. 
 2. Gebruik een van de volgende methoden:
    * Een filter Toep assen op een specifieke front-end-IP, front-end-poort, back-end-IP of back-end-poort.
    * Bekijk de algemene statistieken voor uw load balancer resource zonder filters.
@@ -239,8 +235,8 @@ De integriteits status voor de Standard Load Balancer bronnen wordt weer gegeven
 | Status van resource status | Beschrijving |
 | --- | --- |
 | Beschikbaar | Uw standaard load balancer resource is in orde en beschikbaar. |
-| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](./troubleshoot-rhc.md) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.
-| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. [Volg de RHC-gids voor probleem oplossing](./troubleshoot-rhc.md) om te bepalen of er door de gebruiker gestarte gebeurtenissen van invloed zijn op uw Beschik baarheid. |
+| Verminderd beschikbaar | Uw standaard load balancer heeft platform of door de gebruiker gestarte gebeurtenissen die invloed hebben op de prestaties. De metriek voor het gegevenspad heeft een beschikbaarheid van minder dan 90% en meer dan 25% gerapporteerd gedurende ten minste twee minuten. U ondervindt aanzienlijke invloed op de prestaties. [Volg de RHC-hand leiding voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker geïnitieerde gebeurtenissen zijn die invloed hebben op uw Beschik baarheid.
+| Niet beschikbaar | Uw standaard load balancer resource is niet in orde. De metriek voor DataPath-Beschik baarheid heeft minder dan 25% status gerapporteerd voor ten minste twee minuten. U ondervindt aanzienlijke gevolgen voor de prestaties of gebrek aan Beschik baarheid voor binnenkomende verbindingen. Er zijn mogelijk gebruikers-of platform gebeurtenissen waardoor er geen Beschik baarheid wordt veroorzaakt. [Volg de RHC-gids voor probleem oplossing](https://docs.microsoft.com/azure/load-balancer/troubleshoot-rhc) om te bepalen of er door de gebruiker gestarte gebeurtenissen van invloed zijn op uw Beschik baarheid. |
 | Onbekend | De resource status voor uw standaard load balancer resource is nog niet bijgewerkt of heeft niet de beschikbaarheids gegevens van het gegevenspad ontvangen voor de afgelopen 10 minuten. Dit hoort slechts tijdelijk het geval te zijn. De juiste status wordt weergegeven zodra er gegevens worden ontvangen. |
 
 De status van uw open bare Standard Load Balancer-resources weer geven:
@@ -267,6 +263,7 @@ De beschrijving van de algemene resource status is beschikbaar in de [RHC-docume
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Meer informatie over het gebruik van [inzichten](https://docs.microsoft.com/azure/load-balancer/load-balancer-insights) voor het weer geven van deze metrische gegevens die vooraf zijn geconfigureerd voor uw Load Balancer
 - Meer informatie over [Standard Load Balancer](./load-balancer-overview.md).
 - Meer informatie over de [uitgaande connectiviteit van de Load Balancer](./load-balancer-outbound-connections.md).
 - Meer informatie over [Azure monitor](../azure-monitor/overview.md).

@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 8abbe575e855347714c19c40155d890af484d5d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0cece3f531d50356fdefb81a598109d7c067c5ed
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91822334"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805941"
 ---
 # <a name="routes-in-azure-static-web-apps-preview"></a>Routes in de preview-versie van statische Web Apps van Azure
 
@@ -36,10 +36,10 @@ De volgende tabel bevat de juiste locatie voor het opslaan van uw _routes.jsin_ 
 
 |Framework/bibliotheek | Locatie  |
 |---------|----------|
-| Angular | _publicatie_   |
-| React   | _public_  |
-| Svelte  | _public_   |
-| Vue     | _public_ |
+| Angular | _assets_   |
+| React   | _openbaar_  |
+| Svelte  | _openbaar_   |
+| Vue     | _openbaar_ |
 | Blazor  | _wwwroot_ |
 
 De bovenstaande tabel is alleen een vertegenwoordiger van een paar frameworks en bibliotheken die compatibel zijn met Azure static Web Apps. Raadpleeg [front-end-frameworks en-bibliotheken configureren](./front-end-frameworks.md) voor meer informatie.
@@ -50,7 +50,7 @@ Routes worden gedefinieerd in de _routes.jsop_ bestand als een matrix van route 
 
 | Regel eigenschap  | Vereist | Standaardwaarde | Opmerking                                                      |
 | -------------- | -------- | ------------- | ------------------------------------------------------------ |
-| `route`        | Ja      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund. De routerings _beheerder/ \* _ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .<li>Het standaard bestand van een route is _index.html_.</ul>|
+| `route`        | Ja      | n.v.t.          | Het route patroon dat is aangevraagd door de aanroeper.<ul><li>[Joker tekens](#wildcards) worden aan het einde van route paden ondersteund. De routerings _beheerder/ \*_ komt bijvoorbeeld overeen met een wille keurige route onder het pad van de _beheerder_ .<li>Het standaard bestand van een route is _index.html_.</ul>|
 | `serve`        | Nee       | n.v.t.          | Hiermee wordt het bestand of het pad gedefinieerd dat door de aanvraag wordt geretourneerd. Het bestandspad en de naam kunnen afwijken van het aangevraagde pad. Als er `serve` geen waarde is gedefinieerd, wordt het aangevraagde pad gebruikt. Query string-para meters worden niet ondersteund; de `serve` waarden moeten verwijzen naar de werkelijke bestanden.  |
 | `allowedRoles` | Nee       | toegang     | Een matrix met namen van rollen. <ul><li>Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `_`.<li>De ingebouwde rol `anonymous` is van toepassing op alle niet-geverifieerde gebruikers.<li>De ingebouwde rol `authenticated` is van toepassing op elke aangemelde gebruiker.<li>Gebruikers moeten deel uitmaken van ten minste één rol.<li>Rollen worden _op basis van_ elkaar vergeleken. Als een gebruiker zich in een van de vermelde rollen bevindt, wordt de toegang verleend.<li>Afzonderlijke gebruikers zijn gekoppeld aan rollen via [uitnodigingen](authentication-authorization.md).</ul> |
 | `statusCode`   | Nee       | 200           | Het antwoord van de [HTTP-status code](https://wikipedia.org/wiki/List_of_HTTP_status_codes) voor de aanvraag. |
@@ -210,7 +210,7 @@ Als u een waarde opgeeft voor een header, wordt de koptekst toegevoegd of gewijz
 }
 ```
 
-In het bovenstaande voor beeld wordt een nieuwe `content-security-policy` header toegevoegd, wordt de `cache-control` standaard waarde van de server gewijzigd en `x-dns-prefectch-control` wordt de header verwijderd.
+In het bovenstaande voor beeld wordt een nieuwe `content-security-policy` header toegevoegd, wordt de `cache-control` standaard waarde van de server gewijzigd en `x-dns-prefetch-control` wordt de header verwijderd.
 
 De volgende overwegingen zijn belang rijk bij het werken met kopteksten:
 
@@ -222,7 +222,7 @@ De volgende overwegingen zijn belang rijk bij het werken met kopteksten:
 
 ## <a name="example-route-file"></a>Voor beeld van een route bestand
 
-In het volgende voor beeld ziet u hoe u route regels voor statische inhoud en Api's maakt in een _routes.jsin_ het bestand. Sommige routes gebruiken de [systeemmap _/.auth_ ](authentication-authorization.md) die toegang heeft tot de authenticatie-gerelateerde eind punten.
+In het volgende voor beeld ziet u hoe u route regels voor statische inhoud en Api's maakt in een _routes.jsin_ het bestand. Sommige routes gebruiken de [systeemmap _/.auth_](authentication-authorization.md) die toegang heeft tot de authenticatie-gerelateerde eind punten.
 
 ```json
 {
@@ -290,9 +290,9 @@ In de volgende voor beelden wordt beschreven wat er gebeurt wanneer een aanvraag
 | Aanvragen naar... | Resultaat in... |
 |--|--|--|
 | _/profile_ | Geverifieerde gebruikers worden het _/profile/index.html_ -bestand geleverd. Niet-geverifieerde gebruikers omgeleid naar _/login_. |
-| _/admin/reports_ | Geverifieerde gebruikers in de rol _Administrators_ worden het _/Admin/Reports/index.html_ -bestand geleverd. Geverifieerde gebruikers die niet voor komen _in de beheerdersrol_ , worden 401-fout<sup>2</sup>geleverd. Niet-geverifieerde gebruikers omgeleid naar _/login_. |
+| _/admin/reports_ | Geverifieerde gebruikers in de rol _Administrators_ worden het _/Admin/Reports/index.html_ -bestand geleverd. Geverifieerde gebruikers die niet voor komen _in de beheerdersrol_ , worden 401-fout <sup>2</sup>geleverd. Niet-geverifieerde gebruikers omgeleid naar _/login_. |
 | _/api/admin_ | Aanvragen van geverifieerde gebruikers in de rol _Administrators_ worden verzonden naar de API. Geverifieerde gebruikers die niet voor komen in de rol _Administrator_ en niet-geverifieerde gebruikers, krijgen een 401-fout. |
-| _/customers/contoso_ | Geverifieerde gebruikers die deel uitmaken van de _ \_ Contoso_ -rollen van de _beheerder_ of klanten, worden de _/Customers/contoso/-index.html_ -bestand<sup>2</sup>bediend. Geverifieerde gebruikers die geen toegang hebben tot de _ \_ Contoso_ -rollen van de _groep Administrators_ of klanten, worden 401-fouten geleverd. Niet-geverifieerde gebruikers omgeleid naar _/login_. |
+| _/customers/contoso_ | Geverifieerde gebruikers die deel uitmaken van de _\_ Contoso_ -rollen van de _beheerder_ of klanten, worden de _/Customers/contoso/-index.html_ -bestand <sup>2</sup>bediend. Geverifieerde gebruikers die geen toegang hebben tot de _\_ Contoso_ -rollen van de _groep Administrators_ of klanten, worden 401-fouten geleverd. Niet-geverifieerde gebruikers omgeleid naar _/login_. |
 | _/login_ | Niet-geverifieerde gebruikers worden gevraagd om te verifiëren met GitHub. |
 | _/.auth/login/twitter_ | Autorisatie met Twitter is uitgeschakeld. De server reageert met een 404-fout. |
 | _/logout_ | Gebruikers worden afgemeld bij een verificatie provider. |

@@ -7,18 +7,18 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: 023b33732b80198c4ed187328e8d18314f385f94
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: ad09bcb1ea4aa32bdd04af47d3503f74c850a10b
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839786"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98803506"
 ---
 # <a name="manage-alert-events"></a>Waarschuwings gebeurtenissen beheren
 
 De volgende opties zijn beschikbaar voor het beheren van waarschuwings gebeurtenissen:
 
- | Actie | Beschrijving |
+ | Bewerking | Beschrijving |
  |--|--|
  | **Learn** | De gedetecteerde gebeurtenis autoriseren. Zie voor meer informatie [over het leren en voor komen van gebeurtenissen](#about-learning-and-unlearning-events). |
  | **Bevestigen** | De waarschuwing eenmaal verbergen voor de gedetecteerde gebeurtenis. De waarschuwing wordt opnieuw geactiveerd als de gebeurtenis opnieuw wordt gedetecteerd. Zie [informatie over bevestiging en het onbevestigde gebeurtenissen](#about-acknowledging-and-unacknowledging-events)voor meer informatie. |
@@ -106,8 +106,6 @@ Wanneer een gebeurtenis is gedempt, wordt deze genegeerd telkens wanneer de bron
 
 2. Beweeg de muis aanwijzer over een waarschuwing om te zien of deze gedempt is.  
 
-## <a name="see-also"></a>Zie tevens
-
-[Rapporten genereren](how-to-generate-reports.md)
+## <a name="see-also"></a>Zie ook
 
 [Controleren welk verkeer wordt bewaakt](how-to-control-what-traffic-is-monitored.md)

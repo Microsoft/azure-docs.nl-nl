@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/05/2020
 ms.author: kenwith
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 462f60bbae9fd7b61993a2ccccd40fa5ca4ccc28
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: e87211789280c3439d71d8fa63da09416eaaf18e
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012964"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805138"
 ---
 # <a name="reference-for-writing-expressions-for-attribute-mappings-in-azure-ad"></a>Naslag informatie voor het schrijven van expressies voor kenmerk toewijzingen in azure AD
 
@@ -89,7 +89,7 @@ Met andere woorden: het retourneert 0 in alle gevallen, behalve wanneer de overe
 
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
-| **expression** |Vereist | expression | Een geldige expressie |
+| **expression** |Vereist | expressie | Een geldige expressie |
 
 **Voorbeeld:** 
 `CBool([attribute1] = [attribute2])`                                                                    
@@ -181,7 +181,7 @@ Retourneert "CN = Joe, DC = contoso, DC = com"
 
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
-| **value** |Vereist | Date | De AD-datum die moet worden geconverteerd naar een DateTime-type |
+| **value** |Vereist | Datum | De AD-datum die moet worden geconverteerd naar een DateTime-type |
 
 **Hierbij**
 `DateFromNum([lastLogonTimestamp])`
@@ -261,7 +261,7 @@ Evalueert tot 7
 
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
-| **expression** |Vereist |expression |Expressie die moet worden geëvalueerd |
+| **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
 **Hierbij**
 `IsNull([displayName])`
@@ -279,7 +279,7 @@ De inverse van deze functie heeft de naam IsPresent.
 
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
-| **expression** |Vereist |expression |Expressie die moet worden geëvalueerd |
+| **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
 **Hierbij**
 `IsNullOrEmpty([displayName])`
@@ -296,7 +296,7 @@ Retourneert waar als het kenmerk niet aanwezig is of een lege teken reeks is.
 
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
-| **expression** |Vereist |expression |Expressie die moet worden geëvalueerd |
+| **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
 **Hierbij**
 `Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
@@ -311,7 +311,7 @@ Retourneert waar als het kenmerk niet aanwezig is of een lege teken reeks is.
 
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
-| **expression** |Vereist |expression |Expressie die moet worden geëvalueerd |
+| **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
 ---
 ### <a name="item"></a>Item
@@ -483,7 +483,7 @@ Retourneert "Joh".
  - Dit is een functie op het hoogste niveau en kan niet worden genest.
  - Deze functie kan niet worden toegepast op kenmerken met een overeenkomende prioriteit.   
  - Deze functie is alleen bedoeld om te worden gebruikt voor het maken van items. Wanneer u het gebruikt met een-kenmerk, moet u de eigenschap **toewijzing Toep assen** instellen op **alleen tijdens het maken** van een object.
- - Deze functie wordt momenteel alleen ondersteund voor werk dagen Active Directory het inrichten van de gebruiker. Het kan niet worden gebruikt met andere inrichtings toepassingen. 
+ - Deze functie wordt momenteel alleen ondersteund voor ' werkdag Active Directory gebruikers inrichten ' en ' SuccessFactors to Active Directory User provisioning '. Het kan niet worden gebruikt met andere inrichtings toepassingen. 
 
 
 **Instellen** 

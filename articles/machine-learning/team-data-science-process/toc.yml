@@ -134,7 +134,7 @@
               items:
                 - name: Overzicht
                   href: explore-data.md
-                - name: Blob-opslag in Azure verkennen
+                - name: Azure Blob Storage verkennen
                   href: explore-data-blob.md
                 - name: SQL op een VM verkennen
                   href: explore-data-sql-server.md

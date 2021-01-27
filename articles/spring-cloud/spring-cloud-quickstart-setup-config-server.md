@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 09/08/2020
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: b23b5d516479cb28948a601c6bd71309500e73f1
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
-ms.translationtype: HT
+ms.openlocfilehash: 56644ab6cacfd811a23fb89b9bf6a10c87542db3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825785"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876780"
 ---
 # <a name="quickstart-set-up-azure-spring-cloud-configuration-server"></a>Quickstart: Azure Spring Cloud-configuratieserver instellen
 
@@ -84,7 +84,7 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 ::: zone-end
 
 > [!TIP]
-> Raadpleeg onze [zelfstudie over het instellen van verificatie](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-tutorial-config-server) als u een privéopslagplaats gebruikt voor de configuratieserver.
+> Raadpleeg onze [zelfstudie over het instellen van verificatie](./spring-cloud-tutorial-config-server.md) als u een privéopslagplaats gebruikt voor de configuratieserver.
 
 ## <a name="troubleshooting-of-azure-spring-cloud-config-server"></a>Problemen oplossen met de Azure Spring Cloud-configuratieserver
 

@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 12/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 9038d6bc9cd061200ef4553242889776f30d2dc1
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: a006dfd4f78f90ed323e5780b173cffb6daeac4a
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964555"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881734"
 ---
 # <a name="trigger-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>machine learning pijp lijnen activeren met Azure Machine Learning SDK voor python
 
@@ -27,7 +27,7 @@ In dit artikel leert u hoe u een pijp lijn programmatisch kunt plannen om uit te
 
 * Een python-omgeving waarin de Azure Machine Learning SDK voor python is geïnstalleerd. Zie voor meer informatie [herbruikbare omgevingen maken en beheren voor training en implementatie met Azure machine learning.](how-to-use-environments.md)
 
-* Een Machine Learning-werk ruimte met een gepubliceerde pijp lijn. U kunt het ingebouwde [machine learning-pijp lijnen maken en uitvoeren met Azure machine learning SDK](how-to-create-your-first-pipeline.md)gebruiken.
+* Een Machine Learning-werk ruimte met een gepubliceerde pijp lijn. U kunt het ingebouwde [machine learning-pijp lijnen maken en uitvoeren met Azure machine learning SDK](./how-to-create-machine-learning-pipelines.md)gebruiken.
 
 ## <a name="initialize-the-workspace--get-data"></a>De werk ruimte initialiseren & gegevens ophalen
 
@@ -142,7 +142,7 @@ Als u `Schedule.list(ws)` het opnieuw uitvoert, moet u een lege lijst ophalen.
 
 Complexere trigger regels of gedrag kunnen worden gemaakt met behulp van een [Azure Logic-app](../logic-apps/logic-apps-overview.md).
 
-Als u een Azure Logic-app wilt gebruiken om een Machine Learning pijp lijn te activeren, hebt u het REST-eind punt nodig voor een gepubliceerde Machine Learning-pijp lijn. [Uw pijp lijn maken en publiceren](how-to-create-your-first-pipeline.md). Zoek vervolgens het REST-eind punt van uw met `PublishedPipeline` behulp van de pijp lijn-id:
+Als u een Azure Logic-app wilt gebruiken om een Machine Learning pijp lijn te activeren, hebt u het REST-eind punt nodig voor een gepubliceerde Machine Learning-pijp lijn. [Uw pijp lijn maken en publiceren](./how-to-create-machine-learning-pipelines.md). Zoek vervolgens het REST-eind punt van uw met `PublishedPipeline` behulp van de pijp lijn-id:
 
 ```python
 # You can find the pipeline ID in Azure Machine Learning studio

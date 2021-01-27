@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 050e6b5007b9fbaedc412d8062430f1c2c1691fd
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 7bca683ea075710aa6fc677fcf457ceb2e0e5098
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96923950"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881008"
 ---
 # <a name="transfer-data-with-azcopy-and-file-storage"></a>Gegevens overdragen met AzCopy en bestandsopslag 
 
@@ -41,7 +41,7 @@ U kunt de azcopy-opdracht [kopiëren](storage-ref-azcopy-copy.md) gebruiken om b
 Deze sectie bevat de volgende voor beelden:
 
 > [!div class="checklist"]
-> * Bestand uploaden
+> * Een bestand uploaden
 > * Een map uploaden
 > * De inhoud van een map uploaden
 > * Een specifiek bestand uploaden
@@ -59,7 +59,7 @@ Deze sectie bevat de volgende voor beelden:
 > [!NOTE]
 > De MD5-hash-code van het bestand wordt niet automatisch door AzCopy berekend en opgeslagen. Als u dit wilt doen, voegt u de markering toe `--put-md5` aan elke Kopieer opdracht. Op die manier wordt, wanneer het bestand wordt gedownload, AzCopy een MD5-hash voor gedownloade gegevens berekend en wordt gecontroleerd of de MD5-hash die is opgeslagen in de eigenschap van het bestand `Content-md5` overeenkomt met de berekende hash.
 
-### <a name="upload-a-file"></a>Bestand uploaden
+### <a name="upload-a-file"></a>Een bestand uploaden
 
 |    |     |
 |--------|-----------|
@@ -145,7 +145,7 @@ U kunt de azcopy-opdracht [kopiëren](storage-ref-azcopy-copy.md) gebruiken om b
 Deze sectie bevat de volgende voor beelden:
 
 > [!div class="checklist"]
-> * Bestand downloaden
+> * Een bestand downloaden
 > * Een directory downloaden
 > * De inhoud van een map downloaden
 > * Specifieke bestanden downloaden
@@ -164,7 +164,7 @@ Deze sectie bevat de volgende voor beelden:
 > [!NOTE]
 > Als de `Content-md5` eigenschaps waarde van een bestand een hash bevat, wordt in AzCopy een MD5-hash voor gedownloade gegevens berekend en wordt gecontroleerd of de MD5-hash die is opgeslagen in de eigenschap van het bestand `Content-md5` overeenkomt met de berekende hash. Als deze waarden niet overeenkomen, mislukt de down load tenzij u dit gedrag overschrijft door toe te voegen `--check-md5=NoCheck` of `--check-md5=LogOnly` aan de Kopieer opdracht.
 
-### <a name="download-a-file"></a>Bestand downloaden
+### <a name="download-a-file"></a>Een bestand downloaden
 
 |    |     |
 |--------|-----------|
@@ -236,7 +236,7 @@ Zie [azcopy Copy](storage-ref-azcopy-copy.md) Reference docs (Engelstalig) voor 
 
 #### <a name="download-from-a-share-snapshot"></a>Downloaden van een moment opname van een share
 
-U kunt een specifieke versie van een bestand of map downloaden door te verwijzen naar de waarde **DateTime** van een moment opname van een share. Zie [overzicht van moment opnamen van shares voor Azure files voor](/azure/storage/files/storage-snapshots-files)meer informatie over moment opnamen van shares. 
+U kunt een specifieke versie van een bestand of map downloaden door te verwijzen naar de waarde **DateTime** van een moment opname van een share. Zie [overzicht van moment opnamen van shares voor Azure files voor](../files/storage-snapshots-files.md)meer informatie over moment opnamen van shares. 
 
 |    |     |
 |--------|-----------|
@@ -251,7 +251,7 @@ U kunt AzCopy gebruiken om bestanden naar andere opslag accounts te kopiëren. D
 
 AzCopy maakt gebruik van [server-naar-server-](/rest/api/storageservices/put-block-from-url) [api's](/rest/api/storageservices/put-page-from-url), zodat gegevens rechtstreeks tussen opslag servers worden gekopieerd. Deze Kopieer bewerkingen gebruiken de netwerk bandbreedte van uw computer niet. U kunt de door Voer van deze bewerkingen verhogen door de waarde van de `AZCOPY_CONCURRENCY_VALUE` omgevings variabele in te stellen. Zie de [door Voer optimaliseren](storage-use-azcopy-configure.md#optimize-throughput)voor meer informatie.
 
-U kunt ook specifieke versies van een bestand kopiëren door te verwijzen naar de waarde **DateTime** van een moment opname van een share. Zie [overzicht van moment opnamen van shares voor Azure files voor](/azure/storage/files/storage-snapshots-files)meer informatie over moment opnamen van shares. 
+U kunt ook specifieke versies van een bestand kopiëren door te verwijzen naar de waarde **DateTime** van een moment opname van een share. Zie [overzicht van moment opnamen van shares voor Azure files voor](../files/storage-snapshots-files.md)meer informatie over moment opnamen van shares. 
 
 Deze sectie bevat de volgende voor beelden:
 

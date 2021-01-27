@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 12/13/2019
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: bbaf34c977546891c6ac05fbd4b5feb15f333e04
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 27a1c57c234d3450cee606c4ffb7484f7b63e732
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737809"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882294"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Referentie architecturen voor Oracle Database Enterprise Edition op Azure
 
@@ -216,7 +216,7 @@ Het patchen van het besturings systeem van de virtuele machine kan worden geauto
 - Gebruik beschikbaarheids zones voor maximale Beschik baarheid in-regio.
 - Overweeg het gebruik van ultra schijven (indien beschikbaar) of Premium-schijven voor uw Oracle-data base.
 - Overweeg een stand-by Oracle-data base in een andere Azure-regio in te stellen met behulp van Oracle Data Guard.
-- Overweeg het gebruik van [proximity placement groups](../../../virtual-machines/linux/co-location.md#proximity-placement-groups) om de latentie tussen uw toepassing en database laag te verminderen.
+- Overweeg het gebruik van [proximity placement groups](../../co-location.md#proximity-placement-groups) om de latentie tussen uw toepassing en database laag te verminderen.
 - [Oracle Enter prise Manager](https://docs.oracle.com/en/enterprise-manager/) instellen voor beheer, bewaking en logboek registratie.
 - Overweeg het gebruik van Oracle Automatic Storage Management (ASM) voor gestroomlijnd opslag beheer voor uw data base.
 - Gebruik [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines) voor het beheren van patches en updates voor uw data base zonder uitval tijd.

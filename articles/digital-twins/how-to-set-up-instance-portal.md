@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: aa6429e27faf92f047c580986d5b434c9a418730
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: d38e631a5a12381b407dca4dd9e2f2ae63365453
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044370"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882438"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Een Azure Digital Apparaatdubbels-exemplaar en-verificatie (Portal) instellen
 
@@ -71,13 +71,13 @@ U hebt nu een Azure Digital Apparaatdubbels-exemplaar klaar om te gaan. Vervolge
 
 [!INCLUDE [digital-twins-setup-role-assignment.md](../../includes/digital-twins-setup-role-assignment.md)]
 
-Open eerst de pagina voor uw Azure Digital Apparaatdubbels-exemplaar in het Azure Portal. Selecteer in het menu van de instantie *toegangs beheer (IAM)*. Selecteer de knop  *toevoegen* onder *een roltoewijzing toevoegen*.
+Open eerst de pagina voor uw Azure Digital Apparaatdubbels-exemplaar in het Azure Portal. Selecteer in het menu van de instantie *toegangs beheer (IAM)*. Selecteer de knop  **+ toevoegen** om een nieuwe roltoewijzing toe te voegen.
 
 :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Selecteren om een roltoewijzing toe te voegen op de pagina toegangs beheer (IAM)":::
 
 Vul de waarden in op de volgende pagina *roltoewijzing toevoegen* (moet worden voltooid door een gebruiker met [voldoende machtigingen](#prerequisites-permission-requirements) in het Azure-abonnement):
 * **Rol**: Selecteer de *Azure Digital Apparaatdubbels-gegevens eigenaar* in het vervolg keuzemenu
-* **Toegang toewijzen aan**: Selecteer *Azure AD-gebruiker,-groep of Service-Principal* in het vervolg keuzemenu
+* **Toegang toewijzen aan**: *gebruikers-, groep-of Service-Principal* gebruiken
 * **Selecteer**: Zoek de naam of het e-mail adres van de gebruiker die u wilt toewijzen. Wanneer u het resultaat selecteert, wordt de gebruiker weer gegeven in de sectie *geselecteerde leden* .
 
 :::row:::

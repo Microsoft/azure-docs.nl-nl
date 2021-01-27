@@ -1,6 +1,6 @@
 ---
-title: Een Azure-Cloud service maken (uitgebreide ondersteuning)-Sjablonen
-description: Een Azure-Cloud service (uitgebreide ondersteuning) maken met behulp van ARM-sjablonen
+title: Een Azure-Cloud service implementeren (uitgebreide ondersteuning)-Sjablonen
+description: Een Azure-Cloud service (uitgebreide ondersteuning) implementeren met behulp van ARM-sjablonen
 ms.topic: tutorial
 ms.service: cloud-services-extended-support
 author: gachandw
@@ -8,14 +8,14 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 3b28bc96703fa48e598bfb6f9622237e769119f2
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f86b2a50040704aac2827c463a362a04f78ba34f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757150"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881819"
 ---
-# <a name="create-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service maken (uitgebreide ondersteuning) met ARM-sjablonen
+# <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
 In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud service (uitgebreide ondersteuning) maakt met [arm-sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview). 
 
@@ -39,7 +39,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
     - Voor de bijbehorende Key Vault voor moeten de juiste machtigingen zijn ingeschakeld, zodat Cloud Services (uitgebreide ondersteunings resource) het certificaat kan ophalen van Key Vault. Zie [certificaten en Key Vault](certificates-and-key-vault.md) voor meer informatie.
     - Er moet worden verwezen naar de sleutel kluis in de sectie OsProfile van de ARM-sjabloon die in de onderstaande stappen wordt weer gegeven.
 
-## <a name="create-a-cloud-service-extended-support"></a>Een Cloud service maken (uitgebreide ondersteuning) 
+## <a name="deploy-a-cloud-service-extended-support"></a>Een Cloud service implementeren (uitgebreide ondersteuning) 
 1. Virtueel netwerk maken. De naam van het virtuele netwerk moet overeenkomen met de verwijzingen in het service configuratie bestand (. cscfg). Als u een bestaand virtueel netwerk gebruikt, laat u deze sectie uit de ARM-sjabloon weg.
 
     ```json
@@ -454,3 +454,4 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
 ## <a name="next-steps"></a>Volgende stappen 
 - Bekijk [Veelgestelde vragen](faq.md) over Cloud Services (uitgebreide ondersteuning).
 - Implementeer een Cloud service (uitgebreide ondersteuning) met behulp van de [Azure Portal](deploy-portal.md), [Power shell](deploy-powershell.md), [sjabloon](deploy-template.md) of [Visual Studio](deploy-visual-studio.md).
+- Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

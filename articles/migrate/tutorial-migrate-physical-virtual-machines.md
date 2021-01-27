@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: c0f4f1d7f0213ad24d25d8d34235475bbdb0316a
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
-ms.translationtype: HT
+ms.openlocfilehash: 3e098e64eacf8b126d6a6d72b1f242443e88d55c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567107"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881092"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
@@ -55,7 +55,7 @@ Bereid Azure voor op een migratie met Server Migration.
 
 **Taak** | **Details**
 --- | ---
-**Maak een Azure Migrate-project** | Uw Azure-account heeft inzender- of eigenaarsmachtigingen nodig [om een nieuw project te maken](https://docs.microsoft.com/azure/migrate/create-manage-projects).
+**Maak een Azure Migrate-project** | Uw Azure-account heeft inzender- of eigenaarsmachtigingen nodig [om een nieuw project te maken](./create-manage-projects.md).
 **Machtigingen verifiëren voor uw Azure-account** | U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
 
 
@@ -239,7 +239,7 @@ Selecteer nu machines voor de migratie.
     - Dubbele versleuteling met door platform en door klant beheerde sleutels
 
    > [!NOTE]
-   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](https://go.microsoft.com/fwlink/?linkid=2151800) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
+   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
   
 13. In **Azure Hybrid Benefit**:
 

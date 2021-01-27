@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: 3e4d0513808cdc44fc71e182a07fa6b050d182ee
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: aab856b1e1d2d991cc4964d061a990dbedbeddb7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452511"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876508"
 ---
 # <a name="plan-a-solution-template-for-an-azure-application-offer"></a>Een oplossings sjabloon plannen voor een Azure-toepassings aanbieding
 
@@ -28,7 +28,7 @@ Voor het type oplossings sjabloon abonnement is een [Azure Resource Manager sjab
 | Facturering en meting | Oplossingen voor oplossings sjablonen zijn niet transactable, maar kunnen worden gebruikt voor het implementeren van betaalde VM-aanbiedingen die worden gefactureerd via micro soft Commercial Marketplace. De resources die de ARM-sjabloon implementeren van de oplossing zijn ingesteld in het Azure-abonnement van de klant. Voor betalen per gebruik-virtuele machines wordt gehandeld met de klant via micro soft en gefactureerd via het Azure-abonnement van de klant. <br><br> Voor een BYOL-facturering (meebrengen van uw eigen licentie), hoewel kosten voor de infra structuur van micro soft billing die in het abonnement van de klant worden gemaakt, kunt u uw software licentie kosten rechtstreeks aan de klant door geven. |
 | Azure-compatibele virtuele harde schijf (VHD) | Vm's moeten zijn gebouwd op Windows of Linux. Zie voor meer informatie:<ul><li>[Een technische Asset voor Azure VM maken](./azure-vm-create-certification-faq.md#address-a-vulnerability-or-an-exploit-in-a-vm-offer) (voor Windows-vhd's)</li><li>[Linux-distributies die zijn goedgekeurd op Azure](../virtual-machines/linux/endorsed-distros.md) (voor Linux-vhd's).</li></ul> |
 | Gebruikskenmerken van klanten | Het inschakelen van de toewijzing van klant gebruik is vereist voor alle oplossings sjablonen die op Azure Marketplace worden gepubliceerd. Zie voor meer informatie over het gebruik van de klant en hoe u deze functie inschakelt, de [klant gebruiks toewijzing van Azure-partners](azure-partner-customer-usage-attribution.md). |
-| Beheerde schijven gebruiken | [Managed disks](../virtual-machines/managed-disks-overview.md) is de standaard optie voor persistente schijven van Infrastructure as a Service (IaaS) Vm's in Azure. U moet beheerde schijven gebruiken in oplossings sjablonen.<ul><li>Volg de richt lijnen in [Managed disks in azure Resource Manager Templates](../virtual-machines/using-managed-disks-template-deployments.md)en gebruik de voor [beelden](https://github.com/Azure/azure-quickstart-templates)om uw oplossings sjablonen bij te werken.</li><li>Als u de VHD wilt publiceren als een installatie kopie in azure Marketplace, importeert u de onderliggende VHD van de beheerde schijven naar een opslag account met behulp van [Azure PowerShell](../virtual-machines/scripts/virtual-machines-powershell-sample-copy-managed-disks-vhd.md) of de [Azure cli](../virtual-machines/scripts/virtual-machines-cli-sample-copy-managed-disks-vhd.md)</ul> |
+| Beheerde schijven gebruiken | [Managed disks](../virtual-machines/managed-disks-overview.md) is de standaard optie voor persistente schijven van Infrastructure as a Service (IaaS) Vm's in Azure. U moet beheerde schijven gebruiken in oplossings sjablonen.<ul><li>Volg de richt lijnen in [Managed disks in azure Resource Manager Templates](../virtual-machines/using-managed-disks-template-deployments.md)en gebruik de voor [beelden](https://github.com/Azure/azure-quickstart-templates)om uw oplossings sjablonen bij te werken.</li><li>Als u de VHD wilt publiceren als een installatie kopie in azure Marketplace, importeert u de onderliggende VHD van de beheerde schijven naar een opslag account met behulp van [Azure PowerShell](/previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-copy-managed-disks-vhd) of de [Azure cli](/previous-versions/azure/virtual-machines/scripts/virtual-machines-cli-sample-copy-managed-disks-vhd)</ul> |
 | Implementatie pakket | U hebt een implementatie pakket nodig waarmee klanten uw abonnement kunnen implementeren. Als u meerdere plannen maakt waarvoor dezelfde technische configuratie nodig is, kunt u hetzelfde plan pakket gebruiken. Zie de volgende sectie: implementatie pakket voor meer informatie. |
 |||
 

@@ -5,13 +5,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/17/2020
-ms.openlocfilehash: f9f95a5e85ec4eebf82cca707476750595331d73
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 01/25/2021
+ms.openlocfilehash: bc59c639856de6a5ce5adda1f78266eb7e4d5dd3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522665"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881228"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Gegevens van Azure Monitor visualiseren
 Dit artikel bevat een overzicht van de beschik bare methoden voor het visualiseren van logboek-en metrische gegevens die zijn opgeslagen in Azure Monitor.
@@ -46,9 +46,9 @@ Hier volgt een video-overzicht van het maken van Dash boards.
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AslH]
 
 ### <a name="advantages"></a>Voordelen
-- Diep gaande integratie in Azure. Visualisaties kunnen worden vastgemaakt aan dash boards van meerdere Azure-pagina's, waaronder Metrics Explorer, Log Analytics en Application Insights.
+- Diep gaande integratie in Azure. Visualisaties kunnen worden vastgemaakt aan dash boards van meerdere Azure-pagina's, waaronder [Metrics Explorer](platform/metrics-charts.md), [log Analytics](log-query/log-analytics-overview.md)en [Application Insights](app/app-insights-overview.md).
 - Ondersteunt metrische gegevens en Logboeken.
-- Combi neer gegevens uit meerdere bronnen, inclusief uitvoer van [Metrics Explorer](platform/metrics-charts.md), [logboek query's](log-query/log-query-overview.md)en [kaarten](app/app-map.md) en beschik baarheid in Application Insights.
+- Combi neer gegevens uit meerdere bronnen, inclusief uitvoer van [Metrics Explorer](platform/metrics-charts.md), [logboek query's](log-query/log-query-overview.md)en [kaarten](app/app-map.md) en beschik baarheid in [Application Insights](app/app-insights-overview.md).
 - Optie voor persoonlijke of gedeelde Dash boards. Geïntegreerd met [op rollen gebaseerd toegangs beheer van Azure (Azure RBAC)](../role-based-access-control/overview.md).
 - Automatisch vernieuwen. Het vernieuwen van metrische gegevens is afhankelijk van het tijds bereik met mini maal vijf minuten. Logboeken worden elk uur vernieuwd, met een optie voor hand matige vernieuwing op aanvraag door te klikken op het pictogram Vernieuwen op een bepaalde visualisatie of door het volledige dash board te vernieuwen.
 - Parametrized metrische Dash boards met tijds tempel en aangepaste para meters.
@@ -57,7 +57,7 @@ Hier volgt een video-overzicht van het maken van Dash boards.
 
 
 ### <a name="limitations"></a>Beperkingen
-- Beperkte controle over logboek visualisaties zonder ondersteuning voor gegevens tabellen. Het totale aantal gegevens reeksen is beperkt tot 10 met verdere gegevens reeksen die zijn gegroepeerd onder een _andere_ Bucket.
+- Beperkte controle over logboek visualisaties zonder ondersteuning voor gegevens tabellen. Het totale aantal gegevens reeksen is beperkt tot 50 met verdere gegevens reeksen die zijn gegroepeerd onder een _andere_ Bucket.
 - Er zijn geen aangepaste parameter ondersteuning voor logboek grafieken.
 - Logboek grafieken zijn beperkt tot de afgelopen 30 dagen.
 - Logboek grafieken kunnen alleen worden vastgemaakt aan gedeelde Dash boards.
@@ -140,8 +140,9 @@ Met [weer gaven in azure monitor](platform/view-designer.md) kunt u aangepaste v
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over de [gegevens die worden verzameld door Azure monitor](platform/data-platform.md).
 - Meer informatie over [Azure-Dash boards](../azure-portal/azure-portal-dashboards.md).
-- Meer informatie over [weer gaven in azure monitor](platform/view-designer.md).
+- Meer informatie over [Metrics Explorer](platform/metrics-getting-started.md)
 - Meer informatie over [werkmappen](./platform/workbooks-overview.md).
 - Meer informatie over het [importeren van logboek gegevens in Power bi](./platform/powerbi.md).
 - Meer informatie over de [Grafana Azure monitor-invoeg toepassing voor gegevens bronnen](./platform/grafana-plugin.md).
+- Meer informatie over [weer gaven in azure monitor](platform/view-designer.md).
 

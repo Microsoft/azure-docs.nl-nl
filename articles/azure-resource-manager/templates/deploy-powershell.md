@@ -2,13 +2,13 @@
 title: Resources implementeren met Power shell en sjabloon
 description: Gebruik Azure Resource Manager en Azure PowerShell om resources te implementeren in Azure. De resources zijn gedefinieerd in een Resource Manager-sjabloon.
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.openlocfilehash: d895c6e029b0b4a70333dde987706549609c8bd3
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/26/2021
+ms.openlocfilehash: efefb6706794bc2488aa4d4fef6c4ecc082b41a7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251016"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881262"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-powershell"></a>Resources implementeren met ARM-sjablonen en Azure PowerShell
 
@@ -61,48 +61,6 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 
 Voor elk bereik moet de gebruiker die de sjabloon implementeert, over de vereiste machtigingen beschikken om resources te maken.
 
-## <a name="deploy-local-template"></a>Een lokale sjabloon implementeren
-
-U kunt een sjabloon implementeren vanaf uw lokale computer of een die extern is opgeslagen. In deze sectie wordt het implementeren van een lokale sjabloon beschreven.
-
-Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
-
-```azurepowershell
-New-AzResourceGroup -Name ExampleGroup -Location "Central US"
-```
-
-Als u een lokale sjabloon wilt implementeren, gebruikt u de `-TemplateFile` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt die afkomstig is uit de sjabloon.
-
-```azurepowershell
-New-AzResourceGroupDeployment `
-  -Name ExampleDeployment `
-  -ResourceGroupName ExampleGroup `
-  -TemplateFile c:\MyTemplates\azuredeploy.json
-```
-
-De implementatie kan enkele minuten duren.
-
-## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
-
-In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
-
-Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
-
-```azurepowershell
-New-AzResourceGroup -Name ExampleGroup -Location "Central US"
-```
-
-Als u een externe sjabloon wilt implementeren, gebruikt u de `-TemplateUri`-parameter.
-
-```azurepowershell
-New-AzResourceGroupDeployment `
-  -Name ExampleDeployment `
-  -ResourceGroupName ExampleGroup `
-  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
-```
-
-In het voor gaande voor beeld is een openbaar toegankelijke URI vereist voor de sjabloon, die voor de meeste scenario's werkt, omdat uw sjabloon geen gevoelige gegevens mag bevatten. Als u gevoelige gegevens (zoals een beheerders wachtwoord) moet opgeven, geeft u die waarde als een beveiligde para meter door. Als u echter de toegang tot de sjabloon wilt beheren, kunt u de [sjabloon specificaties](#deploy-template-spec)gebruiken.
-
 ## <a name="deployment-name"></a>Naam van implementatie
 
 Bij het implementeren van een ARM-sjabloon kunt u een naam opgeven voor de implementatie. Deze naam kan u helpen de implementatie op te halen uit de implementatie geschiedenis. Als u geen naam opgeeft voor de implementatie, wordt de naam van het sjabloon bestand gebruikt. Als u bijvoorbeeld een sjabloon implementeert `azuredeploy.json` met de naam en u geen implementatie naam opgeeft, wordt de implementatie een naam genoemd `azuredeploy` .
@@ -130,6 +88,60 @@ Als u echter een implementatie uitvoert met de naam `newStorage` die een opslag 
 Wanneer u een unieke naam voor elke implementatie opgeeft, kunt u deze gelijktijdig zonder conflict uitvoeren. Als u een implementatie uitvoert met de naam `newStorage1` die een opslag account implementeert `storage1` en tegelijkertijd een andere implementatie uitvoert met de naam `newStorage2` die een opslag account implementeert `storage2` , hebt u twee opslag accounts en twee vermeldingen in de implementatie geschiedenis.
 
 Geef elke implementatie een unieke naam om conflicten met gelijktijdige implementaties te voor komen en te zorgen voor unieke vermeldingen in de implementatie geschiedenis.
+
+## <a name="deploy-local-template"></a>Een lokale sjabloon implementeren
+
+U kunt een sjabloon implementeren vanaf uw lokale computer of een die extern is opgeslagen. In deze sectie wordt het implementeren van een lokale sjabloon beschreven.
+
+Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
+
+```azurepowershell
+New-AzResourceGroup -Name ExampleGroup -Location "Central US"
+```
+
+Als u een lokale sjabloon wilt implementeren, gebruikt u de `-TemplateFile` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt die afkomstig is uit de sjabloon.
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name ExampleDeployment `
+  -ResourceGroupName ExampleGroup `
+  -TemplateFile c:\MyTemplates\azuredeploy.json
+```
+
+Het volt ooien van de implementatie kan enkele minuten duren.
+
+## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
+
+In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
+
+Als u implementeert in een resource groep die niet bestaat, maakt u de resource groep. De naam van de resource groep mag alleen alfanumerieke tekens, punten, onderstrepings teken, afbreek streepjes en haakjes bevatten. Het kan Maxi maal 90 tekens lang zijn. De naam kan niet eindigen met een punt.
+
+```azurepowershell
+New-AzResourceGroup -Name ExampleGroup -Location "Central US"
+```
+
+Als u een externe sjabloon wilt implementeren, gebruikt u de `-TemplateUri`-parameter.
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name remoteTemplateDeployment `
+  -ResourceGroupName ExampleGroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
+```
+
+In het voor gaande voor beeld is een openbaar toegankelijke URI vereist voor de sjabloon, die voor de meeste scenario's werkt, omdat uw sjabloon geen gevoelige gegevens mag bevatten. Als u gevoelige gegevens (zoals een beheerders wachtwoord) moet opgeven, geeft u die waarde als een beveiligde para meter door. Als u echter de toegang tot de sjabloon wilt beheren, kunt u de [sjabloon specificaties](#deploy-template-spec)gebruiken.
+
+Voor het implementeren van extern gekoppelde sjablonen met een relatief pad dat is opgeslagen in een opslag account, gebruikt `QueryString` u om het SAS-token op te geven:
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name linkedTemplateWithRelativePath `
+  -ResourceGroupName "myResourceGroup" `
+  -TemplateUri "https://stage20210126.blob.core.windows.net/template-staging/mainTemplate.json" `
+  -QueryString $sasToken
+```
+
+Zie [relatief pad gebruiken voor gekoppelde sjablonen](./linked-templates.md#linked-template)voor meer informatie.
 
 ## <a name="deploy-template-spec"></a>Sjabloonspecificatie implementeren
 

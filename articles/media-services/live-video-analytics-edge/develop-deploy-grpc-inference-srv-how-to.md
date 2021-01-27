@@ -3,12 +3,12 @@ title: Een gRPC-uitstel server ontwikkelen en implementeren-Azure
 description: Dit artikel bevat richt lijnen voor het ontwikkelen en implementeren van een gRPC-inrichtings server.
 ms.topic: how-to
 ms.date: 12/02/2020
-ms.openlocfilehash: 3f732a7432dacebeeefddd1822fec7d95dfbaa97
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 6184a369e73c26d3a8a716f9daf1c0420a5239fe
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97425896"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881649"
 ---
 # <a name="how-to-guide--develop-and-deploy-a-grpc-inference-server"></a>Instructies voor het ontwikkelen en implementeren van een gRPC-Afleidings server
 
@@ -26,9 +26,9 @@ In dit artikel wordt beschreven hoe u een AI-model (en) van uw keuze kunt terugl
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een x86-64-of een ARM64-apparaat met een van de [ondersteunde Linux-besturings systemen](https://docs.microsoft.com/azure/iot-edge/support#operating-systems) of een Windows-machine.
+* Een x86-64-of een ARM64-apparaat met een van de [ondersteunde Linux-besturings systemen](../../iot-edge/support.md#operating-systems) of een Windows-machine.
 * [Installeer docker](https://docs.docker.com/desktop/#download-and-install) op uw computer.
-* Installeer [IOT Edge runtime](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge?tabs=linux).
+* Installeer [IOT Edge runtime](../../iot-edge/how-to-install-iot-edge.md?tabs=linux).
 
 ## <a name="grpc-implementation-steps"></a>gRPC-implementaties tappen
 
@@ -197,7 +197,7 @@ Nu we de poort verbindingen van de gRPC-server hebben geconfigureerd en geïniti
         1. Converteer de afbeelding in een byte matrix voor verwerking. Zie methode: `GetBytes(Bitmap image)`
         
             De voorbeeld processor die wordt gebruikt, ondersteunt alleen JPG-afbeeldings kaders en geen als pixel indeling. Als uw aangepaste processor een andere code ring en/of indeling ondersteunt, werkt u de `IsMediaFormatSupported` methode van de processor klasse bij.
-        1. Gebruik de [ColorMatrix-klasse](https://docs.microsoft.com/dotnet/api/system.drawing.imaging.colormatrix?redirectedfrom=MSDN&view=dotnet-plat-ext-3.1&preserve-view=true)om de afbeelding naar grijs schalen te converteren. Zie methode: `ToGrayScale(Image source)` .
+        1. Gebruik de [ColorMatrix-klasse](/dotnet/api/system.drawing.imaging.colormatrix?preserve-view=true&view=dotnet-plat-ext-3.1)om de afbeelding naar grijs schalen te converteren. Zie methode: `ToGrayScale(Image source)` .
         1. Zodra de grijs schaal afbeelding is opgehaald, berekenen we het gemiddelde van de bytes van de grijs schaal.
         1. Als de gemiddelde waarde < 127, wordt de afbeelding als ' donker ' geclassificeerd. anders worden deze als ' licht ' ingedeeld als ' Light ' met een betrouw bare waarde van 1,0. Zie methode: `ProcessImage(List<Image> images)` .
 
@@ -213,7 +213,7 @@ Nu we de poort verbindingen van de gRPC-server hebben geconfigureerd en geïniti
 
 Nu u de extensie module gRPC hebt gemaakt, wordt de media grafiek topologie nu gemaakt en geïmplementeerd.
 
-1. Volg met behulp van Visual Studio Code [deze instructies](https://docs.microsoft.com/azure/iot-edge/tutorial-develop-for-linux#build-and-push-your-solution) om u aan te melden bij Docker.
+1. Volg met behulp van Visual Studio Code [deze instructies](../../iot-edge/tutorial-develop-for-linux.md#build-and-push-your-solution) om u aan te melden bij Docker.
 1. Ga in Visual Studio Code naar src/edge. U ziet het bestand .env en enkele implementatiesjabloonbestanden.
 
     De implementatiesjabloon verwijst naar het implementatiemanifest voor het edge-apparaat. Deze bevat enkele tijdelijke waarden. Het .env-bestand bevat de waarden voor die variabelen.
@@ -231,9 +231,9 @@ Nu u de extensie module gRPC hebt gemaakt, wordt de media grafiek topologie nu g
     * Program.cs: de voorbeeldcode van het programma. Deze code:
 
         * De app-instellingen laden.
-        * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om livevideostreams te analyseren door de bijbehorende [directe methoden](direct-methods.md) aan te roepen.
+        * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om live-videostreams te analyseren door de bijbehorende [directe methoden](direct-methods.md) aan te roepen.
         * Pauzeert, zodat u de uitvoer van het programma kunt controleren in het TERMINAL-venster en de gebeurtenissen die zijn gegenereerd door de module kunt controleren in het UITVOER-venster.
-        * Roept directe methoden aan voor het opschonen van resources.
+        * Hiermee worden directe methoden voor het opschonen van resources aangeroepen.
 1. Bewerk het bestand operations.json:
 
     * Wijzig de link naar de graaftopologie:
@@ -309,4 +309,3 @@ Nu is de implementatie van Edge-modules op uw IoT Edge-apparaat gestart. Vernieu
 ## <a name="next-steps"></a>Volgende stappen
 
 Volg de **voor bereiding voor het bewaken van gebeurtenissen die worden** vermeld in de Snelstartgids [Live video analyseren met uw model](use-your-model-quickstart.md) Quick Start om het voor beeld uit te voeren en de resultaten te interpreteren. Bekijk ook onze voor beelden van gRPC-topologieën: [gRPCExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/grpcExtension/topology.json), [CVRWithGrpcExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/cvr-with-grpcExtension/topology.json), [EVRtoAssetsByGrpcExtension en [EVROnMotionPlusGrpcExtension](https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/motion-with-grpcExtension/topology.json).
-

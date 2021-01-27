@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 788eea17cabbea46578d0f59919ae95a59f2223f
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 90e0ceb6ba9d696eb446d607ed2f2f134733618e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625344"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881129"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -49,36 +49,66 @@ Zie de [configuratie voor automatisch verzamelde logboek registratie](./java-sta
 
 ## <a name="import-ssl-certificates"></a>SSL-certificaten importeren
 
-Als u de standaard Java-opslag groep gebruikt, heeft deze al alle CA-basis certificaten. U hoeft niet meer SSL-certificaten te importeren.
+Deze sectie helpt u bij het oplossen van problemen met de uitzonde ringen met betrekking tot SSL-certificaten bij gebruik van de Java-Agent.
 
-Als u een aangepaste Java-opslag groep gebruikt, moet u mogelijk de Application Insights endpoint SSL-certificaten importeren.
+Er zijn twee verschillende paden om dit probleem op te lossen.
 
-### <a name="key-terminology"></a>Belangrijkste terminologie
-Een sleutel *Archief* is een opslag plaats van certificaten, open bare sleutels en persoonlijke sleutels. Doorgaans hebben distributies van Java Development Kit een uitvoerbaar bestand om ze te beheren: `keytool` .
+### <a name="if-using-a-default-java-keystore"></a>Als u een standaard Java-opslag archief gebruikt:
 
-Het volgende voor beeld is een eenvoudige opdracht voor het importeren van een SSL-certificaat in de-opslag:
+Normaal gesp roken bevat het standaard Java-opslag archief al alle CA-basis certificaten. Er kunnen echter enkele uitzonde ringen zijn, zoals het inslikken van het eind punt certificaat kan worden ondertekend door een ander basis certificaat. We raden u daarom aan de volgende drie stappen uit te voeren om dit probleem op te lossen:
 
-`keytool -importcert -alias your_ssl_certificate -file "your downloaded SSL certificate name".cer -keystore "Your KeyStore name" -storepass "Your keystore password" -noprompt`
+1.  Controleer of het basis certificaat dat is gebruikt voor het ondertekenen van het Application Insights-eind punt al aanwezig is in de standaard-opslag. De vertrouwde CA-certificaten worden standaard opgeslagen in `$JAVA_HOME/jre/lib/security/cacerts` . Als u certificaten in een Java-opslag archief wilt weer geven, gebruikt u de volgende opdracht:
+    > `keytool -list -v -keystore $PATH_TO_KEYSTORE_FILE`
+ 
+    U kunt de uitvoer omleiden naar een tijdelijk bestand, zoals dit (eenvoudig te doorzoeken)
+    > `keytool -list -v -keystore $JAVA_HOME/jre/lib/security/cacerts > temp.txt`
 
-### <a name="steps-to-download-and-add-an-ssl-certificate"></a>Stappen om een SSL-certificaat te downloaden en toe te voegen
+2. Wanneer u de lijst met certificaten hebt, volgt u deze [stappen](#steps-to-download-ssl-certificate) om het basis certificaat te downloaden dat is gebruikt voor het ondertekenen van het Application Insights-eind punt.
+
+    Nadat u het certificaat hebt gedownload, genereert u een SHA-1-hash op het certificaat met behulp van de onderstaande opdracht:
+    > `keytool -printcert -v -file "your_downloaded_root_certificate.cer"`
+ 
+    Kopieer de SHA-1-waarde en controleer of deze waarde aanwezig is in het bestand ' temp.txt ' dat u eerder hebt opgeslagen.  Als u de SHA-1-waarde in het tijdelijke bestand niet kunt vinden, geeft dit aan dat het gedownloade basis certificaat ontbreekt in de standaard Java-opslag.
+
+
+3. Importeer het basis certificaat naar het standaard-Java-opslag archief met behulp van de volgende opdracht:
+    >   `keytool -import -file "the cert file" -alias "some meaningful name" -keystore "path to cacerts file"`
+ 
+    In dit geval wordt het
+ 
+    > `keytool -import -file "your downloaded root cert file" -alias "some meaningful name" $JAVA_HOME/jre/lib/security/cacerts`
+
+
+### <a name="if-using-a-custom-java-keystore"></a>Als u een aangepast Java-opslag archief gebruikt:
+
+Als u een aangepaste Java-opslag groep gebruikt, moet u mogelijk de Application Insights een of meer basis-SSL-certificaten importeren.
+We raden u aan de volgende twee stappen uit te voeren om dit probleem op te lossen:
+1. Volg deze [stappen](#steps-to-download-ssl-certificate) om het basis certificaat van het Application Insights-eind punt te downloaden.
+2. Gebruik de volgende opdracht om het basis-SSL-certificaat te importeren in het aangepaste Java-hoofd archief:
+    > `keytool -importcert -alias your_ssl_certificate -file "your downloaded SSL certificate name.cer" -keystore "Your KeyStore name" -storepass "Your keystore password" -noprompt`
+
+### <a name="steps-to-download-ssl-certificate"></a>Stappen voor het downloaden van het SSL-certificaat
 
 1.  Open uw favoriete browser en ga naar de `IngestionEndpoint` URL die wordt weer gegeven in de Connection String die wordt gebruikt om uw toepassing te instrumenteren.
 
-    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-url.png" alt-text="Scherm opname waarin een Application Insights connection string wordt weer gegeven.":::
+    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-snippet.png" alt-text="Scherm opname waarin een Application Insights connection string wordt weer gegeven." lightbox="media/java-ipa/troubleshooting/ingestion-endpoint-snippet.png":::
 
 2.  Selecteer het pictogram **site-informatie weer geven** in de browser en selecteer vervolgens de optie **certificaat** .
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Scherm afbeelding van de optie certificaat in site gegevens.":::
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Scherm afbeelding van de optie certificaat in site gegevens." lightbox="media/java-ipa/troubleshooting/certificate-icon-capture.png":::
 
-3.  Ga naar het tabblad **Details** en selecteer **kopiëren naar bestand**.
-4.  Selecteer de knop **volgende** , selecteer **Base-64 Encoded X. 509 (. CER)** en selecteer vervolgens opnieuw **volgende** .
+3.  In plaats van het Leaf-certificaat te downloaden, moet u het basis certificaat downloaden, zoals hieronder wordt weer gegeven. Later moet u op het certificeringspad klikken-> Selecteer het basis certificaat-> Klik op certificaat weer geven. Hiermee wordt een nieuw certificaat menu weer gegeven en kunt u het certificaat downloaden in het nieuwe menu.
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="Scherm opname van de wizard Certificaat exporteren, met een geselecteerde indeling.":::
+    :::image type="content" source="media/java-ipa/troubleshooting/root-certificate-selection.png" alt-text="Scherm opname van het selecteren van het basis certificaat." lightbox="media/java-ipa/troubleshooting/root-certificate-selection.png":::
 
-5.  Geef het bestand op waarin u het SSL-certificaat wilt opslaan. Selecteer vervolgens **volgende**  >  **volt ooien**. Het bericht ' het exporteren is voltooid ' wordt weer gegeven.
-6.  Nadat u het certificaat hebt, is het tijd om het certificaat te importeren in een Java-archief. Gebruik de [voor gaande opdracht](#key-terminology) om certificaten te importeren.
+4.  Ga naar het tabblad **Details** en selecteer **kopiëren naar bestand**.
+5.  Selecteer de knop **volgende** , selecteer **Base-64 Encoded X. 509 (. CER)** en selecteer vervolgens opnieuw **volgende** .
+
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="Scherm opname van de wizard Certificaat exporteren, met een geselecteerde indeling." lightbox="media/java-ipa/troubleshooting/certificate-export-wizard.png":::
+
+6.  Geef het bestand op waarin u het SSL-certificaat wilt opslaan. Selecteer vervolgens **volgende**  >  **volt ooien**. Het bericht ' het exporteren is voltooid ' wordt weer gegeven.
 
 > [!WARNING]
 > U moet deze stappen herhalen om het nieuwe certificaat op te halen voordat het huidige certificaat verloopt. Op het tabblad **Details** van het dialoog venster **certificaat** vindt u informatie over de verval datum.
 >
-> :::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Scherm opname van de details van het SSL-certificaat.":::
+> :::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Scherm opname van de details van het SSL-certificaat." lightbox="media/java-ipa/troubleshooting/certificate-details.png":::

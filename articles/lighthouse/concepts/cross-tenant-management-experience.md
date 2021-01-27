@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 01/20/2021
+ms.date: 01/26/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0e380b49f122e63113e790f4e866fed40aa9beac
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 9af90e10d889c3d30375e001891ce0dc70767ab4
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98662709"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881398"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -97,7 +97,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 
 - Waarschuwingen voor gedelegeerde abonnementen weer geven, met de mogelijkheid om waarschuwingen voor alle abonnementen weer te geven en te vernieuwen
 - Details van het activiteiten logboek voor gedelegeerde abonnementen weer geven
-- Log Analytics: gegevens opvragen uit externe werk ruimten in meerdere tenants (Houd er rekening mee dat Automation-accounts die worden gebruikt voor toegang tot gegevens uit werk ruimten in de tenants van de klant, moeten worden gemaakt in dezelfde Tenant)
+- [Log Analytics](../../azure-monitor/platform/service-providers.md): gegevens opvragen uit externe werk ruimten in meerdere tenants (Houd er rekening mee dat Automation-accounts die worden gebruikt voor toegang tot gegevens uit werk ruimten in de tenants van de klant, moeten worden gemaakt in dezelfde Tenant)
 - Maak waarschuwingen in klant tenants die automatisering activeren, zoals Azure Automation runbooks of Azure Functions, in de Tenant beheren via webhooks
 - [Diagnostische instellingen](../..//azure-monitor/platform/diagnostic-settings.md) maken in de tenants van de klant om resource logboeken te verzenden naar werk ruimten in de Tenant beheren
 - Voor SAP-workloads [bewaakt u de metrische gegevens van SAP-oplossingen met een geaggregeerde weer gave van alle tenants van de klant](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/using-azure-lighthouse-and-azure-monitor-for-sap-solutions-to/ba-p/1537293)

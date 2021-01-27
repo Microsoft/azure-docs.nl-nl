@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: ab3cb403a8757f424a141206f99f9c29bf3e0b49
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 87cc8af9206daa1f1e959b8abd8beb3e7f8ff2f2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108145"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880991"
 ---
 # <a name="get-started-with-azcopy"></a>Aan de slag met AzCopy
 
@@ -79,7 +79,7 @@ Gebruik deze tabel als richt lijn:
 Deze optie is alleen beschikbaar voor Blob Storage. Door Azure Active Directory te gebruiken, kunt u eenmaal referenties opgeven in plaats van een SAS-token aan elke opdracht toe te voegen.  
 
 > [!NOTE]
-> Als u in de huidige release blobs tussen opslag accounts wilt kopiëren, moet u een SAS-token toevoegen aan elke bron-URL. U kunt de SAS-token alleen weglaten van de doel-URL. Zie [blobs kopiëren tussen opslag accounts](storage-use-azcopy-blobs.md)voor voor beelden.
+> Als u in de huidige release blobs tussen opslag accounts wilt kopiëren, moet u een SAS-token toevoegen aan elke bron-URL. U kunt de SAS-token alleen weglaten van de doel-URL. Zie [blobs kopiëren tussen opslag accounts](#transfer-data)voor voor beelden.
 
 Als u toegang wilt verlenen met behulp van Azure AD, raadpleegt u [toegang verlenen tot blobs met AzCopy en Azure Active Directory (Azure AD)](storage-use-azcopy-authorize-azure-active-directory.md).
 

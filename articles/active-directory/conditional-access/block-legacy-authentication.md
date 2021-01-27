@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8bc1a96109eda9cc2ee1f86cec892cc5ce9308d
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 769460d5dab7311eb2940d101df6f4996a3ad355
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860317"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876576"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Procedure: verouderde verificatie naar Azure AD blok keren met voorwaardelijke toegang   
 
@@ -80,8 +80,8 @@ Zie voor meer informatie over deze verificatie protocollen en-services [aanmeldi
 
 Voordat u verouderde verificatie in uw Directory kunt blok keren, moet u eerst begrijpen of uw gebruikers apps hebben die gebruikmaken van verouderde verificatie en hoe dit van invloed is op uw algemene Directory. Aanmeld logboeken van Azure AD kunnen worden gebruikt om te begrijpen of u gebruikmaakt van verouderde verificatie.
 
-1. Navigeer naar het **Azure Portal**  >  **Azure Active Directory**  >  **-Azure Active Directory aanmeldingen**.
-1. Voeg de kolom client toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app **Columns**  >  **Client App**.
+1. Navigeer naar het **Azure Portal**  >    >  **-Azure Active Directory aanmeldingen**.
+1. Voeg de kolom client toepassing toe als deze niet wordt weer gegeven door te klikken op de client-app **Columns**  >  .
 1. **Filters toevoegen**  >  **Client-App** > alle verouderde verificatie protocollen selecteren. Selecteer buiten het dialoog venster filteren om uw selecties toe te passen en sluit het dialoog venster.
 
 Bij filteren worden alleen de aanmeldings pogingen weer gegeven die zijn gemaakt door verouderde verificatie protocollen. Als u op elke afzonderlijke aanmeldings poging klikt, wordt er meer informatie weer gegeven. In het veld **client-app** onder het tabblad **basis informatie** wordt aangegeven welk verouderde verificatie protocol is gebruikt.
@@ -126,4 +126,4 @@ Om B2B-gebruikers toegang te blok keren via verouderde verificatie naar share po
 - [Effect bepalen met de modus alleen rapport-alleen voor voorwaardelijke toegang](howto-conditional-access-insights-reporting.md)
 - Als u nog niet bekend bent met het configureren van beleid voor voorwaardelijke toegang, raadpleegt u [MFA vereisen voor specifieke apps met voorwaardelijke toegang Azure Active Directory](../authentication/tutorial-enable-azure-mfa.md) voor een voor beeld.
 - Zie voor meer informatie over ondersteuning voor moderne authenticatie [hoe moderne verificatie werkt voor office 2013-en office 2016-client-apps](/office365/enterprise/modern-auth-for-office-2013-and-2016) 
-- [Een multifunctioneel apparaat of toepassing instellen om e-mail te verzenden met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)
+- [Een multifunctioneel apparaat of toepassing instellen om e-mail te verzenden met Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)

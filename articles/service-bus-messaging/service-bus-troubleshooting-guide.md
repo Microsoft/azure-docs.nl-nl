@@ -3,12 +3,12 @@ title: Gids voor probleem oplossing voor Azure Service Bus | Microsoft Docs
 description: Meer informatie over tips en aanbevelingen voor het oplossen van problemen die kunnen optreden bij het gebruik van Azure Service Bus.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: 8c31d252d75a2ba75528cd12d3a94bad5bd9f677
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: c5813f901f31f96633e11c2ed8162338bdd9bbf7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98126866"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881211"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Gids voor probleem oplossing voor Azure Service Bus
 In dit artikel vindt u tips en aanbevelingen voor het oplossen van problemen die kunnen optreden bij het gebruik van Azure Service Bus. 
@@ -80,7 +80,7 @@ Service Bus Error: Unauthorized access. 'Send' claim\(s\) are required to perfor
 De identiteit heeft geen machtigingen voor toegang tot het onderwerp Service Bus. 
 
 ### <a name="resolution"></a>Oplossing
-Om deze fout op te lossen, installeert u de bibliotheek [micro soft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) .  Zie [Local Development Authentication](../key-vault/general/service-to-service-authentication.md#local-development-authentication)(Engelstalig) voor meer informatie. 
+Om deze fout op te lossen, installeert u de bibliotheek [micro soft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) .  Zie [Local Development Authentication](/dotnet/api/overview/azure/service-to-service-authentication#local-development-authentication)(Engelstalig) voor meer informatie. 
 
 Zie [een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Azure service bus resources](service-bus-managed-service-identity.md)voor meer informatie over het toewijzen van machtigingen aan rollen.
 

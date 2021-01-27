@@ -3,12 +3,12 @@ title: Beheerde identiteiten voor Azure-resources met Service Bus
 description: In dit artikel wordt beschreven hoe u beheerde identiteiten gebruikt om toegang te krijgen tot Azure Service Bus entiteiten (wacht rijen, onderwerpen en abonnementen).
 ms.topic: article
 ms.date: 01/21/2021
-ms.openlocfilehash: 22be57a0108b6a8511a64165ad365675d006fb8f
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: dac12820adf863a7e51457d34f9180543089fc7b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808243"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881564"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-azure-service-bus-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Azure Service Bus bronnen
 [Beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) is een functie van meerdere Azure waarmee u een beveiligde identiteit kunt maken die is gekoppeld aan de implementatie waaronder uw toepassings code wordt uitgevoerd. U kunt deze identiteit vervolgens koppelen aan de toegangs beheer rollen die aangepaste machtigingen verlenen om toegang te krijgen tot specifieke Azure-resources die uw toepassing nodig heeft.
@@ -137,7 +137,7 @@ Als u berichten wilt verzenden of ontvangen, voert u de naam van de naam ruimte 
 
 
 > [!NOTE]
-> - De beheerde identiteit werkt alleen in de Azure-omgeving, op app-Services, virtuele Azure-machines en schaal sets. Voor .NET-toepassingen is de bibliotheek micro soft. Azure. Services. AppAuthentication, die wordt gebruikt door het Service Bus NuGet-pakket, een abstractie van dit protocol en wordt een lokale ontwikkel ervaring ondersteund. Met deze bibliotheek kunt u uw code ook lokaal op uw ontwikkel computer testen met behulp van uw gebruikers account uit Visual Studio, Azure CLI 2,0 of Active Directory geïntegreerde verificatie. Zie [service-to-service-verificatie voor Azure Key Vault met .net](../key-vault/general/service-to-service-authentication.md)voor meer informatie over de lokale ontwikkelings opties voor deze bibliotheek.  
+> - De beheerde identiteit werkt alleen in de Azure-omgeving, op app-Services, virtuele Azure-machines en schaal sets. Voor .NET-toepassingen is de bibliotheek micro soft. Azure. Services. AppAuthentication, die wordt gebruikt door het Service Bus NuGet-pakket, een abstractie van dit protocol en wordt een lokale ontwikkel ervaring ondersteund. Met deze bibliotheek kunt u uw code ook lokaal op uw ontwikkel computer testen met behulp van uw gebruikers account uit Visual Studio, Azure CLI 2,0 of Active Directory geïntegreerde verificatie. Zie [service-to-service-verificatie voor Azure Key Vault met .net](/dotnet/api/overview/azure/service-to-service-authentication)voor meer informatie over de lokale ontwikkelings opties voor deze bibliotheek.  
 > 
 > - Beheerde identiteiten werken momenteel niet met App Service implementatie sleuven.
 

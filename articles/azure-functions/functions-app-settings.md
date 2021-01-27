@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 80b2daebbd64f08dd4f5d728b2a9a4ee04b8952f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a28530fd4e4731065c4ddcc2f39e9a4660529921
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728989"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881920"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -131,7 +131,7 @@ Hiermee geeft u de opslag plaats of provider op die moet worden gebruikt voor sl
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
-|AzureWebJobsSecretStorageType|Files|
+|AzureWebJobsSecretStorageType|Bestanden|
 
 ## <a name="azurewebjobsstorage"></a>AzureWebJobsStorage
 
@@ -239,7 +239,7 @@ Wordt alleen gebruikt bij het implementeren van een verbruik of Premium-abonneme
 
 ## <a name="website_contentovervnet"></a>WEBSITE- \_ CONTENTOVERVNET
 
-Alleen voor Premium-abonnementen. Met een waarde van `1` kan uw functie-app worden geschaald wanneer uw opslag account is beperkt tot een virtueel netwerk. U moet deze instelling inschakelen wanneer u uw opslag account beperkt tot een virtueel netwerk. Zie [uw opslag account beperken tot een virtueel netwerk](functions-networking-options.md#restrict-your-storage-account-to-a-virtual-network-preview)voor meer informatie. 
+Alleen voor Premium-abonnementen. Met een waarde van `1` kan uw functie-app worden geschaald wanneer uw opslag account is beperkt tot een virtueel netwerk. U moet deze instelling inschakelen wanneer u uw opslag account beperkt tot een virtueel netwerk. Zie [uw opslag account beperken tot een virtueel netwerk](functions-networking-options.md#restrict-your-storage-account-to-a-virtual-network)voor meer informatie.
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|

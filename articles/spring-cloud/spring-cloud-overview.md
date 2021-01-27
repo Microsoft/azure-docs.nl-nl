@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 12/02/2020
 ms.author: brendm
 ms.custom: devx-track-java, contperf-fy21q2
-ms.openlocfilehash: fc3f78131518b4d8740c25ab37c48d4444deef10
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: b7f5d4206140bf2101c10b1cd4ac46d80bdd3342
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563140"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881700"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Wat is Azure Spring Cloud?
 
@@ -27,7 +27,7 @@ De implementatie van toepassingen op Azure Spring Cloud heeft veel voordelen.  U
 * Snel ontwikkelen en implementeren zonder containerisatie-afhankelijkheden.
 * Productiewerkbelastingen efficiënt en moeiteloos bewaken.
 
-Azure Spring Cloud ondersteunt [Spring Boot](https://spring.io/projects/spring-boot)-apps van Java en [Steeltoe](https://steeltoe.io/)-apps van ASP.NET Core. Ondersteuning van Steeltoe wordt momenteel aangeboden als openbare preview. Met openbare preview-aanbiedingen kunt u voorafgaand aan de officiële release met nieuwe functies experimenteren. Openbare preview-functies en -services zijn niet bedoeld voor gebruik in productie. Zie de [Veelgestelde vragen](https://azure.microsoft.com/support/faq/) of een dien een [ondersteuningsaanvraag](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) in voor meer informatie.
+Azure Spring Cloud ondersteunt [Spring Boot](https://spring.io/projects/spring-boot)-apps van Java en [Steeltoe](https://steeltoe.io/)-apps van ASP.NET Core. Ondersteuning van Steeltoe wordt momenteel aangeboden als openbare preview. Met openbare preview-aanbiedingen kunt u voorafgaand aan de officiële release met nieuwe functies experimenteren. Openbare preview-functies en -services zijn niet bedoeld voor gebruik in productie. Zie de [Veelgestelde vragen](https://azure.microsoft.com/support/faq/) of een dien een [ondersteuningsaanvraag](../azure-portal/supportability/how-to-create-azure-support-request.md) in voor meer informatie.
 
 ## <a name="service-overview"></a>Overzicht van services
 
@@ -64,7 +64,7 @@ Deze documentatie bevat secties waarin wordt uitgelegd hoe u aan de slag kunt ga
     * [Integratie met andere Azure-services](spring-cloud-tutorial-bind-cosmos.md): In plaats van uw Spring Boot-toepassingen handmatig te configureren, kunt u bepaalde Azure-services automatisch met uw toepassingen verbinden; u kunt uw toepassing bijvoorbeeld verbinden aan een Azure Cosmos DB-database.
     * [Automatiseren](spring-cloud-howto-cicd.md): Met de hulpprogramma's voor continue integratie en continue levering kunt u snel updates implementeren voor bestaande toepassingen met minimale inspanning en risico. Azure DevOps helpt bij het organiseren en beheren van deze belangrijke taken. 
     * [Problemen oplossen](spring-cloud-howto-self-diagnose-solve.md): Azure Spring Cloud-diagnose biedt een interactieve ervaring bij het oplossen van problemen met apps. Er is geen configuratie vereist. Wanneer u problemen ondervindt, identificeert de Azure Spring Cloud-diagnose problemen en begeleidt u bij het oplossen van problemen.
-    * [Migreren](https://docs.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud): Een bestaande Spring Cloud-toepassing of Spring Boot-toepassing migreren om uit te voeren in Azure Spring Cloud.
+    * [Migreren](/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud): Een bestaande Spring Cloud-toepassing of Spring Boot-toepassing migreren om uit te voeren in Azure Spring Cloud.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.author: b-juche
-ms.openlocfilehash: 41e0f996bcd75ba1663bb8eb3880d550bed01f94
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 5984727f123da6e1d35d862c3f396bd85ce9e7f2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703433"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881449"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Oplossingsarchitecturen op basis van Azure NetApp Files
 Dit artikel bevat verwijzingen naar aanbevolen procedures waarmee u inzicht krijgt in de oplossings architecturen voor het gebruik van Azure NetApp Files.  
@@ -96,7 +96,7 @@ Deze sectie bevat Naslag informatie over SAP on Azure oplossingen.
 
 ## <a name="azure-vmware-solutions"></a>Azure VMware-oplossingen
 
-* [Azure NetApp Files met Azure VMware-oplossing-gast besturingssysteem koppelingen](../azure-vmware/net-app-files-with-azure-vmware-solution.md)
+* [Azure NetApp Files met Azure VMware-oplossing-gast besturingssysteem koppelingen](../azure-vmware/netapp-files-with-azure-vmware-solution.md)
 
 ## <a name="virtual-desktop-infrastructure-solutions"></a>Infrastructuur oplossingen voor Virtual Desktop
 

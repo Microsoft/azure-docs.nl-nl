@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 82161a8f66dd717a9dc448a743b818a9ab9938db
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 3db31431c24edd3377f6299046cc31067310b2ef
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250975"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876207"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -345,7 +345,7 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
 
 * De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
 * De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True. **De schaalset voor 3 AZ kan worden geschaald tot Maxi maal 300 Vm's, zelfs met ' singlePlacementGroup = True '.**
-* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. We raden u aan dit in te stellen op waar, om te voor komen dat de virtuele machines niet in evenwicht worden verdeeld over zones. Meer informatie over [zoneBalancing](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
+* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. We raden u aan dit in te stellen op waar, om te voor komen dat de virtuele machines niet in evenwicht worden verdeeld over zones. Meer informatie over [zoneBalancing](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
 * De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
 
 ```json
@@ -416,9 +416,9 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 
 ### <a name="migration-to-the-node-type-with-multiple-availability-zones"></a>Migratie naar het knooppunt type met meerdere Beschikbaarheidszones
 Voor alle migratie scenario's moet een nieuw nodeType worden toegevoegd waarvoor meerdere beschikbaarheids zones worden ondersteund. Een bestaande nodeType kan niet worden gemigreerd om meerdere zones te ondersteunen.
-In dit artikel [vindt](https://docs.microsoft.com/azure/service-fabric/service-fabric-scale-up-primary-node-type ) u gedetailleerde stappen voor het toevoegen van een nieuw NodeType en het toevoegen van de andere resources die vereist zijn voor het nieuwe NodeType, zoals de IP-en lb-resources. In dit artikel wordt ook nu beschreven hoe u het bestaande nodeType buiten gebruik stelt nadat het nodeType met meerdere beschikbaarheids zones aan het cluster is toegevoegd.
+In dit artikel [vindt](./service-fabric-scale-up-primary-node-type.md) u gedetailleerde stappen voor het toevoegen van een nieuw NodeType en het toevoegen van de andere resources die vereist zijn voor het nieuwe NodeType, zoals de IP-en lb-resources. In dit artikel wordt ook nu beschreven hoe u het bestaande nodeType buiten gebruik stelt nadat het nodeType met meerdere beschikbaarheids zones aan het cluster is toegevoegd.
 
-* Migratie van een nodeType dat gebruikmaakt van basis LB en IP-bronnen: dit wordt [hier](https://docs.microsoft.com/azure/service-fabric/service-fabric-cross-availability-zones#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) al beschreven voor de oplossing met één knooppunt type per AZ. 
+* Migratie van een nodeType dat gebruikmaakt van basis LB en IP-bronnen: dit wordt [hier](#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) al beschreven voor de oplossing met één knooppunt type per AZ. 
     Voor het nieuwe knooppunt type is het enige verschil dat er slechts één virtuele-machine schaalset is en 1 NodeType voor alle AZ in plaats van 1 elk per AZ.
 * Migratie van een nodeType dat gebruikmaakt van de standaard-SKU LB en IP-resources met NSG: Volg dezelfde procedure als hierboven, met de uitzonde ring dat het niet nodig is om nieuwe LB-, IP-en NSG-resources toe te voegen en dezelfde bronnen kunnen opnieuw worden gebruikt in het nieuwe nodeType.
 

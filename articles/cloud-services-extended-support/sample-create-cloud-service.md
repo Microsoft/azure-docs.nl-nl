@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 1c501bcd716a8d5b1deabf345192ced65ab2d5ca
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 61c8924b5dba37e3fc61da4710b9bcdad34ebeca
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98745032"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881531"
 ---
 # <a name="create-a-new-azure-cloud-service-extended-support"></a>Een nieuwe Azure-Cloud service maken (uitgebreide ondersteuning)
 Deze voor beelden beslaan verschillende manieren om een nieuwe implementatie van Azure Cloud service (uitgebreide ondersteuning) te maken.
@@ -189,5 +189,5 @@ $cloudService = New-AzCloudService                                              
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [overzicht van azure Cloud Services (uitgebreide ondersteuning)](overview.md)voor meer informatie over Azure Cloud Services (uitgebreide ondersteuning).
-
+- Zie [overzicht van azure Cloud Services (uitgebreide ondersteuning)](overview.md)voor meer informatie over Azure Cloud Services (uitgebreide ondersteuning).
+- Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

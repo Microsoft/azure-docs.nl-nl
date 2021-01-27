@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 4b8141d99d654705450a14767b04ae6265766af9
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 519285f2bad352aa16bdc8d9a1db7a63c2eb04e5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807085"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876390"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -62,7 +62,7 @@ Micro soft Defender voor eind punt biedt:
 
 Door Defender voor het eind punt met Security Center te integreren, profiteert u van de volgende aanvullende mogelijkheden:
 
-- **Automatische onboarding**. Security Center schakelt automatisch de micro soft Defender for Endpoint-sensor in voor alle Windows-servers die worden bewaakt door Security Center. Behalve voor computers met Windows Server 2019, die moeten worden uitgevoerd via lokaal script, groepsbeleid object (GPO) of [micro soft Endpoint Configuration Manager](https://docs.microsoft.com/mem/configmgr/) (voorheen SCCM).
+- **Automatische onboarding**. Security Center schakelt automatisch de micro soft Defender for Endpoint-sensor in voor alle Windows-servers die worden bewaakt door Security Center. Behalve voor computers met Windows Server 2019, die moeten worden uitgevoerd via lokaal script, groepsbeleid object (GPO) of [micro soft Endpoint Configuration Manager](/mem/configmgr/) (voorheen SCCM).
 
 - **Eén venster glas**. In de Security Center-console worden micro soft Defender voor eindpunt waarschuwingen weer gegeven. Als u verder wilt onderzoeken, gebruikt u de eigen Portal pagina's van micro soft Defender voor het eind punt waar u aanvullende informatie ziet, zoals de structuur van het waarschuwings proces en de incidenten grafiek. U kunt ook een gedetailleerde computer tijdlijn bekijken waarin elk gedrag wordt weer gegeven voor een historische periode van Maxi maal zes maanden.
 

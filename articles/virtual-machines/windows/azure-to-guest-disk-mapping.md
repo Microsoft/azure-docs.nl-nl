@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: tibasham
-ms.openlocfilehash: f16e34f372016f284d4af79443e84d9d5cdea957
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 373fd26c36bf2f77de6a376f738bd3caaf735f00
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523474"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881869"
 ---
 # <a name="how-to-map-azure-disks-to-windows-vm-guest-disks"></a>Azure-schijven toewijzen aan Windows VM-gast schijven
 
@@ -29,11 +29,11 @@ Voor onze oefening hoeft u alleen het LUN te gebruiken.
 
 ## <a name="finding-the-lun"></a>Het LUN zoeken
 
-Er zijn twee methoden om het LUN te vinden dat door u wordt gekozen, afhankelijk van of u [opslag ruimten](https://docs.microsoft.com/windows-server/storage/storage-spaces/overview) gebruikt of niet.
+Er zijn twee methoden om het LUN te vinden dat door u wordt gekozen, afhankelijk van of u [opslag ruimten](/windows-server/storage/storage-spaces/overview) gebruikt of niet.
 
 ### <a name="disk-management"></a>Schijfbeheer
 
-Als u geen opslag groepen gebruikt, kunt u [schijf beheer](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management) gebruiken om het LUN te vinden.
+Als u geen opslag groepen gebruikt, kunt u [schijf beheer](/windows-server/storage/disk-management/overview-of-disk-management) gebruiken om het LUN te vinden.
 
 1. Maak verbinding met de virtuele machine en open schijf beheer a. Klik met de rechter muisknop op de knop Start en kies schijf beheer a. U kunt ook typen `diskmgmt.msc` in het vak Zoek opdracht starten
 1. Klik in het onderste deel venster met de rechter muisknop op een van de schijven en kies Eigenschappen.

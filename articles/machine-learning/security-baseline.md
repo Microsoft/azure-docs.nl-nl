@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 380aa826030df14b4b88b86ac2962c988796c0f9
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 025a94cf7d163d41486ef218e70d9eb48e93d31c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202637"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881313"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Azure-beveiligings basislijn voor Azure Machine Learning
 
@@ -879,9 +879,9 @@ Houd er rekening mee dat installatie kopieën van virtuele machines van Azure Ma
 
 - [Een virtuele Windows-machine maken in de Azure Portal ](../virtual-machines/windows/quick-create-portal.md)
 
-- [Informatie over het downloaden van de VM-sjabloon](../virtual-machines/windows/download-template.md)
+- [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
-- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
+- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 
 **Azure Security Center bewaking**: niet van toepassing
 
@@ -911,7 +911,7 @@ Azure Machine Learning biedt volledige ondersteuning voor git-opslag plaatsen vo
 
 - [Azure RBAC configureren](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-- [Overzicht van Galerie gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md)
+- [Overzicht van Galerie gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md)
 
 - [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 10/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9a907f2a6fc54c96dbef9f2091a91cac50bbd4ca
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6e28b23f20a0336498abbc357f4c96bdfa5b089f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486518"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881835"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Configuraties en bewerkingen van SAP HANA-infrastructuur in Azure
 Dit document bevat richt lijnen voor het configureren van Azure-infra structuur en-besturings SAP HANA systemen die zijn geïmplementeerd op Azure native virtual machines (Vm's). Het document bevat ook configuratie-informatie voor SAP HANA scale-out voor de M128s VM-SKU. Dit document is niet bedoeld als vervanging van de Standard SAP-documentatie, die de volgende inhoud bevat:
@@ -46,7 +46,7 @@ In de volgende secties worden de belangrijkste overwegingen beschreven voor het 
 Zoals beschreven in de [plannings handleiding voor Azure virtual machines](./planning-guide.md)zijn er twee basis methoden om verbinding te maken met Azure vm's:
 
 - Maak verbinding via internet en open bare eind punten op een Jump VM of op de VM met SAP HANA.
-- Maak verbinding via een [VPN-](../../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) of Azure- [ExpressRoute](https://azure.microsoft.com/services/expressroute/).
+- Maak verbinding via een [VPN-](../../../vpn-gateway/tutorial-site-to-site-portal.md) of Azure- [ExpressRoute](https://azure.microsoft.com/services/expressroute/).
 
 Site-naar-site-connectiviteit via VPN of ExpressRoute is nodig voor productie scenario's. Dit type verbinding is ook nodig voor niet-productie scenario's waarbij wordt gefeedd in productie scenario's waarin SAP-software wordt gebruikt. In de volgende afbeelding ziet u een voor beeld van connectiviteit tussen sites:
 

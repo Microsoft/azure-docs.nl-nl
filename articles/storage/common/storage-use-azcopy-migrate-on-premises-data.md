@@ -8,12 +8,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: eddee58d70cf621bd6c82d54fe75434f4e596d9e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 682394329205d74859c1af0c0a68a37539da7872
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498163"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881025"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-with-azcopy"></a>Zelfstudie: On-premises gegevens naar de cloudopslag migreren met AzCopy
 
@@ -108,7 +108,7 @@ azcopy sync "<local-folder-path>" "https://<storage-account-name>.blob.core.wind
 
 * Vervang de waarde van de tijdelijke plaatsaanduiding `<container-name>` door de naam van de container die u heeft gemaakt.
 
-Zie [bestanden synchroniseren](storage-use-azcopy-blobs.md#synchronize-files) voor meer informatie over de opdracht `sync`.
+Zie [bestanden synchroniseren](./storage-use-azcopy-v10.md#transfer-data) voor meer informatie over de opdracht `sync`.
 
 ## <a name="create-a-scheduled-task"></a>Een geplande taak maken
 
@@ -182,7 +182,7 @@ Zie een van de volgende artikelen voor meer informatie over AzCopy:
 
 * [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 
-* [Gegevens overdragen met AzCopy en blob-opslag](storage-use-azcopy-blobs.md)
+* [Gegevens overdragen met AzCopy en blob-opslag](./storage-use-azcopy-v10.md#transfer-data)
 
 * [Gegevens overdragen met AzCopy en bestandopslag](storage-use-azcopy-files.md)
 

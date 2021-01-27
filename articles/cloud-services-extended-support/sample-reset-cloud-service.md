@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: a2c10e7915b0d293d3193c710885ded26a791f2c
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 40b44fd277eac14a5bf2c15f58fccfd9d5b156c4
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98745036"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881482"
 ---
 # <a name="reset-an-azure-cloud-service-extended-support"></a>Een Azure-Cloud service opnieuw instellen (uitgebreide ondersteuning) 
 Deze voor beelden beslaan verschillende manieren om een bestaande implementatie van een Azure Cloud service (uitgebreide ondersteuning) opnieuw in te stellen.
@@ -42,4 +42,5 @@ Reset-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [overzicht van azure Cloud Services (uitgebreide ondersteuning)](overview.md)voor meer informatie over Azure Cloud Services (uitgebreide ondersteuning).
+- Zie [overzicht van azure Cloud Services (uitgebreide ondersteuning)](overview.md)voor meer informatie over Azure Cloud Services (uitgebreide ondersteuning).
+- Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

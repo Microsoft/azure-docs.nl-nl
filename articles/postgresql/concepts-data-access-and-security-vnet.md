@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: d45ab771f90c0174f24d5f0d39921f93f72be850
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b875936e13edfe0eff12f253836b093796951308
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451068"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876323"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Virtual Network Service-eind punten en-regels voor Azure Database for PostgreSQL-één server gebruiken
 
@@ -32,9 +32,9 @@ U kunt ook een [persoonlijke koppeling](concepts-data-access-and-security-privat
 
 **Virtueel netwerk:** U kunt virtuele netwerken koppelen aan uw Azure-abonnement.
 
-**Subnet:** Een virtueel netwerk bevat **subnetten**. Alle Azure virtual machines (Vm's) die u hebt toegewezen aan subnetten. Eén subnet kan meerdere Vm's of andere reken knooppunten bevatten. Reken knooppunten die zich buiten uw virtuele netwerk bevinden, hebben geen toegang tot het virtuele netwerk tenzij u de beveiliging zo configureert dat toegang wordt toegestaan.
+**Subnet:** Een virtueel netwerk bevat **subnetten**. Alle Azure virtual machines (Vm's) binnen het VNet worden toegewezen aan een subnet. Een subnet kan meerdere Vm's en/of andere reken knooppunten bevatten. Reken knooppunten die zich buiten uw virtuele netwerk bevinden, hebben geen toegang tot het virtuele netwerk tenzij u de beveiliging zo configureert dat toegang wordt toegestaan.
 
-**Service-eind punt Virtual Network:** Een [Virtual Network Service-eind punt][vm-virtual-network-service-endpoints-overview-649d] is een subnet waarvan de eigenschaps waarden een of meer formele namen van Azure-service typen bevatten. In dit artikel bent u geïnteresseerd in de type naam van **micro soft. SQL**, die verwijst naar de Azure-service met de naam SQL database. Deze servicetag is ook van toepassing op de Azure Database for PostgreSQL-en MySQL-Services. Het is belang rijk te weten wanneer u de code van de **micro soft. SQL** -service toepast op een VNet-service-eind punt Hiermee wordt het verkeer van service-eind punten geconfigureerd voor alle Azure SQL Database, Azure Database for PostgreSQL en Azure database for MySQL servers in het subnet. 
+**Service-eind punt Virtual Network:** Een [Virtual Network Service-eind punt][vm-virtual-network-service-endpoints-overview-649d] is een subnet waarvan de eigenschaps waarden een of meer formele namen van Azure-service typen bevatten. In dit artikel bent u geïnteresseerd in de type naam van **micro soft. SQL**, die verwijst naar de Azure-service met de naam SQL database. Deze servicetag is ook van toepassing op de Azure Database for PostgreSQL-en MySQL-Services. Het is belang rijk om te weten wanneer u het **micro soft. SQL** -service label toepast op een VNet-service-eind punt Hiermee wordt het service-eindpunt verkeer voor Azure data base services geconfigureerd: SQL database, Azure Synapse Analytics, Azure Database for PostgreSQL en Azure database for MySQL servers in het subnet. 
 
 **Regel voor virtueel netwerk:** Een regel voor het virtuele netwerk voor uw Azure Database for PostgreSQL-server is een subnet dat wordt vermeld in de toegangs beheer lijst (ACL) van uw Azure Database for PostgreSQL-server. Het subnet moet de naam van het **micro soft. SQL** -type bevatten in de ACL voor uw Azure database for postgresql-server.
 
@@ -44,13 +44,13 @@ Met een regel voor het virtuele netwerk krijgt uw Azure Database for PostgreSQL-
 
 ## <a name="benefits-of-a-virtual-network-rule"></a>Voor delen van een regel voor een virtueel netwerk
 
-Totdat u actie onderneemt, kunnen de Vm's op uw subnetten niet communiceren met uw Azure Database for PostgreSQL-server. Een actie die de communicatie tot stand brengt, is het maken van een regel voor een virtueel netwerk. De motivering van het kiezen van de methode voor de VNet-regel vereist een vergelijking en contrast met betrekking tot de concurrerende beveiligings opties die door de firewall worden geboden.
+Totdat u actie onderneemt, kunnen de Vm's in uw subnet ('s) niet communiceren met uw Azure Database for PostgreSQL-server. Een actie die de communicatie tot stand brengt, is het maken van een regel voor een virtueel netwerk. De motivering van het kiezen van de methode voor de VNet-regel vereist een vergelijking en contrast met betrekking tot de concurrerende beveiligings opties die door de firewall worden geboden.
 
-### <a name="a-allow-access-to-azure-services"></a>A. Toegang tot Azure-services toestaan
+### <a name="allow-access-to-azure-services"></a>Toegang tot Azure-services toestaan
 
 Het deel venster verbindings beveiliging heeft een **aan/uit-** knop met de naam **toegang tot Azure-Services toestaan**. Met de instelling **bij** kunt u communicatie van alle Azure IP-adressen en alle Azure-subnetten toestaan. Deze IP-adressen of subnetten van Azure zijn mogelijk niet het eigendom van u. Deze **bij** instelling is waarschijnlijk meer open dan u wilt dat uw Azure database for PostgreSQL-data base. De functie regel voor virtueel netwerk biedt veel nauw keurigere controle.
 
-### <a name="b-ip-rules"></a>B. IP-regels
+### <a name="ip-rules"></a>IP-regels
 
 Met de Azure Database for PostgreSQL firewall kunt u IP-adresbereiken opgeven waarvan de communicatie wordt geaccepteerd in de Azure Database for PostgreSQL-data base. Deze aanpak is nauw keurig voor stabiele IP-adressen die zich buiten het particuliere Azure-netwerk bevinden. Maar veel knoop punten in het particuliere netwerk van Azure zijn geconfigureerd met *dynamische* IP-adressen. Dynamische IP-adressen kunnen veranderen, bijvoorbeeld wanneer de virtuele machine opnieuw is opgestart. Het is Folly om een dynamisch IP-adres op te geven in een firewall regel, in een productie omgeving.
 

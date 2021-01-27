@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: cefe427a7a6f7a46c838147f3d699423c9f19c7b
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: edcaf3fb92b78f2d1fab54cf4db21aaaff0e3d59
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201889"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881852"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Een VM maken op basis van een beheerde installatiekopie
 
@@ -20,7 +20,7 @@ U kunt meerdere virtuele machines (Vm's) maken op basis van een door Azure behee
 
 Voordat u een nieuwe virtuele machine maakt, moet u [een beheerde VM-installatie kopie maken](capture-image-resource.md) om te gebruiken als bron installatie kopie en lees toegang verlenen aan de installatie kopie voor alle gebruikers die toegang tot de installatie kopie moeten hebben. 
 
-Eén beheerde installatie kopie ondersteunt Maxi maal 20 gelijktijdige implementaties. Als u probeert om meer dan 20 Vm's gelijktijdig te maken, vanuit dezelfde beheerde installatie kopie, kan dit leiden tot het inrichten van time-outs als gevolg van de opslag prestatie beperkingen van één VHD. Als u meer dan 20 Vm's gelijktijdig wilt maken, gebruikt u een afbeelding voor [gedeelde afbeeldings galerieën](shared-image-galleries.md) die is geconfigureerd met 1 replica voor elke 20 gelijktijdige VM-implementaties.
+Eén beheerde installatie kopie ondersteunt Maxi maal 20 gelijktijdige implementaties. Als u probeert om meer dan 20 Vm's gelijktijdig te maken, vanuit dezelfde beheerde installatie kopie, kan dit leiden tot het inrichten van time-outs als gevolg van de opslag prestatie beperkingen van één VHD. Als u meer dan 20 Vm's gelijktijdig wilt maken, gebruikt u een afbeelding voor [gedeelde afbeeldings galerieën](../shared-image-galleries.md) die is geconfigureerd met 1 replica voor elke 20 gelijktijdige VM-implementaties.
 
 ## <a name="use-the-portal"></a>Gebruik de portal
 

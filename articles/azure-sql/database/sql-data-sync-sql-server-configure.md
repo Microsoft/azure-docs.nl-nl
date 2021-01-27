@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: f5192176a6a0e174d5878c51defce70d949c1eb1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
-ms.translationtype: HT
+ms.openlocfilehash: d6b5bab1c1b6c8db4821fdf84728eb66eb55b899
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922383"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882226"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-databases-in-azure-sql-database-and-sql-server"></a>Zelfstudie: SQL Data Sync instellen tussen databases in Azure SQL Database en SQL Server
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -178,10 +178,6 @@ Nadat de nieuwe leden van de synchronisatiegroep zijn gemaakt en geïmplementeer
     ![Handmatig synchroniseren](./media/sql-data-sync-sql-server-configure/datasync-sync.png)
 
 ## <a name="faq"></a>Veelgestelde vragen
-
-**Hoe vaak kunnen mijn gegevens met Data Sync worden gesynchroniseerd?**
-
-De minimale periode tussen twee synchronisaties is vijf minuten.
 
 **Maakt SQL Data Sync volledige tabellen?**
 

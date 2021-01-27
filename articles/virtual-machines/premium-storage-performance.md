@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 26ef07269c9451c2e9d05d42e2247fbfcdae4844
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 7e93c659ad58db8d82e68380ab6a0855af27e1bf
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201957"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882379"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Azure Premium-opslag: ontwerpen voor hoge prestaties
 
@@ -35,8 +35,8 @@ We hebben deze richt lijnen specifiek voor Premium Storage gegeven, omdat werk b
 >
 > Als u een bench Mark-schijf wilt maken, raadpleegt u onze artikelen over de benchmarking van een schijf:
 >
-> * Voor Linux: [Bench Mark your application on Azure Disk Storage](linux/disks-benchmarks.md)
-> * Voor Windows: [benchmarking van een schijf](windows/disks-benchmarks.md).
+> * Voor Linux: [Bench Mark your application on Azure Disk Storage](./disks-benchmarks.md)
+> * Voor Windows: [benchmarking van een schijf](./disks-benchmarks.md).
 >
 > Als uw virtuele machine versneld netwerken ondersteunt, moet u ervoor zorgen dat deze is ingeschakeld. Als deze optie niet is ingeschakeld, kunt u deze inschakelen op al geïmplementeerde Vm's in [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md#enable-accelerated-networking-on-existing-vms) en [Linux](../virtual-network/create-vm-accelerated-networking-cli.md#enable-accelerated-networking-on-existing-vms).
 
@@ -380,8 +380,8 @@ Azure Premium Storage voorziet in een opgegeven aantal IOPS en door Voer, afhank
 
 Als u een bench Mark-schijf wilt maken, raadpleegt u onze artikelen over de benchmarking van een schijf:
 
-* Voor Linux: [Bench Mark your application on Azure Disk Storage](linux/disks-benchmarks.md)
-* Voor Windows: [benchmarking van een schijf](windows/disks-benchmarks.md).
+* Voor Linux: [Bench Mark your application on Azure Disk Storage](./disks-benchmarks.md)
+* Voor Windows: [benchmarking van een schijf](./disks-benchmarks.md).
 
 Meer informatie over de beschik bare schijf typen:
 

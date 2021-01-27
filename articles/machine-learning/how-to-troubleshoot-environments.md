@@ -10,12 +10,12 @@ ms.author: sagopal
 ms.date: 12/3/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python
-ms.openlocfilehash: 71061c056b499f79727f70fb855db7a81a65f3bd
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 7ddd5dec87a122a0b36fee17b5434c8a49dcf434
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98572167"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881632"
 ---
 # <a name="troubleshoot-environment-image-builds"></a>Problemen met omgevings afbeeldingen oplossen
 
@@ -153,12 +153,12 @@ Raadpleeg de volgende scenario's om mogelijke storingen aan de service zijde op 
 
 Mogelijke problemen:
 - De naam van het pad naar het container register is mogelijk niet juist opgelost. Controleer of de naam van de installatie kopie dubbele slashes en de richting van slashes op Linux versus Windows-hosts juist is.
-- Als een container register achter een virtueel netwerk een persoonlijk eind punt in [een niet-ondersteunde regio](https://docs.microsoft.com/azure/private-link/private-link-overview#availability)gebruikt, configureert u het container register met behulp van het service-eind punt (open bare toegang) vanuit de portal en probeert u het opnieuw.
-- Nadat u het container register achter een virtueel netwerk hebt geplaatst, voert u de [Azure Resource Manager sjabloon](https://docs.microsoft.com/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry) uit zodat de werk ruimte kan communiceren met het container register exemplaar.
+- Als een container register achter een virtueel netwerk een persoonlijk eind punt in [een niet-ondersteunde regio](/azure/private-link/private-link-overview#availability)gebruikt, configureert u het container register met behulp van het service-eind punt (open bare toegang) vanuit de portal en probeert u het opnieuw.
+- Nadat u het container register achter een virtueel netwerk hebt geplaatst, voert u de [Azure Resource Manager sjabloon](/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry) uit zodat de werk ruimte kan communiceren met het container register exemplaar.
 
 ### <a name="you-get-a-401-error-from-a-workspace-container-registry"></a>Er wordt een 401-fout weer geven in een werkruimte container register
 
-Synchroniseer opslag sleutels opnieuw met behulp van [WS.sync_keys ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#sync-keys--).
+Synchroniseer opslag sleutels opnieuw met behulp van [WS.sync_keys ()](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#sync-keys--).
 
 ### <a name="the-environment-keeps-throwing-a-waiting-for-other-conda-operations-to-finish-error"></a>De omgeving houdt een wacht tijd voor het volt ooien van andere Conda-bewerkingen... optreedt
 
@@ -166,7 +166,7 @@ Wanneer er een installatie kopie wordt gemaakt, wordt Conda vergrendeld door de 
 
 ### <a name="your-custom-docker-image-isnt-in-the-registry"></a>Uw aangepaste docker-installatie kopie bevindt zich niet in het REGI ster
 
-Controleer of de [juiste tag](https://docs.microsoft.com/azure/machine-learning/how-to-use-environments#create-an-environment) wordt gebruikt en dat `user_managed_dependencies = True` . `Environment.python.user_managed_dependencies = True` Hiermee wordt Conda uitgeschakeld en worden de geïnstalleerde pakketten van de gebruiker gebruikt.
+Controleer of de [juiste tag](/azure/machine-learning/how-to-use-environments#create-an-environment) wordt gebruikt en dat `user_managed_dependencies = True` . `Environment.python.user_managed_dependencies = True` Hiermee wordt Conda uitgeschakeld en worden de geïnstalleerde pakketten van de gebruiker gebruikt.
 
 ### <a name="you-get-one-of-the-following-common-virtual-network-issues"></a>U krijgt een van de volgende algemene problemen met het virtuele netwerk
 
@@ -184,9 +184,9 @@ Controleer of de [juiste tag](https://docs.microsoft.com/azure/machine-learning/
 
 ### <a name="you-cant-run-experiments-when-storage-has-network-security-enabled"></a>U kunt geen experimenten uitvoeren wanneer de functie netwerk beveiliging is ingeschakeld voor opslag
 
-Als u gebruikmaakt van standaard-docker-installatie kopieën en door gebruikers beheerde afhankelijkheden in te scha kelen, gebruikt u de MicrosoftContainerRegistry-en AzureFrontDoor. FirstParty- [service Tags](https://docs.microsoft.com/azure/machine-learning/how-to-enable-virtual-network) voor allowlist Azure container Registry en de bijbehorende afhankelijkheden.
+Als u gebruikmaakt van standaard-docker-installatie kopieën en door gebruikers beheerde afhankelijkheden in te scha kelen, gebruikt u de MicrosoftContainerRegistry-en AzureFrontDoor. FirstParty- [service Tags](/azure/machine-learning/how-to-enable-virtual-network) voor allowlist Azure container Registry en de bijbehorende afhankelijkheden.
 
- Zie [virtuele netwerken inschakelen](https://docs.microsoft.com/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry)voor meer informatie.
+ Zie [virtuele netwerken inschakelen](/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry)voor meer informatie.
 
 ### <a name="you-need-to-create-an-icm"></a>U moet een ICM maken
 

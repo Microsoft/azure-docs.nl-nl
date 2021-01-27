@@ -1,5 +1,5 @@
 ---
-title: 'Zelfstudie: Azure Spring Cloud implementeren in een virtueel netwerk'
+title: Azure lente-Cloud in een virtueel netwerk implementeren
 description: Azure Spring Cloud implementeren in een virtueel netwerk (VNet-injectie).
 author: MikeDodaro
 ms.author: brendm
@@ -7,14 +7,14 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 9d72d60bd3a1ef23b8122b2bc5ba4f0c5c701254
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: 73dd60dba50d3bd29cda0f538462884822054cf9
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587720"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880593"
 ---
-# <a name="tutorial-deploy-azure-spring-cloud-in-a-virtual-network"></a>Zelfstudie: Azure Spring Cloud implementeren in een virtueel netwerk
+# <a name="deploy-azure-spring-cloud-in-a-virtual-network"></a>Azure lente-Cloud in een virtueel netwerk implementeren
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
@@ -25,6 +25,9 @@ De implementatie maakt het volgende mogelijk:
 * Isolatie van Azure Spring Cloud-apps en -serviceruntime vanaf internet in uw bedrijfsnetwerk.
 * Azure Spring Cloud-interactie met systemen in on-premises datacentrums of Azure-services in andere virtuele netwerken.
 * Klanten kunnen de inkomende en uitgaande netwerkcommunicatie voor Azure Spring Cloud beheren.
+
+> [!Note]
+> U kunt alleen uw virtuele Azure-netwerk selecteren wanneer u een nieuw Azure lente-Cloud service-exemplaar maakt. U kunt niet wijzigen om een ander virtueel netwerk te gebruiken nadat de Azure lente-Cloud is gemaakt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -77,6 +80,7 @@ Sla stap 1, 2 en 3 over als u al een virtueel netwerk hebt voor het hosten van e
 1. Selecteer **Controleren en maken**. Laat voor de rest de standaardwaarden staan, en selecteer **Maken**.
 
 ## <a name="grant-service-permission-to-the-virtual-network"></a>Machtiging voor service verlenen aan het virtuele netwerk
+De Azure lente-Cloud vereist **eigenaars** machtigingen voor uw virtuele netwerk om een speciale en dynamische service-principal in het virtuele netwerk te kunnen verlenen voor verdere implementatie en onderhoud.
 
 Selecteer het virtuele netwerk **azure-spring-cloud-vnet** dat u eerder hebt gemaakt.
 
@@ -160,9 +164,9 @@ Deze netwerkresources zijn verbonden met het virtuele netwerk dat is gemaakt in 
    > [!Important]
    > De resourcegroepen worden volledig beheerd met de Azure Spring Cloud-service. Verwijder of wijzig resources *niet* handmatig.
 
-## <a name="limitations"></a>Beperkingen
+## <a name="using-smaller-subnet-ranges"></a>Kleinere subnet bereiken gebruiken
 
-IP-adressen worden opgeslagen in een klein subnetbereik, maar dit zorgt voor een maximum aantal app-exemplaren dat kan worden opgeslagen in het Azure Spring Cloud-exemplaar.
+In deze tabel wordt het maximum aantal app-exemplaren weer gegeven dat wordt ondersteund door kleinere subnetten.
 
 | CIDR voor app-subnet | Totaal aantal IP's | Beschikbare IP's | Maximum aantal app-exemplaren                                        |
 | --------------- | --------- | ------------- | ------------------------------------------------------------ |

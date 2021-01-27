@@ -9,12 +9,12 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: ff023ad98c7ffa269223b5d0b4a1cecc5fde1feb
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d7d438b369c863660a032f101e466b6fadf639fa
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410212"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879711"
 ---
 # <a name="azure-encryption-overview"></a>Overzicht van Azure-versleuteling
 
@@ -45,11 +45,11 @@ Met versleuteling aan de client zijde hebben Cloud serviceproviders geen toegang
 
 De drie versleutelings modellen aan de server zijde bieden verschillende kenmerken voor sleutel beheer, die u op basis van uw vereisten kunt kiezen:
 
-- Door **service beheerde sleutels** : biedt een combi natie van beheer en gebruiks gemak met lage overhead.
+- Door **service beheerde sleutels**: biedt een combi natie van beheer en gebruiks gemak met lage overhead.
 
-- Door de **klant beheerde sleutels** : geeft u de controle over de sleutels, waaronder het meebrengen van uw eigen sleutels (BYOK), of u kunt er nieuwe toevoegen.
+- Door de **klant beheerde sleutels**: geeft u de controle over de sleutels, waaronder het meebrengen van uw eigen sleutels (BYOK), of u kunt er nieuwe toevoegen.
 
-- Door **service beheerde sleutels in door de klant beheerde hardware** : Hiermee kunt u sleutels in uw eigen opslag plaats beheren, buiten micro soft Control. Dit kenmerk wordt een host uw eigen sleutel (HYOK) genoemd. Configuratie is echter complex en de meeste Azure-Services bieden geen ondersteuning voor dit model.
+- Door **service beheerde sleutels in door de klant beheerde hardware**: Hiermee kunt u sleutels in uw eigen opslag plaats beheren, buiten micro soft Control. Dit kenmerk wordt een host uw eigen sleutel (HYOK) genoemd. Configuratie is echter complex en de meeste Azure-Services bieden geen ondersteuning voor dit model.
 
 ### <a name="azure-disk-encryption"></a>Azure Disk Encryption
 
@@ -181,7 +181,7 @@ U kunt een site-naar-site-VPN-verbinding met een virtueel netwerk configureren m
 
 Zie voor meer informatie:
 
-[Een site-naar-site-verbinding maken in de Azure Portal](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+[Een site-naar-site-verbinding maken in de Azure Portal](../../vpn-gateway/tutorial-site-to-site-portal.md)
 
 [Een site-naar-site-verbinding maken in Power shell](../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
 
@@ -202,7 +202,7 @@ Met Key Vault hoeven organisaties hardwarebeveiligingsmodules (Hardware Security
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Overzicht van Azure-beveiliging](./overview.md)
-- [Overzicht van Azure-netwerk beveiliging](network-overview.md)
+- [Overzicht van Azure-netwerkbeveiliging](network-overview.md)
 - [Overzicht van Azure data base-beveiliging](../../azure-sql/database/security-overview.md)
 - [Overzicht van de beveiliging van virtuele Azure-machines](virtual-machines-overview.md)
 - [Versleuteling van inactieve gegevens](encryption-atrest.md)

@@ -3,19 +3,19 @@ title: Aanvraag limieten-Translator
 titleSuffix: Azure Cognitive Services
 description: In dit artikel vindt u de aanvraag limieten voor het conversie programma. De kosten worden berekend op basis van het aantal tekens, niet de aanvraag frequentie met een limiet van 5.000 tekens per aanvraag. De teken limieten zijn gebaseerd op abonnementen, met F0 tot 2.000.000 tekens per uur.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.author: swmachan
-ms.openlocfilehash: 8841c55d8f276f048db53a531bd2e9218e498b34
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: 2bc2c1361c7d2f73ff8a67e906a6db725f669d52
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016493"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895404"
 ---
 # <a name="request-limits-for-translator"></a>Aanvraag limieten voor Translator
 
@@ -80,5 +80,5 @@ Wanneer u de functie [BreakSentence](./reference/v3-0-break-sentence.md) gebruik
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
-* [Regionale Beschik baarheid](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
+* [Regionale beschikbaarheid](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
 * [v3 Translator-naslaginformatie](./reference/v3-0-reference.md)

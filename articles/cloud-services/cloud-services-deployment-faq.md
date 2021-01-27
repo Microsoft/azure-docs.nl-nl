@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: 67c20823d1f80360b2ab23dc3f208673d36a7374
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: dd7b19a2c9e872b811c1aab6e504accb7de383b2
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742213"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896474"
 ---
 # <a name="deployment-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Implementatie problemen voor Azure Cloud Services (klassiek): veelgestelde vragen (FAQ)
 
@@ -52,7 +52,7 @@ De implementatie van een Cloud service kan mislukken als de resources die moeten
 
 U kunt ook het huidige gebruik/quotum voor uw abonnement volgen op de portal: Azure Portal =>-abonnementen => \<appropriate subscription>   => "gebruik + quotum".
 
-Informatie over het resource gebruik/het verbruik kan ook worden opgehaald via de Azure Billing-API's. Zie de [Azure resource usage-API (preview)](../cost-management-billing/manage/usage-rate-card-overview.md#azure-resource-usage-api-preview).
+Informatie over het resource gebruik/het verbruik kan ook worden opgehaald via de Azure Billing-API's. Zie [overzicht van Azure-verbruiks-API](../cost-management-billing/manage/consumption-api-overview.md).
 
 ## <a name="how-can-i-change-the-size-of-a-deployed-cloud-service-vm-without-redeploying-it"></a>Hoe kan ik de grootte van een geïmplementeerde Cloud service-VM wijzigen zonder deze opnieuw te implementeren?
 U kunt de VM-grootte van een geïmplementeerde Cloud service niet wijzigen zonder deze opnieuw te implementeren. De VM-grootte is ingebouwd in de CSDEF, die alleen kan worden bijgewerkt met een nieuwe implementatie.

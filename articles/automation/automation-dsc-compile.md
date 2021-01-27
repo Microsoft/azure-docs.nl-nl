@@ -5,12 +5,12 @@ services: automation
 ms.subservice: dsc
 ms.date: 04/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3bb42886c653afbdf8975b532bd2e1e1c3c63ce9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b45aad71e04418c7c7dda4fc3f0c84a5fe99ecdf
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186534"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896339"
 ---
 # <a name="compile-dsc-configurations-in-azure-automation-state-configuration"></a>DSC-configuraties compileren in de configuratie van de Azure Automation status
 
@@ -41,7 +41,7 @@ U kunt ook Azure Resource Manager sjablonen met de extensie Azure desired state 
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-U kunt [Start-AzAutomationDscCompilationJob](/powershell/module/az.automation/start-azautomationdsccompilationjob) gebruiken om te beginnen met het compileren met Windows Power shell. Met de volgende voorbeeld code wordt de compilatie van een DSC-configuratie met de naam **SampleConfig**gestart.
+U kunt [Start-AzAutomationDscCompilationJob](/powershell/module/az.automation/start-azautomationdsccompilationjob) gebruiken om te beginnen met het compileren met Windows Power shell. Met de volgende voorbeeld code wordt de compilatie van een DSC-configuratie met de naam **SampleConfig** gestart.
 
 ```powershell
 Start-AzAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -AutomationAccountName 'MyAutomationAccount' -ConfigurationName 'SampleConfig'
@@ -99,7 +99,7 @@ U kunt DSC-configuraties compileren die basis parameters gebruiken in de configu
 
 #### <a name="portal"></a>Portal
 
-In de portal kunt u parameter waarden invoeren nadat u op **compileren**hebt geklikt.
+In de portal kunt u parameter waarden invoeren nadat u op **compileren** hebt geklikt.
 
 ![Configuratie compilatie parameters](./media/automation-dsc-compile/DSC_compiling_1.png)
 
@@ -116,7 +116,7 @@ $Parameters = @{
 Start-AzAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -AutomationAccountName 'MyAutomationAccount' -ConfigurationName 'ParametersExample' -Parameters $Parameters
 ```
 
-Zie referentie-assets voor informatie over het door geven van `PSCredential` objecten als para meters. [Credential assets](#credential-assets)
+Zie referentie-assets voor informatie over het door geven van `PSCredential` objecten als para meters. [](#credential-assets)
 
 ### <a name="compile-configurations-containing-composite-resources-in-azure-automation"></a>Configuraties met samengestelde resources in Azure Automation compileren
 
@@ -184,7 +184,7 @@ Start-AzAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -Automa
 
 Activa verwijzingen zijn hetzelfde in de Azure Automation status configuratie en runbooks. Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Bewijzen](./shared-resources/certificates.md)
+- [Certificaten](./shared-resources/certificates.md)
 - [Verbindingen](automation-connections.md)
 - [Referenties](./shared-resources/credentials.md)
 - [Variabelen](./shared-resources/variables.md)
@@ -278,6 +278,6 @@ Import-AzAutomationDscNodeConfiguration -AutomationAccountName 'MyAutomationAcco
 
 - Zie aan de slag [met de configuratie van de Azure Automation-status](automation-dsc-getting-started.md)om aan de slag te gaan.
 - Zie [DSC-configuraties compileren in azure Automation status configuratie](automation-dsc-compile.md)voor meer informatie over het compileren van DSC-configuraties zodat u ze aan doel knooppunten kunt toewijzen.
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.
 - Zie [continue implementatie instellen met Choco lade](automation-dsc-cd-chocolatey.md)voor een voor beeld van het gebruik van status configuratie in een pijp lijn voor continue implementatie.

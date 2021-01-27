@@ -9,12 +9,12 @@ ms.date: 04/08/2019
 ms.author: tamram
 ms.subservice: tables
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 20e776e649d13e435a7bc9215802fcd89efe0867
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2eb109078728b8a9070b3991733450c1da790d9e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019222"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879592"
 ---
 # <a name="table-design-patterns"></a>Tabelontwerppatronen
 In dit artikel worden enkele patronen beschreven die geschikt zijn voor gebruik met Table service oplossingen. U zult ook zien hoe u een aantal van de problemen en commerciële benadert die worden besproken in andere ontwerp artikelen van Table-opslag. In het volgende diagram ziet u een overzicht van de relaties tussen de verschillende patronen:  
@@ -711,7 +711,7 @@ Uitzonde ringen die worden gegenereerd wanneer de Storage-client bibliotheek een
 U moet ook overwegen hoe uw ontwerp van invloed is op de manier waarop uw client toepassing gelijktijdig valuta's en update bewerkingen verwerkt.  
 
 ### <a name="managing-concurrency"></a>Gelijktijdigheid beheren
-De tabel service implementeert standaard optimistische gelijktijdigheid controles op het niveau van afzonderlijke entiteiten voor **Insert**-, **Merge**-en **Delete** -bewerkingen, hoewel het mogelijk is dat een client de Table-service afdwingt deze controles over te slaan. Zie voor meer informatie over hoe de tabel service gelijktijdigheid beheert,  [gelijktijdigheid beheren in Microsoft Azure Storage](../../storage/common/storage-concurrency.md).  
+De tabel service implementeert standaard optimistische gelijktijdigheid controles op het niveau van afzonderlijke entiteiten voor **Insert**-, **Merge**-en **Delete** -bewerkingen, hoewel het mogelijk is dat een client de Table-service afdwingt deze controles over te slaan. Zie voor meer informatie over hoe de tabel service gelijktijdigheid beheert,  [gelijktijdigheid beheren in Microsoft Azure Storage](../blobs/concurrency-manage.md).  
 
 ### <a name="merge-or-replace"></a>Samen voegen of vervangen
 De methode **replace** van de klasse **TableOperation** vervangt altijd de volledige entiteit in de Table service. Als u in de aanvraag geen eigenschap opneemt wanneer die eigenschap in de opgeslagen entiteit bestaat, wordt die eigenschap door de aanvraag uit de opgeslagen entiteit verwijderd. Tenzij u een eigenschap expliciet van een opgeslagen entiteit wilt verwijderen, moet u elke eigenschap in de aanvraag toevoegen.  
@@ -743,7 +743,7 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -763,7 +763,7 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -800,7 +800,7 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -836,7 +836,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey**, **RowKey** en **Tim
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -858,7 +858,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey**, **RowKey** en **Tim
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -899,7 +899,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey**, **RowKey** en **Tim
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Werknemer</td>

@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 03/11/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 562ea5e0e9e4851ed59bd3ef917be2f9c48cd2a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8454c5a5bb5b44d2a60ae0095a9b82a19ed27c8d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185548"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896643"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>Uw Azure Automation-account verplaatsen naar een ander abonnement
 
@@ -41,7 +41,7 @@ Als u uw werk ruimte wilt ontkoppelen van uw Automation-account, moet u de funct
 
     ![Scherm opname van het verwijderen van functie resources uit het Azure Portal](../media/move-account/delete-solutions.png)
 
-Als u wilt, kunt u de resources verwijderen met de cmdlet [Remove-AzResource](/powershell/module/Az.Resources/Remove-AzResource?view=azps-3.7.0) :
+Als u wilt, kunt u de resources verwijderen met de cmdlet [Remove-AzResource](/powershell/module/Az.Resources/Remove-AzResource) :
 
 ```azurepowershell-interactive
 $workspaceName = <myWorkspaceName>
@@ -72,7 +72,7 @@ Voor VM's buiten bedrijfsuren starten/stoppen moet u ook de waarschuwings regels
     > [!NOTE]
     > Als u geen waarschuwings regels ziet op de pagina regels, wijzigt u het veld **status** in **uitgeschakeld** om uitgeschakelde waarschuwingen weer te geven. 
 
-4. Wanneer u de waarschuwings regels verwijdert, moet u de actie groep verwijderen die is gemaakt voor VM's buiten bedrijfsuren starten/stoppen meldingen. Selecteer in het Azure Portal **bewaken**van  >  **waarschuwingen**controleren  >  **actie groepen beheren**.
+4. Wanneer u de waarschuwings regels verwijdert, moet u de actie groep verwijderen die is gemaakt voor VM's buiten bedrijfsuren starten/stoppen meldingen. Selecteer in het Azure Portal **bewaken** van  >  **waarschuwingen** controleren  >  **actie groepen beheren**.
 
 5. Selecteer **StartStop_VM_Notification**. 
 
@@ -80,7 +80,7 @@ Voor VM's buiten bedrijfsuren starten/stoppen moet u ook de waarschuwings regels
 
     ![Scherm afbeelding van de pagina actie groep](../media/move-account/delete-action-group.png)
 
-Als u wilt, kunt u uw actie groep verwijderen met de cmdlet [Remove-AzActionGroup](/powershell/module/az.monitor/remove-azactiongroup?view=azps-3.7.0) :
+Als u wilt, kunt u uw actie groep verwijderen met de cmdlet [Remove-AzActionGroup](/powershell/module/az.monitor/remove-azactiongroup) :
 
 ```azurepowershell-interactive
 Remove-AzActionGroup -ResourceGroupName <myResourceGroup> -Name StartStop_VM_Notification
@@ -100,7 +100,7 @@ U kunt nu uw werk ruimte ontkoppelen:
 
 U kunt nu uw Automation-account en de bijbehorende runbooks verplaatsen. 
 
-1. Blader in het Azure Portal naar de resource groep van uw Automation-account. Selecteer **verplaatsen**  >  **naar ander abonnement**verplaatsen.
+1. Blader in het Azure Portal naar de resource groep van uw Automation-account. Selecteer **verplaatsen**  >  **naar ander abonnement** verplaatsen.
 
     ![Scherm afbeelding van de pagina resource groep, verplaatsen naar een ander abonnement](../media/move-account/move-resources.png)
 
@@ -135,7 +135,7 @@ Nadat u de run as-accounts opnieuw hebt gemaakt, moet u de functies die u hebt v
 
     ![Scherm opname van het opnieuw inschakelen van functies in het verplaatste Automation-account](../media/move-account/reenable-solutions.png)
 
-3. Computers waarop de functies zijn ingeschakeld, zijn zichtbaar wanneer u de bestaande Log Analytics-werk ruimte hebt verbonden. Als u de functie VM's buiten bedrijfsuren starten/stoppen wilt inschakelen, moet u deze opnieuw inschakelen. Onder **gerelateerde resources**selecteert u **Start-en stop vm's**  >  **meer informatie over en schakelt u de oplossing**  >  **maken** in om de implementatie te starten.
+3. Computers waarop de functies zijn ingeschakeld, zijn zichtbaar wanneer u de bestaande Log Analytics-werk ruimte hebt verbonden. Als u de functie VM's buiten bedrijfsuren starten/stoppen wilt inschakelen, moet u deze opnieuw inschakelen. Onder **gerelateerde resources** selecteert u **Start-en stop vm's**  >  **meer informatie over en schakelt u de oplossing**  >  **maken** in om de implementatie te starten.
 
 4. Kies op de pagina oplossing toevoegen de Log Analytics-werk ruimte en het Automation-account.
 

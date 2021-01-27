@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: cc7579b48307325e25d8914ea4c722a9641883f3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 303244d153877ba71796ff1f075e2e58a5084469
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952145"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880318"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Oracle Data Guard implementeren op een virtuele machine van Azure Linux 
 
@@ -697,4 +697,4 @@ az group delete --name myResourceGroup
 
 [Zelf studie: Maxi maal beschik bare virtuele machines maken](../../linux/create-cli-complete.md)
 
-[Azure CLI-voor beelden van VM-implementatie verkennen](../../linux/cli-samples.md)
+[Azure CLI-voor beelden van VM-implementatie verkennen](https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine)

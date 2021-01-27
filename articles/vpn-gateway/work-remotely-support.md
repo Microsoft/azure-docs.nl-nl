@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: 028250e25f4d67628c08970e25b4621e78526b6a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb0291b18952efc643de18e111154ebe58f041af
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440822"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880081"
 ---
 # <a name="remote-work-using-azure-vpn-gateway-point-to-site"></a>Extern werk met Azure VPN Gateway punt-naar-site
 
@@ -30,7 +30,7 @@ Met een point-to-site-VPN-gatewayverbinding (P2S) kunt u vanaf een afzonderlijke
 
 In de volgende tabel ziet u de client besturingssystemen en de beschik bare verificatie opties. Het is handig om de verificatie methode te selecteren op basis van het client besturingssysteem dat al in gebruik is. Selecteer bijvoorbeeld OpenVPN met verificatie op basis van certificaten als u een combi natie van client besturingssystemen hebt die verbinding moeten maken. Houd er ook rekening mee dat punt-naar-site-VPN alleen wordt ondersteund op op route gebaseerde VPN-gateways.
 
-![Scherm opname van client besturingssystemen en beschik bare verificatie opties.](./media/working-remotely-support/ostable.png "OS")
+![Scherm opname van client besturingssystemen en beschik bare verificatie opties.](./media/working-remotely-support/ostable.png "Besturingssysteem")
 
 ## <a name="scenario-1---users-need-access-to-resources-in-azure-only"></a><a name="scenario1"></a>Scenario 1: gebruikers moeten alleen toegang hebben tot resources in azure
 
@@ -65,7 +65,7 @@ Op hoog niveau zijn de volgende stappen nodig om gebruikers in staat te stellen 
 4. Configureer het on-premises apparaat om verbinding te maken met de gateway van het virtuele Azure-netwerk.
 5. Het punt-naar-site-profiel downloaden van de Azure Portal en distribueren naar clients
 
-Zie [deze koppeling](vpn-gateway-howto-site-to-site-resource-manager-portal.md)voor meer informatie over het instellen van een site-naar-site-VPN-tunnel.
+Zie [deze koppeling](./tutorial-site-to-site-portal.md)voor meer informatie over het instellen van een site-naar-site-VPN-tunnel.
 
 ## <a name="faq-for-native-azure-certificate-authentication"></a><a name="faqcert"></a>Veelgestelde vragen over systeem eigen Azure-certificaat verificatie
 

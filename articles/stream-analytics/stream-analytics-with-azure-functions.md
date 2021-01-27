@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 01/27/2020
-ms.openlocfilehash: ffc056a97d3c0fd14bab186614015a9352a34077
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 74e09e61a6132858d716686bdb6687bb670f0d33
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015144"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879508"
 ---
 # <a name="tutorial-run-azure-functions-from-azure-stream-analytics-jobs"></a>Zelfstudie: Azure Functions uitvoeren vanuit Azure Stream Analytics-taken 
 
@@ -53,7 +53,7 @@ Volg de zelfstudie [Realtime fraudedetectie](stream-analytics-real-time-fraud-de
 
 ## <a name="create-a-function-in-azure-functions-that-can-write-data-to-azure-cache-for-redis"></a>Een functie in Azure Functions maken die gegevens naar de Azure Cache voor Redis schrijft
 
-1. Zie de sectie [Een functie-app maken](../azure-functions/functions-create-first-azure-function.md#create-a-function-app) van de Azure Functions-documentatie. In deze sectie wordt u begeleid bij het maken van een functie-app en een [met HTTP geactiveerde functie in Azure Functions](../azure-functions/functions-create-first-azure-function.md#create-function) met behulp van de taal C#.  
+1. Zie de sectie [Een functie-app maken](../azure-functions/functions-get-started.md) van de Azure Functions-documentatie. In deze sectie wordt u begeleid bij het maken van een functie-app en een [met HTTP geactiveerde functie in Azure Functions](../azure-functions/functions-get-started.md) met behulp van de taal C#.  
 
 2. Blader naar de functie **run.csx**. Werk deze bij met de volgende code. Vervang **‘\<your Azure Cache for Redis connection string goes here\>'** door de primaire verbindingsreeks voor Azure Cache voor Redis die u hebt opgehaald in de vorige sectie. 
 

@@ -3,17 +3,17 @@ title: Aangepaste toewijzings beleid met Azure IoT Hub Device Provisioning Servi
 description: Aangepaste toewijzings beleid gebruiken met Azure IoT Hub Device Provisioning Service (DPS)
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/14/2019
+ms.date: 01/26/2021
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 26615b82bb9dcbc1247bec9b7a06b579dfa1eb2b
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 4931258af0dd50d091bec98824df5da0e91dbf53
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571637"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895725"
 ---
 # <a name="how-to-use-custom-allocation-policies"></a>Aangepast toewijzingsbeleid gebruiken
 
@@ -66,7 +66,7 @@ In deze sectie gebruikt u de Azure Cloud Shell voor het maken van een inrichting
     az group create --name contoso-us-resource-group --location westus
     ```
 
-2. Gebruik de Azure Cloud Shell voor het maken van een Device Provisioning Service met de opdracht [AZ IOT DPS Create](/cli/azure/iot/dps#az-iot-dps-create) . De inrichtings service wordt toegevoegd aan *Contoso-US-Resource-Group*.
+2. Gebruik de Azure Cloud Shell om een Device Provisioning Service (DPS) te maken met de opdracht [AZ IOT DPS Create](/cli/azure/iot/dps#az-iot-dps-create) . De inrichtings service wordt toegevoegd aan *Contoso-US-Resource-Group*.
 
     In het volgende voor beeld wordt een inrichtings service met de naam *Contoso-Provisioning-Service-1098* in de locatie *westus* gemaakt. U moet een unieke service naam gebruiken. Maak uw eigen achtervoegsel in de service naam in plaats van **1098**.
 
@@ -96,6 +96,25 @@ In deze sectie gebruikt u de Azure Cloud Shell voor het maken van een inrichting
 
     Het volledig uitvoeren van de opdracht kan even duren.
 
+5. De IoT-hubs moeten worden gekoppeld aan de DPS-resource. 
+
+    Voer de volgende twee opdrachten uit om de verbindings reeksen op te halen voor de hubs die u zojuist hebt gemaakt:
+
+    ```azurecli-interactive 
+    hubToastersConnectionString=$(az iot hub connection-string show --hub-name contoso-toasters-hub-1098 --key primary --query connectionString -o tsv)
+    hubHeatpumpsConnectionString=$(az iot hub connection-string show --hub-name contoso-heatpumps-hub-1098 --key primary --query connectionString -o tsv)
+    ```
+
+    Voer de volgende opdrachten uit om de hubs te koppelen aan de DPS-resource:
+
+    ```azurecli-interactive 
+    az iot dps linked-hub create --dps-name contoso-provisioning-service-1098 --resource-group contoso-us-resource-group --connection-string $hubToastersConnectionString --location westus
+    az iot dps linked-hub create --dps-name contoso-provisioning-service-1098 --resource-group contoso-us-resource-group --connection-string $hubHeatpumpsConnectionString --location westus
+    ```
+
+
+
+
 ## <a name="create-the-custom-allocation-function"></a>De functie voor aangepaste toewijzing maken
 
 In deze sectie maakt u een Azure-functie waarmee u uw aangepaste toewijzingsbeleid implementeert. Deze functie bepaalt welke divisie een apparaat moet worden geregistreerd op basis van de vraag of de registratie-ID de teken reeks **-Contoso-tstrsd-007** of **-Contoso-hpsd-088** bevat. Ook wordt de initiële status van het apparaat bepaald op basis van het feit of het apparaat een pop-upprogramma of een hitte pomp is.
@@ -114,6 +133,8 @@ In deze sectie maakt u een Azure-functie waarmee u uw aangepaste toewijzingsbele
 
     **Runtimestack**: Selecteer **.NET Core** in de vervolgkeuzelijst.
 
+    **Versie**: Selecteer **3,1** in de vervolg keuzelijst.
+
     **Regio**: Selecteer dezelfde regio als uw resourcegroep. In dit voorbeeld wordt **US - west** gebruikt.
 
     > [!NOTE]
@@ -123,19 +144,15 @@ In deze sectie maakt u een Azure-functie waarmee u uw aangepaste toewijzingsbele
 
 4. Selecteer **Maken** op de pagina **Overzicht** om de functie-app te maken. De implementatie kan enkele minuten duren. Wanneer de implementatie is voltooid, selecteert u **Ga naar resource**.
 
-5. Selecteer in het linkerdeel venster van de pagina **overzicht** van functie-app **+** naast **functies** om een nieuwe functie toe te voegen.
+5. Klik in het linkerdeel venster van de pagina **overzicht** van functie-app op **functies** en vervolgens op **+ toevoegen** om een nieuwe functie toe te voegen.
 
-    ![Een functie toevoegen aan de functie-app](./media/how-to-use-custom-allocation-policies/create-function.png)
+6. Klik op de pagina **functie toevoegen** op **http-trigger** en klik vervolgens op de knop **toevoegen** .
 
-6. Selecteer op de pagina **Azure functions voor .net-aan** de slag voor de stap **een implementatie omgeving kiezen** de tegel **in de portal** en selecteer vervolgens **door gaan**.
+7. Klik op de volgende pagina op **code + toets**. Hiermee kunt u de code voor de functie met de naam **HttpTrigger1** bewerken. Het bestand **Run. CSX** code moet worden geopend om te worden bewerkt.
 
-    ![De portal-ontwikkelings omgeving selecteren](./media/how-to-use-custom-allocation-policies/function-choose-environment.png)
+8. Referentie vereiste NuGet-pakketten. De functie voor aangepaste toewijzing maakt gebruik van klassen die zijn gedefinieerd in twee NuGet-pakketten die moeten worden geladen in de hostomgeving om het eerste apparaat te maken, twee. Met Azure Functions wordt verwezen naar NuGet-pakketten met behulp van een *functie. proj* -bestand. In deze stap slaat u een bestand *functie. project* op voor de vereiste assembly's en uploadt u deze.  Zie [NuGet-pakketten gebruiken met Azure functions](../azure-functions/functions-reference-csharp.md#using-nuget-packages)voor meer informatie.
 
-7. Selecteer op de volgende pagina voor de stap **een functie maken** de tegel **webhook + API** en selecteer vervolgens **maken**. Er wordt een functie gemaakt met de naam **HttpTrigger1** , en in de portal wordt de inhoud van het code bestand **Run. CSX** weer gegeven.
-
-8. Referentie vereiste NuGet-pakketten. De functie voor aangepaste toewijzing maakt gebruik van klassen die zijn gedefinieerd in twee NuGet-pakketten die moeten worden geladen in de hostomgeving om het eerste apparaat te maken, twee. Met Azure Functions wordt verwezen naar NuGet-pakketten met behulp van een *Function. host* -bestand. In deze stap slaat u een *Function. host* -bestand op en uploadt u dit.
-
-    1. Kopieer de volgende regels naar uw favoriete editor en sla het bestand op uw computer op als *Function. host*.
+    1. Kopieer de volgende regels naar uw favoriete editor en sla het bestand op uw computer op als *functie. proj*.
 
         ```xml
         <Project Sdk="Microsoft.NET.Sdk">  
@@ -143,21 +160,15 @@ In deze sectie maakt u een Azure-functie waarmee u uw aangepaste toewijzingsbele
                 <TargetFramework>netstandard2.0</TargetFramework>  
             </PropertyGroup>  
             <ItemGroup>  
-                <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Service" Version="1.5.0" />  
-                <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.16.0" />  
+                <PackageReference Include="Microsoft.Azure.Devices.Provisioning.Service" Version="1.16.3" />
+                <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.27.0" />
             </ItemGroup>  
         </Project>
         ```
 
-    2. Vouw in de functie **HttpTrigger1** het tabblad **bestanden weer geven** aan de rechter kant van het venster uit.
+    2. Klik op de knop **uploaden** die zich boven de code-editor bevindt om uw *functie. proj* -bestand te uploaden. Nadat u het bestand hebt geüpload, selecteert u het in de code-editor en gebruikt u de vervolg keuzelijst om de inhoud te controleren.
 
-        ![Geopende bestanden weer geven](./media/how-to-use-custom-allocation-policies/function-open-view-files.png)
-
-    3. Selecteer **uploaden**, blader naar het **functie. proj** -bestand en selecteer **openen** om het bestand te uploaden.
-
-        ![Bestand uploaden selecteren](./media/how-to-use-custom-allocation-policies/function-choose-upload-file.png)
-
-9. Vervang de code voor de functie **HttpTrigger1** door de volgende code en selecteer **Opslaan**:
+9. Zorg ervoor dat *Run. CSX* voor **HttpTrigger1** is geselecteerd in de code-editor. Vervang de code voor de functie **HttpTrigger1** door de volgende code en selecteer **Opslaan**:
 
     ```csharp
     #r "Newtonsoft.Json"
@@ -314,29 +325,15 @@ In deze sectie maakt u een nieuwe registratiegroep die gebruikmaakt van het aang
 
     **Selecteer de manier waarop u apparaten aan hubs wilt toewijzen**: Selecteer **aangepast (gebruik Azure function)**.
 
+    **Abonnement**: Selecteer het abonnement waarin u de Azure-functie hebt gemaakt.
+
+    **Functie-app**: Selecteer de functie-app op naam. **Contoso-function-app-1098** is in dit voor beeld gebruikt.
+
+    **Functie**: Selecteer de functie **HttpTrigger1** .
+
     ![Registratiegroep voor de aangepaste toewijzing toevoegen voor de verklaring met symmetrische sleutels](./media/how-to-use-custom-allocation-policies/create-custom-allocation-enrollment.png)
 
-4. Selecteer in **registratie groep toevoegen** **de optie een nieuwe IOT-hub koppelen** om beide nieuwe onderdelen van IOT-hubs te koppelen.
-
-    Voer deze stap uit voor zowel uw divisie IoT-hubs.
-
-    **Abonnement**: als u meerdere abonnementen hebt, kiest u het abonnement waarin u de uitgebrachte IOT-hubs hebt gemaakt.
-
-    **IOT hub**: Selecteer een van de divisie hubs die u hebt gemaakt.
-
-    **Toegangs beleid**: Kies **iothubowner**.
-
-    ![De afdeling IoT-hubs koppelen met de inrichtings service](./media/how-to-use-custom-allocation-policies/link-divisional-hubs.png)
-
-5. Wanneer beide onderdelen van IoT-hubs zijn gekoppeld aan de **registratie groep**, moet u deze als de IOT hub groep voor de registratie groep selecteren, zoals hieronder wordt weer gegeven:
-
-    ![De divisie groep voor de inschrijving maken](./media/how-to-use-custom-allocation-policies/enrollment-divisional-hub-group.png)
-
-6. Ga in de **groep inschrijving toevoegen** naar het gedeelte **Azure function selecteren** en selecteer de functie-app die u hebt gemaakt in de vorige sectie. Selecteer vervolgens de functie die u hebt gemaakt en selecteer Opslaan om de registratie groep op te slaan.
-
-    ![Selecteer de functie en sla de registratie groep op](./media/how-to-use-custom-allocation-policies/save-enrollment.png)
-
-7. Nadat u de registratie hebt opgeslagen, opent u deze opnieuw en noteert u de **primaire sleutel**. U moet de registratie eerst opslaan voordat de sleutels kunnen worden gegenereerd. Deze sleutel wordt gebruikt voor het later genereren van unieke apparaatinstellingen voor gesimuleerde apparaten.
+4. Nadat u de registratie hebt opgeslagen, opent u deze opnieuw en noteert u de **primaire sleutel**. U moet de registratie eerst opslaan voordat de sleutels kunnen worden gegenereerd. Deze sleutel wordt gebruikt voor het later genereren van unieke apparaatinstellingen voor gesimuleerde apparaten.
 
 ## <a name="derive-unique-device-keys"></a>Unieke apparaatsleutels afleiden
 
@@ -386,7 +383,7 @@ Als u een Windows-werkstation gebruikt, kunt u PowerShell gebruiken om de afgele
     $REG_ID2='mainbuilding167-contoso-hpsd-088'
 
     $hmacsha256 = New-Object System.Security.Cryptography.HMACSHA256
-    $hmacsha256.key = [Convert]::FromBase64String($key)
+    $hmacsha256.key = [Convert]::FromBase64String($KEY)
     $sig1 = $hmacsha256.ComputeHash([Text.Encoding]::ASCII.GetBytes($REG_ID1))
     $sig2 = $hmacsha256.ComputeHash([Text.Encoding]::ASCII.GetBytes($REG_ID2))
     $derivedkey1 = [Convert]::ToBase64String($sig1)

@@ -12,18 +12,18 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 2d6282c527293abdb8b21e0591548cb51e1339a9
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 688bec24cbcd88130470634abff0688ead8005ef
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539675"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881683"
 ---
 # <a name="train-models-with-azure-machine-learning-datasets"></a>Modellen trainen met Azure Machine Learning gegevens sets 
 
 In dit artikel leert u hoe u [Azure machine learning gegevens sets](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) kunt gebruiken om machine learning modellen te trainen.  U kunt gegevens sets gebruiken in uw lokale of externe Compute-doel zonder dat u zich zorgen hoeft te maken over verbindings reeksen of gegevens paden. 
 
-Azure Machine Learning gegevens sets bieden een naadloze integratie met Azure Machine Learning trainings functionaliteit, zoals [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), [HyperDrive](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) en [Azure machine learning pijp lijnen](how-to-create-your-first-pipeline.md).
+Azure Machine Learning gegevens sets bieden een naadloze integratie met Azure Machine Learning trainings functionaliteit, zoals [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), [HyperDrive](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) en [Azure machine learning pijp lijnen](./how-to-create-machine-learning-pipelines.md).
 
 Als u niet klaar bent om uw gegevens beschikbaar te maken voor model training, maar u uw gegevens wilt laden naar uw notitie blok voor het verkennen van gegevens, raadpleegt u hoe u [de gegevens in uw gegevensset kunt verkennen](how-to-create-register-datasets.md#explore-data). 
 
@@ -263,7 +263,7 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 * **Het initialiseren van de gegevensset is mislukt: er is een time-out opgetreden bij het wachten op een koppelings punt**: 
-  * Als u geen regels voor uitgaande [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview) hebt en u `azureml-sdk>=1.12.0` deze wilt gebruiken, bijwerken `azureml-dataset-runtime` en de afhankelijkheden ervan het meest recente te zijn voor de specifieke secundaire versie, of als u deze gebruikt in een uitvoering, maakt u uw omgeving opnieuw, zodat deze de meest recente patch kan hebben met de oplossing. 
+  * Als u geen regels voor uitgaande [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md) hebt en u `azureml-sdk>=1.12.0` deze wilt gebruiken, bijwerken `azureml-dataset-runtime` en de afhankelijkheden ervan het meest recente te zijn voor de specifieke secundaire versie, of als u deze gebruikt in een uitvoering, maakt u uw omgeving opnieuw, zodat deze de meest recente patch kan hebben met de oplossing. 
   * Als u gebruikt `azureml-sdk<1.12.0` , moet u upgraden naar de nieuwste versie.
   * Als u regels voor uitgaande NSG hebt, moet u ervoor zorgen dat er een regel voor uitgaande verbindingen is waarmee al het verkeer voor de servicetag kan worden toegestaan `AzureResourceMonitor` .
 
@@ -293,4 +293,4 @@ Als u bestands share gebruikt voor andere werk belastingen, zoals gegevens overd
 
 * [Train afbeeldings classificatie modellen](https://aka.ms/filedataset-samplenotebook) met FileDatasets.
 
-* [Train met gegevens sets met behulp van pijp lijnen](how-to-create-your-first-pipeline.md).
+* [Train met gegevens sets met behulp van pijp lijnen](./how-to-create-machine-learning-pipelines.md).

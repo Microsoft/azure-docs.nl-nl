@@ -10,12 +10,12 @@ ms.author: peterlu
 ms.date: 06/28/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: be2921f88ad2ecf88c555daf8385f1bd6733e836
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 70f5e17c4cc42201e9aa3d36c9937f6ceb9527d0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554012"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880200"
 ---
 # <a name="transform-data-in-azure-machine-learning-designer"></a>Gegevens transformeren in Azure Machine Learning Designer
 
@@ -42,7 +42,7 @@ In deze sectie vindt u informatie over het importeren van de voor beeld-gegevens
 
 Gebruik de volgende stappen om de voor beeld-gegevensset te importeren.
 
-1. Meld u aan op <a href="https://ml.azure.com?tabs=jre" target="_blank">ml.azure.com</a> en selecteer de werkruimte waarmee u wilt werken.
+1. Meld u aan op <a href="https://ml.azure.com?tabs=jre" target="_blank">ml.azure.com</a> en selecteer de werkruimte waar u mee wilt werken.
 
 1. Ga naar de ontwerp functie. Selecteer **eenvoudig te gebruiken-modules voor prebuild** om een nieuwe pijp lijn te maken.
 
@@ -52,11 +52,7 @@ Gebruik de volgende stappen om de voor beeld-gegevensset te importeren.
 
 1. Sleep en zet de gegevensset voor de **binaire inkomsten van de volwassene** af op het canvas.
 
-1. Selecteer de module inkomsten gegevensset voor **volwassenen** .
-
-1. In het detail venster dat rechts van het canvas wordt weer gegeven, selecteert u **uitvoer**.
-
-1. Het pictogram visualiseren selecteren ![pictogram visualiseren](media/how-to-designer-transform-data/visualize-icon.png).
+1. Klik met de rechter muisknop op de module inkomsten gegevensset voor **volwassenen** en selecteer de uitvoer van de gegevensset **visualiseren**  >  
 
 1. Gebruik het voorbeeld venster voor gegevens om de gegevensset te verkennen. Let op de kolom waarden "native-Country".
 
@@ -103,13 +99,13 @@ Nu de pijp lijn is ingesteld voor het splitsen van de gegevens, moet u opgeven w
 
 1. Stel in het detail venster van de module rechts van het canvas de volgende opties in:
     
-    **Gegevens opslag type** : Azure Blob Storage
+    **Gegevens opslag type**: Azure Blob Storage
 
-    **Data Store** : Selecteer een bestaande gegevens opslag of selecteer nieuwe gegevens opslag om er nu een te maken.
+    **Data Store**: Selecteer een bestaande gegevens opslag of selecteer nieuwe gegevens opslag om er nu een te maken.
 
-    **Pad** : `/data/us-income`
+    **Pad**: `/data/us-income`
 
-    **Bestands indeling** : CSV
+    **Bestands indeling**: CSV
 
     > [!NOTE]
     > In dit artikel wordt ervan uitgegaan dat u toegang hebt tot een gegevens opslag die is geregistreerd in de huidige Azure Machine Learning-werk ruimte. Zie [verbinding maken met Azure Storage-services](how-to-connect-data-ui.md#create-datastores)voor instructies over het instellen van een gegevens opslag.
@@ -120,13 +116,13 @@ Nu de pijp lijn is ingesteld voor het splitsen van de gegevens, moet u opgeven w
 
 1. Stel in het detail venster van de module rechts van het canvas de volgende opties in:
     
-    **Gegevens opslag type** : Azure Blob Storage
+    **Gegevens opslag type**: Azure Blob Storage
 
-    **Data Store** : Selecteer dezelfde gegevens opslag als hierboven
+    **Data Store**: Selecteer dezelfde gegevens opslag als hierboven
 
-    **Pad** : `/data/non-us-income`
+    **Pad**: `/data/non-us-income`
 
-    **Bestands indeling** : CSV
+    **Bestands indeling**: CSV
 
 1. Controleer of de module voor het **exporteren van gegevens** die is verbonden met de linker poort van de **gesplitste gegevens** , het **pad** heeft `/data/us-income` .
 

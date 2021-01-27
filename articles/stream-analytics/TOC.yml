@@ -39,7 +39,7 @@
     - name: Een aangepaste .NET-deserialisatie maken
       href: custom-deserializer.md
     - name: Een IoT Edge-taak maken
-      href: /azure/iot-edge/tutorial-deploy-stream-analytics?view=iotedge-2018-06
+      href: ../iot-edge/tutorial-deploy-stream-analytics.md?view=iotedge-2018-06
       maintainContext: true
 - name: Voorbeelden
   items:

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 349456b0a4de65520dd633efe0573d24ea1c89c4
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: f945699256b4de9bd87ee4ab7500268302e93089
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409022"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880166"
 ---
 # <a name="security-control-secure-configuration"></a>Beveiligings beheer: beveiligde configuratie
 
@@ -88,9 +88,9 @@ Houd er ook rekening mee dat de installatie kopieën van virtuele machines van A
 
 - [Een virtuele Windows-machine maken in de Azure Portal](../../virtual-machines/windows/quick-create-portal.md)
 
-- [Informatie over het downloaden van de VM-sjabloon](../../virtual-machines/windows/download-template.md)
+- [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
-- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](../../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
+- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 
 ## <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
 
@@ -118,7 +118,7 @@ Als u aangepaste installatie kopieën gebruikt, kunt u Azure RBAC (op rollen geb
 
 - [Azure RBAC configureren](../../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-- [Overzicht van Galerie gedeelde afbeeldingen](../../virtual-machines/windows/shared-image-galleries.md)
+- [Overzicht van Galerie gedeelde afbeeldingen](../../virtual-machines/shared-image-galleries.md)
 
 ## <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
 
@@ -166,7 +166,7 @@ Gebruik Azure Security Center voor het uitvoeren van basislijn scans voor OS-en 
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 7.11 | 13,1 | Klant |
+| 7.11 | 13.1 | Klant |
 
 Gebruik Managed Service Identity in combi natie met Azure Key Vault om het geheim beheer voor uw Cloud toepassingen te vereenvoudigen en te beveiligen.
 
@@ -194,7 +194,7 @@ Gebruik beheerde identiteiten om Azure-Services te voorzien van een automatisch 
 |--|--|--|
 | 7,13 | 18,1, 18,7 | Klant |
 
-Referentie scanner implementeren om referenties in code te identificeren. Referentie scanner stimuleert ook het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault. 
+Referentie scanner implementeren om referenties in code te identificeren. Door het gebruik van Credential Scanner worden gebruikers ook aangemoedigd om gedetecteerde referenties naar veiligere locaties, zoals Azure Key Vault, te verplaatsen. 
 
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 

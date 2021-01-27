@@ -3,14 +3,14 @@ title: Overzicht van Back-upcentrum
 description: Dit artikel bevat een overzicht van Back-upcentrum voor Azure.
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: 7eab2e8f9694ca83d0e050f55bc6f6dd802a7331
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: b42fcc782eb50c061ab7617ea0ef1f3344fee4e9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173740"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893606"
 ---
-# <a name="overview-of-backup-center"></a>Overzicht van Back-upcentrum
+# <a name="overview-of-backup-center-preview"></a>Overzicht van Back-upcentrum (preview-versie)
 
 Backup Center biedt bedrijven een **uniforme beheer ervaring** in azure voor ondernemingen om op schaal back-ups te beheren, te bewaken, te beheren en te analyseren. Daarom is het consistent met de systeem eigen beheer ervaringen van Azure.
 
@@ -22,7 +22,7 @@ Enkele van de belangrijkste voor delen van Back-upcentrum zijn:
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup en Azure Database for PostgreSQL Server Backup.
+* Het Back-upcentrum wordt momenteel ondersteund voor Azure VM backup, SQL in azure VM backup, SAP HANA in azure VM backup, Azure Files backup en Azure Database for PostgreSQL Server Backup.
 * Raadpleeg de [ondersteunings matrix](backup-center-support-matrix.md) voor een gedetailleerde lijst met ondersteunde en niet-ondersteunde scenario's.
 
 ## <a name="get-started"></a>Aan de slag

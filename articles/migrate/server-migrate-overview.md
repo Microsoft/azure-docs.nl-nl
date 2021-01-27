@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 130fcaacedc8aaea7790f6aa9ca7463b4e378e02
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: cf3a3d3fdfcd03f068224c93643d364cd2646290
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070708"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895625"
 ---
 # <a name="select-a-vmware-migration-option"></a>Selecteer een VMware-migratie optie
 
@@ -43,7 +43,7 @@ Nadat u de beperkingen hebt bekeken, kunt u aan de hand van de stappen in de imp
 **Taak** | **Details** |**Zonder agent** | **Op basis van een agent**
 --- | --- | --- | ---
 **Het Azure Migrate-apparaat implementeren** | Een licht gewicht apparaat dat wordt uitgevoerd op een virtuele VMware-machine.<br/><br/> Het apparaat wordt gebruikt om computers te detecteren en te beoordelen en om machines te migreren met migratie zonder agent. | Vereist.<br/><br/> Als u het apparaat al voor beoordeling hebt ingesteld, kunt u hetzelfde apparaat gebruiken voor migratie zonder agent. | Niet vereist.<br/><br/> Als u een apparaat voor beoordeling hebt ingesteld, kunt u dit op de juiste plaats laten of het verwijderen als u klaar bent met de evaluatie.
-**Het hulp programma voor Server evaluatie gebruiken** | Beoordeel computers met het Azure Migrate: Server assessment tool. | U kunt computers beoordelen voordat u ze migreert, maar u hoeft dit niet te doen. | De evaluatie is optioneel.
+**Het hulp programma voor Server evaluatie gebruiken** | Beoordeel computers met het Azure Migrate: Server assessment tool. | De evaluatie is optioneel. | De evaluatie is optioneel.
 **Het hulp programma voor server migratie gebruiken** | Voeg het hulp programma voor migratie van Azure Migrate-server toe in het Azure Migrate-project. | Vereist | Vereist
 **VMware voorbereiden voor migratie** | Configureer instellingen op VMware-servers en virtuele machines. | Vereist | Vereist
 **De Mobility-service installeren op Vm's** | Mobility service wordt uitgevoerd op elke virtuele machine die u wilt repliceren | Niet vereist | Vereist

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 16fff00f04c4cd57ad46759cceb50134e58d5e01
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 139366277feab0a04c47311b4f0210223b2bc8d9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97933095"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98892011"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory met F5
 
@@ -493,3 +493,9 @@ Wanneer u op de tegel F5 in het toegangsvenster klikt, wordt u automatisch aange
 - [Eenmalige aanmelding bij F5 configureren voor op een header gebaseerde toepassing](headerf5-tutorial.md)
 
 - [Eenmalige aanmelding bij F5 configureren voor geavanceerde Kerberos-toepassing](advance-kerbf5-tutorial.md)
+
+- [F5 BIG-IP APM en Azure AD-integratie voor beveiligde hybride toegang](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-aad-integration)
+
+- [Zelf studie voor het implementeren van een VM met een virtuele editie van F5 in azure IaaS voor beveiligde hybride toegang](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-bigip-deployment-guide)
+
+- [Zelf studie voor het Azure Active Directory van eenmalige aanmelding met F5 BIG-IP voor wacht woord-minder VPN](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-aad-password-less-vpn)

@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: e1b29d901630156471bbb9cb8b939bb4bb29c836
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 8a96b44a280e0aea15a6d0843f02f4ed16f8fcf4
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724222"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879844"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure files](storage-files-introduction.md) kunnen op twee manieren worden geïmplementeerd: door de Serverloze Azure-bestands shares rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure file sync. Welke implementatie optie u kiest, wijzigt de dingen die u moet overwegen bij het plannen van uw implementatie. 
@@ -131,6 +131,6 @@ In het [artikel migratie overzicht](storage-files-migration-overview.md) vindt u
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Een Azure File Sync-implementatie plannen](storage-sync-files-planning.md)
-* [Azure Files implementeren](storage-files-deployment-guide.md)
+* [Azure Files implementeren](./storage-how-to-create-file-share.md)
 * [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)
 * [Bekijk het artikel over migratie overzicht om de migratie handleiding voor uw scenario te vinden](storage-files-migration-overview.md)

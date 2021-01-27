@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 8346edd0f6016f1751a392213e5d6321f875baf2
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 091feacceb510038786ae487c0895f9ff1e47aba
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455656"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880335"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Veelgestelde vragen over overgang van de Cloud Partner-portal naar het partner centrum
 
@@ -87,7 +87,7 @@ Voor de aanbiedings typen die in Partner Center worden ondersteund, zijn alle aa
 | Module IoT Edge | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken, configureren en publiceren van een IOT Edge module aanbod in azure Marketplace](partner-center-portal/azure-iot-edge-module-creation.md). |
 | Container | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Azure-container aanbieding](./create-azure-container-offer.md). |
 | Adviesservice | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een advies service-aanbieding](./create-consulting-service-offer.md). |
-| Beheerde service | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een beheerde service aanbieding](partner-center-portal/create-new-managed-service-offer.md). |
+| Beheerde service | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een beheerde service aanbieding](./plan-managed-service-offer.md). |
 | Door Dynamics NAV beheerde service | Nee | Micro soft heeft Dynamics NAV managed service ontwikkeld in [dynamics 365 Business Central](/dynamics365/business-central/), zodat we de aanbiedingen van Dynamics NAV Managed Service Live kunnen ontvangen van AppSource. Deze aanbiedingen kunnen niet meer worden gedetecteerd door klanten en zijn niet verplaatst naar het partner centrum. Als u uw aanbiedingen beschikbaar wilt maken in AppSource, past u deze toe aan Dynamics 365 Business Central-aanbiedingen en verzendt u deze in [Partner Center](https://partner.microsoft.com/). Meer informatie over [het maken van een Dynamics 365 Business Central-aanbieding](partner-center-portal/create-new-business-central-offer.md). |
 | Cortana Intelligence | Nee | Micro soft heeft het overzicht van de product handleiding voor Cortana Intelligence ontwikkeld, zodat we Cortana Intelligence Live-aanbiedingen van AppSource niet meer vermelden. Deze aanbiedingen kunnen niet meer worden gedetecteerd door klanten en zijn niet verplaatst naar het partner centrum. Als u uw aanbiedingen beschikbaar wilt stellen in de commerciële Marketplace, kunt u uw aanbiedingen aanpassen aan SaaS-aanbiedingen (Software as a Service) en deze verzenden in het [partner centrum](https://partner.microsoft.com/). Meer informatie over de [controle lijst voor het maken van SaaS-aanbiedingen in partner centrum](./plan-saas-offer.md). |
 
@@ -103,7 +103,7 @@ De aanbiedingen die u in Cloud Partner-portal hebt gemaakt, zijn beschikbaar in 
 
     Voor beeld: Stel dat u toegang hebt tot drie Program ma's: het MPN-programma, het programma referrals en het Commercial Marketplace-programma. Wanneer u zich aanmeldt bij het partner centrum, worden deze drie Program ma's weer geven in het navigatie deel venster.
 
-2. Selecteer overzicht van **commerciële Marketplace**  >  **Overview** voor toegang tot uw aanbiedingen.
+2. Selecteer overzicht van **commerciële Marketplace**  >   voor toegang tot uw aanbiedingen.
 
     Als u het Commercial Marketplace-programma niet ziet in het navigatie deel venster aan de linkerkant, is het mogelijk dat u zich in het verkeerde account bevinden. Volg de stappen in de volgende sectie om toegang te krijgen tot het juiste account.
 

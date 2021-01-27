@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: c29c043a3af46086751629b31ce68217e7226442
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 30176e2df850e6d2794ab9c1542bcb6a89d8f89f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96354994"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880403"
 ---
 # <a name="best-practices-for-optimal-performance-of-your-azure-database-for-mysql---single-server"></a>Aanbevolen procedures voor optimale prestaties van uw Azure Database for MySQL-één server
 
@@ -46,9 +46,9 @@ Het tot stand brengen van een nieuwe verbinding is altijd een kost bare en tijdr
 
 Een Azure Database for MySQL prestatie best practice om voldoende RAM-geheugen toe te wijzen, zodat u werkset net volledig in het geheugen bevindt. 
 
-- Controleer of het gebruikte geheugen percentage in de [limieten](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers) bereikt met behulp [van de metrische gegevens voor de mysql-server](https://docs.microsoft.com/azure/mysql/concepts-monitoring). 
+- Controleer of het gebruikte geheugen percentage in de [limieten](./concepts-pricing-tiers.md) bereikt met behulp [van de metrische gegevens voor de mysql-server](./concepts-monitoring.md). 
 - Stel waarschuwingen in voor dergelijke getallen om er zeker van te zijn dat naarmate de servers limieten bereiken, u prompt acties kunt ondernemen om het probleem op te lossen. Op basis van de grenzen die zijn gedefinieerd, controleert u of u de data base-SKU omhoog kunt schalen, hetzij naar een hogere reken grootte of naar een betere prijs categorie die resulteert in een aanzienlijke toename van de prestaties. 
-- U omhoog schalen tot de prestatie cijfers niet langer opvallen na een schaal bewerking. Zie voor meer informatie over het bewaken van de metrische gegevens van een Data Base-exemplaar [MySQL DB Metrics](https://docs.microsoft.com/azure/mysql/concepts-monitoring#metrics).
+- U omhoog schalen tot de prestatie cijfers niet langer opvallen na een schaal bewerking. Zie voor meer informatie over het bewaken van de metrische gegevens van een Data Base-exemplaar [MySQL DB Metrics](./concepts-monitoring.md#metrics).
 
 ## <a name="next-steps"></a>Volgende stappen
 

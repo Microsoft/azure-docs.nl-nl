@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/29/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1e6aaf1b37073bf93e0aca8237161bf11af3a872
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: ee28f25e766940eb51e92b61fd782b97fd888705
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827220"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879609"
 ---
 # <a name="azure-proximity-placement-groups-for-optimal-network-latency-with-sap-applications"></a>Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen
 SAP-toepassingen die zijn gebaseerd op de architectuur van SAP NetWeaver of SAP S/4HANA, zijn gevoelig voor netwerk latentie tussen de SAP-toepassingslaag en de SAP-gegevenslaag. Deze gevoeligheid is het resultaat van de meeste bedrijfs logica die wordt uitgevoerd in de toepassingslaag. Omdat de SAP-toepassingslaag de bedrijfs logica uitvoert, worden query's naar de data base-laag met een hoge frequentie, met een snelheid van duizenden of tien tallen per seconde, uitgegeven. In de meeste gevallen is de aard van deze query's eenvoudig. Ze kunnen vaak worden uitgevoerd op de database laag in 500 micro seconden of minder.
@@ -30,11 +30,11 @@ De tijd die is besteed aan het netwerk om een dergelijke query vanuit de toepass
 
 In veel Azure-regio's is het aantal data centers verg root. Tegelijkertijd gebruiken klanten, met name voor hoogwaardige SAP-systemen, meer speciale VM-Sku's van de M-of Mv2-serie of in HANA grote instanties. Deze typen virtuele machines van Azure zijn niet altijd beschikbaar in alle data centers die een Azure-regio aanvullen. Deze feiten kunnen kansen creëren om de netwerk latentie te optimaliseren tussen de SAP-toepassingslaag en de SAP-DBMS-laag.
 
-Azure biedt [proximity placement groups](../../linux/co-location.md)om u de mogelijkheid te bieden om de netwerk latentie te optimaliseren. Proximity-plaatsings groepen kunnen worden gebruikt om de groepering van verschillende VM-typen in één Azure-Data Center af te dwingen, zodat de netwerk latentie tussen deze verschillende VM-typen optimaal kan worden. Tijdens de implementatie van de eerste VM in een dergelijke proximity-plaatsings groep, wordt de VM gebonden aan een specifiek Data Center. Het gebruik van de constructie heeft als doel om te voor komen dat er een aantal beperkingen zijn:
+Azure biedt [proximity placement groups](../../co-location.md)om u de mogelijkheid te bieden om de netwerk latentie te optimaliseren. Proximity-plaatsings groepen kunnen worden gebruikt om de groepering van verschillende VM-typen in één Azure-Data Center af te dwingen, zodat de netwerk latentie tussen deze verschillende VM-typen optimaal kan worden. Tijdens de implementatie van de eerste VM in een dergelijke proximity-plaatsings groep, wordt de VM gebonden aan een specifiek Data Center. Het gebruik van de constructie heeft als doel om te voor komen dat er een aantal beperkingen zijn:
 
 - U kunt niet aannemen dat alle Azure VM-typen beschikbaar zijn in elke en alle Azure-data centers. Als gevolg hiervan kan de combi natie van verschillende VM-typen binnen één proximity-plaatsings groep worden beperkt. Deze beperkingen doen zich voor omdat de host-hardware die nodig is voor het uitvoeren van een bepaald VM-type, mogelijk niet aanwezig is in het Data Center waarop de plaatsings groep is geïmplementeerd
 - Bij het wijzigen van de grootte van onderdelen van de virtuele machines die zich binnen één proximity-plaatsings groep bevinden, kunt u niet automatisch aannemen dat het nieuwe VM-type beschikbaar is in hetzelfde Data Center als de andere virtuele machines die deel uitmaken van de plaatsings groep voor nabijheid
-- Als de virtuele machine van Azure wordt uitgesteld, kunnen bepaalde Vm's van een proximity-plaatsings groep worden geforceerd naar een ander Azure-Data Center. Lees voor meer informatie over deze situatie het document documenten [samen zoeken voor verbeterde latentie](../../linux/co-location.md#planned-maintenance-and-proximity-placement-groups)  
+- Als de virtuele machine van Azure wordt uitgesteld, kunnen bepaalde Vm's van een proximity-plaatsings groep worden geforceerd naar een ander Azure-Data Center. Lees voor meer informatie over deze situatie het document documenten [samen zoeken voor verbeterde latentie](../../co-location.md#planned-maintenance-and-proximity-placement-groups)  
 
 > [!IMPORTANT]
 > Als gevolg van de mogelijke beperkingen moeten proximity-plaatsings groepen worden gebruikt:

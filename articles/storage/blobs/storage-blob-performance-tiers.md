@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
-ms.openlocfilehash: 404999cfac5037702eb61fdf74b2c5245ce9eb30
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: cf0b5d29e0dc375a07fe024ef0763c8200275055
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95526116"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880705"
 ---
 # <a name="performance-tiers-for-block-blob-storage"></a>Prestatielagen voor blok-blobopslag
 
@@ -65,7 +65,7 @@ Standaard prestaties bieden ondersteuning voor verschillende [toegangs lagen](st
 
 U kunt een bestaand standaard prestatie opslag account niet converteren naar een blok-Blob-opslag account met Premium-prestaties. Als u wilt migreren naar een Premium-prestatie opslag account, moet u een BlockBlobStorage-account maken en de gegevens naar het nieuwe account migreren. Zie [een BlockBlobStorage-account maken](storage-blob-create-account-block-blob.md)voor meer informatie.
 
-U kunt de meest recente versie van het [AzCopy](../common/storage-use-azcopy-blobs.md) -opdracht regel programma gebruiken om blobs tussen opslag accounts te kopiëren. Andere hulpprogram ma's, zoals Azure Data Factory, zijn ook beschikbaar voor gegevens verplaatsing en-trans formatie.
+U kunt de meest recente versie van het [AzCopy](../common/storage-use-azcopy-v10.md#transfer-data) -opdracht regel programma gebruiken om blobs tussen opslag accounts te kopiëren. Andere hulpprogram ma's, zoals Azure Data Factory, zijn ook beschikbaar voor gegevens verplaatsing en-trans formatie.
 
 ## <a name="blob-lifecycle-management"></a>Beheer van de BLOB levenscyclus
 

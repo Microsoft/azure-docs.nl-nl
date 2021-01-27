@@ -1,25 +1,11 @@
 ---
-title: ARM-sjabloon van Azure Media Services-account
-titleSuffix: Azure Media Services
-description: In dit artikel wordt uitgelegd hoe u een Media Services-account kunt maken met een ARM-sjabloon.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: quickstart
-ms.date: 11/24/2020
-ms.author: inhenkel
-ms.custom: subject-armqs
-ms.openlocfilehash: 541a4c17a3212f711be7e2cf096ce3a2d632ee64
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879643"
+Titel: Media Services account ARM-sjabloon: Azure Media Services beschrijving: in dit artikel wordt beschreven hoe u een ARM-sjabloon gebruikt om een Media Services-account te maken.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: MS. topic: Snelstartgids MS. date: 11/24/2020 MS. Author: inhenkel MS. Custom: onderwerp-armqs
+
 ---
+
 # <a name="quickstart-media-services-account-arm-template"></a>Quickstart: ARM-sjabloon van Azure Media Services-account
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

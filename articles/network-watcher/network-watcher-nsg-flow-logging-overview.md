@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: 987281bd13b7ac053f07a4ef1fb7605c85686d56
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 4deda838d229081ccd23c123f75d0c0ada2383bb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898620"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878660"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
@@ -317,7 +317,7 @@ Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen v
 
 ## <a name="updating-parameters"></a>Para meters bijwerken
 
-**Azure Portal**
+**Azure-portal**
 
 Ga in het Azure Portal naar de sectie NSG-stroom Logboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deel venster instellingen voor het stroom logboek weer gegeven. Wijzig de gewenste para meters en druk op **Opslaan** om de wijzigingen te implementeren.
 
@@ -362,13 +362,13 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 **Binnenkomende stromen die zijn geregistreerd van Internet ip's naar vm's zonder open bare ip's**: vm's waaraan geen openbaar IP-adres is toegewezen via een openbaar IP-adres dat is gekoppeld aan de NIC als instantie niveau openbaar IP of die deel uitmaken van een basis Load Balancer back-end-groep, gebruiken [standaard SNAT](../load-balancer/load-balancer-outbound-connections.md) en hebben een IP-adres dat is toegewezen door Azure om uitgaande connectiviteit te vergemakkelijken. Als gevolg hiervan ziet u mogelijk stroom logboek vermeldingen voor stromen van IP-adressen van Internet, als de stroom bestemd is voor een poort in het bereik van poorten die zijn toegewezen voor SNAT. Hoewel Azure deze stromen naar de virtuele machine niet toestaat, wordt de poging geregistreerd en wordt deze weer gegeven in het NSG-stroom logboek van Network Watcher. U wordt aangeraden ongewenste binnenkomend Internet verkeer expliciet met NSG te blok keren.
 
-**Probleem met Application Gateway v2-SUBNET NSG**: flow-logboek registratie op het toepassings gateway v2-subnet NSG wordt momenteel [niet ondersteund](https://docs.microsoft.com/azure/application-gateway/application-gateway-faq#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) . Dit probleem heeft geen invloed op Application Gateway v1.
+**Probleem met Application Gateway v2-SUBNET NSG**: flow-logboek registratie op het toepassings gateway v2-subnet NSG wordt momenteel [niet ondersteund](../application-gateway/application-gateway-faq.yml#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) . Dit probleem heeft geen invloed op Application Gateway v1.
 
 **Incompatibele Services**: vanwege de beperkingen van het huidige platform worden een kleine set Azure-Services niet ondersteund door NSG-stroom Logboeken. De huidige lijst met incompatibele Services is
 - [Azure Kubernetes Services (AKS)](https://azure.microsoft.com/services/kubernetes-service/)
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 
-## <a name="best-practices"></a>Best practices
+## <a name="best-practices"></a>Aanbevolen procedures
 
 **Inschakelen op kritieke VNETs/subnetten**: stroom logboeken moeten worden ingeschakeld op alle kritieke VNETs/subnetten in uw abonnement als controle bare en beveiligings best practice. 
 

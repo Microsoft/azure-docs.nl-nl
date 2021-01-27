@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 7e59c8ecc0d7af341ddc1ea79aa42460e00fa444
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 467c2b9fe8758db5c1da43a65c1bfde133df0823
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89419772"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880098"
 ---
 # <a name="vpn-gateway-faq"></a>Veelgestelde vragen VPN-gateways
 
@@ -38,7 +38,7 @@ Nee.
 
 De volgende cross-premises verbindingen worden ondersteund:
 
-* Site-naar-site: VPN-verbinding via IPsec (IKE v1 en IKE v2). Voor dit type verbinding is een VPN-apparaat of RRAS vereist. Zie [Site-naar-site](vpn-gateway-howto-site-to-site-resource-manager-portal.md) voor meer informatie.
+* Site-naar-site: VPN-verbinding via IPsec (IKE v1 en IKE v2). Voor dit type verbinding is een VPN-apparaat of RRAS vereist. Zie [Site-naar-site](./tutorial-site-to-site-portal.md) voor meer informatie.
 * Punt-naar-site: VPN-verbinding via SSTP (Secure Socket Tunneling Protocol) of IKE v2. Voor deze verbinding is geen VPN-apparaat vereist. Zie [Punt-naar-site](vpn-gateway-howto-point-to-site-resource-manager-portal.md) voor meer informatie.
 * VNet-naar-VNet: dit type verbinding is hetzelfde als de site-naar-site-configuratie. VNet-naar-VNet is een VPN-verbinding via IPsec (IKE v1 en IKE v2). Hiervoor is geen VPN-apparaat vereist. Zie [VNet-naar-VNet](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) voor meer informatie.
 * Multi-site: dit is een variant op een site-naar-site-configuratie waarmee u meerdere on-premises sites kunt verbinden met een virtueel netwerk. Zie [Multi-site](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md) voor meer informatie.
@@ -70,13 +70,13 @@ Op route gebaseerde gateways implementeren op route gebaseerde VPN's. VPN-verbin
 
 ### <a name="can-i-update-my-policy-based-vpn-gateway-to-route-based"></a>Kan ik mijn op beleid gebaseerde VPN-gateway bijwerken naar op route gebaseerd?
 
-Nee.Een gateway van het type Azure-Vnet kan niet worden gewijzigd van op beleid gebaseerd in op route gebaseerd, of andersom. De gateway moet worden verwijderd en opnieuw worden gemaakt. Dit duurt ongeveer 60 minuten. Het IP-adres van de gateway en ook de PSK (vooraf gedeelde sleutel) blijven niet behouden.
+Nee. Een gateway van het type Azure-Vnet kan niet worden gewijzigd van op beleid gebaseerd in op route gebaseerd, of andersom. De gateway moet worden verwijderd en opnieuw worden gemaakt. Dit duurt ongeveer 60 minuten. Het IP-adres van de gateway en ook de PSK (vooraf gedeelde sleutel) blijven niet behouden.
 1. Verwijder alle verbindingen die zijn gekoppeld aan de gateway die moet worden verwijderd.
 1. Gateway verwijderen:
    - [Azure-portal](vpn-gateway-delete-vnet-gateway-portal.md)
    - [Azure PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
    - [Azure PowerShell-klassiek](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
-1. [Maak een nieuwe gateway van het type dat u wilt en voltooi de VPN-installatie](vpn-gateway-howto-site-to-site-resource-manager-portal.md#VNetGateway).
+1. [Maak een nieuwe gateway van het type dat u wilt en voltooi de VPN-installatie](./tutorial-site-to-site-portal.md#VNetGateway).
 
 ### <a name="do-i-need-a-gatewaysubnet"></a>Heb ik een gatewaysubnet nodig?
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 35cb7ba4523cfbc88daf958fd972b127519385ce
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 69f0da2f1528ad1f45762a8f754cc2020b4cb880
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98792316"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98900868"
 ---
 Dit artikel bevat een overzicht van de versies en functies van Azure Active Directory Connect Provisioning agent die is uitgebracht. Het Azure AD-team werkt de inrichtings agent regel matig bij met nieuwe functies en functionaliteit. De inrichtings agent wordt automatisch bijgewerkt wanneer er een nieuwe versie wordt uitgebracht. 
 
@@ -99,5 +99,3 @@ Micro soft biedt direct ondersteuning voor de nieuwste versie van de agent en é
 * De inrichtings agent en connector architectuur zijn vernieuwd voor betere prestaties, stabiliteit en betrouw baarheid 
 * Vereenvoudigde configuratie van de inrichtings agent met behulp van de wizard voor de installatie van de gebruikers interface 
 * Er is ondersteuning toegevoegd voor automatische agent updates
-
-

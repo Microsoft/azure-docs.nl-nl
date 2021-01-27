@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: ba3005b1ec36e4b2406084368a3aabd778c17716
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 27af230f8fa157f76865bd38a48c17640491d7db
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449438"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896186"
 ---
 # <a name="manage-an-azure-stack-edge-pro-gpu-device-via-windows-powershell"></a>Een Azure Stack Edge Pro GPU-apparaat beheren via Windows Power shell
 
@@ -424,6 +424,116 @@ DEBUG 2020-05-14T20:42:14Z: loop process - 0 events, 0.000s
 
 [10.100.10.10]: PS>
 ```
+
+### <a name="change-memory-processor-limits-for-kubernetes-worker-node"></a>Geheugen wijzigen, processor limieten voor Kubernetes worker-knoop punt
+
+Voer de volgende stappen uit om de geheugen-of processor limieten voor het worker-knoop punt Kubernetes te wijzigen:
+
+1. [Maak verbinding met de Power shell-interface van het apparaat](#connect-to-the-powershell-interface).
+1. Als u de huidige resources voor het worker-knoop punt en de functie opties wilt ophalen, voert u de volgende opdracht uit:
+
+    `Get-AzureDataBoxEdgeRole`
+
+    Hier volgt een voorbeeld uitvoer. Noteer de waarden voor `Name` en `Compute` onder `Resources` sectie. `MemoryInBytes` en `ProcessorCount` duiden de momenteel toegewezen waarden geheugen en processor aantal aan voor het Kubernetes worker-knoop punt.  
+
+    ```powershell
+    [10.100.10.10]: PS>Get-AzureDataBoxEdgeRole
+    ImageDetail                : Name:mcr.microsoft.com/azureiotedge-agent
+                                 Tag:1.0
+                                 PlatformType:Linux
+    EdgeDeviceConnectionString :
+    IotDeviceConnectionString  :
+    HubHostName                : ase-srp-007.azure-devices.net
+    IotDeviceId                : srp-007-storagegateway
+    EdgeDeviceId               : srp-007-edge
+    Version                    :
+    Id                         : 6ebeff9f-84c5-49a7-890c-f5e05520a506
+    Name                       : IotRole
+    Type                       : IOT
+    Resources                  : Compute:
+                                 MemoryInBytes:34359738368
+                                 ProcessorCount:12
+                                 VMProfile:
+    
+                                 Storage:
+                                 EndpointMap:
+                                 EndpointId:c0721210-23c2-4d16-bca6-c80e171a0781
+                                 TargetPath:mysmbedgecloudshare1
+                                 Name:mysmbedgecloudshare1
+                                 Protocol:SMB
+    
+                                 EndpointId:6557c3b6-d3c5-4f94-aaa0-6b7313ab5c74
+                                 TargetPath:mysmbedgelocalshare
+                                 Name:mysmbedgelocalshare
+                                 Protocol:SMB
+                                 RootFileSystemStorageSizeInBytes:0
+    
+    HostPlatform               : KubernetesCluster
+    State                      : Created
+    PlatformType               : Linux
+    HostPlatformInstanceId     : 994632cb-853e-41c5-a9cd-05b36ddbb190
+    IsHostPlatformOwner        : True
+    IsCreated                  : True    
+    [10.100.10.10]: PS>
+    ```
+    
+1. Als u de waarden van geheugen en processors voor het worker-knoop punt wilt wijzigen, voert u de volgende opdracht uit:
+
+    Set-AzureDataBoxEdgeRoleCompute naam <Name value from the output of Get-AzureDataBoxEdgeRole> /geheugen <Value in Bytes> -ProcessorCount <Nee. > van kern geheugens
+
+    Hier volgt een voorbeeld uitvoer. 
+    
+    ```powershell
+    [10.100.10.10]: PS>Set-AzureDataBoxEdgeRoleCompute -Name IotRole -MemoryInBytes 32GB -ProcessorCount 16
+    
+    ImageDetail                : Name:mcr.microsoft.com/azureiotedge-agent
+                                 Tag:1.0
+                                 PlatformType:Linux
+    
+    EdgeDeviceConnectionString :
+    IotDeviceConnectionString  :
+    HubHostName                : ase-srp-007.azure-devices.net
+    IotDeviceId                : srp-007-storagegateway
+    EdgeDeviceId               : srp-007-edge
+    Version                    :
+    Id                         : 6ebeff9f-84c5-49a7-890c-f5e05520a506
+    Name                       : IotRole
+    Type                       : IOT
+    Resources                  : Compute:
+                                 MemoryInBytes:34359738368
+                                 ProcessorCount:16
+                                 VMProfile:
+    
+                                 Storage:
+                                 EndpointMap:
+                                 EndpointId:c0721210-23c2-4d16-bca6-c80e171a0781
+                                 TargetPath:mysmbedgecloudshare1
+                                 Name:mysmbedgecloudshare1
+                                 Protocol:SMB
+    
+                                 EndpointId:6557c3b6-d3c5-4f94-aaa0-6b7313ab5c74
+                                 TargetPath:mysmbedgelocalshare
+                                 Name:mysmbedgelocalshare
+                                 Protocol:SMB
+    
+                                 RootFileSystemStorageSizeInBytes:0
+    
+    HostPlatform               : KubernetesCluster
+    State                      : Created
+    PlatformType               : Linux
+    HostPlatformInstanceId     : 994632cb-853e-41c5-a9cd-05b36ddbb190
+    IsHostPlatformOwner        : True
+    IsCreated                  : True
+    
+    [10.100.10.10]: PS>    
+    ```
+
+Volg de volgende richt lijnen bij het wijzigen van het geheugen-en processor gebruik.
+
+- Het standaard geheugen is 25% van de apparaats specificatie.
+- Het standaard aantal processors is 30% van de apparaats specificatie.
+- Wanneer u de waarden voor geheugen en processor aantallen wijzigt, raden we u aan om de waarden te variëren tussen 15% en 65% van het geheugen van het apparaat en het aantal processors. 
+- We raden een bovengrens van 65% aan, zodat er voldoende bronnen zijn voor systeem onderdelen. 
 
 ## <a name="connect-to-bmc"></a>Verbinding maken met BMC
 

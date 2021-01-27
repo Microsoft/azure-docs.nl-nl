@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/9/2020
-ms.openlocfilehash: 01a1ded570d20d175b5e8eadb3e6cc8556155a85
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 7adc7f568fb82692f2c96f610575076e397bd99c
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553158"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896104"
 ---
 # <a name="register-and-scan-azure-data-explorer"></a>Azure-Data Explorer registreren en controleren
 
@@ -27,7 +27,7 @@ Azure Data Explorer ondersteunt volledige en incrementele scans voor het vastleg
 - Voordat u gegevens bronnen registreert, maakt u een Azure controle sfeer liggen-account. Zie [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)voor meer informatie over het maken van een controle sfeer liggen-account.
 - U moet een Azure controle sfeer liggen-gegevens bron beheerder zijn
 
-## <a name="setting-up-authentication-for-a-scan"></a>Verificatie instellen voor een scan
+## <a name="setting-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
 Er is slechts één manier om verificatie in te stellen voor Azure Data Explorer:
 
@@ -38,26 +38,26 @@ Er is slechts één manier om verificatie in te stellen voor Azure Data Explorer
 Als u Service-Principal-verificatie voor scans wilt gebruiken, kunt u een bestaande gebruiken of een nieuw account maken. 
 
 > [!Note]
-> Als u een nieuwe Service-Principal moet maken, volgt u deze stappen:
+> Als u een nieuwe service-principal moet maken, volgt u deze stappen:
 > 1. Navigeer naar [Azure Portal](https://portal.azure.com).
 > 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
 > 1. Selecteer **App-registraties**.
-> 1. Selecteer **+ nieuwe toepassing registreren**.
-> 1. Voer een naam in voor de **toepassing** (de Service Principal Name).
-> 1. Selecteer **alleen accounts in deze organisatie Directory**.
-> 1. Voor omleidings-URI selecteert u **Web** en voert u de gewenste URL in. het hoeft niet echt of werk te zijn.
+> 1. Selecteer **+ Nieuwe toepassing registreren**.
+> 1. Voer een naam in voor de **toepassing** (de service-principal-naam).
+> 1. Selecteer **Alleen accounts in deze organisatiemap**.
+> 1. Bij Omleidings-URI selecteert u **Web** en voert u de gewenste URL in. Dit hoeft geen echte of werkende URL te zijn.
 > 1. Selecteer vervolgens **Registreren**.
 
 Het is vereist om de toepassings-ID en het geheim van de Service-Principal op te halen:
 
-1. Navigeer naar uw Service-Principal in de [Azure Portal](https://portal.azure.com)
-1. Kopieer de waarden van de **toepassings-id van de toepassing (client)** van het **overzicht** en het **client geheim** van **certificaten & geheimen**.
+1. Navigeer naar uw service-principal in [Azure Portal](https://portal.azure.com)
+1. Kopieer de waarde van de **Toepassings-id (client)** uit **Overzicht** en van **Clientgeheim** uit **Certificaten & geheimen**.
 1. Navigeer naar uw sleutelkluis
-1. **Instellingen > geheimen** selecteren
-1. Selecteer **+ genereren/importeren** en voer de **naam** van uw keuze en **waarde** in als het **client geheim** van de Service-Principal
-1. Selecteer **maken** om te volt ooien
-1. Als uw sleutel kluis nog niet is verbonden met controle sfeer liggen, moet u [een nieuwe sleutel kluis verbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
-1. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal voor het instellen van de scan
+1. Selecteer **Instellingen > Geheimen**
+1. Selecteer **+ Genereren/importeren** en voer de **Naam** van uw keuze in en de **Waarde** als het **Clientgeheim** van uw service-principal
+1. Selecteer **Maken** om te voltooien
+1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
+1. Maak tot slot [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal om uw scan in te stellen
 
 #### <a name="granting-the-service-principal-access-to-your-azure-data-explorer-instance"></a>De Service-Principal toegang verlenen tot uw Azure Data Explorer-exemplaar
 
@@ -71,27 +71,27 @@ Het is vereist om de toepassings-ID en het geheim van de Service-Principal op te
 
 Ga als volgt te werk om een nieuw Azure Data Explorer-account (Kusto) in uw Data Catalog te registreren:
 
-1. Navigeer naar uw controle sfeer liggen-account
-1. **Bronnen** selecteren in de linkernavigatiebalk
+1. Ga naar uw Purview-account
+1. Selecteer **Bronnen** in het linkernavigatievenster
 1. Selecteer **Registreren**
 1. Selecteer **Azure Data Explorer** bij **bronnen registreren**
 1. Selecteer **Doorgaan**
 
-:::image type="content" source="media/register-scan-azure-data-explorer/register-new-data-source.png" alt-text="nieuwe gegevens bron registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-data-explorer/register-new-data-source.png" alt-text="nieuwe gegevensbron registreren" border="true":::
 
 Ga als volgt te werk op het scherm **bronnen registreren (Azure Data Explorer (Kusto))** :
 
-1. Voer een **naam** in die voor de gegevens bron wordt weer gegeven in de catalogus.
-1. Kies hoe u wilt verwijzen naar het gewenste opslag account:
+1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus.
+1. Kies hoe u wilt verwijzen naar het gewenste opslagaccount:
    1. Selecteer een **Azure-abonnement**, selecteer het juiste abonnement in de vervolg keuzelijst van het Azure- **abonnement** en het juiste cluster in de vervolg keuzelijst **cluster** .
    1. U kunt **ook hand matig invoeren** selecteren en een service-eind punt (URL) invoeren.
-1. **Volt ooien** om de gegevens bron te registreren.
+1. **Voltooi** om de gegevensbron te registreren.
 
-:::image type="content" source="media/register-scan-azure-data-explorer/register-sources.png" alt-text="bronnen opties registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-data-explorer/register-sources.png" alt-text="opties voor bronnen registreren" border="true":::
 
-[!INCLUDE [create and manage scans](includes/manage-scans.md)]
+[!INCLUDE [create and manage scans](includes/manage-scans-azure-data-explorer.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

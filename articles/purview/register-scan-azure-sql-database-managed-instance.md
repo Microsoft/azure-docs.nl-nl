@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 3513ba0cd1a894b55da604d54964affa79b6adf4
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 2391a36c02e0bdfe0ea98be7f19fc64f1fbb676f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555964"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879929"
 ---
 # <a name="register-and-scan-an-azure-sql-database-managed-instance"></a>Azure SQL Database Managed Instance registeren en scannen
 
@@ -34,13 +34,13 @@ Azure Purview biedt geen ondersteuning voor het scannen van [weergaven](/sql/rel
 
 - Maak een nieuw Purview-account aan als u er nog geen hebt.
 
-- [Openbaar eindpunt configureren in een beheerd Azure SQL-exemplaar](/azure/azure-sql/managed-instance/public-endpoint-configure)
+- [Openbaar eindpunt configureren in een beheerd Azure SQL-exemplaar](../azure-sql/managed-instance/public-endpoint-configure.md)
     > [!Note]
     > Uw organisatie moet een openbaar eindpunt kunnen toestaan omdat **privé-eindpunten nog niet worden ondersteund** door Purview. Als u een privé-eindpunt gebruikt, mislukt de scan.
 
 ### <a name="setting-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
-Verificatie om Azure SQL Database Managed Instance te scannen. Als u nieuwe verificatie wilt maken, moet u de [beheerde instantie van Azure SQL Database autoriseren voor toegang tot de database](/azure/azure-sql/database/logins-create-manage). Er zijn drie verificatiemethoden die momenteel door Purview worden ondersteund:
+Verificatie om Azure SQL Database Managed Instance te scannen. Als u nieuwe verificatie wilt maken, moet u de [beheerde instantie van Azure SQL Database autoriseren voor toegang tot de database](../azure-sql/database/logins-create-manage.md). Er zijn drie verificatiemethoden die momenteel door Purview worden ondersteund:
 
 - SQL-verificatie
 - Service-principal
@@ -85,8 +85,8 @@ Als u een service-principal wilt gebruiken, kunt u een bestaande gebruiken of ee
 ##### <a name="configure-azure-ad-authentication-in-the-database-account"></a>Azure AD-verificatie configureren in het databaseaccount
 
 De service-principal of beheerde identiteit moet gemachtigd zijn om metagegevens op te halen voor de database, schema's en tabellen. Deze moet ook in staat zijn om query's uit te voeren op tabellen voor het nemen van steekproeven voor classificatiedoeleinden.
-- [Azure AD-verificatie configureren en beheren met Azure SQL](/azure/azure-sql/database/authentication-aad-configure)
-- Maak een Azure AD-gebruiker in Azure SQL Database Managed Instance door ervoor te zorgen dat er aan de vereisten wordt voldaan, en door de zelfstudie [Ingesloten gebruikers maken die zijn toegewezen aan Azure AD-identiteiten](/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities) te volgen
+- [Azure AD-verificatie configureren en beheren met Azure SQL](../azure-sql/database/authentication-aad-configure.md)
+- Maak een Azure AD-gebruiker in Azure SQL Database Managed Instance door ervoor te zorgen dat er aan de vereisten wordt voldaan, en door de zelfstudie [Ingesloten gebruikers maken die zijn toegewezen aan Azure AD-identiteiten](../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities) te volgen
 - Wijs de machtiging `db_owner` toe (**aanbevolen**) aan de identiteit
 
 ##### <a name="add-service-principal-to-key-vault-and-purviews-credential"></a>De service-principal toevoegen aan de sleutelkluis en de referentie van Purview

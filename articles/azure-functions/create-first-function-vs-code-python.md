@@ -4,12 +4,12 @@ description: Leer hoe u een Python-functie maakt en publiceer vervolgens het lok
 ms.topic: quickstart
 ms.date: 11/04/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 9e4ddc479b0adcb88e846b92e6603dfdf3c99baa
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
-ms.translationtype: HT
+ms.openlocfilehash: 0d7b98c44b85e17d084994bbcaa285c55c7a5e4d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967987"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880841"
 ---
 # <a name="quickstart-create-a-function-in-azure-with-python-using-visual-studio-code"></a>Quickstart: Een functie maken in Azure met Python met behulp van Visual Studio Code
 
@@ -29,7 +29,7 @@ Voordat u aan de slag kunt gaan, moet u beschikken over de volgende vereisten:
 
 + De [Azure Functions Core Tools](functions-run-local.md#install-the-azure-functions-core-tools), versie 3.x.
 
-+ [Python 3.8](https://www.python.org/downloads/release/python-381/), [Python 3.7](https://www.python.org/downloads/release/python-375/), [Python 3.6](https://www.python.org/downloads/release/python-368/) worden ondersteund door Azure Functions (x64).
++ [Python-versies die worden ondersteund door Azure Functions](supported-languages.md#languages-by-runtime-version)
 
 + [Visual Studio Code](https://code.visualstudio.com/) op een van de [ondersteunde platforms](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
 

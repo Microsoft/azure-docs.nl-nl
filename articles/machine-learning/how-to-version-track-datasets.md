@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 3290574b26abe544c8c749165e22bef41a83ecf3
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: d72d2d094e220bd4e460cfca6b422f0609c083af
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538161"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880064"
 ---
 # <a name="version-and-track-azure-machine-learning-datasets"></a>Versie en bijhouden van Azure Machine Learning gegevens sets
 
@@ -119,7 +119,7 @@ dataset2.register(workspace = workspace,
 
 U kunt een gegevensset gebruiken als de invoer en uitvoer van elke [ml pijplijn](concept-ml-pipelines.md) stap. Wanneer u pijp lijnen opnieuw uitvoert, wordt de uitvoer van elke pijplijn stap geregistreerd als een nieuwe gegevensset-versie.
 
-ML-pijp lijnen vullen de uitvoer van elke Step Into een nieuwe map elke keer dat de pijp lijn opnieuw wordt uitgevoerd. Dit gedrag zorgt ervoor dat de uitvoer gegevens sets met versie kunnen worden gereproduceerd. Meer informatie over [gegevens sets in pijp lijnen](how-to-create-your-first-pipeline.md#steps).
+ML-pijp lijnen vullen de uitvoer van elke Step Into een nieuwe map elke keer dat de pijp lijn opnieuw wordt uitgevoerd. Dit gedrag zorgt ervoor dat de uitvoer gegevens sets met versie kunnen worden gereproduceerd. Meer informatie over [gegevens sets in pijp lijnen](./how-to-create-machine-learning-pipelines.md#steps).
 
 ```Python
 from azureml.core import Dataset

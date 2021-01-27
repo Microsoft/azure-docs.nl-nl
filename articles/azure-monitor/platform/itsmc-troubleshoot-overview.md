@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: e43c5fb36c5395e12fd0b9c2c67b787a1137f5d0
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: fce20626d5e000c08b8a057671c06a3084534187
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98761976"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896033"
 ---
 # <a name="troubleshooting-problems-in-itsm-connector"></a>Problemen oplossen in ITSM-connector
 
 In dit artikel worden veelvoorkomende problemen in ITSM-connector beschreven en vindt u informatie over het oplossen van problemen.
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken. Zie overzicht van waarschuwingen in Microsoft Azure voor meer informatie over waarschuwingen.
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen identificeren en verhelpen voordat de gebruikers van uw systeem ze merken.
 De klant kan selecteren hoe ze op de waarschuwing moeten worden gewaarschuwd, ongeacht of het gaat om e-mail, SMS, webhook of zelfs om een oplossing te automatiseren. Een andere optie om op de hoogte te worden gesteld, is het gebruik van ITSM.
 ITSM biedt u de mogelijkheid om de waarschuwingen te verzenden naar het externe ticket systeem, zoals ServiceNow.
 

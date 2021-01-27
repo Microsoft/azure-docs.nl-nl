@@ -2,13 +2,13 @@
 title: VRealize-bewerkingen voor Azure VMware-oplossing instellen
 description: Meer informatie over het instellen van vRealize-bewerkingen voor uw persoonlijke cloud van Azure VMware-oplossingen.
 ms.topic: how-to
-ms.date: 09/22/2020
-ms.openlocfilehash: 25469089cf1fef076711bfaf1492fad43edbcf33
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.date: 01/26/2021
+ms.openlocfilehash: c2470ecde0874b46da1236ca6e99e6b0b3eb990d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371780"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880688"
 ---
 # <a name="set-up-vrealize-operations-for-azure-vmware-solution"></a>VRealize-bewerkingen voor Azure VMware-oplossing instellen
 
@@ -23,12 +23,12 @@ Controleer eerst [voordat u](#before-you-begin) aan de slag gaat en voordat u aa
 
 ## <a name="before-you-begin"></a>Voordat u begint
 * Raadpleeg de [product documentatie voor vRealize Operations Manager](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-7FFC61A0-7562-465C-A0DC-46D092533984.html) voor meer informatie over het implementeren van VRealize-bewerkingen. 
-* Bekijk de eenvoudige [zelf studie](tutorial-network-checklist.md)over Azure VMware Solution Software-Defined Data Center (SDDC).
+* Bekijk de [reeks eenvoudige zelfstudies](tutorial-network-checklist.md) over Azure VMware Solution Software Defined Datacenter (SDDC).
 * Bekijk eventueel de product documentatie voor [VRealize Operations Remote Controller](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-263F9219-E801-4383-8A59-E84F3D01ED6B.html) voor de on-premises VRealize-bewerkingen de implementatie optie Azure VMware-oplossing beheren. 
 
 
-
 ## <a name="prerequisites"></a>Vereisten
+* [vRealize Operations Manager](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-7FFC61A0-7562-465C-A0DC-46D092533984.html) geïnstalleerd.
 * Een VPN-of Azure-ExpressRoute die is geconfigureerd tussen on-premises en Azure VMware Solution SDDC.
 * Er is een Azure VMware-oplossings privécloud geïmplementeerd in Azure.
 
@@ -50,12 +50,13 @@ Als u de vRealize-bewerkingen wilt uitbreiden naar de privécloud van Azure VMwa
 
 Een andere optie is het implementeren van een exemplaar van vRealize Operations Manager op een vSphere-cluster in de privécloud. 
 
-:::image type="content" source="media/vrealize-operations-manager/vrealize-operations-deployment-option-2.png" alt-text="On-premises vRealize-bewerkingen Azure VMware-oplossings implementatie beheren" border="false":::
+>[!IMPORTANT]
+>Deze optie wordt momenteel niet ondersteund door VMware.
+
+:::image type="content" source="media/vrealize-operations-manager/vrealize-operations-deployment-option-2.png" alt-text="vRealize-bewerkingen die worden uitgevoerd op de Azure VMware-oplossing" border="false":::
 
 Zodra het exemplaar is geïmplementeerd, kunt u vRealize-bewerkingen configureren voor het verzamelen van gegevens van vCenter, ESXi, NSX-T, vSAN en HCX. 
 
-> [!TIP]
-> Raadpleeg de [documentatie van VMware](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.vapp.doc/GUID-7FFC61A0-7562-465C-A0DC-46D092533984.html) voor stapsgewijze hand leiding voor het installeren van vRealize Operations Manager.
 
 
 ## <a name="known-limitations"></a>Bekende beperkingen
@@ -68,11 +69,11 @@ Zodra het exemplaar is geïmplementeerd, kunt u vRealize-bewerkingen configurere
 
 Wanneer u de Azure VMware Solution vCenter verbindt met vRealize Operations Manager een vCenter Server Cloud-account gebruikt, wordt er een waarschuwing weer gegeven:
 
-:::image type="content" source="./media/vrealize-operations-manager/warning-adapter-instance-creation-succeeded.png" alt-text="On-premises vRealize-bewerkingen Azure VMware-oplossings implementatie beheren":::
+:::image type="content" source="./media/vrealize-operations-manager/warning-adapter-instance-creation-succeeded.png" alt-text="Het maken van het exemplaar van de waarschuwing is voltooid":::
 
 De waarschuwing treedt op omdat de **cloudadmin \@ vSphere. local** gebruiker in azure VMware-oplossing niet voldoende rechten heeft om alle vCenter Server acties uit te voeren die vereist zijn voor de registratie. De bevoegdheden zijn echter voldoende voor de gegevens verzameling van het adapter exemplaar, zoals hieronder wordt weer gegeven:
 
-:::image type="content" source="./media/vrealize-operations-manager/adapter-instance-to-perform-data-collection.png" alt-text="On-premises vRealize-bewerkingen Azure VMware-oplossings implementatie beheren":::
+:::image type="content" source="./media/vrealize-operations-manager/adapter-instance-to-perform-data-collection.png" alt-text="Adapter exemplaar voor het uitvoeren van gegevens verzameling":::
 
 Zie bevoegdheden die vereist zijn [voor het configureren van een vCenter-adapter instantie](https://docs.vmware.com/en/vRealize-Operations-Manager/8.1/com.vmware.vcom.core.doc/GUID-3BFFC92A-9902-4CF2-945E-EA453733B426.html)voor meer informatie.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 04/16/2020
-ms.openlocfilehash: 70dfccb32389d2f1fb492669c9f84a3e6ae77bbb
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 0a3188d5dc2c34c9959ae488ad5a5f962a99f02f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621345"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880267"
 ---
 # <a name="publish-an-integrated-solution"></a>Een geïntegreerde oplossing publiceren
 
@@ -32,16 +32,16 @@ Bekijk de [overzichts video voor partners](https://partner.microsoft.com/asset/d
 ## <a name="eligibility-criteria"></a>Criteria om in aanmerking te komen
 
 * Deelnemende partners moeten een MPN-ID hebben.
-* Deelnemende dienst verleners moeten [klaar zijn voor samen verkopen](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
-* Deelnemende software leveranciers moeten klaar zijn voor het [samen verkopen van het IP-adres](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
+* Deelnemende dienst verleners moeten [klaar zijn voor samen verkopen](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status).
+* Deelnemende software leveranciers moeten klaar zijn voor het [samen verkopen van het IP-adres](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status).
 * Ten minste één deelnemende partner moet een goud competentie hebben op een van de volgende gebieden:
     - Ontwikkeling van toepassingen
     - Integratie van toepassingen
     - Beheer van toepassingslevenscyclus
-    - Cloud platform
+    - Cloudplatform
     - Data Analytics
     - Datacenter
-    - Gegevens platform
+    - Gegevensplatform
     - DevOps
 
 * De oplossing moet ten minste twee partner organisaties omvatten, waarbij IP en services worden gebruikt voor een volledige oplossing en ervaring van klanten.

@@ -2,19 +2,19 @@
 title: Document indelingen en naam conventies-aangepaste Translator
 titleSuffix: Azure Cognitive Services
 description: Dit is een hand leiding voor document indelingen en naam conventies in Custom Translator. Dit concept helpt bij het beter beheren van documenten namen en het voor komen van naam conflicten.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 46a19cd4396e598a74f9099727ac80d44c0a44f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9598d3c1d339d1c37b02892cc83164acae447434
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88507243"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895846"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Richt lijnen voor document indelingen en naamgevings regels
 
@@ -22,7 +22,7 @@ Elk bestand dat wordt gebruikt voor aangepaste vertaling moet ten minste **vier*
 
 Deze tabel bevat alle ondersteunde bestands indelingen die u kunt gebruiken om uw Vertaal systeem te bouwen:
 
-| Indeling            | Extensies   | Beschrijving                                                                                                                                                                                                                                                                    |
+| Indeling            | Uitbreidingen   | Beschrijving                                                                                                                                                                                                                                                                    |
 |-------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | XLIFF             | . XLF, . XLIFF | Een parallelle document indeling, export van Vertaal geheugen systemen. De gebruikte talen worden in het bestand gedefinieerd.                                                                                                                                                              |
 | TMX               | . TMX         | Een parallelle document indeling, export van Vertaal geheugen systemen. De gebruikte talen worden in het bestand gedefinieerd.                                                                                                                                                              |

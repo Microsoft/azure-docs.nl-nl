@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: ac9a1b43ba4ffb537afd658c84edb48ed59a3694
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a84e4e767092a1507ef0608c21ff1896cb1dde0d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683479"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880941"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Modellen trainen met Azure Machine Learning
 
@@ -76,7 +76,7 @@ Definieer de herhalingen, afstemming-instellingen, parametrisatie en andere inst
 Machine learning-pijp lijnen kunnen de eerder genoemde trainings methoden gebruiken. Pijp lijnen zijn meer informatie over het maken van een werk stroom, zodat ze meer dan alleen de training van modellen omvatten. In een pijp lijn kunt u een model trainen met geautomatiseerde machine learning of door configuraties uit te voeren.
 
 * [Wat zijn ML-pijp lijnen in Azure Machine Learning?](concept-ml-pipelines.md)
-* [machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK](how-to-create-your-first-pipeline.md)
+* [machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK](./how-to-create-machine-learning-pipelines.md)
 * [Zelf studie: Azure Machine Learning pijplijnen gebruiken voor batch scores](tutorial-pipeline-batch-scoring-classification.md)
 * [Voor beelden: Jupyter Notebook voor beelden voor machine learning pijp lijnen](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 * [Voor beelden: pijp lijn met automatische machine learning](https://aka.ms/pl-automl)

@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.openlocfilehash: a1b0dff9421f493958554c659043c49ff2874379
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 896b4db433164471f41aa09791ede5d677028bfb
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87014997"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896610"
 ---
 # <a name="tutorial-create-a-powershell-runbook"></a>Zelfstudie: Een PowerShell-runbook maken
 
@@ -131,7 +131,7 @@ Het runbook dat u hebt gemaakt, bevindt zich nog steeds in de modus Concept. Het
 
 U hebt het runbook getest en gepubliceerd, maar tot nu toe doet het nog niets nuttigs. U wilt dat er Azure-resources mee worden beheerd. Hiervoor moet het runbook de Uitvoeren als-account kunnen verifiëren die automatisch is gemaakt toen u uw Automation-account hebt gemaakt.
 
-Zoals u in onderstaand voorbeeld kunt zien, wordt de Uitvoeren als-verbinding gemaakt met de [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0)-cmdlet. Als u resources beheert voor verschillende abonnementen, moet u de parameter `AzContext` gebruiken met [Get-AzContext](/powershell/module/Az.Accounts/Get-AzContext?view=azps-3.5.0).
+Zoals u in onderstaand voorbeeld kunt zien, wordt de Uitvoeren als-verbinding gemaakt met de [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount)-cmdlet. Als u resources beheert voor verschillende abonnementen, moet u de parameter `AzContext` gebruiken met [Get-AzContext](/powershell/module/Az.Accounts/Get-AzContext).
 
 > [!NOTE]
 > Voor PowerShell-runbooks zijn `Add-AzAccount` en `Add-AzureRMAccount` aliassen voor `Connect-AzAccount`. U kunt deze cmdlets gebruiken of u kunt [uw modules bijwerken](../automation-update-azure-modules.md) naar de nieuwste versie in uw Automation-account. Zelfs wanneer u zojuist een nieuw Automation-account hebt aangemaakt, moet u mogelijk uw modules bijwerken.
@@ -198,7 +198,7 @@ Zoals u in onderstaand voorbeeld kunt zien, wordt de Uitvoeren als-verbinding ge
 
 Nu uw runbook verifieert voor uw Azure-abonnement, kunt u resources beheren. Laten we een opdracht voor het starten van een virtuele machine toevoegen. U kunt elke virtuele machine in uw Azure-abonnement selecteren en de naam hiervan voorlopig hardcoderen in het runbook.
 
-1. Voeg aan uw runbookscript de cmdlet [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM?view=azps-3.5.0) toe om de virtuele machine te starten. Zoals u hieronder kunt zien start de cmdlet een virtuele machine met de naam `VMName` en een resourcegroep met de naam `ResourceGroupName`.
+1. Voeg aan uw runbookscript de cmdlet [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM) toe om de virtuele machine te starten. Zoals u hieronder kunt zien start de cmdlet een virtuele machine met de naam `VMName` en een resourcegroep met de naam `ResourceGroupName`.
 
    ```powershell
    # Ensures you do not inherit an AzContext in your runbook
@@ -275,7 +275,7 @@ Uw runbook start nu de virtuele machine die u hebt vastgelegd in het runbook. He
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie de [PowerShell Docs](/powershell/scripting/overview) voor meer informatie over PowerShell, inclusief taalreferentie- en leermodules.
-* Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+* Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 * Zie [Een grafisch runbook maken](automation-tutorial-runbook-graphical.md) om aan de slag te gaan met grafische runbooks.
 * Zie [Een PowerShell Workflow-runbook maken](automation-tutorial-runbook-textual.md) om aan de slag te gaan met PowerShell Workflow-runbooks.
 * Zie [Azure Automation-runbooktypen](../automation-runbook-types.md) voor meer informatie over runbooktypen en hun voordelen en beperkingen.

@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 12/07/2020
-ms.openlocfilehash: 0114c75d99d79041631e5078deb33f77863dc35a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 84d98eedb3ea6f3faaeaecf832811f9f4c78c7c5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043775"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880352"
 ---
 # <a name="migration-of-co-sell-solutions-from-ocp-gtm-to-the-commercial-marketplace"></a>Migratie van oplossingen voor co-sell van een OCP-GTM naar de commerciële Marketplace
 
@@ -44,7 +44,7 @@ Nadat u zich hebt Inge schreven in de commerciële Marketplace, bereidt u de mig
 
 Volg deze stappen voordat u uw oplossingen importeert vanuit OCP GTM:
 
-1. Ga naar de [lijst met uitgevers](https://partner.microsoft.com/dashboard/account/v3/publishers/list)van uw bedrijf. Het bevat de account eigenaar, managers en ontwikkel aars die toegang hebben tot publiceren. Meer informatie over [gebruikers rollen van het partner centrum](/azure/marketplace/partner-center-portal/manage-account#define-user-roles-and-permissions).
+1. Ga naar de [lijst met uitgevers](https://partner.microsoft.com/dashboard/account/v3/publishers/list)van uw bedrijf. Het bevat de account eigenaar, managers en ontwikkel aars die toegang hebben tot publiceren. Meer informatie over [gebruikers rollen van het partner centrum](./partner-center-portal/manage-account.md#define-user-roles-and-permissions).
 2. Vraag een van de vermelde contact personen aan om gebruikers toe te [voegen](https://partner.microsoft.com/dashboard/account/usermanagement) aan de commerciële Marketplace als *managers* of *ontwikkel aars*, omdat alleen deze rollen oplossingen kunnen bewerken en publiceren.
 3. Werk samen met uw ontwikkel aars om uw oplossingen van uw OCP GTM-account naar de commerciële Marketplace te verplaatsen.
 4. Bepaal welk van de volgende handelingen u wilt uitvoeren:
@@ -156,4 +156,3 @@ Lees de juiste [publicatie handleiding](publisher-guide-by-offer-type.md)voor ge
 - [Doorverkopen via CSP-partners](cloud-solution-providers.md)
 - [Het verzenden van materialen voor coselling in Partner Center](marketplace-co-sell.md#how-to-submit-co-sell-materials-in-partner-center)
 - Deze [Veelgestelde vragen](https://partner.microsoft.com/resources/detail/co-sell-requirements-publish-commercial-marketplace-faq-pdf) (PDF) weer geven
-

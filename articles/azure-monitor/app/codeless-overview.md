@@ -6,12 +6,12 @@ author: MS-jgol
 ms.author: jgol
 ms.date: 05/31/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: aa5c2a0070ea0c3a0963f97fc1a04670eeaa4827
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: efa951ce5a15460e3eacfd4c7abecfac17106b4e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701888"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880505"
 ---
 # <a name="what-is-auto-instrumentation-or-codeless-attach---azure-monitor-application-insights"></a>Wat is het automatisch instrumenteren of koppelen Azure Monitor Application Insights?
 
@@ -23,17 +23,17 @@ Application Insights is geïntegreerd met verschillende resource providers en we
 
 Wanneer we meer en meer integraties toevoegen, wordt de matrix voor automatische instrumentatie complex. In de volgende tabel ziet u de huidige status van de materie, als ondersteuning voor verschillende resource providers, talen en omgevingen.
 
-|Omgeving/resource provider          | .NET            | .NET Core       | Java            | Node.js         |
-|---------------------------------------|-----------------|-----------------|-----------------|-----------------|
-|Azure App Service in Windows           | GA, OnBD *       | GA, opt-in      | Persoonlijke preview | Persoonlijke preview |
-|Azure App Service in Linux             | N.v.t.             | Niet ondersteund   | Persoonlijke preview | Openbare preview  |
-|Azure App Service op AKS               | N.v.t.             | In de ontwerp       | In de ontwerp       | In de ontwerp       |
-|Azure Functions-basis                | GA, OnBD *       | GA, OnBD *       | GA, OnBD *       | GA, OnBD *       |
-|Azure Functions Windows-afhankelijkheden | Niet ondersteund   | Niet ondersteund   | Openbare preview  | Niet ondersteund   |
-|Azure Kubernetes Service               | N.v.t.             | In de ontwerp       | Via agent   | In de ontwerp       |
-|Azure Vm's Windows                      | Openbare preview  | Niet ondersteund   | Niet ondersteund   | Niet ondersteund   |
-|On-premises Vm's Windows                | GA, opt-in      | Niet ondersteund   | Via agent   | Niet ondersteund   |
-|Zelfstandige agent: elke env.            | Niet ondersteund   | Niet ondersteund   | Algemene beschikbaarheid              | Niet ondersteund   |
+|Omgeving/resource provider          | .NET            | .NET Core       | Java            | Node.js         | Python          |
+|---------------------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+|Azure App Service in Windows           | GA, OnBD *       | GA, opt-in      | Persoonlijke preview | Persoonlijke preview | Niet ondersteund   |
+|Azure App Service in Linux             | N.v.t.             | Niet ondersteund   | Persoonlijke preview | Openbare preview  | Niet ondersteund   |
+|Azure App Service op AKS               | N.v.t.             | In de ontwerp       | In de ontwerp       | In de ontwerp       | Niet ondersteund   |
+|Azure Functions-basis                | GA, OnBD *       | GA, OnBD *       | GA, OnBD *       | GA, OnBD *       | GA, OnBD *       |
+|Azure Functions Windows-afhankelijkheden | Niet ondersteund   | Niet ondersteund   | Openbare preview  | Niet ondersteund   | Niet ondersteund   |
+|Azure Kubernetes Service               | N.v.t.             | In de ontwerp       | Via agent   | In de ontwerp       | Niet ondersteund   |
+|Azure Vm's Windows                      | Openbare preview  | Niet ondersteund   | Niet ondersteund   | Niet ondersteund   | Niet ondersteund   |
+|On-premises Vm's Windows                | GA, opt-in      | Niet ondersteund   | Via agent   | Niet ondersteund   | Niet ondersteund   |
+|Zelfstandige agent: elke env.            | Niet ondersteund   | Niet ondersteund   | Algemene beschikbaarheid              | Niet ondersteund   | Niet ondersteund   |
 
 * OnBD is op de standaard waarde ingeschakeld. de Application Insights wordt automatisch geactiveerd wanneer u uw app in ondersteunde omgevingen implementeert. 
 

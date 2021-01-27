@@ -1,24 +1,10 @@
 ---
-title: Streaming-eind punten (oorsprong)
-titleSuffix: Azure Media Services
-description: Meer informatie over streaming-eind punten (oorsprong), een dynamische verpakkings-en streaming-service die inhoud rechtstreeks levert aan een client speler of een Content Delivery Network (CDN).
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: conceptual
-ms.date: 02/13/2020
-ms.author: inhenkel
-ms.openlocfilehash: f7307b95912a982bb36efbf2ce18668bd88e1195
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882871"
+# <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Verplichte velden. Meer informatie over aka.ms/skyeye/meta.
+Titel: streaming-eind punten (oorsprong): Azure Media Services beschrijving: meer informatie over streaming-eind punten (oorsprong), een dynamische verpakkings-en streaming-service die inhoud rechtstreeks levert aan een client speler of een Content Delivery Network (CDN). Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 02/13/2020 MS. Author: inhenkel
 ---
+
 # <a name="streaming-endpoints-origin-in-azure-media-services"></a>Streaming-eind punten (oorsprong) in Azure Media Services
 
 In Microsoft Azure Media Services vertegenwoordigt een [streaming-eind punt](/rest/api/media/streamingendpoints) een dynamische (just-in-time) verpakkings-en bron service die uw Live-en on-demand-inhoud rechtstreeks aan een client speler kan leveren met behulp van een van de algemene protocollen voor streaming media (HLS of Dash). Daarnaast biedt het **streaming-eind punt** dynamische code ring (just-in-time) voor toonaangevende DRMs. 

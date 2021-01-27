@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
 ms.date: 12/08/2020
-ms.openlocfilehash: b5001898fa18834ce7c04403de70879084df85f1
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: ca090d9bd4f5968b0404cb73af9f8d21197e695d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904905"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880958"
 ---
 # <a name="co-sell-option-in-the-commercial-marketplace"></a>Optie voor collectieve verkoop in de commerciële marketplace
 
-Het is volledig optioneel om informatie op te geven over het tabblad **samen verkopen met micro soft** . Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
+Het is volledig optioneel om informatie op te geven over het tabblad **samen verkopen met micro soft** . Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
 
 De optie voor co-sell in Partner Center is beschikbaar voor de volgende aanbiedings typen.
 

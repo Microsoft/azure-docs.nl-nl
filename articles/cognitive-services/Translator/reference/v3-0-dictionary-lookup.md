@@ -3,19 +3,19 @@ title: Zoek methode voor Translator Dictionary
 titleSuffix: Azure Cognitive Services
 description: De Zoek methode voor de woorden lijst bevat alternatieve vertalingen voor een woord en een klein aantal idiomatisch-zinnen.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 01/21/2020
-ms.author: swmachan
-ms.openlocfilehash: 6ada9c06f0befbea4b9aa85f95651e96dec595b7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: 88a76a16de43853a001f5db895d6ad418940de0f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021283"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895489"
 ---
 # <a name="translator-30-dictionary-lookup"></a>Translator 3,0: opzoeken in woorden lijst
 
@@ -33,7 +33,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
-| Query parameter  | Description |
+| Query parameter  | Beschrijving |
 | ------ | ----------- |
 | api-versie <img width=200/>   | **Vereiste para meter**.<br/>De versie van de API die door de client is aangevraagd. Waarde moet `3.0` |
 | from | **Vereiste para meter**.<br/>Geeft de taal van de invoer tekst aan. De bron taal moet een van de [ondersteunde talen](./v3-0-languages.md) zijn die in het `dictionary` bereik zijn opgenomen. |
@@ -80,7 +80,7 @@ Een geslaagde reactie is een JSON-matrix met één resultaat voor elke teken ree
 
     * `posTag`: Een teken reeks waarmee deze term wordt gekoppeld aan een deel van een spraak label.
 
-        | Label naam | Description  |
+        | Label naam | Beschrijving  |
         |----------|--------------|
         | Corr      | Bijvoeglijke naamwoorden   |
         | ADV      | Beparameters      |

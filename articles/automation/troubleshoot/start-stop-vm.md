@@ -2,19 +2,15 @@
 title: Problemen met Azure Automation VM's buiten bedrijfsuren starten/stoppen oplossen
 description: In dit artikel leest u hoe u problemen oplost en oplost die ontstaan tijdens het gebruik van de functie VM's buiten bedrijfsuren starten/stoppen.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 04/04/2019
-ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: bb8fa53fa07d666693ae545c193faaf3d6d0a30c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: troubleshooting
+ms.openlocfilehash: 763e1321556ade73778b82ea70926af21a83f7ec
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187146"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896271"
 ---
 # <a name="troubleshoot-startstop-vms-during-off-hours-issues"></a>Problemen met VM's buiten bedrijfsuren starten/stoppen oplossen
 
@@ -113,7 +109,7 @@ Bekijk de volgende lijst voor mogelijke oplossingen:
   * **ScheduledStartStop_Parent**
   * **SequencedStartStop_Parent**
 
-* Controleer of het [uitvoeren als-account](../manage-runas-account.md) de juiste machtigingen heeft voor de vm's die u probeert te starten of te stoppen. Zie voor meer informatie over het controleren van de machtigingen voor een resource [Quick Start: rollen weer geven die zijn toegewezen aan een gebruiker met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen**en selecteer het juiste uitvoeren als-account.
+* Controleer of het [uitvoeren als-account](../manage-runas-account.md) de juiste machtigingen heeft voor de vm's die u probeert te starten of te stoppen. Zie voor meer informatie over het controleren van de machtigingen voor een resource [Quick Start: rollen weer geven die zijn toegewezen aan een gebruiker met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen** en selecteer het juiste uitvoeren als-account.
 
 * Vm's kunnen niet worden gestart of gestopt als ze expliciet worden uitgesloten. Uitgesloten Vm's worden ingesteld in de `External_ExcludeVMNames` variabele in het Automation-account waarop de functie wordt geïmplementeerd. In het volgende voor beeld ziet u hoe u een query kunt uitvoeren op die waarde met Power shell.
 
@@ -209,7 +205,7 @@ Als uw uitvoeren als-account onjuist is geconfigureerd, verwijdert u het uitvoer
 
 Als het certificaat is verlopen voor uw uitvoeren als-account, volgt u de stappen in [zelfondertekend certificaat vernieuwen](../manage-runas-account.md#cert-renewal) om het certificaat te vernieuwen.
 
-Als er ontbrekende machtigingen zijn, raadpleegt u [Quick Start: rollen weer geven die aan een gebruiker zijn toegewezen met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen**en selecteer het juiste uitvoeren als-account.
+Als er ontbrekende machtigingen zijn, raadpleegt u [Quick Start: rollen weer geven die aan een gebruiker zijn toegewezen met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen** en selecteer het juiste uitvoeren als-account.
 
 ## <a name="scenario-my-problem-isnt-listed-here"></a><a name="other"></a>Scenario: mijn probleem wordt hier niet vermeld
 

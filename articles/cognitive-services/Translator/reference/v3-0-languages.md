@@ -3,19 +3,19 @@ title: Methode Vertaal talen
 titleSuffix: Azure Cognitive Services
 description: De methode languages haalt de set talen op die momenteel wordt ondersteund door andere bewerkingen van het conversie programma.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: swmachan
-ms.openlocfilehash: d9abd1f305e47eca743dc9274e0ec1f0a950dd6a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: 8471983d24cfed39e6521e19366f6023e519adaf
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021266"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895472"
 ---
 # <a name="translator-30-languages"></a>Translator 3,0: talen
 
@@ -33,8 +33,8 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
 <table width="100%">
-  <th width="20%">Query parameter</th>
-  <th>Description</th>
+  <th width="20%">Queryparameter</th>
+  <th>Beschrijving</th>
   <tr>
     <td>api-versie</td>
     <td><em>Vereiste para meter</em>.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn `3.0` .</td>
@@ -248,7 +248,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
 
 <table width="100%">
   <th width="20%">Statuscode</th>
-  <th>Description</th>
+  <th>Beschrijving</th>
   <tr>
     <td>200</td>
     <td>Voltooid.</td>

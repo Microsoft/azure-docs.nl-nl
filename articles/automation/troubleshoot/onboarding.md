@@ -2,15 +2,15 @@
 title: Problemen met de implementatie van Azure Automation-onderdelen oplossen
 description: In dit artikel leest u hoe u problemen kunt oplossen en oplossen die zich voordoen bij het implementeren van Azure Automation-functies.
 services: automation
+ms.subservice: ''
 ms.date: 06/30/2020
-ms.topic: conceptual
-ms.service: automation
-ms.openlocfilehash: a6b8384193e821e6c41a0d4d979cda51f6c65b3a
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.topic: troubleshooting
+ms.openlocfilehash: 6668fe3c30bd5187016ac2e0c766e7e78d5b3e8c
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92070483"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896508"
 ---
 # <a name="troubleshoot-feature-deployment-issues"></a>Problemen met implementatie van functies oplossen
 
@@ -100,7 +100,7 @@ Mogelijk hebt u de query gewijzigd, of is het systeem mogelijk gewijzigd.
 
 #### <a name="resolution"></a>Oplossing
 
-U kunt de query voor de functie verwijderen en vervolgens de functie opnieuw inschakelen, waardoor de query opnieuw wordt gemaakt. U vindt de query in uw werk ruimte onder **opgeslagen Zoek opdrachten**. De naam van de query is **MicrosoftDefaultComputerGroup**en de categorie van de query is de naam van de bijbehorende functie. Als er meerdere functies zijn ingeschakeld, wordt in de **MicrosoftDefaultComputerGroup** -query meerdere keren weer gegeven onder **opgeslagen Zoek opdrachten**.
+U kunt de query voor de functie verwijderen en vervolgens de functie opnieuw inschakelen, waardoor de query opnieuw wordt gemaakt. U vindt de query in uw werk ruimte onder **opgeslagen Zoek opdrachten**. De naam van de query is **MicrosoftDefaultComputerGroup** en de categorie van de query is de naam van de bijbehorende functie. Als er meerdere functies zijn ingeschakeld, wordt in de **MicrosoftDefaultComputerGroup** -query meerdere keren weer gegeven onder **opgeslagen Zoek opdrachten**.
 
 ### <a name="scenario-policyviolation"></a><a name="policy-violation"></a>Scenario: PolicyViolation
 

@@ -4,12 +4,12 @@ description: In dit artikel leest u hoe u Azure AD in Azure Automation kunt gebr
 services: automation
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: bbd1f977b548c2b8e7980709ea125c07e22b1fa2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41eaab7be66d446109e1052948a29ad4723b191c
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400669"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98894657"
 ---
 # <a name="use-azure-ad-to-authenticate-to-azure"></a>Azure AD gebruiken voor verificatie bij Azure
 
@@ -39,9 +39,9 @@ Voordat u de Azure AD-modules op uw computer installeert:
 >[!NOTE]
 >Als u met deze modules wilt werken, moet u Power shell versie 5,1 of hoger gebruiken met een 64-bits versie van Windows. 
 
-1. Installeer Windows Management Framework (WMF) 5,1. Zie [WMF 5,1 installeren en configureren](/powershell/scripting/wmf/setup/install-configure?view=powershell-7).
+1. Installeer Windows Management Framework (WMF) 5,1. Zie [WMF 5,1 installeren en configureren](/powershell/scripting/wmf/setup/install-configure).
 
-2. Installeer AzureRM en/of AZ met behulp van de instructies in [Install Azure PowerShell op Windows met PowerShellGet](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0).
+2. Installeer AzureRM en/of AZ met behulp van de instructies in [Install Azure PowerShell op Windows met PowerShellGet](/powershell/azure/azurerm/install-azurerm-ps).
 
 ### <a name="install-the-msonline-module"></a>De MSOnline-module installeren
 
@@ -62,7 +62,7 @@ Voordat u de Azure AD-modules op uw computer installeert:
 
 ### <a name="install-support-for-pscredential"></a>Ondersteuning voor PSCredential installeren
 
-Azure Automation maakt gebruik van de [PSCredential](/dotnet/api/system.management.automation.pscredential?view=pscore-6.2.0) -klasse om een referentie-element aan te duiden. Uw scripts halen `PSCredential` objecten op met de `Get-AutomationPSCredential` cmdlet. Zie [referentie-assets in azure Automation](shared-resources/credentials.md)voor meer informatie.
+Azure Automation maakt gebruik van de [PSCredential](/dotnet/api/system.management.automation.pscredential) -klasse om een referentie-element aan te duiden. Uw scripts halen `PSCredential` objecten op met de `Get-AutomationPSCredential` cmdlet. Zie [referentie-assets in azure Automation](shared-resources/credentials.md)voor meer informatie.
 
 ## <a name="assign-a-subscription-administrator"></a>Abonnementsbeheerder toewijzen
 
@@ -80,7 +80,7 @@ Het wacht woord van de gebruikers van de Azure AD-gebruiker wijzigen:
 
 ## <a name="configure-azure-automation-to-manage-the-azure-subscription"></a>Azure Automation configureren voor het beheren van het Azure-abonnement
 
-Als Azure Automation wilt communiceren met Azure AD, moet u de referenties ophalen die zijn gekoppeld aan de Azure-verbinding met Azure AD. Voor beelden van deze referenties zijn de Tenant-ID, abonnements-ID en soort gelijke. Zie [verbinding maken met uw organisatie met Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad?view=azure-devops)voor meer informatie over de verbinding tussen Azure en Azure AD.
+Als Azure Automation wilt communiceren met Azure AD, moet u de referenties ophalen die zijn gekoppeld aan de Azure-verbinding met Azure AD. Voor beelden van deze referenties zijn de Tenant-ID, abonnements-ID en soort gelijke. Zie [verbinding maken met uw organisatie met Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad)voor meer informatie over de verbinding tussen Azure en Azure AD.
 
 ## <a name="create-a-credential-asset"></a>Een referentie-Asset maken
 
@@ -92,11 +92,11 @@ U kunt de Azure Portal gebruiken om de referentie-Asset te maken. Voer deze bewe
 
 ### <a name="create-the-credential-asset-with-windows-powershell"></a>Het referentie-element maken met Windows Power shell
 
-Als u een nieuw referentie-element wilt voorbereiden in Windows Power shell, maakt uw script eerst een- `PSCredential` object met behulp van de toegewezen gebruikers naam en het bijbehorende wacht woord. Het script gebruikt vervolgens dit object om het activum te maken via een aanroep van de cmdlet [New-AzureAutomationCredential](/powershell/module/servicemanagement/azure.service/new-azureautomationcredential?view=azuresmps-4.0.0) . Het script kan de cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7) ook aanroepen om de gebruiker te vragen om een naam en wacht woord in te voeren. Zie [referentie-assets in azure Automation](shared-resources/credentials.md). 
+Als u een nieuw referentie-element wilt voorbereiden in Windows Power shell, maakt uw script eerst een- `PSCredential` object met behulp van de toegewezen gebruikers naam en het bijbehorende wacht woord. Het script gebruikt vervolgens dit object om het activum te maken via een aanroep van de cmdlet [New-AzureAutomationCredential](/powershell/module/servicemanagement/azure.service/new-azureautomationcredential) . Het script kan de cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) ook aanroepen om de gebruiker te vragen om een naam en wacht woord in te voeren. Zie [referentie-assets in azure Automation](shared-resources/credentials.md). 
 
 ## <a name="manage-azure-resources-from-an-azure-automation-runbook"></a>Azure-resources beheren vanuit een Azure Automation-runbook
 
-U kunt Azure-resources beheren vanuit Azure Automation runbooks met behulp van de referentie-Asset. Hieronder ziet u een voor beeld van een Power shell-runbook waarmee de referentie-Asset wordt verzameld die moet worden gebruikt voor het stoppen en starten van virtuele machines in een Azure-abonnement. Dit runbook wordt eerst gebruikt `Get-AutomationPSCredential` om de referentie op te halen die moet worden gebruikt om te verifiëren bij Azure. Vervolgens wordt de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.6.1) aangeroepen om verbinding te maken met Azure met behulp van de referentie. Het script maakt gebruik van de [Select-abonnement-](/powershell/module/servicemanagement/azure.service/select-azuresubscription?view=azuresmps-4.0.0) cmdlet om het abonnement te kiezen waarmee u wilt werken. 
+U kunt Azure-resources beheren vanuit Azure Automation runbooks met behulp van de referentie-Asset. Hieronder ziet u een voor beeld van een Power shell-runbook waarmee de referentie-Asset wordt verzameld die moet worden gebruikt voor het stoppen en starten van virtuele machines in een Azure-abonnement. Dit runbook wordt eerst gebruikt `Get-AutomationPSCredential` om de referentie op te halen die moet worden gebruikt om te verifiëren bij Azure. Vervolgens wordt de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) aangeroepen om verbinding te maken met Azure met behulp van de referentie. Het script maakt gebruik van de [Select-abonnement-](/powershell/module/servicemanagement/azure.service/select-azuresubscription) cmdlet om het abonnement te kiezen waarmee u wilt werken. 
 
 ```azurepowershell
 Workflow Stop-Start-AzureVM 

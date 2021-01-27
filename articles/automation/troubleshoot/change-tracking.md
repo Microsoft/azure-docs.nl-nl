@@ -2,19 +2,15 @@
 title: Problemen met de Azure Automation-Wijzigingen bijhouden en-inventaris oplossen
 description: In dit artikel leest u hoe u problemen oplost en oplost met de functie voor Wijzigingen bijhouden en inventaris van Azure Automation.
 services: automation
-ms.service: automation
 ms.subservice: change-inventory-management
-author: mgoedtel
-ms.author: magoedte
 ms.date: 01/31/2019
-ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 3ecd4330381db1f63a40e9ba5ff63108c6fa78fe
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.topic: troubleshooting
+ms.openlocfilehash: 516f1a4e5e7c677b17a2941ee3c300db44d49a3b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205605"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896542"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Problemen met Wijzigingen bijhouden en inventaris oplossen
 

@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: d49f048df7a624dc490acf7cb4c8e5f33aa5f1c6
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: d23294c21d49b1c2ab83c4bf8f110d5d4bc7aafb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060228"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878287"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Problemen met live video Analytics op IoT Edge oplossen
 
@@ -66,7 +66,7 @@ U kunt de Azure Portal gebruiken om een diagnose van de media grafiek uit te voe
     * 500-er is een fout opgetreden in de IoT Edge-runtime.
 
     > [!TIP]
-    > Als u problemen ondervindt met het uitvoeren van Azure IoT Edge-modules in uw omgeving, gebruikt u **[Azure IOT Edge standaard diagnose stappen](https://docs.microsoft.com/azure/iot-edge/troubleshoot?view=iotedge-2018-06&preserve-view=true)** als richt lijn voor het oplossen van problemen en diagnostische gegevens.
+    > Als u problemen ondervindt met het uitvoeren van Azure IoT Edge-modules in uw omgeving, gebruikt u **[Azure IOT Edge standaard diagnose stappen](../../iot-edge/troubleshoot.md?preserve-view=true&view=iotedge-2018-06)** als richt lijn voor het oplossen van problemen en diagnostische gegevens.
 ### <a name="post-deployment-direct-method-error-code"></a>Post-implementatie: fout code directe methode
 1. Als u een status krijgt `501 code` , controleert u of de naam van de directe methode nauw keurig is. Als de methode naam en de aanvraag lading nauw keurig zijn, moet u de resultaten ophalen en de succes code = 200. 
 1. Als de aanvraag lading onjuist is, krijgt u een status- `400 code` en reactie-nettolading die de fout code en het bericht aangeeft dat de oorzaak van het probleem met de aanroep van de directe methode moet helpen.
@@ -96,7 +96,7 @@ Live video Analytics wordt geïmplementeerd als een IoT Edge module op het IoT E
 * [De module IOT Edge is geïmplementeerd en wordt vervolgens van het apparaat verwijderd](../../iot-edge/troubleshoot-common-errors.md#iot-edge-module-deploys-successfully-then-disappears-from-device).
 
     > [!TIP]
-    > Als u problemen ondervindt met het uitvoeren van Azure IoT Edge-modules in uw omgeving, gebruikt u **[Azure IOT Edge standaard diagnose stappen](https://docs.microsoft.com/azure/iot-edge/troubleshoot?view=iotedge-2018-06&preserve-view=true)** als richt lijn voor het oplossen van problemen en diagnostische gegevens.
+    > Als u problemen ondervindt met het uitvoeren van Azure IoT Edge-modules in uw omgeving, gebruikt u **[Azure IOT Edge standaard diagnose stappen](../../iot-edge/troubleshoot.md?preserve-view=true&view=iotedge-2018-06)** als richt lijn voor het oplossen van problemen en diagnostische gegevens.
 ### <a name="live-video-analytics-working-with-external-modules"></a>Live video Analytics met externe modules
 
 Live video-analyses via de media Graph-extensie processors kunnen de media grafiek uitbreiden voor het verzenden en ontvangen van gegevens van andere IoT Edge modules met behulp van HTTP-of gRPC-protocollen. In een [specifiek voor beeld](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/httpExtension)kan deze media grafiek video frames als installatie kopieën verzenden naar een externe Afleidings module, zoals Yolo v3, en analyse van op JSON gebaseerde analyses ontvangen met behulp van het HTTP-protocol. In een dergelijke topologie is het doel voor de gebeurtenissen voornamelijk de IoT-hub. In situaties waarin de gebeurtenissen voor afnemen op de hub niet worden weer geven, controleert u het volgende:
@@ -272,7 +272,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ``` 
 
-[Logboek registratie en diagnostische gegevens in gRPC in .net](https://docs.microsoft.com/aspnet/core/grpc/diagnostics?view=aspnetcore-3.1&preserve-view=true) bieden enkele richt lijnen voor het verzamelen van Diagnostische logboeken van een gRPC-server. 
+[Logboek registratie en diagnostische gegevens in gRPC in .net](/aspnet/core/grpc/diagnostics?preserve-view=true&view=aspnetcore-3.1) bieden enkele richt lijnen voor het verzamelen van Diagnostische logboeken van een gRPC-server. 
 
 ### <a name="a-failed-grpc-connection"></a>Een mislukte gRPC-verbinding 
 
@@ -282,7 +282,7 @@ Als een grafiek actief is en streamt vanuit een camera, wordt de verbinding behe
 
 Live video analyse bewaakt of biedt geen hardware-bron bewaking. Ontwikkel aars moeten de bewakings oplossingen voor hardwarefabrikanten gebruiken. Als u echter Kubernetes-containers gebruikt, kunt u het apparaat bewaken met behulp van het [Kubernetes-dash board](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
-gRPC in .NET core-documenten delen ook waardevolle informatie over [Best practices voor prestaties](https://docs.microsoft.com/aspnet/core/grpc/performance?view=aspnetcore-3.1&preserve-view=true) en [taak verdeling](https://docs.microsoft.com/aspnet/core/grpc/performance?view=aspnetcore-3.1#load-balancing&preserve-view=true).  
+gRPC in .NET core-documenten delen ook waardevolle informatie over [Best practices voor prestaties](/aspnet/core/grpc/performance?preserve-view=true&view=aspnetcore-3.1) en [taak verdeling](/aspnet/core/grpc/performance?preserve-view=true&view=aspnetcore-3.1#load-balancing).  
 
 ### <a name="troubleshooting-an-inference-server-when-it-does-not-receive-any-frames-and-you-are-receiving-an-unknown-protocol-error"></a>Problemen met een Afleidings Server oplossen wanneer deze geen frames ontvangt en u ontvangt, een ' onbekende ' protocol fout 
 
@@ -296,7 +296,7 @@ Er zijn verschillende dingen die u kunt doen om meer informatie over het problee
    ```
 
    Als met de opdracht een korte teken reeks van onsamenhangende tekst wordt uitgevoerd, heeft Telnet een verbinding met de server voor het afwijzen van de interferentie kunnen openen en wordt een binair gRPC-kanaal geopend. Als u dit niet ziet, wordt een netwerk fout door Telnet gerapporteerd. 
-* U kunt in de inleidende server extra logboek registratie inschakelen in de gRPC-bibliotheek. Dit kan extra informatie geven over het gRPC-kanaal zelf. Dit is afhankelijk van taal. Dit zijn de instructies voor [C#](https://docs.microsoft.com/aspnet/core/grpc/diagnostics?view=aspnetcore-3.1&preserve-view=true). 
+* U kunt in de inleidende server extra logboek registratie inschakelen in de gRPC-bibliotheek. Dit kan extra informatie geven over het gRPC-kanaal zelf. Dit is afhankelijk van taal. Dit zijn de instructies voor [C#](/aspnet/core/grpc/diagnostics?preserve-view=true&view=aspnetcore-3.1). 
 
 ### <a name="picking-more-images-from-buffer-of-grpc-without-sending-back-result-for-first-buffer"></a>Meerdere installatie kopieën uit de buffer van gRPC verzamelen zonder het terugsturen van het resultaat voor de eerste buffer
 

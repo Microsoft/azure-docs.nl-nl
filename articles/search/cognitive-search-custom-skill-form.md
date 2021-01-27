@@ -8,12 +8,12 @@ ms.author: pafarley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 58f1c2621165a7074c04752832c6560b2fd3e423
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a3b073cdb90e0c427bfbca15c1440b9122672610
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011962"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880132"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Voor beeld: een aangepaste vaardigheid voor het herkennen van een formulier maken
 
@@ -30,7 +30,7 @@ In dit voor beeld van Azure Cognitive Search vaardig heden leert u hoe u een aan
 
 ## <a name="train-your-model"></a>Uw model trainen
 
-U moet een model voor formulier herkenning trainen met uw invoer formulieren voordat u deze vaardigheid gebruikt. Volg de [krul Snelstartgids](../cognitive-services/form-recognizer/quickstarts/curl-train-extract.md) voor meer informatie over het trainen van een model. U kunt gebruikmaken van de voorbeeld formulieren in die Snelstartgids of u kunt uw eigen gegevens gebruiken. Wanneer het model is getraind, kopieert u de ID-waarde naar een veilige locatie.
+U moet een model voor formulier herkenning trainen met uw invoer formulieren voordat u deze vaardigheid gebruikt. Volg de [krul Snelstartgids](../cognitive-services/form-recognizer/quickstarts/client-library.md?pivots=programming-language-rest-api) voor meer informatie over het trainen van een model. U kunt gebruikmaken van de voorbeeld formulieren in die Snelstartgids of u kunt uw eigen gegevens gebruiken. Wanneer het model is getraind, kopieert u de ID-waarde naar een veilige locatie.
 
 ## <a name="set-up-the-custom-skill"></a>De aangepaste vaardigheid instellen
 
@@ -113,7 +113,7 @@ Wanneer u tevreden bent met het functie gedrag, kunt u het publiceren.
 
 1. Klik in de **Solution Explorer** in Visual Studio met de rechter muisknop op het project en selecteer **publiceren**. Kies **nieuwe**  >  **publicatie** maken.
 1. Als u Visual Studio nog niet hebt verbonden met uw Azure-account, selecteert u **een account toevoegen....**
-1. Volg de aanwijzingen op het scherm. Geef een unieke naam op voor uw app service, het Azure-abonnement, de resource groep, het hosting plan en het opslag account dat u wilt gebruiken. U kunt een nieuwe resource groep, een nieuw hosting plan en een nieuw opslag account maken als u deze nog niet hebt. Wanneer u klaar bent, selecteert u **maken**.
+1. Volg de aanwijzingen op het scherm. Geef een unieke naam op voor uw app service, het Azure-abonnement, de resource groep, het hosting plan en het opslag account dat u wilt gebruiken. U kunt een nieuwe resource groep, een nieuw hosting plan en een nieuw opslag account maken als u deze nog niet hebt. Wanneer u klaar bent, selecteert u **Maken**.
 1. Nadat de implementatie is voltooid, ziet u de URL van de site. Deze URL is het adres van uw functie-app in Azure. Sla het bestand op een tijdelijke locatie op.
 1. Navigeer in het [Azure Portal](https://portal.azure.com)naar de resource groep en zoek naar de `AnalyzeForm` functie die u hebt gepubliceerd. Onder de sectie **beheren** ziet u de host-sleutels. Kopieer de *standaardhosts* sleutel en sla deze op een tijdelijke locatie op.
 

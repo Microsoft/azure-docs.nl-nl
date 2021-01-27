@@ -1,24 +1,8 @@
 ---
-title: Gebeurtenissen van Azure Media Services opslaan in Azure Log Analytics
-titleSuffix: Azure Media Services
-description: Lees hoe u gebeurtenissen van Azure Media Services opslaat in Azure Log Analytics.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: tutorial
-ms.date: 08/24/2020
-ms.author: inhenkel
-ms.openlocfilehash: cc3060c9253b23b97089ea35625aceb26737baba
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016992"
+Titel: Azure Media Services gebeurtenissen opslaan in azure Log Analytics: Azure Media Services beschrijving: informatie over het opslaan van Azure Media Services gebeurtenissen in azure Log Analytics.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' MS. service: Media-Services MS. workload: MS. topic: zelf studie MS. date: 08/24/2020 MS. Author: inhenkel
 ---
+
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Zelfstudie: Gebeurtenissen van Azure Media Services opslaan in Azure Log Analytics
 
 ## <a name="azure-media-services-events"></a>Gebeurtenissen van Azure Media Services

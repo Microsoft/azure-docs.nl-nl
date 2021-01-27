@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: eb31bb09c1e09e4799715fc5a1cbca4b216b28a2
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 469d7ba9e86751312ebf6a6c82b35f065ee6cb50
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922957"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880369"
 ---
 # <a name="connect-a-vpn-gateway-virtual-network-gateway-to-virtual-wan"></a>Een VPN Gateway (virtuele netwerk gateway) verbinden met een virtueel WAN
 
@@ -83,7 +83,7 @@ In deze sectie downloadt u het VPN-configuratie bestand voor elk van de sites di
 
 1. Selecteer boven aan de pagina virtuele WAN **-VPN-sites** de **site** en selecteer vervolgens **site-naar-site-VPN-configuratie downloaden**. Azure maakt een configuratie bestand met de instellingen.
 
-   ![Scherm opname van de pagina ' VPN-sites ' met de actie ' site-naar-site-VPN-configuratie downloaden ' geselecteerd.](./media/connect-virtual-network-gateway-vwan/download.png "downloadenen")
+   ![Scherm opname van de pagina ' VPN-sites ' met de actie ' site-naar-site-VPN-configuratie downloaden ' geselecteerd.](./media/connect-virtual-network-gateway-vwan/download.png "downloaden")
 2. Down load en open het configuratie bestand.
 3. Herhaal deze stappen voor de tweede site. Zodra u beide configuratie bestanden hebt geopend, kunt u door gaan naar de volgende sectie.
 
@@ -91,7 +91,7 @@ In deze sectie downloadt u het VPN-configuratie bestand voor elk van de sites di
 
 In deze sectie maakt u twee Azure VPN Gateway lokale netwerk gateways. De configuratie bestanden uit de vorige stap bevatten de configuratie-instellingen van de gateway. Gebruik deze instellingen om de Azure VPN Gateway lokale netwerk gateways te maken en te configureren.
 
-1. Maak de lokale netwerk gateway met behulp van deze instellingen. Voor informatie over het maken van een VPN Gateway lokale netwerk gateway raadpleegt u het VPN Gateway artikel [een lokale netwerk gateway maken](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway).
+1. Maak de lokale netwerk gateway met behulp van deze instellingen. Voor informatie over het maken van een VPN Gateway lokale netwerk gateway raadpleegt u het VPN Gateway artikel [een lokale netwerk gateway maken](../vpn-gateway/tutorial-site-to-site-portal.md#LocalNetworkGateway).
 
    * **IP-adres** : gebruik het IP-adres van de Instance0 dat wordt weer gegeven voor *gatewayconfiguration* uit het configuratie bestand.
    * **BGP** : als de verbinding via BGP wordt uitgevoerd, selecteert u **BGP-instellingen configureren** en voert u het ASN ' 65515 ' in. Voer het IP-adres van de BGP-peer in. Gebruik ' Instance0 BgpPeeringAddresses ' voor *gatewayconfiguration* van het configuratie bestand.
@@ -105,7 +105,7 @@ In deze sectie maakt u twee Azure VPN Gateway lokale netwerk gateways. De config
 
 ## <a name="5-create-connections"></a><a name="createlocalgateways"></a>5. verbindingen maken
 
-In deze sectie maakt u een verbinding tussen de VPN Gateway lokale netwerk gateways en de gateway van het virtuele netwerk. Zie [Configure a Connection (een verbinding configureren](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#CreateConnection)) voor stappen voor het maken van een VPN gateway verbinding.
+In deze sectie maakt u een verbinding tussen de VPN Gateway lokale netwerk gateways en de gateway van het virtuele netwerk. Zie [Configure a Connection (een verbinding configureren](../vpn-gateway/tutorial-site-to-site-portal.md#CreateConnection)) voor stappen voor het maken van een VPN gateway verbinding.
 
 1. Navigeer in de portal naar de gateway van het virtuele netwerk en klik op **verbindingen**. Klik bovenaan de pagina Verbindingen op **+ Toevoegen** om de pagina **Verbinding toevoegen** te openen.
 2. Configureer op de pagina **verbinding toevoegen** de volgende waarden voor de verbinding:

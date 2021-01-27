@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: imaging
 ms.reviewer: danis
-ms.openlocfilehash: 02ce065c9eecf4b4bf616e40913fc5abd319c5a8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 4714d9e089094e8990ac71d94107a20e0b7be776
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442300"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876306"
 ---
 # <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery-by-using-azure-cli"></a>Voor beeld: een Linux-installatie kopie maken en deze distribueren naar een gedeelde installatie kopie galerie met behulp van Azure CLI
 
-In dit artikel wordt beschreven hoe u de opbouw functie voor Azure-installatie kopieën en de Azure CLI kunt gebruiken om een installatie kopie versie te maken in een [Galerie met gedeelde afbeeldingen](../windows/shared-image-galleries.md)en vervolgens de installatie kopie wereld wijd te distribueren. U kunt dit ook doen met behulp van [Azure PowerShell](../windows/image-builder-gallery.md).
+In dit artikel wordt beschreven hoe u de opbouw functie voor Azure-installatie kopieën en de Azure CLI kunt gebruiken om een installatie kopie versie te maken in een [Galerie met gedeelde afbeeldingen](../shared-image-galleries.md)en vervolgens de installatie kopie wereld wijd te distribueren. U kunt dit ook doen met behulp van [Azure PowerShell](../windows/image-builder-gallery.md).
 
 
 Er wordt een voor beeld van een JSON-sjabloon gebruikt voor het configureren van de installatie kopie. Het JSON-bestand dat we gebruiken, is hier: [helloImageTemplateforSIG.jsop](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Linux_Shared_Image_Gallery_Image/helloImageTemplateforSIG.json). 
@@ -197,7 +197,7 @@ az resource invoke-action \
 Het maken van de installatie kopie en het repliceren naar beide regio's kan enige tijd duren. Wacht tot dit onderdeel is voltooid voordat u doorgaat met het maken van een virtuele machine.
 
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Maak een virtuele machine op basis van de installatie kopie versie die is gemaakt door de opbouw functie voor installatie kopieën van Azure.
 
@@ -298,4 +298,4 @@ az group delete -n $sigResourceGroup -y
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de [Galerie met gedeelde installatie kopieën van Azure](shared-image-galleries.md).
+Meer informatie over de [Galerie met gedeelde installatie kopieën van Azure](../shared-image-galleries.md).

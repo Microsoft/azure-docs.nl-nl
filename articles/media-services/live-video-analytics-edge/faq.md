@@ -3,12 +3,12 @@ title: Veelgestelde vragen over live video Analytics op IoT Edge-Azure
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over live video Analytics op IoT Edge.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: f9ef26b9b64bd8a0bad7c83960f2d235ed6461cb
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 0cb378bf614582070dd1bdd0a11706b26437af53
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762874"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880047"
 ---
 # <a name="live-video-analytics-on-iot-edge-faq"></a>Veelgestelde vragen over live video Analytics op IoT Edge
 
@@ -61,7 +61,7 @@ Ja. U kunt vastgelegde assets streamen zoals andere activa in Azure Media Servic
 
 **Kan ik de standaard functies voor beveiliging van inhoud en DRM van Media Services op een gearchiveerde Asset gebruiken?**
 
-Ja. Alle standaard functies voor dynamische versleuteling van inhoud en Digital Rights Management (DRM) zijn beschikbaar voor het gebruik van assets die zijn vastgelegd in een media grafiek.
+Ja. Alle standaard functies voor dynamische versleuteling van inhoud en digital rights management (DRM) zijn beschikbaar voor het gebruik van assets die zijn vastgelegd in een media grafiek.
 
 **Welke spelers kan ik gebruiken om inhoud van de geregistreerde assets weer te geven?**
 
@@ -230,7 +230,7 @@ Ja. U kunt metrische gegevens over Prometheus gebruiken en deze publiceren naar 
 
 **Kan ik Azure Monitor gebruiken om de status, metrische gegevens en prestaties van mijn media grafieken in de Cloud of aan de rand weer te geven?**
 
-Ja, we ondersteunen deze methode. Zie [Azure monitor metrische gegevens overzicht](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics)voor meer informatie.
+Ja, we ondersteunen deze methode. Zie [Azure monitor metrische gegevens overzicht](../../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
 
 **Zijn er hulpprogram ma's waarmee u de Media Services IoT Edge module gemakkelijker kunt bewaken?**
 

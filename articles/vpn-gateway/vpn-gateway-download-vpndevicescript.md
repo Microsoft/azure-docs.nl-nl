@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 70d9a8069979a299ad3031de37c525438ab0159d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2593c656e17310c5afb4a897b94cc8c12a618f0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89394598"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879491"
 ---
 # <a name="download-vpn-device-configuration-scripts-for-s2s-vpn-connections"></a>Configuratie scripts voor VPN-apparaten voor S2S VPN-verbindingen downloaden
 
@@ -34,7 +34,7 @@ Een cross-premises VPN-verbinding bestaat uit een Azure VPN-gateway, een on-prem
 3. Een Azure VPN-verbinding tussen de Azure VPN-gateway en de lokale netwerk gateway maken en configureren
 4. Configureer het on-premises VPN-apparaat dat wordt weer gegeven door de lokale netwerk gateway om de daad werkelijke S2S VPN-tunnel met de Azure VPN-gateway in te stellen
 
-U kunt de stappen 1 tot en met 3 volt ooien met behulp van Azure [Portal](vpn-gateway-howto-site-to-site-resource-manager-portal.md), [Power shell](vpn-gateway-create-site-to-site-rm-powershell.md)of [cli](vpn-gateway-howto-site-to-site-resource-manager-cli.md). De laatste stap omvat het configureren van de on-premises VPN-apparaten buiten Azure. Met deze functie kunt u een configuratie script voor uw VPN-apparaat downloaden met de overeenkomstige waarden van de Azure VPN-gateway, het virtuele netwerk en on-premises netwerk adres voorvoegsels en VPN-verbindings eigenschappen, enzovoort. U kunt het script als uitgangs punt gebruiken of het script rechtstreeks Toep assen op uw on-premises VPN-apparaten via de configuratie console.
+U kunt de stappen 1 tot en met 3 volt ooien met behulp van Azure [Portal](./tutorial-site-to-site-portal.md), [Power shell](vpn-gateway-create-site-to-site-rm-powershell.md)of [cli](vpn-gateway-howto-site-to-site-resource-manager-cli.md). De laatste stap omvat het configureren van de on-premises VPN-apparaten buiten Azure. Met deze functie kunt u een configuratie script voor uw VPN-apparaat downloaden met de overeenkomstige waarden van de Azure VPN-gateway, het virtuele netwerk en on-premises netwerk adres voorvoegsels en VPN-verbindings eigenschappen, enzovoort. U kunt het script als uitgangs punt gebruiken of het script rechtstreeks Toep assen op uw on-premises VPN-apparaten via de configuratie console.
 
 > [!IMPORTANT]
 > * De syntaxis voor elk configuratie script voor VPN-apparaten wijkt af en is sterk afhankelijk van de modellen en firmware versies. U kunt het model van uw apparaat en de versie gegevens van de beschik bare sjablonen best Eden.
@@ -49,7 +49,7 @@ U kunt de stappen 1 tot en met 3 volt ooien met behulp van Azure [Portal](vpn-ga
 
 Maak een Azure VPN-gateway, een lokale netwerk gateway en een verbindings bron die de twee verbindt. Op de volgende pagina vindt u instructies voor het uitvoeren van de stappen:
 
-* [Een site-naar-site-verbinding maken in Azure Portal](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+* [Een site-naar-site-verbinding maken in Azure Portal](./tutorial-site-to-site-portal.md)
 
 Zodra de verbindings bron is gemaakt, volgt u de onderstaande instructies om de configuratie scripts voor VPN-apparaten te downloaden:
 
@@ -99,4 +99,4 @@ Nadat u het configuratie script hebt gedownload en gevalideerd, is de volgende s
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door met het configureren van de [site-naar-site-verbinding](vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+Ga door met het configureren van de [site-naar-site-verbinding](./tutorial-site-to-site-portal.md).

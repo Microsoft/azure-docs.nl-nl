@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 52cb701312f598b1b8492226709a7d2767db9600
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5c5166785ad8c82c114fb7193cd49716536b408
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187265"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896593"
 ---
 # <a name="start-a-runbook-in-azure-automation"></a>Start a runbook in Azure Automation (Een runbook starten in Azure Automation)
 
@@ -77,7 +77,7 @@ Smith
 
 Als de para meter een matrix is, zoals [array] of [string []], kunt u de volgende JSON-indeling gebruiken om een lijst met waarden te verzenden: *[waarde1, Value2, Value3]*. Deze waarden moeten eenvoudige typen zijn.
 
-Bekijk het volgende testrunbook dat de parameter *user*accepteert.
+Bekijk het volgende testrunbook dat de parameter *user* accepteert.
 
 ```powershell
 Workflow Test-Parameters
@@ -138,20 +138,20 @@ jsmith
 ## <a name="start-a-runbook-with-the-azure-portal"></a>Een runbook starten met de Azure Portal
 
 1. Selecteer in de Azure Portal **Automation** en klik vervolgens op de naam van een Automation-account.
-2. Selecteer **Runbooks**in het menu hub.
+2. Selecteer **Runbooks** in het menu hub.
 3. Selecteer op de pagina Runbooks een runbook en klik vervolgens op **starten**.
 4. Als het runbook para meters heeft, wordt u gevraagd waarden op te geven voor elke para meter in een tekstvak. Zie [Runbook para meters](#work-with-runbook-parameters)voor meer informatie over para meters.
 5. In het taak venster kunt u de status van de runbook-taak bekijken.
 
 ## <a name="start-a-runbook-with-powershell"></a>Een runbook starten met Power shell
 
-U kunt de [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) gebruiken om een runbook te starten met Windows Power shell. Met de volgende voorbeeld code wordt een runbook **met de naam test-runbook**gestart.
+U kunt de [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook) gebruiken om een runbook te starten met Windows Power shell. Met de volgende voorbeeld code wordt een runbook **met de naam test-runbook** gestart.
 
 ```azurepowershell-interactive
 Start-AzAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -ResourceGroupName "ResourceGroup01"
 ```
 
-`Start-AzAutomationRunbook` retourneert een taak object dat u kunt gebruiken om de status bij te houden zodra het runbook is gestart. U kunt dit taak object vervolgens gebruiken met [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0) om de status van de taak te bepalen en [Get-AzAutomationJobOutput](/powershell/module/az.automation/get-azautomationjoboutput?view=azps-3.7.0) om de uitvoer op te halen. In het volgende voor beeld wordt een runbook met de naam **test-runbook**gestart, wordt gewacht tot het is voltooid en wordt vervolgens de uitvoer weer gegeven.
+`Start-AzAutomationRunbook` retourneert een taak object dat u kunt gebruiken om de status bij te houden zodra het runbook is gestart. U kunt dit taak object vervolgens gebruiken met [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob) om de status van de taak te bepalen en [Get-AzAutomationJobOutput](/powershell/module/az.automation/get-azautomationjoboutput) om de uitvoer op te halen. In het volgende voor beeld wordt een runbook met de naam **test-runbook** gestart, wordt gewacht tot het is voltooid en wordt vervolgens de uitvoer weer gegeven.
 
 ```azurepowershell-interactive
 $runbookName = "Test-Runbook"

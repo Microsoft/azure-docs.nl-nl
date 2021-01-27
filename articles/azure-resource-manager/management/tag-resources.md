@@ -4,12 +4,12 @@ description: Laat zien hoe u Tags toepast om Azure-resources te organiseren voor
 ms.topic: conceptual
 ms.date: 01/04/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3d1161eb99e1145c7a003326310db1922ec3d55c
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: fb93673b643fd13efe9ffea148c5fb1d072f9e05
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881745"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896220"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Tags gebruiken om uw Azure-resources en-beheer hiërarchie te organiseren
 
@@ -697,7 +697,7 @@ Labels die worden toegepast op de resource groep of het abonnement, worden niet 
 
 U kunt tags gebruiken om uw factureringsgegevens te groeperen. Als u bijvoorbeeld meerdere VM's voor verschillende organisaties uitvoert, kunt u de tags gebruiken om het gebruiker te groeperen op basis van de kostenplaats. U kunt ook tags gebruiken om de kosten te categoriseren op basis van de runtimeomgeving, zoals de facturering van het gebruik voor VM's die worden uitgevoerd in de productieomgeving.
 
-U kunt informatie over Tags ophalen via de [Azure resource usage-en rate-api's](../../cost-management-billing/manage/usage-rate-card-overview.md) of het bestand met door komma's gescheiden waarden (CSV). U downloadt het gebruiks bestand van de Azure Portal. Zie uw Azure-factuur [en dagelijks gebruiks gegevens downloaden of weer geven](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md)voor meer informatie. Selecteer **versie 2** bij het downloaden van het gebruiks bestand van de Azure-Accountcentrum. Voor services die Tags ondersteunen met facturering, worden de tags weer gegeven in de kolom **Tags** .
+U kunt informatie over Tags ophalen door het gebruiks bestand te downloaden, een bestand met door komma's gescheiden waarden (CSV) dat beschikbaar is via de Azure Portal. Zie uw Azure-factuur [en dagelijks gebruiks gegevens downloaden of weer geven](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md)voor meer informatie. Selecteer **versie 2** bij het downloaden van het gebruiks bestand van de Azure-Accountcentrum. Voor services die Tags ondersteunen met facturering, worden de tags weer gegeven in de kolom **Tags** .
 
 Zie voor REST API bewerkingen de [Naslag informatie voor Azure billing rest API](/rest/api/billing/).
 

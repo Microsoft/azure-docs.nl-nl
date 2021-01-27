@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 11/11/2020
 ms.author: cynthn
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 48f906bf0025bda03df226f32db1a0d6afdb9cee
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 32d15730557c96362602b5e324254c76637ecb55
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94595023"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897439"
 ---
 # <a name="how-to-tag-a-vm-using-the-cli"></a>Een virtuele machine labelen met behulp van de CLI
 
@@ -46,8 +46,7 @@ az vm update \
 
 Nu we tags hebben toegepast op onze resources Azure CLI en de portal, gaan we de gebruiks gegevens bekijken om de tags in de facturerings portal te bekijken.
 
-
-**Volgende stappen**
+### <a name="next-steps"></a>Volgende stappen
 
 - Zie [Azure Resource Manager Overview](../azure-resource-manager/management/overview.md) en [Tags gebruiken om uw Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)voor meer informatie over het coderen van uw Azure-resources.
-- Als u wilt zien hoe Tags u kunnen helpen bij het beheren van uw gebruik van Azure-resources, raadpleegt u [inzicht in uw Azure-factuur](../cost-management-billing/understand/review-individual-bill.md) en [krijgt u inzicht in uw Microsoft Azure Resource verbruik](../cost-management-billing/manage/usage-rate-card-overview.md).
+- Zie [informatie over uw Azure-factuur](../cost-management-billing/understand/review-individual-bill.md)als u wilt weten hoe Tags u kunnen helpen bij het beheren van uw gebruik van Azure-resources.

@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 7ebe56b95b0c4b938c31c0ece04d27fd1b234b05
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1861a4e75f34cfd7fe386c094cce3a638b3e1a1e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729909"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880790"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Services die beheerde identiteiten voor Azure-resources ondersteunen
 
@@ -61,7 +61,7 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure-app configurati
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure App Service te configureren (in regio's waar beschikbaar):
 
-- [Azure Portal](../../app-service/overview-managed-identity.md#using-the-azure-portal)
+- [Azure-portal](../../app-service/overview-managed-identity.md#using-the-azure-portal)
 - [Azure-CLI](../../app-service/overview-managed-identity.md#using-the-azure-cli)
 - [Azure PowerShell](../../app-service/overview-managed-identity.md#using-azure-powershell)
 - [Azure Resource Manager-sjabloon](../../app-service/overview-managed-identity.md#using-an-azure-resource-manager-template)
@@ -159,8 +159,6 @@ Raadpleeg de volgende lijst voor het configureren van een beheerde identiteit vo
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
 - [SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
 
-
-
 ### <a name="azure-event-grid"></a>Azure Event Grid
 
 Type beheerde identiteit |Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
@@ -168,13 +166,12 @@ Type beheerde identiteit |Alles algemeen beschikbaar<br>Wereld wijde Azure-regio
 | Door het systeem toegewezen | Preview | Preview | Niet beschikbaar | Preview |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar  | Niet beschikbaar  | Niet beschikbaar |
 
+### <a name="azure-firewall-policy"></a>Azure Firewall beleid
 
-
-
-
-
-
-
+Type beheerde identiteit |Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Door het systeem toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+| Door de gebruiker toegewezen | Preview | Niet beschikbaar  | Niet beschikbaar  | Niet beschikbaar |
 
 ### <a name="azure-functions"></a>Azure Functions
 
@@ -185,7 +182,7 @@ Type beheerde identiteit |Alles algemeen beschikbaar<br>Wereld wijde Azure-regio
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Functions te configureren (in regio's waar beschikbaar):
 
-- [Azure Portal](../../app-service/overview-managed-identity.md#using-the-azure-portal)
+- [Azure-portal](../../app-service/overview-managed-identity.md#using-the-azure-portal)
 - [Azure-CLI](../../app-service/overview-managed-identity.md#using-the-azure-cli)
 - [Azure PowerShell](../../app-service/overview-managed-identity.md#using-azure-powershell)
 - [Azure Resource Manager-sjabloon](../../app-service/overview-managed-identity.md#using-an-azure-resource-manager-template)
@@ -199,7 +196,7 @@ Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regi
 
 Raadpleeg de volgende lijst voor het configureren van een beheerde identiteit voor Azure Data Factory v2 (in regio's waar beschikbaar):
 
-- [Azure Portal](../../iot-hub/virtual-network-support.md#turn-on-managed-identity-for-iot-hub)
+- [Azure-portal](../../iot-hub/virtual-network-support.md#turn-on-managed-identity-for-iot-hub)
 
 ### <a name="azure-importexport"></a>Azure Import/Export
 
@@ -229,7 +226,7 @@ Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regi
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Logic Apps te configureren (in regio's waar beschikbaar):
 
-- [Azure Portal](../../logic-apps/create-managed-service-identity.md#enable-system-assigned-identity-in-azure-portal)
+- [Azure-portal](../../logic-apps/create-managed-service-identity.md#enable-system-assigned-identity-in-azure-portal)
 - [Azure Resource Manager-sjabloon](../../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 
 ### <a name="azure-machine-learning"></a>Azure Machine Learning

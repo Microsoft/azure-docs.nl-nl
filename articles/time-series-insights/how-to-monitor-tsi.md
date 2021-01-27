@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
-ms.openlocfilehash: cff0c54cf5aa8854273be9502f5cf6df4e0a055b
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 3fc880e238c1c9f45c663975470a6ab57267a648
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632737"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879541"
 ---
 # <a name="monitoring-time-series-insights"></a>Bewakings Time Series Insights
 
@@ -27,9 +27,9 @@ De pagina **overzicht** in de Azure portal voor elke time series Insights omgevi
 
 ## <a name="what-is-azure-monitor"></a>Wat is Azure Monitor
 
-Time Series Insights maakt bewakings gegevens met behulp van [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview). Dit is een volledige stack bewakings service in azure met een volledige set functies voor het bewaken van uw Azure-resources naast bronnen in andere Clouds en on-premises.
+Time Series Insights maakt bewakings gegevens met behulp van [Azure monitor](../azure-monitor/overview.md). Dit is een volledige stack bewakings service in azure met een volledige set functies voor het bewaken van uw Azure-resources naast bronnen in andere Clouds en on-premises.
 
-Begin met het artikel [bewaking van Azure-resources met Azure monitor](https://docs.microsoft.com/azure/azure-monitor/insights/monitor-azure-resource), waarin de volgende concepten worden beschreven:
+Begin met het artikel [bewaking van Azure-resources met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md), waarin de volgende concepten worden beschreven:
 
 - Wat is Azure Monitor?
 - Kosten die zijn gekoppeld aan bewaking
@@ -63,7 +63,7 @@ U kunt Logboeken verzamelen uit de volgende categorieën voor Azure Time Series 
 
 ## <a name="analyzing-metrics"></a>Metrische gegevens analyseren
 
-U kunt metrische gegevens voor Azure Time Series Insights analyseren, samen met metrische gegevens uit andere Azure-Services, door metrische gegevens te openen in het menu Azure Monitor. Zie [aan de slag met Azure Metrics Explorer](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started) voor meer informatie over het gebruik van dit hulp programma.
+U kunt metrische gegevens voor Azure Time Series Insights analyseren, samen met metrische gegevens uit andere Azure-Services, door metrische gegevens te openen in het menu Azure Monitor. Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma.
 
 Zie [Monitoring Azure time series Insights data Reference](how-to-monitor-tsi-reference.md#metrics) (Engelstalig) voor een lijst met de metrische gegevens van het platform.
 
@@ -88,7 +88,7 @@ Azure Time Series Insights slaat gegevens op in de volgende tabellen.
 |:---|:---|
 | TSIIngress | De tabel waarin gegevens worden opgeslagen vanuit de categorie binnenkomend. In de categorie ingang worden fouten bijgehouden die optreden in de ingangs pijplijn. Deze categorie bevat fouten die optreden bij het ontvangen van gebeurtenissen (zoals fouten bij het maken van verbinding met een gebeurtenis bron) en het verwerken van gebeurtenissen (zoals fouten bij het parseren van een gebeurtenis lading).
 
-Als u gegevens wilt omleiden naar Azure Monitor logboeken, moet u een diagnostische instelling maken om bron Logboeken of platform metrieken te verzenden naar een Log Analytics-werk ruimte. Zie [verzameling en route ring](https://docs.microsoft.com/azure/iot-hub/monitor-iot-hub#collection-and-routing)voor meer informatie.
+Als u gegevens wilt omleiden naar Azure Monitor logboeken, moet u een diagnostische instelling maken om bron Logboeken of platform metrieken te verzenden naar een Log Analytics-werk ruimte. Zie [verzameling en route ring](../iot-hub/monitor-iot-hub.md#collection-and-routing)voor meer informatie.
 
 ## <a name="sample-queries"></a>Voorbeeld Query's
 
@@ -115,7 +115,7 @@ Hieronder vindt u query's die u kunt gebruiken om uw Azure Time Series Insights-
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-overview), [Logboeken](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log)en het [activiteiten logboek](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-alerts). Verschillende soorten waarschuwingen hebben voor delen en nadelen.
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/platform/alerts-metric-overview.md), [Logboeken](../azure-monitor/platform/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen.
 
 Wanneer u een waarschuwings regel maakt op basis van de metrische gegevens van het platform, moet u er rekening mee houden dat voor Time Series Insights-platform metrische gegevens die worden verzameld in aantal eenheden, sommige aggregaties mogelijk niet beschikbaar of bruikbaar zijn.
 

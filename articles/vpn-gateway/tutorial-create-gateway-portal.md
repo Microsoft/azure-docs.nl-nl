@@ -6,12 +6,12 @@ ms.author: cherylmc
 ms.service: vpn-gateway
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 933b71d75eacdca015a38524870f25a345e76d22
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: 820482a268af038737557c517ccda086cd65d943
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746162"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880556"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-azure-portal"></a>Zelfstudie: Een VPN-gateway maken en beheren met behulp van Azure Portal
 
@@ -103,7 +103,7 @@ Als u deze toepassing niet wilt blijven gebruiken of als u naar de volgende zelf
 Zodra u een VPN-gateway hebt, kunt u verbindingen configureren. De onderstaande artikelen helpen u bij het maken van een aantal van de meest voorkomende configuraties:
 
 > [!div class="nextstepaction"]
-> [Site-naar-site-VPN-verbindingen](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+> [Site-naar-site-VPN-verbindingen](./tutorial-site-to-site-portal.md)
 
 > [!div class="nextstepaction"]
 > [Punt-naar-site-VPN-verbindingen](vpn-gateway-howto-point-to-site-resource-manager-portal.md)

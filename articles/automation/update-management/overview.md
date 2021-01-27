@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 01/13/2021
+ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: d66d4d32c788317d8b0781f9f24120fbce2f6f8f
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 718e812a8193797ad350fa61444bb05fe5a4b724
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185611"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896898"
 ---
 # <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
@@ -91,8 +91,8 @@ De volgende tabel geeft een lijst van besturings systemen die niet worden onders
 |Besturingssysteem  |Notities  |
 |---------|---------|
 |Windows-client     | Client besturingssystemen (zoals Windows 7 en Windows 10) worden niet ondersteund.<br> Voor Azure Windows virtueel bureau blad (WVD), de aanbevolen methode<br> voor het beheren van updates is [micro soft Endpoint Configuration Manager](../../virtual-desktop/configure-automatic-updates.md) voor patch beheer voor Windows 10-client computers. |
-|Windows Server 2016 Nano Server     | Niet ondersteund.       |
-|Azure Kubernetes-service knooppunten | Niet ondersteund. Gebruik het patch proces dat wordt beschreven in [beveiligings-en kernel-updates Toep assen op Linux-knoop punten in azure Kubernetes service (AKS)](../../aks/node-updates-kured.md)|
+|Windows Server 2016 Nano Server     | Wordt niet ondersteund.       |
+|Azure Kubernetes-service knooppunten | Wordt niet ondersteund. Gebruik het patch proces dat wordt beschreven in [beveiligings-en kernel-updates Toep assen op Linux-knoop punten in azure Kubernetes service (AKS)](../../aks/node-updates-kured.md)|
 
 ### <a name="system-requirements"></a>Systeemvereisten
 
@@ -161,7 +161,7 @@ Zie [Connect Operations Manager to Azure monitor logs](../../azure-monitor/platf
 > [!NOTE]
 > Updatebeheer om computers met de Log Analytics agent volledig te beheren, moet u bijwerken naar de Log Analytics agent voor Windows of de Log Analytics-agent voor Linux. Zie [een Operations Manager-agent bijwerken](/system-center/scom/deploy-upgrade-agents)voor meer informatie over het bijwerken van de agent. In omgevingen waarin Operations Manager wordt gebruikt, moet u System Center Operations Manager 2012 R2 UR 14 of hoger uitvoeren.
 
-## <a name="data-collection"></a>Gegevensverzameling
+## <a name="data-collection"></a>Gegevens verzamelen
 
 ### <a name="supported-sources"></a>Ondersteunde bronnen
 
@@ -185,16 +185,7 @@ Het gemiddelde gegevens gebruik door Azure Monitor logboeken voor een machine me
 
 ## <a name="network-planning"></a><a name="ports"></a>Netwerkplanning
 
-De volgende adressen zijn specifiek vereist voor Updatebeheer. Communicatie met deze adressen vindt plaats via poort 443.
-
-|Openbare Azure-peering  |Azure Government  |
-|---------|---------|
-|`*.ods.opinsights.azure.com`    | `*.ods.opinsights.azure.us`        |
-|`*.oms.opinsights.azure.com`     | `*.oms.opinsights.azure.us`        |
-|`*.blob.core.windows.net` | `*.blob.core.usgovcloudapi.net`|
-|`*.azure-automation.net` | `*.azure-automation.us`|
-
-Wanneer u beveiligings regels voor een netwerk groep maakt of Azure Firewall configureert om verkeer toe te staan voor de Automation-Service en de Log Analytics-werk ruimte, gebruikt u de [service label](../../virtual-network/service-tags-overview.md#available-service-tags) **GuestAndHybridManagement** en **AzureMonitor**. Dit vereenvoudigt het voortdurend beheer van uw netwerk beveiligings regels. Als u verbinding wilt maken met de Automation-Service van uw Azure-Vm's veilig en privé, raadpleegt u [Azure private link gebruiken](../how-to/private-link-security.md). Zie [Download bare json-bestanden](../../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files)voor informatie over het verkrijgen van de huidige servicetag en bereik gegevens die u wilt opnemen als onderdeel van uw on-premises firewall configuraties.
+Controleer [Azure Automation netwerk configuratie](../automation-network-configuration.md#hybrid-runbook-worker-and-state-configuration) voor gedetailleerde informatie over de poorten, url's en andere netwerk gegevens die nodig zijn voor updatebeheer.
 
 Voor Windows-computers moet u ook verkeer toestaan voor eind punten die vereist zijn voor Windows Update. U kunt een bijgewerkte lijst met vereiste eind punten vinden in [kwesties met betrekking tot http/proxy](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). Als u een lokale [Windows Update server](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment)hebt, moet u ook verkeer toestaan naar de server die is opgegeven in uw [WSUS-sleutel](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
 
@@ -227,11 +218,14 @@ In de volgende tabel worden de ondersteunde classificaties voor Linux-updates ge
 |Andere Updates     | Alle andere updates die niet kritiek zijn of die geen beveiligings updates zijn.        |
 
 >[!NOTE]
->Update classificatie voor Linux-machines is alleen beschikbaar als deze wordt gebruikt in de ondersteunde open bare Cloud regio's van Azure. Wanneer u Updatebeheer gebruikt in de volgende nationale Cloud regio's:
+>Update classificatie voor Linux-machines is alleen beschikbaar als deze wordt gebruikt in ondersteunde open bare Cloud regio's van Azure. Er is geen classificatie van Linux-updates wanneer u Updatebeheer in de volgende nationale Cloud regio's gebruikt:
+>
 >* Azure US Government
 >* 21Vianet in China
 >
-> Er is geen classificatie van Linux-updates en deze worden gerapporteerd in de categorie **andere updates** . Updatebeheer gebruikt gegevens die worden gepubliceerd door de ondersteunde distributies, met name de uitgebrachte [ovaal](https://oval.mitre.org/) (open beveiligings-en evaluatie taal). Omdat Internet toegang is beperkt van deze nationale Clouds, heeft Updatebeheer geen toegang tot deze bestanden en kan deze niet worden gebruikt.
+> In plaats van te worden geclassificeerd, worden updates gerapporteerd onder de categorie **andere updates** .
+>
+> Updatebeheer gebruikt gegevens die worden gepubliceerd door de ondersteunde distributies, met name de uitgebrachte [ovaal](https://oval.mitre.org/) (open beveiligings-en evaluatie taal). Omdat Internet toegang is beperkt van deze nationale Clouds, heeft Updatebeheer geen toegang tot de bestanden.
 
 Voor Linux kan Updatebeheer onderscheid maken tussen essentiële updates en beveiligings updates in de Cloud onder classificatie **beveiliging** en **anderen**, terwijl evaluatie gegevens worden weer gegeven vanwege gegevens verrijking in de Cloud. Voor patching is Updatebeheer afhankelijk van de classificatie gegevens die op de computer beschikbaar zijn. In tegens telling tot andere distributies is CentOS deze informatie niet beschikbaar in de RTM-versie. Als er CentOS machines zijn geconfigureerd voor het retour neren van beveiligings gegevens voor de volgende opdracht, kunt Updatebeheer patch op basis van classificaties.
 

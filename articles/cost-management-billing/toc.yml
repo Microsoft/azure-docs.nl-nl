@@ -4,7 +4,7 @@
   items:
     - name: Wat is Kostenbeheer en facturering?
       href: cost-management-billing-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Beginnen met analyseren van kosten
@@ -393,7 +393,7 @@
     - name: Automatiseringsscenario's voor facturering
       href: manage/cost-management-automation-scenarios.md
     - name: Overzicht van Azure Billing-API
-      href: manage/usage-rate-card-overview.md
+      href: /rest/api/cost-management/retail-prices/azure-retail-prices
     - name: Azure Billing REST API
       href: /rest/api/billing
     - name: Overzicht van Azure Consumption API

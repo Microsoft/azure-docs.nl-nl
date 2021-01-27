@@ -1,6 +1,5 @@
 ---
 title: Gebruik tijd verschuivingen en live uitvoer om video weergave op aanvraag te maken
-titleSuffix: Azure Media Services
 description: In dit artikel wordt beschreven hoe u gebruik kunt maken van tijd verschuivingen en live uitvoer om live streams vast te leggen en op aanvraag af te spelen.
 services: media-services
 documentationcenter: ''
@@ -14,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 11485ebac449cbde0a4f31e2a099a153476577b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5b475f15a5dc751de154965e3d1e78a85fbd4c9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289508"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897863"
 ---
 # <a name="use-time-shifting-and-live-outputs-to-create-on-demand-video-playback"></a>Gebruik tijd verschuivingen en live uitvoer om video weergave op aanvraag te maken
 

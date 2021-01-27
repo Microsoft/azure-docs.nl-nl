@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Hybrid Runbook Worker
 description: Dit artikel bevat een overzicht van de Hybrid Runbook Worker, die u kunt gebruiken om runbooks uit te voeren op computers in uw lokale Data Center of Cloud provider.
 services: automation
 ms.subservice: process-automation
-ms.date: 01/11/2021
+ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: a23d30047a13b1d176b086a9923e140e7f8d3e45
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 7cf18b6b677daaf97d425c86a0cad91b3abcb225
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072136"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896949"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Overzicht van Hybrid Runbook Worker
 
@@ -54,16 +54,7 @@ De aanbevolen installatie methode voor een Windows-machine is het gebruik van ee
 
 ## <a name="network-planning"></a><a name="network-planning"></a>Netwerkplanning
 
-Voor een systeem-en gebruikers Hybrid Runbook Worker om verbinding te maken met Azure Automation, moet deze toegang hebben tot het poort nummer en de Url's die in deze sectie worden beschreven. De werk nemer moet ook toegang hebben tot de [poorten en url's die vereist zijn voor de log Analytics-agent](../azure-monitor/platform/agent-windows.md) om verbinding te maken met de Azure monitor log Analytics-werk ruimte.
-
-De volgende poort en Url's zijn vereist voor de Hybrid Runbook Worker:
-
-* Poort: alleen TCP 443 vereist voor uitgaande internet toegang
-* Globale URL: `*.azure-automation.net`
-* Globale URL van US Gov-Virginia: `*.azure-automation.us`
-* Agent service: `https://<workspaceId>.agentsvc.azure-automation.net`
-
-Als u een Automation-account hebt dat is gedefinieerd voor een specifieke regio, kunt u Hybrid Runbook Worker communicatie beperken tot dat regionale Data Center. Controleer de [DNS-records die door Azure Automation worden gebruikt](how-to/automation-region-dns-records.md) voor de vereiste DNS-records.
+Controleer [Azure Automation netwerk configuratie](automation-network-configuration.md#network-planning-for-hybrid-runbook-worker) voor gedetailleerde informatie over de poorten, url's en andere netwerk gegevens die nodig zijn voor de Hybrid Runbook Worker.
 
 ### <a name="proxy-server-use"></a>Gebruik van proxy server
 
@@ -94,7 +85,7 @@ Azure Automation Hybrid Runbook Worker kan worden gebruikt in Azure Government v
 * [Exclusieve Azure-hosts](../azure-government/documentation-government-impact-level-5.md#azure-dedicated-host), die fysieke servers bieden die kunnen fungeren als host voor een of meer virtuele machines, toegewezen aan één Azure-abonnement.
 
 >[!NOTE]
->Reken isolatie via de Hybrid Runbook Worker rol is beschikbaar voor Clouds van Azure en Amerikaanse overheids instanties. 
+>Reken isolatie via de Hybrid Runbook Worker rol is beschikbaar voor Clouds van Azure en Amerikaanse overheids instanties.
 
 ### <a name="update-management-addresses-for-hybrid-runbook-worker"></a>Updatebeheer adressen voor Hybrid Runbook Worker
 

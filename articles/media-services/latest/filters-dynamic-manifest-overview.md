@@ -1,6 +1,5 @@
 ---
 title: Uw manifesten filteren met behulp van dynamische pakket
-titleSuffix: Azure Media Services
 description: Meer informatie over het maken van filters met behulp van dynamische pakket voor het filteren en selectief streamen van uw manifesten.
 services: media-services
 documentationcenter: ''
@@ -14,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: acb30c1659c4c29e0af83da5594bdd9a7e3465d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3ffdb41752630e0e5e22303ff58ecd798595a890
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89299028"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897659"
 ---
 # <a name="filter-your-manifests-using-dynamic-packager"></a>Uw manifesten filteren met behulp van dynamische pakket
 
@@ -141,7 +140,7 @@ Lees [dit blogbericht](https://azure.microsoft.com/blog/azure-media-services-rel
 
 ## <a name="considerations-and-limitations"></a>Overwegingen en beperkingen
 
-- De waarden voor **forceEndTimestamp**, **presentationWindowDuration**en **liveBackoffDuration** mogen niet worden ingesteld voor een VOD-filter. Ze worden alleen gebruikt voor Live-filter scenario's.
+- De waarden voor **forceEndTimestamp**, **presentationWindowDuration** en **liveBackoffDuration** mogen niet worden ingesteld voor een VOD-filter. Ze worden alleen gebruikt voor Live-filter scenario's.
 - Een dynamisch manifest werkt in GOP terug-grenzen (keyframes), dus het verkleinen van GOP terug nauw keurigheid.
 - U kunt dezelfde filter naam gebruiken voor account-en Asset-filters. Asset filters hebben een hogere prioriteit en vervangen account filters.
 - Als u een filter bijwerkt, kan het tot twee minuten duren voordat het streaming-eind punt de regels vernieuwt. Als u filters hebt gebruikt om de inhoud te leveren (en u hebt de inhoud in de caches van proxy's en CDN-caches opgeslagen), kunnen deze filters worden bijgewerkt als gevolg van fouten in de speler. U wordt aangeraden de cache te wissen na het bijwerken van het filter. Als deze optie niet mogelijk is, kunt u overwegen een ander filter te gebruiken.

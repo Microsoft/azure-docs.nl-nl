@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 9fc5c115486c7cbf84fc0bd98ff7996c674f2e24
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: b27b46c68d018d2ddf79d284b20cc05b51640891
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694821"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880638"
 ---
 # <a name="register-and-scan-azure-blob-storage"></a>Azure Blob Storage registreren en scannen
 
@@ -45,7 +45,7 @@ Wanneer u **beheerde identiteit** kiest om de verbinding in te stellen, moet u e
 1. Stel de **rol** in op **Storage BLOB data Reader** en voer uw Azure controle sfeer liggen-account naam in onder invoervak **selecteren** . Selecteer vervolgens **Opslaan** om deze rol toe te wijzen aan uw Purview-account.
 
 > [!Note]
-> Raadpleeg de stappen in [toegang verlenen tot blobs en wacht rijen met Azure Active Directory](https://docs.microsoft.com/azure/storage/common/storage-auth-aad) voor meer informatie.
+> Raadpleeg de stappen in [toegang verlenen tot blobs en wacht rijen met Azure Active Directory](../storage/common/storage-auth-aad.md) voor meer informatie.
 
 ### <a name="account-key"></a>Account sleutel
 

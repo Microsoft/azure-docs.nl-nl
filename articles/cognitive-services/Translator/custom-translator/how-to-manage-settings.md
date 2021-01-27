@@ -2,19 +2,19 @@
 title: Hoe kunt u instellingen beheren? -Aangepaste vertaler
 titleSuffix: Azure Cognitive Services
 description: Het beheren van instellingen, het maken van de werk ruimte, het delen van de werk ruimte en het beheren van de abonnements sleutel in Custom Translator.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: e556ca2051fd75eb9bf6411c5479e63554606d48
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 49801eddd748a88109bb7f6d075def03cd798754
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368335"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895778"
 ---
 # <a name="how-to-manage-settings"></a>Instellingen beheren
 

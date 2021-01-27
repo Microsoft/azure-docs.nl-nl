@@ -3,19 +3,19 @@ title: Aanpassing van vertalingen-Translator
 titleSuffix: Azure Cognitive Services
 description: Gebruik de micro soft Translator-hub om uw eigen machine-Vertaal systeem te bouwen met behulp van de gewenste terminologie en stijl.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.author: swmachan
-ms.openlocfilehash: 9c4410cb2b9550bc111da96204ada15313867fb1
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.author: lajanuar
+ms.openlocfilehash: 0930024a791fe8b76c90e8ab4249a070b22a1c16
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95238085"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898033"
 ---
 # <a name="customize-your-text-translations"></a>Uw tekst vertalingen aanpassen
 

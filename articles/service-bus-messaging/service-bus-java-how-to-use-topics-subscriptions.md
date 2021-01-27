@@ -4,12 +4,12 @@ description: In deze quickstart schrijft u Java-code die het pakket azure-messag
 ms.devlang: Java
 ms.topic: quickstart
 ms.date: 11/09/2020
-ms.openlocfilehash: cd95b84c4b55279b40f95eef65cb2490a55d1780
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
-ms.translationtype: HT
+ms.openlocfilehash: 46dc6bed7e51a5157d7eb42dac75c0240d440780
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630238"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881615"
 ---
 # <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-java"></a>Berichten verzenden naar een Azure Service Bus-onderwerp en berichten ontvangen van abonnementen op het onderwerp (Java)
 In deze quickstart schrijft u Java-code die het pakket azure-messaging-servicebus gebruikt voor het verzenden van berichten naar een Azure Service Bus-onderwerp en ontvangt u vervolgens berichten van abonnementen op dit onderwerp.
@@ -225,7 +225,7 @@ Als u op deze pagina een abonnement selecteert, krijgt u toegang tot de pagina *
 Raadpleeg de volgende documentatie en voorbeelden:
 
 - [Azure Service Bus-clientbibliotheek voor Java - Leesmij](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/README.md)
-- [Voorbeelden op GitHub](https://docs.microsoft.com/samples/azure/azure-sdk-for-java/servicebus-samples/)
+- [Voorbeelden op GitHub](/samples/azure/azure-sdk-for-java/servicebus-samples/)
 - [Naslaginformatie over de Java-API](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-messaging-servicebus/7.0.0/index.html)
 
 

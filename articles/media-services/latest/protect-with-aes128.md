@@ -1,25 +1,9 @@
 ---
-title: Video versleutelen met AES-128
-titleSuffix: Azure Media Services
-description: Leer hoe u video versleutelt met AES 128-bits versleuteling en hoe u de sleutelleveringsservice in Azure Media Services gebruikt.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: 5347479d32dc9f4909483dc63891e8057fd7ff86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289321"
+Titel: video versleutelen met AES-128: beschrijving van Azure Media Services: meer informatie over het versleutelen van video met AES 128-bits versleuteling en het gebruik van de key delivery service in Azure Media Services.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: medium ms.tgt_pltfrm: na MS. devlang: na MS. topic: zelf studie MS. date: 08/31/2020 MS. Author: inhenkel
+
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Zelfstudie: Video versleutelen met AES-128 en de sleutelleveringsservice gebruiken
 

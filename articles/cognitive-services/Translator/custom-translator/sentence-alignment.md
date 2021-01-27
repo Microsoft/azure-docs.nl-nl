@@ -2,19 +2,19 @@
 title: Zin en uitlijning-aangepaste vertaler
 titleSuffix: Azure Cognitive Services
 description: Tijdens de uitvoering van de training worden zinnen in parallelle documenten gekoppeld of uitgelijnd. Aangepaste Translator leert vertalingen per zin, door een zin te lezen, de vertaling van deze zin. Vervolgens worden woorden en zinsdelen in deze twee zinnen op elkaar uitgelijnd.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 7ed7c3a586f5671191e3c517b5925cab888caefb
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 0c33d766bfd3dff47ddb151e8ce4ea7b25c37548
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724303"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897948"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Zin en uitlijning in parallelle documenten
 

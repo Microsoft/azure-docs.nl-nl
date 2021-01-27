@@ -3,19 +3,19 @@ title: Vertaal methode voor Translator
 titleSuffix: Azure Cognitive Services
 description: Meer informatie over de para meters, kopteksten en hoofd berichten voor de Vertaal methode van Azure Cognitive Services Translator om tekst te vertalen.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
-ms.author: swmachan
-ms.openlocfilehash: 15f20bab91a4feab056a9f8cd6b012792f036be2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: d46fef0159b983f2685be40e2a0ab5471b96883b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016544"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895438"
 ---
 # <a name="translator-30-translate"></a>Translator 3,0: vertalen
 
@@ -36,8 +36,8 @@ Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 ### <a name="required-parameters"></a>Vereiste para meters
 
 <table width="100%">
-  <th width="20%">Query parameter</th>
-  <th>Description</th>
+  <th width="20%">Queryparameter</th>
+  <th>Beschrijving</th>
   <tr>
     <td>api-versie</td>
     <td><em>Vereiste para meter</em>.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn <code>3.0</code> .</td>
@@ -51,8 +51,8 @@ Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 ### <a name="optional-parameters"></a>Optionele parameters
 
 <table width="100%">
-  <th width="20%">Query parameter</th>
-  <th>Description</th>
+  <th width="20%">Queryparameter</th>
+  <th>Beschrijving</th>
   <tr>
     <td>from</td>
     <td><em>Optionele para meter</em>.<br/>Geeft de taal van de invoer tekst aan. Ga na welke talen kunnen worden vertaald door <a href="./v3-0-languages.md">ondersteunde talen</a> te zoeken met behulp van de <code>translation</code> Scope. Als de <code>from</code> para meter niet is opgegeven, wordt automatische taal detectie toegepast om de bron taal te bepalen. <br/><br/>U moet de <code>from</code> para meter gebruiken in plaats van automatische detectie wanneer u de functie <a href="/azure/cognitive-services/translator/dynamic-dictionary">dynamische woorden lijst</a> gebruikt.</td>
@@ -199,7 +199,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
 
 <table width="100%">
   <th width="20%">Statuscode</th>
-  <th>Description</th>
+  <th>Beschrijving</th>
   <tr>
     <td>200</td>
     <td>Voltooid.</td>

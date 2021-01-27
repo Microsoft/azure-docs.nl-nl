@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 23c62562299768afb5f5d87bbcf4f7b19b3235ce
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 1a319c728b918dbad7dd5f240bc7a0bfeb0c4c09
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897855"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881041"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configureren, optimaliseren en problemen oplossen in AzCopy
 
@@ -22,7 +22,7 @@ AzCopy is een opdrachtregelprogramma dat u kunt gebruiken om blobs of bestanden 
 > [!NOTE]
 > Als u op zoek bent naar inhoud die u helpt aan de slag te gaan met AzCopy, raadpleegt u een van de volgende artikelen:
 > - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
-> - [Gegevens overdragen met AzCopy en blob-opslag](storage-use-azcopy-blobs.md)
+> - [Gegevens overdragen met AzCopy en blob-opslag](./storage-use-azcopy-v10.md#transfer-data)
 > - [Gegevens overdragen met AzCopy en bestandopslag](storage-use-azcopy-files.md)
 > - [Gegevens overdragen met AzCopy en Amazon S3-opslag](storage-use-azcopy-s3.md)
 
@@ -220,5 +220,3 @@ Beschik bare logboek niveaus zijn: `NONE` ,, `DEBUG` `INFO` ,,, en `WARNING` `ER
 Als u alle plannings-en logboek bestanden van uw lokale computer wilt verwijderen om schijf ruimte te besparen, gebruikt u de `azcopy jobs clean` opdracht.
 
 Als u de plannings-en logboek bestanden wilt verwijderen die zijn gekoppeld aan één taak, gebruikt u `azcopy jobs rm <job-id>` . Vervang de `<job-id>` tijdelijke aanduiding in dit voor beeld door de taak-id van de taak.
-
-

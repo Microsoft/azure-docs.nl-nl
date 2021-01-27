@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: cherylmc
-ms.openlocfilehash: 62ceafad0210065700e5c9734cfe9a055208ef35
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 01d87bcb5697326fa87b25b20354897049900d9d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657887"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880522"
 ---
 # <a name="configure-a-site-to-site-vpn-connection-over-expressroute-private-peering"></a>Een site-naar-site-VPN-verbinding configureren via ExpressRoute-persoonlijke peering
 
@@ -72,7 +72,7 @@ In beide voor beelden verzendt Azure verkeer naar 10.0.1.0/24 via de VPN-verbind
 
 ## <a name="portal-steps"></a><a name="portal"></a>Portal stappen
 
-1. Configureer een site-naar-site-verbinding. Zie het artikel [site-naar-site-configuratie](vpn-gateway-howto-site-to-site-resource-manager-portal.md) voor een overzicht van de stappen. Zorg ervoor dat u een zone-redundante gateway-SKU kiest voor de gateway. 
+1. Configureer een site-naar-site-verbinding. Zie het artikel [site-naar-site-configuratie](./tutorial-site-to-site-portal.md) voor een overzicht van de stappen. Zorg ervoor dat u een zone-redundante gateway-SKU kiest voor de gateway. 
 
    Voor een zone-redundante Sku's is AZ aan het einde van de SKU. Bijvoorbeeld **VpnGw1AZ**. Zone-redundante gateways zijn alleen beschikbaar in regio's waar de beschikbaarheids zone service beschikbaar is. Zie [regio's die beschikbaarheids zones ondersteunen](../availability-zones/az-region.md)voor meer informatie over de regio's waarin we beschikbaarheids zones ondersteunen.
 
@@ -89,7 +89,7 @@ In beide voor beelden verzendt Azure verkeer naar 10.0.1.0/24 via de VPN-verbind
 
 ## <a name="powershell-steps"></a><a name="powershell"></a>Power shell-stappen
 
-1. Configureer een site-naar-site-verbinding. Zie het artikel [een site-naar-site-VPN configureren voor een](vpn-gateway-howto-site-to-site-resource-manager-portal.md) overzicht van de stappen. Zorg ervoor dat u een zone-redundante gateway-SKU kiest voor de gateway. Voor een zone-redundante Sku's is AZ aan het einde van de SKU. Bijvoorbeeld VpnGw1AZ.
+1. Configureer een site-naar-site-verbinding. Zie het artikel [een site-naar-site-VPN configureren voor een](./tutorial-site-to-site-portal.md) overzicht van de stappen. Zorg ervoor dat u een zone-redundante gateway-SKU kiest voor de gateway. Voor een zone-redundante Sku's is AZ aan het einde van de SKU. Bijvoorbeeld VpnGw1AZ.
 1. Stel de vlag in voor het gebruik van het privé-IP-adres op de gateway met behulp van de volgende Power shell-opdrachten:
 
    ```azurepowershell-interactive

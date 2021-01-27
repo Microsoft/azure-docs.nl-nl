@@ -10,12 +10,12 @@ ms.date: 01/15/2021
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: e463328df195b5a91db8ce272d138f980d000e79
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c3c126a96c0eb2214f63a56120d0966b9a97efed
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232060"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895387"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Para meters gekoppelde services in Azure Data Factory
 
@@ -27,6 +27,9 @@ U kunt de Data Factory-gebruikers interface in de Azure Portal of een programmee
 
 > [!TIP]
 > We raden u aan om wacht woorden of geheimen niet para meters. Sla alle verbindings reeksen op in Azure Key Vault in plaats daarvan en para meters de naam van het *geheim*.
+
+> [!Note]
+> Er is een open-fout om '-' in parameter namen te gebruiken. het is raadzaam om namen te gebruiken zonder '-' totdat de fout is opgelost.
 
 Bekijk de volgende video voor een inleiding en demonstratie van zeven minuten voor deze functie:
 

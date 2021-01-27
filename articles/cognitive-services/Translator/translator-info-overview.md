@@ -3,21 +3,21 @@ title: Microsoft Translator-service
 titlesuffix: Azure Cognitive Services
 description: Integreer Translator in uw toepassingen, websites, hulpprogramma's en andere oplossingen om gebruikerservaringen in meerdere talen te bieden.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: overview
 ms.date: 09/11/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: translator, tekstvertaling, machine translation, vertaalservice
-ms.openlocfilehash: 8016c79cbe7f78bdaa18274f8873548e3982df2f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-ms.translationtype: HT
+ms.openlocfilehash: 37f0d64879493abcf3e5b9448068b86b7a36dccb
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016465"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896694"
 ---
 # <a name="what-is-the-translator-service"></a>Wat is de Translator-service?
 

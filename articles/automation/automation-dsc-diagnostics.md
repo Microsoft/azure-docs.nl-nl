@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f66c710901b129cb6b138fff126e67615c790714
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 34bbf34d53c44dcef7b8e128a93ee64201423c3e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183665"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897034"
 ---
 # <a name="integrate-with-azure-monitor-logs"></a>Integreren met Azure Monitor-logboeken
 
@@ -196,7 +196,7 @@ Met Azure Automation diagnostische gegevens worden twee categorieën records gem
 - Zie [Azure Automation status configuratie Overview](automation-dsc-overview.md)(Engelstalig) voor een overzicht.
 - Zie aan de slag [met de configuratie van de Azure Automation-status](automation-dsc-getting-started.md)om aan de slag te gaan.
 - Zie [DSC-configuraties compileren in azure Automation status configuratie](automation-dsc-compile.md)voor meer informatie over het compileren van DSC-configuraties zodat u ze aan doel knooppunten kunt toewijzen.
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.
 - Zie [continue implementatie instellen met chocolade](automation-dsc-cd-chocolatey.md)voor een voor beeld van het gebruik van Azure Automation status configuratie in een pijp lijn voor continue implementatie.
 - Zie [Zoek opdrachten in Logboeken in azure monitor logboeken](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over het maken van verschillende Zoek query's en het controleren van de configuratie logboeken voor de automatiserings status met Azure monitor Logboeken.

@@ -2,19 +2,15 @@
 title: Problemen met Azure Automation Hybrid Runbook Worker oplossen
 description: In dit artikel leest u hoe u problemen kunt oplossen en oplossen die zich voordoen bij Azure Automation Hybrid Runbook Workers.
 services: automation
-ms.service: automation
 ms.subservice: ''
-author: mgoedtel
-ms.author: magoedte
 ms.date: 11/25/2019
-ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 1386dd820b10b63862ddab38c441f251bea1d83d
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.topic: troubleshooting
+ms.openlocfilehash: 214501c447632232dc00b61643ea21083bd0e4ac
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428395"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896491"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Problemen met Hybrid Runbook Worker oplossen
 
@@ -46,7 +42,7 @@ Hier volgen enkele mogelijke oorzaken:
 
 #### <a name="resolution"></a>Oplossing
 
-Controleer of de computer uitgaande toegang heeft tot ** \* . Azure-Automation.net** op poort 443.
+Controleer of de computer uitgaande toegang heeft tot **\* . Azure-Automation.net** op poort 443.
 
 Computers die de Hybrid Runbook Worker uitvoeren, moeten voldoen aan de minimale hardwarevereisten voordat de werk nemer is geconfigureerd voor het hosten van deze functie. Runbooks en het achtergrond proces dat door ze worden gebruikt, kunnen ertoe leiden dat het systeem wordt overtreden en er vertragingen of time-outs optreden in een runbook-taak.
 
@@ -58,7 +54,7 @@ Raadpleeg het **micro soft-SMA-** gebeurtenis logboek voor een bijbehorende gebe
 
 #### <a name="issue"></a>Probleem
 
-De Hybrid Runbook Worker ontvangt gebeurtenis 15011 om aan te geven dat een query resultaat ongeldig is. De volgende fout wordt weer gegeven wanneer de werk nemer een verbinding met de [signaal server](/aspnet/core/signalr/introduction?view=aspnetcore-3.1)probeert te openen.
+De Hybrid Runbook Worker ontvangt gebeurtenis 15011 om aan te geven dat een query resultaat ongeldig is. De volgende fout wordt weer gegeven wanneer de werk nemer een verbinding met de [signaal server](/aspnet/core/signalr/introduction)probeert te openen.
 
 ```error
 [AccountId={c7d22bd3-47b2-4144-bf88-97940102f6ca}]
@@ -194,7 +190,7 @@ Als de agent niet wordt uitgevoerd, voert u de volgende opdracht uit om de servi
 
 ### <a name="scenario-the-specified-class-doesnt-exist"></a><a name="class-does-not-exist"></a>Scenario: de opgegeven klasse bestaat niet
 
-Als u het fout bericht `The specified class does not exist..` in **/var/opt/Microsoft/omsconfig/omsconfig.log**ziet, moet de log Analytics-agent voor Linux worden bijgewerkt. Voer de volgende opdracht uit om de agent opnieuw te installeren.
+Als u het fout bericht `The specified class does not exist..` in **/var/opt/Microsoft/omsconfig/omsconfig.log** ziet, moet de log Analytics-agent voor Linux worden bijgewerkt. Voer de volgende opdracht uit om de agent opnieuw te installeren.
 
 ```bash
 wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <WorkspaceID> -s <WorkspaceKey>
@@ -226,7 +222,7 @@ In het gebeurtenis logboek van de **toepassing en het service servicelogboeken\o
 
 #### <a name="cause"></a>Oorzaak
 
-Dit probleem kan worden veroorzaakt door uw proxy of netwerk firewall die communicatie met Microsoft Azure blokkeert. Controleer of de computer uitgaande toegang heeft tot ** \* . Azure-Automation.net** op poort 443.
+Dit probleem kan worden veroorzaakt door uw proxy of netwerk firewall die communicatie met Microsoft Azure blokkeert. Controleer of de computer uitgaande toegang heeft tot **\* . Azure-Automation.net** op poort 443.
 
 #### <a name="resolution"></a>Oplossing
 
@@ -238,7 +234,7 @@ Hybride werk rollen verzenden [runbook-uitvoer en-berichten](../automation-runbo
 
 #### <a name="issue"></a>Probleem
 
-Een script dat wordt uitgevoerd op een Windows-Hybrid Runbook Worker kan niet op de verwachte manier verbinding maken met Microsoft 365 op een Orchestrator sandbox. Het script maakt gebruik van [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0) voor de verbinding. 
+Een script dat wordt uitgevoerd op een Windows-Hybrid Runbook Worker kan niet op de verwachte manier verbinding maken met Microsoft 365 op een Orchestrator sandbox. Het script maakt gebruik van [Connect-MsolService](/powershell/module/msonline/connect-msolservice) voor de verbinding. 
 
 Als u **Orchestrator.Sandbox.exe.config** wijzigt om de proxy en de lijst overs laan in te stellen, wordt de sandbox nog steeds niet goed verbonden. Een **Powershell_ise.exe.config** -bestand met dezelfde proxy en de lijst instellingen overs Laan lijkt te werken zoals verwacht. Service Management Automation-Logboeken (SMA) en Power shell-logboeken bevatten geen informatie over de proxy.
 
@@ -250,7 +246,7 @@ De verbinding met Active Directory Federation Services (AD FS) op de server kan 
 
 U kunt het probleem voor de Orchestrator sandbox oplossen door uw script te migreren om de Azure Active Directory modules te gebruiken in plaats van de MSOnline-module voor Power shell-cmdlets. Zie [migreren van Orchestrator naar Azure Automation (bèta)](../automation-orchestrator-migration.md)voor meer informatie.
 
-Als u de MSOnline-module-cmdlets wilt blijven gebruiken, wijzigt u het script om de [opdracht invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7)te gebruiken. Geef waarden op voor `ComputerName` de `Credential` para meters en. 
+Als u de MSOnline-module-cmdlets wilt blijven gebruiken, wijzigt u het script om de [opdracht invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)te gebruiken. Geef waarden op voor `ComputerName` de `Credential` para meters en. 
 
 ```powershell
 $Credential = Get-AutomationPSCredential -Name MyProxyAccessibleCredential

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 36781e7f975ee9d4a03cf899650701bf2d3940ac
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: b3503dead21eeca32d82e896f889b99d11435642
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555947"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879728"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Een Azure SQL Database registeren en scannen
 
@@ -39,7 +39,7 @@ Azure Purview biedt geen ondersteuning voor het scannen van [weergaven](/sql/rel
 
 ### <a name="set-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
-Verificatie om een Azure SQL Database te scannen. Als u nieuwe verificatie wilt maken, moet u de [SQL Database autoriseren voor toegang tot de database](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage). Er zijn drie verificatiemethoden die momenteel door Purview worden ondersteund:
+Verificatie om een Azure SQL Database te scannen. Als u nieuwe verificatie wilt maken, moet u de [SQL Database autoriseren voor toegang tot de database](../azure-sql/database/logins-create-manage.md). Er zijn drie verificatiemethoden die momenteel door Purview worden ondersteund:
 
 - SQL-verificatie
 - Service-principal
@@ -88,8 +88,8 @@ Als u een service-principal wilt gebruiken, kunt u een bestaande gebruiken of ee
 
 De service-principal of beheerde identiteit moet gemachtigd zijn om metagegevens op te halen voor de database, schema's en tabellen. Deze moet ook in staat zijn om query's uit te voeren op tabellen voor het nemen van steekproeven voor classificatiedoeleinden.
 
-- [Azure AD-verificatie configureren en beheren met Azure SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure)
-- Als u beheerde identiteit gebruikt, heeft uw Purview-account een eigen beheerde identiteit die in principe bestaat uit uw Purview-naam van het moment waarop u deze hebt gemaakt. U moet een Azure AD-gebruiker maken in Azure SQL Database met de exacte beheerde identiteit van Purview of uw eigen service-principal door de zelfstudie te volgen op [De gebruiker van de service-principal in Azure SQL Database maken](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial#create-the-service-principal-user-in-azure-sql-database). U moet de juiste machtigingen (bijvoorbeeld `db_owner` of `db_datareader`) toewijzen aan de identiteit. Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
+- [Azure AD-verificatie configureren en beheren met Azure SQL](../azure-sql/database/authentication-aad-configure.md)
+- Als u beheerde identiteit gebruikt, heeft uw Purview-account een eigen beheerde identiteit die in principe bestaat uit uw Purview-naam van het moment waarop u deze hebt gemaakt. U moet een Azure AD-gebruiker maken in Azure SQL Database met de exacte beheerde identiteit van Purview of uw eigen service-principal door de zelfstudie te volgen op [De gebruiker van de service-principal in Azure SQL Database maken](../azure-sql/database/authentication-aad-service-principal-tutorial.md#create-the-service-principal-user-in-azure-sql-database). U moet de juiste machtigingen (bijvoorbeeld `db_owner` of `db_datareader`) toewijzen aan de identiteit. Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
 
     ```sql
     CREATE USER [Username] FROM EXTERNAL PROVIDER

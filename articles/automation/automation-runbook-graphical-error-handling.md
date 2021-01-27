@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8af64f2189625bcff5271855d6c0102551d1a535
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 24c7aaf08b4d22706bee8f37025b12a656ceaff5
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185956"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895897"
 ---
 # <a name="handle-errors-in-graphical-runbooks"></a>Fouten in grafische runbooks afhandelen
 
@@ -47,7 +47,7 @@ De aanbevolen procedure is het maken van een specifiek runbook voor fout afhande
 1. Hiermee wordt een melding over dit probleem verzonden.
 2. Start een ander runbook dat in plaats daarvan automatisch een nieuwe VM inricht.
 
-Eén oplossing is het maken van een fout koppeling in het runbook dat verwijst naar een activiteit die stap één afhandelt. Het runbook kan bijvoorbeeld de `Write-Warning` cmdlet koppelen aan een activiteit voor stap twee, zoals de cmdlet [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.5.0) .
+Eén oplossing is het maken van een fout koppeling in het runbook dat verwijst naar een activiteit die stap één afhandelt. Het runbook kan bijvoorbeeld de `Write-Warning` cmdlet koppelen aan een activiteit voor stap twee, zoals de cmdlet [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook) .
 
 U kunt dit gedrag ook generaliseren voor gebruik in veel runbooks door deze twee activiteiten in een afzonderlijke runbook voor fout afhandeling te plaatsen. Voordat uw oorspronkelijke runbook het runbook voor fout afhandeling aanroept, kan het een aangepast bericht maken op basis van de gegevens en het vervolgens door geven als een para meter voor het runbook voor fout afhandeling.
 
@@ -59,7 +59,7 @@ Nadat u de configuratie-instelling hebt ingeschakeld, moet u in uw runbook een a
 
 In het volgende voor beeld wordt met een runbook een variabele opgehaald die de computer naam van een virtuele machine bevat. Vervolgens wordt geprobeerd de virtuele machine te starten met de volgende activiteit.<br><br> ![Voor beeld van fout afhandeling in Automation-runbook](media/automation-runbook-graphical-error-handling/runbook-example-error-handling.png)<br><br>      
 
-De `Get-AutomationVariable` activiteit en de cmdlet [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM?view=azps-3.5.0) zijn geconfigureerd om uitzonde ringen te converteren naar fouten. Als er problemen zijn bij het ophalen van de variabele of het starten van de virtuele machine, genereert de code fouten.<br><br> ![Instellingen voor het verwerken van fouten in Automation-runbook-activiteit ](media/automation-runbook-graphical-error-handling/activity-blade-convertexception-option.png) .
+De `Get-AutomationVariable` activiteit en de cmdlet [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM) zijn geconfigureerd om uitzonde ringen te converteren naar fouten. Als er problemen zijn bij het ophalen van de variabele of het starten van de virtuele machine, genereert de code fouten.<br><br> ![Instellingen voor het verwerken van fouten in Automation-runbook-activiteit ](media/automation-runbook-graphical-error-handling/activity-blade-convertexception-option.png) .
 
 Fout koppelingen stromen van deze activiteiten naar een enkele `error management` code activiteit. Deze activiteit is geconfigureerd met een eenvoudige Power shell-expressie die het `throw` sleutel woord gebruikt om de verwerking te stoppen, en `$Error.Exception.Message` om het bericht op te halen waarin de huidige uitzonde ring wordt beschreven.<br><br> ![Code voorbeeld voor fout afhandeling voor Automation-runbook](media/automation-runbook-graphical-error-handling/runbook-example-error-handling-code.png)
 

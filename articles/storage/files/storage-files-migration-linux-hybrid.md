@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 46bcfd48d8fdfb228670b87df166c1ad8de61e52
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 0ef4faf14ec01a25419fd22ba8c73a8a033b4172
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94626347"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879979"
 ---
 # <a name="migrate-from-linux-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Migreren van Linux naar een hybride Cloud implementatie met Azure File Sync
 
@@ -220,5 +220,5 @@ Controleer de koppeling in de volgende sectie voor het oplossen van problemen me
 Er is meer informatie over Azure-bestands shares en Azure File Sync. De volgende artikelen bevatten geavanceerde opties, aanbevolen procedures en hulp bij het oplossen van problemen. Deze artikelen maken een koppeling naar de [documentatie van Azure file share](storage-files-introduction.md) .
 
 * [Overzicht van Azure File Sync](./storage-sync-files-planning.md)
-* [Implementatie handleiding Azure File Sync](storage-files-deployment-guide.md)
+* [Implementatie handleiding Azure File Sync](./storage-how-to-create-file-share.md)
 * [Problemen met Azure File Sync oplossen](storage-sync-files-troubleshoot.md)

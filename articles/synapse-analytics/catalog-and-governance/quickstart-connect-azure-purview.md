@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/16/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: cb6a63e4ead45d7751d1d3442793478cfdcd71c0
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 55f0d2e8df36cc11f26c5ff6259ebe2215aaffc6
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676337"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880539"
 ---
 # <a name="quickstartconnect-an-azure-purview-account-to-a-synapse-workspace"></a>Snelstartgids: Een Azure Purview-account verbinden met een Synapse-werkruimte 
 
@@ -36,7 +36,7 @@ Ga naar  [https://web.azuresynapse.net](https://web.azuresynapse.net) en meld 
 
 ## <a name="permissions-for-connecting-an-azure-purview-account"></a>Machtigingen voor verbinding maken met een Azure Purview-account 
 
-- Als u een Azure Purview-account wilt verbinden met een Synapse-werkruimte, moet de rol **Inzender** aan u zijn toegewezen in de Synapse-werkruimte, via IAM in de Azure-portal, en hebt u toegang nodig tot dit Azure Purview-account.
+- Als u een Azure Purview-account wilt verbinden met een Synapse-werkruimte, moet de rol **Inzender** aan u zijn toegewezen in de Synapse-werkruimte, via IAM in de Azure-portal, en hebt u toegang nodig tot dit Azure Purview-account. Zie [machtigingen voor Azure controle sfeer liggen](../../purview/catalog-permissions.md)voor meer informatie.
 
 ## <a name="connect-an-azure-purview-account"></a>Verbinding maken met een Azure Purview-account  
 

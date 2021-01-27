@@ -1,26 +1,11 @@
 ---
-title: Media Services metrische gegevens en Diagnostische logboeken met Azure Monitor
-titleSuffix: Azure Media Services
-description: Meer informatie over het bewaken van Azure Media Services metrische gegevens en Diagnostische logboeken via Azure Monitor.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: conceptual
-ms.date: 11/02/2020
-ms.author: inhenkel
-ms.openlocfilehash: ed436336b9b1f9f5815938d13315e821694e5f1c
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685168"
+Titel: Media Services metrische gegevens en Diagnostische logboeken met Azure Monitor: Azure Media Services beschrijving: informatie over het bewaken van Azure Media Services metrische gegevens en Diagnostische logboeken via Azure Monitor.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: media ms.tgt_pltfrm: na MS. devlang: na MS. topic: conceptuele MS. date: 11/02/2020 MS. Author: inhenkel
+
 ---
+
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-with-azure-monitor"></a>Media Services metrische gegevens en Diagnostische logboeken met Azure Monitor bewaken
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -44,7 +29,7 @@ Media Services biedt ondersteuning voor het bewaken van metrische gegevens voor 
 
 U kunt de metrische gegevens van het volgende account bewaken.
 
-|Naam van meetwaarde|Weergavenaam|Beschrijving|
+|Naam van metrische gegevens|Weergavenaam|Beschrijving|
 |---|---|---|
 |AssetCount|Aantal assets|Assets in uw account.|
 |AssetQuota|Activa quotum|Activa quota in uw account.|
@@ -62,7 +47,7 @@ U moet ook [rekening quota's en limieten](limits-quotas-constraints.md)bekijken.
 
 De volgende Media Services gegevens [stromen voor streaming-eind punten](/rest/api/media/streamingendpoints) worden ondersteund:
 
-|Naam van meetwaarde|Weergavenaam|Beschrijving|
+|Naam van metrische gegevens|Weergavenaam|Beschrijving|
 |---|---|---|
 |Aanvragen|Aanvragen|Geeft het totale aantal HTTP-aanvragen dat door het streaming-eind punt wordt geleverd.|
 |Uitgaand verkeer|Uitgaand verkeer|Totaal aantal uitgaande bytes per minuut per streaming-eind punt.|

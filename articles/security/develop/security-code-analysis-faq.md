@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: f872159e538dc85121a7a6d4d6503fd18a263628
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b851e52141cf93aba4aab9b2768658f0aac4660f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87543041"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879912"
 ---
 # <a name="frequently-asked-questions"></a>Veelgestelde vragen
 Hebt u vragen? Bekijk de volgende veelgestelde vragen voor meer informatie.
@@ -163,7 +163,7 @@ De volgende bronnen helpen u veilig geheimen te beheren en toegang te krijgen to
  - [Azure AD-Managed Service Identity (MSI)](https://azure.microsoft.com/blog/keep-credentials-out-of-code-introducing-azure-ad-managed-service-identity/)
  - [Beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md)
  - [Beheerde identiteiten in Azure App Service en Azure Functions](../../app-service/overview-managed-identity.md)
- - [AppAuthentication-bibliotheek](../../key-vault/general/service-to-service-authentication.md)
+ - [AppAuthentication-bibliotheek](/dotnet/api/overview/azure/service-to-service-authentication)
 
 
 Zie het blog bericht [geheimen veilig beheren in de Cloud](https://devblogs.microsoft.com/visualstudio/managing-secrets-securely-in-the-cloud/)voor meer informatie.

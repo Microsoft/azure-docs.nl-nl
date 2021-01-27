@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Wijzigingen bijhouden en inventaris
 description: In dit artikel wordt de functie Wijzigingen bijhouden en inventaris beschreven, waarmee u de wijzigingen in de software en micro soft-Services in uw omgeving kunt identificeren.
 services: automation
 ms.subservice: change-inventory-management
-ms.date: 11/10/2020
+ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: b5390e4b3dc6d77390c3fca6323cbd52544c638a
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 0ef821634669739ff5aed58e4404d7c21b8d8222
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445418"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896626"
 ---
 # <a name="change-tracking-and-inventory-overview"></a>Overzicht Wijzigingen bijhouden en Inventaris
 
@@ -32,7 +32,7 @@ Wijzigingen bijhouden en inventarisatie maakt gebruik van [Azure Security Center
 - Micro soft-Services
 - Linux-daemons
 
-Het inschakelen van alle functies in Wijzigingen bijhouden en de inventarisatie kan extra kosten in beslag nemen. Bekijk de [prijzen voor Automation](https://azure.microsoft.com/pricing/details/automation/) en [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/)voordat u doorgaat. 
+Het inschakelen van alle functies in Wijzigingen bijhouden en de inventarisatie kan extra kosten in beslag nemen. Bekijk de [prijzen voor Automation](https://azure.microsoft.com/pricing/details/automation/) en [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/)voordat u doorgaat.
 
 Wijzigingen bijhouden-en inventarisatie gegevens worden door gegeven naar Azure Monitor-logboeken en deze verzamelde gegevens worden opgeslagen in een Log Analytics-werk ruimte. De functie File Integrity Monitoring (FIM) is alleen beschikbaar als **Azure Defender voor servers** is ingeschakeld. Zie Azure Security Center [prijzen](../../security-center/security-center-pricing.md) voor meer informatie. FIM uploadt gegevens naar dezelfde Log Analytics werkruimte als de werk ruimte die is gemaakt om gegevens op te slaan vanuit Wijzigingen bijhouden en de inventaris. U wordt aangeraden uw gekoppelde Log Analytics-werk ruimte te bewaken om uw exacte gebruik bij te houden. Zie [verbruik en kosten beheren](../../azure-monitor/platform/manage-cost-storage.md)voor meer informatie over het analyseren van het gegevens gebruik van Azure monitor Logboeken.
 
@@ -74,16 +74,7 @@ Het uitvoer bare bestand van python2 moet zijn alias voor *python*.
 
 ## <a name="network-requirements"></a>Netwerkvereisten
 
-De volgende adressen zijn specifiek vereist voor de Wijzigingen bijhouden en de inventarisatie. Communicatie met deze adressen vindt plaats via poort 443.
-
-|Openbare Azure-peering  |Azure Government  |
-|---------|---------|
-|*.ods.opinsights.azure.com    | *. ods.opinsights.azure.us         |
-|*.oms.opinsights.azure.com     | *. oms.opinsights.azure.us        |
-|*.blob.core.windows.net | *. blob.core.usgovcloudapi.net|
-|*.azure-automation.net | *. azure-automation.us|
-
-Wanneer u beveiligings regels voor een netwerk groep maakt of Azure Firewall configureert om verkeer toe te staan voor de Automation-Service en de Log Analytics-werk ruimte, gebruikt u de [service label](../../virtual-network/service-tags-overview.md#available-service-tags) **GuestAndHybridManagement** en **AzureMonitor**. Dit vereenvoudigt het voortdurend beheer van uw netwerk beveiligings regels. Als u verbinding wilt maken met de Automation-Service van uw Azure-Vm's veilig en privé, raadpleegt u [Azure private link gebruiken](../how-to/private-link-security.md). Zie [Download bare json-bestanden](../../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files)voor informatie over het verkrijgen van de huidige servicetag en bereik gegevens die u wilt opnemen als onderdeel van uw on-premises firewall configuraties.
+Controleer [Azure Automation netwerk configuratie](../automation-network-configuration.md#update-management-and-change-tracking-and-inventory) voor gedetailleerde informatie over de poorten, url's en andere netwerk gegevens die nodig zijn voor wijzigingen bijhouden en inventaris.
 
 ## <a name="enable-change-tracking-and-inventory"></a>Wijzigingen bijhouden en Inventaris inschakelen
 
@@ -129,7 +120,7 @@ Met Wijzigingen bijhouden en inventaris kunt u wijzigingen in Windows-register s
 > |`HKEY\LOCAL\MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Drivers32` | Bewaakt 32-bits Stuur Programma's die zijn gekoppeld aan wavemapper, wave1 en wave2, Msacm. imaadpcm,. msadpcm,. msgsm610 en vidc. Vergelijkbaar met de sectie [drivers] in het **system.ini** -bestand.
 > |`HKEY\LOCAL\MACHINE\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32` | Bewaakt 32-bits Stuur Programma's die zijn gekoppeld aan wavemapper, wave1 en wave2, Msacm. imaadpcm,. msadpcm,. msgsm610 en vidc voor 32-bits-toepassingen die worden uitgevoerd op 64-bits computers. Vergelijkbaar met de sectie [drivers] in het **system.ini** -bestand.
 > |`HKEY\LOCAL\MACHINE\System\CurrentControlSet\Control\Session Manager\KnownDlls` | Hiermee wordt de lijst met bekende of veelgebruikte systeem-Dll's gecontroleerd. Door te controleren wordt voor komen dat gebruikers zwakke machtigingen voor toepassings mappen kunnen exploiteren door de Trojaanse paarden-versies van systeem-Dll's te verwijderen.
-> |`HKEY\LOCAL\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify` | Bewaakt de lijst met pakketten die gebeurtenis meldingen kunnen ontvangen van **winlogon.exe** , het model voor ondersteuning van interactieve aanmelding voor Windows.
+> |`HKEY\LOCAL\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify` | Bewaakt de lijst met pakketten die gebeurtenis meldingen kunnen ontvangen van **winlogon.exe**, het model voor ondersteuning van interactieve aanmelding voor Windows.
 
 ## <a name="recursion-support"></a>Ondersteuning voor recursie
 

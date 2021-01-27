@@ -6,12 +6,12 @@ ms.subservice: dsc
 ms.date: 08/08/2018
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 87504625c298c4fb858ff90430d707081e87cd5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb5f7b5e8214bd3b04bd7b9544ab4bc589f6c4bf
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186568"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896322"
 ---
 # <a name="set-up-continuous-deployment-with-chocolatey"></a>Doorlopende implementatie instellen met Chocolatey
 
@@ -213,5 +213,5 @@ Vanaf dat moment is het tot de virtuele machines die afhankelijk zijn van die co
 - Zie [Azure Automation status configuratie Overview](automation-dsc-overview.md)(Engelstalig) voor een overzicht.
 - Zie aan de slag [met Azure Automation status configuratie](automation-dsc-getting-started.md)om aan de slag te gaan met het gebruik van de functie.
 - Zie [DSC-configuraties compileren in azure Automation status configuratie](automation-dsc-compile.md)voor meer informatie over het compileren van DSC-configuraties zodat u ze aan doel knooppunten kunt toewijzen.
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.

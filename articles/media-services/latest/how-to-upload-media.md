@@ -1,24 +1,10 @@
 ---
-title: Media uploaden
-titleSuffix: Azure Media Services
-description: Meer informatie over het uploaden van media voor streaming of codering.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: how-to
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: 3040369e655ab91f56f271313dc4d2613f02be06
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015842"
+Titel: Upload media: beschrijving van Azure Media Services: meer informatie over het uploaden van media voor streaming of code ring.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: MS. topic: How-to MS. date: 08/31/2020 MS. Author: inhenkel
 ---
+
 # <a name="upload-media-for-streaming-or-encoding"></a>Media uploaden voor streaming of codering
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

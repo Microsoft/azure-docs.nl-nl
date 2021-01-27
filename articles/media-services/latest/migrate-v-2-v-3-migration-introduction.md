@@ -1,5 +1,5 @@
 ---
-title: Migreren van Azure Media Services v2 naar v3-Inleiding | Microsoft Docs
+title: Migreren van Azure Media Services v2 naar v3-Inleiding
 description: Dit artikel is een inleiding op de migratie van Media Services v2 naar v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: fb9abd8f3186405edc31b4af48ee98482e080c68
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: d96644b4df5475192c3b7d90bd055e63bf869faa
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690402"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898338"
 ---
 # <a name="migrate-from-media-services-v2-to-v3-introduction"></a>Migreren van Media Services v2 naar v3-Inleiding
 

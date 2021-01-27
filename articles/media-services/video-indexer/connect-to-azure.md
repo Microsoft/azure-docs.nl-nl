@@ -8,16 +8,16 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 10/21/2020
+ms.date: 01/14/2021
 ms.author: juliako
-ms.openlocfilehash: 82dc9aa9615ef86c878fb75df6650dcc1f904a8f
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 8e110ba9818b48d66c5f17bb524bada567d808ab
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97702609"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897153"
 ---
-# <a name="create-a-video-indexer-account-connected-to-azure"></a>Een Video Indexer-account maken dat is verbonden met Azure
+# <a name="create-a-video-indexer-account"></a>Een Video Indexer-account maken
 
 Wanneer u een Video Indexer-account maakt, kunt u kiezen uit een gratis proefversie (waarmee u een bepaald aantal gratis minuten indexering krijgt) of een betaalde optie (zonder quotumlimiet). Bij een gratis proefversie biedt Video Indexer websitegebruikers maximaal 600 minuten aan gratis indexering en API-gebruikers maximaal 2400 minuten gratis indexering. Met de betaalde optie maakt u een Video Indexer-account dat is verbonden met uw Azure-abonnement. U betaalt voor geïndexeerde minuten. Zie [Prijzen van mediaservices](https://azure.microsoft.com/pricing/details/media-services/) voor meer informatie.
 
@@ -25,7 +25,9 @@ In dit artikel wordt beschreven hoe u een Video Indexer-account maakt dat is gek
 
 Als u van een *proef versie* overgaat naar een *betaalde* video indexer account, kunt u ervoor kiezen om alle Video's en het model aan te passen aan het nieuwe account, zoals wordt beschreven in de sectie [uw inhoud uit de proef account importeren](#import-your-content-from-the-trial-account) .
 
-## <a name="prerequisites"></a>Vereisten
+Het artikel heeft ook betrekking [op het koppelen van een video indexer-account aan Azure Government](#video-indexer-in-azure-government).
+
+## <a name="prerequisites-for-connecting-to-azure"></a>Vereisten voor het maken van verbinding met Azure
 
 * Een Azure-abonnement.
 
@@ -37,7 +39,7 @@ Als u van een *proef versie* overgaat naar een *betaalde* video indexer account,
 
     Deze gebruiker moet een Azure AD-gebruiker zijn met een werk-of school account. Gebruik geen persoonlijk account, zoals outlook.com, live.com of hotmail.com.
 
-    ![alle AAD-gebruikers](./media/create-account/all-aad-users.png)
+    ![alle Azure AD-gebruikers](./media/create-account/all-aad-users.png)
 
 ### <a name="additional-prerequisites-for-automatic-flow"></a>Aanvullende vereisten voor automatische stroom
 
@@ -59,7 +61,7 @@ Als u van een *proef versie* overgaat naar een *betaalde* video indexer account,
 
     ![EventGrid](./media/create-account/event-grid.png)
 
-## <a name="create-a-new-account"></a>Een nieuw account maken
+## <a name="create-a-new-account-on-azure"></a>Een nieuw account maken in azure 
 
 > [!NOTE]
 > Als uw Azure-abonnement gebruikmaakt van multi-factor Authentication op basis van certificaten, is het van cruciaal belang dat u de volgende stappen uitvoert op een apparaat waarop de vereiste certificaten zijn geïnstalleerd.
@@ -155,7 +157,7 @@ Geef in het dialoog venster de volgende informatie op:
 |Toepassings-id|De Azure AD-toepassings-ID (met machtigingen voor het opgegeven Media Services-account) dat u in de vorige sectie hebt gemaakt.|
 |Toepassings sleutel|De Azure AD-toepassings sleutel die u in de vorige sectie hebt gemaakt. |
 
-## <a name="import-your-content-from-the-trial-account"></a>De inhoud van de *proef* account importeren
+### <a name="import-your-content-from-the-trial-account"></a>De inhoud van de *proef* account importeren
 
 Wanneer u een nieuw account maakt, hebt u de mogelijkheid om de inhoud van de *proef* account te importeren in het nieuwe account. Als u de optie *importeren* in het dialoog venster **een nieuw account maken in een Azure-abonnement** hebt ingeschakeld, worden alle aanpassingen van het media-en inhouds model gekopieerd van de *proef* account naar het nieuwe account.
 
@@ -163,16 +165,10 @@ De mogelijkheid om de inhoud te importeren is geldig voor zowel geautomatiseerde
 
 > [!NOTE]
 > De inhoud kan slechts eenmaal van elk account worden geïmporteerd.
+>
+> De *proef* account is niet availagle op de Azure Government Cloud.
 
-## <a name="delete-the-account"></a>Het account verwijderen
-
-Als u het account later wilt verwijderen, kunt u het account verwijderen van de Video Indexer-website. Als u het account wilt verwijderen, moet u de eigenaar zijn.
-
-Selecteer de account-> **instellingen**  ->  **dit account verwijderen**. 
-
-Het account wordt over 90 dagen definitief verwijderd.
-
-## <a name="considerations"></a>Overwegingen
+## <a name="azure-media-services-considerations"></a>Azure Media Services overwegingen
 
 De volgende Azure Media Services gerelateerde overwegingen zijn van toepassing:
 
@@ -201,9 +197,52 @@ Om het maken van het account te automatiseren, is een proces van twee stappen:
     Bekijk een voor beeld van de sjabloon voor het maken van het [Media Services-account](https://github.com/Azure-Samples/media-services-v3-arm-templates).
 1. Roep [create-account aan met de Media Services-en Azure AD-toepassing](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Create-Paid-Account).
 
+## <a name="video-indexer-in-azure-government"></a>Video Indexer in Azure Government
+
+### <a name="prerequisites-for-connecting-to-azure-government"></a>Vereisten voor het maken van verbinding met Azure Government
+
+-   Een Azure-abonnement in [Azure Government](https://docs.microsoft.com/azure/azure-government/).
+- Een Azure AD-account in Azure Government.
+- Alle vooraf-vereisten van machtigingen en bronnen zoals hierboven beschreven in [vereisten voor het maken van verbinding met Azure](#prerequisites-for-connecting-to-azure).
+
+### <a name="create-new-account-via-the-azure-government-portal"></a>Nieuw account maken via de Azure Government Portal
+
+> [!NOTE]
+> De Azure Government Cloud bevat geen *proef* ervaring van video indexer.
+
+Een betaald account maken via de Video Indexer portal:
+
+1. Ga naar https://videoindexer.ai.azure.us 
+1. Meld u aan met uw Azure Government Azure AD-account.
+1.  Als u geen Video Indexer accounts hebt in Azure Government waarbij u een eigenaar of bijdrager bent, krijgt u een lege ervaring waar u uw account kunt gaan maken. 
+
+    De rest van de stroom is zoals hierboven is beschreven. alleen de regio's waaruit u kunt selecteren, zijn overheids regio's waarin video indexer beschikbaar is 
+
+    Als u al een bijdrager of beheerder van een bestaand Video Indexer account in Azure Government bent, wordt u naar dat account geleid en kunt u aan de hand van de volgende stappen beginnen om een extra account te maken, zoals hierboven is beschreven.
+    
+### <a name="create-new-account-via-the-api-on-azure-government"></a>Maak een nieuw account via de API op Azure Government
+
+Als u een betaald account in Azure Government wilt maken, volgt u de instructies in [Create-betalen-account](https://api-portal.videoindexer.ai.azure.us/docs/services/Operations/operations/Create-Paid-Account). Dit eind punt API bevat alleen overheids Cloud regio's.
+
+### <a name="limitations-of-video-indexer-on-azure-government"></a>Beperkingen van Video Indexer op Azure Government
+
+*   Er is geen hand matige toezicht op inhoud beschikbaar in de Government Cloud. 
+
+    In de open bare Cloud wanneer inhoud op basis van een inhouds beheerder als aanstootgevend wordt beschouwd, kan de klant voor een persoon vragen om die inhoud te bekijken en deze beslissing mogelijk te herstellen.  
+*   Geen proef accounts. 
+* Bing description-in gov-Cloud geven we geen beschrijving van beroemdheden en benoemde entiteiten die worden geïdentificeerd. Dit is alleen de mogelijkheid van de gebruikers interface. 
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Wanneer u klaar bent met deze zelf studie, verwijdert u de resources die u niet wilt gebruiken.
+
+### <a name="delete-a-video-indexer-account"></a>Een Video Indexer account verwijderen
+
+Als u een Video Indexer account wilt verwijderen, kunt u het account verwijderen van de Video Indexer-website. Als u het account wilt verwijderen, moet u de eigenaar zijn.
+
+Selecteer de account-> **instellingen**  ->  **dit account verwijderen**. 
+
+Het account wordt over 90 dagen definitief verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

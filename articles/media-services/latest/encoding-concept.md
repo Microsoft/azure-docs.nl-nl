@@ -1,6 +1,5 @@
 ---
 title: Video en audio coderen met Media Services
-titleSuffix: Azure Media Services
 description: In dit artikel wordt uitgelegd hoe u video en audio met Azure Media Services versleutelt.
 services: media-services
 documentationcenter: ''
@@ -13,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 8533c99011232385e31f4e698743bbb1c6c00bc5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 159336d3e8949739cb00dbe66ed82fa90256dcfd
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89300201"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897897"
 ---
 # <a name="encoding-video-and-audio-with-media-services"></a>Video en audio coderen met Media Services
 

@@ -1,6 +1,5 @@
 ---
 title: Video-en audio bestanden analyseren
-titleSuffix: Azure Media Services
 description: Meer informatie over het analyseren van audio-en video-inhoud met behulp van AudioAnalyzerPreset en VideoAnalyzerPreset in Azure Media Services.
 services: media-services
 documentationcenter: ''
@@ -12,12 +11,12 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 61f5a470046ba3ddca157e83737a29ed936a0c3a
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 25b5c3163b657633ca78215468f4c2a2e40949b7
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656322"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897221"
 ---
 # <a name="analyze-video-and-audio-files-with-azure-media-services"></a>Video-en audio bestanden analyseren met Azure Media Services
 
@@ -176,7 +175,7 @@ Voorbeeld:
 |knownPersonId|De interne ID (als deze een bekende persoon is).|
 |referenceId|De Bing-ID (als het een Bing-beroemdheden is).|
 |Type|Momenteel alleen Bing.|
-|title|De titel (als het een beroemdheden is, bijvoorbeeld ' micro soft ' CEO ').|
+|titel|De titel (als het een beroemdheden is, bijvoorbeeld ' micro soft ' CEO ').|
 |imageUrl|De afbeeldings-URL, als het een beroemdheden is.|
 |vaak|Exemplaren waarvan het gezicht in het opgegeven tijds bereik is verschenen. Elk exemplaar heeft ook een thumbnailsId. |
 

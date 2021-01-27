@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 5a2a7abf0227812826428557b86c4468f7693c82
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: b8c9af31243d8bb58a58fbc687cad68130f64f7e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600389"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880739"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
 
@@ -90,7 +90,7 @@ Met deze optie kunnen hogere of lagere prijzen worden gemaakt dan voor de openba
 
 Er worden 20% Standard Store-service kosten in rekening gebracht wanneer klanten uw koop aanbieding kopen via de commerciële Marketplace. Zie sectie 5c van de [micro soft Publisher-overeenkomst](https://go.microsoft.com/fwlink/?LinkID=699560)voor meer informatie over deze kosten.
 
-Voor bepaalde transactable-aanbiedingen die u publiceert naar de commerciële Marketplace, kunt u in aanmerking komen voor een lagere winkel service tarief van 10%. Voor een aanbieding die in aanmerking komt, moet deze door micro soft zijn aangewezen als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de voor waarden worden voldaan ten minste vijf werk dagen voordat de kosten voor de lagere Marketplace-service worden ontvangen. Zodra aan de voor waarden is voldaan, worden de gereduceerde service kosten in rekening gebracht voor alle trans acties die ingaan op de eerste dag van de volgende maand, totdat de gemotiveerd status van Azure IP co-sell verloren is gegaan. Zie [vereisten voor co-sell-status](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen.
+Voor bepaalde transactable-aanbiedingen die u publiceert naar de commerciële Marketplace, kunt u in aanmerking komen voor een lagere winkel service tarief van 10%. Voor een aanbieding die in aanmerking komt, moet deze door micro soft zijn aangewezen als Azure IP-gemotiveerd. Voor het einde van elke kalender maand moet aan de voor waarden worden voldaan ten minste vijf werk dagen voordat de kosten voor de lagere Marketplace-service worden ontvangen. Zodra aan de voor waarden is voldaan, worden de gereduceerde service kosten in rekening gebracht voor alle trans acties die ingaan op de eerste dag van de volgende maand, totdat de gemotiveerd status van Azure IP co-sell verloren is gegaan. Zie [vereisten voor co-sell-status](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status)voor meer informatie over de geschiktheid voor het verkopen van IP-adressen.
 
 De lagere kosten voor Marketplace-service zijn van toepassing op Azure IP gemotiveerd SaaS, Vm's, beheerde apps en alle andere gekwalificeerde transactable IaaS-oplossingen die beschikbaar worden gesteld via de commerciële Marketplace. Betaalde SaaS-aanbiedingen die zijn gekoppeld aan een micro soft teams-app of ten minste twee Microsoft 365-invoeg toepassingen (Excel, Power Point, Word, Outlook en share point) en naar Microsoft AppSource worden gepubliceerd, ontvangen ook deze korting.
 
@@ -156,13 +156,13 @@ In dit scenario betaalt micro soft de $100,00 voor uw software licentie en wordt
 
 **Facturering en betaling** : u kunt de voorkeurs facturerings methode van de klant gebruiken voor het leveren van abonnements-of PAYGO software licentie kosten.
 
-**Enterprise Agreement** : als de voorkeurs facturerings methode van de klant de micro soft-Enterprise Agreement is, worden de kosten voor software licenties gefactureerd op basis van deze facturerings methode als een gespecificeerde kosten, gescheiden van eventuele Azure-specifieke gebruiks kosten.
+**Enterprise overeenkomst** : als de voorkeurs facturerings methode van de klant de micro soft-Enterprise overeenkomst is, worden de kosten voor software licenties gefactureerd op basis van deze facturerings methode als een gespecificeerde kosten, gescheiden van eventuele Azure-specifieke gebruiks kosten.
 
-**Credit cards en maandelijkse factuur** : klanten kunnen ook betalen met een credit card en een maandelijkse factuur. In dit geval worden de kosten voor software licenties gefactureerd op dezelfde manier als het Enterprise Agreement scenario, als een gespecificeerde kosten, gescheiden van eventuele Azure-specifieke gebruiks kosten.
+**Credit cards en maandelijkse factuur** : klanten kunnen ook betalen met een credit card en een maandelijkse factuur. In dit geval worden de kosten voor software licenties gefactureerd op dezelfde manier als het Enterprise Overeenkomst scenario, als een gespecificeerde kosten, gescheiden van eventuele Azure-specifieke gebruiks kosten.
 
-**Gratis tegoeden en Azure-voor uitbetaling** : sommige klanten kiezen voor het probetalen van Azure met Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd) in het Enterprise Agreement of hebben gratis tegoed voor gebruik met Azure. Hoewel deze tegoeden kunnen worden gebruikt om te betalen voor gebruik van Azure, kunnen ze niet worden gebruikt voor het betalen van licentie kosten voor software licenties.
+**Gratis tegoeden en Azure-voor uitbetaling** : sommige klanten kiezen voor het probetalen van Azure met Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd) in het Enterprise overeenkomst of hebben gratis tegoed voor gebruik met Azure. Hoewel deze tegoeden kunnen worden gebruikt om te betalen voor gebruik van Azure, kunnen ze niet worden gebruikt voor het betalen van licentie kosten voor software licenties.
 
-**Facturering en verzamelingen** : de facturering van uitgever software licenties wordt weer gegeven op basis van de klant-geselecteerde facturerings methode en volgt de facturerings tijdlijn. Klanten zonder een Enterprise Agreement op locatie worden maandelijks gefactureerd voor software licenties voor Marketplace. Klanten met een Enterprise Agreement worden maandelijks gefactureerd via een factuur die elk kwar taal wordt gepresenteerd.
+**Facturering en verzamelingen** : de facturering van uitgever software licenties wordt weer gegeven op basis van de klant-geselecteerde facturerings methode en volgt de facturerings tijdlijn. Klanten zonder een Enterprise Overeenkomst op locatie worden maandelijks gefactureerd voor software licenties voor Marketplace. Klanten met een Enterprise Overeenkomst worden maandelijks gefactureerd via een factuur die elk kwar taal wordt gepresenteerd.
 
 Als er prijs modellen voor abonnementen of betalen per gebruik zijn geselecteerd, fungeert micro soft als de agent van de uitgever en is verantwoordelijk voor alle aspecten van facturering, betaling en verzameling.
 
@@ -170,7 +170,7 @@ Als er prijs modellen voor abonnementen of betalen per gebruik zijn geselecteerd
 
 Alle software licentie kosten die door micro soft worden verzameld als agent, zijn onderhevig aan 20% transactie kosten, tenzij anders vermeld en worden afgetrokken op het moment van de uitgever.
 
-Klanten kopen normaal gesp roken gebruik van de Enterprise Agreement of een op een credit card ingeschakelde betalen naar gebruik-overeenkomst. Het overeenkomst type bepaalt de timing van facturering, facturering, verzamelen en uitbetaling.
+Klanten kopen normaal gesp roken gebruik van de Enterprise Overeenkomst of een op een credit card ingeschakelde betalen naar gebruik-overeenkomst. Het overeenkomst type bepaalt de timing van facturering, facturering, verzamelen en uitbetaling.
 
 >[!NOTE]
 >Alle rapportage en inzichten voor de optie voor het publiceren van Transact zijn beschikbaar via het gedeelte Analytics van partner Center.

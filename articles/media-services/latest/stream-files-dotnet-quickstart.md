@@ -1,5 +1,5 @@
 ---
-title: Videobestanden streamen met Azure Media Services - .NET | Microsoft Docs
+title: Video bestanden streamen met Azure Media Services-.NET
 description: Volg de stappen in deze zelfstudie om .NET te gebruiken om een nieuw Azure Media Services-account te maken, een bestand te coderen en dit vervolgens te streamen naar Azure Media Player.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 530089b9c6b9544201b0f07368cac3d1a695a4f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: dc6b240a2d97e0b4aa313f858b3965f241dd0b08
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91268686"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898186"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---net"></a>Zelfstudie: Extern bestand coderen op basis van URL en video streamen - .NET
 
@@ -54,9 +54,9 @@ Open [appsettings.json](https://github.com/Azure-Samples/media-services-v3-dotne
 In het voorbeeld worden de volgende acties uitgevoerd:
 
 1. Er wordt een **transformatie** gemaakt (eerst wordt gecontroleerd of de opgegeven transformatie bestaat). 
-2. Er wordt een uitvoer**asset** gemaakt die wordt gebruikt als uitvoer van de coderings**taak**.
+2. Er wordt een uitvoer **asset** gemaakt die wordt gebruikt als uitvoer van de coderings **taak**.
 3. De invoer van de **taak** wordt gemaakt en is gebaseerd op een HTTPS-URL.
-4. De coderings**taak** wordt met behulp van de eerder gemaakte invoer en uitvoer verzonden.
+4. De coderings **taak** wordt met behulp van de eerder gemaakte invoer en uitvoer verzonden.
 5. De status van de taak wordt gecontroleerd.
 6. Er wordt een **streaming-locator** gemaakt.
 7. Er worden streaming-URL's samengesteld.

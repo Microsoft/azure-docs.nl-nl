@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: a88f9fab2b10271aa7856a6d0b5ee114f46cfb49
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 659f6527d43e1b45a11fddf774050ca6d42bfe12
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633926"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896660"
 ---
 # <a name="transformation-functions-in-power-query-for-data-wrangling"></a>Transformatie functies in Power Query voor gegevens wrangling
 
@@ -24,7 +24,7 @@ Met data Wrangling in Azure Data Factory kunt u flexibelere gegevens voorbereidi
 
 Momenteel niet alle Power Query M-functies worden ondersteund voor gegevens wrangling ondanks dat deze beschikbaar zijn tijdens het ontwerpen. Tijdens het bouwen van uw mix verder wordt u gevraagd het volgende fout bericht op te nemen als een functie niet wordt ondersteund:
 
-`The Wrangling Data Flow is invalid. Expression.Error: The transformation logic is not supported. Please try a simpler expression.`
+`UserQuery : Expression.Error: The transformation logic is not supported as it requires dynamic access to rows of data, which cannot be scaled out.`
 
 Hieronder vindt u een lijst met ondersteunde functies van Power Query M.
 
@@ -96,7 +96,7 @@ Hoog behoud en verwijderen, bereik (overeenkomende M-functies, alleen ondersteun
 | Table.Distinct | Verwijder dubbele rijen worden niet ondersteund. |
 | Table.RemoveLastN | Onderste rijen verwijderen wordt niet ondersteund. |
 | Table.RowCount | Niet ondersteund, maar kan worden bereikt door een aangepaste kolom met de waarde 1 toe te voegen en deze kolom vervolgens samen te voegen met List. sum. Table. Group wordt ondersteund. | 
-| Fout afhandeling op rijniveau | Fout afhandeling op rijniveau wordt momenteel niet ondersteund. Als u bijvoorbeeld niet-numerieke waarden uit een kolom wilt filteren, kunt u de tekst kolom omzetten in een getal. Elke cel die niet kan worden getransformeerd, heeft een fout status en moet worden gefilterd. Dit scenario is niet mogelijk in wrangling-gegevens stroom. |
+| Fout afhandeling op rijniveau | Fout afhandeling op rijniveau wordt momenteel niet ondersteund. Als u bijvoorbeeld niet-numerieke waarden uit een kolom wilt filteren, kunt u de tekst kolom omzetten in een getal. Elke cel die niet kan worden getransformeerd, heeft een fout status en moet worden gefilterd. Dit scenario is niet mogelijk in een uitgeschaalde M. |
 | Table.Transpose | Niet ondersteund |
 | Table.Pivot | Niet ondersteund |
 

@@ -3,12 +3,12 @@ title: Veelgestelde vragen over herstel na nood gevallen voor Hyper-V met Azure 
 description: In dit artikel vindt u een overzicht van algemene vragen over het instellen van herstel na nood gevallen voor on-premises virtuele Hyper-V-machines naar Azure met behulp van de Azure Site Recovery-site.
 ms.date: 11/12/2019
 ms.topic: conceptual
-ms.openlocfilehash: e4f5ee71fc56cad247b57f94bf08a68bed8775f9
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 649bd69f14cdf8d81fe05d3a5f5cac3389419fc3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754348"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879441"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Algemene vragen - Herstel na noodgevallen van Hyper-V naar Azure
 
@@ -167,7 +167,7 @@ Virtuele Hyper-V-machines kunnen elke 30 seconden worden gerepliceerd (met uitzo
 
 ### <a name="can-azure-site-recovery-and-hyper-v-replica-be-configured-together-on-a-hyper-v-machine"></a>Kunnen Azure Site Recovery en Hyper-V replica samen worden geconfigureerd op een Hyper-V-computer?
 
-Ja, zowel Azure Site Recovery als Hyper-V replica kunnen samen worden geconfigureerd voor een machine. Maar de machine moet worden beveiligd als een fysieke machine en wordt gerepliceerd naar Azure met een configuratie/proces server. Meer informatie over het beveiligen van [fysieke machines.](https://docs.microsoft.com/azure/site-recovery/physical-azure-architecture)
+Ja, zowel Azure Site Recovery als Hyper-V replica kunnen samen worden geconfigureerd voor een machine. Maar de machine moet worden beveiligd als een fysieke machine en wordt gerepliceerd naar Azure met een configuratie/proces server. Meer informatie over het beveiligen van [fysieke machines.](./physical-azure-architecture.md)
 
 ### <a name="can-i-extend-replication"></a>Kan ik replicatie uitbreiden?
 Uitgebreide of gekoppelde replicatie wordt niet ondersteund. Deze functie aanvragen in het [Feedback forum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).

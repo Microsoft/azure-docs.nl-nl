@@ -9,12 +9,12 @@ ms.date: 01/06/2021
 ms.author: normesta
 ms.reviewer: jamsbak
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: cc63a9787a3611f28e6466564735d029bf65b757
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 0340ab0a13d7c639d5e5bba49b3cdd445bad5a83
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968395"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879878"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Gegevens filteren met behulp van Azure Data Lake Storage-query versnelling
 
@@ -90,7 +90,7 @@ Als u query versnelling wilt gebruiken, moet u eerst de functie voor query versn
    Register-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuery
    ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Open de [Azure Cloud shell](../../cloud-shell/overview.md)of open een opdracht console toepassing zoals Windows Power shell als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli) .
 
@@ -120,7 +120,7 @@ Gebruik de opdracht [Get-AzProviderFeature](/powershell/module/az.resources/get-
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName BlobQuery
 ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u wilt controleren of de registratie is voltooid, gebruikt u de opdracht [AZ feature](/cli/azure/feature#az-feature-show) .
 
@@ -142,7 +142,7 @@ Gebruik de opdracht [REGI ster-AzResourceProvider](/powershell/module/az.resourc
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de resource provider wilt registreren, gebruikt u de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) .
 
@@ -437,7 +437,7 @@ def dump_query_csv(blob: BlobClient, query: str, headers: bool):
 
 ### <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-In dit voor beeld wordt de query verzonden naar de API voor query versnelling, waarna de resultaten weer worden gestreamd. Het `blob` object dat is door gegeven aan de `queryHemingway` Help-functie, is van het type [BlockBlobClient](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient). Zie voor meer informatie over het ophalen van een [BlockBlobClient](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient) -object [Quick Start: blobs beheren met Java script v12 SDK in Node.js](storage-quickstart-blobs-nodejs.md).
+In dit voor beeld wordt de query verzonden naar de API voor query versnelling, waarna de resultaten weer worden gestreamd. Het `blob` object dat is door gegeven aan de `queryHemingway` Help-functie, is van het type [BlockBlobClient](/javascript/api/@azure/storage-blob/blockblobclient). Zie voor meer informatie over het ophalen van een [BlockBlobClient](/javascript/api/@azure/storage-blob/blockblobclient) -object [Quick Start: blobs beheren met Java script v12 SDK in Node.js](storage-quickstart-blobs-nodejs.md).
 
 ```javascript
 async function queryHemingway(blob)

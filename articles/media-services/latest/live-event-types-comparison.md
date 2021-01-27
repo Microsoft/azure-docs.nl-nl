@@ -1,5 +1,5 @@
 ---
-title: LiveEvent-typen Azure Media Services | Microsoft Docs
+title: Azure Media Services typen LiveEvent
 description: In Azure Media Services kan een live-gebeurtenis worden ingesteld op een *Pass-Through-* of *Live-code ring*. In dit artikel wordt een gedetailleerde tabel weer gegeven waarin live gebeurtenis typen worden vergeleken.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: c79d45cfac22f41f05071b619c444e7b7ab7956a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3126cbf4f9d87e9baa7267e309210b751a47069d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397301"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897795"
 ---
 # <a name="live-event-types-comparison"></a>Vergelijking van live gebeurtenis typen
 

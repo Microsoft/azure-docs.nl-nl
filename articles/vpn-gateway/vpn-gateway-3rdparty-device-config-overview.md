@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 01ceb067f589ef04b04ff0bf05e2971ee30f407c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 484dad65310efaa60e8744b2f122b5e44ae13565
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400157"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880149"
 ---
 # <a name="overview-of-partner-vpn-device-configurations"></a>Overzicht van configuraties van VPN-apparaten voor partners
 Dit artikel bevat een overzicht van het configureren van on-premises VPN-apparaten om verbinding te maken met Azure VPN-gateways. Een voor beeld van een virtueel Azure-netwerk en een VPN-gateway Setup wordt gebruikt om te laten zien hoe u verbinding kunt maken met verschillende on-premises VPN-configuraties met dezelfde para meters.
@@ -27,7 +27,7 @@ De eerste configuratie in het voor beeld bestaat uit één S2S VPN-tunnel tussen
 
 ![Diagram van één S2S VPN-tunnel](./media/vpn-gateway-3rdparty-device-config-overview/singletunnel.png)
 
-Zie [een site-naar-site-verbinding configureren](vpn-gateway-howto-site-to-site-resource-manager-portal.md)voor stapsgewijze instructies voor het instellen van één VPN-tunnel. In de volgende secties worden de verbindings parameters voor de voorbeeld configuratie opgegeven en wordt een Power shell-script geboden waarmee u aan de slag kunt.
+Zie [een site-naar-site-verbinding configureren](./tutorial-site-to-site-portal.md)voor stapsgewijze instructies voor het instellen van één VPN-tunnel. In de volgende secties worden de verbindings parameters voor de voorbeeld configuratie opgegeven en wordt een Power shell-script geboden waarmee u aan de slag kunt.
 
 ### <a name="connection-parameters"></a>Verbindingsparameters
 In deze sectie vindt u de para meters voor de voor beelden die in de vorige secties worden beschreven.
@@ -150,4 +150,3 @@ Wanneer u de S2S-VPN-verbinding maakt, kunt u eventueel [BGP gebruiken voor de V
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie voor stapsgewijze instructies voor het instellen van actieve VPN-gateways [Active/Active VPN-gateways configureren voor cross-premises en vnet-naar-vnet-verbindingen](vpn-gateway-activeactive-rm-powershell.md).
-

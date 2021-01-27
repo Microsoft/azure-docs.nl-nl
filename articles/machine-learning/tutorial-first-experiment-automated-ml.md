@@ -11,12 +11,12 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: 90c827774f38f07b9791a6399a53b0304bbe28c8
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
-ms.translationtype: HT
+ms.openlocfilehash: ff9bd328dd98fbd614a3bb63a1edddc2027d97b2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695215"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879778"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning
 
@@ -252,7 +252,7 @@ Verwijder alleen het implementatie-exemplaar van Azure Machine Learning op https
 In deze zelfstudie over geautomatiseerde machine learning heeft u de geautomatiseerde ML-interface van Azure Machine Learning gebruikt om een classificatiemodel te maken en implementeren. Raadpleeg de volgende artikelen voor meer informatie en de volgende stappen:
 
 > [!div class="nextstepaction"]
-> [Een webservice gebruiken](https://docs.microsoft.com/power-bi/connect-data/service-aml-integrate?context=azure/machine-learning/context/ml-context)
+> [Een webservice gebruiken](/power-bi/connect-data/service-aml-integrate?context=azure%2fmachine-learning%2fcontext%2fml-context)
 
 + Meer informatie over [geautomatiseerde machine learning](concept-automated-ml.md).
 + Raadpleeg het artikel [Geautomatiseerde machine learning-resultaten begrijpen](how-to-understand-automated-ml.md) voor meer informatie over metrische classificatiegegevens en grafieken.

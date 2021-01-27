@@ -11,12 +11,12 @@ ms.custom: references_regions
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: juliako
-ms.openlocfilehash: 1ee179efbe936c742f1eb51b998c10f9349c14fb
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 29dbdb896d1a6063fec277afa33327c84cb2f0cd
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763384"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880924"
 ---
 # <a name="use-the-animated-character-detection-preview-with-portal-and-api"></a>De functie voor het detecteren van een animatie (preview) gebruiken met de portal en API 
 
@@ -35,7 +35,7 @@ Als u een Video Indexer betaalde account hebt, moet u eerst verbinding maken met
 > [!NOTE]
 > Beide accounts moeten zich in dezelfde regio bevinden. De integratie van Custom Vision wordt momenteel niet ondersteund in de Japan-regio.
 
-Betaalde accounts die toegang hebben tot hun Custom Vision-account kunnen de modellen en gelabelde installatie kopieën daar zien. Meer informatie over [het verbeteren van uw classificatie in Custom Vision](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier). 
+Betaalde accounts die toegang hebben tot hun Custom Vision-account kunnen de modellen en gelabelde installatie kopieën daar zien. Meer informatie over [het verbeteren van uw classificatie in Custom Vision](../../cognitive-services/custom-vision-service/getting-started-improving-your-classifier.md). 
 
 Houd er rekening mee dat de training van het model alleen moet worden uitgevoerd via Video Indexer en niet via de Custom Vision-website. 
 
@@ -108,7 +108,7 @@ Voordat u het model kunt labelen en trainen, krijgen alle animatie-tekens de naa
 1. Alleen betaalde accounts: de groepen in Custom Vision bekijken 
 
     > [!NOTE]
-    > Betaalde accounts die toegang hebben tot hun Custom Vision-account kunnen de modellen en gelabelde installatie kopieën daar zien. Meer informatie over [het verbeteren van uw classificatie in Custom Vision](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier). Het is belang rijk te weten dat de training van het model alleen moet worden uitgevoerd via Video Indexer (zoals beschreven in dit topid) en niet via de Custom Vision-website. 
+    > Betaalde accounts die toegang hebben tot hun Custom Vision-account kunnen de modellen en gelabelde installatie kopieën daar zien. Meer informatie over [het verbeteren van uw classificatie in Custom Vision](../../cognitive-services/custom-vision-service/getting-started-improving-your-classifier.md). Het is belang rijk te weten dat de training van het model alleen moet worden uitgevoerd via Video Indexer (zoals beschreven in dit topid) en niet via de Custom Vision-website. 
 
     1. Ga naar de pagina **aangepaste modellen** in video indexer en kies het tabblad met **animatie tekens** . 
     1. Klik op de knop bewerken voor het model waaraan u werkt om deze te beheren in Custom Vision. 

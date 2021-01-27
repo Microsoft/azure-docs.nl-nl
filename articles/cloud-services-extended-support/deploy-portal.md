@@ -8,33 +8,36 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 9ca0a3852c6be04332369e57ce1916e5f589516f
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 9c1abe1323bc095fe4dfbfc559ef7e159d1f7532
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98745044"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880672"
 ---
-# <a name="deploy-azure-cloud-services-extended-support-using-the-azure-portal"></a>Implementeer Azure Cloud Services (uitgebreide ondersteuning) met behulp van de Azure Portal
+# <a name="deploy-a-azure-cloud-services-extended-support-using-the-azure-portal"></a>Een Azure Cloud Services (uitgebreide ondersteuning) implementeren met behulp van de Azure Portal
 In dit artikel wordt uitgelegd hoe u de Azure Portal gebruikt voor het maken van een implementatie van een Cloud service (uitgebreide ondersteuning). 
 
 > [!IMPORTANT]
 > Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-1. Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak de bijbehorende resources. 
+## <a name="before-you-begin"></a>Voordat u begint
 
-2. Meld u aan bij [Azure Portal](https://portal.azure.com)
+Controleer de [vereisten voor implementatie](deploy-prerequisite.md) voor Cloud Services (uitgebreide ondersteuning) en maak de bijbehorende resources. 
 
-3.  Zoek en selecteer **Cloud Services (uitgebreide ondersteuning)** met behulp van de zoek balk aan de bovenkant van de Azure Portal.
+## <a name="deploy-a-cloud-services-extended-support"></a>Een Cloud Services implementeren (uitgebreide ondersteuning) 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com)
+
+2.  Zoek en selecteer **Cloud Services (uitgebreide ondersteuning)** met behulp van de zoek balk aan de bovenkant van de Azure Portal.
 
     :::image type="content" source="media/deploy-portal-1.png" alt-text="Afbeelding toont de Blade alle resources in de Azure Portal.":::
  
-4.  Selecteer **maken** in het deel venster Cloud Services (uitgebreide ondersteuning). 
+3.  Selecteer **maken** in het deel venster Cloud Services (uitgebreide ondersteuning). 
 
     :::image type="content" source="media/deploy-portal-2.png" alt-text="Afbeelding toont de aanschaf van een Cloud service vanuit de Marketplace.":::
 
-5. Het venster voor het maken van Cloud Services (uitgebreide ondersteuning) wordt geopend op het tabblad **basis beginselen** . 
+4. Het venster voor het maken van Cloud Services (uitgebreide ondersteuning) wordt geopend op het tabblad **basis beginselen** . 
     - Selecteer een abonnement.
     - Kies een resourcegroep of maak een nieuwe.
     - Voer de gewenste naam in voor de implementatie van uw Cloud service (uitgebreide ondersteuning).
@@ -43,11 +46,11 @@ In dit artikel wordt uitgelegd hoe u de Azure Portal gebruikt voor het maken van
 
     :::image type="content" source="media/deploy-portal-3.png" alt-text="Afbeelding toont de Blade start pagina van Cloud Services (uitgebreide ondersteuning).":::
 
-6. Voeg uw Cloud service configuratie, pakket-en definitie bestanden toe. U kunt bestaande bestanden uit de Blob-opslag toevoegen of deze uploaden vanaf uw lokale computer. Als u het uploadt van uw lokale computer, worden deze opgeslagen in een opslag account. 
+5. Voeg uw Cloud service configuratie, pakket-en definitie bestanden toe. U kunt bestaande bestanden uit de Blob-opslag toevoegen of deze uploaden vanaf uw lokale computer. Als u het uploadt van uw lokale computer, worden deze opgeslagen in een opslag account. 
 
     :::image type="content" source="media/deploy-portal-4.png" alt-text="Afbeelding toont de sectie uploaden van het tabblad basis beginselen tijdens het maken.":::
 
-7. Wanneer alle velden zijn voltooid, gaat u naar en voltooit u het tabblad **configuratie** . 
+6. Wanneer alle velden zijn voltooid, gaat u naar en voltooit u het tabblad **configuratie** . 
     - Selecteer een virtueel netwerk dat u wilt koppelen aan de Cloud service of maak een nieuw. 
         - Implementaties van Cloud service (uitgebreide ondersteuning) **moeten** zich in een virtueel netwerk bestaan. In het service configuratie bestand (. cscfg) onder de sectie **moet** ook naar het virtuele netwerk worden verwezen `NetworkConfiguration` .
     - Selecteer een bestaand openbaar IP-adres om te koppelen aan de Cloud service of maak een nieuwe.
@@ -61,8 +64,9 @@ In dit artikel wordt uitgelegd hoe u de Azure Portal gebruikt voor het maken van
 
  :::image type="content" source="media/deploy-portal-5.png" alt-text="Afbeelding toont de Blade configuratie in het Azure Portal bij het maken van een Cloud Services (uitgebreide ondersteuning).":::
 
-8. Zodra alle velden zijn voltooid, gaat u naar het tabblad **controleren en maken** om uw implementatie configuratie te valideren en maakt u uw Cloud service (uitgebreide ondersteuning).
+7. Zodra alle velden zijn voltooid, gaat u naar het tabblad **controleren en maken** om uw implementatie configuratie te valideren en maakt u uw Cloud service (uitgebreide ondersteuning).
 
 ## <a name="next-steps"></a>Volgende stappen 
 - Bekijk [Veelgestelde vragen](faq.md) over Cloud Services (uitgebreide ondersteuning).
 - Implementeer een Cloud service (uitgebreide ondersteuning) met behulp van de [Azure Portal](deploy-portal.md), [Power shell](deploy-powershell.md), [sjabloon](deploy-template.md) of [Visual Studio](deploy-visual-studio.md).
+- Ga naar de [opslag plaats voor beelden van Cloud Services (uitgebreide ondersteuning)](https://github.com/Azure-Samples/cloud-services-extended-support)

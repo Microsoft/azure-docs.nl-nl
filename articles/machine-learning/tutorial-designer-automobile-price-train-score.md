@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 09/28/2020
 ms.custom: designer
-ms.openlocfilehash: 2e46da1657a7473d3ff8cdf4ac43e5341b143455
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
-ms.translationtype: HT
+ms.openlocfilehash: 46098b2b7ebbf219a3c17b4fa40e1fd52344f683
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796105"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879794"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer"></a>Zelfstudie: Autoprijzen voorspellen met de ontwerpfunctie
 
@@ -103,7 +103,7 @@ Er zijn diverse voorbeeldgegevenssets meegeleverd in de ontwerpfunctie waarmee u
 
 U kunt de gegevens visualiseren voor meer informatie over de gegevensset die u gebruikt.
 
-1. Klik met de rechtermuisknop **Automobile price data (Raw)** en selecteer **Visualiseren**.
+1. Klik met de rechter muisknop op de **prijs gegevens auto Mobile (onbewerkt)** en selecteer de uitvoer van de gegevensset **visualiseren**  >  .
 
 1. Selecteer de verschillende kolommen in het gegevensvenster om informatie over elke kolom weer te geven.
 
@@ -284,7 +284,7 @@ Nu uw pijplijn helemaal is ingesteld, kunt u een uitvoering van de pijplijn indi
 
 Nadat de uitvoering is voltooid, kunt u de resultaten van de pijplijnuitvoering weergeven. Kijk eerst naar de voorspellingen die door het regressiemodel zijn gegenereerd.
 
-1. Klik met de rechtermuisknop op de module **Score Model** en selecteer **Visualiseren** om de uitvoer weer te geven.
+1. Klik met de rechter muisknop op de module **score model** en selecteer   >  **gescoorde gegevensset** visualiseren om de uitvoer weer te geven.
 
     Hier ziet u de voorspelde prijzen en de daadwerkelijke prijzen van de testgegevens.
 
@@ -294,7 +294,7 @@ Nadat de uitvoering is voltooid, kunt u de resultaten van de pijplijnuitvoering 
 
 Gebruik **Evaluate Model** om te zien hoe goed het getrainde model heeft gepresteerd met de testgegevensset.
 
-1. Klik met de rechtermuisknop op de module **Evaluate Model** en selecteer **Visualiseren** om de uitvoer weer te geven.
+1. Klik met de rechter muisknop op de module **model evalueren** en selecteer evaluatie resultaten **visualiseren**  >   om de uitvoer weer te geven.
 
 De volgende statistieken worden weergegeven voor uw model:
 

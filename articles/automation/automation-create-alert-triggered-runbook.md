@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: acf31af6d3ba3d78a6435210fa17562aaddac0a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03f24bf4cf379504479e554b129f34d94ca423cd
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186602"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896356"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Een waarschuwing gebruiken om een Azure Automation runbook te activeren
 
-U kunt [Azure monitor](../azure-monitor/overview.md?toc=%2fazure%2fautomation%2ftoc.json) gebruiken voor het bewaken van metrische gegevens op basis niveau en logboeken voor de meeste services in Azure. U kunt Azure Automation runbooks aanroepen met behulp van [actie groepen](../azure-monitor/platform/action-groups.md?toc=%2fazure%2fautomation%2ftoc.json) of met klassieke waarschuwingen om taken te automatiseren op basis van waarschuwingen. In dit artikel wordt beschreven hoe u een runbook configureert en uitvoert met behulp van waarschuwingen.
+U kunt [Azure monitor](../azure-monitor/overview.md) gebruiken voor het bewaken van metrische gegevens op basis niveau en logboeken voor de meeste services in Azure. U kunt Azure Automation runbooks aanroepen met behulp van [actie groepen](../azure-monitor/platform/action-groups.md) of met klassieke waarschuwingen om taken te automatiseren op basis van waarschuwingen. In dit artikel wordt beschreven hoe u een runbook configureert en uitvoert met behulp van waarschuwingen.
 
 ## <a name="alert-types"></a>Waarschuwingstypen
 
@@ -31,9 +31,9 @@ Wanneer een waarschuwing een runbook aanroept, is de daad werkelijke aanroep een
 
 |Waarschuwing  |Beschrijving|Payload-schema  |
 |---------|---------|---------|
-|[Algemene waarschuwing](../azure-monitor/platform/alerts-common-schema.md?toc=%2fazure%2fautomation%2ftoc.json)|Het algemene waarschuwings schema waarmee de verbruiks ervaring voor waarschuwings meldingen in azure vandaag wordt gestandaardiseerd.|Schema voor algemene nettoladingen van waarschuwingen|
-|[Waarschuwing voor activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json)    |Hiermee verzendt u een melding wanneer een nieuwe gebeurtenis in het Azure-activiteiten logboek overeenkomt met specifieke voor waarden. Bijvoorbeeld wanneer een `Delete VM` bewerking plaatsvindt in **myProductionResourceGroup** of wanneer er een nieuwe Azure service Health gebeurtenis met de status actief wordt weer gegeven.| [Schema waarschuwing waarschuwings lading activiteiten logboek](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
-|[Waarschuwing voor bijna realtime metrische gegevens](../azure-monitor/platform/alerts-metric-near-real-time.md?toc=%2fazure%2fautomation%2ftoc.json)    |Hiermee wordt een melding sneller verzonden dan metrische waarschuwingen wanneer een of meer metrische gegevens op platform niveau voldoen aan de opgegeven voor waarden. Als de waarde voor **CPU%** op een VM bijvoorbeeld groter is dan 90 en de waarde voor **netwerk in** groter is dan 500 MB voor de afgelopen vijf minuten.| [Bijna real-time metrische schema voor waarschuwingen nettolading](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
+|[Algemene waarschuwing](../azure-monitor/platform/alerts-common-schema.md)|Het algemene waarschuwings schema waarmee de verbruiks ervaring voor waarschuwings meldingen in azure vandaag wordt gestandaardiseerd.|Schema voor algemene nettoladingen van waarschuwingen|
+|[Waarschuwing voor activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md)    |Hiermee verzendt u een melding wanneer een nieuwe gebeurtenis in het Azure-activiteiten logboek overeenkomt met specifieke voor waarden. Bijvoorbeeld wanneer een `Delete VM` bewerking plaatsvindt in **myProductionResourceGroup** of wanneer er een nieuwe Azure service Health gebeurtenis met de status actief wordt weer gegeven.| [Schema waarschuwing waarschuwings lading activiteiten logboek](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
+|[Waarschuwing voor bijna realtime metrische gegevens](../azure-monitor/platform/alerts-metric-near-real-time.md)    |Hiermee wordt een melding sneller verzonden dan metrische waarschuwingen wanneer een of meer metrische gegevens op platform niveau voldoen aan de opgegeven voor waarden. Als de waarde voor **CPU%** op een VM bijvoorbeeld groter is dan 90 en de waarde voor **netwerk in** groter is dan 500 MB voor de afgelopen vijf minuten.| [Bijna real-time metrische schema voor waarschuwingen nettolading](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
 
 Omdat de gegevens die door elk type waarschuwing worden gegeven, verschillend zijn, wordt elk waarschuwings type anders afgehandeld. In de volgende sectie leert u hoe u een runbook maakt om verschillende soorten waarschuwingen te verwerken.
 
@@ -47,7 +47,7 @@ In dit voor beeld wordt een waarschuwing van een virtuele machine gebruikt. De V
 
 Het runbook maakt gebruik van het `AzureRunAsConnection` [Run as-account](./manage-runas-account.md) voor de verbinding met Azure om de beheer actie uit te voeren op de virtuele machine.
 
-Gebruik dit voor beeld om een runbook met de naam **Stop-AzureVmInResponsetoVMAlert**te maken. U kunt het Power shell-script wijzigen en het gebruiken met veel verschillende bronnen.
+Gebruik dit voor beeld om een runbook met de naam **Stop-AzureVmInResponsetoVMAlert** te maken. U kunt het Power shell-script wijzigen en het gebruiken met veel verschillende bronnen.
 
 1. Ga naar uw Azure Automation-account.
 2. Selecteer onder **Procesautomatisering** de optie **Runbooks**.
@@ -174,25 +174,25 @@ Waarschuwingen gebruiken actie groepen, die bestaan uit verzamelingen acties die
 1. Selecteer **+ Nieuwe waarschuwingsregel**.
 1. Klik op **selecteren** onder **resource**. Selecteer op de pagina **een resource selecteren** de virtuele machine waarvoor u een waarschuwing wilt ontvangen en klik op **gereed**.
 1. Klik op **voor waarde toevoegen** onder **voor waarde**. Selecteer het signaal dat u wilt gebruiken, bijvoorbeeld **percentage CPU** en klik op **gereed**.
-1. Voer op de pagina **signaal logica configureren** uw **drempel waarde** in onder **waarschuwings logica**en klik op **gereed**.
+1. Voer op de pagina **signaal logica configureren** uw **drempel waarde** in onder **waarschuwings logica** en klik op **gereed**.
 1. Selecteer onder **Actiegroepen** de optie **Nieuwe maken**.
 1. Geef op de pagina **actie groep toevoegen** een naam en een korte naam op voor de actie groep.
-1. Geef een naam op voor de actie. Selecteer **Automation Runbook**voor het actie type.
-1. Selecteer **Details bewerken**. Selecteer op de pagina **Runbook configureren** onder **Runbook-bron**de optie **gebruiker**.  
-1. Selecteer uw **abonnement** en **Automation-account**en selecteer vervolgens het runbook **Stop-AzureVmInResponsetoVMAlert** .  
+1. Geef een naam op voor de actie. Selecteer **Automation Runbook** voor het actie type.
+1. Selecteer **Details bewerken**. Selecteer op de pagina **Runbook configureren** onder **Runbook-bron** de optie **gebruiker**.  
+1. Selecteer uw **abonnement** en **Automation-account** en selecteer vervolgens het runbook **Stop-AzureVmInResponsetoVMAlert** .  
 1. Selecteer **Ja** om **het schema common Alerts in te scha kelen**.
-1. Selecteer **OK**om de actie groep te maken.
+1. Selecteer **OK** om de actie groep te maken.
 
     ![Pagina actie groep toevoegen](./media/automation-create-alert-triggered-runbook/add-action-group.png)
 
-    U kunt deze actie groep gebruiken in de [activiteiten logboek waarschuwingen](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json) en [bijna realtime waarschuwingen](../azure-monitor/platform/alerts-overview.md?toc=%2fazure%2fautomation%2ftoc.json) die u maakt.
+    U kunt deze actie groep gebruiken in de [activiteiten logboek waarschuwingen](../azure-monitor/platform/activity-log-alerts.md) en [bijna realtime waarschuwingen](../azure-monitor/platform/alerts-overview.md) die u maakt.
 
-1. Voeg onder **waarschuwings Details**een naam en beschrijving voor de waarschuwings regel toe en klik op **waarschuwings regel maken**.
+1. Voeg onder **waarschuwings Details** een naam en beschrijving voor de waarschuwings regel toe en klik op **waarschuwings regel maken**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Als u een runbook wilt starten met een webhook, raadpleegt u [een Runbook starten vanuit een webhook](automation-webhooks.md).
 * Zie [een Runbook starten](./start-runbooks.md)om verschillende manieren te ontdekken om een runbook te starten.
-* Zie [waarschuwingen voor activiteiten logboek maken](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json)voor informatie over het maken van een waarschuwing voor een activiteiten logboek.
+* Zie [waarschuwingen voor activiteiten logboek maken](../azure-monitor/platform/activity-log-alerts.md)voor informatie over het maken van een waarschuwing voor een activiteiten logboek.
 * Zie [een waarschuwings regel maken in de Azure Portal](../azure-monitor/platform/alerts-metric.md?toc=/azure/azure-monitor/toc.json)voor meer informatie over het maken van een nabije realtime-waarschuwing.
-* Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+* Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

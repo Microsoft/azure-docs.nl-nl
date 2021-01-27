@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 16f903e34c64214d54fc01fa621f561f1786de08
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
-ms.translationtype: HT
+ms.openlocfilehash: 81ae46a7b6c19557eeadd2d5b28ad2fa46e77115
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755987"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881364"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -27,7 +27,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 |----|:----|
 |Releasestatus:|**Azure Defender voor Azure SQL-databaseservers** - algemeen beschikbaar<br>**Azure Defender voor SQL-servers op computers** - algemeen beschikbaar |
 |Prijzen:|De twee abonnementen die **Azure Defender voor SQL** vormen, worden gefactureerd zoals wordt weergegeven op [de pagina met prijzen](security-center-pricing.md)|
-|Beveiligde SQL-versies:|[SQL op virtuele Azure-machines](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)<br>[SQL-servers met Azure Arc](https://docs.microsoft.com/sql/sql-server/azure-arc/overview)<br>On-premises SQL-servers op Windows-computers zonder Azure Arc<br>Azure SQL [individuele databases](../azure-sql/database/single-database-overview.md) en [elastische pools](../azure-sql/database/elastic-pool-overview.md)<br>[Azure SQL Managed Instance](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)<br>[Azure Synapse Analytics (voorheen SQL DW) toegewezen SQL-pool](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)|
+|Beveiligde SQL-versies:|[SQL op virtuele Azure-machines](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)<br>[SQL-servers met Azure Arc](/sql/sql-server/azure-arc/overview)<br>On-premises SQL-servers op Windows-computers zonder Azure Arc<br>Azure SQL [individuele databases](../azure-sql/database/single-database-overview.md) en [elastische pools](../azure-sql/database/elastic-pool-overview.md)<br>[Azure SQL Managed Instance](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)<br>[Azure Synapse Analytics (voorheen SQL DW) toegewezen SQL-pool](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Ja](./media/icons/yes-icon.png) China Gov (**Gedeeltelijk**: Subset van waarschuwingen en evaluatie van beveiligingsproblemen voor SQL-servers. Er is geen gedragsbedreigingsbeveiliging beschikbaar.)|
 |||
 
@@ -43,7 +43,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 - **Azure Defender voor SQL-servers op computers** breidt de beveiliging voor uw systeemeigen Azure SQL-servers uit om hybride omgevingen volledig te ondersteunen en SQL-servers (alle ondersteunde versies) die worden gehost in Azure, andere cloudomgevingen en zelfs on-premises machines te beveiligen:
     - [SQL Server on Virtual Machines](https://azure.microsoft.com/services/virtual-machines/sql-server/)
     - On-premises SQL-servers:
-        - [SQL Server met Azure Arc (preview)](https://docs.microsoft.com/sql/sql-server/azure-arc/overview)
+        - [SQL Server met Azure Arc (preview)](/sql/sql-server/azure-arc/overview)
         - [SQL Server op Windows-computers zonder Azure Arc](../azure-monitor/platform/agent-windows.md)
 
 

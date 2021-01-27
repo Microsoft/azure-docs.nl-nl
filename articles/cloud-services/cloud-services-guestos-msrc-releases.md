@@ -10,48 +10,98 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 12/21/2020
+ms.date: 1/26/2021
 ms.author: yohaddad
-ms.openlocfilehash: 7f683b5002fd31b599ae6fadeb82e5c6f5ce56a0
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: 7384b902e1bde46c55bcfa30b2aa46122445b05e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97708903"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98877506"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
 
-## <a name="december-2020-guest-os"></a>December 2020-gast besturingssysteem
->[!NOTE] 
-
->Het besturings systeem december gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem december gast. Deze lijst is onderhevig aan wijzigingen. 
+## <a name="january-2021-guest-os"></a>Januari 2021-gast besturingssysteem
+>[!NOTE]
+>Het besturings systeem januari gast wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem januari gast. Deze lijst is onderhevig aan wijzigingen. "
 
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |
-|  Rel 20-12 |  [4592440]  |  Meest recente cumulatieve update | 6,26 | 8 december 2020 |
-|  Rel 20-12 |  [4580325]  |  Flash-Update | 3,92, 4,85, 5,50, 6,26 | 13 oktober 2020 |
-|  Rel 20-12 |  [4586768]  |  Cumulatieve updates voor Internet Explorer | 2,105, 3,92, 4,85 | 10 november 2020 |
-|  Rel 20-12 |  [4593226]  |  Meest recente cumulatieve update | 5,50 | 8 december 2020 |
-|  Rel 20-12 |  [4052623]  |  Defender | 5,50, 6,26 | 13 december 2020 |
-|  Rel 20-12 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 2,105 | 10 november 2020 |
-|  Rel 20-12 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,105 | 10 november 2020 |
-|  Rel 20-12 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,85 | 10 november 2020 |
-|  Rel 20-12 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 4,85 | 10 november 2020 |
-|  Rel 20-12 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 3,92 | 10 november 2020 |
-|  Rel 20-12 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 3,92 | 10 november 2020 |
-|  Rel 20-12 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | 6,26 | 13 oktober 2020 |
-|  Rel 20-12 |  [4592471]  |  Maandelijks samen vouwen | 2,105 | 8 december 2020 |
-|  Rel 20-12 |  [4592468]  |  Maandelijks samen vouwen | 3,92 | 8 december 2020 |
-|  Rel 20-12 |  [4592484]  |  Maandelijks samen vouwen | 4,85 | 8 december 2020 |
-|  Rel 20-12 |  [4566426]  |  Onderhouds stack-update | 3,92 | Jul 14, 2020 |
-|  Rel 20-12 |  [4566425]  |  Onderhouds stack-update | 4,85 | Jul 14, 2020 |
-|  OOB rel 20-12 |  [4578013]  |  Zelfstandige beveiligings update | 4,85 | 19 augustus 2020 |
-|  Rel 20-12 |  [4576750]  |  Onderhouds stack-update | 5,50 | 8 sep 2020 |
-|  Rel 20-12 |  [4592510]  |  Onderhouds stack-update | 2,105 | 8 december 2020 |
-|  Rel 20-12 |  [4587735]  |  Onderhouds stack-update | 6,26 | 10 november 2020 |
-|  Rel 20-12 |  [4494175]  |  Micro | 5,50 | 1 sep, 2020 |
-|  Rel 20-12 |  [4494174]  |  Micro | 6,26 | 3 sep, 2020 |
+|  Rel 21-01 |  [4598230]  |  Meest recente cumulatieve update (LCU) | 6,27 | 12 januari 2021 |
+|  Rel 21-01 |  [4580325]  |  Flash-Update | 3,93, 4,86, 5,51, 6,27 | 13 oktober 2020 |
+|  Rel 21-01 |  [4586768]  |  Cumulatieve updates voor Internet Explorer | 2,106, 3,93, 4,86 | 10 november 2020 |
+|  Rel 21-01 |  [4598243]  |  Meest recente cumulatieve update (LCU) | 5,51 | 12 januari 2021 |
+|  Rel 21-01 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 2,106 | 12 januari 2021 |
+|  Rel 21-01 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,106 | 12 januari 2021 |
+|  Rel 21-01 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,86 | 12 januari 2021 |
+|  Rel 21-01 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 4,86 | 12 januari 2021 |
+|  Rel 21-01 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 3,93 | 12 januari 2021 |
+|  Rel 21-01 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 3,93 | 12 januari 2021 |
+|  Rel 21-01 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | 6,27 | 13 oktober 2020 |
+|  Rel 21-01 |  [4598279]  |  Maandelijks samen vouwen | 2,106 | 12 januari 2020 |
+|  Rel 21-01 |  [4598278]  |  Maandelijks samen vouwen | 3,93 | 12 januari 2020 |
+|  Rel 21-01 |  [4598285]  |  Maandelijks samen vouwen | 4,86 | 12 januari 2020 |
+|  Rel 21-01 |  [4566426]  |  Onderhouds stack-update | 3,93 | Jul 14, 2020 |
+|  Rel 21-01 |  [4566425]  |  Onderhouds stack-update | 4,86 | Jul 14, 2020 |
+|  OOB rel 21-01 |  [4578013]  |  Zelfstandige beveiligings update | 4,86 | 19 augustus 2020 |
+|  Rel 21-01 |  [4576750]  |  Onderhouds stack-update | 5,51 | 8 sep 2020 |
+|  Rel 21-01 |  [4592510]  |  Onderhouds stack-update | 2,106 | 8 december 2020 |
+|  Rel 21-01 |  [4598480]  |  Onderhouds stack-update | 6,27 | 12 januari 2021 |
+|  Rel 21-01 |  [4494175]  |  Micro | 5,51 | 1 sep, 2020 |
+|  Rel 21-01 |  [4494174]  |  Micro | 6,27 | 3 sep, 2020 |
+
+[4598230]: https://support.microsoft.com/kb/4598230
+[4580325]: https://support.microsoft.com/kb/4580325
+[4586768]: https://support.microsoft.com/kb/4586768
+[4598243]: https://support.microsoft.com/kb/4598243
+[4578952]: https://support.microsoft.com/kb/4578952
+[4578955]: https://support.microsoft.com/kb/4578955
+[4578953]: https://support.microsoft.com/kb/4578953
+[4578956]: https://support.microsoft.com/kb/4578956
+[4578950]: https://support.microsoft.com/kb/4578950
+[4578954]: https://support.microsoft.com/kb/4578954
+[4578966]: https://support.microsoft.com/kb/4578966
+[4598279]: https://support.microsoft.com/kb/4598279
+[4598278]: https://support.microsoft.com/kb/4598278
+[4598285]: https://support.microsoft.com/kb/4598285
+[4566426]: https://support.microsoft.com/kb/4566426
+[4566425]: https://support.microsoft.com/kb/4566425
+[4578013]: https://support.microsoft.com/kb/4578013
+[4576750]: https://support.microsoft.com/kb/4576750
+[4592510]: https://support.microsoft.com/kb/4592510
+[4598480]: https://support.microsoft.com/kb/4598480
+[4494175]: https://support.microsoft.com/kb/4494175
+[4494174]: https://support.microsoft.com/kb/4494174
+
+
+## <a name="december-2020-guest-os"></a>December 2020-gast besturingssysteem
+
+| Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
+| --- | --- | --- | --- | --- |
+|  Rel 20-12 |  [4592440]  |  Meest recente cumulatieve update | [6,26] | 8 december 2020 |
+|  Rel 20-12 |  [4580325]  |  Flash-Update | [3,92], [4,85], [5,50], [6,26] | 13 oktober 2020 |
+|  Rel 20-12 |  [4586768]  |  Cumulatieve updates voor Internet Explorer | [2,105], [3,92], [4,85] | 10 november 2020 |
+|  Rel 20-12 |  [4593226]  |  Meest recente cumulatieve update | [5,50] | 8 december 2020 |
+|  Rel 20-12 |  [4052623]  |  Defender | [5,50], [6,26] | 13 december 2020 |
+|  Rel 20-12 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [2,105] | 10 november 2020 |
+|  Rel 20-12 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [2,105] | 10 november 2020 |
+|  Rel 20-12 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [4,85] | 10 november 2020 |
+|  Rel 20-12 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [4,85] | 10 november 2020 |
+|  Rel 20-12 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | [3,92] | 10 november 2020 |
+|  Rel 20-12 |  [4578954]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | [3,92] | 10 november 2020 |
+|  Rel 20-12 |  [4578966]  |  Cumulatieve update van .NET Framework 3,5 en 4.7.2 | [6,26] | 13 oktober 2020 |
+|  Rel 20-12 |  [4592471]  |  Maandelijks samen vouwen | [2,105] | 8 december 2020 |
+|  Rel 20-12 |  [4592468]  |  Maandelijks samen vouwen | [3,92] | 8 december 2020 |
+|  Rel 20-12 |  [4592484]  |  Maandelijks samen vouwen | [4,85] | 8 december 2020 |
+|  Rel 20-12 |  [4566426]  |  Onderhouds stack-update | [3,92] | Jul 14, 2020 |
+|  Rel 20-12 |  [4566425]  |  Onderhouds stack-update | [4,85] | Jul 14, 2020 |
+|  OOB rel 20-12 |  [4578013]  |  Zelfstandige beveiligings update | [4,85] | 19 augustus 2020 |
+|  Rel 20-12 |  [4576750]  |  Onderhouds stack-update | [5,50] | 8 sep 2020 |
+|  Rel 20-12 |  [4592510]  |  Onderhouds stack-update | [2,105] | 8 december 2020 |
+|  Rel 20-12 |  [4587735]  |  Onderhouds stack-update | [6,26] | 10 november 2020 |
+|  Rel 20-12 |  [4494175]  |  Micro | [5,50] | 1 sep, 2020 |
+|  Rel 20-12 |  [4494174]  |  Micro | [6,26] | 3 sep, 2020 |
 
 [4592440]: https://support.microsoft.com/kb/4592440
 [4580325]: https://support.microsoft.com/kb/4580325
@@ -76,7 +126,11 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 [4587735]: https://support.microsoft.com/kb/4587735
 [4494175]: https://support.microsoft.com/kb/4494175
 [4494174]: https://support.microsoft.com/kb/4494174
-
+[2,105]: ./cloud-services-guestos-update-matrix.md#family-2-releases
+[3,92]: ./cloud-services-guestos-update-matrix.md#family-3-releases
+[4,85]: ./cloud-services-guestos-update-matrix.md#family-4-releases
+[5,50]: ./cloud-services-guestos-update-matrix.md#family-5-releases
+[6,26]: ./cloud-services-guestos-update-matrix.md#family-6-releases
 
 ## <a name="november-2020-guest-os"></a>November 2020-gast besturingssysteem
 
@@ -853,9 +907,9 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 |  Rel 19-07   |  [4506965]  |  .NET 4.5.2-beveiliging   |  3,75  |  9 juli 2019  |
 |  Rel 19-07   |  [4506974]  |  .NET 3,5-beveiliging   |  3,75  |  9 juli 2019  |
 |  Rel 19-07   |  [4507464]  |  Windows-beveiliging   |  3,75  |  9 juli 2019  |
-|  Rel 19-07   |  [4506964]  |  .NET 4.5.2-beveiliging   |  4,68  |  9 juli 2019  |
-|  Rel 19-07   |  [4506977]  |  .NET 3,5-beveiliging   |  4,68  |  9 juli 2019  |
-|  Rel 19-07   |  [4507457]  |  Windows-beveiliging   |  4,68  |  9 juli 2019  |
+|  Rel 19-07   |  [4506964]  |  .NET 4.5.2-beveiliging   |  4.68  |  9 juli 2019  |
+|  Rel 19-07   |  [4506977]  |  .NET 3,5-beveiliging   |  4.68  |  9 juli 2019  |
+|  Rel 19-07   |  [4507457]  |  Windows-beveiliging   |  4.68  |  9 juli 2019  |
 |  Rel 19-07   |  [4507460]  |  Windows-beveiliging   |  5.33  |  9 juli 2019  |
 |  Rel 19-07   |  [4506998]  |  .NET 3,5 & 4.7.2-beveiliging   |  6.9  |  9 juli 2019  |
 |  Rel 19-07   |  [4507469]  |  Windows-beveiliging   |  6.9  |  9 juli 2019  |
@@ -863,7 +917,7 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 |  N.v.t.  |  [4504369]  |  Update van juni 19-onderhouds stack voor (Server 2019)   |  6.9  |  14 mei 2019  |
 |  N.v.t.  |  [4503292]  |  Juni ' 19 niet-beveiliging (Server 2008 R2)   |  2,88  |  20 mei 2019  |
 |  N.v.t.  |  [4503285]  |  Juni ' 19 niet-beveiliging (Server 2012)   |  3,75  |  14 mei 2019  |
-|  N.v.t.  |  [4503276]  |  Juni ' 19 niet-beveiliging (Server 2012 R2)   |  4,68  |  14 mei 2019  |
+|  N.v.t.  |  [4503276]  |  Juni ' 19 niet-beveiliging (Server 2012 R2)   |  4.68  |  14 mei 2019  |
 
 [4507434]: https://support.microsoft.com/kb/4507434
 [4506621]: https://support.microsoft.com/kb/4506621
@@ -1565,7 +1619,7 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 ## <a name="april-2017-guest-os"></a>April 2017-gast besturingssysteem
 | Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
 | --- | --- | --- | --- | --- |
-| Rel 17-04 |  [4015217]  |Kwaliteits verbeteringen van het besturings systeem WS 2016 | 5,6 | 11 april 2017 |
+| Rel 17-04 |  [4015217]  |Kwaliteits verbeteringen van het besturings systeem WS 2016 | 5.6 | 11 april 2017 |
 | Rel 17-04 |  [4015546]  |Alleen Windows-beveiliging |2,61 | 11 april 2017 |
 | Rel 17-04 |  [4015547]  |Alleen Windows-beveiliging |4,41 | 11 april 2017 |
 | Rel 17-04 |  [4015548]  |Alleen Windows-beveiliging |3,48 | 11 april 2017 |
@@ -1573,7 +1627,7 @@ In de volgende tabellen ziet u de micro soft Security Response Center-updates (M
 | Rel 17-04 |  [4014550]; [4014560]; [4014562]; [4014556]; [4014574] |.NET-beveiliging |4,41 | 11 april 2017 |
 | Rel 17-04 |  [4014564]; [4014572]; [4014549] |.NET-beveiliging |3,48 | 11 april 2017 |
 | Rel 17-04 |  [4014566]; [4014552]; [4014573]; [4014558]  |.NET-beveiliging |2,61 | 11 april 2017 |
-| Rel 17-04 |  [4015546]; [4015547]; [4015548]; [4015217]  |CVE-2017-0181 |5,6 | 11 april 2017 |
+| Rel 17-04 |  [4015546]; [4015547]; [4015548]; [4015217]  |CVE-2017-0181 |5.6 | 11 april 2017 |
 | Rel 17-04 |  [4015546]; [4015547]; [4015548]; [4015217]  |CVE-2017-0163; CVE-2017-0183; CVE-2017-0184; CVE-2017-0184; CVE-2017-0185; CVE-2017-0168 |2,61, 3,48, 4,41 | 11 april 2017 |
 | Rel 17-04 |  [4015546]; [4015547]; [4015548]; [4015217]  |CVE-2017-0178; CVE-2017-0179; CVE-2017-0162; CVE-2017-0169 |4,41 | 11 april 2017 |
 | Rel 17-04 |  [4015546]; [4015547]; [4015548]; [4015217]  |CVE-2017-0182; CVE-2017-0186; CVE-2017-0191 |2,61, 3,48, 4,41, 5,6 | 11 april 2017 |

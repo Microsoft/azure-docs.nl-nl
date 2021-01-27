@@ -1,5 +1,5 @@
 ---
-title: Azure Media Services verpakkings-en bron fouten | Microsoft Docs
+title: Azure Media Services verpakkings-en oorsprongs fouten
 description: In dit onderwerp worden fouten beschreven die u kunt ontvangen van de Azure Media Services streaming endpoint-service (Orgin).
 author: IngridAtMicrosoft
 manager: femila
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: error-reference
 ms.date: 05/07/2019
 ms.author: inhenkel
-ms.openlocfilehash: 8442c52052a2016da002d392c6fe0834b3813229
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 994e5ae0647f350e0a64f35318bd5803f4ed79b2
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295322"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98894980"
 ---
 # <a name="streaming-endpoint-origin-errors"></a>Fouten met streaming-eindpunten (oorsprong)
 
@@ -34,7 +34,7 @@ De aanvraag bevat ongeldige gegevens en wordt geweigerd met deze fout codes en o
 |MPE_ENC_ENCRYPTION_NOT_SPECIFIED_IN_URL |0x8088024C|De aanvraag heeft geen versleutelings code in de URL. CMAF-aanvragen vereisen een versleutelings code in de URL. Andere protocollen die zijn geconfigureerd met meer dan één versleutelings type, hebben ook de versleutelings code voor ondubbelzinnige configuratie nodig. |
 |MPE_STORAGE_BAD_URL_SYNTAX |0x808900E9|De aanvraag voor opslag om te voldoen aan de aanvraag is mislukt met een onjuiste aanvraag fout. |
 
-## <a name="403-forbidden"></a>403 verboden
+## <a name="403-forbidden"></a>403 Verboden
 
 De aanvraag is niet toegestaan vanwege een van de volgende redenen:
 

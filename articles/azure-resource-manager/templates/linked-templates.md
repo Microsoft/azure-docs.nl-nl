@@ -2,13 +2,13 @@
 title: Koppelings sjablonen voor implementatie
 description: Hierin wordt beschreven hoe u gekoppelde sjablonen gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon) om een modulaire sjabloon oplossing te maken. Toont hoe parameter waarden worden door gegeven, geef een parameter bestand op en dynamisch gemaakte Url's.
 ms.topic: conceptual
-ms.date: 01/25/2021
-ms.openlocfilehash: 7d4df67b7f69b3e58799f45ad72bd9ed68540dc2
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.date: 01/26/2021
+ms.openlocfilehash: aae3947656e475d15bc4f0da770d0398fafa13c5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790932"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880425"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources
 
@@ -495,6 +495,91 @@ Gebruik de eigenschap om parameter waarden inline door te geven `parameters` .
 ```
 
 U kunt niet zowel inline-para meters als een koppeling naar een parameter bestand gebruiken. De implementatie mislukt met een fout als beide `parametersLink` en `parameters` zijn opgegeven.
+
+### <a name="use-relative-path-for-linked-templates"></a>Relatief pad gebruiken voor gekoppelde sjablonen
+
+`relativePath`Met de eigenschap van `Microsoft.Resources/deployments` kunt u gemakkelijker gekoppelde sjablonen maken. Deze eigenschap kan worden gebruikt om een extern gekoppelde sjabloon te implementeren op een locatie ten opzichte van het bovenliggende item. Deze functie vereist dat alle sjabloon bestanden worden klaargezet en beschikbaar zijn op een externe URI, zoals GitHub of Azure Storage-account. Wanneer de hoofd sjabloon wordt aangeroepen met behulp van een URI van Azure PowerShell of Azure CLI, is de onderliggende implementatie-URI een combi natie van de bovenliggende en relativePath.
+
+> [!NOTE]
+> Wanneer u een templateSpec maakt, worden de sjablonen die door de `relativePath` eigenschap worden verwezen, verpakt in de templateSpec-resource door Azure PowerShell of Azure cli. Het is niet vereist dat de bestanden gefaseerd worden uitgevoerd. Zie [een sjabloon specificatie maken met gekoppelde sjablonen](./template-specs.md#create-a-template-spec-with-linked-templates)voor meer informatie.
+
+Ga als volgt te voor een mapstructuur:
+
+![relatief pad van gekoppelde sjabloon van Resource Manager](./media/linked-templates/resource-manager-linked-templates-relative-path.png)
+
+In de volgende sjabloon ziet u hoe *mainTemplate.jsop* implements *nestedChild.js* wordt weer gegeven in de voor gaande afbeelding.
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "childLinked",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "children/nestedChild.json"
+        }
+      }
+    }
+  ],
+  "outputs": {}
+}
+```
+
+In de volgende implementatie is de URI van de gekoppelde sjabloon in de voor gaande sjabloon **https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/linked-template-relpath/children/nestedChild.json** .
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name linkedTemplateWithRelativePath `
+  -ResourceGroupName "myResourceGroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/linked-template-relpath/mainTemplate.json"
+```
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --name linkedTemplateWithRelativePath \
+  --resource-group myResourceGroup \
+  --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/linked-template-relpath/mainTemplate.json"
+```
+
+---
+
+Als u gekoppelde sjablonen wilt implementeren met een relatief pad dat is opgeslagen in een Azure-opslag account, gebruikt u de `QueryString` / `query-string` para meter om de SAS-token op te geven die moet worden gebruikt met de para meter TemplateUri. Deze para meter wordt alleen ondersteund door Azure CLI versie 2,18 of hoger en Azure PowerShell versie 5,4 of hoger.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name linkedTemplateWithRelativePath `
+  -ResourceGroupName "myResourceGroup" `
+  -TemplateUri "https://stage20210126.blob.core.windows.net/template-staging/mainTemplate.json" `
+  -QueryString $sasToken
+```
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --name linkedTemplateWithRelativePath \
+  --resource-group myResourceGroup \
+  --template-uri "https://stage20210126.blob.core.windows.net/template-staging/mainTemplate.json" \
+  --query-string $sasToken
+```
+
+---
+
+Zorg ervoor dat er geen voorloop '? ' voor komt in de query string. De implementatie voegt één toe wanneer de URI voor de implementaties wordt geassembleerd.
 
 ## <a name="template-specs"></a>Sjabloonspecificaties
 

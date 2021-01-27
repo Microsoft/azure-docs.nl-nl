@@ -2,19 +2,19 @@
 title: Model details weer geven-aangepaste vertaler
 titleSuffix: Azure Cognitive Services
 description: Op het tabblad modellen onder een project ziet u details van elk model, zoals model naam, model status, BLEU Score, training, afstemming, aantal test zinnen.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 52e305f9d50ab0f383810778be681ac41be97c72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11f39aa480e3ba6508bf730c61891e80ea689e8b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88509779"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895948"
 ---
 # <a name="view-model-details"></a>Modelgegevens weergeven
 

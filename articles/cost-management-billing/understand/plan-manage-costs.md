@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: c640478170049bd06e11f7f89b1e213b7b305642
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 210f7daa9305f2fb343dfae050354264e2fd823e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032810"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898559"
 ---
 # <a name="plan-to-manage-azure-costs"></a>Plannen om Azure-kosten te beheren
 
@@ -125,7 +125,7 @@ Lees de zelfstudie [Kosten optimaliseren op basis van aanbevelingen](../costs/tu
 
 ## <a name="integrate-with-billing-and-consumption-apis"></a>Integreren met de API's voor facturerings- en verbruiksgegevens
 
-Gebruik de Azure [Billing](/rest/api/billing/)- en [Consumption](/rest/api/consumption/)-API's om programmatisch facturerings-en kostengegevens op te halen. Gebruik zowel de RateCard-API als de gebruik-API om uw gefactureerde gebruik op te halen. Zie [Inzicht verkrijgen in het gebruik van Microsoft Azure-resources](../manage/usage-rate-card-overview.md)voor meer informatie.
+Gebruik de Azure [Billing](/rest/api/billing/)- en [Consumption](/rest/api/consumption/)-API's om programmatisch facturerings-en kostengegevens op te halen. Gebruik zowel de RateCard-API als de gebruik-API om uw gefactureerde gebruik op te halen. Zie [Inzicht verkrijgen in het gebruik van Microsoft Azure-resources](../manage/consumption-api-overview.md#usage-details-api)voor meer informatie.
 
 ## <a name="additional-resources-and-special-cases"></a><a name="other-offers"></a> Aanvullende resources en speciale gevallen
 

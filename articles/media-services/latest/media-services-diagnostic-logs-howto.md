@@ -1,5 +1,5 @@
 ---
-title: Media Services Diagnostische logboeken bewaken via Azure Monitor | Microsoft Docs
+title: Media Services Diagnostische logboeken bewaken via Azure Monitor
 description: In dit artikel wordt beschreven hoe u Diagnostische logboeken kunt routeren en weer geven via Azure Monitor.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e756ff0133e3d3f0f86ea2f592005f2f2986488e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c666228a8a82083c319aa6c2d7fd161f7e623f4
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707758"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897965"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Diagnostische logboeken van Media Services controleren
 
@@ -94,7 +94,7 @@ Wellicht moet u vijf minuten wachten voordat de gebeurtenis in het opslagaccount
 
 1. Navigeer in de portal naar de sectie **Opslagaccounts** vanuit de linker navigatiebalk.
 1. Identificeer het opslagaccount dat u in de voorgaande sectie hebt gemaakt en klik erop.
-1. Klik op **blobs**en vervolgens op de container met het label **Insights-logs-keydeliveryrequests**. Dit is de container waarin uw logboeken zich bevinden. Bewakings gegevens worden in containers onderverdeeld op Resource-ID en vervolgens op datum en tijd.
+1. Klik op **blobs** en vervolgens op de container met het label **Insights-logs-keydeliveryrequests**. Dit is de container waarin uw logboeken zich bevinden. Bewakings gegevens worden in containers onderverdeeld op Resource-ID en vervolgens op datum en tijd.
 1. Ga naar het bestand PT1H.json door te klikken in de containers voor resource-id, datum en tijd. Klik op het bestand PT1H.json en op **Downloaden**.
 
  U kunt nu de JSON-gebeurtenis zien die in het opslagaccount werd opgeslagen.
@@ -183,7 +183,7 @@ Wellicht moet u vijf minuten wachten voordat de gebeurtenis in het opslagaccount
 
 ## <a name="see-also"></a>Zie ook
 
-* [Azure Monitor metrische gegevens](../../azure-monitor/platform/data-platform.md)
+* [Metrische gegevens van Azure Monitor](../../azure-monitor/platform/data-platform.md)
 * [Diagnostische logboeken Azure Monitor](../../azure-monitor/platform/platform-logs-overview.md)
 * [Logboek gegevens van uw Azure-resources verzamelen en gebruiken](../../azure-monitor/platform/platform-logs-overview.md)
 

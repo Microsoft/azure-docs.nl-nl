@@ -4,15 +4,15 @@ description: Als u Maxi maal beschik bare en flexibele toepassingen in azure wil
 author: cynthn
 ms.service: azure
 ms.topic: article
-ms.date: 12/17/2020
+ms.date: 01/26/2021
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 2a2e4ac57eec866d9857f564d6c76ad4a775d223
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5883dc8b34cd1aa00ba1c5de25a09a017a130c0a
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874605"
+ms.locfileid: "98896881"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
@@ -58,7 +58,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | VS-West 2        |                |                      |                     |                |
 
 
-Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik bare Services in deze regio's, neemt u contact op met uw micro soft-verkoop-of klant vertegenwoordiger. Zie [Azure-geografi](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)(Engelstalig) voor de aanstaande regio's die Beschikbaarheidszones ondersteunen.
+\* Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik bare Services in deze regio's, neemt u contact op met uw micro soft-verkoop-of klant vertegenwoordiger. Zie [Azure-geografi](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)(Engelstalig) voor de aanstaande regio's die Beschikbaarheidszones ondersteunen.
 
 
 ## <a name="azure-services-supporting-availability-zones"></a>Azure-Services die Beschikbaarheidszones ondersteunen

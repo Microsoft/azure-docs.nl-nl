@@ -8,12 +8,12 @@ ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 29f7f241f119ca7fab50409881b517961b00cf20
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: cfeb124aeb614906cef1dc710eb8485e63806539
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610468"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880572"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -164,7 +164,7 @@ De volgende tabel bevat de interop-status van NTFS-bestandssysteem functies:
 
 <a id="files-skipped"></a>Azure File Sync worden ook bepaalde tijdelijke bestanden en systeem mappen overs Laan:
 
-| Bestand/map | Notitie |
+| Bestand/map | Opmerking |
 |-|-|
 | pagefile.sys | Bestand dat specifiek is voor systeem |
 | Desktop.ini | Bestand dat specifiek is voor systeem |
@@ -336,7 +336,7 @@ Azure File Sync is beschikbaar in de volgende regio's:
 | Openbaar | VS | VS - zuid-centraal | `southcentralus` |
 | Openbaar | VS | VS - west-centraal | `westcentralus` |
 | Openbaar | VS | VS - west | `westus` |
-| Openbaar | VS | West US 2 | `westus2` |
+| Openbaar | VS | VS - west 2 | `westus2` |
 | US Gov | VS | VS (overheid) - Arizona | `usgovarizona` |
 | US Gov | VS | VS (overheid) - Texas | `usgovtexas` |
 | US Gov | VS | VS (overheid) - Virginia | `usgovvirginia` |
@@ -387,6 +387,6 @@ Als u liever een on-premises back-upoplossing gebruikt, moeten back-ups worden u
 ## <a name="next-steps"></a>Volgende stappen
 * [Firewall-en proxy-instellingen overwegen](storage-sync-files-firewall-and-proxy.md)
 * [Een Azure Files-implementatie plannen](storage-files-planning.md)
-* [Azure Files implementeren](storage-files-deployment-guide.md)
+* [Azure Files implementeren](./storage-how-to-create-file-share.md)
 * [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)
 * [Azure File Sync bewaken](storage-sync-files-monitoring.md)

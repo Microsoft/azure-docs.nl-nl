@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: da136c1f3ce36bf85592c3c73c9e8f92c41c7442
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: ea274914ac70540d5763884bbd01e41e349a530d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357905"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879827"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Het licentiemodel voor een virtuele SQL-machine in Azure wijzigen
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -37,11 +37,11 @@ Er zijn drie licentie modellen voor een Azure-VM die als host fungeert voor SQL 
 
 Azure Hybrid Benefit staat het gebruik toe van SQL Server licenties met Software Assurance (' gekwalificeerde licentie ') op virtuele machines van Azure. Met Azure Hybrid Benefit worden klanten niet in rekening gebracht voor het gebruik van een SQL Server licentie op een virtuele machine. Ze moeten echter wel betalen voor de kosten van de onderliggende Cloud Compute (dat wil zeggen, het basis tarief), opslag en back-ups. Ze moeten ook betalen voor I/O die is gekoppeld aan het gebruik van de Services (indien van toepassing).
 
-Volgens de micro soft-product termen: ' klanten moeten aangeven dat ze Azure SQL Database (beheerde instantie, Elastische pool en Individuele database), Azure Data Factory, SQL Server Integration Services of SQL Server virtual machines onder Azure Hybrid Benefit voor SQL Server worden gebruikt bij het configureren van werk belastingen op Azure. "
+Volgens de micro soft- [product termen](https://www.microsoft.com/licensing/terms/productoffering/MicrosoftAzureServices/EAEAS): ' klanten moeten aangeven dat ze Azure SQL database (beheerde instantie, Elastische pool en individuele database), Azure Data Factory, SQL Server Integration Services of SQL Server Virtual Machines onder Azure Hybrid Benefit voor SQL Server worden gebruikt bij het configureren van werk belastingen op Azure. "
 
 Om het gebruik van Azure Hybrid Benefit voor SQL Server op Azure VM aan te geven en compatibel te zijn, hebt u drie opties:
 
-- Richt een virtuele machine in met behulp van een SQL Server installatie kopie van uw eigen licentie vanuit Azure Marketplace. Deze optie is alleen beschikbaar voor klanten die een Enterprise Agreement hebben.
+- Richt een virtuele machine in met behulp van een SQL Server installatie kopie van uw eigen licentie vanuit Azure Marketplace. Deze optie is alleen beschikbaar voor klanten die een Enterprise Overeenkomst hebben.
 - Richt een virtuele machine in met behulp van een betalen naar gebruik-SQL Server installatie kopie van Azure Marketplace en activeer de Azure Hybrid Benefit.
 - Zelf SQL Server installeren op de virtuele machine van Azure, hand matig [registreren bij de extensie van de SQL IaaS-agent](sql-agent-extension-manually-register-single-vm.md)en Azure Hybrid Benefit activeren.
 
@@ -72,7 +72,7 @@ U kunt het licentie model rechtstreeks vanuit de portal wijzigen:
 ![Azure Hybrid Benefit in de portal](./media/licensing-model-azure-hybrid-benefit-ahb-change/ahb-in-portal.png)
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt de Azure CLI gebruiken om uw licentie model te wijzigen.  
 

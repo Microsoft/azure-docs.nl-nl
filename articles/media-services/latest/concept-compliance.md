@@ -1,6 +1,5 @@
 ---
 title: Media Services naleving van regelgeving
-titleSuffix: Azure Media Services
 description: Azure Media Services voldoet aan Azure Government.
 services: media-services
 documentationcenter: ''
@@ -12,12 +11,12 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 884b1b85da5b52101ae5a0053003d47260a1134d
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 978af4754e6e083e8bf5375ade84891019abccca
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015818"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897051"
 ---
 # <a name="media-services-regulatory-compliance"></a>Media Services naleving van regelgeving
 
@@ -39,7 +38,7 @@ Meer informatie over de naleving van Azure-Services vindt u in het artikel [Azur
 
 Als uw organisatie moet voldoen aan de wettelijke of reglementaire normen voor wereld wijde, Amerikaanse overheid, regionale, financiële services, status, media en productie, start u met de [documentatie voor Azure-naleving](../../compliance/index.yml).
 
-U vindt ook aanvullende compliance-resources, zoals controle rapporten, een controle lijst voor privacy en AVG (AVG), nalevings schema's, land-en regionale richt lijnen, implementatie en toewijzingen, evenals technische documenten en analyse rapporten.
+U vindt ook aanvullende compliance-resources, zoals controle rapporten, een controle lijst voor privacy en algemene verordening gegevensbescherming (AVG), nalevings schema's, land-en regionale richt lijnen, implementatie en toewijzingen, evenals technische documenten en analyse rapporten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

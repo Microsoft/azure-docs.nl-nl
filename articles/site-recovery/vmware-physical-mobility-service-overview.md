@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: ramamill
-ms.openlocfilehash: 90862a74e5fb6521a95292d50fc5cc11bd0082b5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8c90427e2dd4ecf23cb803c4f75dbee34c38f992
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547653"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898576"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Over de Mobility-service voor VMware-Vm's en fysieke servers
 
@@ -78,22 +78,22 @@ Tijdens een push-installatie van de Mobility-service worden de volgende stappen 
 > Gebruik niet de installatie methode van de gebruikers interface als u een Azure-infra structuur als een service (IaaS) repliceert van de ene Azure-regio naar een andere. Gebruik de installatie van de [opdracht prompt](#install-the-mobility-service-using-command-prompt) .
 
 1. Kopieer het installatie bestand naar de computer en voer dit uit.
-1. Selecteer in **installatie optie** **Mobility service installeren** .
-1. Kies de installatie locatie en selecteer **installeren** .
+1. Selecteer in **installatie optie** **Mobility service installeren**.
+1. Kies de installatie locatie en selecteer **installeren**.
 
     :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility1.png" alt-text="Pagina installatie optie voor Mobility-service.":::
 
 1. Controleer de installatie in **voortgang** van de installatie. Nadat de installatie is voltooid, selecteert u **door gaan naar configuratie** om de service te registreren bij de configuratie server.
 
-    :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility3.png" alt-text="Pagina installatie optie voor Mobility-service.":::
+    :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility3.png" alt-text="Scherm opname van de voortgang van de installatie en de knop actief door gaan naar configuratie wanneer de installatie is voltooid.":::
 
 1. Geef in details van de **Configuratie server** het IP-adres en de wachtwoordzin op die u hebt geconfigureerd.
 
-    :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility4.png" alt-text="Pagina installatie optie voor Mobility-service.":::
+    :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility4.png" alt-text="Pagina registratie van Mobility-service.":::
 
 1. Selecteer **registreren** om de registratie te volt ooien.
 
-    :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility5.png" alt-text="Pagina installatie optie voor Mobility-service.":::
+    :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility5.png" alt-text="Laatste pagina Registratie Mobility-service.":::
 
 ## <a name="install-the-mobility-service-using-command-prompt"></a>De Mobility-service installeren met behulp van de opdracht prompt
 
@@ -104,7 +104,7 @@ Tijdens een push-installatie van de Mobility-service worden de volgende stappen 
 
 ### <a name="windows-machine"></a>Windows-computer
 
-- Voer vanaf een opdracht prompt de volgende opdrachten uit om het installatie programma te kopiëren naar een lokale map, zoals _C:\Temp_ , op de server die u wilt beveiligen. Vervang de naam van het installatie bestand door de daad werkelijke bestands naam.
+- Voer vanaf een opdracht prompt de volgende opdrachten uit om het installatie programma te kopiëren naar een lokale map, zoals _C:\Temp_, op de server die u wilt beveiligen. Vervang de naam van het installatie bestand door de daad werkelijke bestands naam.
 
   ```cmd
   cd C:\Temp
@@ -187,12 +187,12 @@ Syntax | `cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh -i \<CS
 
 ## <a name="azure-virtual-machine-agent"></a>Agent van de virtuele machine van Azure
 
-- **Windows-vm's** : van versie 9.7.0.0 van de Mobility-service wordt de [Azure VM-agent](../virtual-machines/extensions/features-windows.md#azure-vm-agent) geïnstalleerd door het installatie programma van de Mobility-service. Op deze manier zorgt u ervoor dat wanneer de computer failover naar Azure wordt uitgevoerd, de Azure VM voldoet aan de installatie vereisten van de agent voor het gebruik van een VM-extensie.
-- **Virtuele Linux-machines** : de  [WALinuxAgent](../virtual-machines/extensions/update-linux-agent.md) moet hand matig worden geïnstalleerd op de virtuele Azure-machine na een failover.
+- **Windows-vm's**: van versie 9.7.0.0 van de Mobility-service wordt de [Azure VM-agent](../virtual-machines/extensions/features-windows.md#azure-vm-agent) geïnstalleerd door het installatie programma van de Mobility-service. Op deze manier zorgt u ervoor dat wanneer de computer failover naar Azure wordt uitgevoerd, de Azure VM voldoet aan de installatie vereisten van de agent voor het gebruik van een VM-extensie.
+- **Virtuele Linux-machines**: de  [WALinuxAgent](../virtual-machines/extensions/update-linux-agent.md) moet hand matig worden geïnstalleerd op de virtuele Azure-machine na een failover.
 
 ## <a name="locate-installer-files"></a>Installatie bestanden zoeken
 
-Ga op de configuratie server naar de map _%ProgramData%\ASR\home\svsystems\pushinstallsvc\repository_ . Controleer welk installatie programma u nodig hebt op basis van het besturings systeem. De volgende tabel bevat een overzicht van de installatie bestanden voor elke VMware-VM en een fysiek Server besturingssysteem. Voordat u begint, kunt u de [ondersteunde besturings systemen](vmware-physical-azure-support-matrix.md#replicated-machines)bekijken.
+Ga op de configuratie server naar de map _%ProgramData%\ASR\home\svsystems\pushinstallsvc\repository_. Controleer welk installatie programma u nodig hebt op basis van het besturings systeem. De volgende tabel bevat een overzicht van de installatie bestanden voor elke VMware-VM en een fysiek Server besturingssysteem. Voordat u begint, kunt u de [ondersteunde besturings systemen](vmware-physical-azure-support-matrix.md#replicated-machines)bekijken.
 
 > [!NOTE]
 > De bestands namen gebruiken de syntaxis die in de volgende tabel wordt weer gegeven met _versie_ en _datum_ als tijdelijke aanduidingen voor de werkelijke waarden. De daad werkelijke bestands namen zien er ongeveer als volgt uit:
@@ -228,7 +228,7 @@ Installatie bestand | Besturings systeem (alleen 64-bits)
 Als een **vereiste voor het bijwerken of beveiligen van SuSE Linux Enterprise Server 11 SP3-machines** vanaf 9,36-versie:
 
 1. Zorg ervoor dat het nieuwste installatie programma van de Mobility-agent is gedownload van het micro soft Download centrum en in de push-installatie opslagplaats op de configuratie server en alle scale-out proces servers wordt geplaatst
-2. [Down load](site-recovery-whats-new.md) het nieuwste installatie programma voor de agent van SuSE Linux Enterprise Server 11 SP3. De nieuwste versie van de Mobility-agent is [9,37](https://support.microsoft.com/help/4582666/)
+2. [Down load](site-recovery-whats-new.md) het nieuwste installatie programma voor de agent van SuSE Linux Enterprise Server 11 SP3.
 3. Navigeer naar configuratie server, kopieer het installatie programma van de agent van SUSE Linux Enterprise Server 11 SP3 op het pad INSTALL_DIR \home\svsystems\pushinstallsvc\repository
 1. Nadat u het nieuwste installatie programma hebt gekopieerd, start u de inmage PushInstall-service opnieuw. 
 1. Ga nu naar de bijbehorende scale-out proces servers, herhaal stap 3 en stap 4.
@@ -240,7 +240,7 @@ Als een **vereiste voor het bijwerken of beveiligen van SuSE Linux Enterprise Se
 Als **u een vereiste hebt om RHEL 5-machines bij te werken of te beschermen** van 9,36-versie, kunt u het volgende doen:
 
 1. Zorg ervoor dat het nieuwste installatie programma van de Mobility-agent is gedownload van het micro soft Download centrum en in de push-installatie opslagplaats op de configuratie server en alle scale-out proces servers wordt geplaatst
-2. [Down load](site-recovery-whats-new.md) het meest recente RHEL 5-of CentOS 5-agent installatie programma. De nieuwste versie van de Mobility-agent is [9,37](https://support.microsoft.com/help/4582666/)
+2. [Down load](site-recovery-whats-new.md) het meest recente RHEL 5-of CentOS 5-agent installatie programma. 
 3. Navigeer naar configuratie server, kopieer het installatie programma van de agent voor RHEL 5 of CentOS 5 op het pad-INSTALL_DIR \home\svsystems\pushinstallsvc\repository
 1. Nadat u het nieuwste installatie programma hebt gekopieerd, start u de inmage PushInstall-service opnieuw. 
 1. Ga nu naar de bijbehorende scale-out proces servers, herhaal stap 3 en stap 4.
@@ -252,7 +252,7 @@ Als **u een vereiste hebt om RHEL 5-machines bij te werken of te beschermen** va
 Als een **vereiste voor het bijwerken of beveiligen van Debian 7-computers** vanaf 9,36-versie:
 
 1. Zorg ervoor dat het nieuwste installatie programma van de Mobility-agent is gedownload van het micro soft Download centrum en in de push-installatie opslagplaats op de configuratie server en alle scale-out proces servers wordt geplaatst
-2. [Down load](site-recovery-whats-new.md) het nieuwste installatie programma voor de Debian 7-agent. De nieuwste versie van de Mobility-agent is [9,37](https://support.microsoft.com/help/4582666/)
+2. [Down load](site-recovery-whats-new.md) het nieuwste installatie programma voor de Debian 7-agent.
 3. Navigeer naar configuratie server, kopieer het installatie programma van de Debian 7-agent op het pad-INSTALL_DIR \home\svsystems\pushinstallsvc\repository
 1. Nadat u het nieuwste installatie programma hebt gekopieerd, start u de inmage PushInstall-service opnieuw. 
 1. Ga nu naar de bijbehorende scale-out proces servers, herhaal stap 3 en stap 4.

@@ -3,19 +3,19 @@ title: Vertaal methode voor Translator
 titleSuffix: Azure Cognitive Services
 description: Converteer tekst in de ene taal van het ene script naar een ander script met de methode voor het omzetten van de vertaler.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: swmachan
-ms.openlocfilehash: 4b985d7b2eb07ca8bbd3556a237fbcaba5392fe5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: 0d5a7f8df0c722ca52780ba254e9af9608f26b54
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016462"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895421"
 ---
 # <a name="translator-30-transliterate"></a>Translator 3,0: trans-transcribatie
 
@@ -34,8 +34,8 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
 <table width="100%">
-  <th width="20%">Query parameter</th>
-  <th>Description</th>
+  <th width="20%">Queryparameter</th>
+  <th>Beschrijving</th>
   <tr>
     <td>api-versie</td>
     <td>*Vereiste para meter*.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn `3.0` .</td>
@@ -128,7 +128,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
 
 <table width="100%">
   <th width="20%">Statuscode</th>
-  <th>Description</th>
+  <th>Beschrijving</th>
   <tr>
     <td>200</td>
     <td>Voltooid.</td>

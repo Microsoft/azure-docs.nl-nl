@@ -3,19 +3,19 @@ title: Translator-detectie methode
 titleSuffix: Azure Cognitive Services
 description: Identificeer de taal van een stuk tekst met de Azure Cognitive Services Translator-detectie methode.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: swmachan
-ms.openlocfilehash: 12029d7a77eb7cbbb10cb5330eb18d6316520a2d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: cb6660585b5f2b9ab56eaf863f1ec431e5e85109
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021317"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895523"
 ---
 # <a name="translator-30-detect"></a>Translator 3,0: detecteren
 
@@ -34,8 +34,8 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
 <table width="100%">
-  <th width="20%">Query parameter</th>
-  <th>Description</th>
+  <th width="20%">Queryparameter</th>
+  <th>Beschrijving</th>
   <tr>
     <td>api-versie</td>
     <td>*Vereiste para meter*.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn `3.0` .</td>
@@ -138,7 +138,7 @@ Hier volgen de mogelijke HTTP-status codes die een aanvraag retourneert.
 
 <table width="100%">
   <th width="20%">Statuscode</th>
-  <th>Description</th>
+  <th>Beschrijving</th>
   <tr>
     <td>200</td>
     <td>Voltooid.</td>

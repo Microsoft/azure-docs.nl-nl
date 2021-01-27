@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 10/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: b73fa80085cc0491c8b4d0856d0baacfef1b51c0
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 4a080505f780e724bfd2ab997f5c823e467c4bec
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301536"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896966"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Runbooks uitvoeren op een Hybrid Runbook Worker
 
@@ -22,7 +22,7 @@ Wanneer u een runbook ontwerpt om uit te voeren op een Hybrid Runbook Worker, mo
 
 Azure Automation verwerkt taken op Hybrid Runbook Workers anders dan taken die worden uitgevoerd in azure-sandboxes. Als u een langlopend runbook hebt, moet u ervoor zorgen dat het bestand kan worden opgestart. Zie [Hybrid Runbook worker Jobs](automation-hybrid-runbook-worker.md#hybrid-runbook-worker-jobs)voor meer informatie over het gedrag van taken.
 
-Taken voor Hybrid Runbook Workers worden uitgevoerd onder het lokale **systeem** account in Windows of het **nxautomation** -account in Linux. Controleer voor Linux of het **nxautomation** -account toegang heeft tot de locatie waar de runbook-modules zijn opgeslagen. Wanneer u de cmdlet [install-module](/powershell/module/powershellget/install-module) gebruikt, moet u ALLUSERS opgeven voor de `Scope` para meter om er zeker van te zijn dat het **nxautomation** -account toegang heeft. Zie voor meer informatie over Power shell op Linux [bekende problemen voor Power shell op niet-Windows-platforms](/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-7.1).
+Taken voor Hybrid Runbook Workers worden uitgevoerd onder het lokale **systeem** account in Windows of het **nxautomation** -account in Linux. Controleer voor Linux of het **nxautomation** -account toegang heeft tot de locatie waar de runbook-modules zijn opgeslagen. Wanneer u de cmdlet [install-module](/powershell/module/powershellget/install-module) gebruikt, moet u ALLUSERS opgeven voor de `Scope` para meter om er zeker van te zijn dat het **nxautomation** -account toegang heeft. Zie voor meer informatie over Power shell op Linux [bekende problemen voor Power shell op niet-Windows-platforms](/powershell/scripting/whats-new/what-s-new-in-powershell-70).
 
 ## <a name="configure-runbook-permissions"></a>Runbook-machtigingen configureren
 
@@ -327,4 +327,4 @@ Voor hulp bij het oplossen van problemen met uw runbooks die worden uitgevoerd o
 
 * Als uw runbooks niet met succes worden voltooid, raadpleegt u de hand leiding voor het oplossen van de [runbook-uitvoerings fouten](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
 * Zie [Power shell docs](/powershell/scripting/overview)(Engelstalig) voor meer informatie over Power shell, inclusief taal referentie-en leer modules.
-* Zie [Az.Automation](/powershell/module/az.automation#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+* Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

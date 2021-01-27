@@ -1,5 +1,5 @@
 ---
-title: Azure CLI-voorbeeldscript - Een transformatie maken | Microsoft Docs
+title: Voor beeld van Azure CLI-script-een trans formatie maken
 description: Transformaties geven een beschrijving van de eenvoudige werkstroom van taken voor het verwerken van video- of audiobestanden (vaak 'recipe' genoemd). In het Azure CLI-script in dit artikel ziet u hoe u een transformatie kunt maken.
 services: media-services
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 11/18/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4784bb8a396a30e9002c789c7aad382640f04a5c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: adbd7deccf32312f67cff7b92ff7813036e9b1b3
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95996887"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898525"
 ---
 # <a name="create-a-transform"></a>Een transformatie maken
 

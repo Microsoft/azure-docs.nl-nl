@@ -3,23 +3,23 @@ title: Naslag informatie over Translator V 3.0
 titleSuffix: Azure Cognitive Services
 description: Referentie documentatie voor de Translator V 3.0. Versie 3 van het conversie programma biedt een moderne op JSON gebaseerde web-API.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 8/11/2020
-ms.author: swmachan
-ms.openlocfilehash: f8175cbd469c8a3933526d01f433e1def714783b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: 021a65ba69b9d1909df4a86d92b660c0c1033a3b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024497"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895455"
 ---
 # <a name="translator-v30"></a>Translator v 3.0
 
-## <a name="whats-new"></a>Wat is nieuw?
+## <a name="whats-new"></a>Wat is er nieuw?
 
 Versie 3 van het conversie programma biedt een moderne op JSON gebaseerde web-API. Het verbetert de bruikbaarheid en prestaties door bestaande functies te consolideren in minder bewerkingen en biedt nieuwe functies.
 
@@ -39,9 +39,9 @@ Micro soft Translator wordt uit meerdere datacenter locaties verzonden. Ze bevin
 
 Aanvragen voor de micro soft Translator zijn in de meeste gevallen verwerkt door het Data Center dat zich het dichtst bij de oorspronkelijke bestemming bevindt. In het geval van een storing in een Data Center kan de aanvraag buiten de regio van Azure worden gerouteerd.
 
-Als u wilt afdwingen dat de aanvraag wordt verwerkt door een specifieke Azure-geografie, wijzigt u het globale eind punt in de API-aanvraag naar het gewenste regionale eind punt:
+Als u wilt afdwingen dat de aanvraag wordt verwerkt door een specifieke Azure-geografie, wijzigt u het globale eind punt in de API-aanvraag naar het gewenste geografische eind punt:
 
-|Description|Azure-Geografie|Basis-URL|
+|Beschrijving|Azure-Geografie|Basis-URL (geografisch eind punt)|
 |:--|:--|:--|
 |Azure|Algemeen (niet-regionaal)|   api.cognitive.microsofttranslator.com|
 |Azure|Verenigde Staten|   api-nam.cognitive.microsofttranslator.com|
@@ -188,7 +188,7 @@ Zo kan een klant met een gratis proef abonnement de volgende fout melding ontvan
 ```
 De fout code is een getal van 6 cijfers, waarbij de HTTP-status code van 3 cijfers wordt gevolgd door een getal van drie cijfers om de fout verder te categoriseren. Veelvoorkomende fout codes zijn:
 
-| Code | Description |
+| Code | Beschrijving |
 |:----|:-----|
 | 400000| Een van de aanvraag invoer is ongeldig.|
 | 400001| De para meter "scope" is ongeldig.|
@@ -236,7 +236,7 @@ Met metrische gegevens kunt u het gebruik van de Vertaler en beschik baarheid in
 
 Deze tabel bevat de beschik bare metrische gegevens met een beschrijving van hoe ze worden gebruikt voor het bewaken van API-aanroepen voor vertalingen.
 
-| Metrische gegevens | Description |
+| Metrische gegevens | Beschrijving |
 |:----|:-----|
 | TotalCalls| Totaal aantal API-aanroepen.|
 | TotalTokenCalls| Totaal aantal API-aanroepen via token service met verificatie token.|

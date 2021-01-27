@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: e58cbef74aa9b6f58207abf780fd63176d5edd7d
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 552d2587f35ed391b470c6d5b1693b79fd57306b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680922"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879575"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Toegang tot Blob-en wachtrij gegevens toestaan met beheerde identiteiten voor Azure-resources
 
@@ -171,4 +171,4 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 - [Toegangs rechten voor opslag gegevens beheren met Azure RBAC](./storage-auth-aad-rbac-portal.md).
 - [Gebruik Azure AD met opslag toepassingen](storage-auth-aad-app.md).
 - [Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot BLOB-gegevens](../blobs/authorize-data-operations-powershell.md)
-- [Zelf studie: toegang tot opslag van App Service met beheerde Identies](/azure/app-service/scenario-secure-app-access-storage)
+- [Zelf studie: toegang tot opslag van App Service met beheerde Identies](../../app-service/scenario-secure-app-access-storage.md)

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 456a7e4f07b2416e1d2037205574f2e7149e70e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03f1f1659d120a2aa1b827063cb2bc84138f3655
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185939"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896067"
 ---
 # <a name="deploy-an-amazon-web-services-vm-with-a-runbook"></a>Een Amazon Web Services-VM implementeren met een runbook
 
@@ -33,7 +33,7 @@ Uw VM-inrichtings runbook maakt gebruik van de AWS Power shell-module om het wer
    > <br>
 
 1. Open uw Automation-account in Azure Portal.
-2. Klik op de tegel **assets** en selecteer **modules**in het deel venster assets.
+2. Klik op de tegel **assets** en selecteer **modules** in het deel venster assets.
 3. Op de pagina modules ziet u de module **AWSPowerShell** in de lijst.
 
 ## <a name="create-aws-deploy-vm-runbook"></a>AWS voor VM-implementatie maken
@@ -53,7 +53,7 @@ Zodra de Power shell-module AWS is geïmplementeerd, kunt u nu een runbook ontwe
 3. Op de pagina Runbooks selecteert u **een Runbook toevoegen**.
 4. Selecteer in het deel venster een runbook toevoegen de optie **snel maken** om een nieuw runbook te maken.
 5. Typ in het deel venster Eigenschappen van Runbook een naam voor het runbook.
-6. Selecteer **Power shell**in de vervolg keuzelijst **type Runbook** en klik vervolgens op **maken**.<br><br> ![Runbook-deel venster maken](./media/automation-scenario-aws-deployment/runbook-quickcreate-properties.png)
+6. Selecteer **Power shell** in de vervolg keuzelijst **type Runbook** en klik vervolgens op **maken**.<br><br> ![Runbook-deel venster maken](./media/automation-scenario-aws-deployment/runbook-quickcreate-properties.png)
 7. Wanneer de pagina Power shell-Runbook bewerken wordt weer gegeven, kopieert en plakt u het Power shell-script in het canvas voor het ontwerpen van Runbook.<br><br> ![Script voor Runbook Power shell](./media/automation-scenario-aws-deployment/runbook-powershell-script.png)<br>
    
     Let op het volgende wanneer u werkt met het Power shell-voorbeeld script:
@@ -90,7 +90,7 @@ Zodra de Power shell-module AWS is geïmplementeerd, kunt u nu een runbook ontwe
 1. Controleer of het runbook een Asset maakt `AWScred` dat is aangeroepen voor verificatie tegen AWS of werk het script bij om naar de naam van uw referentie-element te verwijzen.    
 2. Controleer uw nieuwe runbook en zorg ervoor dat alle parameter waarden zijn bijgewerkt.
 Zorg ervoor dat de Power shell-module AWS is geïmporteerd in Azure Automation.  
-3. Stel in Azure Automation **uitgebreide records** in het logboek in en **Registreer eventueel voortgangs records** onder de logboek registratie **van**de runbook-bewerking **en tracering** naar.<br><br> ![Runbook-logboek registratie en tracering ](./media/automation-scenario-aws-deployment/runbook-settings-logging-and-tracing.png) .  
+3. Stel in Azure Automation **uitgebreide records** in het logboek in en **Registreer eventueel voortgangs records** onder de logboek registratie **van** de runbook-bewerking **en tracering** naar.<br><br> ![Runbook-logboek registratie en tracering ](./media/automation-scenario-aws-deployment/runbook-settings-logging-and-tracing.png) .  
 4. Klik op **Start** om het runbook te starten en klik vervolgens op **OK** wanneer het deel venster runbook starten wordt geopend.
 5. Geef in het deel venster Runbook starten een VM-naam op. Accepteer de standaard waarden voor de andere para meters die u vooraf hebt geconfigureerd in het script. Klik op **OK** om de runbook-taak te starten.<br><br> ![New-AwsVM runbook starten](./media/automation-scenario-aws-deployment/runbook-start-job-parameters.png)
 6. Er wordt een taakdeelvenster geopend voor de runbooktaak die u hebt gemaakt. Sluit dit deel venster.
@@ -103,4 +103,4 @@ Zorg ervoor dat de Power shell-module AWS is geïmporteerd in Azure Automation.
 * Zie [Runbooks beheren in azure Automation](manage-runbooks.md)voor het werken met runbooks.
 * Zie [Power shell docs](/powershell/scripting/overview)(Engelstalig) voor meer informatie over Power shell.
 * Zie [systeem eigen ondersteuning voor Power shell-scripts in azure Automation](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/)voor script ondersteuning.
-* Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+* Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

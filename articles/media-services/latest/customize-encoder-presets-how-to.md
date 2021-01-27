@@ -1,5 +1,5 @@
 ---
-title: Aangepaste trans formatie coderen met Media Services v3 .NET-Azure | Microsoft Docs
+title: Aangepaste trans formatie coderen met Media Services v3 .NET-Azure
 description: In dit onderwerp wordt uitgelegd hoe u Azure Media Services V3 gebruikt om een aangepaste trans formatie te coderen met behulp van .NET.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: b5bb505df3cad7856e0b08f04949c2e56ccec1ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 035afd43b49c05f51149ad568a0eb16991dbaf85
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295611"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897170"
 ---
 # <a name="how-to-encode-with-a-custom-transform---net"></a>Coderen met een aangepaste trans formatie-.NET
 
@@ -48,7 +48,7 @@ Het voor beeld van een aangepaste voor instelling bevindt zich in de map [Encode
 
 ## <a name="create-a-transform-with-a-custom-preset"></a>Een trans formatie maken met een aangepaste voor instelling 
 
-Wanneer u een nieuwe [trans formatie](/rest/api/media/transforms)maakt, moet u opgeven wat u wilt produceren als uitvoer. De vereiste parameter is een [TransformOutput](/rest/api/media/transforms/createorupdate#transformoutput)-object, zoals weergegeven in de onderstaande code. Elke **transformatie-uitvoer** bevat een **voorinstelling**. In de **voor instelling** worden de stapsgewijze instructies beschreven van de bewerkingen voor video en/of audio verwerking die moeten worden gebruikt om de gewenste **TransformOutput**te genereren. Met de volgende **TransformOutput** worden aangepaste codec-en laag uitvoer instellingen gemaakt.
+Wanneer u een nieuwe [trans formatie](/rest/api/media/transforms)maakt, moet u opgeven wat u wilt produceren als uitvoer. De vereiste parameter is een [TransformOutput](/rest/api/media/transforms/createorupdate#transformoutput)-object, zoals weergegeven in de onderstaande code. Elke **transformatie-uitvoer** bevat een **voorinstelling**. In de **voor instelling** worden de stapsgewijze instructies beschreven van de bewerkingen voor video en/of audio verwerking die moeten worden gebruikt om de gewenste **TransformOutput** te genereren. Met de volgende **TransformOutput** worden aangepaste codec-en laag uitvoer instellingen gemaakt.
 
 Bij het maken van een [transformatie](/rest/api/media/transforms) moet u controleren of er al een bestaat met de methode **Ophalen** zoals weergegeven in de volgende code. In Media Services v3, **Get** -methoden op entiteiten retour neren **Null** als de entiteit niet bestaat (een niet-hoofdletter gevoelige controle op de naam).
 

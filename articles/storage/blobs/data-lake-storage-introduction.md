@@ -8,12 +8,12 @@ ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 5f2f3cfc5ccbdd6a3d3d3ede5bb39a3f6f548b19
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 1c4d04e25bf8f7d981c998baafb468f04b66eaf1
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913093"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879895"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Inleiding in Azure Data Lake Storage Gen2
 
@@ -39,7 +39,7 @@ Data Lake Storage Gen2 is ook heel kosteneffectief, omdat de oplossing is gebouw
 
 ## <a name="key-features-of-data-lake-storage-gen2"></a>Belangrijkste functies van Data Lake Storage Gen2
 
--   **Hadoop-compatibele toegang**: Met Data Lake Storage Gen2 kunt u gegevens op dezelfde manier beheren en openen als met een [Hadoop Distributed File System (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Het nieuwe [ABFS-stuurprogramma](data-lake-storage-abfs-driver.md) (gebruikt voor toegang tot gegevens) is beschikbaar in alle Apache Hadoop-omgevingen. Deze omgevingen bevatten [Azure HDInsight](../../hdinsight/index.yml) *,* [Azure Databricks](/azure/databricks/) en [Azure Synapse Analytics](/azure/synapse-analytics).
+-   **Hadoop-compatibele toegang**: Met Data Lake Storage Gen2 kunt u gegevens op dezelfde manier beheren en openen als met een [Hadoop Distributed File System (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Het nieuwe [ABFS-stuurprogramma](data-lake-storage-abfs-driver.md) (gebruikt voor toegang tot gegevens) is beschikbaar in alle Apache Hadoop-omgevingen. Deze omgevingen bevatten [Azure HDInsight](../../hdinsight/index.yml) *,* [Azure Databricks](/azure/databricks/) en [Azure Synapse Analytics](../../synapse-analytics/index.yml).
 
 -   **Een superset met POSIX-machtigingen**: Het beveiligingsmodel voor Data Lake Gen2 ondersteunt ACL- en POSIX-machtigingen en extra granulariteit die specifiek is voor Data Lake Storage Gen2. Instellingen kunnen worden geconfigureerd via Storage Explorer of door middel van frameworks zoals Hive en Spark.
 

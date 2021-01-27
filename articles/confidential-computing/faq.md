@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.date: 4/17/2020
 ms.author: jencook
-ms.openlocfilehash: 9df3d9771029e6d72e9d0092a129cddc27be6cd7
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 38bf12b46002e767bba50cf833637e2c8ace078f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564103"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98872329"
 ---
 # <a name="frequently-asked-questions-for-azure-confidential-computing"></a>Veelgestelde vragen over Azure vertrouwelijk computing
 
@@ -37,13 +37,21 @@ Nee. De virtuele machines kunnen alleen worden geïmplementeerd op machines van 
 **Virtuele DCsv2-machines zijn niet beschikbaar in de portal en ik kan er geen selecteren**
 
 Op basis van de informatie ballon naast de virtuele machine zijn er verschillende acties die u moet uitvoeren:
-   -    **UnsupportedGeneration** : Wijzig de generatie van de installatie kopie van de virtuele machine in ' Gen2 '.
-   -    **NotAvailableForSubscription** : de regio is nog niet beschikbaar voor uw abonnement. Selecteer een beschikbare regio.
-   -    **InsufficientQuota** : [Maak een ondersteunings aanvraag om uw quotum te verg Roten](../azure-portal/supportability/per-vm-quota-requests.md). Abonnementen voor een gratis proef abonnement hebben geen quota voor het gebruik van de virtuele machines van het werk. 
+   -    **UnsupportedGeneration**: Wijzig de generatie van de installatie kopie van de virtuele machine in ' Gen2 '.
+   -    **NotAvailableForSubscription**: de regio is nog niet beschikbaar voor uw abonnement. Selecteer een beschikbare regio.
+   -    **InsufficientQuota**: [Maak een ondersteunings aanvraag om uw quotum te verg Roten](../azure-portal/supportability/per-vm-quota-requests.md). Abonnementen voor een gratis proef abonnement hebben geen quota voor het gebruik van de virtuele machines van het werk. 
 
 **Virtuele DCsv2-machines worden niet weer gegeven wanneer ik deze probeer te zoeken in de portal formaat kiezer**
 
 Zorg ervoor dat u een [beschik bare regio](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines)hebt geselecteerd. Zorg er ook voor dat u ' alle filters wissen ' selecteert in de optie grootte. 
+
+**Kan ik versneld netwerken met Azure vertrouwelijk computing inschakelen?**
+
+ Nee. Versnelde netwerken worden niet ondersteund op DC-Series-of DCsv2-Series virtuele machines. Versnelde netwerken kunnen niet worden ingeschakeld voor de implementatie van de virtuele machine of het Azure Kubernetes-service cluster dat wordt uitgevoerd op vertrouwelijke computing.
+
+**Kan ik een exclusieve Azure-host gebruiken met deze machines?**
+
+Ja. Met Azure exclusieve host ondersteunen virtuele machines uit de DCsv2-serie. De toegewezen Azure-host biedt een fysieke server met één Tenant voor het uitvoeren van uw virtuele machines op. Gebruikers gebruiken meestal een specifieke Azure-host om nalevings vereisten te voldoen rond fysieke beveiliging, gegevens integriteit en bewaking. 
 
 **Er wordt een Azure Resource Manager fout opgetreden bij het implementeren van een sjabloon: ' de bewerking kan niet worden voltooid omdat deze resulteert in een quotum van meer dan goedgekeurd Standard DcsV2-kernen**
 

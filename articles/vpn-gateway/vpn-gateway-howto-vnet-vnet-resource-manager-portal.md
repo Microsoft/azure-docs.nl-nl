@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/19/2020
 ms.author: cherylmc
-ms.openlocfilehash: fe0280e302882fd5e50830950b531ea9ca169618
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 465d877da48e0d7027dbba6615302af32c6bb154
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660539"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98872397"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-by-using-the-azure-portal"></a>Een VPN-gatewayverbinding tussen VNet's configureren met behulp van Azure Portal
 
@@ -44,7 +44,7 @@ Als u een VNet-naar-VNet-verbinding maakt, wordt de adresruimte voor de lokale n
 
 ### <a name="site-to-site-ipsec"></a>Site-naar-site (IPsec)
 
-Als u met een gecompliceerde netwerkconfiguratie werkt, kunt u de VNet's wellicht beter koppelen met een [Site-naar-Site](vpn-gateway-howto-site-to-site-resource-manager-portal.md)-verbinding. Als u de stappen voor site-naar-site-IPsec volgt, maakt en configureert u de lokale netwerkgateways handmatig. De lokale netwerkgateway voor elke VNet behandelt de andere VNet als een lokale site. Hiermee kunt u extra adresruimten voor de lokale netwerkgateway opgeven om het verkeer te routeren. Als de adresruimte voor een VNet wordt gewijzigd, moet u de bijbehorende lokale netwerkgateway handmatig bijwerken.
+Als u met een gecompliceerde netwerkconfiguratie werkt, kunt u de VNet's wellicht beter koppelen met een [Site-naar-Site](./tutorial-site-to-site-portal.md)-verbinding. Als u de stappen voor site-naar-site-IPsec volgt, maakt en configureert u de lokale netwerkgateways handmatig. De lokale netwerkgateway voor elke VNet behandelt de andere VNet als een lokale site. Hiermee kunt u extra adresruimten voor de lokale netwerkgateway opgeven om het verkeer te routeren. Als de adresruimte voor een VNet wordt gewijzigd, moet u de bijbehorende lokale netwerkgateway handmatig bijwerken.
 
 ### <a name="vnet-peering"></a>VNet-peering
 
@@ -200,7 +200,7 @@ Maak vervolgens een verbinding van en vnet4 naar VNet1. Zoek in de Portal de vir
 
 ## <a name="add-additional-connections"></a>Extra verbindingen toevoegen
 
-Als u extra verbindingen wilt toevoegen, gaat u naar de virtuele netwerkgateway waarvoor u de verbinding wilt maken en selecteert u **Verbindingen**. U kunt een andere VNet-naar-VNet-verbinding maken, of een site-naar-site-verbinding (IPsec) met een on-premises locatie. Stel **Verbindingstype** in op het gewenste type voor de verbinding die u wilt maken. Controleer voordat u extra verbindingen maakt of de adresruimte voor het virtuele netwerk niet overlapt met een van de adresruimten waarmee u verbinding wilt maken. Zie [Een site-naar-site-verbinding maken](vpn-gateway-howto-site-to-site-resource-manager-portal.md) voor stappen voor het maken van een site-naar-site-verbinding.
+Als u extra verbindingen wilt toevoegen, gaat u naar de virtuele netwerkgateway waarvoor u de verbinding wilt maken en selecteert u **Verbindingen**. U kunt een andere VNet-naar-VNet-verbinding maken, of een site-naar-site-verbinding (IPsec) met een on-premises locatie. Stel **Verbindingstype** in op het gewenste type voor de verbinding die u wilt maken. Controleer voordat u extra verbindingen maakt of de adresruimte voor het virtuele netwerk niet overlapt met een van de adresruimten waarmee u verbinding wilt maken. Zie [Een site-naar-site-verbinding maken](./tutorial-site-to-site-portal.md) voor stappen voor het maken van een site-naar-site-verbinding.
 
 ## <a name="vnet-to-vnet-faq"></a>Veelgestelde vragen over VNet-naar-VNet
 

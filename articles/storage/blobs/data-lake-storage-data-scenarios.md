@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/14/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: eea7fb073cdf99ee1f4257f6824375a6502a4fad
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bffa7894f7603f95c4840019be5e5670797881df
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913620"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98873243"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Azure Data Lake Storage Gen2 gebruiken voor big data vereisten
 
@@ -76,7 +76,7 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om webserver logb
 |Hulpprogramma | Hulp |
 |---|--|
 |Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](../../data-factory/copy-activity-overview.md)  |
-|Azure CLI|[Azure CLI](data-lake-storage-directory-file-acl-cli.md)|
+|Azure CLI|[Azure-CLI](data-lake-storage-directory-file-acl-cli.md)|
 |Azure PowerShell|[Azure PowerShell](data-lake-storage-directory-file-acl-powershell.md)|
 
 Voor het uploaden van webserver-logboek gegevens, en voor het uploaden van andere soorten gegevens (bijvoorbeeld Social gevoel-gegevens), is het een goede benadering om uw eigen aangepaste scripts/toepassingen te schrijven, omdat u hiermee de flexibiliteit hebt om uw gegevens te uploaden die deel uitmaken van uw grotere big data-toepassing. In sommige gevallen kan deze code de vorm hebben van een script of een eenvoudig opdracht regel programma. In andere gevallen kan de code worden gebruikt voor de integratie van big data verwerking in een bedrijfs toepassing of oplossing.
@@ -141,5 +141,5 @@ Hier volgt een lijst met hulpprogram ma's die u kunt gebruiken om gegevens te do
 |---|--|
 |Azure Data Factory | [Kopieeractiviteit in Azure Data Factory](../../data-factory/copy-activity-overview.md) |
 |Apache DistCp | [Gebruik DistCp om gegevens te kopiëren tussen Azure Storage blobs en Azure Data Lake Storage Gen2](./data-lake-storage-use-distcp.md) |
-|Azure Opslagverkenner|[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md)|
-|Hulpprogramma AzCopy|[Gegevens overdragen met AzCopy en Blob Storage](../common/storage-use-azcopy-blobs.md)|
+|Azure Storage Explorer|[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md)|
+|Hulpprogramma AzCopy|[Gegevens overdragen met AzCopy en Blob Storage](../common/storage-use-azcopy-v10.md#transfer-data)|

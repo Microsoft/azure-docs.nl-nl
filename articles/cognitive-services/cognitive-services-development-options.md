@@ -8,12 +8,12 @@ ms.author: erhopf
 ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: a952bfa45515b9d35549d03d18fd94103679344d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 975f7eec31839aefcb1782f573d0210df29a4d00
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349466"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98873566"
 ---
 # <a name="cognitive-services-development-options"></a>Cognitive Services-ontwikkelingsopties
 
@@ -125,7 +125,7 @@ De hulpprogram ma's die u gebruikt om modellen te trainen en te configureren, zi
 | Pijler | Service | UI voor aanpassing | Snelstart |
 |--------|---------|------------------|------------|
 | Vision | Custom Vision | https://www.customvision.ai/ | [Snelstartgids](./custom-vision-service/quickstarts/image-classification.md?pivots=programming-language-csharp) | 
-| Vision | Form Recognizer | Voorbeeldhulpprogramma voor labelen | [Snelstartgids](./form-recognizer/quickstarts/label-tool.md?tabs=v2-0) |
+| Vision | Form Recognizer | [Voorbeeldhulpprogramma voor labelen](https://fott-preview.azurewebsites.net/) | [Snelstartgids](./form-recognizer/quickstarts/label-tool.md?tabs=v2-0) |
 | Besluit | Content Moderator | https://contentmoderator.cognitive.microsoft.com/dashboard | [Snelstartgids](./content-moderator/review-tool-user-guide/human-in-the-loop.md) |
 | Besluit | Metrics Advisor | https://metricsadvisor.azurewebsites.net/  | [Snelstartgids](./metrics-advisor/quickstarts/web-portal.md) |
 | Besluit | Personalizer | De gebruikers interface is beschikbaar in het Azure Portal onder uw persoonlijke resource. | [Snelstartgids](./personalizer/quickstart-personalizer-sdk.md) |

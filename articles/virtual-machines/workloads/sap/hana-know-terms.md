@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 11/20/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c1e4e223e7932f7fc8699c04a94b079b7f16e3d5
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 326e2a436f07d841a0b3196a4abddd5ee0f8b67c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198897"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98873583"
 ---
 # <a name="know-the-terms"></a>Inzicht in de voorwaarden
 
@@ -36,7 +36,7 @@ Verschillende algemene definities worden veel gebruikt in de architectuur en tec
 - **SAP Hana op Azure (grote exemplaren):** Officiële naam voor de aanbieding in azure voor het uitvoeren van HANA-instanties in op SAP HANA TDI-gecertificeerde hardware die in verschillende Azure-regio's wordt geïmplementeerd in stem pels van grote instanties. De gerelateerde term *Hana grote instantie* is beperkt voor *SAP Hana op Azure (grote instanties)* en wordt veel gebruikt in deze technische implementatie handleiding.
 - **Cross-premises**: hierin wordt een scenario beschreven waarin vm's worden geïmplementeerd naar een Azure-abonnement met site-naar-site-, multi site-of Azure ExpressRoute-connectiviteit tussen on-premises data centers en Azure. In algemene documentatie over Azure worden dit soort implementaties ook beschreven als scenario's voor cross-premises. De reden hiervoor is om on-premises domeinen, on-premises Azure Active Directory-OpenLDAP en on-premises DNS uit te breiden naar Azure. De on-premises liggende lands worden uitgebreid naar de Azure-assets van de Azure-abonnementen. Met deze uitbrei ding kunnen de Vm's deel uitmaken van het on-premises domein. 
 
-   Domein gebruikers van het on-premises domein hebben toegang tot de servers en kunnen services uitvoeren op deze virtuele machines (zoals DBMS-Services). Communicatie en naam omzetting tussen Vm's die on-premises en door Azure geïmplementeerde Vm's zijn geïmplementeerd, is mogelijk. Dit scenario is een typische manier waarop de meeste SAP-assets worden geïmplementeerd. Zie [Azure VPN gateway](../../../vpn-gateway/vpn-gateway-about-vpngateways.md) en [een virtueel netwerk maken met een site-naar-site-verbinding met behulp van de Azure Portal](../../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)voor meer informatie.
+   Domein gebruikers van het on-premises domein hebben toegang tot de servers en kunnen services uitvoeren op deze virtuele machines (zoals DBMS-Services). Communicatie en naam omzetting tussen Vm's die on-premises en door Azure geïmplementeerde Vm's zijn geïmplementeerd, is mogelijk. Dit scenario is een typische manier waarop de meeste SAP-assets worden geïmplementeerd. Zie [Azure VPN gateway](../../../vpn-gateway/vpn-gateway-about-vpngateways.md) en [een virtueel netwerk maken met een site-naar-site-verbinding met behulp van de Azure Portal](../../../vpn-gateway/tutorial-site-to-site-portal.md)voor meer informatie.
 - **Tenant**: een klant die is GEÏMPLEMENTEERD in Hana-stempel met grote instanties, wordt geïsoleerd in een *Tenant.* Een Tenant wordt geïsoleerd in het netwerk, de opslag en de compute-laag van andere tenants. Opslag-en reken eenheden die aan de verschillende tenants zijn toegewezen, kunnen elkaar niet zien of met elkaar communiceren op het niveau van de HANA-grote instantie stempel. Een klant kan ervoor kiezen om implementaties in verschillende tenants te hebben. Ook is er geen communicatie tussen tenants op het stempel niveau van de grootschalige grote instantie.
 - **SKU-categorie**: voor Hana grote instanties worden de volgende twee categorieën sku's aangeboden:
     - **Type I-klasse**: S72, S72m, S96, S144, S144m, S192, S192m, S192xm, S224 en S224m

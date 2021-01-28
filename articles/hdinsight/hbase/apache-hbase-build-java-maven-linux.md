@@ -1,19 +1,16 @@
 ---
 title: Apache Maven gebruiken voor het bouwen van een Java HBase-client voor Azure HDInsight
 description: Leer hoe u Apache Maven gebruikt om een op Java gebaseerde Apache HBase-toepassing te bouwen en deze vervolgens te implementeren op HBase in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seodec18, devx-track-java
 ms.date: 12/24/2019
-ms.openlocfilehash: 61b8aaf9ea61ebe85eac6708d7390c386dea2696
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 13616cf99db39ec4dac1d13e3dcd2cefc5a44614
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547908"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942957"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Ontwikkel Java-toepassingen voor Apache HBase
 
@@ -107,7 +104,7 @@ In deze sectie wordt aangegeven dat het project **hbase-client** -en **Phoenix-k
 
 Zie [Wat zijn de verschillende Apache Hadoop onderdelen die beschikbaar zijn met hdinsight](../hdinsight-component-versioning.md)voor meer informatie over hdinsight-versies en-onderdelen.
 
-### <a name="build-configuration"></a>Configuratie maken
+### <a name="build-configuration"></a>Configuratie compileren
 
 Met maven-invoeg toepassingen kunt u de build-fasen van het project aanpassen. Deze sectie wordt gebruikt om invoeg toepassingen, resources en andere configuratie opties voor het maken van een toepassing toe te voegen.
 

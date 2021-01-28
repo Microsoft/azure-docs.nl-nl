@@ -6,15 +6,15 @@ ms.reviewer: baolcsva
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 01/27/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: f5555662c6cb5f44be3959ec3d22d1cf1953674d
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 7aa57fa20c3a043cdb210ccd8a5ddbf61323716d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030090"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943685"
 ---
 # <a name="azure-enterprise-transfers"></a>Azure Enterprise-overdrachten
 
@@ -55,22 +55,22 @@ Een inschrijvingsoverdracht wordt overwogen wanneer:
 - Een inschrijving de status verlopen/uitgebreid heeft en er wordt onderhandeld over een nieuwe overeenkomst.
 - U meerdere inschrijvingen hebt en alle accounts en facturering wilt samenvoegen onder één inschrijving.
 
-Deze sectie is alleen bedoeld voor informatieve doeleinden, omdat de actie niet kan worden uitgevoerd door een ondernemingsbeheerder. Er is een ondersteuningsaanvraag nodig om een ondernemingsinschrijving over te brengen naar een nieuwe inschrijving.
+Deze sectie is alleen bedoeld voor informatieve doeleinden, omdat de actie niet kan worden uitgevoerd door een ondernemingsbeheerder. Er is een ondersteunings aanvraag nodig om een Enter prise-inschrijving naar een nieuw abonnement over te dragen, tenzij de inschrijving in aanmerking komt voor [automatische inschrijvings overdracht](#auto-enrollment-transfer).
 
 Wanneer u de overdracht van een volledige Enterprise-inschrijving naar een inschrijving aanvraagt, worden de volgende acties uitgevoerd:
 
 - Alle services, abonnementen, accounts en afdelingen van Azure, en de volledige inschrijvingsstructuur, inclusief alle EA-afdelingsbeheerders, worden overgedragen naar een nieuwe doelinschrijving.
 - De inschrijvingsstatus wordt ingesteld op _Overgedragen_. De overgedragen inschrijving is alleen beschikbaar voor rapportage van het historische gebruik.
-- U kunt geen rollen of abonnementen toevoegen aan een overgedragen inschrijving. De status Overgedragen voorkomt aanvullend gebruik van de inschrijving.
+- U kunt geen rollen of abonnementen toevoegen aan een overgedragen inschrijving. Status overgedragen voor komt meer gebruik voor de inschrijving.
 - Het resterende saldo van de Azure-vooruitbetaling in de overeenkomst gaat verloren, met inbegrip van toekomstige termijnen.
--    Als de inschrijving van waaruit u de overdracht uitvoert over RI-aankopen beschikt, blijven de kosten voor de aanschaf van RI in de broninschrijving. Alle RI-voordelen worden echter overgedragen zodat u deze in de nieuwe inschrijving kunt gebruiken.
--    De eenmalige aanschafkosten via de marketplace en eventuele vaste maandelijkse kosten die al bij de oude inschrijving in rekening zijn gebracht, worden niet naar de nieuwe inschrijving overgedragen. Marketplace-kosten op basis van gebruik worden wel overgedragen.
+-    Als de inschrijving die u wilt overdragen van RI-aankopen is, blijven de aankoop kosten voor de RI in de bron registratie aanwezig, maar worden alle RI-voor delen voor gebruik in de nieuwe inschrijving overgezet.
+-    De markt voor eenmalige aankopen en eventuele maandelijkse vaste kosten die al in rekening worden gebracht voor de oude inschrijving, worden niet overgedragen naar de nieuwe inschrijving. Marketplace-kosten op basis van gebruik worden wel overgedragen.
 
 ### <a name="effective-transfer-date"></a>Werkelijke overdrachtsdatum
 
 De werkelijke overdrachtsdatum kan zijn op of na de startdatum van de doelinschrijving.
 
-Het gebruik van de broninschrijving wordt verrekend met de Azure-vooruitbetaling of in rekening gebracht als overschrijding. Gebruik dat plaatsvindt na de werkelijke overdrachtsdatum, wordt overgedragen naar de nieuwe inschrijving en dienovereenkomstig in rekening gebracht.
+Het gebruik van de broninschrijving wordt verrekend met de Azure-vooruitbetaling of in rekening gebracht als overschrijding. Het gebruik dat zich voordoet nadat de ingangs datum van de werkelijke overdracht is overgedragen naar de nieuwe inschrijving en wordt in rekening gebracht.
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -78,13 +78,24 @@ Wanneer u een inschrijvingsoverdracht aanvraagt, verstrekt u de volgende gegeven
 
 - Voor de broninschrijving is dit het inschrijvingsnummer.
 - Voor de doelinschrijving het inschrijvingsnummer waarnaar moet worden overgedragen.
-- De werkelijke datum van de inschrijvingsoverdracht kan een datum op of na de begindatum van de doelinschrijving zijn. De gekozen datum is niet van invloed op het gebruik voor een overschrijdingsfactuur die al is uitgegeven.
+- De werkelijke datum van de inschrijvingsoverdracht kan een datum op of na de begindatum van de doelinschrijving zijn. De gekozen datum kan niet van invloed zijn op het gebruik van een overschrijding-factuur die al is uitgegeven.
 
 Andere punten waarmee u rekening moet houden voordat u een inschrijving overdraagt:
 
 - Goedkeuring van een EA-beheerder is vereist voor zowel de doel- als broninschrijving.
 - Als een inschrijvingsoverdracht niet aan uw vereisten voldoet, kunt u een accountoverdracht overwegen.
 - De status van de broninschrijving wordt bijgewerkt naar overgedragen, en is alleen beschikbaar voor rapportagedoeleinden over historisch gebruik.
+
+### <a name="auto-enrollment-transfer"></a>Automatische inschrijvings overdracht
+
+Mogelijk ziet u dat een inschrijving de status **overgezet** heeft, zelfs als u geen ondersteunings ticket hebt ingediend om een inschrijvings overdracht aan te vragen. De **overgebrachte** status resulteert van het automatische inschrijvings proces. Er zijn enkele items die moeten worden opgenomen in de nieuwe overeenkomst, zodat het automatische inschrijvings proces plaatsvindt tijdens de vernieuwings formule:
+
+- Voorafgaand inschrijvings nummer (deze moet aanwezig zijn in de EA-Portal)
+- De verval datum van het vorige inschrijvings nummer is één dag vóór de ingangs datum van de nieuwe overeenkomst
+- De nieuwe overeenkomst heeft een gefactureerde vooruitbetalings order van Azure met een huidige datum of de teruggezette
+- De nieuwe inschrijving wordt gemaakt in de EA-Portal
+
+Als er geen gebruiks gegevens ontbreken in de EA-Portal tussen de voorafgaande inschrijving en de nieuwe inschrijving, hoeft u geen ticket voor de overdrachts ondersteuning te maken.
 
 ### <a name="azure-prepayment"></a>Azure-vooruitbetaling
 

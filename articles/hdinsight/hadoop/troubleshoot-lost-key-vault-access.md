@@ -1,18 +1,15 @@
 ---
 title: Azure HDInsight-clusters met schijf versleuteling gaan verloren Key Vault toegang
 description: Stappen voor probleem oplossing en mogelijke oplossingen voor Key Vault toegangs problemen tijdens interactie met Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/30/2020
-ms.openlocfilehash: bc8162f3a7ca8744a94aba039996275b5f13c727
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: ce2929ca84746de1ab8b51882f3004c3699f17ca
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533407"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943113"
 ---
 # <a name="scenario-azure-hdinsight-clusters-with-disk-encryption-lose-key-vault-access"></a>Scenario: Azure HDInsight-clusters met schijf versleuteling, verlies Key Vault toegang
 
@@ -26,7 +23,7 @@ De RHC-waarschuwing (Resource Health Center) `The HDInsight cluster is unable to
 
 De waarschuwing zorgt ervoor dat KV toegankelijk is vanaf de cluster knooppunten, waardoor de netwerk verbinding, de status van KV en het toegangs beleid voor de door de gebruiker toegewezen beheerde identiteit worden gegarandeerd. Deze waarschuwing is slechts een waarschuwing dat het afsluiten van de Broker op het volgende knoop punt opnieuw wordt opgestart. het cluster blijft functioneren totdat knoop punten opnieuw worden opgestart.
 
-Navigeer naar Apache Ambari UI voor meer informatie over de waarschuwing van **schijf versleuteling Key Vault status** . Deze waarschuwing bevat details over de reden voor de verificatie fout.
+Navigeer naar Apache Ambari UI voor meer informatie over de waarschuwing van **schijf versleuteling Key Vault status**. Deze waarschuwing bevat details over de reden voor de verificatie fout.
 
 ## <a name="resolution"></a>Oplossing
 

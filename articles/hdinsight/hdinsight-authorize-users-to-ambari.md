@@ -1,19 +1,16 @@
 ---
 title: Gebruikers autoriseren voor Ambari-weer gaven-Azure HDInsight
 description: Ambari-gebruikers-en groeps machtigingen voor HDInsight-clusters beheren waarvoor ESP is ingeschakeld.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: b1cd6d93ff45d7fb40ae7ca1874343486bd0b8cb
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0b6d4dacf43d80f371a2a4d286af1972198c3be3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547925"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942701"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Gebruikers machtigen voor Apache Ambari-weergaven
 
@@ -36,13 +33,13 @@ Als u naar de **Ambari-beheer pagina** van de [Apache AMBARI-webgebruikersinterf
 
 ### <a name="add-users-through-the-portal"></a>Gebruikers toevoegen via de portal
 
-1. Selecteer op de pagina beheer de optie **gebruikers** .
+1. Selecteer op de pagina beheer de optie **gebruikers**.
 
     ![Gebruikers van Apache Ambari-beheer pagina](./media/hdinsight-authorize-users-to-ambari/apache-ambari-management-page-users.png)
 
-1. Selecteer **+ lokale gebruiker maken** .
+1. Selecteer **+ lokale gebruiker maken**.
 
-1. Geef een **gebruikers naam** en **wacht woord** op. Selecteer **Opslaan** .
+1. Geef een **gebruikers naam** en **wacht woord** op. Selecteer **Opslaan**.
 
 ### <a name="add-users-through-powershell"></a>Gebruikers toevoegen via Power shell
 

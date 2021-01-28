@@ -1,18 +1,15 @@
 ---
 title: Prestatieproblemen van Apache Hbase in Azure HDInsight oplossen
 description: Diverse richt lijnen en tips voor het afstemmen van Apache HBase-prestaties voor optimale prestaties in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.openlocfilehash: 5be3f02a80524d9c4b633e1e34d581fc26bfd32d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 466fac524601e2d569bfa0ccf90179fe9419210d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547891"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942893"
 ---
 # <a name="troubleshoot-apache-hbase-performance-issues-on-azure-hdinsight"></a>Prestatieproblemen van Apache Hbase in Azure HDInsight oplossen
 
@@ -73,9 +70,9 @@ Hieronder vindt u enkele van de andere specifieke para meters die we hebben afge
 
 - Verhoog de `memstore` grootte van de standaard waarde van 128 MB tot 256 MB. Normaal gesp roken wordt deze instelling aanbevolen voor zware schrijf scenario's.
 
-- Verhoog het aantal threads dat is gereserveerd voor compressie, van de standaard instelling van **1** tot **4** . Deze instelling is relevant als we veelvuldige kleine compressies bekijken.
+- Verhoog het aantal threads dat is gereserveerd voor compressie, van de standaard instelling van **1** tot **4**. Deze instelling is relevant als we veelvuldige kleine compressies bekijken.
 
-- Voorkom dat `memstore` Flush wordt geblokkeerd vanwege een opslag limiet. Als u deze buffer wilt opgeven, verhoogt `Hbase.hstore.blockingStoreFiles` u de instelling in **100** .
+- Voorkom dat `memstore` Flush wordt geblokkeerd vanwege een opslag limiet. Als u deze buffer wilt opgeven, verhoogt `Hbase.hstore.blockingStoreFiles` u de instelling in **100**.
 
 - Gebruik de volgende instellingen voor het beheren van leegmaak acties:
 
@@ -104,13 +101,13 @@ Hieronder vindt u enkele van de andere specifieke para meters die we hebben afge
 - RPC-time-outs: **drie minuten**
 
    - RPC-time-outs zijn onder andere HBase RPC time-out, time-out voor HBase-client scanner en Bredae querytime-out. 
-   - Zorg ervoor dat de `hbase.client.scanner.caching` para meter is ingesteld op dezelfde waarde op zowel het server eindpunt als het einde van de client. Als ze niet hetzelfde zijn, leidt deze instelling tot client-end fouten die betrekking hebben op `OutOfOrderScannerException` . Deze instelling moet worden ingesteld op een lage waarde voor grote scans. We stellen deze waarde in op **100** .
+   - Zorg ervoor dat de `hbase.client.scanner.caching` para meter is ingesteld op dezelfde waarde op zowel het server eindpunt als het einde van de client. Als ze niet hetzelfde zijn, leidt deze instelling tot client-end fouten die betrekking hebben op `OutOfOrderScannerException` . Deze instelling moet worden ingesteld op een lage waarde voor grote scans. We stellen deze waarde in op **100**.
 
 ## <a name="other-considerations"></a>Andere overwegingen
 
 Hieronder vindt u aanvullende para meters voor het afstemmen van het volgende:
 
-- `Hbase.rs.cacheblocksonwrite` -HDI is deze instelling standaard ingesteld op **True** .
+- `Hbase.rs.cacheblocksonwrite` -HDI is deze instelling standaard ingesteld op **True**.
 
 - Instellingen waarmee u de kleine compressie voor later kunt uitstellen.
 

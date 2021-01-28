@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ff777f079116942eba32e49f359c7f7e0b99f65d
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 690dcca23aedb129090b3bf4f0da8874705b5fcc
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555777"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941471"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
@@ -960,7 +960,7 @@ Houd er rekening mee dat dit alleen geldt als uw Integration Runtime wordt uitge
 
 In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in combi natie met de Azure Automation desired state Configuration worden geholpen bij het verg Roten en onderhouden van de beveiligings vereisten.
 
-* [Informatie over het downloaden van de VM-sjabloon](../virtual-machines/windows/download-template.md)
+* [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
 * [Informatie over het maken van Azure Resource Manager sjablonen](../virtual-machines/windows/ps-template.md)
 

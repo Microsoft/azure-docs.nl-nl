@@ -1,19 +1,16 @@
 ---
 title: Apache Hive gebruiken met Power shell in HDInsight-Azure
 description: Power shell gebruiken voor het uitvoeren van Apache Hive query's in Apache Hadoop in azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 013eb8215064173e002aea23043bc2e9ba92b525
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 43cac81717027b39210d6cd9cb9ad0baa596f50d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545239"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943180"
 ---
 # <a name="run-apache-hive-queries-using-powershell"></a>Apache Hive query's uitvoeren met Power shell
 
@@ -84,7 +81,7 @@ De volgende stappen laten zien hoe u deze cmdlets kunt gebruiken om een taak uit
    >
    > `Invoke-AzHDInsightHiveJob -File "wasbs://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
    >
-   > Zie [hier](/powershell/module/microsoft.powershell.core/about/about_quoting_rules#here-strings)voor meer informatie over de **teken reeksen** .
+   > Zie [hier](/powershell/module/microsoft.powershell.core/about/about_quoting_rules#here-strings)voor meer informatie over de **teken reeksen**.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

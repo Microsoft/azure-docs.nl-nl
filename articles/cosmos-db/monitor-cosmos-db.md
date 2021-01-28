@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: f7cc9d4062ad9a49ff84db6ac035ff53934ae0a0
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: d5cfdca24193b899926bd30995063ed55b3dd3eb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532054"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943462"
 ---
 # <a name="monitor-azure-cosmos-db"></a>Azure Cosmos DB controleren
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -97,7 +97,7 @@ Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden
 
 ### <a name="view-operation-level-metrics-for-azure-cosmos-db"></a>Metrische gegevens van het bewerkings niveau voor Azure Cosmos DB weer geven
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Selecteer **monitor** in de navigatie balk aan de linkerkant en selecteer **metrische gegevens**.
 
@@ -129,7 +129,7 @@ Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarvan elke t
 
 Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema). Zie [Azure Cosmos DB gegevens referentie bewaken](monitor-cosmos-db-reference.md#resource-logs)voor een lijst met de typen bron logboeken die zijn verzameld voor Azure Cosmos db.
 
-Het [activiteiten logboek](/azure/azure-monitor/platform/activity-log) is een Azure-aanmelding voor een platform dat inzicht biedt in gebeurtenissen op abonnements niveau. U kunt deze onafhankelijk bekijken of door sturen naar Azure Monitor-logboeken, waar u veel complexere query's kunt uitvoeren met behulp van Log Analytics.  
+Het [activiteiten logboek](../azure-monitor/platform/activity-log.md) is een Azure-aanmelding voor een platform dat inzicht biedt in gebeurtenissen op abonnements niveau. U kunt deze onafhankelijk bekijken of door sturen naar Azure Monitor-logboeken, waar u veel complexere query's kunt uitvoeren met behulp van Log Analytics.  
 
 Azure Cosmos DB slaat gegevens op in de volgende tabellen.
 

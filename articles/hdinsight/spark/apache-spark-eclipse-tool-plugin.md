@@ -1,19 +1,16 @@
 ---
 title: 'Azure-toolkit voor Eclipse: scala-apps maken voor HDInsight Spark'
 description: Gebruik HDInsight-Hulpprogram Ma's in Azure-toolkit voor Eclipse om Spark-toepassingen te ontwikkelen die zijn geschreven in scala en deze rechtstreeks vanuit de eclips-IDE naar een HDInsight Spark-cluster te verzenden.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/13/2019
-ms.openlocfilehash: 33cbb9b5ac754969a6a9038db227123bae3a0ea7
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: f3acfe6f8e0a72b402d7a3401675c8aa3c94fc98
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822400"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940596"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Azure-toolkit voor Eclipse gebruiken om Apache Spark-toepassingen voor een HDInsight-cluster te maken
 
@@ -327,7 +324,7 @@ Er zijn twee modi voor het verzenden van de taken. Als opslag referentie is vers
 
 ![fout bij het ophalen van de eclips als cluster bezet-garens](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-submit.png "fout bij het ophalen van de eclips als cluster bezet-garens")
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Overzicht: Apache Spark in Azure HDInsight](apache-spark-overview.md)
 

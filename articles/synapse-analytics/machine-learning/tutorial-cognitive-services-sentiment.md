@@ -1,6 +1,6 @@
 ---
 title: 'Zelfstudie: Sentimentanalyse met Cognitive Services'
-description: Zelfstudie voor het gebruik van Cognitive Services voor sentimentanalyse in Synapse
+description: Meer informatie over het gebruik van Cognitive Services voor sentiment-analyse in azure Synapse Analytics
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.subservice: machine-learning
@@ -9,100 +9,106 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 6a4833cf0d73939e01fd3e3e7263c6cba3c0a28a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 08d5e53facce172c2287c2e341895f0ee38571f0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222187"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943707"
 ---
-# <a name="tutorial-sentiment-analysis-with-cognitive-services-preview"></a>Zelfstudie: Sentimentanalyse met Cognitive Services (preview-versie)
+# <a name="tutorial-sentiment-analysis-with-cognitive-services-preview"></a>Zelf studie: sentiment analyse met Cognitive Services (preview-versie)
 
-In deze zelfstudie leert u hoe u uw gegevens in Azure Synapse eenvoudig kunt verrijken met [Cognitive Services](../../cognitive-services/index.yml). We maken gebruik van de mogelijkheden van [Text Analytics](../../cognitive-services/text-analytics/index.yml) om een sentimentanalyse uit te voeren. Een gebruiker in Azure Synapse kan eenvoudigweg een tabel selecteren die een tekstkolom bevat die moet worden verrijkt met sentimenten. Deze sentimenten kunnen positief, negatief, gemengd of neutraal en een waarschijnlijkheid zijn.
+In deze zelf studie leert u hoe u uw gegevens in azure Synapse Analytics eenvoudig kunt verrijken met [azure Cognitive Services](../../cognitive-services/index.yml). U gebruikt de [Text Analytics](../../cognitive-services/text-analytics/index.yml) mogelijkheden om analyse van sentiment uit te voeren. 
+
+Een gebruiker in azure Synapse kan eenvoudigweg een tabel selecteren die een tekst kolom bevat die moet worden verrijkt met gevoel. Deze gevoel kunnen positieve, negatieve, gemengde of neutrale zijn. Er wordt ook een kans geretourneerd.
 
 In deze zelfstudie komt het volgende aan bod:
 
 > [!div class="checklist"]
-> - Stappen voor het ophalen van een Spark-tabelgegevensset met een tekstkolom voor sentimentanalyse.
-> - Gebruik de wizard in Azure Synapse om gegevens te verrijken met behulp van Text Analytics Cognitive Services.
+> - Stappen voor het ophalen van een Spark-tabel gegevensset die een tekst kolom bevat voor sentiment analyse.
+> - Met behulp van een wizard-ervaring in azure Synapse naar verrijkt u gegevens met behulp van Text Analytics in Cognitive Services.
 
 Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Azure Synapse Analytics-werkruimte](../get-started-create-workspace.md) met een ADLS Gen2-opslagaccount dat is geconfigureerd als de standaardopslag. U moet de **Inzender van de Storage Blob-gegevens** zijn van het ADLS Gen2-bestandssysteem waar u mee werkt.
+- [Azure Synapse Analytics-werk ruimte](../get-started-create-workspace.md) met een Azure data Lake Storage Gen2 opslag account geconfigureerd als de standaard opslag. U moet de Inzender voor *gegevens* van de opslag-blob van het data Lake Storage Gen2 bestands systeem waarmee u samenwerkt.
 - Spark-pool in uw Azure Synapse Analytics-werkruimte. Zie [Een Spark-pool maken in Azure Synapse](../quickstart-create-sql-pool-studio.md) voor meer informatie.
-- Voordat u deze zelfstudie kunt gebruiken, moet u ook de stappen voorafgaand aan de configuratie voltooien die in deze zelfstudie worden beschreven. [Cognitive Services in Azure Synapse configureren](tutorial-configure-cognitive-services-synapse.md).
+- De stappen voorafgaand aan de configuratie die in de zelf studie worden beschreven, [configureren Cognitive Services in azure Synapse](tutorial-configure-cognitive-services-synapse.md).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
-Meld u aan bij [Azure Portal](https://portal.azure.com/)
+Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="create-a-spark-table"></a>Een Spark-tabel maken
 
-Voor deze zelfstudie hebt u een Spark-tabel nodig.
+U hebt een Spark-tabel nodig voor deze zelf studie.
 
-1. Download het volgende CSV-bestand met een gegevensset voor tekstanalyse: [FabrikamComments.csv](https://github.com/Kaiqb/KaiqbRepo0731190208/blob/master/CognitiveServices/TextAnalytics/FabrikamComments.csv)
+1. Down load het [FabrikamComments.csv](https://github.com/Kaiqb/KaiqbRepo0731190208/blob/master/CognitiveServices/TextAnalytics/FabrikamComments.csv) -bestand, dat een gegevensset bevat voor tekst analyse. 
 
-1. Upload het bestand naar uw Azure Synapse ADLSGen2-opslagaccount.
-![Gegevens uploaden](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00a.png)
+1. Upload het bestand naar uw Azure Synapse-opslag account in Data Lake Storage Gen2.
+  
+   ![Scherm opname van de selecties voor het uploaden van gegevens.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00a.png)
 
-1. Maak een Spark-tabel vanuit het CSV-bestand door met de rechtermuisknop op het bestand te klikken en **Nieuwe notebook -> Spark-tabel** te selecteren.
-![Spark-tabel maken](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00b.png)
+1. Maak een Spark-tabel vanuit het CSV-bestand door met de rechter muisknop op het bestand te klikken en **Nieuw notitie blok**  >  **maken Spark-tabel** te selecteren.
 
-1. Geef de tabel een naam in de codecel en voer de notebook uit in een Spark-pool. Vergeet niet om "header = True" in te stellen.
-![Notebook uitvoeren](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00c.png)
+   ![Scherm opname van selecties voor het maken van een Spark-tabel.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00b.png)
 
-```python
-%%pyspark
-df = spark.read.load('abfss://default@azuresynapsesa.dfs.core.windows.net/data/FabrikamComments.csv', format='csv'
-## If header exists uncomment line below
-, header=True
-)
-df.write.mode("overwrite").saveAsTable("default.YourTableName")
-```
+1. Geef de tabel een naam in de codecel en voer de notebook uit in een Spark-pool. Vergeet niet in te stellen `header=True` .
 
-## <a name="launch-cognitive-services-wizard"></a>De wizard van Cognitive Services starten
+   ![Scherm afbeelding waarin een notitie blok wordt weer gegeven.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00c.png)
 
-1. Klik met de rechtermuisknop op de Spark-tabel die u in de vorige stap hebt gemaakt. Selecteer 'Machine Learning -> Verrijken met bestaand model' om de wizard te openen.
-![Wizard voor scoren starten](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00d.png)
+   ```python
+   %%pyspark
+   df = spark.read.load('abfss://default@azuresynapsesa.dfs.core.windows.net/data/FabrikamComments.csv', format='csv'
+   ## If a header exists, uncomment the line below
+   , header=True
+   )
+   df.write.mode("overwrite").saveAsTable("default.YourTableName")
+   ```
 
-2. Er wordt een configuratievenster weergegeven waarin u wordt gevraagd om een Cognitive Services-model te selecteren. Selecteer Text Analytics - Sentimentanalyse.
+## <a name="open-the-cognitive-services-wizard"></a>De wizard Cognitive Services openen
 
-![Wizard voor scoren starten - stap 1](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00e.png)
+1. Klik met de rechter muisknop op de Spark-tabel die u in de vorige procedure hebt gemaakt. Selecteer **machine learning**  >  **verrijken met bestaand model** om de wizard te openen.
+
+   ![Scherm opname van de selecties voor het openen van de Score wizard.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00d.png)
+
+2. Er wordt een configuratie scherm weer gegeven en u wordt gevraagd om een Cognitive Services model te selecteren. Selecteer **tekst analyse-sentimentanalyse**.
+
+   ![Scherm opname van de selectie van een Cognitive Services model.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00e.png)
 
 ## <a name="provide-authentication-details"></a>Verificatiegegevens opgeven
 
-Als u zich wilt verifiëren bij Cognitive Services, moet u verwijzen naar het geheim dat moet worden gebruikt in uw Key Vault. De onderstaande invoer is afhankelijk van [vereiste stappen](tutorial-configure-cognitive-services-synapse.md) die u vóór deze stap moet hebben voltooid.
+Als u zich wilt verifiëren bij Cognitive Services, moet u verwijzen naar het geheim voor uw sleutel kluis. De volgende invoer is afhankelijk van de [vereiste stappen](tutorial-configure-cognitive-services-synapse.md) die u vóór dit punt moet volt ooien.
 
-- **Azure-abonnement**: selecteer het Azure-abonnement waarvan uw sleutelkluis deel uitmaakt.
-- **Account voor Cognitive Services**: dit is de Text Analytics-resource waarmee u verbinding gaat maken.
-- **Gekoppelde Azure Key Vault-service**: als onderdeel van de vereiste stappen hebt u een gekoppelde service voor uw Text Analytics-resource gemaakt. Selecteer deze hier.
-- **Naam van geheim**: dit is de naam van het geheim in de sleutelkluis met de sleutel die moet worden geverifieerd bij uw Cognitive Services-resource.
+- **Azure-abonnement**: Selecteer het Azure-abonnement waarvan uw sleutel kluis deel uitmaakt.
+- **Cognitive Services account**: geef de Text Analytics resource op waarmee u verbinding maakt.
+- **Azure Key Vault gekoppelde service**: u hebt een gekoppelde service voor uw Text Analytics resource gemaakt als onderdeel van de vereiste stappen. Selecteer deze hier.
+- **Geheime naam**: Voer de naam in van het geheim in de sleutel kluis die de sleutel bevat die moet worden geverifieerd bij uw Cognitive Services-resource.
 
-![Azure Key Vault-gegevens opgeven](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00f.png)
+![Scherm opname van de verificatie gegevens voor een sleutel kluis.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00f.png)
 
-## <a name="configure-sentiment-analysis"></a>Sentimentanalyse configureren
+## <a name="configure-sentiment-analysis"></a>Sentiment-analyse configureren
 
-Vervolgens moet u de sentimentanalyse configureren. Selecteer de volgende gegevens:
-- **Taal**: selecteer de taal van de tekst waarvoor u sentimentanalyse wilt uitvoeren. Selecteer **EN**.
-- **Tekstkolom**: dit is de tekstkolom in uw gegevensset die u wilt analyseren om het sentiment te bepalen. Selecteer de tabelkolom **Opmerking**.
+Configureer vervolgens de sentiment-analyse. Selecteer de volgende details:
+- **Taal**: Selecteer **Engels** als taal van de tekst waarvoor u sentiment analyse wilt uitvoeren.
+- **Tekst kolom**: Selecteer **Opmerking (teken reeks)** als de tekst kolom in uw gegevensset die u wilt analyseren om de sentiment te bepalen.
 
-Klik als u klaar bent op **Notebook openen**. Hiermee wordt een notebook voor u gegenereerd met PySpark-code die de sentimentanalyse uitvoert met Azure Cognitive Services.
+Wanneer u klaar bent, selecteert u **notitie blok openen**. Hiermee wordt een notitie blok voor u gegenereerd met PySpark-code waarmee de sentiment-analyse wordt uitgevoerd met Azure Cognitive Services.
 
-![Sentimentanalyse configureren](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00g.png)
+![Scherm opname van de selecties voor het configureren van sentiment-analyse.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00g.png)
 
-## <a name="open-notebook-and-run"></a>Notebook openen en uitvoeren
+## <a name="run-the-notebook"></a>Het notitieblok uitvoeren
 
-De notebook die u zojuist hebt geopend, maakt gebruik van de [mmlspark-bibliotheek](https://github.com/Azure/mmlspark) om verbinding te maken met Cognitive Services.
+Het notitie blok dat u zojuist hebt geopend, maakt gebruik van de [mmlspark-bibliotheek](https://github.com/Azure/mmlspark) om verbinding te maken met Cognitive Services. Met de Azure Key Vault gegevens die u hebt ingevoerd, kunt u veilig vanuit deze ervaring naar uw geheimen verwijzen zonder dat u deze hoeft weer te geven.
 
-Met de Azure Key Vault-gegevens die u hebt ingevoerd, kunt u vanaf hier veilig naar uw geheimen verwijzen zonder dat u deze hoeft weer te geven.
+U kunt nu alle cellen uitvoeren om uw gegevens te verrijken met gevoel. Selecteer **alles uitvoeren**. 
 
-U kunt nu **alle** cellen uitvoeren om uw gegevens te verrijken met sentimenten. De sentimenten worden geretourneerd als positief/negatief/neutraal/gemengd, en u krijgt ook waarschijnlijkheid per sentiment. Meer informatie over [Cognitive Services - Sentimentanalyse](../../cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md).
+De gevoel worden geretourneerd als **positief**, **negatief**, **neutraal** of **gemengd**. U krijgt ook waarschijnlijkheid per sentiment. Meer [informatie over sentiment-analyse in cognitive Services](../../cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md).
 
-![Sentimentanalyse uitvoeren](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00h.png)
+![Scherm opname van de sentiment analyse.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00h.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Zelfstudie: Anomaliedetectie met Azure Cognitive Services](tutorial-cognitive-services-sentiment.md)
-- [Zelfstudie: Scoren van het Machine learning-model in toegewezen SQL-pools van Azure Synapse](tutorial-sql-pool-model-scoring-wizard.md)
+- [Zelf studie: score model voor machine learning-modellen in azure Synapse dedicated SQL-groepen](tutorial-sql-pool-model-scoring-wizard.md)
 - [Mogelijkheden voor machine learning in Azure Synapse Analytics](what-is-machine-learning.md)

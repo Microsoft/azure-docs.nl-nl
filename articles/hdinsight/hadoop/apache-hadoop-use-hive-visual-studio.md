@@ -1,19 +1,16 @@
 ---
 title: Apache Hive & Data Lake-hulpprogram ma's voor Visual Studio-Azure HDInsight
 description: Meer informatie over het gebruik van de Data Lake-hulpprogram ma's voor Visual Studio voor het uitvoeren van Apache Hive query's met Apache Hadoop in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: c8645ae9cb901b9fc95f00665d73e223a24fda63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e54991f6afd2ace19bf7b70e57bda6f551f7780
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86076450"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943168"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Apache Hive-query's uitvoeren met de Data Lake-hulpprogramma's voor Visual Studio
 
@@ -40,9 +37,9 @@ Ad hoc-query's kunnen worden uitgevoerd in **batch** of **interactieve** modus.
 
 1. Start **Visual Studio** en selecteer **door gaan zonder code**.
 
-2. Klik vanuit **Server Explorer**met de rechter muisknop op **Azure**, selecteer **verbinding maken met Microsoft Azure abonnement...** en voltooi het aanmeldings proces.
+2. Klik vanuit **Server Explorer** met de rechter muisknop op **Azure**, selecteer **verbinding maken met Microsoft Azure abonnement...** en voltooi het aanmeldings proces.
 
-3. Vouw **HDInsight**uit, klik met de rechter muisknop op het cluster waar u de query wilt uitvoeren en selecteer vervolgens **een Hive-query schrijven**.
+3. Vouw **HDInsight** uit, klik met de rechter muisknop op het cluster waar u de query wilt uitvoeren en selecteer vervolgens **een Hive-query schrijven**.
 
 4. Voer de volgende Hive-query in:
 
@@ -60,9 +57,9 @@ Ad hoc-query's kunnen worden uitgevoerd in **batch** of **interactieve** modus.
 
     De Hive-editor ondersteunt IntelliSense. Data Lake Tools voor Visual Studio biedt ondersteuning voor het laden van externe metagegevens wanneer u het Hive-script bewerkt. Als u bijvoorbeeld typt `SELECT * FROM` , geeft IntelliSense alle voorgestelde tabel namen weer. Wanneer een tabelnaam wordt opgegeven, geeft IntelliSense de kolomnamen weer. De hulpprogramma's ondersteunen de meeste DML-instructies, subquery's en ingebouwde UDF's van Hive. IntelliSense suggereert alleen de metagegevens van het cluster dat in de HDInsight-werkbalk is geselecteerd.
 
-7. Selecteer in de werk balk query (het gebied onder het tabblad Query en boven de query tekst) de optie **verzenden**of selecteer de vervolg keuze pijl naast **verzenden** en kies **Geavanceerd** in de keuze lijst. Als u de laatste optie selecteert,
+7. Selecteer in de werk balk query (het gebied onder het tabblad Query en boven de query tekst) de optie **verzenden** of selecteer de vervolg keuze pijl naast **verzenden** en kies **Geavanceerd** in de keuze lijst. Als u de laatste optie selecteert,
 
-8. Als u de optie Geavanceerd verzenden hebt geselecteerd, configureert u **taak naam**, **argumenten**, **aanvullende configuraties**en **status map** in het dialoog venster **script indienen** . Selecteer vervolgens **verzenden**.
+8. Als u de optie Geavanceerd verzenden hebt geselecteerd, configureert u **taak naam**, **argumenten**, **aanvullende configuraties** en **status map** in het dialoog venster **script indienen** . Selecteer vervolgens **verzenden**.
 
     ![Het dialoog venster script indienen, HDInsight Hadoop Hive-query](./media/apache-hadoop-use-hive-visual-studio/vs-tools-submit-jobs-advanced.png)
 
@@ -74,9 +71,9 @@ Voer de volgende stappen uit om een Hive-query uit te voeren door een Hive-toepa
 
 2. Selecteer in het **Startvenster** de optie **Een nieuw project maken**.
 
-3. In het venster **een nieuw project maken** in het vak **zoeken naar sjablonen** voert u *Hive*in. Kies vervolgens **Hive-toepassing** en selecteer **volgende**.
+3. In het venster **een nieuw project maken** in het vak **zoeken naar sjablonen** voert u *Hive* in. Kies vervolgens **Hive-toepassing** en selecteer **volgende**.
 
-4. Voer in het venster **uw nieuwe project configureren** een **project naam**in, selecteer of maak een **locatie** voor het nieuwe project en selecteer vervolgens **maken**.
+4. Voer in het venster **uw nieuwe project configureren** een **project naam** in, selecteer of maak een **locatie** voor het nieuwe project en selecteer vervolgens **maken**.
 
 5. Open het **script. HQL** -bestand dat is gemaakt met dit project en plak de volgende HiveQL-instructies:
 
@@ -120,7 +117,7 @@ Voer de volgende stappen uit om een Hive-query uit te voeren door een Hive-toepa
 
 In het volgende voor beeld wordt gebruikgemaakt van de `log4jLogs` tabel die u in de vorige procedure hebt gemaakt, [maakt u een Hive-toepassing](#create-a-hive-application).
 
-1. Klik vanuit **Server Explorer**met de rechter muisknop op uw cluster en selecteer **een Hive-query schrijven**.
+1. Klik vanuit **Server Explorer** met de rechter muisknop op uw cluster en selecteer **een Hive-query schrijven**.
 
 2. Voer de volgende Hive-query in:
 
@@ -143,7 +140,7 @@ In het volgende voor beeld wordt gebruikgemaakt van de `log4jLogs` tabel die u i
 
 3. Wijzig **interactief** naar **batch** , indien nodig, en selecteer vervolgens **verzenden**.
 
-4. Als u wilt controleren of de tabel is gemaakt, gaat u naar **Server Explorer** en vouwt u **Azure**  >  **HDInsight**uit. Breid uw HDInsight-cluster uit en vouw vervolgens de standaard- **Hive-data bases**uit  >  **default**. De tabel **errorLogs** en de tabel **log4jLogs** worden weer gegeven.
+4. Als u wilt controleren of de tabel is gemaakt, gaat u naar **Server Explorer** en vouwt u **Azure**  >  **HDInsight** uit. Breid uw HDInsight-cluster uit en vouw vervolgens de standaard- **Hive-data bases** uit  >  . De tabel **errorLogs** en de tabel **log4jLogs** worden weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

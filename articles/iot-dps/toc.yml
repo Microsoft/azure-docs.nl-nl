@@ -116,10 +116,16 @@
       href: concepts-device-oem-security-practices.md
 - name: Instructiegidsen
   items:
-    - name: MXChip IoT DevKit verbinden met IoT Hub
-      href: how-to-connect-mxchip-iot-devkit.md
-    - name: Apparaten inrichten met aangepast toewijzingsbeleid
-      href: how-to-use-custom-allocation-policies.md
+    - name: Ontwikkeling
+      items:
+        - name: MXChip IoT DevKit verbinden met IoT Hub
+          href: how-to-connect-mxchip-iot-devkit.md
+        - name: Aanvullende gegevens vanaf apparaten verzenden
+          href: how-to-send-additional-data.md
+        - name: Apparaten inrichten met aangepast toewijzingsbeleid
+          href: how-to-use-custom-allocation-policies.md
+        - name: Communiceren met uw DPS met MQTT-protocol
+          href: iot-dps-mqtt-support.md
     - name: Device Provisioning Service beheren
       items:
         - name: Inschrijvingen beheren - Portal
@@ -138,8 +144,6 @@
           href: how-to-control-access.md
         - name: IP-filtering configureren
           href: iot-dps-ip-filtering.md
-        - name: Device Provisioning Service configureren voor gebruik van Azure CLI
-          href: how-to-manage-dps-with-cli.md
     - name: IoT Edge-apparaten inrichten
       items:
         - name: Linux
@@ -148,12 +152,8 @@
         - name: Windows
           href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
           maintainContext: true
-    - name: Aanvullende gegevens vanaf apparaten verzenden
-      href: how-to-send-additional-data.md
     - name: Problemen oplossen
       href: how-to-troubleshoot-dps.md
-    - name: Communiceren met uw DPS met MQTT-protocol
-      href: iot-dps-mqtt-support.md
 - name: Naslaginformatie
   items:
     - name: REST-API

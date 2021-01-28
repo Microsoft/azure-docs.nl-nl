@@ -2,13 +2,13 @@
 title: Sjabloon functies-implementatie
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om implementatie gegevens op te halen.
 ms.topic: conceptual
-ms.date: 11/18/2020
-ms.openlocfilehash: e63caef669a2c28d29cd0bbd649b0997cea14ee1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 01/27/2021
+ms.openlocfilehash: 438afc947b07ac7425de365a2d63c427cf53e2ff
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920512"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943468"
 ---
 # <a name="deployment-functions-for-arm-templates"></a>Implementatie functies voor ARM-sjablonen
 
@@ -33,6 +33,7 @@ Retourneert informatie over de huidige implementatie bewerking.
 
 Deze functie retourneert het object dat tijdens de implementatie wordt door gegeven. De eigenschappen in het geretourneerde object verschillen, afhankelijk van of u:
 
+* een sjabloon of sjabloon specificatie implementeren.
 * het implementeren van een sjabloon die een lokaal bestand is of het implementeren van een sjabloon dat een extern bestand is dat wordt geopend via een URI.
 * implementeren naar een resource groep of implementeren op een van de andere bereiken ([Azure-abonnement](deploy-to-subscription.md), [beheer groep](deploy-to-management-group.md)of [Tenant](deploy-to-tenant.md)).
 
@@ -66,6 +67,31 @@ Bij het implementeren van een externe sjabloon voor een resource groep: de funct
   "properties": {
     "templateLink": {
       "uri": ""
+    },
+    "template": {
+      "$schema": "",
+      "contentVersion": "",
+      "parameters": {},
+      "variables": {},
+      "resources": [],
+      "outputs": {}
+    },
+    "templateHash": "",
+    "parameters": {},
+    "mode": "",
+    "provisioningState": ""
+  }
+}
+```
+
+Bij het implementeren van een sjabloon specificatie voor een resource groep: de functie retourneert de volgende indeling:
+
+```json
+{
+  "name": "",
+  "properties": {
+    "templateLink": {
+      "id": ""
     },
     "template": {
       "$schema": "",
@@ -295,9 +321,9 @@ Retourneert een parameter waarde. De opgegeven parameter naam moet worden gedefi
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
-| parameterName |Yes |tekenreeks |De naam van de para meter die moet worden geretourneerd. |
+| parameterName |Ja |tekenreeks |De naam van de para meter die moet worden geretourneerd. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -444,7 +470,7 @@ Retourneert de waarde van variable. De opgegeven naam van de variabele moet word
 
 ### <a name="parameters"></a>Parameters
 
-| Parameter | Vereist | Type | Description |
+| Parameter | Vereist | Type | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | variableName |Ja |Tekenreeks |De naam van de variabele die moet worden geretourneerd. |
 

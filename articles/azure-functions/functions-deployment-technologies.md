@@ -4,12 +4,12 @@ description: Meer informatie over de verschillende manieren waarop u code kunt i
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 51a76adcf25d5d1bc4025eab12073df0886fde3d
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 4a65a00c28a20c9381d3dcc6fd7545137528d5c0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681827"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943628"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Implementatie technologieën in Azure Functions
 
@@ -106,7 +106,7 @@ De volgende implementatie methoden zijn beschikbaar in Azure Functions.
 
 U kunt een externe pakket-URL gebruiken om te verwijzen naar een extern pakket bestand (. zip) dat uw functie-app bevat. Het bestand wordt gedownload van de beschik bare URL en de app wordt uitgevoerd in de pakket modus in [uitvoering](run-functions-from-deployment-package.md) .
 
->__Hoe gebruikt u dit:__ Toevoegen `WEBSITE_RUN_FROM_PACKAGE` aan de toepassings instellingen. De waarde van deze instelling moet een URL zijn (de locatie van het specifieke pakket bestand dat u wilt uitvoeren). U kunt instellingen toevoegen [in de portal](functions-how-to-use-azure-function-app-settings.md#settings) of met [behulp van de Azure cli](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
+>__Hoe gebruikt u dit:__ Toevoegen [`WEBSITE_RUN_FROM_PACKAGE`](functions-app-settings.md#website_run_from_package) aan de toepassings instellingen. De waarde van deze instelling moet een URL zijn (de locatie van het specifieke pakket bestand dat u wilt uitvoeren). U kunt instellingen toevoegen [in de portal](functions-how-to-use-azure-function-app-settings.md#settings) of met [behulp van de Azure cli](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
 >
 >Als u Azure Blob Storage gebruikt, gebruikt u een persoonlijke container met een [Shared Access Signature (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) om functies toegang te geven tot het pakket. Telkens wanneer de toepassing opnieuw wordt gestart, wordt een kopie van de inhoud opgehaald. Uw verwijzing moet geldig zijn voor de levens duur van de toepassing.
 
@@ -118,7 +118,7 @@ Gebruik Zip-implementatie om een zip-bestand met uw functie-app naar Azure te pu
 
 >__Hoe gebruikt u dit:__ Implementeren met behulp van uw favoriete client hulpprogramma: [Visual Studio code](functions-develop-vs-code.md#publish-to-azure), [Visual Studio](functions-develop-vs.md#publish-to-azure)of vanaf de opdracht regel met behulp van de [Azure functions core tools](functions-run-local.md#project-file-deployment). Deze hulpprogram ma's gebruiken standaard de zip-implementatie en [worden uitgevoerd vanuit het pakket](run-functions-from-deployment-package.md). De kern Hulpprogramma's en de Visual Studio code-extensie maken beide gebruik van [externe build](#remote-build) bij het implementeren naar Linux. Als u een zip-bestand hand matig wilt implementeren in uw functie-app, volgt u de instructies in [Deploy vanuit een zip-bestand of-URL](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file-or-url).
 
->Wanneer u implementeert met behulp van zip-implementatie, kunt u instellen dat uw app [vanuit het pakket wordt uitgevoerd](run-functions-from-deployment-package.md). Als u uit het pakket wilt uitvoeren, stelt `WEBSITE_RUN_FROM_PACKAGE` u de waarde voor de toepassings instelling in op `1` . U kunt het beste een zip-implementatie uitvoeren. Het levert snellere laad tijden voor uw toepassingen en is de standaard waarde voor VS code, Visual Studio en de Azure CLI.
+>Wanneer u implementeert met behulp van zip-implementatie, kunt u instellen dat uw app [vanuit het pakket wordt uitgevoerd](run-functions-from-deployment-package.md). Als u uit het pakket wilt uitvoeren, stelt u de `WEBSITE_RUN_FROM_PACKAGE` waarde [] (functions-app-Settings. MD # website_run_from_package toepassings instelling in op `1` . U kunt het beste een zip-implementatie uitvoeren. Het levert snellere laad tijden voor uw toepassingen en is de standaard waarde voor VS code, Visual Studio en de Azure CLI.
 
 >__Wanneer u deze gebruikt:__ Zip-implementatie is de aanbevolen implementatie technologie voor Azure Functions.
 
@@ -181,7 +181,7 @@ U kunt FTP gebruiken om bestanden rechtstreeks naar Azure Functions te verzenden
 
 In de portal-editor kunt u de bestanden in uw functie-app rechtstreeks bewerken (in principe elke keer dat u uw wijzigingen opslaat).
 
->__Hoe gebruikt u dit:__ Als u uw functies in het Azure Portal wilt kunnen bewerken, moet u [uw functies in de portal hebben gemaakt](./functions-get-started.md). Als u één bron van waarheid wilt behouden, is het gebruik van een andere implementatie methode de functie alleen-lezen en voor komt u dat de portal verder kan worden bewerkt. Als u wilt terugkeren naar een status waarin u uw bestanden kunt bewerken in de Azure Portal, kunt u de bewerkings modus hand matig weer inschakelen `Read/Write` en alle implementatie-gerelateerde toepassings instellingen verwijderen (zoals `WEBSITE_RUN_FROM_PACKAGE` ).
+>__Hoe gebruikt u dit:__ Als u uw functies in het Azure Portal wilt kunnen bewerken, moet u [uw functies in de portal hebben gemaakt](./functions-get-started.md). Als u één bron van waarheid wilt behouden, is het gebruik van een andere implementatie methode de functie alleen-lezen en voor komt u dat de portal verder kan worden bewerkt. Als u wilt terugkeren naar een status waarin u uw bestanden kunt bewerken in de Azure Portal, kunt u de bewerkings modus hand matig weer inschakelen `Read/Write` en alle implementatie-gerelateerde toepassings instellingen verwijderen (zoals [`WEBSITE_RUN_FROM_PACKAGE`](functions-app-settings.md#website_run_from_package) .
 
 >__Wanneer u deze gebruikt:__ De portal is een goede manier om aan de slag te gaan met Azure Functions. Voor een intensere ontwikkel werkzaamheden wordt u aangeraden een van de volgende client hulpprogramma's te gebruiken:
 >

@@ -6,12 +6,12 @@ ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 5008da99b63cabba41dade9a745fbd5853345737
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 637e66956eadf57199d2e5191368d6355e2cd118
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734963"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941888"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
@@ -217,13 +217,13 @@ Het beperken van de toegang op deze manier is alleen van toepassing op gegevens 
 
 U kunt het eerder beschreven proces automatiseren met Azure Resource Manager sjablonen, REST-en opdracht regel interfaces.
 
-Als u privé-koppelings bereik wilt maken en beheren, gebruikt u de [rest API](/rest/api/monitor/private%20link%20scopes%20(preview)) of [Azure cli (AZ monitor private-link-scope)](/cli/azure/monitor/private-link-scope?view=azure-cli-latest).
+Als u privé-koppelings bereik wilt maken en beheren, gebruikt u de [rest API](/rest/api/monitor/private%20link%20scopes%20(preview)) of [Azure cli (AZ monitor private-link-scope)](/cli/azure/monitor/private-link-scope).
 
-Als u toegang tot het netwerk wilt beheren, gebruikt u de vlaggen `[--ingestion-access {Disabled, Enabled}]` en `[--query-access {Disabled, Enabled}]` op [log Analytics werk ruimten](/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest) of [Application Insights onderdelen](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest).
+Als u toegang tot het netwerk wilt beheren, gebruikt u de vlaggen `[--ingestion-access {Disabled, Enabled}]` en `[--query-access {Disabled, Enabled}]` op [log Analytics werk ruimten](/cli/azure/monitor/log-analytics/workspace) of [Application Insights onderdelen](/cli/azure/ext/application-insights/monitor/app-insights/component).
 
 ## <a name="collect-custom-logs-over-private-link"></a>Aangepaste logboeken via een persoonlijke koppeling verzamelen
 
-Opslag accounts worden gebruikt in het opname proces van aangepaste Logboeken. Standaard worden door service beheerde opslag accounts gebruikt. Als u echter aangepaste logboeken op persoonlijke koppelingen wilt opnemen, moet u uw eigen opslag accounts gebruiken en deze koppelen aan Log Analytics werk ruimte (n). Meer informatie over het instellen van dergelijke accounts met behulp van de [opdracht regel](/cli/azure/monitor/log-analytics/workspace/linked-storage?view=azure-cli-latest).
+Opslag accounts worden gebruikt in het opname proces van aangepaste Logboeken. Standaard worden door service beheerde opslag accounts gebruikt. Als u echter aangepaste logboeken op persoonlijke koppelingen wilt opnemen, moet u uw eigen opslag accounts gebruiken en deze koppelen aan Log Analytics werk ruimte (n). Meer informatie over het instellen van dergelijke accounts met behulp van de [opdracht regel](/cli/azure/monitor/log-analytics/workspace/linked-storage).
 
 Zie [opslag accounts van klanten die eigendom zijn van een logboek opname](private-storage.md) voor meer informatie over het inbrengen van uw eigen opslag account
 
@@ -252,7 +252,7 @@ Als u Azure Monitor Portal-ervaringen wilt gebruiken, zoals Application Insights
 
 ### <a name="programmatic-access"></a>Toegang op programmeerniveau
 
-Als u de REST API, [cli](/cli/azure/monitor?view=azure-cli-latest) of Power shell met Azure monitor op particuliere netwerken wilt gebruiken, voegt u de [service Tags](../../virtual-network/service-tags-overview.md)  **AzureActiveDirectory** en **AzureResourceManager** toe aan uw firewall.
+Als u de REST API, [cli](/cli/azure/monitor) of Power shell met Azure monitor op particuliere netwerken wilt gebruiken, voegt u de [service Tags](../../virtual-network/service-tags-overview.md)  **AzureActiveDirectory** en **AzureResourceManager** toe aan uw firewall.
 
 Door deze tags toe te voegen, kunt u acties uitvoeren zoals het opvragen van gegevens, het maken en beheren van Log Analytics-werk ruimten en AI-onderdelen.
 

@@ -3,16 +3,15 @@ title: Apache Spark & component-Hive Warehouse connector-Azure HDInsight
 description: Meer informatie over het integreren van Apache Spark en Apache Hive met de Hive-Warehouse connector op Azure HDInsight.
 author: nis-goel
 ms.author: nisgoel
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/28/2020
-ms.openlocfilehash: 24968511d038b2cea41a59187c0a361684c6720e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39eb007c85d9f0623b4a5611e36d4ed7a75423e0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511888"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941182"
 ---
 # <a name="integrate-apache-spark-and-apache-hive-with-hive-warehouse-connector-in-azure-hdinsight"></a>Apache Spark en Apache Hive integreren met hive Warehouse connector in azure HDInsight
 
@@ -57,11 +56,11 @@ Hive Warehouse connector heeft afzonderlijke clusters nodig voor Spark-en intera
 
 1. Navigeer naar **Summary**  >  **HiveServer2 Interactive JDBC URL** en noteer de waarde. De waarde kan er ongeveer als volgt uitzien: `jdbc:hive2://zk0-iqgiro.rekufuk2y2ce.bx.internal.cloudapp.net:2181,zk1-iqgiro.rekufuk2y2ce.bx.internal.cloudapp.net:2181,zk4-iqgiro.rekufuk2y2ce.bx.internal.cloudapp.net:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2-interactive` .
 
-1. Ga naar **configuratie**  >  **Geavanceerde**geavanceerde  >  **componenten-site**  >  **component. Zookeeper. quorum** en noteer de waarde. De waarde kan er ongeveer als volgt uitzien: `zk0-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:2181,zk1-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:2181,zk4-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:2181` .
+1. Ga naar **configuratie**  >  **Geavanceerde** geavanceerde  >  **componenten-site**  >  **component. Zookeeper. quorum** en noteer de waarde. De waarde kan er ongeveer als volgt uitzien: `zk0-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:2181,zk1-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:2181,zk4-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:2181` .
 
 1. Navigeer naar **configurations**  >  **Advanced**  >  **General**  >  **component. meta Store. uri's** en noteer de waarde. De waarde kan er ongeveer als volgt uitzien: `thrift://iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:9083,thrift://hn1-iqgiro.rekufuk2y2cezcbowjkbwfnyvd.bx.internal.cloudapp.net:9083` .
 
-1. Navigeer naar **configuratie**van  >  **Geavanceerde**  >  **Geavanceerde component-Interactive-site**  >  **Hive. llap. daemon. service. hosts** en noteer de waarde. De waarde kan er ongeveer als volgt uitzien: `@llap0` .
+1. Navigeer naar **configuratie** van  >  **Geavanceerde**  >  **Geavanceerde component-Interactive-site**  >  **Hive. llap. daemon. service. hosts** en noteer de waarde. De waarde kan er ongeveer als volgt uitzien: `@llap0` .
 
 #### <a name="configure-spark-cluster-settings"></a>Spark-cluster instellingen configureren
 
@@ -212,7 +211,7 @@ kinit USERNAME
 
 1. Pas een kolom maskerings beleid toe dat alleen de laatste vier tekens van de kolom bevat.  
     1. Ga naar de gebruikers interface van zwerver op `https://LLAPCLUSTERNAME.azurehdinsight.net/ranger/` .
-    1. Klik onder **Hive**op de component service voor uw cluster.
+    1. Klik onder **Hive** op de component service voor uw cluster.
         ![zwerver Service Manager](./media/apache-hive-warehouse-connector/hive-warehouse-connector-ranger-service-manager.png)
     1. Klik op het tabblad **maskeren** en vervolgens op **Nieuw beleid toevoegen**
 

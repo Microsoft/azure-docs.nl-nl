@@ -1,23 +1,20 @@
 ---
 title: De uitgebreide functies van de Apache Spark geschiedenis server gebruiken om fouten op te sporen in apps-Azure HDInsight
 description: Gebruik de uitgebreide functies in de Apache Spark-geschiedenis server voor het opsporen en diagnosticeren van Spark-toepassingen-Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/25/2019
-ms.openlocfilehash: d8dd9aaeaadf13fa48577cf2853e7bcf58badb41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d53d9e9ee2a7fa6588ea0993b3bebdb2a287351
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86079289"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941051"
 ---
 # <a name="use-the-extended-features-of-the-apache-spark-history-server-to-debug-and-diagnose-spark-applications"></a>De uitgebreide functies van de Apache Spark History-server gebruiken om fouten op te sporen en op te sporen in Spark-toepassingen
 
-Dit artikel laat u zien hoe u de uitgebreide functies van de Apache Spark geschiedenis server kunt gebruiken voor het opsporen van fouten en het onderzoeken van voltooide of actieve Spark-toepassingen. De uitbrei ding bevat een tabblad **gegevens** , een **grafiek** tabblad en een tabblad **diagnose** . Op het tabblad **gegevens** kunt u de invoer-en uitvoer gegevens van de Spark-taak controleren. Op het tabblad **grafiek** kunt u de gegevens stroom controleren en de taak grafiek opnieuw afspelen. Op het tabblad **diagnose** kunt u de functies **gegevens scheefheid**, **tijds scheefheid**en **gebruiks analyse gebruiken** .
+Dit artikel laat u zien hoe u de uitgebreide functies van de Apache Spark geschiedenis server kunt gebruiken voor het opsporen van fouten en het onderzoeken van voltooide of actieve Spark-toepassingen. De uitbrei ding bevat een tabblad **gegevens** , een **grafiek** tabblad en een tabblad **diagnose** . Op het tabblad **gegevens** kunt u de invoer-en uitvoer gegevens van de Spark-taak controleren. Op het tabblad **grafiek** kunt u de gegevens stroom controleren en de taak grafiek opnieuw afspelen. Op het tabblad **diagnose** kunt u de functies **gegevens scheefheid**, **tijds scheefheid** en **gebruiks analyse gebruiken** .
 
 ## <a name="get-access-to-the-spark-history-server"></a>Toegang krijgen tot de Spark-geschiedenis server
 
@@ -26,7 +23,7 @@ De Spark-geschiedenis server is de Web-UI voor voltooide en actieve Spark-toepas
 ### <a name="open-the-spark-history-server-web-ui-from-the-azure-portal"></a>Open de Web-UI van de Spark-geschiedenis server vanuit de Azure Portal
 
 1. Open in het [Azure Portal](https://portal.azure.com/)het Spark-cluster. Zie voor meer informatie het [overzicht en weer geven van clusters](../hdinsight-administer-use-portal-linux.md#showClusters).
-2. Selecteer in **cluster dashboards**de optie  **Spark-geschiedenis server**. Wanneer u hierom wordt gevraagd, voert u de beheerders referenties in voor het Spark-cluster.
+2. Selecteer in **cluster dashboards** de optie  **Spark-geschiedenis server**. Wanneer u hierom wordt gevraagd, voert u de beheerders referenties in voor het Spark-cluster.
 
     ![Start de Spark-geschiedenis server vanuit het Azure Portal.](./media/apache-azure-spark-history-server/azure-portal-dashboard-spark-history.png "Spark-geschiedenis server")
 
@@ -42,7 +39,7 @@ De Web-UI van de Spark-geschiedenis server kan er ongeveer als volgt uitzien:
 
 Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hulp programma om de gegevens weergave te bekijken.
 
-+ Controleer **invoer**, **uitvoer**en **tabel bewerkingen** door de afzonderlijke tabbladen te selecteren.
++ Controleer **invoer**, **uitvoer** en **tabel bewerkingen** door de afzonderlijke tabbladen te selecteren.
 
     ![Gegevens tabbladen op de pagina gegevens voor Spark-toepassing.](./media/apache-azure-spark-history-server/apache-spark-data-tabs.png)
 
@@ -101,9 +98,9 @@ Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hu
     |---|---|
     |Green|De taak is voltooid.|
     |Oranje|De taak is mislukt, maar dit heeft geen invloed op het uiteindelijke resultaat van de taak. Deze taken bevatten dubbele of nieuwe exemplaren die later kunnen worden uitgevoerd.|
-    |Blauw|De taak wordt uitgevoerd.|
+    |Blue|De taak wordt uitgevoerd.|
     |Wit|De taak wacht op uitvoering of het stadium is overgeslagen.|
-    |Rood|De taak is mislukt.|
+    |Red|De taak is mislukt.|
 
      ![Er wordt een taak uitgevoerd op de pagina met de taak grafiek van Spark-toepassing &.](./media/apache-azure-spark-history-server/sparkui-graph-color-running.png)
 
@@ -145,15 +142,15 @@ Selecteer de taak-ID en selecteer vervolgens **gegevens** in het menu van het hu
     > [!NOTE]  
     > Voor lees-en schrijf grootten van gegevens gebruiken we 1MB = 1000 KB = 1000 * 1000 bytes.
 
-+ Feedback over problemen verzenden door **feedback voor ons**te selecteren.
++ Feedback over problemen verzenden door **feedback voor ons** te selecteren.
 
     ![De optie feedback op de pagina taak grafiek van Spark-toepassing &.](./media/apache-azure-spark-history-server/sparkui-graph-feedback.png)
 
 ## <a name="use-the-diagnosis-tab-in-the-spark-history-server"></a>Het tabblad diagnose in de Spark-geschiedenis server gebruiken
 
-Selecteer de taak-ID en selecteer vervolgens **diagnose** in het menu van het hulp programma om de job Diagnostics weer te geven. Het tabblad **diagnose** bevat **gegevens scheefheid**, **tijds scheefheid**en **gebruiks analyse**.
+Selecteer de taak-ID en selecteer vervolgens **diagnose** in het menu van het hulp programma om de job Diagnostics weer te geven. Het tabblad **diagnose** bevat **gegevens scheefheid**, **tijds scheefheid** en **gebruiks analyse**.
 
-+ Bekijk de **gebruiks analyse** van **gegevens scheefheid**, **tijds scheefheid**en voer uit door de tabbladen respectievelijk te selecteren.
++ Bekijk de **gebruiks analyse** van **gegevens scheefheid**, **tijds scheefheid** en voer uit door de tabbladen respectievelijk te selecteren.
 
     ![Het tabblad gegevens scheefheid op het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-tabs.png)
 
@@ -185,7 +182,7 @@ Op het tabblad **tijd verschil** worden scheefe taken weer gegeven op basis van 
 
 In het gedeelte **para meters opgeven** worden de para meters weer gegeven, die worden gebruikt voor het detecteren van tijd scheefheid. De standaard regel is: de uitvoerings tijd van de taak is groter dan drie keer van de gemiddelde uitvoerings tijd en de tijd voor het uitvoeren van de taak is langer dan 30 seconden. U kunt de para meters wijzigen op basis van uw behoeften. In de grafiek **scheefe fase** en **scheefheid** worden de bijbehorende fasen en taak gegevens weer gegeven, net als in het tabblad **gegevens scheefheid** .
 
-Wanneer u **tijds scheefheid**selecteert, wordt het gefilterde resultaat weer gegeven in de sectie **scheefe fase** , op basis van de para meters die zijn ingesteld in de sectie **para meters opgeven** . Wanneer u één item in de sectie **scheefe fase** selecteert, wordt de bijbehorende grafiek geschetst in de derde sectie en worden de taak details weer gegeven in het deel venster onder in de rechter benedenhoek.
+Wanneer u **tijds scheefheid** selecteert, wordt het gefilterde resultaat weer gegeven in de sectie **scheefe fase** , op basis van de para meters die zijn ingesteld in de sectie **para meters opgeven** . Wanneer u één item in de sectie **scheefe fase** selecteert, wordt de bijbehorende grafiek geschetst in de derde sectie en worden de taak details weer gegeven in het deel venster onder in de rechter benedenhoek.
 
 ![Het tabblad tijd verschil binnen het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-timeskew-section2.png)
 
@@ -193,7 +190,7 @@ Wanneer u **tijds scheefheid**selecteert, wordt het gefilterde resultaat weer ge
 
 In de **gebruiks grafiek** van de uitvoerder worden de werkelijke uitvoerings toewijzing en uitvoerings status van de taak weer gegeven.  
 
-Wanneer u **gebruiks analyse**uitvoeren selecteert, worden vier verschillende bochten over het gebruik van de **uitvoerder**geschetst: **toegewezen uitvoerende**machines, uitvoeringen van uitvoerende machines, **niet-actieve uitvoerende**machines en **Maxi maal**bewerkings instanties. Bij elke uitvoerder die is **toegevoegd** of de uitvoerder is **verwijderd** , worden de toegewezen uitbreiden verhoogd of verlaagd. U kunt de **gebeurtenis tijdlijn** controleren op het tabblad **taken** voor meer vergelijkingen.
+Wanneer u **gebruiks analyse** uitvoeren selecteert, worden vier verschillende bochten over het gebruik van de **uitvoerder** geschetst: **toegewezen uitvoerende** machines, uitvoeringen van uitvoerende machines, **niet-actieve uitvoerende** machines en **Maxi maal** bewerkings instanties. Bij elke uitvoerder die is **toegevoegd** of de uitvoerder is **verwijderd** , worden de toegewezen uitbreiden verhoogd of verlaagd. U kunt de **gebeurtenis tijdlijn** controleren op het tabblad **taken** voor meer vergelijkingen.
 
 ![Het tabblad gebruiks analyse voor voeringen op het tabblad diagnose.](./media/apache-azure-spark-history-server/sparkui-diagnosis-executors.png)
 
@@ -211,7 +208,7 @@ Voer de volgende stappen uit om terug te keren naar de Community-versie.
 1. Ga naar **Spark2**-  >  **configuraties**.
 1. Selecteer **aangepaste spark2-standaard waarden**.
 1. **Eigenschap toevoegen selecteren...**.
-1. Voeg **Spark. UI. Enhancement. Enabled = False**toe en sla het vervolgens op.
+1. Voeg **Spark. UI. Enhancement. Enabled = False** toe en sla het vervolgens op.
 1. De eigenschap wordt nu ingesteld op **Onwaar** .
 1. Selecteer **Opslaan** om de configuratie op te slaan.
 
@@ -221,7 +218,7 @@ Voer de volgende stappen uit om terug te keren naar de Community-versie.
 
     ![De weer gave samen vatting in Apache Ambari.](./media/apache-azure-spark-history-server/apache-spark-restart1.png)
 
-1. Als u de Spark-geschiedenis server opnieuw wilt opstarten, selecteert u de knop **gestart** rechts van de **Spark2-geschiedenis server**en selecteert u **opnieuw opstarten** in de vervolg keuzelijst.
+1. Als u de Spark-geschiedenis server opnieuw wilt opstarten, selecteert u de knop **gestart** rechts van de **Spark2-geschiedenis server** en selecteert u **opnieuw opstarten** in de vervolg keuzelijst.
 
     ![Start de Spark-geschiedenis server opnieuw in Apache Ambari.](./media/apache-azure-spark-history-server/apache-spark-restart2.png)  
 
@@ -310,7 +307,7 @@ Als u een upgrade wilt uitvoeren met een hotfix, gebruikt u het volgende script 
     |Eigenschap |Waarde |
     |---|---|
     |Scripttype|- Aangepast|
-    |Name|UpgradeJar|
+    |Naam|UpgradeJar|
     |Bash-script-URI|`https://hdinsighttoolingstorage.blob.core.windows.net/shsscriptactions/upgrade_spark_enhancement.sh`|
     |Knooppunttype(n)|Hoofd, werk nemer|
     |Parameters|`https://${account_name}.blob.core.windows.net/packages/jars/spark-enhancement-${version}.jar`|

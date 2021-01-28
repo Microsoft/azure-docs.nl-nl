@@ -3,12 +3,12 @@ title: Exporteren naar SQL vanuit Azure-toepassing Insights | Microsoft Docs
 description: Application Insights gegevens doorlopend naar SQL exporteren met behulp van Stream Analytics.
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.openlocfilehash: 90aab1794a9b412de2498edcc4d221f4bcc86968
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5fb7093dd9945893b17f1b8f5e596cfe5181c3b6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979444"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942424"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Walkthrough: exporteren naar SQL vanuit Application Insights met behulp van Stream Analytics
 In dit artikel wordt beschreven hoe u uw telemetriegegevens van [Azure-toepassing inzichten][start] kunt verplaatsen naar Azure SQL database met behulp van [continue export][export] en [Azure stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
@@ -64,7 +64,7 @@ Doorlopend exporteren voert altijd gegevens uit naar een Azure Storage-account, 
 1. Laat sommige gegevens samen voegen. U kunt de toepassing een tijdje gebruiken. Telemetrie is beschikbaar in en u ziet statistische grafieken in [metrische Explorer](../platform/metrics-charts.md) en afzonderlijke gebeurtenissen in [Diagnostische Zoek opdrachten](./diagnostic-search.md). 
    
     Daarnaast worden de gegevens naar uw opslag geëxporteerd. 
-2. Inspecteer de geëxporteerde gegevens in de portal: Kies **Bladeren**, selecteer uw opslag account en vervolgens **containers** of in Visual Studio. In Visual Studio kiest u **weer gave/Cloud Verkenner**en opent u Azure/Storage. (Als u deze menu optie niet hebt, moet u de Azure SDK installeren: Open het dialoog venster New project en open Visual C#/Cloud/Get Microsoft Azure SDK voor .NET.)
+2. Inspecteer de geëxporteerde gegevens in de portal: Kies **Bladeren**, selecteer uw opslag account en vervolgens **containers** of in Visual Studio. In Visual Studio kiest u **weer gave/Cloud Verkenner** en opent u Azure/Storage. (Als u deze menu optie niet hebt, moet u de Azure SDK installeren: Open het dialoog venster New project en open Visual C#/Cloud/Get Microsoft Azure SDK voor .NET.)
    
     ![Open in Visual Studio Server browser, azure, opslag](./media/code-sample-export-sql-stream-analytics/087-explorer.png)
    
@@ -72,7 +72,7 @@ Doorlopend exporteren voert altijd gegevens uit naar een Azure Storage-account, 
 
 De gebeurtenissen worden geschreven naar BLOB-bestanden in JSON-indeling. Elk bestand kan een of meer gebeurtenissen bevatten. Daarom willen we de gegevens van de gebeurtenis lezen en de gewenste velden filteren. Er zijn allerlei dingen die we kunnen doen met de gegevens, maar het plan is nu het gebruik van Stream Analytics om de gegevens naar SQL Database te verplaatsen. Zo kunt u heel eenvoudig veel interessante query's uitvoeren.
 
-## <a name="create-an-azure-sql-database"></a>Een Azure SQL Database-exemplaar maken
+## <a name="create-an-azure-sql-database"></a>Een Azure SQL-database maken
 Nadat u het abonnement in [Azure Portal][portal]hebt gemaakt, maakt u de data base (en een nieuwe server, tenzij u er al een hebt) waarnaar u de gegevens gaat schrijven.
 
 ![Nieuwe, gegevens, SQL](./media/code-sample-export-sql-stream-analytics/090-sql.png)
@@ -82,7 +82,7 @@ Zorg ervoor dat de server toegang verleent tot Azure-Services:
 ![Bladeren, servers, uw server, instellingen, firewall, toegang tot Azure toestaan](./media/code-sample-export-sql-stream-analytics/100-sqlaccess.png)
 
 ## <a name="create-a-table-in-azure-sql-database"></a>Een tabel maken in Azure SQL Database
-Maak verbinding met de data base die in de vorige sectie is gemaakt met uw favoriete beheer programma. In deze walkthrough wordt [SQL Server Management tools](/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver15) (SSMS) gebruikt.
+Maak verbinding met de data base die in de vorige sectie is gemaakt met uw favoriete beheer programma. In deze walkthrough wordt [SQL Server Management tools](/sql/ssms/sql-server-management-studio-ssms) (SSMS) gebruikt.
 
 ![Verbinding maken met Azure SQL Database](./media/code-sample-export-sql-stream-analytics/31-sql-table.png)
 
@@ -161,7 +161,7 @@ Het voor voegsel van het pad geeft aan hoe Stream Analytics de invoer bestanden 
 webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 ```
 
-In dit voorbeeld geldt het volgende:
+In dit voorbeeld:
 
 * `webapplication27` is de naam van de Application Insights resource, **in kleine letters**. 
 * `1234...` is de instrumentatie sleutel van de Application Insights resource **waarvoor streepjes zijn verwijderd**. 

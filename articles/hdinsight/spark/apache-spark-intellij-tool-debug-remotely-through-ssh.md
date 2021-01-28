@@ -1,19 +1,16 @@
 ---
 title: 'Azure-toolkit voor IntelliJ: fout opsporing van Spark-apps met SSH-HDInsight'
 description: Stapsgewijze richt lijnen voor het gebruik van HDInsight-Hulpprogram Ma's in Azure-toolkit voor IntelliJ voor het opsporen van fouten op externe toepassingen op HDInsight-clusters via SSH
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/23/2019
-ms.openlocfilehash: 7a2044e9bb0110eda666d12e29a715547381e2be
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: ccd642578c8c35ac6b5f23397788ad1e7f83a1f5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822332"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942614"
 ---
 # <a name="debug-apache-spark-applications-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Fouten opsporen Apache Spark toepassingen op een HDInsight-cluster met Azure-toolkit voor IntelliJ via SSH
 

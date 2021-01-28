@@ -1,19 +1,16 @@
 ---
 title: Toepassings Insight-logboeken analyseren met Spark-Azure HDInsight
 description: Meer informatie over het exporteren van Application Insight-logboeken naar Blob-opslag en het analyseren van de logboeken met Spark in HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
-ms.openlocfilehash: 1ddf2b6879d8d33f99281daba6fb1040e24a37af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fbca4b23b6fc414727ea1b5a4012d2847d6b8d78
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86078796"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940463"
 ---
 # <a name="analyze-application-insights-telemetry-logs-with-apache-spark-on-hdinsight"></a>Application Insights-telemetrie-logboeken analyseren met Apache Spark in HDInsight
 
@@ -72,7 +69,7 @@ Als u het Azure Storage-account wilt toevoegen aan een bestaand cluster, gebruik
 
 1. Navigeer vanuit een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/jupyter` de naam van het cluster.
 
-2. Selecteer in de rechter bovenhoek van de pagina Jupyter **Nieuw**en klik vervolgens op **PySpark**. Er wordt een nieuw browser tabblad met een op python gebaseerd Jupyter Notebook geopend.
+2. Selecteer in de rechter bovenhoek van de pagina Jupyter **Nieuw** en klik vervolgens op **PySpark**. Er wordt een nieuw browser tabblad met een op python gebaseerd Jupyter Notebook geopend.
 
 3. Voer in het eerste veld (een **cel**) op de pagina de volgende tekst in:
 
@@ -223,7 +220,7 @@ Als u het Azure Storage-account wilt toevoegen aan een bestaand cluster, gebruik
 
 1. Navigeer vanuit een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/jupyter` de naam van het cluster.
 
-2. Selecteer in de rechter bovenhoek van de pagina Jupyter **Nieuw**en klik vervolgens op **scala**. Er wordt een nieuw browser tabblad met een op scala gebaseerde Jupyter Notebook weer gegeven.
+2. Selecteer in de rechter bovenhoek van de pagina Jupyter **Nieuw** en klik vervolgens op **scala**. Er wordt een nieuw browser tabblad met een op scala gebaseerde Jupyter Notebook weer gegeven.
 
 3. Voer in het eerste veld (een **cel**) op de pagina de volgende tekst in:
 

@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: troubleshooting
 ms.date: 01/21/2021
 ms.subservice: alerts
-ms.openlocfilehash: 11dc71578b3d94ce41fe040557184ff32bcf3240
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: f7425e1cf34348b7742b739ef5440a5cb0355077
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661794"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942103"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -107,7 +107,7 @@ Wanneer u een Azure-resource verwijdert, worden de gekoppelde waarschuwingsregel
 
 ## <a name="make-metric-alerts-occur-every-time-my-condition-is-met"></a>Er worden metrische waarschuwingen gegeven telkens wanneer aan mijn voor waarde wordt voldaan
 
-Metrische waarschuwingen zijn standaard stateful en daarom worden er geen extra waarschuwingen geactiveerd als er al een waarschuwing voor een bepaalde tijd reeks wordt geactiveerd. Als u een specifieke metrische waarschuwings regel wilt maken en u waarschuwingen wilt ontvangen voor elke evaluatie waarbij aan de waarschuwings voorwaarde wordt voldaan, maakt u de waarschuwings regel programmatisch (bijvoorbeeld via [Resource Manager](./alerts-metric-create-templates.md), [Power shell](/powershell/module/az.monitor/?view=azps-3.6.1), [rest](/rest/api/monitor/metricalerts/createorupdate), [cli](/cli/azure/monitor/metrics/alert?view=azure-cli-latest)) en stelt u de eigenschap *autoreduce* in op ' false '.
+Metrische waarschuwingen zijn standaard stateful en daarom worden er geen extra waarschuwingen geactiveerd als er al een waarschuwing voor een bepaalde tijd reeks wordt geactiveerd. Als u een specifieke metrische waarschuwings regel wilt maken en u waarschuwingen wilt ontvangen voor elke evaluatie waarbij aan de waarschuwings voorwaarde wordt voldaan, maakt u de waarschuwings regel programmatisch (bijvoorbeeld via [Resource Manager](./alerts-metric-create-templates.md), [Power shell](/powershell/module/az.monitor/), [rest](/rest/api/monitor/metricalerts/createorupdate), [cli](/cli/azure/monitor/metrics/alert)) en stelt u de eigenschap *autoreduce* in op ' false '.
 
 > [!NOTE] 
 > Als u een metrische waarschuwings regel stateless maakt, voor komt u dat er geactiveerde waarschuwingen worden opgelost, dus zelfs nadat de voor waarde niet meer is gehaald, blijven de geactiveerde waarschuwingen in de status geactiveerd totdat de Bewaar periode van 30 dagen is verstreken.
@@ -175,9 +175,9 @@ Volg de onderstaande stappen om het huidige gebruik van metrische waarschuwings 
 
 ### <a name="from-api"></a>Van API
 
-- GPowerShell - [Get-AzMetricAlertRuleV2](/powershell/module/az.monitor/get-azmetricalertrulev2?view=azps-3.7.0)
+- GPowerShell - [Get-AzMetricAlertRuleV2](/powershell/module/az.monitor/get-azmetricalertrulev2)
 - REST API - [Lijst per abonnement](/rest/api/monitor/metricalerts/listbysubscription)
-- Azure CLI - [lijst met metrische waarschuwingen van Az.Monitor](/cli/azure/monitor/metrics/alert?view=azure-cli-latest#az-monitor-metrics-alert-list)
+- Azure CLI - [lijst met metrische waarschuwingen van Az.Monitor](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-list)
 
 ## <a name="managing-alert-rules-using-resource-manager-templates-rest-api-powershell-or-azure-cli"></a>Waarschuwings regels beheren met Resource Manager-sjablonen, REST API, Power shell of Azure CLI
 
@@ -188,7 +188,7 @@ Als u problemen ondervindt bij het maken, bijwerken, ophalen of verwijderen van 
 - Bekijk de lijst met [veelvoorkomende implementatiefouten in Azure](../../azure-resource-manager/templates/common-deployment-errors.md) en los problemen in overeenstemming met de lijst op
 - Raadpleeg de [metrische waarschuwingen Azure Resource Manager sjabloon voor beelden](./alerts-metric-create-templates.md) om te controleren of alle para meters correct worden door gegeven
 
-### <a name="rest-api"></a>REST-API
+### <a name="rest-api"></a>REST API
 
 Raadpleeg de [rest API-hand leiding](/rest/api/monitor/metricalerts/) om te controleren of alle para meters correct worden door gegeven
 
@@ -196,14 +196,14 @@ Raadpleeg de [rest API-hand leiding](/rest/api/monitor/metricalerts/) om te cont
 
 Zorg ervoor dat u de juiste Power shell-cmdlets gebruikt voor metrische waarschuwingen:
 
-- PowerShell-cmdlets voor metrische waarschuwingen zijn beschikbaar in de [Az.Monitor-module](/powershell/module/az.monitor/?view=azps-3.6.1).
-- Zorg ervoor dat u de cmdlets die eindigen op v2 gebruikt voor nieuwe (niet-klassieke) metrische waarschuwingen (bijvoorbeeld [add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2?view=azps-3.6.1))
+- PowerShell-cmdlets voor metrische waarschuwingen zijn beschikbaar in de [Az.Monitor-module](/powershell/module/az.monitor/).
+- Zorg ervoor dat u de cmdlets die eindigen op v2 gebruikt voor nieuwe (niet-klassieke) metrische waarschuwingen (bijvoorbeeld [add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2))
 
 ### <a name="azure-cli"></a>Azure CLI
 
 Zorg ervoor dat u de juiste CLI-opdrachten gebruikt voor metrische waarschuwingen:
 
-- CLI-opdrachten voor metrische waarschuwingen beginnen met `az monitor metrics alert`. Lees het [referentiemateriaal over Azure CLI](/cli/azure/monitor/metrics/alert?view=azure-cli-latest) voor informatie over de syntaxis.
+- CLI-opdrachten voor metrische waarschuwingen beginnen met `az monitor metrics alert`. Lees het [referentiemateriaal over Azure CLI](/cli/azure/monitor/metrics/alert) voor informatie over de syntaxis.
 - U kunt een [voorbeeld bekijken over het gebruik van de CLI voor metrische waarschuwingen](./alerts-metric.md#with-azure-cli).
 - Als u een waarschuwing wilt ontvangen voor aangepaste metrische gegevens, moet u de naam van de metrische gegevens vooraf laten gaan door de desbetreffende metrische naamruimte: NAAMRUIMTE.METRISCHE GEGEVENS
 

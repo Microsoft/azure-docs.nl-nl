@@ -1,19 +1,16 @@
 ---
 title: Apache Hadoop clusters in HDInsight beheren met .NET SDK-Azure
 description: Meer informatie over het uitvoeren van beheer taken voor de Apache Hadoop clusters in HDInsight met behulp van HDInsight .NET SDK.
-ms.reviewer: jasonh
-author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive, devx-track-csharp
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: hrasheed
-ms.openlocfilehash: 367b47e8dbe0e1ee56fea620d97109631ba87a06
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 86e279fef9561397343b3e6cb55ac335a5b39542
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92484879"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942844"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Apache Hadoop-clusters in HDInsight beheren met behulp van de .NET-SDK
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6b231b5af208a51cbe8f4370c2dc532be1ba3af9
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 9ee7116efe931d101a1505bc2d9d866d8ea5b92a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024922"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943445"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Zelf studie: spraak-uw bot inschakelen met de Speech SDK
 
@@ -174,7 +174,7 @@ De [bot Framework-emulator](https://github.com/microsoft/botframework-emulator) 
    ```
    en klik op verbinden.
 4. De bot moet u begroeten met ' Hallo en Welkom! ' . Typ een tekst bericht en bevestig dat u een reactie van de bot ontvangt.
-5. Zo kan een uitwisseling van communicatie met een echo bot eruit zien als: [ ![scherm afbeelding toont de bot Framework emulator.](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png "Bot Framework-emulator")](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png#lightbox)
+5. Zo kan een uitwisseling van communicatie met een echo bot eruit zien als: [ ![scherm afbeelding toont de bot Framework emulator.](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png "Bot Framework Emulator")](media/tutorial-voice-enable-your-bot-speech-sdk/bot-framework-emulator.png#lightbox)
 
 ## <a name="deploy-your-bot-to-an-azure-app-service"></a>Uw bot implementeren op een Azure App Service
 
@@ -234,7 +234,7 @@ U moet een kleine configuratie wijziging aanbrengen zodat uw bot met behulp van 
 
 ## <a name="create-a-channel-registration"></a>Een kanaal registratie maken
 
-Nu u een Azure App Service hebt gemaakt om uw bot te hosten, is de volgende stap het maken van een **bot-kanaal registratie**. Het maken van een kanaal registratie is een vereiste voor het registreren van uw bot met bot Framework-kanalen, waaronder direct line speech Channel. Zie [een bot verbinden met kanalen](/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0)als u meer wilt weten over hoe bots kanalen gebruiken.
+Nu u een Azure App Service hebt gemaakt om uw bot te hosten, is de volgende stap het maken van een **bot-kanaal registratie**. Het maken van een kanaal registratie is een vereiste voor het registreren van uw bot met bot Framework-kanalen, waaronder direct line speech Channel. Zie [een bot verbinden met kanalen](/azure/bot-service/bot-service-manage-channels)als u meer wilt weten over hoe bots kanalen gebruiken.
 
 1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Een Azure bot-kanaal registratie maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 2. U wordt gevraagd om de volgende informatie op te geven:
@@ -244,7 +244,7 @@ Nu u een Azure App Service hebt gemaakt om uw bot te hosten, is de volgende stap
    * Selecteer voor **locatie** de optie **VS-West**.
      * Selecteer voor **prijs categorie** de optie **F0**.
      * Voor **berichten eind punt** voert u de URL voor uw web-app in waarbij het `/api/messages` pad aan het einde is toegevoegd. Als uw wereld wijde unieke app-naam bijvoorbeeld **EchoBot20190805125647** is, zou uw e-mail eindpunt: `https://EchoBot20190805125647.azurewebsites.net/api/messages/` .
-     * Voor **Application Insights** kunt u dit instellen op **uit**. Zie [bot Analytics](/azure/bot-service/bot-service-manage-analytics?view=azure-bot-service-4.0)voor meer informatie.
+     * Voor **Application Insights** kunt u dit instellen op **uit**. Zie [bot Analytics](/azure/bot-service/bot-service-manage-analytics)voor meer informatie.
      * **Automatisch maken van app-id en wacht woord** negeren.
 5. Klik onder aan de Blade **registratie van bot-kanalen** op **maken**.
 
@@ -298,7 +298,7 @@ Nu is het tijd om uw bot te registreren met het directe-lijn spraak kanaal. Met 
    * Klik op **Opslaan**.
 
 > [!TIP]
-> Als u meer informatie wilt, raadpleegt u [een bot aansluiten op direct line speech](/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0). Deze pagina bevat aanvullende informatie en bekende problemen.
+> Als u meer informatie wilt, raadpleegt u [een bot aansluiten op direct line speech](/azure/bot-service/bot-service-channel-connect-directlinespeech). Deze pagina bevat aanvullende informatie en bekende problemen.
 
 ## <a name="run-the-windows-voice-assistant-client"></a>De Windows Voice Assistant-client uitvoeren
 
@@ -412,7 +412,7 @@ Volg deze stappen om een trefwoord model te maken, de Windows Voice Assistant-cl
 
 In de Windows Voice Assistant-client bron code bekijkt u deze bestanden om de code te controleren die wordt gebruikt om de detectie van tref woorden in te scha kelen:
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) bevat een aanroep van de methode Speech SDK [`KeywordRecognitionModel.fromFile()`](/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?preserve-view=true&view=azure-node-latest#fromfile-string-) , die wordt gebruikt om het model te instantiëren vanuit een lokaal bestand op schijf.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) bevat een aanroep van de methode Speech SDK [`KeywordRecognitionModel.fromFile()`](/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel#fromfile-string-) , die wordt gebruikt om het model te instantiëren vanuit een lokaal bestand op schijf.
 1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) bevat een aanroep naar de Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) -methode, waarmee doorlopende trefwoord detectie wordt geactiveerd.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>Beschrijving De taal-en bot-stem wijzigen
@@ -480,5 +480,5 @@ Als u de in deze zelf studie geïmplementeerde ECHO-bot niet wilt blijven gebrui
   * [Prijzen van bot-service](https://azure.microsoft.com/pricing/details/bot-service/)
   * [Speech Service](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)
 * Bouwen en implementeren van uw eigen spraak ingeschakelde bot:
-  * Een [bot-Framework-bot](https://dev.botframework.com/)bouwen. Registreer deze met [direct line speech Channel](/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0) en [Pas uw bot aan voor spraak](/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0)
+  * Een [bot-Framework-bot](https://dev.botframework.com/)bouwen. Registreer deze met [direct line speech Channel](/azure/bot-service/bot-service-channel-connect-directlinespeech) en [Pas uw bot aan voor spraak](/azure/bot-service/directline-speech-bot)
   * Bestaande [bot-Framework oplossingen](https://microsoft.github.io/botframework-solutions/index)verkennen: een [virtuele assistent](https://microsoft.github.io/botframework-solutions/overview/virtual-assistant-solution/) bouwen en [uitbreiden naar direct line speech](https://microsoft.github.io/botframework-solutions/clients-and-channels/tutorials/enable-speech/1-intro/)

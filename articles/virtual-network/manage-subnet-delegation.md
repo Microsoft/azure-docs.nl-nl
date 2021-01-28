@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: bc43dc7afb234d410eb17d20beb13cd5cb44bb18
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 2bb80ba421617d5fd1699826deda00e56f1e43af
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222510"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943669"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Een subnet delegering toevoegen of verwijderen
 
@@ -113,7 +113,7 @@ De ingebouwde rol [Network Inzender](../role-based-access-control/built-in-roles
 
 In deze sectie delegeert u het subnet dat u in de voor gaande sectie hebt gemaakt, naar een Azure-service. 
 
-Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update) om het subnet met de naam **mySubnet** bij te werken met een overdracht naar een Azure-service.  In dit voor beeld wordt **micro soft. DBforPostgreSQL/serversv2** gebruikt voor het voor beeld van de overdracht:
+Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) om het subnet met de naam **mySubnet** bij te werken met een overdracht naar een Azure-service.  In dit voor beeld wordt **micro soft. DBforPostgreSQL/serversv2** gebruikt voor het voor beeld van de overdracht:
 
 ```azurecli-interactive
   az network vnet subnet update \
@@ -123,7 +123,7 @@ Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet?view=azur
   --delegations Microsoft.DBforPostgreSQL/serversv2
 ```
 
-Gebruik [AZ Network vnet subnet show](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show)om te controleren of de overdracht is toegepast. Controleer of de service wordt overgedragen aan het subnet onder de eigenschap **service** naam:
+Gebruik [AZ Network vnet subnet show](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-show)om te controleren of de overdracht is toegepast. Controleer of de service wordt overgedragen aan het subnet onder de eigenschap **service** naam:
 
 ```azurecli-interactive
   az network vnet subnet show \
@@ -152,7 +152,7 @@ Gebruik [AZ Network vnet subnet show](/cli/azure/network/vnet/subnet?view=azure-
 
 ### <a name="remove-subnet-delegation-from-an-azure-service"></a>Subnet delegering verwijderen van een Azure-service
 
-Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update) om de overdracht te verwijderen uit het subnet met de naam **mySubnet**:
+Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update) om de overdracht te verwijderen uit het subnet met de naam **mySubnet**:
 
 ```azurecli-interactive
   az network vnet subnet update \
@@ -161,7 +161,7 @@ Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet?view=azur
   --vnet-name myVnet \
   --remove delegations
 ```
-Gebruik [AZ Network vnet subnet show](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show)om te controleren of de overdracht is verwijderd. Controleer of de service is verwijderd uit het subnet onder de eigenschap **service** naam:
+Gebruik [AZ Network vnet subnet show](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-show)om te controleren of de overdracht is verwijderd. Controleer of de service is verwijderd uit het subnet onder de eigenschap **service** naam:
 
 ```azurecli-interactive
   az network vnet subnet show \
@@ -195,7 +195,7 @@ In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* 
 ```
 ### <a name="create-virtual-network"></a>Virtueel netwerk maken
 
-Maak een virtueel netwerk met de naam **myVnet** met een subnet met de naam **mySubnet** met behulp van [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) in de **myResourceGroup** met behulp van [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork?view=latest). De IP-adres ruimte voor het virtuele netwerk is **10.0.0.0/16**. Het subnet in het virtuele netwerk is **10.0.0.0/24**.  
+Maak een virtueel netwerk met de naam **myVnet** met een subnet met de naam **mySubnet** met behulp van [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) in de **myResourceGroup** met behulp van [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). De IP-adres ruimte voor het virtuele netwerk is **10.0.0.0/16**. Het subnet in het virtuele netwerk is **10.0.0.0/24**.  
 
 ```azurepowershell-interactive
   $subnet = New-AzVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix "10.0.0.0/24"
@@ -212,7 +212,7 @@ De ingebouwde rol [Network Inzender](../role-based-access-control/built-in-roles
 
 In deze sectie delegeert u het subnet dat u in de voor gaande sectie hebt gemaakt, naar een Azure-service. 
 
-Gebruik [add-AzDelegation](/powershell/module/az.network/add-azdelegation?view=latest) om het subnet met de naam **mySubnet** bij te werken met een delegering met de naam **myDelegation** naar een Azure-service.  In dit voor beeld wordt **micro soft. DBforPostgreSQL/serversv2** gebruikt voor het voor beeld van de overdracht:
+Gebruik [add-AzDelegation](/powershell/module/az.network/add-azdelegation) om het subnet met de naam **mySubnet** bij te werken met een delegering met de naam **myDelegation** naar een Azure-service.  In dit voor beeld wordt **micro soft. DBforPostgreSQL/serversv2** gebruikt voor het voor beeld van de overdracht:
 
 ```azurepowershell-interactive
   $vnet = Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName "myResourceGroup"
@@ -220,7 +220,7 @@ Gebruik [add-AzDelegation](/powershell/module/az.network/add-azdelegation?view=l
   $subnet = Add-AzDelegation -Name "myDelegation" -ServiceName "Microsoft.DBforPostgreSQL/serversv2" -Subnet $subnet
   Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
-Gebruik [Get-AzDelegation](/powershell/module/az.network/get-azdelegation?view=latest) om de overdracht te controleren:
+Gebruik [Get-AzDelegation](/powershell/module/az.network/get-azdelegation) om de overdracht te controleren:
 
 ```azurepowershell-interactive
   $subnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"
@@ -236,7 +236,7 @@ Gebruik [Get-AzDelegation](/powershell/module/az.network/get-azdelegation?view=l
 ```
 ### <a name="remove-subnet-delegation-from-an-azure-service"></a>Subnet delegering verwijderen van een Azure-service
 
-Gebruik [Remove-AzDelegation](/powershell/module/az.network/remove-azdelegation?view=latest) om de overdracht te verwijderen uit het subnet met de naam **mySubnet**:
+Gebruik [Remove-AzDelegation](/powershell/module/az.network/remove-azdelegation) om de overdracht te verwijderen uit het subnet met de naam **mySubnet**:
 
 ```azurepowershell-interactive
   $vnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup"
@@ -244,7 +244,7 @@ Gebruik [Remove-AzDelegation](/powershell/module/az.network/remove-azdelegation?
   $subnet = Remove-AzDelegation -Name "myDelegation" -Subnet $subnet
   Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
-Gebruik [Get-AzDelegation](/powershell/module/az.network/get-azdelegation?view=latest) om te controleren of de overdracht is verwijderd:
+Gebruik [Get-AzDelegation](/powershell/module/az.network/get-azdelegation) om te controleren of de overdracht is verwijderd:
 
 ```azurepowershell-interactive
   $subnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"

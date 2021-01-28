@@ -1,19 +1,16 @@
 ---
 title: 'Quickstart: Apache Kafka met Azure Resource Manager - HDInsight'
 description: In deze snelstartgids leert u hoe u met een Azure Resource Manager-sjabloon een Apache Kafka-cluster maakt in Azure HDInsight. Er wordt ook aandacht besteed aan Kafka-onderwerpen, -abonnees en -consumenten.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 12988feeb26bc5821e8f08db3e688a2e1c429e19
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 1bd4a3bfc2ba208371ed71720cc8c89a796ad9a2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92532625"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940811"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-arm-template"></a>Quickstart: Een Apache Kafka-cluster maken in Azure HDInsight met een ARM-sjabloon
 
@@ -23,7 +20,7 @@ In deze quickstart gebruikt u een Azure Resource Manager-sjabloon (ARM-sjabloon)
 
 De Kafka-API is alleen toegankelijk voor resources binnen hetzelfde virtuele netwerk. In deze snelstart benadert u het cluster rechtstreeks via SSH. Als u andere services, netwerken of virtuele machines wilt verbinden met Kafka, moet u eerst een virtueel netwerk maken en vervolgens de resources maken in het netwerk. Zie het document [Verbinding maken met Apache Kafka via een virtueel netwerk](apache-kafka-connect-vpn-gateway.md) voor meer informatie.
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-kafka%2Fazuredeploy.json)
 
@@ -53,25 +50,25 @@ Er worden twee Azure-resources gedefinieerd in de sjabloon:
     |Eigenschap |Beschrijving |
     |---|---|
     |Abonnement|Selecteer in de vervolgkeuzelijst het Azure-abonnement dat wordt gebruikt voor het cluster.|
-    |Resourcegroep|Selecteer in de vervolgkeuzelijst de bestaande resourcegroep of selecteer **Nieuwe maken** .|
+    |Resourcegroep|Selecteer in de vervolgkeuzelijst de bestaande resourcegroep of selecteer **Nieuwe maken**.|
     |Locatie|De waarde wordt automatisch ingevuld met de locatie die wordt gebruikt voor de resourcegroep.|
     |Clusternaam|Geef een wereldwijd unieke naam op. Gebruik voor deze sjabloon alleen kleine letters en cijfers.|
-    |Gebruikersnaam voor clusteraanmelding|Geef de gebruikersnaam op; de standaard is **beheerder** .|
+    |Gebruikersnaam voor clusteraanmelding|Geef de gebruikersnaam op; de standaard is **beheerder**.|
     |Wachtwoord voor clusteraanmelding|Geef een wachtwoord op. Het wachtwoord moet uit minstens tien tekens bestaan en moet minstens één cijfer, één hoofdletter, één kleine letter en één niet-alfanumeriek teken bevatten (uitgezonderd ' " ` ). |
     |Ssh-gebruikersnaam|Geef de gebruikersnaam op; de standaardwaarde is **sshuser**|
     |Ssh-wachtwoord|Geef het wachtwoord op.|
 
     ![Een schermopname van de sjablooneigenschappen](./media/apache-kafka-quickstart-resource-manager-template/resource-manager-template-kafka.png)
 
-1. Bekijk de **ALGEMENE VOORWAARDEN** . Selecteer vervolgens **Ik ga akkoord met de bovenstaande voorwaarden** en daarna **Kopen** . U ontvangt een melding dat uw implementatie wordt uitgevoerd. Het duurt ongeveer 20 minuten om een cluster te maken.
+1. Bekijk de **ALGEMENE VOORWAARDEN**. Selecteer vervolgens **Ik ga akkoord met de bovenstaande voorwaarden** en daarna **Kopen**. U ontvangt een melding dat uw implementatie wordt uitgevoerd. Het duurt ongeveer 20 minuten om een cluster te maken.
 
 ## <a name="review-deployed-resources"></a>Geïmplementeerde resources bekijken
 
-Zodra het cluster is gemaakt, ontvangt u de melding **Implementatie voltooid** met de koppeling **Naar de resource** . Op de pagina Resourcegroep worden uw nieuwe HDInsight-cluster en de standaardopslag bij het cluster weergegeven. Elk cluster is afhankelijk van een [Azure Blob Storage](../hdinsight-hadoop-use-blob-storage.md)-account, van [Azure Data Lake Storage Gen1](../hdinsight-hadoop-use-data-lake-storage-gen1.md) of van [`Azure Data Lake Storage Gen2`](../hdinsight-hadoop-use-data-lake-storage-gen2.md). Dit wordt het standaardopslagaccount genoemd. Het HDInsight-cluster en het standaardopslagaccount moeten samen in dezelfde Azure-regio worden geplaatst. Het opslagaccount wordt niet verwijderd wanneer er clusters worden verwijderd.
+Zodra het cluster is gemaakt, ontvangt u de melding **Implementatie voltooid** met de koppeling **Naar de resource**. Op de pagina Resourcegroep worden uw nieuwe HDInsight-cluster en de standaardopslag bij het cluster weergegeven. Elk cluster is afhankelijk van een [Azure Blob Storage](../hdinsight-hadoop-use-blob-storage.md)-account, van [Azure Data Lake Storage Gen1](../hdinsight-hadoop-use-data-lake-storage-gen1.md) of van [`Azure Data Lake Storage Gen2`](../hdinsight-hadoop-use-data-lake-storage-gen2.md). Dit wordt het standaardopslagaccount genoemd. Het HDInsight-cluster en het standaardopslagaccount moeten samen in dezelfde Azure-regio worden geplaatst. Het opslagaccount wordt niet verwijderd wanneer er clusters worden verwijderd.
 
 ## <a name="get-the-apache-zookeeper-and-broker-host-information"></a>Informatie over de Apache Zookeeper- en Broker-hosts ophalen
 
-Als u met Kafka werkt, moet u de *Zookeeper* - en *Broker* -hosts kennen. Deze hosts worden gebruikt met de Kafka-API en veel van de hulpprogramma's die bij Kafka worden meegeleverd.
+Als u met Kafka werkt, moet u de *Zookeeper*- en *Broker*-hosts kennen. Deze hosts worden gebruikt met de Kafka-API en veel van de hulpprogramma's die bij Kafka worden meegeleverd.
 
 In deze sectie gaat u de hostgegevens opvragen met de Ambari REST-API in het cluster.
 
@@ -135,13 +132,13 @@ In deze sectie gaat u de hostgegevens opvragen met de Ambari REST-API in het clu
 
 Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het hulpprogramma `kafka-topics.sh` gebruiken om onderwerpen te beheren.
 
-* **Als u een onderwerp wilt maken** , gebruikt u de volgende opdracht in de SSH-verbinding:
+* **Als u een onderwerp wilt maken**, gebruikt u de volgende opdracht in de SSH-verbinding:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 8 --topic test --zookeeper $KAFKAZKHOSTS
     ```
 
-    Met deze opdracht brengt u een verbinding met Zookeeper tot stand met behulp van de hostinformatie die is opgeslagen in `$KAFKAZKHOSTS`. Vervolgens wordt er een Kafka-onderwerp gemaakt met de naam **test** .
+    Met deze opdracht brengt u een verbinding met Zookeeper tot stand met behulp van de hostinformatie die is opgeslagen in `$KAFKAZKHOSTS`. Vervolgens wordt er een Kafka-onderwerp gemaakt met de naam **test**.
 
     * Gegevens die zijn opgeslagen in dit onderwerp worden gepartitioneerd in acht partities.
 
@@ -163,7 +160,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
 
         * U een cluster omhoog schaalt
 
-* Gebruik de volgende opdracht om **een lijst met onderwerpen op te vragen** :
+* Gebruik de volgende opdracht om **een lijst met onderwerpen op te vragen**:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --list --zookeeper $KAFKAZKHOSTS
@@ -171,7 +168,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
 
     Met deze opdracht worden de onderwerpen weergegeven die beschikbaar zijn in het Kafka-cluster.
 
-* Gebruik de volgende opdracht om **een onderwerp te verwijderen** :
+* Gebruik de volgende opdracht om **een onderwerp te verwijderen**:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --delete --topic topicname --zookeeper $KAFKAZKHOSTS
@@ -190,7 +187,7 @@ Gebruik de volgende opdracht voor meer informatie over de opdrachten die beschik
 
 ## <a name="produce-and-consume-records"></a>Records maken en gebruiken
 
-Kafka slaat *records* op in onderwerpen. Records worden geproduceerd door *producenten* en worden gebruikt door *consumenten* . Producenten en consumenten communiceren met de *Kafka-brokerservice* . Elk werkknooppunt in uw HDInsight-cluster is een Kafka-brokerhost.
+Kafka slaat *records* op in onderwerpen. Records worden geproduceerd door *producenten* en worden gebruikt door *consumenten*. Producenten en consumenten communiceren met de *Kafka-brokerservice*. Elk werkknooppunt in uw HDInsight-cluster is een Kafka-brokerhost.
 
 Gebruik de volgende stappen om records op te slaan in het testonderwerp dat u eerder hebt gemaakt. Lees deze vervolgens met behulp van een verbruiker:
 
@@ -222,7 +219,7 @@ U kunt ook programmatisch producenten en consumenten maken. Zie het document [Pr
 
 Nadat u de quickstart hebt voltooid, kunt u het cluster verwijderen. Met HDInsight worden uw gegevens opgeslagen in Azure Storage zodat u een cluster veilig kunt verwijderen wanneer deze niet wordt gebruikt. Voor een HDInsight-cluster worden ook kosten in rekening gebracht, zelfs wanneer het niet wordt gebruikt. Aangezien de kosten voor het cluster vaak zoveel hoger zijn dan de kosten voor opslag, is het financieel gezien logischer clusters te verwijderen wanneer ze niet worden gebruikt.
 
-Ga in Azure Portal naar de cluster en selecteer **Verwijderen** .
+Ga in Azure Portal naar de cluster en selecteer **Verwijderen**.
 
 ![Resource Manager-sjabloon HBase](./media/apache-kafka-quickstart-resource-manager-template/azure-portal-delete-kafka.png)
 

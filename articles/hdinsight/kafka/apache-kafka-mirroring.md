@@ -1,26 +1,23 @@
 ---
 title: Apache Kafka-onderwerpen spie gelen-Azure HDInsight
 description: Meer informatie over het gebruik van de functie spiegeling van Apache Kafka om een replica van een Kafka in HDInsight-cluster te onderhouden door onderwerpen te spie gelen naar een secundair cluster.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: d4a2be6719fdaaa9dc859df21cc030478e474210
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: c2fce6d4ee95a56cc087d50184fcd69ac113620f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428238"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940842"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>MirrorMaker gebruiken om Apache Kafka-onderwerpen te repliceren met Kafka in HDInsight
 
 Meer informatie over het gebruik van de functie spiegeling van Apache Kafka om onderwerpen te repliceren naar een secundair cluster. Spiegeling kan worden uitgevoerd als een doorlopend proces of worden gebruikt als een methode voor het migreren van gegevens van het ene naar het andere cluster.
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 In dit voor beeld wordt spiegeling gebruikt voor het repliceren van onderwerpen tussen twee HDInsight-clusters. Beide clusters bevinden zich in verschillende virtuele netwerken in verschillende data centers.
 
@@ -68,7 +65,7 @@ Deze architectuur bevat twee clusters in verschillende resource groepen en virtu
 
     |Resourcegroep | Locatie |
     |---|---|
-    | Kafka-primair-RG | Central US |
+    | Kafka-primair-RG | VS - centraal |
     | Kafka-secundair-RG | VS - noord-centraal |
 
 1. Maak een nieuw virtueel netwerk **Kafka-primair-vnet** in **Kafka-Primary-RG**. Behoud de standaard instellingen.
@@ -108,7 +105,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
 1. Voer een opmerking in het scherm **configuratie opslaan** in en klik op **Opslaan**.
 1. Als u wordt gevraagd om een configuratie waarschuwing, klikt u op **door gaan**.
 1. Selecteer **OK** op de **wijzigingen in de configuratie opslaan**.
-1. Selecteer **opnieuw opstarten opnieuw**starten  >  **alle beïnvloed** in de melding **opnieuw opstarten vereist** . Selecteer **Bevestig opnieuw opstarten**.
+1. Selecteer **opnieuw opstarten opnieuw** starten  >  **alle beïnvloed** in de melding **opnieuw opstarten vereist** . Selecteer **Bevestig opnieuw opstarten**.
 
     ![Apache Ambari alle betrokken software opnieuw opstarten](./media/apache-kafka-mirroring/ambari-restart-notification.png)
 
@@ -116,7 +113,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
     
 1. Blijf op het tabblad **configuratie** onder **Services**  >  **Kafka**. Stel in het gedeelte **Kafka-Broker** de eigenschap **listeners** in op `PLAINTEXT://0.0.0.0:9092` .
 1. Selecteer **Opslaan**.
-1. Selecteer **opnieuw opstarten**en **Bevestig opnieuw opstarten**.
+1. Selecteer **opnieuw opstarten** en **Bevestig opnieuw opstarten**.
 
 ### <a name="record-broker-ip-addresses-and-zookeeper-addresses-for-primary-cluster"></a>Registreer Broker IP-adressen en Zookeeper-adressen voor primair cluster.
 
@@ -201,7 +198,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
 
     In dit bestand wordt de consument informatie beschreven die moet worden gebruikt bij het lezen van het primaire Kafka-cluster. Zie configuratie van [consumenten](https://kafka.apache.org/documentation#consumerconfigs) op Kafka.apache.org voor meer informatie.
 
-    Als u het bestand wilt opslaan, gebruikt u **CTRL + X**, **Y**en **voert**u in.
+    Als u het bestand wilt opslaan, gebruikt u **CTRL + X**, **Y** en **voert** u in.
 
 1. Voordat u de producent configureert die met het secundaire cluster communiceert, stelt u een variabele in voor de IP-adressen van de Broker van het **secundaire** cluster. Gebruik de volgende opdrachten om deze variabele te maken:
 
@@ -257,7 +254,7 @@ Configureer IP-reclame om een client in staat te stellen verbinding te maken met
         1. Klik op **Services**  >  **Kafka**. Klik op het tabblad **configuratie** .
         1. Voer in het veld __filter__ een waarde van in `auto.create` . Hiermee wordt de lijst met eigenschappen gefilterd en wordt de instelling weer gegeven `auto.create.topics.enable` .
         1. Wijzig de waarde van `auto.create.topics.enable` in waar en selecteer vervolgens __Opslaan__. Voeg een notitie toe en selecteer vervolgens __Opslaan__ opnieuw.
-        1. Selecteer de __Kafka__ -service, selecteer __opnieuw opstarten__en selecteer vervolgens __alle betrokkenen opnieuw opstarten__. Selecteer __Bevestig opnieuw opstarten__als dit wordt gevraagd.
+        1. Selecteer de __Kafka__ -service, selecteer __opnieuw opstarten__ en selecteer vervolgens __alle betrokkenen opnieuw opstarten__. Selecteer __Bevestig opnieuw opstarten__ als dit wordt gevraagd.
 
         ![Kafka inschakelen voor automatisch maken](./media/apache-kafka-mirroring/kafka-enable-auto-create-topics.png)
 

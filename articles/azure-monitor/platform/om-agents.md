@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/24/2020
-ms.openlocfilehash: 2a4f24da51b9e9e78c3df3e7d1437a380306e300
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 571dcd41da9be578e69d9a8ad40ed05784ae26a8
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95975566"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941978"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Operations Manager verbinden met Azure Monitor
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Als u uw bestaande investering in [System Center Operations Manager](/system-center/scom/key-concepts?view=sc-om-1807) wilt behouden en uitgebreide mogelijkheden met Azure monitor wilt gebruiken, kunt u Operations Manager integreren met uw log Analytics-werk ruimte. Zo kunt u gebruikmaken van de mogelijkheden van Logboeken in Azure Monitor terwijl u Operations Manager kunt gebruiken om het volgende te doen:
+Als u uw bestaande investering in [System Center Operations Manager](/system-center/scom/key-concepts) wilt behouden en uitgebreide mogelijkheden met Azure monitor wilt gebruiken, kunt u Operations Manager integreren met uw log Analytics-werk ruimte. Zo kunt u gebruikmaken van de mogelijkheden van Logboeken in Azure Monitor terwijl u Operations Manager kunt gebruiken om het volgende te doen:
 
 * Statuscontrole van uw IT-services met Operations Manager
 * Onderhoud van de integratie met uw ITSM-beheeroplossingen voor incidenten en problemen
@@ -71,16 +71,16 @@ Hieronder vindt u de informatie over de proxy-en firewall configuratie die is ve
 
 |Resource | Poortnummer| HTTPS-controle overslaan|  
 |---------|------|-----------------------|  
-|**Agent**|||  
-|\*.ods.opinsights.azure.com| 443 |Yes|  
-|\*.oms.opinsights.azure.com| 443|Yes|  
-|\*.blob.core.windows.net| 443|Yes|  
-|\*.azure-automation.net| 443|Yes|  
+|**Tussen**|||  
+|\*.ods.opinsights.azure.com| 443 |Ja|  
+|\*.oms.opinsights.azure.com| 443|Ja|  
+|\*.blob.core.windows.net| 443|Ja|  
+|\*.azure-automation.net| 443|Ja|  
 |**Beheerserver**|||  
 |\*.service.opinsights.azure.com| 443||  
-|\*.blob.core.windows.net| 443| Yes|  
-|\*.ods.opinsights.azure.com| 443| Yes|  
-|*.azure-automation.net | 443| Yes|  
+|\*.blob.core.windows.net| 443| Ja|  
+|\*.ods.opinsights.azure.com| 443| Ja|  
+|*.azure-automation.net | 443| Ja|  
 |**Operations Manager-console naar Azure Monitor**|||  
 |service.systemcenteradvisor.com| 443||  
 |\*.service.opinsights.azure.com| 443||  

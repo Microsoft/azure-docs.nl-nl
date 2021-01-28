@@ -3,23 +3,22 @@ title: Hive Warehouse connector-Apache Zeppelin met livy-Azure HDInsight
 description: Meer informatie over het integreren van Hive-Warehouse connector met Apache Zeppelin op Azure HDInsight.
 author: nis-goel
 ms.author: nisgoel
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/28/2020
-ms.openlocfilehash: bccf2b9a3dfe42ca439a45eb1e35cfaff58d0208
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 4859ff098bf3fdffbecc70608cb147d17d9d7f59
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426955"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941162"
 ---
 # <a name="integrate-apache-zeppelin-with-hive-warehouse-connector-in-azure-hdinsight"></a>Apache Zeppelin integreren met hive Warehouse connector in azure HDInsight
 
 HDInsight Spark-clusters zijn Apache Zeppelin-notebooks met verschillende interpreters. In dit artikel focussen we alleen op de livy-interpreter om toegang te krijgen tot Hive-tabellen uit Spark met behulp van Hive Warehouse connector.
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ## <a name="prerequisite"></a>Vereiste
 
@@ -62,7 +61,7 @@ De volgende configuraties zijn vereist voor toegang tot Hive-tabellen van Zeppel
 
 1. Navigeer vanuit een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/#/main/services/SPARK2/configs` de naam van het Apache Spark cluster.
 
-1. Vouw **aangepaste livy2-conf**uit. Selecteer **eigenschap toevoegen...** om de volgende configuratie toe te voegen:
+1. Vouw **aangepaste livy2-conf** uit. Selecteer **eigenschap toevoegen...** om de volgende configuratie toe te voegen:
 
     | Configuratie                 | Waarde                                      |
     | ----------------------------- |------------------------------------------  |

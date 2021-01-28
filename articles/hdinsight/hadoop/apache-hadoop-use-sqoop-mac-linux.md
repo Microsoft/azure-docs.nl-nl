@@ -1,19 +1,16 @@
 ---
 title: Apache Sqoop met Apache Hadoop-Azure HDInsight
 description: Meer informatie over het gebruik van Apache Sqoop voor het importeren en exporteren tussen Apache Hadoop op HDInsight en Azure SQL Database.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/28/2019
-ms.openlocfilehash: 6cd522192c498d628490430c46c18c8ae08ad2e2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2d0d38dee15817e56c2784981365ea331b6a8459
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547007"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943151"
 ---
 # <a name="use-apache-sqoop-to-import-and-export-data-between-apache-hadoop-on-hdinsight-and-azure-sql-database"></a>Apache Sqoop gebruiken voor het importeren en exporteren van gegevens tussen Apache Hadoop op HDInsight en Azure SQL Database
 
@@ -156,7 +153,7 @@ Van SQL naar Azure Storage.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt nu geleerd hoe u Sqoop kunt gebruiken. Voor meer informatie zie:
+U hebt nu geleerd hoe u Sqoop kunt gebruiken. Raadpleeg voor meer informatie:
 
 * [Apache Oozie gebruiken met HDInsight](../hdinsight-use-oozie-linux-mac.md): gebruik de actie Sqoop in een Oozie-werk stroom.
 * [Analyseer gegevens van de vlucht vertraging met HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md): gebruik interactieve query's om vlucht vertragings gegevens te analyseren en gebruik vervolgens Sqoop om gegevens te exporteren naar een data base in Azure.

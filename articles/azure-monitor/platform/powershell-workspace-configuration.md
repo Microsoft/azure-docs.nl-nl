@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/26/2020
-ms.openlocfilehash: d0bbde0ee4fd0eaf7387abaf6d548dc563e5b715
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34ece92e4603c0c74190003745d55be0aea5cdb0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86515441"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941761"
 ---
 # <a name="create-and-configure-a-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Een Log Analytics-werk ruimte maken en configureren in Azure Monitor met behulp van Power shell
 Dit artikel bevat twee code voorbeelden die laten zien hoe u een Log Analytics-werk ruimte maakt en configureert in Azure Monitor.  
@@ -193,7 +193,7 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 ```
 
 > [!NOTE]
-> De notatie voor de **CustomLogRawJson** -para meter waarmee de configuratie voor een aangepast logboek wordt gedefinieerd, kan ingewikkeld zijn. Gebruik [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0) om de configuratie van een bestaand aangepast logboek op te halen. De eigenschap **Properties** is de configuratie die vereist is voor de para meter **CustomLogRawJson** .
+> De notatie voor de **CustomLogRawJson** -para meter waarmee de configuratie voor een aangepast logboek wordt gedefinieerd, kan ingewikkeld zijn. Gebruik [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource) om de configuratie van een bestaand aangepast logboek op te halen. De eigenschap **Properties** is de configuratie die vereist is voor de para meter **CustomLogRawJson** .
 
 In het bovenstaande voor beeld is regexDelimiter gedefinieerd als ' \\ n ' voor een nieuwe regel. Het logboek scheidings teken kan ook een tijds tempel zijn.  Dit zijn de ondersteunde indelingen:
 
@@ -214,9 +214,9 @@ In het bovenstaande voor beeld is regexDelimiter gedefinieerd als ' \\ n ' voor 
 ## <a name="troubleshooting"></a>Problemen oplossen
 Wanneer u een werk ruimte maakt die in de afgelopen 14 dagen is verwijderd en de status voor het [voorlopig verwijderen](./delete-workspace.md#soft-delete-behavior)heeft, kan de bewerking afwijken, afhankelijk van de configuratie van uw werk ruimte:
 1. Als u dezelfde naam voor de werk ruimte, de resource groep, het abonnement en de regio opgeeft als in de verwijderde werk ruimte, wordt uw werk ruimte hersteld, met inbegrip van de bijbehorende gegevens, configuratie en verbonden agents.
-2. Als u dezelfde naam voor de werk ruimte gebruikt, maar een andere resource groep, abonnement of regio, krijgt u een fout melding *de naam van de werk ruimte is niet uniek*of *conflict*. Volg deze stappen om de werk ruimte eerst te herstellen en permanent verwijderen uit te voeren om de tijdelijke verwijdering te onderdrukken en uw werk ruimte permanent te verwijderen en een nieuwe werk ruimte met dezelfde naam te maken:
-   * Uw werk ruimte [herstellen](./delete-workspace.md#recover-workspace)
-   * Uw werk ruimte [permanent verwijderen](./delete-workspace.md#permanent-workspace-delete)
+2. Als u dezelfde naam voor de werk ruimte gebruikt, maar een andere resource groep, abonnement of regio, krijgt u een fout melding *de naam van de werk ruimte is niet uniek* of *conflict*. Volg deze stappen om de werk ruimte eerst te herstellen en permanent verwijderen uit te voeren om de tijdelijke verwijdering te onderdrukken en uw werk ruimte permanent te verwijderen en een nieuwe werk ruimte met dezelfde naam te maken:
+   * Uw werkruimte [herstellen](./delete-workspace.md#recover-workspace)
+   * Uw werkruimte [permanent verwijderen](./delete-workspace.md#permanent-workspace-delete)
    * Een nieuwe werk ruimte maken met dezelfde werkruimte naam
 
 

@@ -1,19 +1,16 @@
 ---
 title: Apache Sqoop-taken uitvoeren met behulp van Power shell en Azure HDInsight
 description: Informatie over het gebruik van Azure PowerShell van een werk station voor het uitvoeren van Apache Sqoop importeren en exporteren tussen een Apache Hadoop cluster en Azure SQL Database.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/14/2020
-ms.openlocfilehash: 781c19edb9261b13f31bebecb6bc74bf2b616b47
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7d1f0a4982402a7854841f17c1915625e2f01cc1
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546973"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943132"
 ---
 # <a name="run-apache-sqoop-jobs-with-azure-powershell-in-hdinsight"></a>Apache Sqoop-taken uitvoeren met Azure PowerShell in HDInsight
 
@@ -277,7 +274,7 @@ HDInsight op basis van Linux biedt de volgende beperkingen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt nu geleerd hoe u Sqoop kunt gebruiken. Voor meer informatie zie:
+U hebt nu geleerd hoe u Sqoop kunt gebruiken. Raadpleeg voor meer informatie:
 
 * [Apache Oozie gebruiken met HDInsight](../hdinsight-use-oozie-linux-mac.md): gebruik de actie Sqoop in een Oozie-werk stroom.
 * [Gegevens uploaden naar hdinsight](../hdinsight-upload-data.md): andere methoden voor het uploaden van gegevens naar Hdinsight of Azure Blob Storage zoeken.

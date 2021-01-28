@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: e5e344aa84bfc6912266720083f0cd15f575883c
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
-ms.translationtype: HT
+ms.openlocfilehash: 76e7b061670f603007cefd6d7aed503e0e0d3d6b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95740247"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941775"
 ---
 # <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Zelfstudie: Azure-servicelogo’s herkennen in camera-afbeeldingen
 
@@ -36,7 +36,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 - [Visual Studio 2017 of hoger](https://www.visualstudio.com/downloads/)
 - De Xamarin-workload voor Visual Studio (zie [Xamarin installeren](/xamarin/cross-platform/get-started/installation/windows))
 - Een iOS- of Android-emulator voor Visual Studio
-- De [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) (optioneel)
+- De [Azure CLI](/cli/azure/install-azure-cli-windows) (optioneel)
 
 ## <a name="get-the-source-code"></a>De broncode ophalen
 

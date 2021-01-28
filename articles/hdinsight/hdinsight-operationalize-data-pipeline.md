@@ -1,19 +1,16 @@
 ---
 title: Operationeel maken a Data Analytics-pijp lijn-Azure
 description: Stel een voorbeeld gegevens pijplijn in en voer deze uit die wordt geactiveerd door nieuwe gegevens en die beknopte resultaten oplevert.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/25/2019
-ms.openlocfilehash: 1e73c403a03eef9a47bc0550b37769db302a599c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a306890560497b0c7196f1286de3f73039821ea2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504415"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939530"
 ---
 # <a name="operationalize-a-data-analytics-pipeline"></a>Een pijplijn voor gegevensanalyse operationeel maken
 
@@ -39,7 +36,7 @@ In het volgende diagram ziet u de voorbeeld pijplijn.
 
 Deze pijp lijn gebruikt Apache Oozie dat wordt uitgevoerd op een HDInsight Hadoop-cluster.
 
-Oozie beschrijft de pijp lijnen in termen van *acties*, *werk stromen*en *coördinatoren*. Acties bepalen het werkelijke werk dat moet worden uitgevoerd, zoals het uitvoeren van een Hive-query. Met werk stromen wordt de reeks acties gedefinieerd. Coördinatoren definiëren het schema voor wanneer de werk stroom wordt uitgevoerd. Coördinatoren kunnen ook wachten op de beschik baarheid van nieuwe gegevens voordat een exemplaar van de werk stroom wordt gestart.
+Oozie beschrijft de pijp lijnen in termen van *acties*, *werk stromen* en *coördinatoren*. Acties bepalen het werkelijke werk dat moet worden uitgevoerd, zoals het uitvoeren van een Hive-query. Met werk stromen wordt de reeks acties gedefinieerd. Coördinatoren definiëren het schema voor wanneer de werk stroom wordt uitgevoerd. Coördinatoren kunnen ook wachten op de beschik baarheid van nieuwe gegevens voordat een exemplaar van de werk stroom wordt gestart.
 
 Het volgende diagram toont het ontwerp op hoog niveau van dit voor beeld Oozie-pijp lijn.
 
@@ -132,7 +129,7 @@ De voorbeeld gegevens zijn nu beschikbaar. Voor de pijp lijn zijn echter twee Hi
 
 1. Meld u aan bij Ambari door naar te navigeren `http://headnodehost:8080` .
 
-2. Selecteer **Hive**in de lijst met Services.
+2. Selecteer **Hive** in de lijst met Services.
 
     ![Component Apache Ambari Services-lijst selectie](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive.png)
 
@@ -234,7 +231,7 @@ Werk vervolgens de waarden voor uw specifieke omgeving bij. De tabel onder de te
     | --- | --- |
     | nameNode | Het volledige pad naar de Azure Storage container die aan uw HDInsight-cluster is gekoppeld. |
     | jobTracker | De interne hostnaam naar het hoofd knooppunt van uw actieve cluster. Selecteer op de start pagina van Ambari de optie GARENs in de lijst met Services en kies vervolgens actieve Resource Manager. De hostnaam-URI wordt boven aan de pagina weer gegeven. Voeg poort 8050 toe. |
-    | queueName | De naam van de garen wachtrij die wordt gebruikt bij het plannen van de Hive-acties. Als standaard laten. |
+    | queueName | De naam van de garen wachtrij die wordt gebruikt bij het plannen van de Hive-acties. Als standaard ingesteld laten. |
     | Pad naar oozie.use.system. | Geef waar. |
     | appBase | Het pad naar de submap in Azure Storage waar u de Oozie-werk stroom en ondersteunende bestanden implementeert. |
     | oozie. WF. Application. Path | De locatie van de Oozie-werk stroom `workflow.xml` die moet worden uitgevoerd. |
@@ -416,11 +413,11 @@ Gebruik SCP vanuit uw bash-sessie om uw Oozie-werk stroom ( `workflow.xml` ), de
     oozie job -config job.properties -run
     ```
 
-1. Bekijk de status met behulp van de Oozie-webconsole. In Ambari selecteert u **Oozie**, **snelle koppelingen**en vervolgens **Oozie web-console**. Selecteer op het tabblad **werk stroom taken** de optie **alle taken**.
+1. Bekijk de status met behulp van de Oozie-webconsole. In Ambari selecteert u **Oozie**, **snelle koppelingen** en vervolgens **Oozie web-console**. Selecteer op het tabblad **werk stroom taken** de optie **alle taken**.
 
     ![HDI oozie-webconsole-werk stromen](./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-workflows.png)
 
-1. Als de status geslaagd is, query's uitvoeren op de tabel SQL Database om de ingevoegde rijen weer te geven. Ga met behulp van de Azure Portal naar het deel venster voor uw SQL Database, selecteer **extra**en open de **query-editor**.
+1. Als de status geslaagd is, query's uitvoeren op de tabel SQL Database om de ingevoegde rijen weer te geven. Ga met behulp van de Azure Portal naar het deel venster voor uw SQL Database, selecteer **extra** en open de **query-editor**.
 
     ```sql
     SELECT * FROM dailyflights
@@ -507,7 +504,7 @@ Zoals u ziet, geeft de meerderheid van de coördinator alleen configuratie-infor
     <coordinator-app ... start="2017-01-01T00:00Z" end="2017-01-05T00:00Z" frequency="${coord:days(1)}" ...>
     ```
 
-    Een coördinator is verantwoordelijk voor het plannen van acties binnen het `start` `end` datum bereik en op basis van het interval dat is opgegeven door het `frequency` kenmerk. Elke geplande actie op zijn beurt voert de werk stroom uit zoals geconfigureerd. In de coördinator definitie hierboven is de coördinator geconfigureerd om acties uit te voeren vanaf 1 januari 2017 tot 5 januari 2017. De frequentie wordt ingesteld op één dag met de expressie voor de taal frequentie van [Oozie](https://oozie.apache.org/docs/4.2.0/CoordinatorFunctionalSpec.html#a4.4._Frequency_and_Time-Period_Representation) `${coord:days(1)}` . Dit leidt ertoe dat de coördinator een actie (en dus de werk stroom) één keer per dag plant. Voor datumbereiken die zich in het verleden bevinden, zoals in dit voor beeld, wordt de actie gepland om zonder vertraging te worden uitgevoerd. Het begin van de datum vanaf welke de uitvoering van een actie wordt gepland, wordt de *nominale tijd*genoemd. Als u bijvoorbeeld de gegevens voor 1 januari 2017 wilt verwerken, zal de coördinator een actie plannen met een nominale tijd van 2017-01-01T00:00:00 GMT.
+    Een coördinator is verantwoordelijk voor het plannen van acties binnen het `start` `end` datum bereik en op basis van het interval dat is opgegeven door het `frequency` kenmerk. Elke geplande actie op zijn beurt voert de werk stroom uit zoals geconfigureerd. In de coördinator definitie hierboven is de coördinator geconfigureerd om acties uit te voeren vanaf 1 januari 2017 tot 5 januari 2017. De frequentie wordt ingesteld op één dag met de expressie voor de taal frequentie van [Oozie](https://oozie.apache.org/docs/4.2.0/CoordinatorFunctionalSpec.html#a4.4._Frequency_and_Time-Period_Representation) `${coord:days(1)}` . Dit leidt ertoe dat de coördinator een actie (en dus de werk stroom) één keer per dag plant. Voor datumbereiken die zich in het verleden bevinden, zoals in dit voor beeld, wordt de actie gepland om zonder vertraging te worden uitgevoerd. Het begin van de datum vanaf welke de uitvoering van een actie wordt gepland, wordt de *nominale tijd* genoemd. Als u bijvoorbeeld de gegevens voor 1 januari 2017 wilt verwerken, zal de coördinator een actie plannen met een nominale tijd van 2017-01-01T00:00:00 GMT.
 
 * Punt 2: binnen het datum bereik van de werk stroom `dataset` geeft het element op waar u wilt zoeken naar HDFS voor de gegevens voor een bepaald datum bereik en configureert u hoe Oozie bepaalt of de gegevens nog beschikbaar zijn voor verwerking.
 

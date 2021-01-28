@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 122e76e4bde96823ff18207bc24df4a8e91afb1c
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 8e51d7d00120f6facb0fb53a8e379d157ae79ea4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517965"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938579"
 ---
 # <a name="scenario-route-traffic-through-nvas-by-using-custom-settings"></a>Scenario: verkeer routeren via Nva's met aangepaste instellingen
 
@@ -57,6 +57,9 @@ Er zijn drie verschillende verbindings patronen die worden omgezet in drie route
 * Sleutel
   * Gekoppelde route tabel: **standaard**
   * Door geven aan route tabellen: **RT_SHARED** en **standaard**
+
+> [!NOTE] 
+> Zorg ervoor dat de spoke-VNets niet worden door gegeven aan het standaard label. Dit zorgt ervoor dat verkeer van branches naar spoke VNets wordt doorgestuurd naar de Nva's.
 
 Deze statische routes zorgen ervoor dat verkeer van en naar het virtuele netwerk en de vertakking via de NVA in het service-VNet (VNet 4):
 
@@ -108,7 +111,7 @@ Als u route ring via NVA wilt instellen, kunt u overwegen de volgende stappen ui
 
    * **Koppeling:** Selecteer alle VNets 1, 2 en 3. Dit betekent dat de VNet-verbindingen 1, 2 en 3 aan deze route tabel zullen worden gekoppeld en dat er routes (statisch en dynamisch via doorgifte) in deze route tabel kunnen worden weer gegeven.
 
-   * **Doorgifte:** Verbindingen geven routes door aan route tabellen. Als u VNets 1, 2 en 3 selecteert, kunnen routes worden door gegeven van VNets 1, 2 en 3 naar deze route tabel. U hoeft geen routes van de vertakkings verbindingen naar **RT_V2B**door te geven, omdat virtueel netwerk verkeer van de vertakking via de NVA in VNet 4 gaat.
+   * **Doorgifte:** Verbindingen geven routes door aan route tabellen. Als u VNets 1, 2 en 3 selecteert, kunnen routes worden door gegeven van VNets 1, 2 en 3 naar deze route tabel. U hoeft geen routes van de vertakkings verbindingen naar **RT_V2B** door te geven, omdat virtueel netwerk verkeer van de vertakking via de NVA in VNet 4 gaat.
   
 1. Bewerk de standaard route tabel **DefaultRouteTable**.
 
@@ -120,7 +123,7 @@ Als u route ring via NVA wilt instellen, kunt u overwegen de volgende stappen ui
 
    * **Doorgifte van:** Zorg ervoor dat de optie voor vertakkingen (VPN/er/P2S) is geselecteerd, zodat lokale verbindingen routes naar de standaard route tabel door geven.
 
-:::image type="content" source="./media/routing-scenarios/nva-custom/figure-2.png" alt-text="Diagram van de netwerk architectuur." lightbox="./media/routing-scenarios/nva-custom/figure-2.png":::
+:::image type="content" source="./media/routing-scenarios/nva-custom/figure-2.png" alt-text="Diagram van de werk stroom." lightbox="./media/routing-scenarios/nva-custom/figure-2.png":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

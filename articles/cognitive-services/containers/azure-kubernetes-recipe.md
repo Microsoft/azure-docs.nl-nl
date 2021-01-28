@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 2a6e7ee125cac66b48e666a766c39813aa38fb1a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6918218d8434c06f59b0738e60cad53b94b0a0b5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968499"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939842"
 ---
 # <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>De Text Analytics taal detectie container implementeren naar de Azure Kubernetes-service
 
@@ -27,7 +27,7 @@ Voor deze procedure zijn verschillende hulpprogram ma's vereist die moeten worde
 
 * Een Azure-abonnement gebruiken. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/cognitive-services) aan voordat u begint.
 * [Git](https://git-scm.com/downloads) voor uw besturings systeem, zodat u het voor [beeld](https://github.com/Azure-Samples/cognitive-services-containers-samples) in deze procedure kunt klonen.
-* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Azure CLI](/cli/azure/install-azure-cli).
 * [Docker-engine](https://www.docker.com/products/docker-engine) en controleer of de docker-cli in een console venster werkt.
 * [kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/windows/amd64/kubectl.exe).
 * Een Azure-resource met de juiste prijs categorie. Niet alle prijs categorieën werken met deze container:

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0503e0bf2fe152296ca6890e14503d05bd3bbeef
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 92ab043d4fccbe0764e361eac6f71ef69a5963cb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024769"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939856"
 ---
 # <a name="implementing-voice-assistants-on-windows"></a>Spraak assistenten implementeren in Windows
 
@@ -30,7 +30,7 @@ Nadat u [uw omgeving hebt ingesteld](how-to-windows-voice-assistants-get-started
 
 #### <a name="ensure-that-the-microphone-is-available-and-accessible-then-monitor-its-state"></a>Zorg ervoor dat de microfoon beschikbaar en toegankelijk is en controleer vervolgens de status
 
-MVA moet een microfoon hebben zodat deze toegankelijk is om een spraak activering te kunnen detecteren. Gebruik de klassen [AppCapability](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability?view=winrt-18362), [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher?view=winrt-18362)en [MediaCapture](/uwp/api/windows.media.capture.mediacapture?view=winrt-18362) om te controleren op de privacy van de microfoon, de aanwezigheid van apparaten en de apparaatstatus (zoals volume en dempen).
+MVA moet een microfoon hebben zodat deze toegankelijk is om een spraak activering te kunnen detecteren. Gebruik de klassen [AppCapability](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability), [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher)en [MediaCapture](/uwp/api/windows.media.capture.mediacapture) om te controleren op de privacy van de microfoon, de aanwezigheid van apparaten en de apparaatstatus (zoals volume en dempen).
 
 ### <a name="register-the-application-with-the-background-service"></a>De toepassing registreren bij de achtergrond service
 
@@ -38,7 +38,7 @@ De toepassing moet worden geregistreerd bij de achtergrond service om MVA de toe
 
 ### <a name="unlock-the-limited-access-feature"></a>De functie beperkte toegang ontgrendelen
 
-Gebruik de functie sleutel voor beperkte toegang van micro soft om de functie Voice Assistant te ontgrendelen. Gebruik de [LimitedAccessFeature](/uwp/api/windows.applicationmodel.limitedaccessfeatures?view=winrt-18362) -klasse van de Windows SDK om dit te doen.
+Gebruik de functie sleutel voor beperkte toegang van micro soft om de functie Voice Assistant te ontgrendelen. Gebruik de [LimitedAccessFeature](/uwp/api/windows.applicationmodel.limitedaccessfeatures) -klasse van de Windows SDK om dit te doen.
 
 ### <a name="register-the-keyword-for-the-application"></a>Het tref woord voor de toepassing registreren
 
@@ -86,7 +86,7 @@ Zodra een spraak agent toepassing is geactiveerd door de stem, is de volgende st
 
 ### <a name="retrieve-activation-audio"></a>Activerings audio ophalen
 
-Maak een [AudioGraph](/uwp/api/windows.media.audio.audiograph) en geef deze door aan de `CreateAudioDeviceInputNodeAsync` van `ConversationalAgentSession` . Hiermee wordt de audio buffer van de grafiek geladen met de audio, te *beginnen ongeveer drie seconden voordat het sleutel woord is gedetecteerd*. Deze extra toonaangevende audio is opgenomen om een breed scala aan sleutel woorden en luidspreker snelheden te bieden. Vervolgens verwerkt u de gebeurtenis [QuantumStarted](/uwp/api/windows.media.audio.audiograph.quantumstarted?view=winrt-18362) uit het audio diagram om de audio gegevens op te halen.
+Maak een [AudioGraph](/uwp/api/windows.media.audio.audiograph) en geef deze door aan de `CreateAudioDeviceInputNodeAsync` van `ConversationalAgentSession` . Hiermee wordt de audio buffer van de grafiek geladen met de audio, te *beginnen ongeveer drie seconden voordat het sleutel woord is gedetecteerd*. Deze extra toonaangevende audio is opgenomen om een breed scala aan sleutel woorden en luidspreker snelheden te bieden. Vervolgens verwerkt u de gebeurtenis [QuantumStarted](/uwp/api/windows.media.audio.audiograph.quantumstarted) uit het audio diagram om de audio gegevens op te halen.
 
 ```csharp
 var inputNode = await agentSession.CreateAudioDeviceInputNodeAsync(audioGraph);

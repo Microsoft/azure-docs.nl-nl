@@ -1,19 +1,16 @@
 ---
 title: Meerdere HDInsight-clusters & een Azure Data Lake Storage account
 description: Meer informatie over het gebruik van meer dan één HDInsight-cluster met één Data Lake Storage account
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
-ms.openlocfilehash: df28374d0f124ceb46d2f97d55218d428275deca
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 6e220592f53103320c3bdb586fcbd0106219bfed
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533084"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939536"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-storage-account"></a>Meerdere HDInsight-clusters gebruiken met een Azure Data Lake Storage-account
 
@@ -28,7 +25,7 @@ In de rest van dit artikel wordt ervan uitgegaan dat u een goede kennis hebt van
 
 ## <a name="data-lake-storage-setup-for-multiple-hdinsight-clusters"></a>Data Lake Storage-installatie voor meerdere HDInsight-clusters
 
-Laat ons een maphiërarchie op twee niveaus nemen om de aanbevelingen voor het gebruik van meerdere HDInsight-clusters met een Data Lake Storage-account te verklaren. Stel dat u een Data Lake Storage-account hebt met de mappen structuur **/clusters/Finance** . Met deze structuur kunnen alle door de financiële organisatie vereiste clusters gebruikmaken van/clusters/Finance als opslag locatie. Als een andere organisatie in de toekomst een HDInsight-cluster wil maken met behulp van hetzelfde Data Lake Storage account, kunnen ze/clusters/marketing. maken We gebruiken nu alleen **/clusters/Finance** .
+Laat ons een maphiërarchie op twee niveaus nemen om de aanbevelingen voor het gebruik van meerdere HDInsight-clusters met een Data Lake Storage-account te verklaren. Stel dat u een Data Lake Storage-account hebt met de mappen structuur **/clusters/Finance**. Met deze structuur kunnen alle door de financiële organisatie vereiste clusters gebruikmaken van/clusters/Finance als opslag locatie. Als een andere organisatie in de toekomst een HDInsight-cluster wil maken met behulp van hetzelfde Data Lake Storage account, kunnen ze/clusters/marketing. maken We gebruiken nu alleen **/clusters/Finance**.
 
 Om ervoor te zorgen dat deze mapstructuur effectief kan worden gebruikt door HDInsight-clusters, moet de Data Lake Storage-beheerder de juiste machtigingen toewijzen, zoals beschreven in de tabel. De machtigingen die in de tabel worden weer gegeven, komen overeen met Access-Acl's en niet standaard-Acl's.
 
@@ -48,10 +45,10 @@ Zie [een Aad-toepassing maken](../active-directory/develop/howto-create-service-
 
 Enkele belang rijke punten om rekening mee te houden.
 
-- De mapstructuur van het twee niveau ( **/clusters/Finance/** ) moet worden gemaakt en ingericht met de juiste machtigingen van de beheerder van de data Lake Storage **voordat** het opslag account voor clusters wordt gebruikt. Deze structuur wordt niet automatisch gemaakt tijdens het maken van clusters.
+- De mapstructuur van het twee niveau (**/clusters/Finance/**) moet worden gemaakt en ingericht met de juiste machtigingen van de beheerder van de data Lake Storage **voordat** het opslag account voor clusters wordt gebruikt. Deze structuur wordt niet automatisch gemaakt tijdens het maken van clusters.
 - In het bovenstaande voor beeld wordt aanbevolen de groep die eigenaar is van **/clusters/Finance** in te stellen als **FINGRP** en om **r-x** toegang te geven tot de volledige maphiërarchie vanaf de hoofdmap. Dit zorgt ervoor dat de leden van FINGRP kunnen navigeren door de mappen structuur vanaf de hoofdmap.
-- Als verschillende AAD-service-principals clusters kunnen maken onder **/clusters/Finance** , zorgt de plak-bit (wanneer ingesteld in de map **Financiën** ) ervoor dat mappen die zijn gemaakt met een Service-Principal, niet kunnen worden verwijderd door de andere.
-- Zodra de mappen structuur en de machtigingen zijn geïmplementeerd, maakt het proces voor het maken van HDInsight-clusters een specifieke opslag locatie voor het cluster onder **/clusters/Finance/** . Zo kan de opslag voor een cluster met de naam fincluster01 **/clusters/Finance/fincluster01** zijn. Het eigendom en de machtigingen voor de mappen die zijn gemaakt met het HDInsight-cluster, worden hier weer gegeven in de tabel.
+- Als verschillende AAD-service-principals clusters kunnen maken onder **/clusters/Finance**, zorgt de plak-bit (wanneer ingesteld in de map **Financiën** ) ervoor dat mappen die zijn gemaakt met een Service-Principal, niet kunnen worden verwijderd door de andere.
+- Zodra de mappen structuur en de machtigingen zijn geïmplementeerd, maakt het proces voor het maken van HDInsight-clusters een specifieke opslag locatie voor het cluster onder **/clusters/Finance/**. Zo kan de opslag voor een cluster met de naam fincluster01 **/clusters/Finance/fincluster01** zijn. Het eigendom en de machtigingen voor de mappen die zijn gemaakt met het HDInsight-cluster, worden hier weer gegeven in de tabel.
 
     |Map  |Machtigingen  |Gebruiker die eigenaar is  |Groep die eigenaar is  | Benoemde gebruiker | Benoemde gebruikers machtigingen | Benoemde groep | Benoemde groeps machtigingen |
     |---------|---------|---------|---------|---------|---------|---------|---------|
@@ -59,7 +56,7 @@ Enkele belang rijke punten om rekening mee te houden.
 
 ## <a name="recommendations-for-job-input-and-output-data"></a>Aanbevelingen voor de invoer-en uitvoer gegevens van de taak
 
-We raden u aan om gegevens in te voeren voor een taak en de uitvoer van een taak worden opgeslagen in een map buiten **/clusters** . Dit zorgt ervoor dat zelfs als de cluster-specifieke map wordt verwijderd om een aantal opslag ruimte vrij te maken, de invoer en uitvoer van de taak nog steeds beschikbaar zijn voor toekomstig gebruik. Zorg er in dat geval voor dat de maphiërarchie voor het opslaan van de taak invoer en uitvoer het juiste toegangs niveau voor de Service-Principal toestaat.
+We raden u aan om gegevens in te voeren voor een taak en de uitvoer van een taak worden opgeslagen in een map buiten **/clusters**. Dit zorgt ervoor dat zelfs als de cluster-specifieke map wordt verwijderd om een aantal opslag ruimte vrij te maken, de invoer en uitvoer van de taak nog steeds beschikbaar zijn voor toekomstig gebruik. Zorg er in dat geval voor dat de maphiërarchie voor het opslaan van de taak invoer en uitvoer het juiste toegangs niveau voor de Service-Principal toestaat.
 
 ## <a name="limit-on-clusters-sharing-a-single-storage-account"></a>Limiet voor clusters die één opslag account delen
 

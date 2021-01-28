@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: c20685c0c392ece68dc80b57afc6680f2efd9e35
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 05e14b5bdc2f603ffe802b12ed33b7b57be25b69
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754512"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938204"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app
 
@@ -56,13 +56,13 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Selecteer **Registreren**.
 > 1. Selecteer **Verificatie** onder **Beheren**.
 > 1. Selecteer onder **omleidings-uri's** de optie **URI toevoegen** en voer vervolgens in `https://localhost:44321/signin-oidc` .
-> 1. Voer een **Afmeldings-URL** van in `https://localhost:44321/signout-oidc` .
+> 1. Voer een **URL in voor het afmelden** van het kanaal van `https://localhost:44321/signout-oidc` .
 > 1. Selecteer **id-tokens** onder **Impliciete toekenning**.
 > 1. Selecteer **Opslaan**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
-> Als u het codevoorbeeld uit deze snelstart wilt gebruiken, moet u antwoord-URL's toevoegen als `https://localhost:44321/` en `https://localhost:44321/signin-oidc`, voegt u de afmeldings-URL toe als `https://localhost:44321/signout-oidc` en vraagt u de id-tokens aan die moeten worden uitgegeven door het autorisatie-eindpunt.
+> De voorbeeld code van deze Snelstartgids vereist een **omleidings-URI** van `https://localhost:44321/` en `https://localhost:44321/signin-oidc` en een **URL voor het afmelden van het voor kanaal** van `https://localhost:44321/signout-oidc` . Tokens voor aanvraag-id's worden uitgegeven door het autorisatie-eind punt.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Deze wijziging voor mij maken]()
 >

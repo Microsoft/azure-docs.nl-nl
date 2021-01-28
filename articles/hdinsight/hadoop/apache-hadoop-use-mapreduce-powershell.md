@@ -1,19 +1,16 @@
 ---
 title: MapReduce en Power shell gebruiken met Apache Hadoop-Azure HDInsight
 description: Meer informatie over hoe u Power shell kunt gebruiken om MapReduce-taken op afstand uit te voeren met Apache Hadoop op HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/08/2020
-ms.openlocfilehash: 8b5f5a9fb8ddd25f750b19044bac7253bbff2f98
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 16c6c5e317591b70c3a1300453093fc715e213fb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545205"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939672"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-powershell"></a>MapReduce-taken uitvoeren met Apache Hadoop op HDInsight met behulp van Power shell
 
@@ -43,7 +40,7 @@ De volgende cmdlets worden gebruikt voor het uitvoeren van MapReduce-taken in ee
 
 De volgende stappen laten zien hoe u deze cmdlets kunt gebruiken om een taak uit te voeren in uw HDInsight-cluster.
 
-1. Gebruik een editor om de volgende code op te slaan als **mapreducejob.ps1** .
+1. Gebruik een editor om de volgende code op te slaan als **mapreducejob.ps1**.
 
     [!code-powershell[main](../../../powershell_scripts/hdinsight/use-mapreduce/use-mapreduce.ps1?range=5-69)]
 

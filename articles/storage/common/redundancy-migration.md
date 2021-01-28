@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/24/2020
+ms.date: 01/27/2021
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 228595bf633ef0545a13abe19308e49da82cf75a
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 38978982baea41d23958a857b19a1edf2e454f37
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844009"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938725"
 ---
 # <a name="change-how-a-storage-account-is-replicated"></a>Wijzigen hoe een opslagaccount wordt gerepliceerd
 
@@ -39,16 +39,17 @@ De volgende tabel bevat een overzicht van de manier waarop u van elk type replic
 
 | Draaien | ... naar LRS | ... naar GRS/RA-GRS | ... naar ZRS | ... naar GZRS/RA-GZRS |
 |--------------------|----------------------------------------------------|---------------------------------------------------------------------|----------------------------------------------------|---------------------------------------------------------------------|
-| <b>... van LRS</b> | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling te wijzigen<sup>1</sup> | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar GRS/RA-GRS en vraag vervolgens een Livemigratie aan.<sup>1</sup> |
+| <b>... van LRS</b> | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling<sup>1, 2</sup> te wijzigen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar GRS/RA-GRS en vraag vervolgens een Livemigratie aan.<sup>1</sup> |
 | <b>... van GRS/RA-GRS</b> | Azure Portal, Power shell of CLI gebruiken om de replicatie-instelling te wijzigen | N.v.t. | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Schakel eerst over naar LRS en vraag vervolgens een Livemigratie aan | Een hand matige migratie uitvoeren <br /><br /> OF <br /><br /> Een Live migratie aanvragen |
-| <b>... van ZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling<sup>1, 2</sup> te wijzigen |
+| <b>... van ZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | N.v.t. | Gebruik Azure Portal, Power shell of CLI om de replicatie-instelling<sup>1, 3</sup> te wijzigen |
 | <b>... van GZRS/RA-GZRS</b> | Een hand matige migratie uitvoeren | Een hand matige migratie uitvoeren | Azure Portal, Power shell of CLI gebruiken om de replicatie-instelling te wijzigen | N.v.t. |
 
 <sup>1</sup> maakt een eenmalige uitvulling van kosten.<br />
-<sup>2</sup> conversie van ZRS naar GZRS/Ra-GZRS of vice versa wordt niet ondersteund in de volgende REGIO'S: VS Oost 2, VS Oost, Europa-West.
+<sup>2</sup> migratie van LRS naar GRS wordt niet ondersteund als het opslag account blobs in de laag Archive bevat.<br />
+<sup>3</sup> de conversie van ZRS naar GZRS/Ra-GZRS of vice versa wordt niet ondersteund in de volgende REGIO'S: VS Oost 2, VS Oost, Europa-West.
 
 > [!CAUTION]
-> Als u een [account-failover](storage-disaster-recovery-guidance.md) hebt uitgevoerd voor uw (RA-) GRS of (RA-) GZRS-account, is het account lokaal redundant in de nieuwe primaire regio na de failover. Livemigratie naar ZRS of GZRS voor een LRS-account dat voortkomt uit een failover, wordt niet ondersteund. Dit geldt zelfs in het geval van zogenaamde failback-bewerkingen. Als u bijvoorbeeld een account-failover van RA-GZRS naar de LRS in de secundaire regio uitvoert en deze vervolgens opnieuw configureert in RA-GRS en een andere account-failover naar de oorspronkelijke primaire regio uitvoert, kunt u geen contact opnemen met de ondersteuning voor de oorspronkelijke Livemigratie naar RA-GZRS in de primaire regio. In plaats daarvan moet u een hand matige migratie uitvoeren naar ZRS of GZRS.
+> Als u een [account-failover](storage-disaster-recovery-guidance.md) hebt uitgevoerd voor uw (RA-) GRS of (RA-) GZRS-account, is het account lokaal REDUNDANT (LRS) in de nieuwe primaire regio na de failover. Livemigratie naar ZRS of GZRS voor een LRS-account dat voortkomt uit een failover, wordt niet ondersteund. Dit geldt zelfs in het geval van zogenaamde failback-bewerkingen. Als u bijvoorbeeld een account-failover van RA-GZRS naar de LRS in de secundaire regio uitvoert en deze vervolgens opnieuw configureert in RA-GRS en een andere account-failover naar de oorspronkelijke primaire regio uitvoert, kunt u geen contact opnemen met de ondersteuning voor de oorspronkelijke Livemigratie naar RA-GZRS in de primaire regio. In plaats daarvan moet u een hand matige migratie uitvoeren naar ZRS of GZRS.
 
 ## <a name="change-the-replication-setting"></a>De replicatie-instelling wijzigen
 
@@ -128,14 +129,14 @@ U kunt Live migratie aanvragen via de [ondersteunings portal van Azure](https://
     - **Probleem type**: Selecteer **Technical**.
     - **Service**: Selecteer **Mijn services** en **beheer van opslag accounts**.
     - **Resource**: Selecteer de resource die u wilt converteren naar ZRS.
-3. Selecteer **Volgende**.
+3. Selecteer **Next**.
 4. Geef de volgende waarden op voor het **probleem** gedeelte:
     - **Ernst**: behoud de standaard waarde in.
     - **Probleem type**: **gegevens migratie** selecteren.
     - **Categorie**: Selecteer **migreren naar ZRS**.
     - **Titel**: Typ een beschrijvende titel, bijvoorbeeld ZRS- **account migratie**.
     - **Details**: Typ meer details in het vak **Details** , bijvoorbeeld ik wil migreren naar ZRS vanuit [LRS, GRS] in de \_ \_ regio.
-5. Selecteer **Volgende**.
+5. Selecteer **Next**.
 6. Controleer of de contact gegevens juist zijn op de Blade **contact gegevens** .
 7. Selecteer **Maken**.
 

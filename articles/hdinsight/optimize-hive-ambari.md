@@ -1,18 +1,15 @@
 ---
 title: Apache Hive optimaliseren met Apache Ambari in azure HDInsight
 description: Gebruik de Apache Ambari Web-UI om Apache Hive te configureren en te optimaliseren.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: 33c2ee7bc477d3c9d3823642dbdd974650017822
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 349f58720e6fff52191dfff65108cd1320e41eed
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084355"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939248"
 ---
 # <a name="optimize-apache-hive-with-apache-ambari-in-azure-hdinsight"></a>Apache Hive optimaliseren met Apache Ambari in azure HDInsight
 
@@ -100,7 +97,7 @@ Hive verwerkt gegevens rijen per rij. Vectorization-doorstuur component voor het
 
 Hive volgt standaard een set regels om één optimaal query-uitvoerings plan te vinden. Met CBO (cost-based Optimization) worden meerdere plannen geëvalueerd voor het uitvoeren van een query. En wijst de kosten aan elk plan toe en bepaalt vervolgens het goedkoopste-plan om een query uit te voeren.
 
-Om CBO in te scha kelen, gaat u naar **Hive**  >  **configuratie**  >  **instellingen** en zoek **optimalisatie op basis van kosten inschakelen**. vervolgens schakelt u de wissel knop in **op**aan.
+Om CBO in te scha kelen, gaat u naar **Hive**  >  **configuratie**  >  **instellingen** en zoek **optimalisatie op basis van kosten inschakelen**. vervolgens schakelt u de wissel knop in **op** aan.
 
 ![Optimalisatie op basis van HDInsight-kosten](./media/optimize-hive-ambari/hdinsight-cbo-config.png)
 

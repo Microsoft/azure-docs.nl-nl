@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 10/15/2020
 ms.author: alkohli
-ms.openlocfilehash: f1b00273314c845a36c7efdb9cf9f4de9d5cdd46
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: 40de216a9bcb173d9dfebf39d05fb9cb12579301
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96580306"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937344"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Data Box Gateway
 
@@ -50,11 +50,11 @@ Hier vindt u de configuratievereisten voor uw Data Box Gateway-resource, uw Data
 
 Zorg voordat u begint voor het volgende:
 
-* Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/).
+* Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/).
 * U hebt toegang als eigenaar of inzender op het niveau van de resourcegroep voor de Azure Stack Edge/Data Box Gateway, IoT Hub en Azure Storage-resources.
     - Als u een Azure Stack Eedge / Data Box Gateway resource wilt maken, moet u machtigingen hebben als inzender (of hoger) op het niveau van de resourcegroep. U moet er ook voor zorgen dat de `Microsoft.DataBoxEdge` provider is geregistreerd. Ga voor meer informatie over het registreren naar [Resourceprovider registreren](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
     - Als u een resource voor een Storage-account wilt maken, moet u een toegangsbereik van een inzender of hoger hebben op het niveau van de resourcegroep. Azure Storage is standaard een geregistreerde resourceprovider.
-- U hebt beheerder- of gebruikerstoegang nodig voor Microsoft Graph-API. Raadpleeg [Microsoft Graph-machtigingen](https://docs.microsoft.com/graph/permissions-reference) voor meer informatie.
+- U hebt beheerder- of gebruikerstoegang nodig voor Microsoft Graph-API. Raadpleeg [Microsoft Graph-machtigingen](/graph/permissions-reference) voor meer informatie.
 - U hebt een Microsoft Azure Storage-account met toegangsreferenties.
 
 ### <a name="for-the-data-box-gateway-device"></a>Voor het Data Box Gateway-apparaat
@@ -90,7 +90,7 @@ Voer de volgende stappen uit in Azure Portal om een Data Box Gateway-resource te
 1. Gebruik uw Microsoft Azure-referenties om u aan te melden bij een van deze portals:
 
     - Ga naar de Azure-portal op deze URL: [https://portal.azure.com](https://portal.azure.com).
-    - De Azure Government Portal op deze URL: [https://portal.azure.us](https://portal.azure.us). Ga naar [Verbinding maken met Azure Government met behulp van de portal](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal) voor meer informatie.
+    - De Azure Government Portal op deze URL: [https://portal.azure.us](https://portal.azure.us). Ga naar [Verbinding maken met Azure Government met behulp van de portal](../azure-government/documentation-government-get-started-connect-with-portal.md) voor meer informatie.
     
 2. Selecteer **+ Een resource maken**.
 
@@ -193,5 +193,3 @@ OF
 
 > [!div class="nextstepaction"]
 > [Een Azure Data Box Gateway inrichten in VMware](./data-box-gateway-deploy-provision-vmware.md)
-
-

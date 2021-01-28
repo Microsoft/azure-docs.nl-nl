@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 12/04/2020
+ms.date: 01/27/2021
 ms.author: aahi
-ms.openlocfilehash: 3b6c2a5a50cedadd8818eae735df55b661e794ef
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 8fa10164ae2d697f68156777f224b92f0562475f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97034017"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940049"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Virtuele Azure Cognitive Services-netwerken configureren
 
@@ -78,7 +78,7 @@ Cognitive Services resources accepteren standaard verbindingen van clients in el
 
 U kunt de standaard regels voor netwerk toegang voor Cognitive Services resources beheren via de Azure Portal, Power shell of de Azure CLI.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 1. Ga naar de Cognitive Services resource die u wilt beveiligen.
 
@@ -129,7 +129,7 @@ U kunt de standaard regels voor netwerk toegang voor Cognitive Services resource
     Update-AzCognitiveServicesAccountNetworkRuleSet @parameters
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Installeer de [Azure cli](/cli/azure/install-azure-cli) en [Meld](/cli/azure/authenticate-azure-cli)u aan of selecteer **proberen**.
 
@@ -180,7 +180,7 @@ Cognitive Services resource en de virtuele netwerken die toegang hebben verleend
 
 U kunt regels voor virtuele netwerken voor Cognitive Services resources beheren via de Azure Portal, Power shell of de Azure CLI.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 1. Ga naar de Cognitive Services resource die u wilt beveiligen.
 
@@ -275,7 +275,7 @@ U kunt regels voor virtuele netwerken voor Cognitive Services resources beheren 
     Remove-AzCognitiveServicesAccountNetworkRule @parameters
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Installeer de [Azure cli](/cli/azure/install-azure-cli) en [Meld](/cli/azure/authenticate-azure-cli)u aan of selecteer **proberen**.
 
@@ -341,9 +341,6 @@ Geef toegestane Internet adresbereiken op met behulp van [CIDR-notatie](https://
 
 IP-netwerk regels zijn alleen toegestaan voor **open bare Internet** -IP-adressen. IP-adresbereiken die zijn gereserveerd voor particuliere netwerken (zoals gedefinieerd in [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) zijn niet toegestaan in IP-regels. Particuliere netwerken bevatten adressen die beginnen met `10.*` , `172.16.*`  -  `172.31.*` en `192.168.*` .
 
-   > [!NOTE]
-   > IP-netwerk regels hebben geen invloed op aanvragen die afkomstig zijn uit dezelfde Azure-regio als de Cognitive Services resource. Gebruik [regels voor virtuele netwerken](#grant-access-from-a-virtual-network) om aanvragen van dezelfde regio toe te staan.
-
 Er worden op dit moment alleen IPV4-adressen ondersteund. Elke Cognitive Services Resource ondersteunt Maxi maal 100 IP-netwerk regels, die kunnen worden gecombineerd met de regels voor het [virtuele netwerk](#grant-access-from-a-virtual-network).
 
 ### <a name="configuring-access-from-on-premises-networks"></a>Toegang vanaf on-premises netwerken configureren
@@ -356,7 +353,7 @@ Als u [ExpressRoute](../expressroute/expressroute-introduction.md) on-premises g
 
 U kunt IP-netwerk regels voor Cognitive Services resources beheren via de Azure Portal, Power shell of de Azure CLI.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 1. Ga naar de Cognitive Services resource die u wilt beveiligen.
 
@@ -432,7 +429,7 @@ U kunt IP-netwerk regels voor Cognitive Services resources beheren via de Azure 
     Remove-AzCognitiveServicesAccountNetworkRule @parameters
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 1. Installeer de [Azure cli](/cli/azure/install-azure-cli) en [Meld](/cli/azure/authenticate-azure-cli)u aan of selecteer **proberen**.
 
@@ -508,7 +505,7 @@ Wanneer u het persoonlijke eind punt maakt, moet u de Cognitive Services resourc
 
 * [Maak een persoonlijk eind punt met behulp van het privé koppelings centrum in de Azure Portal](../private-link/create-private-endpoint-portal.md)
 * [Een persoonlijk eind punt maken met behulp van Azure CLI](../private-link/create-private-endpoint-cli.md)
-* [Een persoonlijk eind punt maken met Azure PowerShell](../private-link/create-private-endpoint-powershell.md)
+* [Een privé=eindpunt maken met Azure PowerShell](../private-link/create-private-endpoint-powershell.md)
 
 ### <a name="connecting-to-private-endpoints"></a>Verbinding maken met privé-eind punten
 

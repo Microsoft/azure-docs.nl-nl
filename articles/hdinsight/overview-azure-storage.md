@@ -1,19 +1,16 @@
 ---
 title: Azure Storage overzicht in HDInsight
 description: Overzicht van Azure Storage in HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 40e1fdae5cdb1ec806e67dcacc70510a63093a82
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: f171ab9619f2bcb8ecf15c4bfb3b17146ab5a0ff
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539459"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938946"
 ---
 # <a name="azure-storage-overview-in-hdinsight"></a>Azure Storage overzicht in HDInsight
 
@@ -21,7 +18,7 @@ Azure Storage is een robuuste, algemene opslag oplossing die naadloos kan worden
 
 We raden u aan om afzonderlijke opslag containers te gebruiken voor uw standaard cluster opslag en uw bedrijfs gegevens. De schei ding is het isoleren van de HDInsight-logboeken en tijdelijke bestanden van uw eigen zakelijke gegevens. We raden u ook aan de standaard-BLOB-container te verwijderen, die toepassings-en systeem Logboeken bevat, na elk gebruik om de opslag kosten te verlagen. Breng de logboeken over naar een andere locatie voordat u de container verwijdert.
 
-Als u ervoor kiest om uw opslag account te beveiligen met de **firewalls en beperkingen voor virtuele netwerken** op **geselecteerde netwerken** , moet u de uitzonde ring inschakelen **vertrouwde micro soft-Services toestaan...** . De uitzonde ring hierop is dat HDInsight toegang kan krijgen tot uw opslag account.
+Als u ervoor kiest om uw opslag account te beveiligen met de **firewalls en beperkingen voor virtuele netwerken** op **geselecteerde netwerken**, moet u de uitzonde ring inschakelen **vertrouwde micro soft-Services toestaan...**. De uitzonde ring hierop is dat HDInsight toegang kan krijgen tot uw opslag account.
 
 ## <a name="hdinsight-storage-architecture"></a>HDInsight-opslagarchitectuur
 

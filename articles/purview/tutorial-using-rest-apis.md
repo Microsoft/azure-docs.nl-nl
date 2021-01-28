@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/03/2020
-ms.openlocfilehash: fcc3e487d949a9450f792a6cc230b64e7dbe950a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: bfb808c634ba946e1a4825d7828db6df8963352c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202943"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98951240"
 ---
 # <a name="tutorial-use-the-rest-apis"></a>Zelfstudie: REST API's gebruiken
 
@@ -92,7 +92,7 @@ Azure Purview configureren om een vertrouwensrelatie met de nieuwe service-princ
 
 1. Laat bij **Toegang toewijzen aan** de standaardwaarde **Gebruiker, groep of service-principal** staan
 
-1. Bij **Selecteren** voert u de naam van de gebruiker, van de Azure Active Directory-groep of van de service-principal in die u wilt toewijzen, en klikt u vervolgens op de naam ervan in het resultatenvenster.
+1. Voer bij **selecteren** de naam in van de Previosly die u wilt toewijzen en klik vervolgens op de naam van de service in het resultaten venster.
 
 1. Klik op **Opslaan**
 

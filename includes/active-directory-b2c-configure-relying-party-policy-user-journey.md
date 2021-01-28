@@ -3,14 +3,14 @@ author: msmimart
 ms.service: active-directory-b2c
 ms.subservice: B2C
 ms.topic: include
-ms.date: 01/18/2021
+ms.date: 01/27/2021
 ms.author: mimart
-ms.openlocfilehash: f94076f06fb13bae2a26e8ab6003d7574a2dacfd
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 73216b1b089444c1dc92bbe73ed07895de3711b2
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98674224"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98951517"
 ---
 ## <a name="configure-the-relying-party-policy"></a>Het Relying Party-beleid configureren
 
@@ -33,11 +33,5 @@ In het volgende voor beeld is voor de `CustomSignUpOrSignIn` gebruikers traject 
 1. Onder **beleids regels** selecteert u **identiteits ervaring-Framework**.
 1. Selecteer **aangepast beleid uploaden** en upload de twee beleids bestanden die u hebt gewijzigd, in de volgende volg orde: het uitbrei ding beleid, bijvoorbeeld `TrustFrameworkExtensions.xml` het Relying Party beleid, zoals `SignUpSignIn.xml` .
 
-## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
 
-1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin`
-1. Selecteer voor **toepassing** een webtoepassing die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Selecteer de knop **nu uitvoeren** .
-
-Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 

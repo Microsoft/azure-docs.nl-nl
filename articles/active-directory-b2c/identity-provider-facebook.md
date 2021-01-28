@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 64a4404fa881181f92d442a73e5da4c16ae87ae3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: e0e71bc0e3a81b5ab2f455224ed2ed4281532d55
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598869"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98952671"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Facebook-account met Azure Active Directory B2C
 
@@ -84,6 +84,21 @@ Als u het aanmelden voor gebruikers met een Facebook-account in Azure Active Dir
 ::: zone-end
 
 ::: zone pivot="b2c-custom-policy"
+
+## <a name="create-a-policy-key"></a>Een beleids sleutel maken
+
+U moet het app-geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vastgelegd.
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+2. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies de map die uw Tenant bevat.
+3. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
+4. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
+5. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
+6. Kies voor **Opties** `Manual` .
+7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `FacebookSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
+8. Voer in het **geheim** uw app-geheim in dat u eerder hebt vastgelegd.
+9. Selecteer voor **sleutel gebruik** `Signature` .
+10. Klik op **Create**.
 
 ## <a name="configure-a-facebook-account-as-an-identity-provider"></a>Een Facebook-account configureren als een id-provider
 

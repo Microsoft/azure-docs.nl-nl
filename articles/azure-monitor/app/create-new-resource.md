@@ -3,12 +3,12 @@ title: Een nieuwe Azure-toepassing Insights-resource maken | Microsoft Docs
 description: Stel Application Insights bewaking hand matig in voor een nieuwe Live-toepassing.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 2924ccbbf591020d7872d3e9cca62a9c271db7c0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: adc40db493c701a21fd30d10a4452edee1b87ab9
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944594"
+ms.locfileid: "98951260"
 ---
 # <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
@@ -36,6 +36,7 @@ Meld u aan bij de [Azure Portal](https://portal.azure.com)en maak een Applicatio
 
 Voer de juiste waarden in de vereiste velden in en selecteer vervolgens **controleren + maken**.
 
+[!div class="mx-imgBorder"]
 ![Voer waarden in de vereiste velden in en selecteer vervolgens controleren + maken.](./media/create-new-resource/review-create.png)
 
 Als uw app is gemaakt, wordt er een nieuw deel venster geopend. In dit deel venster ziet u prestatie-en gebruiks gegevens over uw bewaakte toepassing. 

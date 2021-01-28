@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 12e6aa85f7d8c2c4aebe80efc92f771917e6a1d5
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: 4983e4b7f76c627cb3cb3081bc12e27111b2b521
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746009"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98951459"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](../platform/log-analytics-agent.md) en [de diagnostische extensie](../platform/diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -80,7 +80,7 @@ In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows A
 }
 ```
 
-## <a name="create-association-ith-azure-arc"></a>Koppeling maken met Azure Arc
+## <a name="create-association-with-azure-arc"></a>Koppeling maken met Azure Arc
 
 In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows Azure-machine geïnstalleerd. Er wordt een koppeling gemaakt tussen een Azure Arc-servermachine en een gegevensverzamelingsregel.
 

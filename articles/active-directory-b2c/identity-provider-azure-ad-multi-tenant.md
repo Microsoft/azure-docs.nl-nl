@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/19/2021
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 764a60ada2484a58382cc1b9539686fa72ee1203
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 8c2b97d1848450ecda2e83d5ba12469d7c61d8f9
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674347"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98952735"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Aanmelden voor multi tenant-Azure Active Directory instellen met behulp van aangepast beleid in Azure Active Directory B2C
 
@@ -43,7 +43,7 @@ In dit artikel wordt beschreven hoe u aanmelden kunt inschakelen voor gebruikers
 Als u aanmelden wilt inschakelen voor gebruikers met een Azure AD-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [Azure Portal](https://portal.azure.com). Zie [Een toepassing registreren bij het Microsoft-identiteitsplatform](../active-directory/develop/quickstart-register-app.md) voor meer informatie.
 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map gebruikt die de Azure AD-Tenant van uw organisatie bevat (bijvoorbeeld contoso.com). Selecteer het **filter Directory + abonnement** in het bovenste menu en kies vervolgens de map die uw Tenant bevat.
 1. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 1. Selecteer **Nieuwe registratie**.
@@ -184,7 +184,9 @@ Voer de volgende stappen uit voor elke Azure AD-Tenant die moet worden gebruikt 
 </OrchestrationStep>
 ```
 
-[!INCLUDE [active-directory-b2c-create-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
+
+[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
 
 Voer de laatste twee stappen uit met behulp van de referenties voor een gebruiker die een andere Azure AD-Tenant heeft, om de aanmeld functionaliteit voor meerdere tenants te testen. Kopieer het **eind punt voor nu uitvoeren** en open het in een persoonlijk browser venster, bijvoorbeeld Incognito-modus in Google Chrome of een InPrivate-venster in micro soft Edge. Als u in een persoonlijk browser venster opent, kunt u de volledige gebruikers traject testen door geen gebruik te maken van de momenteel in de cache opgeslagen Azure AD-referenties.
 

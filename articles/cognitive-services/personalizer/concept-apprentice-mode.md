@@ -1,16 +1,16 @@
 ---
 title: Leerling-modus-persoonlijker
-description: ''
+description: Leer hoe u de leerling-modus kunt gebruiken om het vertrouwen in een model te verkrijgen zonder dat u code hoeft te wijzigen.
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: f793535f04b36d231cec384b7acd66e38a7eb039
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2b9f6dfe60aa50eb4ec6da76fe8781ecd8a1f13
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253527"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98951324"
 ---
 # <a name="use-apprentice-mode-to-train-personalizer-without-affecting-your-existing-application"></a>De leerling-modus gebruiken om uw persoonlijker te trainen zonder dat dit van invloed is op uw bestaande toepassing
 
@@ -62,7 +62,7 @@ De volgende manieren van het verschil in de modus leerlingen van de online modus
 |Gebied|Leerlingmodus|Online modus|
 |--|--|--|
 |Gevolgen voor de gebruikers ervaring|U kunt het bestaande gebruikers gedrag gebruiken om uw persoonlijker te trainen door het te laten weten wat uw **standaard actie** zou hebben en wat de beslag is. Dit betekent dat de gebruikers ervaring en de bedrijfs resultaten hiervan niet worden beïnvloed.|De bovenste actie weer geven die wordt geretourneerd door de positie aanroep om het gedrag van de gebruiker te beïnvloeden.|
-|Leer snelheid|Personaler leert langzaamer in de modus van de werk wijze dan bij het leren in de online modus. De praktijk modus kan alleen leren door de door uw **standaard actie**verkregen beloningen te bestuderen, waardoor de snelheid van het leren wordt beperkt omdat er geen onderzoek kan worden uitgevoerd.|Gaat sneller, omdat deze zowel het huidige model kan exploiteren als om nieuwe trends te verkennen.|
+|Leer snelheid|Personaler leert langzaamer in de modus van de werk wijze dan bij het leren in de online modus. De praktijk modus kan alleen leren door de door uw **standaard actie** verkregen beloningen te bestuderen, waardoor de snelheid van het leren wordt beperkt omdat er geen onderzoek kan worden uitgevoerd.|Gaat sneller, omdat deze zowel het huidige model kan exploiteren als om nieuwe trends te verkennen.|
 |Doel treffend onderwijs "plafond"|Personaler kan ongeveer even nauw keurig zijn, en nooit de prestaties van uw basis bedrijfs logica overschrijden (de berekenings snelheid die wordt behaald door de **standaard actie** van elke classificatie oproep).|Personaler moet de basis lijn van toepassingen overschrijden, en in de loop van de tijd waarop het afloopt, moet u de evaluatie van offline-evaluatie en-onderdelen uitvoeren om verbeteringen voor het model te blijven ontvangen. |
 |Absolute API-waarde voor rewardActionId|De ervaring van de gebruiker wordt niet beïnvloed, omdat _rewardActionId_ altijd de eerste actie is die u in de rang aanvraag verzendt. Met andere woorden, de positie-API doet niets zichtbaar voor uw toepassing tijdens de modus van de leerling. Belonings-Api's in uw toepassing mogen niet wijzigen hoe de belonende API tussen de ene modus en de andere wordt gebruikt.|De gebruikers ervaring wordt gewijzigd door de _rewardActionId_ die personaler kiest voor uw toepassing. |
 |Evaluaties|Personaler houdt een vergelijking bij van de belonings totalen die uw standaard bedrijfs logica krijgt, en de persoonlijke voor uitbetalingen worden opgehaald als in de online modus op dat moment. Er is een vergelijking beschikbaar in de Azure Portal voor die resource|Evalueer de effectiviteit van personalisatie door [offline-evaluaties](concepts-offline-evaluation.md)uit te voeren, waarmee u de totale persoonlijke voor delen kunt vergelijken met de mogelijke voor delen van de basis lijn van de toepassing.|
@@ -88,7 +88,7 @@ Normaal gesp roken is Personaler, in vergelijking tot de training met historisch
 
 Het is alleen handig om A/B-tests uit te voeren op persoonlijke handelingen nadat deze zijn gevalideerd en de online modus is leren. In de praktijk modus wordt alleen de **standaard actie** gebruikt. Dit betekent dat alle gebruikers de beheer ervaring effectief zien.
 
-Zelfs als Personaler alleen de _behandeling_is, is dezelfde uitdaging aanwezig bij het valideren van de gegevens voor het aanpassen van de persoonlijke voor keuren. In plaats daarvan kan de modus in de praktijk worden gebruikt, met 100% van het verkeer en met alle gebruikers die het besturings element (onaangetast) krijgen.
+Zelfs als Personaler alleen de _behandeling_ is, is dezelfde uitdaging aanwezig bij het valideren van de gegevens voor het aanpassen van de persoonlijke voor keuren. In plaats daarvan kan de modus in de praktijk worden gebruikt, met 100% van het verkeer en met alle gebruikers die het besturings element (onaangetast) krijgen.
 
 Als u een use-case gebruikt met Personaler en online leren, kunt u met een/B-experimenten gefundeerde cohort en een weten schappelijke vergelijking van de resultaten uitvoeren die complexer zijn dan de signalen die voor beloningen worden gebruikt. Een voor beeld van een vraag van een A/B-test kan worden beantwoord: `In a retail website, Personalizer optimizes a layout and gets more users to _check out_ earlier, but does this reduce total revenue per transaction?`
 

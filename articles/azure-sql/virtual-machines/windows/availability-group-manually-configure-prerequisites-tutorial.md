@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 33233e8a6aa54e65094e0cc6130e804241d7201c
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 869c4ac5cde7d1e50be0f2f738d8a0ce6de5e625
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044285"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98951712"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -47,7 +47,7 @@ U hebt een Azure-account nodig. U kunt [een gratis Azure-account openen of de](h
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer **+** deze optie om een nieuw object te maken in de portal.
 
    ![Nieuw object](./media/availability-group-manually-configure-prerequisites-tutorial-/01-portalplus.png)
@@ -91,9 +91,9 @@ Het virtuele netwerk maken in de Azure Portal:
    | **Veld** | Waarde |
    | --- | --- |
    | **Naam** |autoHAVNET |
-   | **Adresruimte** |10.33.0.0/24 |
+   | **Adresruimte** |10.0.0.0/24 |
    | **Subnetnaam** |Beheerder |
-   | **Subnetadresbereik** |10.33.0.0/29 |
+   | **Subnetadresbereik** |10.0.0.0/29 |
    | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. Het **abonnement** is leeg als u slechts één abonnement hebt. |
    | **Resourcegroep** |Kies **bestaande gebruiken** en kies de naam van de resource groep. |
    | **Locatie** |De Azure-locatie opgeven. |

@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 01/28/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 50042b749c917752d08198c31ada3c73a5ef540b
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a7e9e523d3aae7cf1444c048c023ca1d85fde41f
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98938492"
+ms.locfileid: "98952224"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
 
@@ -45,9 +45,13 @@ Een telefoon nummer dat door een gebruiker kan worden gebruikt om u aan te melde
 - [Bijwerken](/graph/api/phoneauthenticationmethod-update)
 - [Verwijderen](/graph/api/phoneauthenticationmethod-delete)
 
+Houd er rekening mee dat de [lijst](/graph/api/authentication-list-phonemethods) bewerking alleen ingeschakelde telefoon nummers retourneert. Het volgende telefoon nummer moet zijn ingeschakeld voor gebruik met de lijst bewerkingen. 
+
+![Aanmelding via telefoon inschakelen](./media/microsoft-graph-operations/enable-phone-sign-in.png)
+
 ## <a name="self-service-password-reset-email-address-beta"></a>E-mail adres van de selfservice voor wacht woord opnieuw instellen (bèta)
 
-Een e-mail adres dat door een gebruiker kan worden gebruikt om het wacht woord voor het [aanmeldings account van de gebruikers naam](identity-provider-local.md#username-sign-in)te gebruiken. Zie [Azure AD-verificatie methoden API](/graph/api/resources/emailauthenticationmethod)voor meer informatie.
+Een e-mail adres dat kan worden gebruikt door een [gebruikers naam aanmeldings account](identity-provider-local.md#username-sign-in) om het wacht woord opnieuw in te stellen. Zie [Azure AD-verificatie methoden API](/graph/api/resources/emailauthenticationmethod)voor meer informatie.
 
 - [Add](/graph/api/emailauthenticationmethod-post)
 - [List](/graph/api/emailauthenticationmethod-list)

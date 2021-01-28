@@ -1,17 +1,17 @@
 ---
 title: Server parameters-Azure Database for MySQL
 description: Dit onderwerp bevat richt lijnen voor het configureren van server parameters in Azure Database for MySQL.
-author: savjani
-ms.author: pariks
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 6/25/2020
-ms.openlocfilehash: 0fddc1e8f80e257548d0dda91758273eb8c8ac78
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 1/26/2021
+ms.openlocfilehash: 9485d346384344bd7c35d0577245419ca1f56574
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534905"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98951307"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Server parameters in Azure Database for MySQL
 
@@ -261,6 +261,18 @@ Raadpleeg de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/server
 |Geoptimaliseerd geheugen|8|16777216|1024|536870912|
 |Geoptimaliseerd geheugen|16|16777216|1024|1073741824|
 |Geoptimaliseerd geheugen|32|16777216|1024|1073741824|
+
+### <a name="innodb-buffer-pool-warmup"></a>Opwarm InnoDB-buffer groep
+Nadat Azure Database for MySQL server opnieuw is opgestart, worden de gegevens pagina's geladen die zich in de schijf bevinden. Dit leidt tot betere latentie en tragere prestaties voor de eerste uitvoering van de query's. Dit is mogelijk niet acceptabel voor latentie gevoelige werk belastingen. Het gebruik van de InnoDB-buffer groep opwarm verkort de opwarm periode door schijf pagina's opnieuw te laden die zich in de buffer groep bevonden vóór het opnieuw opstarten, in plaats van te wachten op DML of SELECT-bewerkingen om toegang te krijgen tot overeenkomende rijen.
+
+U kunt de opwarm-periode verminderen nadat u uw Azure Database for MySQL-server opnieuw hebt opgestart, wat een prestatie voordeel voor stelt door [InnoDB-buffer pool server parameters](https://dev.mysql.com/doc/refman/8.0/en/innodb-preload-buffer-pool.html)te configureren. InnoDB slaat een percentage van de meest recent gebruikte pagina's op voor elke buffer groep bij het afsluiten van de server en herstelt deze pagina's bij het opstarten van de server.
+
+Het is ook belang rijk om te weten dat verbeterde prestaties ten koste gaan van een langere opstart tijd voor de-server. Als deze para meter is ingeschakeld, worden de opstart-en start tijd van de server naar verwachting verhoogd, afhankelijk van de IOPS die op de server is ingericht. We raden u aan om de herstarttijd te testen en te controleren om ervoor te zorgen dat de prestaties van de opstart-en start periode acceptabel zijn omdat de server gedurende die tijd niet beschikbaar is. Het wordt niet aangeraden deze para meter te gebruiken wanneer het aantal IOPS dat is ingericht, kleiner is dan 1000 IOPS (of met andere woorden, wanneer de ingerichte opslag ruimte lager is dan 335GB.
+
+Als u de status van de buffer groep wilt opslaan bij Server para meter instellen voor het afsluiten van servers `innodb_buffer_pool_dump_at_shutdown` in `ON` . Stel op dezelfde manier de server parameter in om `innodb_buffer_pool_load_at_startup` `ON` de status van de buffer groep te herstellen bij het opstarten van de server. U kunt de gevolgen voor het opstarten en opnieuw opstarten bepalen door de waarde van de server parameter te verlagen en te verfijnen `innodb_buffer_pool_dump_pct` . deze para meter is standaard ingesteld op `25` .
+
+> [!Note]
+> De opwarm-para meters van de InnoDB-buffer groep worden alleen ondersteund in de opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag. Meer informatie over [Azure database for MySQL opslag opties vindt u hier](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage).
 
 ### <a name="time_zone"></a>time_zone
 

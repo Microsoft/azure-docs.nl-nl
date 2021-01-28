@@ -1,18 +1,15 @@
 ---
 title: Problemen met de Apache Ambari-heartbeat in Azure HDInsight
 description: Bekijk de verschillende redenen voor Apache Ambari heartbeat-problemen in azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/06/2020
-ms.openlocfilehash: adc5dfcef8cce269b6b6d982178433b8ee163f92
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5eebde42098d74f533565d274b693c4a06f2f60d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998262"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946738"
 ---
 # <a name="apache-ambari-heartbeat-issues-in-azure-hdinsight"></a>Problemen met de Apache Ambari-heartbeat in Azure HDInsight
 

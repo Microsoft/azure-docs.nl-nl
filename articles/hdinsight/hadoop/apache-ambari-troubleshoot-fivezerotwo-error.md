@@ -3,16 +3,13 @@ title: Fout in Ambari UI 502 van Apache in azure HDInsight
 description: Apache Ambari UI 502-fout bij het openen van uw Azure HDInsight-cluster
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: a512afa719c29976a9126afb67de4a0e6c80763d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 750232b19bd5ef0674a9df79fdf3972a679eda7d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998291"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946791"
 ---
 # <a name="scenario-apache-ambari-ui-502-error-in-azure-hdinsight"></a>Scenario: Apache Ambari UI 502-fout in azure HDInsight
 

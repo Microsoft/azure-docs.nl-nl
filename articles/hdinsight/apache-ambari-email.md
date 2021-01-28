@@ -1,18 +1,15 @@
 ---
 title: 'Zelfstudie: E-mailmeldingen voor Apache Ambari configureren in Azure HDInsight'
 description: In dit artikel wordt beschreven hoe u SendGrid gebruikt met Apache Ambari voor e-mailmeldingen.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 03/10/2020
-ms.openlocfilehash: bdce735bdacbe7ff0752650c6949fdb361342c73
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 63d0f87925f14fddf3dbd722fa72326ee8b04f31
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542553"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946974"
 ---
 # <a name="tutorial-configure-apache-ambari-email-notifications-in-azure-hdinsight"></a>Zelfstudie: E-mailmeldingen voor Apache Ambari configureren in Azure HDInsight
 
@@ -38,11 +35,11 @@ In deze zelfstudie leert u het volgende:
 
     ![Overzicht van SendGrid in Azure Portal](./media/apache-ambari-email/azure-portal-sendgrid-manage.png)
 
-1. Ga in het linkermenu naar uw accountnaam en klik op **Accountdetails** .
+1. Ga in het linkermenu naar uw accountnaam en klik op **Accountdetails**.
 
     ![SendGrid-dashboardnavigatie](./media/apache-ambari-email/sendgrid-dashboard-navigation.png)
 
-1. Registreer op de pagina **Accountdetails** de **Gebruikersnaam** .
+1. Registreer op de pagina **Accountdetails** de **Gebruikersnaam**.
 
     ![SendGrid-accountdetails](./media/apache-ambari-email/sendgrid-account-details.png)
 
@@ -50,7 +47,7 @@ In deze zelfstudie leert u het volgende:
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/#/main/alerts`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 
-1. Selecteer in de vervolgkeuzelijst **Acties** de optie **Meldingen beheren** .
+1. Selecteer in de vervolgkeuzelijst **Acties** de optie **Meldingen beheren**.
 
 1. Selecteer in het venster **Waarschuwingsmeldingen beheren** het pictogram **+** .
 
@@ -64,7 +61,7 @@ In deze zelfstudie leert u het volgende:
     |Groepen|Configureer naar wens.|
     |Ernst|Configureer naar wens.|
     |Beschrijving|Optioneel.|
-    |Methode|Laat de ingestelde versie staan op **EMAIL** .|
+    |Methode|Laat de ingestelde versie staan op **EMAIL**.|
     |E-mailen naar|Geef een of meer e-mailadressen op om meldingen te ontvangen, gescheiden door een komma.|
     |SMTP-server|`smtp.sendgrid.net`|
     |SMTP-poort|25 of 587 (voor niet-versleutelde/TLS-verbindingen).|
@@ -77,9 +74,9 @@ In deze zelfstudie leert u het volgende:
 
     ![Schermafbeelding van het dialoogvenster Waarschuwingsmeldingen maken.](./media/apache-ambari-email/ambari-create-alert-notification.png)
 
-    Selecteer **Opslaan** . U gaat terug naar het venster **Waarschuwingsmeldingen beheren** .
+    Selecteer **Opslaan**. U gaat terug naar het venster **Waarschuwingsmeldingen beheren**.
 
-1. In het venster **Waarschuwingsmeldingen beheren** selecteert u **Sluiten** .
+1. In het venster **Waarschuwingsmeldingen beheren** selecteert u **Sluiten**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

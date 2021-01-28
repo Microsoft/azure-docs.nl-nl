@@ -6,12 +6,12 @@ ms.service: azure-quantum
 ms.topic: include
 ms.date: 01/08/2021
 ms.author: dasto
-ms.openlocfilehash: c312ee63f9f00e4eef726924fc01f2862ba2884f
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 2106a48a583f120f8b4dde4eb32a30f1a1b1d85b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920462"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948431"
 ---
 ### <a name="provider-limits--quota"></a>Limieten voor provider & quotum
 
@@ -32,11 +32,11 @@ Als u de leren & het ontwikkelen van SKU gebruikt, **kunt u geen** verhoging van
 
 #### <a name="performance-at-scale-sku"></a>SKU voor prestaties op schaal
 
-| Resource | Limiet |
-| --- | --- |
-| Gelijktijdige taken op basis van CPU | Maxi maal 100 gelijktijdige taken |
-| Gelijktijdige taken op basis van FPGA | Maxi maal 10 gelijktijdige taken |
-| Oplosser-uren | 50.000 uur per maand  |
+| Resource | Standaardlimiet | Maximumaantal |
+| --- | --- | --- |
+| Gelijktijdige taken op basis van CPU | Maxi maal 100 gelijktijdige taken | hetzelfde als de standaard limiet |
+| Gelijktijdige taken op basis van FPGA | Maxi maal 10 gelijktijdige taken | hetzelfde als de standaard limiet |
+| Oplosser-uren | 1.000 uur per maand  | Maxi maal 50.000 uur per maand |
 
 Neem contact op met de ondersteuning van Azure als u een limiet wilt verhogen. 
 

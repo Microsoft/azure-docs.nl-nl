@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 8c0715b3570bf60205c83390ab93b272e49e8733
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: 1c3ed6cc97c6fc77083baa915fac2f5530922eac
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371832"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948207"
 ---
 Ga aan de slag met de Bing Autosuggest-clientbibliotheek voor Go. Volg deze stappen om de bibliotheek te installeren en onze voorbeelden voor basistaken uit te proberen.
 
@@ -76,9 +76,9 @@ Nadat u de omgevingsvariabele toevoegt, voert u `source .bash_profile` uit vanui
 
 Maak in een consolevenster (cmd, PowerShell, Terminal, Bash) een nieuwe werkruimte voor uw Go-project en navigeer er naartoe. Uw werkruimte bevat drie mappen:
 
-* **src** : Deze map bevat broncode en pakketten. Alle pakketten geïnstalleerd met de `go get`-opdracht bevinden zich hier.
-* **pkg** : Deze map bevat de gecompileerde Go-pakketobjecten. Deze bestanden hebben allemaal een `.a`-extensie.
-* **bin** : Deze map bevat de binaire uitvoerbare bestanden die worden gemaakt wanneer u `go install` uitvoert.
+* **src**: Deze map bevat broncode en pakketten. Alle pakketten geïnstalleerd met de `go get`-opdracht bevinden zich hier.
+* **pkg**: Deze map bevat de gecompileerde Go-pakketobjecten. Deze bestanden hebben allemaal een `.a`-extensie.
+* **bin**: Deze map bevat de binaire uitvoerbare bestanden die worden gemaakt wanneer u `go install` uitvoert.
 
 > [!TIP]
 > Meer informatie over de structuur van een [Go-werkruimte](https://golang.org/doc/code.html#Workspaces). Deze handleiding bevat informatie om `$GOPATH` en `$GOROOT` in te stellen.
@@ -171,7 +171,7 @@ client.Endpoint = endpoint
 
 ### <a name="send-an-api-request"></a>Een API-aanvraag verzenden
 
-Gebruik in dezelfde methode de methode [AutoSuggestMethodAsync](/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclientextensions.autosuggestmethodasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Search_AutoSuggest_AutoSuggestClientExtensions_AutoSuggestMethodAsync_Microsoft_Azure_CognitiveServices_Search_AutoSuggest_IAutoSuggestClient_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_IList_System_String__System_Threading_CancellationToken_) van de client om een query te sturen naar Bing. Herhaal vervolgens het antwoord [Suggesties](/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.models.suggestions?view=azure-dotnet) en druk de eerste suggestie af.
+Gebruik in dezelfde methode de methode [AutoSuggestMethodAsync](/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclientextensions.autosuggestmethodasync#Microsoft_Azure_CognitiveServices_Search_AutoSuggest_AutoSuggestClientExtensions_AutoSuggestMethodAsync_Microsoft_Azure_CognitiveServices_Search_AutoSuggest_IAutoSuggestClient_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_IList_System_String__System_Threading_CancellationToken_) van de client om een query te sturen naar Bing. Herhaal vervolgens het antwoord [Suggesties](/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.models.suggestions) en druk de eerste suggestie af.
 
 ```Go
 // This should return the query suggestion "xbox."

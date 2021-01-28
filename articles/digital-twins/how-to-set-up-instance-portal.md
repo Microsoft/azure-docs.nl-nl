@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d38e631a5a12381b407dca4dd9e2f2ae63365453
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 61b396cbcc8c91c75c961f702de7ed6a33e676e4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98882438"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947013"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Een Azure Digital Apparaatdubbels-exemplaar en-verificatie (Portal) instellen
 
@@ -40,7 +40,7 @@ Zoek in het zoekvak naar *Azure Digital apparaatdubbels* en kies de **Azure Digi
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins.png" alt-text="' Maken ' selecteren op de pagina van de Azure Digital Apparaatdubbels-service":::
 
-Vul op de pagina de volgende *resource maken* de waarden in die hieronder zijn opgegeven:
+Vul op de pagina de volgende **resource maken** de waarden in die hieronder zijn opgegeven:
 * **Abonnement**: het Azure-abonnement dat u gebruikt
   - **Resource groep**: een resource groep waarin het exemplaar moet worden geïmplementeerd. Als u nog geen bestaande resource groep hebt, kunt u hier een maken door de *nieuwe koppeling maken* te selecteren en een naam in te voeren voor een nieuwe resource groep.
 * **Locatie**: een Azure Digital apparaatdubbels-regio voor de implementatie. Ga voor meer informatie over regionale ondersteuning naar [*Azure-producten die beschikbaar zijn per regio (Azure Digital apparaatdubbels)*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
@@ -48,11 +48,21 @@ Vul op de pagina de volgende *resource maken* de waarden in die hieronder zijn o
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins-2.png" alt-text="De beschreven waarden invullen om een Azure Digital Apparaatdubbels-resource te maken":::
 
-Wanneer u klaar bent, selecteert u _controleren + maken_. Hiermee gaat u naar een overzichts pagina waar u de exemplaar gegevens kunt bekijken die u hebt ingevoerd en op _maken_ hebt geklikt. 
+Wanneer u klaar bent, kunt u **bekijken en maken** selecteren als u geen instellingen meer wilt configureren voor uw exemplaar. Hiermee gaat u naar een overzichts pagina waar u de exemplaar gegevens kunt bekijken die u hebt ingevoerd en met **maken** voltooit. 
+
+Als u meer informatie wilt configureren voor uw exemplaar, worden in de volgende sectie de resterende installatie tabbladen beschreven.
+
+### <a name="additional-setup-options"></a>Aanvullende installatie opties
+
+Hier vindt u de aanvullende opties die u tijdens de installatie kunt configureren, met behulp van de andere tabbladen in het proces **resource maken** .
+
+* **Netwerken**: op dit tabblad kunt u privé-eind punten inschakelen met [persoonlijke Azure-koppelingen](../private-link/private-link-overview.md) om de bloot stelling van open bare netwerken te elimineren voor uw exemplaar. Zie [*How to: private Access inschakelen with private link (Engelstalig*](how-to-enable-private-link.md#add-a-private-endpoint-during-instance-creation)) voor instructies.
+* **Geavanceerd**: op dit tabblad kunt u een door een [systeem beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) inschakelen voor uw exemplaar die kan worden gebruikt bij het door sturen van gebeurtenissen naar [eind punten](concepts-route-events.md). Zie [*How-to: Managed Identities inschakelen voor routerings gebeurtenissen*](how-to-enable-managed-identities.md)voor instructies.
+* **Tags**: op dit tabblad kunt u Tags toevoegen aan uw instantie om deze te organiseren onder uw Azure-resources. Zie voor meer informatie over Azure-resource tags [*Label resources, resource groepen en abonnementen voor logische organisatie*](../azure-resource-manager/management/tag-resources.md).
 
 ### <a name="verify-success-and-collect-important-values"></a>Geslaagde pogingen controleren en belang rijke waarden verzamelen
 
-Nadat u het *maken* hebt gepusht, kunt u de status van de implementatie van uw exemplaar bekijken in uw Azure-meldingen via de portal pictogram balk. De melding geeft aan wanneer de implementatie is voltooid en u kunt de knop _Ga naar resource_ selecteren om uw gemaakte exemplaar weer te geven.
+Nadat u de installatie van het exemplaar hebt voltooid door **maken** te selecteren, kunt u de status van de implementatie van uw exemplaar bekijken in uw Azure-meldingen in de portal-pictogram balk. De melding geeft aan wanneer de implementatie is voltooid en u kunt de knop _Ga naar resource_ selecteren om uw gemaakte exemplaar weer te geven.
 
 :::image type="content" source="media/how-to-set-up-instance/portal/notifications-deployment.png" alt-text="Weer gave van meldingen van Azure met een geslaagde implementatie en het markeren van de knop ' go to resource '":::
 

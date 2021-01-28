@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.custom: devx-track-java
 ms.author: aahi
-ms.openlocfilehash: 042a3edf8efe080064a3c41fd55975a40bf47e5e
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
-ms.translationtype: HT
+ms.openlocfilehash: 414c2b936d98d1269221bf1353dbc364c9b5723e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386531"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948600"
 ---
 Met de Bing Web Search-clientbibliotheek kunt u Bing Web Search eenvoudig integreren in uw Java-toepassing. In deze snelstartgids leert u hoe u een aanvraag verzendt, een JSON-antwoord ontvangt en de resultaten filtert en parseert.
 
@@ -295,4 +295,4 @@ Wanneer u klaar bent met dit project, moet u uw abonnementssleutel verwijderen u
 
 ## <a name="see-also"></a>Zie ook
 
-* [Naslaginformatie over Azure Java SDK](/java/api/overview/azure/cognitiveservices/client/bingwebsearchapi?view=azure-java-stable)
+* [Naslaginformatie over Azure Java SDK](/java/api/overview/azure/cognitiveservices/client/bingwebsearchapi)

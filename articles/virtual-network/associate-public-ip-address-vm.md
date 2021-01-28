@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
-ms.openlocfilehash: 76f92b5da2331748fbbbfc68f1e456fd50dd71ee
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 6ea16da3844b8098d87d65e1016f92c69ae34067
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223020"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945157"
 ---
 # <a name="associate-a-public-ip-address-to-a-virtual-machine"></a>Een openbaar IP-adres koppelen aan een virtuele machine
 
@@ -28,7 +28,7 @@ U kunt de [Azure Portal](#azure-portal), de Azure- [opdracht regel interface](#a
 
 ## <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Blader naar of zoek naar de virtuele machine waaraan u het open bare IP-adres wilt toevoegen en selecteer deze.
 3. Onder **instellingen** selecteert u **netwerken** en selecteert u vervolgens de netwerk interface waaraan u het open bare IP-adres wilt toevoegen, zoals wordt weer gegeven in de volgende afbeelding:
 
@@ -65,7 +65,7 @@ U kunt de [Azure Portal](#azure-portal), de Azure- [opdracht regel interface](#a
 Installeer de [Azure cli](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json)of gebruik de Azure Cloud shell. De Azure Cloud Shell is een gratis Bash-shell die u rechtstreeks in Azure Portal kunt uitvoeren. In deze shell is de Azure CLI vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Selecteer de knop **try it** in de CLI-opdrachten die volgen. Als u probeert te selecteren **, wordt** een Cloud shell aangeroepen waarmee u zich kunt aanmelden bij uw Azure-account met.
 
 1. Als u de CLI lokaal gebruikt in bash, meldt u zich aan bij Azure met `az login` .
-2. Een openbaar IP-adres is gekoppeld aan een IP-configuratie van een netwerk interface die is gekoppeld aan een virtuele machine. Gebruik de opdracht [AZ Network NIC-IP-config update](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-update) om een openbaar IP-adres te koppelen aan een IP-configuratie. In het volgende voor beeld wordt een bestaand openbaar IP-adres met de naam *myVMPublicIP* gekoppeld aan de IP-configuratie met de naam *ipconfigmyVM* van een bestaande netwerk interface met de naam *myVMVMNic* die bestaat in een resource groep met de naam *myResourceGroup*.
+2. Een openbaar IP-adres is gekoppeld aan een IP-configuratie van een netwerk interface die is gekoppeld aan een virtuele machine. Gebruik de opdracht [AZ Network NIC-IP-config update](/cli/azure/network/nic/ip-config#az-network-nic-ip-config-update) om een openbaar IP-adres te koppelen aan een IP-configuratie. In het volgende voor beeld wordt een bestaand openbaar IP-adres met de naam *myVMPublicIP* gekoppeld aan de IP-configuratie met de naam *ipconfigmyVM* van een bestaande netwerk interface met de naam *myVMVMNic* die bestaat in een resource groep met de naam *myResourceGroup*.
   
    ```azurecli-interactive
    az network nic ip-config update \
@@ -75,7 +75,7 @@ Installeer de [Azure cli](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-ne
      --public-ip-address myVMPublicIP
    ```
 
-   - Als u geen bestaand openbaar IP-adres hebt, gebruikt u de opdracht [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om er een te maken. Met de volgende opdracht maakt u bijvoorbeeld een openbaar IP-adres met de naam *myVMPublicIP* in een resource groep met de naam *myResourceGroup*.
+   - Als u geen bestaand openbaar IP-adres hebt, gebruikt u de opdracht [AZ Network Public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) om er een te maken. Met de volgende opdracht maakt u bijvoorbeeld een openbaar IP-adres met de naam *myVMPublicIP* in een resource groep met de naam *myResourceGroup*.
   
      ```azurecli-interactive
      az network public-ip create --name myVMPublicIP --resource-group myResourceGroup
@@ -84,7 +84,7 @@ Installeer de [Azure cli](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-ne
      > [!NOTE]
      > Met de vorige opdracht maakt u een openbaar IP-adres met standaard waarden voor verschillende instellingen die u wilt aanpassen. Zie [een openbaar IP-adres maken](virtual-network-public-ip-address.md#create-a-public-ip-address)voor meer informatie over alle instellingen voor het open bare IP-adres. Het adres wordt toegewezen vanuit een groep open bare IP-adressen die worden gebruikt voor elke Azure-regio. Zie [Microsoft Azure Data Center IP-bereiken](https://www.microsoft.com/download/details.aspx?id=41653)voor een overzicht van de adres groepen die in elke regio worden gebruikt.
 
-   - Als u de naam van een netwerk interface die is gekoppeld aan uw virtuele machine niet weet, gebruikt u de opdracht [AZ VM NIC List](/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-list) om ze weer te geven. Met de volgende opdracht worden bijvoorbeeld de namen weer gegeven van de netwerk interfaces die zijn gekoppeld aan een virtuele machine met de naam *myVM* in een resource groep met de naam *myResourceGroup*:
+   - Als u de naam van een netwerk interface die is gekoppeld aan uw virtuele machine niet weet, gebruikt u de opdracht [AZ VM NIC List](/cli/azure/vm/nic#az-vm-nic-list) om ze weer te geven. Met de volgende opdracht worden bijvoorbeeld de namen weer gegeven van de netwerk interfaces die zijn gekoppeld aan een virtuele machine met de naam *myVM* in een resource groep met de naam *myResourceGroup*:
 
      ```azurecli-interactive
      az vm nic list --vm-name myVM --resource-group myResourceGroup
@@ -98,13 +98,13 @@ Installeer de [Azure cli](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-ne
 
      In het vorige voor beeld is *myVMVMNic* de naam van de netwerk interface.
 
-   - Als u de naam van een IP-configuratie voor een netwerk interface niet weet, gebruikt u de opdracht [AZ Network NIC IP-config list](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-list) om deze op te halen. De volgende opdracht toont bijvoorbeeld de namen van de IP-configuraties voor een netwerk interface met de naam *myVMVMNic* in een resource groep met de naam *myResourceGroup*:
+   - Als u de naam van een IP-configuratie voor een netwerk interface niet weet, gebruikt u de opdracht [AZ Network NIC IP-config list](/cli/azure/network/nic/ip-config#az-network-nic-ip-config-list) om deze op te halen. De volgende opdracht toont bijvoorbeeld de namen van de IP-configuraties voor een netwerk interface met de naam *myVMVMNic* in een resource groep met de naam *myResourceGroup*:
 
      ```azurecli-interactive
      az network nic ip-config list --nic-name myVMVMNic --resource-group myResourceGroup --out table
      ```
 
-3. Bekijk het open bare IP-adres dat is toegewezen aan de IP-configuratie met de opdracht [AZ VM List-IP-addresses](/cli/azure/vm?view=azure-cli-latest#az-vm-list-ip-addresses) . In het volgende voor beeld ziet u de IP-adressen die zijn toegewezen aan een bestaande virtuele machine met de naam *myVM* in een resource groep met de naam *myResourceGroup*.
+3. Bekijk het open bare IP-adres dat is toegewezen aan de IP-configuratie met de opdracht [AZ VM List-IP-addresses](/cli/azure/vm#az-vm-list-ip-addresses) . In het volgende voor beeld ziet u de IP-adressen die zijn toegewezen aan een bestaande virtuele machine met de naam *myVM* in een resource groep met de naam *myResourceGroup*.
 
    ```azurecli-interactive
    az vm list-ip-addresses --name myVM --resource-group myResourceGroup --out table

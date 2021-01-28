@@ -1,25 +1,22 @@
 ---
 title: Onderdelen voor hoge Beschik baarheid in azure HDInsight
 description: Overzicht van de verschillende onderdelen voor hoge Beschik baarheid die worden gebruikt door HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: 1ff7932f0afb128f6e7568ecdae602c6471db0bd
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 336fe91174a8fc6d73d6e45c5fd1e2bf244eda52
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539714"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945309"
 ---
 # <a name="high-availability-services-supported-by-azure-hdinsight"></a>Services met hoge Beschik baarheid die worden ondersteund door Azure HDInsight
 
 HDInsight is ontwikkeld met een unieke architectuur voor hoge Beschik baarheid (HA) van essentiële services, zodat u een optimale Beschik baarheid kunt bieden voor uw analyse onderdelen. Sommige onderdelen van deze architectuur zijn ontwikkeld door micro soft om automatische failover te bieden. Andere onderdelen zijn standaard Apache-onderdelen die zijn geïmplementeerd ter ondersteuning van specifieke services. In dit artikel wordt de architectuur van het service model HA in HDInsight beschreven, hoe HDInsight failover ondersteunt voor HA-Services en best practices voor het herstellen van andere service onderbrekingen.
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *Slave* , een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ## <a name="high-availability-infrastructure"></a>Infra structuur met hoge Beschik baarheid
 
@@ -65,7 +62,7 @@ Micro soft biedt ondersteuning voor de vier Apache-Services in de volgende tabel
 
 Elk HDInsight-cluster heeft respectievelijk twee hoofd knooppunten in de modi actief en stand-by. De HDInsight HA-services worden alleen op hoofd knooppunten uitgevoerd. Deze services moeten altijd worden uitgevoerd op het actieve hoofd knooppunt en in de onderhouds modus worden gestopt en in de stand-bymodus worden geplaatst hoofd knooppunt.
 
-Om de juiste statussen van HA-services te behouden en een snelle failover te bieden, maakt HDInsight gebruik van Apache ZooKeeper, een coördinatie service voor gedistribueerde toepassingen, om actieve hoofd knooppunt-verkiezing uit te voeren. HDInsight is ook van toepassing op een aantal Java-achtergrond processen, waarmee de procedure failover voor HDInsight HA-Services wordt gecoördineerd. Deze services zijn de volgende: de hoofd-failover-controller, de slave-failover-controller, de *Master-ha-service* en de *Slave-ha-service* .
+Om de juiste statussen van HA-services te behouden en een snelle failover te bieden, maakt HDInsight gebruik van Apache ZooKeeper, een coördinatie service voor gedistribueerde toepassingen, om actieve hoofd knooppunt-verkiezing uit te voeren. HDInsight is ook van toepassing op een aantal Java-achtergrond processen, waarmee de procedure failover voor HDInsight HA-Services wordt gecoördineerd. Deze services zijn de volgende: de hoofd-failover-controller, de slave-failover-controller, de *Master-ha-service* en de *Slave-ha-service*.
 
 ### <a name="apache-zookeeper"></a>Apache ZooKeeper
 

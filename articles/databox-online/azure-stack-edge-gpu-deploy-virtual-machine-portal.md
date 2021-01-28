@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 11/02/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro device so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 04ba9777fe9e8470e6f02c83f3996d098023e05e
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: a48abb34a201928185130fbe8fdf9592e77492d9
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763452"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944956"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-the-azure-portal"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via de Azure Portal
 
@@ -22,6 +22,9 @@ U kunt virtuele machines (Vm's) maken en beheren op een Azure Stack edge-apparaa
 
 Dit artikel is van toepassing op Azure Stack Edge Pro GPU, Azure Stack Edge Pro R en Azure Stack Edge mini-R-apparaten. 
 
+> [!IMPORTANT] 
+> U wordt aangeraden multi-factor Authentication in te scha kelen voor de gebruiker die virtuele machines beheert die in de Cloud op uw apparaat zijn geïmplementeerd.
+        
 ## <a name="vm-deployment-workflow"></a>VM-implementatiewerkstroom
 
 De samen vatting van het hoge niveau van de implementatie werk stroom is als volgt:

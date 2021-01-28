@@ -1,19 +1,16 @@
 ---
 title: Hadoop controleren en beheren met Ambari REST API-Azure HDInsight
 description: Meer informatie over het gebruik van Ambari voor het bewaken en beheren van Hadoop-clusters in azure HDInsight. In dit document leert u hoe u het Ambari gebruikt REST API dat deel uitmaakt van HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 6ba1d1e15b1dbb3efb24219b6c09a6827e701d46
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 1d4e6f0d6a0242cda919364965a61e4314927d87
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546072"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945579"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>HDInsight-clusters beheren met behulp van de Apache Ambari REST API
 
@@ -37,11 +34,11 @@ Apache Ambari vereenvoudigt het beheer en de bewaking van Hadoop-clusters door e
 
 ## <a name="base-uniform-resource-identifier-for-ambari-rest-api"></a>Base-uniform resource-id voor Ambari rest API
 
- De basis-URI (Uniform Resource Identifier) voor de Ambari REST API in HDInsight is `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , waarbij `CLUSTERNAME` de naam van uw cluster is.  Cluster namen in Uri's zijn **hoofdletter gevoelig** .  De naam van het cluster in het Fully Qualified Domain Name (FQDN) van de URI ( `CLUSTERNAME.azurehdinsight.net` ) is hoofdletter gevoelig en andere exemplaren in de URI zijn hoofdletter gevoelig.
+ De basis-URI (Uniform Resource Identifier) voor de Ambari REST API in HDInsight is `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , waarbij `CLUSTERNAME` de naam van uw cluster is.  Cluster namen in Uri's zijn **hoofdletter gevoelig**.  De naam van het cluster in het Fully Qualified Domain Name (FQDN) van de URI ( `CLUSTERNAME.azurehdinsight.net` ) is hoofdletter gevoelig en andere exemplaren in de URI zijn hoofdletter gevoelig.
 
 ## <a name="authentication"></a>Verificatie
 
-Voor het maken van verbinding met Ambari op HDInsight is HTTPS vereist. Gebruik de naam van het beheerders account (de standaard **beheerder** ) en het wacht woord dat u hebt opgegeven tijdens het maken van het cluster.
+Voor het maken van verbinding met Ambari op HDInsight is HTTPS vereist. Gebruik de naam van het beheerders account (de standaard **beheerder**) en het wacht woord dat u hebt opgegeven tijdens het maken van het cluster.
 
 Voor Enterprise Security Package clusters gebruikt u in plaats van `admin` een volledig gekwalificeerde gebruikers naam zoals `username@domain.onmicrosoft.com` .
 

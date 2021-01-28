@@ -2,19 +2,16 @@
 title: Een fout in het geheugen van een Hive oplossen in azure HDInsight
 description: Fout bij onvoldoende geheugen in HDInsight oplossen. Het scenario van de klant is een query in veel grote tabellen.
 keywords: fout vanwege onvoldoende geheugen, OOM, Hive-instellingen
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 11/28/2019
-ms.openlocfilehash: d91da1aa6f7079069541ac955fce8331591a3bc6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c0810d33f3ac939b9382bf321448ed72b6d87474
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546174"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945719"
 ---
 # <a name="fix-an-apache-hive-out-of-memory-error-in-azure-hdinsight"></a>De fout Apache Hive onvoldoende geheugen in azure HDInsight oplossen
 
@@ -91,7 +88,7 @@ Onze ondersteunings-en technische teams hebben een van de problemen gevonden waa
 
 "When component. auto. Convert. samen voegen. noconditionaltask = True Controleer of noconditionaltask. size wordt gecontroleerd en of de som van de grootte van de tabellen in de kaart koppeling kleiner is dan noconditionaltask. de grootte van het plan zou een toewijzings koppeling genereren, het probleem hiervan is dat de berekening geen rekening houdt met de overhead die wordt geïntroduceerd door de verschillende implementatie van de hashtabel als resultaat als de som van de invoer grootte kleiner is dan de noconditionaltask grootte door
 
-De **component. auto. Convert. join's. noconditionaltask** in het hive-site.xml-bestand is ingesteld op **True** :
+De **component. auto. Convert. join's. noconditionaltask** in het hive-site.xml-bestand is ingesteld op **True**:
 
 ```xml
 <property>
@@ -109,10 +106,10 @@ Het is waarschijnlijk dat de toewijzing van de Java-heap onvoldoende geheugen is
 
 ![TEZ container-geheugen diagram: fout in geheugen van Hive](./media/hdinsight-hadoop-hive-out-of-memory-error-oom/hive-out-of-memory-error-oom-tez-container-memory.png)
 
-Als het blog bericht wordt voorgesteld, definieert de volgende twee geheugen instellingen het container geheugen voor de heap: **Hive. TEZ. container. size** en **Hive. TEZ. java. kiest** . Vanuit onze ervaring betekent de uitzonde ring voor onvoldoende geheugen niet dat de container grootte te klein is. Dit betekent dat de grootte van de Java-heap (Hive. TEZ. java. kiest) te klein is. Als er onvoldoende geheugen wordt weer geven, kunt u proberen om **Hive. TEZ. java. kiest** . Als dat nodig is, moet u wellicht **component. TEZ. container. size** verhogen. De instelling **Java. kiest** zich ongeveer 80% van **container. size** .
+Als het blog bericht wordt voorgesteld, definieert de volgende twee geheugen instellingen het container geheugen voor de heap: **Hive. TEZ. container. size** en **Hive. TEZ. java. kiest**. Vanuit onze ervaring betekent de uitzonde ring voor onvoldoende geheugen niet dat de container grootte te klein is. Dit betekent dat de grootte van de Java-heap (Hive. TEZ. java. kiest) te klein is. Als er onvoldoende geheugen wordt weer geven, kunt u proberen om **Hive. TEZ. java. kiest**. Als dat nodig is, moet u wellicht **component. TEZ. container. size** verhogen. De instelling **Java. kiest** zich ongeveer 80% van **container. size**.
 
 > [!NOTE]  
-> De **component setting. TEZ. java. kiest** altijd kleiner dan **Hive. TEZ. container. size** .
+> De **component setting. TEZ. java. kiest** altijd kleiner dan **Hive. TEZ. container. size**.
 
 Omdat een D12 machine 28 GB geheugen heeft, hebben we besloten een container grootte van 10 GB (10240 MB) te gebruiken en 80% toe te wijzen aan java. kiest voor:
 

@@ -1,19 +1,16 @@
 ---
 title: HBase-clusters maken in een Virtual Network-Azure
 description: Aan de slag met HBase in azure HDInsight. Meer informatie over het maken van HDInsight HBase-clusters op Azure Virtual Network.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/23/2019
-ms.openlocfilehash: 82e3374491aa119d9985ea7ef31e180c920511d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f179981aa39402681b4830d58a29f5b1259c7e2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087738"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946128"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Apache HBase-clusters maken op HDInsight in azure Virtual Network
 
@@ -58,7 +55,7 @@ In deze sectie maakt u een op Linux gebaseerd Apache HBase-cluster met het afhan
     |Eigenschap |Waarde |
     |---|---|
     |Abonnement|Selecteer een Azure-abonnement dat is gebruikt voor het maken van het HDInsight-cluster, het afhankelijke opslag account en het virtuele Azure-netwerk.|
-    Resourcegroep|Selecteer **nieuwe maken**en geef een nieuwe naam op voor de resource groep.|
+    Resourcegroep|Selecteer **nieuwe maken** en geef een nieuwe naam op voor de resource groep.|
     |Locatie|Selecteer een locatie voor de resourcegroep.|
     |Clusternaam|Voer een naam in voor het Hadoop-cluster dat moet worden gemaakt.|
     |Gebruikers naam en wacht woord voor cluster aanmelding|De standaard gebruikersnaam is **admin**. Geef een wacht woord op.|
@@ -146,11 +143,11 @@ Als u deze informatie wilt gebruiken in een Java-toepassing, kunt u de stappen i
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u een Apache HBase-cluster maakt. Voor meer informatie zie:
+In dit artikel hebt u geleerd hoe u een Apache HBase-cluster maakt. Raadpleeg voor meer informatie:
 
 * [Aan de slag met HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md)
 * [Lege Edge-knoop punten in HDInsight gebruiken](../hdinsight-apps-use-edge-node.md)
 * [Apache HBase-replicatie in HDInsight configureren](apache-hbase-replication.md)
 * [Apache Hadoop clusters maken in HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)
-* [Aan de slag met Apache HBase met Apache Hadoop in HDInsight](./apache-hbase-tutorial-get-started-linux.md)
+* [Aan de slag met Apache HBase en Apache Hadoop in HDInsight](./apache-hbase-tutorial-get-started-linux.md)
 * [Overzicht van Virtual Network](../../virtual-network/virtual-networks-overview.md)

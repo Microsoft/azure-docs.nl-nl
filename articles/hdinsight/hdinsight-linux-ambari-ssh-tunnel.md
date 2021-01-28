@@ -1,19 +1,16 @@
 ---
 title: SSH-tunneling gebruiken om toegang te krijgen tot Azure HDInsight
 description: Meer informatie over het gebruik van een SSH-tunnel om veilig webbronnen te doorzoeken die worden gehost op uw op Linux gebaseerde HDInsight-knoop punten.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
-ms.openlocfilehash: 09fef350a0ff8cc8c2481acd7b8f74cee15d1b9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5bbc770fa6ae5ac69b2aa939f9d2c70bb01f5403
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86075549"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945287"
 ---
 # <a name="use-ssh-tunneling-to-access-apache-ambari-web-ui-jobhistory-namenode-apache-oozie-and-other-uis"></a>SSH-tunneling gebruiken om toegang te krijgen tot Apache Ambari Web UI, JobHistory, NameNode, Apache Oozie en andere UIs
 
@@ -62,7 +59,7 @@ Gebruik de volgende opdracht om een SSH-tunnel te maken met behulp van de `ssh` 
 ssh -C2qTnNf -D 9876 sshuser@CLUSTERNAME-ssh.azurehdinsight.net
 ```
 
-Met deze opdracht maakt u een verbinding die verkeer naar lokale poort 9876 naar het cluster via SSH routeert. U kunt kiezen uit de volgende opties:
+Met deze opdracht maakt u een verbinding die verkeer naar lokale poort 9876 naar het cluster via SSH routeert. De opties zijn:
 
 |Optie |Beschrijving |
 |---|---|
@@ -93,11 +90,11 @@ Zodra de opdracht is voltooid, wordt verkeer dat is verzonden naar poort 9876 op
     |Poort|22|
     |Verbindingstype|SSH|
 
-1. Selecteer **Opslaan**
+1. Selecteer **Opslaan**.
 
     ![Maken van een putty-sessie HDInsight](./media/hdinsight-linux-ambari-ssh-tunnel/hdinsight-create-putty-session.png)
 
-1. Vouw in het gedeelte **categorie** aan de linkerkant van het dialoog venster **verbinding**uit, vouw **SSH**uit en selecteer vervolgens **tunnels**.
+1. Vouw in het gedeelte **categorie** aan de linkerkant van het dialoog venster **verbinding** uit, vouw **SSH** uit en selecteer vervolgens **tunnels**.
 
 1. Geef de volgende informatie op over de opties voor het **door sturen van SSH-poort beheren** :
 
@@ -145,7 +142,7 @@ Nadat het cluster is gemaakt, volgt u de volgende stappen om te controleren of u
     ![Afbeelding met het menu nemen uitgevouwen](./media/hdinsight-linux-ambari-ssh-tunnel/namenode-drop-down-menu.png)
 
     > [!NOTE]  
-    > Wanneer u __snelle koppelingen__selecteert, krijgt u mogelijk een wait-indicator. Dit probleem kan zich voordoen als u een trage Internet verbinding hebt. Wacht enkele minuten of twee om de gegevens van de server te ontvangen en probeer het opnieuw.
+    > Wanneer u __snelle koppelingen__ selecteert, krijgt u mogelijk een wait-indicator. Dit probleem kan zich voordoen als u een trage Internet verbinding hebt. Wacht enkele minuten of twee om de gegevens van de server te ontvangen en probeer het opnieuw.
     >
     > Sommige vermeldingen in het menu **snelle koppelingen** kunnen worden afgekapt aan de rechter kant van het scherm. Als dit het geval is, vouwt u het menu uit met de muis en schuift u het scherm naar rechts om de rest van het menu weer te geven.
 

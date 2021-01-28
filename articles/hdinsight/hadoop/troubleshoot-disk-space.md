@@ -1,18 +1,15 @@
 ---
 title: Schijf ruimte in azure HDInsight beheren
 description: Stappen voor probleem oplossing en mogelijke oplossingen voor het beheren van schijf ruimte problemen bij interactie met Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/17/2020
-ms.openlocfilehash: 82044796cca3e135c15e750d6706fe504622ebdb
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7164494cb08c4b419b9e4d96075ace3e52187497
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540343"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944824"
 ---
 # <a name="manage-disk-space-in-azure-hdinsight"></a>Schijf ruimte in azure HDInsight beheren
 
@@ -22,7 +19,7 @@ In dit artikel worden de stappen beschreven voor het oplossen van problemen en m
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 
-1. Navigeer naar **Hive**  >  **configurations**  >  **Geavanceerde**  >  **Geavanceerde component-log4j** . Controleer de volgende instellingen:
+1. Navigeer naar **Hive**  >  **configurations**  >  **Geavanceerde**  >  **Geavanceerde component-log4j**. Controleer de volgende instellingen:
 
     * `hive.root.logger=DEBUG,RFA`. Dit is de standaard waarde, wijzig het [logboek niveau](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/Level.html) zodat er `INFO` minder logboek vermeldingen worden afgedrukt.
 
@@ -38,7 +35,7 @@ Bekijk de volgende configuraties:
 
     1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 
-    1. Navigeer naar **Hive**  >  **configurations**  >  **Advanced**  >  **Resource Manager** . Zorg ervoor dat **logboek aggregatie inschakelen** is ingeschakeld. Als deze functie is uitgeschakeld, worden de logboeken lokaal door naam knooppunten bewaard en worden ze niet geaggregeerd in externe opslag wanneer de toepassing wordt voltooid of beëindigd.
+    1. Navigeer naar **Hive**  >  **configurations**  >  **Advanced**  >  **Resource Manager**. Zorg ervoor dat **logboek aggregatie inschakelen** is ingeschakeld. Als deze functie is uitgeschakeld, worden de logboeken lokaal door naam knooppunten bewaard en worden ze niet geaggregeerd in externe opslag wanneer de toepassing wordt voltooid of beëindigd.
 
 * Zorg ervoor dat de clustergrootte geschikt is voor de werkbelasting. De werk belasting is mogelijk onlangs gewijzigd of het cluster is verg root of verkleind. [Schaal](../hdinsight-scaling-best-practices.md) het cluster omhoog zodat dit overeenkomt met een hogere werk belasting.
 

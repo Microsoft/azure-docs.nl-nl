@@ -1,19 +1,16 @@
 ---
 title: Inleiding tot ML Services in Azure HDInsight
 description: Meer informatie over het gebruik van ML Services in HDInsight om toepassingen voor het analyseren van big data te maken.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: overview
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: b3a6fc2ff45d61d63118edc23f40f69f16db9131
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 87f4181e820b1c6ecdeb0fda85a88e80db248dd2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536144"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943925"
 ---
 # <a name="what-is-ml-services-in-azure-hdinsight"></a>Wat is ML Services in Azure HDInsight?
 
@@ -27,7 +24,7 @@ De modellen of voorspellingen die voortkomen uit de analyses, kunnen worden gedo
 
 ## <a name="get-started-with-ml-services-on-hdinsight"></a>Aan de slag met ML Services in HDInsight
 
-Als u een ML Services-cluster in HDInsight wilt maken, selecteert u het clustertype **ML Services** . Het clustertype ML Services bevat ML Server op de gegevensknooppunten en het edge-knooppunt. Het edge-knooppunt fungeert als een landingszone voor analyses op basis van ML Services. Zie [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) voor meer informatie over hoe u het cluster maakt.
+Als u een ML Services-cluster in HDInsight wilt maken, selecteert u het clustertype **ML Services**. Het clustertype ML Services bevat ML Server op de gegevensknooppunten en het edge-knooppunt. Het edge-knooppunt fungeert als een landingszone voor analyses op basis van ML Services. Zie [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) voor meer informatie over hoe u het cluster maakt.
 
 ## <a name="why-choose-ml-services-in-hdinsight"></a>Waarom ML Services kiezen in HDInsight?
 
@@ -104,7 +101,7 @@ Als u on-premises wilt scoren nadat u uw model hebt gemaakt, serialiseert u het 
 
 De meeste R-pakketten die u gebruikt, zijn vereist op het edge-knooppunt, omdat de meeste stappen van uw R-scripts hier worden uitgevoerd. Als u aanvullende R-pakketten op het edge-knooppunt wilt installeren, kunt u de methode `install.packages()` in R gebruiken.
 
-Als u alleen ScaleR-bibliotheekroutines gebruikt, hebt u doorgaans geen extra R-pakketten nodig. Mogelijk hebt u aanvullende pakketten nodig voor **rxExec** - of **RxDataStep** -uitvoering op de gegevensknooppunten.
+Als u alleen ScaleR-bibliotheekroutines gebruikt, hebt u doorgaans geen extra R-pakketten nodig. Mogelijk hebt u aanvullende pakketten nodig voor **rxExec**- of **RxDataStep**-uitvoering op de gegevensknooppunten.
 
 De extra pakketten kunnen worden geïnstalleerd met een scriptactie nadat u het cluster hebt gemaakt. Zie [ML Services in HDInsight-cluster beheren](r-server-hdinsight-manage.md) voor meer informatie.
 

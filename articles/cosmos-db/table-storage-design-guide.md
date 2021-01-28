@@ -8,12 +8,12 @@ ms.date: 06/19/2020
 author: sakash279
 ms.author: akshanka
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 709b83ad3e71a932202cebb9c9cb6187feae4ed7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 812d4976a0c6afe646c329ee483be20c33416381
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93080002"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943881"
 ---
 # <a name="azure-table-storage-table-design-guide-scalable-and-performant-tables"></a>Ontwerphandleiding voor Azure Table Storage-tabel: schaalbare en krachtige tabellen
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -53,7 +53,7 @@ In het volgende voor beeld ziet u een eenvoudig tabel ontwerp voor het opslaan v
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Don</td>
@@ -73,7 +73,7 @@ In het volgende voor beeld ziet u een eenvoudig tabel ontwerp voor het opslaan v
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Jun</td>
@@ -110,7 +110,7 @@ In het volgende voor beeld ziet u een eenvoudig tabel ontwerp voor het opslaan v
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Ken</td>
@@ -124,7 +124,7 @@ In het volgende voor beeld ziet u een eenvoudig tabel ontwerp voor het opslaan v
 </table>
 
 
-Tot nu toe lijkt dit ontwerp op een tabel in een relationele data base. De belangrijkste verschillen zijn de verplichte kolommen en de mogelijkheid om meerdere entiteits typen op te slaan in dezelfde tabel. Daarnaast heeft elk van de door de gebruiker gedefinieerde eigenschappen, zoals voor **naam** of **leeftijd** , een gegevens type, zoals geheel getal of teken reeks, net als een kolom in een relationele data base. In tegens telling tot een relationele data base betekent het schema niet-minder aard van tabel opslag dat een eigenschap niet hetzelfde gegevens type hoeft te hebben voor elke entiteit. Als u complexe gegevens typen in één eigenschap wilt opslaan, moet u een serialisatie-indeling gebruiken, zoals JSON of XML. Zie voor meer informatie wat is de [Table Storage-gegevens model](/rest/api/storageservices/Understanding-the-Table-Service-Data-Model).
+Tot nu toe lijkt dit ontwerp op een tabel in een relationele data base. De belangrijkste verschillen zijn de verplichte kolommen en de mogelijkheid om meerdere entiteits typen op te slaan in dezelfde tabel. Daarnaast heeft elk van de door de gebruiker gedefinieerde eigenschappen, zoals voor **naam** of **leeftijd**, een gegevens type, zoals geheel getal of teken reeks, net als een kolom in een relationele data base. In tegens telling tot een relationele data base betekent het schema niet-minder aard van tabel opslag dat een eigenschap niet hetzelfde gegevens type hoeft te hebben voor elke entiteit. Als u complexe gegevens typen in één eigenschap wilt opslaan, moet u een serialisatie-indeling gebruiken, zoals JSON of XML. Zie voor meer informatie wat is de [Table Storage-gegevens model](/rest/api/storageservices/Understanding-the-Table-Service-Data-Model).
 
 De keuze van `PartitionKey` en `RowKey` is fundamenteel voor een goed ontwerp van de tabel. Elke entiteit die is opgeslagen in een tabel moet een unieke combi natie van `PartitionKey` en hebben `RowKey` . Net als bij sleutels in een relationele-database `PartitionKey` tabel `RowKey` worden de waarden en geïndexeerd voor het maken van een geclusterde index die snelle zoek pogingen mogelijk maakt. In tabel opslag worden echter geen secundaire indexen gemaakt. Dit zijn dus de enige twee geïndexeerde eigenschappen (sommige van de patronen die verderop worden beschreven, laten zien hoe u deze zicht bare beperking kunt omzeilen).  
 
@@ -206,12 +206,12 @@ In de volgende voor beelden wordt ervan uitgegaan dat er in tabel opslag werk ne
 Hier volgen enkele algemene richt lijnen voor het ontwerpen van Table-opslag query's. De filter syntaxis die in de volgende voor beelden wordt gebruikt, is afkomstig uit de tabel opslag REST API. Zie [query-entiteiten](/rest/api/storageservices/Query-Entities)voor meer informatie.  
 
 * Een *Point-query* is de meest efficiënte zoek opdracht en wordt aanbevolen voor Zoek opdrachten met hoge volumes of lookups waarvoor de laagste latentie is vereist. Een dergelijke query kan de indexen gebruiken om een afzonderlijke entiteit efficiënt te vinden door zowel de als-waarden op te geven `PartitionKey` `RowKey` . Bijvoorbeeld: `$filter=(PartitionKey eq 'Sales') and (RowKey eq '2')`.  
-* Tweede beste is een *bereik query* . Het gebruikt de `PartitionKey` en filtert op een reeks `RowKey` waarden om meer dan één entiteit te retour neren. De `PartitionKey` waarde identificeert een specifieke partitie en de `RowKey` waarden identificeren een subset van de entiteiten in die partitie. Bijvoorbeeld: `$filter=PartitionKey eq 'Sales' and RowKey ge 'S' and RowKey lt 'T'`.  
-* Derde beste is een *partitie scan* . Het gebruikt de `PartitionKey` -en-filters op een andere niet-sleutel eigenschap en kan meer dan één entiteit retour neren. De `PartitionKey` waarde identificeert een specifieke partitie en de eigenschapwaarden worden geselecteerd voor een subset van de entiteiten in die partitie. Bijvoorbeeld: `$filter=PartitionKey eq 'Sales' and LastName eq 'Smith'`.  
+* Tweede beste is een *bereik query*. Het gebruikt de `PartitionKey` en filtert op een reeks `RowKey` waarden om meer dan één entiteit te retour neren. De `PartitionKey` waarde identificeert een specifieke partitie en de `RowKey` waarden identificeren een subset van de entiteiten in die partitie. Bijvoorbeeld: `$filter=PartitionKey eq 'Sales' and RowKey ge 'S' and RowKey lt 'T'`.  
+* Derde beste is een *partitie scan*. Het gebruikt de `PartitionKey` -en-filters op een andere niet-sleutel eigenschap en kan meer dan één entiteit retour neren. De `PartitionKey` waarde identificeert een specifieke partitie en de eigenschapwaarden worden geselecteerd voor een subset van de entiteiten in die partitie. Bijvoorbeeld: `$filter=PartitionKey eq 'Sales' and LastName eq 'Smith'`.  
 * Een *tabel scan* bevat niet de `PartitionKey` , en is inefficiënt omdat alle partities die de tabel vormen, worden doorzocht op overeenkomende entiteiten. Er wordt een tabel scan uitgevoerd, ongeacht of het filter gebruikmaakt van de `RowKey` . Bijvoorbeeld: `$filter=LastName eq 'Jones'`.  
 * Azure Table Storage-query's waarmee meerdere entiteiten worden geretourneerd, worden in `PartitionKey` en `RowKey` volg orde gesorteerd. Als u wilt voor komen dat de entiteiten in de client worden gebruikt, kiest u een `RowKey` die de meest voorkomende sorteer volgorde definieert. Query resultaten die door de Azure-Table-API in Azure Cosmos DB zijn geretourneerd, worden niet gesorteerd op partitie sleutel of rij-sleutel. Zie [verschillen tussen Table-API in azure Cosmos DB en Azure-tabel opslag](table-api-faq.md#table-api-vs-table-storage)voor een gedetailleerde lijst met functie verschillen.
 
-Het gebruik van een ' **or** ' om een filter op te geven op basis van `RowKey` waarden resulteert in een partitie scan en wordt niet behandeld als een bereik query. Vermijd daarom query's die gebruikmaken van filters, zoals: `$filter=PartitionKey eq 'Sales' and (RowKey eq '121' or RowKey eq '322')` .  
+Het gebruik van een '**or**' om een filter op te geven op basis van `RowKey` waarden resulteert in een partitie scan en wordt niet behandeld als een bereik query. Vermijd daarom query's die gebruikmaken van filters, zoals: `$filter=PartitionKey eq 'Sales' and (RowKey eq '121' or RowKey eq '322')` .  
 
 Zie voor voor beelden van code aan de client zijde die de Storage-client bibliotheek gebruikt voor het uitvoeren van efficiënte query's:  
 
@@ -253,7 +253,7 @@ Tabel opslag retourneert query resultaten die in oplopende volg orde zijn gesort
 > [!NOTE]
 > Query resultaten die door de Azure-Table-API in Azure Cosmos DB zijn geretourneerd, worden niet gesorteerd op partitie sleutel of rij-sleutel. Zie [verschillen tussen Table-API in azure Cosmos DB en Azure-tabel opslag](table-api-faq.md#table-api-vs-table-storage)voor een gedetailleerde lijst met functie verschillen.
 
-Sleutels in tabel opslag zijn teken reeks waarden. Om ervoor te zorgen dat numerieke waarden correct worden gesorteerd, moet u ze converteren naar een vaste lengte en ze met nullen aanvullen. Als de waarde van de werk nemer-ID die u gebruikt als het `RowKey` een geheel getal is, moet u bijvoorbeeld werk nemer-id **123** omzetten naar **00000123** . 
+Sleutels in tabel opslag zijn teken reeks waarden. Om ervoor te zorgen dat numerieke waarden correct worden gesorteerd, moet u ze converteren naar een vaste lengte en ze met nullen aanvullen. Als de waarde van de werk nemer-ID die u gebruikt als het `RowKey` een geheel getal is, moet u bijvoorbeeld werk nemer-id **123** omzetten naar **00000123**. 
 
 Veel toepassingen hebben vereisten voor het gebruik van gegevens die in verschillende orders zijn gesorteerd: bijvoorbeeld het sorteren van werk nemers op naam of het samen voegen van de datum. De volgende patronen in de sectie [tabel ontwerp patronen](#table-design-patterns) zijn een alternatief voor het sorteren van de sorteer volgorde voor uw entiteiten:  
 
@@ -321,7 +321,7 @@ In dit voor beeld ziet u ook een afdelings entiteit en de gerelateerde werknemer
 
 Een alternatieve methode is het denormaliseren van uw gegevens en alleen werk nemers entiteiten met Gedenormaliseerde gegevens van de afdeling op te slaan, zoals wordt weer gegeven in het volgende voor beeld. In dit specifieke scenario is deze gedenormaliseerde aanpak mogelijk niet het beste als u een vereiste hebt om de details van een Afdelings Manager te kunnen wijzigen. Als u dit wilt doen, moet u elke werk nemer in de afdeling bijwerken.  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE02.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE02.png" alt-text="Afbeelding van de entiteit van de werk nemer die laat zien hoe u uw gegevens kunt denormaliseren en alleen werk nemers entiteiten met gedenormaliseerde afdelings gegevens opslaat.":::
 
 Zie voor meer informatie het [denormalisatie patroon](#denormalization-pattern) verderop in deze hand leiding.  
 
@@ -398,18 +398,18 @@ Als u bijvoorbeeld kleine tabellen hebt die gegevens bevatten die niet vaak vera
 ### <a name="inheritance-relationships"></a>Overname relaties
 Als uw client toepassing gebruikmaakt van een set klassen die deel uitmaken van een overname relatie om bedrijfs entiteiten weer te geven, kunt u deze entiteiten eenvoudig persistent maken in tabel opslag. Stel dat u de volgende set klassen hebt gedefinieerd in uw client toepassing, waarbij `Person` een abstracte klasse is.
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE03.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE03.png" alt-text="Diagram van overname relaties":::
 
 U kunt exemplaren van de twee concrete klassen in tabel opslag persistent maken met behulp van één `Person` tabel. Gebruik entiteiten die er ongeveer als volgt uitzien:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE04.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE04.png" alt-text="Afbeelding van de entiteit van de klant en de entiteit van de werk nemer":::
 
 Zie voor meer informatie over het werken met meerdere entiteits typen in dezelfde tabel in client code [werken met heterogene entiteits typen](#work-with-heterogeneous-entity-types) verderop in deze hand leiding. Dit biedt voor beelden van het herkennen van het entiteits type in client code.  
 
 ## <a name="table-design-patterns"></a>Tabelontwerppatronen
 In de vorige secties hebt u geleerd hoe u het tabel ontwerp optimaliseert voor het ophalen van entiteits gegevens met behulp van query's en voor het invoegen, bijwerken en verwijderen van entiteits gegevens. In deze sectie worden enkele patronen beschreven die geschikt zijn voor gebruik met tabel opslag. Daarnaast ziet u hoe u een aantal van de problemen en berekenings taken die eerder in deze hand leiding zijn opgetreden, nagenoeg kunt aanpakken. In het volgende diagram ziet u een overzicht van de relaties tussen de verschillende patronen:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE05.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE05.png" alt-text="Diagram van tabel ontwerp patronen":::
 
 De patroon kaart markeert enkele relaties tussen patronen (blauw) en anti-patronen (oranje) die in deze hand leiding worden beschreven. Er zijn veel andere patronen die in overweging worden nemen. Een van de belangrijkste scenario's voor tabel opslag is bijvoorbeeld het gebruik van het [patroon gerealiseerde weer gave](/previous-versions/msp-n-p/dn589782(v=pandp.10)) van het scheidings patroon van de [opdracht query-verantwoordelijkheid](/previous-versions/msp-n-p/jj554200(v=pandp.10)) .  
 
@@ -419,14 +419,14 @@ Sla meerdere exemplaren van elke entiteit op met behulp van verschillende `RowKe
 #### <a name="context-and-problem"></a>Context en probleem
 Met tabel opslag worden entiteiten automatisch geïndexeerd met behulp van de- `PartitionKey` en- `RowKey` waarden. Hiermee kan een client toepassing een entiteit efficiënt ophalen met behulp van deze waarden. Als u bijvoorbeeld de volgende tabel structuur gebruikt, kan een client toepassing een punt query gebruiken om een afzonderlijke werknemers entiteit op te halen met behulp van de afdelings naam en de werk nemer-ID (de `PartitionKey` `RowKey` waarden en). Een client kan ook entiteiten ophalen die zijn gesorteerd op werk nemer-ID binnen elke afdeling.
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE06.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE06.png" alt-text="Afbeelding van werknemers entiteit waarbij een-client toepassing een punt query kan gebruiken om een afzonderlijke werknemers entiteit op te halen met behulp van de afdelings naam en de werk nemer-ID (de waarden PartitionKey en RowKey).":::
 
 Als u ook een werknemers entiteit wilt zoeken op basis van de waarde van een andere eigenschap, zoals e-mail adres, moet u een minder efficiënte partitie Scan gebruiken om een overeenkomst te vinden. Dit komt doordat tabel opslag geen secundaire indexen biedt. Daarnaast is er geen optie voor het aanvragen van een lijst met werk nemers die in een andere volg orde zijn gesorteerd dan `RowKey` volg orde.  
 
 #### <a name="solution"></a>Oplossing
 Om het ontbreken van secundaire indexen te omzeilen, kunt u meerdere exemplaren van elke entiteit opslaan, waarbij elk exemplaar een andere `RowKey` waarde gebruikt. Als u een entiteit met de volgende structuren opslaat, kunt u op efficiënte wijze werknemers entiteiten ophalen op basis van het e-mail adres of de werk nemer-ID. De voorvoegsel waarden voor `RowKey` en `empid_` , en `email_` u kunt een query uitvoeren voor één werk nemer of een bereik van werk nemers, door gebruik te maken van een reeks e-mail adressen of werk nemer-id's.  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE07.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE07.png" alt-text="Afbeelding van entiteit van werk nemer met verschillende RowKey-waarden":::
 
 De volgende twee filter criteria (één op te geven op basis van de werk nemer-ID en één op basis van een e-mail adres) opgeven punt query's:  
 
@@ -450,7 +450,7 @@ Beschouw de volgende punten als u besluit hoe u dit patroon wilt implementeren:
 * Met de opvullings numerieke waarden in de `RowKey` (bijvoorbeeld de werk nemer-ID 000223) kunnen sorteren en filteren op basis van de boven-en ondergrenzen worden gesorteerd.  
 * U hoeft niet noodzakelijkerwijs alle eigenschappen van uw entiteit te dupliceren. Als de query's die de entiteiten opzoeken door gebruik te maken van het e-mail adres in de `RowKey` nooit nodig zijn voor de leeftijd van de werk nemer, kunnen deze entiteiten de volgende structuur hebben:
 
-  :::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE08.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+  :::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE08.png" alt-text="Afbeelding van entiteit van werk nemer":::
 
 * Normaal gesp roken is het beter om dubbele gegevens op te slaan en ervoor te zorgen dat u alle gegevens kunt ophalen die u nodig hebt met één query, dan om één query te gebruiken om een entiteit te zoeken en een andere om de vereiste gegevens op te zoeken.  
 
@@ -477,7 +477,7 @@ Meerdere exemplaren van elke entiteit opslaan door gebruik te maken van verschil
 #### <a name="context-and-problem"></a>Context en probleem
 Met tabel opslag worden entiteiten automatisch geïndexeerd met behulp van de- `PartitionKey` en- `RowKey` waarden. Hiermee kan een client toepassing een entiteit efficiënt ophalen met behulp van deze waarden. Als u bijvoorbeeld de volgende tabel structuur gebruikt, kan een client toepassing een punt query gebruiken om een afzonderlijke werknemers entiteit op te halen met behulp van de afdelings naam en de werk nemer-ID (de `PartitionKey` `RowKey` waarden en). Een client kan ook entiteiten ophalen die zijn gesorteerd op werk nemer-ID binnen elke afdeling.  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE09.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit"::: 9,4
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE09.png" alt-text="Afbeelding van de entiteits structuur van werk nemers die, indien gebruikt, een-client toepassing een punt query kan gebruiken om een afzonderlijke werknemers entiteit op te halen met behulp van de afdelings naam en de werk nemer-id (de waarden PartitionKey en RowKey)."::: 9,4
 
 Als u ook een werknemers entiteit wilt kunnen vinden op basis van de waarde van een andere eigenschap, zoals e-mail adres, moet u een minder efficiënte partitie Scan gebruiken om een overeenkomst te vinden. Dit komt doordat tabel opslag geen secundaire indexen biedt. Daarnaast is er geen optie voor het aanvragen van een lijst met werk nemers die in een andere volg orde zijn gesorteerd dan `RowKey` volg orde.  
 
@@ -486,7 +486,7 @@ U verwacht een groot aantal trans acties tegen deze entiteiten en wilt het risic
 #### <a name="solution"></a>Oplossing
 Als u het ontbreken van secundaire indexen wilt omzeilen, kunt u meerdere exemplaren van elke entiteit opslaan, waarbij elk exemplaar gebruikmaakt van verschillende `PartitionKey` en `RowKey` waarden. Als u een entiteit met de volgende structuren opslaat, kunt u op efficiënte wijze werknemers entiteiten ophalen op basis van het e-mail adres of de werk nemer-ID. De voorvoegsel waarden voor `PartitionKey` en `empid_` `email_` bieden u de mogelijkheid om te bepalen welke index u wilt gebruiken voor een query.  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE10.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE10.png" alt-text="Afbeelding van entiteit van werk nemer met primaire index en werknemers entiteit met secundaire index":::
 
 De volgende twee filter criteria (één op te geven op basis van de werk nemer-ID en één op basis van een e-mail adres) opgeven punt query's:  
 
@@ -495,7 +495,7 @@ De volgende twee filter criteria (één op te geven op basis van de werk nemer-I
 
 Als u een query uitvoert voor een bereik van werk nemers, kunt u een bereik opgeven, gesorteerd op werk nemer-ID-order of een bereik dat is gesorteerd in de e-mailadres volgorde. Zoek naar entiteiten met het juiste voor voegsel in de `RowKey` .  
 
-* Als u wilt zoeken naar alle werk nemers van de afdeling verkoop met een werk nemer-ID in het bereik **000100** tot **000199** , gesorteerd in de volg orde van de werk nemer-id, gebruikt u: $filter = (PartitionKey EQ ' empid_Sales ') en (RowKey ge 000100 ') en (RowKey Le ' 000199 ')  
+* Als u wilt zoeken naar alle werk nemers van de afdeling verkoop met een werk nemer-ID in het bereik **000100** tot **000199**, gesorteerd in de volg orde van de werk nemer-id, gebruikt u: $filter = (PartitionKey EQ ' empid_Sales ') en (RowKey ge 000100 ') en (RowKey Le ' 000199 ')  
 * Als u wilt zoeken naar alle werk nemers van de afdeling verkoop met een e-mail adres dat begint met ' a ', gesorteerd in de e-mailadres volgorde, gebruikt u: $filter = (PartitionKey EQ ' email_Sales ') en (RowKey ge ' a ') en (RowKey lt ' b ')  
 
 Houd er rekening mee dat de filter syntaxis die in de voor gaande voor beelden wordt gebruikt, afkomstig is uit de tabel opslag REST API. Zie [query-entiteiten](/rest/api/storageservices/Query-Entities)voor meer informatie.  
@@ -509,7 +509,7 @@ Beschouw de volgende punten als u besluit hoe u dit patroon wilt implementeren:
 * Met de opvullings numerieke waarden in de `RowKey` (bijvoorbeeld de werk nemer-ID 000223) kunnen sorteren en filteren op basis van de boven-en ondergrenzen worden gesorteerd.  
 * U hoeft niet noodzakelijkerwijs alle eigenschappen van uw entiteit te dupliceren. Als de query's die de entiteiten opzoeken door gebruik te maken van het e-mail adres in de `RowKey` nooit nodig zijn voor de leeftijd van de werk nemer, kunnen deze entiteiten de volgende structuur hebben:
   
-  :::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE11.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+  :::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE11.png" alt-text="Afbeelding met werk nemers entiteit met secundaire index":::
 
 * Normaal gesp roken is het beter om dubbele gegevens op te slaan en ervoor te zorgen dat u alle gegevens kunt ophalen die u nodig hebt met één query, dan om één query te gebruiken om een entiteit te zoeken met behulp van de secundaire index en een andere om de vereiste gegevens in de primaire index op te zoeken.  
 
@@ -549,7 +549,7 @@ Om deze aanpak te illustreren, moet u ervan uitgaan dat u een vereiste hebt om v
 
 Maar u kunt geen EGT gebruiken om deze twee bewerkingen uit te voeren. Om het risico te voor komen dat een entiteit in beide of geen van beide tabellen wordt weer gegeven, moet de archief bewerking uiteindelijk consistent zijn. In het volgende sequentie diagram ziet u een overzicht van de stappen in deze bewerking.  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE12.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE12.png" alt-text="Oplossings diagram voor uiteindelijke consistentie":::
 
 Een client initieert de archief bewerking door een bericht te plaatsen in een Azure-wachtrij (in dit voor beeld om werk nemers te archiveren #456). Een werk rollen pollt de wachtrij voor nieuwe berichten; Wanneer er een wordt gevonden, wordt het bericht gelezen en wordt er een verborgen kopie in de wachtrij geplaatst. Met de rol werk rollen volgende wordt een kopie van de entiteit opgehaald uit de **huidige** tabel, wordt een kopie ingevoegd in de **Archief** tabel en wordt vervolgens het origineel uit de **huidige** tabel verwijderd. Ten slotte, als er geen fouten zijn opgetreden uit de vorige stappen, verwijdert de rol van de werk nemer het verborgen bericht uit de wachtrij.  
 
@@ -589,7 +589,7 @@ Behoud index entiteiten om efficiënte Zoek opdrachten in te scha kelen waarmee 
 #### <a name="context-and-problem"></a>Context en probleem
 Met tabel opslag worden entiteiten automatisch geïndexeerd met behulp van de- `PartitionKey` en- `RowKey` waarden. Hiermee kan een client toepassing een entiteit efficiënt ophalen met behulp van een Point-query. Als u bijvoorbeeld de volgende tabel structuur gebruikt, kan een client toepassing een afzonderlijke werknemers entiteit efficiënt ophalen met behulp van de afdelings naam en de werk nemer-ID ( `PartitionKey` en `RowKey` ).  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE13.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE13.png" alt-text="Afbeelding van entiteits structuur van werk nemers waar een client toepassing een afzonderlijke werknemers entiteit efficiënt kan ophalen met behulp van de afdelings naam en de werk nemer-ID (de PartitionKey en RowKey).":::
 
 Als u ook een lijst met werknemers entiteiten wilt kunnen ophalen op basis van de waarde van een andere niet-unieke eigenschap, zoals achternaam, moet u een minder efficiënte partitie Scan gebruiken. Met deze scan vindt u overeenkomsten, in plaats van een index te gebruiken om ze direct te bekijken. Dit komt doordat tabel opslag geen secundaire indexen biedt.  
 
@@ -608,7 +608,21 @@ Optie 2: index entiteiten in dezelfde partitie maken
 
 Gebruik index entiteiten waarin de volgende gegevens zijn opgeslagen:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE14.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit" en de `RowKey` waarde Jansen.  
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE14.png" alt-text="Afbeelding van entiteit van werk nemer, met teken reeks met een lijst met werk nemer-Id's met dezelfde achternaam":::
+
+De `EmployeeIDs` eigenschap bevat een lijst met werk nemer-id's voor werk nemers met de achternaam die is opgeslagen in de `RowKey` .  
+
+In de volgende stappen wordt beschreven hoe u het proces moet volgen wanneer u een nieuwe werk nemer wilt toevoegen. In dit voor beeld voegen we een werk nemer met de ID 000152 en de laatste naam Jansen toe op de verkoop afdeling:  
+
+1. Haal de index entiteit op met `PartitionKey` de waarde "Sales" en de `RowKey` waarde Jansen. Sla de ETag van deze entiteit op die u in stap 2 wilt gebruiken.  
+2. Maak een trans actie voor een entiteits groep (dat wil zeggen, een batch bewerking) die de nieuwe werknemers entiteit (de `PartitionKey` waarde "Sales" en `RowKey` de waarde "000152") invoegt en de index entiteit bijwerkt ( `PartitionKey` waarde "Sales" en `RowKey` value "Jansen"). De EGT doet dit door de nieuwe werk nemer-ID toe te voegen aan de lijst in het veld EmployeeIDs. Zie [entiteits groeps transacties](#entity-group-transactions)voor meer informatie over EGTs.  
+3. Als de EGT mislukt als gevolg van een optimistische gelijktijdigheids fout (dat wil zeggen dat iemand anders de index entiteit heeft gewijzigd), moet u beginnen met stap 1.  
+
+U kunt een soort gelijke aanpak gebruiken om een werk nemer te verwijderen als u de tweede optie gebruikt. Het wijzigen van de achternaam van een werk nemer is iets ingewik kelder, omdat u een EGT moet uitvoeren dat drie entiteiten bijwerkt: de werknemers entiteit, de index entiteit voor de oude achternaam en de index entiteit voor de nieuwe achternaam. U moet elke entiteit ophalen voordat u wijzigingen aanbrengt, om de ETag-waarden op te halen die u vervolgens kunt gebruiken om de updates uit te voeren met behulp van optimistische gelijktijdigheid.  
+
+De volgende stappen geven een overzicht van het proces dat u moet volgen wanneer u alle werk nemers met een bepaalde achternaam in een afdeling moet opzoeken. In dit voor beeld worden alle werk nemers met de naam Jansen op de verkoop afdeling opzoeken:  
+
+1. Haal de index entiteit op met `PartitionKey` de waarde "Sales" en de `RowKey` waarde Jansen.  
 2. De lijst met werk nemer-Id's in het veld parseren `EmployeeIDs` .  
 3. Als u meer informatie nodig hebt over elk van deze werk nemers (zoals hun e-mail adressen), haalt u elk van de werknemers entiteiten op met behulp van `PartitionKey` de waarde verkoop en `RowKey` waarden uit de lijst met werk nemers die u in stap 2 hebt verkregen.  
 
@@ -616,7 +630,7 @@ Optie 3: index entiteiten in een afzonderlijke partitie of tabel maken
 
 Gebruik voor deze optie index entiteiten die de volgende gegevens bevatten:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE15.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE15.png" alt-text="Scherm opname van de entiteit van de werk nemer die een lijst met werk nemer-Id's bevat voor werk nemers met de achternaam die is opgeslagen in de RowKey en PartitionKey.":::
 
 De `EmployeeIDs` eigenschap bevat een lijst met werk nemer-id's voor werk nemers met de achternaam die is opgeslagen in de `RowKey` en `PartitionKey` .  
 
@@ -648,12 +662,12 @@ Gerelateerde gegevens samen voegen in één entiteit zodat u alle gegevens kunt 
 #### <a name="context-and-problem"></a>Context en probleem
 In een relationele data base normaliseren we doorgaans gegevens om duplicatie te verwijderen die optreedt wanneer query's gegevens uit meerdere tabellen ophalen. Als u uw gegevens in azure-tabellen normaliseert, moet u meerdere round trips van de client naar de server maken om de gerelateerde gegevens op te halen. Met de volgende tabel structuur hebt u bijvoorbeeld twee retour retouren nodig om de details van een afdeling op te halen. Met één reis wordt de afdelings entiteit opgehaald die de ID van de Manager bevat, en de tweede reis haalt de details van de Manager op in een werknemers entiteit.  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE16.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE16.png" alt-text="Afbeelding van afdelings entiteit en werknemers entiteit":::
 
 #### <a name="solution"></a>Oplossing
 In plaats van de gegevens in twee afzonderlijke entiteiten op te slaan, moet u de gegevens denormaliseren en een kopie van de details van de manager in de entiteit afdeling bewaren. Bijvoorbeeld:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE17.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE17.png" alt-text="Afbeelding van de entiteit gedenormaliseerde en gecombineerde afdeling":::
 
 Met afdelings entiteiten die met deze eigenschappen zijn opgeslagen, kunt u nu alle informatie die u nodig hebt over een afdeling ophalen met behulp van een Point-query.  
 
@@ -681,18 +695,18 @@ In een relationele data base is het natuurlijk om samen voegingen in query's te 
 
 Stel dat u entiteiten van werk nemers opslaat in Table Storage met behulp van de volgende structuur:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE18.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE18.png" alt-text="Afbeelding van de entiteits structuur van werk nemers die u moet gebruiken om entiteiten van werk nemers op te slaan in tabel opslag.":::
 
 U moet ook historische gegevens over beoordelingen en prestaties opslaan voor elk jaar dat de werk nemer heeft gewerkt aan uw organisatie, en u moet per jaar toegang hebben tot deze informatie. U kunt ook een andere tabel maken waarin entiteiten worden opgeslagen met de volgende structuur:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE19.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE19.png" alt-text="Afbeelding van entiteit beoordeling van werk nemer":::
 
 Met deze methode kunt u ervoor kiezen om bepaalde gegevens (zoals de voor naam en achternaam) in de nieuwe entiteit te dupliceren, zodat u uw gegevens kunt ophalen met één aanvraag. U kunt echter geen sterke consistentie behouden omdat u geen EGT kunt gebruiken om de twee entiteiten atomisch bij te werken.  
 
 #### <a name="solution"></a>Oplossing
 Een nieuw entiteits type opslaan in de oorspronkelijke tabel door gebruik te maken van entiteiten met de volgende structuur:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE20.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE20.png" alt-text="Afbeelding van werknemers entiteit met samengestelde sleutel":::
 
 U ziet hoe de `RowKey` is nu een samengestelde sleutel, bestaande uit de werk nemer-id en het jaar van de beoordelings gegevens. Zo kunt u de prestaties van de werk nemer ophalen en gegevens controleren met één aanvraag voor één entiteit.  
 
@@ -703,7 +717,7 @@ $filter = (PartitionKey EQ ' Sales ') en (RowKey ge ' empid_000123 ') en (RowKey
 #### <a name="issues-and-considerations"></a>Problemen en overwegingen
 Beschouw de volgende punten als u besluit hoe u dit patroon wilt implementeren:  
 
-* U moet een geschikt scheidings teken gebruiken waarmee u de waarde eenvoudig kunt parseren `RowKey` : bijvoorbeeld **000123_2012** .  
+* U moet een geschikt scheidings teken gebruiken waarmee u de waarde eenvoudig kunt parseren `RowKey` : bijvoorbeeld **000123_2012**.  
 * U slaat deze entiteit ook op in dezelfde partitie als andere entiteiten die gerelateerde gegevens bevatten voor dezelfde werk nemer. Dit betekent dat u EGTs kunt gebruiken om sterke consistentie te hand haven.
 * U kunt overwegen hoe vaak u de gegevens wilt opvragen om te bepalen of dit patroon geschikt is. Als u bijvoorbeeld in een regel matig toegang hebt tot de gegevens van de controle en de belangrijkste gegevens van werk nemers, moet u deze ook als afzonderlijke entiteiten houden.  
 
@@ -764,7 +778,7 @@ Veel toepassingen verwijderen oude gegevens die niet meer beschikbaar zijn voor 
 
 Een mogelijk ontwerp is het gebruik van de datum en tijd van de aanmeldings aanvraag in `RowKey` :  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE21.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE21.png" alt-text="Afbeelding van de entiteit aanmeldings poging":::
 
 Deze aanpak voor komt het partitioneren van HOTS pots, omdat de toepassing aanmeldings entiteiten kan invoegen en verwijderen voor elke gebruiker in een afzonderlijke partitie. Deze benadering kan echter kostbaar en tijdrovend zijn als u een groot aantal entiteiten hebt. Eerst moet u een tabel scan uitvoeren om te bepalen welke entiteiten moeten worden verwijderd en vervolgens moet u elke oude entiteit verwijderen. U kunt het aantal Retouren naar de server verminderen dat nodig is voor het verwijderen van de oude entiteiten door meerdere verwijderings aanvragen in batch op te nemen in EGTs.  
 
@@ -794,14 +808,14 @@ Sla volledige gegevens reeksen op in één entiteit om het aantal aanvragen dat 
 #### <a name="context-and-problem"></a>Context en probleem
 Een veelvoorkomend scenario is voor een toepassing om een reeks gegevens op te slaan die normaal gesp roken allemaal tegelijk moeten worden opgehaald. Uw toepassing kan bijvoorbeeld registreren hoeveel berichten elke werk nemer elk uur verzendt, en vervolgens deze gegevens gebruiken om te tekenen hoe vaak elke gebruiker de voor gaande 24 uur heeft verzonden. Het kan zijn dat u voor elke werk nemer 24 entiteiten opslaat:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE22.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE22.png" alt-text="Afbeelding van entiteit voor bericht statistieken":::
 
 Met dit ontwerp kunt u de entiteit die u wilt bijwerken voor elke werk nemer eenvoudig vinden en bijwerken wanneer de toepassing de waarde voor het aantal berichten moet bijwerken. Als u echter de informatie wilt ophalen om een grafiek van de activiteit voor de voor gaande 24 uur te tekenen, moet u 24 entiteiten ophalen.  
 
 #### <a name="solution"></a>Oplossing
 Gebruik het volgende ontwerp, met een afzonderlijke eigenschap voor het opslaan van het aantal berichten voor elk uur:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE23.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE23.png" alt-text="Afbeelding van de entiteit bericht statistieken met gescheiden eigenschappen":::
 
 Met dit ontwerp kunt u een samenvoeg bewerking gebruiken om het aantal berichten voor een werk nemer voor een bepaald uur bij te werken. U kunt nu alle informatie ophalen die u nodig hebt om de grafiek uit te zetten met behulp van een aanvraag voor één entiteit.  
 
@@ -830,7 +844,7 @@ Een afzonderlijke entiteit kan niet meer dan 252 eigenschappen hebben (met uitzo
 #### <a name="solution"></a>Oplossing
 Met behulp van tabel opslag kunt u meerdere entiteiten opslaan om één groot zakelijk object met meer dan 252 eigenschappen aan te duiden. Als u bijvoorbeeld een telling wilt opslaan van het aantal IM-berichten dat elke werk nemer heeft verzonden gedurende de afgelopen 365 dagen, kunt u het volgende ontwerp gebruiken dat twee entiteiten met verschillende schema's gebruikt:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE24.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE24.png" alt-text="Afbeelding van de entiteit bericht statistieken met Rowkey 01 en de entiteit bericht statistieken met Rowkey 02":::
 
 Als u een wijziging wilt aanbrengen waarvoor beide entiteiten moeten worden bijgewerkt zodat ze met elkaar gesynchroniseerd blijven, kunt u een EGT gebruiken. U kunt ook één samenvoeg bewerking gebruiken om het aantal berichten voor een specifieke dag bij te werken. Als u alle gegevens voor een afzonderlijke werk nemer wilt ophalen, moet u beide entiteiten ophalen. U kunt dit doen met twee efficiënte aanvragen waarbij zowel een `PartitionKey` als een- `RowKey` waarde wordt gebruikt.  
 
@@ -857,7 +871,7 @@ Een afzonderlijke entiteit kan niet meer dan 1 MB aan gegevens in totaal opslaan
 #### <a name="solution"></a>Oplossing
 Als uw entiteit groter is dan 1 MB, omdat een of meer eigenschappen een grote hoeveelheid gegevens bevatten, kunt u gegevens opslaan in Blob Storage en het adres van de BLOB vervolgens opslaan in een eigenschap in de entiteit. U kunt bijvoorbeeld de foto van een werk nemer opslaan in Blob Storage en een koppeling naar de foto opslaan in de `Photo` eigenschap van uw werknemers entiteit:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE25.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE25.png" alt-text="Afbeelding van entiteit van werk nemer met teken reeks voor foto die verwijst naar Blob Storage":::
 
 #### <a name="issues-and-considerations"></a>Problemen en overwegingen
 Beschouw de volgende punten als u besluit hoe u dit patroon wilt implementeren:  
@@ -882,12 +896,12 @@ Wanneer u een groot aantal toevoegingen hebt, verg root u de schaal baarheid doo
 #### <a name="context-and-problem"></a>Context en probleem
 In afwachting van de in behandeling zijnde of toegevoegde entiteiten aan uw opgeslagen entiteiten resulteert doorgaans in de toepassing door nieuwe entiteiten toe te voegen aan de eerste of laatste partitie van een reeks partities. In dit geval worden alle ingevoegde gegevens op een bepaald moment in dezelfde partitie geplaatst, waardoor er een hotspot wordt gemaakt. Hiermee wordt voor komen dat tabel opslag wordt toegevoegd aan taak verdeling voor meerdere knoop punten, waardoor uw toepassing mogelijk de schaalbaarheids doelen voor de partitie bereikt. Denk bijvoorbeeld aan het geval van een toepassing die netwerk-en bron toegang registreert door werk nemers. Een entiteits structuur, zoals de volgende, kan resulteren in de partitie van het huidige uur als een hotspot, als het volume van de trans acties het schaalbaarheids doel voor een afzonderlijke partitie bereikt:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE26.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE26.png" alt-text="Afbeelding van een entiteits structuur die kan resulteren in de partitie van het huidige uur en een hotspot wordt, als het volume van de trans acties het schaalbaarheids doel voor een afzonderlijke partitie bereikt.":::
 
 #### <a name="solution"></a>Oplossing
 De volgende alternatieve entiteits structuur voor komt een hotspot op een bepaalde partitie, wanneer de toepassing gebeurtenissen registreert:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE27.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE27.png" alt-text="Afbeelding van de entiteit Employee met RowKey die het jaar, de maand, de dag, het uur en de gebeurtenis-ID heeft samengesteld":::
 
 In dit voor beeld ziet u hoe zowel de `PartitionKey` als `RowKey` samengestelde sleutels zijn. De `PartitionKey` afdeling en werk nemer-id worden gebruikt voor het verdelen van de logboek registratie over meerdere partities.  
 
@@ -913,13 +927,13 @@ Normaal gesp roken moet u Blob Storage gebruiken in plaats van tabel opslag om l
 #### <a name="context-and-problem"></a>Context en probleem
 Een veelvoorkomende use-case voor logboek gegevens is het ophalen van een selectie logboek vermeldingen voor een specifiek datum-en tijds bereik. U wilt bijvoorbeeld alle fout-en kritieke berichten zoeken die uw toepassing heeft geregistreerd tussen 15:04 en 15:06 op een specifieke datum. U wilt de datum en tijd van het logboek bericht niet gebruiken om te bepalen met welke partitie u logboek entiteiten opslaat. Dit resulteert in een hot partitie, omdat alle logboek entiteiten op een bepaald moment dezelfde `PartitionKey` waarde hebben (Zie het [Anti-patroon laten voorafgaan door/Append](#prepend-append-anti-pattern)). Het volgende entiteits schema voor een logboek bericht resulteert bijvoorbeeld in een warme partitie, omdat de toepassing alle logboek berichten voor de huidige datum en tijd naar de partitie schrijft:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE28.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE28.png" alt-text="Afbeelding waarin een entiteits schema voor een logboek bericht wordt weer gegeven, resulteert in een hot partitie.":::
 
 In dit voor beeld `RowKey` bevat de datum en tijd van het logboek bericht om ervoor te zorgen dat logboek berichten worden gesorteerd in de volg orde van datum/tijd. Het `RowKey` bevat ook een bericht-id, in het geval dat meerdere logboek berichten dezelfde datum en tijd delen.  
 
 Een andere benadering is het gebruik van een `PartitionKey` die ervoor zorgt dat de toepassing berichten schrijft over diverse partities. Als de bron van het logboek bericht bijvoorbeeld een manier biedt om berichten over meerdere partities te verdelen, kunt u het volgende entiteits schema gebruiken:  
 
-:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE29.png" alt-text="Afbeelding van een afdelings entiteit en een werknemers entiteit":::
+:::image type="content" source="./media/storage-table-design-guide/storage-table-design-IMAGE29.png" alt-text="Afbeelding van entiteit van het logboek bericht":::
 
 Het probleem met dit schema is echter dat om alle logboek berichten op te halen voor een specifieke tijds Panne, u moet elke partitie in de tabel doorzoeken.
 
@@ -1095,7 +1109,7 @@ Uitzonde ringen die worden gegenereerd wanneer de Storage-client bibliotheek een
 U moet ook overwegen hoe uw ontwerp van invloed is op de manier waarop uw client toepassing gelijktijdig valuta's en update bewerkingen verwerkt.  
 
 #### <a name="managing-concurrency"></a>Gelijktijdigheid beheren
-Standaard worden door tabel opslag optimistische gelijktijdigheid controles geïmplementeerd op het niveau van afzonderlijke entiteiten voor INSERT-, merge-en delete-bewerkingen, hoewel het mogelijk is dat een client tabel opslag geforceerd afdwingt om deze controles over te slaan. Zie voor meer informatie [gelijktijdigheid beheren in Microsoft Azure Storage](../storage/common/storage-concurrency.md).  
+Standaard worden door tabel opslag optimistische gelijktijdigheid controles geïmplementeerd op het niveau van afzonderlijke entiteiten voor INSERT-, merge-en delete-bewerkingen, hoewel het mogelijk is dat een client tabel opslag geforceerd afdwingt om deze controles over te slaan. Zie voor meer informatie [gelijktijdigheid beheren in Microsoft Azure Storage](../storage/blobs/concurrency-manage.md).  
 
 #### <a name="merge-or-replace"></a>Samen voegen of vervangen
 De `Replace` methode van de `TableOperation` klasse vervangt altijd de volledige entiteit in tabel opslag. Als u in de aanvraag geen eigenschap opneemt wanneer die eigenschap in de opgeslagen entiteit bestaat, wordt die eigenschap door de aanvraag uit de opgeslagen entiteit verwijderd. Tenzij u een eigenschap expliciet van een opgeslagen entiteit wilt verwijderen, moet u elke eigenschap in de aanvraag toevoegen.  
@@ -1127,7 +1141,7 @@ Table Storage is een *schema-less Table-* archief. Dit betekent dat een enkele t
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -1147,7 +1161,7 @@ Table Storage is een *schema-less Table-* archief. Dit betekent dat een enkele t
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -1184,7 +1198,7 @@ Table Storage is een *schema-less Table-* archief. Dit betekent dat een enkele t
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -1220,7 +1234,7 @@ Elke entiteit moet nog steeds `PartitionKey` , `RowKey` , en `Timestamp` waarden
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -1242,7 +1256,7 @@ Elke entiteit moet nog steeds `PartitionKey` , `RowKey` , en `Timestamp` waarden
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -1283,7 +1297,7 @@ Elke entiteit moet nog steeds `PartitionKey` , `RowKey` , en `Timestamp` waarden
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>E-mail</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Werknemer</td>

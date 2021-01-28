@@ -1,19 +1,16 @@
 ---
 title: IP-adressen van Azure HDInsight-beheer
 description: Meer informatie over welke IP-adressen u binnenkomend verkeer moet toestaan, om netwerk beveiligings groepen en door de gebruiker gedefinieerde routes correct te configureren voor virtuele netwerken met Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: 9fa38e045bbe29e5d45587adf0d277c1414fee4c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 89d749a04c22967198be217350ff38751336fe67
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549035"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944108"
 ---
 # <a name="hdinsight-management-ip-addresses"></a>IP-adressen beheren met HDInsight
 
@@ -59,8 +56,8 @@ Verkeer toestaan van de IP-adressen die worden vermeld voor de Azure HDInsight-s
 | Azië | Azië - oost | 23.102.235.122</br>52.175.38.134 | \*: 443 | Inkomend |
 | &nbsp; | Azië - zuidoost | 13.76.245.160</br>13.76.136.249 | \*: 443 | Inkomend |
 | Australië | Australië - oost | 104.210.84.115</br>13.75.152.195 | \*: 443 | Inkomend |
-| &nbsp; | Australia Southeast | 13.77.2.56</br>13.77.2.94 | \*: 443 | Inkomend |
-| Brazilië | Brazil South | 191.235.84.104</br>191.235.87.113 | \*: 443 | Inkomend |
+| &nbsp; | Australië - zuidoost | 13.77.2.56</br>13.77.2.94 | \*: 443 | Inkomend |
+| Brazilië | Brazilië - zuid | 191.235.84.104</br>191.235.87.113 | \*: 443 | Inkomend |
 | Canada | Canada - oost | 52.229.127.96</br>52.229.123.172 | \*: 443 | Inkomend |
 | &nbsp; | Canada - midden | 52.228.37.66</br>52.228.45.222 |\*: 443 | Inkomend |
 | China | China - noord | 42.159.96.170</br>139.217.2.219</br></br>42.159.198.178</br>42.159.234.157 | \*: 443 | Inkomend |
@@ -80,12 +77,12 @@ Verkeer toestaan van de IP-adressen die worden vermeld voor de Azure HDInsight-s
 | &nbsp; | Korea - zuid | 52.231.203.16</br>52.231.205.214 | \*: 443 | Inkomend
 | Verenigd Koninkrijk | Verenigd Koninkrijk West | 51.141.13.110</br>51.141.7.20 | \*: 443 | Inkomend |
 | &nbsp; | Verenigd Koninkrijk Zuid | 51.140.47.39</br>51.140.52.16 | \*: 443 | Inkomend |
-| Verenigde Staten | Central US | 13.89.171.122</br>13.89.171.124 | \*: 443 | Inkomend |
+| Verenigde Staten | VS - centraal | 13.89.171.122</br>13.89.171.124 | \*: 443 | Inkomend |
 | &nbsp; | VS - oost | 13.82.225.233</br>40.71.175.99 | \*: 443 | Inkomend |
 | &nbsp; | VS - noord-centraal | 157.56.8.38</br>157.55.213.99 | \*: 443 | Inkomend |
 | &nbsp; | VS - west-centraal | 52.161.23.15</br>52.161.10.167 | \*: 443 | Inkomend |
 | &nbsp; | VS - west | 13.64.254.98</br>23.101.196.19 | \*: 443 | Inkomend |
-| &nbsp; | West US 2 | 52.175.211.210</br>52.175.222.222 | \*: 443 | Inkomend |
+| &nbsp; | VS - west 2 | 52.175.211.210</br>52.175.222.222 | \*: 443 | Inkomend |
 | &nbsp; | VAE - noord | 65.52.252.96</br>65.52.252.97 | \*: 443 | Inkomend |
 | &nbsp; | UAE - centraal | 20.37.76.96</br>20.37.76.99 | \*: 443 | Inkomend |
 

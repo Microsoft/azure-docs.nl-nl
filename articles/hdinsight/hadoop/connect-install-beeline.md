@@ -1,19 +1,16 @@
 ---
 title: Verbinding maken met Apache Beeline-Azure HDInsight of deze installeren
 description: Meer informatie over hoe u verbinding maakt met de Apache Beeline-client om Hive-query's uit te voeren met Hadoop op HDInsight. Beeline is een hulp programma voor het werken met HiveServer2 over JDBC.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: contperf-fy21q1
 ms.date: 05/27/2020
-ms.openlocfilehash: a0a693b2dc2c236cbac79ec4789b2a480ce65427
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: ab5dedf6718dad4f16fde59d905e2e59be5c495f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028934"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944459"
 ---
 # <a name="connect-to-apache-beeline-on-hdinsight-or-install-it-locally"></a>Verbinding maken met Apache Beeline op HDInsight of lokaal installeren
 

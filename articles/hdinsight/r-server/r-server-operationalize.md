@@ -1,19 +1,16 @@
 ---
 title: Operationeel maken ML Services op HDInsight-Azure
 description: Meer informatie over hoe u uw gegevens model kunt operationeel makenen om voor spellingen te doen met ML-Services in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/27/2018
-ms.openlocfilehash: 20159cf911670eb70fd5757991c07b63b3f1776b
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c90642e58c026c78ce854e7fe74dd36963d48b67
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536263"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944011"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Operationeel maken ML-cluster in azure HDInsight
 
@@ -21,7 +18,7 @@ Nadat u het server gebruik van MILLILITERs in HDInsight hebt gebruikt om uw gege
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een ML Services-cluster beheren in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **ML Services** voor **Clustertype** .
+* Een ML Services-cluster beheren in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **ML Services** voor **Clustertype**.
 
 * Een SSH-client (Secure Shell): er wordt een SSH-client gebruikt om extern verbinding te maken met het HDInsight-cluster en om opdrachten rechtstreeks uit te voeren op het cluster. Zie [SSH gebruiken met HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md) voor meer informatie.
 
@@ -54,7 +51,7 @@ Nadat u het server gebruik van MILLILITERs in HDInsight hebt gebruikt om uw gege
         sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
         ```
 
-1. U krijgt de keuze uit de opties waaruit u kunt kiezen. Kies de eerste optie, zoals wordt weer gegeven in de volgende scherm afbeelding, om **ml server voor uitoefening te configureren** .
+1. U krijgt de keuze uit de opties waaruit u kunt kiezen. Kies de eerste optie, zoals wordt weer gegeven in de volgende scherm afbeelding, om **ml server voor uitoefening te configureren**.
 
     ![R Server Administration Utility selecteren](./media/r-server-operationalize/admin-util-one-box-1.png)
 
@@ -74,7 +71,7 @@ Nadat u het server gebruik van MILLILITERs in HDInsight hebt gebruikt om uw gege
 
     ![Diagnostische R Server Administration-hulpprogram ma's](./media/r-server-operationalize/hdinsight-diagnostic1.png)
 
-    b. Selecteer in het menu diagnostische tests **een** . Wanneer u hierom wordt gevraagd, voert u het wacht woord in dat u hebt opgegeven voor de gebruiker van de lokale beheerder.
+    b. Selecteer in het menu diagnostische tests **een**. Wanneer u hierom wordt gevraagd, voert u het wacht woord in dat u hebt opgegeven voor de gebruiker van de lokale beheerder.
 
     ![Hulp programma R Server Administration-hulpprogram ma's](./media/r-server-operationalize/hdinsight-diagnostic2.png)
 
@@ -155,17 +152,17 @@ Volg deze stappen voor het buiten gebruik stellen van worker-knoop punten:
 
 1. Werk knooppunten selecteren (om uit bedrijf te nemen).
 
-1. Klik op **acties**  >  **geselecteerde hosts** hosts  >  **host** de  >  **onderhouds modus inschakelen** . In de volgende afbeelding zijn bijvoorbeeld wk3 en wk4 geselecteerd om uit bedrijf te worden genomen.  
+1. Klik op **acties**  >  **geselecteerde hosts** hosts  >  **host** de  >  **onderhouds modus inschakelen**. In de volgende afbeelding zijn bijvoorbeeld wk3 en wk4 geselecteerd om uit bedrijf te worden genomen.  
 
    ![Apache Ambari-onderhouds modus inschakelen](./media/r-server-operationalize/get-started-operationalization.png)  
 
-* Selecteer **acties**  >  **geselecteerde hosts**  >  **DataNodes** > Klik op uit **bedrijf nemen** .
-* Selecteer **acties**  >  **geselecteerde hosts**  >  **NodeManagers** > Klik op uit **bedrijf nemen** .
-* Selecteer **acties**  >  **geselecteerde hosts**  >  **DataNodes** > Klik op **Stop** .
-* Selecteer **acties**  >  **geselecteerde hosts**  >  **NodeManagers** > Klik op **Stop** .
-* Selecteer **acties**  >  **geselecteerde hosts**  >  **host** > Klik op **alle onderdelen stoppen** .
+* Selecteer **acties**  >  **geselecteerde hosts**  >  **DataNodes** > Klik op uit **bedrijf nemen**.
+* Selecteer **acties**  >  **geselecteerde hosts**  >  **NodeManagers** > Klik op uit **bedrijf nemen**.
+* Selecteer **acties**  >  **geselecteerde hosts**  >  **DataNodes** > Klik op **Stop**.
+* Selecteer **acties**  >  **geselecteerde hosts**  >  **NodeManagers** > Klik op **Stop**.
+* Selecteer **acties**  >  **geselecteerde hosts**  >  **host** > Klik op **alle onderdelen stoppen**.
 * Hef de selectie van de worker-knooppunten op en selecteer de hoofdknooppunten.
-* Selecteer **acties**  >  **geselecteerde hosts** > hosts **Hosts**  >  **alle onderdelen opnieuw starten** .
+* Selecteer **acties**  >  **geselecteerde hosts** > hosts  >  **alle onderdelen opnieuw starten**.
 
 ### <a name="step-2-configure-compute-nodes-on-each-decommissioned-worker-nodes"></a>Stap 2: reken knooppunten configureren op elk uit bedrijf genomen worker-knoop punt (en)
 

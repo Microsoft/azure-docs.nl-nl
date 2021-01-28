@@ -1,19 +1,16 @@
 ---
 title: Fout berichten voor Hadoop Stack-tracering-Azure HDInsight
 description: Index van Hadoop stack trace-fout berichten in azure HDInsight. Zoek de fout in de lijst om informatie over het oplossen van problemen weer te geven.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 01/03/2020
-ms.openlocfilehash: 3987a2d208bb96120d443300068ea739acbb4131
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 980c98b6b222ca4a0bb5d2ba2ae53f38de12c931
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75680244"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945442"
 ---
 # <a name="index-of-apache-hadoop-in-hdinsight-troubleshooting-articles"></a>Index van Apache Hadoop in artikelen over het oplossen van problemen met HDInsight
 

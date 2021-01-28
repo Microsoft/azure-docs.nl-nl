@@ -1,19 +1,16 @@
 ---
 title: 'Quickstart: Een ML Services-cluster maken met behulp van sjabloon - Azure HDInsight'
 description: Deze quickstart laat zien hoe u met een Resource Manager-sjabloon een ML Services-cluster maakt in Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: ad1b08110e91457f1c9031f864ba67086872f22e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: c15e06d959510d74078a738db2606778d313ad65
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91855561"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943984"
 ---
 # <a name="quickstart-create-ml-services-cluster-in-azure-hdinsight-using-arm-template"></a>Quickstart: Een ML Services-cluster maken in Azure HDInsight met een ARM-sjabloon
 

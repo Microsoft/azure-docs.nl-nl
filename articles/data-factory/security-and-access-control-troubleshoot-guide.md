@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 01/05/2021
 ms.author: lle
 ms.reviewer: craigg
-ms.openlocfilehash: 3b7b405e34b6ca82da593507ad6103d360c5df1e
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 70e4d0c1a9f26f83924c1343e4e8e51c5595b324
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968582"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944505"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Problemen met Azure Data Factory beveiliging en toegangs beheer oplossen
 
@@ -49,13 +49,13 @@ Het probleem wordt meestal veroorzaakt door een van de volgende factoren:
 
 * Als u een **zelf-hostende IR** gebruikt, controleert u uw proxy-, firewall-en netwerk instellingen, omdat u verbinding maakt met dezelfde gegevens opslag als u een Azure IR gebruikt. Zie voor het oplossen van dit scenario:
 
-   * [Zelf-hostende IR-poorten en firewalls](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#ports-and-firewalls)
-   * [Azure Data Lake Storage-connector](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store)
+   * [Zelf-hostende IR-poorten en firewalls](./create-self-hosted-integration-runtime.md#ports-and-firewalls)
+   * [Azure Data Lake Storage-connector](./connector-azure-data-lake-store.md)
   
 * Als u een **Azure IR** gebruikt, probeert u de firewall instelling van de gegevens opslag uit te scha kelen. Deze aanpak kan de problemen in de volgende twee situaties oplossen:
   
-   * [Azure IR IP-adressen](https://docs.microsoft.com/azure/data-factory/azure-integration-runtime-ip-addresses) niet in de acceptatie lijst staan.
-   * De functie *vertrouwde micro soft-Services toegang geven tot dit opslag account* is uitgeschakeld voor [Azure Blob Storage](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#supported-capabilities) en [Azure data Lake Storage gen 2](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#supported-capabilities).
+   * [Azure IR IP-adressen](./azure-integration-runtime-ip-addresses.md) niet in de acceptatie lijst staan.
+   * De functie *vertrouwde micro soft-Services toegang geven tot dit opslag account* is uitgeschakeld voor [Azure Blob Storage](./connector-azure-blob-storage.md#supported-capabilities) en [Azure data Lake Storage gen 2](./connector-azure-data-lake-storage.md#supported-capabilities).
    * De instelling *toegang tot Azure-Services toestaan* is niet ingeschakeld voor Azure data Lake Storage gen1.
 
 Als geen van de voor gaande methoden werkt, neemt u contact op met micro soft voor hulp.
@@ -88,7 +88,7 @@ Ga als volgt te werk om te controleren of de Data Factory Fully Qualified Domain
 #### <a name="resolution"></a>Oplossing
 
 Ga als volgt te werk om het probleem op te lossen:
-- Raadpleeg het artikel [over persoonlijke Azure-koppelingen voor Azure Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-private-link#dns-changes-for-private-endpoints) . De instructie is voor het configureren van de privé-DNS-zone of-server voor het omzetten van de Data Factory FQDN naar een privé-IP-adres.
+- Raadpleeg het artikel [over persoonlijke Azure-koppelingen voor Azure Data Factory](./data-factory-private-link.md#dns-changes-for-private-endpoints) . De instructie is voor het configureren van de privé-DNS-zone of-server voor het omzetten van de Data Factory FQDN naar een privé-IP-adres.
 
 - We raden u aan om een aangepaste DNS te gebruiken als de lange termijn oplossing. Als u de privé-DNS-zone of-server echter niet wilt configureren, probeert u de volgende tijdelijke oplossing:
 
@@ -120,7 +120,7 @@ Het probleem kan worden veroorzaakt door de virtuele machine waarin u de zelf-ho
  
 Ga als volgt te werk om het probleem op te lossen:
 
-1. Ga naar de pagina [factoren-bijwerken](https://docs.microsoft.com/rest/api/datafactory/Factories/Update) .
+1. Ga naar de pagina [factoren-bijwerken](/rest/api/datafactory/Factories/Update) .
 
 1. Selecteer in de rechter bovenhoek de knop **try it** .
 1. Vul de vereiste gegevens onder **para meters** in. 
@@ -146,7 +146,7 @@ Ga als volgt te werk om het probleem op te lossen:
 
 **Oplossing 2**
 
-Ga naar de [persoonlijke Azure-koppeling voor Azure Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-private-link)om het probleem op te lossen.
+Ga naar de [persoonlijke Azure-koppeling voor Azure Data Factory](./data-factory-private-link.md)om het probleem op te lossen.
 
 Probeer open bare netwerk toegang in te scha kelen op de gebruikers interface, zoals wordt weer gegeven in de volgende scherm afbeelding:
 

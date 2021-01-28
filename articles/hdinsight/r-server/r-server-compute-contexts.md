@@ -1,19 +1,16 @@
 ---
 title: Opties voor Compute-context voor MILLILITERs Services in HDInsight-Azure
 description: Meer informatie over de verschillende berekenings context opties die beschikbaar zijn voor gebruikers met ML Services in HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
-ms.openlocfilehash: 21781015aa91c9c953d716b9b3399851f25be9b5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 71ce0d87faa33bd7d533242edfcf3b131c8f7e47
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536331"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943950"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>Opties voor compute-context voor ML Services in HDInsight
 
@@ -29,8 +26,8 @@ Het edge-knooppunt van een cluster biedt een handige plaats om verbinding te mak
 
 In het algemeen wordt een R-script dat wordt uitgevoerd in het cluster met MILLILITER Services op het Edge-knoop punt uitgevoerd in de R-interpreter op dat knoop punt. De uitzonde ringen zijn de stappen die de functie RevoScaleR aanroepen. De RevoScaleR-aanroepen worden uitgevoerd in een compute-omgeving die wordt bepaald door de manier waarop u de RevoScaleR-Compute-context instelt.  Wanneer u uw R-script uitvoert vanuit een Edge-knoop punt, zijn de mogelijke waarden van de compute-context:
 
-- lokaal sequentieel ( *lokaal* )
-- lokaal parallel ( *localpar* )
+- lokaal sequentieel (*lokaal*)
+- lokaal parallel (*localpar*)
 - Toewijzing verminderen
 - Spark
 
@@ -59,12 +56,12 @@ Op basis van deze principes bieden de volgende secties enkele algemene vuist reg
 
 ### <a name="local"></a>Lokaal
 
-- Als de hoeveelheid gegevens die moet worden geanalyseerd klein is en er geen herhaalde analyse nodig is, kunt u deze rechtstreeks naar de analyse routine streamen met behulp van *lokale* of *localpar* .
-- Als de hoeveelheid gegevens die moet worden geanalyseerd, klein of middel groot is en herhaalde analyse vereist is, kopieert u deze naar het lokale bestands systeem, importeert u het naar XDF en analyseert u deze via *lokale* of *localpar* .
+- Als de hoeveelheid gegevens die moet worden geanalyseerd klein is en er geen herhaalde analyse nodig is, kunt u deze rechtstreeks naar de analyse routine streamen met behulp van *lokale* of *localpar*.
+- Als de hoeveelheid gegevens die moet worden geanalyseerd, klein of middel groot is en herhaalde analyse vereist is, kopieert u deze naar het lokale bestands systeem, importeert u het naar XDF en analyseert u deze via *lokale* of *localpar*.
 
 ### <a name="apache-spark"></a>Apache Spark
 
-- Als de hoeveelheid gegevens die moet worden geanalyseerd groot is, kunt u deze in een Spark-data frame importeren met **RxHiveData** of **RxParquetData** , of naar XDF in HDFS (tenzij opslag een probleem is) en deze analyseren met behulp van de Spark-Compute-context.
+- Als de hoeveelheid gegevens die moet worden geanalyseerd groot is, kunt u deze in een Spark-data frame importeren met **RxHiveData** of **RxParquetData**, of naar XDF in HDFS (tenzij opslag een probleem is) en deze analyseren met behulp van de Spark-Compute-context.
 
 ### <a name="apache-hadoop-map-reduce"></a>Apache Hadoop toewijzing verminderen
 

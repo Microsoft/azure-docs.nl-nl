@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b4f9dcf6fd43749cdf71098b3cd0da8a42020f6d
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 5c23259a9cb1f3c409ad437a1e91151b5f401129
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221762"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946289"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Netwerk toegang tot PaaS-resources beperken met virtuele netwerk service-eind punten met behulp van de Azure CLI
 
@@ -326,7 +326,7 @@ De toegang wordt geweigerd en er wordt een fout bericht weer gegeven `mount erro
 
 Sluit de SSH-sessie af op de *VM myvmpublic* -VM.
 
-Probeer vanaf uw computer de shares in uw opslag account te bekijken met de [lijst AZ Storage share](/cli/azure/storage/share?view=azure-cli-latest). Vervang `<account-name>` en door `<account-key>` de naam en sleutel van het opslag account van [een opslag account maken](#create-a-storage-account):
+Probeer vanaf uw computer de shares in uw opslag account te bekijken met de [lijst AZ Storage share](/cli/azure/storage/share). Vervang `<account-name>` en door `<account-key>` de naam en sleutel van het opslag account van [een opslag account maken](#create-a-storage-account):
 
 ```azurecli-interactive
 az storage share list \

@@ -1,19 +1,16 @@
 ---
 title: HBase cluster replicatie in virtuele netwerken-Azure HDInsight
 description: Meer informatie over het instellen van HBase-replicatie van één HDInsight-versie naar een andere voor taak verdeling, hoge Beschik baarheid, migratie van nul en uitval tijd en herstel na nood gevallen.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 12/06/2019
-ms.openlocfilehash: 8fc5ba2280b5ad68a40f4992adc170408e80e5a6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: cfcb3a5a601afadb9f3fcd71c24e18a9d7f27b9e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021789"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946416"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Apache HBase-cluster replicatie in virtuele Azure-netwerken instellen
 
@@ -287,7 +284,7 @@ In de volgende stappen wordt beschreven hoe u de script actie script aanroept va
 
 **HBase-replicatie inschakelen vanuit de Azure Portal**
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Open het bron HBase-cluster.
 3. Selecteer **script acties** in het menu cluster.
 4. Selecteer aan de bovenkant van de pagina de optie **Nieuw verzenden**.

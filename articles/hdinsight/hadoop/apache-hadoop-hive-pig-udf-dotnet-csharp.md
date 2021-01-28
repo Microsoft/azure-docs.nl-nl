@@ -1,19 +1,16 @@
 ---
 title: C#, Apache Hive & Apache-Pig op Apache Hadoop-Azure HDInsight
 description: Meer informatie over het gebruik van door de gebruiker gedefinieerde C#-functies (UDF) met Apache Hive en Apache Pig-streaming in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 12/06/2019
-ms.openlocfilehash: e99d68d31f1da4dcb3ef1086a2bbd90f0ab30410
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 97b23a2b9e3b95a5ea0efcd27d0ec185b1c456f1
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023122"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946541"
 ---
 # <a name="use-c-user-defined-functions-with-apache-hive-and-apache-pig-on-apache-hadoop-in-hdinsight"></a>Door de gebruiker gedefinieerde C#-functies gebruiken met Apache Hive en Apache varken op Apache Hadoop in HDInsight
 
@@ -168,7 +165,7 @@ Een C#-project maken voor een Apache Hive UDF:
 
 Upload vervolgens de Hive-en Pig-toepassingen naar opslag op een HDInsight-cluster.
 
-1. Ga in Visual Studio naar Server Explorer **weer geven**  >  **Server Explorer**.
+1. Ga in Visual Studio naar Server Explorer **weer geven**  >  .
 
 1. Klik vanuit **Server Explorer** met de rechter muisknop op **Azure**, selecteer **verbinding maken met Microsoft Azure abonnement** en voltooi het aanmeldings proces.
 
@@ -196,7 +193,7 @@ Upload vervolgens de Hive-en Pig-toepassingen naar opslag op een HDInsight-clust
 
 U kunt nu een Hive-query uitvoeren die gebruikmaakt van uw Hive UDF-toepassing.
 
-1. Ga in Visual Studio naar Server Explorer **weer geven**  >  **Server Explorer**.
+1. Ga in Visual Studio naar Server Explorer **weer geven**  >  .
 
 2. Vouw **Azure** uit en vouw vervolgens **HDInsight** uit.
 

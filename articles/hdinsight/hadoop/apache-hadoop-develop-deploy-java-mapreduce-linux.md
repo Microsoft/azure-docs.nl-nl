@@ -1,19 +1,16 @@
 ---
 title: Java-MapReduce maken voor Apache Hadoop-Azure HDInsight
 description: Leer hoe u Apache Maven gebruikt om een op Java gebaseerde MapReduce-toepassing te maken en deze vervolgens uit te voeren met Hadoop op Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017, devx-track-java
 ms.date: 01/16/2020
-ms.openlocfilehash: 8b80616806f846951ebbaffcb2bf31ad77b96266
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7c1a6623883cbee46ba98982808f3c392dc50ffa
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996029"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946644"
 ---
 # <a name="develop-java-mapreduce-programs-for-apache-hadoop-on-hdinsight"></a>Java MapReduce-programma's ontwikkelen voor Apache Hadoop in HDInsight
 
@@ -98,7 +95,7 @@ Het `<scope>provided</scope>` geeft maven aan dat deze afhankelijkheden niet moe
 > [!IMPORTANT]
 > De versie die wordt gebruikt, moet overeenkomen met de versie van de Hadoop aanwezig in uw cluster. Zie het document [versie van HDInsight-onderdeel](../hdinsight-component-versioning.md) voor meer informatie over versies.
 
-### <a name="build-configuration"></a>Configuratie maken
+### <a name="build-configuration"></a>Configuratie compileren
 
 Met maven-invoeg toepassingen kunt u de build-fasen van het project aanpassen. Deze sectie wordt gebruikt om invoeg toepassingen, resources en andere configuratie opties voor het maken van een toepassing toe te voegen.
 

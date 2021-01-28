@@ -2,25 +2,22 @@
 title: Apache Pig gebruiken
 titleSuffix: Azure HDInsight
 description: Meer informatie over het gebruik van Pig met Apache Hadoop op HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 01/28/2020
-ms.openlocfilehash: 9474a1845898e3fda0c810314f41f6f4deabc96b
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7b74a41f7d6b636dddce0388d5ee0e0a12658d52
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92538728"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944618"
 ---
 # <a name="use-apache-pig-with-apache-hadoop-on-hdinsight"></a>Apache Pig gebruiken met Apache Hadoop op HDInsight
 
 Meer informatie over het gebruik van [Apache Pig](https://pig.apache.org/) met HDInsight.
 
-Apache Pig is een platform voor het maken van Program ma's voor Apache Hadoop met behulp van een procedure taal die wordt aangeduid als *varken Latijn* . Pig is een alternatief voor Java voor het maken van *MapReduce* -oplossingen en is opgenomen in azure HDInsight. Gebruik de volgende tabel om de verschillende manieren te ontdekken waarop varken kan worden gebruikt met HDInsight:
+Apache Pig is een platform voor het maken van Program ma's voor Apache Hadoop met behulp van een procedure taal die wordt aangeduid als *varken Latijn*. Pig is een alternatief voor Java voor het maken van *MapReduce* -oplossingen en is opgenomen in azure HDInsight. Gebruik de volgende tabel om de verschillende manieren te ontdekken waarop varken kan worden gebruikt met HDInsight:
 
 ## <a name="why-use-apache-pig"></a><a id="why"></a>Waarom Apache Pig gebruiken
 
@@ -30,11 +27,11 @@ Met Pig kunt u een verwerking definiëren als een reeks trans formaties die de g
 
 Met de Latijnse taal van het varken kunt u de gegevens stroom beschrijven van onbewerkte invoer, via een of meer trans formaties om de gewenste uitvoer te produceren. Latijnse Program ma's voor Pig volgen dit algemene patroon:
 
-* **Laden** : gegevens lezen die moeten worden gemanipuleerd vanuit het bestands systeem.
+* **Laden**: gegevens lezen die moeten worden gemanipuleerd vanuit het bestands systeem.
 
-* **Trans formatie** : gegevens bewerken.
+* **Trans formatie**: gegevens bewerken.
 
-* **Dump of Store** : uitvoer gegevens naar het scherm of sla het op voor verwerking.
+* **Dump of Store**: uitvoer gegevens naar het scherm of sla het op voor verwerking.
 
 ### <a name="user-defined-functions"></a>Door de gebruiker gedefinieerde functies
 

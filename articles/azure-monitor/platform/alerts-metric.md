@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 01/11/2021
 ms.subservice: alerts
-ms.openlocfilehash: 0518d3a2e1b67b33b9cb6bceb9754df302710f70
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 6919040308dcd3a80c3c0b05ec729744099b6d8f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071031"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944503"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Metrische waarschuwing maken, bekijken en beheren met Azure Monitor
 
@@ -91,7 +91,7 @@ U kunt metrische waarschuwings regels weer geven en beheren met behulp van de Bl
 
 ## <a name="with-azure-cli"></a>Met Azure CLI
 
-In de vorige secties wordt beschreven hoe u metrische waarschuwings regels kunt maken, weer geven en beheren met behulp van Azure Portal. In deze sectie wordt beschreven hoe u hetzelfde kunt doen met meerdere platformen van [Azure cli](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). De snelste manier om te beginnen met het gebruik van Azure CLI is via [Azure Cloud shell](../../cloud-shell/overview.md?view=azure-cli-latest). Voor dit artikel gaan we Cloud Shell gebruiken.
+In de vorige secties wordt beschreven hoe u metrische waarschuwings regels kunt maken, weer geven en beheren met behulp van Azure Portal. In deze sectie wordt beschreven hoe u hetzelfde kunt doen met meerdere platformen van [Azure cli](/cli/azure/get-started-with-azure-cli). De snelste manier om te beginnen met het gebruik van Azure CLI is via [Azure Cloud shell](../../cloud-shell/overview.md). Voor dit artikel gaan we Cloud Shell gebruiken.
 
 1. Ga naar Azure Portal en klik op **Cloud shell**.
 

@@ -7,12 +7,12 @@ ms.date: 12/15/2020
 ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
-ms.openlocfilehash: 0ceee3c65e8c4df5d843bb441fb6426a0f4eb696
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 1a5f665627da1b08ec57b04863a58f227c673af4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220249"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944902"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Problemen met het indelen van pijp lijnen en triggers in Azure Data Factory oplossen
 
@@ -60,7 +60,7 @@ Foutbericht:
 Type=Microsoft.DataTransfer.Execution.Core.ExecutionException,Message=There are substantial concurrent MappingDataflow executions which is causing failures due to throttling under Integration Runtime 'AutoResolveIntegrationRuntime'.
 `
 
-**Oorzaak**: u hebt de capaciteits limiet van de Integration runtime bereikt. U kunt een grote hoeveelheid gegevens stroom uitvoeren met behulp van dezelfde Integration runtime op hetzelfde moment. Zie [Azure-abonnement en service limieten, quota's en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#version-2) voor meer informatie.
+**Oorzaak**: u hebt de capaciteits limiet van de Integration runtime bereikt. U kunt een grote hoeveelheid gegevens stroom uitvoeren met behulp van dezelfde Integration runtime op hetzelfde moment. Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#version-2) voor meer informatie.
 
 **Oplossing**:
  
@@ -76,13 +76,13 @@ Azure Data Factory evalueert het resultaat van alle activiteiten op Leaf-niveau.
 **Oplossing**
 
 1. Implementeer controles op activiteit niveau door [te volgen hoe er pijp lijn fouten en-fouten worden afgehandeld](https://techcommunity.microsoft.com/t5/azure-data-factory/understanding-pipeline-failures-and-error-handling/ba-p/1630459).
-1. Gebruik Azure Logic Apps voor het bewaken van pijp lijnen met regel matige intervallen na het [uitvoeren van een query op Factory](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory).
+1. Gebruik Azure Logic Apps voor het bewaken van pijp lijnen met regel matige intervallen na het [uitvoeren van een query op Factory](/rest/api/datafactory/pipelineruns/querybyfactory).
 
 ## <a name="monitor-pipeline-failures-in-regular-intervals"></a>Pijp lijn fouten met regel matige intervallen bewaken
 
 Mogelijk moet u de mislukte Data Factory pijp lijnen in intervallen controleren, bijvoorbeeld 5 minuten. U kunt de pijp lijn uitvoeringen opvragen en filteren vanuit een data factory met behulp van het eind punt. 
 
-Stel een Azure Logic-app in om elke vijf minuten een query uit te zoeken op alle defecte pijp lijnen, zoals beschreven in [query door Factory](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory). Vervolgens kunt u incidenten melden aan ons ticket systeem.
+Stel een Azure Logic-app in om elke vijf minuten een query uit te zoeken op alle defecte pijp lijnen, zoals beschreven in [query door Factory](/rest/api/datafactory/pipelineruns/querybyfactory). Vervolgens kunt u incidenten melden aan ons ticket systeem.
 
 Ga voor meer informatie naar [meldingen verzenden van Data Factory, deel 2](https://www.mssqltips.com/sqlservertip/5962/send-notifications-from-an-azure-data-factory-pipeline--part-2/).
 

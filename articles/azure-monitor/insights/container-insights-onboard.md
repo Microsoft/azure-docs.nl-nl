@@ -3,12 +3,12 @@ title: Azure Monitor inschakelen voor containers | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u Azure Monitor voor containers inschakelt en configureert, zodat u kunt zien hoe uw container presteert en welke problemen met betrekking tot de prestaties zijn geïdentificeerd.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 69022643e3346444eee95f4487eeed292c4ef139
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: f598b42f1a8d9fcb42f09d17e40850cf3a1282be
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994074"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943826"
 ---
 # <a name="enable-azure-monitor-for-containers"></a>Azure Monitor inschakelen voor containers
 
@@ -21,7 +21,7 @@ Dit artikel bevat een overzicht van de opties die beschikbaar zijn voor het inst
 
 U kunt ook de prestaties bewaken van werk belastingen die zijn geïmplementeerd op zelf beheerde Kubernetes-clusters die worden gehost op:
 - Azure, met behulp van de [AKS-engine](https://github.com/Azure/aks-engine)
-- [Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1910) of on-premises, met behulp van de AKS-engine.
+- [Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) of on-premises, met behulp van de AKS-engine.
 
 U kunt Azure Monitor voor containers inschakelen voor een nieuwe implementatie of voor een of meer bestaande implementaties van Kubernetes door gebruik te maken van een van de volgende ondersteunde methoden:
 
@@ -51,7 +51,7 @@ Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 
 - U bent lid van de groep *log Analytics Inzender* voor het inschakelen van container bewaking. Zie [werk ruimten beheren](../platform/manage-access.md)voor meer informatie over het controleren van de toegang tot een log Analytics-werk ruimte.
 
-- U bent lid van de groep [ *eigenaar* ](../../role-based-access-control/built-in-roles.md#owner) op de AKS-cluster bron.
+- U bent lid van de groep [ *eigenaar*](../../role-based-access-control/built-in-roles.md#owner) op de AKS-cluster bron.
 
    [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
 
@@ -63,7 +63,7 @@ Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 
 Azure Monitor voor containers officiële ondersteunt de volgende configuraties:
 
-- Omgevingen: Azure Red Hat open Shift, Kubernetes on-premises en de AKS-engine op Azure en Azure Stack. Zie [de AKS-engine op Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1908)voor meer informatie.
+- Omgevingen: Azure Red Hat open Shift, Kubernetes on-premises en de AKS-engine op Azure en Azure Stack. Zie [de AKS-engine op Azure stack](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview)voor meer informatie.
 - De versies van Kubernetes en het ondersteunings beleid zijn hetzelfde als die welke worden [ondersteund in de Azure Kubernetes-service (AKS)](../../aks/supported-kubernetes-versions.md). 
 
 ## <a name="network-firewall-requirements"></a>Netwerk firewall vereisten
@@ -117,7 +117,7 @@ Als u Azure Monitor voor containers wilt inschakelen, gebruikt u een van de meth
 | Nieuw Kubernetes-cluster | [Een AKS-cluster maken met behulp van de Azure CLI](../../aks/kubernetes-walkthrough.md#create-aks-cluster)| U kunt bewaking inschakelen voor een nieuw AKS-cluster dat u maakt met behulp van de Azure CLI. |
 | | [Een AKS-cluster maken met behulp van terraform](container-insights-enable-new-cluster.md#enable-using-terraform)| U kunt bewaking inschakelen voor een nieuw AKS-cluster dat u maakt met behulp van de open source-terraform. |
 | | [Een open Shift-cluster maken met behulp van een Azure Resource Manager sjabloon](container-insights-azure-redhat-setup.md#enable-for-a-new-cluster-using-an-azure-resource-manager-template) | U kunt de bewaking inschakelen voor een nieuw open Shift-cluster dat u maakt met behulp van een vooraf geconfigureerde Azure Resource Manager sjabloon. |
-| | [Een open Shift-cluster maken met behulp van de Azure CLI](/cli/azure/openshift?view=azure-cli-latest#az-openshift-create) | U kunt bewaking inschakelen wanneer u een nieuw open Shift-cluster implementeert met behulp van de Azure CLI. |
+| | [Een open Shift-cluster maken met behulp van de Azure CLI](/cli/azure/openshift#az-openshift-create) | U kunt bewaking inschakelen wanneer u een nieuw open Shift-cluster implementeert met behulp van de Azure CLI. |
 | Bestaand Kubernetes-cluster | [Bewaking van een AKS-cluster inschakelen met behulp van de Azure CLI](container-insights-enable-existing-clusters.md#enable-using-azure-cli) | U kunt bewaking inschakelen voor een AKS-cluster dat al is geïmplementeerd met behulp van de Azure CLI. |
 | |[Inschakelen voor AKS-cluster met behulp van terraform](container-insights-enable-existing-clusters.md#enable-using-terraform) | U kunt bewaking inschakelen voor een AKS-cluster dat al is geïmplementeerd met behulp van de open source-terraform. |
 | | [Inschakelen voor AKS-cluster van Azure Monitor](container-insights-enable-existing-clusters.md#enable-from-azure-monitor-in-the-portal)| U kunt bewaking inschakelen voor een of meer AKS-clusters die al zijn geïmplementeerd op de pagina met meerdere clusters in Azure Monitor. |

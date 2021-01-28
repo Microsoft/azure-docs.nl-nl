@@ -1,19 +1,17 @@
 ---
 title: 'Opslag: on-premises Apache Hadoop migreren naar Azure HDInsight'
 description: Meer informatie over best practices voor opslag voor het migreren van on-premises Hadoop-clusters naar Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: ashishth
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
-ms.openlocfilehash: 0594774533f306421f6f3d1260d074bd92b9c919
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8d87d2164a5131b71a2000243c37553610497750
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544865"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944850"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>On-premises Apache Hadoop clusters migreren naar Azure HDInsight
 
@@ -33,7 +31,7 @@ Azure Storage kunnen geo-replicatie zijn. Hoewel geo-replicatie geografisch hers
 
 Een van de volgende indelingen kan worden gebruikt om toegang te krijgen tot gegevens die zijn opgeslagen in Azure Storage:
 
-|Data Access-indeling |Description |
+|Data Access-indeling |Beschrijving |
 |---|---|
 |`wasb:///`|Toegang tot standaard opslag met niet-versleutelde communicatie.|
 |`wasbs:///`|Toegang tot de standaard opslag met behulp van gecodeerde communicatie.|
@@ -98,15 +96,15 @@ Een fundamenteel onderdeel van Data Lake Storage Gen2 is het toevoegen van een [
 
 In het verleden moesten cloud-gebaseerde analyses in het gedrang komen op het gebied van prestaties, beheer en beveiliging. De belangrijkste functies van Azure Data Lake Storage (ADLS) Gen2 zijn als volgt:
 
-- **Hadoop-compatibele toegang** : met Azure data Lake Storage Gen2 kunt u gegevens beheren en openen, net zoals u dat zou doen met een [Hadoop Distributed File System (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Het nieuwe [ABFS-stuur programma](../../storage/blobs/data-lake-storage-abfs-driver.md) is beschikbaar in alle Apache Hadoop omgevingen die zijn opgenomen in [Azure HDInsight](../index.yml). Met dit stuur programma kunt u toegang krijgen tot gegevens die zijn opgeslagen in Data Lake Storage Gen2.
+- **Hadoop-compatibele toegang**: met Azure data Lake Storage Gen2 kunt u gegevens beheren en openen, net zoals u dat zou doen met een [Hadoop Distributed File System (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Het nieuwe [ABFS-stuur programma](../../storage/blobs/data-lake-storage-abfs-driver.md) is beschikbaar in alle Apache Hadoop omgevingen die zijn opgenomen in [Azure HDInsight](../index.yml). Met dit stuur programma kunt u toegang krijgen tot gegevens die zijn opgeslagen in Data Lake Storage Gen2.
 
-- **Een superset van POSIX-machtigingen** : het beveiligings model voor data Lake Gen2 biedt volledige ondersteuning van ACL-en POSIX-machtigingen samen met een extra granulatie specifiek voor data Lake Storage Gen2. Instellingen kunnen worden geconfigureerd via beheer hulpprogramma's of via Frameworks als Hive en Spark.
+- **Een superset van POSIX-machtigingen**: het beveiligings model voor data Lake Gen2 biedt volledige ondersteuning van ACL-en POSIX-machtigingen samen met een extra granulatie specifiek voor data Lake Storage Gen2. Instellingen kunnen worden geconfigureerd via beheer hulpprogramma's of via Frameworks als Hive en Spark.
 
 - **Rendabel: data Lake Storage Gen2** biedt goedkope opslag capaciteit en-trans acties. Naarmate de volledige levens cyclus van gegevens overgaat, worden de facturerings tarieven gewijzigd om de kosten te minimaliseren via ingebouwde functies, zoals [Azure Blob Storage-levens cyclus](../../storage/blobs/storage-lifecycle-management-concepts.md).
 
-- **Werkt met hulpprogram ma's voor Blob-opslag, frameworks en apps** : data Lake Storage Gen2 blijft werken met een breed scala aan hulpprogram ma's, frameworks en toepassingen die momenteel bestaan voor Blob Storage.
+- **Werkt met hulpprogram ma's voor Blob-opslag, frameworks en apps**: data Lake Storage Gen2 blijft werken met een breed scala aan hulpprogram ma's, frameworks en toepassingen die momenteel bestaan voor Blob Storage.
 
-- **Geoptimaliseerd stuur programma** : het Azure Blob-bestandssysteem stuur programma (ABFS) is speciaal voor Big Data Analytics [geoptimaliseerd](../../storage/blobs/data-lake-storage-abfs-driver.md) . De bijbehorende REST Api's worden opgehaald via het DFS-eind punt, dfs.core.windows.net.
+- **Geoptimaliseerd stuur programma**: het Azure Blob-bestandssysteem stuur programma (ABFS) is speciaal voor Big Data Analytics [geoptimaliseerd](../../storage/blobs/data-lake-storage-abfs-driver.md) . De bijbehorende REST Api's worden opgehaald via het DFS-eind punt, dfs.core.windows.net.
 
 Een van de volgende indelingen kan worden gebruikt om toegang te krijgen tot gegevens die zijn opgeslagen in ADLS Gen2:
 - `abfs:///`: Toegang tot de standaard Data Lake Storage voor het cluster.
@@ -155,7 +153,7 @@ HDInsight heeft standaard volledige toegang tot de gegevens in de Azure Storage 
 
 1. Open het  [SASToken.py](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature/blob/master/Python/SASToken.py) -bestand en wijzig de volgende waarden:
 
-    |Token eigenschap|Description|
+    |Token eigenschap|Beschrijving|
     |---|---|
     |policy_name|De naam die moet worden gebruikt om het opgeslagen beleid te maken.|
     |storage_account_name|De naam van uw opslagaccount.|
@@ -173,9 +171,9 @@ HDInsight heeft standaard volledige toegang tot de gegevens in de Azure Storage 
 
 6. Gebruik de volgende waarden voor de velden **sleutel** en **waarde** :
 
-    **Sleutel** : `fs.azure.sas.YOURCONTAINER.YOURACCOUNT.blob.core.windows.net` **waarde** : de SAS-sleutel die wordt geretourneerd door de python-toepassing uit stap 4 hierboven.
+    **Sleutel**: `fs.azure.sas.YOURCONTAINER.YOURACCOUNT.blob.core.windows.net` **waarde**: de SAS-sleutel die wordt geretourneerd door de python-toepassing uit stap 4 hierboven.
 
-7. Klik op de knop **toevoegen** om deze sleutel en waarde op te slaan en klik vervolgens op de knop **Opslaan** om de configuratie wijzigingen op te slaan. Als u hierom wordt gevraagd, voegt u een beschrijving van de wijziging toe (bijvoorbeeld het toevoegen van SAS-opslag toegang) en klikt u vervolgens op **Opslaan** .
+7. Klik op de knop **toevoegen** om deze sleutel en waarde op te slaan en klik vervolgens op de knop **Opslaan** om de configuratie wijzigingen op te slaan. Als u hierom wordt gevraagd, voegt u een beschrijving van de wijziging toe (bijvoorbeeld het toevoegen van SAS-opslag toegang) en klikt u vervolgens op **Opslaan**.
 
 8. Selecteer in de Ambari-webgebruikersinterface de optie HDFS in de lijst aan de linkerkant en selecteer vervolgens **alle betrokken onderdelen opnieuw opstarten** in de vervolg keuzelijst service acties aan de rechter kant. Selecteer **Bevestig opnieuw opstarten** als dit wordt gevraagd.
 

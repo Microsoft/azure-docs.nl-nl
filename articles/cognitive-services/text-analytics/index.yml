@@ -13,12 +13,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 01/29/2019
   ms.author: aahi
-  ms.openlocfilehash: 5b1955d1de44ca66613d4e577f587b193aa31b38
-  ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
-  ms.translationtype: HT
+  ms.openlocfilehash: 48d045fb89a4b04826ecb9fd0c7d0b2ac676d64a
+  ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/15/2020
-  ms.locfileid: "97504862"
+  ms.lasthandoff: 01/28/2021
+  ms.locfileid: "98944965"
 landingContent:
 - title: Over de Text Analytics-API
   linkLists:
@@ -145,7 +145,7 @@ landingContent:
     - text: Text Analytics voor statuscontainer gebruiken
       url: How-tos/text-analytics-for-health.md
     - text: Een containerinstantie implementeren in Azure
-      url: how-tos/text-analytics-how-to-use-container-instances.md
+      url: ../containers/azure-container-instance-recipe.md
     - text: Een container implementeren in Azure Kubernetes Service (AKS)
       url: how-tos/text-analytics-how-to-use-kubernetes-service.md
 - title: Help en feedback

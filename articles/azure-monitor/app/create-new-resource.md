@@ -3,12 +3,12 @@ title: Een nieuwe Azure-toepassing Insights-resource maken | Microsoft Docs
 description: Stel Application Insights bewaking hand matig in voor een nieuwe Live-toepassing.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 3fd05e6bd68be89b964fe1ad32029bf44f3352ea
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 2924ccbbf591020d7872d3e9cca62a9c271db7c0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906366"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944594"
 ---
 # <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
@@ -94,7 +94,7 @@ SamplingPercentage :
 TenantId           : {subid}
 ```
 
-Raadpleeg de [documentatie van Azure PowerShell](/powershell/module/az.applicationinsights/new-azapplicationinsights?view=azps-2.5.0)voor de volledige Power shell-documentatie voor deze cmdlet en voor meer informatie over het ophalen van de instrumentatie sleutel.
+Raadpleeg de [documentatie van Azure PowerShell](/powershell/module/az.applicationinsights/new-azapplicationinsights)voor de volledige Power shell-documentatie voor deze cmdlet en voor meer informatie over het ophalen van de instrumentatie sleutel.
 
 ### <a name="azure-cli-preview"></a>Azure CLI (preview-versie)
 
@@ -151,7 +151,7 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 }
 ```
 
-Raadpleeg de [documentatie van Azure cli](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create)voor de volledige Azure cli-documentatie voor deze opdracht en voor meer informatie over het ophalen van de instrumentatie sleutel.
+Raadpleeg de [documentatie van Azure cli](/cli/azure/ext/application-insights/monitor/app-insights/component#ext-application-insights-az-monitor-app-insights-component-create)voor de volledige Azure cli-documentatie voor deze opdracht en voor meer informatie over het ophalen van de instrumentatie sleutel.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Diagnostische gegevens doorzoeken](./diagnostic-search.md)

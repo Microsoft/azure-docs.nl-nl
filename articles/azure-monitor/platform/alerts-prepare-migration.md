@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: 9df5d702019063ffba6d79cc63370cd25a7242fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60a721af9acf980e88ad60504e75d2488c8a4d81
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358778"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944474"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Uw logische apps en runbooks voorbereiden voor de migratie van klassieke waarschuwingsregels
 
@@ -29,8 +29,8 @@ De volgende tabel bevat een verwijzing naar de programmatische interfaces voor z
 
 | Implementatie script type | Klassieke waarschuwingen | Nieuwe metrische waarschuwingen |
 | ---------------------- | -------------- | ----------------- |
-|REST-API     | [micro soft. Insights/alertrules](/rest/api/monitor/alertrules)         | [micro soft. Insights/metricalerts](/rest/api/monitor/metricalerts)       |
-|Azure CLI     | [AZ-monitor waarschuwing](/cli/azure/monitor/alert?view=azure-cli-latest)        | [waarschuwing AZ monitor Metrics](/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
+|REST API     | [micro soft. Insights/alertrules](/rest/api/monitor/alertrules)         | [micro soft. Insights/metricalerts](/rest/api/monitor/metricalerts)       |
+|Azure CLI     | [AZ-monitor waarschuwing](/cli/azure/monitor/alert)        | [waarschuwing AZ monitor Metrics](/cli/azure/monitor/metrics/alert)        |
 |PowerShell      | [Verwijzing](/powershell/module/az.monitor/add-azmetricalertrule)       |  [Verwijzing](/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Azure Resource Manager-sjabloon | [Voor klassieke waarschuwingen](./alerts-enable-template.md)|[Voor nieuwe metrische waarschuwingen](./alerts-metric-create-templates.md)|
 
@@ -49,7 +49,7 @@ Gebruik de volgende tabel om de velden voor de nettolading van webhooks van de k
 | Naam van waarschuwingsregel | **context.name** | **data.context.name** |
 | Beschrijving van de waarschuwings regel | **context. Description** | **data. context. Description** |
 | Voor waarde waarschuwings regel | **context. condition** | **data. context. condition** |
-| Naam van meetwaarde | **context. condition. metrische** | **data. context. condition. overzet [0]. metrische** |
+| Naam van metrische gegevens | **context. condition. metrische** | **data. context. condition. overzet [0]. metrische** |
 | Tijd aggregatie (hoe de metrische gegevens worden geaggregeerd over het evaluatie venster)| **context. condition. timeAggregation** | **context. condition. timeAggregation** |
 | Evaluatie periode | **context. condition. windowSize** | **data. context. condition. windowSize** |
 | Operator (hoe de cumulatieve metrische waarde wordt vergeleken met de drempel) | **context. condition. operator** | **data. context. condition. operator** |

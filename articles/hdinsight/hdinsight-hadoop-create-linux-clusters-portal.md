@@ -1,19 +1,16 @@
 ---
 title: Apache Hadoop clusters maken met behulp van webbrowser, Azure HDInsight
 description: Meer informatie over het maken van Apache Hadoop, Apache HBase, Apache Storm of Apache Spark clusters op HDInsight. Gebruik webbrowser en de Azure Portal.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 08/06/2020
-ms.openlocfilehash: ebfd5c456d3658c6339e5174c9c4ab33f6c52d4d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c68d342cf21d69fa97ba3d5171ba596662fd845f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541703"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945823"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Op Linux gebaseerde clusters maken in HDInsight met behulp van de Azure Portal
 
@@ -25,7 +22,7 @@ De Azure Portal is een webgebaseerd hulp programma voor het beheren van services
 
 De Azure Portal bevat de meeste cluster eigenschappen. Door Azure Resource Manager sjablonen te gebruiken, kunt u veel Details verbergen. Zie [Apache Hadoop clusters in HDInsight maken met behulp van Resource Manager-sjablonen](hdinsight-hadoop-create-linux-clusters-arm-templates.md)voor meer informatie.
 
-Als u nog geen abonnement voor Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 ## <a name="create-clusters"></a>Clusters maken
 
@@ -48,12 +45,12 @@ Geef op het tabblad **Basis** de volgende gegevens op:
 |Eigenschap |Beschrijving |
 |---|---|
 |Abonnement|Selecteer in de vervolgkeuzelijst het Azure-abonnement dat wordt gebruikt voor het cluster.|
-|Resourcegroep|Selecteer in de vervolgkeuzelijst de bestaande resourcegroep of selecteer **Nieuwe maken** .|
+|Resourcegroep|Selecteer in de vervolgkeuzelijst de bestaande resourcegroep of selecteer **Nieuwe maken**.|
 |Clusternaam|Geef een wereldwijd unieke naam op.|
 |Region|Selecteer in de vervolgkeuzelijst een regio waarin het cluster wordt gemaakt.|
 |Clustertype|Klik op **cluster type selecteren** om een lijst te openen. Selecteer in de lijst het gewenste cluster type. HDInsight-clusters komen in verschillende typen voor. Ze komen overeen met de werk belasting of technologie waarvoor het cluster is afgestemd. Er wordt geen ondersteunde methode gebruikt voor het maken van een cluster waarin meerdere typen worden gecombineerd.|
 |Versie|Selecteer een **versie** in de vervolgkeuzelijst. Gebruik de standaardversie als u niet weet wat u moet kiezen. Zie [HDInsight-clusterversies](hdinsight-component-versioning.md) voor meer informatie.|
-|Gebruikersnaam voor clusteraanmeldgegevens|Geef de gebruikersnaam op; de standaard is **beheerder** .|
+|Gebruikersnaam voor clusteraanmeldgegevens|Geef de gebruikersnaam op; de standaard is **beheerder**.|
 |Wachtwoord voor clusteraanmeldgegevens|Geef het wachtwoord op.|
 |Wacht woord voor aanmelding bij cluster bevestigen|Voer het wacht woord opnieuw in|
 |SSH-gebruikersnaam (Secure Shell)|Geef de gebruikersnaam op; de standaardwaarde is **sshuser**|
@@ -70,13 +67,13 @@ Selecteer **volgende: opslag >>** om naar het volgende tabblad te gaan.
 
 ### <a name="primary-storage"></a>Primaire opslag
 
-Selecteer uw standaard type opslag in de vervolg keuzelijst voor het **primaire opslag type** . De latere velden die u moet volt ooien, variëren op basis van uw selectie. Voor **Azure Storage** :
+Selecteer uw standaard type opslag in de vervolg keuzelijst voor het **primaire opslag type**. De latere velden die u moet volt ooien, variëren op basis van uw selectie. Voor **Azure Storage**:
 
-1. Kies bij **selectie methode** de optie **selecteren in de lijst** of **Gebruik de toegangs sleutel** .
-    * Selecteer **in de lijst selecteren** een **primair opslag account** in de vervolg keuzelijst of selecteer **nieuwe maken** .
-    * Voer de naam van uw **opslag account** in als **u de toegangs sleutel wilt gebruiken** . Geef vervolgens de **toegangs sleutel** op.
+1. Kies bij **selectie methode** de optie **selecteren in de lijst** of **Gebruik de toegangs sleutel**.
+    * Selecteer **in de lijst selecteren** een **primair opslag account** in de vervolg keuzelijst of selecteer **nieuwe maken**.
+    * Voer de naam van uw **opslag account** in als **u de toegangs sleutel wilt gebruiken**. Geef vervolgens de **toegangs sleutel** op.
 
-1. Accepteer de standaard waarde voor **container** , of geef een nieuwe op.
+1. Accepteer de standaard waarde voor **container**, of geef een nieuwe op.
 
 ### <a name="additional-azure-storage"></a>Aanvullende Azure Storage
 
@@ -87,7 +84,7 @@ Optioneel: Selecteer **Azure Storage toevoegen** voor extra cluster opslag. Het 
 Optioneel: Geef een bestaand SQL Database op om Apache Hive-, Apache Oozie-en-of Apache Ambari-meta gegevens buiten het cluster op te slaan. De Azure SQL Database die wordt gebruikt voor de meta Store, moet verbinding maken met andere Azure-Services, waaronder Azure HDInsight. Wanneer u een meta Store maakt, moet u een Data Base geen naam met streepjes of afbreek streepjes. Deze tekens kunnen ertoe leiden dat het proces voor het maken van een cluster mislukt.
 
 > [!IMPORTANT]
-> Voor cluster vormen die ondersteuning bieden voor meta Stores biedt de standaard META Store een Azure SQL Database met een **elementaire 5 DTU-limiet (niet uitbreidbaar)** . Geschikt voor basis test doeleinden. Voor grote of productie werkbelasting raden wij u aan de migratie naar een externe meta Store te migreren.
+> Voor cluster vormen die ondersteuning bieden voor meta Stores biedt de standaard META Store een Azure SQL Database met een **elementaire 5 DTU-limiet (niet uitbreidbaar)**. Geschikt voor basis test doeleinden. Voor grote of productie werkbelasting raden wij u aan de migratie naar een externe meta Store te migreren.
 
 Selecteer **volgende: beveiliging en netwerk >>** om naar het volgende tabblad te gaan.
 

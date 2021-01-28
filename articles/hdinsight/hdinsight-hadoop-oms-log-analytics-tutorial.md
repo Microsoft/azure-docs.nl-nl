@@ -1,19 +1,16 @@
 ---
 title: Azure Monitor Logboeken gebruiken voor het bewaken van Azure HDInsight-clusters
 description: Meer informatie over het gebruik van Azure Monitor-logboeken voor het bewaken van taken die worden uitgevoerd in een HDInsight-cluster.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, devx-track-azurepowershell
 ms.date: 05/13/2020
-ms.openlocfilehash: 775e2fad573832dd29fc45985c6d6bd0a50fdf3c
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5f849248021de3c17b69517d214f6f3fd6e4ee3a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546089"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945638"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor-logboeken gebruiken om HDInsight-clusters te bewaken
 
@@ -53,13 +50,13 @@ In deze sectie configureert u een bestaand HDInsight Hadoop-cluster voor het bew
 
 1. Selecteer uw cluster in de [Azure Portal](https://portal.azure.com/). Het cluster wordt geopend op een nieuwe portal-pagina.
 
-1. Selecteer aan de linkerkant, onder **bewaking** , de optie **Azure monitor** .
+1. Selecteer aan de linkerkant, onder **bewaking**, de optie **Azure monitor**.
 
-1. Selecteer in de hoofd weergave onder **Azure monitor-integratie** de optie **inschakelen** .
+1. Selecteer in de hoofd weergave onder **Azure monitor-integratie** de optie **inschakelen**.
 
 1. Selecteer een bestaande Log Analytics-werk ruimte in de vervolg keuzelijst **Selecteer een werk ruimte** .
 
-1. Selecteer **Opslaan** .  Het duurt enkele minuten om de instelling op te slaan.
+1. Selecteer **Opslaan**.  Het duurt enkele minuten om de instelling op te slaan.
 
     ![Bewaking voor HDInsight-clusters inschakelen](./media/hdinsight-hadoop-oms-log-analytics-tutorial/azure-portal-monitoring.png "Bewaking voor HDInsight-clusters inschakelen")
 
@@ -139,7 +136,7 @@ Beschik bare HDInsight-oplossingen:
 * HDInsight Spark-bewaking
 * HDInsight Storm-bewaking
 
-Zie [beheer oplossingen in azure](../azure-monitor/insights/solutions.md#install-a-monitoring-solution)voor instructies voor beheer oplossingen. Als u wilt experimenteren, installeert u een HDInsight Hadoop-bewakings oplossing. Wanneer u klaar bent, ziet u een **HDInsightHadoop** -tegel die wordt weer gegeven onder **samen vatting** . Selecteer de tegel **HDInsightHadoop** . De HDInsightHadoop-oplossing ziet er als volgt uit:
+Zie [beheer oplossingen in azure](../azure-monitor/insights/solutions.md#install-a-monitoring-solution)voor instructies voor beheer oplossingen. Als u wilt experimenteren, installeert u een HDInsight Hadoop-bewakings oplossing. Wanneer u klaar bent, ziet u een **HDInsightHadoop** -tegel die wordt weer gegeven onder **samen vatting**. Selecteer de tegel **HDInsightHadoop** . De HDInsightHadoop-oplossing ziet er als volgt uit:
 
 ![Weer gave HDInsight-bewakings oplossing](media/hdinsight-hadoop-oms-log-analytics-tutorial/hdinsight-oms-hdinsight-hadoop-monitoring-solution.png)
 

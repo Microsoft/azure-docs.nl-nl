@@ -3,18 +3,18 @@ title: 'Zelfstudie: Azure-budgetten maken en beheren'
 description: Deze zelfstudie helpt u bij het plannen en verantwoorden van de kosten van Azure-Services die u gebruikt.
 author: bandersmsft
 ms.author: banders
-ms.date: 12/16/2020
+ms.date: 01/27/2021
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: c8b0265a72911688f08e0f8c4a39fa657f034472
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
-ms.translationtype: HT
+ms.openlocfilehash: 5659f3b2d020a97ed2460c55283bb41f2f7606cc
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630136"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943739"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Zelfstudie: Azure-budgetten maken en beheren
 
@@ -22,7 +22,7 @@ Met budgetten in Cost Management kunt u de verantwoordelijkheid in de organisati
 
 Kosten- en gebruiksgegevens zijn doorgaans binnen 8 tot 24 uur beschikbaar en budgetten worden elke 24 uur geëvalueerd op basis van deze kosten. Zorg ervoor dat u bekend bent met specifieke [updates voor kosten- en gebruiksgegevens](./understand-cost-mgt-data.md#cost-and-usage-data-updates-and-retention). Wanneer een budgetdrempelwaarde wordt bereikt, worden de e-mailmeldingen doorgaans binnen een uur na de evaluatie verzonden.
 
-Wanneer u een vervaldatum in de toekomst selecteert, worden budgetten bovendien aan het einde van een periode (maand, kwartaal of jaar) automatisch opnieuw ingesteld op hetzelfde bedrag. Omdat ze opnieuw worden ingesteld met hetzelfde budgetbedrag, moet u afzonderlijke budgetten maken wanneer de gebudgetteerde valutabedragen voor toekomstige perioden verschillen.
+Wanneer u een vervaldatum in de toekomst selecteert, worden budgetten bovendien aan het einde van een periode (maand, kwartaal of jaar) automatisch opnieuw ingesteld op hetzelfde bedrag. Omdat ze opnieuw worden ingesteld met hetzelfde budgetbedrag, moet u afzonderlijke budgetten maken wanneer de gebudgetteerde valutabedragen voor toekomstige perioden verschillen. Wanneer een budget verloopt, wordt het automatisch verwijderd.
 
 In de voorbeelden in deze zelfstudie leert u hoe u een budget voor een Azure EA-abonnement (Enterprise Agreement) kunt maken en bewerken.
 

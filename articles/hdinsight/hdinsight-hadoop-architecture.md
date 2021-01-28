@@ -1,19 +1,16 @@
 ---
 title: 'Apache Hadoop architectuur: Azure HDInsight'
 description: Beschrijft Apache Hadoop opslag en verwerking op Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/07/2020
-ms.openlocfilehash: 389aee77ac56407f3a116d42ad62fbd94de1bb4e
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 6f291e5aa440a3e6e45a1dcdb872e18c8d4557ce
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541941"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945896"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Apache Hadoop-architectuur in HDInsight
 
@@ -37,7 +34,7 @@ Wanneer een MapReduce-toepassing wordt uitgevoerd op een cluster, biedt de Resou
 
 De Resource Manager voert ook een webserver proces uit dat een webgebruikersinterface biedt om de status van toepassingen te controleren.
 
-Wanneer een gebruiker een MapReduce-toepassing indient om uit te voeren op het cluster, wordt de toepassing verzonden naar de Resource Manager. De resource manager wijst op zijn beurt een container toe op beschik bare NodeManager-knoop punten. De NodeManager-knoop punten zijn waar de toepassing daad werkelijk wordt uitgevoerd. De eerste toegewezen container voert een speciale toepassing uit met de naam ApplicationMaster. Deze ApplicationMaster is verantwoordelijk voor het verkrijgen van resources, in de vorm van volgende containers, die nodig zijn om de ingediende toepassing uit te voeren. De ApplicationMaster onderzoekt de fasen van de toepassing, zoals de kaart fase en de fase verminderen, en factoren in hoeveel gegevens er moeten worden verwerkt. De ApplicationMaster vervolgens aanvragen ( *onderhandelt* ) de bronnen uit de resource manager namens de toepassing. De Resource Manager geeft resources van de NodeManagers in het cluster door aan de ApplicationMaster om deze te gebruiken voor het uitvoeren van de toepassing.
+Wanneer een gebruiker een MapReduce-toepassing indient om uit te voeren op het cluster, wordt de toepassing verzonden naar de Resource Manager. De resource manager wijst op zijn beurt een container toe op beschik bare NodeManager-knoop punten. De NodeManager-knoop punten zijn waar de toepassing daad werkelijk wordt uitgevoerd. De eerste toegewezen container voert een speciale toepassing uit met de naam ApplicationMaster. Deze ApplicationMaster is verantwoordelijk voor het verkrijgen van resources, in de vorm van volgende containers, die nodig zijn om de ingediende toepassing uit te voeren. De ApplicationMaster onderzoekt de fasen van de toepassing, zoals de kaart fase en de fase verminderen, en factoren in hoeveel gegevens er moeten worden verwerkt. De ApplicationMaster vervolgens aanvragen (*onderhandelt*) de bronnen uit de resource manager namens de toepassing. De Resource Manager geeft resources van de NodeManagers in het cluster door aan de ApplicationMaster om deze te gebruiken voor het uitvoeren van de toepassing.
 
 De NodeManagers voert de taken uit waaruit de toepassing is opgebouwd en rapporteert de voortgang en de status terug naar de ApplicationMaster. Met de ApplicationMaster in wordt de status van de toepassing weer gegeven in de Resource Manager. De Resource Manager retourneert alle resultaten naar de client.
 
@@ -66,7 +63,7 @@ Als u het verwijderen van een bestand uit uw opslag account ongedaan wilt maken,
 
 ## <a name="trash-purging"></a>Prullenbak verwijderen
 
-De `fs.trash.interval` eigenschap van **HDFS** de  >  **geavanceerde kern-site** van HDFS moet op de standaard waarde blijven `0` omdat u geen gegevens op het lokale bestands systeem hoeft op te slaan. Deze waarde heeft geen invloed op externe opslag accounts (WASB, ADLS GEN1, ABFS)
+De `fs.trash.interval` eigenschap van de  >  **geavanceerde kern-site** van HDFS moet op de standaard waarde blijven `0` omdat u geen gegevens op het lokale bestands systeem hoeft op te slaan. Deze waarde heeft geen invloed op externe opslag accounts (WASB, ADLS GEN1, ABFS)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,17 +1,17 @@
 ---
-title: IP-adressen die worden gebruikt door Application Insights en Log Analytics | Microsoft Docs
+title: IP-adressen die worden gebruikt door Azure Monitor
 description: Uitzonde ringen voor Server firewalls vereist voor Application Insights
 ms.topic: conceptual
-ms.date: 09/15/2020
-ms.openlocfilehash: eb0739cb44b9f67258069a574ed0bedb95eac5a4
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 01/27/2020
+ms.openlocfilehash: 5a6cc190f84b74cc8a1d4ff24d10cbfa07f3c2fb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625179"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945053"
 ---
-# <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-adressen die worden gebruikt door Application Insights en Log Analytics
-De [Azure-toepassing Insights](./app-insights-overview.md) -service gebruikt een aantal IP-adressen. Mogelijk moet u deze adressen weten als de app die u bewaakt, wordt gehost achter een firewall.
+# <a name="ip-addresses-used-by-azure-monitor"></a>IP-adressen die worden gebruikt door Azure Monitor
+[Azure monitor](../overview.md) gebruikt een aantal IP-adressen. Azure Monitor bestaat uit metrische platform metrieken en u kunt zich ook aanmelden bij Log Analytics en Application Insights. Mogelijk moet u deze adressen weten als de app of infra structuur die u bewaakt, wordt gehost achter een firewall.
 
 > [!NOTE]
 > Hoewel deze adressen statisch zijn, is het mogelijk dat we deze van tijd tot tijd moeten wijzigen. Alle Application Insights verkeer staat voor uitgaand verkeer met uitzonde ring van beschikbaarheids bewaking en webhooks waarvoor binnenkomende firewall regels zijn vereist.

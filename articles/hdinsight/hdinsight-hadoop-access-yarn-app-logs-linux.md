@@ -1,19 +1,16 @@
 ---
 title: Toegang tot de toepassings logboeken van Apache Hadoop garen-Azure HDInsight
 description: Meer informatie over het openen van toepassings logboeken op basis van een op Linux gebaseerd HDInsight-cluster (Apache Hadoop) met behulp van de opdracht regel en een webbrowser.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 726cf362e62f0ef914dfaea090a08c224bd5d8d6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0eb7dec2fd4ee327905acdea7a07456221bcbd46
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001946"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945997"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Toegang tot Apache Hadoop GARENs van toepassings logboeken op HDInsight op basis van Linux
 

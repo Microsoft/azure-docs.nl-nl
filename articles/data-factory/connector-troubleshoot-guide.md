@@ -9,12 +9,12 @@ ms.date: 01/07/2021
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: 68547b8fb673cd54b7c21963ede122553bbbc390
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 4b586b95232af2a154993523402f81ee88a22cda
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967120"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946154"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -121,7 +121,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oorzaak**: probleem met CosmosDbSqlApi-bewerking.
 
-- **Aanbeveling**: Raadpleeg de fout voor meer informatie. Raadpleeg [CosmosDb Help-document](https://docs.microsoft.com/azure/cosmos-db/troubleshoot-dot-net-sdk). Neem contact op met het CosmosDb-team als u hulp nodig hebt.
+- **Aanbeveling**: Raadpleeg de fout voor meer informatie. Raadpleeg [CosmosDb Help-document](../cosmos-db/troubleshoot-dot-net-sdk.md). Neem contact op met het CosmosDb-team als u hulp nodig hebt.
 
 
 ## <a name="azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1
@@ -198,7 +198,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
     - Controleer of er een speciale netwerk instelling is, zoals ExpressRoute, en zorg ervoor dat het netwerk voldoende band breedte heeft. U kunt het beste de zelf-hostende IR-instelling voor gelijktijdige taken verlagen wanneer de totale band breedte laag is, waardoor netwerk resource-concurrentie voor meerdere gelijktijdige taken kan voor komen.
 
-    - Kleinere blok grootte voor niet-binaire kopieën gebruiken om een dergelijke time-outfout te verhelpen als de bestands grootte gemiddeld of klein is. Raadpleeg [Blob Storage put-blok](https://docs.microsoft.com/rest/api/storageservices/put-block).
+    - Kleinere blok grootte voor niet-binaire kopieën gebruiken om een dergelijke time-outfout te verhelpen als de bestands grootte gemiddeld of klein is. Raadpleeg [Blob Storage put-blok](/rest/api/storageservices/put-block).
 
        Als u de aangepaste blok grootte wilt opgeven, kunt u de eigenschap bewerken in. json-editor:
         ```
@@ -260,7 +260,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oorzaak**: als het fout bericht ' SQLException ' bevat, genereert SQL database de fout die aangeeft dat een bepaalde bewerking is mislukt.
 
-- **Aanbeveling**: als SQL-fout niet duidelijk is, probeert u de data base te wijzigen in het meest recente compatibiliteits niveau ' 150 '. Het kan de meest recente versie van SQL-fouten genereren. Raadpleeg het [detail document](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat).
+- **Aanbeveling**: als SQL-fout niet duidelijk is, probeert u de data base te wijzigen in het meest recente compatibiliteits niveau ' 150 '. Het kan SQL-fouten van de meest recente versie genereren. Raadpleeg het [detail document](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat).
 
     Zoek in dit referentie document naar SQL-fout code voor meer informatie over het oplossen van problemen met SQL: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors . Als u meer hulp nodig hebt, neemt u contact op met Azure SQL-ondersteuning.
 
@@ -486,7 +486,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Oplossing**: Voer de volgende stappen uit om het probleem op te lossen:
 
-    1. [Fout tolerantie](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor SQL-Sink Toep assen, met name ' redirectIncompatibleRowSettings ', om problemen op te lossen met de rijen die het probleem hebben.
+    1. [Fout tolerantie](./copy-activity-fault-tolerance.md)voor SQL-Sink Toep assen, met name ' redirectIncompatibleRowSettings ', om problemen op te lossen met de rijen die het probleem hebben.
 
         > [!NOTE]
         > Houd er rekening mee dat fout tolerantie mogelijk meer tijd in beslag neemt. Dit kan leiden tot hogere kosten.
@@ -496,7 +496,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
     3. Update het tabel schema dienovereenkomstig.
 
 
-## <a name="azure-table-storage"></a>Azure-tabelopslag
+## <a name="azure-table-storage"></a>Azure Table Storage
 
 ### <a name="error-code--azuretableduplicatecolumnsfromsource"></a>Fout code: AzureTableDuplicateColumnsFromSource
 

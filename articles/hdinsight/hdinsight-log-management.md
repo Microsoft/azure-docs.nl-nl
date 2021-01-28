@@ -1,19 +1,16 @@
 ---
 title: Logboeken voor een HDInsight-cluster beheren-Azure HDInsight
 description: Bepaal de typen, de grootte en het Bewaar beleid voor de logboek bestanden voor HDInsight-activiteiten.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/05/2020
-ms.openlocfilehash: c2aa33ac9e92f6763c0d89f0a049409c1a6a4049
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0a6e837284917129bb56c6230e68927b79e95dac
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546021"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945273"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Logboeken beheren voor een HDInsight-cluster
 
@@ -77,11 +74,11 @@ Een typisch HDInsight-cluster maakt gebruik van verschillende services en open-s
 
 Apache Ambari vereenvoudigt het beheer, de configuratie en de controle van een HDInsight-cluster door een web-UI en een REST API op te geven. Ambari is opgenomen in HDInsight-clusters op basis van Linux. Selecteer het deel venster **cluster dashboard** op de pagina Azure Portal HDInsight om de pagina **cluster dashboards** koppeling te openen.  Selecteer vervolgens het deel venster **dash board voor HDInsight-cluster** om de Ambari-gebruikers interface te openen.  U wordt gevraagd om de aanmeldings referenties voor uw cluster.
 
-Als u een lijst met Service weergaven wilt openen, selecteert u het deel venster **Ambari weer gaven** op de pagina Azure portal voor HDInsight.  Deze lijst varieert, afhankelijk van de bibliotheken die u hebt geïnstalleerd.  Zo ziet u een voor beeld van een garen van het wachtrij beheer, Hive-weer gave en TEZ.  Selecteer een service koppeling om de configuratie-en service gegevens te bekijken.  De pagina Ambari UI **stack en version** bevat informatie over de configuratie-en service versie geschiedenis van Cluster Services. Als u wilt navigeren naar deze sectie van de Ambari-gebruikers interface, selecteert u het menu **beheerder** en vervolgens **stacks en versies** .  Selecteer het tabblad **versies** om informatie over de service versie weer te geven.
+Als u een lijst met Service weergaven wilt openen, selecteert u het deel venster **Ambari weer gaven** op de pagina Azure portal voor HDInsight.  Deze lijst varieert, afhankelijk van de bibliotheken die u hebt geïnstalleerd.  Zo ziet u een voor beeld van een garen van het wachtrij beheer, Hive-weer gave en TEZ.  Selecteer een service koppeling om de configuratie-en service gegevens te bekijken.  De pagina Ambari UI **stack en version** bevat informatie over de configuratie-en service versie geschiedenis van Cluster Services. Als u wilt navigeren naar deze sectie van de Ambari-gebruikers interface, selecteert u het menu **beheerder** en vervolgens **stacks en versies**.  Selecteer het tabblad **versies** om informatie over de service versie weer te geven.
 
 ![Apache Ambari-beheer stack en-versies](./media/hdinsight-log-management/ambari-stack-versions.png)
 
-Met de Ambari-gebruikers interface kunt u de configuratie voor alle (of alle) services die worden uitgevoerd op een bepaalde host (of een knoop punt) in het cluster downloaden.  Selecteer het menu **hosts** en vervolgens de koppeling voor de gewenste host. Selecteer op de pagina van de host de knop **acties host** en **down load vervolgens client configuraties** .
+Met de Ambari-gebruikers interface kunt u de configuratie voor alle (of alle) services die worden uitgevoerd op een bepaalde host (of een knoop punt) in het cluster downloaden.  Selecteer het menu **hosts** en vervolgens de koppeling voor de gewenste host. Selecteer op de pagina van de host de knop **acties host** en **down load vervolgens client configuraties**.
 
 ![Configuratie van Ambari-host-client downloaden van Apache](./media/hdinsight-log-management/download-client-configs.png)
 
@@ -144,7 +141,7 @@ De gebruikers interface van de garen-server wordt uitgevoerd op het hoofd knoopp
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net`. Vervang CLUSTERNAME door de naam van uw HDInsight-cluster.
 2. Selecteer in de lijst met services aan de linkerkant de optie GARENs.
-3. Selecteer in de vervolg keuzelijst snelle koppelingen een van de cluster hoofd knooppunten en selecteer vervolgens de weer gave van het **Resource Manager-logboek** . Er wordt een lijst weer gegeven met koppelingen naar GARENs in de logboeken.
+3. Selecteer in de vervolg keuzelijst snelle koppelingen een van de cluster hoofd knooppunten en selecteer vervolgens de weer gave van het **Resource Manager-logboek**. Er wordt een lijst weer gegeven met koppelingen naar GARENs in de logboeken.
 
 ## <a name="step-4-forecast-log-volume-storage-sizes-and-costs"></a>Stap 4: het logboek volume grootte en kosten voor de opslag van volumes
 

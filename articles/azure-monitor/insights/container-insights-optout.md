@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u de bewaking van uw Azure AKS-
 ms.topic: conceptual
 ms.date: 08/19/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 99c4ecb6c8b77f1576f25816ba486ed262249c32
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 476934d84d8ffc63336ec620432db3507b2cbb34
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695712"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943837"
 ---
 # <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Stoppen met controleren van Azure Kubernetes Service (AKS) met Azure Monitor voor containers
 
@@ -18,7 +18,7 @@ Nadat u de bewaking van uw AKS-cluster hebt ingeschakeld, kunt u stoppen met het
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Gebruik de opdracht [AZ AKS Disable-addons](/cli/azure/aks?view=azure-cli-latest#az-aks-disable-addons) om Azure monitor voor containers uit te scha kelen. Met de opdracht wordt de agent uit de cluster knooppunten verwijderd, wordt de oplossing niet verwijderd of worden de gegevens die al zijn verzameld en opgeslagen in uw Azure Monitor-resource.  
+Gebruik de opdracht [AZ AKS Disable-addons](/cli/azure/aks#az-aks-disable-addons) om Azure monitor voor containers uit te scha kelen. Met de opdracht wordt de agent uit de cluster knooppunten verwijderd, wordt de oplossing niet verwijderd of worden de gegevens die al zijn verzameld en opgeslagen in uw Azure Monitor-resource.  
 
 ```azurecli
 az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG

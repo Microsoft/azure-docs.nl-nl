@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u de real-time-weer gave van co
 ms.topic: conceptual
 ms.date: 01/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: d5b978e7138e10ed88f5748b84ff62ddd22bebec
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 3c176b2db659577d585ac077eebe0484203eb9cf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050779"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943855"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>De functie voor live data (preview) instellen
 
@@ -19,7 +19,7 @@ Deze functie biedt ondersteuning voor de volgende methoden voor het beheren van 
 
 - AKS zonder Kubernetes RBAC-autorisatie is ingeschakeld
 - AKS ingeschakeld met Kubernetes RBAC-autorisatie
-    - AKS geconfigureerd met de cluster functie binding **[clusterMonitoringUser](/rest/api/aks/managedclusters/listclustermonitoringusercredentials?view=azurermps-5.2.0&preserve-view=true)**
+    - AKS geconfigureerd met de cluster functie binding **[clusterMonitoringUser](/rest/api/aks/managedclusters/listclustermonitoringusercredentials)**
 - AKS ingeschakeld met Azure Active Directory (AD) op SAML gebaseerde eenmalige aanmelding
 
 Deze instructies vereisen zowel beheerders toegang tot uw Kubernetes-cluster als het configureren om Azure Active Directory (AD) te gebruiken voor gebruikers verificatie, beheerders toegang tot Azure AD.

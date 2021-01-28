@@ -1,19 +1,16 @@
 ---
 title: Hive-query's in azure HDInsight optimaliseren
 description: In dit artikel wordt beschreven hoe u uw Apache Hive query's optimaliseert in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 10/28/2020
-ms.openlocfilehash: 840c481a54451e1f8374aec4799df10b96fb2e4d
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: a15c3e0fb3550c6e50b3fba2279611fdba25bc84
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92910879"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945567"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Apache Hive-query's in Azure HDInsight optimaliseren
 
@@ -53,11 +50,11 @@ Zie [hdinsight-clusters schalen](hdinsight-scaling-best-practices.md) voor meer 
 
 TEZ is sneller omdat:
 
-* **Voer gerichte acyclische grafiek (dag) uit als één taak in de MapReduce-engine** . Voor de DAG moet elke set mappers worden gevolgd door één set verminderers. Deze vereiste zorgt ervoor dat meerdere MapReduce-taken worden uitgeschakeld voor elke Hive-query. TEZ heeft geen dergelijke beperking en kan complexe DAG verwerken als één taak voor het minimaliseren van de opstart overhead van taken.
-* **Vermijd overbodige schrijf bewerkingen** . Meerdere taken worden gebruikt voor het verwerken van dezelfde Hive-query in de MapReduce-engine. De uitvoer van elke MapReduce-taak wordt naar HDFS geschreven voor tussenliggende gegevens. Omdat TEZ het aantal taken voor elke Hive-query minimaliseert, is het mogelijk om onnodige schrijf bewerkingen te voor komen.
-* **Minimaliseert de opstart vertraging** . TEZ is een betere manier om de vertraging op te lossen door te verminderen van het aantal mappers dat moet worden gestart en verbetert ook de optimalisatie in.
-* **Containers worden opnieuw gebruikt** . Wanneer mogelijke TEZ, worden containers opnieuw gebruikt om ervoor te zorgen dat de latentie van het starten van containers wordt gereduceerd.
-* **Continue optimalisatie technieken** . De traditionele optimalisatie is uitgevoerd tijdens de compilatie fase. Er is echter meer informatie over de invoer beschikbaar waarmee tijdens runtime betere optimalisatie mogelijk is. TEZ maakt gebruik van voortdurende optimalisatie technieken waarmee het plan verder in de runtime fase kan worden geoptimaliseerd.
+* **Voer gerichte acyclische grafiek (dag) uit als één taak in de MapReduce-engine**. Voor de DAG moet elke set mappers worden gevolgd door één set verminderers. Deze vereiste zorgt ervoor dat meerdere MapReduce-taken worden uitgeschakeld voor elke Hive-query. TEZ heeft geen dergelijke beperking en kan complexe DAG verwerken als één taak voor het minimaliseren van de opstart overhead van taken.
+* **Vermijd overbodige schrijf bewerkingen**. Meerdere taken worden gebruikt voor het verwerken van dezelfde Hive-query in de MapReduce-engine. De uitvoer van elke MapReduce-taak wordt naar HDFS geschreven voor tussenliggende gegevens. Omdat TEZ het aantal taken voor elke Hive-query minimaliseert, is het mogelijk om onnodige schrijf bewerkingen te voor komen.
+* **Minimaliseert de opstart vertraging**. TEZ is een betere manier om de vertraging op te lossen door te verminderen van het aantal mappers dat moet worden gestart en verbetert ook de optimalisatie in.
+* **Containers worden opnieuw gebruikt**. Wanneer mogelijke TEZ, worden containers opnieuw gebruikt om ervoor te zorgen dat de latentie van het starten van containers wordt gereduceerd.
+* **Continue optimalisatie technieken**. De traditionele optimalisatie is uitgevoerd tijdens de compilatie fase. Er is echter meer informatie over de invoer beschikbaar waarmee tijdens runtime betere optimalisatie mogelijk is. TEZ maakt gebruik van voortdurende optimalisatie technieken waarmee het plan verder in de runtime fase kan worden geoptimaliseerd.
 
 Zie [Apache TEZ](https://tez.apache.org/)(Engelstalig) voor meer informatie over deze concepten.
 
@@ -71,7 +68,7 @@ set hive.execution.engine=tez;
 
 I/O-bewerkingen zijn de belangrijkste prestatie knelpunt voor het uitvoeren van Hive-query's. De prestaties kunnen worden verbeterd als de hoeveelheid gegevens die moet worden gelezen, kan worden verminderd. Standaard worden in Hive-query's volledige Hive-tabellen gecontroleerd. Voor query's waarbij alleen een kleine hoeveelheid gegevens moeten worden gescand (bijvoorbeeld query's met filters), maakt dit gedrag onnodig overhead. Met hive-partitionering kunnen Hive-query's alleen toegang krijgen tot de benodigde hoeveelheid gegevens in Hive-tabellen.
 
-Hive-partitionering wordt geïmplementeerd door de onbewerkte gegevens opnieuw in te delen in nieuwe directory's. Elke partitie heeft een eigen Bestands Directory. De partities worden gedefinieerd door de gebruiker. Het volgende diagram illustreert het partitioneren van een Hive-tabel op basis van het kolom *jaar* . Voor elk jaar wordt een nieuwe map gemaakt.
+Hive-partitionering wordt geïmplementeerd door de onbewerkte gegevens opnieuw in te delen in nieuwe directory's. Elke partitie heeft een eigen Bestands Directory. De partities worden gedefinieerd door de gebruiker. Het volgende diagram illustreert het partitioneren van een Hive-tabel op basis van het kolom *jaar*. Voor elk jaar wordt een nieuwe map gemaakt.
 
 ![HDInsight-Apache Hive partitioneren](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-partitioning.png)
 
@@ -132,9 +129,9 @@ Zie [gepartitioneerde tabellen](https://cwiki.apache.org/confluence/display/Hive
 
 Hive ondersteunt verschillende bestands indelingen. Bijvoorbeeld:
 
-* **Text** : de standaard bestands indeling en werkt met de meeste scenario's.
-* **Avro** : geschikt voor interoperabiliteits scenario's.
-* **Orc/Parquet** : het meest geschikt voor prestaties.
+* **Text**: de standaard bestands indeling en werkt met de meeste scenario's.
+* **Avro**: geschikt voor interoperabiliteits scenario's.
+* **Orc/Parquet**: het meest geschikt voor prestaties.
 
 De indeling ORC (geoptimaliseerde rij in kolommen) is een zeer efficiënte manier om Hive-gegevens op te slaan. Vergeleken met andere indelingen heeft ORC de volgende voor delen:
 
@@ -143,7 +140,7 @@ De indeling ORC (geoptimaliseerde rij in kolommen) is een zeer efficiënte manie
 * indexeert elke 10.000 rijen, waarmee rijen overs Laan worden toegestaan.
 * een aanzienlijke verwijdering tijdens runtime.
 
-Als u de ORC-indeling wilt inschakelen, maakt u eerst een tabel met de-component *opgeslagen als Orc* :
+Als u de ORC-indeling wilt inschakelen, maakt u eerst een tabel met de-component *opgeslagen als Orc*:
 
 ```sql
 CREATE TABLE lineitem_orc_part
@@ -199,7 +196,7 @@ Er zijn meer optimalisatie methoden die u kunt overwegen, bijvoorbeeld:
 
 * **Bucket van onderdelen:** een techniek waarmee grote gegevens sets kunnen worden geclusterd of gesegmenteerd om de query prestaties te optimaliseren.
 * **Deelname aan optimalisatie:** optimalisatie van de query-uitvoerings planning van de component om de efficiëntie van deelname te verbeteren en de behoefte aan gebruikers hints te verminderen. Zie [deelname aan optimalisatie](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization#LanguageManualJoinOptimization-JoinOptimization)voor meer informatie.
-* **Verkleiners verhogen** .
+* **Verkleiners verhogen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

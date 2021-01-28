@@ -1,19 +1,16 @@
 ---
 title: Aanbevelingen genereren met Apache mahout in azure HDInsight
 description: Meer informatie over het gebruik van de Apache mahout machine learning-bibliotheek om film aanbevelingen te genereren met HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/14/2020
-ms.openlocfilehash: a4e4a45519526dd0eeb938a3b83e737d82589c1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c31ffaf094801bdd49e5800bd338a15d8b8315f6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86207668"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946500"
 ---
 # <a name="generate-recommendations-using-apache-mahout-in-azure-hdinsight"></a>Aanbevelingen genereren met Apache mahout in azure HDInsight
 
@@ -33,11 +30,11 @@ Een van de functies die door mahout wordt gegeven, is een aanbevelings engine. D
 
 De volgende werk stroom is een vereenvoudigd voor beeld waarin film gegevens worden gebruikt:
 
-* **Co-voorval**: Joe, Alice en Bob alle bevonden *ster-oorlogen*, *de Empire terughalen*en *retour neren van de Jedi*. Mahout bepaalt dat gebruikers die graag een van deze films ook als de andere hebben.
+* **Co-voorval**: Joe, Alice en Bob alle bevonden *ster-oorlogen*, *de Empire terughalen* en *retour neren van de Jedi*. Mahout bepaalt dat gebruikers die graag een van deze films ook als de andere hebben.
 
-* **Co-voorval**: Bob en Alice vinden ook *het fantoom Menace*, de *aanval van de klonen*en *de Sith*. Mahout bepaalt dat gebruikers die de vorige drie films leuk vinden, ook als deze drie films.
+* **Co-voorval**: Bob en Alice vinden ook *het fantoom Menace*, de *aanval van de klonen* en *de Sith*. Mahout bepaalt dat gebruikers die de vorige drie films leuk vinden, ook als deze drie films.
 
-* **Aanbeveling voor soort gelijke**voor delen: omdat Joe de eerste drie films leuk vindt, kijkt mahout naar films die anderen met vergelijk bare voor keuren leuk vinden, maar is Jan niet bekeken (leuk/geclassificeerd). In dit geval raadt mahout aan *het fantoom Menace*, de *aanval van de klonen*en *het re van de Sith*.
+* **Aanbeveling voor soort gelijke** voor delen: omdat Joe de eerste drie films leuk vindt, kijkt mahout naar films die anderen met vergelijk bare voor keuren leuk vinden, maar is Jan niet bekeken (leuk/geclassificeerd). In dit geval raadt mahout aan *het fantoom Menace*, de *aanval van de klonen* en *het re van de Sith*.
 
 ### <a name="understanding-the-data"></a>Informatie over de gegevens
 
@@ -160,7 +157,7 @@ De gegevens in `user-ratings.txt` hebben de structuur `userID` , `movieID` , `us
    print "------------------------"
    ```
 
-    Druk op **CTRL-X**, **Y**en tenslotte **Enter** om de gegevens op te slaan.
+    Druk op **CTRL-X**, **Y** en tenslotte **Enter** om de gegevens op te slaan.
 
 4. Voer het python-script uit. Bij de volgende opdracht wordt ervan uitgegaan dat u zich in de map bevindt waarin alle bestanden zijn gedownload:
 

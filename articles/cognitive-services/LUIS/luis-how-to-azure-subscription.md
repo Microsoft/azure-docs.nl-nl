@@ -7,12 +7,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 19c27dc80f9af013c458663c9c7afb0033683acd
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: d8944c9e49bde8c452a10a1886cae316a0f7a33f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97348064"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945075"
 ---
 # <a name="create-luis-resources"></a>LUIS-resources maken
 
@@ -125,7 +125,7 @@ De eigenaar en alle mede werkers hebben toegang tot het schrijven van de app.
 
 Toegang voor het uitvoeren van query's op het Voorspellings eindpunt wordt bepaald door een instelling op de pagina **toepassings gegevens** in de sectie **beheren** .
 
-|[Privé-eindpunt](#runtime-security-for-private-apps)|[Openbaar eindpunt](#runtime-security-for-public-apps)|
+|[Persoonlijk eind punt](#runtime-security-for-private-apps)|[Openbaar eindpunt](#runtime-security-for-public-apps)|
 |:--|:--|
 |Beschikbaar voor eigenaar en mede werkers|Beschikbaar voor eigenaar, mede werkers en anderen die de App-ID kent|
 
@@ -173,7 +173,7 @@ U kunt bepalen wie uw LUIS prediction runtime-eindpunt sleutel kan zien door dez
 
 ### <a name="create-resources-in-the-azure-cli"></a>Resources maken in de Azure CLI
 
-Gebruik de [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) om elke resource afzonderlijk te maken.
+Gebruik de [Azure cli](/cli/azure/install-azure-cli) om elke resource afzonderlijk te maken.
 
 Resource `kind` :
 

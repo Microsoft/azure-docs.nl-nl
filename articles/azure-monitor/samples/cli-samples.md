@@ -7,19 +7,19 @@ author: bwren
 ms.author: bwren
 ms.date: 05/16/2018
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: abfac23ad37d750a6d7ef84e5dec2559904ebb1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 196a1d580bd5888a6604c3f98b108e39c08a3412
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87496301"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945022"
 ---
 # <a name="azure-monitor-cli-samples"></a>CLI-voorbeelden van Azure Monitor
 In dit artikel vindt u voorbeelden van CLI-opdrachten (Command-Line Interface), om vanaf de opdrachtregel toegang te krijgen tot Azure Monitor-functies. Met Azure Monitor kunt u cloudservices, virtuele machines en web-apps automatisch schalen en waarschuwingen verzenden of web-URL's aanroepen op basis van waarden van geconfigureerde telemetriegegevens.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u de Azure CLI nog niet hebt geïnstalleerd, volgt u de instructies in [Install the Azure CLI](/cli/azure/install-azure-cli) (De Azure CLI installeren). U kunt ook [Azure Cloud Shell](/azure/cloud-shell) gebruiken om de CLI als een interactieve ervaring in uw browser uit te voeren. Bekijk een volledig overzicht van alle beschikbare opdrachten in de [naslaginformatie over de CLI van Azure Monitor](/cli/azure/monitor?view=azure-cli-latest). 
+Als u de Azure CLI nog niet hebt geïnstalleerd, volgt u de instructies in [Install the Azure CLI](/cli/azure/install-azure-cli) (De Azure CLI installeren). U kunt ook [Azure Cloud Shell](/azure/cloud-shell) gebruiken om de CLI als een interactieve ervaring in uw browser uit te voeren. Bekijk een volledig overzicht van alle beschikbare opdrachten in de [naslaginformatie over de CLI van Azure Monitor](/cli/azure/monitor). 
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 De eerste stap is om u aan te melden bij uw Azure-account.

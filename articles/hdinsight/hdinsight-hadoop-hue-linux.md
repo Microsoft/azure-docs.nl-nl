@@ -1,19 +1,16 @@
 ---
 title: Tint met Hadoop op HDInsight Linux-gebaseerde clusters-Azure
 description: Meer informatie over het installeren van tint op HDInsight-clusters en het gebruik van tunneling om de aanvragen naar tinten te sturen. Gebruik tint om door de opslag te bladeren en Hive of Pig uit te voeren.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 03/31/2020
-ms.openlocfilehash: e80df5d1c3d2b2195e76622964406cc65c933a63
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8d4663aac6af4abb8d9855d2f972965e997d9c92
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546191"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945686"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Tint op HDInsight Hadoop-clusters installeren en gebruiken
 
@@ -91,7 +88,7 @@ U kunt slechts één gebruikers account hebben met kleur Toon op gewone clusters
 
     ![Portal voor HDInsight-tinten gebruiken Hive-editor](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-use-hive.png "Hive gebruiken")
 
-2. Op het tabblad **assistent** , onder **Data Base** , ziet u **hivesampletable** . Dit is een voorbeeld tabel die wordt geleverd met alle Hadoop-clusters in HDInsight. Voer een voorbeeld query in het rechterdeel venster in en Bekijk de uitvoer op het tabblad **resultaten** in het onderstaande deel venster, zoals wordt weer gegeven in de scherm opname.
+2. Op het tabblad **assistent** , onder **Data Base**, ziet u **hivesampletable**. Dit is een voorbeeld tabel die wordt geleverd met alle Hadoop-clusters in HDInsight. Voer een voorbeeld query in het rechterdeel venster in en Bekijk de uitvoer op het tabblad **resultaten** in het onderstaande deel venster, zoals wordt weer gegeven in de scherm opname.
 
     ![Portal Hive-query voor HDInsight-tint](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-hive-query.png "Hive-query uitvoeren")
 

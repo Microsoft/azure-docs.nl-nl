@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: 5d06c251ce16aff56a3645f5032cce4e27d5fc9e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 412556f3bd517539fc8ccad94c4de52226f16597
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216883"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946223"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Bron logboek registratie voor een netwerk beveiligings groep
 
@@ -93,7 +93,7 @@ Logboeken weer geven en analyseren. Zie [Logboeken weer geven en analyseren](#vi
 
 ### <a name="azure-cli"></a>Azure CLI
 
-U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shell.azure.com/bash), of door de Azure cli vanaf uw computer uit te voeren. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u de CLI vanaf uw computer uitvoert, hebt u versie 2.0.38 of hoger nodig. Voer uit `az --version` op uw computer om de geïnstalleerde versie te vinden. Als u een upgrade wilt uitvoeren, raadpleegt u [Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latest). Als u de CLI lokaal uitvoert, moet u ook uitvoeren om u `az login` aan te melden bij Azure met een account dat over de [benodigde machtigingen](virtual-network-network-interface.md#permissions)beschikt.
+U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shell.azure.com/bash), of door de Azure cli vanaf uw computer uit te voeren. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u de CLI vanaf uw computer uitvoert, hebt u versie 2.0.38 of hoger nodig. Voer uit `az --version` op uw computer om de geïnstalleerde versie te vinden. Als u een upgrade wilt uitvoeren, raadpleegt u [Azure cli installeren](/cli/azure/install-azure-cli). Als u de CLI lokaal uitvoert, moet u ook uitvoeren om u `az login` aan te melden bij Azure met een account dat over de [benodigde machtigingen](virtual-network-network-interface.md#permissions)beschikt.
 
 Als u de bron logboek registratie wilt inschakelen, hebt u de id van een bestaande NSG nodig. Als u geen bestaande NSG hebt, kunt u er een maken met [AZ Network NSG Create](/cli/azure/network/nsg#az-network-nsg-create).
 

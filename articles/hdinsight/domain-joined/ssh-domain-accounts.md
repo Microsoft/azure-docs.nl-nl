@@ -1,18 +1,15 @@
 ---
 title: SSH-toegang beheren voor domein accounts in azure HDInsight
 description: Stappen voor het beheren van SSH-toegang voor Azure AD-accounts in HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 02/14/2020
-ms.openlocfilehash: 5be992ef8375f98b3c5978d8b71dc92ce9f91123
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fab06f5e269f311f798c096a6465c8c6ce75fc2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86081499"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946752"
 ---
 # <a name="manage-ssh-access-for-domain-accounts-in-azure-hdinsight"></a>SSH-toegang beheren voor domein accounts in azure HDInsight
 

@@ -1,19 +1,16 @@
 ---
 title: Query's uitvoeren op Azure Monitor logboeken voor het bewaken van Azure HDInsight-clusters
 description: Meer informatie over het uitvoeren van query's in Azure Monitor logboeken voor het bewaken van taken die worden uitgevoerd in een HDInsight-cluster.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
-ms.openlocfilehash: c2ddcd8ea3524b4afdfa7f70d21f0cba96975f72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9213f36ec33939c3df3b56d21822aa3b6a17c03
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085358"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945616"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Azure Monitor logboeken voor het controleren van HDInsight-clusters doorzoeken
 
@@ -33,7 +30,7 @@ U moet een HDInsight-cluster hebben geconfigureerd om Azure Monitor-logboeken te
 Meer informatie over het zoeken naar specifieke metrische gegevens voor uw HDInsight-cluster.
 
 1. Open de Log Analytics-werk ruimte die is gekoppeld aan uw HDInsight-cluster via de Azure Portal.
-1. Selecteer **Logboeken**onder **Algemeen**.
+1. Selecteer **Logboeken** onder **Algemeen**.
 1. Typ de volgende query in het zoekvak om te zoeken naar alle metrische gegevens voor alle beschik bare gegevens voor alle HDInsight-clusters die zijn geconfigureerd voor het gebruik van Azure Monitor logboeken en selecteer vervolgens **uitvoeren**. Bekijk de resultaten.
 
     ```kusto
@@ -94,7 +91,7 @@ search in (metrics_resourcemanager_queue_root_default_CL) *
 De eerste stap bij het maken van een waarschuwing is het aanroepen van een query op basis waarvan de waarschuwing wordt geactiveerd. U kunt elke query gebruiken waarvoor u een waarschuwing wilt maken.
 
 1. Open de Log Analytics-werk ruimte die is gekoppeld aan uw HDInsight-cluster via de Azure Portal.
-1. Selecteer **Logboeken**onder **Algemeen**.
+1. Selecteer **Logboeken** onder **Algemeen**.
 1. Voer de volgende query uit waarop u een waarschuwing wilt maken en selecteer vervolgens **uitvoeren**.
 
     ```kusto
@@ -115,13 +112,13 @@ De eerste stap bij het maken van een waarschuwing is het aanroepen van een query
 
 1. Open de werk ruimte Log Analytics vanuit de Azure Portal.
 
-1. Selecteer in het menu links onder **bewaking**de optie **waarschuwingen**.
+1. Selecteer in het menu links onder **bewaking** de optie **waarschuwingen**.
 
 1. Selecteer in de bovenste **regel waarschuwings regels beheren**.
 
 1. Selecteer de waarschuwing die u wilt bewerken of verwijderen.
 
-1. U hebt de volgende opties: **Opslaan**, **verwijderen**, **uitschakelen**en **verwijderen**.
+1. U hebt de volgende opties: **Opslaan**, **verwijderen**, **uitschakelen** en **verwijderen**.
 
     ![Waarschuwing voor verwijderen van HDInsight-Azure Monitor logboeken](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 

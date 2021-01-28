@@ -1,19 +1,16 @@
 ---
 title: .NET gebruiken met Hadoop MapReduce op basis van Linux-Azure
 description: Meer informatie over het gebruik van .NET-toepassingen voor streaming MapReduce op HDInsight op basis van Linux.
-author: hrasheed-msft
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 02/27/2018
-ms.author: hrasheed
-ms.openlocfilehash: a6e9bea5d600771a7754142a4df4c0af503ccf5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ceb5d323ecfed54b4e01d13d66c640769a224ee
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86075481"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945593"
 ---
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>.NET-oplossingen voor op Windows gebaseerde HDInsight migreren naar op Linux gebaseerde HDInsight
 
@@ -34,15 +31,15 @@ De [.net-portabiliteit Analyzer](https://marketplace.visualstudio.com/items?item
 
 1. Installeer de [.net-portabiliteit-analyse functie](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Selecteer tijdens de installatie de versie van Visual Studio die u wilt gebruiken.
 
-2. Selecteer in Visual Studio 2015 __Analyze__  >  __instellingen voor portabiliteit Analyzer__analyseren en controleer of __4,5__ is ingeschakeld in het gedeelte __mono__ .
+2. Selecteer in Visual Studio 2015   >  __instellingen voor portabiliteit Analyzer__ analyseren en controleer of __4,5__ is ingeschakeld in het gedeelte __mono__ .
 
     ![4,5 gecontroleerd in mono-sectie voor de analyse-instellingen](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-settings.png)
 
     Selecteer __OK__ om de configuratie op te slaan.
 
-3. Selecteer __analyseren__van  >  __Assembly voor analyse__analyseren. Selecteer de assembly die uw oplossing bevat en selecteer vervolgens __openen__ om te beginnen met de analyse.
+3. Selecteer __analyseren__ van  >  __Assembly voor analyse__ analyseren. Selecteer de assembly die uw oplossing bevat en selecteer vervolgens __openen__ om te beginnen met de analyse.
 
-4. Wanneer de analyse is voltooid, __Analyze__selecteert u  >  __analyse rapporten analyseren weer geven__. Selecteer in de resultaten van de __portabiliteit-analyse__de optie __rapport openen__ om een rapport te openen.
+4. Wanneer de analyse is voltooid, selecteert u  >  __analyse rapporten analyseren weer geven__. Selecteer in de resultaten van de __portabiliteit-analyse__ de optie __rapport openen__ om een rapport te openen.
 
     ![Dialoog venster resultaten van portabiliteit Analyzer](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-results.png)
 

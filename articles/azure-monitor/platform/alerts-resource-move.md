@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/26/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4ea5c8552d35db67a1d2caf20c0143c74cdd642e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36cf5882913426062e281194b61a8c760141512a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86505479"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944165"
 ---
 # <a name="how-to-update-alert-rules-or-action-rules-when-their-target-resource-moves-to-a-different-azure-region"></a>Waarschuwings regels of actie regels bijwerken wanneer de doel resource wordt verplaatst naar een andere Azure-regio
 
@@ -76,7 +76,7 @@ Als **slechts een deel** van de resources in het bereik is verplaatst, moet u de
 ### <a name="change-scope-of-a-rule-from-the-azure-portal"></a>Het bereik van een regel wijzigen van de Azure Portal
 
 1. Open de regel die u in de vorige stap hebt geïdentificeerd door erop te klikken.
-2. Klik onder **resource**op **bewerken** en pas het bereik zo nodig aan.
+2. Klik onder **resource** op **bewerken** en pas het bereik zo nodig aan.
 3. Pas zo nodig andere eigenschappen van de regel aan.
 4. Klik op **Opslaan**.
 
@@ -88,7 +88,7 @@ Als **slechts een deel** van de resources in het bereik is verplaatst, moet u de
    1. Ga naar de sectie resource groepen in de portal en open de resource groep met de regel.
    2. Schakel in de sectie Overzicht het selectie vakje **verborgen type weer geven** in en filter op het betreffende type regel.
    3. Selecteer de relevante regel om de details ervan weer te geven.
-   4. Selecteer onder **instellingen**de optie **sjabloon exporteren**.
+   4. Selecteer onder **instellingen** de optie **sjabloon exporteren**.
 2. Wijzig de sjabloon. Als dat nodig is, kunt u splitsen in twee regels (die relevant zijn voor bepaalde gevallen van metrische waarschuwingen, zoals hierboven vermeld).
 3. Implementeer de sjabloon opnieuw.
 
@@ -106,7 +106,7 @@ Als **slechts een deel** van de resources in het bereik is verplaatst, moet u de
 
 ### <a name="change-the-scope-of-a-rule-using-azure-cli"></a>Het bereik van een regel wijzigen met behulp van Azure CLI
 
-1.  De bestaande regel ophalen ([metrische waarschuwingen](/cli/azure/monitor/metrics/alert?view=azure-cli-latest#az-monitor-metrics-alert-show), [waarschuwingen voor activiteiten logboeken](/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)).
+1.  De bestaande regel ophalen ([metrische waarschuwingen](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-show), [waarschuwingen voor activiteiten logboeken](/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)).
 2.  Het regel bereik direct bijwerken ([metrische waarschuwingen](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-update), [waarschuwingen voor activiteiten logboeken](/cli/azure/monitor/activity-log/alert/scope))
 3.  Als dat nodig is, kunt u splitsen in twee regels (die relevant zijn voor bepaalde gevallen van metrische waarschuwingen, zoals hierboven vermeld).
 

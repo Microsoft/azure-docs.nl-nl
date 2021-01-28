@@ -7,12 +7,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
 ms.date: 12/18/2020
-ms.openlocfilehash: d23b2f65f25b704beaee12c53e47706653dcc208
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 9706bee07f028c36b4d03311a7abbb969a1be685
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858569"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944996"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Gegevens stromen toewijzen prestaties en afstemmings handleiding
 
@@ -115,7 +115,7 @@ Gegevens stromen distribueren de gegevens verwerking over verschillende knoop pu
 
 De standaard cluster grootte is vier Stuur knooppunten en vier werk knooppunten.  Bij het verwerken van meer gegevens worden grotere clusters aanbevolen. Hieronder ziet u de mogelijke opties voor de grootte:
 
-| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Opmerkingen |
+| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Notities |
 | ------------ | ------------ | ----------- | ----- |
 | 4 | 4 | 8 | Niet beschikbaar voor berekenings optimalisatie |
 | 8 | 8 | 16 | |
@@ -161,7 +161,7 @@ Azure SQL Database heeft een unieke partitionering-optie met de naam bron partit
 
 #### <a name="isolation-level"></a>Isolatie niveau
 
-Het isolatie niveau van de Lees bewerking op een Azure SQL-bron systeem heeft invloed op de prestaties. Als u ' niet doorgevoerd ' kiest, worden de snelste prestaties geboden en kunnen er geen database vergrendelingen worden uitgevoerd. Zie informatie over [isolatie niveaus](https://docs.microsoft.com/sql/connect/jdbc/understanding-isolation-levels)voor meer informatie over SQL-isolatie niveaus.
+Het isolatie niveau van de Lees bewerking op een Azure SQL-bron systeem heeft invloed op de prestaties. Als u ' niet doorgevoerd ' kiest, worden de snelste prestaties geboden en kunnen er geen database vergrendelingen worden uitgevoerd. Zie informatie over [isolatie niveaus](/sql/connect/jdbc/understanding-isolation-levels)voor meer informatie over SQL-isolatie niveaus.
 
 #### <a name="read-using-query"></a>Lezen met behulp van query
 
@@ -208,7 +208,7 @@ Deze kunnen zowel als systeem eigen worden uitgevoerd met scripts van vóór en 
 ![Indexen uitschakelen](media/data-flow/disable-indexes-sql.png "Indexen uitschakelen")
 
 > [!WARNING]
-> Wanneer u indexen uitschakelt, wordt de controle over een data base in feite uitgevoerd en zijn query's waarschijnlijk op dit moment niet mogelijk. Als gevolg hiervan worden veel ETL-taken in het midden van de nacht geactiveerd om dit conflict te voor komen. Meer informatie over de beperkingen voor het [uitschakelen van indexen](https://docs.microsoft.com/sql/relational-databases/indexes/disable-indexes-and-constraints)
+> Wanneer u indexen uitschakelt, wordt de controle over een data base in feite uitgevoerd en zijn query's waarschijnlijk op dit moment niet mogelijk. Als gevolg hiervan worden veel ETL-taken in het midden van de nacht geactiveerd om dit conflict te voor komen. Meer informatie over de beperkingen voor het [uitschakelen van indexen](/sql/relational-databases/indexes/disable-indexes-and-constraints)
 
 #### <a name="scaling-up-your-database"></a>Uw data base omhoog schalen
 
@@ -216,7 +216,7 @@ Plan een grootte van uw bron en Sink Azure SQL DB en DW vóór de uitvoering van
 
 ### <a name="azure-synapse-analytics-sinks"></a>Azure Synapse Analytics-sinks
 
-Wanneer u naar Azure Synapse Analytics schrijft, moet u ervoor zorgen dat het **inschakelen van staging** is ingesteld op waar. Dit maakt het mogelijk om ADF te schrijven met behulp van de [SQL copy-opdracht](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql) , die de gegevens effectief laadt. U moet verwijzen naar een Azure Data Lake Storage Gen2-of Azure Blob Storage-account voor het faseren van de gegevens bij gebruik van staging.
+Wanneer u naar Azure Synapse Analytics schrijft, moet u ervoor zorgen dat het **inschakelen van staging** is ingesteld op waar. Dit maakt het mogelijk om ADF te schrijven met behulp van de [SQL copy-opdracht](/sql/t-sql/statements/copy-into-transact-sql) , die de gegevens effectief laadt. U moet verwijzen naar een Azure Data Lake Storage Gen2-of Azure Blob Storage-account voor het faseren van de gegevens bij gebruik van staging.
 
 Met uitzonde ring van fase ring, zijn dezelfde aanbevolen procedures van toepassing op Azure Synapse Analytics als Azure SQL Database.
 

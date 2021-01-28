@@ -2,17 +2,14 @@
 title: Azure HDInsight ID Broker (HIB)
 description: Meer informatie over Azure HDInsight ID Broker voor het vereenvoudigen van de verificatie voor Apache Hadoop clusters die lid zijn van een domein.
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: b8dfe9a23e5c6697323142212156006cb65d2f9b
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 47ba11260c3b58566963e5a3ffac80ca461a8a23
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556525"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946817"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Azure HDInsight ID Broker (HIB)
 
@@ -52,7 +49,7 @@ In het volgende diagram ziet u de basis verificatie stroom voor federatieve gebr
 
 Een Enterprise Security Package cluster maken waarbij HDInsight ID Broker is ingeschakeld:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Volg de basis stappen voor het maken van een Enterprise Security Package cluster. Zie [een HDInsight-cluster maken met Enterprise Security Package](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp)voor meer informatie.
 1. Selecteer **HDINSIGHT id Broker inschakelen**.
 

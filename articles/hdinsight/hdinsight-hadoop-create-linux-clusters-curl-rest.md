@@ -1,19 +1,16 @@
 ---
 title: Apache Hadoop clusters maken met Azure REST API-Azure
 description: Meer informatie over het maken van HDInsight-clusters door Azure Resource Manager sjablonen te verzenden naar de Azure-REST API.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 12/10/2019
-ms.openlocfilehash: 3ce104e9340c3e93d64b68dcab6f5bd6d2f62493
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fa5675104d9614e1bd917585ea537c92dddd88cc
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020621"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945779"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Apache Hadoop clusters maken met behulp van de Azure-REST API
 

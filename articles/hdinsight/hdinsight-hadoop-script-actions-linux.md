@@ -1,18 +1,15 @@
 ---
 title: Script acties ontwikkelen voor het aanpassen van Azure HDInsight-clusters
 description: Meer informatie over het gebruik van bash-scripts voor het aanpassen van HDInsight-clusters. Met script acties kunt u scripts uitvoeren tijdens of na het maken van een cluster om configuratie-instellingen van het cluster te wijzigen of extra software te installeren.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/28/2019
-ms.openlocfilehash: f7959b639b75d912d44670c8b00a7327cb7857d6
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: b6705728fddc9a5a3c9cb8eb2f1811412fb3a290
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629439"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945472"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Ontwikkeling van script acties met HDInsight
 
@@ -290,7 +287,7 @@ Scripts die worden gebruikt voor het aanpassen van een cluster, moeten worden op
 
 * Een __extra opslag account__ dat aan het cluster is gekoppeld.
 
-* Een __openbaar Lees bare URI__ . Bijvoorbeeld een URL naar gegevens die zijn opgeslagen in OneDrive, Dropbox of een andere service voor het hosten van bestanden.
+* Een __openbaar Lees bare URI__. Bijvoorbeeld een URL naar gegevens die zijn opgeslagen in OneDrive, Dropbox of een andere service voor het hosten van bestanden.
 
 * Een __Azure data Lake Storage-account__ dat is gekoppeld aan het HDInsight-cluster. Zie [Quick Start: clusters instellen in hdinsight](./hdinsight-hadoop-provision-linux-clusters.md)voor meer informatie over het gebruik van Azure data Lake Storage met hdinsight.
 
@@ -332,13 +329,13 @@ Micro soft biedt voorbeeld scripts voor het installeren van onderdelen in een HD
 
 Hieronder vindt u fouten die kunnen optreden bij het gebruik van scripts die u hebt ontwikkeld:
 
-**Fout** : `$'\r': command not found` . Soms gevolgd door `syntax error: unexpected end of file` .
+**Fout**: `$'\r': command not found` . Soms gevolgd door `syntax error: unexpected end of file` .
 
-*Oorzaak* : deze fout wordt veroorzaakt wanneer de regels in een script EINDIGEN met CRLF. UNIX-systemen verwachten alleen LF als de regel eindigt.
+*Oorzaak*: deze fout wordt veroorzaakt wanneer de regels in een script EINDIGEN met CRLF. UNIX-systemen verwachten alleen LF als de regel eindigt.
 
 Dit probleem treedt meestal op wanneer het script wordt gemaakt in een Windows-omgeving, aangezien CRLF een gemeen schappelijke lijn eindigt voor veel tekst editors in Windows.
 
-*Oplossing* : als het een optie in de tekst editor is, selecteert u UNIX-indeling of LF voor de regel die eindigt. U kunt ook de volgende opdrachten op een UNIX-systeem gebruiken om de CRLF te wijzigen in een LF:
+*Oplossing*: als het een optie in de tekst editor is, selecteert u UNIX-indeling of LF voor de regel die eindigt. U kunt ook de volgende opdrachten op een UNIX-systeem gebruiken om de CRLF te wijzigen in een LF:
 
 > [!NOTE]  
 > De volgende opdrachten zijn ongeveer gelijk aan die moeten worden gewijzigd de CRLF-regel eindigt op LF. Selecteer een op basis van de hulpprogram ma's die beschikbaar zijn op uw systeem.
@@ -350,11 +347,11 @@ Dit probleem treedt meestal op wanneer het script wordt gemaakt in een Windows-o
 | `perl -pi -e 's/\r\n/\n/g' INFILE` | Hiermee wordt het bestand rechtstreeks gewijzigd |
 | ```sed 's/$'"/`echo \\\r`/" INFILE > OUTFILE``` |Out-bestand bevat een versie met alleen LF-einden. |
 
-**Fout** : `line 1: #!/usr/bin/env: No such file or directory` .
+**Fout**: `line 1: #!/usr/bin/env: No such file or directory` .
 
-*Oorzaak* : deze fout treedt op wanneer het script is opgeslagen als UTF-8 met een byte order Mark (bom).
+*Oorzaak*: deze fout treedt op wanneer het script is opgeslagen als UTF-8 met een byte order Mark (bom).
 
-*Oplossing* : Sla het bestand op als ASCII of als UTF-8 zonder een stuk lijst. U kunt ook de volgende opdracht op een Linux-of UNIX-systeem gebruiken om een bestand te maken zonder de stuk lijst:
+*Oplossing*: Sla het bestand op als ASCII of als UTF-8 zonder een stuk lijst. U kunt ook de volgende opdracht op een Linux-of UNIX-systeem gebruiken om een bestand te maken zonder de stuk lijst:
 
 ```bash
 awk 'NR==1{sub(/^\xef\xbb\xbf/,"")}{print}' INFILE > OUTFILE

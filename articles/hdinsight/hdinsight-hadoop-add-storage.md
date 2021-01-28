@@ -1,19 +1,16 @@
 ---
 title: Meer Azure Storage accounts toevoegen aan HDInsight
 description: Meer informatie over het toevoegen van extra Azure Storage accounts aan een bestaand HDInsight-cluster.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 51977c00dc8c9932def89d54ec1b6ec34afad652
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 11852046442901c70112b5e80fef371671546412
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541992"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945944"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Extra opslag accounts toevoegen aan HDInsight
 
@@ -97,7 +94,7 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 
-1. Navigeer naar **HDFS**  >  **configs**  >  **Geavanceerde**  >  **aangepaste kern-site** .
+1. Navigeer naar **HDFS**  >  **configs**  >  **Geavanceerde**  >  **aangepaste kern-site**.
 
 1. Bekijk de sleutels die beginnen met `fs.azure.account.key` . De account naam maakt deel uit van de sleutel, zoals wordt weer gegeven in deze voorbeeld afbeelding:
 
@@ -107,7 +104,7 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 
-1. Navigeer naar **HDFS**  >  **configs**  >  **Geavanceerde**  >  **aangepaste kern-site** .
+1. Navigeer naar **HDFS**  >  **configs**  >  **Geavanceerde**  >  **aangepaste kern-site**.
 
 1. Verwijder de volgende sleutels:
     * `fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net`
@@ -119,7 +116,7 @@ Nadat u deze sleutels hebt verwijderd en de configuratie hebt opgeslagen, moet u
 
 ### <a name="storage-firewall"></a>Opslag firewall
 
-Als u ervoor kiest om uw opslag account te beveiligen met de **firewalls en beperkingen voor virtuele netwerken** op **geselecteerde netwerken** , moet u de uitzonde ring inschakelen **vertrouwde micro soft-Services toestaan...** zodat HDInsight toegang kan krijgen tot uw opslag account`.`
+Als u ervoor kiest om uw opslag account te beveiligen met de **firewalls en beperkingen voor virtuele netwerken** op **geselecteerde netwerken**, moet u de uitzonde ring inschakelen **vertrouwde micro soft-Services toestaan...** zodat HDInsight toegang kan krijgen tot uw opslag account`.`
 
 ### <a name="unable-to-access-storage-after-changing-key"></a>Kan geen toegang krijgen tot de opslag na het wijzigen van de sleutel
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: bwren
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: e6ccba27fb599cb26da86e94d3500f4f806ecb76
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14f37d0779f245301b3750329658a580dc3f9e42
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91328867"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946206"
 ---
 # <a name="install-and-configure-windows-azure-diagnostics-extension-wad"></a>De Windows Azure Diagnostics-extensie (WAD) installeren en configureren
 [Azure Diagnostics-extensie](diagnostics-extension-overview.md) is een agent in azure monitor die bewakings gegevens van het gast besturingssysteem en werk belastingen van virtuele Azure-machines en andere reken bronnen verzamelt. Dit artikel bevat informatie over het installeren en configureren van de Windows diagnostische uitbrei ding en een beschrijving van de manier waarop de gegevens worden opgeslagen in en Azure Storage-account.
@@ -57,7 +57,7 @@ U kunt de diagnostische extensie installeren en configureren op een afzonderlijk
 
    ![Crashdumps](media/diagnostics-extension-windows-install/crash-dumps.png)
 
-8. Geef op het tabblad **sinks** op of de gegevens naar andere locaties dan Azure Storage moeten worden verzonden. Als u **Azure monitor**selecteert, worden de prestatie gegevens van de gast naar Azure monitor metrieken verzonden. U kunt de Sink voor Event hubs niet configureren met behulp van de Azure Portal.
+8. Geef op het tabblad **sinks** op of de gegevens naar andere locaties dan Azure Storage moeten worden verzonden. Als u **Azure monitor** selecteert, worden de prestatie gegevens van de gast naar Azure monitor metrieken verzonden. U kunt de Sink voor Event hubs niet configureren met behulp van de Azure Portal.
 
    ![Scherm afbeelding toont het tabblad sinks met de optie diagnostische gegevens verzenden naar Azure Monitor ingeschakeld.](media/diagnostics-extension-windows-install/sinks.png)
    
@@ -65,7 +65,7 @@ U kunt de diagnostische extensie installeren en configureren op een afzonderlijk
    
    ![Beheerde entiteit](media/diagnostics-extension-windows-install/managed-entity.png)
 
-9. In de **agent**kunt u het opslag account wijzigen, het schijf quotum instellen en opgeven of Logboeken met diagnostische infra structuur moeten worden verzameld.  
+9. In de **agent** kunt u het opslag account wijzigen, het schijf quotum instellen en opgeven of Logboeken met diagnostische infra structuur moeten worden verzameld.  
 
    ![Scherm afbeelding toont het tabblad agent met de optie om het opslag account in te stellen.](media/diagnostics-extension-windows-install/agent.png)
 
@@ -78,7 +78,7 @@ U kunt de diagnostische extensie installeren en configureren op een afzonderlijk
 Zie [controle en diagnose gebruiken met een Windows-VM en Azure Resource Manager sjablonen](../../virtual-machines/extensions/diagnostics-template.md) voor het implementeren van de diagnostische uitbrei ding met Azure Resource Manager sjablonen. 
 
 ## <a name="azure-cli-deployment"></a>Implementatie van Azure CLI
-De Azure CLI kan worden gebruikt om de Azure Diagnostics-extensie op een bestaande virtuele machine te implementeren met behulp van [AZ VM extension set](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-set) , zoals in het volgende voor beeld. 
+De Azure CLI kan worden gebruikt om de Azure Diagnostics-extensie op een bestaande virtuele machine te implementeren met behulp van [AZ VM extension set](/cli/azure/vm/extension#az-vm-extension-set) , zoals in het volgende voor beeld. 
 
 ```azurecli
 az vm extension set \

@@ -1,5 +1,5 @@
 ---
-title: Persoonlijke Azure-koppeling voor Azure Data Factory
+title: Azure Private Link voor Azure Data Factory
 description: Meer informatie over hoe Azure private link werkt in Azure Data Factory.
 services: data-factory
 ms.author: abnarain
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: 5d13a6a77ede6277eebc7fdab7cd42165cb602fa
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 6fb460c65d37723b03c1dfd4fba2c353c19455bd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746342"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944584"
 ---
-# <a name="azure-private-link-for-azure-data-factory"></a>Persoonlijke Azure-koppeling voor Azure Data Factory
+# <a name="azure-private-link-for-azure-data-factory"></a>Azure Private Link voor Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-xxx-md.md)]
 
@@ -67,7 +67,7 @@ Het inschakelen van de service voor persoonlijke koppelingen voor elk van de voo
 > Wanneer u een gekoppelde service maakt, moet u ervoor zorgen dat uw referenties zijn opgeslagen in een Azure-sleutel kluis. Anders werken de referenties niet wanneer u een persoonlijke koppeling inschakelt in Azure Data Factory.
 
 ## <a name="dns-changes-for-private-endpoints"></a>DNS-wijzigingen voor privé-eind punten
-Wanneer u een persoonlijk eind punt maakt, wordt de DNS CNAME-bron record voor de Data Factory bijgewerkt naar een alias in een subdomein met het voor voegsel ' privatelink '. Standaard maken we ook een [privé-DNS-zone](https://docs.microsoft.com/azure/dns/private-dns-overview), die overeenkomt met het subdomein ' privatelink ', met de DNS a-bron records voor de privé-eind punten.
+Wanneer u een persoonlijk eind punt maakt, wordt de DNS CNAME-bron record voor de Data Factory bijgewerkt naar een alias in een subdomein met het voor voegsel ' privatelink '. Standaard maken we ook een [privé-DNS-zone](../dns/private-dns-overview.md), die overeenkomt met het subdomein ' privatelink ', met de DNS a-bron records voor de privé-eind punten.
 
 Wanneer u de data factory eind punt-URL van buiten het VNet met het persoonlijke eind punt omzetten, wordt deze omgezet in het open bare eind punt van de data factory-service. Wanneer het is opgelost vanuit het VNet dat het persoonlijke eind punt host, wordt de URL van het opslag eindpunt omgezet naar het IP-adres van het privé-eind punt.
 
@@ -89,8 +89,8 @@ De DNS-resource records voor DataFactoryA, wanneer deze zijn opgelost in het VNe
 Als u een aangepaste DNS-server in uw netwerk gebruikt, moeten clients de FQDN voor het Data Factory-eind punt kunnen omzetten in het IP-adres van het privé-eind punt. U moet uw DNS-server zo configureren dat uw privé-koppelings subdomein wordt overgedragen aan de privé-DNS-zone voor het VNet, of dat u de A-records voor DataFactoryA configureert. {Region}. privatelink. DataFactory. Azure. net ' met het IP-adres van het privé-eind punt.
 
 Raadpleeg de volgende artikelen voor meer informatie over het configureren van uw eigen DNS-server voor de ondersteuning van persoonlijke eind punten:
-- [Naamomzetting voor resources in virtuele Azure-netwerken](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
-- [DNS-configuratie voor privé-eind punten](https://docs.microsoft.com/azure/private-link/private-endpoint-overview#dns-configuration)
+- [Naamomzetting voor resources in virtuele Azure-netwerken](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server)
+- [DNS-configuratie voor privé-eind punten](../private-link/private-endpoint-overview.md#dns-configuration)
 
 
 ## <a name="set-up-private-link-for-azure-data-factory"></a>Persoonlijke koppeling instellen voor Azure Data Factory
@@ -105,7 +105,7 @@ U kunt ook naar uw Azure data factory gaan in de Azure Portal en een persoonlijk
 
 ![Scherm opname van het deel venster "persoonlijke eindpunt verbindingen" voor het maken van een persoonlijk eind punt.](./media/data-factory-private-link/create-private-endpoint.png)
 
-Selecteer in de stap **Resource** van de resource **micro soft. DataFactory/fabrieken** als **resource type**. En als u een persoonlijk eind punt wilt maken voor de opdracht communicatie tussen de zelf-hostende Integration runtime en de Azure Data Factory-Service, selecteert u **DataFactory** als **doel-subresource**.
+Selecteer in de stap van de resource **micro soft. DataFactory/fabrieken** als **resource type**. En als u een persoonlijk eind punt wilt maken voor de opdracht communicatie tussen de zelf-hostende Integration runtime en de Azure Data Factory-Service, selecteert u **DataFactory** als **doel-subresource**.
 
 ![Scherm opname van het deel venster "persoonlijke eindpunt verbindingen" voor het selecteren van een resource.](./media/data-factory-private-link/private-endpoint-resource.png)
 

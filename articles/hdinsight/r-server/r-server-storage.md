@@ -2,18 +2,15 @@
 title: Azure Storage-oplossingen voor ML-Services op HDInsight-Azure
 description: Meer informatie over de verschillende opslag opties die beschikbaar zijn met ML Services in HDInsight
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 01/02/2020
-ms.openlocfilehash: 1b684fde9123d3c12d5d69c1daec1c53c6519c44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ddc48025de164ff68fb539a293e06bae09171742
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855290"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943912"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Azure Storage-oplossingen voor ML-Services in azure HDInsight
 
@@ -25,14 +22,14 @@ In een service op basis van ML kunnen verschillende opslag oplossingen worden ge
 
 U hebt ook de mogelijkheid om toegang te krijgen tot meerdere Azure Storage-accounts of-containers met uw HDInsight-cluster. Azure File Storage is een handige optie voor gegevens opslag voor gebruik op het Edge-knoop punt waarmee u een Azure Storage-bestands share kunt koppelen aan bijvoorbeeld het Linux-bestands systeem. Azure-bestands shares kunnen worden gekoppeld en gebruikt door elk systeem met een ondersteund besturings systeem, zoals Windows of Linux.
 
-Wanneer u een Apache Hadoop cluster maakt in HDInsight, geeft u een **Azure Blob-opslag** account of **Data Lake Storage gen1**op. Een specifieke opslag container van dat account bevat het bestands systeem voor het cluster dat u maakt (bijvoorbeeld de Hadoop Distributed File System). Zie voor meer informatie en richt lijnen:
+Wanneer u een Apache Hadoop cluster maakt in HDInsight, geeft u een **Azure Blob-opslag** account of **Data Lake Storage gen1** op. Een specifieke opslag container van dat account bevat het bestands systeem voor het cluster dat u maakt (bijvoorbeeld de Hadoop Distributed File System). Zie voor meer informatie en richt lijnen:
 
 - [Azure Blob-opslag gebruiken met HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 - [Data Lake Storage Gen1 gebruiken met Azure HDInsight-clusters](../hdinsight-hadoop-use-data-lake-storage-gen1.md)
 
 ## <a name="use-azure-blob-storage-accounts-with-ml-services-cluster"></a>Azure Blob Storage-accounts gebruiken met een cluster van ML Services
 
-Als u meer dan één opslag account hebt opgegeven tijdens het maken van uw ML-cluster, wordt in de volgende instructies uitgelegd hoe u een secundair account gebruikt voor gegevens toegang en-bewerkingen op een ML-cluster. Stel dat de volgende opslag accounts en container: **storage1** en een standaard container met de naam **container1**en **storage2** met **container2**.
+Als u meer dan één opslag account hebt opgegeven tijdens het maken van uw ML-cluster, wordt in de volgende instructies uitgelegd hoe u een secundair account gebruikt voor gegevens toegang en-bewerkingen op een ML-cluster. Stel dat de volgende opslag accounts en container: **storage1** en een standaard container met de naam **container1** en **storage2** met **container2**.
 
 > [!WARNING]  
 > Voor prestatie doeleinden wordt het HDInsight-cluster in hetzelfde Data Center gemaakt als het primaire opslag account dat u opgeeft. Het gebruik van een opslag account op een andere locatie dan het HDInsight-cluster wordt niet ondersteund.
@@ -120,7 +117,7 @@ U opent Data Lake Storage Gen1 met behulp van een Service-Principal Azure Active
 
 1. Wanneer u een HDInsight-cluster maakt, selecteert u **cluster Azure AD-identiteit** op het tabblad **gegevens bron** .
 
-2. Selecteer in het dialoog venster **cluster Azure AD-identiteit** onder **Select AD-Service-Principal**de optie **nieuwe maken**.
+2. Selecteer in het dialoog venster **cluster Azure AD-identiteit** onder **Select AD-Service-Principal** de optie **nieuwe maken**.
 
 Wanneer u de service-principal een naam geeft en er een wacht woord voor maakt, klikt u op **ADLS toegang beheren** om de service-principal te koppelen aan uw data Lake Storage.
 

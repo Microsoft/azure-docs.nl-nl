@@ -3,12 +3,12 @@ title: Azure Red Hat open Shift v4. x configureren met Azure Monitor voor contai
 description: In dit artikel wordt beschreven hoe u bewaking configureert voor een Kubernetes-cluster met Azure Monitor dat wordt gehost op Azure Red Hat open Shift versie 4 of hoger.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: e9f31d1b71122c53a67dc40af31d33255e2e98d8
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 8cd551a028f2fc67c26f8e32d59c0e0650aa1e54
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91994549"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944533"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Azure Red Hat open Shift v4. x configureren met Azure Monitor voor containers
 
@@ -20,7 +20,7 @@ Azure Monitor voor containers biedt een uitgebreide bewakings ervaring voor Azur
 
 U kunt Azure Monitor voor containers inschakelen voor een of meer bestaande implementaties van Azure Red Hat open Shift v4. x door gebruik te maken van de ondersteunde methoden die in dit artikel worden beschreven.
 
-Voer voor een bestaand cluster dit [bash-script uit in de Azure cli](/cli/azure/openshift?view=azure-cli-latest#az-openshift-create&preserve-view=true).
+Voer voor een bestaand cluster dit [bash-script uit in de Azure cli](/cli/azure/openshift#az-openshift-create&preserve-view=true).
 
 ## <a name="supported-and-unsupported-features"></a>Ondersteunde en niet-ondersteunde functies
 
@@ -133,7 +133,7 @@ In deze sectie schakelt u bewaking in voor uw Azure Red Hat open Shift v4. x-clu
 
 In dit voor beeld bent u niet verplicht een bestaande werk ruimte vooraf te maken of op te geven. Met deze opdracht vereenvoudigt u het proces voor u door een standaardwerk ruimte te maken in de standaard resource groep van het cluster abonnement als er nog geen bestaat in de regio.
 
-De standaardwerk ruimte die wordt gemaakt, heeft de indeling *DefaultWorkspace- \<GUID> - \<Region> *.  
+De standaardwerk ruimte die wordt gemaakt, heeft de indeling *DefaultWorkspace- \<GUID> - \<Region>*.  
 
 Vervang de waarden voor de `azureAroV4ClusterResourceId` `kubeContext` para meters en.
 
@@ -154,7 +154,7 @@ In de weer gave met meerdere clusters in Azure Monitor voor containers worden uw
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **Azure monitor**in het linkerdeel venster of op de start pagina.
+1. Selecteer **Azure monitor** in het linkerdeel venster of op de start pagina.
 
 1. Selecteer in de sectie **inzichten** de optie **containers**.
 
@@ -162,7 +162,7 @@ In de weer gave met meerdere clusters in Azure Monitor voor containers worden uw
 
 1. Selecteer in de lijst met niet-bewaakte clusters het cluster en selecteer vervolgens **inschakelen**.
 
-    U kunt de resultaten in de lijst identificeren door te zoeken naar de waarde **Aro** in de kolom **cluster type** . Nadat u **inschakelen**hebt geselecteerd, wordt u omgeleid naar dit artikel.
+    U kunt de resultaten in de lijst identificeren door te zoeken naar de waarde **Aro** in de kolom **cluster type** . Nadat u **inschakelen** hebt geselecteerd, wordt u omgeleid naar dit artikel.
 
 ## <a name="next-steps"></a>Volgende stappen
 

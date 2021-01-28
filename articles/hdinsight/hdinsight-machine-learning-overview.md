@@ -1,19 +1,16 @@
 ---
 title: Overzicht van machine learning-Azure HDInsight
 description: Overzicht van big data machine learning opties voor clusters in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: a3c050b414e322f08fd45a569a22cea2db591b99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18be3fa8851c2dbaab622c770d02f4db252a231c
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91302686"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945261"
 ---
 # <a name="machine-learning-on-hdinsight"></a>Machine learning op HDInsight
 
@@ -31,7 +28,7 @@ De micro Soft Machine Learning-bibliotheek voor Apache Spark is [MMLSpark](https
 
 ![Training voor voor spellingen met R server](./media/hdinsight-machine-learning-overview/training-for-prediction.png)
 
-Het Edge-knoop punt van een cluster biedt een handige plaats om verbinding te maken met het cluster en om uw R-scripts uit te voeren.  U kunt ook R-scripts uitvoeren op de knoop punten van het cluster met behulp van de Hadoop-toewijzing van de Scale-map of door middel van Spark Compute-contexten.
+Het edge-knooppunt van een cluster biedt een handige plaats om verbinding te maken met het cluster en om uw R-scripts uit te voeren.  U kunt ook R-scripts uitvoeren op de knoop punten van het cluster met behulp van de Hadoop-toewijzing van de Scale-map of door middel van Spark Compute-contexten.
 
 Met ML Services op HDInsight met Spark kunt u training over de knoop punten van een cluster parallelliseren met behulp van een Spark-Compute-context. U kunt R-scripts rechtstreeks op het Edge-knoop punt uitvoeren, waarbij alle beschik bare kernen parallel, indien nodig, worden gebruikt. U kunt de code ook uitvoeren vanuit het Edge-knoop punt om de verwerking te starten die wordt gedistribueerd over alle knoop punten in het cluster. Met Spark-Services in HDInsight kunnen ook gelijktijdig-functies van open-source R-pakketten, indien gewenst, worden ingeschakeld.
 

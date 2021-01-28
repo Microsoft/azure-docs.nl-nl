@@ -3,16 +3,15 @@ title: Gedetailleerde op rollen gebaseerde toegang Azure HDInsight-cluster confi
 description: Meer informatie over de wijzigingen die zijn vereist als onderdeel van de migratie naar gedetailleerde op rollen gebaseerde toegang voor HDInsight-cluster configuraties.
 author: tylerfox
 ms.author: tyfox
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/20/2020
-ms.openlocfilehash: d2e9c1fe89866511f8eae0b900563471cd6e52e9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 08be42f4f0801fc700b3e0fc645c1bbc1b747e91
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533305"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944090"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Migreren naar gedetailleerde, op rollen gebaseerde toegang voor clusterconfiguraties
 

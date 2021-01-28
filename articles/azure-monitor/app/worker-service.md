@@ -4,12 +4,12 @@ description: Niet-HTTP-apps van .NET core/. NET bewaken met Azure Monitor Applic
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/11/2020
-ms.openlocfilehash: 3d02b6e70d0832b92ae88db237b4c554b92e7f3b
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 155a0963146860431cb44c255e1e1d1aca3ae344
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875067"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943880"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights voor Worker-service toepassingen (niet-HTTP-toepassingen)
 
@@ -19,7 +19,7 @@ De nieuwe SDK voert geen telemetrie-verzameling op zichzelf uit. In plaats daarv
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-De [Application INSIGHTS SDK for Worker-service](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) is het meest geschikt voor niet-HTTP-toepassingen, ongeacht waar of hoe ze worden uitgevoerd. Als uw toepassing wordt uitgevoerd en netwerk verbinding heeft met Azure, kan telemetrie worden verzameld. Application Insights bewaking wordt ondersteund overal wat .NET core ondersteunt. Dit pakket kan worden gebruikt in de zojuist geïntroduceerde [.net core 3,0-werk service](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [achtergrond taken in ASP.net Core 2.1/2.2](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true), console-apps (.net core/.NET Framework), enzovoort.
+De [Application INSIGHTS SDK for Worker-service](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) is het meest geschikt voor niet-HTTP-toepassingen, ongeacht waar of hoe ze worden uitgevoerd. Als uw toepassing wordt uitgevoerd en netwerk verbinding heeft met Azure, kan telemetrie worden verzameld. Application Insights bewaking wordt ondersteund overal wat .NET core ondersteunt. Dit pakket kan worden gebruikt in de zojuist geïntroduceerde [.net core 3,0-werk service](https://devblogs.microsoft.com/aspnet/dotnet-core-workers-in-azure-container-instances), [achtergrond taken in ASP.net Core 2.1/2.2](/aspnet/core/fundamentals/host/hosted-services), console-apps (.net core/.NET Framework), enzovoort.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -134,7 +134,7 @@ Geeft doorgaans `APPINSIGHTS_INSTRUMENTATIONKEY` de instrumentatie sleutel voor 
 
 ## <a name="aspnet-core-background-tasks-with-hosted-services"></a>Achtergrond taken ASP.NET Core met gehoste services
 
-In [Dit](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-2.2&preserve-view=true) document wordt beschreven hoe u achtergrond taken maakt in ASP.net Core 2.1/2.2-toepassing.
+In [Dit](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio) document wordt beschreven hoe u achtergrond taken maakt in ASP.net Core 2.1/2.2-toepassing.
 
 [Hier](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/examples/WorkerServiceSDK/BackgroundTasksWithHostedService) wordt een volledig voor beeld gedeeld
 
@@ -563,9 +563,9 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 [.Net core-console toepassing](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/examples/WorkerServiceSDK/ConsoleAppWithApplicationInsights) Gebruik dit voor beeld als u een console toepassing gebruikt die is geschreven in .NET core (2,0 of hoger) of .NET Framework (4.7.2 of hoger)
 
-[ASP .net core-achtergrond taken met HostedServices](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/examples/WorkerServiceSDK/BackgroundTasksWithHostedService) Gebruik dit voor beeld als u zich in Asp.Net Core 2.1/2.2 bevindt en u [hier](/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-2.2&preserve-view=true) achtergrond taken als per officiële richt lijn maakt
+[ASP .net core-achtergrond taken met HostedServices](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/examples/WorkerServiceSDK/BackgroundTasksWithHostedService) Gebruik dit voor beeld als u zich in Asp.Net Core 2.1/2.2 bevindt en u [hier](/aspnet/core/fundamentals/host/hosted-services) achtergrond taken als per officiële richt lijn maakt
 
-[.Net Core 3,0-werk service](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/examples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) Gebruik dit voor beeld als u een .NET Core 3,0 Worker-service toepassing hebt als per [officiële richt lijn](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.0&preserve-view=true#worker-service-template)
+[.Net Core 3,0-werk service](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/examples/WorkerServiceSDK/WorkerServiceSampleWithApplicationInsights) Gebruik dit voor beeld als u een .NET Core 3,0 Worker-service toepassing hebt als per [officiële richt lijn](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio#worker-service-template)
 
 ## <a name="open-source-sdk"></a>Open-Source-SDK
 

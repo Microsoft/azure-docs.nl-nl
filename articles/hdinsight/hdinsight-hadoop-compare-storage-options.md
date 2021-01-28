@@ -1,19 +1,16 @@
 ---
 title: Opslag opties vergelijken voor gebruik met Azure HDInsight-clusters
 description: Biedt een overzicht van opslag typen en hoe deze werken met Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 34eeeed2b3c44336cd4aa1219d54b1811c6988f5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b6dd0fd95280a65615d38ab11a2f9814f58586f5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952315"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945854"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Opslag opties vergelijken voor gebruik met Azure HDInsight-clusters
 
@@ -57,7 +54,7 @@ U kunt clusters maken met behulp van combi Naties van services voor primaire en 
 | 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen1 | Ja |
 | 3,6 | Data Lake Storage Gen1 | Algemeen v1, Algemeen v2, BlobStorage (blok-blobs) | Ja |
 | 3,6 | Data Lake Storage Gen1 | Data Lake Storage Gen2 | Nee |
-| 4,0 | Data Lake Storage Gen1 | Elk | Nee |
+| 4,0 | Data Lake Storage Gen1 | Alle | Nee |
 | 4,0 | Algemeen v1, Algemeen v2 | Data Lake Storage Gen1 | Nee |
 
 * = Dit kan een of meer Data Lake Storage Gen2 zijn, zolang alle instellingen dezelfde beheerde identiteit voor toegang tot het cluster gebruiken.

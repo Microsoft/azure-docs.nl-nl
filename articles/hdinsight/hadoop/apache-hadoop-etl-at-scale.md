@@ -1,19 +1,16 @@
 ---
 title: ETL uitpakken, transformeren en laden op schaal-Azure HDInsight
 description: Ontdek hoe extra heren, transformeren en laden worden gebruikt in HDInsight met Apache Hadoop.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: e7a8a72d0669f39cc27c997d83af1e6272d045a6
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: fc488cecb762ff13bcb2999bb06521ebb70b44fb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704149"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946576"
 ---
 # <a name="extract-transform-and-load-etl-at-scale"></a>Uitpakken, transformeren en laden (ETL) op de juiste schaal
 

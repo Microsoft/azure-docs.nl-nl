@@ -1,18 +1,15 @@
 ---
 title: Azure HDInsight 3,6 Apache Storm migreren naar HDInsight 4,0 Apache Spark
 description: De verschillen en migratie stroom voor het migreren van Apache Storm workloads naar Spark streaming of Spark Structured streaming.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/16/2019
-ms.openlocfilehash: e1262a4699bc42cb5b9a4398be2254854c5d5ff2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa57c01558cfdcf069b17fad9e86f7640553dcfd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86081193"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944778"
 ---
 # <a name="migrate-azure-hdinsight-36-apache-storm-to-hdinsight-40-apache-spark"></a>Azure HDInsight 3,6 Apache Storm migreren naar HDInsight 4,0 Apache Spark
 
@@ -104,7 +101,7 @@ Met Spark Structured streaming wordt een gegevens stroom aangeduid als een tabel
 
 In structured streaming worden gegevens in het systeem bezorgd en onmiddellijk opgenomen in een invoer tabel. U schrijft query's (met behulp van de data frame-en DataSet-Api's) die bewerkingen uitvoeren op deze invoer tabel.
 
-De query-uitvoer levert een *resultaat tabel*op die de resultaten van de query bevat. U kunt gegevens uit de resultaten tabel voor een extern gegevens archief, zoals een relationele data base, tekenen.
+De query-uitvoer levert een *resultaat tabel* op die de resultaten van de query bevat. U kunt gegevens uit de resultaten tabel voor een extern gegevens archief, zoals een relationele data base, tekenen.
 
 Het tijdstip waarop de gegevens worden verwerkt vanuit de invoer tabel, wordt bepaald door het trigger interval. Standaard is het trigger interval nul, zodat gestructureerde streaming probeert de gegevens te verwerken zodra deze binnenkomen. In de praktijk betekent dit dat zodra Structured streaming de uitvoering van de vorige query heeft verwerkt, een andere verwerkings uitvoering wordt gestart op basis van recent ontvangen gegevens. U kunt de trigger zo configureren dat deze wordt uitgevoerd met een interval, zodat de streaminggegevens worden verwerkt in op tijd gebaseerde batches.
 

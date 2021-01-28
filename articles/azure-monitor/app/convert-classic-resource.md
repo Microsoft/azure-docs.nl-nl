@@ -3,12 +3,12 @@ title: Een Azure Monitor Application Insights klassieke resource migreren naar e
 description: Meer informatie over de stappen die nodig zijn om uw Azure Monitor Application Insights klassieke resource bij te werken naar het nieuwe model op basis van werk ruimte.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 709cff1326bb6393a14c594ea434a6c16fb80860
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 5316bf5b919fe8b24ea1dd601214df62aa034f37
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536520"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945106"
 ---
 # <a name="migrate-to-workspace-based-application-insights-resources"></a>Migreren naar op werk ruimte gebaseerde Application Insights resources
 
@@ -18,7 +18,7 @@ Met resources op basis van een werk ruimte kunnen veelvoorkomende Azure-functies
 
 **Op werk ruimte gebaseerde resources zijn momenteel beschikbaar in alle commerciële regio's en de Amerikaanse overheid van Azure**
 
-## <a name="new-capabilities"></a>Nieuwe mogelijkheden
+## <a name="new-capabilities"></a>Nieuwe functionaliteit
 
 Met Application Insights op basis van een werk ruimte kunt u profiteren van de nieuwste mogelijkheden van Azure Monitor en Log Analytics met inbegrip van:
 
@@ -114,7 +114,7 @@ az monitor app-insights component update --app
 az monitor app-insights component update --app your-app-insights-resource-name -g your_resource_group --workspace "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/test1234/providers/microsoft.operationalinsights/workspaces/test1234555"
 ```
 
-Raadpleeg de [documentatie van Azure cli](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-update)voor de volledige Azure cli-documentatie voor deze opdracht.
+Raadpleeg de [documentatie van Azure cli](/cli/azure/ext/application-insights/monitor/app-insights/component#ext-application-insights-az-monitor-app-insights-component-update)voor de volledige Azure cli-documentatie voor deze opdracht.
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 

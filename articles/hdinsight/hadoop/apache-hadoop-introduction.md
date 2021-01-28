@@ -1,19 +1,16 @@
 ---
 title: Wat zijn Apache Hadoop en MapReduce - Azure HDInsight
 description: Een inleiding tot HDInsight en de technologiestack en onderdelen van Apache Hadoop.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: overview
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.date: 02/27/2020
-ms.openlocfilehash: ef1914499765beff9913f9735cf55736135f9d96
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
-ms.translationtype: HT
+ms.openlocfilehash: 1e3fc23dd220a8d9764a64c453e9fb856307ac47
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899625"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946509"
 ---
 # <a name="what-is-apache-hadoop-in-azure-hdinsight"></a>Wat is Apache Hadoop in Azure HDInsight?
 
@@ -27,9 +24,9 @@ Raadpleeg [Onderdelen en versies die beschikbaar zijn in HDInsight](../hdinsight
 
 [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) is een softwareframework om taken te schrijven waarmee enorme hoeveelheden gegevens worden verwerkt. Invoergegevens worden in losstaande segmenten opgedeeld. Elk segment wordt parallel verwerkt via de knooppunten in uw cluster. Een MapReduce-taak bestaat uit twee functies:
 
-* **Mapper** : Gebruikt invoergegevens, analyseert deze (meestal met filter- en sorteerbewerkingen) en verstuurt tuples (sleutel-waardeparen)
+* **Mapper**: Gebruikt invoergegevens, analyseert deze (meestal met filter- en sorteerbewerkingen) en verstuurt tuples (sleutel-waardeparen)
 
-* **Reducer** : Gebruikt Tuples verzonden door de Mapper en voert een samenvattingsbewerking uit die een kleiner, gecombineerd resultaat maakt van de Mapper-gegevens
+* **Reducer**: Gebruikt Tuples verzonden door de Mapper en voert een samenvattingsbewerking uit die een kleiner, gecombineerd resultaat maakt van de Mapper-gegevens
 
 In het volgende diagram ziet u een voorbeeld een eenvoudige MapReduce-taak die woorden telt:
 

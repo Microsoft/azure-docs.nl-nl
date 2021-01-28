@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2020
-ms.openlocfilehash: 3cc79edf50c4f056f413292d2d43aa8cf8e65136
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
-ms.translationtype: HT
+ms.openlocfilehash: c755ee0ee91156da9910a9d43c891c87f86cd430
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683488"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945041"
 ---
 # <a name="resource-manager-template-samples-for-log-analytics-workspaces-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor Log Analytics-werkruimten in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het maken en configureren van Log Analytics-werkruimten in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -610,7 +610,7 @@ Met het volgende voorbeeld wordt een verzameling [aangepaste logboeken](../platf
 
 ### <a name="notes"></a>Opmerkingen
 
-- De configuratie van scheidingstekens en extracties kan ingewikkeld zijn. Voor hulp kunt u een aangepast logboek definiëren met behulp van de Azure-portal en vervolgens de configuratie ervan ophalen met behulp van [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.8.0) met **-Kind** ingesteld op **CustomLog**.
+- De configuratie van scheidingstekens en extracties kan ingewikkeld zijn. Voor hulp kunt u een aangepast logboek definiëren met behulp van de Azure-portal en vervolgens de configuratie ervan ophalen met behulp van [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource) met **-Kind** ingesteld op **CustomLog**.
 
   
 ### <a name="template-file"></a>Sjabloonbestand

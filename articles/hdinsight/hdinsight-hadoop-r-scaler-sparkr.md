@@ -1,23 +1,20 @@
 ---
 title: Schaalr en Spark gebruiken met Azure HDInsight
 description: Gebruik Scaleer en Spark voor het bewerken van gegevens en het ontwikkelen van modellen met ML-Services in azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/26/2019
-ms.openlocfilehash: c12398ceacf8495a05037422a6501dc8138abc10
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: 95fcca289b0776cc19464b13eb7d243ca4f8d5ed
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92628691"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945512"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Schaalr en Spark in HDInsight combi neren
 
-In dit document wordt beschreven hoe u vertragingen in de vlucht kunt voors pellen met behulp van een **schaalbaar** logistiek-regressie model. In het voor beeld worden vlucht vertraging en weers gegevens gebruikt, gekoppeld met behulp van **Spark** .
+In dit document wordt beschreven hoe u vertragingen in de vlucht kunt voors pellen met behulp van een **schaalbaar** logistiek-regressie model. In het voor beeld worden vlucht vertraging en weers gegevens gebruikt, gekoppeld met behulp van **Spark**.
 
 Hoewel beide pakketten worden uitgevoerd op de Spark-uitvoerings engine van Apache Hadoop, worden ze geblokkeerd voor het delen van gegevens in het geheugen omdat ze elk hun eigen respectievelijk Spark-sessies vereisen. Totdat dit probleem is opgelost in een toekomstige versie van ML Server, is de tijdelijke oplossing het onderhouden van niet-overlappende Spark-sessies en het uitwisselen van gegevens via tussenliggende bestanden. In deze instructies ziet u dat deze vereisten eenvoudig zijn te verzorgen.
 

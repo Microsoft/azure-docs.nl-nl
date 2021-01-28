@@ -4,17 +4,16 @@ description: Veelgestelde vragen over HDInsight
 keywords: Veelgestelde vragen
 author: Ramakoni1
 ms.author: ramakoni
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: 120a73c7bf2ea9ee61d1fe1aef9ffa39a3cb3f76
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 13282962886d8682b6056d10f8f0cc5a7f626d60
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882395"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946028"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: veelgestelde vragen
 
@@ -213,7 +212,7 @@ LLAP is om veiligheids redenen (Apache zwerver), geen prestaties. Gebruik groter
 Er zijn twee manieren om dit doel te verzorgen: 1. u kunt het cluster opnieuw maken en de extra groep toevoegen op het moment dat het cluster wordt gemaakt. Als u met scoped Synchronization in AAD-DS gebruikt, moet u ervoor zorgen dat groep B is opgenomen in de synchronisatie met het bereik.
 2: Voeg de groep toe als een geneste subgroep van de vorige groep die is gebruikt voor het maken van het ESP-cluster. Als u bijvoorbeeld een ESP-cluster met groep hebt gemaakt `A` , kunt u later op groep toevoegen `B` als geneste subgroep van `A` en na ongeveer één uur dat deze automatisch wordt gesynchroniseerd en beschikbaar in het cluster. 
 
-## <a name="storage"></a>Opslag
+## <a name="storage"></a>Storage
 
 ### <a name="can-i-add-an-azure-data-lake-storage-gen2-to-an-existing-hdinsight-cluster-as-an-additional-storage-account"></a>Kan ik een Azure Data Lake Storage Gen2 toevoegen aan een bestaand HDInsight-cluster als een extra opslag account?
 
@@ -278,7 +277,7 @@ Nadat u een Edge-knoop punt hebt gemaakt, kunt u er verbinding mee maken via SSH
 
 U gebruikt persistente scripts om nieuwe worker-knoop punten die aan het cluster worden toegevoegd, aan te passen via schaal bewerkingen. Persistente scripts zijn niet van toepassing op Edge-knoop punten.
 
-## <a name="rest-api"></a>REST-API
+## <a name="rest-api"></a>REST API
 
 ### <a name="what-are-the-rest-api-calls-to-pull-a-tez-query-view-from-the-cluster"></a>Wat zijn de REST API-aanroepen om een TEZ-query weergave uit het cluster te halen?
 

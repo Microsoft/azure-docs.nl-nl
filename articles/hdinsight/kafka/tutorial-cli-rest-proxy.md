@@ -1,19 +1,16 @@
 ---
 title: 'Zelfstudie: Een cluster met de Apache Kafka REST-proxy ingeschakeld maken in HDInsight met behulp van Azure CLI'
 description: Informatie over het uitvoeren van Apache Kafka-bewerkingen met behulp van een Kafka REST-proxy op Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 02/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 68dddcbc5771ef1a8b5d6ea423674a1c6845a5e6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: ff11b8461b483f5a66df19bb1b108a1fe1168fb9
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539476"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944028"
 ---
 # <a name="tutorial-create-an-apache-kafka-rest-proxy-enabled-cluster-in-hdinsight-using-azure-cli"></a>Zelfstudie: Een cluster met de Apache Kafka REST-proxy ingeschakeld maken in HDInsight met behulp van Azure CLI
 
@@ -56,8 +53,8 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     |location|Vervang LOCATION door de regio waar het cluster wordt gemaakt. Gebruik de opdracht `az account list-locations` voor een lijst met geldige locaties|
     |clusterName|Vervang CLUSTERNAME door een globaal unieke naam voor uw nieuwe cluster.|
     |storageAccount|Vervang STORAGEACCOUNTNAME door een naam voor uw nieuwe opslagaccount.|
-    |httpPassword|Vervang PASSWORD door een wachtwoord voor de clusteraanmelding, **admin** .|
-    |sshPassword|Vervang PASSWORD door een wachtwoord voor de gebruikersnaam van de beveiligde shell, **sshuser** .|
+    |httpPassword|Vervang PASSWORD door een wachtwoord voor de clusteraanmelding, **admin**.|
+    |sshPassword|Vervang PASSWORD door een wachtwoord voor de gebruikersnaam van de beveiligde shell, **sshuser**.|
     |securityGroupName|Vervang SECURITYGROUPNAME door de naam van de AAD-clientbeveiligingsgroep voor de Kafka REST-proxy. De variabele wordt doorgegeven aan de parameter `--kafka-client-group-name` voor `az-hdinsight-create`.|
     |securityGroupID|Vervang SECURITYGROUPID door de id van de AAD-clientbeveiligingsgroep voor de Kafka REST-proxy. De variabele wordt doorgegeven aan de parameter `--kafka-client-group-id` voor `az-hdinsight-create`.|
     |storageContainer|Opslagcontainer die door het cluster wordt gebruikt. Laat deze staan voor deze zelfstudie. Deze variabele wordt ingesteld met de naam van het cluster.|
@@ -138,10 +135,10 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
         |Parameter | Beschrijving|
         |---|---|
         |--kafka-management-node-size|De grootte van het knooppunt. In deze zelfstudie wordt de waarde **Standard_D4_v2** gebruikt.|
-        |--kafka-client-group-id|De id van de AAD-clientbeveiligingsgroep voor de Kafka REST-proxy. De waarde wordt doorgegeven vanuit de variabele **$securityGroupID** .|
-        |--kafka-client-group-name|De naam van de AAD-clientbeveiligingsgroep voor de Kafka REST-proxy. De waarde wordt doorgegeven vanuit de variabele **$securityGroupName** .|
-        |--version|De versie van het HDInsight-cluster moet ten minste 4.0 zijn. De waarde wordt doorgegeven vanuit de variabele **$clusterVersion** .|
-        |--component-version|De Kafka-versie moet ten minste 2.1 zijn. De waarde wordt doorgegeven vanuit de variabele **$componentVersion** .|
+        |--kafka-client-group-id|De id van de AAD-clientbeveiligingsgroep voor de Kafka REST-proxy. De waarde wordt doorgegeven vanuit de variabele **$securityGroupID**.|
+        |--kafka-client-group-name|De naam van de AAD-clientbeveiligingsgroep voor de Kafka REST-proxy. De waarde wordt doorgegeven vanuit de variabele **$securityGroupName**.|
+        |--version|De versie van het HDInsight-cluster moet ten minste 4.0 zijn. De waarde wordt doorgegeven vanuit de variabele **$clusterVersion**.|
+        |--component-version|De Kafka-versie moet ten minste 2.1 zijn. De waarde wordt doorgegeven vanuit de variabele **$componentVersion**.|
     
         Als u het cluster wilt maken zonder REST-proxy, verwijdert u `--kafka-management-node-size`, `--kafka-client-group-id` en `--kafka-client-group-name` uit de opdracht `az hdinsight create`.
 

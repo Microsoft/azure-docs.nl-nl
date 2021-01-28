@@ -1,19 +1,16 @@
 ---
 title: Tips voor het gebruik van Hadoop op op Linux gebaseerde HDInsight-Azure
 description: Krijg implementatie tips voor het gebruik van op Linux gebaseerde HDInsight-clusters (Hadoop) in een vertrouwde Linux-omgeving die wordt uitgevoerd in de Azure-Cloud.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.openlocfilehash: 0f0073c72c28395d89cec74a489cbc36a8f3ffe7
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2d2619c7bd7bc09eeab3845599758db7134b4134
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546106"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945652"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Informatie over het gebruik van HDInsight in Linux
 
@@ -24,9 +21,9 @@ Azure HDInsight-clusters bieden Apache Hadoop in een vertrouwde Linux-omgeving, 
 Veel van de stappen in dit document gebruiken de volgende hulpprogram ma's, die mogelijk op uw systeem moeten worden geïnstalleerd.
 
 * [krul](https://curl.haxx.se/) : wordt gebruikt voor communicatie met op internet gebaseerde services.
-* **JQ** , een JSON-processor op de opdracht regel.  Zie [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
+* **JQ**, een JSON-processor op de opdracht regel.  Zie [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 * [Azure cli](/cli/azure/install-azure-cli) : wordt gebruikt voor het extern beheren van Azure-Services.
-* **Een SSH-client** . Zie voor meer informatie [Verbinding maken met HDInsight (Apache Hadoop) via SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Een SSH-client**. Zie voor meer informatie [Verbinding maken met HDInsight (Apache Hadoop) via SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="users"></a>Gebruikers
 
@@ -92,8 +89,8 @@ Zie voor meer informatie de [poorten die worden gebruikt door Apache Hadoop Serv
 
 Hadoop-gerelateerde bestanden kunnen worden gevonden op de cluster knooppunten op `/usr/hdp` . Deze map bevat de volgende submappen:
 
-* **2.6.5.3009-43** : de directory naam is de versie van het Hadoop-platform dat wordt gebruikt door HDInsight. Het nummer op uw cluster kan afwijken van het aantal dat hier wordt vermeld.
-* **huidige** : deze map bevat koppelingen naar submappen onder de Directory **2.6.5.3009-43** . Deze map bestaat, zodat u het versie nummer niet hoeft te onthouden.
+* **2.6.5.3009-43**: de directory naam is de versie van het Hadoop-platform dat wordt gebruikt door HDInsight. Het nummer op uw cluster kan afwijken van het aantal dat hier wordt vermeld.
+* **huidige**: deze map bevat koppelingen naar submappen onder de Directory **2.6.5.3009-43** . Deze map bestaat, zodat u het versie nummer niet hoeft te onthouden.
 
 Voor beelden van gegevens-en JAR-bestanden vindt u op Hadoop Distributed File System op `/example` en `/HdiSamples` .
 

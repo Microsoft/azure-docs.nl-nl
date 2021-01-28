@@ -1,19 +1,16 @@
 ---
 title: Clusters in HDInsight instellen met Apache Hadoop, Apache Spark, Apache Kafka en meer
 description: Stel Hadoop-, Kafka-, Spark-, HBase-, R Server-of Storm-clusters in voor HDInsight vanuit een browser, de klassieke CLI van Azure, Azure PowerShell, REST of SDK.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.date: 08/06/2020
-ms.openlocfilehash: 6ce5de354583da04905f9f889cfabe36e6da6667
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 4e81ccb541b188fedfefd150233082e9cb1f8c22
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546123"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945542"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Clusters in HDInsight instellen met Apache Hadoop, Apache Spark, Apache Kafka en meer
 
@@ -32,11 +29,11 @@ Als u meerdere clusters tegelijk gebruikt, wilt u een virtueel netwerk maken. Al
 
 In de volgende tabel ziet u de verschillende methoden die u kunt gebruiken om een HDInsight-cluster in te stellen.
 
-| Clusters die zijn gemaakt met | Webbrowser | Opdrachtregel | REST-API | SDK |
+| Clusters die zijn gemaakt met | Webbrowser | Opdrachtregel | REST API | SDK |
 | --- |:---:|:---:|:---:|:---:|
-| [Azure Portal](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
+| [Azure-portal](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
 | [Azure Data Factory](hdinsight-hadoop-create-linux-clusters-adf.md) |✔ |✔ |✔ |✔ |
-| [Azure CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
+| [Azure-CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 | [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 | [cURL](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
 | [Azure Resource Manager-sjablonen](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
@@ -92,7 +89,7 @@ Kies de versie van HDInsight voor dit cluster. Zie [ondersteunde HDInsight-versi
 
 Met HDInsight-clusters kunt u twee gebruikers accounts configureren tijdens het maken van het cluster:
 
-* Gebruikers naam voor cluster aanmelding: de standaard gebruikersnaam is *admin* . Hierbij wordt gebruikgemaakt van de basis configuratie op het Azure Portal. Soms wordt de naam ' cluster gebruiker ' of ' HTTP gebruiker ' genoemd.
+* Gebruikers naam voor cluster aanmelding: de standaard gebruikersnaam is *admin*. Hierbij wordt gebruikgemaakt van de basis configuratie op het Azure Portal. Soms wordt de naam ' cluster gebruiker ' of ' HTTP gebruiker ' genoemd.
 * SSH-gebruikers naam (Secure Shell): wordt gebruikt om via SSH verbinding te maken met het cluster. Zie [SSH gebruiken met HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md) voor meer informatie.
 
 De HTTP-gebruikers naam heeft de volgende beperkingen:
@@ -120,7 +117,7 @@ HDInsight-clusters kunnen de volgende opslag opties gebruiken:
 * Azure Data Lake Storage Gen1
 * Azure Storage Algemeen v2
 * Azure Storage Algemeen v1
-* Azure Storage blok-BLOB ( **alleen ondersteund als secundaire opslag** )
+* Azure Storage blok-BLOB (**alleen ondersteund als secundaire opslag**)
 
 Zie voor meer informatie over opslag opties met HDInsight de [Opties voor het vergelijken van opslag voor gebruik met Azure HDInsight-clusters](hdinsight-hadoop-compare-storage-options.md).
 
@@ -153,7 +150,7 @@ Als u de Hive-tabellen wilt behouden nadat u een HDInsight-cluster hebt verwijde
 An HDInsight meta Store dat is gemaakt voor één HDInsight-cluster versie kan niet worden gedeeld tussen verschillende versies van het HDInsight-cluster. Zie [ondersteunde hdinsight-versies](hdinsight-component-versioning.md#supported-hdinsight-versions)voor een lijst met hdinsight-versies.
 
 > [!IMPORTANT]
-> De standaard-META Store biedt een Azure SQL Database met een **elementaire 5 DTU-limiet (niet uitbreidbaar)** . Geschikt voor basis test doeleinden. Voor grote of productie werkbelasting raden wij u aan de migratie naar een externe meta Store te migreren.
+> De standaard-META Store biedt een Azure SQL Database met een **elementaire 5 DTU-limiet (niet uitbreidbaar)**. Geschikt voor basis test doeleinden. Voor grote of productie werkbelasting raden wij u aan de migratie naar een externe meta Store te migreren.
 
 #### <a name="sql-database-for-oozie"></a>SQL database voor Oozie
 
@@ -261,7 +258,7 @@ De meeste HDInsight-toepassingen worden geïnstalleerd op een leeg Edge-knoop pu
 
 ### <a name="script-actions"></a>Script acties
 
-U kunt extra onderdelen installeren of cluster configuratie aanpassen met behulp van scripts tijdens het maken. Dergelijke scripts worden aangeroepen via **script actie** , een configuratie optie die kan worden gebruikt vanuit de Azure Portal, Hdinsight Windows Power shell-cmdlets of de HDINSIGHT .NET SDK. Zie [HDInsight-cluster aanpassen met script actie](hdinsight-hadoop-customize-cluster-linux.md)voor meer informatie.
+U kunt extra onderdelen installeren of cluster configuratie aanpassen met behulp van scripts tijdens het maken. Dergelijke scripts worden aangeroepen via **script actie**, een configuratie optie die kan worden gebruikt vanuit de Azure Portal, Hdinsight Windows Power shell-cmdlets of de HDINSIGHT .NET SDK. Zie [HDInsight-cluster aanpassen met script actie](hdinsight-hadoop-customize-cluster-linux.md)voor meer informatie.
 
 Sommige systeem eigen Java-onderdelen, zoals Apache mahout en trapsgewijs, kunnen worden uitgevoerd op het cluster als Java Archive-bestanden (JAR). Deze JAR-bestanden kunnen worden gedistribueerd naar Azure Storage en worden verzonden naar HDInsight-clusters met een Hadoop-taak indienings mechanismen. Zie [Apache Hadoop-taken via een programma verzenden](hadoop/submit-apache-hadoop-jobs-programmatically.md)voor meer informatie.
 

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: mnayak
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d375b860c6b23fd6033e985e23c6f12dfe9a3c68
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 7673a42afa3b85a2aaf3f11f5e9b74fd46d48488
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223564"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945085"
 ---
 # <a name="configure-routing-preference-for-a-vm-using-azure-cli"></a>Routerings voorkeur configureren voor een virtuele machine met behulp van Azure CLI
 
@@ -58,7 +58,7 @@ Voordat u een virtuele machine implementeert, moet u ondersteunende netwerk bron
 
 ### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Maak een netwerk beveiligings groep voor de regels die de inkomende en uitgaande communicatie in uw VNet regelen, met [AZ Network NSG Create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create)
+Maak een netwerk beveiligings groep voor de regels die de inkomende en uitgaande communicatie in uw VNet regelen, met [AZ Network NSG Create](/cli/azure/network/nsg#az-network-nsg-create)
 
 ```azurecli
 az network nsg create \
@@ -69,7 +69,7 @@ az network nsg create \
 
 ### <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
-Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). In het volgende voor beeld wordt een virtueel netwerk gemaakt met de naam *myVNET* met subnetten *mySubNet*:
+Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). In het volgende voor beeld wordt een virtueel netwerk gemaakt met de naam *myVNET* met subnetten *mySubNet*:
 
 ```azurecli
 # Create a virtual network
@@ -89,7 +89,7 @@ az network vnet subnet create \
 
 ### <a name="create-a-nic"></a>Een NIC maken
 
-Maak een virtuele NIC voor de VM met [AZ Network NIC Create](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create). In het volgende voor beeld wordt een virtuele NIC gemaakt die wordt gekoppeld aan de virtuele machine.
+Maak een virtuele NIC voor de VM met [AZ Network NIC Create](/cli/azure/network/nic#az-network-nic-create). In het volgende voor beeld wordt een virtuele NIC gemaakt die wordt gekoppeld aan de virtuele machine.
 
 ```azurecli-interactive
 # Create a NIC
@@ -105,7 +105,7 @@ az network nic create \
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
-Maak een VM met [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create). In het volgende voor beeld worden een Windows Server 2019-VM en de vereiste onderdelen van het virtuele netwerk gemaakt als deze nog niet bestaan.
+Maak een VM met [az vm create](/cli/azure/vm#az-vm-create). In het volgende voor beeld worden een Windows Server 2019-VM en de vereiste onderdelen van het virtuele netwerk gemaakt als deze nog niet bestaan.
 
 ```azurecli
 az vm create \

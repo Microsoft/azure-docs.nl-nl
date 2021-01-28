@@ -1,19 +1,16 @@
 ---
 title: WebHCat-fouten in HDInsight-Azure begrijpen en oplossen
 description: Meer informatie over veelvoorkomende fouten die worden geretourneerd door WebHCat in HDInsight en hoe u deze kunt oplossen.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
-ms.openlocfilehash: 951dba6e64561301dc7dbb6ebd6fd6b641c90a47
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: ce7a21a2b5401c68c6b58bc934fb20b0225ba8ad
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285675"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945456"
 ---
 # <a name="understand-and-resolve-errors-received-from-webhcat-on-hdinsight"></a>Fouten die vanuit WebHCat zijn ontvangen, begrijpen en oplossen op HDInsight
 
@@ -39,7 +36,7 @@ Als de volgende standaard waarden worden overschreden, kan dit de prestaties van
 
 ## <a name="too-many-requests"></a>Te veel aanvragen
 
-**HTTP-status code** : 429
+**HTTP-status code**: 429
 
 | Oorzaak | Oplossing |
 | --- | --- |
@@ -47,7 +44,7 @@ Als de volgende standaard waarden worden overschreden, kan dit de prestaties van
 
 ## <a name="server-unavailable"></a>De server is niet beschikbaar
 
-**HTTP-status code** : 503
+**HTTP-status code**: 503
 
 | Oorzaak | Oplossing |
 | --- | --- |
@@ -55,7 +52,7 @@ Als de volgende standaard waarden worden overschreden, kan dit de prestaties van
 
 ## <a name="bad-request-content-could-not-find-job"></a>Inhoud van ongeldige aanvraag: de taak is niet gevonden
 
-**HTTP-status code** : 400
+**HTTP-status code**: 400
 
 | Oorzaak | Oplossing |
 | --- | --- |
@@ -65,7 +62,7 @@ Als de volgende standaard waarden worden overschreden, kan dit de prestaties van
 
 ## <a name="bad-gateway"></a>Ongeldige gateway
 
-**HTTP-status code** : 502
+**HTTP-status code**: 502
 
 | Oorzaak | Oplossing |
 | --- | --- |

@@ -1,19 +1,16 @@
 ---
 title: Toepassingen van derden installeren op Azure HDInsight
 description: Meer informatie over het installeren van Apache Hadoop toepassingen van derden op Azure HDInsight.
-author: hrasheed-msft
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
-ms.author: hrasheed
-ms.openlocfilehash: f275064bd4accd0ca12acf3e71713f39d3860be2
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: cfbbc1f11a24379561df26e2fb8d9da20b249317
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696452"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942745"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Apache Hadoop-toepassingen van derden installeren op Azure HDInsight
 
@@ -51,7 +48,7 @@ De volgende procedure beschrijft hoe u HDInsight-toepassingen in een bestaand HD
 
 **Een HDInsight-toepassing installeren**
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Ga in het menu links naar **alle services**  >  **Analytics**  >  **HDInsight-clusters**.
 3. Selecteer een HDInsight-cluster in de lijst.  Als u deze niet hebt, maakt u die eerst.  Zie [Clusters maken](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 4. Selecteer in de categorie **instellingen** de optie **toepassingen**. In het hoofd venster ziet u een lijst met geïnstalleerde toepassingen. 
@@ -75,7 +72,7 @@ De portal toont een lijst van de geïnstalleerde HDInsight-toepassingen voor een
 
 **Lijst met HDInsight-toepassingen en weer gave-eigenschappen**
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Ga in het menu links naar **alle services**  >  **Analytics**  >  **HDInsight-clusters**.
 3. Selecteer een HDInsight-cluster in de lijst.
 4. Selecteer in de categorie **instellingen** de optie **toepassingen**. In het hoofd venster ziet u een lijst met geïnstalleerde toepassingen. 

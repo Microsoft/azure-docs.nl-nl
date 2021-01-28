@@ -3,12 +3,12 @@ title: Een .NET-app in een container implementeren in Azure Service Fabric
 description: Informatie over hoe u een bestaande .NET-toepassing in een container plaatst met behulp van Visual Studio en lokaal fouten opspoort in containers in Service Fabric. De in een container geplaatste toepassing wordt naar een Azure-containerregister gepusht en geïmplementeerd in een Service Fabric-cluster. Wanneer de toepassing is geïmplementeerd in Azure, gebruikt deze Azure SQL DB voor het persistent maken van gegevens.
 ms.topic: tutorial
 ms.date: 07/08/2019
-ms.openlocfilehash: 85e9b553000c52131c04502d496aa050b73d6d8a
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 7930651a0faa5f37336c15557e2a0f068d613011
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791659"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936708"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Zelfstudie: Een .NET-toepassing in een Windows-container implementeren in Azure Service Fabric
 
@@ -29,7 +29,7 @@ In deze zelfstudie leert u het volgende:
 
 1. Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 2. Schakel Windows **-onderdelen Hyper-V** en **containers** in.
-3. Installeer [Docker CE voor Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description) zodat u containers op Windows 10 kunt uitvoeren.
+3. Installeer [docker Desktop voor Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description) zodat u containers kunt uitvoeren op Windows 10.
 4. Installeer [Service Fabric-runtime versie 6.2 of hoger](service-fabric-get-started.md) en de [Service Fabric SDK versie 3.1](service-fabric-get-started.md) of hoger.
 5. Installeer [Visual Studio 2019 versie 16.1](https://www.visualstudio.com/) of hoger met de **Azure-ontwikkelworkload** en de **ASP.NET-ontwikkelings- en webontwikkelingsworkloads**.
 6. Installeer [Azure PowerShell][link-azure-powershell-install]

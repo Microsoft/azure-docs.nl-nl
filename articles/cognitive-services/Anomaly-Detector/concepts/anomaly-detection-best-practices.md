@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.author: mbullwin
-ms.openlocfilehash: b0869335c386712e6b759bb0ced459ebd1bf383c
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 43ccde054a9630b251aa6c206028d29c7c699316
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702723"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936193"
 ---
 # <a name="best-practices-for-using-the-anomaly-detector-api"></a>Aanbevolen procedures voor het gebruik van de anomalie detectie-API
 
@@ -52,7 +52,7 @@ Hieronder ziet u dezelfde gegevensset met behulp van batch anomalie detectie. He
 
 ## <a name="data-preparation"></a>Gegevensvoorbereiding
 
-De anomalie detectie-API accepteert tijd reeks gegevens die zijn ingedeeld in een JSON-aanvraag object. Een tijd reeks kan de numerieke gegevens in sequentiële volg orde in de loop van de tijd worden vastgelegd. U kunt Windows van uw tijdreeks gegevens naar het afwijkings detector-API-eind punt verzenden om de prestaties van de API te verbeteren. Het minimum aantal gegevens punten dat u kunt verzenden is 12 en de maximum waarde is 8640 punten. [Granulariteit](/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.models.granularity?view=azure-dotnet-preview) wordt gedefinieerd als de snelheid waarmee uw gegevens worden bemonsterd. 
+De anomalie detectie-API accepteert tijd reeks gegevens die zijn ingedeeld in een JSON-aanvraag object. Een tijd reeks kan de numerieke gegevens in sequentiële volg orde in de loop van de tijd worden vastgelegd. U kunt Windows van uw tijdreeks gegevens naar het afwijkings detector-API-eind punt verzenden om de prestaties van de API te verbeteren. Het minimum aantal gegevens punten dat u kunt verzenden is 12 en de maximum waarde is 8640 punten. [Granulariteit](/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.models.granularity) wordt gedefinieerd als de snelheid waarmee uw gegevens worden bemonsterd. 
 
 Gegevens punten die worden verzonden naar de anomalie detectie-API moeten een geldig UTC-tijds tempel (Coordinated Universal Time) en een numerieke waarde hebben. 
 

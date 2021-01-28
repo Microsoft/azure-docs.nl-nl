@@ -1,19 +1,16 @@
 ---
 title: 'Quickstart: Apache Kafka maken met Azure PowerShell - HDInsight'
 description: In deze snelstartgids leert u hoe u met Azure PowerShell een Apache Kafka-cluster maakt in Azure HDInsight. Er wordt ook aandacht besteed aan Kafka-onderwerpen, -abonnees en -consumenten.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/12/2019
-ms.openlocfilehash: 57cbfa356961aca778032b6e3552cffb88b6ab3d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 74fa512711dfb9226fcc88d949f5ddfeb0f9812b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92532999"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942629"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-powershell"></a>Quickstart: Een Apache Kafka-cluster maken in Azure HDInsight met PowerShell
 
@@ -176,7 +173,7 @@ Last login: Thu Mar 29 13:25:27 2018 from 108.252.109.241
 
 ## <a name="get-the-apache-zookeeper-and-broker-host-information"></a><a id="getkafkainfo"></a>Informatie over de Apache Zookeeper- en Broker-hosts ophalen
 
-Als u met Kafka werkt, moet u de *Zookeeper* - en *Broker* -hosts kennen. Deze hosts worden gebruikt met de Kafka-API en veel van de hulpprogramma's die bij Kafka worden meegeleverd.
+Als u met Kafka werkt, moet u de *Zookeeper*- en *Broker*-hosts kennen. Deze hosts worden gebruikt met de Kafka-API en veel van de hulpprogramma's die bij Kafka worden meegeleverd.
 
 In deze sectie vraagt u de hostgegevens op uit de Apache Ambari REST API in het cluster.
 
@@ -234,13 +231,13 @@ In deze sectie vraagt u de hostgegevens op uit de Apache Ambari REST API in het 
 
 Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het hulpprogramma `kafka-topics.sh` gebruiken om onderwerpen te beheren.
 
-* **Als u een onderwerp wilt maken** , gebruikt u de volgende opdracht in de SSH-verbinding:
+* **Als u een onderwerp wilt maken**, gebruikt u de volgende opdracht in de SSH-verbinding:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 8 --topic test --zookeeper $KAFKAZKHOSTS
     ```
 
-    Met deze opdracht brengt u een verbinding met Zookeeper tot stand met behulp van de hostinformatie die is opgeslagen in `$KAFKAZKHOSTS`. Vervolgens wordt er een Kafka-onderwerp gemaakt met de naam **test** . 
+    Met deze opdracht brengt u een verbinding met Zookeeper tot stand met behulp van de hostinformatie die is opgeslagen in `$KAFKAZKHOSTS`. Vervolgens wordt er een Kafka-onderwerp gemaakt met de naam **test**. 
 
     * Gegevens die zijn opgeslagen in dit onderwerp worden gepartitioneerd in acht partities.
 
@@ -262,7 +259,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
 
         * U een cluster omhoog schaalt
 
-* Gebruik de volgende opdracht om **een lijst met onderwerpen op te vragen** :
+* Gebruik de volgende opdracht om **een lijst met onderwerpen op te vragen**:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --list --zookeeper $KAFKAZKHOSTS
@@ -270,7 +267,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
 
     Met deze opdracht worden de onderwerpen weergegeven die beschikbaar zijn in het Kafka-cluster.
 
-* Gebruik de volgende opdracht om **een onderwerp te verwijderen** :
+* Gebruik de volgende opdracht om **een onderwerp te verwijderen**:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --delete --topic topicname --zookeeper $KAFKAZKHOSTS
@@ -289,7 +286,7 @@ Gebruik de volgende opdracht voor meer informatie over de opdrachten die beschik
 
 ## <a name="produce-and-consume-records"></a>Records maken en gebruiken
 
-Kafka slaat *records* op in onderwerpen. Records worden geproduceerd door *producenten* en worden gebruikt door *consumenten* . Producenten en consumenten communiceren met de *Kafka-brokerservice* . Elk werkknooppunt in uw HDInsight-cluster is een Kafka-brokerhost.
+Kafka slaat *records* op in onderwerpen. Records worden geproduceerd door *producenten* en worden gebruikt door *consumenten*. Producenten en consumenten communiceren met de *Kafka-brokerservice*. Elk werkknooppunt in uw HDInsight-cluster is een Kafka-brokerhost.
 
 Gebruik de volgende stappen om records op te slaan in het testonderwerp dat u eerder hebt gemaakt. Lees deze vervolgens met behulp van een verbruiker:
 

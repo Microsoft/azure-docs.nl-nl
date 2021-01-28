@@ -6,7 +6,7 @@
       href: intro-kubernetes.md
     - name: Oplossingsarchitecturen
       href: /azure/architecture/reference-architectures/containers/aks-start-here?bc=%2fazure%2faks%2fbreadcrumb%2ftoc.json&toc=%2fazure%2faks%2ftoc.json
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een AKS-cluster implementeren
@@ -296,8 +296,8 @@
         - name: Azure Monitor voor containers
           href: ../azure-monitor/insights/container-insights-overview.md
           maintainContext: true
-        - name: Logboeken van het master-onderdeel weergeven
-          href: view-master-logs.md
+        - name: De logboeken van de onderdelen van het besturings element weer geven
+          href: view-control-plane-logs.md
         - name: Kubelet-logboeken weergeven
           href: kubelet-logs.md
         - name: Container gegevens in realtime weergeven

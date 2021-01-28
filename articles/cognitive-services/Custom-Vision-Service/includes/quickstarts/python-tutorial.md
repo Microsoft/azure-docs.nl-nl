@@ -3,12 +3,12 @@ author: PatrickFarley
 ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 10/25/2020
-ms.openlocfilehash: c7e40de2caec49bd0e4fed32ddd9f131c9649dcd
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
-ms.translationtype: HT
+ms.openlocfilehash: 11e41437d21ef1e56930934b5b9850f74a269224
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98256534"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947370"
 ---
 Aan de slag met de Custom Vision-clientbibliotheek voor Python. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor het bouwen van een model voor de classificatie van afbeeldingen uit te proberen. U maakt een project, voegt tags toe, traint het project en gebruikt de voorspellingseindpunt-URL van het project om het programmatisch te testen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -24,7 +24,7 @@ Gebruik de Custom Vision-clientbibliotheek voor Python voor het volgende:
 * De huidige herhaling publiceren
 * Voorspellingseindpunt testen
 
-[Referentiedocumentatie](/python/api/overview/azure/cognitiveservices/customvision?view=azure-python) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-customvision/azure/cognitiveservices/vision/customvision) | [Package (PyPI)](https://pypi.org/project/azure-cognitiveservices-vision-customvision/) | [Voorbeelden](/samples/browse/?languages=python&products=azure&term=vision&terms=vision)
+[Referentiedocumentatie](/python/api/overview/azure/cognitiveservices/customvision) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-customvision/azure/cognitiveservices/vision/customvision) | [Package (PyPI)](https://pypi.org/project/azure-cognitiveservices-vision-customvision/) | [Voorbeelden](/samples/browse/?languages=python&products=azure&term=vision&terms=vision)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -68,9 +68,9 @@ Maak variabelen voor het Azure-eindpunt en de abonnementssleutels van uw resourc
 
 |Naam|Beschrijving|
 |---|---|
-|[CustomVisionTrainingClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.customvisiontrainingclient?view=azure-python) | Deze klasse behandelt het maken, trainen en publiceren van uw modellen. |
-|[CustomVisionPredictionClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclient?view=azure-python)| Deze klasse verwerkt de query op uw modellen voor voorspellingen met betrekking tot de classificatie van afbeeldingen.|
-|[ImagePrediction](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.prediction.models.imageprediction?view=azure-python)| Deze klasse definieert een voorspelling van één object op één afbeelding. Het bevat eigenschappen voor de object-id en -naam, de locatie van het begrenzingsvak van het object en een betrouwbaarheidsscore.|
+|[CustomVisionTrainingClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.customvisiontrainingclient) | Deze klasse behandelt het maken, trainen en publiceren van uw modellen. |
+|[CustomVisionPredictionClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclient)| Deze klasse verwerkt de query op uw modellen voor voorspellingen met betrekking tot de classificatie van afbeeldingen.|
+|[ImagePrediction](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.prediction.models.imageprediction)| Deze klasse definieert een voorspelling van één object op één afbeelding. Het bevat eigenschappen voor de object-id en -naam, de locatie van het begrenzingsvak van het object en een betrouwbaarheidsscore.|
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -86,7 +86,7 @@ Deze codefragmenten laten zien hoe u het volgende kunt uitvoeren met de Custom V
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Instantieer een exemplaar van een trainings- en voorspellingsclient met uw eindpunt en sleutels. Maak **ApiKeyServiceClientCredentials**-objecten met uw sleutels en gebruik deze met uw eindpunt om een [CustomVisionTrainingClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.customvisiontrainingclient?view=azure-python)- en [CustomVisionPredictionClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclient?view=azure-python)-object te maken.
+Instantieer een exemplaar van een trainings- en voorspellingsclient met uw eindpunt en sleutels. Maak **ApiKeyServiceClientCredentials**-objecten met uw sleutels en gebruik deze met uw eindpunt om een [CustomVisionTrainingClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.customvisiontrainingclient)- en [CustomVisionPredictionClient](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclient)-object te maken.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/CustomVision/ImageClassification/CustomVisionQuickstart.py?name=snippet_auth)]
 
@@ -94,7 +94,7 @@ Instantieer een exemplaar van een trainings- en voorspellingsclient met uw eindp
 
 Als u een nieuw Custom Vision Service-project wilt maken, voegt u de volgende code aan uw script toe. 
 
-Raadpleeg de [create_project](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin?view=azure-python#create-project-name--description-none--domain-id-none--classification-type-none--target-export-platforms-none--custom-headers-none--raw-false----operation-config-)-methode om andere opties op te geven wanneer u uw project maakt (uitgelegd in de webportalgids [Een classificatie maken](../../getting-started-build-a-classifier.md)).  
+Raadpleeg de [create_project](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin#create-project-name--description-none--domain-id-none--classification-type-none--target-export-platforms-none--custom-headers-none--raw-false----operation-config-)-methode om andere opties op te geven wanneer u uw project maakt (uitgelegd in de webportalgids [Een classificatie maken](../../getting-started-build-a-classifier.md)).  
 
 [!code-python[](~/cognitive-services-quickstart-code/python/CustomVision/ImageClassification/CustomVisionQuickstart.py?name=snippet_create)]
 
@@ -128,7 +128,7 @@ Met deze code wordt de eerste iteratie van het voorspellingsmodel gemaakt.
 > [!TIP]
 > Trainen met geselecteerde tags
 >
-> Indien gewenst kun u alleen trainen op een subset van de toegepaste tags. U kunt dit doen als u bepaalde tags nog niet vaak genoeg hebt toegepast, maar u wel voldoende andere codes hebt toegepast. Stel in de **[train_project](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin?view=azure-python#train-project-project-id--training-type-none--reserved-budget-in-hours-0--force-train-false--notification-email-address-none--selected-tags-none--custom-headers-none--raw-false----operation-config-&preserve-view=true)** -aanroep de optionele parameter *selected_tags* in op een lijst met de ID-tekenreeksen van de tags die u wilt gebruiken. Het model wordt getraind om alleen de tags in de lijst te herkennen.
+> Indien gewenst kun u alleen trainen op een subset van de toegepaste tags. U kunt dit doen als u bepaalde tags nog niet vaak genoeg hebt toegepast, maar u wel voldoende andere codes hebt toegepast. Stel in de **[train_project](/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.operations.customvisiontrainingclientoperationsmixin#train-project-project-id--training-type-none--reserved-budget-in-hours-0--force-train-false--notification-email-address-none--selected-tags-none--custom-headers-none--raw-false----operation-config-&preserve-view=true)** -aanroep de optionele parameter *selected_tags* in op een lijst met de ID-tekenreeksen van de tags die u wilt gebruiken. Het model wordt getraind om alleen de tags in de lijst te herkennen.
 
 ## <a name="publish-the-current-iteration"></a>De huidige herhaling publiceren
 
@@ -179,4 +179,4 @@ U hebt nu gezien hoe elke stap van het afbeeldingsclassificatieproces in code ka
 
 * Wat is Custom Vision?
 * De broncode voor dit voorbeeld is te vinden [op GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/CustomVision/ImageClassification/CustomVisionQuickstart.py)
-* [SDK-naslagdocumentatie](/python/api/overview/azure/cognitiveservices/customvision?view=azure-python)
+* [SDK-naslagdocumentatie](/python/api/overview/azure/cognitiveservices/customvision)

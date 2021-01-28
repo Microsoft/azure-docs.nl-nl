@@ -1,18 +1,15 @@
 ---
 title: Prestaties van Apache Kafka HDInsight-clusters optimaliseren
 description: Hierin wordt een overzicht gegeven van de technieken voor het optimaliseren van Apache Kafka workloads in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/19/2019
-ms.openlocfilehash: 752068af531c4a0ecc832d266f88105c14452ecb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d24527efe6adce6f16b7c890f23c755545f5d5a0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75494927"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935884"
 ---
 # <a name="performance-optimization-for-apache-kafka-hdinsight-clusters"></a>Prestaties van Apache Kafka HDInsight-clusters optimaliseren
 

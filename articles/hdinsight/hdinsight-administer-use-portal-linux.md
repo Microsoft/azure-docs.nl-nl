@@ -1,19 +1,16 @@
 ---
 title: Apache Hadoop clusters in HDInsight beheren met Azure Portal
 description: Meer informatie over het maken en beheren van Azure HDInsight-clusters met behulp van de Azure Portal.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/24/2020
-ms.openlocfilehash: 7c644583e994e51f11bdf7991755a6ea94b01e76
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5d308bfbe605e5ec3bed3bf5d6506ccafc53836e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012801"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942821"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Apache Hadoop clusters in HDInsight beheren door gebruik te maken van de Azure Portal
 
@@ -228,7 +225,7 @@ Het wacht woord wordt gewijzigd op alle knoop punten in het cluster.
    | Veld | Waarde |
    | --- | --- |
    | Scripttype | Selecteer **-aangepast** in de vervolg keuzelijst.|
-   | Name |"SSH-referenties wijzigen" |
+   | Naam |"SSH-referenties wijzigen" |
    | Bash-script-URI |De URI naar het changecredentials.sh-bestand |
    | Knooppunt type (n): (Head, worker, Nimbus, supervisor of Zookeeper.) |✓ voor alle weer gegeven knooppunt typen |
    | Parameters |Voer de SSH-gebruikers naam en vervolgens het nieuwe wacht woord in. Er moet één spatie tussen de gebruikers naam en het wacht woord zijn. |

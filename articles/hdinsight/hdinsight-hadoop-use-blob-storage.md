@@ -1,19 +1,16 @@
 ---
 title: Gegevens opvragen uit HDFS-compatibele Azure-opslag - Azure HDInsight
 description: Meer informatie over het opvragen van gegevens uit Azure Storage en Azure Data Lake Storage om de resultaten van uw analyse op te slaan.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: ead9b775b8c61d0d89abd4821bef2b1aaaea0d76
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: cedc0ff1b3c2aa64f32445eabc800748a753981d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547432"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945430"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Azure-opslag gebruiken met Azure HDInsight-clusters
 
@@ -44,23 +41,23 @@ Het delen van één BLOB-container als het standaard bestandssysteem voor meerde
 
 ## <a name="access-files-from-within-cluster"></a>Toegang tot bestanden in het cluster
 
-Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data Lake Storage vanuit een HDInsight-cluster. Het URI-schema biedt niet-versleutelde toegang (met *wasb:* voor voegsel) en TLS-versleutelde toegang (met *wasbs* ). Waar mogelijk kunt u het beste *wasbs* gebruiken, zelfs voor de toegang tot gegevens die zich in dezelfde regio in Azure bevinden.
+Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data Lake Storage vanuit een HDInsight-cluster. Het URI-schema biedt niet-versleutelde toegang (met *wasb:* voor voegsel) en TLS-versleutelde toegang (met *wasbs*). Waar mogelijk kunt u het beste *wasbs* gebruiken, zelfs voor de toegang tot gegevens die zich in dezelfde regio in Azure bevinden.
 
-* **De volledig gekwalificeerde naam gebruiken** . Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
+* **De volledig gekwalificeerde naam gebruiken**. Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
 
     ```
     wasb://<containername>@<accountname>.blob.core.windows.net/<file.path>/
     wasbs://<containername>@<accountname>.blob.core.windows.net/<file.path>/
     ```
 
-* **De verkorte padnotatie gebruiken** . Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
+* **De verkorte padnotatie gebruiken**. Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
 
     ```
     wasb:///<file.path>/
     wasbs:///<file.path>/
     ```
 
-* **Het relatieve pad gebruiken** . Met deze methode geeft u alleen het volledige relatieve pad op naar het bestand dat u wilt openen.
+* **Het relatieve pad gebruiken**. Met deze methode geeft u alleen het volledige relatieve pad op naar het bestand dat u wilt openen.
 
     ```
     /<file.path>/
@@ -132,8 +129,8 @@ Micro soft biedt de volgende hulpprogram ma's voor het werken met Azure Storage:
 
 | Hulpprogramma | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
-| [Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
-| [Azure CLI](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
+| [Azure-portal](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
+| [Azure-CLI](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
 | [Azure PowerShell](../storage/blobs/storage-quickstart-blobs-powershell.md) | | |✔ |
 | [AzCopy](../storage/common/storage-use-azcopy-v10.md) |✔ | |✔ |
 

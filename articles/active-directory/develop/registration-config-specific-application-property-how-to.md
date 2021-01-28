@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: 222c961f9e5587cd5526778e6ef1c800f5085a69
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 6da6187e59bf028101eac2ea6f09fb1530821bfd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064297"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937862"
 ---
 # <a name="azure-portal-registration-fields-for-custom-developed-apps"></a>Registratievelden in Azure-portal voor zelf ontwikkelde apps
 
@@ -61,7 +61,7 @@ Zodra u de bovenstaande velden hebt ingevuld, wordt de toepassing geregistreerd 
 
 | Veld           | Beschrijving        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Afmeldings-URL      | Dit is de uitzonderings-URL voor eenmalige afmelding. Azure AD verzendt een afmeldings aanvraag naar deze URL wanneer de gebruiker de sessie met Azure AD wist met behulp van een andere geregistreerde toepassing.|
+| URL voor afmelden front kanaal      | Dit is de uitzonderings-URL voor eenmalige afmelding. Azure AD verzendt een afmeldings aanvraag naar deze URL wanneer de gebruiker de sessie met Azure AD wist met behulp van een andere geregistreerde toepassing.|
 | Ondersteunde accounttypen  | Met deze schakel optie geeft u op of de toepassing kan worden gebruikt door meerdere tenants. Dit betekent meestal dat externe organisaties uw toepassing kunnen gebruiken door deze te registreren in hun Tenant en toegang te verlenen tot de gegevens van de organisatie.|
 | Omleidings-URL's      | De omleidings-of antwoord-Url's zijn de eind punten waar Azure AD tokens retourneert die door uw toepassing worden aangevraagd. Voor systeem eigen toepassingen is dit de locatie waar de gebruiker wordt verzonden na een geslaagde autorisatie. Azure AD controleert of de omleidings-URI die uw toepassing levert in de OAuth 2,0-aanvraag overeenkomt met een van de geregistreerde waarden in de portal.|
 

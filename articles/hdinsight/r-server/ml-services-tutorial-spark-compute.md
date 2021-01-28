@@ -1,19 +1,16 @@
 ---
 title: 'Zelfstudie: R gebruiken in een Spark-compute-context in Azure HDInsight'
 description: 'Zelfstudie: aan de slag met R en Spark op een Azure HDInsight Machine Learning Services-cluster.'
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/21/2019
-ms.openlocfilehash: 6e727bc7ad8b7f0b8a04c48f3abd1f1ac0806c66
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: bd6015529fb521e3b157e46ee808aea43e993dee
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545902"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935674"
 ---
 # <a name="tutorial-use-r-in-a-spark-compute-context-in-azure-hdinsight"></a>Zelfstudie: R gebruiken in een Spark-compute-context in Azure HDInsight
 
@@ -33,7 +30,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure HDInsight Machine Learning Services-cluster. Ga naar [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **ML Services** als **Clustertype** .
+* Een Azure HDInsight Machine Learning Services-cluster. Ga naar [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **ML Services** als **Clustertype**.
 
 ## <a name="connect-to-rstudio-server"></a>Verbinding maken met RStudio Server
 
@@ -43,7 +40,7 @@ RStudio Server wordt uitgevoerd op het edge-knooppunt van het cluster. Ga naar d
 https://CLUSTERNAME.azurehdinsight.net/rstudio/
 ```
 
-De eerste keer dat u zich aanmeldt, moet u tweemaal verifiëren. Bij de eerste verificatieprompt geeft u de gebruikers-id en het wachtwoord voor de clusterbeheerder op (de standaardwaarde is *admin* ). Bij de tweede verificatieprompt geeft u de gebruikers-id en het wachtwoord voor SSH op (de standaardwaarde is *sshuser* ). Voor volgende aanmeldingen zijn alleen de SSH-referenties vereist.
+De eerste keer dat u zich aanmeldt, moet u tweemaal verifiëren. Bij de eerste verificatieprompt geeft u de gebruikers-id en het wachtwoord voor de clusterbeheerder op (de standaardwaarde is *admin*). Bij de tweede verificatieprompt geeft u de gebruikers-id en het wachtwoord voor SSH op (de standaardwaarde is *sshuser*). Voor volgende aanmeldingen zijn alleen de SSH-referenties vereist.
 
 ## <a name="download-the-sample-data-to-local-storage"></a>De voorbeeldgegevens downloaden naar lokale opslag
 
@@ -113,7 +110,7 @@ Deze stap zou ongeveer 10 seconden moeten duren.
     hdfsFS <- RxHdfsFileSystem()
     ```
 
-1. Omdat de oorspronkelijke CSV-bestanden nogal onhandige variabelenamen hebben, geeft u een *colInfo* -lijst op om ze beter te kunnen beheren. Voer in RStudio de volgende code in:
+1. Omdat de oorspronkelijke CSV-bestanden nogal onhandige variabelenamen hebben, geeft u een *colInfo*-lijst op om ze beter te kunnen beheren. Voer in RStudio de volgende code in:
 
     ```R
     airlineColInfo <- list(

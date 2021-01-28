@@ -1,19 +1,16 @@
 ---
 title: Wat is Apache Hive en HiveQL-Azure HDInsight
 description: Apache Hive is een Data Warehouse systeem voor Apache Hadoop. U kunt een query uitvoeren op gegevens die zijn opgeslagen in Hive met behulp van HiveQL, die vergelijkbaar zijn met Transact-SQL. In dit document leest u hoe u Hive en HiveQL kunt gebruiken met Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
-ms.openlocfilehash: d2e59b35a30bd838eab2b05dcacf83d8b2c21236
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 4e8c6b25055dfc38d56509e1744b8c7fcac40700
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540394"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944296"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Wat is Apache Hive en HiveQL in azure HDInsight?
 
@@ -23,7 +20,7 @@ Met hive kunt u de structuur projecteren op grotendeels ongestructureerde gegeve
 
 HDInsight biedt verschillende cluster typen, die zijn afgestemd op specifieke werk belastingen. De volgende cluster typen worden meestal gebruikt voor Hive-query's:
 
-|Clustertype |Description|
+|Clustertype |Beschrijving|
 |---|---|
 |Interactive Query|Een Hadoop-cluster dat [LLAP-functionaliteit (Low latentie Analytical Processing)](https://cwiki.apache.org/confluence/display/Hive/LLAP) biedt om de reactie tijden voor interactieve query's te verbeteren. Zie het document [Start with Interactive query in HDInsight](../interactive-query/apache-interactive-query-get-started.md) voor meer informatie.|
 |Hadoop|Een Hadoop-cluster dat is afgestemd op werk belastingen voor batch verwerking. Zie het document [beginnen met Apache Hadoop in HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md) voor meer informatie.|
@@ -72,14 +69,14 @@ Voor meer informatie over bestands indelingen die worden ondersteund door Hive, 
 
 Er zijn twee soorten tabellen die u met hive kunt maken:
 
-* __Intern__ : gegevens worden opgeslagen in het Hive-Data Warehouse. Het Data Warehouse bevindt zich `/hive/warehouse/` op de standaard opslag voor het cluster.
+* __Intern__: gegevens worden opgeslagen in het Hive-Data Warehouse. Het Data Warehouse bevindt zich `/hive/warehouse/` op de standaard opslag voor het cluster.
 
     Gebruik interne tabellen wanneer een van de volgende voor waarden van toepassing is:
 
     * De gegevens zijn tijdelijk.
     * U wilt dat de Hive de levens cyclus van de tabel en gegevens beheert.
 
-* __Extern__ : gegevens worden buiten het Data Warehouse opgeslagen. De gegevens kunnen worden opgeslagen op elke opslag die toegankelijk is voor het cluster.
+* __Extern__: gegevens worden buiten het Data Warehouse opgeslagen. De gegevens kunnen worden opgeslagen op elke opslag die toegankelijk is voor het cluster.
 
     Gebruik externe tabellen wanneer een van de volgende voor waarden van toepassing is:
 
@@ -92,7 +89,7 @@ Zie het blog bericht [Hive intern en externe tabellen Inleiding](/archive/blogs/
 
 ## <a name="user-defined-functions-udf"></a>Door de gebruiker gedefinieerde functies (UDF)
 
-Hive kan ook worden uitgebreid via door de **gebruiker gedefinieerde functies (UDF)** . Met een UDF kunt u functionaliteit of logica implementeren die niet eenvoudig kan worden gemodelleerd in HiveQL. Raadpleeg de volgende documenten voor een voor beeld van het gebruik van Udf's met hive:
+Hive kan ook worden uitgebreid via door de **gebruiker gedefinieerde functies (UDF)**. Met een UDF kunt u functionaliteit of logica implementeren die niet eenvoudig kan worden gemodelleerd in HiveQL. Raadpleeg de volgende documenten voor een voor beeld van het gebruik van Udf's met hive:
 
 * [Een door de gebruiker gedefinieerde Java-functie gebruiken met Apache Hive](../hadoop/apache-hadoop-hive-java-udf.md)
 

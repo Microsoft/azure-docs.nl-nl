@@ -3,7 +3,7 @@ title: Delegering en rollen in rechten beheer-Azure AD
 description: Meer informatie over het overdragen van toegangs beheer van IT-beheerders aan afdelings managers en project managers zodat ze de toegang zelf kunnen beheren.
 services: active-directory
 documentationCenter: ''
-author: barclayn
+author: ajburnle
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
 ms.date: 12/23/2020
-ms.author: barclayn
+ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cf3784cc5f6014b04b4668517faf3f319ce55d5
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 7a5812d4dbbd1a63b16d5bee77bb018ea18dd1d6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746674"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937683"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Overdracht en rollen in het beheer van rechten van Azure AD
 
@@ -118,7 +118,7 @@ De volgende tabel geeft een lijst van de taken die de rechten voor het beheer ku
 
 ## <a name="required-roles-to-add-resources-to-a-catalog"></a>Vereiste rollen om resources toe te voegen aan een catalogus
 
-Een globale beheerder kan een groep toevoegen of verwijderen (door de Cloud gemaakte beveiligings groepen of door de Cloud gemaakte Microsoft 365 groepen), de toepassing of de share point online-site in een catalogus. Een gebruikers beheerder kan een wille keurige groep of toepassing toevoegen aan of verwijderen uit een catalogus, met uitzonde ring van een groep die is geconfigureerd als toegewezen aan een directory-rol.
+Een globale beheerder kan een groep toevoegen of verwijderen (door de Cloud gemaakte beveiligings groepen of door de Cloud gemaakte Microsoft 365 groepen), de toepassing of de share point online-site in een catalogus. Een gebruikers beheerder kan een wille keurige groep of toepassing toevoegen aan of verwijderen uit een catalogus, met uitzonde ring van een groep die is geconfigureerd als toegewezen aan een directory-rol. Houd er rekening mee dat een gebruikers beheerder toegangs pakketten kan beheren in een catalogus die groepen bevat die zijn geconfigureerd als toegewezen aan een directory-rol.
 
 Voor een gebruiker die geen globale beheerder of gebruikers beheerder is, om groepen, toepassingen of share point online-sites toe te voegen aan een catalogus, moet die gebruiker *zowel* de vereiste beheer functie voor Azure AD-adreslijst functies als de bevoegdheid van de catalogus eigenaar hebben. De volgende tabel geeft een lijst van de functie combinaties die nodig zijn om resources toe te voegen aan een catalogus. Als u resources uit een catalogus wilt verwijderen, moet u dezelfde rollen hebben.
 

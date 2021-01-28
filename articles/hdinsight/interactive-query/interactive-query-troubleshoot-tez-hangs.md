@@ -3,16 +3,13 @@ title: Apache TEZ-toepassing is vastgelopen in azure HDInsight
 description: Apache TEZ-toepassing is vastgelopen in azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/09/2019
-ms.openlocfilehash: 4e4d1ec77d989fd354e8b3938a052be94ff4ba34
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 56c68c26ae953034283031e2427b7a4afadee94e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539629"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935945"
 ---
 # <a name="scenario-apache-tez-application-hangs-in-azure-hdinsight"></a>Scenario: Apache TEZ toepassing loopt vast in azure HDInsight
 

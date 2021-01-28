@@ -4,12 +4,12 @@ description: Zoek logboeken die zijn gegenereerd door Trace, NLog of Log4Net.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/08/2019
-ms.openlocfilehash: 90777da4d0b67587afebaa7111e3503af2afcb9a
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 083ddbd06561550f89e414d6c679cdc6433fa338
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920338"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937550"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>.NET/.NET core-en python-traceer Logboeken in Application Insights verkennen
 
@@ -85,7 +85,7 @@ Als u liever log4net of NLog, gebruikt u:
 ```
 
 ## <a name="use-eventsource-events"></a>Event source-gebeurtenissen gebruiken
-U kunt [System. Diagnostics. tracing. Event source](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) -gebeurtenissen configureren die moeten worden verzonden naar Application Insights als traceringen. Installeer eerst het `Microsoft.ApplicationInsights.EventSourceListener` pakket NuGet. Bewerk vervolgens de `TelemetryModules` sectie van het [ApplicationInsights.config](./configuration-with-applicationinsights-config.md) -bestand.
+U kunt [System. Diagnostics. tracing. Event source](/dotnet/api/system.diagnostics.tracing.eventsource) -gebeurtenissen configureren die moeten worden verzonden naar Application Insights als traceringen. Installeer eerst het `Microsoft.ApplicationInsights.EventSourceListener` pakket NuGet. Bewerk vervolgens de `TelemetryModules` sectie van het [ApplicationInsights.config](./configuration-with-applicationinsights-config.md) -bestand.
 
 ```xml
     <Add Type="Microsoft.ApplicationInsights.EventSourceListener.EventSourceTelemetryModule, Microsoft.ApplicationInsights.EventSourceListener">
@@ -198,12 +198,12 @@ In Java-instrumentatie zonder code (aanbevolen) de logboeken worden verzameld ui
 Als u de Java-SDK gebruikt, gebruikt u de [Java-logboek adapters](./java-trace-logs.md).
 
 ### <a name="theres-no-application-insights-option-on-the-project-context-menu"></a>Er is geen optie Application Insights in het context menu van het project
-* Zorg ervoor dat Developer Analytics-Hulpprogram Ma's op de ontwikkel computer zijn geïnstalleerd. Zoek in de **Tools**  >  **extensies en updates** van Visual Studio-hulpprogram ma's naar **Developer Analytics-hulpprogram ma's**. Als dit **niet het geval** is, opent u het tabblad **online** en installeert u het.
+* Zorg ervoor dat Developer Analytics-Hulpprogram Ma's op de ontwikkel computer zijn geïnstalleerd. Zoek in de   >  **extensies en updates** van Visual Studio-hulpprogram ma's naar **Developer Analytics-hulpprogram ma's**. Als dit **niet het geval** is, opent u het tabblad **online** en installeert u het.
 * Dit kan een project type zijn dat niet wordt ondersteund door Developer Analytics tools. [Hand matige installatie](#manual-installation)gebruiken.
 
 ### <a name="theres-no-log-adapter-option-in-the-configuration-tool"></a>Er is geen optie voor de logboek adapter in het configuratie hulpprogramma
 * Installeer eerst het Framework voor logboek registratie.
-* Als u System. Diagnostics. trace gebruikt, zorg er dan voor dat u deze [in *web.config* hebt geconfigureerd](/dotnet/api/system.diagnostics.eventlogtracelistener?view=dotnet-plat-ext-3.1).
+* Als u System. Diagnostics. trace gebruikt, zorg er dan voor dat u deze [in *web.config* hebt geconfigureerd](/dotnet/api/system.diagnostics.eventlogtracelistener).
 * Zorg ervoor dat u beschikt over de nieuwste versie van Application Insights. Ga in Visual Studio naar **hulpprogram ma's** voor  >  **uitbrei dingen en updates** en open het tabblad **updates** . Als **Developer Analytics-Hulpprogram ma's** er is, selecteert u deze om het bij te werken.
 
 ### <a name="i-get-the-instrumentation-key-cannot-be-empty-error-message"></a><a name="emptykey"></a>Fout bericht ' de instrumentatie sleutel mag niet leeg zijn '

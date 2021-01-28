@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 11/12/2020
 ms.author: aahi
-ms.openlocfilehash: 82c33c038a1f8eaba540c9906efcffa0a9214762
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: af8fec56c32b52e2af584e59f08db6cc7129c9c5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690176"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947205"
 ---
 ## <a name="install-the-container"></a>De container installeren
 
@@ -112,7 +112,7 @@ az webapp config appsettings set -g $resource_group_name -n $appservice_name --s
 
 U kunt ook een Azure container instance (ACI) gebruiken om de implementatie eenvoudiger te maken. ACI is een bron waarmee u docker-containers op aanvraag kunt uitvoeren in een beheerde, serverloze Azure-omgeving. 
 
-Zie [Azure container instances gebruiken](../how-tos/text-analytics-how-to-use-container-instances.md) voor stappen voor het implementeren van een ACI-bron met behulp van de Azure Portal. U kunt ook het onderstaande Power shell-script gebruiken met behulp van Azure CLI, waarmee u een ACI maakt in uw abonnement met behulp van de container installatie kopie.  Wacht totdat het script is voltooid (ongeveer 25-30 minuten) voordat u de eerste aanvraag indient.  Als gevolg van de limiet van het maximum aantal Cpu's per ACI-resource, selecteert u deze optie niet als u verwacht dat u meer dan 5 grote documenten (ongeveer 5000 tekens per aanvraag verzendt).
+Zie [Azure container instances gebruiken](../../containers/azure-container-instance-recipe.md) voor stappen voor het implementeren van een ACI-bron met behulp van de Azure Portal. U kunt ook het onderstaande Power shell-script gebruiken met behulp van Azure CLI, waarmee u een ACI maakt in uw abonnement met behulp van de container installatie kopie.  Wacht totdat het script is voltooid (ongeveer 25-30 minuten) voordat u de eerste aanvraag indient.  Als gevolg van de limiet van het maximum aantal Cpu's per ACI-resource, selecteert u deze optie niet als u verwacht dat u meer dan 5 grote documenten (ongeveer 5000 tekens per aanvraag verzendt).
 Raadpleeg het artikel over [regionale ondersteuning voor ACI](../../../container-instances/container-instances-region-availability.md) voor informatie over de beschik baarheid. 
 
 > [!NOTE] 
@@ -213,4 +213,3 @@ docker-compose up
 ```
 
 Zie de documentatie van NGINX over [NGINX SSL-beëindiging](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/)voor meer informatie.
-

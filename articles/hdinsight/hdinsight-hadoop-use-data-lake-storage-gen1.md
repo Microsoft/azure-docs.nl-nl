@@ -1,19 +1,16 @@
 ---
 title: Data Lake Storage Gen1 gebruiken met Hadoop in azure HDInsight
 description: Meer informatie over het opvragen van gegevens uit Azure Data Lake Storage Gen1 en voor het opslaan van resultaten van de analyse.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 5949bab7bdf11b11e0ff71f9054098ed83d95ab4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 35941f585a0ae5c0d3915c769db5b18737b299f0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539833"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945406"
 ---
 # <a name="use-data-lake-storage-gen1-with-azure-hdinsight-clusters"></a>Data Lake Storage Gen1 gebruiken met Azure HDInsight-clusters
 
@@ -62,7 +59,7 @@ Wanneer HDInsight met Data Lake Storage Gen1 als standaard opslag is geïmplemen
 * Cluster1 het pad `adl://mydatalakestore/cluster1storage` kan gebruiken
 * Cluster2 het pad `adl://mydatalakestore/cluster2storage` kan gebruiken
 
-U ziet dat beide clusters gebruikmaken van hetzelfde Data Lake Storage Gen1 account **mydatalakestore** . Elk cluster heeft toegang tot een eigen hoofd bestandssysteem in Data Lake Storage. De Azure Portal implementatie-ervaring vraagt u een mapnaam te gebruiken zoals **/clusters/ \<clustername>** voor het hoofdpad.
+U ziet dat beide clusters gebruikmaken van hetzelfde Data Lake Storage Gen1 account **mydatalakestore**. Elk cluster heeft toegang tot een eigen hoofd bestandssysteem in Data Lake Storage. De Azure Portal implementatie-ervaring vraagt u een mapnaam te gebruiken zoals **/clusters/ \<clustername>** voor het hoofdpad.
 
 Als u Data Lake Storage Gen1 als standaard opslag wilt gebruiken, moet u de Service-Principal toegang verlenen tot de volgende paden:
 
@@ -137,19 +134,19 @@ Zie [toegangs beheer in azure data Lake Storage gen1](../data-lake-store/data-la
 
 Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data Lake Storage vanuit een HDInsight-cluster.
 
-* **De volledig gekwalificeerde naam gebruiken** . Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
+* **De volledig gekwalificeerde naam gebruiken**. Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
 
     ```
     adl://<data_lake_account>.azuredatalakestore.net/<cluster_root_path>/<file_path>
     ```
 
-* **De verkorte padnotatie gebruiken** . Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
+* **De verkorte padnotatie gebruiken**. Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
 
     ```
     adl:///<file path>
     ```
 
-* **Het relatieve pad gebruiken** . Met deze methode geeft u alleen het volledige relatieve pad op naar het bestand dat u wilt openen.
+* **Het relatieve pad gebruiken**. Met deze methode geeft u alleen het volledige relatieve pad op naar het bestand dat u wilt openen.
 
     ```
     /<file.path>/
@@ -214,7 +211,7 @@ LOCATION '/example/data/';
 
 ## <a name="identify-storage-path-from-ambari"></a>Pad naar opslag van Ambari identificeren
 
-Als u het volledige pad naar het geconfigureerde standaard archief wilt identificeren, gaat u naar **HDFS** -  >  **configuraties** en voert u `fs.defaultFS` in het vak invoer filter in.
+Als u het volledige pad naar het geconfigureerde standaard archief wilt identificeren, gaat u naar **HDFS**-  >  **configuraties** en voert u `fs.defaultFS` in het vak invoer filter in.
 
 ## <a name="create-hdinsight-clusters-with-access-to-data-lake-storage-gen1"></a>HDInsight-clusters maken met toegang tot Data Lake Storage Gen1
 

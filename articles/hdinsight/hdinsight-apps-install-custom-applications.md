@@ -1,19 +1,16 @@
 ---
 title: Uw aangepaste Apache Hadoop-toepassingen installeren in azure HDInsight
 description: Meer informatie over het installeren van HDInsight-toepassingen voor Apache Hadoop clusters in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: dca248d217f4fb90d41c0a98a42b5eda4783913f
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 9591551b7d5657803e770bd71b47acb141b40fb6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825207"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942696"
 ---
 # <a name="install-custom-apache-hadoop-applications-on-azure-hdinsight"></a>Aangepaste Apache Hadoop-toepassingen installeren in azure HDInsight
 
@@ -77,7 +74,7 @@ Voor **tint** kunt u de volgende stappen uitvoeren:
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het cluster waarop u de toepassing hebt geïnstalleerd.
 1. Selecteer in het menu **instellingen** de optie **toepassingen**.
 1. Selecteer **kleur Toon** in de lijst om de eigenschappen weer te geven.  
@@ -125,7 +122,7 @@ Als de installatie van een toepassing is mislukt, kunt u de fout berichten en fo
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het cluster waarop u de toepassing hebt geïnstalleerd.
 1. Selecteer in het menu **instellingen** de optie **toepassingen**.
 1. Klik met de rechter muisknop op de toepassing die u wilt verwijderen en selecteer vervolgens **verwijderen**.

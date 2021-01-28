@@ -1,19 +1,16 @@
 ---
 title: Verhogings aanvraag CPU-kern quota-Azure HDInsight
 description: Leer het proces om een toename aan te vragen voor de CPU-kernen die aan uw abonnement zijn toegewezen.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/07/2020
-ms.openlocfilehash: 93c07b47e03bde20d494feb1c86179cd9a24ba26
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a539acc423feeab500830fb33262d1b824101072
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539408"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935839"
 ---
 # <a name="requesting-quota-increases-for-azure-hdinsight"></a>Quota aanvragen verhogen voor Azure HDInsight
 
@@ -30,7 +27,7 @@ Als u een fout bericht hebt ontvangen dat aangeeft dat u een quotum limiet hebt 
 
     1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
     1. Ga naar de **overzichts** pagina voor het HDInsight-cluster.
-    1. Selecteer in het linkermenu **quotum limieten** . Op de pagina worden het aantal gebruikte kernen, het aantal beschikbare kernen en het totale aantal kernen weergegeven.
+    1. Selecteer in het linkermenu **quotum limieten**. Op de pagina worden het aantal gebruikte kernen, het aantal beschikbare kernen en het totale aantal kernen weergegeven.
 
 Voer de volgende stappen uit om een quotum verhoging aan te vragen:
 
@@ -39,16 +36,16 @@ Voer de volgende stappen uit om een quotum verhoging aan te vragen:
 
     ![knop Help en ondersteuning](./media/quota-increase-request/help-support-button.png)
 
-1. Selecteer **Nieuwe ondersteuningsaanvraag** .
+1. Selecteer **Nieuwe ondersteuningsaanvraag**.
 1. Selecteer op de pagina **Nieuwe ondersteuningsaanvraag** op het tabblad **Basisgegevens** de volgende opties:
 
-   - **Probleem type** : **service-en abonnements limieten (quota's)**
-   - **Abonnement** : het abonnement dat u wilt wijzigen
-   - **Quotum type** : **HDInsight**
+   - **Probleem type**: **service-en abonnements limieten (quota's)**
+   - **Abonnement**: het abonnement dat u wilt wijzigen
+   - **Quotum type**: **HDInsight**
 
      ![Een ondersteunings aanvraag maken om het HDInsight-kern quotum te verhogen](./media/quota-increase-request/hdinsight-quota-support-request.png)
 
-1. Selecteer **volgende: >>oplossingen** .
+1. Selecteer **volgende: >>oplossingen**.
 1. Voer op de pagina **Details** een beschrijving van het probleem in, selecteer de ernst van het probleem, uw favoriete contact wijze en andere vereiste velden. Gebruik de hieronder vermelde sjabloon om ervoor te zorgen dat u de benodigde informatie opgeeft. Quota verhogen aanvragen worden geëvalueerd door het Azure-capaciteits team en niet door het HDInsight-product team. Hoe meer volledige informatie u verstrekt, hoe waarschijnlijker uw aanvraag wordt goedgekeurd.
 
     ```
@@ -61,8 +58,8 @@ Voer de volgende stappen uit om een quotum verhoging aan te vragen:
 
     ![Details van probleem](./media/quota-increase-request/problem-details.png)
 
-1. Selecteer **volgende: controleren + >>maken** .
-1. Selecteer op het tabblad **Beoordelen en maken** de optie **Maken** .
+1. Selecteer **volgende: controleren + >>maken**.
+1. Selecteer op het tabblad **Beoordelen en maken** de optie **Maken**.
 
 > [!NOTE]  
 > Als u het HDInsight core-quotum moet verhogen in een privé gebied, [dient u een goedgekeurde lijst aanvraag](https://aka.ms/canaryintwhitelist)in te dienen.

@@ -1,19 +1,16 @@
 ---
 title: Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters
 description: Meer informatie over het gebruik van Azure Data Lake Storage Gen2 met Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-azurecli
 ms.date: 04/24/2020
-ms.openlocfilehash: cc17cd23ae197db25fed440eb249f2cf069d4859
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 2bbfbd2d953ea663453f0092ff366e95f6dd5ea7
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744580"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945368"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters
 
@@ -66,19 +63,19 @@ Als u machtigingen voor gebruikers wilt instellen om gegevens op te vragen, gebr
 
 Er zijn verschillende manieren om toegang te krijgen tot de bestanden in Data Lake Storage Gen2 vanuit een HDInsight-cluster.
 
-* **De volledig gekwalificeerde naam gebruiken** . Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
+* **De volledig gekwalificeerde naam gebruiken**. Met deze methode geeft u het volledige pad op naar het bestand dat u wilt openen.
 
     ```
     abfs://<containername>@<accountname>.dfs.core.windows.net/<file.path>/
     ```
 
-* **De verkorte padnotatie gebruiken** . Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
+* **De verkorte padnotatie gebruiken**. Met deze methode vervangt u het pad naar de hoofdmap van het cluster met:
 
     ```
     abfs:///<file.path>/
     ```
 
-* **Het relatieve pad gebruiken** . Met deze methode geeft u alleen het volledige relatieve pad op naar het bestand dat u wilt openen.
+* **Het relatieve pad gebruiken**. Met deze methode geeft u alleen het volledige relatieve pad op naar het bestand dat u wilt openen.
 
     ```
     /<file.path>/

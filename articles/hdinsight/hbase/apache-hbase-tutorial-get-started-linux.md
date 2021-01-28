@@ -1,19 +1,16 @@
 ---
 title: 'Zelfstudie: Apache HBase gebruiken in Azure HDInsight'
 description: Volg deze zelfstudie voor Apache HBase om met Hadoop aan de slag te gaan in HDInsight. Maak tabellen vanuit de HBase-shell en gebruik Hive om query's uit te voeren op de tabellen.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 01/22/2021
-ms.openlocfilehash: 3aff700493fbdc0c2b8a9a3dcb4dbbafe9b10761
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 05e40dd38fc7111521b600908cda38084249e4de
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788771"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936052"
 ---
 # <a name="tutorial-use-apache-hbase-in-azure-hdinsight"></a>Zelfstudie: Apache HBase gebruiken in Azure HDInsight
 

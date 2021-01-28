@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 12/03/2020
 ms.author: mbullwin
-ms.openlocfilehash: 370883b90902dad5a6e222897e68e1d3e9dd2acf
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b4153b07b153a9ee0b16dc032ab5e7810e236d7d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737989"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936273"
 ---
 # <a name="deploy-an-anomaly-detector-module-to-iot-edge"></a>Een anomalie detectie module implementeren voor het IoT Edge
 
@@ -24,7 +24,7 @@ Meer informatie over het implementeren van de Cognitive Services [anomaliey dete
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement gebruiken. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
-* Installeer de [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* Installeer de [Azure CLI](/cli/azure/install-azure-cli).
 * Een [IOT hub](../../../iot-hub/iot-hub-create-through-portal.md) en een [IOT Edge](../../../iot-edge/quickstart-linux.md) apparaat.
 
 [!INCLUDE [Create a Cognitive Services Anomaly Detector resource](../includes/create-anomaly-detector-resource.md)]

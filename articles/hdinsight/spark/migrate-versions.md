@@ -1,18 +1,15 @@
 ---
 title: Apache Spark 2,1-of 2,2-workloads migreren naar 2,3 of 2,4-Azure HDInsight
 description: Meer informatie over het migreren van Apache Spark 2,1 en 2,2 naar 2,3 of 2,4.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: 1ce9b0faa6636d1318871cc9ef66cfbe47908265
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af1894d2f63357006e87fa8e4533f135ecc02f21
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504975"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944755"
 ---
 # <a name="migrate-apache-spark-21-and-22-workloads-to-23-and-24"></a>Apache Spark 2,1-en 2,2-workloads migreren naar 2,3 en 2,4
 

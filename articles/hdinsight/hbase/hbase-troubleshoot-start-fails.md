@@ -3,16 +3,13 @@ title: Apache HBase Master kan niet worden gestart in azure HDInsight
 description: Apache HBase Master (HMaster) kan niet worden gestart in azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/14/2019
-ms.openlocfilehash: 032c25969bf477e1163b8db2aca631044c457939
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: c30077d0d8f359e93745b53755f9dae998073d4d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539969"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936908"
 ---
 # <a name="apache-hbase-master-hmaster-fails-to-start-in-azure-hdinsight"></a>Apache HBase Master (HMaster) kan niet worden gestart in azure HDInsight
 
@@ -83,7 +80,7 @@ Dit probleem kan optreden als u veel tabellen en regio's hebt die niet zijn leeg
 
 ### <a name="resolution"></a>Oplossing
 
-1. Ga vanuit de Apache Ambari-gebruikers interface naar **HBase** -  >  **configuraties** . Voeg in het aangepaste `hbase-site.xml` bestand de volgende instelling toe:
+1. Ga vanuit de Apache Ambari-gebruikers interface naar **HBase**-  >  **configuraties**. Voeg in het aangepaste `hbase-site.xml` bestand de volgende instelling toe:
 
     ```
     Key: hbase.master.namespace.init.timeout Value: 2400000  

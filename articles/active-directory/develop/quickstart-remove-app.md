@@ -13,12 +13,12 @@ ms.date: 11/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: marsma, aragra, lenalepa, sureshja
-ms.openlocfilehash: 24c29d34c14e6237bc79e38741ea244da5429e9e
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 12074b6dc5d27c0d28ceea5ab6d266d1f02ecbe2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754559"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938178"
 ---
 # <a name="how-to-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Een toepassing verwijderen die bij het Microsoft Identity Platform is geregistreerd
 
@@ -37,7 +37,7 @@ In de volgende secties leert u het volgende:
 
 Toepassingen die u of uw organisatie hebben geregistreerd, worden vertegenwoordigd door een toepassingsobject en een service-principalobject in uw tenant. Zie [Toepassingsobjecten en service-principalobjecten](./app-objects-and-service-principals.md) voor meer informatie.
 
-Als u een toepassing wilt verwijderen, moet u vermeld staan als de eigenaar van de toepassing of over beheerdersrechten beschikken.
+Als u een toepassing wilt verwijderen, moet u worden vermeld als eigenaar van de toepassing of over beheerders rechten beschikken.
 
 1. Meld u bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal<span class="docon docon-navigate-external x-hidden-focus"></span></a> aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de gewenste Azure Active Directory-tenant.

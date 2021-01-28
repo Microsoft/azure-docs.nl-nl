@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: c2b0488663233546411b3a1b5ac1b1eb6c0b899c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 8491eb02fd61f291904d57990b3785ce93239964
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887166"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935263"
 ---
 # <a name="troubleshooting-azure-spring-cloud-in-virtual-networks"></a>Problemen met Azure lente-Cloud in virtuele netwerken oplossen
 
@@ -39,7 +39,7 @@ Zie de [structuur en syntaxis van Azure Resource Manager sjablonen](https://docs
 |------|------|
 | Resources die zijn gemaakt door de Azure lente-Cloud, zijn niet toegestaan door het beleid. | Er worden netwerk bronnen gemaakt wanneer u Azure lente-Cloud in uw eigen virtuele netwerk implementeert. Controleer of u [Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview) hebt gedefinieerd om deze maken te blok keren. Resources kunnen niet worden gemaakt in het fout bericht. |
 | De beschik bare subnetten zijn gekoppeld aan route tabellen. koppel deze toe. | Het is momenteel niet mogelijk om Azure lente-Cloud te implementeren in een subnet dat is gekoppeld aan bestaande route tabellen. Maak de koppeling los en probeer het opnieuw. |
-| Het vereiste verkeer is niet white list. | Raadpleeg de [verantwoordelijkheden van de klant voor het uitvoeren van Azure lente-Cloud in VNET](spring-cloud-vnet-customer-responsibilities.md) om ervoor te zorgen dat het vereiste verkeer white list is. |
+| Het vereiste verkeer is niet allowlisted. | Raadpleeg de [verantwoordelijkheden van de klant voor het uitvoeren van Azure lente-Cloud in VNET](spring-cloud-vnet-customer-responsibilities.md) om ervoor te zorgen dat het vereiste verkeer allowlisted is. |
 
 ## <a name="my-application-cant-be-registered"></a>Mijn toepassing kan niet worden geregistreerd
 

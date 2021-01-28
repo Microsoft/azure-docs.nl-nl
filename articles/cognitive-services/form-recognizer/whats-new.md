@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 7539e896d810a2f0fbf3c07f389f25e2d3c31fe1
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: f6d610db01b465306cdaaafa9b1308dba63ff9ca
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97844999"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936155"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -85,7 +85,7 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 
 ### <a name="new-features"></a>Nieuwe functies
 
-* **v 2.0-verwijzing beschikbaar** : Bekijk [de API-referentie voor v 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) en de bijgewerkte sdk's voor [.net](/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet), [python](/python/api/overview/azure/?view=azure-python), [Java](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview)en [Java script](/javascript/api/overview/azure/?view=azure-node-latest).
+* **v 2.0-verwijzing beschikbaar** : Bekijk [de API-referentie voor v 2.0](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) en de bijgewerkte sdk's voor [.net](/dotnet/api/overview/azure/ai.formrecognizer-readme), [python](/python/api/overview/azure/), [Java](/java/api/overview/azure/ai-formrecognizer-readme)en [Java script](/javascript/api/overview/azure/).
 * Verbeteringen in **tabel verbeteringen en** uitbrei dingen voor extractie: bevat nauw keurige verbeteringen en verbeteringen in tabel extractie, met name de mogelijkheid om tabellen en structuren in een _aangepaste trein zonder labels_ te leren. 
 
 * **Valuta-ondersteuning** -detectie en extractie van globale valuta symbolen.
@@ -110,10 +110,10 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 
 ### <a name="new-features"></a>Nieuwe functies
 * **SDK-ondersteuning voor de open bare preview van Form Recognizer API v 2.0** -deze maand hebben we onze service ondersteuning uitgebreid tot een preview-SDK voor de versie van de formulier Recognizer v 2.0 (preview). Gebruik de onderstaande koppelingen om aan de slag te gaan met de taal van uw keuze: 
-   * [.NET SDK](/dotnet/api/overview/azure/ai.formrecognizer-readme?view=azure-dotnet)
-   * [Java SDK](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview)
-   * [Python SDK](/python/api/overview/azure/ai-formrecognizer-readme?view=azure-python-preview)
-   * [JavaScript SDK](/javascript/api/overview/azure/ai-form-recognizer-readme?view=azure-node-preview)
+   * [.NET SDK](/dotnet/api/overview/azure/ai.formrecognizer-readme)
+   * [Java SDK](/java/api/overview/azure/ai-formrecognizer-readme)
+   * [Python SDK](/python/api/overview/azure/ai-formrecognizer-readme)
+   * [JavaScript SDK](/javascript/api/overview/azure/ai-form-recognizer-readme)
 
   De nieuwe SDK ondersteunt alle functies van de v 2.0 REST API voor de formulier herkenner. U kunt bijvoorbeeld een model trainen met of zonder labels en extra tekst, sleutel waardeparen en tabellen uit uw formulieren extra heren, gegevens uit de bevestigingen ophalen met de vooraf gemaakte ontvangst bevestigingen en tekst en tabellen met de lay-outservice uit uw documenten ophalen. U kunt uw feedback op de Sdk's delen via het [SDK-feedback formulier](https://aka.ms/FR_SDK_v1_feedback).
  
@@ -209,7 +209,7 @@ De JSON-antwoorden voor alle API-aanroepen hebben nieuwe notaties. Sommige sleut
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Maak een [Snelstartgids](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van formulieren met de formulier Recognizer in de taal van uw keuze.
+Voltooi een [quickstart](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een formulierverwerkingsapp met een Form Recognizer in de taal van uw keuze.
 
 ## <a name="see-also"></a>Zie ook
 

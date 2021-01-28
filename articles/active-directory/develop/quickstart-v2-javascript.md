@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: b475d8072c4103e8a532cdf703e2d75b0c8aafa2
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 131cb325e3581a135be7a88f26c59637d35bc5f3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754150"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937961"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
@@ -61,7 +61,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
-> U moet een `redirectUri` als `http://localhost:3000/` toevoegen en **Impliciete toekenning** inschakelen voor een juiste werking van het codevoorbeeld uit deze quickstart.
+> De voorbeeld code van deze Snelstartgids vereist een **omleidings-URI** van `http://localhost:3000/` en **impliciete toekenning** inschakelen.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Breng deze wijzigingen voor mij aan]()
 >

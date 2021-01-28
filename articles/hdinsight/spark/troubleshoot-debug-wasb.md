@@ -1,18 +1,15 @@
 ---
 title: Fouten opsporen in WASB-Bestands bewerkingen in azure HDInsight
 description: Hierin worden de stappen beschreven voor het oplossen van problemen en mogelijke oplossingen voor problemen bij het werken met Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/18/2020
-ms.openlocfilehash: 85e974d51f49bbb6742683ed253c077bb3ff69de
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f0f06c81906116dc278377cf9fd8871e8899a1d1
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014649"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938744"
 ---
 # <a name="debug-wasb-file-operations-in-azure-hdinsight"></a>Fouten opsporen in WASB-Bestands bewerkingen in azure HDInsight
 

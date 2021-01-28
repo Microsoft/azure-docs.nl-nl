@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/21/2021
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 96772020e70aeb32fa1a8ae18bf3818396887877
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 50042b749c917752d08198c31ada3c73a5ef540b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805241"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938492"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
 
@@ -35,18 +35,29 @@ Als u MS Graph API wilt gebruiken en wilt communiceren met resources in uw Azure
 - [Een gebruiker bijwerken](/graph/api/user-update)
 - [Een gebruiker verwijderen](/graph/api/user-delete)
 
-## <a name="user-phone-number-management"></a>Telefoon nummer beheer gebruiker
+## <a name="user-phone-number-management-beta"></a>Telefoon nummer beheer van de gebruiker (bèta)
+
+Een telefoon nummer dat door een gebruiker kan worden gebruikt om u aan te melden met behulp van [SMS-of telefoon gesprekken](identity-provider-local.md#phone-sign-in-preview)of [multi-factor Authentication](multi-factor-authentication.md). Zie [Azure AD-verificatie methoden API](/graph/api/resources/phoneauthenticationmethod)voor meer informatie.
 
 - [Add](/graph/api/authentication-post-phonemethods)
-- [Ophalen](/graph/api/b2cauthenticationmethodspolicy-get)
-- [Bijwerken](/graph/api/b2cauthenticationmethodspolicy-update)
+- [List](/graph/api/authentication-list-phonemethods)
+- [Ophalen](/graph/api/phoneauthenticationmethod-get)
+- [Bijwerken](/graph/api/phoneauthenticationmethod-update)
 - [Verwijderen](/graph/api/phoneauthenticationmethod-delete)
 
-Zie [B2C authentication methods](/graph/api/resources/b2cauthenticationmethodspolicy)(Engelstalig) voor meer informatie over het beheren van het telefoon nummer van de gebruiker.
+## <a name="self-service-password-reset-email-address-beta"></a>E-mail adres van de selfservice voor wacht woord opnieuw instellen (bèta)
 
-## <a name="identity-providers-user-flow"></a>Id-providers (gebruikers stroom)
+Een e-mail adres dat door een gebruiker kan worden gebruikt om het wacht woord voor het [aanmeldings account van de gebruikers naam](identity-provider-local.md#username-sign-in)te gebruiken. Zie [Azure AD-verificatie methoden API](/graph/api/resources/emailauthenticationmethod)voor meer informatie.
 
-De id-providers beheren die beschikbaar zijn voor uw gebruikers stromen in uw Azure AD B2C-Tenant.
+- [Add](/graph/api/emailauthenticationmethod-post)
+- [List](/graph/api/emailauthenticationmethod-list)
+- [Ophalen](/graph/api/emailauthenticationmethod-get)
+- [Bijwerken](/graph/api/emailauthenticationmethod-update)
+- [Verwijderen](/graph/api/emailauthenticationmethod-delete)
+
+## <a name="identity-providers"></a>Id-providers
+
+De [id-providers](add-identity-provider.md) beheren die beschikbaar zijn voor uw gebruikers stromen in uw Azure AD B2C-Tenant.
 
 - [Id-providers weer geven die zijn geregistreerd in de Azure AD B2C Tenant](/graph/api/identityprovider-list)
 - [Een id-provider maken](/graph/api/identityprovider-post-identityproviders)
@@ -62,6 +73,13 @@ Vooraf gemaakte beleids regels configureren voor aanmelding, aanmelden, gecombin
 - [Een gebruikersstroom maken](/graph/api/identitycontainer-post-b2cuserflows)
 - [Een gebruikers stroom ophalen](/graph/api/b2cidentityuserflow-get)
 - [Een gebruikers stroom verwijderen](/graph/api/b2cidentityuserflow-delete)
+
+## <a name="user-flow-authentication-methods-beta"></a>Verificatie methoden voor gebruikers stromen (bèta)
+
+Kies een mechanisme om gebruikers te laten registreren via lokale accounts. Lokale accounts zijn de accounts waar Azure AD de identiteits verklaring doet. Zie [b2cAuthenticationMethodsPolicy resource type](/graph/api/resources/b2cauthenticationmethodspolicy)voor meer informatie.
+
+- [Ophalen](/graph/api/b2cauthenticationmethodspolicy-get)
+- [Bijwerken](/graph/api/b2cauthenticationmethodspolicy-update)
 
 ## <a name="custom-policies"></a>Aangepast beleid
 

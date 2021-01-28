@@ -3,16 +3,13 @@ title: Lockup CPU-fout met watchdog-fouten van Azure HDInsight-cluster
 description: Er wordt een tijdelijke Lockup-CPU voor een watchdog-fout weer gegeven in kernel syslogs van Azure HDInsight-cluster
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: 33990e40507f088962fd8d8efd241de5d2fcc63b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 5d9d7b0fc21660dd22ff92bbe2de38c759c440ec
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289065"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944343"
 ---
 # <a name="scenario-watchdog-bug-soft-lockup---cpu-error-from-an-azure-hdinsight-cluster"></a>Scenario: fout ' watchdog: BUG: zacht Lockup-CPU ' van een Azure HDInsight-cluster
 

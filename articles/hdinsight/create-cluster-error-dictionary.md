@@ -3,17 +3,16 @@ title: Azure HDInsight-woorden lijst voor cluster fouten maken
 description: Meer informatie over het oplossen van fouten die optreden bij het maken van Azure HDInsight-clusters
 author: karkrish
 ms.author: v-todmc
-ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 08/24/2020
-ms.openlocfilehash: 97cad12ad1854df37b54ff663385fe79ca15b7c2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 6b8c0069d619d3ebd87e3c54b4f653812199f590
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543097"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943335"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: fouten bij het maken van een cluster
 
@@ -24,7 +23,7 @@ In dit artikel worden oplossingen beschreven voor fouten die u kunt tegen komen 
 
 ## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>Fout code: DeploymentDocument ' CsmDocument_2_0 ' is niet gevalideerd
 
-**Fout** : de locatie van de script actie kan geen toegang krijgen tot \<SCRIPT ACTION URL\> URI:
+**Fout**: de locatie van de script actie kan geen toegang krijgen tot \<SCRIPT ACTION URL\> URI:
 
 ### <a name="error-message-1"></a>Fout bericht 1
 
@@ -161,7 +160,7 @@ U hebt niet de vereiste machtigingen voor het beheren van de identiteit opgegeve
 
 1. Open Azure Portal.
 1. Ga naar uw opslagaccount.
-1. Kijk onder **Access Control (IAM)** .
+1. Kijk onder **Access Control (IAM)**.
 1. Zorg ervoor dat de gebruiker de rol Storage BLOB data contributor of de gebruikersrol Storage BLOB-gegevens eigenaar heeft toegewezen.
 
 Zie [machtigingen voor de beheerde identiteit instellen op het data Lake Storage Gen2-account](hdinsight-hadoop-use-data-lake-storage-gen2.md)voor meer informatie.

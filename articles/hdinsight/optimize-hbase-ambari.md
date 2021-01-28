@@ -1,18 +1,15 @@
 ---
 title: Apache HBase optimaliseren met Apache Ambari in azure HDInsight
 description: Gebruik de Apache Ambari Web-UI om Apache HBase te configureren en te optimaliseren.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/04/2020
-ms.openlocfilehash: b262e07bd07320e4b10b12a2f2cf07b97e58c61e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 307e9decad35c20885fbe550cc1f7de58c9386c0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91821700"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942597"
 ---
 # <a name="optimize-apache-hbase-with-apache-ambari-in-azure-hdinsight"></a>Apache HBase optimaliseren met Apache Ambari in azure HDInsight
 
@@ -46,7 +43,7 @@ De blok cache is de Lees cache. De grootte wordt bepaald door de `hfile.block.ca
 
 ### <a name="memstore-size"></a>Grootte van geheugen opslag
 
-Alle bewerkingen worden opgeslagen in de geheugen buffer, een *geheugen opslag*genoemd. Deze buffer verhoogt de totale hoeveelheid gegevens die in één bewerking naar de schijf kan worden geschreven. Het versnelt ook de toegang tot de recente bewerkingen. De grootte van de geheugen opslag wordt gedefinieerd door de volgende twee para meters:
+Alle bewerkingen worden opgeslagen in de geheugen buffer, een *geheugen opslag* genoemd. Deze buffer verhoogt de totale hoeveelheid gegevens die in één bewerking naar de schijf kan worden geschreven. Het versnelt ook de toegang tot de recente bewerkingen. De grootte van de geheugen opslag wordt gedefinieerd door de volgende twee para meters:
 
 * `hbase.regionserver.global.memstore.UpperLimit`: Hiermee definieert u het maximale percentage van de regio server die door geheugen opslag gecombineerd kunnen worden gebruikt.
 

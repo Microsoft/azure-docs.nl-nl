@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 7d34039a5d56feb42473b1a2b24def5244ec3e04
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 984b85ff831146060f1642b9eeec7079ff966db3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756134"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937830"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -109,7 +109,7 @@ Als u de automatisering niet wilt gebruiken, gebruikt u de stappen in de volgend
 1. Selecteer **Registreren** om de toepassing te maken.
 1. Zoek de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren.
 1. Selecteer **Verificatie** onder **Beheren**.
-1. Stel de **Afmeldings-URL** in op `https://localhost:44316/Account/EndSession`.
+1. Stel de **afmeldings-URL** voor het kanaal in op `https://localhost:44316/Account/EndSession` .
 1. Selecteer in de sectie **Impliciete toekenning** de opties **Toegangstokens** en **Id-tokens**. Voor dit voorbeeld moet de [impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om de gebruiker aan te melden en een API aan te roepen.
 1. Selecteer **Opslaan**.
 1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
@@ -227,7 +227,7 @@ Visual Studio publiceert het project en opent automatisch een browser naar de UR
 1. Ga terug naar <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Selecteer in het linkervenster de **Azure Active Directory**-service en selecteer vervolgens **App-registraties**.
 1. Selecteer de toepassing **dotnet-web-daemon-v2**.
-1. Werk op de pagina **Verificatie** van uw toepassing de velden **Afmeldings-URL** bij met het adres van uw service. Gebruik bijvoorbeeld `https://dotnet-web-daemon-v2-contoso.azurewebsites.net`.
+1. Werk op de pagina **verificatie** voor uw toepassing de velden **voor de afmeldings-URL voor front-Channel** bij met het adres van uw service. Gebruik bijvoorbeeld `https://dotnet-web-daemon-v2-contoso.azurewebsites.net/Account/EndSession`.
 1. Werk in het menu **Huisstijl** de **URL van de startpagina** bij met het adres van uw service. Gebruik bijvoorbeeld `https://dotnet-web-daemon-v2-contoso.azurewebsites.net`.
 1. Sla de configuratie op.
 1. Voeg dezelfde URL toe aan de lijst met waarden van het menu **Verificatie** > **Omleidings-URL**. Als u meerdere omleidings-URL's hebt, zorg er dan voor dat er een nieuwe vermelding is die de URI van de app-service gebruikt voor elke omleidings-URL.

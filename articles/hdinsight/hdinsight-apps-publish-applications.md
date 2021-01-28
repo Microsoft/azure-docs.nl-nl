@@ -1,19 +1,16 @@
 ---
 title: Azure HDInsight-toepassingen publiceren
 description: Meer informatie over het maken van een HDInsight-toepassing en het publiceren ervan op Azure Marketplace.
-author: hrasheed-msft
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 05/14/2018
-ms.author: hrasheed
-ms.openlocfilehash: ca84cb6cdd6b47976eadbc5298701a46fe677426
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 73d291fd76d9adbe2a095406b56bd879d497d3b5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007134"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942666"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Een HDInsight-toepassing publiceren in azure Marketplace
 U kunt een Azure HDInsight-toepassing installeren op een HDInsight-cluster op basis van Linux. In dit artikel leert u hoe u een HDInsight-toepassing publiceert in azure Marketplace. Zie [een aanbieding publiceren in azure Marketplace](../marketplace/overview.md)voor algemene informatie over publiceren in azure Marketplace.
@@ -44,7 +41,7 @@ Er zijn twee stappen betrokken bij het publiceren van toepassingen in de Marketp
 }
 ```
 
-| Veld | Description | Mogelijke waarden |
+| Veld | Beschrijving | Mogelijke waarden |
 | --- | --- | --- |
 | typen |De clustertypen waarmee de toepassing compatibel is. |Hadoop, HBase, Storm, Spark (of een combi natie hiervan) |
 | versies |De HDInsight-clustertypen waarmee de toepassing compatibel is. |3.4 |

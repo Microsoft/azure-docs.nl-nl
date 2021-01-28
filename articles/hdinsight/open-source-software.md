@@ -1,19 +1,16 @@
 ---
 title: Open-source software ondersteuning in azure HDInsight
 description: Microsoft Azure biedt een algemeen ondersteunings niveau voor open-source technologieën.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: fe9ccc50d6196997863fbf228fbb76913a0d0330
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fec4cff974031982c782c9265a7d3186d6bb0233
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013867"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942549"
 ---
 # <a name="open-source-software-support-in-azure-hdinsight"></a>Open-source software ondersteuning in azure HDInsight
 
@@ -48,7 +45,7 @@ Als gebruiker van het cluster kunt u in uw workload elk onderdeel dat beschikbaa
 
 De HDInsight-service biedt verschillende manieren om aangepaste onderdelen te gebruiken. Hetzelfde ondersteunings niveau geldt, ongeacht hoe een onderdeel wordt gebruikt of geïnstalleerd op het cluster. In de volgende tabel worden de meest voorkomende manieren beschreven waarop aangepaste onderdelen worden gebruikt in HDInsight-clusters:
 
-|Gebruik |Description |
+|Gebruik |Beschrijving |
 |---|---|
 |Indienen van job|Hadoop of andere typen taken die aangepaste onderdelen uitvoeren of gebruiken, kunnen worden verzonden naar het cluster.|
 |Cluster aanpassing|Tijdens het maken van het cluster kunt u aanvullende instellingen en aangepaste onderdelen opgeven die op de cluster knooppunten zijn geïnstalleerd.|

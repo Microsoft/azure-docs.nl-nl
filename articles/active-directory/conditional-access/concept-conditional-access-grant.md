@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c065b7a7269c8da42493ede50466f44f7dd2658
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 5f0a84af0c7a4105327405cfb809f5101ab42931
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219943"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938381"
 ---
 # <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
 
@@ -121,7 +121,9 @@ In het beleid voor voorwaardelijke toegang kunt u vereisen dat er een [intune-ap
 
 Voor voorwaardelijke toegang moet het apparaat worden geregistreerd in Azure Active Directory waarvoor een Broker-app moet worden gebruikt om gebruik te kunnen maken van deze machtigings controle. De broker-app kan de Microsoft-Authenticator voor iOS of de Microsoft-bedrijfsportal voor Android-apparaten zijn. Als een Broker-app niet is geïnstalleerd op het apparaat wanneer de gebruiker zich probeert te verifiëren, wordt de gebruiker omgeleid naar de App Store om de Broker-app te installeren.
 
-Deze instelling is van toepassing op de volgende client-apps:
+Toepassingen moeten de **intune SDK** met **beleids garantie** hebben geïmplementeerd en voldoen aan bepaalde andere vereisten ter ondersteuning van deze instelling. Ontwikkel aars die toepassingen implementeren met de intune SDK kunnen meer informatie vinden in de SDK-documentatie over deze vereisten.
+
+Voor de ondersteuning van deze instelling zijn de volgende client-apps bevestigd:
 
 - Microsoft Cortana
 - Microsoft Edge

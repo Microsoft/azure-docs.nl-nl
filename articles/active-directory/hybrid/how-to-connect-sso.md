@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e50b9e5dc683eb30452dbb96d82c9f66de93763
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 88eae702782e2f1af9c20797676214db458c2adc
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408002"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937619"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Naadloze eenmalige aanmelding met Azure Active Directory
 
@@ -35,8 +35,13 @@ Naadloze SSO kan worden gecombineerd met de aanmeldings methoden voor [wachtwoor
 
 ![Naadloze single Sign-On](./media/how-to-connect-sso/sso1.png)
 
->[!IMPORTANT]
->Voor naadloze SSO moet het apparaat van de gebruiker alleen lid worden van een **domein** , maar dit wordt niet gebruikt op apparaten die zijn toegevoegd aan [Azure AD](../devices/concept-azure-ad-join.md) of [hybride Azure AD](../devices/concept-azure-ad-join-hybrid.md) . SSO op Azure AD join, hybride Azure AD toegevoegd en geregistreerde Azure AD-apparaten werken op basis van het [primaire vernieuwings token](../devices/concept-primary-refresh-token.md).
+## <a name="sso-via-primary-refresh-token-vs-seamless-sso"></a>Eenmalige aanmelding via het primaire vernieuwings token versus naadloze SSO
+
+Voor Windows 10 is het raadzaam SSO via het primaire vernieuwings token (PRT) te gebruiken. Voor Windows 7 en 8,1 is het raadzaam om naadloze SSO te gebruiken.
+Voor naadloze SSO moet het apparaat van de gebruiker lid zijn van een domein, maar dit wordt niet gebruikt op apparaten die zijn toegevoegd aan Windows 10 [Azure AD](../devices/concept-azure-ad-join.md) of [hybride Azure AD gekoppelde apparaten](../devices/concept-azure-ad-join-hybrid.md). SSO op Azure AD join, hybride Azure AD toegevoegd en geregistreerde Azure AD-apparaten werken op basis van het [primaire vernieuwings token (PRT)](../devices/concept-primary-refresh-token.md)
+
+SSO via PRT werkt wanneer apparaten zijn geregistreerd bij Azure AD voor hybride Azure AD, gekoppelde of persoonlijke geregistreerde apparaten van Azure via werk-of school account toevoegen. Zie voor meer informatie over hoe SSO werkt met Windows 10 met behulp van PRT: [primair vernieuwings token (PRT) en Azure AD](../devices/concept-primary-refresh-token.md)
+
 
 ## <a name="key-benefits"></a>Belangrijkste voordelen
 
@@ -64,9 +69,9 @@ Naadloze SSO kan worden gecombineerd met de aanmeldings methoden voor [wachtwoor
 | OS\Browser |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
 |Windows 10|Ja\*|Ja|Ja|Ja\*\*\*|N.v.t.
-|Windows 8.1|Yes\*|Klikt\*\*\*|Yes|Ja\*\*\*|N.v.t.
-|Windows 8|Yes\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
-|Windows 7|Yes\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
+|Windows 8.1|Ja\*|Klikt\*\*\*|Ja|Ja\*\*\*|N.v.t.
+|Windows 8|Ja\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
+|Windows 7|Ja\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
 |Windows Server 2012 R2 of hoger|Klikt\*\*|N.v.t.|Ja|Ja\*\*\*|N.v.t.
 |Mac OS X|N.v.t.|N.v.t.|Ja\*\*\*|Ja\*\*\*|Ja\*\*\*
 
@@ -79,12 +84,9 @@ Naadloze SSO kan worden gecombineerd met de aanmeldings methoden voor [wachtwoor
 
 \*\*\*\*Vereist micro soft Edge versie 77 of hoger.
 
->[!NOTE]
->Voor Windows 10 is het aanbeveling om [Azure AD samen](../devices/concept-azure-ad-join.md) te gebruiken voor de optimale ervaring voor eenmalige aanmelding met Azure AD.
-
 ## <a name="next-steps"></a>Volgende stappen
 
-- [**Quick Start**](how-to-connect-sso-quick-start.md) : krijg Azure AD naadloze SSO en voer deze uit.
+- [**Snel starten**](how-to-connect-sso-quick-start.md) : krijg Azure AD naadloze SSO en voer deze uit.
 - [**Implementatie plan**](../manage-apps/plan-sso-deployment.md) -stap-voor-stap implementatie plan.
 - [**Technisch diep gaande**](how-to-connect-sso-how-it-works.md) kennis van de werking van deze functie.
 - [**Veelgestelde vragen**](how-to-connect-sso-faq.md) : antwoorden op veelgestelde vragen.

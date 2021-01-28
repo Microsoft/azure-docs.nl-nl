@@ -12,12 +12,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0067ed618f95e7f83fc041fe214bbc4d715a504f
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 0ecfd277f2cc86102d59b201e7b43fa8519bdd3a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567635"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937608"
 ---
 # <a name="azure-ad-connect-sync-v2-endpoint-api"></a>Eindpunt-API voor Azure AD Connect-synchronisatie v2 
 Micro soft heeft een nieuw eind punt (API) geïmplementeerd voor Azure AD Connect die de prestaties verbetert van de synchronisatie service-bewerkingen naar Azure Active Directory. Door gebruik te maken van het nieuwe v2-eind punt, kunt u zien dat er prestatie verhogingen optreden bij het exporteren en importeren naar Azure AD. Dit nieuwe eind punt ondersteunt het volgende:
@@ -176,7 +176,7 @@ Als u het v2-eind punt hebt ingeschakeld en wilt terugdraaien, voert u de volgen
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen  
  
 **Wanneer wordt het nieuwe eind punt de standaard waarde voor upgrades en nieuwe installaties?**  
-</br>Er wordt een nieuwe release van AADConnect gepland die in januari 2021 moet worden gepubliceerd om te worden gedownload. Deze versie maakt standaard gebruik van het v2-eind punt en schakelt synchronisatie groepen in die groter zijn dan 50.000 zonder extra configuratie. Deze release wordt vervolgens gepubliceerd voor automatische upgrade naar servers die in aanmerking komen.
+</br>We plannen dat een nieuwe release van AADConnect wordt gepubliceerd voor down loads in februari 2021. Deze versie maakt standaard gebruik van het v2-eind punt en schakelt synchronisatie groepen in die groter zijn dan 50.000 zonder extra configuratie. Deze release wordt vervolgens gepubliceerd voor automatische upgrade naar servers die in aanmerking komen.
  
 ## <a name="next-steps"></a>Volgende stappen
 

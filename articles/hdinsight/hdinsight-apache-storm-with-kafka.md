@@ -1,19 +1,16 @@
 ---
 title: 'Zelfstudie: Apache Storm met Apache Kafka in Azure HDInsight'
 description: Lees hoe u in HDInsight een streaming-pijplijn maakt met Apache Storm en Apache Kafka. In deze zelfstudie gebruikt u de componenten KafkaBolt en KafkaSpout om gegevens te streamen vanuit Kafka.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 6c600c4cfe96b849786664aa878ec1f84407da5b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 304ba791d107ca497e65905657e87e84cdb9567d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85963526"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942719"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Zelfstudie: Apache Storm gebruiken met Apache Kafka in HDInsight
 

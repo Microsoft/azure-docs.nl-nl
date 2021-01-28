@@ -1,18 +1,15 @@
 ---
 title: Netwerk verkeer in azure HDInsight beheren
 description: Leer technieken voor het beheren van binnenkomend en uitgaand verkeer naar Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 348b9b80c74f085ce31ecce93753a253782fe3ea
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0cbda0b533a64e627bfeef9589ab95c4163ae73e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543165"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943366"
 ---
 # <a name="control-network-traffic-in-azure-hdinsight"></a>Netwerk verkeer in azure HDInsight beheren
 
@@ -40,7 +37,7 @@ Als u van plan bent om **netwerk beveiligings groepen** te gebruiken om netwerk 
 
 3. Maak of wijzig de netwerk beveiligings groepen voor het subnet waarop u HDInsight wilt installeren.
 
-    * __Netwerk beveiligings groepen__ : Allow __Inkomend__ verkeer op poort __443__ van de IP-adressen. Dit zorgt ervoor dat HDInsight-beheer Services het cluster kunnen bereiken van buiten het virtuele netwerk. Voor __Kafka rest-proxy__ clusters kunt u ook __Inkomend__ verkeer op poort __9400__ toestaan. Dit zorgt ervoor dat de Kafka REST-proxy server bereikbaar is.
+    * __Netwerk beveiligings groepen__: Allow __Inkomend__ verkeer op poort __443__ van de IP-adressen. Dit zorgt ervoor dat HDInsight-beheer Services het cluster kunnen bereiken van buiten het virtuele netwerk. Voor __Kafka rest-proxy__ clusters kunt u ook __Inkomend__ verkeer op poort __9400__ toestaan. Dit zorgt ervoor dat de Kafka REST-proxy server bereikbaar is.
 
 Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md)voor meer informatie over netwerk beveiligings groepen.
 

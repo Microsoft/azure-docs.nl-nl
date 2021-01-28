@@ -4,12 +4,12 @@ description: Stel webtests in Application Insights in. Ontvang een waarschuwing 
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 1b51c70dcebbfad5417a8478f4a956fb5d0608b1
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b0f66608c6e0f23b861e207d0dea07a546b41c2a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198659"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937408"
 ---
 # <a name="monitor-the-availability-of-any-website"></a>Beschik baarheid van alle websites bewaken
 
@@ -23,12 +23,12 @@ Er zijn drie soorten beschikbaarheids tests:
 
 * [URL-pingtest](#create-a-url-ping-test): een eenvoudige test die u in Azure Portal kunt instellen.
 * [Webtest met meerdere stappen](availability-multistep.md): een opname van een reeks webaanvragen, die kunnen worden afgespeeld om complexe scenario's te testen. Webtests met meerdere stappen worden gemaakt in Visual Studio Enter prise en geüpload naar de portal voor uitvoering.
-* [Aangepaste beschikbaarheids testen](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability?view=azure-dotnet): als u besluit een aangepaste toepassing te maken om beschikbaarheids tests uit te voeren, `TrackAvailability()` kunt u de methode gebruiken om de resultaten naar Application Insights te verzenden.
+* [Aangepaste beschikbaarheids testen](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability): als u besluit een aangepaste toepassing te maken om beschikbaarheids tests uit te voeren, `TrackAvailability()` kunt u de methode gebruiken om de resultaten naar Application Insights te verzenden.
 
 **U kunt Maxi maal 100 beschik bare beschikbaarheids tests maken per Application Insights resource.**
 
 > [!IMPORTANT]
-> Beide, [URL-ping testen](#create-a-url-ping-test) en [webtest met meerdere stappen](availability-multistep.md) zijn afhankelijk van de open bare Internet-DNS-infra structuur om de domein namen van de geteste eind punten op te lossen. Dit betekent dat als u Privé-DNS gebruikt, u ervoor moet zorgen dat elke domein naam van uw test ook kan worden omgezet door de open bare domeinnaam servers, of dat wanneer dit niet mogelijk is, u in plaats daarvan [aangepaste beschikbaarheids tests](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability?view=azure-dotnet) kunt gebruiken.
+> Beide, [URL-ping testen](#create-a-url-ping-test) en [webtest met meerdere stappen](availability-multistep.md) zijn afhankelijk van de open bare Internet-DNS-infra structuur om de domein namen van de geteste eind punten op te lossen. Dit betekent dat als u Privé-DNS gebruikt, u ervoor moet zorgen dat elke domein naam van uw test ook kan worden omgezet door de open bare domeinnaam servers, of dat wanneer dit niet mogelijk is, u in plaats daarvan [aangepaste beschikbaarheids tests](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability) kunt gebruiken.
 
 ## <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
@@ -94,16 +94,16 @@ De volgende populatie Tags kunnen worden gebruikt voor het kenmerk geo-locatie b
 | Weergavenaam                           | Naam van populatie   |
 |----------------------------------------|-------------------|
 | Australië - oost                         | EMEA-au-Syd-Edge  |
-| Brazil South                           | latam-BR-Gru-Edge |
-| US - centraal                             | VS-FL-quote-Edge    |
+| Brazilië - zuid                           | latam-BR-Gru-Edge |
+| VS - centraal                             | VS-FL-quote-Edge    |
 | Azië - oost                              | Apac-HK-hkn-AZR   |
 | VS - oost                                | US-VA-Ash-AZR     |
 | Frankrijk-zuid (voorheen Frankrijk-centraal) | EMEA-CH-ZRH-Edge  |
 | Frankrijk - centraal                         | EMEA-fr-pra-Edge  |
-| Japan East                             | Apac-JP-Kaw-Edge  |
+| Japan - oost                             | Apac-JP-Kaw-Edge  |
 | Europa - noord                           | EMEA-GB-db3-AZR   |
 | VS - noord-centraal                       | US-Il-CH1-AZR     |
-| South Central US                       | VS-TX-SN1-AZR     |
+| VS - zuid-centraal                       | VS-TX-SN1-AZR     |
 | Azië - zuidoost                         | Apac-SG-Sin-AZR   |
 | Verenigd Koninkrijk West                                | EMEA-se-waarschuwingsd-Edge  |
 | Europa -west                            | EMEA-nl-AMS-AZR   |

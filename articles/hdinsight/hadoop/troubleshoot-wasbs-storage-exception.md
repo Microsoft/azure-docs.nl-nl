@@ -1,18 +1,15 @@
 ---
 title: Het account dat wordt geopend, ondersteunt geen HTTP-fout in azure HDInsight
 description: In dit artikel worden de stappen beschreven voor het oplossen van problemen en mogelijke oplossingen voor problemen bij het werken met Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/06/2020
-ms.openlocfilehash: b7f3a3b76169b99389fe8222177ddcb713c27713
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 46063d5f2d9ff4b85914ad7c4cd74a2400298db0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546582"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943086"
 ---
 # <a name="the-account-being-accessed-does-not-support-http-error-in-azure-hdinsight"></a>Het account dat wordt geopend, ondersteunt geen HTTP-fout in azure HDInsight
 
@@ -32,7 +29,7 @@ Er zijn verschillende redenen waarom het fout bericht wordt ontvangen:
 
 * Voor het opslag account is [beveiligde overdracht](../../storage/common/storage-require-secure-transfer.md) ingeschakeld en er wordt een onjuist [URI-schema](../hdinsight-hadoop-linux-information.md#URI-and-scheme) gebruikt.
 
-* Er is een cluster gemaakt met een opslag account waarvoor beveiligde overdracht is *uitgeschakeld* . Daarna werd beveiligde overdracht ingeschakeld op het opslag account.
+* Er is een cluster gemaakt met een opslag account waarvoor beveiligde overdracht is *uitgeschakeld*. Daarna werd beveiligde overdracht ingeschakeld op het opslag account.
 
 ## <a name="resolution"></a>Oplossing
 

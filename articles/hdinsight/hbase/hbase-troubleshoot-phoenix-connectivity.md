@@ -3,16 +3,13 @@ title: Verbindings problemen Apache Phoenix in azure HDInsight
 description: Verbindings problemen tussen Apache HBase en Apache Phoenix in azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/14/2019
-ms.openlocfilehash: ed12c9629506fa8defb23b987fe672bb3b384418
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2cc6556f681ece170bdfe02b985f56274c0faa1e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540088"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936972"
 ---
 # <a name="scenario-apache-phoenix-connectivity-issues-in-azure-hdinsight"></a>Scenario: verbindings problemen Apache Phoenix in azure HDInsight
 
@@ -50,7 +47,7 @@ ERROR: org.apache.hadoop.hbase.NotServingRegionException: Region SYSTEM.CATALOG,
 
 In de Apache Ambari-gebruikers interface voert u de volgende stappen uit om de HMaster-service opnieuw op alle ZooKeeper-knoop punten te starten:
 
-1. Ga in de sectie **samen vatting** van HBase naar **HBase**  >  **Active HBase Master** .
+1. Ga in de sectie **samen vatting** van HBase naar **HBase**  >  **Active HBase Master**.
 
 1. Start de HBase Master-service opnieuw op in de sectie **onderdelen** .
 

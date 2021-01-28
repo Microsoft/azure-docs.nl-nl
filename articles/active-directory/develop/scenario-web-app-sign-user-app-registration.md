@@ -12,20 +12,20 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b6240f88d309cbf4f26375c5f961d716b472755d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 7f7be27e67bfa266c368927227f1b8d1083a5124
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756276"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937872"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Web-app die zich aanmeldt bij gebruikers: app-registratie
 
-In dit artikel wordt uitgelegd wat de app-registratie specifiek is voor een web-app die zich aanmeldt bij gebruikers.
+In dit artikel worden de stappen voor het registreren van apps beschreven voor een web-app die gebruikers aantekent.
 
 Als u uw toepassing wilt registreren, kunt u het volgende gebruiken:
 
-- De [Snelstartgids voor web-apps](#register-an-app-by-using-the-quickstarts). Naast een fantastische eerste ervaring met het maken van een toepassing, kunnen Quick starts in de Azure Portal een knop bevatten met de naam **deze wijziging voor mij maken**. U kunt deze knop gebruiken om de eigenschappen in te stellen die u nodig hebt, zelfs voor een bestaande app. U moet de waarden van deze eigenschappen aanpassen aan uw eigen case. Met name de Web API-URL voor uw app is waarschijnlijk anders dan de voorgestelde standaard waarde, die ook van invloed is op de afmeldings-URI.
+- De [Snelstartgids voor web-apps](#register-an-app-by-using-the-quickstarts). Naast een fantastische eerste ervaring met het maken van een toepassing, kunnen Quick starts in de Azure Portal een knop bevatten met de naam **deze wijziging voor mij maken**. U kunt deze knop gebruiken om de eigenschappen in te stellen die u nodig hebt, zelfs voor een bestaande app. Pas de waarden van deze eigenschappen aan uw eigen case aan. Met name de Web API-URL voor uw app is waarschijnlijk anders dan de voorgestelde standaard waarde, die ook van invloed is op de afmeldings-URI.
 - De Azure Portal [uw toepassing hand matig te registreren](#register-an-app-by-using-the-azure-portal).
 - Power shell en opdracht regel Programma's.
 
@@ -56,8 +56,8 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
    1. Selecteer **Registreren**.
 1. Selecteer onder **beheren** de optie **verificatie** en voeg de volgende gegevens toe:
    1. Voeg in het gedeelte **Web** `https://localhost:44321/signin-oidc` een **omleidings-URI** toe.
-   1. `https://localhost:44321/signout-oidc`Als **afmeldings-URL** toevoegen.
-   1. Selecteer **id-tokens** onder **Impliciete toekenning**.
+   1. Voer in **voor de afmeldings-URL voor het kanaal** `https://localhost:44321/signout-oidc` .
+   1. Onder **impliciete toekenning en hybride stromen** selecteert u **id-tokens**.
    1. Selecteer **Opslaan**.
    
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
@@ -65,10 +65,10 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
    1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
    1. Kies de ondersteunde account typen voor uw toepassing. (Zie [ondersteunde account typen](./v2-supported-account-types.md).)
-   1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer de volgende omleidings-URI in: **https://localhost:44326/** .
+   1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer een **omleidings-URI** van in `https://localhost:44326/` .
    1. Selecteer **Registreren** om de toepassing te maken.
 1. Selecteer **Verificatie** onder **Beheren**.
-1. Selecteer in de sectie **impliciete toekenning** **id-tokens**. Voor dit voor beeld moet de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om u aan te melden bij de gebruiker.
+1. Selecteer in de sectie **impliciete toekenning en hybride stromen** **id-tokens**. Voor dit voor beeld moet de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om u aan te melden bij de gebruiker.
 1. Selecteer **Opslaan**.
 
 # <a name="java"></a>[Java](#tab/java)
@@ -81,10 +81,10 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
 1. Selecteer **Web**.
 1. Voer voor **omleidings-URI** hetzelfde host-en poort nummer in, gevolgd door `/msal4jsample/secure/aad` voor de aanmeldings pagina. 
 1. Selecteer **Configureren**.
-1. Gebruik in de sectie **Web** het host-en poort nummer, gevolgd door **/msal4jsample/Graph/me** als een **omleidings-URI** voor de pagina met gebruikers informatie.
+1. Gebruik in de sectie **Web** het host-en poort nummer, gevolgd door `/msal4jsample/graph/me` een **omleidings-URI** voor de pagina met gebruikers gegevens.
 Het voor beeld maakt standaard gebruik van:
-   - **http://localhost:8080/msal4jsample/secure/aad**
-   - **http://localhost:8080/msal4jsample/graph/me**
+   - `http://localhost:8080/msal4jsample/secure/aad`
+   - `http://localhost:8080/msal4jsample/graph/me`
 
 1. Selecteer **Opslaan**.
 1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
@@ -100,7 +100,7 @@ Het voor beeld maakt standaard gebruik van:
 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
    1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
    1. Wijzig **ondersteunde account typen** **in accounts in een organisatorische map en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)**.
-   1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer de volgende omleidings-URI in: **http://localhost:5000/getAToken** .
+   1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer de volgende omleidings-URI in: `http://localhost:5000/getAToken` .
    1. Selecteer **Registreren** om de toepassing te maken.
 1. Zoek de waarde **Toepassings-ID (client)** op de app-pagina **Overzicht** voor later. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren.
 1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.

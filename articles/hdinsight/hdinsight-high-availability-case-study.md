@@ -1,19 +1,16 @@
 ---
 title: Casestudy Azure HDInsight met hoge Beschik baarheid voor oplossings architectuur
 description: Dit artikel is een fictieve casestudy van een mogelijke Azure HDInsight-oplossing met hoge Beschik baarheid.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 keywords: Hadoop hoge Beschik baarheid
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/08/2020
-ms.openlocfilehash: 4b98b03c2d7eb4a0403b4595c1376656ed42511b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0616694d05e3fc9d2255ad97647ebe3bce545a93
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855035"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945364"
 ---
 # <a name="azure-hdinsight-highly-available-solution-architecture-case-study"></a>Casestudy Azure HDInsight met hoge Beschik baarheid voor oplossings architectuur
 
@@ -68,7 +65,7 @@ Het is belang rijk om te bepalen wat de minimale bedrijfs functionaliteit is die
 
 In de volgende afbeelding ziet u de architectuur van de hoge Beschik baarheid voor nood herstel van contoso.
 
-:::image type="content" source="./media/hdinsight-high-availability-case-study/contoso-solution.png" alt-text="Retail-architectuur voor contoso":::
+:::image type="content" source="./media/hdinsight-high-availability-case-study/contoso-solution.png" alt-text="Contoso-oplossing":::
 
 **Kafka** maakt gebruik van [Active-passieve](hdinsight-business-continuity-architecture.md#apache-kafka) replicatie voor het spie gelen van Kafka-onderwerpen van de primaire regio naar de secundaire regio. Een alternatief voor Kafka-replicatie kan worden geproduceerd naar Kafka in beide regio's.
 

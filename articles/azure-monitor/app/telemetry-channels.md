@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.custom: devx-track-csharp
 ms.reviewer: mbullwin
-ms.openlocfilehash: fec7bfc16e2cc36d19c84b93b5b93c3c1365b166
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a22a0d112671019d73eb4c9a3853462e4e9c8c75
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90564012"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937357"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Telemetrie-kanalen in Application Insights
 
@@ -18,7 +18,7 @@ Telemetrie-kanalen vormen een integraal onderdeel van de [Azure-toepassing Insig
 
 ## <a name="what-are-telemetry-channels"></a>Wat zijn telemetrie-kanalen?
 
-Telemetrie-kanalen zijn verantwoordelijk voor het bufferen van telemetriegegevens en het verzenden ervan naar de Application Insights-service, waar ze worden opgeslagen voor query's en analyses. Een telemetrie-kanaal is een klasse die de [`Microsoft.ApplicationInsights.ITelemetryChannel`](/dotnet/api/microsoft.applicationinsights.channel.itelemetrychannel?view=azure-dotnet) interface implementeert.
+Telemetrie-kanalen zijn verantwoordelijk voor het bufferen van telemetriegegevens en het verzenden ervan naar de Application Insights-service, waar ze worden opgeslagen voor query's en analyses. Een telemetrie-kanaal is een klasse die de [`Microsoft.ApplicationInsights.ITelemetryChannel`](/dotnet/api/microsoft.applicationinsights.channel.itelemetrychannel) interface implementeert.
 
 De `Send(ITelemetry item)` methode van een telemetrie-kanaal wordt aangeroepen na het aanroepen van alle telemetrie-initialisatie functies en telemetrie-processors. Daarom bereiken items die worden verwijderd door een telemetrie-processor het kanaal niet. `Send()` de items worden meestal niet direct naar de back-end verzonden. Normaal gesp roken worden ze in het geheugen gebufferd en worden ze in batches verzonden voor efficiënte verzen ding.
 

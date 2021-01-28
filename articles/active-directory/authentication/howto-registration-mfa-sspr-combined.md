@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/04/2020
+ms.date: 01/27/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29a577b50a561cb5b829e453c523e0bd18a70e1a
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: dcfaef2f518028762958477a5b0d326acc237d1f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741674"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938441"
 ---
 # <a name="enable-combined-security-information-registration-in-azure-active-directory"></a>Registratie van gecombineerde beveiligings gegevens inschakelen in Azure Active Directory
 
 Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Azure AD Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Azure AD-Multi-Factor Authentication en SSPR.
 
 > [!NOTE]
-> Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie. Vanaf 14 december 2020 worden alle Azure AD-tenants met één gebruiker automatisch ingeschakeld voor gecombineerde registratie.
+> Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie. 
 
 Raadpleeg de [informatie over het registreren van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md)om ervoor te zorgen dat u de functionaliteit en effecten begrijpt voordat u de nieuwe ervaring inschakelt.
 
@@ -65,7 +65,7 @@ Zie [Wat is de locatie voorwaarde in azure Active Directory voorwaardelijke toeg
 
 Voer de volgende stappen uit om een beleid te maken dat van toepassing is op alle geselecteerde gebruikers die zich willen registreren met behulp van de gecombineerde registratie-ervaring, en blokkeert de toegang tenzij ze verbinding maken vanaf een locatie die is gemarkeerd als vertrouwd netwerk:
 
-1. Blader in het **Azure Portal** naar **Azure Active Directory**  >  **Security**  >  **voorwaardelijke toegang** voor beveiliging.
+1. Blader in het **Azure Portal** naar **Azure Active Directory**  >    >  **voorwaardelijke toegang** voor beveiliging.
 1. Selecteer **+ Nieuw beleid**.
 1. Voer een naam in voor dit beleid, zoals de *registratie van gecombineerde beveiligings gegevens op vertrouwde netwerken*.
 1. Onder **Toewijzingen** selecteert u **Gebruikers en groepen**. Kies de gebruikers en groepen waarop u dit beleid wilt Toep assen en selecteer vervolgens **gereed**.

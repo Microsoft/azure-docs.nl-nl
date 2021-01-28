@@ -11,12 +11,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
-ms.openlocfilehash: 77521150e73014c5568003597059a9d32f6e80ee
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: eea2e587a075d774a25f479ec61575a002b57f75
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752959"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937816"
 ---
 # <a name="validation-differences-by-supported-account-types-signinaudience"></a>Validatie verschillen per ondersteund account type (signInAudience)
 
@@ -24,9 +24,9 @@ Wanneer u een toepassing registreert met het micro soft-identiteits platform voo
 
 De volgende opties zijn beschikbaar:
 
-- *AzureADMyOrg*: alleen accounts in de organisatie directory waar de app is geregistreerd (single-tenant)
-- *AzureADMultipleOrgs*: accounts in elke organisatorische Directory (multi tenant)
-- *AzureADandPersonalMicrosoftAccount*: accounts in een organisatorische Directory (multi tenant) en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox en Outlook.com)
+- **AzureADMyOrg**: alleen accounts in de organisatie directory waar de app is geregistreerd (single-tenant).
+- **AzureADMultipleOrgs**: accounts in elke organisatorische Directory (multi tenant).
+- **AzureADandPersonalMicrosoftAccount**: accounts in een organisatorische Directory (multi tenant) en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox en Outlook.com).
 
 Voor geregistreerde toepassingen kunt u de waarde voor ondersteunde account typen vinden in het gedeelte **verificatie** van een toepassing. U kunt deze ook vinden onder de `signInAudience` eigenschap in het **manifest**.
 
@@ -44,11 +44,11 @@ Zie de volgende tabel voor de verschillen in de validatie van verschillende eige
 | Bereiken die door deze API worden gedefinieerd ( `oauth2Permissions` ) | Maximale lengte van de scope naam van 120 tekens <br><br> Geen limiet * voor het aantal gedefinieerde bereiken | Maximale lengte van de scope naam van 120 tekens <br><br> Geen limiet * voor het aantal gedefinieerde bereiken |  Maximale lengte van de scope naam van 40 tekens <br><br> Maxi maal 100 scopes gedefinieerd | 
 | Geautoriseerde client toepassingen ( `preAuthorizedApplications` ) | Geen limiet * | Geen limiet * | Totaal aantal van 500 <br><br> Maximum aantal gedefinieerde 100-client-apps <br><br> Maxi maal 30 scopes gedefinieerd per client | 
 | appRoles | Ondersteund <br> Geen limiet * | Ondersteund <br> Geen limiet * | Niet ondersteund | 
-| Afmeldings-URL | http://localhost is toegestaan <br><br> Maximale lengte van 255 tekens | http://localhost is toegestaan <br><br> Maximale lengte van 255 tekens | <br><br> https://localhost is toegestaan, http://localhost mislukt voor MSA <br><br> Maximale lengte van 255 tekens <br><br> HTTP-schema is niet toegestaan <br><br> Joker tekens worden niet ondersteund | 
+| URL voor afmelden front kanaal | https://localhost is toegestaan <br><br> `http` schema is niet toegestaan <br><br> Maximale lengte van 255 tekens | https://localhost is toegestaan <br><br> `http` schema is niet toegestaan <br><br> Maximale lengte van 255 tekens | <br><br> https://localhost is toegestaan, http://localhost mislukt voor MSA <br><br> Maximale lengte van 255 tekens <br><br> `http` schema is niet toegestaan <br><br> Joker tekens worden niet ondersteund | 
 
-* Er is een algemene limiet van ongeveer 1000 items in alle verzamelings eigenschappen van het app-object
+* Er is een algemene limiet van 1000 items voor alle verzamelings eigenschappen van het app-object.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [toepassings registratie](app-objects-and-service-principals.md)
-- Meer informatie over het [toepassings manifest](reference-app-manifest.md)
+- Meer informatie over [toepassings registratie](app-objects-and-service-principals.md).
+- Meer informatie over het [toepassings manifest](reference-app-manifest.md).

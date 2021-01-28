@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, devx-track-js
-ms.openlocfilehash: bd750a05f34a18a1260226fb979a82cc620dfbfb
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: ab3677ede2805fc8ecb076e8a40da605c038b54b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178276"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937926"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Quickstart: Aanmelden met OpenID Connect bij een Node.js-webtoepassing toevoegen
 
@@ -37,14 +37,14 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 1. Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in alle organisatiemappen en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)** .
 
-    Als er meerdere omleidings-URI's zijn, moet u deze later, nadat de app is gemaakt, toevoegen via het tabblad **Verificatie**.
+    Als er meer dan een omleidings-Uri's zijn, voegt u deze toe vanaf het tabblad **verificatie** later nadat de app is gemaakt.
 
 1. Selecteer **Registreren** om de app te maken.
 1. Zoek de waarde **Toepassings-ID (client)** op de app-pagina **Overzicht** voor later. U hebt deze waarde nodig om de toepassing later in dit project te configureren.
 1. Selecteer **Verificatie** onder **Beheren**.
 1. Selecteer **Een platform toevoegen** > **Web**. 
 1. Voer in de sectie **Omleidings-URI's** `http://localhost:3000/auth/openid/return` in.
-1. Voer een **afmeldings-URL** `https://localhost:3000` in.
+1. Voer een **URL voor het afmelden** van het kanaal in `https://localhost:3000` .
 1. In de sectie Impliciete toekenning schakelt u **ID-tokens** in, aangezien voor dit voorbeeld vereist is dat [Impliciete toekenningsstroom](./v2-oauth2-implicit-grant-flow.md) is ingeschakeld om aanmelding van de gebruiker mogelijk te maken.
 1. Selecteer **Configureren**.
 1. Selecteer onder **Beheren** achtereenvolgens **Certificaten en geheimen** > **Nieuw clientgeheim**.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
 ms.date: 01/05/2021
-ms.openlocfilehash: 8833c27421dfbfd4799828bce79afcad7c377fd8
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 41acfb2465382e8de4751b54c5b93e77bd12daaf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197350"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937318"
 ---
 # <a name="cognitive-services-docs-whats-new-for-december-1-2020---december-31-2020"></a>Cognitive Services documenten: wat is er nieuw voor 1 december 2020 tot 31 december 2020
 
@@ -32,37 +32,37 @@ Welkom bij wat er nieuw is in de Cognitive Services docs van 1 december 2020 tot
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Anomalie detectie REST API Snelstartgids](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/quickstarts/client-libraries?tabs=windows&pivots=rest-api)
+- [Anomalie detectie REST API Snelstartgids](./anomaly-detector/quickstarts/client-libraries.md?pivots=rest-api&tabs=windows)
 
 ## <a name="bing-visual-search"></a>Bing Visuele zoekopdrachten
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Een Insights-token gebruiken om inzichten op te halen voor een installatie kopie](/azure/cognitive-services/bing-visual-search/use-insights-token)
+- [Een Insights-token gebruiken om inzichten op te halen voor een installatie kopie](./bing-visual-search/use-insights-token.md)
 
 ## <a name="containers"></a>Containers
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Container implementeren en uitvoeren in Azure Container Instance](/azure/cognitive-services/containers/azure-container-instance-recipe)
+- [Container implementeren en uitvoeren in Azure Container Instance](./containers/azure-container-instance-recipe.md)
 
 ## <a name="form-recognizer"></a>Form Recognizer
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Landings pagina voor formulier herkenning](/azure/cognitive-services/form-recognizer/)
-- [Quickstart: De clientbibliotheek van Form Recognizer gebruiken](/azure/cognitive-services/form-recognizer/quickstarts/client-library)
+- [Landings pagina voor formulier herkenning](./form-recognizer/index.yml)
+- [Quickstart: De clientbibliotheek van Form Recognizer gebruiken](./form-recognizer/quickstarts/client-library.md)
 
 ## <a name="text-analytics"></a>Text Analytics
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Ondersteuning voor Text Analytics-API v3-taal](/azure/cognitive-services/text-analytics/language-support)
-- [De Text Analytics aanroepen REST API](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api)
-- [Benoemde entiteits herkenning gebruiken in Text Analytics](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-entity-linking)
-- [Voor beeld: sleutel zinnen extra heren met behulp van Text Analytics](/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-keyword-extraction)
-- [Documentatie voor de Text Analytics API - zelfstudies, API-verwijzing - Azure Cognitive Services  | Microsoft Docs](/azure/cognitive-services/text-analytics/)
-- [Quickstart: de clientbibliotheek en REST API van Text Analytics gebruiken](/azure/cognitive-services/text-analytics/quickstarts/client-libraries-rest-api)
+- [Ondersteuning voor Text Analytics-API v3-taal](./text-analytics/language-support.md)
+- [De Text Analytics aanroepen REST API](./text-analytics/how-tos/text-analytics-how-to-call-api.md)
+- [Benoemde entiteits herkenning gebruiken in Text Analytics](./text-analytics/how-tos/text-analytics-how-to-entity-linking.md)
+- [Voor beeld: sleutel zinnen extra heren met behulp van Text Analytics](./text-analytics/how-tos/text-analytics-how-to-keyword-extraction.md)
+- [Documentatie voor de Text Analytics API - zelfstudies, API-verwijzing - Azure Cognitive Services  | Microsoft Docs](./text-analytics/index.yml)
+- [Quickstart: de clientbibliotheek en REST API van Text Analytics gebruiken](./text-analytics/quickstarts/client-libraries-rest-api.md)
 
 ## <a name="community-contributors"></a>Community-inzenders
 

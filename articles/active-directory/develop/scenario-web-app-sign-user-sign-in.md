@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 5b0b86321f7f2b320c3fea8e7c5bfa45bd936b77
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f8fa5532a5664741c9ddb9b78b35d5eed8e2e4e0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753004"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937852"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Web-app die gebruikers aanmeldt: aanmelden en afmelden
 
@@ -222,19 +222,19 @@ Zie de sectie [een aanvraag voor een afmelding verzenden](v2-protocols-oidc.md#s
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Tijdens de registratie van de toepassing registreert u een URI na afmelding. In onze zelf studie hebt u geregistreerd `https://localhost:44321/signout-oidc` in het veld **afmeldings-URL** van de sectie **Geavanceerde instellingen** op de pagina **verificatie** . Zie [ de webApp-app registreren](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg#register-the-webapp-app-webapp)voor meer informatie.
+Tijdens de registratie van de toepassing registreert u een URL voor de afmelding voor front Channel. In onze zelf studie hebt u geregistreerd `https://localhost:44321/signout-oidc` in het veld **front-Channel afmeldings-URL** op de pagina **verificatie** . Zie [de webApp-app registreren](scenario-web-app-sign-user-app-registration.md#register-an-app-by-using-the-azure-portal)voor meer informatie.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Tijdens de registratie van de toepassing registreert u een URI na afmelding. In onze zelf studie hebt u geregistreerd `https://localhost:44308/Account/EndSession` in het veld **afmeldings-URL** van de sectie **Geavanceerde instellingen** op de pagina **verificatie** . Zie [de webApp-app registreren](https://github.com/Azure-Samples/active-directory-dotnet-web-single-sign-out#register-the-service-app-webapp-distributedsignout-dotnet)voor meer informatie.
+Tijdens de registratie van de toepassing hoeft u geen extra URL voor het afmelden van het voor kanaal te registreren. De app wordt teruggebeld op de hoofd-URL. 
 
 # <a name="java"></a>[Java](#tab/java)
 
-Tijdens de registratie van de toepassing registreert u een URI na afmelding. In onze zelf studie hebt u geregistreerd `http://localhost:8080/msal4jsample/sign_out` in het veld **afmeldings-URL** van de sectie **Geavanceerde instellingen** op de pagina **verificatie** .
+Er is geen afmeldings-URL voor front-Channel vereist in de registratie van de toepassing.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Tijdens de registratie van de toepassing hoeft u geen extra afmeldings-URL te registreren. De app wordt teruggebeld op de hoofd-URL.
+Tijdens de registratie van de toepassing hoeft u geen extra URL voor het afmelden van het voor kanaal te registreren. De app wordt teruggebeld op de hoofd-URL.
 
 ---
 
@@ -336,7 +336,7 @@ In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge
 - Aanroepen `Signout()` , waarmee de OpenID Connect Connect-verbinding kan maken met het micro soft Identity platform- `logout` eind punt. Het eind punt vervolgens:
 
   - Hiermee wordt de sessie cookie uit de browser gewist.
-  - Roept de afmeldings-URL terug. De afmeldings-URL geeft standaard de afgemelde pagina [SignedOut.cshtml.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Pages/Account/SignedOut.cshtml.cs)weer. Deze pagina wordt ook meegeleverd als onderdeel van micro soft. Identity. Web.
+  - Roept de omleidings-URI na afmelding terug. De omleidings-URI na afmelding geeft standaard de afgemelde pagina [SignedOut.cshtml.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Pages/Account/SignedOut.cshtml.cs)weer. Deze pagina wordt ook meegeleverd als onderdeel van micro soft. Identity. Web.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 

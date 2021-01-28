@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: adcc894db630bba11e84e2f277705d2f31caf7dc
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 1222108694ff7274e5d8fd063635b70a76ffc59c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920220"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954746"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
@@ -81,10 +81,12 @@ De volgende eigenschappen moeten worden opgegeven:
 
 Nadat u de *cluster* bron hebt gemaakt, kunt u extra eigenschappen bewerken, zoals *SKU*, * keyVaultProperties of *billingType*. Zie hieronder voor meer informatie.
 
+U kunt Maxi maal twee actieve clusters per abonnement per regio hebben. Als het cluster wordt verwijderd, is het nog steeds 14 dagen gereserveerd. U kunt Maxi maal 4 gereserveerde clusters per abonnement per regio hebben (actief of recent verwijderd).
+
 > [!WARNING]
 > Het maken van een cluster activeert resource toewijzing en inrichting. Het kan een uur duren voordat deze bewerking is voltooid. Het wordt aanbevolen deze asynchroon uit te voeren.
 
-Het gebruikers account dat de clusters maakt, moet beschikken over de standaard machtiging voor het maken van een Azure-resource: `Microsoft.Resources/deployments/*` en de schrijf machtiging voor het cluster `(Microsoft.OperationalInsights/clusters/write)` .
+Het gebruikers account dat de clusters maakt, moet beschikken over de standaard machtiging voor het maken van een Azure-resource: `Microsoft.Resources/deployments/*` en de schrijf machtiging van het cluster `Microsoft.OperationalInsights/clusters/write` door hun rol toe te voegen aan deze specifieke actie of `Microsoft.OperationalInsights/*` of `*/write` .
 
 ### <a name="create"></a>Maken 
 
@@ -503,7 +505,9 @@ Gebruik de volgende REST-aanroep om een cluster te verwijderen:
 
 ## <a name="limits-and-constraints"></a>Limieten en beperkingen
 
-- Het maximale aantal clusters per regio en abonnement is 2
+- Het maximum aantal actieve clusters per regio en abonnement is 2
+
+- Het maximum aantal gereserveerde clusters (actief of recent verwijderd) per regio en abonnement is 4 
 
 - Het maximum aantal gekoppelde werk ruimten voor het cluster is 1000
 

@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: ce48d87c6e04e6c349b681e953647feb5e7ddda5
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
-ms.translationtype: HT
+ms.openlocfilehash: 7b59e0ae2fbb73f341d5254fd2804d50ad141a19
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570113"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98953798"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning"></a>Zelfstudie: SuccessFactors to Active Directory User Provisioning configureren 
 Het doel van deze zelfstudie is het laten zien van de stappen die nodig zijn om gebruikers vanuit SuccessFactors Employee Central in te richten in Active Directory (AD) en Azure AD, met optionele write-back van e-mailadressen naar SuccessFactors. 
@@ -186,7 +186,7 @@ In deze sectie vindt u de stappen voor het inrichten van gebruikersaccounts van 
 
 Als u gebruikers wilt inrichten bij on-premises Active Directory, moet de inrichtingsagent zijn geïnstalleerd op een server met netwerktoegang tot de gewenste Active Directory-domeinen.
 
-Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de stappen die zijn vermeld [in het gedeelte Agent installeren](../cloud-provisioning/how-to-install.md) om de configuratie van de agent te voltooien.
+Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de stappen die zijn vermeld [in het gedeelte Agent installeren](../cloud-sync/how-to-install.md) om de configuratie van de agent te voltooien.
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-successfactors-and-active-directory"></a>Deel 3: Connectiviteit met SuccessFactors en Active Directory configureren
 In deze stap zetten we een verbinding op met SuccessFactors en Active Directory in Azure Portal. 
@@ -209,12 +209,12 @@ In deze stap zetten we een verbinding op met SuccessFactors en Active Directory 
         > Deze instelling is alleen beschikbaar voor het maken van gebruikersaccounts als het kenmerk *parentDistinguishedName* niet is geconfigureerd in de kenmerktoewijzingen. Deze instelling wordt niet gebruikt voor het zoeken of bijwerken van gebruikers. De onderliggende domeinstructuur valt volledig binnen het bereik van de zoekbewerking.
 
    * **E-mailmelding**: Voer uw e-mailadres in en schakel het selectievakje ‘e-mail verzenden als er een fout is opgetreden’ in.
-    > [!NOTE]
-    > De Azure AD-inrichtingsservice verzendt een e-mailmelding als de inrichtingstaak in [quarantaine](../app-provisioning/application-provisioning-quarantine-status.md) is geplaatst.
+     > [!NOTE]
+     > De Azure AD-inrichtingsservice verzendt een e-mailmelding als de inrichtingstaak in [quarantaine](../app-provisioning/application-provisioning-quarantine-status.md) is geplaatst.
 
    * Klik op de knop **Verbinding testen**. Als de verbindingstest is gelukt, klikt u bovenaan op de knop **Opslaan**. Als de test mislukt, controleert u of de SuccessFactors-referenties en de AD-referenties die zijn geconfigureerd voor de installatie van de agent geldig zijn.
-    >[!div class="mx-imgBorder"]
-    >![Azure-portal](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
+     >[!div class="mx-imgBorder"]
+     >![Azure-portal](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
 
    * Als de referenties zijn opgeslagen, wordt in het gedeelte **Toewijzingen** de standaardtoewijzing **SuccessFactors-gebruikers synchroniseren met on-premises Active Directory** weergegeven.
 
@@ -250,9 +250,8 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van SuccessFactors 
 
 1. In de sectie **Kenmerktoewijzingen** kunt u definiëren hoe afzonderlijke kenmerken van SuccessFactors worden toegewezen aan kenmerken van Active Directory.
 
-  >[!NOTE]
-  >De volledige lijst met kenmerken van SuccessFactors die worden ondersteund door de toepassing vindt u in het artikel over [kenmerken van SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
-
+     >[!NOTE]
+     >De volledige lijst met kenmerken van SuccessFactors die worden ondersteund door de toepassing vindt u in het artikel over [kenmerken van SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
 
 1. Klik op een bestaande kenmerktoewijzing om deze bij te werken, of klik onderaan het scherm op **Nieuwe toewijzing toevoegen** om nieuwe toewijzingen toe te voegen. Een afzonderlijke kenmerktoewijzing ondersteunt de volgende eigenschappen:
 

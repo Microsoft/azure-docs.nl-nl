@@ -7,33 +7,32 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 6e0f3d318cc462b03151d5a4935ae318df46e2c5
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.date: 01/27/2021
+ms.openlocfilehash: 0d09851cf8e68cead4a67615aaa792512482f351
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510553"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955119"
 ---
 # <a name="python-code-samples-for-azure-cognitive-search"></a>Python-code voorbeelden voor Azure Cognitive Search
 
-Meer informatie over de python-code voorbeelden die de functies en functionaliteit van Azure Cognitive Search demonstreren. De primaire opslag plaatsen zijn als volgt:
+Meer informatie over de python-code voorbeelden die de functionaliteit en werk stroom van een Azure Cognitive Search-oplossing demonstreren. In deze voor beelden wordt de [**azure Cognitive Search-client bibliotheek**](/python/api/overview/azure/search-documents-readme) voor de [**Azure SDK voor python**](/azure/developer/python/)gebruikt, die u via de volgende koppelingen kunt verkennen.
 
-| Opslagplaats | Beschrijving |
-|------------|-------------|
-| [Azure-SDK-for-python/tree/master/SDK/Search/Azure-Search-documenten/samples/](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/samples) | Voor beelden die worden geproduceerd door het team van de Azure SDK die worden geleverd bij de uments-client bibliotheek van Azure.Search.Docin de SDK. U kunt ook de [eenheids tests](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/tests) voor de client bibliotheek bekijken om te zien hoe verschillende api's worden aangeroepen. |
-| [Azure-samples/Azure-Search-python-voor beelden](https://github.com/Azure-Samples/azure-search-python-samples) | Code voorbeelden die betrekking hebben op procedures, waaronder [Quick Start: een zoek index in python maken](search-get-started-python.md).|
+| Doel | Koppeling |
+|--------|------|
+| Pakket downloaden | [pypi.org/project/azure-search-documents/](https://pypi.org/project/azure-search-documents/) |
+| API-verwijzing | [Azure-zoeken-documenten](/python/api/azure-search-documents)  |
+| API-test cases | [github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/tests](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/tests) |
+| Broncode | [github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents)  |
 
-> [!Tip]
-> Gebruik de voor beelden van de [browser](/samples/browse/?languages=python&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
+## <a name="sdk-samples"></a>SDK steekproeven
 
-## <a name="python-sdk-samples"></a>Python SDK-voorbeelden
+Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik van de API. U kunt deze voor beelden vinden in [**Azure-SDK-voor python/tree/master/SDK/Search/Azure-Search-documenten/samples**](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/samples) op github.
 
-De Azure SDK voor python bevat talloze voor beelden en een aan de slag- [pagina](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/search/azure-search-documents/samples) die vereisten en pakket installaties bevat. De pagina bevat ook koppelingen naar de volgende voor beelden, die hier worden weer gegeven voor uw gemak.
-
-| Voorbeelden | Beschrijving |
+| Voorbeelden | Description |
 |---------|-------------|
-| [Verifiëren](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_authentication.py) | Laat zien hoe u een client configureert en verificatie voor de service uitvoert. | 
+| [Verifieer](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_authentication.py) | Laat zien hoe u een client configureert en verificatie voor de service uitvoert. | 
 | [Index Create-Read-update-delete-bewerkingen](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_index_crud_operations.py) | Laat zien hoe [zoek indexen](search-what-is-an-index.md)maken, bijwerken, ophalen, weer geven en verwijderen. |
 | [Indexeer functie Create-Read-update-delete-bewerkingen](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_indexers_operations.py) | Demonstreert hoe [Indexeer functies](search-indexer-overview.md)maken, bijwerken, ophalen, weer geven, opnieuw instellen en verwijderen. |
 | [Gegevens bronnen van Indexeer functie zoeken](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_indexer_datasource_skillset.py) | Demonstreert hoe u Indexeer functie gegevens bronnen kunt maken, bijwerken, ophalen, weer geven en verwijderen. Dit is vereist voor indexering op basis van een indexer van [ondersteunde Azure-gegevens bronnen](search-indexer-overview.md#supported-data-sources). |
@@ -43,12 +42,15 @@ De Azure SDK voor python bevat talloze voor beelden en een aan de slag- [pagina]
 | [Query filteren](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_filter_query.py) | Laat zien hoe u een [filter expressie](search-filters.md)instelt. |
 | [Facet query](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/search/azure-search-documents/samples/sample_facet_query.py) | Illustreert het werken met [facetten](search-filters-facets.md). |
 
-## <a name="documentation-samples"></a>Documentatievoorbeelden
+## <a name="doc-samples"></a>Doc-voor beelden
 
-De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Search-documentatie](./index.yml).
+Code voorbeelden van het Cognitive Search team illustreren de functies en werk stromen. In veel van deze voor beelden wordt verwezen naar zelf studies, Quick starts en artikelen met procedures. U kunt deze voor beelden vinden in [**Azure-samples/Azure-Search-python-samples**](https://github.com/Azure-Samples/azure-search-python-samples) op github.
 
-| Voorbeelden | Beschrijving | 
-|---------|-------------|
-| [Snelstartgids](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/Quickstart) | Bron code voor [Quick Start: Maak een zoek index in python](search-get-started-python.md).  |
-| [zelf studie-AI-verrijking](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/Tutorial-AI-Enrichment)  | Bron code voor [zelf studie: gebruik python en AI voor het genereren van Doorzoek bare inhoud van Azure-blobs](cognitive-search-tutorial-blob-python.md).  |
-| [AzureML-aangepast-vaardigheid](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill)  | Bron code [bijvoorbeeld: Maak een aangepaste vaardigheid met behulp van python](cognitive-search-custom-skill-python.md).  |
+| Voorbeelden | Artikel |
+|---------|---------|
+| [Snelstartgids](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/Quickstart) | Bron code voor [Quick Start: Maak een zoek index in python](search-get-started-python.md). In dit artikel wordt de basis werk stroom beschreven voor het maken, laden en doorzoeken van een zoek index met voorbeeld gegevens. |
+| [zelf studie-AI-verrijking](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/Tutorial-AI-Enrichment)  | Bron code voor [zelf studie: gebruik python en AI voor het genereren van Doorzoek bare inhoud van Azure-blobs](cognitive-search-tutorial-blob-python.md). In dit artikel wordt beschreven hoe u een BLOB-Indexeer functie maakt met een cognitieve vaardig heden, waarbij onbewerkte inhoud door de vaardig heden wordt gemaakt en getransformeerd, zodat deze kan worden doorzocht of verbruikt. |
+| [AzureML-aangepast-vaardigheid](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill)  | Bron code [bijvoorbeeld: Maak een aangepaste vaardigheid met behulp van python](cognitive-search-custom-skill-python.md). In dit artikel ziet u de integratie van Indexeer functie en vaardig heden met diepe Learning-modellen in Azure Machine Learning. |
+
+> [!Tip]
+> Gebruik de voor beelden van de [browser](/samples/browse/?languages=python&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.

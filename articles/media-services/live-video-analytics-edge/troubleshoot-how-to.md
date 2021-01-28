@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: d23294c21d49b1c2ab83c4bf8f110d5d4bc7aafb
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: d519193d55c9535dc71206d2d9f72661d7a40d71
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878287"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954409"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Problemen met live video Analytics op IoT Edge oplossen
 
@@ -97,6 +97,17 @@ Live video Analytics wordt geïmplementeerd als een IoT Edge module op het IoT E
 
     > [!TIP]
     > Als u problemen ondervindt met het uitvoeren van Azure IoT Edge-modules in uw omgeving, gebruikt u **[Azure IOT Edge standaard diagnose stappen](../../iot-edge/troubleshoot.md?preserve-view=true&view=iotedge-2018-06)** als richt lijn voor het oplossen van problemen en diagnostische gegevens.
+
+U kunt ook problemen ondervinden bij het uitvoeren van het **[installatie script van live video Analytics-resources](https://github.com/Azure/live-video-analytics/tree/master/edge/setup)**. Enkele veelvoorkomende problemen zijn:
+
+* Het gebruik van een abonnement waarvoor u geen eigenaars rechten hebt. Dit zorgt ervoor dat het script mislukt met een **ForbiddenError** -of **AuthorizationFailed** -fout.
+    * Als u dit probleem wilt verhelpen, moet u ervoor zorgen dat u **eigenaars** rechten hebt voor het abonnement dat u wilt gebruiken. Als u dit niet zelf kunt doen, neemt u contact op met de abonnements beheerder om de juiste bevoegdheden te verlenen.
+* **De sjabloon implementatie is mislukt vanwege een overtreding van het beleid.**
+    * Als u dit probleem wilt verhelpen, moet u samen werken met uw IT-beheerder om ervoor te zorgen dat de aanroep (s) voor het maken van de virtuele machine het blok keren van SSH-verificatie overs Laan Dit is niet nodig omdat we een beveiligd Bastion-netwerk gebruiken waarvoor een gebruikers naam en wacht woord zijn vereist om te kunnen communiceren met de Azure-resources. Deze referenties worden opgeslagen in het bestand **~/clouddrive/lva-sample/vm-edge-device-credentials.txt** in Cloud shell, nadat de virtuele machine is gemaakt, geïmplementeerd en gekoppeld aan de IOT hub.
+* Het installatie script kan geen Service-Principal en/of Azure-resources maken.
+    * Als u dit probleem wilt verhelpen, moet u controleren of uw abonnement en de Azure-Tenant hun maximum service limiet niet hebben bereikt. Meer informatie over [Azure AD-service limieten en-beperkingen](https://docs.microsoft.com/azure/active-directory/enterprise-users/directory-service-limits-restrictions) en [limieten, quota's en beperkingen voor Azure-abonnementen en services.](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits)
+
+
 ### <a name="live-video-analytics-working-with-external-modules"></a>Live video Analytics met externe modules
 
 Live video-analyses via de media Graph-extensie processors kunnen de media grafiek uitbreiden voor het verzenden en ontvangen van gegevens van andere IoT Edge modules met behulp van HTTP-of gRPC-protocollen. In een [specifiek voor beeld](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/httpExtension)kan deze media grafiek video frames als installatie kopieën verzenden naar een externe Afleidings module, zoals Yolo v3, en analyse van op JSON gebaseerde analyses ontvangen met behulp van het HTTP-protocol. In een dergelijke topologie is het doel voor de gebeurtenissen voornamelijk de IoT-hub. In situaties waarin de gebeurtenissen voor afnemen op de hub niet worden weer geven, controleert u het volgende:

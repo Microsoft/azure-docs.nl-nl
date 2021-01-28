@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 7d1b4b3542f6914d413a5e29e57baa15e7a53346
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 3cc38fad6f26bf6f382b4a275638c450c8333a04
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012781"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955729"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>ServiceNow verbinden met IT Service Management-connector
 
@@ -51,7 +51,7 @@ Als onderdeel van het instellen van OAuth, raden we het volgende aan:
 
    1. Zoek in het deel venster **ServiceNow** naar **systeem OAuth** en selecteer vervolgens **toepassings register**. 
    1. Selecteer de naam van de opgegeven OAuth en wijzig de duur van het **vernieuwings token** in **7.776.000 seconden** (90 dagen). 
-   1. Selecteer **Bijwerken**. 
+   1. Selecteer **Update**. 
 
 1. Stel een interne procedure in om ervoor te zorgen dat de verbinding actief blijft. Een paar dagen vóór de verwachte verval datum van de levens duur van het vernieuwings token voert u de volgende bewerkingen uit:
 
@@ -122,7 +122,7 @@ Gebruik de volgende procedure om een ServiceNow-verbinding te maken.
    | --- | --- |
    | **Verbindingsnaam**   | Voer een naam in voor het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. U gebruikt deze naam later in Log Analytics wanneer u ITSM-werk items configureert en gedetailleerde analyses weergeeft. |
    | **Partnertype**   | Selecteer **ServiceNow**. |
-   | **Server-URL**   | Voer de URL in van het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. De URL moet verwijzen naar een ondersteunde SaaS-versie met het achtervoegsel *. servicenow.com*.|
+   | **Server-URL**   | Voer de URL in van het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. De URL moet verwijzen naar een ondersteunde SaaS-versie met het achtervoegsel *. servicenow.com* (bijvoorbeeld https://XXXXX.service-now.com/) .|
    | **Gebruikersnaam**   | Voer de gebruikers naam van de integratie in die u hebt gemaakt in de ServiceNow-app om de verbinding met ITSMC te ondersteunen.|
    | **Wachtwoord**   | Voer het wacht woord in dat is gekoppeld aan deze gebruikers naam. **Opmerking**: de gebruikers naam en het wacht woord worden alleen gebruikt voor het genereren van verificatie tokens. Ze worden nergens opgeslagen in de ITSMC-service.  |
    | **Client-id**   | Voer de client-ID in die u wilt gebruiken voor OAuth2-verificatie, die u eerder hebt gegenereerd. Zie [OAuth instellen](https://wiki.servicenow.com/index.php?title=OAuth_Setup)voor meer informatie over het genereren van een client-id en een geheim. |

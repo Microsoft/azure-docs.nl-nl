@@ -91,7 +91,7 @@
     - name: Python-voorbeelden
       href: samples-python.md
     - name: REST-voorbeelden
-      href: /samples/browse/?expanded=azure&languages=http&products=azure-cognitive-search
+      href: samples-rest.md
 - name: Concepten
   items:
     - name: Zoekopdracht in volledige tekst

@@ -113,6 +113,8 @@
           href: reference-data-guidelines.md
     - name: Weergave-indeling
       href: reference-markdown-format.md
+    - name: Privékoppelingen
+      href: reference-private-endpoint.md
     - name: Indeling voor batchgewijs testen
       href: reference-tsv-format-batch-testing.md
     - name: Versleuteling

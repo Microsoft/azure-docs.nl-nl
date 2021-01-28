@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 01/19/2021
+ms.date: 01/27/2021
 ms.author: alkohli
-ms.openlocfilehash: 8158868a39bf8a1fe03a620f37e4dcb1c9adc14e
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 6fff5b9d41c960ebe37098695c694725de0226e0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805183"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954611"
 ---
 # <a name="azure-stack-edge-2101-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2101
 
@@ -23,7 +23,7 @@ De release opmerkingen worden voortdurend bijgewerkt en als er kritieke probleme
 
 Dit artikel is van toepassing op de **Azure stack Edge 2101** -release, die wordt toegewezen aan het software versie nummer **2.2.1473.2521**.
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 De volgende nieuwe functies zijn beschikbaar in de Azure Stack Edge 2101-release. 
 
@@ -77,8 +77,7 @@ In de volgende tabel vindt u een overzicht van de bekende problemen die in de vo
 |**18.**|Certificaten |In bepaalde gevallen kan de status van het certificaat in de lokale gebruikers interface enkele seconden duren voordat deze wordt bijgewerkt. |De volgende scenario's in de lokale gebruikers interface kunnen worden beïnvloed.<ul><li>De kolom **status** op de pagina **certificaten** .</li><li>De tegel **beveiliging** op de pagina **aan de slag** .</li><li>**Configuratie** tegel op de pagina **overzicht** .</li></ul>  |
 |**Nr.**|IoT Edge |Modules die via IoT Edge worden geïmplementeerd, kunnen geen gebruik van het doelnet werken. | |
 |**18,0.**|Compute + Kubernetes |Compute/Kubernetes biedt geen ondersteuning voor NTLM-webproxy. ||
-|**19.**|Compute + web proxy + update |Als u Compute hebt geconfigureerd met web proxy, kan de compute-update mislukken. |U wordt aangeraden reken kracht vóór de update uit te scha kelen. |
-|**20.**|Kubernetes + update |Eerdere software versies, zoals 2008 releases, hebben een update probleem voor de race situatie waardoor de update mislukt met ClusterConnectionException. |Het gebruik van de nieuwere builds helpt dit probleem te voor komen. Als dit probleem zich blijft voordoen, kunt u de tijdelijke oplossing het beste opnieuw proberen.|
+|**19.**|Kubernetes + update |Eerdere software versies, zoals 2008 releases, hebben een update probleem voor de race situatie waardoor de update mislukt met ClusterConnectionException. |Het gebruik van de nieuwere builds helpt dit probleem te voor komen. Als dit probleem zich blijft voordoen, kunt u de tijdelijke oplossing het beste opnieuw proberen.|
 
 
 <!--|**18.**|Azure Private Edge Zone (Preview) |There is a known issue with Virtual Network Function VM if the VM was created on Azure Stack Edge device running earlier preview builds such as 2006/2007b and then the device was updated to 2009 GA release. The issue is that the VNF information can't be retrieved or any new VNFs can't be created unless the VNF VMs are deleted before the device is updated.  |Before you update Azure Stack Edge device to 2009 release, use the PowerShell command `get-mecvnf` followed by `remove-mecvnf <VNF guid>` to remove all Virtual Network Function VMs one at a time. After the upgrade, you will need to redeploy the same VNFs.|-->

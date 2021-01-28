@@ -1,5 +1,5 @@
 ---
-title: Beschik baarheid van v3-Clouds en regio's Azure Media Services
+title: Beschik baarheid van v3 regio's Azure Media Services
 description: Dit artikel spreekt over Azure-Clouds en-regio's waarin Azure Media Services v3 beschikbaar is.
 services: media-services
 author: IngridAtMicrosoft
@@ -8,12 +8,12 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 10/28/2020
 ms.author: inhenkel
-ms.openlocfilehash: 20c025cfabf6ed3cedd838f8be964bec06ad595e
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 91df515703b4b6b368b07482fad1aa8b781281f6
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242525"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954443"
 ---
 # <a name="azure-media-services-v3-clouds-and-regions-availability"></a>Beschik baarheid van v3-Clouds en regio's Azure Media Services
 
@@ -66,7 +66,7 @@ Gebruik de navigatie aan de rechter kant om de gewenste regio te vinden.
 ## <a name="see-also"></a>Zie ook
 
 * [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/)
-* [Regionale code namen en eind punten](azure-regions-code-names.md)
+* [Regionale codenamen en eindpunten](azure-regions-code-names.md)
 * [Geografische gebieden in Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)
 

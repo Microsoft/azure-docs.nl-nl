@@ -1,5 +1,5 @@
 ---
-title: Clouds en regio's waarin Azure Media Services v3 beschikbaar is
+title: Clouds en regio's voor Azure Media Services v3
 description: In dit artikel vindt u informatie over de Url's die worden gebruikt voor eind punten en code voor regio's.
 services: media-services
 author: IngridAtMicrosoft
@@ -8,14 +8,14 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 10/28/2020
 ms.author: inhenkel
-ms.openlocfilehash: c17eeda91af46c4159f7c4b1747416298f24c703
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 74f30ebb766ea34603c0a30455837c47222967c0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319640"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954324"
 ---
-# <a name="regional-code-names-and-endpoints"></a>Regionale code namen en eind punten
+# <a name="regional-code-names-and-endpoints"></a>Regionale codenamen en eindpunten
 
 ### <a name="region-code-name"></a>Regio code naam
 
@@ -84,7 +84,7 @@ De volgende eind punten zijn belang rijk om te weten wanneer u verbinding maakt 
 ## <a name="see-also"></a>Zie ook
 
 * [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/)
-* [Regionale code namen en eind punten](azure-regions-code-names.md)
+* [Regionale codenamen en eindpunten](azure-regions-code-names.md)
 * [Geografische gebieden in Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)
 

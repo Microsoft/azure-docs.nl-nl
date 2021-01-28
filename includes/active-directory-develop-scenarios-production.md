@@ -14,19 +14,37 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 730ff3c274fd93e6344cec688ba2db212d285baf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75650d7ff0ac647aeb6dace76c270680b1b89347
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76758938"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98954953"
 ---
-Maak uw toepassing geweldig:
+## <a name="enable-logging"></a>Logboekregistratie inschakelen
 
-- Schakel [logboek registratie](../articles/active-directory/develop/msal-logging.md)in.
-- Schakel telemetrie in.
-- Schakel [proxy's in en pas HTTP-clients](../articles/active-directory/develop/msal-net-provide-httpclient.md)aan.
+Voor hulp bij het oplossen van problemen met fout opsporing en verificatie, biedt de micro soft-verificatie bibliotheek ingebouwde ondersteuning voor logboek registratie. Bij logboek registratie wordt elke bibliotheek behandeld in de volgende artikelen:
 
-Uw integratie testen:
+:::row:::
+    :::column:::
+        - [Logboekregistratie in MSAL.NET](../articles/active-directory/develop/msal-logging-dotnet.md)
+        - [Logboekregistratie in MSAL voor Android](../articles/active-directory/develop/msal-logging-android.md)
+        - [Logboekregistratie in MSAL.js](../articles/active-directory/develop/msal-logging-js.md)
+    :::column-end:::
+    :::column:::
+        - [Logboekregistratie in MSAL voor iOS/macOS](../articles/active-directory/develop/msal-logging-ios.md)
+        - [Logboekregistratie in MSAL voor Java](../articles/active-directory/develop/msal-logging-java.md)
+        - [Logboekregistratie in MSAL voor Python](../articles/active-directory/develop/msal-logging-python.md)
+    :::column-end:::
+:::row-end:::
 
-- Gebruik de [controle lijst voor integratie van micro soft Identity platform](../articles/active-directory/develop/identity-platform-integration-checklist.md).
+Hier volgen enkele suggesties voor het verzamelen van gegevens:
+
+- Gebruikers kunnen om hulp vragen wanneer ze problemen ondervinden. Een best practice is Logboeken vastleggen en tijdelijk opslaan. Geef een locatie op waar gebruikers de logboeken kunnen uploaden. MSAL biedt logboek registratie-extensies voor het vastleggen van gedetailleerde informatie over verificatie.
+
+- Als telemetrie beschikbaar is, kunt u dit inschakelen via MSAL om gegevens te verzamelen over de manier waarop gebruikers zich aanmelden bij uw app.
+
+
+## <a name="validate-your-integration"></a>Uw integratie valideren
+
+Test uw integratie door de [controle lijst voor de integratie van micro soft Identity platform](../articles/active-directory/develop/identity-platform-integration-checklist.md)te volgen.

@@ -3,12 +3,12 @@ title: Live video Analytics op IoT Edge opmerkingen bij de release-Azure
 description: Dit onderwerp bevat opmerkingen bij de release van live video Analytics over IoT Edge releases, verbeteringen, fout oplossingen en bekende problemen.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 328fe97c4e03f039a1224d13ce6712ccff06b3b7
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: f130b93b8d799c371a640f2b29c22c0d77834cba
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629773"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954392"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Opmerkingen bij de release van live video op IoT Edge
 
@@ -35,7 +35,7 @@ mcr.microsoft.com/media/live-video-analytics:2.0.1
 > In de Quick starts en zelf studies maakt de implementatie manifesten gebruik van een tag van 2 (live-video-Analytics: 2). Als u dergelijke manifesten opnieuw implementeert, moet de module worden bijgewerkt op uw rand > apparaten.
 ### <a name="bug-fixes"></a>Opgeloste fouten 
 
-* De velden `ActivationSignalOffset` `MinimumActivationTime` en de `MaximumActivationTime` Signal Gate-processors zijn onjuist ingesteld als vereiste eigenschappen. Ze zijn nu **optionele** eigenschappen.
+* De velden `ActivationSignalOffset` , `MinimumActivationTime` en `MaximumActivationTime` in de Signal Gate-processor zijn onjuist ingesteld als vereiste eigenschappen. Ze zijn nu **optionele** eigenschappen.
 * Er is een fout opgetreden bij het gebruik van een probleem dat ertoe leidt dat de module live video Analytics op IoT Edge vastloopt wanneer deze in bepaalde regio's wordt geïmplementeerd.
 
 <hr width=100%>
@@ -48,7 +48,7 @@ Deze versie is de open bare preview-versie voor het vernieuwen van live video-an
 ```
 ### <a name="module-updates"></a>Module-updates
 * Er is ondersteuning toegevoegd voor het gebruik van meer dan één HTTP-uitbreidings processor en gRPC extension-processor per grafiek topologie.
-* Er is ondersteuning toegevoegd voor het beheer van schijf ruimte voor Sink-knoop punten.
+* Er is ondersteuning toegevoegd voor het [beheer van schijf ruimte voor Sink-knoop punten](upgrading-lva-module.md#disk-space-management-with-sink-nodes).
 * `MediaGraphGrpcExtension` het knoop punt ondersteunt nu de eigenschap [extensionConfiguration](grpc-extension-protocol.md) voor het gebruik van meerdere AI-modellen binnen één gRPC-server.
 * Er is ondersteuning toegevoegd voor het verzamelen van metrische gegevens van de module live video Analytics in de [Prometheus-indeling](https://prometheus.io/docs/practices/naming/). Meer informatie over het [verzamelen van metrische gegevens en weer gave in azure monitor.](monitoring-logging.md#azure-monitor-collection-via-telegraf) 
 * De mogelijkheid om de uitvoer selectie te filteren is toegevoegd. U kunt **alleen audio** en video of **Audio en video** **alleen** door geven met behulp van `outputSelectors` een grafiek knooppunt. 
@@ -56,7 +56,7 @@ Deze versie is de open bare preview-versie voor het vernieuwen van live video-an
     * Het beheer van de frame frequentie is nu beschikbaar in de processor knooppunten van de grafiek extensie zelf.
 
 ### <a name="visual-studio-code-extension"></a>Visual Studio Code-extensie
-* Vrijgegeven [Live video Analytics op IOT Edge](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.live-video-analytics-edge) : een Visual Studio code-extensie waarmee u LVA-media grafieken kunt beheren. Deze uitbrei ding werkt met de **LVA 2,0-module** en biedt het bewerken en beheren van media grafieken met een zeer gestroomlijnde en eenvoudig te gebruiken grafische interface.
+* Vrijgegeven [Live video Analytics op IOT Edge](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.live-video-analytics-edge) : een Visual Studio code-extensie waarmee u LVA-media grafieken kunt beheren. Deze uitbrei ding werkt met de **LVA 2,0-module** en biedt het bewerken en beheren van media grafieken met een gestroomlijnde en eenvoudig te gebruiken grafische interface.
 ## <a name="september-22-2020"></a>22 september 2020
 
 Deze release code is voor de september 2020 vernieuwing van de module is:
@@ -76,7 +76,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.4
 ### <a name="documentation-updates"></a>Documentatie-updates
 
 * Er zijn [instructies](deploy-azure-stack-edge-how-to.md) beschikbaar voor het gebruik van live video Analytics op IoT Edge op Azure stack edge-apparaten.
-* Nieuwe zelf studie over het ontwikkelen van specifieke computer vision-modellen met behulp van [Custom Vision-service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) en het gebruik ervan om [Live video](custom-vision-tutorial.md) in realtime te analyseren.
+* Nieuwe zelf studie over het ontwikkelen van scenario-specifieke computer vision-modellen met behulp van [Custom Vision-service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) en het gebruik ervan om [Live video](custom-vision-tutorial.md) in realtime te analyseren.
 
 <hr width=100%>
 
@@ -93,15 +93,15 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 
 ### <a name="module-updates"></a>Module-updates
 
-* U kunt nu prestaties van inhouds overdrachten voor hoge gegevens krijgen tussen live video Analytics op IoT Edge en uw aangepaste extensie met behulp van gRPC Framework. Bekijk [Dit](analyze-live-video-use-your-grpc-model-quickstart.md) om aan de slag te gaan.
+* U kunt nu prestaties van inhouds overdrachten voor hoge gegevens krijgen tussen live video Analytics op IoT Edge en uw aangepaste extensie met behulp van gRPC Framework. Bekijk [de Snelstartgids](analyze-live-video-use-your-grpc-model-quickstart.md) om aan de slag te gaan.
 * Grotere regionale implementatie van live video analyses en alleen de Cloud service is bijgewerkt.  
-* Live video Analytics is nu beschikbaar in 25 extra regio's over de hele wereld. Hier volgt een [lijst](https://azure.microsoft.com/global-infrastructure/services/?products=media-services) met alle beschik bare regio's.  
+* Live video Analytics is nu beschikbaar in 25 meer regio's over de hele wereld. Hier volgt een [lijst](https://azure.microsoft.com/global-infrastructure/services/?products=media-services) met alle beschik bare regio's.  
 * De [instelling](https://aka.ms/lva-edge/setup-resources-for-samples) voor snel starten is bijgewerkt en er wordt ondersteuning geboden voor nieuwe regio's.
     * Er is geen actie aanroepen voor iedereen die al een systeem heeft ingesteld
 
 ### <a name="bug-fixes"></a>Opgeloste fouten 
 
-* Het gebruik van een afgeschafte Azure-extensie verwijderen in het script instellen
+* Het gebruik van een afgeschafte Azure-extensie verwijderen in het installatie script
 
 <hr width=100%>
 
@@ -118,7 +118,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.2
 
 ### <a name="module-updates"></a>Module-updates
 
-* U kunt nu grafiek-topologieën maken die een Asset Sink-knoop punt hebben en een knoop punt voor bestands sinks, downstream van een signaal Gate-processor knooppunt. Zie [Dit](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-motion-assets-files) voor een voor beeld.
+* U kunt nu grafiek topologieën maken die een Asset Sink-knoop punt hebben en een knoop punt van een bestands Sink downstream van een Signal Gate-processor knooppunt. Bekijk [de topologie](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-motion-assets-files) voor een voor beeld.
 
 ### <a name="bug-fixes"></a>Opgeloste fouten
 

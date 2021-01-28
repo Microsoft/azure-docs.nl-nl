@@ -1,17 +1,17 @@
 ---
-title: Uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Services
+title: Uw eigen sleutel (door de klant beheerde sleutels) meenemen
 description: U kunt een door de klant beheerde sleutel gebruiken (dat wil zeggen, uw eigen sleutel meenemen) met Media Services.
 author: IngridAtMicrosoft
 ms.author: inhenkel
 ms.service: media-services
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: a56922c972efeb21c188413522bd05f83b74ca12
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: c11bb0e369075c3024824d65290e8aecfa68e6f4
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681819"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956137"
 ---
 # <a name="bring-your-own-key-customer-managed-keys-with-media-services"></a>Uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Services
 
@@ -39,7 +39,7 @@ U kunt een sleutel naam en sleutel versie opgeven, of alleen een sleutel naam. W
 
 ## <a name="tutorials"></a>Zelfstudies
 
-- [Gebruik de Azure Portal om door de klant beheerde sleutels of BYOK te gebruiken met Media Services](tutorial-byok-portal.md)
+- [De Azure Portal gebruiken om door klant beheerde sleutels of BYOK met Media Services](tutorial-byok-portal.md)
 - [Gebruik door de klant beheerde sleutels of BYOK met Media Services rest API](tutorial-byok-postman.md).
 
 ## <a name="next-steps"></a>Volgende stappen

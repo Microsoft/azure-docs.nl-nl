@@ -11,12 +11,12 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 17b2d717ac6f244cb3ddddfdbc2f29581aa1f59f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: d8b1c2a5384e479e39d169d368554f16c300a33e
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95527306"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954543"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Een model implementeren om reken instanties te Azure Machine Learning
 
@@ -38,11 +38,12 @@ Meer informatie over het gebruik van Azure Machine Learning voor het implementer
 
 Een voor beeld van een notebook dat lokale implementaties bevat, is opgenomen in uw reken exemplaar. Gebruik de volgende stappen om het notitie blok te laden en het model te implementeren als een webservice op de VM:
 
-1. Selecteer uw Azure Machine Learning Reken instanties in [Azure machine learning Studio](https://ml.azure.com).
+1. In [Azure machine learning Studio](https://ml.azure.com)selecteert u ' notebooks ' en selecteert u vervolgens How-to-use-azureml/Deployment/Deploy-to-local/register-model-Deploy-local. Ipynb onder voorbeeld notitieblokken. Kloon dit notitie blok naar de map van uw gebruiker.
 
-1. Open de `samples-*` submap en open `how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb` . Als het notitie blok eenmaal is geopend, voert u het uit.
+1. Zoek het notitie blok dat is gekloond in stap 1, kies of maak een reken instantie om het notitie blok uit te voeren.
 
     ![Scherm afbeelding van de actieve lokale service op notebook](./media/how-to-deploy-local-container-notebook-vm/deploy-local-service.png)
+
 
 1. In het notitie blok worden de URL en de poort weer gegeven waarop de service wordt uitgevoerd. Bijvoorbeeld `https://localhost:6789`. U kunt ook de cel met `print('Local service port: {}'.format(local_service.port))` om de poort weer te geven.
 

@@ -4,15 +4,15 @@ description: Meer informatie over het gebruik van afhankelijkheids injectie voor
 author: ggailey777
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.date: 08/15/2020
+ms.date: 01/27/2021
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: 70ec9248db002823e969fa5f4fba8bf1074a9af7
-ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
+ms.openlocfilehash: 66e2cd22f4bcb95be65d6d04345dcac622436a04
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97706929"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955085"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Afhankelijkheidsinjectie gebruiken in .NET Azure Functions
 
@@ -190,7 +190,7 @@ Zie [logboek niveaus configureren](configure-monitoring.md#configure-log-levels)
 
 De functie-host registreert veel services. De volgende services zijn veilig als afhankelijkheid in uw toepassing:
 
-|Servicetype|Dood|Beschrijving|
+|Servicetype|Dood|Description|
 |--|--|--|
 |`Microsoft.Extensions.Configuration.IConfiguration`|Singleton|Runtime configuratie|
 |`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Singleton|Verantwoordelijk voor het opgeven van de ID van het exemplaar van de host|
@@ -256,6 +256,24 @@ public class HttpTrigger
 ```
 
 Raadpleeg het [Opties patroon in ASP.net core](/aspnet/core/fundamentals/configuration/options) voor meer informatie over het werken met opties.
+
+## <a name="using-aspnet-core-user-secrets"></a>ASP.NET Core gebruikers geheimen gebruiken
+
+Bij het lokaal ontwikkelen ASP.NET Core biedt een [hulp programma van een geheim Manager](/aspnet/core/security/app-secrets#secret-manager) waarmee u geheime gegevens kunt opslaan buiten de hoofdmap van het project. Dit maakt het minder waarschijnlijk dat geheimen per ongeluk worden vastgelegd in broncode beheer. Azure Functions Core Tools (versie 3.0.3233 of hoger) worden automatisch geheimen gelezen dat is gemaakt door de ASP.NET Core Secret Manager.
+
+Als u een .NET Azure Functions-project wilt configureren voor het gebruik van gebruikers geheimen, voert u de volgende opdracht uit in de hoofdmap van het project.
+
+```bash
+dotnet user-secrets init
+```
+
+Gebruik vervolgens de `dotnet user-secrets set` opdracht om geheimen te maken of bij te werken.
+
+```bash
+dotnet user-secrets set MySecret "my secret value"
+```
+
+Gebruik of om toegang te krijgen tot de waarden van gebruikers geheimen in de code van uw functie-app `IConfiguration` `IOptions` .
 
 ## <a name="customizing-configuration-sources"></a>Configuratie bronnen aanpassen
 

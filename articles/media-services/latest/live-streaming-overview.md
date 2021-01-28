@@ -1,5 +1,5 @@
 ---
-title: Overzicht van live streamen met Azure Media Services v3
+title: Overzicht van live streamen
 description: Dit artikel geeft een overzicht van live streamen met behulp van Azure Media Services v3.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: ad3a14cff13395f4d59ab2ed59ae1cc26eaad866
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: b552dcc0e6766316e55e9cdda6e462b2d4abfd2b
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896779"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955916"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Live streamen met Azure Media Services v3
 

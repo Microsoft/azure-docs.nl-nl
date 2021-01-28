@@ -104,6 +104,8 @@
           href: overview-managed-identity.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          href: ./security-controls-policy.md
     - name: Hoge beschikbaarheid
       items:
         - name: Tolerantie en herstel na noodgevallen

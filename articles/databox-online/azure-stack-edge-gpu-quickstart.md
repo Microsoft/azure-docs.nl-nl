@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/27/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to quickly deploy Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 2d1bd7d2a4f066311ea01046a8d71e6ecb52c3f5
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 642ab348cd2bb5cd2cedd2b481b0d06fb6c4b425
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919800"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98953934"
 ---
 # <a name="quickstart-get-started-with-azure-stack-edge-pro-with-gpu"></a>Quickstart: Aan de slag met Azure Stack Edge Pro met GPU 
 
@@ -28,7 +28,7 @@ Het duurt ongeveer 1,5 uur om de hele procedure te voltooien. Ga voor gedetaille
 Voordat u implementeert, moet u ervoor zorgen dat aan de volgende vereisten is voldaan:
 
 1. Het Azure Stack Edge Pro GPU-apparaat bevindt zich op uw locatie, is [uitgepakt](azure-stack-edge-gpu-deploy-install.md#unpack-the-device) en [op het rek gemonteerd](azure-stack-edge-gpu-deploy-install.md#rack-the-device). 
-1. Configureer uw netwerk zo dat uw apparaat de [vermelde URL-patronen en poorten](azure-stack-edge-gpu-system-requirements.md#networking-port-requirements) kan bereiken. 
+1. Configureer uw netwerk zo dat uw apparaat de [vermelde URL-patronen en poorten](azure-stack-edge-gpu-system-requirements.md#networking-port-requirements)kan bereiken. 
 1. U hebt toegang als Eigenaar of Medewerker tot het Azure-abonnement.
 1. Ga in de Azure-portal naar **Home > Abonnementen > Uw abonnement > Resourceproviders**. Ga naar `Microsoft.DataBoxEdge` en registreer de resourceprovider. Herhaal dit om `Microsoft.Devices` te registreren als u een IoT Hub-resource maakt om rekenworkloads te implementeren.
 1. Zorg ervoor dat u minstens 2 gratis, statische, aaneengesloten IP-adressen voor Kubernetes-knooppunten hebt, en minstens 1 statisch IP-adres voor de IoT Edge-service. Voor elke module of externe service die u implementeert, hebt u 1 extra IP-adres nodig.

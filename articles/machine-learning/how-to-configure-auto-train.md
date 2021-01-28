@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 9021d933e3808867ec784ad3c6d0f8810d608ea3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6971d67204beb39ff0afa6c68dbecf278d86b299
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600068"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954712"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -203,15 +203,53 @@ Classificatie | Regressie | Tijdreeksvoorspelling
 ### <a name="primary-metric"></a>Primaire metriek
 De `primary metric` para meter bepaalt de metrische gegevens die moeten worden gebruikt tijdens de model training voor Optima Lise ring. De beschik bare metrische gegevens die u kunt selecteren, worden bepaald door het taak type dat u kiest, en in de volgende tabel worden geldige primaire metrische gegevens weer gegeven voor elk taak type.
 
+Het kiezen van een primaire metriek voor automatische machine learning om te optimaliseren, is afhankelijk van een groot aantal factoren. We raden u aan om een metrische waarde te kiezen die het beste past bij uw bedrijfs behoeften. Bedenk vervolgens of de metriek geschikt is voor uw gegevensverzamelings Profiel (gegevens grootte, bereik, klasse-distributie, enzovoort).
+
 Meer informatie over de specifieke definities van deze metrische gegevens in [inzicht in geautomatiseerde machine learning resultaten](how-to-understand-automated-ml.md).
 
 |Classificatie | Regressie | Tijdreeksvoorspelling
 |--|--|--
-|accuracy| spearman_correlation | spearman_correlation
-|AUC_weighted | normalized_root_mean_squared_error | normalized_root_mean_squared_error
-|average_precision_score_weighted | r2_score | r2_score
-|norm_macro_recall | normalized_mean_absolute_error | normalized_mean_absolute_error
-|precision_score_weighted |
+|`accuracy`| `spearman_correlation` | `spearman_correlation`
+|`AUC_weighted` | `normalized_root_mean_squared_error` | `normalized_root_mean_squared_error`
+|`average_precision_score_weighted` | `r2_score` | `r2_score`
+|`norm_macro_recall` | `normalized_mean_absolute_error` | `normalized_mean_absolute_error`
+|`precision_score_weighted` |
+
+### <a name="primary-metrics-for-classification-scenarios"></a>Primaire metrische gegevens voor classificatie scenario's 
+
+Het boeken van een drempel waarde, zoals `accuracy` ,, `average_precision_score_weighted` `norm_macro_recall` , en `precision_score_weighted` kan mogelijk niet worden geoptimaliseerd voor gegevens sets die zeer klein zijn, hebben een zeer grote klasse scheefheid (klasse onevenwicht), of wanneer de verwachte metriekwaarde dicht bij 0,0 of 1,0 ligt. In dergelijke gevallen `AUC_weighted` kan de primaire metriek een betere keuze zijn. Nadat automatische machine learning is voltooid, kunt u het winnende model kiezen op basis van de metrische gegevens die het meest geschikt zijn voor uw bedrijfs behoeften.
+
+| Metrisch | Voor beeld van use case (s) |
+| ------ | ------- |
+| `accuracy` | Afbeeldings classificatie, sentiment analyse, verloop voorspelling |
+| `AUC_weighted` | Fraude detectie, afbeeldings classificatie, afwijkings detectie/detectie van spam |
+| `average_precision_score_weighted` | Sentimentanalyse |
+| `norm_macro_recall` | Verloop voorspelling |
+| `precision_score_weighted` |  |
+
+### <a name="primary-metrics-for-regression-scenarios"></a>Primaire metrische gegevens voor regressie scenario's
+
+Metrische gegevens zoals `r2_score` en `spearman_correlation` kunnen de kwaliteit van het model beter weer geven als de schaal van de waarde-voor-voor speling een groot aantal orders van omvang omvat. Voor een schatting van het exemplaar van het salaris, waarbij veel mensen een salaris hebben van $20.000 naar $100.000, maar de schaal erg hoog is bij sommige Sala rissen in het bereik $100 miljoen. 
+
+`normalized_mean_absolute_error` en `normalized_root_mean_squared_error` zou in dit geval een $20.000-Voorspellings fout behandelen voor een werk nemer met een $30k-salaris als een werk nemer die $20 miljoen maakt. In werkelijkheid is het voors pellen van slechts $20.000 uit een $20 miljoen-salaris erg dicht (een klein 0,1% relatief verschil), terwijl $20.000 uit $30k niet sluiten is (een groot verschil van 67% ten opzichte van €). `normalized_mean_absolute_error` en `normalized_root_mean_squared_error` zijn nuttig wanneer de te voors pellen waarden op een vergelijk bare schaal zijn.
+
+| Metrisch | Voor beeld van use case (s) |
+| ------ | ------- |
+| `spearman_correlation` | |
+| `normalized_root_mean_squared_error` | Prijs voorspelling (House/product/tip), voor spelling van Score controleren |
+| `r2_score` | Vertraging van de luchtvaart maatschappij, schatting van het salaris, oplossings tijd van de fout |
+| `normalized_mean_absolute_error` |  |
+
+### <a name="primary-metrics-for-time-series-forecasting-scenarios"></a>Primaire metrische gegevens voor prognose scenario's voor time series
+
+Zie regressie notities hierboven.
+
+| Metrisch | Voor beeld van use case (s) |
+| ------ | ------- |
+| `spearman_correlation` | |
+| `normalized_root_mean_squared_error` | Prijs voorspelling (prognose), voorraad optimalisatie, vraag prognose |
+| `r2_score` | Prijs voorspelling (prognose), voorraad optimalisatie, vraag prognose |
+| `normalized_mean_absolute_error` | |
 
 ### <a name="data-featurization"></a>Gegevens parametrisatie
 
@@ -219,7 +257,7 @@ In elk automatisch machine learning experiment worden uw gegevens automatisch ge
 
 Wanneer u uw experimenten in uw `AutoMLConfig` object configureert, kunt u de instelling in-of uitschakelen `featurization` . De volgende tabel bevat de geaccepteerde instellingen voor parametrisatie in het [AutoMLConfig-object](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig). 
 
-|Parametrisatie-configuratie | Beschrijving |
+|Parametrisatie-configuratie | Description |
 | ------------- | ------------- |
 |`"featurization": 'auto'`| Geeft aan dat als onderdeel van de voor verwerking, [gegevens Guardrails en parametrisatie-stappen](how-to-configure-auto-features.md#featurization) automatisch worden uitgevoerd. **Standaard instelling**.|
 |`"featurization": 'off'`| Hiermee wordt aangegeven dat de parametrisatie-stap niet automatisch moet worden uitgevoerd.|

@@ -1,5 +1,5 @@
 ---
-title: Offline PlayReady streaming configureren met Azure Media Services v3
+title: Offline PlayReady streaming configureren
 description: In dit artikel wordt uitgelegd hoe u uw Azure Media Services v3-account voor streaming PlayReady voor Windows 10 offline kunt configureren.
 services: media-services
 keywords: DASH, DRM, Widevine offline modus, ExoPlayer, Android
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 19c930915de20d7f3a8938570e074458b32a8efb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ea3d895970c6a18286d719471a693f774efaa387
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90975683"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955225"
 ---
 # <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Offline PlayReady streaming voor Windows 10 met Media Services v3
 
@@ -38,7 +38,7 @@ Azure Media Services offline downloaden/afspelen met DRM-beveiliging ondersteune
 
 Deze sectie bevat een achtergrond voor het afspelen van offline modus, met name waarom:
 
-* In sommige landen/regio's is Internet Beschik baarheid en/of band breedte nog steeds beperkt.Gebruikers kunnen ervoor kiezen om eerst te downloaden om inhoud te kunnen bekijken met een hoge resolutie voor een goede weergave ervaring. In dit geval is het probleem vaak niet het netwerk beschikbaar, maar is de netwerk bandbreedte beperkt. OTT/OVP-providers vragen om ondersteuning voor de offline modus.
+* In sommige landen/regio's is Internet Beschik baarheid en/of band breedte nog steeds beperkt. Gebruikers kunnen ervoor kiezen om eerst te downloaden om inhoud te kunnen bekijken met een hoge resolutie voor een goede weergave ervaring. In dit geval is het probleem vaak niet het netwerk beschikbaar, maar is de netwerk bandbreedte beperkt. OTT/OVP-providers vragen om ondersteuning voor de offline modus.
 * Als vermeld bij de Netflix 2016 Q3-aandeel houder, is het downloaden van inhoud een ' oft-aangevraagde functie ', en ' We zijn er open mee ' zei door Reed Hastings, Netflix CEO.
 * Sommige inhouds providers kunnen geen DRM-licentie levering toestaan buiten de rand van een land/regio. Als een gebruiker in het buiten land moet reizen en nog steeds inhoud wil bekijken, is offline downloaden vereist.
  

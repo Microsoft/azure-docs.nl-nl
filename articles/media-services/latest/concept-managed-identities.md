@@ -1,5 +1,5 @@
 ---
-title: Beheerde identiteiten en vertrouwde opslag met Media Services
+title: Beheerde identiteiten en vertrouwde opslag
 description: Media Services kan worden gebruikt met beheerde identiteiten voor het inschakelen van vertrouwde opslag.
 services: media-services
 author: IngridAtMicrosoft
@@ -8,12 +8,12 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.author: inhenkel
-ms.openlocfilehash: d0811e8f9183ee334d413bcad69f2c7b32023be3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 291508a6beaa687b3a10f55df4591ce601ab51a0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499353"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956171"
 ---
 # <a name="managed-identities-and-trusted-storage-with-media-services"></a>Beheerde identiteiten en vertrouwde opslag met Media Services
 
@@ -52,7 +52,7 @@ Zie [uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Servi
 
 Deze zelf studies bevatten beide hierboven vermelde scenario's.
 
-- [Gebruik de Azure Portal om door de klant beheerde sleutels of BYOK te gebruiken met Media Services](tutorial-byok-portal.md)
+- [De Azure Portal gebruiken om door klant beheerde sleutels of BYOK met Media Services](tutorial-byok-portal.md)
 - [Gebruik door de klant beheerde sleutels of BYOK met Media Services rest API](tutorial-byok-postman.md).
 
 ## <a name="next-steps"></a>Volgende stappen

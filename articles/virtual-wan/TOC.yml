@@ -41,22 +41,22 @@
       items:
         - name: Over virtuele hub-routering
           href: about-virtual-hub-routing.md
-        - name: Routeringsscenario's
-          items:
-            - name: Any-to-any
-              href: scenario-any-to-any.md
-            - name: VNets isoleren
-              href: scenario-isolate-vnets.md
-            - name: VNets isoleren - aangepast
-              href: scenario-isolate-vnets-custom.md
-            - name: VNets in gedeelde services
-              href: scenario-shared-services-vnet.md
-            - name: Routeren via een NVA
-              href: scenario-route-through-nva.md
-            - name: Routeren via een NVA - aangepast
-              href: scenario-route-through-nvas-custom.md
-            - name: Azure Firewall - aangepast
-              href: scenario-route-between-vnets-firewall.md
+    - name: Routeringsscenario's
+      items:
+        - name: Any-to-any
+          href: scenario-any-to-any.md
+        - name: VNets isoleren
+          href: scenario-isolate-vnets.md
+        - name: VNets isoleren - aangepast
+          href: scenario-isolate-vnets-custom.md
+        - name: VNets in gedeelde services
+          href: scenario-shared-services-vnet.md
+        - name: Routeren via een NVA
+          href: scenario-route-through-nva.md
+        - name: Routeren via een NVA - aangepast
+          href: scenario-route-through-nvas-custom.md
+        - name: Azure Firewall - aangepast
+          href: scenario-route-between-vnets-firewall.md
     - name: Bewaking
       items:
         - name: Over Azure Monitor Insights voor virtuele WAN

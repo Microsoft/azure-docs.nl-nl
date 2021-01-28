@@ -210,14 +210,20 @@
               href: service-bus-auto-forwarding.md
             - name: Transactieverwerking
               href: service-bus-transactions.md
-        - name: End-to-end tracering en diagnostische gegevens
-          href: service-bus-end-to-end-tracing.md
         - name: Een Service Bus-toepassing met meerdere lagen maken
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
     - name: Migreren
       items:
         - name: Migreren van ActiveMQ naar Azure Service Bus
           href: migrate-jms-activemq-to-servicebus.md
+    - name: Monitor
+      items:
+        - name: End-to-end tracering en diagnostische gegevens
+          href: service-bus-end-to-end-tracing.md
+        - name: Diagnostische logboeken
+          href: service-bus-diagnostic-logs.md
+        - name: Azure Monitor metrische gegevens
+          href: service-bus-metrics-azure-monitor.md
     - name: Integreren
       items:
         - name: Integreren met RabbitMQ
@@ -228,12 +234,8 @@
           href: automate-update-messaging-units.md
         - name: Azure PowerShell gebruiken om entiteiten in te richten
           href: service-bus-manage-with-ps.md
-        - name: Service Bus bewaken met Azure Monitor
-          href: service-bus-metrics-azure-monitor.md
         - name: Service Bus-beheerbibliotheken
           href: service-bus-management-libraries.md
-        - name: Resourcelogboeken
-          href: service-bus-diagnostic-logs.md
         - name: Bericht-entiteiten onderbreken en opnieuw activeren
           href: entity-suspend.md
         - name: Gebruik Service Bus Explorer om gegevensbewerkingen uit te voeren in Service Bus

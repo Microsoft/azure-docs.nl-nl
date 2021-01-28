@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/27/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 8a0d69ea57eb5b8b2a074c37d4798a99c576ce95
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: ea4def3cfaa19e27dc05e955bf97b41976ec2190
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538174"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98953917"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-azure-ad-b2c-account-from-another-azure-ad-b2c-tenant"></a>Registratie instellen en aanmelden met een Azure AD B2C account van een andere Azure AD B2C Tenant
 
@@ -50,7 +50,7 @@ Als u aanmelden wilt inschakelen voor gebruikers met een account van een andere 
 
 Om een toepassing te maken.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map gebruikt die uw andere Azure AD B2C Tenant bevat (bijvoorbeeld Fabrikam.com).
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
 1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie**.
@@ -79,7 +79,7 @@ Om een toepassing te maken.
 
 ## <a name="configure-azure-ad-b2c-as-an-identity-provider"></a>Azure AD B2C configureren als een id-provider
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zorg ervoor dat u de Directory gebruikt die de Azure AD B2C Tenant bevat waarvan u de Federatie wilt configureren (bijvoorbeeld Contoso). Selecteer het filter **Directory + abonnement** in het bovenste menu en kies de map die uw Azure AD B2C Tenant bevat (bijvoorbeeld Contoso).
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **Id-providers** en selecteer vervolgens **Nieuwe OpenID Connect-provider**.
@@ -107,6 +107,17 @@ Om een toepassing te maken.
 
 1. Selecteer **Opslaan**.
 
+## <a name="add-azure-ad-b2c-identity-provider-to-a-user-flow"></a>Azure AD B2C ID-provider toevoegen aan een gebruikers stroom 
+
+1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
+1. Klik op de gebruikers stroom die u wilt toevoegen aan de Azure AD B2C-ID-provider.
+1. Selecteer **fabrikam** onder de **id-providers voor sociale netwerken**.
+1. Selecteer **Opslaan**.
+1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
+1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Klik op **gebruikers stroom uitvoeren**
+1. Selecteer *fabrikam* om u aan te melden met de andere Azure AD B2C Tenant van de registratie-of aanmeldings pagina.
+
 ::: zone-end
 
 ::: zone pivot="b2c-custom-policy"
@@ -125,9 +136,9 @@ U moet de toepassings sleutel opslaan die u eerder hebt gemaakt in uw Azure AD B
 1. Selecteer voor **sleutel gebruik** `Signature` .
 1. Selecteer **Maken**.
 
-## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
+## <a name="configure-azure-ad-b2c-as-an-identity-provider"></a>Azure AD B2C configureren als een id-provider
 
-Als u wilt dat gebruikers zich aanmelden met behulp van de andere Azure AD B2C (fabrikam), moet u de andere Azure AD B2C definiëren als een claim provider waarmee Azure AD B2C met behulp van een eind punt kunt communiceren. Het eind punt biedt een set claims die wordt gebruikt door Azure AD B2C om te controleren of een specifieke gebruiker is geverifieerd.
+Als u gebruikers wilt toestaan zich aan te melden met een account van een andere Azure AD B2C Tenant (fabrikam), moet u de andere Azure AD B2C definiëren als een claim provider waarmee Azure AD B2C met behulp van een eind punt kunnen communiceren. Het eind punt biedt een set claims die wordt gebruikt door Azure AD B2C om te controleren of een specifieke gebruiker is geverifieerd.
 
 U kunt Azure AD B2C als een claim provider definiëren door Azure AD B2C toe te voegen aan het **ClaimsProvider** -element in het extensie bestand van uw beleid.
 
@@ -139,7 +150,7 @@ U kunt Azure AD B2C als een claim provider definiëren door Azure AD B2C toe te 
       <Domain>fabrikam.com</Domain>
       <DisplayName>Federation with Fabrikam tenant</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="Fabrikam-OpenIdConnect">
+        <TechnicalProfile Id="AzureADB2CFabrikam-OpenIdConnect">
         <DisplayName>Fabrikam</DisplayName>
         <Protocol Name="OpenIdConnect"/>
         <Metadata>
@@ -188,83 +199,29 @@ U kunt Azure AD B2C als een claim provider definiëren door Azure AD B2C toe te 
     |CryptographicKeys| Werk de waarde van **StorageReferenceId** bij naar de naam van de beleids sleutel die u eerder hebt gemaakt. Bijvoorbeeld `B2C_1A_FabrikamAppSecret`.| 
     
 
-### <a name="upload-the-extension-file-for-verification"></a>Upload het extensie bestand voor verificatie
-
-Nu hebt u uw beleid zodanig geconfigureerd dat Azure AD B2C weet hoe u kunt communiceren met de andere Azure AD B2C Tenant. Upload het extensie bestand van uw beleid alleen om te bevestigen dat er tot nu toe geen problemen zijn.
-
-1. Selecteer op de pagina **aangepaste beleids regels** in uw Azure AD B2C-Tenant de optie **beleid uploaden**.
-1. Schakel **het beleid overschrijven als dit bestaat** in en selecteer vervolgens het *TrustFrameworkExtensions.xml* bestand.
-1. Klik op **Uploaden**.
-
-## <a name="register-the-claims-provider"></a>De claim provider registreren
-
-De ID-provider is op dit moment ingesteld, maar is nog niet beschikbaar op de aanmeldings pagina's van de registratie/aanmelding. Om het beschikbaar te maken, maakt u een kopie van een bestaande sjabloon gebruiker en wijzigt u deze zodat deze ook de Azure AD-ID-provider heeft:
-
-1. Open het *TrustFrameworkBase.xml* -bestand in het Starter Pack.
-1. Zoek en kopieer de volledige inhoud van het **UserJourney** -element dat bevat `Id="SignUpOrSignIn"` .
-1. Open de *TrustFrameworkExtensions.xml* en zoek het element **UserJourneys** . Als het element niet bestaat, voegt u er een toe.
-1. Plak de volledige inhoud van het **UserJourney** -element dat u hebt gekopieerd als onderliggend element van het onderdeel **UserJourneys** .
-1. Wijzig de naam van de gebruikers traject. Bijvoorbeeld `SignUpSignInFabrikam`.
-
-### <a name="display-the-button"></a>De knop weer geven
-
-Het element **ClaimsProviderSelection** is vergelijkbaar met een id-provider knop op een registratie-en aanmeldings pagina. Als u een **ClaimsProviderSelection** -element toevoegt voor Azure AD B2C, wordt er een nieuwe knop weer gegeven wanneer een gebruiker op de pagina terechtkomt.
-
-1. Zoek het **OrchestrationStep** -element dat is opgenomen `Order="1"` in de gebruikers traject die u hebt gemaakt in *TrustFrameworkExtensions.xml*.
-1. Voeg onder **ClaimsProviderSelections** het volgende element toe. Stel de waarde van **TargetClaimsExchangeId** in op een geschikte waarde, bijvoorbeeld `FabrikamExchange` :
-
-    ```xml
-    <ClaimsProviderSelection TargetClaimsExchangeId="FabrikamExchange" />
-    ```
-
-### <a name="link-the-button-to-an-action"></a>De knop aan een actie koppelen
-
-Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit geval is voor Azure AD B2C om te communiceren met de andere Azure AD B2C om een token te ontvangen. Koppel de knop aan een actie door het technische profiel voor de Azure AD B2C claim provider te koppelen:
-
-1. Zoek de **OrchestrationStep** die `Order="2"` in de gebruikers reis zijn opgenomen.
-1. Voeg het volgende **ClaimsExchange** -element toe om ervoor te zorgen dat u dezelfde waarde gebruikt voor de **id** die u hebt gebruikt voor **TargetClaimsExchangeId**:
-
-    ```xml
-    <ClaimsExchange Id="FabrikamExchange" TechnicalProfileReferenceId="Fabrikam-OpenIdConnect" />
-    ```
-
-    Werk de waarde van **TechnicalProfileReferenceId** bij naar de **id** van het technische profiel dat u eerder hebt gemaakt. Bijvoorbeeld `Fabrikam-OpenIdConnect`.
-
-1. Sla het *TrustFrameworkExtensions.xml* bestand op en upload het opnieuw voor verificatie.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-azure-ad-b2c-identity-provider-to-a-user-flow"></a>Azure AD B2C ID-provider toevoegen aan een gebruikers stroom 
-
-1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt toevoegen aan de Azure AD B2C-ID-provider.
-1. Selecteer **fabrikam** onder de **id-providers voor sociale netwerken**.
-1. Selecteer **Opslaan**.
-1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
-1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
-1. Selecteer *fabrikam* om u aan te melden met de andere Azure AD B2C Tenant van de registratie-of aanmeldings pagina.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
 
-## <a name="update-and-test-the-relying-party-file"></a>Het Relying Party bestand bijwerken en testen
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
+    <ClaimsProviderSelection TargetClaimsExchangeId="AzureADB2CFabrikamExchange" />
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-Werk het Relying Party (RP)-bestand bij waarmee de door u gemaakte gebruikers traject wordt gestart.
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="AzureADB2CFabrikamExchange" TechnicalProfileReferenceId="AzureADB2CFabrikam-OpenIdConnect" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-1. Maak een kopie van *SignUpOrSignIn.xml* in uw werkmap en wijzig de naam ervan. Wijzig de naam bijvoorbeeld in *SignUpSignInFabrikam.xml*.
-1. Open het nieuwe bestand en werk de waarde van het kenmerk **PolicyId** voor **TrustFrameworkPolicy** met een unieke waarde bij. Bijvoorbeeld `SignUpSignInFabrikam`.
-1. Werk de waarde van **PublicPolicyUri** bij met de URI voor het beleid. Bijvoorbeeld `http://contoso.com/B2C_1A_signup_signin_fabrikam`.
-1. Werk de waarde van het kenmerk **ReferenceId** in **DefaultUserJourney** bij zodat dit overeenkomt met de id van de gebruikers traject die u eerder hebt gemaakt. Bijvoorbeeld *SignUpSignInFabrikam*.
-1. Sla de wijzigingen op en upload het bestand.
-1. Selecteer onder **aangepast beleid** het nieuwe beleid in de lijst.
-1. Selecteer in de vervolg keuzelijst **toepassing selecteren** de Azure AD B2C toepassing die u eerder hebt gemaakt. Bijvoorbeeld *testapp1*.
-1. Selecteer **nu uitvoeren** 
-1. Selecteer *fabrikam* om u aan te melden met de andere Azure AD B2C Tenant van de registratie-of aanmeldings pagina.
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
+
+[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
 
 ::: zone-end
 

@@ -7,31 +7,30 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 10dff18f7b9db7273fcd6ec92bcca5970bb83b08
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.date: 01/27/2021
+ms.openlocfilehash: b5ae38a3dc4a9324a4141314106d67c96c06c8e6
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510366"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955034"
 ---
 # <a name="java-code-samples-for-azure-cognitive-search"></a>Java-code voorbeelden voor Azure Cognitive Search
 
-Meer informatie over de Java-code voorbeelden die de functies en functionaliteit van Azure Cognitive Search demonstreren. De primaire opslag plaatsen zijn als volgt:
+Meer informatie over de Java-code voorbeelden die de functionaliteit en werk stroom van een Azure Cognitive Search-oplossing demonstreren. In deze voor beelden wordt de [**azure Cognitive Search-client bibliotheek**](/java/api/overview/azure/search-documents-readme) voor de [**Azure SDK voor Java**](/azure/developer/java/sdk)gebruikt, die u via de volgende koppelingen kunt verkennen.
 
-| Opslagplaats | Beschrijving |
-|------------|-------------|
-| [Azure-SDK-voor-Java/tree/master/SDK/Search/Azure-Search-documenten/src/samples](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/samples) | Voor beelden die worden geproduceerd door het team van de Azure SDK die worden geleverd bij de uments-client bibliotheek van Azure.Search.Docin de SDK. U kunt ook de [eenheids tests](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/test) voor de client bibliotheek bekijken om te zien hoe verschillende api's worden aangeroepen. |
-| [Azure-samples/Azure-Search-java-voor beelden](https://github.com/Azure-Samples/azure-search-java-samples) | Code voorbeelden die betrekking hebben op procedures. **Voor beelden in deze opslag plaats zijn nog niet bijgewerkt met de Azure SDK voor Java**. Op dit moment roepen deze steek proeven REST-Api's aan in Java-code.|
+| Doel | Koppeling |
+|--------|------|
+| Pakket downloaden | [search.maven.org/artifact/com.azure/azure-search-documents](https://search.maven.org/artifact/com.azure/azure-search-documents) |
+| API-verwijzing | [com.azure.search.documents](/java/api/com.azure.search.documents)  |
+| API-test cases | [github.com/Azure/azure-sdk-for-java/tree/azure-search-documents_11.1.3/sdk/search/azure-search-documents/src/test](https://github.com/Azure/azure-sdk-for-java/tree/azure-search-documents_11.1.3/sdk/search/azure-search-documents/src/test) |
+| Broncode | [github.com/Azure/azure-sdk-for-java/tree/azure-search-documents_11.1.3/sdk/search/azure-search-documents/src](https://github.com/Azure/azure-sdk-for-java/tree/azure-search-documents_11.1.3/sdk/search/azure-search-documents/src)  |
 
-> [!Tip]
-> Gebruik de voor beelden van de [browser](/samples/browse/?languages=java&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
+## <a name="sdk-samples"></a>SDK steekproeven
 
-## <a name="java-sdk-samples"></a>Java SDK-voorbeelden
+Code voorbeelden uit het ontwikkel team van Azure SDK illustreren het gebruik van de API. U kunt deze voor beelden vinden in [**Azure/Azure-SDK-voor-Java/tree/master/SDK/Search/Azure-Search-documenten/src/samples**](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/samples) op github.
 
-De Azure SDK voor Java bevat talloze voor beelden en een [pagina aan](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/search/azure-search-documents/src/samples) de slag die de pakket installatie omvat. De pagina bevat ook een groot aantal voor beelden. Enkele van de meest voorkomende bewerkingen worden hieronder weer gegeven voor uw gemak.
-
-| Voorbeelden | Beschrijving |
+| Voorbeelden | Description |
 |---------|-------------|
 | [Zoek index maken](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/search/azure-search-documents/src/samples/java/com/azure/search/documents/indexes/CreateIndexExample.java) | Laat zien hoe u [zoek indexen](search-what-is-an-index.md)maakt. |
 | [Synoniemen maken](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/search/azure-search-documents/src/samples/java/com/azure/search/documents/SynonymMapsCreateExample.java) | Laat zien hoe u [synoniemen kaarten](search-synonyms.md)maakt.  |
@@ -41,11 +40,22 @@ De Azure SDK voor Java bevat talloze voor beelden en een [pagina aan](https://gi
 | [Documenten laden](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/search/azure-search-documents/src/samples/java/com/azure/search/documents/IndexContentManagementExample.java) | Laat zien hoe u documenten uploadt of samenvoegt in een index in een [gegevens import](search-what-is-data-import.md) bewerking. |
 | [Query syntaxis](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/search/azure-search-documents/src/samples/java/com/azure/search/documents/SearchAsyncWithFullyTypedDocumentsExample.java) | Laat zien hoe u een [eenvoudige query](search-query-overview.md)kunt instellen. |
 
-## <a name="documentation-samples"></a>Documentatievoorbeelden
+## <a name="doc-samples"></a>Doc-voor beelden
 
-De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Search-documentatie](./index.yml).
+Code voorbeelden van het Cognitive Search team illustreren de functies en werk stromen. In veel van deze voor beelden wordt verwezen naar zelf studies, Quick starts en artikelen met procedures. U kunt deze voor beelden vinden in [**Azure-samples/Azure-Search-java-samples**](https://github.com/Azure-Samples/azure-search-java-samples) op github.
 
-| Voorbeelden | Beschrijving | 
+| Voorbeelden | Artikel | 
 |---------|-------------|
-| [Snelstartgids](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/quickstart) | Bron code voor [Quick Start: een zoek index maken in Java](search-get-started-java.md). In dit voor beeld worden de REST-Api's aangeroepen. |
-| [Search-java-indexer-demo](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/search-java-indexer-demo) | Toont een Azure Cosmos DB Indexeer functie in Java. In dit voor beeld worden de REST-Api's aangeroepen. |
+| [Snelstartgids](https://github.com/Azure-Samples/azure-search-java-samples/tree/java-rest-api/quickstart) | Bron code voor [Quick Start: Maak een zoek index in Java en rest](search-get-started-java.md). Dit voor beeld is niet bijgewerkt voor de Java-SDK. Het aanroepen van de REST-Api's. |
+
+> [!Tip]
+> Gebruik de voor beelden van de [browser](/samples/browse/?languages=java&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
+
+## <a name="other-samples"></a>Andere voor beelden
+
+De volgende voor beelden worden ook gepubliceerd door het Cognitive Search-team, maar er wordt niet naar verwezen in de documentatie. Gekoppelde Leesmij-bestanden bieden gebruiks instructies.
+
+| Voorbeelden | Description |
+|---------|-------------|
+| [zoeken-Java-aan de slag](https://github.com/Azure-Samples/azure-search-java-samples/tree/master/search-java-getting-started) | Maakt gebruik van de Java SDK-client bibliotheek om een zoek index te maken, te laden en op te vragen. Dit voor beeld is momenteel zelfstandig. |
+| [Search-java-indexer-demo](https://github.com/Azure-Samples/azure-search-java-samples/tree/java-rest-api/search-java-indexer-demo) | Toont een Azure Cosmos DB Indexeer functie in Java. Dit voor beeld is niet bijgewerkt voor de Java-SDK. Het aanroepen van de REST-Api's.|

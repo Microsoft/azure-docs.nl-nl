@@ -5,12 +5,12 @@ author: naiteeks
 ms.topic: how-to
 ms.author: naiteeks
 ms.date: 12/14/2020
-ms.openlocfilehash: aa8657550c6475afd9f893acf8985c50cec0f199
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 49c17946203bc6c3655b1aaf7b04a1ee3ea67388
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119455"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955646"
 ---
 # <a name="upgrading-live-video-analytics-on-iot-edge-from-10-to-20"></a>Live video Analytics bijwerken op IoT Edge van 1,0 naar 2,0
 
@@ -19,7 +19,7 @@ In dit artikel worden de verschillen beschreven en de verschillende zaken die u 
 ## <a name="change-list"></a>Lijst wijzigen
 
 > [!div class="mx-tdCol4BreakAll"]
-> |Titel|Live video Analytics 1,0|Live video Analytics 2,0|Beschrijving|
+> |Titel|Live video Analytics 1,0|Live video Analytics 2,0|Description|
 > |-------------|----------|---------|---------|
 > |Container installatie kopie|mcr.microsoft.com/media/live-video-analytics:1|mcr.microsoft.com/media/live-video-analytics:2|Micro soft heeft docker-installatie kopieën gepubliceerd voor live video Analytics op Azure IoT Edge|
 > |**MediaGraph-knoop punten** |    |   |   |
@@ -37,7 +37,7 @@ Zoek in uw implementatie sjabloon naar uw live video-analyse op IoT Edge module 
 "image": "mcr.microsoft.com/media/live-video-analytics:2"
 ```
 > [!TIP]
-Als u de naam van de live video Analytics op IoT Edge module niet hebt gewijzigd, zoekt u `lvaEdge` onder het module knooppunt.
+> Als u de naam van de live video Analytics op IoT Edge module niet hebt gewijzigd, zoekt u `lvaEdge` onder het module knooppunt.
 
 ### <a name="topology-file-changes"></a>Wijzigingen in het topologie bestand
 Zorg er in uw topologie bestanden **`apiVersion`** voor dat is ingesteld op 2,0
@@ -58,9 +58,9 @@ Zorg er in uw topologie bestanden **`apiVersion`** voor dat is ingesteld op 2,0
 >De **`outputSelectors`** is een optionele eigenschap. Als deze niet wordt gebruikt, geeft de media grafiek de audio (indien ingeschakeld) en video van de RTSP-camera stroomafwaarts door. 
 
 * `MediaGraphHttpExtension` `MediaGraphGrpcExtension` Houd rekening met de volgende wijzigingen in en processors:  
-    * **Eigenschappen van installatie kopie**
-        * `MediaGraphImageFormatEncoded` wordt niet meer ondersteund. 
-        * Gebruik in plaats daarvan **`MediaGraphImageFormatBmp`** of **`MediaGraphImageFormatJpeg`** of **`MediaGraphImageFormatPng`** . Bijvoorbeeld:
+    #### <a name="image-properties"></a>Eigenschappen van installatie kopie
+    * `MediaGraphImageFormatEncoded` wordt niet meer ondersteund. 
+      * Gebruik in plaats daarvan **`MediaGraphImageFormatBmp`** of **`MediaGraphImageFormatJpeg`** of **`MediaGraphImageFormatPng`** . Bijvoorbeeld:
         ```
         "image": {
                 "scale": 
@@ -94,14 +94,14 @@ Zorg er in uw topologie bestanden **`apiVersion`** voor dat is ingesteld op 2,0
         >[!NOTE]
         > Mogelijke waarden van pixelFormat zijn: `yuv420p` , `rgb565be` , `rgb565le` , `rgb555be` , `rgb555le` , `rgb24` , `bgr24` , `argb` , `rgba` , `abgr` , `bgra`  
 
-    * **extensionConfiguration voor Grpc-extensie processor**  
-        * In `MediaGraphGrpcExtension` processor is een nieuwe eigenschap met de naam **`extensionConfiguration`** beschikbaar. Dit is een optionele teken reeks die kan worden gebruikt als onderdeel van het gRPC-contract. Dit veld kan worden gebruikt om gegevens door te geven aan de server voor afwijzen en u kunt definiëren hoe deze gegevens worden gebruikt door de server voor het afwijzen van interferentie.  
-        Eén use-case van deze eigenschap is wanneer u meerdere AI-modellen hebt ingepakt in één server voor ingrijpen. Met deze eigenschap hoeft u geen knoop punt beschikbaar te maken voor elk AI-model. In plaats daarvan kunt u, voor een exemplaar van een grafiek, definiëren hoe de verschillende AI-modellen moeten worden geselecteerd met behulp van de **`extensionConfiguration`** eigenschap en tijdens de uitvoering. LVA wordt deze teken reeks door gegeven aan de server voor het afwijzen van de bewerking, waarmee het gewenste AI-model kan worden aangeroepen.  
+    #### <a name="extensionconfiguration-for-grpc-extension-processor"></a>extensionConfiguration voor Grpc-extensie processor  
+    * In `MediaGraphGrpcExtension` processor is een nieuwe eigenschap met de naam **`extensionConfiguration`** beschikbaar. Dit is een optionele teken reeks die kan worden gebruikt als onderdeel van het gRPC-contract. Dit veld kan worden gebruikt om gegevens door te geven aan de server voor afwijzen en u kunt definiëren hoe deze gegevens worden gebruikt door de server voor het afwijzen van interferentie.  
+    Eén use-case van deze eigenschap is wanneer u meerdere AI-modellen hebt ingepakt in één server voor ingrijpen. Met deze eigenschap hoeft u geen knoop punt beschikbaar te maken voor elk AI-model. In plaats daarvan kunt u, voor een exemplaar van een grafiek, definiëren hoe de verschillende AI-modellen moeten worden geselecteerd met behulp van de **`extensionConfiguration`** eigenschap en tijdens de uitvoering. LVA wordt deze teken reeks door gegeven aan de server voor het afwijzen van de bewerking, waarmee het gewenste AI-model kan worden aangeroepen.  
 
-    * **AI-compositie**
-        * Live video Analytics 2,0 ondersteunt nu het gebruik van meer dan één media Graph extension-processor binnen een topologie. U kunt de media frames van de RTSP-camera naar verschillende AI-modellen sequentieel, parallel of in een combi natie van beide door geven. Bekijk een voor beeld van een topologie waarin twee AI-modellen opeenvolgend worden gebruikt.
+    #### <a name="ai-composition"></a>AI-compositie
+    * Live video Analytics 2,0 ondersteunt nu het gebruik van meer dan één media Graph extension-processor binnen een topologie. U kunt de media frames van de RTSP-camera naar verschillende AI-modellen sequentieel, parallel of in een combi natie van beide door geven. Bekijk een voor beeld van een topologie waarin twee AI-modellen opeenvolgend worden gebruikt.
 
-
+### <a name="disk-space-management-with-sink-nodes"></a>Schijfruimte beheer met Sink-knoop punten
 * In het knoop punt **Bestands Sink** kunt u nu opgeven hoeveel schijf ruimte de live video-analyse op IOT Edge module kan gebruiken om de verwerkte installatie kopieën op te slaan. Als u dit wilt doen, voegt u het **`maximumSizeMiB`** veld toe aan het knoop punt FileSink. Een voor beeld van een Sink-knoop punt voor bestanden is als volgt:
     ```
     "sinks": [
@@ -154,6 +154,7 @@ Zorg er in uw topologie bestanden **`apiVersion`** voor dat is ingesteld op 2,0
     >[!NOTE]
     >  Het pad naar de **Bestands Sink** is gesplitst in het pad naar de hoofdmap en het bestandsnaam patroon, terwijl het pad naar de hoofdmap van de **Asset-Sink** het pad naar de basismap bevat.  
 
+### <a name="frame-rate-management"></a>Beheer van frame snelheden
 * **`MediaGraphFrameRateFilterProcessor`** is afgeschaft in **Live video Analytics op IoT Edge 2,0** -module.
     * Als u een voor beeld wilt van de inkomende video voor verwerking, voegt **`samplingOptions`** u de eigenschap toe aan de MediaGraph-extensie processors ( `MediaGraphHttpExtension` of `MediaGraphGrpcExtension` ).  
      ```

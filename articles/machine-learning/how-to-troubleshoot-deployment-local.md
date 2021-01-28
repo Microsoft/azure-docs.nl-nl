@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 473b2e4ac3443d204b39331d9cefaa6c71122439
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 225cb8d7bc35491ceefe444664afe175c7f7ea01
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881666"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954932"
 ---
 # <a name="troubleshooting-with-a-local-model-deployment"></a>Problemen oplossen met een lokale model implementatie
 
@@ -25,12 +25,14 @@ Probeer de implementatie van een lokaal model als eerste stap in het oplossen va
 ## <a name="prerequisites"></a>Vereisten
 
 * Een **Azure-abonnement**. Probeer de [gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
-* De [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
-* De [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
-* De [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
-* Als u lokaal fouten wilt opsporen, kunt u model implementeren voor [Azure machine learning Compute-instantie](./how-to-deploy-local-container-notebook-vm.md) of een werkende docker-installatie op uw lokale systeem.
-
-    Als u de docker-installatie wilt controleren, gebruikt u de opdracht `docker run hello-world` vanaf een Terminal of opdracht prompt. Raadpleeg de [docker-documentatie](https://docs.docker.com/)voor meer informatie over het installeren van docker of het oplossen van problemen met docker-fouten.
+* Optie A (**Aanbevolen**): lokaal fouten opsporen in azure machine learning reken exemplaar
+   * Een Azure Machine Learning-werkruimte met een [reken instantie](how-to-deploy-local-container-notebook-vm.md) die wordt uitgevoerd
+* Optie B: lokaal op uw computer fouten opsporen
+   * De [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+   * De [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+   * De [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
+   * Een werkende docker-installatie op uw lokale systeem hebben. 
+   * Als u de docker-installatie wilt controleren, gebruikt u de opdracht `docker run hello-world` vanaf een Terminal of opdracht prompt. Raadpleeg de [docker-documentatie](https://docs.docker.com/)voor meer informatie over het installeren van docker of het oplossen van problemen met docker-fouten.
 
 ## <a name="debug-locally"></a>Lokaal fouten opsporen
 

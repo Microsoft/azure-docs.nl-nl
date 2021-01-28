@@ -6,26 +6,26 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/27/2021
 ms.author: alkohli
-ms.openlocfilehash: 1d4d0c591640a3528b7aeec5254f2a634ee008aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c4fbef807d31e03a79f80db7fd29580074fb8bd
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743672"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955451"
 ---
 # <a name="manage-compute-on-your-azure-stack-edge-pro-gpu"></a>Reken kracht beheren op uw Azure Stack Edge Pro GPU
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-In dit artikel wordt beschreven hoe u Compute beheert op uw Azure Stack Edge Pro. U kunt de compute beheren via de Azure Portal of via de lokale web-UI. Gebruik de Azure Portal om modules, triggers en Compute-configuratie te beheren, en de lokale webinterface voor het beheren van de reken instellingen.
+In dit artikel wordt beschreven hoe u Compute beheert via IoT Edge-service op uw Azure Stack Edge Pro GPU-apparaat. U kunt de compute beheren via de Azure Portal of via de lokale web-UI. Gebruik de Azure Portal om modules, triggers en IoT Edge configuratie te beheren, en de lokale web-UI voor het beheren van de instellingen van het reken netwerk.
 
 In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
 > * Triggers beheren
-> * Reken configuratie beheren
+> * IoT Edge configuratie beheren
 
 
 ## <a name="manage-triggers"></a>Triggers beheren
@@ -40,7 +40,7 @@ Gebeurtenissen zijn de dingen die gebeuren in uw cloudomgeving of op uw apparaat
 
 Voer de volgende stappen uit in de Azure Portal om een trigger te maken.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > trigger**. Selecteer **+ trigger toevoegen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge**. Ga naar **Triggers** en selecteer **+ trigger toevoegen** op de opdracht balk.
 
     ![Trigger toevoegen selecteren](media/azure-stack-edge-j-series-manage-compute/add-trigger-1m.png)
 
@@ -82,32 +82,32 @@ Voer de volgende stappen uit in de Azure Portal om een trigger te verwijderen.
 
 De lijst met triggers-updates om de verwijdering weer te geven.
 
-## <a name="manage-compute-configuration"></a>Reken configuratie beheren
+## <a name="manage-iot-edge-configuration"></a>IoT Edge configuratie beheren
 
 Gebruik de Azure Portal om de compute-configuratie weer te geven, een bestaande Compute-configuratie te verwijderen of de compute-configuratie te vernieuwen om toegangs sleutels voor het IoT-apparaat en IoT Edge apparaat voor uw Azure Stack Edge Pro te synchroniseren.
 
-### <a name="view-compute-configuration"></a>Compute-configuratie weer geven
+### <a name="view-iot-edge-configuration"></a>IoT Edge configuratie weer geven
 
-Voer de volgende stappen uit in de Azure Portal om de reken configuratie voor uw apparaat weer te geven.
+Voer de volgende stappen uit in de Azure Portal om de IoT Edge configuratie voor uw apparaat weer te geven.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > modules**. Selecteer **Compute weer geven** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge**. Nadat de IoT Edge-service op uw apparaat is ingeschakeld, wordt in de pagina overzicht aangegeven dat de IoT Edge-service goed wordt uitgevoerd.
 
     ![Reken proces weer geven selecteren](media/azure-stack-edge-j-series-manage-compute/view-compute-1.png)
 
-2. Noteer de compute-configuratie op het apparaat. Wanneer u Compute hebt geconfigureerd, hebt u een IoT Hub resource gemaakt. Onder die IoT Hub resource worden een IoT-apparaat en een IoT Edge-apparaat geconfigureerd. Alleen de linux-modules worden ondersteund voor uitvoering op het IoT Edge-apparaat.
+2. Ga naar **Eigenschappen** om de IOT Edge configuratie op het apparaat weer te geven. Wanneer u Compute hebt geconfigureerd, hebt u een IoT Hub resource gemaakt. Onder die IoT Hub resource worden een IoT-apparaat en een IoT Edge-apparaat geconfigureerd. Alleen de linux-modules worden ondersteund voor uitvoering op het IoT Edge-apparaat.
 
     ![Configuratie weergeven](media/azure-stack-edge-j-series-manage-compute/view-compute-2.png)
 
 
-### <a name="remove-compute-configuration"></a>Reken configuratie verwijderen
+### <a name="remove-iot-edge-service"></a>IoT Edge-service verwijderen
 
-Voer de volgende stappen uit in de Azure Portal om de bestaande Edge Compute-configuratie voor uw apparaat te verwijderen.
+Voer de volgende stappen uit in de Azure Portal om de bestaande IoT Edge configuratie voor uw apparaat te verwijderen.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > aan de slag**te gaan. Selecteer **reken proces verwijderen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge**. Ga naar **overzicht** en selecteer **verwijderen** op de opdracht balk.
 
     ![Selecteer reken proces verwijderen](media/azure-stack-edge-j-series-manage-compute/remove-compute-1.png)
 
-2. Als u de compute-configuratie verwijdert, moet u uw apparaat opnieuw configureren voor het geval dat u de berekening opnieuw moet gebruiken. Selecteer **Ja**als u om bevestiging wordt gevraagd.
+2. Als u de IoT Edge-service verwijdert, is de actie onomkeerbaar en kan niet ongedaan worden gemaakt. De modules en triggers die u hebt gemaakt, worden ook verwijderd. U moet het apparaat opnieuw configureren voor het geval u IoT Edge opnieuw moet gebruiken. Als u om bevestiging wordt gevraagd, selecteert u **OK**.
 
     ![Selecteer Compute 2 verwijderen](media/azure-stack-edge-j-series-manage-compute/remove-compute-2.png)
 
@@ -121,7 +121,7 @@ Als uw IoT-apparaat en IoT Edge-apparaatklassen zijn geroteerd, moet u de config
 
 Voer de volgende stappen uit in de Azure Portal om de toegangs sleutels voor uw apparaat te synchroniseren.
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **Edge compute > aan de slag**te gaan. Selecteer **configuratie vernieuwen** op de opdracht balk.
+1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge Compute**. Ga naar **overzicht** en selecteer **configuratie vernieuwen** op de opdracht balk.
 
     ![Selecteer configuratie vernieuwen](media/azure-stack-edge-j-series-manage-compute/refresh-configuration-1.png)
 

@@ -1,9 +1,24 @@
 ---
-Titel: Live Events en live output concepten in Azure Media Services V3: Azure Media Services beschrijving: in dit onderwerp vindt u een overzicht van Live Events en live outputs in Azure Media Services v3.
-Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
-
-MS. service: Media-Services MS. workload: media ms.tgt_pltfrm: na MS. devlang: ne MS. topic: conceptuele MS. date: 10/23/2020 MS. Author: inhenkel
-
+title: Concepten van Live Events en live outputs
+description: Dit onderwerp bevat een overzicht van Live Events en live outputs in Azure Media Services v3.
+services: media-services
+documentationcenter: ''
+author: IngridAtMicrosoft
+manager: femila
+editor: ''
+ms.service: media-services
+ms.workload: media
+ms.tgt_pltfrm: na
+ms.devlang: ne
+ms.topic: conceptual
+ms.date: 10/23/2020
+ms.author: inhenkel
+ms.openlocfilehash: 0b223fcedfdead991f7ce374f7f7814749388f90
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955950"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Livegebeurtenissen en live-uitvoer in Media Services
 

@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 197b7ff0a6c613a019007ba507d678b619c9afd4
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.openlocfilehash: ef4381f305292b366348aa3729209dc3f5e8c87b
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358589"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954086"
 ---
 # <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Zelfstudie: Gebruikersinrichting configureren van Workday naar Azure AD
 Het doel van deze zelfstudie is het weergeven van de stappen die u moet uitvoeren om werknemersgegevens van Workday in te richten in Azure Active Directory. 
@@ -25,7 +25,7 @@ Het doel van deze zelfstudie is het weergeven van de stappen die u moet uitvoere
 
 ## <a name="overview"></a>Overzicht
 
-De [Service voor het inrichten van gebruikers in Azure Active Directory](../app-provisioning/user-provisioning.md) integreert met de [Workday Human Resources-API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) om gebruikersaccounts in te richten. De werkstromen voor het inrichten van gebruikers in Workday die worden ondersteund door de Azure AD-service voor het inrichten van gebruikers, maken automatisering mogelijk van de volgende HR-scenario's en scenario's van beheer van identiteitslevenscycli:
+De [service voor het inrichten van gebruikers in Azure Active Directory](../app-provisioning/user-provisioning.md) integreert met de [Workday Human Resources-API](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html) om gebruikersaccounts in te richten. De werkstromen voor het inrichten van gebruikers in Workday die worden ondersteund door de Azure AD-service voor het inrichten van gebruikers, maken automatisering mogelijk van de volgende HR-scenario's en scenario's van beheer van identiteitslevenscycli:
 
 * **Nieuwe medewerkers aannemen**: wanneer een nieuwe werknemer wordt toegevoegd aan Workday, wordt automatisch een gebruikersaccount gemaakt in Azure Active Directory en optioneel in Microsoft 365 en [andere SaaS-toepassingen die worden ondersteund in Azure AD](../app-provisioning/user-provisioning.md), met een write-back van het e-mailadres naar Workday.
 
@@ -113,7 +113,7 @@ In de volgende secties worden de stappen beschreven voor het configureren van ge
 
    * **API-URL van Workday-webservices:** Geef de URL naar het eindpunt van Workday-webservices voor uw tenant op. De URL bepaalt de versie van de Workday-webservices-API die door de connector wordt gebruikt. 
    
-     | URL-indeling | Gebruikte versie van de WWS-API | XPATH-wijzigingen vereist |
+     | URL-indeling | Gebruikte versie van WWS-API | XPATH-wijzigingen vereist |
      |------------|----------------------|------------------------|
      | https://####.workday.com/ccx/service/tenantName | v21.1 | Nee |
      | https://####.workday.com/ccx/service/tenantName/Human_Resources | v21.1 | Nee |
@@ -179,7 +179,7 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van Workday naar Az
 
    * **Deze toewijzing toepassen**
 
-     * **Altijd**: u kunt deze toewijzing toepassen bij het maken en bijwerken van gebruikers
+     * **Altijd**: deze toewijzing toepassen bij het maken en bijwerken van gebruikers.
 
      * **Alleen tijdens het maken van een object**: u kunt deze toewijzing alleen toepassen bij het maken van gebruikers
 
@@ -188,10 +188,10 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van Workday naar Az
 
 ## <a name="enable-and-launch-user-provisioning"></a>Gebruikersinrichting inschakelen en starten
 
-Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inrichtingsservice inschakelen in de Azure Portal.
+Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inrichtingsservice inschakelen in Azure Portal.
 
 > [!TIP]
-> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
+> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of er problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
 
 1. Stel op het tabblad **Inrichten** de optie **Inrichtingsstatus** in op **Aan**.
 
@@ -208,11 +208,11 @@ Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inri
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* [Meer informatie over Azure AD-en workday-integratie scenario's en webservice-aanroepen](../app-provisioning/workday-integration-reference.md)
 * [Informatie over ondersteunde Workday-kenmerken voor inkomende inrichting](../app-provisioning/workday-attribute-reference.md)
 * [Informatie over het configureren van Workday-write-back](workday-writeback-tutorial.md)
 * [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
 * [Informatie over het configureren van eenmalige aanmelding tussen Workday en Azure Active Directory](workday-tutorial.md)
-* [Informatie over het integreren van andere SaaS-toepassingen met Azure Active Directory](tutorial-list.md)
-* [Informatie over het exporteren en importeren van uw inrichtingsconfiguraties](../app-provisioning/export-import-provisioning-configuration.md)
+* [Meer informatie over het exporteren en importeren van uw inrichtingsconfiguraties](../app-provisioning/export-import-provisioning-configuration.md)
 
 

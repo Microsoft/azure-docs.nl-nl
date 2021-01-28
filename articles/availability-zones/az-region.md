@@ -1,18 +1,19 @@
 ---
 title: Azure-services die beschikbaarheidszones ondersteunen
 description: Als u Maxi maal beschik bare en flexibele toepassingen in azure wilt maken, Beschikbaarheidszones u fysiek afzonderlijke locaties bieden die u kunt gebruiken om uw resources uit te voeren.
-author: cynthn
+author: prsandhu
 ms.service: azure
-ms.topic: article
-ms.date: 12/17/2020
-ms.author: cynthn
+ms.topic: conceptual
+ms.date: 01/26/2021
+ms.author: prsandhu
+ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 2a2e4ac57eec866d9857f564d6c76ad4a775d223
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: e8e62d92afb70ec9d4df40f677de05583ef472b0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874605"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955780"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
@@ -58,7 +59,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | VS-West 2        |                |                      |                     |                |
 
 
-Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik bare Services in deze regio's, neemt u contact op met uw micro soft-verkoop-of klant vertegenwoordiger. Zie [Azure-geografi](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)(Engelstalig) voor de aanstaande regio's die Beschikbaarheidszones ondersteunen.
+\* Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik bare Services in deze regio's, neemt u contact op met uw micro soft-verkoop-of klant vertegenwoordiger. Zie [Azure-geografi](https://azure.microsoft.com/en-us/global-infrastructure/geographies/)(Engelstalig) voor de aanstaande regio's die Beschikbaarheidszones ondersteunen.
 
 
 ## <a name="azure-services-supporting-availability-zones"></a>Azure-Services die Beschikbaarheidszones ondersteunen
@@ -143,7 +144,7 @@ Voor meer informatie over de ondersteuning van Beschikbaarheidszones en beschik 
 | Virtual Machines: Ev4-Series                    |      : large_blue_diamond:  |
 | Virtual Machines: Fsv2-Series                   |      : large_blue_diamond:  |
 | Virtual Machines: M-serie                      |      : large_blue_diamond:  |
-| Virtual WAN                                     |      : large_blue_diamond:  |
+| Virtuele WAN                                     |      : large_blue_diamond:  |
 
 
 **Niet-regionale**

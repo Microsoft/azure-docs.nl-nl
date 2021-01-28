@@ -1,5 +1,5 @@
 ---
-title: Word een on-premises encoder partner-Azure Media Services
+title: Een on-premises coderings partner worden
 description: In dit artikel wordt beschreven hoe u on-premises live streaming encoders kunt controleren.
 services: media-services
 author: johndeu
@@ -8,12 +8,12 @@ ms.author: johndeu
 ms.date: 08/31/2020
 ms.topic: how-to
 ms.service: media-services
-ms.openlocfilehash: 1383b6afac9ad2332169328ef71981e23e86bdcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e07831ce4a016d49e0343da66efc0345effafd94
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297447"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954358"
 ---
 # <a name="how-to-verify-your-on-premises-live-streaming-encoder"></a>Uw on-premises live streaming encoder controleren
 

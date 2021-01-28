@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/28/2020
+ms.date: 01/28/2021
 ms.author: allensu
-ms.openlocfilehash: d4ef8e6207d53a192b19f8343a60093e82368fa6
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 5c1f52fda2edfa0a03caa72fcd7fa8dc02d0a607
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223377"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954661"
 ---
 # <a name="designing-virtual-networks-with-nat-gateway-resources"></a>Virtuele netwerken ontwerpen met NAT-gatewayresources
 
@@ -339,6 +339,7 @@ Een SNAT-poort kan na vijf seconden opnieuw worden gebruikt voor hetzelfde doel-
 - NAT is compatibel met een standaard-SKU openbaar IP-adres, openbaar IP-voorvoegsel en load balancer-resources.   Basisresources (bijvoorbeeld load balancer van het type Basic) en alle producten die hiervan zijn afgeleid, zijn niet compatibel met NAT.  Basisresources moeten worden geplaatst op een subnet dat niet is geconfigureerd met NAT.
 - De IPv4-adresfamilie wordt ondersteund.  NAT communiceert niet met een IPv6-adresfamilie.  NAT kan niet worden geïmplementeerd op een subnet met een IPv6-voorvoegsel.
 - NAT kan niet meerdere virtuele netwerken omvatten.
+- IP-fragmentatie wordt niet ondersteund.
 
 ## <a name="suggestions"></a>Suggesties
 

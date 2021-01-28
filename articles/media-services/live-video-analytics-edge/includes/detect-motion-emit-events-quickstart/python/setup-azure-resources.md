@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 40d2f957ce115b43a1dcc138b86e05ec9cc47384
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: c5c1fd202b52c8708ab067ca802481f4d4bb4e27
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060615"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956260"
 ---
 Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 
@@ -26,7 +26,19 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
     bash -c "$(curl -sL https://aka.ms/lva-edge/setup-resources-for-samples)"
     ```
     
-    Als het script is voltooid, ziet u alle vereiste resources in uw abonnement.
+    Als het script is voltooid, ziet u alle vereiste resources in uw abonnement. Er worden in totaal 12 resources door het script ingesteld:
+    1. **Streaming-eind punt** : dit helpt bij het afspelen van het opgenomen AMS-activum.
+    1. **Virtuele machine** : dit is een virtuele machine die zal fungeren als uw edge-apparaat.
+    1. **Schijf** : dit is een opslag schijf die is gekoppeld aan de virtuele machine om media en artefacten op te slaan.
+    1. **Netwerk beveiligings groep** : dit wordt gebruikt voor het filteren van netwerk verkeer naar en van Azure-resources in een virtueel Azure-netwerk.
+    1. **Netwerk interface** : Hierdoor kan een virtuele machine van Azure communiceren met internet, Azure en andere resources.
+    1. **Bastion-verbinding** : Hiermee kunt u verbinding maken met uw virtuele machine met behulp van uw browser en de Azure Portal.
+    1. **Openbaar IP-adres** : Hiermee kunnen Azure-resources communiceren met internet en open bare Azure-Services
+    1. **Virtueel netwerk** : Hiermee kunnen veel soorten Azure-resources, zoals uw virtuele machine, veilig communiceren met elkaar, het internet en on-premises netwerken. Meer informatie over [virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
+    1. **IOT hub** : dit fungeert als een centrale Message hub voor bidirectionele communicatie tussen uw IOT-toepassing, IOT Edge modules en de apparaten die worden beheerd.
+    1. **Media service-account** : dit helpt bij het beheren en streamen van media-inhoud in Azure.
+    1. **Opslag account** : u moet één primair opslag account hebben en u kunt elk gewenst aantal secundaire opslag accounts aan uw Media Services-account koppelen. Raadpleeg [Azure Storage-accounts met Azure Media Services-accounts](https://docs.microsoft.com/azure/media-services/latest/storage-account-concept) voor meer informatie.
+    1. **Container Registry** : dit helpt bij het opslaan en beheren van uw persoonlijke docker-container installatie kopieën en gerelateerde artefacten.
 1. Als het script is voltooid, selecteert u de accolades om de mapstructuur zichtbaar te maken. Er bevinden zich enkele bestanden in de map *~/clouddrive/lva-sample*. Van belang voor deze quickstart zijn:
 
      * * **~/clouddrive/lva-sample/edge-deployment/.env** _: dit bestand bevat eigenschappen die Visual Studio Code gebruikt om modules te implementeren op een edge-apparaat.

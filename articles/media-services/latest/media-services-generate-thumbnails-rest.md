@@ -1,5 +1,5 @@
 ---
-title: Een handtekening sleutel van een beleid ophalen met behulp van Azure Media Services v3 .NET
+title: Miniaturen genereren met behulp van Media Encoder Standard REST
 description: In dit artikel wordt beschreven hoe u REST kunt gebruiken om een Asset te coderen en tegelijkertijd miniaturen te genereren met behulp van Media Encoder Standard.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 75b8fd53836cce02816413afaeb656c3ac3f8796
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: f4456a65f422c23da73f36dd74680fbb598db186
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935400"
+ms.locfileid: "98955831"
 ---
 # <a name="how-to-generate-thumbnails-using-encoder-standard-with-rest"></a>Miniaturen genereren met behulp van coderings standaard met REST
 

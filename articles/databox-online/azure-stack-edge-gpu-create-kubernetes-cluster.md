@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/27/2021
 ms.author: alkohli
-ms.openlocfilehash: 6f6d2b126cd9a0acbbbdb8d17ce7345bbf17b556
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: bf73640c1a4014b61809f407e1873686c229273f
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635905"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954628"
 ---
 # <a name="connect-to-and-manage-a-kubernetes-cluster-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Verbinding maken met en beheren van een Kubernetes-cluster via kubectl op uw Azure Stack Edge Pro GPU-apparaat
 
-Op uw Azure Stack Edge Pro-apparaat wordt een Kubernetes-cluster gemaakt wanneer u een compute-functie configureert. Nadat het Kubernetes-cluster is gemaakt, kunt u via een systeem eigen hulp programma, zoals *kubectl* , verbinding maken met het cluster en het lokaal beheren vanaf een client computer.
+Op uw Azure Stack Edge Pro-apparaat wordt een Kubernetes-cluster gemaakt wanneer u een compute-functie configureert. Nadat het Kubernetes-cluster is gemaakt, kunt u via een systeem eigen hulp programma, zoals *kubectl*, verbinding maken met het cluster en het lokaal beheren vanaf een client computer.
 
 In dit artikel wordt beschreven hoe u verbinding maakt met een Kubernetes-cluster op uw Azure Stack Edge Pro-apparaat en het vervolgens beheert met behulp van *kubectl*. 
 
@@ -165,9 +165,9 @@ U kunt nu uw toepassingen implementeren in de naam ruimte en vervolgens de toepa
 
 ## <a name="remove-kubernetes-cluster"></a>Kubernetes-cluster verwijderen
 
-Als u het Kubernetes-cluster wilt verwijderen, moet u de compute-configuratie verwijderen.
+Als u het Kubernetes-cluster wilt verwijderen, moet u de IoT Edge configuratie verwijderen.
 
-Ga naar [Compute-configuratie verwijderen](azure-stack-edge-j-series-manage-compute.md#remove-compute-configuration)voor gedetailleerde instructies.
+Ga naar [IOT Edge configuratie verwijderen](azure-stack-edge-j-series-manage-compute.md#remove-iot-edge-service)voor gedetailleerde instructies.
    
 
 ## <a name="next-steps"></a>Volgende stappen

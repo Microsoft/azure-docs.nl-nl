@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 6a73ecf18a4bd89567dc603758d9ff8501267a1f
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
-ms.translationtype: HT
+ms.openlocfilehash: a39f7701d0244eff7f914908a6708dfc14873b35
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570032"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954852"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>Zelfstudie: SAP SuccessFactors configureren voor het inrichten van gebruikers in Active Directory
 Het doel van deze zelfstudie is het laten zien van de stappen die nodig zijn om gegevens van werknemers vanuit SuccessFactors Employee Central in te richten in Azure Active Directory, met optionele write-back van e-mailadressen naar SuccessFactors. 
@@ -223,9 +223,8 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van SuccessFactors 
 
 1. In de sectie **Kenmerktoewijzingen** kunt u definiëren hoe afzonderlijke kenmerken van SuccessFactors worden toegewezen aan kenmerken van Active Directory.
 
-  >[!NOTE]
-  >De volledige lijst met kenmerken van SuccessFactors die worden ondersteund door de toepassing vindt u in het artikel over [kenmerken van SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
-
+     >[!NOTE]
+     >De volledige lijst met kenmerken van SuccessFactors die worden ondersteund door de toepassing vindt u in het artikel over [kenmerken van SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
 
 1. Klik op een bestaande kenmerktoewijzing om deze bij te werken, of klik onderaan het scherm op **Nieuwe toewijzing toevoegen** om nieuwe toewijzingen toe te voegen. Een afzonderlijke kenmerktoewijzing ondersteunt de volgende eigenschappen:
 

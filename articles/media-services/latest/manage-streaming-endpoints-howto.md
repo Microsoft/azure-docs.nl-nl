@@ -1,5 +1,5 @@
 ---
-title: Streaming-eind punten beheren met Azure Media Services v3
+title: Streaming-eindpunten beheren
 description: In dit artikel wordt beschreven hoe u streaming-eind punten beheert met Azure Media Services v3.
 services: media-services
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 8d3835d78ec55f120f6b9439aea9c29434e6bd47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d656ce23cf68a1eec23421b769d5847f9b661bb4
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289474"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955899"
 ---
 # <a name="manage-streaming-endpoints-with--media-services-v3"></a>Streaming-eind punten beheren met Media Services v3
 
@@ -55,7 +55,7 @@ Zie voor meer informatie:
     Zie [langlopende bewerkingen](media-services-apis-overview.md)voor meer informatie over het controleren van langlopende bewerkingen.
 * Deze [postman-verzameling](https://github.com/Azure-Samples/media-services-v3-rest-postman/blob/master/Postman/Media%20Services%20v3.postman_collection.json) bevat voor beelden van meerdere rest-bewerkingen, met inbegrip van het starten van een streaming-eind punt.
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken 
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken 
  
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Ga naar uw Azure Media Services-account.

@@ -1,5 +1,5 @@
 ---
-title: Een Azure Media Services taak invoer maken op basis van een HTTPS-URL
+title: Een taak invoer maken op basis van een HTTPS-URL
 description: In dit onderwerp ziet u hoe u een Azure Media Services taak invoer maakt op basis van een HTTPS-URL.
 services: media-services
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: b71262b57e9e07c58eb6b3f6e0506151063d77d5
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1073a13f477894e1b35d732fd1cd6191747a62a2
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895353"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955984"
 ---
 # <a name="create-a-job-input-from-an-https-url"></a>Een taak invoer maken op basis van een HTTPS-URL
 

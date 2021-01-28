@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 64064a584681d84eb6ba023c4777c0fdc4e6ec3d
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 566563dde26d2dd36f4358bc8c6dcdcfb5ba8465
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791927"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954859"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Zelfstudie: X.509-apparaten inrichten met behulp van inschrijvingsgroepen
 
@@ -352,6 +352,9 @@ De stub-code voor de aangepaste HSM in deze zelfstudie bijwerken:
 Op niet-Windows-apparaten kunt u de certificaatketen vanuit de code als het certificaatarchief doorgeven.
 
 Op Windows-apparaten moet u de handtekeningcertificaten (basis en tussenliggend) toevoegen aan een [Windows-certificaatarchief](/windows/win32/secauthn/certificate-stores). Anders worden de handtekeningcertificaten niet naar DPS getransporteerd via een beveiligd kanaal met TLS (Transport Layer Security).
+
+> [!TIP]
+> Het is ook mogelijk om OpenSSL te gebruiken in plaats van een beveiligd kanaal (Schannel) met de C-SDK. Zie [openssl gebruiken in de SDK](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md#using-openssl-in-the-sdk)voor meer informatie over het gebruik van openssl.
 
 Ga als volgt te werk om de handtekeningcertificaten toe te voegen aan het certificaatarchief op Windows-apparaten:
 

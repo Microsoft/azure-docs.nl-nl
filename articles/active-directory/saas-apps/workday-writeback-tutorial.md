@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: chmutali
-ms.openlocfilehash: c65fddcc90b25f70759fb038a72dad0facfa99a9
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.openlocfilehash: 3a623a487dd31caf8c85b18771d90e3a6306df68
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359728"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954001"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-workday"></a>Zelfstudie: Kenmerk-write-back van Azure AD naar Workday configureren
 Het doel van deze zelfstudie is om de stappen te laten zien die u moet uitvoeren voor write-back van kenmerken van Azure AD naar Workday. De inrichtings-app voor write-back van Workday ondersteunt het toewijzen van waarden aan de volgende centrale kenmerken van Workday:
@@ -140,7 +140,7 @@ In deze sectie configureert u hoe write-backkenmerken van Azure AD naar Workday 
 Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inrichtingsservice inschakelen in Azure Portal.
 
 > [!TIP]
-> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
+> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of er problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
 
 1. Stel op het tabblad **Inrichten** de optie **Inrichtingsstatus** in op **Aan**.
 
@@ -172,6 +172,7 @@ Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inri
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* [Meer informatie over Azure AD-en workday-integratie scenario's en webservice-aanroepen](../app-provisioning/workday-integration-reference.md)
 * [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
 * [Informatie over het configureren van eenmalige aanmelding tussen Workday en Azure Active Directory](workday-tutorial.md)
 * [Informatie over het integreren van andere SaaS-toepassingen met Azure Active Directory](tutorial-list.md)

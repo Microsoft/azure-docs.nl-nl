@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 8e83841031593d0d1af4499f3ef9a15400ce7794
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
-ms.translationtype: HT
+ms.openlocfilehash: a34881901fd8642fff9ac37512cd2ef260ad9d1c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569531"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954210"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Zelfstudie: Workday configureren voor automatisch inrichten van gebruikers
 
@@ -157,7 +157,7 @@ In deze stap verleent u aan de beveiligingsgroep machtigingen voor domeinbeveili
 
 1. Zoek en selecteer de beveiligingsgroep die in de vorige stap is gemaakt. 
    >[!div class="mx-imgBorder"]
-   >![Beveiligingsgroep selecteren](./media/workday-inbound-tutorial/select-security-group-msft-wdad.png)
+   >![Beveiligingsgroep selecteren](./media/workday-inbound-tutorial/select-security-group-workday.png)
 
 1. Klik op het weglatingsteken (...) naast de groepsnaam en selecteer in het menu **Beveiligingsgroep > Domeinmachtigingen voor beveiligingsgroep onderhouden**
    >[!div class="mx-imgBorder"]
@@ -228,7 +228,7 @@ In deze stap verleent u aan de beveiligingsgroep machtigingen voor beveiligingsb
 
 ## <a name="provisioning-agent-installation-prerequisites"></a>Installatievereisten voor inrichtingsagent
 
-Raadpleeg de [installatievereisten voor de inrichtingsagent](../cloud-provisioning/how-to-prerequisites.md) voordat u naar het volgende gedeelte gaat. 
+Raadpleeg de [installatievereisten voor de inrichtingsagent](../cloud-sync/how-to-prerequisites.md) voordat u naar het volgende gedeelte gaat. 
 
 ## <a name="configuring-user-provisioning-from-workday-to-active-directory"></a>Inrichting van gebruikers van Workday bij Active Directory configureren
 
@@ -267,7 +267,7 @@ In deze sectie vindt u de stappen voor het inrichten van gebruikersaccounts van 
 
 Als u gebruikers wilt inrichten bij on-premises Active Directory, moet de inrichtingsagent zijn geïnstalleerd op een server met netwerktoegang tot de gewenste Active Directory-domeinen.
 
-Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de stappen die zijn vermeld [in het gedeelte **Agent installeren**](../cloud-provisioning/how-to-install.md) om de configuratie van de agent te voltooien.
+Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de stappen die zijn vermeld [in het gedeelte **Agent installeren**](../cloud-sync/how-to-install.md) om de configuratie van de agent te voltooien.
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory"></a>Deel 3: Connectiviteit met Workday en Active Directory configureren
 In deze stap zetten we een verbinding op met Workday en Active Directory in Azure Portal. 
@@ -336,7 +336,7 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van Workday naar Ac
       * Operator: IS NOT NULL
 
    > [!TIP]
-   > Wanneer u de inrichtings-app voor de eerste keer configureert, moet u de kenmerktoewijzingen en expressies testen en controleren om ervoor te zorgen dat u het gewenste resultaat krijgt. Microsoft adviseert om de bereikfilters onder **Bereik van bronobject** te gebruiken om uw toewijzingen te testen met een aantal testgebruikers van Workday. Wanneer u hebt gecontroleerd of de toewijzingen werken, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
+   > Wanneer u de inrichtings-app voor de eerste keer configureert, moet u de kenmerktoewijzingen en expressies testen en controleren om ervoor te zorgen dat u het gewenste resultaat krijgt. Micro soft raadt aan gebruik te maken van [bereik filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) onder **bron object bereik** en [on-demand inrichting](../app-provisioning/provision-on-demand.md) om uw toewijzingen te testen met een aantal test gebruikers van workday. Wanneer u hebt gecontroleerd of de toewijzingen werken, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
 
    > [!CAUTION] 
    > Het standaardgedrag van de inrichtings-engine is het uitschakelen/verwijderen van gebruikers die buiten het bereik vallen. Dit is mogelijk niet wenselijk in uw integratie van Workday en AD. Als u dit standaardgedrag wilt overschrijven, raadpleegt u het artikel over het [niet verwijderen van gebruikersaccounts die buiten het bereik vallen](../app-provisioning/skip-out-of-scope-deletions.md).
@@ -1065,7 +1065,8 @@ Voor wat betreft het bewaren van gegevens, genereert de inrichtingsservice van A
 
 ## <a name="next-steps"></a>Volgende stappen
 
+* [Meer informatie over Azure AD-en workday-integratie scenario's en webservice-aanroepen](../app-provisioning/workday-integration-reference.md)
 * [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
 * [Informatie over het configureren van eenmalige aanmelding tussen Workday en Azure Active Directory](workday-tutorial.md)
-* [Informatie over het integreren van andere SaaS-toepassingen met Azure Active Directory](tutorial-list.md)
+* [Informatie over het configureren van Workday-write-back](workday-writeback-tutorial.md)
 * [Informatie over het gebruik van Microsoft Graph-API's voor het beheren van inrichtingsconfiguraties](/graph/api/resources/synchronization-overview)

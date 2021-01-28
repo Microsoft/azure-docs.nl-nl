@@ -6,19 +6,19 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 01/27/2021
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 09dddad24794491b53a11f7b0e4347f43f11598b
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: a866c21e067293481a52dd563873892de8b5444c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440481"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955272"
 ---
 # <a name="scenario-any-to-any"></a>Scenario: any-to-any
 
-Wanneer u werkt met virtuele WAN-hub routering, zijn er heel veel beschik bare scenario's. In een wille keurig scenario kan elke spoke een andere spoke bereiken. Als er meerdere hubs bestaan, is hub-naar-hub-route ring (ook wel inter-hub genoemd) standaard ingeschakeld in standaard virtueel WAN. Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor meer informatie over virtuele-hub-route ring.
+Wanneer u werkt met virtuele WAN-hub routering, zijn er heel veel beschik bare scenario's. In een wille keurig scenario kan elke spoke een andere spoke bereiken. Als er meerdere hubs bestaan, is hub-naar-hub-route ring (ook wel inter-hub genoemd) standaard ingeschakeld in standaard virtueel WAN. U kunt deze configuratie maken met verschillende methoden, zoals de Azure Portal, of een [Azure Quick](https://azure.microsoft.com/resources/templates/201-virtual-wan-with-all-gateways/)start-sjabloon. Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor meer informatie over virtuele-hub-route ring. 
 
 ## <a name="design"></a><a name="design"></a>Ontwerp
 
@@ -44,13 +44,13 @@ Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor 
 
 ## <a name="architecture"></a><a name="architecture"></a>Architectuur
 
-In **afbeelding 1**kunnen alle VNets en branches (VPN, EXPRESSROUTE, P2S) elkaar bereiken. In een virtuele hub werken verbindingen als volgt:
+In **afbeelding 1** kunnen alle VNets en branches (VPN, EXPRESSROUTE, P2S) elkaar bereiken. In een virtuele hub werken verbindingen als volgt:
 
 * Een VPN-verbinding verbindt een VPN-site met een VPN-gateway.
 * Een virtuele netwerk verbinding verbindt een virtueel netwerk met een virtuele hub. De router van de virtuele hub biedt de doorvoer functionaliteit tussen VNets.
 * Een ExpressRoute-verbinding verbindt een ExpressRoute-circuit met een ExpressRoute-gateway.
 
-Deze verbindingen (standaard bij het maken) zijn gekoppeld aan de standaard route tabel, tenzij u de routerings configuratie van de verbinding instelt op **geen**of een aangepaste route tabel. Deze verbindingen geven routes ook standaard door aan de standaard route tabel. Dit biedt een wille keurig scenario waarbij elke spoke (VNet, VPN, er, P2S) elkaar kan bereiken.
+Deze verbindingen (standaard bij het maken) zijn gekoppeld aan de standaard route tabel, tenzij u de routerings configuratie van de verbinding instelt op **geen** of een aangepaste route tabel. Deze verbindingen geven routes ook standaard door aan de standaard route tabel. Dit biedt een wille keurig scenario waarbij elke spoke (VNet, VPN, er, P2S) elkaar kan bereiken.
 
 **Afbeelding 1**
 
@@ -58,7 +58,7 @@ Deze verbindingen (standaard bij het maken) zijn gekoppeld aan de standaard rout
 
 ## <a name="workflow"></a><a name="workflow"></a>Werkstroom
 
-Dit scenario is standaard ingeschakeld voor virtuele WAN. Als de instelling voor vertakking-naar-vertakking is uitgeschakeld in de WAN-configuratie, wordt de verbinding tussen vertakkings Spaak niet toegestaan. VPN/ExpressRoute/gebruiker VPN worden beschouwd als vertakkings spaak in virtueel WAN
+Dit scenario is standaard ingeschakeld voor virtuele WAN. Als de instellingen voor vertakking-naar-vertakking zijn uitgeschakeld in de WAN-configuratie, wordt de verbinding tussen vertakkings spokes niet toegestaan. VPN/ExpressRoute/gebruiker VPN worden beschouwd als vertakkings spaak in virtueel WAN
 
 ## <a name="next-steps"></a>Volgende stappen
 

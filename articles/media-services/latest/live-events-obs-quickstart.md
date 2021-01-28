@@ -1,5 +1,5 @@
 ---
-title: Een Azure Media Services-livestream maken met OBS Studio
+title: Een live stream maken met IB Studio
 description: Ontdek hoe u een Azure Media Services-livestream maakt met behulp van de portal en OBS Studio
 services: media-services
 ms.service: media-services
@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.author: inhenkel
 author: IngridAtMicrosoft
 ms.date: 08/31/2020
-ms.openlocfilehash: 04b0ef0d6a480270b1f0a3546319b2608d638677
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 83f072b67f5aa162137a55d2b311dccf0daf7f53
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89265504"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956069"
 ---
 # <a name="create-an-azure-media-services-live-stream-with-obs"></a>Een Azure Media Services-livestream maken met OBS
 

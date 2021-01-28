@@ -1,5 +1,5 @@
 ---
-title: Media Services-en Apple FairPlay-licentie ondersteuning-Azure
+title: Media Services Apple FairPlay-licentie ondersteuning
 description: In dit onderwerp vindt u een overzicht van de vereisten en configuratie van Apple FairPlay-licenties.
 author: IngridAtMicrosoft
 manager: femila
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: a1f93567e2502612ebdf4bc6e67de0138b18657a
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 5a00ba8000f33e8e50b1a5d01f40a68a7fe2442d
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897591"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956188"
 ---
 # <a name="apple-fairplay-license-requirements-and-configuration"></a>Vereisten voor en configuratie van Apple FairPlay-licenties
 

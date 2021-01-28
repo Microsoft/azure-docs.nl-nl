@@ -1,5 +1,5 @@
 ---
-title: Migratie richtlijnen voor Media Services v2 naar v3 voor live streamen
+title: Media Services voor migratie van live streaming
 description: In dit artikel vindt u informatie over het scenario op basis van live streamen, die u de minimale migratie van Azure Media Services versie v2 naar v3 helpt.
 services: media-services
 author: IngridAtMicrosoft
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 02ae0f7e8723e9c4543a4ef681e3a1164b183a7a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 327673d0765fa807f782494562c995278be4782f
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927129"
+ms.locfileid: "98955289"
 ---
 # <a name="live-streaming-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van live streaming
 

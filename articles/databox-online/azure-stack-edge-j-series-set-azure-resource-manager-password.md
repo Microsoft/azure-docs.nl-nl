@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/27/2021
 ms.author: alkohli
-ms.openlocfilehash: 915146cd17b90272daea4ce57f5243baf1d49cb3
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8ecd1a99d41dc1391e6dba129d50eb53a67843d1
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578787"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955338"
 ---
 # <a name="set-azure-resource-manager-password-on-azure-stack-edge-pro-gpu-device"></a>Azure Resource Manager wacht woord instellen op Azure Stack Edge Pro GPU-apparaat
 
@@ -21,53 +21,55 @@ ms.locfileid: "94578787"
 
 In dit artikel wordt beschreven hoe u uw Azure Resource Manager wacht woord instelt. U moet dit wacht woord instellen wanneer u verbinding maakt met de lokale Api's van het apparaat via de Azure Resource Manager.
 
-De procedure voor het instellen van het wachtwoord kan verschillen, afhankelijk van of u de Azure Portal of de PowerShell-cmdlets gebruikt. Elk van deze procedures wordt beschreven in de volgende secties.
+<!--The procedure to set the password can be different depending upon whether you use the Azure portal or the PowerShell cmdlets. Each of these procedures is described in the following sections.-->
 
 
 ## <a name="reset-password-via-the-azure-portal"></a>Wacht woord opnieuw instellen via de Azure Portal
 
-1. Ga in het Azure Portal naar de resource Azure Stack Edge die u hebt gemaakt om uw apparaat te beheren. Ga naar **Edge-rekenproces > Aan de slag**.
-
-2. Selecteer in het rechter deelvenster, in de opdrachtbalk, de optie **Edge ARM-wachtwoord opnieuw instellen**. 
+1. Ga in het Azure Portal naar de resource Azure Stack Edge die u hebt gemaakt om uw apparaat te beheren. Ga naar **Edge-services > Cloud Storage Gateway**.
 
     ![EdgeARM gebruikers wachtwoord 1 opnieuw instellen](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-1.png)
 
-3. Geef op de Blade **EdgeArm gebruikers wachtwoord opnieuw instellen** een wacht woord op om verbinding te maken met de lokale api's van uw apparaat via de Azure Resource Manager. Bevestig het wacht woord en selecteer **opnieuw instellen**.
+2. Selecteer in het rechter deelvenster, in de opdrachtbalk, de optie **Edge ARM-wachtwoord opnieuw instellen**. 
 
     ![EdgeARM gebruikers wachtwoord 2 opnieuw instellen](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-2.png)
 
+3. Geef op de Blade **EdgeArm gebruikers wachtwoord opnieuw instellen** een wacht woord op om verbinding te maken met de lokale api's van uw apparaat via de Azure Resource Manager. Bevestig het wacht woord en selecteer **opnieuw instellen**.
+
+    ![Wacht woord voor EdgeARM gebruikers 3 opnieuw instellen](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-3.png)
 
 
-## <a name="reset-password-via-powershell"></a>Wacht woord opnieuw instellen via Power shell
 
-1. Ga in azure Portal naar de Azure Stack Edge-resource die u hebt gemaakt om uw apparaat te beheren. Noteer de volgende para meters op de pagina **overzicht** .
+<!--## Reset password via PowerShell
 
-    - Resource naam Azure Stack rand
-    - Abonnements-id
+1. In the Azure Portal, go to the Azure Stack Edge resource you created to manage your device. Make a note of the following parameters in the **Overview** page.
 
-2. Ga naar **instellingen > eigenschappen**. Noteer de volgende para meters op de pagina **Eigenschappen** .
+    - Azure Stack Edge resource name
+    - Subscription ID
 
-    - Resourcegroep
-    - CIK-versleutelings sleutel: Selecteer weer gave en kopieer vervolgens de **versleutelings sleutel**.
+2. Go to **Settings > Properties**. Make a note of the following parameters in the **Properties** page.
 
-    ![CIK-coderings sleutel ophalen](media/azure-stack-edge-j-series-set-azure-resource-manager-password/get-cik-portal.png)
+    - Resource group
+    - CIK encryption key: Select view and then copy the **Encryption Key**.
+
+    ![Get CIK encryption key](media/azure-stack-edge-j-series-set-azure-resource-manager-password/get-cik-portal.png)
  
-3. Geef een wacht woord op dat u gaat gebruiken om verbinding te maken met Azure Resource Manager.
+3. Identify a password that you will use to connect to Azure Resource Manager.
 
-4. Start de Cloud shell. Selecteer op het pictogram in de rechter bovenhoek:
+4. Start the cloud shell. Select on the icon in the top right corner:
 
-    ![Cloud shell starten](media/azure-stack-edge-j-series-set-azure-resource-manager-password/start-cloud-shell.png) 
+    ![Start cloud shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/start-cloud-shell.png) 
 
-    Als de Cloud shell is gestart, moet u mogelijk overschakelen naar Power shell.
+    Once the cloud shell has started, you may need to switch to PowerShell.
 
-    ![Cloud Shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/cloud-shell.png)   
+    ![Cloud shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/cloud-shell.png)   
 
 
-5. Context instellen. Type:
+5. Set context. Type:
 
     `Set-AzContext -SubscriptionId <Subscription ID>`
 
-    Hier volgt een voorbeeld van uitvoer:
+    Here is a sample output:
 
     
     ```azurepowershell
@@ -80,11 +82,11 @@ De procedure voor het instellen van het wachtwoord kan verschillen, afhankelijk 
         PS Azure:/
     ```
     
-5.  Als u oude PS-modules hebt, moet u deze installeren.
+5.  If you have any old PS modules, you need to install those.
 
     `Remove-Module  Az.DataBoxEdge -force`
 
-    Hier volgt een voorbeeld uitvoer. In dit voor beeld waren er geen oude modules om te worden geïnstalleerd.
+    Here is a sample output. In this example, there were no old modules to be installed.
 
     
     ```azurepowershell
@@ -99,7 +101,7 @@ De procedure voor het instellen van het wachtwoord kan verschillen, afhankelijk 
         PS Azure:\
     ```
 
-6. Met de volgende reeks opdrachten wordt een script gedownload en uitgevoerd om Power shell-modules te installeren.
+6. Next set of commands will download and run a script to install PowerShell modules.
     
     ```azurepowershell
         cd ~/clouddrive
@@ -108,7 +110,7 @@ De procedure voor het instellen van het wachtwoord kan verschillen, afhankelijk 
         Import-Module ~/clouddrive/Az.DataBoxEdge/Az.DataBoxEdge.psd1 -Force
     ```
 
-7. In de volgende reeks opdrachten moet u de resource naam, de naam van de resource groep, de versleutelings sleutel en het wacht woord opgeven dat u in de vorige stap hebt opgegeven.
+7. In the next set of commands, you'll need to provide the resource name, resource group name, encryption key, and the password you identified in the previous step.
 
     ```azurepowershell
     $devicename = "<Azure Stack Edge resource name>"
@@ -116,18 +118,18 @@ De procedure voor het instellen van het wachtwoord kan verschillen, afhankelijk 
     $cik = "<Encryption key>"
     $password = "<Password>"
     ```
-    De para meters voor wacht woord-en versleutelings sleutel moeten worden door gegeven als beveiligde teken reeksen. Gebruik de volgende cmdlets om het wacht woord en de versleutelings sleutel te converteren naar beveiligde teken reeksen.
+    The password and encryption key parameters must be passed as secure strings. Use the following cmdlets to convert the password and encryption key to secure strings.
 
     ```azurepowershell
     $pass = ConvertTo-SecureString $password -AsPlainText -Force
     $key = ConvertTo-SecureString $cik -AsPlainText -Force
     ```
-    Gebruik de hierboven gegenereerde beveiligde teken reeksen als para meters in de cmdlet Set-AzDataBoxEdgeUser om het wacht woord opnieuw in te stellen. Gebruik dezelfde resource groep die u hebt gebruikt bij het maken van de Azure Stack Edge Pro/Data Box Gateway resource.
+    Use the above generated secure strings as parameters in the Set-AzDataBoxEdgeUser cmdlet to reset the password. Use the same resource group that you used when creating the Azure Stack Edge Pro/Data Box Gateway resource.
 
     ```azurepowershell
     Set-AzDataBoxEdgeUser -ResourceGroupName $resourceGroup -DeviceName $devicename -Name EdgeARMUser  -Password $pass -EncryptionKey $key
     ```
-    Hier volgt een voor beeld van de uitvoer.
+    Here is the sample output.
     
     ```azurepowershell
     PS /home/aseuser/clouddrive> $devicename = "myaseresource"
@@ -144,7 +146,7 @@ De procedure voor het instellen van het wachtwoord kan verschillen, afhankelijk 
     
         PS /home/aseuser/clouddrive>
     ```
-Gebruik het nieuwe wacht woord om verbinding te maken met Azure Resource Manager.
+Use the new password to connect to Azure Resource Manager.-->
 
 ## <a name="next-steps"></a>Volgende stappen
 

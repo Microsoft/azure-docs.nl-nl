@@ -1,17 +1,17 @@
 ---
-title: Door de klant beheerde sleutels of BYOK in de Azure Portal gebruiken
+title: Door de klant beheerde sleutels of BYOK-Portal gebruiken
 description: In deze zelfstudie gebruikt u de Azure Portal om door klant beheerde sleutels in te schakelen of u gebruikt uw eigen sleutel (BYOK) met een Azure Media Services-opslagaccount.
 author: IngridAtMicrosoft
 ms.author: inhenkel
 ms.service: media-services
 ms.topic: tutorial
 ms.date: 10/18/2020
-ms.openlocfilehash: 61df4b3424a4d73eca7a946c6bd8e5160fd6c529
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: e34649162c7a30d4ab43aa068d2c864b5c2d90e0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935382"
+ms.locfileid: "98955697"
 ---
 # <a name="tutorial-use-the-azure-portal-to-use-customer-managed-keys-or-byok-with-media-services"></a>Zelfstudie: De Azure Portal gebruiken om door klant beheerde sleutels of BYOK met Media Services
 

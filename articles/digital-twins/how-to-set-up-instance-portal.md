@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 61b396cbcc8c91c75c961f702de7ed6a33e676e4
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5e0c2541c398f2e135b8763cc753ec8c20c3967d
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947013"
+ms.locfileid: "98953747"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Een Azure Digital Apparaatdubbels-exemplaar en-verificatie (Portal) instellen
 
@@ -56,8 +56,8 @@ Als u meer informatie wilt configureren voor uw exemplaar, worden in de volgende
 
 Hier vindt u de aanvullende opties die u tijdens de installatie kunt configureren, met behulp van de andere tabbladen in het proces **resource maken** .
 
-* **Netwerken**: op dit tabblad kunt u privé-eind punten inschakelen met [persoonlijke Azure-koppelingen](../private-link/private-link-overview.md) om de bloot stelling van open bare netwerken te elimineren voor uw exemplaar. Zie [*How to: private Access inschakelen with private link (Engelstalig*](how-to-enable-private-link.md#add-a-private-endpoint-during-instance-creation)) voor instructies.
-* **Geavanceerd**: op dit tabblad kunt u een door een [systeem beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) inschakelen voor uw exemplaar die kan worden gebruikt bij het door sturen van gebeurtenissen naar [eind punten](concepts-route-events.md). Zie [*How-to: Managed Identities inschakelen voor routerings gebeurtenissen*](how-to-enable-managed-identities.md)voor instructies.
+* **Netwerken**: op dit tabblad kunt u privé-eind punten inschakelen met [persoonlijke Azure-koppelingen](../private-link/private-link-overview.md) om de bloot stelling van open bare netwerken te elimineren voor uw exemplaar. Zie [*How to: private Access inschakelen with private link (preview)*](how-to-enable-private-link.md#add-a-private-endpoint-during-instance-creation)voor instructies.
+* **Geavanceerd**: op dit tabblad kunt u een door een [systeem beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) inschakelen voor uw exemplaar die kan worden gebruikt bij het door sturen van gebeurtenissen naar [eind punten](concepts-route-events.md). Zie [*How-to: Managed Identities inschakelen voor routerings gebeurtenissen (preview)*](how-to-enable-managed-identities.md#add-a-system-managed-identity-during-instance-creation)voor instructies.
 * **Tags**: op dit tabblad kunt u Tags toevoegen aan uw instantie om deze te organiseren onder uw Azure-resources. Zie voor meer informatie over Azure-resource tags [*Label resources, resource groepen en abonnementen voor logische organisatie*](../azure-resource-manager/management/tag-resources.md).
 
 ### <a name="verify-success-and-collect-important-values"></a>Geslaagde pogingen controleren en belang rijke waarden verzamelen

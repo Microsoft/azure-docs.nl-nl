@@ -1,5 +1,5 @@
 ---
-title: Azure Media Services V3 met micro soft PlayReady-licentie sjabloon
+title: Media Services micro soft PlayReady-licentie sjabloon
 description: Meer informatie over Azure Media Services V3 met de PlayReady-licentie sjabloon en het configureren van PlayReady-licenties.
 author: IngridAtMicrosoft
 manager: femila
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0a4b694ca449390e5b2f282f1361f0a455ba5750
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0dc015ee1798bb4b9ce632d11f952178156155d6
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531437"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955182"
 ---
 # <a name="media-services-v3-with-playready-license-template"></a>Media Services V3 met PlayReady-licentie sjabloon
 
@@ -27,7 +27,7 @@ ms.locfileid: "90531437"
 
 Met Azure Media Services kunt u uw inhoud versleutelen met **micro soft PlayReady**. Media Services biedt ook een service voor het leveren van PlayReady-licenties. U kunt Media Services Api's gebruiken om PlayReady-licenties te configureren. Wanneer een speler uw met PlayReady beveiligde inhoud probeert af te spelen, wordt een aanvraag verzonden naar de service voor levering van licenties om een licentie te verkrijgen. Als de licentie service de aanvraag goedkeurt, wordt de licentie die naar de client wordt verzonden, uitgegeven en wordt de opgegeven inhoud gedecodeerd en afgespeeld.
 
-PlayReady-licenties bevatten de rechten en beperkingen die u wilt dat de PlayReady Digital Rights Management (DRM)-runtime wordt afgedwongen wanneer een gebruiker beveiligde inhoud wil afspelen. Hier volgen enkele voor beelden van PlayReady-licentie beperkingen die u kunt opgeven:
+PlayReady-licenties bevatten de rechten en beperkingen die u wilt dat de PlayReady digital rights management (DRM)-runtime wordt afgedwongen wanneer een gebruiker beveiligde inhoud wil afspelen. Hier volgen enkele voor beelden van PlayReady-licentie beperkingen die u kunt opgeven:
 
 * De datum en tijd waarop de licentie geldig is.
 * De waarde voor datum/tijd wanneer de licentie verloopt. 

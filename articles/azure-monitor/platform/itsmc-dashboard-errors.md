@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/18/2021
-ms.openlocfilehash: c3e6408a6a3473380edbe2966eba41970bd73562
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: be6d47d8f40746bfb2154ddb62cf2e9ce93e74aa
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762759"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955680"
 ---
 # <a name="errors-in-the-connector-status-section"></a>Fouten in de sectie connector status
 
@@ -66,6 +66,10 @@ In deze sectie vindt u de algemene fouten die worden weer gegeven in de sectie c
 
 * **Fout**: er is iets verkeerd gegaan. Kan geen verbindings gegevens ophalen. " Deze fout wordt weer gegeven wanneer de klant ITSM-actie groep definieert.
 
-    **Oorzaak**: nieuw gemaakte ITSM-connector heeft nog de eerste synchronisatie voltooid.
+    **Oorzaak**: een dergelijke fout wordt weer gegeven wanneer:
+    * De zojuist gemaakte ITSM-connector heeft nog de eerste synchronisatie voltooid.
+    * De connector is niet juist gedefinieerd
 
-    **Oplossing**: wanneer er een nieuwe ITSM-connector wordt gemaakt, wordt ITSM-connector de synchronisatie van gegevens vanuit ITSM-systeem gestart, zoals werk item sjablonen en werk items. Synchroniseer de ITSM-connector om een nieuw vernieuwings token te genereren, zoals [hier](./itsmc-resync-servicenow.md)wordt uitgelegd.
+    **Oplossing**: 
+    * Wanneer er een nieuwe ITSM-connector wordt gemaakt, begint ITSM-connector met het synchroniseren van gegevens van ITSM systeem, zoals werk-item sjablonen en werk items. Synchroniseer de ITSM-connector om een nieuw vernieuwings token te genereren, zoals [hier](./itsmc-resync-servicenow.md)wordt uitgelegd.
+    * Controleer de verbindings gegevens in de ITSM-connector, zoals [hier](./itsmc-connections-servicenow.md#create-a-connection) wordt uitgelegd en controleer of uw ITSM-connector kan worden [gesynchroniseerd](./itsmc-resync-servicenow.md).

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: dbd7937667a3c4d5af9f13e15cdd4ff2081241f0
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0e993cb1e53645f7081a20fc6a2785b8cfef1cce
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98723877"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954176"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Verbinding maken met Azure Data Factory en Azure controle sfeer liggen
 
@@ -69,12 +69,22 @@ Volg de onderstaande stappen om een bestaand Data Factory accounts te koppelen a
 >[!Note]
 >We bieden nu ondersteuning voor het toevoegen van niet meer dan 10 gegevens fabrieken tegelijk. Als u meer dan 10 gegevens fabrieken tegelijk wilt toevoegen, kunt u een ondersteunings ticket indienen.
 
+### <a name="how-does-the-authentication-work"></a>Hoe werkt de verificatie?
+
+Wanneer een controle sfeer liggen-gebruiker een Data Factory registreert waartoe hij of zij toegang heeft, gebeurt het volgende in de back-end:
+
+1. De **Data Factory MSI** wordt toegevoegd aan de controle sfeer liggen RBAC-rol: **controle sfeer liggen data curator**.
+
+    :::image type="content" source="./media/how-to-link-azure-data-factory/adf-msi.png" alt-text="Scherm opname met Azure Data Factory MSI." lightbox="./media/how-to-link-azure-data-factory/adf-msi.png":::
+     
+2. De Data Factory-pijp lijn moet opnieuw worden uitgevoerd, zodat de afkomst-meta gegevens terug kunnen worden gepusht naar controle sfeer liggen.
+3. Uitvoering na de Data Factory de meta gegevens worden gepusht naar controle sfeer liggen.
 
 ### <a name="remove-data-factory-connections"></a>data factory verbindingen verwijderen
 Ga als volgt te werk om een data factory verbinding te verwijderen:
 
 1. Selecteer op de pagina **Data Factory verbinding** de knop **verwijderen** naast een of meer Data Factory verbindingen.
-1. Selecteer **bevestigen** in het pop-upvenster om de geselecteerde Data Factory verbindingen te verwijderen.
+2. Selecteer **bevestigen** in het pop-upvenster om de geselecteerde Data Factory verbindingen te verwijderen.
 
     :::image type="content" source="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png" alt-text="Scherm afbeelding die laat zien hoe u gegevens fabrieken selecteert om verbinding te verwijderen." lightbox="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png":::
 
@@ -99,7 +109,7 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 
 | Systeem voor gegevens opslag | Ondersteund als bron | Ondersteund als Sink |
 | ------------------- | ------------------- | ----------------- |
-| ADLS Gen1 | Ja | Ja (alleen niet-binaire kopie) |
+| ADLS Gen1 | Yes | Ja (alleen niet-binaire kopie) |
 | ADLS Gen2 | Ja | Ja |
 | Azure Blob | Ja | Ja |
 | Azure Cosmos DB (SQL-API) | Ja | Ja |
@@ -128,24 +138,24 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 
 | Systeem voor gegevens opslag | Ondersteund |
 | ------------------- | ------------------- | ----------------- |
-| ADLS Gen1 | Ja |
-| ADLS Gen2 | Ja |
-| Azure Blob | Ja |
-| Azure SQL Database \* | Ja |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Ja |
+| ADLS Gen1 | Yes |
+| ADLS Gen2 | Yes |
+| Azure Blob | Yes |
+| Azure SQL Database \* | Yes |
+| Azure Synapse Analytics (voorheen SQL DW) \* | Yes |
 
 ### <a name="data-factory-execute-ssis-package-support"></a>Ondersteuning voor het uitvoeren van SSIS-pakketten Data Factory
 
 | Systeem voor gegevens opslag | Ondersteund |
 | ------------------- | ------------------- | ----------------- |
-| Azure Blob | Ja |
-| ADLS Gen1 | Ja |
-| ADLS Gen2 | Ja |
-| Azure SQL Database \* | Ja |
-| Azure SQL MI \*| Ja |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Ja |
-| On-premises SQL Server \* | Ja |
-| Azure File Storage | Ja |
+| Azure Blob | Yes |
+| ADLS Gen1 | Yes |
+| ADLS Gen2 | Yes |
+| Azure SQL Database \* | Yes |
+| Azure SQL MI \*| Yes |
+| Azure Synapse Analytics (voorheen SQL DW) \* | Yes |
+| On-premises SQL Server \* | Yes |
+| Azure File Storage | Yes |
 
 *\* Voor SQL-scenario's (Azure en on-premises) biedt Azure controle sfeer liggen geen ondersteuning voor opgeslagen procedures of scripts voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 

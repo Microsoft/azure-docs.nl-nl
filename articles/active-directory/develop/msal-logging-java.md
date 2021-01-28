@@ -13,12 +13,12 @@ ms.date: 01/25/2021
 ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: cc4cc9394e957caa96f1333e5e3dfdbd68d3edb8
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: d3fa13a6751b2d8acf1fc99aecbf174f1823fb0b
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763422"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954915"
 ---
 # <a name="logging-in-msal-for-java"></a>Logboekregistratie in MSAL voor Java
 

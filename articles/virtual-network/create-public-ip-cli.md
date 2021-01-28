@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 70fb502e45a6cdcc196f5fb97ee4c8c59ba6c27d
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 4d2f339f5a1339b5f249172170fed54c91f1dc24
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223530"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927184"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-cli"></a>Snelstartgids: een openbaar IP-adres maken met behulp van Azure CLI
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u een open bare IP-adres bron maakt met behu
 
 Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
-Maak een resource groep met [AZ Group Create](/cli/azure/group?view=azure-cli-latest#az-group-create) named **myResourceGroup** in de **eastus2** -locatie.
+Maak een resource groep met [AZ Group Create](/cli/azure/group#az-group-create) named **myResourceGroup** in de **eastus2** -locatie.
 
 ```azurecli-interactive
   az group create \
@@ -46,7 +46,7 @@ Maak een resource groep met [AZ Group Create](/cli/azure/group?view=azure-cli-la
 >[!NOTE]
 >De volgende opdracht werkt voor API-versie 2020-08-01 of hoger.  Raadpleeg [resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md)voor meer informatie over de API-versie die momenteel wordt gebruikt.
 
-Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een standaard zone-REDUNDANT openbaar IP-adres te maken met de naam **myStandardZRPublicIP** in **myResourceGroup**.
+Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) om een standaard zone-REDUNDANT openbaar IP-adres te maken met de naam **myStandardZRPublicIP** in **myResourceGroup**.
 
 ```azurecli-interactive
   az network public-ip create \
@@ -76,7 +76,7 @@ Houd er rekening mee dat de bovenstaande opties voor zones alleen geldige select
 >[!NOTE]
 >De volgende opdracht werkt voor API-versie 2020-08-01 of hoger.  Raadpleeg [resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md)voor meer informatie over de API-versie die momenteel wordt gebruikt.
 
-Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een standaard openbaar IP-adres te maken als een niet-zonegebonden resource met de naam **myStandardPublicIP** in **myResourceGroup**.
+Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) om een standaard openbaar IP-adres te maken als een niet-zonegebonden resource met de naam **myStandardPublicIP** in **myResourceGroup**.
 
 ```azurecli-interactive
   az network public-ip create \
@@ -88,7 +88,7 @@ Deze selectie is geldig in alle regio's en is de standaard selectie voor standaa
 
 # <a name="basic-sku"></a>[**Basis-SKU**](#tab/option-create-public-ip-basic)
 
-Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een eenvoudig, statisch openbaar IP-adres te maken met de naam **myBasicPublicIP** in **myResourceGroup**.  Algemene open bare Ip's hebben niet het concept van beschikbaarheids zones.
+Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) om een eenvoudig, statisch openbaar IP-adres te maken met de naam **myBasicPublicIP** in **myResourceGroup**.  Algemene open bare Ip's hebben niet het concept van beschikbaarheids zones.
 
 ```azurecli-interactive
   az network public-ip create \

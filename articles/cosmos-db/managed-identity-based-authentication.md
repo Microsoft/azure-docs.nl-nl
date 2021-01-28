@@ -9,12 +9,12 @@ ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cfef6ce0fb38f074f854d5ceb77677843e44b91b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 4d9845fad8c9013bd20499c45a8d1714e30e9dbf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345726"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927409"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Door het systeem toegewezen beheerde identiteiten gebruiken om toegang te krijgen tot Azure Cosmos DB gegevens
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,7 +31,7 @@ In deze stap wijst u een door het systeem toegewezen beheerde identiteit toe aan
 
 1. Open in het [Azure Portal](https://portal.azure.com/)het deel venster **Azure** en ga naar uw functie-app. 
 
-1. Open het tabblad identiteit van **platform functies**  >  **Identity** : 
+1. Open het tabblad identiteit van **platform functies**  >   : 
 
    :::image type="content" source="./media/managed-identity-based-authentication/identity-tab-selection.png" alt-text="Scherm opname van platform functies en identiteits opties voor de functie-app.":::
 
@@ -130,7 +130,7 @@ namespace Monitor
 }
 ```
 
-U gebruikt de bibliotheek [micro soft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) om het door het systeem toegewezen beheerde identiteits token op te halen. `Microsoft.Azure.Service.AppAuthentication`Zie het artikel [service-naar-service-verificatie](../key-vault/general/service-to-service-authentication.md) voor meer informatie over andere manieren om het token op te halen en meer te weten te komen over de-bibliotheek.
+U gebruikt de bibliotheek [micro soft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) om het door het systeem toegewezen beheerde identiteits token op te halen. `Microsoft.Azure.Service.AppAuthentication`Zie het artikel [service-naar-service-verificatie](/dotnet/api/overview/azure/service-to-service-authentication) voor meer informatie over andere manieren om het token op te halen en meer te weten te komen over de-bibliotheek.
 
 
 ```csharp

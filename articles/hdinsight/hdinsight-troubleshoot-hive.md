@@ -3,17 +3,14 @@ title: Problemen met hive oplossen met behulp van Azure HDInsight
 description: Krijg antwoorden op veelgestelde vragen over het werken met Apache Hive en Azure HDInsight.
 keywords: Azure HDInsight, Hive, veelgestelde vragen, gids voor probleem oplossing, veelgestelde vragen
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: f1a26e3323e4d1db2e9b2bda9afaa2756307749b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: a76974b8daddf225b0d9b8b581475d657322847e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288966"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931445"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Problemen met Apache Hive oplossen met behulp van Azure HDInsight
 
@@ -120,17 +117,17 @@ In de code in de oplossings stappen wordt ervan uitgegaan dat de gegevens paden 
    U moet een voorbeeld programma als eerste argument opgeven.
 
    Geldige programma namen zijn:
-    - **ContainerReuseAnalyzer** : Details van de printer container opnieuw gebruiken in een dag
-    - **CriticalPath** : het kritieke pad van een dag zoeken
-    - **LocalityAnalyzer** : Details van de lokale locatie in een dag afdrukken
-    - **ShuffleTimeAnalyzer** : de details van de wille keurige tijd in een dag analyseren
-    - **SkewAnalyzer** : de hellen-Details in een dag analyseren
-    - **SlowNodeAnalyzer** : Details van knoop punten in een dag afdrukken
-    - **SlowTaskIdentifier** : trage taak Details in een dag afdrukken
-    - **SlowestVertexAnalyzer** : het langzaamst vertex Details in een dag afdrukken
-    - **SpillAnalyzer** : Details over overloop afdrukken in een dag
-    - **TaskConcurrencyAnalyzer** : de details van de taak gelijktijdig in een dag afdrukken
-    - **VertexLevelCriticalPathAnalyzer** : het kritieke pad op het hoek punt in een dag zoeken
+    - **ContainerReuseAnalyzer**: Details van de printer container opnieuw gebruiken in een dag
+    - **CriticalPath**: het kritieke pad van een dag zoeken
+    - **LocalityAnalyzer**: Details van de lokale locatie in een dag afdrukken
+    - **ShuffleTimeAnalyzer**: de details van de wille keurige tijd in een dag analyseren
+    - **SkewAnalyzer**: de hellen-Details in een dag analyseren
+    - **SlowNodeAnalyzer**: Details van knoop punten in een dag afdrukken
+    - **SlowTaskIdentifier**: trage taak Details in een dag afdrukken
+    - **SlowestVertexAnalyzer**: het langzaamst vertex Details in een dag afdrukken
+    - **SpillAnalyzer**: Details over overloop afdrukken in een dag
+    - **TaskConcurrencyAnalyzer**: de details van de taak gelijktijdig in een dag afdrukken
+    - **VertexLevelCriticalPathAnalyzer**: het kritieke pad op het hoek punt in een dag zoeken
 
 ### <a name="additional-reading"></a>Meer artikelen
 

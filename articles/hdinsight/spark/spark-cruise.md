@@ -1,22 +1,19 @@
 ---
 title: SparkCruise gebruiken in azure HDInsight om Apache Spark query's te versnellen
 description: Meer informatie over hoe u het SparkCruise-optimalisatie platform kunt gebruiken om de efficiëntie van Apache Spark query's te verbeteren.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.openlocfilehash: 1a73b4707f83d6a23dffc20d95aa7b8a0fa465b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f07ea3007d2e72c179abe38cca56178b564bc231
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88649054"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928273"
 ---
 # <a name="sparkcruise-on-azure-hdinsight"></a>SparkCruise op Azure HDInsight
 
-In dit document wordt de functie *SparkCruise*van Azure HDInsight beschreven, waarmee automatisch Apache Spark berekeningen worden gebruikt om de efficiëntie van query's te verhogen.
+In dit document wordt de functie *SparkCruise* van Azure HDInsight beschreven, waarmee automatisch Apache Spark berekeningen worden gebruikt om de efficiëntie van query's te verhogen.
 
 ## <a name="overview"></a>Overzicht
 

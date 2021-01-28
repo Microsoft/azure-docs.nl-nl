@@ -3,16 +3,16 @@ title: Controles voor naleving van Azure Policy-regelgeving voor Azure Data Lake
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Data Lake Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
 ms.date: 01/25/2021
 ms.topic: sample
-author: hrasheed-msft
-ms.author: hrasheed
+author: JasonWHowell
+ms.author: jasonh
 ms.service: data-lake-analytics
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 34657d1bb7c55f11dbfe3a7a42d14e2b6f2cc1cf
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 17a9a7e21f0add8bd7e448e73ddab955c5756770
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98795725"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928402"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-data-lake-analytics"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Data Lake Analytics
 

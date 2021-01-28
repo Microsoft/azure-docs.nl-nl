@@ -7,17 +7,17 @@ ms.subservice: cosmosdb-mongo
 ms.topic: troubleshooting
 ms.date: 12/01/2020
 ms.author: thvankra
-ms.openlocfilehash: c969e4fac3ae30088cfe47a7b0edff22c578cb8b
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 75ce307056d24f84e9f72f746eb77b09b89e21b2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802351"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927491"
 ---
 # <a name="troubleshoot-common-issues-in-azure-cosmos-db-cassandra-api"></a>Veelvoorkomende problemen in Azure Cosmos DB Cassandra-API oplossen
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
-Cassandra-API in Azure Cosmos DB is een compatibiliteits laag, die [ondersteuning](cassandra-support.md) biedt voor wire-protocol voor de populaire open-source Apache Cassandra-data base, en wordt aangestuurd door [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction). Als volledig beheerde Cloud-eigen service biedt Azure Cosmos DB [garanties op het Beschik baarheid, door Voer en de consistentie](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_3/) van Cassandra-API. Deze garanties zijn niet mogelijk in verouderde implementaties van Apache Cassandra. Cassandra-API vereenvoudigt ook de platform bewerkingen voor nul-onderhoud en zero-downtime-patches. Als zodanig zijn veel van de back-end-bewerkingen verschillen van Apache Cassandra, daarom raden we specifieke instellingen en benaderingen aan om veelvoorkomende fouten te voor komen. 
+Cassandra-API in Azure Cosmos DB is een compatibiliteits laag, die [ondersteuning](cassandra-support.md) biedt voor wire-protocol voor de populaire open-source Apache Cassandra-data base, en wordt aangestuurd door [Azure Cosmos DB](./introduction.md). Als volledig beheerde Cloud-eigen service biedt Azure Cosmos DB [garanties op het Beschik baarheid, door Voer en de consistentie](https://azure.microsoft.com/support/legal/sla/cosmos-db/v1_3/) van Cassandra-API. Deze garanties zijn niet mogelijk in verouderde implementaties van Apache Cassandra. Cassandra-API vereenvoudigt ook de platform bewerkingen voor nul-onderhoud en zero-downtime-patches. Als zodanig zijn veel van de back-end-bewerkingen verschillen van Apache Cassandra, daarom raden we specifieke instellingen en benaderingen aan om veelvoorkomende fouten te voor komen. 
 
 In dit artikel worden veelvoorkomende fouten en oplossingen beschreven voor toepassingen die Azure Cosmos DB Cassandra-API gebruiken.
 
@@ -97,4 +97,3 @@ datastax-java-driver {
 
 - Meer informatie over de [ondersteunde functies](cassandra-support.md) in azure Cosmos DB Cassandra-API.
 - Meer informatie over het [migreren van systeem eigen Apache Cassandra naar Azure Cosmos DB Cassandra-API](cassandra-migrate-cosmos-db-databricks.md)
-

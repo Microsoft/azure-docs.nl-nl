@@ -2,26 +2,20 @@
 title: Uw eigen sleutel configureren voor het versleutelen van Azure Service Bus gegevens in rust
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Service Bus gegevens rest.
 ms.topic: conceptual
-ms.date: 06/23/2020
-ms.openlocfilehash: 3e8f3a599ee5fe40c85a93dd58d36e6cd611c9ea
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.date: 01/26/2021
+ms.openlocfilehash: 132ee3883b818dcc5a5d8e0cc7b372daee41e273
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631763"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928095"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-service-bus-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels configureren voor het versleutelen van Azure Service Bus gegevens op rest door gebruik te maken van de Azure Portal
-Azure Service Bus Premium zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). Service Bus Premium is afhankelijk van Azure Storage om de gegevens op te slaan en de standaard instelling is dat alle gegevens die zijn opgeslagen met Azure Storage, worden versleuteld met door micro soft beheerde sleutels. 
+Azure Service Bus Premium zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). Service Bus Premium gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage, worden versleuteld met door micro soft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door micro soft beheerde sleutel, maar wordt de door micro soft beheerde sleutel versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels maken, draaien, uitschakelen en intrekken die worden gebruikt voor het versleutelen van door micro soft beheerde sleutels. Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor uw naam ruimte.
 
-## <a name="overview"></a>Overzicht
-Azure Service Bus ondersteunt nu de optie voor het versleutelen van gegevens in rust met door micro soft beheerde sleutels of door de klant beheerde sleutels (Bring Your Own Key-BYOK). met deze functie kunt u toegang tot de door de klant beheerde sleutels maken, draaien, uitschakelen en intrekken die worden gebruikt voor het versleutelen van Azure Service Bus op rest.
-
-Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor uw naam ruimte.
-
-> [!NOTE]
-> Er zijn enkele voor behoud van de door de klant beheerde sleutel voor versleuteling aan de service zijde. 
->   * Deze functie wordt ondersteund door [Azure service bus Premium](service-bus-premium-messaging.md) -laag. Het kan niet worden ingeschakeld voor de standaardlaag Service Bus naam ruimten.
->   * De versleuteling kan alleen worden ingeschakeld voor nieuwe of lege naam ruimten. Als de naam ruimte alle wacht rijen of onderwerpen bevat, mislukt de versleutelings bewerking.
+Er zijn enkele voor behoud van de door de klant beheerde sleutel voor versleuteling aan de service zijde. 
+- Deze functie wordt ondersteund door [Azure service bus Premium](service-bus-premium-messaging.md) -laag. Het kan niet worden ingeschakeld voor de standaardlaag Service Bus naam ruimten.
+- De versleuteling kan alleen worden ingeschakeld voor nieuwe of lege naam ruimten. Als de naam ruimte alle wacht rijen of onderwerpen bevat, mislukt de versleutelings bewerking.
 
 U kunt Azure Key Vault gebruiken voor het beheren van uw sleutels en het controleren van uw sleutel gebruik. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
 
@@ -70,13 +64,13 @@ Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de kla
         > [!NOTE]
         > U kunt Maxi maal drie sleutels toevoegen voor redundantie. In het geval dat een van de sleutels is verlopen of niet toegankelijk is, worden de andere sleutels gebruikt voor versleuteling.
         
-    1. Vul de Details voor de sleutel in en klik op **selecteren**. Dit zorgt ervoor dat de versleuteling van gegevens in rust in de naam ruimte met een door de klant beheerde sleutel. 
+    1. Vul de Details voor de sleutel in en klik op **selecteren**. Hiermee wordt de versleuteling van de door micro soft beheerde sleutel met uw sleutel (door de klant beheerde sleutel) ingeschakeld. 
 
 
     > [!IMPORTANT]
-    > Als u een door de klant beheerde sleutel en geo-nood herstel wilt gebruiken, raadpleegt u de onderstaande- 
+    > Als u een door de klant beheerde sleutel en geo-nood herstel wilt gebruiken, raadpleegt u deze sectie. 
     >
-    > Voor het inschakelen van versleuteling in rust met door de klant beheerde sleutel, wordt een [toegangs beleid](../key-vault/general/secure-your-key-vault.md) ingesteld voor de service bus beheerde identiteit op de opgegeven Azure-hoofd kluis. Dit zorgt voor gecontroleerde toegang tot de Azure-sleutel kluis vanuit de Azure Service Bus naam ruimte.
+    > Voor het inschakelen van versleuteling van door micro soft beheerde sleutels met een door de klant beheerde sleutel, wordt een [toegangs beleid](../key-vault/general/secure-your-key-vault.md) ingesteld voor de service bus beheerde identiteit op de opgegeven Azure-hoofd kluis. Dit zorgt voor gecontroleerde toegang tot de Azure-sleutel kluis vanuit de Azure Service Bus naam ruimte.
     >
     > Vanwege dit:
     > 

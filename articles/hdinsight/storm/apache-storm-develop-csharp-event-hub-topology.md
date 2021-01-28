@@ -1,19 +1,16 @@
 ---
 title: Gebeurtenissen verwerken van Event Hubs met Storm-Azure HDInsight
 description: Meer informatie over het verwerken van gegevens van Azure Event Hubs met een C# Storm-topologie die is gemaakt in Visual Studio, met behulp van de HDInsight-hulpprogram ma's voor Visual Studio.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dac56059455a75f4d64a698c416dc22793432bc8
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 4393c6797f5a164a063b55f8994d7d37d278f3c4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545596"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929197"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Gebeurtenissen uit Azure Event Hubs verwerken met Apache Storm in HDInsight (C#)
 
@@ -43,10 +40,10 @@ Micro soft biedt een set Java-onderdelen die kunnen worden gebruikt om te commun
 
 De volgende onderdelen worden gebruikt in dit voor beeld:
 
-* __EventHubSpout__ : gegevens uit Event hubs worden gelezen.
-* __EventHubBolt__ : schrijft gegevens naar Event hubs.
-* __EventHubSpoutConfig__ : wordt gebruikt voor het configureren van EventHubSpout.
-* __EventHubBoltConfig__ : wordt gebruikt voor het configureren van EventHubBolt.
+* __EventHubSpout__: gegevens uit Event hubs worden gelezen.
+* __EventHubBolt__: schrijft gegevens naar Event hubs.
+* __EventHubSpoutConfig__: wordt gebruikt voor het configureren van EventHubSpout.
+* __EventHubBoltConfig__: wordt gebruikt voor het configureren van EventHubBolt.
 
 ### <a name="example-spout-usage"></a>Voor beeld van Spout-gebruik
 
@@ -99,7 +96,7 @@ U kunt een volledige versie downloaden van het project dat in dit artikel is gem
 
 ### <a name="prerequisites"></a>Vereisten
 
-* Een Apache Storm-cluster in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van de Azure-portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **Storm** voor **Clustertype** .
+* Een Apache Storm-cluster in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van de Azure-portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **Storm** voor **Clustertype**.
 
 * Een [Azure-Event hub](../../event-hubs/event-hubs-create.md).
 
@@ -122,7 +119,7 @@ Maak een map `eventhubspout` met de naam en sla het bestand op in de map.
 
 Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de sectie ' een Event Hub maken ' van aan de [slag met Event hubs](../../event-hubs/event-hubs-create.md).
 
-1. Nadat de Event Hub is gemaakt, bekijkt u de instellingen voor **EventHub** in de Azure Portal en selecteert u **beleid voor gedeelde toegang** . Selecteer **+ toevoegen** om het volgende beleid te maken:
+1. Nadat de Event Hub is gemaakt, bekijkt u de instellingen voor **EventHub** in de Azure Portal en selecteert u **beleid voor gedeelde toegang**. Selecteer **+ toevoegen** om het volgende beleid te maken:
 
    | Naam | Machtigingen |
    | --- | --- |
@@ -139,7 +136,7 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 2. Down load de oplossing van [eventhub-Storm-hybride](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub).
 
-3. Open **EventHubExample. SLN** . Open het **App.config** -bestand in het project **EventHubWriter** . Gebruik de informatie uit de Event Hub die u eerder hebt geconfigureerd om de waarde voor de volgende sleutels in te vullen:
+3. Open **EventHubExample. SLN**. Open het **App.config** -bestand in het project **EventHubWriter** . Gebruik de informatie uit de Event Hub die u eerder hebt geconfigureerd om de waarde voor de volgende sleutels in te vullen:
 
    | Sleutel | Waarde |
    | --- | --- |
@@ -155,7 +152,7 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 1. Open het **EventHubReader** -project.
 
-2. Open het **App.config** -bestand voor de **EventHubReader** . Gebruik de informatie uit de Event Hub die u eerder hebt geconfigureerd om de waarde voor de volgende sleutels in te vullen:
+2. Open het **App.config** -bestand voor de **EventHubReader**. Gebruik de informatie uit de Event Hub die u eerder hebt geconfigureerd om de waarde voor de volgende sleutels in te vullen:
 
    | Sleutel | Waarde |
    | --- | --- |
@@ -169,11 +166,11 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 ## <a name="deploy-the-topologies"></a>De topologieën implementeren
 
-1. Klik vanuit **Solution Explorer** met de rechter muisknop op het project **EventHubReader** en selecteer **verzenden naar Storm op HDInsight** .
+1. Klik vanuit **Solution Explorer** met de rechter muisknop op het project **EventHubReader** en selecteer **verzenden naar Storm op HDInsight**.
 
     ![Scherm opname van Solution Explorer, met verzenden naar Storm op HDInsight gemarkeerd](./media/apache-storm-develop-csharp-event-hub-topology/submit-to-apache-storm.png)
 
-2. Selecteer in het dialoog venster **indienings topologie** het **Storm-cluster** . Vouw **extra configuraties** uit, selecteer **Java-bestands paden** , selecteer **...** en selecteer de map met het jar-bestand dat u eerder hebt gedownload. Klik ten slotte op **verzenden** .
+2. Selecteer in het dialoog venster **indienings topologie** het **Storm-cluster**. Vouw **extra configuraties** uit, selecteer **Java-bestands paden**, selecteer **...** en selecteer de map met het jar-bestand dat u eerder hebt gedownload. Klik ten slotte op **verzenden**.
 
     ![Scherm afbeelding van het dialoog venster verzend topologie](./media/apache-storm-develop-csharp-event-hub-topology/submit-storm-topology.png)
 
@@ -181,9 +178,9 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
     ![Scherm afbeelding van de viewer voor Storm-topologieën](./media/apache-storm-develop-csharp-event-hub-topology/storm-topology-viewer.png)
 
-4. Klik vanuit **Solution Explorer** met de rechter muisknop op het project **EventHubWriter** en selecteer **verzenden naar Storm op HDInsight** .
+4. Klik vanuit **Solution Explorer** met de rechter muisknop op het project **EventHubWriter** en selecteer **verzenden naar Storm op HDInsight**.
 
-5. Selecteer in het dialoog venster **indienings topologie** het **Storm-cluster** . Vouw **extra configuraties** uit, selecteer **Java-bestands paden** , selecteer **...** en selecteer de directory met het jar-bestand dat u eerder hebt gedownload. Klik ten slotte op **verzenden** .
+5. Selecteer in het dialoog venster **indienings topologie** het **Storm-cluster**. Vouw **extra configuraties** uit, selecteer **Java-bestands paden**, selecteer **...** en selecteer de directory met het jar-bestand dat u eerder hebt gedownload. Klik ten slotte op **verzenden**.
 
 6. Wanneer de topologie is verzonden, vernieuwt u de topologie lijst in de **Viewer voor Storm-topologieën** om te controleren of beide topologieën op het cluster worden uitgevoerd.
 
@@ -201,7 +198,7 @@ Event Hubs is de gegevens bron voor dit voor beeld. Gebruik de informatie in de 
 
 ## <a name="stop-the-topologies"></a>De topologieën stoppen
 
-Als u de topologieën wilt stoppen, selecteert u elke topologie in de **Storm-topologie Viewer** en klikt u vervolgens op **Kill** .
+Als u de topologieën wilt stoppen, selecteert u elke topologie in de **Storm-topologie Viewer** en klikt u vervolgens op **Kill**.
 
 ![Scherm afbeelding van Storm-topologie viewer met de knop voor het afsluiten van de weer gave](./media/apache-storm-develop-csharp-event-hub-topology/kill-storm-topology1.png)
 

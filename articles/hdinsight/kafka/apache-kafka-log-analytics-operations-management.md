@@ -1,19 +1,16 @@
 ---
 title: Azure Monitor logboeken voor Apache Kafka-Azure HDInsight
 description: Informatie over het gebruik van Azure Monitor logboeken voor het analyseren van logboeken van Apache Kafka cluster op Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
-ms.openlocfilehash: 5128ac7608dfce08471f7a7f97ed28a7971e62b2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: d577e96c3ae95103a412b96eba3e1293142f1acd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534444"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932781"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Logboeken analyseren voor Apache Kafka in HDInsight
 
@@ -25,7 +22,7 @@ Informatie over het gebruik van Azure Monitor logboeken voor het analyseren van 
 
 Apache Kafka-Logboeken in het cluster bevinden zich op `/var/log/kafka` . Kafka-logboeken worden niet opgeslagen of bewaard in de levens cyclus van het cluster, ongeacht of beheerde schijven worden gebruikt. De volgende tabel bevat de beschik bare Logboeken.
 
-|Logboek |Description |
+|Logboek |Beschrijving |
 |---|---|
 |Kafka. out|stdout en stderr van het Kafka-proces. U vindt de opstart-en afsluit logboeken van Kafka in dit bestand.|
 |server. log|Het belangrijkste Kafka-server logboek. Alle Kafka Broker-logboeken worden hier beëindigd.|
@@ -37,7 +34,7 @@ Apache Kafka-Logboeken in het cluster bevinden zich op `/var/log/kafka` . Kafka-
 
 De stappen voor het inschakelen van Azure Monitor logboeken voor HDInsight zijn hetzelfde voor alle HDInsight-clusters. Gebruik de volgende koppelingen om inzicht te krijgen in het maken en configureren van de vereiste services:
 
-1. Maak een Log Analytics-werk ruimte. Zie de [Logboeken in azure monitor](../../azure-monitor/platform/data-platform-logs.md) document voor meer informatie.
+1. Maak een Log Analytics-werkruimte. Zie de [Logboeken in azure monitor](../../azure-monitor/platform/data-platform-logs.md) document voor meer informatie.
 
 2. Maak een Kafka in HDInsight-cluster. Zie het document [beginnen met Apache Kafka in HDInsight](apache-kafka-get-started.md) voor meer informatie.
 
@@ -50,7 +47,7 @@ De stappen voor het inschakelen van Azure Monitor logboeken voor HDInsight zijn 
 
 1. Selecteer uw Log Analytics-werk ruimte in de [Azure Portal](https://portal.azure.com).
 
-2. Ga naar het menu links en selecteer **Logboeken** onder **Algemeen** . Hier kunt u zoeken naar gegevens die zijn verzameld uit Kafka. Voer een query in het query venster in en selecteer vervolgens **uitvoeren** . Hier volgen enkele voor beelden van zoek opdrachten:
+2. Ga naar het menu links en selecteer **Logboeken** onder **Algemeen**. Hier kunt u zoeken naar gegevens die zijn verzameld uit Kafka. Voer een query in het query venster in en selecteer vervolgens **uitvoeren**. Hier volgen enkele voor beelden van zoek opdrachten:
 
 * Schijf gebruik:
 
@@ -94,7 +91,7 @@ De stappen voor het inschakelen van Azure Monitor logboeken voor HDInsight zijn 
 
     U kunt ook invoeren `*` om te zoeken naar alle typen die zijn geregistreerd. Momenteel zijn de volgende logboeken beschikbaar voor query's:
 
-    | Logboek type | Description |
+    | Logboek type | Beschrijving |
     | ---- | ---- |
     | Log \_ kafkaserver- \_ LC | Kafka Broker-server. log |
     | Log \_ kafkacontroller- \_ LC | Kafka Broker controller. log |

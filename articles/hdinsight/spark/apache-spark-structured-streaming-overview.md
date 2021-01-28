@@ -1,19 +1,16 @@
 ---
 title: Spark Structured streaming in azure HDInsight
 description: Het gebruik van Spark Structured streaming-toepassingen in HDInsight Spark-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 46a65720c9998a7a56d0ca269c344f85c5955546
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9f92007c271da5b6d2cb8db6c3904a62b114e7c2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086140"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929494"
 ---
 # <a name="overview-of-apache-spark-structured-streaming"></a>Overzicht van Gestructureerde streaming van Apache Spark
 
@@ -30,7 +27,7 @@ Structured streaming maakt een langlopende query waarbij u bewerkingen toepast o
 
 ## <a name="streams-as-tables"></a>Stromen als tabellen
 
-Met Spark Structured streaming wordt een gegevens stroom aangeduid als een tabel die niet is begrensd, dat wil zeggen, de tabel blijft groeien naarmate er nieuwe gegevens binnenkomen. Deze *invoer tabel* wordt continu verwerkt door een langlopende query en de resultaten die naar een *uitvoer tabel*worden verzonden:
+Met Spark Structured streaming wordt een gegevens stroom aangeduid als een tabel die niet is begrensd, dat wil zeggen, de tabel blijft groeien naarmate er nieuwe gegevens binnenkomen. Deze *invoer tabel* wordt continu verwerkt door een langlopende query en de resultaten die naar een *uitvoer tabel* worden verzonden:
 
 ![Concept van Structured streaming](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming-concept.png)
 

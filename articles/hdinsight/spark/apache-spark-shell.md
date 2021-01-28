@@ -1,19 +1,16 @@
 ---
 title: Een interactieve Spark-shell gebruiken in azure HDInsight
 description: Een interactieve Spark-shell biedt een proces voor lezen-uitvoeren-afdrukken voor het uitvoeren van Spark-opdrachten een voor een tegelijk en de resultaten te zien.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/10/2020
-ms.openlocfilehash: 84298c9073f00f0388a9bcb7405369d7c60bcce1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 324852a967b5de015a9b1e9b465d4b4703e573cb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86081176"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929683"
 ---
 # <a name="run-apache-spark-from-the-spark-shell"></a>Apache Spark uitvoeren vanuit de Spark-shell
 
@@ -107,7 +104,7 @@ Voer in om toegang te krijgen tot het SparkSession-exemplaar `spark` . Voer in o
 
 De Spark shell-opdracht ( `spark-shell` of `pyspark` ) ondersteunt veel opdracht regel parameters. Als u een volledige lijst met para meters wilt weer geven, start u de Spark-shell met de switch `--help` . Sommige van deze para meters zijn mogelijk alleen van toepassing op `spark-submit` , die in de Spark-shell worden geplaatst.
 
-| schakelen | description | Hierbij |
+| schakelen | beschrijving | Hierbij |
 | --- | --- | --- |
 | --hoofd MASTER_URL | Hiermee geeft u de hoofd-URL op. In HDInsight is deze waarde altijd `yarn` . | `--master yarn`|
 | --potten JAR_LIST | Een door komma's gescheiden lijst met lokale potten die moeten worden toegevoegd aan het stuur programma en de namen van de uitvoerder. In HDInsight bestaat deze lijst uit paden naar het standaard bestands systeem in Azure Storage of Data Lake Storage. | `--jars /path/to/examples.jar` |

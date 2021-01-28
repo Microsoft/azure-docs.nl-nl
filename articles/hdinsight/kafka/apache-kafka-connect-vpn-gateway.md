@@ -1,19 +1,16 @@
 ---
 title: Verbinding maken met Kafka met behulp van virtuele netwerken-Azure HDInsight
 description: Meer informatie over hoe u rechtstreeks verbinding maakt met Kafka op HDInsight via een Azure-Virtual Network. Informatie over het maken van verbinding met Kafka van ontwikkel-clients met een VPN-gateway of van clients in uw on-premises netwerk met behulp van een VPN-gateway apparaat.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-python
 ms.date: 03/04/2020
-ms.openlocfilehash: ca5bff7f8a14efc0916210296048e3731aec5a59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad802b2bdf08a8e43179beece5f52d869513aff3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87873463"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933041"
 ---
 # <a name="connect-to-apache-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Verbinding maken met Apache Kafka in HDInsight via een virtueel Azure-netwerk
 
@@ -339,7 +336,7 @@ Gebruik de volgende stappen om een python-producent en-consument te maken en uit
 
     Vervang de `'kafka_broker'` vermeldingen door de adressen uit stap 1 in deze sectie:
 
-   * Als u een __Software-VPN-client__gebruikt, vervangt u de `kafka_broker` vermeldingen door het IP-adres van uw worker-knoop punten.
+   * Als u een __Software-VPN-client__ gebruikt, vervangt u de `kafka_broker` vermeldingen door het IP-adres van uw worker-knoop punten.
 
    * Als u __naam omzetting hebt ingeschakeld via een aangepaste DNS-server__, vervangt u de `kafka_broker` vermeldingen door de FQDN van de worker-knoop punten.
 
@@ -362,7 +359,7 @@ Gebruik de volgende stappen om een python-producent en-consument te maken en uit
 
     Vervang de `'kafka_broker'` vermeldingen door de adressen uit stap 1 in deze sectie:
 
-    * Als u een __Software-VPN-client__gebruikt, vervangt u de `kafka_broker` vermeldingen door het IP-adres van uw worker-knoop punten.
+    * Als u een __Software-VPN-client__ gebruikt, vervangt u de `kafka_broker` vermeldingen door het IP-adres van uw worker-knoop punten.
 
     * Als u __naam omzetting hebt ingeschakeld via een aangepaste DNS-server__, vervangt u de `kafka_broker` vermeldingen door de FQDN van de worker-knoop punten.
 

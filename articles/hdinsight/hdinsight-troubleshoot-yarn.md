@@ -1,18 +1,15 @@
 ---
 title: Problemen met GARENs in azure HDInsight oplossen
 description: Krijg antwoorden op veelgestelde vragen over het werken met Apache Hadoop GARENs en Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: b8dc63030c6791779ad90500747e4e2f5c4ffeef
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b5b8ccbfd3e39415416cfc8fabcf9614f5934042
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022663"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931415"
 ---
 # <a name="troubleshoot-apache-hadoop-yarn-by-using-azure-hdinsight"></a>Problemen met Apache Hadoop YARN oplossen met behulp van Azure HDInsight
 
@@ -129,7 +126,7 @@ Deze wijzigingen zijn direct zichtbaar in de gebruikers interface van de GARENs-
 
     Met deze opdracht maakt u een logboek bestand met de naam containerlogs.txt.
 
-### <a name="additional-reading"></a><a name="additional-reading-2"></a>Aanvullende Lees bewerkingen
+### <a name="additional-reading"></a><a name="additional-reading-2"></a>Meer artikelen
 
 - [Verbinding maken met HDInsight (Apache Hadoop) met behulp van SSH](./hdinsight-hadoop-linux-use-ssh-unix.md)
 - [Apache Hadoop GARENs en toepassingen](https://hadoop.apache.org/docs/r2.7.4/hadoop-yarn/hadoop-yarn-site/WritingYarnApplications.html#Concepts_and_Flow)

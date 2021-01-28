@@ -1,19 +1,16 @@
 ---
 title: Maxi maal beschik bare Spark streaming-taken in GARENs-Azure HDInsight
 description: Apache Spark streaming instellen voor een scenario met een hoge Beschik baarheid in azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 2ec0bf460a73f95e18e2e9221e8cbd8d4e14ff77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3eb761a793c41c2e2cc2cb952e4fb9f241b41ab6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086208"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929697"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Apache Spark streaming-taken met hoge Beschik baarheid maken met GARENs
 
@@ -65,7 +62,7 @@ In de volgende secties worden ontwerp overwegingen voor deze configuratie beschr
 
 Als u een garen configuratie voor hoge Beschik baarheid wilt maken, moet u een mogelijke uitvoerder of een probleem met een stuur programma plannen. Sommige Spark-streaming-taken omvatten ook vereisten voor gegevens garantie waarvoor extra configuratie en installatie nodig is. Een streaming-toepassing kan bijvoorbeeld een zakelijke vereiste hebben voor een garantie van nul gegevens verlies ondanks een fout in het hosting streaming-systeem of het HDInsight-cluster.
 
-Als een **executor** uitvoerder mislukt, worden de bijbehorende taken en ontvangers automatisch opnieuw gestart door Spark, zodat er geen configuratie wijziging nodig is.
+Als een  uitvoerder mislukt, worden de bijbehorende taken en ontvangers automatisch opnieuw gestart door Spark, zodat er geen configuratie wijziging nodig is.
 
 Als een **stuur programma** echter niet kan worden uitgevoerd, mislukken alle bijbehorende uitvoerder en gaan alle ontvangen blokken en reken resultaten verloren. Als u de fout wilt herstellen na een stuurprogrammafout, gebruikt u *DStream-controle punten* zoals beschreven in [Spark-streaming-taken maken met precies één keer per gebeurtenis verwerking](apache-spark-streaming-exactly-once.md#use-checkpoints-for-drivers). Met DStream controlepunten wordt regel matig de *directed acyclic Graph* (dag) van DStreams opgeslagen op fout tolerante opslag, zoals Azure Storage.  Met controle punten kan met Spark Structured streaming het mislukte stuur programma opnieuw worden gestart door de controlepunt gegevens.  Met dit stuur programma opnieuw opstarten worden nieuwe uitvoerders gestart en worden ontvangers ook opnieuw opgestart.
 

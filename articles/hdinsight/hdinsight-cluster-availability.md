@@ -1,19 +1,16 @@
 ---
 title: De beschik baarheid van clusters bewaken met Apache Ambari in azure HDInsight
 description: Meer informatie over het gebruik van Apache Ambari voor het bewaken van de cluster status en beschik baarheid.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/01/2020
-ms.openlocfilehash: 5cfc2abad828a3974c04074a4cde062a479f673f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 34f752d4c3d50d5f680e317b2724b1e631537f32
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533560"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933197"
 ---
 # <a name="how-to-monitor-cluster-availability-with-apache-ambari-in-azure-hdinsight"></a>De beschik baarheid van clusters bewaken met Apache Ambari in azure HDInsight
 
@@ -55,7 +52,7 @@ Als u een lijst met waarschuwings definities en hun statussen wilt weer geven, s
 
 Ambari biedt veel vooraf gedefinieerde waarschuwingen met betrekking tot Beschik baarheid, waaronder:
 
-| Naam van waarschuwing                        | Description   |
+| Naam van waarschuwing                        | Beschrijving   |
 |---|---|
 | DataNode status overzicht           | Deze waarschuwing op service niveau wordt geactiveerd als er sprake is van een slechte DataNodes|
 | Status van hoge Beschik baarheid van NameNode | Deze waarschuwing op service niveau wordt geactiveerd als de actieve NameNode of stand-NameNode niet actief is.|

@@ -68,7 +68,7 @@
             - name: Basisbeginselen
               href: data-lake-analytics-u-sql-get-started.md
             - name: Taalverwijzing
-              href: 'https://docs.microsoft.com/u-sql'
+              href: /u-sql
             - name: Catalogus
               href: data-lake-analytics-u-sql-catalog.md
             - name: Door de gebruiker gedefinieerde operators

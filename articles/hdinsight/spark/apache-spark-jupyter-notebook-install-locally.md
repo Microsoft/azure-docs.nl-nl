@@ -1,19 +1,16 @@
 ---
 title: Jupyter lokaal installeren en verbinding maken met Spark in azure HDInsight
 description: Meer informatie over het installeren van Jupyter Notebook lokaal op uw computer en het verbinden met een Apache Spark cluster.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: de11e6f9fd9acc81f7be6d23bb1019f88f9e1322
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d5915316ee9d393b2481eeca6a5da7923b271d9f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657206"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930416"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Jupyter Notebook op uw computer installeren en verbinding maken met Apache Spark op HDInsight
 

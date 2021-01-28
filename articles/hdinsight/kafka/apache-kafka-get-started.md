@@ -1,19 +1,16 @@
 ---
 title: 'Quickstart: Apache Kafka instellen in HDInsight met Azure Portal'
 description: In deze quickstart leert u hoe u met Azure Portal een Apache Kafka-cluster maakt in Azure HDInsight. Er wordt ook aandacht besteed aan Kafka-onderwerpen, -abonnees en -consumenten.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/29/2020
-ms.openlocfilehash: 3f0b3da7d225e4b2adca3f2d4b08cff9b56e2520
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 9bb981b5a1d6ecb9e0c20748983a36ef3acfa001
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534597"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932907"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-azure-portal"></a>Quickstart: Een Apache Kafka-cluster maken in Azure HDInsight met Azure Portal
 
@@ -53,13 +50,13 @@ Gebruik de volgende stappen om een Apache Kafka-cluster te maken in HDInsight:
     |Region    | Selecteer in de vervolgkeuzelijst een regio waarin het cluster wordt gemaakt.  Kies een regio zo dicht mogelijk bij u in de buurt voor betere prestaties. |
     |Clustertype| Selecteer **Clustertype selecteren** om een lijst te openen. Selecteer **Kafka** als clustertype in de lijst.|
     |Versie|De standaardversie voor het clustertype wordt opgegeven. Selecteer een optie in de vervolgkeuzelijst als u een andere versie wilt opgeven.|
-    |Gebruikersnaam/Wachtwoord voor clusteraanmeldgegevens    | De standaardaanmeldingsnaam is **admin** . Het wachtwoord moet uit minstens tien tekens bestaan en moet minstens één cijfer, één hoofdletter, één kleine letter en één niet-alfanumeriek teken bevatten (uitgezonderd ' " ` \). Zorg ervoor dat u **geen makkelijk te raden** wachtwoorden gebruikt, zoals 'Pass@word1'.|
-    |SSH-gebruikersnaam (Secure Shell) | De standaardgebruikersnaam is **sshuser** .  U kunt hier echter een andere naam opgeven als u dat wilt. |
+    |Gebruikersnaam/Wachtwoord voor clusteraanmeldgegevens    | De standaardaanmeldingsnaam is **admin**. Het wachtwoord moet uit minstens tien tekens bestaan en moet minstens één cijfer, één hoofdletter, één kleine letter en één niet-alfanumeriek teken bevatten (uitgezonderd ' " ` \). Zorg ervoor dat u **geen makkelijk te raden** wachtwoorden gebruikt, zoals 'Pass@word1'.|
+    |SSH-gebruikersnaam (Secure Shell) | De standaardgebruikersnaam is **sshuser**.  U kunt hier echter een andere naam opgeven als u dat wilt. |
     |Het wachtwoord voor clusteraanmelding gebruiken voor SSH| Schakel dit selectievakje in als u voor de SSH-gebruiker het wachtwoord wilt gebruiken dat u hebt opgegeven voor Wachtwoord voor clusteraanmeldgegevens.|
 
    ![Basisbeginselen over het maken van clusters in Azure Portal](./media/apache-kafka-get-started/azure-portal-cluster-basics.png)
 
-    Elke Azure-regio (locatie) heeft _foutdomeinen_ . Een foutdomein is een logische groepering van de onderliggende hardware in een Azure-datacenter. Elk foutdomein deelt een algemene voedingsbron en netwerkswitch. De virtuele machines en beheerde schijven die de knooppunten in een HDInsight-cluster implementeren zijn verdeeld over deze foutdomeinen. Deze architectuur beperkt de potentiële impact van problemen met de fysieke hardware.
+    Elke Azure-regio (locatie) heeft _foutdomeinen_. Een foutdomein is een logische groepering van de onderliggende hardware in een Azure-datacenter. Elk foutdomein deelt een algemene voedingsbron en netwerkswitch. De virtuele machines en beheerde schijven die de knooppunten in een HDInsight-cluster implementeren zijn verdeeld over deze foutdomeinen. Deze architectuur beperkt de potentiële impact van problemen met de fysieke hardware.
 
     Voor hoge beschikbaarheid van gegevens wordt u geadviseerd om een regio (locatie) te selecteren die __drie foutdomeinen__ heeft. Raadpleeg het document [Beschikbaarheid van virtuele Linux-machines](../../virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) voor informatie over het aantal foutdomeinen in een regio.
 
@@ -69,22 +66,22 @@ Gebruik de volgende stappen om een Apache Kafka-cluster te maken in HDInsight:
 
     |Eigenschap  |Beschrijving  |
     |---------|---------|
-    |Type van primaire opslag|Gebruik de standaardwaarde **Azure Storage** .|
-    |Selectiemethode|Gebruik de standaardwaarde **Selecteer in lijst** .|
-    |Primair opslagaccount|Gebruik de vervolgkeuzelijst om een bestaand opslagaccount te selecteren of selecteer **Nieuwe maken** . Als u een nieuw account maakt, moet de naam 3 tot 24 tekens lang zijn en mag deze alleen cijfers en kleine letters bevatten|
+    |Type van primaire opslag|Gebruik de standaardwaarde **Azure Storage**.|
+    |Selectiemethode|Gebruik de standaardwaarde **Selecteer in lijst**.|
+    |Primair opslagaccount|Gebruik de vervolgkeuzelijst om een bestaand opslagaccount te selecteren of selecteer **Nieuwe maken**. Als u een nieuw account maakt, moet de naam 3 tot 24 tekens lang zijn en mag deze alleen cijfers en kleine letters bevatten|
     |Container|Gebruik de waarde die automatisch is ingevuld.|
 
     ![HDInsight Linux aan de slag, clusteropslagwaarden opgeven](./media/apache-kafka-get-started/azure-portal-cluster-storage.png "Opslagwaarden opgeven voor het maken van een HDInsight-cluster")
 
-    Selecteer het tabblad **Beveiliging en netwerken** .
+    Selecteer het tabblad **Beveiliging en netwerken**.
 
 1. Laat voor deze quickstart de standaardbeveiligingsinstellingen staan. Ga naar [Een HDInsight-cluster configureren met Enterprise Security Package met behulp van Azure Active Directory Domain Services](../domain-joined/apache-domain-joined-configure-using-azure-adds.md) voor meer informatie over Enterprise Security Package. Ga naar [Schijfversleuteling met door de klant beheerde sleutels](../disk-encryption.md) voor informatie over het gebruik van uw eigen sleutel voor Apache Kafka Disk Encryption.
 
-   Als u uw cluster verbinding wilt laten maken met een virtueel netwerk, selecteert u een virtueel netwerk in de vervolgkeuzelijst **Virtueel netwerk** .
+   Als u uw cluster verbinding wilt laten maken met een virtueel netwerk, selecteert u een virtueel netwerk in de vervolgkeuzelijst **Virtueel netwerk**.
 
    ![Cluster toevoegen aan virtueel netwerk](./media/apache-kafka-get-started/azure-portal-cluster-security-networking-kafka-vnet.png)
 
-    Selecteer het tabblad **Configuratie en prijzen** .
+    Selecteer het tabblad **Configuratie en prijzen**.
 
 1. Om de beschikbaarheid van Apache Kafka in HDInsight te waarborgen, moet u het __aantal werkknooppunten__ voor het **werkknooppunt** instellen op minimaal 3. De standaardwaarde is 4.
 
@@ -92,7 +89,7 @@ Gebruik de volgende stappen om een Apache Kafka-cluster te maken in HDInsight:
 
    ![De Apache Kafka-clustergrootte instellen](./media/apache-kafka-get-started/azure-portal-cluster-configuration-pricing-kafka.png)
 
-    Selecteer het tabblad **Beoordelen en maken** .
+    Selecteer het tabblad **Beoordelen en maken**.
 
 1. Controleer de configuratie van het cluster. Wijzig onjuiste instellingen. Selecteer als laatste **Maken** om het cluster te maken.
 
@@ -134,7 +131,7 @@ Gebruik de volgende stappen om een Apache Kafka-cluster te maken in HDInsight:
 
 ## <a name="get-the-apache-zookeeper-and-broker-host-information"></a><a id="getkafkainfo"></a>Informatie over de Apache Zookeeper- en Broker-hosts ophalen
 
-Als u met Kafka werkt, moet u de *Zookeeper* - en *Broker* -hosts kennen. Deze hosts worden gebruikt met de Apache Kafka-API en veel van de hulpprogramma's die bij Kafka worden meegeleverd.
+Als u met Kafka werkt, moet u de *Zookeeper*- en *Broker*-hosts kennen. Deze hosts worden gebruikt met de Apache Kafka-API en veel van de hulpprogramma's die bij Kafka worden meegeleverd.
 
 In deze sectie vraagt u de hostgegevens op uit de Apache Ambari REST API in het cluster.
 
@@ -202,13 +199,13 @@ In deze sectie vraagt u de hostgegevens op uit de Apache Ambari REST API in het 
 
 Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het hulpprogramma `kafka-topics.sh` gebruiken om onderwerpen te beheren.
 
-* **Als u een onderwerp wilt maken** , gebruikt u de volgende opdracht in de SSH-verbinding:
+* **Als u een onderwerp wilt maken**, gebruikt u de volgende opdracht in de SSH-verbinding:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 8 --topic test --zookeeper $KAFKAZKHOSTS
     ```
 
-    Met deze opdracht brengt u een verbinding met Zookeeper tot stand met behulp van de hostinformatie die is opgeslagen in `$KAFKAZKHOSTS`. Vervolgens wordt er een Apache Kafka-onderwerp gemaakt met de naam **test** .
+    Met deze opdracht brengt u een verbinding met Zookeeper tot stand met behulp van de hostinformatie die is opgeslagen in `$KAFKAZKHOSTS`. Vervolgens wordt er een Apache Kafka-onderwerp gemaakt met de naam **test**.
 
     * Gegevens die zijn opgeslagen in dit onderwerp worden gepartitioneerd in acht partities.
 
@@ -230,7 +227,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
 
             * U een cluster omhoog schaalt
 
-* Gebruik de volgende opdracht om **een lijst met onderwerpen op te vragen** :
+* Gebruik de volgende opdracht om **een lijst met onderwerpen op te vragen**:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --list --zookeeper $KAFKAZKHOSTS
@@ -238,7 +235,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
 
     Met deze opdracht worden de onderwerpen weergegeven die beschikbaar zijn in het Apache Kafka-cluster.
 
-* Gebruik de volgende opdracht om **een onderwerp te verwijderen** :
+* Gebruik de volgende opdracht om **een onderwerp te verwijderen**:
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --delete --topic topicname --zookeeper $KAFKAZKHOSTS
@@ -257,7 +254,7 @@ Gebruik de volgende opdracht voor meer informatie over de opdrachten die beschik
 
 ## <a name="produce-and-consume-records"></a>Records maken en gebruiken
 
-Kafka slaat *records* op in onderwerpen. Records worden geproduceerd door *producenten* en worden gebruikt door *consumenten* . Producenten en consumenten communiceren met de *Kafka-brokerservice* . Elk werkknooppunt in uw HDInsight-cluster is een Apache Kafka-brokerhost.
+Kafka slaat *records* op in onderwerpen. Records worden geproduceerd door *producenten* en worden gebruikt door *consumenten*. Producenten en consumenten communiceren met de *Kafka-brokerservice*. Elk werkknooppunt in uw HDInsight-cluster is een Apache Kafka-brokerhost.
 
 Gebruik de volgende stappen om records op te slaan in het testonderwerp dat u eerder hebt gemaakt. Lees deze vervolgens met behulp van een verbruiker:
 

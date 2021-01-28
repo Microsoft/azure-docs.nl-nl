@@ -1,18 +1,15 @@
 ---
 title: Algemene richt lijnen voor Enter prise Security in azure HDInsight
 description: Enkele aanbevolen procedures voor het eenvoudiger maken van Enterprise Security Package-implementatie en-beheer.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: 8d97886232eecc369746e33df484cbfb9d40da72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92ad8362f75cdf0613d4ee95f39c23aa6d4819bb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87530262"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933561"
 ---
 # <a name="enterprise-security-general-information-and-guidelines-in-azure-hdinsight"></a>Algemene informatie over Enter prise Security en richt lijnen in azure HDInsight
 

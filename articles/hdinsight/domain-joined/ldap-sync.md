@@ -1,18 +1,15 @@
 ---
 title: LDAP-synchronisatie in zwerver en Apache Ambari in azure HDInsight
 description: Adresseer de LDAP-synchronisatie in zwerver en Ambari en geef algemene richt lijnen.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/14/2020
-ms.openlocfilehash: 0779ac261fbb4ee91bf63021bb0cc685a371c2b2
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.openlocfilehash: fb9035b4d816c1af84b15e6865335aa1bdf86f5b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93234066"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933411"
 ---
 # <a name="ldap-sync-in-ranger-and-apache-ambari-in-azure-hdinsight"></a>LDAP-synchronisatie in zwerver en Apache Ambari in azure HDInsight
 

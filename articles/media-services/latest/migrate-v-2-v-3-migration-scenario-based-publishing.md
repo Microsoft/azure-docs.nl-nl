@@ -1,5 +1,5 @@
 ---
-title: Richt lijnen voor migratie op basis van pakketten en levering
+title: Richt lijnen voor de migratie van verpakking en levering
 description: In dit artikel vindt u richt lijnen op basis van een scenario voor verpakking en levering die u helpt bij het migreren van Azure Media Services v2 naar v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 78f3e6ee53d5158096882f5554054c3ff06a32b4
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 90dfc2fd6f6258ec5bfdea38423489c72ee06e03
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895234"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928191"
 ---
 # <a name="packaging-and-delivery-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van pakketten en levering
 

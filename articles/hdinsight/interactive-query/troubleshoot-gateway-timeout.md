@@ -1,18 +1,15 @@
 ---
 title: Uitzonde ring bij het uitvoeren van query's vanuit Apache Ambari-Hive-weer gave in azure HDInsight
 description: Stappen voor het oplossen van problemen met het uitvoeren van Apache Hive query's via Apache Ambari-Hive-weer gave in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 12/23/2019
-ms.openlocfilehash: aeedda5c26a2e9dc0fa2b228285cfda45d880d29
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 40ef380cd2bd4743b92daf44a0a5b70ade1cbb35
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547381"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933016"
 ---
 # <a name="exception-when-running-queries-from-apache-ambari-hive-view-in-azure-hdinsight"></a>Uitzonde ring bij het uitvoeren van query's vanuit Apache Ambari-Hive-weer gave in azure HDInsight
 
@@ -54,13 +51,13 @@ Enkele algemene aanbevelingen voor het verbeteren van de situatie:
 
 * Als u een externe meta Store van een Hive-archief gebruikt, controleert u de metrische gegevens van de data base en zorgt u ervoor dat deze niet zijn overbelast. Overweeg de laag van de meta store-data base te schalen.
 
-* Zorg ervoor dat parallelle OPS is ingeschakeld (Hiermee kunnen de HTTP-handlers gelijktijdig worden uitgevoerd). Als u de waarde wilt controleren, opent u [Apache Ambari](../hdinsight-hadoop-manage-ambari.md) en navigeert u naar **Hive**  >  **configurations**  >  **Geavanceerde**  >  **aangepaste Hive-site** . De waarde voor `hive.server2.parallel.ops.in.session` moet zijn `true` .
+* Zorg ervoor dat parallelle OPS is ingeschakeld (Hiermee kunnen de HTTP-handlers gelijktijdig worden uitgevoerd). Als u de waarde wilt controleren, opent u [Apache Ambari](../hdinsight-hadoop-manage-ambari.md) en navigeert u naar **Hive**  >  **configurations**  >  **Geavanceerde**  >  **aangepaste Hive-site**. De waarde voor `hive.server2.parallel.ops.in.session` moet zijn `true` .
 
 * Zorg ervoor dat de virtuele machine-SKU van het cluster niet te klein is voor de belasting. Overweeg om het werk over meerdere clusters te splitsen. Zie [een cluster type kiezen](../hdinsight-capacity-planning.md#choose-a-cluster-type)voor meer informatie.
 
 * Als zwerver op het cluster is geïnstalleerd, controleert u of er te veel zwerver-beleids regels zijn die moeten worden geëvalueerd voor elke query. Zoek naar dubbele of overbodige beleids regels.
 
-* Controleer de **grootte** waarde van de HiveServer2-heap van Ambari. Navigeer naar **Hive**  >  **configuratie**  >  **instellingen**  >  **optimalisatie** . Zorg ervoor dat de waarde groter is dan 10 GB. Pas zo nodig aan om de prestaties te optimaliseren.
+* Controleer de **grootte** waarde van de HiveServer2-heap van Ambari. Navigeer naar **Hive**  >  **configuratie**  >  **instellingen**  >  **optimalisatie**. Zorg ervoor dat de waarde groter is dan 10 GB. Pas zo nodig aan om de prestaties te optimaliseren.
 
 * Zorg ervoor dat de Hive-query goed is afgestemd. Zie [Apache Hive Query's optimaliseren in azure HDInsight](../hdinsight-hadoop-optimize-hive-query.md)voor meer informatie.
 

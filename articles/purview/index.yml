@@ -6,15 +6,15 @@ metadata:
   description: Meer informatie over hoe u Azure Purview gebruikt, waar uw organisatie gegevensbronnen vindt, begrijpt en gebruikt. Zelfstudies, REST-API-referentiemateriaal en andere documentatie laten zien hoe u uw gegevensopslagplaats kunt plannen en configureren, waar gegevensgebruikers beschikbare gegevensbronnen kunnen vinden en kennis kunnen opdoen die ter beschikking is gesteld door deskundigen.
   ms.service: purview
   ms.topic: landing-page
-  author: hrasheed-msft
-  ms.author: hrasheed
+  author: JasonWHowell
+  ms.author: jasonh
   ms.date: 11/29/2020
-  ms.openlocfilehash: 378a335653acf31275c312bcf4fa53b36bfa614e
-  ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
-  ms.translationtype: HT
+  ms.openlocfilehash: c9e9a32ca5c77082186f15a0eae3f3430347a02b
+  ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/03/2020
-  ms.locfileid: "96549419"
+  ms.lasthandoff: 01/28/2021
+  ms.locfileid: "98926925"
 landingContent:
 - title: Over Azure Purview
   linkLists:

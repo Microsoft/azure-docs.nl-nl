@@ -1,19 +1,17 @@
 ---
 title: Automatisch maken van een onderwerp in Apache Kafka-Azure HDInsight inschakelen
 description: Meer informatie over het configureren van Apache Kafka op HDInsight om automatisch onderwerpen te maken. U kunt Kafka configureren door `auto.create.topics.enable` in te stellen op True via Ambari. Of tijdens het maken van een cluster via Power shell of Resource Manager-sjablonen.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 829f91452725615af4d444426e25ffad62d6ab6d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b416623d6637cfe8e2c1cd795dd62553f8c0aed4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86087499"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933216"
 ---
 # <a name="how-to-configure-apache-kafka-on-hdinsight-to-automatically-create-topics"></a>Apache Kafka op HDInsight configureren om automatisch onderwerpen te maken
 
@@ -25,7 +23,7 @@ Gebruik de volgende stappen om het automatisch maken van een onderwerp in een be
 
 1. Selecteer uw Kafka-cluster uit het [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **Ambari Home**van **cluster dashboards**.
+1. Selecteer **Ambari Home** van **cluster dashboards**.
 
     ![Afbeelding van de portal waarop het cluster dashboard is geselecteerd](./media/apache-kafka-auto-create-topics/azure-portal-cluster-dashboard-ambari.png)
 
@@ -49,7 +47,7 @@ Gebruik de volgende stappen om het automatisch maken van een onderwerp in een be
 
     ![Afbeelding van het bestand auto. Create. topics. enable entry](./media/apache-kafka-auto-create-topics/auto-create-topics-enable.png)
 
-1. Selecteer de Kafka-service, selecteer __opnieuw opstarten__en selecteer vervolgens __alle betrokkenen opnieuw opstarten__. Selecteer __Bevestig opnieuw opstarten__als dit wordt gevraagd.
+1. Selecteer de Kafka-service, selecteer __opnieuw opstarten__ en selecteer vervolgens __alle betrokkenen opnieuw opstarten__. Selecteer __Bevestig opnieuw opstarten__ als dit wordt gevraagd.
 
     ![Apache Ambari start alle betrokkenen opnieuw](./media/apache-kafka-auto-create-topics/restart-all-affected.png)
 

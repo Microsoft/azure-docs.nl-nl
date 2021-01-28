@@ -1,19 +1,16 @@
 ---
 title: Azure Kubernetes service gebruiken met Kafka in HDInsight
 description: Meer informatie over het gebruik van Kafka op HDInsight vanuit container installatie kopieën die worden gehost in azure Kubernetes service (AKS).
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/04/2019
-ms.openlocfilehash: ab87f181f78158d2ea0dd6575a30e6087600f60c
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: d807b591229644984f6658cdacd0bf447759f292
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92485678"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933026"
 ---
 # <a name="use-azure-kubernetes-service-with-apache-kafka-on-hdinsight"></a>Azure Kubernetes-service gebruiken met Apache Kafka op HDInsight
 
@@ -69,11 +66,11 @@ Als u nog geen AKS-cluster hebt, gebruikt u een van de volgende documenten voor 
 
 2. Selecteer de bron van het __virtuele netwerk__ in de resource groep. Noteer deze naam voor later gebruik.
 
-3. Selecteer bij **instellingen**de optie __adres ruimte__. Noteer de adres ruimte die wordt weer gegeven.
+3. Selecteer onder **Instellingen** de optie __Adresruimte__. Noteer de adres ruimte die wordt weer gegeven.
 
 ### <a name="create-virtual-network"></a>Virtueel netwerk maken
 
-1. Als u een virtueel netwerk voor HDInsight wilt maken, gaat u naar __+ een resource__  >  __netwerken__  >  __virtueel netwerk__maken.
+1. Als u een virtueel netwerk voor HDInsight wilt maken, gaat u naar __+ een resource__  >  __netwerken__  >  __virtueel netwerk__ maken.
 
 1. Maak het netwerk aan de hand van de volgende richt lijnen voor bepaalde eigenschappen:
 

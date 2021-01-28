@@ -2,17 +2,14 @@
 title: Apache HBase en Enterprise Security Package - Azure HDInsight
 description: 'Zelfstudie: leer hoe u Apache Ranger-beleidsregels voor HBase configureert in Azure HDInsight met Enterprise Security Package.'
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: 5747de399e7ae0cfe99ba013f8da376be0ba1b2a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: deefda126602e9b276b74752330a14cc3eb2aa95
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993632"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933712"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Zelfstudie: Apache HBase-beleidsregels configureren in HDInsight met Enterprise Security Package
 

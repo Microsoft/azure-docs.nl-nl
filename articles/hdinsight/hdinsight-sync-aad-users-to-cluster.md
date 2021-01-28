@@ -1,19 +1,17 @@
 ---
 title: Azure Active Directory gebruikers synchroniseren met HDInsight-cluster
 description: Synchroniseer geverifieerde gebruikers van Azure Active Directory naar een HDInsight-cluster.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: 19466174faeef20b8ac29882b047d74ad2adc5ff
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a3307c5d677028c17717c0d591790f0373f131d6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535175"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931621"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Azure Active Directory-gebruikers synchroniseren met een HDInsight-cluster
 
@@ -29,7 +27,7 @@ Als u uw hosts wilt weer geven, opent u de Ambari-webgebruikersinterface. Elk kn
 
 1. Navigeer vanuit het [Azure Portal](https://portal.azure.com)naar de Azure AD-adres lijst die is gekoppeld aan uw ESP-cluster.
 
-2. Selecteer **alle gebruikers** in het menu aan de linkerkant en selecteer vervolgens **nieuwe gebruiker** .
+2. Selecteer **alle gebruikers** in het menu aan de linkerkant en selecteer vervolgens **nieuwe gebruiker**.
 
     ![Alle gebruikers en groepen Azure Portal](./media/hdinsight-sync-aad-users-to-cluster/users-and-groups-new.png)
 
@@ -37,7 +35,7 @@ Als u uw hosts wilt weer geven, opent u de Ambari-webgebruikersinterface. Elk kn
 
     ![Gebruikers deel venster Azure Portal groepen selecteren](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
 
-4. Selecteer **Maken** .
+4. Selecteer **Maken**.
 
 ## <a name="use-the-apache-ambari-rest-api-to-synchronize-users"></a>De Apache Ambari-REST API gebruiken om gebruikers te synchroniseren
 
@@ -120,7 +118,7 @@ De volgende methode maakt gebruik van POST met de Ambari-REST API. Zie [HDInsigh
     }
     ```
 
-1. Dit geeft aan dat de status is **voltooid** , er een nieuwe gebruiker is gemaakt en er een lidmaatschap aan de gebruiker is toegewezen. In dit voor beeld wordt de gebruiker toegewezen aan de gesynchroniseerde LDAP-groep ' HiveUsers ', omdat de gebruiker is toegevoegd aan dezelfde groep in azure AD.
+1. Dit geeft aan dat de status is **voltooid**, er een nieuwe gebruiker is gemaakt en er een lidmaatschap aan de gebruiker is toegewezen. In dit voor beeld wordt de gebruiker toegewezen aan de gesynchroniseerde LDAP-groep ' HiveUsers ', omdat de gebruiker is toegevoegd aan dezelfde groep in azure AD.
 
     > [!NOTE]  
     > De vorige methode synchroniseert alleen de Azure AD-groepen die zijn opgegeven in de eigenschap **gebruikers groep** van het domein instellingen tijdens het maken van het cluster. Zie  [een HDInsight-cluster maken](./domain-joined/apache-domain-joined-configure-using-azure-adds.md)voor meer informatie.

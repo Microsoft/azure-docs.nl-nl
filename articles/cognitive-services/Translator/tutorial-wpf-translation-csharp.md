@@ -11,16 +11,16 @@ ms.topic: tutorial
 ms.date: 05/26/2020
 ms.author: lajanuar
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9ebcbadbc8b502121b25393c7761794bcd3f07e8
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: dd5b83908ae7c6d62acd3391933028685facf755
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897102"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927473"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Zelfstudie: Een vertaal-app maken met WPF
 
-In deze zelfstudie bouwt u een [Windows Presentation Foundation-app (WPF)](/visualstudio/designers/getting-started-with-wpf?view=vs-2019) die gebruikmaakt van Azure Cognitive Service voor tekstvertaling, taaldetectie en spellingscontrole. Hierbij wordt één abonnementssleutel gebruikt. Met de app worden API's aangeroepen vanuit Translator en [Bing Spellingcontrole](https://azure.microsoft.com/services/cognitive-services/spell-check/).
+In deze zelfstudie bouwt u een [Windows Presentation Foundation-app (WPF)](/visualstudio/designers/getting-started-with-wpf) die gebruikmaakt van Azure Cognitive Service voor tekstvertaling, taaldetectie en spellingscontrole. Hierbij wordt één abonnementssleutel gebruikt. Met de app worden API's aangeroepen vanuit Translator en [Bing Spellingcontrole](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 
 Wat is WPF? Dit is een UI-framework waarmee u apps voor computers maakt. Het WPF-ontwikkelingsplatform biedt ondersteuning voor een breed scala aan app-ontwikkelingsfuncties, waaronder een app-model, resources, besturingselementen, afbeeldingen, lay-out, gegevensbinding, documenten en beveiliging. Dit is een subset van het .NET Framework, dus als u al eerder apps hebt gemaakt met het .NET Framework met behulp van ASP.NET of Windows Forms, is de programmeerervaring vergelijkbaar. In WPF wordt gebruikgemaakt van de Extensible Application Markup Language (XAML) om een declaratief model te creëren voor app-programmering. Dit model wordt in de volgende secties besproken.
 
@@ -90,7 +90,7 @@ We gaan assembly's toevoegen aan het project om objecten te serialiseren en dese
 1. Wanneer u deze verwijzingen hebt toegevoegd aan uw project, klikt u op **OK** om **Reference Manager** te sluiten.
 
 > [!NOTE]
-> Als u graag meer wilt weten over assembly-verwijzingen, ziet u [How to: Add or remove reference using the Reference Manager](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019) (Instructies: verwijzingen toevoegen of verwijderen via Reference Manager).
+> Als u graag meer wilt weten over assembly-verwijzingen, ziet u [How to: Add or remove reference using the Reference Manager](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager) (Instructies: verwijzingen toevoegen of verwijderen via Reference Manager).
 
 ### <a name="install-newtonsoftjson"></a>NewtonSoft.Json installeren
 

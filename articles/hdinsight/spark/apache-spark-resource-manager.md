@@ -1,19 +1,16 @@
 ---
 title: Resources voor Apache Spark cluster beheren in azure HDInsight
 description: Meer informatie over het beheren van resources voor Spark-clusters in azure HDInsight voor betere prestaties.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/12/2021
-ms.openlocfilehash: 43e46c1b5e720e4f9f46f8d3198fea7124d8f5ba
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: ff7cfe8ad09201df20db89e14f8c175e678e5107
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132202"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929797"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Resources voor Apache Spark cluster beheren in azure HDInsight
 
@@ -149,7 +146,7 @@ Start de gebruikers interface van het garen zoals in het begin van het artikel w
 
     ![App2 afsluiten](./media/apache-spark-resource-manager/apache-ambari-kill-app2.png "App2 afsluiten")
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Taken die worden uitgevoerd in een Apache Spark-cluster in HDInsight, traceren en er fouten in oplossen](apache-spark-job-debugging.md)
 

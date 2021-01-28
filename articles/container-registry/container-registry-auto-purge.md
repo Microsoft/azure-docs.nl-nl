@@ -2,19 +2,19 @@
 title: Tags en manifesten opschonen
 description: Gebruik een opschoon opdracht om meerdere tags en manifesten uit een Azure-container register te verwijderen op basis van leeftijd en een label filter, en om eventueel opschoon bewerkingen te plannen.
 ms.topic: article
-ms.date: 11/10/2020
-ms.openlocfilehash: 406a1f231af57407e9475a8888b68aad9d88dcb3
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.date: 01/27/2021
+ms.openlocfilehash: ab1a925092784effd07431d75e4ec1535c53ed33
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445112"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927273"
 ---
 # <a name="automatically-purge-images-from-an-azure-container-registry"></a>Afbeeldingen automatisch uit een Azure container Registry verwijderen
 
 Wanneer u een Azure container Registry gebruikt als onderdeel van een werk stroom voor ontwikkel aars, kan het REGI ster snel worden gevuld met afbeeldingen of andere artefacten die na een korte periode niet nodig zijn. Mogelijk wilt u alle labels verwijderen die ouder zijn dan een bepaalde duur of die overeenkomen met een opgegeven naam filter. Als u meerdere artefacten snel wilt verwijderen, wordt in dit artikel de opdracht geïntroduceerd die `acr purge` u kunt uitvoeren als een taak op aanvraag of [geplande](container-registry-tasks-scheduled.md) ACR. 
 
-De `acr purge` opdracht wordt momenteel gedistribueerd in een open bare container installatie kopie ( `mcr.microsoft.com/acr/acr-cli:0.3` ), gebouwd op basis van de bron code in de [ACR-cli](https://github.com/Azure/acr-cli) opslag plaats in github.
+De `acr purge` opdracht wordt momenteel gedistribueerd in een open bare container installatie kopie ( `mcr.microsoft.com/acr/acr-cli:0.4` ), gebouwd op basis van de bron code in de [ACR-cli](https://github.com/Azure/acr-cli) opslag plaats in github.
 
 U kunt de Azure Cloud Shell of een lokale installatie van de Azure CLI gebruiken om de ACR-taak voorbeelden in dit artikel uit te voeren. Als u het lokaal wilt gebruiken, is versie 2.0.76 of hoger vereist. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren. 
 
@@ -42,9 +42,10 @@ Geef ten minste het volgende op wanneer u uitvoert `acr purge` :
 
 `acr purge` ondersteunt verschillende optionele para meters. De volgende twee worden in voor beelden in dit artikel gebruikt:
 
-* `--untagged` -Geeft aan dat manifesten zonder gekoppelde labels (niet- *gecodeerde manifesten* ) worden verwijderd.
+* `--untagged` -Geeft aan dat manifesten zonder gekoppelde labels (niet-*gecodeerde manifesten*) worden verwijderd.
 * `--dry-run` -Geeft aan dat er geen gegevens worden verwijderd, maar de uitvoer is hetzelfde als als de opdracht wordt uitgevoerd zonder deze vlag. Deze para meter is handig voor het testen van een opschoon opdracht om er zeker van te zijn dat de gegevens die u wilt behouden, niet per ongeluk worden verwijderd.
 * `--keep` -Geeft aan dat het meest recente x-aantal tags dat moet worden verwijderd, wordt bewaard.
+* `--concurrency` -Hiermee geeft u op dat de x-leegmaak taken gelijktijdig moeten worden verwerkt. Er wordt een standaard waarde gebruikt als deze para meter niet is ingesteld.
 
 Voer uit voor aanvullende para meters `acr purge --help` . 
 

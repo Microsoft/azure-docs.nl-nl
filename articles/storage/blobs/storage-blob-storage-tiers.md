@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: klaasl
-ms.openlocfilehash: 570fd7f356969bbd37ef6b661334501a062c36df
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 67534e70904c70f7bf9dda44502e723916bdce93
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165685"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928802"
 ---
 # <a name="access-tiers-for-azure-blob-storage---hot-cool-and-archive"></a>Toegangs lagen voor Azure Blob Storage-hot, cool en Archive
 
@@ -86,7 +86,7 @@ Voor beelden van gebruiks scenario's voor de Access-laag voor archiveren zijn:
 - Compatibiliteits-en archiverings gegevens die gedurende lange tijd moeten worden opgeslagen en die nauwelijks worden gebruikt
 
 > [!NOTE]
-> De opslaglaag wordt niet ondersteund voor ZRS-, GZRS-of RA-GZRS-accounts.
+> De opslaglaag wordt niet ondersteund voor ZRS-, GZRS-of RA-GZRS-accounts. Het migreren van LRS naar GRS wordt niet ondersteund als het opslag account blobs in de laag Archive bevat.
 
 ## <a name="account-level-tiering"></a>Lagen op account niveau
 

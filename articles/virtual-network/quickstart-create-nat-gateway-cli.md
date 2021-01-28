@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 43b2c8271090d2254bcb4834c3b566c3601a104b
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
-ms.translationtype: HT
+ms.openlocfilehash: 8d14b8b83fd784956091e738a38d6851d5edacd9
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223241"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927138"
 ---
 # <a name="create-a-nat-gateway-using-azure-cli"></a>Een NAT-gateway maken met Azure CLI
 
@@ -74,7 +74,7 @@ In deze sectie wordt beschreven hoe u de volgende onderdelen van de NAT-service 
   - Een openbare IP-adresgroep en een openbaar IP-voorvoegsel die moeten worden gebruikt voor uitgaande stromen die worden vertaald door de NAT-gatewayresource.
   - Wijzig de time-out voor inactiviteit van de standaardwaarde van 4 minuten naar 10 minuten.
 
-Maak met [az network nat gateway create](/cli/azure/network/nat?view=azure-cli-latest) een globaal Azure NAT-gateway met de naam **myNATgateway**. De opdracht gebruikt zowel het openbare IP-adres **myPublicIP** als het openbare IP-voorvoegsel **myPublicIPprefix**. De opdracht verandert de time-out voor inactiviteit in **10** minuten.
+Maak met [az network nat gateway create](/cli/azure/network/nat) een globaal Azure NAT-gateway met de naam **myNATgateway**. De opdracht gebruikt zowel het openbare IP-adres **myPublicIP** als het openbare IP-voorvoegsel **myPublicIPprefix**. De opdracht verandert de time-out voor inactiviteit in **10** minuten.
 
 ```azurecli-interactive
   az network nat gateway create \
@@ -134,7 +134,7 @@ U maakt een openbare IP die gaat worden gebruikt voor toegang tot de VM.  Gebrui
 
 ### <a name="create-an-nsg-for-vm"></a>Een NSG maken voor VM
 
-Omdat standaard openbare IP-adressen een 'standaardbeveiliging' vormen, moet u een NSG maken om inkomende toegang voor SSH-toegang toe te staan. Gebruik [az network nsg create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create) om in **myResourceGroupNAT** een NSG-resource met de naam **myNSG** te maken.
+Omdat standaard openbare IP-adressen een 'standaardbeveiliging' vormen, moet u een NSG maken om inkomende toegang voor SSH-toegang toe te staan. Gebruik [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create) om in **myResourceGroupNAT** een NSG-resource met de naam **myNSG** te maken.
 
 ```azurecli-interactive
   az network nsg create \
@@ -144,7 +144,7 @@ Omdat standaard openbare IP-adressen een 'standaardbeveiliging' vormen, moet u e
 
 ### <a name="expose-ssh-endpoint-on-source-vm"></a>SSH-eindpunt beschikbaar maken op de bron-VM
 
-U maakt een regel in de NSG voor SSH-toegang tot de bron-VM. Gebruik [az network nsg rule create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create) om een NSG-regel met de naam **ssh** te maken in de NSG met de naam **myNSG** in **myResourceGroupNAT**.
+U maakt een regel in de NSG voor SSH-toegang tot de bron-VM. Gebruik [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create) om een NSG-regel met de naam **ssh** te maken in de NSG met de naam **myNSG** in **myResourceGroupNAT**.
 
 ```azurecli-interactive
   az network nsg rule create \

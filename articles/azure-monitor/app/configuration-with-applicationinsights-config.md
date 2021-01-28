@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.custom: devx-track-csharp
 ms.reviewer: olegan
-ms.openlocfilehash: 7c0759e78b1adc1704acb602daa12cf9cabbe153
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d05503c2a22c476d9ab08e8aeb058ca1b9826778
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934800"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928681"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>De Application Insights-SDK configureren met ApplicationInsights.config of ApplicationInsights.xml
 De Application Insights .NET SDK bestaat uit een aantal NuGet-pakketten. Het [kern pakket](https://www.nuget.org/packages/Microsoft.ApplicationInsights) biedt de API voor het verzenden van telemetrie naar de Application Insights. [Aanvullende pakketten](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) bieden telemetrie- *modules* en *initialisatie functies* voor het automatisch traceren van telemetrie van uw toepassing en de bijbehorende context. Door het configuratie bestand aan te passen, kunt u telemetrie-modules en initialisatie functies in-of uitschakelen en para meters instellen voor een aantal hiervan.
@@ -87,7 +87,7 @@ Rapporteert de [reactie tijd en de resultaat code](../../azure-monitor/app/asp-n
 * [Micro soft. ApplicationInsights. EtwCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector) 
 
 ### <a name="microsoftapplicationinsights"></a>Micro soft. ApplicationInsights
-Het pakket micro soft. ApplicationInsights biedt de [kern-API](/dotnet/api/microsoft.applicationinsights?view=azure-dotnet) van de SDK. De andere telemetrie-modules gebruiken deze en u kunt [deze ook gebruiken om uw eigen telemetrie te definiëren](./api-custom-events-metrics.md).
+Het pakket micro soft. ApplicationInsights biedt de [kern-API](/dotnet/api/microsoft.applicationinsights) van de SDK. De andere telemetrie-modules gebruiken deze en u kunt [deze ook gebruiken om uw eigen telemetrie te definiëren](./api-custom-events-metrics.md).
 
 * Geen vermelding in ApplicationInsights.config.
 * [Micro soft. ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights) NuGet-pakket. Als u alleen deze NuGet installeert, wordt er geen. config-bestand gegenereerd.

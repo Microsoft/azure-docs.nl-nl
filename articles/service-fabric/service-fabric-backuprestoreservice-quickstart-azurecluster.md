@@ -3,12 +3,12 @@ title: Periodic backup and restore in Azure Service Fabric (Periodieke back-up e
 description: Gebruik de periodieke back-up-en herstel functie van Service Fabric voor het inschakelen van periodieke gegevens back-ups van uw toepassings gegevens.
 ms.topic: conceptual
 ms.date: 5/24/2019
-ms.openlocfilehash: 18d10b365cb2e4f4b4e3592233d5f467714bd5b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2d167b261f9b5915a970b4c219113f0765c039cb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91538667"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927988"
 ---
 # <a name="periodic-backup-and-restore-in-an-azure-service-fabric-cluster"></a>Periodieke back-ups maken en herstellen in een Azure Service Fabric-cluster
 > [!div class="op_single_selector"]
@@ -48,11 +48,16 @@ Service Fabric biedt een reeks Api's om de volgende functionaliteit te bieden me
 * X. 509-certificaat voor het versleutelen van geheimen die nodig zijn om verbinding te maken met opslag om back-ups op te slaan. Raadpleeg het [artikel](service-fabric-cluster-creation-via-arm.md) om te weten hoe u een X. 509-certificaat kunt ophalen of maken.
 * Service Fabric betrouw bare stateful toepassing die is gebouwd met Service Fabric SDK-versie 3,0 of hoger. Voor toepassingen die zijn gericht op .NET Core 2,0, moet de toepassing worden gebouwd met Service Fabric SDK-versie 3,1 of hoger.
 * Maak Azure Storage-account voor het opslaan van back-ups van toepassingen.
-* Installeer de micro soft. ServiceFabric. Power shell. http-module [in Preview] om configuratie aanroepen te maken.
+* Installeer de micro soft. ServiceFabric. Power shell. http-module (preview) om configuratie aanroepen te maken.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
 ```
+
+> [!NOTE]
+> Als uw PowerShellGet-versie lager is dan 1.6.0, moet u bijwerken om ondersteuning toe te voegen voor de vlag *-AllowPrerelease* :
+>
+> `Install-Module -Name PowerShellGet -Force`
 
 * Zorg ervoor dat het cluster is verbonden met behulp van de `Connect-SFCluster` opdracht voordat u een configuratie aanvraag maakt met behulp van de module micro soft. ServiceFabric. Power shell. http.
 
@@ -120,7 +125,7 @@ Eerst moet u de service voor _back-up en herstel_ inschakelen in uw cluster. Haa
 We gaan stappen uitvoeren om periodieke back-ups in te scha kelen voor betrouw bare stateful service en Reliable Actors. Bij deze stappen wordt ervan uitgegaan
 - Of het cluster is ingesteld met behulp van X. 509-beveiliging met _Backup-en Restore-service_.
 - Een betrouw bare stateful service wordt op het cluster geïmplementeerd. Voor het doel van deze Snelstartgids is de toepassings-URI `fabric:/SampleApp` en de URI voor een betrouw bare stateful service die deel uitmaakt van deze toepassing `fabric:/SampleApp/MyStatefulService` . Deze service wordt geïmplementeerd met één partitie en de partitie-ID is `974bd92a-b395-4631-8a7f-53bd4ae9cf22` .
-- Het client certificaat met de rol beheerder wordt geïnstalleerd in de archief naam _mijn_ (persoonlijk _) van het_ adres archief op de computer waar de onderstaande scripts worden aangeroepen._Personal_ In dit voor beeld wordt `1b7ebe2174649c45474a4819dafae956712c31d3` als vinger afdruk van dit certificaat gebruikt. Zie op [rollen gebaseerd toegangs beheer voor service Fabric-clients](service-fabric-cluster-security-roles.md)voor meer informatie over client certificaten.
+- Het client certificaat met de rol beheerder wordt geïnstalleerd in de archief naam _mijn_ (persoonlijk _) van het_ adres archief op de computer waar de onderstaande scripts worden aangeroepen. In dit voor beeld wordt `1b7ebe2174649c45474a4819dafae956712c31d3` als vinger afdruk van dit certificaat gebruikt. Zie op [rollen gebaseerd toegangs beheer voor service Fabric-clients](service-fabric-cluster-security-roles.md)voor meer informatie over client certificaten.
 
 ### <a name="create-backup-policy"></a>Back-upbeleid maken
 

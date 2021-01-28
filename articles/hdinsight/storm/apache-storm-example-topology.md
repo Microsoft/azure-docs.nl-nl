@@ -1,19 +1,16 @@
 ---
 title: Voor beeld Apache Storm topologieën in azure HDInsight
 description: Een lijst met voor beelden van Storm-topologieën die zijn gemaakt en getest met Apache Storm op HDInsight, waaronder Basic C#-en Java-topologieën en werken met Event Hubs.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/27/2019
-ms.openlocfilehash: cfc68b144eac16681f162b3574a82351397ed37c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8dabfec18cb904fa72518428220991b817b53529
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86086854"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928926"
 ---
 # <a name="example-apache-storm-topologies-and-components-for-apache-storm-on-hdinsight"></a>Voor beeld Apache Storm topologieën en onderdelen voor Apache Storm in HDInsight
 
@@ -25,7 +22,7 @@ Hier volgt een lijst met voor beelden die door micro soft zijn gemaakt en onderh
 | [Event hub-Spout en-flits bron](https://github.com/apache/storm/tree/master/external/storm-eventhubs) |Bron voor de Event hub-Spout en-flits |Java |
 | [Op Java gebaseerde topologieën ontwikkelen voor Apache Storm op HDInsight][5797064f] |Maven |Java |
 | [C#-topologieën ontwikkelen voor Apache Storm op HDInsight met behulp van Visual Studio][16fce2d1] |HDInsight-Hulpprogram Ma's voor Visual Studio |C#, java |
-| [Gebeurtenissen verwerken vanuit Azure Event Hubs met Apache Storm op HDInsight (C#)][844d1d81] |Event Hubs |C# en Java |
+| [Gebeurtenissen uit Azure Event Hubs verwerken met Apache Storm in HDInsight (C#)][844d1d81] |Event Hubs |C# en Java |
 | [Process events from Azure Event Hubs with Storm on HDInsight (Java)](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub) (Gebeurtenissen uit Azure Event Hubs verwerken met Storm op HDInsight (Java)) |Event Hubs |Java |
 | [Voertuig sensor gegevens van Event Hubs verwerken met Apache Storm op HDInsight][246ee964] |Event Hubs, Cosmos DB, Azure Storage Blob (WASB) |C#, java |
 | [ETL van Azure Event Hubs naar Apache HBase extra heren, transformeren en laden met behulp van Apache Storm op HDInsight][b4b68194] |Event Hubs, HBase |C# |
@@ -44,7 +41,7 @@ Zie [python gebruiken met Apache Storm op HDInsight](apache-storm-develop-python
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een Apache Storm topologie in azure HDInsight maken en bewaken](./apache-storm-quickstart.md)
+* [Apache Storm-topologie maken/bewaken in Azure HDInsight](./apache-storm-quickstart.md)
 * [Meer informatie over het implementeren en beheren van Apache Storm topologieën met Apache Storm op HDInsight][6eb0d3b8]
 
 [6eb0d3b8]:apache-storm-deploy-monitor-topology-linux.md "Meer informatie over het implementeren en beheren van topologieën met behulp van het webgebaseerde Apache Storm dash board en Storm-gebruikers interface of de HDInsight-Hulpprogram Ma's voor Visual Studio."

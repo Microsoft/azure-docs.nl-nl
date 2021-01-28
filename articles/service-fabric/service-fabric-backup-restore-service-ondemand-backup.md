@@ -5,12 +5,12 @@ author: aagup
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: 04d8bb4a9f8157a229751d073e8d351f5448fa68
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7986c8cd8d0714215c7b4dc57170be346e627ed
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86247894"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928035"
 ---
 # <a name="on-demand-backup-in-azure-service-fabric"></a>Back-ups op aanvraag in azure Service Fabric
 
@@ -21,11 +21,16 @@ Azure Service Fabric heeft functies voor [periodieke back-ups van gegevens](serv
 De functies van de back-up op aanvraag zijn handig voor het vastleggen van de status van de Services voordat u de bewerking van een service of service omgeving hand matig start. Als u bijvoorbeeld een wijziging in de binaire bestanden van de service aanbrengt tijdens het bijwerken of Down graden van de service. In een dergelijk geval kan back-ups op aanvraag de gegevens helpen beschermen tegen beschadiging door toepassings code fouten.
 ## <a name="prerequisites"></a>Vereisten
 
-- Installeer de micro soft. ServiceFabric. Power shell. http-module [in Preview] om configuratie aanroepen te maken.
+- Installeer de micro soft. ServiceFabric. Power shell. http-module (preview) om configuratie aanroepen te maken.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
 ```
+
+> [!NOTE]
+> Als uw PowerShellGet-versie lager is dan 1.6.0, moet u bijwerken om ondersteuning toe te voegen voor de vlag *-AllowPrerelease* :
+>
+> `Install-Module -Name PowerShellGet -Force`
 
 - Zorg ervoor dat het cluster is verbonden met behulp van de `Connect-SFCluster` opdracht voordat u een configuratie aanvraag maakt met behulp van de module micro soft. ServiceFabric. Power shell. http.
 
@@ -149,7 +154,7 @@ Aanvragen voor back-ups op aanvraag kunnen de volgende statussen hebben:
   LsnOfLastBackupRecord   : 0
   FailureError            :
   ```
-- **Geslaagd**, **mislukt**of **time-out**: een aangevraagde back-up op aanvraag kan worden voltooid met een van de volgende statussen:
+- **Geslaagd**, **mislukt** of **time-out**: een aangevraagde back-up op aanvraag kan worden voltooid met een van de volgende statussen:
   - **Geslaagd**: de _back-upstatus is geslaagd._ Hiermee wordt aangegeven dat er een back-up van de partitie status is gemaakt. Het antwoord geeft _BackupEpoch_ en _BackupLSN_ voor de partitie samen met de tijd in UTC.
     ```
     BackupState             : Success

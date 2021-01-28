@@ -1,19 +1,16 @@
 ---
 title: Voor beeld van een Java-topologie Apache Storm-Azure HDInsight
 description: Meer informatie over het maken van Apache Storm-topologieën in Java door een topologie voor een aantal woorden te maken.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017,seoapr2020,devx-track-java
 ms.date: 04/27/2020
-ms.openlocfilehash: 881ec4aa36261958b566dc2d7c4d06475a76bad4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 620a4e1627b25af22db68173f35924376e26f5f8
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545494"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929128"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Een Apache Storm topologie maken in Java
 
@@ -151,7 +148,7 @@ Tijdens het compileren gebruikt maven deze informatie om op te zoeken `storm-cor
 > [!NOTE]  
 > Let `<scope>provided</scope>` op de regel in deze sectie. Met deze instelling wordt aangegeven dat maven **Storm-kern** moet worden uitgesloten van alle JAR-bestanden die worden gemaakt, omdat deze worden verschaft door het systeem.
 
-## <a name="build-configuration"></a>Configuratie maken
+## <a name="build-configuration"></a>Configuratie compileren
 
 Met maven-invoeg toepassingen kunt u de build-fasen van het project aanpassen. Bijvoorbeeld hoe het project wordt gecompileerd of hoe het moet worden ingepakt in een JAR-bestand. `pom.xml`Voeg in de volgende tekst toe boven de `</project>` regel.
 
@@ -199,9 +196,9 @@ Deze sectie wordt gebruikt om invoeg toepassingen, resources en andere configura
 
     Een andere handige invoeg toepassing is de [`Apache Maven Compiler Plugin`](https://maven.apache.org/plugins/maven-compiler-plugin/) , die wordt gebruikt om de compilatie opties te wijzigen. Wijzig de Java-versie die maven gebruikt voor de bron en het doel voor uw toepassing.
 
-  * Voor HDInsight __3,4 of eerder__ stelt u de bron-en doel-Java-versie in op __1,7__ .
+  * Voor HDInsight __3,4 of eerder__ stelt u de bron-en doel-Java-versie in op __1,7__.
 
-  * Voor HDInsight __3,5__ stelt u de bron-en doel-Java-versie in op __1,8__ .
+  * Voor HDInsight __3,5__ stelt u de bron-en doel-Java-versie in op __1,8__.
 
   Voeg de volgende tekst toe `<plugins>` aan de sectie van het bestand, waarin `pom.xml` de invoeg toepassing Apache Maven compiler wordt vermeld. In dit voor beeld wordt 1,8 opgegeven, dus is de HDInsight-versie van het doel 3,5.
 
@@ -237,11 +234,11 @@ In dit voor beeld wordt de map resources in de hoofdmap van het project ( `${bas
 
 Een op Java gebaseerde Apache Storm topologie bestaat uit drie onderdelen die u als een afhankelijkheid (of referentie) moet maken.
 
-* **Spouts** : gegevens uit externe bronnen worden gelezen en gegevens stromen in de topologie worden verzonden.
+* **Spouts**: gegevens uit externe bronnen worden gelezen en gegevens stromen in de topologie worden verzonden.
 
-* **Bouten** : verwerkt stromen op basis van spouts of andere schichten en levert een of meer streams.
+* **Bouten**: verwerkt stromen op basis van spouts of andere schichten en levert een of meer streams.
 
-* **Topologie** : definieert hoe de spouts en schichten worden gerangschikt en biedt het toegangs punt voor de topologie.
+* **Topologie**: definieert hoe de spouts en schichten worden gerangschikt en biedt het toegangs punt voor de topologie.
 
 ### <a name="create-the-spout"></a>De Spout maken
 
@@ -327,9 +324,9 @@ public class RandomSentenceSpout extends BaseRichSpout {
 
 Bouten verwerken de gegevens verwerking. Schichten kunnen alles doen, bijvoorbeeld berekening, persistentie of praten met externe onderdelen. In deze topologie worden twee schichten gebruikt:
 
-* **SplitSentence** : splitst de zinnen die worden verzonden door **RandomSentenceSpout** in afzonderlijke woorden.
+* **SplitSentence**: splitst de zinnen die worden verzonden door **RandomSentenceSpout** in afzonderlijke woorden.
 
-* **WordCount** : telt het aantal keren dat elk woord heeft plaatsgevonden.
+* **WordCount**: telt het aantal keren dat elk woord heeft plaatsgevonden.
 
 #### <a name="splitsentence"></a>SplitSentence
 

@@ -1,19 +1,16 @@
 ---
 title: Fouten opsporen in Apache Spark-taken die worden uitgevoerd in Azure HDInsight
 description: De GARENs-UI, Spark-gebruikers interface en Spark-geschiedenis server gebruiken voor het bijhouden en opsporen van fouten in taken die worden uitgevoerd op een Spark-cluster in azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 366c77ff94773163b71845b1ccbc6072c503734a
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: f332416a10aa86cb7e0bc7ba560537955d9f2faa
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822298"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930575"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Fouten opsporen in Apache Spark-taken die worden uitgevoerd in Azure HDInsight
 
@@ -104,7 +101,7 @@ Zodra een taak is voltooid, wordt de informatie over de taak opgeslagen in de Sp
 
     ![Voltooide Spark-geschiedenis server toepassingen](./media/apache-spark-job-debugging/view-completed-applications.png "Spark-geschiedenis server2 starten")
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Resources beheren voor het Apache Spark-cluster in Azure HDInsight](apache-spark-resource-manager.md)
 * [Fouten opsporen Apache Spark taken met uitgebreide Spark-geschiedenis server](apache-azure-spark-history-server.md)

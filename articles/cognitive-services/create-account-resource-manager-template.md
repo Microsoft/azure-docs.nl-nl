@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: aahi
 ms.custom: subject-armqs, devx-track-azurecli
-ms.openlocfilehash: 4afaad77fdff7a1ba80a385e9f2c3d8ddef8ab96
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 856fd86b08dfe74925e682661df0d20692839bd5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842104"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928651"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-an-arm-template"></a>Quickstart: Een Cognitive Services-resource maken met behulp van een ARM-sjabloon
 
@@ -75,7 +75,7 @@ Er is één Azure-resource gedefinieerd in de sjabloon:
 > [!NOTE]
 > Voor het maken van `az deployment group` is Azure CLI-versie 2.6 of hoger vereist. Typ `az --version` om de versie weer te geven. Raadpleeg de [documentatie](/cli/azure/deployment/group) voor meer informatie.
 
-Voer het volgende script uit met behulp van de Azure CLI (opdrachtregelinterface), [op de lokale computer](/cli/azure/install-azure-cli?view=azure-cli-latest) of in een browser met de knop **Uitproberen**. Voer een naam en locatie (bijvoorbeeld `centralus`) in voor een nieuwe resourcegroep. De ARM-sjabloon wordt vervolgens gebruikt om in deze groep een Cognitive Services-resource te implementeren. Onthoud de naam die u gebruikt. Deze naam hebt u later nodig om de implementatie te valideren.
+Voer het volgende script uit met behulp van de Azure CLI (opdrachtregelinterface), [op de lokale computer](/cli/azure/install-azure-cli) of in een browser met de knop **Uitproberen**. Voer een naam en locatie (bijvoorbeeld `centralus`) in voor een nieuwe resourcegroep. De ARM-sjabloon wordt vervolgens gebruikt om in deze groep een Cognitive Services-resource te implementeren. Onthoud de naam die u gebruikt. Deze naam hebt u later nodig om de implementatie te valideren.
 
 
 ```azurecli-interactive

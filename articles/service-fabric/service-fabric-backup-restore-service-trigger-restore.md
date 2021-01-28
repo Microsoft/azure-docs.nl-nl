@@ -5,12 +5,12 @@ author: aagup
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: 3d881033b8dde6cc55a9720ec94084bd876116f1
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 8566d82ef0d91caff47ff17a9cb12fcdc8241884
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207390"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928014"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Back-up herstellen in azure Service Fabric
 
@@ -28,11 +28,16 @@ U kunt bijvoorbeeld een service configureren om een back-up te maken van de gege
 - Als u een herstel bewerking wilt starten, moet de _fout Analysis Service (FAS)_ zijn ingeschakeld voor het cluster.
 - De back-up van de _service Backup Restore (BRS)_ is gemaakt.
 - Het terugzetten kan alleen worden geactiveerd op een partitie.
-- Installeer de micro soft. ServiceFabric. Power shell. http-module [in Preview] om configuratie aanroepen te maken.
+- Installeer de micro soft. ServiceFabric. Power shell. http-module (preview) om configuratie aanroepen te maken.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
 ```
+
+> [!NOTE]
+> Als uw PowerShellGet-versie lager is dan 1.6.0, moet u bijwerken om ondersteuning toe te voegen voor de vlag *-AllowPrerelease* :
+>
+> `Install-Module -Name PowerShellGet -Force`
 
 - Zorg ervoor dat het cluster is verbonden met behulp van de `Connect-SFCluster` opdracht voordat u een configuratie aanvraag maakt met behulp van de module micro soft. ServiceFabric. Power shell. http.
 
@@ -154,7 +159,7 @@ U moet ook een doel partitie in het alternatieve cluster kiezen, zoals wordt bes
 
 Als de partitie-ID op het alternatieve cluster is `1c42c47f-439e-4e09-98b9-88b8f60800c6` , kunt u deze toewijzen aan de oorspronkelijke cluster partitie-id `974bd92a-b395-4631-8a7f-53bd4ae9cf22` door de hoge sleutel en de lage sleutel te vergelijken voor _partitioneren met een bereik (UniformInt64Partition)_.
 
-Bij _benoemde partitionering_wordt de waarde name vergeleken om de doel partitie in een alternatief cluster te identificeren.
+Bij _benoemde partitionering_ wordt de waarde name vergeleken om de doel partitie in een alternatief cluster te identificeren.
 
 #### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>Power shell met behulp van de module micro soft. ServiceFabric. Power shell. http
 
@@ -213,7 +218,7 @@ Het volgende voor beeld is een voortzetting van het [inschakelen van periodieke 
 
 Selecteer een back-up in de uitvoer van  [GetBackupAPI](service-fabric-backuprestoreservice-quickstart-azurecluster.md#list-backups). In dit scenario wordt de back-up van hetzelfde cluster als voorheen gegenereerd.
 
-Als u de herstel bewerking wilt starten, kiest u een back-up in de lijst. Voor de gegevens beschadiging van het huidige _gegevens verlies_ / _data corruption_selecteert u de volgende back-up:
+Als u de herstel bewerking wilt starten, kiest u een back-up in de lijst. Voor de gegevens beschadiging van het huidige _gegevens verlies_ / selecteert u de volgende back-up:
 
 ```
 BackupId                : b0035075-b327-41a5-a58f-3ea94b68faa4
@@ -297,7 +302,7 @@ De herstel aanvraag vordert in de volgende volg orde:
     RestoredLsn   : 3552
     ```
     
-3. **Geslaagd**, **mislukt**of **time-out**: een aangevraagde herstel bewerking kan in een van de volgende statussen worden uitgevoerd. Elke status heeft de volgende betekenis-en reactie Details:
+3. **Geslaagd**, **mislukt** of **time-out**: een aangevraagde herstel bewerking kan in een van de volgende statussen worden uitgevoerd. Elke status heeft de volgende betekenis-en reactie Details:
     - **Geslaagd**: de herstel status van een _geslaagd_ geeft aan dat de status van de partitie opnieuw is verkregen. De partitie rapporteert _RestoredEpoch_ -en _RestoredLSN_ -statussen samen met de tijd in UTC.
 
         ```

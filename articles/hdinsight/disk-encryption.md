@@ -2,18 +2,15 @@
 title: Dubbele versleuteling voor Data-at-rest
 titleSuffix: Azure HDInsight
 description: In dit artikel worden de twee coderings lagen beschreven die beschikbaar zijn voor Data-at-rest in azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: 4e895cdba1bfc16eac0450bd05271f0e41985b7b
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: c9e50885a7283d3f7fcd231bf222415389212a93
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359756"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927319"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Dubbele versleuteling van Azure HDInsight voor Data-at-rest
 
@@ -21,7 +18,7 @@ In dit artikel worden methoden beschreven voor het versleutelen van gegevens in 
 
 Dit document bevat geen informatie over de gegevens die zijn opgeslagen in uw Azure Storage-account. Uw clusters kunnen een of meer gekoppelde Azure Storage-accounts bevatten waarbij de versleutelings sleutels ook door micro soft worden beheerd of door de klant worden beheerd, maar de versleutelings service verschilt. Zie [Azure Storage encryption for Data at rest](../storage/common/storage-service-encryption.md)(Engelstalig) voor meer informatie over Azure Storage versleuteling.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Er zijn drie hoofd rollen voor beheerde schijven in Azure: de gegevens schijf, de besturingssysteem schijf en de tijdelijke schijf. Zie [Introduction to Azure Managed disks](../virtual-machines/managed-disks-overview.md)(Engelstalig) voor meer informatie over verschillende typen Managed disks. 
 
@@ -71,7 +68,7 @@ Zie [een door de gebruiker toegewezen beheerde identiteit maken](../active-direc
 
 ### <a name="create-azure-key-vault"></a>Azure Key Vault maken
 
-Maak een sleutelkluis. Zie [Azure Key Vault maken](../key-vault/general/quick-create-portal.md) voor specifieke stappen.
+Een sleutelkluis maken. Zie [Azure Key Vault maken](../key-vault/general/quick-create-portal.md) voor specifieke stappen.
 
 HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt, kunt u uw sleutels importeren in Azure Key Vault. Houd er rekening mee dat voor de sleutel kluis **voorlopig verwijderen** moet zijn ingeschakeld. Ga voor meer informatie over het importeren van bestaande sleutels naar [sleutels, geheimen en certificaten](../key-vault/general/about-keys-secrets-certificates.md).
 

@@ -1,19 +1,16 @@
 ---
 title: Een cluster van ML Services op HDInsight-Azure beheren
 description: Meer informatie over het beheren van verschillende taken in een cluster met MILLILITER Services in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/19/2019
-ms.openlocfilehash: 898a02796d578d76f9b45d167f4e92a4bf9831ba
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: e4c9124ebd0b61b8db1b1da964355a3c36b5bba5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536280"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930565"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Een cluster van ML Services beheren in azure HDInsight
 
@@ -21,7 +18,7 @@ In dit artikel leert u hoe u een bestaand ML Services-cluster in azure HDInsight
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een ML Services-cluster beheren in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **ML Services** voor **Clustertype** .
+* Een ML Services-cluster beheren in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van Azure Portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **ML Services** voor **Clustertype**.
 
 * Een SSH-client (Secure Shell): er wordt een SSH-client gebruikt om extern verbinding te maken met het HDInsight-cluster en om opdrachten rechtstreeks uit te voeren op het cluster. Zie [SSH gebruiken met HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md)voor meer informatie.
 
@@ -31,8 +28,8 @@ U kunt meerdere gelijktijdige gebruikers inschakelen voor een cluster van ML Ser
 
 ![HDI Azure Portal aanmeldings parameters](./media/r-server-hdinsight-manage/hdi-concurrent-users1.png)
 
-- **Gebruikersnaam voor aanmelding cluster** : een HTTP-gebruiker voor verificatie via de HDInsight-gateway die wordt gebruikt voor het beveiligen van de HDInsight-clusters die u hebt gemaakt. Deze HTTP-gebruiker wordt gebruikt voor toegang tot de Apache Ambari-gebruikers interface, Apache Hadoop garen gebruikers interface en andere GEBRUIKERSINTERFACE onderdelen.
-- **Secure Shell (SSH)-gebruikersnaam** : een SSH-gebruiker voor toegang tot het cluster via Secure Shell. Deze gebruiker is een gebruiker in het Linux-systeem voor alle hoofdknooppunten, werkknooppunten en Edge-knooppunten. U kunt Secure Shell gebruiken voor toegang tot alle knooppunten in een extern cluster.
+- **Gebruikersnaam voor aanmelding cluster**: een HTTP-gebruiker voor verificatie via de HDInsight-gateway die wordt gebruikt voor het beveiligen van de HDInsight-clusters die u hebt gemaakt. Deze HTTP-gebruiker wordt gebruikt voor toegang tot de Apache Ambari-gebruikers interface, Apache Hadoop garen gebruikers interface en andere GEBRUIKERSINTERFACE onderdelen.
+- **Secure Shell (SSH)-gebruikersnaam**: een SSH-gebruiker voor toegang tot het cluster via Secure Shell. Deze gebruiker is een gebruiker in het Linux-systeem voor alle hoofdknooppunten, werkknooppunten en Edge-knooppunten. U kunt Secure Shell gebruiken voor toegang tot alle knooppunten in een extern cluster.
 
 De R Studio Server Community-versie die wordt gebruikt in het clusters van de ML Services op HDInsight accepteert alleen Linux-gebruikers naam en-wacht woord als aanmeldings mechanisme. Doorgegeven tokens worden niet ondersteund. Daarom moet u zich twee keer aanmelden wanneer u probeert om R Studio voor de eerste keer te openen op een ML-cluster.
 
@@ -74,7 +71,7 @@ Wanneer u wordt gevraagd naar ' Huidig Kerberos-wacht woord: ', drukt u op **Ent
 
 Toegang tot RStudio vanuit `https://CLUSTERNAME.azurehdinsight.net/rstudio/` . Als u zich voor het eerst aanmeldt na het maken van het cluster, voert u de referenties van de Cluster beheerder in, gevolgd door de gebruikers referenties voor SSH die u hebt gemaakt. Als dit niet uw eerste aanmelding is, voert u alleen de referenties in voor de SSH-gebruiker die u hebt gemaakt.
 
-U kunt zich ook vanuit een ander browser venster Aanmelden met de oorspronkelijke referenties (standaard *sshuser* ).
+U kunt zich ook vanuit een ander browser venster Aanmelden met de oorspronkelijke referenties (standaard *sshuser*).
 
 U ziet ook dat de zojuist toegevoegde gebruikers geen hoofdmapbevoegdheden in het Linux-systeem hebben, maar wel dezelfde toegang tot alle bestanden in de externe HDFS- en WASB-opslag hebben.
 
@@ -197,7 +194,7 @@ Als u R-pakketten wilt installeren op de worker-knoop punten van het cluster, mo
 
 3. Geef voor de **actie script verzenden** de volgende informatie op:
 
-   * Selecteer **aangepast** bij **script type** .
+   * Selecteer **aangepast** bij **script type**.
 
    * Geef bij **naam** een naam op voor de script actie.
 
@@ -205,7 +202,7 @@ Als u R-pakketten wilt installeren op de worker-knoop punten van het cluster, mo
 
    * Schakel het selectie vakje voor de **werk nemer** alleen in.
 
-   * **Parameters** : de R-pakketten die moeten worden geïnstalleerd. Bijvoorbeeld: `bitops stringr arules`
+   * **Parameters**: de R-pakketten die moeten worden geïnstalleerd. Bijvoorbeeld: `bitops stringr arules`
 
    * Schakel het selectie vakje in om **Deze script actie persistent** te maken.  
 

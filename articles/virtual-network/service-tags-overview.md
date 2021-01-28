@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 965795b96deda03531504952fc8afbea0acb41bf
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 39645e8bd370dfd518d570c3088c56a22aa77748
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221949"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927032"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -129,8 +129,8 @@ U kunt de huidige informatie over de servicetag en het bereik ophalen om op te n
 U kunt de huidige lijst met Service Tags op een programmatische manier ophalen in combi natie met details van IP-adres bereik:
 
 - [REST](/rest/api/virtualnetwork/servicetags/list)
-- [Azure PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag?view=azps-2.8.0&viewFallbackFrom=azps-2.3.2)
-- [Azure-CLI](/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags)
+- [Azure PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag?viewFallbackFrom=azps-2.3.2)
+- [Azure-CLI](/cli/azure/network#az-network-list-service-tags)
 
 > [!NOTE]
 > In de open bare preview-versie kan de detectie-API informatie retour neren die minder actueel is dan gegevens die door de JSON-down loads worden geretourneerd. (Zie de volgende sectie.)

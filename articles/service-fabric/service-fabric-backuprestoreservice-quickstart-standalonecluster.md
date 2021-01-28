@@ -3,12 +3,12 @@ title: Periodieke back-ups maken/herstellen in zelfstandige Azure-Service Fabric
 description: Gebruik een zelfstandige Service Fabric periodieke functie voor back-up en herstel voor het inschakelen van periodieke gegevens back-ups van uw toepassings gegevens.
 ms.topic: conceptual
 ms.date: 5/24/2019
-ms.openlocfilehash: d20882ba5f7f31ef453c5d28f8bc37155cc99abd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4abf1cd4561a40aaafa5c01865eb12882884422
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91538582"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927950"
 ---
 # <a name="periodic-backup-and-restore-in-a-standalone-service-fabric"></a>Periodieke back-ups maken en herstellen in een zelfstandige Service Fabric
 > [!div class="op_single_selector"]
@@ -47,11 +47,16 @@ Service Fabric biedt een reeks Api's om de volgende functionaliteit te bieden me
 * X. 509-certificaat voor het versleutelen van geheimen die nodig zijn om verbinding te maken met opslag om back-ups op te slaan. Raadpleeg het [artikel](service-fabric-windows-cluster-x509-security.md) om te weten hoe u een zelfondertekend X. 509-certificaat kunt verkrijgen of maken.
 
 * Service Fabric betrouw bare stateful toepassing die is gebouwd met Service Fabric SDK-versie 3,0 of hoger. Voor toepassingen die zijn gericht op .NET Core 2,0, moet de toepassing worden gebouwd met Service Fabric SDK-versie 3,1 of hoger.
-* Installeer de micro soft. ServiceFabric. Power shell. http-module [in Preview] om configuratie aanroepen te maken.
+* Installeer de micro soft. ServiceFabric. Power shell. http-module (preview) om configuratie aanroepen te maken.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.PowerShell.Http -AllowPrerelease
 ```
+
+> [!NOTE]
+> Als uw PowerShellGet-versie lager is dan 1.6.0, moet u bijwerken om ondersteuning toe te voegen voor de vlag *-AllowPrerelease* :
+>
+> `Install-Module -Name PowerShellGet -Force`
 
 * Zorg ervoor dat het cluster is verbonden met behulp van de `Connect-SFCluster` opdracht voordat u een configuratie aanvraag maakt met behulp van de module micro soft. ServiceFabric. Power shell. http.
 

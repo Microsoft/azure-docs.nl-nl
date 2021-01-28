@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 2db93ec6806d4b9cc8c8ac17cfb2c15458bf4dc9
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 050c16670ea0c6df53345216d8dd450c159792ea
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401148"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927458"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
 
@@ -86,9 +86,9 @@ Ga naar het [hulp programma](https://speech.microsoft.com/audiocontentcreation) 
 - **Python/objectief-C**: er is ondersteuning toegevoegd voor de `KeywordRecognizer` API. [Hier](./custom-keyword-basics.md)wordt de documentatie weer gegeven.
 - **C++/Java/C #**: er is ondersteuning toegevoegd om een `HttpHeader` sleutel/waarde in te stellen via `ServicePropertyChannel::HttpHeader` .
 - **Java script**: er is ondersteuning toegevoegd voor de `ConversationTranscriber` API. Lees [hier](./how-to-use-conversation-transcription.md?pivots=programming-language-javascript)de documentatie. 
-- **C++/c #**: nieuwe `AudioDataStream FromWavFileInput` methode toegevoegd (om te lezen. WAV-bestanden) [hier (C++)](/cpp/cognitive-services/speech/audiodatastream) en [hier (C#)](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
--  **C++/c #/Java/python/Objective-C/Swift**: er is een `stopSpeakingAsync()` methode toegevoegd om de tekst-naar-spraak-synthese te stoppen. Lees de referentie documentatie [hier (C++)](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace), [hier (C#](/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), hier ( [Java)](/java/api/com.microsoft.cognitiveservices.speech), [hier (python)](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python), en [hier (objectief-C/Swift)](/objectivec/cognitive-services/speech/).
-- **C#, C++, Java**: een `FromDialogServiceConnector()` functie toegevoegd aan de `Connection` klasse die kan worden gebruikt voor het bewaken van verbindings-en verbreken van gebeurtenissen voor `DialogServiceConnector` . Lees de referentie documentatie [hier (C#)](/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [hier (C++)](/cpp/cognitive-services/speech/connection), en [hier (Java)](/java/api/com.microsoft.cognitiveservices.speech.connection).
+- **C++/c #**: nieuwe `AudioDataStream FromWavFileInput` methode toegevoegd (om te lezen. WAV-bestanden) [hier (C++)](/cpp/cognitive-services/speech/audiodatastream) en [hier (C#)](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream).
+-  **C++/c #/Java/python/Objective-C/Swift**: er is een `stopSpeakingAsync()` methode toegevoegd om de tekst-naar-spraak-synthese te stoppen. Lees de referentie documentatie [hier (C++)](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace), [hier (C#](/dotnet/api/microsoft.cognitiveservices.speech)), hier ( [Java)](/java/api/com.microsoft.cognitiveservices.speech), [hier (python)](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech), en [hier (objectief-C/Swift)](/objectivec/cognitive-services/speech/).
+- **C#, C++, Java**: een `FromDialogServiceConnector()` functie toegevoegd aan de `Connection` klasse die kan worden gebruikt voor het bewaken van verbindings-en verbreken van gebeurtenissen voor `DialogServiceConnector` . Lees de referentie documentatie [hier (C#)](/dotnet/api/microsoft.cognitiveservices.speech.connection), [hier (C++)](/cpp/cognitive-services/speech/connection), en [hier (Java)](/java/api/com.microsoft.cognitiveservices.speech.connection).
 - **C++/c #/Java/python/Objective-C/Swift**: er is ondersteuning toegevoegd voor de beoordeling van de uitspraak, waarmee de uitspraak van een stem wordt geëvalueerd en feedback wordt gegeven over de nauw keurigheid en fluency van gesp roken audio. Lees de documentatie [hier](how-to-pronunciation-assessment.md).
 
 **Laatste wijziging**
@@ -387,18 +387,18 @@ Blijf op de hoogte.
 **Nieuwe functies**
 - Linux: er is ondersteuning toegevoegd voor Red Hat Enterprise Linux (RHEL)/CentOS 7 x64 met [instructies](./how-to-configure-rhel-centos-7.md) voor het configureren van het systeem voor spraak-SDK.
 - Linux: er is ondersteuning toegevoegd voor .NET core C# op Linux ARM32 en ARM64. Meer informatie is [hier](./speech-sdk.md?tabs=linux) beschikbaar. 
-- C#, C++: toegevoegd `UtteranceId` aan `ConversationTranscriptionResult` , een consistente id voor alle tussenliggende en laatste spraak herkennings resultaten. Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?preserve-view=true&view=azure-dotnet), [C++](/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
+- C#, C++: toegevoegd `UtteranceId` aan `ConversationTranscriptionResult` , een consistente id voor alle tussenliggende en laatste spraak herkennings resultaten. Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult), [C++](/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
 - Python: er is ondersteuning toegevoegd voor `Language ID` . Zie speech_sample. py in [github opslag plaats](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console).
 - Windows: er is ondersteuning toegevoegd voor gecomprimeerde audio-invoer indeling op het Windows-platform voor alle Win32-console toepassingen. [Hier vindt](./how-to-use-codec-compressed-audio-input-streams.md)u meer informatie. 
 - Java script: ondersteuning voor spraak synthese (tekst-naar-spraak) in NodeJS. Klik [hier](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech) voor meer informatie. 
 - Java script: Voeg nieuwe API'S toe om inspectie van alle berichten over verzenden en ontvangen in te scha kelen. Klik [hier](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript) voor meer informatie. 
         
 **Opgeloste fouten**
-- C#, C++: er is een probleem opgelost waardoor `SendMessageAsync` nu een binair bericht wordt verzonden als binair type. Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](/cpp/cognitive-services/speech/connection).
-- C#, C++: er is een probleem opgelost waarbij het gebruik van een `Connection MessageReceived` gebeurtenis vastloopt als dat `Recognizer` voor object is verwijderd `Connection` . Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?preserve-view=true&view=azure-dotnet), [C++](/cpp/cognitive-services/speech/connection#messagereceived).
+- C#, C++: er is een probleem opgelost waardoor `SendMessageAsync` nu een binair bericht wordt verzonden als binair type. Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](/cpp/cognitive-services/speech/connection).
+- C#, C++: er is een probleem opgelost waarbij het gebruik van een `Connection MessageReceived` gebeurtenis vastloopt als dat `Recognizer` voor object is verwijderd `Connection` . Details voor [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived), [C++](/cpp/cognitive-services/speech/connection#messagereceived).
 - Android: de grootte van de audio buffer van de microfoon is afgenomen van 800ms naar 100 MS om de latentie te verbeteren.
 - Android: er is een [probleem](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/563) opgelost met de x86 Android-emulator in Android Studio.
-- Java script: ondersteuning toegevoegd voor regio's in China met de `fromSubscription` API. [Hier vindt](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?preserve-view=true&view=azure-node-latest#fromsubscription-string--string-)u meer informatie. 
+- Java script: ondersteuning toegevoegd voor regio's in China met de `fromSubscription` API. [Hier vindt](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig#fromsubscription-string--string-)u meer informatie. 
 - Java script: meer fout informatie toevoegen voor verbindings fouten van NodeJS.
         
 **Voorbeelden**

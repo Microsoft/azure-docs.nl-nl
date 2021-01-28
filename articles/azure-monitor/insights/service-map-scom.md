@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: 489b4bfee1eaa2c381b16e88dbcc0bcb7fd8555f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 288e3f0c048bddb3f3378226889dc519de27764b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91441512"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927894"
 ---
 # <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>System Center Operations Manager integreren met Azure Monitor voor VM's kaart functie
 
@@ -38,7 +38,7 @@ U schakelt de integratie tussen Operations Manager en de kaart functie in door d
 
 ## <a name="configure-integration"></a>Integratie configureren
 
-Nadat u de Servicetoewijzing management pack hebt geïnstalleerd, wordt er een nieuw knoop punt **servicetoewijzing**weer gegeven onder **Operations Management Suite** in het deel venster **beheer** van uw Operations Manager Operations-console.
+Nadat u de Servicetoewijzing management pack hebt geïnstalleerd, wordt er een nieuw knoop punt **servicetoewijzing** weer gegeven onder **Operations Management Suite** in het deel venster **beheer** van uw Operations Manager Operations-console.
 
 >[!NOTE]
 >[Operations Management Suite is een verzameling van services](../terminology.md#april-2018---retirement-of-operations-management-suite-brand) die zijn opgenomen log Analytics, maakt nu deel uit van [Azure monitor](../overview.md).
@@ -57,7 +57,7 @@ Ga als volgt te werk om Azure Monitor voor VM's kaart integratie te configureren
 
     ![De werk ruimte Operations Manager configuratie](media/service-map-scom/scom-config-workspace.png)
 
-4. In het venster **computer groep selecteren** kiest u de servicetoewijzing machine groepen die u wilt synchroniseren met Operations Manager. Klik op **computer groepen toevoegen/verwijderen**, kies groepen in de lijst met **beschik bare computer groepen**en klik op **toevoegen**.  Wanneer u klaar bent met het selecteren van groepen, klikt u op **OK** om te volt ooien.
+4. In het venster **computer groep selecteren** kiest u de servicetoewijzing machine groepen die u wilt synchroniseren met Operations Manager. Klik op **computer groepen toevoegen/verwijderen**, kies groepen in de lijst met **beschik bare computer groepen** en klik op **toevoegen**.  Wanneer u klaar bent met het selecteren van groepen, klikt u op **OK** om te volt ooien.
 
     ![De Operations Manager configuratie machine groepen](media/service-map-scom/scom-config-machine-groups.png)
 
@@ -117,7 +117,7 @@ U kunt slechts één Log Analytics werkruimte configureren in deze huidige versi
 
 ## <a name="configure-rules-and-overrides"></a>Regels en onderdrukkingen configureren
 
-Met een regel, *Microsoft.SystemCenter. ServiceMapImport. rule*, wordt regel matig informatie opgehaald van de functie Azure monitor voor VM's map. Als u het synchronisatie-interval wilt wijzigen, kunt u de regel overschrijven en de waarde voor de para meter **IntervalMinutes**wijzigen.
+Met een regel, *Microsoft.SystemCenter. ServiceMapImport. rule*, wordt regel matig informatie opgehaald van de functie Azure monitor voor VM's map. Als u het synchronisatie-interval wilt wijzigen, kunt u de regel overschrijven en de waarde voor de para meter **IntervalMinutes** wijzigen.
 
 ![Het venster Eigenschappen van Operations Manager onderdrukkingen](media/service-map-scom/scom-overrides.png)
 
@@ -139,7 +139,7 @@ Het huidige ontwerp bevat de volgende problemen en beperkingen:
 Zie voor officiële Azure-documentatie over het maken van een Service-Principal:
 
 * [Een service-principal maken met behulp van Power shell](../../active-directory/develop/howto-authenticate-service-principal-powershell.md)
-* [Een service-principal maken met behulp van Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)
+* [Een service-principal maken met behulp van Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli)
 * [Een service-principal maken met behulp van de Azure Portal](../../active-directory/develop/howto-create-service-principal-portal.md)
 
 ### <a name="suggestions"></a>Suggesties

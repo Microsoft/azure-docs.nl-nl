@@ -1,19 +1,16 @@
 ---
 title: 'Quickstart: Apache Storm-topologie maken/beheren - Azure HDInsight'
 description: In de snelstart leert u hoe u een Apache Storm-topologie kunt maken en bewaken in Azure HDInsight.
-author: hrasheed-msft
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.date: 06/14/2019
-ms.author: hrasheed
 ms.custom: mvc
-ms.openlocfilehash: 8f13c813eee9bcfde578ba210c5aa2f2fe1cac2c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: fe7b1cdc96ae95ac361183342ea491432c3ab4b4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86045022"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928846"
 ---
 # <a name="quickstart-create-and-monitor-an-apache-storm-topology-in-azure-hdinsight"></a>Quickstart: Apache Storm-topologie maken/bewaken in Azure HDInsight
 

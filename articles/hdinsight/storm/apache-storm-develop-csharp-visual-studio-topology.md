@@ -2,19 +2,16 @@
 title: Apache Storm topologieën met Visual Studio en C#-Azure HDInsight
 description: Meer informatie over het maken van Storm-topologieën in C#. Maak een topologie voor het tellen van woorden in Visual Studio met behulp van de Hadoop-hulpprogram ma's voor Visual Studio.
 ROBOTS: NOINDEX
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/31/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 271f62625433a6651ba0e3230a62be51e5147f3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a81f2b21545a5362168482f3f0a65fbbbf381c10
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89000189"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929154"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>C#-topologieën ontwikkelen voor Apache Storm met behulp van de Data Lake-hulpprogram ma's voor Visual Studio
 
@@ -59,30 +56,30 @@ using System;
 using System.IO;
 namespace ConsoleApplication2
 {
-   class Program
-   {
-       static void Main(string[] args)
-       {
-           string javaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
-           if (!string.IsNullOrEmpty(javaHome))
-           {
-               string jarExe = Path.Combine(javaHome + @"\bin", "jar.exe");
-               if (File.Exists(jarExe))
-               {
-                   Console.WriteLine("JAVA Is Installed properly");
-                    return;
-               }
-               else
-               {
-                   Console.WriteLine("A valid JAVA JDK is not found. Looks like JRE is installed instead of JDK.");
-               }
-           }
-           else
-           {
-             Console.WriteLine("A valid JAVA JDK is not found. JAVA_HOME environment variable is not set.");
-           }
-       }  
-   }
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           string javaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
+           if (!string.IsNullOrEmpty(javaHome))
+           {
+               string jarExe = Path.Combine(javaHome + @"\bin", "jar.exe");
+               if (File.Exists(jarExe))
+               {
+                   Console.WriteLine("JAVA Is Installed properly");
+                    return;
+               }
+               else
+               {
+                   Console.WriteLine("A valid JAVA JDK is not found. Looks like JRE is installed instead of JDK.");
+               }
+           }
+           else
+           {
+             Console.WriteLine("A valid JAVA JDK is not found. JAVA_HOME environment variable is not set.");
+           }
+       }  
+   }
 }
 ```
 
@@ -127,9 +124,9 @@ Een C#-topologie project maken in Visual Studio:
 
 1. Selecteer in het **Startvenster** de optie **Een nieuw project maken**.
 
-1. Ga in het venster **een nieuw project maken** naar en kies **Storm-toepassing**en selecteer **volgende**.
+1. Ga in het venster **een nieuw project maken** naar en kies **Storm-toepassing** en selecteer **volgende**.
 
-1. Voer in het venster **uw nieuwe project configureren** de **project naam** *WordCount*in, ga naar of maak een pad naar **de map voor** het project en selecteer vervolgens **maken**.
+1. Voer in het venster **uw nieuwe project configureren** de **project naam** *WordCount* in, ga naar of maak een pad naar **de map voor** het project en selecteer vervolgens **maken**.
 
     ![Storm-toepassing, het dialoog venster Nieuw project configureren, Visual Studio](./media/apache-storm-develop-csharp-visual-studio-topology/apache-storm-new-project.png)
 
@@ -221,7 +218,7 @@ Maak nu twee Storm-schichten in dit voor beeld:
 
 1. Verwijder het bestaande *Bolt.cs* -bestand uit het project.
 
-2. Klik in **Solution Explorer**met de rechter muisknop op het project en selecteer **Add**  >  **Nieuw item**toevoegen. Selecteer in de lijst **Storm bout**en voer *splitter.cs* in als de naam. Wijzig in de code van het nieuwe bestand de naam van de naam ruimte in `WordCount` . Herhaal dit proces om een tweede Schicht te maken met de naam *Counter.cs*.
+2. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer   >  **Nieuw item** toevoegen. Selecteer in de lijst **Storm bout** en voer *splitter.cs* in als de naam. Wijzig in de code van het nieuwe bestand de naam van de naam ruimte in `WordCount` . Herhaal dit proces om een tweede Schicht te maken met de naam *Counter.cs*.
 
    * *Splitter.cs*: implementeert een Schicht waarmee zinnen in afzonderlijke woorden worden gesplitst en waarmee een nieuwe stroom van woorden wordt uitgesplitst.
 
@@ -278,7 +275,7 @@ Maak nu twee Storm-schichten in dit voor beeld:
     }
     ```
 
-5. Open *Counter.cs*en vervang de inhoud van de klasse door de volgende code:
+5. Open *Counter.cs* en vervang de inhoud van de klasse door de volgende code:
 
     ```csharp
     private Context ctx;
@@ -406,11 +403,11 @@ return topologyBuilder;
 
 U bent nu klaar om de topologie naar uw HDInsight-cluster te verzenden.
 
-1. Ga naar **Server Explorer weer geven**  >  **Server Explorer**.
+1. Ga naar **Server Explorer weer geven**  >  .
 
 1. Klik met de rechter muisknop op **Azure**, selecteer **verbinding maken met Microsoft Azure abonnement...** en voltooi het aanmeldings proces.
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project en kies **verzenden naar Storm op HDInsight**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en kies **verzenden naar Storm op HDInsight**.
 
 1. Kies in het dialoog venster **topologie indienen** in de vervolg keuzelijst **Storm-cluster** het Storm-cluster op HDInsight en selecteer vervolgens **verzenden**. U kunt controleren of de verzen ding is geslaagd door het deel venster **uitvoer** weer te geven.
 
@@ -419,7 +416,7 @@ U bent nu klaar om de topologie naar uw HDInsight-cluster te verzenden.
     ![Venster Storm-topologie weergave, HDInsight-cluster, Visual Studio](./media/apache-storm-develop-csharp-visual-studio-topology/storm-topology-view.png)
 
     > [!NOTE]  
-    > U kunt Storm- **topologieën** ook bekijken vanuit **Server Explorer**. Vouw **Azure**  >  **HDInsight**uit, klik met de rechter muisknop op een storm in HDInsight-cluster en kies **Storm-topologieën weer geven**.
+    > U kunt Storm- **topologieën** ook bekijken vanuit **Server Explorer**. Vouw **Azure**  >  **HDInsight** uit, klik met de rechter muisknop op een storm in HDInsight-cluster en kies **Storm-topologieën weer geven**.
 
     Als u informatie wilt weer geven over de onderdelen in de topologie, selecteert u een onderdeel in het diagram.
 
@@ -476,7 +473,7 @@ Houd rekening met het volgende bij het maken en verzenden van een hybride topolo
 
 * Gebruiken `microsoft.scp.storm.multilang.CustomizedInteropJSONSerializer` voor het serialiseren van gegevens van Java-objecten naar of naar JSON.
 
-* Wanneer u de topologie verzendt naar de-server, moet u de optie **extra configuraties** gebruiken om de **Java-bestands paden**op te geven. Het opgegeven pad moet de map zijn met het JAR-bestand dat uw Java-klassen bevat.
+* Wanneer u de topologie verzendt naar de-server, moet u de optie **extra configuraties** gebruiken om de **Java-bestands paden** op te geven. Het opgegeven pad moet de map zijn met het JAR-bestand dat uw Java-klassen bevat.
 
 ### <a name="azure-event-hubs"></a>Azure Event Hubs
 
@@ -531,14 +528,14 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
 Recente releases van de SCP.NET-ondersteunings pakket upgrade via NuGet. Wanneer een nieuwe update beschikbaar is, ontvangt u een upgrade melding. Voer de volgende stappen uit om hand matig te controleren op een upgrade:
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project en selecteer **NuGet-pakketten beheren**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer **NuGet-pakketten beheren**.
 
-2. Selecteer **updates**in Package Manager. Als er een update voor het SCP.NET-ondersteunings pakket beschikbaar is, wordt dit weer gegeven. Selecteer **Update** voor het pakket en selecteer vervolgens in het dialoog venster **voor beeld** van wijzigingen **OK** om het te installeren.
+2. Selecteer **updates** in Package Manager. Als er een update voor het SCP.NET-ondersteunings pakket beschikbaar is, wordt dit weer gegeven. Selecteer **Update** voor het pakket en selecteer vervolgens in het dialoog venster **voor beeld** van wijzigingen **OK** om het te installeren.
 
 > [!IMPORTANT]  
 > Als uw project is gemaakt met een eerdere versie van SCP.NET die geen NuGet gebruikt, moet u de volgende stappen uitvoeren om naar een nieuwere versie bij te werken:
 >
-> 1. Klik in **Solution Explorer**met de rechter muisknop op het project en selecteer **NuGet-pakketten beheren**.
+> 1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer **NuGet-pakketten beheren**.
 > 2. Zoek met behulp van het **Zoek** veld naar het project en voeg het toe `Microsoft.SCP.Net.SDK` .
 
 ## <a name="troubleshoot-common-issues-with-topologies"></a>Veelvoorkomende problemen met topologieën oplossen
@@ -568,16 +565,16 @@ Hoewel het eenvoudig is om een topologie te implementeren in een cluster, moet u
 > [!WARNING]  
 > Lokale tests werken alleen voor Basic-en C#-topologieën. U kunt geen lokale tests gebruiken voor hybride topologieën of topologieën die gebruikmaken van meerdere streams.
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project en selecteer **Eigenschappen**. In de project eigenschappen. Wijzig vervolgens het **uitvoer type** in **console toepassing**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer **Eigenschappen**. In de project eigenschappen. Wijzig vervolgens het **uitvoer type** in **console toepassing**.
 
    ![HDInsight Storm-toepassing, project eigenschappen, uitvoer type](./media/apache-storm-develop-csharp-visual-studio-topology/hdi-output-type-window.png)
 
    > [!NOTE]
    > Vergeet niet om het **uitvoer type** terug te wijzigen in **Class Library** voordat u de topologie op een cluster implementeert.
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project en selecteer vervolgens **Add**  >  **Nieuw item**toevoegen. Selecteer **klasse**en voer *LocalTest.cs* in als de naam van de klasse. Selecteer ten slotte **toevoegen**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer vervolgens   >  **Nieuw item** toevoegen. Selecteer **klasse** en voer *LocalTest.cs* in als de naam van de klasse. Selecteer ten slotte **toevoegen**.
 
-1. Open *LocalTest.cs*en voeg de volgende `using` instructie toe aan de bovenkant:
+1. Open *LocalTest.cs* en voeg de volgende `using` instructie toe aan de bovenkant:
 
     ```csharp
     using Microsoft.SCP;
@@ -664,7 +661,7 @@ Hoewel het eenvoudig is om een topologie te implementeren in een cluster, moet u
 
     Neem even de tijd om de opmerkingen van de code te lezen. Deze code gebruikt `LocalContext` om de onderdelen in de ontwikkel omgeving uit te voeren. De gegevens stroom tussen onderdelen wordt persistent gemaakt naar tekst bestanden op het lokale station.
 
-1. Open *Program.cs*en voeg de volgende code toe aan de `Main` methode:
+1. Open *Program.cs* en voeg de volgende code toe aan de `Main` methode:
 
     ```csharp
     Console.WriteLine("Starting tests");
@@ -687,7 +684,7 @@ Hoewel het eenvoudig is om een topologie te implementeren in een cluster, moet u
 
 1. Sla de wijzigingen op en selecteer vervolgens **F5** **of kies fout**  >  **opsporing starten** om het project te starten. Er moet een console venster worden weer gegeven en de status van het logboek registreren als de tests worden uitgevoerd. Wanneer `Tests finished` wordt weer gegeven, selecteert u een wille keurige toets om het venster te sluiten.
 
-1. Gebruik **Windows Verkenner** om de map te zoeken die het project bevat. (Bijvoorbeeld: *C: \\ gebruikers \\ \<your_user_name> \\ bron \\ opslag plaatsen \\ WordCount \\ WordCount*.) Open vervolgens *bin*in deze map en selecteer vervolgens *fout opsporing*. U moet de tekst bestanden zien die zijn gemaakt toen de tests werden uitgevoerd: *sentences.txt*, *counter.txt*en *splitter.txt*. Open elk tekst bestand en controleer de gegevens.
+1. Gebruik **Windows Verkenner** om de map te zoeken die het project bevat. (Bijvoorbeeld: *C: \\ gebruikers \\ \<your_user_name> \\ bron \\ opslag plaatsen \\ WordCount \\ WordCount*.) Open vervolgens *bin* in deze map en selecteer vervolgens *fout opsporing*. U moet de tekst bestanden zien die zijn gemaakt toen de tests werden uitgevoerd: *sentences.txt*, *counter.txt* en *splitter.txt*. Open elk tekst bestand en controleer de gegevens.
 
    > [!NOTE]  
    > Teken reeks gegevens blijven bestaan als een matrix met decimale waarden in deze bestanden. `[[97,103,111]]`In het **splitter.txt** bestand staat bijvoorbeeld voor het woord *geleden*.
@@ -701,7 +698,7 @@ U kunt eenvoudig gegevens uit uw topologie onderdelen vastleggen met behulp van 
 
 `Context.Logger.Info("Component started");`
 
-Geregistreerde gegevens kunnen worden bekeken in het **logboek**van de Hadoop-service, dat is te vinden in **Server Explorer**. Vouw de vermelding voor uw Storm in HDInsight-cluster uit en vouw vervolgens het **Hadoop-service logboek**uit. Selecteer ten slotte het logboek bestand dat u wilt weer geven.
+Geregistreerde gegevens kunnen worden bekeken in het **logboek** van de Hadoop-service, dat is te vinden in **Server Explorer**. Vouw de vermelding voor uw Storm in HDInsight-cluster uit en vouw vervolgens het **Hadoop-service logboek** uit. Selecteer ten slotte het logboek bestand dat u wilt weer geven.
 
 > [!NOTE]  
 > De logboeken worden opgeslagen in het Azure-opslag account dat door uw cluster wordt gebruikt. Als u de logboeken in Visual Studio wilt weer geven, moet u zich aanmelden bij het Azure-abonnement dat eigenaar is van het opslag account.
@@ -710,9 +707,9 @@ Geregistreerde gegevens kunnen worden bekeken in het **logboek**van de Hadoop-se
 
 Voer de volgende stappen uit om fouten te bekijken die zich hebben voorgedaan in een actieve topologie:
 
-1. Klik vanuit **Server Explorer**met de rechter muisknop op de storm in HDInsight-cluster en selecteer **Storm-topologieën weer geven**.
+1. Klik vanuit **Server Explorer** met de rechter muisknop op de storm in HDInsight-cluster en selecteer **Storm-topologieën weer geven**.
 
-   Voor de **Spout** en- **bouten**bevat de **laatste fout** kolom informatie over de laatste fout.
+   Voor de **Spout** en- **bouten** bevat de **laatste fout** kolom informatie over de laatste fout.
 
 2. Selecteer de **Spout-id** of de **Schicht-id** voor het onderdeel waarvoor een fout wordt weer gegeven. Op de pagina Details wordt aanvullende fout informatie weer gegeven in de sectie **fouten** onder aan de pagina.
 

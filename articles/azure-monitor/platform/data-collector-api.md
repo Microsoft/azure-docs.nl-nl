@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/14/2020
-ms.openlocfilehash: ab0ed536bd23aaf15d85af85e4f924bc2f51f3d4
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bdbb4307f46566d1cac259cbdc4c81d1dfba5c7e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96006624"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927782"
 ---
 # <a name="send-log-data-to-azure-monitor-with-the-http-data-collector-api-public-preview"></a>Logboek gegevens naar Azure Monitor verzenden met de HTTP-gegevens verzamelaar-API (open bare preview)
 In dit artikel leest u hoe u de HTTP data collector API kunt gebruiken om logboek gegevens te verzenden naar Azure Monitor van een REST API-client.  Hierin wordt beschreven hoe u gegevens opmaakt die worden verzameld door uw script of toepassing, deze toevoegen aan een aanvraag en die aanvraag hebben toegestaan door Azure Monitor.  Er zijn voor beelden van Power shell, C# en python.
@@ -49,7 +49,7 @@ Als u de HTTP data collector API wilt gebruiken, maakt u een POST-aanvraag die d
 | API-versie |De versie van de API die moet worden gebruikt voor deze aanvraag. Momenteel is dit 2016-04-01. |
 
 ### <a name="request-headers"></a>Aanvraagheaders
-| Header | Description |
+| Header | Beschrijving |
 |:--- |:--- |
 | Autorisatie |De autorisatie handtekening. Verderop in dit artikel vindt u meer informatie over het maken van een HMAC-SHA256-header. |
 | Log-Type |Geef het record type op van de gegevens die worden verzonden. Mag alleen letters, cijfers en onderstrepings tekens (_) bevatten en mag niet langer zijn dan 100. |
@@ -66,7 +66,7 @@ Dit is de indeling voor de autorisatie-header:
 Authorization: SharedKey <WorkspaceID>:<Signature>
 ```
 
-*WorkspaceID* is de unieke id voor de log Analytics-werk ruimte. *Hand tekening* is een [op hash gebaseerde Message Authentication Code (HMAC)](/dotnet/api/system.security.cryptography.hmacsha256?view=netcore-3.1) die is opgebouwd op basis van de aanvraag en vervolgens wordt berekend met behulp van de [sha256-algoritme](/dotnet/api/system.security.cryptography.sha256?view=netcore-3.1). Vervolgens versleutelt u het met base64-code ring.
+*WorkspaceID* is de unieke id voor de log Analytics-werk ruimte. *Hand tekening* is een [op hash gebaseerde Message Authentication Code (HMAC)](/dotnet/api/system.security.cryptography.hmacsha256) die is opgebouwd op basis van de aanvraag en vervolgens wordt berekend met behulp van de [sha256-algoritme](/dotnet/api/system.security.cryptography.sha256). Vervolgens versleutelt u het met base64-code ring.
 
 Gebruik deze indeling om de teken reeks voor de **SharedKey** -hand tekening te coderen:
 
@@ -183,7 +183,7 @@ De HTTP-status code 200 betekent dat de aanvraag is ontvangen voor verwerking. D
 
 Deze tabel bevat de volledige set met status codes die de service kan retour neren:
 
-| Code | Status | Foutcode | Description |
+| Code | Status | Foutcode | Beschrijving |
 |:--- |:--- |:--- |:--- |
 | 200 |OK | |De aanvraag is geaccepteerd. |
 | 400 |Ongeldige aanvraag |InactiveCustomer |De werk ruimte is gesloten. |
@@ -647,7 +647,7 @@ public class ApiExample {
 ## <a name="alternatives-and-considerations"></a>Alternatieven en overwegingen
 Terwijl de Data Collector-API het meren deel van uw behoeften voor het verzamelen van vrije-vorm gegevens in azure-logboeken moet omvatten, zijn er exemplaren die mogelijk vereist zijn om bepaalde beperkingen van de API te overwinnen. U kunt kiezen uit de volgende belang rijke overwegingen:
 
-| Vervangen | Description | Geschikt voor |
+| Vervangen | Beschrijving | Geschikt voor |
 |---|---|---|
 | [Aangepaste gebeurtenissen](../app/api-custom-events-metrics.md?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#properties): systeem eigen op SDK gebaseerde opname in Application Insights | Application Insights, meestal door middel van een SDK binnen uw toepassing, biedt u de mogelijkheid om aangepaste gegevens via aangepaste gebeurtenissen te verzenden. | <ul><li> Gegevens die in uw toepassing worden gegenereerd, maar niet door de SDK worden opgehaald via een van de standaard gegevens typen (aanvragen, afhankelijkheden, uitzonde ringen, enzovoort).</li><li> Gegevens die het meest worden gecorreleerd aan andere toepassings gegevens in Application Insights </li></ul> |
 | Data Collector-API in Azure Monitor-logboeken | De Data Collector-API in Azure Monitor Logboeken is een volledig open manier om gegevens op te nemen. Gegevens die in een JSON-object zijn ingedeeld, kunnen hier worden verzonden. Zodra de gegevens zijn verzonden, worden deze verwerkt en in logboeken weer gegeven om te worden gecorreleerd met andere vermeldingen in Logboeken of met andere Application Insights gegevens. <br/><br/> Het is tamelijk eenvoudig om de gegevens als bestanden naar een Azure Blob-Blob te uploaden, vanaf waar deze bestanden worden verwerkt en geüpload naar Log Analytics. Raadpleeg [Dit](./create-pipeline-datacollector-api.md) artikel voor een voor beeld van de implementatie van een dergelijke pijp lijn. | <ul><li> Gegevens die niet noodzakelijkerwijs worden gegenereerd binnen een toepassings instrument in Application Insights.</li><li> Voor beelden zijn onder andere lookup-en feiten tabellen, referentie gegevens, vooraf geaggregeerde statistieken, enzovoort. </li><li> Bedoeld voor gegevens waarnaar wordt verwezen met andere Azure Monitor gegevens (Application Insights, andere gegevens typen van Logboeken, Security Center, Azure Monitor voor containers/Vm's, enzovoort). </li></ul> |

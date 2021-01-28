@@ -7,15 +7,15 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.subservice: logs
-ms.openlocfilehash: 29e50a5c9b306d0e4491852fd08ecdf73026ebc2
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: c25c53159fd0504956eed2cf7f968c573e9fc289
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882242"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927726"
 ---
 # <a name="create-diagnostic-settings-to-send-platform-logs-and-metrics-to-different-destinations"></a>Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen
-[Platform logboeken](platform-logs-overview.md) in azure, met inbegrip van het Azure-activiteiten logboek en de resource logboeken, bieden gedetailleerde diagnostische en controle-informatie voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. [Metrische platform gegevens](data-platform-metrics.md) worden standaard verzameld en worden meestal opgeslagen in de data base met Azure monitor gegevens. In dit artikel vindt u informatie over het maken en configureren van diagnostische instellingen voor het verzenden van platform metrieken en platform logboeken naar verschillende bestemmingen.
+[Platformlogboeken](platform-logs-overview.md) in Azure, inclusief het Azure-activiteitenlogboek en de Azure-resourcelogboeken, bieden gedetailleerde diagnose- en controlegegevens voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. [Metrische platformgegevens](data-platform-metrics.md) worden standaard verzameld en gewoonlijk opgeslagen in de database met metrische gegevens van Azure Monitor. In dit artikel vindt u informatie over het maken en configureren van diagnostische instellingen voor het verzenden van metrische platformgegevens en platformlogboeken naar verschillende bestemmingen.
 
 > [!IMPORTANT]
 > Voordat u een diagnostische instelling voor het activiteiten logboek maakt, moet u eerst alle verouderde configuratie uitschakelen. Zie [verouderde verzamelings methoden](activity-log.md#legacy-collection-methods) voor meer informatie.
@@ -45,7 +45,7 @@ Platform-logboeken en-metrische gegevens kunnen worden verzonden naar de doelen 
 
 | Doel | Beschrijving |
 |:---|:---|
-| [Log Analytics-werkruimte](design-logs-deployment.md) | Door Logboeken en metrische gegevens naar een Log Analytics-werk ruimte te verzenden, kunt u ze analyseren met andere bewakings informatie die door Azure Monitor wordt verzameld met behulp van krachtige logboek query's en ook om gebruik te maken van andere Azure Monitor functies, zoals waarschuwingen en visualisaties. |
+| [Log Analytics werk ruimte](design-logs-deployment.md) | Door Logboeken en metrische gegevens naar een Log Analytics-werk ruimte te verzenden, kunt u ze analyseren met andere bewakings informatie die door Azure Monitor wordt verzameld met behulp van krachtige logboek query's en ook om gebruik te maken van andere Azure Monitor functies, zoals waarschuwingen en visualisaties. |
 | [Event hubs](../../event-hubs/index.yml) | Door Logboeken en metrische gegevens naar Event Hubs te verzenden, kunt u met externe systemen, zoals Siem's van derden en andere log Analytics-oplossingen.  |
 | [Azure Storage-account](../../storage/blobs/index.yml) | Het archiveren van Logboeken en metrische gegevens naar een Azure-opslag account is handig voor controle, statische analyses of back-ups. Vergeleken met Azure Monitor-logboeken en een Log Analytics-werk ruimte is Azure Storage minder kostbaar en kunnen de logboeken voor onbepaalde tijd worden bewaard.  |
 
@@ -149,7 +149,7 @@ Set-AzDiagnosticSetting -Name KeyVault-Diagnostics -ResourceId /subscriptions/xx
 
 ## <a name="create-using-azure-cli"></a>Maken met behulp van Azure CLI
 
-Gebruik de opdracht [AZ monitor Diagnostic-settings Create](/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az-monitor-diagnostic-settings-create) om een diagnostische instelling te maken met [Azure cli](/cli/azure/monitor?view=azure-cli-latest). Raadpleeg de documentatie voor deze opdracht voor beschrijvingen van de para meters.
+Gebruik de opdracht [AZ monitor Diagnostic-settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) om een diagnostische instelling te maken met [Azure cli](/cli/azure/monitor). Raadpleeg de documentatie voor deze opdracht voor beschrijvingen van de para meters.
 
 > [!IMPORTANT]
 > U kunt deze methode niet gebruiken voor het Azure-activiteiten logboek. Gebruik in plaats daarvan [Diagnostische instelling maken in azure monitor met behulp van een resource manager-sjabloon](../samples/resource-manager-diagnostic-settings.md) om een resource manager-sjabloon te maken en te implementeren met cli.

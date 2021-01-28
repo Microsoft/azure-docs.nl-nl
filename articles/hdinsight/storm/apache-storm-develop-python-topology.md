@@ -1,19 +1,16 @@
 ---
 title: Apache Storm met python-onderdelen-Azure HDInsight
 description: Meer informatie over het maken van een Apache Storm topologie die gebruikmaakt van python-onderdelen in azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017, devx-track-python
 ms.date: 12/16/2019
-ms.openlocfilehash: e62e2583f8a4d3872a1342f0f702a1913f733e7f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: e28d21ed71cf5f485165c639a8bd519b3a2736e1
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545460"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928997"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Apache Storm topologieën ontwikkelen met behulp van python in HDInsight
 
@@ -24,7 +21,7 @@ Meer informatie over het maken van een [Apache Storm](https://storm.apache.org/)
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Apache Storm-cluster in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van de Azure-portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **Storm** voor **Clustertype** .
+* Een Apache Storm-cluster in HDInsight. Zie [Apache Hadoop-clusters maken met behulp van de Azure-portal](../hdinsight-hadoop-create-linux-clusters-portal.md) en selecteer **Storm** voor **Clustertype**.
 
 * Een lokale Storm-ontwikkel omgeving (optioneel). Een lokale Storm-omgeving is alleen nodig als u de topologie lokaal wilt uitvoeren. Zie [een ontwikkel omgeving instellen](https://storm.apache.org/releases/current/Setting-up-development-environment.html)voor meer informatie.
 
@@ -114,7 +111,7 @@ Zoals eerder vermeld, is er een `storm.py` bestand dat de Thrift-definitie voor 
     storm kill wordcount
     ```
 
-    U kunt ook de Storm-gebruikers interface gebruiken. Selecteer in **topologie acties** voor de topologie **Kill** .
+    U kunt ook de Storm-gebruikers interface gebruiken. Selecteer in **topologie acties** voor de topologie **Kill**.
 
 ## <a name="run-the-topology-locally"></a>De topologie lokaal uitvoeren
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 6201a4e0551f0f75dde65b2bc4b8b560a0f5ea20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d424a22a26119dcb3ef6a0e5c4f3dc0c13b1aa4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87007993"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927589"
 ---
 # <a name="azure-diagnostics-extension-overview"></a>Overzicht van Azure Diagnostics-extensie
 Azure Diagnostics extensie is een [agent in azure monitor](agents-overview.md) die bewakings gegevens verzamelt van het gast besturingssysteem van Azure Compute-resources, inclusief virtuele machines. Dit artikel bevat een overzicht van Azure Diagnostics extensie, inclusief specifieke functionaliteit die wordt ondersteund en opties voor installatie en configuratie. 
@@ -50,7 +50,7 @@ De volgende tabellen geven een lijst van de gegevens die kunnen worden verzameld
 | Prestatiemeteritems | Numerieke waarden meten de prestaties van verschillende aspecten van het besturings systeem en de werk belastingen. |
 | IIS-logboeken             | Gebruiks gegevens voor IIS-websites die worden uitgevoerd op het gast besturingssysteem. |
 | Toepassings logboeken     | Berichten traceren die zijn geschreven door uw toepassing. |
-| .NET Event source-logboeken |Code schrijven van gebeurtenissen met de .NET [Event source](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) -klasse |
+| .NET Event source-logboeken |Code schrijven van gebeurtenissen met de .NET [Event source](/dotnet/api/system.diagnostics.tracing.eventsource) -klasse |
 | [Op Manifest gebaseerde ETW-logboeken](/windows/desktop/etw/about-event-tracing) |Event Tracing for Windows gebeurtenissen die door een proces worden gegenereerd. |
 | Crash dumps (Logboeken)   | Informatie over de status van het proces als een toepassing vastloopt. |
 | Logboeken op basis van bestanden    | Logboeken die zijn gemaakt door uw toepassing of service. |
@@ -74,7 +74,7 @@ Configureer een of meer *gegevens-sinks* voor het verzenden van gegevens naar an
 
 | Doel | Beschrijving |
 |:---|:---|
-| Azure Monitor metrische gegevens | Verzamelen van prestatie gegevens naar Azure Monitor meet waarden. Zie [metrische gegevens van het gast besturingssysteem verzenden naar de data base van de Azure monitor metriek](collect-custom-metrics-guestos-resource-manager-vm.md).  |
+| Metrische gegevens van Azure Monitor | Verzamelen van prestatie gegevens naar Azure Monitor meet waarden. Zie [metrische gegevens van het gast besturingssysteem verzenden naar de data base van de Azure monitor metriek](collect-custom-metrics-guestos-resource-manager-vm.md).  |
 | Event Hubs | Azure Event Hubs gebruiken om gegevens buiten Azure te verzenden. Zie [Azure Diagnostics gegevens streamen naar Event hubs](diagnostics-extension-stream-event-hubs.md) |
 | Azure Storage blobs | Schrijf naast tabellen ook gegevens naar blobs in Azure Storage. |
 | Application Insights | Gegevens verzamelen van toepassingen die worden uitgevoerd in uw virtuele machine naar Application Insights om te integreren met andere toepassings bewaking. Zie [Diagnostische gegevens naar Application Insights verzenden](diagnostics-extension-to-application-insights.md). |
@@ -89,7 +89,7 @@ LAD schrijft gegevens naar tabellen in Azure Storage. Het ondersteunt de sinks i
 |:---|:---|
 | Event Hubs | Azure Event Hubs gebruiken om gegevens buiten Azure te verzenden. |
 | Azure Storage blobs | Schrijf naast tabellen ook gegevens naar blobs in Azure Storage. |
-| Azure Monitor metrische gegevens | Installeer naast LAD de telegrafa-agent. Zie [aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-Telegraf-agent](collect-custom-metrics-linux-telegraf.md).
+| Metrische gegevens van Azure Monitor | Installeer naast LAD de telegrafa-agent. Zie [aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-Telegraf-agent](collect-custom-metrics-linux-telegraf.md).
 
 
 ## <a name="installation-and-configuration"></a>Installatie en configuratie

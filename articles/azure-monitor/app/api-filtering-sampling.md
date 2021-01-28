@@ -4,12 +4,12 @@ description: U kunt telemetrie-processors en initialisatie functies voor telemet
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: b3ccc3516d5b31f4c119c2d5a2bd11a63dbdc611
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb9159b98b219c6fb04beb7bbbaade64fc72a30b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758027"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927742"
 ---
 # <a name="filter-and-preprocess-telemetry-in-the-application-insights-sdk"></a>Telemetrie filteren en voorverwerken in de Application Insights SDK
 
@@ -497,7 +497,7 @@ public void Initialize(ITelemetry telemetry)
 
 #### <a name="add-information-from-httpcontext"></a>Informatie uit http context toevoegen
 
-De volgende voor beeld-initialisatie functie leest gegevens uit [`HttpContext`](/aspnet/core/fundamentals/http-context?view=aspnetcore-3.1) en voegt deze toe aan een `RequestTelemetry` exemplaar. De `IHttpContextAccessor` wordt automatisch via een afhankelijkheids injectie van een constructor verschaft.
+De volgende voor beeld-initialisatie functie leest gegevens uit [`HttpContext`](/aspnet/core/fundamentals/http-context) en voegt deze toe aan een `RequestTelemetry` exemplaar. De `IHttpContextAccessor` wordt automatisch via een afhankelijkheids injectie van een constructor verschaft.
 
 ```csharp
 public class HttpContextRequestTelemetryInitializer : ITelemetryInitializer

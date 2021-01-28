@@ -1,19 +1,16 @@
 ---
 title: Apache Storm-topologieën implementeren en beheren in Azure HDInsight
 description: Meer informatie over het implementeren, bewaken en beheren van Apache Storm topologieën met behulp van het Storm-dash board op HDInsight op basis van Linux. Gebruik Hadoop-hulpprogram ma's voor Visual Studio.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
-ms.openlocfilehash: 9b190b5847c7412344e2bb09fd4000985816219b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 417819cad3bc2ee258381426dfcee7c800b69d42
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995587"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929183"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Apache Storm-topologieën implementeren en beheren in Azure HDInsight
 
@@ -205,7 +202,7 @@ De pagina overzicht van Storm-topologie ziet er ongeveer als volgt uit:
 
 In het gedeelte **topologie acties** kunt u de volgende knoppen selecteren om een actie uit te voeren:
 
-| Knop | Description |
+| Knop | Beschrijving |
 | --- | --- |
 | Activate | Hiermee wordt de verwerking van een gedeactiveerde topologie hervat. |
 | Deactivate | Hiermee wordt een actieve topologie onderbroken. |
@@ -249,7 +246,7 @@ De basis-URI voor de REST API op op Linux gebaseerde HDInsight-clusters is besch
 
 U kunt de Fully Qualified Domain Name (FQDN) voor het hoofd knooppunt van het cluster op verschillende manieren vinden:
 
-| FQDN-detectie methode | Description |
+| FQDN-detectie methode | Beschrijving |
 | --- | --- |
 | SSH-sessie | Gebruik de opdracht `headnode -f` van een SSH-sessie naar het cluster. |
 | Ambari-Web | Selecteer op de webpagina van het Ambari-cluster ( `https://CLUSTERNAME.azurehdinsight.net` ) **Services** boven aan de pagina en selecteer vervolgens **Storm**. Selecteer op het tabblad **samen vatting** de optie **Storm-gebruikers interface Server**. De FQDN van het knoop punt dat als host fungeert voor de Storm-gebruikers interface en REST API wordt boven aan de pagina weer gegeven. |

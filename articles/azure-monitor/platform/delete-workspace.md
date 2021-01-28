@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/20/2020
-ms.openlocfilehash: ed5e4d05a693ff9b0bf8823ba31de17d000d0fb6
-ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
+ms.openlocfilehash: 5bb072d0ea710e35b4f741836aed143e962a326e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97706878"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927703"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Azure Log Analytics-werk ruimte verwijderen en herstellen
 
@@ -34,18 +34,18 @@ U wilt voorzichtig zijn wanneer u een werk ruimte verwijdert, omdat er mogelijk 
 
 De bewerking voor zacht verwijderen verwijdert de werkruimte resource en de machtigingen van de bijbehorende gebruikers worden verbroken. Als gebruikers zijn gekoppeld aan andere werk ruimten, kunnen ze Log Analytics blijven gebruiken met die andere werk ruimten.
 
-## <a name="soft-delete-behavior"></a>Gedrag bij zacht verwijderen
+## <a name="soft-delete-behavior"></a>Gedrag bij voorlopig verwijderen
 
 Met de bewerking voor het verwijderen van de werk ruimte wordt de resource manager-bron van de werk ruimte verwijderd, maar de configuratie en gegevens worden gedurende 14 dagen bewaard, terwijl het uiterlijk van de werk ruimte wordt verwijderd. Alle agents en System Center Operations Manager-beheer groepen die zijn geconfigureerd om te rapporteren aan de werk ruimte, blijven behouden in een zwevende status tijdens de tijdelijke periode voor het verwijderen. De service biedt verder een mechanisme voor het herstellen van de verwijderde werk ruimte, inclusief de bijbehorende gegevens en verbonden resources, waardoor het verwijderen in feite ongedaan wordt gemaakt.
 
 > [!NOTE] 
 > Geïnstalleerde oplossingen en gekoppelde services, zoals uw Azure Automation account, worden permanent verwijderd uit de werk ruimte tijdens het verwijderen en kunnen niet worden hersteld. Deze moeten na de herstel bewerking opnieuw worden geconfigureerd om de werk ruimte naar de eerder geconfigureerde status te brengen.
 
-U kunt een werk ruimte verwijderen met behulp van [Power shell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0&preserve-view=true), [rest API](/rest/api/loganalytics/workspaces/delete)of in de [Azure Portal](https://portal.azure.com).
+U kunt een werk ruimte verwijderen met behulp van [Power shell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace), [rest API](/rest/api/loganalytics/workspaces/delete)of in de [Azure Portal](https://portal.azure.com).
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Selecteer in de Azure-portal de optie **Alle services**. Typ in de lijst met resources **Log Analytics**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Log Analytics-werkruimten**.
 3. Selecteer een werk ruimte in de lijst met Log Analytics-werk ruimten en klik vervolgens op **verwijderen**  boven in het middelste deel venster.
 4. Er wordt een bevestigings pagina weer gegeven waarin de gegevens opname in de afgelopen week wordt weer gegeven in de werk ruimte. 
@@ -88,7 +88,7 @@ U kunt uw werk ruimte herstellen tijdens de tijdelijke periode, inclusief gegeve
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Selecteer in de Azure-portal de optie **Alle services**. Typ in de lijst met resources **Log Analytics**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Log Analytics-werkruimten**. U ziet de lijst met werk ruimten die u in het geselecteerde bereik hebt.
 3. Klik in het menu linksboven op **herstellen** om een pagina met werk ruimten in de status zacht verwijderen te openen die kan worden hersteld.
 

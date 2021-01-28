@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9e3fe0f8c14fdcfa9b3e97a02331d777abca2600
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: e884ceab652136c505ce7032f0e78588fb20be89
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954256"
+ms.locfileid: "98986951"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -102,9 +102,10 @@ Als u via Gebruikersidentiteit toegang wilt tot opslag die wordt beveiligd met d
 Volg deze stappen om de firewall voor uw opslagaccount te configureren en een uitzondering toe te voegen voor Synapse-werkruimte.
 
 1. Open PowerShell of [installeer PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?preserve-view=true&view=powershell-7.1)
-2. Installeer de bijgewerkte module Az. Storage: 
+2. Installeer de module AZ. Storage 3.0.1 en AZ. Synapse 0.7.0: 
     ```powershell
     Install-Module -Name Az.Storage -RequiredVersion 3.0.1-preview -AllowPrerelease
+    Install-Module -Name Az.Synapse -RequiredVersion 0.7.0
     ```
     > [!IMPORTANT]
     > Zorg ervoor dat u **versie 3.0.1** gebruikt. U kunt uw Az.Storage-versie controleren door deze opdracht uit te voeren:  
@@ -121,16 +122,23 @@ Volg deze stappen om de firewall voor uw opslagaccount te configureren en een ui
     - Naam van resourcegroep: u vindt deze in de Azure-portal, in het overzicht van Synapse-werkruimte.
     - Accountnaam: naam van het opslagaccount dat wordt beveiligd met firewallregels.
     - Tenant-id: u vindt deze in de Azure-portal in Azure Active Directory, bij tenantgegevens.
-    - Resource-id: u vindt deze in de Azure-portal, in het overzicht van Synapse-werkruimte.
+    - Werkruimte naam: naam van de Synapse-werk ruimte.
 
     ```powershell
         $resourceGroupName = "<resource group name>"
         $accountName = "<storage account name>"
         $tenantId = "<tenant id>"
-        $resourceId = "<Synapse workspace resource id>"
+        $workspaceName = "<synapse workspace name>"
+        
+        $workspace = Get-AzSynapseWorkspace -Name $workspaceName
+        $resourceId = $workspace.Id
+        $index = $resourceId.IndexOf("/resourceGroups/", 0)
+        # Replace G with g - /resourceGroups/ to /resourcegroups/
+        $resourceId = $resourceId.Substring(0,$index) + "/resourcegroups/" + $resourceId.Substring($index + "/resourceGroups/".Length)
+        $resourceId
     ```
     > [!IMPORTANT]
-    > Zorg ervoor dat de resource-id overeenkomt met deze sjabloon.
+    > Zorg ervoor dat de resource-id overeenkomt met deze sjabloon in de afdruk van de variabele resourceId.
     >
     > Het is belangrijk om **resourcegroups** met kleine letters te schrijven.
     > Voorbeeld van één resource-id: 
@@ -145,7 +153,14 @@ Volg deze stappen om de firewall voor uw opslagaccount te configureren en een ui
 6. Controleer of de regel is toegepast in uw opslagaccount: 
     ```powershell
         $rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName
-        $rule.ResourceAccessRules
+        $rule.ResourceAccessRules | ForEach-Object { 
+        if ($_.ResourceId -cmatch "\/subscriptions\/(\w\-*)+\/resourcegroups\/(.)+") { 
+            Write-Host "Storage account network rule is successfully configured." -ForegroundColor Green
+            $rule.ResourceAccessRules
+        } else {
+            Write-Host "Storage account network rule is not configured correctly. Remove this rule and follow the steps in detail." -ForegroundColor Red
+            $rule.ResourceAccessRules
+        }
     ```
 
 #### <a name="managed-identity"></a>Beheerde identiteit

@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 2529c6c3b0f9d188e1ce8062c05f62f3e980ef50
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 19330af5e4c0e4962993d0ed89ec9bcd4a50514a
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805223"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986410"
 ---
 # <a name="configure-token-lifetime-policies-preview"></a>Levens duur van token beleid configureren (preview-versie)
 U kunt de levens duur opgeven van een token voor toegang, SAML of ID dat is uitgegeven door het micro soft Identity-platform. U kunt de levensduur van een token instellen voor alle apps in uw organisatie, voor een multitenanttoepassing (voor meerdere organisaties) of voor een specifieke service-principal in uw organisatie. Lees de [levens duur van Configureer bare tokens](active-directory-configurable-token-lifetimes.md)voor meer informatie.
@@ -38,7 +38,7 @@ Voer de volgende stappen uit om aan de slag te gaan:
 1. Als u alle beleids regels wilt zien die zijn gemaakt in uw organisatie, voert u de cmdlet [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) uit.  Alle resultaten met gedefinieerde eigenschaps waarden die verschillen van de standaard instellingen die hierboven worden vermeld, vallen binnen het bereik van de buiten gebruiks telling.
 
     ```powershell
-    Get-AzureADPolicy -All
+    Get-AzureADPolicy -All $true
     ```
 
 1. Als u wilt zien welke apps en service-principals zijn gekoppeld aan een specifiek beleid dat u hebt geïdentificeerd, voert u de volgende [Get-AzureADPolicyAppliedObject-](/powershell/module/azuread/get-azureadpolicyappliedobject?view=azureadps-2.0-preview&preserve-view=true) cmdlet uit door **1a37dad8-5da7-4cc8-87c7-efbc0326cf20** te vervangen door een van de beleids-id's. Vervolgens kunt u bepalen of u de aanmeldings frequentie voor voorwaardelijke toegang wilt configureren of dat u de standaard instellingen van Azure AD wilt blijven gebruiken.

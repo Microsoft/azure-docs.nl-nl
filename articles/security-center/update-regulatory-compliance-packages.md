@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 6fb2e5c0193bc4e66f8fb4215732a69c43731146
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 5f70f74accba5df439351547fda7497656e2c06e
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756634"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986680"
 ---
 # <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>De set normen aanpassen in uw nalevings dashboard voor regelgeving
 
@@ -73,9 +73,11 @@ In de volgende stappen wordt uitgelegd hoe u een pakket kunt toevoegen om te con
 
     - **NIST SP 800-53 R4**
     - **NIST SP 800 171 R2**
-    - **SWIFT CSP CSCF-v2020**
+    - **SWIFT CSP CSCF v2020**
     - **UKO en UK NHS**
-    - **Canada PBMM**
+    - **Canada Federal PBMM**
+    - **HIPAA HITRUST**
+    - **Azure CIS 1.1.0**
     
     ![Reglementaire normen toevoegen aan het nalevings Dashboard van het regelgevend Azure Security Center](./media/update-regulatory-compliance-packages/dynamic-regulatory-compliance-additional-standards.png)
 
@@ -88,8 +90,7 @@ In de volgende stappen wordt uitgelegd hoe u een pakket kunt toevoegen om te con
     > [!NOTE]
     > Het kan enkele uren duren voordat een nieuw toegevoegde standaard wordt weer gegeven in het dash board voor compatibiliteit.
 
-    [![Dash board nalevings regelgeving met oude en nieuwe Azure CIS](media/update-regulatory-compliance-packages/regulatory-compliance-dashboard-with-benchmark-small.png)](media/update-regulatory-compliance-packages/regulatory-compliance-dashboard-with-benchmark.png#lightbox)
-
+    :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Dashboard voor naleving van regelgeving" lightbox="./media/security-center-compliance-dashboard/compliance-dashboard.png":::
 
 ## <a name="removing-a-standard-from-your-dashboard"></a>Een standaard van uw dash board verwijderen
 

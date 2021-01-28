@@ -452,6 +452,8 @@
           href: user-migration.md
 - name: Naslaginformatie
   items:
+    - name: Servicelimieten en -beperkingen
+      href: service-limits.md
     - name: App-registraties
       href: app-registrations-training-guide.md
     - name: Factureringsmodel

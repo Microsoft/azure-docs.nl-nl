@@ -6,12 +6,12 @@ ms.author: vibansa
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: f3357fcc070ca4ca2212cf0424e4baf8208a3ca1
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 17ac10fd4e48043b79db5448fad2f29c5eb3f2a3
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754127"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986816"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
 
@@ -45,7 +45,7 @@ De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware
 
 **Vereiste** | **VMware** 
 --- | ---
-**Machtigingen** | Als u de Web-App van het apparaat lokaal of op afstand wilt openen, moet u een domein beheerder of lokale beheerder op de apparaatapparaat zijn.
+**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de Web-App van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
 **Toestel onderdelen** | Het apparaat heeft de volgende onderdelen:<br/><br/> - **Beheer-app**: dit is een web-app voor gebruikers invoer tijdens de implementatie van het apparaat. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/> - **Detectie agent**: de agent verzamelt computer configuratie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Collector agent**: de agent verzamelt prestatie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Service voor automatische updates**: updates van de onderdelen van het apparaat (elke 24 uur wordt uitgevoerd).<br/>- **DRA-agent**: organiseert de replicatie van de virtuele machine en coördineert de communicatie tussen gerepliceerde machines en Azure. Wordt alleen gebruikt bij het repliceren van virtuele VMware-machines naar Azure met migratie zonder agent.<br/>- **Gateway**: verstuurt gerepliceerde gegevens naar Azure. Wordt alleen gebruikt bij het repliceren van virtuele VMware-machines naar Azure met migratie zonder agent.
 **Ondersteunde implementatie** | Implementeren als VMware-VM met behulp van de eicellen-sjabloon.<br/><br/> Implementeren als een VMware-VM of fysieke machine met behulp van een Power shell-installatie script.
 **Project ondersteuning** |  Een apparaat kan worden gekoppeld aan een enkel project. <br/> Een wille keurig aantal apparaten kan aan één project worden gekoppeld.<br/> 
@@ -65,7 +65,7 @@ De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware
 
 **Vereiste** | **Hyper-V** 
 --- | ---
-**Machtigingen** | Als u de Web-App van het apparaat lokaal of op afstand wilt openen, moet u een domein beheerder of lokale beheerder op de apparaatapparaat zijn.
+**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de Web-App van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
 **Toestel onderdelen** | Het apparaat heeft de volgende onderdelen:<br/><br/>- **Beheer-app**: dit is een web-app voor gebruikers invoer tijdens de implementatie van het apparaat. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/> - **Detectie agent**: de agent verzamelt computer configuratie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Collector agent**: de agent verzamelt prestatie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Service voor automatische updates**: updates van de onderdelen van het apparaat (elke 24 uur wordt uitgevoerd).
 **Ondersteunde implementatie** | Als Hyper-V-VM implementeren met behulp van een VHD-sjabloon.<br/><br/> Implementeer als een Hyper-V-VM of fysieke machine met behulp van een Power shell-installatie script.
 **Project ondersteuning** |  Een apparaat kan worden gekoppeld aan een enkel project. <br/> Een wille keurig aantal apparaten kan aan één project worden gekoppeld.<br/> 
@@ -82,7 +82,7 @@ _ *Vereisten voor Hyper-V** | Als u het apparaat met de VHD-sjabloon implementee
 
 **Vereiste** | **Fysiek** 
 --- | ---
-**Machtigingen** | Als u de Web-App van het apparaat lokaal of op afstand wilt openen, moet u een domein beheerder of lokale beheerder op de apparaatapparaat zijn.
+**Machtigingen** | Als u lokaal of op afstand toegang wilt krijgen tot de Web-App van het apparaat, moet u een lokaal of domein gebruikers account met beheerders bevoegdheden op de toestel server hebben.
 **Toestel onderdelen** | Het apparaat heeft de volgende onderdelen: <br/><br/> - **Beheer-app**: dit is een web-app voor gebruikers invoer tijdens de implementatie van het apparaat. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/> - **Detectie agent**: de agent verzamelt computer configuratie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Collector agent**: de agent verzamelt prestatie gegevens. Wordt gebruikt bij de beoordeling van computers voor migratie naar Azure.<br/>- **Service voor automatische updates**: updates van de onderdelen van het apparaat (elke 24 uur wordt uitgevoerd).
 **Ondersteunde implementatie** | Implementeren als een toegewezen fysieke machine, of een VM, met behulp van een Power shell-installatie script. Het script kan vanuit de portal worden gedownload.
 **Project ondersteuning** |  Een apparaat kan worden gekoppeld aan een enkel project. <br/> Een wille keurig aantal apparaten kan aan één project worden gekoppeld.<br/> 
@@ -183,7 +183,7 @@ IPv6-adressen | vm.Guest.Net
 Lees doorvoer (MB per seconde) | net. received. Average
 Schrijf doorvoer (MB per seconde) | net. verzonden. gemiddeld
 **Details van configuratiepad** | 
-Naam | verpakking. GetType (). Naam
+Name | verpakking. GetType (). Naam
 Type onderliggend object | verpakking. ChildType
 Referentie Details | verpakking. MoRef
 Details van bovenliggend item | Container. Parent
@@ -230,7 +230,7 @@ Dit zijn de functies die het apparaat verzamelt van elke virtuele machine die is
 
 **Gegevens**  | **Power shell-cmdlet** | **Eigenschap**
 --- | --- | ---
-Naam  | Get-WindowsFeature  | Naam
+Name  | Get-WindowsFeature  | Name
 Onderdeel type | Get-WindowsFeature  | FeatureType
 Bovenliggend  | Get-WindowsFeature  | Bovenliggend
 
@@ -240,7 +240,7 @@ Dit zijn de SQL Server-meta gegevens die het apparaat verzamelt van Vm's waarop 
 
 **Gegevens**  | **Registerlocatie**  | **Sleutel**
 --- | --- | ---
-Naam  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
+Name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
 Editie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Editie 
 Service Pack  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | SP
 Versie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Versie 
@@ -251,7 +251,7 @@ Hier ziet u de gegevens van het besturings systeem die door het apparaat worden 
 
 Gegevens  | WMI-klasse  | WMI-klasse-eigenschap
 --- | --- | ---
-Naam  | Win32_operatingsystem  | Caption
+Name  | Win32_operatingsystem  | Caption
 Versie  | Win32_operatingsystem  | Versie
 Architectuur  | Win32_operatingsystem  | OSArchitecture
 
@@ -261,7 +261,7 @@ Hier zijn de geïnstalleerde toepassings gegevens die het apparaat verzamelt van
 
 Gegevens  | Opdracht
 --- | --- 
-Naam | rpm, met dpkg-query, uitlijnen
+Name | rpm, met dpkg-query, uitlijnen
 Versie | rpm, met dpkg-query, uitlijnen
 Provider | rpm, met dpkg-query, uitlijnen
 
@@ -271,7 +271,7 @@ Hier ziet u de gegevens van het besturings systeem die door het apparaat worden 
 
 **Gegevens**  | **Opdracht** 
 --- | --- | ---
-Naam <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+Name <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architectuur | uname
 
 
@@ -488,7 +488,7 @@ Als u van apparaat Configuration Manager wilt inschakelen, nadat de detectie is 
 U kunt de versie van het toestel nummer controleren aan de hand van een van de volgende methoden:
 
 - Ga in configuratie beheer voor apparaten naar het paneel **vereisten instellen** .
-- Op de apparaatapparaat, in **Control Panel**  >  **Program ma's en onderdelen** van het configuratie scherm.
+- Op de apparaatapparaat, in   >  **Program ma's en onderdelen** van het configuratie scherm.
 
 Controleren van de configuratie manager van het toestel:
 
@@ -499,7 +499,7 @@ Controleren van de configuratie manager van het toestel:
 
 Controleren in het configuratie scherm:
 
-1. Klik op het apparaat op **Start**  >  **configuratie scherm**  >  **Program ma's en onderdelen** starten.
+1. Klik op het apparaat op   >  **configuratie scherm**  >  **Program ma's en onderdelen** starten.
 2. Controleer de versies van de toestel Services in de lijst.
 
     ![Controleer de versie in het configuratie scherm](./media/migrate-appliance/programs-features.png)
@@ -521,7 +521,7 @@ Als u een oudere versie voor een van de onderdelen uitvoert, moet u de service v
 
 5. Controleer of de uitvoer van de opdracht overeenkomt met de invoer van de hashwaarde voor de service in het bestand (bijvoorbeeld de bovenstaande MD5-hash-waarde).
 6. Voer nu het MSI-bestand uit om de service te installeren. Het is een stille installatie en het installatie venster wordt gesloten nadat het is uitgevoerd.
-7. Nadat de installatie is voltooid, controleert u de versie van de **Control panel** service in de  >  **Program ma's en onderdelen** van het configuratie scherm. De service versie moet nu worden bijgewerkt naar de meest recente weer gave in het JSON-bestand.
+7. Nadat de installatie is voltooid, controleert u de versie van de service in de  >  **Program ma's en onderdelen** van het configuratie scherm. De service versie moet nu worden bijgewerkt naar de meest recente weer gave in het JSON-bestand.
 
 
 

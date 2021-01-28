@@ -3,12 +3,12 @@ title: MABS (Azure Backup Server) v3 UR1 Protection-matrix
 description: In dit artikel wordt een ondersteunings matrix weer gegeven met alle werk belastingen, gegevens typen en installaties die Azure Backup Server beveiligt.
 ms.date: 03/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: d37d51ee781dfbc5bcd56fa3158a622202a979c6
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 2c7caad1d377070d4d4ac8436c1d8c08e786dc44
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754178"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986833"
 ---
 # <a name="mabs-azure-backup-server-v3-ur1-protection-matrix"></a>MABS (Azure Backup Server) v3 UR1 Protection-matrix
 
@@ -65,11 +65,17 @@ U kunt een back-up maken van uw gegevens via Azure ExpressRoute met open bare pe
 
 Met open bare peering: Zorg ervoor dat u toegang hebt tot de volgende domeinen/adressen:
 
-* `http://www.msftncsi.com/ncsi.txt`
-* `microsoft.com`
-* `.WindowsAzure.com`
-* `.microsoftonline.com`
-* `.windows.net`
+* URL's
+  * `www.msftncsi.com`
+  * `*.Microsoft.com`
+  * `*.WindowsAzure.com`
+  * `*.microsoftonline.com`
+  * `*.windows.net`
+  * `www.msftconnecttest.com`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18
+
 
 Selecteer bij micro soft-peering de volgende services/regio's en relevante Community-waarden:
 

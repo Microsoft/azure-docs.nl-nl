@@ -9,12 +9,12 @@ ms.author: vinsonyu
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 6e2443014f6788504a11784945078187a5a72de4
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 37ba4f10365fca4292171c3bd2d9a3e7d00045bb
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311132"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985866"
 ---
 # <a name="configure-azure-arc-enabled-sql-managed-instance"></a>Door Azure Arc ingeschakeld SQL Managed instance configureren
 
@@ -60,13 +60,13 @@ Ga als volgt te werk om een van deze instellingen te wijzigen:
    traceflag0 = 1204
    ```
 
-1. Kopieer het `mssql-custom.conf` bestand naar `/var/opt/mssql` in de `mssql-miaa` container in het `master-0` pod. Vervang door `<namespaceName>` de naam van het Big Data-cluster.
+1. Kopieer het `mssql-custom.conf` bestand naar `/var/opt/mssql` in de `arc-sqlmi` container in het `master-0` pod. Vervang door `<namespaceName>` de naam ruimte waarin dit exemplaar is geïmplementeerd.
 
    ```bash
    kubectl cp mssql-custom.conf master-0:/var/opt/mssql/mssql-custom.conf -c mssql-server -n <namespaceName>
    ```
 
-1. Start SQL Server-exemplaar opnieuw op.  Vervang door `<namespaceName>` de naam van het Big Data-cluster.
+1. Start het SQL Managed instance opnieuw.  Vervang door `<namespaceName>` de naam ruimte waarin dit exemplaar is geïmplementeerd.
 
    ```bash
    kubectl exec -it master-0  -c mssql-server -n <namespaceName> -- /bin/bash

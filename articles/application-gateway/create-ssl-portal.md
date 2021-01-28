@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 08/14/2020
+ms.date: 01/28/2021
 ms.author: victorh
-ms.openlocfilehash: 96b33c619ecfde8d1a470069f7fab4d840536b46
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.openlocfilehash: c976ea236ae1d37cc0a543b10a9de55609035632
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397645"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986749"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-tls-termination-using-the-azure-portal"></a>Zelfstudie: Een toepassingsgateway configureren met TLS-beëindiging met Azure Portal
 
@@ -77,8 +77,8 @@ Export-PfxCertificate `
 
 1. Op het tabblad **Basisinformatie** voert u deze waarden in voor de volgende toepassingsgateway-instellingen:
 
-   - **Resourcegroep** : Selecteer **myResourceGroupAG** als de resourcegroep. Als deze nog niet bestaat, selecteert u **Nieuwe maken** om deze te maken.
-   - **Naam toepassingsgateway** : Typ *myAppGateway* als naam voor de toepassingsgateway.
+   - **Resourcegroep**: Selecteer **myResourceGroupAG** als de resourcegroep. Als deze nog niet bestaat, selecteert u **Nieuwe maken** om deze te maken.
+   - **Naam toepassingsgateway**: Typ *myAppGateway* als naam voor de toepassingsgateway.
 
         ![Nieuwe toepassingsgateway maken: Basisbeginselen](./media/application-gateway-create-gateway-portal/application-gateway-create-basics.png)
 
@@ -86,11 +86,11 @@ Export-PfxCertificate `
 
     Maak onder **Virtueel netwerk configureren** een nieuw virtueel netwerk door **Nieuw netwerk maken** te selecteren. Voer in het venster **Virtueel netwerk maken** dat wordt geopend, de volgende waarden in om het virtuele netwerk en twee subnetten te maken:
 
-    - **Naam** : Typ *myVnet* als naam voor het virtuele netwerk.
+    - **Naam**: Typ *myVnet* als naam voor het virtuele netwerk.
 
     - **Subnetnaam** (subnet van toepassingsgateway): Het raster **Subnetten** geeft een subnet met de naam *Standaard* weer. Wijzig de naam van dit subnet in *myAGSubnet*.<br>Het subnet van de toepassingsgateway kan alleen bestaan uit toepassingsgateways. Andere resources zijn niet toegestaan.
 
-    - **Subnetnaam** (subnet van back-endserver): In de tweede rij van het raster **Subnetten** voert u in de kolom **Subnetnaam** , *myBackendSubnet* in.
+    - **Subnetnaam** (subnet van back-endserver): In de tweede rij van het raster **Subnetten** voert u in de kolom **Subnetnaam**, *myBackendSubnet* in.
 
     - **Adresbereik** (subnet van back-endserver): In de tweede rij van het raster **Subnetten** voert u een adresbereik in dat niet overlapt met het adresbereik van *myAGSubnet*. Als het adresbereik van *myAGSubnet* bijvoorbeeld 10.0.0.0/24 is, voert u *10.0.1.0/24* in voor het adresbereik van *myBackendSubnet*.
 
@@ -106,7 +106,7 @@ Export-PfxCertificate `
    > [!NOTE]
    > Voor de Application Gateway v2 SKU kunt u alleen een **openbare** front-end-IP-configuratie kiezen. De privé frontend-IP-configuratie is op dit moment niet ingeschakeld voor deze v2-SKU.
 
-2. Kies **Nieuw maken** voor het **Openbaar IP-adres** en voer *myAGPublicIPAddress* in als naam voor het openbaar IP-adres en selecteer vervolgens **OK**. 
+2. Kies **Nieuw toevoegen** voor het **open bare IP-adres** en voer *myAGPublicIPAddress* in voor de naam van het open bare IP-adres en selecteer vervolgens **OK**. 
 
    ![Nieuwe toepassingsgateway maken: front-ends](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
 
@@ -116,12 +116,12 @@ Export-PfxCertificate `
 
 De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endpools kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP's, interne IP's, FQDN's (Fully Qualified Domain Name) en multitenant back-ends als Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
 
-1. Selecteer in het tabblad **Back-ends** de optie **+Een back-endpool toevoegen**.
+1. Selecteer op het tabblad **back** -end **een back-end-groep toevoegen**.
 
 2. Voer in het venster **Een back-endpool toevoegen** dat wordt geopend, de volgende waarden in om een lege back-endpool te maken:
 
-    - **Naam** : Voer *myBackendPool* in als naam van de back-endpool.
-    - **Een back-endpool zonder doelen toevoegen** : Selecteer **Ja** om een back-endpool zonder doelen te maken. U voegt na het maken van de toepassingsgateway de back-enddoelen toe.
+    - **Naam**: Voer *myBackendPool* in als naam van de back-endpool.
+    - **Een back-endpool zonder doelen toevoegen**: Selecteer **Ja** om een back-endpool zonder doelen te maken. U voegt na het maken van de toepassingsgateway de back-enddoelen toe.
 
 3. Selecteer in het venster **Een back-endpool maken** de optie **Toevoegen** om de configuratie van de back-endpool op te slaan en terug te keren naar het tabblad **Back-ends**.
 
@@ -133,22 +133,23 @@ De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers d
 
 In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die u hebt gemaakt met een regel voor doorsturen.
 
-1. Selecteer in de kolom **Routeringsregels** de optie **Een regel toevoegen**.
+1. Selecteer **een regel voor door sturen toevoegen** in de kolom **routerings regels** .
 
 2. Voer in het venster **Een regel voor doorsturen toevoegen** dat wordt geopend, *myRoutingRule* in als de **Regelnaam**.
 
 3. Voor een regel voor doorsturen is een listener vereist. Voer in het tabblad **Listener** in het venster **Een regel voor doorsturen toevoegen** de volgende waarden in voor de listener:
 
-    - **Naam van listener** : Voer *myListener* in als naam van de listener.
-    - **IP van front-end** : Selecteer **Openbaar** om het openbare IP te kiezen dat u voor de front-end hebt gemaakt.
-    - **Protocol** : Selecteer **HTTPS**.
-    - **Poort** : Controleer of 443 is opgegeven voor de poort.
+    - **Naam van listener**: Voer *myListener* in als naam van de listener.
+    - **IP van front-end**: Selecteer **Openbaar** om het openbare IP te kiezen dat u voor de front-end hebt gemaakt.
+    - **Protocol**: Selecteer **HTTPS**.
+    - **Poort**: Controleer of 443 is opgegeven voor de poort.
 
-   Bij **HTTPS-certificaat** :
+   Onder **https-instellingen**:
 
-   - **PFX-certificaatbestand** : blader naar en het bestand c:\appgwcert.pfx dat u eerder hebt gemaakt en selecteer het bestand.
-   - **Certificaatnaam** : voer *mycert1* in als de naam van het certificaat.
-   - **Wachtwoord** : voer uw wachtwoord in.
+   - **Een certificaat kiezen** : Selecteer **een certificaat uploaden**.
+   - **PFX-certificaatbestand**: blader naar en het bestand c:\appgwcert.pfx dat u eerder hebt gemaakt en selecteer het bestand.
+   - **Certificaatnaam**: voer *mycert1* in als de naam van het certificaat.
+   - **Wacht woord** : Typ het wacht woord dat u hebt gebruikt om het certificaat te maken.
   
         Accepteer de standaardwaarden voor de overige instellingen in het tabblad **Listener** en selecteer vervolgens het tabblad **Back-enddoelen** om de rest van de regel voor doorsturen te configureren.
 
@@ -156,7 +157,7 @@ In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
 
 4. Selecteer in het tabblad **Back-enddoelen** de optie **myBackendPool** als het **Back-enddoel**.
 
-5. Selecteer als **HTTP-instelling** de optie **Nieuwe maken** om een nieuwe HTTP-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
+5. Voor de **http-instelling** selecteert u **Nieuw toevoegen** om een nieuwe http-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de naam van de **http-instelling**. Accepteer de standaard waarden voor de overige instellingen in het venster **een HTTP-instelling toevoegen** en selecteer vervolgens **toevoegen** om terug te gaan naar het venster een regel voor het **routeren van een route ring toevoegen** . 
 
    :::image type="content" source="./media/create-ssl-portal/application-gateway-create-httpsetting.png" alt-text="Nieuwe toepassingsgateway maken: HTTP-instelling":::
 
@@ -189,17 +190,17 @@ Hiervoor moet u het volgende doen:
 
 1. Voer deze waarden in op het tabblad **Basisinformatie** voor de volgende instellingen voor de virtuele machine:
 
-    - **Resourcegroep** : Selecteer **myResourceGroupAG** als naam van de resourcegroep.
-    - **Naam van virtuele machine** : Typ *myVM* als naam voor de virtuele machine.
-    - **Gebruikersnaam** : Typ *azureuser* als gebruikersnaam van de beheerder.
-    - **Wachtwoord** : voer een wachtwoord in voor het Administrator-account.
+    - **Resourcegroep**: Selecteer **myResourceGroupAG** als naam van de resourcegroep.
+    - **Naam van virtuele machine**: Typ *myVM* als naam voor de virtuele machine.
+    - **Gebruikersnaam**: Voer een naam in voor de gebruikersnaam van de beheerder.
+    - **Wachtwoord**: voer een wachtwoord in voor het Administrator-account.
 1. Accepteer de overige standaardwaarden en klik op **Volgende: Schijven**.  
 2. Accepteer de standaardwaarden op het tabblad **Schijven** en selecteer **Volgende: Netwerken**.
-3. Zorg ervoor dat, op het tabblad **Netwerken** , **myVNet** is geselecteerd bij **Virtueel netwerk** en dat **Subnet** is ingesteld op **myBackendSubnet**. Accepteer de overige standaardwaarden en klik op **Volgende: Beheer**.
+3. Zorg ervoor dat, op het tabblad **Netwerken**, **myVNet** is geselecteerd bij **Virtueel netwerk** en dat **Subnet** is ingesteld op **myBackendSubnet**. Accepteer de overige standaardwaarden en klik op **Volgende: Beheer**.
 
    Toepassingsgateway kan communiceren met instanties die zich buiten het virtuele netwerk van de gateway bevinden, maar u moet ervoor zorgen dat er een IP-verbinding is.
-1. Op het tabblad **Beheer** stelt u **Diagnostische gegevens over opstarten** in op **Uit**. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
-2. Controleer de instellingen op het tabblad **Beoordelen en maken** , corrigeer eventuele validatiefouten en selecteer vervolgens **Maken**.
+1. Op het tabblad **Beheer** stelt u **Diagnostische gegevens over opstarten** in op **Uitschakelen**. Accepteer de overige standaardwaarden en selecteer **Beoordelen en maken**.
+2. Controleer de instellingen op het tabblad **Beoordelen en maken**, corrigeer eventuele validatiefouten en selecteer vervolgens **Maken**.
 3. Wacht totdat de implementatie is voltooid voordat u doorgaat.
 
 ### <a name="install-iis-for-testing"></a>IIS installeren voor testen
@@ -210,7 +211,7 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
     ![Aangepaste extensie installeren](./media/application-gateway-create-gateway-portal/application-gateway-extension.png)
 
-2. Voer de volgende opdracht uit om IIS op de virtuele machine te installeren: 
+2. Wijzig de locatie-instelling voor uw omgeving en voer vervolgens de volgende opdracht uit om IIS op de virtuele machine te installeren: 
 
    ```azurepowershell-interactive
           Set-AzVMExtension `
@@ -221,7 +222,7 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
             -ExtensionType CustomScriptExtension `
             -TypeHandlerVersion 1.4 `
             -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' `
-            -Location EastUS
+            -Location <location>
    ```
 
 3. Maak een tweede virtuele machine en installeer IIS met behulp van de stappen die u zojuist hebt voltooid. Gebruik *myVM2* als naam voor de virtuele machine en voor de instelling **VMName** van de cmdlet **Set-AzVMExtension**.
@@ -234,9 +235,11 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 3. Selecteer **myBackendPool**.
 
-4. Onder **Doelen** selecteert u **Virtuele machine** in de vervolgkeuzelijst.
+4. Onder **doel type**, selecteer **virtuele machine** in de vervolg keuzelijst.
 
-5. Onder **VIRTUELE MACHINE** en **NETWERKINTERFACES** selecteert u de virtuele machines **myVM** en **myVM2** en de bijbehorende netwerkinterfaces in de vervolgkeuzelijsten.
+5. Onder **doel** selecteert u de netwerk interface onder **myVM** in de vervolg keuzelijst.
+
+6. Herhaal dit om de netwerk interface voor **myVM2** toe te voegen.
 
     ![Back-endservers toevoegen](./media/application-gateway-create-gateway-portal/application-gateway-backend.png)
 

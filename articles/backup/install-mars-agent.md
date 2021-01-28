@@ -3,12 +3,12 @@ title: De Microsoft Azure Recovery Services-agent (MARS) installeren
 description: Meer informatie over het installeren van de Microsoft Azure Recovery Services-agent (MARS) voor het maken van back-ups van Windows-machines.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: fb59c245c469791233ce973b00426a127b116535
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: acf38fdf338fcdd0cd7902d4295f0f03310543a8
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90975311"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986867"
 ---
 # <a name="install-the-azure-backup-mars-agent"></a>Installeer de Azure Backup MARS-agent
 
@@ -51,7 +51,7 @@ Het type opslag replicatie wijzigen:
 
 1. Selecteer in de nieuwe kluis **Eigenschappen** onder de sectie **instellingen** .
 
-1. Selecteer op de pagina **Eigenschappen** onder **back-upconfiguratie**de optie **bijwerken**.
+1. Selecteer op de pagina **Eigenschappen** onder **back-upconfiguratie** de optie **bijwerken**.
 
 1. Selecteer het type opslag replicatie en selecteer **Opslaan**.
 
@@ -88,6 +88,9 @@ Als u open bare peering wilt gebruiken, zorg er dan voor dat u toegang hebt tot 
 * `.WindowsAzure.com`
 * `.microsoftonline.com`
 * `.windows.net`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18
 
 Als u micro soft-peering wilt gebruiken, selecteert u de volgende services, regio's en relevante Community-waarden:
 
@@ -112,12 +115,12 @@ Down load de MARS-agent zodat u deze kunt installeren op de computers waarvan u 
 
 Als u de agent al op alle computers hebt geïnstalleerd, moet u ervoor zorgen dat u de nieuwste versie van de agent uitvoert. Zoek de meest recente versie in de portal of ga rechtstreeks naar de [down load](https://aka.ms/azurebackup_agent).
 
-1. Selecteer in de kluis, onder **aan**de slag, **back-up maken**.
+1. Selecteer in de kluis, onder **aan** de slag, **back-up maken**.
 
     ![Het doel van de back-up openen](./media/backup-try-azure-backup-in-10-mins/open-backup-settings.png)
 
-1. Selecteer onder **waar wordt uw workload uitgevoerd? de**optie **on-premises**. Selecteer deze optie, zelfs als u de MARS-agent wilt installeren op een virtuele Azure-machine.
-1. Selecteer **bestanden en mappen**onder **waarvan wilt u een back-up maken?** U kunt ook **systeem status**selecteren. Er zijn veel andere opties beschikbaar, maar deze opties worden alleen ondersteund als u een secundaire back-upserver uitvoert. Selecteer **infra structuur voorbereiden**.
+1. Selecteer onder **waar wordt uw workload uitgevoerd? de** optie **on-premises**. Selecteer deze optie, zelfs als u de MARS-agent wilt installeren op een virtuele Azure-machine.
+1. Selecteer **bestanden en mappen** onder **waarvan wilt u een back-up maken?** U kunt ook **systeem status** selecteren. Er zijn veel andere opties beschikbaar, maar deze opties worden alleen ondersteund als u een secundaire back-upserver uitvoert. Selecteer **infra structuur voorbereiden**.
 
     ![Bestanden en mappen configureren](./media/backup-try-azure-backup-in-10-mins/set-file-folder.png)
 
@@ -127,7 +130,7 @@ Als u de agent al op alle computers hebt geïnstalleerd, moet u ervoor zorgen da
 
 1. Selecteer in het menu downloaden de optie **Opslaan**. Standaard wordt het bestand *MARSagentinstaller.exe* opgeslagen in de map Downloads.
 
-1. Selecteer **al downloaden of gebruik de nieuwste Recovery Services-agent**en down load vervolgens de kluis referenties.
+1. Selecteer **al downloaden of gebruik de nieuwste Recovery Services-agent** en down load vervolgens de kluis referenties.
 
     ![Kluisreferenties downloaden](./media/backup-try-azure-backup-in-10-mins/download-vault-credentials.png)
 
@@ -142,14 +145,14 @@ Als u de agent al op alle computers hebt geïnstalleerd, moet u ervoor zorgen da
 
     ![Installatie-instellingen kiezen in de installatie wizard van de MARS-agent](./media/backup-configure-vault/mars1.png)
 
-1. Geef voor **proxy configuratie**op hoe de agent die wordt uitgevoerd op de Windows-computer, verbinding maakt met internet. Selecteer vervolgens **Volgende**.
+1. Geef voor **proxy configuratie** op hoe de agent die wordt uitgevoerd op de Windows-computer, verbinding maakt met internet. Selecteer vervolgens **Volgende**.
 
    * Als u een aangepaste proxy gebruikt, geeft u de benodigde proxy-instellingen en referenties op.
    * Houd er rekening mee dat de agent toegang moet hebben tot [specifieke url's](#before-you-start).
 
     ![Internet toegang instellen in de MARS-wizard](./media/backup-configure-vault/mars2.png)
 
-1. Controleer de vereisten voor de **installatie**en selecteer **installeren**.
+1. Controleer de vereisten voor de **installatie** en selecteer **installeren**.
 1. Nadat de agent is geïnstalleerd, selecteert u **door gaan naar registratie**.
 1. In de **wizard Server registreren**  >  **kluis-id**, bladert u naar en selecteert u het referentie bestand dat u hebt gedownload. Selecteer vervolgens **Volgende**.
 

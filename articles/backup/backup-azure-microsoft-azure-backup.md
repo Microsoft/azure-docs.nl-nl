@@ -3,12 +3,12 @@ title: Azure Backup Server gebruiken om een back-up te maken van workloads
 description: In dit artikel leert u hoe u uw omgeving voorbereidt op het beveiligen en maken van een back-up van workloads met behulp van Microsoft Azure Backup Server (MABS).
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.openlocfilehash: 1be2af43f4d923a27fd96c5c0888a234725775a3
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: d476c228a619f03f798c1a2cd6854a8d603c3637
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056698"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98987019"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Azure Backup Server installeren en upgraden
 
@@ -95,11 +95,11 @@ De instelling voor opslagreplicatie bewerken:
 
 ### <a name="downloading-the-software-package"></a>Het software pakket downloaden
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-2. Als er al een Recovery Services kluis is geopend, gaat u verder met stap 3. Als u nog geen Recovery Services kluis hebt geopend, maar wel in de Azure Portal, klikt u op **Bladeren**in het hoofd menu.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+2. Als er al een Recovery Services kluis is geopend, gaat u verder met stap 3. Als u nog geen Recovery Services kluis hebt geopend, maar wel in de Azure Portal, klikt u op **Bladeren** in het hoofd menu.
 
    * Typ in de lijst met resources **Recovery Services**.
-   * Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Wanneer u **Recovery Services kluizen**ziet, selecteert u deze.
+   * Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Wanneer u **Recovery Services kluizen** ziet, selecteert u deze.
 
      ![Recovery Services kluis maken stap 1](./media/backup-azure-microsoft-azure-backup/open-recovery-services-vault.png)
 
@@ -120,7 +120,7 @@ De instelling voor opslagreplicatie bewerken:
 
     ![Back-up-doel stellingen-standaard-geopend](./media/backup-azure-microsoft-azure-backup/getting-started.png)
 
-5. Selecteer **on-premises**in het deel venster doel van de **back-up** van het menu **waar is uw workload actief** .
+5. Selecteer **on-premises** in het deel venster doel van de **back-up** van het menu **waar is uw workload actief** .
 
     ![on-premises en workloads als doel stellingen](./media/backup-azure-microsoft-azure-backup/backup-goals-azure-backup-server.png)
 
@@ -243,7 +243,7 @@ MABS maakt gebruik van de System Center Data Protection Manager-beveiligings age
 
 In de volgende secties wordt beschreven hoe u beveiligingsagents voor client computers bijwerkt.
 
-1. Selecteer **beheer**agenten in de Administrator-console van de back-upserver  >  **Agents**.
+1. Selecteer **beheer** agenten in de Administrator-console van de back-upserver  >  .
 
 2. Selecteer in het weergave paneel de client computers waarvoor u de beveiligings agent wilt bijwerken.
 
@@ -254,9 +254,9 @@ In de volgende secties wordt beschreven hoe u beveiligingsagents voor client com
 
 3. Om bijgewerkte beveiligingsagents op de geselecteerde computers te installeren, selecteert u in het deel venster **acties** de optie **bijwerken**.
 
-4. Voor een client computer die geen verbinding heeft met het netwerk totdat de computer is verbonden met het netwerk, wordt in de kolom **agent status** de status **Update in behandeling**weer gegeven.
+4. Voor een client computer die geen verbinding heeft met het netwerk totdat de computer is verbonden met het netwerk, wordt in de kolom **agent status** de status **Update in behandeling** weer gegeven.
 
-   Nadat een client computer met het netwerk is verbonden, wordt in de kolom **agent updates** voor de client computer de status **bijgewerkt**weer gegeven.
+   Nadat een client computer met het netwerk is verbonden, wordt in de kolom **agent updates** voor de client computer de status **bijgewerkt** weer gegeven.
 
 ## <a name="move-mabs-to-a-new-server"></a>MABS verplaatsen naar een nieuwe server
 
@@ -303,13 +303,18 @@ Zodra u de status van de Azure-verbinding en het Azure-abonnement kent, kunt u d
 
 ### <a name="recovering-from-loss-of-connectivity"></a>Herstellen van connectiviteits verlies
 
-Als u een firewall of proxy hebt die toegang tot Azure blokkeert, moet u de volgende domein adressen toestaan in het profiel van de firewall/proxy:
+Als uw computer beperkte internet toegang heeft, moet u ervoor zorgen dat de firewall instellingen op de computer of de proxy de volgende Url's en IP-adressen toestaan:
 
-* `http://www.msftncsi.com/ncsi.txt`
-* \*.Microsoft.com
-* \*.WindowsAzure.com
-* \*.microsoftonline.com
-* \*.windows.net
+* URL's
+  * `www.msftncsi.com`
+  * `*.Microsoft.com`
+  * `*.WindowsAzure.com`
+  * `*.microsoftonline.com`
+  * `*.windows.net`
+  * `www.msftconnecttest.com`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18
 
 Als u ExpressRoute micro soft-peering gebruikt, selecteert u de volgende services/regio's:
 
@@ -323,7 +328,7 @@ Zodra de verbinding met Azure is hersteld op de Azure Backup Server machine, wor
 
 ### <a name="handling-subscription-states"></a>Abonnements statussen verwerken
 
-Het is mogelijk om een Azure-abonnement te nemen van een *verlopen* of *oningerichte* status naar de *actieve* status. Dit heeft echter gevolgen voor het product gedrag wanneer de status niet *actief*is:
+Het is mogelijk om een Azure-abonnement te nemen van een *verlopen* of *oningerichte* status naar de *actieve* status. Dit heeft echter gevolgen voor het product gedrag wanneer de status niet *actief* is:
 
 * Een ongedaan gemaakt abonnement verliest de functionaliteit voor de periode waarin *de inrichting is* ongedaan gemaakt. Bij het inschakelen van actief wordt de product functionaliteit van Backup/Restore opnieuw *geactiveerd*. De back-upgegevens op de lokale schijf kunnen ook worden opgehaald als deze zijn opgeslagen met een voldoende lange Bewaar periode. De back-upgegevens in azure zijn echter IRRETRIEVABLY kwijt wanneer het abonnement de status *unprovision* heeft ingevoerd.
 * Een *verlopen* abonnement verliest alleen de functionaliteit als deze weer *actief* is geweest. Back-ups die zijn gepland voor de periode dat het abonnement is *verlopen* , worden niet uitgevoerd.

@@ -3,12 +3,12 @@ title: Ondersteunings matrix voor MABS & System Center DPM
 description: Dit artikel bevat een overzicht van Azure Backup ondersteuning wanneer u Microsoft Azure Backup Server (MABS) of System Center DPM gebruikt om back-ups te maken van on-premises en Azure VM-resources.
 ms.date: 02/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0180135da793aaf7869441ee290f6125ea88fc88
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: aaa68dba0bbd1f3f5ffb5480a2bdb0a48ae85656
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92276973"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986053"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Ondersteunings matrix voor back-up met Microsoft Azure Backup Server of System Center DPM
 
@@ -50,7 +50,7 @@ Voor meer informatie:
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-**Scenario** | **Agent** | **Locatie**
+**Scenario** | **Tussen** | **Locatie**
 --- | --- | ---
 **Back-ups maken van on-premises machines/werk belastingen** | De DPM/MABS Protection-agent wordt uitgevoerd op de computers waarvan u een back-up wilt maken.<br/><br/> De MARS-agent op de DPM-MABS-server.<br/> De minimale versie van de Microsoft Azure Recovery Services agent, of Azure Backup Agent, die vereist is om deze functie in te scha kelen, is 2.0.8719.0.  | DPM-MABS moeten on-premises worden uitgevoerd.
 
@@ -111,13 +111,18 @@ U kunt MABS implementeren op een Azure Stack virtuele machine, zodat u een back-
 
 ### <a name="url-access"></a>URL-toegang
 
-De DPM-server-MABS moet toegang hebben tot deze Url's:
+De DPM-server-MABS-server moet toegang hebben tot deze Url's en IP-adressen:
 
-- `http://www.msftncsi.com/ncsi.txt`
-- `*.Microsoft.com`
-- `*.WindowsAzure.com`
-- `*.microsoftonline.com`
-- `*.windows.net`
+* URL's
+  * `www.msftncsi.com`
+  * `*.Microsoft.com`
+  * `*.WindowsAzure.com`
+  * `*.microsoftonline.com`
+  * `*.windows.net`
+  * `www.msftconnecttest.com`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18:
 
 ### <a name="azure-expressroute-support"></a>Ondersteuning voor Azure ExpressRoute
 
@@ -125,11 +130,16 @@ U kunt een back-up maken van uw gegevens via Azure ExpressRoute met open bare pe
 
 Met open bare peering: Zorg ervoor dat u toegang hebt tot de volgende domeinen/adressen:
 
-- `http://www.msftncsi.com/ncsi.txt`
-- `microsoft.com`
-- `.WindowsAzure.com`
-- `.microsoftonline.com`
-- `.windows.net`
+* URL's
+  * `www.msftncsi.com`
+  * `*.Microsoft.com`
+  * `*.WindowsAzure.com`
+  * `*.microsoftonline.com`
+  * `*.windows.net`
+  * `www.msftconnecttest.com`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18
 
 Selecteer bij micro soft-peering de volgende services/regio's en relevante Community-waarden:
 
@@ -146,7 +156,7 @@ Zie de [routerings vereisten voor ExpressRoute](../expressroute/expressroute-rou
 
 De verbinding met de Azure Backup-service is vereist voor een juiste werking van back-ups en het Azure-abonnement moet actief zijn. In de volgende tabel ziet u het gedrag als deze twee dingen zich niet voordoen.
 
-**MABS naar Azure** | **Abonnement** | **Back-up en herstellen**
+**MABS naar Azure** | **Abonnement** | **Back-up maken/herstellen**
 --- | --- | ---
 Verbonden | Actief | Maak een back-up naar de DPM-MABS-schijf.<br/><br/> Maak een back-up naar Azure.<br/><br/> Herstellen vanaf schijf.<br/><br/> Herstellen vanuit Azure.
 Verbonden | Verlopen/niet-ingericht | Geen back-up naar schijf of Azure.<br/><br/> Als het abonnement is verlopen, kunt u het herstellen vanaf schijf of Azure.<br/><br/> Als het abonnement uit bedrijf is genomen, kunt u niet meer herstellen vanaf schijf of Azure. De Azure-herstel punten worden verwijderd.

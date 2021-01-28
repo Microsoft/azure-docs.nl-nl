@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: d432f29e91097491fc4719ec59a11cb96948f431
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 45bb045e7bad2d5f8a56b71787b3abb5921cb7d5
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609051"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985883"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Een PostgreSQL Hyperscale-servergroep met Azure Arc maken
 
@@ -78,9 +78,16 @@ azdata arc postgres server create -n <name> --workers <# worker nodes with #>=2>
 #azdata arc postgres server create -n postgres01 --workers 2
 ```
 
+> [!IMPORTANT]
+> - De opslag klasse die wordt gebruikt voor back-ups (_--Storage-Class-backups-SCB_) wordt standaard ingesteld op de gegevens opslag klasse van de gegevens controller als deze niet is ingevoerd.
+> - Als u een server groep wilt herstellen naar een afzonderlijke server groep (zoals herstel op tijdstip van punt), moet u uw server groep configureren om Pvc's te gebruiken met de ReadWriteMany-toegangs modus. Dit is vereist om dit te doen bij het maken van de Server groep. Het kan niet worden gewijzigd nadat het is gemaakt. Lees voor meer informatie:
+>    - [Deze sectie over back-ups maken en herstellen](https://docs.microsoft.com/azure/azure-arc/data/backup-restore-postgresql-hyperscale#create-a-server-group-that-is-ready-for-backups-and-restores)
+>    - [Deze sectie over de beperkingen van Azure Arc enabled PostgreSQL grootschalige](https://docs.microsoft.com/azure/azure-arc/data/limitations-postgresql-hyperscale)
+
+
 > [!NOTE]
 > - **Er zijn andere opdracht regel parameters beschikbaar.  Bekijk de volledige lijst met opties door uit te voeren `azdata arc postgres server create --help` .**
-> - De opslag klasse die wordt gebruikt voor back-ups (_--Storage-Class-backups-SCB_) wordt standaard ingesteld op de gegevens opslag klasse van de gegevens controller als deze niet is ingevoerd.
+
 > - De eenheid die wordt geaccepteerd door de para meter--volume-size-* is een Kubernetes-resource hoeveelheid (een geheel getal gevolgd door een van deze SI-toereikende waarden (T, G, M, K, m) of hun kracht van twee equivalenten (TI, GI, MI, ki)).
 > - Namen moeten uit 12 tekens of minder bestaan en voldoen aan de naamgevings regels voor DNS.
 > - U wordt gevraagd het wacht woord voor de _post gres_ Standard-gebruiker met beheerders rechten in te voeren.  U kunt de interactieve prompt overs Laan door de `AZDATA_PASSWORD` sessie omgevings variabele in te stellen voordat u de opdracht maken uitvoert.

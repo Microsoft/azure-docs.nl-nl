@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 1fc768890e932d1f17ad111b4681b75721ae1e06
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ecc2e98d4c6c58e11b2bdc86b623f31d828cabc0
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148110"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985917"
 ---
 # <a name="azure-arc-enabled-postgresql-hyperscale-server-group-placement"></a>Plaatsing van Azure-PostgreSQL grootschalige-Server groep
 
@@ -46,7 +46,7 @@ aks-agentpool-42715708-vmss000003   Ready    agent   11h   v1.17.9
 
 De architectuur kan worden weer gegeven als:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/2_logical_cluster.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/2_logical_cluster.png" alt-text="Logische weer gave van vier knoop punten gegroepeerd in een Kubernetes-cluster":::
 
 Het Kubernetes-cluster fungeert als host voor een Azure-Arc-gegevens controller en één grootschalige-Server groep voor Azure-Arc ingeschakelde PostgreSQL. Deze server groep is samengesteld uit drie PostgreSQL-instanties: één coördinator en twee werk nemers.
 
@@ -60,30 +60,30 @@ Dit resulteert in de volgende uitvoer:
 ```output
 NAME                 READY   STATUS    RESTARTS   AGE
 …
-postgres01-0         3/3     Running   0          9h
-postgres01-1         3/3     Running   0          9h
-postgres01-2         3/3     Running   0          9h
+postgres01c-0         3/3     Running   0          9h
+postgres01w-0         3/3     Running   0          9h
+postgres01w-1         3/3     Running   0          9h
 ```
 Elk van deze objecten die een PostgreSQL-exemplaar hosten. Ze vormen samen de Azure-PostgreSQL grootschalige-Server groep:
 
 ```output
 Pod name        Role in the server group
-postgres01-0  Coordinator
-postgres01-1    Worker
-postgres01-2    Worker
+postgres01c-0 Coordinator
+postgres01w-0   Worker
+postgres01w-1   Worker
 ```
 
 ## <a name="placement"></a>Plaatsing
 Laten we eens kijken hoe Kubernetes het Peul van de Server groep plaatst. Beschrijf elke pod en bepaal op welk fysiek knoop punt van het Kubernetes-cluster ze worden geplaatst. Voor de coördinator voert u bijvoorbeeld de volgende opdracht uit:
 
 ```console
-kubectl describe pod postgres01-0 -n arc3
+kubectl describe pod postgres01c-0 -n arc3
 ```
 
 Dit resulteert in de volgende uitvoer:
 
 ```output
-Name:         postgres01-0
+Name:         postgres01c-0
 Namespace:    arc3
 Priority:     0
 Node:         aks-agentpool-42715708-vmss000000
@@ -101,7 +101,7 @@ Als we deze opdracht voor elk van de peulen uitvoeren, wordt de huidige plaatsin
 En Let er ook op dat in de beschrijving van het Peul de namen van de containers die elke pod-host. Voor de tweede werk nemer voert u bijvoorbeeld de volgende opdracht uit:
 
 ```console
-kubectl describe pod postgres01-2 -n arc3
+kubectl describe pod postgres01w-1 -n arc3
 ```
 
 Dit resulteert in de volgende uitvoer:
@@ -121,7 +121,7 @@ Containers:
 
 Elke pod die deel uitmaakt van de PostgreSQL grootschalige-Server groep voor Azure-Arc, host de volgende drie containers:
 
-|Containers|Beschrijving
+|Containers|Description
 |----|----|
 |`Fluentbit` |Gegevens * logboek verzamelaar: https://fluentbit.io/
 |`Postgres`|PostgreSQL-exemplaar onderdeel van de Azure-PosgreSQL grootschalige-Server groep ingeschakeld
@@ -129,7 +129,7 @@ Elke pod die deel uitmaakt van de PostgreSQL grootschalige-Server groep voor Azu
 
 De architectuur ziet er als volgt uit:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/3_pod_placement.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/3_pod_placement.png" alt-text="3 elke plaats op afzonderlijke knoop punten":::
 
 Dit betekent dat op dit moment elk PostgreSQL-exemplaar dat de Azure-PostgreSQL grootschalige-Server groep vormt, wordt gehost op een specifieke fysieke host in de Kubernetes-container. Dit is de beste configuratie om de prestaties van de Azure-PostgreSQL grootschalige-Server groep optimaal te benutten, aangezien elke rol (coördinator en werk nemers) de bronnen van elk fysiek knoop punt gebruikt. Deze resources worden niet gedeeld tussen verschillende PostgreSQL-rollen.
 
@@ -172,23 +172,23 @@ kubectl get pods -n arc3
 ```output
 NAME                 READY   STATUS    RESTARTS   AGE
 …
-postgres01-0         3/3     Running   0          11h
-postgres01-1         3/3     Running   0          11h
-postgres01-2         3/3     Running   0          11h
-postgres01-3         3/3     Running   0          5m2s
+postgres01c-0         3/3     Running   0          11h
+postgres01w-0         3/3     Running   0          11h
+postgres01w-1         3/3     Running   0          11h
+postgres01w-2         3/3     Running   0          5m2s
 ```
 
 En beschrijf de nieuwe pod om te identificeren op welke van de fysieke knoop punten van het Kubernetes-cluster het wordt gehost.
 Voer de opdracht uit:
 
 ```console
-kubectl describe pod postgres01-3 -n arc3
+kubectl describe pod postgres01w-2 -n arc3
 ```
 
 De naam van het hosting knooppunt identificeren:
 
 ```output
-Name:         postgres01-3
+Name:         postgres01w-2
 Namespace:    arc3
 Priority:     0
 Node:         aks-agentpool-42715708-vmss000000
@@ -203,11 +203,11 @@ De plaatsing van de PostgreSQL-exemplaren op de fysieke knoop punten van het clu
 |Werk|postgres01-2|AKS-agent pool-42715708-vmss000003
 |Werk|postgres01-3|AKS-agent pool-42715708-vmss000000
 
-U ziet dat de pod van de nieuwe werk nemer (postgres01-3) is geplaatst op hetzelfde knoop punt als de coördinator. 
+U ziet dat de pod van de nieuwe werk nemer (postgres01w-2) is geplaatst op hetzelfde knoop punt als de coördinator. 
 
 De architectuur ziet er als volgt uit:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/4_pod_placement_.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/4_pod_placement_.png" alt-text="Vierde pod op hetzelfde knoop punt als coördinator":::
 
 Waarom is de nieuwe werk nemer-pod niet geplaatst op het resterende fysieke knoop punt van het Kubernetes-cluster AKS-agent pool-42715708-vmss000003?
 
@@ -235,7 +235,7 @@ Dezelfde opdrachten gebruiken als hierboven. We zien wat elk fysiek knoop punt h
 
 De architectuur ziet er als volgt uit:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/5_full_list_of_pods.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/5_full_list_of_pods.png" alt-text="Alle peulen in de naam ruimte op verschillende knoop punten":::
 
 Dit betekent dat de knoop punten van de coördinator (pod 1) van de grootschalige-Server groep Azure-Arc ingeschakelde post gres dezelfde fysieke resources delen als het derde worker-knoop punt (pod 4) van de Server groep. Dit is acceptabel omdat het coördinator knooppunt doorgaans weinig resources gebruikt in vergelijking met wat een worker-knoop punt kan gebruiken. Hier kunt u afleiden dat u zorgvuldig moet worden gekozen:
 - de grootte van het Kubernetes-cluster en de kenmerken van elk van de fysieke knoop punten (geheugen, vCore)
@@ -259,16 +259,16 @@ We gaan een vijfde knoop punt toevoegen aan het AKS-cluster:
 :::row-end:::
 :::row:::
     :::column:::
-        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/6_layout_before.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/6_layout_before.png" alt-text="Azure Portal indeling vóór":::
     :::column-end:::
     :::column:::
-        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/7_layout_after.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/7_layout_after.png" alt-text="Azure Portal indeling na":::
     :::column-end:::
 :::row-end:::
 
 De architectuur ziet er als volgt uit:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/8_logical_layout_after.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/8_logical_layout_after.png" alt-text="Logische indeling op Kubernetes-cluster na update":::
 
 Laten we eens kijken naar welk doel van de Arc data controller-naam ruimte wordt gehost op het nieuwe fysieke AKS-knoop punt door de opdracht uit te voeren:
 
@@ -278,7 +278,7 @@ kubectl describe node aks-agentpool-42715708-vmss000004
 
 En laten we de weer gave van de architectuur van ons systeem bijwerken:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/9_updated_list_of_pods.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/9_updated_list_of_pods.png" alt-text="Alle peulen in het logische diagram van het cluster":::
 
 We kunnen zien dat het nieuwe fysieke knoop punt van het Kubernetes-cluster alleen de metrische pod-gegevens host die nodig zijn voor Azure Arc Data Services. Houd er rekening mee dat in dit voor beeld alleen aandacht wordt besteed aan de naam ruimte van de Arc-gegevens controller, maar niet voor het andere peul.
 
@@ -318,42 +318,42 @@ kubectl get pods -n arc3
 
 NAME                 READY   STATUS    RESTARTS   AGE
 …
-postgres01-0         3/3     Running   0          13h
-postgres01-1         3/3     Running   0          13h
-postgres01-2         3/3     Running   0          13h
-postgres01-3         3/3     Running   0          179m
-postgres01-4         3/3     Running   0          3m13s
+postgres01c-0         3/3     Running   0          13h
+postgres01w-0         3/3     Running   0          13h
+postgres01w-1         3/3     Running   0          13h
+postgres01w-2         3/3     Running   0          179m
+postgres01w-3         3/3     Running   0          3m13s
 ```
 
 De vorm van de Server groep is nu:
 
 |Functie Server groep|Pod Server groep
 |----|-----
-|Action|postgres01-0
-|Werk|postgres01-1
-|Werk|postgres01-2
-|Werk|postgres01-3
-|Werk|postgres01-4
+|Action|postgres01c-0
+|Werk|postgres01w-0
+|Werk|postgres01w-1
+|Werk|postgres01w-2
+|Werk|postgres01w-3
 
-We beschrijven de postgres01-4 pod om te identificeren in welk fysiek knoop punt deze wordt gehost:
+We beschrijven de postgres01w-3-pod om te identificeren in welk fysiek knoop punt deze wordt gehost:
 
 ```console
-kubectl describe pod postgres01-4 -n arc3
+kubectl describe pod postgres01w-3 -n arc3
 ```
 
 En kijk op welke peul het draait:
 
 |Functie Server groep|Pod Server groep| Pod
 |----|-----|------
-|Action|postgres01-0|AKS-agent pool-42715708-vmss000000
-|Werk|postgres01-1|AKS-agent pool-42715708-vmss000002
-|Werk|postgres01-2|AKS-agent pool-42715708-vmss000003
-|Werk|postgres01-3|AKS-agent pool-42715708-vmss000000
-|Werk|postgres01-4|AKS-agent pool-42715708-vmss000004
+|Action|postgres01c-0|AKS-agent pool-42715708-vmss000000
+|Werk|postgres01w-0|AKS-agent pool-42715708-vmss000002
+|Werk|postgres01w-1|AKS-agent pool-42715708-vmss000003
+|Werk|postgres01w-2|AKS-agent pool-42715708-vmss000000
+|Werk|postgres01w-3|AKS-agent pool-42715708-vmss000004
 
 En de architectuur ziet er als volgt uit:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/10_kubernetes_schedules_newest_pod.png" alt-text="AKS cluster met 4 knoop punten in Azure Portal":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/10_kubernetes_schedules_newest_pod.png" alt-text="Kubernetes plant de nieuwste pod in het knoop punt met het laagste gebruik":::
 
 Kubernetes heeft de nieuwe PostgreSQL-pod gepland in het minst geladen fysieke knoop punt van het Kubernetes-cluster.
 

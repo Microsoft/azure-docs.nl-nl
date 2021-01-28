@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 17c0e63b02d61b3aecf70624bc97a468d18f66fe
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 10f21067f48155a394ac20337d77e3e82aae64d8
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607504"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985934"
 ---
 # <a name="what-is-azure-arc-enabled-postgresql-hyperscale"></a>Wat is Azure Arc enabled PostgreSQL grootschalige?
 
@@ -26,7 +26,7 @@ Azure Arc enabled PostgreSQL grootschalige is een van de database services die b
 - Niet-verbonden scenario's
 
 Meer informatie vindt u op:
-- [Wat zijn Azure Arc-gegevensservices](overview.md)
+- [Wat zijn gegevens services van Azure Arc ingeschakeld](overview.md)
 - [Connectiviteitsmodi en -vereisten](connectivity.md)
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
@@ -48,13 +48,13 @@ Dit is de grootschalige vorm factor van de post gres-data base-engine die beschi
 Dit is de grootschalige vorm factor van de post gres-data base-engine die beschikbaar is voor Azure Arc ingeschakelde Data Services. Het wordt ook aangestuurd door de Citus-extensie waarmee de grootschalige-ervaring wordt ingeschakeld. In deze vorm factor bieden onze klanten de infra structuur die als host fungeert voor de systemen en deze kan worden gebruikt.
 
 ## <a name="next-steps"></a>Volgende stappen
-- **Maken**
-   > **Wilt u gewoon proberen? U hebt geen Kubernetes-cluster beschikbaar? We bieden u een sandbox:**  
-   > Ga snel aan de slag met [Azure Arc Jumpstart](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) op Azure Kubernetes Service (AKS), AWS Elastic Kubernetes Service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM.
+- **Probeer het uit.** Ga snel aan de slag met [Azure Arc](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) direct op Azure Kubernetes service (AKS), AWS elastische Kubernetes service (EKS), Google Cloud Kubernetes Engine (GKE) of in een Azure-VM. 
 
-   - **Creëren**
-      - [Installeer de client-hulpprogramma's](install-client-tools.md)
-      - [Maak de Azure Arc gegevenscontroller](create-data-controller.md) (hiervoor moeten eerst de client-hulpprogramma's worden geïnstalleerd)
-      - [Maak een Azure database for PostgreSQL grootschalige-Server groep op Azure Arc](create-postgresql-hyperscale-server-group.md) (hiervoor moet u eerst een Azure-Arc-gegevens controller maken.)
-- [**Meer informatie over Azure Arc enabled Data Services**](https://azure.microsoft.com/services/azure-arc/hybrid-data-services)
-- [**Meer informatie over Azure Arc**](https://aka.ms/azurearc)
+- **Maak uw eigen.** Volg deze stappen voor het maken van uw eigen Kubernetes-cluster: 
+   1. [Installeer de client-hulpprogramma's](install-client-tools.md)
+   2. [De Azure Arc-gegevens controller maken](create-data-controller.md)
+   3. [Een Azure Database for PostgreSQL grootschalige-Server groep maken op Azure Arc](create-postgresql-hyperscale-server-group.md) 
+
+- **Learn**
+   - [Meer informatie over Azure Arc enabled Data Services](https://azure.microsoft.com/services/azure-arc/hybrid-data-services)
+   - [Meer informatie over Azure Arc](https://aka.ms/azurearc)

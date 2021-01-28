@@ -3,12 +3,12 @@ title: Problemen met de Azure Backup-Agent oplossen
 description: In dit artikel vindt u informatie over het oplossen van problemen met de installatie en registratie van de Azure Backup-Agent.
 ms.topic: troubleshooting
 ms.date: 07/15/2019
-ms.openlocfilehash: 4ae4142652d9d38d5bf384e5a10d6eeb7e3cc608
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c08a146d91a128dc48fa4c379055b8c0efc1df0c
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993836"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986646"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Problemen met de Microsoft Azure Recovery Services-agent (MARS) oplossen
 
@@ -42,7 +42,7 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 | Oorzaak | Aanbevolen acties |
 | ---     | ---    |
 | **De kluis referenties zijn niet geldig** <br/> <br/> Kluis referentie bestanden zijn mogelijk beschadigd, zijn mogelijk verlopen of hebben een andere bestands extensie dan *. vaultCredentials*. (Het is bijvoorbeeld mogelijk dat ze meer dan 48 uur vóór de registratie tijd hebben gedownload.)| [Down load nieuwe referenties](backup-azure-file-folder-backup-faq.md#where-can-i-download-the-vault-credentials-file) van de Recovery Services kluis op de Azure Portal. Voer vervolgens de volgende stappen uit: <ul><li> Als u MARS al hebt geïnstalleerd en geregistreerd, opent u de MMC-console Microsoft Azure Backup Agent. Selecteer vervolgens **server registreren** in het deel venster **acties** om de registratie met de nieuwe referenties te volt ooien. <br/> <li> Als de nieuwe installatie mislukt, probeert u opnieuw te installeren met de nieuwe referenties.</ul> **Opmerking**: als er meerdere kluis referentie bestanden zijn gedownload, is alleen het meest recente bestand geldig voor de volgende 48 uur. U wordt aangeraden een nieuw kluis referentie bestand te downloaden.
-| **De registratie van Proxy Server/firewall is geblokkeerd** <br/>of <br/>**Geen Internet verbinding** <br/><br/> Als uw computer of proxy server beperkte internet connectiviteit heeft en u geen toegang hebt tot de benodigde Url's, mislukt de registratie.| Voer de volgende stappen uit:<br/> <ul><li> Werk samen met uw IT-team om te controleren of het systeem verbinding heeft met internet.<li> Als u geen proxy server hebt, moet u ervoor zorgen dat de proxy optie niet is geselecteerd bij het registreren van de agent. [Controleer de proxy-instellingen](#verifying-proxy-settings-for-windows).<li> Als u een firewall/proxy server hebt, moet u samen werken met uw netwerk team om ervoor te zorgen dat deze Url's en IP-adressen toegang hebben:<br/> <br> **URL's**<br> `www.msftncsi.com` <br> .Microsoft.com <br> .WindowsAzure.com <br> .microsoftonline.com <br> .windows.net <br>**IP-adressen**<br>  20.190.128.0/18 <br>  40.126.0.0/18 <br/></ul></ul>Probeer de registratie opnieuw uit te voeren nadat u de voor gaande stappen voor probleem oplossing hebt door lopen.<br></br> Als uw verbinding via Azure ExpressRoute is, controleert u of de instellingen zijn geconfigureerd zoals beschreven in [ondersteuning voor Azure ExpressRoute](backup-support-matrix-mars-agent.md#azure-expressroute-support).
+| **De registratie van Proxy Server/firewall is geblokkeerd** <br/>of <br/>**Geen Internet verbinding** <br/><br/> Als uw computer of proxy server beperkte internet connectiviteit heeft en u geen toegang hebt tot de benodigde Url's, mislukt de registratie.| Voer de volgende stappen uit:<br/> <ul><li> Werk samen met uw IT-team om te controleren of het systeem verbinding heeft met internet.<li> Als u geen proxy server hebt, moet u ervoor zorgen dat de proxy optie niet is geselecteerd bij het registreren van de agent. [Controleer de proxy-instellingen](#verifying-proxy-settings-for-windows).<li> Als u een firewall/proxy server hebt, moet u samen werken met uw netwerk team om ervoor te zorgen dat deze Url's en IP-adressen toegang hebben:<br/> <br> **URL's**<br> `www.msftncsi.com` <br> .Microsoft.com <br> .WindowsAzure.com <br> .microsoftonline.com <br> .windows.net <br>`www.msftconnecttest.com`<br><br>**IP-adressen**<br>  20.190.128.0/18 <br>  40.126.0.0/18<br> <br/></ul></ul>Probeer de registratie opnieuw uit te voeren nadat u de voor gaande stappen voor probleem oplossing hebt door lopen.<br></br> Als uw verbinding via Azure ExpressRoute is, controleert u of de instellingen zijn geconfigureerd zoals beschreven in [ondersteuning voor Azure ExpressRoute](backup-support-matrix-mars-agent.md#azure-expressroute-support).
 | **Registratie wordt geblokkeerd door antivirus software** | Als er antivirus software op de server is geïnstalleerd, voegt u de benodigde uitsluitings regels toe aan de antivirus scan voor deze bestanden en mappen: <br/><ul> <li> CBengine.exe <li> CSC.exe<li> De map Scratch. De standaard locatie is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch. <li> De bin-map in C:\Program Files\Microsoft Azure Recovery Services Agent\Bin.
 
 ### <a name="additional-recommendations"></a>Extra aanbevelingen
@@ -173,7 +173,7 @@ De huidige bewerking is mislukt vanwege een interne service fout "resource niet 
 
 ## <a name="job-could-not-be-started-as-another-job-was-in-progress"></a>De taak kan niet worden gestart omdat een andere taak werd uitgevoerd
 
-Als u een waarschuwings bericht ziet in de taak geschiedenis van de **Mars-console**, met de tekst ' de taak  >  **Job history** kan niet worden gestart omdat er een andere taak werd uitgevoerd ', kan dit worden veroorzaakt door een dubbel exemplaar van de taak die wordt geactiveerd door de taak planner.
+Als u een waarschuwings bericht ziet in de taak geschiedenis van de **Mars-console**, met de tekst ' de taak  >  kan niet worden gestart omdat er een andere taak werd uitgevoerd ', kan dit worden veroorzaakt door een dubbel exemplaar van de taak die wordt geactiveerd door de taak planner.
 
 ![De taak kan niet worden gestart omdat een andere taak werd uitgevoerd](./media/backup-azure-mars-troubleshoot/job-could-not-be-started.png)
 
@@ -208,7 +208,7 @@ Het herstel volume kan ook na enkele minuten niet worden gekoppeld Azure Backup.
 
     ![Scherm opname van Azure Backup Apparaatbeheer, waarbij opslag controllers zijn gemarkeerd](./media/backup-azure-restore-windows-server/UnknowniSCSIDevice.png)
 
-7. Ga naar **Task Manager** de  >  micro soft iSCSI-initiator service **(lokaal)** voor taak beheer  >  **Microsoft iSCSI Initiator Service**:
+7. Ga naar de  >  micro soft iSCSI-initiator service **(lokaal)** voor taak beheer  >  :
 
     ![Scherm opname van Azure Backup taak beheer, met Services (lokaal) gemarkeerd](./media/backup-azure-restore-windows-server/MicrosoftInitiatorServiceRunning.png)
 

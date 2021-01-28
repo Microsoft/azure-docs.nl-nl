@@ -3,12 +3,12 @@ title: Ondersteunings matrix voor de MARS-agent
 description: Dit artikel bevat een overzicht van Azure Backup ondersteuning bij het maken van een back-up van computers waarop de Microsoft Azure Recovery Services-agent (MARS) wordt uitgevoerd.
 ms.date: 08/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 26a47c2648d1307d2e7da2b25455f3f036cbf32d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2170440b7b47861b75801b8dbd334686b4cabc8b
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997236"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985611"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Ondersteunings matrix voor back-up met de Microsoft Azure Recovery Services-agent (MARS)
 
@@ -59,6 +59,7 @@ De MARS-agent moet toegang hebben tot deze Url's:
 - *.WindowsAzure.com
 - *. MicrosoftOnline.com
 - *. Windows.net
+- `www.msftconnecttest.com`
 
 En naar deze IP-adressen:
 
@@ -82,11 +83,16 @@ U kunt een back-up maken van uw gegevens via Azure ExpressRoute met open bare pe
 
 Met open bare peering: Zorg ervoor dat u toegang hebt tot de volgende domeinen/adressen:
 
-- `http://www.msftncsi.com/ncsi.txt`
-- `microsoft.com`
-- `.WindowsAzure.com`
-- `.microsoftonline.com`
-- `.windows.net`
+* URL's
+  * `www.msftncsi.com`
+  * `*.Microsoft.com`
+  * `*.WindowsAzure.com`
+  * `*.microsoftonline.com`
+  * `*.windows.net`
+  * `www.msftconnecttest.com`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18
 
 Selecteer bij micro soft-peering de volgende services/regio's en relevante Community-waarden:
 
@@ -192,13 +198,13 @@ Decodeer<sup>*</sup>| Ondersteund.
 Gecomprimeerd | Ondersteund.
 Sparse | Ondersteund.
 Gecomprimeerd en verspreid |Ondersteund.
-Vaste koppelingen| Niet ondersteund. Genegeerd.
-Reparsepunt| Niet ondersteund. Genegeerd.
-Versleuteld en verspreid |Niet ondersteund. Genegeerd.
-Gecomprimeerde stroom| Niet ondersteund. Genegeerd.
-Sparse stream| Niet ondersteund. Genegeerd.
-OneDrive (gesynchroniseerde bestanden zijn sparse-streams)| Niet ondersteund.
-Mappen met DSF-replicatie ingeschakeld | Niet ondersteund.
+Vaste koppelingen| Wordt niet ondersteund. Genegeerd.
+Reparsepunt| Wordt niet ondersteund. Genegeerd.
+Versleuteld en verspreid |Wordt niet ondersteund. Genegeerd.
+Gecomprimeerde stroom| Wordt niet ondersteund. Genegeerd.
+Sparse stream| Wordt niet ondersteund. Genegeerd.
+OneDrive (gesynchroniseerde bestanden zijn sparse-streams)| Wordt niet ondersteund.
+Mappen met DSF-replicatie ingeschakeld | Wordt niet ondersteund.
 
 \* Zorg ervoor dat de MARS-agent toegang heeft tot de vereiste certificaten om toegang te krijgen tot de versleutelde bestanden. Niet-toegankelijke bestanden worden overgeslagen.
 

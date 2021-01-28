@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: b8c9af31243d8bb58a58fbc687cad68130f64f7e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 59768e4fc04613a5ecac6a76059382499b7aaa86
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880739"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986459"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
 
@@ -84,7 +84,7 @@ Voor scenario's voor het publiceren van Transact kunt u een software licentie gr
 
 Naast het gebruik van aanbiedings typen en facturerings modellen om een aanbieding te geld verdienen, kunt u een persoonlijke aanbieding uitvoeren, compleet met onderhandelde, gefactureerde prijzen of aangepaste configuraties. Persoonlijke aanbiedingen worden door alle drie de opties voor het publiceren van transacts ondersteund.
 
-Met deze optie kunnen hogere of lagere prijzen worden gemaakt dan voor de openbaar beschik bare aanbieding. U kunt privé aanbiedingen gebruiken om korting te bieden of een Premium toe te voegen aan een aanbieding. U kunt persoonlijke aanbiedingen beschikbaar maken voor een of meer klanten door wit-hun Azure-abonnement weer te geven op het niveau van de aanbieding.
+Met deze optie kunnen hogere of lagere prijzen worden gemaakt dan voor de openbaar beschik bare aanbieding. U kunt privé aanbiedingen gebruiken om korting te bieden of een Premium toe te voegen aan een aanbieding. U kunt persoonlijke aanbiedingen beschikbaar maken voor een of meer klanten door hun Azure-abonnement te allowlisting op het niveau van de aanbieding.
 
 ### <a name="commercial-marketplace-service-fees"></a>Kosten voor commerciële Marketplace-service
 

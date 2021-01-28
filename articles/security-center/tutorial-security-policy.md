@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 7ea871428fffe685cc9d43dd698bfefb8d8a511a
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 19128f0372f9a5bda0d16155167a507eccaf436a
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756683"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986587"
 ---
 # <a name="manage-security-policies"></a>Beveiligingsbeleid beheren
 
@@ -54,7 +54,7 @@ Ga als volgt te werk als u uw beveiligingsbeleidsregels wilt weergeven in Securi
 
 1. De pagina beveiligings beleid voor het abonnement of de beheer groep wordt weer gegeven. Het beschik bare en toegewezen beleid wordt weer gegeven.
 
-   ![pagina beleid](./media/tutorial-security-policy/security-policy-page.png)
+    :::image type="content" source="./media/tutorial-security-policy/security-policy-page.png" alt-text="Pagina beveiligings beleid van Security Center" lightbox="./media/tutorial-security-policy/security-policy-page.png":::
 
     > [!NOTE]
     > Als er naast het standaard beleid een label "MG inherited" is, betekent dit dat het beleid is toegewezen aan een beheer groep en dat is overgenomen door het abonnement dat u bekijkt.
@@ -102,7 +102,7 @@ Zie [beveiligings aanbevelingen beheren](security-center-recommendations.md)voor
 
 1. Selecteer in Security Center in het gedeelte **beleids & naleving** de optie **beveiligings beleid**.
 
-   ![beleids beheer](./media/tutorial-security-policy/policy-management.png)
+    :::image type="content" source="./media/tutorial-security-policy/policy-management.png" alt-text="Het proces voor beleids beheer in Azure Security Center starten":::
 
 2. Selecteer het abonnement of de beheer groep waarvoor u de aanbeveling wilt uitschakelen.
 
@@ -111,7 +111,7 @@ Zie [beveiligings aanbevelingen beheren](security-center-recommendations.md)voor
 
 1. Selecteer **effectief beleid weer geven**.
 
-   ![beleid weer geven](./media/tutorial-security-policy/view-effective-policy.png)
+    :::image type="content" source="./media/tutorial-security-policy/view-effective-policy.png" alt-text="Het effectief beleid openen dat is toegewezen aan uw abonnement":::
 
 1. Selecteer het toegewezen beleid.
 
@@ -126,10 +126,8 @@ Zie [beveiligings aanbevelingen beheren](security-center-recommendations.md)voor
    > [!NOTE]
    > Het kan tot 12 uur duren voordat de wijzigingen van het beleid uitschakelen zijn doorgevoerd.
 
-
-
 ## <a name="next-steps"></a>Volgende stappen
-In dit artikel wordt het beveiligings beleid uitgelegd. Raadpleeg de volgende artikelen voor verwante informatie:
+Op deze pagina wordt het beveiligings beleid uitgelegd. Zie de volgende pagina's voor verwante informatie:
 
 - [Meer informatie over het instellen van beleid met behulp van Power shell](../governance/policy/assign-policy-powershell.md) - 
 - [Meer informatie over het bewerken van een beveiligings beleid in Azure Policy](../governance/policy/tutorials/create-and-manage.md) - 

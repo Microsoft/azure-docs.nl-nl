@@ -4,12 +4,12 @@ description: Dit artikel laat u zien hoe u de toegang tot Event Hubs-resources k
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 26c921213168e1028f311eabaa417efdb76f5c97
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: ff141fc1bb681e2356a4471dfdc808d622fd76b5
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510087"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986492"
 ---
 # <a name="authenticate-access-to-event-hubs-resources-using-shared-access-signatures-sas"></a>Toegang tot Event Hubs resources verifiëren met behulp van Shared Access signatures (SAS)
 Shared Access Signature (SAS) biedt u gedetailleerde controle over het type toegang dat u verleent aan de clients die de Shared Access Signature hebben. Hier volgen enkele van de besturings elementen die u in een SAS kunt instellen: 
@@ -203,7 +203,7 @@ U moet bijvoorbeeld een regel voor het verzenden van een autorisatie definiëren
 
 
 > [!NOTE]
-> Hoewel het niet wordt aangeraden, is het mogelijk om apparaten met tokens te voorzien die toegang verlenen tot een Event Hub of een naam ruimte. Elk apparaat dat dit token bevat, kan berichten rechtstreeks naar die Event Hub verzenden. Bovendien kan het apparaat niet worden geblack van verzen ding naar die Event Hub.
+> Hoewel het niet wordt aangeraden, is het mogelijk om apparaten met tokens te voorzien die toegang verlenen tot een Event Hub of een naam ruimte. Elk apparaat dat dit token bevat, kan berichten rechtstreeks naar die Event Hub verzenden. Bovendien kan het apparaat niet worden blocklisted om naar die Event Hub te verzenden.
 > 
 > Het wordt altijd aanbevolen specifieke en nauw keurige bereiken te geven.
 

@@ -3,12 +3,12 @@ title: Aan de slag met Live Video Analytics in IoT Edge - Azure
 description: Deze quickstart laat zien hoe u aan de slag kunt met Live Video Analytics in IoT Edge. Leer hoe u beweging kunt detecteren in een live-videostream.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 2ae8292375c0b85cc4c771c1fe7d853c5fcd3afd
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: fde82dde7df3fa9756c145940178f35ed255ce37
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955763"
+ms.locfileid: "98986544"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Quickstart: Over Live Video Analytics in IoT Edge
 
@@ -31,7 +31,7 @@ U kunt de volgende video met gedetailleerde stappen bekijken om aan de slag te g
   > U hebt een Azure-abonnement met machtigingen nodig voor het maken van service-principals (de **rol van eigenaar** biedt dit). Als u niet over de juiste machtigingen beschikt, neemt u contact op met uw account beheerder om u de juiste machtigingen te verlenen.  
 
 * [Visual Studio Code](https://code.visualstudio.com/) op uw ontwikkelcomputer. Zorg ervoor dat u beschikt over de [Azure IoT Tools-extensie](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
-* Zorg ervoor dat het netwerk waarmee uw ontwikkelcomputer is verbonden AMQP (Advanced Message Queueing Protocol) toestaat via poort 5671. Dankzij deze instelling kan Azure IoT Tools communiceren met Azure IoT Hub.
+* Zorg ervoor dat het netwerk waarmee uw ontwikkel machine is verbonden, AMQP (Advanced Message queueing Protocol) via poort 5671 voor uitgaand verkeer toestaat. Dankzij deze instelling kan Azure IoT Tools communiceren met Azure IoT Hub.
 
 > [!TIP]
 > U wordt mogelijk gevraagd om Docker te installeren wanneer u de Azure IoT Tools-extensie installeert. U mag dit negeren.
@@ -67,7 +67,7 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
     1. **Netwerk interface** : Hierdoor kan een virtuele machine van Azure communiceren met internet, Azure en andere resources.
     1. **Bastion-verbinding** : Hiermee kunt u verbinding maken met uw virtuele machine met behulp van uw browser en de Azure Portal.
     1. **Openbaar IP-adres** : Hiermee kunnen Azure-resources communiceren met internet en open bare Azure-Services
-    1. **Virtueel netwerk** : Hiermee kunnen veel soorten Azure-resources, zoals uw virtuele machine, veilig communiceren met elkaar, het internet en on-premises netwerken. Meer informatie over [virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)
+    1. **Virtueel netwerk** : Hiermee kunnen veel soorten Azure-resources, zoals uw virtuele machine, veilig communiceren met elkaar, het internet en on-premises netwerken. Meer informatie over [virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
     1. **IOT hub** : dit fungeert als een centrale Message hub voor bidirectionele communicatie tussen uw IOT-toepassing, IOT Edge modules en de apparaten die worden beheerd.
     1. **Media service-account** : dit helpt bij het beheren en streamen van media-inhoud in Azure.
     1. **Opslag account** : u moet één primair opslag account hebben en u kunt elk gewenst aantal secundaire opslag accounts aan uw Media Services-account koppelen. Raadpleeg [Azure Storage-accounts met Azure Media Services-accounts](https://docs.microsoft.com/azure/media-services/latest/storage-account-concept) voor meer informatie.
@@ -165,7 +165,7 @@ Om alle [grafiektopologieën](media-graph-concept.md#media-graph-topologies-and-
 
 ### <a name="invoke-graphtopologyset"></a>GraphTopologySet aanroepen
 
-Met behulp van de stappen voor het aanroepen van `GraphTopologyList` kunt u `GraphTopologySet` aanroepen om een [grafiektopologie](media-graph-concept.md#media-graph-topologies-and-instances) in te stellen. Gebruik de volgende JSON als de nettolading.
+Net zoals we eerder hebben gedaan, kunt u nu aanroepen `GraphTopologySet` om een [grafiek topologie](media-graph-concept.md#media-graph-topologies-and-instances)in te stellen. Gebruik de volgende JSON als de nettolading.
 
 ```
 {

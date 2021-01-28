@@ -3,12 +3,12 @@ title: Wat Azure Backup Server v3 RTM back-ups kan maken?
 description: Dit artikel bevat een beveiligings matrix met alle werk belastingen, gegevens typen en installaties die Azure Backup voor v3 RTM beveiligt.
 ms.date: 11/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: c1a1a876a9249a32c87c50d7f320a62b9c478caf
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 1ec8240844061b9b250a3cbf92ffcc5f2b3f474b
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752376"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986884"
 ---
 # <a name="azure-backup-server-v3-rtm-protection-matrix"></a>Azure Backup Server v3 RTM-beveiligings matrix
 
@@ -86,11 +86,16 @@ U kunt een back-up maken van uw gegevens via Azure ExpressRoute met open bare pe
 
 Met open bare peering: Zorg ervoor dat u toegang hebt tot de volgende domeinen/adressen:
 
-* `http://www.msftncsi.com/ncsi.txt`
-* `microsoft.com`
-* `.WindowsAzure.com`
-* `.microsoftonline.com`
-* `.windows.net`
+* URL's
+  * `www.msftncsi.com`
+  * `*.Microsoft.com`
+  * `*.WindowsAzure.com`
+  * `*.microsoftonline.com`
+  * `*.windows.net`
+  * `www.msftconnecttest.com`
+* IP-adressen
+  * 20.190.128.0/18
+  * 40.126.0.0/18
 
 Selecteer bij micro soft-peering de volgende services/regio's en relevante Community-waarden:
 

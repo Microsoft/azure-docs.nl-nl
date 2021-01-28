@@ -1,18 +1,18 @@
 ---
 title: Koppel uw partner-ID om uw impact op gedelegeerde resources bij te houden
 description: Meer informatie over hoe u uw partner-ID kunt koppelen aan de klant die u beheert via Azure Lighthouse.
-ms.date: 10/30/2020
+ms.date: 01/28/2021
 ms.topic: how-to
-ms.openlocfilehash: fcbcc70e380116b8e9f9b1c1e365dee1adb87a99
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 46338b925b1ad44019c9cc95e4b7f8c0963c07c4
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93080274"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985968"
 ---
 # <a name="link-your-partner-id-to-track-your-impact-on-delegated-resources"></a>Koppel uw partner-ID om uw impact op gedelegeerde resources bij te houden 
 
-Als u lid bent van de [Microsoft Partner Network](https://partner.microsoft.com/), kunt u uw partner-id koppelen aan de referenties die worden gebruikt om overgedragen klanten resources te beheren. Met de partner beheerder koppeling (PAL) kan micro soft partners identificeren en herkennen die het succes van Azure-klanten testen. Met deze koppeling kunnen partners van de [CSP (Cloud Solution Provider)](/partner-center/csp-overview) voor klanten die [de micro soft Customer Agreement (MCA) hebben ondertekend, een door de klant overeengekomen](/partner-center/confirm-customer-agreement) [partner](/partner-center/partner-earned-credit) [ontvangen.](/partner-center/azure-plan-get-started)
+Als u lid bent van de [Microsoft Partner Network](https://partner.microsoft.com/), kunt u uw partner-id koppelen aan de referenties die worden gebruikt voor het beheren van gedelegeerde klant resources, zodat micro soft partners kan identificeren en herkennen die een Azure-klant succes hebben. Met deze koppeling kunnen partners van de [CSP (Cloud Solution Provider)](/partner-center/csp-overview) voor klanten die [de micro soft Customer Agreement (MCA) hebben ondertekend, een door de klant overeengekomen](/partner-center/confirm-customer-agreement) [partner](/partner-center/partner-earned-credit) [ontvangen.](/partner-center/azure-plan-get-started)
 
 Als u [klanten opdoet met beheerde service aanbiedingen in azure Marketplace](publish-managed-services-offers.md), wordt er automatisch een koppeling gemaakt met de MPN-id die is gekoppeld aan het partner centrum-account dat wordt gebruikt voor het publiceren van de aanbiedingen. Er is geen verdere actie nodig om de impact van deze klanten bij te houden.
 
@@ -30,7 +30,7 @@ Ter vereenvoudiging raden we u aan om een Service-Principal-account in uw Tenant
 
 Als u deze stappen volgt, wordt elke Tenant van de klant die u beheert, gekoppeld aan uw partner-ID. Het Automation-account van de provider hoeft geen acties in de Tenant van de klant te verifiëren of uit te voeren.
 
-:::image type="content" source="../media/lighthouse-pal.jpg" alt-text="Diagram waarin het PAL-proces wordt weer gegeven met Azure Lighthouse.":::
+:::image type="content" source="../media/lighthouse-pal.jpg" alt-text="Diagram waarin het koppelings proces van de partner-ID wordt weer gegeven met Azure Lighthouse.":::
 
 ## <a name="add-your-partner-id-to-previously-onboarded-customers"></a>Uw partner-ID toevoegen aan eerder onboarded klanten
 

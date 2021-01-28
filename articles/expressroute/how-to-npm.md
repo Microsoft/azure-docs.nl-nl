@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 01/25/2019
 ms.author: duau
-ms.openlocfilehash: c8127a60a4685a615bc07e21a1efb4dd216c5b8c
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 837d1f78a9fde72137383e6c22adb8870997dc9b
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92201049"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986036"
 ---
 # <a name="configure-network-performance-monitor-for-expressroute"></a>Netwerkprestatiemeter configureren voor ExpressRoute
 
@@ -59,7 +59,7 @@ Maak een werk ruimte in het abonnement met de VNets-koppeling naar de ExpressRou
 
    ![portal](./media/how-to-npm/3.png)<br><br>
 2. Klik onder aan de pagina hoofd **Netwerkprestatiemeter** op **maken** om te openen **Netwerkprestatiemeter-pagina nieuwe oplossing maken** . Klik op **log Analytics werk ruimte: Selecteer een werk ruimte** om de pagina werk ruimten te openen. Klik op **+ nieuwe werk ruimte maken** om de pagina werk ruimte te openen.
-3. Selecteer op de pagina **log Analytics werk ruimte** de optie **nieuwe maken**en configureer de volgende instellingen:
+3. Selecteer op de pagina **log Analytics werk ruimte** de optie **nieuwe maken** en configureer de volgende instellingen:
 
    * Log Analytics werkruimte: Typ een naam voor uw werk ruimte.
    * Abonnement: als u meerdere abonnementen hebt, kiest u het account dat u wilt koppelen aan de nieuwe werk ruimte.
@@ -99,12 +99,12 @@ U wordt aangeraden ten minste twee agents te installeren aan elke kant van de Ex
 2. Klik op de pagina **Welkom** op **Volgende**.
 3. Lees de licentie op de pagina **licentie voorwaarden** en klik vervolgens op **Ik ga akkoord**.
 4. Op de pagina **doelmap** wijzigt of behoudt u de standaardmap voor installatie en klikt u vervolgens op **volgende**.
-5. Op de pagina **installatie opties voor agent** kunt u ervoor kiezen om de agent te verbinden met Azure monitor Logboeken of Operations Manager. U kunt ook de keuzes leeg laten als u de agent later wilt configureren. Klik op **volgende**nadat u de gewenste selectie (s) hebt gemaakt.
+5. Op de pagina **installatie opties voor agent** kunt u ervoor kiezen om de agent te verbinden met Azure monitor Logboeken of Operations Manager. U kunt ook de keuzes leeg laten als u de agent later wilt configureren. Klik op **volgende** nadat u de gewenste selectie (s) hebt gemaakt.
 
-   * Als u verbinding met **Azure log Analytics**wilt maken, plakt u de **werk ruimte-id** en de **werkruimte sleutel** (primaire sleutel) die u in het klad blok hebt gekopieerd in de vorige sectie. Klik op **Volgende**.
+   * Als u verbinding met **Azure log Analytics** wilt maken, plakt u de **werk ruimte-id** en de **werkruimte sleutel** (primaire sleutel) die u in het klad blok hebt gekopieerd in de vorige sectie. Klik op **Volgende**.
 
      ![ID en sleutel](./media/how-to-npm/8.png)
-   * Als u ervoor hebt gekozen om verbinding te maken met **Operations Manager**, typt u op de pagina **configuratie van beheer groep** de naam van de **beheer groep**, de **beheer server**en de poort van de **beheer server**. Klik op **Volgende**.
+   * Als u ervoor hebt gekozen om verbinding te maken met **Operations Manager**, typt u op de pagina **configuratie van beheer groep** de naam van de **beheer groep**, de **beheer server** en de poort van de **beheer server**. Klik op **Volgende**.
 
      ![Operations Manager](./media/how-to-npm/9.png)
    * Kies op de pagina **actie-account van agent** ofwel het **lokale systeem** account, ofwel het  **domein of het lokale computer account**. Klik op **Volgende**.
@@ -133,7 +133,7 @@ Proxy-instellingen voor de micro soft monitoring agent configureren met behulp v
 
 U kunt eenvoudig controleren of uw agents communiceren.
 
-1. Open het **configuratie scherm**op een server met de bewakings agent.
+1. Open het **configuratie scherm** op een server met de bewakings agent.
 2. Open **micro soft Monitoring Agent**.
 3. Klik op het tabblad **Azure log Analytics** .
 4. In de kolom **status** ziet u dat de agent is verbonden met het Azure monitor Logboeken.
@@ -169,7 +169,7 @@ Zie [netwerk beveiligings groepen](../virtual-network/tutorial-filter-network-tr
 
 ## <a name="step-4-discover-peering-connections"></a><a name="setupmonitor"></a>Stap 4: peering-verbindingen detecteren
 
-1. Ga naar de tegel Netwerkprestatiemeter overzicht door naar de pagina **alle resources** te gaan en klik vervolgens op de werk ruimte white list NPM.
+1. Ga naar de tegel Netwerkprestatiemeter overzicht door naar de pagina **alle resources** te gaan en klik vervolgens op de werk ruimte allowlisted NPM.
 
    ![NPM-werk ruimte](./media/how-to-npm/npm.png)
 2. Klik op de tegel overzicht van **Netwerkprestatiemeter** om het dash board te openen. Het dash board bevat een ExpressRoute-pagina, die laat zien dat ExpressRoute de status niet-geconfigureerd heeft. Klik op **functie-instellingen** om de pagina Netwerkprestatiemeter configuratie te openen.
@@ -184,7 +184,7 @@ Zie [netwerk beveiligings groepen](../virtual-network/tutorial-filter-network-tr
             
 ## <a name="step-5-configure-monitors"></a><a name="configmonitor"></a>Stap 5: monitors configureren
 
-In deze sectie configureert u de monitors. Volg de stappen voor het type peering dat u wilt bewaken: **persoonlijke peering**of **micro soft-peering**.
+In deze sectie configureert u de monitors. Volg de stappen voor het type peering dat u wilt bewaken: **persoonlijke peering** of **micro soft-peering**.
 
 ### <a name="private-peering"></a>Persoonlijke peering
 
@@ -250,7 +250,7 @@ Als u een lijst wilt weer geven met alle verbindingen met virtuele netwerken via
 
 ### <a name="nodes-view"></a><a name="nodes"></a>Knoop punten weer geven
 
-Klik op **knooppunt koppelingen weer geven**om een lijst weer te geven met alle koppelingen tussen de on-premises knoop punten en Azure Vm's/micro soft-service-eind punten voor de gekozen ExpressRoute peering-verbinding. U kunt de status van elke koppeling bekijken, evenals de trend van het verlies en de latentie die eraan is gekoppeld.
+Klik op **knooppunt koppelingen weer geven** om een lijst weer te geven met alle koppelingen tussen de on-premises knoop punten en Azure Vm's/micro soft-service-eind punten voor de gekozen ExpressRoute peering-verbinding. U kunt de status van elke koppeling bekijken, evenals de trend van het verlies en de latentie die eraan is gekoppeld.
 
 ![knoop punten weer geven](./media/how-to-npm/nodes.png)
 
@@ -258,7 +258,7 @@ Klik op **knooppunt koppelingen weer geven**om een lijst weer te geven met alle 
 
 Als u de circuit topologie wilt weer geven, klikt u op de tegel **topologie** . Hiermee gaat u naar de weer gave topologie van het geselecteerde circuit of peering. Het topologie diagram geeft de latentie voor elk segment in het netwerk. Elke Layer 3-hop wordt vertegenwoordigd door een knoop punt van het diagram. Als u op een hop klikt, wordt meer informatie over de hop.
 
-U kunt het zichtbaarheids niveau verhogen om on-premises hops op te nemen door de schuif regelaar onder **filters**te verplaatsen. Door de schuif regelaar naar links of rechts te verplaatsen, wordt het aantal hops in de topologie grafiek verg root of verkleind. De latentie voor elk segment is zichtbaar, zodat er een snellere isolatie van segmenten van hoge latentie mogelijk is in uw netwerk.
+U kunt het zichtbaarheids niveau verhogen om on-premises hops op te nemen door de schuif regelaar onder **filters** te verplaatsen. Door de schuif regelaar naar links of rechts te verplaatsen, wordt het aantal hops in de topologie grafiek verg root of verkleind. De latentie voor elk segment is zichtbaar, zodat er een snellere isolatie van segmenten van hoge latentie mogelijk is in uw netwerk.
 
 ![filters](./media/how-to-npm/topology.png)
 

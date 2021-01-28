@@ -7,12 +7,12 @@ ms.topic: article
 author: trkeya
 ms.author: trkeya
 ms.date: 11/09/2020
-ms.openlocfilehash: 6f74f3b1f5aad153903ba5d290a290973203a875
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 60eeceac916a7f8c64214b7a74a8cf60fd1ec8ac
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489383"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986121"
 ---
 # <a name="set-up-an-azure-marketplace-subscription-for-hosted-test-drives"></a>Een Azure Marketplace-abonnement instellen voor gehoste test stations
 
@@ -65,12 +65,12 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
     15. Een geheim genereren voor de Azure AD-app:
         1. Selecteer bij **toepassing beheren** de optie **certificaat en geheimen**.
         2. Onder client geheimen selecteert u **Nieuw client geheim**.
-        3. Voer een beschrijving in, zoals *test station* , en selecteer een geschikte duur. De test drive wordt gebreekt zodra deze sleutel is verlopen, op welk moment moet u een nieuwe sleutel genereren en AppSource geven.
+        3. Voer een beschrijving in, zoals *test station*, en selecteer een geschikte duur. De test drive wordt gebreekt zodra deze sleutel is verlopen, op welk moment moet u een nieuwe sleutel genereren en AppSource geven.
         4. Selecteer **toevoegen** om het Azure app-geheim te genereren. Kopieer deze waarde wanneer deze wordt verborgen zodra u deze Blade lave. U hebt deze waarde later nodig bij het configureren van uw test drive.
 
             :::image type="content" source="./media/test-drive/add-client-secret.png" alt-text="Een client geheim toevoegen.":::
 
-5. Soms duurt het langer dan verwacht om een gebruiker van Azure AD te synchroniseren met een CRM-exemplaar. Ter ondersteuning hiervan hebben we een proces voor het afdwingen van de synchronisatie gebruiker toegevoegd, maar moet de Azure AD-toepassing worden white list door het partner centrum. Zie [gebruikers synchroniseren met klant engagement instantie](https://github.com/microsoft/AppSource/blob/master/Microsoft%20Hosted%20Test%20Drive/CDS_Utility_to_ForceUserSync_in_CRM_Instance.md)om dit te doen.
+5. Soms duurt het langer dan verwacht om een gebruiker van Azure AD te synchroniseren met een CRM-exemplaar. Ter ondersteuning hiervan hebben we een proces voor het afdwingen van de synchronisatie gebruiker toegevoegd, maar moet de Azure AD-toepassing worden allowlisted door het partner centrum. Zie [gebruikers synchroniseren met klant engagement instantie](https://github.com/microsoft/AppSource/blob/master/Microsoft%20Hosted%20Test%20Drive/CDS_Utility_to_ForceUserSync_in_CRM_Instance.md)om dit te doen.
 6. Voeg de functie van de Service-Principal toe aan de toepassing zodat de Azure AD-app gebruikers uit uw Azure-Tenant kan verwijderen.
     1. Open een Power shell-opdracht prompt op beheer niveau.
     2. Install-Module MSOnline (Voer deze opdracht uit als MSOnline niet is geïnstalleerd).
@@ -83,7 +83,7 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
 
 7. Voeg de hierboven gemaakte Azure-app als een toepassings gebruiker toe aan uw test drive CRM-exemplaar.
     1. Voeg een nieuwe gebruiker toe in **Azure Active Directory**. Alleen **naam** -en **gebruikersnaam** waarden (die horen bij dezelfde Tenant) zijn vereist voor het maken van deze gebruiker. Wijzig de andere velden als standaard. Kopieer de waarde van de gebruikers naam.
-    2. Meld u aan bij **CRM-exemplaar** en selecteer **Setting**  >  **beveiligings**  >  **gebruikers** instellen.
+    2. Meld u aan bij **CRM-exemplaar** en selecteer   >  **beveiligings**  >  **gebruikers** instellen.
     3. Wijzig de weer gave in **toepassings gebruikers**.
 
         :::image type="content" source="./media/test-drive/application-users.png" alt-text="Account gegevens voor een gebruiker instellen.":::
@@ -135,7 +135,7 @@ In dit artikel wordt uitgelegd hoe u een Azure Marketplace-abonnement en **dynam
     14. Een geheim genereren voor de Azure AD-app:
         1. Selecteer bij **toepassing beheren** de optie **certificaat en geheimen**.
         2. Onder client geheimen selecteert u **Nieuw client geheim**.
-        3. Voer een beschrijving in, zoals *test station* , en selecteer een geschikte duur. De test drive wordt gebreekt zodra deze sleutel is verlopen, op welk moment moet u een nieuwe sleutel genereren en AppSource geven.
+        3. Voer een beschrijving in, zoals *test station*, en selecteer een geschikte duur. De test drive wordt gebreekt zodra deze sleutel is verlopen, op welk moment moet u een nieuwe sleutel genereren en AppSource geven.
         4. Selecteer **toevoegen** om het Azure app-geheim te genereren. Kopieer deze waarde wanneer deze wordt verborgen zodra u deze Blade lave. U hebt deze waarde later nodig bij het configureren van uw test drive.
 
             :::image type="content" source="./media/test-drive/add-client-secret.png" alt-text="Een client geheim toevoegen.":::

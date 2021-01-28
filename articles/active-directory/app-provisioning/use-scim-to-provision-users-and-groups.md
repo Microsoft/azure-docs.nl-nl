@@ -13,12 +13,12 @@ ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf1057276a543c18b746bb60b7e7a54bf28dec6f
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 44e14bed3158fac1f8bed15f913dc8b7eddbbb96
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98892559"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985951"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
@@ -1198,7 +1198,7 @@ De SCIM spec definieert geen SCIM-specifiek schema voor verificatie en autorisat
 |--|--|--|--|
 |Gebruikersnaam en -wachtwoord (niet aanbevolen of niet ondersteund door Azure AD)|Eenvoudig te implementeren|Onveilig: [Your Pa$$word doesn't matter](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/your-pa-word-doesn-t-matter/ba-p/731984)|Per geval ondersteund voor galerie-apps. Niet ondersteund voor niet-galerie-apps.|
 |Bearer-token met lange levensduur|Voor tokens met een lange levensduur hoeft geen gebruiker aanwezig te zijn. Ze kunnen eenvoudig worden gebruikt bij het instellen van de inrichting.|Tokens met een lange levensduur kunnen moeilijk worden gedeeld met een beheerder zonder gebruik te maken van onveilige methoden zoals e-mail. |Ondersteund voor galerie- en niet-galerie-apps. |
-|OAuth-autorisatiecode verlenen|Toegangstokens hebben een veel kortere levensduur dan wachtwoorden en beschikken over een mechanisme voor automatisch vernieuwen die de Bearer-tokens met langere levensduur niet hebben.  Er moet een echte gebruiker aanwezig zijn tijdens de eerste autorisatie, wat een bepaald niveau van verantwoordelijkheid toevoegt |Hiervoor moet een gebruiker aanwezig zijn. Als de gebruiker de organisatie verlaat, wordt het token ongeldig en moet de autorisatie opnieuw worden uitgevoerd.|Ondersteund voor galerie-apps, maar niet voor niet-galerie-apps. U kunt echter een toegangstoken in de gebruikersinterface opgeven als geheim token voor testdoeleinden op korte termijn. Ondersteuning voor het verlenen van OAuth-codes voor niet-galerie staat in onze achterstand.|
+|OAuth-autorisatiecode verlenen|Toegangstokens hebben een veel kortere levensduur dan wachtwoorden en beschikken over een mechanisme voor automatisch vernieuwen die de Bearer-tokens met langere levensduur niet hebben.  Er moet een echte gebruiker aanwezig zijn tijdens de eerste autorisatie, wat een bepaald niveau van verantwoordelijkheid toevoegt |Hiervoor moet een gebruiker aanwezig zijn. Als de gebruiker de organisatie verlaat, wordt het token ongeldig en moet de autorisatie opnieuw worden uitgevoerd.|Ondersteund voor galerie-apps, maar niet voor niet-galerie-apps. U kunt echter een toegangstoken in de gebruikersinterface opgeven als geheim token voor testdoeleinden op korte termijn. Ondersteuning voor OAuth-code toekenning op niet-galerie is in onze achterstand en biedt naast ondersteuning voor Configureer bare verificatie/token-Url's in de galerie-app.|
 |Referenties voor OAuth-client verlenen|Toegangstokens hebben een veel kortere levensduur dan wachtwoorden en beschikken over een mechanisme voor automatisch vernieuwen die de Bearer-tokens met langere levensduur niet hebben. Zowel bij het verlenen van de autorisatiecode als de clientaanmeldingsgegevens wordt hetzelfde type toegangstoken gebruikt, dus het schakelen tussen deze methoden is transparant voor de API.  Het inrichten kan volledig worden geautomatiseerd en nieuwe tokens kunnen zonder tussenkomst van de gebruiker worden aangevraagd. ||Niet ondersteund voor apps uit de galerie en niet-galerie-apps. Ondersteuning in onze achterstand.|
 
 > [!NOTE]

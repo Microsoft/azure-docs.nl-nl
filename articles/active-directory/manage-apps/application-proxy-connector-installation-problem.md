@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 05/21/2018
+ms.date: 01/28/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 0b7fee330f93097b561714ecc938eaf3fee8f2b5
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 04c26609b046f7525c513796622be74633a20e91
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657326"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986765"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Probleem bij het installeren van de connector voor de toepassingsproxyagent
 
@@ -24,7 +24,7 @@ Microsoft Azure Active Directory Application proxy connector is een intern domei
 
 ## <a name="general-problem-areas-with-connector-installation"></a>Algemene probleem gebieden met installatie van connector
 
-Wanneer de installatie van een connector mislukt, is de hoofd oorzaak meestal een van de volgende gebieden:
+Wanneer de installatie van een connector mislukt, is de hoofd oorzaak meestal een van de volgende gebieden. **Als u een probleem wilt oplossen, moet u de connector opnieuw opstarten.**
 
 1.  **Connectiviteit** : om een geslaagde installatie te volt ooien, moet de nieuwe connector de eigenschappen van de vertrouwens relatie in de toekomst registreren en instellen. Dit doet u door verbinding te maken met de Azure Active Directory-toepassingsproxy Cloud service.
 

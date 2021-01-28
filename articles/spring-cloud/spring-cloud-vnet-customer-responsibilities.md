@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 63fbac0919e06b29377afacaaa5708d195c6b319
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5ecf9e49887eb584269f724d5199cbfb014351e0
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887252"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986850"
 ---
 # <a name="customer-responsibilities-for-running-azure-spring-cloud-in-vnet"></a>Verantwoordelijkheden van klanten voor het uitvoeren van Azure lente Cloud in VNET
 Dit document bevat specificaties voor het gebruik van Azure lente-Cloud in een virtueel netwerk.
@@ -32,7 +32,7 @@ Hier volgt een lijst met resource vereisten voor Azure lente-Cloud Services. Als
 
 ## <a name="azure-spring-cloud-network-requirements"></a>Azure lente-Cloud netwerk vereisten
 
-  | Doel eindpunt | Poort | Gebruik | Opmerking |
+  | Doel eindpunt | Poort | Gebruik | Notitie |
   |------|------|------|
   | *: 1194 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -Cloud: 1194 | UDP: 1194 | Onderliggend Kubernetes-Cluster beheer. | |
   | *: 443 *of* [ServiceTag](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) -Cloud: 443 | TCP: 443 | Azure lente-Cloud Service beheer. | Informatie over het service-exemplaar ' requiredTraffics ' kan bekend zijn bij resource Payload, onder ' networkProfile '. |
@@ -57,6 +57,9 @@ Azure Firewall biedt een Fully Qualified Domain Name (FQDN)-tag **AzureKubernete
   | <i>login.microsoftonline.com</i> | HTTPS: 443 | Azure Active Directory-verificatie. |
   |<i>packages.microsoft.com</i>    | HTTPS: 443 | Micro soft packages-opslag plaats. |
   | <i>acs-mirror.azureedge.net</i> | HTTPS: 443 | De opslag plaats is vereist om de vereiste binaire bestanden te installeren, zoals kubenet en Azure CNI. |
+  | *mscrl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
+  | *crl.microsoft.com* | HTTPS: 80 | Vereiste micro soft-certificaat keten paden. |
+  | *crl3.digicert.com* | HTTPS: 80 | SSL-certificaat keten paden van derden. |
 
 ## <a name="see-also"></a>Zie ook
 * [Toegang tot uw toepassing in een privé netwerk](spring-cloud-access-app-virtual-network.md)

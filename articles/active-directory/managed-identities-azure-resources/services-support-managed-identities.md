@@ -4,19 +4,19 @@ description: Lijst met services die beheerde identiteiten voor Azure-resources e
 services: active-directory
 author: barclayn
 ms.author: barclayn
-ms.date: 10/07/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 1861a4e75f34cfd7fe386c094cce3a638b3e1a1e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 0f7c97e5d84b3ee2d40c714625d0158fe60f2c95
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880790"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986070"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Services die beheerde identiteiten voor Azure-resources ondersteunen
 
@@ -113,6 +113,14 @@ Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regi
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 
+### <a name="azure-communication-services"></a>Azure Communication Services
+
+Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Door het systeem toegewezen | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+| Door de gebruiker toegewezen | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+
+
 ### <a name="azure-container-instances"></a>Azure Container Instances
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
@@ -158,6 +166,17 @@ Raadpleeg de volgende lijst voor het configureren van een beheerde identiteit vo
 - [PowerShell](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-powershell)
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
 - [SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
+
+### <a name="azure-digital-twins"></a>Azure Digital Twins
+
+Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Door het systeem toegewezen | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+| Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+
+Raadpleeg de volgende lijst voor het configureren van beheerde identiteit voor Azure Digital Apparaatdubbels (in regio's waar beschikbaar):
+
+- [Azure-portal](~/articles/digital-twins/how-to-enable-managed-identities.md)
 
 ### <a name="azure-event-grid"></a>Azure Event Grid
 

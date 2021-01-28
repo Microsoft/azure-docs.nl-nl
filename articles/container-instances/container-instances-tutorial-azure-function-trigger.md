@@ -4,12 +4,12 @@ description: Maak een met HTTP geactiveerde serverloze PowerShell-functie om het
 ms.topic: tutorial
 ms.date: 06/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7b94d583ca26b88d093810528d3193f20d765f1d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: e7315796f2f7f89800b58f5fa607e69cd7ae3447
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349245"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935414"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Zelfstudie: Een met HTTP geactiveerde Azure-functie gebruiken om een containergroep te maken
 
@@ -105,7 +105,7 @@ Nadat de functie-app is gemaakt en het implementatiepakket is toegepast, wordt e
 
 ## <a name="run-the-function-in-azure"></a>De functie in Azure uitvoeren
 
-Wanneer de implementatie is voltooid, kunt u de functie-URL ophalen. Gebruik als voorbeeld het gebied **Azure: Functions** in Visual Studio Code om de **HttpTrigger**-functie-URL te kopiëren, of haal de functie-URL op in de [Azure-portal](../azure-functions/functions-create-first-azure-function.md#test-the-function).
+Wanneer de implementatie is voltooid, kunt u de functie-URL ophalen. Gebruik als voorbeeld het gebied **Azure: Functions** in Visual Studio Code om de **HttpTrigger**-functie-URL te kopiëren, of haal de functie-URL op in de [Azure-portal](../azure-functions/functions-get-started.md).
 
 De functie-URL heeft de volgende vorm:
 

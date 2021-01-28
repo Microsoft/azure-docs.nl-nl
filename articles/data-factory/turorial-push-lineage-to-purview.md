@@ -1,5 +1,5 @@
 ---
-title: Data Factory afkomst-gegevens naar Azure controle sfeer liggen pushen
+title: Data Factory-herkomstgegevens pushen naar Azure Purview
 description: Meer informatie over het pushen van Data Factory afkomst-gegevens naar Azure controle sfeer liggen
 services: data-factory
 ms.author: lle
@@ -13,12 +13,12 @@ ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 12/3/2020
-ms.openlocfilehash: 6b50c9440a958bc1398e79ddf3c5a0984816ec45
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: e87a9d677fee94d410099db1da80a56b5539048c
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603275"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935470"
 ---
 # <a name="push-data-factory-lineage-data-to-azure-purview-preview"></a>Push Data Factory afkomst-gegevens naar Azure controle sfeer liggen (preview-versie)
 
@@ -29,7 +29,7 @@ In deze zelf studie gebruikt u de Data Factory gebruikers interface (UI) om een 
 ## <a name="prerequisites"></a>Vereisten
 * **Azure-abonnement**. Als u nog geen abonnement op Azure hebt, maak dan een [gratis Azure-account](https://azure.microsoft.com/free/) aan voordat u begint.
 * **Azure Data Factory**. Als u geen Azure Data Factory hebt, raadpleegt u [een Azure Data Factory maken](./quickstart-create-data-factory-portal.md).
-* **Azure controle sfeer liggen-account**. Het controle sfeer liggen-account legt alle afkomst-gegevens vast die zijn gegenereerd door data factory. Als u geen Azure controle sfeer liggen-account hebt, raadpleegt u [een Azure-controle sfeer liggen maken](https://docs.microsoft.com/azure/purview/create-catalog-portal).
+* **Azure controle sfeer liggen-account**. Het controle sfeer liggen-account legt alle afkomst-gegevens vast die zijn gegenereerd door data factory. Als u geen Azure controle sfeer liggen-account hebt, raadpleegt u [een Azure-controle sfeer liggen maken](../purview/create-catalog-portal.md).
 
 
 ## <a name="run-data-factory-activities-and-push-lineage-data-to-azure-purview"></a>Data Factory activiteiten uitvoeren en afkomst-gegevens naar Azure controle sfeer liggen pushen
@@ -76,6 +76,6 @@ U kunt ook afkomst-gegevens zien voor de activiteit SSIS-pakket uitvoeren.
 > Voor de afkomst van de activiteit uitvoeren SSIS-pakket wordt alleen de bron en het doel ondersteund. De afkomst voor trans formatie wordt nog niet ondersteund.
 
 ## <a name="next-steps"></a>Volgende stappen
-[Gebruikers handleiding voor catalogus afkomst](https://docs.microsoft.com/azure/purview/catalog-lineage-user-guide)
+[Gebruikers handleiding voor catalogus afkomst](../purview/catalog-lineage-user-guide.md)
 
 [Data Factory verbinden met Azure controle sfeer liggen](connect-data-factory-to-azure-purview.md)

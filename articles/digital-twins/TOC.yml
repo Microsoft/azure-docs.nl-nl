@@ -53,6 +53,8 @@
               href: how-to-set-up-instance-powershell.md
             - name: Scriptversie
               href: how-to-set-up-instance-scripted.md
+        - name: Privétoegang inschakelen met Private Link
+          href: how-to-enable-private-link.md
         - name: Verificatiecode voor app schrijven
           href: how-to-authenticate-client.md
         - name: Een app-registratie maken
@@ -107,6 +109,8 @@
               href: how-to-manage-routes-apis-cli.md
             - name: Portalversie
               href: how-to-manage-routes-portal.md
+        - name: Een beheerde identiteit voor routerings gebeurtenissen inschakelen
+          href: how-to-enable-managed-identities.md
         - name: Integreren met Azure Maps
           href: how-to-integrate-maps.md
         - name: Integreren met Azure Time Series Insights
@@ -153,6 +157,18 @@
       href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true
 - name: Resources
   items:
+    - name: Digital Twins-servicelimieten
+      href: reference-service-limits.md
+    - name: Prijzen en beschikbaarheid
+      items:
+        - name: Prijzen
+          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
+        - name: SLA
+          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
+        - name: Regio’s en beschikbaarheid
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
+    - name: Aanvragen van klantgegevens
+      href: resources-customer-data-requests.md
     - name: API's en SDK's
       items:
         - name: Besturingsvlak
@@ -243,22 +259,10 @@
           href: /samples/azure-samples/dtdl-validator/dtdl-validator/
         - name: DTMI-specificaties
           href: 'https://github.com/Azure/digital-twin-model-identifier'
-    - name: Aanvragen van klantgegevens
-      href: resources-customer-data-requests.md
-    - name: Digital Twins-servicelimieten
-      href: reference-service-limits.md
-    - name: Prijzen en beschikbaarheid
-      items:
-        - name: Prijzen
-          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
-        - name: SLA
-          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
-        - name: Regio’s en beschikbaarheid
-          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
-    - name: Verhalen van klanten
-      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
     - name: Channel 9-video's
       href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
+    - name: Verhalen van klanten
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
     - name: Azure-hulpprogramma's
       items:
         - name: Azure Cloud Shell
@@ -267,7 +271,5 @@
           href: /powershell/azure/
         - name: Azure Portal
           href: 'https://portal.azure.com'
-    - name: Documentatie voor Azure RBAC
-      href: ../role-based-access-control/overview.md
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md

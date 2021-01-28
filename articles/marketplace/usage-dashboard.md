@@ -7,18 +7,18 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 563ccdb0633f94acccf3ade9faf1c40c28f108ac
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9f798751065d4889569f4b798ac864342f3e54ef
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462926"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98934394"
 ---
 # <a name="usage-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Gebruik in Commerciële marketplace-analyses
 
 Dit artikel bevat informatie over het gebruiks dashboard in partner centrum. In dit dash board wordt alle virtuele machine (VM) weer gegeven met genormaliseerd gebruik, onbewerkt gebruik en metrische facturerings gegevens op drie afzonderlijke tabbladen: genormaliseerd gebruik van de VM, het onbewerkte gebruik van de VM en het facturerings gebruik met data limiet.
 
-Voor toegang tot het gebruiks dashboard in Partner Center, onder **commerciële Marketplace**, **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u  >  **gebruik** analyseren.
+Voor toegang tot het gebruiks dashboard in Partner Center, onder **commerciële Marketplace**, **[](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u  >  **gebruik** analyseren.
 
 >[!NOTE]
 > Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
@@ -74,7 +74,7 @@ U kunt een wille keurige aanbieding en Maxi maal drie Sku's van de aanbieding se
 
 ### <a name="orders-by-offers-and-skus"></a>Orders per aanbiedingen en Sku's
 
-In het diagram **Orders per aanbiedingen en SKU** worden de metingen en trends van alle aanbiedingen weer gegeven. en let op het volgende:
+In het diagram **Orders per aanbiedingen en SKU** worden de metingen en trends van alle aanbiedingen weer gegeven. Houd rekening met het volgende:
 
 - De beste aanbiedingen worden weer gegeven in de grafiek en de overige aanbiedingen worden als **rest** gegroepeerd.
 - U kunt specifieke aanbiedingen in de legenda selecteren om alleen die aanbiedingen in de grafiek weer te geven.
@@ -99,7 +99,7 @@ Voor de geselecteerde berekenings periode geeft de heatmap het totale gebruik we
 
 :::image type="content" source="./media/usage-dashboard/normalized-usage-country.png" alt-text="Illustreert de genormaliseerde grafiek van het gebruik van het land in het gebruiks dashboard.":::
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - U kunt de kaart verplaatsen om de exacte locatie weer te geven.
 - U kunt inzoomen op een specifieke locatie.
@@ -108,7 +108,7 @@ en let op het volgende:
 
 ### <a name="usage-details-table"></a>Tabel gebruiks gegevens
 
-In de tabel **gebruiks gegevens** wordt een genummerde lijst weer gegeven met de bovenste 1.000 gebruiks records gesorteerd op gebruik. en let op het volgende:
+In de tabel **gebruiks gegevens** wordt een genummerde lijst weer gegeven met de bovenste 1.000 gebruiks records gesorteerd op gebruik. Houd rekening met het volgende:
 
 - Elke kolom in het raster is sorteerbaar.
 - De gegevens kunnen worden geëxtraheerd naar een. TSV of. CSV-bestand als het aantal records kleiner is dan 1.000.
@@ -117,7 +117,7 @@ In de tabel **gebruiks gegevens** wordt een genummerde lijst weer gegeven met de
 
 _**Tabel 1: woorden lijst met gegevens termen**_
 
-| Kolomnaam | Kenmerk naam | Definitie |
+| Kolomnaam | Kenmerknaam | Definitie |
 | ------------ | ------------- | ------------- |
 | Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. De ID was voorheen de GUID van het Azure-abonnement. |
 | MonthStartDate | Begin datum maand | De begin datum van de maand vertegenwoordigt de maand van de aankoop. |
@@ -127,7 +127,7 @@ _**Tabel 1: woorden lijst met gegevens termen**_
 | SKU | SKU | Het plan dat is gekoppeld aan de aanbieding. |
 | Klant land | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. |
 | Is preview-SKU | Is preview-SKU | De waarde geeft aan of u de SKU hebt gelabeld als ' preview '. De waarde is "ja" als de SKU dienovereenkomstig is gelabeld en alleen Azure-abonnementen die door u zijn geautoriseerd, kunnen deze installatie kopie implementeren en gebruiken. De waarde is ' nee ' als de SKU niet is geïdentificeerd als ' preview '. |
-| Facturerings type SKU | Facturerings type SKU | Het facturerings type dat is gekoppeld aan elke SKU in de aanbieding. De mogelijke waarden zijn:<ul><li>Gratis</li><li>Teken</li></ul> |
+| Facturerings type SKU | Facturerings type SKU | Het facturerings type dat is gekoppeld aan elke SKU in de aanbieding. De mogelijke waarden zijn:<ul><li>Gratis</li><li>Betaald</li></ul> |
 | Wordt dat IsInternal | Afgeschaft | Afgeschaft |
 | VM-grootte | Grootte van de virtuele machine | Voor typen op basis van een virtuele machine biedt deze entiteit de grootte van de VM die is gekoppeld aan de SKU van de aanbieding. |
 | Naam van Cloud exemplaar | Naam van Cloud exemplaar | De Microsoft Cloud waarin een VM-implementatie is opgetreden. |
@@ -135,7 +135,7 @@ _**Tabel 1: woorden lijst met gegevens termen**_
 | Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. |
 | DeploymentMethod | Afgeschaft | Afgeschaft (dezelfde definitie als het aanbiedings type)
  |
-| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de plaats in het Azure-abonnement van een klant. |
+| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de naam in het Azure-abonnement van een klant. |
 | Gebruiksdatum | Gebruiksdatum | De datum van het genereren van de gebruiks gebeurtenis voor op gebruik gebaseerde activa. |
 | IsMultisolution | Is multisolution | Geeft aan of de aanbieding een type van een aanbieding voor de oplossing is. |
 | Is nieuwe klant | Afgeschaft | Afgeschaft |

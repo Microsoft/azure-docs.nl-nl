@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Vereisten voor Cognitive Services in Azure Synapse'
-description: Zelfstudie voor het configureren van de vereisten voor het gebruik van Cognitive Services in Azure Synapse
+title: 'Zelf studie: vereisten voor Cognitive Services in azure Synapse Analytics'
+description: Meer informatie over het configureren van de vereisten voor het gebruik van Cognitive Services in azure Synapse.
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.subservice: machine-learning
@@ -9,70 +9,73 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: eef65db05ab94b5b8de5ff82c2c51dba0730f170
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 3ab861caca0ef6f58c2c1bc722412774deb725ce
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222170"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936677"
 ---
-# <a name="tutorial-pre-requisites-for-using-cognitive-services-in-azure-synapse"></a>Zelfstudie: Vereisten voor het gebruik van Cognitive Services in Azure Synapse
+# <a name="tutorial-prerequisites-for-using-cognitive-services-in-azure-synapse-analytics"></a>Zelf studie: vereisten voor het gebruik van Cognitive Services in azure Synapse Analytics
 
-In deze zelfstudie leert u hoe u de vereisten instelt voor het veilig gebruiken van Cognitive Services in Azure Synapse.
+In deze zelf studie leert u hoe u de vereisten instelt voor veilig gebruik van Azure Cognitive Services in azure Synapse Analytics.
 
 In deze zelfstudie komt het volgende aan bod:
 > [!div class="checklist"]
-> - Een Cognitive Services-resource maken. Bijvoorbeeld Text Analytics of Anomaly Detector.
-> - De verificatiesleutel voor Cognitive Services-resources als geheim opslaan in Azure Key Vault en de toegang voor de Azure Synapse-werkruimte configureren.
-> - Een aan Azure Key Vault gekoppelde service in uw Synapse Analytics-werkruimte maken.
+> - Maak een Cognitive Services resource, zoals Text Analytics of afwijkings detectie.
+> - Sla een verificatie sleutel op om bronnen te Cognitive Services als geheimen in Azure Key Vault en configureer de toegang voor een Azure Synapse Analytics-werk ruimte.
+> - Maak een Azure Key Vault gekoppelde service in uw Azure Synapse Analytics-werk ruimte.
 
 Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Azure Synapse Analytics-werkruimte](../get-started-create-workspace.md) met een ADLS Gen2-opslagaccount dat is geconfigureerd als de standaardopslag. U moet de **Inzender van de Storage Blob-gegevens** zijn van het ADLS Gen2-bestandssysteem waar u mee werkt.
+- [Azure Synapse Analytics-werk ruimte](../get-started-create-workspace.md) met een Azure data Lake Storage Gen2 opslag account geconfigureerd als de standaard opslag. U moet de Inzender voor *gegevens* van de opslag-blob van het Azure data Lake Storage Gen2 bestands systeem waarmee u samenwerkt.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
-Meld u aan bij [Azure Portal](https://portal.azure.com/)
+Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
 
-[Azure Cognitive Services](../../cognitive-services/index.yml) bevatten een groot aantal verschillende typen services. Hieronder ziet u enkele voorbeelden die worden gebruikt in de Synapse-zelfstudies.
+[Azure Cognitive Services](../../cognitive-services/index.yml) bevat veel soorten services. Text Analytics en anomalie detectie zijn twee voor beelden in de zelf studies voor Azure Synapse.
 
-### <a name="create-an-anomaly-detector-resource"></a>Een Anomaly Detector-resource maken
-Maak een [Anomaly Detector](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) in Azure Portal.
+U kunt in de Azure Portal een [Text Analytics](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) resource maken:
 
-![Anomaly Detector maken](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00a.png)
+![Scherm opname van Text Analytics in de portal, met de knop maken.](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00b.png)
 
-### <a name="create-a-text-analytics-resource"></a>Een Text Analytics-resource maken
-Maak een [Text Analytics](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics)-resource maken in Azure Portal.
+U kunt een [anomalie detector](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) bron maken in de Azure portal:
 
-![Text Analytics maken](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00b.png)
+![Scherm opname van de anomalie detectie in de portal, met de knop maken.](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00a.png)
 
-## <a name="create-key-vault-and-configure-secrets-and-access"></a>Sleutelkluis maken en geheimen en toegang configureren
+## <a name="create-a-key-vault-and-configure-secrets-and-access"></a>Een sleutel kluis maken en geheimen en toegang configureren
 
-1. Maak een [sleutelkluis](https://ms.portal.azure.com/#create/Microsoft.KeyVault) in Azure Portal.
-2. Ga naar **Sleutelkluis > Toegangsbeleid** en verleen de [MSI van de Azure Synapse-werkruimte](../security/synapse-workspace-managed-identity.md) machtigingen om geheimen uit Azure Key Vault te lezen.
+1. Maak een [sleutel kluis](https://ms.portal.azure.com/#create/Microsoft.KeyVault) in de Azure Portal.
+2. Ga naar **Key Vault**  >  **toegangs beleid** en verleen de MSI-machtigingen voor de [Azure Synapse-werk ruimte](../security/synapse-workspace-managed-identity.md) om geheimen van Azure Key Vault te lezen.
 
->Zorg ervoor dat de beleidswijzigingen worden opgeslagen. Deze stap is eenvoudig te missen.
+   > [!NOTE]
+   > Zorg ervoor dat de beleidswijzigingen worden opgeslagen. Deze stap is eenvoudig te missen.
 
-![Toegangsbeleid toevoegen](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00c.png)
+   ![Scherm opname van selecties voor het toevoegen van een toegangs beleid.](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00c.png)
 
-3. Ga naar uw Cognitive Service-resource, bijvoorbeeld **Anomaly Detector -> Sleutels en eindpunt**, en kopieer een van de twee sleutels naar het klembord.
+3. Ga naar uw Cognitive Services-resource. Ga bijvoorbeeld naar **anomalie detectie**  >  **sleutels en eind punt**. Kopieer vervolgens een van de twee sleutels naar het klem bord.
 
-4. Ga naar **Sleutelkluis > Geheim** om een nieuw geheim te maken. Geef de naam van het geheim op en plak vervolgens de sleutel uit de vorige stap in het veld 'Waarde'. Klik tot slot op **Maken**.
+4. Ga naar **Key Vault**  >  **Secret** om een nieuw geheim te maken. Geef de naam van het geheim op en plak vervolgens de sleutel uit de vorige Step Into het veld **waarde** . Selecteer tot slot **maken**.
 
-![Geheim maken](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00d.png)
+   ![Scherm opname van selecties voor het maken van een geheim.](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00d.png)
 
-> Zorg ervoor dat u de naam van het geheim naam niet vergeet of ergens noteert. U hebt deze later nodig wanneer u verbinding maakt met Cognitive Services vanuit Azure Synapse Studio.
+   > [!IMPORTANT]
+   > Zorg ervoor dat u deze geheime naam vergeet of noteert. U gebruikt dit later wanneer u verbinding maakt met Cognitive Services vanuit Azure Synapse Studio.
 
-## <a name="create-azure-keyvault-linked-service-in-azure-synapse"></a>Een aan Azure Key Vault gekoppelde service maken in Azure Synapse
+## <a name="create-an-azure-key-vault-linked-service-in-azure-synapse"></a>Een Azure Key Vault gekoppelde service maken in azure Synapse
 
-1. Open uw werkruimte in Azure Synapse Studio. Ga naar **Beheren -> Gekoppelde services**. Maak een aan Azure Key Vault gekoppelde service die verwijst naar de sleutelkluis die we zojuist hebben gemaakt. Controleer vervolgens de verbinding door te klikken op de knop 'Verbinding testen' en te controleren of deze groen is. Als alles naar behoren werkt, klikt u eerst op 'Maken' en vervolgens op 'Alles publiceren' om de wijziging op te slaan.
-![Gekoppelde service](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00e.png)
+1. Open uw werkruimte in Azure Synapse Studio. 
+2. Ga naar   >  **gekoppelde services** beheren. Maak een **Azure Key Vault** gekoppelde service door te verwijzen naar de sleutel kluis die u zojuist hebt gemaakt. 
+3. Controleer de verbinding door de knop **verbinding testen** te selecteren. Als de verbinding groen is, selecteert u **maken** en selecteert u **Alles publiceren** om de wijziging op te slaan.
 
-U kunt nu doorgaan met een van de zelfstudies over het gebruik van de Azure Cognitive Services-ervaring in Azure Synapse Studio.
+![Scherm opname van Azure Key Vault als een nieuwe gekoppelde service.](media/tutorial-configure-cognitive-services/tutorial-configure-cognitive-services-00e.png)
+
+U kunt nu door gaan met een van de zelf studies voor het gebruik van de Azure Cognitive Services-ervaring in azure Synapse Studio.
 
 ## <a name="next-steps"></a>Volgende stappen
 

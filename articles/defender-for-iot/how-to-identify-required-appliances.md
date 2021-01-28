@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/13/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 25685d7e933c9d171e1547be2f5899c08443321a
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 92bf066c9769cc4b2525923b9e18ed3c0e9c577a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246567"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937144"
 ---
 # <a name="identify-required-appliances"></a>Vereiste apparaten identificeren
 
@@ -38,7 +38,7 @@ Defender voor IoT ondersteunt zowel fysieke als virtuele implementaties.
 
 Deze sectie bevat een overzicht van fysieke sensor modellen die beschikbaar zijn. U kunt Sens oren aanschaffen met vooraf geconfigureerde software of Sens oren die niet vooraf zijn geconfigureerd.
 
-| Implementatie type | Bedrijf | Onderneming | SMB |
+| Implementatie type | Bedrijf | Enterprise | SMB |
 |--|--|--|--|
 | Installatiekopie | :::image type="content" source="media/how-to-prepare-your-network/corporate-hpe-proliant-dl360-v2.png" alt-text="Het model op bedrijfs niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Het model op ondernemings niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Het model op SMB-niveau."::: |
 | Model | HPE ProLiant DL360 | HPE ProLiant DL20 | HPE ProLiant DL20 |
@@ -60,7 +60,7 @@ Over uw eigen apparaat halen: Bekijk de ondersteunde modellen die hier worden be
 
 Deze sectie bevat een overzicht van de virtuele Sens oren die beschikbaar zijn.
 
-| Implementatie type | Bedrijf | Onderneming | SMB |
+| Implementatie type | Bedrijf | Enterprise | SMB |
 |--|--|--|--|
 | Maximale band breedte | 2,5 GB/sec. | 800 MB/sec. | 160 MB/sec. |
 | Maxi maal beveiligde apparaten | 30.000 | 10.000 | 2500 |
@@ -69,7 +69,7 @@ Deze sectie bevat een overzicht van de virtuele Sens oren die beschikbaar zijn.
 
 De beheer console is beschikbaar als een virtuele implementatie.
 
-| Implementatie type | Onderneming |
+| Implementatie type | Enterprise |
 |--|--|
 | Type apparaat | HPE DL20, VM |
 | Aantal beheerde Sens oren | Maxi maal 300 |
@@ -199,7 +199,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 
 ### <a name="sensors"></a>Oren
 
-| Type | Bedrijf | Onderneming | SMB |
+| Type | Bedrijf | Enterprise | SMB |
 |--|--|--|--|
 | vCPU | 32 | 8 | 4 |
 | Geheugen | 32 GB | 32 GB | 8 GB |
@@ -207,7 +207,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 
 ### <a name="on-premises-management-console-appliance"></a>On-premises beheer console-apparaat
 
-| Type | Onderneming |
+| Type | Enterprise |
 |--|--|
 | Beschrijving | Virtuele apparaten voor Enter prise-implementatie typen |
 | vCPU | 8 |
@@ -220,12 +220,12 @@ Ondersteunde Hyper visors: VMware ESXi versie 5,0 en hoger, Hyper-V
 
 In deze sectie vindt u meer informatie over de apparaten die door micro soft zijn gecertificeerd, maar die niet worden aangeboden als vooraf geconfigureerde apparaten.
 
-| Implementatie type | Onderneming |
+| Implementatie type | Enterprise |
 |--|--|
 | Installatiekopie | :::image type="content" source="media/how-to-prepare-your-network/deployment-type-enterprise-for-azure-defender-for-iot-v2.png" alt-text="Enter prise-implementatie type."::: |
 | Model | Dell PowerEdge R340 XL |
 | Bewakings poorten | Maxi maal negen RJ45 of zes OPT |
-| Maximale band breedte [1](#anchortext2)| 1G MB/sec. |
+| Maximale band breedte [1](#anchortext2)| 1 GB/sec. |
 | Maxi maal aantal beveiligde apparaten | 10.000 |
 
 <a id="anchortext2">Een</a> De capaciteit van de band breedte kan variëren, afhankelijk van de distributie van het protocol.

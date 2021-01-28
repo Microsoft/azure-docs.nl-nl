@@ -4,12 +4,12 @@ description: Verzamelingen van installatie kopieën of andere artefacten overdra
 ms.topic: article
 ms.date: 10/07/2020
 ms.custom: ''
-ms.openlocfilehash: fd2cee972ef173853572b871bc80b92b28c505cd
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: ab6657ecd335a6de8c6c93e3c2ff392ac54c487c
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932597"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935354"
 ---
 # <a name="transfer-artifacts-to-another-registry"></a>Artefacten overdragen naar een ander REGI ster
 
@@ -312,7 +312,7 @@ az storage blob list \
 
 ## <a name="transfer-blob-optional"></a>Overdracht-BLOB (optioneel) 
 
-Gebruik het hulp programma AzCopy of andere methoden voor het [overdragen van BLOB-gegevens](../storage/common/storage-use-azcopy-blobs.md#copy-blobs-between-storage-accounts) van het bron opslag account naar het doel opslag account.
+Gebruik het hulp programma AzCopy of andere methoden voor het [overdragen van BLOB-gegevens](../storage/common/storage-use-azcopy-v10.md#transfer-data) van het bron opslag account naar het doel opslag account.
 
 Met de volgende opdracht wordt bijvoorbeeld [`azcopy copy`](../storage/common/storage-ref-azcopy-copy.md) myblob gekopieerd van de container *overdracht* in het bron account naar de container *overdracht* in het doel account. Als de BLOB in het doel account bestaat, wordt deze overschreven. Verificatie maakt gebruik van SAS-tokens met de juiste machtigingen voor de bron-en doel containers. (De stappen voor het maken van tokens worden niet weer gegeven.)
 
@@ -377,7 +377,7 @@ az acr repository list --name <target-registry-name>
 
 ## <a name="redeploy-pipelinerun-resource"></a>PipelineRun-resource opnieuw implementeren
 
-Als u een PipelineRun-resource met *identieke eigenschappen*opnieuw implementeert, moet u gebruikmaken van de eigenschap **updatetag** . Deze eigenschap geeft aan dat de PipelineRun-resource opnieuw moet worden gemaakt, zelfs als de configuratie niet is gewijzigd. Zorg ervoor dat Updatetag afwijkt van elke keer dat u de PipelineRun-resource implementeert. In het onderstaande voor beeld wordt een PipelineRun voor het exporteren opnieuw gemaakt. De huidige datum/tijd wordt gebruikt om Updatetag in te stellen, zodat deze eigenschap altijd uniek is.
+Als u een PipelineRun-resource met *identieke eigenschappen* opnieuw implementeert, moet u gebruikmaken van de eigenschap **updatetag** . Deze eigenschap geeft aan dat de PipelineRun-resource opnieuw moet worden gemaakt, zelfs als de configuratie niet is gewijzigd. Zorg ervoor dat Updatetag afwijkt van elke keer dat u de PipelineRun-resource implementeert. In het onderstaande voor beeld wordt een PipelineRun voor het exporteren opnieuw gemaakt. De huidige datum/tijd wordt gebruikt om Updatetag in te stellen, zodat deze eigenschap altijd uniek is.
 
 ```console
 CURRENT_DATETIME=`date +"%Y-%m-%d:%T"`

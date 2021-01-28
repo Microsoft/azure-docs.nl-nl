@@ -5,13 +5,13 @@ author: enkrumah
 ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 08/25/2020
-ms.openlocfilehash: 5484d13a70d8eaf905d3c8a51d575f177427019b
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 01/27/2021
+ms.openlocfilehash: 3ce22837da2ca30249b399a297b6188d950b1ea4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98882158"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935148"
 ---
 # <a name="blob-storage-and-azure-data-lake-gen2-output-from-azure-stream-analytics"></a>Blob-opslag en Azure Data Lake Gen2 uitvoer van Azure Stream Analytics
 
@@ -44,7 +44,7 @@ De volgende tabel bevat de namen van de eigenschappen en de bijbehorende beschri
 Wanneer u Blob Storage als uitvoer gebruikt, wordt er in de volgende gevallen een nieuw bestand in de BLOB gemaakt:
 
 * Als het bestand het maximum aantal toegestane blokken (momenteel 50.000) overschrijdt. U kunt het Maxi maal toegestane aantal blokken bereiken zonder de Maxi maal toegestane Blob-grootte te bereiken. Als de uitvoer frequentie bijvoorbeeld hoog is, kunt u meer bytes per blok weer geven en is de bestands grootte groter. Als de uitvoer frequentie laag is, heeft elk blok minder gegevens en is de bestands grootte kleiner.
-* Als er een schema wijziging in de uitvoer is, en de uitvoer indeling vereist een vast schema (CSV en AVRO).
+* Als er een schema wijziging in de uitvoer is, en de uitvoer indeling vereist een vast schema (CSV, AVRO, Parquet).
 * Als een taak opnieuw wordt gestart, hetzij extern door een gebruiker die deze stopt en start, of intern voor systeem onderhoud of fout herstel.
 * Als de query volledig is gepartitioneerd en er een nieuw bestand wordt gemaakt voor elke uitvoer partitie.
 * Als de gebruiker een bestand of container van het opslag account verwijdert.

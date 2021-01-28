@@ -3,14 +3,14 @@ title: Modules beheren in Azure Automation
 description: In dit artikel leest u hoe u Power shell-modules gebruikt om cmdlets in te scha kelen in runbooks en DSC-resources in DSC-configuraties.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 10/22/2020
+ms.date: 01/25/2021
 ms.topic: conceptual
-ms.openlocfilehash: c940ede63e2a467a29ae56308893d573925d0039
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: d62ed96f86078839e66a4cf2ce71f304de2abf4d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458146"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936623"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Modules beheren in Azure Automation
 
@@ -25,10 +25,18 @@ Azure Automation gebruikt een aantal Power shell-modules om cmdlets in te scha k
 
 Wanneer u een Automation-account maakt, Azure Automation standaard een aantal modules geïmporteerd. Zie [standaard modules](#default-modules).
 
+## <a name="sandboxes"></a>Sandboxes
+
 Wanneer Automation runbook-en DSC-compilatie taken uitvoert, worden de modules geladen in sandboxes waar de runbooks kunnen worden uitgevoerd en kunnen de DSC-configuraties worden gecompileerd. Met Automation worden ook alle DSC-resources in modules op de DSC-pull-server geplaatst. Machines kunnen de bronnen ophalen wanneer ze de DSC-configuraties Toep assen.
 
 >[!NOTE]
 >Zorg ervoor dat u alleen de modules importeert die door uw runbooks en DSC-configuraties zijn vereist. Het is niet raadzaam om de hoofdmap AZ-module te importeren. Het bevat veel andere modules die u mogelijk niet nodig hebt. Dit kan prestatie problemen veroorzaken. Importeer in plaats daarvan afzonderlijke modules, zoals AZ. compute.
+
+Cloud sandbox ondersteunt Maxi maal 48 systeem aanroepen en beperkt alle andere aanroepen om veiligheids redenen. Andere functies, zoals referentie beheer en bepaalde netwerken, worden niet ondersteund in de sandbox voor Clouds.
+
+Vanwege het aantal modules en cmdlets is het moeilijk te weten welke van de cmdlets niet-ondersteunde aanroepen zullen maken. Over het algemeen hebben we problemen gezien met cmdlets waarvoor verhoogde toegang is vereist, is een referentie vereist als para meter of cmdlets die betrekking hebben op netwerken. Alle cmdlets die volledige stack-netwerk bewerkingen uitvoeren, worden niet ondersteund in de sandbox, waaronder [Connect-AipService](/powershell/module/aipservice/connect-aipservice) van de AipService Power shell-module en [omzetten-DnsName](/powershell/module/dnsclient/resolve-dnsname) van de DNSClient-module.
+
+Dit zijn bekende beperkingen met betrekking tot de sandbox. De aanbevolen tijdelijke oplossing is om een [Hybrid Runbook worker](../automation-hybrid-runbook-worker.md) te implementeren of [Azure functions](../../azure-functions/functions-overview.md)te gebruiken.
 
 ## <a name="default-modules"></a>Standaard modules
 
@@ -39,7 +47,7 @@ Automation importeert de hoofdmap AZ module niet automatisch in nieuwe of bestaa
 > [!NOTE]
 > Het is niet raadzaam om modules en runbooks te wijzigen in Automation-accounts die worden gebruikt voor de implementatie van de functie [VM's buiten bedrijfsuren starten/stoppen](../automation-solution-vm-management.md) .
 
-|Module naam|Versie|
+|Modulenaam|Versie|
 |---|---|
 | AuditPolicyDsc | 1.1.0.0 |
 | Azure | 1.0.3 |
@@ -134,7 +142,7 @@ Wanneer u een AZ-module importeert in uw Automation-account, wordt de module nie
 
 U kunt de AZ-modules in de Azure Portal importeren. Vergeet niet om alleen de AZ-modules te importeren die u nodig hebt, niet de volledige AZ. Automation-module. Omdat [AZ. accounts](https://www.powershellgallery.com/packages/Az.Accounts/1.1.0) een afhankelijkheid voor de andere AZ-modules zijn, moet u deze module vóór andere importeren.
 
-1. Ga naar het Automation-account en selecteer **modules**onder **gedeelde resources**.
+1. Ga naar het Automation-account en selecteer **modules** onder **gedeelde resources**.
 2. Selecteer **Bladeren in Galerie**.  
 3. Voer in de zoek balk de module naam in (bijvoorbeeld `Az.Accounts` ).
 4. Selecteer op de pagina Power shell-module **importeren** om de module te importeren in uw Automation-account.
@@ -316,7 +324,7 @@ In deze sectie worden verschillende manieren gedefinieerd waarop u een module ku
 Een module importeren in de Azure Portal:
 
 1. Ga naar uw Automation-account.
-2. Onder **gedeelde bronnen**selecteert u **modules**.
+2. Onder **gedeelde bronnen** selecteert u **modules**.
 3. Selecteer **een module toevoegen**.
 4. Selecteer het **zip** -bestand dat de module bevat.
 5. Selecteer **OK** om te beginnen met het importeren van het proces.
@@ -351,8 +359,8 @@ Een module rechtstreeks vanuit het PowerShell Gallery importeren:
 
 Een PowerShell Gallery module rechtstreeks vanuit uw Automation-account importeren:
 
-1. Onder **gedeelde bronnen**selecteert u **modules**. 
-2. Selecteer **Browse Gallery**en zoek in de galerie naar een module. 
+1. Onder **gedeelde bronnen** selecteert u **modules**. 
+2. Selecteer **Browse Gallery** en zoek in de galerie naar een module. 
 3. Selecteer de module die u wilt importeren en selecteer **importeren**. 
 4. Selecteer **OK** om het import proces te starten.
 
@@ -366,7 +374,7 @@ Als u problemen ondervindt met een module, of als u een eerdere versie van een m
 
 Een module verwijderen in de Azure Portal:
 
-1. Ga naar uw Automation-account. Onder **gedeelde bronnen**selecteert u **modules**.
+1. Ga naar uw Automation-account. Onder **gedeelde bronnen** selecteert u **modules**.
 2. Selecteer de module die u wilt verwijderen.
 3. Selecteer op de pagina module de optie **verwijderen**. Als deze module een van de [standaard modules](#default-modules)is, wordt deze teruggedraaid naar de versie die bestond tijdens het maken van het Automation-account.
 

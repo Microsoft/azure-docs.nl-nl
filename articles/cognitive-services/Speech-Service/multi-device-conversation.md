@@ -1,7 +1,7 @@
 ---
 title: Conversatie met meerdere apparaten (preview)-spraak service
 titleSuffix: Azure Cognitive Services
-description: ''
+description: Met het gesprek met meerdere apparaten kunt u eenvoudig een spraak-of tekst conversatie maken tussen meerdere clients en de berichten coördineren die ertussen worden verzonden.
 services: cognitive-services
 author: trevorbye
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: 3c2dbaf8f65208126c52617d4b89d901b3670dac
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 7b38bc390b28788003c2de757f45e8ecdfd5c89a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025171"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932411"
 ---
 # <a name="what-is-multi-device-conversation-preview"></a>Wat is een uitwisseling van meerdere apparaten (preview-versie)?
 
@@ -37,7 +37,7 @@ Terwijl de [**conversatie transcriptie**](conversation-transcription.md) werkt o
 ## <a name="key-features"></a>Belangrijke functies
 
 - **Real-time transcriptie** : iedereen ontvangt een transcript van het gesprek, zodat ze de tekst in realtime kunnen volgen of opslaan voor later.
-- **Realtime vertaling** : met meer dan 60 [ondersteunde talen](language-support.md#text-languages) voor tekst omzetting kunnen gebruikers de conversatie omzetten naar de gewenste taal (s).
+- **Realtime vertaling** : met meer dan 70 [ondersteunde talen](language-support.md#text-languages) voor tekst omzetting kunnen gebruikers de conversatie omzetten naar de gewenste taal (s).
 - **Lees bare transcripten** : de transcriptie en de vertaling zijn eenvoudig te volgen, met interpunctie en zin-einden.
 - **Stem of tekst invoer** : elke gebruiker kan op hun eigen apparaat spreken of typen, afhankelijk van de taal ondersteuning die is ingeschakeld voor de gekozen taal van de deel nemer. Raadpleeg de [taal ondersteuning](language-support.md#speech-to-text).
 - **Bericht relay** : de conversatie service met meerdere apparaten distribueert berichten die door de ene client naar alle andere worden verzonden, in de taal (s) van hun keuze.
@@ -58,9 +58,6 @@ Realtime-transcriptie en-vertalingen kunnen ervoor zorgen dat discussies toegank
 ### <a name="presentations"></a>Presentaties
 
 U kunt ook bijschriften bieden voor presentaties en lezingen op het scherm en op de eigen apparaten van de doel groep. Nadat de doel groep is gekoppeld aan de conversatie code, kunnen ze de transcripten zien in hun Voorkeurs taal, op hun eigen apparaat.
-
-> [!NOTE]
-> Als u een voor beeld wilt bekijken, bekijkt u de [presentatie-vertaler](https://www.microsoft.com/translator/apps/presentation-translator/), een Power Point-invoeg toepassing die gebruikmaakt van de multi-device-conversatie service. U kunt het artikel [hier](https://download.cnet.com/s/powerpoint-add-in/) downloaden.
 
 ## <a name="how-it-works"></a>Uitleg
 

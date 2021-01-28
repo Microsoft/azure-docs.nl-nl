@@ -2,19 +2,17 @@
 title: Cluster migreren naar een nieuwere versie
 titleSuffix: Azure HDInsight
 description: Meer informatie over richt lijnen voor het migreren van uw Azure HDInsight-cluster naar een nieuwere versie.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/31/2020
-ms.openlocfilehash: f3bfd430023330d3a399a0a760fd353b6ee60941
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 04da5d668515fe96d50d4e6a7d0f5ff1c4c48c27
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085885"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931376"
 ---
 # <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>HDInsight-cluster migreren naar een nieuwere versie
 

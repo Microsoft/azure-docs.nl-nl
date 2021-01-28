@@ -1,19 +1,16 @@
 ---
 title: SCP.NET-programmeer gids voor Storm in azure HDInsight
 description: Meer informatie over het gebruik van SCP.NET om te maken. Op NET gebaseerde Storm-topologieën voor gebruik met storm in azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/13/2020
-ms.openlocfilehash: d54a06c457451fc5323ae37b34b53411cdd6abda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd52157e2f0e20e9282d944b07f656c08d9e57da
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89000138"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932632"
 ---
 # <a name="scp-programming-guide-for-apache-storm-in-azure-hdinsight"></a>SCP-programmeer gids voor Apache Storm in azure HDInsight
 
@@ -35,7 +32,7 @@ De gegevens in SCP zijn gemodelleerd als continue streams van Tuples. Normaal ge
 
 In Storm wordt in een toepassings topologie een reken grafiek gedefinieerd. Elk knoop punt in een topologie bevat verwerkings logica. Koppelingen tussen knoop punten geven de gegevens stroom aan.
 
-Knoop punten die invoer gegevens in de topologie injecteren, worden _spouts_genoemd. U kunt ze gebruiken om de gegevens op te geven. De invoer gegevens kunnen afkomstig zijn van een bron, zoals bestands logboeken, een transactionele data base of een systeem prestatie meter item.
+Knoop punten die invoer gegevens in de topologie injecteren, worden _spouts_ genoemd. U kunt ze gebruiken om de gegevens op te geven. De invoer gegevens kunnen afkomstig zijn van een bron, zoals bestands logboeken, een transactionele data base of een systeem prestatie meter item.
 
 Knoop punten met zowel invoer-als uitvoer gegevens stromen worden ' _bouten_' genoemd. Hiermee worden de daad werkelijke gegevens filters, selecties en aggregatie uitgevoerd.
 
@@ -133,7 +130,7 @@ public interface ISCPTxSpout : ISCPPlugin
 }
 ```
 
-Net als de niet-transactionele tegen Hangers, **NextTx**, **ACK**en **failed** worden alle in een kleine lus in één thread van een C#-proces genoemd. Als er geen Tuples zijn om te verzenden, moet u in de slaap stand **NextTx** gedurende een korte periode, zoals 10 milliseconden. Deze slaap stand helpt de CPU-Beschik baarheid te voor komen.
+Net als de niet-transactionele tegen Hangers, **NextTx**, **ACK** en **failed** worden alle in een kleine lus in één thread van een C#-proces genoemd. Als er geen Tuples zijn om te verzenden, moet u in de slaap stand **NextTx** gedurende een korte periode, zoals 10 milliseconden. Deze slaap stand helpt de CPU-Beschik baarheid te voor komen.
 
 Wanneer **NextTx** wordt aangeroepen om een nieuwe trans actie te starten, identificeert de *beveiligings onthouden* -uitvoer parameter de trans actie. De trans actie wordt ook gebruikt in **ACK** en **mislukt**. Uw **NextTx** -methode kan gegevens verzenden naar de Java-zijde. De gegevens worden opgeslagen in ZooKeeper om replay te ondersteunen. Omdat ZooKeeper beperkte capaciteit heeft, moet uw code alleen meta gegevens en geen bulksgewijze gegevens in een transactionele Spout verzenden.
 
@@ -161,11 +158,11 @@ SCP.NET maakt een nieuw **ISCPBatchBolt** -object voor de verwerking van elk **S
 
 ## <a name="object-model"></a>Objectmodel
 
-SCP.NET biedt ook een eenvoudige set van belang rijke objecten waarmee ontwikkel aars kunnen Program meren. De objecten zijn **context**, **State Store**en **SCPRuntime**. Deze worden beschreven in deze sectie.
+SCP.NET biedt ook een eenvoudige set van belang rijke objecten waarmee ontwikkel aars kunnen Program meren. De objecten zijn **context**, **State Store** en **SCPRuntime**. Deze worden beschreven in deze sectie.
 
 ### <a name="context"></a>Context
 
-Het **context** -object biedt een actieve omgeving voor een toepassing. Elk **ISCPPlugin** -exemplaar van **ISCPSpout**, **ISCPBolt**, **ISCPTxSpout**of **ISCPBatchBolt** heeft een bijbehorend **context** exemplaar. De functionaliteit van de **context** is onderverdeeld in de volgende twee delen:
+Het **context** -object biedt een actieve omgeving voor een toepassing. Elk **ISCPPlugin** -exemplaar van **ISCPSpout**, **ISCPBolt**, **ISCPTxSpout** of **ISCPBatchBolt** heeft een bijbehorend **context** exemplaar. De functionaliteit van de **context** is onderverdeeld in de volgende twee delen:
 
 * Het statische deel, dat beschikbaar is in het hele C#-proces
 * Het dynamische deel, dat alleen beschikbaar is voor het specifieke **context** exemplaar
@@ -268,7 +265,7 @@ public abstract void Fail(SCPTuple tuple);
 
 ### <a name="statestore"></a>State Store
 
-Het **State Store** -object biedt meta gegevens Services, monotone reeksen en wachtende coördinatie. U kunt op **State Store**op een hoger niveau gebaseerde samen vattingen van gelijktijdigheid bouwen. Deze abstracties zijn onder meer gedistribueerde vergren delingen, gedistribueerde wacht rijen, barrières en transactie Services.
+Het **State Store** -object biedt meta gegevens Services, monotone reeksen en wachtende coördinatie. U kunt op **State Store** op een hoger niveau gebaseerde samen vattingen van gelijktijdigheid bouwen. Deze abstracties zijn onder meer gedistribueerde vergren delingen, gedistribueerde wacht rijen, barrières en transactie Services.
 
 SCP-toepassingen kunnen het object **status** gebruiken om gegevens in [Apache ZooKeeper](https://zookeeper.apache.org/)te serialiseren. Deze mogelijkheid is vooral nuttig voor een transactionele topologie. Als een transactionele Spout niet meer reageert en opnieuw wordt gestart, kan de **status** de benodigde gegevens ophalen uit ZooKeeper en de pijp lijn opnieuw starten.
 
@@ -379,7 +376,7 @@ De invoer parameter voor **LaunchPlugin** is een gemachtigde. De methode kan een
 public delegate ISCPPlugin newSCPPlugin(Context ctx, Dictionary<string, Object> parms);
 ```
 
-Voor **ISCPBatchBolt**kunt u een **StormTxAttempt** -object ophalen uit de para meter *parameters* en gebruiken om te beoordelen of de poging een opnieuw gespelde poging is. De controle op een replay-poging wordt vaak uitgevoerd op de door voering. In het voor beeld HelloWorldTx verderop in dit artikel wordt deze controle gedemonstreerd.
+Voor **ISCPBatchBolt** kunt u een **StormTxAttempt** -object ophalen uit de para meter *parameters* en gebruiken om te beoordelen of de poging een opnieuw gespelde poging is. De controle op een replay-poging wordt vaak uitgevoerd op de door voering. In het voor beeld HelloWorldTx verderop in dit artikel wordt deze controle gedemonstreerd.
 
 SCP-invoeg toepassingen kunnen meestal in twee modi worden uitgevoerd: lokale test modus en normale modus.
 
@@ -683,7 +680,7 @@ Hier `"plugin.name"` wordt opgegeven als `"SCPHost.exe"` , die wordt opgegeven d
 
 1. De DLL-naam, die `"HelloWorld.dll"` in dit voor beeld is.
 1. De naam van de klasse, `"Scp.App.HelloWorld.Generator"` in dit voor beeld.
-1. De naam van een open bare statische methode die kan worden aangeroepen om een exemplaar van **ISCPPlugin**op te halen.
+1. De naam van een open bare statische methode die kan worden aangeroepen om een exemplaar van **ISCPPlugin** op te halen.
 
 Compileer de code in de host-modus als een DLL-bestand voor het aanroepen van het SCP-platform. Omdat het platform vervolgens volledig beheer over de gehele verwerkings logica kan krijgen, raden we u aan om de topologie in de SCP-host-modus in te dienen. Dit vereenvoudigt de ontwikkelings ervaring. Daarnaast beschikt u over meer flexibiliteit en betere achterwaartse compatibiliteit voor latere releases.
 
@@ -691,7 +688,7 @@ Compileer de code in de host-modus als een DLL-bestand voor het aanroepen van he
 
 ### <a name="helloworld"></a>HelloWorld
 
-In het volgende eenvoudige HelloWorld-voor beeld ziet u een smaak van SCP.NET. Er wordt gebruikgemaakt van een niet-transactionele topologie met een Spout met de naam **Generator** en twee bouten met de naam **splitter** en **Counter**. De **Generator** Spout wille keurig zinnen genereren en deze zinnen naar **splitter**verzenden. De **Splits** Schicht splitst de zinnen in woorden en verzendt deze woorden naar de **Counter** -bout. De **Counter** -bout gebruikt een woorden lijst om het exemplaar van elk woord vast te leggen.
+In het volgende eenvoudige HelloWorld-voor beeld ziet u een smaak van SCP.NET. Er wordt gebruikgemaakt van een niet-transactionele topologie met een Spout met de naam **Generator** en twee bouten met de naam **splitter** en **Counter**. De **Generator** Spout wille keurig zinnen genereren en deze zinnen naar **splitter** verzenden. De **Splits** Schicht splitst de zinnen in woorden en verzendt deze woorden naar de **Counter** -bout. De **Counter** -bout gebruikt een woorden lijst om het exemplaar van elk woord vast te leggen.
 
 Dit voor beeld heeft twee specificatie bestanden: HelloWorld. SPEC en HelloWorld \_ EnableAck. spec. Met de C#-code kunt u nagaan of er een bevestiging is ingeschakeld door het `pluginConf` object van de Java-zijde op te halen.
 
@@ -728,7 +725,7 @@ public void Fail(long seqId, Dictionary<string, Object> parms)
 
 ### <a name="helloworldtx"></a>HelloWorldTx
 
-In het volgende HelloWorldTx-voor beeld ziet u hoe u transactionele topologie implementeert. Het voor beeld heeft één Spout genaamd **Generator**, een batch-Schicht met de naam **gedeeltelijke Count**en een commit-Schicht met de naam **Count-Sum**. Het voor beeld heeft ook drie bestaande tekst bestanden: DataSource0.txt, DataSource1.txt en DataSource2.txt.
+In het volgende HelloWorldTx-voor beeld ziet u hoe u transactionele topologie implementeert. Het voor beeld heeft één Spout genaamd **Generator**, een batch-Schicht met de naam **gedeeltelijke Count** en een commit-Schicht met de naam **Count-Sum**. Het voor beeld heeft ook drie bestaande tekst bestanden: DataSource0.txt, DataSource1.txt en DataSource2.txt.
 
 In elke trans actie Spout de **Generator** twee bestanden uit de bestaande drie bestanden wille keurig selecteren en worden de twee bestands namen verzonden naar de schicht van het **gedeeltelijke aantal** . De schicht van het **gedeeltelijke aantal** :
 

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 0466105ab99d191b5dd9beab1d5d5b61f4b3225e
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 68d88ef667da9f22d3e3a17f10036693fcca0c3f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790881"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932525"
 ---
 # <a name="devops-practices-for-luis"></a>DevOps-procedures voor LUIS
 
@@ -18,7 +18,7 @@ Software-engineers die een Language Understanding-app (LUIS) ontwikkelen, kunnen
 
 ## <a name="source-control-and-branch-strategies-for-luis"></a>Broncodebeheer en vertakkingsstrategieën voor LUIS
 
-Een van de belangrijkste factoren die het succes van DevOps is, is afhankelijk van het [bron beheer](/azure/devops/user-guide/source-control?view=azure-devops). Met een broncode beheer systeem kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden. Door het gebruik van branches kunnen ontwikkel aars scha kelen tussen verschillende versies van de code basis en onafhankelijk van andere leden van het team. Wanneer ontwikkel aars een [pull-aanvraag](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) opleggen om updates van de ene vertakking naar een andere te stellen, of wanneer wijzigingen worden samengevoegd, kan dit de trigger zijn voor het maken van [automatische builds](luis-concept-devops-automation.md) en het continu testen van code.
+Een van de belangrijkste factoren die het succes van DevOps is, is afhankelijk van het [bron beheer](/azure/devops/user-guide/source-control). Met een broncode beheer systeem kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden. Door het gebruik van branches kunnen ontwikkel aars scha kelen tussen verschillende versies van de code basis en onafhankelijk van andere leden van het team. Wanneer ontwikkel aars een [pull-aanvraag](https://help.github.com/github/collaborating-with-issues-and-pull-requests/about-pull-requests) (PR) opleggen om updates van de ene vertakking naar een andere te stellen, of wanneer wijzigingen worden samengevoegd, kan dit de trigger zijn voor het maken van [automatische builds](luis-concept-devops-automation.md) en het continu testen van code.
 
 Door gebruik te maken van de concepten en richt lijnen die in dit document worden beschreven, kunt u een LUIS-App ontwikkelen tijdens het bijhouden van wijzigingen in een broncode beheer systeem. Volg deze aanbevolen procedures voor software techniek:
 
@@ -42,7 +42,7 @@ Door gebruik te maken van de concepten en richt lijnen die in dit document worde
 
 ## <a name="source-control"></a>Broncodebeheer
 
-Als u de [definitie](./app-schema-definition.md) van het app-schema van een Luis-app in een broncode beheersysteem wilt behouden, gebruikt u de [LUDown-indeling ( `.lu` )](/azure/bot-service/file-format/bot-builder-lu-file-format?view=azure-bot-service-4.0)  voor de weer gave van de app. `.lu` de indeling heeft de voor keur om te `.json` Format teren omdat deze door iedereen kan worden gelezen, waardoor het eenvoudiger is om wijzigingen aan te brengen en te controleren in pull.
+Als u de [definitie](./app-schema-definition.md) van het app-schema van een Luis-app in een broncode beheersysteem wilt behouden, gebruikt u de [LUDown-indeling ( `.lu` )](/azure/bot-service/file-format/bot-builder-lu-file-format)  voor de weer gave van de app. `.lu` de indeling heeft de voor keur om te `.json` Format teren omdat deze door iedereen kan worden gelezen, waardoor het eenvoudiger is om wijzigingen aan te brengen en te controleren in pull.
 
 ### <a name="save-a-luis-app-using-the-ludown-format"></a>Een LUIS-app opslaan met de LUDown-indeling
 
@@ -81,7 +81,7 @@ Neem geen abonnements sleutels of soort gelijke vertrouwelijke waarden op in bes
 - LUIS-ontwerpen en Voorspellings sleutels
 - LUIS-ontwerpen en Voorspellings eindpunten
 - Sleutels van Azure-abonnement
-- Toegangs tokens, zoals het token voor een Azure- [Service-Principal](/cli/azure/ad/sp?view=azure-cli-latest) die wordt gebruikt voor Automation-verificatie
+- Toegangs tokens, zoals het token voor een Azure- [Service-Principal](/cli/azure/ad/sp) die wordt gebruikt voor Automation-verificatie
 
 #### <a name="strategies-for-securely-managing-secrets"></a>Strategieën voor het veilig beheren van geheimen
 
@@ -183,7 +183,7 @@ Een LUIS-app in de LUDown-indeling is leesbaar voor mensen, die ondersteuning bi
 
 ## <a name="versioning"></a>Versiebeheer
 
-Een toepassing bestaat uit meerdere onderdelen, zoals een bot die wordt uitgevoerd in [Azure bot service](/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0), [QnA Maker](https://www.qnamaker.ai/), [Azure Speech Service](../speech-service/overview.md), enzovoort. Als u het doel van het lossen van toepassingen wilt benutten, gebruikt u [versie beheer](/azure/devops/learn/git/what-is-version-control) , zodat elk onderdeel van een toepassing afzonderlijk wordt bijgewerkt, waardoor ontwikkel aars alleen op het versie nummer kijken of updates kunnen detecteren. Het is eenvoudiger om uw LUIS-app onafhankelijk van andere onderdelen te maken als u deze in een eigen opslag plaats behoudt.
+Een toepassing bestaat uit meerdere onderdelen, zoals een bot die wordt uitgevoerd in [Azure bot service](/azure/bot-service/bot-service-overview-introduction), [QnA Maker](https://www.qnamaker.ai/), [Azure Speech Service](../speech-service/overview.md), enzovoort. Als u het doel van het lossen van toepassingen wilt benutten, gebruikt u [versie beheer](/azure/devops/learn/git/what-is-version-control) , zodat elk onderdeel van een toepassing afzonderlijk wordt bijgewerkt, waardoor ontwikkel aars alleen op het versie nummer kijken of updates kunnen detecteren. Het is eenvoudiger om uw LUIS-app onafhankelijk van andere onderdelen te maken als u deze in een eigen opslag plaats behoudt.
 
 Voor de LUIS-app voor de hoofd vertakking moet een versie beheer schema worden toegepast. Wanneer u updates samenvoegt naar de `.lu` Luis-app, importeert u die bijgewerkte bron vervolgens in een nieuwe versie in de Luis-app voor de hoofd vertakking.
 

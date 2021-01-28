@@ -1,19 +1,16 @@
 ---
 title: MapReduce-taken verzenden met HDInsight .NET SDK-Azure
 description: Meer informatie over het verzenden van MapReduce-taken naar Azure HDInsight Apache Hadoop met behulp van HDInsight .NET SDK.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-csharp
 ms.date: 01/15/2020
-ms.openlocfilehash: ddb14c321962c65d09be420d8da15f1e547aa282
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 8fbcb66be11c7c77a9bfaf0e6ec790622dcbbda7
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489537"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932174"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>MapReduce-taken uitvoeren met behulp van de HDInsight .NET-SDK
 
@@ -36,7 +33,7 @@ De HDInsight .NET SDK biedt .NET-client Bibliotheken, waarmee u eenvoudiger met 
 
 1. Start Visual Studio en maak een C#-console toepassing.
 
-1. Ga naar **extra**NuGet Package Manager-  >  **NuGet Package Manager**  >  **console** en voer de volgende opdracht in:
+1. Ga naar **extra** NuGet Package Manager-  >    >  **console** en voer de volgende opdracht in:
 
     ```   
     Install-Package Microsoft.Azure.Management.HDInsight.Job

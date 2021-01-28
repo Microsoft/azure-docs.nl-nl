@@ -5,12 +5,12 @@ ms.author: askaur
 ms.date: 12/08/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 0c41771af81989ff965098a762338216db54fd27
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 780ef2bbb7851d8bef5fc52a51421a7938043ecb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97578012"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932305"
 ---
 ## <a name="join-the-meeting-chat"></a>Deelnemen aan de vergaderchat 
 
@@ -21,7 +21,7 @@ Zodra Teams-interoperabiliteit is ingeschakeld, kan een Communication Services-g
 Instantieer eerst een `ChatThreadClient` voor het vergaderchatgesprek. Parseer de koppeling naar de vergadering of gebruik de Graph API's met de vergaderings-id om de gespreks-id op te halen. 
 
 - De koppeling naar een Teams-vergadering ziet er ongeveer zo uit: `https://teams.microsoft.com/l/meetup-join/meeting_chat_thread_id/1606337455313?context=some_context_here`. De gespreks-id bevindt zich in deze koppeling op de plek van `meeting_chat_thread_id`. 
-- Als u de vergaderings-id hebt, kunt u [Graph API](https://docs.microsoft.com/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta) gebruiken om de gespreks-id op te halen. Het [GET API](https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-beta&tabs=http%22%20%5C)-antwoord heeft een `chatInfo`-object dat de `threadID` bevat. 
+- Als u de vergaderings-id hebt, kunt u [Graph API](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta) gebruiken om de gespreks-id op te halen. Het [GET API](/graph/api/onlinemeeting-get?tabs=http%22+%5c&view=graph-rest-beta)-antwoord heeft een `chatInfo`-object dat de `threadID` bevat. 
 
 Zodra u beschikt over de chatgespreks-id, kunt u de chatgesprekclient ophalen met behulp van de JavaScript-chatclientbibliotheek: 
 
@@ -44,4 +44,3 @@ Kijk [hier](../../../concepts/chat/concepts.md) voor meer informatie over berich
 
 **Opmerking**: momenteel wordt het verzenden en ontvangen van berichten alleen ondersteund voor interoperabiliteitsscenario's met Teams. Andere functies zoals het typen van indicatoren en Communication Services-gebruikers die andere gebruikers toevoegen aan of verwijderen uit de Teams-vergadering, worden nog niet ondersteund.  
 
- 

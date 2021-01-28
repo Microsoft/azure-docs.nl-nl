@@ -7,12 +7,12 @@ author: aniket-ms
 ms.author: aadnaik
 ms.reviewer: HDI HiveLLAP Team
 ms.date: 05/05/2020
-ms.openlocfilehash: 626b061cc237f7238d47863a3e1ed88961d2f742
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 7df75077785c66215008e045ef0b1e451ba29f57
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680511"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931104"
 ---
 # <a name="azure-hdinsight-interactive-query-cluster-hive-llap-sizing-guide"></a>Azure HDInsight Interactive query-cluster (Hive LLAP) formaat gids
 
@@ -216,7 +216,7 @@ Bijvoorbeeld: totale cluster capaciteit = 100 GB geheugen, gedeeld tussen LLAP, 
  - Capaciteit van werkbelasting beheer wachtrij = 20 GB
  - Standaard capaciteit van de wachtrij = 10 GB
 
-Met 20 GB in wachtrij capaciteit voor werkbelasting beheer kan een resource-abonnement een `QUERY_PARALLELISM` waarde van vijf opgeven, wat betekent dat werkbelasting beheer vijf TEZ AMS kan starten met elke container grootte van 4 GB. Als `QUERY_PARALLELISM` deze hoger is dan de capaciteit, ziet u mogelijk een aantal TEZ AMS vastgelopen in de `ACCEPTED` status. De Hiveserver2 Interactive kan geen query fragmenten verzenden naar de TEZ-AMs die niet in `RUNNING` staat zijn.
+Met 20 GB in wachtrij capaciteit voor werkbelasting beheer kan een resource-abonnement een `QUERY_PARALLELISM` waarde van vijf opgeven, wat betekent dat werkbelasting beheer vijf TEZ AMS kan starten met elke container grootte van 4 GB. Als `QUERY_PARALLELISM` deze hoger is dan de capaciteit, ziet u mogelijk dat bepaalde TEZ AMS niet meer reageert in de `ACCEPTED` status. De Hiveserver2 Interactive kan geen query fragmenten verzenden naar de TEZ-AMs die niet in `RUNNING` staat zijn.
 
 
 #### <a name="next-steps"></a>**Volgende stappen**

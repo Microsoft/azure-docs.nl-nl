@@ -1,19 +1,16 @@
 ---
 title: 'Infra structuur: on-premises Apache Hadoop naar Azure HDInsight'
 description: Ontdek de aanbevolen procedures voor de infra structuur voor het migreren van on-premises Hadoop-clusters naar Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: e412b82be911f0b4ba2e5cda51495cdcd7826917
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: f66e13046a34bddfd27912e23ce51f75006fd9fa
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542298"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932144"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>On-premises Apache Hadoop clusters migreren naar de aanbevolen procedures voor Azure HDInsight-infra structuur
 
@@ -49,7 +46,7 @@ U kunt ook Apache Ambari UI of Ambari REST API gebruiken om de Hadoop-onderdelen
 
 Toepassingen of onderdelen die beschikbaar waren in on-premises clusters, maar die geen deel uitmaken van de HDInsight-clusters kunnen worden toegevoegd aan een Edge-knoop punt of op een virtuele machine in hetzelfde VNet als het HDInsight-cluster. Een Hadoop-toepassing van derden die niet beschikbaar is in azure HDInsight, kan worden geïnstalleerd met behulp van de optie ' toepassingen ' in het HDInsight-cluster. Aangepaste Hadoop-toepassingen kunnen worden geïnstalleerd op HDInsight-cluster met behulp van ' script acties '. De volgende tabel bevat enkele van de algemene toepassingen en de opties voor HDInsight-integratie:
 
-|**App**|**Integratie**
+|**Toepassing**|**Integratie**
 |---|---|
 |Lucht stroom|IaaS of HDInsight Edge-knoop punt
 |Alluxio|IaaS  

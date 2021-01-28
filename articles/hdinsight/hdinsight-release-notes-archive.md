@@ -1,19 +1,16 @@
 ---
 title: Gearchiveerde opmerkingen bij de release van Azure HDInsight
 description: Opmerkingen bij de release van Azure HDInsight. Bekijk ontwikkel tips en Details voor Hadoop, Spark, R Server, Hive en meer.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 10/07/2020
-ms.openlocfilehash: d5103cbbeb5a8ab12f9ce497ee4ed227ca180728
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 8e6f27c378a6cea8fffbdcda58c4fc3bb865e51e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350293"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932172"
 ---
 # <a name="archived-release-notes"></a>Gearchiveerde releaseopmerkingen
 
@@ -1997,7 +1994,7 @@ Met opgeloste problemen worden geselecteerde problemen weer gegeven die eerder z
 
     -   <https://spark.apache.org/releases/spark-release-2-3-0.html#deprecations>
 
-### <a name="upgrading"></a>Abonnement
+### <a name="upgrading"></a>Upgrade uitvoeren
 
 Al deze functies zijn beschikbaar in HDInsight 3,6. Als u de meest recente versie van Spark, Kafka en R Server (Machine Learning Services) wilt ophalen, kiest u de versie van Spark, Kafka en ML wanneer u [een HDInsight 3,6-cluster maakt](./hdinsight-hadoop-provision-linux-clusters.md). Als u ondersteuning voor ADLS wilt krijgen, kunt u het opslag type ADLS kiezen als een optie. Bestaande clusters worden niet automatisch bijgewerkt naar deze versies.
 

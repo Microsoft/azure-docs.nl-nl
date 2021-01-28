@@ -2,18 +2,15 @@
 title: 'Zelfstudie: HDInsight Apache Storm naar opslag - Azure/Data Lake'
 description: 'Zelfstudie: informatie over het gebruik van Apache Storm om te schrijven naar de met HDFS compatibele opslag voor Azure HDInsight.'
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/24/2019
-ms.openlocfilehash: 8cdcc60e6eeec22e202d670c3fc057711bd432a6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: 4e648c57be699620e669ce7db0845dad2b876095
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545443"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932551"
 ---
 # <a name="tutorial-write-to-apache-hadoop-hdfs-from-apache-storm-on-azure-hdinsight"></a>Zelfstudie: Schrijven naar Apache Hadoop HDFS van Apache Storm in Azure HDInsight
 
@@ -160,7 +157,7 @@ Zie het document [HDInsight-clusters aanpassen met behulp van scriptacties](./..
     hdfs.url: wasbs:///
     ```
 
-    Als u het bestand wilt opslaan, gebruikt u achtereenvolgens __Ctrl+X__ , __J__ en __Enter__ . Met de waarden in dit bestand stelt u de opslag-URL en de naam in van de map waarnaar gegevens worden geschreven.
+    Als u het bestand wilt opslaan, gebruikt u achtereenvolgens __Ctrl+X__, __J__ en __Enter__. Met de waarden in dit bestand stelt u de opslag-URL en de naam in van de map waarnaar gegevens worden geschreven.
 
 1. Gebruik de volgende opdracht om de topologie te starten:
 

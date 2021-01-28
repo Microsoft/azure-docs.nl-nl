@@ -3,17 +3,16 @@ title: Apache Hive beleid in Apache zwerver-Azure HDInsight
 description: Meer informatie over het configureren van Apache zwerver-beleids regels voor Hive in een Azure HDInsight-service met Enterprise Security Package.
 author: omidm1
 ms.author: omidm
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: f2d9c96a616f05c22c8b999fdc6cab2505c27485
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8ebc03d0847414730c51b899be4cf6586d064696
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544933"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932238"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Apache Hive-beleidsregels configureren in HDInsight met Enterprise Security Package
 
@@ -49,14 +48,14 @@ In deze sectie maakt u twee zwerver-beleids regels voor toegang tot hivesampleta
 **Ranger-beleidsregels maken**
 
 1. Open de beheerinterface van Ranger. Zie Verbinding maken met de beheerinterface van Apache Ranger.
-2. Selecteer **CLUSTERNAME_Hive** onder **Hive** . Er worden twee vooraf geconfigureerde beleidsregels weergegeven.
+2. Selecteer **CLUSTERNAME_Hive** onder **Hive**. Er worden twee vooraf geconfigureerde beleidsregels weergegeven.
 3. Selecteer **Nieuw beleid toevoegen** en voer de volgende waarden in:
 
     |Eigenschap |Waarde |
     |---|---|
     |Policy Name|lezen-hivesampletable-alle|
     |Hive-data base|standaardinstelling|
-    |table|hivesampletable|
+    |tabel|hivesampletable|
     |Hive-kolom|*|
     |Select User|hiveuser1|
     |Machtigingen|Selecteer|
@@ -74,7 +73,7 @@ In deze sectie maakt u twee zwerver-beleids regels voor toegang tot hivesampleta
     |---|---|
     |Policy Name|lezen-hivesampletable-devicemake|
     |Hive-data base|standaardinstelling|
-    |table|hivesampletable|
+    |tabel|hivesampletable|
     |Hive-kolom|ClientID, devicemake|
     |Select User|hiveuser2|
     |Machtigingen|Selecteer|
@@ -87,7 +86,7 @@ De instructies vindt u in [Hive ODBC-gegevensbron maken](../hadoop/apache-hadoop
  | --- | --- |
  | Naam van de gegevensbron | Geef uw gegevensbron een naam |
  | Host | Voer CLUSTERNAME.azurehdinsight.net in. Bijvoorbeeld: myHDICluster.azurehdinsight.net |
- | Poort | Gebruik **443** . (Deze poort is gewijzigd van 563 in 443.) |
+ | Poort | Gebruik **443**. (Deze poort is gewijzigd van 563 in 443.) |
  | Database | **Standaard instelling** gebruiken. |
  | Type Hive-server | Selecteer **Hive Server 2** |
  | Mechanisme | Selecteer **Azure HDInsight Service** |
@@ -107,17 +106,17 @@ In de laatste sectie hebt u twee beleids regels geconfigureerd.  hiveuser1 heeft
 
     ![Wizard gegevens verbinding openen](./media/apache-domain-joined-run-hive/simbahiveodbc-excel-dataconnection1.png)
 
-1. Selecteer in de vervolg keuzelijst de naam van de gegevens bron die u in de laatste sectie hebt gemaakt en selecteer vervolgens **OK** .
+1. Selecteer in de vervolg keuzelijst de naam van de gegevens bron die u in de laatste sectie hebt gemaakt en selecteer vervolgens **OK**.
 
 1. Voor het eerste gebruik wordt het dialoog venster **ODBC-stuur programma** geopend. Selecteer **Windows** in het menu links. Selecteer vervolgens **verbinding maken** om het **Navigator** venster te openen.
 
 1. Wacht totdat het dialoogvenster **Database en tabel selecteren** wordt geopend. Dit kan een paar seconden duren.
 
-1. Selecteer **hivesampletable** en selecteer **volgende** .
+1. Selecteer **hivesampletable** en selecteer **volgende**.
 
-1. Selecteer **Finish** .
+1. Selecteer **Finish**.
 
-1. In het dialoogvenster **Gegevens importeren** kunt u de query wijzigen of opgeven. Als u dit wilt doen, selecteert u **Eigenschappen** . Dit kan een paar seconden duren.
+1. In het dialoogvenster **Gegevens importeren** kunt u de query wijzigen of opgeven. Als u dit wilt doen, selecteert u **Eigenschappen**. Dit kan een paar seconden duren.
 
 1. Selecteer het tabblad **definitie** . De opdracht tekst is:
 
@@ -131,7 +130,7 @@ In de laatste sectie hebt u twee beleids regels geconfigureerd.  hiveuser1 heeft
 
 1. Selecteer **OK** om het dialoog venster **gegevens importeren** te sluiten.  
 
-1. Voer het wachtwoord van hiveuser1 opnieuw in en klik op **OK** . Het duurt een paar seconden voordat de gegevens naar Excel worden geïmporteerd. Wanneer u klaar bent, ziet u elf kolommen met gegevens.
+1. Voer het wachtwoord van hiveuser1 opnieuw in en klik op **OK**. Het duurt een paar seconden voordat de gegevens naar Excel worden geïmporteerd. Wanneer u klaar bent, ziet u elf kolommen met gegevens.
 
 Als u het tweede beleid wilt testen (Read-hivesampletable-devicemake), hebt u in de laatste sectie gemaakt
 

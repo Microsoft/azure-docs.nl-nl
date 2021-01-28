@@ -1,19 +1,16 @@
 ---
 title: Beperking van uitgaand netwerk verkeer configureren-Azure HDInsight
 description: Meer informatie over het configureren van de beperking van uitgaand netwerk verkeer voor Azure HDInsight-clusters.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/17/2020
-ms.openlocfilehash: 4c703fc1ddac4af2e3cf8716764a21da7e870b19
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 79e3349f009f71c5cd387a7c7265ad4904f2a40d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048671"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932129"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Uitgaand netwerk verkeer voor Azure HDInsight-clusters configureren met behulp van Firewall
 
@@ -65,17 +62,17 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
     |---|---|
     |Naam| FwAppRule|
     |Prioriteit|200|
-    |Actie|Toestaan|
+    |Bewerking|Toestaan|
 
     **Sectie FQDN-Tags**
 
-    | Naam | Bron adres | FQDN-label | Opmerkingen |
+    | Naam | Bron adres | FQDN-label | Notities |
     | --- | --- | --- | --- |
     | Rule_1 | * | WindowsUpdate en HDInsight | Vereist voor HDI-Services |
 
     **Sectie FQDN-doel items**
 
-    | Naam | Bron adressen | Protocol:Poort | Doel-FQDN-naam | Opmerkingen |
+    | Naam | Bron adressen | Protocol:Poort | Doel-FQDN-naam | Notities |
     | --- | --- | --- | --- | --- |
     | Rule_2 | * | https:443 | login.windows.net | Windows-aanmeldings activiteit toestaan |
     | Rule_3 | * | https:443 | login.microsoftonline.com | Windows-aanmeldings activiteit toestaan |
@@ -99,11 +96,11 @@ Maak de netwerk regels om uw HDInsight-cluster correct te configureren.
     |---|---|
     |Naam| FwNetRule|
     |Prioriteit|200|
-    |Actie|Toestaan|
+    |Bewerking|Toestaan|
 
     **Sectie Service Tags**
 
-    | Naam | Protocol | Bron adressen | Servicetags | Doel poorten | Opmerkingen |
+    | Naam | Protocol | Bron adressen | Servicetags | Doel poorten | Notities |
     | --- | --- | --- | --- | --- | --- |
     | Rule_5 | TCP | * | SQL | 1433 | Als u de standaard SQL-servers gebruikt die door HDInsight worden meegeleverd, configureert u een netwerk regel in het gedeelte service tags voor SQL waarmee u SQL-verkeer kunt registreren en controleren. Tenzij u service-eind punten voor SQL Server op het HDInsight-subnet hebt geconfigureerd, waardoor de firewall wordt overgeslagen. Als u een aangepaste SQL Server gebruikt voor Ambari, Oozie, zwerver en Hive-meta Stores, hoeft u alleen het verkeer naar uw eigen aangepaste SQL-servers toe te staan.|
     | Rule_6 | TCP | * | Azure Monitor | * | Beschrijving Klanten die de functie voor automatisch schalen willen gebruiken, moeten deze regel toevoegen. |

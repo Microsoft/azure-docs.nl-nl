@@ -3,17 +3,14 @@ title: Enterprise Security Package clusters maken, configureren-Azure
 description: Meer informatie over het maken en configureren van Enterprise Security Package clusters in azure HDInsight
 services: hdinsight
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 12/10/2019
-ms.openlocfilehash: 07bd92e17b827dfeede5958587cecbdc97694329
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 914acfab3935bc81e7d8382163ca9283c7f71a53
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003919"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98934034"
 ---
 # <a name="create-and-configure-enterprise-security-package-clusters-in-azure-hdinsight"></a>Enterprise Security Package clusters maken en configureren in azure HDInsight
 
@@ -150,7 +147,7 @@ Maak een Active Directory-Tenant beheerder.
 
 1. Meld u aan bij de Azure Portal en selecteer uw Azure AD-Tenant, **HDIFabrikam**.
 
-1. Navigeren om gebruikers te **beheren**  >  **Users**  >  **nieuwe gebruiker**.
+1. Navigeren om gebruikers te **beheren**  >    >  **nieuwe gebruiker**.
 
 1. Voer de volgende gegevens in voor de nieuwe gebruiker:
 
@@ -281,7 +278,7 @@ Gebruik de volgende stappen om uw Azure AD DS virtuele netwerk (**HDIFabrikam-AA
 
 1. Zoek de IP-adressen van uw aangepaste DNS-servers.
     1. Selecteer de `HDIFabrikam.com` Azure AD DS-resource.
-    1. Selecteer onder **beheren** de optie **Eigenschappen**.
+    1. Selecteer **Eigenschappen** onder **Beheren**.
     1. Zoek de IP-adressen onder **IP-adres in het virtuele netwerk**.
 
     ![Aangepaste DNS-IP-adressen voor Azure AD DS zoeken](./media/apache-domain-joined-create-configure-enterprise-security-cluster/hdinsight-image-0096.png)
@@ -289,7 +286,7 @@ Gebruik de volgende stappen om uw Azure AD DS virtuele netwerk (**HDIFabrikam-AA
 1. Configureer **HDIFabrikam-AADDSVNET** om aangepaste IP-adressen 10.0.0.4 en 10.0.0.5 te gebruiken.
 
     1. Selecteer bij **instellingen** de optie **DNS-servers**.
-    1. Selecteer **aangepast**.
+    1. selecteer **Aangepast**.
     1. Voer in het tekstvak het eerste IP-adres (*10.0.0.4*) in.
     1. Selecteer **Opslaan**.
     1. Herhaal de stappen om het andere IP-adres (*10.0.0.5*) toe te voegen.
@@ -358,7 +355,7 @@ Controleer of het certificaat is geïnstalleerd in het **persoonlijke** archief 
         | Protocol | Elk |
         | Actie | Toestaan |
         | Prioriteit | \<Desired number> |
-        | Name | Port_LDAP_636 |
+        | Naam | Port_LDAP_636 |
 
     ![Het dialoog venster "binnenkomende beveiligings regel toevoegen"](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 

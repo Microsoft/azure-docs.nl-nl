@@ -3,17 +3,16 @@ title: Hadoop Oozie-werk stromen gebruiken in azure HDInsight op basis van Linux
 description: Gebruik Hadoop Oozie in HDInsight op basis van Linux. Meer informatie over het definiëren van een Oozie-werk stroom en het verzenden van een Oozie-taak.
 author: omidm1
 ms.author: omidm
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 7b0d3ac4775ca057856c28ab42197bb734f149d6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 41c42009252169c141bec5d3dc2ea5c6308d6812
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534937"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931287"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Apache Oozie gebruiken met Apache Hadoop voor het definiëren en uitvoeren van een werkstroom in Azure HDInsight op basis van Linux
 
@@ -31,11 +30,11 @@ U kunt Oozie ook gebruiken om taken te plannen die specifiek zijn voor een syste
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Een Hadoop-cluster in HDInsight** . Zie aan de [slag met HDInsight op Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* **Een Hadoop-cluster in HDInsight**. Zie aan de [slag met HDInsight op Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* **Een SSH-client** . Zie [verbinding maken met HDInsight (Apache Hadoop) met SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Een SSH-client**. Zie [verbinding maken met HDInsight (Apache Hadoop) met SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* **Een Azure SQL database** .  Zie [een Data Base maken in Azure SQL database in het Azure Portal](../azure-sql/database/single-database-create-quickstart.md).  In dit artikel wordt gebruikgemaakt van een Data Base met de naam **oozietest** .
+* **Een Azure SQL database**.  Zie [een Data Base maken in Azure SQL database in het Azure Portal](../azure-sql/database/single-database-create-quickstart.md).  In dit artikel wordt gebruikgemaakt van een Data Base met de naam **oozietest**.
 
 * Het URI-schema voor de primaire opslag voor uw clusters. `wasb://` voor Azure Storage, `abfs://` voor Azure data Lake Storage Gen2 of `adl://` voor Azure data Lake Storage gen1. Als beveiligde overdracht is ingeschakeld voor Azure Storage, wordt de URI `wasbs://`. Zie ook [beveiligde overdracht](../storage/common/storage-require-secure-transfer.md).
 
@@ -130,7 +129,7 @@ Gebruik de volgende stappen om een HiveQL-script (component Query Language) te m
 
      Het definitie bestand van de werk stroom, workflow.xml in dit artikel, geeft deze waarden door aan dit HiveQL-script tijdens runtime.
 
-1. Als u het bestand wilt opslaan, selecteert u **CTRL + X** , voert u **Y** in en selecteert u vervolgens **Enter** .  
+1. Als u het bestand wilt opslaan, selecteert u **CTRL + X**, voert u **Y** in en selecteert u vervolgens **Enter**.  
 
 1. Gebruik de volgende opdracht om `useooziewf.hql` te kopiëren naar `wasbs:///tutorials/useoozie/useooziewf.hql` :
 
@@ -215,7 +214,7 @@ Oozie-werk stroom definities worden geschreven in Hadoop process Definition Lang
 
      Noteer ook de `<archive>mssql-jdbc-7.0.0.jre8.jar</archive>` vermelding in de sectie Sqoop. Met deze vermelding krijgt Oozie om dit archief beschikbaar te maken voor Sqoop wanneer deze actie wordt uitgevoerd.
 
-3. Als u het bestand wilt opslaan, selecteert u **CTRL + X** , voert u **Y** in en selecteert u vervolgens **Enter** .  
+3. Als u het bestand wilt opslaan, selecteert u **CTRL + X**, voert u **Y** in en selecteert u vervolgens **Enter**.  
 
 4. Gebruik de volgende opdracht om het `workflow.xml` bestand te kopiëren naar `/tutorials/useoozie/workflow.xml` :
 
@@ -382,7 +381,7 @@ De taak definitie beschrijft waar de workflow.xml worden gevonden. Ook wordt bes
 
 4. Nadat de nano editor is geopend, plakt u de bewerkte XML als de inhoud van het bestand.
 
-5. Als u het bestand wilt opslaan, selecteert u **CTRL + X** , voert u **Y** in en selecteert u vervolgens **Enter** .
+5. Als u het bestand wilt opslaan, selecteert u **CTRL + X**, voert u **Y** in en selecteert u vervolgens **Enter**.
 
 ## <a name="submit-and-manage-the-job"></a>De taak verzenden en beheren
 
@@ -489,9 +488,9 @@ Zie het [opdracht regel programma Apache Oozie](https://oozie.apache.org/docs/4.
 
 Met de Oozie-REST API kunt u uw eigen hulpprogram ma's bouwen die samen werken met Oozie. De volgende HDInsight-specifieke informatie over het gebruik van de Oozie-REST API:
 
-* **URI** : u kunt toegang krijgen tot de rest API van buiten het cluster op `https://CLUSTERNAME.azurehdinsight.net/oozie` .
+* **URI**: u kunt toegang krijgen tot de rest API van buiten het cluster op `https://CLUSTERNAME.azurehdinsight.net/oozie` .
 
-* **Verificatie** : als u wilt verifiëren, gebruikt u de API het cluster-HTTP-account (beheerder) en het wacht woord. Bijvoorbeeld:
+* **Verificatie**: als u wilt verifiëren, gebruikt u de API het cluster-HTTP-account (beheerder) en het wacht woord. Bijvoorbeeld:
 
     ```bash
     curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/oozie/versions
@@ -517,11 +516,11 @@ Voer de volgende stappen uit om toegang te krijgen tot de Oozie-webgebruikersint
 
 2. Nadat u een tunnel hebt gemaakt, opent u de Ambari-web-gebruikers interface in uw webbrowser met behulp van URI `http://headnodehost:8080` .
 
-3. Selecteer links op de pagina **Oozie**  >  **Quick links**  >  **Oozie Web UI** .
+3. Selecteer links op de pagina **Oozie**  >  **Quick links**  >  **Oozie Web UI**.
 
     ![Ambari oozie-Web-UI-stappen](./media/hdinsight-use-oozie-linux-mac/hdi-oozie-web-ui-steps.png)
 
-4. De Oozie web-gebruikers interface wordt standaard gebruikt om de actieve werk stroom taken weer te geven. Als u alle werk stroom taken wilt weer geven, selecteert u **alle taken** .
+4. De Oozie web-gebruikers interface wordt standaard gebruikt om de actieve werk stroom taken weer te geven. Als u alle werk stroom taken wilt weer geven, selecteert u **alle taken**.
 
     ![Werk stroom taken Oozie web console](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-jobs.png)
 
@@ -529,13 +528,13 @@ Voer de volgende stappen uit om toegang te krijgen tot de Oozie-webgebruikersint
 
     ![Informatie over HDInsight Apache Oozie-taak](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-info.png)
 
-6. Op het tabblad **taak gegevens** ziet u de informatie over de basis taak en de afzonderlijke acties in de taak. U kunt de tabbladen bovenaan gebruiken om de **taak definitie** , **taak configuratie** , toegang tot het **taak logboek** te bekijken of een directed acyclic Graph (dag) van de taak weer te geven onder **taak dag** .
+6. Op het tabblad **taak gegevens** ziet u de informatie over de basis taak en de afzonderlijke acties in de taak. U kunt de tabbladen bovenaan gebruiken om de **taak definitie**, **taak configuratie**, toegang tot het **taak logboek** te bekijken of een directed acyclic Graph (dag) van de taak weer te geven onder **taak dag**.
 
-   * **Taak logboek** : Selecteer de knop **Logboeken ophalen** om alle logboeken voor de taak op te halen, of gebruik het veld **Zoek filter invoeren** om de logboeken te filteren.
+   * **Taak logboek**: Selecteer de knop **Logboeken ophalen** om alle logboeken voor de taak op te halen, of gebruik het veld **Zoek filter invoeren** om de logboeken te filteren.
 
        ![HDInsight Apache Oozie-taak logboek](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-log.png)
 
-   * **Taak dag** : de dag is een grafisch overzicht van de gegevens paden die zijn gemaakt via de werk stroom.
+   * **Taak dag**: de dag is een grafisch overzicht van de gegevens paden die zijn gemaakt via de werk stroom.
 
        ![' HDInsight Apache Oozie job dag '](./media/hdinsight-use-oozie-linux-mac/hdinsight-oozie-job-dag.png)
 
@@ -543,7 +542,7 @@ Voer de volgende stappen uit om toegang te krijgen tot de Oozie-webgebruikersint
 
     ![Informatie over HDInsight oozie-taak acties](./media/hdinsight-use-oozie-linux-mac/oozie-job-action-info.png)
 
-8. U kunt details weer geven voor de actie, zoals een koppeling naar de **console-URL** . Gebruik deze koppeling om informatie over taak beheer voor de taak weer te geven.
+8. U kunt details weer geven voor de actie, zoals een koppeling naar de **console-URL**. Gebruik deze koppeling om informatie over taak beheer voor de taak weer te geven.
 
 ## <a name="schedule-jobs"></a>Taken plannen
 
@@ -576,7 +575,7 @@ U kunt de coördinator gebruiken om een start, een eind en de frequentie van het
     > * `${coordTimezone}`: Coördinator taken bevinden zich in een vaste tijd zone zonder zomer tijd, meestal aangeduid met UTC. Deze tijd zone wordt aangeduid als de *Oozie-verwerkings tijd.*
     > * `${wfPath}`: Het pad naar het workflow.xml.
 
-2. Als u het bestand wilt opslaan, selecteert u **CTRL + X** , voert u **Y** in en selecteert u vervolgens **Enter** .
+2. Als u het bestand wilt opslaan, selecteert u **CTRL + X**, voert u **Y** in en selecteert u vervolgens **Enter**.
 
 3. Als u het bestand wilt kopiëren naar de werkmap voor deze taak, gebruikt u de volgende opdracht:
 
@@ -631,7 +630,7 @@ U kunt de coördinator gebruiken om een start, een eind en de frequentie van het
 
        Met deze waarden wordt de begin tijd ingesteld op 12:00 uur op 10 mei 2018 en de eind tijd op 12 mei 2018. Het interval voor het uitvoeren van deze taak is ingesteld op dagelijks. De frequentie is in minuten, dus 24 uur x 60 minuten = 1440 minuten. Ten slotte wordt de tijd zone ingesteld op UTC.
 
-5. Als u het bestand wilt opslaan, selecteert u **CTRL + X** , voert u **Y** in en selecteert u vervolgens **Enter** .
+5. Als u het bestand wilt opslaan, selecteert u **CTRL + X**, voert u **Y** in en selecteert u vervolgens **Enter**.
 
 6. Gebruik de volgende opdracht om de taak te verzenden en te starten:
 

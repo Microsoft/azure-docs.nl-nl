@@ -1,19 +1,16 @@
 ---
 title: 'Zelfstudie: Een end-to-end ETL-pijplijn maken om verkoopinzichten in Azure HDInsight af te leiden'
 description: Meer informatie over het gebruik van ETL-pijplijnen maken met Azure HDInsight voor het afleiden van inzichten op basis van verkoopgegevens met behulp van on-demand clusters van Spark en Power BI.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 04/15/2020
-ms.openlocfilehash: 1031c34a44a253c7458ef78c6371b88014e882ed
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 7d026d93ebe6f6a0bd9afbd277294d58d7a2a69b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746479"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932040"
 ---
 # <a name="tutorial-create-an-end-to-end-data-pipeline-to-derive-sales-insights-in-azure-hdinsight"></a>Zelfstudie: Een end-to-end gegevenspijplijn maken om verkoopinzichten in Azure HDInsight af te leiden
 
@@ -214,7 +211,7 @@ Als u de pijplijn wilt activeren, kunt u het volgende doen:
 
     of
 
-* Open de data factory en selecteer **Auteur & controle** . Activeer de pijplijn `IngestAndTransform` vanuit de portal. Zie [Apache Hadoop-clusters op aanvraag maken in HDInsight met behulp van Azure Data Factory](hdinsight-hadoop-create-linux-clusters-adf.md#trigger-a-pipeline) voor meer informatie over het activeren van pijplijnen via de portal.
+* Open de data factory en selecteer **Auteur & controle**. Activeer de pijplijn `IngestAndTransform` vanuit de portal. Zie [Apache Hadoop-clusters op aanvraag maken in HDInsight met behulp van Azure Data Factory](hdinsight-hadoop-create-linux-clusters-adf.md#trigger-a-pipeline) voor meer informatie over het activeren van pijplijnen via de portal.
 
 Om te controleren of de pijplijn is uitgevoerd, kunt u een van de volgende stappen uitvoeren:
 
@@ -252,19 +249,19 @@ Zie [dit artikel over het gebruik van Jupyter Notebook](/azure/hdinsight/spark/a
 
 1. Open Power BI Desktop.
 
-1. Ga in het menu naar **Gegevens ophalen** > **Meer...**  > **Azure** > **HDInsight Interactive Query** .
+1. Ga in het menu naar **Gegevens ophalen** > **Meer...**  > **Azure** > **HDInsight Interactive Query**.
 
-1. Selecteer **Verbinden** .
+1. Selecteer **Verbinden**.
 
-1. In het dialoogvenster **HDInsight Interactive Query** :
+1. In het dialoogvenster **HDInsight Interactive Query**:
     1. Geef in het tekstvak **Server** de naam van uw LLAP-cluster op in de indeling van `https://LLAPCLUSTERNAME.azurehdinsight.net`.
     1. Voer in het tekstvak **database** `default` in.
-    1. Selecteer **OK** .
+    1. Selecteer **OK**.
 
-1. In het dialoogvenster **AzureHive** :
+1. In het dialoogvenster **AzureHive**:
     1. Voer in het tekstvak **Gebruikersnaam** `admin` in.
     1. Voer in het tekstvak **Wachtwoord** `Thisisapassword1`in.
-    1. Selecteer **Verbinden** .
+    1. Selecteer **Verbinden**.
 
 1. Selecteer in **Navigator** `sales`en/of `sales_raw` om een voorbeeld van de gegevens weer te geven. Nadat de gegevens zijn geladen, kunt u experimenteren met het dashboard dat u wilt maken. Zie de volgende koppelingen om aan de slag te gaan met Power BI-dashboards:
 

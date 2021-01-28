@@ -2,19 +2,16 @@
 title: De juiste VM-grootte voor uw Azure HDInsight-cluster selecteren
 description: Meer informatie over het selecteren van de juiste VM-grootte voor uw HDInsight-cluster.
 keywords: VM-grootten, cluster grootte, cluster configuratie
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/09/2019
-ms.openlocfilehash: d347707b0f48314dd872bc3ad34ac624817d2937
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 51043f0a1009994528783a1b56ec5ccec68e99b3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535311"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931786"
 ---
 # <a name="selecting-the-right-vm-size-for-your-azure-hdinsight-cluster"></a>De juiste VM-grootte voor uw Azure HDInsight-cluster selecteren
 
@@ -41,9 +38,9 @@ Virtuele-machine families in azure zijn geoptimaliseerd voor verschillende use c
 | Type                     | Grootten           |    Beschrijving       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Instap niveau](../virtual-machines/sizes-general.md)          | A, Av2  | Beschikken over CPU-prestaties en geheugen configuraties die het meest geschikt zijn voor workloads op instap niveau, zoals ontwikkelen en testen. Ze zijn voordelig en bieden een goedkope optie om aan de slag te gaan met Azure. |
-| [Algemeen doel](../virtual-machines/sizes-general.md)          | D, DSv2, dv2  | Evenwichtige CPU-geheugenverhouding. Dit is ideaal voor testen en ontwikkelen, voor kleine tot middelgrote databases, en webservers met weinig tot gemiddeld verkeer. |
+| [Algemeen gebruik](../virtual-machines/sizes-general.md)          | D, DSv2, dv2  | Evenwichtige CPU-geheugenverhouding. Dit is ideaal voor testen en ontwikkelen, voor kleine tot middelgrote databases, en webservers met weinig tot gemiddeld verkeer. |
 | [Geoptimaliseerde rekenkracht](../virtual-machines/sizes-compute.md)        | F           | Hoge CPU-geheugenverhouding. Geschikt voor webservers met gemiddeld verkeer, netwerk apparaten, batch processen en toepassings servers.        |
-| [Geoptimaliseerd geheugen](../virtual-machines/sizes-memory.md)         | Esv3, Ev3  | Hoge geheugen-CPU-verhouding. Zeer geschikt voor relationele databaseservers, middelgrote tot grote caches, en analysefuncties in het geheugen.                 |
+| [Geoptimaliseerd voor geheugen](../virtual-machines/sizes-memory.md)         | Esv3, Ev3  | Hoge geheugen-CPU-verhouding. Zeer geschikt voor relationele databaseservers, middelgrote tot grote caches, en analysefuncties in het geheugen.                 |
 
 - Zie [prijzen voor hdinsight](https://azure.microsoft.com/pricing/details/hdinsight/)voor meer informatie over de prijzen van beschik bare VM-exemplaren in de regio's die door hdinsight worden ondersteund.
 

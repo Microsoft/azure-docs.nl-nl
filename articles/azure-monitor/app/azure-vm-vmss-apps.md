@@ -3,12 +3,12 @@ title: Prestaties bewaken op virtuele machines van Azure-Azure-toepassing Insigh
 description: Bewaking van toepassings prestaties voor Azure VM en virtuele-machine schaal sets van Azure. Grafiek belasting en respons tijd, afhankelijkheids informatie en waarschuwingen instellen voor prestaties.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: ed56bc88a9d2e8a9490331605cd4a72aef6930db
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 0ea005427348e5265867a9e7ee805b0e6aa202f2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677940"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933910"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>De Azure Monitor Application Insights-agent implementeren op virtuele machines van Azure en virtuele-machine schaal sets van Azure
 
@@ -49,7 +49,7 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor virtuele mac
 > Voordat u de Application Insights-Agent installeert, hebt u een connection string nodig. [Maak een nieuwe Application Insights resource](./create-new-resource.md) of kopieer de Connection String van een bestaande Application Insights-resource.
 
 > [!NOTE]
-> Nieuw in Power shell? Bekijk de [aan de slag-hand leiding](/powershell/azure/get-started-azureps?view=azps-2.5.0).
+> Nieuw in Power shell? Bekijk de [aan de slag-hand leiding](/powershell/azure/get-started-azureps).
 
 De Application Insights-agent installeren of bijwerken als een uitbrei ding voor virtuele Azure-machines
 ```powershell

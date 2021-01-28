@@ -1,18 +1,16 @@
 ---
 title: NSG-service tags (netwerk beveiligings groep) voor Azure HDInsight
 description: Gebruik HDInsight-service tags om binnenkomend verkeer naar uw cluster toe te staan vanuit de knoop punten status-en beheer Services, zonder IP-adressen aan uw Nsg's toe te voegen.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: 1a90bc6636dcb3aa81f09b0489850c1a95b3256d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d17d067b88add3006bc5c7fb10caa6b80a80a827
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022748"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931757"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>NSG-service tags voor Azure HDInsight
 
@@ -67,7 +65,7 @@ Als uw cluster zich bevindt in een regio die in deze tabel wordt vermeld, hoeft 
 | &nbsp; | VS - west 2 | HDInsight. WestUS2 |
 | &nbsp; | VS - west-centraal | HDInsight. WestCentralUS |
 | Canada | Canada - oost | HDInsight. CanadaEast |
-| Brazilië | Brazil South | HDInsight. BrazilSouth |
+| Brazilië | Brazilië - zuid | HDInsight. BrazilSouth |
 | Korea | Korea - centraal | HDInsight. KoreaCentral |
 | &nbsp; | Korea - zuid | HDInsight. KoreaSouth |
 | India | India - centraal | HDInsight. CentralIndia |
@@ -99,7 +97,7 @@ Als uw cluster bijvoorbeeld in de regio wordt gemaakt `East US 2` , moet u de vo
 | Land | Regio | Servicetag |
 | ---- | ---- | ---- |
 | Verenigde Staten | VS - oost 2 | HDInsight. EastUS2 |
-| &nbsp; | Central US | HDInsight. Centraalus |
+| &nbsp; | VS - centraal | HDInsight. Centraalus |
 | &nbsp; | NorthCentral | HDInsight. NorthCentralUS |
 | &nbsp; | VS - zuid-centraal | HDInsight. SouthCentralUS |
 | &nbsp; | VS - oost | HDInsight. Oostelijkeus |

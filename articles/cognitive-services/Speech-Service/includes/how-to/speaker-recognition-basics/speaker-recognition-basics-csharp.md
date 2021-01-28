@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: v-jawe
 ms.custom: references_regions
-ms.openlocfilehash: 2b5a34e8f3e7132a16ad3683b846d57e9ece2cb6
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-ms.translationtype: HT
+ms.openlocfilehash: f29fd56bb5e9f32b37f6dcf1f67edd325b58a07d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015466"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948416"
 ---
 In deze quickstart leert u basispatronen voor het ontwerp van Speaker Recognition met behulp van de Speech SDK, met inbegrip van:
 
@@ -51,7 +51,7 @@ using Microsoft.CognitiveServices.Speech.Audio;
 
 ## <a name="create-a-speech-configuration"></a>Een spraakconfiguratie maken
 
-Als u de Speech-service wilt aanroepen met behulp van de Speech SDK, moet u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet) maken. In dit voorbeeld maakt u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet) met behulp van een abonnementssleutel en regio. U schrijft ook wat eenvoudige standaardcode voor gebruik in de rest van dit artikel. U gaat de code voor verschillende aanpassingen wijzigen.
+Als u de Speech-service wilt aanroepen met behulp van de Speech SDK, moet u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig) maken. In dit voorbeeld maakt u een [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig) met behulp van een abonnementssleutel en regio. U schrijft ook wat eenvoudige standaardcode voor gebruik in de rest van dit artikel. U gaat de code voor verschillende aanpassingen wijzigen.
 
 De regio is ingesteld op `westus`, omdat dit de enige ondersteunde regio voor de service is.
 

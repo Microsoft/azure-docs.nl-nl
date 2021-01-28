@@ -2,19 +2,16 @@
 title: Clusters voor Azure Active Directory-integratie configureren
 titleSuffix: Azure HDInsight
 description: Meer informatie over het instellen en configureren van een HDInsight-cluster dat is geïntegreerd met Active Directory met behulp van Azure Active Directory Domain Services en de Enterprise Security Package functie.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seodec18,seoapr2020, contperf-fy21q2
 ms.date: 10/30/2020
-ms.openlocfilehash: c5c5db892f417f2e2ef3fde3535d806d39342327
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 15869a547ec5debee939c956d7495bfa58357555
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631547"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946924"
 ---
 # <a name="configure-hdinsight-clusters-for-azure-active-directory-integration-with-enterprise-security-package"></a>HDInsight-clusters configureren voor integratie met Azure Active Directory met Enterprise Security Package
 

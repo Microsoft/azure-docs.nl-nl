@@ -3,12 +3,12 @@ title: 'Quickstart: QnA Maker-clientbibliotheek voor .NET'
 description: In deze quickstart ziet u hoe u aan de slag gaat met de QnA Maker-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen.  Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen.
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: 6c2b5c8b9422b948083eca140ef202b228f11b38
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: e75fdbe49910f9d6fe4fe25a7996fccf415fdf35
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98792318"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947994"
 ---
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -23,7 +23,7 @@ Gebruik de QnA Maker-clientbibliotheek voor .NET voor het volgende:
  * Antwoord krijgen in een Knowledge Base
  * Een Knowledge Base verwijderen
 
-[Referentiedocumentatie](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Knowledge.QnAMaker) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker/2.0.1) | [C#-voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/QnAMaker/SDK-based-quickstart)
+[Referentiedocumentatie](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Knowledge.QnAMaker) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker/2.0.1) | [C#-voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/QnAMaker/SDK-based-quickstart)
 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/version-2)
 
@@ -37,7 +37,7 @@ Gebruik de QnA Maker-clientbibliotheek voor .NET voor het volgende:
  * Antwoord krijgen in een Knowledge Base
  * Een Knowledge Base verwijderen
 
-[Referentiedocumentatie](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Knowledge.QnAMaker) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker/3.0.0-preview.1) | [C#-voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/QnAMaker/Preview-sdk-based-quickstart)
+[Referentiedocumentatie](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Knowledge.QnAMaker) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker/3.0.0-preview.1) | [C#-voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/QnAMaker/Preview-sdk-based-quickstart)
 
 ---
 
@@ -177,13 +177,13 @@ Voeg in de methode `Main` van de toepassing variabelen en code toe, zoals wordt 
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
-In [QnA Maker](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet) worden twee verschillende objectmodellen gebruikt:
+In [QnA Maker](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker) worden twee verschillende objectmodellen gebruikt:
 * **[QnAMakerClient](#qnamakerclient-object-model)** is het object voor het maken, beheren, publiceren en downloaden van de Knowledge Base.
 * **[QnAMakerRuntime](#qnamakerruntimeclient-object-model)** is het object waarmee u een query op de Knowledge Base gaat uitvoeren met behulp van de GenerateAnswer-API en nieuwe voorgestelde vragen verzendt met behulp van de Train-API (als onderdeel van [actief leren](../concepts/active-learning-suggestions.md)).
 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/version-2)
 
-In [QnA Maker](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet) wordt het volgende objectmodel gebruikt:
+In [QnA Maker](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker) wordt het volgende objectmodel gebruikt:
 * **[QnAMakerClient](#qnamakerclient-object-model)** is het object waarmee u de Knowledge Base kunt maken, beheren, publiceren, downloaden en er query's op kunt uitvoeren.
 
 ---
@@ -192,23 +192,23 @@ In [QnA Maker](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?
 
 ### <a name="qnamakerclient-object-model"></a>QnAMakerClient-objectmodel
 
-De QnA Maker-ontwerpclient is een [QnAMakerClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient?view=azure-dotnet)-object dat bij Azure wordt geverifieerd met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
+De QnA Maker-ontwerpclient is een [QnAMakerClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient)-object dat bij Azure wordt geverifieerd met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
 
-Zodra de client is gemaakt, gebruikt u de eigenschap [Knowledge Base](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_QnAMakerClient_Knowledgebase) om uw Knowledge Base te maken, te beheren en te publiceren.
+Zodra de client is gemaakt, gebruikt u de eigenschap [Knowledge Base](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_QnAMakerClient_Knowledgebase) om uw Knowledge Base te maken, te beheren en te publiceren.
 
-Beheer uw Knowledge Base door een JSON-object te verzenden. Voor directe bewerkingen wordt via een methode doorgaans een JSON-object geretourneerd waarmee de status wordt aangegeven. Voor langlopende bewerkingen bestaat het antwoord uit de bewerkings-id. Roep de [client.Operations.GetDetailsAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.operationsextensions.getdetailsasync?view=azure-dotnet)-methode aan met de bewerkings-id om de [status van de aanvraag](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.operationstatetype?view=azure-dotnet) te bepalen.
+Beheer uw Knowledge Base door een JSON-object te verzenden. Voor directe bewerkingen wordt via een methode doorgaans een JSON-object geretourneerd waarmee de status wordt aangegeven. Voor langlopende bewerkingen bestaat het antwoord uit de bewerkings-id. Roep de [client.Operations.GetDetailsAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.operationsextensions.getdetailsasync)-methode aan met de bewerkings-id om de [status van de aanvraag](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.operationstatetype) te bepalen.
 
 ### <a name="qnamakerruntimeclient-object-model"></a>QnAMakerRuntimeClient-objectmodel
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
-De QnA Maker-voorspellingsclient voor voorspellingen is een [QnAMakerRuntimeClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerruntimeclient?view=azure-dotnet)-object dat bij Azure wordt geverifieerd met behulp van Microsoft.Rest.ServiceClientCredentials, die uw voorspellingsruntimesleutel bevat die wordt geretourneerd van de ontwerpclientaanroep, `client.EndpointKeys.GetKeys` nadat de Knowledge Base is gepubliceerd.
+De QnA Maker-voorspellingsclient voor voorspellingen is een [QnAMakerRuntimeClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerruntimeclient)-object dat bij Azure wordt geverifieerd met behulp van Microsoft.Rest.ServiceClientCredentials, die uw voorspellingsruntimesleutel bevat die wordt geretourneerd van de ontwerpclientaanroep, `client.EndpointKeys.GetKeys` nadat de Knowledge Base is gepubliceerd.
 
 Gebruik de methode [GenerateAnswer](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.runtimeextensions) om een antwoord te krijgen van de runtime van de query.
 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/version-2)
 
-Voor een beheerde resource van QnA Maker is geen **QnAMakerRuntimeClient**-object nodig. In plaats daarvan roept u de methode [QnAMakerClient.Knowledge Base](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase?view=azure-dotnet-preview).[GenerateAnswerAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.generateanswerasync?view=azure-dotnet-preview) aan.
+Voor een beheerde resource van QnA Maker is geen **QnAMakerRuntimeClient**-object nodig. In plaats daarvan roept u de methode [QnAMakerClient.Knowledge Base](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase).[GenerateAnswerAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.generateanswerasync) aan.
 
 ---
 
@@ -244,7 +244,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de QnA
 
 ## <a name="authenticate-the-client-for-authoring-the-knowledge-base"></a>De client voor het ontwerpen van de Knowledge Base verifiëren
 
-Instantieer een clientobject met uw sleutel en gebruik dit samen met uw resource om het eindpunt te maken waarmee u een [QnAMakerClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient?view=azure-dotnet) kunt maken met uw eindpunt en sleutel. Maak een [ServiceClientCredentials](/dotnet/api/microsoft.rest.serviceclientcredentials?view=azure-dotnet)-object.
+Instantieer een clientobject met uw sleutel en gebruik dit samen met uw resource om het eindpunt te maken waarmee u een [QnAMakerClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient) kunt maken met uw eindpunt en sleutel. Maak een [ServiceClientCredentials](/dotnet/api/microsoft.rest.serviceclientcredentials)-object.
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -258,11 +258,11 @@ Instantieer een clientobject met uw sleutel en gebruik dit samen met uw resource
 
 ## <a name="create-a-knowledge-base"></a>Een kennisdatabase maken
 
-In een Knowledge Base worden vraag-en-antwoordparen voor het [CreateKbDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.createkbdto?view=azure-dotnet)-object opgeslagen die afkomstig zijn uit drie bronnen:
+In een Knowledge Base worden vraag-en-antwoordparen voor het [CreateKbDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.createkbdto)-object opgeslagen die afkomstig zijn uit drie bronnen:
 
-* Gebruik voor **redactionele inhoud** het [QnADTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.qnadto?view=azure-dotnet)-object.
+* Gebruik voor **redactionele inhoud** het [QnADTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.qnadto)-object.
     * Als u metagegevens en vervolgprompts wilt gebruiken, kiest u de redactionele context, aangezien deze gegevens op het niveau van een afzonderlijk vraag-en-antwoordpaar wordt toegevoegd.
-* Gebruik voor **Bestanden** het [FileDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.filedto?view=azure-dotnet)-object. De FileDTO bevat de bestandsnaam en de openbare URL om het bestand te bereiken.
+* Gebruik voor **Bestanden** het [FileDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.filedto)-object. De FileDTO bevat de bestandsnaam en de openbare URL om het bestand te bereiken.
 * Gebruik voor **URL's** een lijst met tekenreeksen die openbaar beschikbare URL's vertegenwoordigen.
 
 De maakstap bevat ook eigenschappen voor de Knowledge Base:
@@ -270,7 +270,7 @@ De maakstap bevat ook eigenschappen voor de Knowledge Base:
 * `enableHierarchicalExtraction`: hiermee worden automatisch promptrelaties tussen geëxtraheerde vraag-en-antwoordparen gemaakt
 * `language`: wanneer u de eerste Knowledge Base van een resource maakt, stelt u de taal in die in de Azure Search-index moet worden gebruikt.
 
-Roep de methode [CreateAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.createasync?view=azure-dotnet) aan en geef de geretourneerde bewerkings-id door aan de methode [MonitorOperation](#get-status-of-an-operation) om de status op te vragen.
+Roep de methode [CreateAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.createasync) aan en geef de geretourneerde bewerkings-id door aan de methode [MonitorOperation](#get-status-of-an-operation) om de status op te vragen.
 
 Met de laatste regel van de volgende code wordt de Knowledge Base-id uit het antwoord van MonitorOperation geretourneerd.
 
@@ -288,7 +288,7 @@ Vergeet niet de [`MonitorOperation`](#get-status-of-an-operation)-functie op te 
 
 ## <a name="update-a-knowledge-base"></a>Een kennisdatabase bijwerken
 
-U kunt een Knowledge Base bijwerken door de Knowledge Base-id en een [UpdatekbOperationDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdto?view=azure-dotnet) met de DTO-objecten [add](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdtoadd?view=azure-dotnet), [update](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdtoupdate?view=azure-dotnet) en [delete](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdtodelete?view=azure-dotnet) door te geven aan de [UpdateAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.updateasync?view=azure-dotnet)-methode. Gebruik de [MonitorOperation](#get-status-of-an-operation)-methode om te bepalen of de update is geslaagd.
+U kunt een Knowledge Base bijwerken door de Knowledge Base-id en een [UpdatekbOperationDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdto) met de DTO-objecten [add](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdtoadd), [update](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdtoupdate) en [delete](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.updatekboperationdtodelete) door te geven aan de [UpdateAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.updateasync)-methode. Gebruik de [MonitorOperation](#get-status-of-an-operation)-methode om te bepalen of de update is geslaagd.
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -304,7 +304,7 @@ Vergeet niet de [`MonitorOperation`](#get-status-of-an-operation)-functie op te 
 
 ## <a name="download-a-knowledge-base"></a>Een Knowledge Base downloaden
 
-Gebruik de [DownloadAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.downloadasync?view=azure-dotnet)-methode om de database als een lijst van [QnADocumentsDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.qnadocumentsdto?view=azure-dotnet) te downloaden. Dit is _geen_ equivalent voor de exportbewerking vanuit de pagina **Instellingen** van de QnA Maker-portal omdat het resultaat van deze methode geen bestand is.
+Gebruik de [DownloadAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.downloadasync)-methode om de database als een lijst van [QnADocumentsDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.qnadocumentsdto) te downloaden. Dit is _geen_ equivalent voor de exportbewerking vanuit de pagina **Instellingen** van de QnA Maker-portal omdat het resultaat van deze methode geen bestand is.
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -318,7 +318,7 @@ Gebruik de [DownloadAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowled
 
 ## <a name="publish-a-knowledge-base"></a>Een kennisdatabase publiceren
 
-Publiceer de Knowledge Base met behulp van de [PublishAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.publishasync?view=azure-dotnet)-methode. Hiervoor wordt het momenteel opgeslagen en getrainde model gebruikt waarnaar door de Knowledge Base-id wordt verwezen en wordt dat model naar uw eindpunt gepubliceerd. Dit is een noodzakelijke stap om een query op uw Knowledge Base te kunnen uitvoeren.
+Publiceer de Knowledge Base met behulp van de [PublishAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.publishasync)-methode. Hiervoor wordt het momenteel opgeslagen en getrainde model gebruikt waarnaar door de Knowledge Base-id wordt verwezen en wordt dat model naar uw eindpunt gepubliceerd. Dit is een noodzakelijke stap om een query op uw Knowledge Base te kunnen uitvoeren.
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -336,7 +336,7 @@ Publiceer de Knowledge Base met behulp van de [PublishAsync](/dotnet/api/microso
 
 Zodra een Knowledge Base is gepubliceerd, hebt u de queryruntimesleutel nodig om een query uit te voeren op de runtime. Dit is niet dezelfde sleutel als de sleutel die u hebt gebruikt om het oorspronkelijke clientobject te maken.
 
-Gebruik de [EndpointKeys](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.endpointkeys.getkeyswithhttpmessagesasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_EndpointKeys_GetKeysWithHttpMessagesAsync_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String___System_Threading_CancellationToken_)-methode om de [EndpointKeysDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.endpointkeysdto?view=azure-dotnet)-klasse op te halen.
+Gebruik de [EndpointKeys](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.endpointkeys.getkeyswithhttpmessagesasync#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_EndpointKeys_GetKeysWithHttpMessagesAsync_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String___System_Threading_CancellationToken_)-methode om de [EndpointKeysDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.endpointkeysdto)-klasse op te halen.
 
 Gebruik een van de sleuteleigenschappen die in het object zijn geretourneerd om een query uit te voeren op de Knowledge Base.
 
@@ -346,7 +346,7 @@ Er is een runtimesleutel nodig om een query op uw Knowledge Base te kunnen uitvo
 
 ## <a name="authenticate-the-runtime-for-generating-an-answer"></a>De runtime voor het genereren van een antwoord verifiëren
 
-Maak een [QnAMakerRuntimeClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerruntimeclient?view=azure-dotnet) om een query uit te voeren op de Knowledge Base om een antwoord te genereren of een training uit te voeren via actief leren.
+Maak een [QnAMakerRuntimeClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerruntimeclient) om een query uit te voeren op de Knowledge Base om een antwoord te genereren of een training uit te voeren via actief leren.
 
 [!code-csharp[Authenticate the runtime](~/cognitive-services-quickstart-code/dotnet/QnAMaker/SDK-based-quickstart/Program.cs?name=AuthorizationQuery)]
 
@@ -356,7 +356,7 @@ Gebruik QnAMakerRuntimeClient om het volgende te doen:
 
 ## <a name="generate-an-answer-from-the-knowledge-base"></a>Een antwoord genereren uit de Knowledge Base
 
-Genereer een antwoord uit een gepubliceerde Knowledge Base met behulp van de [RuntimeClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_QnAMakerClient_Knowledgebase).[GenerateAnswerAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.runtimeextensions.generateanswerasync?view=azure-dotnet)-methode. Deze methode accepteert de Knowledge Base-id en de [QueryDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto?view=azure-dotnet). Krijg toegang tot aanvullende eigenschappen van de QueryDTO, zoals een [Top](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.top?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_Top) en [Context](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.context?view=azure-dotnet) die u in uw chatbot kunt gebruiken.
+Genereer een antwoord uit een gepubliceerde Knowledge Base met behulp van de [RuntimeClient](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_QnAMakerClient_Knowledgebase).[GenerateAnswerAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.runtimeextensions.generateanswerasync)-methode. Deze methode accepteert de Knowledge Base-id en de [QueryDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto). Krijg toegang tot aanvullende eigenschappen van de QueryDTO, zoals een [Top](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.top#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_Top) en [Context](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.context) die u in uw chatbot kunt gebruiken.
 
 [!code-csharp[Generate an answer from a knowledge base](~/cognitive-services-quickstart-code/dotnet/QnAMaker/SDK-based-quickstart/Program.cs?name=GenerateAnswer)]
 
@@ -364,7 +364,7 @@ Genereer een antwoord uit een gepubliceerde Knowledge Base met behulp van de [Ru
 
 ## <a name="generate-an-answer-from-the-knowledge-base"></a>Een antwoord genereren uit de Knowledge Base
 
-Genereer een antwoord uit een gepubliceerde Knowledge Base met behulp van de [QnAMakerClient.Knowledgebase](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase?view=azure-dotnet-preview).[GenerateAnswerAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.generateanswerasync?view=azure-dotnet-preview)-methode. Deze methode accepteert de Knowledge Base-id en de [QueryDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto?view=azure-dotnet-preview). Krijg toegang tot aanvullende eigenschappen van de QueryDTO, zoals een [Top](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.top?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_Top), [Context](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.context?view=azure-dotnet-preview#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_Context) en [AnswerSpanRequest](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.answerspanrequest?view=azure-dotnet-preview#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_AnswerSpanRequest) die u in uw chatbot kunt gebruiken.
+Genereer een antwoord uit een gepubliceerde Knowledge Base met behulp van de [QnAMakerClient.Knowledgebase](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.qnamakerclient.knowledgebase).[GenerateAnswerAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.generateanswerasync)-methode. Deze methode accepteert de Knowledge Base-id en de [QueryDTO](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto). Krijg toegang tot aanvullende eigenschappen van de QueryDTO, zoals een [Top](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.top#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_Top), [Context](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.context#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_Context) en [AnswerSpanRequest](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.querydto.answerspanrequest#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_QueryDTO_AnswerSpanRequest) die u in uw chatbot kunt gebruiken.
 
 [!code-csharp[Generate an answer from a knowledge base](~/cognitive-services-quickstart-code/dotnet/QnAMaker/Preview-sdk-based-quickstart/Program.cs?name=GenerateAnswer)]
 
@@ -374,7 +374,7 @@ Dit is een eenvoudig voorbeeld waarbij een query wordt uitgevoerd op de Knowledg
 
 ## <a name="delete-a-knowledge-base"></a>Een knowledge base verwijderen
 
-Verwijder de Knowledge Base met behulp van de [DeleteAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.deleteasync?view=azure-dotnet)-methode met een parameter van de Knowledge Base-id.
+Verwijder de Knowledge Base met behulp van de [DeleteAsync](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.knowledgebaseextensions.deleteasync)-methode met een parameter van de Knowledge Base-id.
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -388,7 +388,7 @@ Verwijder de Knowledge Base met behulp van de [DeleteAsync](/dotnet/api/microsof
 
 ## <a name="get-status-of-an-operation"></a>De status van een bewerking ophalen
 
-Sommige methoden, zoals maken en bijwerken, duren zo lang dat er niet wordt gewacht tot het proces is beëindigd maar een [bewerking](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.operation?view=azure-dotnet) wordt geretourneerd. Gebruik de [bewerkings-id](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.operation.operationid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_Operation_OperationId) uit de bewerking om een poll uit te voeren (met logica voor opnieuw proberen) om de status van de oorspronkelijke methode te bepalen.
+Sommige methoden, zoals maken en bijwerken, duren zo lang dat er niet wordt gewacht tot het proces is beëindigd maar een [bewerking](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.operation) wordt geretourneerd. Gebruik de [bewerkings-id](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker.models.operation.operationid#Microsoft_Azure_CognitiveServices_Knowledge_QnAMaker_Models_Operation_OperationId) uit de bewerking om een poll uit te voeren (met logica voor opnieuw proberen) om de status van de oorspronkelijke methode te bepalen.
 
 De methoden _loop_ en _Task.Delay_ in het volgende codeblok worden gebruikt om de logica voor nieuwe pogingen te simuleren. Deze moeten worden vervangen door uw eigen logica voor nieuwe pogingen.
 

@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 10/16/2020
 ms.custom: devx-track-java, cog-serv-seo-aug-2020
 ms.author: pafarley
-ms.openlocfilehash: b45873da5e34c77d3eae706975619df948d84874
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 147985ce5aff54f3784363720a576b7e46d6e647
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697978"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947770"
 ---
 Ga aan de slag met de Azure Content Moderator-clientbibliotheek voor Java. Voer deze stappen uit om het Maven-pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. 
 
@@ -27,7 +27,7 @@ Gebruik de Content Moderator-clientbibliotheek voor Java om:
 * Tekst modereren
 * Afbeeldingen modereren
 
-[Referentiedocumentatie](/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-contentmoderator) |[Artefact (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Voorbeelden](/samples/browse/?products=azure&term=content-moderator)
+[Referentiedocumentatie](/java/api/overview/azure/cognitiveservices/client/contentmoderator) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-contentmoderator) |[Artefact (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Voorbeelden](/samples/browse/?products=azure&term=content-moderator)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -116,10 +116,10 @@ De volgende klassen worden gebruikt voor enkele van de belangrijkste functies va
 
 |Naam|Beschrijving|
 |---|---|
-|[ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable)|Deze klasse is nodig voor alle Content Moderator-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken.|
-|[ImageModeration](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.imagemoderations?view=azure-java-stable)|Deze klasse biedt de functionaliteit voor het analyseren van afbeeldingen op inhoud voor volwassenen, persoonlijke gegevens of menselijke gezichten.|
-|[TextModerations](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.textmoderations?view=azure-java-stable)|Deze klasse biedt de functionaliteit voor het analyseren van tekst op taal, grove taal, fouten en persoonlijke gegevens.|
-|[Reviews](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.reviews?view=azure-java-stable)|Deze klasse biedt de functionaliteit van de Review-API's, waaronder de methoden voor het maken van taken, aangepaste werkstromen en menselijke beoordelingen.|
+|[ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient)|Deze klasse is nodig voor alle Content Moderator-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken.|
+|[ImageModeration](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.imagemoderations)|Deze klasse biedt de functionaliteit voor het analyseren van afbeeldingen op inhoud voor volwassenen, persoonlijke gegevens of menselijke gezichten.|
+|[TextModerations](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.textmoderations)|Deze klasse biedt de functionaliteit voor het analyseren van tekst op taal, grove taal, fouten en persoonlijke gegevens.|
+|[Reviews](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.reviews)|Deze klasse biedt de functionaliteit van de Review-API's, waaronder de methoden voor het maken van taken, aangepaste werkstromen en menselijke beoordelingen.|
 
 
 ## <a name="code-examples"></a>Codevoorbeelden
@@ -133,7 +133,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Con
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Maak in de `main`-methode van de toepassing een [ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable)-object met behulp van de eindpuntwaarde van uw abonnement en de abonnementssleutel.
+Maak in de `main`-methode van de toepassing een [ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient)-object met behulp van de eindpuntwaarde van uw abonnement en de abonnementssleutel.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_client)]
 
@@ -168,7 +168,7 @@ Sluit de `try`- en `catch`-instructie om de methode uit te voeren.
 
 ### <a name="set-up-sample-image"></a>Voorbeeldafbeelding instellen
 
-Maak in een nieuwe methode een **[BodyModelModel](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.models.bodymodelmodel?view=azure-java-stable)** -object met een opgegeven URL-tekenreeks die naar een afbeelding verwijst.
+Maak in een nieuwe methode een **[BodyModelModel](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.models.bodymodelmodel)** -object met een opgegeven URL-tekenreeks die naar een afbeelding verwijst.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_imagemod)]
 

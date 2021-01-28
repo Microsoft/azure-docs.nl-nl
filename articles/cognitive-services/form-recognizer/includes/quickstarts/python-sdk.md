@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: fb9d74da6030c430cce4a2a3c4c5e4299183ca15
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: e578cd08177eb9db03e5e4af4a134473a8484a41
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132275"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947763"
 ---
 > [!IMPORTANT]
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
@@ -146,7 +146,7 @@ Als u de inhoud van een bestand op een bepaalde URL wilt herkennen, gebruikt u d
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_getcontent)]
 
 > [!TIP]
-> U kunt ook inhoud ophalen uit lokale afbeeldingen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python)-methoden, bijvoorbeeld `begin_recognize_content`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook inhoud ophalen uit lokale afbeeldingen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_content`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ### <a name="output"></a>Uitvoer
 
@@ -178,7 +178,7 @@ In deze sectie wordt beschreven hoe u algemene velden in Amerikaanse ontvangstbe
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_receipts)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python)-methoden, bijvoorbeeld `begin_recognize_receipts`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_receipts`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ### <a name="output"></a>Uitvoer
 
@@ -217,7 +217,7 @@ In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visiteka
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_bc)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van visitekaartjes herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van visitekaartjes herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ---
 
@@ -235,7 +235,7 @@ In deze sectie wordt beschreven hoe u veelvoorkomende velden in verkoopfacturen 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_invoice)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python)-methoden, bijvoorbeeld `begin_recognize_invoices`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_invoices`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ---
 
@@ -345,7 +345,7 @@ U gebruikt de methode `begin_recognize_custom_forms_from_url`. De geretourneerde
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_analyze)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python)-methoden, bijvoorbeeld `begin_recognize_custom_forms`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_custom_forms`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 
 ### <a name="output"></a>Uitvoer

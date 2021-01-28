@@ -8,19 +8,19 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/27/2020
 ms.author: aahi
-ms.openlocfilehash: 92df45e38a926b4a791315f731e1d1cb078d5852
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: 3019881c42e0f7b64cc766b8b9e575eb60612432
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371623"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948342"
 ---
 Aan de slag met de clientbibliotheek van Bing Custom Search voor Python. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. Met de API van Bing Custom Search kunt u op maat gemaakte zoekervaringen zonder advertenties maken voor onderwerpen die u interesseren. De broncode voor dit voorbeeld vindt u op [GitHub](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/search/custom_search_samples.py).
 
 Gebruik de Bing Custom Search-clientbibliotheek voor Python om het volgende te doen:
 * Zoekresultaten zoeken op internet vanuit uw exemplaar van Bing Custom Search.
 
-[Referentiedocumentatie](/python/api/azure-cognitiveservices-search-customsearch/?view=azure-python) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-search-customsearch) | [Package (PyPi)](https://pypi.org/project/azure-cognitiveservices-search-customsearch/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/)
+[Referentiedocumentatie](/python/api/azure-cognitiveservices-search-customsearch/) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-search-customsearch) | [Package (PyPi)](https://pypi.org/project/azure-cognitiveservices-search-customsearch/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/)
 
 
 ## <a name="prerequisites"></a>Vereisten

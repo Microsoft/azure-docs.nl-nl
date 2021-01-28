@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 11/10/2020
 ms.author: pafarley
-ms.openlocfilehash: 88eb9a693efa872af681ab55b3f4381d27b260d1
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 72d0154a1522f2ebd909132d705939ab591dde5d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697891"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948526"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor Python. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -26,7 +26,7 @@ Gebruik de Face-clientbibliotheek voor Python voor het volgende:
 * [Een gezicht identificeren](#identify-a-face)
 * [Gezichten verifiëren](#verify-faces)
 
-[Referentiedocumentatie](/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Package (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Voorbeelden](/samples/browse/?products=azure&term=face)
+[Referentiedocumentatie](/python/api/azure-cognitiveservices-vision-face/) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Package (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Voorbeelden](/samples/browse/?products=azure&term=face)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -70,13 +70,13 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 |Naam|Beschrijving|
 |---|---|
-|[FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python) | Deze klasse vertegenwoordigt uw autorisatie voor het gebruik van de Face-service. U hebt deze nodig voor alle Face-functies. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken. |
-|[FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python)|Deze klasse verwerkt de basistaken voor detectie en herkenning die u met menselijke gezichten kunt uitvoeren. |
-|[DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python)|Deze klasse vertegenwoordigt alle gegevens die zijn gedetecteerd van één gezicht in een afbeelding. U kunt deze gebruiken om gedetailleerde informatie over het gezicht op te halen.|
-|[FaceListOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.facelistoperations?view=azure-python)|Deze klasse beheert de in de cloud opgeslagen **FaceList**-constructies, waarin een geassorteerde set gezichten wordt opgeslagen. |
-|[PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python)| Deze klasse beheert de in de cloud opgeslagen **Person**-constructies, die een set gezichten opslaan die tot één persoon behoren.|
-|[PersonGroupOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongroupoperations?view=azure-python)| Deze klasse beheert de in de cloud opgeslagen **PersonGroup**-constructies, die een set van verschillende **Person**-objecten opslaan. |
-|[ShapshotOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.snapshotoperations?view=azure-python)|Deze klasse beheert de functionaliteit van de momentopname. U kunt deze gebruiken om al uw op de cloud gebaseerde gezichtsgegevens tijdelijk op te slaan en deze gegevens te migreren naar een nieuw Azure-abonnement. |
+|[FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient) | Deze klasse vertegenwoordigt uw autorisatie voor het gebruik van de Face-service. U hebt deze nodig voor alle Face-functies. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken. |
+|[FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations)|Deze klasse verwerkt de basistaken voor detectie en herkenning die u met menselijke gezichten kunt uitvoeren. |
+|[DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface)|Deze klasse vertegenwoordigt alle gegevens die zijn gedetecteerd van één gezicht in een afbeelding. U kunt deze gebruiken om gedetailleerde informatie over het gezicht op te halen.|
+|[FaceListOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.facelistoperations)|Deze klasse beheert de in de cloud opgeslagen **FaceList**-constructies, waarin een geassorteerde set gezichten wordt opgeslagen. |
+|[PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations)| Deze klasse beheert de in de cloud opgeslagen **Person**-constructies, die een set gezichten opslaan die tot één persoon behoren.|
+|[PersonGroupOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongroupoperations)| Deze klasse beheert de in de cloud opgeslagen **PersonGroup**-constructies, die een set van verschillende **Person**-objecten opslaan. |
+|[ShapshotOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.snapshotoperations)|Deze klasse beheert de functionaliteit van de momentopname. U kunt deze gebruiken om al uw op de cloud gebaseerde gezichtsgegevens tijdelijk op te slaan en deze gegevens te migreren naar een nieuw Azure-abonnement. |
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -91,18 +91,18 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de Fac
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Instantieer een client met uw eindpunt en sleutel. Maak een [CognitiveServicesCredentials](/python/api/msrest/msrest.authentication.cognitiveservicescredentials?view=azure-python)-object met uw sleutel en gebruik het met uw eindpunt om een [FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python)-object te maken.
+Instantieer een client met uw eindpunt en sleutel. Maak een [CognitiveServicesCredentials](/python/api/msrest/msrest.authentication.cognitiveservicescredentials)-object met uw sleutel en gebruik het met uw eindpunt om een [FaceClient](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient)-object te maken.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_auth)]
 
 ## <a name="detect-faces-in-an-image"></a>Gezichten in een afbeelding detecteren
 
-De volgende code detecteert een gezicht in een externe afbeelding. Hiermee wordt de id van het gedetecteerde gezicht afgedrukt naar de console en wordt in het programmageheugen opgeslagen. Vervolgens worden de gezichten van een afbeelding met meerdere personen gedetecteerd en worden de bijbehorende id's ook naar de console afgedrukt. Door de parameters in de methode [detect_with_url](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python#detect-with-url-url--return-face-id-true--return-face-landmarks-false--return-face-attributes-none--recognition-model--recognition-01---return-recognition-model-false--detection-model--detection-01---custom-headers-none--raw-false----operation-config-) te wijzigen, kunt u verschillende gegevens retourneren met elk [DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface?view=azure-python)-object.
+De volgende code detecteert een gezicht in een externe afbeelding. Hiermee wordt de id van het gedetecteerde gezicht afgedrukt naar de console en wordt in het programmageheugen opgeslagen. Vervolgens worden de gezichten van een afbeelding met meerdere personen gedetecteerd en worden de bijbehorende id's ook naar de console afgedrukt. Door de parameters in de methode [detect_with_url](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations#detect-with-url-url--return-face-id-true--return-face-landmarks-false--return-face-attributes-none--recognition-model--recognition-01---return-recognition-model-false--detection-model--detection-01---custom-headers-none--raw-false----operation-config-) te wijzigen, kunt u verschillende gegevens retourneren met elk [DetectedFace](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.models.detectedface)-object.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_detect)]
 
 > [!TIP]
-> U kunt ook gezichten detecteren in een lokale afbeelding. Zie de [FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python)-methoden zoals **detect_with_stream**.
+> U kunt ook gezichten detecteren in een lokale afbeelding. Zie de [FaceOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations)-methoden zoals **detect_with_stream**.
 
 ### <a name="display-and-frame-faces"></a>Gezichten weergeven en kaderen
 
@@ -122,7 +122,7 @@ Voer eerst de code uit in de bovenstaande sectie ([Gezichten in een afbeelding d
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_detectgroup)]
 
-Voeg daarna het volgende codeblok toe om exemplaren van het eerste gezicht in de groep te zoeken. Raadpleeg de methode [find_similar](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python#find-similar-face-id--face-list-id-none--large-face-list-id-none--face-ids-none--max-num-of-candidates-returned-20--mode--matchperson---custom-headers-none--raw-false----operation-config-) voor meer informatie over hoe u dit gedrag kunt wijzigen.
+Voeg daarna het volgende codeblok toe om exemplaren van het eerste gezicht in de groep te zoeken. Raadpleeg de methode [find_similar](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations#find-similar-face-id--face-list-id-none--large-face-list-id-none--face-ids-none--max-num-of-candidates-returned-20--mode--matchperson---custom-headers-none--raw-false----operation-config-) voor meer informatie over hoe u dit gedrag kunt wijzigen.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_findsimilar)]
 
@@ -157,7 +157,7 @@ Met de volgende code worden uw afbeeldingen gesorteerd op basis van het voorvoeg
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_persongroup_assign)]
 
 > [!TIP]
-> U kunt ook een **PersonGroup** maken op basis van externe afbeeldingen waarnaar met een URL wordt verwezen. Zie de [PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations?view=azure-python)-methoden zoals **add_face_from_url**.
+> U kunt ook een **PersonGroup** maken op basis van externe afbeeldingen waarnaar met een URL wordt verwezen. Zie de [PersonGroupPersonOperations](/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.persongrouppersonoperations)-methoden zoals **add_face_from_url**.
 
 ### <a name="train-persongroup"></a>PersonGroup trainen
 
@@ -237,7 +237,7 @@ Als u in deze quickstart een **PersonGroup** hebt gemaakt en u deze wilt verwijd
 In deze quickstart hebt u geleerd hoe u de Face-clientbibliotheek voor Python gebruikt om basistaken voor gezichtsherkenning uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
 
 > [!div class="nextstepaction"]
-> [Verwijzing naar de Face-API (Python)](/python/api/azure-cognitiveservices-vision-face/?view=azure-python)
+> [Verwijzing naar de Face-API (Python)](/python/api/azure-cognitiveservices-vision-face/)
 
 * [Wat is de Face-service?](../../overview.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/Face/FaceQuickstart.py).

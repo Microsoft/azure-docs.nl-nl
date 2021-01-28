@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 09/14/2020
 ms.author: nitinme
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: cef5aaae58797e38745b3f5164c171581a005562
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: 080b9dac8dad099f2901f2b820da58501310471b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371969"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947328"
 ---
 [Insluitende lezer](https://www.onenote.com/learningtools) is een inclusief ontworpen hulpprogramma dat bewezen technieken implementeert om begrijpend lezen te verbeteren voor beginnende lezers, mensen die een taal willen leren en mensen met leerproblemen, zoals dyslexie. U kunt de Insluitende lezer in uw toepassingen gebruiken om tekst te isoleren voor het verbeteren van de focus, het weergeven van afbeeldingen voor veelgebruikte woorden, het markeren van bepaalde secties, het hardop voorlezen van geselecteerde tekst, het vertalen van woorden en zinsdelen in realtime en meer.
 
@@ -42,7 +42,7 @@ Maak een nieuw project in Visual Studio met behulp van de sjabloon voor ASP.NET 
 
 ### <a name="configure-authentication-values"></a>Verificatietypewaarden configureren
 
-Klik met de rechtermuisknop op het project in de _Solution Explorer_ en kies **Gebruikersgeheimen beheren**. Hiermee opent u een bestand met de naam _Secrets.json_. Dit bestand is niet ingecheckt in broncodebeheer. Klik [hier](/aspnet/core/security/app-secrets?preserve-view=true&tabs=windows&view=aspnetcore-3.1) voor meer informatie. Vervang de inhoud van _secrets.json_ met het volgende, waarbij u de waarden opgeeft die zijn verstrekt bij het maken van uw Insluitende lezer-resource.
+Klik met de rechtermuisknop op het project in de _Solution Explorer_ en kies **Gebruikersgeheimen beheren**. Hiermee opent u een bestand met de naam _Secrets.json_. Dit bestand is niet ingecheckt in broncodebeheer. Klik [hier](/aspnet/core/security/app-secrets?tabs=windows) voor meer informatie. Vervang de inhoud van _secrets.json_ met het volgende, waarbij u de waarden opgeeft die zijn verstrekt bij het maken van uw Insluitende lezer-resource.
 
 ```json
 {
@@ -55,7 +55,7 @@ Klik met de rechtermuisknop op het project in de _Solution Explorer_ en kies **G
 
 ### <a name="install-active-directory-nuget-package"></a>Active Directory NuGet-pakket installeren
 
-De volgende code gebruikt objecten uit het **Microsoft.IdentityModel.Clients.ActiveDirectory** -NuGet-pakket, zodat u een verwijzing naar dat pakket in uw project moet toevoegen.
+De volgende code gebruikt objecten uit het **Microsoft.IdentityModel.Clients.ActiveDirectory**-NuGet-pakket, zodat u een verwijzing naar dat pakket in uw project moet toevoegen.
 
 Open de NuGet Package Manager Console vanuit **Tools -> NuGet Package Manager -> Package Manager Console** en voer de volgende opdracht uit:
 
@@ -65,7 +65,7 @@ Open de NuGet Package Manager Console vanuit **Tools -> NuGet Package Manager ->
 
 ### <a name="update-the-controller-to-acquire-the-token"></a>Werk de controller bij om het token te verkrijgen 
 
-Open _Controllers\HomeController.cs_ en voeg de volgende code toe na de _met behulp van_ -instructies boven aan het bestand.
+Open _Controllers\HomeController.cs_ en voeg de volgende code toe na de _met behulp van_-instructies boven aan het bestand.
 
 ```csharp
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -214,7 +214,7 @@ Nu gaan we voorbeeldinhoud toevoegen aan deze web-app. Open _Views\Home\Index.cs
 </div>
 ```
 
-U ziet dat alle tekst een **taal** -kenmerk bevat waarmee de talen van de tekst worden beschreven. Dit kenmerk helpt de Insluitende lezer de relevante taal-en grammaticafuncties te bieden.
+U ziet dat alle tekst een **taal**-kenmerk bevat waarmee de talen van de tekst worden beschreven. Dit kenmerk helpt de Insluitende lezer de relevante taal-en grammaticafuncties te bieden.
 
 ## <a name="add-javascript-to-handle-launching-immersive-reader"></a>Javascript toevoegen aan de ingang voor het starten van Insluitende lezer
 

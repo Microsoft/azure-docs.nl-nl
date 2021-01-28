@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 972609b0a1b2249c9da9ab6da9309c0950e76734
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: a01afdcb54ff124bf4141d6ceb34b77303bef104
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697886"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947298"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -25,7 +25,7 @@ Gebruik de Face-clientbibliotheek voor .NET voor het volgende:
 * [Een groep personen (PersonGroup) maken](#create-a-person-group)
 * [Een gezicht identificeren](#identify-a-face)
 
-[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.Face) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.6.0-preview.1) | [Voorbeelden](/samples/browse/?products=azure&term=face)
+[Referentiedocumentatie](/dotnet/api/overview/azure/cognitiveservices/client/faceapi) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.Face) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.6.0-preview.1) | [Voorbeelden](/samples/browse/?products=azure&term=face)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -110,12 +110,12 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 |Naam|Beschrijving|
 |---|---|
-|[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) | Deze klasse vertegenwoordigt uw autorisatie voor het gebruik van de Face-service. U hebt deze nodig voor alle Face-functies. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken. |
-|[FaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperations?view=azure-dotnet)|Deze klasse verwerkt de basistaken voor detectie en herkenning die u met menselijke gezichten kunt uitvoeren. |
-|[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet)|Deze klasse vertegenwoordigt alle gegevens die zijn gedetecteerd van één gezicht in een afbeelding. U kunt deze gebruiken om gedetailleerde informatie over het gezicht op te halen.|
-|[FaceListOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet)|Deze klasse beheert de in de cloud opgeslagen **FaceList**-constructies, waarin een geassorteerde set gezichten wordt opgeslagen. |
-|[PersonGroupPersonExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongrouppersonextensions?view=azure-dotnet)| Deze klasse beheert de in de cloud opgeslagen **Person**-constructies, die een set gezichten opslaan die tot één persoon behoren.|
-|[PersonGroupOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet)| Deze klasse beheert de in de cloud opgeslagen **PersonGroup**-constructies, die een set van verschillende **Person**-objecten opslaan. |
+|[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient) | Deze klasse vertegenwoordigt uw autorisatie voor het gebruik van de Face-service. U hebt deze nodig voor alle Face-functies. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken. |
+|[FaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperations)|Deze klasse verwerkt de basistaken voor detectie en herkenning die u met menselijke gezichten kunt uitvoeren. |
+|[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface)|Deze klasse vertegenwoordigt alle gegevens die zijn gedetecteerd van één gezicht in een afbeelding. U kunt deze gebruiken om gedetailleerde informatie over het gezicht op te halen.|
+|[FaceListOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations)|Deze klasse beheert de in de cloud opgeslagen **FaceList**-constructies, waarin een geassorteerde set gezichten wordt opgeslagen. |
+|[PersonGroupPersonExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongrouppersonextensions)| Deze klasse beheert de in de cloud opgeslagen **Person**-constructies, die een set gezichten opslaan die tot één persoon behoren.|
+|[PersonGroupOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations)| Deze klasse beheert de in de cloud opgeslagen **PersonGroup**-constructies, die een set van verschillende **Person**-objecten opslaan. |
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -129,7 +129,7 @@ De onderstaande codefragmenten laten zien hoe u de volgende taken kunt uitvoeren
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Instantieer in een nieuwe methode een client met uw eindpunt en sleutel. Maak een **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.apikeyserviceclientcredentials?view=azure-dotnet)** -object met uw sleutel en maak hiermee en met uw eindpunt een **[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet)** -object.
+Instantieer in een nieuwe methode een client met uw eindpunt en sleutel. Maak een **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.apikeyserviceclientcredentials)** -object met uw sleutel en maak hiermee en met uw eindpunt een **[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient)** -object.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_auth)]
 
@@ -147,16 +147,16 @@ Definieer in de **Main**-methode tekenreeksen die verwijzen naar de verschillend
 
 ### <a name="get-detected-face-objects"></a>Gedetecteerde face-objecten ophalen
 
-Maak een nieuwe methode voor het detecteren van gezichten. Met de `DetectFaceExtract`-methode worden drie van de afbeeldingen bij de opgegeven URL verwerkt en wordt een lijst met **[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet)** -objecten in het programmageheugen gemaakt. In de lijst met **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet)** -waarden wordt aangegeven welke functies moeten worden geëxtraheerd. 
+Maak een nieuwe methode voor het detecteren van gezichten. Met de `DetectFaceExtract`-methode worden drie van de afbeeldingen bij de opgegeven URL verwerkt en wordt een lijst met **[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface)** -objecten in het programmageheugen gemaakt. In de lijst met **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype)** -waarden wordt aangegeven welke functies moeten worden geëxtraheerd. 
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_detect)]
 
 > [!TIP]
-> U kunt ook gezichten detecteren in een lokale afbeelding. Zie de [IFaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ifaceoperations?view=azure-dotnet)-methoden, bijvoorbeeld **DetectWithStreamAsync**.
+> U kunt ook gezichten detecteren in een lokale afbeelding. Zie de [IFaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ifaceoperations)-methoden, bijvoorbeeld **DetectWithStreamAsync**.
 
 ### <a name="display-detected-face-data"></a>Gedetecteerde gezichtsgegevens weergeven
 
-De rest van de methode `DetectFaceExtract` parseert en drukt de kenmerkgegevens af voor elk gedetecteerd gezicht. Elk kenmerk moet afzonderlijk worden opgegeven in de oorspronkelijke gezichtsdetectie-API-aanroep (in de lijst **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet)** ). De volgende code verwerkt elk kenmerk, maar u zult waarschijnlijk slechts één of enkele gebruiken.
+De rest van de methode `DetectFaceExtract` parseert en drukt de kenmerkgegevens af voor elk gedetecteerd gezicht. Elk kenmerk moet afzonderlijk worden opgegeven in de oorspronkelijke gezichtsdetectie-API-aanroep (in de lijst **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype)** ). De volgende code verwerkt elk kenmerk, maar u zult waarschijnlijk slechts één of enkele gebruiken.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_detect_parse)]
 
@@ -205,7 +205,7 @@ Voeg vervolgens de volgende code toe om een **Person**-object te maken voor elke
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_persongroup_create)]
 
 > [!TIP]
-> U kunt ook een **PersonGroup** maken op basis van lokale afbeeldingen. Zie de [IPersonGroupPerson](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ipersongroupperson?view=azure-dotnet)-methoden, bijvoorbeeld **AddFaceFromStreamAsync**.
+> U kunt ook een **PersonGroup** maken op basis van lokale afbeeldingen. Zie de [IPersonGroupPerson](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ipersongroupperson)-methoden, bijvoorbeeld **AddFaceFromStreamAsync**.
 
 ### <a name="train-the-persongroup"></a>De PersonGroup trainen
 
@@ -264,7 +264,7 @@ Definieer de verwijderingsmethode met de volgende code:
 In deze quickstart hebt u geleerd hoe u de Face-clientbibliotheek voor .NET gebruikt om eenvoudige gezichtsherkenningstaken uit te voeren. Bestudeer daarna het naslagmateriaal bij de Face-API voor meer informatie.
 
 > [!div class="nextstepaction"]
-> [Verwijzing naar de Face-API (.NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)
+> [Verwijzing naar de Face-API (.NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)
 
 * [Wat is de Face-service?](../../overview.md)
 * De broncode voor dit voorbeeld is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/Face/FaceQuickstart.cs).

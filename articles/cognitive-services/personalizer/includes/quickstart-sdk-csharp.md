@@ -8,14 +8,14 @@ ms.subservice: personalizer
 ms.topic: include
 ms.custom: cog-serv-seo-aug-2020
 ms.date: 08/25/2020
-ms.openlocfilehash: ffe7988dbdcf685ec98b42ea3b8272cd0a004aa5
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: c43bd1cbea65d9d6a651488500a85760a441acd2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371749"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947133"
 ---
-[Referentiedocumentatie](/dotnet/api/Microsoft.Azure.CognitiveServices.Personalizer?view=azure-dotnet-preview) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Personalizer) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Personalizer/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/Personalizer)
+[Referentiedocumentatie](/dotnet/api/Microsoft.Azure.CognitiveServices.Personalizer) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Personalizer) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Personalizer/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/Personalizer)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -78,11 +78,11 @@ using System.Linq;
 
 ## <a name="object-model"></a>Objectmodel
 
-De Personalizer-client is een [PersonalizerClient](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclient?view=azure-dotnet)-object dat wordt geverifieerd bij Azure met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
+De Personalizer-client is een [PersonalizerClient](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclient)-object dat wordt geverifieerd bij Azure met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
 
-Als u het beste item van de inhoud wilt hebben, maakt u een [RankRequest](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.models.rankrequest?view=azure-dotnet-preview) en geeft u dit door aan de methode [client.Rank](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclientextensions.rank?view=azure-dotnet-preview). Met de methode Rank wordt een RankResponse geretourneerd.
+Als u het beste item van de inhoud wilt hebben, maakt u een [RankRequest](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.models.rankrequest) en geeft u dit door aan de methode [client.Rank](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclientextensions.rank). Met de methode Rank wordt een RankResponse geretourneerd.
 
-Als u een beloningsscore naar een Personalizer wilt verzenden, maakt u een [RewardRequest](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.models.rewardrequest?view=azure-dotnet-preview) en geeft u dit door aan de methode [client.Reward](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclientextensions.reward?view=azure-dotnet-preview).
+Als u een beloningsscore naar een Personalizer wilt verzenden, maakt u een [RewardRequest](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.models.rewardrequest) en geeft u dit door aan de methode [client.Reward](/dotnet/api/microsoft.azure.cognitiveservices.personalizer.personalizerclientextensions.reward).
 
 Het bepalen van de beloningsscore in deze quickstart is triviaal. In een productiesysteem kan de bepaling wat van invloed is op de [beloningsscore](../concept-rewards.md) en in welke mate, een complex proces zijn, dat u in de loop van de tijd zou kunnen wijzigen. Deze ontwerpbeslissing moet een van de belangrijkste beslissingen in uw Personalizer-architectuur zijn.
 

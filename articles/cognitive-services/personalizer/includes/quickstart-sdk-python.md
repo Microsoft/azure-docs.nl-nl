@@ -8,14 +8,14 @@ ms.subservice: personalizer
 ms.topic: include
 ms.custom: cog-serv-seo-aug-2020
 ms.date: 08/25/2020
-ms.openlocfilehash: 791e46e73ad7292528f0197f8424d44486ea9795
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: b21f78a46a0f8a9d5850212bdc6375add93ee43a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371567"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948132"
 ---
-[Referentiedocumentatie](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer?view=azure-python) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-personalizer) | [Package (pypi)](https://pypi.org/project/azure-cognitiveservices-personalizer/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/Personalizer)
+[Referentiedocumentatie](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-personalizer) | [Package (pypi)](https://pypi.org/project/azure-cognitiveservices-personalizer/) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/Personalizer)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -56,11 +56,11 @@ endpoint = "<paste-your-personalizer-endpoint-here>"
 
 ## <a name="object-model"></a>Objectmodel
 
-De Personalizer-client is een [PersonalizerClient](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer.personalizer_client.personalizerclient?view=azure-python)-object dat wordt geverifieerd bij Azure met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
+De Personalizer-client is een [PersonalizerClient](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer.personalizer_client.personalizerclient)-object dat wordt geverifieerd bij Azure met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
 
-Als u het beste item van de inhoud wilt hebben, maakt u een [RankRequest](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer.models.rankrequest?view=azure-python) en geeft u dit door aan de methode client.Rank. Met de methode Rank wordt een RankResponse geretourneerd.
+Als u het beste item van de inhoud wilt hebben, maakt u een [RankRequest](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer.models.rankrequest) en geeft u dit door aan de methode client.Rank. Met de methode Rank wordt een RankResponse geretourneerd.
 
-Als u een beloningsscore naar Personalizer wilt verzenden, stelt u de gebeurtenis-id en de beloningsscore (waarde) in die u wilt verzenden naar de methode [Reward](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer.operations.events_operations.eventsoperations?view=azure-python#reward-event-id--value--custom-headers-none--raw-false----operation-config-) op de EventOperations-klasse.
+Als u een beloningsscore naar Personalizer wilt verzenden, stelt u de gebeurtenis-id en de beloningsscore (waarde) in die u wilt verzenden naar de methode [Reward](/python/api/azure-cognitiveservices-personalizer/azure.cognitiveservices.personalizer.operations.events_operations.eventsoperations#reward-event-id--value--custom-headers-none--raw-false----operation-config-) op de EventOperations-klasse.
 
 Het bepalen van de belonings in deze quickstart is triviaal. In een productiesysteem kan de bepaling wat van invloed is op de [beloningsscore](../concept-rewards.md) en in welke mate, een complex proces zijn, dat u in de loop van de tijd zou kunnen wijzigen. Dit moet een van de belangrijkste ontwerpbeslissingen in uw Personalizer-architectuur zijn.
 

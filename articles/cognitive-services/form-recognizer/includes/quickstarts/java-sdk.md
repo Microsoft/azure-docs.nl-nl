@@ -10,17 +10,17 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 01ac7c01d449cfe794fcdb6c26a8162d3cffd695
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 3923f3d0a65412c23d5fc32d7a4cea8648686df4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98698106"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948634"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
 
-[Referentiedocumentatie](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
+[Referentiedocumentatie](/java/api/overview/azure/ai-formrecognizer-readme) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -209,7 +209,7 @@ Als u de inhoud van een bestand op een bepaalde URL wilt herkennen, gebruikt u d
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_getcontent_call)]
 
 > [!TIP]
-> U kunt ook inhoud ophalen uit een lokaal bestand. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable)-methoden, zoals **beginRecognizeContent**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook inhoud ophalen uit een lokaal bestand. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient)-methoden, zoals **beginRecognizeContent**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling **FormPage**-objecten: één voor elke pagina in het ingediende document. Met de volgende code worden deze objecten doorlopen en worden de uitgepakte sleutel-/waardeparen en tabelgegevens afgedrukt.
 
@@ -242,7 +242,7 @@ Om ontvangstbewijzen te herkennen vanuit een URI, gebruikt u de methode **beginR
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_call)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable)-methoden, zoals **beginRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient)-methoden, zoals **beginRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling **RecognizedReceipt**-objecten: één voor elke pagina in het ingediende document. In het volgende codeblok worden de ontvangstbewijzen doorlopen en worden de details ervan naar de console afgedrukt.
 
@@ -285,7 +285,7 @@ Gebruik de methode `beginRecognizeBusinessCardsFromUrl` om visitekaartjes te her
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_call)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van visitekaartjes herkennen. Zie de methoden [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), zoals **beginRecognizeBusinessCards**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van visitekaartjes herkennen. Zie de methoden [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), zoals **beginRecognizeBusinessCards**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één voor elke kaart in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
 
@@ -309,7 +309,7 @@ Gebruik de methode `beginRecognizeInvoicesFromUrl` om visitekaartjes te herkenne
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_invoice_call)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de methoden [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), zoals **beginRecognizeInvoices**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de methoden [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), zoals **beginRecognizeInvoices**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één voor elke factuur in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
 
@@ -406,7 +406,7 @@ U gebruikt de methode **beginRecognizeCustomFormsFromUrl**.
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_analyze_call)]
 
 > [!TIP]
-> U kunt ook een lokaal bestand analyseren. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable)-methoden, zoals **beginRecognizeCustomForms**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook een lokaal bestand analyseren. Zie de [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient)-methoden, zoals **beginRecognizeCustomForms**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één voor elke pagina in het ingediende document. Met de volgende code worden de resultaten van de analyse naar de console afgedrukt. Alle herkende velden en bijbehorende waarden worden afgedrukt, samen met een betrouwbaarheidsscore.
 

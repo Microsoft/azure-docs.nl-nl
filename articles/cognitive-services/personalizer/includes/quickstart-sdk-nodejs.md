@@ -8,14 +8,14 @@ ms.subservice: personalizer
 ms.topic: include
 ms.custom: cog-serv-seo-aug-2020
 ms.date: 08/27/2020
-ms.openlocfilehash: d2b0d4435f681ce6dedea7cace929a03e6782bce
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: f050ed5aff63d7e75c45505309b2cf7d18e9ea1a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371680"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947508"
 ---
-[Referentiedocumentatie](/javascript/api/@azure/cognitiveservices-personalizer/?view=azure-node-latest) |[Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-personalizer) | [Pakket (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-personalizer) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/javascript/Personalizer)
+[Referentiedocumentatie](/javascript/api/@azure/cognitiveservices-personalizer/) |[Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-personalizer) | [Pakket (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-personalizer) | [Voorbeelden](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/javascript/Personalizer)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -77,11 +77,11 @@ npm install @azure/ms-rest-azure-js @azure/ms-rest-js readline-sync uuid --save
 
 ## <a name="object-model"></a>Objectmodel
 
-De Personalizer-client is een [PersonalizerClient](/javascript/api/@azure/cognitiveservices-personalizer/personalizerclient?view=azure-node-latest)-object dat wordt geverifieerd bij Azure met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
+De Personalizer-client is een [PersonalizerClient](/javascript/api/@azure/cognitiveservices-personalizer/personalizerclient)-object dat wordt geverifieerd bij Azure met behulp van Microsoft.Rest.ServiceClientCredentials, dat uw sleutel bevat.
 
-Als u het beste item van de inhoud wilt hebben, maakt u een [RankRequest](/javascript/api/@azure/cognitiveservices-personalizer/rankrequest?view=azure-node-latest) en geeft u dit door aan de methode [client.Rank](/javascript/api/@azure/cognitiveservices-personalizer/personalizerclient?view=azure-node-latest#rank-rankrequest--msrest-requestoptionsbase-). Met de methode Rank wordt een RankResponse geretourneerd.
+Als u het beste item van de inhoud wilt hebben, maakt u een [RankRequest](/javascript/api/@azure/cognitiveservices-personalizer/rankrequest) en geeft u dit door aan de methode [client.Rank](/javascript/api/@azure/cognitiveservices-personalizer/personalizerclient#rank-rankrequest--msrest-requestoptionsbase-). Met de methode Rank wordt een RankResponse geretourneerd.
 
-Als u een belonings naar een Personalizer wilt verzenden, maakt u een [RewardRequest](/javascript/api/@azure/cognitiveservices-personalizer/rewardrequest?view=azure-node-latest) en geeft u dit door aan de methode [Reward](/javascript/api/@azure/cognitiveservices-personalizer/events?view=azure-node-latest#reward-string--rewardrequest--servicecallback-void--) in de Gebeurtenisklasse.
+Als u een belonings naar een Personalizer wilt verzenden, maakt u een [RewardRequest](/javascript/api/@azure/cognitiveservices-personalizer/rewardrequest) en geeft u dit door aan de methode [Reward](/javascript/api/@azure/cognitiveservices-personalizer/events#reward-string--rewardrequest--servicecallback-void--) in de Gebeurtenisklasse.
 
 Het bepalen van de belonings in deze quickstart is triviaal. In een productiesysteem kan de bepaling wat van invloed is op de [beloningsscore](../concept-rewards.md) en in welke mate, een complex proces zijn, dat u in de loop van de tijd zou kunnen wijzigen. Dit moet een van de belangrijkste ontwerpbeslissingen in uw Personalizer-architectuur zijn.
 

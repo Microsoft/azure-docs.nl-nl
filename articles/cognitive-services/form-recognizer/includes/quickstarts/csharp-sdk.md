@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 9befe33f70341f218c3339a13dcc1d31dc452d34
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: 93282e79321f8999ddf8c737ebcb5ea76fbf6e02
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132276"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947759"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -198,7 +198,7 @@ Als u de inhoud van een bestand op een bepaalde URL wilt herkennen, gebruikt u d
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_getcontent_call)]
 
 > [!TIP]
-> U kunt ook inhoud ophalen uit een lokaal bestand. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet)-methoden, bijvoorbeeld **StartRecognizeContent**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook inhoud ophalen uit een lokaal bestand. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeContent**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 Met de rest van deze taak worden de inhoudsgegevens afgedrukt naar de console.
 
@@ -248,7 +248,7 @@ Om ontvangstbewijzen te herkennen vanuit een URL, gebruikt u de methode `StartRe
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_receipt_call)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet)-methoden, bijvoorbeeld **StartRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling `RecognizedReceipt`-objecten: één voor elke pagina in het ingediende document. Met de volgende code wordt het ontvangstbewijs op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
 
@@ -315,7 +315,7 @@ Gebruik de methode `StartRecognizeBusinessCardsFromUriAsync` om visitekaartjes t
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_call)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de methoden [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), zoals **StartRecognizeBusinessCards**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de methoden [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), zoals **StartRecognizeBusinessCards**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke kaart in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
 
@@ -339,7 +339,7 @@ Gebruik de methode `StartRecognizeInvoicesFromUriAsync` om facturen te herkennen
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_invoice_call)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet)-methoden, bijvoorbeeld **StartRecognizeInvoices**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeInvoices**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke factuur in het ingediende document. Met de volgende code wordt de factuur op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
 
@@ -493,7 +493,7 @@ U gebruikt de methode `StartRecognizeCustomFormsFromUri`.
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_analyze)]
 
 > [!TIP]
-> U kunt ook een lokaal bestand analyseren. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet)-methoden, bijvoorbeeld **StartRecognizeCustomForms**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook een lokaal bestand analyseren. Zie de [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld **StartRecognizeCustomForms**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
 
 De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke pagina in het ingediende document. Met de volgende code worden de resultaten van de analyse op de console weergegeven. Alle herkende velden en bijbehorende waarden worden afgedrukt, samen met een betrouwbaarheidsscore.
 

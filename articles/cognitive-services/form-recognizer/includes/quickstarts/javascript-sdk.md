@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 8ca42367db5607faedb4497f0a0fb0ca160464bc
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: a4d29dfb2a57dde2bb21244b2e5335f1a8ea1fcf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697947"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947972"
 ---
 > [!IMPORTANT]
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
@@ -134,7 +134,7 @@ U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te
 
 
 > [!TIP]
-> U kunt ook inhoud ophalen uit een lokaal bestand. Zie de [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest)-methoden, zoals **beginRecognizeContent**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook inhoud ophalen uit een lokaal bestand. Zie de [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient)-methoden, zoals **beginRecognizeContent**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ### <a name="output"></a>Uitvoer
 
@@ -161,7 +161,7 @@ Om ontvangstbewijzen te herkennen vanuit een URI, gebruikt u de methode `beginRe
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_receipts)]
 
 > [!TIP]
-> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest)-methoden, zoals **beginRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient)-methoden, zoals **beginRecognizeReceipts**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ### <a name="output"></a>Uitvoer
 
@@ -281,7 +281,7 @@ U gebruikt de methode `beginRecognizeCustomFormsFromUrl`. De geretourneerde waar
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_analyze)]
 
 > [!TIP]
-> U kunt ook lokale bestanden analyseren. Zie de [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest)-methoden, zoals **beginRecognizeCustomForms**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale bestanden analyseren. Zie de [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient)-methoden, zoals **beginRecognizeCustomForms**. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 
 ### <a name="output"></a>Uitvoer

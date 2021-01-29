@@ -8,14 +8,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: troubleshooting
-ms.date: 08/20/2020
+ms.date: 01/28/2021
 ms.author: v-miegge
-ms.openlocfilehash: 85f6e64cb20a14b9cd03776d138872d6a4191535
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 015e6058236190a04df152573621f0e57030d23b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344484"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054158"
 ---
 # <a name="troubleshoot-issues-when-you-sign-up-for-a-new-account-in-azure-portal-or-azure-account-center"></a>Problemen oplossen wanneer u een nieuw account registreert in de Azure-portal of in het Azure-accountcentrum
 
@@ -139,19 +139,18 @@ Ga akkoord met de overeenkomst.
 
 ## <a name="other-issues"></a>Overige problemen
 
-### <a name="cant-activate-azure-benefit-plan-like-msdn-bizspark-bizsparkplus-or-mpn"></a>Kan het Azure-vergoedingsplan, bijvoorbeeld MSDN, BizSpark, BizSparkPlus of MPN, niet activeren
+### <a name="cant-activate-azure-benefit-plan-like-visual-studio-bizspark-bizsparkplus-or-mpn"></a>Kan het Azure-vergoedings plan niet activeren, zoals Visual Studio, BizSpark, BizSparkPlus of MPN
 
 Controleer of u de juiste aanmeldingsreferenties gebruikt. Controleer vervolgens het voordeelprogramma om na te gaan of u wel in aanmerking komt.
-- MSDN
-  - Controleer uw geschiktheidsstatus op uw [MSDN-accountpagina](https://msdn.microsoft.com/subscriptions/manage/default.aspx).
-  - Als u uw status niet kunt controleren, neemt u contact op met de [klantenservicecenters voor MSDN-abonnementen](/previous-versions/mappoint/aa493452(v=msdn.10)).
+- Visual Studio
+  - Controleer uw geschiktheids status op de pagina van uw [Visual Studio-account](https://my.visualstudio.com/Benefits).
+  - Als u uw status niet kunt verifiëren, neemt u contact op met [Visual Studio Subscription ondersteuning](https://visualstudio.microsoft.com/subscriptions/support/).
 - Microsoft for Startups
   - Meld u aan bij de [Microsoft for Startups-portal](https://startups.microsoft.com/#start-two) om uw geschiktheidsstatus voor Microsoft te verifiëren voor opstarten.
   - Als u uw status niet kunt verifiëren, kunt u ondersteuning krijgen via de [Microsoft for Startups-forums](https://www.microsoftpartnercommunity.com/t5/Microsoft-for-Startups/ct-p/Microsoft_Startups).
 - MPN
   - Meld u aan bij de [MPN-portal](https://mspartner.microsoft.com/Pages/Locale.aspx) om uw geschiktheidsstatus te controleren. Als u over de juiste [competenties voor het cloudplatform](https://mspartner.microsoft.com/pages/membership/cloud-platform-competency.aspx) beschikt, komt u mogelijk in aanmerking voor extra voordelen.
   - Als u uw status niet kunt verifiëren, neemt u contact op met de [MPN-ondersteuning](https://mspartner.microsoft.com/Pages/Support/Premium/contact-support.aspx).
-
 
 ### <a name="cant-activate-new-azure-in-open-subscription"></a>Kan geen nieuw Azure In Open-abonnement activeren
 

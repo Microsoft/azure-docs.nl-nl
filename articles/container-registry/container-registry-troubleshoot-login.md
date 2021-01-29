@@ -3,12 +3,12 @@ title: Problemen met aanmelding bij REGI ster oplossen
 description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen bij het aanmelden bij een Azure container Registry
 ms.topic: article
 ms.date: 08/11/2020
-ms.openlocfilehash: 5499c64bef8ce36a5f622c4d847b417ef49a5a03
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 5deb1717cf3886d8ea9c021d92afa358946b16dc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379499"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052075"
 ---
 # <a name="troubleshoot-registry-login"></a>Problemen met register aanmelding oplossen
 
@@ -39,6 +39,8 @@ Dit kan een of meer van de volgende zijn:
 Voer de opdracht [AZ ACR check-Health](/cli/azure/acr#az-acr-check-health) uit voor meer informatie over de status van de register omgeving en eventueel toegang tot een doel register. U kunt bijvoorbeeld configuratie fouten van docker diagnosticeren of Azure Active Directory aanmeldings problemen oplossen. 
 
 Zie [de status van een Azure container Registry controleren](container-registry-check-health.md) op opdracht voorbeelden. Als er fouten worden gerapporteerd, raadpleegt u de [fout referentie](container-registry-health-error-reference.md) en de volgende secties voor de aanbevolen oplossingen.
+
+Als u problemen ondervindt met het gebruik van de register wih Azure Kubernetes-service, voert u de opdracht [AZ AKS check-ACR](/cli/azure/aks#az_aks_check_acr) uit om te controleren of het REGI ster toegankelijk is vanuit het AKS-cluster.
 
 > [!NOTE]
 > Sommige verificatie-of autorisatie fouten kunnen zich ook voordoen als er firewall-of netwerk configuraties zijn die geen toegang tot het REGI ster verhinderen. Zie [problemen met het netwerk oplossen met het REGI ster](container-registry-troubleshoot-access.md).
@@ -79,7 +81,7 @@ Controleer de geldigheid van de referenties die u gebruikt voor uw scenario of d
 * Als u een Active Directory Service-Principal gebruikt, moet u ervoor zorgen dat u de juiste referenties gebruikt in de Active Directory Tenant:
   * Gebruikers naam-ID van de Service-Principal-toepassing (ook wel *client-id* genoemd)
   * Wacht woord-Service-Principal-wacht woord (ook wel *client geheim* genoemd)
-* Als u een Azure-service gebruikt, zoals Azure Kubernetes service of Azure DevOps voor toegang tot het REGI ster, bevestigt u de Register configuratie voor uw service.
+* Als u een Azure-service gebruikt, zoals Azure Kubernetes service of Azure DevOps voor toegang tot het REGI ster, bevestigt u de Register configuratie voor uw service. 
 * Als u `az acr login` met de optie hebt uitgevoerd `--expose-token` , waarbij u zich aanmeldt zonder de docker-daemon te gebruiken, moet u verifiëren met de gebruikers naam `00000000-0000-0000-0000-000000000000` .
 * Als uw REGI ster is geconfigureerd voor [anonieme pull-toegang](container-registry-faq.md#how-do-i-enable-anonymous-pull-access), kunnen bestaande docker-referenties die zijn opgeslagen van een eerdere docker-aanmelding, anonieme toegang verhinderen. Voer uit `docker logout` voordat u een anonieme pull-bewerking in het REGI ster probeert uit te voeren.
 
@@ -143,7 +145,7 @@ Als u uw probleem hier niet kunt oplossen, raadpleegt u de volgende opties.
 
 * Andere onderwerpen over het oplossen van problemen met het REGI ster zijn:
   * [Problemen met het netwerk oplossen met het REGI ster](container-registry-troubleshoot-access.md)
-  * [Problemen met registerprestaties oplossen](container-registry-troubleshoot-performance.md)
+  * [Problemen met het REGI ster oplossen](container-registry-troubleshoot-performance.md)
 * Opties voor [Community-ondersteuning](https://azure.microsoft.com/support/community/)
 * [Microsoft Q&A](/answers/products/)
 * [Open een ondersteunings ticket](https://azure.microsoft.com/support/create-ticket/) op basis van de gegevens die u verstrekt, een snelle diagnose kan worden uitgevoerd voor verificatie fouten in uw REGI ster

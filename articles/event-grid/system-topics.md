@@ -3,12 +3,12 @@ title: Systeem onderwerpen in Azure Event Grid
 description: Hierin worden systeem onderwerpen beschreven in Azure Event Grid.
 ms.topic: conceptual
 ms.date: 09/24/2020
-ms.openlocfilehash: b3a6e7528da2a11c2f91007425ab8beecaf920c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1fbecb1e372602f9c252d43d2a1f93524ef1846
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91297280"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052962"
 ---
 # <a name="system-topics-in-azure-event-grid"></a>Systeem onderwerpen in Azure Event Grid
 Een systeem onderwerp in Event Grid vertegenwoordigt een of meer gebeurtenissen die zijn gepubliceerd door Azure-Services, zoals Azure Storage en Azure Event Hubs. Een systeem onderwerp kan bijvoorbeeld **alle BLOB-gebeurtenissen** vertegenwoordigen of alleen **blobs die zijn gemaakt** en **Verwijderde BLOB** -gebeurtenissen die zijn gepubliceerd voor een **specifiek opslag account**. Wanneer een BLOB in dit voor beeld wordt geüpload naar het opslag account, publiceert de Azure Storage-service een gebeurtenis die door een **blob is gemaakt** naar het onderwerp system in Event grid, waarna de gebeurtenis wordt doorgestuurd naar de [abonnees](event-handlers.md) van het onderwerp die de gebeurtenis ontvangen en verwerken. 
@@ -34,6 +34,7 @@ Hier volgt de huidige lijst met Azure-Services die ondersteuning bieden voor het
 - [Azure Service Bus](event-schema-service-bus.md)
 - [Azure SignalR](event-schema-azure-signalr.md)
 - [Azure-abonnementen](event-schema-subscriptions.md)
+- [Azure Cache voor Redis](event-schema-azure-cache.md)
 
 ## <a name="system-topics-as-azure-resources"></a>Systeem onderwerpen als Azure-resources
 In het verleden was een systeem onderwerp impliciet en niet beschikbaar voor eenvoud. Systeem onderwerpen zijn nu zichtbaar als Azure-resources en bieden de volgende mogelijkheden:
@@ -49,7 +50,7 @@ U kunt op twee manieren een systeem onderwerp maken:
 - Maak een [gebeurtenis abonnement op een Azure-resource als een extensie bron](/rest/api/eventgrid/version2020-06-01/eventsubscriptions/createorupdate), waarmee automatisch een systeem onderwerp wordt gemaakt met de naam in de volgende indeling: `<Azure resource name>-<GUID>` . Het systeem onderwerp dat op deze manier wordt gemaakt, wordt automatisch verwijderd wanneer het laatste gebeurtenis abonnement voor het onderwerp wordt verwijderd. 
 - Maak een systeem onderwerp voor een Azure-resource en maak vervolgens een gebeurtenis abonnement voor dat systeem onderwerp. Wanneer u deze methode gebruikt, kunt u een naam opgeven voor het onderwerp System. Het onderwerp System wordt niet automatisch verwijderd wanneer het laatste gebeurtenis abonnement wordt verwijderd. U moet deze hand matig verwijderen. 
 
-    Wanneer u de Azure Portal gebruikt, gebruikt u altijd deze methode. Wanneer u een gebeurtenis abonnement maakt met behulp [van de pagina **gebeurtenissen** van een Azure-resource](blob-event-quickstart-portal.md#subscribe-to-the-blob-storage), wordt het onderwerp systeem eerst gemaakt en vervolgens het abonnement voor het onderwerp gemaakt. U kunt expliciet een systeem onderwerp maken met behulp van de [pagina **Event grid systeem onderwerpen** ](create-view-manage-system-topics.md#create-a-system-topic) en vervolgens een abonnement maken voor dat onderwerp. 
+    Wanneer u de Azure Portal gebruikt, gebruikt u altijd deze methode. Wanneer u een gebeurtenis abonnement maakt met behulp [van de pagina **gebeurtenissen** van een Azure-resource](blob-event-quickstart-portal.md#subscribe-to-the-blob-storage), wordt het onderwerp systeem eerst gemaakt en vervolgens het abonnement voor het onderwerp gemaakt. U kunt expliciet een systeem onderwerp maken met behulp van de [pagina **Event grid systeem onderwerpen**](create-view-manage-system-topics.md#create-a-system-topic) en vervolgens een abonnement maken voor dat onderwerp. 
 
 Wanneer u een [cli](create-view-manage-system-topics-cli.md)-, [REST](/rest/api/eventgrid/version2020-06-01/eventsubscriptions/createorupdate)-of [Azure Resource Manager-sjabloon](create-view-manage-system-topics-arm.md)gebruikt, kunt u een van de bovenstaande methoden kiezen. We raden u aan om eerst een systeem onderwerp te maken en vervolgens een abonnement op het onderwerp te maken, omdat dit de meest recente manier is om systeem onderwerpen te maken.
 

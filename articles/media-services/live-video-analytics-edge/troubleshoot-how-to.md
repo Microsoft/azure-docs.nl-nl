@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: d519193d55c9535dc71206d2d9f72661d7a40d71
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: ee5ae7ca8b52d44f21c35df23ef92f61d38fc3c3
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954409"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051292"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Problemen met live video Analytics op IoT Edge oplossen
 
@@ -107,7 +107,8 @@ U kunt ook problemen ondervinden bij het uitvoeren van het **[installatie script
 * Het installatie script kan geen Service-Principal en/of Azure-resources maken.
     * Als u dit probleem wilt verhelpen, moet u controleren of uw abonnement en de Azure-Tenant hun maximum service limiet niet hebben bereikt. Meer informatie over [Azure AD-service limieten en-beperkingen](https://docs.microsoft.com/azure/active-directory/enterprise-users/directory-service-limits-restrictions) en [limieten, quota's en beperkingen voor Azure-abonnementen en services.](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits)
 
-
+> [!TIP]
+> Als er bijkomende problemen zijn die u mogelijk nodig hebt, kunt u **[Logboeken verzamelen en een ondersteunings ticket indienen](#collect-logs-for-submitting-a-support-ticket)**. U kunt ook contact met ons opnemen door ons een e-mail te sturen op **[amshelp@microsoft.com](mailto:amshelp@microsoft.com)** .
 ### <a name="live-video-analytics-working-with-external-modules"></a>Live video Analytics met externe modules
 
 Live video-analyses via de media Graph-extensie processors kunnen de media grafiek uitbreiden voor het verzenden en ontvangen van gegevens van andere IoT Edge modules met behulp van HTTP-of gRPC-protocollen. In een [specifiek voor beeld](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/httpExtension)kan deze media grafiek video frames als installatie kopieën verzenden naar een externe Afleidings module, zoals Yolo v3, en analyse van op JSON gebaseerde analyses ontvangen met behulp van het HTTP-protocol. In een dergelijke topologie is het doel voor de gebeurtenissen voornamelijk de IoT-hub. In situaties waarin de gebeurtenissen voor afnemen op de hub niet worden weer geven, controleert u het volgende:

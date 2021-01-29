@@ -3,22 +3,18 @@ title: 'Quickstart: Een Automation-account maken met een Azure-sjabloon'
 titleSuffix: Azure Automation
 description: In deze quickstart leest u hoe u een Automation-account kunt maken met de Azure Resource Manager-sjabloon.
 services: automation
-documentationcenter: na
-author: mgoedtel
 Customer intent: I want to create an Automation account by using an Azure Resource Manager template so that I can automate processes with runbooks.
-ms.service: automation
-ms.devlang: na
 ms.topic: quickstart
 ms.workload: infrastructure-services
-ms.date: 07/23/2020
+ms.date: 01/07/2021
 ms.author: magoedte
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: 9315b898e290dc758c300f9b74006b4b08888e9e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
-ms.translationtype: HT
+ms.openlocfilehash: d0582876a08b433a10106b97179ab603d4ec5762
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078949"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050665"
 ---
 # <a name="quickstart-create-an-automation-account-by-using-arm-template"></a>Quickstart: Een Automation-account maken met een ARM-sjabloon
 
@@ -44,7 +40,7 @@ Met deze voorbeeldsjabloon worden de volgende bewerkingen uitgevoerd:
 * Automation-runbooks toevoegen aan het account.
 
 >[!NOTE]
->Als u een ARM-sjabloon gebruikt, wordt het maken van een Uitvoeren als-account voor Automation niet ondersteund. Als u handmatig een Uitvoeren als-account wilt maken via de portal of met PowerShell, raadpleegt u [Uitvoeren als-accounts beheren](manage-runas-account.md).
+>Als u een ARM-sjabloon gebruikt, wordt het maken van een Uitvoeren als-account voor Automation niet ondersteund. Zie [Run as-account maken](create-run-as-account.md)als u een uitvoeren als-account hand matig wilt maken vanuit de portal of met Power shell.
 
 Nadat u deze stappen hebt voltooid, moet u [diagnostische instellingen configureren](automation-manage-send-joblogs-log-analytics.md) voor uw Automation-account om de taakstatus van de runbook en taakstromen te verzenden naar de gekoppelde Log Analytics-werkruimte.
 
@@ -108,7 +104,7 @@ Als u geen ervaring hebt met Azure Automation en Azure Monitor, is het belangrij
 
 2. Open in de Azure-portal het Automation-account dat u net hebt gemaakt. 
 
-3. Selecteer **Runbooks**in het linkerdeelvenster. Op de pagina **Runbooks** worden drie zelfstudie-runbooks vermeld die zijn gemaakt met het Automation-account.
+3. Selecteer **Runbooks** in het linkerdeelvenster. Op de pagina **Runbooks** worden drie zelfstudie-runbooks vermeld die zijn gemaakt met het Automation-account.
 
     ![Zelfstudie-runbooks die zijn gemaakt met het Automation-account](./media/quickstart-create-automation-account-template/automation-sample-runbooks.png)
 

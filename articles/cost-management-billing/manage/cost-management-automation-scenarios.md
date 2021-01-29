@@ -9,12 +9,12 @@ ms.subservice: common
 ms.topic: reference
 ms.date: 01/26/2021
 ms.author: banders
-ms.openlocfilehash: 40eb6bbb952596e015be7c1ed29dbefb3fb6016d
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 12c13b8a65296fb0ee74e0ee0449b604facf2f48
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897710"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051258"
 ---
 # <a name="automation-scenarios-for-billing-and-cost-management"></a>Automatiseringsscenario's voor facturering en kostenbeheer
 
@@ -49,8 +49,8 @@ U kunt de API's voor facturering en kostenbeheer in verschillende scenario's geb
 | Gebruiksgegevens               |             X             |         X        |           X          |         X        |          X         |     X     |
 | Factureringsperioden             |             X             |         X        |           X          |         X        |                    |           |
 | Facturen                    |             X             |         X        |           X          |         X        |                    |           |
-| RateCard                    |             X             |                  |           X          |         X        |          X         |           |
-| Niet-geclassificeerd gebruik               |             X             |                  |           X          |                  |          X         |           |
+| Azure-handels prijzen                    |             X             |                  |           X          |         X        |                    |           |
+
 
 > [!NOTE]
 > De tabel bevat geen API's voor Enterprise-verbruik. Gebruik waar mogelijk de algemene verbruiks-API's voor nieuwe ontwikkelscenario's.
@@ -74,9 +74,7 @@ Web Direct-en Enterprise-klanten kunnen alle volgende API's gebruiken, tenzij an
 
 -    [API voor gedetailleerde gebruiksgegevens](/rest/api/consumption/usagedetails): gegevens van kosten en gebruik opvragen voor alle Azure-resources van Microsoft. U ontvangt de informatie in de vorm van records met gedetailleerde gebruiksgegevens, die momenteel één keer per meter per dag worden verzonden. U kunt de informatie gebruiken om de totale kosten voor alle resources te berekenen of om de kosten of het gebruik van specifieke resources nader te onderzoeken.
 
--    [API voor RateCards](/previous-versions/azure/reference/mt219005(v=azure.100)): metertarieven opvragen als u een Web Direct-klant bent. U kunt vervolgens aan de hand van de geretourneerde informatie en de informatie over het resourcegebruik de verwachte factuur handmatig berekenen.
-
--    [API voor niet-geclassificeerd gebruik](/previous-versions/azure/reference/mt219003(v=azure.100)): onbewerkte gegevens van gebruik opvragen voordat er meters/kosten op zijn toegepast.
+-    [Azure-handels prijzen](/rest/api/cost-management/retail-prices/azure-retail-prices): meter tarieven ophalen met betalen per gebruik-prijzen. U kunt vervolgens aan de hand van de geretourneerde informatie en de informatie over het resourcegebruik de verwachte factuur handmatig berekenen.
 
 ### <a name="billing"></a>Billing
 -    [API voor factureringsperioden](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods): bepalen welke factureringsperiode u wilt analyseren, samen met de factuur-id's voor die periode. U kunt factuur-id's gebruiken met de API voor facturen.
@@ -107,16 +105,6 @@ Deze API's hebben een vergelijkbare functionaliteit en kunnen dezelfde algemene 
 
 - Verbruiks-API's zijn beschikbaar voor alle klanten, met een paar uitzonderingen. Zie [Overzicht van API voor Azure-gebruiksgegevens](consumption-api-overview.md) en het [overzicht van verbruiks-API's](/rest/api/consumption/) voor meer informatie. We raden de meegeleverde API's aan als de oplossing voor scenario's voor de nieuwste ontwikkelingen.
 
-### <a name="whats-the-difference-between-the-usage-details-api-and-the-usage-api"></a>Wat is het verschil tussen de API voor gebruiksgegevens en de gebruiks-API?
-Deze API's bieden fundamenteel verschillende gegevens:
-
-- De [API voor gebruiksgegevens-](/rest/api/consumption/usagedetails) biedt gegevens van Azure-gebruik en -kosten per meterexemplaar. De aangeleverde gegevens zijn al verwerkt door het systeem voor kostenmeting in Azure en er zijn kosten op toegepast, samen met andere mogelijke wijzigingen:
-
-   - Wijzigingen van account voor het gebruik van Azure-vooruitbetaling
-   - Wijzigingen van account voor gebruiksverschillen die door Azure zijn vastgesteld
-
-- De [gebruiks-API](/previous-versions/azure/reference/mt219003(v=azure.100)) biedt onbewerkte gegevens van Azure-gebruik voordat deze zijn verwerkt door het systeem voor kostenmeting in Azure. Deze gegevens hebben mogelijk geen correlatie met het gebruik of de kosten die beschikbaar zijn nadat het Azure-systeem voor kostenberekening de gegevens heeft verwerkt.
-
 ### <a name="whats-the-difference-between-the-invoice-api-and-the-usage-details-api"></a>Wat is het verschil tussen de facturerings-API en de API voor gebruiksgegevens?
 Deze API's bieden een verschillende weergave van dezelfde gegevens:
 
@@ -129,7 +117,7 @@ Deze API's bieden vergelijkbare gegevenssets, maar hebben verschillende doelgroe
 
 - De [API voor het prijzenoverzicht](/rest/api/consumption/pricesheet) biedt de aangepaste prijzen die zijn onderhandeld voor een Enterprise-klant.
 
-- De [RateCard-API](/previous-versions/azure/reference/mt219005(v=azure.100)) biedt de openbare prijzen die van toepassing zijn op Web Direct-klanten.
+- De [Azure retail-prijs-API](/rest/api/cost-management/retail-prices/azure-retail-prices) biedt open bare tarieven voor betalen per gebruik die van toepassing zijn op Web direct-klanten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

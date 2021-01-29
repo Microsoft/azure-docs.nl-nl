@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 842b0a92ba4a2cb6b3ceb54675ef95f9c8275311
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 9f7a37fa2101e4a386c9c6f2338f185b3ecdc986
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92209724"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052614"
 ---
 # <a name="enable-change-tracking-and-inventory-from-a-runbook"></a>Wijzigingen bijhouden en inventaris inschakelen vanuit een runbook
 
@@ -28,7 +28,7 @@ Deze methode gebruikt twee runbooks:
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Automation-account](../automation-security-overview.md) voor het beheren van computers.
-* [Log Analytics-werkruimte](../../azure-monitor/platform/design-logs-deployment.md)
+* [Log Analytics werk ruimte](../../azure-monitor/platform/design-logs-deployment.md)
 * Een [virtuele machine](../../virtual-machines/windows/quick-create-portal.md).
 * Twee Automation-assets, die worden gebruikt door het **Enable-AutomationSolution** runbook. Dit runbook, als het nog niet bestaat in uw Automation-account, wordt tijdens de eerste uitvoering automatisch geïmporteerd door het runbook **Enable-MultipleSolution** .
     * *LASolutionSubscriptionId*: abonnement-id van waar de log Analytics-werk ruimte zich bevindt.
@@ -118,7 +118,7 @@ U moet Wijzigingen bijhouden en inventaris inschakelen voor een virtuele Azure-m
    * **SUBSCRIPTIONID**: de abonnement-id van de nieuwe in te schakelen VM. Laat dit veld leeg om het abonnement van de werkruimte te gebruiken. Wanneer u een andere abonnement-id gebruikt, voegt u het Uitvoeren als-account voor uw Automation-account toe als inzender voor het abonnement.
    * **ALREADYONBOARDEDVM**: de naam van de VM waarop updates al handmatig zijn ingeschakeld.
    * **ALREADYONBOARDEDVMRESOURCEGROUP**: de naam van de resourcegroep waartoe de VM behoort.
-   * **Solution type** : Voer **change tracking**in.
+   * **Solution type** : Voer **change tracking** in.
 
    ![Parameters voor het runbook Enable-MultipleSolution](media/enable-from-runbook/runbook-parameters.png)
 

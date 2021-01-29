@@ -1,17 +1,17 @@
 ---
 title: Berekenings-en opslag opties-Azure Database for MySQL-flexibele server
 description: In dit artikel worden de berekenings-en opslag opties in Azure Database for MySQL flexibele server beschreven.
-author: savjani
-ms.author: pariks
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/27/2021
-ms.openlocfilehash: 267b362c94b04b3be634f7e61c2b6d67604d7854
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.date: 1/28/2021
+ms.openlocfilehash: b1e8093a1991a97220060c2b6936368f9a4be796
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954678"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052343"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-mysql---flexible-server-preview"></a>Berekenings-en opslag opties in Azure Database for MySQL-flexibele server (preview-versie)
 
@@ -72,7 +72,7 @@ De gedetailleerde specificaties van de beschik bare server typen zijn als volgt:
 Voor meer informatie over de beschik bare reken reeks raadpleegt u de Azure VM-documentatie voor de [Burstable (B-serie)](../../virtual-machines/sizes-b-series-burstable.md), [Algemeen (Ddsv4-serie)](../../virtual-machines/ddv4-ddsv4-series.md)en [geoptimaliseerd voor geheugen (Edsv4-serie)](../../virtual-machines/edv4-edsv4-series.md).
 
 >[!NOTE]
->Voor een [afbreek bare (B-serie)](../../virtual-machines/sizes-b-series-burstable.md) Compute-laag wanneer de server om een andere reden opnieuw wordt opgestart, zoals gestart, gepland of niet-gepland onderhoud, kan het geaccumuleerde tegoed verloren gaan. De reden hiervoor is dat wanneer de Azure Database for MySQL opnieuw wordt opgestart, deze op hetzelfde knoop punt blijft, wordt het geaccumuleerde tegoed bewaard. Daarentegen, wanneer de Azure Database for MySQL-server op een nieuw knoop punt wordt vernieuwd, ontvangt deze een eerste tegoed. Zie Veelgestelde vragen voor meer informatie Lees [Bebreek de FAQ (B-serie)](https://docs.microsoft.com/azure/virtual-machines/sizes-b-series-burstable#q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart).
+>Voor een [Bebreek bare (B-serie) Compute-laag](../../virtual-machines/sizes-b-series-burstable.md) als de VM is gestart/gestopt of opnieuw gestart, kunnen de tegoeden verloren gaan. Zie [Veelgestelde vragen over Burstable (B-serie)](https://docs.microsoft.com/azure/virtual-machines/sizes-b-series-burstable#q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart)voor meer informatie.
 
 ## <a name="storage"></a>Storage
 

@@ -10,19 +10,19 @@ ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
-ms.openlocfilehash: d122cedbad41d6984614a0edccb2fd98269710f2
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 84aec5031dd8d19f8f2ad0aa32185002add378b1
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618073"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053976"
 ---
 # <a name="troubleshoot-password-based-single-sign-on-in-azure-ad"></a>Problemen oplossen met eenmalige aanmelding op basis van wachtwoord in Azure Active Directory
 
 Als u eenmalige aanmelding (SSO) op basis van wacht woorden in mijn apps wilt gebruiken, moet de browser extensie zijn geïnstalleerd. De extensie wordt automatisch gedownload wanneer u een app selecteert die is geconfigureerd voor SSO op basis van een wacht woord. Zie [de Help van mijn apps-Portal](../user-help/my-apps-portal-end-user-access.md)voor meer informatie over het gebruik van mijn apps vanuit het oogpunt van eind gebruikers.
 
 ## <a name="my-apps-browser-extension-not-installed"></a>De browser extensie van mijn apps is niet geïnstalleerd
-Zorg ervoor dat de browser uitbreiding is geïnstalleerd. Zie [een Azure Active Directory implementatie van mijn apps plannen](access-panel-deployment-plan.md)voor meer informatie. 
+Zorg ervoor dat de browser uitbreiding is geïnstalleerd. Zie [een Azure Active Directory implementatie van mijn apps plannen](my-apps-deployment-plan.md)voor meer informatie. 
 
 ## <a name="single-sign-on-not-configured"></a>Eenmalige aanmelding is niet geconfigureerd
 Zorg ervoor dat de eenmalige aanmelding op basis van wacht woorden is geconfigureerd. Zie [eenmalige aanmelding op basis van wacht woorden configureren](configure-password-single-sign-on-non-gallery-applications.md)voor meer informatie.
@@ -247,4 +247,4 @@ De volgende informatie legt uit wat elk meldings item betekent en biedt voor bee
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Quickstartreeks over toepassingsbeheer](view-applications-portal.md)
-* [Een My Apps-implementatie plannen](access-panel-deployment-plan.md)
+* [Een My Apps-implementatie plannen](my-apps-deployment-plan.md)

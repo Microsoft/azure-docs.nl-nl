@@ -12,17 +12,17 @@ ms.date: 02/18/2019
 ms.author: kenwith
 ms.reviewer: luleon, asteen
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 596af29fe72a41b5a86a09e4e6d5072d63b6ac71
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 62b828a23805c6d3ab544dd2b9f78b45a3327cde
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586343"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053394"
 ---
 # <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML
 Voor het oplossen van de onderstaande aanmeldings problemen raden we het volgende aan om de oplossings stappen beter te diagnosticeren en te automatiseren:
 
-- Installeer de [browseruitbreiding Mijn beveiligde apps](./access-panel-deployment-plan.md) om Azure AD (Azure Active Directory) te helpen betere diagnose en oplossingen te bieden bij het gebruik van de testversie in de Azure-portal.
+- Installeer de [browseruitbreiding Mijn beveiligde apps](my-apps-deployment-plan.md) om Azure AD (Azure Active Directory) te helpen betere diagnose en oplossingen te bieden bij het gebruik van de testversie in de Azure-portal.
 - Reproduceer de fout via de testversie op de app-configuratiepagina in de Azure-portal. Meer informatie over het [opsporen van op SAML gebaseerde toepassingen voor eenmalige aanmelding](./debug-saml-sso-issues.md)
 
 Als u de [test ervaring](./debug-saml-sso-issues.md) in de Azure Portal met de beveiligde browser uitbreiding van mijn apps gebruikt, hoeft u de onderstaande stappen niet hand matig uit te voeren om de configuratie pagina voor eenmalige aanmelding op basis van SAML te openen.

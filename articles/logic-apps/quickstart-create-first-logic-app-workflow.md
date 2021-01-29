@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/30/2020
-ms.openlocfilehash: 9d402599c4d6732ce92b8c64af6f660bcedbc4ba
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: d90b9e38158d951990fffc21a43317c688da12c9
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455053"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052039"
 ---
 # <a name="quickstart-create-your-first-logic-apps-workflow---azure-portal"></a>Quickstart: Uw eerste werkstroom voor Logic Apps bouwen - Azure Portal
 
@@ -30,11 +30,14 @@ Als u wilt weten hoe u uw eerste logische app kunt maken en beheren via andere i
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure-abonnement. Als u er geen hebt, kunt u zich [Registreren voor een gratis Azure-account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Een Azure-account en -abonnement. Als u er geen hebt, kunt u zich [Registreren voor een gratis Azure-account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+
 * Een e-mailaccount van een service die door Logic Apps wordt ondersteund (bijvoorbeeld Office 365 Outlook of Outlook.com). Voor andere ondersteunde e-mailproviders [bekijkt u de lijst met connectors](/connectors/).
 
     > [!IMPORTANT]
     > Als u de [Gmail-connector](/connectors/gmail/) gebruikt, kunnen alleen accounts van G Suite deze connector zonder beperking in Logic Apps gebruiken. Als u een Gmail-consumentenaccount hebt, kunt u deze connector alleen gebruiken met specifieke, door Google goedgekeurde services, tenzij u [een Google-client-app maakt voor verificatie bij uw Gmail-connector](/connectors/gmail/#authentication-and-bring-your-own-application). Zie [Beleid voor gegevensbeveiliging en privacybeleid voor Google-connectors in Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md) voor meer informatie.
+
+* Als uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor *zowel* de [inkomende](logic-apps-limits-and-config.md#inbound) als [uitgaande](logic-apps-limits-and-config.md#outbound) IP-adressen die worden gebruikt door de Logic apps service of runtime in de Azure-regio waar uw logische app bestaat. Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](logic-apps-limits-and-config.md#outbound) in de Azure-regio van de logische app.
 
 <a name="create-logic-app"></a>
 
@@ -51,7 +54,7 @@ Als u wilt weten hoe u uw eerste logische app kunt maken en beheren via andere i
    ![Schermopname van de Logic Apps-servicepagina in Azure Portal, met daarin de lijst met logische apps en de geselecteerde knop 'Toevoegen'.](./media/quickstart-create-first-logic-app-workflow/add-new-logic-app.png)
 
 1. Geef in het deelvenster **Logic App** basisinformatie en instellingen op voor uw logische app. Maak een nieuwe [resourcegroep](../azure-resource-manager/management/overview.md#terminology) voor het doel van deze logische voorbeeld-app.
-    
+
    | Eigenschap | Waarde | Beschrijving |
    |----------|-------|-------------|
    | **Naam** | <*naam-van-logische-app*> | Namen voor logische apps moeten uniek zijn in verschillende regio's. De naam mag alleen letters, cijfers, afbreekstreepjes (`-`), onderstrepingstekens (`_`), haakjes (`(` en `)`) en punten (`.`) bevatten. In dit voorbeeld wordt 'My-First-Logic-App' gebruikt. |

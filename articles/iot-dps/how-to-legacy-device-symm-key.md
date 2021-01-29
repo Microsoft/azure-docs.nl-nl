@@ -3,17 +3,17 @@ title: Apparaten inrichten met symmetrische sleutels-Azure IoT Hub Device Provis
 description: Symmetrische sleutels gebruiken om apparaten in te richten met het DPS-exemplaar (Device Provisioning Service)
 author: wesmc7777
 ms.author: wesmc
-ms.date: 07/13/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: eliotga
-ms.openlocfilehash: dc33dcd2c80b2a6d4a1cc27778e49dc06ac48b34
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+manager: lizross
+ms.openlocfilehash: a4c16347d1883e1522fda18c2382f2d67b8ace80
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967309"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051106"
 ---
 # <a name="how-to-provision-devices-using-symmetric-key-enrollment-groups"></a>Apparaten inrichten met behulp van symmetrische sleutel registratie groepen
 
@@ -21,9 +21,7 @@ In dit artikel wordt beschreven hoe u veilig meerdere symmetrische-sleutel appar
 
 Sommige apparaten beschikken mogelijk niet over een certificaat, TPM of een andere beveiligings functie die kan worden gebruikt om het apparaat veilig te identificeren. De Device Provisioning Service omvat [symmetrische sleutel Attestation](concepts-symmetric-key-attestation.md). Symmetrische-sleutel Attestation kan worden gebruikt om een apparaat op basis van unieke gegevens, zoals het MAC-adres of een serie nummer, te identificeren.
 
-Als u een [HSM (Hardware Security module)](concepts-service.md#hardware-security-module) en een certificaat eenvoudig kunt installeren, is dat mogelijk een betere benadering voor het identificeren en inrichten van uw apparaten. Omdat u met deze benadering kunt u het bijwerken van de code die is geïmplementeerd op al uw apparaten, niet meer, en er geen geheime sleutel is inge sloten in de installatie kopie van het apparaat.
-
-In dit artikel wordt ervan uitgegaan dat geen HSM of een certificaat een levensvat bare optie is. Er wordt echter wel van uitgegaan dat u een bepaalde methode hebt voor het bijwerken van de Device Provisioning Service om deze apparaten in te richten. 
+Als u een [HSM (Hardware Security module)](concepts-service.md#hardware-security-module) en een certificaat eenvoudig kunt installeren, is dat mogelijk een betere benadering voor het identificeren en inrichten van uw apparaten. Door gebruik te maken van een HSM kunt u het bijwerken van de code die is geïmplementeerd op al uw apparaten, overs Laan en er geen geheime sleutel in de installatie kopieën van uw apparaat is inge sloten. In dit artikel wordt ervan uitgegaan dat geen HSM of een certificaat een levensvat bare optie is. Er wordt echter wel van uitgegaan dat u een bepaalde methode hebt voor het bijwerken van de Device Provisioning Service om deze apparaten in te richten. 
 
 In dit artikel wordt ervan uitgegaan dat de update van het apparaat in een beveiligde omgeving plaatsvindt om onbevoegde toegang tot de hoofd groep of de afgeleide apparaatwachtwoord te voor komen.
 
@@ -142,39 +140,18 @@ In dit voor beeld gebruiken we een combi natie van een MAC-adres en serie nummer
 sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6
 ```
 
-Maak een unieke registratie-ID voor uw apparaat. Geldige tekens zijn kleine letters en streepjes ('-').
+Unieke registratie-Id's maken voor elk apparaat. Geldige tekens zijn kleine letters en streepjes ('-').
 
 
 ## <a name="derive-a-device-key"></a>Een apparaatcode afleiden 
 
-Als u de apparaatcode wilt genereren, gebruikt u de groeps hoofd sleutel om een [HMAC-sha256](https://wikipedia.org/wiki/HMAC) van de unieke registratie-id voor het apparaat te berekenen en converteert u het resultaat naar Base64-indeling.
+Voor het genereren van Apparaatsets gebruikt u de hoofd sleutel van de registratie groep om een [HMAC-sha256](https://wikipedia.org/wiki/HMAC) van de registratie-id voor elk apparaat te berekenen. Het resultaat wordt vervolgens geconverteerd naar de Base64-indeling voor elk apparaat.
 
 > [!WARNING]
-> De apparaatcode mag alleen de afgeleide apparaatwachtwoord voor het afzonderlijke apparaat bevatten. Neem uw groeps hoofd sleutel niet op in de code van uw apparaat. Een gemanipuleerde hoofd sleutel is de mogelijkheid om de beveiliging van alle apparaten die ermee worden geverifieerd, in gevaar te brengen.
+> De apparaatcode voor elk apparaat mag alleen de overeenkomstige afgeleide-keypack sleutel voor dat apparaat bevatten. Neem uw groeps hoofd sleutel niet op in de code van uw apparaat. Een gemanipuleerde hoofd sleutel is de mogelijkheid om de beveiliging van alle apparaten die ermee worden geverifieerd, in gevaar te brengen.
 
 
-#### <a name="linux-workstations"></a>Linux-werk stations
-
-Als u een Linux-werk station gebruikt, kunt u openssl gebruiken om uw afgeleide apparaatwachtwoord te genereren, zoals wordt weer gegeven in het volgende voor beeld.
-
-Vervang de waarde van **Key** door de **primaire sleutel** die u eerder hebt genoteerd.
-
-Vervang de waarde van **REG_ID** door de registratie-id.
-
-```bash
-KEY=8isrFI1sGsIlvvFSSFRiMfCNzv21fjbE/+ah/lSh3lF8e2YG1Te7w1KpZhJFFXJrqYKi9yegxkqIChbqOS9Egw==
-REG_ID=sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6
-
-keybytes=$(echo $KEY | base64 --decode | xxd -p -u -c 1000)
-echo -n $REG_ID | openssl sha256 -mac HMAC -macopt hexkey:$keybytes -binary | base64
-```
-
-```bash
-Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
-```
-
-
-#### <a name="windows-based-workstations"></a>Windows-werk stations
+# <a name="windows"></a>[Windows](#tab/windows)
 
 Als u een Windows-werk station gebruikt, kunt u Power shell gebruiken om uw afgeleide apparaatwachtwoord te genereren, zoals wordt weer gegeven in het volgende voor beeld.
 
@@ -197,8 +174,29 @@ echo "`n$derivedkey`n"
 Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 ```
 
+# <a name="linux"></a>[Linux](#tab/linux)
 
-Op uw apparaat wordt de afgeleide-apparaatwachtwoord gebruikt met uw unieke registratie-ID voor het uitvoeren van symmetrische sleutel attest met de registratie groep tijdens het inrichten.
+Als u een Linux-werk station gebruikt, kunt u openssl gebruiken om uw afgeleide apparaatwachtwoord te genereren, zoals wordt weer gegeven in het volgende voor beeld.
+
+Vervang de waarde van **Key** door de **primaire sleutel** die u eerder hebt genoteerd.
+
+Vervang de waarde van **REG_ID** door de registratie-id.
+
+```bash
+KEY=8isrFI1sGsIlvvFSSFRiMfCNzv21fjbE/+ah/lSh3lF8e2YG1Te7w1KpZhJFFXJrqYKi9yegxkqIChbqOS9Egw==
+REG_ID=sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6
+
+keybytes=$(echo $KEY | base64 --decode | xxd -p -u -c 1000)
+echo -n $REG_ID | openssl sha256 -mac HMAC -macopt hexkey:$keybytes -binary | base64
+```
+
+```bash
+Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
+```
+
+---
+
+Elk apparaat gebruikt de afgeleide apparaatcode en de unieke registratie-ID voor het uitvoeren van een symmetrische sleutel attest met de registratie groep tijdens het inrichten.
 
 
 
@@ -206,7 +204,7 @@ Op uw apparaat wordt de afgeleide-apparaatwachtwoord gebruikt met uw unieke regi
 
 In deze sectie gaat u een inrichtings voorbeeld met de naam **Prov \_ dev \_ client \_** -voor beeld bijwerken in de Azure IOT C-SDK die u eerder hebt ingesteld. 
 
-Met deze voorbeeldcode wordt een opstartprocedure van het apparaat gesimuleerd waarbij de inrichtingsaanvraag naar uw Device Provisioning Service-instantie wordt verzonden. De opstart procedure zorgt ervoor dat het apparaat wordt herkend en toegewezen aan de IoT-hub die u hebt geconfigureerd voor de registratie groep.
+Met deze voorbeeldcode wordt een opstartprocedure van het apparaat gesimuleerd waarbij de inrichtingsaanvraag naar uw Device Provisioning Service-instantie wordt verzonden. De opstart procedure zorgt ervoor dat het apparaat wordt herkend en toegewezen aan de IoT-hub die u hebt geconfigureerd voor de registratie groep. Dit wordt uitgevoerd voor elk apparaat dat wordt ingericht met behulp van de registratie groep.
 
 1. Selecteer in Azure Portal het tabblad **Overzicht** voor uw Device Provisioning-service en noteer de waarde van het **_Id-bereik_**.
 
@@ -280,10 +278,7 @@ Met deze voorbeeldcode wordt een opstartprocedure van het apparaat gesimuleerd w
 
 ## <a name="security-concerns"></a>Beveiligings problemen
 
-Houd er rekening mee dat dit de afgeleide apparaatcode bevat die is opgenomen als onderdeel van de installatie kopie. Dit is geen aanbevolen beveiligings best practice. Dit is een reden waarom de beveiliging en het gebruiks gemak van toepassing zijn. 
-
-
-
+Houd er rekening mee dat de afgeleide apparaatcode die is opgenomen als onderdeel van de installatie kopie voor elk apparaat, geen aanbevolen beveiligings best practice. Dit is een reden waarom de beveiliging en het gebruiks gemak vaak afwegingen zijn. U moet de beveiliging van uw apparaten volledig controleren op basis van uw eigen vereisten.
 
 
 ## <a name="next-steps"></a>Volgende stappen

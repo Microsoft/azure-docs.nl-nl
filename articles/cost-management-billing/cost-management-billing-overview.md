@@ -4,17 +4,17 @@ description: U gebruikt functies van Azure Kostenbeheer en facturering voor het 
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/26/2020
+ms.date: 01/28/2021
 ms.topic: overview
 ms.service: cost-management-billing
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 34034a99641d75e44783cb5b87af8948b4db1628
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: a070b2329777accab6f62b767f74dbc28e5d2623
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029937"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051090"
 ---
 # <a name="what-is-azure-cost-management--billing"></a>Wat is Azure Kostenbeheer en facturering?
 
@@ -43,11 +43,11 @@ Er wordt een factureringsaccount gemaakt wanneer u zich aanmeldt om Azure te geb
 
 De Azure-portal ondersteunt momenteel de volgende typen factureringsaccounts:
 
-- **Microsoft Online Services-programma**: Er wordt een individueel factureringsaccount voor een Microsoft Online Services-programma gemaakt wanneer u zich bij de Azure-website aanmeldt om Azure te gebruiken. Bijvoorbeeld als u zich aanmeldt voor een gratis Azure-account, een account met tarieven op gebruiksbasis of een Visual Studio-abonnement.
+- **Microsoft Online Services-programma**: Er wordt een individueel factureringsaccount voor een Microsoft Online Services-programma gemaakt wanneer u zich bij de Azure-website aanmeldt om Azure te gebruiken. Als u zich bijvoorbeeld aanmeldt voor een [gratis Azure-account](./manage/create-free-services.md), account met betalen naar gebruik-tarieven of als een Visual Studio-abonnee.
 
 - **Enterprise Overeenkomst**: Er wordt een factureringsaccount voor een Enterprise-overeenkomst gemaakt wanneer uw organisatie een Enterprise-overeenkomst (EA) ondertekent om Azure te gebruiken.
 
-- **Microsoft-klantovereenkomst**: Er wordt een factureringsaccount voor een Microsoft-klantovereenkomst aangemaakt, wanneer uw organisatie samenwerkt met een Microsoft-vertegenwoordiger om een Microsoft-klantovereenkomst te ondertekenen. Sommige klanten in bepaalde regio's, die zich via de Azure-website aanmelden voor een account met tarieven op gebruiksbasis of die hun gratis Azure-account upgraden, hebben mogelijk ook een factureringsaccount voor een Microsoft-klantovereenkomst.
+- **Microsoft-klantovereenkomst**: Er wordt een factureringsaccount voor een Microsoft-klantovereenkomst aangemaakt, wanneer uw organisatie samenwerkt met een Microsoft-vertegenwoordiger om een Microsoft-klantovereenkomst te ondertekenen. Sommige klanten in bepaalde regio's, die zich via de Azure-website aanmelden voor een account met tarieven op gebruiksbasis of die hun [gratis Azure-account](./manage/create-free-services.md) upgraden, hebben mogelijk ook een factureringsaccount voor een Microsoft-klantovereenkomst.
 
 ### <a name="scopes-for-billing-accounts"></a>Bereiken voor factureringsaccounts
 Een bereik is een knooppunt in een factureringsaccount waar u facturen kunt weergeven en beheren. Dit is de plek waar u factureringsgegevens, betalingen en facturen beheert en algemeen accountbeheer uitvoert.

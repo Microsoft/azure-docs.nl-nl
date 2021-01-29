@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4d9011a69d9c3389f73097e65d509e463f1f5280
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 40d89cad595673a535ebcd526d747d81ce6ad08f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063804"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051920"
 ---
 # <a name="how-to-recognize-differences-between-delegated-and-application-permissions"></a>Verschillen tussen gedelegeerde en toepassings machtigingen herkennen
 
@@ -28,4 +28,4 @@ ms.locfileid: "98063804"
 - Meer informatie over hoe resource toepassingen [scopes](developer-glossary.md#scopes) en [toepassings rollen](developer-glossary.md#roles) beschikbaar maken voor client toepassingen, die respectievelijk als gedelegeerde en toepassings machtigingen in de Azure Portal worden weer gegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
-[AzureAD stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
+[AzureAD micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)

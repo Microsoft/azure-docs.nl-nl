@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: a4838dd6e8f9f4959fc1e4d0dc8dbc2218a30f30
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 119b00e67cf8337123028840ec6a7ecd29e97a05
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755477"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051597"
 ---
 # <a name="understand-metrics-for-azure-spring-cloud"></a>Informatie over metrische gegevens voor Azure lente-Cloud
 
@@ -121,6 +121,7 @@ In de volgende tabellen worden de beschik bare metrische gegevens en details wee
 >| Aantal GC gen 0  | gen-0-GC-aantal | Count        | Aantal opschoon verzamelingen van generatie 0 per seconde. |
 >| Aantal GC gen 1  | gen-1-GC-aantal | Count        | Aantal opschoon verzamelingen van generatie 1 per seconde. |
 >| Aantal GC van de tweede generatie  | gen-2-GC-aantal | Count        | Aantal opschoon verzamelingen van generatie 2 per seconde. |
+>| Tijd in GC      | TimeIn-GC      | Percentage      | Het percentage van de tijd in de garbagecollection sinds de laatste garbagecollection. |
 >| Heap-grootte in generatie 0 | gen-0-grootte     | Bytes        | Grootte van generatie 0-heap. |
 >| Heap-grootte in generatie 1 | gen-1-grootte     | Bytes        | Grootte van de heap van generatie 1. |
 >| Heap-grootte in generatie 2 | gen-2-grootte     | Bytes        | Heap-grootte van generatie 2. |

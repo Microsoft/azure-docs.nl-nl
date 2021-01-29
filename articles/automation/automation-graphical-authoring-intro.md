@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 161272fe35ee9ea1e0880b991273e5d1a79eafb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec74ca19978a4164289276d44b34eb14b694687f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987323"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051578"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Grafische runbooks ontwerpen in Azure Automation
 
@@ -51,7 +51,7 @@ Het besturings element test wordt niet weer gegeven wanneer de grafische editor 
 
 ## <a name="use-activities"></a>Activiteiten gebruiken
 
-Activiteiten zijn de bouw stenen van een runbook. Een activiteit kan een Power shell-cmdlet, een onderliggend runbook of een werk stroom zijn. U kunt een activiteit aan het runbook toevoegen door er met de rechter muisknop op te klikken in het besturings element bibliotheek en vervolgens **toevoegen aan canvas**te selecteren. Vervolgens klikt u op de activiteit en sleept u deze naar een wille keurige plek op het canvas dat u wilt. De locatie van de activiteit op het canvas heeft geen invloed op de werking van het runbook. U kunt uw runbook indelen op elke manier die u het meest geschikt vindt om de werking ervan te visualiseren.
+Activiteiten zijn de bouw stenen van een runbook. Een activiteit kan een Power shell-cmdlet, een onderliggend runbook of een werk stroom zijn. U kunt een activiteit aan het runbook toevoegen door er met de rechter muisknop op te klikken in het besturings element bibliotheek en vervolgens **toevoegen aan canvas** te selecteren. Vervolgens klikt u op de activiteit en sleept u deze naar een wille keurige plek op het canvas dat u wilt. De locatie van de activiteit op het canvas heeft geen invloed op de werking van het runbook. U kunt uw runbook indelen op elke manier die u het meest geschikt vindt om de werking ervan te visualiseren.
 
 ![Toevoegen aan canvas](media/automation-graphical-authoring-intro/add-to-canvas-cmdlet.png)
 
@@ -69,7 +69,7 @@ In het volgende voor beeld heeft de cmdlet [Get-AzVM](/powershell/module/az.comp
 
 Wanneer u een waarde voor een para meter opgeeft, selecteert u een gegevens bron om te bepalen hoe de waarde is opgegeven. De gegevens bronnen die beschikbaar zijn voor een bepaalde para meter, zijn afhankelijk van de geldige waarden voor die para meter. Zo is null bijvoorbeeld geen beschik bare optie voor een para meter die geen Null-waarden toestaat.
 
-| Gegevensbron | Beschrijving |
+| Gegevensbron | Description |
 |:--- |:--- |
 | Constante waarde |Typ een waarde voor de para meter. Deze gegevens bron is alleen beschikbaar voor de volgende gegevens typen: Int32, Int64, String, Boolean, DateTime, Switch. |
 | Uitvoer van activiteit |Gebruik uitvoer van een activiteit die voorafgaat aan de huidige activiteit in de werk stroom. Alle geldige activiteiten worden weer gegeven. Gebruik voor de parameter waarde alleen de activiteit die de uitvoer produceert. Als met de activiteit een object met meerdere eigenschappen wordt uitgevoerd, kunt u de naam van een specifieke eigenschap typen nadat u de activiteit hebt geselecteerd. |
@@ -95,7 +95,7 @@ Wanneer u opnieuw proberen voor een activiteit inschakelt, kunt u een vertraging
 
 De voor waarde voor opnieuw proberen is een Power shell-expressie die wordt geëvalueerd na elke keer dat de activiteit wordt uitgevoerd. Als de expressie wordt omgezet in ' True ', wordt de activiteit opnieuw uitgevoerd. Als de expressie wordt omgezet in False, wordt de activiteit niet opnieuw uitgevoerd en wordt het runbook verplaatst naar de volgende activiteit.
 
-:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Scherm afbeelding van de functie-instellingen voor opnieuw proberen in te scha kelen.":::
+:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Scherm afbeelding met de nieuwe poging tot deze voor waarde is waar veld en voor beelden van Power shell-expressies die kunnen worden gebruikt in de voor waarde voor opnieuw proberen.":::
 
 De voor waarde voor opnieuw proberen kan een variabele hebben met de naam `RetryData` die toegang geeft tot informatie over de nieuwe pogingen van de activiteit. Deze variabele heeft de eigenschappen in de volgende tabel:
 
@@ -151,7 +151,7 @@ U kunt een koppeling tussen twee activiteiten maken door de bron activiteit te s
 
 Selecteer de koppeling om de eigenschappen ervan te configureren in de Blade configuratie. Eigenschappen bevatten het koppelings type, dat wordt beschreven in de volgende tabel.
 
-| Koppelings type | Beschrijving |
+| Koppelings type | Description |
 |:--- |:--- |
 | Pijplijn |De doel activiteit wordt één keer uitgevoerd voor elke object uitvoer van de bron activiteit. De doel activiteit wordt niet uitgevoerd als de bron activiteit resulteert in geen uitvoer. Uitvoer van de bron activiteit is beschikbaar als een object. |
 | Reeks |De doel activiteit wordt slechts eenmaal uitgevoerd wanneer de uitvoer van de bron activiteit wordt ontvangen. Uitvoer van de bron activiteit is beschikbaar als een matrix met objecten. |
@@ -256,7 +256,7 @@ Elke invoer parameter wordt gedefinieerd door de eigenschappen in de volgende ta
 
 | Eigenschap | Beschrijving |
 |:--- |:--- |
-| Naam | Vereist. De naam van de para meter. De naam moet uniek zijn binnen het runbook. De naam moet beginnen met een letter en mag alleen letters, cijfers en onderstrepings tekens bevatten. De naam mag geen spatie bevatten. |
+| Name | Vereist. De naam van de para meter. De naam moet uniek zijn binnen het runbook. De naam moet beginnen met een letter en mag alleen letters, cijfers en onderstrepings tekens bevatten. De naam mag geen spatie bevatten. |
 | Beschrijving |Optioneel. Beschrijving van het doel van de invoer parameter. |
 | Type | Optioneel. Er wordt een gegevens type verwacht voor de parameter waarde. De Azure Portal biedt een geschikt besturings element voor het gegevens type voor elke para meter bij het vragen om invoer. Ondersteunde parameter typen zijn String, Int32, Int64, Decimal, Boolean, DateTime en object. Als er geen gegevens type is geselecteerd, wordt standaard de teken reeks gebruikt.|
 | Verplicht | Optioneel. Instelling die aangeeft of er een waarde moet worden opgegeven voor de para meter. Als u kiest `yes` , moet u een waarde opgeven wanneer het runbook wordt gestart. Als u kiest `no` , is een waarde niet vereist wanneer het runbook wordt gestart en kan een standaard waarde worden gebruikt. Het runbook kan niet worden gestart als u geen waarde opgeeft voor elke verplichte para meter waarvoor geen standaard waarde is gedefinieerd. |
@@ -373,7 +373,7 @@ In het volgende voor beeld wordt de uitvoer van een activiteit aangeroepen `Get 
 
 ## <a name="authenticate-to-azure-resources"></a>Verifiëren bij Azure-resources
 
-Runbooks in Azure Automation die Azure-resources beheren, moeten worden geverifieerd voor Azure. Het [uitvoeren als-account](./manage-runas-account.md), ook wel een Service-Principal genoemd, is het standaard mechanisme dat een Automation-runbook gebruikt om toegang te krijgen tot Azure Resource Manager resources in uw abonnement. U kunt deze functionaliteit toevoegen aan een grafisch runbook door het verbindings element toe te voegen `AzureRunAsConnection` , dat gebruikmaakt van de cmdlet [Get-AutomationConnection](/system-center/sma/manage-global-assets) van Power shell, op het canvas. U kunt ook de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) toevoegen. Dit scenario wordt geïllustreerd in het volgende voor beeld.
+Runbooks in Azure Automation die Azure-resources beheren, moeten worden geverifieerd voor Azure. Het [uitvoeren als-account](./automation-security-overview.md), ook wel een Service-Principal genoemd, is het standaard mechanisme dat een Automation-runbook gebruikt om toegang te krijgen tot Azure Resource Manager resources in uw abonnement. U kunt deze functionaliteit toevoegen aan een grafisch runbook door het verbindings element toe te voegen `AzureRunAsConnection` , dat gebruikmaakt van de cmdlet [Get-AutomationConnection](/system-center/sma/manage-global-assets) van Power shell, op het canvas. U kunt ook de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) toevoegen. Dit scenario wordt geïllustreerd in het volgende voor beeld.
 
 ![Run as-verificatie activiteiten](media/automation-graphical-authoring-intro/authenticate-run-as-account.png)
 
@@ -388,7 +388,7 @@ De volgende activiteit, `Connect-AzAccount` , voegt het geverifieerde run as-acc
 >[!NOTE]
 >Voor PowerShell-runbooks zijn `Add-AzAccount` en `Add-AzureRMAccount` aliassen voor `Connect-AzAccount`. Houd er rekening mee dat deze aliassen niet beschikbaar zijn voor uw grafische runbooks. Een grafisch runbook kan alleen worden gebruikt `Connect-AzAccount` .
 
-Voor de parameter velden **APPLICATIONID**, **CERTIFICATETHUMBPRINT**en **TENANTID**geeft u de naam van de eigenschap voor het pad naar het veld op, omdat de activiteit een object met meerdere eigenschappen uitvoert. Anders mislukt de verificatie wanneer het runbook wordt uitgevoerd. Dit is wat u Mini maal nodig hebt om uw runbook te verifiëren met het run as-account.
+Voor de parameter velden **APPLICATIONID**, **CERTIFICATETHUMBPRINT** en **TENANTID** geeft u de naam van de eigenschap voor het pad naar het veld op, omdat de activiteit een object met meerdere eigenschappen uitvoert. Anders mislukt de verificatie wanneer het runbook wordt uitgevoerd. Dit is wat u Mini maal nodig hebt om uw runbook te verifiëren met het run as-account.
 
 Sommige abonnees maken een Automation-account met behulp van een [Azure AD-gebruikers account](./shared-resources/credentials.md) voor het beheren van klassieke Azure-implementatie of voor Azure Resource Manager resources. Als u achterwaartse compatibiliteit voor deze abonnees wilt behouden, is het verificatie mechanisme dat in uw runbook moet worden gebruikt de `Add-AzureAccount` cmdlet met een [referentie-element](./shared-resources/credentials.md). De Asset vertegenwoordigt een Active Directory gebruiker met toegang tot het Azure-account.
 
@@ -416,7 +416,7 @@ Elk grafisch runbook in Azure Automation heeft een concept versie en een gepubli
 
 U kunt de concept versie van een runbook testen in de Azure Portal terwijl de gepubliceerde versie ongewijzigd blijft. U kunt ook een nieuw runbook testen voordat het is gepubliceerd, zodat u kunt controleren of het runbook correct werkt voordat alle versies worden vervangen. Wanneer een runbook wordt getest, wordt de concept versie uitgevoerd en worden alle acties uitgevoerd die worden uitgevoerd. Er is geen taak geschiedenis gemaakt, maar in het deel venster test uitvoer wordt de uitvoer weer gegeven.
 
-Open het besturings element test voor uw grafische runbook door het runbook te openen voor bewerken en vervolgens te klikken op **test venster**. De test controle vraagt om invoer parameters en u kunt het runbook starten door op **Start**te klikken.
+Open het besturings element test voor uw grafische runbook door het runbook te openen voor bewerken en vervolgens te klikken op **test venster**. De test controle vraagt om invoer parameters en u kunt het runbook starten door op **Start** te klikken.
 
 ## <a name="publish-a-graphical-runbook"></a>Een grafisch runbook publiceren
 

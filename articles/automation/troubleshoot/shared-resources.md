@@ -3,14 +3,14 @@ title: Problemen met Azure Automation gedeelde bronnen oplossen
 description: In dit artikel leest u hoe u problemen met Azure Automation gedeelde bronnen kunt oplossen en oplossen.
 services: automation
 ms.subservice: ''
-ms.date: 03/12/2019
+ms.date: 01/27/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: c4ede0bffedc256f4af621d4945ebbbea0f8a4b6
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1a822166ae4c2bf793e0fa50e93018f499fcc27a
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896288"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053616"
 ---
 # <a name="troubleshoot-shared-resource-issues"></a>Problemen met gedeelde bronnen oplossen
 
@@ -131,7 +131,7 @@ U hebt niet de machtigingen die u nodig hebt om het uitvoeren als-account te mak
 
 #### <a name="resolution"></a>Oplossing
 
-Als u een uitvoeren als-account wilt maken of bijwerken, moet u de juiste [machtigingen](../manage-runas-account.md#permissions) hebben voor de verschillende resources die worden gebruikt door het run as-account. 
+Als u een uitvoeren als-account wilt maken of bijwerken, moet u de juiste [machtigingen](../automation-security-overview.md#permissions) hebben voor de verschillende resources die worden gebruikt door het run as-account.
 
 Als het probleem wordt veroorzaakt door een vergren deling, controleert u of de vergren deling kan worden verwijderd. Ga vervolgens naar de resource die is vergrendeld in Azure Portal, klik met de rechter muisknop op de vergren deling en selecteer **verwijderen**.
 
@@ -147,7 +147,7 @@ Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 
 #### <a name="cause"></a>Oorzaak
 
-Deze fout wordt waarschijnlijk veroorzaakt door een onjuist geconfigureerd [uitvoeren als-account](../manage-runas-account.md).
+Deze fout wordt waarschijnlijk veroorzaakt door een onjuist geconfigureerd [uitvoeren als-account](../automation-security-overview.md).
 
 #### <a name="resolution"></a>Oplossing
 
@@ -166,4 +166,3 @@ Als u het probleem niet kunt oplossen met dit artikel, kunt u een van de volgend
 * Krijg antwoorden van Azure-experts via [Azure-forums](https://azure.microsoft.com/support/forums/).
 * Verbinding maken met [@AzureSupport](https://twitter.com/azuresupport) . Dit is het officiële Microsoft Azure account voor het verbinden van de Azure-community met de juiste resources: antwoorden, ondersteuning en experts.
 * Een ondersteunings incident voor Azure. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/)en selecteer **ondersteuning verkrijgen**.
-

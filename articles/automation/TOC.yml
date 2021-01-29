@@ -66,14 +66,20 @@
           href: automation-create-standalone-account.md
         - name: Een Automation-account maken met een Resource Manager-sjabloon
           href: quickstart-create-automation-account-template.md
+        - name: Run As-account
+          items:
+            - name: Uitvoeren als-account maken
+              href: create-run-as-account.md
+            - name: Uitvoeren als-account verwijderen
+              href: delete-run-as-account.md
+            - name: Uitvoeren als-account beheren
+              href: manage-runas-account.md
         - name: Verificatie configureren met Amazon Web Services
           href: automation-config-aws-account.md
         - name: Verificatie configureren met Azure AD
           href: automation-use-azure-ad.md
         - name: DNS-records beheren die worden gebruikt door Automation
           href: how-to/automation-region-dns-records.md
-        - name: Een Uitvoeren als-account van Automation beheren
-          href: manage-runas-account.md
         - name: Privéverbinding maken met een Automation-account
           href: how-to/private-link-security.md
         - name: Rolmachtigingen en beveiliging beheren

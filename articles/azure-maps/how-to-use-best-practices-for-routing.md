@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 743710ea0d40eb31375236d4e59b0b138a217518
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 8174529def5e3924086e49f36c225f07a4da2648
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895542"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051648"
 ---
 # <a name="best-practices-for-azure-maps-route-service"></a>Aanbevolen procedures voor Azure Maps route service
 
@@ -59,10 +59,10 @@ Hier volgt een vergelijking om enkele mogelijkheden van de route richtingen en m
 
 | Azure Maps-API | Maximum aantal query's in de aanvraag | Gebieden voor komen | Route ring van vracht wagen en elektrisch Voer tuig | Waypoints en Traveling Salesman Optimization | Ondersteunende punten |
 | :--------------: |  :--------------: |  :--------------: | :--------------: | :--------------: | :--------------: |
-| Routebeschrijving ophalen | 1 | | X | X | |
-| Route beschrijving plaatsen | 1 | X | X | X | X |
-| Post route beschrijving batch | 700 | | X | X | |
-| Post-routematrix | 700 | | X | | |
+| Routebeschrijving ophalen | 1 | | ✔ | ✔ | |
+| Route beschrijving plaatsen | 1 | ✔ | ✔ | ✔ | ✔ |
+| Post route beschrijving batch | 700 | | ✔ | ✔ | |
+| Post-routematrix | 700 | | ✔ | | |
 
 Voor meer informatie over routerings mogelijkheden voor elektrische auto's raadpleegt u onze zelf studie over het [routeren van elektrische Voer tuigen met behulp van Azure notebooks met python](tutorial-ev-routing.md).
 
@@ -113,7 +113,7 @@ In het tweede voor beeld hieronder hebben we een realtime-routerings aanvraag, w
 https://atlas.microsoft.com/route/directions/json?subscription-key=<Your-Azure-Maps-Primary-Subscription-Key>&api-version=1.0&query=47.6422356,-122.1389797:47.6641142,-122.3011268&travelMode=car&traffic=true&computeTravelTimeFor=all
 ```
 
-Het antwoord bevat een samen vatting zoals hieronder wordt weer gegeven. Vanwege congestie is de waarde voor **trafficDelaysInSeconds** groter dan nul. Het is ook groter dan **historicTrafficTravelTimeInSeconds** .
+Het antwoord bevat een samen vatting zoals hieronder wordt weer gegeven. Vanwege congestie is de waarde voor **trafficDelaysInSeconds** groter dan nul. Het is ook groter dan **historicTrafficTravelTimeInSeconds**.
 
 ```json
 "summary": {

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/04/2019
 ms.topic: troubleshooting
-ms.openlocfilehash: 763e1321556ade73778b82ea70926af21a83f7ec
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: ff2ef8970afa21c0218da20a5b79ea2fb782dd5c
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896271"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053581"
 ---
 # <a name="troubleshoot-startstop-vms-during-off-hours-issues"></a>Problemen met VM's buiten bedrijfsuren starten/stoppen oplossen
 
@@ -109,7 +109,7 @@ Bekijk de volgende lijst voor mogelijke oplossingen:
   * **ScheduledStartStop_Parent**
   * **SequencedStartStop_Parent**
 
-* Controleer of het [uitvoeren als-account](../manage-runas-account.md) de juiste machtigingen heeft voor de vm's die u probeert te starten of te stoppen. Zie voor meer informatie over het controleren van de machtigingen voor een resource [Quick Start: rollen weer geven die zijn toegewezen aan een gebruiker met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen** en selecteer het juiste uitvoeren als-account.
+* Controleer of het [uitvoeren als-account](../automation-security-overview.md#run-as-accounts) de juiste machtigingen heeft voor de vm's die u probeert te starten of te stoppen. Zie voor meer informatie over het controleren van de machtigingen voor een resource [Quick Start: rollen weer geven die zijn toegewezen aan een gebruiker met behulp van de Azure Portal](../../role-based-access-control/check-access.md). U moet de toepassings-ID opgeven voor de service-principal die wordt gebruikt door het run as-account. U kunt deze waarde ophalen door naar uw Automation-account te gaan in de Azure Portal. Selecteer **uitvoeren als-accounts** onder **account instellingen** en selecteer het juiste uitvoeren als-account.
 
 * Vm's kunnen niet worden gestart of gestopt als ze expliciet worden uitgesloten. Uitgesloten Vm's worden ingesteld in de `External_ExcludeVMNames` variabele in het Automation-account waarop de functie wordt geïmplementeerd. In het volgende voor beeld ziet u hoe u een query kunt uitvoeren op die waarde met Power shell.
 
@@ -201,7 +201,7 @@ Dit probleem kan worden veroorzaakt door een onjuist geconfigureerd of verlopen 
 
 Als u wilt controleren of uw uitvoeren als-account correct is geconfigureerd, gaat u naar uw Automation-account in het Azure Portal en selecteert u **uitvoeren als-accounts** onder **account instellingen**. Als een uitvoeren als-account onjuist is geconfigureerd of is verlopen, wordt de voor waarde in de status weer gegeven.
 
-Als uw uitvoeren als-account onjuist is geconfigureerd, verwijdert u het uitvoeren als-account en maakt u het opnieuw. Zie [Azure Automation uitvoeren als-accounts beheren](../manage-runas-account.md)voor meer informatie.
+Als uw uitvoeren als-account onjuist is geconfigureerd, verwijdert u het uitvoeren als-account en maakt u het opnieuw. Zie [Azure Automation uitvoeren als-accounts](../automation-security-overview.md#run-as-accounts)voor meer informatie.
 
 Als het certificaat is verlopen voor uw uitvoeren als-account, volgt u de stappen in [zelfondertekend certificaat vernieuwen](../manage-runas-account.md#cert-renewal) om het certificaat te vernieuwen.
 

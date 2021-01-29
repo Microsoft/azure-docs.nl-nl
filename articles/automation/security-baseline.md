@@ -4,15 +4,15 @@ description: Azure-beveiligings basislijn voor Automation
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 06/22/2020
+ms.date: 01/07/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ea984e527eb526e49c87ce5385ba5715803cc72d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 79282e99894bccad4f3c265cdffe4bee2e465950
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737249"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052750"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Azure-beveiligings basislijn voor Automation
 
@@ -336,11 +336,11 @@ Wanneer u echter de functie Hybrid Runbook Worker gebruikt, biedt Azure Security
 
 **Hulp**: gebruik Azure Active Directory ingebouwde beheerders rollen die expliciet kunnen worden toegewezen en waarop query's kunnen worden uitgevoerd. Gebruik de Azure AD Power shell-module om ad hoc-query's uit te voeren om accounts te detecteren die lid zijn van beheer groepen. Wanneer u een Automation-account uitvoert als accounts voor uw runbooks, moet u ervoor zorgen dat deze service-principals ook worden bijgehouden in uw inventaris, omdat deze vaak verhoogde machtigingen hebben. Verwijder ongebruikte run as-accounts om uw blootgestelde aanvals oppervlak te minimaliseren.
 
-* [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+* [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-* [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+* [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
-* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./delete-run-as-account.md)
 
 * [Een Azure Automation uitvoeren als-account beheren](./manage-runas-account.md)
 
@@ -364,7 +364,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 * [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
 
-* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./delete-run-as-account.md)
 
 * [Een Azure Automation uitvoeren als-account beheren](./manage-runas-account.md)
 
@@ -454,7 +454,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 * [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
-* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./delete-run-as-account.md)
 
 * [Een Azure Automation uitvoeren als-account beheren](./manage-runas-account.md)
 
@@ -696,7 +696,7 @@ Als u Hybrid Runbook Workers gebruikt die worden ondersteund door virtuele machi
 
 * [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 * [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -724,7 +724,7 @@ Als u Hybrid Runbook Workers gebruikt die worden ondersteund door virtuele machi
 
 * [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Een Uitvoeren als- of klassiek Uitvoeren als-account verwijderen](./delete-run-as-account.md)
 
 * [Een Azure Automation uitvoeren als-account beheren](./manage-runas-account.md)
 
@@ -836,7 +836,7 @@ Adaptief toepassings beheer is een intelligente, geautomatiseerde en end-to-end 
 
 **Richt lijnen**: wanneer u de functie Hybrid Runbook worker gebruikt en afhankelijk van het type scripts, kunt u specifieke configuraties van het besturings systeem of bronnen van derden gebruiken om de mogelijkheid van gebruikers om scripts uit te voeren binnen Azure Compute-resources te beperken. U kunt ook gebruikmaken van Azure Security Center adaptieve toepassings controles om ervoor te zorgen dat alleen geautoriseerde software wordt uitgevoerd en alle niet-geautoriseerde software wordt geblokkeerd voor uitvoering op Azure Virtual Machines.
 
-* [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+* [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy)
 
 * [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
@@ -878,7 +878,7 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 U kunt ook aanbevelingen van Azure Security Center gebruiken als een veilige configuratie basislijn voor uw Azure-resources.
 
-* [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 * [Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -942,7 +942,7 @@ Voor de meeste scenario's kan de micro soft-sjablonen voor virtuele machines die
 
 * [Informatie over het maken van ARM-sjablonen](../virtual-machines/windows/ps-template.md)
 
-* [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -952,7 +952,7 @@ Voor de meeste scenario's kan de micro soft-sjablonen voor virtuele machines die
 
 **Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure-beleids regels, Azure Resource Manager sjablonen en desired state Configuration-scripts. Als u toegang wilt krijgen tot de resources die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory als deze zijn geïntegreerd met Azure DevOps, of Active Directory als deze zijn geïntegreerd met TFS. Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-account up-to-date te houden met scripts in uw opslag plaats voor bron beheer.
 
-* [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
 * [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
@@ -1134,7 +1134,7 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 * [Inleiding tot Azure Automation](./automation-intro.md)
 
-* [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 * [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
@@ -1160,7 +1160,7 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 * [Inleiding tot Azure Automation](./automation-intro.md)
 
-* [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 * [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
@@ -1176,7 +1176,7 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 * [Resources implementeren met ARM-sjablonen en Azure Portal](../azure-resource-manager/templates/deploy-portal.md)
 
-* [Sleutel kluis sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Sleutel kluis sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey)
 
 * [Gebruik van door de klant beheerde sleutels voor een Automation-account](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
@@ -1190,7 +1190,7 @@ Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-ac
 
 Gebruik de functie integratie van bron beheer om uw runbooks in uw Automation-account up-to-date te houden met scripts in uw opslag plaats voor bron beheer.
 
-* [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
 * [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 

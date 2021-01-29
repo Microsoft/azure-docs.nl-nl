@@ -1,18 +1,16 @@
 ---
-title: Updatebeheer met Azure Resource Manager sjabloon inschakelen | Microsoft Docs
+title: Updatebeheer inschakelen met behulp van Azure Resource Manager-sjabloon
 description: In dit artikel leest u hoe u een Azure Resource Manager sjabloon kunt gebruiken om Updatebeheer in te scha kelen.
-ms.service: automation
+services: automation
 ms.subservice: update-management
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 09/18/2020
-ms.openlocfilehash: e2ebdd3d0f4a4461521ee5f412d5b4c4f872b8a0
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 47c982bff45838617b9a55f9129d4dc55d58b0d2
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183231"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050328"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Updatebeheer inschakelen met behulp van Azure Resource Manager-sjabloon
 
@@ -29,7 +27,7 @@ Met de sjabloon wordt het inschakelen van Updatebeheer op een of meer virtuele m
 Als u al een Log Analytics werk ruimte en een Automation-account hebt geïmplementeerd in een ondersteunde regio in uw abonnement, zijn deze niet gekoppeld. Met deze sjabloon maakt u de koppeling en implementeert u Updatebeheer.
 
 >[!NOTE]
->Als u een ARM-sjabloon gebruikt, wordt het maken van een Uitvoeren als-account voor Automation niet ondersteund. Als u handmatig een Uitvoeren als-account wilt maken via de portal of met PowerShell, raadpleegt u [Uitvoeren als-accounts beheren](../manage-runas-account.md).
+>Als u een ARM-sjabloon gebruikt, wordt het maken van een Uitvoeren als-account voor Automation niet ondersteund. Zie [Run as-account maken](../create-run-as-account.md)als u een uitvoeren als-account hand matig wilt maken vanuit de portal of met Power shell.
 
 Nadat u deze stappen hebt voltooid, moet u [diagnostische instellingen configureren](../automation-manage-send-joblogs-log-analytics.md) voor uw Automation-account om de taakstatus van de runbook en taakstromen te verzenden naar de gekoppelde Log Analytics-werkruimte.
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 12/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: caaeb0e40d277ef5e356c0f385a818b831326d6e
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 9b9e42d55a982aeb55d7c9e26f7b1a6cbca32e0a
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734824"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052801"
 ---
 # <a name="manage-credentials-in-azure-automation"></a>Referenties beheren in Azure Automation
 
@@ -115,7 +115,7 @@ $securePassword = $myCredential.Password
 $password = $myCredential.GetNetworkCredential().Password
 ```
 
-U kunt ook een referentie gebruiken om te verifiëren bij Azure met [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). In de meeste gevallen moet u een [uitvoeren als-account](../manage-runas-account.md) gebruiken en de verbinding ophalen met [Get-AzAutomationConnection](../automation-connections.md).
+U kunt ook een referentie gebruiken om te verifiëren bij Azure met [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). In de meeste gevallen moet u een [uitvoeren als-account](../automation-security-overview.md#run-as-accounts) gebruiken en de verbinding ophalen met [Get-AzAutomationConnection](../automation-connections.md).
 
 ```powershell
 $myCred = Get-AutomationPSCredential -Name 'MyCredential'

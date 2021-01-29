@@ -5,12 +5,12 @@ services: automation
 ms.subservice: dsc
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 2e09607dde118ce25e5d2e5311e7614f2f18a590
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f16db3f55ebd0f09e4d7b75750fa319daf03977e
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98890727"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053564"
 ---
 # <a name="configure-machines-to-a-desired-state"></a>Machines configureren met een gewenste status
 
@@ -27,7 +27,7 @@ Voor deze zelf studie gebruiken we een eenvoudige [DSC-configuratie](/powershell
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure Automation-account. Zie [Azure Uitvoeren-als-account](./manage-runas-account.md) voor instructies over het maken van een Azure Automation Uitvoeren-als-account.
+- Een Azure Automation-account. Zie [Automation-account verificatie Overview](./automation-security-overview.md)(Engelstalig) voor meer informatie over een Automation-account en de bijbehorende vereisten.
 - Een Azure Resource Manager-VM (niet klassiek) met Windows Server 2008 R2 of hoger. Zie [uw eerste virtuele Windows-machine maken in de Azure Portal](../virtual-machines/windows/quick-create-portal.md)voor instructies voor het maken van een VM.
 - Azure PowerShell module versie 3,6 of hoger. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/azurerm/install-azurerm-ps).
 - Vertrouwdheid met de desired state Configuration (DSC). Zie [Windows Power shell desired state Configuration Overview](/powershell/scripting/dsc/overview/overview)(Engelstalig) voor meer informatie over DSC.
@@ -49,7 +49,6 @@ Connect-AzAccount
 ```
 
 ## <a name="create-and-upload-a-configuration-to-azure-automation"></a>Een configuratie maken en uploaden naar Azure Automation
-
 
 Typ het volgende in een tekst editor en sla deze lokaal op als **TestConfig.ps1**.
 

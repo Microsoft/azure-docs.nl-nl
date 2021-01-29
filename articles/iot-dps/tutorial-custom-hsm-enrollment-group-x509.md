@@ -3,23 +3,25 @@ title: 'Zelfstudie: X.509-apparaten inrichten voor Azure IoT Hub met behulp van 
 description: In deze zelfstudie worden inschrijvingsgroepen gebruikt. In deze zelfstudie leert u hoe u X.509-apparaten kunt inrichten met behulp van een aangepaste HSM (Hardware Security Module) en de SDK voor C-apparaten voor Azure IoT Hub Device Provisioning Service (DPS).
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/18/2020
+ms.date: 01/28/2021
 ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 566563dde26d2dd36f4358bc8c6dcdcfb5ba8465
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: b178aa4a524cb7fcc85c7fc68ac5f772747787a3
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954859"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052360"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Zelfstudie: X.509-apparaten inrichten met behulp van inschrijvingsgroepen
 
-In deze zelfstudie leert u hoe u groepen IoT-apparaten inricht die gebruikmaken van X.509-certificaten voor verificatie. Voorbeeldcode van de [Azure IoT C-SDK](https://github.com/Azure/azure-iot-sdk-c) wordt gebruikt om uw ontwikkelcomputer in te richten als een IoT-apparaat. 
+In deze zelfstudie leert u hoe u groepen IoT-apparaten inricht die gebruikmaken van X.509-certificaten voor verificatie. Voorbeeld code van de [Azure IOT C SDK](https://github.com/Azure/azure-iot-sdk-c) wordt uitgevoerd op uw ontwikkel computer om het inrichten van X. 509-apparaten te simuleren. Op echte apparaten wordt de apparaatcode geïmplementeerd en uitgevoerd vanaf het IoT-apparaat.
 
-Azure IoT Device Provisioning Service ondersteunt twee typen inschrijvingen:
+Zorg ervoor dat u de stappen voor het instellen van [IOT hub Device Provisioning Service met de Azure Portal](quick-setup-auto-provision.md) ten minste hebt voltooid voordat u verdergaat met deze zelf studie. Als u niet bekend bent met het proces van het autoinrichten, raadpleegt u het overzicht van de [inrichting](about-iot-dps.md#provisioning-process) . 
+
+De Azure IoT Device Provisioning-Service ondersteunt twee typen inschrijvingen voor het inrichten van apparaten:
 
 * [Inschrijvingsgroepen](concepts-service.md#enrollment-group): Wordt gebruikt om meerdere gerelateerde apparaten in te schrijven.
 * [Afzonderlijke inschrijvingen](concepts-service.md#individual-enrollment): Wordt gebruikt om één apparaat in te schrijven.
@@ -27,8 +29,6 @@ Azure IoT Device Provisioning Service ondersteunt twee typen inschrijvingen:
 Deze zelfstudie is vergelijkbaar met de vorige zelfstudies waarin wordt uitgelegd hoe u inschrijvingsgroepen kunt gebruiken om apparaten in te richten. In deze zelfstudie worden echter X.509-certificaten gebruikt in plaats van symmetrische sleutels. Bekijk de vorige zelfstudies in deze sectie voor een eenvoudige benadering met behulp van [symmetrische sleutels](./concepts-symmetric-key-attestation.md).
 
 In deze zelfstudie wordt het [aangepaste HSM-voorbeeld](https://github.com/Azure/azure-iot-sdk-c/tree/master/provisioning_client/samples/custom_hsm_example) gedemonstreerd dat een stub-implementatie biedt voor communicatie met beveiligde opslag op basis van hardware. Een [HSM (Hardware Security Module)](./concepts-service.md#hardware-security-module) wordt gebruikt voor beveiligde, op hardware gebaseerde opslag van apparaatgeheimen. Een HSM kan worden gebruikt met symmetrische sleutels, X.509-certificaten of TPM-attestation om beveiligde opslag voor geheimen te bieden. Hardwarematige opslag van geheimen is niet vereist, maar wordt nadrukkelijk aanbevolen om gevoelige informatie te beschermen, zoals de persoonlijke sleutel van uw apparaat.
-
-Raadpleeg het overzicht [Inrichten](about-iot-dps.md#provisioning-process) als u niet bekend bent met het proces van automatisch inrichten. Controleer ook of u de stappen in [IoT Hub Device Provisioning Service instellen met Azure Portal](quick-setup-auto-provision.md) hebt voltooid voordat u verdergaat met deze zelfstudie. 
 
 
 In deze zelfstudie voltooit u de volgende doelstellingen:
@@ -44,9 +44,11 @@ In deze zelfstudie voltooit u de volgende doelstellingen:
 
 ## <a name="prerequisites"></a>Vereisten
 
-De volgende vereisten gelden voor een ontwikkelomgeving in Windows. Voor Linux of macOS raadpleegt u het desbetreffende gedeelte in [Uw ontwikkelomgeving voorbereiden](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) in de SDK-documentatie.
+De volgende vereisten zijn voor een Windows-ontwikkel omgeving die wordt gebruikt om de apparaten te simuleren. Voor Linux of macOS raadpleegt u het desbetreffende gedeelte in [Uw ontwikkelomgeving voorbereiden](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) in de SDK-documentatie.
 
-* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 met de workload [Desktopontwikkeling met C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development) ingeschakeld. Visual Studio 2015 en Visual Studio 2017 worden ook ondersteund.
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 met de workload [Desktopontwikkeling met C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development) ingeschakeld. Visual Studio 2015 en Visual Studio 2017 worden ook ondersteund. 
+
+    Visual Studio wordt in dit artikel gebruikt voor het bouwen van de voorbeeld code van het apparaat die op IoT-apparaten zou worden geïmplementeerd.  Dit betekent niet dat Visual Studio vereist is op het apparaat zelf.
 
 * Meest recente versie van [Git](https://git-scm.com/download/) geïnstalleerd.
 
@@ -106,7 +108,7 @@ In deze sectie bereidt u een ontwikkelomgeving voor die wordt gebruikt om de [Az
 
 ## <a name="create-an-x509-certificate-chain"></a>Een X.509-certificaatketen maken
 
-In deze sectie genereert u een X.509-certificaatketen van drie certificaten voor het testen in deze zelfstudie. De certificaten hebben de volgende hiërarchie.
+In deze sectie genereert u een X. 509-certificaat keten van drie certificaten voor het testen van elk apparaat met deze zelf studie. De certificaten hebben de volgende hiërarchie.
 
 ![Certificaatketen van apparaat in zelfstudie](./media/tutorial-custom-hsm-enrollment-group-x509/example-device-cert-chain.png#lightbox)
 
@@ -114,15 +116,17 @@ In deze sectie genereert u een X.509-certificaatketen van drie certificaten voor
 
 [Tussenliggend certificaat](concepts-x509-attestation.md#intermediate-certificate): Het is gebruikelijk dat tussenliggende certificaten worden gebruikt om apparaten logisch te groeperen op basis van productlijnen, bedrijfsafdelingen of andere criteria. In deze zelfstudie wordt een certificaatketen gebruikt die uit één tussenliggend certificaat bestaat. Het tussenliggende certificaat wordt ondertekend door het basiscertificaat. Dit certificaat wordt ook gebruikt voor de inschrijvingsgroep die in DPS is gemaakt om een groep apparaten logisch te groeperen. Met deze configuratie kunt u een hele groep apparaten beheren waarvan de certificaten zijn ondertekend door hetzelfde tussenliggende certificaat. U kunt inschrijvingsgroepen maken om een groep apparaten in of uit te schakelen. Zie [Een tussenliggend of basis-X.509-CA-certificaat weigeren met behulp van een inschrijvingsgroep](how-to-revoke-device-access-portal.md#disallow-an-x509-intermediate-or-root-ca-certificate-by-using-an-enrollment-group) voor meer informatie over het uitschakelen van een groep apparaten
 
-[Apparaatcertificaat](concepts-x509-attestation.md#end-entity-leaf-certificate): Het apparaat(leaf)certificaat wordt ondertekend door het tussenliggende certificaat en samen met de persoonlijke sleutel opgeslagen op het apparaat. Bij het inrichten presenteert het apparaat dit certificaat en de persoonlijke sleutel samen met de certificaatketen. 
+[Apparaat certificaten](concepts-x509-attestation.md#end-entity-leaf-certificate): de certificaten van het apparaat (Leaf) worden ondertekend door het tussenliggende certificaat en samen met de persoonlijke sleutel op het apparaat opgeslagen. In het ideale geval worden deze gevoelige items veilig opgeslagen met een HSM. Op elk apparaat wordt het certificaat en de persoonlijke sleutel weer gegeven, samen met de certificaat keten bij het inrichten. 
 
-Het certificaat maken:
+#### <a name="create-root-and-intermediate-certificates"></a>Basis-en tussenliggende certificaten maken
+
+De basis-en tussenliggende delen van de certificaat keten maken:
 
 1. Open een Git Bash-opdrachtprompt. Voer stap 1 en 2 uit met behulp van de Bash-shellinstructies die zich bevinden in [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md#managing-test-ca-certificates-for-samples-and-tutorials) (Test-CA-certificaten beheren voor voorbeelden en zelfstudies)
 
-    Met deze stap maakt u een werkmap voor de certificaatscripts en wordt met behulp van openssl het basis- en tussenliggende voorbeeldcertificaat voor de certificaatketen gegenereerd. 
-
-    In de uitvoer ziet u de locatie van het zelfondertekende basiscertificaat. Dit certificaat doorloopt [bewijs van het bezit](how-to-verify-certificates.md) om het eigendom later te verifiëren.
+    Hiermee maakt u een werkmap voor de certificaat scripts en wordt het voor beeld-basis certificaat gegenereerd voor de certificaat keten met behulp van openssl. 
+    
+2. In de uitvoer ziet u de locatie van het zelfondertekende basiscertificaat. Dit certificaat doorloopt [bewijs van het bezit](how-to-verify-certificates.md) om het eigendom later te verifiëren.
 
     ```output
     Creating the Root CA Certificate
@@ -142,8 +146,8 @@ Het certificaat maken:
                 Not After : Nov 22 21:30:30 2020 GMT
             Subject: CN=Azure IoT Hub CA Cert Test Only
     ```        
-
-    In de uitvoer ziet u de locatie van het tussenliggende certificaat dat wordt ondertekend/uitgegeven door het basiscertificaat. Dit certificaat wordt gebruikt in combinatie met de inschrijvingsgroep die u later gaat maken.
+    
+3. In de uitvoer ziet u de locatie van het tussenliggende certificaat dat wordt ondertekend/uitgegeven door het basiscertificaat. Dit certificaat wordt gebruikt in combinatie met de inschrijvingsgroep die u later gaat maken.
 
     ```output
     Intermediate CA Certificate Generated At:
@@ -161,8 +165,12 @@ Het certificaat maken:
                 Not After : Nov 22 21:30:33 2020 GMT
             Subject: CN=Azure IoT Hub Intermediate Cert Test Only
     ```    
+    
+#### <a name="create-device-certificates"></a>Certificaten voor apparaten maken
 
-2. Voer vervolgens de volgende opdracht uit om een nieuw apparaat-/leafcertificaat te maken met een onderwerpnaam die u als parameter opgeeft. Gebruik de voorbeeldnaam van het onderwerp dat aan deze zelfstudie is gegeven: `custom-hsm-device-01`. Deze onderwerpnaam is de apparaat-id voor uw IoT-apparaat. 
+De apparaat certificaten maken die zijn ondertekend door het tussenliggende certificaat in de keten:
+
+1. Voer de volgende opdracht uit om een nieuw apparaat/blad certificaat te maken met een onderwerpnaam die u opgeeft als para meter. Gebruik de voorbeeldnaam van het onderwerp dat aan deze zelfstudie is gegeven: `custom-hsm-device-01`. Deze onderwerpnaam is de apparaat-id voor uw IoT-apparaat. 
 
     > [!WARNING]
     > Gebruik geen spaties in de onderwerpnaam. Deze onderwerpnaam is de apparaat-id voor het IoT-apparaat dat wordt ingericht. Het moet de regels voor een apparaat-id volgen. Zie [Eigenschappen van apparaat-id](../iot-hub/iot-hub-devguide-identity-registry.md#device-identity-properties) voor meer informatie.
@@ -192,13 +200,13 @@ Het certificaat maken:
             Subject: CN=custom-hsm-device-01
     ```    
     
-3. Voer de volgende opdracht uit om een PEM-bestand met een volledige certificaatketen te maken dat het nieuwe apparaatcertificaat bevat.
+2. Voer de volgende opdracht uit om een volledig certificaat keten. pem-bestand te maken dat het nieuwe certificaat voor het apparaat bevat voor `custom-hsm-device-01` .
 
     ```Bash
-    cd ./certs && cat new-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-device-full-chain.cert.pem && cd ..
+    cd ./certs && cat new-device.cert.pem azure-iot-test-only.intermediate.cert.pem azure-iot-test-only.root.ca.cert.pem > new-device-01-full-chain.cert.pem && cd ..
     ```
 
-    Gebruik een teksteditor en open het certificaatketenbestand, *./certs/new-device-full-chain.cert.pem*. De tekst van de certificaatketen bevat de volledige keten van alle drie de certificaten. Verderop in deze zelfstudie gebruikt u deze tekst als de certificaatketen met de aangepaste HSM-code.
+    Gebruik een tekst editor en open het certificaat keten bestand, *./certs/New-Device-01-Full-chain.cert.pem*. De tekst van de certificaatketen bevat de volledige keten van alle drie de certificaten. Verderop in deze zelf studie gebruikt u deze tekst als de certificaat keten met in de aangepaste HSM-apparaatcode `custom-hsm-device-01` .
 
     De tekst van de volledige keten heeft de volgende indeling:
  
@@ -214,115 +222,25 @@ Het certificaat maken:
     -----END CERTIFICATE-----
     ```
 
-5. De persoonlijke sleutel voor het nieuwe apparaatcertificaat wordt geschreven naar *./private/new-device.key.pem*. Het apparaat heeft de tekst voor deze sleutel tijdens het inrichten nodig. De tekst wordt later toegevoegd aan het aangepaste HSM-voorbeeld.
+3. De persoonlijke sleutel voor het nieuwe apparaatcertificaat wordt geschreven naar *./private/new-device.key.pem*. Wijzig de naam van dit sleutel bestand *./private/New-Device-01.key.pem* voor het `custom-hsm-device-01` apparaat. Het apparaat heeft de tekst voor deze sleutel tijdens het inrichten nodig. De tekst wordt later toegevoegd aan het aangepaste HSM-voorbeeld.
+
+    ```bash
+    $ mv private/new-device.key.pem private/new-device-01.key.pem
+    ```
 
     > [!WARNING]
     > De tekst voor de certificaten bevat alleen informatie over openbare sleutels. 
     >
     > Het apparaat moet echter ook toegang hebben tot de persoonlijke sleutel voor het apparaatcertificaat. Dit is nodig omdat het apparaat tijdens het inrichten verificatie moet uitvoeren met behulp van deze sleutel tijdens runtime. De gevoeligheid van deze sleutel is een van de belangrijkste redenen om op hardware gebaseerde opslag te gebruiken in een echte HSM om persoonlijke sleutels te kunnen beveiligen.
 
+4. Herhaal stap 1-3 voor een tweede apparaat met apparaat-ID `custom-hsm-device-02` . Gebruik de volgende waarden voor dat apparaat:
 
-
-## <a name="configure-the-custom-hsm-stub-code"></a>De stub-code voor de aangepaste HSM configureren
-
-De bijzonderheden van de interactie met de daadwerkelijke beveiligde opslag op basis van hardware is afhankelijk van de hardware. Als gevolg hiervan wordt de certificaatketen die door het apparaat in deze zelfstudie wordt gebruikt, in de stub-code voor de aangepaste HSM vastgelegd. In de praktijk zou de certificaatketen worden opgeslagen in de daadwerkelijke HSM-hardware om een betere beveiliging te kunnen bieden voor gevoelige informatie. Methoden die vergelijkbaar zijn met de stub-methoden uit dit voorbeeld worden vervolgens geïmplementeerd om de geheimen van die op hardware gebaseerde opslag te lezen. 
-
-Hoewel HSM-hardware niet is vereist, is het niet raadzaam om gevoelige informatie, zoals de persoonlijke sleutel van het certificaat, in de broncode te hebben. Hiermee wordt de sleutel voor iedereen beschikbaar die de code kan zien. Dat wordt in dit artikel alleen gedaan om te helpen bij het leren.
-
-De stub-code voor de aangepaste HSM in deze zelfstudie bijwerken:
-
-1. Start Visual Studio en open het nieuwe oplossingsbestand dat is gemaakt in de map `cmake` die u hebt gemaakt in de hoofdmap van de Git-opslagplaats azure-iot-sdk-c. Het oplossingsbestand heeft de naam `azure_iot_sdks.sln`.
-
-2. Ga in Solution Explorer voor Visual Studio naar **Provisioning_Samples > custom_hsm_example > Bronbestanden** en open *custom_hsm_example.c*.
-
-3. Werk de tekenreekswaarde van de tekenreeksconstante `COMMON_NAME` bij met de algemene naam die u hebt gebruikt bij het genereren van het apparaatcertificaat.
-
-    ```c
-    static const char* const COMMON_NAME = "custom-hsm-device-01";
-    ```
-
-4. Nadat u uw certificaten hebt gegenereerd, moet u in hetzelfde bestand de tekenreekswaarde van de tekenreeksconstante `CERTIFICATE` bijwerken met behulp van de tekst van de certificaatketen die u hebt opgeslagen in *./certs/new-device-full-chain.cert.pem*.
-
-    De syntaxis van de certificaattekst moet het onderstaande patroon volgen, zonder extra spaties of parsering uitgevoerd in Visual Studio.
-
-    ```c
-    // <Device/leaf cert>
-    // <intermediates>
-    // <root>
-    static const char* const CERTIFICATE = "-----BEGIN CERTIFICATE-----\n"
-    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
-        ...
-    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
-    "-----END CERTIFICATE-----\n"
-    "-----BEGIN CERTIFICATE-----\n"
-    "MIIFPDCCAySgAwIBAgIBATANBgkqhkiG9w0BAQsFADAqMSgwJgYDVQQDDB9BenVy\n"
-        ...
-    "MTEyMjIxMzAzM1owNDEyMDAGA1UEAwwpQXp1cmUgSW9UIEh1YiBJbnRlcm1lZGlh\n"
-    "-----END CERTIFICATE-----\n"
-    "-----BEGIN CERTIFICATE-----\n"
-    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
-        ...
-    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
-    "-----END CERTIFICATE-----";        
-    ```
-
-    Het bijwerken van de tekenreekswaarde in deze stap kan vervelend zijn en kan snel misgaan. Als u de juiste syntaxis wilt genereren in uw Git Bash-prompt, kopieert en plakt u de volgende bash-shell-opdrachten in uw Git Bash-opdrachtprompt, en drukt u op **Enter**. Met deze opdrachten wordt de syntaxis voor de tekenreekswaarde van de constante `CERTIFICATE` gegenereerd.
-
-    ```Bash
-    input="./certs/new-device-full-chain.cert.pem"
-    bContinue=true
-    prev=
-    while $bContinue; do
-        if read -r next; then
-          if [ -n "$prev" ]; then   
-            echo "\"$prev\\n\""
-          fi
-          prev=$next  
-        else
-          echo "\"$prev\";"
-          bContinue=false
-        fi  
-    done < "$input"
-    ```
-
-    Kopieer en plak de uitvoertekst van het certificaat voor de nieuwe constantewaarde. 
-
-
-5. In hetzelfde bestand moet de tekenreekswaarde van de constante `PRIVATE_KEY` ook worden bijgewerkt met behulp van de persoonlijke sleutel voor apparaatcertificaat.
-
-    De syntaxis van de persoonlijke sleutel moet het onderstaande patroon volgen, zonder extra spaties of parsering uitgevoerd in Visual Studio.
-
-    ```c
-    static const char* const PRIVATE_KEY = "-----BEGIN RSA PRIVATE KEY-----\n"
-    "MIIJJwIBAAKCAgEAtjvKQjIhp0EE1PoADL1rfF/W6v4vlAzOSifKSQsaPeebqg8U\n"
-        ...
-    "X7fi9OZ26QpnkS5QjjPTYI/wwn0J9YAwNfKSlNeXTJDfJ+KpjXBcvaLxeBQbQhij\n"
-    "-----END RSA PRIVATE KEY-----";
-    ```
-
-    Het bijwerken van de tekenreekswaarde in deze stap kan ook vervelend zijn en snel misgaan. Als u de juiste syntaxis wilt genereren in uw Git Bash-prompt, kopieert en plakt u de volgende bash-shell-opdrachten, en drukt u op **Enter**. Met deze opdrachten wordt de syntaxis voor de tekenreekswaarde van de constante `PRIVATE_KEY` gegenereerd.
-
-    ```Bash
-    input="./private/new-device.key.pem"
-    bContinue=true
-    prev=
-    while $bContinue; do
-        if read -r next; then
-          if [ -n "$prev" ]; then   
-            echo "\"$prev\\n\""
-          fi
-          prev=$next  
-        else
-          echo "\"$prev\";"
-          bContinue=false
-        fi  
-    done < "$input"
-    ```
-
-    Kopieer en plak de uitvoertekst van de persoonlijke sleutel voor de nieuwe constantewaarde. 
-
-6. Sla *custom_hsm_example.c* op.
-
+    |   Description                 |  Waarde  |
+    | :---------------------------- | :--------- |
+    | Onderwerpnaam                  | `custom-hsm-device-02` |
+    | Volledig certificaat keten bestand   | *./certs/new-device-02-full-chain.cert.pem* |
+    | Bestands naam van de persoonlijke sleutel          | *privé/New-Device-02. key. pem* |
+    
 
 ## <a name="verify-ownership-of-the-root-certificate"></a>Eigendom van het basiscertificaat verifiëren
 
@@ -411,21 +329,23 @@ Uw handtekeningcertificaten worden nu op het Windows-apparaat vertrouwd en de vo
 
 ## <a name="configure-the-provisioning-device-code"></a>De code voor de apparaatinrichting configureren
 
-In deze sectie werkt u de voorbeeldcode voor het inrichten van het apparaat bij naar uw Device Provisioning Service-exemplaar. Als het apparaat wordt geverifieerd, wordt het toegewezen aan een IoT-hub die is gekoppeld aan het Device Provisioning Service-exemplaar.
+In deze sectie werkt u de voorbeeld code bij met de informatie van het Device Provisioning service-exemplaar. Als een apparaat is geverifieerd, wordt het toegewezen aan een IoT-hub die is gekoppeld aan het Device Provisioning service-exemplaar dat in deze sectie is geconfigureerd.
 
 1. Selecteer in Azure Portal het tabblad **Overzicht** voor uw Device Provisioning-service en noteer de waarde van het **_Id-bereik_**.
 
     ![Device Provisioning Service-eindpuntgegevens uit de portalblade extraheren](./media/quick-create-simulated-device-x509/extract-dps-endpoints.png) 
 
-2. Ga in Solution Explorer voor Visual Studio naar **Provisioning_Samples > prov_dev_client_sample > Bronbestanden** en open *prov_dev_client_sample.c*.
+2. Start Visual Studio en open het nieuwe oplossingsbestand dat is gemaakt in de map `cmake` die u hebt gemaakt in de hoofdmap van de Git-opslagplaats azure-iot-sdk-c. Het oplossingsbestand heeft de naam `azure_iot_sdks.sln`.
 
-3. Zoek de constante `id_scope` op en vervang de waarde door uw **Id-bereik**-waarde die u eerder hebt gekopieerd. 
+3. Ga in Solution Explorer voor Visual Studio naar **Provisioning_Samples > prov_dev_client_sample > Bronbestanden** en open *prov_dev_client_sample.c*.
+
+4. Zoek de constante `id_scope` op en vervang de waarde door uw **Id-bereik**-waarde die u eerder hebt gekopieerd. 
 
     ```c
     static const char* id_scope = "0ne00000A0A";
     ```
 
-4. Zoek de definitie voor de functie `main()` op in hetzelfde bestand. Zorg ervoor dat variabele `hsm_type` is ingesteld op `SECURE_DEVICE_TYPE_X509`, zoals hieronder wordt weergegeven.
+5. Zoek de definitie voor de functie `main()` op in hetzelfde bestand. Zorg ervoor dat variabele `hsm_type` is ingesteld op `SECURE_DEVICE_TYPE_X509`, zoals hieronder wordt weergegeven.
 
     ```c
     SECURE_DEVICE_TYPE hsm_type;
@@ -434,11 +354,110 @@ In deze sectie werkt u de voorbeeldcode voor het inrichten van het apparaat bij 
     //hsm_type = SECURE_DEVICE_TYPE_SYMMETRIC_KEY;
     ```
 
-5. Klik met de rechtermuisknop op het **prov\_dev\_client\_sample**-project en selecteer **Set as Startup Project**.
+6. Klik met de rechtermuisknop op het **prov\_dev\_client\_sample**-project en selecteer **Set as Startup Project**.
+
+
+## <a name="configure-the-custom-hsm-stub-code"></a>De stub-code voor de aangepaste HSM configureren
+
+De bijzonderheden van de interactie met de daadwerkelijke beveiligde opslag op basis van hardware is afhankelijk van de hardware. Als gevolg hiervan worden de certificaat ketens die worden gebruikt door de gesimuleerde apparaten in deze zelf studie hardcoded in de aangepaste HSM-stub-code. In de praktijk zou de certificaatketen worden opgeslagen in de daadwerkelijke HSM-hardware om een betere beveiliging te kunnen bieden voor gevoelige informatie. Methoden die vergelijkbaar zijn met de stub-methoden die in dit voor beeld worden gebruikt, worden vervolgens geïmplementeerd om de geheimen van die op hardware gebaseerde opslag te lezen. 
+
+Hoewel HSM-hardware niet is vereist, is het raadzaam om gevoelige informatie te beveiligen, zoals de persoonlijke sleutel van het certificaat. Als een daad werkelijke HSM door het voor beeld werd aangeroepen, zou de persoonlijke sleutel niet aanwezig zijn in de bron code. Als de sleutel in de bron code wordt weer gegeven, wordt de sleutel beschikbaar voor iedereen die de code kan bekijken. Dat wordt in dit artikel alleen gedaan om te helpen bij het leren.
+
+Voer de volgende stappen uit om de aangepaste HSM-stub-code bij te werken om de identiteit van het apparaat met ID te simuleren `custom-hsm-device-01` :
+
+1. Ga in Solution Explorer voor Visual Studio naar **Provisioning_Samples > custom_hsm_example > Bronbestanden** en open *custom_hsm_example.c*.
+
+2. Werk de tekenreekswaarde van de tekenreeksconstante `COMMON_NAME` bij met de algemene naam die u hebt gebruikt bij het genereren van het apparaatcertificaat.
+
+    ```c
+    static const char* const COMMON_NAME = "custom-hsm-device-01";
+    ```
+
+3. In hetzelfde bestand moet u de teken reeks waarde van de `CERTIFICATE` constante teken reeks bijwerken met behulp van de certificaat keten tekst die u hebt opgeslagen in *./certs/New-Device-01-Full-chain.cert.pem* nadat u uw certificaten hebt gegenereerd.
+
+    De syntaxis van de certificaattekst moet het onderstaande patroon volgen, zonder extra spaties of parsering uitgevoerd in Visual Studio.
+
+    ```c
+    // <Device/leaf cert>
+    // <intermediates>
+    // <root>
+    static const char* const CERTIFICATE = "-----BEGIN CERTIFICATE-----\n"
+    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
+        ...
+    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
+    "-----END CERTIFICATE-----\n"
+    "-----BEGIN CERTIFICATE-----\n"
+    "MIIFPDCCAySgAwIBAgIBATANBgkqhkiG9w0BAQsFADAqMSgwJgYDVQQDDB9BenVy\n"
+        ...
+    "MTEyMjIxMzAzM1owNDEyMDAGA1UEAwwpQXp1cmUgSW9UIEh1YiBJbnRlcm1lZGlh\n"
+    "-----END CERTIFICATE-----\n"
+    "-----BEGIN CERTIFICATE-----\n"
+    "MIIFOjCCAyKgAwIBAgIJAPzMa6s7mj7+MA0GCSqGSIb3DQEBCwUAMCoxKDAmBgNV\n"
+        ...
+    "MDMwWhcNMjAxMTIyMjEzMDMwWjAqMSgwJgYDVQQDDB9BenVyZSBJb1QgSHViIENB\n"
+    "-----END CERTIFICATE-----";        
+    ```
+
+    Het bijwerken van de tekenreekswaarde in deze stap kan vervelend zijn en kan snel misgaan. Als u de juiste syntaxis wilt genereren in uw Git Bash-prompt, kopieert en plakt u de volgende bash-shell-opdrachten in uw Git Bash-opdrachtprompt, en drukt u op **Enter**. Met deze opdrachten wordt de syntaxis voor de tekenreekswaarde van de constante `CERTIFICATE` gegenereerd.
+
+    ```Bash
+    input="./certs/new-device-01-full-chain.cert.pem"
+    bContinue=true
+    prev=
+    while $bContinue; do
+        if read -r next; then
+          if [ -n "$prev" ]; then   
+            echo "\"$prev\\n\""
+          fi
+          prev=$next  
+        else
+          echo "\"$prev\";"
+          bContinue=false
+        fi  
+    done < "$input"
+    ```
+
+    Kopieer en plak de uitvoertekst van het certificaat voor de nieuwe constantewaarde. 
+
+
+4. In hetzelfde bestand moet de tekenreekswaarde van de constante `PRIVATE_KEY` ook worden bijgewerkt met behulp van de persoonlijke sleutel voor apparaatcertificaat.
+
+    De syntaxis van de persoonlijke sleutel moet het onderstaande patroon volgen, zonder extra spaties of parsering uitgevoerd in Visual Studio.
+
+    ```c
+    static const char* const PRIVATE_KEY = "-----BEGIN RSA PRIVATE KEY-----\n"
+    "MIIJJwIBAAKCAgEAtjvKQjIhp0EE1PoADL1rfF/W6v4vlAzOSifKSQsaPeebqg8U\n"
+        ...
+    "X7fi9OZ26QpnkS5QjjPTYI/wwn0J9YAwNfKSlNeXTJDfJ+KpjXBcvaLxeBQbQhij\n"
+    "-----END RSA PRIVATE KEY-----";
+    ```
+
+    Het bijwerken van de tekenreekswaarde in deze stap kan ook vervelend zijn en snel misgaan. Als u de juiste syntaxis wilt genereren in uw Git Bash-prompt, kopieert en plakt u de volgende bash-shell-opdrachten, en drukt u op **Enter**. Met deze opdrachten wordt de syntaxis voor de tekenreekswaarde van de constante `PRIVATE_KEY` gegenereerd.
+
+    ```Bash
+    input="./private/new-device-01.key.pem"
+    bContinue=true
+    prev=
+    while $bContinue; do
+        if read -r next; then
+          if [ -n "$prev" ]; then   
+            echo "\"$prev\\n\""
+          fi
+          prev=$next  
+        else
+          echo "\"$prev\";"
+          bContinue=false
+        fi  
+    done < "$input"
+    ```
+
+    Kopieer en plak de uitvoertekst van de persoonlijke sleutel voor de nieuwe constantewaarde. 
+
+5. Sla *custom_hsm_example.c* op.
 
 6. Selecteer in het menu van Visual Studio de optie **Debug** > **Start without debugging** om de oplossing uit te voeren. Wanneer wordt gevraagd het project opnieuw te bouwen, selecteert u **Ja** om het project opnieuw te bouwen voordat het wordt uitgevoerd.
 
-    De volgende uitvoer is een voorbeeld van de voorbeeldcode van de Provisioning Device-client die wordt opgestart en verbinding maakt met de Provisioning Service. Het apparaat is toegewezen aan een IoT-hub en is geregistreerd:
+    De volgende uitvoer is een voor beeld van een gesimuleerd apparaat dat wordt `custom-hsm-device-01` opgestart en waarmee verbinding wordt gemaakt met de inrichtings service. Het apparaat is toegewezen aan een IoT-hub en is geregistreerd:
 
     ```cmd
     Provisioning API Version: 1.3.9
@@ -455,6 +474,29 @@ In deze sectie werkt u de voorbeeldcode voor het inrichten van het apparaat bij 
 7. Navigeer in de portal naar de IoT-hub die is gekoppeld aan uw Provisioning-service en selecteer het tabblad **IoT-apparaten**. Wanneer het inrichten van het X.509-apparaat voor de hub is voltooid, wordt de apparaat-id weergegeven op de blade **IoT-apparaten** met *STATUS* **ingeschakeld**. Mogelijk moet u bovenaan op de knop **Vernieuwen** drukken. 
 
     ![Aangepast HSM-apparaat wordt geregistreerd bij de IoT-hub](./media/tutorial-custom-hsm-enrollment-group-x509/hub-provisioned-custom-hsm-x509-device.png) 
+
+8. Herhaal stap 1-7 voor een tweede apparaat met apparaat-ID `custom-hsm-device-02` . Gebruik de volgende waarden voor dat apparaat:
+
+    |   Description                 |  Waarde  |
+    | :---------------------------- | :--------- |
+    | `COMMON_NAME`                 | `"custom-hsm-device-02"` |
+    | Volledige certificaat keten        | De tekst genereren met `input="./certs/new-device-02-full-chain.cert.pem"` |
+    | Persoonlijke sleutel                   | De tekst genereren met `input="./private/new-device-02.key.pem"` |
+
+    De volgende uitvoer is een voor beeld van een gesimuleerd apparaat dat wordt `custom-hsm-device-02` opgestart en waarmee verbinding wordt gemaakt met de inrichtings service. Het apparaat is toegewezen aan een IoT-hub en is geregistreerd:
+
+    ```cmd
+    Provisioning API Version: 1.3.9
+    
+    Registering Device
+    
+    Provisioning Status: PROV_DEVICE_REG_STATUS_CONNECTED
+    Provisioning Status: PROV_DEVICE_REG_STATUS_ASSIGNING
+    
+    Registration Information received from service: test-docs-hub.azure-devices.net, deviceId: custom-hsm-device-02
+    Press enter key to exit:
+    ```
+
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

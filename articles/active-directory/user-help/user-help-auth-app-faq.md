@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 01/15/2020
+ms.date: 01/28/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 2be1c7f76055cad1cf8b51938a65c7bbe6b2917e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 369ec11050fa7dbc09159d88793685ad5fbdb3e5
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881075"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053957"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -67,7 +67,11 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **V**: welke gegevens worden door de verificator in mijn naam opgeslagen en hoe kan ik deze verwijderen?
 
-**A**: met de verificator-app worden drie soorten informatie verzameld:<ul><li>Account gegevens die u opgeeft wanneer u uw account toevoegt. Deze gegevens kunnen worden verwijderd door uw account te verwijderen.</li><li>Diagnostische logboek gegevens die alleen in de app blijven, totdat u **Logboeken verzenden** selecteert, wordt het **Help** -menu van de app weer gegeven voor het verzenden van logboeken naar micro soft. Deze logboeken kunnen persoonlijke gegevens bevatten, zoals e-mail adressen, server adressen of IP-adressen. Ze kunnen ook apparaatgegevens bevatten, zoals de naam van het apparaat en de versie van het besturings systeem. Persoonlijke gegevens die worden verzameld, zijn beperkt tot informatie die nodig is om app-problemen op te lossen. U kunt op elk gewenst moment door deze logboek bestanden in de app bladeren om de gegevens te zien die worden verzameld. Als u uw logboek bestanden verzendt, zullen de technici van de verificatie-app deze alleen gebruiken om problemen met door klanten gemelde problemen op te lossen.</li><li>Niet-persoonlijk identificeer bare gebruiks gegevens, zoals ' Start account flow toevoegen/account toegevoegd ' of ' melding goedgekeurd '. Deze gegevens vormen een integraal onderdeel van onze technische beslissingen. Uw gebruik helpt ons te bepalen waar de apps kunnen worden verbeterd op een manier die belang rijk voor u is. U ziet een melding van deze gegevens verzameling wanneer u de app voor de eerste keer gebruikt. U krijgt dan de melding dat deze kan worden uitgeschakeld op de pagina **instellingen** van de app. U kunt deze instelling op elk gewenst moment in-of uitschakelen.</li></ul>
+**A**: met de verificator-app worden drie soorten informatie verzameld:
+
+- Account gegevens die u opgeeft wanneer u uw account toevoegt. Deze gegevens kunnen worden verwijderd door uw account te verwijderen.
+- Diagnostische logboek gegevens die alleen in de app blijven totdat u **feedback verzendt** in het bovenste menu van de app om logboeken naar micro soft te verzenden. Deze logboeken kunnen persoonlijke gegevens bevatten, zoals e-mail adressen, server adressen of IP-adressen. Ze kunnen ook apparaatgegevens bevatten, zoals de naam van het apparaat en de versie van het besturings systeem. Persoonlijke gegevens die worden verzameld, zijn beperkt tot informatie die nodig is om app-problemen op te lossen. U kunt op elk gewenst moment door deze logboek bestanden in de app bladeren om de gegevens te zien die worden verzameld. Als u uw logboek bestanden verzendt, zullen de technici van de verificatie-app deze alleen gebruiken om problemen met door klanten gemelde problemen op te lossen.
+- Niet-persoonlijk identificeer bare gebruiks gegevens, zoals ' Start account flow toevoegen/account toegevoegd ' of ' melding goedgekeurd '. Deze gegevens vormen een integraal onderdeel van onze technische beslissingen. Uw gebruik helpt ons te bepalen waar de apps kunnen worden verbeterd op een manier die belang rijk voor u is. U ziet een melding van deze gegevens verzameling wanneer u de app voor de eerste keer gebruikt. U krijgt een melding dat deze kan worden uitgeschakeld op de pagina **instellingen** van de app   . U kunt deze instelling op elk gewenst moment in-of uitschakelen.
 
 ### <a name="codes-in-the-app"></a>Codes in de app
 
@@ -102,7 +106,7 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **V**: Waarom krijg ik alleen meldingen wanneer de app is geopend? Wanneer de app is gesloten, worden er geen meldingen weer geven.
 
-**A**: als u meldingen ontvangt, maar geen waarschuwing, zelfs met uw beltoon op, moet u de app-instellingen controleren. Zorg ervoor dat de app is ingeschakeld om geluid te gebruiken of te trillen voor meldingen. Als u helemaal geen meldingen ontvangt, controleert u de volgende voor waarden:<ul><li>Is uw telefoon in geen enkele Store of Stille modus? Deze modi kunnen verhinderen dat apps meldingen verzenden.</li><li>Kunt u meldingen ontvangen van andere apps? Als dat niet het geval is, is het mogelijk dat er een probleem is met de netwerk verbindingen op uw telefoon of het meldingen kanaal van Android of Apple. U kunt proberen om uw netwerk verbindingen op te lossen via uw telefoon instellingen. Mogelijk moet u contact opnemen met uw service provider om u te helpen bij het Android-of Apple-meldings kanaal.</li><li>Kunt u meldingen ontvangen voor sommige accounts in de app, maar niet voor anderen? Als dit het geval is, verwijdert u het problematische account uit uw app, voegt u het opnieuw toe, zodat er meldingen worden weer geven en kunt u zien of het probleem is opgelost.</li></ul>Als u al deze stappen hebt uitgevoerd en nog steeds problemen ondervindt, kunt u het beste uw logboek bestanden verzenden voor diagnostische gegevens. Open de app, ga naar **Help** en selecteer **Logboeken verzenden**. Daarna gaat u naar het [Microsoft Authenticator app-forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftAuthenticatorApp) en geeft u het probleem weer dat u ziet en de stappen die u hebt geprobeerd.
+**A**: als u meldingen ontvangt, maar geen waarschuwing, zelfs met uw beltoon op, moet u de app-instellingen controleren. Zorg ervoor dat de app is ingeschakeld om geluid te gebruiken of te trillen voor meldingen. Als u helemaal geen meldingen ontvangt, controleert u de volgende voor waarden:<ul><li>Is uw telefoon in geen enkele Store of Stille modus? Deze modi kunnen verhinderen dat apps meldingen verzenden.</li><li>Kunt u meldingen ontvangen van andere apps? Als dat niet het geval is, is het mogelijk dat er een probleem is met de netwerk verbindingen op uw telefoon of het meldingen kanaal van Android of Apple. U kunt proberen om uw netwerk verbindingen op te lossen via uw telefoon instellingen. Mogelijk moet u contact opnemen met uw service provider om u te helpen bij het Android-of Apple-meldings kanaal.</li><li>Kunt u meldingen ontvangen voor sommige accounts in de app, maar niet voor anderen? Als dit het geval is, verwijdert u het problematische account uit uw app, voegt u het opnieuw toe, zodat er meldingen worden weer geven en kunt u zien of het probleem is opgelost.</li></ul>Als u al deze stappen hebt uitgevoerd en nog steeds problemen ondervindt, kunt u het beste uw logboek bestanden verzenden voor diagnostische gegevens. Open de app, ga naar het menu op het hoogste niveau van de app en selecteer vervolgens **Feedback verzenden**. Daarna gaat u naar het [Microsoft Authenticator-app-forum](https://social.technet.microsoft.com/Forums/en-US/home?forum=MicrosoftAuthenticatorApp) en vertelt u micro soft het probleem dat u ziet en de stappen die u hebt geprobeerd.
 
 ### <a name="switch-to-push-notifications"></a>Overschakelen naar Push meldingen
 
@@ -204,13 +208,13 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **V**: mijn app voor Apple Watch is vastgelopen. Kan ik mijn crash logboeken verzenden zodat je het kunt onderzoeken?
 
-**A**: u moet er eerst voor zorgen dat u ervoor hebt gekozen om uw analyses met ons te delen. Als u een TestFlight-gebruiker bent, bent u al aangemeld. Als dat niet het geval is, gaat u naar **instellingen > Privacy > Analytics** en selecteert u de opties **share iPhone & watch bekijken** en **delen met app-ontwikkel aars** .<br>Nadat u zich hebt aangemeld, kunt u proberen om uw crash te reproduceren zodat uw crash logboeken automatisch naar ons worden verzonden om te worden onderzocht. Als u uw crash echter niet kunt reproduceren, kunt u de logboek bestanden hand matig kopiëren en naar ons verzenden.<ol><li>Open de controle-app op uw telefoon, ga naar **instellingen > algemeen** en klik vervolgens op **Watch-analyse kopiëren**.</li><li>Zoek de overeenkomstige crash onder **instellingen > privacybeleid > analytics > Analytics-gegevens** en kopieer de hele tekst vervolgens hand matig.</li><li>Open de verificator op uw telefoon en plak de gekopieerde tekst in het tekstvak **delen met app-ontwikkel aars** op de pagina **Logboeken verzenden** .</li></ol>
+**A**: u moet er eerst voor zorgen dat u ervoor hebt gekozen om uw analyses met ons te delen. Als u een TestFlight-gebruiker bent, bent u al aangemeld. Als dat niet het geval is, gaat u naar **instellingen > Privacy > Analytics** en selecteert u de opties **share iPhone & watch bekijken** en **delen met app-ontwikkel aars** .<br>Nadat u zich hebt aangemeld, kunt u proberen om uw crash te reproduceren zodat uw crash logboeken automatisch naar ons worden verzonden om te worden onderzocht. Als u uw crash echter niet kunt reproduceren, kunt u de logboek bestanden hand matig kopiëren en naar ons verzenden.<ol><li>Open de controle-app op uw telefoon, ga naar **instellingen > algemeen** en klik vervolgens op **Watch-analyse kopiëren**.</li><li>Zoek de overeenkomstige crash onder **instellingen > privacybeleid > analytics > Analytics-gegevens** en kopieer de hele tekst vervolgens hand matig.</li><li>Open de verificator op uw telefoon en plak de gekopieerde tekst in het vak  **Geef het probleem dat u** op het punt staat, onder **problemen?** op de pagina  **Feedback verzenden** . </li></ol>
 
-## <a name="autofill-for-consumers"></a>Automatisch door voeren voor consumenten
+## <a name="autofill-with-authenticator"></a>Automatisch door voeren met verificator
 
-**V**: wat is automatisch door voeren in verificator?
+**V**: wat is automatisch door voeren met verificator?
 
-**A**: de verificator-app slaat nu veilig wacht woorden op voor apps en websites die u op uw telefoon bezoekt. U kunt automatisch invullen gebruiken om uw wacht woorden op uw iOS-en Android-apparaten te synchroniseren en in te voeren. Nadat u de verificator-app hebt ingesteld als een automatische provider op uw telefoon, wordt u gevraagd uw wacht woorden op te slaan wanneer u deze invoert op een site of aanmeldings pagina voor een app. De wacht woorden worden opgeslagen als onderdeel van [uw Microsoft-account](https://account.microsoft.com/account) en zijn ook beschikbaar wanneer u zich aanmeldt bij micro soft Edge met uw Microsoft-account.
+**A**: de verificator-app slaat nu veilig wacht woorden op voor apps en websites die u op uw telefoon bezoekt. U kunt automatisch invullen gebruiken om uw wacht woorden op uw iOS-en Android-apparaten te synchroniseren en in te voeren. Nadat u de verificator-app hebt ingesteld als een automatische provider op uw telefoon, wordt u gevraagd uw wacht woorden op te slaan wanneer u deze invoert op een site of op een aanmeldings pagina voor een app. De wacht woorden worden opgeslagen als onderdeel van [uw persoonlijke Microsoft-account](https://account.microsoft.com/account) en zijn ook beschikbaar wanneer u zich aanmeldt bij micro soft Edge met uw persoonlijke Microsoft-account.
 
 **V**: welke gegevens kunnen door de verificator worden door voeren?
 
@@ -221,23 +225,22 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 **A**: Volg deze stappen:
 
 1. Open de verificator-app.
-1. Schakel in **instellingen** onder **bèta** **automatisch invullen** in.
 1. Op het tabblad **wacht woorden** in verificator selecteert u **Aanmelden met Microsoft** en meldt u zich aan met [uw Microsoft-account](https://account.microsoft.com/account). Deze functie ondersteunt momenteel alleen micro soft-accounts en biedt nog geen ondersteuning voor werk-of school accounts.
 
 **V**: hoe kan ik de standaard provider voor automatisch invullen op mijn telefoon instellen als verificator?
 
 **A**: Volg deze stappen:
 
-1. Open de **instellingen** van de verificator en schakel vervolgens **automatisch invullen** in bij **bèta** .
-1. Meld u aan met [uw Microsoft-account](https://account.microsoft.com/account)op het tabblad **wacht woorden** in de app.
+1. Open de verificator-app.
+1. Selecteer **Aanmelden met Microsoft** op het tabblad **wacht woorden** in de app en meld u aan met [uw Microsoft-account](https://account.microsoft.com/account).
 1. Voer een van de volgende handelingen uit:
 
    - Selecteer in iOS onder **instellingen** de optie **automatisch invullen inschakelen** in de sectie instellingen voor automatisch door voeren voor informatie over het instellen van verificator als standaard provider voor automatisch door voeren.
-   - Selecteer in Android onder **instellingen** de optie **instellen als automatische provider** in het gedeelte instellingen voor automatisch door voeren om verificator in te stellen als standaard provider voor automatisch door voeren.
+   - Selecteer in Android onder **instellingen** de optie **instellen als automatische provider** in het gedeelte instellingen voor automatisch door voeren.
 
-**V**: wat moet ik doen als de schakel optie voor **automatisch door voeren** in instellingen grijs wordt weer gegeven?
+**V**: wat moet ik doen als de schakel optie voor **automatisch door voeren** niet beschikbaar is in instellingen?
 
-**A**: automatisch door voeren is momenteel in bèta en is nog niet ingeschakeld voor alle organisaties of account typen. Als de schakel optie voor **automatisch aanvullen** in **instellingen** grijs wordt weer gegeven, is het waarschijnlijk dat u de verificator-app gebruikt met uw werk account. U kunt deze functie gebruiken op een apparaat waar uw werk account niet is toegevoegd. Als uw organisatie samen met micro soft werkt, wordt de schakel optie voor **automatisch aanvullen** ingeschakeld, zelfs wanneer een werk account wordt toegevoegd aan de verificator.
+**A**: als automatisch door voeren niet beschikbaar is in verificator, kan dit zijn omdat automatisch door voeren nog niet is toegestaan voor uw organisatie of account type. U kunt deze functie gebruiken op een apparaat waar uw werk-of school account niet is toegevoegd. Zie [automatisch door voeren voor IT-beheerders](#autofill-for-it-admins)voor meer informatie over het toestaan van automatisch door voeren voor uw organisatie.
 
 **V**: hoe kan ik het synchroniseren van wacht woorden niet langer?
 
@@ -247,28 +250,24 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **A**: verificator-app biedt al een hoge mate van beveiliging voor multi-factor Authentication en account beheer, en dezelfde High Security-balk is ook uitgebreid voor het beheren van uw wacht woorden.
 
-- **Sterke verificatie is vereist voor de verificator-app**: aanmelden bij verificator vereist een tweede factor. Dit betekent dat uw wacht woorden in de verificator-app niet kunnen worden geopend, zelfs niet als iemand uw Microsoft-account-wacht woord heeft.
-- **Gegevens over automatisch door voeren worden beveiligd met biometrie en de wachtwoord code**: voordat u een wacht woord voor een app of site kunt invoeren, is voor de verificator biometrisch of wachtwoord code voor het apparaat vereist. Dit zorgt ervoor dat zelfs als iemand anders toegang heeft tot uw apparaat, het niet mogelijk is om uw wacht woord in te vullen of weer te geven, omdat ze de biometrische of pincode van het apparaat niet kunnen opgeven. Bovendien kan een gebruiker de pagina met wacht woorden alleen openen als ze biometrische of pincode hebben, zelfs als ze app-vergren deling in app-instellingen uitschakelen.
-- Versleutelde **wacht woorden op het apparaat**: wacht woorden op het apparaat zijn versleuteld en sleutels voor versleuteling/ontsleuteling worden nooit opgeslagen en worden altijd direct gegenereerd. Wacht woorden worden alleen ontsleuteld wanneer een gebruiker dat wil, dat wil zeggen tijdens het door voeren of wanneer de gebruiker het wacht woord wil zien, beide biometrische of pincode vereisen.
-- **Cloud-en netwerk beveiliging**: uw wacht woorden in de cloud worden alleen versleuteld en ontsleuteld wanneer ze uw apparaat bereiken. Wacht woorden worden gesynchroniseerd via een met SSL beveiligde HTTPS-verbinding, waarmee wordt gegarandeerd dat een aanvaller gevoelige gegevens niet kan Eavesdrop wanneer deze wordt gesynchroniseerd. We zorgen er ook voor dat de Sanity van gegevens die via het netwerk worden gesynchroniseerd, wordt gecontroleerd met behulp van cryptografische gehashte functies (met name op hash-gebaseerde bericht verificatie code).
+- **Sterke verificatie is vereist voor de verificator-app**: aanmelden bij verificator vereist een tweede factor. Dit betekent dat uw wacht woorden in de verificator-app worden beveiligd, zelfs als iemand uw Microsoft-account wacht woord heeft.
+- **Gegevens over automatisch door voeren worden beveiligd met biometrie en de wachtwoord code**: voordat u een wacht woord voor een app of site kunt invoeren, is voor de verificator biometrisch of wachtwoord code voor het apparaat vereist. Dit helpt extra beveiliging toe te voegen, zelfs als iemand anders toegang heeft tot uw apparaat, het niet mogelijk is om uw wacht woord in te vullen of weer te geven, omdat de invoer van biometrische apparaten of PINCODEs niet kan worden opgegeven. Een gebruiker kan de pagina met wacht woorden ook alleen openen als ze biometrische of pincode hebben, zelfs als ze app-vergren deling in app-instellingen uitschakelen.
+- Versleutelde **wacht woorden op het apparaat**: wacht woorden op het apparaat zijn versleuteld en sleutels voor versleuteling/ontsleuteling worden nooit opgeslagen en worden altijd gegenereerd wanneer dat nodig is. Wacht woorden worden alleen ontsleuteld wanneer een gebruiker dat wil, dat wil zeggen tijdens het door voeren of wanneer de gebruiker het wacht woord wil zien, beide biometrische of pincode vereisen.
+- **Cloud-en netwerk beveiliging**: uw wacht woorden in de cloud worden alleen versleuteld en ontsleuteld wanneer ze uw apparaat bereiken. Wacht woorden worden gesynchroniseerd via een met SSL beveiligde HTTPS-verbinding, waarmee wordt voor komen dat een aanvaller gevoelige gegevens afluistert wanneer deze wordt gesynchroniseerd. We zorgen er ook voor dat de Sanity van gegevens die via het netwerk worden gesynchroniseerd, wordt gecontroleerd met behulp van cryptografische gehashte functies (met name op hash-gebaseerde bericht verificatie code).
 
 ## <a name="autofill-for-it-admins"></a>Automatisch door voeren voor IT-beheerders
 
 **V**: zullen mijn werk nemers of studenten gebruikmaken van het automatisch invullen van wacht woorden in de verificator-app?
 
-**A**: Nee. De functie voor automatisch door voeren is momenteel in bèta en is nog niet ingeschakeld voor alle organisaties of account typen. Als uw werk nemer of student hun werk-of school account aan Microsoft Authenticator app heeft toegevoegd, zijn wacht woorden niet meer toegankelijk voor deze gebruikers. De enige uitzonde ring op deze beperking is wanneer uw werk nemer of student het account work of school toevoegt aan micro soft Cloud multi-factor Authentication als een [extern of een account van derden](user-help-auth-app-add-non-ms-account.md).
-
-**V**: kan ik de functie voor automatisch aanvullen beschikbaar maken voor mijn werk nemers (of studenten)?
-
-**A**: Ja. Om uw werk nemers of studenten in te scha kelen, kan uw bedrijf of school worden toegevoegd aan een lijst met toegestane apps. Neem contact op met uw ondersteunings-of micro soft-website om toe te voegen aan de acceptatie lijst. Als u een IT-beheerder bent voor uw organisatie, kunt u ook een formulier invullen om uw interesse in te stellen in samen voegen in de [lijst met toegestane apps voor automatisch door voeren in verificator](https://aka.ms/RequestAutofillInAuthenticator).
+**A**: Ja, automatisch door voeren is nu geschikt voor de meeste zakelijke gebruikers, zelfs wanneer een werk-of school account wordt toegevoegd aan de verificator-app. U kunt een formulier invullen om automatisch door voeren voor uw organisatie te configureren (toestaan of weigeren) en [dit te verzenden naar het verificator-team](https://aka.ms/ConfigureAutofillInAuthenticator).
 
 **V**: wordt het wacht woord voor het werk-of school account van mijn gebruikers automatisch gesynchroniseerd?
 
 **A**: Nee. Met wacht woord door voeren wordt geen werk-of school account-wacht woord voor uw gebruikers gesynchroniseerd. Wanneer gebruikers een site of een app bezoeken, bieden verificator het wacht woord voor die site of app op te slaan, en wordt het wacht woord alleen opgeslagen wanneer de gebruiker kiest.
   
-**V**: kan ik toestaan: lijst met alleen bepaalde gebruikers van mijn organisatie voor automatisch door voeren?
+**V**: kan ik allowlist alleen bepaalde gebruikers van mijn organisatie voor automatisch door voeren?
 
-**A**: Nee. Ondernemingen kunnen op dit moment alleen automatisch invullen van wacht woorden inschakelen voor alle of geen van hun werk nemers. Deze besturings elementen worden geleidelijk uitgebreid.
+**A**: Nee. Ondernemingen kunnen op dit moment alleen automatisch invullen van wacht woorden inschakelen voor alle of geen van hun werk nemers.
 
 **V**: wat moet ik doen als mijn werk nemer of student meerdere werk-of school accounts heeft? Mijn werk nemer heeft bijvoorbeeld accounts van meerdere ondernemingen of scholen in hun Microsoft Authenticator.
 

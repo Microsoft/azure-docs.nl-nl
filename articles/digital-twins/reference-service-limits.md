@@ -7,19 +7,19 @@ ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: article
 ms.service: digital-twins
-ms.openlocfilehash: 87061d378be97bf669fd569c0408f247b9e8dc5d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 165fa23cf3965d3017b15c27fedc2846f97d8d11
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091771"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054396"
 ---
-# <a name="service-limits"></a>Servicelimieten
+# <a name="azure-digital-twins-service-limits"></a>Azure Digital Apparaatdubbels-service limieten
 
 Dit zijn de service limieten van Azure Digital Apparaatdubbels.
 
 > [!NOTE]
-> Sommige gebieden van deze service hebben aanpas bare limieten. Dit wordt weer gegeven in de tabellen hieronder met de kolom *aanpasbaar?* . Wanneer de limiet kan worden aangepast, is de *aanpas bare?* -waarde *Ja* .
+> Sommige gebieden van deze service hebben aanpas bare limieten. Dit wordt weer gegeven in de tabellen hieronder met de kolom *aanpasbaar?* . Wanneer de limiet kan worden aangepast, is de *aanpas bare?* -waarde *Ja*.
 >
 > Als uw bedrijf een aanpas bare limiet of een quotum moet verhogen dat hoger is dan de standaard limiet, kunt u aanvullende resources aanvragen door [een ondersteunings ticket te openen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

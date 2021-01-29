@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 3587beaeb788665c68c1fcb6376af40566b6c35e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: f8fe027b350968a99aab5458fc2d7c1699fb50e3
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032776"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052512"
 ---
 # <a name="manage-app-consent-policies"></a>Beleid voor app-toestemming beheren
 
@@ -130,7 +130,7 @@ Zodra het beleid voor de toestemming van de app is gemaakt, kunt u toestemming v
 
 De volgende tabel bevat de lijst met ondersteunde voor waarden voor het beleid voor de toestemming van apps.
 
-| Voorwaarde | Beschrijving|
+| Voorwaarde | Description|
 |:---------------|:----------|
 | PermissionClassification | De [machtigings classificatie](configure-permission-classifications.md) voor de machtiging die wordt verleend, of ' all ', zodat deze overeenkomt met een machtigings classificatie (inclusief machtigingen die niet zijn geclassificeerd). De standaard waarde is "all". |
 | PermissionType | Het machtigings type van de machtiging die wordt verleend. Gebruik ' Application ' voor toepassings machtigingen (bijvoorbeeld app-rollen) of ' gedelegeerde ' voor gedelegeerde machtigingen. <br><br>**Opmerking**: de waarde ' delegatedUserConsentable ' geeft gedelegeerde machtigingen aan die niet door de API-uitgever zijn geconfigureerd om toestemming te geven aan de beheerder: deze waarde kan worden gebruikt in het ingebouwde beleid voor machtigings toekenning, maar kan niet worden gebruikt in een aangepast beleid voor machtigings verlening. Vereist. |
@@ -152,4 +152,4 @@ Zie voor meer informatie:
 * [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
-* [Azure AD op stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
+* [Azure AD op stack overflow](https://docs.microsoft.com/answers/topics/azure-active-directory.html)

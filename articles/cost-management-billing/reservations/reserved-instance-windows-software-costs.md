@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 01/28/2021
 ms.author: banders
-ms.openlocfilehash: 625c40ea17cf20449f1be241a1605a80bf6a73f1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 464e129314a369c14dcc6bc6c16eadf5f8bcf01f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352997"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052986"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Kosten van software zijn niet inbegrepen in Azure Reserved Virtual Machine Instances
 
@@ -61,7 +61,7 @@ Gereserveerde exemplaren van virtuele machines en korting op gereserveerde capac
 
 ## <a name="get-rates-for-azure-meters"></a>Tarieven voor Azure-meters ophalen
 
-U kunt de kosten van elk van deze meters ophalen via de Azure RateCard-API. Zie [De informatie over prijzen en metagegevens ophalen voor bronnen die worden gebruikt in een Azure-abonnement](/previous-versions/azure/reference/mt219004(v=azure.100)) voor meer informatie over het ophalen van de tarieven voor een Azure-meter.
+U kunt de kosten van elk van de meters ophalen met de Azure retail-prijs-API. Zie [overzicht van Azure](/rest/api/cost-management/retail-prices/azure-retail-prices)-verkoop prijzen voor meer informatie over het ophalen van de tarieven voor een Azure-meter.
 
 ## <a name="next-steps"></a>Volgende stappen
 Raadpleeg voor meer informatie over reserveringen voor Azure de volgende artikelen:

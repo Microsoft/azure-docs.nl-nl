@@ -4,14 +4,14 @@ description: Hoe u opslag doelen definieert zodat uw Azure HPC-cache uw on-premi
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 01/28/2021
 ms.author: v-erkel
-ms.openlocfilehash: b2497a49703ab675bde50c7845995c92de32f376
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b4df5863cc746490f13685a8d412232217af3bc8
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657173"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054362"
 ---
 # <a name="add-storage-targets"></a>Opslagdoelen toevoegen
 
@@ -165,19 +165,21 @@ Een NFS-opslag doel heeft verschillende instellingen van een Blob Storage-doel. 
 
 Wanneer u een opslag doel maakt dat verwijst naar een NFS-opslag systeem, moet u het gebruiks model voor dat doel kiezen. Dit model bepaalt hoe de gegevens in de cache worden opgeslagen.
 
+Met de ingebouwde gebruiks modellen kunt u kiezen hoe u snel antwoord kunt verdelen met het risico dat verouderde gegevens worden opgehaald. Als u de snelheid van het lezen van bestanden wilt optimaliseren, kunt u er mogelijk niet voor zorgen dat de bestanden in de cache worden gecontroleerd op basis van de back-end-bestanden. Als u daarentegen wilt controleren of uw bestanden altijd up-to-date zijn met de externe opslag, kiest u een model dat regel matig wordt gecontroleerd.
+
 Er zijn drie opties:
 
 * **Lees zware, incidentele schrijf bewerkingen** : gebruik deze optie als u lees toegang tot bestanden wilt versnellen die statisch zijn of zelden worden gewijzigd.
 
-  Met deze optie worden bestanden die door clients worden gelezen, in de cache opgeslagen, maar worden direct naar de back-end-opslag door gegeven. Bestanden die in de cache zijn opgeslagen, worden nooit vergeleken met de bestanden op het NFS-opslag volume.
+  Met deze optie worden bestanden die door clients worden gelezen, in de cache opgeslagen, maar worden direct naar de back-end-opslag door gegeven. Bestanden die in de cache zijn opgeslagen, worden niet automatisch vergeleken met de bestanden op het NFS-opslag volume. (Lees de opmerking hieronder over back-end-verificatie voor meer informatie.)
 
-  Gebruik deze optie niet als er een risico bestaat dat een bestand rechtstreeks op het opslag systeem kan worden gewijzigd zonder het eerst naar de cache te schrijven. Als dat gebeurt, wordt de versie van het bestand in de cache nooit bijgewerkt met de wijzigingen van de back-end en kan de gegevensset inconsistent worden.
+  Gebruik deze optie niet als er een risico bestaat dat een bestand rechtstreeks op het opslag systeem kan worden gewijzigd zonder het eerst naar de cache te schrijven. Als dat gebeurt, is de versie van het bestand in de cache niet synchroon met het back-end-bestand.
 
 * **Meer dan 15% schrijf bewerkingen** : deze optie versnelt de lees-en schrijf prestaties. Wanneer u deze optie gebruikt, moeten alle clients toegang hebben tot bestanden via de Azure HPC-cache in plaats van de back-end-opslag rechtstreeks te koppelen. De bestanden in de cache hebben recente wijzigingen die niet worden opgeslagen op de back-end.
 
-  In dit gebruiks model worden bestanden in de cache niet gecontroleerd op basis van de bestanden in de back-end-opslag. Er wordt ervan uitgegaan dat de cache versie van het bestand meer actueel is. Een gewijzigd bestand in de cache wordt naar het back-end-opslag systeem geschreven nadat het een uur in de cache heeft bevinden zonder extra wijzigingen.
+  In dit gebruiks model worden bestanden in de cache alleen gecontroleerd op basis van de bestanden in de back-end-opslag om de acht uur. Er wordt ervan uitgegaan dat de cache versie van het bestand meer actueel is. Een gewijzigd bestand in de cache wordt naar het back-end-opslag systeem geschreven nadat het een uur in de cache heeft bevinden zonder extra wijzigingen.
 
-* **Clients schrijven naar het NFS-doel, waarbij de cache wordt omzeild** : Kies deze optie als clients in uw werk stroom gegevens rechtstreeks naar het opslag systeem schrijven zonder eerst naar de cache te schrijven. Bestanden die door clients worden aangevraagd, worden in de cache opgeslagen, maar eventuele wijzigingen aan deze bestanden van de client worden onmiddellijk door gegeven aan het back-end-opslag systeem.
+* **Clients schrijven naar het NFS-doel, waarbij de cache wordt omzeild** : Kies deze optie als clients in uw werk stroom gegevens rechtstreeks naar het opslag systeem schrijven zonder eerst naar de cache te schrijven of als u de consistentie van de gegevens wilt optimaliseren. Bestanden die door clients worden aangevraagd, worden in de cache opgeslagen, maar eventuele wijzigingen aan deze bestanden van de client worden onmiddellijk door gegeven aan het back-end-opslag systeem.
 
   Met dit gebruiks model worden de bestanden in de cache vaak gecontroleerd op basis van de back-end-versies voor updates. Met deze verificatie kunnen bestanden buiten de cache worden gewijzigd terwijl de consistentie van gegevens wordt behouden.
 
@@ -186,8 +188,11 @@ Deze tabel bevat een overzicht van de verschillen in het gebruiks model:
 | Gebruiks model                   | Cache modus | Back-end-verificatie | Maximale vertraging voor terugschrijven |
 |-------------------------------|--------------|-----------------------|--------------------------|
 | Zware, incidentele schrijf bewerkingen lezen | Lezen         | Nooit                 | Geen                     |
-| Meer dan 15% schrijf bewerkingen       | Lezen/schrijven   | Nooit                 | 1 uur                   |
+| Meer dan 15% schrijf bewerkingen       | Lezen/schrijven   | 8 uur               | 1 uur                   |
 | Clients slaan de cache over      | Lezen         | 30 seconden            | Geen                     |
+
+> [!NOTE]
+> De waarde voor de **back-end-verificatie** geeft aan wanneer de cache bestanden automatisch vergelijkt met de bron bestanden in de externe opslag. U kunt de Azure HPC-cache echter dwingen om bestanden te vergelijken door een directory bewerking uit te voeren die een READDIRPLUS-aanvraag bevat. READDIRPLUS is een standaard-NFS-API (ook wel uitgebreide Lees bewerking genoemd) die directory-meta gegevens retourneert, waardoor de cache bestanden vergelijkt en bijwerkt.
 
 ### <a name="create-an-nfs-storage-target"></a>Een NFS-opslag doel maken
 

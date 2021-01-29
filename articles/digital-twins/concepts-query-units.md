@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/14/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 86f2abb8bfb95d5b9e72936ca3e9464747c00b1c
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 0e1c5f08c4292e4f3dfec448d8bf54d5d5601840
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049300"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050495"
 ---
 # <a name="query-units-in-azure-digital-twins"></a>Query-eenheden in azure Digital Apparaatdubbels 
 
@@ -45,4 +45,4 @@ Ga voor meer informatie over het uitvoeren van query's in azure Digital Apparaat
 * [*Instructies: een query uitvoeren op de dubbele grafiek*](how-to-query-graph.md)
 * [Naslag documentatie voor query-API](/rest/api/digital-twins/dataplane/query/querytwins)
 
-U kunt Azure Digital Apparaatdubbels-query limieten vinden in [*verwijzing: Service limieten*](reference-service-limits.md).
+U kunt Azure Digital Apparaatdubbels-query limieten vinden in [*Azure Digital apparaatdubbels-service limieten*](reference-service-limits.md).

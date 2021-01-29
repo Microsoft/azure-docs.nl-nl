@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/29/2020
 ms.author: kenwith
-ms.openlocfilehash: 7f9d29fee78c01dd3b1ee79d564297fa0cef14d3
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 2bb190ea01098e8e7b21a00f54fc37cd817f3743
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219875"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053276"
 ---
 # <a name="understand-password-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van wacht woorden
 
@@ -54,7 +54,7 @@ Het gebruik van Azure AD als uw ID-provider (IdP) en het configureren van eenmal
 In de [Quick](view-applications-portal.md)start-serie hebt u geleerd hoe u een app kunt toevoegen aan uw Tenant, waardoor Azure AD weet dat deze wordt gebruikt als de ID-provider (IDP) voor de app. Sommige apps zijn al vooraf geconfigureerd en worden weer gegeven in de Azure AD-galerie. Andere apps bevinden zich niet in de galerie en u moet een algemene app maken en deze hand matig configureren. Afhankelijk van de app is de SSO-optie op basis van wacht woorden mogelijk niet beschikbaar. Als u de lijst met op wacht woord gebaseerde opties niet ziet op de pagina voor eenmalige aanmelding voor de app, is deze niet beschikbaar.
 
 > [!IMPORTANT]
-> De browser uitbreiding van mijn apps is vereist voor SSO op basis van een wacht woord. Zie [een implementatie van mijn apps plannen](access-panel-deployment-plan.md)voor meer informatie.
+> De browser uitbreiding van mijn apps is vereist voor SSO op basis van een wacht woord. Zie [een implementatie van mijn apps plannen](my-apps-deployment-plan.md)voor meer informatie.
 
 De configuratie pagina voor SSO op basis van een wacht woord is eenvoudig. Het bevat alleen de URL van de aanmeldings pagina die door de app wordt gebruikt. Deze teken reeks moet de pagina zijn die het invoergegevens veld van de gebruikers naam bevat.
 

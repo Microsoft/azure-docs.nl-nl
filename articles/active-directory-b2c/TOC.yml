@@ -188,14 +188,17 @@
       items:
         - name: Gebruikersinvoer configureren
           href: configure-user-input.md
-        - name: De UI aanpassen met branding van het bedrijf
-          href: company-branding.md
+        - name: De gebruikersinterface aanpassen
+          displayName: company branding
+          href: customize-ui.md
         - name: De UI aanpassen met een HTML-sjabloon
+          displayName: content definitions
           href: customize-ui-with-html.md
         - name: JavaScript en pagina-indelingen
           href: javascript-and-page-layout.md
         - name: Taal aanpassen
           href: language-customization.md
+          displayName: localization
         - name: Wachtwoordcomplexiteit
           href: password-complexity.md
         - name: E-mailverificatie uitschakelen
@@ -259,12 +262,13 @@
           items:
             - name: Logboeken verzamelen met Application Insights
               href: troubleshoot-with-application-insights.md
-              displayName: troubleshooting
+              displayName: 'troubleshooting, app insights'
             - name: Beleidsvalidatie
               href: troubleshoot-custom-policies.md
               displayName: troubleshooting
         - name: Gebruiksanalyse
           href: analytics-with-application-insights.md
+          displayName: 'application insights, app insights'
         - name: Naslaginformatie
           items:
             - name: TrustFrameworkPolicy

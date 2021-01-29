@@ -6,12 +6,12 @@ ms.subservice: process-automation
 ms.date: 09/22/2020
 ms.topic: conceptual
 keywords: Power shell, runbook, JSON, Azure Automation
-ms.openlocfilehash: 18f1d4ced2a80f9adb5da2c209987fc1997a3f22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9b443d1840840d3d6202140da235589c73453cc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91304148"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051393"
 ---
 # <a name="deploy-an-azure-resource-manager-template-in-a-powershell-runbook"></a>Een Azure Resource Manager-sjabloon implementeren in een Power shell-runbook
 
@@ -22,7 +22,7 @@ In dit artikel maken we een Power shell-runbook dat gebruikmaakt van een resourc
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voor delen van uw MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of [zich aanmelden voor een gratis account](https://azure.microsoft.com/free/).
-* [Automation-account](./manage-runas-account.md) om het runbook te bevatten en te verifiëren voor Azure-resources. Dit account moet machtigingen hebben om de virtuele machine te starten en stoppen.
+* [Automation-account](./automation-security-overview.md) om het runbook te bevatten en te verifiëren voor Azure-resources. Dit account moet machtigingen hebben om de virtuele machine te starten en stoppen.
 * [Azure Storage account](../storage/common/storage-account-create.md) waarin de Resource Manager-sjabloon moet worden opgeslagen.
 * Azure PowerShell geïnstalleerd op een lokale computer. Zie [de Azure PowerShell-module installeren](/powershell/azure/install-az-ps) voor meer informatie over het verkrijgen van Azure PowerShell.
 
@@ -84,7 +84,7 @@ Kopieer de volgende tekst in een tekst editor:
 }
 ```
 
-Sla het bestand lokaal ** op alsTemplateTest.jsop**.
+Sla het bestand lokaal **op alsTemplateTest.jsop**.
 
 ## <a name="save-the-resource-manager-template-in-azure-storage"></a>Sla de Resource Manager-sjabloon op in Azure Storage
 

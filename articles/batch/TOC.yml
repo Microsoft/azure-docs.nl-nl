@@ -143,6 +143,8 @@
           href: batch-sig-images.md
         - name: Een groep maken met een resource voor een beheerde installatiekopie
           href: batch-custom-images.md
+        - name: Een groep maken in Beschikbaarheidszones
+          href: create-pool-availability-zones.md
         - name: Een pool maken met schijfversleuteling ingeschakeld
           href: disk-encryption.md
         - name: Een pool in een virtueel netwerk maken

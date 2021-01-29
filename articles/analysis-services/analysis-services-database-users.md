@@ -8,12 +8,12 @@ ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 56f98d41fc73cdd2be0923de66a5af09c875a050
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 31910e92ba4d5cbb1f133eaff6880fafb809b772
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92013590"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054090"
 ---
 # <a name="manage-database-roles-and-users"></a>Database rollen en-gebruikers beheren
 
@@ -28,13 +28,15 @@ Rolmachtigingen zijn onder andere:
 
 Bij het maken van een tabellaire model project maakt u rollen en voegt u gebruikers of groepen toe aan die rollen met behulp van Role Manager in Visual Studio met Analysis Services-projecten. Gebruik SQL Server Management Studio (SSMS), [Analysis Services Power shell-cmdlets](/analysis-services/powershell/analysis-services-powershell-reference)of [Tabellaire model scripting language](/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (TMSL) om rollen en gebruikers leden toe te voegen of te verwijderen wanneer deze op een server worden geïmplementeerd.
 
-Gebruik wanneer u een **beveiligings groep**toevoegt `obj:groupid@tenantid` .
+Gebruik wanneer u een **beveiligings groep** toevoegt `obj:groupid@tenantid` .
+
+Bij het toevoegen van een **Service-Principal** gebruiken `app:appid@tenantid` .
 
 ## <a name="to-add-or-manage-roles-and-users-in-visual-studio"></a>Rollen en gebruikers toevoegen aan of beheren in Visual Studio  
   
-1.  Klik in **Tabellaire model Verkenner**met de rechter muisknop op **rollen**.  
+1.  Klik in **Tabellaire model Verkenner** met de rechter muisknop op **rollen**.  
   
-2.  Klik in **Role Manager**op **New**.  
+2.  Klik in **Role Manager** op **New**.  
   
 3.  Typ een naam voor de rol.  
   
@@ -54,7 +56,7 @@ Gebruik wanneer u een **beveiligings groep**toevoegt `obj:groupid@tenantid` .
   
 6.  Klik op **leden**  >  **toevoegen extern**.  
   
-8.  In **extern lid toevoegen**voert u gebruikers of groepen in uw TENANT Azure AD op e-mail adres in. Nadat u op OK hebt geklikt en rollen beheerder hebt gesloten, worden rollen en Rolgroepen weer gegeven in Tabellaire model Verkenner. 
+8.  In **extern lid toevoegen** voert u gebruikers of groepen in uw TENANT Azure AD op e-mail adres in. Nadat u op OK hebt geklikt en rollen beheerder hebt gesloten, worden rollen en Rolgroepen weer gegeven in Tabellaire model Verkenner. 
  
      ![Rollen en gebruikers in Tabellaire model Verkenner](./media/analysis-services-database-users/aas-roles-tmexplorer.png)
 
@@ -67,7 +69,7 @@ Als u functies en gebruikers wilt toevoegen aan een geïmplementeerde model data
 
 1. Klik in object Exporer met de rechter muisknop op **rollen**  >  **nieuwe rol**.
 
-2. Voer bij **rol maken**de naam en beschrijving van een rol in.
+2. Voer bij **rol maken** de naam en beschrijving van een rol in.
 
 3. Selecteer een machtiging.
 
@@ -77,7 +79,7 @@ Als u functies en gebruikers wilt toevoegen aan een geïmplementeerde model data
    |**Database verwerken**|Leden kunnen proces uitvoeren en alle bewerkingen verwerken. Kan het model schema niet wijzigen en kan geen gegevens opvragen.|  
    |**Lezen**|Leden kunnen gegevens opvragen (op basis van Row filters), maar kunnen het model schema niet wijzigen.|  
   
-4. Klik op **lidmaatschap**en voer een gebruiker of groep in uw TENANT Azure AD op e-mail adres in.
+4. Klik op **lidmaatschap** en voer een gebruiker of groep in uw TENANT Azure AD op e-mail adres in.
 
      ![Gebruiker toevoegen](./media/analysis-services-database-users/aas-roles-adduser-ssms.png)
 

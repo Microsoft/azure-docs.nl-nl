@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 14520c7c448231045b36e025c2c92332f9daac53
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 5f207a0b5f829e952c92133a66313f49e9352f51
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658720"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053205"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Een implementatie van eenmalige aanmelding plannen
 
@@ -62,7 +62,7 @@ Er zijn twee primaire manieren waarop u uw gebruikers in staat kunt stellen om e
 
 Voor het gebruik van Azure AD voor SSO op basis van een wacht woord moet een browser extensie worden geïmplementeerd waarmee de referenties veilig worden opgehaald en de aanmeldings formulieren worden ingevuld. Definieer een mechanisme voor het implementeren van de uitbrei ding op schaal met [ondersteunde browsers](../user-help/my-apps-portal-end-user-access.md). Een aantal opties:
 
-- [groepsbeleid voor Internet Explorer](./access-panel-deployment-plan.md)
+- [groepsbeleid voor Internet Explorer](my-apps-deployment-plan.md)
 - [Configuration Manager voor Internet Explorer](/configmgr/core/clients/deploy/deploy-clients-to-windows-computers)
 - [Door de gebruiker gestuurde down load en configuratie voor Chrome, Firefox, micro soft Edge of IE](../user-help/my-apps-portal-end-user-access.md)
 
@@ -163,7 +163,7 @@ Micro soft biedt een zelf studie voor alle vooraf geïntegreerde SaaS-apps en u 
 
 ### <a name="attribute-requirements"></a>Kenmerk vereisten
 
-Er is een vooraf geconfigureerde set met kenmerken en kenmerk toewijzingen tussen Azure AD-gebruikers objecten en de gebruikers objecten van de SaaS-app. Sommige apps beheren andere typen objecten, zoals groepen. Plan de toewijzing van gebruikers kenmerken van Azure AD aan uw toepassing en [Pas de standaard kenmerk toewijzingen](../app-provisioning/customize-application-attributes.md) aan op basis van de behoeften van uw bedrijf.
+Er zijn vooraf geconfigureerde sets met kenmerken en kenmerktoewijzingen beschikbaar voor de koppeling tussen gebruikersobjecten van Azure AD en van de SaaS-app. Sommige apps beheren andere typen objecten, zoals groepen. Plan de toewijzing van gebruikers kenmerken van Azure AD aan uw toepassing en [Pas de standaard kenmerk toewijzingen](../app-provisioning/customize-application-attributes.md) aan op basis van de behoeften van uw bedrijf.
 
 ### <a name="certificate-requirements"></a>Certificaatvereisten
 

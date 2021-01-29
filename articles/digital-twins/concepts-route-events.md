@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: aa3466456b99664b1b39bd415680a6a291f85acd
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: c51f8c894c9a88b6ae81460623eec616d29b62ff
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049283"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050512"
 ---
 # <a name="route-events-within-and-outside-of-azure-digital-twins"></a>Gebeurtenissen binnen en buiten Azure Digital Apparaatdubbels routeren
 
@@ -50,12 +50,12 @@ Zie [*How-to: een Azure-functie instellen voor het verwerken van gegevens*](how-
 
 ## <a name="create-an-endpoint"></a>Een eindpunt maken
 
-Ontwikkel aars moeten eerst eind punten definiëren om een gebeurtenis route te definiëren. Een **eind punt** is een bestemming buiten Azure Digital apparaatdubbels die een route verbinding ondersteunt. Ondersteunde bestemmingen zijn onder andere:
+Ontwikkelaars moeten eerst eindpunten definiëren om een gebeurtenisroute te definiëren. Een **eind punt** is een bestemming buiten Azure Digital apparaatdubbels die een route verbinding ondersteunt. Ondersteunde bestemmingen zijn onder andere:
 * Aangepaste onderwerpen Event Grid
 * Event Hub
 * Service Bus
 
-Als u een eind punt wilt maken, kunt u de Azure Digital Apparaatdubbels [**Control-api's**](how-to-manage-routes-apis-cli.md#create-an-endpoint-for-azure-digital-twins), [**cli-opdrachten**](how-to-manage-routes-apis-cli.md#manage-endpoints-and-routes-with-cli)of de [**Azure Portal**](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins)gebruiken. 
+Als u een eind punt wilt maken, kunt u de Azure Digital Apparaatdubbels [rest api's, CLI-opdrachten](how-to-manage-routes-apis-cli.md#create-an-endpoint-for-azure-digital-twins)of de [Azure Portal](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins)gebruiken.
 
 Wanneer u een eind punt definieert, moet u het volgende opgeven:
 * De naam van het eind punt
@@ -71,7 +71,7 @@ De eindpunt-Api's die beschikbaar zijn in het besturings vlak zijn:
 
 ## <a name="create-an-event-route"></a>Een gebeurtenis route maken
  
-Als u een gebeurtenis route wilt maken, kunt u de Azure Digital Apparaatdubbels [**Data-vlak-api's**](how-to-manage-routes-apis-cli.md#create-an-event-route), CLI- [**opdrachten**](how-to-manage-routes-apis-cli.md#manage-endpoints-and-routes-with-cli)of de [**Azure Portal**](how-to-manage-routes-portal.md#create-an-event-route)gebruiken. 
+Als u een gebeurtenis route wilt maken, kunt u de Azure Digital Apparaatdubbels [rest api's, CLI-opdrachten](how-to-manage-routes-apis-cli.md#create-an-event-route)of de [Azure Portal](how-to-manage-routes-portal.md#create-an-event-route)gebruiken.
 
 Hier volgt een voor beeld van het maken van een gebeurtenis route binnen een client toepassing, met behulp van de `CreateOrReplaceEventRouteAsync` [.net (C#) SDK-](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true) aanroep: 
 
@@ -85,8 +85,6 @@ Hier volgt een voor beeld van het maken van een gebeurtenis route binnen een cli
 
 > [!TIP]
 > Alle SDK-functies zijn beschikbaar in synchrone en asynchrone versies.
-
-Routes kunnen ook worden gemaakt met behulp van de [Azure Digital APPARAATDUBBELS cli](how-to-use-cli.md).
 
 ## <a name="dead-letter-events"></a>Onbestelbare gebeurtenissen
 

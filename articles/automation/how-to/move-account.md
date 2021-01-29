@@ -2,19 +2,15 @@
 title: Uw Azure Automation-account verplaatsen naar een ander abonnement
 description: In dit artikel leest u hoe u uw Automation-account kunt verplaatsen naar een ander abonnement.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
-ms.date: 03/11/2019
+ms.date: 01/07/2021
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 8454c5a5bb5b44d2a60ae0095a9b82a19ed27c8d
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: a86d876a723c89eb8dcdf18c8318f2a9c740a229
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896643"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051021"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>Uw Azure Automation-account verplaatsen naar een ander abonnement
 
@@ -108,7 +104,7 @@ U kunt nu uw Automation-account en de bijbehorende runbooks verplaatsen.
 
 ## <a name="re-create-run-as-accounts"></a>Run as-accounts opnieuw maken
 
-[Run as-accounts](../manage-runas-account.md) maken een service-principal in azure Active Directory om te verifiëren met Azure-resources. Wanneer u abonnementen wijzigt, wordt het bestaande uitvoeren als-account niet meer gebruikt voor het Automation-account. De run as-accounts opnieuw maken:
+[Run as-accounts](../automation-security-overview.md#run-as-accounts) maken een service-principal in azure Active Directory om te verifiëren met Azure-resources. Wanneer u abonnementen wijzigt, wordt het bestaande uitvoeren als-account niet meer gebruikt voor het Automation-account. De run as-accounts opnieuw maken:
 
 1. Ga naar uw Automation-account in het nieuwe abonnement en selecteer **uitvoeren als-accounts** onder **account instellingen**. U ziet dat de uitvoeren als-accounts nu onvolledig worden weer gegeven.
 
@@ -117,7 +113,7 @@ U kunt nu uw Automation-account en de bijbehorende runbooks verplaatsen.
 2. Verwijder de run as-accounts, één per keer, door **verwijderen** te selecteren op de pagina **Eigenschappen** . 
 
     > [!NOTE]
-    > Als u geen machtigingen hebt om de run as-accounts te maken of weer te geven, ziet u het volgende bericht: `You do not have permissions to create an Azure Run As account (service principal) and grant the Contributor role to the service principal.` Zie [machtigingen vereist voor het configureren van run as-accounts](../manage-runas-account.md#permissions)voor meer informatie.
+    > Als u geen machtigingen hebt om de run as-accounts te maken of weer te geven, ziet u het volgende bericht: `You do not have permissions to create an Azure Run As account (service principal) and grant the Contributor role to the service principal.` Zie [machtigingen vereist voor het configureren van run as-accounts](../automation-security-overview.md#permissions)voor meer informatie.
 
 3. Nadat u de run as-accounts hebt verwijderd, selecteert u **maken** onder **Azure uitvoeren als-account**. 
 

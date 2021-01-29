@@ -10,12 +10,12 @@ ms.workload: data-services
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: 70be8d8be48f2b1e1cc275c06e4abff09e3e62f6
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 30e07b645701cf560534b152ae42559213daf838
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498571"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053768"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Rollen en machtigingen voor Azure Data Factory
 
@@ -56,6 +56,12 @@ Machtigingen voor Azure opslag plaatsen en GitHub zijn onafhankelijk van Data Fa
 
 > [!IMPORTANT]
 > Met de implementatie van de Resource Manager-sjabloon met de rol **Data Factory Inzender** worden uw machtigingen niet verhoogd. Als u bijvoorbeeld een sjabloon implementeert waarmee een virtuele machine van Azure wordt gemaakt en u geen machtiging hebt om virtuele machines te maken, mislukt de implementatie met een autorisatie fout.
+
+> [!IMPORTANT]
+> De machtiging **micro soft. DataFactory/factories/schrijven** is vereist in beide modi binnen de publicatie context.
+
+- Deze machtiging is alleen vereist in de modus Live wanneer de klant globale para meters wijzigt.
+- Deze machtiging is altijd vereist in de Git-modus, aangezien na de publicatie van de klant, omdat het Factory-object met de laatste doorvoer-id is bijgewerkt.
 
 ### <a name="custom-scenarios-and-custom-roles"></a>Aangepaste scenario's en aangepaste rollen
 

@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 01/29/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b980624ebf55c3666bcc7dd1d60f681d788c95ae
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 866af8b992374492286f47357f108a01f35e560b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98987046"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051038"
 ---
 # <a name="azure-active-directory-b2c-service-limits-and-restrictions"></a>Limieten en beperkingen voor Azure Active Directory B2C-service
 
@@ -40,17 +40,15 @@ De volgende tabel bevat de beheer configuratie limieten in de Azure AD B2C-servi
 |Categorie  |Limiet  |
 |---------|---------|
 |Aantal toepassingen per Azure AD B2C Tenant   |250           |
-|Aantal beleids regels per Azure AD B2C Tenant       |200          |
-|Maximale grootte van beleids bestand      |400 KB          |
 |Aantal bereiken per toepassing        |1000          |
-|Aantal aangepaste kenmerken per gebruiker <sup>1</sup>       |100         |
+|Aantal [aangepaste kenmerken](user-profile-attributes.md#extension-attributes)   per gebruiker <sup>1</sup>       |100         |
 |Aantal omleidings-Url's per toepassing       |100         |
 |Aantal afmeldings-Url's per toepassing        |1          |
 |Teken reeks limiet per kenmerk      |250 tekens          |
 |Aantal B2C-tenants per abonnement      |20         |
 |Niveaus van [overname](custom-policy-overview.md#inheritance-model) in aangepast beleid     |10         |
-|Aantal beleids regels per Azure AD B2C Tenant      |200         |
-|Maximale grootte van beleids bestand      |400 KB         |
+|Aantal beleids regels per Azure AD B2C Tenant      |200          |
+|Maximale grootte van beleids bestand      |400 KB          |
 
 <sup>1</sup> Zie ook [Azure AD-service limieten en-beperkingen](../active-directory/enterprise-users/directory-service-limits-restrictions.md).
 

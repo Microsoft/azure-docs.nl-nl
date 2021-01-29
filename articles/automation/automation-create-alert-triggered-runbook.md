@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: 03f24bf4cf379504479e554b129f34d94ca423cd
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 03814766d7bc873855df261a50a40b8d342fa69b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896356"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054243"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Een waarschuwing gebruiken om een Azure Automation runbook te activeren
 
@@ -45,7 +45,7 @@ Zoals beschreven in de vorige sectie, heeft elk type waarschuwing een ander sche
 
 In dit voor beeld wordt een waarschuwing van een virtuele machine gebruikt. De VM-gegevens worden opgehaald uit de payload en vervolgens die informatie gebruikt om de virtuele machine te stoppen. De verbinding moet worden ingesteld in het Automation-account waarop het runbook wordt uitgevoerd. Wanneer u waarschuwingen gebruikt voor het activeren van runbooks, is het belang rijk om de status van de waarschuwing te controleren in het runbook dat wordt geactiveerd. De runbook wordt geactiveerd telkens wanneer de status van de waarschuwing verandert. Waarschuwingen hebben meerdere statussen, waarbij de twee meest voorkomende worden geactiveerd en opgelost. Controleer of de status van de runbook-logica wordt gebruikt om te controleren of het runbook niet meer dan één keer wordt uitgevoerd. In het voor beeld in dit artikel ziet u hoe u waarschuwingen met alleen de status geactiveerd kunt zoeken.
 
-Het runbook maakt gebruik van het `AzureRunAsConnection` [Run as-account](./manage-runas-account.md) voor de verbinding met Azure om de beheer actie uit te voeren op de virtuele machine.
+Het runbook maakt gebruik van het `AzureRunAsConnection` [Run as-account](./automation-security-overview.md) voor de verbinding met Azure om de beheer actie uit te voeren op de virtuele machine.
 
 Gebruik dit voor beeld om een runbook met de naam **Stop-AzureVmInResponsetoVMAlert** te maken. U kunt het Power shell-script wijzigen en het gebruiken met veel verschillende bronnen.
 

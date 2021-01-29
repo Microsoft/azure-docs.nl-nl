@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: c2ddb0143bb9cba0dc2fc48ff9b9df94dc55c29c
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: e7a6b6d3e753352820cdcb910dcbfa9362793493
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579450"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050767"
 ---
 # <a name="use-source-control-integration"></a>Integratie van bronbeheer gebruiken
 
@@ -29,7 +29,7 @@ Azure Automation ondersteunt drie typen broncode beheer:
 ## <a name="prerequisites"></a>Vereisten
 
 * Een broncode beheer bibliotheek (GitHub of Azure opslag plaatsen)
-* Een [uitvoeren als-account](manage-runas-account.md)
+* Een [uitvoeren als-account](automation-security-overview.md#run-as-accounts)
 * De [meest recente Azure-modules](automation-update-azure-modules.md) in uw Automation-account, inclusief de `Az.Accounts` module (AZ module equivalent van `AzureRM.Profile` )
 
 > [!NOTE]
@@ -62,14 +62,14 @@ Gebruik deze procedure voor het configureren van broncode beheer met behulp van 
     |Mappad     | De map die de runbooks bevat die moeten worden gesynchroniseerd, bijvoorbeeld **/Runbooks**. Alleen runbooks in de opgegeven map worden gesynchroniseerd. Recursie wordt niet ondersteund.        |
     |Automatische synchronisatie<sup>1</sup>     | Instelling waarmee automatische synchronisatie wordt in-of uitgeschakeld wanneer een door Voer in de bron beheer opslagplaats wordt gemaakt.        |
     |Runbook publiceren     | Instelling van op als runbooks automatisch worden gepubliceerd na synchronisatie vanuit broncode beheer, en anders uit.           |
-    |Beschrijving     | Tekst waarin aanvullende details over het broncode beheer worden opgegeven.        |
+    |Description     | Tekst waarin aanvullende details over het broncode beheer worden opgegeven.        |
 
     <sup>1</sup> als u automatische synchronisatie wilt inschakelen bij het configureren van de integratie van broncode beheer met Azure opslag plaatsen, moet u een project beheerder zijn.
 
    ![Samen vatting van broncode beheer](./media/source-control-integration/source-control-summary.png)
 
 > [!NOTE]
-> De aanmelding voor uw opslag plaats voor broncode beheer kan afwijken van uw aanmeldings gegevens voor de Azure Portal. Zorg ervoor dat u bent aangemeld met het juiste account voor de bron beheer opslagplaats bij het configureren van broncode beheer. Als er een twijfel is, opent u een nieuw tabblad in uw browser, meldt u zich af bij **dev.Azure.com** , **VisualStudio.com** of **github.com** en probeert u opnieuw verbinding te maken met broncode beheer.
+> De aanmelding voor uw opslag plaats voor broncode beheer kan afwijken van uw aanmeldings gegevens voor de Azure Portal. Zorg ervoor dat u bent aangemeld met het juiste account voor de bron beheer opslagplaats bij het configureren van broncode beheer. Als er een twijfel is, opent u een nieuw tabblad in uw browser, meldt u zich af bij **dev.Azure.com**, **VisualStudio.com** of **github.com** en probeert u opnieuw verbinding te maken met broncode beheer.
 
 ### <a name="configure-source-control-in-powershell"></a>Broncode beheer configureren in Power shell
 
@@ -86,7 +86,7 @@ New-AzAutomationSourceControl -Name SCGitHub -RepoUrl https://github.com/<accoun
 #### <a name="create-source-control-connection-for-azure-repos-git"></a>Broncode beheer verbinding maken voor Azure opslag plaatsen (Git)
 
 > [!NOTE]
-> Azure opslag plaatsen (Git) maakt gebruik van een URL die toegang heeft tot **dev.Azure.com** in plaats van **VisualStudio.com** , die wordt gebruikt in eerdere notaties. De indeling van de oudere URL `https://<accountname>.visualstudio.com/<projectname>/_git/<repositoryname>` is afgeschaft, maar wordt nog steeds ondersteund. De nieuwe indeling heeft de voor keur.
+> Azure opslag plaatsen (Git) maakt gebruik van een URL die toegang heeft tot **dev.Azure.com** in plaats van **VisualStudio.com**, die wordt gebruikt in eerdere notaties. De indeling van de oudere URL `https://<accountname>.visualstudio.com/<projectname>/_git/<repositoryname>` is afgeschaft, maar wordt nog steeds ondersteund. De nieuwe indeling heeft de voor keur.
 
 
 ```powershell-interactive
@@ -96,7 +96,7 @@ New-AzAutomationSourceControl -Name SCReposGit -RepoUrl https://dev.azure.com/<a
 #### <a name="create-source-control-connection-for-azure-repos-tfvc"></a>Broncode beheer verbinding maken voor Azure opslag plaatsen (TFVC)
 
 > [!NOTE]
-> Azure opslag plaatsen (TFVC) gebruikt een URL die toegang heeft tot **dev.Azure.com** in plaats van **VisualStudio.com** , die wordt gebruikt in eerdere notaties. De indeling van de oudere URL `https://<accountname>.visualstudio.com/<projectname>/_versionControl` is afgeschaft, maar wordt nog steeds ondersteund. De nieuwe indeling heeft de voor keur.
+> Azure opslag plaatsen (TFVC) gebruikt een URL die toegang heeft tot **dev.Azure.com** in plaats van **VisualStudio.com**, die wordt gebruikt in eerdere notaties. De indeling van de oudere URL `https://<accountname>.visualstudio.com/<projectname>/_versionControl` is afgeschaft, maar wordt nog steeds ondersteund. De nieuwe indeling heeft de voor keur.
 
 ```powershell-interactive
 New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<accountname>/<adoprojectname>/_git/<repositoryname> -SourceType VsoTfvc -AccessToken <secureStringofPAT> -ResourceGroupName <ResourceGroupName> -AutomationAccountName <AutomationAccountName> -FolderPath "/Runbooks"
@@ -209,4 +209,4 @@ Op dit moment kunt u de Azure Portal niet gebruiken om de PAT bij te werken in b
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [Azure Automation: broncode beheer integratie in azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/)voor informatie over het integreren van broncode beheer in azure Automation.  
-* Zie [Azure Automation: runbook-bron beheer integreren met Visual Studio online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/)voor informatie over het integreren van runbook-bron beheer met Visual Studio online.
+* Zie [Azure Automation: het runbook-bron beheer integreren met Visual Studio Codespaces](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/)voor informatie over het integreren van runbook-bron beheer met Visual Studio Codespaces.

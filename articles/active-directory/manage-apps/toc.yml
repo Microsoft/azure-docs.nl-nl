@@ -50,7 +50,7 @@
         - name: Plannen maken voor apps die niet in de galerie staan
           href: non-gallery-apps.md
         - name: Een My Apps-implementatie plannen
-          href: access-panel-deployment-plan.md
+          href: my-apps-deployment-plan.md
     - name: Eenmalige aanmelding
       items:
         - name: Een implementatie van eenmalige aanmelding plannen

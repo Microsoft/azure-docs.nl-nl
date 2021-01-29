@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 04/22/2020
 ms.author: errobin
-ms.openlocfilehash: e9f46b11d9c0b5251ee4d52f64d657926f6f9c5e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 38054d983b0a9f01f396b7379fec37de452d03b7
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222986"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051869"
 ---
 # <a name="load-balancer-frequently-asked-questions"></a>Veelgestelde vragen over Load Balancer
 
@@ -48,6 +48,10 @@ Met de opdracht nslookup kunt u een DNS-query voor de naam myip.opendns.com verz
  
 ## <a name="can-i-add-a-vm-from-the-same-availability-set-to-different-backend-pools-of-a-load-balancer"></a>Kan ik een virtuele machine van dezelfde beschikbaarheidsset toevoegen aan verschillende back-endservers van een Load Balancer?
 Nee, dit is niet mogelijk.
+
+## <a name="what-is-the-maximum-data-throughput-that-can-be-achieved-via-an-azure-load-balancer"></a>Wat is de maximale gegevens doorvoer die kan worden bereikt via een Azure Load Balancer?
+Omdat Azure LB een Pass-Through-netwerk load balancer is, worden doorvoer beperkingen bepaald door het type virtuele machine dat wordt gebruikt in de back-end-pool. Zie [netwerk doorvoer voor virtuele machines](../virtual-network/virtual-machine-network-throughput.md)voor meer informatie over de andere gerelateerde gegevens voor netwerk doorvoer.
+
 
 ## <a name="how-do-connections-to-azure-storage-in-the-same-region-work"></a>Hoe werken de verbindingen met Azure Storage in dezelfde regio?
 Het is niet nodig om verbinding te maken met opslag in dezelfde regio als de virtuele machine als u uitgaande verbindingen hebt via de bovenstaande scenario's. Als u dit niet wilt, gebruikt u netwerk beveiligings groepen (Nsg's) zoals hierboven is uitgelegd. Voor connectiviteit met opslag in andere regio's is uitgaande connectiviteit vereist. Houd er rekening mee dat wanneer u verbinding maakt met de opslag van een virtuele machine in dezelfde regio, het bron-IP-adres in de logboeken voor diagnostische gegevens van de opslag locatie van de interne provider is en niet het open bare IP-adres van uw virtuele machine. Als u de toegang tot uw opslag account wilt beperken tot Vm's in een of meer Virtual Network subnetten in dezelfde regio, gebruikt u [Virtual Network Service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) en niet uw open bare IP-adres bij het configureren van de firewall van uw opslag account. Zodra service-eind punten zijn geconfigureerd, ziet u uw Virtual Network privé-IP-adres in uw logboeken voor opslag diagnose en niet het adres van de interne provider.

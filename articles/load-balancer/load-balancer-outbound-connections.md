@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: contperf-fy21q1
 ms.date: 10/13/2020
 ms.author: allensu
-ms.openlocfilehash: f3c147b292ab21bd4e568f9e52acef07396acc28
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: d1632c66791dd5e697b95a2c5aaaddea81629abf
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878219"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052819"
 ---
 # <a name="using-snat-for-outbound-connections"></a>SNAT gebruiken voor uitgaande verbindingen
 
@@ -66,7 +66,7 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
  | Openbaar load balancer of zelfstandig | [SNAT (bron netwerk adres omzetting)](#snat) </br> niet gebruikt. | TCP (Transmission Control Protocol) </br> UDP (User Data gram Protocol) </br> ICMP (Internet Control Message Protocol) </br> ESP (Encapsulating Security Payload) |
 
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
 
 
  Azure gebruikt het open bare IP-adres dat is toegewezen aan de IP-configuratie van de NIC van het exemplaar voor alle uitgaande stromen. Alle tijdelijke poorten zijn beschikbaar voor het exemplaar. Het maakt niet uit of de virtuele machine gelijkmatig is verdeeld of niet. Dit scenario heeft voor rang op de andere. 
@@ -80,10 +80,10 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
 
  | Lidkoppelingen | Methode | IP-protocollen |
  | ------------ | ------ | ------------ |
- | Openbare load balancer | Het gebruik van load balancer frontend-IP-adressen voor [SNAT](#snat).| TCP </br> UDP |
+ | Standaard open bare load balancer | Het gebruik van load balancer frontend-IP-adressen voor [SNAT](#snat).| TCP </br> UDP |
 
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
 
 
  De load balancer resource is geconfigureerd met een regel voor uitgaande verbindingen of een taakverdelings regel die standaard SNAT mogelijk maakt. Deze regel wordt gebruikt om een koppeling tussen de open bare IP-frontend te maken met de back-end-pool. 
@@ -103,15 +103,25 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
 
  In deze context worden de tijdelijke poorten die worden gebruikt voor SNAT de SNAT-poorten genoemd. Het wordt nadrukkelijk aanbevolen om een [uitgaande regel](./outbound-rules.md) expliciet te configureren. Als u een standaard-SNAT gebruikt via een taakverdelings regel, worden de SNAT-poorten vooraf toegewezen, zoals beschreven in de [standaard toewijzings tabel](#snatporttable)voor de SNAT-poorten.
 
+ ### <a name="scenario-3-virtual-machine-without-public-ip-and-behind-standard-internal-load-balancer"></a><a name="scenario3"></a>Scenario 3: virtuele machine zonder openbaar IP-adres en achter standaard interne Load Balancer
 
- ### <a name="scenario-3-virtual-machine-without-public-ip-and-behind-basic-load-balancer"></a><a name="scenario3"></a>Scenario 3: virtuele machine zonder openbaar IP-adres en achter basis Load Balancer
+
+ | Lidkoppelingen | Methode | IP-protocollen |
+ | ------------ | ------ | ------------ |
+ | Standaard interne load balancer | Geen Internet verbinding.| Geen |
+
+ #### <a name="description"></a>Description
+ 
+Wanneer u een interne standaard load balancer gebruikt, is er geen gebruik van tijdelijke IP-adressen voor SNAT. Dit is om de beveiliging standaard te ondersteunen en ervoor te zorgen dat alle IP-adressen die worden gebruikt door de resource, kunnen worden geconfigureerd en kan worden gereserveerd. Als u een uitgaande verbinding met internet wilt maken wanneer u een standaard interne load balancer gebruikt, configureert u een openbaar IP-adres op exemplaar niveau om het gedrag in (scenario 1) te volgen [#scenario1] of voegt u de back-end-instanties toe aan een open bare standaard load balancer met een uitgaande regel die in additon is geconfigureerd voor de interne load balancer, om het gedrag te volgen (scenario 2 #scenario2) 
+
+ ### <a name="scenario-4-virtual-machine-without-public-ip-and-behind-basic-load-balancer"></a><a name="scenario4"></a>Scenario 4: virtuele machine zonder openbaar IP-adres en achter basis Load Balancer
 
 
  | Lidkoppelingen | Methode | IP-protocollen |
  | ------------ | ------ | ------------ |
  |Geen </br> Basis load balancer | [SNAT](#snat) met dynamisch IP-adres op exemplaar niveau| TCP </br> UDP | 
 
- #### <a name="description"></a>Beschrijving
+ #### <a name="description"></a>Description
 
 
  Wanneer de virtuele machine een uitgaande stroom maakt, vertaalt Azure het bron-IP-adres naar een dynamisch toegewezen IP-adres voor de open bare bron. Dit open bare IP-adres kan **niet worden geconfigureerd** en kan niet worden gereserveerd. Dit adres telt niet op basis van de open bare IP-resource limiet van het abonnement. 
@@ -126,7 +136,6 @@ Wanneer [scenario 2](#scenario2) hieronder is geconfigureerd, wordt door de host
 
 
  Gebruik dit scenario niet voor het toevoegen van IP-adressen aan een acceptatie lijst. Gebruik scenario 1 of 2 waar u het uitgaande gedrag expliciet declareert. De [SNAT](#snat) -poorten zijn vooraf toegewezen, zoals wordt beschreven in de [standaard toewijzings tabel](#snatporttable)voor de SNAT-poorten.
-
 
 ## <a name="exhausting-ports"></a><a name="scenarios"></a> Poorten uitgeputen
 

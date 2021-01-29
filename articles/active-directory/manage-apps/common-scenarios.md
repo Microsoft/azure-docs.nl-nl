@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b78562bc3590bdf5b15e4061ba23e1284b07c16
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 882770fefbb48524ad5f11a56089132b319470aa
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835489"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053343"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Toepassingsbeheer centraliseren met Microsoft Azure AD
 
@@ -43,7 +43,7 @@ U hoeft geen wachtwoorden meer te beheren. Beveilig de toegang tot alle resource
 |Functie  | Beschrijving | Aanbeveling |
 |---------|---------|---------|
 |Eenmalige aanmelding|Op standaarden gebaseerde federatieve SSO met betrouwbare industriële standaarden.|Gebruik altijd [SAML/OIDC](../develop/v2-howto-app-gallery-listing.md) om SSO in te schakelen wanneer uw toepassing dit ondersteunt.|
-|Mijn apps|Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen.| Implementeer [Mijn apps](./access-panel-deployment-plan.md) in uw organisatie wanneer u uw apps hebt geïntegreerd met Azure AD voor SSO.|
+|Mijn apps|Bied uw gebruikers een eenvoudige hub voor de detectie van en toegang tot al hun toepassingen. Stel hen in staat om productiever te zijn met selfservice mogelijkheden, zoals het aanvragen van toegang tot apps en groepen, of het beheren van toegang tot resources namens anderen.| Implementeer [Mijn apps](my-apps-deployment-plan.md) in uw organisatie wanneer u uw apps hebt geïntegreerd met Azure AD voor SSO.|
 
 ## <a name="scenario-2-automate-provisioning-and-deprovisioning"></a>Scenario 2: Inrichting en het ongedaan maken van de inrichting automatiseren 
 

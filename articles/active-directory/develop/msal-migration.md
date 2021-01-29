@@ -13,12 +13,12 @@ ms.date: 08/07/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 3a1428f05d1a5f7563b2715a9142cf73dc5063a9
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 3280952636a915cca4bade40d3e56b795050c321
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063651"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053462"
 ---
 # <a name="migrate-applications-to-the-microsoft-authentication-library-msal"></a>Toepassingen migreren naar de micro soft Authentication Library (MSAL)
 
@@ -73,7 +73,7 @@ __V: Hoe werkt MSAL samen met AD FS?__
 A: MSAL.NET ondersteunt bepaalde scenario's voor het verifiëren van AD FS 2019. Als uw app tokens rechtstreeks uit een eerdere versie van AD FS moet verkrijgen, blijft u op ADAL. [Meer informatie](msal-net-adfs-support.md).
 
 __V: Hoe kan ik hulp krijgen bij het migreren van mijn toepassing?__  
-A: Zie de sectie [migratie richtlijnen](#migration-guidance) van dit artikel. Als u na het lezen van de hand leiding voor het platform van uw app nog meer vragen hebt, kunt u op Stack Overflow plaatsen met de tag `[adal-deprecation]` of een probleem in de GitHub-opslag plaats van de bibliotheek openen. Zie de sectie [talen en frameworks](msal-overview.md#languages-and-frameworks) van het artikel overzicht van MSAL voor koppelingen naar de opslag plaats van elke bibliotheek.
+A: Zie de sectie [migratie richtlijnen](#migration-guidance) van dit artikel. Als u na het lezen van de hand leiding voor het platform van uw app nog meer vragen hebt, kunt u een bericht plaatsen op micro soft Q&A met de tag `[azure-ad-adal-deprecation]` of een probleem openen in de GitHub-opslag plaats van de bibliotheek. Zie de sectie [talen en frameworks](msal-overview.md#languages-and-frameworks) van het artikel overzicht van MSAL voor koppelingen naar de opslag plaats van elke bibliotheek.
 
 ## <a name="next-steps"></a>Volgende stappen
 

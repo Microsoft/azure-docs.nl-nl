@@ -3,12 +3,12 @@ title: Problemen met het netwerk oplossen met het REGI ster
 description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen bij het openen van een Azure container registry in een virtueel netwerk of achter een firewall
 ms.topic: article
 ms.date: 10/01/2020
-ms.openlocfilehash: 95b32b839d1b3b804a2035b797e1146a09d5236a
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 2f15eb8a830ce93ecf942663fc8a44b9df86d6d6
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351790"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052158"
 ---
 # <a name="troubleshoot-network-issues-with-registry"></a>Problemen met het netwerk oplossen met het REGI ster
 
@@ -40,6 +40,8 @@ Dit kan een of meer van de volgende zijn:
 Voer de opdracht [AZ ACR check-Health](/cli/azure/acr#az-acr-check-health) uit voor meer informatie over de status van de register omgeving en eventueel toegang tot een doel register. U kunt bijvoorbeeld bepaalde problemen met de netwerk verbinding of configuratie vaststellen. 
 
 Zie [de status van een Azure container Registry controleren](container-registry-check-health.md) op opdracht voorbeelden. Als er fouten worden gerapporteerd, raadpleegt u de [fout referentie](container-registry-health-error-reference.md) en de volgende secties voor de aanbevolen oplossingen.
+
+Als u problemen ondervindt met het gebruik van de register wih Azure Kubernetes-service, voert u de opdracht [AZ AKS check-ACR](/cli/azure/aks#az_aks_check_acr) uit om te controleren of het REGI ster toegankelijk is vanuit het AKS-cluster.
 
 > [!NOTE]
 > Sommige problemen met de netwerk verbinding kunnen zich ook voordoen als er problemen zijn met de register verificatie of autorisatie. Zie [problemen met het REGI ster oplossen](container-registry-troubleshoot-login.md).
@@ -136,7 +138,7 @@ Als u uw probleem hier niet kunt oplossen, raadpleegt u de volgende opties.
 
 * Andere onderwerpen over het oplossen van problemen met het REGI ster zijn:
   * [Problemen met register aanmelding oplossen](container-registry-troubleshoot-login.md) 
-  * [Problemen met registerprestaties oplossen](container-registry-troubleshoot-performance.md)
+  * [Problemen met het REGI ster oplossen](container-registry-troubleshoot-performance.md)
 * Opties voor [Community-ondersteuning](https://azure.microsoft.com/support/community/)
 * [Microsoft Q&A](/answers/products/)
 * [Een ondersteuningsticket openen](https://azure.microsoft.com/support/create-ticket/)

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/16/2020
+ms.date: 01/28/2021
 ms.author: jeedes
-ms.openlocfilehash: 329e0fbfdea43f3933333744f89ed1c03ef0ed13
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d0c8364cc85cfce900021272d17456527919122b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729294"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050801"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-timeclock-365-saml"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Timeclock 365 SAML
 
@@ -70,7 +70,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in Azure Portal, op de integratiepagina van de toepassing **Timeclock 365 SAML**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -109,7 +109,15 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 
 ## <a name="configure-timeclock-365-saml-sso"></a>Eenmalige aanmelding voor Timeclock 365 SAML configureren
 
-1. Open een nieuw tabblad in uw browser en meld u als beheerder aan bij de bedrijfssite van Timeclock 365 SAML.
+1. Als u de configuratie in Timeclock 365 SAML wilt automatiseren, moet u de **uitbrei ding mijn apps Secure Sign-in browser** installeren door te klikken op **de uitbrei ding installeren**.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Nadat u een uitbrei ding aan de browser hebt toegevoegd, klikt u op **Timeclock 365 SAML** . u wordt doorgestuurd naar de TIMECLOCK 365 SAML-toepassing. Geef de beheerders referenties op om u aan te melden bij Timeclock 365 SAML. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 en 4 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Timeclock 365 SAML hand matig wilt instellen, meldt u zich in een ander webbrowser venster aan bij de SAML-bedrijfs site van Timeclock 365 als beheerder.
 
 1. Voer de onderstaande stappen uit.
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 10/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6ac7d99f4a47711f9974d30d877a3237eec15443
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 71273c456b14fa4ea289e2a48d441de99ce8a4b1
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078830"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053904"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Uitvoering van runbooks in Azure Automation
 
@@ -112,7 +112,7 @@ De logboeken die beschikbaar zijn voor de Log Analytics-agent en het **nxautomat
 
 ## <a name="runbook-permissions"></a>Runbookmachtigingen
 
-Een runbook heeft machtigingen nodig voor de verificatie van Azure, via referenties. Zie [Azure Automation uitvoeren als-accounts beheren](manage-runas-account.md).
+Een runbook heeft machtigingen nodig voor de verificatie van Azure, via referenties. Zie [Azure Automation verificatie-overzicht](automation-security-overview.md).
 
 ## <a name="modules"></a>Modules
 
@@ -139,6 +139,7 @@ De volgende tabel beschrijft de statussen die mogelijk zijn voor een taak. U kun
 
 | Status | Beschrijving |
 |:--- |:--- |
+| Activeren |De taak wordt geactiveerd. |
 | Voltooid |De taak is voltooid. |
 | Mislukt |Het compileren van een grafisch of Power shell-werk stroom runbook is mislukt. Een Power shell-runbook kan niet worden gestart of er is een uitzonde ring opgetreden in de taak. Zie [Azure Automation typen runbook](automation-runbook-types.md).|
 | Mislukt, wachten op resources |De taak is mislukt omdat de limiet voor de [billijke share](#fair-share) drie keer is bereikt en vanaf hetzelfde controle punt of vanaf het begin van het runbook elke keer is gestart. |

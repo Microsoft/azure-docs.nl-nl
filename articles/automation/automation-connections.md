@@ -6,12 +6,12 @@ ms.subservice: shared-capabilities
 ms.date: 12/22/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: 8deb249dc042701ec02c3e5e30f3603be132d0ec
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 5f6494eb72084c683ddbb8b27a49acdb1fbc2bfc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733991"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054260"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Verbindingen in Azure Automation beheren
 
@@ -35,7 +35,7 @@ Azure Automation maakt de volgende ingebouwde verbindings typen beschikbaar:
 * `AzureServicePrincipal` -Vertegenwoordigt een verbinding die wordt gebruikt door het uitvoeren als-account van Azure.
 * `AzureClassicCertificate` -Vertegenwoordigt een verbinding die wordt gebruikt door het klassieke uitvoeren als-account van Azure.
 
-In de meeste gevallen hoeft u geen verbindings bron te maken omdat deze wordt gemaakt wanneer u een [uitvoeren als-account](manage-runas-account.md)maakt.
+In de meeste gevallen hoeft u geen verbindings bron te maken omdat deze wordt gemaakt wanneer u een [uitvoeren als-account](automation-security-overview.md)maakt.
 
 ## <a name="powershell-cmdlets-to-access-connections"></a>Power shell-cmdlets voor toegang tot verbindingen
 
@@ -52,7 +52,7 @@ Met de cmdlets in de volgende tabel worden Automation-verbindingen met Power she
 
 De interne cmdlet in de volgende tabel wordt gebruikt voor toegang tot verbindingen in uw runbooks en DSC-configuraties. Deze cmdlet wordt geleverd met de globale module `Orchestrator.AssetManagement.Cmdlets` . Zie [interne cmdlets](shared-resources/modules.md#internal-cmdlets)voor meer informatie.
 
-|Interne cmdlet|Beschrijving|
+|Interne cmdlet|Description|
 |---|---|
 |`Get-AutomationConnection` | Haalt de waarden van de verschillende velden in de verbinding op en retourneert deze als een [hashtabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables). U kunt deze hashtabel vervolgens gebruiken met de juiste opdrachten in het runbook of de DSC-configuratie.|
 

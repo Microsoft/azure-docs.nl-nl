@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 08/20/2020
 ms.author: v-miegge
-ms.openlocfilehash: 2e9b14fa264f3286134913e3c279c4400ce5bcc3
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 915b4fb289b6af6f4aac84d8bfa4d491a7f77efe
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132326"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050467"
 ---
 # <a name="troubleshoot-azure-subscription-sign-in-issues"></a>Aanmeldingsproblemen voor Azure-abonnementen oplossen
 
@@ -24,7 +24,7 @@ Deze handleiding helpt bij het oplossen van problemen waardoor u zich niet kunt 
 > [!NOTE]
 > Als u problemen ondervindt bij het aanmelden voor een nieuw Azure-account, raadpleegt u [Problemen met de registratie van Azure-abonnementen oplossen](./troubleshoot-azure-sign-up.md).
 
-## <a name="page-hangs-in-the-loading-status"></a>De pagina blijft hangen tijdens het laden
+## <a name="page-hangs-in-the-loading-status"></a>De pagina loopt vast tijdens de laadstatus
 
 Als uw internetbrowserpagina vastloopt, voert u elk van de volgende stappen uit totdat de Azure-portal bereikbaar is.
 
@@ -32,7 +32,7 @@ Als uw internetbrowserpagina vastloopt, voert u elk van de volgende stappen uit 
 - Gebruik een andere internetbrowser.
 - Gebruik de modus voor privé browsen van uw browser:
 
-   - **Microsoft Edge:** Open **Instellingen** (de drie puntjes bij uw profielafbeelding), selecteer **Nieuw InPrivate-venster** en ga vervolgens naar de [Azure-portal](https://portal.azure.com/) of het [Azure-accountcentrum](https://account.azure.com/Subscriptions). 
+   - **Edge:** Open **instellingen** (de drie puntjes op uw profiel afbeelding), selecteer **Nieuw InPrivate-venster** en blader door en meld u aan bij de [Azure Portal](https://portal.azure.com/). 
    - **Chrome:** Kies de **Incognito**-modus.
    - **Safari:** Kies **Bestand** en vervolgens **Nieuw privévenster**.
 
@@ -53,7 +53,7 @@ Probeer een van de volgende methoden om dit probleem op te lossen:
    - **Chrome:** Kies **Instellingen** en selecteer **Browsegegevens wissen** onder **Privacy en beveiliging**.
 - Stel uw browserinstellingen opnieuw in op de standaardwaarden.
 - Gebruik de modus voor privé browsen van uw browser. 
-   - **Microsoft Edge:** Open **Instellingen** (de drie puntjes bij uw profielafbeelding), selecteer **Nieuw InPrivate-venster** en ga vervolgens naar de [Azure-portal](https://portal.azure.com/) of het [Azure-accountcentrum](https://account.azure.com/Subscriptions). 
+   - **Edge:** Open **instellingen** (de drie puntjes op uw profiel afbeelding), selecteer **Nieuw InPrivate-venster** en blader door en meld u aan bij de [Azure Portal](https://portal.azure.com/). 
    - **Chrome:** Kies de **Incognito**-modus.
    - **Safari:** Kies **Bestand** en vervolgens **Nieuw privévenster**.
 

@@ -1,33 +1,33 @@
 ---
-title: De gebruikersinterface aanpassen
+title: De gebruikers interface aanpassen met HTML-sjablonen
 titleSuffix: Azure AD B2C
-description: Meer informatie over het aanpassen van de gebruikers interface voor uw toepassingen die gebruikmaken van Azure Active Directory B2C.
+description: Meer informatie over het aanpassen van de gebruikers interface met HTML-sjablonen voor uw toepassingen die gebruikmaken van Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 01/28/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 4a789574b736eb22bd8d13fcf1a9facec5e241c9
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 78ad2540029d78084485ae2004194f9f7c2d6052
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98058664"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050540"
 ---
-# <a name="customize-the-user-interface-in-azure-active-directory-b2c"></a>De gebruikers interface in Azure Active Directory B2C aanpassen
+# <a name="customize-the-user-interface-with-html-templates-in-azure-active-directory-b2c"></a>De gebruikers interface aanpassen met HTML-sjablonen in Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
 De gebruikers interface die Azure Active Directory B2C (Azure AD B2C) aan uw klanten wordt weer gegeven, kunt u voorzien van een naadloze gebruikers ervaring in uw toepassing. Deze ervaring omvat het aanmelden, aanmelden, het bewerken van profielen en het opnieuw instellen van wacht woorden. Dit artikel bevat een inleiding tot de methoden voor het aanpassen van de gebruikers interface (UI). 
 
 > [!TIP]
-> Als u alleen het banner logo, de achtergrond afbeelding en de achtergrond kleur van de pagina's van uw gebruikers stroom wilt wijzigen, kunt u de [bedrijfs huisstijl](company-branding.md) functie proberen.
+> Als u alleen het banner logo, de achtergrond afbeelding en de achtergrond kleur van de pagina's van uw gebruikers stroom wilt wijzigen, kunt u de [bedrijfs huisstijl](customize-ui.md) functie proberen.
 
 ## <a name="custom-html-and-css-overview"></a>Overzicht van aangepaste HTML en CSS
 
@@ -59,7 +59,7 @@ In plaats van uw aangepaste pagina-inhoud helemaal zelf te maken, kunt u de stan
 
 De volgende tabel bevat de standaard pagina-inhoud die wordt verschaft door Azure AD B2C. Down load de bestanden en gebruik deze als uitgangs punt voor het maken van uw eigen aangepaste pagina's.
 
-| Standaard pagina | Beschrijving | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
+| Standaard pagina | Description | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
 |:-----------------------|:--------|-------------|
 | [exception.html](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Fout pagina**. Deze pagina wordt weer gegeven wanneer er een uitzonde ring of een fout wordt aangetroffen. | *API. error* |
 | [selfasserted.html](https://login.microsoftonline.com/static/tenant/default/selfAsserted.cshtml) |  **Zelfbevestigende pagina**. Gebruik dit bestand als aangepaste pagina-inhoud voor een aanmeldings pagina voor een sociaal account, een aanmeldings pagina voor een lokaal account, een aanmeldings pagina voor het lokale account, het opnieuw instellen van wacht woorden en meer. Het formulier kan verschillende invoer besturings elementen bevatten, zoals een tekstinvoervak, een vak voor het invoeren van een wacht woord, een keuze rondje, vervolg keuze vakjes en meervoudige selectie vakjes. | *API. localaccountsignin*, *API. localaccountsignup*, *API. localaccountpasswordreset*, *API. selfasserted* |
@@ -175,7 +175,7 @@ In dit artikel gebruiken we Azure Blob-opslag om onze inhoud te hosten. U kunt e
 
 Als u uw HTML-inhoud in Blob Storage wilt hosten, voert u de volgende stappen uit:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer in het **hub** -menu de optie **Nieuw**  >  **opslag**  >  **opslag account**.
 1. Selecteer een **abonnement** voor uw opslag account.
 1. Maak een **resource groep** of selecteer een bestaande.
@@ -387,7 +387,15 @@ Het voor beeld gebruiken:
 1. Pas het beleid aan, zoals eerder is vermeld, naar uw HTML-bestand.
 1. Als u ontbrekende letter typen, afbeeldingen of CSS ziet, controleert u uw referenties in het uitbrei ding beleid en de \* . html-bestanden.
 
+## <a name="use-company-branding-assets-in-custom-html"></a>Bedrijfs huisstijl assets gebruiken in aangepaste HTML
+
+Als u [bedrijfs huisstijl](customize-ui.md#configure-company-branding) elementen wilt gebruiken in een aangepaste HTML, voegt u de volgende tags toe buiten de `<div id="api">` tag. De afbeeldings bron wordt vervangen door de achtergrond afbeelding en het logo banner.
+
+```HTML
+<img data-tenant-branding-background="true" />
+<img data-tenant-branding-logo="true" alt="Company Logo" />
+```
+
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het inschakelen van [Java script-code aan de client zijde](javascript-and-page-layout.md).
-

@@ -2,14 +2,14 @@
 title: Servicequota en -limieten
 description: Meer informatie over standaard Azure Batch quota's, limieten en beperkingen, en het aanvragen van quotum verhogingen
 ms.topic: conceptual
-ms.date: 12/29/2020
+ms.date: 01/28/2021
 ms.custom: seodec18
-ms.openlocfilehash: 11c9ad1e916ad7e64b59cc13c0967d2b9daed4aa
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 433272c76b9ff27d9cad542cf65a8ec0d8fc0378
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814632"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052377"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Quota en limieten voor Batch-service
 
@@ -33,19 +33,7 @@ Houd er ook rekening mee dat quota's geen gegarandeerde waarden zijn. Quota kunn
 
 ### <a name="cores-quotas-in-batch-service-mode"></a>Kernen quota's in de batch-service modus
 
-Het afdwingen van specifieke kern quota wordt verbeterd, waarbij de wijzigingen in fasen beschikbaar worden gemaakt en voor alle batch-accounts aan het eind januari 2021 worden uitgevoerd.
-
-Er bestaan kern quota's voor elke VM-serie die wordt ondersteund door batch en die worden weer gegeven op de pagina **quota's** in de portal. De quotum limieten van de VM-serie kunnen worden bijgewerkt met een ondersteunings aanvraag, zoals hieronder wordt beschreven.
-
-Als het bestaande mechanisme is uitgeschakeld, worden de quotum limieten voor VM-reeksen niet gecontroleerd; alleen de totale quotum limiet voor het account wordt afgedwongen. Dit betekent dat het mogelijk is om meer kernen toe te wijzen voor een VM-serie dan wordt aangegeven door het quotum van de VM-reeks, tot aan de limiet voor het totale account quotum.
-
-Het bijgewerkte mechanisme dwingt de VM-reeks quota's naast het totale account quotum af. Als onderdeel van de overgang naar het nieuwe mechanisme kunnen de quota waarden van de VM-reeks worden bijgewerkt om toewijzings fouten te voor komen. voor elke VM-serie die in de afgelopen maanden wordt gebruikt, wordt het quotum van de VM-reeks bijgewerkt zodat deze overeenkomt met het totale account quotum. Met deze wijziging wordt het gebruik van meer capaciteit niet ingeschakeld dan al beschikbaar was.
-
-Het is mogelijk om te bepalen of het quotum voor het afdwingen van VM-Series is ingeschakeld voor een batch-account door het volgende te controleren:
-
-* De [dedicatedCoreQuotaPerVMFamilyEnforced](/rest/api/batchmanagement/batchaccount/get#batchaccount) API-eigenschap van het batch-account.
-
-* Tekst op de pagina **quota** van de batch-account in de portal.
+Er bestaan kern quota's voor elke VM-serie die wordt ondersteund door batch en die worden weer gegeven op de pagina **quota's** in de portal. De quotum limieten van de VM-serie kunnen worden bijgewerkt met een ondersteunings aanvraag, zoals hieronder wordt beschreven. Voor toegewezen knoop punten dwingt batch een kern quotum limiet af voor elke VM-serie en een totale kern quotum limiet voor het hele batch-account. Voor knoop punten met een lage prioriteit wordt met batch alleen een totaal kern quotum voor het batch-account afgedwongen zonder onderscheid tussen de verschillende VM-reeksen.
 
 ### <a name="cores-quotas-in-user-subscription-mode"></a>Kernen quota's in de modus gebruikers abonnement
 

@@ -45,6 +45,14 @@
       items:
         - name: Spring Boot-initialisatie gebruiken
           href: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache
+    - name: Azure Event Grid
+      items:
+        - name: Gebeurtenissen met Azure Portal routeren
+          href: cache-event-grid-quickstart-portal.md
+        - name: Route gebeurtenissen met Azure CLI
+          href: cache-event-grid-quickstart-cli.md
+        - name: Route gebeurtenissen met Power shell
+          href: cache-event-grid-quickstart-powershell.md
     - name: Klassementen maken
       href: cache-web-app-cache-aside-leaderboard.md
     - name: Een machine learning-model implementeren
@@ -128,6 +136,8 @@
           href: cache-administration.md#schedule-updates
         - name: Toegang tot redis-cli.exe configureren
           href: cache-how-to-redis-cli-tool.md
+        - name: Azure-cache publiceren voor redis-gebeurtenissen
+          href: cache-event-grid.md
         - name: TLS 1.0 en 1.1 verwijderen
           href: cache-remove-tls-10-11.md
         - name: Veelgestelde vragen over beheer

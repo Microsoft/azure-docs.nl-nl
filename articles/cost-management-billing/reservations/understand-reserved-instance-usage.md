@@ -9,16 +9,16 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 522b67e62e7ad8560bb48e8d056ca6daeeb45251
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: f6aad15d70157dda110fce233fbdafb7f3d896ad
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350905"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055056"
 ---
 # <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Meer informatie over het gebruik van Azure-reserveringen voor uw afzonderlijke abonnement met tarieven op basis van betalen-naar-gebruik
 
-Gebruik de ReservationId van de [Reserveringspagina](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) en het gebruiksbestand van het [Azure Accounts-portal ](https://account.azure.com) om uw reserveringsgebruik te evalueren.
+Gebruik de pagina ReservationId van de [reserve ring](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) en het gebruiks bestand van de [Azure Portal](https://portal.azure.com) om uw reserverings gebruik te evalueren.
 
 Als u een klant bent met een Enterprise Overeenkomst, raadpleegt u [Het gebruik van reserveringen voor uw Enterprise-inschrijving begrijpen.](understand-reserved-instance-usage-ea.md).
 

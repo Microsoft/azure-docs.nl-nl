@@ -2,13 +2,13 @@
 title: Wat is Azure Event Grid?
 description: Gebeurtenisgegevens vanaf een bron naar handlers verzenden met Azure Event Grid. Op gebeurtenissen gebaseerde toepassingen ontwikkelen en integreren met Azure-services.
 ms.topic: overview
-ms.date: 09/24/2020
-ms.openlocfilehash: a4f614a22fdfa7d2272c70751f56f19145a10fa6
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
-ms.translationtype: HT
+ms.date: 01/28/2021
+ms.openlocfilehash: e53665c88c3860d37b3512c6498ab626b02a6400
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576679"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055128"
 ---
 # <a name="what-is-azure-event-grid"></a>Wat is Azure Event Grid?
 
@@ -20,7 +20,7 @@ Azure Event Grid wordt geïmplementeerd om de beschikbaarheid te maximaliseren d
 
 In dit artikel vindt u een overzicht van Azure Event Grid. Zie [Aangepaste gebeurtenissen maken en routeren met behulp van Azure Event Grid](custom-event-quickstart.md) als u aan de slag wilt met Azure Event Grid. 
 
-:::image type="content" source="./media/overview/functional-model.png" alt-text="Event Grid-model van bronnen en handlers" lightbox="./media/overview/functional-model.png":::
+:::image type="content" source="./media/overview/functional-model.png" alt-text="Event Grid-model van bronnen en handlers" lightbox="./media/overview/functional-model-big.png":::
 
 Deze afbeelding toont hoe Event Grid bronnen en handlers verbindt, maar biedt geen uitgebreide lijst met ondersteunde integraties.
 
@@ -42,6 +42,7 @@ Op dit moment ondersteunen de volgende Azure-services het verzenden van gebeurte
 - [Azure Service Bus](event-schema-service-bus.md)
 - [Azure SignalR](event-schema-azure-signalr.md)
 - [Azure-abonnementen](event-schema-subscriptions.md)
+- [Azure Cache voor Redis](event-schema-azure-cache.md)
 
 ## <a name="event-handlers"></a>Event Handlers
 

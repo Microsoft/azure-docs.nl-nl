@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 10/07/2020
-ms.openlocfilehash: 102b1946021aff7f8ab5491ed70fbc6cf772e3a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 1690b8d143b86e5caa691f5f8f479f715f57f0c8
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842110"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054650"
 ---
 # <a name="tutorial-create-automated-approval-based-workflows-by-using-azure-logic-apps"></a>Zelfstudie: Geautomatiseerde op goedkeuring gebaseerde workflows maken met behulp van Azure Logic Apps
 
@@ -43,6 +43,8 @@ Wanneer u bent klaar, ziet uw logische app eruit als deze werkstroom op hoog niv
 * Een e-mailaccount van een e-mailprovider die door Logic Apps wordt ondersteund, bijvoorbeeld Office 365 Outlook, Outlook.com of Gmail. Voor andere providers [kunt u hier de lijst met connectors bekijken](/connectors/). In deze quickstart wordt gebruikgemaakt van Microsoft 365 Outlook met een werk- of schoolaccount. Als u een ander e-mailaccount gebruikt, blijven de algemene stappen gelijk, maar uw gebruikersinterface kan er iets anders uitzien.
 
 * Een e-mailaccount in Office 365 Outlook of Outlook.com, die goedkeuringswerkstromen. In deze zelfstudie wordt Office 365 Outlook gebruikt. Als u een ander e-mailaccount gebruikt, blijven de algemene stappen gelijk, maar uw gebruikersinterface kan er iets anders uitzien.
+
+* Als uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor *zowel* de [inkomende](logic-apps-limits-and-config.md#inbound) als [uitgaande](logic-apps-limits-and-config.md#outbound) IP-adressen die worden gebruikt door de Logic apps service of runtime in de Azure-regio waar uw logische app bestaat. Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](logic-apps-limits-and-config.md#outbound) in de Azure-regio van de logische app.
 
 ## <a name="create-your-logic-app"></a>Uw logische app maken
 
@@ -148,7 +150,7 @@ Voeg vervolgens een voorwaarde toe waarmee het door de fiatteur geselecteerde an
 
 1. Selecteer onder de actie **Goedkeurings-e-mail verzenden** de optie **Nieuwe stap**.
 
-1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvenster `condition` in en selecteer de actie**Voorwaarde**.
+1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvenster `condition` in en selecteer de actie **Voorwaarde**.
 
    ![Schermopname met het zoekvak Kies een bewerking, met Ingebouwd geselecteerd en 'voorwaarde' als zoekterm, terwijl de actie Voorwaarde is geselecteerd.](./media/tutorial-process-mailing-list-subscriptions-workflow/select-condition-action.png)
 
@@ -209,7 +211,7 @@ Voeg vervolgens een voorwaarde toe waarmee u kunt controleren of het nieuwe lid 
 
 1. In de vertakking **Waar**, onder de actie **Lid aan lijst toevoegen**, selecteert u **Een actie toevoegen**.
 
-1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvenster `condition` in en selecteer de actie**Voorwaarde**.
+1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvenster `condition` in en selecteer de actie **Voorwaarde**.
 
 1. Wijzig de naam van de voorwaarde met deze beschrijving: `If add member succeeded`
 

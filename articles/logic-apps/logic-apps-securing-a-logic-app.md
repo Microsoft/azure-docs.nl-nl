@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
 ms.date: 01/20/2021
-ms.openlocfilehash: 337e242e3c194c8ec9f66e1888926e6a8f6a8375
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: a74868beea6e5903b6b17a7bc0c82cc822fcd36f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633075"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055175"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Beveiligde toegang en gegevens in Azure Logic Apps
 
@@ -866,7 +866,7 @@ Hier vindt u meer manieren waarop u eind punten kunt beveiligen die gesp rekken 
 
 * Beperk de toegang tot IP-adressen van logische apps.
 
-  Alle aanroepen naar eind punten van Logic apps zijn afkomstig van specifieke IP-adressen die zijn gebaseerd op de regio's van uw Logic apps. U kunt filters toevoegen die alleen aanvragen van deze IP-adressen accepteren. Zie [limieten en configuratie voor Azure Logic apps](logic-apps-limits-and-config.md#configuration)om deze IP-adressen op te halen.
+  Alle aanroepen naar eind punten van Logic apps zijn afkomstig van specifieke IP-adressen die zijn gebaseerd op de regio's van uw Logic apps. U kunt filters toevoegen die alleen aanvragen van deze IP-adressen accepteren. Zie [limieten en configuratie voor Azure Logic apps](logic-apps-limits-and-config.md#firewall-ip-configuration)om deze IP-adressen op te halen.
 
 * Verbeter de beveiliging van verbindingen met on-premises systemen.
 

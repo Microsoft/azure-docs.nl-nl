@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: arthii, logicappspm
 ms.topic: article
 ms.date: 05/15/2020
-ms.openlocfilehash: a36b9d20fa20df56ec53e090976ea86e689ac74b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 799e879b4d9fd54367d54c17b3d275acfc5f34c1
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91322509"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054768"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>On-premises gegevensgateway installeren voor Azure Logic Apps
 
@@ -118,13 +118,13 @@ In dit artikel wordt beschreven hoe u uw on-premises gegevens gateway kunt downl
 
    ![Regio bevestigen voor de Gateway Service en service bus](./media/logic-apps-gateway-install/confirm-gateway-region.png)
 
-1. Selecteer **configureren**om de standaard regio te accepteren. Als de standaard regio echter niet het meest overeenkomt met u, kunt u de regio wijzigen.
+1. Selecteer **configureren** om de standaard regio te accepteren. Als de standaard regio echter niet het meest overeenkomt met u, kunt u de regio wijzigen.
 
    *Waarom wijzigt u de regio voor de installatie van de gateway?*
 
    Als u bijvoorbeeld de latentie wilt beperken, kunt u de regio van de gateway wijzigen in dezelfde regio als uw logische app. U kunt ook de regio selecteren die het dichtst bij uw on-premises gegevens bron ligt. Uw *Gateway bron in azure* en uw logische app kunnen verschillende locaties hebben.
 
-   1. Selecteer **regio wijzigen**naast de huidige regio.
+   1. Selecteer **regio wijzigen** naast de huidige regio.
 
       ![De huidige gateway regio wijzigen](./media/logic-apps-gateway-install/change-gateway-service-region.png)
 
@@ -138,9 +138,15 @@ In dit artikel wordt beschreven hoe u uw on-premises gegevens gateway kunt downl
 
 1. [Maak nu de Azure-resource voor de gateway-installatie](../logic-apps/logic-apps-gateway-connection.md).
 
+<a name="communication-settings"></a>
+
 ## <a name="check-or-adjust-communication-settings"></a>Communicatie-instellingen controleren of aanpassen
 
-De on-premises gegevens gateway is afhankelijk van [Azure Service Bus berichten](../service-bus-messaging/service-bus-messaging-overview.md) voor Cloud connectiviteit en de bijbehorende uitgaande verbindingen naar de Azure-regio die aan de gateway is gekoppeld. Als uw werk omgeving vereist dat verkeer via een proxy of firewall wordt uitgevoerd om toegang te krijgen tot internet, kan deze beperking ertoe leiden dat de on-premises gegevens gateway geen verbinding kan maken met de gateway-Cloud service en Azure Service Bus berichten. De gateway heeft verschillende communicatie-instellingen, die u kunt aanpassen. Raadpleeg de volgende onderwerpen voor meer informatie:
+De on-premises gegevens gateway is afhankelijk van [Azure Service Bus berichten](../service-bus-messaging/service-bus-messaging-overview.md) voor Cloud connectiviteit en de bijbehorende uitgaande verbindingen naar de Azure-regio die aan de gateway is gekoppeld. Als uw werk omgeving vereist dat verkeer via een proxy of firewall wordt uitgevoerd om toegang te krijgen tot internet, kan deze beperking ertoe leiden dat de on-premises gegevens gateway geen verbinding kan maken met de gateway-Cloud service en Azure Service Bus berichten. De gateway heeft verschillende communicatie-instellingen, die u kunt aanpassen.
+
+In een voorbeeld scenario kunt u aangepaste connectors gebruiken die toegang hebben tot on-premises resources met behulp van de on-premises gegevens gateway resource in Azure. Als u ook een firewall hebt die het verkeer beperkt tot specifieke IP-adressen, moet u de installatie van de gateway instellen om toegang toe te staan voor de bijbehorende *[uitgaande IP-adressen](logic-apps-limits-and-config.md#outbound)van beheerde connectors*. *Alle* Logic apps in dezelfde regio gebruiken dezelfde IP-adresbereiken.
+
+Raadpleeg de volgende onderwerpen voor meer informatie:
 
 * [Communicatie-instellingen voor de on-premises gegevensgateway aanpassen](/data-integration/gateway/service-gateway-communication)
 * [Proxyinstellingen configureren voor de on-premises gegevensgateway](/data-integration/gateway/service-gateway-proxy)
@@ -171,7 +177,7 @@ Als u de locatie van de gateway moet wijzigen, de installatie van de gateway naa
 
 1. Nadat het installatie programma is geopend, meldt u zich aan met hetzelfde Azure-account dat is gebruikt om de gateway te installeren.
 
-1. Selecteer **een bestaande gateway migreren, herstellen of overnemen**  >  **Next**, bijvoorbeeld:
+1. Selecteer **een bestaande gateway migreren, herstellen of overnemen**  >  , bijvoorbeeld:
 
    ![Selecteer een bestaande gateway migreren, herstellen of overnemen](./media/logic-apps-gateway-install/migrate-recover-take-over-gateway.png)
 
@@ -179,7 +185,7 @@ Als u de locatie van de gateway moet wijzigen, de installatie van de gateway naa
 
    ![Gateway selecteren en herstel sleutel opgeven](./media/logic-apps-gateway-install/select-existing-gateway.png)
 
-1. Als u de regio wilt wijzigen, selecteert u **regio wijzigen**en selecteert u de nieuwe regio.
+1. Als u de regio wilt wijzigen, selecteert u **regio wijzigen** en selecteert u de nieuwe regio.
 
 1. Wanneer u klaar bent, selecteert u **configureren** zodat u de taak kunt volt ooien.
 

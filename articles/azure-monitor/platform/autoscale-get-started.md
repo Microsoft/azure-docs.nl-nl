@@ -4,17 +4,17 @@ description: Meer informatie over het schalen van uw resource web-app, Cloud ser
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: ee36db3f657365036bb68f641be53fd434f1b64b
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 9bbd4da77d2892064906dc7ae272bcc770b6bdc4
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694917"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055277"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met Automatische schaalaanpassing in Azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
 
-Azure Monitor automatisch schalen is alleen van toepassing op [Virtual Machine Scale sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Cloud Services](https://azure.microsoft.com/services/cloud-services/), [app service-Web apps](https://azure.microsoft.com/services/app-service/web/)en [API Management Services](../../api-management/api-management-key-concepts.md).
+Azure Monitor automatisch schalen is alleen van toepassing op [virtuele-machine schaal sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Cloud Services](https://azure.microsoft.com/services/cloud-services/), [app service-Web apps](https://azure.microsoft.com/services/app-service/web/)en [API Management Services](../../api-management/api-management-key-concepts.md).
 
 ## <a name="discover-the-autoscale-settings-in-your-subscription"></a>De instellingen voor automatisch schalen in uw abonnement detecteren
 
@@ -59,7 +59,7 @@ We gaan nu een eenvoudige stapsgewijze procedure volgen om uw eerste instelling 
    ![Schalen op basis van CPU][8]
 1. Klik op **Opslaan**.
 
-Gefeliciteerd. U hebt nu uw eerste schaal instelling gemaakt om uw web-app automatisch te schalen op basis van het CPU-gebruik.
+Gefeliciteerd U hebt nu uw eerste schaal instelling gemaakt om uw web-app automatisch te schalen op basis van het CPU-gebruik.
 
 > [!NOTE]
 > Dezelfde stappen zijn van toepassing om aan de slag te gaan met een virtuele-machine schaalset of een Cloud service-rol.
@@ -115,36 +115,9 @@ U kunt altijd terugkeren naar automatisch schalen door op **automatisch schalen 
 
 ## <a name="route-traffic-to-healthy-instances-app-service"></a>Verkeer routeren naar gezonde instanties (App Service)
 
-Wanneer u naar meerdere exemplaren hebt geschaald, kunt App Service status controles uitvoeren op uw instanties om verkeer alleen naar de gezonde instanties te routeren. Hiertoe opent u de portal op uw App Service en selecteert u vervolgens **status controleren** onder **bewaking**. Selecteer **inschakelen** en geef een geldig URL-pad op voor uw toepassing, zoals `/health` of `/api/health` . Klik op **Opslaan**.
+<a id="health-check-path"></a>
 
-Als u de functie wilt inschakelen met ARM-sjablonen, stelt `healthcheckpath` u de eigenschap van de `Microsoft.Web/sites` resource in op het Health Check-pad op uw site, bijvoorbeeld: `"/api/health/"` . Als u de functie wilt uitschakelen, stelt u de eigenschap weer in op de lege teken reeks, `""` .
-
-### <a name="health-check-path"></a>Pad voor status controle
-
-Het pad moet binnen één minuut reageren met een status code tussen 200 en 299 (inclusief). Als het pad niet binnen één minuut reageert of een status code buiten het bereik retourneert, wordt het exemplaar als ' beschadigd ' beschouwd. App Service volgt niet de 30x beter worden (301, 302, 307, etc.) op het status controle-pad. deze status codes worden als **slecht** beschouwd. Status controle kan worden geïntegreerd met de functies voor verificatie en autorisatie van App Service. het systeem bereikt het eind punt zelfs als deze beveiligings functies zijn ingeschakeld. Als u uw eigen verificatie systeem gebruikt, moet het Health Check-pad anonieme toegang toestaan. Als de site HTTP **s**-only heeft ingeschakeld, wordt de status controle-aanvraag verzonden via http **s**.
-
-Het controle traject voor de status moet de essentiële onderdelen van uw toepassing controleren. Als uw toepassing bijvoorbeeld afhankelijk is van een Data Base en een berichten systeem, moet het eind punt van de status controle verbinding maken met deze onderdelen. Als de toepassing geen verbinding kan maken met een kritiek onderdeel, moet het pad een respons code op 500-niveau retour neren om aan te geven dat de app een slechte status heeft.
-
-#### <a name="security"></a>Beveiliging 
-
-Ontwikkel teams in grote ondernemingen moeten vaak voldoen aan de beveiligings vereisten voor hun blootgestelde Api's. Als u het status controle-eind punt wilt beveiligen, moet u eerst functies zoals [IP-beperkingen](../../app-service/app-service-ip-restrictions.md#set-an-ip-address-based-rule), [client certificaten](../../app-service/app-service-ip-restrictions.md#set-an-ip-address-based-rule)of een Virtual Network gebruiken om de toegang tot de toepassing te beperken. U kunt het status controle-eind punt zelf beveiligen door te vereisen dat de `User-Agent` van de inkomende aanvragen overeenkomen `ReadyForRequest/1.0` . De User-Agent kan niet worden vervalst omdat de aanvraag al is beveiligd door de eerdere beveiligings functies.
-
-### <a name="behavior"></a>Gedrag
-
-Wanneer het pad voor de status controle wordt gegeven, wordt door App Service het pad naar alle exemplaren gepingd. Als een geslaagde respons code niet wordt ontvangen na 5 pings, wordt dat exemplaar als ' beschadigd ' beschouwd. Een of meer beschadigde instanties worden uitgesloten van de load balancer draaiing als u naar twee of meer exemplaren hebt geschaald en gebruikmaakt van een [basis laag](../../app-service/overview-hosting-plans.md) of hoger. U kunt het vereiste aantal mislukte pings configureren met de `WEBSITE_HEALTHCHECK_MAXPINGFAILURES` app-instelling. Deze app-instelling kan worden ingesteld op een wille keurig geheel getal tussen 2 en 10. Als deze instelling is ingesteld op `2` , worden uw instanties van de Load Balancer na twee mislukte pings verwijderd. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat de nieuwe exemplaren gereed zijn voor aanvragen voordat ze worden toegevoegd aan de load balancer.
-
-> [!NOTE]
-> Houd er rekening mee dat uw App Service plan moet worden uitgeschaald naar twee of meer exemplaren en een **eenvoudige laag of hoger** zijn om de Load Balancer uitzonde ring te laten optreden. Als u slechts één exemplaar hebt, wordt het niet verwijderd uit het load balancer, zelfs niet als het een slechte status heeft. 
-
-Daarnaast wordt het status controlepad gepingd wanneer instanties worden toegevoegd of opnieuw worden gestart, zoals tijdens het uitschalen van bewerkingen, het hand matig opnieuw opstarten of het implementeren van code via de SCM-site. Als de status controle mislukt tijdens deze bewerkingen, worden de mislukte instanties niet toegevoegd aan de load balancer. Dit voor komt dat deze bewerkingen een negatieve invloed hebben op de beschik baarheid van uw toepassing.
-
-Wanneer u status controle gebruikt, kunnen uw resterende gezonde instanties meer belasting ondervinden. Om te voor komen dat de resterende instanties overblijven, worden niet meer dan de helft van uw instanties uitgesloten. Als een App Service plan bijvoorbeeld wordt uitgeschaald naar vier instanties en 3 van de status niet in orde, wordt Maxi maal 2 uitgesloten van de loadbalancer-rotatie. De andere twee instanties (1 in orde en 1 zijn beschadigd) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, kunt u de `WEBSITE_HEALTHCHECK_MAXUNHEALTHYWORKERPERCENT` app-instelling instellen op een waarde tussen `0` en `100` . Als u dit instelt op een hogere waarde, worden er meer beschadigde instanties verwijderd (de standaard waarde is 50).
-
-Als de status controles gedurende één uur mislukken voor alle apps op een exemplaar, wordt het exemplaar vervangen. Er wordt Maxi maal één exemplaar per uur vervangen, met een maximum van drie exemplaren per dag per App Service plan.
-
-### <a name="monitoring"></a>Bewaking
-
-Nadat u het Health Check-pad van uw toepassing hebt opgegeven, kunt u de status van uw site bewaken met behulp van Azure Monitor. Klik op de Blade **status controle** in de portal op de **metrische gegevens** in de bovenste werk balk. Hiermee opent u een nieuwe blade waar u de historische status van de site kunt zien en een nieuwe waarschuwings regel maakt. [Zie de gids over Azure monitor](../../app-service/web-sites-monitor.md)voor meer informatie over het bewaken van uw sites.
+Wanneer uw Azure-web-app is geschaald naar meerdere instanties, kan App Service status controles uitvoeren op uw instanties om verkeer naar de gezonde instanties te routeren. Zie [dit artikel over app service status controle](../../app-service/monitor-instances-health-check.md)voor meer informatie.
 
 ## <a name="moving-autoscale-to-a-different-region"></a>Automatisch schalen verplaatsen naar een andere regio
 In deze sectie wordt beschreven hoe u een automatische schaal aanpassing van Azure naar een andere regio onder hetzelfde abonnement en resource groep kunt verplaatsen. U kunt REST API gebruiken om instellingen voor automatisch schalen te verplaatsen.

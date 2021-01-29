@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.author: duau
-ms.openlocfilehash: 120261cdb902fbdd089c73320a847191005f149b
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 9129ed0c91e7a91af1dfac7c048db2f424d59283
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740581"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055022"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute
 
@@ -114,7 +114,7 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Melbourne** | [NextDC M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Australië - zuidoost | 10G, 100G | AARNet, Devoli, Equinix, Mega Port, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
 | **Miami** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | n.v.t. | 10G, 100G | Claro, C3ntro, Equinix, Mega Port, Neutrona netwerken |
 | **Milaan** | [IRIDEOS](https://irideos.it/en/data-centers/) | 1 | n.v.t. | 10G | Colt, Equinix, Fastweb, IRIDEOS, Retelit |
-| **Minneapolis** | [Cologix MIN1](https://www.cologix.com/data-centers/minneapolis/min1/) | 1 | n.v.t. | 10G, 100G | Cologix |
+| **Minneapolis** | [Cologix MIN1](https://www.cologix.com/data-centers/minneapolis/min1/) | 1 | n.v.t. | 10G, 100G | Cologix, Mega Port |
 | **Montreal** | [Cologix MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | n.v.t. | 10G, 100G | Bell Canada, Cologix, Fibrenoire, Mega Port, Telus, Zayo |
 | **Mumbai** | Tata Communications | 2 | India - west | 10G | DE CIX, Global CloudXchange (GCX), revertrouwen Jio, Sify, Tata Communications, Verizon |
 | **Mumbai2** | Airtel | 2 | India - west | 10G | Airtel, Sify, Vodafone Idea |
@@ -145,7 +145,7 @@ De volgende tabel geeft de connectiviteitslocaties en de serviceproviders voor e
 | **Tokio** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Japan - oost | 10G, 100G | Aryaka Networks, AT&T netbond, BBIX, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc.-IIJ, Mega Port, NTT Communications, NTT Oost, oranje, Softbank, Verizon |
 | **Tokyo2** | [OP TOKYO](https://www.attokyo.com/) | 2 | Japan - oost | 10G, 100G | OP TOKYO, Mega Port, Tokai Communications |
 | **Toronto** | [Cologix TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Canada - midden | 10G, 100G | BIJ&T netbond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Mega Port, Telus, Verizon, Zayo |
-| **Vancouver** | [Cologix VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | n.v.t. | 10G | Cologix, Telus |
+| **Vancouver** | [Cologix VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | n.v.t. | 10G | Cologix, Mega Port, Telus |
 | **Washington DC** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | 1 | VS-Oost, VS-Oost 2 | 10G, 100G | Aryaka Networks, AT&T netbond, British Telecom, CenturyLink Cloud Connect, Cologix, Colt, Comcast, CoreSite, Equinix, Internet2, intercloud, IX REACH, Level 3 Communications, Mega Port, Neutrona Networks, NTT Communications, oranje, PacketFabric, SES, Sprint,-communicatie, Tata-Carrier, Verizon, Telia |
 | **Washington DC2** | [CoreSite Reston](https://www.coresite.com/data-center-locations/northern-virginia-washington-dc) | 1 | VS-Oost, VS-Oost 2 | 10G, 100G | CenturyLink Cloud Connect, CoreSite, INTELSAT, Mega Port, Viasat, Zayo | 
 | **Zurich** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Zwitserland - noord | 10G, 100G | Eqinix, intercloud, Interxion, Mega Port, Swisscom |

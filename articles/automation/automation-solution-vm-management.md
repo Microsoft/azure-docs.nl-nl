@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3210aa5ae2ff94ba2c7dda673fbb60847c4dfd0b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 89566bdfb56ca662813b586b2203eec7e7e5566b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372154"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055378"
 ---
 # <a name="startstop-vms-during-off-hours-overview"></a>Overzicht van VM's buiten bedrijfsuren starten/stoppen
 
@@ -37,7 +37,7 @@ Hier volgen enkele beperkingen met betrekking tot de huidige functie:
 
 ## <a name="prerequisites"></a>Vereisten
 
-- De runbooks voor het starten/stoppen van Vm's buiten kantoor uren functie werken met een [Azure uitvoeren als-account](./manage-runas-account.md). Het run as-account is de voorkeurs verificatie methode omdat deze gebruikmaakt van certificaat verificatie in plaats van een wacht woord dat regel matig verloopt of kan worden gewijzigd.
+- De runbooks voor het starten/stoppen van Vm's buiten kantoor uren functie werken met een [Azure uitvoeren als-account](./automation-security-overview.md#run-as-accounts). Het run as-account is de voorkeurs verificatie methode omdat deze gebruikmaakt van certificaat verificatie in plaats van een wacht woord dat regel matig verloopt of kan worden gewijzigd.
 
 - Het gekoppelde Automation-account en de Log Analytics werk ruimte moeten zich in dezelfde resource groep bevinden.
 
@@ -79,7 +79,7 @@ Als u Vm's wilt inschakelen voor de functie VM's buiten bedrijfsuren starten/sto
 U kunt Vm's voor de VM's buiten bedrijfsuren starten/stoppen-functie inschakelen met behulp van een nieuw Automation-account en Log Analytics werk ruimte. In dit geval hebt u de machtigingen die zijn gedefinieerd in de voor gaande sectie en de machtigingen die in deze sectie zijn gedefinieerd. U hebt ook de volgende rollen nodig:
 
 - Co-Administrator op het abonnement. Deze rol is vereist voor het maken van het klassieke uitvoeren als-account als u klassieke Vm's wilt beheren. [Klassieke uitvoeren als-accounts](automation-create-standalone-account.md#create-a-classic-run-as-account) worden niet meer standaard gemaakt.
-- Lidmaatschap van de functie voor ontwikkel aars van [Azure AD](../active-directory/roles/permissions-reference.md) -toepassingen. Zie [machtigingen voor het configureren van run as-accounts](manage-runas-account.md#permissions)voor meer informatie over het configureren van uitvoeren als-accounts.
+- Lidmaatschap van de functie voor ontwikkel aars van [Azure AD](../active-directory/roles/permissions-reference.md) -toepassingen. Zie [machtigingen voor het configureren van run as-accounts](automation-security-overview.md#permissions)voor meer informatie over het configureren van uitvoeren als-accounts.
 - Inzender voor het abonnement of de volgende machtigingen.
 
 | Machtiging |Bereik|
@@ -106,7 +106,7 @@ De volgende tabel geeft een lijst van de runbooks die de functie implementeert v
 
 Alle bovenliggende runbooks bevatten de `WhatIf` para meter. Als deze eigenschap is ingesteld op True, wordt de para meter gebruikt om het exacte gedrag te bepalen dat het runbook uitvoert wanneer het wordt uitgevoerd zonder de para meter en wordt gevalideerd of de juiste Vm's zijn gericht. Een runbook voert alleen de gedefinieerde acties uit wanneer de `WhatIf` para meter is ingesteld op ONWAAR.
 
-|Runbook | Parameters | Beschrijving|
+|Runbook | Parameters | Description|
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Aangeroepen vanuit het bovenliggende runbook. Dit runbook maakt waarschuwingen per resource voor het scenario voor automatisch stoppen.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: True of False  | Hiermee worden Azure-waarschuwings regels gemaakt of bijgewerkt op Vm's in het doel abonnement of resource groepen. <br> `VMList` is een door komma's gescheiden lijst met virtuele machines (zonder spaties), bijvoorbeeld `vm1,vm2,vm3` .<br> `WhatIf` Hiermee wordt de validatie van de runbook-logica mogelijk zonder dat deze wordt uitgevoerd.|
@@ -150,7 +150,7 @@ De volgende tabel bevat de variabelen die zijn gemaakt in uw Automation-account.
 >[!NOTE]
 >`External_WaitTimeForVMRetryInSeconds`De standaard waarde voor de variabele is bijgewerkt van 600 naar 2100. 
 
-In alle scenario's, de variabelen `External_Start_ResourceGroupNames` ,  `External_Stop_ResourceGroupNames` en `External_ExcludeVMNames` zijn nodig voor het richten op vm's, met uitzonde ring van de lijsten met door komma's gescheiden vm's voor de **AutoStop_CreateAlert_Parent**, **SequencedStartStop_Parent**en **ScheduledStartStop_Parent** runbooks. Dat wil zeggen dat uw Vm's deel moeten uitmaken van de doel resource groepen voor het starten en stoppen van de acties. De logica werkt op soort gelijke wijze als Azure Policy, in dat u het abonnement of de resource groep kunt bereiken en acties moet hebben overgenomen door nieuw gemaakte Vm's. Op deze manier wordt voor komen dat u een afzonderlijke planning moet onderhouden voor elke VM en het beheer begint en stopt op schaal.
+In alle scenario's, de variabelen `External_Start_ResourceGroupNames` ,  `External_Stop_ResourceGroupNames` en `External_ExcludeVMNames` zijn nodig voor het richten op vm's, met uitzonde ring van de lijsten met door komma's gescheiden vm's voor de **AutoStop_CreateAlert_Parent**, **SequencedStartStop_Parent** en **ScheduledStartStop_Parent** runbooks. Dat wil zeggen dat uw Vm's deel moeten uitmaken van de doel resource groepen voor het starten en stoppen van de acties. De logica werkt op soort gelijke wijze als Azure Policy, in dat u het abonnement of de resource groep kunt bereiken en acties moet hebben overgenomen door nieuw gemaakte Vm's. Op deze manier wordt voor komen dat u een afzonderlijke planning moet onderhouden voor elke VM en het beheer begint en stopt op schaal.
 
 ### <a name="schedules"></a>Schema's
 
@@ -158,7 +158,7 @@ De volgende tabel bevat een overzicht van de standaard schema's die zijn gemaakt
 
 Schakel niet alle schema's in, omdat dit mogelijk overlappende plannings acties kan maken. U kunt het beste bepalen welke optimalisaties u wilt uitvoeren en ze dienovereenkomstig aanpassen. Zie de voorbeeld scenario's in de sectie Overzicht voor meer informatie.
 
-|Schema naam | Frequency | Beschrijving|
+|Schema naam | Frequentie | Description|
 |--- | --- | ---|
 |Schedule_AutoStop_CreateAlert_Parent | Om de 8 uur | Voert het **AutoStop_CreateAlert_Parent** runbook uit om de 8 uur, waardoor de op virtuele machines gebaseerde waarden in `External_Start_ResourceGroupNames` , `External_Stop_ResourceGroupNames` en variabelen op zijn beurt worden gestopt `External_ExcludeVMNames` . U kunt ook een door komma's gescheiden lijst met Vm's opgeven met behulp van de `VMList` para meter.|
 |Scheduled_StopVM | Door de gebruiker gedefinieerd, dagelijks | Voert het **ScheduledStopStart_Parent** runbook uit met een para meter van `Stop` elke dag op de opgegeven tijd. Stopt automatisch alle virtuele machines die voldoen aan de regels die zijn gedefinieerd door variabele assets. Schakel de planning **StartVM**.|

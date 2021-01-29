@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: 413293cdefd39285c57b58d4555d3d703492ea96
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f05c3247ecdd77fe4cf02db70c7ba4b2c534f959
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98894844"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055345"
 ---
 # <a name="update-azure-powershell-modules"></a>Azure PowerShell-modules bijwerken
 
@@ -23,7 +23,7 @@ De meest voorkomende Power shell-modules zijn standaard opgenomen in elk Automat
 
 Om te voor komen dat uw runbooks en de processen worden geautomatiseerd, moet u testen en valideren tijdens het maken van updates. Als u geen speciaal Automation-account hebt dat is bedoeld voor dit doel, kunt u overwegen om een groot aantal verschillende scenario's te testen tijdens de ontwikkeling van uw runbooks. Deze test moet terugkerende wijzigingen bevatten, zoals het bijwerken van de Power shell-modules.
 
-Zorg ervoor dat uw Automation-account een [Azure run as-account referentie](manage-runas-account.md) heeft gemaakt.
+Zorg ervoor dat er een [Azure run as-account](automation-security-overview.md#run-as-accounts) is gemaakt voor uw Automation-account.
 
 Als u uw scripts lokaal ontwikkelt, is het raadzaam om dezelfde module versies lokaal te hebben als tijdens het testen, zodat u zeker weet dat u dezelfde resultaten krijgt. Nadat de resultaten zijn gevalideerd en u alle vereiste wijzigingen hebt toegepast, kunt u de wijzigingen naar de productie verplaatsen.
 

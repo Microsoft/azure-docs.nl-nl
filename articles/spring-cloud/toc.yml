@@ -99,6 +99,8 @@
           href: spring-cloud-howto-application-insights.md
         - name: Metrische gegevens voor Resilience4J-circuitonderbreker
           href: spring-cloud-howto-circuit-breaker-metrics.md
+        - name: Gestructureerd toepassings logboek
+          href: spring-cloud-structured-app-log.md
     - name: Netwerk
       items:
         - name: Azure lente-Cloud in een virtueel netwerk implementeren

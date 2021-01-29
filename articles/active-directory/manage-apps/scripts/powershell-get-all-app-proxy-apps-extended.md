@@ -11,16 +11,18 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 330bd9b78c2f550ab40f1f4f3679b6c9788ddb64
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: 62dae175b529bd54b2f139eece89bbde6f98cd38
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859362"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055005"
 ---
 # <a name="get-all-application-proxy-apps-and-list-extended-information"></a>Alle toepassingsproxy-apps ophalen en uitgebreide informatie vermelden
 
-In dit PowerShell-voorbeeld wordt informatie over alle Azure Active Directory (Azure AD)-toepassingsproxytoepassingen vermeld, inclusief de toepassings-id (AppId), de naam (DisplayName), de externe URL (ExternalUrl), de interne URL (InternalUrl) en het verificatietype (ExternalAuthenticationType).
+In dit voor beeld van een Power shell-script wordt informatie weer gegeven over alle Azure Active Directory-toepassings proxy toepassingen (Azure AD), waaronder de toepassings-ID (AppId), de naam (DisplayName), de externe URL (ExternalUrl), de interne URL (InternalUrl), het verificatie type (ExternalAuthenticationType), de SSO-modus en verdere instellingen.
+
+Als u de waarde van de $ssoMode variabele wijzigt, wordt een gefilterde uitvoer per SSO-modus ingeschakeld. Meer informatie vindt u in het script.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -28,7 +30,7 @@ In dit PowerShell-voorbeeld wordt informatie over alle Azure Active Directory (A
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module](/powershell/azure/active-directory/install-adv2) (AzureAD) of de [AzureAD V2 PowerShell voor Graph-module (preview)](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview) vereist.
+Voor dit voor beeld is de [AzureAD v2 Power shell voor Graph module](/powershell/azure/active-directory/install-adv2) (AzureAD) vereist.
 
 ## <a name="sample-script"></a>Voorbeeldscript
 

@@ -1,6 +1,6 @@
 ---
-title: Azure Blob-opslagbibliotheek v12 - Java
-description: In deze quickstart leert u hoe u de Azure Blob Storage-clientbibliotheek versie 12 voor Java kunt gebruiken om een container en een blob-in-blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
+title: 'Snelstartgids: Azure Blob Storage bibliotheek V12-java'
+description: In deze Quick Start leert u hoe u de Azure Blob Storage-client bibliotheek versie 12 voor Java kunt gebruiken om een container en een BLOB in Blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
@@ -8,12 +8,12 @@ ms.date: 12/01/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 02752af77d443e19278a96206bb7516fedd59d7f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: b5c34cea5d8222a246462bfadde66fd8a5ddbec7
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501121"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054700"
 ---
 # <a name="quickstart-manage-blobs-with-java-v12-sdk"></a>Quickstart: Blobs beheren met Java v12 SDK
 
@@ -37,7 +37,7 @@ Aanvullende bronnen:
 
 ## <a name="setting-up"></a>Instellen
 
-In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-clientbibliotheek v12 voor Java.
+In deze sectie wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-client bibliotheek V12 voor Java.
 
 ### <a name="create-the-project"></a>Het project maken
 
@@ -183,7 +183,7 @@ Gebruik de volgende Java-klassen om te communiceren met deze resources:
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze voorbeeldcodefragmenten laten zien hoe u de volgende acties kunt uitvoeren met de Azure Blob Storage-clientbibliotheek voor Java:
+In deze voorbeeld code fragmenten ziet u hoe u het volgende kunt uitvoeren met de Azure Blob Storage-client bibliotheek voor Java:
 
 * [De verbindingsreeks ophalen](#get-the-connection-string)
 * [Een container maken](#create-a-container)
@@ -199,7 +199,7 @@ De onderstaande code haalt de verbindingstekenreeks voor het opslagaccount op va
 Voeg deze code toe in de methode `Main`:
 
 ```java
-System.out.println("Azure Blob storage v12 - Java quickstart sample\n");
+System.out.println("Azure Blob Storage v12 - Java quickstart sample\n");
 
 // Retrieve the connection string for use with the application. The storage
 // connection string is stored in an environment variable on the machine
@@ -342,7 +342,7 @@ mvn exec:java -Dexec.mainClass="com.blobs.quickstart.App" -Dexec.cleanupDaemonTh
 De uitvoer van de app lijkt op die in het volgende voorbeeld:
 
 ```output
-Azure Blob storage v12 - Java quickstart sample
+Azure Blob Storage v12 - Java quickstart sample
 
 Uploading to Blob storage as blob:
         https://mystorageacct.blob.core.windows.net/quickstartblobsf9aa68a5-260e-47e6-bea2-2dcfcfa1fd9a/quickstarta9c3a53e-ae9d-4863-8b34-f3d807992d65.txt
@@ -371,7 +371,7 @@ In deze quickstart hebt u geleerd hoe u blobs kunt uploaden, downloaden en er ee
 Als u voorbeeld-apps voor Blob-opslag wilt zien, ga dan naar:
 
 > [!div class="nextstepaction"]
-> [Azure Blob-opslag-SDK v12 Java-voorbeelden](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-blob/src/samples/java/com/azure/storage/blob)
+> [Java-voor beelden voor Azure Blob Storage SDK V12](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-blob/src/samples/java/com/azure/storage/blob)
 
 * Zie de [Azure SDK voor Java](https://github.com/Azure/azure-sdk-for-java/blob/master/README.md) voor meer informatie.
 * Ga naar [Azure voor Java-cloudontwikkelaars](/azure/developer/java/) voor zelfstudies, voorbeelden, quickstarts en andere documentatie.

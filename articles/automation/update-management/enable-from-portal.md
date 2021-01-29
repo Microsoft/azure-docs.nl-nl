@@ -2,15 +2,16 @@
 title: Azure Automation Updatebeheer van de Azure Portal inschakelen
 description: In dit artikel leest u hoe u Updatebeheer kunt inschakelen vanuit de Azure Portal.
 services: automation
-ms.date: 04/11/2019
-ms.topic: article
+ms.subservice: update-management
+ms.date: 01/07/2021
+ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: ac402587c8346c14f34b683ba10832c7779b660b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 089c5fea6ac4a6fc4fb25af2d631335ef51cf4cc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182764"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054903"
 ---
 # <a name="enable-update-management-from-the-azure-portal"></a>Updatebeheer inschakelen via Azure Portal
 
@@ -24,7 +25,7 @@ Het aantal resource groepen dat u kunt gebruiken voor het beheren van uw Vm's, w
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Automation-account](../index.yml) voor het beheren van computers.
+* [Automation-account](../automation-security-overview.md) voor het beheren van computers.
 * Een [virtuele machine](../../virtual-machines/windows/quick-create-portal.md).
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure

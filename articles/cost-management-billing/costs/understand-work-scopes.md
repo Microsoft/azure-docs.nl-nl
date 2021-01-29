@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: ''
-ms.openlocfilehash: 61a8dbbdde87af792bb4337660d4d3c34f7cf802
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 729444b1d1ccf55f34e54a4b59508131458c472b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132292"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054801"
 ---
 # <a name="understand-and-work-with-scopes"></a>Bereiken begrijpen en gebruiken
 
@@ -114,7 +114,7 @@ Azure-abonnementen die zijn gemaakt op basis van afzonderlijke aanbiedingen, zoa
 
     Resourcetype: Niet van toepassing
 
-Afzonderlijke accountbeheerders van een Azure-abonnement kunnen factureringsgegevens, zoals facturen en betalingen, bekijken en beheren via het [Azure-accountcentrum](https://account.azure.com/subscriptions). Ze kunnen echter geen kosten gegevens weergeven of resources in de Azure-portal beheren. Als u toegang wilt verlenen aan de accountbeheerder, gebruikt u de eerder genoemde Cost Management-rollen.
+Afzonderlijke accounts beheerders van een Azure-abonnement kunnen facturerings gegevens, zoals facturen en betalingen, bekijken en beheren via de [Azure Portal](https://portal.azure.com)  >  **abonnementen** > een abonnement selecteren.
 
 In tegenstelling tot EA kunnen accountbeheerders van afzonderlijke Azure-abonnementen hun facturen zien in de Azure-portal. Houd er wel voor dat Cost Management Lezer- en Cost Management Inzender-rollen geen toegang tot facturen bieden. Zie [Het verlenen van toegang tot facturen](../manage/manage-billing-access.md#give-read-only-access-to-billing) voor meer informatie.
 

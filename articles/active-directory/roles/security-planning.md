@@ -14,12 +14,12 @@ ms.subservice: roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12f262347938720a9d5a95e070d792a83ac9188c
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: e38ca27606ecf04b08bd29867894ba269148260c
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740802"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055243"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Bevoegde toegang beveiligen voor hybride implementaties en cloudimplementaties in Azure AD
 
@@ -147,9 +147,10 @@ Als uw eerste globale beheerders hun bestaande Microsoft-account referenties opn
 
 Persoonlijke e-mail accounts worden regel matig gephishd door Cyber aanvallers, een risico dat persoonlijke e-mail adressen niet worden toegestaan voor accounts voor globale beheerders. Maak voor elke gebruiker met beheerders bevoegdheden speciale accounts om Internet Risico's te onderscheiden van beheerders bevoegdheden.
 
-* Zorg ervoor dat u afzonderlijke accounts maakt voor gebruikers om algemene beheer taken uit te voeren
-* Zorg ervoor dat uw globale beheerders niet per ongeluk e-mails openen of Program ma's uitvoeren met hun beheerders accounts
-* Zorg ervoor dat deze accounts hun e-mail adres hebben doorgestuurd naar een werk Postvak
+* Zorg ervoor dat u afzonderlijke accounts maakt voor gebruikers om algemene beheer taken uit te voeren.
+* Zorg ervoor dat uw globale beheerders niet per ongeluk e-mail berichten openen of Program ma's uitvoeren met hun beheerders accounts.
+* Zorg ervoor dat deze accounts hun e-mail adres hebben doorgestuurd naar een werk postvak.
+* Globale beheerders (en andere geprivilegieerde groepen)-accounts moeten alleen Cloud accounts zijn zonder binding met on-premises Active Directory.
 
 #### <a name="ensure-the-passwords-of-administrative-accounts-have-recently-changed"></a>Controleren of de wacht woorden van beheerders accounts onlangs zijn gewijzigd
 

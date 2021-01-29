@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 02/27/2020
-ms.openlocfilehash: 7e58dcf8206ae9feab4d8a09517bf9efda244dd5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 95cc13a79f39888a5be10e423bda4c7cd7c84cb3
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451569"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054785"
 ---
 # <a name="tutorial-automate-tasks-to-process-emails-by-using-azure-logic-apps-azure-functions-and-azure-storage"></a>Zelfstudie: Automatiseer taken om e-mails te verwerken met behulp van Azure Logic Apps, Azure Functions en Azure Storage
 
@@ -36,7 +36,7 @@ Wanneer u bent klaar, ziet uw logische app eruit als deze werkstroom op hoog niv
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
+* Een Azure-account en -abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
 
 * Een e-mailaccount van een e-mailprovider die door Logic Apps wordt ondersteund, bijvoorbeeld Office 365 Outlook, Outlook.com of Gmail. Voor andere providers [kunt u hier de lijst met connectors bekijken](/connectors/).
 
@@ -46,6 +46,8 @@ Wanneer u bent klaar, ziet uw logische app eruit als deze werkstroom op hoog niv
   > Als u de Gmail-connector wilt gebruiken, kunnen alleen bedrijfsaccounts van G Suite deze connector zonder beperking in logische apps gebruiken. Als u een Gmail-consumentenaccount hebt, kunt u deze connector alleen gebruiken met specifieke door Google goedgekeurde services, of u kunt [een Google-client-app maken voor verificatie bij uw Gmail-connector](/connectors/gmail/#authentication-and-bring-your-own-application). Zie [Beleid voor gegevensbeveiliging en privacybeleid voor Google-connectors in Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md) voor meer informatie.
 
 * Download en installeer de [gratis Microsoft Azure Storage Explorer](https://storageexplorer.com/). Dit hulpprogramma help u om te controleren of uw opslagcontainer correct is ingesteld.
+
+* Als uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor *zowel* de [inkomende](logic-apps-limits-and-config.md#inbound) als [uitgaande](logic-apps-limits-and-config.md#outbound) IP-adressen die worden gebruikt door de Logic apps service of runtime in de Azure-regio waar uw logische app bestaat. Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](logic-apps-limits-and-config.md#outbound) in de Azure-regio van de logische app.
 
 ## <a name="set-up-storage-to-save-attachments"></a>De opslag instellen om bijlagen te bewaren
 
@@ -86,7 +88,7 @@ U kunt binnenkomende e-mails en bijlagen als blobs opslaan in een [Azure-opslagc
 
       ![Kopieer de naam en de sleutel van de opslagaccount en sla deze op](./media/tutorial-process-email-attachments-workflow/copy-save-storage-name-key.png)
 
-   U kunt ook [Azure PowerShell](/powershell/module/az.storage/get-azstorageaccountkey) of [Azure CLI](/cli/azure/storage/account/keys?view=azure-cli-latest.md#az-storage-account-keys-list) gebruiken om de toegangssleutel van uw opslagaccount op te halen.
+   U kunt ook [Azure PowerShell](/powershell/module/az.storage/get-azstorageaccountkey) of [Azure CLI](/cli/azure/storage/account/keys.md#az-storage-account-keys-list) gebruiken om de toegangssleutel van uw opslagaccount op te halen.
 
 1. Maak een Blob Storage-container voor uw e-mailbijlagen.
 
@@ -102,7 +104,7 @@ U kunt binnenkomende e-mails en bijlagen als blobs opslaan in een [Azure-opslagc
 
       ![Voltooide opslagcontainer](./media/tutorial-process-email-attachments-workflow/created-storage-container.png)
 
-   U kunt ook [Azure PowerShell](/powershell/module/az.storage/new-azstoragecontainer) of [Azure CLI](/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create) gebruiken om een opslagcontainer te maken.
+   U kunt ook [Azure PowerShell](/powershell/module/az.storage/new-azstoragecontainer) of [Azure CLI](/cli/azure/storage/container#az-storage-container-create) gebruiken om een opslagcontainer te maken.
 
 Koppel vervolgens Storage Explorer aan uw opslagaccount.
 

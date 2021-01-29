@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d14e4808d5bec03dff9406f37e63ee4c76e601f8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: b318ed0d5cd97ca7c020097dff25516f0783c70e
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033218"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055294"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Toestemming van groeps eigenaar configureren voor apps die toegang hebben tot groeps gegevens
 
@@ -74,7 +74,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
 1. Meer informatie over de instellings waarden. Er zijn twee instellingen waarden die bepalen welke gebruikers een app kunnen gebruiken om toegang te krijgen tot de gegevens van de groep:
 
-    | Instelling       | Type         | Beschrijving  |
+    | Instelling       | Type         | Description  |
     | ------------- | ------------ | ------------ |
     | _EnableGroupSpecificConsent_   | Booleaans | Vlag waarmee wordt aangegeven of groeps eigenaren specifieke machtigingen mogen verlenen. |
     | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Als _EnableGroupSpecificConsent_ is ingesteld op ' True ' en deze waarde is ingesteld op de object-id van een groep, worden leden van de geïdentificeerde groep gemachtigd om groeps-specifieke machtigingen te verlenen aan de groepen waarvan ze eigenaar zijn. |
@@ -124,4 +124,4 @@ Zie voor meer informatie:
 * [Machtigingen en toestemming in het micro soft Identity-platform](../develop/v2-permissions-and-consent.md)
 
 Om hulp te krijgen of antwoorden op uw vragen te vinden:
-* [Azure AD op stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
+* [Azure AD op micro soft Q&A ](https://docs.microsoft.com/answers/topics/azure-active-directory.html)

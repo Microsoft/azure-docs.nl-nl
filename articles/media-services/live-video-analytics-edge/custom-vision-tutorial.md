@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van Azure Custom Vision om een con
 ms.topic: tutorial
 ms.date: 09/08/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: de788c337ce8030b73538565e4f374ffc7db55b8
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: 0b5d011ac7832436edf1f5c898b1fe1e239d0aea
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060493"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055362"
 ---
 # <a name="tutorial-analyze-live-video-with-live-video-analytics-on-iot-edge-and-azure-custom-vision"></a>Zelfstudie: Live video analyseren met Live Video Analytics op IoT Edge en Azure Custom Vision
 
@@ -51,7 +51,6 @@ Lees de volgende artikelen voordat u begint:
 
 ## <a name="prerequisites"></a>Vereisten
 
-
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [prerequisites](includes/custom-vision-tutorial/csharp/prerequisites.md)]
 ::: zone-end
@@ -59,6 +58,10 @@ Lees de volgende artikelen voordat u begint:
 ::: zone pivot="programming-language-python"
 [!INCLUDE [prerequisites](includes/custom-vision-tutorial/python/prerequisites.md)]
 ::: zone-end
+
+> [!IMPORTANT]
+> Deze Custom Vision-module biedt alleen ondersteuning voor **Intel x86-en amd64** -architecturen. Controleer de architectuur van uw edge-apparaat voordat u doorgaat.
+
 ## <a name="review-the-sample-video"></a>De voorbeeldvideo bekijken
 
 In deze zelfstudie wordt gebruikgemaakt van een bestand met een [video van een speelgoedwagen](https://lvamedia.blob.core.windows.net/public/t2.mkv) om een livestream te simuleren. U kunt de video bekijken via een toepassing zoals [VLC Media Player](https://www.videolan.org/vlc/). Selecteer **CTRL + N** en plak vervolgens een link naar de [video van een speelgoedwagen](https://lvamedia.blob.core.windows.net/public/t2.mkv) om het afspelen te starten. U zult zien dat na 36 seconden in de video een speelgoedwagen verschijnt. Het aangepaste model is getraind om deze specifieke speelgoedwagen te detecteren. 
@@ -81,6 +84,9 @@ Het knooppunt HTTP-extensie speelt de rol van een proxy.  Het knooppunt samplet 
 Zoals de naam Custom Vision doet vermoeden, kunt u deze toepassing gebruiken om uw eigen aangepaste objectdetector of classificatie te bouwen in de cloud. De toepassing heeft een eenvoudige, gebruiksvriendelijke en intuïtieve interface voor het bouwen van Custom Vision-modellen die via containers kunnen worden geïmplementeerd in de cloud of aan de rand.
 
 Voor het maken van een detector van speelgoedwagens, volgt u de stappen in [Quickstart: Een objectdetector bouwen met de Custom Vision-website](../../cognitive-services/custom-vision-service/get-started-build-detector.md).
+
+> [!IMPORTANT]
+> Deze Custom Vision module biedt alleen ondersteuning voor **Intel x86-en amd64** -architecturen. Controleer de architectuur van uw edge-apparaat voordat u doorgaat.
 
 Aanvullende opmerkingen:
  

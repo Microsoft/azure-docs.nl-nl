@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 39645e8bd370dfd518d570c3088c56a22aa77748
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b353fad64b08f5fc50af2b8d31abab77cd797e25
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927032"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055039"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -58,7 +58,7 @@ Service Tags geven standaard de bereiken weer voor de hele Cloud. Sommige servic
 | **AzureBotService** | Azure Bot Service. | Uitgaand | Nee | Nee |
 | **AzureCloud** | Alle [open bare IP-adressen van data centers](https://www.microsoft.com/download/details.aspx?id=56519). | Uitgaand | Ja | Ja |
 | **AzureCognitiveSearch** | Azure Cognitive Search. <br/><br/>Deze tag of de IP-adressen waarop deze tag wordt toegepast, kunnen worden gebruikt om Indexeer functies beveiligde toegang te geven tot gegevens bronnen. Raadpleeg de documentatie van de [indexers verbinding](../search/search-indexer-troubleshooting.md#connection-errors) voor meer informatie. <br/><br/> *Opmerking*: het IP-adres van de zoek service is niet opgenomen in de lijst met IP-bereiken voor deze servicetag en **moet ook worden toegevoegd** aan de IP-firewall van gegevens bronnen. | Inkomend | Nee | Nee |
-| **AzureConnectors** | Azure Logic Apps connectors voor probe/back-endverbinding. | Inkomend | Ja | Ja |
+| **AzureConnectors** | Deze tag vertegenwoordigt de IP-adressen die worden gebruikt voor beheerde connectors die inkomende webhook-retour aanroepen naar de Azure Logic Apps-service en uitgaande aanroepen naar hun respectievelijke Services, bijvoorbeeld Azure Storage of Azure Event Hubs. | Inkomend/uitgaand | Ja | Ja |
 | **AzureContainerRegistry** | Azure Container Registry. | Uitgaand | Ja | Ja |
 | **AzureCosmosDB** | Azure Cosmos DB. | Uitgaand | Ja | Ja |
 | **AzureDatabricks** | Azure Databricks. | Beide | Nee | Nee |

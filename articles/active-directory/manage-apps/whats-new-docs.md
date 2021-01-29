@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: bad312b777c57a48c3205de588325d477b5773af
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: ea2e08db91d23e9523b7bc95e01b7adc9c93b3cc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563395"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054818"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
@@ -90,7 +90,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 - [Toegang tot Self-service toepassingen gebruiken](access-panel-manage-self-service-access.md)
 - [Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps](application-sign-in-other-problem-access-panel.md)
 - [Problemen oplossen met eenmalige aanmelding op basis van wachtwoord in Azure Active Directory](troubleshoot-password-based-sso.md)
-- [Een Azure Active Directory implementatie van mijn apps plannen](access-panel-deployment-plan.md)
+- [Een Azure Active Directory implementatie van mijn apps plannen](my-apps-deployment-plan.md)
 - [Wat is eenmalige aanmelding?](what-is-single-sign-on.md)
 - [Actie onderneemt over overbevoegd of verdachte toepassingen in Azure Active Directory](manage-application-permissions.md)
 - [Quickstart: Eigenschappen configureren voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](add-application-portal-configure.md)

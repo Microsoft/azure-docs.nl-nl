@@ -1,4 +1,4 @@
-- name: Documentatie voor gebruikershulp
+- name: Help-documentatie voor gebruikers
   href: index.yml
 - name: Hulp bij verificatie in twee stappen
   items:
@@ -50,6 +50,8 @@
       href: auth-app-android-china.md
     - name: Een back-up maken van uw accounts en deze herstellen
       href: user-help-auth-app-backup-recovery.md
+    - name: Wacht woorden importeren in verificator-app
+      href: user-help-authenticator-app-import-passwords.md
     - name: Veelgestelde vragen
       href: user-help-auth-app-faq.md
 - name: Help voor portal Mijn account

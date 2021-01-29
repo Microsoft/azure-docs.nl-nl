@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 65d6151536eb92e2ab9b740a99984fb0b5977cab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3dfeca64804ceb522046e5c0dc10702575f60aad
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91256871"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054582"
 ---
 # <a name="get-appsource-certified-for-azure-active-directory"></a>AppSource-gecertificeerd voor Azure Active Directory ophalen
 
@@ -104,9 +104,9 @@ Zie [deze video](https://aka.ms/trialexperienceforwebapps)voor meer informatie o
 
 ## <a name="get-support"></a>Ondersteuning krijgen
 
-Voor Azure AD-integratie gebruiken we [stack overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource) met de community om ondersteuning te bieden.
+Voor Azure AD-integratie gebruiken we [micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html) met de community om ondersteuning te bieden.
 
-Wij raden u ten zeerste aan om uw vragen over Stack Overflow eerst te stellen en door bestaande problemen te bladeren om te zien of iemand uw vraag eerder heeft gesteld. Zorg ervoor dat uw vragen of opmerkingen zijn gelabeld met [ `[azure-active-directory]` en `[appsource]` ](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource).
+Wij raden u ten zeerste aan om uw vragen te stellen op micro soft Q&A als eerste en door te bladeren naar bestaande problemen om te zien of iemand uw vraag eerder heeft gesteld. Zorg ervoor dat uw vragen of opmerkingen zijn gelabeld met [`[azure-active-directory]`](https://docs.microsoft.com/answers/topics/azure-active-directory.html) .
 
 Gebruik de volgende opmerkingen sectie om feedback te geven en ons te helpen onze inhoud te verfijnen en te vormen.
 

@@ -3,12 +3,12 @@ title: Privé-eindpunten
 description: Meer informatie over het proces van het maken van privé-eind punten voor Azure Backup en de scenario's waarbij persoonlijke eind punten worden gebruikt om de beveiliging van uw resources te hand haven.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: b1412a79fa6137ce1f8c73d5875e52b6382048fa
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 0d9d77c139896f9067f73943dbb213fc655f00f6
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986968"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054869"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Privé-eind punten voor Azure Backup
 
@@ -32,7 +32,7 @@ In dit artikel vindt u informatie over het proces van het maken van privé-eind 
 
 Hoewel persoonlijke eind punten zijn ingeschakeld voor de kluis, worden ze gebruikt voor het maken van back-ups en het herstellen van SQL-en SAP HANA-workloads in een Azure-VM en alleen back-ups van de MARS-agent. U kunt ook de kluis gebruiken voor het maken van back-ups van andere werk belastingen (er zijn echter geen persoonlijke eind punten nodig). Naast het maken van een back-up van SQL-en SAP HANA-workloads en-back-ups met behulp van de MARS-agent worden persoonlijke eind punten ook gebruikt voor het herstellen van bestanden voor Azure VM-back-ups. Zie de volgende tabel voor meer informatie:
 
-| Back-ups van werk belastingen in azure VM (SQL, SAP HANA), back-up maken met MARS agent | Het gebruik van privé-eind punten wordt aanbevolen om back-ups te maken en te herstellen zonder dat u alle IP-adressen/FQDN-namen voor Azure Backup of Azure Storage van uw virtuele netwerken hoeft te vermelden. |
+| Back-ups van werk belastingen in azure VM (SQL, SAP HANA), back-up maken met MARS agent | Het gebruik van privé-eind punten wordt aanbevolen voor het toestaan van back-ups en herstel, zonder dat er Ip's/FQDN-namen voor Azure Backup of Azure Storage van uw virtuele netwerken hoeven te worden allowlist. Zorg er in dat scenario voor dat Vm's die SQL-data bases hosten, Azure AD Ip's of FQDN-adressen kunnen bereiken. |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Back-up van Azure VM**                                         | Voor VM-back-ups is geen toegang tot Ip's of FQDN-adressen toegestaan. Daarom zijn geen persoonlijke eind punten vereist voor het maken van back-ups en het herstellen van schijven.  <br><br>   Bestands herstel vanuit een kluis met persoonlijke eind punten zou echter worden beperkt tot virtuele netwerken die een persoonlijk eind punt voor de kluis bevatten. <br><br>    Wanneer u ACL'ed unmanaged disks gebruikt, moet u ervoor zorgen dat het opslag account met de schijven toegang krijgt tot **vertrouwde micro soft-Services** als het ACL'ed is. |
 | **Azure Files back-up**                                      | Azure Files back-ups worden opgeslagen in het lokale opslag account. Daarom zijn geen persoonlijke eind punten vereist voor back-up en herstel. |
@@ -386,7 +386,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
 #### <a name="create-dns-zones-for-custom-dns-servers"></a>DNS-zones maken voor aangepaste DNS-servers
 
-U moet drie particuliere DNS-zones maken en deze koppelen aan uw virtuele netwerk.
+U moet drie particuliere DNS-zones maken en deze koppelen aan uw virtuele netwerk. Als de open bare Url's van de back-upservice, in tegens telling tot Blob en Queue, worden niet geregistreerd in open bare Azure DNS voor de omleiding naar de DNS-zones van de persoonlijke koppeling. 
 
 | **Zone**                                                     | **Service** |
 | ------------------------------------------------------------ | ----------- |

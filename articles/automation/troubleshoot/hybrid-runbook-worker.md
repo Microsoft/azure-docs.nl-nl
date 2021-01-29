@@ -5,12 +5,12 @@ services: automation
 ms.subservice: ''
 ms.date: 11/25/2019
 ms.topic: troubleshooting
-ms.openlocfilehash: 214501c447632232dc00b61643ea21083bd0e4ac
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 7f034f5043c3cb88ec705b42b06887c5ba56bd6d
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896491"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055328"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Problemen met Hybrid Runbook Worker oplossen
 
@@ -106,7 +106,7 @@ At line:3 char:1
 ```
 #### <a name="cause"></a>Oorzaak
 
-Deze fout treedt op wanneer u een [uitvoeren als-account](../manage-runas-account.md) probeert te gebruiken in een runbook dat wordt uitgevoerd op een Hybrid Runbook worker waarbij het certificaat van het uitvoeren als-account niet aanwezig is. Hybrid Runbook Workers hebben standaard het certificaat Asset niet lokaal. Voor het uitvoeren als-account moet deze asset goed functioneren.
+Deze fout treedt op wanneer u een [uitvoeren als-account](../automation-security-overview.md#run-as-accounts) probeert te gebruiken in een runbook dat wordt uitgevoerd op een Hybrid Runbook worker waarbij het certificaat van het uitvoeren als-account niet aanwezig is. Hybrid Runbook Workers hebben standaard het certificaat Asset niet lokaal. Voor het uitvoeren als-account moet deze asset goed functioneren.
 
 #### <a name="resolution"></a>Oplossing
 

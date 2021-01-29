@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 11/13/2020
 tags: connectors
-ms.openlocfilehash: 9caf69a7f78c7872f0a5f8a2ed07bdc749a29023
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 790879894c3b268fcd55aafc96507319b29fe1e5
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682992"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055073"
 ---
 # <a name="manage-email-contacts-and-calendars-in-office-365-outlook-by-using-azure-logic-apps"></a>E-mail, contactpersonen en agenda's beheren in Office 365 Outlook met behulp van Azure Logic Apps
 
@@ -92,17 +92,19 @@ Een [actie](../logic-apps/logic-apps-overview.md#logic-app-concepts) is een bewe
 
 ## <a name="connect-using-other-accounts"></a>Verbinding maken met andere accounts
 
-Als u verbinding met Outlook probeert te maken met behulp van een ander account dan dat momenteel is aangemeld bij Azure, kunt u [eenmalige aanmelding (SSO)-](../active-directory/manage-apps/what-is-single-sign-on.md) fouten krijgen. Dit probleem treedt op wanneer u zich met één account aanmeldt bij de Azure Portal, maar u kunt een ander account gebruiken om de verbinding te maken. De ontwerp functie voor logische apps verwacht het account dat is aangemeld bij Azure te gebruiken. U kunt dit probleem oplossen met de volgende opties:
+Als u verbinding met Outlook probeert te maken met behulp van een ander account dan dat momenteel is aangemeld bij Azure, kunt u [eenmalige aanmelding (SSO)-](../active-directory/manage-apps/what-is-single-sign-on.md) fouten krijgen. Dit probleem treedt op wanneer u zich met één account aanmeldt bij de Azure Portal, maar u kunt een ander account gebruiken om de verbinding te maken. De ontwerper verwacht dat u het account gebruikt dat is aangemeld bij de Azure Portal. U kunt dit probleem oplossen met de volgende opties:
 
-* Stel het andere account in als een **bijdrager** aan de resource groep van uw logische app.
+* Stel het andere account in met de rol **Inzender** in de resource groep van de logische app.
 
-  1. Selecteer **toegangs beheer (IAM)** in het menu van de resource groep van uw logische app. Stel het andere account in met de rol **Inzender** . Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../role-based-access-control/role-assignments-portal.md) voor meer informatie.
+  1. Selecteer **toegangs beheer (IAM)** in het menu van de resource groep van uw logische app. Stel het andere account in met de rol **Inzender** . 
+  
+     Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](../role-based-access-control/role-assignments-portal.md) voor meer informatie.
 
-  1. Als u bent aangemeld bij de Azure Portal met uw werk-of school account, meldt u zich af en meldt u zich weer aan met uw andere account. U kunt nu een verbinding met Outlook maken met behulp van het andere account.
+  1. Nadat u deze rol hebt ingesteld, meldt u zich aan bij de Azure Portal met het account dat nu Inzender machtigingen heeft. U kunt dit account nu gebruiken om de verbinding met Outlook te maken.
 
 * Stel het andere account zo in dat uw werk-of school account machtigingen voor verzenden als heeft.
 
-   Als u beheerders machtigingen hebt, stelt u in het postvak van het service account uw werk-of school account in met behulp van **verzenden als** of **Verzenden namens** een machtiging. Zie voor meer informatie [postvak machtigingen toewijzen aan een andere gebruiker-beheerder Help](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user). U kunt vervolgens de verbinding maken met behulp van uw werk-of school account. Nu kunt u in triggers of acties waar u de afzender kunt opgeven, het e-mail adres van het service account gebruiken.
+   Als u beheerders machtigingen hebt, stelt u in het postvak van het service account uw werk-of school account in met **verzenden als** of **Verzenden namens** de machtigingen. Zie voor meer informatie [postvak machtigingen toewijzen aan een andere gebruiker-beheerder Help](/microsoft-365/admin/add-users/give-mailbox-permissions-to-another-user). U kunt vervolgens de verbinding maken met behulp van uw werk-of school account. Nu kunt u in triggers of acties waar u de afzender kunt opgeven, het e-mail adres van het service account gebruiken.
 
    De actie **een e-mail bericht verzenden** heeft bijvoorbeeld een optionele para meter, **van (verzenden als)**, die u aan de actie kunt toevoegen en het e-mail adres van uw service account gebruiken als afzender. Voer de volgende stappen uit om deze para meter toe te voegen:
 

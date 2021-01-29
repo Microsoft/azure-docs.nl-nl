@@ -2,15 +2,16 @@
 title: Azure Automation Updatebeheer inschakelen vanuit het Automation-account
 description: In dit artikel leest u hoe u Updatebeheer kunt inschakelen vanuit een Automation-account.
 services: automation
+ms.subservice: update-management
 ms.date: 11/09/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: b97e1e61401697204f79004e4678e6f2286f4a98
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 06a29cd07a870e7553d599b5f719943acb259c2a
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380535"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054920"
 ---
 # <a name="enable-update-management-from-an-automation-account"></a>Updatebeheer inschakelen vanaf een Automation-account
 
@@ -22,7 +23,7 @@ In dit artikel wordt beschreven hoe u uw Automation-account kunt gebruiken om de
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement. Als u nog geen abonnement hebt, kunt u [uw voordelen als MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Automation-account](../index.yml) voor het beheren van computers.
+* [Automation-account](../automation-security-overview.md) voor het beheren van computers.
 * Een [virtuele machine van Azure](../../virtual-machines/windows/quick-create-portal.md)of een VM of server die is geregistreerd bij servers waarop Arc is ingeschakeld. Voor niet-Azure-Vm's of-servers moet de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md) voor Windows of Linux geïnstalleerd zijn en worden gerapporteerd aan de werk ruimte die is gekoppeld aan het Automation-account updatebeheer is ingeschakeld in. Het is raadzaam om de Log Analytics-agent voor Windows of Linux te installeren door eerst uw computer te verbinden met [servers met Azure-Arc](../../azure-arc/servers/overview.md)en vervolgens Azure Policy te gebruiken om de implementatie van [log Analytics agent toe te wijzen aan het ingebouwde beleid voor *Linux* of *Windows* Azure Arc-machines](../../governance/policy/samples/built-in-policies.md#monitoring) . Als u van plan bent om de machines met Azure Monitor voor VM's te bewaken, moet u in plaats daarvan het Azure Monitor voor VM's-initiatief [inschakelen](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure

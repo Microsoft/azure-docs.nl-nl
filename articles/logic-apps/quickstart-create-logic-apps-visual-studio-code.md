@@ -7,12 +7,12 @@ ms.reviewer: jonfan, deli, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/28/2020
-ms.openlocfilehash: 170a919ca184c959800e62cb0d8ede8659c96df4
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
-ms.translationtype: HT
+ms.openlocfilehash: f46c093bffcc26b5f7975d25ccaca648bdc527da
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97708988"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054683"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Quickstart: Werkstroomdefinities voor logische apps maken en beheren met Visual Studio Code
 
@@ -23,6 +23,8 @@ Hoewel u dezelfde taken in [Azure Portal](https://portal.azure.com) en in Visual
 Voor dit artikel kunt u dezelfde logische app maken vanuit deze [quickstart](../logic-apps/quickstart-create-first-logic-app-workflow.md), waarin meer aandacht is voor basisconcepten. U kunt ook [leren hoe u de voorbeeld-app maakt in Visual Studio](quickstart-create-logic-apps-with-visual-studio.md), en [leren hoe u apps maakt en beheert via Azure CLI (opdrachtregelinterface)](quickstart-logic-apps-azure-cli.md). In Visual Studio Code ziet de logische app er als volgt uit:
 
 ![Voorbeeld van de werkstroomdefinitie voor logische apps](./media/quickstart-create-logic-apps-visual-studio-code/visual-studio-code-overview.png)
+
+## <a name="prerequisites"></a>Vereisten
 
 Zorg ervoor dat u deze items hebt voordat u begint:
 
@@ -49,6 +51,8 @@ Zorg ervoor dat u deze items hebt voordat u begint:
     ![Bevestigen dat de extensie juist is geïnstalleerd](./media/quickstart-create-logic-apps-visual-studio-code/confirm-installed-visual-studio-code-extension.png)
 
     Zie [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) voor meer informatie. Ga naar [Azure Logic Apps-extensie voor Visual Studio Code in GitHub](https://github.com/Microsoft/vscode-azurelogicapps) als u een bijdrage wilt leveren aan de opensource-versie van deze extensie.
+
+* Als uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor *zowel* de [inkomende](logic-apps-limits-and-config.md#inbound) als [uitgaande](logic-apps-limits-and-config.md#outbound) IP-adressen die worden gebruikt door de Logic apps service of runtime in de Azure-regio waar uw logische app bestaat. Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](logic-apps-limits-and-config.md#outbound) in de Azure-regio van de logische app.
 
 <a name="access-azure"></a>
 

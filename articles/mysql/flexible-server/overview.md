@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: f6ec6bced9c84e4e5b0f04cc32eebb438052bd6c
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
-ms.translationtype: HT
+ms.openlocfilehash: cdf029e0dd9ae126310842b8919c818f4721218e
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348284"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054734"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Azure Database for MySQL Flexible Server (preview-versie)
 
@@ -132,20 +132,22 @@ De service voert de communityversie van MySQL uit. Dit biedt volledige toepassin
 
 Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het wereldwijde bereik. De flexibele server voor Azure Database for MySQL is nu beschikbaar in de volgende Azure-regio's:
 
-- Europa -west
-- Europa - noord
-- Verenigd Koninkrijk Zuid
-- US - oost 2
-- US - west 2
-- VS - centraal
-- VS - oost
-- Canada - midden
-- Azië - zuidoost
-- Korea - centraal
-- Japan - oost
-- Australië - oost
+| Regio | Hoge beschikbaarheid | 
+| --- | --- |
+| Europa -west | :heavy_check_mark: | 
+| Europa - noord | :heavy_check_mark: | 
+| Verenigd Koninkrijk Zuid | BxDxH | 
+| VS - oost 2 | :heavy_check_mark: | 
+| VS - west 2 | :heavy_check_mark: | 
+| VS - centraal | BxDxH | 
+| VS - oost | :heavy_check_mark: | 
+| Canada - midden | BxDxH | 
+| Azië - zuidoost | :heavy_check_mark: | 
+| Korea - centraal | BxDxH | 
+| Japan - oost | BxDxH | 
+| Australië - oost | :heavy_check_mark: |
 
-Er wordt aan gewerkt om binnenkort meer servers toe te voegen.
+We werken binnenkort met het toevoegen van nieuwe regio's.
 
 ## <a name="contacts"></a>Contactpersonen
 Voor eventuele vragen of suggesties over de flexibele server voor Azure Database for MySQL stuurt u een e-mailbericht naar het Azure Database for MySQL-team ([@AskAzure DB for MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Dit e-mailadres is geen alias voor technische ondersteuning.

@@ -384,15 +384,15 @@
       href: /rest/api/cost-management
     - name: Azure Consumption REST API
       href: /rest/api/consumption
-    - name: Resource Manager-sjabloon
+    - name: Sjabloon verbruik REST API ARM-budget
       href: /azure/templates/microsoft.consumption/budgets
     - name: Voorbeelden van Azure Cost Management REST API
       href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
-    - name: Cost Management - Azure PowerShell
+    - name: Azure PowerShell-cmdlets voor Cost Management
       href: /powershell/module/Az.CostManagement
     - name: Automatiseringsscenario's voor facturering
       href: manage/cost-management-automation-scenarios.md
-    - name: Overzicht van Azure Billing-API
+    - name: Azure retail-prijzen REST API
       href: /rest/api/cost-management/retail-prices/azure-retail-prices
     - name: Azure Billing REST API
       href: /rest/api/billing
@@ -400,25 +400,21 @@
       href: manage/consumption-api-overview.md
     - name: Azure Consumption REST API
       href: /rest/api/consumption
-    - name: RateCard REST API
-      href: /previous-versions/azure/reference/mt219005(v=azure.100)
-    - name: Usage REST API
-      href: /previous-versions/azure/reference/mt219003(v=azure.100)
-    - name: Overzicht van Enterprise Reporting
+    - name: Overzicht van ENTER prise Reporting REST API
       href: manage/enterprise-api.md
-    - name: REST-API van Enterprise Reporting
+    - name: REST-Api's voor Enter prise Reporting
       href: /rest/api/billing/enterprise/billing-enterprise-api-balance-summary
     - name: Reservations
       items:
         - name: Reserveringen REST API
           href: reservations/reservation-apis.md?toc=/azure/cost-management-billing/toc.json
-        - name: Reserveringen - Azure PowerShell
+        - name: Azure PowerShell-cmdlets voor reserve ringen
           href: /powershell/module/azurerm.reservations
-        - name: Reserveringen - CLI
+        - name: Azure CLI voor reserve ringen
           href: /cli/azure/reservations/reservation
-        - name: Cost Management - REST API voor gebruiksdetails van verbruik
+        - name: Details van gebruik REST API
           href: /rest/api/consumption/usagedetails
-        - name: Cost Management - REST API voor reserveringsdetails van verbruik
+        - name: Details van reserve ringen REST API
           href: /rest/api/consumption/reservationsdetails
 - name: Resources
   items:

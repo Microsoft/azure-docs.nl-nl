@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: genli
-ms.openlocfilehash: e1e7e78cab1f3a240737b5e25e0dff28c420add8
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 518b8e33ac9adfdd1aa121e0cb8d1558545980e7
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883109"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054851"
 ---
 # <a name="troubleshoot-outbound-smtp-connectivity-problems-in-azure"></a>Problemen met uitgaande SMTP-connectiviteit in azure oplossen
 
@@ -27,13 +27,13 @@ Deze wijziging in gedrag geldt alleen voor abonnementen en implementaties die zi
 
 ## <a name="recommended-method-of-sending-email"></a>Aanbevolen methode voor het verzenden van e-mail
 
-U wordt aangeraden geverifieerde SMTP-relay-services te gebruiken voor het verzenden van e-mail van virtuele Azure-machines of van Azure App Service. (Deze relay-Services maken meestal verbinding via TCP-poort 587 of 443, maar ondersteunen andere poorten.) Deze services worden gebruikt om de IP-of domein reputatie bij te houden om de kans te verkleinen dat e-mail providers van derden berichten kunnen afwijzen. [SendGrid](https://sendgrid.com/partners/azure/) is een dergelijke SMTP-relay-service, maar er zijn er andere. Mogelijk hebt u ook een beveiligde SMTP-relay-service die on-premises wordt uitgevoerd en die u kunt gebruiken.
+U wordt aangeraden geverifieerde SMTP-relay-services te gebruiken voor het verzenden van e-mail van virtuele Azure-machines of van Azure App Service. (Deze relay-Services maken meestal verbinding via TCP-poort 587, maar ondersteunen andere poorten.) Deze services worden gebruikt om de IP-of domein reputatie bij te houden om de kans te verkleinen dat e-mail providers van derden berichten kunnen afwijzen. [SendGrid](https://sendgrid.com/partners/azure/) is een dergelijke SMTP-relay-service, maar er zijn er andere. Mogelijk hebt u ook een beveiligde SMTP-relay-service die on-premises wordt uitgevoerd en die u kunt gebruiken.
 
 Het gebruik van deze services voor het leveren van e-mail is niet beperkt in azure, ongeacht het type abonnement.
 
 ## <a name="enterprise-agreement"></a>Enterprise Agreement
 
-Voor Enterprise Agreement Azure-gebruikers is er geen wijziging in de technische mogelijkheid om e-mail te verzenden zonder gebruik te maken van een geverifieerde relay. Zowel nieuwe als bestaande Enterprise Agreement gebruikers kunnen uitgaande e-mail van Azure-Vm's rechtstreeks naar externe e-mail providers verzenden zonder enige beperkingen van het Azure-platform. Er is geen garantie dat e-mail providers inkomende e-mail ontvangen van een bepaalde gebruiker. Het Azure-platform blokkeert echter geen bezorgings pogingen voor Vm's binnen Enterprise Agreement-abonnementen. U moet rechtstreeks met e-mail providers werken om berichten over het afleveren of oplossen van problemen met specifieke providers te verhelpen.
+Voor Enterprise Overeenkomst Azure-gebruikers is er geen wijziging in de technische mogelijkheid om e-mail te verzenden zonder gebruik te maken van een geverifieerde relay. Zowel nieuwe als bestaande Enterprise Overeenkomst gebruikers kunnen uitgaande e-mail van Azure-Vm's rechtstreeks naar externe e-mail providers verzenden zonder enige beperkingen van het Azure-platform. Er is geen garantie dat e-mail providers inkomende e-mail ontvangen van een bepaalde gebruiker. Het Azure-platform blokkeert echter geen bezorgings pogingen voor Vm's binnen Enterprise Overeenkomst-abonnementen. U moet rechtstreeks met e-mail providers werken om berichten over het afleveren of oplossen van problemen met specifieke providers te verhelpen.
 
 ## <a name="pay-as-you-go"></a>Betalen naar gebruik
 
@@ -77,6 +77,6 @@ Als u rechtstreeks e-mail berichten van Azure-vm's naar externe e-mail providers
 
 Nadat een abonnement is uitgesloten en de Vm's zijn gestopt en opnieuw zijn opgestart in de Azure Portal, worden alle Vm's in dat abonnement doorgestuurd. De uitzonde ring geldt alleen voor het aangevraagde abonnement en alleen voor VM-verkeer dat rechtstreeks naar het Internet wordt gerouteerd.
 
-## <a name="need-help-contact-support"></a>Hebt u hulp nodig? Contact opnemen met ondersteuning
+## <a name="need-help-contact-support"></a>Hulp nodig? Contact opnemen met ondersteuning
 
 Als u nog steeds hulp nodig hebt, [neemt u contact op met de ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) om uw probleem snel op te lossen. Gebruik dit probleem type: met **technische**  >  **Virtual Network**  >  **connectiviteit**  >  **kan geen e-mail worden verzonden (SMTP/poort 25)**.

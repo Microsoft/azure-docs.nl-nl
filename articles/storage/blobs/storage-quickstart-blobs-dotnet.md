@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Azure Blob-opslagbibliotheek v12 - .NET'
-description: In deze quickstart leert u hoe u de Azure Blob Storage-clientbibliotheek versie 12 voor .NET kunt gebruiken om een container en een blob-in-blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
+title: 'Snelstartgids: Azure Blob Storage bibliotheek V12-.NET'
+description: In deze Quick Start leert u hoe u de Azure Blob Storage-client bibliotheek versie 12 voor .NET kunt gebruiken om een container en een BLOB in Blob-opslag (object) te maken. Hierna leert u hoe u de blob naar uw lokale computer downloadt en hoe u alle blobs in een container kunt weergeven.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 07/24/2020
@@ -8,18 +8,18 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8cb8c193e09e841a8401cbb0a6ac78ce87afa01c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: f8f27743d8680f5e73e1f7bb7a3f7bd6ff2e0464
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021704"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054717"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Quickstart: Azure Blob Storage-clientbibliotheek v12 voor .NET
+# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Snelstartgids: Azure Blob Storage-client bibliotheek V12 voor .NET
 
-Aan de slag met de Azure Blob Storage-clientbibliotheek v12 voor .NET. Azure Blob Storage is Microsoft's oplossing voor opslag van objecten in de cloud. Volg de stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
+Ga aan de slag met de Azure Blob Storage-client bibliotheek V12 voor .NET. Azure Blob Storage is de oplossing voor opslag van objecten in de cloud van Microsoft. Volg de stappen om het pakket te installeren en voorbeeldcode voor basistaken uit te proberen. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
 
-Gebruik de Azure Blob Storage-clientbibliotheek v12 voor .NET voor het volgende:
+Gebruik de Azure Blob Storage-client bibliotheek V12 voor .NET voor het volgende:
 
 * Een container maken
 * Een blob uploaden naar Azure Storage
@@ -44,7 +44,7 @@ Aanvullende bronnen:
 
 ## <a name="setting-up"></a>Instellen
 
-In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-clientbibliotheek v12 voor .NET.
+In deze sectie wordt uitgelegd hoe u een project voorbereidt voor gebruik met de Azure Blob Storage-client bibliotheek V12 voor .NET.
 
 ### <a name="create-the-project"></a>Het project maken
 
@@ -70,7 +70,7 @@ Maak een .NET Core-toepassing met de naam *BlobQuickstartV12*.
 
 ### <a name="install-the-package"></a>Het pakket installeren
 
-Blijf in de toepassingsmap en installeer met de opdracht `dotnet add package` de Azure Blob Storage-clientbibliotheek voor het .NET-pakket.
+Blijf in de toepassingsmap en installeer de Azure Blob Storage-clientbibliotheek voor het .NET-pakket met behulp van de opdracht `dotnet add package`.
 
 ```console
 dotnet add package Azure.Storage.Blobs
@@ -128,7 +128,7 @@ Gebruik de volgende .NET-klassen om te communiceren met deze resources:
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
-Deze voorbeeldcodefragmenten laten zien hoe u de volgende acties kunt uitvoeren met de Azure Blob Storage-clientbibliotheek voor .NET:
+In deze voorbeeld code fragmenten ziet u hoe u het volgende kunt uitvoeren met de Azure Blob Storage-client bibliotheek voor .NET:
 
 * [De verbindingsreeks ophalen](#get-the-connection-string)
 * [Een container maken](#create-a-container)
@@ -144,7 +144,7 @@ De onderstaande code haalt de verbindingstekenreeks voor het opslagaccount op va
 Voeg deze code toe in de methode `Main`:
 
 ```csharp
-Console.WriteLine("Azure Blob storage v12 - .NET quickstart sample\n");
+Console.WriteLine("Azure Blob Storage v12 - .NET quickstart sample\n");
 
 // Retrieve the connection string for use with the application. The storage
 // connection string is stored in an environment variable on the machine
@@ -287,7 +287,7 @@ dotnet run
 De uitvoer van de app lijkt op die in het volgende voorbeeld:
 
 ```output
-Azure Blob storage v12 - .NET quickstart sample
+Azure Blob Storage v12 - .NET quickstart sample
 
 Uploading to Blob storage as blob:
          https://mystorageacct.blob.core.windows.net/quickstartblobs60c70d78-8d93-43ae-954d-8322058cfd64/quickstart2fe6c5b4-7918-46cb-96f4-8c4c5cb2fd31.txt
@@ -315,7 +315,7 @@ In deze snelstart hebt u geleerd hoe u blobs kunt uploaden, downloaden en er een
 Als u voorbeeld-apps voor Blob-opslag wilt zien, ga dan naar:
 
 > [!div class="nextstepaction"]
-> [Azure Blob-opslag-SDK v12 .NET-voorbeelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
+> [Azure Blob Storage SDK V12 .NET-voor beelden](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
 
 * Ga naar [Azure voor .NET- en .NET Core-ontwikkelaars](/dotnet/azure/) voor zelfstudies, voorbeelden, quickstarts en andere documentatie.
 * Zie voor meer informatie over .NET Core [Aan de slag met .NET in 10 minuten](https://www.microsoft.com/net/learn/get-started/).

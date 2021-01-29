@@ -3,21 +3,26 @@ title: Een pool maken met schijfversleuteling ingeschakeld
 description: Meer informatie over het gebruik van schijf versleutelings configuratie voor het versleutelen van knoop punten met een door een platform beheerde sleutel.
 author: pkshultz
 ms.topic: how-to
-ms.date: 10/08/2020
+ms.date: 01/27/2021
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: a61e87c660bf2d2f0f4c8d02bd1699c58f8da667
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 41fc827459b454e2bcb120a925cdab8fcd46e310
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350667"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055311"
 ---
 # <a name="create-a-pool-with-disk-encryption-enabled"></a>Een pool maken met schijfversleuteling ingeschakeld
 
-Wanneer u een Azure Batch groep maakt met behulp van de configuratie van de virtuele machine, kunt u reken knooppunten in de groep versleutelen met een door het platform beheerde sleutel door de configuratie van de schijf versleuteling op te geven.
+Wanneer u een Azure Batch groep maakt met behulp van de configuratie van de [virtuele machine](nodes-and-pools.md#virtual-machine-configuration), kunt u reken knooppunten in de groep versleutelen met een door het platform beheerde sleutel door de configuratie van de schijf versleuteling op te geven.
 
 In dit artikel wordt uitgelegd hoe u een batch-pool maakt waarvoor schijf versleuteling is ingeschakeld.
+
+> [!IMPORTANT]
+> Ondersteuning voor versleuteling op de host met behulp van een door een platform beheerde sleutel in Azure Batch is momenteel beschikbaar als open bare Preview voor de VS-Oost, VS-West 2, Zuid-Centraal VS, US Gov-Virginia en US Gov-Arizona regio's.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="why-use-a-pool-with-disk-encryption-configuration"></a>Waarom een pool met schijf versleutelings configuratie gebruiken?
 
@@ -29,12 +34,10 @@ Met batch wordt een van deze schijf versleutelings technologieën toegepast op r
 - [Versleuteling op de host met een door een platform beheerde sleutel](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 - [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md)
 
-> [!IMPORTANT]
-> Ondersteuning voor versleuteling op de host met behulp van een door een platform beheerde sleutel in Azure Batch is momenteel beschikbaar als open bare Preview voor de VS-Oost, VS-West 2, Zuid-Centraal VS, US Gov-Virginia en US Gov-Arizona regio's.
-> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
 U kunt niet opgeven welke versleutelings methode wordt toegepast op de knoop punten in uw pool. In plaats daarvan geeft u de doel schijven op die u wilt versleutelen op hun knoop punten en kan batch de juiste versleutelings methode kiezen, zodat de opgegeven schijven worden versleuteld op het reken knooppunt.
+
+> [!IMPORTANT]
+> Als u een groep maakt met een [aangepaste installatie kopie](batch-sig-images.md), kunt u schijf versleuteling alleen inschakelen als u Windows-vm's gebruikt.
 
 ## <a name="azure-portal"></a>Azure Portal
 
@@ -61,11 +64,14 @@ pool.VirtualMachineConfiguration.DiskEncryptionConfiguration = new DiskEncryptio
 ### <a name="batch-rest-api"></a>Batch-REST API
 
 REST API URL:
+
 ```
 POST {batchURL}/pools?api-version=2020-03-01.11.0
 client-request-id: 00000000-0000-0000-0000-000000000000
 ```
+
 Aanvraagtekst:
+
 ```
 "pool": {
     "id": "pool2",

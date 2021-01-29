@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 01/22/2021
-ms.openlocfilehash: b16e95c231096b7b37175cda5233019696fba19c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 01/25/2021
+ms.openlocfilehash: 8e5b43383e0b49c0fe6fffdd9ffee6667fb540f8
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98726512"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054751"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -380,27 +380,42 @@ Wanneer u een logische app uitschakelt, worden er geen nieuwe uitvoeringen geïn
 Wanneer u een logische app verwijdert, worden geen nieuwe uitvoeringen gemaakt. Alle uitvoeringen die bezig zijn en wachten op uitvoering worden geannuleerd. Als u duizenden uitvoeringen hebt, kan de annulering een aanzienlijke tijd in beslag nemen.
 
 <a name="configuration"></a>
+<a name="firewall-ip-configuration"></a>
 
 ## <a name="firewall-configuration-ip-addresses-and-service-tags"></a>Firewall configuratie: IP-adressen en service Tags
 
-De IP-adressen die Azure Logic Apps gebruikt voor binnenkomende en uitgaande aanroepen, zijn afhankelijk van de regio waar de logische app zich bevindt. *Alle* Logic apps in dezelfde regio gebruiken dezelfde IP-adresbereiken. Sommige [Energiebeheer](/power-automate/getting-started) aanroepen, zoals **http-** en **http + OpenAPI** -aanvragen, gaan rechtstreeks via de Azure Logic apps-service en komen van de IP-adressen die hier worden vermeld. Zie [limieten en configuratie in energie automatisering](/flow/limits-and-config#ip-address-configuration)voor meer informatie over IP-adressen die worden gebruikt door automatische energie automatisering.
+Wanneer uw logische app moet communiceren via een firewall die het verkeer beperkt tot specifieke IP-adressen, moet die firewall toegang toestaan voor de [inkomende](#inbound) en [uitgaande](#outbound) IP-adressen die worden gebruikt *door de Logic apps* service of runtime in de Azure-regio waar uw logische app bestaat. *Alle* Logic apps in dezelfde regio gebruiken dezelfde IP-adresbereiken.
 
-> [!TIP]
-> Om de complexiteit te verminderen bij het maken van beveiligings regels, kunt u optioneel [service Tags](../virtual-network/service-tags-overview.md)gebruiken, in plaats van de Logic apps IP-adressen voor elke regio op te geven, verderop in deze sectie.
-> Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is:
->
-> * **LogicAppsManagement**: vertegenwoordigt de inkomende IP-adres voorvoegsels voor de Logic apps-service.
-> * **LogicApps**: geeft de uitgaande IP-adres voorvoegsels voor de Logic apps-service.
+Ter ondersteuning van bijvoorbeeld het aanroepen van Logic apps in de regio West-Europa via ingebouwde triggers en acties, zoals de [http-trigger of actie](../connectors/connectors-native-http.md), moet uw firewall toegang toestaan voor *alle* inkomende IP-adressen van de Logic apps-service *en* uitgaande IP-adressen die voor komen in de regio vs West.
 
-* Voor [Azure China 21vianet](/azure/china/)zijn vaste of gereserveerde IP-adressen niet beschikbaar voor [aangepaste connectors](../logic-apps/custom-connector-overview.md) en [beheerde connectors](../connectors/apis-list.md#managed-api-connectors), bijvoorbeeld Azure Storage, SQL Server, Office 365 Outlook, enzovoort.
+Als uw logische app ook [beheerde connectors](../connectors/apis-list.md#managed-api-connectors)gebruikt, zoals de Office 365 Outlook-Connector of de SQL-connector, of [aangepaste connectors](/connectors/custom-connectors/)gebruikt, moet de firewall ook toegang toestaan voor *alle* [uitgaande IP-adressen van beheerde connectors](#outbound) in de Azure-regio van de logische app. Bovendien moet u, als u aangepaste connectors gebruikt die toegang hebben tot on-premises resources via de [resource van de on-premises gegevens gateway in azure](logic-apps-gateway-connection.md), de installatie van de gateway instellen om toegang toe te staan voor de bijbehorende *[uitgaande IP-adressen](#outbound)van beheerde connectors*.
 
-* Ter ondersteuning van de aanroepen die uw Logic apps rechtstreeks aanbrengt met [http](../connectors/connectors-native-http.md), [http + Swagger](../connectors/connectors-native-http-swagger.md)en andere HTTP-aanvragen, stelt u uw firewall in met alle [inkomende](#inbound) *en* [uitgaande](#outbound) IP-adressen die worden gebruikt door de Logic apps-service, op basis van de regio's waar uw Logic apps bestaan. Deze adressen worden weer gegeven onder de kopteksten **binnenkomend** en **uitgaand** in deze sectie en worden per regio gesorteerd.
+Zie de volgende onderwerpen voor meer informatie over het instellen van communicatie-instellingen op de gateway:
 
-* Ter ondersteuning van de aanroepen die [beheerde connectors](../connectors/apis-list.md#managed-api-connectors) maken, stelt u uw firewall in met *alle* [uitgaande](#outbound) IP-adressen die door deze connectors worden gebruikt, op basis van de regio's waar uw Logic apps bestaan. Deze adressen worden weer gegeven onder de kop **uitgaand** in deze sectie en worden per regio gesorteerd.
+* [Communicatie-instellingen voor de on-premises gegevensgateway aanpassen](/data-integration/gateway/service-gateway-communication)
+* [Proxyinstellingen configureren voor de on-premises gegevensgateway](/data-integration/gateway/service-gateway-proxy)
 
-* Als u communicatie wilt inschakelen voor logische apps die worden uitgevoerd in een Integration service Environment (ISE), moet u [deze poorten openen](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#network-ports-for-ise).
+<a name="ip-setup-considerations"></a>
 
-* Als uw Logic apps problemen hebben met het openen van Azure-opslag accounts die [firewall-en firewall regels](../storage/common/storage-network-security.md)gebruiken, hebt u [verschillende opties om toegang in te scha kelen](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
+### <a name="firewall-ip-configuration-considerations"></a>Overwegingen voor IP-configuratie van Firewall
+
+Lees de volgende overwegingen voordat u een firewall met IP-adressen instelt:
+
+* Als u [energie automatisering](/power-automate/getting-started)gebruikt, gaan sommige acties, zoals **http** en **http + OpenAPI**, rechtstreeks door naar de Azure Logic apps-service en afkomstig zijn van de IP-adressen die hier worden vermeld. Zie [limieten en configuratie voor automatische energie automatisering](/flow/limits-and-config#ip-address-configuration)voor meer informatie over de IP-adressen die worden gebruikt door automatische energie registratie.
+
+* Voor [Azure China 21vianet](/azure/china/)zijn vaste of gereserveerde IP-adressen niet beschikbaar voor [aangepaste connectors](../logic-apps/custom-connector-overview.md) en voor [beheerde connectors](../connectors/apis-list.md#managed-api-connectors), zoals Azure Storage, SQL Server, Office 365 Outlook, enzovoort.
+
+* Als uw Logic apps worden uitgevoerd in een [Integration service Environment (ISE)](connect-virtual-network-vnet-isolated-environment-overview.md), moet u ervoor zorgen dat u [deze poorten hebt geopend](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#network-ports-for-ise).
+
+* Om u te helpen bij het vereenvoudigen van beveiligings regels die u wilt maken, kunt u eventueel [service Tags](../virtual-network/service-tags-overview.md) gebruiken in plaats van IP-adres voorvoegsels op te geven voor elke regio. Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is:
+
+  * **LogicAppsManagement**: vertegenwoordigt de inkomende IP-adres voorvoegsels voor de Logic apps-service.
+
+  * **LogicApps**: geeft de uitgaande IP-adres voorvoegsels voor de Logic apps-service.
+
+  * **AzureConnectors**: geeft de IP-adres voorvoegsels voor beheerde connectors die inkomende webhook-retour aanroepen naar de Logic apps-service en uitgaande aanroepen naar hun respectieve services, zoals Azure Storage of Azure Event hubs.
+
+* Als uw Logic apps problemen hebben met het openen van Azure-opslag accounts die [firewall-en firewall regels](../storage/common/storage-network-security.md)gebruiken, hebt u [verschillende andere opties om toegang in te scha kelen](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
 
   Logic apps hebben bijvoorbeeld geen directe toegang tot opslag accounts die gebruikmaken van firewall regels en die zich in dezelfde regio bevinden. Als u echter de [uitgaande IP-adressen voor beheerde connectors in uw regio](../logic-apps/logic-apps-limits-and-config.md#outbound)toestaat, hebben uw Logic apps toegang tot opslag accounts die zich in een andere regio bevinden, behalve wanneer u de Azure Table Storage-of Azure Queue Storage-connectors gebruikt. Voor toegang tot uw Table Storage of Queue Storage kunt u in plaats daarvan de HTTP-trigger en acties gebruiken. Zie voor andere opties [toegang tot opslag accounts achter firewalls](../connectors/connectors-create-api-azureblobstorage.md#access-storage-accounts-behind-firewalls).
 
@@ -411,9 +426,7 @@ De IP-adressen die Azure Logic Apps gebruikt voor binnenkomende en uitgaande aan
 In deze sectie worden alleen de inkomende IP-adressen voor de Azure Logic Apps-service weer gegeven. Als u Azure Government hebt, raadpleegt u [Azure Government-inkomend IP-adressen](#azure-government-inbound).
 
 > [!TIP]
-> Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicAppsManagement** gebruiken in plaats van inkomende Logic apps IP-adres voorvoegsels op te geven voor elke regio.
-> Voor beheerde connectors kunt u optioneel het **AzureConnectors** -service label gebruiken, in plaats van inkomende IP-adres voorvoegsels voor beheerde connectors op te geven voor elke regio.
-> Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is.
+> Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicAppsManagement** gebruiken in plaats van inkomende Logic apps IP-adres voorvoegsels op te geven voor elke regio. U kunt eventueel ook de **AzureConnectors** -service code gebruiken voor beheerde connectors die inkomende webhook-retour aanroepen naar de Logic apps-service maken, in plaats van inkomende IP-adres voorvoegsels voor beheerde connectors op te geven voor elke regio. Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is.
 
 <a name="multi-tenant-inbound"></a>
 
@@ -479,8 +492,7 @@ In deze sectie worden alleen de inkomende IP-adressen voor de Azure Logic Apps-s
 In deze sectie vindt u de uitgaande IP-adressen voor de Azure Logic Apps-service en beheerde connectors. Als u Azure Government hebt, raadpleegt u [Azure Government-uitgaande IP-adressen](#azure-government-outbound).
 
 > [!TIP]
-> Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicApps** gebruiken in plaats van uitgaande Logic apps IP-adres voorvoegsels opgeven voor elke regio.
-> Deze tag werkt in de regio's waar de Logic Apps-service beschikbaar is. 
+> Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicApps** gebruiken in plaats van uitgaande Logic apps IP-adres voorvoegsels opgeven voor elke regio. U kunt eventueel ook de **AzureConnectors** -service code gebruiken voor beheerde connectors die uitgaande aanroepen naar hun respectieve services, zoals Azure Storage of Azure Event hubs, in plaats van uitgaande beheerde connector IP-adres voorvoegsels opgeven voor elke regio. Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is.
 
 <a name="multi-tenant-outbound"></a>
 

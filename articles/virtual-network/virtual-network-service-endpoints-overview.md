@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 93feaef01b234eeb7ac363c18d8e9d8f52b009de
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 5e97a35a272684a99e1ca21cbec9c8f3edef253c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216526"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097419"
 ---
 # <a name="virtual-network-service-endpoints"></a>Service-eindpunten voor virtueel netwerk
 
@@ -30,7 +30,7 @@ Deze functie is beschikbaar voor de volgende Azure-Services en-regio's. *Micro s
 
 - **[Azure Storage](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** (*micro soft. Storage*): algemeen beschikbaar in alle Azure-regio's.
 - **[Azure SQL database](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in alle Azure-regio's.
-- **[Azure Synapse Analytics](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in alle Azure-regio's.
+- **[Azure Synapse Analytics](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in alle Azure-regio's voor exclusieve SQL-groepen (voorheen SQL DW).
 - **[Azure database for postgresql server](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.
 - **[Azure database for mysql server](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.
 - **[Azure database for MariaDB](../mariadb/concepts-data-access-security-vnet.md)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.

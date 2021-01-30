@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: 854504347409efb4f0eafff0d776db23ca9fda07
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: 4b2777bfd9905a1caa8b69b78ff892b661e4dc4b
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059837"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097537"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
@@ -24,7 +24,7 @@ Leer hoe u gegevenslabelprojecten maakt en uitvoert om gegevens te taggen in Azu
 ## <a name="data-labeling-capabilities"></a>Mogelijkheden voor het labelen van gegevens
 
 > [!Important]
-> Er worden momenteel alleen labelprojecten voor afbeeldingsclassificatie en objectidentificatie ondersteund. Daarnaast moeten de gegevensafbeeldingen beschikbaar zijn in een Azure Blob-gegevensopslag. (Als u geen bestaande gegevensopslag hebt, kunt u afbeeldingen uploaden tijdens het maken van het project.)
+> Gegevens installatie kopieën moeten beschikbaar zijn in een Azure Blob-gegevens opslag. (Als u geen bestaande gegevensopslag hebt, kunt u afbeeldingen uploaden tijdens het maken van het project.)
 
 Met de functie voor gegevens labelen van Azure Machine Learning kunt u gebruikmaken van een centrale locatie voor het maken, beheren en bewaken van labelprojecten:
  - Coördineer gegevens, labels en teamleden om labeltaken op efficiënte wijze te beheren. 
@@ -53,6 +53,11 @@ Als u een project wilt maken, selecteert u **Project toevoegen**. Geef het proje
 * Kies **Afbeeldingsclassificatie met meerdere klassen** voor projecten wanneer u slechts *één label* uit een set labels wilt toepassen op een afbeelding.
 * Kies **Afbeeldingsclassificatie met meerdere labels** voor projecten wanneer u *een of meer* labels uit een set labels wilt toepassen op een afbeelding. Een foto van een hond kan bijvoorbeeld worden gelabeld met zowel *hond* als *overdag*.
 * Kies **Object-id (begrenzingsvak)** voor projecten wanneer u een label en een begrenzingsvak wilt toewijzen aan elk object in een afbeelding.
+* Kies **exemplaar segmentatie (veelhoek) (preview)** voor projecten wanneer u een label wilt toewijzen en een veelhoek rond elk object binnen een afbeelding wilt tekenen.
+
+> [!IMPORTANT]
+> Exemplaar segmentatie (veelhoek) bevindt zich in de open bare preview.
+> De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Selecteer **Volgende** wanneer u klaar bent om door te gaan.
 
@@ -141,6 +146,7 @@ Voor begrenzingsvakken zijn dit een aantal belangrijke vragen:
 
 Op de pagina **Met ML ondersteund labelen** kunt u automatische machine learning-modellen activeren om de labeltaak te versnellen. Aan het begin van het labelproject worden de afbeeldingen in een willekeurige volgorde gerangschikt om mogelijke vooroordelen te verminderen. Eventuele vooroordelen die al aanwezig zijn in de gegevensset, worden echter wel weerspiegeld in het getrainde model. Als bijvoorbeeld 80% van uw afbeeldingen van één klasse zijn, dan is ongeveer 80% van de gegevens die zijn gebruikt om het model te trainen, ook van deze klasse. Deze training omvat geen actief onderwijs.
 
+
 Selecteer *Met ML ondersteund labelen inschakelen* en geef een GPU op om ondersteund labelen in te schakelen, wat bestaat uit twee fasen:
 * Clustering
 * Prelabelen
@@ -150,7 +156,7 @@ De exacte hoeveelheid gelabelde afbeeldingen die nodig is om ondersteund labelen
 Aangezien de definitieve labels nog steeds afhankelijk zijn van invoer van de labelaar, wordt deze technologie soms *HITL*-labelen (Human-in-the-loop) genoemd.
 
 > [!NOTE]
-> Het labelen van gegevens met behulp van ML biedt geen ondersteuning voor standaardopslagaccounts die zijn beveiligd achter een [virtueel netwerk](how-to-network-security-overview.md). U moet een niet-standaard opslagaccount gebruiken voor het labelen van gegevens met behulp van ML. Het niet-standaard opslagaccount kan worden beveiligd achter het virtuele netwerk. 
+> Het labelen van gegevens met behulp van ML biedt geen ondersteuning voor standaardopslagaccounts die zijn beveiligd achter een [virtueel netwerk](how-to-network-security-overview.md). U moet een niet-standaard opslagaccount gebruiken voor het labelen van gegevens met behulp van ML. Het niet-standaard opslagaccount kan worden beveiligd achter het virtuele netwerk.
 
 ### <a name="clustering"></a>Clustering
 

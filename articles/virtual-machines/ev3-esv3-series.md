@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: daberry
-ms.openlocfilehash: 1a0943c9f87960f9fcec074941b6e8ead81d92af
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 537a301ef2c3ba1bb5ed34d92c8784655c79d97f
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917906"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097469"
 ---
 # <a name="ev3-and-esv3-series"></a>Ev3- en Esv3-serie
 
@@ -33,6 +33,7 @@ Intel® Hyper-Threading-Ev3-serie onderdeel van de VM.
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maximale tijdelijke opslagdoorvoer: IOPS / MBps lezen / MBps schrijven | Max. aantal NIC's/netwerkbandbreedte |
@@ -64,6 +65,7 @@ Intel® Hyper-Threading-Esv3-serie onderdeel van de VM.
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maxi maal cache geheugen en tijdelijke opslag doorvoer: IOPS/MBps (cache grootte in GiB) | Burst cache en tijdelijke opslag doorvoer: IOPS/MBps<sup>3</sup> | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps |  Burst uncacheed Disk doorvoer: IOPS/MBps<sup>3</sup>| Maximum aantal Nic's/verwachte netwerk bandbreedte (Mbps) |

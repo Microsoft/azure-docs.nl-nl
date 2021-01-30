@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 398cbd49f79cbeb5f486e3f8ca33987d5357add6
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 35d985ee31fba52a57614cf62668d5355caf5ffa
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789443"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097620"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Zelf studie: de over taxi's-gegevensset van New York laden
 
@@ -393,7 +393,7 @@ Volg deze stappen om de resources op te schonen zoals gewenst.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u een datawarehouse en een gebruiker voor het laden van gegevens maakt. U hebt de [instructie Simple Copy](/sql/t-sql/statements/copy-into-transact-sql&preserve-view=true?view=azure-sqldw-latest&preserve-view=true#examples) gebruikt voor het laden van gegevens in uw data warehouse.
+In deze zelfstudie hebt u geleerd hoe u een datawarehouse en een gebruiker voor het laden van gegevens maakt. U hebt de [instructie Simple Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#examples) gebruikt voor het laden van gegevens in uw data warehouse.
 
 U hebt het volgende gedaan:
 > [!div class="checklist"]

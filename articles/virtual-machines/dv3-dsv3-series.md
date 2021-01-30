@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: jushiman
-ms.openlocfilehash: d38b395ec4e4a3e9f3550e6a891ad4785dae8597
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 215f907edb01cc35ffa4e9bb683964f8eda11d94
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919745"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089322"
 ---
 # <a name="dv3-and-dsv3-series"></a>Dv3- en DSv3-serie
 
@@ -35,6 +35,7 @@ Virtuele machines uit de Dv3-serie bieden een Intel® Hyper-Threading technologi
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maximale tijdelijke opslag doorvoer: IOPS/MBps lezen/MBps schrijven | Maximum aantal Nic's/netwerk bandbreedte |
@@ -60,6 +61,7 @@ Virtuele machines uit de Dsv3-serie bieden een Intel® Hyper-Threading technolog
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maxi maal cache geheugen en tijdelijke opslag doorvoer: IOPS/MBps (cache grootte in GiB) | Maximale burst-cache en tijdelijke opslag doorvoer: IOPS/MBps<sup>1</sup> | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Maximale burst-schijf doorvoer in cache: IOPS/MBps<sup>1</sup> | Maximum aantal Nic's/verwachte netwerk bandbreedte (Mbps) |

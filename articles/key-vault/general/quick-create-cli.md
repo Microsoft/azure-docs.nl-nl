@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: quickstart
-ms.date: 07/20/2020
+ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: e29a692e3fdad1bea7132b3bed50444c7398ba46
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: f7f6f5d82c5fda7101e80ddcb8b17dc6bdef6532
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936308"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070254"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-cli"></a>Quickstart: een sleutelkluis maken met behulp van de Azure CLI
 
@@ -28,44 +28,15 @@ Azure Key Vault is een cloudservice die een beveiligd archief biedt voor [sleute
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *ContosoResourceGroup* in de locatie *eastus* gemaakt.
-
-```azurecli
-az group create --name "myResourceGroup" -l "EastUS"
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-cli-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Een sleutelkluis maken
 
-Maak een sleutelkluis in de resourcegroep uit de vorige stap. U moet enkele gegevens verstrekken:
-
-- Naam van de sleutelkluis: Een tekenreeks van 3 tot en met 24 tekens, die alleen cijfers (0-9), letters (a-z, A-Z) en afbreekstreepjes (-) mag bevatten.
-
-  > [!Important]
-  > Elke sleutelkluis moet een unieke naam hebben. Vervang <your-unique-keyvault-name> door de naam van uw sleutelkluis in de volgende voorbeelden.
-
-- Naam van resourcegroep: **myResourceGroup**.
-- De locatie: **EastUS**.
-
-```azurecli
-az keyvault create --name "<your-unique-keyvault-name>" --resource-group "myResourceGroup" --location "EastUS"
-```
-
-De uitvoer van deze cmdlet toont eigenschappen van de nieuw gemaakte sleutelkluis. Let op de onderstaande twee eigenschappen:
-
-- **Kluisnaam**: de naam die u hierboven hebt opgegeven voor de parameter --name.
-- **Kluis-URI**: In het voorbeeld is dit https://&lt;unieke-naam-van-uw-sleutelkluis&gt;.vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
-
-Vanaf dit punt is uw Azure-account nu als enige gemachtigd om bewerkingen op deze nieuwe kluis uit te voeren.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-cli-kv-creation.md)]
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Andere snelstartgidsen en zelfstudies in deze verzameling zijn gebaseerd op deze snelstartgids. Als u van plan bent om verder te gaan met volgende snelstarts en zelfstudies, kunt u deze resources intact laten.
-
-U kunt de opdracht [az group delete](/cli/azure/group) van Azure CLI gebruiken om de resourcegroep en alle gerelateerde resources te verwijderen wanneer u deze niet meer nodig hebt.
-
-```azurecli
-az group delete --name myResourceGroup
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-cli-delete-resources.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

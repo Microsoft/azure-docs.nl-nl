@@ -10,12 +10,12 @@ ms.author: vanto
 ms.reviewer: ''
 ms.date: 09/21/2020
 ms.custom: seoapril2019 sqldbrb=1
-ms.openlocfilehash: 77ed71d74e75abfdf7f84aee9b116f1d9d2ccc9d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
-ms.translationtype: HT
+ms.openlocfilehash: f42db48e0fa0e85d919d6894e5476b7ef5380698
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985855"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089289"
 ---
 # <a name="tutorial-secure-a-database-in-azure-sql-database"></a>Zelfstudie: Een database beveiligen in Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -124,7 +124,7 @@ De Azure AD-beheerder instellen:
     ![active directory selecteren](./media/secure-database-tutorial/admin-settings.png)  
 
     > [!IMPORTANT]
-    > U moet een 'Bedrijfsbeheerder' of 'Globale beheerder' zijn om deze taak uit te voeren.
+    > U moet een globale beheerder zijn om deze taak uit te voeren.
 
 1. Zoek en selecteer op de pagina **Beheerder toevoegen** de gewenste AD-gebruiker of groep en kies **Selecteren**. Alle leden en groepen in uw Active Directory worden weergegeven. Namen die grijs worden weergegeven, worden niet ondersteund als beheerders voor Azure AD. Zie [Functies en beperkingen van Azure AD](authentication-aad-overview.md#azure-ad-features-and-limitations).
 

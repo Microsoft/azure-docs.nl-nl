@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 3cc38fad6f26bf6f382b4a275638c450c8333a04
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 221678da819d32539d0078b72a87c61851ed3e8f
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955729"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089255"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>ServiceNow verbinden met IT Service Management-connector
 
@@ -125,7 +125,7 @@ Gebruik de volgende procedure om een ServiceNow-verbinding te maken.
    | **Server-URL**   | Voer de URL in van het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. De URL moet verwijzen naar een ondersteunde SaaS-versie met het achtervoegsel *. servicenow.com* (bijvoorbeeld https://XXXXX.service-now.com/) .|
    | **Gebruikersnaam**   | Voer de gebruikers naam van de integratie in die u hebt gemaakt in de ServiceNow-app om de verbinding met ITSMC te ondersteunen.|
    | **Wachtwoord**   | Voer het wacht woord in dat is gekoppeld aan deze gebruikers naam. **Opmerking**: de gebruikers naam en het wacht woord worden alleen gebruikt voor het genereren van verificatie tokens. Ze worden nergens opgeslagen in de ITSMC-service.  |
-   | **Client-id**   | Voer de client-ID in die u wilt gebruiken voor OAuth2-verificatie, die u eerder hebt gegenereerd. Zie [OAuth instellen](https://wiki.servicenow.com/index.php?title=OAuth_Setup)voor meer informatie over het genereren van een client-id en een geheim. |
+   | **Client-id**   | Voer de client-ID in die u wilt gebruiken voor OAuth2-verificatie, die u eerder hebt gegenereerd. Zie [OAuth instellen](https://old.wiki/index.php/OAuth_Setup)voor meer informatie over het genereren van een client-id en een geheim. |
    | **Clientgeheim**   | Voer het client geheim in dat voor deze ID is gegenereerd.   |
    | **Bereik van gegevens synchronisatie (in dagen)** | Voer het aantal afgelopen dagen in waaruit u de gegevens wilt. De limiet is 120 dagen. |
    | **Te synchroniseren werk items**   | Selecteer de ServiceNow-werk items die u wilt synchroniseren met Azure Log Analytics via ITSMC. De geselecteerde waarden worden in Log Analytics geïmporteerd. Opties zijn incidenten en wijzigings aanvragen.|

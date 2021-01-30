@@ -3,25 +3,25 @@ title: Azure-kosten analyseren met de Power BI-app
 description: In dit artikel wordt uitgelegd hoe de Azure Cost Management Power BI-app wordt geïnstalleerd en gebruikt.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/09/2020
+ms.date: 1/29/2021
 ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: 1c5adf58f670f3cadcedbe710568551004b77b78
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
-ms.translationtype: HT
+ms.openlocfilehash: d3439f5a86c445898d95191a32496b5f0c86be0b
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413238"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070154"
 ---
 # <a name="analyze-cost-with-the-azure-cost-management-power-bi-app-for-enterprise-agreements-ea"></a>Analyseer kosten met de Azure Cost Management Power BI-app voor Enterprise Agreements (EA)
 
 In dit artikel wordt uitgelegd hoe de Azure Cost Management Power BI-app wordt geïnstalleerd en gebruikt. De app helpt u bij het analyseren en beheren van uw Azure-kosten in Power BI. U kunt de app gebruiken voor het bewaken van kosten, het volgen van gebruikstrends en het vaststellen van opties voor kostenoptimalisatie om uw uitgaven te reduceren.
 
-U kunt de app ongewijzigd gebruiken, maar deze ook wijzigen om de standaardfilters, weergaven en visualisaties uit te breiden naar gelang uw behoeften. Vervolgens kunt u met de app extra gegevens toevoegen om aangepaste rapporten te maken voor het genereren van holistische weergaven van uw totale bedrijfskosten.
+De app Azure Cost Management Power BI ondersteunt momenteel alleen klanten met een [Enterprise overeenkomst](https://azure.microsoft.com/pricing/enterprise-agreement/).
 
-De Azure Cost Management Power BI-app ondersteunt momenteel alleen klanten met een [Enterprise Agreement](https://azure.microsoft.com/pricing/enterprise-agreement/).
+De app beperkt aanpassings mogelijkheden. Als u de standaard filters, weer gaven en visualisaties wilt wijzigen en uitbreiden om aan uw behoeften aan te passen, gebruikt u in plaats daarvan [Azure Cost Management-connector in Power bi Desktop](/power-bi/connect-data/desktop-connect-azure-cost-management) . Met de Azure Cost Management-connector kunt u aanvullende gegevens uit andere bronnen samen voegen om aangepaste rapporten te maken voor het verkrijgen van holistische weer gaven van uw totale bedrijfs kosten. De connector biedt ook ondersteuning voor micro soft-klant overeenkomsten.
 
 > [!NOTE]
 > Power BI-sjabloon-apps bieden geen ondersteuning voor het downloaden van het PBIX-bestand.

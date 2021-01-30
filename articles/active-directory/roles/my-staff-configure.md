@@ -13,12 +13,12 @@ ms.date: 05/08/2020
 ms.author: rolyon
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: 304d88dfcf0c72769f27911186df04c66224419e
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 501fe17734be1e73ffc516a7b94300445c331e86
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740139"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090940"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Uw gebruikers beheren met mijn personeel (preview)
 
@@ -89,7 +89,7 @@ De volgende rollen zijn gemachtigd om het wacht woord van een gebruiker opnieuw 
 
 - [Verificatie beheerder](permissions-reference.md#authentication-administrator)
 - [Beheerder voor geprivilegieerde authenticatie](permissions-reference.md#privileged-authentication-administrator)
-- [Globale beheerder](permissions-reference.md#global-administrator--company-administrator)
+- [Globale beheerder](permissions-reference.md#global-administrator)
 - [Helpdesk beheerder](permissions-reference.md#helpdesk-administrator)
 - [Gebruikersbeheerder](permissions-reference.md#user-administrator)
 - [Wachtwoordbeheerder](permissions-reference.md#password-administrator)
@@ -117,7 +117,7 @@ Als u het telefoon nummer van een gebruiker wilt beheren, moet u een van de volg
 
 - [Verificatie beheerder](permissions-reference.md#authentication-administrator)
 - [Beheerder voor geprivilegieerde authenticatie](permissions-reference.md#privileged-authentication-administrator)
-- [Globale beheerder](permissions-reference.md#global-administrator--company-administrator)
+- [Globale beheerder](permissions-reference.md#global-administrator)
 
 ## <a name="search"></a>Zoeken
 

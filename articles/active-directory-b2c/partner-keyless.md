@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 1/17/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 2ab1b5ae87cee6265c965c45b706c7fbf10dfe3f
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: c8a5666d373852da5ff79490f435b2d66d5cc6e0
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702951"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090363"
 ---
 # <a name="tutorial-configure-keyless-with-azure-active-directory-b2c"></a>Zelf studie: met Azure Active Directory B2C configureren
 
@@ -86,7 +86,7 @@ Als u een id-provider wilt configureren, volgt u deze stappen:
    |Eigenschap | Waarde |
    |:-----| :-----------|
    | Naam   | Minder dan |
-   | Metagegevens-URL | Voeg de URI van de gehoste verificatie-app met onderliggend/authenticatie toe, gevolgd door het specifieke pad, zoals https://keyless.auth/.well-known/openid-configuration |
+   | Metagegevens-URL | Voeg de URI van de gehoste verificatie-app met de ondervallende toepassing toe, gevolgd door het specifieke pad, bijvoorbeeld https://keyless.auth/.well-known/openid-configuration |
    | Clientgeheim | Het geheim dat is gekoppeld aan het exemplaar met de strenge verificatie sleutel, niet hetzelfde als het certificaat dat eerder is geconfigureerd. Voeg een complexe teken reeks van uw keuze toe. Dit geheim wordt later gebruikt in de configuratie van de sleutel zonder container.|
    | Client-id | De ID van de client. Deze ID wordt later gebruikt in de configuratie met de sleutel zonder container.|
    | Bereik | OpenID Connect |

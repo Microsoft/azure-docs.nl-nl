@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/13/2021
+ms.date: 01/28/2021
 ms.author: jeedes
-ms.openlocfilehash: e8a392f72af1ae5a3da8d8e3306f05cdec390591
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: c6eac316a8d1849e193add2d74e81f8652c7a676
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735891"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090584"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-navex-one"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met NAVEX One
 
@@ -76,10 +76,32 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<CLIENT_KEY>.navexglobal.com`
+    a. In het tekstvak **Aanmeldings-URL** typt u een URL met een van de volgende notaties:
+
+    | Aanmeldings-URL |
+    |--------------|
+    | `https://<CLIENT_KEY>.navexglobal.com` |
+    | `https://<CLIENT_KEY>.navexglobal.eu` |
+    |
+
+    b. In het tekstvak **Id** typt u een van de volgende URL's:
+
+    | Id |
+    |--------------|
+    | `https://doorman.navexglobal.com/Shibboleth` |
+    | `https://doorman.navexglobal.eu/Shibboleth` |
+    |
+
+    c. In het tekstvak **Antwoord-URL** typt u een van de volgende URL's:
+
+    | Antwoord-URL |
+    |--------------|
+    | `https://doorman.navexglobal.com/Shibboleth.sso/SAML2/POST` |
+    | `https://doorman.navexglobal.eu/Shibboleth.sso/SAML2/POST` |
+    |
 
     > [!NOTE]
-    > De waarde is niet echt. Werk de waarde bij met de werkelijke aanmeldings-URL. Neem contact op met [NAVEX één client ondersteunings team](mailto:ethicspoint@navexglobal.com) om de waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > De waarde voor de aanmeldings-URL is niet echt. Werk de waarde bij met de werkelijke aanmeldings-URL. Neem contact op met [NAVEX één client ondersteunings team](mailto:ethicspoint@navexglobal.com) om de waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u in de sectie **SAML-handtekeningcertificaat** op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
 

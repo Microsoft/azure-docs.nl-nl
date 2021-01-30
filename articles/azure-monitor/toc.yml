@@ -6,7 +6,7 @@
       href: overview.md
     - name: Veelgestelde vragen
       href: faq.md
-    - name: Wat is nieuw?
+    - name: Wat is er nieuw?
       href: whats-new.md
     - name: Migreren van Operations Manager
       href: azure-monitor-operations-manager.md
@@ -586,10 +586,12 @@
                   href: platform/it-service-management-connector-secure-webhook-connections.md
                 - name: Azure-configuratie voor veilige export
                   href: platform/itsm-connector-secure-webhook-connections-azure-configuration.md
-                - name: BMC
-                  href: platform/itsmc-secure-webhook-connections-bmc.md
-                - name: ServiceNow
-                  href: platform/itsmc-secure-webhook-connections-servicenow.md
+                - name: ITSM-connectorpartners instellen
+                  items:
+                    - name: BMC
+                      href: platform/itsmc-secure-webhook-connections-bmc.md
+                    - name: ServiceNow
+                      href: platform/itsmc-secure-webhook-connections-servicenow.md
         - name: Klassieke waarschuwingsregels migreren
           items:
             - name: Over klassieke waarschuwingen

@@ -1,63 +1,62 @@
 ---
-title: Fout onderzoek met dash board
-description: Dit document bevat informatie over fout onderzoek met behulp van het dash board
+title: Fouten onderzoeken met behulp van het dash board
+description: Dit document bevat informatie over fouten op het ITSMC-dash board.
 ms.subservice: alerts
 ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/15/2021
-ms.openlocfilehash: 9a43318ed935dd1e71b6da75c9f078fbebbd29eb
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: ebd59e637e498b8088fe9a302b1bb12efdf2c173
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599025"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089272"
 ---
-# <a name="error-investigation-using-the-dashboard"></a>Fout onderzoek met behulp van het dash board
+# <a name="investigate-errors-by-using-the-itsmc-dashboard"></a>Fouten onderzoeken met behulp van het ITSMC-dash board
 
-Deze pagina bevat informatie over het dash board van de ITSM-connector. Met dit dash board kunt u de status van uw ITSM-connector onderzoeken.
+Dit artikel bevat informatie over het IT Service Management-connector-dash board (ITSMC). Met het dash board kunt u de status van ITSMC onderzoeken.
 
-## <a name="how-to-view-the-dashboard"></a>Het dash board weer geven
+## <a name="view-the-dashboard"></a>Het dashboard weergeven
 
-Volg de volgende stappen om de fouten in het dash board weer te geven:
+Volg deze stappen om het dash board te openen.
 
-1. Zoek in **alle resources** naar **Service Desk (*de naam van uw werk ruimte*)**:
+1. Selecteer **alle resources** en zoek vervolgens **Service Desk (*uw werkruimte naam*)**.
 
-   ![Scherm opname van recente resources in het Azure Portal.](media/itsmc-definition/create-new-connection-from-resource.png)
+   ![Scherm opname waarin de resources in Azure-Services worden weer gegeven.](media/itsmc-definition/create-new-connection-from-resource.png)
 
-2. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen**:
+1. Selecteer in het linkerdeel venster **werkruimte gegevens bronnen** en selecteer vervolgens ITSM- **verbindingen**.
 
-   ![Scherm opname van het menu-item ITSM-verbindingen.](media/itsmc-overview/add-new-itsm-connection.png)
+   ![Scherm opname van het selecteren van ITSM-verbindingen onder gegevens bronnen op werk plek.](media/itsmc-overview/add-new-itsm-connection.png)
 
-3. Onder **samen vatting** in het linkervak **IT Service Management-connector** selecteert u **samen vatting weer geven**:
+1. Selecteer in de sectie **samen vatting** **samen vatting weer** geven om een samenvattings grafiek weer te geven.
 
-    ![Scherm opname van de weer gave-samen vatting.](media/itsmc-resync-servicenow/dashboard-view-summary.png)
+    ![Scherm afbeelding met de optie samen vatting weer geven in de sectie samen vatting.](media/itsmc-resync-servicenow/dashboard-view-summary.png)
 
-4. Klik onder **samen vatting** in het linkervak **IT Service Management-connector** op de grafiek:
+1. Selecteer in de sectie **samen vatting** de grafiek om het dash board te openen.
 
-    ![Scherm opname van de weer gave van de grafiek.](media/itsmc-resync-servicenow/dashboard-graph-click.png)
+    ![Scherm opname van de weer gave van de samenvattings grafiek.](media/itsmc-resync-servicenow/dashboard-graph-click.png)
 
-5. Met dit dash board kunt u de status en de fouten in uw connector controleren.
-    ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/connector-dashboard.png)
+1. Controleer het dash board op status en eventuele fouten in de connector.
+    ![Scherm opname van het dash board.](media/itsmc-resync-servicenow/connector-dashboard.png)
 
-## <a name="dashboard-elements"></a>Dashboard items
+## <a name="understand-dashboard-elements"></a>Dashboard elementen begrijpen
 
 Het dash board bevat informatie over de waarschuwingen die zijn verzonden naar het ITSM-hulp programma met behulp van deze connector.
-Het dash board is onderverdeeld in vier delen:
 
-1. Werk item gemaakt: in de grafiek en de onderstaande tabel wordt het aantal werk items per type opgenomen. Als u op de grafiek of op de tabel klikt, kunt u meer informatie over de werk items bekijken.
-    ![Scherm opname van het werk item dat wordt gemaakt.](media/itsmc-resync-servicenow/itsm-dashboard-workitems.png)
-2. Betrokken computers: de tabellen bevatten details over de configuratie-items die configuratie-items hebben gemaakt.
-    Als u op rijen in de tabellen klikt, kunt u meer informatie krijgen over de configuratie-items.
-    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
-    ![Scherm opname van de betrokken computers.](media/itsmc-resync-servicenow/itsm-dashboard-impacted-comp.png)
-3. Connector status: in de grafiek en de onderstaande tabel staan berichten over de status van de connector. Door te klikken op de grafiek op rijen in de tabel, kunt u meer informatie krijgen over de berichten van de connector status.
-    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
+Het dash board is onderverdeeld in vier secties:
 
-    [Hier](itsmc-dashboard-errors.md)vindt u details over de berichten in de tabel.
+- **Werk items gemaakt**: in de grafiek en tabel wordt het aantal werk items op type weer gegeven. Selecteer de grafiek of de tabel om meer te weten te komen over uw werk items.
+      ![Scherm opname van de sectie werk items die is gemaakt.](media/itsmc-resync-servicenow/itsm-dashboard-workitems.png)
+- Betrokken **computers**: de tabel bevat details over de configuratie-items waarmee werk items zijn gemaakt.
+      Selecteer rijen in de tabellen voor meer informatie over de configuratie-items.
+      De tabel bevat een beperkt aantal rijen. Als u de hele lijst wilt weer geven, selecteert u **alles weer geven**.
+      ![Scherm afbeelding met de sectie betrokken computers.](media/itsmc-resync-servicenow/itsm-dashboard-impacted-comp.png)
+- **Connector status**: de grafiek en de tabel bevatten informatie over de status van de connector. Selecteer de grafiek of de berichten in de tabel voor meer informatie. De tabel bevat een beperkt aantal rijen. Als u de hele lijst wilt weer geven, selecteert u **alles weer geven**.
+      ![Scherm afbeelding met de sectie connector status.](media/itsmc-resync-servicenow/itsm-dashboard-connector-status.png)
+- **WAARSCHUWINGS regels**: deze sectie bevat informatie over het aantal gedetecteerde waarschuwings regels. Selecteer rijen in de tabellen voor meer informatie over de gedetecteerde regels. De tabel heeft een beperkt aantal rijen. Als u de hele lijst wilt weer geven, selecteert u **alles weer geven**.
+      ![Scherm opname van de sectie waarschuwings regels.](media/itsmc-resync-servicenow/itsm-dashboard-alert-rules.png)
 
-    ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/itsm-dashboard-connector-status.png)
-4. Waarschuwings regels: de tabellen bevatten de informatie over het aantal waarschuwings regels dat is gedetecteerd.
-    Als u op rijen in de tabellen klikt, kunt u meer informatie krijgen over de regels die zijn gedetecteerd.
-    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
-    ![Scherm opname van waarschuwings regels.](media/itsmc-resync-servicenow/itsm-dashboard-alert-rules.png)
+## <a name="next-steps"></a>Volgende stappen
+
+Bekijk [status fouten van common connectors](itsmc-dashboard-errors.md).

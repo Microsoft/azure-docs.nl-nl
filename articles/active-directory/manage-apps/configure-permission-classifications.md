@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: phsignor
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 9b014775f55671ef1297e040620390c23f842ce0
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: c07cc08f086b87e6b4ad35b569eef1a0d6b509ce
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053245"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090006"
 ---
 # <a name="configure-permission-classifications"></a>Machtigingsclassificaties configureren
 
@@ -34,7 +34,7 @@ Op dit moment wordt alleen de machtiging classificatie ' lage impact ' ondersteu
 
 Volg deze stappen om machtigingen te classificeren met behulp van de Azure Portal:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator--company-administrator), [toepassings beheerder](../roles/permissions-reference.md#application-administrator)of beheerder van de [Cloud toepassing](../roles/permissions-reference.md#cloud-application-administrator)
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator), [toepassings beheerder](../roles/permissions-reference.md#application-administrator)of beheerder van de [Cloud toepassing](../roles/permissions-reference.md#cloud-application-administrator)
 1. Selecteer **Azure Active Directory**  >  toestemming voor **bedrijfs toepassingen**  >  **en**  >  **classificaties** voor machtigingen.
 1. Kies **machtigingen toevoegen** om een andere machtiging als ' lage impact ' te classificeren.
 1. Selecteer de API en selecteer vervolgens de gedelegeerde machtiging (en).

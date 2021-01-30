@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.date: 03/30/2020
+ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: e3570a716eccf131cf19192454bfbc1008a6306e
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: adbf3080367e54147c981c8ccf0bb6236111b8c7
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935033"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071202"
 ---
 # <a name="quickstart-set-and-retrieve-a-key-from-azure-key-vault-using-azure-powershell"></a>Quickstart: Een sleutel instellen in Azure Key Vault en daaruit ophalen met behulp van Azure PowerShell
 
@@ -32,32 +32,11 @@ Login-AzAccount
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een Azure-resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. 
-
-```azurepowershell-interactive
-New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-powershell-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Een sleutelkluis maken
 
-Vervolgens maakt u een sleutelkluis. Om deze stap te kunnen uitvoeren, hebt u enkele gegevens nodig:
-
-Hoewel we in deze quickstart 'Contoso KeyVault2' als naam voor de sleutelkluis gebruiken, moet u een unieke naam opgeven.
-
-- **Kluisnaam** Contoso-Vault2.
-- **Naam van resourcegroep** ContosoResourceGroup.
-- **Locatie** VS - oost.
-
-```azurepowershell-interactive
-New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
-```
-
-De uitvoer van deze cmdlet toont eigenschappen van de nieuw gemaakte sleutelkluis. Let op de onderstaande twee eigenschappen:
-
-* **Kluisnaam**: in het voorbeeld is dat **Contoso-Vault2**. U gebruikt deze naam voor andere Sleutelkluis-cmdlets.
-* **Kluis-URI**: in dit voorbeeld is dat https://Contoso-Vault2.vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
-
-Nadat de kluis is gemaakt, is uw Azure-account het enige account dat iets met deze nieuwe kluis mag doen.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-kv-creation.md)]
 
 ## <a name="add-a-key-to-key-vault"></a>Een sleutel toevoegen aan Key Vault
 
@@ -66,27 +45,22 @@ Als u een sleutel wilt toevoegen aan de kluis, hoeft u maar een paar extra stapp
 Typ de onderstaande opdrachten om een aangeroepen **ExampleKey** te maken:
 
 ```azurepowershell-interactive
-Add-AzKeyVaultKey -VaultName 'Contoso-Vault2' -Name 'ExampleKey' -Destination 'Software'
+Add-AzKeyVaultKey -VaultName "<your-unique-keyvault-name>" -Name "ExampleKey" -Destination "Software"
 ```
 
-U kunt nu naar deze sleutel die u aan Azure Key Vault hebt toegevoegd, verwijzen met behulp van de URI ervan. Gebruik **'https://Contoso-Vault2.vault.azure.net/keys/ExampleKey '** om de huidige versie op te halen. 
+U kunt nu naar deze sleutel die u aan Azure Key Vault hebt toegevoegd, verwijzen met behulp van de URI ervan. Gebruik **https://<uw-unieke kluis naam>. Vault.Azure.net/Keys/ExampleKey** om de huidige versie op te halen. 
 
 Een eerder opgeslagen sleutel weergeven:
 
 ```azurepowershell-interactive
-Get-AzKeyVaultKey -VaultName 'Contoso-Vault2' -KeyName 'ExampleKey'
+Get-AzKeyVaultKey -VaultName "<your-unique-keyvault-name>" -KeyName "ExampleKey"
 ```
 
 U hebt nu een sleutelkluis gemaakt, een sleutel opgeslagen en deze vervolgens opgehaald.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Andere snelstartgidsen en zelfstudies in deze verzameling zijn gebaseerd op deze snelstartgids. Als u van plan bent om verder te gaan met volgende snelstarts en zelfstudies, kunt u deze resources intact laten.
-U kunt de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) gebruiken om de resourcegroep en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt. U kunt de resources als volgt verwijderen:
-
-```azurepowershell-interactive
-Remove-AzResourceGroup -Name ContosoResourceGroup
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-delete-resources.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

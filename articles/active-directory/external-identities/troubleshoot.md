@@ -14,19 +14,19 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebe34de0fa7847a23d9335dcdb0a38a33e006fdc
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: aa0d0d032c2ab6ae1d6c5e6b1c8b1793a6b3bd7c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355202"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090634"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Problemen oplossen Azure Active Directory B2B-samen werking
 
 Hier volgen enkele oplossingen voor veelvoorkomende problemen met Azure Active Directory (Azure AD) B2B-samen werking.
 
    > [!IMPORTANT]
-   > - **Vanaf 4 januari 2021** wordt de [ondersteuning voor webweergave van de WEBMODULE voor webmeldingen afgemeld](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Als u gebruikmaakt van Google Federation of Self-Service-aanmelding bij Gmail, moet u [uw line-of-business-toepassingen testen voor compatibiliteit](google-federation.md#deprecation-of-webview-sign-in-support).
+   > - **Vanaf 4 januari 2021** wordt [ondersteuning voor WebView-aanmelding afgeschaft](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html) in Google. Als u gebruikmaakt van Google-federatie of selfserviceregistratie met Gmail, moet u [de compatibiliteit van uw systeemeigen Line-of-Business-toepassingen testen](google-federation.md#deprecation-of-webview-sign-in-support).
    > - **Vanaf 31 maart 2021** heeft Microsoft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en -tenants voor B2B-samenwerkingsscenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
 
 ## <a name="ive-added-an-external-user-but-do-not-see-them-in-my-global-address-book-or-in-the-people-picker"></a>Ik heb een externe gebruiker toegevoegd, maar deze wordt niet weer geven in het algemene adres boek of in de kiezer personen
@@ -92,7 +92,7 @@ Een gebruiker met een gast account kan zich niet aanmelden en ontvangt het volge
     AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
 ```
 
-De gebruiker heeft een Azure-gebruikers account en is een virale Tenant die is verlaten of onbeheerd. Daarnaast zijn er geen globale of bedrijfs beheerders in de Tenant.
+De gebruiker heeft een Azure-gebruikers account en is een virale Tenant die is verlaten of onbeheerd. Daarnaast zijn er geen globale beheerders in de Tenant.
 
 Om dit probleem op te lossen, moet u de afgebroken Tenant overnemen. Raadpleeg een niet-  [beheerde Directory als beheerder in azure Active Directory](../enterprise-users/domains-admin-takeover.md). U moet ook toegang krijgen tot de Internet gerichte DNS voor het betreffende domein achtervoegsel om direct bewijs te geven dat u de controle hebt over de naam ruimte. Nadat de Tenant naar een beheerde status is geretourneerd, kunt u met de klant bespreken of de gebruikers-en geverifieerde domein naam de beste optie is voor hun organisatie.
 

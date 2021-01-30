@@ -6,22 +6,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 12/11/2020
+ms.date: 01/20/2021
 ms.custom: devx-track-java
 ms.author: aahi
 ms.reviewer: tasharm, assafi, sumeh
-ms.openlocfilehash: 33d5989103911d6299806b16979d1caeba286a76
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 9c719d222e8c38030556214d42f6519768d99f0a
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947656"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090752"
 ---
 <a name="HOLTop"></a>
 
 # <a name="version-31-preview"></a>[Preview van versie 3.1](#tab/version-3-1)
 
-[Referentiedocumentatie](/java/api/overview/azure/ai-textanalytics-readme) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/blob/azure-ai-textanalytics_5.1.0-beta.3/sdk/textanalytics/azure-ai-textanalytics) | [Pakket](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.1.0-beta.3) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/tree/azure-ai-textanalytics_5.1.0-beta.3/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics)
+[Referentiedocumentatie](/java/api/overview/azure/ai-textanalytics-readme?preserve-view=true&view=azure-java-preview) | [Broncode bibliotheek](https://github.com/Azure/azure-sdk-for-java/blob/azure-ai-textanalytics_5.1.0-beta.3/sdk/textanalytics/azure-ai-textanalytics) | [Pakket](https://mvnrepository.com/artifact/com.azure/azure-ai-textanalytics/5.1.0-beta.3) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-java/tree/azure-ai-textanalytics_5.1.0-beta.3/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics)
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
@@ -606,8 +606,7 @@ veterinarian
 
 # <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
 
-> [!CAUTION]
-> Als u analysebewerkingen wilt gebruiken, moet u een Text Analytics-resource gebruiken in de prijscategorie Standard (S).  
+[!INCLUDE [Analyze operation pricing](../analyze-operation-pricing-caution.md)]
 
 Maak een nieuwe functie met de naam `analyzeOperationExample()`. Deze roept de functie `beginAnalyzeTasks()` aan. Het resultaat is een langdurige bewerking waarvan de resultaten worden gepolld.
 

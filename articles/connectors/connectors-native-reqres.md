@@ -7,12 +7,12 @@ ms.reviewers: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 11/19/2020
 tags: connectors
-ms.openlocfilehash: 4997853fea97d14491bd9e9101f79f324807a6a1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 83ffccb7bae4fabc10796c36e782e72c661bd346
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920818"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063009"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Inkomende HTTPS-aanvragen ontvangen en erop reageren in Azure Logic Apps
 
@@ -216,7 +216,7 @@ Wanneer u de aanvraag trigger gebruikt voor het verwerken van inkomende aanvrage
 > Als een antwoord actie deze headers bevat, verwijdert Logic Apps deze headers uit het gegenereerde antwoord bericht zonder dat er een waarschuwing of fout wordt weer gegeven:
 >
 > * `Allow`
-> * `Content-*` met deze uitzonde ringen: `Content-Disposition` , `Content-Encoding` en `Content-Type`
+> * `Content-*` kopteksten behalve voor `Content-Disposition` , `Content-Encoding` en `Content-Type` Wanneer u post-en put-bewerkingen gebruikt, maar die niet zijn opgenomen voor Get-bewerkingen
 > * `Cookie`
 > * `Expires`
 > * `Last-Modified`

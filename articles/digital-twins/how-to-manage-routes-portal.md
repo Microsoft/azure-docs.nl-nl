@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 083d868f2d2652be9480227c29dfb289564056d6
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 0f705aa61f1fe627dc0c8227242538e01ffce1d5
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533783"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070828"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-portal"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Portal)
 
 [!INCLUDE [digital-twins-route-selector.md](../../includes/digital-twins-route-selector.md)]
 
-In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](how-to-interpret-event-data.md) naar downstream-Services of verbonden reken bronnen sturen. Dit wordt gedaan door eerst **eind punten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
+In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](how-to-interpret-event-data.md) naar downstream-Services of verbonden reken bronnen sturen. Dit doet u door eerst **eindpunten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
 
 Dit artikel begeleidt u bij het maken van eind punten en routes met behulp van de [Azure Portal](https://portal.azure.com).
 
@@ -33,11 +33,11 @@ U kunt ook eind punten en routes beheren met de [gebeurtenis routes api's](/rest
 
 U vindt deze informatie in de [Azure Portal](https://portal.azure.com) na het instellen van uw exemplaar. Meld u aan bij de portal en zoek naar de naam van uw instantie in de zoek balk van de portal.
  
-:::image type="content" source="media/how-to-manage-routes-portal/search-field-portal.png" alt-text="Scherm opname van Azure Portal zoek balk.":::
+:::image type="content" source="media/how-to-manage-routes-portal/search-field-portal.png" alt-text="Scherm opname van Azure Portal zoek balk." lightbox="media/how-to-manage-routes-portal/search-field-portal.png":::
 
-Selecteer uw exemplaar in de resultaten om de detail pagina voor uw exemplaar te bekijken:
+Selecteer uw instantie in de resultaten om deze details te bekijken in het overzicht voor uw exemplaar:
 
-:::image type="content" source="media/how-to-manage-routes-portal/instance-details.png" alt-text="Scherm opname van Details van ADT-exemplaar." border="false":::
+:::image type="content" source="media/how-to-manage-routes-portal/instance-details.png" alt-text="Scherm afbeelding van de overzichts pagina voor een Azure Digital Apparaatdubbels-exemplaar. De naam en de resource groep zijn gemarkeerd.":::
 
 ## <a name="create-an-endpoint-for-azure-digital-twins"></a>Een eind punt maken voor Azure Digital Apparaatdubbels
 
@@ -48,83 +48,59 @@ Dit zijn de ondersteunde typen eind punten die u voor uw exemplaar kunt maken:
 
 Zie [*kiezen tussen Azure Messa ging Services*](../event-grid/compare-messaging-services.md)voor meer informatie over de verschillende typen eind punten.
 
-Als u een eind punt wilt koppelen aan Azure Digital Apparaatdubbels, moet u het gebeurtenis grid-onderwerp, Event Hub of Service Bus die u voor het eind punt gebruikt, al bestaan. 
+In deze sectie wordt uitgelegd hoe u een van deze eind punten maakt in de [Azure Portal](https://portal.azure.com).
 
-### <a name="create-an-event-grid-endpoint"></a>Een Event Grid-eind punt maken
+[!INCLUDE [digital-twins-endpoint-resources.md](../../includes/digital-twins-endpoint-resources.md)]
 
-**Vereiste** : Maak een event grid-onderwerp door de stappen in [de sectie *een aangepast onderwerp maken*](../event-grid/custom-event-quickstart-portal.md#create-a-custom-topic) van de Snelstartgids Event grid *aangepaste gebeurtenissen* te volgen.
+### <a name="create-the-endpoint"></a>Het eind punt maken 
 
-Zodra u het onderwerp hebt gemaakt, kunt u het koppelen aan Azure Digital Apparaatdubbels vanaf de pagina van uw Azure Digital Apparaatdubbels-exemplaar in de [Azure Portal](https://portal.azure.com) (u kunt het exemplaar vinden door de naam ervan in te voeren in de zoek balk van de portal).
+Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. Als u een nieuw eind punt wilt maken, gaat u naar de pagina van uw exemplaar in de [Azure Portal](https://portal.azure.com) (u kunt het exemplaar vinden door de naam ervan in te voeren in de zoek balk van de portal).
 
-Selecteer _eind punten_ in het menu exemplaar. Selecteer vervolgens op de pagina met *eind punten* de optie *+ een eind punt maken*. 
+1. Selecteer _eind punten_ in het menu exemplaar. Selecteer vervolgens op de pagina met *eind punten* de optie *+ een eind punt maken*. Hiermee opent u de pagina *een eind punt maken* , waarin u de velden in de volgende stappen kunt invullen.
 
-Op de pagina *een eind punt maken* die wordt geopend, kunt u een eind punt van het type _Event grid_ maken door het bijbehorende keuze rondje te selecteren. De overige details volt ooien: Voer een naam in voor het eind punt in het veld _naam_ , kies uw _abonnement_ in de vervolg keuzelijst en kies het vooraf gemaakte  _Event grid onderwerp_ in de derde vervolg keuzelijst.
+    :::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-grid.png" alt-text="Scherm opname van het maken van een eind punt van het type Event Grid." lightbox="media/how-to-manage-routes-portal/create-endpoint-event-grid.png":::
 
-Maak vervolgens uw eind punt op _Opslaan_.
+1. Voer een **naam** in voor het eind punt en kies het **type eind punt**.
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-grid.png" alt-text="Scherm opname van het maken van een eind punt van het type Event Grid.":::
+1. Voltooi de andere gegevens die vereist zijn voor het type eind punt, inclusief uw abonnement en de eindpunt resources die [hierboven](#prerequisite-create-endpoint-resources)worden beschreven.
+    1. Alleen voor Event hub en Service Bus-eind punten moet u een **verificatie type** selecteren. U kunt authenticatie op basis van een sleutel gebruiken met een vooraf gemaakte autorisatie regel of verificatie op basis van een identiteit als u het eind punt gebruikt met een [beheerde identiteit](concepts-security.md#managed-identity-for-accessing-other-resources-preview) voor uw Azure Digital apparaatdubbels-exemplaar. 
 
-U kunt controleren of het eind punt is gemaakt door het meldings pictogram in de bovenste Azure Portal balk te controleren: 
+    :::row:::
+        :::column:::
+            :::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-hub-authentication.png" alt-text="Scherm opname van het maken van een eind punt van het type Event hub." lightbox="media/how-to-manage-routes-portal/create-endpoint-event-hub-authentication.png":::
+        :::column-end:::
+        :::column:::
+        :::column-end:::
+    :::row-end:::
 
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-notifications.png" alt-text="Scherm afbeelding van de melding om te controleren of het eind punt is gemaakt." border="false":::
+1. Het maken van het eind punt volt ooien door _Opslaan_ te selecteren.
+
+>[!IMPORTANT]
+> Als u verificatie op basis van identiteit voor uw eind punt wilt gebruiken, moet u een beheerde identiteit voor uw exemplaar maken door de stappen in [*How to: een beheerde identiteit inschakelen voor routerings gebeurtenissen (preview)*](how-to-enable-managed-identities.md).
+
+Na het maken van het eind punt kunt u controleren of het eind punt is gemaakt door het meldings pictogram in de bovenste Azure Portal balk te controleren: 
+
+:::row:::
+    :::column:::
+        :::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-notifications.png" alt-text="Scherm afbeelding van de melding om te controleren of het eind punt is gemaakt. Het klok pictogram in de bovenste balk van de portal is geselecteerd en er wordt een melding weer gegeven dat ' eind punt ADT-eh-eind punt is gemaakt '.":::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
+
+Als het maken van het eind punt mislukt, Bekijk dan het fout bericht en probeer het over enkele minuten opnieuw.
 
 U kunt ook het eind punt weer geven dat weer is gemaakt op de pagina *eind punten* voor uw Azure Digital apparaatdubbels-exemplaar.
 
-Als het maken van het eind punt mislukt, Bekijk dan het fout bericht en probeer het over enkele minuten opnieuw.
-
-Het onderwerp Event grid is nu beschikbaar als een eind punt in azure Digital Apparaatdubbels, onder de naam die is opgegeven in het veld _naam_ . Normaal gesp roken gebruikt u die naam als het doel van een **gebeurtenis route** , die u [later in dit artikel](#create-an-event-route)gaat maken.
-
-### <a name="create-an-event-hubs-endpoint"></a>Een Event Hubs-eind punt maken
-
-**Vereisten** : 
-* U hebt een _Event hubs naam ruimte_ en een _Event hub_ nodig. U maakt beide door de stappen in de Event Hubs [*een event hub*](../event-hubs/event-hubs-create.md) Quick start maken te volgen.
-* U hebt een _autorisatie regel_ nodig. Als u dit wilt maken, raadpleegt u de Event Hubs [*toegang verlenen tot Event hubs resources met behulp van het artikel voor hand tekeningen voor gedeelde toegang*](../event-hubs/authorize-access-shared-access-signature.md) .
-
-Ga naar de detail pagina voor uw Azure Digital Apparaatdubbels-exemplaar in de [Azure Portal](https://portal.azure.com) (u kunt deze vinden door de naam ervan in te voeren in de zoek balk van de portal).
-
-Selecteer _eind punten_ in het menu exemplaar. Selecteer vervolgens op de pagina met *eind punten* de optie *+ een eind punt maken*. 
-
-Op de pagina *een eind punt maken* die wordt geopend, kunt u een eind punt van het type _Event hub_ maken door het bijbehorende keuze rondje te selecteren. Voer in het veld _naam_ een naam in voor het eind punt. Selecteer vervolgens uw _abonnement_ en uw vooraf gemaakte _Event hub-naam ruimte_ , _Event hub_ en _autorisatie regel_ uit de respectieve vervolg keuzelijsten.
-
-Maak vervolgens uw eind punt op _Opslaan_.
-
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-event-hub.png" alt-text="Scherm opname van het maken van een eind punt van het type Event Hubs.":::
-
-U kunt controleren of het eind punt is gemaakt door het meldings pictogram in de bovenste Azure Portal balk te controleren. 
-
-Als het maken van het eind punt mislukt, Bekijk dan het fout bericht en probeer het over enkele minuten opnieuw.
-
-De Event hub is nu beschikbaar als een eind punt in azure Digital Apparaatdubbels, onder de naam die is opgegeven in het veld _naam_ . Normaal gesp roken gebruikt u die naam als het doel van een **gebeurtenis route** , die u [later in dit artikel](#create-an-event-route)gaat maken.
-
-### <a name="create-a-service-bus-endpoint"></a>Een Service Bus-eind punt maken
-
-**Vereisten** : 
-* U hebt een _Service Bus naam ruimte_ en een _Service Bus onderwerp_ nodig. U maakt beide door de stappen te volgen in het Service Bus Snelstartgids [*en abonnementen maken*](../service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md) . U hoeft de sectie [*abonnementen maken op onderwerp*](../service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md#create-subscriptions-to-the-topic) niet uit te voeren.
-* U hebt een _autorisatie regel_ nodig. Als u dit wilt maken, raadpleegt u het artikel Service Bus [*verificatie en autorisatie*](../service-bus-messaging/service-bus-authentication-and-authorization.md#shared-access-signature) .
-
-Ga naar de detail pagina voor uw Azure Digital Apparaatdubbels-exemplaar in de [Azure Portal](https://portal.azure.com) (u kunt deze vinden door de naam ervan in te voeren in de zoek balk van de portal).
-
-Selecteer _eind punten_ in het menu exemplaar. Selecteer vervolgens op de pagina met *eind punten* de optie *+ een eind punt maken*. 
-
-Op de pagina *een eind punt maken* die wordt geopend, kunt u een eind punt van het type _Service Bus_ maken door het bijbehorende keuze rondje te selecteren. Voer in het veld _naam_ een naam in voor het eind punt. Selecteer vervolgens uw _abonnement_ en uw vooraf gemaakte _Service Bus naam ruimte_ , _Service Bus onderwerp_ en _autorisatie regel_ uit de respectieve vervolg keuzelijsten.
-
-Maak vervolgens uw eind punt op _Opslaan_.
-
-:::image type="content" source="media/how-to-manage-routes-portal/create-endpoint-service-bus.png" alt-text="Scherm opname van het maken van een eind punt van het type Service Bus.":::
-
-U kunt controleren of het eind punt is gemaakt door het meldings pictogram in de bovenste Azure Portal balk te controleren. 
-
-Als het maken van het eind punt mislukt, Bekijk dan het fout bericht en probeer het over enkele minuten opnieuw.
-
-Het Service Bus onderwerp is nu beschikbaar als een eind punt in azure Digital Apparaatdubbels, onder de naam die is opgegeven in het veld _naam_ . Normaal gesp roken gebruikt u die naam als het doel van een **gebeurtenis route** , die u [later in dit artikel](#create-an-event-route)gaat maken.
+Nu is het onderwerp gebeurtenis raster, Event Hub of Service Bus beschikbaar als eind punt binnen Azure Digital Apparaatdubbels, onder de naam die u voor het eind punt hebt gekozen. Normaal gesp roken gebruikt u deze naam als het doel van een **gebeurtenis route**, die u [later in dit artikel](#create-an-event-route)kunt maken.
 
 ### <a name="create-an-endpoint-with-dead-lettering"></a>Een eind punt maken met onbestelbare berichten
 
 Wanneer een eind punt een gebeurtenis binnen een bepaalde tijds periode niet kan leveren of nadat de gebeurtenis een bepaald aantal keren is geprobeerd, kan de gebeurtenis worden verzonden naar een opslag account. Dit proces wordt **onbestelbare berichten** genoemd.
 
-Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, moet u de [arm-api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) gebruiken om uw eind punt te maken, in plaats van de Azure Portal.
+Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, moet u de [cli-opdrachten](how-to-use-cli.md) of control- [api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) gebruiken om uw eind punt te maken, in plaats van de Azure Portal.
 
-Zie de [*api's en CLI*](how-to-manage-routes-apis-cli.md#create-an-endpoint-with-dead-lettering) -versie van dit artikel voor instructies over hoe u dit doet met de api's.
+Zie de [*api's en CLI*](how-to-manage-routes-apis-cli.md#create-an-endpoint-with-dead-lettering) -versie van dit artikel voor instructies over hoe u dit kunt doen met deze hulpprogram ma's.
 
 ## <a name="create-an-event-route"></a>Een gebeurtenis route maken
 
@@ -140,7 +116,7 @@ Voor **waarde: u** moet eind punten maken zoals eerder in dit artikel wordt besc
 Een definitie van een gebeurtenis route bevat deze elementen:
 * De naam van de route die u wilt gebruiken
 * De naam van het eind punt dat u wilt gebruiken
-* Een filter dat definieert welke gebeurtenissen naar het eind punt worden verzonden
+* Een filter waarmee wordt bepaald welke gebeurtenissen naar het eindpunt worden verzonden
     - Als u de route wilt uitschakelen zodat er geen gebeurtenissen worden verzonden, gebruikt u een filter waarde van `false`
     - Als u een route wilt inschakelen die geen specifieke filters heeft, gebruikt u een filter waarde van `true`
     - Zie de sectie [*filter gebeurtenissen*](#filter-events) hieronder voor meer informatie over elk ander type filter.

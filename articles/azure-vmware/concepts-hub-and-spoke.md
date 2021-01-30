@@ -3,12 +3,12 @@ title: 'Concept: een implementatie van een Azure VMware-oplossing integreren in 
 description: Meer informatie over het integreren van een implementatie van een Azure VMware-oplossing in een hub-en spoke-architectuur in Azure.
 ms.topic: conceptual
 ms.date: 10/26/2020
-ms.openlocfilehash: 0d511c8d6a96ffb6fa666bcb7c989764f398bdc9
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: bfc442e569572349b1323500fbd0b2f912ebbc62
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901382"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062742"
 ---
 # <a name="integrate-azure-vmware-solution-in-a-hub-and-spoke-architecture"></a>Azure VMware-oplossing integreren in een hub-en spoke-architectuur
 
@@ -76,7 +76,7 @@ Omdat een ExpressRoute-gateway geen transitieve route ring biedt tussen de verbo
   :::image type="content" source="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png" alt-text="Azure VMware-oplossing voor het hub-verkeer van virtuele netwerken" border="false" lightbox="./media/hub-spoke/azure-vmware-solution-hub-vnet-traffic-flow.png":::
 
 
-Meer informatie over de netwerk-en connectiviteits concepten van Azure VMware Solution vindt u in de [product documentatie van de Azure VMware-oplossing](./concepts-networking.md).
+Raadpleeg de [product documentatie voor Azure VMware-oplossingen](./concepts-networking.md)voor meer informatie over de netwerk-en connectiviteits concepten van Azure VMware-oplossingen.
 
 ### <a name="traffic-segmentation"></a>Segmentatie van verkeer
 
@@ -103,7 +103,7 @@ Een tweede niveau van Traffic segmentatie met behulp van de netwerk beveiligings
 
 Azure-toepassing gateway v1 en v2 zijn getest met web apps die worden uitgevoerd op virtuele machines uit de Azure VMware-oplossing als back-end-groep. Application Gateway is momenteel de enige methode die wordt ondersteund om web-apps die worden uitgevoerd op virtuele machines van Azure VMware-oplossingen, beschikbaar te maken op internet. Ook kunnen de apps veilig worden blootgesteld aan interne gebruikers.
 
-Raadpleeg het artikel over de Azure VMware-oplossing op [Application Gateway](./protect-azure-vmware-solution-with-application-gateway.md) voor de details en vereisten.
+Zie het artikel over de oplossings specificaties van Azure VMware op [Application Gateway](./protect-azure-vmware-solution-with-application-gateway.md)voor meer informatie.
 
 :::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Tweede niveau van verkeers segmentatie met behulp van de netwerk beveiligings groepen" border="false":::
 

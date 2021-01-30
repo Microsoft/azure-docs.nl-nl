@@ -12,12 +12,12 @@ ms.date: 09/23/2020
 ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperf-fy21q1, identityplatformtop40
-ms.openlocfilehash: aa8c00d1ee2a0dc3d019cc75b4e411ede984e74a
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 570314bcaedb86cc593846ffc1d6846d1d2fe335
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756051"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090184"
 ---
 # <a name="permissions-and-consent-in-the-microsoft-identity-platform"></a>Machtigingen en toestemming in het micro soft Identity-platform
 
@@ -164,7 +164,7 @@ Als de toepassing toepassings machtigingen aanvraagt en een beheerder deze macht
 
 Nadat u het beheerders toestemming-eind punt hebt gebruikt om beheerders toestemming te verlenen, bent u klaar. Gebruikers hoeven geen verdere actie te ondernemen. Nadat de beheerder toestemming heeft gegeven, kunnen gebruikers een toegangs token verkrijgen via een typische verificatie stroom. Het resulterende toegangs token heeft de toegestane machtigingen.
 
-Wanneer een bedrijfs beheerder uw toepassing gebruikt en wordt omgeleid naar het toestemming eind punt, detecteert het micro soft Identity-platform de rol van de gebruiker. Er wordt gevraagd of de beheerder van het bedrijf wil akkoord namens de volledige Tenant voor de aangevraagde machtigingen. U kunt in plaats daarvan een speciaal beheerders toestemming-eind punt gebruiken om een beheerder te vragen om toestemming te verlenen namens de hele Tenant. Dit eind punt is ook nodig voor het aanvragen van toepassings machtigingen. Toepassings machtigingen kunnen niet worden aangevraagd met behulp van het toestaan van het eind punt.
+Wanneer een globale beheerder uw toepassing gebruikt en wordt omgeleid naar het toestemming eind punt, detecteert het micro soft Identity-platform de rol van de gebruiker. Er wordt gevraagd of de globale beheerder toestemming wil geven namens de volledige Tenant voor de machtigingen die u hebt aangevraagd. U kunt in plaats daarvan een speciaal beheerders toestemming-eind punt gebruiken om een beheerder te vragen om toestemming te verlenen namens de hele Tenant. Dit eind punt is ook nodig voor het aanvragen van toepassings machtigingen. Toepassings machtigingen kunnen niet worden aangevraagd met behulp van het toestaan van het eind punt.
 
 Als u deze stappen volgt, kan uw app machtigingen aanvragen voor alle gebruikers in een Tenant, met inbegrip van beheerders beperkte bereiken. Deze bewerking is een hoge bevoegdheid. Gebruik de bewerking alleen als dat nodig is voor uw scenario.
 

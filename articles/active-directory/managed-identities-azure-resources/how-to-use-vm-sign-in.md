@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/01/2017
+ms.date: 01/29/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 08fe856fd43baad4189d81f7743396a71cd5de48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61e83bd27c9434c4222e0161e3b643b183d1aa84
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266320"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090957"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Beheerde identiteiten voor Azure-resources gebruiken op een Azure-VM voor aanmelding 
 
@@ -90,12 +90,7 @@ Antwoorden zoals de volgende kunnen erop duiden dat de beheerde identiteit van d
 - Power shell: *invoke-WebRequest: kan geen verbinding maken met de externe server*
 - CLI: *MSI: kan geen Token ophalen van `http://localhost:50342/oauth2/token` met de fout ' HTTPConnectionPool (host = ' localhost ', poort = 50342)* 
 
-Als u een van deze fouten ontvangt, keert u terug naar de Azure VM in de [Azure Portal](https://portal.azure.com) en:
-
-- Ga naar de pagina **identiteit** en zorg ervoor dat het **toegewezen systeem** is ingesteld op Ja.
-- Ga naar de pagina **extensies** en zorg ervoor dat de beheerde identiteiten voor de Azure **-resources-extensie (gepland voor afschaffing in januari 2019)** zijn geïmplementeerd.
-
-Als een van beide onjuist is, moet u de beheerde identiteiten voor Azure-resources in uw resource mogelijk opnieuw implementeren of de implementatie fout oplossen. Zie [beheerde identiteiten voor Azure-resources configureren op een virtuele machine met](qs-configure-portal-windows-vm.md) behulp van de Azure portal als u hulp nodig hebt bij de configuratie van de virtuele machine.
+Als u een van deze fouten ontvangt, keert u terug naar de Azure VM in de [Azure Portal](https://portal.azure.com) en gaat u naar de pagina **identiteit** en zorgt u ervoor dat het **toegewezen systeem** is ingesteld op Ja.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -7,33 +7,45 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/06/2020
-ms.openlocfilehash: 80c3f9aa02680097276f966ce6aea02acf1e40fb
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.date: 01/28/2021
+ms.openlocfilehash: dfd8526a035d4eef4d07539e541e37c88023b500
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358793"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063210"
 ---
 # <a name="how-to-schedule-indexers-in-azure-cognitive-search"></a>Indexeer functies plannen in azure Cognitive Search
 
-Een Indexeer functie wordt normaal gesp roken eenmaal uitgevoerd, direct nadat deze is gemaakt. U kunt het opnieuw uitvoeren op aanvraag met behulp van de portal, de REST API of de .NET SDK. U kunt ook een Indexeer functie zo configureren dat deze regel matig wordt uitgevoerd volgens een planning.
+Een Indexeer functie wordt normaal gesp roken eenmaal uitgevoerd, direct nadat deze is gemaakt. Daarna kunt u de app op aanvraag opnieuw uitvoeren met behulp van Azure Portal, [Indexeer functie (rest)](/rest/api/searchservice/run-indexer)of een Azure-SDK uitvoeren. U kunt ook een Indexeer functie configureren zodat deze volgens een schema kan worden uitgevoerd. Hieronder vindt u een aantal situaties waarin de planning van de Indexeer functie nuttig is:
 
-Een aantal situaties waarin de planning van de Indexeer functie nuttig is:
-
-* De bron gegevens worden na verloop van tijd gewijzigd en u wilt dat de gewijzigde gegevens automatisch worden verwerkt door de Indexeer functies van Azure Cognitive Search.
-* De index wordt gevuld met meerdere gegevens bronnen en u wilt er zeker van zijn dat de Indexeer functies op verschillende tijdstippen worden uitgevoerd om conflicten te verminderen.
+* De bron gegevens worden na verloop van tijd gewijzigd en u wilt dat de Delta automatisch door de Indexeer functie wordt verwerkt.
 * De bron gegevens zijn erg groot en u wilt de verwerking van de Indexeer functie gedurende een periode spreiden. Zie voor meer informatie over het indexeren van grote hoeveel heden gegevens [grote gegevens sets indexeren in Azure Cognitive Search](search-howto-large-index.md).
+* Een zoek index wordt gevuld met meerdere gegevens bronnen en u wilt dat de Indexeer functies op verschillende tijdstippen worden uitgevoerd om conflicten te verminderen.
 
-De scheduler is een ingebouwde functie van Azure Cognitive Search. U kunt geen externe planner gebruiken om Zoek Indexeer functies te beheren.
+Een planning kan er als volgt uitzien: vanaf 1 januari en wordt elke 50 minuten uitgevoerd.
 
-## <a name="define-schedule-properties"></a>Schema-eigenschappen definiëren
+```json
+{
+    "dataSourceName" : "myazuresqldatasource",
+    "targetIndexName" : "target index name",
+    "schedule" : { "interval" : "PT50M", "startTime" : "2021-01-01T00:00:00Z" }
+}
+```
 
-Een indexer schema heeft twee eigenschappen:
-* **Interval** , waarmee de hoeveelheid tijd tussen de geplande uitvoeringen van de Indexeer functie wordt gedefinieerd. Het kleinste toegestane interval is 5 minuten en de grootste is 24 uur.
-* **Begin tijd (UTC)** , waarmee wordt aangegeven wanneer de Indexeer functie voor het eerst moet worden uitgevoerd.
+> [!NOTE]
+> De scheduler is een ingebouwde functie van Azure Cognitive Search. Er is geen ondersteuning voor externe planners.
 
-U kunt een planning opgeven wanneer u eerst de Indexeer functie maakt of door de eigenschappen van de Indexeer functie later bij te werken. De planningen voor de Indexeer functie kunnen worden ingesteld met behulp van de [Portal](#portal), de [rest API](#restApi)of de [.NET SDK](#dotNetSdk).
+## <a name="schedule-property"></a>Eigenschap schema
+
+Een planning maakt deel uit van de definitie van de Indexeer functie. Als de eigenschap **Schedule** wordt wegge laten, wordt de Indexeer functie slechts eenmaal uitgevoerd nadat deze is gemaakt. Als u een **schema** -eigenschap toevoegt, geeft u twee delen op.
+
+| Eigenschap | Beschrijving |
+|----------|-------------|
+|**Interval** | lang De hoeveelheid tijd tussen het begin van twee opeenvolgende indexerings uitvoeringen. Het kleinste toegestane interval is 5 minuten en de langste is 1440 minuten (24 uur). Deze moet worden ingedeeld als een XSD ' dayTimeDuration-waarde (een beperkte subset van een [ISO 8601 duration](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) -waarde). Het patroon hiervoor is: `P(nD)(T(nH)(nM))` . <br/><br/>Voor beelden: elke `PT15M` 2 uur voor elke 15 minuten `PT2H` .|
+| **Begin tijd (UTC)** | Beschrijving Hiermee wordt aangegeven wanneer geplande uitvoeringen moeten beginnen. Als u dit weglaat, wordt de huidige UTC-tijd gebruikt. Deze tijd kan in het verleden liggen. in dat geval wordt de eerste uitvoering gepland alsof de Indexeer functie continu actief is sinds de oorspronkelijke **StartTime**.<br/><br/>Voor beelden: `2021-01-01T00:00:00Z` vanaf 1 januari tot en met middernacht, `2021-01-05T22:28:00Z` vanaf 10:28 uur op 5 januari.|
+
+## <a name="scheduling-behavior"></a>Plannings gedrag
 
 Er kan slechts één uitvoering van een Indexeer functie tegelijk worden uitgevoerd. Als er al een Indexeer functie wordt uitgevoerd wanneer de volgende uitvoering wordt gepland, wordt die uitvoering uitgesteld tot het volgende geplande tijdstip.
 
@@ -44,29 +56,11 @@ Laten we eens kijken naar een voor beeld om dit meer concreet te maken. Stel dat
 * De derde uitvoering is gepland om te beginnen om 10:00 uur UTC, maar op dat moment wordt de vorige uitvoering nog steeds uitgevoerd. Deze geplande uitvoering wordt vervolgens overgeslagen. De volgende uitvoering van de Indexeer functie wordt pas gestart als 11:00 uur UTC.
 
 > [!NOTE]
-> Als een Indexeer functie is ingesteld op een bepaald schema, maar herhaaldelijk meerdere keren een fout optreedt in hetzelfde document, wordt de Indexeer functie gestart op een minder frequent interval (Maxi maal ten minste één keer per 24 uur) totdat de voortgang weer wordt uitgevoerd.  Als u van mening bent dat het probleem dat de Indexeer functie niet op een bepaald moment vastloopt, kunt u een on-demand uitvoering van de Indexeer functie uitvoeren. als dat wel het geval is, keert de Indexeer functie weer terug naar het ingestelde plannings interval.
+> Als een Indexeer functie is ingesteld op een bepaald schema maar herhaaldelijk op hetzelfde document mislukt, wordt de Indexeer functie gestart op een minder frequent interval (Maxi maal het maximum interval van minstens één keer per 24 uur) totdat de voortgang weer wordt uitgevoerd. Als u denkt dat u het onderliggende probleem hebt opgelost, kunt u de Indexeer functie hand matig uitvoeren. als de indexering slaagt, keert de Indexeer functie terug naar de normale planning.
 
-<a name="portal"></a>
+## <a name="schedule-using-rest"></a>Plannen met REST
 
-## <a name="schedule-in-the-portal"></a>Plannen in de portal
-
-Met de wizard gegevens importeren in de portal kunt u het schema definiëren voor een Indexeer functie tijdens het maken. De standaard instelling voor het schema is elk **uur** , wat betekent dat de Indexeer functie eenmaal wordt uitgevoerd nadat deze is gemaakt en daarna opnieuw wordt uitgevoerd.
-
-U kunt de instelling van het schema wijzigen in **één keer** wanneer u niet wilt dat de Indexeer functie automatisch opnieuw wordt uitgevoerd of **dagelijks** één keer per dag wordt uitgevoerd. Stel deze in op **aangepast** als u een ander interval of een specifieke toekomstige begin tijd wilt opgeven.
-
-Wanneer u de planning instelt op **aangepast** , worden er velden weer gegeven waarin u het **interval** en de **begin tijd (UTC)** kunt opgeven. Het kortste tijds interval dat is toegestaan, is 5 minuten en de langste is 1440 minuten (24 uur).
-
-   ![Indexerings schema instellen in de wizard gegevens importeren](media/search-howto-schedule-indexers/schedule-import-data.png "Indexerings schema instellen in de wizard gegevens importeren")
-
-Nadat u een Indexeer functie hebt gemaakt, kunt u de schema-instellingen wijzigen met behulp van het bewerkings paneel van de Indexeer functie. De plannings velden zijn hetzelfde als in de wizard gegevens importeren.
-
-   ![Het schema instellen in het paneel voor het bewerken van indexeren](media/search-howto-schedule-indexers/schedule-edit.png "Het schema instellen in het paneel voor het bewerken van indexeren")
-
-<a name="restApi"></a>
-
-## <a name="schedule-using-rest-apis"></a>Plannen met behulp van REST-Api's
-
-U kunt het schema voor een Indexeer functie definiëren met behulp van de REST API. Hiertoe neemt u de eigenschap **schema** op bij het maken of bijwerken van de Indexeer functie. In het onderstaande voor beeld ziet u een PUT-aanvraag voor het bijwerken van een bestaande Indexeer functie:
+Geef de **schema** -eigenschap op bij het maken of bijwerken van de Indexeer functie.
 
 ```http
     PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2020-06-30
@@ -76,23 +70,13 @@ U kunt het schema voor een Indexeer functie definiëren met behulp van de REST A
     {
         "dataSourceName" : "myazuresqldatasource",
         "targetIndexName" : "target index name",
-        "schedule" : { "interval" : "PT10M", "startTime" : "2015-01-01T00:00:00Z" }
+        "schedule" : { "interval" : "PT10M", "startTime" : "2021-01-01T00:00:00Z" }
     }
 ```
 
-De **interval** parameter is vereist. Het interval verwijst naar de tijd tussen het begin van twee opeenvolgende indexerings uitvoeringen. Het kleinste toegestane interval is 5 minuten. de langste is één dag. Deze moet worden ingedeeld als een XSD ' dayTimeDuration-waarde (een beperkte subset van een [ISO 8601 duration](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) -waarde). Het patroon hiervoor is: `P(nD)(T(nH)(nM))` . Voor beelden: elke `PT15M` 2 uur voor elke 15 minuten `PT2H` .
+## <a name="schedule-using-net"></a>Plannen met .NET
 
-De optionele **StartTime** geeft aan wanneer geplande uitvoeringen moeten beginnen. Als u deze para meter weglaat, wordt de huidige UTC-tijd gebruikt. Deze tijd kan in het verleden liggen. in dat geval wordt de eerste uitvoering gepland alsof de Indexeer functie continu actief is sinds de oorspronkelijke **StartTime**.
-
-U kunt op elk gewenst moment een Indexeer functie op aanvraag uitvoeren met de aanroep run indexer. Zie voor meer informatie over het uitvoeren van Indexeer functies en het instellen van index planningen indexering [uitvoeren](/rest/api/searchservice/run-indexer), [Indexeer functie ophalen](/rest/api/searchservice/get-indexer)en [Indexeer functie bijwerken](/rest/api/searchservice/update-indexer) in de referentie rest API.
-
-<a name="dotNetSdk"></a>
-
-## <a name="schedule-using-the-net-sdk"></a>Plannen met behulp van de .NET SDK
-
-U kunt het schema voor een Indexeer functie definiëren met behulp van de Azure Cognitive Search .NET SDK. Hiertoe neemt u de eigenschap **schema** op wanneer u een Indexeer functie maakt of bijwerkt.
-
-In het volgende C#-voor beeld wordt een Azure SQL database Indexeer functie gemaakt met behulp van een vooraf gedefinieerde gegevens bron en index, en wordt ingesteld dat het schema elke dag wordt uitgevoerd:
+In het volgende C#-voor beeld wordt een Azure SQL database Indexeer functie gemaakt met behulp van een vooraf gedefinieerde gegevens bron en-index, en wordt het schema ingesteld om elke dag één keer te worden uitgevoerd, vanaf nu:
 
 ```csharp
 var schedule = new IndexingSchedule(TimeSpan.FromDays(1))
@@ -109,15 +93,11 @@ var indexer = new SearchIndexer("hotels-sql-idxr", dataSource.Name, searchIndex.
 await indexerClient.CreateOrUpdateIndexerAsync(indexer);
 ```
 
+Het schema wordt gedefinieerd met behulp van de [IndexingSchedule](/dotnet/api/azure.search.documents.indexes.models.indexingschedule) -klasse, wanneer u een Indexeer functie maakt of bijwerkt met behulp van de [SearchIndexerClient](/dotnet/api/azure.search.documents.indexes.searchindexerclient). De **IndexingSchedule** -constructor vereist een **interval** parameter die is opgegeven met behulp van een **time span** -object. Zoals eerder is vermeld, is de kleinste toegestane waarde voor het interval 5 minuten en de grootste 24 uur. De tweede para meter **StartTime** , opgegeven als **Date Time offset** -object, is optioneel.
 
-Als de eigenschap **Schedule** wordt wegge laten, wordt de Indexeer functie slechts eenmaal uitgevoerd nadat deze is gemaakt.
+## <a name="next-steps"></a>Volgende stappen
 
-De para meter **StartTime** kan worden ingesteld op een tijd in het verleden. In dat geval wordt de eerste uitvoering gepland alsof de Indexeer functie continu actief is sinds de opgegeven **StartTime**.
+Voor Indexeer functies die volgens een planning worden uitgevoerd, kunt u bewerkingen bewaken door de status van de zoek service op te halen of gedetailleerde informatie te verkrijgen door diagnostische logboek registratie in te scha kelen.
 
-De planning is gedefinieerd met behulp van de [IndexingSchedule](/dotnet/api/azure.search.documents.indexes.models.indexingschedule) -klasse. De **IndexingSchedule** -constructor vereist een **interval** parameter die is opgegeven met behulp van een **time span** -object. De kleinste toegestane interval waarde is 5 minuten en de grootste is 24 uur. De tweede para meter **StartTime** , opgegeven als **Date Time offset** -object, is optioneel.
-
-Met de .NET SDK kunt u Indexeer bewerkingen beheren via de [SearchIndexerClient](/dotnet/api/azure.search.documents.indexes.searchindexerclient). 
-
-U kunt op elk gewenst moment een indexer op aanvraag uitvoeren met een van de methoden [RunIndexer](/dotnet/api/azure.search.documents.indexes.searchindexerclient.runindexer) of [RunIndexerAsync](/dotnet/api/azure.search.documents.indexes.searchindexerclient.runindexerasync) .
-
-Zie [SearchIndexerClient](/dotnet/api/azure.search.documents.indexes.searchindexerclient)voor meer informatie over het maken, bijwerken en uitvoeren van Indexeer functies.
+* [Status van de zoek Indexeer functie bewaken](search-howto-monitor-indexers.md)
+* [Logboek gegevens verzamelen en analyseren](search-monitor-logs.md)

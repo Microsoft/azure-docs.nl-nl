@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: b318ed0d5cd97ca7c020097dff25516f0783c70e
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 719bdd6a4d629bb4a35e7e11631670b0340e72a6
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055294"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090005"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Toestemming van groeps eigenaar configureren voor apps die toegang hebben tot groeps gegevens
 
@@ -31,7 +31,7 @@ U kunt configureren welke gebruikers toestemming mogen geven om toegang te krijg
 
 Volg deze stappen om de groeps eigenaar toestemming te geven voor het openen van groeps gegevens door apps:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator--company-administrator).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als [globale beheerder](../roles/permissions-reference.md#global-administrator).
 2. Selecteer **Azure Active Directory**  >  toestemming van **bedrijfs toepassingen**  >  **en machtigingen**  >  **instellingen voor gebruikers toestemming**.
 3. Selecteer onder **toestemming van groeps eigenaar voor apps die toegang krijgen tot gegevens** de optie die u wilt inschakelen.
 4. Selecteer **Opslaan** om uw instellingen op te slaan.

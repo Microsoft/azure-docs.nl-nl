@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/08/2019
 ms.author: jeedes
-ms.openlocfilehash: c3221063469315b2324c5039a46db622109826aa
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: 0b337225c5909563ef4aeb49cf0754e11075a6fb
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673604"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090033"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bridge"></a>Zelfstudie: Azure Active Directory-integratie met Bridge
 
@@ -106,7 +106,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Bridge moet u de vol
     b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<company name>.bridgeapp.com`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [ondersteuningsteam van Bridge](https://community.bridgeapp.com/community/help) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met het [ondersteuningsteam van Bridge](https://community.bridgeapp.com/hc/en-us/community/topics) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Raw)** te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
@@ -124,7 +124,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Bridge moet u de vol
 
 ### <a name="configure-bridge-single-sign-on"></a>Bridge voor eenmalige aanmelding configureren
 
-Als u eenmalige aanmelding aan de **Bridge**-zijde wilt configureren, moet u het gedownloade **Certificaat (Raw)** en de correcte uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Bridge](https://community.bridgeapp.com/community/help). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Bridge**-zijde wilt configureren, moet u het gedownloade **Certificaat (Raw)** en de correcte uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Bridge](https://community.bridgeapp.com/hc/en-us/community/topics). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
@@ -179,7 +179,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 ### <a name="create-bridge-test-user"></a>Testgebruiker maken in Bridge
 
-In deze sectie gaat u in Bridge een gebruiker maken met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van Bridge](https://community.bridgeapp.com/community/help) om de gebruikers toe te voegen in het Bridge-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie gaat u in Bridge een gebruiker maken met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van Bridge](https://community.bridgeapp.com/hc/en-us/community/topics) om de gebruikers toe te voegen in het Bridge-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

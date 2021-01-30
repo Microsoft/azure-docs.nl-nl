@@ -4,12 +4,12 @@ description: Meer informatie over het versleutelen van uw Azure container Regist
 ms.topic: article
 ms.date: 12/03/2020
 ms.custom: ''
-ms.openlocfilehash: 708a42a4f965f484060d42d89ea4f535c4365a10
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: fb30610457e539250c33d7d9726fe10f9c0f8c5a
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620433"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062725"
 ---
 # <a name="encrypt-registry-using-a-customer-managed-key"></a>REGI ster versleutelen met een door de klant beheerde sleutel
 
@@ -566,21 +566,31 @@ Nadat u de voor gaande stappen hebt voltooid, roteert u de sleutel naar een nieu
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-### <a name="removing-user-assigned-identity"></a>Door de gebruiker toegewezen identiteit verwijderen
+### <a name="removing-managed-identity"></a>Beheerde identiteit verwijderen
 
-Als u probeert een door de gebruiker toegewezen identiteit te verwijderen uit een REGI ster dat wordt gebruikt voor versleuteling, wordt er mogelijk een fout bericht weer gegeven dat er ongeveer als volgt uitziet:
+
+Als u probeert een door de gebruiker toegewezen of door het systeem toegewezen beheerde identiteit te verwijderen uit een REGI ster dat wordt gebruikt voor het configureren van versleuteling, ziet u mogelijk een fout bericht dat lijkt op het volgende:
  
 ```
 Azure resource '/subscriptions/xxxx/resourcegroups/myGroup/providers/Microsoft.ContainerRegistry/registries/myRegistry' does not have access to identity 'xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx' Try forcibly adding the identity to the registry <registry name>. For more information on bring your own key, please visit 'https://aka.ms/acr/cmk'.
 ```
  
-U kunt de versleutelings sleutel ook niet wijzigen (draaien). Als dit probleem optreedt, moet u de identiteit eerst opnieuw toewijzen met behulp van de GUID die wordt weer gegeven in het fout bericht. Bijvoorbeeld:
+U kunt de versleutelings sleutel ook niet wijzigen (draaien). De oplossings stappen zijn afhankelijk van het type identiteit dat voor versleuteling wordt gebruikt.
+
+**Door gebruiker toegewezen identiteit**
+
+Als dit probleem optreedt met een door de gebruiker toegewezen identiteit, moet u de identiteit eerst opnieuw toewijzen met behulp van de GUID die wordt weer gegeven in het fout bericht. Bijvoorbeeld:
 
 ```azurecli
 az acr identity assign -n myRegistry --identities xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
 ```
         
 Nadat u de sleutel hebt gewijzigd en een andere identiteit hebt toegewezen, kunt u de oorspronkelijke door de gebruiker toegewezen identiteit verwijderen.
+
+**Door het systeem toegewezen identiteit**
+
+Als dit probleem optreedt met een door het systeem toegewezen identiteit, [maakt u een ondersteunings ticket voor Azure](https://azure.microsoft.com/support/create-ticket/) om u te helpen bij het herstellen van de identiteit.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

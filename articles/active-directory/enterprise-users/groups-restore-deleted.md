@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfdc96df548a4a3df2b789759889b85835e1382a
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: 1eacba47e68310dd45976bcd9ddff052fa193436
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860725"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090134"
 ---
 # <a name="restore-a-deleted-microsoft-365-group-in-azure-active-directory"></a>Een verwijderde Microsoft 365-groep herstellen in Azure Active Directory
 
@@ -32,7 +32,7 @@ De machtigingen die zijn vereist om een groep te herstellen, kunnen zijn:
 Rol | Machtigingen
 --------- | ---------
 Globale beheerder, groepsbeheerder, Laag2-ondersteuning voor partner en Intune-beheerder | Kan elke willekeurige Microsoft 365-groep herstellen
-Gebruikersbeheerder en Laag1-ondersteuning voor partner | Kan elke verwijderde Microsoft 365-groep herstellen, behalve de groepen die zijn toegewezen aan de rol Bedrijfsbeheerder
+Gebruikersbeheerder en Laag1-ondersteuning voor partner | Kan verwijderde Microsoft 365 groep herstellen, behalve de groepen die zijn toegewezen aan de rol van globale beheerder
 Gebruiker | Kan elke verwijderde Microsoft 365-groep herstellen waarvan ze eigenaar zijn
 
 ## <a name="view-and-manage-the-deleted-microsoft-365-groups-that-are-available-to-restore"></a>De verwijderde Microsoft 365-groepen weergeven en beheren die beschikbaar zijn om te herstellen

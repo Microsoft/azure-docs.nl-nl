@@ -3,12 +3,12 @@ title: Concepten-opslag
 description: Meer informatie over de mogelijkheden voor de belangrijkste opslag in azure VMware-oplossingen voor persoonlijke Clouds.
 ms.topic: conceptual
 ms.date: 11/03/2020
-ms.openlocfilehash: 394b755f5dc8fdbcaa6092419e9451ae1691aa67
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 8ad1fc3ff2e514330a9ffc680494b5564b1184e4
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289248"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062792"
 ---
 #  <a name="azure-vmware-solution-storage-concepts"></a>Concepten van Azure VMware-oplossingen opslag
 
@@ -32,7 +32,7 @@ vSAN data stores gebruiken standaard versleuteling voor Data-at-rest. De versleu
 
 ## <a name="scaling"></a>Schalen
 
-De capaciteit van de systeem eigen cluster opslag wordt geschaald door hosts toe te voegen aan een cluster. Voor clusters die fungeren als host, wordt de onbewerkte capaciteit van het cluster uitgebreid met 15,4 TB per extra host. Clusters die zijn gebouwd met GP-hosts hebben hun onbewerkte capaciteit met 7,7 TB gestegen met elke extra host. In beide typen clusters nemen hosts ongeveer 10 minuten toe om aan een cluster te worden toegevoegd. Raadpleeg de [zelf studie][tutorial-scale-private-cloud] voor het schalen van een privécloud voor instructies over het schalen van clusters.
+De capaciteit van de systeem eigen cluster opslag wordt geschaald door hosts toe te voegen aan een cluster. Voor clusters die fungeren als host, wordt de onbewerkte capaciteit van het cluster uitgebreid met 15,4 TB per extra host. Clusters die zijn gebouwd met GP-hosts hebben hun onbewerkte capaciteit met 7,7 TB gestegen met elke extra host. In beide typen clusters nemen hosts ongeveer 10 minuten toe om aan een cluster te worden toegevoegd. Zie voor instructies voor het schalen van clusters de [zelf studie][tutorial-scale-private-cloud]over het schalen van een privécloud.
 
 ## <a name="azure-storage-integration"></a>Integratie van Azure Storage
 

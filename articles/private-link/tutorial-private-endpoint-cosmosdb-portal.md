@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: private-link
 ms.topic: tutorial
 ms.date: 9/25/2020
-ms.openlocfilehash: 477856bd5772cdc0a9ec00d81adf9c50847afdd0
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
-ms.translationtype: HT
+ms.openlocfilehash: 3a7e75641f6bb84b490231fcd06e04c3cbad06d3
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631946"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063464"
 ---
 # <a name="tutorial-connect-to-an-azure-cosmos-account-using-an-azure-private-endpoint"></a>Zelfstudie: Verbinding maken met een Azure Cosmos-account met behulp van een privé-eindpunt in Azure
 
@@ -218,19 +218,19 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
 
 1. Selecteer **Resourcegroepen** in het linkernavigatievenster.
 
-2. Selecteer **myResourceGroup**.
+1. Selecteer **myResourceGroup**.
 
-3. Selecteer **myVM**.
+1. Selecteer **myVM**.
 
-4. Selecteer op de overzichtspagina voor **myVM** de optie **Verbinding maken** en daarna **Bastion**.
+1. Selecteer op de overzichtspagina voor **myVM** de optie **Verbinding maken** en daarna **Bastion**.
 
-5. Selecteer de blauwe knop **Bastion gebruiken**.
+1. Selecteer de blauwe knop **Bastion gebruiken**.
 
-6. Voer de gebruikersnaam en het wachtwoord in die u hebt ingevoerd bij het maken van de virtuele machine.
+1. Voer de gebruikersnaam en het wachtwoord in die u hebt ingevoerd bij het maken van de virtuele machine.
 
-7. Open Windows PowerShell op de server nadat u verbinding hebt gemaakt.
+1. Open Windows PowerShell op de server nadat u verbinding hebt gemaakt.
 
-8. Voer `nslookup <cosmosdb-account-name>.documents.azure.com` in. Vervang **\<cosmosdb-account-name>** door de naam op van het Cosmos DB-account dat u in de eerdere stappen hebt gemaakt. 
+1. Voer `nslookup <cosmosdb-account-name>.documents.azure.com` de naam omzetting in en valideer deze. Vervang **\<cosmosdb-account-name>** door de naam op van het Cosmos DB-account dat u in de eerdere stappen hebt gemaakt. 
 
     ```powershell
     Server:  UnKnown
@@ -241,28 +241,31 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
     Address:  10.1.0.5
     Aliases:  mycosmosdb8675.documents.azure.com
     ```
-
     Er wordt een privé-IP-adres van **10.1.0.5** geretourneerd voor de naam van het Cosmos DB-account.  Dit adres bevindt zich in het subnet van het virtuele netwerk dat u eerder hebt gemaakt.
+    
+1. Ontvang uw Azure Cosmos DB primaire connection string van de portal. Een geldig connection string heeft de volgende indeling:
+   
+   Voor SQL-API-accounts: `https://<accountName>.documents.azure.com:443/;AccountKey=<accountKey>;` voor de Azure Cosmos DB-API voor MongoDb: `mongodb://<accountName>:<accountKey>@cdbmongo36.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false`
 
-9. Installeer [Microsoft Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows&toc=%2fazure%2fstorage%2fblobs%2ftoc.json) op de virtuele machine.
+1. Installeer [Microsoft Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows&toc=%2fazure%2fstorage%2fblobs%2ftoc.json) op de virtuele machine.
 
-10. Selecteer **Voltooien** nadat **Microsoft Azure Storage Explorer** is geïnstalleerd.  Laat het selectievakje aangevinkt om de toepassing te openen.
+1. Selecteer **Voltooien** nadat **Microsoft Azure Storage Explorer** is geïnstalleerd.  Laat het selectievakje aangevinkt om de toepassing te openen.
 
-11. Selecteer **Annuleren** op het scherm **Verbinding maken met Azure Storage**.
+1. Selecteer **Annuleren** op het scherm **Verbinding maken met Azure Storage**.
 
-12. Selecteer in Storage Explorer **Cosmos DB-accounts** en selecteer **Verbinding maken met Cosmos DB**.
+1. Selecteer in Storage Explorer **Cosmos DB-accounts** en selecteer **Verbinding maken met Cosmos DB**.
 
-13. Behoud de standaardinstelling van **SQL** onder **API selecteren**.
+1. Behoud de standaardinstelling van **SQL** onder **API selecteren**.
 
-14. Plak in het vak onder **Verbindingsreeks** de verbindingsreeks uit het Cosmos DB-account dat u in de vorige stappen hebt gekopieerd.
+1. Plak in het vak onder **Verbindingsreeks** de verbindingsreeks uit het Cosmos DB-account dat u in de vorige stappen hebt gekopieerd.
 
-15. Selecteer **Next**.
+1. Selecteer **Next**.
 
-16. Controleer of de instellingen juist zijn in **Samenvatting van de verbinding**.  
+1. Controleer of de instellingen juist zijn in **Samenvatting van de verbinding**.  
 
-17. Selecteer **Verbinding maken**.
+1. Selecteer **Verbinding maken**.
 
-18. Verbreek de verbinding met **myVM**.
+1. Verbreek de verbinding met **myVM**.
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen

@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 794c4e1a0859fc8a36b0abf4fcc9d5243c8bd308
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b1c0e91b08fff80c0308c0ead5fabce903421adc
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649565"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090117"
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Beveiligings overwegingen voor het extern openen van apps met Azure AD-toepassingsproxy
 
@@ -108,7 +108,7 @@ De connector gebruikt een client certificaat voor het verifiëren van de toepass
 Wanneer de connector voor het eerst is ingesteld, worden de volgende stroom gebeurtenissen uitgevoerd:
 
 1. De connector registratie voor de service treedt op als onderdeel van de installatie van de connector. Gebruikers wordt gevraagd hun Azure AD-beheerders referenties in te voeren. Het token dat is verkregen van deze verificatie wordt vervolgens weer gegeven aan de Azure AD-toepassingsproxy-service.
-2. De Application proxy-service evalueert het token. Hiermee wordt gecontroleerd of de gebruiker een bedrijfs beheerder is in de Tenant. Als de gebruiker geen beheerder is, wordt het proces beëindigd.
+2. De Application proxy-service evalueert het token. Hiermee wordt gecontroleerd of de gebruiker een globale beheerder is in de Tenant. Als de gebruiker geen beheerder is, wordt het proces beëindigd.
 3. De connector genereert een aanvraag voor een client certificaat en geeft deze, samen met het token, door aan de Application proxy-service. De service op zijn beurt verifieert het token en ondertekent de aanvraag van de client certificaat.
 4. De connector gebruikt het client certificaat voor toekomstige communicatie met de Application proxy-service.
 5. De connector voert een initiële pull-aanvraag uit van de systeem configuratie gegevens van de service met behulp van het client certificaat en is nu gereed om aanvragen te nemen.

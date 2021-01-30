@@ -7,12 +7,12 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/14/2020
 tags: connectors
-ms.openlocfilehash: f005bdfa5643ea187fb2973cac065563c4cc2ee6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2835bda8ac7242b7a3ea4ea63401f26b9c8e426
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91292452"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062992"
 ---
 # <a name="call-service-endpoints-over-http-or-https-from-azure-logic-apps"></a>Service-eindpunten aanroepen via HTTP of HTTPS vanuit Azure Logic Apps
 
@@ -48,7 +48,7 @@ Deze ingebouwde trigger maakt een HTTP-aanroep van de opgegeven URL voor een ein
 
 1. Selecteer in het zoekvak van de ontwerp functie **ingebouwd**. Voer in het zoekvak `http` als uw filter in. Selecteer in de lijst **Triggers** de **http-** trigger.
 
-   ![Selecteer HTTP-trigger](./media/connectors-native-http/select-http-trigger.png)
+   ![HTTP-trigger selecteren](./media/connectors-native-http/select-http-trigger.png)
 
    In dit voor beeld wordt de naam van de trigger gewijzigd in ' HTTP trigger ', zodat de stap een meer beschrijvende naam heeft. Daarnaast voegt het voor beeld een HTTP-actie toe en beide namen moeten uniek zijn.
 
@@ -56,7 +56,7 @@ Deze ingebouwde trigger maakt een HTTP-aanroep van de opgegeven URL voor een ein
 
    ![HTTP-trigger parameters invoeren](./media/connectors-native-http/http-trigger-parameters.png)
 
-   Als u een ander verificatie type dan **geen**selecteert, verschillen de verificatie-instellingen op basis van uw selectie. Zie de volgende onderwerpen voor meer informatie over de beschik bare verificatie typen voor HTTP:
+   Als u een ander verificatie type dan **geen** selecteert, verschillen de verificatie-instellingen op basis van uw selectie. Zie de volgende onderwerpen voor meer informatie over de beschik bare verificatie typen voor HTTP:
 
    * [Verificatie toevoegen aan uitgaande oproepen](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
    * [Toegang tot resources met beheerde identiteiten verifiëren](../logic-apps/create-managed-service-identity.md)
@@ -77,11 +77,11 @@ Met deze ingebouwde actie wordt een HTTP-aanroep naar de opgegeven URL voor een 
 
    In dit voor beeld wordt de HTTP-trigger als eerste stap gebruikt.
 
-1. Selecteer **nieuwe stap**onder de stap waar u de http-actie wilt toevoegen.
+1. Selecteer **nieuwe stap** onder de stap waar u de http-actie wilt toevoegen.
 
    Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
-1. Selecteer onder **Kies een actie**de optie **Ingebouwd**. Voer in het zoekvak `http` als uw filter in. Selecteer in de lijst **acties** de **http-** actie.
+1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvak `http` als uw filter in. Selecteer in de lijst **acties** de **http-** actie.
 
    ![HTTP-actie selecteren](./media/connectors-native-http/select-http-action.png)
 
@@ -91,7 +91,7 @@ Met deze ingebouwde actie wordt een HTTP-aanroep naar de opgegeven URL voor een 
 
    ![HTTP-actie parameters invoeren](./media/connectors-native-http/http-action-parameters.png)
 
-   Als u een ander verificatie type dan **geen**selecteert, verschillen de verificatie-instellingen op basis van uw selectie. Zie de volgende onderwerpen voor meer informatie over de beschik bare verificatie typen voor HTTP:
+   Als u een ander verificatie type dan **geen** selecteert, verschillen de verificatie-instellingen op basis van uw selectie. Zie de volgende onderwerpen voor meer informatie over de beschik bare verificatie typen voor HTTP:
 
    * [Verificatie toevoegen aan uitgaande oproepen](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
    * [Toegang tot resources met beheerde identiteiten verifiëren](../logic-apps/create-managed-service-identity.md)
@@ -104,7 +104,7 @@ Met deze ingebouwde actie wordt een HTTP-aanroep naar de opgegeven URL voor een 
 
 Hier vindt u meer informatie over de uitvoer van een HTTP-trigger of actie, waarmee deze gegevens worden geretourneerd:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 |----------|------|-------------|
 | `headers` | JSON-object | De headers van de aanvraag |
 | `body` | JSON-object | Het object met de inhoud van de hoofd tekst van de aanvraag |
@@ -249,7 +249,7 @@ Als een HTTP-trigger of actie deze headers bevat, verwijdert Logic Apps deze hea
 
 * `Accept-*` headers, behalve voor `Accept-version`
 * `Allow`
-* `Content-*` met deze uitzonde ringen: `Content-Disposition` , `Content-Encoding` en `Content-Type`
+* `Content-*` kopteksten behalve voor `Content-Disposition` , `Content-Encoding` en `Content-Type` Wanneer u post-en put-bewerkingen gebruikt, maar die niet zijn opgenomen voor Get-bewerkingen
 * `Cookie`
 * `Expires`
 * `Host`

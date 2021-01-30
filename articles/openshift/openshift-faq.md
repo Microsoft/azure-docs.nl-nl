@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 07/31/2020
-ms.openlocfilehash: 3a474228776c689dbbd6f15ddd926f29383400ce
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 69417945bcd5234a0e5e8d2d6aee42859bc95c20
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964708"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071049"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Veelgestelde vragen over Azure Red Hat open Shift
 
@@ -81,7 +81,7 @@ Knoop punten worden opnieuw opgestart als onderdeel van een upgrade.
 
 ### <a name="can-i-use-prometheus-to-monitor-my-applications"></a>Kan ik Prometheus gebruiken voor het bewaken van mijn toepassingen?
 
-Prometheus is vooraf geïnstalleerd en geconfigureerd voor Azure Red Hat open Shift 4. x-clusters. Meer informatie over [cluster bewaking](https://docs.openshift.com/container-platform/3.11/install_config/prometheus_cluster_monitoring.html).
+Prometheus is vooraf geïnstalleerd en geconfigureerd voor Azure Red Hat open Shift 4. x-clusters. Meer informatie over [cluster bewaking](https://docs.openshift.com/container-platform/4.6/operators/operator_sdk/osdk-monitoring-prometheus.html).
 
 Voor Azure Red Hat open Shift 3,11-clusters kunt u Prometheus in uw naam ruimte implementeren en toepassingen in uw naam ruimte controleren. Zie [Prometheus-exemplaar implementeren in azure Red Hat open Shift cluster](howto-deploy-prometheus.md)voor meer informatie.
 
@@ -97,7 +97,7 @@ Logboeken van onderliggende Vm's worden verwerkt door de beheerde service en wor
 
 ### <a name="how-can-a-customer-get-access-to-metrics-like-cpumemory-at-the-node-level-to-take-action-to-scale-debug-issues-etc-i-cannot-seem-to-run-kubectl-top-on-an-azure-red-hat-openshift-cluster"></a>Hoe kan een klant toegang krijgen tot metrische gegevens, zoals CPU/geheugen op knooppunt niveau om actie te ondernemen om te schalen, problemen op te lossen, enzovoort? Het is niet mogelijk om kubectl top uit te voeren op een Azure Red Hat open Shift-cluster.
 
-Voor Azure Red Hat open Shift 4. x-clusters bevat de webconsole open Shift alle metrische gegevens op knooppunt niveau. Zie voor meer informatie de documentatie voor Red Hat over het [weer geven van cluster informatie](https://docs.openshift.com/aro/4/web_console/using-dashboard-to-get-cluster-information.html).
+Voor Azure Red Hat open Shift 4. x-clusters bevat de webconsole open Shift alle metrische gegevens op knooppunt niveau. Zie voor meer informatie de documentatie voor Red Hat over het [weer geven van cluster informatie](https://docs.openshift.com/container-platform/4.6/web_console/using-dashboard-to-get-cluster-information.html).
 
 Voor Azure Red Hat open Shift 3,11-clusters hebben klanten toegang tot de metrische gegevens van de CPU/het geheugen op knooppunt niveau met behulp van de opdracht `oc adm top nodes` of `kubectl top nodes` met de cluster functie klant-beheerder. Klanten hebben ook toegang tot de metrische gegevens van de CPU/het geheugen van `pods` met de opdracht `oc adm top pods` of `kubectl top pods` .
 
@@ -116,14 +116,14 @@ Let op wanneer u specifieke labels gebruikt:
 - De hostnaam mag niet worden gebruikt. De hostnaam wordt vaak met upgrades en updates gedraaid en wordt gegarandeerd gewijzigd.
 - Als de klant een aanvraag voor specifieke labels of een implementatie strategie heeft, kan dit worden bereikt, maar is er technische inspanningen nodig en wordt deze niet ondersteund.
 
-Zie [pod-plaatsing beheren](https://docs.openshift.com/aro/4/nodes/scheduling/nodes-scheduler-about.html)voor meer informatie.
+Zie [pod-plaatsing beheren](https://docs.openshift.com/container-platform/4.6/nodes/scheduling/nodes-scheduler-about.html)voor meer informatie.
 
 ### <a name="is-the-image-registry-available-externally-so-i-can-use-tools-such-as-jenkins"></a>Is het installatie kopie register extern beschikbaar, zodat ik hulpprogram ma's zoals Jenkins kan gebruiken?
 
 Voor 4. x-clusters moet u een beveiligd REGI ster beschikbaar maken en verificatie configureren. Zie de volgende Red Hat-documentatie voor meer informatie:
 
-- [Een REGI ster beschikbaar maken](https://docs.openshift.com/aro/4/registry/securing-exposing-registry.html)
-- [Toegang tot het REGI ster](https://docs.openshift.com/aro/4/registry/accessing-the-registry.html)
+- [Een REGI ster beschikbaar maken](https://docs.openshift.com/container-platform/4.6/registry/securing-exposing-registry.html)
+- [Toegang tot het REGI ster](https://docs.openshift.com/container-platform/4.6/registry/accessing-the-registry.html)
 
 Voor 3,11 clusters is het REGI ster van de docker-installatie kopie beschikbaar. Het docker-REGI ster is beschikbaar via `https://docker-registry.apps.<clustername>.<region>.azmosa.io/` . U kunt ook Azure Container Registry gebruiken.
 
@@ -181,24 +181,24 @@ oc adm policy \
 
 Zie voor meer informatie de open Shift-documentatie over het uitschakelen van zelf inrichting voor uw cluster versie:
 
-- [Zelf inrichting in 4,3 clusters uitschakelen](https://docs.openshift.com/aro/4/applications/projects/configuring-project-creation.html#disabling-project-self-provisioning_configuring-project-creation)
+- [Zelf inrichting in 4,6 clusters uitschakelen](https://docs.openshift.com/container-platform/4.6/applications/projects/configuring-project-creation.html#disabling-project-self-provisioning_configuring-project-creation)
 - [Zelf inrichting in 3,11 clusters uitschakelen](https://docs.openshift.com/container-platform/3.11/admin_guide/managing_projects.html#disabling-self-provisioning)
 
 ### <a name="which-unix-rights-in-iaas-are-available-for-mastersinfraapp-nodes"></a>Welke UNIX-rechten (in IaaS) zijn beschikbaar voor modellen/infra structuur/app-knoop punten?
 
-Voor 4. x-clusters is toegang tot knoop punten beschikbaar via de rol cluster beheerder. Zie [KUBERNETES RBAC Overview](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html)(Engelstalig) voor meer informatie.
+Voor 4. x-clusters is toegang tot knoop punten beschikbaar via de rol cluster beheerder. Zie [KUBERNETES RBAC Overview](https://docs.openshift.com/container-platform/4.6/authentication/using-rbac.html)(Engelstalig) voor meer informatie.
 
 Voor 3,11-clusters is toegang tot knoop punten verboden.
 
 ### <a name="which-ocp-rights-do-we-have-cluster-admin-project-admin"></a>Welke OCP-rechten hebben we? Cluster-beheerder? Project-beheerder?
 
-Voor 4. x-clusters is de rol cluster-beheerder beschikbaar. Zie [KUBERNETES RBAC Overview](https://docs.openshift.com/container-platform/4.3/authentication/using-rbac.html)(Engelstalig) voor meer informatie.
+Voor 4. x-clusters is de rol cluster-beheerder beschikbaar. Zie [KUBERNETES RBAC Overview](https://docs.openshift.com/container-platform/4.6/authentication/using-rbac.html)(Engelstalig) voor meer informatie.
 
 Voor 3,11-clusters raadpleegt u het [overzicht van Cluster beheer](https://docs.openshift.com/aro/admin_guide/index.html) voor meer informatie.
 
 ### <a name="which-identity-providers-are-available"></a>Welke id-providers zijn beschikbaar?
 
-Voor 4. x-clusters configureert u uw eigen id-provider. Zie voor meer informatie de documentatie van Red Hat over het [configureren van identiteits-uitduikers](https://docs.openshift.com/aro/4/authentication/identity_providers/configuring-ldap-identity-provider.html).
+Voor 4. x-clusters configureert u uw eigen id-provider. Zie de Red Hat-documentatie over het configureren van [id-providers](https://docs.openshift.com/container-platform/4.6/authentication/identity_providers/configuring-ldap-identity-provider.html)voor meer informatie.
 
 Voor 3,11-clusters kunt u gebruikmaken van de Azure AD-integratie. 
 
@@ -210,13 +210,13 @@ Standaard worden gegevens in rust versleuteld. Op het Azure Storage-platform wor
 
 ### <a name="is-data-stored-in-etcd-encrypted-on-azure-red-hat-openshift"></a>Worden gegevens die zijn opgeslagen in etcd versleuteld op Azure Red Hat open Shift?
 
-Voor Azure Red Hat open Shift 4-clusters worden gegevens niet standaard versleuteld, maar u hebt de mogelijkheid om versleuteling in te scha kelen. Zie de hand leiding voor het [versleutelen van etcd](https://docs.openshift.com/container-platform/4.3/authentication/encrypting-etcd.html)voor meer informatie.
+Voor Azure Red Hat open Shift 4-clusters worden gegevens niet standaard versleuteld, maar u hebt de mogelijkheid om versleuteling in te scha kelen. Zie de hand leiding voor het [versleutelen van etcd](https://docs.openshift.com/container-platform/4.6/security/encrypting-etcd.html)voor meer informatie.
 
 Voor 3,11-clusters worden gegevens niet versleuteld op het niveau van de etcd. De optie om versleuteling in te scha kelen, wordt momenteel niet ondersteund. Open Shift ondersteunt deze functie, maar technische inspanningen zijn vereist om deze op de weg kaart te maken. De gegevens worden versleuteld op schijf niveau. Zie [gegevens versleutelen in de Data Store-laag](https://docs.openshift.com/container-platform/3.11/admin_guide/encrypting_data.html) voor meer informatie.
 
 ### <a name="can-we-choose-any-persistent-storage-solution-like-ocs"></a>Kunnen we een permanente opslag oplossing kiezen, zoals OCS? 
 
-Voor 4. x-clusters wordt Azure-schijf (Premium_LRS) geconfigureerd als de standaard-opslag klasse. Zie de documentatie van Red Hat over [permanente opslag](https://docs.openshift.com/aro/4/storage/understanding-persistent-storage.html)voor extra opslag providers en voor meer informatie over de configuratie (inclusief Azure file).
+Voor 4. x-clusters wordt Azure-schijf (Premium_LRS) geconfigureerd als de standaard-opslag klasse. Zie de documentatie van Red Hat over [permanente opslag](https://docs.openshift.com/container-platform/4.6/storage/understanding-persistent-storage.html)voor extra opslag providers en voor meer informatie over de configuratie (inclusief Azure file).
 
 Voor 3,11 clusters worden standaard twee opslag klassen gegeven: één voor Azure-schijf (Premium_LRS) en één voor Azure-bestand.
 

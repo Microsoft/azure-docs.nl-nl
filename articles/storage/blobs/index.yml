@@ -1,9 +1,9 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure Blob Storage
-summary: Azure Blob Storage is Microsoft's oplossing voor opslag van objecten in de cloud. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
+summary: Azure Blob Storage is de oplossing voor opslag van objecten in de cloud van Microsoft. Blob Storage is geoptimaliseerd voor het opslaan van enorme hoeveelheden niet-structureerde gegevens.
 metadata:
   title: Documentatie voor Azure Blob Storage
-  description: Azure Blob Storage is Microsoft's oplossing voor opslag van objecten in de cloud. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
+  description: Azure Blob Storage is de oplossing voor opslag van objecten in de cloud van Microsoft. Blob Storage is geoptimaliseerd voor het opslaan van grote hoeveelheden ongestructureerde gegevens.
   services: storage
   ms.service: storage
   ms.subservice: blobs
@@ -12,12 +12,12 @@ metadata:
   author: normesta
   ms.author: normesta
   ms.date: 08/20/2019
-  ms.openlocfilehash: 38cf63766195c1e91662d725aeb1b21c06257ed9
-  ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-  ms.translationtype: HT
+  ms.openlocfilehash: d85631cd7ace8aa5b9b0725920f477e2447e78c0
+  ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/25/2020
-  ms.locfileid: "95912345"
+  ms.lasthandoff: 01/29/2021
+  ms.locfileid: "99072015"
 landingContent:
 - title: Over Blob Storage
   linkLists:
@@ -91,15 +91,15 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Azure Blob Storage voor .NET
+    - text: Azure-Blob Storage voor .NET
       url: storage-quickstart-blobs-dotnet.md
-    - text: Azure Blob Storage voor Java
+    - text: Azure-Blob Storage voor Java
       url: storage-quickstart-blobs-java.md
-    - text: Azure Blob Storage voor Python
+    - text: Azure Blob Storage voor python
       url: storage-quickstart-blobs-python.md
-    - text: Azure Blob Storage met Node.js
+    - text: Azure Blob Storage voor Java script met behulp van Node.js
       url: storage-quickstart-blobs-nodejs.md
-    - text: Azure Blob Storage voor JavaScript in een browser
+    - text: Azure Blob Storage voor Java script in een browser
       url: quickstart-blobs-javascript-browser.md
     - text: Gebeurtenissen routeren naar een webeindpunt
       url: ../../event-grid/blob-event-quickstart-portal.md

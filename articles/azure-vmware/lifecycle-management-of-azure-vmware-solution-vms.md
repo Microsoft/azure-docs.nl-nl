@@ -3,12 +3,12 @@ title: Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 description: Meer informatie over het beheren van alle aspecten van de levens cyclus van uw Azure VMware-oplossing-Vm's met Microsoft Azure systeem eigen hulpprogram ma's.
 ms.topic: conceptual
 ms.date: 09/11/2020
-ms.openlocfilehash: ff1032900fa936895f3adfcb0d8a872f24948aca
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 5bba9cbbc8783cc285ff09f790ee1b35b20ba358
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326808"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062893"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 
@@ -81,13 +81,13 @@ Voor Azure Security Center is geen implementatie vereist. Zie een lijst met [ond
 
 Azure Arc breidt Azure-beheer uit naar elke infra structuur, waaronder Azure VMware-oplossing, on-premises of andere Cloud platforms.
 
-- Zie [hybride computers verbinden met Azure op schaal](../azure-arc/servers/onboard-service-principal.md) om servers met Azure-arc in te scha kelen voor meerdere Windows-of Linux-vm's.
+- Zie voor meer informatie over het inschakelen van Azure Arc enabled-servers voor meerdere virtuele Windows-of Linux-machines [verbinding maken tussen hybride machines en Azure op schaal](../azure-arc/servers/onboard-service-principal.md).
 
 ### <a name="onboard-hybrid-kubernetes-clusters-with-arc-enabled-kubernetes"></a>On-board hybride Kubernetes-clusters met Arc ingeschakelde Kubernetes
 
 U kunt een Kubernetes-cluster dat wordt gehost in uw Azure VMware-oplossings omgeving koppelen met behulp van Azure Arc enabled Kubernetes. 
 
-- Zie [een onboarding-service-principal voor Azure-Arc maken](../azure-arc/kubernetes/create-onboarding-service-principal.md).
+- Zie [een onboarding-service-principal voor Azure-Arc maken](../azure-arc/kubernetes/create-onboarding-service-principal.md)voor meer informatie.
 
 ### <a name="deploy-the-log-analytics-agent"></a>De Log Analytics-agent implementeren
 

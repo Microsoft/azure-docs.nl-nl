@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b46262e34f57b3ff9aeb6bd4ea671ec611b99df
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 3101cf3650fcfb7f9313b13c1c07a03dd734e9dd
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740343"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089221"
 ---
 # <a name="understand-roles-in-azure-active-directory"></a>Rollen in Azure Active Directory begrijpen
 
@@ -61,7 +61,7 @@ De volgende tabel fungeert als een hulpmiddel bij het begrijpen van deze rolcate
 Categorie | Rol
 ---- | ----
 Azure AD-specifieke rollen | Toepassingsbeheerder<br>Toepassingsontwikkelaar<br>Verificatiebeheerder<br>Beheerder van B2C IEF-sleutelset<br>Beheerder van B2C IEF-beleid<br>Beheerder van de cloudtoepassing<br>Cloudapparaatbeheerder<br>Beheerder van voorwaardelijke toegang<br>Apparaatbeheerders<br>Lezers van mappen<br>Adreslijstsynchronisatieaccounts<br>Adreslijstschrijvers<br>Beheerder van externe id-gebruikersstromen<br>Beheerder van externe id-gebruikersstroomkenmerken<br>Beheerder van externe id-providers<br>Groepsbeheerder<br>Afzender van gastuitnodigingen<br>Helpdeskbeheerder<br>Hybrid Identity-beheerder<br>Licentiebeheerder<br>Laag1-ondersteuning voor partner<br>Laag2-ondersteuning voor partner<br>Wachtwoordbeheerder<br>Bevoorrechte verificatiebeheerder<br>Beheerder voor bevoorrechte rollen<br>Rapportenlezer<br>Gebruikersaccountbeheerder
-Rollen voor meerdere services | Company Administratoristrain opr<br>Beheerder voor naleving<br>Beheerder voor nalevingsgegevens<br>Algemene lezer<br>Beveiligingsbeheer<br>Beveiligingsoperator<br>Beveiligingslezer<br>Serviceondersteuningsbeheerder
+Rollen voor meerdere services | Hoofdbeheerder<br>Beheerder voor naleving<br>Beheerder voor nalevingsgegevens<br>Algemene lezer<br>Beveiligingsbeheer<br>Beveiligingsoperator<br>Beveiligingslezer<br>Serviceondersteuningsbeheerder
 Servicespecifieke rollen | Azure DevOps-beheerder<br>Azure Information Protection-beheerder<br>Factureringsbeheerder<br>CRM-servicebeheerder<br>Toegangsfiatteur voor Klanten-lockbox<br>Desktop Analytics-beheerder<br>Exchange-servicebeheerder<br>Insights-beheerder<br>Insights-bedrijfsleider<br>Intune-servicebeheerder<br>Kaizala-beheerder<br>Lync Service-beheerder<br>Berichtencentrum-privacylezer<br>Berichtencentrum-lezer<br>Moderne Commerce-gebruiker<br>Netwerkbeheerder<br>Beheerder van Office-apps<br>Power BI-servicebeheerder<br>Power Platform-beheerder<br>Printerbeheerder<br>Printertechnicus<br>Zoekbeheerder<br>Zoekredacteur<br>SharePoint-servicebeheerder<br>Teams-communicatiebeheerder<br>Ondersteuningstechnicus voor Teams-communicatie<br>Ondersteuningsspecialist voor Teams-communicatie<br>Teams-apparaatbeheerder<br>Teams-servicebeheerder
 
 ## <a name="next-steps"></a>Volgende stappen

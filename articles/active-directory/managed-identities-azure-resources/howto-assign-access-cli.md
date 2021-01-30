@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/06/2017
+ms.date: 01/29/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e1383fc6cca34cac141ce9f1316b4df0879900aa
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: e3b06ce76ae77aa62b20b707a736e8e20e5f6c45
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92891993"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090041"
 ---
 # <a name="assign-a-managed-identity-access-to-a-resource-using-azure-cli"></a>Een beheerde identiteits toegang tot een resource toewijzen met behulp van Azure CLI
 
@@ -33,7 +33,7 @@ Als u nog geen Azure-account hebt, [registreer u dan voor een gratis account](ht
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Als u niet bekend bent met beheerde identiteiten voor Azure-resources, raadpleegt u [Wat zijn beheerde identiteiten voor Azure-resources?](overview.md). Zie [beheerde identiteits typen](overview.md#managed-identity-types)voor meer informatie over door het systeem toegewezen en door de gebruiker toegewezen beheerde identiteits typen.
+- Zie [Wat zijn beheerde identiteiten voor Azure-resources?](overview.md) als u niet bekend met beheerde identiteiten voor Azure-resources. Zie [Beheerde identiteitstypen](overview.md#managed-identity-types) voor meer informatie over door het systeem toegewezen en door de gebruiker toegewezen beheerde identiteitstypen.
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 

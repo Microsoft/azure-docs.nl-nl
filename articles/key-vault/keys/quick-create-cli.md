@@ -3,20 +3,19 @@ title: 'Kenmerken van een sleutel in Azure Key Vault maken en ophalen: Azure CLI
 description: Quickstart waarin wordt getoond hoe u een sleutel instelt in Azure Key Vault en daaruit ophaalt met behulp van Azure CLI
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.date: 03/30/2020
+ms.date: 01/27/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8da5e86362f41322102c3b5316df5743e0c2458f
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
-ms.translationtype: HT
+ms.openlocfilehash: 4141e60370b397e799664b7d42384bbeb096bd05
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976981"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071168"
 ---
 # <a name="quickstart-set-and-retrieve-a-key-from-azure-key-vault-using-azure-cli"></a>Quickstart: Een sleutel instellen in Azure Key Vault en daaruit ophalen met behulp van Azure CLI
 
@@ -30,30 +29,11 @@ In deze quickstart maakt u een sleutelkluis in Azure Key Vault met behulp van de
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *ContosoResourceGroup* in de locatie *eastus* gemaakt.
-
-```azurecli
-az group create --name "ContosoResourceGroup" --location eastus
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-cli-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Een sleutelkluis maken
 
-Vervolgens maakt u een sleutelkluis in de resourcegroep die u in de vorige stap hebt gemaakt. U moet enkele gegevens verstrekken:
-
-- Voor deze snelstart gebruiken we **Contoso-vault2**. U moet in de test een unieke naam opgeven.
-- Naam van resourcegroep **ContosoResourceGroup**.
-- De locatie **VS - oost**.
-
-```azurecli
-az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGroup" --location eastus
-```
-
-De uitvoer van deze cmdlet toont eigenschappen van de nieuw gemaakte sleutelkluis. Let op de onderstaande twee eigenschappen:
-
-- **Kluisnaam**: in het voorbeeld is dat **Contoso-Vault2**. U gebruikt deze naam voor andere Key Vault-opdrachten.
-- **Kluis-URI**: in het voorbeeld is dat https://contoso-vault2.vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
-
-Vanaf dit punt is uw Azure-account nu als enige gemachtigd om bewerkingen op deze nieuwe kluis uit te voeren.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-cli-kv-creation.md)]
 
 ## <a name="add-a-key-to-key-vault"></a>Een sleutel toevoegen aan Key Vault
 
@@ -62,33 +42,28 @@ Als u een sleutel wilt toevoegen aan de kluis, hoeft u maar een paar extra stapp
 Typ de onderstaande opdrachten om de sleutel **ExampleKey** te maken:
 
 ```azurecli
-az keyvault key create --vault-name "Contoso-Vault2" -n ExampleKey --protection software
+az keyvault key create --vault-name "<your-unique-keyvault-name>" -n ExampleKey --protection software
 ```
 
-U kunt nu naar deze sleutel die u aan Azure Key Vault hebt toegevoegd, verwijzen met behulp van de URI ervan. Gebruik **'https://Contoso-Vault2.vault.azure.net/keys/ExampleKey '** om de huidige versie op te halen. 
+U kunt nu naar deze sleutel die u aan Azure Key Vault hebt toegevoegd, verwijzen met behulp van de URI ervan. Gebruik **' https://<your-unique-sleutel kluis-name>. Vault.Azure.net/Keys/ExampleKey '** om de huidige versie op te halen. 
 
 Een eerder opgeslagen sleutel weergeven:
 
 ```azurecli
 
-az keyvault key show --name "ExampleKey" --vault-name "Contoso-Vault2"
+az keyvault key show --name "ExampleKey" --vault-name "<your-unique-keyvault-name>"
 ```
 
 U hebt nu een sleutelkluis gemaakt, een sleutel opgeslagen en deze vervolgens opgehaald.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Andere snelstartgidsen en zelfstudies in deze verzameling zijn gebaseerd op deze snelstartgids. Als u van plan bent om verder te gaan met volgende snelstarts en zelfstudies, kunt u deze resources intact laten.
-U kunt de opdracht [az group delete](/cli/azure/group) gebruiken om de resourcegroep en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt. U kunt de resources als volgt verwijderen:
-
-```azurecli
-az group delete --name ContosoResourceGroup
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-cli-delete-resources.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze quickstart hebt u een sleutelkluis gemaakt en daar een sleutel in opgeslagen. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
-- Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault?view=azure-cli-latest)
+- Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault)
 - Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 10/26/2020
-ms.openlocfilehash: 7b0aead6ada87ca259c838f3f56e68f1030302a2
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.openlocfilehash: 909385b4f670d084a9357b6ac2840a9458604667
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675721"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063026"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Zelfstudie: Een Azure Red Hat OpenShift 4-cluster maken
 
@@ -92,7 +92,7 @@ Als u een aangepast domein opgeeft voor uw cluster, moet u rekening houden met h
 
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Een virtueel netwerk met twee lege subnetten maken
 
-Nu gaat u een virtueel netwerk met twee lege subnetten maken.
+Nu gaat u een virtueel netwerk met twee lege subnetten maken. Als u een bestaand virtueel netwerk hebt dat aan uw behoeften voldoet, kunt u deze stap overs Laan.
 
 1. **Stel de volgende variabelen in de shell-omgeving in waarin u de opdrachten en `az` wilt uitvoeren.**
 
@@ -131,7 +131,7 @@ Nu gaat u een virtueel netwerk met twee lege subnetten maken.
 
 2. **Maak een virtueel netwerk.**
 
-   Azure Red Hat OpenShift-clusters met OpenShift 4 vereisen een virtueel netwerk met twee lege subnetten voor de hoofd- en werkknooppunten.
+   Azure Red Hat OpenShift-clusters met OpenShift 4 vereisen een virtueel netwerk met twee lege subnetten voor de hoofd- en werkknooppunten. U kunt hiervoor een nieuw virtueel netwerk maken of een bestaand virtueel netwerk gebruiken.
 
    Maak een nieuw virtueel netwerk in de resourcegroep die u eerder hebt gemaakt:
 

@@ -6,16 +6,16 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/23/2020
-ms.openlocfilehash: 6d1fd873de3313678875a8c167b90fafb8ede7ae
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 07b0dd38b616525728c264bd315c5cb8ddcaa79a
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/29/2021
-ms.locfileid: "99061646"
+ms.locfileid: "99072049"
 ---
 # <a name="network-concepts-for-azure-red-hat-openshift-aro"></a>Netwerkconcepten voor Azure Red Hat OpenShift (ARO)
 
-Deze handleiding bevat een overzicht van netwerken in Azure Red Hat OpenShift op OpenShift 4-clusters, en tevens een diagram en een lijst met belangrijke eindpunten. Zie de [Azure Red Hat OpenShift 4-netwerkdocumentatie](https://docs.openshift.com/aro/4/networking/understanding-networking.html) (Engelstalig) voor meer informatie over de basisconcepten van OpenShift-netwerken.
+Deze handleiding bevat een overzicht van netwerken in Azure Red Hat OpenShift op OpenShift 4-clusters, en tevens een diagram en een lijst met belangrijke eindpunten. Zie de [Azure Red Hat OpenShift 4-netwerkdocumentatie](https://docs.openshift.com/container-platform/4.6/networking/understanding-networking.html) (Engelstalig) voor meer informatie over de basisconcepten van OpenShift-netwerken.
 
 ![Azure Red Hat OpenShift 4-netwerkdiagram](./media/concepts-networking/aro4-networking-diagram.png)
 
@@ -64,7 +64,7 @@ De volgende lijst bevat belangrijke netwerkonderdelen in een Azure Red Hat OpenS
 
 ## <a name="networking-basics-in-openshift"></a>Basisprincipes van netwerken in OpenShift
 
-OpenShift Software Defined Networking [(SDN)](https://docs.openshift.com/container-platform/4.5/networking/openshift_sdn/about-openshift-sdn.html) wordt gebruikt voor het configureren van een overlay-netwerk met behulp van Open vSwitch [(OVS)](https://www.openvswitch.org/), een OpenFlow-implementatie op basis van de Container Network Interface-specificatie (CNI). De SDN ondersteunt verschillende invoegtoepassingen; Network Policy is de invoegtoepassing die in Azure Red Hat in OpenShift 4 wordt gebruikt. Alle netwerkcommunicatie wordt beheerd door de SDN, dus er zijn geen extra routes nodig in uw virtuele netwerken om communicatie tussen pods te bewerkstelligen.
+OpenShift Software Defined Networking [(SDN)](https://docs.openshift.com/container-platform/4.6/networking/openshift_sdn/about-openshift-sdn.html) wordt gebruikt voor het configureren van een overlay-netwerk met behulp van Open vSwitch [(OVS)](https://www.openvswitch.org/), een OpenFlow-implementatie op basis van de Container Network Interface-specificatie (CNI). De SDN ondersteunt verschillende invoegtoepassingen; Network Policy is de invoegtoepassing die in Azure Red Hat in OpenShift 4 wordt gebruikt. Alle netwerkcommunicatie wordt beheerd door de SDN, dus er zijn geen extra routes nodig in uw virtuele netwerken om communicatie tussen pods te bewerkstelligen.
 
 ## <a name="networking--for-azure-red-hat-openshift"></a>Netwerken voor Azure Red Hat OpenShift
 
@@ -79,7 +79,7 @@ De volgende netwerkfuncties zijn specifiek voor Azure Red Hat OpenShift:
 * Pod CIDR moet mini maal/18 groot zijn. (Het Pod-netwerk is niet-routeerbaar bare Ip's en wordt alleen gebruikt in de open Shift SDN.)
 * Aan elk knooppunt wordt een /23-subnet (512 IP's) voor de pods toegewezen. Deze waarde kan niet worden gewijzigd.
 * U kunt geen pod aan meer dan één netwerk koppelen.
-* U kunt geen uitgaand statisch IP-adres configureren. (Dit is een OpenShift-functie. Zie [configuring egress IPs](https://docs.openshift.com/container-platform/4.5/networking/openshift_sdn/assigning-egress-ips.html)) (Uitgaande IP-adressen configureren) voor meer informatie).
+* U kunt geen uitgaand statisch IP-adres configureren. (Dit is een OpenShift-functie. Zie [configuring egress IPs](https://docs.openshift.com/container-platform/4.6/networking/openshift_sdn/assigning-egress-ips.html)) (Uitgaande IP-adressen configureren) voor meer informatie).
 
 ## <a name="network-settings"></a>Netwerkinstellingen
 
@@ -98,7 +98,7 @@ Netwerkbeveiligingsgroepen worden gemaakt in de resourcegroep van het knooppunt;
 Met een openlijk zichtbare API-server kunt u geen netwerkbeveiligingsgroepen maken en deze toewijzen aan de NIC's.
 
 ## <a name="domain-forwarding"></a>Doorsturen van domeinen
-Azure Red Hat OpenShift gebruikt CoreDNS. Doorsturen van domeinen kan worden geconfigureerd. U kunt uw eigen DNS niet naar uw virtuele netwerken meenemen. Zie de documentatie over [het gebruik van DNS doorsturen](https://docs.openshift.com/aro/4/networking/dns-operator.html#nw-dns-forward_dns-operator) (Engelstalig) voor meer informatie.
+Azure Red Hat OpenShift gebruikt CoreDNS. Doorsturen van domeinen kan worden geconfigureerd. U kunt uw eigen DNS niet naar uw virtuele netwerken meenemen. Zie de documentatie over [het gebruik van DNS doorsturen](https://docs.openshift.com/container-platform/4.6/networking/dns-operator.html#nw-dns-forward_dns-operator) (Engelstalig) voor meer informatie.
 
 ## <a name="whats-new-in-openshift-45"></a>Nieuw in OpenShift 4.5
 

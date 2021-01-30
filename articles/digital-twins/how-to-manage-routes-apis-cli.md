@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e2623ebf929f6a24cfc977896acea514634ffb23
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: d25a429873ccf8b546c0919456c97e64445f184c
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054502"
+ms.locfileid: "99071695"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -48,7 +48,7 @@ In deze sectie wordt uitgelegd hoe u deze eind punten maakt met behulp van de Az
 
 ### <a name="create-the-endpoint"></a>Het eind punt maken
 
-Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. In de volgende voor beelden ziet u hoe u eind punten maakt met behulp `az dt endpoint create` van de opdracht voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). Vervang de tijdelijke aanduidingen in de opdrachten door de gegevens van uw eigen resources.
+Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. In de volgende voor beelden ziet u hoe u eind punten maakt met behulp van de opdracht [AZ DT endpoint Create](/cli/azure/ext/azure-iot/dt/endpoint/create?view=azure-cli-latest&preserve-view=true) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). Vervang de tijdelijke aanduidingen in de opdrachten door de gegevens van uw eigen resources.
 
 Een Event Grid-eind punt maken:
 
@@ -56,21 +56,39 @@ Een Event Grid-eind punt maken:
 az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
 ```
 
-Een Event Hubs-eind punt maken:
+Een Event Hubs-eind punt maken (authenticatie op basis van sleutel):
 ```azurecli-interactive
 az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --eventhub-resource-group <Event-Hub-resource-group> --eventhub-namespace <Event-Hub-namespace> --eventhub <Event-Hub-name> --eventhub-policy <Event-Hub-policy> -n <your-Azure-Digital-Twins-instance-name>
 ```
 
-Een eind punt voor Service Bus-onderwerpen maken:
+Een eind punt voor een Service Bus-onderwerp maken (verificatie op basis van een sleutel):
 ```azurecli-interactive 
 az dt endpoint create servicebus --endpoint-name <Service-Bus-endpoint-name> --servicebus-resource-group <Service-Bus-resource-group-name> --servicebus-namespace <Service-Bus-namespace> --servicebus-topic <Service-Bus-topic-name> --servicebus-policy <Service-Bus-topic-policy> -n <your-Azure-Digital-Twins-instance-name>
 ```
 
 Nadat deze opdrachten zijn uitgevoerd, is het gebeurtenis raster, het Event Hub Service Bus of het onderwerp beschikbaar als een eind punt in azure Digital Apparaatdubbels, onder de naam die u bij het `--endpoint-name` argument hebt opgegeven. Normaal gesp roken gebruikt u deze naam als het doel van een **gebeurtenis route**, die u [later in dit artikel](#create-an-event-route)kunt maken.
 
+#### <a name="create-an-endpoint-with-identity-based-authentication"></a>Een eind punt maken met verificatie op basis van een identiteit
+
+U kunt ook een eind punt maken dat verificatie op basis van een identiteit heeft, om het eind punt te gebruiken met een [beheerde identiteit](concepts-security.md#managed-identity-for-accessing-other-resources-preview). Deze optie is alleen beschikbaar voor Event hub-en Service Bus-type-eind punten (wordt niet ondersteund voor Event Grid).
+
+De CLI-opdracht voor het maken van dit type eind punt bevindt zich hieronder. U hebt de volgende waarden nodig om de tijdelijke aanduidingen in de opdracht te koppelen:
+* de Azure-Resource-ID van uw Azure Digital Apparaatdubbels-exemplaar
+* een eindpunt naam
+* een eindpunt type
+* de naam ruimte van de eindpunt resource
+* de naam van het onderwerp Event Hub of Service Bus
+* de locatie van uw Azure Digital Apparaatdubbels-exemplaar
+
+```azurecli-interactive
+az resource create --id <Azure-Digital-Twins-instance-Azure-resource-ID>/endpoints/<endpoint-name> --properties '{\"properties\": { \"endpointType\": \"<endpoint-type>\", \"authenticationType\": \"IdentityBased\", \"endpointUri\": \"sb://<endpoint-namespace>.servicebus.windows.net\", \"entityPath\": \"<name-of-event-hub-or-Service-Bus-topic>\"}, \"location\":\"<instance-location>\" }' --is-full-object
+```
+
 ### <a name="create-an-endpoint-with-dead-lettering"></a>Een eind punt maken met onbestelbare berichten
 
 Wanneer een eind punt een gebeurtenis binnen een bepaalde tijds periode niet kan leveren of nadat de gebeurtenis een bepaald aantal keren is geprobeerd, kan de gebeurtenis worden verzonden naar een opslag account. Dit proces wordt **onbestelbare berichten** genoemd.
+
+Eind punten waarvoor onbestelbare berichten zijn ingeschakeld, kunnen worden ingesteld met de Azure Digital Apparaatdubbels [cli](how-to-use-cli.md) -of [Control-api's](how-to-use-apis-sdks.md#overview-control-plane-apis).
 
 Zie voor meer informatie over onbestelbare berichten [*concepten: gebeurtenis routes*](concepts-route-events.md#dead-letter-events). Ga verder met de rest van deze sectie voor instructies over het instellen van een eind punt met onbestelbare berichten.
 
@@ -78,7 +96,7 @@ Zie voor meer informatie over onbestelbare berichten [*concepten: gebeurtenis ro
 
 Voordat u de locatie van de onbestelbare letter instelt, moet u een [opslag account](../storage/common/storage-account-create.md?tabs=azure-portal) hebben met een [container](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) die is ingesteld in uw Azure-account. 
 
-U geeft de URL voor deze container op wanneer u later het eind punt maakt. De locatie van de onbestelbare berichten wordt aan het eind punt gegeven als container-URL met een [SAS-token](../storage/common/storage-sas-overview.md). Dat token moet `write` toestemming hebben voor de doel container in het opslag account. De volledig opgemaakte URL heeft de volgende indeling: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>` .
+U geeft de URI voor deze container op wanneer u later het eind punt maakt. De locatie van de onbestelbare letter wordt aan het eind punt gegeven als container-URI met een [SAS-token](../storage/common/storage-sas-overview.md). Dat token moet `write` toestemming hebben voor de doel container in het opslag account. De volledig opgemaakte **SAS-URI met onbestelbare tekens** heeft de volgende indeling: `https://<storage-account-name>.blob.core.windows.net/<container-name>?<SAS-token>` .
 
 Volg de onderstaande stappen om deze opslag resources in uw Azure-account in te stellen, zodat u de eindpunt verbinding kunt instellen in de volgende sectie.
 
@@ -99,25 +117,44 @@ Volg de onderstaande stappen om deze opslag resources in uw Azure-account in te 
 
     :::image type="content" source="./media/how-to-manage-routes-apis-cli/copy-sas-token.png" alt-text="SAS-token kopiëren voor gebruik in het onbestelbare geheim." lightbox="./media/how-to-manage-routes-apis-cli/copy-sas-token.png":::
     
-#### <a name="configure-the-endpoint"></a>Het eind punt configureren
+#### <a name="create-the-dead-letter-endpoint"></a>Het eind punt voor onbestelbare berichten maken
 
-Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, kunt u het eind punt maken met behulp van de Azure Resource Manager-Api's. 
+Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, voegt u de volgende para meter voor onbestelbare berichten toe aan de opdracht [AZ DT-eind punt maken](/cli/azure/ext/azure-iot/dt/endpoint/create?view=azure-cli-latest&preserve-view=true) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
 
-1. Gebruik eerst de documentatie van de [Azure Resource Manager api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) om een aanvraag in te stellen voor het maken van een eind punt en vul de vereiste aanvraag parameters in. 
+De waarde voor de para meter is de **SAS-URI met onbestelbare tekens** die bestaat uit de naam van het opslag account, de container naam en het SAS-token dat u in de [vorige sectie](#set-up-storage-resources)hebt verzameld. Met deze para meter wordt het eind punt gemaakt met verificatie op basis van een sleutel.
 
-2. Voeg vervolgens een `deadLetterSecret` veld toe aan het eigenschappen object in de **hoofd tekst** van de aanvraag. Stel deze waarde in op basis van de onderstaande sjabloon, waarmee een URL wordt gemaakt op basis van de naam van het opslag account, de container naam en de SAS-token waarde die u in de [vorige sectie](#set-up-storage-resources)hebt verzameld.
-      
-  :::code language="json" source="~/digital-twins-docs-samples/api-requests/deadLetterEndpoint.json":::
+```azurecli
+--deadletter-sas-uri https://<storage-account-name>.blob.core.windows.net/<container-name>?<SAS-token>
+```
 
-3. Verzend de aanvraag om het eind punt te maken.
+Voeg deze para meter toe aan het einde van de opdrachten voor het maken van eind punten van de sectie [*het eind punt maken*](#create-the-endpoint) om een eind punt te maken van het gewenste type waarvoor onbestelbare berichten zijn ingeschakeld.
 
-Zie de Azure Digital Apparaatdubbels REST API-documentatie: [endpoints-DigitalTwinsEndpoint CreateOrUpdate](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate)voor meer informatie over het structureren van deze aanvraag.
+U kunt ook onbestelbare letter-eind punten maken met behulp van de [Azure Digital apparaatdubbels Control-api's](how-to-use-apis-sdks.md#overview-control-plane-apis) in plaats van de cli. Raadpleeg de [DigitalTwinsEndpoint-documentatie](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) voor meer informatie over het structureren van de aanvraag en het toevoegen van de para meters voor onbestelbare berichten.
 
-### <a name="message-storage-schema"></a>Schema voor bericht opslag
+#### <a name="create-a-dead-letter-endpoint-with-identity-based-authentication"></a>Een eind punt met een onbestelbare letter maken met verificatie op basis van identiteit
+
+U kunt ook een eind punt voor onbestelbare berichten maken met verificatie op basis van een identiteit, om het eind punt te gebruiken met een [beheerde identiteit](concepts-security.md#managed-identity-for-accessing-other-resources-preview). Deze optie is alleen beschikbaar voor Event hub-en Service Bus-type-eind punten (wordt niet ondersteund voor Event Grid).
+
+Als u dit type eind punt wilt maken, gebruikt u dezelfde CLI-opdracht van eerdere om [een eind punt te maken met verificatie op basis](#create-an-endpoint-with-identity-based-authentication)van een identiteit, met een extra veld in de JSON-nettolading voor een `deadLetterUri` .
+
+Dit zijn de waarden die u nodig hebt om de tijdelijke aanduidingen in de opdracht te koppelen:
+* de Azure-Resource-ID van uw Azure Digital Apparaatdubbels-exemplaar
+* een eindpunt naam
+* een eindpunt type
+* de naam ruimte van de eindpunt resource
+* de naam van het onderwerp Event Hub of Service Bus
+* Details van de **SAS-URI voor onbestelbare berichten** : naam van opslag account, container naam
+* de locatie van uw Azure Digital Apparaatdubbels-exemplaar
+
+```azurecli-interactive
+az resource create --id <Azure-Digital-Twins-instance-Azure-resource-ID>/endpoints/<endpoint-name> --properties '{\"properties\": { \"endpointType\": \"<endpoint-type>\", \"authenticationType\": \"IdentityBased\", \"endpointUri\": \"sb://<endpoint-namespace>.servicebus.windows.net\", \"entityPath\": \"<name-of-event-hub-or-Service-Bus-topic>\", \"deadLetterUri\": \"https://<storage-account-name>.blob.core.windows.net/<container-name>\"}, \"location\":\"<instance-location>\" }' --is-full-object
+```
+
+#### <a name="message-storage-schema"></a>Schema voor bericht opslag
 
 Zodra het eind punt met onbestelbare berichten is ingesteld, worden niet-gestuurde meldingen opgeslagen in de volgende indeling in uw opslag account:
 
-`{container}/{endpointName}/{year}/{month}/{day}/{hour}/{eventId}.json`
+`{container}/{endpoint-name}/{year}/{month}/{day}/{hour}/{event-ID}.json`
 
 Onbestelbare berichten komen overeen met het schema van de oorspronkelijke gebeurtenis die is bedoeld om aan uw oorspronkelijke eind punt te worden geleverd.
 
@@ -128,7 +165,7 @@ Hier volgt een voor beeld van een bericht met een onbestelbare melding voor een 
   "specversion": "1.0",
   "id": "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "type": "Microsoft.DigitalTwins.Twin.Create",
-  "source": "<yourInstance>.api.<yourregion>.da.azuredigitaltwins-test.net",
+  "source": "<your-instance>.api.<your-region>.da.azuredigitaltwins-test.net",
   "data": {
     "$dtId": "<yourInstance>xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "$etag": "W/\"xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxxxxx\"",

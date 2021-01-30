@@ -375,16 +375,18 @@
           href: azure-stack-edge-replace-device.md
     - name: Releaseopmerkingen
       items:
-        - name: 2007 - Huidig
-          href: ../databox-gateway/data-box-gateway-2007-release-notes.md
+        - name: 2101-actueel
+          href: azure-stack-edge-2101-release-notes.md
+        - name: 2007
+          href: ../databox-gateway/data-box-gateway-2007-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
         - name: 1911
-          href: ../databox-gateway/data-box-gateway-1911-release-notes.md
+          href: ../databox-gateway/data-box-gateway-1911-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
         - name: 1906
-          href: ../databox-gateway/data-box-gateway-1906-release-notes.md
+          href: ../databox-gateway/data-box-gateway-1906-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
         - name: 1905
-          href: ../databox-gateway/data-box-gateway-1905-release-notes.md
+          href: ../databox-gateway/data-box-gateway-1905-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
         - name: Algemene beschikbaarheid (GA)
-          href: ../databox-gateway/data-box-gateway-release-notes.md
+          href: ../databox-gateway/data-box-gateway-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
     - name: Naslaginformatie
       items:
         - name: Azure PowerShell
@@ -397,7 +399,7 @@
   items:
     - name: Beveiligingsbasislijn
       href: security-baseline.md
-- name: Verwijzingen
+- name: Referenties
   items:
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'

@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: d16153a7dc9a3164a5127b80a474bf9c398684ac
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a202c8d176d6b9a8893a7bc5aaad6771942dda04
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945135"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063059"
 ---
 # <a name="create-an-oracle-database-in-an-azure-vm"></a>Een Oracle-database maken in een Azure-VM
 
-In deze handleiding vindt u informatie over hoe u met de Azure CLI een virtuele Azure-machine kunt implementeren vanuit de [Oracle-installatiekopie uit de Marketplace-galerie](https://azuremarketplace.microsoft.com/marketplace/apps/Oracle.OracleDatabase12102EnterpriseEdition?tab=Overview) om een Oracle 12c-database te maken. Zodra de server is geïmplementeerd, kunt u verbinding maken via SSH om de Oracle-database te configureren. 
+In deze hand leiding vindt u informatie over het gebruik van de Azure CLI om een virtuele Azure-machine te implementeren vanuit de [Galerie met Oracle Marketplace-afbeeldingen](https://azuremarketplace.microsoft.com/marketplace/apps/Oracle.OracleDatabase12102EnterpriseEdition?tab=Overview) om een Oracle 19c-data base te maken. Zodra de server is geïmplementeerd, kunt u verbinding maken via SSH om de Oracle-database te configureren. 
 
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 
@@ -27,26 +27,29 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor 
 
 Een resourcegroep maken met de opdracht [az group create](/cli/azure/group). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. 
 
-In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *VS - oost*.
+In het volgende voor beeld wordt een resource groep met de naam *RG-Oracle* gemaakt op de locatie *eastus* .
 
 ```azurecli-interactive
-az group create --name myResourceGroup --location eastus
+az group create --name rg-oracle --location eastus
 ```
 
 ## <a name="create-virtual-machine"></a>Virtuele machine maken
 
 Maak een virtuele machine (VM) met de opdracht [az vm create](/cli/azure/vm). 
 
-In het volgende voorbeeld wordt een virtuele machine met de naam `myVM` gemaakt. Er worden ook SSH-sleutels gemaakt, indien deze niet al op een standaardsleutellocatie aanwezig zijn. Als u een specifieke set sleutels wilt gebruiken, gebruikt u de optie `--ssh-key-value`.  
+In het volgende voorbeeld wordt een virtuele machine met de naam `vmoracle19c` gemaakt. Er worden ook SSH-sleutels gemaakt, indien deze niet al op een standaardsleutellocatie aanwezig zijn. Als u een specifieke set sleutels wilt gebruiken, gebruikt u de optie `--ssh-key-value`.  
 
 ```azurecli-interactive 
-az vm create \
-    --resource-group myResourceGroup \
-    --name myVM \
-    --image Oracle:Oracle-Database-Ee:12.1.0.2:latest \
-    --size Standard_DS2_v2 \
-    --admin-username azureuser \
-    --generate-ssh-keys
+az vm create ^
+    --resource-group rg-oracle ^
+    --name vmoracle19c ^
+    --image Oracle:oracle-database-19-3:oracle-database-19-0904:latest ^
+    --size Standard_DS2_v2 ^
+    --admin-username azureuser ^
+    --generate-ssh-keys ^
+    --public-ip-address-allocation static ^
+    --public-ip-address-dns-name vmoracle19c
+
 ```
 
 Nadat u de VM hebt gemaakt, geeft de Azure CLI informatie weer die lijkt op het volgende voorbeeld. Noteer de waarde voor `publicIpAddress`. Dit adres wordt gebruikt voor toegang tot de virtuele machine.
@@ -54,89 +57,231 @@ Nadat u de VM hebt gemaakt, geeft de Azure CLI informatie weer die lijkt op het 
 ```output
 {
   "fqdns": "",
-  "id": "/subscriptions/{snip}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
-  "location": "westus",
+  "id": "/subscriptions/{snip}/resourceGroups/rg-oracle/providers/Microsoft.Compute/virtualMachines/vmoracle19c",
+  "location": "eastus",
   "macAddress": "00-0D-3A-36-2F-56",
   "powerState": "VM running",
   "privateIpAddress": "10.0.0.4",
   "publicIpAddress": "13.64.104.241",
-  "resourceGroup": "myResourceGroup"
+  "resourceGroup": "rg-oracle"
 }
 ```
-
-## <a name="connect-to-the-vm"></a>Verbinding maken met de virtuele machine
-
-Gebruik de volgende opdracht om voor de VM een SSH-sessie te maken. Vervang het IP-adres door de waarde `publicIpAddress` voor uw VM.
+## <a name="create-and-attach-a-new-disk-for-oracle-datafiles-and-fra"></a>Een nieuwe schijf maken en koppelen voor Oracle datafiles en FRA
 
 ```bash
-ssh azureuser@<publicIpAddress>
+az vm disk attach --name oradata01 --new --resource-group rg-oracle --size-gb 128 --sku StandardSSD_LRS --vm-name vmoracle19c
 ```
+
+## <a name="open-ports-for-connectivity"></a>Poorten openen voor connectiviteit
+In deze taak moet u een aantal externe eind punten voor de data base-listener en EM Express configureren voor gebruik door de Azure-netwerk beveiligings groep in te stellen die de virtuele machine beveiligt. 
+
+1. Als u het eind punt dat u gebruikt voor toegang tot de Oracle-Data Base op afstand wilt openen, maakt u als volgt een regel voor de netwerk beveiligings groep:
+   ```bash
+   az network nsg rule create ^
+       --resource-group rg-oracle ^
+       --nsg-name vmoracle19cNSG ^
+       --name allow-oracle ^
+       --protocol tcp ^
+       --priority 1001 ^
+       --destination-port-range 1521
+   ```
+2. Als u het eindpunt dat u gebruikt voor toegang tot de Oracle EM Express op afstand wilt openen, moet u een regel maken voor de netwerkbeveiligingsgroep met az network nsg rule create:
+   ```bash
+   az network nsg rule create ^
+       --resource-group rg-oracle ^
+       --nsg-name vmoracle19cNSG ^
+       --name allow-oracle-EM ^
+       --protocol tcp ^
+       --priority 1002 ^
+       --destination-port-range 5502
+   ```
+3. Haal indien nodig het openbare IP-adres van uw VM nogmaals op met az network public-ip show:
+
+   ```bash
+   az network public-ip show ^
+       --resource-group rg-oracle ^
+       --name vmoracle19cPublicIP ^
+       --query [ipAddress] ^
+       --output tsv
+   ```
+
+## <a name="prepare-the-vm-environment"></a>De VM-omgeving voorbereiden
+
+1. Verbinding maken met de virtuele machine
+
+   Gebruik de volgende opdracht om voor de VM een SSH-sessie te maken. Vervang het IP-adres door de waarde `publicIpAddress` voor uw VM.
+
+   ```bash
+   ssh azureuser@<publicIpAddress>
+   ```
+
+2. Overschakelen naar de hoofd gebruiker
+
+   ```bash
+   sudo su -
+   ```
+
+3. Controleren op het laatst gemaakte schijf apparaat dat wij gaan Format teren voor gebruik van Oracle datafiles
+
+   ```bash
+   ls -alt /dev/sd*|head -1
+   ```
+
+   De uitvoer ziet er ongeveer als volgt uit:
+   ```output
+   brw-rw----. 1 root disk 8, 16 Dec  8 22:57 /dev/sdc
+   ```
+
+4. Het apparaat Format teren. 
+   Als hoofd gebruiker wordt op het apparaat uitgevoerd 
+   
+   Maak eerst een schijf label:
+   ```bash
+   parted /dev/sdc mklabel gpt
+   ```
+   Maak vervolgens een primaire partitie die de hele schijf overspant:
+   ```bash
+   parted -a optimal /dev/sdc mkpart primary 0GB 64GB   
+   ```
+   Controleer de details van het apparaat ten slotte door de meta gegevens af te drukken:
+   ```bash
+   parted /dev/sdc print
+   ```
+   De uitvoer moet er ongeveer als volgt uitzien:
+   ```bash
+   # parted /dev/sdc print
+   Model: Msft Virtual Disk (scsi)
+   Disk /dev/sdc: 68.7GB
+   Sector size (logical/physical): 512B/4096B
+   Partition Table: gpt
+   Disk Flags:
+   Number  Start   End     Size    File system  Name     Flags
+    1      1049kB  64.0GB  64.0GB  ext4         primary
+   ```
+
+5. Een bestands systeem maken op de partitie van het apparaat
+
+   ```bash
+   mkfs -t ext4 /dev/sdc1
+   ```
+
+6. Een koppel punt maken
+   ```bash
+   mkdir /u02
+   ```
+
+7. De schijf koppelen
+
+   ```bash
+   mount /dev/sdc1 /u02
+   ```
+
+8. Machtigingen op het koppel punt wijzigen
+
+   ```bash
+   chmod 777 /u02
+   ```
+
+9. Voeg de koppeling toe aan het bestand/etc/fstab-bestand. 
+
+   ```bash
+   echo "/dev/sdc1               /u02                    ext4    defaults        0 0" >> /etc/fstab
+   ```
+   
+10. Werk het bestand ***bestand/etc/hosts** _ bij met het open bare IP-adres en de hostnaam.
+
+    Wijzig het _*_open bare IP-adres en de VMname_*_ om uw werkelijke waarden weer te geven:
+  
+    ```bash
+    echo "<Public IP> <VMname>.eastus.cloudapp.azure.com <VMname>" >> /etc/hosts
+    ```
+11. Het hostname-bestand bijwerken
+    
+    Gebruik de volgende opdracht om de domein naam van de virtuele machine toe te voegen aan het bestand _ */etc/hostname**. Hierbij wordt ervan uitgegaan dat u de resource groep en VM in de regio **oostus** hebt gemaakt:
+    
+    ```bash
+    sed -i 's/$/\.eastus\.cloudapp\.azure\.com &/' /etc/hostname
+    ```
+
+12. Firewall poorten openen
+    
+    Als SELinux is standaard ingeschakeld op de Marketplace-installatie kopie, moet de firewall worden geopend voor verkeer voor de data base luisteren poort 1521 en Enter prise Manager Express-poort 5502. Voer de volgende opdrachten uit als hoofd gebruiker:
+
+    ```bash
+    firewall-cmd --zone=public --add-port=1521/tcp --permanent
+    firewall-cmd --zone=public --add-port=5502/tcp --permanent
+    firewall-cmd --reload
+    ```
+   
 
 ## <a name="create-the-database"></a>De database maken
 
 De Oracle-software is al geïnstalleerd op de Marketplace-installatiekopie. Maak als volgt een voorbeelddatabase. 
 
-1.  Ga naar de gebruiker *oracle* en start de Oracle-listener:
+1.  Schakel over naar de **Oracle** -gebruiker:
 
     ```bash
-    $ sudo -su oracle
-    $ lsnrctl start
+    $ sudo su - oracle
     ```
+2. De data base-listener starten
 
-    De uitvoer lijkt op het volgende:
+   ```bash
+   $ lsnrctl start
+   ```
+   De uitvoer lijkt op het volgende:
+  
+   ```output
+   LSNRCTL for Linux: Version 19.0.0.0.0 - Production on 20-OCT-2020 01:58:18
 
-    ```output
-    Copyright (c) 1991, 2014, Oracle.  All rights reserved.
+   Copyright (c) 1991, 2019, Oracle.  All rights reserved.
 
-    Starting /u01/app/oracle/product/12.1.0/dbhome_1/bin/tnslsnr: please wait...
+   Starting /u01/app/oracle/product/19.0.0/dbhome_1/bin/tnslsnr: please wait...
 
-    TNSLSNR for Linux: Version 12.1.0.2.0 - Production
-    Log messages written to /u01/app/oracle/diag/tnslsnr/myVM/listener/alert/log.xml
-    Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=myVM.twltkue3xvsujaz1bvlrhfuiwf.dx.internal.cloudapp.net)(PORT=1521)))
+   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+   Log messages written to /u01/app/oracle/diag/tnslsnr/vmoracle19c/listener/alert/log.xml
+   Listening on: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=vmoracle19c.eastus.cloudapp.azure.com)(PORT=1521)))
 
-    Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))
-    STATUS of the LISTENER
-    ------------------------
-    Alias                     LISTENER
-    Version                   TNSLSNR for Linux: Version 12.1.0.2.0 - Production
-    Start Date                23-MAR-2017 15:32:08
-    Uptime                    0 days 0 hr. 0 min. 0 sec
-    Trace Level               off
-    Security                  ON: Local OS Authentication
-    SNMP                      OFF
-    Listener Log File         /u01/app/oracle/diag/tnslsnr/myVM/listener/alert/log.xml
-    Listening Endpoints Summary...
-    (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=myVM.twltkue3xvsujaz1bvlrhfuiwf.dx.internal.cloudapp.net)(PORT=1521)))
-    The listener supports no services
-    The command completed successfully
-    ```
-2. Een gegevensmap maken voor de Oracle-gegevensbestanden
+   Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))
+   STATUS of the LISTENER
+   ------------------------
+   Alias                     LISTENER
+   Version                   TNSLSNR for Linux: Version 19.0.0.0.0 - Production
+   Start Date                20-OCT-2020 01:58:18
+   Uptime                    0 days 0 hr. 0 min. 0 sec
+   Trace Level               off
+   Security                  ON: Local OS Authentication
+   SNMP                      OFF
+   Listener Log File         /u01/app/oracle/diag/tnslsnr/vmoracle19c/listener/alert/log.xml
+   Listening Endpoints Summary...
+     (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=vmoracle19c.eastus.cloudapp.azure.com)(PORT=1521)))
+   The listener supports no services
+   The command completed successfully
+   ```
+3. Een gegevensdirectory maken voor de Oracle-gegevens bestanden:
 
-    ```bash
-        mkdir /u01/app/oracle/oradata
-    ```
+   ```bash
+   mkdir /u02/oradata
+   ```
+    
 
-3.  Maak de database:
+3.  Voer de assistent voor het maken van de data base uit:
 
     ```bash
     dbca -silent \
-           -createDatabase \
-           -templateName General_Purpose.dbc \
-           -gdbname cdb1 \
-           -sid cdb1 \
-           -responseFile NO_VALUE \
-           -characterSet AL32UTF8 \
-           -sysPassword OraPasswd1 \
-           -systemPassword OraPasswd1 \
-           -createAsContainerDatabase true \
-           -numberOfPDBs 1 \
-           -pdbName pdb1 \
-           -pdbAdminPassword OraPasswd1 \
-           -databaseType MULTIPURPOSE \
-           -automaticMemoryManagement false \
-           -storageType FS \
-           -datafileDestination "/u01/app/oracle/oradata/" \
-           -ignorePreReqs
+       -createDatabase \
+       -templateName General_Purpose.dbc \
+       -gdbname test \
+       -sid test \
+       -responseFile NO_VALUE \
+       -characterSet AL32UTF8 \
+       -sysPassword OraPasswd1 \
+       -systemPassword OraPasswd1 \
+       -createAsContainerDatabase false \
+       -databaseType MULTIPURPOSE \
+       -automaticMemoryManagement false \
+       -storageType FS \
+       -datafileDestination "/u02/oradata/" \
+       -ignorePreReqs
     ```
 
     Het duurt een paar minuten om de database te maken.
@@ -144,48 +289,41 @@ De Oracle-software is al geïnstalleerd op de Marketplace-installatiekopie. Maak
     De uitvoer ziet er ongeveer als volgt uit:
 
     ```output
-        Copying database files
-        1% complete
-        2% complete
-        8% complete
-        13% complete
-        19% complete
-        27% complete
-        Creating and starting Oracle instance
-        29% complete
-        32% complete
-        33% complete
-        34% complete
-        38% complete
-        42% complete
-        43% complete
-        45% complete
-        Completing Database Creation
-        48% complete
-        51% complete
-        53% complete
-        62% complete
-        70% complete
-        72% complete
-        Creating Pluggable Databases
-        78% complete
-        100% complete
-        Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/cdb1/cdb1.log" for further details.
+        Prepare for db operation
+       10% complete
+       Copying database files
+       40% complete
+       Creating and starting Oracle instance
+       42% complete
+       46% complete
+       50% complete
+       54% complete
+       60% complete
+       Completing Database Creation
+       66% complete
+       69% complete
+       70% complete
+       Executing Post Configuration Actions
+       100% complete
+       Database creation complete. For details check the logfiles at: /u01/app/oracle/cfgtoollogs/dbca/test.
+       Database Information:
+       Global Database Name:test
+       System Identifier(SID):test
+       Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/test/test.log" for further details.
     ```
 
 4. Oracle-variabelen instellen
 
-    Voordat u verbinding maakt, moet u twee omgevingsvariabelen instellen: *ORACLE_HOME* en *ORACLE_SID*.
+    Voordat u verbinding maakt, moet u de omgevings variabele *ORACLE_SID* instellen:
 
     ```bash
-        ORACLE_SID=cdb1; export ORACLE_SID
+        export ORACLE_SID=test
     ```
 
-    U kunt de variabelen ORACLE_HOME en ORACLE_SID ook toevoegen aan het .bashrc-bestand. Hierdoor worden de omgevingsvariabelen opgeslagen voor toekomstige aanmeldingen. Controleer of de volgende instructies zijn toegevoegd aan het bestand `~/.bashrc` met behulp van de editor van uw keuze.
+    U moet de variabele ORACLE_SID ook toevoegen aan het `oracle` gebruikers `.bashrc` bestand voor toekomstige aanmeldingen met behulp van de volgende opdracht:
 
     ```bash
-    # Add ORACLE_SID. 
-    export ORACLE_SID=cdb1 
+    echo "export ORACLE_SID=test" >> ~oracle/.bashrc
     ```
 
 ## <a name="oracle-em-express-connectivity"></a>Oracle EM Express-connectiviteit
@@ -204,29 +342,15 @@ Als GUI-beheerprogramma dat u kunt gebruiken om de database te verkennen, stelt 
     exec DBMS_XDB_CONFIG.SETHTTPSPORT(5502);
     ```
 
-3. Open de container PDB1, als deze nog niet is geopend, maar controleer eerst de status:
+3.  Maak verbinding met EM Express vanuit uw browser. Zorg ervoor dat uw browser compatibel is met EM Express (Flash-installatie is vereist): 
 
-    ```bash
-    select con_id, name, open_mode from v$pdbs;
+    ```https
+    https://<VM ip address or hostname>:5502/em
     ```
 
-    De uitvoer lijkt op het volgende:
+    U kunt zich aanmelden met behulp van het **SYS**-account en moet hierbij het selectievakje **als sysdba** selecteren. Gebruik het wachtwoord **OraPasswd1** dat u tijdens de installatie hebt ingesteld. 
 
-    ```output
-      CON_ID NAME                           OPEN_MODE 
-      ----------- ------------------------- ---------- 
-      2           PDB$SEED                  READ ONLY 
-      3           PDB1                      MOUNT
-    ```
-
-4. Als de OPEN_MODE voor `PDB1` niet READ WRITE is, voert u de volgende opdrachten uit om PDB1 te openen:
-
-   ```bash
-    alter session set container=pdb1;
-    alter database open;
-   ```
-
-U moet `quit` typen om de sqlplus-sessie te beëindigen en `exit` typen om de Oracle-gebruiker af te melden.
+    ![Schermafbeelding van de Oracle OEM Express-aanmeldingspagina](./media/oracle-quick-start/oracle_oem_express_login.png)
 
 ## <a name="automate-database-startup-and-shutdown"></a>Databases automatisch opstarten en afsluiten
 
@@ -238,10 +362,10 @@ De Oracle-database wordt standaard niet automatisch gestart wanneer u de virtuel
     sudo su -
     ```
 
-2.  Bewerk het bestand `/etc/oratab` met uw favoriete editor en wijzig de standaard `N` naar `Y`:
+2.  Voer de volgende opdracht uit om de vlag voor automatisch opstarten te wijzigen van `N` `Y` in in het `/etc/oratab` bestand:
 
     ```bash
-    cdb1:/u01/app/oracle/product/12.1.0/dbhome_1:Y
+    sed -i 's/:N/:Y/' /etc/oratab
     ```
 
 3.  Maak een bestand met de naam `/etc/init.d/dbora` en kopieer de volgende inhoud naar het bestand:
@@ -252,7 +376,7 @@ De Oracle-database wordt standaard niet automatisch gestart wanneer u de virtuel
     # Description: Oracle auto start-stop script.
     #
     # Set ORA_HOME to be equivalent to $ORACLE_HOME.
-    ORA_HOME=/u01/app/oracle/product/12.1.0/dbhome_1
+    ORA_HOME=/u01/app/oracle/product/19.0.0/dbhome_1
     ORA_OWNER=oracle
 
     case "$1" in
@@ -296,54 +420,6 @@ De Oracle-database wordt standaard niet automatisch gestart wanneer u de virtuel
     reboot
     ```
 
-## <a name="open-ports-for-connectivity"></a>Poorten openen voor connectiviteit
-
-De laatste taak is het configureren van sommige externe eindpunten. Als u de Azure-netwerkbeveiligingsgroep wilt instellen die de virtuele machine beveiligt, moet u eerst uw SSH-sessie in de VM sluiten (deze zou moeten zijn gesloten na het opnieuw opstarten in de vorige stap). 
-
-1.  Als u het eindpunt dat u gebruikt voor toegang tot de Oracle-database op afstand wilt openen, moet u een regel maken voor de netwerkbeveiligingsgroep met [az network nsg rule create](/cli/azure/network/nsg/rule): 
-
-    ```azurecli-interactive
-    az network nsg rule create \
-        --resource-group myResourceGroup\
-        --nsg-name myVmNSG \
-        --name allow-oracle \
-        --protocol tcp \
-        --priority 1001 \
-        --destination-port-range 1521
-    ```
-
-2.  Als u het eindpunt dat u gebruikt voor toegang tot de Oracle EM Express op afstand wilt openen, moet u een regel maken voor de netwerkbeveiligingsgroep met [az network nsg rule create](/cli/azure/network/nsg/rule):
-
-    ```azurecli-interactive
-    az network nsg rule create \
-        --resource-group myResourceGroup \
-        --nsg-name myVmNSG \
-        --name allow-oracle-EM \
-        --protocol tcp \
-        --priority 1002 \
-        --destination-port-range 5502
-    ```
-
-3. Haal indien nodig het openbare IP-adres van uw VM nogmaals op met [az network public-ip show](/cli/azure/network/public-ip):
-
-    ```azurecli-interactive
-    az network public-ip show \
-        --resource-group myResourceGroup \
-        --name myVMPublicIP \
-        --query [ipAddress] \
-        --output tsv
-    ```
-
-4.  Maak verbinding met EM Express vanuit uw browser. Zorg ervoor dat uw browser compatibel is met EM Express (Flash-installatie is vereist): 
-
-    ```https
-    https://<VM ip address or hostname>:5502/em
-    ```
-
-U kunt zich aanmelden met behulp van het **SYS**-account en moet hierbij het selectievakje **als sysdba** selecteren. Gebruik het wachtwoord **OraPasswd1** dat u tijdens de installatie hebt ingesteld. 
-
-![Schermafbeelding van de Oracle OEM Express-aanmeldingspagina](./media/oracle-quick-start/oracle_oem_express_login.png)
-
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Wanneer u klaar bent met het verkennen van uw eerste Oracle-database in Azure en de virtuele machine niet meer nodig is, kunt u de opdracht [az group delete](/cli/azure/group) gebruiken om de resourcegroep, de VM en alle gerelateerde resources te verwijderen.
@@ -353,6 +429,8 @@ az group delete --name myResourceGroup
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
+
+Meer informatie over het beveiligen van uw data base in azure met [Oracle-back-Upstrategieen](./oracle-database-backup-strategies.md)
 
 Ontdek meer informatie over andere [Oracle-oplossingen op Azure](./oracle-overview.md). 
 

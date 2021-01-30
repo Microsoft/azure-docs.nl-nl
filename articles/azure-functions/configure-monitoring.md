@@ -4,12 +4,12 @@ description: Leer hoe u uw functie-app kunt verbinden met Application Insights v
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 73ed679288d9d03b81a0b01670aa0f574a14839f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e24f2b1a61d77dafd7a23b04d225d0301f82ca59
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684705"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070137"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -246,7 +246,7 @@ Wanneer u **maken** kiest, wordt er een Application Insights resource gemaakt me
 <a id="manually-connect-an-app-insights-resource"></a>
 ### <a name="add-to-an-existing-function-app"></a>Toevoegen aan een bestaande functie-app 
 
-Als er geen Application Insights resources zijn gemaakt met uw functie-app, gebruikt u de volgende stappen om de resource te maken. U kunt vervolgens de instrumentatie sleutel van die resource toevoegen als een [toepassings instelling](functions-how-to-use-azure-function-app-settings.md#settings) in uw functie-app.
+Als een Application Insights resource niet is gemaakt met uw functie-app, gebruikt u de volgende stappen om de resource te maken. U kunt vervolgens de instrumentatie sleutel van die resource toevoegen als een [toepassings instelling](functions-how-to-use-azure-function-app-settings.md#settings) in uw functie-app.
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)naar en selecteer **functie-app** en kies vervolgens uw functie-app. 
 
@@ -271,6 +271,30 @@ Als er geen Application Insights resources zijn gemaakt met uw functie-app, gebr
 
 > [!NOTE]
 > Vroege versies van functies gebruiken ingebouwde bewaking. dit wordt niet meer aanbevolen. Wanneer u Application Insights integratie inschakelt voor een dergelijke functie-app, moet u ook [ingebouwde logboek registratie uitschakelen](#disable-built-in-logging).  
+
+## <a name="query-scale-controller-logs"></a>Logboeken voor query Scale-controller
+
+Na het inschakelen van zowel logboek registratie voor de schaal van de controller als Application Insights-integratie, kunt u de logboeken van de uitgebrachte schaal controller in het Application Insights zoeken naar een query. Schaal controller logboeken worden opgeslagen in de `traces` verzameling onder de categorie **ScaleControllerLogs** .
+
+De volgende query kan worden gebruikt om te zoeken naar alle logboeken van de schaal controller voor de huidige functie-app binnen de opgegeven tijds periode:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+```
+
+Met de volgende query wordt de vorige query uitgebreid om te laten zien hoe u alleen logboeken kunt ophalen die een wijziging in de schaal aangeven:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+| where message == "Instance count changed"
+| extend Reason = CustomDimensions.Reason
+| extend PreviousInstanceCount = CustomDimensions.PreviousInstanceCount
+| extend NewInstanceCount = CustomDimensions.CurrentInstanceCount
+```
 
 ## <a name="disable-built-in-logging"></a>Ingebouwde logboekregistratie uitschakelen
 

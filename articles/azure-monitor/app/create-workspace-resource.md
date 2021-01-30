@@ -3,12 +3,12 @@ title: Een nieuwe Azure Monitor maken Application Insights resource op basis van
 description: Meer informatie over de stappen die nodig zijn om de nieuwe Azure Monitor Application Insights op werk ruimte gebaseerde resources in te scha kelen.
 ms.topic: conceptual
 ms.date: 10/06/2020
-ms.openlocfilehash: f1cc7db7eea4485ad40062a0e11a76dc14234b41
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 23994190df89b47d9c7e90ed62a724545389b1fe
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956039"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063363"
 ---
 # <a name="workspace-based-application-insights-resources"></a>Application Insights resources op basis van een werk ruimte
 
@@ -33,8 +33,8 @@ Met Application Insights op basis van een werk ruimte kunt u profiteren van de n
 
 Meld u aan bij de [Azure Portal](https://portal.azure.com)en maak een Application Insights resource:
 
-[!div class="mx-imgBorder"]
-![Op werkruimte gebaseerde Application Insights-resource](./media/create-workspace-resource/create-workspace-based.png)
+> [!div class="mx-imgBorder"]
+> ![Op werkruimte gebaseerde Application Insights-resource](./media/create-workspace-resource/create-workspace-based.png)
 
 Als u nog geen bestaande Log Analytics-werk ruimte hebt, [raadpleegt u de documentatie voor het maken van log Analytics werk ruimte](../learn/quick-create-workspace.md).
 

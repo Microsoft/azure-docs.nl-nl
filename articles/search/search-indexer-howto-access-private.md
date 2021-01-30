@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: ff8aa6688d8a838fa2e06d2eef546025cdd9213f
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 762db9d165358f3347fc9b7f3aaaf39f0c762308
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340050"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063193"
 ---
 # <a name="make-indexer-connections-through-a-private-endpoint"></a>Indexeer verbindingen maken via een persoonlijk eind punt
 
@@ -27,7 +27,7 @@ Deze verbindings methode voor de Indexeer functie is onderhevig aan de volgende 
 
 ## <a name="shared-private-link-resources-management-apis"></a>Beheer-Api's voor gedeelde persoonlijke koppelings bronnen
 
-Privé-eind punten van beveiligde resources die zijn gemaakt via Azure Cognitive Search Api's worden *gedeelde persoonlijke koppelings resources*genoemd. Dit komt doordat u toegang hebt tot een resource, zoals een opslag account, die is geïntegreerd met de [Azure Private Link-service](https://azure.microsoft.com/services/private-link/).
+Privé-eind punten van beveiligde resources die zijn gemaakt via Azure Cognitive Search Api's worden *gedeelde persoonlijke koppelings resources* genoemd. Dit komt doordat u toegang hebt tot een resource, zoals een opslag account, die is geïntegreerd met de [Azure Private Link-service](https://azure.microsoft.com/services/private-link/).
 
 Azure Cognitive Search biedt via de beheer REST API een [CreateOrUpdate](/rest/api/searchmanagement/sharedprivatelinkresources/createorupdate) bewerking die u kunt gebruiken om toegang te configureren vanaf een Azure Cognitive Search indexer.
 
@@ -47,7 +47,7 @@ De volgende tabel bevat de Azure-resources waarvoor u uitgaande privé-eind punt
 
 U kunt ook een query uitvoeren op de Azure-resources waarvoor uitgaande privé-eindpunt verbindingen worden ondersteund met behulp [van de lijst met ondersteunde api's](/rest/api/searchmanagement/privatelinkresources/listsupported).
 
-In de rest van dit artikel wordt een combi natie van [ARMClient](https://github.com/projectkudu/ARMClient) -en [postman](https://www.postman.com/) -api's gebruikt om de rest API-aanroepen te demonstreren.
+In de rest van dit artikel wordt een combi natie van de [Azure cli](https://docs.microsoft.com/cli/azure/) (of [ARMClient](https://github.com/projectkudu/ARMClient) indien gewenst) en [postman](https://www.postman.com/) (of een andere HTTP-client [, zoals uw](https://curl.se/) voor keur), gebruikt om de rest API-aanroepen te demonstreren.
 
 > [!NOTE]
 > De voor beelden in dit artikel zijn gebaseerd op de volgende veronderstellingen:
@@ -69,7 +69,11 @@ Configureer het opslag account zodanig [dat alleen toegang is toegestaan vanuit 
 
 ### <a name="step-1-create-a-shared-private-link-resource-to-the-storage-account"></a>Stap 1: een gedeelde persoonlijke koppelings bron maken naar het opslag account
 
-Als u Azure Cognitive Search wilt aanvragen om een uitgaand privé-eind punt verbinding te maken met het opslag account, maakt u de volgende API-aanroep: 
+Als u Azure Cognitive Search wilt aanvragen om een uitgaand privé-eind punt verbinding te maken met het opslag account, maakt u de volgende API-aanroep, bijvoorbeeld met [Azure cli](https://docs.microsoft.com/cli/azure/): 
+
+`az rest --method put --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01 --body @create-pe.json`
+
+Of als u [ARMClient](https://github.com/projectkudu/ARMClient)wilt gebruiken:
 
 `armclient PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01 create-pe.json`
 
@@ -100,6 +104,10 @@ Net als bij alle asynchrone Azure-bewerkingen `PUT` retourneert de aanroep een `
 
 U kunt deze URI periodiek pollen om de status van de bewerking te verkrijgen. Voordat u doorgaat, wordt u aangeraden te wachten tot de status van de resource voor de gedeelde persoonlijke koppelings bron een Terminal status heeft bereikt (dat wil zeggen, de status van de bewerking is *geslaagd*).
 
+`az rest --method get --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe/operationStatuses/08586060559526078782?api-version=2020-08-01`
+
+Of het gebruik van ARMClient:
+
 `armclient GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe/operationStatuses/08586060559526078782?api-version=2020-08-01"`
 
 ```json
@@ -119,7 +127,7 @@ U kunt deze URI periodiek pollen om de status van de bewerking te verkrijgen. Vo
 
    ![Scherm opname van het Azure Portal, waarin het deel venster ' persoonlijke eindpunt verbindingen ' wordt weer gegeven.](media\search-indexer-howto-secure-access\storage-privateendpoint-approval.png)
 
-1. Selecteer het persoonlijke eind punt dat Azure Cognitive Search heeft gemaakt. In de kolom **persoonlijk eind punt** identificeert u de verbinding van het particuliere eind punt met de naam die is opgegeven in de vorige API, selecteert u **goed keuren**en voert u vervolgens een geschikt bericht in. De inhoud van het bericht is niet belang rijk. 
+1. Selecteer het persoonlijke eind punt dat Azure Cognitive Search heeft gemaakt. In de kolom **persoonlijk eind punt** identificeert u de verbinding van het particuliere eind punt met de naam die is opgegeven in de vorige API, selecteert u **goed keuren** en voert u vervolgens een geschikt bericht in. De inhoud van het bericht is niet belang rijk. 
 
    Zorg ervoor dat de verbinding van het particuliere eind punt wordt weer gegeven, zoals in de volgende scherm afbeelding wordt weer gegeven. Het kan een tot twee minuten duren voordat de status is bijgewerkt in de portal.
 
@@ -130,6 +138,10 @@ Nadat de verbindings aanvraag van het particuliere eind punt is goedgekeurd, *ka
 ### <a name="step-2b-query-the-status-of-the-shared-private-link-resource"></a>Stap 2b: de status van de gedeelde persoonlijke koppelings resource opvragen
 
 Als u wilt controleren of de resource van de gedeelde persoonlijke koppeling na goed keuring is bijgewerkt, haalt u de status op met behulp van de [Get-API](/rest/api/searchmanagement/sharedprivatelinkresources/get).
+
+`az rest --method get --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01`
+
+Of het gebruik van ARMClient:
 
 `armclient GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01`
 
@@ -173,7 +185,7 @@ Als de `properties.provisioningState` resource is `Succeeded` en `properties.sta
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 - Als het maken van de Indexeer functie mislukt met een fout bericht zoals ' gegevens bron referenties zijn ongeldig ', betekent dit dat de status van de verbinding met het persoonlijke eind punt nog niet is *goedgekeurd* of dat de verbinding niet werkt. Om het probleem te verhelpen: 
-  * De status van de gedeelde persoonlijke koppelings resource ophalen met behulp van de [Get-API](/rest/api/searchmanagement/sharedprivatelinkresources/get). Als de status *goedgekeurd*is, controleert u de `properties.provisioningState` bron. Als dit het geval is `Incomplete` , betekent dit dat sommige onderliggende afhankelijkheden voor de resource niet kunnen worden ingesteld. Bij het opnieuw uitgeven van de `PUT` aanvraag om de gedeelde persoonlijke koppelings bron opnieuw te maken, moet u het probleem oplossen. Een herkeuring kan nood zakelijk zijn. Controleer de status van de resource opnieuw om te controleren of het probleem is opgelost.
+  * De status van de gedeelde persoonlijke koppelings resource ophalen met behulp van de [Get-API](/rest/api/searchmanagement/sharedprivatelinkresources/get). Als de status *goedgekeurd* is, controleert u de `properties.provisioningState` bron. Als dit het geval is `Incomplete` , betekent dit dat sommige onderliggende afhankelijkheden voor de resource niet kunnen worden ingesteld. Bij het opnieuw uitgeven van de `PUT` aanvraag om de gedeelde persoonlijke koppelings bron opnieuw te maken, moet u het probleem oplossen. Een herkeuring kan nood zakelijk zijn. Controleer de status van de resource opnieuw om te controleren of het probleem is opgelost.
 
 - Als u de Indexeer functie maakt zonder de `executionEnvironment` eigenschap in te stellen, kan het maken van de index slagen, maar wordt de uitvoerings geschiedenis weer gegeven dat de uitvoering van de Indexeer functie is mislukt. Om het probleem te verhelpen:
    * [Werk de Indexeer functie](/rest/api/searchservice/update-indexer) bij om de uitvoerings omgeving op te geven.

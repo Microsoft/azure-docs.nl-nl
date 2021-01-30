@@ -3,19 +3,17 @@ title: Veldtoewijzingen in indexeerfuncties
 titleSuffix: Azure Cognitive Search
 description: Configureer veld toewijzingen in een Indexeer functie om te zien wat de verschillen zijn in veld namen en gegevens representaties.
 manager: nitinme
-author: mattmsft
-ms.author: magottei
-ms.devlang: rest-api
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/11/2020
-ms.custom: devx-track-csharp
-ms.openlocfilehash: 579d0e334b4e60815b3a5efc877833ab75a3375d
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.date: 01/28/2021
+ms.openlocfilehash: efee1e1cda7767620931ef81825708d94a1925c3
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358929"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063176"
 ---
 # <a name="field-mappings-and-transformations-using-azure-cognitive-search-indexers"></a>Veld Toewijzingen en trans formaties met Azure Cognitive Search Indexeer functies
 
@@ -28,7 +26,7 @@ Een aantal situaties waarin veld Toewijzingen handig zijn:
 * De gegevens bron bevat een veld met de naam `_id` , maar in Azure Cognitive Search zijn veld namen die beginnen met een onderstrepings teken niet toegestaan. Met een veld toewijzing kunt u effectief de naam wijzigen van een veld.
 * U wilt verschillende velden in de index vullen op basis van dezelfde gegevens bron gegevens. Het is bijvoorbeeld mogelijk dat u verschillende analyse functies op deze velden wilt Toep assen.
 * U wilt een index veld vullen met gegevens uit meer dan één gegevens bron en de gegevens bronnen gebruiken verschillende veld namen.
-* U moet uw gegevens met Base64 coderen of decoderen. Veld Toewijzingen ondersteunen verschillende **toewijzings functies** , waaronder functies voor Base64-code ring en-decodering.
+* U moet uw gegevens met Base64 coderen of decoderen. Veld Toewijzingen ondersteunen verschillende **toewijzings functies**, waaronder functies voor Base64-code ring en-decodering.
 
 > [!NOTE]
 > Veld toewijzingen in Indexeer functies zijn een eenvoudige manier om gegevens velden toe te wijzen aan index velden, met een zekere mogelijkheid voor gegevens conversie met licht gewicht. Complexere gegevens kunnen vooraf worden verwerkt om deze te wijzigen in een formulier dat kan worden geïndexeerd. Een van de opties die u kunt overwegen, is [Azure Data Factory](../data-factory/index.yml).
@@ -46,7 +44,7 @@ Veld toewijzingen worden toegevoegd aan de `fieldMappings` matrix van de definit
 > [!NOTE]
 > Als er geen veld toewijzingen worden toegevoegd, nemen Indexeer functies aan dat gegevens bron velden moeten worden toegewezen aan index velden met dezelfde naam. Als u een veld toewijzing toevoegt, worden deze standaard veld toewijzingen voor het bron-en doel veld verwijderd. Sommige Indexeer functies, zoals [de Indexeer functie van Blob Storage](search-howto-indexing-azure-blob-storage.md), voegen standaard veld toewijzingen toe voor het veld index sleutel.
 
-## <a name="map-fields-using-the-rest-api"></a>Velden toewijzen met behulp van de REST API
+## <a name="map-fields-using-rest"></a>Velden toewijzen met behulp van REST
 
 U kunt veld toewijzingen toevoegen wanneer u een nieuwe Indexeer functie maakt met behulp van de API-aanvraag voor het maken van de [Indexeer functie](/rest/api/searchservice/create-Indexer) . U kunt de veld toewijzingen van een bestaande Indexeer functie beheren met de API-aanvraag [Update indexer](/rest/api/searchservice/update-indexer) .
 
@@ -77,9 +75,8 @@ In meerdere veld toewijzingen kan naar een bron veld worden verwezen. In het vol
 > [!NOTE]
 > Azure Cognitive Search maakt gebruik van niet-hoofdletter gevoelige vergelijking om de veld-en functie namen in veld toewijzingen op te lossen. Dit is handig (het is niet nodig om alle hoofd letters op te halen), maar het betekent wel dat uw gegevens bron of index geen velden kan bevatten die alleen per geval verschillen.  
 >
->
 
-## <a name="map-fields-using-the-net-sdk"></a>Velden toewijzen met behulp van de .NET SDK
+## <a name="map-fields-using-net"></a>Velden toewijzen met .NET
 
 U definieert veld toewijzingen in de .NET SDK met behulp van de klasse [FieldMapping](/dotnet/api/azure.search.documents.indexes.models.fieldmapping) , die de eigenschappen `SourceFieldName` en bevat `TargetFieldName` en een optionele `MappingFunction` verwijzing.
 

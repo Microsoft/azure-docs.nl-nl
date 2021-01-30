@@ -3,16 +3,16 @@ title: Betrokkenheid bij het samen verkopen van partners-micro soft Commercial M
 description: Het micro soft Partner Center-programma voor het verkopen van partners kan u helpen bij het bereiken van een enorme klanten basis en het genereren van nieuwe verkopen.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
+ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 12/2/2020
-ms.openlocfilehash: 7969f5ffd3064a5af97a101185b6229c81c7613d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 1/29/2021
+ms.openlocfilehash: 84d37def6aa519eabf26a72ded7b0ab70994c430
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880284"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063076"
 ---
 # <a name="co-sell-partner-engagement"></a>Betrokkenheid van partner bij collectieve verkoop
 
@@ -22,7 +22,7 @@ Het programma voor co-verkoop is beschikbaar voor software die is **gebouwd met 
 
 - **Kant-en-klare** aanbiedingen voor de verkoop worden weer gegeven aan micro soft-veld verkopers. Bij het werken met micro soft-verkopers helpt het programma voor samen werking u bij het bereiken van een grote community van door micro soft beheerde klanten om samen te werken aan verkoop kansen die uw bedrijfs groei versnellen.
 
-    ![Diagram waarin wordt getoond hoe co-selling gebeurt wanneer verkoop leads worden gedeeld, geaccepteerd en gewonnen voor door micro soft beheerde klanten.](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png)
+    :::image type="content" source="./media/marketplace-publishers-guide/marketplace-co-sell-v2.png" alt-text="Diagram waarin wordt getoond hoe co-selling gebeurt wanneer verkoop leads worden gedeeld, geaccepteerd en gewonnen voor door micro soft beheerde klanten.":::
 
 - **Gemotiveerd verkopen** Met IP-aanbiedingen kunnen gebruikers van micro soft-velden profiteren wanneer ze worden verkocht in samen werking met micro soft-verkoop teams, naast de onderstaande Marketplace-voor delen.</li></ul>
 
@@ -63,7 +63,7 @@ Start uw directe verkoop traject rechtstreeks in het partner centrum volgens ond
 
 1. Selecteer in het menu aan de linkerkant **co-sell with micro soft**.
 
-    :::image type="content" source="media/co-sell/co-sell-with-microsoft-tab.png" alt-text="In deze afbeelding ziet u de locatie van het tabblad samen met micro soft.":::
+    [![In deze afbeelding ziet u de locatie van het tabblad samen met micro soft.](media/co-sell/co-sell-with-microsoft-tab.png)](media/co-sell/co-sell-with-microsoft-tab.png#lightbox)
 
 1. Geef de details van de algemene vermelding op om micro soft-verkopers te helpen uw aanbieding snel te sorteren en te ontdekken in de sectie **aanbieding** . (*Vereist: alle velden.*)
 
@@ -71,29 +71,20 @@ Start uw directe verkoop traject rechtstreeks in het partner centrum volgens ond
 
 1. Geef details op over uw aanbieding en upload onderpand in het gedeelte **documenten** . Micro soft-verkopers gebruiken deze informatie om uw aanbieding te adviseren en te verkopen. *(Vereist: oplossing/bied één paginerings-en oplossings-en aanbod aanbieding. Vereist voor het bereiken van Azure IP gemotiveerd-status: referentie architectuur diagram.)*
 
-    :::image type="content" source="media/co-sell/co-sell-documents-section.png" alt-text="Deze afbeelding toont de sectie documenten op het tabblad samen verkopen.":::
+    [![Deze afbeelding toont de sectie documenten op het tabblad samen verkopen.](media/co-sell/co-sell-documents-section.png)](media/co-sell/co-sell-documents-section.png#lightbox)
 
 1. Upload verkoop contactpersoongegevens in het gedeelte **contact personen** . Micro soft-verkopers kunnen contact personen bereiken om meer informatie over uw aanbieding aan te vragen. (*Vereist: een contact persoon voor elke geografie waarin uw aanbieding beschikbaar wordt gesteld.*)
 
-    :::image type="content" source="media/co-sell/co-sell-contacts-section.png" alt-text="Deze afbeelding toont de sectie contact personen op het tabblad samen verkopen.":::
+    [![Deze afbeelding toont de sectie contact personen op het tabblad samen verkopen.](media/co-sell/co-sell-contacts-section.png)](media/co-sell/co-sell-contacts-section.png#lightbox)
 
 1. Sla het concept op voordat u doorgaat.
 1. Nadat u alle vereiste delen van de aanbieding hebt voltooid, kunt u deze voor beoordeling en publicatie indienen. Selecteer in de rechter bovenhoek de optie **controleren en publiceren**. Bekijk de details van de aanbieding en selecteer vervolgens **publiceren**.
-1. Nadat u hebt gecontroleerd of u aan de [criteria voor de co-sell-status](#co-sell-publishing-steps-and-requirements)hebt voldaan, volgt u de onderstaande richt lijnen om uw aanbieding voor co-sell te benoemen:
-    1. **Als u een micro soft partner manager (bijvoorbeeld PDM) hebt:** Neem contact op met uw partner manager voor hulp. Deze begeleidt u bij het aanwijzen van de status van de samen verkoop en de Azure IP Business Applications-gemotiveerd (indien van toepassing).
-
-    1. **Als u geen micro soft-partner beheerder (bijvoorbeeld PDM) hebt:** [zelf benoemt via de Cloud-activerings Bureau (CED)](https://aka.ms/cednominate). Selecteer in de vervolg keuzelijst ' desired CED Services ' het volgende:
-
-        :::image type="content" source="media/co-sell/co-sell-request-review.png" alt-text="In deze afbeelding ziet u de vervolg keuzelijst CED om een mede-verkoop beoordeling aan te vragen.":::
-
-    De CED neemt contact met u op om het proces te volt ooien.
 
 ## <a name="see-your-offers-co-sell-status"></a>Bekijk de status van de mede verkoop van uw aanbieding
 
 Voor aanbiedingen met de [optie voor gezamenlijk verkopen in de commerciële Marketplace](commercial-marketplace-co-sell.md)kunt u de huidige mede-verkoop status van uw aanbieding bekijken op de overzichts pagina van de aanbieding:
 
- :::image type="content" source="media/co-sell/co-sell-status.png" alt-text="Deze afbeelding toont de huidige mede-verkoop status van aanbiedingen.":::
-
+[![Deze afbeelding toont de huidige mede-verkoop status van aanbiedingen.](media/co-sell/co-sell-status.png)](media/co-sell/co-sell-status.png#lightbox)
 
 ## <a name="next-steps"></a>Volgende stappen
 

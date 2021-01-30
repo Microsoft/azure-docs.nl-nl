@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/21/2020
 keywords: pull-geheim, Aro, open Shift, Red Hat
-ms.openlocfilehash: 769b7589fb6496fc2f4123665ad1f6fe61d0cce2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1a8e45a2eab1b7b4c8a5936049f404d5bd3441c
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89294744"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071083"
 ---
 # <a name="add-or-update-your-red-hat-pull-secret-on-an-azure-red-hat-openshift-4-cluster"></a>Uw Red Hat pull-geheim toevoegen of bijwerken op een Azure Red Hat open Shift 4-cluster
 
@@ -231,6 +231,6 @@ Als u de operator gecertificeerde Opera tors en Red Hat niet ziet, wacht u een p
 Om ervoor te zorgen dat uw pull-geheim is bijgewerkt en correct werkt, opent u OperatorHub en controleert u of er een operator voor Red Hat is geverifieerd. Controleer bijvoorbeeld of de operator open Shift container Storage beschikbaar is en of u machtigingen hebt om te installeren.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie voor meer informatie over Red Hat-pull geheimen het [gebruik van image pull Secrets](https://docs.openshift.com/container-platform/4.5/openshift_images/managing_images/using-image-pull-secrets.html).
+Zie voor meer informatie over Red Hat-pull geheimen het [gebruik van image pull Secrets](https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html).
 
-Meer informatie over Red Hat open Shift 4 vindt u in [Azure Red Hat open Shift 4](https://docs.openshift.com/aro/4/welcome/index.html).
+Zie [Red Hat open Shift container platform documentation](https://docs.openshift.com/container-platform/4.6/welcome/index.html)(Engelstalig) voor meer informatie over Red Hat open Shift 4.

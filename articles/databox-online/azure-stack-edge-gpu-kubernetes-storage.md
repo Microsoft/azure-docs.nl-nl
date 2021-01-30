@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 11/04/2020
+ms.date: 01/28/2021
 ms.author: alkohli
-ms.openlocfilehash: 34165071238ca3edf78ab9cca43639c23ce5ed2a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2d079f2fa3e67f1ec915a02de3e195ccac538209
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448708"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063303"
 ---
 # <a name="kubernetes-storage-management-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes-opslag beheer op uw Azure Stack Edge Pro GPU-apparaat
 
@@ -79,11 +79,11 @@ De volgende stappen worden uitgevoerd:
 
 Op het Azure Stack Edge Pro-apparaat worden er statisch ingericht `PersistentVolumes` gemaakt met behulp van de opslag mogelijkheden van het apparaat. Bij het inrichten van een share en **het gebruik van de optie delen met Edge Compute** is ingeschakeld, maakt deze actie automatisch een HW-resource in het Kubernetes-cluster.
 
-![Lokale share maken in Azure Portal voor statische inrichting](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-2.png)
+![Lokale share maken in Azure Portal voor statische inrichting](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-1.png)
 
 Als u Cloud lagen wilt gebruiken, kunt u een Edge-Cloud share maken met de optie delen met Edge Compute ingeschakeld. Er wordt automatisch een HW gemaakt voor deze share. Alle toepassings gegevens die u naar de Edge-share schrijft, worden getierd naar de Cloud. 
 
-![Cloud share maken in Azure Portal voor statische inrichting](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-1.png)
+![Cloud share maken in Azure Portal voor statische inrichting](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-2.png)
 
 U kunt SMB-en NFS-shares maken om PVs op Azure Stack Edge Pro-apparaat statisch in te richten. Zodra de HW is ingericht, stuurt u een PVC om deze opslag te claimen. Hier volgt een voor beeld van een PVC-implementatie `yaml` die de opslag claimt en gebruikmaakt van de shares die u hebt ingericht.
 

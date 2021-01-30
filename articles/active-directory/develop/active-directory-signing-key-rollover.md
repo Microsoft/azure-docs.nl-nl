@@ -12,12 +12,12 @@ ms.date: 8/11/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: bd2bd67774eb55051e55e4433984c0fd1fda5240
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f3bf9ffeb8da8e877a27ab8758572b2c8277146d
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755574"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090312"
 ---
 # <a name="signing-key-rollover-in-the-microsoft-identity-platform"></a>Rollover van de handtekening sleutel in het micro soft Identity-platform
 In dit artikel wordt beschreven wat u moet weten over de open bare sleutels die worden gebruikt door het micro soft Identity-platform voor het ondertekenen van beveiligings tokens. Het is belang rijk te weten dat deze sleutels periodiek worden doorgevoerd en kan in een nood geval direct worden doorgevoerd. Alle toepassingen die gebruikmaken van het micro soft-identiteits platform moeten het proces voor sleutel rollover programmatisch kunnen afhandelen. Ga verder met lezen om te begrijpen hoe de sleutels werken, hoe u de invloed van de rollover op uw toepassing kunt beoordelen en hoe u uw toepassing kunt bijwerken of een periodiek hand matig rollover proces kunt instellen voor het afhandelen van Key rollover, indien nodig.
@@ -297,7 +297,7 @@ Als u een toepassing op WIF v 1.0 hebt gemaakt, is er geen mechanisme voor het a
 
 Instructies voor het gebruik van de FedUtil om uw configuratie bij te werken:
 
-1. Controleer of de WIF v 1.0 SDK is geïnstalleerd op uw ontwikkel computer voor Visual Studio 2008 of 2010. U kunt [deze hier downloaden](https://www.microsoft.com/en-us/download/details.aspx?id=4451) als u deze nog niet hebt geïnstalleerd.
+1. Controleer of de WIF v 1.0 SDK is geïnstalleerd op uw ontwikkel computer voor Visual Studio 2008 of 2010. U kunt [deze hier downloaden](https://www.softpedia.com/get/Programming/Other-Programming-Files/Windows-Identity-Foundation-SDK.shtml) als u deze nog niet hebt geïnstalleerd.
 2. Open de oplossing in Visual Studio, klik met de rechter muisknop op het betreffende project en selecteer **federatieve meta gegevens bijwerken**. Als deze optie niet beschikbaar is, is FedUtil en/of de WIF v 1.0 SDK niet geïnstalleerd.
 3. Selecteer in de prompt **Update** om te beginnen met het bijwerken van uw federatieve meta gegevens. Als u toegang hebt tot de server omgeving waar de toepassing wordt gehost, kunt u eventueel de [automatische update planner](/previous-versions/windows-identity-foundation/ee517272(v=msdn.10))van FedUtil gebruiken.
 4. Klik op **volt ooien** om het update proces te volt ooien.

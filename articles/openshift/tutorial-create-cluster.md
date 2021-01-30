@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 10/26/2020
-ms.openlocfilehash: 909385b4f670d084a9357b6ac2840a9458604667
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: e6be2b659223fb110d7e13b14d732561df9ad408
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063026"
+ms.locfileid: "99072233"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Zelfstudie: Een Azure Red Hat OpenShift 4-cluster maken
 
@@ -88,7 +88,7 @@ Als u een aangepast domein opgeeft voor uw cluster, moet u rekening houden met h
 
 * De OpenShift-console is beschikbaar op een URL, zoals `https://console-openshift-console.apps.example.com`, in plaats van het ingebouwde domein `https://console-openshift-console.apps.<random>.<location>.aroapp.io`.
 
-* OpenShift maakt standaard gebruik van zelfondertekende certificaten voor alle routes die op `*.apps.example.com` voor aangepaste domeinen worden gemaakt.  Als u ervoor kiest om aangepaste DNS te gebruiken nadat u verbinding hebt gemaakt met het cluster, moet u de OpenShift-documentatie volgen om [een aangepaste certificeringsinstantie voor uw ingangscontroller](https://docs.openshift.com/aro/4/authentication/certificates/replacing-default-ingress-certificate.html) en een [aangepaste certificeringsinstantie voor uw API-server te configureren](https://docs.openshift.com/aro/4/authentication/certificates/api-server.html).
+* OpenShift maakt standaard gebruik van zelfondertekende certificaten voor alle routes die op `*.apps.example.com` voor aangepaste domeinen worden gemaakt.  Als u ervoor kiest om aangepaste DNS te gebruiken nadat u verbinding hebt gemaakt met het cluster, moet u de OpenShift-documentatie volgen om [een aangepaste certificeringsinstantie voor uw ingangscontroller](https://docs.openshift.com/container-platform/4.6/security/certificates/replacing-default-ingress-certificate.html) en een [aangepaste certificeringsinstantie voor uw API-server te configureren](https://docs.openshift.com/container-platform/4.6/security/certificates/api-server.html).
 
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Een virtueel netwerk met twee lege subnetten maken
 

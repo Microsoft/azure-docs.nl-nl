@@ -1,5 +1,5 @@
 ---
-title: Overzicht van Azure Key Vault beveiliging
+title: Overzicht van Azure Key Vault-beveiliging
 description: Een overzicht van de beveiligings functies en aanbevolen procedures voor het Azure Key Vault.
 services: key-vault
 author: msmbaldwin
@@ -9,22 +9,21 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/05/2021
 ms.author: mbaldwin
-ms.openlocfilehash: c4e9f0cd6a7421f5be29200816bb00a56b141367
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: c7635fdc2012ab404709733d8f5849465c2ee82f
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937653"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071560"
 ---
-# <a name="azure-key-vault-security-overview"></a>Overzicht van Azure Key Vault beveiliging
+# <a name="azure-key-vault-security"></a>Azure Key Vault-beveiliging
 
 U gebruikt Azure Key Vault om versleutelings sleutels en geheimen te beveiligen, zoals certificaten, verbindings reeksen en wacht woorden in de Cloud. Bij het opslaan van gevoelige en bedrijfs kritieke gegevens moet u stappen ondernemen om de beveiliging van uw kluizen en de gegevens die erin zijn opgeslagen te maximaliseren.
 
-Dit artikel bevat een overzicht van de beveiligings functies en aanbevolen procedures voor het Azure Key Vault. Zie de [beveiligings basislijn voor Azure Key Vault](security-baseline.md)voor een uitgebreide lijst met aanbevelingen op basis van de [beveiligings benchmark van Azure](../../security/benchmarks/introduction.md).
+Dit artikel bevat een overzicht van de beveiligings functies en aanbevolen procedures voor het Azure Key Vault. 
 
-## <a name="general-guidance"></a>Algemene richtlijnen
-
-Onze aanbeveling is een kluis per toepassing per omgeving te gebruiken (ontwikkeling, voor bereiding en productie). Zo kunt u geen geheimen delen tussen omgevingen en vermindert u ook de dreiging in het geval van een schending.
+> [!NOTE]
+> Voor een uitgebreide lijst met Azure Key Vault Security-aanbevelingen raadpleegt u de [beveiligings basislijn voor Azure Key Vault](security-baseline.md).
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
@@ -66,7 +65,7 @@ Toepassingen hebben toegang tot de abonnementen via eind punten. De toegangs con
 
 De volgende tabel bevat de eind punten voor de beheer-en gegevens abonnementen.
 
-| Toegangs &nbsp; vlak | Eindpunten voor toegang | Bewerkingen | Mechanisme voor toegangs &nbsp; beheer |
+| Toegangs &nbsp; vlak | Eindpunten voor toegang | Operations | Mechanisme voor toegangs &nbsp; beheer |
 | --- | --- | --- | --- |
 | Beheerlaag | **Wereldwijd:**<br> management.azure.com:443<br><br> **Azure China 21Vianet:**<br> management.chinacloudapi.cn:443<br><br> **Azure van de Amerikaanse overheid:**<br> management.usgovcloudapi.net:443<br><br> **Azure Duitsland:**<br> management.microsoftazure.de:443 | Sleutel kluizen maken, lezen, bijwerken en verwijderen<br><br>Key Vault toegangs beleid instellen<br><br>Key Vault Tags instellen | Azure RBAC |
 | Gegevenslaag | **Wereldwijd:**<br> &lt;kluisnaam&gt;.vault.azure.net:443<br><br> **Azure China 21Vianet:**<br> &lt;kluisnaam&gt;.vault.azure.cn:443<br><br> **Azure van de Amerikaanse overheid:**<br> &lt;kluisnaam&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Duitsland:**<br> &lt;kluisnaam&gt;.vault.microsoftazure.de:443 | Sleutels: versleutelen, ontsleutelen, wrapKey, sleutel uitpakken, ondertekenen, verifiëren, ophalen, lijst maken, bijwerken, importeren, verwijderen, herstellen, back-up maken, herstellen, opschonen<br><br> Certificaten: managecontacts, getissuers, listissuers, setissuers, deleteissuers, manageissuers, Get, List, maken, importeren, bijwerken, verwijderen, herstellen, back-up maken, herstellen, opschonen<br><br>  Geheimen: ophalen, lijst, instellen, verwijderen, herstellen, back-ups maken, herstellen, opschonen | Key Vault toegangs beleid of Azure RBAC (preview-versie)|
@@ -109,20 +108,9 @@ Met Azure Key Vault Soft-verwijderings-en opschoon beveiliging kunt u verwijderd
 
 U moet ook regel matig back-ups van uw kluis nemen op het bijwerken/verwijderen/maken van objecten in een kluis.  
 
-Azure PowerShell-back-upopdrachten:
-
-* [Back-upcertificaat](/powershell/module/azurerm.keyvault/Backup-AzureKeyVaultCertificate)
-* [Back-upsleutel](/powershell/module/azurerm.keyvault/Backup-AzureKeyVaultKey)
-* [Back-upgeheim](/powershell/module/azurerm.keyvault/Backup-AzureKeyVaultSecret)
-
-Back-upopdrachten van Azure CLI
-
-* [Back-upcertificaat](/cli/azure/keyvault/certificate#az-keyvault-certificate-backup)
-* [Back-upsleutel](/cli/azure/keyvault/key#az-keyvault-key-backup)
-* [Back-upgeheim](/cli/azure/keyvault/secret#az-keyvault-secret-backup)
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
+- [Beveiligings basislijn Azure Key Vault](security-baseline.md)
+- [Best practices voor Azure Key Vault](security-baseline.md)
 - [Virtuele netwerk service-eind punten voor Azure Key Vault](overview-vnet-service-endpoints.md)
 - [Azure RBAC: Ingebouwde rollen](../../role-based-access-control/built-in-roles.md)

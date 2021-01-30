@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Een beheerd exemplaar van SQL Managed Instance (portal) maken'
+title: 'Quick Start: een door Azure SQL beheerd exemplaar maken (Portal)'
 description: Maak in deze quickstart een beheerd exemplaar, netwerkomgeving en client-VM voor toegang met behulp van de Microsoft Azure-portal.
 services: sql-database
 ms.service: sql-managed-instance
@@ -10,25 +10,25 @@ ms.topic: quickstart
 author: danimir
 ms.author: danil
 ms.reviewer: sstein
-ms.date: 09/26/2019
-ms.openlocfilehash: bf606af0425c04873dadcf47932c806a1099942a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.date: 1/29/2021
+ms.openlocfilehash: 95b721f12e4818a77f18d01c99a5c6d60b881169
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788703"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089650"
 ---
-# <a name="quickstart-create-a-managed-instance-of-sql-managed-instance"></a>Quickstart: Een beheerd exemplaar van SQL Managed Instance maken
+# <a name="quickstart-create-an-azure-sql-managed-instance"></a>Quickstart: Een Azure SQL Managed Instance maken
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-In deze quickstart leert u hoe u een beheerd exemplaar van [Azure SQL Managed Instance](sql-managed-instance-paas-overview.md) maakt in de Microsoft Azure-portal.
+In deze quickstart leert u hoe u een [met Azure SQL beheerd exemplaar](sql-managed-instance-paas-overview.md) maakt in de Azure-portal.
 
 > [!IMPORTANT]
 > Raadpleeg [Ondersteunde regio’s](resource-limits.md#supported-regions) en [Ondersteunde abonnementstypen](resource-limits.md#supported-subscription-types) voor de beperkingen.
 
-## <a name="create-a-managed-instance"></a>Een beheerd exemplaar maken
+## <a name="create-an-azure-sql-managed-instance"></a>Een Azure SQL Managed Instance maken
 
-Volg de volgende stappen om een beheerd exemplaar te maken: 
+Voer de volgende stappen uit om een SQL Managed instance te maken: 
 
 ### <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -36,18 +36,18 @@ Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://a
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 1. Selecteer **Azure SQL** in het linkermenu van de Microsoft Azure-portal. Als **Azure SQL** niet in de lijst staat, selecteert u **Alle services** en voert u vervolgens **Azure SQL** in het zoekvak in.
-1. Selecteer **+ Toevoegen** om de pagina **SQL-implementatieoptie selecteren** te openen. U kunt aanvullende informatie over een met Azure SQL beheerd exemplaar bekijken door **Details weergeven** te selecteren op de tegel **SQL Managed Instance** .
-1. Selecteer **Maken** .
+1. Selecteer **+ Toevoegen** om de pagina **SQL-implementatieoptie selecteren** te openen. U kunt aanvullende informatie over een met Azure SQL beheerd exemplaar bekijken door **Details weergeven** te selecteren op de tegel **SQL Managed Instance**.
+1. Selecteer **Maken**.
 
-   ![Een beheerd exemplaar maken](./media/instance-create-quickstart/create-managed-instance.png)
+   ![Een beheerd exemplaar maken](./media/instance-create-quickstart/create-azure-sql-managed-instance.png)
 
 4. Gebruik de tabbladen in het inrichtingsformulier **Een met Azure SQL beheerd exemplaar maken** om vereiste en optionele informatie toe te voegen. In de volgende secties worden deze tabbladen in meer detail beschreven.
 
 ### <a name="basics-tab"></a>Tabblad Basisbeginselen
 
-- Vul verplichte gegevens in die vereist zijn op het tabblad **Basisbeginselen** . Dit is een set informatie die minimaal vereist is voor het inrichten van een beheerd exemplaar.
+- Vul verplichte gegevens in die vereist zijn op het tabblad **Basisbeginselen**. Dit is een set informatie die minimaal is vereist voor het inrichten van een met SQL beheerd exemplaar.
 
-   ![Tabblad 'Basis' voor het maken van een beheerd exemplaar](./media/instance-create-quickstart/mi-create-tab-basics.png)
+   ![Tabblad Basisbeginselen voor het maken van een met SQL beheerd exemplaar](./media/instance-create-quickstart/azure-sql-managed-instance-create-tab-basics.png)
 
    Gebruik de onderstaande tabel als referentie voor informatie die op dit tabblad is vereist.
 
@@ -62,15 +62,25 @@ Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://a
 
 - Selecteer **Beheerd exemplaar configureren** om de grootte van reken- en opslagresources te bepalen en de prijscategorieën te controleren. Gebruik de schuifregelaars of tekstvakken om de hoeveelheid opslagruimte en het aantal virtuele kernen op te geven. Wanneer u klaar bent, selecteert u **Toepassen** om uw selectie op te slaan. 
 
-   ![Formulier voor beheerd exemplaar](./media/instance-create-quickstart/mi-create-tab-configure-performance.png)
+   ![Formulier voor beheerd exemplaar](./media/instance-create-quickstart/azure-sql-managed-instance-create-tab-configure-performance.png)
 
-- Als u uw keuzes wilt bekijken voordat u een met SQL beheerd exemplaar maakt, selecteert u **Controleren en maken** . U kunt ook de netwerkopties configureren door te selecteren **Volgende: Netwerken** .
+| Instelling| Voorgestelde waarde | Beschrijving |
+| ------ | --------------- | ----------- |
+| **Servicelaag** | Selecteer een van de opties. | Selecteer op basis van uw scenario een van de volgende opties: </br> <ul><li>**Algemeen**: voor de meeste productiewerk belastingen en de standaard optie.</li><li>**Bedrijfskritiek**: ontworpen voor workloads met lage latentie met hoge tolerantie voor fouten en snelle failovers.</li></ul><BR>Zie voor meer informatie [Azure SQL database en Azure SQL Managed instance service-lagen](../../azure-sql/database/service-tiers-general-purpose-business-critical.md) en Lees [overzicht van de resource limieten voor Azure SQL Managed instance](../../azure-sql/managed-instance/resource-limits.md).|
+| **Hardware genereren** | Selecteer een van de opties. | Het genereren van de hardware definieert doorgaans de reken-en geheugen limieten en andere kenmerken die van invloed zijn op de prestaties van de werk belasting. **GEN5** is de standaard instelling.|
+| **vCore Compute model** | Selecteer een optie. | vCores vertegenwoordigen een exacte hoeveelheid reken resources die altijd worden ingericht voor uw werk belasting. **Acht vCores** is de standaard instelling.|
+| **Opslag in GB** | Selecteer een optie. | Opslag grootte in GB, selecteert u op basis van de verwachte gegevens grootte. Zie [migratie Overview: SQL Server naar SQL Managed instance](../../azure-sql/migration-guides/managed-instance/sql-server-to-managed-instance-overview.md)(Engelstalig) als u bestaande gegevens van on-premises of op verschillende Cloud platforms wilt migreren.|
+| **Azure Hybrid Benefit** | Schakel de optie in, indien van toepassing. | Voor het gebruik van een bestaande licentie voor Azure. Zie [Azure Hybrid Benefit-Azure SQL Database & SQL Managed instance](../../azure-sql/azure-hybrid-benefit.md)(Engelstalig) voor meer informatie. |
+| **Opslag redundantie van back-ups** | Selecteer **geografisch redundante back-upopslag**. | Opslag redundantie binnen Azure voor back-upopslag. Houd er rekening mee dat deze waarde niet later kan worden gewijzigd. Geografisch redundante back-upopslag is standaard en aanbevolen, hoewel zone en lokale redundantie zijn toegestaan voor meer kosten en gegevens locatie met één regio. Zie [back-upopslag redundantie](../database/automated-backups-overview.md?tabs=managed-instance#backup-storage-redundancy)voor meer informatie.|
+
+
+- Als u uw keuzes wilt bekijken voordat u een met SQL beheerd exemplaar maakt, selecteert u **Controleren en maken**. U kunt ook de netwerkopties configureren door te selecteren **Volgende: Netwerken**.
 
 ### <a name="networking-tab"></a>Tabblad Netwerken
 
-- Vul optionele informatie in op het tabblad **Netwerken** . Als u deze informatie weglaat, worden de standaardinstellingen toegepast door de portal.
+- Vul optionele informatie in op het tabblad **Netwerken**. Als u deze informatie weglaat, worden de standaardinstellingen toegepast door de portal.
 
-   ![Tabblad 'Netwerken' voor het maken van een beheerd exemplaar](./media/instance-create-quickstart/mi-create-tab-networking.png)
+   ![Tabblad 'Netwerken' voor het maken van een beheerd exemplaar](./media/instance-create-quickstart/azure-sql-managed-instance-create-tab-networking.png)
 
    Gebruik de onderstaande tabel als referentie voor informatie die op dit tabblad is vereist.
 
@@ -78,16 +88,17 @@ Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://a
    | ------ | --------------- | ----------- |
    | **Virtueel netwerk** | Selecteer **Nieuw virtueel netwerk maken** of een geldig virtueel netwerk en subnet.| Als een netwerk/subnet niet beschikbaar is, moet het worden [gewijzigd om te voldoen aan de netwerkvereisten](vnet-existing-add-subnet.md) voordat u het als doel voor het nieuwe beheerde exemplaar kunt selecteren. Zie [Een virtueel netwerk configureren voor een met SQL beheerd exemplaar](connectivity-architecture-overview.md) voor informatie over de vereisten voor het configureren van de netwerkomgeving voor een met SQL beheerd exemplaar. |
    | **Verbindingstype** | Kies tussen het verbindingstype Proxy of Omleiding.|Zie [Verbindingstype voor Azure SQL Managed Instance](../database/connectivity-architecture.md#connection-policy) voor meer informatie over verbindingstypen.|
-   | **Openbaar eindpunt**  | Selecteer **Inschakelen** . | Als u wilt dat een beheerd exemplaar toegankelijk is via het eindpunt voor openbare gegevens, moet u deze optie inschakelen. | 
-   | **Toegang toestaan vanaf** (als **Openbaar eindpunt** is ingeschakeld) | Selecteer een van de opties.   |In de portal kunt u een beveiligingsgroep configureren met een openbaar eindpunt. </br> </br> Selecteer op basis van uw scenario een van de volgende opties: </br> <ul> <li>**Azure-services** : We raden deze optie aan wanneer u verbinding maakt vanuit Power BI of een andere service voor meerdere tenants. </li> <li> **Internet** : Gebruik dit om te testen wanneer u snel een beheerd exemplaar wilt maken. Deze optie wordt niet aanbevolen in productieomgevingen. </li> <li> **Geen toegang** : Met deze optie maakt u de beveiligingsregel **Weigeren** . Wijzig deze regel om een beheerd exemplaar toegankelijk te maken via een openbaar eindpunt. </li> </ul> </br> Zie [Een met Azure SQL beheerd exemplaar veilig gebruiken met een openbaar eindpunt](public-endpoint-overview.md) voor meer informatie over de beveiliging van een openbaar eindpunt.|
+   | **Openbaar eindpunt**  | Selecteer **Uitschakelen**. | Als u wilt dat een beheerd exemplaar toegankelijk is via het eindpunt voor openbare gegevens, moet u deze optie inschakelen. | 
+   | **Toegang toestaan vanaf** (als **Openbaar eindpunt** is ingeschakeld) | **Geen toegang** selecteren  |In de portal kunt u een beveiligingsgroep configureren met een openbaar eindpunt. </br> </br> Selecteer op basis van uw scenario een van de volgende opties: </br> <ul> <li>**Azure-services**: We raden deze optie aan wanneer u verbinding maakt vanuit Power BI of een andere service voor meerdere tenants. </li> <li> **Internet**: Gebruik dit om te testen wanneer u snel een beheerd exemplaar wilt maken. Deze optie wordt niet aanbevolen in productieomgevingen. </li> <li> **Geen toegang**: Met deze optie maakt u de beveiligingsregel **Weigeren**. Wijzig deze regel om een beheerd exemplaar toegankelijk te maken via een openbaar eindpunt. </li> </ul> </br> Zie [Een met Azure SQL beheerd exemplaar veilig gebruiken met een openbaar eindpunt](public-endpoint-overview.md) voor meer informatie over de beveiliging van een openbaar eindpunt.|
 
-- Als u uw keuzes wilt bekijken voordat u een beheerd exemplaar maakt, kunt u **Bekijken en maken** selecteren. U kunt ook meer aangepaste instellingen configureren door  **te selecteren. We gaan nu verder met: Aanvullende instellingen** .
+- Als u uw keuzes wilt bekijken voordat u een beheerd exemplaar maakt, kunt u **Bekijken en maken** selecteren. U kunt ook meer aangepaste instellingen configureren door  **te selecteren. We gaan nu verder met: Aanvullende instellingen**.
+
 
 ### <a name="additional-settings"></a>Aanvullende instellingen
 
-- Vul optionele informatie in op het tabblad **Aanvullende instellingen** . Als u deze informatie weglaat, worden de standaardinstellingen toegepast door de portal.
+- Vul optionele informatie in op het tabblad **Aanvullende instellingen**. Als u deze informatie weglaat, worden de standaardinstellingen toegepast door de portal.
 
-   ![Tabblad 'Aanvullende instellingen' voor het maken van een beheerd exemplaar](./media/instance-create-quickstart/mi-create-tab-additional-settings.png)
+   ![Tabblad 'Aanvullende instellingen' voor het maken van een beheerd exemplaar](./media/instance-create-quickstart/azure-sql-managed-instance-create-tab-additional-settings.png)
 
    Gebruik de onderstaande tabel als referentie voor informatie die op dit tabblad is vereist.
 
@@ -95,36 +106,43 @@ Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://a
    | ------ | --------------- | ----------- |
    | **Sortering** | Kies de sortering die u wilt gebruiken voor uw beheerde exemplaar. Als u SQL Server-databases wilt migreren, moet u de bronsortering controleren met `SELECT SERVERPROPERTY(N'Collation')` en die waarde gebruiken.| Raadpleeg [De serversortering instellen of wijzigen](/sql/relational-databases/collations/set-or-change-the-server-collation) voor informatie over sorteringen.|   
    | **Tijdzone** | Selecteer de tijdzone die het beheerde exemplaar moet gebruiken.|Zie [Tijdzones](timezones-overview.md) voor meer informatie.|
-   | **Gebruiken als secundaire failover** | Selecteer **Ja** . | Schakel deze optie in als u het beheerde exemplaar wilt gebruiken als een secundaire failovergroep.|
-   | **Primair met SQL beheerd exemplaar** (als **Gebruiken als secundaire failover** is ingesteld op **Ja** ) | Kies een bestaand primair beheerd exemplaar dat wordt toegevoegd aan dezelfde DNS-zone met het beheerde exemplaar dat u nu maakt. | Met deze stap wordt de configuratie van de failovergroep na het maken ingeschakeld. Zie [Zelfstudie: een beheerd exemplaar aan een failovergroep toevoegen](failover-group-add-instance-tutorial.md).|
+   | **Gebruiken als secundaire failover** | Selecteer **Ja**. | Schakel deze optie in als u het beheerde exemplaar wilt gebruiken als een secundaire failovergroep.|
+   | **Primair met SQL beheerd exemplaar** (als **Gebruiken als secundaire failover** is ingesteld op **Ja**) | Kies een bestaand primair beheerd exemplaar dat wordt toegevoegd aan dezelfde DNS-zone met het beheerde exemplaar dat u nu maakt. | Met deze stap wordt de configuratie van de failovergroep na het maken ingeschakeld. Zie [Zelfstudie: een beheerd exemplaar aan een failovergroep toevoegen](failover-group-add-instance-tutorial.md).|
+
+- Als u uw keuzes wilt bekijken voordat u een beheerd exemplaar maakt, kunt u **Bekijken en maken** selecteren. U kunt ook Azure-Tags configureren door volgende te selecteren **: Tags** (aanbevolen).
+
+### <a name="tags"></a>Tags
+
+- Tags toevoegen aan resources in uw Azure Resource Manager-sjabloon (ARM-sjabloon). [Tags](/azure/azure-resource-manager/management/tag-resources) zijn een hulpmiddel bij het logisch ordenen van uw resources. De label waarden worden weer gegeven in kosten rapporten en bieden andere beheer activiteiten per tag. 
+
+- U kunt het beste uw nieuwe SQL Managed instance met de tag owner identificeren om te bepalen wie is gemaakt, en het label Environment om te bepalen of dit systeem productie, ontwikkeling, enz. is. Zie [uw naamgevings strategie ontwikkelen voor Azure-resources](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging)voor meer informatie.
+ 
+- Selecteer **controleren + maken** om door te gaan.
 
 ## <a name="review--create"></a>Beoordelen en maken
 
 1. Als u uw keuzes wilt bekijken voordat u een beheerd exemplaar maakt, kunt u **Bekijken en maken** selecteren.
 
-   ![Tabblad voor het bekijken en maken van een beheerd exemplaar](./media/instance-create-quickstart/mi-create-tab-review-create.png)
+   ![Tabblad voor het bekijken en maken van een beheerd exemplaar](./media/instance-create-quickstart/azure-sql-managed-instance-create-tab-review-create.png)
 
 1. Selecteer **Maken** om het inrichten van het beheerde exemplaar te starten.
 
 > [!IMPORTANT]
-> Het implementeren van een beheerd exemplaar is een langdurende bewerking. De implementatie van het eerste exemplaar in het subnet duurt doorgaans veel langer dan de implementatie in een subnet met bestaande beheerde exemplaren. Raadpleeg [Bewerkingen voor SQL Managed Instance-beheer](sql-managed-instance-paas-overview.md#management-operations) voor de gemiddelde inrichtingsduur.
+> Het implementeren van een beheerd exemplaar is een langdurende bewerking. De implementatie van het eerste exemplaar in het subnet duurt doorgaans veel langer dan de implementatie in een subnet met bestaande beheerde exemplaren. Zie [overzicht van Azure SQL Managed instance Management-bewerkingen](management-operations-overview.md#duration)voor gemiddelde inrichtings tijden.
 
 ## <a name="monitor-deployment-progress"></a>Implementatievoortgang bewaken
 
 1. Selecteer het pictogram **Meldingen** om de status van de implementatie te bekijken.
 
-   ![Implementatievoortgang van een SQL Managed Instance-implementatie](./media/instance-create-quickstart/mi-create-deployment-in-progress.png)
+   ![Implementatievoortgang van een SQL Managed Instance-implementatie](./media/instance-create-quickstart/azure-sql-managed-instance-create-deployment-in-progress.png)
 
 1. Selecteer **Implementatie in uitvoering** in de melding om het SQL Managed Instance-venster te openen en de implementatievoortgang verder te bewaken. 
 
 > [!TIP]
-> Als u de webbrowser of het scherm met de implementatievoortgang hebt afgesloten, volgt u deze stappen om dit scherm weer te vinden:
-> 1. Open in de Microsoft Azure-portal de resourcegroep (op het tabblad **Basisbeginselen** ) waarin u een met SQL beheerd exemplaar gaat implementeren.
-> 2. Selecteer **Implementaties** .
-> 3. Selecteer de SQL Managed Instance-implementatie die wordt uitgevoerd.
+> - Als u de webbrowser hebt gesloten of van het scherm voortgang van de implementatie hebt verwijderd, kunt u de inrichtings bewerking bewaken via de pagina **overzicht** van het beheerde exemplaar of via Power shell of de Azure cli. Zie [bewerkingen controleren](management-operations-monitor.md#monitor-operations)voor meer informatie. 
+> - U kunt het inrichtings proces annuleren via Azure Portal, of via Power shell of via de Azure CLI of met behulp van de REST API. Zie [Azure SQL Managed instance Management-bewerkingen annuleren](management-operations-cancel.md).
 
 > [!IMPORTANT]
-> - Het maken van een SQL Managed Instance is een langlopende bewerking die enkele uren kan duren, afhankelijk van de specifieke omstandigheden. Zie [Duur van beheerbewerkingen](management-operations-overview.md#duration) voor gemiddelde tijden.
 > - Het starten van het maken van een SQL Managed Instance kan worden vertraagd wanneer er andere intensieve bewerkingen actief zijn, zoals het uitvoeren van grote herstel- of schaalbewerkingen op andere beheerde exemplaren in hetzelfde subnet. Zie [Management operations cross-impact](management-operations-overview.md#management-operations-cross-impact) (Wederzijdse impact van beheerbewerkingen) voor meer informatie.
 > - Als u de status van het maken van beheerde exemplaren wilt ophalen, moet u **leesrechten hebben** voor de resourcegroep. Als u deze machtigingen niet hebt of als deze zijn ingetrokken tijdens het maken van het beheerde exemplaar, is het met SQL beheerd exemplaar mogelijk niet zichtbaar in de lijst met implementaties voor resourcegroepen.
 >
@@ -135,45 +153,43 @@ Na een geslaagde implementatie van het beheerde exemplaar kunt u de resources di
 
 1. Open de resourcegroep voor uw beheerde exemplaar. 
 
-   ![SQL Managed Instance-resources](./media/instance-create-quickstart/resources.png)
+   ![SQL Managed Instance-resources](./media/instance-create-quickstart/azure-sql-managed-instance-resources.png)
 
 ## <a name="view-and-fine-tune-network-settings"></a>Netwerkinstellingen weergeven en aanpassen
 
 Als u de netwerkinstellingen wilt aanpassen, bekijkt u het volgende:
 
-1. Selecteer de routetabel om de UDR (door de gebruiker gedefinieerde route) op te geven die voor u is gemaakt.
+1. Selecteer in de lijst met resources de route tabel om het door de gebruiker gedefinieerde route tabel (UDR)-object te controleren dat is gemaakt.
 
-   ![Routetabel](./media/instance-create-quickstart/route-table.png)
+2. Bekijk de vermeldingen in de routetabel om verkeer vanuit en binnen het virtuele netwerk van het met SQL beheerde exemplaar door te sturen. Als u de route tabel hand matig maakt of configureert, maakt u deze vermeldingen in de route tabel van SQL Managed instance.
 
-2. Bekijk de vermeldingen in de routetabel om verkeer vanuit en binnen het virtuele netwerk van het met SQL beheerde exemplaar door te sturen. Als u de routetabel handmatig maakt of configureert, moet u deze vermeldingen maken in de routetabel van het met SQL beheerde exemplaar.
+   ![Vermelding voor een SQL Managed Instance-subnet naar lokaal](./media/instance-create-quickstart/azure-sql-managed-instance-route-table-user-defined-route.png)
 
-   ![Vermelding voor een SQL Managed Instance-subnet naar lokaal](./media/instance-create-quickstart/udr.png)
+    Als u routes wilt wijzigen of toevoegen, opent u de **routes** in de instellingen van de route tabel.
 
-3. Ga terug naar de resourcegroep en selecteer de netwerkbeveiligingsgroep.
-
-   ![Netwerkbeveiligingsgroep](./media/instance-create-quickstart/network-security-group.png)
+3. Ga terug naar de resource groep en selecteer het NSG-object (netwerk beveiligings groep) dat is gemaakt.
 
 4. Bekijk de inkomende en uitgaande beveiligingsregels. 
 
-   ![Beveiligingsregels](./media/instance-create-quickstart/security-rules.png)
+   ![Beveiligingsregels](./media/instance-create-quickstart/azure-sql-managed-instance-security-rules.png)
+
+    Als u regels wilt wijzigen of toevoegen, opent u de regels voor **binnenkomende beveiliging** en **uitgaande beveiliging** in de instellingen voor de netwerk beveiligings groep.
 
 > [!IMPORTANT]
-> Als u een openbaar eindpunt hebt geconfigureerd voor het met SQL beheerde exemplaar, moet u poorten openen voor netwerkverkeer dat verbindingen met SQL Managed Instance toestaat vanaf het openbaar internet. Zie [Een openbaar eindpunt configureren voor SQL Managed Instance](public-endpoint-configure.md#allow-public-endpoint-traffic-on-the-network-security-group) voor meer informatie.
+> Als u een openbaar eindpunt hebt geconfigureerd voor het met SQL beheerde exemplaar, moet u poorten openen voor netwerkverkeer dat verbindingen met SQL Managed Instance toestaat vanaf het openbaar internet. Zie [Configure a Public endpoint for SQL Managed instance](public-endpoint-configure.md#allow-public-endpoint-traffic-on-the-network-security-group)(Engelstalig) voor meer informatie.
 >
 
 ## <a name="retrieve-connection-details-to-sql-managed-instance"></a>Details over de verbinding met SQL Managed Instance ophalen
 
 Als u verbinding wilt maken met SQL Managed Instance, voert u de volgende stappen uit om de hostnaam en de FQDN (Fully Qualified Domain Name) op te halen:
 
-1. Ga terug naar de resourcegroep en selecteer uw beheerde exemplaar.
+1. Ga terug naar de resource groep en selecteer het SQL Managed instance-object dat is gemaakt.
 
-   ![Beheerd exemplaar in de resourcegroep](./media/instance-create-quickstart/managed-instance.png)
+2. Ga naar het tabblad **Overzicht** en zoek de eigenschap **Host**. Kopieer de hostnaam naar het klem bord voor het beheerde exemplaar voor gebruik in de volgende Snelstartgids door te klikken op de knop **kopiëren naar klem bord** .
 
-2. Ga naar het tabblad **Overzicht** en zoek de eigenschap **Host** . Kopieer de hostnaam voor het beheerde exemplaar voor gebruik in de volgende quickstart.
+   ![Hostnaam](./media/instance-create-quickstart/azure-sql-managed-instance-host-name.png)
 
-   ![Hostnaam](./media/instance-create-quickstart/host-name.png)
-
-   De gekopieerde waarde vertegenwoordigt een FQDN die kan worden gebruikt om verbinding te maken met SQL Managed Instance. Deze is vergelijkbaar met het volgende voorbeeld: *uw_hostnaam.a1b2c3d4e5f6.database.windows.net* .
+   De gekopieerde waarde vertegenwoordigt een FQDN die kan worden gebruikt om verbinding te maken met SQL Managed Instance. Deze is vergelijkbaar met het volgende voorbeeld: *uw_hostnaam.a1b2c3d4e5f6.database.windows.net*.
 
 ## <a name="next-steps"></a>Volgende stappen
 

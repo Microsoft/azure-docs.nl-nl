@@ -1,180 +1,152 @@
 ---
-title: Facturerings model voor prijzen &
-description: Overzicht van de manier waarop prijzen en facturering werken voor Azure Logic Apps
+title: Prijs modellen voor facturerings &
+description: Overzicht van de manier waarop prijzen en facturerings modellen werken in Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-author: jonfancey
-ms.author: jonfan
-ms.reviewer: estfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
-ms.date: 12/07/2020
-ms.openlocfilehash: 9243d089b4a000066ec03dbeeccd046db374f558
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.date: 01/29/2021
+ms.openlocfilehash: 0de0c5d53bd3195a24f75f4a2e65c19602e2a2b3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673107"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99088918"
 ---
-# <a name="pricing-model-for-azure-logic-apps"></a>Prijs model voor Azure Logic Apps
+# <a name="pricing-and-billing-models-for-azure-logic-apps"></a>Prijzen en facturerings modellen voor Azure Logic Apps
 
-[Azure Logic apps](../logic-apps/logic-apps-overview.md) helpt u om geautomatiseerde integratie werk stromen te maken en uit te voeren die in de Cloud kunnen worden geschaald. In dit artikel wordt beschreven hoe facturering en prijzen werken voor Azure Logic Apps. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
+[Azure Logic apps](../logic-apps/logic-apps-overview.md) helpt u om geautomatiseerde integratie werk stromen te maken en uit te voeren die in de Cloud kunnen worden geschaald. In dit artikel wordt beschreven hoe factuur-en prijs modellen werken voor de Logic Apps-service en gerelateerde resources. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor specifieke prijs tarieven. Zie [kosten plannen en beheren voor Azure Logic apps](plan-manage-costs.md)voor meer informatie over hoe u kosten kunt plannen, beheren en bewaken.
 
 <a name="consumption-pricing"></a>
 
-## <a name="consumption-pricing-model"></a>Prijs model verbruik
+## <a name="multi-tenant-pricing"></a>Prijzen voor meerdere tenants
 
-Voor nieuwe logische apps die worden uitgevoerd in de open bare, ' wereld wijde ', multi tenant Azure Logic Apps service, betaalt u alleen voor wat u gebruikt. Deze Logic apps gebruiken een op verbruik gebaseerd abonnement en prijs model. In uw logische app is elke stap een actie en Azure Logic Apps meter alle acties die worden uitgevoerd in uw logische app.
+Een prijs model voor betalen voor gebruik is van toepassing op Logic apps die worden uitgevoerd in de open bare, ' wereld wijde ' multi tenant-Logic Apps service. Alle geslaagde en mislukte uitvoeringen worden gemeten en gefactureerd.
 
-Acties omvatten bijvoorbeeld:
+Zo wordt een aanvraag die een polling trigger maakt, nog steeds als een uitvoering gemeten, zelfs als die trigger wordt overgeslagen en er geen werk stroom exemplaar van de logische app wordt gemaakt.
 
-* [Triggers](#triggers), die speciale acties zijn. Voor alle Logic apps is een trigger als de eerste stap vereist.
+| Items | Description |
+|-------|-------------|
+| [Ingebouwde](../connectors/apis-list.md#built-in) triggers en acties | Systeem eigen uitvoeren in de Logic Apps-service en worden gemeten met behulp van de prijs van de [ **actie**](https://azure.microsoft.com/pricing/details/logic-apps/). <p><p>Zo zijn de HTTP-trigger en de aanvraag trigger ingebouwde triggers, terwijl de HTTP-actie en de reactie actie ingebouwde acties zijn. Gegevens bewerkingen, batch bewerkingen, variabele bewerkingen en [werk stroom besturings acties](../connectors/apis-list.md#control-workflow), zoals lussen, voor waarden, Switch, parallelle vertakkingen, enzovoort, zijn ook ingebouwde acties. |
+| [Standaard-connector](../connectors/apis-list.md#managed-connectors) triggers en-acties <p><p>[Aangepaste connector](../connectors/apis-list.md#custom) triggers en-acties | Gemeten met behulp van de [Standard-connector prijs](https://azure.microsoft.com/pricing/details/logic-apps/). |
+| Triggers en acties voor [Enter prise-connector](../connectors/apis-list.md#managed-connectors) | Gemeten met behulp van de prijs van de [Enter prise-connector](https://azure.microsoft.com/pricing/details/logic-apps/). Tijdens de open bare preview worden ondernemings connectors echter met behulp van de [ *Standard* -connector prijs](https://azure.microsoft.com/pricing/details/logic-apps/)gemeten. |
+| Acties in [lussen](logic-apps-control-flow-loops.md) | Elke actie die wordt uitgevoerd in een lus, wordt gemeten voor elke herhalings cyclus die wordt uitgevoerd. <p><p>Stel bijvoorbeeld dat u een lus ' voor elke ' hebt die acties bevat die een lijst verwerken. De Logic Apps-service metert elke actie die in die lus wordt uitgevoerd door het aantal lijst items te vermenigvuldigen met het aantal acties in de lus en voegt de actie toe die de lus start. De berekening voor een lijst met tien items is dus (10 * 1) + 1, wat resulteert in elf actie-uitvoeringen. |
+| Nieuwe pogingen | Als u de meest eenvoudige uitzonde ringen en fouten wilt verwerken, kunt u een [beleid voor opnieuw proberen](logic-apps-exception-handling.md#retry-policies) instellen voor triggers en acties waarbij wordt ondersteund. Deze nieuwe pogingen samen met de oorspronkelijke aanvraag worden in rekening gebracht tegen tarieven op basis van het feit of de trigger of actie een ingebouwd, standaard of ENTER prise-type heeft. Een actie die wordt uitgevoerd met 2 nieuwe pogingen wordt bijvoorbeeld in rekening gebracht voor drie actie-uitvoeringen. |
+| [Gegevens retentie en opslag verbruik](#data-retention) | Gemeten met behulp van de prijs voor het bewaren van gegevens, die u kunt vinden op de [pagina Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/), onder de tabel **prijs informatie** . |
+|||
 
-* [Ingebouwde of systeem eigen acties](../connectors/apis-list.md#built-in) , zoals http, aanroepen naar Azure Functions en API Management, enzovoort
+Raadpleeg de volgende artikelen voor meer informatie:
 
-* Aanroepen naar [beheerde connectors](../connectors/apis-list.md#managed-connectors) , zoals Outlook 365, Dropbox, enzovoort
+* [Metrische gegevens weer geven voor uitvoeringen en opslag verbruik](plan-manage-costs.md#monitor-billing-metrics)
+* [Limieten in Azure Logic Apps](logic-apps-limits-and-config.md)
 
-* [Werk stroom acties beheren](../connectors/apis-list.md#control-workflow) , zoals lussen, voorwaardelijke instructies, enzovoort
+### <a name="not-metered"></a>Geen data limiet
 
-[Standaard](../connectors/apis-list.md#managed-connectors) connectors worden in rekening gebracht tegen de [standaard prijs](https://azure.microsoft.com/pricing/details/logic-apps)van de verbinding. Algemeen beschik bare [Enter prise](../connectors/apis-list.md#managed-connectors) -connectors worden in rekening gebracht tegen de [prijs voor Enter prise connector](https://azure.microsoft.com/pricing/details/logic-apps), terwijl open bare preview Enter prise-connectors in rekening worden gebracht tegen de [standaard prijs](https://azure.microsoft.com/pricing/details/logic-apps)voor
+* Triggers die worden overgeslagen vanwege unmet-voor waarden
+* Acties die niet zijn uitgevoerd omdat de logische app is gestopt voordat deze werd voltooid
+* [Uitgeschakelde Logic apps](#disabled-apps)
 
-Meer informatie over hoe facturering werkt op het niveau van [Triggers](#triggers) en [acties](#actions) . Of Zie [limieten en configuratie voor Azure Logic apps](logic-apps-limits-and-config.md)voor meer informatie over limieten.
+### <a name="other-related-resources"></a>Andere verwante bronnen
+
+Logic apps werken met andere gerelateerde resources, zoals integratie accounts, on-premises gegevens gateways en integratie service omgevingen (ISEs). Lees deze secties verderop in dit onderwerp voor meer informatie over de prijzen voor deze resources:
+
+* [On-premises data gateway](#data-gateway) (On-premises gegevensgateway)
+* [Prijs model voor integratie account](#integration-accounts)
+* [ISE-prijs model](#fixed-pricing)
+
+### <a name="tips-for-estimating-consumption-costs"></a>Tips voor het schatten van de verbruiks kosten
+
+Bekijk de volgende tips om u te helpen bij het ramen van nauw keurigere verbruiks kosten:
+
+* Denk na over het mogelijke aantal berichten of gebeurtenissen dat op een wille keurige dag kan arriveren, in plaats van uw berekeningen alleen op het polling-interval te baseren.
+
+* Wanneer een gebeurtenis of bericht voldoet aan de criteria voor triggers, zullen de triggers onmiddellijk een poging doen alle gebeurtenissen die in de wacht staan of berichten die aan de criteria voldoen, te lezen. Dit gedrag houdt in dat ook als u een langere polling-interval selecteert, de trigger wordt geactiveerd op basis van het aantal gebeurtenissen in de wacht of berichten die in aanmerking komen voor het starten van werkstromen. Triggers die dit gedrag volgen, zijn onder andere Azure Service Bus en Azure Event Hub.
+
+  Stel dat u trigger hebt ingesteld waarmee een eind punt elke dag wordt gecontroleerd. Wanneer de trigger het eindpunt controleert en er vijftien gebeurtenissen vindt die aan de criteria voldoen, wordt de trigger geactiveerd en wordt de corresponderende werkstroom vijftien keer uitgevoerd. De Logic Apps-service metert alle acties die door die 15 werk stromen worden uitgevoerd, met inbegrip van de trigger aanvragen.
 
 <a name="fixed-pricing"></a>
 
-## <a name="fixed-pricing-model"></a>Model met vaste prijzen
+## <a name="ise-pricing"></a>Prijzen voor ISE
 
-Een [ *Integration service Environment* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) biedt een geïsoleerde manier om logische apps te maken en uit te voeren die toegang hebben tot bronnen in een virtueel Azure-netwerk. Logic apps die in een ISE worden uitgevoerd, zijn geen kosten voor het bewaren van gegevens. Wanneer u een ISE maakt en alleen tijdens het maken, kunt u een [ISE-niveau of "SKU"](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level)kiezen, die verschillende [prijs tarieven](https://azure.microsoft.com/pricing/details/logic-apps)heeft:
+Een vast prijs model is van toepassing op Logic apps die worden uitgevoerd in een [ *Integration service Environment* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md). Een ISE wordt gefactureerd op basis van de [Integratieserviceomgeving prijs](https://azure.microsoft.com/pricing/details/logic-apps), die afhankelijk is van het [ISE niveau of de *SKU*](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) die u maakt. Deze prijzen verschillen van de prijzen voor meerdere tenants wanneer u betaalt voor gereserveerde capaciteit en toegewezen resources, ongeacht of u deze gebruikt.
 
-* **Premium** ISE: de basis eenheid van deze SKU heeft vaste capaciteit, maar als u meer door voer nodig hebt, kunt u [meer schaal eenheden toevoegen](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) tijdens het maken van ISE of later. Zie [limieten en configuratie voor Azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor limieten voor ISE.
+| ISE SKU | Description |
+|---------|-------------|
+| **Premium** | De basis eenheid heeft vaste capaciteit en wordt [gefactureerd tegen een uurtarief voor de Premium-SKU](https://azure.microsoft.com/pricing/details/logic-apps). Als u meer door voer wilt doen, kunt u [meer schaal eenheden toevoegen](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) wanneer u uw ISE maakt of daarna. Elke schaal eenheid wordt in rekening gebracht tegen een [uurtarief van ongeveer de basis eenheids](https://azure.microsoft.com/pricing/details/logic-apps)prijs. <p><p>Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor meer informatie over de limiet. |
+| **Developer** | De basis eenheid heeft vaste capaciteit en wordt [gefactureerd tegen een uurtarief voor de SKU van de ontwikkel aars](https://azure.microsoft.com/pricing/details/logic-apps). Deze SKU heeft geen ondersteuning voor schalen, een Service Level Agreement (SLA) of gepubliceerde limieten. Gebruik deze SKU alleen voor het verkennen, experimenten, ontwikkelen en testen, niet voor productie-of prestatie tests. |
+|||
 
-* **Ontwikkelaar** ISE: deze SKU heeft geen mogelijkheid om omhoog te schalen, geen Service Level Agreement (SLA) en geen gepubliceerde limieten. Gebruik deze SKU alleen voor experimenteren, ontwikkelen en testen, niet voor productie-of prestatie testen.
+### <a name="included-at-no-extra-cost"></a>Zonder extra kosten inbegrepen
 
-Voor Logic apps die u in een ISE maakt en uitvoert, betaalt u voor deze mogelijkheden een [vaste prijs](https://azure.microsoft.com/pricing/details/logic-apps) (versus betalen per gebruik):
+| Items | Description |
+|-------|-------------|
+| [Ingebouwde](../connectors/apis-list.md#built-in) triggers en acties | Geef het **kern** label weer en voer deze uit in dezelfde ISE als uw logische apps. |
+| [Standaardconnectoren](../connectors/apis-list.md#managed-connectors) <p><p>[Bedrijfsconnectoren](../connectors/apis-list.md#enterprise-connectors) | -Beheerde connectors die het label **ISE** weer geven, zijn speciaal ontworpen om te werken zonder de on-premises gegevens gateway en worden uitgevoerd in dezelfde ISE als uw Logic apps. ISE prijzen zijn inclusief een groot aantal zakelijke verbindingen. <p><p>-Connectors die het label ISE niet weer geven, worden uitgevoerd in de multi tenant-Logic Apps service. De prijzen voor ISE zijn echter inclusief de uitvoeringen voor Logic apps die worden uitgevoerd in een ISE. |
+| Acties in [lussen](logic-apps-control-flow-loops.md) | ISE prijzen omvat elke actie die wordt uitgevoerd in een lus voor elke lussen cyclus. <p><p>Stel bijvoorbeeld dat u een lus ' voor elke ' hebt die acties bevat die een lijst verwerken. Als u het totale aantal uitvoeringen van de actie wilt ophalen, vermenigvuldigt u het aantal lijst items met het aantal acties in de lus en voegt u de actie toe waarmee de lus wordt gestart. De berekening voor een lijst met tien items is dus (10 * 1) + 1, wat resulteert in elf actie-uitvoeringen. |
+| Nieuwe pogingen | Als u de meest eenvoudige uitzonde ringen en fouten wilt verwerken, kunt u een [beleid voor opnieuw proberen](logic-apps-exception-handling.md#retry-policies) instellen voor triggers en acties waarbij wordt ondersteund. ISE-prijzen zijn inclusief nieuwe pogingen samen met de oorspronkelijke aanvraag. |
+| [Gegevens retentie en opslag verbruik](#data-retention) | Logic apps in een ISE doen geen retentie en opslag kosten in beslag. |
+| [Integratieaccounts](#integration-accounts) | Bevat gebruik voor een enkele laag met een integratie account, op basis van ISE SKU, zonder extra kosten. |
+|||
 
-* [Ingebouwde](../connectors/apis-list.md#built-in) triggers en acties
-
-  In een ISE worden met ingebouwde triggers en acties het **kern** label weer gegeven en uitgevoerd in dezelfde ISE als uw logische apps.
-
-* [Standard](../connectors/apis-list.md#managed-connectors) -connectors en [Enter prise](../connectors/apis-list.md#enterprise-connectors) -connectors, waarmee u zoveel zakelijke verbindingen kunt maken als u wilt
-
-   Standard-en Enter prise-connectors die het label **ISE** weer geven, worden uitgevoerd in dezelfde ISE als uw logische apps. Connectors die het label ISE niet weer geven, worden uitgevoerd in de open bare, ' wereld wijde ' multi tenant-Logic Apps service. Vaste prijzen gelden ook voor connectors die worden uitgevoerd in de multi tenant-service wanneer u deze gebruikt met Logic apps die worden uitgevoerd in een ISE.
-
-* Gebruik van het [integratie account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) zonder extra kosten, op basis van uw [ISE-SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level):
-
-  * **Premium** ISE SKU: één [standaard-laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account
-
-  * **Ontwikkelaar** ISE SKU: Eén integratie account voor de [gratis laag](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits)
-
-  Voor extra kosten kunt u meer integratie accounts maken voor uw ISE [tot aan de totale limiet](logic-apps-limits-and-config.md#integration-account-limits). 
-
-  * **Premium** ISE SKU: Maxi maal 19 meer standaard accounts. Er zijn geen gratis of basis accounts toegestaan.
-
-  * **Ontwikkelaar** ISE SKU: tot 19 extra standaard accounts als u al een gratis account of 20 totaal standaard accounts hebt als u nog geen gratis account hebt. Er zijn geen basis accounts toegestaan.
-
-  Zie [limieten en configuratie voor Azure Logic apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)voor meer informatie over de limieten van het integratie account. Verderop in dit onderwerp vindt u meer informatie over [de integratie-account lagen en hun prijs model](#integration-accounts) .
-
-<a name="connectors"></a>
-
-## <a name="connectors"></a>Connectors
-
-Azure Logic Apps-connectors helpen uw logische app toegang te bieden tot apps, services en systemen in de Cloud of on-premises met behulp van [Triggers](#triggers), [acties](#actions)of beide. Connectors worden geclassificeerd als Standard of ENTER prise. Zie [connectors for Azure Logic apps](../connectors/apis-list.md)voor een overzicht van deze connectors. Als er geen vooraf gemaakte connectors beschikbaar zijn voor de REST-Api's die u wilt gebruiken in uw Logic apps, kunt u [aangepaste connectors](/connectors/custom-connectors)maken. Dit zijn alleen wrappers rond die rest-api's. Aangepaste connectors worden gefactureerd als standaard connectors. De volgende secties bevatten meer informatie over hoe de facturering voor triggers en acties werkt.
-
-<a name="triggers"></a>
-
-## <a name="triggers"></a>Triggers
-
-Een trigger is altijd de eerste stap in de werk stroom van een logische app. Dit is een speciale actie waarmee een logisch app-exemplaar wordt gemaakt en uitgevoerd wanneer aan specifieke criteria wordt voldaan of een specifieke gebeurtenis plaatsvindt. Triggers handelen op verschillende manieren, wat van invloed is op hoe de logische app wordt gemeten. Hier volgen de verschillende soorten triggers die in Azure Logic Apps bestaan:
-
-* **Trigger voor terugkeer patroon**: u kunt deze algemene trigger gebruiken die niet specifiek is voor een service of systeem, om de werk stroom van de logische app te starten en een logische app-exemplaar te maken dat wordt uitgevoerd op basis van het terugkeer interval dat u in de trigger hebt ingesteld. U kunt bijvoorbeeld een terugkeer patroon trigger instellen die elke drie dagen of op een complexere planning wordt uitgevoerd.
-
-* **Polling trigger**: u kunt deze meer gespecialiseerde terugkeer patroon trigger gebruiken die meestal is gekoppeld aan de beheerde connector voor een specifieke service of systeem, om te controleren of er gebeurtenissen of berichten zijn die voldoen aan de criteria voor het maken en uitvoeren van een logische app-exemplaar op basis van het terugkeer interval dat u in de trigger hebt ingesteld. Zelfs wanneer er geen exemplaar van een logische app wordt gemaakt, bijvoorbeeld wanneer triggers worden overgeslagen, metert de Logic Apps-service elke polling-aanvraag als een uitvoering. Als u het polling-interval wilt opgeven, stelt u de trigger in via de ontwerp functie voor logische apps.
-
-  [!INCLUDE [logic-apps-polling-trigger-non-standard-metering](../../includes/logic-apps-polling-trigger-non-standard-metering.md)]
-
-* **Webhook-trigger**: in plaats van een polling trigger te gebruiken, kunt u een webhook-trigger gebruiken om te wachten tot de client een aanvraag verzendt naar de logische app op een specifieke eind punt-URL. Elke aanvraag die naar het eind punt van de webhook wordt verzonden, telt als een actie-uitvoering. De trigger Request en HTTP-webhook zijn bijvoorbeeld zowel generieke webhook-triggers. Sommige connectors voor services of systemen hebben ook webhook-triggers.
-
-<a name="actions"></a>
-
-## <a name="actions"></a>Acties
-
-Azure Logic Apps meters ' ingebouwde ' acties, zoals HTTP, als systeem eigen acties. Ingebouwde acties omvatten bijvoorbeeld HTTP-aanroepen, aanroepen van Azure Functions of API Management, en controle stroom stappen zoals voor waarden, lussen en switch instructies. Elke actie heeft een eigen actie type. Acties die [connectors](/connectors) aanroepen, hebben bijvoorbeeld het type ' ApiConnection '. Deze connectors worden geclassificeerd als Standard-of ENTER prise-connectors, die worden gemeten op basis van hun respectieve [prijzen](https://azure.microsoft.com/pricing/details/logic-apps). Enter prise-connectors in *Preview* worden in rekening gebracht als standaard connectors.
-
-Azure Logic Apps meter alle geslaagde en mislukte acties als uitvoeringen. Logic Apps deze acties echter niet meten:
-
-* Acties die worden overgeslagen vanwege unmet-voor waarden
-* Acties die niet worden uitgevoerd omdat de logische app is gestopt voordat deze wordt voltooid
-
-Voor acties die in lussen worden uitgevoerd, telt Azure Logic Apps elke actie voor elke cyclus in de lus. Stel dat u een lus ' voor elke ' hebt waarmee een lijst wordt verwerkt. Logic Apps meter een actie in die lus door het aantal lijst items te vermenigvuldigen met het aantal acties in de lus en de actie toe te voegen waarmee de lus wordt gestart. De berekening voor een lijst met tien items is dus (10 * 1) + 1, wat resulteert in elf actie-uitvoeringen.
-
-## <a name="disabled-logic-apps"></a>Uitgeschakelde Logic apps
-
-Uitgeschakelde Logic apps worden niet in rekening gebracht omdat ze geen nieuwe instanties kunnen maken wanneer ze zijn uitgeschakeld. Nadat u een logische app hebt uitgeschakeld, kan het enige tijd duren voordat de actieve instanties worden gestopt.
+Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor meer informatie over de limiet.
 
 <a name="integration-accounts"></a>
 
 ## <a name="integration-accounts"></a>Integratieaccounts
 
-Een [vast prijs model](https://azure.microsoft.com/pricing/details/logic-apps) is van toepassing op [integratie accounts](logic-apps-enterprise-integration-create-integration-account.md) waar u de [B2B-en EDI](logic-apps-enterprise-integration-b2b.md) [-en XML-verwerkings](logic-apps-enterprise-integration-xml.md) functies in azure Logic apps zonder extra kosten kunt verkennen, ontwikkelen en testen. Elk Azure-abonnement kan Maxi maal een [specifieke limiet van integratie accounts](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)hebben. Elk integratie account kan tot een specifieke [limiet van artefacten](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits)worden opgeslagen, waaronder handels partners, overeenkomsten, kaarten, schema's, assembly's, certificaten, batch configuraties, enzovoort.
+Een [integratie account](../logic-apps/logic-apps-pricing.md#integration-accounts) is een afzonderlijke resource die u maakt en koppelt aan Logic apps, zodat u B2B-integratie oplossingen kunt verkennen, bouwen en testen die gebruikmaken van [EDI](logic-apps-enterprise-integration-b2b.md) [-en XML-verwerkings](logic-apps-enterprise-integration-xml.md) mogelijkheden. Azure Logic Apps bieden deze niveaus of lagen voor integratie accounts:
 
-Azure Logic Apps biedt gratis, Basic-en Standard-integratie accounts. De lagen basis en standaard worden ondersteund door de Logic Apps Service Level Agreement (SLA), terwijl de laag gratis niet wordt ondersteund door een SLA en limieten heeft voor de beschik baarheid, door Voer en het gebruik van de regio. Met uitzonde ring van de integratie accounts voor de gratis laag kunt u in elke Azure-regio meer dan één integratie account hebben. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/)voor prijs tarieven.
+| Laag | Beschrijving |
+|------|-------------|
+| **Basic** | Voor scenario's waarbij u alleen berichten moet verwerken of als u wilt fungeren als een kleine zakelijke partner die een relatie heeft met een handels partner met een grotere zakelijke entiteit. <p><p>Ondersteund door de Logic Apps SLA. |
+| **Standard** | Voor scenario's waarin u complexere B2B-relaties hebt en een groter aantal entiteiten dat u moet beheren. <p><p>Ondersteund door de Logic Apps SLA. |
+| **Gratis** | Voor verkennende scenario's, niet voor productie scenario's. Deze laag heeft limieten voor de beschik baarheid, door Voer en het gebruik van de regio. De gratis laag is bijvoorbeeld alleen beschikbaar voor open bare regio's in azure, bijvoorbeeld VS-West of Zuidoost-Azië, maar niet voor [Azure China 21vianet](/azure/china/overview-operations) of [Azure Government](../azure-government/documentation-government-welcome.md). <p><p>**Opmerking**: wordt niet ondersteund door de Logic apps sla. |
+|||
 
-Als u een [ *Integration service Environment* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)hebt, kan uw ISE één integratie account zonder extra kosten gebruiken, hoewel het opgenomen account type varieert per [ISE SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level). Voor [extra kosten](#fixed-pricing)kunt u meer integratie accounts maken voor uw ISE tot de [totale limiet voor integratie accounts](logic-apps-limits-and-config.md#integration-account-limits). Zie de sectie vorig [vast prijs model](#fixed-pricing) in dit onderwerp voor meer informatie over hoe het vaste prijs model werkt voor een ISE. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
+Voor informatie over limieten van het integratie account raadpleegt u [limieten en configuratie voor Azure Logic apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits), zoals:
 
-Als u wilt kiezen tussen een gratis, basis of standaard integratie account, raadpleegt u deze use-case-beschrijvingen:
+* [Limieten voor integratie accounts per Azure-abonnement](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)
 
-* **Gratis**: als u wilt proberen om verkennende scenario's, niet productie scenario's. Deze laag is alleen beschikbaar voor open bare regio's in azure, zoals vs-West of Zuidoost-Azië, maar niet voor [Azure China 21vianet](/azure/china/overview-operations) of [Azure Government](../azure-government/documentation-government-welcome.md).
+* [Limieten voor verschillende artefacten per integratie account](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits). Artefacten zijn onder andere handels partners, overeenkomsten, kaarten, schema's, assembly's, certificaten, batch configuraties, enzovoort.
 
-* **Basis**: voor wanneer u alleen bericht verwerking wilt of als een kleine zakelijke partner die een relatie heeft met een handels partner met een grotere bedrijfs entiteit
+### <a name="integration-accounts-for-consumption-based-logic-apps"></a>Integratie accounts voor op verbruik gebaseerde Logic apps
 
-* **Standaard**: voor wanneer u COMPLEXere B2B-relaties hebt en een groter aantal entiteiten dat u moet beheren
+Integratie accounts worden gefactureerd met een vaste [integratie account prijs](https://azure.microsoft.com/pricing/details/logic-apps/) die is gebaseerd op de account tier die u gebruikt.
+
+### <a name="ise-based-logic-apps"></a>Logic apps op basis van ISE
+
+Uw ISE bevat zonder extra kosten één integratie account, op basis van uw ISE-SKU. Voor extra kosten kunt u meer integratie accounts maken voor uw ISE om tot de [totale ISE limiet](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits)te gebruiken. Meer informatie over het [ISE-prijs model](#fixed-pricing) vindt u eerder in dit onderwerp.
+
+| ISE SKU | Inbegrepen integratie account | Extra kosten |
+|---------|------------------------------|-----------------|
+| **Premium** | Eén [standaard](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account | Maxi maal 19 meer standaard accounts. Er zijn geen gratis of basis accounts toegestaan. |
+| **Developer** | Eén [gratis](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) integratie account | Maxi maal 19 extra standaard accounts als u al een gratis account of 20 totaal standaard accounts hebt als u nog geen gratis account hebt. Er zijn geen basis accounts toegestaan. |
+||||
 
 <a name="data-retention"></a>
 
-## <a name="data-retention"></a>Gegevensretentie
+## <a name="data-retention-and-storage-consumption"></a>Gegevens retentie en opslag verbruik
 
-Met uitzonde ring van Logic apps die worden uitgevoerd in een Integration service Environment (ISE), worden alle invoer en uitvoer die zijn opgeslagen in de uitvoerings geschiedenis van de logische app, gefactureerd op basis van de [uitvoerings periode](logic-apps-limits-and-config.md#run-duration-retention-limits)van een logische app. Logic apps die in een ISE worden uitgevoerd, zijn geen kosten voor het bewaren van gegevens. Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps)voor prijs tarieven.
+Alle invoer en uitvoer in de uitvoerings geschiedenis van de logische app worden opgeslagen en gemeten op basis van de uitvoerings duur van die app [en de retentie periode](logic-apps-limits-and-config.md#run-duration-retention-limits)voor de geschiedenis.
 
-Om u te helpen bij het bewaken van het opslag verbruik van uw logische app, kunt u het volgende doen:
+* Voor logische apps in de multi tenant-Logic Apps-service wordt het opslag verbruik gefactureerd tegen een vaste prijs, die u kunt vinden op de pagina met prijs **informatie** over de [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps).
 
-* Bekijk het aantal opslag eenheden in GB dat maandelijks door uw logische app wordt gebruikt.
+* Voor Logic apps in ISEs worden geen kosten voor het bewaren van gegevens in rekening gebracht.
 
-* Bekijk de grootten voor de invoer en uitvoer van een specifieke actie in de uitvoerings geschiedenis van de logische app.
+Zie [metrische gegevens weer geven voor uitvoeringen en opslag verbruik](plan-manage-costs.md#monitor-billing-metrics)voor het bewaken van het gebruik van opslag verbruik.
 
-<a name="storage-consumption"></a>
+<a name="data-gateway"></a>
 
-### <a name="view-logic-app-storage-consumption"></a>Gebruik van logische app-opslag weer geven
+## <a name="on-premises-data-gateway"></a>On-premises gegevensgateway
 
-1. Zoek en open uw logische app in de Azure Portal.
+Een [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-install.md) is een afzonderlijke resource die u maakt zodat uw Logic apps toegang hebben tot on-premises gegevens met behulp van specifieke door de gateway ondersteunde connectors. Voor connector bewerkingen die via de gateway worden uitgevoerd, worden kosten in rekening gebracht, maar er worden geen kosten in rekening gebracht voor de gateway zelf.
 
-1. Selecteer in het menu van de logische app, onder **bewaking**, **metrische gegevens**.
+<a name="disabled-apps"></a>
 
-1. Selecteer in het rechterdeel venster onder **grafiek titel** in de lijst **metriek** het **facturerings gebruik voor uitvoeringen van opslag verbruik**.
+## <a name="disabled-logic-apps"></a>Uitgeschakelde Logic apps
 
-   Met deze metriek krijgt u het aantal verbruiks eenheden voor opslag in GB per maand dat wordt gefactureerd.
-
-   > [!NOTE]
-   > Uitvoeringen die minder dan 500 MB in opslag verbruiken, worden mogelijk niet weer gegeven in de weer gave controle, maar worden nog steeds gefactureerd.
-
-<a name="input-output-sizes"></a>
-
-### <a name="view-action-input-and-output-sizes"></a>De invoer-en uitvoer grootte van de actie weer geven
-
-1. Zoek en open uw logische app in de Azure Portal.
-
-1. Selecteer **overzicht** in het menu van de logische app.
-
-1. Selecteer in het rechterdeel venster onder **uitvoerings geschiedenis** de uitvoering met de invoer en uitvoer die u wilt controleren.
-
-1. Kies onder **uitvoering van logische app** de optie **Details uitvoeren**.
-
-1. Selecteer de actie die u wilt weer geven in het detail venster van de **logische app-uitvoering** in de tabel acties, waarin de status en duur van elke actie worden vermeld.
-
-1. Zoek in het actie deel venster van de **logische app** de grootten voor de invoer en uitvoer van die actie. Zoek onder koppeling naar **invoer** en **uitvoer** de koppelingen naar deze invoer en uitvoer.
-
-   > [!NOTE]
-   > Voor lussen toont alleen de acties op het hoogste niveau de grootte van de invoer en uitvoer. Voor acties binnen geneste lussen tonen invoer en uitvoer een grootte van nul en geen koppelingen.
+Uitgeschakelde Logic apps worden niet in rekening gebracht omdat ze geen nieuwe instanties kunnen maken wanneer ze zijn uitgeschakeld. Nadat u een logische app hebt uitgeschakeld, kan het enige tijd duren voordat de actieve instanties worden gestopt.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over Azure Logic Apps](logic-apps-overview.md)
-* [Een logische app maken](quickstart-create-first-logic-app-workflow.md)
+* [Kosten plannen en beheren voor Azure Logic Apps](plan-manage-costs.md)

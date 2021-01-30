@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: 91915f204a68d59a603b8bdea383b497a5b33d34
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: c0bc245a4be1ab7c326fa27cc1422878aca6331d
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664024"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071678"
 ---
 # <a name="what-is-azure-digital-twins"></a>Wat is Azure Digital Twins?
 
@@ -94,10 +94,10 @@ In de volgende grafiek ziet u waar Azure Digital Twins zich bevindt in de contex
 
 ## <a name="service-limits"></a>Servicelimieten
 
-Voor een lijst met beperkingen van Azure Digital Twins, raadpleegt u [*Referentie: servicelimieten*](reference-service-limits.md).
+Zie [*Azure Digital apparaatdubbels-service limieten*](reference-service-limits.md)voor een lijst met Azure Digital apparaatdubbels-limieten.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u met de eerste preview-versie van Azure Digital Twins (oktober 2018) hebt gewerkt, leest u hier wat er is gewijzigd: [*Overzicht: verschillen met de eerste release*](overview-differences.md).
+* Kijk eens naar het werken met Azure Digital Apparaatdubbels in Quick Start: [*Quick Start: een voorbeeld scenario verkennen*](quickstart-adt-explorer.md).
 
-Met deze quickstart kunt u ook direct aan de slag met Azure Digital Twins: [*Snelstart: kennismaken met een voorbeeldscenario*](quickstart-adt-explorer.md).
+* U kunt ook lezen over Azure Digital Apparaatdubbels-concepten met [*concepten: aangepaste modellen*](concepts-models.md).

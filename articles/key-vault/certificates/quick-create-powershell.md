@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Azure Key Vault-certificaten instellen en weergeven - Azure PowerShell'
+title: 'Quick Start: Stel & Azure Key Vault certificaten weer geven met Azure PowerShell'
 description: In deze quickstart wordt uitgelegd hoe u een certificaat instelt en ophaalt uit Azure Key Vault met behulp van Azure PowerShell
 services: key-vault
 author: msmbaldwin
@@ -9,14 +9,14 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.date: 09/03/2019
+ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: ae53ebac1c2a943a2b1ca98b222a8dbab210bdb5
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 587815cf9628df35f1e1efdbc6a7a3c89a27ed55
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935118"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071914"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-azure-powershell"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van Azure PowerShell
 
@@ -35,32 +35,11 @@ Login-AzAccount
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een Azure-resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. 
-
-```azurepowershell-interactive
-New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-powershell-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Een sleutelkluis maken
 
-Vervolgens maakt u een sleutelkluis. Om deze stap te kunnen uitvoeren, hebt u enkele gegevens nodig:
-
-Hoewel we in deze quickstart 'Contoso KeyVault2' als naam voor de sleutelkluis gebruiken, moet u een unieke naam opgeven.
-
-- **Kluisnaam** Contoso-Vault2.
-- **Naam van resourcegroep** ContosoResourceGroup.
-- **Locatie** VS - oost.
-
-```azurepowershell-interactive
-New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
-```
-
-De uitvoer van deze cmdlet toont eigenschappen van de nieuw gemaakte sleutelkluis. Let op de onderstaande twee eigenschappen:
-
-* **Kluisnaam**: in het voorbeeld is dat **Contoso-Vault2**. U gebruikt deze naam voor andere Sleutelkluis-cmdlets.
-* **Kluis-URI**: in dit voorbeeld is dat https://Contoso-Vault2.vault.azure.net/. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
-
-Nadat de kluis is gemaakt, is uw Azure-account het enige account dat iets met deze nieuwe kluis mag doen.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-kv-creation.md)]
 
 ## <a name="add-a-certificate-to-key-vault"></a>Een certificaat toevoegen aan Key Vault
 
@@ -70,27 +49,23 @@ Typ de onderstaande opdrachten om een zelfondertekend certificaat te maken met e
 
 ```azurepowershell-interactive
 $Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal
-Add-AzKeyVaultCertificate -VaultName "Contoso-Vault2" -Name "ExampleCertificate" -CertificatePolicy $Policy
+
+Add-AzKeyVaultCertificate -VaultName "<your-unique-keyvault-name>" -Name "ExampleCertificate" -CertificatePolicy $Policy
 ```
 
-U kunt nu verwijzen naar dit certificaat dat u aan Azure Key Vault hebt toegevoegd met behulp van de bijbehorende URI. Gebruik **'https://Contoso-Vault2.vault.azure.net/certificates/ExampleCertificate '** om de huidige versie op te halen. 
+U kunt nu verwijzen naar dit certificaat dat u aan Azure Key Vault hebt toegevoegd met behulp van de bijbehorende URI. Gebruik **https://<uw-unieke kluis naam>. Vault.Azure.net/certificates/ExampleCertificate** om de huidige versie op te halen. 
 
 Een eerder opgeslagen certificaat weergeven:
 
 ```azurepowershell-interactive
-Get-AzKeyVaultCertificate -VaultName "Contoso-Vault2" -Name "ExampleCertificate"
+Get-AzKeyVaultCertificate -VaultName "<your-unique-keyvault-name>" -Name "ExampleCertificate"
 ```
 
 U hebt nu een sleutelkluis gemaakt, een certificaat opgeslagen en dat vervolgens opgehaald.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Andere snelstartgidsen en zelfstudies in deze verzameling zijn gebaseerd op deze snelstartgids. Als u van plan bent om verder te gaan met volgende snelstarts en zelfstudies, kunt u deze resources intact laten.
-U kunt de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) gebruiken om de resourcegroep en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt. U kunt de resources als volgt verwijderen:
-
-```azurepowershell-interactive
-Remove-AzResourceGroup -Name ContosoResourceGroup
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-delete-resources.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

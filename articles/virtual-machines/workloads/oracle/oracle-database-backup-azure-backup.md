@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/28/2021
 ms.author: cholse
 ms.reviewer: dbakevlar
-ms.openlocfilehash: d623d7b7ec25c096ebf54c030cf302e0a72e7fb2
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 3122b1c5d7ac8b9dca0e244a4b7e73a57c4c5fca
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063895"
+ms.locfileid: "99072401"
 ---
 # <a name="back-up-and-recover-an-oracle-database-19c-database-on-an-azure-linux-vm-using-azure-backup"></a>Back-ups maken en herstellen van een Oracle Database 19c-Data Base op een virtuele Azure Linux-machine met Azure Backup
 
@@ -21,7 +21,7 @@ In dit artikel wordt het gebruik van Azure Backup beschreven om moment opnamen v
 
 > [!div class="checklist"]
 >
-> * Back-up maken van de data base met toepassings consistente back-up
+> * Maak een back-up van de data base met toepassings consistente back-up
 > * De data base herstellen en herstellen vanaf een herstel punt
 > * De VM herstellen vanaf een herstel punt
 
@@ -39,19 +39,19 @@ Voer de volgende stappen uit om de omgeving voor te bereiden:
 
 ### <a name="connect-to-the-vm"></a>Verbinding maken met de virtuele machine
 
-Gebruik de volgende opdracht om een SSH-sessie (Secure Shell) met de virtuele machine te maken. Vervang het IP-adres en de hostnaam combi natie met de `<publicIpAddress>` waarde voor uw VM.
+1. Gebruik de volgende opdracht om een SSH-sessie (Secure Shell) met de virtuele machine te maken. Vervang het IP-adres en de hostnaam combi natie met de `<publicIpAddress>` waarde voor uw VM.
     
    ```bash
    ssh azureuser@<publicIpAddress>
    ```
    
-Schakel over naar de *hoofd* gebruiker:
+1. Schakel over naar de *hoofd* gebruiker:
 
    ```bash
    sudo su -
    ```
     
-Voeg de Oracle-gebruiker toe aan het */etc/sudoers* -bestand:
+1. Voeg de Oracle-gebruiker toe aan het */etc/sudoers* -bestand:
 
    ```bash
    echo "oracle   ALL=(ALL)      NOPASSWD: ALL" >> /etc/sudoers
@@ -59,9 +59,9 @@ Voeg de Oracle-gebruiker toe aan het */etc/sudoers* -bestand:
 
 ### <a name="prepare-the-database"></a>De data base voorbereiden
 
-1. Bij deze stap wordt ervan uitgegaan dat u een Oracle-exemplaar (*test*) hebt dat wordt uitgevoerd op een virtuele machine met de naam *vmoracle19c*.
+Bij deze stap wordt ervan uitgegaan dat u een Oracle-exemplaar (*test*) hebt dat wordt uitgevoerd op een virtuele machine met de naam *vmoracle19c*.
 
-   Gebruiker overschakelen naar de *Oracle* -gebruiker:
+1. Gebruiker overschakelen naar de *Oracle* -gebruiker:
  
    ```bash
     sudo su - oracle
@@ -79,7 +79,7 @@ Voeg de Oracle-gebruiker toe aan het */etc/sudoers* -bestand:
     echo "export ORACLE_SID=test" >> ~oracle/.bashrc
     ```
     
-3. Start de Oracle-listener als deze nog niet wordt uitgevoerd:
+3. De Oracle-listener starten als deze nog niet wordt uitgevoerd:
 
     ```output
     $ lsnrctl start
@@ -156,7 +156,7 @@ Voeg de Oracle-gebruiker toe aan het */etc/sudoers* -bestand:
     NOARCHIVELOG
     ```
 
-    En voer de volgende opdrachten uit in de modus NOARCHIVELOG:
+    Als het zich in de NOARCHIVELOG-modus bevindt, voert u de volgende opdrachten uit:
 
     ```bash
     SQL> SHUTDOWN IMMEDIATE;
@@ -205,19 +205,19 @@ De Azure Backup-service biedt eenvoudige, beveiligde en kosteneffectieve oplossi
 
 Azure Backup-service biedt een [Framework](../../../backup/backup-azure-linux-app-consistent.md) om toepassings consistentie te krijgen tijdens het maken van back-ups van Windows-en Linux-vm's voor diverse toepassingen, zoals Oracle, MySQL, Mongo DB, SAP Hana en postgresql. Dit omvat het aanroepen van een pre-script (om de toepassingen stil te leggen) voordat een moment opname van schijven wordt gemaakt en het aanroepen van post script (opdrachten voor het opheffen van de toepassingen) nadat de moment opname is voltooid, om de toepassingen te retour neren naar de normale modus. Hoewel voor beelden van pre-scripts en post-scripts worden gegeven in GitHub, is het maken en onderhouden van deze scripts uw verantwoordelijkheid. 
 
-Azure Backup is nu voorzien van een verbeterd pre-scripts en post-script-Framework, waarbij de Azure Backup-Service vooraf gebundelde pre-scripts en post scripts voor geselecteerde toepassingen biedt. Azure Backup gebruikers hoeven alleen de naam van de toepassing te noemen en vervolgens wordt de relevante pre-post scripts automatisch door Azure VM-back-up aangeroepen. De verpakte pre-scripts en post-scripts worden onderhouden door het Azure Backup-team, zodat gebruikers kunnen worden verzekerd van de ondersteuning, het eigendom en de geldigheid van deze scripts. Momenteel zijn de ondersteunde toepassingen voor het uitgebreide Framework ***Oracle en MySQL** _, met meer toepassings typen die in de toekomst worden verwacht.
+Azure Backup is nu voorzien van een verbeterd pre-scripts en post-script-Framework, waarbij de Azure Backup-Service vooraf gebundelde pre-scripts en post scripts voor geselecteerde toepassingen biedt. Azure Backup gebruikers hoeven alleen de naam van de toepassing te noemen en vervolgens wordt de relevante pre-post scripts automatisch door Azure VM-back-up aangeroepen. De verpakte pre-scripts en post-scripts worden onderhouden door het Azure Backup-team, zodat gebruikers kunnen worden verzekerd van de ondersteuning, het eigendom en de geldigheid van deze scripts. Momenteel zijn de ondersteunde toepassingen voor het uitgebreide Framework *Oracle* en *MySQL*.
 
-In deze sectie gaat u Azure Backup verbeterd Framework gebruiken om toepassings consistente moment opnamen van uw actieve VM en Oracle-Data Base te maken. De data base wordt in de back-upmodus geplaatst, zodat er een transactionele, consistente online back-up wordt uitgevoerd terwijl Azure Backup een moment opname van de VM-schijven maakt. De moment opname is een volledige kopie van de opslag en niet een incrementele of gekopieerde moment opname van een schrijf bewerking. het is dus een effectief medium om uw data base van te herstellen. Het voor deel van het gebruik van Azure Backup toepassings consistente moment opnamen is dat ze zeer snel te maken krijgen, hoe groot uw data base is en dat een moment opname kan worden gebruikt voor herstel bewerkingen zodra deze worden uitgevoerd, zonder dat u hoeft te wachten totdat de gegevens naar de Recovery Services kluis worden overgebracht.
+In deze sectie gaat u Azure Backup verbeterd Framework gebruiken om toepassings consistente moment opnamen van uw actieve virtuele machine en Oracle Data Base te maken. De data base wordt in de back-upmodus geplaatst, zodat er een transactionele, consistente online back-up wordt uitgevoerd terwijl Azure Backup een moment opname van de VM-schijven maakt. De moment opname is een volledige kopie van de opslag en niet een incrementele of gekopieerde moment opname van een schrijf bewerking. het is dus een effectief medium om uw data base van te herstellen. Het voor deel van het gebruik van Azure Backup toepassings consistente moment opnamen is dat ze zeer snel te maken krijgen, hoe groot uw data base is en dat een moment opname kan worden gebruikt voor herstel bewerkingen zodra deze worden uitgevoerd, zonder dat u hoeft te wachten totdat de gegevens naar de Recovery Services kluis worden overgebracht.
 
 Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een back-up van de Data Base:
 
-1. Bereid de omgeving voor op toepassings consistente back-up.
-1. Toepassings consistente back-ups instellen.
-1. Toepassings consistente back-up van de virtuele machine activeren
+1. De omgeving voorbereiden voor een toepassings consistente back-up.
+1. Stel toepassings consistente back-ups in.
+1. Activeer een toepassings consistente back-up van de virtuele machine.
 
-### <a name="prepare-the-environment-for-application-consistent-backup"></a>De omgeving voorbereiden voor de toepassings consistente back-up
+### <a name="prepare-the-environment-for-an-application-consistent-backup"></a>De omgeving voorbereiden voor een toepassings consistente back-up
 
-1. Ga naar de _ *hoofdmap** gebruiker:
+1. Schakel over naar de *hoofd* gebruiker:
 
    ```bash
    sudo su -
@@ -229,7 +229,7 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    useradd -G backupdba azbackup
    ```
    
-2. Gebruikers omgeving voor back-up instellen:
+2. Stel de gebruikers omgeving van de back-up in:
 
    ```bash
    echo "export ORACLE_SID=test" >> ~azbackup/.bashrc
@@ -237,16 +237,15 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    echo export PATH='$ORACLE_HOME'/bin:'$PATH' >> ~azbackup/.bashrc
    ```
    
-3. Externe authenticatie instellen voor nieuwe back-upgebruiker. 
-   De back-upgebruiker moet toegang hebben tot de data base met behulp van externe verificatie, zodat deze niet wordt aangevraagd met een wacht woord.
+3. Externe authenticatie instellen voor de nieuwe back-upgebruiker. De back-upgebruiker moet toegang hebben tot de data base met behulp van externe verificatie, zodat deze niet wordt aangevraagd met een wacht woord.
 
-   Ga eerst terug naar de **Oracle** -gebruiker:
+   Ga eerst terug naar de *Oracle* -gebruiker:
 
    ```bash
    su - oracle
    ```
 
-   Meld u aan bij de data base met behulp van sqlplus en controleer de standaard instellingen voor externe verificatie
+   Meld u aan bij de data base met behulp van sqlplus en controleer de standaard instellingen voor externe verificatie:
    
    ```bash
    sqlplus / as sysdba
@@ -254,7 +253,7 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    SQL> show parameter remote_os_authent
    ```
    
-   In de uitvoer moet worden weer gegeven 
+   De uitvoer moet er als volgt uitzien: 
 
    ```output
    NAME                                 TYPE        VALUE
@@ -263,23 +262,30 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    remote_os_authent                    boolean     FALSE
    ```
 
-   Maak nu een database gebruiker azbackup die extern is geverifieerd en Ken sysbackup-bevoegdheid toe:
+   Maak nu een database gebruiker *azbackup* geverifieerd extern en wijs sysbackup-bevoegdheid toe:
    
    ```bash
    SQL> CREATE USER ops$azbackup IDENTIFIED EXTERNALLY;
    SQL> GRANT CREATE SESSION, ALTER SESSION, SYSBACKUP TO ops$azbackup;
    ```
 
-   >[!IMPORTANT] 
-   >Als u fout ' ORA-46953: het wachtwoord bestand heeft niet de indeling 12,2 '.  Wanneer u de instructie GRANT hierboven uitvoert, voert u de volgende stappen uit om het orapwd-bestand te migreren naar de 12,2-indeling:
+   > [!IMPORTANT] 
+   > Als er een fout bericht wordt weer gegeven `ORA-46953: The password file is not in the 12.2 format.`  Wanneer u de `GRANT` instructie uitvoert, voert u de volgende stappen uit om het orapwd-bestand te migreren naar de 12,2-indeling:
    >
-   >Sluit sqlplus af, verplaats het wachtwoord bestand met de oude indeling naar een nieuwe naam, migreer het wachtwoord bestand en verwijder vervolgens het oude bestand. Nadat u de onderstaande opdrachten hebt uitgevoerd, voert u de subsidie bewerking hierboven in sqlplus opnieuw uit.
-   
-   ```bash
-   mv $ORACLE_HOME/dbs/orapwtest $ORACLE_HOME/dbs/orapwtest.tmp
-   orapwd file=$ORACLE_HOME/dbs/orapwtest input_file=$ORACLE_HOME/dbs/orapwtest.tmp
-   rm $ORACLE_HOME/dbs/orapwtest.tmp
-   ```
+   > 1. Sluit sqlplus af.
+   > 1. Verplaats het wachtwoord bestand met de oude indeling naar een nieuwe naam.
+   > 1. Migreer het wachtwoord bestand.
+   > 1. Verwijder het oude bestand.
+   > 1. Voer de volgende opdracht uit:
+   >
+   >    ```bash
+   >    mv $ORACLE_HOME/dbs/orapwtest $ORACLE_HOME/dbs/orapwtest.tmp
+   >    orapwd file=$ORACLE_HOME/dbs/orapwtest input_file=$ORACLE_HOME/dbs/orapwtest.tmp
+   >    rm $ORACLE_HOME/dbs/orapwtest.tmp
+   >    ```
+   >
+   > 1. Voer de `GRANT` bewerking opnieuw uit in sqlplus.
+   >
    
 4. Een opgeslagen procedure maken voor het vastleggen van back-upberichten in het logboek voor database waarschuwingen:
 
@@ -302,18 +308,22 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    
 ### <a name="set-up-application-consistent-backups"></a>Toepassings consistente back-ups instellen  
 
-1. Overschakelen naar de hoofd gebruiker 
+1. Schakel over naar de *hoofd* gebruiker:
+
    ```bash
    sudo su -
    ```
 
-2. De toepassings consistente back-upwerkmap maken
+2. Maak de toepassings consistente werkmap voor back-ups:
+
    ```bash
    if [ ! -d "/etc/azure" ]; then
       sudo mkdir /etc/azure
    fi
    ```
-3. Maak een bestand in de/etc/Azure-map met de naam **workload. conf** met de volgende inhoud, die moet beginnen met `[workload]` . Met de volgende opdracht wordt het bestand gemaakt en wordt de inhoud gevuld:
+
+3. Maak een bestand in de */etc/Azure* -map met de naam *workload. conf* met de volgende inhoud, die moet beginnen met `[workload]` . Met de volgende opdracht wordt het bestand gemaakt en wordt de inhoud gevuld:
+
    ```bash
    echo "[workload]
    workload_name = oracle
@@ -321,14 +331,16 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    timeout = 90
    linux_user = azbackup" > /etc/azure/workload.conf
    ```
-1. Down load de scripts preOracleMaster. SQL en postOracleMaster. SQL van de [github-opslag plaats](https://github.com/Azure/azure-linux-extensions/tree/master/VMBackup/main/workloadPatch/DefaultScripts) en kopieer deze naar de map/etc/Azure
 
-4. De bestands machtigingen wijzigen
-   ```bash
+4. Down load de scripts preOracleMaster. SQL en postOracleMaster. SQL van de [github-opslag plaats](https://github.com/Azure/azure-linux-extensions/tree/master/VMBackup/main/workloadPatch/DefaultScripts) en kopieer deze naar de map */etc/Azure* .
+
+5. De bestands machtigingen wijzigen
+
+```bash
    chmod 744 workload.conf preOracleMaster.sql postOracleMaster.sql 
    ```
 
-### <a name="trigger-application-consistent-backup-of-the-vm"></a>Toepassings consistente back-up van de virtuele machine activeren
+### <a name="trigger-an-application-consistent-backup-of-the-vm"></a>Een toepassings consistente back-up van de virtuele machine activeren
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -375,7 +387,8 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
    ```azurecli
    az backup vault create --location eastus --name myVault --resource-group rg-oracle
    ```
-2. Back-upbeveiliging voor de virtuele machine inschakelen
+
+2. Back-upbeveiliging inschakelen voor de VM:
 
    ```azurecli
    az backup protection enable-for-vm \
@@ -384,7 +397,8 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
       --vm vmoracle19c \
       --policy-name DefaultPolicy
    ```
-3. Activeer nu een back-up om te worden uitgevoerd in plaats van te wachten totdat de back-up wordt geactiveerd met het standaard schema (05:00 UTC). 
+
+3. Activeer nu een back-up om te worden uitgevoerd in plaats van te wachten totdat de back-up wordt geactiveerd met het standaard schema (5 AM UTC): 
 
    ```azurecli
    az backup protection backup-now \
@@ -394,7 +408,8 @@ Voer de volgende stappen uit om Azure Backup te gebruiken voor het maken van een
       --container-name vmoracle19c \
       --item-name vmoracle19c 
    ```
-   U kunt de voortgang van de back-uptaak bewaken met `az backup job list` en `az backup job show`
+
+   U kunt de voortgang van de back-uptaak bewaken met `az backup job list` en `az backup job show` .
 
 ---
 
@@ -433,15 +448,15 @@ Verderop in dit artikel leert u hoe u het herstel proces kunt testen. Voordat u 
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Zoek in het Azure Portal naar het item *myVault* Recovery Services kluizen en klik erop.
+1. Zoek in het Azure Portal naar het item *myVault* Recovery Services kluizen en selecteer dit.
 
     ![Recovery Services kluizen myVault back-upitems](./media/oracle-backup-recovery/recovery-service-06.png)
 
-2. Selecteer op de Blade **overzicht** de optie **back-** upitems en de Select **_Azure-virtuele machine_* _, waarvoor veri-nul moet worden weer gegeven.
+2. Selecteer op de Blade **overzicht** de optie **back-** upitems en de **virtuele machine van Azure** selecteren. deze moet veri-nul hebben.
 
     ![Recovery Services kluizen voor het aantal back-items van Azure virtual machine](./media/oracle-backup-recovery/recovery-service-07.png)
 
-3. Op de pagina Back-upitems (Azure Virtual Machines) wordt uw VM _ *vmoracle19c** weer gegeven. Klik op het weglatings teken aan de rechter kant om het menu te openen en **bestands herstel** te selecteren.
+3. Op de pagina Back-upitems (Azure Virtual Machines) wordt uw VM- **vmoracle19c** weer gegeven. Klik op het weglatings teken aan de rechter kant om het menu te openen en **bestands herstel** te selecteren.
 
     ![Scherm afbeelding van de pagina Recovery Services kluizen bestands herstel](./media/oracle-backup-recovery/recovery-service-08.png)
 
@@ -455,6 +470,7 @@ Verderop in dit artikel leert u hoe u het herstel proces kunt testen. Voordat u 
 
     > [!IMPORTANT]
     > Zorg er in het volgende voor beeld voor dat u de waarden voor het IP-adres en de map bijwerkt. De waarden moeten worden toegewezen aan de map waarin het bestand is opgeslagen.
+    >
 
     ```bash
     $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
@@ -500,6 +516,7 @@ In het volgende voor beeld ziet u hoe u een Secure copy-opdracht (SCP) gebruikt 
 
 > [!IMPORTANT]
 > Zorg er in het volgende voor beeld voor dat u de waarden voor het IP-adres en de map bijwerkt. De waarden moeten worden toegewezen aan de map waarin het bestand is opgeslagen.
+>
 
 ```bash
 $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
@@ -510,7 +527,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
 
 1. Maak een koppel punt voor herstel en kopieer het script ernaar.
 
-    In het volgende voor beeld maakt u een **_/Restore_* _-map voor de moment opname die u wilt koppelen, verplaatst u het bestand naar de map en wijzigt u het bestand zodat het eigendom is van de hoofd gebruiker en het uitvoer bare bestand.
+    In het volgende voor beeld maakt u een */Restore* -map voor de moment opname die u wilt koppelen, verplaatst u het bestand naar de map en wijzigt u het bestand zodat het eigendom is van de hoofd gebruiker en het uitvoer bare bestand.
 
     ```bash 
     ssh azureuser@<publicIpAddress>
@@ -528,7 +545,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
     ./vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py
     ```
 
-    In het volgende voor beeld ziet u wat u moet zien nadat u het voor gaande script hebt uitgevoerd. Wanneer u wordt gevraagd om door te gaan, typt u _ * Y * *.
+    In het volgende voor beeld ziet u wat u moet zien nadat u het voor gaande script hebt uitgevoerd. Wanneer u wordt gevraagd om door te gaan, voert u **Y** in.
 
     ```output
     Microsoft Azure VM Backup - File Recovery
@@ -676,30 +693,28 @@ Voer de volgende stappen uit om de hele virtuele machine te herstellen:
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Een opslag account maken voor fase ring:
-   
-   File Storage configureren in het Azure Portal
+1. Maak een opslag account voor fase ring in de Azure Portal.
 
-   Selecteer in de Azure Portal **_+ een resource maken_* _ en zoek en selecteer een _*_opslag account_*_
+   1. Selecteer in de Azure Portal **+ een resource maken** en zoek en selecteer een **opslag account**.
     
-   ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/storage-1.png)
+      ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/storage-1.png)
     
     
-   Kies op de pagina opslag account maken de bestaande resource groep _*_RG-Oracle_*_, geef uw opslag account de naam _*_Oracrestore_*_ en kies _*_Storage v2 (Generalpurpose v2)_*_ voor het soort account. Wijzig de replicatie naar _*_lokaal redundante opslag (LRS)_*_ en stel de prestaties in op _*_standaard_*_. Zorg ervoor dat de locatie is ingesteld op dezelfde regio als alle andere resources in de resource groep. 
+   1. Kies op de pagina opslag account maken de bestaande resource groep **RG-Oracle**, geef uw opslag account de naam **Oracrestore** en kies **Storage v2 (Generalpurpose v2)** voor het soort account. Wijzig de replicatie naar **lokaal redundante opslag (LRS)** en stel de prestaties in op **standaard**. Zorg ervoor dat de locatie is ingesteld op dezelfde regio als alle andere resources in de resource groep. 
     
-   ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/recovery-storage-1.png)
+      ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/recovery-storage-1.png)
    
-   Klik op controleren + maken en klik vervolgens op maken.
+   1. Klik op controleren + maken en klik vervolgens op maken.
 
-2. Zoek in het Azure Portal naar het item _myVault * Recovery Services kluizen en klik erop.
+2. Zoek in het Azure Portal naar het item *myVault* Recovery Services kluizen en klik erop.
 
     ![Recovery Services kluizen myVault back-upitems](./media/oracle-backup-recovery/recovery-service-06.png)
     
-3.  Selecteer op de Blade **overzicht** de optie **back-** upitems en de Select **_Azure-virtuele machine_* _, waarvoor veri-nul moet worden weer gegeven.
+3.  Selecteer op de Blade **overzicht** de optie **back-** upitems en de **virtuele machine van Azure** selecteren. deze moet veri-nul hebben.
 
     ![Recovery Services kluizen voor het aantal back-items van Azure virtual machine](./media/oracle-backup-recovery/recovery-service-07.png)
 
-4.  Op de back-upitems (Azure Virtual Machines) wordt pagina uw VM _ *vmoracle19c** weer gegeven. Klik op de naam van de virtuele machine.
+4.  Op de back-upitems (Azure Virtual Machines) wordt pagina uw VM- **vmoracle19c** weer gegeven. Klik op de naam van de virtuele machine.
 
     ![Pagina herstel-VM](./media/oracle-backup-recovery/recover-vm-02.png)
 
@@ -916,11 +931,11 @@ Nadat de virtuele machine is hersteld, moet u het oorspronkelijke IP-adres aan d
 
 ### <a name="connect-to-the-vm"></a>Verbinding maken met de virtuele machine
 
-* Gebruik het volgende script om verbinding te maken met de virtuele machine:
+Gebruik het volgende script om verbinding te maken met de virtuele machine:
 
-    ```azurecli
-    ssh <publicIpAddress>
-    ```
+```azurecli
+ssh <publicIpAddress>
+```
 
 ### <a name="start-the-database-to-mount-stage-and-perform-recovery"></a>De data base starten om het stadium te koppelen en herstel uit te voeren
 

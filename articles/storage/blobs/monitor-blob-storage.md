@@ -1,6 +1,6 @@
 ---
-title: Azure Blob-opslag bewaken | Microsoft Docs
-description: Meer informatie over het bewaken van de prestaties en beschik baarheid van Azure Blob-opslag. Bewaak Azure Blob-opslag gegevens, meer informatie over de configuratie en het analyseren van metrische en logboek gegevens.
+title: Azure Blob Storage controleren | Microsoft Docs
+description: Meer informatie over het bewaken van de prestaties en beschik baarheid van Azure Blob Storage. Bewaak Azure Blob Storage-gegevens, informatie over de configuratie en analyseer de metrische gegevens en het logboek.
 author: normesta
 services: storage
 ms.service: storage
@@ -9,14 +9,14 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 9224d02e36dbca96d3e54946330d3135ff811829
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 76f266ec915754b5746f06a340b21146b84fa711
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590763"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071661"
 ---
-# <a name="monitoring-azure-blob-storage"></a>Azure Blob-opslag bewaken
+# <a name="monitoring-azure-blob-storage"></a>Azure Blob Storage controleren
 
 Wanneer u essentiële toepassingen en bedrijfs processen hebt die afhankelijk zijn van Azure-resources, wilt u deze bronnen controleren op hun Beschik baarheid, prestaties en werking. In dit artikel worden de bewakings gegevens beschreven die worden gegenereerd door Azure Blob Storage en wordt uitgelegd hoe u de functies van Azure Monitor kunt gebruiken om waarschuwingen voor deze gegevens te analyseren.
 
@@ -28,7 +28,7 @@ Wanneer u essentiële toepassingen en bedrijfs processen hebt die afhankelijk zi
 De **overzichts** pagina in de Azure portal voor elke Blob Storage-Resource bevat een korte weer gave van het resource gebruik, zoals aanvragen en facturering per uur. Deze informatie is nuttig, maar er is slechts een kleine hoeveelheid bewakings gegevens beschikbaar. Een deel van deze gegevens wordt automatisch verzameld en is beschikbaar voor analyse zodra u de resource maakt. U kunt extra typen gegevens verzameling inschakelen met een bepaalde configuratie.
 
 ## <a name="what-is-azure-monitor"></a>Wat is Azure Monitor?
-Azure Blob-opslag maakt bewakings gegevens door gebruik te maken van [Azure monitor](../../azure-monitor/overview.md). Dit is een volledige stack monitoring-service in Azure. Azure Monitor biedt een volledige set functies voor het bewaken van uw Azure-resources en-resources in andere Clouds en on-premises. 
+Azure Blob Storage maakt bewakings gegevens door gebruik te maken van [Azure monitor](../../azure-monitor/overview.md). Dit is een volledige stack monitoring-service in Azure. Azure Monitor biedt een volledige set functies voor het bewaken van uw Azure-resources en-resources in andere Clouds en on-premises. 
 
 Begin met het artikel [bewaking van Azure-resources met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md) waarin het volgende wordt beschreven:
 
@@ -42,9 +42,9 @@ In de volgende secties vindt u een beschrijving van de specifieke gegevens die z
 
 ## <a name="monitoring-data"></a>Bewakingsgegevens
 
-Azure Blob-opslag verzamelt dezelfde soorten bewakings gegevens als andere Azure-resources, die worden beschreven in [gegevens van Azure-resources bewaken](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). 
+Azure Blob Storage verzamelt hetzelfde soort bewakings gegevens als andere Azure-resources, die worden beschreven in [gegevens van Azure-resources bewaken](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). 
 
-Zie [Azure Blob Storage-bewakings gegevens referentie](monitor-blob-storage-reference.md) voor gedetailleerde informatie over de metriek en logboek gegevens die zijn gemaakt door Azure Blob-opslag.
+Zie [azure Blob Storage monitoring-gegevens referentie](monitor-blob-storage-reference.md) voor gedetailleerde informatie over metrische gegevens en logboeken die zijn gemaakt door Azure Blob Storage.
 
 Metrische gegevens en Logboeken in Azure Monitor ondersteunen alleen Azure Resource Manager opslag accounts. Azure Monitor biedt geen ondersteuning voor klassieke opslag accounts. Als u metrische gegevens of logboeken wilt gebruiken in een klassiek opslag account, moet u migreren naar een Azure Resource Manager Storage-account. Zie [migreren naar Azure Resource Manager](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
@@ -279,12 +279,12 @@ Voor metrische gegevens die dimensies ondersteunen, kunt u de metriek filteren m
 
 Zie [metrische dimensies](monitor-blob-storage-reference.md#metrics-dimensions)voor een volledige lijst met de dimensies die Azure Storage ondersteunt.
 
-Metrische gegevens voor Azure Blob Storage bevinden zich in de volgende naam ruimten: 
+De metrische gegevens voor Azure Blob Storage zijn in deze naam ruimten: 
 
-- Micro soft. Storage/Storage accounts
+- Microsoft.Storage/storageAccounts
 - Micro soft. Storage/Storage accounts/blobServices
 
-Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/platform/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure Blob-opslag.
+Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/platform/metrics-supported.md)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure Blob Storage.
 
 
 ### <a name="accessing-metrics"></a>Toegang tot metrische gegevens
@@ -483,7 +483,7 @@ N.v.t.
 
 U kunt bron Logboeken openen als een BLOB in een opslag account, als gebeurtenis gegevens of via logboek analyse query's.
 
-Zie voor een gedetailleerde Naslag informatie over de velden die worden weer gegeven in deze logboeken de [Naslag informatie voor Azure Blob Storage-bewakings gegevens](monitor-blob-storage-reference.md).
+Zie [Azure Blob Storage monitoring data Reference](monitor-blob-storage-reference.md)(Engelstalig) voor een gedetailleerde Naslag informatie over de velden die in deze logboeken worden weer gegeven.
 
 > [!NOTE]
 > Azure Storage-Logboeken in Azure Monitor bevinden zich in de open bare preview en is beschikbaar voor preview-tests in alle open bare Cloud regio's. Met deze preview-versie kunt u logboeken maken voor blobs (waaronder Azure Data Lake Storage Gen2), bestanden, wacht rijen, tabellen, Premium Storage-accounts in versie 1 voor algemeen gebruik en voor algemeen gebruik v2-opslag accounts. Klassieke opslag accounts worden niet ondersteund.
@@ -601,6 +601,6 @@ Nee. Azure Compute ondersteunt de metrische gegevens op schijven. Zie [metrische
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie voor een verwijzing naar de logboeken en metrische gegevens die zijn gemaakt door Azure Blob Storage [Naslag informatie voor Azure Blob Storage-bewaking](monitor-blob-storage-reference.md).
+- Voor een verwijzing naar de logboeken en metrische gegevens die zijn gemaakt door Azure Blob Storage raadpleegt u de [Naslag informatie voor azure Blob Storage monitoring](monitor-blob-storage-reference.md).
 - Zie [Azure-resources bewaken met Azure monitor](../../azure-monitor/insights/monitor-azure-resource.md)voor meer informatie over het bewaken van Azure-resources.
 - Zie [Azure Storage metrische gegevens migratie](../common/storage-metrics-migration.md)voor meer informatie over de migratie van metrische gegevens.

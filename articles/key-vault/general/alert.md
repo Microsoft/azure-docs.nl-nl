@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 04/06/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to learn the options available to monitor the health of my vaults
-ms.openlocfilehash: 5946a5d6d1adb5f609f497b4c2194582f624fe24
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 1b447e907bca3f8d21f522d888632aa687fd0f91
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934591"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070658"
 ---
 # <a name="monitoring-and-alerting-for-azure-key-vault"></a>Bewaking en waarschuwingen voor Azure Key Vault
 
@@ -203,12 +203,13 @@ Raadpleeg de volgende configuratie parameters.
 
 7. De waarschuwing maken 
 
+### <a name="example-email-alert"></a>Voor beeld van een e-mail waarschuwing 
+
+> [!div class="mx-imgBorder"]
+> ![Scherm opname van de informatie die nodig is voor het configureren van een e-mail waarschuwing.](../media/alert-20.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Gefeliciteerd, u hebt nu een bewakings dashboard gemaakt en er zijn waarschuwingen geconfigureerd voor uw sleutel kluis. Zodra u alle bovenstaande stappen hebt gevolgd, ontvangt u e-mail waarschuwingen wanneer uw sleutel kluis voldoet aan de waarschuwings criteria die u hebt geconfigureerd. Hieronder kunt u een voorbeeld bekijken. Gebruik de hulpprogram ma's die u in dit artikel hebt ingesteld om de status van uw sleutel kluis actief te controleren. 
 
-### <a name="example-email-alert"></a>Voor beeld van een e-mail waarschuwing 
 
-> [!div class="mx-imgBorder"]
-> ![Scherm opname van de informatie die nodig is voor het configureren van een e-mail waarschuwing.](../media/alert-20.png)

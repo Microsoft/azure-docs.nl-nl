@@ -10,12 +10,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 2ab87dfdeb18f97265c3bb2f34616c942a345c1e
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
-ms.translationtype: HT
+ms.openlocfilehash: 8c688b1ba80050c49b9e2a36696ed7a2fb863e3f
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698944"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089390"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Quickstart: Een Azure Cognitive Search-index maken in Java met behulp van REST API's
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "94698944"
 > * [Python](search-get-started-python.md)
 > * [REST](search-get-started-rest.md)
 
-Maak een Java-consoletoepassing waarmee een zoekindex wordt gemaakt en geladen en daarop een query wordt uitgevoerd met behulp van [IntelliJ](https://www.jetbrains.com/idea/), [Java 11 SDK](/java/azure/jdk/) en de [REST API van Azure Cognitive Search](/rest/api/searchservice/). In dit artikel vindt u stapsgewijze instructies voor het maken van de toepassing. U kunt ook [de complete toepassing downloaden en uitvoeren](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
+Maak een Java-consoletoepassing waarmee een zoekindex wordt gemaakt en geladen en daarop een query wordt uitgevoerd met behulp van [IntelliJ](https://www.jetbrains.com/idea/), [Java 11 SDK](/java/azure/jdk/) en de [REST API van Azure Cognitive Search](/rest/api/searchservice/). In dit artikel vindt u stapsgewijze instructies voor het maken van de toepassing. U kunt ook [de complete toepassing downloaden en uitvoeren](https://developers.google.com/sheets/api/quickstart/java).
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 

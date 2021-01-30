@@ -43,9 +43,11 @@
   items:
     - name: Basisbegrippen
       href: basic-concepts.md
+    - name: Aanbevolen procedures
+      href: best-practices.md
     - name: Beveiliging
       items:
-        - name: Beveiligingsoverzicht
+        - name: Overzicht
           href: security-overview.md
         - name: Veilige toegang tot een sleutelkluis
           href: secure-your-key-vault.md

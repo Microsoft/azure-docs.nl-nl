@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van een op een host gebaseerd
 services: container-service
 ms.topic: article
 ms.date: 01/27/2021
-ms.openlocfilehash: 1d071305b457cddde56a11982e08c9331e1d5463
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: ac28c698a766f1f3febaff582038906f658d58dd
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919645"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071847"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Versleuteling op basis van een host op de Azure Kubernetes-service (AKS) (preview)
 
@@ -25,37 +25,7 @@ Deze functie kan alleen worden ingesteld tijdens het maken van het cluster of he
 
 ### <a name="prerequisites"></a>Vereisten
 
-- Controleer of u de `aks-preview` cli-extensie v 0.4.73 of hoger hebt geïnstalleerd
-- Zorg ervoor dat u de `EnableEncryptionAtHostPreview` functie vlag onder `Microsoft.ContainerService` ingeschakeld hebt.
-
-Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft .com met uw abonnement-id's om de functie in te schakelen voor uw abonnementen.
-
-### <a name="register-encryptionathost--preview-features"></a>`EncryptionAtHost`Preview-functies registreren
-
-> [!IMPORTANT]
-> U moet een e-mail adres encryptionAtHost@microsoft . com met uw abonnement-id's hebben om de functie in te scha kelen voor reken resources. U kunt dit niet zelf inschakelen voor deze resources. U kunt dit zelf op de container service inschakelen.
-
-Als u een AKS-cluster wilt maken dat gebruikmaakt van versleuteling op basis van een host, moet u de `EncryptionAtHost` functie vlag inschakelen voor uw abonnement.
-
-Registreer de `EncryptionAtHost` functie vlag met de opdracht [AZ feature REGI ster][az-feature-register] , zoals weer gegeven in het volgende voor beeld:
-
-```azurecli-interactive
-az feature register --namespace "Microsoft.ContainerService"  --name "EnableEncryptionAtHost"
-```
-
-Het duurt enkele minuten voordat de status is *geregistreerd*. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list][az-feature-list]:
-
-```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEncryptionAtHost')].{Name:name,State:properties.state}"
-```
-
-Als u klaar bent, vernieuwt u de registratie van de `Microsoft.ContainerService` `Microsoft.Compute` resource providers met de opdracht [AZ provider REGI ster][az-provider-register] :
-
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
-```
-
-[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
+- Zorg ervoor dat u de `aks-preview` cli-uitbrei ding v 0.4.73 of een hogere versie hebt geïnstalleerd.
 
 ### <a name="install-aks-preview-cli-extension"></a>De CLI-extensie aks-preview installeren
 
@@ -77,23 +47,23 @@ az extension update --name aks-preview
 
 ## <a name="use-host-based-encryption-on-new-clusters-preview"></a>Op hosts gebaseerde versleuteling gebruiken voor nieuwe clusters (preview-versie)
 
-Configureer de cluster agent-knoop punten voor het gebruik van versleuteling op basis van een host wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` markering om de koptekst in te stellen `EnableEncryptionAtHost` .
+Configureer de cluster agent-knoop punten voor het gebruik van versleuteling op basis van een host wanneer het cluster wordt gemaakt. 
 
 ```azurecli-interactive
-az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --aks-custom-headers --enable-encryption-at-host
+az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --enable-encryption-at-host
 ```
 
-Als u clusters wilt maken zonder versleuteling op basis van een host, kunt u dit doen door de aangepaste para meter weg te laten `--aks-custom-headers` .
+Als u clusters wilt maken zonder versleuteling op basis van een host, kunt u dit doen door de para meter weg te laten `--enable-encryption-at-host` .
 
 ## <a name="use-host-based-encryption-on-existing-clusters-preview"></a>Op hosts gebaseerde versleuteling op bestaande clusters gebruiken (preview-versie)
 
-U kunt op een host gebaseerde versleuteling op bestaande clusters inschakelen door een nieuwe knooppunt groep toe te voegen aan uw cluster. Configureer een nieuwe knooppunt groep om versleuteling op basis van een host te gebruiken met behulp van de `--aks-custom-headers` vlag.
+U kunt op een host gebaseerde versleuteling op bestaande clusters inschakelen door een nieuwe knooppunt groep toe te voegen aan uw cluster. Configureer een nieuwe knooppunt groep om versleuteling op basis van een host te gebruiken met behulp van de `--enable-encryption-at-host` para meter.
 
 ```azurecli
-az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --aks-custom-headers --enable-encryption-at-host
+az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --enable-encryption-at-host
 ```
 
-Als u nieuwe knooppunt groepen wilt maken zonder de op de host gebaseerde versleutelings functie, kunt u dit doen door de aangepaste para meter weg te laten `--aks-custom-headers` .
+Als u nieuwe knooppunt groepen wilt maken zonder de op de host gebaseerde versleutelings functie, kunt u dit doen door de para meter weg te laten `--enable-encryption-at-host` .
 
 ## <a name="next-steps"></a>Volgende stappen
 

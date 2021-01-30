@@ -7,12 +7,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 254a9737b805aeeae2008923a8178cd971602132
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.openlocfilehash: 372f531154528698da05c7a20c5d842b593259d1
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677758"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072249"
 ---
 # <a name="tutorial-delete-an-azure-red-hat-openshift-4-cluster"></a>Zelfstudie: Een Azure Red Hat OpenShift 4-cluster verwijderen
 
@@ -61,4 +61,4 @@ In dit deel van de zelfstudie hebt u het volgende geleerd:
 > [!div class="checklist"]
 > * Een Azure Red Hat OpenShift 4-cluster verwijderen
 
-Meer informatie over het gebruik van OpenShift vindt u in de officiële [Red Hat OpenShift-documentatie](https://www.openshift.com/try)
+Meer informatie over het gebruik van OpenShift vindt u in de officiële [Red Hat OpenShift-documentatie](https://docs.openshift.com/container-platform/4.6/welcome/index.html)

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 12/17/2020
+ms.date: 01/21/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 8159010486371d619aa14a845050a0eb38aaeda8
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: d7f71afd1cf47ab1a94d984090e8fb52ee69c6b4
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683526"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99088935"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Procedure: Text Analytics gebruiken voor de status (preview)
 
@@ -26,8 +26,8 @@ ms.locfileid: "97683526"
 
 Text Analytics status is een functie van de Text Analytics-API-service die relevante medische gegevens ophaalt en uitpakt vanuit ongestructureerde teksten, zoals dokters notities, samen vattingen, klinische documenten en elektronische status records.  Er zijn twee manieren om deze service te gebruiken: 
 
-* De API (asynchroon) van het web 
-* Een docker-container (synchroon)   
+* [De API (asynchroon) van het web](#structure-the-api-request-for-the-hosted-asynchronous-web-api)
+* [Een docker-container (synchroon)](#hosted-asynchronous-web-api-response)   
 
 > [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Introducing-Text-Analytics-for-Health/player]
 
@@ -50,7 +50,7 @@ Met relatie-extractie worden betekenis volle verbindingen van concepten aangegev
 > ![Status RE](../media/ta-for-health/health-relation-extraction.png)
 
 
-### <a name="entity-linking"></a>[Entiteit koppelen](#tab/entity-linking)
+### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
 
 Entiteit koppelt disambiguates afzonderlijke entiteiten door benoemde entiteiten die worden vermeld in tekst te koppelen aan concepten die zijn gevonden in een vooraf gedefinieerde data base met concepten. Bijvoorbeeld het Unified medisch taal systeem (UMLS).
 

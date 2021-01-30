@@ -3,14 +3,14 @@ author: aahill
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 12/11/2020
+ms.date: 01/20/2021
 ms.author: aahi
-ms.openlocfilehash: 15c8a517c1fd56964f46b72f9c1902efde90eb5b
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 715b0d16e33412003820044ffa99fee9e2431a7b
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947917"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090753"
 ---
 <a name="HOLTop"></a>
 
@@ -943,8 +943,7 @@ Document ID: 4
 
 # <a name="version-31-preview"></a>[Versie 3.1: preview](#tab/version-3-1)
 
-> [!CAUTION]
-> Als u analysebewerkingen wilt gebruiken, moet u een Text Analytics-resource gebruiken in de prijscategorie Standard (S).  
+[!INCLUDE [Analyze operation pricing](../analyze-operation-pricing-caution.md)]
 
 Maak een nieuwe functie met de naam `analyze_example()` waaraan de client via een argument wordt doorgegeven en die vervolgens de functie `begin_analyze()` aanroept. Het resultaat is een langdurige bewerking waarvan de resultaten worden gepolld.
 

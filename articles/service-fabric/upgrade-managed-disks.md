@@ -3,12 +3,12 @@ title: Cluster knooppunten upgraden om Azure Managed disks te gebruiken
 description: U kunt als volgt een upgrade uitvoeren van een bestaand Service Fabric cluster om Azure Managed disks te gebruiken met weinig of geen uitval tijd van uw cluster.
 ms.topic: how-to
 ms.date: 4/07/2020
-ms.openlocfilehash: 36896a6cf471ff0c9312ab454465419471bb164d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: c374c4536309a13abcf8c882b041a9c5357878e5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316163"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090651"
 ---
 # <a name="upgrade-cluster-nodes-to-use-azure-managed-disks"></a>Cluster knooppunten upgraden om Azure Managed disks te gebruiken
 
@@ -30,11 +30,11 @@ Dit artikel begeleidt u stapsgewijs door de stappen voor het upgraden van het pr
 > [!CAUTION]
 > U ondervindt alleen een onderbreking met deze procedure als u afhankelijkheden hebt op de cluster-DNS (bijvoorbeeld wanneer u [service Fabric Explorer](service-fabric-visualizing-your-cluster.md)opent). [Best Practice van de front-end-services](/azure/architecture/microservices/design/gateway) van de architectuur heeft een soort [Load Balancer](/azure/architecture/guide/technology-choices/load-balancing-overview) voor de knooppunt typen om het wisselen van knoop punten mogelijk te maken zonder storingen.
 
-Hier vindt u de [sjablonen en cmdlets](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) voor Azure Resource Manager die we gaan gebruiken om het upgrade scenario te volt ooien. De sjabloon wijzigingen worden uitgelegd in [een geüpgradede schaalset implementeren voor het primaire knooppunt type](#deploy-an-upgraded-scale-set-for-the-primary-node-type)  hieronder.
+Hier vindt u de [sjablonen en cmdlets](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade) voor Azure Resource Manager die we gaan gebruiken om het upgrade scenario te volt ooien. De sjabloon wijzigingen worden uitgelegd in [een geüpgradede schaalset implementeren voor het primaire knooppunt type](#deploy-an-upgraded-scale-set-for-the-primary-node-type)  hieronder.
 
 ## <a name="set-up-the-test-cluster"></a>Het test cluster instellen
 
-Laten we de eerste Service Fabric test cluster instellen. [Down load](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage) eerst de Azure Resource Manager-voorbeeld sjablonen die we gaan gebruiken om dit scenario te volt ooien.
+Laten we de eerste Service Fabric test cluster instellen. [Down load](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade) eerst de Azure Resource Manager-voorbeeld sjablonen die we gaan gebruiken om dit scenario te volt ooien.
 
 Meld u vervolgens aan bij uw Azure-account.
 
@@ -158,7 +158,7 @@ Met deze procedure kunt u nu beginnen met de upgrade.
 
 Als u een upgrade, of *verticaal schalen*, een knooppunt type wilt uitvoeren, moet u een kopie van de virtuele-machine schaalset van dat knooppunt type implementeren, die anders identiek is aan de oorspronkelijke schaalset (inclusief verwijzing naar dezelfde `nodeTypeRef` , `subnet` en `loadBalancerBackendAddressPools` ), behalve dat deze de gewenste upgrade/wijzigingen en een eigen afzonderlijke subnet en de binnenkomende NAT-adres groep bevat. Omdat er een upgrade wordt uitgevoerd voor een primair knooppunt type, wordt de nieuwe schaalset gemarkeerd als primair ( `isPrimary: true` ), net als bij de oorspronkelijke schaalset. (Als u een upgrade wilt uitvoeren voor niet-primaire knooppunt typen, laat u dit gewoon weg.)
 
-Voor het gemak zijn de vereiste wijzigingen al voor u gemaakt in de sjabloon *upgrade-1NodeType-2ScaleSets-ManagedDisks* [template](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.json) en de [parameter](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.parameters.json) bestanden.
+Voor het gemak zijn de vereiste wijzigingen al voor u gemaakt in de sjabloon *upgrade-1NodeType-2ScaleSets-ManagedDisks* [](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.json) en de [parameter](https://github.com/erikadoyle/service-fabric-scripts-and-templates/blob/managed-disks/templates/nodetype-upgrade-no-outage/Upgrade-1NodeType-2ScaleSets-ManagedDisks.parameters.json) bestanden.
 
 In de volgende secties worden de sjabloon wijzigingen in detail uitgelegd. Als u wilt, kunt u de uitleg overs Laan en door gaan met [de volgende stap van de upgrade procedure](#obtain-your-key-vault-references).
 
@@ -269,7 +269,7 @@ Als u de bijgewerkte configuratie wilt implementeren, moet u eerst verschillende
     $certUrlValue="https://sftestupgradegroup.vault.azure.net/secrets/sftestupgradegroup20200309235308/dac0e7b7f9d4414984ccaa72bfb2ea39"
     ```
 
-* **De vinger afdruk van het cluster certificaat.** (Waarschijnlijk hebt u dit al als u [verbinding hebt gemaakt met het eerste cluster](#connect-to-the-new-cluster-and-check-health-status) om de status te controleren.) **Certificates**  >  Kopieer de **X. 509 SHA-1-vinger afdruk (in hex)** op dezelfde Blade voor certificaten (certificaten*uw gewenste certificaat*) in azure portal:
+* **De vinger afdruk van het cluster certificaat.** (Waarschijnlijk hebt u dit al als u [verbinding hebt gemaakt met het eerste cluster](#connect-to-the-new-cluster-and-check-health-status) om de status te controleren.)   >  Kopieer de **X. 509 SHA-1-vinger afdruk (in hex)** op dezelfde Blade voor certificaten (certificaten *uw gewenste certificaat*) in azure portal:
 
     ```powershell
     $thumb = "BB796AA33BD9767E7DA27FE5182CF8FDEE714A70"
@@ -373,6 +373,6 @@ Leer hoe u het volgende doet:
 
 Zie ook:
 
-* [Voor beeld: cluster knooppunten upgraden om Azure Managed disks te gebruiken](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade-no-outage)
+* [Voor beeld: cluster knooppunten upgraden om Azure Managed disks te gebruiken](https://github.com/microsoft/service-fabric-scripts-and-templates/tree/master/templates/nodetype-upgrade)
 
 * [Overwegingen voor verticaal schalen](service-fabric-best-practices-capacity-scaling.md#vertical-scaling-considerations)

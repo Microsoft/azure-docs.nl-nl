@@ -8,19 +8,27 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 12/02/2020
+ms.date: 01/27/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 625fe5f53318ebc641d102e679ef7fd0607ef683
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 3f403308c77e5ee0dfc066ec3dc53100e520d274
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652838"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090668"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
 De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u informatie over nieuwe releases en functies, zodat u op de hoogte blijft van recente ontwikkelingen.
+
+## <a name="january-2021"></a>Januari 2021
+
+* De `2021-01-15` model versie voor [named entity Recognition](how-tos/text-analytics-how-to-entity-linking.md) v3. x, waarmee 
+  * Uitgebreide taal ondersteuning voor [verschillende categorieën van algemene entiteiten](named-entity-types.md). 
+  * Verbeterde AI-kwaliteit van algemene entiteits categorieën voor alle ondersteunde v3-talen. 
+
+* De `2021-01-05` model versie voor [taal detectie](how-tos/text-analytics-how-to-language-detection.md), die ondersteuning biedt voor aanvullende [talen](language-support.md?tabs=language-detection).
 
 ## <a name="december-2020"></a>December 2020
 
@@ -66,7 +74,7 @@ De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u inform
 ### <a name="text-analytics-for-health-container-updates"></a>Text Analytics voor Status container updates
 
 De volgende updates zijn specifiek voor de release van september van de Text Analytics alleen voor de status container.
-* Er is een nieuwe container installatie kopie met een tag `1.1.013530001-amd64-preview` met de nieuwe model versie `2020-09-03` vrijgegeven aan de containerpreview-opslag plaats. 
+* Er is een nieuwe container installatie kopie met een tag `1.1.013530001-amd64-preview` met de nieuwe model versie `2020-09-03` vrijgegeven aan de container preview-opslag plaats. 
 * Deze model versie biedt verbeteringen in het herkennen van entiteiten, afkortings detectie en latentie verbeteringen.
 
 > [!div class="nextstepaction"]
@@ -237,7 +245,7 @@ Het biedt ondersteuning voor Engels ( `en` ), Japans ( `ja` ), vereenvoudigd Chi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Wat is Text Analytics-API?](overview.md)  
+* [Wat is de Text Analytics-API?](overview.md)  
 * [Voorbeeldgebruikerscenario's](text-analytics-user-scenarios.md)
 * [Sentimentanalyse](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * [Taaldetectie](how-tos/text-analytics-how-to-language-detection.md)

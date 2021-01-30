@@ -14,18 +14,18 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e36a29048d97798c2e1621fbdc957bde51b5a383
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: b5cb7e1521c649be4abc155d9f28a49b43a11e6d
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740598"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071258"
 ---
 # <a name="delegate-app-registration-permissions-in-azure-active-directory"></a>Machtigingen voor app-registratie in Azure Active Directory delegeren
 
 In dit artikel wordt beschreven hoe u machtigingen kunt gebruiken die worden verleend door aangepaste rollen in Azure Active Directory (Azure AD) om uw behoeften op het gebied van toepassings beheer te verhelpen. In azure AD kunt u de machtigingen voor het maken en beheren van toepassingen op de volgende manieren delegeren:
 
-- [Beperken wie toepassingen kan maken](#restrict-who-can-create-applications) en de toepassingen kan beheren die ze maken. In azure AD kunnen alle gebruikers standaard toepassings registraties registreren en alle aspecten beheren van de toepassingen die ze hebben gemaakt. Dit kan worden beperkt zodat alleen geselecteerde personen deze machtiging kunnen toestaan.
+- [Beperken wie toepassingen kan maken](#restrict-who-can-create-applications) en de toepassingen kan beheren die ze maken. In azure AD kunnen alle gebruikers standaard toepassingen registreren en alle aspecten beheren van de toepassingen die ze maken. Dit kan worden beperkt zodat alleen geselecteerde personen deze machtiging kunnen toestaan.
 - [Een of meer eigen aren toewijzen aan een toepassing](#assign-application-owners). Dit is een eenvoudige manier om iemand de mogelijkheid te geven alle aspecten van de Azure AD-configuratie voor een specifieke toepassing te beheren.
 - [Wijs een ingebouwde](#assign-built-in-application-admin-roles) beheerdersrol toe die toegang verleent voor het beheren van configuratie in azure AD voor alle toepassingen. Dit is de aanbevolen manier om IT-experts toegang te geven tot het beheren van brede toepassings configuratie machtigingen zonder toegang te verlenen tot het beheren van andere delen van Azure AD die niet gerelateerd zijn aan de configuratie van de toepassing.
 - Het [maken van een aangepaste rol](#create-and-assign-a-custom-role-preview) om zeer specifieke machtigingen te definiëren en deze toe te wijzen aan iemand, hetzij aan het bereik van één toepassing als een beperkte eigenaar, of in het bereik van de directory (alle toepassingen) als beperkte beheerder.
@@ -34,7 +34,7 @@ Het is belang rijk om de toegang te verlenen met behulp van een van de bovenstaa
 
 ## <a name="restrict-who-can-create-applications"></a>Beperk wie toepassingen kunnen maken
 
-In azure AD kunnen alle gebruikers standaard toepassings registraties registreren en alle aspecten beheren van de toepassingen die ze hebben gemaakt. Iedereen heeft ook de mogelijkheid om apps toegang te geven tot Bedrijfs gegevens namens hen. U kunt deze machtigingen selectief verlenen door de algemene switches in te stellen op Nee en de geselecteerde gebruikers toe te voegen aan de ontwikkelaar van de toepassing.
+In azure AD kunnen alle gebruikers standaard toepassingen registreren en alle aspecten beheren van de toepassingen die ze maken. Iedereen heeft ook de mogelijkheid om apps toegang te geven tot Bedrijfs gegevens namens hen. U kunt deze machtigingen selectief verlenen door de algemene switches in te stellen op Nee en de geselecteerde gebruikers toe te voegen aan de ontwikkelaar van de toepassing.
 
 ### <a name="to-disable-the-default-ability-to-create-application-registrations-or-consent-to-applications"></a>De standaard instelling voor het maken van toepassings registraties of toestemming voor toepassingen uitschakelen
 

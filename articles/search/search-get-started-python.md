@@ -1,32 +1,32 @@
 ---
 title: 'Quickstart: Een zoekindex maken in Python'
 titleSuffix: Azure Cognitive Search
-description: Hierin wordt uitgelegd hoe u een index maakt, gegevens laadt en query's uitvoert met behulp van Python, notebooks en de bibliotheek Azure.Documents.Search.
+description: Meer informatie over het maken van een zoek index, het laden van gegevens en het uitvoeren van query's met behulp van python, Jupyter Notebook en de Azure.Documents. Zoek naar de client bibliotheek voor python.
 author: HeidiSteen
 manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 11/19/2020
+ms.date: 01/29/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 126fc69678148d4d478c96ff8d05f194c7e3d1b3
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: eb5de33fd41d3a454f4d0b8d44325ed30f9c5d47
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861864"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071627"
 ---
-# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Quickstart: Een Azure Cognitive Search-index maken in Python met behulp van Jupyter-notebooks
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebook"></a>Snelstartgids: een Azure Cognitive Search-index in python maken met behulp van Jupyter Notebook
 
 > [!div class="op_single_selector"]
 > * [Python](search-get-started-python.md)
-> * [PowerShell (REST)](./search-get-started-powershell.md)
-> * [C#](./search-get-started-dotnet.md)
+> * [PowerShell (REST)](search-get-started-powershell.md)
+> * [C#](search-get-started-dotnet.md)
 > * [REST](search-get-started-rest.md)
 > * [Portal](search-get-started-portal.md)
 >
 
-Bouw een Jupyter-notebook waarmee een Azure Cognitive Search-index wordt gemaakt en geladen en waarmee query's kunnen worden uitgevoerd met behulp van Python en de [bibliotheek azure-search-documents](/python/api/overview/azure/search-documents-readme) in de Azure SDK voor Python. In dit artikel wordt stap voor stap uitgelegd hoe u een notebook maakt. Een andere optie is om [een voltooide Jupyter Python-notebook te downloaden en uit te voeren](https://github.com/Azure-Samples/azure-search-python-samples).
+Bouw een notitie blok dat een Azure Cognitive Search-index maakt, laadt en opvraagt met behulp van python en de [bibliotheek Azure-Search-Documents](/python/api/overview/azure/search-documents-readme) in de Azure SDK voor python. In dit artikel wordt stap voor stap uitgelegd hoe u een notebook maakt. Een andere optie is om [een voltooide Jupyter Python-notebook te downloaden en uit te voeren](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
@@ -38,7 +38,7 @@ De volgende services en hulpprogramma's zijn vereist voor deze quickstart.
 
 * [pakket azure-search-documents](https://pypi.org/project/azure-search-documents/)
 
-* [Maak een Azure Cognitive Search-service](search-create-service-portal.md) of [zoek een bestaande service](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) onder uw huidige abonnement. U kunt voor deze quickstart de gratis laag gebruiken. 
+* [Een zoek service maken](search-create-service-portal.md) of [een bestaande service vinden](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) onder uw huidige abonnement. U kunt voor deze quickstart de gratis laag gebruiken. 
 
 ## <a name="copy-a-key-and-url"></a>Een sleutel en URL kopiëren
 
@@ -48,13 +48,13 @@ REST-aanroepen hebben voor elke aanvraag de service-URL en een toegangssleutel n
 
 1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
 
-![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-rest/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
+   ![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-rest/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
 
 Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
 ## <a name="connect-to-azure-cognitive-search"></a>Verbinding maken met Azure Cognitive Search
 
-In deze taak start u een Jupyter-notebook en controleert u of u verbinding kunt maken met Azure Cognitive Search. Hiervoor gaat u een lijst met indices uit uw service aanvragen. In Windows met Anaconda3 kunt u Anaconda Navigator gebruiken om een notebook te starten.
+Start Jupyter Notebook in deze taak en controleer of u verbinding kunt maken met Azure Cognitive Search. Hiervoor gaat u een lijst met indices uit uw service aanvragen. In Windows met Anaconda3 kunt u Anaconda Navigator gebruiken om een notebook te starten.
 
 1. Maak een nieuwe Python3-notebook.
 
@@ -63,7 +63,7 @@ In deze taak start u een Jupyter-notebook en controleert u of u verbinding kunt 
    ```python
     !pip install azure-search-documents --pre
     !pip show azure-search-documents
-
+    
     import os
     from azure.core.credentials import AzureKeyCredential
     from azure.search.documents.indexes import SearchIndexClient 
@@ -82,17 +82,17 @@ In deze taak start u een Jupyter-notebook en controleert u of u verbinding kunt 
 1. In de tweede cel voert u de aanvraagelementen in die bij elke aanvraag constanten zullen zijn. Geef de naam van de zoekservice, de admin-API-sleutel en de query-API-sleutel op die u in een vorige stap hebt gekopieerd. In deze cel worden ook de clients ingesteld die u wilt gebruiken voor specifieke bewerkingen: [SearchIndexClient](/python/api/azure-search-documents/azure.search.documents.indexes.searchindexclient) voor het maken van een index en [SearchClient](/python/api/azure-search-documents/azure.search.documents.searchclient) voor het uitvoeren van query's op een index.
 
    ```python
-    service_name = ["SEARCH_ENDPOINT - do not include search.windows.net"]
-    admin_key = ["Cognitive Search Admin API Key"]
-
+    service_name = "YOUR-SEARCH-SERIVCE-NAME"
+    admin_key = "YOUR-SEARCH-SERVICE-ADMIN-API-KEY"
+    
     index_name = "hotels-quickstart"
-
+    
     # Create an SDK client
     endpoint = "https://{}.search.windows.net/".format(service_name)
     admin_client = SearchIndexClient(endpoint=endpoint,
                           index_name=index_name,
                           credential=AzureKeyCredential(admin_key))
-
+    
     search_client = SearchClient(endpoint=endpoint,
                           index_name=index_name,
                           credential=AzureKeyCredential(admin_key))
@@ -121,6 +121,7 @@ Deze index heeft de naam 'hotels-quickstart' en beschikt over de onderstaande ve
 1. In de volgende cel plakt u het volgende voorbeeld in een cel om het schema op te geven.
 
     ```python
+    # Specify the index schema
     name = index_name
     fields = [
             SimpleField(name="HotelId", type=SearchFieldDataType.String, key=True),
@@ -128,13 +129,13 @@ Deze index heeft de naam 'hotels-quickstart' en beschikt over de onderstaande ve
             SearchableField(name="Description", type=SearchFieldDataType.String, analyzer_name="en.lucene"),
             SearchableField(name="Description_fr", type=SearchFieldDataType.String, analyzer_name="fr.lucene"),
             SearchableField(name="Category", type=SearchFieldDataType.String, facetable=True, filterable=True, sortable=True),
-
+        
             SearchableField(name="Tags", collection=True, type=SearchFieldDataType.String, facetable=True, filterable=True),
-
+    
             SimpleField(name="ParkingIncluded", type=SearchFieldDataType.Boolean, facetable=True, filterable=True, sortable=True),
             SimpleField(name="LastRenovationDate", type=SearchFieldDataType.DateTimeOffset, facetable=True, filterable=True, sortable=True),
             SimpleField(name="Rating", type=SearchFieldDataType.Double, facetable=True, filterable=True, sortable=True),
-
+    
             ComplexField(name="Address", fields=[
                 SearchableField(name="StreetAddress", type=SearchFieldDataType.String),
                 SearchableField(name="City", type=SearchFieldDataType.String, facetable=True, filterable=True, sortable=True),
@@ -150,20 +151,20 @@ Deze index heeft de naam 'hotels-quickstart' en beschikt over de onderstaande ve
 
 1. Formuleer de aanvraag in een andere cel. Deze create_index-aanvraag is gericht op de verzameling indices van uw zoekservice en hiermee wordt een [SearchIndex](/python/api/azure-search-documents/azure.search.documents.indexes.models.searchindex) (zoekindex) gemaakt op basis van het indexschema dat u in de vorige cel hebt opgegeven.
 
-   ```python
+    ```python
     index = SearchIndex(
         name=name,
         fields=fields,
         scoring_profiles=scoring_profiles,
         suggesters = suggester,
         cors_options=cors_options)
-
+    
     try:
         result = admin_client.create_index(index)
         print ('Index', result.name, 'created')
     except Exception as ex:
         print (ex)
-   ```
+    ```
 
 1. Voer elke stap uit.
 
@@ -176,8 +177,7 @@ Voor het laden van documenten maakt u een verzameling documenten met behulp van 
 1. In een nieuwe cel geeft u vier documenten op die het indexschema bevestigen. Geef voor elk document een uploadactie op.
 
     ```python
-    documents = {
-        "value": [
+    documents = [
         {
         "@search.action": "upload",
         "HotelId": "1",
@@ -255,98 +255,96 @@ Voor het laden van documenten maakt u een verzameling documenten met behulp van 
             }
         }
     ]
-    }
     ```  
 
 1. Formuleer de aanvraag in een andere cel. Deze upload_documents-aanvraag is gericht op de verzameling documenten van de index hotels-quickstart en pusht de documenten die in de vorige stap zijn opgegeven naar de Cognitive Search-index.
 
-
-   ```python
+    ```python
     try:
         result = search_client.upload_documents(documents=documents)
         print("Upload of new document succeeded: {}".format(result[0].succeeded))
     except Exception as ex:
         print (ex.message)
-   ```
+    ```
 
 1. Voer elke stap uit om de documenten naar een index in uw zoekservice te pushen.
 
 ## <a name="3---search-an-index"></a>3 - Een index doorzoeken
 
-Bij deze stap ziet u hoe u een query op een index uitvoert met behulp van de [REST API Documenten zoeken](/rest/api/searchservice/search-documents).
+In deze stap ziet u hoe u een query kunt uitvoeren op een index met behulp van de [Zoek documenten (rest)](/rest/api/searchservice/search-documents).
 
 1. Gebruik search_client voor deze bewerking. Deze query voert een lege zoekopdracht (`search=*`) uit, die een niet-geclassificeerde lijst (zoekscore = 1,0) met willekeurige documenten retourneert. Omdat er geen criteria zijn, worden alle documenten opgenomen in de resultaten. Met deze query worden slechts twee velden in elk document afgedrukt. Er wordt ook `include_total_count=True` toegevoegd om een telling van alle documenten (4) in de resultaten te krijgen.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="*", include_total_count=True)
-
+    
     print ('Total Documents Matching Query:', results.get_count())
     for result in results:
         print("{}: {}".format(result["HotelId"], result["HotelName"]))
-   ```
+    ```
 
 1. Met de volgende query worden volledige termen toegevoegd aan de zoekexpressie ("wifi"). Met deze query wordt opgegeven dat de resultaten alleen die velden bevatten in de `select`-instructie. Het beperken van de velden die worden geretourneerd, minimaliseert de hoeveelheid gegevens die via de kabel wordt verzonden en vermindert de zoeklatentie.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="wifi", include_total_count=True, select='HotelId,HotelName,Tags')
-
+    
     print ('Total Documents Matching Query:', results.get_count())
     for result in results:
         print("{}: {}: {}".format(result["HotelId"], result["HotelName"], result["Tags"]))
-   ```
+    ```
 
 1. Pas vervolgens een filterexpressie toe waarmee alleen die hotels worden geselecteerd die een hogere waardering hebben dan 4, gesorteerd in aflopende volgorde.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="hotels", select='HotelId,HotelName,Rating', filter='Rating gt 4', order_by='Rating desc')
-
+    
     for result in results:
         print("{}: {} - {} rating".format(result["HotelId"], result["HotelName"], result["Rating"]))
-   ```
+    ```
 
 1. Voeg `search_fields` toe aan een bereikquery die overeenkomt met één veld.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="sublime", search_fields='HotelName', select='HotelId,HotelName')
-
+    
     for result in results:
         print("{}: {}".format(result["HotelId"], result["HotelName"]))
-   ```
+    ```
 
 1. Facetten zijn labels die kunnen worden gebruikt voor het samenstellen van een facetnavigatiestructuur. Met deze query worden facetten en tellingen per categorie geretourneerd.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="*", facets=["Category"])
-
+    
     facets = results.get_facets()
-
+    
     for facet in facets["Category"]:
         print("    {}".format(facet))
-   ```
+    ```
 
 1. Zoek in dit voorbeeld een specifiek document op basis van de bijbehorende sleutel. Normaal gesproken wilt u een document retourneren wanneer een gebruiker op een document klikt in een zoekresultaat.
 
-   ```python
+    ```python
     result = search_client.get_document(key="3")
-
+    
     print("Details for hotel '3' are:")
-    print("        Name: {}".format(result["HotelName"]))
-    print("      Rating: {}".format(result["Rating"]))
-    print("    Category: {}".format(result["Category"]))
-   ```
+    print("Name: {}".format(result["HotelName"]))
+    print("Rating: {}".format(result["Rating"]))
+    print("Category: {}".format(result["Category"]))
+    ```
 
 1. In dit voorbeeld gebruiken we de functie automatisch aanvullen. Deze wordt meestal gebruikt in een zoekvak om datgene wat de gebruiker in het zoekvak typt, automatisch aan te vullen met mogelijke overeenkomsten.
 
    Bij het maken van de index is er ook een suggestieprogramma met de naam 'sg' gemaakt als onderdeel van de aanvraag. Een suggestieprogrammadefinitie geeft aan welke velden kunnen worden gebruikt om mogelijke overeenkomsten te vinden voor aanvragen. In dit voorbeeld zijn dat de velden Tags, Adres/plaats en Adres/land. Als u automatisch aanvullen wilt simuleren, geeft u de letters 'sa' als een gedeeltelijke tekenreeks door. Met de methode voor automatisch aanvullen van [SearchClient](/python/api/azure-search-documents/azure.search.documents.searchclient) worden mogelijke overeenkomende termen geretourneerd.
 
-   ```python
+    ```python
     search_suggestion = 'sa'
     results = search_client.autocomplete(search_text=search_suggestion, suggester_name="sg", mode='twoTerms')
-
+    
     print("Autocomplete for:", search_suggestion)
     for result in results:
         print (result['text'])
-   ```
+    ```
 
 ## <a name="clean-up"></a>Opschonen
 

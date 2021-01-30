@@ -83,6 +83,8 @@
           href: how-tos/set-up-coarse-reloc-cpp-ndk.md
         - name: In C++/WinRT
           href: how-tos/set-up-coarse-reloc-cpp-winrt.md
+    - name: Grove relokalisatie zonder een anker sessie gebruiken
+      href: how-tos/use-coarse-relocalization-without-anchor-session.md
     - name: Instellen van het project
       items:
         - name: C++/WinRT

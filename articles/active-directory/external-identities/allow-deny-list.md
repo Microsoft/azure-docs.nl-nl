@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b87650f364f8ccfd3a531d710bfbdc4715f0ac5a
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 0cc336781e9a55bbcb6c51677b01bfc402126f4a
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442181"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071897"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Uitnodigingen aan B2B-gebruikers van specifieke organisaties toestaan of blokkeren
 
@@ -41,11 +41,11 @@ Dit is het meest typische scenario, waarbij uw organisatie bijna elke organisati
 
 Een weiger lijst toevoegen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer **Azure Active Directory**  >  **gebruikers**  >  **instellingen**.
-3. Onder **externe gebruikers**selecteert u **externe instellingen voor samen werking beheren**.
-4. Onder **samenwerkings beperkingen**selecteert **u uitnodigingen voor de opgegeven domeinen weigeren**.
-5. Voer onder **doel domeinen**de naam in van een van de domeinen die u wilt blok keren. Voer voor meerdere domeinen elk domein in op een nieuwe regel. Bijvoorbeeld:
+3. Onder **externe gebruikers** selecteert u **externe instellingen voor samen werking beheren**.
+4. Onder **samenwerkings beperkingen** selecteert **u uitnodigingen voor de opgegeven domeinen weigeren**.
+5. Voer onder **doel domeinen** de naam in van een van de domeinen die u wilt blok keren. Voer voor meerdere domeinen elk domein in op een nieuwe regel. Bijvoorbeeld:
 
    ![De optie weigeren met toegevoegde domeinen weer geven](./media/allow-deny-list/DenyListSettings.png)
  
@@ -62,11 +62,11 @@ Als u een acceptatie lijst wilt gebruiken, moet u ervoor zorgen dat u de tijd he
 
 Een acceptatie lijst toevoegen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer **Azure Active Directory**  >  **gebruikers**  >  **instellingen**.
-3. Onder **externe gebruikers**selecteert u **externe instellingen voor samen werking beheren**.
+3. Onder **externe gebruikers** selecteert u **externe instellingen voor samen werking beheren**.
 4. Selecteer onder **samenwerkings beperkingen** **alleen uitnodigingen toestaan voor de opgegeven domeinen (het meest beperkend)**.
-5. Voer onder **doel domeinen**de naam in van een van de domeinen die u wilt toestaan. Voer voor meerdere domeinen elk domein in op een nieuwe regel. Bijvoorbeeld:
+5. Voer onder **doel domeinen** de naam in van een van de domeinen die u wilt toestaan. Voer voor meerdere domeinen elk domein in op een nieuwe regel. Bijvoorbeeld:
 
    ![Hiermee wordt de optie toestaan met toegevoegde domeinen weer gegeven](./media/allow-deny-list/AllowListSettings.png)
  
@@ -126,7 +126,7 @@ Als de module niet is geïnstalleerd of als u niet beschikt over een vereiste ve
 
 ### <a name="use-the-azureadpolicy-cmdlets-to-configure-the-policy"></a>De AzureADPolicy-cmdlets gebruiken om het beleid te configureren
 
-Als u een lijst voor toestaan of weigeren wilt maken, gebruikt u de cmdlet [New-AzureADPolicy](/powershell/module/azuread/new-azureadpolicy?view=azureadps-2.0-preview) . In het volgende voor beeld ziet u hoe u een Deny-lijst instelt die het domein ' live.com ' blokkeert.
+Als u een lijst voor toestaan of weigeren wilt maken, gebruikt u de cmdlet [New-AzureADPolicy](/powershell/module/azuread/new-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) . In het volgende voor beeld ziet u hoe u een Deny-lijst instelt die het domein ' live.com ' blokkeert.
 
 ```powershell 
 $policyValue = @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}")
@@ -140,19 +140,19 @@ Hieronder ziet u hetzelfde voor beeld, maar met de beleids definitie inline.
 New-AzureADPolicy -Definition @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}") -DisplayName B2BManagementPolicy -Type B2BManagementPolicy -IsOrganizationDefault $true 
 ```
 
-Als u het beleid lijst toestaan of weigeren wilt instellen, gebruikt u de cmdlet [set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview) . Bijvoorbeeld:
+Als u het beleid lijst toestaan of weigeren wilt instellen, gebruikt u de cmdlet [set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) . Bijvoorbeeld:
 
 ```powershell   
 Set-AzureADPolicy -Definition $policyValue -Id $currentpolicy.Id 
 ```
 
-Gebruik de cmdlet [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview) om het beleid op te halen. Bijvoorbeeld:
+Gebruik de cmdlet [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) om het beleid op te halen. Bijvoorbeeld:
 
 ```powershell
-$currentpolicy = Get-AzureADPolicy | ?{$_.Type -eq 'B2BManagementPolicy'} | select -First 1 
+$currentpolicy = Get-AzureADPolicy -All $true | ?{$_.Type -eq 'B2BManagementPolicy'} | select -First 1 
 ```
 
-Als u het beleid wilt verwijderen, gebruikt u de cmdlet [Remove-AzureADPolicy](/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview) . Bijvoorbeeld:
+Als u het beleid wilt verwijderen, gebruikt u de cmdlet [Remove-AzureADPolicy](/powershell/module/azuread/remove-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) . Bijvoorbeeld:
 
 ```powershell
 Remove-AzureADPolicy -Id $currentpolicy.Id 

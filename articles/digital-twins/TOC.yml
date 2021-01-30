@@ -4,9 +4,7 @@
   items:
     - name: Over Azure Digital Twins
       href: overview.md
-    - name: Verschillen met de vorige versie
-      href: overview-differences.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een voorbeeldscenario verkennen
@@ -169,6 +167,8 @@
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
     - name: Aanvragen van klantgegevens
       href: resources-customer-data-requests.md
+    - name: Verschillen van de oorspronkelijke release
+      href: resources-compare-original-release.md
     - name: API's en SDK's
       items:
         - name: Besturingsvlak

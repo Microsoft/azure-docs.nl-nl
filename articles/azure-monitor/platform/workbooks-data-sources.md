@@ -8,12 +8,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/29/2020
-ms.openlocfilehash: d41629dd9a56272af89a06cb55e9bd88b604baee
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 3d94aca51d3d305b70c8c555e2b41e3d0ab857b3
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927903"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061941"
 ---
 # <a name="azure-monitor-workbooks-data-sources"></a>Gegevens bronnen Azure Monitor werkmappen
 
@@ -59,7 +59,7 @@ Als u een query besturings element wilt maken met deze gegevens bron, gebruikt u
 
 ## <a name="azure-data-explorer"></a>Azure Data Explorer
 
-Werkmappen bieden nu ondersteuning voor het uitvoeren van query's vanuit [Azure Data Explorer](/azure/data-explorer/) -clusters met de krachtige [Kusto](/azure/kusto/query/index) -query taal.   
+Werkmappen bieden nu ondersteuning voor het uitvoeren van query's vanuit [Azure Data Explorer](/azure/data-explorer/) -clusters met de krachtige [Kusto](/azure/kusto/query/index) -query taal.
 
 ![Scherm opname van het Kusto-query venster](./media/workbooks-overview/data-explorer.png)
 
@@ -79,9 +79,43 @@ Als u een query besturings element wilt gebruiken deze gegevens bron, gebruikt u
 
 ![Scherm afbeelding van een waarschuwings query waarin de status filter lijsten worden weer gegeven.](./media/workbooks-overview/resource-health.png)
 
+## <a name="change-analysis-preview"></a>Analyse wijzigen (preview-versie)
+
+Als u een query besturings element wilt maken met behulp van [analyse van toepassings wijzigingen](../app/change-analysis.md) als gegevens bron, gebruikt u de vervolg keuzelijst *gegevens bron* en kiest u *analyse van wijzigingen (preview)* en selecteert u één resource. De wijzigingen voor de laatste 14 dagen kunnen worden weer gegeven. De vervolg keuzelijst *niveau* kan worden gebruikt om te filteren tussen de wijzigingen ' belang rijk ', ' normaal ' en ' ruis ', en deze vervolg keuzelijst ondersteunt werkmap parameters van het type [vervolg keuzelijst](workbooks-dropdowns.md).
+
+> [!div class="mx-imgBorder"]
+> ![Een scherm opname van een werkmap met wijzigings analyse](./media/workbooks-data-sources/change-analysis-data-source.png)
+
+## <a name="merge-data-from-different-sources"></a>Gegevens uit verschillende bronnen samen voegen
+
+Het is vaak nodig om gegevens uit verschillende bronnen samen te voegen die de inzichten ervaring verg Roten. Een voor beeld is het uitbreiden van actieve waarschuwings gegevens met gerelateerde metrische gegevens. Op deze manier kunnen gebruikers niet alleen het effect zien (een actieve waarschuwing), maar ook mogelijke oorzaken (bijvoorbeeld hoog CPU-gebruik). Het bewakings domein heeft talloze gerelateerde gegevens bronnen die vaak essentieel zijn voor de sorteren-en diagnostische werk stroom.
+
+Werkmappen staat niet alleen de query uit verschillende gegevens bronnen toe, maar biedt ook eenvoudige besturings elementen waarmee u de gegevens kunt samen voegen of koppelen om inzicht te krijgen in uitgebreide inzichten. Het `merge` besturings element is de manier waarop het kan worden gerealiseerd.
+
+In het onderstaande voor beeld worden waarschuwings gegevens gecombineerd met de prestatie gegevens van log Analytics VM om een uitgebreid inzicht raster te krijgen.
+
+> [!div class="mx-imgBorder"]
+> ![Een scherm opname van een werkmap met een besturings element voor samen voegen waarin waarschuwings-en log Analytics-gegevens worden gecombineerd](./media/workbooks-data-sources/merge-control.png)
+
+Werkmappen ondersteunen diverse samen voegingen:
+
+* Inner Unique join
+* Volledige inner join
+* Volledige outer join
+* Left outer join
+* Right outer join
+* Linker semi-koppeling
+* Rechter semi-koppeling
+* Anti-koppeling links
+* Right anti-koppeling
+* Union
+* Tabel dupliceren
+
 ## <a name="json"></a>JSON
 
 Met de JSON-provider kunt u een query resultaat maken op basis van statische JSON-inhoud. Het wordt meestal gebruikt in para meters voor het maken van vervolg keuzelijst parameters van statische waarden. Eenvoudige JSON-matrices of-objecten worden automatisch geconverteerd naar raster rijen en-kolommen.  Voor meer specifiek gedrag kunt u het tabblad resultaten en JSONPath-instellingen gebruiken om kolommen te configureren.
+
+Deze provider ondersteunt [JSONPath](workbooks-jsonpath.md).
 
 ## <a name="alerts-preview"></a>Waarschuwingen (preview)
 
@@ -94,7 +128,7 @@ Met de JSON-provider kunt u een query resultaat maken op basis van statische JSO
 
 Met werkmappen kunnen gebruikers de actieve waarschuwingen die betrekking hebben op hun resources visualiseren. Beperkingen: de gegevens bron voor waarschuwingen vereist Lees toegang tot het abonnement om resources te kunnen opvragen en kan geen nieuwere soorten waarschuwingen weer geven. 
 
-Om ervoor te zorgen dat een query besturings element deze gegevens bron gebruikt, gebruikt u de vervolg keuzelijst _gegevens bron_ om waarschuwingen te kiezen _(preview)_ en selecteert u de abonnementen, resource groepen of bronnen om te richten. Gebruik de vervolg keuzelijst waarschuwings filter om een interessante subset van waarschuwingen voor uw analyse behoeften te selecteren.
+Om ervoor te zorgen dat een query besturings element deze gegevens bron gebruikt, gebruikt u de vervolg keuzelijst _gegevens bron_ om waarschuwingen te kiezen _(preview)_ en selecteert u de abonnementen, resource groepen of resources op het doel. Gebruik de vervolg keuzelijst waarschuwings filter om een interessante subset van waarschuwingen voor uw analyse behoeften te selecteren.
 
 ## <a name="custom-endpoint"></a>Aangepast eind punt
 
@@ -102,10 +136,12 @@ Werkmappen ondersteunen het ophalen van gegevens uit een externe bron. Als uw ge
 
 Als u een query besturings element wilt maken met deze gegevens bron, gebruikt u de vervolg keuzelijst _gegevens bron_ om een _aangepast eind punt_ te kiezen. Geef de juiste para meters `Http method` op, zoals,, `url` `headers` `url parameters` en/of `body` . Zorg ervoor dat uw gegevens bron [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) ondersteunt, anders mislukt de aanvraag.
 
-Om te voor komen dat u automatisch aanroepen naar niet-vertrouwde hosts maakt wanneer u sjablonen gebruikt, moet de gebruiker de gebruikte hosts markeren als vertrouwd. U kunt dit doen door te klikken op de knop _toevoegen als vertrouwd_ of door deze toe te voegen als een vertrouwde host in de werkmap instellingen. Deze instellingen worden opgeslagen in browsers die ondersteuning bieden voor IndexDb met Web Workers, meer informatie [hier](https://caniuse.com/#feat=indexeddb).
+Om te voor komen dat u automatisch aanroepen naar niet-vertrouwde hosts maakt wanneer u sjablonen gebruikt, moet de gebruiker de gebruikte hosts markeren als vertrouwd. U kunt dit doen door te klikken op de knop _toevoegen als vertrouwd_ of door deze toe te voegen als een vertrouwde host in de werkmap instellingen. Deze instellingen worden opgeslagen in [browsers die ondersteuning bieden voor IndexDb met Web Workers](https://caniuse.com/#feat=indexeddb).
 
 > [!NOTE]
 > Schrijf geen geheimen in een van de velden (,, `headers` `parameters` `body` , `url` ), omdat ze zichtbaar zijn voor alle gebruikers van de werkmap.
+
+Deze provider ondersteunt [JSONPath](workbooks-jsonpath.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

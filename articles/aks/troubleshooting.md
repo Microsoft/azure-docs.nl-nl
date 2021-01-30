@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van veelvoorkomende problemen bij
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: 02ff1581bafe62a092be87d16df51c7ca8c020b4
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 7dfb9e34daeb92d57a61c570055695867c4a8107
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830935"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071864"
 ---
 # <a name="aks-troubleshooting"></a>AKS-problemen oplossen
 
@@ -20,11 +20,11 @@ Wanneer u clusters van Azure Kubernetes service (AKS) maakt of beheert, kunnen e
 Probeer de [officiële hand leiding voor het oplossen van problemen met Kubernetes-clusters](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 Er is ook een [hand leiding](https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/index.md)voor het oplossen van problemen, gepubliceerd door een micro soft-Engineer voor het oplossen van problemen met peulen, knoop punten, clusters en andere functies.
 
-## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Ik krijg de fout ' quotum overschreden ' tijdens het maken of upgraden. Wat moet ik doen? 
+## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Er verschijnt een `quota exceeded` fout melding tijdens het maken of upgraden. Wat moet ik doen? 
 
  [Vraag meer kernen](../azure-portal/supportability/resource-manager-core-quotas-request.md)aan.
 
-## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Er wordt een insufficientSubnetSize-fout opgetreden tijdens het implementeren van een AKS-cluster met een geavanceerd netwerk. Wat moet ik doen?
+## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Er `insufficientSubnetSize` treedt een fout op tijdens het implementeren van een AKS-cluster met geavanceerde netwerken. Wat moet ik doen?
 
 Deze fout geeft aan dat een subnet dat wordt gebruikt voor een cluster niet langer beschik bare Ip's in de CIDR heeft voor een succes volle resource toewijzing. Voor Kubenet-clusters is de vereiste voldoende IP-adres ruimte voor elk knoop punt in het cluster. Voor Azure CNI-clusters is de vereiste voldoende IP-adres ruimte voor elk knoop punt en pod in het cluster.
 Lees meer over het [ontwerp van Azure cni om ip's toe te wijzen aan een Peul](configure-azure-cni.md#plan-ip-addressing-for-your-cluster).

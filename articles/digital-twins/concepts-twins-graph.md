@@ -7,16 +7,16 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: a4875c2c75b133f0ab4046266d6aac36d5478fe4
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 105128af60b90324e93bcad1bd9900a55461378f
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664041"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071712"
 ---
 # <a name="understand-digital-twins-and-their-twin-graph"></a>Meer informatie over digitale apparaatdubbels en hun twee grafieken
 
-In een Azure Digital Apparaatdubbels-oplossing worden de entiteiten in uw omgeving vertegenwoordigd door Azure **Digital apparaatdubbels**. Een digitale dubbele is een exemplaar van een van uw door uw eigen gedefinieerde [modellen](concepts-models.md). Het kan worden verbonden met andere digitale apparaatdubbels via **relaties** om een **dubbele grafiek** te vormen: deze dubbele grafiek is de weer gave van uw gehele omgeving.
+In een Azure Digital Apparaatdubbels-oplossing worden de entiteiten in uw omgeving vertegenwoordigd door **Digital apparaatdubbels**. Een digitale dubbele is een exemplaar van een van uw door uw eigen gedefinieerde [modellen](concepts-models.md). Het kan worden verbonden met andere digitale apparaatdubbels via **relaties** om een **dubbele grafiek** te vormen: deze dubbele grafiek is de weer gave van uw gehele omgeving.
 
 > [!TIP]
 > ' Azure Digital Apparaatdubbels ' verwijst naar deze Azure-service als geheel. ' Digitale twee (en) ' of alleen ' dubbele (s) ' verwijzen naar afzonderlijke dubbele knoop punten in uw exemplaar van de service.

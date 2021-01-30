@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: 18665fabad079a8759f26be8834b2fe029ab5f49
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: aa05fc9f02c26192762ed34db54b60b4760bf3bf
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742774"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061848"
 ---
 # <a name="install-net-on-azure-cloud-services-classic-roles"></a>.NET Cloud Services-rollen (klassiek) installeren in azure
 
@@ -32,7 +32,7 @@ Als u .NET wilt installeren op uw web-en werk rollen, moet u de .NET Web Install
 ## <a name="add-the-net-installer-to-your-project"></a>Het .NET-installatie programma toevoegen aan uw project
 Als u het web-installatie programma voor de .NET Framework wilt downloaden, kiest u de versie die u wilt installeren:
 
-* [.NET Framework 4,8 web installer](https://dotnet.microsoft.com/download/thank-you/net48)
+* [.NET Framework 4,8 web installer](https://go.microsoft.com/fwlink/?LinkId=2150985)
 * [.NET Framework 4.7.2 web installer](https://go.microsoft.com/fwlink/?LinkId=863262)
 * [.NET Framework 4.6.2 web installer](https://www.microsoft.com/download/details.aspx?id=53345)
 

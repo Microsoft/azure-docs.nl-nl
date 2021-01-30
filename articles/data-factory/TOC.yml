@@ -698,10 +698,12 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: Een afhankelijkheid voor een tumblingvenstertrigger maken
           href: tumbling-window-trigger-dependency.md
-    - name: Herkomst
+    - name: Data Catalog en governance
       items:
         - name: Een Data Factory verbinden met Azure Purview
           href: connect-data-factory-to-azure-purview.md
+        - name: Gegevens in ADF detecteren en verkennen met controle sfeer liggen
+          href: how-to-discover-explore-purview-data.md
     - name: Scenario's
       items:
         - name: Gegevensmigratie voor data lake en EDW
@@ -796,10 +798,6 @@
       href: /python/api/overview/azure/datafactory
 - name: Resources
   items:
-    - name: Overzicht van gereserveerde capaciteit van gegevens stroom
-      href: data-flow-reserved-capacity-overview.md
-    - name: Gegevens stroom begrijpen reserverings kosten
-      href: data-flow-understand-reservation-charges.md
     - name: Whitepapers
       href: whitepapers.md
     - name: Veelgestelde vragen

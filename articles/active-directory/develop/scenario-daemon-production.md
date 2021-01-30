@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 99fd79fb6c51f577d9b62d15ac006b068a685bcf
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 04ee4ccc3b0553d6532869d6403000fdedd93b5f
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756539"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062708"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Daemon-app voor het aanroepen van web-Api's-verplaatsen naar productie
 
@@ -32,20 +32,17 @@ Als u een ISV-toepassing maakt die in meerdere tenants kan worden uitgevoerd, mo
 
 U moet uitleggen wat uw klanten zijn om deze bewerkingen uit te voeren. Zie [toestemming vragen voor een hele Tenant](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)voor meer informatie.
 
-[!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
+[!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Volgende stappen
-
-Hier volgen enkele koppelingen om meer te weten te komen over:
+## <a name="code-samples"></a>Codevoorbeelden
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-- Quick Start: [een token verkrijgen en Microsoft Graph-API aanroepen vanuit een console-app met behulp van de identiteit van de app](./quickstart-v2-netcore-daemon.md).
 - Referentie documentatie voor:
   - [ConfidentialClientApplication](/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder)instantiëren.
   - [AcquireTokenForClient](/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder)aanroepen.
 - Andere voor beelden/zelf studies:
-  - [micro soft-Identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) bevat een eenvoudige .net core daemon-console toepassing die de gebruikers van een tenant query Microsoft Graph.
+  - [micro soft-Identity-platform-console-daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) bevat een kleine .net core daemon-console toepassing die de gebruikers bevat van een tenant query Microsoft Graph.
 
     ![Voor beeld van daemon-app-topologie](media/scenario-daemon-app/daemon-app-sample.svg)
 
@@ -57,12 +54,18 @@ Hier volgen enkele koppelingen om meer te weten te komen over:
 
     ![topologie](media/scenario-daemon-app/damon-app-sample-web.svg)
 
+---
+
+## <a name="next-steps"></a>Volgende stappen
+
+Hier volgen enkele koppelingen om meer te weten te komen over:
+
 # <a name="python"></a>[Python](#tab/python)
 
 Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een python-console-app met behulp van de identiteit van de app](./quickstart-v2-python-daemon.md).
 
 # <a name="java"></a>[Java](#tab/java)
 
-MSAL Java is momenteel beschikbaar als open bare preview. Zie MSAL voor beelden van [Java-Ontwikkel aars](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples)voor meer informatie.
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een Java-Console-app met behulp van de identiteit van de app](./quickstart-v2-java-daemon.md).
 
 ---

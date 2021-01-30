@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: 6fb460c65d37723b03c1dfd4fba2c353c19455bd
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a1b5ba56d30124bea7a814c2ffcf0cfff28903aa
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944584"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062185"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Azure Private Link voor Azure Data Factory
 
@@ -48,7 +48,7 @@ Met de ondersteuning van een persoonlijke koppeling voor Azure Data Factory kunt
 * Maak een persoonlijk eind punt in uw virtuele netwerk.
 * De particuliere verbinding met een specifiek data factory exemplaar inschakelen. 
 
-De communicatie met de Azure Data Factory-service gaat via een privé koppeling en biedt beveiligde persoonlijke connectiviteit. U hoeft het voor gaande domein en de poort in een virtueel netwerk of uw bedrijfs firewall niet te configureren om een veiligere manier te bieden om uw resources te beveiligen.  
+De communicatie met de Azure Data Factory-service gaat via een privé koppeling en biedt beveiligde persoonlijke connectiviteit. 
 
 ![Diagram van een persoonlijke koppeling voor Azure Data Factory architectuur.](./media/data-factory-private-link/private-link-architecture.png)
 
@@ -62,6 +62,9 @@ Het inschakelen van de service voor persoonlijke koppelingen voor elk van de voo
 
    > [!NOTE]
    > Voor functionaliteit die momenteel niet wordt ondersteund, moet u nog steeds het eerder genoemde domein en de poort in het virtuele netwerk of de firewall van uw bedrijf configureren. 
+
+   > [!NOTE]
+   > Verbinding maken met Azure Data Factory via een privé-eind punt is alleen van toepassing op zelf-hostende Integration runtime in data factory. Het wordt niet ondersteund in Synapse.
 
 > [!WARNING]
 > Wanneer u een gekoppelde service maakt, moet u ervoor zorgen dat uw referenties zijn opgeslagen in een Azure-sleutel kluis. Anders werken de referenties niet wanneer u een persoonlijke koppeling inschakelt in Azure Data Factory.

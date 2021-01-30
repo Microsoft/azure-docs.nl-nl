@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/09/2020
+ms.date: 01/28/2021
 ms.author: alkohli
-ms.openlocfilehash: 64d028892298a70e7588863bf9a3f4fc6f4ca609
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a2c46e8a7cae9ddba9606abf75ac022e804fde9c
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91760056"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062494"
 ---
 # <a name="deploy-a-gpu-enabled-iot-module-from-azure-marketplace-on-azure-stack-edge-pro-gpu-device"></a>Een IoT-module met GPU-functionaliteit implementeren vanuit Azure Marketplace op Azure Stack Edge Pro GPU-apparaat
 
@@ -53,7 +53,7 @@ Voordat u begint, controleert u of u over het volgende beschikt:
 
     ![Voorbeeld module ophalen](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/get-sample-module-1.png)
 
-4. Selecteer **door gaan** om de gebruiks voorwaarden en het privacybeleid van de provider te bevestigen. 
+4. Selecteer **door gaan** om de gebruiks voorwaarden en het privacybeleid van de provider te bevestigen. 
 
     ![Voorbeeld module ophalen 2](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/terms-of-use-1.png)
 
@@ -63,13 +63,11 @@ Voordat u begint, controleert u of u over het volgende beschikt:
 
 6. Voer de naam in van de IoT Hub-service die u hebt gemaakt tijdens het configureren van uw Azure Stack Edge Pro-apparaat. Als u deze IoT Hub-service naam wilt vinden, gaat u naar de Azure Stack Edge-resource die is gekoppeld aan uw apparaat in Azure Portal. 
 
-    1. Ga in de menu opties van het linkerdeel venster naar **Edge compute > aan de slag**. 
-
-    1. Selecteer in de tegel **Edge Compute configureren** de optie **weer gave configuratie**. 
+    1. Ga in de menu opties van het linkerdeel venster naar **Edge services > IOT Edge**. 
 
         ![Reken configuratie weer geven](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/view-config-1.png)
 
-    1. Op de Blade **Edge Compute-configuratie** :
+    1. Ga naar **Eigenschappen**. 
 
         1. Noteer de IoT Hub-service die is gemaakt tijdens het configureren van de reken kracht op uw Azure Stack Edge Pro-apparaat.
         2. Noteer de naam van het IoT Edge apparaat dat is gemaakt tijdens het configureren van compute. U gebruikt deze naam in de volgende stap.
@@ -78,16 +76,16 @@ Voordat u begint, controleert u of u over het volgende beschikt:
 
 10. Kies **implementeren op een apparaat**.
 
-11. Voer de naam van het IoT Edge apparaat in of selecteer **apparaat zoeken**   om te bladeren tussen de apparaten die zijn geregistreerd bij de hub.
+11. Voer de naam van het IoT Edge apparaat in of selecteer **apparaat zoeken** om te bladeren tussen de apparaten die zijn geregistreerd bij de hub.
 
     ![Apparaat zoeken](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/find-device-1.png)
 
-12. Selecteer **maken**   om door te gaan met het standaard proces voor het configureren van een implementatie manifest, inclusief het toevoegen van andere modules, indien gewenst. Details voor de nieuwe module, zoals afbeeldings-URI, opties voor maken en gewenste eigenschappen, zijn vooraf gedefinieerd, maar kunnen worden gewijzigd.
+12. Selecteer **maken** om door te gaan met het standaard proces voor het configureren van een implementatie manifest, inclusief het toevoegen van andere modules, indien gewenst. Details voor de nieuwe module, zoals afbeeldings-URI, opties voor maken en gewenste eigenschappen, zijn vooraf gedefinieerd, maar kunnen worden gewijzigd.
 
     ![Selecteer Maken](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/target-devices-iot-edge-module-1.png)
 
 
-13. Controleer of de module is geïmplementeerd in uw IoT Hub in de Azure Portal. Selecteer uw apparaat, selecteer **modules instellen**   en de module moet worden weer gegeven in de sectie **IOT Edge modules**   .
+13. Controleer of de module is geïmplementeerd in uw IoT Hub in de Azure Portal. Selecteer uw apparaat, selecteer **modules instellen** en de module moet worden weer gegeven in de sectie **IOT Edge modules** .
 
     ![Selecteer 2 maken](media/azure-stack-edge-gpu-deploy-sample-module-marketplace/running-module-iotres-1.png)
 
@@ -97,7 +95,7 @@ Voordat u begint, controleert u of u over het volgende beschikt:
 
 2. Kies het abonnement en de IoT-hub met het IoT Edge-apparaat dat u wilt configureren. In dit geval selecteert u het abonnement dat is gebruikt om het Azure Stack Edge Pro-apparaat te implementeren en selecteert u het IoT Edge apparaat dat u hebt gemaakt voor uw Azure Stack Edge Pro-apparaat. Dit gebeurt wanneer u Compute configureert via de Azure Portal in de eerdere stappen.
 
-3. Vouw in de VS code Explorer de sectie Azure IoT Hub uit. Onder **apparaten**wordt het IOT edge apparaat weer geven dat overeenkomt met uw Azure stack Edge Pro-apparaat. 
+3. Vouw in de VS code Explorer de sectie Azure IoT Hub uit. Onder **apparaten** wordt het IOT edge apparaat weer geven dat overeenkomt met uw Azure stack Edge Pro-apparaat. 
 
     1. Selecteer dat apparaat, klik met de rechter muisknop en selecteer **controle van ingebouwd gebeurtenis begin punt starten**.
   

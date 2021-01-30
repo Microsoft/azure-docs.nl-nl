@@ -3,12 +3,12 @@ title: Veelgestelde vragen
 description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 1/14/2021
-ms.openlocfilehash: 8245cd8da983ce48ba88d7faef76ab9b7ceb8c26
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 090b29b1e013ffbceb9296250fed99a04d15a82c
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218583"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062084"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
@@ -258,11 +258,11 @@ VMware HCX Enter prise is beschikbaar met de Azure VMware-oplossing als een *Pre
 
 ### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Hoe kan ik een toename voor een quotum van een host voor een Azure VMware-oplossing aanvragen?
 
-Voor door CSP beheerde abonnementen moet de klant de aanvraag indienen bij de partner. Het partner team gaat vervolgens samen met micro soft om het quotum voor het abonnement te verg root. Zie het [artikel Azure VMware Solution resource inschakelen](enable-azure-vmware-solution.md) voor meer informatie. 
+Voor door CSP beheerde abonnementen moet de klant de aanvraag indienen bij de partner. Het partner team gaat vervolgens samen met micro soft om het quotum voor het abonnement te verg root. Zie [Een Azure VMware Solution-resource inschakelen](enable-azure-vmware-solution.md) voor meer informatie. 
 
 Gebruik de volgende procedure voor EA-abonnementen. Eerst hebt u het volgende nodig:
 
-* Een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft.
+* Een [Azure Enterprise overeenkomst (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft.
 * Een Azure-account in een Azure-abonnement.
 
 Voordat u uw Azure VMware-oplossings resource kunt maken, dient u een ondersteunings ticket in om uw hosts te laten toewijzen. Het duurt Maxi maal vijf werk dagen om te bevestigen en aan uw aanvraag te voldoen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer hosts wilt toewijzen, dan volgt u hetzelfde proces.

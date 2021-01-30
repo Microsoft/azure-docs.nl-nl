@@ -8,7 +8,7 @@
       items:
         - name: Over Container Registry
           href: container-registry-intro.md
-    - name: Snelstartgidsen
+    - name: Quickstarts
       expanded: true
       items:
         - name: Een containerregister maken - CLI
@@ -157,6 +157,7 @@
               href: container-registry-troubleshoot-performance.md
             - name: Algemene problemen detecteren
               href: container-registry-check-health.md
+              displayName: 'check, health'
             - name: Veelgestelde vragen
               href: container-registry-faq.md
 - name: Taken

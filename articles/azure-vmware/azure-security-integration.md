@@ -3,12 +3,12 @@ title: Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integra
 description: Meer informatie over het beveiligen van uw Azure VMware-oplossings-Vm's met de systeem eigen beveiligings tools van Azure vanaf één dash board in Azure Security Center.
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: e461e7e49619f7063c0583975f36a2e3dfe5a724
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 66270c5abef48f9d9f30ed1b262a6b4f2f8144c8
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937335"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061461"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
 
@@ -45,7 +45,7 @@ U kunt de Log Analytics-werk ruimte configureren met Azure Sentinel voor waarsch
 
 ## <a name="create-a-log-analytics-workspace"></a>Een Log Analytics-werkruimte maken
 
-U hebt een Log Analytics-werk ruimte nodig voor het verzamelen van gegevens uit verschillende bronnen. Zie de stappen in [een log Analytics-werk ruimte maken van het Azure Portal](../azure-monitor/learn/quick-create-workspace.md). 
+U hebt een Log Analytics-werk ruimte nodig voor het verzamelen van gegevens uit verschillende bronnen. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)voor meer informatie. 
 
 ## <a name="deploy-security-center-and-configure-azure-vmware-solution-vms"></a>Security Center implementeren en virtuele machines van Azure VMware-oplossingen configureren
 
@@ -156,7 +156,7 @@ Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken 
 
     - Naam
     - Beschrijving
-    - Strategieën
+    - Tactieken
     - Severity
     - Status
 
@@ -229,7 +229,7 @@ U kunt query's maken of de beschik bare vooraf gedefinieerde query gebruiken in 
     - Beschrijving
     - Aangepaste query
     - Toewijzing invoeren
-    - Strategieën
+    - Tactieken
     
 3. Selecteer **Maken**. U kunt vervolgens de gemaakte query selecteren, **Query's uitvoeren** en de **resultaten weer geven**.
 

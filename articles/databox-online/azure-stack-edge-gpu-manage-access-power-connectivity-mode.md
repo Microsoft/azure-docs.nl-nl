@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/04/2020
+ms.date: 01/28/2021
 ms.author: alkohli
-ms.openlocfilehash: 38dcb32b2993838f8c3f13334e0bc44e9146f113
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b1b5c236c147f060ca1c05e8ed9de12e7e88cf68
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448636"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061801"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro-gpu"></a>Toegang, kracht en connectiviteits modus beheren voor uw Azure Stack Edge Pro GPU
 
@@ -54,7 +54,7 @@ Voor de werk stroom opnieuw instellen is niet vereist dat de gebruiker het oude 
 
 1. Ga in het Azure Portal naar **overzicht > het beheerders wachtwoord opnieuw** in te stellen.
 
-    ![Scherm afbeelding toont het apparaat waarvoor het wacht woord van het apparaat opnieuw is ingesteld.](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-1.png)
+    ![Scherm afbeelding toont het apparaat waarvoor het wacht woord van het apparaat opnieuw is ingesteld.](media/azure-stack-edge-gpu-manage-access-power-connectivity-mode/reset-password-1.png)
 
 
 2. Voer het nieuwe wacht woord in en bevestig het. Het opgegeven wacht woord moet tussen 8 en 16 tekens lang zijn. Het wacht woord moet drie van de volgende tekens bevatten: hoofd letters, kleine letters, cijfers en speciale tekens. Selecteer **Opnieuw instellen**.

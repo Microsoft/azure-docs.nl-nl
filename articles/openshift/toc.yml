@@ -16,6 +16,10 @@
       href: tutorial-delete-cluster.md
 - name: Instructiegidsen
   items:
+    - name: Clusterbewerkingen
+      items:
+        - name: Een ARO-cluster upgraden
+          href: howto-upgrade.md
     - name: Netwerken
       items:
         - name: Een ARO-privécluster maken
@@ -28,6 +32,8 @@
           href: howto-create-a-storageclass.md
         - name: Het ingebouwde containerregister gebruiken
           href: built-in-container-registry.md
+        - name: Azure container Registry gebruiken
+          href: howto-use-acr-with-aro.md
     - name: Verificatie en beveiliging
       items:
         - name: Azure Active Directory-verificatie (CLI) configureren

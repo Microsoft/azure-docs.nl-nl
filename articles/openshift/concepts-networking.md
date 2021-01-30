@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/23/2020
-ms.openlocfilehash: 9cfe8c7e7d2484649bf458524032365b692c9243
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
-ms.translationtype: HT
+ms.openlocfilehash: 6d1fd873de3313678875a8c167b90fafb8ede7ae
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093516"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061646"
 ---
 # <a name="network-concepts-for-azure-red-hat-openshift-aro"></a>Netwerkconcepten voor Azure Red Hat OpenShift (ARO)
 
@@ -68,12 +68,15 @@ OpenShift Software Defined Networking [(SDN)](https://docs.openshift.com/contain
 
 ## <a name="networking--for-azure-red-hat-openshift"></a>Netwerken voor Azure Red Hat OpenShift
 
-De volgende netwerkfuncties zijn specifiek voor Azure Red Hat OpenShift:
+De volgende netwerkfuncties zijn specifiek voor Azure Red Hat OpenShift:  
 * Gebruikers kunnen hun ARO-cluster maken in een bestaand virtueel netwerk of een virtueel netwerk maken tijdens het maken van hun ARO-cluster.
 * CIDR's voor pods en servicenetwerken kunnen worden geconfigureerd.
 * Knooppunten en masters bevinden zich in verschillende subnetten.
 * Virtuele netwerksubnetten van knooppunten en masters moeten minimaal /27 zijn.
-* Pod CIDR moet minimaal /18 groot zijn (het podnetwerk bestaat uit niet-routeerbare IP's en wordt alleen gebruikt in de OpenShift SDN).
+* Standaard pod CIDR is 10.128.0.0/14.
+* Standaard service-CIDR is 172.30.0.0/16.
+* Pod en service netwerk-CIDR mogen niet overlappen met andere adresbereiken die worden gebruikt in uw netwerk en mogen zich niet binnen het IP-adres bereik van het virtuele netwerk van uw cluster bevallen.
+* Pod CIDR moet mini maal/18 groot zijn. (Het Pod-netwerk is niet-routeerbaar bare Ip's en wordt alleen gebruikt in de open Shift SDN.)
 * Aan elk knooppunt wordt een /23-subnet (512 IP's) voor de pods toegewezen. Deze waarde kan niet worden gewijzigd.
 * U kunt geen pod aan meer dan één netwerk koppelen.
 * U kunt geen uitgaand statisch IP-adres configureren. (Dit is een OpenShift-functie. Zie [configuring egress IPs](https://docs.openshift.com/container-platform/4.5/networking/openshift_sdn/assigning-egress-ips.html)) (Uitgaande IP-adressen configureren) voor meer informatie).

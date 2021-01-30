@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: d6832238b0c76059079e2a1330d31eed3212b242
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 46e0687056d697afc2d4355bdf900af138273eaf
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685575"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061831"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Hoe u Jupyter-notebooks uitvoert in uw werkruimte
 
@@ -255,89 +255,6 @@ Een indicator naast de vervolg keuzelijst **kernel** toont de status.
 |---------|---------|
 |  Green |Kernel verbonden, niet-actief, bezet|
 |  Grijs |Kernel niet verbonden |
-
-## <a name="shortcut-keys"></a>Sneltoetsen
-Net als bij Jupyter-notebooks Azure Machine Learning Studio-notebooks een modale gebruikers interface hebben. Het toetsen bord heeft verschillende dingen, afhankelijk van de modus waarin de notebook-cel zich bevindt. Azure Machine Learning Studio-notitie blokken ondersteunen de volgende twee modi voor een bepaalde code-cel: opdracht modus en bewerkings modus.
-
-### <a name="command-mode-shortcuts"></a>Sneltoetsen in de opdracht modus
-
-Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraagd om te typen. Wanneer een cel zich in de opdracht modus bevindt, kunt u het notitie blok als geheel bewerken, maar niet typen in afzonderlijke cellen. Voer de opdracht modus in door te drukken `ESC` of door met de muis te klikken buiten het editor gebied van een cel.  De linkerrand van de actieve cel is blauw en effen en de knop **uitvoeren** is blauw.
-
-   :::image type="content" source="media/how-to-run-jupyter-notebooks/command-mode.png" alt-text="Notebook-cel in de opdracht modus ":::
-
-| Shortcutdimensie                      | Beschrijving                          |
-| ----------------------------- | ------------------------------------|
-| Enter                         | De modus Bewerken openen             |        
-| Shift+Enter                 | Run-cel, hieronder selecteren         |     
-| Control/Command + Enter       | Cel uitvoeren                            |
-| ALT + ENTER                   | Run-cel, code-cel onder invoegen    |
-| Control/Command + ALT + ENTER | Run-cel, cel prijs verlaging invoegen onder|
-| ALT + R                       | Alles uitvoeren      |                       
-| J                             | Cel converteren naar code    |                         
-| M                             | Cel naar prijs verlaging converteren  |                       
-| Up/K                          | Cel hierboven selecteren    |               
-| Omlaag/J                        | Selecteer de cel onder    |               
-| A                             | Code-cel boven invoegen  |            
-| B                             | Code-cel onder invoegen   |           
-| Control/Command + Shift + A   | Cel voor prijs verlaging invoegen boven    |      
-| Control/Command + Shift + B   | Cel prijs verlaging invoegen onder   |       
-| X                             | Geselecteerde cel knippen    |               
-| C                             | Geselecteerde cel kopiëren   |               
-| SHIFT + V                     | Geselecteerde cel boven plakken           |
-| V                             | Geselecteerde cel onder plakken    |       
-| D D                           | Geselecteerde cel verwijderen|                
-| O                             | Uitvoer in-/uitschakelen         |              
-| SHIFT + O                     | Uitvoer schuiven in-/uitschakelen   |          
-| IK HEB                           | Interrupt-kernel |                   
-| 0 0                           | Kernel opnieuw starten |                     
-| Shift + spatie                 | Omhoog schuiven  |                         
-| Space                         | Omlaag schuiven|
-| Tabblad                           | De focus wijzigen naar het volgende focusable item (als tab-trap is uitgeschakeld)|
-| Control/Command + S           | Notitie blok opslaan |                      
-| 1                             | Wijzigen in H1|                       
-| 2                             | Wijzigen in H2|                        
-| 3                             | Wijzigen in h3|                        
-| 4                             | Wijzigen in H4 |                       
-| 5                             | Wijzigen in H5 |                       
-| 6                             | Wijzigen in H6 |                       
-
-### <a name="edit-mode-shortcuts"></a>Snelkoppelingen in de modus bewerken
-
-De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraagd in het gebied van de editor te typen. Wanneer een cel zich in de bewerkings modus bevindt, kunt u in de cel typen. Voer de bewerkings modus in door te drukken `Enter` of door met de muis te klikken op het editor gebied van een cel. De linkerrand van de actieve cel is groen en gearceerd en de knop **uitvoeren** is groen. U ziet ook de cursor prompt in de cel in de bewerkings modus.
-
-   :::image type="content" source="media/how-to-run-jupyter-notebooks/edit-mode.png" alt-text="Notebook-cel in de bewerkings modus":::
-
-Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning notitie blokken navigeren en uitvoeren in de bewerkings modus.
-
-| Shortcutdimensie                      | Beschrijving|                                     
-| ----------------------------- | ----------------------------------------------- |
-| Escape                        | Voer de opdracht modus in|  
-| Control/Command + Space       | IntelliSense activeren |
-| Shift+Enter                 | Run-cel, hieronder selecteren |                         
-| Control/Command + Enter       | Cel uitvoeren  |                                      
-| ALT + ENTER                   | Run-cel, code-cel onder invoegen  |              
-| Control/Command + ALT + ENTER | Run-cel, cel prijs verlaging invoegen onder  |          
-| ALT + R                       | Alle cellen uitvoeren     |                              
-| Omhoog                            | Cursor omhoog of vorige cel verplaatsen    |             
-| Buiten gebruik                          | Cursor omlaag of volgende cel verplaatsen |                  
-| Control/Command + S           | Notitie blok opslaan   |                                
-| Control/Command + up          | Naar begin van cel   |                             
-| Control/Command + down        | Naar einde van cel |                                 
-| Tabblad                           | Voltooiing of inspringen van code (als tab-trap is ingeschakeld) |
-| Control/Command + M           | Tabblad-trap inschakelen/uitschakelen  |                       
-| Control/Command +]           | Indent |                                         
-| Control/Command + [           | Inspringing verkleinen  |                                        
-| Control/Command + A           | Alles selecteren|                                      
-| Control/Command + Z           | Ongedaan maken |                                           
-| Control/Command + Shift + Z   | Opnieuw uitvoeren |                                           
-| Control/Command + Y           | Opnieuw uitvoeren |                                           
-| Control/Command + Home        | Naar begin van cel|                                
-| Control/Command + end         | Naar einde van cel   |                               
-| Control/Command + links        | Eén woord naar links gaan |                               
-| Control/Command + right       | Eén woord naar rechts gaan |                              
-| Control/Command + Backspace   | Woord vóór verwijderen |                             
-| Control/Command + Delete      | Woord verwijderen na |                              
-| Control/Command +/           | Opmerking op cu in-/uitschakelen
 
 ## <a name="find-compute-details"></a>Berekenings details zoeken
 

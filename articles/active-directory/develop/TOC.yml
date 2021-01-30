@@ -68,6 +68,8 @@
           href: quickstart-v2-netcore-daemon.md
         - name: Python-console (daemon)
           href: quickstart-v2-python-daemon.md
+        - name: Java-Console-daemon
+          href: quickstart-v2-java-daemon.md
 - name: Zelfstudies
   items:
     - name: App met één pagina (SPA)

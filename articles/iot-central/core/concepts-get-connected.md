@@ -1,8 +1,8 @@
 ---
 title: Connectiviteit van apparaten in azure IoT Central | Microsoft Docs
 description: In dit artikel vindt u belang rijke concepten met betrekking tot de connectiviteit van apparaten in azure IoT Central
-author: TheJasonAndrew
-ms.author: v-anjaso
+author: dominicbetts
+ms.author: dobett
 ms.date: 1/15/2020
 ms.topic: conceptual
 ms.service: iot-central
@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - device-developer
-ms.openlocfilehash: c633b488fab521947e4f34abb95ada2342dc2eb3
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 028088087b16ded182042aadec4be08a4b8a9589
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789767"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062675"
 ---
 # <a name="get-connected-to-azure-iot-central"></a>Verbinding maken met Azure IoT Central
 
@@ -234,11 +234,8 @@ De Sdk's van het Azure-apparaat bieden u de eenvoudigste manier voor het impleme
 Alle communicatie van apparaten met IoT Hub gebruikt de volgende IoT Hub connectiviteits opties:
 
 - [Apparaat-naar-Cloud-berichten](../../iot-hub/iot-hub-devguide-messages-d2c.md)
-- [Cloud-naar-apparaat-berichten](../../iot-hub/iot-hub-csharp-csharp-c2d.md)
+- [Cloud-naar-apparaat-berichten](../../iot-hub/iot-hub-devguide-messages-c2d.md)
 - [Apparaat apparaatdubbels](../../iot-hub/iot-hub-devguide-device-twins.md)
-
-> [!NOTE]
-> Azure biedt nu ondersteuning voor
 
 De volgende tabel bevat een overzicht van de manier waarop functies van Azure IoT Central-apparaten worden toegewezen aan IoT Hub-functies:
 

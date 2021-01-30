@@ -2,17 +2,19 @@
 title: Fout referentie voor register status controles
 description: Fout codes en mogelijke oplossingen voor problemen die worden gevonden door de opdracht AZ ACR check-Health Diagnostic uit te voeren in Azure Container Registry
 ms.topic: article
-ms.date: 07/02/2019
-ms.openlocfilehash: 9136d41097207bfb17776071e958308f36a9aadd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/25/2021
+ms.openlocfilehash: 05ae5a7ac19bb7748d5313ccb4974b639ab52d9c
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91565595"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061865"
 ---
 # <a name="health-check-error-reference"></a>Naslag informatie voor status controle fout
 
 Hieronder vindt u informatie over de fout codes die worden geretourneerd door de opdracht [AZ ACR check-Health][az-acr-check-health] . Voor elke fout worden mogelijke oplossingen weer gegeven.
+
+`az acr check-healh`Zie [de status van een Azure container Registry controleren](container-registry-check-health.md)voor meer informatie over het uitvoeren van.
 
 ## <a name="docker_command_error"></a>DOCKER_COMMAND_ERROR
 
@@ -49,6 +51,12 @@ Deze fout betekent dat de helm-client niet kan worden gevonden door de CLI, waar
 Deze fout betekent dat de CLI niet kan bepalen welke helm-versie is geïnstalleerd. Dit kan gebeuren als de Azure CLI-versie (of de versie van de helm) die wordt gebruikt, verouderd is.
 
 *Mogelijke oplossingen*: werk bij naar de nieuwste versie van Azure CLI of naar de aanbevolen helm-versie. Voer de opdracht hand matig uit en onderzoek het fout bericht.
+
+## <a name="cmk_error"></a>CMK_ERROR
+
+Deze fout houdt in dat het REGI ster geen toegang kan krijgen tot de door de gebruiker toegewezen of sysem toegewezen beheerde identiteit die wordt gebruikt voor het configureren van register versleuteling met een door de klant beheerde sleutel. De beheerde identiteit is mogelijk verwijderd.  
+
+*Mogelijke oplossing*: Zie stappen voor het oplossen van de door [de gebruiker toegewezen identiteit](container-registry-customer-managed-keys.md#troubleshoot)om het probleem op te lossen en de sleutel te roteren met een andere beheerde identiteit.
 
 ## <a name="connectivity_dns_error"></a>CONNECTIVITY_DNS_ERROR
 

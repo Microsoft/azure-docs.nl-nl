@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/09/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 13fc9d3574243c2403f93489a398a461c5392de7
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 6e4dd4340ba1b7a933b79f9dad616cfdc396f03c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918751"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091108"
 ---
 # <a name="hbv2-series"></a>HBv2-serie
 
@@ -27,6 +27,7 @@ HBv2-serie Vm's functie 200 GB/sec Mellanox HDR InfiniBand. Deze Vm's zijn verbo
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
 | Grootte | vCPU | Processor | Geheugen (GiB) | Geheugen bandbreedte GB/s | Basis-CPU-frequentie (GHz) | Frequentie van alle kernen (GHz, piek) | Frequentie met één kern geheugen (GHz, piek) | RDMA-prestaties (GB/s) | MPI-ondersteuning | Tijdelijke opslag (GiB) | Max. aantal gegevensschijven | Maximum aantal Ethernet-Vnic's |

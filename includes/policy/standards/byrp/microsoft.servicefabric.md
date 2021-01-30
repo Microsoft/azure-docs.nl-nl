@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: e7fbaab971525fdce1b898ae662b9aa2325dd598
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: b16d4141a8a20818efcadbbcc66421278350105c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98859571"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097861"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -43,6 +43,16 @@ Zie [Cyber beveiliging rijpheid-model certificering (CMMC)](https://www.acq.osd.
 |---|---|---|---|---|
 |Systeem- en communicatiebeveiliging |SC. 3.177 |Gebruik FIPS-gevalideerde crypto grafie voor het beveiligen van de vertrouwelijkheid van CUI. |[Voor Service Fabric-clusters moet de eigenschap ClusterProtectionLevel zijn ingesteld op EncryptAndSign](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F617c02be-7f02-4efd-8836-3180d47b6c68) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Fabric/ServiceFabric_AuditClusterProtectionLevel_Audit.json) |
 |Systeem- en communicatiebeveiliging |SC. 3.191 |De vertrouwelijkheid van inactieve CUI beschermen. |[Voor Service Fabric-clusters moet de eigenschap ClusterProtectionLevel zijn ingesteld op EncryptAndSign](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F617c02be-7f02-4efd-8836-3180d47b6c68) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Fabric/ServiceFabric_AuditClusterProtectionLevel_Audit.json) |
+
+## <a name="iso-270012013"></a>ISO 27001:2013
+
+Zie [Azure Policy naleving van regelgeving-ISO 27001:2013](../../../../articles/governance/policy/samples/iso-27001.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
+Zie [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevings standaard.
+
+|Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
+|---|---|---|---|---|
+|Toegangsbeheer |9.2.3 |Beheer van privileged Access Rights |[Service Fabric-clusters mogen alleen gebruikmaken van Azure Active Directory voor clientverificatie](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb54ed75b-3e1a-44ac-a333-05ba39b99ff0) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Fabric/ServiceFabric_AuditADAuth_Audit.json) |
+|Cryptografie |10.1.1 |Beleid voor het gebruik van cryptografische besturings elementen |[Voor Service Fabric-clusters moet de eigenschap ClusterProtectionLevel zijn ingesteld op EncryptAndSign](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F617c02be-7f02-4efd-8836-3180d47b6c68) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Service%20Fabric/ServiceFabric_AuditClusterProtectionLevel_Audit.json) |
 
 ## <a name="nist-sp-800-53-r4"></a>NIST SP 800-53 R4
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/14/2019
-ms.openlocfilehash: 4d0ceacd37748e9761903d02fd7e052d70b10e15
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 15d01a8ac21264bf57ee7e65147e3989cd631b15
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011877"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095553"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>De Log Analytics-agent voor Windows en Linux beheren en onderhouden
 
@@ -32,7 +32,7 @@ Als u de agent op een virtuele Windows-machine wilt bijwerken naar de nieuwste v
 
 U kunt de nieuwste versie van de Windows-agent downloaden van uw Log Analytics-werk ruimte door de volgende stappen uit te voeren.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Klik in Azure Portal op **Alle services**. Typ in de lijst met resources **Log Analytics**. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Selecteer **Log Analytics-werkruimten**.
 
@@ -243,7 +243,7 @@ Het gedownloade bestand voor de agent is een op zichzelf staand installatie pakk
 
 1. Meld u aan bij de computer met een account met beheerders rechten.
 
-2. Als u de installatie bestanden van de agent wilt extra heren, vanaf een opdracht prompt met verhoogde bevoegdheid, `extract MMASetup-<platform>.exe` wordt u gevraagd om het pad naar de bestanden uit te pakken. U kunt ook het pad opgeven door de argumenten door te geven `extract MMASetup-<platform>.exe /c:<Path> /t:<Path>` . Zie voor meer informatie over de opdracht regel parameters die worden ondersteund door IExpress, [opdracht regel parameters voor IExpress](https://support.microsoft.com/help/197147/command-line-switches-for-iexpress-software-update-packages) en werk vervolgens het voor beeld bij aan uw behoeften.
+2. Als u de installatie bestanden van de agent wilt extra heren, vanaf een opdracht prompt met verhoogde bevoegdheid, `extract MMASetup-<platform>.exe` wordt u gevraagd om het pad naar de bestanden uit te pakken. U kunt ook het pad opgeven door de argumenten door te geven `extract MMASetup-<platform>.exe /c:<Path> /t:<Path>` . Zie voor meer informatie over de opdracht regel parameters die worden ondersteund door IExpress, [opdracht regel parameters voor IExpress](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/197147) en werk vervolgens het voor beeld bij aan uw behoeften.
 
 3. Typ bij de prompt `%WinDir%\System32\msiexec.exe /x <Path>:\MOMAgent.msi /qb` .
 

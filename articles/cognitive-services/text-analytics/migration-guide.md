@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 12/17/2020
+ms.date: 01/22/2021
 ms.author: aahi
-ms.openlocfilehash: 6a71bcbfb8341098711e330cebf8545e1fd2751c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 0faa7a6f5a3d2efc8bbef11308b308e3305a00d5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656951"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096318"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Migreren naar versie 3. x van de Text Analytics-API
 
@@ -29,7 +29,7 @@ Sentimentanalyse in versie 2,1 retourneert sentiment scores tussen 0 en 1 voor e
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST-API
+#### <a name="rest-api"></a>REST API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar het v3-eind punt voor sentiment analyse. Bijvoorbeeld: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment` . U moet de toepassing ook bijwerken om de sentiment-labels te gebruiken die in de [API-reactie](how-tos/text-analytics-how-to-sentiment-analysis.md#view-the-results)worden geretourneerd. 
 
@@ -46,14 +46,11 @@ Zie de referentie documentatie voor voor beelden van het JSON-antwoord.
 
 ### <a name="feature-changes"></a>Functie wijzigingen
 
-> [!NOTE] 
-> Op dit moment worden [v3-entiteits categorieën](named-entity-types.md) alleen geretourneerd op Engelse en Spaanse tekst. De API retourneert versie 2,1-resultaten voor aanvragen in andere talen, op voor waarde dat deze worden ondersteund in versie 2,1.
-
 In versie 2,1 gebruikt de Text Analytics-API één eind punt voor benoemde entiteits herkenning (NER) en entiteits koppelingen. Versie 3 biedt uitgebreide detectie van benoemde entiteiten en maakt gebruik van afzonderlijke eind punten voor NER en aanvragen voor het koppelen van entiteiten. Vanaf v 3.1-Preview. 1 kan NER ook persoonlijke `pii` informatie en status gegevens detecteren `phi` . 
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST-API
+#### <a name="rest-api"></a>REST API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar de V3-eind punten voor NER en/of entiteits koppeling.
 
@@ -74,6 +71,35 @@ Zie de referentie documentatie voor voor beelden van het JSON-antwoord.
 
 [!INCLUDE [Client library migration information](includes/client-library-migration-section.md)]
 
+#### <a name="version-21-entity-categories"></a>Versie 2,1 entiteits Categorieën
+
+De volgende tabel geeft een lijst van de entiteits categorieën die voor NER v 2.1 worden geretourneerd.
+
+| Categorie   | Beschrijving                          |
+|------------|--------------------------------------|
+| Person   |   Namen van personen.  |
+|Locatie    | Natuurlijke en door de mens gemaakte bezienswaardigheden, structuren, geografische functies en geopolitieke entiteiten |
+|Organisatie | Bedrijven, politieke groepen, muziek banden, sport clubs, overheids instanties en open bare organisaties. Nationale en religions zijn niet opgenomen in dit entiteits type. |
+| PhoneNumber | Telefoon nummers (alleen telefoon nummers voor VS en EU). |
+| E-mail | E-mail adressen. |
+| URL | Url's naar websites. |
+| IP | IP-adressen van het netwerk. |
+| DateTime | Datums en tijden van de dag.| 
+| Datum | Kalender datums. |
+| Tijd | Tijdstippen van de dag |
+| DateRange | Datumbereiken. |
+| TimeRange | Tijds bereik. |
+| Duur | Duur. |
+| Instellen | Set, herhaalde tijden. |
+| Aantal | Cijfers en numerieke aantallen. |
+| Aantal | Rijnummers. |
+| Percentage | Percentages.|
+| Rangtelwoord | Ordinale getallen. |
+| Leeftijd | Leeftijd. |
+| Valuta | Gelden. |
+| Dimensie | Dimensies en metingen. |
+| Temperatuur | Waarbij. |
+
 ## <a name="language-detection"></a>[Taaldetectie](#tab/language-detection)
 
 ### <a name="feature-changes"></a>Functie wijzigingen 
@@ -82,7 +108,7 @@ De functie voor taal detectie is niet gewijzigd in v3 buiten de eindpunt versie,
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST-API
+#### <a name="rest-api"></a>REST API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar het v3-eind punt voor taal detectie. Bijvoorbeeld: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/languages` . U moet ook de toepassing bijwerken zodat deze wordt gebruikt `ConfidenceScore` in plaats van `score` in de [reactie](how-tos/text-analytics-how-to-language-detection.md#step-3-view-the-results)van de API. 
 
@@ -103,7 +129,7 @@ De functie voor het uitpakken van sleutel woorden is niet gewijzigd in v3 buiten
 
 ### <a name="steps-to-migrate"></a>Te migreren stappen
 
-#### <a name="rest-api"></a>REST-API
+#### <a name="rest-api"></a>REST API
 
 Als uw toepassing het REST API gebruikt, werkt u het aanvraag eindpunt bij naar het v3-eind punt voor het uitpakken van de sleutel woord groep. Bijvoorbeeld: `https://<your-custom-subdomain>.api.cognitiveservices.azure.com/text/analytics/v3.0/keyPhrases`
 

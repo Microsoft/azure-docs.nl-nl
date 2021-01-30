@@ -190,6 +190,8 @@
           href: how-to-delete-project.md
         - name: Werken met een eerdere versie van Azure Migrate
           href: migrate-v1.md
+        - name: Migratie projecten beheren met Azure Lighthouse
+          href: ../lighthouse/how-to/migration-at-scale.md?toc=/azure/migrate/toc.json&bc=/azure/migrate/breadcrumb/toc.json
 - name: Problemen oplossen
   items:
     - name: Algemeen

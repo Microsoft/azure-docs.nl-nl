@@ -3,12 +3,12 @@ title: Azure Service Bus Explorer gebruiken om gegevens bewerkingen op Service B
 description: Dit artikel bevat informatie over het gebruik van de portal Azure Service Bus Explorer voor toegang tot Azure Service Bus gegevens.
 ms.topic: conceptual
 ms.date: 01/20/2020
-ms.openlocfilehash: eb6610945ba4b09543308ab351d3a36ec7e587dd
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 06bc2ffffc6b467aa730e16599099bc95117dac9
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684838"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092214"
 ---
 # <a name="use-service-bus-explorer-to-perform-data-operations-on-service-bus-preview"></a>Service Bus Explorer gebruiken om gegevens bewerkingen op Service Bus uit te voeren (preview)
 
@@ -37,9 +37,9 @@ Als u het hulp programma Service Bus Explorer wilt gebruiken, moet u de volgende
     - [Snelstartgids-wacht rijen maken](service-bus-quickstart-portal.md)
     - [Snelstartgids: onderwerpen maken](service-bus-quickstart-topics-subscriptions-portal.md)
 - Zorg ervoor dat u lid bent van een van deze rollen op de naam ruimte: 
-    - [Gegevens eigenaar Service Bus](../role-based-access-control/built-in-roles.md#azure-service-bus-data-owner) 
-    - [Inzender](../role-based-access-control/built-in-roles.md#contributor) 
-    - [Eigenaar](/role-based-access-control/built-in-roles.md#owner)
+    - [Gegevens eigenaar Service Bus](/azure/role-based-access-control/built-in-roles#azure-service-bus-data-owner) 
+    - [Inzender](/azure/role-based-access-control/built-in-roles#contributor) 
+    - [Eigenaar](/azure/role-based-access-control/built-in-roles#owner)
 
 
 ## <a name="using-the-service-bus-explorer"></a>De Service Bus Explorer gebruiken

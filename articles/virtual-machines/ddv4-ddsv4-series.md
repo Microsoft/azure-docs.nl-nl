@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 34aea2849289b8e33b4ec3d785363dc62cc70391
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 1606315b6b6cb4cff787a67e97e64baedc6c508e
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919872"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097097"
 ---
 # <a name="ddv4-and-ddsv4-series"></a>Ddv4- en Ddsv4-serie
 
@@ -35,6 +35,7 @@ De nieuwe Ddv4 VM-grootten omvatten snelle, grotere lokale SSD-opslag (Maxi maal
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br> 
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | <sup>**</sup> Max. door Voer in cache en tijdelijke opslag: IOPS/MBps | Max. aantal NIC's|Verwachte netwerk bandbreedte (Mbps) |
@@ -65,6 +66,7 @@ De nieuwe Ddsv4 VM-grootten omvatten snelle, grotere lokale SSD-opslag (Maxi maa
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br> 
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | <sup>**</sup> Maxi maal cache geheugen en tijdelijke opslag doorvoer: IOPS/MBps (cache grootte in GiB) | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Max. aantal NIC's|Verwachte netwerk bandbreedte (Mbps) |

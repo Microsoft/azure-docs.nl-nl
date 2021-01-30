@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2020
 ms.author: terrylan
-ms.openlocfilehash: 575486a89cd078325b76fa684ff9bd3d59a619c9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 353b1708a1c6014f9108ad2be62f22c1e0b0604c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844264"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092765"
 ---
 # <a name="azure-security-technical-capabilities"></a>Technische mogelijkheden van Azure-beveiliging
 Dit artikel bevat een inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen en voldoen aan de beveiligings behoeften van uw bedrijf.
@@ -68,7 +68,7 @@ Hier volgen de belangrijkste mogelijkheden van Azure Identity Management:
 
 - Eenmalige aanmelding
 
-- Multi-Factor Authentication
+- Meervoudige verificatie
 
 - Beveiligings bewaking, waarschuwingen en rapporten op basis van machine learning
 
@@ -90,7 +90,7 @@ Veel organisaties zijn afhankelijk van SaaS-toepassingen (Software as a Service)
 
 Gebruikers hoeven niet alleen meerdere sets met gebruikers namen en wacht woorden te beheren, toepassings toegang kan automatisch worden ingericht of ongedaan gemaakt op basis van organisatie groepen en hun status als werk nemer. [Azure AD introduceert beveiligings-en toegangs beheer functies](../../active-directory/manage-apps/view-applications-portal.md) waarmee u de toegang van gebruikers tot de SaaS-toepassingen centraal kunt beheren.
 
-#### <a name="multi-factor-authentication"></a>Multi-Factor Authentication
+#### <a name="multi-factor-authentication"></a>Meervoudige verificatie
 
 [Azure AD multi-factor Authentication (MFA)](../../active-directory/authentication/concept-mfa-howitworks.md) is een authenticatie methode waarvoor het gebruik van meer dan één verificatie methode is vereist en waarmee een kritieke tweede beveiligingslaag wordt toegevoegd aan gebruikers aanmeldingen en trans acties. [MFA helpt](../../active-directory/authentication/concept-mfa-howitworks.md) de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Het biedt sterke authenticatie via verschillende verificatie opties: telefonische oproep, tekst bericht of mobiele app-melding of verificatie code en OAuth-tokens van derden.
 
@@ -181,7 +181,7 @@ Gebruik [Azure site-to-site VPN](../../vpn-gateway/vpn-gateway-howto-site-to-sit
 
 Gebruik [punt-naar-site-VPN](../../vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md)voor organisaties die de toegang moeten beveiligen vanaf een werk station dat zich on-premises naar Azure bevindt.
 
-Grotere gegevens sets kunnen worden verplaatst via een speciale WAN-verbinding met hoge snelheid, zoals [ExpressRoute](https://azure.microsoft.com/services/expressroute/). Als u ervoor kiest om ExpressRoute te gebruiken, kunt u de gegevens op toepassings niveau ook versleutelen met behulp van [SSL/TLS](https://support.microsoft.com/kb/257591) of andere protocollen voor extra beveiliging.
+Grotere gegevens sets kunnen worden verplaatst via een speciale WAN-verbinding met hoge snelheid, zoals [ExpressRoute](https://azure.microsoft.com/services/expressroute/). Als u ervoor kiest om ExpressRoute te gebruiken, kunt u de gegevens op toepassings niveau ook versleutelen met behulp van [SSL/TLS](https://web.archive.org/web/20150221085231/http://support.microsoft.com:80/kb/257591) of andere protocollen voor extra beveiliging.
 
 Als u werkt met Azure Storage via de Azure-Portal, worden alle trans acties uitgevoerd via HTTPS. [Opslag rest API](/rest/api/storageservices/) via https kan ook worden gebruikt om te communiceren met [Azure Storage](https://azure.microsoft.com/services/storage/) en [Azure SQL database](https://azure.microsoft.com/services/sql-database/).
 
@@ -339,7 +339,7 @@ Met deze methode kunt u gegevens uit verschillende bronnen consolideren, zodat u
 
 Security Center analyseert de beveiligingsstatus van uw Azure-resources om mogelijke beveiligingsproblemen op te sporen. Een lijst met aanbevelingen begeleidt u bij het configureren van benodigde besturingselementen.
 
-Voorbeelden zijn:
+Enkele voorbeelden:
 
 - Inrichting van antimalware om schadelijke software te identificeren en te verwijderen
 

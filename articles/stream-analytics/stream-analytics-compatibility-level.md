@@ -6,12 +6,12 @@ ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 8105988cd2036f44d214befad3365cf9ee96ee0d
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 07df391e664fe04b9c7d2eda34960666c44a2e06
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015977"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094077"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Compatibiliteits niveau voor Azure Stream Analytics taken
 
@@ -43,7 +43,7 @@ Het compatibiliteits niveau van de taak in het Azure Portal bijwerken:
 4. Kies de gewenste waarde voor het compatibiliteits niveau.
 5. Selecteer onder aan de pagina **Opslaan** .
 
-![Compatibiliteits niveau Stream Analytics in Azure Portal](media/stream-analytics-compatibility-level/stream-analytics-compatibility.png)
+![Compatibiliteits niveau Stream Analytics in Azure Portal](media/stream-analytics-compatibility-level/stream-analytics-compat-level-1-2.png)
 
 Wanneer u het compatibiliteits niveau bijwerkt, valideert de T-compiler de taak met de syntaxis die overeenkomt met het geselecteerde compatibiliteits niveau.
 

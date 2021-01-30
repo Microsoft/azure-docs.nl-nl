@@ -14,12 +14,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 1/14/2020
-ms.openlocfilehash: b73e72969a851428034499d447ecb162a61aa9ab
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1341d0e64a01ff428fe42735d198c5e6b74b0ce8
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725783"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093305"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Problemen met het Azure SQL Database blok keren begrijpen en oplossen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -371,14 +371,14 @@ De volgende scenario's worden in deze scenario's uitgebreid.
 
 ## <a name="see-also"></a>Zie ook
 
-* [Bewaking en prestatieafstemming van Azure SQL Database en Azure SQL Managed Instance](/monitor-tune-overview.md)
+* [Bewaking en prestatieafstemming van Azure SQL Database en Azure SQL Managed Instance](/azure/azure-sql/database/monitor-tune-overview)
 * [Prestaties bewaken met behulp van de query Store](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store)
 * [Handleiding voor transactievergrendeling en versiebeheer van rijen](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)
 * [ISOLATIE NIVEAU VAN DE TRANS ACTIE INSTELLEN](/sql/t-sql/statements/set-transaction-isolation-level-transact-sql)
 * [Snelstart: Uitgebreide gebeurtenissen in SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
 * [Intelligent Insights met behulp van AI om database prestaties te bewaken en op te lossen](intelligent-insights-overview.md)
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Azure SQL Database: prestaties afstemmen verbeteren met automatisch afstemmen](https://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Improving-Performance-Tuning-with-Automatic-Tuning)
 * [Verbeter de Azure SQL Database prestaties met automatisch afstemmen](https://channel9.msdn.com/Shows/Azure-Friday/Improve-Azure-SQL-Database-Performance-with-Automatic-Tuning)

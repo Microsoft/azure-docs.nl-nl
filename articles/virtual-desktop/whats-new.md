@@ -3,17 +3,17 @@ title: Nieuwe functies in Windows Virtual Desktop - Azure
 description: Nieuwe functies en productupdates voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: overview
-ms.date: 01/06/2021
+ms.date: 01/29/2021
 ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: lizross
 ms.custom: references_regions
-ms.openlocfilehash: 2f49ec0fef5aa79c602e561746eb0f6dba16cb33
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 56013a51937915cc240e2bd0ec26342c24c79807
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98876594"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095903"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -25,6 +25,61 @@ Windows Virtual Desktop wordt regelmatig bijgewerkt. In dit artikel vindt u meer
 - Opgeloste fouten
 
 Dit artikel wordt maandelijks bijgewerkt. Controleer hier regelmatig of er nieuwe updates beschikbaar zijn.
+
+## <a name="client-updates"></a>Clientupdates
+
+Bekijk deze artikelen voor meer informatie over updates voor onze clients voor Windows Virtual Desktop en Extern bureaublad-services:
+
+- [Windows](/windows-server/remote/remote-desktop-services/clients/windowsdesktop-whatsnew)
+- [MacOS](/windows-server/remote/remote-desktop-services/clients/mac-whatsnew)
+- [iOS](/windows-server/remote/remote-desktop-services/clients/ios-whatsnew)
+- [Android](/windows-server/remote/remote-desktop-services/clients/android-whatsnew)
+- [Web](/windows-server/remote/remote-desktop-services/clients/web-client-whatsnew)
+
+## <a name="fslogix-updates"></a>FSLogix updates
+
+Nieuws gierig over de nieuwste updates voor FSLogix? Bekijk [wat er nieuw is op FSLogix](/fslogix/whats-new.md).
+
+## <a name="january-2021"></a>Januari 2021
+
+Dit is gewijzigd in januari 2021:
+
+### <a name="new-windows-virtual-desktop-offer"></a>Nieuwe Windows virtueel bureau blad-aanbieding
+
+Nieuwe klanten besparen 30 procent op virtuele Windows Desktop-kosten voor de virtuele machines uit de D-serie en de BS-serie tot 90 dagen bij gebruik van de systeem eigen micro soft-oplossing. U kunt de aanbieding in de Azure Portal inwisselen vóór 31 maart 2021. Meer informatie vindt u op onze [pagina met virtueel bureau blad voor Windows](https://azure.microsoft.com/services/virtual-desktop/offer/).
+
+### <a name="networksecuritygrouprules-value-change"></a>networkSecurityGroupRules waarde wijzigen 
+
+In de geneste sjabloon Azure Resource Manager is de standaard waarde voor networkSecurityGroupRules van een object gewijzigd in een matrix. Hierdoor voor komt u fouten als u managedDisks-customimagevm.jsgebruikt zonder een waarde voor networkSecurityGroupRules op te geven. Dit was geen belang rijke wijziging en is achterwaarts compatibel.
+
+### <a name="fslogix-hotfix-update"></a>FSLogix hotfix update
+
+We hebben FSLogix, versie 2009 HF_01 (2.9.7654.46150) uitgebracht voor het oplossen van problemen in de vorige release (2.9.7621.30127). Het is raadzaam om de vorige versie niet meer te gebruiken en FSLogix zo snel mogelijk bij te werken.
+
+Zie de release opmerkingen in [what's New in FSLogix](/fslogix/whats-new.md#fslogix-apps-2009-hf_01-29765446150)voor meer informatie.
+
+### <a name="azure-portal-experience-improvements"></a>Verbeteringen in Azure Portal-ervaring
+
+We hebben de volgende verbeteringen aangebracht in de Azure Portal-ervaring:
+
+- U kunt nu rechtstreeks referenties voor de lokale VM-beheerder toevoegen in plaats van een lokaal account toe te voegen dat is gemaakt met de referenties van het Active Directory-account voor het lid van het domein.
+- Gebruikers kunnen nu zowel afzonderlijke als groeps toewijzingen weer geven op afzonderlijke tabbladen voor afzonderlijke gebruikers en groepen.
+- Het versie nummer van de Windows Virtual Desktop-agent is nu zichtbaar in het overzicht van virtuele machines voor hostgroepen.
+- Bulksgewijs verwijderen voor hostgroepen en toepassings groepen is toegevoegd.
+- U kunt nu de verwerkings modus voor meerdere sessie-hosts in een hostgroep in-of uitschakelen.
+- Het veld openbaar IP-adres is verwijderd van de pagina met gegevens over de virtuele machine.
+
+### <a name="windows-virtual-desktop-agent-troubleshooting"></a>Problemen oplossen met Windows Virtual Desktop agent
+
+We hebben onlangs de [Windows Virtual Desktop agent-probleemoplossings gids](troubleshoot-agent.md) ingesteld om klanten te helpen die veelvoorkomende problemen hebben aangetroffen.
+
+### <a name="microsoft-defender-for-endpoint-integration"></a>Microsoft Defender for Endpoint-integratie
+
+Integratie van micro soft Defender voor endpoint is nu algemeen beschikbaar. Deze functie geeft uw virtuele Windows-Desktop-Vm's dezelfde onderzoek ervaring als een lokale Windows 10-computer. Als u Windows 10 Enter prise multi-session gebruikt, ondersteunt micro soft Defender voor eind punten Maxi maal 50 gelijktijdige gebruikers verbindingen, waardoor u de kosten besparingen voor Windows 10 Enter prise Multi-Session en het vertrouwen van micro soft Defender voor eind punt biedt. Bekijk onze [blog post](https://techcommunity.microsoft.com/t5/microsoft-defender-for-endpoint/windows-virtual-desktop-support-is-now-generally-available/ba-p/2103712)voor meer informatie.
+
+### <a name="azure-security-baseline-for-windows-virtual-desktop"></a>Azure-beveiligings basislijn voor Windows virtueel bureau blad
+
+We hebben onlangs [een artikel gepubliceerd over de Azure Security-basis lijn](security-baseline.md) voor virtueel bureau blad van Windows, die we graag willen aankijken. Deze richt lijnen bevatten informatie over het Toep assen van de Azure Security-benchmark versie 2,0 naar het virtuele bureau blad van Windows. In de beveiligings benchmark van Azure worden de instellingen en procedures beschreven die u kunt gebruiken om uw cloud oplossingen op Azure te beveiligen.
 
 ## <a name="december-2020"></a>December 2020
 
@@ -257,16 +312,6 @@ We hebben een nieuw gatewaycluster toegevoegd in Zuid-Afrika om de latentie van 
 We hebben enkele verbeteringen aangebracht in Microsoft Teams voor Windows Virtual Desktop. Het belangrijkste is dat Windows Virtual Desktop nu ondersteuning biedt voor de omleiding van audio en visualisatie bij oproepen. Omleiding verbetert de latentie door directe paden te maken tussen gebruikers wanneer ze audio of video gebruiken om te bellen. Minder afstand betekent ook minder hops, waardoor oproepen een helderder beeld en beter geluid hebben.
 
 Lees [onze blogpost](https://azure.microsoft.com/updates/windows-virtual-desktop-media-optimization-for-microsoft-teams-is-now-available-in-public-preview/) voor meer informatie.
-
-## <a name="client-updates"></a>Clientupdates
-
-Bekijk deze artikelen voor meer informatie over updates voor onze clients voor Windows Virtual Desktop en Extern bureaublad-services:
-
-- [Windows](/windows-server/remote/remote-desktop-services/clients/windowsdesktop-whatsnew)
-- [MacOS](/windows-server/remote/remote-desktop-services/clients/mac-whatsnew)
-- [iOS](/windows-server/remote/remote-desktop-services/clients/ios-whatsnew)
-- [Android](/windows-server/remote/remote-desktop-services/clients/android-whatsnew)
-- [Web](/windows-server/remote/remote-desktop-services/clients/web-client-whatsnew)
 
 ## <a name="next-steps"></a>Volgende stappen
 

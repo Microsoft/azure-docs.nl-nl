@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 619f2c2670d8e376ad0bca7cf8b93b971be067a0
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: fd39f5e0af34c702cddc8e08b6a94e428c7f0167
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880722"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092047"
 ---
 # <a name="security-control-v2-privileged-access"></a>Beveiligings controle v2: Privileged Access
 
@@ -26,7 +26,7 @@ Uitgebreide toegang heeft betrekking op besturings elementen voor het beveiligen
 
 Beperk het aantal gebruikers accounts met zeer privileged en beveilig deze accounts op een hoger niveau. De meest essentiële ingebouwde rollen in azure AD zijn globale beheerder en de beheerder van de geprivilegieerde rol, omdat gebruikers die aan deze twee rollen zijn toegewezen, beheerders rollen kunnen delegeren. Met deze bevoegdheden kunnen gebruikers direct of indirect elke resource in uw Azure-omgeving lezen en wijzigen:
 
-- Beheerder van globale beheerder/bedrijf: gebruikers met deze rol hebben toegang tot alle beheer functies in azure AD, evenals services die gebruikmaken van Azure AD-identiteiten.
+- Globale beheerder: gebruikers met deze rol hebben toegang tot alle beheer functies in azure AD, evenals services die gebruikmaken van Azure AD-identiteiten.
 
 - Beheerder van geprivilegieerde rol: gebruikers met deze rol kunnen roltoewijzingen beheren in azure AD, en in Azure AD Privileged Identity Management (PIM). Daarnaast kunt u met deze rol alle aspecten van PIM en administratieve eenheden beheren.
 

@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff2651d2fed9c307bbb90623572b4a74d750d3a4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1fa195fd8d40c6b67a9c446f0b2320fe47d75259
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94836067"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092663"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Veelgestelde vragen over Azure Active Directory Connect
 
@@ -32,7 +32,7 @@ Micro soft raadt aan uw Azure AD Connect-server te beveiligen om het beveiliging
 
 * Azure AD Connect implementeren op een server die lid is van een domein en de beheerders toegang tot domein beheerders of andere nauw keurig beheerde beveiligings groepen beperken
 
-Voor meer informatie zie: 
+Raadpleeg voor meer informatie: 
 
 * [Beheerders groepen beveiligen](/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
 
@@ -162,8 +162,8 @@ Gesynchroniseerde gebruikers kunnen worden gemaakt of gemasterd op locatie. Als 
 **V: Waarom komt het kenmerk userPrincipalName (UPN) in azure AD niet overeen met de on-premises UPN?**  
 Zie de volgende artikelen voor meer informatie:
 
-* [Gebruikers namen in Microsoft 365, Azure of intune komen niet overeen met de on-premises UPN of alternatieve aanmeldings-ID](https://support.microsoft.com/kb/2523192)
-* [Wijzigingen worden niet gesynchroniseerd met het Azure Active Directory Sync-hulp programma nadat u de UPN van een gebruikers account hebt gewijzigd om een ander federatief domein te gebruiken](https://support.microsoft.com/kb/2669550)
+* [Gebruikers namen in Microsoft 365, Azure of intune komen niet overeen met de on-premises UPN of alternatieve aanmeldings-ID](https://mskb.pkisolutions.com/kb/2523192)
+* [Wijzigingen worden niet gesynchroniseerd met het Azure Active Directory Sync-hulp programma nadat u de UPN van een gebruikers account hebt gewijzigd om een ander federatief domein te gebruiken](https://mskb.pkisolutions.com/kb/2669550)
 
 U kunt Azure AD ook zo configureren dat de synchronisatie-engine de UPN kan bijwerken, zoals wordt beschreven in [Azure AD Connect-synchronisatie service-functies](how-to-connect-syncservice-features.md).
 
@@ -218,7 +218,7 @@ Ja, u moet nog steeds een upgrade uitvoeren naar versie 1.1.750.0 of hoger. Het 
 U hoeft niet de gebruikers naam en het wacht woord te weten die voor het eerst zijn gebruikt voor het bijwerken van Azure AD Connect. Gebruik een Azure AD-account met de rol globale beheerder.
 
 **V: hoe kan ik zien welke versie van Azure AD Connect Ik gebruik?**  
-Als u wilt controleren welke versie van Azure AD Connect op uw server is geïnstalleerd, gaat u naar configuratie scherm en zoekt u de geïnstalleerde versie van Microsoft Azure AD verbinding maken door **Program** ma's en onderdelen van het selectie vakje te selecteren  >  **Programs and Features**, zoals hier wordt weer gegeven:
+Als u wilt controleren welke versie van Azure AD Connect op uw server is geïnstalleerd, gaat u naar configuratie scherm en zoekt u de geïnstalleerde versie van Microsoft Azure AD verbinding maken door **Program** ma's en onderdelen van het selectie vakje te selecteren  >  , zoals hier wordt weer gegeven:
 
 ![Azure AD Connect-versie in het configuratie scherm](./media/reference-connect-faq/faq1.png)
 

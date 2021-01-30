@@ -18,12 +18,12 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: 34962686ae36764a6dc16b164e91004be9ef038d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7ef6ef85ea9d256303852e4b281071da455ebb0
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250416"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097670"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Push meldingen verzenden met Azure Notification Hubs en Node.js
 
@@ -83,7 +83,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 Haal de verbindings `connectionstring` waarde uit de [Azure Portal] door de volgende stappen uit te voeren:
 
 1. Klik in het navigatie deel venster links op **Bladeren**.
-2. Selecteer **Notification hubs**en zoek vervolgens de hub die u wilt gebruiken voor het voor beeld. U kunt de [zelf studie aan de slag met Windows Store](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) raadplegen als u hulp nodig hebt bij het maken van een nieuwe notification hub.
+2. Selecteer **Notification hubs** en zoek vervolgens de hub die u wilt gebruiken voor het voor beeld. U kunt de [zelf studie aan de slag met Windows Store](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) raadplegen als u hulp nodig hebt bij het maken van een nieuwe notification hub.
 3. Selecteer **Instellingen**.
 4. Klik op **toegangs beleid**. U ziet zowel gedeelde als volledige toegang verbindings reeksen.
 
@@ -109,7 +109,7 @@ Het `GcmService` object biedt een `send` methode die kan worden gebruikt voor he
 - **Payload** : de nettolading van de JSON-of onbewerkte teken reeks van het bericht.
 - **Call back** -de functie call back.
 
-Zie de [Payload-documentatie](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload)voor meer informatie over de indeling van de nettolading.
+Zie de [Payload-documentatie](https://payload.readthedocs.io/en/latest/)voor meer informatie over de indeling van de nettolading.
 
 De volgende code gebruikt het `GcmService` exemplaar dat wordt weer gegeven door de `NotificationHubService` om een push melding naar alle geregistreerde clients te verzenden.
 

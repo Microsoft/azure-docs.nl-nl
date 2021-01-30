@@ -1,17 +1,17 @@
 ---
 title: Overzicht van redundante hoge Beschik baarheid in zone met Azure Database for MySQL flexibele server
 description: Meer informatie over de concepten van redundante hoge Beschik baarheid in zones met Azure Database for MySQL flexibele server
-author: mksuni
-ms.author: sumuth
+author: ambhatna
+ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: cd7be998c49a710ee7652cf18c35bed743606ffd
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.date: 01/29/2021
+ms.openlocfilehash: f01a0869f7786ee6197835610456f4bb1cbd6b03
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241181"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097114"
 ---
 # <a name="high-availability-concepts-in-azure-database-for-mysql-flexible-server-preview"></a>Concepten met hoge Beschik baarheid in Azure Database for MySQL flexibele server (preview-versie)
 
@@ -48,7 +48,7 @@ Hier volgen enkele voor delen voor het gebruik van de functie zone redundantie H
 -   De stand-by replica wordt in een exacte VM-configuratie geïmplementeerd als primair, zoals vCores, opslag, netwerk instellingen (VNET, firewall), enzovoort.
 -   Mogelijkheid om de stand-by replica te verwijderen door hoge Beschik baarheid uit te scha kelen.
 -   Automatische back-ups zijn op basis van een moment opname, uitgevoerd vanaf de primaire database server en opgeslagen in een zone redundante opslag.
--   Als er een failover-gebeurtenis is, wordt een nieuwe stand-by replica ingericht in de oorspronkelijke primaire beschikbaarheids zone.
+-   In het geval van een failover wordt Azure Database for MySQL flexibele server automatisch overgezet naar de stand-by replica als hoge Beschik baarheid is ingeschakeld. De instelling voor hoge Beschik baarheid bewaakt de primaire server en brengt deze weer online.
 -   Clients maken altijd verbinding met de primaire database server.
 -   Als er een fout is opgetreden in de data base of het knoop punt is mislukt, wordt eerst opnieuw opgestart op hetzelfde knoop punt. Als dat niet lukt, wordt de automatische failover geactiveerd.
 -   De mogelijkheid om de server opnieuw op te starten om alle para meters voor de statische server op te halen.

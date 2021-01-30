@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 20ef6f3d982091232783f003118797f4b2e37cd4
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 7a3d0236fc70757d7d9a98449bc4f6fdbf3d8bef
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919847"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091996"
 ---
 # <a name="dv2-and-dsv2-series"></a>Dv2- en DSv2-serie
 
@@ -29,6 +29,7 @@ Dv2-serie grootten worden uitgevoerd op Intel® Xeon® Platinum 8272CL (Cascade 
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Maximale tijdelijke opslag doorvoer: IOPS/MBps lezen/MBps schrijven | Max. aantal gegevensschijven | Door Voer: IOPS | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps) |
@@ -50,6 +51,7 @@ DSv2-serie grootten worden uitgevoerd op Intel® Xeon® Platinum 8272CL (Cascade
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maxi maal cache geheugen en tijdelijke opslag doorvoer: IOPS/MBps (cache grootte in GiB) | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Max. aantal NIC's|Verwachte netwerk bandbreedte (Mbps) |

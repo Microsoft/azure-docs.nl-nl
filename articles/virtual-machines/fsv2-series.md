@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: d633d631a8d905532601ec15700ff80eed644efe
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 7071675d4573ebee297217fe216552482cb76406
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920153"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096869"
 ---
 # <a name="fsv2-series"></a>Fsv2-serie
 
@@ -27,6 +27,7 @@ Virtuele machines uit de Fsv2-serie bieden een Intel® Hyper-Threading technolog
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 <br>
 
 | Grootte | van vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maxi maal cache geheugen en tijdelijke opslag doorvoer: IOPS/MBps (cache grootte in GiB) | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Max. aantal NIC's|Verwachte netwerk bandbreedte (Mbps) |

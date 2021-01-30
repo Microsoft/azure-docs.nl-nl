@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 06/09/2020
 ms.author: rolyon
-ms.openlocfilehash: 6e57e495d34a265b5e0691106996206029656c5a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 850d50bc9e427ff559782d587d74b33089332a8d
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371117"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091660"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Toegang verhogen om alle Azure-abonnementen en beheergroepen te beheren
 
@@ -33,7 +33,7 @@ Als u een globale beheerder bent, is het mogelijk dat u de volgende acties wilt 
 
 ## <a name="how-does-elevated-access-work"></a>Hoe werkt de toegang met verhoogde bevoegdheden?
 
-Azure AD en Azure-resources worden onafhankelijk van elkaar beveiligd. Dat wil zeggen dat Azure AD-roltoewijzingen geen toegang verlenen tot Azure-resources en Azure-roltoewijzingen geen toegang verlenen tot Azure AD. Als u echter een [globale beheerder](../active-directory/roles/permissions-reference.md#company-administrator-permissions) in azure AD bent, kunt u uzelf toegang tot alle Azure-abonnementen en-beheer groepen in uw directory toewijzen. Gebruik deze mogelijkheid als u geen toegang hebt tot Azure-abonnements resources, zoals virtuele machines of opslag accounts, en u uw globale beheerders bevoegdheden wilt gebruiken om toegang te krijgen tot deze resources.
+Azure AD en Azure-resources worden onafhankelijk van elkaar beveiligd. Dat wil zeggen dat Azure AD-roltoewijzingen geen toegang verlenen tot Azure-resources en Azure-roltoewijzingen geen toegang verlenen tot Azure AD. Als u echter een [globale beheerder](../active-directory/roles/permissions-reference.md#global-administrator-permissions) in azure AD bent, kunt u uzelf toegang tot alle Azure-abonnementen en-beheer groepen in uw directory toewijzen. Gebruik deze mogelijkheid als u geen toegang hebt tot Azure-abonnements resources, zoals virtuele machines of opslag accounts, en u uw globale beheerders bevoegdheden wilt gebruiken om toegang te krijgen tot deze resources.
 
 Wanneer u de toegang uitbreidt, krijgt u de rol [beheerder voor gebruikers toegang](built-in-roles.md#user-access-administrator) toegewezen in Azure in het hoofd bereik ( `/` ).Hiermee kunt u alle resources weer geven en toegang toewijzen in een abonnement of beheer groep in de Directory. U kunt de toewijzingen van beheerders rollen voor gebruikers toegang verwijderen met Azure PowerShell, Azure CLI of de REST API.
 
@@ -53,17 +53,17 @@ Volg deze stappen om de toegang tot een globale beheerder te verhogen met behulp
 
 1. Open **Azure Active Directory**.
 
-1. Selecteer onder **beheren**de optie **Eigenschappen**.
+1. Selecteer **Eigenschappen** onder **Beheren**.
 
    ![Eigenschappen voor Azure Active Directory eigenschappen selecteren-scherm afbeelding](./media/elevate-access-global-admin/azure-active-directory-properties.png)
 
-1. Stel onder **toegangs beheer voor Azure-resources**de schakel optie in op **Ja**.
+1. Stel onder **toegangs beheer voor Azure-resources** de schakel optie in op **Ja**.
 
    ![Toegangs beheer voor Azure-resources-scherm afbeelding](./media/elevate-access-global-admin/aad-properties-global-admin-setting.png)
 
    Wanneer u de wissel knop instelt op **Ja**, wordt de rol gebruikers toegangs beheerder toegewezen in azure RBAC in het hoofd bereik (/). Hiermee verleent u toestemming om rollen toe te wijzen aan alle Azure-abonnementen en-beheer groepen die zijn gekoppeld aan deze Azure AD-Directory. Deze schakel optie is alleen beschikbaar voor gebruikers aan wie de rol van globale beheerder is toegewezen in azure AD.
 
-   Wanneer u de wissel knop op **Nee**instelt, wordt de rol beheerder voor gebruikers toegang in azure RBAC verwijderd uit uw gebruikers account. U kunt geen rollen meer toewijzen in alle Azure-abonnementen en-beheer groepen die zijn gekoppeld aan deze Azure AD-Directory. U kunt alleen de Azure-abonnementen en-beheer groepen weer geven en beheren waartoe u toegang hebt gekregen.
+   Wanneer u de wissel knop op **Nee** instelt, wordt de rol beheerder voor gebruikers toegang in azure RBAC verwijderd uit uw gebruikers account. U kunt geen rollen meer toewijzen in alle Azure-abonnementen en-beheer groepen die zijn gekoppeld aan deze Azure AD-Directory. U kunt alleen de Azure-abonnementen en-beheer groepen weer geven en beheren waartoe u toegang hebt gekregen.
 
     > [!NOTE]
     > Als u [privileged Identity Management](../active-directory/privileged-identity-management/pim-configure.md)gebruikt, kan het deactiveren van de roltoewijzing niet worden gewijzigd in de wissel knop **voor toegang voor Azure-resources** **.** Als u de minimale privileged Access wilt behouden, raden we u aan deze wissel knop in te stellen op **Nee** voordat u de roltoewijzing deactiveert.
@@ -199,7 +199,7 @@ Ga als volgt te werk om de toewijzing van de rol beheerder voor gebruikers toega
     az role assignment delete --assignee username@example.com --role "User Access Administrator" --scope "/"
     ```
 
-## <a name="rest-api"></a>REST-API
+## <a name="rest-api"></a>REST API
 
 ### <a name="elevate-access-for-a-global-administrator"></a>Toegang verhogen voor een globale beheerder
 

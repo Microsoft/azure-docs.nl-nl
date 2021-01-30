@@ -5,102 +5,70 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 01/11/2019
+ms.date: 01/29/2021
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 358e92d8e43473c168e24be9f4af504e6ffcc37a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 25404837d5bc66ff415be8d8670eb6650475c30f
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027094"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094625"
 ---
-*De cache opwarmen*  
-De schijf met alleen-lezen host-caching kan hogere IOPS geven dan de schijf limiet. Als u dit maximale Lees prestaties wilt ophalen uit de cache van de host, moet u eerst de cache van deze schijf opwarmen. Dit zorgt ervoor dat de Lees-IOs die het benchmarking-hulp programma op CacheReads volume plaatst, een treffer voor de cache krijgt, en niet rechtstreeks de schijf. Het aantal cache treffers resulteert in extra IOPS van de schijf met één cache.
+## <a name="warm-up-the-cache"></a>De cache opwarmen
+
+De schijf met alleen-lezen host-caching kan hogere IOPS geven dan de schijf limiet. Als u dit maximale Lees prestaties wilt ophalen uit de cache van de host, moet u eerst de cache van deze schijf opwarmen. Dit zorgt ervoor dat de Lees-IOs die het benchmarking-hulp programma op CacheReads volume plaatst, een treffer voor de cache krijgt, en niet rechtstreeks de schijf. De cache treffers resulteren in meer IOPS van de schijf met één cache.
 
 > [!IMPORTANT]
-> Telkens wanneer de virtuele machine opnieuw wordt opgestart, moet u de cache opwarmen voordat u benchmarking uitvoert.
+> Telkens wanneer de VM opnieuw wordt opgestart, moet u de cache opwarmen voordat u benchmarks uitvoert.
 
-## <a name="iometer"></a>Iometer
+## <a name="diskspd"></a>DISKSPD
 
-[Down load het Iometer-hulp programma](http://sourceforge.net/projects/iometer/files/iometer-stable/1.1.0/iometer-1.1.0-win64.x86_64-bin.zip/download) op de VM.
+[Down load het DISKSP-hulp programma](https://github.com/Microsoft/diskspd) op de VM. DISKSPD is een hulp programma dat u kunt aanpassen om uw eigen synthetische werk belastingen te maken. Voor het uitvoeren van benchmark tests worden dezelfde instellingen gebruikt die hierboven worden beschreven. U kunt de specificaties wijzigen om verschillende werk belastingen te testen.
 
-### <a name="test-file"></a>Test bestand
+In dit voor beeld gebruiken we de volgende set Baseline-para meters:
 
-Iometer maakt gebruik van een test bestand dat is opgeslagen op het volume waarop u de benchmarking test uitvoert. Hiermee worden lees-en schrijf bewerkingen op dit test bestand uitgevoerd om de schijf-IOPS en de door voer te meten. Iometer maakt dit test bestand als u er geen hebt gegeven. Maak een 200 GB-test bestand met de naam iobw. TST op de CacheReads-en NoCacheWrites-volumes.
+- -c200G: maakt (of maakt opnieuw) het voorbeeld bestand dat in de test wordt gebruikt. De waarde kan worden ingesteld in bytes, KiB, MiB, GiB of blokken. In dit geval wordt een groot bestand van 200-GiB doel bestand gebruikt om de geheugen cache te minimaliseren.
+- -W100: Hiermee geeft u het percentage bewerkingen op dat schrijf aanvragen (-W0 is gelijk aan 100% lezen).
+- -b4K: Hiermee geeft u de blok grootte in bytes, KiB, MiB of GiB. In dit geval wordt de blok grootte van 4 KB gebruikt voor het simuleren van een wille keurige I/O-test.
+- -F4: Hiermee stelt u een totaal van vier threads in.
+- -r: geeft de wille keurige I/O-test aan (de para meter-s wordt overschreven).
+- -o128: geeft het aantal openstaande I/O-aanvragen per doel per thread aan. Dit wordt ook wel de wachtrij diepte genoemd. In dit geval wordt 128 gebruikt om de CPU te stressren.
+- -W7200: geeft de duur van de warme tijd aan voordat metingen worden gestart.
+- -D30: Hiermee geeft u de duur van de test op, met inbegrip van warm-up.
+- -Sh: software-en hardware-schrijf cache uitschakelen (gelijk aan-SUW).
 
-### <a name="access-specifications"></a>Toegangs specificaties
+Zie de [github-opslag plaats](https://github.com/Microsoft/diskspd/wiki/Command-line-and-parameters)voor een volledige lijst met para meters.
 
-De specificaties, i/o-grootte van de aanvraag,% lezen/schrijven,% wille keurig/opeenvolgend worden geconfigureerd op het tabblad ' toegangs specificaties ' in Iometer. Maak een toegangs specificatie voor elk van de scenario's die hieronder worden beschreven. Maak de toegangs specificaties en ' Save ' met een geschikte naam zoals – RandomWrites \_ 8K, RandomReads \_ 8K. Selecteer de bijbehorende specificatie bij het uitvoeren van het test scenario.
+### <a name="maximum-write-iops"></a>Maximale schrijf-IOPS
+We gebruiken een hoge wachtrij diepte van 128, een kleine blok grootte van 8 KB en vier worker-threads voor het uitvoeren van schrijf bewerkingen. De schrijf werkers sturen verkeer op het volume ' NoCacheWrites ', dat drie schijven heeft waarvoor cache is ingesteld op ' geen '.
 
-Hieronder ziet u een voor beeld van toegangs specificaties voor het maximale aantal schrijf-IOPS-scenario's.  
-    ![Voor beeld van toegangs specificaties voor maximale schrijf-IOPS](../articles/virtual-machines/linux/media/premium-storage-performance/image8.png)
+Voer de volgende opdracht uit gedurende 30 seconden warme en 30 seconden meting:
 
-### <a name="maximum-iops-test-specifications"></a>Maximale IOPS-test specificaties
+`diskspd -c200G -w100 -b8K -F4 -r -o128 -W30 -d30 -Sh testfile.dat`
 
-Gebruik kleinere aanvraag grootte om de maximale IOPs te demonstreren. Gebruik de grootte van de 8K-aanvraag en maak specificaties voor wille keurige schrijf bewerkingen en lees bewerkingen.
+Resultaten geven aan dat de Standard_D8ds_v4 virtuele machine de maximum limiet voor het aantal schrijf-IOPS van 12.800 levert.
 
-| Toegangs specificatie | Aanvraag grootte | Wille keurige | Wie |
-| --- | --- | --- | --- |
-| RandomWrites \_ 8K |8 K |100 |0 |
-| RandomReads \_ 8K |8 K |100 |100 |
+:::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/disks-benchmarks-diskspd-max-write-io-per-second.png" alt-text="Voor 3208642560 totaal aantal bytes, maximum totaal I/O's van 391680, met een totaal van 101,97 MiB/s en een totaal van 13052,65 I/O per seconde.":::
 
-### <a name="maximum-throughput-test-specifications"></a>Specificaties voor maximale doorvoer snelheid
+### <a name="maximum-read-iops"></a>Maximale Lees-IOPS
 
-Gebruik grotere aanvraag grootte om de maximale door voer te demonstreren. Gebruik de aanvraag grootte van 64 K en maak specificaties voor wille keurige schrijf bewerkingen en lees bewerkingen.
+We gebruiken een hoge wachtrij diepte van 128, een kleine blok grootte van vier KB en vier worker-threads voor het uitvoeren van Lees bewerkingen. De Lees werkers sturen verkeer op het ' CacheReads-volume, waarvoor één schijf met cache is ingesteld op ' ReadOnly '.
 
-| Toegangs specificatie | Aanvraag grootte | Wille keurige | Wie |
-| --- | --- | --- | --- |
-| RandomWrites \_ 64k |64 K |100 |0 |
-| RandomReads \_ 64k |64 K |100 |100 |
+Voer de volgende opdracht uit voor twee uur warme en 30 seconden meting:
 
-### <a name="run-the-iometer-test"></a>De Iometer-test uitvoeren
+`diskspd -c200G -b4K -F4 -r -o128 -W7200 -d30 -Sh testfile.dat`
 
-Voer de onderstaande stappen uit om de cache op te schonen
+Resultaten geven aan dat de Standard_D8ds_v4 virtuele machine de maximum limiet voor lees-IOPS van 77.000 levert.
 
-1. Maak twee toegangs specificaties met de waarden die hieronder worden weer gegeven,
+:::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/disks-benchmarks-diskspd-max-read-io-per-second.png" alt-text="Voor 9652785152 totaal aantal bytes waren er 2356637 totaal I/O's, op 306,72 totale MiB/s, en in totaal 78521,23 I/O's per seconde.":::
 
-   | Name | Aanvraag grootte | Wille keurige | Wie |
-   | --- | --- | --- | --- |
-   | RandomWrites \_ 1MB |1 MB |100 |0 |
-   | RandomReads \_ 1MB |1 MB |100 |100 |
-1. Voer de Iometer-test uit voor het initialiseren van de cache schijf met de volgende para meters. Gebruik drie worker-threads voor het doel volume en een wachtrij diepte van 128. Stel de duur ' uitvoerings tijd ' van de test in op 2 uur op het tabblad ' test Setup '.
+### <a name="maximum-throughput"></a>Maximale doorvoer
 
-   | Scenario | Doel volume | Name | Duur |
-   | --- | --- | --- | --- |
-   | Cache schijf initialiseren |CacheReads |RandomWrites \_ 1MB |2 uur |
-1. Voer de Iometer-test uit voor het opwarmen van de cache schijf met de volgende para meters. Gebruik drie worker-threads voor het doel volume en een wachtrij diepte van 128. Stel de duur ' uitvoerings tijd ' van de test in op 2 uur op het tabblad ' test Setup '.
-
-   | Scenario | Doel volume | Name | Duur |
-   | --- | --- | --- | --- |
-   | Cache schijf opwarmen |CacheReads |RandomReads \_ 1MB |2 uur |
-
-Nadat de cache schijf is opgewarmd, gaat u verder met de test scenario's die hieronder worden weer gegeven. Als u de Iometer-test wilt uitvoeren, gebruikt u ten minste drie worker-threads voor **elk** doel volume. Voor elke worker-thread selecteert u het doel volume, stelt u de wachtrij diepte in en selecteert u een van de opgeslagen test specificaties, zoals wordt weer gegeven in de onderstaande tabel, om het bijbehorende test scenario uit te voeren. De tabel toont ook de verwachte resultaten voor IOPS en door Voer wanneer deze tests worden uitgevoerd. Voor alle scenario's wordt een kleine i/o-grootte van 8 KB en een hoge wachtrij diepte van 128 gebruikt.
-
-| Test scenario | Doel volume | Naam | Resultaat |
-| --- | --- | --- | --- |
-| Met maximaal IOPS lezen |CacheReads |RandomWrites \_ 8K |50.000 IOPS |
-| Met maximaal IOPS schrijven |NoCacheWrites |RandomReads \_ 8K |64.000 IOPS |
-| Met maximaal Gecombineerde IOPS |CacheReads |RandomWrites \_ 8K |100.000 IOPS |
-| NoCacheWrites |RandomReads \_ 8K | &nbsp; | &nbsp; |
-| Met maximaal Gelezen MB/sec. |CacheReads |RandomWrites \_ 64k |524 MB/sec. |
-| Met maximaal Geschreven bytes per seconde |NoCacheWrites |RandomReads \_ 64k |524 MB/sec. |
-| Gecombineerde MB/sec. |CacheReads |RandomWrites \_ 64k |1000 MB/sec. |
-| NoCacheWrites |RandomReads \_ 64k | &nbsp; | &nbsp; |
-
-Hieronder vindt u scherm afbeeldingen van de resultaten van de Iometer-test voor gecombineerde IOPS-en doorvoer scenario's.
-
-### <a name="combined-reads-and-writes-maximum-iops"></a>Gecombineerde Lees-en schrijf bewerkingen maximum aantal IOPS
-
-![Gecombineerde Lees-en schrijf bewerkingen maximum aantal IOPS](../articles/virtual-machines/linux/media/premium-storage-performance/image9.png)
-
-### <a name="combined-reads-and-writes-maximum-throughput"></a>Gecombineerde Lees-en schrijf bewerkingen maximale door Voer
-
-![Gecombineerde Lees-en schrijf bewerkingen maximale door Voer](../articles/virtual-machines/linux/media/premium-storage-performance/image10.png)
-
+Als u de maximale Lees-en schrijf doorvoer wilt instellen, kunt u overschakelen naar een grotere blok grootte van 64 KB.
 ## <a name="fio"></a>FIO
 
-FIO is een populair hulp programma voor bench Mark-opslag op de virtuele Linux-machines. Het biedt de flexibiliteit om verschillende i/o-grootten, sequentiële of wille keurige Lees-en schrijf bewerkingen te selecteren. Er worden werkthreads of processen geïnitieerd om de opgegeven I/O-bewerkingen uit te voeren. U kunt het type I/O-bewerkingen opgeven dat elke werk thread moet uitvoeren met behulp van taak bestanden. Er is één taak bestand per scenario gemaakt, zoals in de onderstaande voor beelden. U kunt de specificaties in deze taak bestanden wijzigen in Bench Mark verschillende werk belastingen die worden uitgevoerd op Premium Storage. In de voor beelden gebruiken we een standaard-DS 14-VM met **Ubuntu**. Gebruik dezelfde configuratie die wordt beschreven in het begin van de benchmarking-sectie en de cache op te schonen voordat u de benchmarking tests uitvoert.
+FIO is een populair hulp programma voor bench Mark-opslag op de virtuele Linux-machines. Het biedt de flexibiliteit om verschillende i/o-grootten, sequentiële of wille keurige Lees-en schrijf bewerkingen te selecteren. Er worden werkthreads of processen geïnitieerd om de opgegeven I/O-bewerkingen uit te voeren. U kunt het type I/O-bewerkingen opgeven dat elke werk thread moet uitvoeren met behulp van taak bestanden. Er is één taak bestand per scenario gemaakt, zoals in de onderstaande voor beelden. U kunt de specificaties in deze taak bestanden wijzigen in Bench Mark verschillende werk belastingen die worden uitgevoerd op Premium Storage. In de voor beelden wordt gebruikgemaakt van een Standard_D8ds_v4 waarop **Ubuntu** wordt uitgevoerd. Gebruik dezelfde installatie die wordt beschreven in het begin van de Bench Mark-sectie en de cache op te schonen voordat u de Bench Mark-tests uitvoert.
 
 Voordat u begint, moet u [FIO downloaden](https://github.com/axboe/fio) en installeren op de virtuele machine.
 
@@ -110,7 +78,7 @@ Voer de volgende opdracht uit voor Ubuntu,
 apt-get install fio
 ```
 
-We gebruiken vier worker-threads voor schrijf bewerkingen en vier werkthreads om Lees bewerkingen op de schijven uit te sturen. De schrijf werkers sturen verkeer op het ' cache-volume ', dat 10 schijven heeft waarvoor cache is ingesteld op ' geen '. De Lees werkers sturen verkeer op het ' readcache-volume, waarvoor één schijf met cache is ingesteld op ' ReadOnly '.
+We gebruiken vier worker-threads voor schrijf bewerkingen en vier werkthreads om Lees bewerkingen op de schijven uit te sturen. De schrijf werkers sturen verkeer op het ' cache-volume ', dat drie schijven heeft waarvoor cache is ingesteld op ' geen '. De Lees werkers sturen verkeer op het ' readcache-volume, waarvoor één schijf met cache is ingesteld op ' ReadOnly '.
 
 ### <a name="maximum-write-iops"></a>Maximale schrijf-IOPS
 
@@ -122,7 +90,7 @@ size=30g
 direct=1
 iodepth=256
 ioengine=libaio
-bs=8k
+bs=4k
 numjobs=4
 
 [writer1]
@@ -133,7 +101,7 @@ directory=/mnt/nocache
 Let op de belang rijke dingen die in overeenstemming zijn met de ontwerp richtlijnen die in eerdere secties worden besproken. Deze specificaties zijn essentieel voor het aansturen van maximum aantal IOPS,  
 
 * Een hoge wachtrij diepte van 256.  
-* Een kleine blok grootte van 8 KB.  
+* Een kleine blok grootte van 4 KB.  
 * Meerdere threads die wille keurige schrijf bewerkingen uitvoeren.
 
 Voer de volgende opdracht uit om de FIO-test gedurende 30 seconden te starten.  
@@ -142,8 +110,8 @@ Voer de volgende opdracht uit om de FIO-test gedurende 30 seconden te starten.
 sudo fio --runtime 30 fiowrite.ini
 ```
 
-Terwijl de test wordt uitgevoerd, kunt u het aantal schrijf-IOPS zien dat de VM en Premium-schijven leveren. Zoals u in het onderstaande voor beeld ziet, levert de DS14-VM de maximale schrijf-IOPS limiet van 50.000 IOPS op.  
-    ![Aantal schrijf-IOPS-VM'S en Premium-schijven worden geleverd.](../articles/virtual-machines/linux/media/premium-storage-performance/image11.png)
+Terwijl de test wordt uitgevoerd, kunt u het aantal schrijf-IOPS zien dat de VM en Premium-schijven leveren. Zoals u in het onderstaande voor beeld kunt zien, levert de Standard_D8ds_v4 VM de maximale schrijf-IOPS-limiet van 12.800 IOPS op.  
+    :::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/fio-uncached-writes-1.jpg" alt-text="Het aantal schrijf-IOPS-VM'S en Premium-Ssd's die worden geleverd, laat zien dat schrijf bewerkingen 13.1 k IOPS zijn.":::
 
 ### <a name="maximum-read-iops"></a>Maximale Lees-IOPS
 
@@ -155,7 +123,7 @@ size=30g
 direct=1
 iodepth=256
 ioengine=libaio
-bs=8k
+bs=4k
 numjobs=4
 
 [reader1]
@@ -166,7 +134,7 @@ directory=/mnt/readcache
 Let op de belang rijke dingen die in overeenstemming zijn met de ontwerp richtlijnen die in eerdere secties worden besproken. Deze specificaties zijn essentieel voor het aansturen van maximum aantal IOPS,
 
 * Een hoge wachtrij diepte van 256.  
-* Een kleine blok grootte van 8 KB.  
+* Een kleine blok grootte van 4 KB.  
 * Meerdere threads die wille keurige schrijf bewerkingen uitvoeren.
 
 Voer de volgende opdracht uit om de FIO-test gedurende 30 seconden te starten.
@@ -175,8 +143,8 @@ Voer de volgende opdracht uit om de FIO-test gedurende 30 seconden te starten.
 sudo fio --runtime 30 fioread.ini
 ```
 
-Terwijl de test wordt uitgevoerd, kunt u het aantal gelezen IOPS zien dat de VM en Premium-schijven worden geleverd. Zoals u in het voor beeld hieronder ziet, wordt de DS14-VM meer dan 64.000 Lees-IOPS geleverd. Dit is een combi natie van de schijf-en cache prestaties.  
-    ![Scherm opname van het aantal schrijf-IOPS-VM'S en Premium-schijven die worden geleverd.](../articles/virtual-machines/linux/media/premium-storage-performance/image12.png)
+Terwijl de test wordt uitgevoerd, kunt u het aantal gelezen IOPS zien dat de VM en Premium-schijven worden geleverd. Zoals u in het onderstaande voor beeld kunt zien, levert de Standard_D8ds_v4 VM meer dan 77.000 Lees-IOPS op. Dit is een combi natie van de schijf-en cache prestaties.  
+    :::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/fio-cached-reads-1.jpg" alt-text="Scherm opname van het aantal schrijf-IOPS-VM'S en Premium-Ssd's die worden geleverd door Lees bewerkingen zijn 78.6 k.":::
 
 ### <a name="maximum-read-and-write-iops"></a>Maximale IOPS voor lezen en schrijven
 
@@ -198,7 +166,7 @@ directory=/mnt/readcache
 [writer1]
 rw=randwrite
 directory=/mnt/nocache
-rate_iops=12500
+rate_iops=3200
 ```
 
 Let op de belang rijke dingen die in overeenstemming zijn met de ontwerp richtlijnen die in eerdere secties worden besproken. Deze specificaties zijn essentieel voor het aansturen van maximum aantal IOPS,
@@ -213,8 +181,8 @@ Voer de volgende opdracht uit om de FIO-test gedurende 30 seconden te starten.
 sudo fio --runtime 30 fioreadwrite.ini
 ```
 
-Terwijl de test wordt uitgevoerd, kunt u het aantal gecombineerde Lees-en schrijf-IOPS zien dat de VM en Premium-schijven leveren. Zoals u in het voor beeld hieronder ziet, wordt de DS14-VM meer dan 100.000 gecombineerde Lees-en schrijf-IOPS geleverd. Dit is een combi natie van de schijf-en cache prestaties.  
-    ![Gecombineerde Lees-en schrijf-IOPS](../articles/virtual-machines/linux/media/premium-storage-performance/image13.png)
+Terwijl de test wordt uitgevoerd, kunt u het aantal gecombineerde Lees-en schrijf-IOPS zien dat de VM en Premium-schijven leveren. Zoals u in het onderstaande voor beeld kunt zien, levert de Standard_D8ds_v4 VM meer dan 90.000 gecombineerde Lees-en schrijf-IOPS op. Dit is een combi natie van de schijf-en cache prestaties.  
+    :::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/fio-both-1.jpg" alt-text="Bij gecombineerde Lees-en schrijf-IOPS ziet u dat lees bewerkingen 78.3 k en schrijf bewerkingen 12,6 k IOPS zijn.":::
 
 ### <a name="maximum-combined-throughput"></a>Maximale gecombineerde door Voer
 

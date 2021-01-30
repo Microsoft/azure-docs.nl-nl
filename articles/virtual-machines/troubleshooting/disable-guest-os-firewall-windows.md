@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: c0426c5359e4d82d0316613586b9298596d82605
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74d06d3d4aaa0d76b80257d2148fb62f71c3fdb0
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87009761"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093192"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>De firewall van het gastbesturingssysteem uitschakelen in Azure VM
 
@@ -47,7 +47,7 @@ Als u een werkende Azure-agent hebt, kunt u [aangepaste script extensie](../exte
 >   ```
 > * Als de firewall is ingesteld met behulp van een Active Directory beleid, kunt u het volgende script uitvoeren voor tijdelijke toegang. 
 >   ```
->   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile' -name "EnableFirewall" -Value 0
+>   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile' -name "EnableFirewall" -Value 0
 >   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile' -name "EnableFirewall" -Value 0
 >   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile' -name "EnableFirewall" -Value 0
 >   Restart-Service -Name mpssvc
@@ -88,7 +88,7 @@ Als u een werkende Azure-agent hebt, kunt u [aangepaste script extensie](../exte
 
 #### <a name="mitigation-4-remote-registry"></a>Risico beperking 4: extern REGI ster 
 
-Volg deze stappen om [extern REGI ster](https://support.microsoft.com/help/314837/how-to-manage-remote-access-to-the-registry)te gebruiken.
+Volg deze stappen om [extern REGI ster](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/314837)te gebruiken.
 
 1.  Start de REGI ster-editor op de virtuele machine voor probleem oplossing en ga naar het **bestand**  >  **Connect netwerk Registry**.
 
@@ -126,7 +126,7 @@ Als u een situatie hebt waarin u de virtuele machine niet op een wille keurige m
 
 4.  Voordat u wijzigingen aanbrengt, maakt u een kopie van de map \Windows\System32\Config als u de wijzigingen ongedaan wilt maken.
 
-5.  Start de REGI ster-editor (regedit.exe) op de virtuele machine voor probleem oplossing. 
+5.  Start de REGI ster-editor (regedit.exe) op de virtuele machine voor probleem oplossing. 
 
 6.  Voor deze probleemoplossings procedure koppelen we de componenten als BROKENSYSTEM en BROKENSOFTWARE.
 

@@ -8,12 +8,12 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 78d4d9a8b5023731530c5e348f5c9ba72815d410
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
-ms.translationtype: HT
+ms.openlocfilehash: 594dd2fd154b37eed49c069cef1b539e13ca6876
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445639"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094239"
 ---
 # <a name="managed-hsm-role-management"></a>Rolbeheer van beheerde HSM
 
@@ -81,6 +81,9 @@ Alle roltoewijzingen op het HSM-niveau voor de specifieke gebruiker **user1@cont
 ```azurecli-interactive
 az keyvault role assignment list --hsm-name ContosoMHSM --assignee user@contoso.com
 ```
+
+> [!NOTE]
+> Wanneer bereik/(of/keys) de lijst opdracht alleen de roltoewijzingen op het hoogste niveau vermeldt, worden er geen roltoewijzingen weer gegeven op het niveau van afzonderlijke sleutels.
 
 Alle roltoewijzingen voor de specifieke gebruiker **user2@contoso.com** voor de specifieke sleutel **myrsakey-** .
 

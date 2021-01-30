@@ -5,12 +5,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: 76bf9376d3eb33153584f74c9d0d9196706428ae
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 88e2161cfddf95f7f250b8b76c067d045f1529da
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98932094"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092231"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Opmerkingen bij de release van Azure HDInsight
 
@@ -50,6 +50,9 @@ Met HDInsight zijn netwerk beveiligings groepen (Nsg's) en Udr's-controle (User-
 ## <a name="upcoming-changes"></a>Aanstaande wijzigingen
 De volgende wijzigingen worden uitgevoerd in toekomstige releases.
 
+### <a name="breaking-change-for-net-for-apache-spark-100"></a>Belang rijke wijziging voor .NET voor Apache Spark 1.0.0
+HDInsight introduceert de eerste belang rijke officiële versie van .NET voor Apache Spark in de volgende release. Het biedt data frame API-volledigheid voor Spark 2.4. x en Spark 3.0. x, samen met andere functies. Als er wijzigingen worden opgesplitst voor deze primaire versie, raadpleegt u [deze migratie-GUID](https://github.com/dotnet/spark/blob/master/docs/migration-guide.md#upgrading-from-microsoftspark-0x-to-10) om de stappen te begrijpen die nodig zijn om uw code en pijp lijnen bij te werken. Klik [hier](https://docs.microsoft.com/azure/hdinsight/spark/spark-dotnet-version-update#using-net-for-apache-spark-v10-in-hdinsight) voor meer informatie.
+
 ### <a name="default-cluster-vm-size-will-be-changed-to-ev3-family"></a>De standaard grootte van een cluster-VM wordt gewijzigd in de Ev3-serie
 Vanaf de volgende release (rond einde januari) worden standaard cluster-VM-grootten gewijzigd van D-serie naar Ev3-familie. Deze wijziging is van toepassing op hoofd knooppunten en worker-knoop punten. U kunt deze wijziging vermijden door de VM-grootten op te geven die u wilt gebruiken in de ARM-sjabloon.
 
@@ -57,7 +60,7 @@ Vanaf de volgende release (rond einde januari) worden standaard cluster-VM-groot
 Vanaf februari 2021 wordt de standaard versie van het HDInsight-cluster gewijzigd van 3,6 in 4,0. Zie [beschik bare versies](./hdinsight-component-versioning.md#available-versions)voor meer informatie over de beschik bare versies. Meer informatie over wat er nieuw is in [HDInsight 4,0](./hdinsight-version-release.md)
 
 ### <a name="os-version-upgrade"></a>Upgrade van besturingssysteem versie
-Bij HDInsight wordt de versie van het besturings systeem bijgewerkt van 16,04 naar 18,04. De upgrade wordt voltooid vóór april 2021.
+Bij HDInsight wordt de versie van het besturings systeem bijgewerkt van 16,04 naar 18,04. De upgrade wordt voltooid vóór 2021 april.
 
 ### <a name="hdinsight-36-end-of-support-on-june-30-2021"></a>HDInsight 3,6 end of support op 30 2021 juni
 HDInsight 3,6 wordt beëindigd. Het formulier wordt gestart 30 2021, klanten kunnen geen nieuwe HDInsight 3,6-clusters maken. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
@@ -71,7 +74,7 @@ Er is geen wijziging van de onderdeel versie voor deze versie. In [dit document]
 ## <a name="known-issues"></a>Bekende problemen
 ### <a name="prevent-hdinsight-cluster-vms-from-rebooting-periodically"></a>Voorkomen dat VM's in HDInsight-cluster periodiek opnieuw opstarten
 
-Vanaf medio november 2020 hebt u mogelijk gedetecteerd dat de virtuele machines van het HDInsight-cluster op regel matige basis opnieuw worden opgestart. Dit kan worden veroorzaakt door:
+Vanaf medio november 2020 hebt u mogelijk gedetecteerd dat Vm's van het HDInsight-cluster regel matig opnieuw worden opgestart. Dit kan worden veroorzaakt door:
 
 1.  Clamav is ingeschakeld in uw cluster. Het nieuwe azsec-clamav-pakket verbruikt een grote hoeveelheid geheugen die het opnieuw opstarten van knoop punten activeert. 
 2.  Een CRON-taak is dagelijks gepland, waarmee wordt gecontroleerd op wijzigingen in de lijst met certificerings instanties (Ca's) die worden gebruikt door Azure-Services. Wanneer een nieuw CA-certificaat beschikbaar is, voegt het script het certificaat toe aan het vertrouwens archief van de JDK en wordt opnieuw opgestart gepland.

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: cba7342409d309fceeb7cfe50c152f2548f29bec
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 6c2ac4247945436f5c32d25fbae1c1fe9a9c0ceb
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919728"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097721"
 ---
 # <a name="nv-series"></a>NV-serie
 
@@ -26,6 +26,7 @@ Elke GPU in NV-exemplaren wordt geleverd met een GRID-licentie. Deze licentie ge
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): niet ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Max. aantal NIC's | Virtuele werk stations | Virtuele toepassingen |

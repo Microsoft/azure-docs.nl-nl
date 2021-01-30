@@ -2,19 +2,19 @@
 title: 'C#-zelfstudie: indexering optimaliseren met de push-API'
 titleSuffix: Azure Cognitive Search
 description: Meer informatie over het efficiënt indexeren van gegevens met behulp van de push-API van Azure Cognitive Search. Deze zelfstudie en de voorbeeldcode maken gebruik van C#.
-manager: liamca
+manager: luisca
 author: dereklegenzoff
 ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 10/12/2020
+ms.date: 1/29/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d22ff5c863617a3feb2a08d4b1889d0a7c10cd3a
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
-ms.translationtype: HT
+ms.openlocfilehash: f97a99bf2d055805ee665ab51aff8cff12dc5a69
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693393"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094189"
 ---
 # <a name="tutorial-optimize-indexing-with-the-push-api"></a>Zelfstudie: indexering optimaliseren met de push-API
 

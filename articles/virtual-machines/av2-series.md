@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: b3419b54fa18058583d81909f7fca0f20dc4b0dd
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: d0972c9ed48f56a495804052c1ffc2b28e1db083
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917130"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095321"
 ---
 # <a name="av2-series"></a>Av2-serie
 
@@ -25,6 +25,7 @@ De virtuele machines uit de Av2-serie kunnen worden geïmplementeerd op diverse 
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund <br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 <br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): niet ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 <br>
 
 | Grootte | vCore | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Maximale tijdelijke opslag doorvoer: IOPS/MBps lezen/MBps schrijven | Maximum aantal gegevens schijven/door Voer: IOPS | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps)

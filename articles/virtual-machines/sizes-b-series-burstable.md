@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 31a65cab7dfdd478560b7babba156cec7645cf33
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 833d96b8ca252cff5384cde114390aba8c2f51c3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917248"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097687"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Grootte van de B-serie bebreekbaar virtuele machines
 
@@ -28,6 +28,7 @@ De B-serie is beschikbaar in de volgende VM-grootten:
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund * *<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 
 * Virtuele machines uit de B-serie zijn bursteel en daarom kunnen ACU nummers variëren, afhankelijk van de werk belasting en het kern gebruik.<br>
 * * Versneld netwerken worden alleen ondersteund voor *Standard_B12ms*, *Standard_B16ms* en *Standard_B20ms*.

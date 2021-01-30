@@ -15,12 +15,12 @@ ms.date: 01/04/2021
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 3c320b8faf5ccb0b1aec521909b152dff171cbd7
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
-ms.translationtype: HT
+ms.openlocfilehash: 0b43f30c25767a135b98b756d61ed2535e1fbd22
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862601"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092197"
 ---
 # <a name="classic-subscription-administrator-roles-azure-roles-and-azure-ad-roles"></a>Klassieke abonnementsbeheerdersrollen, Azure-rollen en Azure AD-rollen
 
@@ -99,7 +99,7 @@ Azure AD-rollen worden gebruikt voor het beheren van Azure AD-resources in een d
 
 | Azure AD-rol | Machtigingen | Opmerkingen |
 | --- | --- | --- |
-| [Globale beheerder](../active-directory/roles/permissions-reference.md#company-administrator-permissions) | <ul><li>Toegang tot alle beheerfuncties in Azure Active Directory beheren, evenals services die federeren naar Azure Active Directory</li><li>Beheerdersrollen aan anderen toewijzen</li><li>Het wachtwoord voor gebruikers en alle andere beheerders opnieuw instellen</li></ul> | De persoon die zich registreert voor de Azure Active Directory-tenant wordt de globale beheerder. |
+| [Globale beheerder](../active-directory/roles/permissions-reference.md#global-administrator-permissions) | <ul><li>Toegang tot alle beheerfuncties in Azure Active Directory beheren, evenals services die federeren naar Azure Active Directory</li><li>Beheerdersrollen aan anderen toewijzen</li><li>Het wachtwoord voor gebruikers en alle andere beheerders opnieuw instellen</li></ul> | De persoon die zich registreert voor de Azure Active Directory-tenant wordt de globale beheerder. |
 | [Gebruikersbeheerder](../active-directory/roles/permissions-reference.md#user-administrator) | <ul><li>Alle aspecten van gebruikers en groepen maken en beheren</li><li>Ondersteuningstickets beheren</li><li>Servicestatus bewaken</li><li>Wachtwoorden wijzigen voor gebruikers, helpdeskbeheerders en andere gebruikersbeheerders</li></ul> |  |
 | [Factureringsbeheerder](../active-directory/roles/permissions-reference.md#billing-administrator) | <ul><li>Aankopen doen</li><li>Abonnementen beheren</li><li>Ondersteuningstickets beheren</li><li>Servicestatus beheren</li></ul> |  |
 

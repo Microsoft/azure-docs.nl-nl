@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Virtual Network
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Virtual Network. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 author: KumudD
 ms.author: kumud
 ms.service: virtual-network
 ms.custom: subject-policy-reference
-ms.openlocfilehash: f17f7aab05110a3126882731b2182a535e93bd77
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: cc46f0f6448acf55fec910c7bb5b1c675d902343
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808087"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095458"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-virtual-network"></a>Ingebouwde Azure Policy-definities voor Azure Virtual Network
 

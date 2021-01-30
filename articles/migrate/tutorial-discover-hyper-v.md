@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 7c3bca9e5ad87c681fc38a5c618331a3f7a97ae1
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 8b46d08da87565d133962c23e8281b221544d9ca
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897507"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092514"
 ---
 # <a name="tutorial-discover-hyper-v-vms-with-server-assessment"></a>Zelfstudie: Virtuele Hyper-V-machines detecteren met Azure Migrate-serverevaluatie
 
@@ -87,7 +87,7 @@ De vereisten voor de host controleren | Controleert of op de host een ondersteun
 PowerShell-versie bevestigen | Controleert of u het script uitvoert op een ondersteunde PowerShell-versie. | Controleer of u PowerShell versie 4.0 of hoger uitvoert op de Hyper-V-host.
 Een account maken | Verifieert of u de juiste machtigingen hebt op de Hyper-V-host.<br/><br/> Hiermee kunt u een lokaal gebruikers account met de juiste machtigingen maken. | Optie 1: Maak een account met beheerderstoegang op de Hyper-V-hostmachine.<br/><br/> Optie 2: Bereid een lokaal beheerdersaccount of een domeinbeheerdersaccount voor en voeg het account toe aan deze groepen: Gebruikers van extern beheer, Hyper-V-beheerders, en Prestatiemetergebruikers.
 Externe communicatie met PowerShell inschakelen | Hiermee stelt u externe communicatie van PowerShell in op elke host, zodat het Azure Migrate-apparaat PowerShell-opdrachten op de host kan uitvoeren via een WinRM-verbinding. | Als u op elke host wilt instellen, opent u een Power shell-console als beheerder en voert u de volgende opdracht uit: ``` powershell Enable-PSRemoting -force ```
-Hyper-V-integratie Services instellen | Hiermee wordt gecontroleerd of de Hyper-V-integratieservices zijn ingeschakeld op alle VM's die worden beheerd door de host. | [Schakel Hyper-V-integratieservices in](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services.md) op elke VM.<br/><br/> Als u werkt met Windows Server 2003, [volgt u deze instructies](prepare-windows-server-2003-migration.md).
+Hyper-V-integratie Services instellen | Hiermee wordt gecontroleerd of de Hyper-V-integratieservices zijn ingeschakeld op alle VM's die worden beheerd door de host. | [Schakel Hyper-V-integratieservices in](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services) op elke VM.<br/><br/> Als u werkt met Windows Server 2003, [volgt u deze instructies](prepare-windows-server-2003-migration.md).
 Referenties delegeren als VM-schijven zich op externe NFS-shares bevinden | Gemachtigden referenties | Voer deze opdracht uit om CredSSP in te scha kelen voor het delegeren van referenties op hosts met virtuele Hyper-V-machines met schijven op SMB-shares: ```powershell Enable-WSManCredSSP -Role Server -Force ```<br/><br/> U kunt deze opdracht op afstand uitvoeren op alle Hyper-V-hosts.<br/><br/> Als u nieuwe host knooppunten op een cluster toevoegt, worden deze automatisch toegevoegd voor detectie, maar moet u CredSSP hand matig inschakelen.<br/><br/> Wanneer u het apparaat instelt, voltooit u de instelling van CredSSP door [deze in te schakelen op het apparaat](#delegate-credentials-for-smb-vhds). 
 
 ### <a name="run-the-script"></a>Het script uitvoeren

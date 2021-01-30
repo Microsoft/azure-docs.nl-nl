@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Monitor
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Monitor. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: sample
 author: rboucher
 ms.author: robb
 ms.service: azure-monitor
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 04d43e40d6faf2cd884b56d342762e4984a2ae57
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 25ed58a1779caa42c32e35f7b9d44a339002987a
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98795674"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093277"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-monitor"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Monitor
 

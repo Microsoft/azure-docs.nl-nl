@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 0ee2b820d8b471729c34a01a60a43ef068797bd4
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: c8c62ec675bf7578ab4b88a6180dd0af86d5cbe0
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98859986"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095924"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -62,6 +62,15 @@ Zie [HIPAA HITRUST 9.2](https://www.hhs.gov/hipaa/for-professionals/security/law
 |Scheiding van taken |1230.09c2Organizational.1 - 09.c |Geen enkele persoon kan gegevenssystemen openen, wijzigen of gebruiken zonder autorisatie of detectie. |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
 |Scheiding van taken |1276.09c2Organizational.2 - 09.c |Activiteiten met betrekking tot beveiligingscontrole zijn onafhankelijk. |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
 |Scheiding van taken |1278.09c2Organizational.56 - 09.c |De organisatie identificeert taken waarvoor scheiding is vereist en definieert toegangsautorisaties voor informatiesystemen ter ondersteuning van de scheiding van taken. Incompatibele taken worden over meerdere gebruikers verdeeld om de kans op misbruik of fraude te minimaliseren. |[Aangepaste rollen voor abonnementseigenaren mogen niet bestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
+
+## <a name="iso-270012013"></a>ISO 27001:2013
+
+Zie [Azure Policy naleving van regelgeving-ISO 27001:2013](../../../../articles/governance/policy/samples/iso-27001.md)als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard.
+Zie [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html)voor meer informatie over deze nalevings standaard.
+
+|Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
+|---|---|---|---|---|
+|Toegangsbeheer |9.2.3 |Beheer van privileged Access Rights |[Het gebruik van aangepaste RBAC-regels controleren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa451c1ef-c6ca-483d-87ed-f49761e3ffb5) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/Subscription_AuditCustomRBACRoles_Audit.json) |
 
 ## <a name="nist-sp-800-53-r4"></a>NIST SP 800-53 R4
 

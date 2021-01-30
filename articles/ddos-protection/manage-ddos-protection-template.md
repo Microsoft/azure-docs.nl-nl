@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.custom: subject-armqs
 ms.author: jgao
 ms.date: 01/14/2021
-ms.openlocfilehash: 3d6f1707ec354cbcceb8c400cfb55f6e143f4cad
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 75d6c484a0f1d6325aaa7894d8902ff78cadbd74
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98224536"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092497"
 ---
 # <a name="quickstart-create-an-azure-ddos-protection-standard-using-arm-template"></a>Quickstart: een Azure DDoS Protection-standaard maken op basis van een ARM-sjabloon
 
@@ -41,8 +41,8 @@ De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstart-sj
 
 In de sjabloon zijn twee resources gedefinieerd:
 
-- [Microsoft.Network/ddosProtectionPlans](/templates/microsoft.network/ddosprotectionplans)
-- [Microsoft.Network/virtualNetworks](/templates/microsoft.network/virtualnetworks)
+- [Microsoft.Network/ddosProtectionPlans](/azure/templates/microsoft.network/ddosprotectionplans)
+- [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 

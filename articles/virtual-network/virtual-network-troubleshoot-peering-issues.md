@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 75b62eb00b1a1a534be01f9f118b4d5066e44a37
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: cb5ce421b6a38edcb8d92866f749a544eff927d6
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222884"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096386"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Peering-problemen van virtueel netwerk oplossen
 
@@ -87,7 +87,7 @@ Volg de stappen in: [Configure VPN gateway Transit voor peering van virtuele net
 Zie [service Chaining](./virtual-network-peering-overview.md#service-chaining)voor meer informatie.
 
 > [!Note]
-> Als u hulp nodig hebt bij het instellen van een NVA, [neemt u contact op met de leverancier van NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+> Als u hulp nodig hebt bij het instellen van een NVA, [neemt u contact op met de leverancier van NVA](https://mskb.pkisolutions.com/kb/2984655).
 
 Zie [problemen met virtuele netwerk apparaten in azure](./virtual-network-troubleshoot-nva.md)voor hulp bij het oplossen van problemen met de installatie en route ring van het NVA-apparaat.
 
@@ -190,7 +190,7 @@ Voor punt-naar-site-verbindingen:
 
 Een hub-netwerk moet een NVA bevatten. Configureer Udr's in spokes die een NVA hebben ingesteld als de volgende hop en Schakel **doorgestuurd verkeer toestaan** in het virtuele hub-netwerk in.
 
-Zie [service Chaining](./virtual-network-peering-overview.md#service-chaining)voor meer informatie en bespreek deze vereisten met de [NVA leverancier](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines) van uw keuze.
+Zie [service Chaining](./virtual-network-peering-overview.md#service-chaining)voor meer informatie en bespreek deze vereisten met de [NVA leverancier](https://mskb.pkisolutions.com/kb/2984655) van uw keuze.
 
 ## <a name="troubleshoot-a-hub-spoke-network-connectivity-issue-between-spoke-virtual-networks-in-different-regions"></a>Problemen met een hub-spoke-netwerk verbinding tussen spoke-virtuele netwerken in verschillende regio's oplossen
 
@@ -212,7 +212,7 @@ Zie voor meer informatie de [vereisten en beperkingen](./virtual-network-peering
 
 U kunt dit probleem als volgt oplossen:
 
-1. Meld u aan bij Azure Portal. 
+1. Meld u aan bij de Azure-portal. 
 1. Selecteer in de web-app **netwerken** en selecteer vervolgens **VNet-integratie**.
 1. Controleer of u het externe virtuele netwerk kunt zien. Voer hand matig de adres ruimte van het externe virtuele netwerk in (**synchronisatie netwerk** en **Voeg routes toe**).
 

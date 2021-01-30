@@ -45,8 +45,12 @@
       href: spring-cloud-concept-metrics.md
     - name: Azure Spring Boot Actuator
       href: spring-cloud-concept-manage-monitor-app-spring-boot-actuator.md
-    - name: Beveiligingsmaatregelen
-      href: spring-cloud-concept-security-controls.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsmaatregelen
+          href: spring-cloud-concept-security-controls.md
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          href: ./security-controls-policy.md
     - name: App-status begrijpen
       href: spring-cloud-concept-app-status.md
     - name: Herstel na noodgeval plannen

@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 88483b29c8951f8e3f38f7cdc5bbdfb80eeca2b1
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
-ms.translationtype: HT
+ms.openlocfilehash: bc809cf02b827b7498890cb7d929c44bd360ab53
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370114"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094706"
 ---
 # <a name="tutorial-assign-directory-readers-role-to-an-azure-ad-group-and-manage-role-assignments"></a>Zelfstudie: De rol van Directory Readers toewijzen aan een Azure AD-groep en roltoewijzingen beheren
 
@@ -23,7 +23,7 @@ ms.locfileid: "92370114"
 > [!NOTE]
 > De rol **Directory Readers** toewijzen aan een groep in dit artikel is in de **openbare preview**. 
 
-Dit artikel helpt u bij het maken van een groep in Azure Active Directory (Azure AD) en het toewijzen van de rol [**Directory Readers**](../../active-directory/roles/permissions-reference.md#directory-readers) aan die groep. Met de machtiging Directory Readers kunnen de groepseigenaren extra leden toevoegen aan de groep, zoals een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) of [Azure SQL Database](sql-database-paas-overview.md), [Azure SQL Managed Instance](../managed-instance/sql-managed-instance-paas-overview.md) en [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Hierdoor is geen [Globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) of [Beheerder met bevoorrechte rol](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) nodig om de rol Directory Readers rechtstreeks toe te wijzen voor elke logische serveridentiteit van Azure SQL in de tenant.
+Dit artikel helpt u bij het maken van een groep in Azure Active Directory (Azure AD) en het toewijzen van de rol [**Directory Readers**](../../active-directory/roles/permissions-reference.md#directory-readers) aan die groep. Met de machtiging Directory Readers kunnen de groepseigenaren extra leden toevoegen aan de groep, zoals een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) of [Azure SQL Database](sql-database-paas-overview.md), [Azure SQL Managed Instance](../managed-instance/sql-managed-instance-paas-overview.md) en [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Hierdoor is geen [Globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator) of [Beheerder met bevoorrechte rol](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) nodig om de rol Directory Readers rechtstreeks toe te wijzen voor elke logische serveridentiteit van Azure SQL in de tenant.
 
 In deze zelfstudie wordt de functie gebruikt die is geïntroduceerd in [Cloudgroepen gebruiken om roltoewijzingen te beheren in Azure Active Directory (preview)](../../active-directory/roles/groups-concept.md). 
 
@@ -38,7 +38,7 @@ Zie [De rol Directory Readers in Azure Active Directory voor Azure SQL](authenti
 
 ### <a name="create-a-new-group-and-assign-owners-and-role"></a>Een nieuwe groep maken en eigenaren en rollen toewijzen
 
-1. Voor deze eerste installatie is een gebruiker vereist met de machtiging [Globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) of [Beheerder met bevoorrechte rol](../../active-directory/roles/permissions-reference.md#privileged-role-administrator).
+1. Voor deze eerste installatie is een gebruiker vereist met de machtiging [Globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator) of [Beheerder met bevoorrechte rol](../../active-directory/roles/permissions-reference.md#privileged-role-administrator).
 1. Laat de gemachtigde gebruiker zich aanmelden bij de [Azure-portal](https://portal.azure.com).
 1. Ga naar de **Azure Active Directory**-resource. Ga onder **Beheerd** naar **Groepen**. Selecteer **Nieuwe groep** om een nieuwe groep te maken.
 1. Selecteer **Beveiliging** als groepstype en vul de rest van de velden in. Zorg ervoor dat de instelling **Azure AD-rollen kunnen worden toegewezen aan de groep (preview)** is ingesteld op **Ja**. Wijs vervolgens de Azure AD-rol **Directory Readers** toe aan de groep.
@@ -55,7 +55,7 @@ Zie [De rol Directory Readers in Azure Active Directory voor Azure SQL](authenti
 
 Ga terug naar het deelvenster **Groepen** in de Azure-portal en zoek naar uw groepsnaam om de groep die is gemaakt te controleren en te beheren. Extra eigenaren en leden kunnen worden toegevoegd onder het menu **Eigenaren** en **Leden** van de instelling **Beheren** nadat de groep is geselecteerd. U kunt ook de **Toegewezen rollen** bekijken voor de groep.
 
-:::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-group-created.png" alt-text="aad-new-group":::
+:::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-group-created.png" alt-text="Schermafbeelding van een Groepsvenster waarop de koppelingen om het menu Instellingen te openen voor Leden, Eigenaars en Toegewezen rollen (preview) gemarkeerd zijn.":::
 
 ### <a name="add-azure-sql-managed-identity-to-the-group"></a>Azure SQL-beheerde identiteit aan de groep toevoegen
 
@@ -68,17 +68,17 @@ Voor de volgende stappen is de gebruiker met de machtiging Globale beheerder of 
 
 1. Zoek de naam van de resource van uw **SQL-beheerd exemplaar** in de Azure-portal.
 
-   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance.png" alt-text="aad-new-group":::
+   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance.png" alt-text="Schermafbeelding van het scherm met de beheerde SQL-exemplaren waarop de naam van het SQL-exemplaar ssomitest en de Subnetnaam ManagedInstance gemarkeerd zijn.":::
 
    Tijdens het maken van uw SQL Managed Instance werd er voor uw exemplaar een Azure-identiteit gemaakt. De gemaakte identiteit heeft dezelfde naam als het voorvoegsel van de naam van uw SQL Managed Instance. U kunt de service-principal vinden voor uw SQL Managed Instance-identiteit die is gemaakt als een Azure AD-toepassing door de volgende stappen uit te voeren:
 
     - Ga naar de **Azure Active Directory**-resource. Selecteer **Enterprise-toepassingen** onder de instelling **Beheren**. De **Object-ID** is de identiteit van het exemplaar.
     
-    :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance-service-principal.png" alt-text="aad-new-group":::
+    :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance-service-principal.png" alt-text="Schermafbeelding van de pagina Bedrijfstoepassingen voor een Azure Active Directory-resource waarop de object-ID van het door SQL beheerde exemplaar gemarkeerd is.":::
 
 1. Ga naar de **Azure Active Directory**-resource. Ga onder **Beheerd** naar **Groepen**. Selecteer de groep die u hebt gemaakt. Selecteer **Leden** onder de instelling **Beheerd** van uw groep. Selecteer **Leden toevoegen** en voeg uw SQL Managed Instance-service-principal toe als lid van de groep door te zoeken naar de naam die hierboven is gevonden.
 
-   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-add-managed-instance-service-principal.png" alt-text="aad-new-group":::
+   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-add-managed-instance-service-principal.png" alt-text="Schermafbeelding van de pagina Leden voor een Azure Active Directory-resource waarop de opties zijn gemarkeerd om een door SQL beheerd exemplaar toe te voegen als een nieuw lid.":::
 
 > [!NOTE]
 > Het kan een paar minuten duren om de machtigingen van de service-principal door te geven door het Azure-systeem en toegang te verlenen aan Azure AD Graph API. U moet mogelijk een aantal minuten wachten voordat u een Azure AD-beheerder kunt inrichten voor SQL Managed Instance.
@@ -94,7 +94,7 @@ Het is niet vereist de rol **Directory Readers** toe te wijzen aan de serveriden
 ## <a name="directory-readers-role-assignment-using-powershell"></a>Toewijzing van rol Directory Readers met behulp van PowerShell
 
 > [!IMPORTANT]
-> Voor deze eerste stappen is een [Globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) of [Beheerder met bevoorrechte rol](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) nodig. Naast PowerShell biedt Azure AD Microsoft Graph API om [Een groep te maken waaraan rollen kunnen worden toegewezen in Azure AD](../../active-directory/roles/groups-create-eligible.md#using-microsoft-graph-api).
+> Voor deze eerste stappen is een [Globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator) of [Beheerder met bevoorrechte rol](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) nodig. Naast PowerShell biedt Azure AD Microsoft Graph API om [Een groep te maken waaraan rollen kunnen worden toegewezen in Azure AD](../../active-directory/roles/groups-create-eligible.md#using-microsoft-graph-api).
 
 1. Download de Azure AD Preview PowerShell-module met de volgende opdrachten. U moet PowerShell mogelijk uitvoeren als beheerder.
 

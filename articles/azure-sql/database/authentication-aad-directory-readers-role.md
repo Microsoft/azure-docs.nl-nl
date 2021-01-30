@@ -9,19 +9,19 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 2374b1fb7f355b336c713a8a3240eacc8b1f188c
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 5764a8df862610fc076ce2810fcc0d4bf8dbda3c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675065"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094553"
 ---
 # <a name="directory-readers-role-in-azure-active-directory-for-azure-sql"></a>Rol Directory Readers in Azure Active Directory voor Azure SQL
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 > [!NOTE]
-> Deze functie in dit artikel is beschikbaar als **open bare preview** .
+> Deze functie in dit artikel is beschikbaar als **open bare preview**.
 
 Azure Active Directory (Azure AD) heeft [het gebruik van Cloud groepen geïntroduceerd om roltoewijzingen in azure Active Directory (preview-versie) te beheren](../../active-directory/roles/groups-concept.md). Hierdoor kunnen Azure AD-rollen worden toegewezen aan groepen.
 
@@ -37,7 +37,7 @@ De functie voor het **lezers van mappen** is nodig voor het volgende:
 
 ## <a name="assigning-the-directory-readers-role"></a>De rol van de map lezers toewijzen
 
-Als u de rol van de [**Directory lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) wilt toewijzen aan een identiteit, is een gebruiker met Administrator machtigingen voor de rol [globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) of [privileged](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) vereist. Gebruikers die vaak SQL Database, een door SQL beheerd exemplaar of Azure Synapse beheren of implementeren, hebben geen toegang tot deze uiterst privilegede rollen. Dit kan vaak leiden tot complicaties voor gebruikers die niet-geplande Azure SQL-resources maken, of hulp nodig hebben van leden met een hoog privilege die vaak niet toegankelijk zijn in grote organisaties.
+Als u de rol van de [**Directory lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) wilt toewijzen aan een identiteit, is een gebruiker met Administrator machtigingen voor de rol [globale beheerder](../../active-directory/roles/permissions-reference.md#global-administrator) of [privileged](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) vereist. Gebruikers die vaak SQL Database, een door SQL beheerd exemplaar of Azure Synapse beheren of implementeren, hebben geen toegang tot deze uiterst privilegede rollen. Dit kan vaak leiden tot complicaties voor gebruikers die niet-geplande Azure SQL-resources maken, of hulp nodig hebben van leden met een hoog privilege die vaak niet toegankelijk zijn in grote organisaties.
 
 Voor SQL Managed Instance moet de rol **Directory Readers** zijn toegewezen aan de beheerd-exemplaaridentiteit, voordat u [een Azure AD-beheerder voor het beheerd exemplaar kunt instellen](authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance). 
 
@@ -45,7 +45,7 @@ Het is niet vereist de rol **Directory Readers** toe te wijzen aan de serveriden
 
 ## <a name="granting-the-directory-readers-role-to-an-azure-ad-group"></a>De rol van de Directory lezers toekennen aan een Azure AD-groep
 
-In de **open bare preview-versie** kunt u nu [Global Administrator](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) een Azure AD- [groep maken en](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) de [**Directory lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) machtigingen toewijzen aan de groep. Hiermee krijgt u toegang tot de Azure AD-Graph API voor leden van deze groep. Bovendien mogen Azure AD-gebruikers die eigen aren van deze groep zijn, nieuwe leden voor deze groep toewijzen, met inbegrip van de identiteiten van de logische Azure SQL-servers.
+In de **open bare preview-versie** kunt u nu [](../../active-directory/roles/permissions-reference.md#global-administrator) een Azure AD- [groep maken en](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) de [**Directory lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) machtigingen toewijzen aan de groep. Hiermee krijgt u toegang tot de Azure AD-Graph API voor leden van deze groep. Bovendien mogen Azure AD-gebruikers die eigen aren van deze groep zijn, nieuwe leden voor deze groep toewijzen, met inbegrip van de identiteiten van de logische Azure SQL-servers.
 
 Voor deze oplossing is nog steeds een gebruiker met hoge bevoegdheden (globale beheerder of beheerdersrol) vereist voor het maken van een groep en het toewijzen van gebruikers als een eenmalige activiteit, maar de eigenaar van de Azure AD-groep kan extra leden toewijzen aan de volgende. Dit elimineert de nood zaak om een gebruiker met hoge bevoegdheden in de toekomst te betrekken bij het configureren van alle SQL-data bases, SQL Managed instances of Azure Synapse-servers in hun Azure AD-Tenant.
 

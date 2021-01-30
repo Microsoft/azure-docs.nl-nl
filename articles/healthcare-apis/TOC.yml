@@ -127,6 +127,10 @@
           href: iot-data-flow.md
         - name: Toewijzingssjablonen in Azure IoT Connector for FHIR (preview)
           href: iot-mapping-templates.md
+    - name: Beveiliging
+      items:
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          href: ./security-controls-policy.md
 - name: Resources
   items:
     - name: Veelgestelde vragen

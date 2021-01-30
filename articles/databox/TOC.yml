@@ -76,6 +76,8 @@
               items:
                 - name: Beveiligingsbasislijn
                   href: security-baseline.md
+                - name: Besturingselementen voor beveiliging van Azure Policy
+                  href: ./security-controls-policy.md
                 - name: Beveiliging controleren
                   href: data-box-security.md
             - name: ACL's en metagegevens overdragen

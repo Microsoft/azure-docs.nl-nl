@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Azure IoT Edge workloads implementeren
 keywords: Kubernetes, Arc, azure, K8s, containers
-ms.openlocfilehash: bfaa43a03ddd98616b22fc3fc7b4dccb4c38f44c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 88c480f93bfe28a424441a1c5857c623efb4e1d3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86103973"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091644"
 ---
 # <a name="deploy-azure-iot-edge-workloads-preview"></a>Azure IoT Edge workloads implementeren (preview-versie)
 
@@ -29,7 +29,7 @@ Azure-Arc en Azure IoT Edge zijn de mogelijkheden van elkaar heel goed. Azure Ar
 
 * Gebruik [de ondersteuning van IOT Edge voor Kubernetes](https://aka.ms/edgek8sdoc) om deze te implementeren via de stroom operator van Azure Arc.
 
-* Down load het bestand [**Values. yaml**](https://github.com/Azure/iotedge/blob/master/kubernetes/charts/edge-kubernetes/values.yaml) voor IOT Edge helm-diagram en vervang de tijdelijke aanduiding **deviceConnectionString** aan het einde van het bestand door de naam die u in stap 1 hebt genoteerd. U kunt andere ondersteunde installatie opties voor grafieken instellen zoals vereist. Maak een naam ruimte voor de IoT Edge workload en maak er een geheim in:
+* Down load het bestand [**Values. yaml**](https://github.com/Azure/iotedge/blob/preview/iiot/kubernetes/charts/edge-kubernetes/values.yaml) voor IOT Edge helm-diagram en vervang de tijdelijke aanduiding **deviceConnectionString** aan het einde van het bestand door de naam die u in stap 1 hebt genoteerd. U kunt andere ondersteunde installatie opties voor grafieken instellen zoals vereist. Maak een naam ruimte voor de IoT Edge workload en maak er een geheim in:
 
     ```
     $ kubectl create ns iotedge

@@ -1,15 +1,15 @@
 ---
 title: Details van naleving van regelgeving voor HIPAA HITRUST 9.2
 description: Details van het ingebouwde initiatief voor naleving van regelgeving voor HIPAA HITRUST 9.2. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: bbec4e1ea72f458557281f76b5ca5178bce2c316
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 4ee5f87b5bf8d2476685eb469df05bb2267bcf2f
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805590"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095754"
 ---
 # <a name="details-of-the-hipaa-hitrust-92-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van regelgeving voor HIPAA HITRUST 9.2
 
@@ -1438,7 +1438,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[A vulnerability assessment solution should be enabled on your virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld) |Controleert virtuele machines om te detecteren of er een ondersteunde oplossing voor de evaluatie van beveiligingsproblemen op wordt uitgevoerd. Een kernonderdeel van elk cyberrisico en beveiligingsprogramma is het identificeren en analyseren van beveiligingsproblemen. De standaardprijscategorie van Azure Security Center omvat het scannen van beveiligingsproblemen voor uw virtuele machines, zonder extra kosten. Daarnaast kan dit hulpprogramma automatisch worden geïmplementeerd. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
+|[A vulnerability assessment solution should be enabled on your virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld) |Controleert virtuele machines om te detecteren of er een ondersteunde oplossing voor de evaluatie van beveiligingsproblemen op wordt uitgevoerd. Een kernonderdeel van elk cyberrisico en beveiligingsprogramma is het identificeren en analyseren van beveiligingsproblemen. De standaardprijscategorie van Azure Security Center omvat het scannen van beveiligingsproblemen voor uw virtuele machines, zonder extra kosten. Daarnaast kan dit hulpprogramma automatisch worden geïmplementeerd. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 |[Beveiligingsproblemen in beveiligingsconfiguraties voor containers moeten worden verholpen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe8cbc669-f12d-49eb-93e7-9273119e9933) |Beveiligingsproblemen in de beveiligingsconfiguratie op computers waarop Docker is geïnstalleerd, controleren en als aanbevelingen weergeven in Azure Security Center. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ContainerBenchmark_Audit.json) |
 |[Beveiligingsproblemen in de beveiligingsconfiguratie op uw computers moeten worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe1e5fd5d-3e4c-4ce1-8661-7d1873ae6b15) |Servers die niet voldoen aan de geconfigureerde basislijn, worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_OSVulnerabilities_Audit.json) |
 |[Beveiligingsproblemen in de beveiligingsconfiguratie van virtuele-machineschaalsets moeten worden hersteld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3c735d8a-a4ba-4a3a-b7cf-db7754cf57f4) |Controleer op beveiligingsproblemen van besturingssystemen op uw virtuele-machineschaalsets om de schaalsets te beveiligen tegen aanvallen. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssOSVulnerabilities_Audit.json) |
@@ -1461,7 +1461,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[A vulnerability assessment solution should be enabled on your virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld) |Controleert virtuele machines om te detecteren of er een ondersteunde oplossing voor de evaluatie van beveiligingsproblemen op wordt uitgevoerd. Een kernonderdeel van elk cyberrisico en beveiligingsprogramma is het identificeren en analyseren van beveiligingsproblemen. De standaardprijscategorie van Azure Security Center omvat het scannen van beveiligingsproblemen voor uw virtuele machines, zonder extra kosten. Daarnaast kan dit hulpprogramma automatisch worden geïmplementeerd. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
+|[A vulnerability assessment solution should be enabled on your virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld) |Controleert virtuele machines om te detecteren of er een ondersteunde oplossing voor de evaluatie van beveiligingsproblemen op wordt uitgevoerd. Een kernonderdeel van elk cyberrisico en beveiligingsprogramma is het identificeren en analyseren van beveiligingsproblemen. De standaardprijscategorie van Azure Security Center omvat het scannen van beveiligingsproblemen voor uw virtuele machines, zonder extra kosten. Daarnaast kan dit hulpprogramma automatisch worden geïmplementeerd. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 
 ### <a name="patches-are-tested-and-evaluated-before-they-are-installed"></a>Patches worden getest en geëvalueerd voordat ze worden geïnstalleerd.
 

@@ -86,6 +86,8 @@
       items:
         - name: Beveiligingsbasislijn
           href: security-baseline.md
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          href: ./security-controls-policy.md
 - name: Instructiegidsen
   items:
     - name: Schalen

@@ -8,16 +8,16 @@ ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
 ms.custom: references_regions
-ms.openlocfilehash: 0d1b2bd039f3e110c83d7ad4bf32f1e53e4c7a79
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: a2b26ae8debf1c52693018ce9a758bfa9b029fa2
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610145"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093373"
 ---
-# <a name="microsoft-azure-attestation-preview"></a>Microsoft Azure Attestation (preview)
+# <a name="microsoft-azure-attestation"></a>Microsoft Azure Attestation 
 
-Microsoft Azure Attestation (preview) is een geïntegreerde oplossing voor het extern controleren van de betrouwbaarheid van een platform en de integriteit van de binaire bestanden die daarop worden uitgevoerd. De service ondersteunt bekrachtiging van de platforms die worden ondersteund door Trusted Platform Modules (TPM's) en biedt de mogelijkheid om de status van TEE's (Trusted Execution Environment), zoals [Intel® software Guard Extensions](https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html) (SGX)-enclaves en enclaves met [Beveiliging op basis van virtualisatie](/windows-hardware/design/device-experiences/oem-vbs) (VBS), te bekrachtigen. 
+Microsoft Azure Attestation is een geïntegreerde oplossing voor het extern controleren van de betrouw baarheid van een platform en integriteit van de binaire bestanden die erin worden uitgevoerd. De service ondersteunt bekrachtiging van de platforms die worden ondersteund door Trusted Platform Modules (TPM's) en biedt de mogelijkheid om de status van TEE's (Trusted Execution Environment), zoals [Intel® software Guard Extensions](https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html) (SGX)-enclaves en enclaves met [Beveiliging op basis van virtualisatie](/windows-hardware/design/device-experiences/oem-vbs) (VBS), te bekrachtigen. 
 
 Attestation is een proces voor het demonstreren dat de software-binaire bestanden op de juiste manier op een vertrouwd platform zijn geïnstantieerd. Externe relying party's kunnen dan betrouwbaarheid krijgen dat alleen dergelijke bedoelde software wordt uitgevoerd op vertrouwde hardware. Azure Attestation is een uniforme klantgerichte service en kader voor Attestation.
 

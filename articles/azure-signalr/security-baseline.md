@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b750d4cc911dc72b60974171dd884b373921fad5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 3e123ab6d5b9d801908112239cf3e9cb72b4abbb
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734593"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093960"
 ---
 # <a name="azure-security-baseline-for-azure-signalr-service"></a>Azure-beveiligings basislijn voor Azure signalerings service
 
@@ -220,7 +220,7 @@ Azure Advanced Threat Protection (ATP) is een beveiligingsoplossing die aan de h
 
 **Richt lijnen**: de meest essentiële ingebouwde rollen zijn Azure Active Directory (Azure AD) zijn globale beheerder en de beheerder van de bevoegde rol als gebruikers die aan deze twee rollen zijn toegewezen, kunnen beheerders rollen overdragen:
 
-- Beheerder van globale beheerder/bedrijf: gebruikers met deze rol hebben toegang tot alle beheer functies in azure AD, evenals services die gebruikmaken van Azure AD-identiteiten.
+- Globale beheerder: gebruikers met deze rol hebben toegang tot alle beheer functies in azure AD, evenals services die gebruikmaken van Azure AD-identiteiten.
 
 - Beheerder van geprivilegieerde rol: gebruikers met deze rol kunnen roltoewijzingen beheren in Azure Active Directory (Azure AD), en in Azure AD Privileged Identity Management (PIM). Daarnaast kunt u met deze rol alle aspecten van PIM en administratieve eenheden beheren.
 

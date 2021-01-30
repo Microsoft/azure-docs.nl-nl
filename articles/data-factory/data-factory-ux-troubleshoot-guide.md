@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 09/03/2020
 ms.author: ceespino
 ms.reviewer: daperlov
-ms.openlocfilehash: 0bd0421a74679ff0c9498540d722a74ebf3d58af
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8bb4ff3198764a35bebc124ee1ce99a93428693d
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632564"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095952"
 ---
 # <a name="troubleshoot-azure-data-factory-ux-issues"></a>Problemen met Azure Data Factory UX oplossen
 
@@ -28,7 +28,7 @@ In dit artikel worden algemene probleemoplossings methoden voor Azure Data Facto
 
 ### <a name="third-party-cookies-blocked"></a>Cookies van derden geblokkeerd
 
-ADF UX maakt gebruik van browser cookies om gebruikers sessie te behouden en interactieve ontwikkel-en bewakings ervaringen mogelijk te maken. Het is mogelijk dat uw browser cookies van derden blokkeert omdat u een incognito-sessie gebruikt of een AD-blok kering hebt ingeschakeld. Het blok keren van cookies van derden kan problemen veroorzaken bij het laden van de portal, zoals wordt omgeleid naar een lege pagina https://adf.azure.com/accesstoken.html of een waarschuwing ontvangen waarin staat dat cookies van derden zijn geblokkeerd. Als u dit probleem wilt oplossen, kunt u via de volgende stappen opties voor cookies van derden inschakelen in uw browser:
+ADF UX maakt gebruik van browser cookies om gebruikers sessie te behouden en interactieve ontwikkel-en bewakings ervaringen mogelijk te maken. Het is mogelijk dat uw browser cookies van derden blokkeert omdat u een incognito-sessie gebruikt of een AD-blok kering hebt ingeschakeld. Het blok keren van cookies van derden kan problemen veroorzaken bij het laden van de portal, zoals wordt omgeleid naar een lege pagina, https://adf.azure.com/accesstoken.html of er wordt een waarschuwing weer gegeven waarin wordt vermeld dat cookies van derden worden geblokkeerd. Als u dit probleem wilt oplossen, kunt u via de volgende stappen opties voor cookies van derden inschakelen in uw browser:
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -42,7 +42,7 @@ ADF UX maakt gebruik van browser cookies om gebruikers sessie te behouden en int
 
 #### <a name="only-allow-adf-ux-to-use-cookies"></a>Alleen ADF UX toestaan cookies te gebruiken
 Als u niet alle cookies wilt toestaan, kunt u eventueel gewoon ADF UX toestaan:
-1. Ga naar **Chrome://settings/cookies** .
+1. Ga naar **Chrome://settings/cookies**.
 1. Selecteer **toevoegen** onder **sites waarvoor altijd de optie cookies kan worden gebruikt** 
 
     ![ADF-UX toevoegen aan toegestane sites in Chrome](media/data-factory-ux-troubleshoot-guide/chrome-only-adf-cookies-1.png)
@@ -63,7 +63,7 @@ Als u niet alle cookies wilt toestaan, kunt u eventueel gewoon ADF UX toestaan:
 
 Als u niet alle cookies wilt toestaan, kunt u eventueel gewoon ADF UX toestaan:
 
-1. Ga naar **Edge://Settings/content/cookies** .
+1. Ga naar **Edge://Settings/content/cookies**.
 1. Onder sectie **toestaan** selecteert u **ADF.Azure.com** -site **toevoegen** en toevoegen. 
 
     ![ADF-UX toevoegen aan toegestane sites in de rand](media/data-factory-ux-troubleshoot-guide/edge-allow-adf-cookies.png)
@@ -71,7 +71,7 @@ Als u niet alle cookies wilt toestaan, kunt u eventueel gewoon ADF UX toestaan:
 
 ## <a name="connection-failed-on-adf-ux"></a>De verbinding is mislukt in ADF UX
 
-Soms ziet u de fouten ' Connection Fails ' in ADF UX die vergelijkbaar zijn met de onderstaande scherm afbeelding nadat u op **verbinding testen** , **voor beeld** , enzovoort hebt geklikt.
+Soms ziet u de fouten ' Connection Fails ' in ADF UX die vergelijkbaar zijn met de onderstaande scherm afbeelding nadat u op **verbinding testen**, **voor beeld**, enzovoort hebt geklikt.
 
 ![Verbinding is mislukt](media/data-factory-ux-troubleshoot-guide/connection-failed.png)
 
@@ -81,7 +81,7 @@ Als het nog steeds niet werkt, drukt u in de browser op F12 om **Ontwikkelhulppr
 
 ![Mislukte aanvraag](media/data-factory-ux-troubleshoot-guide/failed-request.png)
 
-Zoek vervolgens de **hostnaam** (in dit geval **dpnortheurope.SVC.DataFactory.Azure.com** ) van de aanvraag- **URL** van de mislukte aanvraag.
+Zoek vervolgens de **hostnaam** (in dit geval **dpnortheurope.SVC.DataFactory.Azure.com**) van de aanvraag- **URL** van de mislukte aanvraag.
 
 Typ de **hostnaam** rechtstreeks in de adres balk van uw browser. Als u 404 in de browser ziet, betekent dit meestal dat de client zijde OK is en het probleem zich aan de kant van de ADF-service bevindt. Een ondersteunings ticket indienen met de **activiteits-id** van het ADF UX-fout bericht.
 
@@ -91,7 +91,7 @@ Als dat niet het geval is of als u in de browser vergelijk bare fout ziet, betek
 
 ![Fout aan de client zijde](media/data-factory-ux-troubleshoot-guide/client-side-error.png)
 
-Open de **opdracht prompt** en typ **nslookup dpnortheurope.SVC.DataFactory.Azure.com** . Een normaal antwoord moet er als volgt uitzien:
+Open de **opdracht prompt** en typ **nslookup dpnortheurope.SVC.DataFactory.Azure.com**. Een normaal antwoord moet er als volgt uitzien:
 
 ![Opdracht antwoord 1](media/data-factory-ux-troubleshoot-guide/command-response-1.png)
 
@@ -119,5 +119,5 @@ Probeer deze bronnen voor meer informatie over probleem oplossing:
 * [Data Factory functie aanvragen](https://feedback.azure.com/forums/270578-data-factory)
 * [Stack Overflow forum voor Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
 * [Twitter-informatie over Data Factory](https://twitter.com/hashtag/DataFactory)
-* [Azure-Video's](https://azure.microsoft.com/resources/videos/index/)
+* [Azure-video's](https://azure.microsoft.com/resources/videos/index/)
 * [Microsoft Q&A-vragenpagina](/answers/topics/azure-data-factory.html)

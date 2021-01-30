@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/26/2020
 ms.author: thomasge
-ms.openlocfilehash: f229075d0bad4f9522e02e30bdabc1d42bb086cf
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 534c355961bb87a816f5ba50a3cc2d397e544a15
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684182"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072305"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>AKS-beheerde Azure Active Directory-integratie
 
@@ -46,7 +46,6 @@ kubelogin --version
 ```
 
 Gebruik [deze instructies](https://kubernetes.io/docs/tasks/tools/install-kubectl/) voor andere besturings systemen.
-
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -188,6 +187,50 @@ Als u toegang wilt krijgen tot het cluster, voert u de [volgende stappen uit][ac
 
 Er zijn een aantal niet-interactieve scenario's, zoals continue integratie pijplijnen, die momenteel niet beschikbaar zijn in kubectl. U kunt gebruiken [`kubelogin`](https://github.com/Azure/kubelogin) om toegang te krijgen tot het cluster met niet-interactieve Service-Principal-aanmelding.
 
+## <a name="use-conditional-access-with-azure-ad-and-aks"></a>Voorwaardelijke toegang gebruiken met Azure AD en AKS
+
+Wanneer u Azure AD integreert met uw AKS-cluster, kunt u ook [voorwaardelijke toegang][aad-conditional-access] gebruiken om de toegang tot uw cluster te beheren.
+
+> [!NOTE]
+> Voorwaardelijke toegang van Azure AD is een Azure AD Premium mogelijkheid.
+
+Voer de volgende stappen uit om een voor beeld van een voorwaardelijk toegangs beleid te maken voor gebruik met AKS:
+
+1. Zoek en selecteer Azure Active Directory aan de bovenkant van de Azure Portal.
+1. Selecteer in het menu voor Azure Active Directory aan de linkerkant de optie *bedrijfs toepassingen*.
+1. Selecteer in het menu voor zakelijke toepassingen aan de linkerkant *voorwaardelijke toegang*.
+1. Selecteer in het menu voor voorwaardelijke toegang aan de linkerkant de optie *beleid* en vervolgens *Nieuw beleid*.
+    :::image type="content" source="./media/managed-aad/conditional-access-new-policy.png" alt-text="Beleid voor voorwaardelijke toegang toevoegen":::
+1. Voer een naam in voor het beleid, zoals *AKS-Policy*.
+1. Selecteer *gebruikers en groepen* en selecteer onder *insluiten* selecteren de *optie gebruikers en groepen*. Kies de gebruikers en groepen waarop u het beleid wilt Toep assen. Kies voor dit voor beeld dezelfde Azure AD-groep met beheerders toegang tot uw cluster.
+    :::image type="content" source="./media/managed-aad/conditional-access-users-groups.png" alt-text="Gebruikers of groepen selecteren om het beleid voor voorwaardelijke toegang toe te passen":::
+1. Selecteer *Cloud-apps of-acties* en selecteer vervolgens onder *insluit* selecteren de *optie Apps selecteren*. Zoek naar de *Azure Kubernetes-service* en selecteer *Azure Kubernetes service Aad server*.
+    :::image type="content" source="./media/managed-aad/conditional-access-apps.png" alt-text="De Azure Kubernetes service AD-server selecteren voor het Toep assen van het beleid voor voorwaardelijke toegang":::
+1. Onder *Toegangscontroles* selecteert u *Verlenen*. Selecteer *toegang verlenen* en stel *in dat het apparaat moet worden gemarkeerd als compatibel*.
+    :::image type="content" source="./media/managed-aad/conditional-access-grant-compliant.png" alt-text="Selecteren om alleen compatibele apparaten toe te staan voor het beleid voor voorwaardelijke toegang":::
+1. Onder *beleid inschakelen* selecteert u *aan* en vervolgens *maken*.
+    :::image type="content" source="./media/managed-aad/conditional-access-enable-policy.png" alt-text="Het beleid voor voorwaardelijke toegang inschakelen":::
+
+Haal de gebruikers referenties op voor toegang tot het cluster, bijvoorbeeld:
+
+```azurecli-interactive
+ az aks get-credentials --resource-group myResourceGroup --name myManagedCluster
+```
+
+Volg de instructies om u aan te melden.
+
+Gebruik de `kubectl get nodes` opdracht voor het weer geven van knoop punten in het cluster:
+
+```azurecli-interactive
+kubectl get nodes
+```
+
+Volg de instructies om u opnieuw aan te melden. Er wordt een fout bericht weer gegeven waarin wordt vermeld dat u bent aangemeld, maar uw beheerder vereist dat het apparaat dat toegang vraagt om te worden beheerd door uw Azure AD om toegang te krijgen tot de resource.
+
+Ga in het Azure Portal naar Azure Active Directory, selecteer *zakelijke toepassingen* en selecteer vervolgens *aanmeldingen* onder *activiteit* . U ziet een vermelding bovenaan met de *status* *mislukt* en een *voorwaardelijke toegang tot* *geslaagde pogingen*. Selecteer de vermelding en selecteer vervolgens *voorwaardelijke toegang* in *Details*. U ziet dat het beleid voor voorwaardelijke toegang wordt weer gegeven.
+
+:::image type="content" source="./media/managed-aad/conditional-access-sign-in-activity.png" alt-text="Mislukte aanmeldings vermelding vanwege beleid voor voorwaardelijke toegang":::
+
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [Azure RBAC-integratie voor Kubernetes-autorisatie][azure-rbac-integration]
@@ -202,6 +245,7 @@ Er zijn een aantal niet-interactieve scenario's, zoals continue integratie pijpl
 [aks-arm-template]: /azure/templates/microsoft.containerservice/managedclusters
 
 <!-- LINKS - Internal -->
+[aad-conditional-access]: ../active-directory/conditional-access/overview.md
 [azure-rbac-integration]: manage-azure-rbac.md
 [aks-concepts-identity]: concepts-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md

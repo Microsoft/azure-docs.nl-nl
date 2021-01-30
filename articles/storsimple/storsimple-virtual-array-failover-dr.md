@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/27/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 509a3ac383cebd91821e9c4b872c253ab3b0a947
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6a321b2eb79ea01bbf94e1a413c189ac7f4614ad
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005857"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096420"
 ---
 # <a name="disaster-recovery-and-device-failover-for-your-storsimple-virtual-array-via-azure-portal"></a>Herstel na noodgevallen en failover van apparaat voor virtuele StorSimple-array via Azure-portal
 
@@ -156,7 +156,7 @@ Voer de volgende stappen uit om het apparaat te herstellen naar een virtueel Sto
     1. Selecteer en klik op het StorSimple-apparaat dat is gebruikt als doel apparaat voor het failoverproces.
     2. Ga naar **instellingen > beheer > shares** (of **volumes** als iSCSI-server). Op de Blade **shares** kunt u alle shares (volumes) van het oude apparaat weer geven.
         ![Scherm opname van de Blade apparaten. Het doel apparaat wordt weer gegeven met de status online.](./media/storsimple-virtual-array-failover-dr/failover9.png)
-14. U moet [een DNS-alias maken](https://support.microsoft.com/kb/168322) zodat alle toepassingen die verbinding proberen te maken, kunnen worden omgeleid naar het nieuwe apparaat.
+14. U moet [een DNS-alias maken](https://web.archive.org/web/20150307000707/http://support.microsoft.com:80/kb/168322) zodat alle toepassingen die verbinding proberen te maken, kunnen worden omgeleid naar het nieuwe apparaat.
 
 ## <a name="errors-during-dr"></a>Fouten tijdens DR
 

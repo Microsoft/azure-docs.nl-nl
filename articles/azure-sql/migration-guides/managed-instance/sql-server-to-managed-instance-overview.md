@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: d1360589fe2c2ec13c341dd14793db0ca8b809c4
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 9afe50e419f9c180b0b5efcd6182eb693dc6622a
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358874"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093940"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -172,7 +172,7 @@ SQL-aanmeldingen van de bron SQL Server kunnen worden verplaatst naar een Azure 
 
 Standaard biedt Azure Database Migration Service alleen ondersteuning voor het migreren van SQL-aanmeldingen. U kunt echter het migreren van Windows-aanmeldingen als volgt inschakelen:
 
-Zorg ervoor dat het beheerde exemplaar van SQL Managed Azure Active Directory-toegang heeft, dat kan worden geconfigureerd via het Azure Portal door een gebruiker met de rol **beheerder van bedrijf** of een **globale beheerder**.
+Zorg ervoor dat het beheerde exemplaar van SQL Managed Azure AD-Lees toegang heeft, dat kan worden geconfigureerd via de Azure Portal door een gebruiker met de rol van **globale beheerder** .
 Configureer uw Azure Database Migration Service-exemplaar om migraties van Windows-gebruikers en -groepen in te schakelen, wat via de Azure-portal, op de pagina Configuratie, kan worden ingesteld. Nadat u deze instelling hebt ingeschakeld, start u de service opnieuw om de wijzigingen van kracht te laten worden.
 
 Nadat de service opnieuw is gestart, worden de aanmeldingen van Windows-gebruikers en-groepen weergegeven in de lijst met aanmeldingen die beschikbaar zijn voor migratie. Voor alle aanmeldingen van Windows-gebruikers en-groepen die u migreert, wordt u gevraagd om de bijbehorende domeinnaam op te geven. Gebruikersaccounts voor services (account met domeinnaam NT AUTHORITY) en virtuele gebruikersaccounts (account met domeinnaam NT SERVICE) worden niet ondersteund.

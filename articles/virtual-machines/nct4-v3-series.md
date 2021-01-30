@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: vikancha
-ms.openlocfilehash: 5f31148a811ac1a7789cb81d744b46b847105d5c
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: ac1147435bee60db0f3028289a83026e1f9c1c15
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917400"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091677"
 ---
 # <a name="ncast4_v3-series"></a>NCasT4_v3-series 
 
@@ -28,6 +28,7 @@ De virtuele machines uit de NCasT4_v3-serie worden aangedreven door [Nvidia Tesl
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
 NVIDIA NVLink Interconnect: niet ondersteund<br>
 <br>
 

@@ -57,6 +57,14 @@
           href: security-baseline.md
 - name: Instructiegidsen
   items:
+    - name: Azure Logic Apps-preview
+      items:
+        - name: Overzicht voor Azure Logic Apps-preview
+          href: logic-apps-overview-preview.md
+        - name: Stateful en stateless workflows maken - Azure Portal
+          href: create-stateful-stateless-workflows-azure-portal.md
+        - name: Stateful en stateless workflows maken - Visual Studio
+          href: create-stateful-stateless-workflows-visual-studio-code.md
     - name: Ontwikkelen
       items:
         - name: Maken op basis van bestaande sjablonen
@@ -67,14 +75,6 @@
           href: logic-apps-move-from-mabs.md
         - name: Stromen exporteren vanuit Power Automate en implementeren in Azure Logic Apps
           href: export-from-microsoft-flow-logic-app-template.md
-        - name: Azure Logic Apps-preview
-          items:
-            - name: Overzicht voor Azure Logic Apps-preview
-              href: logic-apps-overview-preview.md
-            - name: Stateful en stateless workflows maken - Azure Portal
-              href: create-stateful-stateless-workflows-azure-portal.md
-            - name: Stateful en stateless workflows maken - Visual Studio
-              href: create-stateful-stateless-workflows-visual-studio-code.md
         - name: Logische apps aanroepen vanuit Power Automate en Power Apps
           href: call-from-power-automate-power-apps.md
         - name: Werkstroomuitvoering beheren
@@ -330,6 +330,8 @@
           href: logic-apps-enterprise-integration-create-integration-account.md
         - name: Integratieserviceomgevingen beheren
           href: ise-manage-integration-service-environment.md
+        - name: Kosten voorspellen en beheren
+          href: plan-manage-costs.md
         - name: Resources voor logische apps verplaatsen
           href: move-logic-app-resources.md
         - name: Migreren naar het meest recente schema

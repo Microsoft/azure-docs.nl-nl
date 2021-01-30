@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: bc7893746cbb98a2d4adc4dabb39e22d015ab2c8
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: d4f8ab190d0418fbb25dad2cd7af231eabfe0f02
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050394"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090252"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -45,7 +45,7 @@ De app is gebouwd als een ASP.NET MVC-toepassing. De OWIN OpenID Connect-middlew
 
 Het daemon-component in dit voorbeeld is een API-controller, `SyncController.cs`. Wanneer de controller wordt aangeroepen, wordt er een lijst met gebruikers in de Azure AD-tenant (Azure Active Directory) van de gebruiker opgehaald uit Microsoft Graph. `SyncController.cs` wordt geactiveerd door een AJAX-aanroep in de webtoepassing. [Microsoft Authentication Library (MSAL) voor .NET](msal-overview.md) wordt gebruikt om een toegangstoken op te halen voor Microsoft Graph.
 
-Omdat de app een multitenant-app voor zakelijke Microsoft-klanten is, moet deze een manier bieden voor klanten om de toepassing te 'registreren' of 'te verbinden' met hun bedrijfsgegevens. Tijdens de verbindingsstroom kent een bedrijfsbeheerder eerst rechtstreeks aan de app *toepassingstoestemming* toe, zodat deze toegang heeft tot bedrijfsgegevens op een niet-interactieve manier, zonder dat er een gebruiker moet zijn aangemeld. Het merendeel van de logica in dit voorbeeld toont hoe deze verbindingsstroom kan worden gerealiseerd met het [beheerderstoestemming](v2-permissions-and-consent.md#using-the-admin-consent-endpoint)-eindpunt van het identiteitsplatform.
+Omdat de app een multitenant-app voor zakelijke Microsoft-klanten is, moet deze een manier bieden voor klanten om de toepassing te 'registreren' of 'te verbinden' met hun bedrijfsgegevens. Tijdens de verbindings stroom verleent een globale beheerder eerst *toepassings machtigingen* rechtstreeks aan de app, zodat deze toegang heeft tot Bedrijfs gegevens op een niet-interactieve manier zonder de aanwezigheid van een aangemelde gebruiker. Het merendeel van de logica in dit voorbeeld toont hoe deze verbindingsstroom kan worden gerealiseerd met het [beheerderstoestemming](v2-permissions-and-consent.md#using-the-admin-consent-endpoint)-eindpunt van het identiteitsplatform.
 
 ![Diagram waarin de UserSync-app wordt weergegeven met drie lokale items die verbinding maken met Azure. Hierbij wordt voor Startup.Auth een token interactief opgehaald om verbinding te maken met Azure AD, wordt voor AccountController toestemming van de beheerder verkregen om verbinding te maken met Azure AD en worden met SyncController gebruikers gelezen om verbinding te maken met Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 

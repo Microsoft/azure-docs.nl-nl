@@ -8,18 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 07/28/2020
+ms.date: 01/22/2021
 ms.author: aahi
-ms.openlocfilehash: 77b75b1134bbc8366478b1f9f4d14e86e9684f70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 883c5a20612f4dab44c0d06776ee287b27174ab9
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91709311"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097259"
 ---
 # <a name="supported-entity-categories-in-the-text-analytics-api-v3"></a>Ondersteunde entiteits categorieën in de Text Analytics-API v3
 
-In dit artikel vindt u informatie over de entiteits categorieën die kunnen worden geretourneerd door [named entity Recognition](how-tos/text-analytics-how-to-entity-linking.md) (ner). Er is ook een preview van NER v 3.1 beschikbaar, waaronder de mogelijkheid om persoonlijke ( `PII` ) en status gegevens te detecteren `PHI` . Klik vervolgens op het tabblad **status** om een lijst met ondersteunde categorieën in Text Analytics voor de status weer te geven.
+In dit artikel vindt u informatie over de entiteits categorieën die kunnen worden geretourneerd door [named entity Recognition](how-tos/text-analytics-how-to-entity-linking.md) (ner). NER voert een voorspellend model uit voor het identificeren en categoriseren van benoemde entiteiten uit een invoer document.
+
+Er is ook een preview van NER v 3.1 beschikbaar, waaronder de mogelijkheid om persoonlijke ( `PII` ) en status gegevens te detecteren `PHI` . Klik vervolgens op het tabblad **status** om een lijst met ondersteunde categorieën in Text Analytics voor de status weer te geven. 
+
+In de [migratie handleiding](migration-guide.md?tabs=named-entity-recognition) vindt u een lijst met typen die worden geretourneerd door versie 2,1
 
 ## <a name="entity-categories"></a>Entiteits Categorieën
 
@@ -35,8 +39,8 @@ In dit artikel vindt u informatie over de entiteits categorieën die kunnen word
 
 [!INCLUDE [biomedical entity types](./includes/entity-types/health-entities.md)]
 
-***
+**_
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Benoemde entiteits herkenning gebruiken in Text Analytics](how-tos/text-analytics-how-to-entity-linking.md)
+_ [Het gebruik van benoemde entiteit herkenning in Text Analytics](how-tos/text-analytics-how-to-entity-linking.md)

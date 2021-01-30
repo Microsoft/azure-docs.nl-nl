@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: eb8c69a6bf009543e104a472469c243638726f60
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: 5ba399418d8f93204b168c1058be20ffc775ef70
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060364"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096963"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Tags toevoegen aan afbeeldingen in een labelproject 
 
@@ -63,11 +63,7 @@ In Azure is de knop **Indienen** beschikbaar zodra u alle afbeeldingen op de pag
 
 Nadat u tags voor de beschikbare gegevens hebt ingediend, wordt de pagina vernieuwd met een nieuwe set afbeeldingen uit de werkwachtrij.
 
-### <a name="assisted-machine-learning-preview"></a>Begeleide machine learning (preview) 
-
-> [!IMPORTANT]
-> Begeleide machine learning is momenteel beschikbaar als openbare preview-versie.
-> De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+### <a name="assisted-machine-learning"></a>Ondersteunde machine learning
 
 Mogelijk worden machine learning-algoritmen geactiveerd. Als deze algoritmen in uw project zijn ingeschakeld, ziet u het volgende:
 
@@ -75,7 +71,14 @@ Mogelijk worden machine learning-algoritmen geactiveerd. Als deze algoritmen in 
 
 * Later ziet u wellicht **taken die vooraf al van een label zijn voorzien** naast de projectnaam.  Afbeeldingen worden dan weergegeven met een voorgesteld label dat afkomstig is van een machine learning-classificeringsmodel. Geen enkel machine learning-model biedt 100% nauwkeurigheid. Hoewel we alleen afbeeldingen gebruiken waarvoor het model betrouwbaar is, is het nog wel mogelijk dat deze afbeeldingen onjuist vooraf zijn gelabeld.  Wanneer u deze labels ziet, herstelt u onjuiste labels voordat u de pagina verzendt.  
 
-* Voor objectdetectiemodellen ziet u mogelijk dat er al begrenzingsvakken en labels aanwezig zijn.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt.
+* Voor object-id-modellen ziet u mogelijk selectie vakjes en labels die al aanwezig zijn.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt.
+
+* Voor segmentatie modellen ziet u mogelijk al veelhoeken en labels.  Herstel eventueel onjuiste vakken en labels voordat u de pagina verzendt. 
+
+    > [!IMPORTANT]
+    > De functies die worden vermeld met (preview) zijn beschikbaar als open bare preview.   
+    > De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
 
 Met name in de beginfase van een labelproject is het mogelijk dat het machine learning-model alleen voldoende nauwkeurig is om slechts een kleine subset met afbeeldingen vooraf te labelen. Zodra deze afbeeldingen zijn gelabeld, keert het labelproject terug naar handmatige labels om meer gegevens te verzamelen voor de volgende ronde van de modeltraining. Na verloop van tijd wordt het model betrouwbaarder voor een hogere verhouding afbeeldingen. Dit leidt later in het project tot meer vooraf gelabelde taken.
 

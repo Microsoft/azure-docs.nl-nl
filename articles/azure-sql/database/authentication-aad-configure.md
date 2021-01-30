@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: e19bf5b4ee5b6c48f002ca79711646cca7b0ec5f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b8711b3995c322614c547434850d7c031abfadd5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729117"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094940"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Azure AD-verificatie configureren en beheren met Azure SQL
 
@@ -71,7 +71,7 @@ Bij het gebruik van Azure Active Directory met geo-replicatie moet de Azure Acti
 ## <a name="provision-azure-ad-admin-sql-managed-instance"></a>Een Azure AD-beheerder (SQL Managed instance) inrichten
 
 > [!IMPORTANT]
-> Volg deze stappen alleen als u een door Azure SQL beheerd exemplaar inricht. Deze bewerking kan alleen worden uitgevoerd door de beheerder globaal/bedrijf of een bevoegde beheerdersrol in azure AD.
+> Volg deze stappen alleen als u een door Azure SQL beheerd exemplaar inricht. Deze bewerking kan alleen worden uitgevoerd door de globale beheerder of een beheerder van een bevoegde rol in azure AD.
 >
 > In de **open bare preview** kunt u de rol van de **Directory lezers** toewijzen aan een groep in azure AD. De groeps eigenaren kunnen de identiteit van het beheerde exemplaar vervolgens toevoegen als lid van deze groep, zodat u een Azure AD-beheerder kunt inrichten voor het SQL Managed instance. Zie [Rol Directory Readers in Azure Active Directory voor Azure SQL](authentication-aad-directory-readers-role.md) voor meer informatie over deze functie.
 
@@ -79,7 +79,7 @@ Uw SQL Managed instance heeft machtigingen nodig voor het lezen van Azure AD om 
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Als u uw SQL Managed instance Azure AD-Lees machtiging wilt verlenen met de Azure Portal, meldt u zich aan als globaal/bedrijfs beheerder in azure AD en voert u de volgende stappen uit:
+Als u uw SQL Managed instance Azure AD Lees machtigingen wilt verlenen met behulp van de Azure Portal, meldt u zich aan als globale beheerder in azure AD en volgt u deze stappen:
 
 1. Selecteer in het [Azure Portal](https://portal.azure.com)in de rechter bovenhoek uw verbinding in een vervolg keuzelijst met mogelijke actieve directory's.
 
@@ -126,7 +126,7 @@ Als u uw SQL Managed instance Azure AD-Lees machtiging wilt verlenen met behulp 
 
 ```powershell
 # Gives Azure Active Directory read permission to a Service Principal representing the SQL Managed Instance.
-# Can be executed only by a "Company Administrator", "Global Administrator", or "Privileged Role Administrator" type of user.
+# Can be executed only by a "Global Administrator" or "Privileged Role Administrator" type of user.
 
 $aadTenant = "<YourTenantId>" # Enter your tenant ID
 $managedInstanceName = "MyManagedInstance"
@@ -190,7 +190,7 @@ Voer de volgende Azure PowerShell opdrachten uit om een Azure AD-beheerder in te
 
 De cmdlets die worden gebruikt voor het inrichten en beheren van Azure AD-beheerder voor uw SQL Managed instance worden weer gegeven in de volgende tabel:
 
-| Naam van cmdlet | Beschrijving |
+| Naam van cmdlet | Description |
 | --- | --- |
 | [Set-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Richt een Azure AD-beheerder in voor het beheerde exemplaar van SQL in het huidige abonnement. (Moet afkomstig zijn van het huidige abonnement)|
 | [Remove-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Hiermee verwijdert u een Azure AD-beheerder voor het beheerde exemplaar van SQL in het huidige abonnement. |
@@ -279,7 +279,7 @@ Als u Power shell-cmdlets wilt uitvoeren, moet Azure PowerShell zijn geïnstalle
 
 Cmdlets die worden gebruikt voor het inrichten en beheren van Azure AD-beheerder voor SQL Database en Azure Synapse:
 
-| Naam van cmdlet | Beschrijving |
+| Naam van cmdlet | Description |
 | --- | --- |
 | [Set-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Richt een Azure Active Directory beheerder in voor de server die als host fungeert voor SQL Database of Azure Synapse. (Moet afkomstig zijn van het huidige abonnement) |
 | [Remove-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Hiermee verwijdert u een Azure Active Directory beheerder voor de server die als host fungeert voor SQL Database of Azure Synapse.|

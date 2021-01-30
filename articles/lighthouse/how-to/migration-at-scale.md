@@ -1,27 +1,27 @@
 ---
-title: Migratie projecten op schaal beheren met Azure Migrate
+title: Azure Migrate projecten op schaal beheren met Azure Lighthouse
 description: Meer informatie over het effectief gebruiken van Azure Migrate op gedelegeerde klanten resources.
-ms.date: 12/4/2020
+ms.date: 01/29/2021
 ms.topic: how-to
-ms.openlocfilehash: 53f7c390d9f16dcbccbb1d09f46e63fec13eee2d
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 8e8ba21881ea5dad36ae640632b6307cd9a22a73
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788940"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093605"
 ---
-# <a name="manage-migration-projects-at-scale-with-azure-migrate"></a>Migratie projecten op schaal beheren met Azure Migrate
+# <a name="manage-azure-migrate-projects-at-scale-with-azure-lighthouse"></a>Azure Migrate projecten op schaal beheren met Azure Lighthouse
 
-Als service provider hebt u mogelijk meerdere tenants voor klanten in [Azure Lighthouse](../overview.md). Met Azure Lighthouse kunnen service providers bewerkingen tegelijk uitvoeren in meerdere Azure Active Directory (Azure AD)-tenants, waardoor beheer taken efficiënter worden.
+In dit onderwerp vindt u een overzicht van de manier waarop [Azure Lighthouse](../overview.md) u kan helpen om [Azure migrate](../../migrate/migrate-services-overview.md) te gebruiken op schaal bare wijze in meerdere Azure Active Directory (Azure AD)-tenants.
 
-[Azure migrate](../../migrate/migrate-services-overview.md) biedt een gecentraliseerde hub voor het beoordelen en migreren van on-premises servers, infra structuur, toepassingen en gegevens in Azure. Over het algemeen moeten partners die op schaal en migratie voor meerdere klanten worden uitgevoerd, toegang krijgen tot elk abonnement van een klant door gebruik te maken van het [abonnement model van de CSP (Cloud Solution Provider)](/partner-center/customers-revoke-admin-privileges) of door [een gast gebruiker in de Tenant van de klant in](../../active-directory/external-identities/what-is-b2b.md)te stellen.
+Met Azure Lighthouse kunnen service providers bewerkingen op verschillende tijdstippen in meerdere tenants tegelijk uitvoeren, waardoor beheer taken efficiënter zijn.
+
+Azure Migrate is een gecentraliseerde hub voor het beoordelen en migreren naar on-premises servers, infrastructuur, toepassingen en gegevens in Azure. Over het algemeen moeten partners die op schaal en migratie voor meerdere klanten worden uitgevoerd, toegang krijgen tot elk abonnement van een klant door gebruik te maken van het [abonnement model van de CSP (Cloud Solution Provider)](/partner-center/customers-revoke-admin-privileges) of door [een gast gebruiker in de Tenant van de klant in](../../active-directory/external-identities/what-is-b2b.md)te stellen.
 
 Met Azure Lighthouse-integratie met Azure Migrate kunnen service providers werk belastingen voor verschillende klanten op schaal detecteren, beoordelen en migreren, terwijl klanten volledige zicht baarheid en controle kunnen hebben over hun omgevingen. Service providers hebben via Azure gedelegeerd resource beheer één weer gave van alle Azure Migrate projecten die ze beheren op meerdere tenants van klanten.
 
 > [!NOTE]
 > Via Azure Lighthouse kunnen partners detectie, evaluatie en migratie uitvoeren voor on-premises virtuele VMware-machines, Hyper-V-Vm's, fysieke servers en AWS/GCP-instanties. Er zijn twee opties voor de [migratie van VMware-vm's](../../migrate/server-migrate-overview.md). Op dit moment kan alleen de op agents gebaseerde migratie methode worden gebruikt bij het werken aan een migratie project in een gedelegeerd klant abonnement. migratie met replicatie zonder agent wordt momenteel niet ondersteund via gedelegeerde toegang tot het bereik van de klant.
-
-In dit onderwerp vindt u een overzicht van hoe u [Azure migrate](../../migrate/migrate-services-overview.md) op een schaal bare manier kunt gebruiken.
 
 > [!TIP]
 > Hoewel we in dit onderwerp naar service providers en klanten verwijzen, is deze richt lijn ook van toepassing op [ondernemingen die Azure Lighthouse gebruiken om meerdere tenants te beheren](../concepts/enterprise.md).
@@ -72,11 +72,11 @@ Opmerking: u moet het parameter bestand wijzigen zodat het overeenkomt met uw om
 
 ## <a name="partner-recognition-for-customer-migrations"></a>Partner herkenning voor klant migraties
 
-Als lid van de [Microsoft Partner Network](https://partner.microsoft.com)kunt u uw partner-id koppelen aan de referenties die worden gebruikt om overgedragen klanten resources te beheren. Met de partner beheerder-koppeling (PAL) kan micro soft invloed hebben op de gevolgen en Azure-omzet die is verbruikt voor uw organisatie, op basis van de taken die u uitvoert voor klanten, inclusief migratie projecten.
+Als lid van de [Microsoft Partner Network](https://partner.microsoft.com)kunt u uw partner-id koppelen aan de referenties die worden gebruikt om overgedragen klanten resources te beheren. Dit stelt micro soft in staat om de verbruikte omzet van Azure aan uw organisatie te beïnvloeden op basis van de taken die u uitvoert voor klanten, inclusief migratie projecten.
 
 Zie [Uw partner-id koppelen om de impact op gedelegeerde resources te volgen](partner-earned-credit.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [Azure migrate](../../migrate/migrate-services-overview.md).
-- Meer informatie over [beheerervaring in meerdere tenants](../concepts/cross-tenant-management-experience.md).
+- Meer informatie over andere [functies voor cross-Tenant beheer](../concepts/cross-tenant-management-experience.md) die worden ondersteund door Azure Lighthouse.

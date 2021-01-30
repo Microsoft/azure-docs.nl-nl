@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019,fasttrack-edit
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 210d5b06cfe417f581995ad5b356d62e1c35a6d2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 995fe7bc81b0fae75ebf93338722c21bd12bde49
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95972608"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095570"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-offline-using-dms"></a>Zelfstudie: SQL Server migreren naar een offline Azure SQL Managed Instance met behulp van DMS
 
@@ -66,7 +66,7 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
     >[!NOTE]
     >Standaard biedt Azure Database Migration Service alleen ondersteuning voor het migreren van SQL-aanmeldingen. U kunt echter het migreren van Windows-aanmeldingen als volgt inschakelen:
     >
-    >- Zorg ervoor dat het doelexemplaar van SQL Managed Instance AAD-leestoegang heeft, die via de Azure-portal kan worden geconfigureerd door een gebruiker met de rol **Bedrijfsbeheerder** of **Globale beheerder**.
+    >- Zorg ervoor dat het beheerde exemplaar van SQL Managed AAD-Lees toegang heeft, dat via de Azure Portal kan worden geconfigureerd door een gebruiker met de rol **globale beheerder** .
     >- Configureer uw Azure Database Migration Service-exemplaar om migraties van Windows-gebruikers en -groepen in te schakelen, wat via de Azure-portal, op de pagina Configuratie, kan worden ingesteld. Nadat u deze instelling hebt ingeschakeld, start u de service opnieuw om de wijzigingen van kracht te laten worden.
     >
     > Nadat de service opnieuw is gestart, worden de aanmeldingen van Windows-gebruikers en-groepen weergegeven in de lijst met aanmeldingen die beschikbaar zijn voor migratie. Voor alle aanmeldingen van Windows-gebruikers en-groepen die u migreert, wordt u gevraagd om de bijbehorende domeinnaam op te geven. Gebruikersaccounts voor services (account met domeinnaam NT AUTHORITY) en virtuele gebruikersaccounts (account met domeinnaam NT SERVICE) worden niet ondersteund.

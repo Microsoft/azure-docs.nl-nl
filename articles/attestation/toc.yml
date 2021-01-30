@@ -1,10 +1,10 @@
-- name: Microsoft Azure Attestation (preview)
+- name: Microsoft Azure Attestation
   href: index.yml
 - name: Overzicht
   items:
     - name: Over Microsoft Azure Attestation
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: ARM-sjabloon
       displayName: Resource Manager

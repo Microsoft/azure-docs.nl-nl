@@ -14,12 +14,12 @@ ms.subservice: roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e38ca27606ecf04b08bd29867894ba269148260c
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 6ae8dbf6ffd2d827bbcd0fd723f63255d71d47a5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055243"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090787"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Bevoegde toegang beveiligen voor hybride implementaties en cloudimplementaties in Azure AD
 
@@ -40,7 +40,7 @@ Het beveiligen van bevoegde toegang vereist wijzigingen in:
 Beveilig uw bevoorrechte toegang op een manier die wordt beheerd en gerapporteerd in de micro soft-services die u begeleidt. Als u on-premises beheerders accounts hebt, raadpleegt u de richt lijnen voor on-premises en hybride privileged Access in Active Directory op het [beveiligen van bevoegde toegang](/windows-server/identity/securing-privileged-access/securing-privileged-access).
 
 > [!NOTE]
-> De richt lijnen in dit artikel zijn voornamelijk bedoeld voor functies van Azure Active Directory die zijn opgenomen in Azure Active Directory Premium plan P1 en P2. Azure Active Directory Premium P2 is opgenomen in EMS E5 Suite en Microsoft 365 E5 Suite. In deze richt lijnen wordt ervan uitgegaan dat uw organisatie al Azure AD Premium P2-licenties heeft gekocht voor uw gebruikers. Als u deze licenties niet hebt, is het mogelijk dat bepaalde instructies niet van toepassing zijn op uw organisatie. In dit artikel wordt ook de term globale beheerder (of globale beheerder) beschouwd als ' bedrijfs beheerder ' of ' Tenant beheerder '.
+> De richt lijnen in dit artikel zijn voornamelijk bedoeld voor functies van Azure Active Directory die zijn opgenomen in Azure Active Directory Premium plan P1 en P2. Azure Active Directory Premium P2 is opgenomen in EMS E5 Suite en Microsoft 365 E5 Suite. In deze richt lijnen wordt ervan uitgegaan dat uw organisatie al Azure AD Premium P2-licenties heeft gekocht voor uw gebruikers. Als u deze licenties niet hebt, is het mogelijk dat bepaalde instructies niet van toepassing zijn op uw organisatie. In dit artikel is de term globale beheerder ook hetzelfde als ' bedrijfs beheerder ' of ' Tenant beheerder '.
 
 ## <a name="develop-a-roadmap"></a>Een route kaart ontwikkelen
 
@@ -110,7 +110,7 @@ Het is mogelijk dat een gebruiker per ongeluk uit hun rol wordt uitgesloten. Als
 
 Met accounts voor toegang in nood gevallen kunt u de toegang in een Azure AD-organisatie beperken. Deze accounts zijn zeer privileged en worden niet toegewezen aan specifieke personen. Accounts voor toegang in nood gevallen zijn beperkt tot nood gevallen waarin normale beheerders accounts niet kunnen worden gebruikt. Zorg ervoor dat u het gebruik van het nood-account alleen beheert en beperkt tot die tijd waarvoor het nodig is.
 
-Evalueer de accounts die zijn toegewezen of die in aanmerking komen voor de rol van globale beheerder. Als u geen alleen-Cloud accounts met behulp \* van het. onmicrosoft.com-domein (voor ' Breek glazen ' nood toegang) ziet, maakt u deze. Zie [Beheer accounts voor nood toegang beheren in azure AD](security-emergency-access.md)voor meer informatie.
+Controleer de accounts die zijn toegewezen of in aanmerking komen voor de rol globale beheerder. Als u geen alleen-Cloud accounts met behulp \* van het. onmicrosoft.com-domein (voor ' Breek glazen ' nood toegang) ziet, maakt u deze. Zie [Beheer accounts voor nood toegang beheren in azure AD](security-emergency-access.md)voor meer informatie.
 
 #### <a name="turn-on-multi-factor-authentication-and-register-all-other-highly-privileged-single-user-non-federated-admin-accounts"></a>Multi-factor Authentication inschakelen en alle andere niet-gefedereerde niet-federatieve beheerders accounts van één gebruiker registreren
 
@@ -147,7 +147,7 @@ Als uw eerste globale beheerders hun bestaande Microsoft-account referenties opn
 
 Persoonlijke e-mail accounts worden regel matig gephishd door Cyber aanvallers, een risico dat persoonlijke e-mail adressen niet worden toegestaan voor accounts voor globale beheerders. Maak voor elke gebruiker met beheerders bevoegdheden speciale accounts om Internet Risico's te onderscheiden van beheerders bevoegdheden.
 
-* Zorg ervoor dat u afzonderlijke accounts maakt voor gebruikers om algemene beheer taken uit te voeren.
+* Zorg ervoor dat u afzonderlijke accounts maakt voor gebruikers om algemene beheerders taken uit te voeren.
 * Zorg ervoor dat uw globale beheerders niet per ongeluk e-mail berichten openen of Program ma's uitvoeren met hun beheerders accounts.
 * Zorg ervoor dat deze accounts hun e-mail adres hebben doorgestuurd naar een werk postvak.
 * Globale beheerders (en andere geprivilegieerde groepen)-accounts moeten alleen Cloud accounts zijn zonder binding met on-premises Active Directory.
@@ -230,7 +230,7 @@ Fase 3 bouwt voort op de oplossingen van fase 2 en moet in ongeveer 1-3 maanden 
 
 #### <a name="complete-an-access-review-of-users-in-administrator-roles"></a>Een toegangs beoordeling van gebruikers in beheerders rollen volt ooien
 
-Meer zakelijke gebruikers krijgen uitgebreide toegang via Cloud Services, wat kan leiden tot onbeheerde toegang. Gebruikers kunnen tegenwoordig globale beheerders worden voor Microsoft 365, Azure-abonnements beheerders of beheerders toegang hebben tot Vm's of via SaaS-apps.
+Meer zakelijke gebruikers krijgen uitgebreide toegang via Cloud Services, wat kan leiden tot onbeheerde toegang. Gebruikers kunnen tegenwoordig globale beheerders worden voor Microsoft 365, beheerders van Azure-abonnementen of beheerders toegang hebben tot Vm's of via SaaS-apps.
 
 Uw organisatie moet alle werk nemers de normale zakelijke trans acties laten afhandelen als niet-gemachtigde gebruikers en vervolgens beheerders rechten alleen verlenen als dat nodig is. Volledige toegangs Beoordelingen voor het identificeren en bevestigen van de gebruikers die in aanmerking komen voor het activeren van Administrator bevoegdheden.
 
@@ -439,7 +439,7 @@ Voor meer informatie over hoe Microsoft Office 365 beveiligings incidenten afhan
 
 **V:** Wat gebeurt er als onze geprivilegieerde beheerders zijn gedeactiveerd?
 
-**Antwoord:** Maak een globaal beheerders account dat altijd up-to-date blijft.
+**Antwoord:** Maak een algemeen beheerders account dat altijd up-to-date blijft.
 
 **V:** Wat gebeurt er als er slechts één globale beheerder is en deze niet kan worden bereikt?
 

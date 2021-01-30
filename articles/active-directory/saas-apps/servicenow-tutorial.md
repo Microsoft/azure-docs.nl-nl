@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 7a15248300150c9b79c4678701f81fac923d56a3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: c90234249f3cf7eb6ed4793110d61e1f8190ed60
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353603"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092598"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met ServiceNow
 
@@ -36,7 +36,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 * Een abonnement op ServiceNow waarvoor eenmalige aanmelding (SSO) is ingeschakeld.
 * Voor ServiceNow ondersteunt een instantie of tenant van ServiceNow Calgary, Kingston, Londen, Madrid, New York, Orlando en Parijs of hoger.
 * Voor ServiceNow Express: een instantie van ServiceNow Express, versie Helsinki of later.
-* Voor de ServiceNow-tenant moet de [invoegtoepassing Multiple-Provider single sign-on (SSO)](https://wiki.servicenow.com/index.php?title=Multiple_Provider_Single_Sign-On#gsc.tab=0) zijn ingeschakeld.
+* Voor de ServiceNow-tenant moet de [invoegtoepassing Multiple-Provider single sign-on (SSO)](https://old.wiki/index.php/Multiple_Provider_Single_Sign-On#gsc.tab=0) zijn ingeschakeld.
 * Schakel voor automatische configuratie de multi-provider-invoegtoepassing voor ServiceNow in.
 * Om de toepassing ServiceNow Classic (Mobile) te installeren, gaat u naar de toepasselijke Store en zoekt u naar de ServiceNow Classic-toepassing. Vervolgens downloadt u de toepassing.
 

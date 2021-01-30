@@ -13,12 +13,12 @@ ms.date: 01/11/2021
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: a313633c6c1799136b8b8911ae780ca13be5d2c3
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 5b3f7f8016d9b5da70d76322aead551613b8d9c3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756125"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090218"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Micro soft Identity platform en OAuth 2,0-autorisatie code stroom
 
@@ -48,7 +48,7 @@ Vervolgens moet u uw app-registratie bezoeken en de omleidings-URI voor uw app b
 
 ## <a name="request-an-authorization-code"></a>Een autorisatie code aanvragen
 
-De autorisatie code stroom begint met de client die de gebruiker omleidt naar het `/authorize` eind punt. In deze aanvraag vraagt de client de `openid` , `offline_access` , en `https://graph.microsoft.com/mail.read ` machtigingen van de gebruiker.  Sommige machtigingen zijn door de beheerder beperkt, bijvoorbeeld het schrijven van gegevens naar de directory van een organisatie met behulp van `Directory.ReadWrite.All` . Als uw toepassing toegang vraagt tot een van deze machtigingen van een organisatie gebruiker, ontvangt de gebruiker een fout bericht waarin staat dat ze niet zijn geautoriseerd om toestemming te geven voor de machtigingen van uw app. Als u toegang wilt aanvragen voor beheerders met beperkte bereiken, moet u deze rechtstreeks aanvragen bij een bedrijfs beheerder.  Lees [machtigingen met beheerders rechten](v2-permissions-and-consent.md#admin-restricted-permissions)voor meer informatie.
+De autorisatie code stroom begint met de client die de gebruiker omleidt naar het `/authorize` eind punt. In deze aanvraag vraagt de client de `openid` , `offline_access` , en `https://graph.microsoft.com/mail.read ` machtigingen van de gebruiker.  Sommige machtigingen zijn door de beheerder beperkt, bijvoorbeeld het schrijven van gegevens naar de directory van een organisatie met behulp van `Directory.ReadWrite.All` . Als uw toepassing toegang vraagt tot een van deze machtigingen van een organisatie gebruiker, ontvangt de gebruiker een fout bericht waarin staat dat ze niet zijn geautoriseerd om toestemming te geven voor de machtigingen van uw app. Als u toegang wilt aanvragen voor beheerders met beperkte bereiken, moet u deze rechtstreeks aanvragen bij een globale beheerder.  Lees [machtigingen met beheerders rechten](v2-permissions-and-consent.md#admin-restricted-permissions)voor meer informatie.
 
 ```
 // Line breaks for legibility only
@@ -68,7 +68,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > Klik op de onderstaande koppeling om deze aanvraag uit te voeren. Nadat u zich hebt aangemeld, moet uw browser worden omgeleid naar `https://localhost/myapp/` met een `code` in de adres balk.
 > <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
 
-| Parameter    | Vereist/optioneel | Beschrijving |
+| Parameter    | Vereist/optioneel | Description |
 |--------------|-------------|--------------|
 | `tenant`    | vereist    | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.  |
 | `client_id`   | vereist    | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen.  |
@@ -124,7 +124,7 @@ error=access_denied
 
 In de volgende tabel worden de verschillende fout codes beschreven die kunnen worden geretourneerd in de `error` para meter van het fout bericht.
 
-| Foutcode  | Beschrijving    | Client actie   |
+| Foutcode  | Description    | Client actie   |
 |-------------|----------------|-----------------|
 | `invalid_request` | Protocol fout, zoals een ontbrekende vereiste para meter. | Corrigeer en verzend de aanvraag opnieuw. Dit is een ontwikkelings fout die doorgaans tijdens de eerste test is opgetreden. |
 | `unauthorized_client` | De client toepassing mag geen autorisatie code aanvragen. | Deze fout treedt meestal op wanneer de client toepassing niet is geregistreerd in azure AD of niet is toegevoegd aan de Azure AD-Tenant van de gebruiker. De toepassing kan de gebruiker vragen met instructies voor het installeren van de toepassing en het toevoegen aan Azure AD. |
@@ -206,7 +206,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > [!TIP]
 > Probeer deze aanvraag uit te voeren in postman! (Vergeet niet om de te vervangen `code` ) [ ![ Probeer deze aanvraag uit te voeren in postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
-| Parameter  | Vereist/optioneel | Beschrijving     |
+| Parameter  | Vereist/optioneel | Description     |
 |------------|-------------------|----------------|
 | `tenant`   | vereist   | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.  |
 | `client_id` | vereist  | De client-ID van de toepassing die de [Azure Portal-app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) pagina die is toegewezen aan uw app. |
@@ -269,7 +269,7 @@ Fout reacties zien er als volgt uit:
 
 ### <a name="error-codes-for-token-endpoint-errors"></a>Fout codes voor token eindpunt fouten
 
-| Foutcode         | Beschrijving        | Client actie    |
+| Foutcode         | Description        | Client actie    |
 |--------------------|--------------------|------------------|
 | `invalid_request`  | Protocol fout, zoals een ontbrekende vereiste para meter. | De aanvraag of app-registratie verhelpen en de aanvraag opnieuw verzenden   |
 | `invalid_grant`    | De verificatie code of PKCE code Verifier is ongeldig of is verlopen. | Probeer een nieuwe aanvraag naar het `/authorize` eind punt en controleer of de para meter code_verifier juist is.  |
@@ -328,7 +328,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > Probeer deze aanvraag uit te voeren in postman! (Vergeet niet om de te vervangen `refresh_token` ) [ ![ Probeer deze aanvraag uit te voeren in postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 >
 
-| Parameter     | Type           | Beschrijving        |
+| Parameter     | Type           | Description        |
 |---------------|----------------|--------------------|
 | `tenant`        | vereist     | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.   |
 | `client_id`     | vereist    | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen. |

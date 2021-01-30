@@ -278,6 +278,8 @@
           href: /rest/api/hdinsightspark/
         - name: Resource Manager-sjabloon
           href: /azure/templates/microsoft.hdinsight/allversions
+        - name: Ingebouwde modules voor Azure Policy
+          href: ./policy-reference.md
     - name: Resources
       items:
         - name: Releases

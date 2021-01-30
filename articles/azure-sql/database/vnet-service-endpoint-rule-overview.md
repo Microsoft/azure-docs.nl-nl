@@ -11,18 +11,18 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: d480239c0eb99ed48c13ec2fdb5b052574acc318
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 0dcffe6731c177d1d45c569361fcb200f23af86c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092496"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095355"
 ---
-# <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Virtuele netwerk service-eind punten en-regels gebruiken voor servers in Azure SQL Database
+# <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Service-eindpunten en regels voor virtuele netwerken gebruiken voor servers in Azure SQL Database
 
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-*Regels voor virtuele netwerken* zijn een firewall beveiligings functie waarmee wordt bepaald of de server voor uw data bases en elastische pools in [Azure SQL database](sql-database-paas-overview.md) of voor uw data bases in [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) communicatie accepteert die wordt verzonden vanuit bepaalde subnetten in virtuele netwerken. In dit artikel wordt uitgelegd waarom de regels voor virtuele netwerken soms de beste manier zijn om communicatie met uw data base in SQL Database en Azure Synapse Analytics veilig toe te staan.
+De *regels voor virtuele netwerken* zijn een firewall beveiligings functie waarmee wordt bepaald of de server voor uw data bases en elastische pools in [Azure SQL database](sql-database-paas-overview.md) of voor uw toegewezen SQL-groep (voorheen SQL DW)-data bases in [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) communicatie accepteert die wordt verzonden vanuit bepaalde subnetten in virtuele netwerken. In dit artikel wordt uitgelegd waarom de regels voor virtuele netwerken soms de beste manier zijn om communicatie met uw data base in SQL Database en Azure Synapse Analytics veilig toe te staan.
 
 > [!NOTE]
 > Dit artikel is van toepassing op zowel SQL Database als Azure Synapse Analytics. Ter vereenvoudiging verwijst de term *Data Base* naar beide data bases in SQL database en Azure Synapse Analytics. Alle verwijzingen naar de *Server* verwijzen ook naar de [logische SQL-Server](logical-servers.md) die als host fungeert voor SQL database en Azure Synapse Analytics.
@@ -244,7 +244,7 @@ U moet al een subnet hebben dat is gelabeld met de specifieke naam van het eindp
 
 ## <a name="azure-portal-steps"></a>Azure Portal stappen
 
-1. Meld u aan bij de [Azure-portal][http-azure-portal-link-ref-477t].
+1. Meld u aan bij [Azure Portal][http-azure-portal-link-ref-477t].
 
 1. Zoek en selecteer **SQL-servers** en selecteer vervolgens uw server. Onder **beveiliging** selecteert u **firewalls en virtuele netwerken**.
 

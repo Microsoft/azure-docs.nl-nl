@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 08/07/2020
-ms.openlocfilehash: 62cb8db094cf1bfd7d81b1da06dd7a1b743ec045
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 23af7b3f7cfd5ec0531c5cac73cf8a334ef4aa62
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347479"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096437"
 ---
 # <a name="create-an-iot-edge-module-offer"></a>Aanbieding voor IoT Edge-module maken
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u een Internet of Things (IoT) Edge-module a
 ## <a name="create-a-new-offer"></a>Een nieuwe aanbieding maken
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-2. Selecteer in het menu links de optie **commerciële Marketplace** -  >  **overzicht**.
+2. Selecteer in het menu links de optie **commerciële Marketplace**-  >  **overzicht**.
 3. Selecteer op de pagina overzicht **+ nieuwe aanbieding**  >  **IOT Edge module**.
 
     ![Illustreert het navigatie menu.](./media/new-offer-iot-edge.png)
@@ -78,7 +78,7 @@ Wanneer u uw aanbieding naar Marketplace publiceert met het partner centrum, kun
 
 Hier volgen enkele aanvullende bronnen voor het beheer van leads:
 
-- [Leads van klanten van uw aanbieding voor commerciële Marketplace](commercial-marketplace-get-customer-leads.md)
+- [Leads van uw aanbieding in de commerciële marketplace](commercial-marketplace-get-customer-leads.md)
 - [Veelgestelde vragen over Lead beheer](../lead-management-faq.md#common-questions-about-lead-management)
 - [Problemen met configuratie fouten van de lead oplossen](../lead-management-faq.md#publishing-config-errors)
 - [Overzicht Lead beheer](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf) PDF (zorg ervoor dat de pop-upblokkering is uitgeschakeld).
@@ -131,7 +131,7 @@ Hier definieert u de details van het aanbod dat op Marketplace wordt weer gegeve
 > [!NOTE]
 > De details van de aanbieding hoeven niet in het Engels te zijn als de beschrijving van de aanbieding begint met de woord groep ' deze toepassing is alleen beschikbaar in [niet-Engelse taal] '. Het is ook handig om een nuttige koppeling te bieden om inhoud te bieden in een andere taal dan die wordt gebruikt in de details van de aanbieding.
 
-### <a name="name"></a>Naam
+### <a name="name"></a>Name
 
 De naam die u hier opgeeft, wordt weer gegeven als de titel van uw aanbieding. Dit veld is vooraf ingevuld met de tekst die u hebt ingevoerd in het vak **aanbiedings alias** wanneer u de aanbieding hebt gemaakt. U kunt deze naam later wijzigen.
 
@@ -149,7 +149,7 @@ Geef een korte beschrijving van uw aanbieding. Dit kan Maxi maal 100 tekens lang
 
 Geef een gedetailleerdere beschrijving van uw aanbieding. Dit kan Maxi maal 256 tekens lang zijn en wordt gebruikt in Zoek resultaten voor Marketplace.
 
-### <a name="description"></a>Beschrijving
+### <a name="description"></a>Description
 
 [!INCLUDE [Long description-1](./includes/long-description-1.md)]
 
@@ -184,7 +184,7 @@ U moet de naam, het e-mail adres en het telefoon nummer opgeven voor een **onder
 
 Geef in de sectie **ondersteunings contact persoon** het webadres op van de **ondersteunings website** waar partners ondersteuning voor uw aanbieding kunnen vinden op basis van het feit of de aanbieding beschikbaar is in wereld wijd Azure, Azure Government of beide.
 
-Geef in de sectie **contact persoon** van het CSP-programma de koppeling op ( **CSP-programma marketing materiaal** ) waarin CSP-partners marketing materiaal voor uw aanbieding kunnen vinden.
+Geef in de sectie **contact persoon** van het CSP-programma de koppeling op (**CSP-programma marketing materiaal**) waarin CSP-partners marketing materiaal voor uw aanbieding kunnen vinden.
 
 #### <a name="additional-marketplace-listing-resources"></a>Aanvullende bronnen voor Marketplace-lijst
 
@@ -234,9 +234,9 @@ Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in
 3. Ondersteunings adres (koppeling)
 4. Voorwaarden
 5. Adres van privacybeleid (koppeling)
-6. Naam
+6. Name
 7. Samenvatting
-8. Beschrijving
+8. Description
 9. Handige koppelingen
 10. Scherm afbeeldingen/Video's
 
@@ -305,8 +305,8 @@ Nadat u uw plannen hebt gemaakt, wordt op het tabblad Overzicht van het **plan**
 
 De acties die beschikbaar zijn in het plan overzicht variëren, afhankelijk van de huidige status van uw abonnement. Deze omvatten:
 
-- **Concept verwijderen** : als de plan status een concept is.
-- **Verkoop plan stoppen** : als de plan status Live is gepubliceerd.
+- **Concept verwijderen**: als de plan status een concept is.
+- **Verkoop plan stoppen**: als de plan status Live is gepubliceerd.
 
 ### <a name="create-new-plan"></a>Nieuw plan maken
 
@@ -403,15 +403,15 @@ U kunt richten op meerdere platformen en verschillende versies van de module con
 
 U geeft de volgende informatie op het tabblad **Details van de afbeeldings opslagplaats** .
 
-**Selecteer de installatie kopie bron** : Selecteer de optie **Azure container Registry** .
+**Selecteer de installatie kopie bron**: Selecteer de optie **Azure container Registry** .
 
-**Azure-abonnements-id** : Geef de abonnements-id op waarvoor het resource gebruik wordt gerapporteerd en de services worden gefactureerd voor de Azure container Registry die uw container installatie kopie bevatten. U kunt deze ID vinden op de [pagina Abonnementen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) in het Azure Portal.
+**Azure-abonnements-id**: Geef de abonnements-id op waarvoor het resource gebruik wordt gerapporteerd en de services worden gefactureerd voor de Azure container Registry die uw container installatie kopie bevatten. U kunt deze ID vinden op de [pagina Abonnementen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) in het Azure Portal.
 
-**Naam van de Azure-resource groep** : Geef de naam op van de [resource groep](../../azure-resource-manager/management/manage-resource-groups-portal.md) die de Azure container Registry bevat met de container installatie kopie. De resource groep moet toegankelijk zijn in de abonnements-ID (hierboven). U vindt de naam op de pagina [resource groepen](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceGroups) in de Azure Portal.
+**Naam van de Azure-resource groep**: Geef de naam op van de [resource groep](../../azure-resource-manager/management/manage-resource-groups-portal.md) die de Azure container Registry bevat met de container installatie kopie. De resource groep moet toegankelijk zijn in de abonnements-ID (hierboven). U vindt de naam op de pagina [resource groepen](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceGroups) in de Azure Portal.
 
-**Azure container Registry-naam** : Geef de naam op van de [Azure container Registry](../../container-registry/container-registry-intro.md) met de container installatie kopie. Het container register moet aanwezig zijn in de Azure-resource groep die u eerder hebt opgegeven. Geef alleen de register naam op, niet de volledige naam van de aanmeldings server. Zorg ervoor dat u **azurecr.io** weglaat uit de naam. U kunt de register naam vinden op de [pagina container registers](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ContainerRegistry%2Fregistries) in de Azure Portal.
+**Azure container Registry-naam**: Geef de naam op van de [Azure container Registry](../../container-registry/container-registry-intro.md) met de container installatie kopie. Het container register moet aanwezig zijn in de Azure-resource groep die u eerder hebt opgegeven. Geef alleen de register naam op, niet de volledige naam van de aanmeldings server. Zorg ervoor dat u **azurecr.io** weglaat uit de naam. U kunt de register naam vinden op de [pagina container registers](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ContainerRegistry%2Fregistries) in de Azure Portal.
 
-**Gebruikers naam van de beheerder voor de Azure container Registry** : Geef de [gebruikers naam](../../container-registry/container-registry-authentication.md#admin-account)van de beheerder op die is gekoppeld aan de Azure container Registry met de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. Als u de gebruikers naam en het wacht woord van de beheerder wilt ophalen, stelt u de eigenschap **beheerder** in op **True** met behulp van de Azure Command-Line interface (CLI). U kunt desgewenst **beheerder** instellen om in te **scha kelen** in de Azure Portal.
+**Gebruikers naam van de beheerder voor de Azure container Registry**: Geef de [gebruikers naam](../../container-registry/container-registry-authentication.md#admin-account)van de beheerder op die is gekoppeld aan de Azure container Registry met de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. Als u de gebruikers naam en het wacht woord van de beheerder wilt ophalen, stelt u de eigenschap **beheerder** in op **True** met behulp van de Azure Command-Line interface (CLI). U kunt desgewenst **beheerder** instellen om in te **scha kelen** in de Azure Portal.
 
 :::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Illustreert het dialoog venster update container Registry.":::
 
@@ -419,7 +419,7 @@ U geeft de volgende informatie op het tabblad **Details van de afbeeldings opsla
 
 1. Gebruiker met beheerdersrechten
 
-<br>**Wacht woord voor de Azure container Registry** : Geef het wacht woord op voor de beheerder van de gebruikers naam die is gekoppeld aan de Azure container Registry en heeft de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. U kunt het wacht woord ophalen van de Azure portal door naar **container Registry**  >  **toegangs sleutels** of met Azure CLI te gaan met behulp van de [weer geven opdracht.](/cli/azure/acr/credential#az-acr-credential-show)
+<br>**Wacht woord voor de Azure container Registry**: Geef het wacht woord op voor de beheerder van de gebruikers naam die is gekoppeld aan de Azure container Registry en heeft de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. U kunt het wacht woord ophalen van de Azure portal door naar **container Registry**  >  **toegangs sleutels** of met Azure CLI te gaan met behulp van de [weer geven opdracht.](/cli/azure/acr/credential#az-acr-credential-show)
 
 :::image type="content" source="media/example-iot-access-keys.png" alt-text="Illustreert het scherm toegangs sleutel in de Azure Portal.":::
 
@@ -429,7 +429,10 @@ U geeft de volgende informatie op het tabblad **Details van de afbeeldings opsla
 2. Gebruikersnaam
 3. Wachtwoord
 
-**De naam van de opslag plaats in de Azure container Registry**. Geef de naam op van de Azure Container Registry opslag plaats met uw installatie kopie. U geeft de naam van de opslag plaats op wanneer u de installatie kopie naar het REGI ster pusht. U kunt de naam van de opslag plaats vinden door naar de [Container Registry](https://azure.microsoft.com/services/container-registry/)  >  **pagina container Registry opslagplaatsen** te gaan. Zie [container register opslagplaatsen weer geven in de Azure Portal](../../container-registry/container-registry-repositories.md)voor meer informatie. Nadat de naam is ingesteld, kan deze niet meer worden gewijzigd. Gebruik een unieke naam voor elke aanbieding in uw account.
+**De naam van de opslag plaats in de Azure container Registry**. Geef de naam op van de Azure Container Registry opslag plaats met uw installatie kopie. U geeft de naam van de opslag plaats op wanneer u de installatie kopie naar het REGI ster pusht. U kunt de naam van de opslag plaats vinden door naar de [](https://azure.microsoft.com/services/container-registry/)  >  **pagina container Registry opslagplaatsen** te gaan. Zie [container register opslagplaatsen weer geven in de Azure Portal](../../container-registry/container-registry-repositories.md)voor meer informatie. Nadat de naam is ingesteld, kan deze niet meer worden gewijzigd. Gebruik een unieke naam voor elke aanbieding in uw account.
+
+> [!NOTE]
+> Er wordt geen ondersteuning geboden voor versleutelde Azure Container Registry voor de module voor Edge-certificaten. Azure Container Registry moet worden gemaakt zonder dat versleuteling is ingeschakeld.
 
 ### <a name="image-tags-for-new-versions-of-your-offer"></a>Afbeeldings Tags voor nieuwe versies van uw aanbieding
 

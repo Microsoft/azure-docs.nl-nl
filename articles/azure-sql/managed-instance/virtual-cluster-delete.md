@@ -1,6 +1,6 @@
 ---
-title: Een subnet verwijderen na het verwijderen van een beheerd exemplaar van een SQL-beheerd exemplaar
-description: Meer informatie over het verwijderen van een virtueel Azure-netwerk na het verwijderen van een beheerd exemplaar van Azure SQL Managed instance.
+title: Een subnet verwijderen na het verwijderen van een SQL Managed instance
+description: Meer informatie over het verwijderen van een virtueel Azure-netwerk na het verwijderen van een Azure SQL Managed instance.
 services: sql-database
 ms.service: sql-managed-instance
 ms.subservice: operations
@@ -11,25 +11,25 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, sstein
 ms.date: 06/26/2019
-ms.openlocfilehash: 4ed8f6dc90debddd17282f8f96962ffd78055030
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 496ff6c7ec39706a99bb40447b6443ca71f19e5e
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791661"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093673"
 ---
-# <a name="delete-a-subnet-after-deleting-a-managed-instance-of-sql-managed-instance"></a>Een subnet verwijderen na het verwijderen van een beheerd exemplaar van een SQL-beheerd exemplaar
+# <a name="delete-a-subnet-after-deleting-an-azure-sql-managed-instance"></a>Een subnet verwijderen na het verwijderen van een door Azure SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-Dit artikel bevat richt lijnen voor het hand matig verwijderen van een subnet na het verwijderen van het laatste beheerde exemplaar van Azure SQL Managed instance.
+Dit artikel bevat richt lijnen voor het hand matig verwijderen van een subnet na het verwijderen van het laatste beheerde exemplaar van Azure SQL.
 
-Beheerde exemplaren worden geïmplementeerd in [virtuele clusters](connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture). Elk virtueel cluster is gekoppeld aan een subnet. Het virtuele cluster wordt gedurende 12 uur na het verwijderen van de laatste instantie bewaard, zodat u sneller beheerde instanties kunt maken in hetzelfde subnet. Er worden geen kosten in rekening gebracht voor het bewaren van een leeg virtueel cluster. Gedurende deze periode kan het subnet dat is gekoppeld aan het virtuele-cluster, niet worden verwijderd.
+SQL Managed instances worden geïmplementeerd in [virtuele clusters](connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture). Elk virtueel cluster is gekoppeld aan een subnet. Het virtuele cluster wordt gedurende 12 uur na het verwijderen van de laatste instantie bewaard, zodat u sneller SQL-beheerde instanties in hetzelfde subnet kunt maken. Er worden geen kosten in rekening gebracht voor het bewaren van een leeg virtueel cluster. Gedurende deze periode kan het subnet dat is gekoppeld aan het virtuele-cluster, niet worden verwijderd.
 
 Als u 12 uur niet wilt wachten en de voor keur geeft om het virtuele cluster en het subnet eerder te verwijderen, kunt u dit hand matig doen. Verwijder het virtuele cluster hand matig met behulp van de Azure Portal of de API voor virtuele clusters.
 
 > [!IMPORTANT]
-> - Het virtuele cluster mag geen beheerde instanties bevatten zodat de verwijdering kan worden voltooid. 
-> - Het verwijderen van een virtueel cluster is ongeveer 1,5 uur lang operationeel (Zie bewerkingen voor beheer van [beheerde exemplaren](./sql-managed-instance-paas-overview.md#management-operations) voor actuele virtuele cluster verwijderings tijd). Het virtuele cluster wordt nog steeds weer gegeven in de portal totdat dit proces is voltooid.
+> - Het virtuele cluster mag geen SQL Managed instances bevatten om de verwijdering te kunnen volt ooien. 
+> - Het verwijderen van een virtueel cluster is een langlopende bewerking die ongeveer 1,5 uur duurt (Zie [bewerkingen voor het beheer van SQL-beheerde exemplaren](./sql-managed-instance-paas-overview.md#management-operations) voor de actuele tijd voor het verwijderen van virtuele clusters). Het virtuele cluster wordt nog steeds weer gegeven in de portal totdat dit proces is voltooid.
 
 ## <a name="delete-a-virtual-cluster-from-the-azure-portal"></a>Een virtueel cluster verwijderen uit het Azure Portal
 
@@ -37,14 +37,14 @@ Als u een virtueel cluster wilt verwijderen met behulp van de Azure Portal, zoek
 
 ![Scherm afbeelding van de Azure Portal, waarbij het zoekvak is gemarkeerd](./media/virtual-cluster-delete/virtual-clusters-search.png)
 
-Nadat u het virtuele cluster dat u wilt verwijderen hebt gevonden, selecteert u deze resource en selecteert u **verwijderen** . U wordt gevraagd om het verwijderen van het virtuele cluster te bevestigen.
+Nadat u het virtuele cluster dat u wilt verwijderen hebt gevonden, selecteert u deze resource en selecteert u **verwijderen**. U wordt gevraagd om het verwijderen van het virtuele cluster te bevestigen.
 
 ![Scherm opname van het dash board van de Azure Portal virtuele clusters, met de optie verwijderen gemarkeerd](./media/virtual-cluster-delete/virtual-clusters-delete.png)
 
 In Azure Portal meldingen wordt een bevestiging weer gegeven dat de aanvraag voor het verwijderen van het virtuele cluster is verzonden. De Verwijder bewerking zelf duurt ongeveer 1,5 uur, waardoor het virtuele cluster nog steeds zichtbaar is in de portal. Zodra het proces is voltooid, is het virtuele cluster niet meer zichtbaar en wordt het bijbehorende subnet vrijgegeven voor hergebruik.
 
 > [!TIP]
-> Als er geen beheerde exemplaren worden weer gegeven in het virtuele cluster en u het virtuele cluster niet kunt verwijderen, moet u ervoor zorgen dat er geen doorlopende implementatie van de instantie wordt uitgevoerd. Dit omvat gestarte en geannuleerde implementaties die nog worden uitgevoerd. Dit komt doordat deze bewerkingen nog steeds gebruikmaken van het virtuele cluster, zodat het niet meer kan worden verwijderd. Door het tabblad **implementaties** van de resource groep te bekijken waarop het exemplaar is geïmplementeerd, wordt aangegeven welke implementaties worden uitgevoerd. Wacht in dit geval tot de implementatie is voltooid, verwijder het beheerde exemplaar en verwijder vervolgens het virtuele cluster.
+> Als er geen door SQL beheerde exemplaren worden weer gegeven in het virtuele cluster en u het virtuele cluster niet kunt verwijderen, moet u ervoor zorgen dat er geen actieve exemplaar-implementatie wordt uitgevoerd. Dit omvat gestarte en geannuleerde implementaties die nog worden uitgevoerd. Dit komt doordat deze bewerkingen nog steeds gebruikmaken van het virtuele cluster, zodat het niet meer kan worden verwijderd. Door het tabblad **implementaties** van de resource groep te bekijken waarop het exemplaar is geïmplementeerd, wordt aangegeven welke implementaties worden uitgevoerd. Wacht in dit geval tot de implementatie is voltooid, verwijder het SQL Managed instance en verwijder vervolgens het virtuele cluster.
 
 ## <a name="delete-a-virtual-cluster-by-using-the-api"></a>Een virtueel cluster verwijderen met de API
 
@@ -55,5 +55,5 @@ Als u een virtueel cluster wilt verwijderen via de API, gebruikt u de URI-para m
 - Zie [Wat is Azure SQL Managed instance?](sql-managed-instance-paas-overview.md)voor een overzicht.
 - Meer informatie over [connectiviteits architectuur in SQL Managed instance](connectivity-architecture-overview.md).
 - Meer informatie over het [wijzigen van een bestaand virtueel netwerk voor een door SQL beheerd exemplaar](vnet-existing-add-subnet.md).
-- Zie [een beheerd exemplaar maken](instance-create-quickstart.md)voor een zelf studie waarin wordt getoond hoe u een virtueel netwerk maakt, een beheerd exemplaar maakt en een Data Base herstelt vanuit een back-up van de data base.
+- Voor een zelf studie waarin wordt getoond hoe u een virtueel netwerk maakt, een Azure SQL Managed instance maakt en een Data Base herstelt vanuit een back-up van een Data Base, raadpleegt u [een Azure SQL Managed instance (Portal) maken](instance-create-quickstart.md).
 - Zie [Configure a Custom DNS](custom-dns-configure.md)(Engelstalig) voor DNS-problemen.

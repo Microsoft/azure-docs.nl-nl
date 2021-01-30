@@ -9,15 +9,13 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 10/02/2020
 ms.author: aahi
-ms.openlocfilehash: 00c1c8ddab9214bf7698c21b05c24afa36ec20d9
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 614d0fe69cee88791559758d5e08dda66672669b
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98147475"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097258"
 ---
-## <a name="text-analytics-for-health-categories-entities-and-attributes"></a>Text Analytics voor status Categorieën, entiteiten en kenmerken
-
 In [Text Analytics status](../../how-tos/text-analytics-for-health.md) worden medische concepten in de volgende categorieën gedetecteerd.  (Alleen Engelse tekst wordt ondersteund in deze container preview en er wordt slechts één model versie in elke container installatie kopie gegeven.)
 
 

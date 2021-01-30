@@ -12,12 +12,12 @@ author: dalechen
 ms.author: ninarn
 ms.reviewer: sstein, vanto
 ms.date: 01/14/2020
-ms.openlocfilehash: f8c94e36a1a6d1f675e9d6a7dde456dbf6eb8897
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9f2e755047910aefa89c2f187cda956aca608b98
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791355"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093754"
 ---
 # <a name="troubleshoot-transient-connection-errors-in-sql-database-and-sql-managed-instance"></a>Tijdelijke verbindings fouten in SQL Database en SQL Managed instance oplossen
 
@@ -31,7 +31,7 @@ In dit artikel wordt beschreven hoe u verbindings fouten en tijdelijke fouten vo
 
 Een tijdelijke fout, ook wel bekend als een tijdelijke fout, heeft een onderliggende oorzaak die binnenkort wordt opgelost. Een incidentele oorzaak van tijdelijke fouten is wanneer het Azure-systeem snel hardwarebronnen verschuift voor een betere taak verdeling van verschillende werk belastingen. De meeste van deze herconfiguratie gebeurtenissen eindigen in minder dan 60 seconden. Tijdens deze herconfiguraties periode hebt u mogelijk problemen met het maken van verbinding met uw data base in SQL Database. Toepassingen die verbinding maken met uw data base moeten worden gebouwd om deze tijdelijke fouten te verwachten. Als u deze wilt afhandelen, implementeert u de logica voor opnieuw proberen in hun code in plaats van deze te halen aan gebruikers als toepassings fouten.
 
-Als uw client programma ADO.NET gebruikt, wordt het programma op de tijdelijke fout gemeld door het genereren van **SQLException** .
+Als uw client programma ADO.NET gebruikt, wordt het programma op de tijdelijke fout gemeld door het genereren van **SQLException**.
 
 <a id="connection-versus-command" name="connection-versus-command"></a>
 
@@ -126,7 +126,7 @@ Als u deze test praktisch wilt uitvoeren, herkent het programma een runtime-para
 
 ## <a name="net-sqlconnection-parameters-for-connection-retry"></a>.NET SqlConnection-para meters voor nieuwe verbinding
 
-Als uw client programma verbinding maakt met uw data base in SQL Database met behulp van de .NET Framework Class **System. data. SqlClient. SqlConnection** , gebruikt u .net 4.6.1 of hoger (of .net core), zodat u de nieuwe functie verbinding opnieuw kunt gebruiken. Zie de [eigenschap SqlConnection. Connections Tring](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring?view=netframework-4.8&preserve-view=true)(Engelstalig) voor meer informatie over de functie.
+Als uw client programma verbinding maakt met uw data base in SQL Database met behulp van de .NET Framework Class **System. data. SqlClient. SqlConnection**, gebruikt u .net 4.6.1 of hoger (of .net core), zodat u de nieuwe functie verbinding opnieuw kunt gebruiken. Zie de [eigenschap SqlConnection. Connections Tring](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring?view=netframework-4.8&preserve-view=true)(Engelstalig) voor meer informatie over de functie.
 
 <!--
 2015-11-30, FwLink 393996 points to dn632678.aspx, which links to a downloadable .docx related to SqlClient and SQL Server 2014.
@@ -134,9 +134,9 @@ Als uw client programma verbinding maakt met uw data base in SQL Database met be
 
 Wanneer u de [Connection String](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring) voor uw **SqlConnection** -object bouwt, coördineert u de waarden uit de volgende para meters:
 
-- **ConnectRetryCount** : de &nbsp; &nbsp; standaard waarde is 1. Het bereik is 0 tot en met 255.
-- **ConnectRetryInterval** : de &nbsp; &nbsp; standaard waarde is 10 seconden. Het bereik is 1 tot en met 60.
-- Verbindingstime **-out** : de &nbsp; &nbsp; standaard waarde is 15 seconden. Het bereik is 0 tot en met 2147483647.
+- **ConnectRetryCount**: de &nbsp; &nbsp; standaard waarde is 1. Het bereik is 0 tot en met 255.
+- **ConnectRetryInterval**: de &nbsp; &nbsp; standaard waarde is 10 seconden. Het bereik is 1 tot en met 60.
+- Verbindingstime **-out**: de &nbsp; &nbsp; standaard waarde is 15 seconden. Het bereik is 0 tot en met 2147483647.
 
 Met name de gekozen waarden moeten de volgende gelijkheid doen: time-out voor verbinding = ConnectRetryCount * ConnectionRetryInterval
 
@@ -189,7 +189,7 @@ Normaal gesp roken moet u ervoor zorgen dat alleen poort 1433 is geopend voor ui
 Als uw client programma bijvoorbeeld wordt gehost op een Windows-computer, kunt u Windows Firewall op de host gebruiken om poort 1433 te openen.
 
 1. Open het Configuratiescherm.
-2. Selecteer **alle configuratie scherm-items**  >  **Windows Firewall**  >  **instellingen** voor de  >  **Outbound Rules**  >  **Actions**  >  **regel** voor uitgaande verbindingen
+2. Selecteer **alle configuratie scherm-items**  >  **Windows Firewall**  >  **instellingen** voor de  >    >    >  **regel** voor uitgaande verbindingen
 
 Als uw client programma wordt gehost op een virtuele machine (VM) van Azure, Lees [dan de poorten na 1433 voor ADO.NET 4,5 en SQL database](adonet-v12-develop-direct-route-ports.md).
 
@@ -276,7 +276,7 @@ Enter prise Library 6 (EntLib60) biedt .NET-beheerde klassen om te helpen bij he
 
 Hier volgen enkele Transact-SQL-instructies voor het uitvoeren van query's op fout logboeken en andere informatie.
 
-| Query op logboek | Beschrijving |
+| Query op logboek | Description |
 |:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |De weer gave [sys.event_log](/sql/relational-databases/system-catalog-views/sys-event-log-azure-sql-database) biedt informatie over afzonderlijke gebeurtenissen, waaronder een aantal dat kan leiden tot tijdelijke fouten of verbindings fouten.<br/><br/>In het ideale geval kunt u de **start_time** -of **end_time** waarden correleren met informatie over wanneer het client programma problemen heeft ondervonden.<br/><br/>U moet verbinding maken met de *hoofd* database om deze query uit te voeren. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |De weer gave [sys.database_connection_stats](/sql/relational-databases/system-catalog-views/sys-database-connection-stats-azure-sql-database) biedt geaggregeerde aantallen gebeurtenis typen voor aanvullende diagnostische gegevens.<br/><br/>U moet verbinding maken met de *hoofd* database om deze query uit te voeren. |
@@ -331,15 +331,15 @@ Enter prise Library 6 (EntLib60) is een framework van .NET-klassen waarmee u kra
 Pogings logica voor het afhandelen van tijdelijke fouten is één gebied waarin EntLib60 kan helpen. Zie voor meer informatie [4-Perseverance, geheim van alle Triumphs: gebruik het toepassings blok voor de tijdelijke fout afhandeling](/previous-versions/msp-n-p/dn440719(v=pandp.60)).
 
 > [!NOTE]
-> De bron code voor EntLib60 is beschikbaar als open bare down load van het [Download centrum](https://go.microsoft.com/fwlink/p/?LinkID=290898). Micro soft heeft geen plannen om verdere onderdelen updates of onderhouds updates te maken voor EntLib.
+> De bron code voor EntLib60 is beschikbaar als open bare down load van het [Download centrum](https://github.com/MicrosoftArchive/enterprise-library). Micro soft heeft geen plannen om verdere onderdelen updates of onderhouds updates te maken voor EntLib.
 
 <a id="entlib60-classes-for-transient-errors-and-retry" name="entlib60-classes-for-transient-errors-and-retry"></a>
 
 ### <a name="entlib60-classes-for-transient-errors-and-retry"></a>EntLib60-klassen voor tijdelijke fouten en nieuwe poging
 
-De volgende EntLib60-klassen zijn vooral handig voor de logica voor opnieuw proberen. Al deze klassen vindt u in of onder de naam ruimte **micro soft. practices. EnterpriseLibrary. TransientFaultHandling** .
+De volgende EntLib60-klassen zijn vooral handig voor de logica voor opnieuw proberen. Al deze klassen vindt u in of onder de naam ruimte **micro soft. practices. EnterpriseLibrary. TransientFaultHandling**.
 
-In de naam ruimte **micro soft. practices. EnterpriseLibrary. TransientFaultHandling** :
+In de naam ruimte **micro soft. practices. EnterpriseLibrary. TransientFaultHandling**:
 
 - Klasse **RetryPolicy**
   - **ExecuteAction** -methode
@@ -348,7 +348,7 @@ In de naam ruimte **micro soft. practices. EnterpriseLibrary. TransientFaultHand
 - Klasse **ReliableSqlConnection**
   - Methode **ExecuteCommand**
 
-In de naam ruimte **Microsoft. practices. EnterpriseLibrary. TransientFaultHandling. TestSupport** :
+In de naam ruimte **Microsoft. practices. EnterpriseLibrary. TransientFaultHandling. TestSupport**:
 
 - Klasse **AlwaysTransientErrorDetectionStrategy**
 - Klasse **NeverTransientErrorDetectionStrategy**

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2018
 ms.author: genli
-ms.openlocfilehash: 18f2128b6869b4047cc6f35e1638aca81233a014
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: fe4c17b74cd786d03bd19257dea190a21ecaa9f5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219229"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095638"
 ---
 # <a name="network-virtual-appliance-issues-in-azure"></a>Problemen met het virtuele netwerk apparaat in azure
 
@@ -30,7 +30,7 @@ U kunt problemen met de virtuele machine of VPN-verbinding en-fouten ondervinden
 Technische ondersteuning voor Nva's van derden en hun integratie met het Azure-platform wordt geboden door de leverancier van NVA.
 
 > [!NOTE]
-> Als u een connectiviteits-of routerings probleem hebt met een NVA, [neemt u rechtstreeks contact op met de leverancier van de NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines) .
+> Als u een connectiviteits-of routerings probleem hebt met een NVA, [neemt u rechtstreeks contact op met de leverancier van de NVA](https://mskb.pkisolutions.com/kb/2984655) .
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
@@ -52,7 +52,7 @@ Technische ondersteuning voor Nva's van derden en hun integratie met het Azure-p
 
 ## <a name="check-the-minimum-configuration-requirements-for-nvas-on-azure"></a>Controleer de minimale configuratie vereisten voor Nva's op Azure
 
-Elke NVA heeft basis vereisten voor de configuratie om goed te kunnen werken in Azure. De volgende sectie bevat de stappen om deze basis configuraties te controleren. [Neem contact op met de leverancier van de NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines)voor meer informatie.
+Elke NVA heeft basis vereisten voor de configuratie om goed te kunnen werken in Azure. De volgende sectie bevat de stappen om deze basis configuraties te controleren. [Neem contact op met de leverancier van de NVA](https://mskb.pkisolutions.com/kb/2984655)voor meer informatie.
 
 **Controleer of door sturen via IP is ingeschakeld op NVA**
 
@@ -112,17 +112,17 @@ PowerShell gebruiken
     ```console
    netstat -an | grep -i listen
     ```
-2. Als u de TCP-poort die wordt gebruikt door de NVA-software die wordt vermeld in de resultaten niet ziet, moet u de toepassing op de NVA en VM configureren om te Luis teren en te reageren op verkeer dat deze poorten bereikt. [Neem zo nodig contact op met de NVA-leverancier](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+2. Als u de TCP-poort die wordt gebruikt door de NVA-software die wordt vermeld in de resultaten niet ziet, moet u de toepassing op de NVA en VM configureren om te Luis teren en te reageren op verkeer dat deze poorten bereikt. [Neem zo nodig contact op met de NVA-leverancier](https://mskb.pkisolutions.com/kb/2984655).
 
 ## <a name="check-nva-performance"></a>Prestaties van NVA controleren
 
 ### <a name="validate-vm-cpu"></a>VM-CPU valideren
 
-Als het CPU-gebruik bijna 100 procent wordt, kunt u problemen ondervinden die van invloed zijn op het netwerk pakket. Uw VM rapporteert gemiddeld CPU-verbruik voor een specifieke tijds Panne in het Azure Portal. Onderzoek tijdens een CPU-piek welk proces op de gast-VM de hoge CPU veroorzaakt en verminder, indien mogelijk. U moet mogelijk ook de grootte van de virtuele machine wijzigen in een grotere SKU-grootte of, voor schaal sets voor virtuele machines, het aantal instanties verhogen of instellen op automatisch schalen op het CPU-gebruik. Neem voor beide problemen [contact op met de NVA-leverancier voor hulp](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines), indien nodig.
+Als het CPU-gebruik bijna 100 procent wordt, kunt u problemen ondervinden die van invloed zijn op het netwerk pakket. Uw VM rapporteert gemiddeld CPU-verbruik voor een specifieke tijds Panne in het Azure Portal. Onderzoek tijdens een CPU-piek welk proces op de gast-VM de hoge CPU veroorzaakt en verminder, indien mogelijk. U moet mogelijk ook de grootte van de virtuele machine wijzigen in een grotere SKU-grootte of, voor schaal sets voor virtuele machines, het aantal instanties verhogen of instellen op automatisch schalen op het CPU-gebruik. Neem voor beide problemen [contact op met de NVA-leverancier voor hulp](https://mskb.pkisolutions.com/kb/2984655), indien nodig.
 
 ### <a name="validate-vm-network-statistics"></a>VM-netwerk statistieken valideren
 
-Als het VM-netwerk pieken gebruikt of peri Oden met een hoog gebruik laat zien, moet u mogelijk ook de SKU-grootte van de virtuele machine verhogen om hogere doorvoer mogelijkheden te verkrijgen. U kunt de virtuele machine ook opnieuw implementeren door versneld netwerken in te scha kelen. Als u wilt controleren of de NVA de functie voor versneld netwerken ondersteunt, neemt u, indien nodig, [contact op met de leverancier van de NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Als het VM-netwerk pieken gebruikt of peri Oden met een hoog gebruik laat zien, moet u mogelijk ook de SKU-grootte van de virtuele machine verhogen om hogere doorvoer mogelijkheden te verkrijgen. U kunt de virtuele machine ook opnieuw implementeren door versneld netwerken in te scha kelen. Als u wilt controleren of de NVA de functie voor versneld netwerken ondersteunt, neemt u, indien nodig, [contact op met de leverancier van de NVA](https://mskb.pkisolutions.com/kb/2984655).
 
 ## <a name="advanced-network-administrator-troubleshooting"></a>Problemen oplossen met geavanceerde netwerk beheerders
 
@@ -146,4 +146,4 @@ Leg een gelijktijdige netwerk tracering op de bron-VM, de NVA en de doel-VM vast
 
 Als u de pakketten die binnenkomen aan de back-end-VM-tracering niet ziet, zijn er waarschijnlijk een NSG-of UDR-storing of zijn de NVA-routerings tabellen onjuist.
 
-Als de inkomende pakketten wel worden weergegeven, maar er geen antwoord is, moet u mogelijk een probleem met een VM-toepassing of firewall oplossen. Neem voor een van deze problemen [contact op met de NVA-leverancier voor hulp, indien nodig](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Als de inkomende pakketten wel worden weergegeven, maar er geen antwoord is, moet u mogelijk een probleem met een VM-toepassing of firewall oplossen. Neem voor een van deze problemen [contact op met de NVA-leverancier voor hulp, indien nodig](https://mskb.pkisolutions.com/kb/2984655).

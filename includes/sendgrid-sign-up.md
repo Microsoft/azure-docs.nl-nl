@@ -4,17 +4,15 @@ ms.service: multiple
 ms.topic: include
 ms.date: 11/25/2018
 ms.author: gwallace
-ms.openlocfilehash: 3590b8fdb67b25e0d4389e814aefcc4d18b1193c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5bc00f4de95d22eec71f9b1b2504b00f506232dc
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015419"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99215456"
 ---
-Azure-klanten kunnen iedere maand 25.000 gratis e-mails ontgrendelen. Met deze 25.000 gratis maandelijkse e-mails krijgt u toegang tot geavanceerde rapportage en analyse en [alle api's][all APIs] (Web, SMTP, event, parse en meer). Voor informatie over extra diensten die door SendGrid worden aangeboden, gaat u naar de pagina met [SendGrid-oplossingen][SendGrid Solutions].
-
 ### <a name="to-sign-up-for-a-sendgrid-account"></a>Aanmelden voor een SendGrid-account
-1. Meld u aan bij de [Azure-portal][Azure portal].
+1. Meld u aan bij [Azure Portal][Azure portal].
 2. Selecteer in het menu Azure Portal of de start pagina de optie **een resource maken**.
 
     ![Scherm afbeelding van het menu Azure Portal waarvoor de optie een resource maken is geselecteerd.][command-bar-new]
@@ -30,7 +28,7 @@ Azure-klanten kunnen iedere maand 25.000 gratis e-mails ontgrendelen. Met deze 2
 8. Maak een nieuwe **resourcegroep** of selecteer een bestaande.
 9. Selecteer in het gedeelte **Prijscategorie** het SendGrid-abonnement waar u zich voor wilt aanmelden.
 
-    ![Scherm afbeelding van het dialoog venster een nieuw SendGrid-account maken met de optie uw prijs categorie kiezen en de prijs categorie gratis geselecteerd.][sendgrid-pricing]
+    ![Scherm afbeelding van het dialoog venster een nieuw SendGrid-account maken met de sectie uw prijs categorie kiezen openen][sendgrid-pricing]
 10. Voer een **promotiecode** in als u er een hebt.
 11. Voer uw **contact gegevens** in.
 12. Lees en accepteer de **juridische bepalingen**.

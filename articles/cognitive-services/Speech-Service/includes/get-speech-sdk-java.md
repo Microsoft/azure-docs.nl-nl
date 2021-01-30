@@ -4,16 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: fcc04cc4599681e3542b275d238b75352d690a95
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2ab636679e59536a2ddfaa8603dc2da45811cd2f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93136229"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99214889"
 ---
 :::row:::
     :::column span="3":::
-        De Java SDK voor Android is verpakt als een <a href="https://developer.android.com/studio/projects/android-library" target="_blank">Aar (Android-bibliotheek <span class="docon docon-navigate-external x-hidden-focus"></span> ) </a>, waaronder de benodigde bibliotheken en de vereiste Android-machtigingen. Het wordt gehost in een Maven-opslag plaats op `https://csspeechstorage.blob.core.windows.net/maven/` als pakket `com.microsoft.cognitiveservices.speech:client-sdk:1.14.0` .
+        De Java SDK voor Android is verpakt als een <a href="https://developer.android.com/studio/projects/android-library" target="_blank">Aar (Android-bibliotheek <span class="docon docon-navigate-external x-hidden-focus"></span> ) </a>, waaronder de benodigde bibliotheken en de vereiste Android-machtigingen. Het wordt gehost in een Maven-opslag plaats op `https://csspeechstorage.blob.core.windows.net/maven/` als pakket `com.microsoft.cognitiveservices.speech:client-sdk:1.15.0` .
     :::column-end:::
     :::column:::
         <br>
@@ -32,7 +32,7 @@ Als u het pakket wilt gebruiken uit uw Android Studio project, voert u de volgen
 
 2. Voeg in het bestand *Build. gradle* van module niveau het volgende toe aan de `dependencies` sectie:
   ```gradle
-  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.14.0'
+  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.15.0'
   ```
 
 De Java SDK maakt ook deel uit van de [SDK voor spraak apparaten](../speech-devices-sdk.md).

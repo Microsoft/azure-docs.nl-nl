@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: f5101233f7995fb58fc530e613ba3235a55c783c
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
-ms.translationtype: HT
+ms.openlocfilehash: dbb32aa0cb61024c3d59879775fe73801d2b9668
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97628678"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99214261"
 ---
 ### <a name="functions-2x-and-higher"></a>Functions 2.x en hoger
 
@@ -25,7 +25,7 @@ ms.locfileid: "97628678"
             },
             "initialOffsetOptions": {
                 "type": "fromStart",
-                "enqueuedTime": ""
+                "enqueuedTimeUtc": ""
             }
         }
     }
@@ -38,7 +38,7 @@ ms.locfileid: "97628678"
 |eventProcessorOptions/maxBatchSize|10|Het maximale gebeurtenisaantal dat per ontvangstlus wordt ontvangen.|
 |eventProcessorOptions/prefetchCount|300|Het standaardaantal voor vooraf ophalen dat wordt gebruikt door de onderliggende `EventProcessorHost`. De minimaal toegestane waarde is 10.|
 |initialOffsetOptions/type|fromStart|De locatie in de gegevensstroom van de gebeurtenis waar de verwerking moet worden gestart als een controlepunt niet aanwezig is in de opslag. De beschikbare opties zijn `fromStart` , `fromEnd` en `fromEnqueuedTime`. `fromEnd` verwerkt nieuwe gebeurtenissen die in de wachtrij zijn geplaatst nadat de functie-app werd uitgevoerd. Dit is van toepassing op alle partities.  Raadpleeg de [documentatie over EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.initialoffsetprovider?view=azure-dotnet) voor meer informatie.|
-|initialOffsetOptions/enqueuedTime|N.v.t.| Hiermee wordt de wachtrijtijd aangegeven van de gebeurtenis in de gegevensstroom waar de verwerking moet beginnen. Wanneer `initialOffsetOptions/type` is geconfigureerd als `fromEnqueuedTime`, is deze instelling verplicht. Ondersteunt tijd in alle indelingen die worden ondersteund door [DateTime.Parse()](/dotnet/standard/base-types/parsing-datetime), zoals  `2020-10-26T20:31Z`. U kunt het best ook een tijdzone opgeven. Als er geen tijdzone is opgegeven, gebruikt Functions de lokale tijdzone van de computer waarop de functie-app wordt uitgevoerd. Als u Azure gebruikt, is dat UTC. Raadpleeg de [documentatie over EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.initialoffsetprovider?view=azure-dotnet) voor meer informatie.|
+|initialOffsetOptions/enqueuedTimeUtc|N.v.t.| Hiermee wordt de wachtrijtijd aangegeven van de gebeurtenis in de gegevensstroom waar de verwerking moet beginnen. Wanneer `initialOffsetOptions/type` is geconfigureerd als `fromEnqueuedTime`, is deze instelling verplicht. Ondersteunt tijd in alle indelingen die worden ondersteund door [DateTime.Parse()](/dotnet/standard/base-types/parsing-datetime), zoals  `2020-10-26T20:31Z`. U kunt het best ook een tijdzone opgeven. Als er geen tijdzone is opgegeven, gebruikt Functions de lokale tijdzone van de computer waarop de functie-app wordt uitgevoerd. Als u Azure gebruikt, is dat UTC. Raadpleeg de [documentatie over EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.initialoffsetprovider?view=azure-dotnet) voor meer informatie.|
 > [!NOTE]
 > Zie [Naslaginformatie over host.json voor Azure Functions](../articles/azure-functions/functions-host-json.md) voor naslaginformatie over host.json in Azure Functions 2.x en hoger.
 

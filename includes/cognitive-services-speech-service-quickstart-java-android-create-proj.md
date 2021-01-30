@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: travisw
-ms.openlocfilehash: 2efe17bdf597b7e3ba7d0277f06d4b24e9b51db3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: b987f98281c298da2d634c686d740faf3dda3502
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187553"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99214892"
 ---
 1. Start Android Studio en selecteer **Een nieuw Android Studio-project starten** in het **welkomstscherm**.
 
@@ -27,7 +27,7 @@ Android Studio heeft even de tijd nodig om het nieuwe Android-project voor te be
 
 [!INCLUDE [License notice](cognitive-services-speech-service-license-notice.md)]
 
-De huidige versie van de Speech SDK van Cognitive Services is 1.13.0.
+De huidige versie van de Cognitive Services Speech SDK is 1.15.0.
 
 De Speech SDK voor Android wordt aangeboden als een [AAR (Android Library)](https://developer.android.com/studio/projects/android-library) die de vereiste bibliotheken en Android-machtigingen bevat.
 Deze wordt gehost in een Maven-opslagplaats op https:\//csspeechstorage.blob.core.vensters.net/maven/.
@@ -42,7 +42,7 @@ Stel uw project in voor gebruik van de Speech SDK. Open het venster **Projectstr
 
    ![Schermopname van Afhankelijkheid van bibliotheek](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-android-07-add-module-dependency.png)
 
-1. Voer in het venster dat wordt weergegeven de naam en versie van de Speech SDK voor Android in: *com.microsoft.cognitiveservices.speech:client-sdk:1.13.0*. Selecteer vervolgens **OK**.
+1. Voer in het venster dat wordt weer gegeven de naam en versie van de Speech SDK voor Android, *com. micro soft. cognitiveservices. speech: Client-SDK: 1.15.0*. Selecteer vervolgens **OK**.
    De Speech SDK moet nu worden toegevoegd aan de lijst met afhankelijkheden, zoals wordt weergegeven:
 
    ![Schermopname van Speech SDK in de lijst met afhankelijkheden](../articles/cognitive-services/Speech-Service/media/sdk/qs-java-android-08-dependency-added-1.0.0.png)

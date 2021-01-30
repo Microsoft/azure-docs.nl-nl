@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 729839c8e881f507e103c4644c012d8dffc5c8c6
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 67d6155d35f366429bf0210f18f052d9b6187820
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956265"
+ms.locfileid: "99214319"
 ---
 Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 
@@ -15,7 +15,7 @@ Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 
 Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescript voor Live Video Analytics-resources](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) om de vereiste Azure-resources in uw Azure-abonnement te implementeren. Voer hiervoor de volgende stappen uit:
 
-1. Open [Azure Cloud Shell](https://shell.azure.com).
+1. Open [Azure Cloud Shell](https://ms.portal.azure.com/#cloudshell/).
 1. Als u Cloud Shell voor het eerst gebruikt, wordt u gevraagd een abonnement te selecteren voor het maken van een opslagaccount en een Microsoft Azure-bestandsshare. Selecteer **Opslag maken** om een opslagaccount te maken voor de gegevens van uw Cloud Shell-sessie. Dit opslagaccount is gescheiden van het account dat door het script wordt gemaakt voor gebruik bij uw Azure Media Services-account.
 1. Selecteer in de vervolgkeuzelijst aan de linkerkant van het Cloud Shell-venster **Bash** als uw omgeving.
 

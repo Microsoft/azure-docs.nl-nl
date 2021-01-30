@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 17616a223292ec07186b0a3fba264400423977ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ee27f429dbfd1e550a45bbc26413a1c259c4fbe
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87058760"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092365"
 ---
 # <a name="enable-or-disable-a-firewall-rule-on-an-azure-vm-guest-os"></a>Een firewallregel in een gastbesturingssysteem in- of uitschakelen
 
@@ -95,7 +95,7 @@ Als de virtuele machine online is en toegankelijk is op een andere VM in hetzelf
 
 #### <a name="mitigation-4-remote-registry"></a>Risico beperking 4: extern REGI ster
 
-Als de virtuele machine online is en toegankelijk is op een andere VM in hetzelfde virtuele netwerk, kunt u [extern REGI ster](https://support.microsoft.com/help/314837/how-to-manage-remote-access-to-the-registry) gebruiken op de andere VM.
+Als de virtuele machine online is en toegankelijk is op een andere VM in hetzelfde virtuele netwerk, kunt u [extern REGI ster](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/314837) gebruiken op de andere VM.
 
 1.  Open de REGI ster-editor (regedit.exe) op de virtuele machine voor probleem oplossing en selecteer vervolgens **bestand**  >  **Connect netwerk register**.
 
@@ -142,7 +142,7 @@ Voordat u deze stappen volgt, moet u een moment opname maken van de systeem schi
 7.  Zoek en open het \windows\system32\config\SYSTEM-bestand. 
 
     > [!Note]
-    > U wordt gevraagd een naam op te vragen. Voer **BROKENSYSTEM**in en vouw vervolgens **HKEY_LOCAL_MACHINE**uit. Er wordt nu een extra sleutel met de naam **BROKENSYSTEM**weer geven. Voor deze probleem oplossing worden deze probleem componenten als **BROKENSYSTEM**gekoppeld.
+    > U wordt gevraagd een naam op te vragen. Voer **BROKENSYSTEM** in en vouw vervolgens **HKEY_LOCAL_MACHINE** uit. Er wordt nu een extra sleutel met de naam **BROKENSYSTEM** weer geven. Voor deze probleem oplossing worden deze probleem componenten als **BROKENSYSTEM** gekoppeld.
 
 8.  Breng de volgende wijzigingen aan op de BROKENSYSTEM-vertakking:
 
@@ -164,7 +164,7 @@ Voordat u deze stappen volgt, moet u een moment opname maken van de systeem schi
         
         `v2.22|Action=Allow|Active=FALSE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=\@FirewallAPI.dll,-28775|Desc=\@FirewallAPI.dll,-28756|EmbedCtxt=\@FirewallAPI.dll,-28752|`
 
-9.  Markeer **BROKENSYSTEM**en selecteer vervolgens component **bestand**  >  **verwijderen** in het menu.
+9.  Markeer **BROKENSYSTEM** en selecteer vervolgens component **bestand**  >  **verwijderen** in het menu.
 
 10. [Ontkoppel de systeem schijf en maak de virtuele machine opnieuw](troubleshoot-recovery-disks-portal-windows.md).
 

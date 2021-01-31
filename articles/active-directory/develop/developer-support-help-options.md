@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 1d50e0ed6ac67ed1595b289d27bd08a089840308
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: bce9479d063d091eb4fa68d2452d8a4218d45db9
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051903"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219940"
 ---
 # <a name="support-and-help-options-for-developers"></a>Ondersteunings- en Help-opties voor ontwikkelaars
 
@@ -36,7 +36,7 @@ Als u een vraag hebt over de ontwikkeling, kunt u het antwoord mogelijk vinden i
 
 ### <a name="scoped-search"></a>Zoek opdracht in bereik
 
-Voor snellere resultaten kunt u uw zoek opdracht bereiken naar micro soft Q&A, de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
+Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](https://docs.microsoft.com/answers/products/)de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
 
 ```
 {Your Search Terms} (site:http://www.docs.microsoft.com/answers/products/ OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)
@@ -53,9 +53,9 @@ Waar *{uw zoek termen}* overeenkomen met uw zoek woorden.
 
 ## <a name="post-a-question-to-microsoft-qa"></a>Een vraag stellen aan micro soft Q&A
 
-Micro soft Q&A is het voorkeurs kanaal voor vragen met betrekking tot ontwikkeling. Hier zijn leden van de ontwikkelaars community en micro soft-team leden rechtstreeks betrokken bij het helpen om uw problemen op te lossen.
+[Micro soft Q&A](https://docs.microsoft.com/answers/products/) is het voorkeurs kanaal voor vragen met betrekking tot ontwikkeling. Hier zijn leden van de ontwikkelaars community en micro soft-team leden rechtstreeks betrokken bij het helpen om uw problemen op te lossen.
 
-Als u via zoeken geen antwoord op uw vraag kunt vinden, kunt u een nieuwe vraag verzenden naar micro soft Q&A. Gebruik een van de volgende tags bij het stellen van vragen om de community te helpen uw vraag sneller te identificeren en te beantwoorden:
+Als u via zoeken geen antwoord op uw vraag kunt vinden, kunt u een nieuwe vraag verzenden naar [micro soft Q&a](https://docs.microsoft.com/answers/products/) . Gebruik een van de volgende tags bij het stellen van vragen om de community te helpen uw vraag sneller te identificeren en te beantwoorden:
 
 |Onderdeel/gebied  | Tags |
 |---------|---------|
@@ -65,9 +65,9 @@ Als u via zoeken geen antwoord op uw vraag kunt vinden, kunt u een nieuwe vraag 
 | [Azure B2B](../external-identities/what-is-b2b.md)  | [[Azure-AD-B2B]](https://docs.microsoft.com/answers/topics/azure-ad-b2b.html) |
 | [Azure-B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[Azure-AD-B2C]](https://docs.microsoft.com/answers/topics/azure-ad-b2c.html) |
 | [Microsoft Graph API](https://developer.microsoft.com/graph/) | [[Azure-AD-Graph]](https://docs.microsoft.com/answers/topics/azure-ad-graph.html) |
-| Elk ander gebied dat betrekking heeft op verificatie-of autorisatie-onderwerpen | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-ad-graph.html) |
+| Elk ander gebied dat betrekking heeft op verificatie-of autorisatie-onderwerpen | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-active-directory.html) |
 
-De volgende berichten van micro soft Q&A bevatten tips voor het stellen van vragen en het toevoegen van de bron code. Volg deze richt lijnen om de kans te verg Roten dat leden van de Community uw vraag snel kunnen beoordelen en beantwoorden:
+De volgende berichten van [micro soft Q&A](https://docs.microsoft.com/answers/products/) bevatten tips voor het stellen van vragen en het toevoegen van de bron code. Volg deze richt lijnen om de kans te verg Roten dat leden van de Community uw vraag snel kunnen beoordelen en beantwoorden:
 
 * [Hoe kan ik een goede vraag stellen](https://docs.microsoft.com/answers/articles/24951/how-to-write-a-quality-question.html)
 * [Een mini maal, volledig en verifieerbaar voor beeld maken](https://docs.microsoft.com/answers/articles/24907/how-to-write-a-quality-answer.html)

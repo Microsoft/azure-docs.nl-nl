@@ -5,13 +5,13 @@ author: sr-msft
 ms.author: srranga
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 02/25/2020
-ms.openlocfilehash: c712af41fdc191cab4fd08c9d8175a849d4f286a
-ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
+ms.date: 01/29/2021
+ms.openlocfilehash: e74c96e0c03d75f34a16d95d0bed642c1900f558
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97706767"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219720"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---single-server"></a>Back-ups maken en herstellen in Azure Database for PostgreSQL-één server
 
@@ -82,6 +82,16 @@ Herstel naar een bepaald tijdstip is handig in meerdere scenario's. Wanneer een 
 
 Mogelijk moet u wachten totdat de back-up van het volgende transactie logboek wordt gemaakt voordat u de laatste vijf minuten kunt herstellen naar een bepaald tijdstip.
 
+Als u een verwijderde tabel wilt herstellen, 
+1. Herstel de bron server met behulp van een tijdgebonden methode.
+2. De tabel dumpen met behulp `pg_dump` van de herstelde server.
+3. Wijzig de naam van de bron tabel op de oorspronkelijke server.
+4. Importeer tabel met behulp van de psql-opdracht regel op de oorspronkelijke server.
+5. U kunt eventueel de herstelde server verwijderen.
+
+>[!Note]
+> Het is raadzaam om op hetzelfde moment niet meerdere herstel bewerkingen voor dezelfde server te maken. 
+
 ### <a name="geo-restore"></a>Geo-herstel
 
 U kunt een server herstellen naar een andere Azure-regio waar de service beschikbaar is als u uw server hebt geconfigureerd voor geografisch redundante back-ups. Servers die ondersteuning bieden voor Maxi maal 4 TB aan opslag kunnen worden hersteld naar de geografische paar regio, of op elke regio die ondersteuning biedt voor Maxi maal 16 TB aan opslag ruimte. Voor servers die Maxi maal 16 TB aan opslag ondersteunen, kunnen geo-back-ups worden hersteld in elke regio die ook ondersteuning biedt voor 16 TB-servers. Bekijk [Azure database for PostgreSQL prijs categorieën](concepts-pricing-tiers.md) voor de lijst met ondersteunde regio's.
@@ -97,7 +107,7 @@ Tijdens de geo-herstel bewerking kunnen de volgende server configuraties worden 
 
 Na een herstel na een van beide herstel mechanismen moet u de volgende taken uitvoeren om uw gebruikers en toepassingen back-ups te maken en uit te voeren:
 
-- Als de nieuwe server de oorspronkelijke server moet vervangen, kunt u clients en client toepassingen omleiden naar de nieuwe server
+- Als de nieuwe server de oorspronkelijke server moet vervangen, moet u clients en client toepassingen omleiden naar de nieuwe server. Wijzig ook de gebruikers naam in `username@new-restored-server-name` .
 - Zorg ervoor dat de juiste firewall-en VNet-regels op server niveau aanwezig zijn voor gebruikers om verbinding te maken. Deze regels worden niet van de oorspronkelijke server gekopieerd.
 - Zorg ervoor dat de juiste aanmeldingen en machtigingen op database niveau aanwezig zijn
 - Waarschuwingen configureren, indien van toepassing

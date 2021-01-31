@@ -1,21 +1,21 @@
 ---
 title: Aanbevolen procedures voor prestaties-Azure Database for MySQL
-description: In dit artikel worden de aanbevolen procedures beschreven voor het bewaken en afstemmen van de prestaties van uw Azure Database for MySQL.
-author: mksuni
-ms.author: sumuth
+description: In dit artikel worden enkele aanbevelingen beschreven voor het bewaken en afstemmen van de prestaties van uw Azure Database for MySQL.
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 11/23/2020
-ms.openlocfilehash: 30176e2df850e6d2794ab9c1542bcb6a89d8f89f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 1/28/2021
+ms.openlocfilehash: 46c7952247babd528b230dfa0e70b0eb47878912
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880403"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99217751"
 ---
 # <a name="best-practices-for-optimal-performance-of-your-azure-database-for-mysql---single-server"></a>Aanbevolen procedures voor optimale prestaties van uw Azure Database for MySQL-één server
 
-Meer informatie over de aanbevolen procedures voor het verkrijgen van de beste prestaties bij het werken met uw Azure Database for MySQL-één server. Wanneer we nieuwe mogelijkheden toevoegen aan het platform, zullen we verder gaan met de best practices die in deze sectie worden beschreven.
+Meer informatie over het verkrijgen van de beste prestaties bij het werken met uw Azure Database for MySQL-één-server. Wanneer we nieuwe mogelijkheden toevoegen aan het platform, zullen we de aanbevelingen in deze sectie blijven verfijnen.
 
 ## <a name="physical-proximity"></a>Fysieke nabijheid
 
@@ -47,8 +47,25 @@ Het tot stand brengen van een nieuwe verbinding is altijd een kost bare en tijdr
 Een Azure Database for MySQL prestatie best practice om voldoende RAM-geheugen toe te wijzen, zodat u werkset net volledig in het geheugen bevindt. 
 
 - Controleer of het gebruikte geheugen percentage in de [limieten](./concepts-pricing-tiers.md) bereikt met behulp [van de metrische gegevens voor de mysql-server](./concepts-monitoring.md). 
-- Stel waarschuwingen in voor dergelijke getallen om er zeker van te zijn dat naarmate de servers limieten bereiken, u prompt acties kunt ondernemen om het probleem op te lossen. Op basis van de grenzen die zijn gedefinieerd, controleert u of u de data base-SKU omhoog kunt schalen, hetzij naar een hogere reken grootte of naar een betere prijs categorie die resulteert in een aanzienlijke toename van de prestaties. 
+- Stel waarschuwingen in voor dergelijke getallen om er zeker van te zijn dat naarmate de servers limieten bereiken, u prompt acties kunt ondernemen om het probleem op te lossen. Op basis van de grenzen die zijn gedefinieerd, controleert u of u de data base-SKU omhoog kunt schalen, hetzij naar een hogere reken grootte of naar een betere prijs categorie, wat leidt tot een aanzienlijke toename van de prestaties. 
 - U omhoog schalen tot de prestatie cijfers niet langer opvallen na een schaal bewerking. Zie voor meer informatie over het bewaken van de metrische gegevens van een Data Base-exemplaar [MySQL DB Metrics](./concepts-monitoring.md#metrics).
+ 
+## <a name="use-innodb-buffer-pool-warmup"></a>Opwarm voor InnoDB-buffer groep gebruiken
+
+Nadat Azure Database for MySQL server opnieuw is opgestart, worden de gegevens pagina's die zich in de opslag bevinden, geladen als de tabellen worden opgevraagd, waardoor de latentie en tragere prestaties voor de eerste uitvoering van de query's worden verbeterd. Dit is mogelijk niet acceptabel voor latentie gevoelige werk belastingen. 
+
+Het gebruik van de InnoDB-buffer groep opwarm verkort de opwarm periode door schijf pagina's opnieuw te laden die zich in de buffer groep bevonden vóór het opnieuw opstarten, in plaats van te wachten op DML of SELECT-bewerkingen om toegang te krijgen tot overeenkomende rijen.
+
+U kunt de opwarm-periode verminderen nadat u uw Azure Database for MySQL-server opnieuw hebt opgestart, wat een prestatie voordeel vertegenwoordigt door [InnoDB-buffer pool server parameters](https://dev.mysql.com/doc/refman/8.0/en/innodb-preload-buffer-pool.html)te configureren. InnoDB slaat een percentage van de meest recent gebruikte pagina's op voor elke buffer groep bij het afsluiten van de server en herstelt deze pagina's bij het opstarten van de server.
+
+Het is ook belang rijk om te weten dat verbeterde prestaties ten koste gaan van een langere opstart tijd voor de-server. Als deze para meter is ingeschakeld, wordt het opstarten van de server en de start tijd naar verwachting verhoogd, afhankelijk van de IOPS die op de server is ingericht. 
+
+Het is raadzaam om de herstarttijd te testen en te controleren om ervoor te zorgen dat de prestaties voor opstarten en opnieuw opstarten acceptabel zijn omdat de server gedurende die tijd niet beschikbaar is. Het wordt niet aangeraden deze para meter te gebruiken met minder dan 1000 ingerichte IOPS (of met andere woorden, wanneer de inrichting van de opslag minder is dan 335 GB).
+
+Als u de status van de buffer groep wilt opslaan bij het afsluiten van de server, stelt u de server parameter `innodb_buffer_pool_dump_at_shutdown` in op `ON` . Stel op dezelfde manier de server parameter in om `innodb_buffer_pool_load_at_startup` `ON` de status van de buffer groep te herstellen bij het opstarten van de server. U kunt de invloed op het opstarten en opnieuw opstarten bepalen door de waarde van de server parameter te verlagen en af te stemmen `innodb_buffer_pool_dump_pct` . Deze para meter is standaard ingesteld op `25` .
+
+> [!Note]
+> De opwarm-para meters van de InnoDB-buffer groep worden alleen ondersteund in de opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag. Meer informatie over [Azure database for MySQL opslag opties vindt u hier](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage).
 
 ## <a name="next-steps"></a>Volgende stappen
 

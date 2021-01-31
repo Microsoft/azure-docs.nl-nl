@@ -9,12 +9,12 @@ ms.date: 01/27/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: c8807f0200f96dc12a3b3d43fa50a91bec85ed38
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 8172abb5e220f28061c7826af24a5d9a2043f4ad
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071177"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219906"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Azure Storage-firewalls en virtuele netwerken configureren
 
@@ -538,11 +538,11 @@ az storage account network-rule list \
 <a id="exceptions"></a>
 <a id="trusted-microsoft-services"></a>
 
-## <a name="grant-access-to-azure-services"></a>Toegang verlenen tot Azure-Services 
+## <a name="grant-access-to-trusted-azure-services"></a>Toegang verlenen aan vertrouwde Azure-Services 
 
-Sommige Azure-Services werken vanuit netwerken die niet in uw netwerk regels kunnen worden opgenomen. U kunt een subset van dergelijke betrouw bare Azure-Services toegang verlenen tot het opslag account, terwijl netwerk regels voor andere apps worden onderhouden. Deze vertrouwde services gebruiken vervolgens sterke verificatie om veilig verbinding te maken met uw opslag account. 
+Sommige Azure-Services werken vanuit netwerken die niet in uw netwerk regels kunnen worden opgenomen. U kunt een subset van dergelijke betrouw bare Azure-Services toegang verlenen tot het opslag account, terwijl netwerk regels voor andere apps worden onderhouden. Deze vertrouwde services gebruiken vervolgens sterke verificatie om veilig verbinding te maken met uw opslag account.
 
-U kunt toegang verlenen aan vertrouwde Azure-Services door een netwerk regel uitzondering te maken. Zie de sectie [uitzonde ringen beheren](#manage-exceptions) in dit artikel voor stapsgewijze instructies. 
+U kunt toegang verlenen aan vertrouwde Azure-Services door een netwerk regel uitzondering te maken. Zie de sectie [uitzonde ringen beheren](#manage-exceptions) in dit artikel voor stapsgewijze instructies.
 
 Wanneer u toegang verleent aan vertrouwde Azure-Services, verleent u de volgende typen toegang:
 
@@ -583,17 +583,23 @@ De volgende tabel bevat de services die toegang kunnen hebben tot uw gegevens va
 | :----------------------------- | :------------------------------------- | :----------------- |
 | Azure API Management           | Microsoft.ApiManagement/service        | Hiermee wordt de API Management-service toegang tot opslag accounts achter firewall ingeschakeld met behulp van beleid. [Meer informatie](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
 | Azure Cognitive Search         | Micro soft. Search/searchServices        | Hiermee kunnen Cognitive Search Services toegang krijgen tot opslag accounts voor indexering, verwerking en query's. |
-| Azure Cognitive Services       | Micro soft. CognitiveService             | Hiermee wordt Cognitive Services toegang tot opslag accounts. |
+| Azure Cognitive Services       | Micro soft. CognitiveService/accounts    | Hiermee wordt Cognitive Services toegang tot opslag accounts. |
 | Azure Container Registry Tasks | Micro soft. ContainerRegistry/registers | ACR-taken hebben toegang tot opslag accounts tijdens het maken van container installatie kopieën. |
 | Azure Data Factory             | Micro soft. DataFactory/fabrieken        | Hiermee hebt u toegang tot opslag accounts via de ADF-runtime. |
 | Azure Data Share               | Microsoft.DataShare/accounts           | Hiermee wordt toegang tot opslag accounts via een gegevens share toegestaan. |
+| Azure DevTest Labs             | Microsoft.DevTestLab/labs              | Toegang tot opslag accounts via DevTest Labs toestaan. |
 | Azure IoT Hub                  | Microsoft.Devices/IotHubs              | Hiermee kunnen gegevens van een IoT-hub worden geschreven naar de Blob-opslag. [Meer informatie](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Hiermee kunnen logische apps toegang krijgen tot opslag accounts. [Meer informatie](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
-| Azure Machine Learning-service | Microsoft.MachineLearningServices      | Geautoriseerde Azure Machine Learning-werk ruimten schrijven experiment-uitvoer, modellen en logboeken naar Blob Storage en lezen de gegevens. [Meer informatie](../../machine-learning/how-to-network-security-overview.md#secure-the-workspace-and-associated-resources). | 
-| Azure Synapse Analytics       | Microsoft.Sql                          | Staat het importeren en exporteren van gegevens uit specifieke SQL-data bases toe met behulp van de instructie COPY of poly base (in toegewezen groep) of de `openrowset` functie en externe tabellen in de serverloze groep. [Meer informatie](../../azure-sql/database/vnet-service-endpoint-rule-overview.md). |
-| Azure SQL Database       | Microsoft.Sql                          | Staat het [schrijven](../../azure-sql/database/audit-write-storage-account-behind-vnet-firewall.md) van controle gegevens naar opslag accounts achter de firewall toe. |
-| Azure Stream Analytics         | Microsoft.StreamAnalytics             | Hiermee staat u toe dat gegevens van een streaming-taak naar de Blob-opslag worden geschreven. [Meer informatie](../../stream-analytics/blob-output-managed-identity.md). |
-| Azure Synapse Analytics        | Micro soft. Synapse/werk ruimten          | Hiermee schakelt u toegang tot gegevens in Azure Storage van Azure Synapse Analytics. |
+| Azure Machine Learning-service | Microsoft.MachineLearningServices      | Geautoriseerde Azure Machine Learning-werk ruimten schrijven experiment-uitvoer, modellen en logboeken naar Blob Storage en lezen de gegevens. [Meer informatie](../../machine-learning/how-to-network-security-overview.md#secure-the-workspace-and-associated-resources). |
+| Azure Media Services           | Micro soft. Media/Media Services          | Hiermee staat u toegang tot opslag accounts via Media Services toe. |
+| Azure Migrate                  | Micro soft. migrate/migrateprojects      | Hiermee staat u toegang tot opslag accounts via Azure Migrate toe. |
+| Azure Purview                  | Micro soft. controle sfeer liggen/accounts             | Hiermee kan controle sfeer liggen toegang krijgen tot opslag accounts. |
+| Azure Remote Rendering         | Micro soft. MixedReality/remoteRenderingAccounts | Hiermee staat u toegang tot opslag accounts via externe rendering toe. |
+| Azure Site Recovery            | Microsoft.RecoveryServices/vaults      | Hiermee staat u toegang tot opslag accounts via Site Recovery toe. |
+| Azure SQL Database             | Microsoft.Sql                          | Staat het [schrijven](../../azure-sql/database/audit-write-storage-account-behind-vnet-firewall.md) van controle gegevens naar opslag accounts achter de firewall toe. |
+| Azure Synapse Analytics        | Microsoft.Sql                          | Staat het importeren en exporteren van gegevens uit specifieke SQL-data bases toe met behulp van de instructie COPY of poly base (in toegewezen groep) of de `openrowset` functie en externe tabellen in de serverloze groep. [Meer informatie](../../azure-sql/database/vnet-service-endpoint-rule-overview.md). |
+| Azure Stream Analytics         | Microsoft.StreamAnalytics              | Hiermee staat u toe dat gegevens van een streaming-taak naar de Blob-opslag worden geschreven. [Meer informatie](../../stream-analytics/blob-output-managed-identity.md). |
+| Azure Synapse Analytics        | Micro soft. Synapse/werk ruimten           | Hiermee schakelt u toegang tot gegevens in Azure Storage van Azure Synapse Analytics. |
 
 ## <a name="grant-access-to-storage-analytics"></a>Toegang verlenen tot opslag analyse
 

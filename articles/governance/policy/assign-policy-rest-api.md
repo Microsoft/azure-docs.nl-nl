@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Nieuwe beleidstoewijzing met REST API'
 description: In deze quickstart gebruikt u REST API om een Azure Policy-toewijzing te maken om niet-compatibele resources te identificeren.
-ms.date: 10/14/2020
+ms.date: 01/29/2021
 ms.topic: quickstart
-ms.openlocfilehash: ab05079c5bb319f0808a743a1d668649df51b1b3
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
-ms.translationtype: HT
+ms.openlocfilehash: 438d8004cd50e6e2ef7586c51adc63257f37978b
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074002"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219974"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-with-rest-api"></a>Quickstart: Een beleidstoewijzing maken om niet-compatibele resources met REST API te identificeren
 
@@ -47,6 +47,11 @@ Voer de volgende opdracht uit om een beleidstoewijzing te maken:
          "displayName": "Audit VMs without managed disks Assignment",
          "description": "Shows all virtual machines not using managed disks",
          "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/06a78e20-9358-41c9-923c-fb736d382a4d",
+         "nonComplianceMessages": [
+             {
+                 "message": "Virtual machines should use a managed disk"
+             }
+         ]
        }
      }
      ```
@@ -54,17 +59,18 @@ Voer de volgende opdracht uit om een beleidstoewijzing te maken:
 Het voorgaande eindpunt en de aanvraagbody maken gebruik van de volgende informatie:
 
 REST API-URI:
-- **Bereik** : een bereik bepaalt voor welke resources of groep resources de beleidstoewijzing wordt afgedwongen. Het kan variëren van een beheergroep tot een afzonderlijke resource. Zorg dat u `{scope}` vervangt door een van de volgende patronen:
+- **Bereik**: een bereik bepaalt voor welke resources of groep resources de beleidstoewijzing wordt afgedwongen. Het kan variëren van een beheergroep tot een afzonderlijke resource. Zorg dat u `{scope}` vervangt door een van de volgende patronen:
   - Beheergroep: `/providers/Microsoft.Management/managementGroups/{managementGroup}`
   - Abonnement: `/subscriptions/{subscriptionId}`
   - Resourcegroep: `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}`
   - Resource: `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}`
-- **Naam** : de werkelijke naam van de toewijzing. Voor dit voorbeeld is _audit-vm-manageddisks_ gebruikt.
+- **Naam**: de werkelijke naam van de toewijzing. Voor dit voorbeeld is _audit-vm-manageddisks_ gebruikt.
 
 Aanvraagbody:
-- **Weergavenaam** : de weergavenaam voor de beleidstoewijzing. In dit geval gebruikt u de toewijzing _Virtuele machines zonder beheerde schijven controleren_ .
-- **Beschrijving** : een grondigere uitleg van wat het beleid doet of waarom het aan dit bereik is toegewezen.
-- **policyDefinitionId** : de id van de beleidsdefinitie, op basis waarvan u de toewijzing maakt. In dit geval is het de id van de beleidsdefinitie _Virtuele machines zonder beheerde schijven controleren_ .
+- **Weergavenaam**: de weergavenaam voor de beleidstoewijzing. In dit geval gebruikt u de toewijzing _Virtuele machines zonder beheerde schijven controleren_.
+- **Beschrijving**: een grondigere uitleg van wat het beleid doet of waarom het aan dit bereik is toegewezen.
+- **policyDefinitionId**: de id van de beleidsdefinitie, op basis waarvan u de toewijzing maakt. In dit geval is het de id van de beleidsdefinitie _Virtuele machines zonder beheerde schijven controleren_.
+- **nonComplianceMessages** : Stel het bericht in dat wordt weer gegeven wanneer een resource wordt geweigerd als gevolg van een niet-naleving of geëvalueerd als niet-compatibel. Zie [berichten over niet-naleving van toewijzingen](./concepts/assignment-structure.md#non-compliance-messages)voor meer informatie.
 
 ## <a name="identify-non-compliant-resources"></a>Niet-compatibele resources identificeren
 
@@ -100,7 +106,7 @@ De resultaten zien er ongeveer als volgt uit:
 }
 ```
 
-De resultaten zijn vergelijkbaar met wat in de weergave van de Azure-portal meestal wordt vermeld onder **Niet-compatibele resources** .
+De resultaten zijn vergelijkbaar met wat in de weergave van de Azure-portal meestal wordt vermeld onder **Niet-compatibele resources**.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

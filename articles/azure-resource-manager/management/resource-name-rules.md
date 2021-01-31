@@ -2,13 +2,13 @@
 title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: d298688dbd13cc32c9cca078b5e20e6a5f054450
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.date: 01/27/2021
+ms.openlocfilehash: dbe19dae4509e1dd6aa95763e4d034c339bb0531
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806881"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220850"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -92,7 +92,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > [!div class="mx-tableFixed"]
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
-> | automationAccounts | resourcegroep | 6-50 | Alfanumerieke tekens en afbreek streepjes.<br><br>Begin met letter en sluit af met een alfanumerieke teken. |
+> | automationAccounts | & regio van resource groep <br>(Zie opmerking hieronder) | 6-50 | Alfanumerieke tekens en afbreek streepjes.<br><br>Begin met letter en sluit af met een alfanumerieke teken. |
 > | automationAccounts/certificaten | Automation-account | 1-128 | Kan niet gebruiken:<br> `<>*%&:\?.+/` <br><br>Kan niet eindigen met een spatie.  |
 > | automationAccounts/verbindingen | Automation-account | 1-128 | Kan niet gebruiken:<br> `<>*%&:\?.+/` <br><br>Kan niet eindigen met een spatie. |
 > | automationAccounts/referenties | Automation-account | 1-128 | Kan niet gebruiken:<br> `<>*%&:\?.+/` <br><br>Kan niet eindigen met een spatie. |
@@ -101,6 +101,9 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | automationAccounts/variabelen | Automation-account | 1-128 | Kan niet gebruiken:<br> `<>*%&:\?.+/` <br><br>Kan niet eindigen met een spatie. |
 > | automationAccounts/volgers | Automation-account | 1-63 |  Alfanumeriek, onderstrepings tekens en afbreek streepjes.<br><br>Begin met letter. |
 > | automationAccounts/webhooks | Automation-account | 1-128 | Kan niet gebruiken:<br> `<>*%&:\?.+/` <br><br>Kan niet eindigen met een spatie. |
+
+> [!NOTE]
+> Automation-accountnamen zijn uniek per regio en resourcegroep. Namen voor verwijderde Automation-accounts zijn mogelijk niet onmiddellijk beschikbaar.
 
 ## <a name="microsoftbatch"></a>Microsoft.Batch
 

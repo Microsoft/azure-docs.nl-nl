@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: ab83344f779f93107b59ca28348da3a66f1efc1a
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: aec1967f0652e18c4a24ca258c14a103355b22af
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076858"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219312"
 ---
 # <a name="api-management-policy-expressions"></a>API Management-beleids expressies
 In dit artikel wordt de syntaxis van beleids expressies in C# 7 beschreven. Elke expressie heeft toegang tot de impliciet verschafte [context](api-management-policy-expressions.md#ContextVariables) variabele en een toegestane [subset](api-management-policy-expressions.md#CLRTypes) van .NET Framework typen.
@@ -156,7 +156,7 @@ De volgende tabel bevat de .NET Framework typen en de leden die zijn toegestaan 
 |System. Security. Cryptography. SymmetricAlgorithm|Alles|
 |System. Security. Cryptography. X509Certificates. PublicKey|Alles|
 |System. Security. Cryptography. X509Certificates. RSACertificateExtensions|Alles|
-|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Naam|
+|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Name|
 |System. Security. Cryptography. X509Certificates. X509Certificate|Alles|
 |System. Security. Cryptography. X509Certificates. X509Certificate2|Alles|
 |System. Security. Cryptography. X509Certificates. X509ContentType|Alles|
@@ -210,7 +210,7 @@ Een variabele met de naam `context` is impliciet beschikbaar in elke beleids [ex
 
 |Context variabele|Toegestane methoden, eigenschappen en parameter waarden|
 |----------------------|-------------------------------------------------------|
-|context|[API](#ref-context-api): [IApi](#ref-iapi)<br /><br /> [Implementatie](#ref-context-deployment)<br /><br /> Verstreken: time span-time interval tussen de waarde van tijds tempel en huidige tijd<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Bewerking](#ref-context-operation)<br /><br /> [Product](#ref-context-product)<br /><br /> [Aanvraag](#ref-context-request)<br /><br /> Aanvraag-id: GUID-unieke aanvraag-id's<br /><br /> [Response](#ref-context-response)<br /><br /> [Abonnement](#ref-context-subscription)<br /><br /> Tijds tempel: datum/tijd waarop de aanvraag is ontvangen<br /><br /> Tracering: BOOL-geeft aan of tracering is in-of uitgeschakeld <br /><br /> [Gebruiker](#ref-context-user)<br /><br /> [Variabelen](#ref-context-variables): IReadOnlyDictionary<teken reeks, object><br /><br /> Trace annuleren (bericht: teken reeks)|
+|context|[API](#ref-context-api): [IApi](#ref-iapi)<br /><br /> [Implementatie](#ref-context-deployment)<br /><br /> Verstreken: time span-time interval tussen de waarde van tijds tempel en huidige tijd<br /><br /> [Last error](#ref-context-lasterror)<br /><br /> [Bewerking](#ref-context-operation)<br /><br /> [Product](#ref-context-product)<br /><br /> [Aanvraag](#ref-context-request)<br /><br /> Aanvraag-id: GUID-unieke aanvraag-id's<br /><br /> [Response](#ref-context-response)<br /><br /> [Abonnement](#ref-context-subscription)<br /><br /> Tijds tempel: datum/tijd waarop de aanvraag is ontvangen<br /><br /> Tracering: BOOL-geeft aan of tracering is in-of uitgeschakeld <br /><br /> [Gebruiker](#ref-context-user)<br /><br /> [Variabelen](#ref-context-variables): IReadOnlyDictionary<teken reeks, object><br /><br /> Trace annuleren (bericht: teken reeks)|
 |<a id="ref-context-api"></a>context. Inschakelen|Id: teken reeks<br /><br /> IsCurrentRevision: BOOL<br /><br />  Name: teken reeks<br /><br /> Pad: teken reeks<br /><br /> Revisie: teken reeks<br /><br /> ServiceUrl: [IUrl](#ref-iurl)<br /><br /> Versie: teken reeks |
 |<a id="ref-context-deployment"></a>context. Inhoudsdistributiepad|Regio: teken reeks<br /><br /> ServiceName: teken reeks<br /><br /> Certificaten: IReadOnlyDictionary<teken reeks, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>context. Last error|Bron: teken reeks<br /><br /> Reden: teken reeks<br /><br /> Bericht: teken reeks<br /><br /> Bereik: teken reeks<br /><br /> Sectie: teken reeks<br /><br /> Pad: teken reeks<br /><br /> PolicyId: teken reeks<br /><br /> Voor meer informatie over context. Last error, Zie [fout afhandeling](api-management-error-handling-policies.md).|
@@ -220,7 +220,7 @@ Een variabele met de naam `context` is impliciet beschikbaar in elke beleids [ex
 |<a id="ref-context-request-headers"></a>teken reeks context. Request. headers. GetValueOrDefault (koptekstnaam: teken reeks, defaultValue: teken reeks)|kopnaam: teken reeks<br /><br /> defaultValue: teken reeks<br /><br /> Retourneert waarden met door komma's gescheiden aanvragen of `defaultValue` als de koptekst niet is gevonden.|
 |<a id="ref-context-response"></a>context. Beantwoord|Hoofd tekst: [IMessageBody](#ref-imessagebody)<br /><br /> [Headers](#ref-context-response-headers): IReadOnlyDictionary<teken reeks, teken reeks [] ><br /><br /> Status code: int<br /><br /> StatusReason: teken reeks|
 |<a id="ref-context-response-headers"></a>teken reeks context. Response. headers. GetValueOrDefault (koptekstnaam: teken reeks, defaultValue: teken reeks)|kopnaam: teken reeks<br /><br /> defaultValue: teken reeks<br /><br /> Retourneert door komma's gescheiden waarden van een reactie header of `defaultValue` als de koptekst niet is gevonden.|
-|<a id="ref-context-subscription"></a>context. Abonnees|CreatedTime: DateTime<br /><br /> EndDate: DateTime?<br /><br /> Id: teken reeks<br /><br /> Sleutel: teken reeks<br /><br /> Name: teken reeks<br /><br /> PrimaryKey: teken reeks<br /><br /> Secundaire sleutel: teken reeks<br /><br /> Start date: DateTime?|
+|<a id="ref-context-subscription"></a>context. Abonnees|CreatedDate: DateTime<br /><br /> EndDate: DateTime?<br /><br /> Id: teken reeks<br /><br /> Sleutel: teken reeks<br /><br /> Name: teken reeks<br /><br /> PrimaryKey: teken reeks<br /><br /> Secundaire sleutel: teken reeks<br /><br /> Start date: DateTime?|
 |<a id="ref-context-user"></a>context. Gebruiker|E-mail: teken reeks<br /><br /> Voor naam: teken reeks<br /><br /> Groepen: IEnumerable<[IGroup](#ref-igroup)\><br /><br /> Id: teken reeks<br /><br /> Identiteiten: IEnumerable<[IUserIdentity](#ref-iuseridentity)\><br /><br /> LastName: String<br /><br /> Opmerking: teken reeks<br /><br /> RegistrationDate: DateTime|
 |<a id="ref-iapi"></a>IApi|Id: teken reeks<br /><br /> Name: teken reeks<br /><br /> Pad: teken reeks<br /><br /> Protocollen: IEnumerable<teken reeks\><br /><br /> ServiceUrl: [IUrl](#ref-iurl)<br /><br /> SubscriptionKeyParameterNames: [ISubscriptionKeyParameterNames](#ref-isubscriptionkeyparameternames)|
 |<a id="ref-igroup"></a>IGroup|Id: teken reeks<br /><br /> Name: teken reeks|
@@ -253,4 +253,4 @@ Zie voor meer informatie over het gebruik van beleid:
 + [Beleid in API Management](api-management-howto-policies.md)
 + [Api's transformeren](transform-api.md)
 + [Beleids verwijzing](./api-management-policies.md) voor een volledige lijst met beleids instructies en hun instellingen
-+ [Voor beelden van beleid](./policy-reference.md)
++ [Voorbeelden van beleid](./policy-reference.md)

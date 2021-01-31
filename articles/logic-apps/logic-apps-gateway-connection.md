@@ -3,15 +3,15 @@ title: Toegang tot gegevens bronnen on-premises
 description: Verbinding maken met on-premises gegevens bronnen vanuit Azure Logic Apps door een gegevens gateway resource in azure te maken
 services: logic-apps
 ms.suite: integration
-ms.reviewer: arthii, divswa, logicappspm
+ms.reviewer: arthii, logicappspm
 ms.topic: article
-ms.date: 08/18/2020
-ms.openlocfilehash: 2dd086ccc45458299cf6b8a7ad83d023055c96ae
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/20/2021
+ms.openlocfilehash: 356e63bb0a749ad0f41d886e75971e9b05c7f9dc
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009247"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218991"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Verbinding maken met on-premises gegevensbronnen vanuit Azure Logic Apps
 
@@ -57,8 +57,11 @@ U kunt ook [aangepaste connectors](../logic-apps/custom-connector-overview.md) m
 * U hebt [hetzelfde Azure-account en-abonnement](../logic-apps/logic-apps-gateway-install.md#requirements) dat u hebt gebruikt voor de installatie van de gateway. Dit Azure-account mag alleen deel uitmaken van een enkele [Azure Active Directory (Azure AD)-Tenant of-map](../active-directory/fundamentals/active-directory-whatis.md#terminology). U moet hetzelfde Azure-account en-abonnement gebruiken om uw gateway resource in azure te maken, omdat alleen de Gateway beheerder de gateway bron in azure kan maken. Service-principals worden momenteel niet ondersteund.
 
   * Wanneer u een gateway bron in azure maakt, selecteert u een gateway-installatie om een koppeling met uw gateway bron en alleen die gateway bron te maken. Elke gateway bron kan slechts worden gekoppeld aan één gateway-installatie. U kunt geen gateway-installatie selecteren die al is gekoppeld aan een andere gateway resource.
-  
-  * Uw logische app en gateway resource hoeven niet te bestaan in hetzelfde Azure-abonnement. Op voor waarde dat u toegang hebt tot abonnementen, in triggers en acties die toegang hebben tot on-premises gegevens bronnen, kunt u andere Azure-abonnementen selecteren die gateway resources hebben.
+
+  * Uw logische app en gateway resource hoeven niet te bestaan in hetzelfde Azure-abonnement. In triggers en acties waar u de gateway bron kunt gebruiken, kunt u een ander Azure-abonnement met een gateway bron selecteren, maar alleen als dit abonnement bestaat in dezelfde Azure AD-Tenant of-map als uw logische app. U moet ook beschikken over beheerders machtigingen op de gateway, die een andere beheerder voor u kan instellen. Zie [Data gateway: Automation met Power shell-deel 1](https://community.powerbi.com/t5/Community-Blog/Data-Gateway-Automation-using-PowerShell-Part-1/ba-p/1117330) en [Power shell: data gateway-add-DataGatewayClusterUser](/powershell/module/datagateway/add-datagatewayclusteruser)voor meer informatie.
+
+    > [!NOTE]
+    > Op dit moment kunt u geen gateway bron of installatie van meerdere abonnementen delen. Zie [Microsoft Azure feedback forum](https://feedback.azure.com/forums/34192--general-feedback)voor informatie over het verzenden van product feedback.
 
 <a name="create-gateway-resource"></a>
 
@@ -76,7 +79,7 @@ Nadat u de gateway op een lokale computer hebt geïnstalleerd, maakt u de Azure-
 
    ![Nieuwe Azure-resource toevoegen voor gegevens gateway](./media/logic-apps-gateway-connection/add-azure-data-gateway-resource.png)
 
-1. Geef onder **verbindings gateway maken** deze informatie voor uw gateway bron op. Als u gereed bent, selecteert u **Maken**.
+1. Geef onder **verbindings gateway maken** deze informatie voor uw gateway bron op. Selecteer **Maken** als u klaar bent.
 
    | Eigenschap | Beschrijving |
    |----------|-------------|
@@ -103,10 +106,10 @@ Nadat u de gateway resource hebt gemaakt en uw Azure-abonnement aan deze resourc
 
 1. Selecteer **verbinding via on-premises gegevens gateway**.
 
-1. Selecteer in de lijst **abonnementen** onder **gateways** uw Azure-abonnement met de gateway resource die u wilt.
+1. Selecteer in de lijst **abonnement** onder **Gateway** het Azure-abonnement met de gewenste gateway resource.
 
-   Als u toegang hebt tot een abonnement, kunt u kiezen uit verschillende Azure-abonnementen die elk zijn gekoppeld aan een andere gateway resource. Uw logische app en gateway resource hoeven niet te bestaan in hetzelfde Azure-abonnement.
-
+   Uw logische app en gateway resource hoeven niet te bestaan in hetzelfde Azure-abonnement. U kunt kiezen uit andere Azure-abonnementen die elk een gateway Resource hebben, maar alleen als deze abonnementen in dezelfde Azure AD-Tenant of Directory aanwezig zijn als uw logische app, en u beschikt over beheerders rechten op de gateway, die een andere beheerder voor u kan instellen. Zie [Data gateway: Automation met Power shell-deel 1](https://community.powerbi.com/t5/Community-Blog/Data-Gateway-Automation-using-PowerShell-Part-1/ba-p/1117330) en [Power shell: data gateway-add-DataGatewayClusterUser](/powershell/module/datagateway/add-datagatewayclusteruser)voor meer informatie.
+  
 1. Selecteer in de lijst **verbindings gateway** , waarin de beschik bare gateway bronnen in het geselecteerde abonnement worden weer gegeven, de gateway resource die u wilt. Elke gateway bron is gekoppeld aan één gateway-installatie.
 
    > [!NOTE]
@@ -120,7 +123,7 @@ Nadat u de gateway resource hebt gemaakt en uw Azure-abonnement aan deze resourc
 
    ![Verbinding maken tussen logische app en gegevens gateway](./media/logic-apps-gateway-connection/logic-app-gateway-connection.png)
 
-1. Als u gereed bent, selecteert u **Maken**.
+1. Selecteer **Maken** als u klaar bent.
 
 Uw gateway verbinding is nu klaar voor gebruik door uw logische app.
 

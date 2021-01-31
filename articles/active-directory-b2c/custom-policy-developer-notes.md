@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 68e282f192b87b9f2217e0727753e7d37ff1aeb1
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 18a3216855516156792524dc577ecef725d3119d
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516097"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218771"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Opmerkingen voor ontwikkel aars voor aangepast beleid in Azure Active Directory B2C
 
@@ -29,7 +29,7 @@ Hoewel de meeste aangepaste beleids opties beschikbaar zijn nu algemeen beschikb
 ## <a name="features-that-are-generally-available"></a>Functies die algemeen beschikbaar zijn
 
 - Gebruik aangepaste beleids regels om gebruikers met aangepaste verificatie te schrijven en te uploaden.
-    - Beschrijf de door de gebruiker geplaatste stapsgewijze stap-voor-stap als uitwisseling tussen claim providers.
+    - Beschrijf de stapsgewijze stap van gebruikers door stap als uitwisselingen tussen claim providers.
     - Definieer voorwaardelijke vertakking in de reis van de gebruiker.
 - Werk met REST API-services in uw aangepaste gebruikers Reiss voor verificatie.
 - Communiceren met id-providers die compatibel zijn met het OpenIDConnect-protocol.
@@ -44,7 +44,7 @@ Ontwikkel aars die de aangepaste beleids functie set gebruiken, moeten voldoen a
 - Vertrouwd raken met de configuratie taal van het aangepaste beleid en het beheer van sleutel/geheimen. Zie [TrustFrameworkPolicy](trustframeworkpolicy.md)voor meer informatie.
 - Eigenaar worden van scenario's en aangepaste integraties. Documenteer uw werk en laat uw organisatie van uw live site op de hoogte.
 - Voer methode testen uit.
-- Volg de aanbevolen procedures voor software ontwikkeling en fase ring met mini maal één ontwikkel-en test omgeving en één productie omgeving.
+- Volg de aanbevolen procedures voor software ontwikkeling en fase ring. Er wordt Mini maal één ontwikkel-en test omgeving aanbevolen.
 - Blijf op de hoogte van nieuwe ontwikkelingen van de id-providers en services die u integreert met. U kunt bijvoorbeeld wijzigingen bijhouden in geheimen en de geplande en ongeplande wijzigingen in de service.
 - Stel actieve bewaking in en bewaak de reactie snelheid van productie omgevingen. Zie [Azure Active Directory B2C: Logboeken verzamelen](analytics-with-application-insights.md)voor meer informatie over de integratie met Application Insights.
 - Houd contact-e-mail adressen actueel in het Azure-abonnement en blijf op de hoogte van de e-mail van micro soft live site-team.
@@ -58,7 +58,7 @@ Ontwikkel aars die de aangepaste beleids functie set gebruiken, moeten voldoen a
 
 ## <a name="features-by-stage-and-known-issues"></a>Functies per fase en bekende problemen
 
-Mogelijkheden voor aangepast beleid/identiteits ervaring zijn onder constante en snelle ontwikkeling. De volgende tabel bevat een index van functies en beschik baarheid van onderdelen.
+Aangepaste beleids mogelijkheden zijn constant ontwikkeld. De volgende tabel bevat een index van functies en beschik baarheid van onderdelen.
 
 
 ### <a name="protocols-and-authorization-flows"></a>Protocollen en autorisatie stromen
@@ -71,7 +71,7 @@ Mogelijkheden voor aangepast beleid/identiteits ervaring zijn onder constante en
 | [Referenties voor wacht woord van OAuth2-resource-eigenaar](ropc-custom.md) |  | X |  |  |
 | [OIDC verbinding maken](openid-connect.md) |  |  | X |  |
 | [SAML2](connect-with-saml-service-providers.md)  |  |  |X  | Bindingen na plaatsen en omleiden. |
-| OAuth1 |  |  |  | Niet ondersteund. |
+| OAuth1 |  |  |  | Wordt niet ondersteund. |
 | WSFED | X |  |  |  |
 
 ### <a name="identify-providers-federation"></a>Providers Federatie identificeren 
@@ -144,7 +144,7 @@ Mogelijkheden voor aangepast beleid/identiteits ervaring zijn onder constante en
 | Azure Portal-IEF UX |  |  | X |  |
 | Beleid uploaden |  |  | X |  |
 | [Gebruikers reis logboeken Application Insights](troubleshoot-with-application-insights.md) |  | X |  | Wordt gebruikt voor het oplossen van problemen tijdens de ontwikkeling.  |
-| [Application Insights gebeurtenis logboeken](application-insights-technical-profile.md) |  | X |  | Wordt gebruikt voor het bewaken van de gebruikers stromen in de productie omgeving. |
+| [Application Insights gebeurtenis logboeken](analytics-with-application-insights.md) |  | X |  | Wordt gebruikt voor het bewaken van de gebruikers stromen in de productie omgeving. |
 
 
 ## <a name="next-steps"></a>Volgende stappen

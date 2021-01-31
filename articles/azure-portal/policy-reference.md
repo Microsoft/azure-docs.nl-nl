@@ -1,15 +1,15 @@
 ---
 title: Ingebouwde beleids definities voor Azure Portal
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure Portal. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 4f75f8b9ce5545d914f14ba010799b1ccb8b7c8e
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 7b151b5b90589b100cae071d949e2f77aa36b1d7
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806552"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218720"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-portal"></a>Azure Policy ingebouwde definities voor Azure Portal
 

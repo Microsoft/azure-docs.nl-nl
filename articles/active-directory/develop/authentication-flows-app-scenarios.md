@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/03/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: c441d8e9fa5a3375b1ec4cd3e68d92e92738261d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: c302e10a169a190d11f016620ec048cc58e3ac28
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755779"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220161"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>Verificatiestromen en app-scenario's
 
@@ -42,8 +42,8 @@ In de volgende secties worden de categorieën toepassingen beschreven.
 
 Verificatie scenario's hebben twee activiteiten:
 
-- **Beveiligings tokens ophalen voor een beveiligde web-API**: we raden u aan door [micro soft ondersteunde client bibliotheken](reference-v2-libraries.md#microsoft-supported-client-libraries) te gebruiken voor het verkrijgen van tokens. In het bijzonder wordt de micro soft Authentication Library (MSAL)-familie aangeraden.
-- **Een web-API of web-app beveiligen**: een uitdaging voor het beveiligen van deze resources is het valideren van het beveiligings token. Op sommige platforms biedt micro soft [middleware-bibliotheken](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries).
+- **Beveiligings tokens ophalen voor een beveiligde web-API**: we raden u aan om de [micro soft Authentication Library (MSAL)](reference-v2-libraries.md), ontwikkeld en ondersteund door micro soft, te gebruiken.
+- **Een web-API of web-app beveiligen**: een uitdaging voor het beveiligen van deze resources is het valideren van het beveiligings token. Op sommige platforms biedt micro soft [middleware-bibliotheken](reference-v2-libraries.md).
 
 ### <a name="with-users-or-without-users"></a>Met gebruikers of zonder gebruikers
 
@@ -65,7 +65,7 @@ Beveiligings tokens kunnen worden verkregen door meerdere typen toepassingen. De
   - Bureau blad-apps die web-Api's aanroepen namens aangemelde gebruikers
   - Mobiele apps
   - Apps die worden uitgevoerd op apparaten die geen browser hebben, zoals toepassingen die op IoT worden uitgevoerd
-  
+
 - **Vertrouwelijke client toepassingen**: apps in deze categorie zijn onder andere:
   - Web-apps die een web-API aanroepen
   - Web-Api's die een web-API aanroepen
@@ -95,7 +95,7 @@ Toepassingen gebruiken de verschillende verificatie stromen voor het aanmelden v
 
 Veel moderne web-apps zijn gebouwd als toepassingen met één pagina aan de client zijde. Deze toepassingen gebruiken Java script of een framework zoals hoek, vue en reageren. Deze toepassingen worden uitgevoerd in een webbrowser.
 
-Toepassingen met één pagina verschillen van traditionele web-apps aan de server zijde in termen van verificatie kenmerken. Door gebruik te maken van het micro soft-identiteits platform kunnen toepassingen met één pagina gebruikers aanmelden en tokens verkrijgen voor toegang tot back-end-services of Web-Api's. Het micro soft Identity-platform biedt twee toekennings typen voor Java script-toepassingen: 
+Toepassingen met één pagina verschillen van traditionele web-apps aan de server zijde in termen van verificatie kenmerken. Door gebruik te maken van het micro soft-identiteits platform kunnen toepassingen met één pagina gebruikers aanmelden en tokens verkrijgen voor toegang tot back-end-services of Web-Api's. Het micro soft Identity-platform biedt twee toekennings typen voor Java script-toepassingen:
 
 | MSAL.js (2. x) | MSAL.js (1. x) |
 |---|---|
@@ -160,7 +160,7 @@ Zie voor meer informatie [mobiele app die web-api's aanroept](scenario-mobile-ov
 
 ### <a name="protected-web-api"></a>Beveiligde web-API
 
-U kunt het micro soft-identiteits platform gebruiken om webservices te beveiligen, zoals de REST Web-API van uw app. Een beveiligde web-API wordt aangeroepen via een toegangs token. Het token helpt de gegevens van de API te beveiligen en inkomende aanvragen te verifiëren. De aanroeper van een web-API voegt een toegangs token toe in de autorisatie-header van een HTTP-aanvraag.
+U kunt het micro soft Identity platform-eind punt gebruiken om webservices te beveiligen, zoals de REST Web-API van uw app. Een beveiligde web-API wordt aangeroepen via een toegangs token. Het token helpt de gegevens van de API te beveiligen en inkomende aanvragen te verifiëren. De aanroeper van een web-API voegt een toegangs token toe in de autorisatie-header van een HTTP-aanvraag.
 
 Als u uw ASP.NET of ASP.NET Core Web-API wilt beveiligen, moet u het toegangs token valideren. Voor deze validatie gebruikt u de ASP.NET JWT-middleware. De validatie wordt uitgevoerd door de [Identity model-uitbrei dingen voor de .net](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) -bibliotheek en niet door MSAL.net.
 
@@ -309,7 +309,7 @@ In de kolom Windows van de volgende tabel wordt elke keer dat er .NET core wordt
 | [Daemon-apps](scenario-daemon-overview.md) <br/> [![Daemon-apps](media/scenarios/daemon-app.svg)](scenario-daemon-overview.md) | ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png) MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
 | [Web-API die web-API's aanroept](scenario-web-api-call-api-overview.md) <br/><br/> [![Web-API die web-API's aanroept](media/scenarios/web-api.svg)](scenario-web-api-call-api-overview.md) | ![ASP.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python| ![.NET Core](media/sample-v2-code/small_logo_NETcore.png)<br/>ASP.NET Core + MSAL.NET ![MSAL Java](media/sample-v2-code/small_logo_java.png)<br/>MSAL Java<br/>![MSAL Python](media/sample-v2-code/small_logo_python.png)<br/>MSAL Python
 
-Zie voor meer informatie [door micro soft ondersteunde bibliotheken per OS/taal](reference-v2-libraries.md#microsoft-supported-libraries-by-os--language).
+Zie [verificatie bibliotheken voor micro soft-identiteits platform](reference-v2-libraries.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

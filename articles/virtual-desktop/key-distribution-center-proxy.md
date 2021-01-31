@@ -3,19 +3,24 @@ title: Kerberos Key Distribution Center-proxy instellen Windows virtueel bureau 
 description: Een hostgroep voor virtuele Windows-Bureau bladen instellen voor gebruik van een Kerberos-Key Distribution Center proxy.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 01/26/2021
+ms.date: 01/30/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f123659941eaeb3b8ceeb6a999abf836eb9cf5ea
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 102ddc1c8937c66a92416ddb6d5f2d25f2a3c349
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98798385"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219652"
 ---
-# <a name="configure-a-kerberos-key-distribution-center-proxy"></a>Een Kerberos-Key Distribution Center proxy configureren
+# <a name="configure-a-kerberos-key-distribution-center-proxy-preview"></a>Een Kerberos-Key Distribution Center proxy configureren (preview-versie)
 
-In dit artikel wordt uitgelegd hoe u een KDC-proxy (Kerberos Key Distribiution Center) configureert voor uw hostgroep. Met deze proxy kunnen organisaties worden geverifieerd met Kerberos buiten hun bedrijfs grenzen. U kunt bijvoorbeeld de KDC-proxy gebruiken om smartcard verificatie in te scha kelen voor externe clients.
+> [!IMPORTANT]
+> Deze functie is momenteel beschikbaar als openbare preview-versie.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+In dit artikel wordt uitgelegd hoe u een Kerberos-Key Distribution Center (KDC)-proxy (preview) configureert voor uw hostgroep. Met deze proxy kunnen organisaties worden geverifieerd met Kerberos buiten hun bedrijfs grenzen. U kunt bijvoorbeeld de KDC-proxy gebruiken om smartcard verificatie in te scha kelen voor externe clients.
 
 ## <a name="how-to-configure-the-kdc-proxy"></a>De KDC-proxy configureren
 

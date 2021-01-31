@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: dcd354b906b4d6c92d8b3186fc8e09c94a31ca55
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c76768fa94b524763ac8ad94c9c3f5bb3a73dddb
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968397"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219435"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Een toepassings ontwikkelaars ADCD (Controlled Distribution) instellen in IBM zD&T v1
 
@@ -57,7 +57,7 @@ Toegang tot de ADCD-media is vereist. In de onderstaande stappen wordt ervan uit
 
 4. Voer de beschrijving van het onderdeel of het onderdeel nummer in en klik op **Finder**.
 
-5. Klik desgewenst op de alfabetische volg orde van de lijst om theproduct op naam weer te geven en weer te geven.
+5. Klik desgewenst op de alfabetische volg orde van de lijst om het product op naam weer te geven en weer te geven.
 
 6. Selecteer **alle besturings systemen** in het **veld besturings systeem** en **alle talen** in het **veld talen**. Klik vervolgens op **Go**.
 
@@ -112,9 +112,9 @@ De volgende stap is het configureren van zD&T voor het gebruik van de geüploade
 
     ![Welkomst scherm voor IBM zD&T Enter prise Edition](media/02-welcome.png)
 
-3. Selecteer op de pagina **Quick Start** , onder **configureren**, **installatie kopie opslag**.
+3. Selecteer op de pagina **snel starten** , onder **configureren**, **installatie kopie opslag**.
 
-     ![ZD Quick Start scherm IBM-&T Enter prise Edition](media/03-quickstart.png)
+     ![ZD Snel starten scherm IBM-&T Enter prise Edition](media/03-quickstart.png)
 
 4. Selecteer op de pagina **installatie kopie opslag configureren** de optie **SSH-File Transfer Protocol**.
 
@@ -128,7 +128,7 @@ De volgende stap is het configureren van zD&T voor het gebruik van de geüploade
 
 De volgende stap is het configureren van de zD&T-doel omgeving. Deze geëmuleerde gehoste omgeving is waar uw installatie kopieën worden uitgevoerd.
 
-1. Selecteer op de pagina **Quick Start** onder **configureren** de optie **doel omgevingen**.
+1. Selecteer op de pagina **snel starten** onder **configureren** de optie **doel omgevingen**.
 
 2. Selecteer op de pagina **doel omgevingen configureren** de optie **doel toevoegen**.
 
@@ -144,7 +144,7 @@ De volgende stap is het configureren van de zD&T-doel omgeving. Deze geëmuleerd
 
 Nadat u de vorige configuratie stappen hebt voltooid, moet u zD&T configureren voor het gebruik van de pakket (en) en de doel omgeving. Opnieuw gebruikt u het proces voor installatie kopie opslag in zD&T, waarmee u de installatie kopieën kunt koppelen en gebruiken. U kunt SSH of FTP gebruiken.
 
-1. Selecteer op de pagina **Quick Start** onder **configureren** de optie **ADCD**. Er wordt een set instructies weer gegeven met de stappen die moeten worden voltooid voordat een ADCD-pakket kan worden gekoppeld. In dit onderwerp wordt uitgelegd waarom we de doel directory op de eerder genoemde manier hebben genoemd.
+1. Selecteer op de pagina **snel starten** onder **configureren** de optie **ADCD**. Er wordt een set instructies weer gegeven met de stappen die moeten worden voltooid voordat een ADCD-pakket kan worden gekoppeld. In dit onderwerp wordt uitgelegd waarom we de doel directory op de eerder genoemde manier hebben genoemd.
 
 2. Ervan uitgaande dat alle afbeeldingen zijn geüpload naar de juiste directory's, klikt u op de koppeling **afbeelding van ADCD** in de rechter benedenhoek (weer gegeven in stap 7 van de volgende scherm afbeelding).
 
@@ -185,12 +185,12 @@ Uw installatie kopie kan nu worden geïmplementeerd en kan worden gekoppeld door
 > [!NOTE]
 > Als er een fout bericht wordt weer gegeven met de melding dat er onvoldoende schijf ruimte is, moet u er rekening mee houden dat de regio 151 GB vereist.
 
-Gefeliciteerd! U voert nu een IBM mainframe-omgeving uit op Azure.
+Gefeliciteerd U voert nu een IBM mainframe-omgeving uit op Azure.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 - [Mainframe migratie: mythen en feiten](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
-- [IBM DB2 pureScale op Azure](../../../linux/ibm-db2-purescale-azure.md)
+- [IBM DB2 pureScale op Azure](ibm-db2-purescale-azure.md)
 - [Problemen oplossen](../../../troubleshooting/index.yml)
 - [Ontrafelen mainframe naar Azure-migratie](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/)
 

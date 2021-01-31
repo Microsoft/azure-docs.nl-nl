@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.custom: references_regions
-ms.openlocfilehash: d3329d9cac9547fbe9ec971bb8944f50971732b5
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 3d1238bffd785a47b6e0ffab70366a15dfff0ef3
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757403"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218108"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Ondersteuningsmatrix voor back-up van Azure-VM
 
@@ -150,6 +150,7 @@ Gen2 Vm's | Ondersteund <br> Azure Backup ondersteunt het maken van back-ups en 
 Back-ups van virtuele Azure-machines met vergren delingen | Niet ondersteund voor niet-beheerde Vm's. <br><br> Ondersteund voor beheerde Vm's.
 [Spot-VM's](../virtual-machines/spot-vms.md) | Niet-ondersteunde. Azure Backup de locatie van de virtuele machines als gewone virtuele machines van Azure herstelt.
 [Voor Azure toegewezen host](https://docs.microsoft.com/azure/virtual-machines/dedicated-hosts) | Ondersteund
+Windows-opslag ruimten configureren van zelfstandige virtuele machines in azure | Ondersteund 
 
 ## <a name="vm-storage-support"></a>Ondersteuning voor VM-opslag
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 3f403308c77e5ee0dfc066ec3dc53100e520d274
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 45b52f98f9f3670f2a68c22cfe9e27a86b2a74cc
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090668"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220697"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
@@ -29,6 +29,11 @@ De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u inform
   * Verbeterde AI-kwaliteit van algemene entiteits categorieën voor alle ondersteunde v3-talen. 
 
 * De `2021-01-05` model versie voor [taal detectie](how-tos/text-analytics-how-to-language-detection.md), die ondersteuning biedt voor aanvullende [talen](language-support.md?tabs=language-detection).
+
+Deze model versies zijn momenteel niet beschikbaar in de regio VS-Oost. 
+
+> [!div class="nextstepaction"]
+> [Meer informatie over het nieuwe NER-model](https://azure.microsoft.com/updates/text-analytics-ner-improved-ai-quality)
 
 ## <a name="december-2020"></a>December 2020
 

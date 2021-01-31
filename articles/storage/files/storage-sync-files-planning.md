@@ -4,16 +4,16 @@ description: Plan voor een implementatie met Azure File Sync, een service waarme
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/15/2020
+ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 28b7419dfc889d1149765b884f1a5990a1e28f03
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 65293df5fae523bff36240273afb93c4dd8485df
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898101"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219473"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -164,7 +164,7 @@ De volgende tabel bevat de interop-status van NTFS-bestandssysteem functies:
 
 <a id="files-skipped"></a>Azure File Sync worden ook bepaalde tijdelijke bestanden en systeem mappen overs Laan:
 
-| Bestand/map | Opmerking |
+| Bestand/map | Notitie |
 |-|-|
 | pagefile.sys | Bestand dat specifiek is voor systeem |
 | Desktop.ini | Bestand dat specifiek is voor systeem |
@@ -302,48 +302,16 @@ Zie [Veilige overdracht vereisen in Azure Storage](../common/storage-require-sec
 [!INCLUDE [storage-files-tiers-large-file-share-availability](../../../includes/storage-files-tiers-large-file-share-availability.md)]
 
 ## <a name="azure-file-sync-region-availability"></a>Beschik baarheid van Azure file sync-regio
-Azure File Sync is beschikbaar in de volgende regio's:
 
-| Azure-cloud | Geografische regio | Azure-regio | Regio code |
-|-------------|-------------------|--------------|-------------|
-| Openbaar | Azië | Azië - oost | `eastasia` |
-| Openbaar | Azië | Azië - zuidoost | `southeastasia` |
-| Openbaar | Australië | Australië - oost | `australiaeast` |
-| Openbaar | Australië | Australië - zuidoost | `australiasoutheast` |
-| Openbaar | Brazilië | Brazilië - zuid | `brazilsouth` |
-| Openbaar | Canada | Canada - midden | `canadacentral` |
-| Openbaar | Canada | Canada - oost | `canadaeast` |
-| Openbaar | Europa | Europa - noord | `northeurope` |
-| Openbaar | Europa | Europa -west | `westeurope` |
-| Openbaar | Frankrijk | Frankrijk - centraal | `francecentral` |
-| Openbaar | Frankrijk | Frankrijk-zuid * | `francesouth` |
-| Openbaar | India | India - centraal | `centralindia` |
-| Openbaar | India | India - zuid | `southindia` |
-| Openbaar | Japan | Japan - oost | `japaneast` |
-| Openbaar | Japan | Japan - west | `japanwest` |
-| Openbaar | Korea | Korea - centraal | `koreacentral` |
-| Openbaar | Korea | Korea - zuid | `koreasouth` |
-| Openbaar | Zuid-Afrika | Zuid-Afrika - noord | `southafricanorth` |
-| Openbaar | Zuid-Afrika | Zuid-Afrika-west * | `southafricawest` |
-| Openbaar | VAE | UAE-centraal * | `uaecentral` |
-| Openbaar | VAE | VAE - noord | `uaenorth` |
-| Openbaar | VK | Verenigd Koninkrijk Zuid | `uksouth` |
-| Openbaar | VK | Verenigd Koninkrijk West | `ukwest` |
-| Openbaar | VS | VS - centraal | `centralus` |
-| Openbaar | VS | VS - oost | `eastus` |
-| Openbaar | VS | VS - oost 2 | `eastus2` |
-| Openbaar | VS | VS - noord-centraal | `northcentralus` |
-| Openbaar | VS | VS - zuid-centraal | `southcentralus` |
-| Openbaar | VS | VS - west-centraal | `westcentralus` |
-| Openbaar | VS | VS - west | `westus` |
-| Openbaar | VS | VS - west 2 | `westus2` |
-| US Gov | VS | VS (overheid) - Arizona | `usgovarizona` |
-| US Gov | VS | VS (overheid) - Texas | `usgovtexas` |
-| US Gov | VS | VS (overheid) - Virginia | `usgovvirginia` |
+Zie [producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=storage)voor regionale Beschik baarheid.
 
-Azure File Sync ondersteunt alleen synchronisatie met een Azure-bestands share die zich in dezelfde regio bevinden als de opslag synchronisatie service.
+Voor de volgende regio's moet u toegang tot Azure Storage aanvragen voordat u Azure File Sync ermee kunt gebruiken:
 
-Voor de regio's die zijn gemarkeerd met sterretjes, moet u contact opnemen met de ondersteuning van Azure om toegang aan te vragen tot Azure Storage in die regio's. Het proces wordt beschreven in [dit document](https://azure.microsoft.com/global-infrastructure/geographies/).
+- Frankrijk - zuid
+- Zuid-Afrika - west
+- UAE - centraal
+
+Als u toegang wilt aanvragen voor deze regio's, volgt u het proces in [dit document](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 ## <a name="redundancy"></a>Redundantie
 [!INCLUDE [storage-files-redundancy-overview](../../../includes/storage-files-redundancy-overview.md)]

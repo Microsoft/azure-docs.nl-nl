@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Data Lake Analytics
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Data Lake Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-lake-analytics
 ms.custom: subject-policy-reference
-ms.openlocfilehash: f6e1886a2a5e5d182a7b70dfed393beb64f04a35
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c6be1b1090f8997c8bfd45807e465ae2328965e8
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944883"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218635"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-data-lake-analytics"></a>Ingebouwde Azure Policy-definities voor Azure Data Lake Analytics
 

@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleids definities voor Azure HDInsight
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure HDInsight. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 697b9189e13b36877b403ad91b49ab7dd50ff1b3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: c2886792f651ba2bade09b717727e20d8dbafc2f
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99180468"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219508"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-hdinsight"></a>Azure Policy ingebouwde definities voor Azure HDInsight
 

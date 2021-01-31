@@ -12,14 +12,15 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 01/29/2021
 ms.author: b-juche
-ms.openlocfilehash: e51297e8fe5c3dccf43318a066ac5da4a7d24cb2
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.custom: references_regions
+ms.openlocfilehash: fd3e8295820cd9388bd7999d3008b4c583dbf295
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696088"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220901"
 ---
 # <a name="cross-region-replication-of-azure-netapp-files-volumes"></a>Replicatie tussen regio's van Azure NetApp Files volumes
 
@@ -28,26 +29,31 @@ De functionaliteit van Azure NetApp Files replicatie biedt gegevens beveiliging 
 > [!IMPORTANT]
 > De functie voor replicatie van meerdere regio's is momenteel beschikbaar als open bare preview. U moet een Waitlist-aanvraag indienen om toegang te krijgen tot de functie via de [Waitlist-verzend pagina van Azure NetApp files cross-Region replicatie](https://aka.ms/anfcrrpreviewsignup). Wacht op een officiële bevestigings-e-mail van het Azure NetApp Files team voordat u de functie voor replicatie tussen regio's gebruikt.
 
-## <a name="supported-region-pairs"></a>Ondersteunde regio paren
+## <a name="supported-cross-region-replication-pairs"></a><a name="supported-region-pairs"></a>Ondersteunde replicatie paren tussen regio's
 
-Azure NetApp Files volume replicatie is momenteel beschikbaar in de volgende vaste regio paren:  
+Azure NetApp Files volume replicatie wordt ondersteund tussen verschillende [Azure-regionale paren](/azure/best-practices-availability-paired-regions#azure-regional-pairs) en niet-paren. Azure NetApp Files volume replicatie momenteel beschikbaar is tussen de volgende regio's:  
 
-* VS West en VS Oost
-* VS West 2 en VS Oost 
-* VS Zuid-Centraal en VS Centraal 
-* VS Zuid-Centraal en VS-Oost
-* VS Zuid-Centraal en VS Oost 2 
-* VS Oost en VS Oost 2  
-* VS Oost 2 en VS Centraal 
+### <a name="azure-regional-pairs"></a>Azure-regionale paren
+
+* VS-Oost, VS-West
+* VS-Oost 2 en VS-Centraal
 * Australië-oost en Australië-zuidoost
 * Canada-centraal en Canada-oost
-* Centraal-India en India-zuid
+* India-zuid en Centraal-India 
 * Duitsland-west-centraal en Duitsland-noord
 * Japan-Oost en Japan-West
 * Europa-noord en Europa-west
-* Zuidoost-Azië en Australië-oost
-* UK-zuid en Duitsland-west-centraal
 * UK-zuid en UK-west
+
+### <a name="azure-regional-non-pairs"></a>Azure regionale niet-paren
+
+*   VS-West 2 en VS-Oost
+*   Zuid-Centraal VS en VS-Centraal
+*   Zuid-Centraal VS en VS-Oost
+*   VS Zuid-Centraal en VS-Oost 2
+*   VS-Oost en VS-Oost 2
+*   Australië-oost en Zuidoost-Azië 
+*   Duitsland-west-centraal en UK-zuid
 
 ## <a name="service-level-objectives"></a>Serviceniveau doelstellingen
 

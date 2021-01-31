@@ -3,19 +3,24 @@ title: RD-gateway-functie implementeren virtueel bureau blad-Azure
 description: Het implementeren van de RD-gateway rol in Windows virtueel bureau blad.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 01/26/2021
+ms.date: 01/30/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ca3c36f339d5cbca6d5b5990415fba180ae42a13
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 71bd7d38727d99c05a15c54e5141c613960d9050
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98798392"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220816"
 ---
-# <a name="deploy-the-rd-gateway-role-in-windows-virtual-desktop"></a>De functie RD-gateway implementeren in het virtuele bureau blad van Windows
+# <a name="deploy-the-rd-gateway-role-in-windows-virtual-desktop-preview"></a>De functie RD-gateway implementeren in het virtuele bureau blad van Windows (preview-versie)
 
-In dit artikel wordt beschreven hoe u de Extern bureaublad-gateway-servers in uw omgeving implementeert. U kunt de server functies installeren op fysieke machines of virtuele machines, afhankelijk van of u een on-premises, Cloud-of hybride omgeving maakt.
+> [!IMPORTANT]
+> Deze functie is momenteel beschikbaar als openbare preview-versie.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+In dit artikel wordt beschreven hoe u de RD-gateway rol (preview) gebruikt om Extern bureaublad-gateway-servers in uw omgeving te implementeren. U kunt de server functies op fysieke machines of virtuele machines installeren, afhankelijk van of u een on-premises, Cloud-of hybride omgeving maakt.
 
 ## <a name="install-the-rd-gateway-role"></a>De RD-gateway-functie installeren
 

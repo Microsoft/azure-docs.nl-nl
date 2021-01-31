@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
-ms.openlocfilehash: 5567cf3bf606b08ce430f9189467d796498ae691
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: cbb84a4934eed4d258cf07772753315785f98019
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98953900"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218159"
 ---
 # <a name="net-c-code-samples-for-azure-cognitive-search"></a>Code voorbeelden van .NET (C#) voor Azure Cognitive Search
 
@@ -69,3 +69,4 @@ De volgende voor beelden worden ook gepubliceerd door het Cognitive Search-team,
 | [Oplossingsverbetering voor kennisanalyse](/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Bevat sjablonen, ondersteunings bestanden en analytische rapporten die u helpen bij het prototypen van een end-to-end kennis analyse oplossing.  |
 | [Covid-19-opslag plaats voor zoeken in apps](https://github.com/liamca/covid19search) | Opslag plaats van de bron code voor de op Cognitive Search gebaseerde [Covid-19-Zoek toepassing](https://covid19search.azurewebsites.net/) |
 | [JFK](https://github.com/Microsoft/AzureSearch_JFK_Files) | Meer informatie over de [JFK-oplossing](https://www.microsoft.com/ai/ai-lab-jfk-files). |
+| [Zoeken + QnA Maker Accelerator](https://github.com/Azure-Samples/search-qna-maker-accelerator) | Een [oplossing](https://techcommunity.microsoft.com/t5/azure-ai/qna-with-azure-cognitive-search/ba-p/2081381) waarmee de kracht van zoeken en QnA Maker worden gecombineerd. Bekijk de live [demo-site](https://aka.ms/qnaWithAzureSearchDemo). |

@@ -1,19 +1,23 @@
 ---
 title: Upgrade van primaire versie in Azure Database for MySQL-één server
 description: In dit artikel wordt beschreven hoe u een upgrade kunt uitvoeren voor de primaire versie van Azure Database for MySQL-één server
-author: ambhatna
-ms.author: ambhatna
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: how-to
-ms.date: 1/13/2021
-ms.openlocfilehash: b62f4ebc61ac27478788d8b2bae5e4145f87ac8b
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.date: 1/28/2021
+ms.openlocfilehash: 62faaed3672f721b26587d1bca3ddb0947f733e7
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630197"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220833"
 ---
 # <a name="major-version-upgrade-in-azure-database-for-mysql-single-server"></a>Upgrade van primaire versie in Azure Database for MySQL één server
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+>
 
 > [!IMPORTANT]
 > De upgrade van de primaire versie van Azure Data Base voor MySQL met één server is in open bare preview.
@@ -23,9 +27,8 @@ In dit artikel wordt beschreven hoe u uw primaire MySQL-versie in-place kunt bij
 Met deze functie kunnen klanten in-place Upgrades uitvoeren van hun MySQL 5,6-servers naar MySQL 5,7 met een klik op de knop zonder dat er gegevens worden verplaatst of dat een toepassing connection string wijzigingen kan aanbrengen.
 
 > [!Note]
-> * Upgrade van primaire versie is alleen beschikbaar voor de upgrade van de primaire versie van MySQL 5,6 naar MySQL 5,7<br>
-> * De upgrade van de primaire versie wordt nog niet ondersteund op de replica server.
-> * De server is niet beschikbaar tijdens de upgrade bewerking. Het wordt daarom aangeraden upgrades uit te voeren tijdens het geplande onderhouds venster.
+> * De upgrade van de primaire versie is alleen beschikbaar voor de upgrade van de primaire versie van MySQL 5,6 naar MySQL 5,7.
+> * De server is niet beschikbaar tijdens de upgrade bewerking. Het wordt daarom aangeraden upgrades uit te voeren tijdens het geplande onderhouds venster. U kunt overwegen [minimale downtime van de primaire versie van MySQL 5,6 naar mysql 5,7 met lees replica te gebruiken.](#perform-minimal-downtime-major-version-upgrade-from-mysql-56-to-mysql-57-using-read-replicas)
 
 ## <a name="perform-major-version-upgrade-from-mysql-56-to-mysql-57-using-azure-portal"></a>Een upgrade uitvoeren van de primaire versie van MySQL 5,6 naar MySQL 5,7 met Azure Portal
 
@@ -57,12 +60,58 @@ Volg deze stappen voor het uitvoeren van een primaire versie-upgrade voor uw Azu
    Voor deze upgrade is versie 2.16.0 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. Voer az version uit om de geïnstalleerde versie en afhankelijke bibliotheken te vinden. Voer az upgrade uit om te upgraden naar de nieuwste versie.
 
 2. Nadat u zich hebt aangemeld, voert u de opdracht [AZ mysql server upgrade](https://docs.microsoft.com/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_upgrade&preserve-view=true) uit:
-    
+
    ```azurecli
    az mysql server upgrade --name testsvr --resource-group testgroup --subscription MySubscription --target-server-version 5.7"
    ```
    
    In de opdracht prompt wordt het bericht '-running ' weer gegeven. Nadat dit bericht niet meer wordt weer gegeven, is de versie-upgrade voltooid.
+
+## <a name="perform-major-version-upgrade-from-mysql-56-to-mysql-57-on-read-replica-using-azure-portal"></a>Upgrade van de primaire versie uitvoeren van MySQL 5,6 naar MySQL 5,7 op een lees replica met Azure Portal
+
+1. Selecteer in de [Azure Portal](https://portal.azure.com/)uw bestaande Azure database for MySQL 5,6-Lees replica-server.
+
+2. Klik op de pagina **overzicht** op de knop **bijwerken** op de werk balk.
+
+3. Selecteer in de sectie **bijwerken** de optie **OK** om de upgrade van Azure data base for MySQL 5,6 van replica-server naar 5,7 server te upgraden.
+
+   :::image type="content" source="./media/how-to-major-version-upgrade-portal/upgrade.png" alt-text="Azure Database for MySQL-overzicht-upgrade":::
+
+4. Er wordt een melding bevestigd dat de upgrade is geslaagd.
+
+5. Controleer op de pagina **overzicht** of de versie van de Azure data base for MySQL replica-server is 5,7.
+
+6. Ga nu naar de primaire server en [Voer de primaire versie-upgrade](#perform-major-version-upgrade-from-mysql-56-to-mysql-57-using-azure-portal) uit.
+
+## <a name="perform-minimal-downtime-major-version-upgrade-from-mysql-56-to-mysql-57-using-read-replicas"></a>Minimale downtime van de primaire versie bijwerken van MySQL 5,6 naar MySQL 5,7 met behulp van Lees replica's
+
+U kunt minimale downtime van de primaire versie van MySQL 5,6 naar MySQL 5,7 door het gebruik van replica's te lezen. Het is belang rijk dat u de Lees replica van uw server bijwerkt naar 5,7 voor het eerst en later failover van uw toepassing om de replica te lezen en een nieuwe primaire te maken.
+
+1. Selecteer uw bestaande Azure Database for MySQL 5,6 in het [Azure Portal](https://portal.azure.com/).
+
+2. Maak een [Lees replica](https://docs.microsoft.com/azure/mysql/concepts-read-replicas#create-a-replica) van de primaire server.
+
+3. Voer [een upgrade uit voor uw Lees replica](#perform-major-version-upgrade-from-mysql-56-to-mysql-57-on-read-replica-using-azure-portal) naar versie 5,7.
+
+4. Wanneer u hebt gecontroleerd of de replica-server wordt uitgevoerd op versie 5,7, stopt u het maken van een verbinding met de primaire server van uw toepassing.
+ 
+5. Controleer de replicatie status en zorg ervoor dat de replica helemaal aan het primaire deel is gekoppeld, zodat alle gegevens synchroon zijn en ervoor zorgen dat er geen nieuwe bewerkingen meer worden uitgevoerd.
+
+   Roep de [`show slave status`](https://dev.mysql.com/doc/refman/5.7/en/show-slave-status.html) opdracht op de replica server om de replicatie status weer te geven.
+
+   ```sql
+   SHOW SLAVE STATUS\G
+   ```
+
+   Als de status van `Slave_IO_Running` en `Slave_SQL_Running` Ja is en de waarde van `Seconds_Behind_Master` is 0, werkt replicatie goed. `Seconds_Behind_Master` Hiermee wordt aangegeven hoe laat de replica. Als de waarde niet 0 is, betekent dit dat de replica updates verwerkt. Nadat u hebt bevestigd, `Seconds_Behind_Master` is het veilig om de replicatie te stoppen.
+
+6. Promoot uw Lees replica naar primair door de [replicatie te stoppen](https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal#stop-replication-to-a-replica-server).
+
+7. Wijs uw toepassing naar de nieuwe primaire (voormalige replica) met Server 5,7. Elke server heeft een unieke connection string. Werk uw toepassing bij zodat deze verwijst naar de (voormalige) replica in plaats van de bron.
+
+> [!Note]
+> In dit scenario is er sprake van downtime tijdens de stappen 4, 5 en 6.
+
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

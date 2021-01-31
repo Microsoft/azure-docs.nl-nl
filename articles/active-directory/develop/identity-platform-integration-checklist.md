@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: cefcf6b1bcd7ac5f81fa4e872b30660183a46a82
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: a6a7bf24571660d8e728c1acba29af2504539a18
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755248"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219957"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Best practices en aanbevelingen voor het Microsoft-identiteitsplatform
 
@@ -68,7 +68,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) gebruik moderne verificatie oplossingen (OAuth 2,0, [OpenID Connect Connect](v2-protocols-oidc.md)) om gebruikers veilig aan te melden.
 
-![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) niet rechtstreeks Program meren op protocollen zoals OAuth 2,0 en open id. Maak in plaats daarvan gebruik van de [micro soft Authentication Library (MSAL)](msal-overview.md). De MSAL-bibliotheken beveiligen beveiligings protocollen veilig in een gemakkelijk te gebruiken bibliotheek en u krijgt ingebouwde ondersteuning voor scenario's voor [voorwaardelijke toegang](../conditional-access/overview.md) , [SSO (single sign-on)](../manage-apps/what-is-single-sign-on.md)voor het apparaat en ingebouwde ondersteuning voor het opslaan van tokens. Zie de lijst met door micro soft ondersteunde [client bibliotheken](reference-v2-libraries.md#microsoft-supported-client-libraries) en middleware- [bibliotheken](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries) en de lijst met [compatibele client bibliotheken](reference-v2-libraries.md#compatible-client-libraries)van derden voor meer informatie.<br/><br/>Als u code nodig hebt voor de verificatie protocollen, moet u een methodologie zoals [micro soft sdl](https://www.microsoft.com/sdl/default.aspx)volgen. Let op de beveiligings overwegingen in de standaard specificaties van elk protocol.
+![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) niet rechtstreeks Program meren op protocollen zoals OAuth 2,0 en open id. Maak in plaats daarvan gebruik van de [micro soft Authentication Library (MSAL)](msal-overview.md). De MSAL-bibliotheken beveiligen beveiligings protocollen veilig in een gemakkelijk te gebruiken bibliotheek en u krijgt ingebouwde ondersteuning voor scenario's voor [voorwaardelijke toegang](../conditional-access/overview.md) , [SSO (single sign-on)](../manage-apps/what-is-single-sign-on.md)voor het apparaat en ingebouwde ondersteuning voor het opslaan van tokens. Zie de lijst met door micro soft ondersteunde [client bibliotheken](reference-v2-libraries.md)voor meer informatie. Als u hand matig code voor de verificatie protocollen nodig hebt, moet u de [micro soft sdl](https://www.microsoft.com/sdl/default.aspx) -of soort gelijke ontwikkel methodologie volgen. Let op de beveiligings overwegingen in de standaard specificaties van elk protocol.
 
 ![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) Migreer bestaande apps van [Azure Active Directory Authentication Library (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) naar de [micro soft-verificatie bibliotheek](msal-overview.md). MSAL is de nieuwste identiteits platform oplossing van micro soft en verdient de voor keur aan ADAL. Het is beschikbaar op .NET, java script, Android, iOS, macOS en is ook in open bare Preview voor python en Java. Meer informatie over het migreren van [ADAL.net](msal-net-migration.md)-, [ADAL.js](msal-compare-msal-js-and-adal-js.md)-en [ADAL.net-en IOS Broker](msal-net-migration-ios-broker.md) -apps.
 

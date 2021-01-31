@@ -2,19 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: d24192cb2f648a20a8f776b92f765bc6055ecf71
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 5d8890198308379d837f3b486b4d0efc987249e3
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807483"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220407"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[De Azure Policy-invoegtoepassing voor Kubernetes (AKS) moet worden geïnstalleerd en ingeschakeld op uw clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a15ec92-a229-4763-bb14-0ea34a568f8d) |De invoegtoepassing voor beheerbeleid van Azure Kubernetes (AKS) voorziet in uitbreiding van Gatekeeper v3, een webhook voor de toegangscontroller voor Open Policy Agent (OPA) waarmee afdwinging en beveiliging op schaal en via gecentraliseerde, consistente manier worden toegepast op uw clusters. |Controle, uitgeschakeld |[1.0.1-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Audit.json) |
+|[De Azure Policy-invoegtoepassing voor Kubernetes (AKS) moet worden geïnstalleerd en ingeschakeld op uw clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a15ec92-a229-4763-bb14-0ea34a568f8d) |De invoegtoepassing voor beheerbeleid van Azure Kubernetes (AKS) voorziet in uitbreiding van Gatekeeper v3, een webhook voor de toegangscontroller voor Open Policy Agent (OPA) waarmee afdwinging en beveiliging op schaal en via gecentraliseerde, consistente manier worden toegepast op uw clusters. |Controle, uitgeschakeld |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Audit.json) |
 |[Zowel besturingssystemen als gegevensschijven in Azure Kubernetes Service-clusters moeten worden versleuteld met door de klant beheerde sleutels](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7d7be79c-23ba-4033-84dd-45e2a5ccdd67) |Het versleutelen van besturingssysteem- en gegevensschijven met door de klant beheerde sleutels biedt meer controle en flexibiliteit in sleutelbeheer. Dit is een algemene vereiste in veel regelgevings- en compliancestandaarden. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_CMK_Deny.json) |
 |[Azure Policy-invoegtoepassing implementeren op Azure Kubernetes Service-clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa8eff44f-8c92-45c3-a3fb-9880802d67a7) |Gebruik een Azure Policy-invoegtoepassing voor het beheren en rapporteren van de compatibiliteitsstatus van uw AKS-clusters (Azure Kubernetes Service). Zie [https://aka.ms/akspolicydoc](https://aka.ms/akspolicydoc) voor meer informatie. |deployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Deploy.json) |
 |[GitOps implementeren in Kubernetes-cluster](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1d61c4d2-aef2-432b-87fc-7f96b019b7e1) |Met dit beleid wordt er een 'sourceControlConfiguration' geïmplementeerd in Kubernetes-clusters om te verzekeren dat de clusters hun bron van waarheid ophalen uit de gedefinieerde Git-opslagplaats. Ga voor instructies voor de toepassing van dit beleid naar [https://aka.ms/K8sGitOpsPolicy](https://aka.ms/K8sGitOpsPolicy). |DeployIfNotExists |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/Deploy-GitOps-to-Kubernetes-cluster_DINE.json) |

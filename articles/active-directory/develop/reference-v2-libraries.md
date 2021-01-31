@@ -1,150 +1,140 @@
 ---
-title: Micro soft Identity platform-verificatie bibliotheken
-description: Compatibele client bibliotheken en middleware-bibliotheken voor servers, samen met verwante bibliotheek-, bron-en voorbeeld koppelingen, voor het micro soft Identity-platform.
+title: Micro soft-identiteits platform verificatie bibliotheken | Azure
+description: Lijst met client bibliotheken en middleware die compatibel zijn met het micro soft Identity-platform. Gebruik deze bibliotheken om ondersteuning toe te voegen voor gebruikers aanmelding (verificatie) en beveiligde web API-toegang (autorisatie) voor uw toepassingen.
 services: active-directory
-author: negoe
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 07/25/2019
-ms.author: negoe
+ms.date: 01/29/2021
+ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 51b60d7b81d7402f69415b79cd575f51915dc38f
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9549ebab687400e32bbc68a2c76cf8efc8c106c8
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756666"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218270"
 ---
 # <a name="microsoft-identity-platform-authentication-libraries"></a>Micro soft Identity platform-verificatie bibliotheken
 
-Het [micro soft Identity-platform ](../azuread-dev/azure-ad-endpoint-comparison.md) biedt ondersteuning voor de industrie standaard OAuth 2,0 en openid connect Connect 1,0-protocollen. De micro soft Authentication Library (MSAL) is ontworpen voor gebruik met het micro soft Identity-platform. U kunt ook open-source bibliotheken gebruiken die ondersteuning bieden voor OAuth 2,0 en OpenID Connect Connect 1,0.
+De volgende tabellen tonen ondersteuning van micro soft-verificatie bibliotheek voor verschillende toepassings typen. Deze bevatten koppelingen naar de bron code van de bibliotheek, waar u het pakket voor het project van uw app ophaalt, en of de bibliotheek gebruikers aanmelding (verificatie) ondersteunt, toegang tot beveiligde web-Api's (autorisatie) of beide.
 
-U wordt aangeraden bibliotheken te gebruiken die zijn geschreven door protocol domein experts die een SDL-methodologie (Security Development Lifecycle) volgen. Deze methodologieën bevatten [de methoden die micro soft volgt][Microsoft-SDL]. Als u code voor de protocollen wilt, moet u een methodologie zoals micro soft SDL volgen. Let op de beveiligings overwegingen in de standaard specificaties van elk protocol.
+Het micro soft-identiteits platform is gecertificeerd door de OpenID Connect-basis als een [gecertificeerde OpenID Connect-provider](https://openid.net/certification/). Als u liever een andere bibliotheek dan de micro soft Authentication Library (MSAL) of een andere door micro soft ondersteunde bibliotheek gebruikt, kiest u er een met een [gecertificeerde OpenID Connect Connect-implementatie](https://openid.net/developers/certified/).
 
-> [!NOTE]
-> Zoekt u de Azure Active Directory Authentication Library (ADAL)? Bekijk de [hand leiding](../azuread-dev/active-directory-authentication-libraries.md)voor de ADAL-bibliotheek.
+Als u uw eigen implementatie op protocol niveau van [OAuth 2,0 of OpenID Connect Connect 1,0](active-directory-v2-protocols.md)hand matig wilt uitvoeren, moet u rekening houden met de beveiligings overwegingen voor elke standaard specificatie en een SDL-methodologie (Software Development Lifecycle) volgen, zoals [micro soft sdl][Microsoft-SDL].
 
-## <a name="types-of-libraries"></a>Typen bibliotheken
+## <a name="single-page-application-spa"></a>Toepassing met één pagina (SPA)
 
-Het micro soft Identity-platform werkt met twee typen bibliotheken:
+Een toepassing met één pagina wordt volledig uitgevoerd op het browser oppervlak en de pagina gegevens (HTML, CSS en Java script) worden dynamisch of op basis van de laad tijd van de toepassing opgehaald. Het kan Web-Api's aanroepen om te communiceren met back-end-gegevens bronnen.
 
-* **Client bibliotheken**: native clients en servers gebruiken client bibliotheken om toegangs tokens te verkrijgen voor het aanroepen van een bron, zoals Microsoft Graph.
-* **Server middleware-bibliotheken**: Web-apps gebruiken server middleware-bibliotheken voor aanmelding door gebruikers. Web-Api's gebruiken middleware-bibliotheken voor servers om tokens te valideren die door systeem eigen clients of door andere servers worden verzonden.
+Omdat de code van een beveiligd-wachtwoord verificatie volledig in de browser wordt uitgevoerd, wordt dit beschouwd als een *open bare client* waarop geheimen niet veilig kunnen worden opgeslagen.
 
-## <a name="library-support"></a>Bibliotheek ondersteuning
+| Taal/Framework | Project op<br/>GitHub                                                                                                    | Pakket                                                                      | Slaag<br/>helpen                             | Gebruikers aanmelden                                         | Toegang tot Web-Api's                                                 | Algemeen beschikbaar (GA) *of*<br/>Open bare preview<sup>1</sup> |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|:-----------------------------------------------:|:-----------------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|
+| Angular              | [MSAL hoek 2,0](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)         | [@azure/msal-angular](https://www.npmjs.com/package/@azure/msal-angular)     | —                                               | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Open bare preview                                               |
+| Angular              | [MSAL hoek](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/msal-angular-v1/lib/msal-angular) | [@azure/msal-angular](https://www.npmjs.com/package/@azure/msal-angular)     | [Zelfstudie](tutorial-v2-angular.md)              | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| AngularJS            | [MSAL AngularJS](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angularjs)         | [@azure/msal-angularjs](https://www.npmjs.com/package/@azure/msal-angularjs) | —                                               | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Open bare preview                                               |
+| Javascript           | [MSAL.js 2,0](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)              | [@azure/msal-browser](https://www.npmjs.com/package/@azure/msal-browser)     | [Zelfstudie](tutorial-v2-javascript-auth-code.md) | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| React                | [MSAL reageren](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)                 | [@azure/msal-react](https://www.npmjs.com/package/@azure/msal-react)         | —                                               | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Open bare preview                                               |
+<!--
+| Vue | [Vue MSAL]( https://github.com/mvertopoulos/vue-msal) | [vue-msal]( https://www.npmjs.com/package/vue-msal) | ![X indicating no.][n] | ![Green check mark.][y] | ![Green check mark.][y] | -- |
+-->
 
-Bibliotheken zijn beschikbaar in twee ondersteunings Categorieën:
+<sup>1</sup> [aanvullende gebruiks voorwaarden voor Microsoft Azure previews][preview-tos] zijn van toepassing op bibliotheken in de *open bare preview*.
 
-* **Ondersteund door micro soft**: micro soft biedt oplossingen voor deze bibliotheken en heeft SDL op deze tape wisselaars aangehouden.
-* **Compatibel**: micro soft heeft deze bibliotheken getest in de basis scenario's en heeft bevestigd dat ze werken met het micro soft-identiteits platform. Micro soft biedt geen oplossingen voor deze bibliotheken en heeft geen beoordeling van deze bibliotheken uitgevoerd. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek.
+## <a name="web-application"></a>Webtoepassing
 
-Zie de volgende secties voor een lijst met bibliotheken die samen werken met het micro soft-identiteits platform.
+Een webtoepassing voert code uit op een server waarmee HTML, CSS en Java script worden gegenereerd en verzonden naar de webbrowser van een gebruiker. De identiteit van de gebruiker wordt behouden als een sessie tussen de browser van de gebruiker (de front-end) en de webserver (de back-end).
 
-## <a name="microsoft-supported-client-libraries"></a>Door micro soft ondersteunde client bibliotheken
+Omdat de code van een webtoepassing wordt uitgevoerd op de webserver, wordt deze beschouwd als een *vertrouwelijke client* waarop geheimen veilig kunnen worden opgeslagen.
 
-Gebruik bibliotheken voor client verificatie voor het verkrijgen van een token voor het aanroepen van een beveiligde web-API.
+| Taal/Framework | Project op<br/>GitHub                                                                                     | Pakket                                                                                                    | Slaag<br/>helpen                               | Gebruikers aanmelden                                            | Toegang tot Web-Api's                                                    | Algemeen beschikbaar (GA) *of*<br/>Open bare preview<sup>1</sup> |
+|----------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|:-------------------------------------------------:|:--------------------------------------------------------:|:------------------------------------------------------------------:|:------------------------------------------------------------:|
+| .NET                 | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)                        | [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)                      | —                                                 | ![Bibliotheek kan geen ID-tokens aanvragen voor gebruikers aanmelding.][n] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y]    | Algemene beschikbaarheid                                                           |
+| ASP.NET Core         | [ASP.NET beveiliging](/aspnet/core/security/)                                                                | [Micro soft. AspNetCore. Authentication](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication/) | —                                                 | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y]    | ![Bibliotheek kan geen toegangs tokens aanvragen voor beveiligde web-Api's.][n] | Algemene beschikbaarheid                                                           |
+| ASP.NET Core         | [Micro soft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web)                               | [Micro soft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web)                            | —                                                 | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y]    | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y]    | Algemene beschikbaarheid                                                           |
+| Java                 | [MSAL4J](https://github.com/AzureAD/microsoft-authentication-library-for-java)                            | [msal4j](https://search.maven.org/artifact/com.microsoft.azure/msal4j)                                     | [Snelstartgids](quickstart-v2-java-webapp.md)        | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y]    | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y]    | Algemene beschikbaarheid                                                           |
+| Node.js              | [MSAL Node.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) | [msal-knoop punt](https://www.npmjs.com/package/@azure/msal-node)                                                | [Snelstartgids](quickstart-v2-nodejs-webapp-msal.md) | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y]    | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y]    | Open bare preview                                               |
+| Node.js              | [Azure AD Pass Port](https://github.com/AzureAD/passport-azure-ad)                                         | [Pass Port-Azure-AD](https://www.npmjs.com/package/passport-azure-ad)                                       | [Snelstartgids](quickstart-v2-nodejs-webapp.md)      | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y]    | ![Bibliotheek kan geen toegangs tokens aanvragen voor beveiligde web-Api's.][n] | Algemene beschikbaarheid                                                           |
+| Python               | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)                     | [msal](https://pypi.org/project/msal)                                                                      | [Snelstartgids](quickstart-v2-python-webapp.md)      | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y]    | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y]    | Algemene beschikbaarheid                                                           |
+<!--
+| Java | [ScribeJava](https://github.com/scribejava/scribejava) | [ScribeJava 3.2.0](https://github.com/scribejava/scribejava/releases/tag/scribejava-3.2.0) | ![X indicating no.][n] | ![X indicating no.][n] | ![Green check mark.][y] | -- |
+| Java | [Gluu oxAuth](https://github.com/GluuFederation/oxAuth) | [oxAuth 3.0.2](https://github.com/GluuFederation/oxAuth/releases/tag/3.0.2) | ![X indicating no.][n] | ![Green check mark.][y] | ![Green check mark.][y] | -- |
+| Node.js | [openid-client](https://github.com/panva/node-openid-client/) | [openid-client 2.4.5](https://github.com/panva/node-openid-client/releases/tag/v2.4.5) | ![X indicating no.][n] | ![Green check mark.][y] | ![Green check mark.][y] | -- |
+| PHP | [PHP League oauth2-client](https://github.com/thephpleague/oauth2-client) | [oauth2-client 1.4.2](https://github.com/thephpleague/oauth2-client/releases/tag/1.4.2) | ![X indicating no.][n] | ![X indicating no.][n] | ![Green check mark.][y] | -- |
+| Ruby | [OmniAuth](https://github.com/omniauth/omniauth) | [omniauth 1.3.1](https://github.com/omniauth/omniauth/releases/tag/v1.3.1)<br/>[omniauth-oauth2 1.4.0](https://github.com/intridea/omniauth-oauth2) | ![X indicating no.][n] | ![X indicating no.][n] | ![Green check mark.][y] | -- |
+-->
 
-| Platform | Bibliotheek | Downloaden | Broncode | Voorbeeld | Naslaginformatie | Conceptueel document | Roadmap |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Javascript](media/sample-v2-code/logo_js.png) | MSAL.js  | [NPM](https://www.npmjs.com/package/msal) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/README.md) |  [App met één pagina](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) | [Verwijzing](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-core/) | [Conceptuele documenten](msal-overview.md)| [Roadmap](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
-![Angular](media/sample-v2-code/logo_angular.png) | MSAL hoek | [NPM](https://www.npmjs.com/package/@azure/msal-angular) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) | [Hoek SPA](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) | [Verwijzing](https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-angular/) | [Conceptuele documenten](msal-overview.md) | [Roadmap](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki#roadmap)
-| ![.NET Framework](media/sample-v2-code/logo_NET.png) ![UWP](media/sample-v2-code/logo_windows.png) ![Xamarin](media/sample-v2-code/logo_xamarin.png) | MSAL.NET  |[NuGet](https://www.nuget.org/packages/Microsoft.Identity.Client) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) | [Desktop-app](/windows/apps/desktop/) | [MSAL.NET](/dotnet/api/microsoft.identity.client?view=azure-dotnet-preview&preserve-view=true) |[Conceptuele documenten](msal-overview.md) | [Roadmap](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#roadmap)
-| ![Pictogram .NET-kern geheugen](media/sample-v2-code/logo_NETCore.png) | Micro soft Identity Web  |[NuGet](https://www.nuget.org/packages/Microsoft.Identity.Web) |[GitHub](https://github.com/AzureAD/microsoft-identity-web) | [Voorbeelden](https://aka.ms/ms-id-web/samples) | [Micro soft. Identity. Web](/dotnet/api/microsoft.identity.web?view=azure-dotnet-preview&preserve-view=true) |[Conceptuele documenten](https://aka.ms/ms-id-web/conceptual-doc) | [Roadmap](https://github.com/AzureAD/microsoft-identity-web/wiki#roadmap)
-| ![Python](media/sample-v2-code/logo_python.png) | MSAL Python | [PyPI](https://pypi.org/project/msal) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-python) | [Voorbeelden](https://github.com/AzureAD/microsoft-authentication-library-for-python/tree/dev/sample) | [ReadTheDocs](https://msal-python.rtfd.io/) | [Veranderen](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | [Roadmap](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki/Roadmap)
-| ![Java](media/sample-v2-code/logo_java.png) | MSAL Java | [Maven](https://search.maven.org/artifact/com.microsoft.azure/msal4j) | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-java) | [Voorbeelden](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples) | [Verwijzing](https://javadoc.io/doc/com.microsoft.azure/msal4j/latest/index.html) | [Veranderen](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | [Roadmap](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki)
-| iOS en macOS | MSAL iOS en macOS | [GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-objc) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | [IOS-app](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc), [macOS-app](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) | [Verwijzing](https://azuread.github.io/microsoft-authentication-library-for-objc/index.html)  | [Conceptuele documenten](msal-overview.md) | |
-|![Android/java](media/sample-v2-code/logo_Android.png) | MSAL Android | [Centrale opslag plaats](https://repo1.maven.org/maven2/com/microsoft/identity/client/msal/) |[GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-android) | [Android-app](quickstart-v2-android.md) | [JavaDocs](https://javadoc.io/doc/com.microsoft.identity.client/msal) | [Conceptuele documenten](msal-overview.md) |[Roadmap](https://github.com/AzureAD/microsoft-authentication-library-for-android/wiki/Roadmap)
+<sup>1</sup> [aanvullende gebruiks voorwaarden voor Microsoft Azure previews][preview-tos] zijn van toepassing op bibliotheken in de *open bare preview*.
 
-## <a name="microsoft-supported-server-middleware-libraries"></a>Door micro soft ondersteunde server middleware-bibliotheken
+## <a name="desktop-application"></a>Bureaublad toepassing
 
-Gebruik middleware-bibliotheken om webtoepassingen en Web-Api's te beveiligen. Web-apps of Web-Api's die zijn geschreven met ASP.NET of ASP.NET Core de middleware-bibliotheken gebruiken.
+Een bureaublad toepassing is doorgaans binaire (gecompileerde) code die een gebruikers interface bedient en die is bedoeld om te worden uitgevoerd op het bureau blad van een gebruiker.
 
-| Platform | Bibliotheek | Downloaden | Broncode | Voorbeeld | Naslaginformatie
-| --- | --- | --- | --- | --- | --- |
-| ![.NET](media/sample-v2-code/logo_NET.png) ![.NET Core](media/sample-v2-code/logo_NETcore.png) | ASP.NET beveiliging |[NuGet](https://www.nuget.org/packages/Microsoft.AspNet.Mvc/) |[GitHub](https://github.com/aspnet/AspNetCore) |[MVC-app](quickstart-v2-aspnet-webapp.md) |[ASP.NET API-naslag informatie](/dotnet/api/?view=aspnetcore-2.0&preserve-view=true) |
-| ![.NET](media/sample-v2-code/logo_NET.png)| Identity model-extensies voor .NET| |[GitHub](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet) | [MVC-app](quickstart-v2-aspnet-webapp.md) |[Verwijzing](/dotnet/api/overview/azure/activedirectory/client?view=azure-dotnet&preserve-view=true) |
-| ![Node.js](media/sample-v2-code/logo_nodejs.png) | Azure AD Pass Port |[NPM](https://www.npmjs.com/package/passport-azure-ad) |[GitHub](https://github.com/AzureAD/passport-azure-ad) | [Web-app](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs) | |
+Omdat een bureaublad toepassing op het bureau blad van de gebruiker wordt uitgevoerd, wordt deze beschouwd als een *open bare client* waarop geheimen niet veilig kunnen worden opgeslagen.
 
-## <a name="microsoft-supported-libraries-by-os--language"></a>Door micro soft ondersteunde bibliotheken per OS/taal
+| Taal/Framework | Project op<br/>GitHub                                                                                     | Pakket                                                                               | Slaag<br/>helpen                        | Gebruikers aanmelden                                         | Toegang tot Web-Api's                                                 | Algemeen beschikbaar (GA) *of*<br/>Open bare preview<sup>1</sup> |
+|----------------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|:------------------------------------------:|:-----------------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|
+| Vangst             | [MSAL Node.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) | [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node)                    | —                                          | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Open bare preview                                               |
+| Java                 | [MSAL4J](https://github.com/AzureAD/microsoft-authentication-library-for-java)                            | [msal4j](https://mvnrepository.com/artifact/com.microsoft.azure/msal4j)               | —                                          | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| macOS (SWIFT/obj-C)  | [MSAL voor iOS en macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc)            | [MSAL](https://cocoapods.org/pods/MSAL)                                               | [Zelfstudie](tutorial-v2-ios.md)             | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| UWP                  | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)                        | [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) | [Zelfstudie](tutorial-v2-windows-uwp.md)     | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| WPF                  | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)                        | [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) | [Zelfstudie](tutorial-v2-windows-desktop.md) | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+<!--
+| Java | Scribe | [Scribe Java](https://mvnrepository.com/artifact/org.scribe/scribe) | ![X indicating no.][n] | ![Green check mark.][y] | ![Green check mark.][y] | -- |
+| React Native | [React Native App Auth](https://github.com/FormidableLabs/react-native-app-auth/blob/main/docs/config-examples/azure-active-directory.md) | [react-native-app-auth](https://www.npmjs.com/package/react-native-app-auth) | ![X indicating no.][n] | ![Green check mark.][y] | ![Green check mark.][y] | -- |
+-->
 
-In de periode van ondersteunde besturings systemen versus talen is de toewijzing als volgt:
+<sup>1</sup> [aanvullende gebruiks voorwaarden voor Microsoft Azure previews][preview-tos] zijn van toepassing op bibliotheken in de *open bare preview*.
 
-| Platform    | Windows    | Linux      | macOS      | iOS | Android    |
-|-------------|------------|------------|------------|------------|------------|
-| ![Javascript](media/sample-v2-code/logo_js.png)  |  MSAL.js | MSAL.js | MSAL.js | MSAL.js |  MSAL.js |
-| <img alt="C#" src="../../cognitive-services/speech-service/media/index/logo_csharp.svg" width="64px" height="64px" /> | ASP.NET, ASP.NET Core, MSAL.Net (.NET FW, Core, UWP)| ASP.NET Core, MSAL.Net (.NET core) | ASP.NET Core, MSAL.Net (macOS)       | MSAL.Net (Xamarin. iOS) | MSAL.Net (Xamarin. Android)|
-| Swift <br> Objective-C |            |            | [MSAL voor iOS en macOS](msal-overview.md) | [MSAL voor iOS en macOS](msal-overview.md) |            |
-| ![Java](media/sample-v2-code/logo_java.png) Java | msal4j | msal4j | msal4j | | MSAL Android |
-| ![Python](media/sample-v2-code/logo_python.png) Python | MSAL Python | MSAL Python | MSAL Python |
-| ![Node.js](media/sample-v2-code/logo_nodejs.png) Node.js | Pass Port. node | Pass Port. node | Pass Port. node |
+## <a name="mobile-application"></a>Mobiele toepassing
 
-Zie ook [scenario's voor ondersteunde platforms en talen](authentication-flows-app-scenarios.md#scenarios-and-supported-platforms-and-languages)
+Een mobiele toepassing is doorgaans een binaire (gecompileerde) code die een gebruikers interface oppereert en die is bedoeld om te worden uitgevoerd op het mobiele apparaat van een gebruiker.
 
-## <a name="compatible-client-libraries"></a>Compatibele clientbibliotheken
+Omdat een mobiele toepassing wordt uitgevoerd op het mobiele apparaat van de gebruiker, wordt dit beschouwd als een *open bare client* waarop geheimen niet veilig kunnen worden opgeslagen.
 
-| Platform | Bibliotheeknaam | Geteste versie | Broncode | Voorbeeld |
-|:---:|:---:|:---:|:---:|:---:|
-|![Javascript](media/sample-v2-code/logo_js.png)|[Hello.js](https://adodson.com/hello.js/) | Versie 1.13.5 |[Hello.js](https://github.com/MrSwitch/hello.js) |[SPA](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
-|![Vue](media/sample-v2-code/logo_vue.png)|[Vue MSAL](https://github.com/mvertopoulos/vue-msal) | Versie 3.0.3 |[Vue-msal](https://github.com/mvertopoulos/vue-msal) | |
-| ![Java](media/sample-v2-code/logo_java.png) | [Scribe java](https://github.com/scribejava/scribejava) | [Versie 3.2.0](https://github.com/scribejava/scribejava/releases/tag/scribejava-3.2.0) | [ScribeJava](https://github.com/scribejava/scribejava/) | |
-| ![Java](media/sample-v2-code/logo_java.png) | [Gluu OpenID Connect Connect-bibliotheek](https://github.com/GluuFederation/oxAuth) | [Versie 3.0.2](https://github.com/GluuFederation/oxAuth/releases/tag/3.0.2) | [Gluu OpenID Connect Connect-bibliotheek](https://github.com/GluuFederation/oxAuth) | |
-| ![Python](media/sample-v2-code/logo_python.png) | [Aanvragen-OAuthlib](https://github.com/requests/requests-oauthlib) | [Versie 1.2.0](https://github.com/requests/requests-oauthlib/releases/tag/v1.2.0) | [Aanvragen-OAuthlib](https://github.com/requests/requests-oauthlib) | |
-| ![Node.js](media/sample-v2-code/logo_nodejs.png) | [OpenID Connect-client](https://github.com/panva/node-openid-client) | [Versie 2.4.5](https://github.com/panva/node-openid-client/releases/tag/v2.4.5) | [OpenID Connect-client](https://github.com/panva/node-openid-client) | |
-| ![PHP](media/sample-v2-code/logo_php.png) | [De PHP competitie oauth2-client](https://github.com/thephpleague/oauth2-client) | [Versie 1.4.2](https://github.com/thephpleague/oauth2-client/releases/tag/1.4.2) | [oauth2-client](https://github.com/thephpleague/oauth2-client/) | |
-| ![Ruby](media/sample-v2-code/logo_ruby.png) |[OmniAuth](https://github.com/omniauth/omniauth/wiki) |omniauth: 1.3.1<br />omniauth-oauth2:1.4.0 |[OmniAuth](https://github.com/omniauth/omniauth)<br />[OmniAuth OAuth2](https://github.com/intridea/omniauth-oauth2) |  |
-| iOS, macOS, & Android  | [Verificatie van systeem eigen app reageren](https://github.com/FormidableLabs/react-native-app-auth) | [Versie 4.2.0](https://github.com/FormidableLabs/react-native-app-auth/releases/tag/v4.2.0) | [Verificatie van systeem eigen app reageren](https://github.com/FormidableLabs/react-native-app-auth) | |
+| Platform          | Project op<br/>GitHub                                                                          | Pakket                                                                               | Slaag<br/>helpen                    | Gebruikers aanmelden                                         | Toegang tot Web-Api's                                                 | Algemeen beschikbaar (GA) *of*<br/>Open bare preview<sup>1</sup> |
+|-------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|:--------------------------------------:|:-----------------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|
+| Android (Java)    | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)        | [MSAL](https://mvnrepository.com/artifact/com.microsoft.identity.client/msal)         | [Snelstartgids](quickstart-v2-android.md) | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| Android (Kotlin)  | [MSAL Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)        | [MSAL](https://mvnrepository.com/artifact/com.microsoft.identity.client/msal)         | —                                      | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| iOS (SWIFT/obj-C) | [MSAL voor iOS en macOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) | [MSAL](https://cocoapods.org/pods/MSAL)                                               | [Zelfstudie](tutorial-v2-ios.md)         | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| Xamarin (.NET)    | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)             | [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) | —                                      | ![Bibliotheek kan ID-tokens aanvragen voor gebruikers aanmelding.][y] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+<!--
+| React Native |[React Native App Auth](https://github.com/FormidableLabs/react-native-app-auth/blob/main/docs/config-examples/azure-active-directory.md) | [react-native-app-auth](https://www.npmjs.com/package/react-native-app-auth) | ![X indicating no.][n] | ![Green check mark.][y] | ![Green check mark.][y] | -- |
+-->
 
-U kunt gebruikmaken van het micro soft-identiteits platform voor een bibliotheek die voldoet aan de normen. Het is belang rijk om te weten waar u naar ondersteuning moet gaan:
+<sup>1</sup> [aanvullende gebruiks voorwaarden voor Microsoft Azure previews][preview-tos] zijn van toepassing op bibliotheken in de *open bare preview*.
 
-* Neem contact op met de eigenaar van de bibliotheek voor problemen en nieuwe functie aanvragen in bibliotheek code.
-* Neem contact op met micro soft voor problemen en nieuwe functie aanvragen in de service-side protocol-implementatie.
-* [Een functie aanvraag indienen](https://feedback.azure.com/forums/169401-azure-active-directory) voor aanvullende functies die u wilt weer geven in het protocol.
-* [Een ondersteunings aanvraag maken](../../azure-portal/supportability/how-to-create-azure-support-request.md) als u een probleem vindt waarbij het micro soft-identiteits platform niet compatibel is met OAuth 2,0 of openid connect Connect 1,0.
+## <a name="service--daemon"></a>Service/daemon
 
-## <a name="related-content"></a>Gerelateerde inhoud
+Services en daemons worden vaak gebruikt voor server-naar-server en andere communicatie zonder toezicht (ook wel *headless*). Omdat er geen gebruiker is op het toetsen bord om referenties in te voeren of toestemming te geven voor toegang tot resources, verifiëren deze toepassingen zichzelf, niet als gebruiker, bij het aanvragen van geautoriseerde toegang tot de resources van een web-API.
 
-Zie voor meer informatie over het micro soft-identiteits platform het [overzicht van micro soft Identity platform][AAD-App-Model-V2-Overview].
+Een service of daemon die op een server wordt uitgevoerd, wordt beschouwd als een *vertrouwelijke client* waarop de geheimen veilig kunnen worden opgeslagen.
+
+| Taal/Framework | Project op<br/>GitHub                                                                 | Pakket                                                                                | Slaag<br/>helpen                           | Gebruikers aanmelden                                            | Toegang tot Web-Api's                                                 | Algemeen beschikbaar (GA) *of*<br/>Open bare preview<sup>1</sup> |
+|----------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|:---------------------------------------------:|:--------------------------------------------------------:|:---------------------------------------------------------------:|:------------------------------------------------------------:|
+| .NET                 | [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)    | [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) | [Snelstartgids](quickstart-v2-netcore-daemon.md) | ![Bibliotheek kan geen ID-tokens aanvragen voor gebruikers aanmelding.][n] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| Java                 | [MSAL4J](https://github.com/AzureAD/microsoft-authentication-library-for-java)        | [msal4j](https://javadoc.io/doc/com.microsoft.azure/msal4j/latest/index.html)          | —                                             | ![Bibliotheek kan geen ID-tokens aanvragen voor gebruikers aanmelding.][n] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+| Python               | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) | [msal-python](https://github.com/AzureAD/microsoft-authentication-library-for-python)  | [Snelstartgids](quickstart-v2-python-daemon.md)  | ![Bibliotheek kan geen ID-tokens aanvragen voor gebruikers aanmelding.][n] | ![De bibliotheek kan toegangs tokens aanvragen voor beveiligde web-Api's.][y] | Algemene beschikbaarheid                                                           |
+<!--
+|PHP| [The PHP League oauth2-client](https://oauth2-client.thephpleague.com/usage/) | [League\OAuth2](https://oauth2-client.thephpleague.com/) | ![Green check mark.][n] | ![X indicating no.][n] | ![Green check mark.][y] | -- |
+-->
+
+<sup>1</sup> [aanvullende gebruiks voorwaarden voor Microsoft Azure previews][preview-tos] zijn van toepassing op bibliotheken in de *open bare preview*.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Zie het [overzicht van de micro soft Authentication Library (MSAL)](msal-overview.md)voor meer informatie over de micro soft-verificatie bibliotheek.
 
 <!--Image references-->
+[y]: ./media/common/yes.png
+[n]: ./media/common/no.png
 
-<!--Reference style links -->
+<!--Reference-style links -->
 [AAD-App-Model-V2-Overview]: v2-overview.md
-[ClientLib-NET-Lib]: https://www.nuget.org/packages/Microsoft.Identity.Client
-[ClientLib-NET-Repo]: https://github.com/AzureAD/microsoft-authentication-library-for-dotnet
-[ClientLib-NET-Sample]: ./tutorial-v2-windows-desktop.md
-[ClientLib-Node-Lib]: https://www.npmjs.com/package/passport-azure-ad
-[ClientLib-Node-Repo]: https://github.com/AzureAD/passport-azure-ad
-[ClientLib-Node-Sample]:/
-[ClientLib-Iosmac-Lib]:/
-[ClientLib-Iosmac-Repo]:/
-[ClientLib-Iosmac-Sample]:/
-[ClientLib-Android-Lib]:/
-[ClientLib-Android-Repo]:/
-[ClientLib-Android-Sample]:/
-[ClientLib-Js-Lib]:/
-[ClientLib-Js-Repo]:/
-[ClientLib-Js-Sample]:/
-
-[Microsoft-SDL]: https://www.microsoft.com/sdl/default.aspx
-[ServerLib-Net4-Owin-Oidc-Lib]: https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect/
-[ServerLib-Net4-Owin-Oidc-Repo]: https://katanaproject.codeplex.com/
-[ServerLib-Net4-Owin-Oidc-Sample]: ./tutorial-v2-asp-webapp.md
-[ServerLib-Net4-Owin-Oauth-Lib]: https://www.nuget.org/packages/Microsoft.Owin.Security.OAuth/
-[ServerLib-Net4-Owin-Oauth-Repo]: https://katanaproject.codeplex.com/
-[ServerLib-Net4-Owin-Oauth-Sample]: https://azure.microsoft.com/documentation/articles/active-directory-v2-devquickstarts-dotnet-api/
-[ServerLib-Net-Jwt-Lib]: https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt
-[ServerLib-Net-Jwt-Repo]: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet
-[ServerLib-Net-Jwt-Sample]:/
-[ServerLib-NetCore-Owin-Oidc-Lib]: https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OpenIdConnect/
-[ServerLib-NetCore-Owin-Oidc-Repo]: https://github.com/aspnet/Security
-[ServerLib-NetCore-Owin-Oidc-Sample]: https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-v2
-[ServerLib-NetCore-Owin-Oauth-Lib]: https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.OAuth/
-[ServerLib-NetCore-Owin-Oauth-Repo]: https://github.com/aspnet/Security
-[ServerLib-NetCore-Owin-Oauth-Sample]:/
-[ServerLib-Node-Lib]: https://www.npmjs.com/package/passport-azure-ad
-[ServerLib-Node-Repo]: https://github.com/AzureAD/passport-azure-ad/
-[ServerLib-Node-Sample]: https://azure.microsoft.com/documentation/articles/active-directory-v2-devquickstarts-node-web/
+[Microsoft-SDL]: https://www.microsoft.com/securityengineering/sdl/
+[preview-tos]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/

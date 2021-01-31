@@ -1,14 +1,14 @@
 ---
 title: Details van de structuur van de beleids toewijzing
 description: Beschrijft de beleids toewijzings definitie die door Azure Policy wordt gebruikt om beleids definities en-para meters te koppelen aan resources voor evaluatie.
-ms.date: 09/22/2020
+ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: e930e9ddcc04846a35c8db7784a349007c71580b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12acbe368c9ccd6fa5654d3394e0fecb286984bf
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904075"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219563"
 ---
 # <a name="azure-policy-assignment-structure"></a>Azure Policy-toewijzingsstructuur
 
@@ -17,11 +17,12 @@ Beleids toewijzingen worden gebruikt door Azure Policy om te definiëren welke r
 U gebruikt JSON om een beleids toewijzing te maken. De beleids toewijzing bevat elementen voor:
 
 - weergave naam
-- description
+- beschrijving
 - metagegevens
 - Afdwingings modus
 - uitgesloten bereiken
 - beleids definitie
+- berichten over niet-naleving
 - parameters
 
 Zo toont de volgende JSON een beleids toewijzing in de modus _DoNotEnforce_ met dynamische para meters:
@@ -37,6 +38,11 @@ Zo toont de volgende JSON een beleids toewijzing in de modus _DoNotEnforce_ met 
         "enforcementMode": "DoNotEnforce",
         "notScopes": [],
         "policyDefinitionId": "/subscriptions/{mySubscriptionID}/providers/Microsoft.Authorization/policyDefinitions/ResourceNaming",
+        "nonComplianceMessages": [
+            {
+                "message": "Resource names must start with 'DeptA' and end with '-LC'."
+            }
+        ],
         "parameters": {
             "prefix": {
                 "value": "DeptA"
@@ -70,7 +76,7 @@ Als **enforcementMode** niet is opgegeven in een beleids-of initiatief definitie
 
 ## <a name="excluded-scopes"></a>Uitgesloten bereiken
 
-Het **bereik** van de toewijzing bevat alle onderliggende resource containers en onderliggende resources. Als de definitie van een onderliggende bron container of onderliggende bron niet moet worden toegepast, kan deze worden _uitgesloten_ van de evaluatie door **notScopes**in te stellen. Deze eigenschap is een matrix waarmee een of meer resource containers of bronnen kunnen worden uitgesloten. **notScopes** kunnen worden toegevoegd of bijgewerkt na het maken van de eerste toewijzing.
+Het **bereik** van de toewijzing bevat alle onderliggende resource containers en onderliggende resources. Als de definitie van een onderliggende bron container of onderliggende bron niet moet worden toegepast, kan deze worden _uitgesloten_ van de evaluatie door **notScopes** in te stellen. Deze eigenschap is een matrix waarmee een of meer resource containers of bronnen kunnen worden uitgesloten. **notScopes** kunnen worden toegevoegd of bijgewerkt na het maken van de eerste toewijzing.
 
 > [!NOTE]
 > Een _uitgesloten_ resource wijkt af van een _vrijgestelde_ resource. Zie [bereik begrijpen in azure Policy](./scope.md)voor meer informatie.
@@ -79,6 +85,32 @@ Het **bereik** van de toewijzing bevat alle onderliggende resource containers en
 
 Dit veld moet de volledige padnaam zijn van ofwel een beleids definitie of een initiatief definitie.
 `policyDefinitionId` is een teken reeks en geen matrix. Het is raadzaam om in plaats daarvan een [initiatief](./initiative-definition-structure.md) te gebruiken als er vaak meerdere beleids regels aan elkaar worden toegewezen.
+
+## <a name="non-compliance-messages"></a>Berichten over niet-naleving
+
+Als u een aangepast bericht wilt instellen waarin wordt beschreven waarom een resource niet compatibel is met het beleid of initiatief definitie, stelt u `nonComplianceMessages` in de toewijzings definitie in. Dit knoop punt is een matrix met `message` vermeldingen. Dit aangepaste bericht is een aanvulling op het standaard fout bericht voor niet-naleving en is optioneel.
+
+```json
+"nonComplianceMessages": [
+    {
+        "message": "Default message"
+    }
+]
+```
+
+Als de toewijzing voor een initiatief geldt, kunnen verschillende berichten worden geconfigureerd voor elke beleids definitie in het initiatief. De berichten gebruiken de `policyDefinitionReferenceId` waarde die is geconfigureerd in de initiatief definitie. Zie [Eigenschappen van eigenschaps definities](./initiative-definition-structure.md#policy-definition-properties)voor meer informatie.
+
+```json
+"nonComplianceMessages": [
+    {
+        "message": "Default message"
+    },
+    {
+        "message": "Message for just this policy definition by reference ID",
+        "policyDefinitionReferenceId": "10420126870854049575"
+    }
+]
+```
 
 ## <a name="parameters"></a>Parameters
 

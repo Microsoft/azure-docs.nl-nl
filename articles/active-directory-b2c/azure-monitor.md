@@ -10,13 +10,13 @@ ms.workload: identity
 ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
-ms.date: 11/12/2020
-ms.openlocfilehash: 6d40eab12c9726459543d0b69e27b73178eba99f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 01/29/2021
+ms.openlocfilehash: e44a029c61db5a22513387772c2b0d7a3e4d1a40
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170613"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219227"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure AD B2C met Azure Monitor bewaken
 
@@ -31,6 +31,10 @@ U kunt logboek gebeurtenissen door sturen naar:
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
 In dit artikel leert u hoe u de logboeken overbrengt naar een Azure Log Analytics-werk ruimte. Vervolgens kunt u een dash board maken of waarschuwingen maken die zijn gebaseerd op de activiteiten van Azure AD B2C gebruikers.
+
+> [!IMPORTANT]
+> Houd rekening met het volgende wanneer u van plan bent om Azure AD B2C logboeken over te brengen naar verschillende bewakings oplossingen of opslag plaatsen. Azure AD B2C logboeken bevatten persoonlijke gegevens. Dergelijke gegevens moeten worden verwerkt op een manier die geschikt is voor een passende beveiliging van de persoons gegevens, met inbegrip van bescherming tegen ongeoorloofde of onwettige verwerking, met behulp van passende technische of organisatorische maat regelen.
+
 
 ## <a name="deployment-overview"></a>Implementatieoverzicht
 
@@ -48,7 +52,7 @@ Tijdens deze implementatie configureert u uw Azure AD B2C Tenant en Azure AD-Ten
 
 Maak eerst een resource groep die de doel Log Analytics werk ruimte bevat waarmee gegevens worden ontvangen van Azure AD B2C. U geeft de naam van de resource groep op wanneer u de Azure Resource Manager sjabloon implementeert.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD-Tenant** bevat.
 1. [Maak een resource groep](../azure-resource-manager/management/manage-resource-groups-portal.md#create-resource-groups) of kies een bestaande. In dit voor beeld wordt een resource groep met de naam *Azure-AD-B2C-monitor* gebruikt.
 
@@ -56,7 +60,7 @@ Maak eerst een resource groep die de doel Log Analytics werk ruimte bevat waarme
 
 Een **log Analytics-werk ruimte** is een unieke omgeving voor Azure monitor logboek gegevens. U gebruikt deze Log Analytics werk ruimte om gegevens te verzamelen uit Azure AD B2C [audit logboeken](view-audit-logs.md)en vervolgens te visualiseren met query's en werkmappen, of om waarschuwingen te maken.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD-Tenant** bevat.
 1. [Maak een log Analytics-werk ruimte](../azure-monitor/learn/quick-create-workspace.md). In dit voor beeld wordt een Log Analytics-werk ruimte met de naam *AzureAdB2C* gebruikt in een resource groep met de naam *Azure-AD-B2C-monitor*.
 
@@ -68,7 +72,7 @@ In deze stap kiest u uw Azure AD B2C-Tenant als een **service provider**. U defi
 
 Haal eerst de **Tenant-id** op van uw Azure AD B2C Directory (ook wel de Directory-id genoemd).
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 1. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD B2C** Tenant bevat.
 1. Selecteer **Azure Active Directory** en selecteer **overzicht**.
 1. Registreer de **Tenant-id**.
@@ -89,7 +93,7 @@ Om het beheer te vereenvoudigen, raden we u aan Azure AD-gebruikers *groepen* te
 
 Vervolgens maakt u een Azure Resource Manager sjabloon waarmee Azure AD B2C toegang krijgt tot de Azure AD-resource groep die u eerder hebt gemaakt (bijvoorbeeld *Azure-AD-B2C-monitor*). Implementeer de sjabloon vanuit het GitHub-voor beeld met behulp van de knop **implementeren in azure** waarmee de Azure portal wordt geopend. Hiermee kunt u de sjabloon direct in de portal configureren en implementeren. Zorg ervoor dat u bent aangemeld bij uw Azure AD-Tenant (niet de Azure AD B2C Tenant) voor deze stappen.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD** -Tenant bevat.
 3. Gebruik de knop **implementeren naar Azure** om de Azure portal te openen en de sjabloon direct in de portal te implementeren. Zie [een Azure Resource Manager sjabloon maken](../lighthouse/how-to/onboard-customer.md#create-an-azure-resource-manager-template)voor meer informatie.
 
@@ -224,7 +228,7 @@ Zie de Azure AD B2C [Siem github opslag plaats](https://aka.ms/b2csiem)voor meer
 
 ### <a name="62-create-a-workbook"></a>6,2 een werkmap maken
 
-Werkmappen bieden een flexibel canvas voor gegevensanalyse en het maken van uitgebreide visuele rapporten in Azure Portal. Hiermee kunt u in meerdere gegevens bronnen in azure tikken en deze combi neren in Unified Interactive-ervaringen. Zie [Azure monitor werkmappen](../azure-monitor/platform/workbooks-overview.md)voor meer informatie.
+Werkmappen bieden een flexibel canvas voor gegevensanalyse en het maken van uitgebreide visuele rapporten in Azure Portal. Ze stellen u in staat om meerdere gegevensbronnen uit Azure aan te boren en deze te combineren tot uniforme interactieve ervaringen. Zie [Azure monitor werkmappen](../azure-monitor/platform/workbooks-overview.md)voor meer informatie.
 
 Volg de onderstaande instructies om een nieuwe werkmap te maken met behulp van een JSON-galerie sjabloon. Deze werkmap bevat een **gebruikers inzicht** en een **verificatie** dashboard voor Azure AD B2C Tenant.
 

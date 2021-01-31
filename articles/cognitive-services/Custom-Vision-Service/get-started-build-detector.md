@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 09/30/2020
+ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: afbeeldingsherkenning, app voor afbeeldingsherkenning, Custom Vision
-ms.openlocfilehash: b27864fc1fd1f94f99fccacd90a66120e6d044c4
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: 5ecd5fee565a8d31e0ff05f3b234771446242d02
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132576"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221292"
 ---
 # <a name="quickstart-build-an-object-detector-with-the-custom-vision-website"></a>Quickstart: Een objectdetector bouwen met de Custom Vision-website
 
@@ -68,9 +68,9 @@ Ga in de webbrowser naar de [Custom Vision-webpagina](https://customvision.ai) e
 
 ## <a name="upload-and-tag-images"></a>Afbeeldingen uploaden en labelen
 
-In deze sectie gaat u afbeeldingen uploaden en handmatig taggen om de detector te helpen trainen. 
+In deze sectie gaat u afbeeldingen uploaden en hand matig labelen om de detector te helpen trainen. 
 
-1. Als u afbeeldingen wilt toevoegen, klikt u op de knop __Afbeeldingen toevoegen__ en selecteert u __In lokale bestanden bladeren__. Selecteer __Openen__ om de afbeeldingen te uploaden.
+1. Als u installatie kopieën wilt toevoegen, selecteert u __installatie kopieën toevoegen__ en selecteert u vervolgens __lokale bestanden bladeren__. Selecteer __Openen__ om de afbeeldingen te uploaden.
 
     ![Het besturingselement om afbeeldingen toe te voegen wordt linksboven weergegeven, en als een knop onderaan in het midden.](./media/get-started-build-detector/add-images.png)
 
@@ -78,7 +78,7 @@ In deze sectie gaat u afbeeldingen uploaden en handmatig taggen om de detector t
 
     ![Geüploade afbeeldingen in de sectie Zonder label](./media/get-started-build-detector/images-untagged.png)
 
-1. Klik en sleep een rechthoek rond het object in uw afbeelding. Voer vervolgens een nieuwe naam voor de tag in met de knop **+** of selecteer een bestaande tag in de vervolgkeuzelijst. Het is belangrijk dat u alle exemplaren van de objecten die u wilt detecteren van een tag voorziet, omdat de detector het achtergrondgebied zonder label als een negatief voorbeeld in de training gebruikt. Wanneer u klaar bent met taggen, klikt u op de pijl aan de rechterkant om uw tags op te slaan en naar de volgende afbeelding te gaan.
+1. Klik en sleep een rechthoek rond het object in uw afbeelding. Voer vervolgens een nieuwe naam voor de tag in met de knop **+** of selecteer een bestaande tag in de vervolgkeuzelijst. Het is belang rijk dat u alle exemplaren van de object (en) die u wilt detecteren, labelt, omdat de detector het ongecodeerde achtergrond gebied als een negatief voor beeld in de training gebruikt. Wanneer u klaar bent met taggen, klikt u op de pijl aan de rechterkant om uw tags op te slaan en naar de volgende afbeelding te gaan.
 
     ![Een object met een rechthoekige selectie taggen](./media/get-started-build-detector/image-tagging.png)
 
@@ -114,7 +114,7 @@ Met de slider **Overlappingsdrempelwaarde** wordt ingesteld hoe correct een obje
 
 ## <a name="manage-training-iterations"></a>Trainingsiteraties beheren
 
-Telkens wanneer u de detector traint, maakt u een nieuwe _iteratie_ met de bijbehorende bijgewerkte metrische prestatiegegevens. U kunt alle iteraties bekijken in het linkerdeelvenster van het tabblad **Prestaties**. In het linkerdeelvenster vindt u ook de knop **Verwijderen**, waarmee u een iteratie kunt verwijderen als deze verouderd is. Wanneer u een iteratie verwijdert, verwijdert u alle afbeeldingen die er uniek aan zijn gekoppeld.
+Telkens wanneer u de detector traint, maakt u een nieuwe _iteratie_ met de bijbehorende bijgewerkte metrische prestatiegegevens. U kunt al uw iteraties bekijken in het linkerdeel venster van het tabblad **prestaties** . In het linkerdeel venster vindt u ook de knop **verwijderen** , die u kunt gebruiken om een herhaling te verwijderen als deze verouderd is. Wanneer u een iteratie verwijdert, verwijdert u alle afbeeldingen die er uniek aan zijn gekoppeld.
 
 Zie [Uw model gebruiken met de voorspellings-API](./use-prediction-api.md) om te leren hoe u programmatisch toegang hebt tot uw getrainde modellen.
 

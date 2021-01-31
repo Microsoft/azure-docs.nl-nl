@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 09/29/2020
+ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: afbeeldingsherkenning, app voor afbeeldingsherkenning, Custom Vision
-ms.openlocfilehash: d644c323cb60e5ef9a89670cd9b828e3e9676299
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: d25b226f5dfff34aa572b40d1e4de142cf8e0b7b
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131692"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221241"
 ---
 # <a name="quickstart-build-a-classifier-with-the-custom-vision-website"></a>Snelstart: Een classificatie bouwen met de Custom Vision-website
 
@@ -71,7 +71,7 @@ Ga in de webbrowser naar de [Custom Vision-webpagina](https://customvision.ai) e
 
 In deze sectie gaat u afbeeldingen uploaden en handmatig taggen om de classificatie te helpen trainen. 
 
-1. Als u afbeeldingen wilt toevoegen, klikt u op de knop __Afbeeldingen toevoegen__ en selecteert u __In lokale bestanden bladeren__. Selecteer __Openen__ om naar tags te gaan. De tagselectie wordt toegepast op de hele groep afbeeldingen die u hebt geselecteerd om te uploaden. Het is dus eenvoudiger om afbeeldingen te uploaden in afzonderlijke groepen op basis van de gewenste tags. U kunt ook de tags voor afzonderlijke afbeeldingen wijzigen nadat ze zijn geüpload.
+1. Als u installatie kopieën wilt toevoegen, selecteert u __installatie kopieën toevoegen__ en selecteert u vervolgens __lokale bestanden bladeren__. Selecteer __Openen__ om naar tags te gaan. De label selectie wordt toegepast op de hele groep installatie kopieën die u hebt geselecteerd om te uploaden. het is dus eenvoudiger om afbeeldingen in afzonderlijke groepen te uploaden op basis van de toegepaste Tags. U kunt ook de labels voor afzonderlijke afbeeldingen wijzigen nadat ze zijn geüpload.
 
     ![Het besturingselement om afbeeldingen toe te voegen wordt linksboven weergegeven, en als een knop onderaan in het midden.](./media/getting-started-build-a-classifier/add-images01.png)
 

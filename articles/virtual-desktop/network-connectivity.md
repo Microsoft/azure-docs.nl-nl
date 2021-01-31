@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: 4c0017a36d84973a4d99c49a5ea33faeb189b35f
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: e4149864e16196b695d38a8c46ab5af835453412
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639234"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221207"
 ---
 # <a name="understanding-windows-virtual-desktop-network-connectivity"></a>Meer informatie over Windows Virtual Desktop-netwerk connectiviteit
 
@@ -50,7 +50,7 @@ Hieronder beschreven client verbindings volgorde:
 
 ## <a name="connection-security"></a>Verbindingsbeveiliging
 
-TLS 1,2 wordt gebruikt voor alle verbindingen die worden geïnitieerd vanaf de clients en de sessies van de host naar de onderdelen van de virtuele bureau blad-infra structuur van Windows.
+TLS 1,2 wordt gebruikt voor alle verbindingen die worden geïnitieerd vanaf de clients en de sessies van de host naar de onderdelen van de virtuele bureau blad-infra structuur van Windows. Windows virtueel bureau blad maakt gebruik van dezelfde TLS 1,2-code ringen als [Azure front-deur](../frontdoor/front-door-faq.md#what-are-the-current-cipher-suites-supported-by-azure-front-door). Het is belang rijk om ervoor te zorgen dat zowel client computers als sessie-hosts deze versleuteling kunnen gebruiken.
 Voor reverse Connect Trans Port maakt zowel de client als de sessiehost verbinding met de virtuele bureau blad-gateway van Windows. Nadat de TCP-verbinding tot stand is gebracht, valideert de client of de sessiehost het certificaat van de virtuele bureau blad-gateway van Windows.
 Na het tot stand brengen van het basis transportt RDP een geneste TLS-verbinding tussen de client en sessie-host met behulp van de certificaten van de sessiehost. Het certificaat dat wordt gebruikt voor RDP-versleuteling wordt standaard automatisch gegenereerd door het besturings systeem tijdens de implementatie. Zo nodig kunnen klanten centraal beheerde certificaten implementeren die zijn uitgegeven door de certificerings instantie van de onderneming. Zie [Windows Server-documentatie](/troubleshoot/windows-server/remote/remote-desktop-listener-certificate-configurations)voor meer informatie over het configureren van certificaten.
 

@@ -7,16 +7,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 09/30/2020
+ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: a1cf919e17e22cb6280dce27faceb7cd034a6962
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
-ms.translationtype: HT
+ms.openlocfilehash: 813f5a06915ca7f5dfc0f4cc9a3f9b3e232ca31a
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845548"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221088"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen
 
@@ -202,7 +202,7 @@ Vervolgens maakt u tags (labels) en past u ze toe op de tekstelementen die u doo
    1. Klik op **+** om een nieuw label te maken.
    1. Voer de naam van het label in.
    1. Druk op Enter om het label op te slaan.
-1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _v2.1 preview.2_ kunt u ook klikken om _Selectiemarkeringen_ zoals keuzerondjes en selectievakjes te selecteren als sleutel-waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
+1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _Preview-versie van de v 2.1_ -API kunt u ook _selectie markeringen_ selecteren, zoals keuze rondjes en selectie vakjes als sleutel waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
 1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
     > [!Tip]
     > Denk aan de volgende tips wanneer u labels voor uw formulieren gebruikt.
@@ -290,7 +290,7 @@ Deze functie is momenteel beschikbaar in de preview van v2.1.
 
 Met Model samenstellen kunt u maximaal 100 modellen met één model-id samenstellen. Wanneer u Analyseren aanroept met deze samengestelde model-id, zal Form Recognizer het formulier dat u hebt ingediend eerst classificeren door het aan het best overeenkomende model te koppelen, en vervolgens resultaten voor dat model retourneren. Dit is handig wanneer binnenkomende formulieren mogelijk tot één van meerdere sjablonen behoren.
 
-Om modellen samen te stellen in het voorbeeldhulpprogramma voor labelen, klikt u aan de linkerkant op het pictogram Model samenstellen (samenvoegingspijlen). Selecteer links de modellen die u wilt samenstellen. Modellen met het pijlenpictogram zijn al samengesteld. Klik op de knop Samenstellen. In het pop-upvenster geeft u uw nieuwe samengestelde model een naam en klikt u op ‘Samenstellen’. Wanneer de bewerking is voltooid, zou uw nieuwe samengestelde model in de lijst moeten worden weergegeven. 
+Om modellen samen te stellen in het voorbeeldhulpprogramma voor labelen, klikt u aan de linkerkant op het pictogram Model samenstellen (samenvoegingspijlen). Selecteer links de modellen die u wilt samenstellen. Modellen met het pijlenpictogram zijn al samengesteld. Klik op de knop Samenstellen. Geef in het pop-upvenster uw nieuwe model naam op en klik op opstellen. Wanneer de bewerking is voltooid, zou uw nieuwe samengestelde model in de lijst moeten worden weergegeven. 
 
 :::image type="content" source="../media/label-tool/model-compose.png" alt-text="UX-weergave van Model samenstellen.":::
 

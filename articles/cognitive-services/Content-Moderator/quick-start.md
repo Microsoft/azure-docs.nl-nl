@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 09/29/2020
+ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: content moderator, inhoudsbeheer
-ms.openlocfilehash: c026c42fe3c7a7f3f0d6b80e3123904077c104cf
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: f8ad9c135fea4e582e6ba47764d0401936f8c295
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905210"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221173"
 ---
 # <a name="quickstart-try-content-moderator-on-the-web"></a>Snelstart: Content Moderator op internet proberen
 
@@ -88,6 +88,6 @@ U kunt ook doorgaan met de volgende stappen om aan de slag te gaan met de beheer
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het gebruik van de beheer-API's in uw app.
-- Beheer van afbeeldingen implementeren. Gebruik de [API-console](try-image-api.md) of volg de [quickstart voor de clientbibliotheek of REST API](client-libraries.md) om afbeeldingen te scannen en potentiële inhoud voor volwassenen en potentiële ongepaste inhoud te detecteren met behulp van tags, betrouwbaarheidsscores en andere geëxtraheerde informatie.
-- Beheer van tekst implementeren. Gebruik de [API-console](try-text-api.md) of gebruik de [quickstart voor de clientbibliotheek of REST API](client-libraries.md) om tekstinhoud te scannen op mogelijk grof taalgebruik, door de machine ondersteunde classificatie van ongepaste tekst (preview) en persoonlijke gegevens.
+- Beheer van afbeeldingen implementeren. Gebruik de [API-console](try-image-api.md) of volg een [Snelstartgids](client-libraries.md) om afbeeldingen te scannen en potentiële inhoud van de volwassene en ongepaste te detecteren met behulp van tags, betrouwbaarheids scores en andere geëxtraheerde informatie.
+- Beheer van tekst implementeren. Gebruik de [API-console](try-text-api.md) of volg een [Quick](client-libraries.md) start om de tekst inhoud te scannen op mogelijke Gods baarheid, persoonlijke gegevens en andere ongewenste tekst.
 - Beheer van video's implementeren. Volg de [instructiegids voor het beheer van video's voor C#](video-moderation-api.md) om video's te scannen en potentiële inhoud voor volwassenen en ongepast inhoud te detecteren. 

@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cognitive-services
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.openlocfilehash: 61eb7d06773428074940d153b01d23b13468795d
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 661af89ad223978abbefd71dd8008577475c5875
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788821"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221368"
 ---
 # <a name="plan-and-manage-costs-for-azure-cognitive-services"></a>Kosten plannen en beheren voor Azure Cognitive Services
 
@@ -64,6 +64,32 @@ Nadat u QnA Maker resources hebt verwijderd, kunnen de volgende resources blijve
 
 U kunt betalen voor Cognitive Services kosten met uw Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd)-tegoed. U kunt het tegoed van Azure-betaling echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
 
+## <a name="monitor-costs"></a>Kosten bewaken
+
+<!-- Note to Azure service writer: Modify the following as needed for your service. Replace example screenshots with ones taken for your service. If you need assistance capturing screenshots, ask banders for help. -->
+
+Wanneer u Azure-resources met Cognitive Services gebruikt, worden er kosten in rekening gebracht. De kosten voor de Azure resource usage-eenheid variëren per tijds interval (seconden, minuten, uren en dagen) of per eenheids gebruik (bytes, mega bytes, enzovoort). Zodra het gebruik van een cognitieve service (of Cognitive Services) wordt gestart, worden de kosten in rekening gebracht en kunt u de kosten voor de kosten [analyse](../cost-management/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)bekijken.
+
+Wanneer u kosten analyse gebruikt, bekijkt u Cognitive Services kosten in grafieken en tabellen voor verschillende tijds intervallen. Enkele voor beelden zijn de dag, de huidige en de vorige maand en het jaar. Daarnaast bekijkt u de kosten voor budgetten en geraamde kosten. U kunt in de loop van de tijd meer weer gaven gebruiken om de uitgaven trends te identificeren. En u kunt zien waar de overuitgave van het probleem is opgetreden. Als u budgetten hebt gemaakt, kunt u ook gemakkelijk zien waar ze worden overschreden.
+
+Cognitive Services kosten voor de kosten analyse weer geven:
+
+1. Meld u aan bij de Azure-portal.
+2. Open het bereik in de Azure Portal en selecteer **kosten analyse** in het menu. Ga bijvoorbeeld naar **abonnementen**, selecteer een abonnement in de lijst en selecteer vervolgens  **kosten analyse** in het menu. Selecteer **bereik** om over te scha kelen naar een ander bereik in cost analysis.
+3. Kosten voor services worden standaard weer gegeven in de eerste cirkel diagram. Selecteer het gebied in de grafiek met het label Cognitive Services.
+
+De werkelijke maandelijkse kosten worden weer gegeven wanneer u de kosten analyse voor het eerst opent. Hier volgt een voor beeld waarin alle maandelijkse gebruiks kosten worden weer gegeven.
+
+:::image type="content" source="./media/cost-management/all-costs.png" alt-text="Voor beeld van het weer geven van geaccumuleerde kosten voor een abonnement":::
+
+- Als u de kosten voor één service, zoals Cognitive Services, wilt beperken, selecteert u **filter toevoegen** en selecteert u vervolgens **service naam**. Selecteer vervolgens **Cognitive Services**.
+
+Hier volgt een voor beeld van de kosten voor alleen Cognitive Services.
+
+:::image type="content" source="./media/cost-management/cognitive-services-costs.png" alt-text="Voor beeld van het weer geven van geaccumuleerde kosten voor Cognitive Services":::
+
+In het vorige voor beeld ziet u de huidige kosten voor de service. Kosten per Azure-regio (locaties) en Cognitive Services kosten per resource groep worden ook weer gegeven. Hier kunt u de kosten zelf bekijken.
+
 ## <a name="create-budgets"></a>Budgetten maken
 
 U kunt [budgetten](../cost-management-billing/costs/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) maken om kosten te beheren en [waarschuwingen](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) te maken waarmee belanghebbenden automatisch worden geïnformeerd over afwijkende uitgaven en het risico om teveel uit te geven. Waarschuwingen zijn gebaseerd op de vergelijking tussen uitgaven en drempelwaarden voor budgetten en kosten. Budgetten en waarschuwingen worden gemaakt voor Azure-abonnementen en-resource groepen, dus zijn ze nuttig als onderdeel van een strategie voor de kosten bewaking. 
@@ -73,13 +99,6 @@ Budgetten kunnen worden gemaakt met filters voor specifieke resources of service
 ## <a name="export-cost-data"></a>Kostengegevens exporteren
 
 U kunt ook [uw kosten gegevens exporteren](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) naar een opslag account. Dit is handig wanneer u of anderen extra gegevens analyse voor kosten moeten uitvoeren. Zo kunnen financiële teams de gegevens analyseren met Excel of Power BI. U kunt uw kosten per dag, wekelijks of maandelijks exporteren en een aangepast datum bereik instellen. Het exporteren van kosten gegevens is de aanbevolen manier om kosten sets op te halen.
-
-<!--
-## Other ways to manage and reduce costs for Cognitive Services
-
-Work with Dean to complete this section in 2021.
-
--->
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -2,20 +2,20 @@
 author: roygara
 ms.service: storage
 ms.topic: include
-ms.date: 09/16/2020
+ms.date: 01/27/2021
 ms.author: rogarana
-ms.openlocfilehash: e7b7fae094ad15bc1732778b6a4a3259fb4dd3b5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 7da7c2fbb49a9dd936762b23f3c251d2142c52fd
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96028397"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221794"
 ---
 | Resource | Standaardbestandsshares\* | Premiumbestandsshares |
 |----------|---------------|------------------------------------------|
 | Minimale grootte van een bestandsshare | Geen minimum; betalen naar gebruik | 100 GiB; ingericht |
 | Maximale grootte van een bestandsshare | 100 TiB\*\*, 5 TiB | 100 TiB |
-| Maximale grootte van een bestand in een bestandsshare | 1 TiB | 4 TiB |
+| Maximale grootte van een bestand in een bestandsshare | 4 TiB | 4 TiB |
 | Maximum aantal bestanden in een bestandsshare | Geen limiet | Geen limiet |
 | Maximum aantal IOPS per share | 10.000 IOPS\*\*, 1000 IOPS of 100 aanvragen in 100 ms | 100.000 IOPS |
 | Maximaal aantal opgeslagen toegangsbeleidsregels per bestandsshare | 5 | 5 |

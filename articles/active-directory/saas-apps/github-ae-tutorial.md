@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/18/2021
 ms.author: jeedes
-ms.openlocfilehash: 3628cb6dbb397b561ff91ba6b6747293a39fd602
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 1d66396b2d97a7f33158f91025f5735c7714cd65
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632780"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221043"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github-ae"></a>Zelfstudie: Azure Active Directory-integratie met GitHub AE voor eenmalige aanmelding
 
@@ -71,7 +71,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in de Azure-portal op de integratiepagina van de toepassing **GitHub** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -93,11 +93,19 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![image](common/default-attributes.png)
 
-1. Daarnaast verwachtte GitHub AE-toepassing nog maar weinig kenmerken om te worden door gegeven in de SAML-respons die hieronder worden weer gegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
-    
-    | Naam |  Bronkenmerk|
-    | ----------- | --------- |
-    | beheerder | true |
+1. Bewerk **gebruikers kenmerken & claims**.
+
+1. Klik op **nieuwe claim toevoegen** en voer de naam als **Administrator** in het tekstvak in.
+
+1. Vouw **claim voorwaarden** uit en selecteer **leden** van het **type gebruiker**.
+
+1. Klik op **groepen selecteren** en zoek de **groep** op die u wilt toevoegen aan deze claim, waarbij de leden beheerders voor GHAE moeten zijn.
+
+1. Selecteer **kenmerk** voor **bron** en voer **waar** in voor de **waarde**. 
+
+10. Klik op **Opslaan**.
+
+    ![claim beheren](./media/github-ae-tutorial/administrator.png)
 
     > [!NOTE]
     > Als u de instructies voor het toevoegen van een claim wilt weten, volgt u de [koppeling](https://docs.github.com/en/github-ae@latest/admin/authentication/configuring-authentication-and-provisioning-for-your-enterprise-using-azure-ad).

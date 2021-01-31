@@ -3,14 +3,14 @@ title: Azure Automation runbooks uitvoeren op een Hybrid Runbook Worker
 description: In dit artikel wordt beschreven hoe u runbooks uitvoert op machines in uw lokale Data Center of een andere Cloud provider met de Hybrid Runbook Worker.
 services: automation
 ms.subservice: process-automation
-ms.date: 10/06/2020
+ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 4a080505f780e724bfd2ab997f5c823e467c4bec
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 8ea668ab2266a1deae108542687c89f3a221568e
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896966"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220970"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Runbooks uitvoeren op een Hybrid Runbook Worker
 
@@ -94,6 +94,10 @@ Gebruik de volgende procedure om een uitvoeren als-account op te geven voor een 
 ## <a name="install-run-as-account-certificate"></a><a name="runas-script"></a>Het certificaat van het uitvoeren als-account installeren
 
 Als onderdeel van uw geautomatiseerde bouw proces voor het implementeren van resources in azure, hebt u mogelijk toegang tot on-premises systemen nodig ter ondersteuning van een taak of een reeks stappen in uw implementatie reeks. Als u verificatie wilt uitvoeren voor Azure met behulp van het uitvoeren als-account, moet u het certificaat van het uitvoeren als-account installeren.
+
+>[!NOTE]
+>Dit Power shell-runbook wordt momenteel niet uitgevoerd op LInux-computers. Het wordt alleen uitgevoerd op Windows-computers.
+>
 
 Het volgende Power shell-runbook, met de naam **export-RunAsCertificateToHybridWorker**, exporteert het run as-certificaat uit uw Azure Automation-account. Het runbook wordt gedownload en geïmporteerd in het certificaat archief van de lokale computer op een Hybrid Runbook Worker dat is verbonden met hetzelfde account. Zodra deze stap is voltooid, controleert het runbook of de werk nemer kan worden geverifieerd bij Azure met behulp van het run as-account.
 

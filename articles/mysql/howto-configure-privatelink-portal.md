@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: fbc75df0b22ba452b8c91dfcb21ca13aaed557a3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ce916336ea47cd223c10a8f664b2dc9806ed0a17
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998563"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221023"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mysql-using-portal"></a>Een persoonlijke koppeling voor Azure Database for MySQL maken en beheren met behulp van portal
 
@@ -130,7 +130,7 @@ In deze sectie maakt u een Azure Database for MySQL-server in Azure.
 
 In deze sectie maakt u een MySQL-server en voegt u hieraan een persoonlijk eind punt toe. 
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal de optie **een resource maken**  >  **Networking**  >  **persoonlijke netwerk koppeling**.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal de optie **een resource maken**  >    >  **persoonlijke netwerk koppeling**.
 
 2. Selecteer in **Private Link-centrum – Overzicht** bij de optie **Een particuliere verbinding met een service maken** de optie **Start**.
 
@@ -223,6 +223,8 @@ Nadat u **myVm** hebt gemaakt, maakt u hiermee als volgt verbinding via internet
     Name:    myServer.privatelink.mysql.database.azure.com
     Address:  10.1.3.4
     ```
+    > [!NOTE]
+    > Als open bare toegang is uitgeschakeld in de firewall-instellingen in Azure Database for MySQL-één server. Deze ping-en Telnet-tests worden uitgevoerd, ongeacht de firewall instellingen. Deze tests zorgen ervoor dat de netwerk verbinding wordt gegarandeerd.
 
 3. Test de verbinding van de particuliere verbinding voor de MySQL-server met behulp van een beschik bare client. In het onderstaande voor beeld heb ik [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) gebruikt om de bewerking uit te voeren.
 

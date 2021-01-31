@@ -1,14 +1,14 @@
 ---
 title: 'Zelfstudie: Beleidsregels voor het afdwingen van naleving bouwen'
 description: In deze zelfstudie gebruikt u beleidsregels voor het afdwingen van standaarden, het beheren van kosten, het onderhouden van de beveiliging en het afdwingen van ontwerpprincipes op ondernemingsniveau.
-ms.date: 10/05/2020
+ms.date: 01/29/2021
 ms.topic: tutorial
-ms.openlocfilehash: bf3da82abcdcada1fc38df29efc988a1805c3020
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: a643e7ccede4966719972694ea29eeb77789595e
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005432"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221190"
 ---
 # <a name="tutorial-create-and-manage-policies-to-enforce-compliance"></a>Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren
 
@@ -71,6 +71,10 @@ De eerste stap bij het afdwingen van naleving met Azure Policy bestaat uit het t
 1. Laat **Een hersteltaak maken** uitgeschakeld. Met dit vak kunt u een taak maken voor het wijzigen van bestaande resources naast nieuwe of bijgewerkte resources. Zie [Resources herstellen](../how-to/remediate-resources.md) voor meer informatie.
 
 1. **Een beheerde identiteit maken** wordt automatisch ingeschakeld omdat deze beleidsdefinitie het effect [Wijzigen](../concepts/effects.md#modify) gebruikt. **Machtigingen** wordt automatisch ingesteld op _Inzender_ op basis van de beleidsdefinitie. Zie [Beheerde identiteiten](../../../active-directory/managed-identities-azure-resources/overview.md) en [Hoe herstelbeveiliging werkt](../how-to/remediate-resources.md#how-remediation-security-works) voor meer informatie.
+
+1. Klik boven aan de wizard op het tabblad **niet-nalevings berichten** .
+
+1. Stel het **bericht niet-naleving** in op _deze resource heeft niet het vereiste label_. Dit aangepaste bericht wordt weer gegeven wanneer een resource wordt geweigerd of voor niet-compatibele resources tijdens een reguliere evaluatie.
 
 1. Selecteer het tabblad **Controleren + maken** bovenaan de wizard.
 

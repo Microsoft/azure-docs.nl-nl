@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/24/2020
-ms.openlocfilehash: c7e8f96e7917173aaec308b8ae5218684a722483
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: e32b93c669bffd382b1eb648111f9b8931b07eac
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507469"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221139"
 ---
 # <a name="copy-data-to-and-from-azure-databricks-delta-lake-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Databricks Delta Lake met behulp van Azure Data Factory
 
@@ -41,8 +41,8 @@ Over het algemeen ondersteunt Azure Data Factory Delta Lake met de volgende moge
 
 Als u deze Azure Databricks Delta Lake connector wilt gebruiken, moet u een cluster instellen in Azure Databricks.
 
-- Als u gegevens wilt kopiëren naar Delta Lake, wordt met de Kopieer activiteit Azure Databricks cluster aangeroepen om gegevens te lezen van een Azure Storage. Dit is de oorspronkelijke bron of een faserings gebied waarnaar Data Factory de bron gegevens in eerste exemplaar opslaat via een ingebouwde gefaseerde kopie. Meer informatie over [Delta Lake als bron](#delta-lake-as-source).
-- Als u gegevens wilt kopiëren van Delta Lake, worden met Kopieer activiteiten Azure Databricks cluster aangeroepen om gegevens te schrijven naar een Azure Storage. Dit is de oorspronkelijke sink of een faserings gebied waar Data Factory gegevens naar de uiteindelijke Sink gaat schrijven via de ingebouwde gestarte kopie. Meer informatie over [Delta Lake als de Sink](#delta-lake-as-sink).
+- Als u gegevens wilt kopiëren naar Delta Lake, wordt met de Kopieer activiteit Azure Databricks cluster aangeroepen om gegevens te lezen van een Azure Storage. Dit is de oorspronkelijke bron of een faserings gebied waarnaar Data Factory de bron gegevens in eerste exemplaar opslaat via een ingebouwde gefaseerde kopie. Meer informatie over [Delta Lake als de Sink](#delta-lake-as-sink).
+- Als u gegevens wilt kopiëren van Delta Lake, worden met Kopieer activiteiten Azure Databricks cluster aangeroepen om gegevens te schrijven naar een Azure Storage. Dit is de oorspronkelijke sink of een faserings gebied waar Data Factory gegevens naar de uiteindelijke Sink gaat schrijven via de ingebouwde gestarte kopie. Meer informatie over [Delta Lake als bron](#delta-lake-as-source).
 
 Het Databricks-cluster moet toegang hebben tot de Azure-Blob of het Azure Data Lake Storage Gen2-account, zowel de opslag container/het bestands systeem die wordt gebruikt voor bron/Sink/staging als het container/bestands systeem waar u de Delta Lake-tabellen wilt schrijven.
 
@@ -116,7 +116,7 @@ De volgende eigenschappen worden ondersteund voor de Azure Databricks Delta Lake
 | :-------- | :----------------------------------------------------------- | :-------------------------- |
 | type      | De eigenschap type van de DataSet moet worden ingesteld op **AzureDatabricksDeltaLakeDataset**. | Yes                         |
 | database | De naam van de data base. |Nee voor bron, ja voor Sink  |
-| table | De naam van de Delta tabel. |Nee voor bron, ja voor Sink  |
+| tabel | De naam van de Delta tabel. |Nee voor bron, ja voor Sink  |
 
 **Voorbeeld:**
 

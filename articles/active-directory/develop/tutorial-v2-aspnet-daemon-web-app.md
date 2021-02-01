@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: d4f8ab190d0418fbb25dad2cd7af231eabfe0f02
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: a85ae227d45c8de6c3d04e4a058ebf9715421ca2
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090252"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222062"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -237,8 +237,8 @@ Verwijder het app-object dat u hebt gemaakt in de stap [Uw toepassing registrere
 
 ## <a name="get-help"></a>Help opvragen
 
-Gebruik [micro soft Q&A](https://docs.microsoft.com/answers/topics/azure-ad-msal.html) om ondersteuning van de community te krijgen.
-Stel uw vragen op micro soft Q&A als eerste en blader door bestaande problemen om te zien of iemand uw vraag eerder heeft gesteld.
+Gebruik [micro soft Q&A](https://docs.microsoft.com/answers/products/) om ondersteuning van de community te krijgen.
+Stel uw vragen op [micro soft Q&A](https://docs.microsoft.com/answers/products/) als eerste en blader door bestaande problemen om te zien of iemand uw vraag eerder heeft gesteld.
 Zorg ervoor dat uw vragen of opmerkingen zijn gelabeld met ' Azure-AD-adal-afschaffing ', ' Azure-AD-msal ' en ' DotNet-Standard '.
 
 Als u een fout vindt in het voorbeeld, meld het probleem dan in [GitHub-problemen](https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp/issues).

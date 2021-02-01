@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/14/2020
 ms.topic: reference
 ms.service: azure
-ms.openlocfilehash: 44ea6e8343203a9cb18947f31f45aa0b023178b0
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 73c5d1f31d9e0651ee710593aa4e1b68fe972560
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624571"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222093"
 ---
 # <a name="defender-for-iot-sensor-and-management-console-apis"></a>Defender voor IoT-sensor-en beheer console-Api's
 
@@ -56,33 +56,31 @@ Een token genereren:
 
 In deze sectie worden de volgende sensor-Api's beschreven:
 
-- /api/v1/devices
+- [Apparaatgegevens ophalen-/API/v1/devices](#retrieve-device-information---apiv1devices)
 
-- /api/v1/devices/connections
+- [Verbindings gegevens voor apparaat ophalen-/API/v1/devices/Connections](#retrieve-device-connection-information---apiv1devicesconnections)
 
-- /api/v1/devices/cves
+- [Gegevens ophalen op CVEs-/API/v1/devices/CVEs](#retrieve-information-on-cves---apiv1devicescves)
 
-- /api/v1/alerts
+- [Waarschuwings gegevens ophalen-/API/v1/Alerts](#retrieve-alert-information---apiv1alerts)
 
-- /api/v1/events
+- [Tijdlijn gebeurtenissen ophalen-/API/v1/Events](#retrieve-timeline-events---apiv1events)
 
-- /api/v1/reports/vulnerabilities/devices
+- [Informatie over beveiligings problemen ophalen-/API/v1/Reports/vulnerabilities/devices](#retrieve-vulnerability-information---apiv1reportsvulnerabilitiesdevices)
 
-- /api/v1/reports/vulnerabilities/security
+- [Beveiligings lekken ophalen-/API/v1/Reports/vulnerabilities/Security](#retrieve-security-vulnerabilities---apiv1reportsvulnerabilitiessecurity)
 
-- /api/v1/reports/vulnerabilities/operational
+- [Operationele beveiligings lekken ophalen-/API/v1/Reports/vulnerabilities/Operational](#retrieve-operational-vulnerabilities---apiv1reportsvulnerabilitiesoperational)
 
-- /api/external/authentication/validation
+- [Gebruikers referenties valideren-/API/External/Authentication/Validation](#validate-user-credentials---apiexternalauthenticationvalidation)
 
-- /External/Authentication/set_password
+- [Wacht woord wijzigen-/External/Authentication/set_password](#change-password---externalauthenticationset_password)
 
-- /External/Authentication/set_password_by_admin
+- [Gebruikers wachtwoord bijwerken door systeem beheerder-/External/Authentication/set_password_by_admin](#user-password-update-by-system-admin---externalauthenticationset_password_by_admin)
 
-### <a name="retrieve-device-information"></a>Apparaatgegevens ophalen
+### <a name="retrieve-device-information---apiv1devices"></a>Apparaatgegevens ophalen-/API/v1/devices
 
 Gebruik deze API om een lijst op te vragen van alle apparaten die een Defender voor IoT-sensor heeft gedetecteerd.
-
-#### <a name="apiv1devices"></a>/api/v1/devices
 
 #### <a name="method"></a>Methode
 
@@ -279,11 +277,15 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 ]
 ```
 
-### <a name="retrieve-device-connection-information"></a>Verbindings gegevens voor apparaat ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/devices | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https: <span> //127 <span> . 0.0.1/API/v1/apparaten? Authorized = True |
+
+### <a name="retrieve-device-connection-information---apiv1devicesconnections"></a>Verbindings gegevens voor apparaat ophalen-/API/v1/devices/Connections
 
 Gebruik deze API om een lijst met alle verbindingen per apparaat aan te vragen.
-
-#### <a name="apiv1devicesconnections"></a>/api/v1/devices/connections
 
 #### <a name="method"></a>Methode
 
@@ -447,11 +449,17 @@ Matrix van JSON-objecten die verbindingen met apparaten vertegenwoordigen.
 ]
 ```
 
-### <a name="retrieve-information-on-cves"></a>Gegevens ophalen op CVEs
+#### <a name="curl-command"></a>Curl-opdracht
+
+> [!div class="mx-tdBreakAll"]
+> | Type | API's | Voorbeeld |
+> |--|--|--|
+> | GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/devices/Connections | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/v1/devices/Connections |
+> | GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "' https://<IP_ADDRESS>/API/v1/devices/ <deviceId> /Connections? lastActiveInMinutes =&discoveredBefore =&discoveredAfter = ' | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "' https:/ <span> /127.0.0.1/API/v1/Devices/2/Connections? lastActiveInMinutes = 20&discoveredBefore = 1594550986000&discoveredAfter = 1594550986000 ' |
+
+### <a name="retrieve-information-on-cves---apiv1devicescves"></a>Gegevens ophalen op CVEs-/API/v1/devices/CVEs
 
 Gebruik deze API om een lijst op te vragen van alle bekende CVEs gedetecteerd op apparaten in het netwerk.
-
-#### <a name="apiv1devicescves"></a>/api/v1/devices/cves
 
 #### <a name="method"></a>Methode
 
@@ -557,11 +565,16 @@ Matrix van JSON-objecten die CVEs vertegenwoordigen die zijn geïdentificeerd op
 ]
 ```
 
-### <a name="retrieve-alert-information"></a>Waarschuwings gegevens ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/devices/CVEs | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/v1/devices/CVEs |
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/devices/ <deviceIpAddress> /CVEs? top = | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/v1/devices/10.10.10.15/CVEs? Top = 50 |
+
+### <a name="retrieve-alert-information---apiv1alerts"></a>Waarschuwings gegevens ophalen-/API/v1/Alerts
 
 Gebruik deze API om een lijst op te vragen van alle waarschuwingen die de Defender voor IoT-sensor heeft gedetecteerd.
-
-#### <a name="apiv1alerts"></a>/api/v1/alerts
 
 #### <a name="method"></a>Methode
 
@@ -685,11 +698,16 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 
 ```
 
-### <a name="retrieve-timeline-events"></a>Tijdlijn gebeurtenissen ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+> [!div class="mx-tdBreakAll"]
+> | Type | API's | Voorbeeld |
+> |--|--|--|
+> | GET | "krul-k-H"-autorisatie: <AUTH_TOKEN> "' https://<IP_ADDRESS>/API/v1/Alerts? State =&fromTime =&toTime =&type = ' | krul-k-H "autorisatie: 1234b734a9244d54ab8d40aedddcabcd" ' https:/ <span> /127.0.0.1/API/v1/Alerts? State = niet-verwerkte&fromTime = 1594550986000&toTime = 1594550986001&type = verbreken ' |
+
+### <a name="retrieve-timeline-events---apiv1events"></a>Tijdlijn gebeurtenissen ophalen-/API/v1/Events
 
 Gebruik deze API om een lijst op te vragen van gebeurtenissen die zijn gerapporteerd aan de tijd lijn van de gebeurtenis.
-
-#### <a name="apiv1events"></a>/api/v1/events
 
 #### <a name="method"></a>Methode
 
@@ -802,11 +820,15 @@ Matrix van JSON-objecten die waarschuwingen vertegenwoordigen.
 
 ```
 
-### <a name="retrieve-vulnerability-information"></a>Informatie over beveiligings problemen ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | de autorisatie voor krul-k-H: <AUTH_TOKEN> "' https://<IP_ADDRESS>/API/v1/Events? minutesTimeFrame =&type = ' | ' krul-k-H ' autorisatie: 1234b734a9244d54ab8d40aedddcabcd ' ' https:/ <span> /127.0.0.1/API/v1/Events? minutesTimeFrame = 20&type = DEVICE_CONNECTION_CREATED ' |
+
+### <a name="retrieve-vulnerability-information---apiv1reportsvulnerabilitiesdevices"></a>Informatie over beveiligings problemen ophalen-/API/v1/Reports/vulnerabilities/devices
 
 Gebruik deze API om de resultaten van de evaluatie van beveiligings problemen voor elk apparaat op te vragen.
-
-#### <a name="apiv1reportsvulnerabilitiesdevices"></a>/api/v1/reports/vulnerabilities/devices
 
 #### <a name="method"></a>Methode
 
@@ -1052,13 +1074,17 @@ Het apparaatobject bevat:
 
 ```
 
-### <a name="retrieve-security-vulnerabilities"></a>Beveiligings problemen ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/Reports/vulnerabilities/devices | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/v1/Reports/vulnerabilities/devices |
+
+### <a name="retrieve-security-vulnerabilities---apiv1reportsvulnerabilitiessecurity"></a>Beveiligings lekken ophalen-/API/v1/Reports/vulnerabilities/Security
 
 Gebruik deze API om resultaten van een algemene evaluatie van beveiligings problemen op te vragen. Deze beoordeling geeft inzicht in het beveiligings niveau van uw systeem.
 
 Deze evaluatie is gebaseerd op algemene netwerk-en systeem informatie en niet op een specifieke evaluatie van het apparaat.
-
-#### <a name="apiv1reportsvulnerabilitiessecurity"></a>/api/v1/reports/vulnerabilities/security
 
 #### <a name="method"></a>Methode
 
@@ -1295,11 +1321,15 @@ JSON-object dat de geschatte resultaten weergeeft. Elke sleutel kan Null-waarden
 
 ```
 
-### <a name="retrieve-operational-vulnerabilities"></a>Operationele beveiligings problemen ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/Reports/vulnerabilities/Security | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/v1/Reports/vulnerabilities/Security |
+
+### <a name="retrieve-operational-vulnerabilities---apiv1reportsvulnerabilitiesoperational"></a>Operationele beveiligings lekken ophalen-/API/v1/Reports/vulnerabilities/Operational
 
 Gebruik deze API om resultaten van een algemene evaluatie van beveiligings problemen op te vragen. Deze beoordeling geeft inzicht in de operationele status van uw netwerk. Het is gebaseerd op algemene netwerk-en systeem informatie en niet op een specifieke evaluatie van het apparaat.
-
-#### <a name="apiv1reportsvulnerabilitiesoperational"></a>/api/v1/reports/vulnerabilities/operational
 
 #### <a name="method"></a>Methode
 
@@ -1488,13 +1518,17 @@ JSON-object dat de geschatte resultaten weergeeft. Elke sleutel bevat een JSON-m
 
 ```
 
-### <a name="validate-user-credentials"></a>Gebruikers referenties valideren
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/v1/Reports/vulnerabilities/Operational | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/v1/Reports/vulnerabilities/Operational |
+
+### <a name="validate-user-credentials---apiexternalauthenticationvalidation"></a>Gebruikers referenties valideren-/API/External/Authentication/Validation
 
 Gebruik deze API om een Defender voor IoT-gebruikers naam en-wacht woord te valideren. Alle Defender voor IoT-gebruikers rollen kunnen samen werken met de API.
 
 U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
-
-#### <a name="apiexternalauthenticationvalidation"></a>/api/external/authentication/validation
 
 #### <a name="method"></a>Methode
 
@@ -1551,11 +1585,15 @@ response:
 
 ```
 
-### <a name="change-password"></a>Wachtwoord wijzigen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H" autorisatie: <AUTH_TOKEN> "https://<IP_ADDRESS>/API/External/Authentication/Validation | "krul-k-H" autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/API/External/Authentication/Validation |
+
+### <a name="change-password---externalauthenticationset_password"></a>Wacht woord wijzigen-/External/Authentication/set_password
 
 Gebruik deze API om gebruikers hun eigen wacht woorden te laten wijzigen. Alle Defender voor IoT-gebruikers rollen kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
-
-#### <a name="externalauthenticationset_password"></a>/External/Authentication/set_password
 
 #### <a name="method"></a>Methode
 
@@ -1621,11 +1659,15 @@ response:
 | **password** | Tekenreeks | No |
 | **new_password** | Tekenreeks | No |
 
-### <a name="user-password-update-by-system-admin"></a>Gebruikers wachtwoord bijwerken door systeem beheerder
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| POST | krul-k-d {"username": "<USER_NAME>", "wacht woord": "<CURRENT_PASSWORD>", "new_password": "<NEW_PASSWORD>"} '-H ' content-type: Application/JSON ' https://<IP_ADDRESS>/API/External/Authentication/set_password | krul-k-d {"gebruikers naam": "myUser", "wacht woord": " 1234@abcd ", "new_password": " abcd@1234 "} '-H ' content-type: Application/JSON ' https:/ <span> /127.0.0.1/API/External/Authentication/set_password |
+
+### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Gebruikers wachtwoord bijwerken door systeem beheerder-/External/Authentication/set_password_by_admin
 
 Gebruik deze API om systeem beheerders in staat te stellen wacht woorden voor opgegeven gebruikers te wijzigen. Gebruikers rollen voor Defender voor IoT-beheerder kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
-
-#### <a name="externalauthenticationset_password_by_admin"></a>/External/Authentication/set_password_by_admin
 
 #### <a name="method"></a>Methode
 
@@ -1697,6 +1739,13 @@ response:
 | **gebruikers** | Tekenreeks | No |
 | **new_password** | Tekenreeks | No |
 
+#### <a name="curl-command"></a>Curl-opdracht
+
+> [!div class="mx-tdBreakAll"]
+> | Type | API's | Voorbeeld |
+> |--|--|--|
+> | POST | krul-k-d {"admin_username": "<ADMIN_USERNAME>", "admin_password": "<ADMIN_PASSWORD>", "gebruikers naam": "<user_name>", "new_password": "<NEW_PASSWORD>"} '-H ' content-type: Application/JSON ' https://<IP_ADDRESS>/API/External/Authentication/set_password_by_admin | krul-k-d {admin_user ': ' adminUser ', ' admin_password ': ' 1234@abcd ', ' gebruikers naam ': ' myUser ', ' new_password ': ' abcd@1234 '} '-H ' content-type: Application/JSON ' https:/ <span> /127.0.0.1/API/External/Authentication/set_password_by_admin |
+
 ## <a name="on-premises-management-console-api-specifications"></a>On-premises beheer console-API-specificaties
 
 In deze sectie worden de volgende on-premises beheer console-Api's beschreven:
@@ -1726,23 +1775,17 @@ De Api's die u hier definieert, worden weer gegeven in het venster **waarschuwin
 
 ```
 
-#### <a name="change-password"></a>Wachtwoord wijzigen
+#### <a name="change-password---externalauthenticationset_password"></a>Wacht woord wijzigen-/External/Authentication/set_password
 
 Gebruik deze API om gebruikers hun eigen wacht woorden te laten wijzigen. Alle Defender voor IoT-gebruikers rollen kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
 
-- **/External/Authentication/set_password**
-
-#### <a name="user-password-update-by-system-admin"></a>Gebruikers wachtwoord bijwerken door systeem beheerder
+#### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Gebruikers wachtwoord bijwerken door systeem beheerder-/External/Authentication/set_password_by_admin
 
 Gebruik deze API om te zorgen dat systeem beheerders wacht woorden wijzigen voor specifieke gebruikers. Gebruikers rollen Defender voor IoT-beheerder kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
 
-- **/External/Authentication/set_password_by_admin**
-
-### <a name="retrieve-device-information"></a>Apparaatgegevens ophalen
+### <a name="retrieve-device-information---externalv1devices"></a>Apparaatgegevens ophalen-/External/v1/devices
 
 Deze API vraagt een lijst op met alle apparaten die zijn gedetecteerd door Defender voor IoT Sens oren die zijn verbonden met een on-premises beheer console.
-
-- **/external/v1/devices**
 
 #### <a name="method"></a>Methode
 
@@ -1959,11 +2002,15 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 ]
 ```
 
-### <a name="retrieve-alert-information"></a>Waarschuwings gegevens ophalen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| GET | "krul-k-H"-autorisatie: <AUTH_TOKEN> "' https://<>IP_ADDRESS>/External/v1/devices? site =&zone =&sensorId =&Authorized = ' | krul-k-H "autorisatie: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/External/v1/devices? site-waarde = 1&zone-instelling = 2&sensorId = 5&geautoriseerd = True ' |
+
+### <a name="retrieve-alert-information---externalv1alerts"></a>Waarschuwings gegevens ophalen-/External/v1/Alerts
 
 Gebruik deze API om alle of gefilterde waarschuwingen op te halen uit een on-premises beheer console.
-
-#### <a name="externalv1alerts"></a>/external/v1/alerts
 
 #### <a name="method"></a>Methode
 
@@ -2116,6 +2163,13 @@ Gebruik deze API om alle of gefilterde waarschuwingen op te halen uit een on-pre
 ]
 ```
 
+#### <a name="curl-command"></a>Curl-opdracht
+
+> [!div class="mx-tdBreakAll"]
+> | Type | API's | Voorbeeld |
+> |--|--|--|
+> | GET | [krul-k-H "autorisatie: <AUTH_TOKEN>" ' https://<>IP_ADDRESS>/External/v1/Alerts? State =&zone =&fromTime =&toTime =&sitenaam =&sensor = ' | "krul-k-H"-autorisatie: 1234b734a9244d54ab8d40aedddcabcd "" https://127.0.0.1/External/v1/Alerts? State = niet-verwerkte <span>&zone-out = 1&fromTime = 0&toTime = 1594551777000&site-handler = 1&sensor = 1 ' |
+
 ### <a name="qradar-alerts"></a>QRadar-waarschuwingen
 
 QRadar-integratie met Defender voor IoT helpt u bij het identificeren van de waarschuwingen die worden gegenereerd door Defender voor IoT en om acties uit te voeren met deze waarschuwingen. QRadar ontvangt de gegevens van Defender voor IoT en neemt vervolgens contact op met het on-premises beheer console onderdeel open bare API.
@@ -2213,15 +2267,19 @@ Matrix van JSON-objecten die apparaten vertegenwoordigen.
 }
 ```
 
-### <a name="alert-exclusions-maintenance-window"></a>Uitsluitingen van waarschuwingen (onderhouds venster)
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| PUT | krul-k-X-d {"actie": " <ACTION> "} '-H "autorisatie: <AUTH_TOKEN>" https://<IP_ADDRESS>/External/v1/Alerts/<UUID> | krul-k-X-d {"actie": "ingang"} '-H "autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/External/v1/Alerts/1-1594550943000 |
+
+### <a name="alert-exclusions-maintenance-window---externalv1maintenancewindow"></a>Uitsluitingen van waarschuwingen (onderhouds venster)-/external/v1/maintenanceWindow
 
 Geef de voor waarden op waaronder er geen waarschuwingen worden verzonden. U kunt bijvoorbeeld stop-en start tijden, apparaten of subnetten definiëren en bijwerken die moeten worden uitgesloten bij het activeren van waarschuwingen of Defender voor IoT-engines die moeten worden uitgesloten. Tijdens een onderhouds venster kunt u bijvoorbeeld de bezorgings waarschuwing voor alle waarschuwingen stoppen, met uitzonde ring van malware-waarschuwingen op kritieke apparaten.
 
 De Api's die u hier definieert, worden weer gegeven in het venster **waarschuwing uitsluitingen** van de on-premises beheer console als een alleen-lezen-uitsluitings regel.
 
 :::image type="content" source="media/references-work-with-defender-for-iot-apis/alert-exclusion-window.png" alt-text="Het venster met uitsluitingen van waarschuwingen met een lijst met alle uitsluitings regels. ":::
-
-#### <a name="externalv1maintenancewindow"></a>/external/v1/maintenanceWindow
 
 #### <a name="method---post"></a>Methode-POST
 
@@ -2364,14 +2422,21 @@ Matrix van JSON-objecten die bewerkingen in het onderhouds venster vertegenwoord
 | **zoekprogramma's** | Matrix van tekenreeks | - | ja |
 | **sensorIds** | Matrix van tekenreeks | - | ja |
 | **subnetten** | Matrix van tekenreeks | - | ja |
-| **ttl** | Numeriek | - | ja |
+| **TTL** | Numeriek | - | ja |
 | **operationType** | Tekenreeks | De waarden zijn ' OPEN ', ' UPDATE ' en ' CLOSE ' | nee |
 
-### <a name="authenticate-user-credentials"></a>Gebruikers referenties verifiëren
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| POST | krul-k-X POST-d {"ticketId": "<TICKET_ID>", TTL ": <TIME_TO_LIVE>," motoren ": [<ENGINE1, ENGINE2... ENGINEn>], "sensorIds": [<SENSOR_ID1 SENSOR_ID2... SENSOR_IDn>], ' subnetten ': [<SUBNET1, SUBNET2.... SUBNETn>]} '-H ' autorisatie: <AUTH_TOKEN> https:/ <span> /127.0.0.1/External/v1/maintenanceWindow | krul-k-X POST-d {"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf", "TTL": "20", "motoren": ["afwijkend"], "sensorIds": ["5", "3"], "subnetten": ["10.0.0.3"]} '-H "autorisatie: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/External/v1/maintenanceWindow |
+| PUT | krul-k-X-d {"ticketId": "<TICKET_ID>", TTL ":" <TIME_TO_LIVE> "} '-H" autorisatie: <AUTH_TOKEN> "https:/ <span> /127.0.0.1/External/v1/maintenanceWindow | krul-k-X-opslag-d {"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf", "TTL": "20"} '-H "Authorization: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/External/v1/maintenanceWindow |
+| DELETE | krul-k-X DELETE-d {"ticketId": "<TICKET_ID>"} '-H "Authorization: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/External/v1/maintenanceWindow | krul-k-X verwijderen-d {"ticketId": "a5fe99c-d914-4bda-9332-307384fe40bf"} '-H ' autorisatie: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/External/v1/maintenanceWindow |
+| GET | [krul-k-H "autorisatie: <AUTH_TOKEN>" ' https://<IP_ADDRESS>/external/v1/maintenanceWindow? fromDate =&ToDate =&ticketId =&tokennaam = ' | krul-k-H "autorisatie: 1234b734a9244d54ab8d40aedddcabcd" ' https:/ <span> /127.0.0.1/External/v1/maintenanceWindow? fromDate = 2020-01-01&ToDate = 2020-07-14&ticketId = a5fe99c-d914-4bda-9332-307384fe40bf&tokennaam = a ' |
+
+### <a name="authenticate-user-credentials---externalauthenticationvalidation"></a>Gebruikers referenties verifiëren-/External/Authentication/Validation
 
 Gebruik deze API om gebruikers referenties te valideren. Alle Defender voor IoT-gebruikers rollen kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
-
-#### <a name="externalauthenticationvalidation"></a>/external/authentication/validation
 
 #### <a name="method"></a>Methode
 
@@ -2426,11 +2491,15 @@ response:
 }
 ```
 
-### <a name="change-password"></a>Wachtwoord wijzigen
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| POST | krul-k-d {"gebruikers naam": "<USER_NAME>", "wacht woord": "wacht woord"} ' ' https://<IP_ADDRESS>/External/Authentication/Validation ' | krul-k-d {"gebruikers naam": "myUser", "wacht woord": " 1234@abcd "} "" https:/ <span> /127.0.0.1/External/Authentication/Validation " |
+
+### <a name="change-password---externalauthenticationset_password"></a>Wacht woord wijzigen-/External/Authentication/set_password
 
 Gebruik deze API om gebruikers hun eigen wacht woorden te laten wijzigen. Alle Defender voor IoT-gebruikers rollen kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
-
-#### <a name="externalauthenticationset_password"></a>/External/Authentication/set_password
 
 #### <a name="method"></a>Methode
 
@@ -2496,11 +2565,15 @@ response:
 | **password** | Tekenreeks | No |
 | **new_password** | Tekenreeks | No |
 
-### <a name="user-password-update-by-system-admin"></a>Gebruikers wachtwoord bijwerken door systeem beheerder
+#### <a name="curl-command"></a>Curl-opdracht
+
+| Type | API's | Voorbeeld |
+|--|--|--|
+| POST | krul-k-d {"username": "<USER_NAME>", "wacht woord": "<CURRENT_PASSWORD>", "new_password": "<NEW_PASSWORD>"} '-H ' content-type: Application/JSON ' https://<IP_ADDRESS>/External/Authentication/set_password | krul-k-d {"gebruikers naam": "myUser", "wacht woord": " 1234@abcd ", "new_password": " abcd@1234 "} '-H ' content-type: Application/JSON ' https:/ <span> /127.0.0.1/External/Authentication/set_password |
+
+### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Gebruikers wachtwoord bijwerken door systeem beheerder-/External/Authentication/set_password_by_admin
 
 Gebruik deze API om systeem beheerders in staat te stellen wacht woorden voor opgegeven gebruikers te wijzigen. Gebruikers rollen Defender voor IoT-beheerder kunnen samen werken met de API. U hebt geen Defender voor IoT-toegangs token nodig om deze API te gebruiken.
-
-#### <a name="externalauthenticationset_password_by_admin"></a>/External/Authentication/set_password_by_admin
 
 #### <a name="method"></a>Methode
 
@@ -2572,6 +2645,15 @@ response:
 | **gebruikers** | Tekenreeks | No |
 | **new_password** | Tekenreeks | No |
 
-## <a name="see-also"></a>Zie ook
-[Sensor detecties onderzoeken in een inventaris](how-to-investigate-sensor-detections-in-a-device-inventory.md) 
- van een apparaat [Onderzoek alle Enter prise sensor-detecties in een inventaris van een apparaat](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
+#### <a name="curl-command"></a>Curl-opdracht
+
+> [!div class="mx-tdBreakAll"]
+> | Type | API's | Voorbeeld |
+> |--|--|--|
+> | POST | krul-k-d {"admin_username": "<ADMIN_USERNAME>", "admin_password": "<ADMIN_PASSWORD>", "gebruikers naam": "<user_name>", "new_password": "<NEW_PASSWORD>"} '-H ' content-type: Application/JSON ' https://<IP_ADDRESS>/External/Authentication/set_password_by_admin | krul-k-d {admin_user ': ' adminUser ', ' admin_password ': ' 1234@abcd ', ' gebruikers naam ': ' myUser ', ' new_password ': ' abcd@1234 '} '-H ' content-type: Application/JSON ' https:/ <span> /127.0.0.1/External/Authentication/set_password_by_admin |
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+
+- [Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)

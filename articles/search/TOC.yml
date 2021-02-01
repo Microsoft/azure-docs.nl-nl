@@ -230,7 +230,7 @@
           items:
             - name: Zoeken in blobs
               href: search-blob-storage-integration.md
-            - name: Inzicht in blobs met AI
+            - name: AI-verrijking over blobs
               href: search-blob-ai-integration.md
             - name: Een indexeerfunctie voor blobs configureren
               href: search-howto-indexing-azure-blob-storage.md

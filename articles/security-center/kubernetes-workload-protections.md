@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: dfa562be4561e8aaec66d4bff51aadeba77cf35f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: ce0808bc53ae663b80da793bf33b5b371d881961
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131335"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222180"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Kubernetes-workloads beveiligen
 
@@ -62,7 +62,7 @@ Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoe
         > [!TIP]
         > De aanbeveling is opgenomen in vijf verschillende beveiligings mechanismen en maakt het niet uit welke u in de volgende stap selecteert.
 
-    1. Selecteer in een van de beveiligings besturings elementen de aanbeveling om de resources te zien waarop u de toevoegen kunt installeren.
+    1. Selecteer in een van de beveiligings besturings elementen de aanbeveling om de resources te zien waarop u de invoeg toepassing kunt installeren.
     1. Selecteer het relevante cluster en **herstel**.
 
         :::image type="content" source="./media/defender-for-kubernetes-usage/recommendation-to-install-policy-add-on-for-kubernetes-details.png" alt-text="Details van aanbevelings pagina voor * * Azure Policy invoeg toepassing voor Kubernetes moet worden geïnstalleerd en ingeschakeld op uw clusters * *":::
@@ -78,12 +78,12 @@ Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoe
 
     | Naam aanbeveling                                                         | Beveiligingsmaatregelen                         | Configuratie vereist |
     |-----------------------------------------------------------------------------|------------------------------------------|------------------------|
-    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | Nee                     |
-    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | Nee                     |
-    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | Nee                     |
-    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | Nee                     |
-    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | Nee                     |
-    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | Nee                     |
+    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | No                     |
+    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | No                     |
+    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | No                     |
+    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | No                     |
+    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | No                     |
+    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | No                     |
     | Er moeten mini maal bevoegde Linux-mogelijkheden worden afgedwongen voor containers       | Toegang en machtigingen beheren            | **Ja**                |
     | Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst    | Toegang en machtigingen beheren            | **Ja**                |
     | Containers mogen alleen op toegestane poorten luisteren                              | Onbevoegde netwerk toegang beperken     | **Ja**                |

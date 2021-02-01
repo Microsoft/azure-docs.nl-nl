@@ -8,12 +8,12 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 09/11/2020
-ms.openlocfilehash: 5f29474705919f402b1c114c3fd2df0df037cdae
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: cc87694686bd5143b03d690286bd3171cf8b0e18
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696061"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222146"
 ---
 # <a name="troubleshoot-mapping-data-flows-in-azure-data-factory"></a>Problemen met toewijzing van gegevens stromen in Azure Data Factory oplossen
 
@@ -127,18 +127,151 @@ Als u de gegevens stroom uitvoert tijdens het uitvoeren van een debug-test uitvo
 - **Oorzaken**: in de stroom voor het toewijzen van gegevens werkt de CSV-bron van meerdere regels momenteel niet met het \r\n als scheidings teken voor rijen. Soms nemen extra regels met de bron waarden van het regel einde van het resultaat. 
 - **Aanbeveling**: Genereer het bestand bij de bron met \n als een scheidings teken in plaats van \r\n. U kunt ook de Kopieer activiteit gebruiken om het CSV-bestand met \r\n te converteren naar \n als een scheidings teken voor rijen.
 
-## <a name="general-troubleshooting-guidance"></a>Algemene richt lijnen voor probleem oplossing
+### <a name="error-code-df-executor-sourceinvalidpayload"></a>Fout code: DF-uitvoerder-SourceInvalidPayload
+- **Bericht**: uitvoering van voor beeld, fout opsporing en pipeline-gegevens stroom is mislukt omdat de container niet bestaat
+- **Oorzaken**: wanneer dataset een container bevat die niet voor komt in de opslag
+- **Aanbeveling**: Controleer of de container waarnaar wordt verwezen in uw gegevensset bestaat of toegankelijk is.
 
+
+ ### <a name="error-code-df-executor-systemimplicitcartesian"></a>Fout code: DF-uitvoerder-SystemImplicitCartesian
+- **Bericht**: impliciet Cartesisch product voor Inner join wordt niet ondersteund. gebruik in plaats daarvan cross join. Kolommen die in de samen voeging worden gebruikt, moeten een unieke sleutel voor rijen maken.
+- **Oorzaken**: impliciet Cartesisch product voor Inner join tussen logische abonnementen wordt niet ondersteund. Als de kolommen die in de samen voeging worden gebruikt, de unieke sleutel maken
+- **Aanbeveling**: voor niet-gelijkheid gebaseerde samen voegingen moet u kiezen voor cross-koppeling.
+
+
+ ### <a name="error-code-df-executor-systeminvalidjson"></a>Fout code: DF-uitvoerder-SystemInvalidJson
+- **Bericht**: JSON-Parseerfout, niet-ondersteunde code ring of meerdere regels
+- **Oorzaken**: mogelijke problemen met het JSON-bestand: niet-ondersteunde code ring, beschadigde bytes of het gebruik van JSON-bron als één document op veel geneste lijnen
+- **Aanbeveling**: Controleer of de code ring van het JSON-bestand wordt ondersteund. Op de bron transformatie die gebruikmaakt van een JSON-gegevensset, vouwt u JSON-instellingen uit en schakelt u ' single document ' in.
+
+
+ ### <a name="error-code-df-executor-broadcasttimeout"></a>Fout code: DF-uitvoerder-BroadcastTimeout
+- **Bericht**: er is een time-out opgetreden voor de broadcast-koppeling. u kunt dit probleem voor komen door de broadcast optie uit te voeren in de trans formatie samen voegen/bestaan/opzoeken. Als u van plan bent om verbinding te maken om de prestaties te verbeteren, zorgt u ervoor dat de uitzendings stroom binnen 60 seconden gegevens kan produceren in debug-uitvoeringen en 300 seconden in de uitvoering van taken.
+- **Oorzaken**: Broadcast heeft een standaard time-out van 60 seconden in debug-uitvoeringen en 300 seconden in de uitvoering van taken. Bij broadcast-deelname lijkt de stroom die is gekozen voor broadcast te groot is om gegevens te produceren binnen deze limiet. Als er geen broadcast-koppeling wordt gebruikt, kan de standaard uitzending die wordt uitgevoerd door de gegevens stroom dezelfde limiet bereiken
+- **Aanbeveling**: Schakel de optie Broadcast uit of Vermijd het uitzenden van grote gegevens stromen waarbij de verwerking meer dan 60 seconden kan duren. Kies in plaats daarvan een kleinere stroom om te broadcasten. Grote SQL/DW-tabellen en-bron bestanden zijn meestal onjuiste kandidaten. Als er geen broadcast wordt toegevoegd, gebruikt u een groter cluster als de fout optreedt.
+
+
+ ### <a name="error-code-df-executor-conversion"></a>Fout code: DF-uitvoeringen-conversie
+- **Bericht**: converteren naar een datum of tijd is mislukt vanwege een ongeldig teken
+- **Oorzaken**: gegevens hebben niet de verwachte indeling
+- **Aanbeveling**: gebruik het juiste gegevens type
+
+
+ ### <a name="error-code-df-executor-invalidcolumn"></a>Fout code: DF-uitvoerder-InvalidColumn
+- **Bericht**: de kolom naam moet worden opgegeven in de query, een alias instellen als u een SQL-functie gebruikt
+- **Oorzaken**: er is geen kolom naam opgegeven.
+
+
+ ### <a name="error-code-df-executor-drivererror"></a>Fout code: DF-uitvoerder-DriverError
+- **Bericht**: INT96 is een verouderd tijds tempel type dat niet wordt ondersteund door de ADF-gegevens stroom. Overweeg het kolom Type bij te werken naar de meest recente typen.
+- **Oorzaken**: dit is een stuurprogrammafout.
+- **Aanbeveling**: INT96 is een verouderd tijds tempel type dat niet wordt ondersteund door de ADF-gegevens stroom. Overweeg het kolom Type bij te werken naar de meest recente typen.
+
+
+ ### <a name="error-code-df-executor-blockcountexceedslimiterror"></a>Fout code: DF-uitvoerder-BlockCountExceedsLimitError
+- **Bericht**: het niet-toegewezen blok aantal mag de maximum limiet van 100.000 blokken niet overschrijden. Controleer de BLOB-configuratie.
+- **Oorzaken**: er kunnen maxi maal 100.000 niet-doorgevoerde blokken in een BLOB zijn.
+- **Aanbeveling**: Neem contact op met het product team van micro soft voor meer informatie
+
+ ### <a name="error-code-df-executor-partitiondirectoryerror"></a>Fout code: DF-uitvoerder-PartitionDirectoryError
+- **Bericht**: het opgegeven bronpad heeft meerdere gepartitioneerde directory's (bijvoorbeeld <Source Path> /<partitie Root Directory 1>/a = 10/b = 20, <Source Path> /<partition root directory 2>/c = 10/d = 30) of gepartitioneerde directory met een ander bestand of een niet-gepartitioneerde directory (bijvoorbeeld <Source Path> /<partitie root directory 1>/a = 10/b = 20, <Source Path> /Directory 2/bestand1), verwijdert u de partitie basis directory van het bronpad en leest u deze via een afzonderlijke bron transformatie.
+- **Oorzaken**: het bronpad heeft meerdere gepartitioneerde directory's of een gepartitioneerde map met een ander bestand of een niet-gepartitioneerde directory.
+- **Aanbeveling**: Verwijder de gepartitioneerde hoofdmap van het bronpad en lees deze via een afzonderlijke bron transformatie.
+
+
+ ### <a name="error-code-df-executor-outofmemoryerror"></a>Fout code: DF-uitvoerder-OutOfMemoryError
+- **Bericht**: er is een fout opgetreden tijdens het uitvoeren van het cluster. Probeer het opnieuw met een Integration runtime met grotere kern aantallen en/of geoptimaliseerd voor geheugen
+- **Oorzaken**: het geheugen van het cluster wordt niet meer gebruikt.
+- **Aanbeveling**: clusters voor fout opsporing zijn bedoeld voor ontwikkelings doeleinden. Profiteer van de bemonsterde gegevens bemonstering van het juiste reken type en de grootte om de payload uit te voeren. Raadpleeg de [hand leiding voor gegevensstroom prestaties](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-performance) voor het afstemmen van de gegevens stromen voor de beste prestaties.
+
+
+ ### <a name="error-code-df-executor-illegalargument"></a>Fout code: DF-uitvoerder-illegalArgument
+- **Bericht**: Controleer of de toegangs sleutel in de gekoppelde service juist is.
+- **Oorzaken**: de account naam of de toegangs sleutel is onjuist.
+- **Aanbeveling**: Geef de juiste account naam of toegangs sleutel op.
+
+
+ ### <a name="error-code-df-executor-invalidtype"></a>Fout code: DF-uitvoerder-InvalidType
+- **Bericht**: Controleer of het type para meter overeenkomt met het type van de waarde die is door gegeven. Het door geven van float-para meters van pijp lijnen wordt momenteel niet ondersteund.
+- **Oorzaken**: incompatibele gegevens typen tussen het gedeclareerde type en de werkelijke parameter waarde
+- **Aanbeveling**: Geef de juiste gegevens typen op.
+
+
+ ### <a name="error-code-df-executor-columnunavailable"></a>Fout code: DF-uitvoerder-ColumnUnavailable
+- **Bericht**: de kolom naam die in de expressie wordt gebruikt, is niet beschikbaar of is ongeldig.
+- **Oorzaken**: ongeldige of niet-beschik bare kolom naam wordt gebruikt in expressies.
+- **Aanbeveling**: kolom namen controleren die worden gebruikt in expressies.
+
+
+ ### <a name="error-code-df-executor-parseerror"></a>Fout code: DF-uitvoerder-ParseError
+- **Bericht**: expressie kan niet worden geparseerd.
+- **Oorzaken**: de expressie bevat fouten bij het parseren van de indeling.
+- **Aanbeveling**: Controleer de opmaak in de expressie.
+
+
+ ### <a name="error-code-df-executor-outofdiskspaceerror"></a>Fout code: DF-uitvoerder-OutOfDiskSpaceError
+- **Bericht**: interne server fout
+- **Oorzaken**: er is onvoldoende schijf ruimte op het cluster.
+- **Aanbeveling**: Voer de pijp lijn opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met de klant ondersteuning.
+
+
+ ### <a name="error-code-df-executor-storeisnotdefined"></a>Fout code: DF-uitvoerder-StoreIsNotDefined
+- **Bericht**: de archief configuratie is niet gedefinieerd. Deze fout wordt mogelijk veroorzaakt door een ongeldige parameter toewijzing in de pijp lijn.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Controleer de toewijzing van de parameter waarde in de pijp lijn. De parameter expressie bevat mogelijk ongeldige tekens.
+
+
+ ### <a name="error-code-df-excel-invalidconfiguration"></a>Fout code: DF-Excel-InvalidConfiguration
+- **Bericht**: er is een Excel-blad naam of-index vereist.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Controleer de waarde van de para meter en geef blad naam of index op om Excel-gegevens te lezen.
+
+
+ ### <a name="error-code-df-excel-invalidconfiguration"></a>Fout code: DF-Excel-InvalidConfiguration
+- **Bericht**: er kan niet tegelijkertijd een Excel-blad naam en-index bestaan.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Controleer de waarde van de para meter en geef blad naam of index op om Excel-gegevens te lezen.
+
+
+ ### <a name="error-code-df-excel-invalidconfiguration"></a>Fout code: DF-Excel-InvalidConfiguration
+- **Bericht**: er is een ongeldig bereik verstrekt.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Controleer de waarde van de para meter en geef een geldig bereik op Referentie: [Excel-eigenschappen](https://docs.microsoft.com/azure/data-factory/format-excel#dataset-properties)op.
+
+
+ ### <a name="error-code-df-excel-invaliddata"></a>Fout code: DF-Excel-InvalidData
+- **Bericht**: Excel-werk blad bestaat niet.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Controleer de waarde van de para meter en geef een geldige blad naam of index op om Excel-gegevens te lezen.
+
+ ### <a name="error-code-df-excel-invaliddata"></a>Fout code: DF-Excel-InvalidData
+- **Bericht**: het lezen van Excel-bestanden met een ander schema wordt nu niet ondersteund.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: gebruik het juiste Excel-bestand.
+
+
+ ### <a name="error-code-df-excel-invaliddata"></a>Fout code: DF-Excel-InvalidData
+- **Bericht**: gegevens type wordt niet ondersteund.
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Excel-bestand juiste gegevens typen gebruiken.
+
+ ### <a name="error-code-df-excel-invalidconfiguration"></a>Fout code: DF-Excel-InvalidConfiguration
+- **Bericht**: er is een ongeldig Excel-bestand ingevoerd terwijl alleen. XLSX en. xls worden ondersteund
+- **Oorzaken**: onbepaald
+- **Aanbeveling**: Zorg ervoor dat de Excel-bestands extensie. XLSX of. xls is.
+
+## <a name="general-troubleshooting-guidance"></a>Algemene richt lijnen voor probleem oplossing
 1. Controleer de status van uw gegevensset-verbindingen. Ga in elke bron-en Sink-trans formatie naar de gekoppelde service voor elke gegevensset die u gebruikt en test verbindingen.
-1. Controleer de status van uw bestands-en tabel verbindingen van de ontwerp functie voor gegevens stromen. Schakel over op fout opsporing en klik op voor beeld van gegevens op de bron transformaties om ervoor te zorgen dat u toegang hebt tot uw gegevens.
-1. Als alles er goed uitziet in de preview van gegevens, gaat u naar de ontwerp functie voor pijp lijnen en plaatst u uw gegevens stroom in een pijplijn activiteit. Fout opsporing voor de pijp lijn voor een end-to-end-test.
+2. Controleer de status van uw bestands-en tabel verbindingen van de ontwerp functie voor gegevens stromen. Schakel over op fout opsporing en klik op voor beeld van gegevens op de bron transformaties om ervoor te zorgen dat u toegang hebt tot uw gegevens.
+3. Als alles er goed uitziet in de preview van gegevens, gaat u naar de ontwerp functie voor pijp lijnen en plaatst u uw gegevens stroom in een pijplijn activiteit. Fout opsporing voor de pijp lijn voor een end-to-end-test.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Probeer deze bronnen voor meer informatie over probleem oplossing:
 *  [Data Factory Blog](https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog)
 *  [Data Factory functie aanvragen](https://feedback.azure.com/forums/270578-data-factory)
-*  [Azure-Video's](https://www.youtube.com/channel/UC2S0k7NeLcEm5_IhHUwpN0g/videos)
+*  [Azure-video's](https://www.youtube.com/channel/UC2S0k7NeLcEm5_IhHUwpN0g/videos)
 *  [Microsoft Q&A-vragenpagina](/answers/topics/azure-data-factory.html)
 *  [Stack Overflow forum voor Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Twitter-informatie over Data Factory](https://twitter.com/hashtag/DataFactory)

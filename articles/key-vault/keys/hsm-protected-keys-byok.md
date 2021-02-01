@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: tutorial
-ms.date: 05/29/2020
+ms.date: 02/01/2021
 ms.author: ambapat
-ms.openlocfilehash: a1c6b054a9caac8ba223bc81e164e7ebf34bd267
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
-ms.translationtype: HT
+ms.openlocfilehash: 98da8057fb09cf43a59b921694386cbf3fa8ca21
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413323"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222214"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Met HSM beveiligde sleutels importeren in Key Vault (BYOK)
 
@@ -65,6 +65,7 @@ De volgende tabel bevat de vereisten voor het gebruik van BYOK in Azure Key Vaul
 |Cryptomathic|ISV (Enterprise Key Management System)|Meerdere HSM-merken en -modellen, inclusief<ul><li>nCipher</li><li>Thales</li><li>Utimaco</li></ul>Zie de [site van Cryptomathic voor meer informatie](https://www.cryptomathic.com/azurebyok)|[BYOK-hulpprogramma en -documentatie van Cryptomathic](https://www.cryptomathic.com/azurebyok)|
 |Securosys SA|Fabrikant, HSM als een service|Primus HSM-serie, Securosys Clouds HSM|[BYOK-hulpprogramma en -documentatie van Primus](https://www.securosys.com/primus-azure-byok)|
 |StorMagic|ISV (Enterprise Key Management System)|Meerdere HSM-merken en -modellen, inclusief<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Raadpleeg de [StorMagic-site voor informatie](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|[SvKMS en Azure Key Vault BYOK](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
+|IBM|Fabrikant|IBM 476x, CryptoExpress|[IBM Enter prise Key Management Foundation](https://www.ibm.com/security/key-management/ekmf-bring-your-own-key-azure)|
 ||||
 
 
@@ -86,7 +87,7 @@ Een sleutel genereren en overbrengen naar een Key Vault-HSM:
 
 ### <a name="step-1-generate-a-kek"></a>Stap 1: Een KEK genereren
 
-Een KEK is een RSA-sleutel die wordt gegenereerd in een Key Vault-HSM. De KEK wordt gebruikt voor het versleutelen van de sleutel die u wilt importeren (de *doelsleutel* ).
+Een KEK is een RSA-sleutel die wordt gegenereerd in een Key Vault-HSM. De KEK wordt gebruikt voor het versleutelen van de sleutel die u wilt importeren (de *doelsleutel*).
 
 De KEK moet aan het volgende voldoen:
 - Een RSA-HSM-sleutel (2048-bits, 3072-bits of 4096-bits)
@@ -121,7 +122,7 @@ Draag het BYOK-bestand over naar de verbonden computer.
 > [!NOTE] 
 > Het importeren van 1024-bits RSA-sleutels wordt niet ondersteund. Het importeren van een EC-sleutel (Elliptic Curve) wordt momenteel niet ondersteund.
 > 
-> **Bekend probleem** : Het importeren van een RSA 4K-doelsleutel van Luna-HSM's wordt alleen ondersteund met firmware 7.4.0 of nieuwer.
+> **Bekend probleem**: Het importeren van een RSA 4K-doelsleutel van Luna-HSM's wordt alleen ondersteund met firmware 7.4.0 of nieuwer.
 
 ### <a name="step-4-transfer-your-key-to-azure-key-vault"></a>Stap 4: De sleutel overdragen naar Azure Key Vault
 

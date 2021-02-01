@@ -1,5 +1,5 @@
 ---
-title: AI gebruiken voor het begrijpen van Blob Storage-gegevens
+title: AI gebruiken om blob-inhoud te verrijken
 titleSuffix: Azure Cognitive Search
 description: Meer informatie over de mogelijkheden voor natuurlijke taal en afbeeldings analyse in azure Cognitive Search en hoe deze processen van toepassing zijn op inhoud die is opgeslagen in azure-blobs.
 manager: nitinme
@@ -7,17 +7,17 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/23/2020
-ms.openlocfilehash: a0d32f00bd3c7f8daa2984bdc7c9b9dfb5add218
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/02/2021
+ms.openlocfilehash: 3d427d80e502eed0825165e640acc0755515c5b0
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362794"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222045"
 ---
-# <a name="use-ai-to-understand-blob-storage-data"></a>AI gebruiken voor het begrijpen van Blob Storage-gegevens
+# <a name="use-ai-to-process-and-analyze-blob-content-in-azure-cognitive-search"></a>AI gebruiken voor het verwerken en analyseren van blob-inhoud in azure Cognitive Search
 
-Gegevens in Azure Blob Storage zijn vaak een verscheidenheid aan ongestructureerde inhoud zoals afbeeldingen, lange tekst, Pdf's en Office-documenten. Door gebruik te maken van de AI-mogelijkheden in azure Cognitive Search, kunt u waardevolle gegevens op verschillende manieren begrijpen en extra heren uit blobs. Voor beelden van het Toep assen van AI op blob-inhoud zijn:
+Inhoud in Azure Blob-opslag die bestaat uit afbeeldingen of lange, niet-gedifferentieerde tekst kan dieper worden geanalyseerd om waardevolle informatie die nuttig is voor downstream-toepassingen te onthullen en te extra heren. Door gebruik te maken van [AI-verrijking](cognitive-search-concept-intro.md)kunt u:
 
 + Tekst uit afbeeldingen extra heren met behulp van optische teken herkenning (OCR)
 + Een beschrijving of tags van een scène maken op basis van een foto
@@ -26,23 +26,23 @@ Gegevens in Azure Blob Storage zijn vaak een verscheidenheid aan ongestructureer
 
 Hoewel u mogelijk slechts een van deze AI-mogelijkheden nodig hebt, is het gebruikelijk om meerdere van deze te combi neren in dezelfde pijp lijn (bijvoorbeeld door tekst op te halen uit een gescande afbeelding en vervolgens alle datums en plaatsen te vinden waarnaar wordt verwezen). Het is ook gebruikelijk om aangepaste AI-of machine learning-verwerking toe te voegen in de vorm van toonaangevende externe pakketten of interne modellen die zijn afgestemd op uw gegevens en uw vereisten.
 
-Met AI-verrijking maakt u nieuwe informatie, vastgelegd als tekst, opgeslagen in velden. Post-verrijking, u kunt deze gegevens openen vanuit een zoek index door te zoeken in volledige tekst of verrijkte documenten terug te sturen naar Azure Storage om nieuwe ervaringen van toepassingen te bieden die gegevens verkennen voor detectie-en analyse scenario's. 
+Hoewel u AI-verrijking kunt Toep assen op alle gegevens bronnen die worden ondersteund door een zoek Indexeer functie, zijn Blobs de meestgebruikte structuren in een verrijkings pijplijn. Resultaten worden weer gegeven in een zoek index voor zoeken in volledige tekst, of omgeleid naar Azure Storage om nieuwe ervaringen van toepassingen te bieden die gegevens verkennen voor detectie-en analyse scenario's. 
 
 In dit artikel bekijken we AI-verrijking via een brede lens, zodat u snel het hele proces kunt begrijpt, van het transformeren van onbewerkte gegevens in blobs, naar Doorzoek bare gegevens in een zoek index of een kennis archief.
 
 ## <a name="what-it-means-to-enrich-blob-data-with-ai"></a>Wat betekent ' verrijkt ' BLOB-gegevens met AI
 
-*AI-verrijking* maakt deel uit van de indexerings architectuur van Azure Cognitive Search die ingebouwde AI integreert van micro soft of aangepaste AI die u opgeeft. Het helpt u bij het implementeren van end-to-end scenario's waarin u blobs moet verwerken (zowel bestaande als nieuwe, zoals deze worden geleverd of bijgewerkt), barsten open alle bestands indelingen om afbeeldingen en tekst uit te pakken, de gewenste gegevens te extra heren met behulp van verschillende AI-mogelijkheden en ze te indexeren in een zoek index voor snel zoeken, ophalen en verkennen. 
+*AI-verrijking* maakt deel uit van de indexerings architectuur van Azure Cognitive Search die machine learning modellen integreert van micro soft of aangepaste leer modellen die u opgeeft. Het helpt u bij het implementeren van end-to-end scenario's waarin u blobs moet verwerken (zowel bestaande als nieuwe, zoals deze worden geleverd of bijgewerkt), barsten open alle bestands indelingen om afbeeldingen en tekst uit te pakken, de gewenste gegevens te extra heren met behulp van verschillende AI-mogelijkheden en ze te indexeren in een zoek index voor snel zoeken, ophalen en verkennen. 
 
 Invoer zijn uw blobs in een enkele container in Azure Blob Storage. Blobs kunnen bijna elk soort tekst-of afbeeldings gegevens zijn. 
 
 Output is altijd een zoek index, die wordt gebruikt voor het snel zoeken van tekst, ophalen en verkennen in client toepassingen. Daarnaast kan de uitvoer ook een [*kennis archief*](knowledge-store-concept-intro.md) zijn dat projecten verrijkt in azure blobs of Azure-tabellen voor downstream-analyses in hulpprogram ma's zoals Power bi of in data Science-workloads.
 
-Tussen is de pijplijn architectuur zelf. De pijp lijn is gebaseerd op de *Indexeer* functie, waaraan u een *vaardig heden*kunt toewijzen. deze bestaat uit een of meer *vaardig heden* die de AI bieden. Het doel van de pijp lijn is om *verrijkte documenten* te produceren die als onbewerkte inhoud worden ingevoerd, maar extra structuur, context en informatie ophalen terwijl u door de pijp lijn beweegt. Verrijkte documenten worden tijdens de indexering gebruikt om omgekeerde indexen en andere structuren te maken die worden gebruikt voor Zoek opdrachten in volledige tekst of verkennen en analyses.
+Tussen is de pijplijn architectuur zelf. De pijp lijn is gebaseerd op de [*Indexeer functies*](search-indexer-overview.md)waaraan u een [*vaardig heden*](cognitive-search-working-with-skillsets.md)kunt toewijzen. deze bestaat uit een of meer *vaardig heden* die de AI bieden. Het doel van de pijp lijn is om *verrijkte documenten* te produceren die de pijp lijn als onbewerkte inhoud invoeren, maar extra structuur, context en informatie ophalen terwijl u door de pijp lijn beweegt. Verrijkte documenten worden tijdens de indexering gebruikt om omgekeerde indexen en andere structuren te maken die worden gebruikt voor Zoek opdrachten in volledige tekst of verkennen en analyses.
 
 ## <a name="required-resources"></a>Vereiste bronnen
 
-U hebt Azure Blob Storage, Azure Cognitive Search en een derde service of mechanisme nodig die de AI levert:
+Naast Azure Blob Storage en Azure Cognitive Search hebt u een derde service of een mechanisme nodig dat de AI biedt:
 
 + Voor ingebouwde AI-Cognitive Search, geïntegreerd met Azure Cognitive Services Vision en Api's voor de verwerking van natuurlijke taal. U kunt [een Cognitive Services resource koppelen](cognitive-search-attach-cognitive-services.md) om optische teken herkenning (OCR), afbeeldings analyse of natuurlijke taal verwerking toe te voegen (taal detectie, tekst omzetting, entiteits herkenning, sleutel woord extractie). 
 

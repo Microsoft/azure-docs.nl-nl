@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: jingwang
-ms.openlocfilehash: 1b3ab569666ea413ba36da0dc00f6c37336c4443
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 3fc567b7d4b2efab03e5d93adda62839d47f7522
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931298"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223088"
 ---
 # <a name="copy-data-from-and-to-a-rest-endpoint-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar een REST-eind punt met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factor
 Het verschil tussen deze REST-connector, de [http-connector](connector-http.md)en de [Web Table-connector](connector-web-table.md) zijn:
 
 - **Rest-connector** ondersteunt het kopiëren van gegevens uit rest-api's; 
-- **Http-connector** is algemeen om gegevens op te halen uit een http-eind punt, bijvoorbeeld om het bestand te downloaden. Voordat deze REST-connector beschikbaar komt, kunt u gebruikmaken van de HTTP-connector om gegevens te kopiëren van de REST-API, die wordt ondersteund, maar minder functioneel is vergeleken met de REST-connector.
+- **Http-connector** is algemeen om gegevens op te halen uit een http-eind punt, bijvoorbeeld om het bestand te downloaden. Vóór deze REST-connector kunt u gebruikmaken van de HTTP-connector om gegevens te kopiëren van de REST-API, die wordt ondersteund, maar minder functioneel is vergeleken met de REST-connector.
 - Met **Web Table connector** wordt tabel inhoud geëxtraheerd van een HTML-webpagina.
 
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
@@ -60,7 +60,7 @@ De volgende eigenschappen worden ondersteund voor de REST-gekoppelde service:
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap **type** moet worden ingesteld op **RestService**. | Yes |
-| URL | De basis-URL van de REST-service. | Yes |
+| url | De basis-URL van de REST-service. | Yes |
 | enableServerCertificateValidation | Hiermee wordt aangegeven of het TLS/SSL-certificaat aan de server zijde moet worden gevalideerd wanneer er verbinding wordt gemaakt met het eind punt. | No<br /> (de standaard waarde is **True**) |
 | authenticationType | Type verificatie dat wordt gebruikt om verbinding te maken met de REST-service. Toegestane waarden zijn **anoniem**, **Basic**, **AadServicePrincipal** en **ManagedServiceIdentity**. Raadpleeg de bijbehorende secties hieronder voor meer eigenschappen en voor beelden. | Yes |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als deze eigenschap niet is opgegeven, wordt de standaard Azure Integration Runtime gebruikt. |No |

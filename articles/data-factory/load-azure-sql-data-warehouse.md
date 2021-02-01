@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/09/2020
-ms.openlocfilehash: 12630e5e4b332d875a75c59d2fdafecd23be0b17
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.date: 01/29/2020
+ms.openlocfilehash: 8071b0fb08f6456b4eb59a3dae875ab0c90ab64d
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97005426"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223492"
 ---
 # <a name="load-data-into-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens laden in azure Synapse Analytics met behulp van Azure Data Factory
 
@@ -126,7 +126,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
     b. Selecteer uw opslag account op de pagina **nieuwe gekoppelde service** en selecteer **maken** om de gekoppelde service te implementeren.
 
-    c. Schakel in de sectie **Geavanceerde instellingen** de optie **type standaard gebruiken** uit en selecteer **volgende**.
+    c. Schakel de optie **type standaard gebruiken** uit en selecteer **volgende**.
 
     ![Poly base configureren](./media/load-azure-sql-data-warehouse/configure-polybase.png)
 

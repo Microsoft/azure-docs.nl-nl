@@ -10,13 +10,13 @@ ms.service: multiple
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/11/2019
-ms.openlocfilehash: bb9f2673eb080ee2919297fcbb5199f99d176bce
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/29/2021
+ms.openlocfilehash: 1d9e43aafbe1f9fdd48596c54138075e23a25590
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013680"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222913"
 ---
 # <a name="copy-and-transform-data-in-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Gegevens in Azure Cosmos DB (SQL API) kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -160,6 +160,7 @@ De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopiee
 | query |Geef de Azure Cosmos DB query op om gegevens te lezen.<br/><br/>Voorbeeld:<br /> `SELECT c.BusinessEntityID, c.Name.First AS FirstName, c.Name.Middle AS MiddleName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |No <br/><br/>Als deze SQL-instructie niet wordt opgegeven, wordt deze uitgevoerd: `select <columns defined in structure> from mycollection` |
 | preferredRegions | De voorkeurs lijst met regio's waarmee verbinding moet worden gemaakt bij het ophalen van gegevens uit Cosmos DB. | No |
 | pageSize | Het aantal documenten per pagina van het query resultaat. De standaard waarde is '-1 ', wat betekent dat de dynamische pagina grootte aan de kant van de service wordt gebruikt tot 1000. | No |
+| detectDatetime | Hiermee wordt aangegeven of datetime moet worden gedetecteerd op basis van de teken reeks waarden in de documenten. Toegestane waarden zijn: **True** (standaard), **False**. | No |
 
 Als u een bron van het type ' DocumentDbCollectionSource ' gebruikt, wordt deze nog steeds ondersteund voor compatibiliteit met eerdere versies. U wordt aangeraden het nieuwe model te gebruiken dat naar uitgebreidere mogelijkheden biedt om gegevens van Cosmos DB te kopiëren.
 
@@ -295,13 +296,16 @@ Instellingen die specifiek zijn voor Azure Cosmos DB, zijn beschikbaar op het ta
 * Geen: er wordt geen actie uitgevoerd voor de verzameling.
 * Opnieuw maken: de verzameling wordt verwijderd en opnieuw gemaakt
 
-**Batch grootte**: bepaalt hoeveel rijen er worden geschreven in elke Bucket. Grotere batch grootten verbeteren de compressie en Optima Lise ring van het geheugen, maar er zijn geen uitzonde ringen in het geheugen bij het opslaan van gegevens.
+**Batch grootte**: een geheel getal dat aangeeft hoeveel objecten er in elke Batch naar Cosmos DB verzameling worden geschreven. Normaal gesp roken is het te lang om te beginnen met de standaard Batch grootte. Als u deze waarde verder wilt afstemmen, noteert u het volgende:
+
+- Cosmos DB beperkt de grootte van één aanvraag tot 2 MB. De formule is "aanvraag grootte = grootte van één document * Batch grootte". Als u de fout melding ' aanvraag grootte is te groot ' raakt, vermindert u de waarde voor de Batch grootte.
+- Hoe groter de Batch grootte, hoe beter de door Voer kan worden gerealiseerd, en zorg ervoor dat u voldoende RUs toewijst om uw werk belasting te stimuleren.
 
 **Partitie sleutel:** Voer een teken reeks in die de partitie sleutel voor uw verzameling vertegenwoordigt. Voorbeeld: ```/movies/title```
 
 **Door Voer:** Stel een optionele waarde in voor het aantal RUs dat u wilt Toep assen op uw CosmosDB-verzameling voor elke uitvoering van deze gegevens stroom. Minimum is 400.
 
-**Budget voor schrijf doorvoer:** Een geheel getal dat het aantal RUs vertegenwoordigt dat u wilt toewijzen aan de Spark-taak voor bulk opname. Dit aantal ligt buiten de totale door Voer die is toegewezen aan de verzameling.
+**Budget voor schrijf doorvoer:** Een geheel getal dat het RUs-object vertegenwoordigt dat u wilt toewijzen voor deze schrijf bewerking van de gegevens stroom, van de totale door Voer die is toegewezen aan de verzameling.
 
 ## <a name="lookup-activity-properties"></a>Eigenschappen van opzoek activiteit
 

@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 5d15947254d80d97b6a241a717fb7d33a3d5ccb5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d3f859590b30aaeeaebaed7b1f2f85e1a86a92c9
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98724013"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223403"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure SQL Managed Instance (FAQ)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -363,7 +363,7 @@ Ja. Zie [How to configure a Custom DNS for Azure SQL Managed instance](./custom-
 
 **Kan ik DNS vernieuwen?**
 
-Op dit moment bieden we geen functie voor het vernieuwen van de DNS-server configuratie voor SQL Managed instance.
+Ja. Zie de [instelling DNS-servers voor het virtuele netwerk synchroniseren op het virtuele cluster van SQL Managed instance](./synchronize-vnet-dns-servers-setting-on-virtual-cluster.md).
 
 De DNS-configuratie wordt uiteindelijk vernieuwd:
 

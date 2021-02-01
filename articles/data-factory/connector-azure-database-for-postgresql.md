@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/08/2020
-ms.openlocfilehash: 2537167783f3e68c52c665dafa9378193852acb4
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.date: 02/01/2021
+ms.openlocfilehash: 8b1177278583bdb46f17119eb59235e70c58e806
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96930378"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223085"
 ---
 # <a name="copy-and-transform-data-in-azure-database-for-postgresql-by-using-azure-data-factory"></a>Gegevens in Azure Database for PostgreSQL kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -175,8 +175,9 @@ Als u gegevens wilt kopiëren naar Azure Database for PostgreSQL, worden de volg
 |:--- |:--- |:--- |
 | type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **AzurePostgreSQLSink**. | Yes |
 | preCopyScript | Geef een SQL-query op voor de Kopieer activiteit die moet worden uitgevoerd voordat u in elke uitvoering gegevens in Azure Database for PostgreSQL schrijft. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen. | No |
-| writeBatchSize | Hiermee worden gegevens in de Azure Database for PostgreSQL tabel ingevoegd wanneer de buffer grootte writeBatchSize bereikt.<br>Toegestane waarde is een geheel getal dat het aantal rijen vertegenwoordigt. | Nee (de standaard waarde is 10.000) |
-| writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br>Toegestane waarden zijn time span-teken reeksen. Een voor beeld is 00:30:00 (30 minuten). | Nee (de standaard waarde is 00:00:30) |
+| writeMethod | De methode die wordt gebruikt om gegevens naar Azure Database for PostgreSQL te schrijven.<br>Toegestane waarden zijn: **CopyCommand** (preview, meer presteert), **BulkInsert** (standaard). | No |
+| writeBatchSize | Het aantal rijen dat in Azure Database for PostgreSQL per batch wordt geladen.<br>Toegestane waarde is een geheel getal dat het aantal rijen vertegenwoordigt. | Nee (de standaard waarde is 1.000.000) |
+| writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br>Toegestane waarden zijn time span-teken reeksen. Een voor beeld is 00:30:00 (30 minuten). | Nee (de standaard waarde is 00:30:00) |
 
 **Voorbeeld**:
 
@@ -204,7 +205,8 @@ Als u gegevens wilt kopiëren naar Azure Database for PostgreSQL, worden de volg
             "sink": {
                 "type": "AzurePostgreSQLSink",
                 "preCopyScript": "<custom SQL script>",
-                "writeBatchSize": 100000
+                "writeMethod": "CopyCommand",
+                "writeBatchSize": 1000000
             }
         }
     }

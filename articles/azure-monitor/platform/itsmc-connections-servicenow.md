@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 221678da819d32539d0078b72a87c61851ed3e8f
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: cc4f961c399e9ac5e853085106924584eb3935d0
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089255"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223386"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>ServiceNow verbinden met IT Service Management-connector
 
@@ -29,10 +29,11 @@ Zie [de IT Service Management-connector-oplossing toevoegen](./itsmc-definition.
 
 ### <a name="oauth-setup"></a>OAuth-installatie
 
-ServiceNow ondersteunde versies zijn Orlando, New York, Madrid, Londen, Kingston, Jakarta, Istanboel, Helsinki en Genève.
+ServiceNow ondersteunde versies zijn Parijs, Orlando, New York, Madrid, Londen, Kingston, Jakarta, Istanboel, Helsinki en Genève.
 
 ServiceNow-beheerders moeten een client-ID en client geheim genereren voor hun ServiceNow-exemplaar. Bekijk de volgende informatie zoals vereist:
 
+- [OAuth instellen voor Parijs](https://docs.servicenow.com/bundle/paris-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
 - [OAuth instellen voor Orlando](https://docs.servicenow.com/bundle/orlando-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
 - [OAuth voor New York instellen](https://docs.servicenow.com/bundle/newyork-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
 - [OAuth instellen voor Madrid](https://docs.servicenow.com/bundle/madrid-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)

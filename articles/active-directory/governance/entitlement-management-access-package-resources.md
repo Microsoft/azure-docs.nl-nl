@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 12/14/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b6e2ac9d80c1c3bf76b4a3d4c44f0654100670f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82247ae9817e5ff2e26d0862230654021876406b
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89567415"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223265"
 ---
 # <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management"></a>Resource rollen wijzigen voor een toegangs pakket in het beheer van rechten van Azure AD
 
@@ -90,7 +90,7 @@ Zie groepen en [Microsoft 365 groepen en micro soft teams](/microsoftteams/offic
 
     Wanneer u de groep of het team selecteert, wordt in de kolom **subtype** een van de volgende subtypen weer geven:
 
-    | Subtype | Beschrijving |
+    | Subtype | Description |
     | --- | --- |
     | Beveiliging | Wordt gebruikt voor het verlenen van toegang tot resources. |
     | Distributie | Wordt gebruikt voor het verzenden van meldingen naar een groep personen. |
@@ -144,7 +144,13 @@ Azure AD kan gebruikers automatisch toegang geven tot een share point online-sit
 
 1. Klik op de pagina **resource rollen toevoegen aan toegangs pakket** op **share point-sites** om het deel venster share point online-sites selecteren te openen.
 
-1. Selecteer de share point online-sites die u wilt toevoegen in het toegangs pakket.
+    :::image type="content" source="media/entitlement-management-access-package-resources/sharepoint-multigeo-portal.png" alt-text="Toegangs pakket-resource rollen toevoegen-share point-sites selecteren-Portal weergave":::
+
+1. Als u [multi-geo](https://docs.microsoft.com/microsoft-365/enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-microsoft-365?view=o365-worldwide) hebt ingeschakeld voor share point, selecteert u de omgeving waarin u de sites wilt selecteren.
+    
+    :::image type="content" source="media/entitlement-management-access-package-resources/sharepoint-multigeo-select.png" alt-text="Toegangs pakket-resource rollen toevoegen-Selecteer share point-sites met meerdere geografische locaties":::
+
+1. Als multi-geo niet is ingeschakeld, hoeft u geen omgeving te selecteren. Selecteer de share point online-sites die u wilt toevoegen in het toegangs pakket.
 
     ![Toegangs pakket-resource rollen toevoegen-share point online-sites selecteren](./media/entitlement-management-access-package-resources/sharepoint-site-select.png)
 

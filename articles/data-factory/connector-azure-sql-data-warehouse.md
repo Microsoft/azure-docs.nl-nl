@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/22/2021
-ms.openlocfilehash: 48450218975f2c6ee14e12af8d722942e8db1347
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.date: 01/29/2021
+ms.openlocfilehash: 386547aa6e815ad6ba7d860c513a3e24c4040cca
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98695845"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223223"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens in azure Synapse Analytics kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -64,12 +64,12 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde Azure Synapse A
 | Eigenschap            | Beschrijving                                                  | Vereist                                                     |
 | :------------------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | type                | De eigenschap type moet worden ingesteld op **AzureSqlDW**.             | Ja                                                          |
-| connectionString    | Geef de gegevens op die nodig zijn om verbinding te maken met het Azure Synapse Analytics-exemplaar voor de **Connections Tring** -eigenschap. <br/>Markeer dit veld als een SecureString om het veilig op te slaan in Data Factory. U kunt ook een wacht woord/Service-Principal-sleutel in Azure Key Vault plaatsen en als de SQL-verificatie de `password` configuratie uit de Connection String halen. Zie het JSON-voor beeld onder de tabel en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Ja                                                          |
+| connectionString    | Geef de gegevens op die nodig zijn om verbinding te maken met het Azure Synapse Analytics-exemplaar voor de **Connections Tring** -eigenschap. <br/>Markeer dit veld als een SecureString om het veilig op te slaan in Data Factory. U kunt ook een wacht woord/Service-Principal-sleutel in Azure Key Vault plaatsen en als de SQL-verificatie de `password` configuratie uit de Connection String halen. Zie het JSON-voor beeld onder de tabel en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Yes                                                          |
 | servicePrincipalId  | Geef de client-ID van de toepassing op.                         | Ja, wanneer u Azure AD-verificatie gebruikt met een service-principal. |
 | servicePrincipalKey | Geef de sleutel van de toepassing op. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja, wanneer u Azure AD-verificatie gebruikt met een service-principal. |
 | tenant              | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja, wanneer u Azure AD-verificatie gebruikt met een service-principal. |
-| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw Azure AD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment** en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | Nee |
-| connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of een zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee                                                           |
+| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw Azure AD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment** en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | No |
+| connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of een zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No                                                           |
 
 Raadpleeg de volgende secties over respectievelijk de vereisten en JSON-voor beelden voor verschillende verificatie typen:
 
@@ -227,7 +227,7 @@ De volgende eigenschappen worden ondersteund voor Azure Synapse Analytics-gegeve
 
 | Eigenschap  | Beschrijving                                                  | Vereist                    |
 | :-------- | :----------------------------------------------------------- | :-------------------------- |
-| type      | De eigenschap **type** van de DataSet moet worden ingesteld op **AzureSqlDWTable**. | Ja                         |
+| type      | De eigenschap **type** van de DataSet moet worden ingesteld op **AzureSqlDWTable**. | Yes                         |
 | schema | De naam van het schema. |Nee voor bron, ja voor Sink  |
 | tabel | De naam van de tabel/weer gave. |Nee voor bron, ja voor Sink  |
 | tableName | De naam van de tabel/weer gave met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik en voor nieuwe werk `schema` belasting `table` . | Nee voor bron, ja voor Sink |
@@ -266,17 +266,17 @@ Als u gegevens wilt kopiëren uit Azure Synapse Analytics, stelt u de eigenschap
 
 | Eigenschap                     | Beschrijving                                                  | Vereist |
 | :--------------------------- | :----------------------------------------------------------- | :------- |
-| type                         | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **SqlDWSource**. | Ja      |
-| sqlReaderQuery               | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `select * from MyTable`. | Nee       |
-| sqlReaderStoredProcedureName | De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. | Nee       |
-| storedProcedureParameters    | Para meters voor de opgeslagen procedure.<br/>Toegestane waarden zijn naam-of waardeparen. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. | Nee       |
-| isolationLevel | Hiermee geeft u het vergrendelings gedrag van de trans actie voor de SQL-bron op. De toegestane waarden zijn: **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, **snap shot**. Als u niets opgeeft, wordt het standaard isolatie niveau van de data base gebruikt. Raadpleeg [dit document](/dotnet/api/system.data.isolationlevel) voor meer informatie. | Nee |
-| partitionOptions | Hiermee geeft u de opties voor gegevens partities op die worden gebruikt voor het laden van gegevens uit Azure Synapse Analytics. <br>Toegestane waarden zijn: **geen** (standaard), **PhysicalPartitionsOfTable** en **DynamicRange**.<br>Wanneer een partitie optie is ingeschakeld (dat wil zeggen, niet `None` ), is de mate van parallelle uitvoering om gegevens van een Azure Synapse Analytics gelijktijdig te laden, bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling van de Kopieer activiteit. | Nee |
-| partitionSettings | Geef de groep van de instellingen voor het partitioneren van gegevens op. <br>Toep assen wanneer de partitie optie niet is `None` . | Nee |
+| type                         | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **SqlDWSource**. | Yes      |
+| sqlReaderQuery               | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `select * from MyTable`. | No       |
+| sqlReaderStoredProcedureName | De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. | No       |
+| storedProcedureParameters    | Para meters voor de opgeslagen procedure.<br/>Toegestane waarden zijn naam-of waardeparen. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. | No       |
+| isolationLevel | Hiermee geeft u het vergrendelings gedrag van de trans actie voor de SQL-bron op. De toegestane waarden zijn: **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, **snap shot**. Als u niets opgeeft, wordt het standaard isolatie niveau van de data base gebruikt. Raadpleeg [dit document](/dotnet/api/system.data.isolationlevel) voor meer informatie. | No |
+| partitionOptions | Hiermee geeft u de opties voor gegevens partities op die worden gebruikt voor het laden van gegevens uit Azure Synapse Analytics. <br>Toegestane waarden zijn: **geen** (standaard), **PhysicalPartitionsOfTable** en **DynamicRange**.<br>Wanneer een partitie optie is ingeschakeld (dat wil zeggen, niet `None` ), is de mate van parallelle uitvoering om gegevens van een Azure Synapse Analytics gelijktijdig te laden, bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling van de Kopieer activiteit. | No |
+| partitionSettings | Geef de groep van de instellingen voor het partitioneren van gegevens op. <br>Toep assen wanneer de partitie optie niet is `None` . | No |
 | **_Onder `partitionSettings` :_* _ | | |
-| partitionColumnName | Geef de naam van de bron kolom _ *op in geheel getal of datum/tijd type** (,,,,,, `int` `smallint` `bigint` `date` `smalldatetime` `datetime` `datetime2` of `datetimeoffset` ) dat wordt gebruikt voor het partitioneren van het bereik voor parallelle kopieën. Als u niets opgeeft, wordt de index of de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als de partitie kolom.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook  `?AdfDynamicRangePartitionCondition ` in de component WHERE. Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | Nee |
-| partitionUpperBound | De maximum waarde van de partitie kolom voor het splitsen van het partitie bereik. Deze waarde wordt gebruikt om de partitie stride te bepalen, niet voor het filteren van de rijen in de tabel. Alle rijen in het tabel-of query resultaat worden gepartitioneerd en gekopieerd. Als deze optie niet is opgegeven, wordt de waarde automatisch gedetecteerd met de Kopieer activiteit.  <br>Toep assen wanneer de partitie optie is `DynamicRange` . Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | Nee |
-| partitionLowerBound | De minimum waarde van de partitie kolom voor het splitsen van een partitie bereik. Deze waarde wordt gebruikt om de partitie stride te bepalen, niet voor het filteren van de rijen in de tabel. Alle rijen in het tabel-of query resultaat worden gepartitioneerd en gekopieerd. Als deze optie niet is opgegeven, wordt de waarde automatisch gedetecteerd met de Kopieer activiteit.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | Nee |
+| partitionColumnName | Geef de naam van de bron kolom _ *op in geheel getal of datum/tijd type** (,,,,,, `int` `smallint` `bigint` `date` `smalldatetime` `datetime` `datetime2` of `datetimeoffset` ) dat wordt gebruikt voor het partitioneren van het bereik voor parallelle kopieën. Als u niets opgeeft, wordt de index of de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als de partitie kolom.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook  `?AdfDynamicRangePartitionCondition ` in de component WHERE. Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
+| partitionUpperBound | De maximum waarde van de partitie kolom voor het splitsen van het partitie bereik. Deze waarde wordt gebruikt om de partitie stride te bepalen, niet voor het filteren van de rijen in de tabel. Alle rijen in het tabel-of query resultaat worden gepartitioneerd en gekopieerd. Als deze optie niet is opgegeven, wordt de waarde automatisch gedetecteerd met de Kopieer activiteit.  <br>Toep assen wanneer de partitie optie is `DynamicRange` . Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
+| partitionLowerBound | De minimum waarde van de partitie kolom voor het splitsen van een partitie bereik. Deze waarde wordt gebruikt om de partitie stride te bepalen, niet voor het filteren van de rijen in de tabel. Alle rijen in het tabel-of query resultaat worden gepartitioneerd en gekopieerd. Als deze optie niet is opgegeven, wordt de waarde automatisch gedetecteerd met de Kopieer activiteit.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
 
 **Let op het volgende punt:**
 
@@ -376,24 +376,24 @@ Azure Data Factory ondersteunt drie manieren om gegevens in azure Synapse Analyt
 ![Kopieer opties voor de Azure Synapse Analytics-Sink](./media/connector-azure-sql-data-warehouse/sql-dw-sink-copy-options.png)
 
 - [Poly Base gebruiken](#use-polybase-to-load-data-into-azure-synapse-analytics)
-- [De instructie COPY gebruiken (preview)](#use-copy-statement)
+- [Instructie COPY gebruiken](#use-copy-statement)
 - Bulksgewijs invoegen gebruiken
 
-De snelste en meest schaal bare manier om gegevens te laden, is via [poly base](/sql/relational-databases/polybase/polybase-guide) of de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql) (preview).
+De snelste en meest schaal bare manier om gegevens te laden, is via [poly base](/sql/relational-databases/polybase/polybase-guide) of de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql).
 
 Als u gegevens wilt kopiëren naar Azure Synapse Analytics, stelt u het sink-type in de Kopieer activiteit in op **SqlDWSink**. De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kopieer activiteit:
 
 | Eigenschap          | Beschrijving                                                  | Vereist                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
-| type              | De eigenschap **type** van de Sink voor kopieer activiteiten moet worden ingesteld op **SqlDWSink**. | Ja                                           |
+| type              | De eigenschap **type** van de Sink voor kopieer activiteiten moet worden ingesteld op **SqlDWSink**. | Yes                                           |
 | allowPolyBase     | Hiermee wordt aangegeven of poly Base moet worden gebruikt voor het laden van gegevens in azure Synapse Analytics. `allowCopyCommand` en `allowPolyBase` kan niet beide zijn ingesteld op ' True '. <br/><br/>Zie [poly Base gebruiken om gegevens te laden in de sectie Azure Synapse Analytics](#use-polybase-to-load-data-into-azure-synapse-analytics) voor beperkingen en Details.<br/><br/>Toegestane waarden zijn **True** en **False** (standaard). | Nee.<br/>Toep assen bij het gebruik van poly base.     |
 | polyBaseSettings  | Een groep eigenschappen die kan worden opgegeven wanneer de `allowPolybase` eigenschap is ingesteld op **True**. | Nee.<br/>Toep assen bij het gebruik van poly base. |
-| allowCopyCommand | Hiermee wordt aangegeven of [kopiëren-instructie](/sql/t-sql/statements/copy-into-transact-sql) (preview) moet worden gebruikt om gegevens in azure Synapse Analytics te laden. `allowCopyCommand` en `allowPolyBase` kan niet beide zijn ingesteld op ' True '. <br/><br/>Zie de [instructie Copy gebruiken om gegevens te laden in de sectie Azure Synapse Analytics](#use-copy-statement) voor beperkingen en Details.<br/><br/>Toegestane waarden zijn **True** en **False** (standaard). | Nee.<br>Toep assen bij het gebruik van COPY. |
+| allowCopyCommand | Hiermee wordt aangegeven of de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql) moet worden gebruikt om gegevens in azure Synapse Analytics te laden. `allowCopyCommand` en `allowPolyBase` kan niet beide zijn ingesteld op ' True '. <br/><br/>Zie de [instructie Copy gebruiken om gegevens te laden in de sectie Azure Synapse Analytics](#use-copy-statement) voor beperkingen en Details.<br/><br/>Toegestane waarden zijn **True** en **False** (standaard). | Nee.<br>Toep assen bij het gebruik van COPY. |
 | copyCommandSettings | Een groep eigenschappen die kan worden opgegeven wanneer `allowCopyCommand` eigenschap is ingesteld op True. | Nee.<br/>Toep assen bij het gebruik van COPY. |
 | writeBatchSize    | Het aantal rijen dat in de SQL-tabel **per batch** moet worden ingevoegd.<br/><br/>De toegestane waarde is een **geheel getal** (aantal rijen). Standaard bepaalt Data Factory dynamisch de juiste Batch grootte op basis van de Rijgrootte. | Nee.<br/>Toep assen bij het gebruik van bulksgewijs invoegen.     |
 | writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br/><br/>De toegestane waarde is **time span**. Voor beeld: "00:30:00" (30 minuten). | Nee.<br/>Toep assen bij het gebruik van bulksgewijs invoegen.        |
-| preCopyScript     | Geef een SQL-query voor de Kopieer activiteit op die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Azure Synapse Analytics worden geschreven. Gebruik deze eigenschap om de vooraf geladen gegevens op te schonen. | Nee                                            |
-| tableOption | Hiermee wordt aangegeven of [de Sink-tabel automatisch](copy-activity-overview.md#auto-create-sink-tables) moet worden gemaakt als deze niet bestaat op basis van het bron schema. Toegestane waarden zijn: `none` (standaard), `autoCreate` . |Nee |
+| preCopyScript     | Geef een SQL-query voor de Kopieer activiteit op die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Azure Synapse Analytics worden geschreven. Gebruik deze eigenschap om de vooraf geladen gegevens op te schonen. | No                                            |
+| tableOption | Hiermee wordt aangegeven of [de Sink-tabel automatisch](copy-activity-overview.md#auto-create-sink-tables) moet worden gemaakt als deze niet bestaat op basis van het bron schema. Toegestane waarden zijn: `none` (standaard), `autoCreate` . |No |
 | disableMetricsCollection | Data Factory verzamelt metrische gegevens zoals Azure Synapse Analytics Dwu's voor het optimaliseren van de Kopieer prestaties en aanbevelingen, die extra toegang tot de hoofd database bieden. Als u zich zorgen maakt over dit gedrag, geeft u `true` op dat u deze functie wilt uitschakelen. | Nee (standaard instelling `false` ) |
 
 #### <a name="azure-synapse-analytics-sink-example"></a>Voor beeld van Azure Synapse Analytics-Sink
@@ -491,10 +491,10 @@ De volgende poly base-instellingen worden ondersteund onder `polyBaseSettings` i
 
 | Eigenschap          | Beschrijving                                                  | Vereist                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
-| rejectValue       | Hiermee geeft u het aantal of percentage rijen op dat kan worden afgewezen voordat de query mislukt.<br/><br/>Meer informatie over de afwijzings opties van poly Base vindt u in de sectie argumenten van een [externe tabel maken (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql). <br/><br/>Toegestane waarden zijn 0 (standaard), 1, 2, enzovoort. | Nee                                            |
-| rejectType        | Hiermee wordt aangegeven of de **rejectValue** -optie een letterlijke waarde of een percentage is.<br/><br/>Toegestane waarden zijn **Value** (standaard) en **percentage**. | Nee                                            |
+| rejectValue       | Hiermee geeft u het aantal of percentage rijen op dat kan worden afgewezen voordat de query mislukt.<br/><br/>Meer informatie over de afwijzings opties van poly Base vindt u in de sectie argumenten van een [externe tabel maken (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql). <br/><br/>Toegestane waarden zijn 0 (standaard), 1, 2, enzovoort. | No                                            |
+| rejectType        | Hiermee wordt aangegeven of de **rejectValue** -optie een letterlijke waarde of een percentage is.<br/><br/>Toegestane waarden zijn **Value** (standaard) en **percentage**. | No                                            |
 | rejectSampleValue | Bepaalt het aantal rijen dat moet worden opgehaald voordat poly base het percentage geweigerde rijen opnieuw berekent.<br/><br/>Toegestane waarden zijn 1, 2, enzovoort. | Ja, als de **rejectType** een **percentage** is. |
-| useTypeDefault    | Hiermee geeft u op hoe ontbrekende waarden in tekst bestanden met scheidings tekens moeten worden verwerkt wanneer poly base gegevens ophaalt uit het tekst bestand.<br/><br/>Meer informatie over deze eigenschap vindt u in de sectie argumenten in [externe BESTANDS indeling maken (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql).<br/><br/>Toegestane waarden zijn **True** en **False** (standaard).<br><br> | Nee                                            |
+| useTypeDefault    | Hiermee geeft u op hoe ontbrekende waarden in tekst bestanden met scheidings tekens moeten worden verwerkt wanneer poly base gegevens ophaalt uit het tekst bestand.<br/><br/>Meer informatie over deze eigenschap vindt u in de sectie argumenten in [externe BESTANDS indeling maken (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql).<br/><br/>Toegestane waarden zijn **True** en **False** (standaard).<br><br> | No                                            |
 
 ### <a name="direct-copy-by-using-polybase"></a>Direct kopiëren door poly Base te gebruiken
 
@@ -674,9 +674,9 @@ All columns of the table must be specified in the INSERT BULK statement.
 
 De NULL-waarde is een speciale vorm van de standaard waarde. Als de kolom null-waarden bevat, kunnen de invoer gegevens in de BLOB voor die kolom leeg zijn. Maar dit kan niet ontbreken in de invoer gegevensset. Poly base voegt NULL toe voor ontbrekende waarden in azure Synapse Analytics.
 
-## <a name="use-copy-statement-to-load-data-into-azure-synapse-analytics-preview"></a><a name="use-copy-statement"></a> De instructie COPY gebruiken om gegevens te laden in azure Synapse Analytics (preview)
+## <a name="use-copy-statement-to-load-data-into-azure-synapse-analytics"></a><a name="use-copy-statement"></a> De instructie COPY gebruiken om gegevens te laden in azure Synapse Analytics
 
-De Azure Synapse Analytics [copy-instructie](/sql/t-sql/statements/copy-into-transact-sql) (preview) biedt ondersteuning voor het laden van gegevens uit **Azure Blob en Azure data Lake Storage Gen2**. Als uw bron gegevens voldoen aan de criteria die in deze sectie zijn beschreven, kunt u de instructie COPY gebruiken in ADF om gegevens te laden in azure Synapse Analytics. Azure Data Factory controleert de instellingen en mislukt de uitvoering van de Kopieer activiteit als niet aan de criteria wordt voldaan.
+De Azure Synapse Analytics [copy-instructie](/sql/t-sql/statements/copy-into-transact-sql) biedt ondersteuning voor het laden van gegevens uit **Azure Blob en Azure data Lake Storage Gen2**. Als uw bron gegevens voldoen aan de criteria die in deze sectie zijn beschreven, kunt u de instructie COPY gebruiken in ADF om gegevens te laden in azure Synapse Analytics. Azure Data Factory controleert de instellingen en mislukt de uitvoering van de Kopieer activiteit als niet aan de criteria wordt voldaan.
 
 >[!NOTE]
 >Er wordt momenteel alleen Data Factory ondersteund voor het kopiëren van een COPY-instructie met compatibele bronnen die hieronder worden beschreven.
@@ -719,8 +719,8 @@ De volgende instellingen voor de Kopieer instructie worden ondersteund onder `al
 
 | Eigenschap          | Beschrijving                                                  | Vereist                                      |
 | :---------------- | :----------------------------------------------------------- | :-------------------------------------------- |
-| Standaard waarde | Hiermee geeft u de standaard waarden voor elke doel kolom in azure Synapse Analytics op.  De standaard waarden in de eigenschap overschrijven de standaard beperking die is ingesteld in het Data Warehouse en de identiteits kolom kan geen standaard waarde hebben. | Nee |
-| additionalOptions | Aanvullende opties die worden door gegeven aan een Azure Synapse Analytics-instructie COPY direct in de component with voor [kopiëren](/sql/t-sql/statements/copy-into-transact-sql). Quote de waarde waar nodig om uit te lijnen met de vereisten voor het kopiëren van de instructie. | Nee |
+| Standaard waarde | Hiermee geeft u de standaard waarden voor elke doel kolom in azure Synapse Analytics op.  De standaard waarden in de eigenschap overschrijven de standaard beperking die is ingesteld in het Data Warehouse en de identiteits kolom kan geen standaard waarde hebben. | No |
+| additionalOptions | Aanvullende opties die worden door gegeven aan een Azure Synapse Analytics-instructie COPY direct in de component with voor [kopiëren](/sql/t-sql/statements/copy-into-transact-sql). Quote de waarde waar nodig om uit te lijnen met de vereisten voor het kopiëren van de instructie. | No |
 
 ```json
 "activities":[
@@ -796,9 +796,10 @@ SQL-voor beeld: ```Select * from MyTable where customerId > 1000 and customerId 
 - Doorgevoerde lezen
 - Lezen niet-doorgevoerd
 - Herhaal bare Lees bewerking
-- Serialiseerbaar *-geen (isolatie niveau negeren)
+- Serializable
+- Geen (isolatie niveau negeren)
 
-![Isolatie niveau](media/data-flow/isolationlevel.png "Isolatie niveau")
+![Isolatie niveau](media/data-flow/isolationlevel.png)
 
 ### <a name="sink-transformation"></a>Sink-trans formatie
 

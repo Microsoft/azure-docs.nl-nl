@@ -6,7 +6,7 @@
       href: overview.md
     - name: Veelgestelde vragen
       href: faq.md
-    - name: Wat is er nieuw?
+    - name: Wat is nieuw?
       href: whats-new.md
     - name: Migreren van Operations Manager
       href: azure-monitor-operations-manager.md
@@ -329,6 +329,8 @@
               href: platform/data-sources-linux-applications.md
             - name: IIS-logboeken
               href: platform/data-sources-iis-logs.md
+            - name: Event Tracing for Windows gegevens
+              href: platform/data-sources-event-tracing-windows.md
             - name: Aangepaste logboeken
               href: platform/data-sources-custom-logs.md
             - name: Aangepaste velden

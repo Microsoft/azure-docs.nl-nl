@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: edbcabfe4d0b633a784163562f52b303120916ca
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 1c9ac872587804adbd9e62a3dc3ef3daed9e0c25
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685056"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223048"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Gegeneraliseerde installatie kopieën maken zonder een inrichtings agent
 
@@ -154,7 +154,7 @@ wireserver_conn.close()
 
 Als op uw virtuele machine python niet is geïnstalleerd of beschikbaar is, kunt u deze bovenstaande script logica op een programmatische manier reproduceren met de volgende stappen:
 
-1. Haal de `ContainerId` en `InstanceId` op door de reactie te parseren vanuit de WireServer: `curl -X GET -H 'x-ms-version: 2012-11-30' http://$168.63.129.16/machine?comp=goalstate` .
+1. Haal de `ContainerId` en `InstanceId` op door de reactie te parseren vanuit de WireServer: `curl -X GET -H 'x-ms-version: 2012-11-30' http://168.63.129.16/machine?comp=goalstate` .
 
 2. Maak de volgende XML-gegevens en Injecteer de geparseerde `ContainerId` en `InstanceId` uit de bovenstaande stap:
    ```xml

@@ -5,12 +5,12 @@ ms.assetid: 0f96c0e7-0901-489b-a95a-e3b66ca0a1c2
 ms.topic: article
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 0e8d5fa14678a2a26234dfcd73f4a50af62ca7aa
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e4d4b7e01eb5799bee604c05e1660a7a45188763
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012937"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223337"
 ---
 # <a name="configure-a-custom-domain-name-in-azure-app-service-with-traffic-manager-integration"></a>Een aangepaste domein naam configureren in Azure App Service met Traffic Manager-integratie
 
@@ -75,9 +75,9 @@ Zodra u klaar bent met het toevoegen of wijzigen van DNS-records bij uw domein p
 
 ### <a name="what-about-root-domains"></a>Hoe zit het met hoofd domeinen?
 
-Omdat Traffic Manager alleen aangepaste domein toewijzing met CNAME-records ondersteunt, en omdat DNS-standaarden geen CNAME-records ondersteunen voor het toewijzen van hoofd domeinen (bijvoorbeeld **contoso.com**), ondersteunt Traffic Manager geen toewijzing aan hoofd domeinen. U kunt dit probleem omzeilen door een URL-omleiding te gebruiken op het niveau van de app. In ASP.NET Core kunt u bijvoorbeeld het [herschrijven van url's](/aspnet/core/fundamentals/url-rewriting)gebruiken. Gebruik vervolgens Traffic Manager om de taak verdeling van het subdomein (**www.contoso.com**) uit te sluiten.
+Omdat Traffic Manager alleen aangepaste domein toewijzing met CNAME-records ondersteunt, en omdat DNS-standaarden geen CNAME-records ondersteunen voor het toewijzen van hoofd domeinen (bijvoorbeeld **contoso.com**), ondersteunt Traffic Manager geen toewijzing aan hoofd domeinen. U kunt dit probleem omzeilen door een URL-omleiding te gebruiken op het niveau van de app. In ASP.NET Core kunt u bijvoorbeeld het [herschrijven van url's](/aspnet/core/fundamentals/url-rewriting)gebruiken. Gebruik vervolgens Traffic Manager om de taak verdeling van het subdomein (**www.contoso.com**) uit te sluiten. Een andere benadering is dat u [een alias record kunt maken voor de domein naam Apex om te verwijzen naar een Azure Traffic Manager-profiel](https://docs.microsoft.com/azure/dns/tutorial-alias-tm). Bijvoorbeeld: contoso.com. In plaats van een omleidings service te gebruiken, kunt u Azure DNS configureren om rechtstreeks vanuit uw zone naar een Traffic Manager profiel te verwijzen. 
 
-Voor scenario's met een hoge Beschik baarheid kunt u een fout tolerante DNS-installatie zonder Traffic Manager implementeren door meerdere *records* te maken die van het hoofd domein verwijzen naar het IP-adres van elke app. Wijs vervolgens [hetzelfde hoofd domein toe aan alle exemplaren van de app](app-service-web-tutorial-custom-domain.md#map-an-a-record). Omdat dezelfde domein naam niet kan worden toegewezen aan twee verschillende apps in dezelfde regio, werkt deze installatie alleen wanneer de app kopieert in verschillende regio's.
+Voor scenario's met een hoge Beschik baarheid kunt u een DNS-configuratie voor taak verdeling implementeren zonder Traffic Manager door meerdere *a-records* te maken die vanuit het hoofd domein verwijzen naar het IP-adres van elke app. Wijs vervolgens [hetzelfde hoofd domein toe aan alle exemplaren van de app](app-service-web-tutorial-custom-domain.md#map-an-a-record). Omdat dezelfde domein naam niet kan worden toegewezen aan twee verschillende apps in dezelfde regio, werkt deze installatie alleen wanneer de app kopieert in verschillende regio's.
 
 ## <a name="enable-custom-domain"></a>Aangepast domein inschakelen
 Nadat de records voor uw domein naam zijn door gegeven, gebruikt u de browser om te controleren of uw aangepaste domein naam wordt omgezet in uw App Service-app.

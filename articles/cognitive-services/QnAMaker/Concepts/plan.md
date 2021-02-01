@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 048b53186aa0be388d9d801cd6590d4295a4faa7
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: e523b35afca33213a40060819a1293e94d413b00
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353167"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222862"
 ---
 # <a name="plan-your-qna-maker-app"></a>Uw QnA Maker-app plannen
 
@@ -94,13 +94,13 @@ U kunt nu kennissen hebben in verschillende talen binnen dezelfde QnA Maker reso
 
 ### <a name="ingest-data-sources"></a>Gegevens bronnen opnemen
 
-U kunt een van de volgende opgenomen [gegevens bronnen](../index.yml) gebruiken om een Knowledge Base te maken:
+U kunt een van de volgende opgenomen [gegevens bronnen](../Concepts/data-sources-and-content.md) gebruiken om een Knowledge Base te maken:
 
 * Open bare URL
 * Persoonlijke share point-URL
 * File
 
-Met het opname proces worden [ondersteunde inhouds typen](../index.yml) geconverteerd om te worden geprijsd. Alle verdere bewerking van het *antwoord* geschiedt met prijs verlaging. Nadat u een Knowledge Base hebt gemaakt, kunt u [QnA-paren](question-answer-set.md) in de QnA Maker Portal bewerken met [Rich Text-ontwerp](../how-to/edit-knowledge-base.md#rich-text-editing-for-answer).
+Met het opname proces worden [ondersteunde inhouds typen](../reference-document-format-guidelines.md) geconverteerd om te worden geprijsd. Alle verdere bewerking van het *antwoord* geschiedt met prijs verlaging. Nadat u een Knowledge Base hebt gemaakt, kunt u [QnA-paren](question-answer-set.md) in de QnA Maker Portal bewerken met [Rich Text-ontwerp](../how-to/edit-knowledge-base.md#rich-text-editing-for-answer).
 
 ### <a name="data-format-considerations"></a>Overwegingen voor gegevens indeling
 
@@ -124,7 +124,7 @@ Ontwerp uw gesprek stroom met een lus, zodat een gebruiker weet hoe uw bot moet 
 
 Mede werkers kunnen andere ontwikkel aars zijn die de volledige ontwikkelings stack van de Knowledge Base-toepassing delen of kunnen worden beperkt tot alleen het ontwerpen van de kennis database.
 
-Knowledge Base-ontwerp ondersteunt diverse op [rollen gebaseerde toegangs machtigingen](../index.yml) die u in de Azure Portal toepast om het bereik van de mogelijkheden van een samen werker te beperken.
+Knowledge Base-ontwerp ondersteunt diverse op [rollen gebaseerde toegangs machtigingen](../reference-role-based-access-control.md) die u in de Azure Portal toepast om het bereik van de mogelijkheden van een samen werker te beperken.
 
 ## <a name="integration-with-client-applications"></a>Integratie met client toepassingen
 

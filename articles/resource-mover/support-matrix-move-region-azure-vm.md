@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 10/11/2020
 ms.author: raynew
-ms.openlocfilehash: 00b220e07dc3fa7580100d6d36108c14fe598d40
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: fa0017b0633d856906609818dd56b5971b1879a7
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98572184"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222795"
 ---
 # <a name="support-for-moving-azure-vms-between-azure-regions"></a>Ondersteuning voor het verplaatsen van virtuele Azure-machines tussen Azure-regio's
 
@@ -154,7 +154,7 @@ Premium P20 of P30 of P40 of P50 schijf | 16 kB of meer |20 MB/s | 1684 GB per s
 --- | --- | ---
 NIC | Ondersteund | Geef een bestaande resource in de doel regio op of maak een nieuwe resource tijdens het voorbereidings proces. 
 Interne load balancer | Ondersteund | Geef een bestaande resource in de doel regio op of maak een nieuwe resource tijdens het voorbereidings proces.  
-Openbare load balancer | Momenteel niet ondersteund | Geef een bestaande resource in de doel regio op of maak een nieuwe resource tijdens het voorbereidings proces.  
+Openbare load balancer | Ondersteund | Geef een bestaande resource in de doel regio op of maak een nieuwe resource tijdens het voorbereidings proces.  
 Openbaar IP-adres | Ondersteund | Geef een bestaande resource in de doel regio op of maak een nieuwe resource tijdens het voorbereidings proces.<br/><br/> Het open bare IP-adres is specifiek voor een regio en wordt niet na de verplaatsing in de doel regio bewaard. Houd er rekening mee dat u de netwerk instellingen (met inbegrip van de taakverdelings regels) op de doel locatie wijzigt.
 Netwerkbeveiligingsgroep | Ondersteund | Geef een bestaande resource in de doel regio op of maak een nieuwe resource tijdens het voorbereidings proces.  
 Gereserveerd (statisch) IP-adres | Ondersteund | U kunt dit momenteel niet configureren. De waarde wordt standaard ingesteld op de bron waarde. <br/><br/> Als de NIC op de bron-VM een statisch IP-adres heeft en het doel-subnet hetzelfde IP-adres beschikbaar heeft, wordt het toegewezen aan de doel-VM.<br/><br/> Als het doel-subnet niet hetzelfde IP-adres beschikbaar heeft, mislukt het verplaatsen van de virtuele machine.

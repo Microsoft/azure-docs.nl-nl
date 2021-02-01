@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 12/18/2020
-ms.openlocfilehash: 9706bee07f028c36b4d03311a7abbb969a1be685
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.date: 01/29/2021
+ms.openlocfilehash: 01c448165e6d1f4d6103c61387298f2d9eb40254
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944996"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222930"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Gegevens stromen toewijzen prestaties en afstemmings handleiding
 
@@ -244,7 +244,7 @@ Als een kolom overeenkomt met de manier waarop u de gegevens wilt uitvoeren, kun
 
 Wanneer u naar CosmosDB schrijft, kunt u de prestaties verbeteren door de door Voer en de grootte van de batch tijdens de uitvoering van de gegevens stroom te wijzigen. Deze wijzigingen worden pas van kracht tijdens de uitvoering van de gegevens stroom activiteit en terugkeren naar de oorspronkelijke verzamelings instellingen na de conclusie. 
 
-**Batch grootte:** Bereken de omvang van de ruwe rijen van uw gegevens en zorg ervoor dat de Rijgrootte * Batch grootte kleiner is dan 2.000.000. Als dat het geval is, verg root u de Batch grootte om een betere door voer te krijgen
+**Batch grootte:** Normaal gesp roken is het te lang om te beginnen met de standaard Batch grootte. Als u deze waarde verder wilt afstemmen, berekent u de ruwe object grootte van uw gegevens en zorgt u ervoor dat de object grootte * Batch grootte kleiner is dan 2 MB. Als dat het geval is, kunt u de Batch grootte verg Roten om een betere door voer te krijgen.
 
 **Door Voer:** Stel hier een hogere doorvoer instelling in zodat documenten sneller naar CosmosDB kunnen schrijven. Houd de hogere RU-kosten in acht op basis van een instelling voor hoge door voer.
 

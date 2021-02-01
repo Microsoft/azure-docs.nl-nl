@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 05b93848bff66adc49d2855ee98fff6c9b7a2d3d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: ddd676a1e0b3d8f554b007974b62eb8c0c2ca9c1
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756513"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226352"
 ---
 # <a name="desktop-app-that-calls-web-apis-move-to-production"></a>Bureau blad-app voor het aanroepen van web-Api's: verplaatsen naar productie
 
@@ -39,7 +39,7 @@ U kunt bijvoorbeeld twee resources hebben met twee bereiken:
 - `https://mytenant.onmicrosoft.com/customerapi` met de scopes `customer.read` en `customer.write`
 - `https://mytenant.onmicrosoft.com/vendorapi` met de scopes `vendor.read` en `vendor.write`
 
-In dit voor beeld gebruikt u de `.WithAdditionalPromptToConsent` modificator met de `extraScopesToConsent` para meter.
+In dit voor beeld gebruikt u de `.WithExtraScopesToConsent` modificator met de `extraScopesToConsent` para meter.
 
 Bijvoorbeeld:
 
@@ -106,6 +106,11 @@ AcquireTokenSilent(scopesForVendorApi, accounts.FirstOrDefault()).ExecuteAsync()
 
 Voor gebruikers van een persoonlijk micro soft-account vraagt de vraag om toestemming op elke systeem eigen client (desktop of mobiele app) om toestemming te verlenen is het beoogde gedrag. De systeem eigen client identiteit is inherent onveilig, wat in strijd is met de id van de vertrouwelijke client toepassing. Vertrouwelijke client toepassingen wisselen een geheim uit met het micro soft-identiteits platform om hun identiteit te bewijzen. Het micro soft Identity-platform heeft ervoor gekozen om deze inbeveiliging te beperken voor consumenten Services door de gebruiker te vragen om toestemming telkens wanneer de toepassing wordt geautoriseerd.
 
+[!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
+
 ## <a name="next-steps"></a>Volgende stappen
 
-[!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
+Zie [Desktop en mobiele open bare client-apps](sample-v2-code.md#desktop-and-mobile-public-client-apps)voor meer voor beelden.
+
+
+

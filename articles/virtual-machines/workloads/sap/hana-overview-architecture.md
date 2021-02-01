@@ -14,21 +14,21 @@ ms.workload: infrastructure
 ms.date: 01/04/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5ec3500c124d3e4f8cb1b46445c28c6a64c93526
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d941bd9735149d08bfbd63ec97337dd7a3bac43b
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195446"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226655"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Wat is SAP HANA on Azure (grote exemplaren)?
 
-SAP HANA op Azure (grote exemplaren) is een unieke oplossing voor Azure. Naast het leveren van virtuele machines voor het implementeren en uitvoeren van SAP HANA, biedt Azure u de mogelijkheid om SAP HANA uit te voeren en te implementeren op bare-metal servers die aan u zijn toegewezen. De oplossing voor het SAP HANA op Azure (grote exemplaren) is gebaseerd op niet-gedeelde host/server bare-metal hardware die aan u is toegewezen. De serverhardware is inge sloten in grotere stem pels die een Compute/Server-, netwerk-en opslag infrastructuur bevatten. Als een combi natie hiervan is de HANA-gecertificeerde Data Center-integratie (TDI) goedgekeurd. SAP HANA op Azure (grote exemplaren) biedt verschillende server-Sku's of-grootten. Eenheden kunnen 36 Intel CPU-kernen en 768 GB aan geheugen hebben en tot Maxi maal 480 Intel CPU-kernen en tot 24 TB aan geheugen beschikken.
+SAP HANA op Azure (grote exemplaren) is een unieke oplossing voor Azure. Naast het leveren van virtuele machines voor het implementeren en uitvoeren van SAP HANA, biedt Azure u de mogelijkheid om SAP HANA uit te voeren en te implementeren op bare-metal servers die aan u zijn toegewezen. De oplossing voor het SAP HANA op Azure (grote exemplaren) is gebaseerd op niet-gedeelde host/server bare-metal hardware die aan u is toegewezen. De serverhardware is inge sloten in grotere stem pels die een Compute/Server-, netwerk-en opslag infrastructuur bevatten. SAP HANA op Azure (grote exemplaren) biedt verschillende server-Sku's of-grootten. Eenheden kunnen 36 Intel CPU-kernen en 768 GB aan geheugen hebben en tot Maxi maal 480 Intel CPU-kernen en tot 24 TB aan geheugen beschikken.
 
 De isolatie van de klant binnen het infrastructuur stempel wordt uitgevoerd in de tenants. dit ziet er als volgt uit:
 
 - **Netwerken**: isolatie van klanten binnen infrastructuur stack via virtuele netwerken per door de klant toegewezen Tenant. Een Tenant wordt toegewezen aan één klant. Een klant kan meerdere tenants hebben. De netwerk isolatie van tenants verbiedt netwerk communicatie tussen tenants in het niveau van de infrastructuur stempel, zelfs als de tenants bij dezelfde klant horen.
-- **Opslag onderdelen**: isolatie via opslag-virtuele machines waaraan opslag volumes zijn toegewezen. Opslag volumes kunnen alleen worden toegewezen aan één virtuele opslag machine. Een virtuele opslag machine wordt uitsluitend toegewezen aan één enkele Tenant in de SAP HANA TDI Certified Infrastructure-stack. Als gevolg hiervan kunnen opslag volumes die zijn toegewezen aan een virtuele opslag machine alleen worden geopend in een specifieke en gerelateerde Tenant. Ze zijn niet zichtbaar tussen de verschillende geïmplementeerde tenants.
+- **Opslag onderdelen**: isolatie via opslag-virtuele machines waaraan opslag volumes zijn toegewezen. Opslag volumes kunnen alleen worden toegewezen aan één virtuele opslag machine. Een virtuele opslag machine wordt uitsluitend toegewezen aan één enkele Tenant in de infrastructuur stack. Als gevolg hiervan kunnen opslag volumes die zijn toegewezen aan een virtuele opslag machine alleen worden geopend in een specifieke en gerelateerde Tenant. Ze zijn niet zichtbaar tussen de verschillende geïmplementeerde tenants.
 - **Server of host**: een server of host-eenheid wordt niet gedeeld tussen klanten of tenants. Een server of host die is geïmplementeerd voor een klant, is een Atomic bare-metal Compute-eenheid die is toegewezen aan één enkele Tenant. *Er wordt geen* hardware-partitionering of zachte partitionering gebruikt. Dit kan ertoe leiden dat u een host of een server met een andere klant kunt delen. Opslag volumes die zijn toegewezen aan de virtuele opslag machine van de specifieke Tenant, worden aan een dergelijke server gekoppeld. Een Tenant kan één tot veel server eenheden van verschillende Sku's worden toegewezen.
 - Binnen een SAP HANA op de infra structuur van Azure (grote instanties) worden veel verschillende tenants geïmplementeerd en geïsoleerd via de Tenant concepten op het niveau van netwerken, opslag en reken kracht. 
 

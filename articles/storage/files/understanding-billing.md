@@ -1,23 +1,45 @@
 ---
-title: Wat is Azure Files facturering? Microsoft Docs
+title: Azure Files facturering begrijpen | Microsoft Docs
 description: Meer informatie over hoe u de ingerichte en betalen per gebruik-facturerings modellen voor Azure-bestands shares kunt interpreteren.
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/20/2021
+ms.date: 01/27/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 19ecbea70d9cb6b8cc31c72ed3c1294cd137ce93
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 6bb608492327baae958c32be05d8f2a1bb4dbfbf
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632475"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226638"
 ---
-# <a name="understanding-azure-files-billing"></a>Wat is Azure Files facturering?
+# <a name="understand-azure-files-billing"></a>Azure Files facturering begrijpen
 Azure Files biedt twee verschillende facturerings modellen: ingericht en betalen naar gebruik. Het ingerichte model is alleen beschikbaar voor Premium-bestands shares, de bestands shares worden geïmplementeerd in het type opslag account **FileStorage** . Het betalen naar gebruik-model is alleen beschikbaar voor standaard bestands shares. Dit zijn bestands shares geïmplementeerd in het type **GPv2 (General version 2)-** opslag account. In dit artikel wordt uitgelegd hoe beide modellen werken om u te helpen uw maandelijkse Azure Files factuur te begrijpen.
 
-U kunt de huidige prijzen voor Azure Files vinden op de [pagina met Azure files prijzen](https://azure.microsoft.com/pricing/details/storage/files/).
+Zie [Azure files prijzen pagina](https://azure.microsoft.com/pricing/details/storage/files/)voor Azure files prijs informatie.
+
+## <a name="storage-units"></a>Opslageenheden    
+Azure Files maakt gebruik van basis-2 meet eenheden om de opslag capaciteit weer te geven: KiB, MiB, GiB en TiB. Het besturings systeem kan al dan niet gebruikmaken van dezelfde maat eenheid of voor het tellen van het systeem.
+
+### <a name="windows"></a>Windows
+
+Zowel het Windows-besturings systeem als Azure Files opslag capaciteit meten met het systeem voor het tellen van de basis-2, maar er is een verschil bij het labelen van eenheden. Azure Files de opslag capaciteit van labels met basis-2 meet eenheden terwijl Windows de opslag capaciteit in de basis-10 meet eenheden aanduidt. Wanneer u de opslag capaciteit rapporteert, converteert Windows de opslag capaciteit van base-2 niet naar base-10.
+
+|Acroniem  |Definitie  |Eenheid  |Windows wordt weer gegeven als  |
+|---------|---------|---------|---------|
+|KiB     |1.024 bytes         |kibibyte         |KB (KB)         |
+|MiB     |1.024 KiB (1.048.576 bytes)         |mebibyte         |MB (Mega byte)         |
+|GiB     |1024-MiB (1.073.741.824 bytes)         |Gibibyte         |GB (gigabyte)         |
+|TiB     |1024 GiB (1.099.511.627.776 bytes)         |tebibyte         |TB (terabyte)         |
+
+### <a name="macos"></a>macOS
+
+Zie [hoe de opslag capaciteit van Ios en macOS rapport](https://support.apple.com/HT201402) op de website van Apple is om te bepalen welk telling systeem wordt gebruikt.
+
+### <a name="linux"></a>Linux
+
+Een ander telling systeem kan worden gebruikt door elk besturings systeem of afzonderlijke software. Bekijk hun documentatie om te bepalen hoe de opslag capaciteit wordt gerapporteerd.
 
 ## <a name="provisioned-model"></a>Ingericht model
 Azure Files gebruikt een ingericht model voor Premium-bestands shares. In een ingericht bedrijfs model geeft u proactief op voor de Azure Files-service wat uw opslag vereisten zijn, in plaats van te worden gefactureerd op basis van wat u gebruikt. Dit is vergelijkbaar met het kopen van hardware on-premises, in dat geval bij het inrichten van een Azure-bestands share met een bepaalde hoeveelheid opslag ruimte, u betaalt voor die opslag, ongeacht of u deze gebruikt of niet, net zoals u niet begint met het betalen van de kosten van fysieke media op locatie wanneer u ruimte gebruikt. In tegens telling tot aanschaf van fysieke media op locatie, kunnen ingerichte bestands shares dynamisch worden uitgebreid of omlaag worden geschaald, afhankelijk van uw opslag-en i/o-prestatie kenmerken.
@@ -77,7 +99,7 @@ Als u een niet regel matig gebruikte werk belasting in de laag geoptimaliseerd v
 
 En als u een Maxi maal beschik bare werk belasting in de cool-laag plaatst, betaalt u veel meer in transactie kosten, maar minder voor de kosten voor gegevens opslag. Dit kan leiden tot een situatie waarin de verhoogde kosten van de transactie prijzen de besparing van de verlaagde prijs van de gegevens opslag verhogen, waardoor u meer geld kunt betalen op koeler dan u zou hebben voor de trans actie geoptimaliseerd. Het is mogelijk dat voor sommige gebruiks niveaus die tijdens de warme tier de meest rendabele laag zijn, de cool-laag duurder is dan het optimaliseren van de trans actie.
 
-Uw workload- en activiteitsniveau bepalen de meest rendabele laag voor uw standaard bestandsshare. In de praktijk is het de beste manier om de meest rendabele laag te kiezen, maar ook om te kijken naar het werkelijke resource verbruik van de share (opgeslagen gegevens, schrijf transacties enz.).
+Uw workload- en activiteitsniveau bepalen de meest rendabele laag voor uw standaard bestandsshare. In de praktijk is het de beste manier om de voordeligste laag te kiezen, maar ook om te kijken naar het werkelijke resource verbruik van de share (opgeslagen gegevens, schrijf transacties enz.).
 
 ### <a name="what-are-transactions"></a>Wat zijn trans acties?
 Trans acties zijn bewerkingen of aanvragen van Azure Files om de inhoud van de bestands share te uploaden, te downloaden of op een andere manier te bewerken. Elke actie die op een bestands share wordt uitgevoerd, vertaalt naar een of meer trans acties, en op standaard shares die gebruikmaken van het facturerings model betalen naar gebruik, worden de transactie kosten omgezet.

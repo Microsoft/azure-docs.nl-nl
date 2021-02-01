@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/05/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 2af8db1a6e8c774f1004b380c8aaaa06ba61d8c3
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 4814a12a870d5317ad91c3514327ba0daad7ed69
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862338"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225367"
 ---
 # <a name="deploy-azure-file-sync"></a>Azure Files SYNC implementeren
 Gebruik Azure File Sync om de bestands shares van uw organisatie in Azure Files te centraliseren, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server bijhoudt. Door Azure File Sync wordt Windows Server getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server, inclusief SMB, NFS en FTPS, gebruiken voor lokale toegang tot uw gegevens. U kunt zoveel caches hebben als u nodig hebt in de hele wereld.
@@ -506,7 +506,7 @@ Als u uw Azure-bestands synchronisatie wilt configureren voor gebruik met de ins
 ![Instellingen voor de firewall en het virtuele netwerk configureren om te werken met Azure-bestands synchronisatie](media/storage-sync-files-deployment-guide/firewall-and-vnet.png)
 
 ## <a name="onboarding-with-azure-file-sync"></a>Onboarding met Azure File Sync
-De aanbevolen stappen voor het onboarden van Azure File Sync voor het eerst met een downtime van nul en het behoud van de volledige bestands kwaliteit en toegangs beheer lijst (ACL) zijn als volgt:
+De aanbevolen stappen voor de eerste keer dat de Azure File Sync voor het eerst zonder downtime wordt uitgevoerd, waarbij de volledige bestands kwaliteit en toegangs beheer lijst (ACL) behouden blijven:
  
 1. Implementeer een opslag synchronisatie service.
 1. Maak een synchronisatiegroep.

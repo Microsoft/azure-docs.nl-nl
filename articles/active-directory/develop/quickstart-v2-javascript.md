@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 131cb325e3581a135be7a88f26c59637d35bc5f3
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b2ae48c76ccba80d274e7463b31782b4fbc6a976
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937961"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225711"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
@@ -55,8 +55,9 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
 > 1. Voor deze quickstart moet de [Impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld. Selecteer **Verificatie** onder **Beheren**.
-> 1. Selecteer **Een platform toevoegen** onder **Platformconfiguraties**. Er opent een venster aan de linkerkant. Selecteer daar de regio **Webtoepassingen**.
-> 1. Stel links de waarde van **Omleidings-URI** in op `http://localhost:3000/`. Selecteer vervolgens **Toegangstoken** en **Id-token**.
+> 1. Onder **platform configuraties**  >  **voegt u een platform toe**. Selecteer **Web**.
+> 1. Stel de waarde van **Omleidings-URI** in op `http://localhost:3000/`. 
+> 1. Selecteer **toegangs tokens** en **id-tokens** onder de **impliciete toekenning en hybride stromen**  .
 > 1. Selecteer **Configureren**.
 
 > [!div class="sxs-lookup" renderon="portal"]

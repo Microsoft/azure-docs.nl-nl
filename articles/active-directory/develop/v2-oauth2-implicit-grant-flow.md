@@ -12,12 +12,12 @@ ms.date: 11/30/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 97f4642d69d4a432b823bd1cd7cdbdd9fc7f270d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f3598c6f072d09d7e427db66dcfbf8721b92a3a1
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752742"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226485"
 ---
 # <a name="microsoft-identity-platform-and-implicit-grant-flow"></a>Micro soft Identity-platform en impliciete toekennings stroom
 
@@ -44,7 +44,7 @@ In het volgende diagram ziet u hoe de volledige impliciete aanmeldings stroom er
 Als u de gebruiker in de app wilt ondertekenen, kunt u een [OpenID Connect Connect](v2-protocols-oidc.md) -verificatie aanvraag verzenden en een `id_token` van de micro soft-identiteits platform ophalen.
 
 > [!IMPORTANT]
-> Als u een ID-token en/of een toegangs token wilt aanvragen, moet de registratie van de app op de [Azure Portal-app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) pagina de bijbehorende impliciete toekennings stroom hebben ingeschakeld, door **id-tokens** en. of **toegangs tokens** te selecteren onder de sectie **impliciete toekenning** . Als deze niet is ingeschakeld, `unsupported_response` wordt een fout geretourneerd: **de opgegeven waarde voor de invoer parameter response_type is niet toegestaan voor deze client. De verwachte waarde is ' code '**
+> Als u een ID-token en/of een toegangs token wilt aanvragen, moet de registratie van de app op de [Azure Portal-app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) pagina de bijbehorende impliciete toekennings stroom hebben ingeschakeld, door **id-tokens** en **toegangs tokens** te selecteren in de sectie **impliciete toekenning en hybride stromen** . Als de functie niet is ingeschakeld, `unsupported_response` wordt er een fout geretourneerd: `The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'`
 
 ```
 // Line breaks for legibility only

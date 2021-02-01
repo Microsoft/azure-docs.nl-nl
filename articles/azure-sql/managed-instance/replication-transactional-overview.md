@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 04/20/2020
-ms.openlocfilehash: 76bb4ffb4ebeb01baf8236d6be84c900b23ffbc0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3e4b4fc3d4a6c9529c7c0ac0daef8a28173e0bf3
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790811"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225340"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance-preview"></a>Transactionele replicatie met Azure SQL Managed instance (preview-versie)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -39,7 +39,7 @@ U kunt transactionele replicatie gebruiken om wijzigingen die zijn aangebracht i
 
 ### <a name="components"></a>Onderdelen
 
-De belangrijkste onderdelen in transactionele replicatie zijn de **Uitgever** , **distributeur** en **abonnee** , zoals wordt weer gegeven in de volgende afbeelding:  
+De belangrijkste onderdelen in transactionele replicatie zijn de **Uitgever**, **distributeur** en **abonnee**, zoals wordt weer gegeven in de volgende afbeelding:  
 
 ![replicatie met SQL Database](./media/replication-transactional-overview/replication-to-sql-database.png)
 
@@ -75,7 +75,7 @@ Er zijn verschillende [typen replicatie](/sql/relational-databases/replication/t
 | Replicatie | Azure SQL Database | Azure SQL Managed Instance |
 | :----| :------------- | :--------------- |
 | [**Standaard transactionele**](/sql/relational-databases/replication/transactional/transactional-replication) | Ja (alleen als abonnee) | Ja |
-| [**Momentopname**](/sql/relational-databases/replication/snapshot-replication) | Ja (alleen als abonnee) | Ja|
+| [**Snapshot**](/sql/relational-databases/replication/snapshot-replication) | Ja (alleen als abonnee) | Ja|
 | [**Samenvoeg replicatie**](/sql/relational-databases/replication/merge/merge-replication) | Nee | Nee|
 | [**Peer-to-peer**](/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Nee | Nee|
 | [**Bidirectioneel**](/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Nee | Ja|
@@ -109,7 +109,7 @@ Transactionele replicatie is handig in de volgende scenario's:
 | Categorie | Gegevens synchroniseren | Transactionele replicatie |
 |---|---|---|
 | Voordelen | -Actief-actief ondersteuning<br/>-Bi-richting tussen on-premises en Azure SQL Database | -Laagste latentie<br/>-Transactionele consistentie<br/>-Bestaande topologie na migratie opnieuw gebruiken |
-| Nadelen | -5 minuten of meer latentie<br/>-Geen transactionele consistentie<br/>-Hogere gevolgen voor de prestaties | -Kan niet publiceren vanaf Azure SQL Database <br/>-Hoge onderhouds kosten |
+| Nadelen | -Geen transactionele consistentie<br/>-Hogere gevolgen voor de prestaties | -Kan niet publiceren vanaf Azure SQL Database <br/>-Hoge onderhouds kosten |
 
 ## <a name="common-configurations"></a>Algemene configuraties
 
@@ -197,7 +197,7 @@ Zie de volgende zelf studies voor meer informatie over het configureren van tran
 - [Replicatie configureren tussen een SQL Managed instance-Uitgever en een abonnee](../managed-instance/replication-between-two-instances-configure-tutorial.md)
 - [Replicatie configureren tussen een SQL Managed instance, distributeur van SQL Managed instance en SQL Server Subscriber](../managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md)
 - [Maak een publicatie](/sql/relational-databases/replication/publish/create-a-publication).
-- [Maak een push-abonnement](/sql/relational-databases/replication/create-a-push-subscription) met behulp van de server naam als abonnee (bijvoorbeeld `N'azuresqldbdns.database.windows.net` en de data base in Azure SQL database naam als de doel database (bijvoorbeeld **AdventureWorks** ). )
+- [Maak een push-abonnement](/sql/relational-databases/replication/create-a-push-subscription) met behulp van de server naam als abonnee (bijvoorbeeld `N'azuresqldbdns.database.windows.net` en de data base in Azure SQL database naam als de doel database (bijvoorbeeld **AdventureWorks**). )
 
 ## <a name="see-also"></a>Zie ook  
 

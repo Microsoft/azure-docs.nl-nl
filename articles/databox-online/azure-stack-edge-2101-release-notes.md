@@ -6,18 +6,18 @@ author: v-dalc
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 01/29/2021
+ms.date: 02/01/2021
 ms.author: alkohli
-ms.openlocfilehash: 025694dc020bb18ce66574bac476f34034353721
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 7c1f78f405a67687168457448f62d46a39da165f
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072598"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225121"
 ---
 # <a name="azure-stack-edge-pro-with-fpga-2101-release-notes"></a>Azure Stack Edge Pro met FPGA 2101-release opmerkingen
 
-In de volgende release opmerkingen worden de kritieke openstaande problemen en de opgeloste problemen voor de 2101-versie van Azure Stack Edge Pro weer geven met een ingebouwd veld Programmeer bare poort matrix (FPGA).
+De volgende opmerkingen bij de release identificeren de kritieke openstaande problemen en de opgeloste problemen voor de 2101-versie van Azure Stack Edge Pro met een ingebouwd veld Programmeer bare poort matrix (FPGA).
 
 De release opmerkingen worden voortdurend bijgewerkt. Als er kritieke problemen zijn gedetecteerd waarvoor een tijdelijke oplossing nodig is, worden deze toegevoegd. Lees de informatie in de release opmerkingen aandachtig door voordat u uw Azure Stack edge-apparaat implementeert.  
 
@@ -38,7 +38,6 @@ Deze release bevat ook de volgende updates:
 
 - Alle cumulatieve Windows-updates en .NET Framework-updates die zijn uitgebracht via oktober 2020.
 - De versie van de Base Board management controller (BMC) wordt bijgewerkt van 3.32.32.32 naar 3.36.36.36 tijdens de fabrieks installatie om incompatibiliteit te verhelpen met nieuwere Dell Power Supply-eenheden.
-- Het statische IP-adres voor Azure Data Box Gateway wordt bewaard via software-updates.
 - Deze versie ondersteunt IoT Edge 1.0.9.3 op Azure Stack edge-apparaten.
 
 ## <a name="known-issues-in-this-release"></a>Bekende problemen in deze release

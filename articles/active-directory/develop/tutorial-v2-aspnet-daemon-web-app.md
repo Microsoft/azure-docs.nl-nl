@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: a85ae227d45c8de6c3d04e4a058ebf9715421ca2
-ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
+ms.openlocfilehash: a5f0a7d8221e970c8c1aa3c1ddffbfc56f2d5715
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222062"
+ms.locfileid: "99226183"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -110,7 +110,7 @@ Als u de automatisering niet wilt gebruiken, gebruikt u de stappen in de volgend
 1. Zoek de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik. U hebt deze nodig om het Visual Studio-configuratiebestand van dit project te configureren.
 1. Selecteer **Verificatie** onder **Beheren**.
 1. Stel de **afmeldings-URL** voor het kanaal in op `https://localhost:44316/Account/EndSession` .
-1. Selecteer in de sectie **Impliciete toekenning** de opties **Toegangstokens** en **Id-tokens**. Voor dit voorbeeld moet de [impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om de gebruiker aan te melden en een API aan te roepen.
+1. Selecteer in de sectie **impliciete toekenning en hybride stromen** **toegangs tokens** en **id-tokens**. Voor dit voorbeeld moet de [impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om de gebruiker aan te melden en een API aan te roepen.
 1. Selecteer **Opslaan**.
 1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
 1. Selecteer in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**. 

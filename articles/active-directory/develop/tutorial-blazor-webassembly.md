@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 4d6401c53071235784a5371a4a6315e4e25a438f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 30b7f1054f7bfee8dc58638791f0b8a424de92a4
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98680262"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226419"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app
 
@@ -42,7 +42,7 @@ Elke app die gebruikmaakt van Azure Active Directory (Azure AD) voor verificatie
 - Bij **Ondersteunde accounttypen** selecteert u **Enkel accounts in deze organisatieadreslijst**.
 - Kies in de vervolgkeuzelijst **Omleidings-URI** voor **Web** en voer `https://localhost:5001/authentication/login-callback` in. De standaardpoort voor een app die wordt uitgevoerd op Kestrel is 5001. Als de app beschikbaar is op een andere poort, geeft u dat poortnummer op in plaats van `5001`.
 
-Selecteer onder **Verificatie** > **Impliciete toekenning** de selectievakjes voor **Toegangstokens** en **id-tokens** en selecteer de knop **Opslaan**.
+Na registratie selecteert u onder **beheren** de optie  >  **impliciete toekenning van verificatie en hybride stromen**. Selecteer **toegangs tokens** en **id-tokens** en selecteer vervolgens **Opslaan**.
 
 ## <a name="create-the-app-using-the-net-core-cli"></a>De app maken met behulp van de .NET Core CLI
 
@@ -80,7 +80,7 @@ De onderdelen van deze sjabloon die aanmeldingen met Azure AD mogelijk maken via
 
 [Microsoft Graph](/graph/overview) bevat API's die toegang bieden tot Microsoft 365-gegevens voor uw gebruikers. Het ondersteunt ook de tokens die zijn uitgegeven door het Microsoft Identity-platform. Hierdoor is het een goede beveiligde API om als voorbeeld te gebruiken. In deze sectie voegt u code toe om Microsoft Graph aan te roepen en de e-mails van ingelogde gebruikers weer te geven op de pagina 'Gegevens ophalen' van de toepassing.
 
-Deze sectie is geschreven met behulp van een algemene benadering voor het aanroepen van een beveiligde API met behulp van een benoemde client. Dezelfde methode kan worden gebruikt voor andere beveiligde API's die u wilt aanroepen. Als u echter van plan bent om Microsoft Graph aan te roepen vanuit uw toepassing, kunt u de Graph SDK gebruiken om de standaard te verminderen. De .NET-documentatie bevat instructies over [het gebruik van de Graph SDK](/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0).
+Deze sectie is geschreven met behulp van een algemene benadering voor het aanroepen van een beveiligde API met behulp van een benoemde client. Dezelfde methode kan worden gebruikt voor andere beveiligde API's die u wilt aanroepen. Als u echter van plan bent om Microsoft Graph aan te roepen vanuit uw toepassing, kunt u de Graph SDK gebruiken om de standaard te verminderen. De .NET-documentatie bevat instructies over [het gebruik van de Graph SDK](/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0&preserve-view=true).
 
 Voordat u begint, moet u zich afmelden bij uw app, aangezien u wijzigingen aanbrengt in de vereiste machtigingen en uw huidige token daarvoor niet werkt. Als u dat nog niet hebt gedaan, voert u de app opnieuw uit en selecteert u **Afmelden** voordat u de onderstaande code bijwerkt.
 

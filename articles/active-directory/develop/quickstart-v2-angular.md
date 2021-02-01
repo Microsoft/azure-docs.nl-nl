@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 161b7fcf4660ddb9515f0b82887f416d83598bdc
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 56359ba07513ac648c682b8114001e251b0ee44c
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754440"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225796"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Angular-toepassing met één pagina
 
@@ -49,11 +49,11 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 > 1. Als uw account toegang heeft tot meer dan één tenant, selecteert u uw account rechts bovenin en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
 > 1. Volg de [instructies om een toepassing met één pagina te registreren](./scenario-spa-app-registration.md) in de Azure-portal.
 > 1. Voeg een nieuw platform toe aan het deelvenster **Verificatie** van de registratie van uw app en registreer de omleidings-URI: `http://localhost:4200/`.
-> 1. In deze quickstart wordt gebruikgemaakt van de [impliciete toewijzingsstroom](v2-oauth2-implicit-grant-flow.md). Selecteer de instellingen **impliciete toekenning** voor **Id-tokens** en **Toegangstokens**. Id-tokens en toegangstokens zijn vereist, omdat via de app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.
+> 1. In deze quickstart wordt gebruikgemaakt van de [impliciete toewijzingsstroom](v2-oauth2-implicit-grant-flow.md). Selecteer in de sectie **impliciete toekenning en hybride stromen** **id-tokens** en **toegangs tokens**. Id-tokens en toegangstokens zijn vereist, omdat via de app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-the-application-in-the-azure-portal"></a>Stap 1: De toepassing configureren in de Azure-portal
-> Voor een juiste werking van het codevoorbeeld uit deze quickstart moet u een omleidings-URI toevoegen zoals **http://localhost:4200/** en **Impliciete toekenning** inschakelen.
+> Het code voorbeeld voor deze Quick Start werkt alleen als u een omleidings-URI toevoegt **http://localhost:4200/** en * * * * impliciete toekenning * * hebt ingeschakeld.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Breng deze wijzigingen voor mij aan]()
 >

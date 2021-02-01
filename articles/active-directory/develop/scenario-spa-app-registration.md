@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/19/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: d4189e466d5e9b41247723165ce2a5c14c4a8dfa
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 39a675ff4947e7eca64298e1e68160cd6149f081
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756400"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226335"
 ---
 # <a name="single-page-application-app-registration"></a>Toepassing met één pagina: app-registratie
 
@@ -47,7 +47,7 @@ Volg deze stappen om een omleidings-URI toe te voegen voor een app die gebruikma
 1. Selecteer in de Azure Portal de app-registratie die u eerder hebt gemaakt in [de app-registratie maken](#create-the-app-registration).
 1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen**.
 1. Selecteer onder **webtoepassingen** de tegel **toepassing met één pagina** .
-1. Voer bij **omleidings-uri's** een [omleidings-URI](reply-url.md)in. Schakel **geen** van beide selectie vakjes onder **impliciete toekenning** in.
+1. Voer bij **omleidings-uri's** een [omleidings-URI](reply-url.md)in. Schakel **geen** van beide selectie vakjes in onder **impliciete toekenning en hybride stromen**.
 1. Selecteer **configureren** om het toevoegen van de omleidings-URI te volt ooien.
 
 U hebt nu de registratie van uw toepassing met één pagina (SPA) voltooid en een omleidings-URI geconfigureerd waarnaar de client wordt omgeleid en eventuele beveiligings tokens worden verzonden. Door de omleidings-URI te configureren met behulp van de tegel **toepassing met één pagina** in het deel venster **een platform toevoegen** , wordt de registratie van de toepassing geconfigureerd ter ondersteuning van de autorisatie code stroom met PKCE en CORS.
@@ -62,7 +62,7 @@ Volg deze stappen om een omleidings-URI toe te voegen voor een app met één pag
 1. Selecteer onder **Beheren** achtereenvolgens **Verificatie** > **Een platform toevoegen**.
 1. Selecteer onder **webtoepassingen** de tegel **toepassing met één pagina** .
 1. Voer bij **omleidings-uri's** een [omleidings-URI](reply-url.md)in.
-1. De **impliciete stroom** inschakelen:
+1. De **impliciete toekenning en hybride stromen** inschakelen:
     - Als uw toepassing zich aanmeldt bij gebruikers, selecteert u **id-tokens**.
     - Als uw toepassing ook een beveiligde web-API moet aanroepen, selecteert u **toegangs tokens**. Zie [id-tokens](id-tokens.md) en [toegangs tokens](access-tokens.md)voor meer informatie over deze token typen.
 1. Selecteer **configureren** om het toevoegen van de omleidings-URI te volt ooien.

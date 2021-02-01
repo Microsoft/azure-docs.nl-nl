@@ -7,23 +7,23 @@ manager: celestedg
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 09/01/2020
+ms.date: 02/01/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: edff5354d0565bd32cd0332b4aa0f215c2980d73
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a54ed9dc6557d9b613485bf28e74af0c59fc9e5e
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949782"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225205"
 ---
 # <a name="billing-model-for-azure-active-directory-b2c"></a>Facturerings model voor Azure Active Directory B2C
 
 Prijzen voor Azure Active Directory B2C (Azure AD B2C) zijn gebaseerd op maandelijkse actieve gebruikers (MAU), het aantal unieke gebruikers met verificatie activiteiten binnen een kalender maand. Dit facturerings model is van toepassing op zowel Azure AD B2C tenants als [Azure AD gast gebruikers samenwerking (B2B)](../active-directory/external-identities/external-identities-pricing.md). MAU-facturering helpt u kosten te verlagen door een gratis laag en flexibele, voorspel bare prijzen te bieden. In dit artikel vindt u meer informatie over MAU-facturering, het koppelen van uw Azure AD B2C-tenants aan een abonnement en het wijzigen van de prijs categorie.
 
 > [!IMPORTANT]
-> Dit artikel bevat geen prijs informatie. Zie [Azure Active Directory B2C prijzen](https://azure.microsoft.com/pricing/details/active-directory-b2c/)voor de meest recente informatie over het gebruik van facturering en prijzen.
+> Dit artikel bevat geen prijs informatie. Zie [Azure Active Directory B2C prijzen](https://azure.microsoft.com/pricing/details/active-directory-b2c/)voor de meest recente informatie over het gebruik van facturering en prijzen. Zie ook [Azure AD B2C regio Beschik baarheid en data locatie](data-residency.md) voor meer informatie over waar de Azure AD B2C-service beschikbaar is en waar de gebruikers gegevens worden opgeslagen.
 
 ## <a name="what-do-i-need-to-do"></a>Wat moet ik doen?
 
@@ -58,7 +58,7 @@ Een abonnement dat is gekoppeld aan een Azure AD B2C-Tenant kan worden gebruikt 
 
 ### <a name="create-the-link"></a>De koppeling maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer het filter **Directory + abonnement** in het bovenste menu en selecteer vervolgens de map met het Azure-abonnement dat u wilt gebruiken (*niet* de map die de Azure AD B2C Tenant bevat).
 3. Selecteer **een resource maken**, Voer `Active Directory B2C` in het veld **Marketplace doorzoeken** in en selecteer vervolgens **Azure Active Directory B2C**.
 4. Selecteer **Maken**.
@@ -70,7 +70,7 @@ Een abonnement dat is gekoppeld aan een Azure AD B2C-Tenant kan worden gebruikt 
 
     ![De pagina Azure AD B2C het maken van resources in Azure Portal](./media/billing/portal-01-create-b2c-resource-page.png)
 
-Nadat u deze stappen voor een Azure AD B2C Tenant hebt voltooid, wordt uw Azure-abonnement gefactureerd op basis van uw Azure direct-of Enterprise Agreement-gegevens, indien van toepassing.
+Nadat u deze stappen voor een Azure AD B2C Tenant hebt voltooid, wordt uw Azure-abonnement gefactureerd op basis van uw Azure direct-of Enterprise Overeenkomst-gegevens, indien van toepassing.
 
 ## <a name="change-your-azure-ad-pricing-tier"></a>Uw Azure AD-prijs categorie wijzigen
 

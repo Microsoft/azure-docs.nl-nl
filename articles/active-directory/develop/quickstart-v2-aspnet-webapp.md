@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1
-ms.openlocfilehash: 122262ff6d49174b19773800f2db8c7d29506bb9
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 420415cc3bc2228a104ccf054098543bf04847b0
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98938143"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225762"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Quickstart: Aanmelding voor Microsoft Identity Platform toevoegen aan een ASP.NET-web-app
 
@@ -54,7 +54,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Voeg `https://localhost:44368/` toe bij **Omleidings-URI**, en selecteer **Registreren**.
 > 1. Selecteer **Verificatie** onder **Beheren**.
-> 1. Selecteer **ID-tokens** in de subsectie **Impliciete toekenning**.
+> 1. Selecteer in de sectie **impliciete toekenning en hybride stromen** **id-tokens**.
 > 1. Selecteer **Opslaan**.
 
 > [!div class="sxs-lookup" renderon="portal"]

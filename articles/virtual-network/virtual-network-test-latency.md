@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: steveesp
-ms.openlocfilehash: f8f167a7947c42ce837ec83b336ae636f593f2e4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 7dc8aac730fdf46cab47a3297b8c001cb0b8e314
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219255"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226402"
 ---
 # <a name="test-vm-network-latency"></a>Netwerklatentie van VM testen
 
@@ -45,7 +45,7 @@ U kunt deze methode gebruiken om de netwerk latentie tussen twee Vm's te meten o
 ### <a name="tools-for-testing"></a>Hulpprogram ma's voor testen
 Om latentie te meten, hebt u twee verschillende hulp middelen:
 
-* Voor Windows-systemen: [latte.exe (Windows)](https://gallery.technet.microsoft.com/Latte-The-Windows-tool-for-ac33093b)
+* Voor Windows-systemen: [latte.exe (Windows)](https://github.com/microsoft/latte/releases/download/v0/latte.exe)
 * Voor Linux-systemen: [SockPerf (Linux)](https://github.com/mellanox/sockperf)
 
 Met deze hulpprogram ma's kunt u ervoor zorgen dat alleen TCP-of UDP-Payload-leverings tijden worden gemeten en niet ICMP (ping) of andere pakket typen die niet worden gebruikt door toepassingen en niet van invloed zijn op de prestaties.

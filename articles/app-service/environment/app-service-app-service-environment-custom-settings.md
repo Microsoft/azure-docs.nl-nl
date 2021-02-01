@@ -1,18 +1,18 @@
 ---
 title: Aangepaste instellingen configureren
 description: Instellingen configureren die van toepassing zijn op de hele Azure App Service-omgeving. Informatie over hoe u dit doet met Azure Resource Manager-sjablonen.
-author: stefsch
+author: ccompy
 ms.assetid: 1d1d85f3-6cc6-4d57-ae1a-5b37c642d812
 ms.topic: tutorial
-ms.date: 10/03/2020
-ms.author: stefsch
+ms.date: 01/29/2021
+ms.author: ccompy
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 88163c07d570df5e0ff343776c17c463010ce368
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 5c1e81d02aa35a40a296f04e456be09eeed10331
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91713276"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226386"
 ---
 # <a name="custom-configuration-settings-for-app-service-environments"></a>Aangepaste configuratie-instellingen voor App Service Environment-omgevingen
 ## <a name="overview"></a>Overzicht
@@ -61,7 +61,7 @@ In een App Service Environment-omgeving met vier front-ends duurt het ongeveer t
 
 ## <a name="enable-internal-encryption"></a>Interne versleuteling inschakelen
 
-De App Service Environment fungeert als een zwarte doossysteem waarin u de interne onderdelen of de communicatie binnen het systeem niet kunt zien. Voor een hogere doorvoer is versleuteling niet standaard ingeschakeld tussen interne onderdelen. Het systeem is veilig omdat het verkeer op geen enkele manier worden bekeken of geopend. Als u een nalevingsvereiste hebt waarbij het gegevenspad volledig moet worden versleuteld van het end-to-end, is het mogelijk om dit in te schakelen met een clusterSetting.  
+De App Service Environment fungeert als een zwarte doossysteem waarin u de interne onderdelen of de communicatie binnen het systeem niet kunt zien. Voor een hogere doorvoer is versleuteling niet standaard ingeschakeld tussen interne onderdelen. Het systeem is veilig omdat het verkeer niet toegankelijk is om te worden bewaakt of geopend. Als u een nalevings vereiste hebt waarbij het gegevenspad volledig moet worden versleuteld van het end-to-end, is het mogelijk om versleuteling van het volledige gegevenspad in te scha kelen met een clusterSetting.  
 
 ```json
 "clusterSettings": [
@@ -71,7 +71,7 @@ De App Service Environment fungeert als een zwarte doossysteem waarin u de inter
     }
 ],
 ```
-Hiermee versleutelt u het interne netwerkverkeer in uw ASE tussen de front-ends en werkrollen, versleutelt u het wisselbestand en versleutelt u ook de schijven van werkrollen. Nadat de InternalEncryption clusterSetting is ingeschakeld, kan dit gevolgen hebben voor de prestaties van uw systeem. Wanneer u de wijziging aanbrengt om InternalEncryption in te schakelen, heeft uw ASE een instabiele status totdat de wijziging volledig is doorgegeven. Het voltooien van de wijziging kan enkele uren duren, afhankelijk van het aantal instanties dat u in uw ASE hebt. We raden u ten zeerste aan dit niet in te schakelen op een ASE terwijl deze in gebruik is. Als u dit wilt inschakelen op een actief gebruikte ASE, wordt u ten zeerste aangeraden om verkeer door te sturen naar een back-upomgeving totdat de bewerking is voltooid. 
+Als u InternalEncryption instelt op True, wordt het interne netwerk verkeer in uw ASE tussen de front-ends en werk rollen versleuteld, wordt het wissel bestand versleuteld en wordt ook de werk schijven versleuteld. Nadat de InternalEncryption clusterSetting is ingeschakeld, kan dit gevolgen hebben voor de prestaties van uw systeem. Wanneer u de wijziging aanbrengt om InternalEncryption in te schakelen, heeft uw ASE een instabiele status totdat de wijziging volledig is doorgegeven. Het voltooien van de wijziging kan enkele uren duren, afhankelijk van het aantal instanties dat u in uw ASE hebt. We raden u ten zeerste aan InternalEncryption niet in te scha kelen op een ASE terwijl deze in gebruik is. Als u InternalEncryption wilt inschakelen op een actief gebruikte ASE, raden wij u ten zeerste aan om verkeer door te sturen naar een back-upomgeving totdat de bewerking is voltooid. 
 
 
 ## <a name="disable-tls-10-and-tls-11"></a>TLS 1.0 en TLS 1.1 uitschakelen
@@ -92,13 +92,13 @@ Als u alle inkomende TLS 1.0- en 1.1 TLS-verkeer wilt uitschakelen voor alle app
 De naam van de instelling geeft 1.0 aan, maar wanneer deze vermelding is geconfigureerd, wordt zowel TLS 1.0 als 1.1 TLS uitgeschakeld.
 
 ## <a name="change-tls-cipher-suite-order"></a>Volgorde van TLS-suite met coderingsmethoden wijzigen
-Een andere vraag van klanten is of ze de lijst met door hun server onderhandelde codes kunnen wijzigen. Dat kan door **clusterSettings** als volgt te wijzigen. De lijst met beschikbare suites met coderingsmethoden kan worden opgehaald uit [dit MSDN-artikel](https://msdn.microsoft.com/library/windows/desktop/aa374757\(v=vs.85\).aspx).
+De ASE ondersteunt het wijzigen van de coderings suite van de standaard instelling. De standaardset versleuteling is dezelfde set die wordt gebruikt in de service voor meerdere tenants. Het wijzigen van de coderings suites heeft gevolgen voor een volledige App Service implementatie die dit alleen mogelijk maakt in de ASE met één Tenant. Er zijn twee coderings suites vereist voor een ASE. TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 en TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256. Als u uw ASE wilt gebruiken met het sterkst mogelijke en het minimale aantal coderings suites, gebruikt u alleen de twee vereiste code ringen. Als u uw ASE wilt configureren voor gebruik van alleen de benodigde code ringen, wijzigt u de **clusterSettings** zoals hieronder wordt weer gegeven. 
 
 ```json
 "clusterSettings": [
     {
         "name": "FrontEndSSLCipherSuiteOrder",
-        "value": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256"
+        "value": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
     }
 ],
 ```

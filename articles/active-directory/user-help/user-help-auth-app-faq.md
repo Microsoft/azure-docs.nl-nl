@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 01/28/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 369ec11050fa7dbc09159d88793685ad5fbdb3e5
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: f4640bbd445b27942d757cc4e09aa7e673550ebc
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053957"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226519"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -238,7 +238,7 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
    - Selecteer in iOS onder **instellingen** de optie **automatisch invullen inschakelen** in de sectie instellingen voor automatisch door voeren voor informatie over het instellen van verificator als standaard provider voor automatisch door voeren.
    - Selecteer in Android onder **instellingen** de optie **instellen als automatische provider** in het gedeelte instellingen voor automatisch door voeren.
 
-**V**: wat moet ik doen als de schakel optie voor **automatisch door voeren** niet beschikbaar is in instellingen?
+**V**: wat moet ik doen als **automatisch door voeren** is niet beschikbaar in instellingen?
 
 **A**: als automatisch door voeren niet beschikbaar is in verificator, kan dit zijn omdat automatisch door voeren nog niet is toegestaan voor uw organisatie of account type. U kunt deze functie gebruiken op een apparaat waar uw werk-of school account niet is toegevoegd. Zie [automatisch door voeren voor IT-beheerders](#autofill-for-it-admins)voor meer informatie over het toestaan van automatisch door voeren voor uw organisatie.
 

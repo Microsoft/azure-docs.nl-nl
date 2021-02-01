@@ -11,12 +11,12 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 0beaef9162f4bdb540764a100243c579b40d1324
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 11f32d893ccc26dd30d9997d4348661d45f84eb8
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755958"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225476"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
@@ -24,13 +24,25 @@ Welkom bij wat er nieuw is in de documentatie voor micro soft Identity platform.
 
 ## <a name="january-2021"></a>Januari 2021
 
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Logboekregistratie in MSAL voor Android](msal-logging-android.md)
+- [Logboekregistratie in MSAL.NET](msal-logging-dotnet.md)
+- [Logboekregistratie in MSAL voor iOS/macOS](msal-logging-ios.md)
+- [Logboekregistratie in MSAL voor Java](msal-logging-java.md)
+- [Logboekregistratie in MSAL.js](msal-logging-js.md)
+- [Logboekregistratie in MSAL voor Python](msal-logging-python.md)
+
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
+- [Problemen met Verificatie van uitgever oplossen](troubleshoot-publisher-verification.md)
+- [Toepassingsmodel](application-model.md)
 - [Verificatie vs. autorisatie](authentication-vs-authorization.md)
 - [Procedure: uw Azure AD-App beperken tot een set gebruikers in een Azure AD-Tenant](howto-restrict-your-app-to-a-set-of-users.md)
 - [Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform](v2-permissions-and-consent.md)
 - [Configureer bare levens duur van tokens in micro soft Identity platform (preview-versie)](active-directory-configurable-token-lifetimes.md)
 - [Levens duur van token beleid configureren (preview-versie)](configure-token-lifetimes.md)
+- [Micro soft Identity platform-verificatie bibliotheken](reference-v2-libraries.md)
 - [Micro soft Identity platform en OAuth 2,0-autorisatie code stroom](v2-oauth2-auth-code-flow.md)
 
 ## <a name="december-2020"></a>December 2020

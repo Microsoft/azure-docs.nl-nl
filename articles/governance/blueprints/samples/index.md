@@ -1,14 +1,14 @@
 ---
 title: Index van blauwdrukvoorbeelden
 description: Index van compatibiliteits- en standaardvoorbeelden voor het implementeren van omgevingen, beleidsregels en grondbeginselen voor Cloud Adoptions Framework met Azure Blueprints.
-ms.date: 01/27/2021
+ms.date: 02/01/2021
 ms.topic: sample
-ms.openlocfilehash: 7865a3ea5be374f36de70e62c7bc215fc88d04a5
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 17bacecf8fcf7c0f1969a489561a3a3ac976872e
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98915689"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225138"
 ---
 # <a name="azure-blueprints-samples"></a>Azure Blueprints-voorbeelden
 
@@ -28,7 +28,7 @@ De volgende tabel bevat links naar voorbeelden voor Azure Blueprints. Elk voorbe
 | [FedRAMP High](./fedramp-h/index.md) | Bied een set beleidsregels om te helpen voldoen aan FedRAMP High. |
 | [HIPAA HITRUST 9.2](./hipaa-hitrust-9-2.md) | Bied een set beleidsregels om te helpen voldoen aan HIPAA HITRUST. |
 | [IRS 1075](./irs-1075/index.md) | Biedt Guardrails voor naleving met IRS 1075.|
-| [ISO 27001](./iso27001/index.md) | Deze blauwdruk biedt richtlijnen voor naleving van ISO 27001. |
+| [ISO 27001](./iso-27001-2013.md) | Deze blauwdruk biedt richtlijnen voor naleving van ISO 27001. |
 | [ISO 27001 conforme gedeelde services](./iso27001-shared/index.md) | Deze blauwdruk biedt een set met conforme infrastructuurpatronen en beleidsrichtlijnen die de route naar ISO 27001-attestatie vergemakkelijken. |
 | [ISO 27001 conforme App Service Environment-/SQL Database-workloads](./iso27001-ase-sql-workload/index.md) | Biedt meer infra structuur voor het voor beeld van de [ISO 27001 Shared Services](./iso27001-shared/index.md) -blauw druk. |
 | [Media](./media/index.md) | Bied een set beleidsregels om te helpen voldoen aan Media MPAA. |

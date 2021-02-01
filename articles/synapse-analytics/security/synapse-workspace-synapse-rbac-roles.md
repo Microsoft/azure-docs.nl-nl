@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: a978113265e5e61c0fc09ef0daeb1da9826f294d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 1ffbb5579ea19d7d608dd9c9d600342cd89d371c
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96572793"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225071"
 ---
 # <a name="synapse-rbac-roles"></a>Synapse RBAC-rollen
 
@@ -39,7 +39,7 @@ In de volgende tabel worden de ingebouwde rollen en de bereiken beschreven waaro
 
 |Rol |Machtigingen|Bereiken|
 |---|---|-----|
-|Synapse-beheerder  |Volledige Synapse toegang tot SQL-groepen zonder server, Apache Spark Pools en integratie-Runtimes.  Omvat het maken, lezen, bijwerken en verwijderen van toegang tot alle gepubliceerde code artefacten.  Bevat reken operator, gekoppelde Data Manager en referentie gebruikers machtigingen voor de werkruimte systeemidentiteits referentie.  Omvat het toewijzen van Synapse RBAC-rollen.  Er zijn Azure-machtigingen vereist om reken resources te maken, verwijderen en beheren. </br></br>_Kunnen Lees-en schrijf artefacten </br> alle acties op Spark-activiteiten uitvoeren. </br> Kan de logboeken van Spark-groepen weer geven </br> opgeslagen notitie blok en de uitvoer van de pijp lijn kunnen </br> de geheimen gebruiken die zijn opgeslagen door gekoppelde services of referenties </br> kunnen verbinding maken met SQL serverloze eind punten met SQL `db_datareader` , `db_datawriter` , `connect` en `grant` machtigingen </br> kunnen Synapse RBAC-rollen toewijzen en intrekken in het huidige bereik_|Werkruimte </br> Spark-pool<br/>Integratie-runtime </br>Gekoppelde service</br>Referentie |
+|Synapse-beheerder  |Volledige Synapse toegang tot SQL-groepen zonder server, Apache Spark Pools en integratie-Runtimes.  Omvat het maken, lezen, bijwerken en verwijderen van toegang tot alle gepubliceerde code artefacten.  Bevat reken operator, gekoppelde Data Manager en referentie gebruikers machtigingen voor de werkruimte systeemidentiteits referentie.  Omvat het toewijzen van Synapse RBAC-rollen. Naast de Synapse-beheerder kunnen Azure-eigen aars ook Synapse RBAC-rollen toewijzen. Er zijn Azure-machtigingen vereist om reken resources te maken, verwijderen en beheren. </br></br>_Kunnen Lees-en schrijf artefacten </br> alle acties op Spark-activiteiten uitvoeren. </br> Kan de logboeken van Spark-groepen weer geven </br> opgeslagen notitie blok en de uitvoer van de pijp lijn kunnen </br> de geheimen gebruiken die zijn opgeslagen door gekoppelde services of referenties </br> kunnen verbinding maken met SQL serverloze eind punten met SQL `db_datareader` , `db_datawriter` , `connect` en `grant` machtigingen </br> kunnen Synapse RBAC-rollen toewijzen en intrekken in het huidige bereik_|Werkruimte </br> Spark-pool<br/>Integratie-runtime </br>Gekoppelde service</br>Referentie |
 |Synapse Apache Spark-beheerder</br>|Volledige Synapse toegang tot Apache Spark groepen.  Het maken, lezen, bijwerken en verwijderen van toegang tot gepubliceerde Spark-taak definities, notitie blokken en hun uitvoer, en naar bibliotheken, gekoppelde services en referenties.  Hiermee wordt lees toegang tot alle andere gepubliceerde code artefacten opgenomen. Beschikt niet over de machtiging om referenties te gebruiken en pijp lijnen uit te voeren. Exclusief het verlenen van toegang. </br></br>_Kan alle acties op Spark-artefacten </br> alle acties voor Spark-activiteiten uitvoeren_|Werkruimte</br>Spark-pool|
 |Synapse SQL-beheerder|Volledige Synapse toegang tot SQL-groepen zonder server.  Toegang tot gepubliceerde SQL-scripts,-referenties en gekoppelde services maken, lezen, bijwerken en verwijderen.  Hiermee wordt lees toegang tot alle andere gepubliceerde code artefacten opgenomen.  Beschikt niet over de machtiging om referenties te gebruiken en pijp lijnen uit te voeren. Exclusief het verlenen van toegang. </br></br>*Kan alle acties op SQL-scripts <br/> verbinding maken met SQL serverloze eind punten met SQL `db_datareader` -, `db_datawriter` ,- `connect` en- `grant` machtigingen*|Werkruimte|
 |Synapse-bijdrager|Volledige Synapse toegang tot SQL-groepen zonder server, Apache Spark Pools, Integration Runtimes.  Omvat het maken, lezen, bijwerken en verwijderen van toegang tot alle gepubliceerde code artefacten en hun uitvoer, inclusief referenties en gekoppelde services.  Bevat reken operator machtigingen. Beschikt niet over de machtiging om referenties te gebruiken en pijp lijnen uit te voeren. Exclusief het verlenen van toegang. </br></br>_Kunnen Lees-en schrijf artefacten het </br> opgeslagen notitie blok en de uitvoer van de pijp lijn kunnen bekijken </br> alle acties voor Spark-activiteiten </br> kunnen de logboeken van Spark-groepen weer geven_|Werkruimte </br> Spark-pool<br/> Integratie-runtime|
@@ -75,7 +75,7 @@ Synapse-beheerder|werk ruimten/lezen</br>werk ruimten/roleAssignments/schrijven,
 
 De volgende tabel geeft een lijst van Synapse-acties en de ingebouwde rollen die deze acties toestaan:
 
-Actie|Rol
+Bewerking|Rol
 --|--
 werk ruimten/lezen|Synapse-beheerder</br>Synapse Apache Spark-beheerder</br>Synapse SQL-beheerder</br>Synapse-bijdrager</br>Synapse artefact Uitgever</br>Synapse artefact gebruiker</br>Synapse Compute-operator </br>Synapse-referentie gebruiker</br>Synapse gekoppeld Data Manager</br>Synapse-gebruiker 
 werk ruimten/roleAssignments/schrijven, verwijderen|Synapse-beheerder

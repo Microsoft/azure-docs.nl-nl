@@ -3,18 +3,18 @@ title: Het opname beleid beheren-Azure
 description: In dit onderwerp wordt uitgelegd hoe u het registratie beleid beheert.
 ms.topic: how-to
 ms.date: 04/27/2020
-ms.openlocfilehash: d3a1be915dc1cc8714e49cc7b2fe68bbe9cad161
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec72f28496c1392b9d95134c343e1892998a0c28
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87011478"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224986"
 ---
 # <a name="manage-recording-policy"></a>Opnamebeleid beheren
 
 U kunt live video Analytics op IoT Edge gebruiken voor [continue video-opname](continuous-video-recording-concept.md), waarbij u gedurende weken of maanden video in de cloud kunt opnemen. U kunt de lengte (in dagen) van het Cloud archief beheren met behulp van de [levenscyclus beheer hulpprogramma's](../../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal) die zijn ingebouwd in azure Storage.  
 
-Uw media service-account is gekoppeld aan een Azure Storage-account en wanneer u video opneemt in de Cloud, wordt de inhoud naar een media service- [Asset](../latest/assets-concept.md)geschreven. Elk activum wordt toegewezen aan een container in het opslag account. met levenscyclus beheer kunt u een [beleid](../../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal#policy) voor een opslag account definiëren, waarbij u een [regel](../../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal#rules) zoals de volgende kunt opgeven.
+Uw media service-account is gekoppeld aan een Azure Storage-account en wanneer u video opneemt in de Cloud, wordt de inhoud naar een media service- [Asset](../latest/assets-concept.md)geschreven. Elk activum wordt toegewezen aan een container in het opslag account. Met levenscyclus beheer kunt u een [beleid](../../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal#policy) voor een opslag account definiëren, waarbij u een [regel](../../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal#rules) zoals de volgende kunt opgeven.
 
 ```
 {
@@ -45,7 +45,7 @@ De bovenstaande regel:
 * Hiermee geeft u op dat wanneer de blobs ouder zijn dan 30 dagen, ze worden verplaatst van de [laag Hot Access naar cool](../../storage/blobs/storage-blob-storage-tiers.md?tabs=azure-portal).
 * En wanneer blobs ouder zijn dan 90 dagen, moeten ze worden verwijderd.
 
-Omdat live video Analytics uw video in bepaalde tijd eenheden archiveert, bevat uw asset een reeks blobs, één BLOB per segment. Wanneer het levenscyclus beheer beleid in wordt gezet en oudere blobs verwijdert, kunt u de resterende blobs via de media service-Api's openen en afspelen. Zie [opnamen afspelen](playback-recordings-how-to.md)voor meer informatie. 
+Wanneer u live video Analytics gebruikt om te registreren bij een Asset, geeft u een `segmentLength` eigenschap op die aangeeft dat de module een minimale duur van de video (in seconden) moet aggregeren voordat deze naar de Cloud wordt geschreven. Uw activum bevat een reeks segmenten, elk met een tijds tempel voor maken die `segmentLength` nieuwer is dan de vorige. Wanneer het levenscyclus beheer beleid in gaat, worden de segmenten die ouder zijn dan de opgegeven drempel waarde verwijderd. U kunt echter nog steeds toegang krijgen tot de resterende segmenten via de media service-Api's. Zie [back-opnames afspelen](playback-recordings-how-to.md)voor meer informatie. 
 
 ## <a name="limitations"></a>Beperkingen
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 8cae73e03fee0b59be0c7596f0783570ac14f6ee
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 991a335207fc29cef7b243d7e520dd5f62ff691f
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053060"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226102"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Een faserings omgeving instellen in azure lente-Cloud
 
@@ -22,6 +22,7 @@ In dit artikel wordt beschreven hoe u een faserings implementatie instelt met be
 
 ## <a name="prerequisites"></a>Vereisten
 
+* Azure veer Cloud-instantie met *Standard* **prijs categorie**.
 * Een actieve toepassing.  Zie [Quick Start: uw eerste Azure lente-Cloud toepassing implementeren](spring-cloud-quickstart.md).
 * Azure CLI [ASC-extensie](https://docs.microsoft.com/cli/azure/azure-cli-extensions-overview)
 
@@ -78,7 +79,7 @@ Geïmplementeerde apps weer geven met behulp van de volgende procedures.
 1. Maak in de Azure CLI een nieuwe implementatie en geef deze de naam ' groen ' van de faserings implementatie.
 
     ```azurecli
-    az spring-cloud app deployment create -g <resource-group-name> -s <service-instance-name> --app default -n green --jar-path gateway/target/gateway.jar
+    az spring-cloud app deployment create -g <resource-group-name> -s <service-instance-name> --app <appName> -n green --jar-path gateway/target/gateway.jar
     ```
 
 1. Nadat de CLI-implementatie is voltooid, opent u de app-pagina vanuit het **toepassings dashboard** en bekijkt u alle exemplaren op het tabblad **implementaties** aan de linkerkant.
@@ -113,11 +114,11 @@ Controleren of de ontwikkeling van de groene fase werkt:
 
    [![Implementaties stellen faserings implementatie in](media/spring-cloud-blue-green-staging/set-staging-deployment.png)](media/spring-cloud-blue-green-staging/set-staging-deployment.png)
 
-1. Ga terug naar de pagina **implementatie beheer** .  De implementatie `green` status *van* uw distributie moet worden weer gegeven. Dit is nu de actieve productie-build.
+1. Ga terug naar de pagina **implementatie beheer** . Stel de `green` implementatie in op `production` . Wanneer de instelling is voltooid, `green` moet uw implementatie status worden weer gegeven. Dit is nu de actieve productie-build.
 
    [Implementatie van het implementatie ![ resultaat instellen fase ring](media/spring-cloud-blue-green-staging/set-staging-deployment-result.png)](media/spring-cloud-blue-green-staging/set-staging-deployment-result.png)
 
-1. Kopieer de URL en plak deze in een nieuw browser venster. de nieuwe toepassings pagina moet worden weer gegeven met uw wijzigingen.
+1. De URL van de app moet uw wijzigingen weer geven.
 
 >[!NOTE]
 > Nadat u de groene implementatie hebt ingesteld als de productie omgeving, wordt de vorige implementatie de faserings implementatie.

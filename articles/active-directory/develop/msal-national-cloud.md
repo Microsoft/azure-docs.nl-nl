@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: marsma, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 5a032f45027cc4bffc7f2bc46c6ea1a69a1b83e4
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 2f9396e20ae0f426dddd57b32297cfe98e135c44
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178616"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225813"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>MSAL gebruiken in een nationale cloud omgeving
 
@@ -84,7 +84,7 @@ Uw MSAL.js-toepassing voor soevereine Clouds inschakelen:
 1. Noteer op de pagina **overzicht** de waarde voor de **toepassings-id (client)** voor later gebruik.
     Voor deze zelf studie moet u de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md)inschakelen. 
 1. Selecteer **Verificatie** onder **Beheren**.
-1. Onder **impliciete toekenning** selecteert u **id-tokens** en **toegangs tokens**. ID-tokens en toegangs tokens zijn vereist omdat deze app gebruikers moet aanmelden en een API kan aanroepen.
+1. Onder **impliciete toekenning en hybride stromen** selecteert u **id-tokens** en **toegangs tokens**. ID-tokens en toegangs tokens zijn vereist omdat deze app gebruikers moet aanmelden en een API kan aanroepen.
 1. Selecteer **Opslaan**.
 
 ### <a name="step-2--set-up-your-web-server-or-project"></a>Stap 2: de webserver of het project instellen

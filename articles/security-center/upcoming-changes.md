@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: memildin
-ms.openlocfilehash: 99dadea37a519289120fcf30e394df1e0f7af5e7
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 83c1d8ac316703d9d22d0716c86c5731c3db7133
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757708"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226468"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -83,7 +83,7 @@ Meer informatie over deze aanbevelingen vindt u op de [overzichts pagina met aan
 
 **Geschatte datum voor wijziging:** Q2 2021
 
-De huidige versie van de gevoelige aanbevelings **gegevens in uw SQL-data bases moet worden geclassificeerd** in het beveiligings beheer **gegevens classificatie Toep assen** wordt afgeschaft en vervangen door een nieuwe versie die beter is afgestemd op de strategie voor gegevens classificatie van micro soft. Als gevolg hiervan:
+De huidige versie van de gevoelige aanbevelings **gegevens in uw SQL-data bases moet worden geclassificeerd** in het beveiligings beheer **gegevens classificatie Toep assen** wordt vervangen door een nieuwe versie die beter is afgestemd op de strategie voor gegevens classificatie van micro soft. Als gevolg hiervan:
 
 - De aanbeveling heeft geen invloed meer op uw beveiligde Score
 - Het beveiligings beheer (' gegevens classificatie Toep assen ') heeft geen invloed meer op uw beveiligde Score

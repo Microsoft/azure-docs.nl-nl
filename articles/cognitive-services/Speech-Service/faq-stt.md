@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 02/01/2021
 ms.author: panosper
-ms.openlocfilehash: a6f75a80fd73844c975b332db8a0e8919cde9f0d
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 61768991fc4e72b44568bd92278427e6af398d52
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072170"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226553"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 
@@ -83,7 +83,7 @@ Basis modellen en aangepaste modellen worden na enige tijd buiten gebruik gestel
 
 **V: zijn mijn aanvragen geregistreerd?**
 
-**A**: standaard aanvragen worden niet geregistreerd (audio of transcriptie). Indien nodig kunt u *logboek inhoud van deze eindpunt* optie selecteren wanneer u [een aangepast eind punt maakt](./how-to-custom-speech-train-model.md). U kunt ook audio logboek registratie inschakelen in de [Speech SDK](speech-sdk.md) op basis van per aanvraag zonder een aangepast eind punt te maken. In beide gevallen worden de geluids-en herkennings resultaten van aanvragen opgeslagen in beveiligde opslag. Voor abonnementen die gebruikmaken van micro soft-opslag, zijn ze 30 dagen beschikbaar.
+**A**: standaard aanvragen worden niet geregistreerd (audio of transcriptie). Indien nodig kunt u *logboek inhoud van deze eindpunt* optie selecteren wanneer u [een aangepast eind punt maakt](how-to-custom-speech-train-model.md#deploy-a-custom-model). U kunt ook audio logboek registratie inschakelen in de [Speech SDK](how-to-use-logging.md) op basis van per aanvraag zonder een aangepast eind punt te maken. In beide gevallen worden de geluids-en herkennings resultaten van aanvragen opgeslagen in beveiligde opslag. Voor abonnementen die gebruikmaken van micro soft-opslag, zijn ze 30 dagen beschikbaar.
 
 U kunt de geregistreerde bestanden op de implementatie pagina in speech Studio exporteren als u een aangepast eind punt gebruikt met *logboek inhoud van dit eind punt* ingeschakeld. Als audio logboek registratie via de SDK is ingeschakeld, roept u de [API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetBaseModelLogs) aan voor toegang tot de bestanden.
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 874488e5de7888edad5310afce1afd1baec4ece0
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: d790b466f669ed067863b6643c8f59662eb628a7
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753060"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226435"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-toepassing met één pagina (SPA)
 
@@ -275,7 +275,7 @@ Voordat u verdergaat met de verificatie, registreert u uw toepassing op **Azure 
 1. Selecteer **Registreren**.
 1. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
 1. Selecteer **Verificatie** onder **Beheren**.
-1. Selecteer in de sectie **Impliciete toekenning** de opties **Id-tokens** en **Toegangstokens**. Id-tokens en toegangstokens zijn vereist, omdat via deze app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.
+1. Selecteer in de sectie **impliciete toekenning en hybride stromen** **id-tokens** en **toegangs tokens**. Id-tokens en toegangstokens zijn vereist, omdat via deze app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.
 1. Selecteer **Opslaan**.
 
 > ### <a name="set-a-redirect-url-for-nodejs"></a>Een omleidings-URL instellen voor Node.js

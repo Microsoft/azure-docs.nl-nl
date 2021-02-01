@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 05e14b5bdc2f603ffe802b12ed33b7b57be25b69
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b2e42dcaeb72a053f20afa47439d1825445b0ad8
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98938204"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225830"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app
 
@@ -57,7 +57,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Selecteer **Verificatie** onder **Beheren**.
 > 1. Selecteer onder **omleidings-uri's** de optie **URI toevoegen** en voer vervolgens in `https://localhost:44321/signin-oidc` .
 > 1. Voer een **URL in voor het afmelden** van het kanaal van `https://localhost:44321/signout-oidc` .
-> 1. Selecteer **id-tokens** onder **Impliciete toekenning**.
+> 1. Onder **impliciete toekenning en hybride stromen** selecteert u **id-tokens**.
 > 1. Selecteer **Opslaan**.
 
 > [!div class="sxs-lookup" renderon="portal"]

@@ -611,6 +611,8 @@
           items:
             - name: Controleren en afstemmen
               href: concepts-hyperscale-monitoring.md
+            - name: Auditlogboeken
+              href: concepts-hyperscale-audit.md
         - name: Configuratie-opties
           href: concepts-hyperscale-configuration-options.md
         - name: Vooruitbetalen voor reservecapaciteit

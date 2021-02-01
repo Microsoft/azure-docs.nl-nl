@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: fe54c4495e589459fe734f315138cafa8d7cd033
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 4e389114dc873d067a32389b288e1bb98d497850
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98934737"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226047"
 ---
 # <a name="spatial-analysis-operations"></a>Ruimtelijke analyse bewerkingen
 
@@ -130,7 +130,7 @@ Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimteli
 | `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. |
 | `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-personcount** dit moet zijn `count` .|
 | `trigger` | tekenreeks| Het type trigger voor het verzenden van een gebeurtenis. Ondersteunde waarden zijn `event` voor het verzenden van gebeurtenissen wanneer het aantal wordt gewijzigd of als `interval` er periodiek gebeurtenissen worden verzonden, ongeacht of het aantal is gewijzigd of niet.
-| `interval` | tekenreeks| Een tijd in seconden dat het aantal personen wordt geaggregeerd voordat een gebeurtenis wordt gestart. Met de bewerking wordt de scène op constant tempo geanalyseerd en wordt het meest voorkomende aantal voor dat interval geretourneerd. Het aggregatie-interval is van toepassing op zowel als `event` `interval` .|
+| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden egressed. Als `output_frequency` = X, elke X gebeurtenis is egressed, ex. `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De `output_frequency` is van toepassing op zowel als `event` `interval` . |
 | `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|
 
 ### <a name="line-configuration-for-cognitiveservicesvisionspatialanalysis-personcrossingline"></a>Lijn configuratie voor cognitiveservices. Vision. spatialanalysis-personcrossingline
@@ -255,8 +255,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 | `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. |
 | `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-persondistance** dit moet zijn `people_distance` .|
 | `trigger` | tekenreeks| Het type trigger voor het verzenden van een gebeurtenis. Ondersteunde waarden zijn `event` voor het verzenden van gebeurtenissen wanneer het aantal wordt gewijzigd of als `interval` er periodiek gebeurtenissen worden verzonden, ongeacht of het aantal is gewijzigd of niet.
-| `interval` | tekenreeks | Een tijd in seconden dat de schendingen worden geaggregeerd voordat een gebeurtenis wordt gestart. Het aggregatie-interval is van toepassing op zowel als `event` `interval` .|
-| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden egressed. Als `output_frequency` = X, elke X gebeurtenis is egressed, ex. `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De output_frequency is van toepassing op zowel als `event` `interval` .|
+| `output_frequency` | int | De snelheid waarmee gebeurtenissen worden egressed. Als `output_frequency` = X, elke X gebeurtenis is egressed, ex. `output_frequency` = 2 betekent dat elke andere gebeurtenis uitvoer is. De `output_frequency` is van toepassing op zowel als `event` `interval` .|
 | `minimum_distance_threshold` | float| Een afstand in meter waarmee een "TooClose"-gebeurtenis wordt geactiveerd wanneer mensen kleiner zijn dan de afstand tussen elkaar.|
 | `maximum_distance_threshold` | float| Een afstand in meter waarmee de gebeurtenis ' TooFar ' wordt geactiveerd wanneer mensen groter zijn dan de afstand tussen elkaar.|
 | `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|

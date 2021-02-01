@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, devx-track-js
-ms.openlocfilehash: ab3677ede2805fc8ecb076e8a40da605c038b54b
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: fec130ff02d9796fb9a6cea7a831bbdcb25cb1ed
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937926"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225627"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Quickstart: Aanmelden met OpenID Connect bij een Node.js-webtoepassing toevoegen
 
@@ -45,7 +45,7 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 1. Selecteer **Een platform toevoegen** > **Web**. 
 1. Voer in de sectie **Omleidings-URI's** `http://localhost:3000/auth/openid/return` in.
 1. Voer een **URL voor het afmelden** van het kanaal in `https://localhost:3000` .
-1. In de sectie Impliciete toekenning schakelt u **ID-tokens** in, aangezien voor dit voorbeeld vereist is dat [Impliciete toekenningsstroom](./v2-oauth2-implicit-grant-flow.md) is ingeschakeld om aanmelding van de gebruiker mogelijk te maken.
+1. Selecteer in de sectie **impliciete toekenning en hybride stromen** **id-tokens** als voor dit voor beeld moet de [impliciete toekennings stroom](./v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld om de gebruiker aan te melden.
 1. Selecteer **Configureren**.
 1. Selecteer onder **Beheren** achtereenvolgens **Certificaten en geheimen** > **Nieuw clientgeheim**.
 1. Voer een beschrijving in (bijvoorbeeld app-geheim).

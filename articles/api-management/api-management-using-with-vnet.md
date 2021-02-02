@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 12/10/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: d0d5434de747b48464df1c07f8c7b6a7e785c858
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: c63b71ad00a5621babe07597720a1e9ea87f1e4a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070928"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260245"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Azure API Management gebruiken met virtuele netwerken
 Met Azure Virtual Networks (VNETs) kunt u uw Azure-resources in een routeerbaar netwerk (buiten internet) plaatsen waarvan u de toegang beheert. Deze netwerken kunnen vervolgens worden verbonden met uw on-premises netwerken met behulp van verschillende VPN-technologieën. Voor meer informatie over Azure Virtual Networks begint u met de informatie hier: [overzicht van azure Virtual Network](../virtual-network/virtual-networks-overview.md).
@@ -117,7 +117,7 @@ Hieronder vindt u een lijst met veelvoorkomende fouten die zich kunnen voordoen 
 | */443                  | Uitgaand           | TCP                | VIRTUAL_NETWORK/opslag             | **Afhankelijkheid van Azure Storage**                             | Externe & intern  |
 | */443                  | Uitgaand           | TCP                | VIRTUAL_NETWORK-AzureActiveDirectory | Afhankelijkheid van [Azure Active Directory](api-management-howto-aad.md) en Azure-sleutel kluis                  | Externe & intern  |
 | */1433                     | Uitgaand           | TCP                | VIRTUAL_NETWORK/SQL                 | **Toegang tot Azure SQL-eind punten**                           | Externe & intern  |
-| */433                     | Uitgaand           | TCP                | VIRTUAL_NETWORK-AzureKeyVault                 | **Toegang tot Azure-sleutel kluis**                           | Externe & intern  |
+| */443                     | Uitgaand           | TCP                | VIRTUAL_NETWORK-AzureKeyVault                 | **Toegang tot Azure-sleutel kluis**                           | Externe & intern  |
 | */5671, 5672, 443          | Uitgaand           | TCP                | VIRTUAL_NETWORK-EventHub            | Afhankelijkheid voor [logboek registratie van Event hub-beleid](api-management-howto-log-event-hubs.md) en bewakings agent | Externe & intern  |
 | */445                      | Uitgaand           | TCP                | VIRTUAL_NETWORK/opslag             | Afhankelijkheid van de Azure-bestands share voor [Git](api-management-configuration-repository-git.md)                      | Externe & intern  |
 | */443, 12000                     | Uitgaand           | TCP                | VIRTUAL_NETWORK-Cloud            | Status-en bewakings uitbreiding         | Externe & intern  |
@@ -232,27 +232,27 @@ De IP-adressen worden gedeeld door **Azure-omgeving**. Wanneer het IP-adres voor
 | Openbare Azure-peering| India - west| 40.81.89.24|
 | Openbare Azure-peering| VS - oost| 52.224.186.99|
 | Openbare Azure-peering| Europa -west| 51.145.179.78|
-| Openbare Azure-peering| Japan East| 52.140.238.179|
+| Openbare Azure-peering| Japan - oost| 52.140.238.179|
 | Openbare Azure-peering| Frankrijk - centraal| 40.66.60.111|
 | Openbare Azure-peering| Canada - oost| 52.139.80.117|
 | Openbare Azure-peering| VAE - noord| 20.46.144.85|
-| Openbare Azure-peering| Brazil South| 191.233.24.179|
+| Openbare Azure-peering| Brazilië - zuid| 191.233.24.179|
 | Openbare Azure-peering| Brazilië-Zuidoost| 191.232.18.181|
 | Openbare Azure-peering| Azië - zuidoost| 40.90.185.46|
 | Openbare Azure-peering| Zuid-Afrika - noord| 102.133.130.197|
 | Openbare Azure-peering| Canada - midden| 52.139.20.34|
 | Openbare Azure-peering| Korea - zuid| 40.80.232.185|
-| Openbare Azure-peering| Central India| 13.71.49.1|
+| Openbare Azure-peering| India - centraal| 13.71.49.1|
 | Openbare Azure-peering| VS - west| 13.64.39.16|
-| Openbare Azure-peering| Australia Southeast| 20.40.160.107|
+| Openbare Azure-peering| Australië - zuidoost| 20.40.160.107|
 | Openbare Azure-peering| Australië - centraal| 20.37.52.67|
 | Openbare Azure-peering| India - zuid| 20.44.33.246|
-| Openbare Azure-peering| Central US| 13.86.102.66|
+| Openbare Azure-peering| VS - centraal| 13.86.102.66|
 | Openbare Azure-peering| Australië - oost| 20.40.125.155|
-| Openbare Azure-peering| West US 2| 51.143.127.203|
+| Openbare Azure-peering| VS - west 2| 51.143.127.203|
 | Openbare Azure-peering| VS-Oost 2 EUAP| 52.253.229.253|
 | Openbare Azure-peering| VS - centraal EUAP| 52.253.159.160|
-| Openbare Azure-peering| South Central US| 20.188.77.119|
+| Openbare Azure-peering| VS - zuid-centraal| 20.188.77.119|
 | Openbare Azure-peering| VS - oost 2| 20.44.72.3|
 | Openbare Azure-peering| Europa - noord| 52.142.95.35|
 | Openbare Azure-peering| Azië - oost| 52.139.152.27|

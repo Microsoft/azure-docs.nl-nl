@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/14/2020
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: a6a01b3a71a7e391c680e6c9547ccd9649dc0e89
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4ad619fa5f0fb8f8e87333f2681727dabedda42b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98605321"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427346"
 ---
 In deze sectie wordt beschreven hoe u een IoT-hub maakt met behulp van de [Azure-portal](https://portal.azure.com).
 
@@ -35,17 +35,17 @@ In deze sectie wordt beschreven hoe u een IoT-hub maakt met behulp van de [Azure
 
    [!INCLUDE [iot-hub-pii-note-naming-hub](iot-hub-pii-note-naming-hub.md)]
 
-   ![Een hub maken in Azure Portal](./media/iot-hub-include-create-hub/iot-hub-create-screen-basics.png)
+   :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-create-screen-basics.png" alt-text="Maak een hub in de Azure Portal.":::
 
 1. Selecteer **Volgende: Netwerken** om verder te gaan met het maken van uw hub.
 
    Kies de eindpunten die verbinding kunnen maken met uw IoT Hub. U kunt de standaardinstelling **Openbaar eindpunt (alle netwerken)** selecteren, of kiezen voor **Openbaar eindpunt (geselecteerde IP-bereiken)** of **Privé-eindpunt**. Accepteer voor dit voorbeeld de standaardinstellingen.
 
-   ![Kies de eindpunten die verbinding kunnen maken](./media/iot-hub-include-create-hub/iot-hub-create-network-screen.png)
+   :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-create-network-screen.png" alt-text="Kies de eind punten die verbinding kunnen maken.":::
 
 1. Selecteer **Volgende: Beheer** om verder te gaan met het maken van uw hub.
 
-    ![De grootte en schaal instellen voor een nieuwe hub met Azure Portal](./media/iot-hub-include-create-hub/iot-hub-management-screen.png)
+   :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-management-screen.png" alt-text="Stel de grootte en schaal voor een nieuwe hub in met behulp van de Azure Portal.":::
 
     U kunt de standaardinstellingen accepteren. Indien gewenst kunt u de volgende velden bewerken:
 
@@ -60,14 +60,14 @@ In deze sectie wordt beschreven hoe u een IoT-hub maakt met behulp van de [Azure
 
     - **Geavanceerde instellingen** > **Partities voor apparaat-naar-cloud**: met deze eigenschap worden de apparaat-naar-cloud-berichten gerelateerd met het aantal gelijktijdige lezers van de berichten. De meeste hubs hebben maar vier partities nodig.
 
-1.  Selecteer **Volgende: Tags** om naar het volgende scherm te gaan.
+1. Selecteer **Volgende: Tags** om naar het volgende scherm te gaan.
 
     Tags zijn naam/waarde-paren. U kunt dezelfde tag aan meerdere resources en resourcegroepen toevoegen om resources te categoriseren en facturering te consolideren. Raadpleeg [Tags gebruiken om uw Azure-resources te organiseren](../articles/azure-resource-manager/management/tag-resources.md) voor meer informatie.
 
-    ![Tags toewijzen voor de hub met Azure Portal](./media/iot-hub-include-create-hub/iot-hub-create-tags.png)
+    :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-create-tags.png" alt-text="Wijs labels voor de hub toe met behulp van de Azure Portal.":::
 
-1.  Selecteer **Volgende: Beoordelen + maken** om uw keuzes te beoordelen. U ziet iets soortgelijks op dit scherm, maar met de waarden die u hebt geselecteerd toen u de hub maakte. 
+1. Selecteer **Volgende: Beoordelen + maken** om uw keuzes te beoordelen. U ziet iets soortgelijks op dit scherm, maar met de waarden die u hebt geselecteerd toen u de hub maakte.
 
-    ![Informatie raadplegen om de nieuwe hub te maken](./media/iot-hub-include-create-hub/iot-hub-review-and-create.png)
+    :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-review-and-create.png" alt-text="Bekijk de informatie voor het maken van de nieuwe hub.":::
 
-1.  Selecteer **Maken** om de nieuwe hub te maken. De hub wordt binnen enkele minuten gemaakt.
+1. Selecteer **Maken** om de nieuwe hub te maken. De hub wordt binnen enkele minuten gemaakt.

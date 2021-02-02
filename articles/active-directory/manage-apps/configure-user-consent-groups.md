@@ -3,7 +3,7 @@ title: Toestemming van groeps eigenaar configureren voor apps die toegang hebben
 description: Meer informatie over het beheren of groeps-en team eigenaren kunnen toestemming geven voor toepassingen die toegang hebben tot de gegevens van de groep of het team.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 719bdd6a4d629bb4a35e7e11631670b0340e72a6
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: cd1eb98fca9fe25b6672863c02b8a78e57063e5a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090005"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259318"
 ---
 # <a name="configure-group-owner-consent-to-apps-accessing-group-data"></a>Toestemming van groeps eigenaar configureren voor apps die toegang hebben tot groeps gegevens
 
@@ -74,7 +74,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
 1. Meer informatie over de instellings waarden. Er zijn twee instellingen waarden die bepalen welke gebruikers een app kunnen gebruiken om toegang te krijgen tot de gegevens van de groep:
 
-    | Instelling       | Type         | Description  |
+    | Instelling       | Type         | Beschrijving  |
     | ------------- | ------------ | ------------ |
     | _EnableGroupSpecificConsent_   | Booleaans | Vlag waarmee wordt aangegeven of groeps eigenaren specifieke machtigingen mogen verlenen. |
     | _ConstrainGroupSpecificConsentToMembersOfGroupId_ | Guid | Als _EnableGroupSpecificConsent_ is ingesteld op ' True ' en deze waarde is ingesteld op de object-id van een groep, worden leden van de geïdentificeerde groep gemachtigd om groeps-specifieke machtigingen te verlenen aan de groepen waarvan ze eigenaar zijn. |

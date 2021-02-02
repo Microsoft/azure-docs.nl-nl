@@ -4,7 +4,7 @@ description: Problemen oplossen wanneer een gebruiker een toestemming prompt kri
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa74424dddd7577eb942f72f038f5bd56854abac
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6253458bb31388e5f7e6f84b7720cce0dc22886c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648188"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259957"
 ---
 # <a name="unexpected-consent-prompt-when-signing-in-to-an-application"></a>Onverwachte toestemming vragen bij het aanmelden bij een toepassing
 

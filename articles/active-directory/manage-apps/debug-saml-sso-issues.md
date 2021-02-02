@@ -4,19 +4,19 @@ description: Fout opsporing op SAML gebaseerde eenmalige aanmelding bij toepassi
 services: active-directory
 ms.author: kenwith
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: troubleshooting
 ms.workload: identity
 ms.date: 02/18/2019
 ms.reviewer: luleon, hirsin, paulgarn
-ms.openlocfilehash: f8eb00a2a88c6e26dd5361097f17990469caa8f3
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 4a5fbef3380db8c9b357c83b4cb8240a41a0012c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92326012"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259284"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Foutopsporing uitvoeren in op SAML gebaseerde eenmalige aanmelding bij toepassingen in Azure Active Directory
 
@@ -37,8 +37,8 @@ Gebruik een van de volgende koppelingen om de beveiligde aanmeldings extensie vo
 Op SAML gebaseerde eenmalige aanmelding op basis van Azure AD en een doel toepassing testen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als globale beheerder of een andere beheerder die gemachtigd is om toepassingen te beheren.
-1. Selecteer in de Blade links **Azure Active Directory**en selecteer vervolgens **bedrijfs toepassingen**. 
-1. Selecteer in de lijst met bedrijfs toepassingen de toepassing waarvoor u eenmalige aanmelding wilt testen en klik vervolgens in de opties aan de linkerkant op **eenmalige aanmelding**selecteren.
+1. Selecteer in de Blade links **Azure Active Directory** en selecteer vervolgens **bedrijfs toepassingen**. 
+1. Selecteer in de lijst met bedrijfs toepassingen de toepassing waarvoor u eenmalige aanmelding wilt testen en klik vervolgens in de opties aan de linkerkant op **eenmalige aanmelding** selecteren.
 1. Als u de test ervaring voor eenmalige aanmelding op basis van SAML wilt openen, gaat u naar **test eenmalige aanmelding** (stap 5). Als de knop **testen** grijs wordt weer gegeven, moet u de vereiste kenmerken eerst invullen en opslaan in het gedeelte **basis configuratie van SAML** .
 1. Gebruik op de Blade **eenmalige aanmelding testen** de bedrijfs referenties om u aan te melden bij de doel toepassing. U kunt zich aanmelden als de huidige gebruiker of als een andere gebruiker. Als u zich als een andere gebruiker aanmeldt, wordt u gevraagd om u te verifiëren.
 
@@ -71,7 +71,7 @@ Als er geen oplossing wordt aangeboden voor de aanmeldings fout, wordt u aangera
     - Een CorrelationID en tijds tempel. Deze waarden zijn belang rijk wanneer u een ondersteunings aanvraag maakt met micro soft omdat ze de technici helpen bij het identificeren van uw probleem en een nauw keurige oplossing bieden voor uw probleem.
     - Een instructie voor het identificeren van de hoofd oorzaak van het probleem.
 1. Ga terug naar Azure AD en zoek de Blade **eenmalige aanmelding testen** .
-1. Plak in het bovenstaande tekstvak de **richt lijnen voor probleem oplossing**de fout melding.
+1. Plak in het bovenstaande tekstvak de **richt lijnen voor probleem oplossing** de fout melding.
 1. Klik op **oplossings richtlijnen ophalen** om de stappen voor het oplossen van het probleem weer te geven. Voor de richt lijnen is mogelijk informatie vereist van de SAML-aanvraag of het SAML-antwoord. Als u de beveiligde aanmeldings extensie voor mijn apps niet gebruikt, hebt u mogelijk een hulp programma zoals [Fiddler](https://www.telerik.com/fiddler) nodig om de SAML-aanvraag en het-antwoord op te halen.
 1. Controleer of de bestemming in de SAML-aanvraag overeenkomt met de URL van de SAML single Sign-On-service die is verkregen van Azure AD.
 1. Controleer of de uitgever in de SAML-aanvraag dezelfde id is die u hebt geconfigureerd voor de toepassing in azure AD. Azure AD maakt gebruik van de verlener om een toepassing in uw directory te vinden.

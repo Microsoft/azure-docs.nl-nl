@@ -4,7 +4,7 @@ description: Behandelt de basis principes voor het integreren van een on-premise
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d4515d6140123e8e8784fc2d828242d49c59fc4
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: e9f0959ff51714e8a7e69f58a3e3abeab71e8359
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616895"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259369"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Externe toegang tot Power BI - Mobiel met Azure AD-toepassingsproxy inschakelen
 
@@ -133,7 +133,7 @@ Voordat de Power BI mobiele app verbinding kan maken en toegang kan krijgen tot 
 
    ![Mobiele app Power BI met externe URL](media/application-proxy-integrate-with-power-bi/app-proxy-power-bi-mobile-app.png)
 
-2. Selecteer **Verbinden**. U wordt omgeleid naar de aanmeldings pagina van Azure Active Directory.
+2. Selecteer **Verbinding maken**. U wordt omgeleid naar de aanmeldings pagina van Azure Active Directory.
 
 3. Voer geldige referenties in voor uw gebruiker en selecteer **Aanmelden**. U ziet de elementen van de Reporting Services-server.
 

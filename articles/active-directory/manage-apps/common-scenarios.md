@@ -3,7 +3,7 @@ title: Algemene scenario's voor toepassingsbeheer voor Azure Active Directory | 
 description: Toepassingsbeheer centraliseren met Microsoft Azure AD
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-provisioning
@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 882770fefbb48524ad5f11a56089132b319470aa
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 6372407a5deebefab60e09a9d0c01d977157357b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053343"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259567"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Toepassingsbeheer centraliseren met Microsoft Azure AD
 

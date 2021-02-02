@@ -1,7 +1,7 @@
 ---
 # <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Verplichte velden. Meer informatie over aka.ms/skyeye/meta.
 Titel: Azure Storage-accounts: beschrijving van Azure Media Services: meer informatie over het maken van een Azure Storage-account voor gebruik met Azure Media Services.
-Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 01/05/2021 MS. Author: inhenkel
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 01/29/2021 MS. Author: inhenkel
 ---
 
 # <a name="azure-storage-accounts"></a>Azure Storage-accounts
@@ -19,7 +19,7 @@ We raden u aan GPv2 te gebruiken, zodat u kunt profiteren van de nieuwste functi
 > [!NOTE]
 > Alleen de laag Hot Access wordt ondersteund voor gebruik met Azure Media Services, hoewel de andere toegangs lagen kunnen worden gebruikt om de opslag kosten te verlagen voor inhoud die niet actief wordt gebruikt.
 
-Er zijn verschillende Sku's die u kunt kiezen voor uw opslag account. Zie [Opslagaccounts](/cli/azure/storage/account?view=azure-cli-latest) voor meer informatie. Als u wilt experimenteren met opslagaccounts, gebruikt u `--sku Standard_LRS`. Wanneer u echter een SKU voor productie gaat picken, moet u overwegen om een `--sku Standard_RAGRS` geografische replicatie voor bedrijfs continuïteit te bieden.
+Er zijn verschillende Sku's die u kunt kiezen voor uw opslag account. Als u wilt experimenteren met opslagaccounts, gebruikt u `--sku Standard_LRS`. Wanneer u echter een SKU voor productie gaat picken, moet u overwegen om een `--sku Standard_RAGRS` geografische replicatie voor bedrijfs continuïteit te bieden.
 
 ## <a name="assets-in-a-storage-account"></a>Assets in een opslag account
 
@@ -34,14 +34,15 @@ Ter bescherming van uw assets op rest moeten de activa worden versleuteld door d
 
 |Versleutelings optie|Beschrijving|Media Services v3|
 |---|---|---|
-|Opslag versleuteling Media Services| AES-256-versleuteling, sleutel beheerd door Media Services. |Niet ondersteund. <sup>(1)</sup>|
+|Opslag versleuteling Media Services| AES-256-versleuteling, sleutel beheerd door Media Services. |Niet ondersteund. <sup>1</sup>|
 |[Versleuteling van de opslag service voor Data-at-rest](../../storage/common/storage-service-encryption.md)|Versleuteling aan de server zijde die wordt aangeboden door Azure Storage, sleutel die wordt beheerd door Azure of door de klant.|Ondersteund.|
 |[Versleuteling van de opslag aan de client zijde](../../storage/common/storage-client-side-encryption.md)|Versleuteling aan de client zijde die wordt aangeboden door Azure Storage, sleutel die wordt beheerd door de klant in Key Vault.|Wordt niet ondersteund.|
 
 <sup>1</sup> in Media Services V3 wordt opslag VERSLEUTELING (AES-256-versleuteling) alleen ondersteund voor achterwaartse compatibiliteit wanneer uw assets zijn gemaakt met Media Services v2, wat betekent dat v3 werkt met bestaande, versleutelde opslag elementen, maar niet om nieuwe te maken.
 
-## <a name="double-encryption"></a>Dubbele versleuteling
-Media Services ondersteunt dubbele versleuteling.  Zie voor meer informatie over dubbele versleuteling [Azure Double Encryption](../../security/fundamentals/double-encryption.md)(Engelstalig).
+## <a name="storage-account-double-encryption"></a>Dubbele versleuteling van opslag account
+
+Opslag accounts ondersteunen dubbele versleuteling, maar de tweede laag moet expliciet worden ingeschakeld. Zie [Azure Storage versleuteling voor Data-at-rest](https://docs.microsoft.com/azure/storage/common/storage-service-encryption#doubly-encrypt-data-with-infrastructure-encryption).  
 
 ## <a name="storage-account-errors"></a>Fouten in het opslag account
 
@@ -53,10 +54,6 @@ Hieronder vindt u de belangrijkste scenario's waarin een Media Services-account 
 |---|---|
 |Het Media Services-account of een of meer gekoppelde opslagaccounts zijn gemigreerd naar afzonderlijke abonnementen. |Migreer de opslag account (s) of het Media Services-account, zodat ze allemaal in hetzelfde abonnement zijn. |
 |Het Media Services-account gebruikt een gekoppeld opslagaccount in een ander abonnement, aangezien het een vroeg Media Services-account betreft waarvoor dit nog werd ondersteund. Alle Early Media Services-accounts zijn geconverteerd naar moderne Azure Resources Manager-accounts en hebben een status die niet meer is verbonden. |Migreer het opslag account of het Media Services account zo dat ze allemaal in hetzelfde abonnement zijn.|
-
-## <a name="azure-storage-firewall"></a>Azure Storage firewall
-
-Azure Media Services biedt geen ondersteuning voor opslag accounts waarbij de Azure Storage firewall of [persoonlijke eind punten](../../storage/common/storage-network-security.md) zijn ingeschakeld.
 
 ## <a name="next-steps"></a>Volgende stappen
 

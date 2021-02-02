@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: f4f54aa02fb56ba5bf5ae9fcec2dae07c7dc0a27
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: a2ab63febbb4439e50ef0f7bcc0f9797dc50c62c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358976"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260025"
 ---
 # <a name="migration-guide-sql-server-to-sql-database"></a>Migratie handleiding: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -100,7 +100,7 @@ Als u meerdere servers en data bases hebt die op schaal moeten worden beoordeeld
 > [!IMPORTANT]
 > Het uitvoeren van analyses op schaal voor meerdere data bases, met name grote bestanden, kan ook worden geautomatiseerd met behulp van het [hulp programma voor de DMA-opdracht regel](/sql/dma/dma-commandline) en geüpload naar [Azure migrate](/sql/dma/dma-assess-sql-data-estate-to-sqldb#view-target-readiness-assessment-results) voor verdere analyse en doel gereedheid.
 
-## <a name="migrate"></a>Migreren
+## <a name="migrate"></a>Migrate
 
 Nadat u taken hebt voltooid die zijn gekoppeld aan de fase voorafgaand aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren. 
 
@@ -149,6 +149,18 @@ Nadat u hebt gecontroleerd of de gegevens in de bron en het doel gelijk zijn, ku
 
 > [!IMPORTANT]
 > Zie voor meer informatie over de specifieke stappen die zijn gekoppeld aan het uitvoeren van een cutover als onderdeel van de migraties met behulp van DMS, [migratie Cutover uitvoeren](../../../dms/tutorial-sql-server-azure-sql-online.md#perform-migration-cutover).
+
+## <a name="migration-recommendations"></a>Aanbevelingen voor migratie
+
+Als u de migratie naar Azure SQL Database wilt versnellen, moet u rekening houden met de volgende aanbevelingen:
+
+|  | Bron conflicten | Aanbeveling |
+|--|--|--|
+| **Bron (doorgaans on-premises)** |Primair knel punt tijdens de migratie in bron is gegevens-I/O en latentie van gegevens bestanden die zorgvuldig moeten worden gecontroleerd.  |Op basis van de latentie van DATA IO en gegevens bestanden en afhankelijk van of het een virtuele machine of fysieke server is, moet u de opslag beheerder en de opties verkennen om het knel punt te verhelpen. |
+|**Doel (Azure SQL Database)**|De grootste beperkende factor is de frequentie van het genereren en de latentie van het logboek bestand. Met Azure SQL Database kunt u Maxi maal 96 MB/s logboek generatie frequentie aanvragen. | Als u de migratie wilt versnellen, schaalt u de doel-SQL-Data Base naar Bedrijfskritiek GEN5 8 VCore om de maximale logboek generatie snelheid van 96 MB/s te verkrijgen en kunt u ook lage latentie voor het logboek bestand bereiken. De [grootschalige](https://docs.microsoft.com/azure/azure-sql/database/service-tier-hyperscale) -servicelaag levert een logboek frequentie van 100 MB per seconde, ongeacht het gekozen service niveau |
+|**Netwerk** |De benodigde netwerk bandbreedte is gelijk aan het maximale aantal opname snelheden van het logboek 96 MB/s (768 MB/s) |Afhankelijk van de netwerk verbinding van uw on-premises Data Center naar Azure, controleert u uw netwerk bandbreedte (doorgaans [Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction#bandwidth-options)) om te voldoen aan de maximale opname frequentie van het logboek. |
+|**Virtuele machine die wordt gebruikt voor Data Migration Assistant (DMA)** |CPU is het belangrijkste knel punt voor de virtuele machine met DMA |Overwegingen bij het versnellen van de gegevens migratie met behulp van </br>-Virtuele machines van Azure compute </br>-Gebruik ten minste F8s_v2 (8 VCore) VM voor het uitvoeren van DMA </br>-Zorg ervoor dat de virtuele machine wordt uitgevoerd in dezelfde Azure-regio als het doel |
+|**Azure Database Migration Service (DMS)** |De berekenings capaciteit van bronnen en database objecten berekenen voor DMS |Gebruik Premium 4 vCore. DMS zorgt automatisch voor database objecten zoals refererende sleutels, triggers, beperkingen en niet-geclusterde indexen en vereist geen hand matige tussen komst.  |
 
 
 ## <a name="post-migration"></a>Postmigratie

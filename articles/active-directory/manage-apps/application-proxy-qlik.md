@@ -4,7 +4,7 @@ description: Schakel toepassings proxy in het Azure Portal in en installeer de c
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -14,12 +14,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9696d48db7d051f3a8bdf16f93438fb71f025dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a03f3c57d3fbc7efe20055343eab3db33aa8194
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84760045"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259081"
 ---
 # <a name="application-proxy-and-qlik-sense"></a>Toepassings proxy en Qlik Sense 
 Azure Active Directory-toepassingsproxy en Qlik Sense kunnen samen worden gebruikt om ervoor te zorgen dat u eenvoudig een toepassings proxy kunt gebruiken om externe toegang te bieden voor uw Qlik Sense-implementatie.  
@@ -45,7 +45,7 @@ Volg deze stappen om uw app te publiceren. Zie [toepassingen publiceren met Azur
    - **Interne URL**: deze toepassing moet een interne URL hebben die de QLIKSENSE-URL zelf is. Bijvoorbeeld: **https&#58;//demo.qlikemm.com:4244** 
    - **Methode voor verificatie vooraf**: Azure Active Directory (aanbevolen maar niet vereist) 
 1. Selecteer **toevoegen** onder aan de Blade. Uw toepassing wordt toegevoegd en het menu snel starten wordt geopend. 
-2. Selecteer in het menu snel starten de optie **een gebruiker toewijzen voor testen**en voeg ten minste één gebruiker toe aan de toepassing. Zorg ervoor dat dit test account toegang heeft tot de on-premises toepassing. 
+2. Selecteer in het menu snel starten de optie **een gebruiker toewijzen voor testen** en voeg ten minste één gebruiker toe aan de toepassing. Zorg ervoor dat dit test account toegang heeft tot de on-premises toepassing. 
 3. Selecteer **toewijzen** om de gebruikers toewijzing test op te slaan. 
 4. Beschrijving Selecteer op de Blade app-beheer de optie eenmalige aanmelding. Kies **Kerberos-beperkte delegering** in de vervolg keuzelijst en vul de vereiste velden in op basis van uw Qlik-configuratie. Selecteer **Opslaan**. 
 

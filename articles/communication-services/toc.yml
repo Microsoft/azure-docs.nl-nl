@@ -43,6 +43,8 @@
   items:
     - name: Een vertrouwde verificatieservice maken met behulp van Azure Functions
       href: tutorials/trusted-service-tutorial.md
+    - name: Een web-app voorbereiden voor communicatie Services (Node.js)
+      href: tutorials/building-app-start.md
 - name: Concepten
   expanded: false
   items:

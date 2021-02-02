@@ -3,7 +3,7 @@ title: Configureren hoe eind gebruikers toestemming geven voor toepassingen met 
 description: Meer informatie over hoe u kunt beheren hoe en wanneer gebruikers toestemming kunnen geven voor toepassingen die toegang hebben tot de gegevens van uw organisatie.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: kenwith
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 992f082c5157521ea7f0d8a681557d6c7cc3dc04
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: b6dd95dafbd079e79247110ee227121483dc372e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089982"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259301"
 ---
 # <a name="configure-how-end-users-consent-to-applications"></a>Configureren hoe eindgebruikers toestemming geven voor toepassingen
 
@@ -81,7 +81,7 @@ Als u toestemming van de gebruiker wilt toestaan, kiest u welk app-machtigings b
 
 Vervang door `{consent-policy-id}` de id van het beleid dat u wilt Toep assen. U kunt kiezen voor een [aangepast app-toestemming beleid](manage-app-consent-policies.md#create-a-custom-app-consent-policy) dat u hebt gemaakt, of u kunt kiezen uit de volgende ingebouwde beleids regels:
 
-| Id | Description |
+| Id | Beschrijving |
 |:---|:------------|
 | micro soft-gebruiker-standaard-laag | **Gebruikers toestemming geven voor apps van geverifieerde uitgevers, voor geselecteerde machtigingen**<br /> Sta beperkte toestemming van de gebruiker alleen toe voor apps van geverifieerde uitgevers en apps die zijn geregistreerd in uw Tenant, en alleen voor machtigingen die u als ' lage impact ' classificeert. (Vergeet niet om [machtigingen te classificeren](configure-permission-classifications.md) om te selecteren naar welke machtigingen gebruikers toestemming mogen geven.) |
 | micro soft-gebruiker-standaard-verouderd | **Toestemming van de gebruiker voor apps toestaan**<br /> Met deze optie kunnen alle gebruikers toestemming geven voor machtigingen waarvoor geen beheerders toestemming is vereist voor elke toepassing |
@@ -145,7 +145,7 @@ U kunt de Azure AD Power shell preview-module, [AzureADPreview](/powershell/modu
 
 1. Meer informatie over de instellingen waarde:
 
-    | Instelling       | Type         | Description  |
+    | Instelling       | Type         | Beschrijving  |
     | ------------- | ------------ | ------------ |
     | _BlockUserConsentForRiskyApps_   | Booleaans |  Markering die aangeeft of de gebruikers toestemming wordt geblokkeerd wanneer een Risk ante aanvraag wordt gedetecteerd. |
 

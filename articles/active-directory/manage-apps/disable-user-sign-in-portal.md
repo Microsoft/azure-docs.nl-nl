@@ -4,7 +4,7 @@ description: Een bedrijfs toepassing uitschakelen zodat gebruikers zich niet kun
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0671d3dec963c0b475133881b00224cfe11e8370
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 783de636d4520f48f624f3380f811f1f18366330
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861641"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259233"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Aanmeldingen van gebruikers voor een bedrijfs-app in Azure Active Directory uitschakelen
 
@@ -31,9 +31,9 @@ Het is eenvoudig om een bedrijfs toepassing uit te scha kelen zodat gebruikers z
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) met een account van een globale beheerder voor de directory.
 1. Selecteer **alle services**, Voer **Azure Active Directory** in het tekstvak in en selecteer vervolgens **Enter**.
-1. Selecteer in **Azure Active Directory** het  -   **deel venster Azure Active Directory _Directory_*_ (dat wil zeggen het deel venster van Azure AD voor de directory die u beheert) de optie _* bedrijfs toepassingen**.
+1. Selecteer in het  -   **deel venster Azure Active Directory _Directory_*_ (dat wil zeggen het deel venster van Azure AD voor de directory die u beheert) de optie _* bedrijfs toepassingen**.
 1. In het deel venster **bedrijfs toepassingen-alle toepassingen** ziet u een lijst met de apps die u kunt beheren. Selecteer een app.
-1. **_appname_ Selecteer _ eigenschappen in het *deel venster appName _ (dat wil zeggen, het deel venster met de naam van de geselecteerde app in de titel)***.
+1. **Selecteer _ eigenschappen in het *deel venster appName _ (dat wil zeggen, het deel venster met de naam van de geselecteerde app in de titel)***.
 1. Selecteer in het deel venster **_AppName_*_-_* eigenschappen** de optie **Nee** voor **ingeschakeld voor gebruikers om zich aan te melden**.
 1. Selecteer de opdracht **Opslaan** .
 

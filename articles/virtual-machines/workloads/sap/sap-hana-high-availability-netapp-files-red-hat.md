@@ -11,14 +11,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/16/2020
+ms.date: 02/01/2021
 ms.author: radeltch
-ms.openlocfilehash: cfa68bde2462cefd6f690247cfd1e3bd2e3dbc74
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b90d703a44cf89961eb0dca02abb1b8ea9cff166
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489204"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259199"
 ---
 # <a name="high-availability-of-sap-hana-scale-up-with-azure-netapp-files-on-red-hat-enterprise-linux"></a>Hoge Beschik baarheid van SAP HANA omhoog schalen met Azure NetApp Files op Red Hat Enterprise Linux
 
@@ -91,6 +91,7 @@ Lees eerst de volgende SAP-opmerkingen en-documenten:
     - [Installeer SAP HANA op Red Hat Enterprise Linux voor gebruik in Microsoft Azure.](https://access.redhat.com/solutions/3193782)
     - [SAP HANA scale-up systeem replicatie configureren pacemaker-cluster wanneer de HANA-bestands systemen zich op NFS-shares bevinden](https://access.redhat.com/solutions/5156571)
 - [NetApp SAP-toepassingen op Microsoft Azure met behulp van Azure NetApp Files](https://www.netapp.com/us/media/tr-4746.pdf)
+- [NFS v4.1-volumes in Azure NetApp Files voor SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 
 ## <a name="overview"></a>Overzicht
 
@@ -564,7 +565,7 @@ In dit voor beeld heeft elk cluster knooppunt een eigen HANA NFS-bestands systee
 
    Controleer de status van het cluster en alle resources
    > [!NOTE]
-   > Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+   > Dit artikel bevat verwijzingen naar de term *Slave*, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
    
     ```
     sudo pcs status
@@ -694,3 +695,10 @@ In deze sectie wordt beschreven hoe u de installatie kunt testen.
     ```
 
    We raden u aan om de SAP HANA-cluster configuratie grondig te testen door ook de tests uit te voeren die worden beschreven in [Setup SAP Hana systeem replicatie op RHEL](./sap-hana-high-availability-rhel.md#test-the-cluster-setup).
+
+## <a name="next-steps"></a>Volgende stappen
+
+* [Azure Virtual Machines planning en implementatie voor SAP][planning-guide]
+* [Azure Virtual Machines-implementatie voor SAP][deployment-guide]
+* [Azure Virtual Machines DBMS-implementatie voor SAP][dbms-guide]
+* [NFS v4.1-volumes in Azure NetApp Files voor SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)

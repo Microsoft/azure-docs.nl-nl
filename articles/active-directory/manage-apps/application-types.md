@@ -3,19 +3,19 @@ title: Apps weer geven met behulp van uw Azure Active Directory-Tenant voor iden
 description: Meer informatie over het weer geven van alle toepassingen met behulp van uw Azure Active Directory-Tenant voor identiteits beheer.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: reference
 ms.date: 01/07/2021
 ms.author: kenwith
-ms.openlocfilehash: 18e29ce8bf744cabb31c5634c9b0ca547bca5acc
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 443e8c83ec29f9f0478e3881b9e6d6a8eb0bf403
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020669"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259783"
 ---
 # <a name="viewing-apps-using-your-azure-ad-tenant-for-identity-management"></a>Apps weer geven met uw Azure AD-Tenant voor identiteits beheer
 In de Quick Start- [serie op toepassings beheer](view-applications-portal.md) worden de basis principes uitgelegd. Hierin leert u hoe u alle apps kunt weer geven met behulp van uw Azure AD-Tenant voor identiteits beheer. In dit artikel Dives een beetje dieper op de typen apps die u vindt.

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 08/09/2019
+ms.date: 01/20/2021
 ms.author: jeedes
-ms.openlocfilehash: 82f3a2dc7f43bd484d6a81efaa8d07f13b746d9e
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: a8a33290c7fa904fc16b728a6e2411bd5b42683f
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97671060"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259655"
 ---
 # <a name="tutorial-integrate-aha-with-azure-active-directory"></a>Zelfstudie: Aha! integreren met Azure Active Directory
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Aha! integreert met Azure Active Directory (Azu
 * In Azure AD beheren wie er toegang heeft tot Aha!.
 * Instellen dat uw gebruikers automatisch worden aangemeld bij Aha! met hun Azure AD-accounts.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -45,22 +43,22 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 * Aha! ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 * Aha! ondersteunt het **Just-In-Time** inrichten van gebruikers
 
-## <a name="adding-aha-from-the-gallery"></a>Aha! toevoegen vanuit de galerie
+## <a name="add-aha-from-the-gallery"></a>Voeg AHA toe. vanuit de galerie
 
 Om de integratie van Aha! te configureren in Azure AD, moet u Aha! vanuit de galerie toevoegen aan de lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. In de sectie **Toevoegen uit de galerie** typt u **Aha!** in het zoekvak.
 1. Selecteer **Aha!** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-aha"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Aha!
+## <a name="configure-and-test-azure-ad-sso-for-aha"></a>Azure AD SSO voor AHA configureren en testen.
 
 Eenmalige aanmelding van Azure AD met Aha! configureren en testen met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Aha!.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Aha! te configureren en te testen:
+Als u Azure AD SSO wilt configureren en testen met AHA!, voert u de volgende stappen uit:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -73,9 +71,9 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Aha! te con
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u op de pagina van toepassingsintegratie van **Aha!** de sectie **Beheren** en selecteert u **Eenmalige aanmelding**.
+1. In de Azure Portal, op de **AHA!** de sectie **Beheren** en selecteert u **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
     ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -115,15 +113,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Aha!** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-aha-sso"></a>Aha! configureren Eenmalige aanmelding
@@ -140,23 +132,23 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 4. Klik in het menu aan de bovenkant op **Settings**.
 
-    ![Instellingen](./media/aha-tutorial/IC798950.png "Instellingen")
+    ![Instellingen](./media/aha-tutorial/setting.png "Instellingen")
 
 5. Klik op **Account**.
 
-    ![Profiel](./media/aha-tutorial/IC798951.png "Profiel")
+    ![Profiel](./media/aha-tutorial/account.png "Profiel")
 
 6. Klik op **Security and single sign-on**.
 
-    ![Schermopname waarin de menu-optie Security and single sign-on is gemarkeerd.](./media/aha-tutorial/IC798952.png "Security and single sign-on")
+    ![Schermopname waarin de menu-optie Security and single sign-on is gemarkeerd.](./media/aha-tutorial/security.png "Security and single sign-on")
 
 7. Ga naar de sectie **Single Sign-On** en selecteer als **Identity Provider** de optie **SAML2.0**.
 
-    ![Security and single sign-on](./media/aha-tutorial/IC798953.png "Security and single sign-on")
+    ![Security and single sign-on](./media/aha-tutorial/saml.png "Security and single sign-on")
 
 8. Voer op de configuratiepagina **Single Sign-On** de volgende stappen uit:
 
-    ![Single Sign-On](./media/aha-tutorial/IC798954.png "Eenmalige aanmelding")
+    ![Single Sign-On](./media/aha-tutorial/sso.png "Eenmalige aanmelding")
 
     a. Typ in het tekstvak **Name** een naam voor de configuratie.
 
@@ -172,14 +164,14 @@ In deze sectie wordt een gebruiker met de naam B.Simon gemaakt in Aha!. Aha! bie
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u op de tegel Aha! in het toegangsvenster klikt, wordt u automatisch aangemeld bij de instantie van Aha! waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar AHA! Aanmeldings-URL waar u de aanmeldings stroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+* Ga naar AHA! De aanmeldings-URL rechtstreeks en initieert de aanmeldings stroom.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Aha! de tegel in mijn apps wordt omgeleid naar AHA! Aanmeldings-URL. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Zodra u AHA hebt geconfigureerd. u kunt sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

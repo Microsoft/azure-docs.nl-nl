@@ -1,17 +1,17 @@
 ---
-title: Key Vault veilig openen met Batch
+title: Certificaten en veilige toegang Azure Key Vault met batch gebruiken
 description: Meer informatie over hoe u via een programma toegang hebt tot uw referenties vanuit Key Vault met behulp van Azure Batch.
 ms.topic: how-to
 ms.date: 10/28/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b8b3d2655e79862c068aa48c29c7e89b7df85482
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: eaaeaa05caca7897eb649b56504b643038f08d53
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350684"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260126"
 ---
-# <a name="securely-access-key-vault-with-batch"></a>Key Vault veilig openen met Batch
+# <a name="use-certificates-and-securely-access-azure-key-vault-with-batch"></a>Certificaten en veilige toegang Azure Key Vault met batch gebruiken
 
 In dit artikel leert u hoe u batch knooppunten instelt op veilige toegang tot referenties die zijn opgeslagen in [Azure Key Vault](../key-vault/general/overview.md). Het is niet mogelijk om uw beheerders referenties in Key Vault in te stellen en vervolgens de referenties voor het verkrijgen van een vaste code voor toegang tot Key Vault vanuit een script. De oplossing is het gebruik van een certificaat dat uw batch knooppunten toegang geeft tot Key Vault.
 

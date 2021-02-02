@@ -5,15 +5,15 @@ services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.topic: include
-ms.date: 09/10/2020
+ms.date: 02/01/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 262783e83bdb846a3ea7e3015212c01048a00125
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
-ms.translationtype: HT
+ms.openlocfilehash: 45cc5120072f2a8c7742f79cfb79161042345505
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96152715"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427205"
 ---
 De volgende tabellen bevatten quota en limieten die specifiek zijn voor [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/). Zie [Prijzen voor Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/) voor prijsinformatie over Event Hubs.
 
@@ -30,7 +30,8 @@ De volgende limieten gelden in alle lagen.
 | Aantal niet-epoche ontvangers per consumentengroep |- |5 |
 | Aantal autorisatieregels per naamruimte | Volgende aanvragen voor het maken van een autorisatieregel worden geweigerd.|12 |
 | Aantal aanroepen van de methode GetRuntimeInformation |  - | 50 per seconde | 
-| Aantal virtuele netwerken (VNet) en IP-configuratieregels | - | 128 | 
+| Aantal virtuele netwerken (VNet) | - | 128 | 
+| Aantal IP-configuratie regels | - | 128 | 
 
 
 ### <a name="basic-vs-standard-tiers"></a>Basic- vs. Standard-lagen

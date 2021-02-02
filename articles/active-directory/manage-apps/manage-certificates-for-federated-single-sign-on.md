@@ -4,7 +4,7 @@ description: Meer informatie over het aanpassen van de verval datum voor uw Fede
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -15,12 +15,12 @@ ms.date: 04/04/2019
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87190e9a7aa3c3a26b77220dd0332d65c640bc2e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: d9b6e81fd090a625ec7ac86963cc9d5e66f5010e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658992"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259216"
 ---
 # <a name="manage-certificates-for-federated-single-sign-on-in-azure-active-directory"></a>Certificaten beheren voor federatieve eenmalige aanmelding in Azure Active Directory
 
@@ -30,7 +30,7 @@ Dit artikel is alleen relevant voor apps die zijn geconfigureerd voor het gebrui
 
 ## <a name="auto-generated-certificate-for-gallery-and-non-gallery-applications"></a>Automatisch gegenereerd certificaat voor galerie-en niet-galerie toepassingen
 
-Wanneer u een nieuwe toepassing uit de galerie toevoegt en een op SAML gebaseerde aanmelding configureert (door de SAML van **eenmalige aanmelding** te selecteren op  >  **SAML** de overzichts pagina van de toepassing), genereert Azure AD een certificaat voor de toepassing dat drie jaar geldig is. Als u het actieve certificaat wilt downloaden als een beveiligings certificaat bestand (**. CER**), gaat u terug naar die pagina (op **SAML gebaseerde aanmelding**) en selecteert u een download koppeling in de kop **SAML-handtekening certificaat** . U kunt kiezen tussen het onbewerkte (binaire) certificaat of het Base64-certificaat (basis 64-gecodeerd tekst). Voor galerie toepassingen kan deze sectie ook een koppeling weer geven om het certificaat te downloaden als XML voor federatieve meta gegevens (een **. XML** -bestand), afhankelijk van de vereiste van de toepassing.
+Wanneer u een nieuwe toepassing uit de galerie toevoegt en een op SAML gebaseerde aanmelding configureert (door de SAML van **eenmalige aanmelding** te selecteren op  >   de overzichts pagina van de toepassing), genereert Azure AD een certificaat voor de toepassing dat drie jaar geldig is. Als u het actieve certificaat wilt downloaden als een beveiligings certificaat bestand (**. CER**), gaat u terug naar die pagina (op **SAML gebaseerde aanmelding**) en selecteert u een download koppeling in de kop **SAML-handtekening certificaat** . U kunt kiezen tussen het onbewerkte (binaire) certificaat of het Base64-certificaat (basis 64-gecodeerd tekst). Voor galerie toepassingen kan deze sectie ook een koppeling weer geven om het certificaat te downloaden als XML voor federatieve meta gegevens (een **. XML** -bestand), afhankelijk van de vereiste van de toepassing.
 
 ![Download opties voor het SAML-actieve handtekening certificaat](./media/manage-certificates-for-federated-single-sign-on/active-certificate-download-options.png)
 

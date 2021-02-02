@@ -11,14 +11,14 @@ ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 07/20/2020
+ms.date: 02/01/2021
 ms.author: amverma
-ms.openlocfilehash: c0ec18ae4a7d6020299660adbeba6f993cd4eeca
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 767d6da7701261836b367ccad121bf3569b43b72
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966017"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260160"
 ---
 # <a name="infiniband-driver-extension-for-windows"></a>InfiniBand-stuur programma-uitbrei ding voor Windows
 
@@ -30,15 +30,15 @@ Er is ook een uitbrei ding beschikbaar om InfiniBand-Stuur Programma's voor [Lin
 
 ### <a name="operating-system"></a>Besturingssysteem
 
-Deze extensie ondersteunt de volgende OS distributies, afhankelijk van de ondersteuning van Stuur Programma's voor een specifieke versie van het besturings systeem.
+Deze extensie ondersteunt de volgende OS distributies, afhankelijk van de ondersteuning van Stuur Programma's voor een specifieke versie van het besturings systeem. Let op de juiste InfiniBand-NIC voor de VM-grootten van de H en N-serie.
 
-| Distributie | Versie |
+| Distributie | InfiniBand NIC-Stuur Programma's |
 |---|---|
-| Windows 10 | Kern |
-| Windows Server 2019 | Kern |
-| Windows Server 2016 | Kern |
-| Windows Server 2012 R2 | Kern |
-| Windows Server 2012 | Kern |
+| Windows 10 | CX5, CX6 |
+| Windows Server 2019 | CX5, CX6 |
+| Windows Server 2016 | CX3-Pro, CX5, CX6 |
+| Windows Server 2012 R2 | CX3-Pro, CX5, CX6 |
+| Windows Server 2012 | CX3-Pro, CX5, CX6 |
 
 ### <a name="internet-connectivity"></a>Internetconnectiviteit
 
@@ -72,7 +72,7 @@ In de volgende JSON wordt het schema voor de uitbrei ding weer gegeven.
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | publisher | Micro soft. HpcCompute | tekenreeks |
 | type | InfiniBandDriverWindows | tekenreeks |
 | typeHandlerVersion | 1.2 | int |

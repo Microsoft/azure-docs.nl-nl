@@ -4,7 +4,7 @@ description: Algemene problemen oplossen die zich voordoen bij het aanmelden bij
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -16,12 +16,12 @@ ms.date: 09/10/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57deed9d7fb178ba1cdc8d6e954d751752532de4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 79c8d6d072379853d6eca561d372f61dbb8acc8a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654402"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260008"
 ---
 # <a name="problems-signing-in-to-a-microsoft-application"></a>Problemen bij het aanmelden bij een micro soft-toepassing
 

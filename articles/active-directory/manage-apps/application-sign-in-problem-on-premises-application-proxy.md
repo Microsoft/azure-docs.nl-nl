@@ -4,7 +4,7 @@ description: Veelvoorkomende problemen oplossen die zich voordoen als u zich nie
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -15,12 +15,12 @@ ms.date: 05/21/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a73dea856ee3250eb040f8464ee8703b01003f1f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9a92ce03b4a8ad241a21b29bbff4e7367d656fab
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180554"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259991"
 ---
 # <a name="problems-signing-in-to-an-on-premises-application-using-the-azure-ad-application-proxy"></a>Problemen bij het aanmelden bij een on-premises toepassing met behulp van de Azure AD-toepassings proxy
 

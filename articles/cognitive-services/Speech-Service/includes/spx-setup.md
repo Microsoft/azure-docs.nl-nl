@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 68362b61aa0d919bd0e95f3cebb1cf1189f9f0f3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: d6ae9585ce5b5a6f666a96ae8c5e7e9e3c5e248a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99095175"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427403"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -29,14 +29,6 @@ Typ `spx` om Help weer te geven voor de Speech CLI.
 > [!NOTE]
 > Als alternatief voor NuGet kunt u het speech CLI [zip-archief](https://aka.ms/speech/spx-zips.zip)downloaden en uitpakken, uw platform in de Directory zoeken en uitpakken `spx-zips` en het `spx` pad toevoegen aan de variabele  van het systeempad.
 
-### <a name="run-the-speech-cli"></a>De Speech CLI uitvoeren
-
-1. Open de opdrachtprompt of PowerShell en ga naar de map waarin u de Speech CLI hebt uitgepakt.  
-2. Typ `spx` om Help-opdrachten voor de Speech CLI weer te geven.
-
-> [!NOTE]
-> De lokale map wordt niet door Powershell gecontroleerd tijdens het zoeken naar een opdracht. Wijzig in Powershell de map naar de locatie van `spx` en roep het hulpprogramma aan door `.\spx` in te voeren.
-> Als u deze map aan het pad, Powershell en de opdrachtprompt van Windows toevoegt, vindt u `spx` vanuit een willekeurige map, zonder het `.\`-voorvoegsel.
 
 ### <a name="font-limitations"></a>Lettertypebeperkingen
 

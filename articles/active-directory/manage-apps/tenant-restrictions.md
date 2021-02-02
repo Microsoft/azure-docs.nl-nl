@@ -3,7 +3,7 @@ title: Tenant beperkingen gebruiken voor het beheren van de toegang tot SaaS-app
 description: Tenant beperkingen gebruiken om te beheren welke gebruikers toegang hebben tot apps op basis van hun Azure AD-Tenant.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 10/26/2020
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d69755c36bf37dd591e81bea7983e25905798d4d
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: f605b2bb48855d70ea305dcda194b26da71ee9ec
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286206"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252471"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Tenant beperkingen gebruiken om de toegang tot SaaS-Cloud toepassingen te beheren
 
@@ -29,17 +29,17 @@ Met Tenant beperkingen kunnen organisaties de lijst met tenants opgeven waartoe 
 
 Dit artikel richt zich op de Tenant beperkingen voor Microsoft 365, maar de functie zou moeten werken met elke SaaS-Cloud-app die moderne verificatie protocollen met Azure AD gebruikt voor eenmalige aanmelding. Als u SaaS-apps gebruikt met een andere Azure AD-Tenant van de Tenant die wordt gebruikt door Microsoft 365, moet u ervoor zorgen dat alle vereiste tenants zijn toegestaan. Zie de [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureActiveDirectory)voor meer informatie over SaaS-Cloud-apps.
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
 De algemene oplossing bestaat uit de volgende onderdelen:
 
-1. **Azure AD** : als de `Restrict-Access-To-Tenants: <permitted tenant list>` header aanwezig is, verleent Azure AD alleen beveiligings tokens voor de toegestane tenants.
+1. **Azure AD**: als de `Restrict-Access-To-Tenants: <permitted tenant list>` header aanwezig is, verleent Azure AD alleen beveiligings tokens voor de toegestane tenants.
 
-2. **On-premises proxy server-infra structuur** : deze infra structuur is een proxy-apparaat dat kan Transport Layer Security (TLS)-inspectie. U moet de proxy configureren om de header met de lijst met toegestane tenants in te voegen in verkeer dat is bestemd voor Azure AD.
+2. **On-premises proxy server-infra structuur**: deze infra structuur is een proxy-apparaat dat kan Transport Layer Security (TLS)-inspectie. U moet de proxy configureren om de header met de lijst met toegestane tenants in te voegen in verkeer dat is bestemd voor Azure AD.
 
-3. **Client software** : ter ondersteuning van Tenant beperkingen, moet client software tokens rechtstreeks aanvragen bij Azure AD, zodat de proxy infrastructuur verkeer kan onderscheppen. Microsoft 365 toepassingen op basis van een browser ondersteunen momenteel Tenant beperkingen, zoals Office-clients die moderne authenticatie gebruiken (zoals OAuth 2,0).
+3. **Client software**: ter ondersteuning van Tenant beperkingen, moet client software tokens rechtstreeks aanvragen bij Azure AD, zodat de proxy infrastructuur verkeer kan onderscheppen. Microsoft 365 toepassingen op basis van een browser ondersteunen momenteel Tenant beperkingen, zoals Office-clients die moderne authenticatie gebruiken (zoals OAuth 2,0).
 
-4. **Moderne authenticatie** : Cloud Services moeten moderne verificatie gebruiken om Tenant beperkingen te gebruiken en de toegang tot alle niet-toegestane tenants te blok keren. U moet Microsoft 365 Cloud Services configureren om standaard moderne verificatie protocollen te gebruiken. Voor de meest recente informatie over Microsoft 365 ondersteuning voor moderne verificatie, lees de [bijgewerkte Office 365 moderne-verificatie](https://www.microsoft.com/en-us/microsoft-365/blog/2015/03/23/office-2013-modern-authentication-public-preview-announced/).
+4. **Moderne authenticatie**: Cloud Services moeten moderne verificatie gebruiken om Tenant beperkingen te gebruiken en de toegang tot alle niet-toegestane tenants te blok keren. U moet Microsoft 365 Cloud Services configureren om standaard moderne verificatie protocollen te gebruiken. Voor de meest recente informatie over Microsoft 365 ondersteuning voor moderne verificatie, lees de [bijgewerkte Office 365 moderne-verificatie](https://www.microsoft.com/en-us/microsoft-365/blog/2015/03/23/office-2013-modern-authentication-public-preview-announced/).
 
 In het volgende diagram ziet u de verkeers stroom op hoog niveau. Voor Tenant beperkingen is TLS-inspectie alleen vereist voor verkeer naar Azure AD, niet voor de Microsoft 365 Cloud Services. Dit onderscheid is belang rijk, omdat het verkeers volume voor verificatie bij Azure AD doorgaans veel lager is dan het verkeers volume voor SaaS-toepassingen, zoals Exchange Online en share point online.
 
@@ -65,7 +65,7 @@ De volgende configuratie is vereist om Tenant beperkingen via uw proxy-infra str
 
 - Azure AD Premium 1 licenties zijn vereist voor het gebruik van Tenant beperkingen. 
 
-#### <a name="configuration"></a>Configuration
+#### <a name="configuration"></a>Configuratie
 
 Plaats voor elke inkomende aanvraag voor login.microsoftonline.com, login.microsoft.com en login.windows.net twee HTTP-headers: *beperken tot tenants* en *beperkende toegang-context*.
 
@@ -118,7 +118,7 @@ De beheerder voor de Tenant die is opgegeven als de beperkte-toegangs context Te
 Net als bij andere rapporten in de Azure Portal, kunt u filters gebruiken om het bereik van uw rapport op te geven. U kunt filteren op een bepaald tijds interval, gebruiker, toepassing, client of status. Als u de knop **kolommen** selecteert, kunt u ervoor kiezen om gegevens weer te geven met een combi natie van de volgende velden:
 
 - **Gebruiker**
-- **App**
+- **Toepassing**
 - **Status**
 - **Datum**
 - **Datum (UTC)** (waarbij UTC Coordinated Universal Time)

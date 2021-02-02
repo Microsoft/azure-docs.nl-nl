@@ -7,14 +7,14 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
-ms.date: 01/25/2021
+ms.date: 02/01/2021
 tags: connectors
-ms.openlocfilehash: 93e705eea39443ffc15fbdd079e1376ec46cb51c
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: edf4ce188c9239e697e2148d4fff51966d91f85a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786687"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252607"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -528,6 +528,18 @@ Voor het configureren van een asynchroon patroon van een aanvraag/antwoord voor 
 Controleer de uitgebreide logboeken van de SAP-adapter voor volledige fout berichten. U kunt ook [een uitgebreid logboek bestand inschakelen voor de SAP-connector](#extended-sap-logging-in-on-premises-data-gateway).
 
 Voor on-premises gegevens gateway releases van juni 2020 en hoger kunt u [Gateway logboeken inschakelen in de app-instellingen](/data-integration/gateway/service-gateway-tshoot#collect-logs-from-the-on-premises-data-gateway-app). 
+
+* Het standaard logboek registratie niveau is **waarschuwing**.
+
+* Als u  **extra logboek registratie** inschakelt in de **Diagnostische** instellingen van de on-premises gegevens gateway-app, wordt het logboek registratie niveau uitgebreid naar **informatie**.
+
+* Als u het niveau van logboek registratie wilt **verhogen, werkt u de** volgende instelling in het configuratie bestand bij. Normaal gesp roken bevindt het configuratie bestand zich op `C:\Program Files\On-premises data gateway\Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config` .
+
+```json
+<setting name="SapTraceLevel" serializeAs="String">
+   <value>Verbose</value>
+</setting>
+```
 
 Voor on-premises gegevens gateway releases van 2020 april en eerder zijn Logboeken standaard uitgeschakeld.
 

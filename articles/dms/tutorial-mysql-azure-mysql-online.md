@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: ab03e0bdf7761e45a134ec90685955403fbc433b
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: 1d3ab2df51e80b44dce6057b02975fe210ebaa24
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060381"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254322"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Zelfstudie: MySQL online migreren naar Azure Database for MySQL met behulp van DMS
 
@@ -49,7 +49,7 @@ In deze zelfstudie leert u het volgende:
 
 Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
-* Download en installeer [MySQL-communityversie](https://dev.mysql.com/downloads/mysql/) 5.6 of 5.7. De on-premises MySQL-versie moet overeenkomen met de Azure Database for MySQL-versie. MySQL 5.6 kan bijvoorbeeld alleen migreren naar Azure Database for MySQL 5.6 en kan niet worden geüpgraded naar 5.7. Migraties naar of van MySQL 8.0 worden niet ondersteund. Migraties naar of van MySQL 8.0 worden niet ondersteund.
+* Download en installeer [MySQL-communityversie](https://dev.mysql.com/downloads/mysql/) 5.6 of 5.7. De on-premises MySQL-versie moet overeenkomen met de Azure Database for MySQL-versie. MySQL 5.6 kan bijvoorbeeld alleen migreren naar Azure Database for MySQL 5.6 en kan niet worden geüpgraded naar 5.7. Migraties naar of van MySQL 8.0 worden niet ondersteund.
 * [Maak een exemplaar in Azure Database for MySQL](../mysql/quickstart-create-mysql-server-database-using-azure-portal.md). Raadpleeg het artikel [MySQL Workbench gebruiken om verbinding te maken en gegevens op te vragen](../mysql/connect-workbench.md) voor informatie over hoe u een database verbindt en maakt met behulp van de Azure-portal.  
 * Maak een Microsoft Azure Virtual Network voor Azure Database Migration Service met behulp van het Azure Resource Manager-implementatiemodel. Dit biedt site-naar-site-connectiviteit met uw on-premises bronservers met behulp van [ExpressRoute](../expressroute/expressroute-introduction.md) of [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). Voor meer informatie over het maken van een virtueel netwerk raadpleegt u de [Documentatie over virtuele netwerken](../virtual-network/index.yml) en dan met name de quickstart-artikelen met stapsgewijze informatie.
 
@@ -62,8 +62,8 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
     >
     > Deze configuratie is noodzakelijk omdat Azure Database Migration Service geen internetverbinding biedt.
 
-* Zorg ervoor dat de regels voor netwerkbeveiligingsgroep van uw virtueel netwerk niet de volgende poorten voor inkomende communicatie naar Azure Database Migration Service blokkeren: 443, 53, 9354, 445, 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
-* Configureer uw [Windows Firewall voor toegang tot de database-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
+* Zorg ervoor dat de regels voor netwerkbeveiligingsgroep van uw virtueel netwerk niet de volgende poorten voor uitgaande communicatie naar Azure Database Migration Service blokkeren: 443, 53, 9354, 445, 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
+* Configureer uw [Windows Firewall voor toegang tot de database-engine](https://docs.microsoft.com/azure/mysql/concepts-firewall-rules).
 * Stel de Windows-firewall open voor toegang van Azure Database Migration Service tot de brondatabase van MySQL. Standaard is dit TCP-poort 3306.
 * Wanneer u een firewallapparaat gebruikt voor de brondatabase(s), moet u mogelijk firewallregels toevoegen om voor Azure Database Migration Service toegang tot de brondatabase(s) voor de migratie toe te staan.
 * Maak een [firewallregel](../azure-sql/database/firewall-configure.md) op serverniveau voor Azure Database for MySQL om Azure Database Migration Service toegang te bieden tot de doeldatabases. Geef het subnetbereik van het virtuele netwerk op dat wordt gebruikt voor Azure Database Migration Service.

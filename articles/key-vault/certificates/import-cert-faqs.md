@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: d7d34b61e584b63c517b6c0f8af4cb4adcc7fefe
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: e75786c42b54882c249b5ed7100ebd12f3f78e78
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289508"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254356"
 ---
 # <a name="importing-azure-key-vault-certificates-faq"></a>Veelgestelde vragen over het importeren van Azure Key Vault certificaten
 
@@ -47,7 +47,7 @@ Als u een meer beschrijvende fout wilt weer geven, importeert u het certificaat 
 
 ### <a name="how-can-i-resolve-error-type-access-denied-or-user-is-unauthorized-to-import-certificate"></a>Hoe kan ik ' fout type: toegang geweigerd of gebruiker is niet gemachtigd om certificaat te importeren ' oplossen '?
     
-Voor de import bewerking moet u de gebruikers machtigingen verlenen om het certificaat te importeren onder het toegangs beleid. Als u dit wilt doen, gaat u naar de sleutel kluis **, selecteert u toegangs beleid** toegangs  >  **beleid toevoegen**  >  **Selecteer certificaat machtigingen**  >  **Principal** , zoek naar de gebruiker en voeg het e-mail adres van de gebruiker toe. 
+Voor de import bewerking moet u de gebruikers machtigingen verlenen om het certificaat te importeren onder het toegangs beleid. Als u dit wilt doen, gaat u naar de sleutel kluis **, selecteert u toegangs beleid** toegangs  >  **beleid toevoegen**  >  **Selecteer certificaat machtigingen**  >  **Principal**, zoek naar de gebruiker en voeg het e-mail adres van de gebruiker toe. 
 
 Zie [over Azure Key Vault certificaten](./about-certificates.md#certificate-access-control)voor meer informatie over toegangs beleid voor certificaten.
 
@@ -62,6 +62,10 @@ Zie voor meer informatie een [Verwijderde certificaat bewerking ophalen](/rest/a
 Deze fout kan een van de volgende twee oorzaken hebben:    
 * De onderwerpnaam van het certificaat is beperkt tot 200 tekens.
 * Het certificaat wachtwoord is beperkt tot 200 tekens.
+
+
+### <a name="error-the-specified-pem-x509-certificate-content-is-in-an-unexpected-format-please-check-if-certificate-is-in-valid-pem-format"></a>Fout: de opgegeven PEM X. 509-certificaat inhoud heeft een onverwachte indeling. Controleer of het certificaat een geldige PEM-indeling heeft.
+Controleer of de inhoud van het PEM-bestand UNIX-Style-scheidings tekens gebruikt `(\n)`
 
 ### <a name="can-i-import-an-expired-certificate-to-azure-key-vault"></a>Kan ik een verlopen certificaat importeren naar Azure Key Vault?
     

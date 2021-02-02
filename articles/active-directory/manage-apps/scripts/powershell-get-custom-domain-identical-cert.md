@@ -3,7 +3,7 @@ title: 'PowerShell-voorbeeld: toepassingsproxy-apps met identieke certificaten'
 description: PowerShell-voorbeeld waarin alle Azure Active Directory (Azure AD)-toepassingsproxytoepassingen worden vermeld die met een identiek certificaat worden gepubliceerd.
 services: active-directory
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 0debc48a5509d4c9e3b2b36642c86cd1f0da3ac4
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: c3ad764745b28e3523eee557cb0cd4e24101e4b8
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861559"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99253795"
 ---
 # <a name="get-all-azure-ad-proxy-application-apps-that-are-published-with-the-identical-certificate"></a>Alle Azure AD-toepassingsproxytoepassing ophalen die met een identiek certificaat worden gepubliceerd
 

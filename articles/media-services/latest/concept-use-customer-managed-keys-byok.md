@@ -5,13 +5,13 @@ author: IngridAtMicrosoft
 ms.author: inhenkel
 ms.service: media-services
 ms.topic: conceptual
-ms.date: 10/14/2020
-ms.openlocfilehash: c11bb0e369075c3024824d65290e8aecfa68e6f4
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.date: 1/28/2020
+ms.openlocfilehash: 7e58daf72522071eb7d0031d4ea236a21c6d8bfb
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956137"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252318"
 ---
 # <a name="bring-your-own-key-customer-managed-keys-with-media-services"></a>Uw eigen sleutel (door de klant beheerde sleutels) meenemen met Media Services
 
@@ -36,6 +36,12 @@ U kunt een sleutel naam en sleutel versie opgeven, of alleen een sleutel naam. W
 
 > [!WARNING]
 > Media Services controleert de toegang tot de sleutel van de klant. Als de klant sleutel ontoegankelijk wordt (bijvoorbeeld omdat de sleutel is verwijderd of de Key Vault is verwijderd of de toegangs machtiging is verwijderd), wordt het account door Media Services overgezet naar de status van de klant sleutel die niet toegankelijk is (effectief uitschakelen van het account). Het account kan echter in deze status worden verwijderd. De enige ondersteunde bewerkingen zijn account GET, LIST en DELETE; alle andere aanvragen (code ring, streaming, enzovoort) zullen mislukken totdat de toegang tot de account sleutel is hersteld.
+
+## <a name="double-encryption"></a>Dubbele versleuteling
+
+Media Services ondersteunt dubbele versleuteling.  Zie voor meer informatie over dubbele versleuteling [Azure Double Encryption](../../security/fundamentals/double-encryption.md)(Engelstalig).
+
+Dubbele versleuteling wordt automatisch ingeschakeld voor het Media Services-account. U moet de door de klant beheerde sleutel en dubbele versleuteling echter afzonderlijk configureren voor uw opslag account.
 
 ## <a name="tutorials"></a>Zelfstudies
 

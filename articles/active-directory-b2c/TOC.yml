@@ -478,6 +478,18 @@
       href: page-layout.md
     - name: Regionale beschikbaarheid en opslaglocaties
       href: data-residency.md
+    - name: Bouwen voor tolerantie
+      items:
+        - name: Azure AD B2C-inleiding tot tolerantie
+          href: ../active-directory/fundamentals/resilience-b2c.md?bc=%2fazure%2factive-directory-b2c%2fbread%2ftoc.json&toc=%2fazure%2factive-directory-b2c%2fTOC.json
+        - name: Ervaring voor de eindgebruiker
+          href: ../active-directory/fundamentals/resilient-end-user-experience.md?bc=%2fazure%2factive-directory-b2c%2fbread%2ftoc.json&toc=%2fazure%2factive-directory-b2c%2fTOC.json
+        - name: Interfaces met externe processen
+          href: ../active-directory/fundamentals/resilient-external-processes.md?bc=%2fazure%2factive-directory-b2c%2fbread%2ftoc.json&toc=%2fazure%2factive-directory-b2c%2fTOC.json
+        - name: Best practices voor Azure AD B2C-ontwikkelaars
+          href: ../active-directory/fundamentals/resilience-b2c-developer-best-practices.md?bc=%2fazure%2factive-directory-b2c%2fbread%2ftoc.json&toc=%2fazure%2factive-directory-b2c%2fTOC.json
+        - name: Bewaking en analytische gegevens
+          href: ../active-directory/fundamentals/resilience-with-monitoring-alerting.md?bc=%2fazure%2factive-directory-b2c%2fbread%2ftoc.json&toc=%2fazure%2factive-directory-b2c%2fTOC.json
     - name: Beveiligingsbeheer
       href: threat-management.md
       displayName: security

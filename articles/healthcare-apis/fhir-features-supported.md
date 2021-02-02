@@ -6,14 +6,14 @@ author: caitlinv39
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
-ms.date: 1/21/2021
+ms.date: 1/30/2021
 ms.author: cavoeg
-ms.openlocfilehash: 28c01e99c0e8708750341b445b4a31f6eaeab3ce
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 0ee32d37ca8e3a32ba603fd84cee81890ddac98b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747522"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252114"
 ---
 # <a name="features"></a>Functies
 
@@ -41,8 +41,8 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 | maken                         | Ja       | Ja       | Ja       | Ondersteuning voor zowel POST/PUT                               |
 | maken (voorwaardelijk)           | Ja       | Ja       | Ja       | Probleem [#1382](https://github.com/microsoft/fhir-server/issues/1382) |
 | zoeken                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Zie hieronder                                           |
-| geketende zoek opdracht                 | Nee        | Ja       | Nee        |                                           |
-| geketende zoek opdracht omkeren         | Nee        | Nee        | Nee        |                                            |
+| geketende zoek opdracht                 | Nee        | Ja       | Nee        |                                                     |
+| geketende zoek opdracht omkeren         | Nee        | Ja       | Nee        |                                                     |
 | mogelijkheden                   | Ja       | Ja       | Ja       |                                                     |
 | batch                          | Ja       | Ja       | Ja       |                                                     |
 | trans actie                    | Nee        | Ja       | Nee        |                                                     |
@@ -59,7 +59,7 @@ Alle typen zoek parameters worden ondersteund.
 | Datum/datum/tijd         | Ja       | Ja       | Ja       |         |
 | Tekenreeks                | Ja       | Ja       | Ja       |         |
 | Token                 | Ja       | Ja       | Ja       |         |
-| Verwijzing             | Ja       | Ja       | Ja       |         |
+| Referentie             | Ja       | Ja       | Ja       |         |
 | Composite             | Ja       | Ja       | Ja       |         |
 | Aantal              | Ja       | Ja       | Ja       |         |
 | URI                   | Ja       | Ja       | Ja       |         |
@@ -72,39 +72,39 @@ Alle typen zoek parameters worden ondersteund.
 |`:exact`               | Ja       | Ja       | Ja       |         |
 |`:contains`            | Ja       | Ja       | Ja       |         |
 |`:text`                | Ja       | Ja       | Ja       |         |
+|`:[type]` referentielaag  | Ja       | Ja       | Ja       |         |
+|`:not`                 | Ja       | Ja       | Ja       |         |
+|`:below` URI         | Ja       | Ja       | Ja       |         |
+|`:above` URI         | Nee        | Nee        | Nee        | Probleem [#158](https://github.com/Microsoft/fhir-server/issues/158) |
 |`:in` token          | Nee        | Nee        | Nee        |         |
 |`:below` token       | Nee        | Nee        | Nee        |         |
 |`:above` token       | Nee        | Nee        | Nee        |         |
 |`:not-in` token      | Nee        | Nee        | Nee        |         |
-|`:[type]` referentielaag  | Nee        | Nee        | Nee        |         |
-|`:below` URI         | Ja       | Ja       | Ja       |         |
-|`:not`                 | Nee        | Nee        | Nee        |         |
-|`:above` URI         | Nee        | Nee        | Nee        | Probleem [#158](https://github.com/Microsoft/fhir-server/issues/158) |
 
 | Algemene zoek parameter | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
 |-------------------------| ----------| ----------| ----------|---------|
 | `_id`                   | Ja       | Ja       | Ja       |         |
 | `_lastUpdated`          | Ja       | Ja       | Ja       |         |
 | `_tag`                  | Ja       | Ja       | Ja       |         |
-| `_profile`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Alleen ondersteund in STU3, geen ondersteuning in R4 |
+| `_list`                 | Ja       | Ja       | Ja       |         |
+| `_type`                 | Ja       | Ja       | Ja       | Probleem [#1562](https://github.com/microsoft/fhir-server/issues/1562)        |
 | `_security`             | Ja       | Ja       | Ja       |         |
+| `_profile`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | Alleen ondersteund in STU3, geen ondersteuning in R4 |
 | `_text`                 | Nee        | Nee        | Nee        |         |
 | `_content`              | Nee        | Nee        | Nee        |         |
-| `_list`                 | Ja       | Ja       | Ja       |         |
 | `_has`                  | Nee        | Nee        | Nee        |         |
-| `_type`                 | Ja       | Ja       | Ja       |         |
 | `_query`                | Nee        | Nee        | Nee        |         |
 | `_filter`               | Nee        | Nee        | Nee        |         |
 
 | Zoek resultaat parameters | Ondersteund-PaaS | Ondersteund-OSS (SQL) | Ondersteund-OSS (Cosmos DB) | Opmerking |
 |-------------------------|-----------|-----------|-----------|---------|
-| `_sort`                 | Gedeeltelijk        | Gedeeltelijk   | Gedeeltelijk        |   `_sort=_lastUpdated` wordt ondersteund       |
+| `_elements`             | Ja       | Ja       | Ja       | Probleem [#1256](https://github.com/microsoft/fhir-server/issues/1256)        |
 | `_count`                | Ja       | Ja       | Ja       | `_count` is beperkt tot 100 tekens. Als deze waarde hoger is dan 100, wordt alleen 100 geretourneerd en wordt er een waarschuwing in de bundel geretourneerd. |
 | `_include`              | Ja       | Ja       | Ja       |Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB omvat niet: ITER-ondersteuning.|
-| `_revinclude`           | Ja       | Ja       | Ja       | Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB omvat niet: ITER-ondersteuning.|
+| `_revinclude`           | Ja       | Ja       | Ja       | Opgenomen items zijn beperkt tot 100. Include op PaaS en OSS on Cosmos DB [omvat niet: ITER-ondersteuning](https://github.com/microsoft/fhir-server/issues/1313). Probleem [#1319](https://github.com/microsoft/fhir-server/issues/1319)|
 | `_summary`              | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `_summary=count` wordt ondersteund |
-| `_total`                | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | _total = niet en _total = nauw keurig      |
-| `_elements`             | Ja       | Ja       | Ja       |         |
+| `_total`                | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `_total=none` en `_total=accurate`      |
+| `_sort`                 | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   |   `_sort=_lastUpdated` wordt ondersteund       |
 | `_contained`            | Nee        | Nee        | Nee        |         |
 | `containedType`         | Nee        | Nee        | Nee        |         |
 | `_score`                | Nee        | Nee        | Nee        |         |

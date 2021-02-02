@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 9b2fc61054c40f52f7e638117109ec556cc63a78
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: de6c7e47af3019d034d457f43334aad1aeafabdc
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678454"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254271"
 ---
 # <a name="troubleshooting-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Problemen met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics oplossen
 
@@ -76,6 +76,7 @@ In dit artikel vindt u veelvoorkomende problemen met de probleem oplossing in de
 | Niet-ondersteunde SQL Database gegevens typen   | Zie [niet-ondersteunde gegevens typen](sql-data-warehouse-tables-data-types.md#identify-unsupported-data-types).        |
 | Beperkingen voor opgeslagen procedures          | Zie [beperkingen van opgeslagen](sql-data-warehouse-develop-stored-procedures.md#limitations) procedures voor een overzicht van de beperkingen van opgeslagen procedure. |
 | Udf's bieden geen ondersteuning voor SELECT-instructies | Dit is een huidige beperking van onze Udf's.  Zie [Create function](/sql/t-sql/statements/create-function-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor de syntaxis die we ondersteunen. |
+| sp_rename (preview) voor kolommen werkt niet voor schema's buiten *dbo* | Dit is een huidige beperking van Synapse [sp_rename (preview) voor kolommen](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  Kolommen in objecten die geen deel uitmaken van het *dbo* -schema, kunnen de naam van een CTAS wijzigen in een nieuwe tabel. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

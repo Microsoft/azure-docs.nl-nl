@@ -4,7 +4,7 @@ description: Bestrijkt de basis beginselen van Azure AD-toepassingsproxy-connect
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 155a91ded6c814e2d868e8edd4572459460d006f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ebef93455414c114fb60df9af8ebc629769a33e6
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88642058"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254425"
 ---
 # <a name="set-a-custom-home-page-for-published-apps-by-using-azure-ad-application-proxy"></a>Een aangepaste start pagina instellen voor gepubliceerde apps met behulp van Azure AD-toepassingsproxy
 
@@ -56,9 +56,9 @@ U kunt de URL van de start pagina instellen via de Azure Portal of met behulp va
 Als u de URL van de start pagina van uw app wilt wijzigen via de Azure AD-Portal, voert u de volgende stappen uit:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) als beheerder.
-1. Selecteer **Azure Active Directory**en klik vervolgens **app-registraties**. De lijst met geregistreerde apps wordt weer gegeven.
+1. Selecteer **Azure Active Directory** en klik vervolgens **app-registraties**. De lijst met geregistreerde apps wordt weer gegeven.
 1. Kies uw app in de lijst. Er wordt een pagina weer gegeven met de details van de geregistreerde app.
-1. Selecteer onder **beheren**de optie **huis stijl**.
+1. Selecteer onder **beheren** de optie **huis stijl**.
 1. Werk de **URL van de start pagina**  bij met het nieuwe pad.
 
    ![Huisstijl pagina voor een geregistreerde app waarin het URL-veld van de start pagina wordt weer gegeven](media/application-proxy-configure-custom-home-page/app-proxy-app-branding.png)
@@ -75,7 +75,7 @@ Als u de start pagina van een app wilt configureren met behulp van Power shell, 
 
 ### <a name="install-the-azure-ad-powershell-module"></a>De Azure AD Power shell-module installeren
 
-Installeer de Azure AD Power shell-module voordat u een aangepaste URL voor de start pagina definieert met behulp van Power shell.U kunt het pakket downloaden via de [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureAD/2.0.2.16), dat gebruikmaakt van het Graph API-eind punt.
+Installeer de Azure AD Power shell-module voordat u een aangepaste URL voor de start pagina definieert met behulp van Power shell. U kunt het pakket downloaden via de [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureAD/2.0.2.16), dat gebruikmaakt van het Graph API-eind punt.
 
 Voer de volgende stappen uit om het pakket te installeren:
 
@@ -115,8 +115,8 @@ U krijgt de ObjectId van de app door te zoeken naar de app op de weer gegeven na
 
    ```console
    DisplayName : SharePoint
-   Homepage    : https://sharepoint-iddemo.msappproxy.net/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   Homepage    : https://sharepoint-iddemo.msappproxy.net/
+   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
    ```
 
    U kunt ook gewoon de lijst met alle apps ophalen, in de lijst zoeken naar de app met een specifieke weergave naam of start pagina en de ObjectId van de app kopiëren nadat de app is gevonden.
@@ -169,8 +169,8 @@ Maak de URL van de start pagina en werk uw app bij met die waarde. Ga verder met
 
    ```console
    DisplayName : SharePoint
-   Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
-   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
+   Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
+   ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
    ```
 
 1. Start de app opnieuw om te bevestigen dat de start pagina als eerste scherm wordt weer gegeven, zoals verwacht.

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 04/11/2020
-ms.openlocfilehash: 6b9822e16a9c5604371bd4c8c1e136ce78f29820
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 320eaaf9e80fcbfc65aa311c983ecbc9beb31cd7
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000773"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254203"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-portal"></a>Zelfstudie: PostgreSQL online migreren naar Azure DB for PostgreSQL met behulp van DMS en de Azure-portal
 
@@ -59,11 +59,11 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
     >
     > Deze configuratie is noodzakelijk omdat Azure Database Migration Service geen internetverbinding biedt.
 
-* Zorg ervoor dat de regels voor netwerkbeveiligingsgroepen voor uw virtuele netwerk niet de volgende poorten voor inkomende communicatie naar Azure Database Migration Service blokkeren: 443, 53, 9354, 445, 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
-* Configureer uw [Windows Firewall voor toegang tot de database-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
+* Zorg ervoor dat de NSG-regels (netwerk beveiligings groep) voor uw virtuele netwerk de volgende uitgaande communicatie poorten niet blok keren tot Azure Database Migration Service: 443, 53, 9354, 445, 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
+* Configureer uw [Windows Firewall voor toegang tot de database-engine](https://docs.microsoft.com/azure/postgresql/concepts-firewall-rules).
 * Stel uw Windows-firewall open voor toegang van Azure Database Migration Service tot de oorspronkelijke PostgreSQL Server. Standaard verloopt dit via TCP-poort 5432.
 * Wanneer u een firewallapparaat gebruikt voor de brondatabase(s), moet u mogelijk firewallregels toevoegen om voor de Azure Database Migration Service toegang tot de brondatabase(s) voor de migratie toe te staan.
-* Maak een [firewallregel](../azure-sql/database/firewall-configure.md) op serverniveau voor Azure Database for PostgreSQL om Azure Database Migration Service toegang te bieden tot de doeldatabases. Geef het subnetbereik van het virtuele netwerk op dat wordt gebruikt voor Azure Database Migration Service.
+* Maak een [firewallregel](https://docs.microsoft.com/azure/postgresql/concepts-firewall-rules) op serverniveau voor Azure Database for PostgreSQL om Azure Database Migration Service toegang te bieden tot de doeldatabases. Geef het subnetbereik van het virtuele netwerk op dat wordt gebruikt voor Azure Database Migration Service.
 * Schakel logische replicatie in het bestand postgresql.config in en stel de volgende parameters in:
 
   * wal_level = **logical**

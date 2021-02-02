@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een AKS-cluster (private Azure K
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 66072032b3fd1ac33bef60922c62f73a8cfb11bd
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 56d3b36d17ee044ce7aba2337429c45123801ca5
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734661"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254509"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
 
@@ -130,7 +130,6 @@ Zoals gezegd, is peering in virtuele netwerken een manier om toegang te krijgen 
 * Voor klanten die Azure Container Registry kunnen gebruiken met persoonlijke AKS, moet het virtuele netwerk Container Registry worden gekoppeld aan het virtuele netwerk van het agent cluster.
 * Geen ondersteuning voor het converteren van bestaande AKS-clusters naar particuliere clusters
 * Als u het persoonlijke eind punt in het subnet van de klant verwijdert of wijzigt, werkt het cluster niet meer. 
-* Azure Monitor voor containers Live-gegevens wordt momenteel niet ondersteund.
 * Nadat klanten de A-record op hun eigen DNS-servers hebben bijgewerkt, zullen die peulen nog steeds apiserver FQDN omzetten naar het oudere IP-adres na de migratie tot ze opnieuw zijn opgestart. Klanten moeten hostNetwork peul en standaard-DNSPolicy peul opnieuw opstarten na de migratie van het controle vlak.
 * In het geval van onderhoud op het besturings vlak kan uw [AKS-IP](./limit-egress-traffic.md) worden gewijzigd. In dit geval moet u de A-record die verwijst naar het privé-IP-adres van de API-server op uw aangepaste DNS-server bijwerken en aangepaste peulen of implementaties opnieuw starten met behulp van hostNetwork.
 

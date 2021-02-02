@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 07/07/2020
 ms.author: allensu
-ms.openlocfilehash: 8887474f07928462afe7863ffe2b3667ece536dc
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: e5efbf695b85f474e5d7c84c86809acb2f5a1035
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575296"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429599"
 ---
 # <a name="backend-pool-management"></a>Beheer van back-endpools
 De back-endpool is een essentieel onderdeel van de load balancer. Met de back-endpool wordt de groep resources gedefinieerd die het verkeer verwerken voor een bepaalde taakverdelingsregel.
@@ -25,6 +25,8 @@ Er zijn twee manieren om een back-endpool te configureren:
 Configureer uw back-endpool met NIC wanneer u gebruikmaakt van bestaande virtuele machines en virtuele-machineschaalsets. Met deze methode bouwt u de meest directe koppeling tussen uw resource en de back-endpool. 
 
 Wanneer u uw back-endpool vooraf wilt toewijzen met een IP-adresbereik waarvoor u later virtuele machines en virtuele-machineschaalsets wilt maken, moet u uw back-endpool configureren met een combinatie van IP-adres en VNET-id.
+
+U kunt op IP gebaseerde en op NIC gebaseerde back-endservers configureren voor dezelfde load balancer u kunt echter geen enkele back-end-groep maken die is gericht op NIC-en IP-adressen in dezelfde groep.
 
 De configuratiesecties in dit artikel zijn gericht op:
 

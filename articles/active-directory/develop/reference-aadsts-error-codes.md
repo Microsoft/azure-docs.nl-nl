@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/09/2020
+ms.date: 02/01/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: fa6fc11441811589967ddd7728501b521f9f9155
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b948de6ad9e07a650df98ef38104c02462ab532d
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169270"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428028"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -60,7 +60,7 @@ Hier volgt een voor beeld van een fout bericht:
 
 Het `error` veld heeft verschillende mogelijke waarden: Controleer de koppelingen van de protocol documentatie en de OAuth 2,0-specificaties voor meer informatie over specifieke fouten (bijvoorbeeld `authorization_pending` in de [code stroom](v2-oauth2-device-code.md)van het apparaat) en hoe u deze kunt reageren.  Hier vindt u enkele veelvoorkomende items:
 
-| Foutcode         | Description        | Client actie    |
+| Foutcode         | Beschrijving        | Client actie    |
 |--------------------|--------------------|------------------|
 | `invalid_request`  | Protocol fout, zoals een ontbrekende vereiste para meter. | Corrigeer en verzend de aanvraag opnieuw.|
 | `invalid_grant`    | Sommige van de verificatie materiaal (auth-code, vernieuwings token, toegangs token, PKCE Challenge) is ongeldig, niet-geparseerd, ontbreekt of anderszins onbruikbaar | Probeer een nieuwe aanvraag naar het `/authorize` eind punt uit om een nieuwe autorisatie code op te halen.  Overweeg het gebruik van de protocollen te controleren en te valideren. |
@@ -95,6 +95,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS50000 | TokenIssuanceError: er is een probleem met de aanmeldings service. [Open een ondersteuningsticket](../fundamentals/active-directory-troubleshooting-support-howto.md) om dit probleem op te lossen. |
 | AADSTS50001 | InvalidResource: de resource is uitgeschakeld of bestaat niet. Controleer de code van de app om te controleren of u de exacte resource-URL hebt opgegeven voor de resource die u wilt openen.  |
 | AADSTS50002 | NotAllowedTenant-aanmelden is mislukt vanwege een beperkte proxy toegang op de Tenant. Als het uw eigen tenantbeleid is, kunt u de instellingen voor de beperkte tenant wijzigen om dit probleem op te lossen. |
+| AADSTS500021 | De toegang tot de Tenant {Tenant} is geweigerd. AADSTS500021 geeft aan dat de functie voor Tenant beperking is geconfigureerd en dat de gebruiker toegang probeert te krijgen tot een Tenant die niet voor komt in de lijst met toegestane tenants die in de header is opgegeven `Restrict-Access-To-Tenant` . Zie [Tenant beperkingen gebruiken voor het beheren van toegang tot SaaS-Cloud toepassingen](/azure/active-directory/manage-apps/tenant-restrictions)voor meer informatie.|
 | AADSTS50003 | MissingSigningKey-aanmelden is mislukt vanwege een ontbrekende handtekening sleutel of certificaat. Dit kan zijn omdat er geen handtekening sleutel is geconfigureerd in de app. Bekijk de oplossingen die worden beschreven op [.. /Manage-apps/Application-Sign-in-problem-Federated-SSO-Gallery.MD # certificaat-of-sleutel-niet geconfigureerd](../manage-apps/application-sign-in-problem-federated-sso-gallery.md#certificate-or-key-not-configured). Als u nog steeds problemen ziet, neemt u contact op met de eigenaar van de app of een app-beheerder. |
 | AADSTS50005 | DevicePolicyError: gebruiker heeft geprobeerd zich aan te melden bij een apparaat vanaf een platform dat momenteel niet wordt ondersteund via het beleid voor voorwaardelijke toegang. |
 | AADSTS50006 | InvalidSignature-handtekening verificatie is mislukt vanwege een ongeldige hand tekening. |

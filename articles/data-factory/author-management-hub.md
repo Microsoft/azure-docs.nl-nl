@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.date: 06/02/2020
-ms.openlocfilehash: aa1246a65dc6971107abe35f4a418b0bbb05641b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 02/01/2021
+ms.openlocfilehash: c3366b7ba0eb0b49d4d5b89481b7bed843e52c8e
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486127"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428991"
 ---
 # <a name="management-hub-in-azure-data-factory"></a>Beheer hub in Azure Data Factory
 
@@ -34,13 +34,17 @@ Gekoppelde services definiëren de verbindings gegevens voor Azure Data Factory 
 
 Een Integration runtime is een reken infrastructuur die wordt gebruikt door Azure Data Factory om mogelijkheden voor gegevens integratie in verschillende netwerk omgevingen te bieden. Meer informatie vindt u in [concepten over Integration runtime](concepts-integration-runtime.md). In de Management hub kunt u integratie-Runtimes maken, verwijderen en bewaken.
 
-![Integration Runtimes beheren](media/author-management-hub/management-hub-integration-runtime.png)
+![Integratieruntime beheren](media/author-management-hub/management-hub-integration-runtime.png)
 
 ## <a name="manage-source-control"></a>Broncode beheer beheren
 
 ### <a name="git-configuration"></a>Git-configuratie
 
-Bekijk en bewerk uw geconfigureerde Git-opslagplaats instellingen in de Management hub. Meer informatie over [broncode beheer vindt u in azure Data Factory](source-control.md).
+U kunt alle informatie over git weer geven/bewerken onder de configuratie-instellingen voor git in de Management hub. 
+
+Informatie over de laatste gepubliceerde door Voer wordt ook weer gegeven en kan helpen om inzicht te krijgen in de precieze door voering, die voor het laatst is gepubliceerd/geïmplementeerd in omgevingen. Het kan ook handig zijn bij het uitvoeren van hotfixes tijdens de productie.
+
+Meer informatie over [broncode beheer vindt u in azure Data Factory](source-control.md).
 
 ![Git-opslag plaats beheren](media/author-management-hub/management-hub-git.png)
 

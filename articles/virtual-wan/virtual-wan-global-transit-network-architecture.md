@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: cherylmc
-ms.openlocfilehash: 59e60dadda7c0de37cfabadbc36ca53bc3c2b336
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: cfb75b6383d8ca449b4bc54b9d21cb16b3a4ad40
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563729"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428180"
 ---
 # <a name="global-transit-network-architecture-and-virtual-wan"></a>Wereld wijde doorvoer netwerk architectuur en virtueel WAN
 
@@ -133,9 +133,6 @@ De virtuele WAN-hubs van Azure verdeelen alle netwerk eindpunten via het hybride
 
 **Afbeelding 5: beveiligde virtuele hub met Azure Firewall**
 
-> [!NOTE]
-> Inter-hub met firewall wordt momenteel niet ondersteund. Verkeer tussen hubs gaat direct over op de Azure Firewall in elke hub.
-
 Azure Firewall naar het virtuele WAN ondersteunt de volgende globale beveiligde doorvoer paden voor verbindingen. De letters tussen haakjes worden toegewezen aan afbeelding 5.
 
 * Beveiligde door Voer van VNet-naar-VNet (e)
@@ -152,6 +149,23 @@ Met VNet-naar-Internet kan VNets verbinding maken met Internet via de Azure Fire
 
 ### <a name="branch-to-internet-or-third-party-security-service-j"></a>Branch-to-Internet of een beveiligings service van derden (j)
 Via de vertakking-naar-Internet kunnen filialen verbinding maken met Internet via de Azure Firewall in de virtuele WAN-hub. Verkeer naar Internet via ondersteunde beveiligings services van derden stroomt niet via de Azure Firewall. U kunt het pad van de filiaal naar het Internet configureren via de ondersteunde beveiligings service van derden met behulp van Azure Firewall Manager. 
+
+### <a name="branch-to-branch-secured-transit-cross-region-f"></a>Door de filiaal beveiligde Transit cross-Region (f)
+
+Vertakkingen kunnen worden verbonden met een beveiligde virtuele hub met Azure Firewall met behulp van ExpressRoute-circuits en/of site-naar-site-VPN-verbindingen. U kunt de vertakkingen verbinden met de virtuele WAN-hub in de regio die het dichtst bij de vertakking ligt.
+
+Met deze optie kunnen bedrijven gebruikmaken van de Azure-backbone om vertakkingen te verbinden. Hoewel deze mogelijkheid echter beschikbaar is, moet u de voor delen van het verbinden van branches via Azure Virtual WAN, vergeleken met een particulier WAN, afwegen.  
+
+> [!NOTE]
+> Verwerking tussen de hub van verkeer via de firewall wordt momenteel niet ondersteund. Verkeer tussen hubs wordt doorgestuurd naar de juiste vertakking in de beveiligde virtuele hub, maar de Azure Firewall in elke hub worden omzeild.
+
+### <a name="branch-to-vnet-secured-transit-g"></a>Door Voer beveiligd door VNet (g)
+
+Met de voor het beveiligd door VNet beveiligde transit kunnen filialen communiceren met virtuele netwerken in dezelfde regio als de virtuele WAN-hub en een ander virtueel netwerk dat is verbonden met een andere virtuele WAN-hub in een andere regio.
+
+> [!NOTE]
+> Inter-hub met firewall wordt momenteel niet ondersteund. Verkeer tussen hubs gaat direct over op de Azure Firewall in elke hub.  Verkeer via een verbinding die is bestemd voor een virtueel netwerk in dezelfde regio wordt verwerkt door de Azure Firewall in de beveiligde hub.
+
 
 ### <a name="how-do-i-enable-default-route-00000-in-a-secured-virtual-hub"></a>Hoe kan ik standaard route (0.0.0.0/0) in een beveiligde virtuele hub inschakelen
 

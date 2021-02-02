@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 02/01/2021
 ms.author: juliako
-ms.openlocfilehash: b6e18e077b717da65ca8d70b9bda6a133dba1f5c
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: c0d332c00635444ab4d694e46486a498b43137f2
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120084"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427652"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -30,7 +30,23 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 * Opgeloste fouten
 * Afgeschafte functionaliteit
 
-##  <a name="december-2020"></a>December 2020
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="video-indexer-is-deployed-on-us-government-cloud"></a>Video Indexer is geïmplementeerd in de Amerikaanse overheids Cloud 
+
+U kunt nu een Video Indexer betaalde account maken voor de Amerikaanse overheids Cloud in Virginia en Arizona regio's. Video Indexer aanbieding voor een gratis proef versie is niet beschikbaar in de vermelde regio. Ga naar Video Indexer-documentatie voor meer informatie. 
+
+### <a name="video-indexer-deployed-in-the-india-central-region"></a>Video Indexer geïmplementeerd in de regio India centraal 
+
+U kunt nu een Video Indexer betaalde account maken in de regio India centraal. 
+
+### <a name="new-dark-mode-for-the-video-indexer-website-experience"></a>Nieuwe donkere modus voor de Video Indexer website-ervaring
+
+De ervaring van de Video Indexer website is nu beschikbaar in de donkere modus. Als u de donkere modus wilt inschakelen, opent u het deel venster instellingen en schakelt u de optie voor de **donkere modus** in. 
+
+:::image type="content" source="./media/release-notes/dark-mode.png" alt-text="Instelling voor donkere modus":::
+
+## <a name="december-2020"></a>December 2020
 
 ### <a name="video-indexer-deployed-in-the-switzerland-west-and-switzerland-north"></a>Video Indexer geïmplementeerd in de Zwitserland-west en Zwitserland-noord
 
@@ -242,7 +258,7 @@ Meerdere verbeteringen aangekondigd op IBC 2019:
     
     Het model voor het defragmenteren van het onderwerp ondersteunt nu een diepere granulatie van de IPTC-taxonomie. Lees de volledige details op [Azure Media Services nieuwe, AI-innovaties](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/).
 
-## <a name="august-2019"></a>augustus 2019
+## <a name="august-2019"></a>Augustus 2019
  
 ### <a name="video-indexer-deployed-in-uk-south"></a>Video Indexer geïmplementeerd in UK-zuid
 

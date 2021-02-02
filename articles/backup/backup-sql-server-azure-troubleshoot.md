@@ -3,12 +3,12 @@ title: Problemen met SQL Server database back-up oplossen
 description: Informatie over het oplossen van back-ups van SQL Server-data bases die worden uitgevoerd op virtuele machines van Azure met Azure Backup.
 ms.topic: troubleshooting
 ms.date: 06/18/2019
-ms.openlocfilehash: d702959be70716f0c2bc85920bdb7aa3e061aff1
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: d502a4188b4f9f383188804f86abbb9a6d05d146
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733916"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429463"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Problemen met SQL Server database back-up oplossen met behulp van Azure Backup
 
@@ -217,7 +217,7 @@ Controleer op een of meer van de volgende symptomen voordat u de bewerking opnie
 
   - Onvoldoende machtigingen voor het uitvoeren van back-upbewerkingen op de VM.
   - De virtuele machine wordt afgesloten, dus er kunnen geen back-ups worden gemaakt.
-  - Netwerk problemen.
+  - [Netwerk problemen](#usererrorvminternetconnectivityissue)
 
    ![de virtuele machine opnieuw registreren](./media/backup-azure-sql-database/re-register-vm.png)
 

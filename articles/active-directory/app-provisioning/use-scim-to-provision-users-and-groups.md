@@ -8,25 +8,24 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/12/2021
+ms.date: 02/01/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6895a47bc6d99a09408ca002ec48405a5c78682
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: ba000fd4cf79f2bb4a176bd7d5c33fc2dfff3781
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/02/2021
-ms.locfileid: "99255675"
+ms.locfileid: "99428399"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
 Als ontwikkelaar van een toepassing kunt u de System for Cross-Domain Identity Management (SCIM)-gebruikersbeheer-API gebruiken om het automatisch inrichten van gebruikers en groepen tussen uw toepassing en Azure AD mogelijk te maken. In dit artikel wordt beschreven hoe u een SCIM-eindpunt bouwt en integreert met de Azure AD-inrichtingsservice. De SCIM-specificatie biedt een gemeenschappelijk schema voor het inrichten van gebruikers. Bij gebruik in combinatie met federatiestandaarden zoals SAML of OpenID Connect, biedt SCIM beheerders een end-to-end, op standaarden gebaseerde oplossing voor toegangsbeheer.
 
-SCIM is een gestandaardiseerde definitie van twee eind punten: een `/Users` eind punt en een `/Groups` eind punt. Er worden algemene REST-werkwoorden gebruikt om objecten te maken, bij te werken en te verwijderen, en een vooraf gedefinieerd schema voor algemene kenmerken zoals groepsnaam, gebruikersnaam, voornaam, achternaam en e-mailadres. Apps die een SCIM 2.0-REST API bieden, kunnen de nadelen van het werken met een eigen API voor gebruikersbeheer verminderen of elimineren. Elke compatibele SCIM-client weet bijvoorbeeld hoe u een HTTP POST van een JSON-object naar het `/Users` eind punt kunt maken om een nieuwe gebruikers vermelding te maken. Apps die voldoen aan de SCIM-standaard kunnen direct profiteren van bestaande clients, hulpprogramma's en code, in plaats van dat ze een iets andere API voor dezelfde basisacties moeten gebruiken. 
-
 ![Inrichten vanuit Azure AD naar een app met SCIM](media/use-scim-to-provision-users-and-groups/scim-provisioning-overview.png)
+
+SCIM is een gestandaardiseerde definitie van twee eind punten: een `/Users` eind punt en een `/Groups` eind punt. Er worden algemene REST-werkwoorden gebruikt om objecten te maken, bij te werken en te verwijderen, en een vooraf gedefinieerd schema voor algemene kenmerken zoals groepsnaam, gebruikersnaam, voornaam, achternaam en e-mailadres. Apps die een SCIM 2.0-REST API bieden, kunnen de nadelen van het werken met een eigen API voor gebruikersbeheer verminderen of elimineren. Elke compatibele SCIM-client weet bijvoorbeeld hoe u een HTTP POST van een JSON-object naar het `/Users` eind punt kunt maken om een nieuwe gebruikers vermelding te maken. Apps die voldoen aan de SCIM-standaard kunnen direct profiteren van bestaande clients, hulpprogramma's en code, in plaats van dat ze een iets andere API voor dezelfde basisacties moeten gebruiken. 
 
 Met het standaard gebruikersobjectschema en de REST-beheer-API’s die zijn gedefinieerd in SCIM 2.0 (RFC [7642](https://tools.ietf.org/html/rfc7642), [7643](https://tools.ietf.org/html/rfc7643), [7644](https://tools.ietf.org/html/rfc7644)) kunnen id-providers en apps gemakkelijker met elkaar worden geïntegreerd. Toepassingsontwikkelaars die een SCIM-eindpunt bouwen, kunnen deze integreren met elke SCIM-compatibele client zonder aanpassingen te doen.
 
@@ -70,6 +69,7 @@ Het hierboven gedefinieerde schema wordt weergegeven met behulp van de onderstaa
       "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
       "urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User"],
      "userName":"bjensen@testuser.com",
+     "id": "48af03ac28ad4fb88478",
      "externalId":"bjensen",
      "name":{
        "familyName":"Jensen",
@@ -914,7 +914,7 @@ Verzend een GET-aanvraag naar de tokencontroller om een geldig Bearer-token op t
 
 ### <a name="handling-provisioning-and-deprovisioning-of-users"></a>Inrichting en het ongedaan maken van de inrichting van gebruikers afhandelen
 
-***Voorbeeld 1. Een query uitvoeren op de service voor een overeenkomende gebruiker**
+***Voorbeeld 1. Een query uitvoeren op de service voor een overeenkomende gebruiker***
 
 Azure Active Directory vraagt de service om een gebruiker met een `externalId`-kenmerkwaarde die overeenkomt met de mailnickname-kenmerkwaarde van een gebruiker in Azure AD. De query wordt weer gegeven als een Hypertext Transfer Protocol (HTTP)-aanvraag, zoals dit voorbeeld, waarin jyoung een voorbeeld is van een mailnickname van een gebruiker in Azure Active Directory.
 
@@ -942,12 +942,12 @@ In de voorbeeldcode wordt de aanvraag omgezet in een aanroep naar de QueryAsync-
 
 In deze voorbeeldquery voor een gebruiker met een opgegeven waarde voor het kenmerk `externalId` zijn de waarden van de argumenten die zijn doorgegeven aan de methode QueryAsync:
 
-_ parameters.AlternateFilters.Count: 1
+* parameters.AlternateFilters.Count: 1
 * parameters.AlternateFilters.ElementAt(0).AttributePath: "externalId"
 * parameters.AlternateFilters.ElementAt(0).ComparisonOperator: ComparisonOperator.Equals
 * parameters.AlternateFilter.ElementAt(0).ComparisonValue: "jyoung"
 
-***Voorbeeld 2. Een gebruiker inrichten**
+***Voorbeeld 2. Een gebruiker inrichten***
 
 Als het antwoord op een query van de webservice voor een gebruiker met een `externalId`-kenmerkwaarde die overeenkomt met de mailnickname-kenmerkwaarde van een gebruiker geen gebruikers retourneert, dan vraagt Azure Active Directory de service een gebruiker in te richten die overeenkomt met die in Azure Active Directory.  Hier volgt een voorbeeld van een dergelijke aanvraag: 
 
@@ -996,7 +996,7 @@ In de voorbeeldcode wordt de aanvraag omgezet in een aanroep naar de methode Cre
 
 In een aanvraag om een gebruiker in te richten, is de waarde van het resource-argument een instantie van de klasse Microsoft.SCIM.Core2EnterpriseUser, die is gedefinieerd in de bibliotheek Microsoft.SCIM.Schemas.  Als de aanvraag om de gebruiker in te richten slaagt, wordt de implementatie van de methode verwacht een instantie van de klasse Microsoft.SCIM.Core2EnterpriseUser te retourneren, waarbij de waarde van de eigenschap ID is ingesteld op de unieke id van de nieuwe ingerichte gebruiker.  
 
-_*_Voorbeeld 3. Een query uitvoeren op de huidige status van een gebruiker_*_ 
+***Voorbeeld 3. Een query uitvoeren op de huidige status van een gebruiker*** 
 
 Als u een gebruiker wilt bijwerken waarvan bekend is dat deze bestaat in een identiteitsopslag die wordt gebruikt door een SCIM, vraagt Azure Active Directory naar de huidige status van die gebruiker bij de service met een aanvraag zoals: 
 
@@ -1020,14 +1020,14 @@ In de voorbeeldcode wordt de aanvraag omgezet in een aanroep naar de methode Ret
 
 In deze voorbeeldaanvraag voor het ophalen van de huidige status van een gebruiker, zijn de waarden van de eigenschappen van het object die zijn opgegeven als de waarde van het argument van de parameters als volgt: 
   
-_ Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
+* Id: "54D382A4-2050-4C03-94D1-E769F1D15682"
 * SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
 
-***Voorbeeld 4. Een query uitvoeren op de waarde van een verwijzingskenmerk dat moet worden bijgewerkt** 
+***Voorbeeld 4. Een query uitvoeren op de waarde van een verwijzingskenmerk dat moet worden bijgewerkt*** 
 
 Als een verwijzingskenmerk moet worden bijgewerkt, wordt door Azure Active Directory de service gevraagd om te bepalen of de huidige waarde van het referentiekenmerk in de identiteitsopslag die door de service wordt aangestuurd, al overeenkomt met de waarde van dat kenmerk in Azure Active Directory. Voor gebruikers is het enige kenmerk waarvan de huidige waarde op deze manier wordt opgevraagd het beheerderskenmerk. Hier volgt een voorbeeld van een aanvraag om te bepalen of het beheerderskenmerk van een gebruikersobject momenteel een bepaalde waarde heeft: In de voorbeeldcode wordt de aanvraag omgezet in een aanroep naar de QueryAsync-methode van de provider van de service. De waarde van de eigenschappen van het object die wordt opgegeven als de waarde van het argument parameters, is als volgt: 
   
-_ parameters.AlternateFilters.Count: 2
+* parameters.AlternateFilters.Count: 2
 * parameters.AlternateFilters.ElementAt(x).AttributePath: 'Id'
 * parameters.AlternateFilters.ElementAt(x).ComparisonOperator: ComparisonOperator.Equals
 * parameters.AlternateFilter.ElementAt(x).ComparisonValue: "54D382A4-2050-4C03-94D1-E769F1D15682"
@@ -1039,7 +1039,7 @@ _ parameters.AlternateFilters.Count: 2
 
 Hier kan de waarde van de index x 0 zijn en de waarde van de index y kan 1 zijn, of de waarde van x kan 1 zijn, en de waarde van y kan 0 zijn, afhankelijk van de volgorde van de expressies van de filterqueryparameter.   
 
-***Voorbeeld 5. Aanvraag van Azure AD naar een SCIM-service om een gebruiker bij te werken** 
+***Voorbeeld 5. Aanvraag van Azure AD naar een SCIM-service om een gebruiker bij te werken*** 
 
 Hier volgt een voorbeeld van een aanvraag van Azure Active Directory naar een SCIM-service om een gebruiker bij te werken: 
 
@@ -1078,7 +1078,7 @@ In de voorbeeldcode wordt de aanvraag omgezet in een aanroep naar de methode Upd
 
 In het voorbeeld van een aanvraag om een gebruiker bij te werken, heeft het object dat wordt gegeven als de waarde van het argument patch de volgende eigenschapswaarden: 
   
-_ ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
+* ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
 * ResourceIdentifier.SchemaIdentifier:  "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
 * (PatchRequest as PatchRequest2).Operations.Count: 1
 * (PatchRequest as PatchRequest2).Operations.ElementAt(0).OperationName: OperationName.Add
@@ -1087,7 +1087,7 @@ _ ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
 * (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Reference: http://.../scim/Users/2819c223-7f76-453a-919d-413861904646
 * (PatchRequest as PatchRequest2).Operations.ElementAt(0).Value.ElementAt(0).Value: 2819c223-7f76-453a-919d-413861904646
 
-***Voorbeeld 6. De inrichting van een gebruiker ongedaan maken**
+***Voorbeeld 6. De inrichting van een gebruiker ongedaan maken***
 
 Voor het ongedaan maken van de inrichting van een gebruiker uit een identiteitsopslag voor een SCIM-service, verzendt Azure AD een aanvraag zoals:
 
@@ -1110,7 +1110,7 @@ In de voorbeeldcode wordt de aanvraag omgezet in een aanroep naar de methode Del
 
 Het object dat als waarde voor het argument resourceIdentifier wordt gegeven, heeft de volgende eigenschapswaarden in het voorbeeld van een aanvraag om de inrichting van een gebruiker ongedaan te maken: 
 
-_ ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
+* ResourceIdentifier.Identifier: "54D382A4-2050-4C03-94D1-E769F1D15682"
 * ResourceIdentifier.SchemaIdentifier: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
 
 ## <a name="step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client"></a>Stap 4: Uw SCIM-eindpunt integreren met de Azure AD SCIM-client
@@ -1151,8 +1151,8 @@ Toepassingen die ondersteuning bieden voor het SCIM-profiel dat in dit artikel w
 7. Voer in het veld **Tenant-URL** de URL in van het SCIM-eindpunt van de toepassing. Voorbeeld: `https://api.contoso.com/scim/`
 8. Als het SCIM-eindpunt een OAuth Bearer-token van een andere uitgever dan Azure AD vereist, kopieert u het vereiste OAuth Bearer-token naar het optionele veld **Geheime token**. Als dit veld leeg blijft, voegt Azure AD aan elke aanvraag een OAuth Bearer-token toe dat is uitgegeven door Azure AD. Apps die gebruikmaken van Azure AD als id-provider kunnen dit door Azure AD uitgegeven token valideren. 
    > [!NOTE]
-   > Het wordt **_niet_* aanbevolen om dit veld leeg te laten en te vertrouwen op een token dat door Azure AD wordt gegenereerd. Deze optie is voornamelijk beschikbaar voor testdoeleinden.
-9. Selecteer *Verbinding testen** om Azure Active Directory verbinding te laten maken met het SCIM-eindpunt. Als de poging mislukt, wordt er informatie over de fout weergegeven.  
+   > Het wordt ***niet*** aanbevolen om dit veld leeg te laten en te vertrouwen op een token dat door Azure AD wordt gegenereerd. Deze optie is voornamelijk beschikbaar voor testdoeleinden.
+9. Selecteer **Verbinding testen** om Azure Active Directory verbinding te laten maken met het SCIM-eindpunt. Als de poging mislukt, wordt er informatie over de fout weergegeven.  
 
     > [!NOTE]
     > **Verbinding testen** voert een query uit op het SCIM-eindpunt voor een gebruiker die niet bestaat, met behulp van een willekeurige GUID als de overeenkomende eigenschap die is geselecteerd in de Azure AD-configuratie. Het verwachte juiste antwoord is HTTP 200 OK met een leeg SCIM ListResponse-bericht.

@@ -5,12 +5,12 @@ ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f05afb3c23fc720bb0100a751a6943d7bb03453f
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 89ff49b3ea5abae7ced046f714d34943a58c64a6
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954780"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428297"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>De prestaties en betrouwbaarheid van Azure Functions verbeteren
 
@@ -63,6 +63,31 @@ Hoe reageert uw code als er een fout optreedt nadat u 5.000 van deze items in ee
 Als een wachtrij-item al is verwerkt, mag de functie niet worden uitgevoerd.
 
 Profiteer van de beschik bare verdedigings maatregelen voor onderdelen die u in het Azure Functions platform gebruikt. Zie bijvoorbeeld het **verwerken van verontreinigde wachtrij berichten** in de documentatie voor [Azure Storage wachtrij Triggers en bindingen](functions-bindings-storage-queue-trigger.md#poison-messages). 
+
+## <a name="function-organization-best-practices"></a>Best practices voor functie organisatie
+
+Als onderdeel van uw oplossing kunt u meerdere functies ontwikkelen en publiceren. Deze functies worden vaak gecombineerd tot één functie-app, maar ze kunnen ook worden uitgevoerd in afzonderlijke functie-apps. In Premium-en toegewezen (App Service) hosting abonnementen kunnen meerdere functie-apps ook dezelfde resources delen door in hetzelfde abonnement te worden uitgevoerd. Hoe u de functies en functie-apps groepeert, kunnen invloed hebben op de prestaties, schaal baarheid, configuratie, implementatie en beveiliging van uw algemene oplossing. Er zijn geen regels die van toepassing zijn op elk scenario. Houd daarom rekening met de informatie in deze sectie bij het plannen en ontwikkelen van uw functies.
+
+### <a name="organize-functions-for-performance-and-scaling"></a>Functies voor prestaties en schalen ordenen
+
+Elke functie die u maakt, heeft een geheugen footprint. Hoewel deze footprint meestal klein is, kan het starten van de app op nieuwe instanties worden vertraagd door te veel functies in een functie-app. Dit betekent ook dat het totale geheugen gebruik van uw functie-app mogelijk hoger is. Het is moeilijk om te zeggen hoeveel functies er in één app moeten zijn, wat afhankelijk is van uw specifieke werk belasting. Als uw functie echter veel gegevens in het geheugen opslaat, kunt u overwegen minder functies in één app te gebruiken.
+
+Als u meerdere functie-apps uitvoert in één Premium-abonnement of een toegewezen (App Service)-abonnement, worden deze apps allemaal tegelijk geschaald. Als u een functie-app hebt die een veel hoger geheugen vereiste heeft dan de andere, wordt er een onevenredige hoeveelheid geheugen bronnen gebruikt voor elk exemplaar waarop de app is geïmplementeerd. Omdat hierdoor minder geheugen beschikbaar zou kunnen zijn voor de andere apps op elk exemplaar, kunt u een functie-app met veel geheugen gebruiken zoals deze in een eigen afzonderlijk hosting abonnement.
+
+> [!NOTE]
+> Wanneer u het [verbruiks abonnement](./functions-scale.md)gebruikt, raden we u aan elke app altijd in een eigen abonnement te plaatsen, omdat apps toch onafhankelijk van elkaar worden geschaald.
+
+Overweeg of u functies met verschillende laad profielen wilt groeperen. Als u bijvoorbeeld een functie hebt die veel duizenden wachtrij berichten verwerkt en een andere die slechts af en toe maar hoge geheugen vereisten heeft, wilt u deze mogelijk implementeren in afzonderlijke functie-apps, zodat ze hun eigen bronnen sets krijgen en ze onafhankelijk van elkaar kunnen worden geschaald.
+
+### <a name="organize-functions-for-configuration-and-deployment"></a>Functies ordenen voor configuratie en implementatie
+
+Functie-apps hebben een `host.json` bestand, dat wordt gebruikt voor het configureren van Geavanceerd gedrag van functie Triggers en de Azure functions runtime. Wijzigingen in het `host.json` bestand zijn van toepassing op alle functies in de app. Als u bepaalde functies hebt die aangepaste configuraties nodig hebben, kunt u overwegen deze te verplaatsen naar hun eigen functie-app.
+
+Alle functies in uw lokale project worden samen met een set bestanden in uw functie-app in azure geïmplementeerd. Mogelijk moet u afzonderlijke functies afzonderlijk implementeren of functies gebruiken, zoals [implementatie sleuven](./functions-deployment-slots.md) voor sommige functies en andere niet. In dergelijke gevallen moet u deze functies (in afzonderlijke code projecten) implementeren in verschillende functie-apps.
+
+### <a name="organize-functions-by-privilege"></a>Functies ordenen op bevoegdheid 
+
+Verbindings reeksen en andere referenties die zijn opgeslagen in toepassings instellingen, bieden alle functies in de functie-app dezelfde set machtigingen in de bijbehorende resource. Overweeg het aantal functies met toegang tot specifieke referenties te minimaliseren door functies te verplaatsen die deze referenties niet naar een afzonderlijke functie-app gebruiken. U kunt altijd gebruikmaken van technieken als [functie](/learn/modules/chain-azure-functions-data-using-bindings/) koppeling voor het door geven van gegevens tussen functies in verschillende functie-apps.  
 
 ## <a name="scalability-best-practices"></a>Best practices voor schaal baarheid
 

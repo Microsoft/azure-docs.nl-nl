@@ -7,12 +7,13 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 8ae5bcf103bbb2d2b952fa647ba591e49002f2ff
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
-ms.translationtype: HT
+ms.custom: references_regions
+ms.openlocfilehash: 3cd7d2541cb980fc5ca6a1a9c42a430eac1ecb1b
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921622"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429276"
 ---
 # <a name="basic-concepts"></a>Basisbegrippen
 
@@ -28,21 +29,24 @@ Hieronder vindt u enkele basisbegrippen met betrekking tot Microsoft Azure Attes
 
 ## <a name="attestation-provider"></a>Attestation-provider
 
-Attestation-provider behoort tot de Azure-resourceprovider met de naam Microsoft.Attestation. De resourceprovider is een service-eindpunt dat Azure Attestation REST-contract voorziet en wordt geïmplementeerd met behulp van [Azure Resource Manager](../azure-resource-manager/management/overview.md). Elke Attestation-provider respecteert een specifiek, detecteerbaar beleid. 
+Attestation-provider behoort tot de Azure-resourceprovider met de naam Microsoft.Attestation. De resourceprovider is een service-eindpunt dat Azure Attestation REST-contract voorziet en wordt geïmplementeerd met behulp van [Azure Resource Manager](../azure-resource-manager/management/overview.md). Elke Attestation-provider respecteert een specifiek, detecteerbaar beleid. Attestation-providers worden gemaakt met een standaardbeleid voor elk type Attestation (houd er rekening mee dat VBS-enclave geen standaardbeleid heeft). Zie [Voorbeelden van een Attestation-beleid](policy-examples.md) voor meer informatie over het standaardbeleid voor SGX.
 
-Attestation-providers worden gemaakt met een standaardbeleid voor elk type Attestation (houd er rekening mee dat VBS-enclave geen standaardbeleid heeft). Zie [Voorbeelden van een Attestation-beleid](policy-examples.md) voor meer informatie over het standaardbeleid voor SGX.
+### <a name="regional-shared-provider"></a>Regionale gedeelde provider
 
-### <a name="regional-default-provider"></a>Regionale standaard provider
-
-Azure Attestation biedt een standaard provider in elke regio. Klanten kunnen ervoor kiezen om de standaard provider voor attestation te gebruiken of hun eigen providers met aangepast beleid te maken. De standaard providers zijn toegankelijk via elke Azure AD-gebruiker en het beleid dat betrekking heeft op een standaard provider kan niet worden gewijzigd.
+Azure Attestation biedt een regionale gedeelde provider in elke beschik bare regio. Klanten kunnen ervoor kiezen de regionale gedeelde provider voor Attestation te gebruiken of hun eigen providers te maken met aangepast beleid. De gedeelde providers zijn toegankelijk voor elke Azure AD-gebruiker en het bijbehorende beleid kan niet worden gewijzigd.
 
 | Regio | Attestation-URI | 
 |--|--|
+| VS - oost | `https://sharedeus.eus.attest.azure.net` | 
+| VS - west | `https://sharedwus.wus.attest.azure.net` | 
 | Verenigd Koninkrijk Zuid | `https://shareduks.uks.attest.azure.net` | 
+| Verenigd Koninkrijk West| `https://sharedukw.ukw.attest.azure.net  ` | 
+| Canada - oost | `https://sharedcae.cae.attest.azure.net` | 
+| Canada - midden | `https://sharedcac.cac.attest.azure.net` | 
+| Europa - noord | `https://sharedneu.neu.attest.azure.net` | 
+| Europa -west| `https://sharedweu.weu.attest.azure.net` | 
 | US - oost 2 | `https://sharedeus2.eus2.attest.azure.net` | 
 | Central US | `https://sharedcus.cus.attest.azure.net` | 
-| VS - oost| `https://sharedeus.eus.attest.azure.net` | 
-| Canada - midden | `https://sharedcac.cac.attest.azure.net` | 
 
 ## <a name="attestation-request"></a>Attestation-aanvraag
 
@@ -58,7 +62,7 @@ Attestation-beleid wordt gebruikt voor het verwerken van het Attestation-bewijs 
 
 Als het standaardbeleid van de Attestation-provider niet voldoet aan de behoeften, kunnen klanten aangepaste beleidsregels maken in een van de regio's die worden ondersteund door Azure Attestation. Beleidsbeheer is een belangrijke functie de aan klanten door Azure Attestation wordt geleverd. Beleidsregels zijn specifiek voor het type Attestation en kunnen worden gebruikt om enclaves te identificeren of claims toe te voegen aan het uitvoertoken of claims te wijzigen in een uitvoertoken. 
 
-Zie [Voorbeelden van een Attestation-beleid](policy-examples.md) voor het standaardbeleid en voorbeelden.
+Zie voor [beelden van een Attestation-beleid](policy-examples.md) voor beleids voorbeelden.
 
 ## <a name="benefits-of-policy-signing"></a>Voordelen van beleidsondertekening
 
@@ -80,25 +84,55 @@ Voorbeeld van een JWT-generatie voor een SGX-enclave:
 
 ```
 {
-  “alg”: “RS256”,
-  “jku”: “https://tradewinds.us.attest.azure.net/certs”,
-  “kid”: “f1lIjBlb6jUHEUp1/Nh6BNUHc6vwiUyMKKhReZeEpGc=”,
-  “typ”: “JWT”
+  "alg": "RS256",
+  "jku": "https://tradewinds.us.attest.azure.net/certs",
+  "kid": <self signed certificate reference to perform signature verification of attestation token,
+  "typ": "JWT"
 }.{
-  “maa-ehd”: <input enclave held data>,
-  “exp”: 1568187398,
-  “iat”: 1568158598,
-  “is-debuggable”: false,
-  “iss”: “https://tradewinds.us.attest.azure.net”,
-  “nbf”: 1568158598,
-  “product-id”: 4639,
-  “sgx-mrenclave”: “”,
-  “sgx-mrsigner”: “”,
-  “svn”: 0,
-  “tee”: “sgx”
+  "aas-ehd": <input enclave held data>,
+  "exp": 1568187398,
+  "iat": 1568158598,
+  "is-debuggable": false,
+  "iss": "https://tradewinds.us.attest.azure.net",
+  "maa-attestationcollateral": 
+    {
+      "qeidcertshash": <SHA256 value of QE Identity issuing certs>,
+      "qeidcrlhash": <SHA256 value of QE Identity issuing certs CRL list>,
+      "qeidhash": <SHA256 value of the QE Identity collateral>,
+      "quotehash": <SHA256 value of the evaluated quote>, 
+      "tcbinfocertshash": <SHA256 value of the TCB Info issuing certs>, 
+      "tcbinfocrlhash": <SHA256 value of the TCB Info issuing certs CRL list>, 
+      "tcbinfohash": <SHA256 value of the TCB Info collateral>
+     },
+  "maa-ehd": <input enclave held data>,
+  "nbf": 1568158598,
+  "product-id": 4639,
+  "sgx-mrenclave": <SGX enclave mrenclave value>,
+  "sgx-mrsigner": <SGX enclave msrigner value>,
+  "svn": 0,
+  "tee": "sgx"
+  "x-ms-attestation-type": "sgx", 
+  "x-ms-policy-hash": <>,
+  "x-ms-sgx-collateral": 
+    {
+      "qeidcertshash": <SHA256 value of QE Identity issuing certs>,
+      "qeidcrlhash": <SHA256 value of QE Identity issuing certs CRL list>,
+      "qeidhash": <SHA256 value of the QE Identity collateral>,
+      "quotehash": <SHA256 value of the evaluated quote>, 
+      "tcbinfocertshash": <SHA256 value of the TCB Info issuing certs>, 
+      "tcbinfocrlhash": <SHA256 value of the TCB Info issuing certs CRL list>, 
+      "tcbinfohash": <SHA256 value of the TCB Info collateral>
+     },
+  "x-ms-sgx-ehd": <>, 
+  "x-ms-sgx-is-debuggable": true,
+  "x-ms-sgx-mrenclave": <SGX enclave mrenclave value>,
+  "x-ms-sgx-mrsigner": <SGX enclave msrigner value>, 
+  "x-ms-sgx-product-id": 1, 
+  "x-ms-sgx-svn": 1,
+  "x-ms-ver": "1.0"
 }.[Signature]
 ```
-Claims zoals “exp”, “iat”, “iss”, “nbf” worden gedefinieerd door de [JWT RFC](https://tools.ietf.org/html/rfc7517) en resterende worden gegenereerd door Azure Attestation. Zie [Claims die zijn uitgegeven door Azure Attestation](claim-sets.md) voor meer informatie.
+Sommige van de eerder gebruikte claims worden als afgeschaft beschouwd, maar worden volledig ondersteund.  Het is raadzaam dat alle toekomstige code en hulpprogram ma's gebruikmaken van de niet-afgeschafte claim namen. Zie [Claims die zijn uitgegeven door Azure Attestation](claim-sets.md) voor meer informatie.
 
 ## <a name="encryption-of-data-at-rest"></a>Versleuteling van data-at-rest
 

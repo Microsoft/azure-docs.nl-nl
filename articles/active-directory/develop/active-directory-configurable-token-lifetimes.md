@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/04/2021
+ms.date: 02/01/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1, contperf-fy21q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: f4ae26a489b823e2347841cf72690d6cd8462611
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 1bd60a60aa5f6fffcc459f0e14d550740e48496d
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755301"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428146"
 ---
 # <a name="configurable-token-lifetimes-in-the-microsoft-identity-platform-preview"></a>Configureer bare levens duur van tokens in het micro soft Identity-platform (preview-versie)
 
@@ -77,16 +77,14 @@ Zie [een beleid voor webaanmelding maken](configure-token-lifetimes.md#create-a-
 
 ## <a name="token-lifetime-policies-for-refresh-tokens-and-session-tokens"></a>Token levensduur beleid voor het vernieuwen van tokens en sessie tokens
 
-U kunt beleid voor levens duur van tokens instellen voor vernieuwings tokens en sessie tokens.
+U kunt geen token levensduur beleid instellen voor vernieuwings tokens en sessie tokens.
 
 > [!IMPORTANT]
-> Vanaf mei 2020 kunnen nieuwe tenants geen vernieuwings-en sessie token levensduur configureren.  Tenants met een bestaande configuratie kunnen vernieuwings-en sessie token beleid aanpassen tot 30 januari 2021.   Azure Active Directory zal na 30 januari 2021 niet langer de configuratie van bestaande vernieuwings-en sessie tokens in het beleid naleven. U kunt de levens duur van de toegangs-, SAML-en ID-tokens na de buiten gebruiks telling nog steeds configureren.
->
-> Als u moet door gaan met het definiëren van de tijds periode voordat een gebruiker wordt gevraagd zich opnieuw aan te melden, configureert u de aanmeldings frequentie in voorwaardelijke toegang. Lees voor meer informatie over voorwaardelijke toegang [verificatie sessie beheer configureren met voorwaardelijke toegang](../conditional-access/howto-conditional-access-session-lifetime.md).
->
-> Als u na de pensionering geen gebruik wilt maken van voorwaardelijke toegang, worden uw vernieuwings-en sessie tokens op die datum ingesteld op de [standaard configuratie](#configurable-token-lifetime-properties-after-the-retirement) en kunt u de levens duur ervan niet meer wijzigen.
+> Vanaf 30 januari 2021 kunt u de levens duur van het vernieuwings-en sessie token niet configureren. Azure Active Directory voldoet niet meer aan de configuratie van vernieuwen en sessie token in bestaande beleids regels.  Nieuwe tokens die zijn uitgegeven nadat bestaande tokens zijn verlopen, worden nu ingesteld op de [standaard configuratie](#configurable-token-lifetime-properties-after-the-retirement). U kunt nog steeds de levens duur van de toegangs-, SAML-en ID-token configureren na de configuratie van het vernieuwings-en sessie token.
 >
 > De levens duur van het bestaande token wordt niet gewijzigd. Nadat deze zijn verlopen, wordt er een nieuw token uitgegeven op basis van de standaard waarde.
+>
+> Als u moet door gaan met het definiëren van de tijds periode voordat een gebruiker wordt gevraagd zich opnieuw aan te melden, configureert u de aanmeldings frequentie in voorwaardelijke toegang. Lees voor meer informatie over voorwaardelijke toegang [verificatie sessie beheer configureren met voorwaardelijke toegang](../conditional-access/howto-conditional-access-session-lifetime.md).
 
 :::image type="content" source="./media/active-directory-configurable-token-lifetimes/roadmap.svg" alt-text="Buitengebruikstellings gegevens":::
 

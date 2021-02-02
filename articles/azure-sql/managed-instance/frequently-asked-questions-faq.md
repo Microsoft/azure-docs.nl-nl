@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: d3f859590b30aaeeaebaed7b1f2f85e1a86a92c9
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: f58811411a447eae4ff9a5c0fd2a9888b4a39a34
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223403"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428670"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure SQL Managed Instance (FAQ)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -364,13 +364,6 @@ Ja. Zie [How to configure a Custom DNS for Azure SQL Managed instance](./custom-
 **Kan ik DNS vernieuwen?**
 
 Ja. Zie de [instelling DNS-servers voor het virtuele netwerk synchroniseren op het virtuele cluster van SQL Managed instance](./synchronize-vnet-dns-servers-setting-on-virtual-cluster.md).
-
-De DNS-configuratie wordt uiteindelijk vernieuwd:
-
-- Wanneer de DHCP-lease verloopt.
-- Op platform upgrade.
-
-U kunt dit probleem omzeilen door SQL Managed instance te downgradeen naar 4 vCores en deze later opnieuw bij te werken. Dit heeft een neven effect van het vernieuwen van de DNS-configuratie.
 
 ## <a name="change-time-zone"></a>Tijd zone wijzigen
 

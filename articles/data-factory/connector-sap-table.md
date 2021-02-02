@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 09/01/2020
-ms.openlocfilehash: 4505deaa4cc11c00c7283ef686827d6893c2742a
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.date: 02/01/2021
+ms.openlocfilehash: b796b9eb065a221904fe4487c900efa2db1955af
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280414"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429541"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Gegevens uit een SAP-tabel kopiëren met behulp van Azure Data Factory
 
@@ -102,7 +102,7 @@ De volgende eigenschappen worden ondersteund voor de SAP BW open hub gekoppelde 
 | `sncQop` | De SNC kwaliteit van het beveiligings niveau dat moet worden toegepast.<br/>Van toepassing wanneer `sncMode` is ingeschakeld. <br/>Toegestane waarden zijn `1` (authenticatie), `2` (integriteit), `3` (privacy), `8` (standaard), `9` (maximum). | Nee |
 | `connectVia` | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Een zelf-hostende Integration runtime is vereist, zoals eerder is vermeld in [vereisten](#prerequisites). |Ja |
 
-**Voor beeld 1: verbinding maken met een SAP-toepassings server**
+### <a name="example-1-connect-to-an-sap-application-server"></a>Voor beeld 1: verbinding maken met een SAP-toepassings server
 
 ```json
 {
@@ -294,6 +294,60 @@ In `rfcTableOptions` kunt u de volgende algemene SAP-query operators gebruiken o
     }
 ]
 ```
+
+## <a name="join-sap-tables"></a>SAP-tabellen koppelen
+
+De SAP-tabel connector ondersteunt alleen één tabel met de standaard functie module. Als u de samengevoegde gegevens van meerdere tabellen wilt ophalen, kunt u gebruikmaken van de eigenschap [customRfcReadTableFunctionModule](#copy-activity-properties) in de SAP Table-connector volgende stappen:
+
+- [Schrijf een aangepaste functie module](#create-custom-function-module), waarmee u een query kunt uitvoeren als opties en uw eigen logica moet Toep assen om de gegevens op te halen.
+- Voer voor de aangepaste functie module de naam van uw aangepaste functie module in.
+- Voor de ' RFC Table-Opties ' geeft u de instructie Table join op om in te voeren in uw functie module als opties, zoals ' `<TABLE1>` inner join `<TABLE2>` op COLUMN0 '.
+
+Hieronder ziet u een voorbeeld:
+
+![SAP-tabel toevoegen](./media/connector-sap-table/sap-table-join.png) 
+
+>[!TIP]
+>U kunt ook overwegen de samengevoegde gegevens in de weer gave op te nemen, wat wordt ondersteund door de SAP-tabel connector.
+>U kunt ook proberen om gerelateerde tabellen te extra heren voor onboarding naar Azure (bijvoorbeeld Azure Storage, Azure SQL Database) en vervolgens de gegevens stroom gebruiken om verder te gaan met samen voegen of filteren.
+
+## <a name="create-custom-function-module"></a>Aangepaste functie module maken
+
+Voor SAP-tabellen ondersteunen we momenteel de eigenschap [customRfcReadTableFunctionModule](#copy-activity-properties) in de Kopieer bron, waarmee u uw eigen logica en proces gegevens kunt gebruiken.
+
+Hier volgen enkele vereisten om aan de slag te gaan met de ' aangepaste functie module ':
+
+- Definition:
+
+    ![Definitie](./media/connector-sap-table/custom-function-module-definition.png) 
+
+- Gegevens exporteren naar een van de volgende tabellen:
+
+    ![Tabel 1 exporteren](./media/connector-sap-table/export-table-1.png) 
+
+    ![Tabel 2 exporteren](./media/connector-sap-table/export-table-2.png)
+ 
+Hieronder ziet u een illustratie van de werking van SAP Table connector met aangepaste functie module:
+
+1. Maak verbinding met SAP server via SAP NCO.
+
+1. Roep ' aangepaste functie module ' aan met de hieronder ingestelde para meters:
+
+    - QUERY_TABLE: de naam van de tabel die u hebt ingesteld in de ADF SAP-tabel gegevensset; 
+    - Scheidings teken: het scheidings teken dat u hebt ingesteld in de ADF SAP-tabel bron. 
+    - ROWCOUNT/Option/Fields: het aantal RowCount/geaggregeerde optie/velden dat u hebt ingesteld in de tabel bron van ADF.
+
+1. Het resultaat ophalen en de gegevens op de onderstaande manieren parseren:
+
+    1. De waarde in de tabel Fields parseren om de schema's op te halen.
+
+        ![Waarden in velden parseren](./media/connector-sap-table/parse-values.png)
+
+    1. Haal de waarden van de uitvoer tabel op om te zien welke tabel deze waarden bevat.
+
+        ![Waarden ophalen in uitvoer tabel](./media/connector-sap-table/get-values.png)
+
+    1. Haal de waarden op in het OUT_TABLE, parse de gegevens en schrijf deze vervolgens naar de sink.
 
 ## <a name="data-type-mappings-for-an-sap-table"></a>Toewijzing van gegevens typen voor een SAP-tabel
 

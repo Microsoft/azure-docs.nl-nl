@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
-ms.date: 01/29/2020
+ms.date: 02/01/2020
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f0c8d237e270177ef38c60c523364054bae15af
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: da85c80dd6450fd4427f83586e75cf1e9d62a605
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090855"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428771"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -69,13 +69,7 @@ Gebruikers met deze rol kunnen toepassings registraties maken wanneer de instell
 
 ### <a name="authentication-administrator"></a>[Verificatiebeheerder](#authentication-administrator-permissions)
 
-Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor sommige gebruikers en kunnen wacht woorden voor alle gebruikers bijwerken. Verificatie beheerders kunnen vereisen dat gebruikers die niet-beheerders zijn of aan sommige rollen zijn toegewezen, zich opnieuw registreren bij bestaande referenties zonder wacht woord (bijvoorbeeld MFA of FIDO), en kunnen ook **MFA op het apparaat** intrekken, waarbij wordt gevraagd om MFA bij de volgende aanmelding. Deze acties gelden alleen voor gebruikers die niet-beheerders zijn of aan een of meer van de volgende rollen zijn toegewezen:
-
-* Verificatiebeheerder
-* Lezers van mappen
-* Afzender van gastuitnodigingen
-* Berichtencentrum-lezer
-* Rapportenlezer
+Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor sommige gebruikers en kunnen wacht woorden voor alle gebruikers bijwerken. Verificatie beheerders kunnen vereisen dat gebruikers die niet-beheerders zijn of aan sommige rollen zijn toegewezen, zich opnieuw registreren bij bestaande referenties zonder wacht woord (bijvoorbeeld MFA of FIDO), en kunnen ook **MFA op het apparaat** intrekken, waarbij wordt gevraagd om MFA bij de volgende aanmelding. Of een verificatie beheerder het wacht woord van een gebruiker opnieuw kan instellen, is afhankelijk van de rol waaraan de gebruiker is toegewezen. Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen waarvoor een verificatie beheerder wacht woorden opnieuw kan instellen.
 
 Met de rol [bevoorrechte verificatie beheerder](#privileged-authentication-administrator) kunt u de registratie en multi-factor Authentication afdwingen voor alle gebruikers.
 
@@ -253,14 +247,7 @@ Gebruikers met deze rol kunnen uitnodigingen van Azure Active Directory B2B-gast
 
 ### <a name="helpdesk-administrator"></a>[Helpdeskbeheerder](#helpdesk-administrator-permissions)
 
-Gebruikers met deze rol kunnen wacht woorden wijzigen, tokens voor vernieuwen ongeldig maken, service aanvragen beheren en de service status controleren. Wanneer een vernieuwings token ongeldig is, wordt de gebruiker gedwongen zich opnieuw aan te melden. Helpdesk beheerders kunnen wacht woorden opnieuw instellen en vernieuwings tokens van andere gebruikers die niet-beheerders zijn, alleen toewijzen aan de volgende rollen:
-
-* Lezers van mappen
-* Afzender van gastuitnodigingen
-* Helpdeskbeheerder
-* Berichtencentrum-lezer
-* Wachtwoordbeheerder
-* Rapportenlezer
+Gebruikers met deze rol kunnen wacht woorden wijzigen, tokens voor vernieuwen ongeldig maken, service aanvragen beheren en de service status controleren. Wanneer een vernieuwings token ongeldig is, wordt de gebruiker gedwongen zich opnieuw aan te melden. Of een helpdesk beheerder het wacht woord van een gebruiker opnieuw kan instellen en de vernieuwings tokens ongeldig maken, is afhankelijk van de rol waaraan de gebruiker is toegewezen. Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen die een helpdesk beheerder in staat stelt om wacht woorden opnieuw in te stellen en tokens voor het vernieuwen ongeldig te maken.
 
 > [!IMPORTANT]
 > Gebruikers met deze rol kunnen wacht woorden wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van het wacht woord van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
@@ -271,7 +258,7 @@ Gebruikers met deze rol kunnen wacht woorden wijzigen, tokens voor vernieuwen on
 >- Beheerders in andere services buiten Azure AD, zoals Exchange Online, Office Security and Compliance Center en Human Resources Systems.
 >- Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
 
-Het overdragen van beheerders machtigingen via subsets van gebruikers en het Toep assen van beleid op een subset van gebruikers is mogelijk met [beheer eenheden (nu beschikbaar in open bare preview)](administrative-units.md).
+Het overdragen van beheerders machtigingen via subsets van gebruikers en het Toep assen van beleid op een subset van gebruikers is mogelijk met [beheer eenheden](administrative-units.md).
 
 Deze rol heette voorheen ' Wachtwoord beheerder ' in de [Azure Portal](https://portal.azure.com/). De naam van de "helpdesk beheerder" in azure AD komt nu overeen met de naam in azure AD Power shell en de Microsoft Graph-API.
 
@@ -344,11 +331,7 @@ Niet gebruiken. Deze rol is afgeschaft en wordt in de toekomst verwijderd uit Az
 
 ### <a name="password-administrator"></a>[Wachtwoordbeheerder](#password-administrator-permissions)
 
-Gebruikers met deze rol hebben beperkte mogelijkheden voor het beheren van wacht woorden. Deze rol biedt geen mogelijkheid om service aanvragen te beheren of de service status te controleren. Wachtwoord beheerders kunnen wacht woorden van andere gebruikers die niet-beheerders zijn of alleen leden van de volgende rollen opnieuw instellen:
-
-* Lezers van mappen
-* Afzender van gastuitnodigingen
-* Wachtwoordbeheerder
+Gebruikers met deze rol hebben beperkte mogelijkheden voor het beheren van wacht woorden. Deze rol biedt geen mogelijkheid om service aanvragen te beheren of de service status te controleren. Of een wachtwoord beheerder het wacht woord van een gebruiker opnieuw kan instellen, is afhankelijk van de rol waaraan de gebruiker is toegewezen. Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen die een wachtwoord beheerder in staat stelt wacht woorden opnieuw in te stellen.
 
 ### <a name="power-bi-administrator"></a>[Power BI beheerder](#power-bi-service-administrator-permissions)
 
@@ -371,13 +354,7 @@ Gebruikers met deze rol kunnen printers registreren en de printer status beheren
 
 ### <a name="privileged-authentication-administrator"></a>[Bevoorrechte verificatiebeheerder](#privileged-authentication-administrator-permissions)
 
-Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor alle gebruikers, met inbegrip van globale beheerders, en kunnen wacht woorden voor alle gebruikers bijwerken. Bevoegde authenticatie beheerders kunnen gebruikers dwingen om zich opnieuw te registreren bij bestaande niet-wachtwoord referenties (zoals MFA of FIDO) en ' MFA onthouden op het apparaat ' in te trekken bij de volgende aanmelding van alle gebruikers. De rol [verificatie beheerder](#authentication-administrator) kan opnieuw registreren en MFA afdwingen voor alleen niet-beheerders en gebruikers die zijn toegewezen aan de volgende Azure AD-rollen:
-
-* Verificatiebeheerder
-* Lezers van mappen
-* Afzender van gastuitnodigingen
-* Berichtencentrum-lezer
-* Rapportenlezer
+Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor alle gebruikers, met inbegrip van globale beheerders, en kunnen wacht woorden voor alle gebruikers bijwerken. Bevoegde authenticatie beheerders kunnen gebruikers dwingen om zich opnieuw te registreren bij bestaande niet-wachtwoord referenties (zoals MFA of FIDO) en ' MFA onthouden op het apparaat ' in te trekken bij de volgende aanmelding van alle gebruikers.
 
 ### <a name="privileged-role-administrator"></a>[Beheerder voor bevoorrechte rollen](#privileged-role-administrator-permissions)
 
@@ -500,11 +477,12 @@ Gebruikers met deze rol hebben toegang tot geaggregeerde gegevens op Tenant nive
 
 Gebruikers met deze rol kunnen gebruikers maken en alle aspecten van gebruikers met enkele beperkingen beheren (Zie de tabel) en het verloop beleid voor wacht woorden kan bijwerken. Daarnaast kunnen gebruikers met deze rol alle groepen maken en beheren. Deze rol omvat ook de mogelijkheid om gebruikers weergaven te maken en beheren, ondersteunings tickets te beheren en de service status te controleren. Gebruikers beheerders hebben geen machtiging om bepaalde gebruikers eigenschappen voor gebruikers te beheren in de meeste beheerders rollen. Gebruiker met deze rol heeft geen machtigingen voor het beheren van MFA. De functies die uitzonde ringen op deze beperking zijn, worden weer gegeven in de volgende tabel.
 
-| **Machtiging** | **Wel** |
+| Gebruikers beheerders machtigingen | Notities |
 | --- | --- |
-|Algemene machtigingen|<p>Gebruikers en groepen maken</p><p>Gebruikersweergaven maken en beheren</p><p>Office-ondersteunings tickets beheren<p>Verloop beleid voor wacht woorden bijwerken|
-| <p>Voor alle gebruikers, inclusief alle beheerders</p>|<p>Licenties beheren</p><p>Alle gebruikers eigenschappen beheren, met uitzonde ring van Principal-naam van gebruiker</p>
-| Alleen voor gebruikers die niet-beheerders zijn of in een van de volgende beperkte beheerders rollen:<ul><li>Lezers van mappen<li>Groepsbeheerder<li>Afzender van gastuitnodigingen<li>Helpdeskbeheerder<li>Berichtencentrum-lezer<li>Wachtwoordbeheerder<li>Rapportenlezer<li>Gebruikersbeheerder|<p>Verwijderen en herstellen</p><p>Uitschakelen en inschakelen</p><p>Vernieuwings tokens ongeldig maken</p><p>Alle gebruikers eigenschappen beheren, met inbegrip van Principal-naam van gebruiker</p><p>Wachtwoord opnieuw instellen</p><p>Apparaatinstellingen bijwerken (FIDO)</p>|
+| Gebruikers en groepen maken<br/>Gebruikersweergaven maken en beheren<br/>Office-ondersteunings tickets beheren<br/>Verloop beleid voor wacht woorden bijwerken |  |
+| Licenties beheren<br/>Alle gebruikers eigenschappen beheren, met uitzonde ring van Principal-naam van gebruiker | Is van toepassing op alle gebruikers, inclusief alle beheerders |
+| Verwijderen en herstellen<br/>Uitschakelen en inschakelen<br/>Alle gebruikers eigenschappen beheren, met inbegrip van Principal-naam van gebruiker<br/>Apparaatinstellingen bijwerken (FIDO) | Is van toepassing op gebruikers die niet-beheerders zijn of met een van de volgende rollen:<ul><li>Helpdeskbeheerder</li><li>Gebruiker zonder rol</li><li>Gebruikersbeheerder</li></ul> |
+| Vernieuwings tokens ongeldig maken<br/>Wachtwoord opnieuw instellen | Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen die een gebruikers beheerder in staat stelt wacht woorden opnieuw in te stellen en de tokens voor het vernieuwen ongeldig te maken. |
 
 > [!IMPORTANT]
 > Gebruikers met deze rol kunnen wacht woorden wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van het wacht woord van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
@@ -572,6 +550,7 @@ Kan alle aspecten van app-registraties en bedrijfs-apps maken en beheren.
 | micro soft. Azure. supportTickets/allTasks | Ondersteunings tickets voor Azure maken en beheren. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="application-developer-permissions"></a>Ontwikkelaars machtigingen voor toepassingen
 
@@ -647,6 +626,7 @@ Kan alle aspecten van de Azure Information Protection-Service beheren.
 | micro soft. Azure. supportTickets/allTasks | Ondersteunings tickets voor Azure maken en beheren. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="b2c-ief-keyset-administrator-permissions"></a>B2C IEF sleutelsetcursor
 
@@ -725,6 +705,7 @@ Kan alle aspecten van app-registraties en bedrijfs-apps maken en beheren, behalv
 | micro soft. Azure. supportTickets/allTasks | Ondersteunings tickets voor Azure maken en beheren. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="cloud-device-administrator-permissions"></a>Beheerders machtigingen voor Cloud apparaten
 
@@ -2064,6 +2045,31 @@ Ondersteuning voor partner Tier 2 | Niet weer gegeven omdat deze niet mag worden
 Beperkte gast gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | NA
 Gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | NA
 Werkplek apparaat toevoegen | Afgeschaft | [Documentatie over afgeschafte functies](permissions-reference.md#deprecated-roles)
+
+## <a name="password-reset-permissions"></a>Machtigingen voor wacht woord opnieuw instellen
+
+Kolom koppen vertegenwoordigen de rollen die wacht woorden opnieuw kunnen instellen. Tabel rijen bevatten de rollen waarvoor het wacht woord opnieuw kan worden ingesteld.
+
+Het wacht woord kan opnieuw worden ingesteld | Verificatie beheerder | Helpdesk beheerder | Wachtwoord beheerder | Gebruikersbeheerder | Beheerder van geprivilegieerde authenticatie | Globale beheerder
+------ | ------ | ------ | ------ | ------ | ------ | ------
+Verificatie beheerder | :heavy_check_mark: | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:
+Lezers van mappen | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Globale beheerder | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:\*
+Groeps beheerder | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Gast | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Afzender van gastuitnodigingen | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Helpdesk beheerder | &nbsp; | :heavy_check_mark: | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Berichtencentrum-lezer | :heavy_check_mark: | :heavy_check_mark: | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Wachtwoord beheerder | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Beheerder van geprivilegieerde authenticatie | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:
+Beheerder van geprivilegieerde rol | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:
+Rapportenlezer | :heavy_check_mark: | :heavy_check_mark: | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Beperkte gast | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Gebruiker (geen beheerdersrol) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Gebruikersbeheerder | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Lezer van gebruiks samenvattings rapporten | :heavy_check_mark: | :heavy_check_mark: | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+
+\* Een globale beheerder kan hun eigen globale beheerders toewijzing niet verwijderen. Dit is om te voor komen dat een organisatie 0 globale beheerders heeft.
 
 ## <a name="next-steps"></a>Volgende stappen
 

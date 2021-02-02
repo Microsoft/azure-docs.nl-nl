@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
 ms.custom: references_regions
-ms.openlocfilehash: a2b26ae8debf1c52693018ce9a758bfa9b029fa2
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 85585b771d9c0ed7c6fcdba9cfef7b589a987c8c
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99093373"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429259"
 ---
 # <a name="microsoft-azure-attestation"></a>Microsoft Azure Attestation 
 
@@ -67,7 +67,7 @@ Azure Attestation is de voorkeurskeuze voor het afleveren van TEEs omdat het de 
 
 - Unified Framework voor het bekrachtigen van meerdere omgevingen, zoals TPM's, SGX-enclaves en VBS-enclaves 
 - Multi-tenant-service waarmee aangepaste Attestation-providers en -beleid kunnen worden geconfigureerd om het genereren van tokens te beperken
-- Biedt standaardproviders die kunnen worden verklaard zonder configuratie van gebruikers
+- Biedt regionale gedeelde providers die kunnen worden verklaard zonder configuratie van gebruikers
 - Beveiligt de gegevens die worden gebruikt bij de implementatie in een SGX-enclave
 - Service met hoge beschikbaarheid 
 

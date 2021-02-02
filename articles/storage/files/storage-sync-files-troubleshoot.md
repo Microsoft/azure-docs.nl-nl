@@ -4,15 +4,15 @@ description: Los veelvoorkomende problemen in een implementatie op Azure File Sy
 author: jeffpatt24
 ms.service: storage
 ms.topic: troubleshooting
-ms.date: 1/15/2021
+ms.date: 2/1/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 49184778c7d6592f074e04df535b9bc221f3162e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 65a1f8ef82ba9ec35e01a61d9682ebed0b9ba04c
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878796"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428331"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Problemen met Azure Files Sync oplossen
 Gebruik Azure File Sync om de bestands shares van uw organisatie in Azure Files te centraliseren, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server bijhoudt. Door Azure File Sync wordt Windows Server getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server, inclusief SMB, NFS en FTPS, gebruiken voor lokale toegang tot uw gegevens. U kunt zoveel caches hebben als u nodig hebt in de hele wereld.
@@ -210,18 +210,10 @@ Op de server die wordt weer gegeven als ' offline weer geven ' in de portal, kij
         - Zie [Configure TLS cipher Suite order by using TLS Power shell cmdlets](/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets)(Engelstalig) voor het gebruik van TLS-cmdlets.
     
         Azure File Sync ondersteunt momenteel de volgende coderings suites voor TLS 1,2-Protocol:  
-        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P384  
-        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256  
-        - TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384_P384  
-        - TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P256  
         - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256  
         - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256  
         - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256  
         - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256  
-        - TLS_RSA_WITH_AES_256_GCM_SHA384  
-        - TLS_RSA_WITH_AES_128_GCM_SHA256  
-        - TLS_RSA_WITH_AES_256_CBC_SHA256  
-        - TLS_RSA_WITH_AES_128_CBC_SHA256  
 
 - Als **GetNextJob is voltooid met de status:-2134347764** wordt geregistreerd, kan de server niet communiceren met de Azure file sync-service vanwege een verlopen of verwijderd certificaat.  
     - Voer de volgende Power shell-opdracht op de server uit om het certificaat dat voor verificatie wordt gebruikt, opnieuw in te stellen:

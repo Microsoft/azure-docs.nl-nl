@@ -2,18 +2,20 @@
 title: Resources vergren delen om wijzigingen te voor komen
 description: Voor komen dat gebruikers Azure-resources bijwerken of verwijderen door een vergren deling toe te passen voor alle gebruikers en rollen.
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 02/01/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0e8fc74b2da0c253ec9c5bf34ec7543398aea48f
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 912c7e86d253aa18b9a6c60717ceaa70e32fcf0e
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98802436"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428314"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Resources vergrendelen om onverwachte wijzigingen te voorkomen
 
-Als beheerder kan het nodig zijn om een ​​abonnement, resourcegroep of resource te vergrendelen om te voorkomen dat andere gebruikers in uw organisatie per ongeluk essentiële resources verwijderen of wijzigen. U kunt de vergrendeling instellen op **CanNotDelete** of **ReadOnly**. In de portal worden de vergren delingen respectievelijk **verwijderen** en **alleen-lezen** genoemd.
+Als beheerder kunt u een abonnement, resource groep of resource vergren delen om te voor komen dat andere gebruikers in uw organisatie per ongeluk essentiële bronnen verwijderen of wijzigen. De vergren deling overschrijft alle machtigingen die de gebruiker mogelijk heeft.
+
+U kunt de vergrendeling instellen op **CanNotDelete** of **ReadOnly**. In de portal worden de vergren delingen respectievelijk **verwijderen** en **alleen-lezen** genoemd.
 
 * **CanNotDelete** betekent dat geautoriseerde gebruikers nog steeds een resource kunnen lezen en wijzigen, maar de resource niet kan verwijderen.
 * **Alleen-lezen** houdt in dat gemachtigde gebruikers een resource kunnen lezen, maar de resource niet kunnen verwijderen of bijwerken. Het Toep assen van deze vergren deling is vergelijkbaar met het beperken van alle gemachtigde gebruikers tot de machtigingen die door de rol van **lezer** worden verleend.
@@ -316,7 +318,7 @@ lockid=$(az lock show --name LockSite --resource-group exampleresourcegroup  --o
 az lock delete --ids $lockid
 ```
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>REST-API
 
 U kunt geïmplementeerde resources vergren delen met de [rest API voor beheer vergrendelingen](/rest/api/resources/managementlocks). Met de REST API kunt u vergren delingen maken en verwijderen, en informatie over bestaande vergren delingen ophalen.
 

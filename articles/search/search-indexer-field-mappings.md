@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: efee1e1cda7767620931ef81825708d94a1925c3
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: fb3a77291d8b24d5774094533f8c214f1527d771
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063176"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430442"
 ---
 # <a name="field-mappings-and-transformations-using-azure-cognitive-search-indexers"></a>Veld Toewijzingen en trans formaties met Azure Cognitive Search Indexeer functies
 
@@ -42,7 +42,7 @@ Een veld toewijzing bestaat uit drie delen:
 Veld toewijzingen worden toegevoegd aan de `fieldMappings` matrix van de definitie van de Indexeer functie.
 
 > [!NOTE]
-> Als er geen veld toewijzingen worden toegevoegd, nemen Indexeer functies aan dat gegevens bron velden moeten worden toegewezen aan index velden met dezelfde naam. Als u een veld toewijzing toevoegt, worden deze standaard veld toewijzingen voor het bron-en doel veld verwijderd. Sommige Indexeer functies, zoals [de Indexeer functie van Blob Storage](search-howto-indexing-azure-blob-storage.md), voegen standaard veld toewijzingen toe voor het veld index sleutel.
+> Als er geen veld toewijzingen worden toegevoegd, nemen Indexeer functies aan dat gegevens bron velden moeten worden toegewezen aan index velden met dezelfde naam. Als u een veld toewijzing toevoegt, worden deze standaard veld toewijzingen voor het bron-en doel veld verwijderd. Sommige Indexeer functies, zoals de [Indexeer functie van Blob Storage](search-howto-indexing-azure-blob-storage.md), voegen standaard veld toewijzingen toe voor het veld index sleutel.
 
 ## <a name="map-fields-using-rest"></a>Velden toewijzen met behulp van REST
 
@@ -51,7 +51,6 @@ U kunt veld toewijzingen toevoegen wanneer u een nieuwe Indexeer functie maakt m
 Hier volgt een voor beeld van het toewijzen van een bron veld aan een doel veld met een andere naam:
 
 ```JSON
-
 PUT https://[service name].search.windows.net/indexers/myindexer?api-version=[api-version]
 Content-Type: application/json
 api-key: [admin key]

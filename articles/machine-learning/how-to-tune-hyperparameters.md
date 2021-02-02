@@ -2,24 +2,23 @@
 title: Een model afstemming afstemmen
 titleSuffix: Azure Machine Learning
 description: Automatiseer afstemming tuning voor diep leren en machine learning modellen met behulp van Azure Machine Learning.
-ms.author: swatig
-author: swatig007
+ms.author: anumamah
+author: Aniththa
 ms.reviewer: sgilley
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 03/30/2020
+ms.date: 01/29/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: e9f9f73a8e0dbc851efdba07bf1e103f58ae9e75
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: a4be95561c097191803f2faa271c5d6bba875869
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133846"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430340"
 ---
 # <a name="hyperparameter-tuning-a-model-with-azure-machine-learning"></a>Afstemming afstemmen op een model met Azure Machine Learning
-
 
 Automatiseer efficiënt afstemmen van afstemming met behulp van Azure Machine Learning [HyperDrive-pakket](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py). Meer informatie over het uitvoeren van de stappen die nodig zijn om Hyper parameters af te stemmen met de [Azure machine learning SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py):
 
@@ -382,6 +381,30 @@ hd_config = HyperDriveConfig(run_config=src,
 
 ## <a name="visualize-hyperparameter-tuning-runs"></a>Afstemming tuning-uitvoeringen visualiseren
 
+U kunt uw afstemming-afstemmings uitvoeringen visualiseren in de Azure Machine Learning Studio of u kunt een notebook-widget gebruiken.
+
+### <a name="studio"></a>Studio
+
+U kunt al uw afstemming-afstemmings uitvoeringen visualiseren in de [Azure machine learning Studio](https://ml.azure.com). Zie [Run records weer geven in de Studio](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal)voor meer informatie over het weer geven van een experiment in de portal.
+
+- **Grafiek met metrische gegevens**: deze visualisatie houdt de metrische gegevens bij die zijn geregistreerd voor elke onderliggende Hyperdrive-ondergeschiktheid tijdens de duur van het afstemmen van afstemming. Elke regel vertegenwoordigt een onderliggende uitvoering en elk punt meet de primaire metrische waarde bij die herhaling van runtime.  
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-metrics.png" alt-text="Grafiek met metrische gegevens voor afstemming afstemmen":::
+
+- **Parallelle coördinaten grafiek**: deze visualisatie toont de correlatie tussen primaire metrische prestatie-en individuele afstemming-waarden. De grafiek is interactief via verplaatsing van assen (klikken en slepen op het aslabel) en door waarden te markeren in één as (klik en sleep verticaal langs één as om een bereik van gewenste waarden te markeren).
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates.png" alt-text="Grafiek met parallelle coördinaten voor afstemming tuning":::
+
+- **2-dimensionale spreidings diagram**: deze visualisatie toont de correlatie tussen twee afzonderlijke Hyper parameters samen met de bijbehorende primaire meet waarde.
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-2-dimensional-scatter.png" alt-text="Hyparameter tuning 2-dimensionale spreidings diagram":::
+
+- **3D-spreidings diagram**: deze visualisatie is hetzelfde als 2D, maar biedt drie afstemming dimensies van correlatie met de primaire meet waarde. U kunt ook klikken en slepen om de grafiek te verplaatsen om verschillende correlaties in de 3D-ruimte weer te geven.
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-3-dimensional-scatter.png" alt-text="Hyparameter tuning 3D-spreidings diagram":::
+
+### <a name="notebook-widget"></a>Notebook-widget
+
 Gebruik de [widget notitie blok](/python/api/azureml-widgets/azureml.widgets.rundetails?preserve-view=true&view=azure-ml-py) om de voortgang van uw trainings uitvoeringen te visualiseren. In het volgende code fragment worden alle afstemming-afstemmings uitvoeringen op één plek in een Jupyter-notebook gevisualiseerd:
 
 ```Python
@@ -391,17 +414,9 @@ RunDetails(hyperdrive_run).show()
 
 Met deze code wordt een tabel weer gegeven met informatie over de trainings uitvoeringen voor elk van de afstemming-configuraties.
 
-![afstemming tuning Table](./media/how-to-tune-hyperparameters/hyperparameter-tuning-table.png)
+:::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-table.png" alt-text="Afstemming tuning Table":::
 
-U kunt ook de prestaties van elk van de uitvoeringen visualiseren als de voortgang van de training. 
-
-![afstemming-afstemmings plot](./media/how-to-tune-hyperparameters/hyperparameter-tuning-plot.png)
-
-U kunt de correlatie tussen de prestaties en waarden van afzonderlijke Hyper parameters visueel identificeren met behulp van een parallelle coördinaten tekening. 
-
-[![parallelle coördinaten voor afstemming afstemmen](./media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
-
-U kunt ook al uw afstemming-afstemmings uitvoeringen visualiseren in de Azure-webportal. Zie [experimenten volgen](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal)voor meer informatie over het weer geven van een experiment in de portal.
+U kunt ook de prestaties van elk van de uitvoeringen visualiseren als de voortgang van de training.
 
 ## <a name="find-the-best-model"></a>Het beste model zoeken
 

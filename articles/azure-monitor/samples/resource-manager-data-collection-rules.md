@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 4983e4b7f76c627cb3cb3081bc12e27111b2b521
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: bff13c24e0b5818b352e76df1d8ecd8251a5f12c
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98951459"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430223"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](../platform/log-analytics-agent.md) en [de diagnostische extensie](../platform/diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -21,7 +21,7 @@ Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manage
 
 ## <a name="create-association-with-azure-vm"></a>Koppeling maken met Azure VM
 
-In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows Azure-machine geïnstalleerd. Er wordt een koppeling gemaakt tussen een virtuele machine van Azure en een gegevensverzamelingsregel.
+In het volgende voor beeld wordt een koppeling gemaakt tussen een virtuele machine van Azure en een regel voor het verzamelen van gegevens.
 
 ### <a name="template-file"></a>Sjabloonbestand
 

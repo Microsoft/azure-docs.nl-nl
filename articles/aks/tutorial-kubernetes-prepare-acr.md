@@ -3,14 +3,14 @@ title: 'Zelfstudie: Kubernetes in Azure: een containerregister maken'
 description: In deze zelfstudie over AKS (Azure Kubernetes Service) gaat u een exemplaar van Azure Container Registry maken en een containerinstallatiekopie van een voorbeeldtoepassing uploaden.
 services: container-service
 ms.topic: tutorial
-ms.date: 01/12/2021
+ms.date: 01/31/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d1dce1c59c4bf40eaead89e4a8a088e9a8ea4f76
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 9f6ec14cea20192aef7d3010201e6613c5d03a9e
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250618"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430961"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Zelfstudie: Azure Container Registry implementeren en gebruiken
 
@@ -61,7 +61,7 @@ De opdracht retourneert het bericht *Aanmelden geslaagd* wanneer deze is uitgevo
 Als u een lijst met de huidige installatiekopieën wilt weergeven, gebruikt u de opdracht [docker images][docker-images]:
 
 ```console
-$ docker images
+docker images
 ```
 De bovenstaande opdracht bevat een lijst met de huidige lokale installatie kopieën:
 
@@ -88,8 +88,8 @@ docker tag mcr.microsoft.com/azuredocs/azure-vote-front:v1 <acrLoginServer>/azur
 
 Controleer of de tags zijn toegepast door [docker images][docker-images] opnieuw uit te voeren.
 
-```azurecli
-$ docker images
+```console
+docker images
 ```
 
 Een installatiekopie wordt getagd met het adres van het ACR-exemplaar en een versienummer.

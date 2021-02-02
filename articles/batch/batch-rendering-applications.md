@@ -1,14 +1,14 @@
 ---
 title: Rendering van toepassingen
 description: Het is mogelijk om alle rendering-toepassingen met Azure Batch te gebruiken. Azure Marketplace-VM-installatie kopieën zijn echter beschikbaar met vooraf geïnstalleerde toepassingen.
-ms.date: 09/19/2019
+ms.date: 02/01/2021
 ms.topic: how-to
-ms.openlocfilehash: d4eefa287575d68acccb2697e1d262c7e48dab62
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 4eeb87c866858f2f1733b81e3e2154f4521e94bc
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234406"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430025"
 ---
 # <a name="pre-installed-applications-on-batch-rendering-vm-images"></a>Vooraf geïnstalleerde toepassingen voor VM-installatie kopieën voor batch Rendering
 
@@ -18,7 +18,7 @@ Indien van toepassing is licenties voor betalen per gebruik beschikbaar voor de 
 
 Sommige toepassingen bieden alleen ondersteuning voor Windows, maar de meeste worden ondersteund voor zowel Windows als Linux.
 
-## <a name="applications-on-centos-7-rendering-images"></a>Toepassingen op CentOS 7-rendering van installatie kopieën
+## <a name="applications-on-centos-7-rendering-image"></a>Afbeelding van toepassingen op CentOS 7-rendering
 
 De volgende lijst is van toepassing op CentOS 7,6, version 1.1.6 rendering installatie kopieën.
 
@@ -33,7 +33,26 @@ De volgende lijst is van toepassing op CentOS 7,6, version 1.1.6 rendering insta
 * Blender (2.68)
 * Blender (2,8)
 
-## <a name="applications-on-latest-windows-server-2016-rendering-images"></a>Toepassingen op de nieuwste installatie kopieën van Windows Server 2016-Rendering
+## <a name="applications-on-latest-windows-server-rendering-image"></a>Toepassingen op de nieuwste Windows Server-rendering-afbeelding
+
+De volgende lijst is van toepassing op de Windows Server-rendering-installatie kopie versie 1.5.0.
+
+* Autodesk Maya I/O 2020 update 4,4
+* Auto Desk 3ds Max I/O 2021 update 3
+* Autodesk Arnold voor Maya 2020 (Arnold versie 6.1.0.1) MtoA-4.1.1.1-2020
+* Autodesk Arnold voor 3ds Max 2021 (Arnold version 6.1.0.1) MAXtoA-4.2.2.20-2021
+* Chaos-groep V-Ray voor Maya 2020 (versie 5.00.21)
+* Chaos Group V-Ray voor 3ds Max 2021 (versie 5.00.05)
+* Blender (2.79)
+* Blender (2,80)
+* AZ 10
+
+> [!IMPORTANT]
+> Begin met het uitvoeren van een V-Ray met Maya buiten de [Azure batch extensie sjablonen](https://github.com/Azure/batch-extension-templates) `vrayses.exe` voordat u de weer gave uitvoert. Als u de vrayses.exe buiten de sjablonen wilt starten, kunt u de volgende opdracht gebruiken `%MAYA_2020%\vray\bin\vrayses.exe"` .
+>
+> Zie de begin taak van de [Maya-en V-Ray-sjabloon](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) op github voor een voor beeld.
+
+## <a name="applications-on-previous-windows-server-rendering-images"></a>Toepassingen op eerdere Windows Server-rendering-installatie kopieën
 
 De volgende lijst is van toepassing op Windows Server 2016, version 1.3.8 rendering installatie kopieën.
 
@@ -58,13 +77,6 @@ De volgende lijst is van toepassing op Windows Server 2016, version 1.3.8 render
 * Blender (2.79)
 * Blender (2,80)
 * AZ 10
-
-> [!IMPORTANT]
-> Begin met het uitvoeren van een V-Ray met Maya buiten de [Azure batch extensie sjablonen](https://github.com/Azure/batch-extension-templates) `vrayses.exe` voordat u de weer gave uitvoert. Als u de vrayses.exe buiten de sjablonen wilt starten, kunt u de volgende opdracht gebruiken `%MAYA_2017%\vray\bin\vrayses.exe"` .
->
-> Zie de begin taak van de [Maya-en V-Ray-sjabloon](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) op github voor een voor beeld.
-
-## <a name="applications-on-previous-windows-server-2016-rendering-images"></a>Toepassingen op eerdere Windows Server 2016-rendering van installatie kopieën
 
 De volgende lijst is van toepassing op Windows Server 2016, version 1.3.7 rendering installatie kopieën.
 

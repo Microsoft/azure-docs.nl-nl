@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/27/2020
+ms.date: 01/25/2021
 ms.author: jeedes
-ms.openlocfilehash: 3c9d79ef4fd73adbe3ba376f1723693ea8e85197
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 7ee22121fd023f3942eed64bd605bf87b961d893
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736504"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429824"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Tableau Server
 
@@ -40,7 +40,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Tableau Server ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 
-## <a name="adding-tableau-server-from-the-gallery"></a>Tableau Server toevoegen vanuit de galerie
+## <a name="add-tableau-server-from-the-gallery"></a>Tableau-server toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van Tableau Server met Azure AD moet u Tableau Server uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
@@ -83,7 +83,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://azure.<domain name>.link/wg/saml/SSO/index.html`
 
     > [!NOTE]
-    > De bovenstaande waarden zijn geen echte waarden. Werk de waarden bij met de werkelijke URL en id van de Tableau Server-configuratiepagina die verderop in de zelfstudie wordt uitgelegd.
+    > De bovenstaande waarden zijn geen echte waarden. Werk de waarden bij met de werkelijke aanmeldings-URL, id en antwoord-URL van de tableau-server configuratie pagina die verderop in de zelf studie wordt beschreven.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -123,21 +123,21 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 2. Selecteer op het tabblad **CONFIGURATION** **Gebruikers-id en -toegang** en selecteer vervolgens het tabblad **Verificatiemethode**.
 
-    ![Schermopname van Verificatie geselecteerd in Gebruikers-id en toegang.](./media/tableauserver-tutorial/tutorial-tableauserver-auth.png)
+    ![Schermopname van Verificatie geselecteerd in Gebruikers-id en toegang.](./media/tableauserver-tutorial/auth.png)
 
 3. Voer de volgende stappen uit op de pagina **CONFIGURATION**:
 
-    ![Schermopname van de configuratiepagina waarin u de beschreven waarden kunt invoeren.](./media/tableauserver-tutorial/tutorial-tableauserver-config.png)
+    ![Schermopname van de configuratiepagina waarin u de beschreven waarden kunt invoeren.](./media/tableauserver-tutorial/config.png)
 
     a. Selecteer SAML bij **Verificatiemethode**.
 
     b. Schakel het selectievakje in bij **SAML-verificatie inschakelen voor de server**.
 
-    c. Retour-URL Tableau Server: de URL waarmee Tableau Server-gebruikers toegang krijgen, zoals `http://tableau_server`. Het gebruik van `http://localhost` is niet aanbevolen. Het gebruik van een URL met een afsluitende slash (bijvoorbeeld `http://tableau_server/`) wordt niet ondersteund. Kopieer de **Retour-URL van Tableau Server** en plak deze in het tekstvak **URL voor aanmelden** in de sectie **Standaard SAML-configuratie** in Azure Portal
+    c. Retour-URL Tableau Server: de URL waarmee Tableau Server-gebruikers toegang krijgen, zoals `http://tableau_server`. Het gebruik van `http://localhost` is niet aanbevolen. Het gebruik van een URL met een afsluitende slash (bijvoorbeeld `http://tableau_server/`) wordt niet ondersteund. Kopieer de URL van de tableau-server en plak deze in om het **URL** -tekstvak in de **basis-SAML-configuratie** in de Azure Portal op te **geven** .
 
-    d. SAML-entiteit-id: de entiteit-id is een unieke aanduiding voor uw Tableau Server-installatie voor de IdP. U kunt de Tableau Server-URL hier opnieuw opgeven, maar dit hoeft niet uw Tableau Server-URL te zijn. Kopieer de **SAML-entiteit-id** en plak deze in het tekstvak **Id** in de sectie **Standaard SAML-configuratie** in Azure Portal
+    d. SAML-entiteit-id: de entiteit-id is een unieke aanduiding voor uw Tableau Server-installatie voor de IdP. U kunt de Tableau Server-URL hier opnieuw opgeven, maar dit hoeft niet uw Tableau Server-URL te zijn. Kopieer de ID van de **SAML-entiteit** en plak deze in het tekstvak **id** in de **basis-SAML-configuratie** sectie in de Azure Portal.
 
-    e. Klik op de optie **XML-metagegevensbestand downloaden** en open het in de teksteditortoepassing. Zoek de URL voor Assertion Consumer Service met HTTP POST en index 0 en kopieer de URL. Plak deze nu in het tekstvak **antwoord-URL** in de sectie **Standaard SAML-configuratie** in Azure Portal
+    e. Klik op de optie **XML-metagegevensbestand downloaden** en open het in de teksteditortoepassing. Zoek de URL voor Assertion Consumer Service met HTTP POST en index 0 en kopieer de URL. Plak het in het tekstvak **URL beantwoorden** in de sectie **basis configuratie van SAML** in de Azure Portal.
 
     f. Zoek het bestand met federatieve metagegevens op dat is gedownload van Azure Portal, en upload het in het bestand met het **metagegevensbestand van de SAML-Idp**.
 
@@ -165,9 +165,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van Tableau Server en initieer hier de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Tableau Server klikt, wordt u omgeleid naar de aanmeldings-URL van Tableau Server. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
-
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Tableau Server klikt, wordt u omgeleid naar de aanmeldings-URL van Tableau Server. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Tableau Server hebt geconfigureerd, kunt u sessiebesturingselementen afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)
+Zodra u de tableau-server hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

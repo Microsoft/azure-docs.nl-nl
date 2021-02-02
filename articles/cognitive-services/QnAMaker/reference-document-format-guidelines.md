@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 04/06/2020
-ms.openlocfilehash: 1bf6eebcfc43452dd9a62e4a49f9aacbcd517ffc
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 76b33d0c09df87196b8fc1f3cbbb0fd06bd30ce1
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352232"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430642"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Richt lijnen voor het opmaken van geïmporteerde documenten en Url's
 
@@ -32,6 +32,9 @@ QnA Maker herkent secties en subsecties en relaties in het bestand op basis van 
 * lettertype stijl
 * nummeren
 * kleuren
+
+> [!NOTE]
+> Er wordt momenteel geen ondersteuning geboden voor het extra heren van afbeeldingen van geüploade documenten.
 
 ## <a name="product-manuals"></a>Product handleidingen
 

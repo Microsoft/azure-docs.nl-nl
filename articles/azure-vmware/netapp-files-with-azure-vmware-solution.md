@@ -3,12 +3,12 @@ title: Azure NetApp Files met Azure VMware-oplossing
 description: Gebruik Azure NetApp Files met virtuele machines van Azure VMware-oplossingen voor het migreren en synchroniseren van gegevens over on-premises servers, virtuele machines met Azure VMware-oplossingen en Cloud infrastructuren.
 ms.topic: how-to
 ms.date: 01/20/2021
-ms.openlocfilehash: b712b25130a8bed19bd784d2c45c18a55a582be6
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: b4ffea23606e1829fbf713488f08bc5618180072
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062975"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430059"
 ---
 # <a name="azure-netapp-files-with-azure-vmware-solution"></a>Azure NetApp Files met Azure VMware-oplossing
 
@@ -102,7 +102,10 @@ Hier volgen slechts enkele aantrekkelijke Azure NetApp Files use cases.
 - Bestands shares op de Azure VMware-oplossing
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Resourcelimieten voor Azure NetApp Files](../azure-netapp-files/azure-netapp-files-resource-limits.md#resource-limits)
-- [Richtlijnen voor Azure NetApp Files-netwerkplanning](../azure-netapp-files/azure-netapp-files-network-topologies.md)
-- [Replicatie tussen regio's van Azure NetApp Files volumes](../azure-netapp-files/cross-region-replication-introduction.md) 
-- [Veelgestelde vragen over Azure NetApp Files](../azure-netapp-files/azure-netapp-files-faqs.md)
+
+Wanneer u Azure NetApp Files hebt geïntegreerd met uw Azure VMware-oplossings werk belastingen, wilt u mogelijk meer informatie over:
+
+- [Resource limieten voor Azure NetApp files](../azure-netapp-files/azure-netapp-files-resource-limits.md#resource-limits).
+- [Richt lijnen voor het plannen van Azure NetApp files netwerk](../azure-netapp-files/azure-netapp-files-network-topologies.md).
+- [Replicatie tussen regio's van Azure NetApp files volumes](../azure-netapp-files/cross-region-replication-introduction.md). 
+- [Veelgestelde vragen over Azure NetApp files](../azure-netapp-files/azure-netapp-files-faqs.md).

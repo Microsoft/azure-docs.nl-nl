@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: jeffpatt
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: ed86cc76984388618c177590b3f6358421f09f65
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: f684aff58f441fb0642779e54de39dff941e818c
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878490"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430659"
 ---
 # <a name="troubleshoot-azure-nfs-file-shares"></a>Problemen met Azure NFS-bestands shares oplossen
 
@@ -67,7 +67,6 @@ NFS is alleen beschikbaar voor opslag accounts met de volgende configuratie:
 
 - Laag-Premium
 - Account type-FileStorage
-- Redundantie-LRS
 - Regio's- [lijst met ondersteunde regio's](./storage-files-how-to-create-nfs-shares.md?tabs=azure-portal#regional-availability)
 
 #### <a name="solution"></a>Oplossing
@@ -150,6 +149,17 @@ Het NFS-protocol communiceert met de server via poort 2049, zorg ervoor dat deze
 #### <a name="solution"></a>Oplossing
 
 Controleer of poort 2049 is geopend op de client door de volgende opdracht uit te voeren: `telnet <storageaccountnamehere>.file.core.windows.net 2049` . Als de poort niet open is, opent u deze.
+
+## <a name="ls-list-files-shows-incorrectinconsistent-results"></a>ls (lijst bestanden) toont onjuiste/inconsistente resultaten
+
+### <a name="cause-inconsistency-between-cached-values-and-server-file-metadata-values-when-the-file-handle-is-open"></a>Oorzaak: inconsistentie tussen de waarden in de cache en de meta gegevens van de server bestanden wanneer de bestands ingang is geopend
+Soms wordt met de opdracht ' bestanden weer geven ' een grootte die niet gelijk is aan nul weer gegeven, zoals verwacht. in de meest volgende opdracht lijst bestanden wordt in plaats daarvan de grootte 0 of een zeer oude tijds tempel weer gegeven. Dit is een bekend probleem als gevolg van inconsistente caching van waarden van meta gegevens van bestanden terwijl het bestand is geopend. U kunt een van de volgende tijdelijke oplossingen gebruiken om dit probleem op te lossen:
+
+#### <a name="workaround-1-for-fetching-file-size-use-wc--c-instead-of-ls--l"></a>Tijdelijke oplossing 1: gebruik wc-c in plaats van ls-l voor het ophalen van de bestands grootte
+Met wc-c wordt altijd de nieuwste waarde opgehaald van de server en heeft deze geen inconsistentie.
+
+#### <a name="workaround-2-use-noac-mount-flag"></a>Tijdelijke oplossing 2: gebruik de koppelings vlag ' NOAC '
+Koppel het bestands systeem opnieuw met de vlag ' NOAC ' met de koppelings opdracht. Hiermee worden alle waarden van de meta gegevens van de server altijd opgehaald. Als deze tijdelijke oplossing wordt gebruikt, kan er sprake zijn van een kleine prestatie overhead voor alle meta gegevens bewerkingen.
 
 ## <a name="need-help-contact-support"></a>Hebt u hulp nodig? Neem contact op met ondersteuning.
 Als u nog steeds hulp nodig hebt, [neemt u contact op met de ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) om uw probleem snel op te lossen.

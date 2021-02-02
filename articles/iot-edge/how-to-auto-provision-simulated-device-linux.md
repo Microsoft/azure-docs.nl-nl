@@ -8,12 +8,12 @@ ms.date: 6/30/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c69e919c76c0aecb6cf8a3ee5e9b7e5d286c168a
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: fccd1bd6f808fad11946c6f0b0dff1f453b61d66
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046040"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430625"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-tpm-on-linux"></a>Een IoT Edge apparaat maken en inrichten met een TPM in Linux
 
@@ -49,11 +49,11 @@ Met een virtuele switch kan de virtuele machine verbinding maken met een fysiek 
 
 1. Open Hyper-V-beheer op de Windows-computer.
 
-2. Selecteer **Virtual Switch Manager**in het menu **acties** .
+2. Selecteer **Virtual Switch Manager** in het menu **acties** .
 
 3. Kies een **externe** virtuele switch en selecteer **virtuele switch maken**.
 
-4. Geef de nieuwe virtuele switch een naam, bijvoorbeeld **EdgeSwitch**. Zorg ervoor dat het verbindings type is ingesteld op **extern netwerk**en selecteer **OK**.
+4. Geef de nieuwe virtuele switch een naam, bijvoorbeeld **EdgeSwitch**. Zorg ervoor dat het verbindings type is ingesteld op **extern netwerk** en selecteer **OK**.
 
 5. In een pop-upvenster wordt u gewaarschuwd dat de netwerk verbinding mogelijk wordt verstoord. Selecteer **Ja** ter bevestiging.
 
@@ -83,7 +83,7 @@ Zodra de VM is gemaakt, opent u de instellingen om de Virtual trusted platform m
 
 2. Navigeer naar **Beveiliging**.
 
-3. **Schakel beveiligd opstarten inschakelen**uit.
+3. **Schakel beveiligd opstarten inschakelen** uit.
 
 4. **Schakel trusted platform module in**.
 
@@ -91,7 +91,7 @@ Zodra de VM is gemaakt, opent u de instellingen om de Virtual trusted platform m
 
 ### <a name="start-the-virtual-machine-and-collect-tpm-data"></a>De virtuele machine starten en TPM-gegevens verzamelen
 
-Bouw in de virtuele machine een hulp programma dat u kunt gebruiken om de **registratie-id** en **goedkeurings sleutel**van het apparaat op te halen.
+Bouw in de virtuele machine een hulp programma dat u kunt gebruiken om de **registratie-id** en **goedkeurings sleutel** van het apparaat op te halen.
 
 1. Start de virtuele machine in Hyper-V-beheer en maak er verbinding mee.
 
@@ -112,7 +112,7 @@ Bouw in de virtuele machine een hulp programma dat u kunt gebruiken om de **regi
    sudo ./tpm_device_provision
    ```
 
-1. In het uitvoer venster worden de **registratie-id** en de **goedkeurings sleutel**van het apparaat weer gegeven. Kopieer deze waarden voor later gebruik wanneer u een afzonderlijke registratie voor uw apparaat maakt.
+1. In het uitvoer venster worden de **registratie-id** en de **goedkeurings sleutel** van het apparaat weer gegeven. Kopieer deze waarden voor later gebruik wanneer u een afzonderlijke registratie voor uw apparaat maakt.
 
 Zodra u de registratie-ID en goedkeurings sleutel hebt ingesteld, gaat u verder met de sectie [instellen van de IOT hub Device Provisioning Service](#set-up-the-iot-hub-device-provisioning-service)
 
@@ -144,14 +144,14 @@ Nadat u de Device Provisioning Service hebt uitgevoerd, kopieert u de waarde van
 
 Haal de inrichtings gegevens op van de virtuele machine en gebruik deze om een afzonderlijke registratie in Device Provisioning Service te maken.
 
-Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand**van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
+Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste dubbele toestand** van het apparaat te declareren. In het dubbele apparaat kunt u Tags instellen om apparaten te groeperen op elke gewenste metrische waarde in uw oplossing, zoals regio, omgeving, locatie of apparaattype. Deze tags worden gebruikt voor het maken van [automatische implementaties](how-to-deploy-at-scale.md).
 
 > [!TIP]
 > In de Azure CLI kunt u een [inschrijving](/cli/azure/ext/azure-iot/iot/dps/enrollment) maken en de vlag voor **rand ingeschakeld** gebruiken om aan te geven dat een apparaat een IOT edge apparaat is.
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw exemplaar van IOT hub Device Provisioning Service.
 
-2. Selecteer onder **instellingen**de optie **inschrijvingen beheren**.
+2. Selecteer onder **instellingen** de optie **inschrijvingen beheren**.
 
 3. Selecteer **Individuele inschrijving toevoegen** en voer de volgende stappen uit om de registratie te configureren:  
 
@@ -160,7 +160,7 @@ Wanneer u een inschrijving in DPS maakt, hebt u de mogelijkheid om een **eerste 
    2. Geef de **goedkeurings sleutel** en **registratie-id** op die u van de virtuele machine hebt gekopieerd.
 
       > [!TIP]
-      > Als u een fysiek TPM-apparaat gebruikt, moet u de **goedkeurings sleutel**bepalen, die uniek is voor elke TPM-chip en die is verkregen van de fabrikant van de TPM-chip die eraan is gekoppeld. U kunt een unieke **registratie-id** voor uw TPM-apparaat afleiden door bijvoorbeeld een SHA-256-hash van de goedkeurings sleutel te maken.
+      > Als u een fysiek TPM-apparaat gebruikt, moet u de **goedkeurings sleutel** bepalen, die uniek is voor elke TPM-chip en die is verkregen van de fabrikant van de TPM-chip die eraan is gekoppeld. U kunt een unieke **registratie-id** voor uw TPM-apparaat afleiden door bijvoorbeeld een SHA-256-hash van de goedkeurings sleutel te maken.
 
    3. Geef een ID op voor uw apparaat als u wilt. Als u geen apparaat-ID opgeeft, wordt de registratie-ID gebruikt.
 
@@ -205,7 +205,11 @@ Zodra de runtime op uw apparaat is geïnstalleerd, configureert u het apparaat m
      attestation:
        method: "tpm"
        registration_id: "<REGISTRATION_ID>"
+   # always_reprovision_on_startup: true
+   # dynamic_reprovisioning: false
    ```
+
+   Gebruik eventueel de `always_reprovision_on_startup` `dynamic_reprovisioning` regels of om het herinrichtings gedrag van uw apparaat te configureren. Als een apparaat is ingesteld op het opnieuw inrichten bij het opstarten, wordt altijd geprobeerd eerst met DPS in te richten en vervolgens terug te vallen naar de inrichtings back-up als dat mislukt. Als een apparaat is ingesteld op dynamisch opnieuw inrichten, wordt IoT Edge opnieuw opgestart en wordt het opnieuw ingericht als er een herinrichtings gebeurtenis wordt gedetecteerd. Zie IoT Hub voor het opnieuw [inrichten van apparaten](../iot-dps/concepts-device-reprovision.md)voor meer informatie.
 
 1. De waarden van `scope_id` en `registration_id` met uw DPS en apparaatgegevens bijwerken.
 

@@ -8,14 +8,17 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 01/19/2021
 ms.author: ranku
-ms.openlocfilehash: c794af26fdfe2d3706d8d8d266d0756eff391b50
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 7518f5e2984029c087eec1e6697f3237410bda4b
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747682"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430273"
 ---
-# <a name="how-to-convert-data-to-fhir"></a>Gegevens converteren naar FHIR
+# <a name="how-to-convert-data-to-fhir-preview"></a>Gegevens converteren naar FHIR (preview-versie)
+
+> [!IMPORTANT]
+> Deze functie is in openbare preview en wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Het aangepaste eind punt voor $convert gegevens in de Azure-API voor FHIR is bedoeld voor gegevens conversie van verschillende indelingen naar FHIR. Hierbij wordt gebruikgemaakt van de vloeistof sjabloon engine en de sjablonen van het [FHIR Converter](https://github.com/microsoft/FHIR-Converter) -project als de standaard sjablonen. U kunt deze conversie sjablonen naar wens aanpassen. Momenteel wordt de conversie van HL7v2 naar FHIR ondersteund.
 

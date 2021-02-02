@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/18/2019
+ms.date: 01/27/2021
 ms.author: jeedes
-ms.openlocfilehash: 732362ef7099e93697320d8e47180c1207e8cb32
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 37a59d6da6fdc844b0b3647c029d716429b50ef6
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995893"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430832"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Zelfstudie: Integratie van Azure Active Directory met Everbridge
 
@@ -26,8 +26,6 @@ Wanneer u Everbridge integreert met Azure AD, kunt u het volgende doen:
 * In Azure AD beheren wie toegang heeft tot Everbridge.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Everbridge. Dit toegangsbeheerelement wordt eenmalige aanmelding (SSO) genoemd.
 * U kunt uw accounts vanaf één locatie beheren: de Azure-portal.
-Meer informatie over de integratie van SaaS-apps (Software as a Service) met Azure AD vindt u in [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?).
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,60 +40,39 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Everbridge ondersteunt door IDP geïnitieerde eenmalige aanmelding.
 
-## <a name="add-everbridge-from-the-azure-marketplace"></a>Everbridge toevoegen vanuit Azure Marketplace
+## <a name="add-everbridge-from-the-gallery"></a>Everbridge toevoegen vanuit de galerie
 
-Als u de integratie van Everbridge met Azure AD wilt configureren, moet u Everbridge vanuit de Azure Marketplace toevoegen aan uw lijst met beheerde SaaS-apps.
+Als u de integratie van Everbridge in azure AD wilt configureren, moet u Everbridge uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-Voer de volgende stappen uit om Everbridge toe te voegen vanuit Azure Marketplace.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **toevoegen vanuit de galerie** **Everbridge** in het zoekvak.
+1. Selecteer **Everbridge** uit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Selecteer **Azure Active Directory** in de [Azure-portal](https://portal.azure.com) in het navigatiedeelvenster aan de linkerkant.
+## <a name="configure-and-test-azure-ad-sso-for-everbridge"></a>Azure AD SSO voor Everbridge configureren en testen
 
-    ![Knop Azure Active Directory](common/select-azuread.png)
+Azure AD SSO met Everbridge configureren en testen met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Everbridge.
 
-2. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Everbridge:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[EVERBRIDGE SSO configureren](#configure-everbridge-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak een Everbridge-test gebruiker](#create-everbridge-test-user)** -om een equivalent van B. Simon in Everbridge te hebben dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** bovenaan het dialoogvenster.
+### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-    ![Knop Nieuwe toepassing](common/add-new-app.png)
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-4. Voer **Everbridge** in het zoekvak in. Selecteer **Everbridge** in het deelvenster met resultaten en selecteer **Toevoegen**.
+1. Zoek in het Azure Portal op de pagina Toepassings integratie van **Everbridge** de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-     ![Everbridge in de resultatenlijst](common/search-new-app.png)
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Everbridge op basis van een testgebruiker met de naam Britta Simon.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Everbridge tot stand is gebracht.
-
-Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren en testen met Everbridge:
-
-- [Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-single-sign-on) zodat uw gebruikers deze functie kunnen gebruiken.
-- [Configureer Everbridge als Everbridge-beheerportal voor eenmalige aanmelding](#configure-everbridge-as-everbridge-manager-portal-single-sign-on) om de instellingen voor eenmalige aanmelding aan de kant van de toepassing te configureren.
-- [Configureer Everbridge als Everbridge-ledenportal voor eenmalige aanmelding](#configure-everbridge-as-everbridge-member-portal-single-sign-on) om de instellingen voor eenmalige aanmelding aan de kant van de toepassing te configureren.
-- [Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user) voor het testen van eenmalige aanmelding bij Azure AD met Britta Simon.
-- [De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user) zodat Britta Simon gebruik kan maken van eenmalige aanmelding bij Azure AD.
-- [Een Everbridge-testgebruiker maken](#create-an-everbridge-test-user) om een tegenhanger voor Britta Simon te maken in Everbridge die wordt gekoppeld aan de Azure AD-voorstelling van de gebruiker.
-- [Eenmalige aanmelding testen](#test-single-sign-on) om te controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te configureren.
-
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van te toepassing **Everbridge** en selecteer **Eenmalige aanmelding**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. Selecteer in het dialoogvenster **Selecteer een methode voor eenmalige aanmelding** de modus **SAML/WS-Fed** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Selecteer **Bewerken** op de pagina **Eenmalige aanmelding instellen met SAML** om het dialoogvenster **SAML-basisconfiguratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
     >[!NOTE]
     >Configureer de toepassing als beheerportal *of* als ledenportal op zowel de Azure-portal als de Everbridge-portal.
@@ -104,9 +81,11 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te con
 
     ![Domein- en URL-gegevens voor eenmalige aanmelding bij Everbridge](common/idp-intiated.png)
 
-    a. Voer in het vak **Id** een URL met het patroon `https://sso.everbridge.net/<API_Name>` in
+    a. Voer in het vak **id** een URL in die volgt op het patroon.
+    `https://sso.everbridge.net/<API_Name>`
 
-    b. Voer in het vak **Antwoord-URL** een URL met het patroon `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias` in
+    b. Voer in het vak **antwoord-URL** een URL in die volgt op het patroon.
+    `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [ondersteuningsteam van Everbridge](mailto:support@everbridge.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -138,11 +117,31 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Everbridge te con
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    - Aanmeldings-URL
-    - Azure AD-id
-    - Afmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
-### <a name="configure-everbridge-as-everbridge-manager-portal-single-sign-on"></a>Everbridge configureren als Everbridge-beheerportal voor eenmalige aanmelding
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
+
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan Everbridge.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Everbridge** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+### <a name="configure-everbridge-sso"></a>Everbridge SSO configureren
 
 Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbridge-beheerportal**, volgt u deze stappen.
  
@@ -150,7 +149,7 @@ Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbri
 
 1. Selecteer in het menu bovenaan het tabblad **Instellingen**. Selecteer onder **Beveiliging** de optie **Eenmalige aanmelding**.
    
-     ![Eenmalige aanmelding configureren](./media/everbridge-tutorial/tutorial_everbridge_002.png)
+     ![Eenmalige aanmelding configureren](./media/everbridge-tutorial/sso.png)
    
      a. Voer in het vak **naam** de naam van de id-provider in. Bijvoorbeeld de naam van uw bedrijf.
    
@@ -166,72 +165,22 @@ Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbri
 
      g. Selecteer **Opslaan**.
 
-### <a name="configure-everbridge-as-everbridge-member-portal-single-sign-on"></a>Everbridge configureren als Everbridge-ledenportal voor eenmalige aanmelding
+### <a name="configure-everbridge-as-everbridge-member-portal-sso"></a>Everbridge configureren als Everbridge-lid Portal-SSO
 
 Als u eenmalige aanmelding wilt configureren op **Everbridge** als een **Everbridge-ledenportal**, stuurt u het gedownloade **XML-bestand met federatieve metagegevens** naar het [Everbridge-ondersteuningsteam](mailto:support@everbridge.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Voer de volgende stappen uit om de testgebruiker Britta Simon te maken in de Azure-portal.
-
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
-
-    ![Koppelingen naar Gebruikers en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![De knop Nieuwe gebruiker](common/new-user.png)
-
-3. Volg deze stappen in het dialoogvenster **Gebruiker**.
-
-    ![Dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het vak **Naam** **Britta Simon** in.
-  
-    b. Voer in het vak **Gebruikersnaam** `brittasimon@yourcompanydomain.extension` in. Een voorbeeld is BrittaSimon@contoso.com.
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in. Noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
-
-    d. Selecteer **Maken**.
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-Geef Britta Simon toestemming voor gebruik van eenmalige aanmelding van Azure door haar toegang te geven tot Everbridge.
-
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** >**Everbridge**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Selecteer **Everbridge** in de lijst met toepassingen.
-
-    ![De koppeling Everbridge in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Selecteer **Gebruiker toevoegen**. Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het dialoogvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers. Kies **Selecteren** onderaan het scherm.
-
-6. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies **Selecteren** onderaan het scherm.
-
-7. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
-
-### <a name="create-an-everbridge-test-user"></a>Een Everbridge-testgebruiker maken
+### <a name="create-everbridge-test-user"></a>Everbridge-test gebruiker maken
 
 In deze sectie maakt u de testgebruiker Britta Simon in Everbridge. Als u gebruikers wilt toevoegen aan het Everbridge-platform, neemt u contact op met het [ondersteuningsteam van Everbridge](mailto:support@everbridge.com). Er moeten gebruikers worden gemaakt en geactiveerd in Everbridge voordat u eenmalige aanmelding kunt gebruiken. 
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+### <a name="test-sso"></a>Eenmalige aanmelding testen
 
-Test de configuratie voor eenmalige aanmelding van Azure AD met behulp van het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-Wanneer u de tegel Everbridge selecteert in het toegangsvenster, wordt u automatisch aangemeld bij het Everbridge-account waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik op test deze toepassing in Azure Portal en u moet automatisch worden aangemeld bij de Everbridge waarvoor u de SSO hebt ingesteld.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Everbridge in de mijn apps klikt, moet u automatisch worden aangemeld bij de Everbridge waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Volgende stappen
+
+Nadat u Everbridge hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

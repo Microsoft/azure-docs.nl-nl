@@ -3,14 +3,14 @@ title: Weergave mogelijkheden
 description: Standaard Azure Batch mogelijkheden worden gebruikt voor het uitvoeren van werk belastingen en apps voor rendering. Batch bevat specifieke functies voor het ondersteunen van rendering-workloads.
 author: mscurrell
 ms.author: markscu
-ms.date: 01/14/2021
+ms.date: 02/01/2021
 ms.topic: how-to
-ms.openlocfilehash: d9d196897800467fd02397bb774af0bbb9ebabf0
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c748c51311a70cd3b4fc6d435e97a33d709467b9
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234270"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429799"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Mogelijkheden voor Azure Batch Rendering
 
@@ -32,7 +32,7 @@ De meeste rendering-toepassingen vereisen licenties die zijn verkregen van een l
 
 Een Azure Marketplace-rendering VM-installatie kopie kan worden opgegeven in de groeps configuratie als alleen de vooraf geïnstalleerde toepassingen moeten worden gebruikt.
 
-Er is een installatie kopie van Windows 2016 en een CentOS-installatie kopie.  In [Azure Marketplace](https://azuremarketplace.microsoft.com)kunt u de VM-installatie kopieën vinden door te zoeken naar batch rendering.
+Er is een Windows-installatie kopie en een CentOS-installatie kopie.  In [Azure Marketplace](https://azuremarketplace.microsoft.com)kunt u de VM-installatie kopieën vinden door te zoeken naar batch rendering.
 
 Zie de [zelf studie over Azure cli-rendering](./tutorial-rendering-cli.md)voor een voor beeld van een pool configuratie.  De Azure Portal en Batch Explorer bieden GUI-hulpprogram ma's voor het selecteren van een VM-installatie kopie die wordt weer gegeven wanneer u een groep maakt.  Als u een batch-API gebruikt, geeft u voor [ImageReference](/rest/api/batchservice/pool/add#imagereference) de volgende eigenschaps waarden op bij het maken van een groep:
 
@@ -70,13 +70,10 @@ Als u de opdracht regel voor het weer geven van taken wilt maken, moet u de inst
 
 |Toepassing|Uitvoer bare toepassing|Omgevings variabele|
 |---------|---------|---------|
-|Auto Desk 3ds Max 2018|3dsmaxcmdio.exe|3DSMAX_2018_EXEC|
-|Auto Desk 3ds Max 2019|3dsmaxcmdio.exe|3DSMAX_2019_EXEC|
-|Autodesk Maya 2017|render.exe|MAYA_2017_EXEC|
-|Autodesk Maya 2018|render.exe|MAYA_2018_EXEC|
-|Chaos-groeps V-Ray-zelfstandig|vray.exe|VRAY_3 VRAY_3.60.4_EXEC|
-Arnold 2017-opdracht regel|kick.exe|ARNOLD_2017_EXEC|
-|Arnold 2018-opdracht regel|kick.exe|ARNOLD_2018_EXEC|
+|Auto Desk 3ds Max 2021|3dsmaxcmdio.exe|3DSMAX_2021_EXEC|
+|Autodesk Maya 2020|render.exe|MAYA_2020_EXEC|
+|Chaos-groeps V-Ray-zelfstandig|vray.exe|VRAY_4 VRAY_4.10.03_EXEC|
+|Arnold 2020-opdracht regel|kick.exe|ARNOLD_2020_EXEC|
 |Blender|blender.exe|BLENDER_2018_EXEC|
 
 ## <a name="azure-vm-families"></a>Azure VM-families

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 08/27/2019
+ms.date: 01/27/2021
 ms.author: jeedes
-ms.openlocfilehash: 8ddebffcfc70440d5ce0988db87b4f6626531c73
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 7068409c8d1dee7181948e3c3d1326f8538c6daf
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515539"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430505"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-people"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met People
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u People integreert met Azure AD (Azure Active Di
 * In Azure AD beheren wie er toegang heeft tot People.
 * Inschakelen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij People.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -45,22 +43,22 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 >[!NOTE]
 >De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
-## <a name="adding-people-from-the-gallery"></a>People toevoegen uit de galerie
+## <a name="add-people-from-the-gallery"></a>Personen toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van People met Azure Active Directory moet u People uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **People** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **People**.
 1. Selecteer **People** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-people"></a>Eenmalige aanmelding van Azure AD configureren en testen voor People
+## <a name="configure-and-test-azure-ad-sso-for-people"></a>Azure AD SSO voor personen configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure AD met People met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in People.
+Configureer en test eenmalige aanmelding van Azure AD met People met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in People.
 
-Voltooi de volgende stappen om eenmalige aanmelding bij People met Azure AD te configureren en te testen:
+Voer de volgende stappen uit om Azure AD SSO met mensen te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -73,9 +71,9 @@ Voltooi de volgende stappen om eenmalige aanmelding bij People met Azure AD te c
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **People** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Ga in het Azure Portal naar de pagina people-upintegratie van **gebruikers** en zoek de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -83,7 +81,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<company name>.peoplehr.net`
 
-    b. Typ een URL in het vak **Id** : `https://www.peoplehr.com`
+    b. Typ in het vak **Id** de URL: `https://www.peoplehr.com`
 
     c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<company name>.peoplehr.net/Pages/Saml/ConsumeAzureAD.aspx`
 
@@ -102,31 +100,25 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot People.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **People** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-people-sso"></a>Eenmalige aanmelding van People configureren
 
@@ -140,17 +132,17 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 3. Als u People handmatig wilt instellen, opent u een nieuw browservenster en meldt u zich als beheerder aan bij de People-bedrijfssite. Voer hierna de volgende stappen uit:
    
-4. Klik in het menu aan de linkerkant op **Instellingen** .
+4. Klik in het menu aan de linkerkant op **Instellingen**.
 
-    ![Schermopname van het menu aan de linkerkant met 'Instellingen' geselecteerd.](./media/people-tutorial/tutorial_people_001.png)
+    ![Schermopname van het menu aan de linkerkant met 'Instellingen' geselecteerd.](./media/people-tutorial/settings.png)
 
 5. Klik op **Company** (Bedrijf).
 
-    ![Schermopname met 'Company' geselecteerd in het menu 'Settings'.](./media/people-tutorial/tutorial_people_002.png)
+    ![Schermopname met 'Company' geselecteerd in het menu 'Settings'.](./media/people-tutorial/company.png)
 
 6. Klik in het **Bestand met metagegevens voor eenmalige aanmelding van SAML** op **Bladeren** om het gedownloade bestand met metagegevens te uploaden.
 
-    ![Eenmalige aanmelding configureren](./media/people-tutorial/tutorial_people_003.png)
+    ![Eenmalige aanmelding configureren](./media/people-tutorial/xml.png)
 
 ### <a name="create-people-test-user"></a>People-testgebruiker maken
 
@@ -158,17 +150,21 @@ In deze sectie maakt u in People een gebruiker met de naam B. Simon. Werk samen 
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u op de tegel People in het toegangsvenster klikt, wordt u automatisch aangemeld bij de People-instantie waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van personen, waar u de aanmeldings stroom kunt initiëren. 
+
+* Ga rechtstreeks naar de aanmeldings-URL van personen en start de aanmeldings stroom.
+
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel personen in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL van personen. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="test-sso-for-people-mobile"></a>Eenmalige aanmelding testen voor People (mobiel)
 
-1. Open de mobiele People-toepassing. Voer op de aanmeldingspagina de **e-mail-id** in en klik vervolgens op **Eenmalige aanmelding** .
+1. Open de mobiele People-toepassing. Voer op de aanmeldingspagina de **e-mail-id** in en klik vervolgens op **Eenmalige aanmelding**.
 
     ![Het aanmelden](./media/people-tutorial/test01.png)
 
-2. Voer het **UserID van de organisatie** in en klik op **Volgende** .
+2. Voer het **UserID van de organisatie** in en klik op **Volgende**.
 
     ![Het e-mailadres](./media/people-tutorial/test02.png)
 
@@ -176,12 +172,6 @@ Wanneer u op de tegel People in het toegangsvenster klikt, wordt u automatisch a
 
     ![Eenmalig](./media/people-tutorial/test03.png)
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="next-steps"></a>Volgende stappen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
-
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [Probeer People met Azure AD](https://aad.portal.azure.com)
+Zodra u personen hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

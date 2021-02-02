@@ -2,19 +2,20 @@
 title: Configureer uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens in rust
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens rest.
 ms.topic: conceptual
-ms.date: 06/23/2020
-ms.openlocfilehash: 00e33bc3464aed1829968b7957e48455eaa04447
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.date: 02/01/2021
+ms.openlocfilehash: 53622344e36e514543d547dec95caaf1b0b76a13
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98933783"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430676"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels voor het versleutelen van Azure Event Hubs-gegevens op rest configureren met behulp van de Azure Portal
 Azure Event Hubs zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). De Event Hubs-service gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage, worden versleuteld met door micro soft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door micro soft beheerde sleutel, maar wordt de door micro soft beheerde sleutel versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels maken, draaien, uitschakelen en intrekken die worden gebruikt voor het versleutelen van door micro soft beheerde sleutels. Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor uw naam ruimte.
 
 > [!NOTE]
-> De BYOK-functionaliteit wordt ondersteund door [Event hubs toegewezen clusters met één Tenant](event-hubs-dedicated-overview.md) . Het kan niet worden ingeschakeld voor standaard Event Hubs naam ruimten.
+> - De BYOK-functionaliteit wordt ondersteund door [Event hubs toegewezen clusters met één Tenant](event-hubs-dedicated-overview.md) . Het kan niet worden ingeschakeld voor standaard Event Hubs naam ruimten.
+> - De versleuteling kan alleen worden ingeschakeld voor nieuwe of lege naam ruimten. Als de naam ruimte Event hubs bevat, mislukt de versleutelings bewerking.
 
 U kunt Azure Key Vault gebruiken voor het beheren van uw sleutels en het controleren van uw sleutel gebruik. U kunt uw eigen sleutels maken en deze opslaan in een sleutelkluis of u kunt de Azure Key Vault API's gebruiken om sleutels te genereren. Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Azure Key Vault.
 

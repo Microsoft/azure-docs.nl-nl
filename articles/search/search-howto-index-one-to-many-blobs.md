@@ -5,34 +5,38 @@ description: Verken Azure-blobs voor tekst inhoud met behulp van de Azure Cognit
 manager: nitinme
 author: arv100kri
 ms.author: arjagann
-ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 07/11/2020
-ms.openlocfilehash: e5a69525c4bd0717c0561bc61ee3c52aa68e1c9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/01/2021
+ms.openlocfilehash: ea22b3cff8a0303c4e6698db4090df0f5ed2153a
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91533958"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430977"
 ---
 # <a name="indexing-blobs-to-produce-multiple-search-documents"></a>Blobs indexeren om meerdere zoek documenten te maken
-Een BLOB-Indexeer functie behandelt standaard de inhoud van een BLOB als één Zoek document. Bepaalde **parsingMode** -waarden ondersteunen scenario's waarbij een afzonderlijke Blob kan leiden tot meerdere zoek documenten. De verschillende soorten **parsingMode** waarmee een Indexeer functie meer dan één Zoek document uit een BLOB kan extra heren:
-+ `delimitedText`
-+ `jsonArray`
-+ `jsonLines`
+
+Een BLOB-Indexeer functie behandelt standaard de inhoud van een BLOB als één Zoek document. Als u een gedetailleerdere weer gave van de BLOB in een zoek index wilt, kunt u **parsingMode** waarden instellen om meerdere zoek documenten te maken op basis van één blob. De **parsingMode** -waarden die resulteren in veel Zoek documenten bevatten `delimitedText` (voor [CSV](search-howto-index-csv-blobs.md)) en `jsonArray` of `jsonLines` (voor [JSON](search-howto-index-json-blobs.md)).
+
+Wanneer u een van deze methoden voor het parseren gebruikt, moeten de nieuwe Zoek documenten die worden opgehaald unieke document sleutels hebben en er een probleem optreedt bij het bepalen van de locatie van de waarde. De bovenliggende BLOB heeft ten minste één unieke waarde in de vorm van `metadata_storage_path property` , maar als deze waarde wordt bijgedragen aan meer dan één Zoek document, is de sleutel niet meer uniek in de index.
+
+Om dit probleem op te lossen, genereert de BLOB-indexer een `AzureSearch_DocumentKey` unieke id voor elk onderliggend Zoek document dat is gemaakt op basis van de bovenliggende blob. In dit artikel wordt uitgelegd hoe deze functie werkt.
 
 ## <a name="one-to-many-document-key"></a>Een-op-veel-document sleutel
+
 Elk document dat in een Azure Cognitive Search index wordt weer gegeven, wordt uniek geïdentificeerd door een document sleutel. 
 
-Als er geen parserings modus is opgegeven, en als er geen expliciete toewijzing is voor het sleutel veld in de index, wordt de eigenschap [automatisch door](search-indexer-field-mappings.md) gegeven `metadata_storage_path` als de sleutel in azure Cognitive Search. Deze toewijzing zorgt ervoor dat elke BLOB wordt weer gegeven als een afzonderlijk Zoek document.
+Als er geen parserings modus is opgegeven en als er geen [expliciete veld toewijzing](search-indexer-field-mappings.md) is in de definitie van de Indexeer functie voor de sleutel van het zoek document, wijst de BLOB-index automatisch de `metadata_storage_path property` document sleutel toe. Met deze toewijzing wordt ervoor gezorgd dat elke BLOB wordt weer gegeven als een afzonderlijk Zoek document en wordt u de stap voor het maken van deze veld toewijzing zelf opgeslagen (normaal gesp roken worden alleen de velden met identieke namen en typen automatisch toegewezen).
 
-Wanneer u een van de hierboven genoemde parserings modi gebruikt, wordt één BLOB toegewezen aan veel Zoek documenten, waardoor een document sleutel alleen op basis van BLOB-meta gegevens ongeschikt wordt gemaakt. Om deze beperking te overwinnen, kan Azure Cognitive Search een ' één-op-veel ' document sleutel genereren voor elke afzonderlijke entiteit die uit een blob is geëxtraheerd. Deze eigenschap krijgt de naam `AzureSearch_DocumentKey` en wordt toegevoegd aan elke afzonderlijke entiteit die is geëxtraheerd uit de blob. De waarde van deze eigenschap is gegarandeerd uniek voor elke afzonderlijke entiteit _in blobs_ en de entiteiten worden weer gegeven als afzonderlijke Zoek documenten.
+Wanneer u een van de hierboven genoemde parserings modi gebruikt, wordt één BLOB toegewezen aan veel Zoek documenten, waardoor een document sleutel alleen op basis van BLOB-meta gegevens ongeschikt wordt gemaakt. Om deze beperking te overwinnen, kan Azure Cognitive Search een ' één-op-veel ' document sleutel genereren voor elke afzonderlijke entiteit die uit een blob is geëxtraheerd. Deze eigenschap heet AzureSearch_DocumentKey en wordt toegevoegd aan elke afzonderlijke entiteit die uit de blob is geëxtraheerd. De waarde van deze eigenschap is gegarandeerd uniek voor elke afzonderlijke entiteit in blobs en de entiteiten worden weer gegeven als afzonderlijke Zoek documenten.
 
 Standaard, wanneer er geen expliciete veld toewijzingen voor het sleutel index veld worden opgegeven, wordt de toewijzing `AzureSearch_DocumentKey` hieraan toegewezen met behulp van de `base64Encode` functie voor veld toewijzing.
 
 ## <a name="example"></a>Voorbeeld
+
 Stel dat u een index definitie hebt met de volgende velden:
+
 + `id`
 + `temperature`
 + `pressure`
@@ -43,63 +47,63 @@ En uw BLOB-container heeft blobs met de volgende structuur:
 _Blob1.jsop_
 
 ```json
-    { "temperature": 100, "pressure": 100, "timestamp": "2019-02-13T00:00:00Z" }
-    { "temperature" : 33, "pressure" : 30, "timestamp": "2019-02-14T00:00:00Z" }
+{ "temperature": 100, "pressure": 100, "timestamp": "2020-02-13T00:00:00Z" }
+{ "temperature" : 33, "pressure" : 30, "timestamp": "2020-02-14T00:00:00Z" }
 ```
 
 _Blob2.jsop_
 
 ```json
-    { "temperature": 1, "pressure": 1, "timestamp": "2018-01-12T00:00:00Z" }
-    { "temperature" : 120, "pressure" : 3, "timestamp": "2013-05-11T00:00:00Z" }
+{ "temperature": 1, "pressure": 1, "timestamp": "2019-01-12T00:00:00Z" }
+{ "temperature" : 120, "pressure" : 3, "timestamp": "2017-05-11T00:00:00Z" }
 ```
 
-Wanneer u een Indexeer functie maakt en de **parsingMode** instelt op `jsonLines` -zonder expliciete veld toewijzingen voor het sleutel veld op te geven, wordt de volgende toewijzing impliciet toegepast
+Wanneer u een Indexeer functie maakt en de **parsingMode** instelt op `jsonLines` -zonder expliciete veld toewijzingen voor het sleutel veld op te geven, wordt de volgende toewijzing impliciet toegepast.
 
 ```http
-    {
-        "sourceFieldName" : "AzureSearch_DocumentKey",
-        "targetFieldName": "id",
-        "mappingFunction": { "name" : "base64Encode" }
-    }
+{
+    "sourceFieldName" : "AzureSearch_DocumentKey",
+    "targetFieldName": "id",
+    "mappingFunction": { "name" : "base64Encode" }
+}
 ```
 
-Met deze instelling wordt de Azure Cognitive Search-index met de volgende informatie (met base64 versleutelde ID afgekort voor de boog)
+Deze installatie resulteert in disambiguated-document sleutels, vergelijkbaar met de volgende afbeelding (met base64 versleutelde ID verkort voor de boog).
 
-| Id | temperatuur | pressure | tijdstempel |
+| Id | temperatuur | druk | tijdstempel |
 |----|-------------|----------|-----------|
-| aHR0 ... YjEuanNvbjsx | 100 | 100 | 2019-02-13T00:00:00Z |
-| aHR0 ... YjEuanNvbjsy | 33 | 30 | 2019-02-14T00:00:00Z |
-| aHR0 ... YjIuanNvbjsx | 1 | 1 | 2018-01-12T00:00:00Z |
-| aHR0 ... YjIuanNvbjsy | 120 | 3 | 2013-05-11T00:00:00Z |
+| aHR0 ... YjEuanNvbjsx | 100 | 100 | 2020-02-13T00:00:00Z |
+| aHR0 ... YjEuanNvbjsy | 33 | 30 | 2020-02-14T00:00:00Z |
+| aHR0 ... YjIuanNvbjsx | 1 | 1 | 2019-01-12T00:00:00Z |
+| aHR0 ... YjIuanNvbjsy | 120 | 3 | 2017-05-11T00:00:00Z |
 
 ## <a name="custom-field-mapping-for-index-key-field"></a>Aangepaste veld toewijzing voor index sleutel veld
 
-Uitgaande van dezelfde index definitie als in het vorige voor beeld, zeggen uw BLOB-container blobs met de volgende structuur:
+Ervan uitgaande dat de dezelfde index definitie als het vorige voor beeld is, is uw BLOB-container blobs met de volgende structuur:
 
 _Blob1.jsop_
 
 ```json
-    recordid, temperature, pressure, timestamp
-    1, 100, 100,"2019-02-13T00:00:00Z" 
-    2, 33, 30,"2019-02-14T00:00:00Z" 
+recordid, temperature, pressure, timestamp
+1, 100, 100,"2019-02-13T00:00:00Z" 
+2, 33, 30,"2019-02-14T00:00:00Z" 
 ```
 
 _Blob2.jsop_
 
 ```json
-    recordid, temperature, pressure, timestamp
-    1, 1, 1,"2018-01-12T00:00:00Z" 
-    2, 120, 3,"2013-05-11T00:00:00Z" 
+recordid, temperature, pressure, timestamp
+1, 1, 1,"2018-01-12T00:00:00Z" 
+2, 120, 3,"2013-05-11T00:00:00Z" 
 ```
 
-Wanneer u een Indexeer functie met `delimitedText` **parsingMode**maakt, kan het natuurlijk handig zijn om een veld toewijzings functie als volgt in te stellen op het sleutel veld:
+Wanneer u een Indexeer functie met `delimitedText` **parsingMode** maakt, kan het natuurlijk handig zijn om een veld toewijzings functie als volgt in te stellen op het sleutel veld:
 
 ```http
-    {
-        "sourceFieldName" : "recordid",
-        "targetFieldName": "id"
-    }
+{
+    "sourceFieldName" : "recordid",
+    "targetFieldName": "id"
+}
 ```
 
 Deze toewijzing resulteert echter _niet_ in vier documenten die in de index worden weer gegeven, omdat het `recordid` veld niet uniek is in _blobs_. Daarom raden wij u aan het gebruik van de impliciete veld toewijzing van de `AzureSearch_DocumentKey` eigenschap toe te passen op het sleutel index veld voor een-op-veel-parserings modus.
@@ -108,9 +112,6 @@ Als u een expliciete veld toewijzing wilt instellen, moet u ervoor zorgen dat de
 
 > [!NOTE]
 > De benadering die wordt gebruikt door het `AzureSearch_DocumentKey` waarborgen van uniekheid per geëxtraheerde entiteit is onderhevig aan wijzigingen en daarom moet u niet vertrouwen op de waarde voor de behoeften van uw toepassing.
-
-## <a name="help-us-make-azure-cognitive-search-better"></a>Help ons Azure Cognitive Search beter te maken
-Als u een functie verzoek of ideeën voor verbeteringen hebt, geeft u uw invoer op [UserVoice](https://feedback.azure.com/forums/263029-azure-search/)op. Als u hulp nodig hebt bij het gebruik van de bestaande functie, plaatst u uw vraag op [stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
 ## <a name="next-steps"></a>Volgende stappen
 

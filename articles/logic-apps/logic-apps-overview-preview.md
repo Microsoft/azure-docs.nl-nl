@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 01/22/2021
-ms.openlocfilehash: a4d1543c5c4ce7a44825a879b838e7829b8c84fd
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.date: 02/01/2021
+ms.openlocfilehash: 5db0214e9b985df5c5aedb1dbe9878e484af2a55
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760633"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430794"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
@@ -168,6 +168,8 @@ Raadpleeg de volgende onderwerpen voor meer informatie over de prijs modellen di
 ## <a name="changed-limited-unavailable-or-unsupported-capabilities"></a>Gewijzigde, beperkte, niet-beschik bare en niet-ondersteunde mogelijkheden
 
 In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn momenteel beperkt, niet beschikbaar of niet-ondersteund:
+
+* **Ondersteuning voor besturings systeem**: momenteel werkt de ontwerp functie in Visual Studio code niet in Linux-besturings systeem, maar u kunt wel logische Apps implementeren die gebruikmaken van de Logic Apps Preview-runtime voor op Linux gebaseerde virtuele machines. Voor Taan kunt u uw Logic apps in Visual Studio code op Windows of macOS bouwen en vervolgens implementeren op een virtuele machine op basis van Linux.
 
 * **Triggers en acties**: sommige ingebouwde triggers zijn niet beschikbaar, zoals het schuif venster en batch. Als u uw werk stroom wilt starten, gebruikt u de trigger voor het [ingebouwde terugkeer patroon, aanvraag, http, HTTP-webhook, Event hubs of service bus](../connectors/apis-list.md). Ingebouwde triggers en acties worden standaard uitgevoerd in de runtime van Azure Logic Apps Preview, terwijl beheerde connectors worden geïmplementeerd in Azure. In de ontwerp functie worden ingebouwde triggers en acties weer gegeven onder het **ingebouwde** tabblad, terwijl beheerde connector triggers en acties worden weer gegeven op het tabblad **Azure** .
 

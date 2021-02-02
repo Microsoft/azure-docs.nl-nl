@@ -3,22 +3,21 @@ title: Zoeken in CSV-blobs
 titleSuffix: Azure Cognitive Search
 description: Pak CSV-bestand uit vanuit Azure Blob-opslag en importeer dit met behulp van de delimitedText-parserings modus.
 manager: nitinme
-author: mgottein
-ms.author: magottei
-ms.devlang: rest-api
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 07/11/2020
-ms.openlocfilehash: f9c01e8e31e78c277a7a3ec1e5d8d0c32b58f8bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/01/2021
+ms.openlocfilehash: d9633031ca8358ab0498c2e806b22e6c4ddd3eab
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91403650"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430476"
 ---
 # <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Het indexeren van CSV-blobs met behulp van de delimitedText-verwerkings modus en BLOB-Indexeer functies in azure Cognitive Search
 
-Standaard parseert [Azure Cognitive Search BLOB-indexering](search-howto-indexing-azure-blob-storage.md) gescheiden tekst-blobs als één tekst segment. Met blobs die CSV-gegevens bevatten, wilt u echter vaak elke regel in de BLOB behandelen als een afzonderlijk document. Als u bijvoorbeeld de volgende tekst met scheidings tekens wilt, kunt u deze in twee documenten parseren, elk met de velden ' id ', ' datePublished ' en ' Tags ': 
+De [Indexeer functie](search-howto-indexing-azure-blob-storage.md) van Azure Cognitive Search BLOB biedt een `delimitedText` parseringsfout voor CSV-bestanden die elke regel in het CSV-bestand als een afzonderlijk Zoek document behandelt. Met de volgende door komma's gescheiden tekst worden bijvoorbeeld `delimitedText` twee documenten in de zoek index als resultaat gegeven: 
 
 ```text
 id, datePublished, tags
@@ -26,20 +25,20 @@ id, datePublished, tags
 2, 2016-07-07, "cloud,mobile"
 ```
 
-In dit artikel leert u hoe u CSV-blobs kunt parseren met een Azure Cognitive Search BLOB-indexer door de `delimitedText` modus voor parseren in te stellen. 
+Zonder de `delimitedText` parserings modus wordt de volledige inhoud van het CSV-bestand beschouwd als één Zoek document.
 
-> [!NOTE]
-> Volg de aanbevelingen voor de configuratie van de Indexeer functie in [een-op-veel-indexering](search-howto-index-one-to-many-blobs.md) om meerdere zoek documenten uit één Azure-Blob af te voeren.
+Wanneer u meerdere zoek documenten van één BLOB maakt, moet u de [indexeringen indexeren om meerdere zoek documenten te maken](search-howto-index-one-to-many-blobs.md) om inzicht te krijgen in de werking van document toetstoewijzingen. De BLOB-indexer kan waarden zoeken of genereren waarmee elk nieuw document op unieke wijze wordt gedefinieerd. Met name een tijdelijke oplossing die wordt `AzureSearch_DocumentKey` gegenereerd wanneer een BLOB wordt geparseerd in kleinere delen, waarbij de waarde vervolgens wordt gebruikt als de sleutel van het zoek document in de index.
 
 ## <a name="setting-up-csv-indexing"></a>CSV-indexering instellen
+
 Als u CSV-blobs wilt indexeren, maakt of werkt u een Indexeer functie definitie met de `delimitedText` parserings modus op een aanvraag voor het maken van een [Indexeer](/rest/api/searchservice/create-indexer) functie:
 
 ```http
-    {
-      "name" : "my-csv-indexer",
-      ... other indexer properties
-      "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "firstLineContainsHeaders" : true } }
-    }
+{
+  "name" : "my-csv-indexer",
+  ... other indexer properties
+  "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "firstLineContainsHeaders" : true } }
+}
 ```
 
 `firstLineContainsHeaders` geeft aan dat de eerste (niet-lege) regel van elke BLOB kopteksten bevat.
@@ -60,41 +59,40 @@ U kunt het scheidings teken aanpassen met behulp van de `delimitedTextDelimiter`
 
 > [!IMPORTANT]
 > Wanneer u de modus voor het parseren van tekst met scheidings tekens gebruikt Cognitive Search, wordt ervan uitgegaan dat alle blobs in uw gegevens bron CSV zijn. Als u een combi natie van CSV-en niet-CSV-blobs in dezelfde gegevens bron wilt ondersteunen, moet u deze op [UserVoice](https://feedback.azure.com/forums/263029-azure-search)stemmen.
-> 
-> 
+>
 
 ## <a name="request-examples"></a>Aanvraag voorbeelden
+
 Als u dit alles gebruikt, zijn hier de volledige voor beelden van payload. 
 
 Bron 
 
 ```http
-    POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
-    Content-Type: application/json
-    api-key: [admin key]
+POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
+Content-Type: application/json
+api-key: [admin key]
 
-    {
-        "name" : "my-blob-datasource",
-        "type" : "azureblob",
-        "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
-        "container" : { "name" : "my-container", "query" : "<optional, my-folder>" }
-    }   
+{
+    "name" : "my-blob-datasource",
+    "type" : "azureblob",
+    "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
+    "container" : { "name" : "my-container", "query" : "<optional, my-folder>" }
+}   
 ```
 
 Indexeer functie
 
 ```http
-    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
-    Content-Type: application/json
-    api-key: [admin key]
+POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
+Content-Type: application/json
+api-key: [admin key]
 
-    {
-      "name" : "my-csv-indexer",
-      "dataSourceName" : "my-blob-datasource",
-      "targetIndexName" : "my-target-index",
-      "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } }
-    }
+{
+  "name" : "my-csv-indexer",
+  "dataSourceName" : "my-blob-datasource",
+  "targetIndexName" : "my-target-index",
+  "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } }
+}
 ```
 
-## <a name="help-us-make-azure-cognitive-search-better"></a>Help ons Azure Cognitive Search beter te maken
-Als u een functie verzoek of ideeën voor verbeteringen hebt, geeft u uw invoer op [UserVoice](https://feedback.azure.com/forums/263029-azure-search/)op. Als u hulp nodig hebt bij het gebruik van de bestaande functie, plaatst u uw vraag op [stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
+

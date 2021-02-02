@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 01/15/2021
 ms.custom: generated
-ms.openlocfilehash: a521623447f4415e35a06c5c60e3723a69b4aa15
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 72735dad6a52fffd6e6e94ad4fb0fb7a9558b4c4
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98700598"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430076"
 ---
 # <a name="azure-resource-provider-operations"></a>Azure-resource provider bewerkingen
 
@@ -82,6 +82,7 @@ Klik op de naam van de resource provider in de volgende tabel om de lijst met be
 | [Micro soft. PowerBIDedicated](#microsoftpowerbidedicated) |
 | [Microsoft.Purview](#microsoftpurview) |
 | [Microsoft.StreamAnalytics](#microsoftstreamanalytics) |
+| [Micro soft. Synapse](#microsoftsynapse) |
 | **Blockchain** |
 | [Micro soft. Block Chain](#microsoftblockchain) |
 | **AI en machine learning** |
@@ -94,7 +95,7 @@ Klik op de naam van de resource provider in de volgende tabel om de lijst met be
 | [Micro soft. IoTCentral](#microsoftiotcentral) |
 | [Microsoft.NotificationHubs](#microsoftnotificationhubs) |
 | [Micro soft. TimeSeriesInsights](#microsofttimeseriesinsights) |
-| **Mixed reality** |
+| **Gemengde realiteit** |
 | [Micro soft. IoTSpaces](#microsoftiotspaces) |
 | [Micro soft. MixedReality](#microsoftmixedreality) |
 | **Integratie** |
@@ -4765,6 +4766,169 @@ Azure-service: [Stream Analytics](../stream-analytics/index.yml)
 > | Micro soft. StreamAnalytics/streamingjobs/trans formaties/verwijderen | Stream Analytics taak transformatie verwijderen |
 > | Micro soft. StreamAnalytics/streamingjobs/trans formaties/lezen | Stream Analytics taak transformatie lezen |
 > | Micro soft. StreamAnalytics/streamingjobs/trans formaties/schrijven | Trans formatie van Stream Analytics-taak schrijven |
+
+### <a name="microsoftsynapse"></a>Micro soft. Synapse
+
+Azure-service: [Synapse Analytics](../synapse-analytics/index.yml)
+
+> [!div class="mx-tableFixed"]
+> | Bewerking | Beschrijving |
+> | --- | --- |
+> | Micro soft. Synapse/checkNameAvailability/actie | Hiermee wordt de beschik baarheid van werkruimte namen gecontroleerd. |
+> | Micro soft. Synapse/REGI ster/actie | Registreert de resource provider van Azure Synapse Analytics (werk ruimten) en maakt het mogelijk om werk ruimten te maken. |
+> | Micro soft. Synapse/registratie/actie | Hiermee wordt de registratie van de resource provider van Azure Synapse Analytics (werk ruimten) ongedaan gemaakt en wordt het maken van werk ruimten uitgeschakeld. |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/lezen | Haal alle Integration Runtime op. |
+> | Micro soft. Synapse/werk ruimten/integrationruntimes/schrijven | Integration Runtimes maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/verwijderen | Integration Runtime verwijderen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/getStatus/actie | De status van elke Integration Runtime ophalen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/createExpressSHIRInstallLink/actie | Een Integration Runtime-installatie koppeling maken |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/start/actie | Integration Runtime starten |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/stop/actie | Integration Runtime stoppen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/getConnectionInfo/actie | Verbindings gegevens van een Integration Runtime ophalen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/regenerateAuthKey/actie | De verificatie sleutel van een Integration Runtime opnieuw genereren |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/listAuthKeys/actie | Auth-sleutels van alle Integration Runtime weer geven |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/removeNode/actie | Een Integration Runtime knoop punt verwijderen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/monitoringData/actie | De bewakings gegevens van elke Integration Runtime ophalen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/syncCredentials/actie | Referentie op een Integration Runtime synchroniseren |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/upgrade/actie | Integration Runtime bijwerken |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/removeLinks/actie | Een Integration Runtime koppeling verwijderen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/enableInteractiveQuery/actie | Interactieve query's inschakelen op een Integration Runtime |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/disableInteractiveQuery/actie | Interactieve query op een Integration Runtime uitschakelen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/refreshObjectMetadata/actie | Meta gegevens van objecten voor elke interpremiser-runtime vernieuwen |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/getObjectMetadata/actie | Meta gegevens van objecten ophalen voor elke interloading-runtime |
+> | Micro soft. Synapse/werk ruimten/managedIdentitySqlControlSettings/schrijven | Instellingen voor SQL-beheer van beheerde identiteiten in de werk ruimte bijwerken |
+> | Micro soft. Synapse/werk ruimten/managedIdentitySqlControlSettings/lezen | Instellingen voor SQL-beheer voor beheerde identiteiten ophalen |
+> | Micro soft. Synapse/werk ruimten/scopePools/schrijven | Bereik groepen maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/scopePools/lezen | Alle Scope groepen lezen. |
+> | Micro soft. Synapse/werk ruimten/scopePools/verwijderen | Verwijder alle bereik groepen. |
+> | Micro soft. Synapse/Operations/lezen | Lees beschik bare bewerkingen van de Azure Synapse Analytics-resource provider. |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/nodes/lezen | Een Integration Runtime knoop punt ophalen. |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/knoop punten/verwijderen | Verwijder een Integration Runtime knoop punt. |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/knoop punten/schrijven | Een Integration Runtime knoop punt te patchen. |
+> | Micro soft. Synapse/werk ruimten/integrationRuntimes/knoop punten/IP-adres/actie | Integration Runtime IP-adres ophalen |
+> | Micro soft. Synapse/werk ruimten/firewallRules/schrijven | Een IP-firewall regel maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/firewallRules/lezen | IP-firewall regel lezen |
+> | Micro soft. Synapse/werk ruimten/firewallRules/verwijderen | Verwijder een IP-firewall regel. |
+> | Micro soft. Synapse/werk ruimten/replaceAllIpFirewallRules/actie | Vervangt alle IP-firewall regels voor de werk ruimte. |
+> | Micro soft. Synapse/werk ruimten/schrijven | Werk ruimten maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/lezen | Alle werk ruimten lezen. |
+> | Micro soft. Synapse/werk ruimten/verwijderen | Verwijder alle werk ruimten. |
+> | Micro soft. Synapse/werk ruimten/checkDefaultStorageAccountStatus/actie | Hiermee wordt de standaard status van het opslag account gecontroleerd. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schrijven | Maak of werk alle SQL Analytics-groepen bij. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/lezen | Alle SQL Analytics-groepen lezen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/verwijderen | Verwijder alle SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/Pause/actie | Wacht alle SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/resume/actie | Alle SQL Analytics-groepen hervatten. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/restorePoints/actie | Maak een herstel punt voor de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/verplaatsen/actie | Wijzig de naam van alle SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataWarehouseQueries/lezen | Lees alle SQL Analytics-groeps Query's. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/geoBackupPolicies/lezen | Een geo-back-upbeleid voor een SQL Analytics-groep lezen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataWarehouseUserActivities/lezen | Lees alle gebruikers activiteiten van de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/restorePoints/lezen | Lees alle herstel punten van een SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/restorePoints/verwijderen | Hiermee verwijdert u een herstel punt. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataWarehouseQueries/dataWarehouseQuerySteps/lezen | Lees de query stappen voor SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/maintenanceWindows/lezen | Lees de Windows-onderhouds Vensters voor SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/maintenanceWindows/schrijven | Lees de Windows-onderhouds Vensters voor SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/maintenanceWindowOptions/lezen | Lees de opties voor het onderhouds venster van SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/replicationLinks/lezen | Lees de replicatie koppelingen van een SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/transparentDataEncryption/lezen | Lees de configuratie van een SQL Analytics-groep Transparent Data Encryption. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/transparentDataEncryption/schrijven | Een SQL Analytics-groep Transparent Data Encryption configuratie maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/transparentDataEncryption/operationResults/lezen | Lees alle SQL Analytics-groepen Transparent Data Encryption configuratie bewerkings resultaten. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/auditingSettings/lezen | Lees de controle-instellingen voor de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/auditingSettings/schrijven | Een controle-instellingen voor de SQL Analytics-groep maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/Operations/lezen | Lees alle bewerkingen van SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/gebruik/lezen | Lees alle gebruiks gegevens van een SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/currentSensitivityLabels/lezen | Lees de huidige gevoeligheids labels van de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/currentSensitivityLabels/schrijven | De huidige gevoeligheids labels batch bijwerken |
+> | Micro soft. Synapse/werk ruimten/sqlPools/recommendedSensitivityLabels/lezen | Lees de aanbevolen gevoeligheids labels voor de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/recommendedSensitivityLabels/schrijven | Aanbevolen gevoeligheids labels voor batch update |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/lezen | Alle SQL Analytics-groeps Schema's lezen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schema's/tabellen/lezen | Lees alle SQL Analytics pool-schema tabellen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/tabellen/kolommen/lezen | Lees alle SQL Analytics pool-schema tabel kolommen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/connectionPolicies/lezen | Lees alle beleids regels voor verbinding met SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/lezen | Lees de evaluatie van beveiligings problemen van een SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/schrijven | Hiermee wordt de evaluatie van beveiligings problemen van SQL-groep gemaakt of bijgewerkt |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/verwijderen | Een evaluatie van het beveiligings risico van een SQL Analytics-groep verwijderen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/scans/lezen | Lees de analyse records van beveiligings problemen van een SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/scans/initiateScan/Action | Een SQL Analytics-groep initiëren controle records voor evaluatie van beveiligings problemen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/scans/exporteren/actie | Exporteer de controle records voor beveiligings problemen van een SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/securityAlertPolicies/lezen | Lees het beleid voor detectie van bedreigingen van SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/securityAlertPolicies/schrijven | Een beleid voor detectie van bedreigingen voor SQL Analytics-groepen maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/tabellen/kolommen/sensitivityLabels/lezen | Hiermee wordt het gevoeligheids label opgehaald van een opgegeven kolom. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/Tables/columns/sensitivityLabels/Enable/Action | Schakel wille keurige labels voor SQL Analytics-groepen in. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/tabellen/kolommen/sensitivityLabels/uitschakelen/actie | Schakel wille keurige labels voor SQL Analytics-groepen uit. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/tabellen/kolommen/sensitivityLabels/schrijven | Een gevoelige labels voor een SQL Analytics-groep maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/schemas/tabellen/kolommen/sensitivityLabels/verwijderen | Verwijder alle gevoelige labels voor de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/regels/basis lijnen/lezen | Een SQL Analytics-groep ophalen regel voor de evaluatie van beveiligings problemen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/regels/basis lijnen/schrijven | Een SQL Analytics-groep maken of bijwerken regel basislijn voor evaluatie van beveiligings problemen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/vulnerabilityAssessments/regels/basis lijnen/verwijderen | Verwijder alle SQL Analytics-groeps regels voor evaluatie van beveiligings problemen. |
+> | Micro soft. Synapse/werk ruimten/operationStatuses/lezen | De asynchrone bewerkings status lezen. |
+> | Micro soft. Synapse/werk ruimten/operationResults/lezen | Alle asynchrone bewerkings resultaten lezen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/operationResults/lezen | Alle asynchrone bewerkings resultaten lezen. |
+> | Micro soft. Synapse/werk ruimten/bigDataPools/schrijven | Een Spark-groep maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/bigDataPools/lezen | Alle Spark-groepen lezen. |
+> | Micro soft. Synapse/werk ruimten/bigDataPools/verwijderen | Verwijder alle Spark-Pools. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/metadataSync/schrijven | Synchroniseren van meta gegevens van de SQL Analytics-groep maken of bijwerken |
+> | Micro soft. Synapse/werk ruimten/sqlPools/metadataSync/lezen | Synchronisatie configuratie van meta gegevens van SQL Analytics-groep lezen |
+> | Micro soft. Synapse/werk ruimten/recoverableSqlpools/lezen | Hiermee worden herstel bare SQL Analytics-Pools opgehaald. Dit zijn de bronnen die de geo-back-ups van SQL Analytics-groepen vertegenwoordigen |
+> | Micro soft. Synapse/werk ruimten/beheerders/schrijven | Active Directory beheerder instellen voor de werk ruimte |
+> | Micro soft. Synapse/werk ruimten/beheerders/lezen | Active Directory beheerder voor werk ruimte ophalen |
+> | Micro soft. Synapse/werk ruimten/beheerders/verwijderen | Werk ruimte verwijderen Active Directory beheerder |
+> | Micro soft. Synapse/werk ruimten/privateEndpointConnections/schrijven | Een persoonlijke eindpunt verbinding maken of bijwerken |
+> | Micro soft. Synapse/werk ruimten/privateEndpointConnections/lezen | Een persoonlijke eindpunt verbinding lezen |
+> | Micro soft. Synapse/werk ruimten/privateEndpointConnections/verwijderen | Verbinding voor privé-eind punt verwijderen |
+> | Micro soft. Synapse/werk ruimten/privateLinkResources/lezen | Een lijst met resources voor persoonlijke koppelingen ophalen |
+> | Micro soft. Synapse/werk ruimten/sqlPools/extensies/lezen | Uitbrei ding voor SQL Analytics-groep ophalen |
+> | Micro soft. Synapse/werk ruimten/sqlPools/Extensions/schrijven | De uitbrei ding voor een bepaalde SQL Analytics-groep wijzigen |
+> | Micro soft. Synapse/privateLinkHubs/schrijven | Maak een wille keurige PrivateLinkHubs. |
+> | Micro soft. Synapse/privateLinkHubs/lezen | Lees alle PrivateLinkHubs. |
+> | Micro soft. Synapse/privateLinkHubs/verwijderen | Verwijder PrivateLinkHubs. |
+> | Micro soft. Synapse/locaties/operationStatuses/lezen | De asynchrone bewerkings status lezen. |
+> | Micro soft. Synapse/locaties/operationResults/lezen | Alle asynchrone bewerkings resultaten lezen. |
+> | Micro soft. Synapse/privateLinkHubs/privateLinkResources/lezen | Een lijst met resources voor persoonlijke koppelingen ophalen |
+> | Micro soft. Synapse/privateLinkHubs/privateEndpointConnections/write | Een persoonlijke eindpunt verbinding voor PrivateLinkHub maken of bijwerken |
+> | Micro soft. Synapse/privateLinkHubs/privateEndpointConnections/lezen | Een persoonlijke eindpunt verbinding voor PrivateLinkHub lezen |
+> | Micro soft. Synapse/privateLinkHubs/privateEndpointConnections/verwijderen | De persoonlijke eindpunt verbinding voor PrivateLinkHub verwijderen |
+> | Micro soft. Synapse/werk ruimten/sqlPools/operationStatuses/lezen | Alle asynchrone bewerkings resultaten lezen. |
+> | Micro soft. Synapse/werk ruimten/sleutels/schrijven | Werkruimte sleutels maken of bijwerken |
+> | Micro soft. Synapse/werk ruimten/sleutels/lezen | De definitie van de werkruimte sleutel lezen. |
+> | Micro soft. Synapse/werk ruimten/sleutels/verwijderen | Verwijder een werkruimte sleutel. |
+> | Micro soft. Synapse/werk ruimten/bibliotheken/lezen | Bibliotheek artefacten lezen |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/lezen | Geeft een lijst van de werkbelasting groepen voor een geselecteerde SQL-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/schrijven | Hiermee stelt u de eigenschappen voor een specifieke werkbelasting groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/verwijderen | Een specifieke werkbelasting groep wordt neergezet. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/workloadClassifiers/lezen | Geeft een lijst van de classificaties van werk belastingen voor een geselecteerde SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/workloadClassifiers/schrijven | Hiermee stelt u de eigenschappen voor een specifieke classificatie van werk belastingen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/workloadClassifiers/verwijderen | De classificatie van een specifiek werk belasting wordt neergezet. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/extendedAuditingSettings/lezen | Lees de uitgebreide controle-instellingen van de SQL Analytics-groep. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/extendedAuditingSettings/schrijven | De uitgebreide controle-instellingen van de SQL Analytics-groep maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataMaskingPolicies/lezen | De lijst met beleids regels voor gegevens maskering van de SQL Analytics-groep retour neren. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataMaskingPolicies/schrijven | Hiermee wordt een SQL Analytics pool-groeps beleid voor gegevens maskering gemaakt of bijgewerkt |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataMaskingPolicies/Rules/lezen | Hiermee wordt een lijst met regels voor gegevens maskering voor SQL Analytics-groep opgehaald. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataMaskingPolicies/regels/schrijven | Hiermee wordt een gegevens maskerings regel voor een SQL Analytics-groep gemaakt of bijgewerkt. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/columns/lezen | Een lijst met kolommen voor een SQL Analytics-groep retour neren |
+> | Micro soft. Synapse/werk ruimten/sqlPools/sensitivityLabels/lezen | Hiermee wordt het gevoeligheids label opgehaald van een opgegeven kolom. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/auditRecords/lezen | Records voor BLOB-controle van SQL-groep ophalen |
+> | Micro soft. Synapse/resourceGroups/operationStatuses/lezen | De asynchrone bewerkings status lezen. |
+> | Micro soft. Synapse/werk ruimten/extendedAuditingSettings/schrijven | Instellingen voor uitgebreide controle van SQL Server maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/extendedAuditingSettings/lezen | Lees de standaard instellingen voor uitgebreide controle van SQL Server. |
+> | Micro soft. Synapse/werk ruimten/auditingSettings/schrijven | SQL Server-controle-instellingen maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/auditingSettings/lezen | Lees de standaard controle-instellingen voor SQL Server. |
+> | Micro soft. Synapse/werk ruimten/securityAlertPolicies/schrijven | Beveiligings waarschuwings beleid voor SQL Server maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/securityAlertPolicies/lezen | Lees het standaard beveiligings waarschuwings beleid van SQL Server. |
+> | Micro soft. Synapse/werk ruimten/vulnerabilityAssessments/schrijven | SQL Server-rapport voor beveiligings problemen assement maken of bijwerken. |
+> | Micro soft. Synapse/werk ruimten/vulnerabilityAssessments/lezen | Lees het standaard beveiligings rapport van SQL Server assement. |
+> | Micro soft. Synapse/werk ruimten/vulnerabilityAssessments/verwijderen | Verwijder het assement-rapport voor SQL Server-beveiligings problemen. |
+> | Micro soft. Synapse/werk ruimten/restorableDroppedSqlPools/lezen | Hiermee wordt een verwijderde SQL-groep opgehaald die kan worden hersteld |
+> | Micro soft. Synapse/werk ruimten/sqlPools/dataWarehouseQueries/stappen/lezen | Lees de query stappen voor SQL Analytics-groepen. |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/operationStatuses/lezen | Bewerkings status van werkbelasting groep voor SQL Analytics-groep |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/workloadClassifiers/operationStatuses/lezen | Classificatie bewerkings status van de SQL Analytics-groep |
+> | Micro soft. Synapse/werk ruimten/sqlPools/workloadGroups/workloadClassifiers/operationResults/lezen | Resultaat van classificatie bewerking SQL Analytics-groeps werk belasting |
+> | Micro soft. Synapse/werk ruimten/sqlUsages/lezen | Hiermee worden gebruiks limieten voor SQL Analytics-groepen opgehaald |
+> | Micro soft. Synapse/werk ruimten/auditingSettings/operationResults/lezen | Controle-instellingen SQL Server |
+> | Micro soft. Synapse/werk ruimten/sqlAdministrators/schrijven | Active Directory beheerder instellen voor de werk ruimte |
+> | Micro soft. Synapse/werk ruimten/sqlAdministrators/lezen | Active Directory beheerder voor werk ruimte ophalen |
+> | Micro soft. Synapse/werk ruimten/sqlAdministrators/verwijderen | Werk ruimte verwijderen Active Directory beheerder |
 
 ## <a name="blockchain"></a>Blockchain
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: c26529f48d03b8cd038ce4fea8164a305dfc17f3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: ade5880a6b06f448df23eb77d81201a521f1d240
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097637"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430042"
 ---
 # <a name="create-a-search-indexer"></a>Een Indexeer functie maken
 
@@ -155,7 +155,7 @@ Op voor waarde dat Indexeer functies geen gegevens problemen oplossen, is het mo
 
 ## <a name="know-your-index"></a>Ken uw index
 
-Stel in dat Indexeer functies de zoek documenten niet door geven aan de zoek machine voor het indexeren. Net zoals Indexeer functies eigenschappen hebben die het uitvoerings gedrag bepalen, bevat een index schema eigenschappen die precies van invloed zijn op de manier waarop teken reeksen worden geïndexeerd (alleen teken reeksen worden geanalyseerd en getokend). Afhankelijk van analyse toewijzingen kunnen geïndexeerde teken reeksen afwijken van wat u hebt door gegeven in. U kunt de effecten van analyse functies evalueren met behulp van [tekst analyseren (rest)](/rest/api/searchservice/test-analyzer). Zie voor meer informatie over analyse functies [analyseren voor tekst verwerking](search-analyzers.md).
+Stel in dat Indexeer functies de zoek documenten niet door geven aan de zoek machine voor het indexeren. Net zoals Indexeer functies eigenschappen hebben die het uitvoerings gedrag bepalen, bevat een index schema eigenschappen die van invloed zijn op hoe teken reeksen worden geïndexeerd (alleen teken reeksen worden geanalyseerd en getokend). Afhankelijk van analyse toewijzingen kunnen geïndexeerde teken reeksen afwijken van wat u hebt door gegeven in. U kunt de effecten van analyse functies evalueren met behulp van [tekst analyseren (rest)](/rest/api/searchservice/test-analyzer). Zie voor meer informatie over analyse functies [analyseren voor tekst verwerking](search-analyzers.md).
 
 Met een Indexeer functie worden alleen veld namen en typen gecontroleerd op basis van de manier waarop Indexeer functies met een index werken. Er is geen validerings stap die ervoor zorgt dat inkomende inhoud juist is voor het bijbehorende zoek veld in de index. Als verificatie stap kunt u query's uitvoeren op de gevulde index waarmee hele documenten of geselecteerde velden worden geretourneerd. Zie [een eenvoudige query maken](search-query-create.md)voor meer informatie over het uitvoeren van query's op de inhoud van een index.
 

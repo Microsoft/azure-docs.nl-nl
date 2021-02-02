@@ -9,17 +9,32 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 6e92fb39845944898bebf6446c35f0932e13b5b8
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: a01aab13b87398b7d27af02fa84dd7fadf7b8345
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788872"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430994"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
 
+ ## <a name="2021-01-31"></a>2021-01-31
+### <a name="azure-machine-learning-studio-notebooks-experience-january-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van januari)
++ **Nieuwe functies**
+  + Systeem eigen prijs verkortings editor in AzureML. Gebruikers kunnen nu afprijsingen van bestanden in AzureML Studio weer geven en bewerken.
+  + De [knop uitvoeren voor scripts (. py,. R en. v)](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#run-a-notebook-or-python-script). Gebruikers kunnen nu python-, R-en bash-script uitvoeren in AzureML
+  + [Variabele Explorer](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#explore-variables-in-the-notebook). De inhoud van variabelen en gegevens frames in een pop-updeelvenster verkennen. Gebruikers kunnen eenvoudig gegevens type, grootte en inhoud controleren.
+  + [Inhouds opgave](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#navigate-with-a-toc). Navigeer naar secties van uw notitie blok, aangegeven door de kopteksten van de prijs opgave.
+  + Exporteer uw notebook als latex/HTML/py. Eenvoudig te delen notebook-bestanden maken door deze te exporteren naar LaTex, HTML of. py
+  + Intellicode. ML-krachtige resultaten bieden een verbeterde slimme functie voor automatisch [aanvullen](https://docs.microsoft.com/visualstudio/intellicode/overview).
+
++ **Oplossingen en verbeteringen voor oplossingen**
+  + Verbeterde laad tijden voor pagina's
+  + Verbeterde prestaties 
+  + Verbeterde snelheid en kernel-betrouw baarheid
+  
  ## <a name="2021-01-25"></a>2021-01-25
 
 ### <a name="azure-machine-learning-sdk-for-python-v1210"></a>Azure Machine Learning SDK voor python v-1.21.0

@@ -3,44 +3,58 @@ title: Zoeken in blobs voor tekst zonder opmaak
 titleSuffix: Azure Cognitive Search
 description: Een zoek Indexeer functie configureren om platte tekst uit Azure-blobs te halen voor Zoek opdrachten in volledige tekst in azure Cognitive Search.
 manager: nitinme
-author: mgottein
-ms.author: magottei
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/25/2020
-ms.openlocfilehash: 417bdacc3ce8b619d5ec9618e6060ac071882471
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/01/2021
+ms.openlocfilehash: 422346430e32ccb8745d5a5d829c5d61089a99c6
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91533922"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430425"
 ---
 # <a name="how-to-index-plain-text-blobs-in-azure-cognitive-search"></a>Blobs met tekst zonder opmaak indexeren in azure Cognitive Search
 
-Wanneer u een [BLOB Indexeer functie](search-howto-indexing-azure-blob-storage.md) gebruikt om Doorzoek bare tekst te extra heren voor zoeken in volledige tekst, kunt u verschillende parserings modi aanroepen om betere index resultaten te krijgen. Standaard worden door de Indexeer functie gescheiden tekst-blobs geparseerd als één tekst segment. Als alle blobs echter tekst zonder opmaak bevatten met dezelfde code ring, kunt u de index prestaties aanzienlijk verbeteren met behulp van de modus voor het **parseren van tekst**.
+Wanneer u een [BLOB Indexeer functie](search-howto-indexing-azure-blob-storage.md) gebruikt om Doorzoek bare tekst te extra heren voor zoeken in volledige tekst, kunt u verschillende parserings modi aanroepen om betere index resultaten te krijgen. De Indexeer functie parseert de blob-inhoud standaard als één tekst segment. Als alle blobs echter onbewerkte tekst in dezelfde code ring bevatten, kunt u de indexerings prestaties aanzienlijk verbeteren met behulp van de verwerkings `text` modus.
+
+Gebruik de `text` parserings modus als:
+
++ Bestands type is. txt
++ Bestanden zijn van elk type, maar de inhoud zelf is tekst (bijvoorbeeld programma bron code, HTML, XML enzovoort). Voor bestanden in een markerings taal worden de syntaxis tekens weer geven als statische tekst.
+
+Haal de Indexeer functies uit de serialisatie op JSON. De inhoud van het hele tekst bestand wordt in een groot veld geïndexeerd `"content": "<file-contents>"` . Nieuwe regel-en retour instructies worden weer gegeven als `\r\n\` .
+
+Als u een gedetailleerdere uitkomst wilt, kunt u de volgende oplossingen overwegen:
+
++ [`delimitedText`](search-howto-index-csv-blobs.md) de geparseerde modus, als de bron CSV is
++ [ `jsonArray` of `jsonLines` ](search-howto-index-json-blobs.md), als de bron JSON is
+
+Een derde optie voor het afbreken van inhoud in meerdere delen vereist geavanceerde functies in de vorm van [AI-verrijking](cognitive-search-concept-intro.md). Er wordt een analyse toegevoegd waarmee segmenten van het bestand worden geïdentificeerd en toegewezen aan verschillende Zoek velden. U kunt een volledige of gedeeltelijke oplossing vinden via [ingebouwde vaardig heden](cognitive-search-predefined-skills.md), maar een meer waarschijnlijke oplossing is het leer model dat uw inhoud begrijpt, gegeled in een aangepast leer model, verpakt in een [aangepaste vaardigheid](cognitive-search-custom-skill-interface.md).
 
 ## <a name="set-up-plain-text-indexing"></a>Indexering voor tekst zonder opmaak instellen
 
 Als u de blobs voor tekst zonder opmaak wilt indexeren, maakt of werkt u een Indexeer functie definitie met de `parsingMode` configuratie-eigenschap in `text` op een aanvraag voor het maken van een [Indexeer functie](/rest/api/searchservice/create-indexer) :
 
 ```http
-    PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
-    Content-Type: application/json
-    api-key: [admin key]
+PUT https://[service name].search.windows.net/indexers/[indexer name]?api-version=2020-06-30
+Content-Type: application/json
+api-key: [admin key]
 
-    {
-      ... other parts of indexer definition
-      "parameters" : { "configuration" : { "parsingMode" : "text" } }
-    }
+{
+  ... other parts of indexer definition
+  "parameters" : { "configuration" : { "parsingMode" : "text" } }
+}
 ```
 
 De `UTF-8` code ring wordt standaard gebruikt. Als u een andere code ring wilt opgeven, gebruikt u de `encoding` configuratie-eigenschap: 
 
 ```http
-    {
-      ... other parts of indexer definition
-      "parameters" : { "configuration" : { "parsingMode" : "text", "encoding" : "windows-1252" } }
-    }
+{
+  ... other parts of indexer definition
+  "parameters" : { "configuration" : { "parsingMode" : "text", "encoding" : "windows-1252" } }
+}
 ```
 
 ## <a name="request-example"></a>Voorbeeld van aanvraag
@@ -48,24 +62,20 @@ De `UTF-8` code ring wordt standaard gebruikt. Als u een andere code ring wilt o
 De parserings modi worden opgegeven in de definitie van de Indexeer functie.
 
 ```http
-    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
-    Content-Type: application/json
-    api-key: [admin key]
+POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
+Content-Type: application/json
+api-key: [admin key]
 
-    {
-      "name" : "my-plaintext-indexer",
-      "dataSourceName" : "my-blob-datasource",
-      "targetIndexName" : "my-target-index",
-      "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } }
-    }
+{
+  "name" : "my-plaintext-indexer",
+  "dataSourceName" : "my-blob-datasource",
+  "targetIndexName" : "my-target-index",
+  "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } }
+}
 ```
-
-## <a name="help-us-make-azure-cognitive-search-better"></a>Help ons Azure Cognitive Search beter te maken
-
-Als u een functie verzoek of ideeën voor verbeteringen hebt, geeft u uw invoer op [UserVoice](https://feedback.azure.com/forums/263029-azure-search/)op. Als u hulp nodig hebt bij het gebruik van de bestaande functie, plaatst u uw vraag op [stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Indexeerfuncties in Azure Cognitive Search](search-indexer-overview.md)
-* [Een BLOB-Indexeer functie configureren](search-howto-indexing-azure-blob-storage.md)
-* [Overzicht van BLOB-indexering](search-blob-storage-integration.md)
++ [Indexeerfuncties in Azure Cognitive Search](search-indexer-overview.md)
++ [Een BLOB-Indexeer functie configureren](search-howto-indexing-azure-blob-storage.md)
++ [Overzicht van BLOB-indexering](search-blob-storage-integration.md)

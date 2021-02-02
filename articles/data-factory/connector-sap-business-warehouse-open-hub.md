@@ -11,15 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 06/12/2020
-ms.openlocfilehash: 930c7e7881a00cd0cb1f4abc6b219c0fbdeebac5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/02/2020
+ms.openlocfilehash: ca8fad59e581ef3f5a3ebf585356564d539f0bbd
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87533407"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430727"
 ---
 # <a name="copy-data-from-sap-business-warehouse-via-open-hub-using-azure-data-factory"></a>Gegevens kopiëren van SAP Business Warehouse via open hub met behulp van Azure Data Factory
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens uit een SAP Business Warehouse (BW) te kopiëren via open hub. Het is gebaseerd op het artikel overzicht van de [Kopieer activiteit](copy-activity-overview.md) . Dit geeft een algemeen overzicht van de Kopieer activiteit.
@@ -38,8 +39,8 @@ U kunt gegevens van SAP Business Warehouse kopiëren via open hub naar een onder
 
 Met name de open hub-connector van SAP Business Warehouse ondersteunt:
 
-- SAP Business Warehouse **versie 7,01 of hoger (in een recente SAP-ondersteunings pakket stack uitgebracht na het jaar 2015)**. SAP BW4/HANA wordt niet ondersteund door deze connector.
-- Kopiëren van gegevens via de lokale open hub-doel tabel, die zich onder andere bevindt: DSO, InfoCube, multilevering, Data Source, enzovoort.
+- SAP Business Warehouse **versie 7,01 of hoger (in een recente SAP-ondersteunings pakket stack uitgebracht na het jaar 2015)**. SAP BW/4HANA wordt niet ondersteund door deze connector.
+- Het kopiëren van gegevens via de lokale open hub-doel tabel, die onder andere de naam DSO, InfoCube, multilevering, Data Source, enzovoort kan zijn.
 - Kopiëren van gegevens met behulp van basis verificatie.
 - Verbinding maken met een SAP-toepassings server of SAP-berichten server.
 - Gegevens ophalen via RFC.
@@ -73,7 +74,7 @@ Standaard wordt de laatste Delta van de open hub-tabel niet door ADF gelezen (de
 
 Normaal gesp roken slaat u de Maxi maal gekopieerde aanvraag-ID in de laatste keer uitgevoerd door ADF in een faserings gegevensopslag (zoals Azure Blob in bovenstaand diagram). Daarom wordt dezelfde aanvraag niet een tweede keer door ADF gelezen tijdens de volgende uitvoering. De gegevens worden ondertussen niet automatisch verwijderd uit de tabel open hub.
 
-Voor een correcte Delta-verwerking is het niet toegestaan om aanvraag-Id's van verschillende DTPs in dezelfde open hub-tabel te hebben. Daarom moet u niet meer dan één DTP maken voor elke open hub-bestemming (OHD). Wanneer u de volledige en Delta-extractie van hetzelfde InfoProvider nodig hebt, moet u twee OHDs voor dezelfde InfoProvider maken. 
+Voor een correcte Delta verwerking is het niet toegestaan om aanvraag-Id's van verschillende DTPs in dezelfde open hub-tabel te hebben. Daarom moet u niet meer dan één DTP maken voor elke open hub-bestemming (OHD). Wanneer u de volledige en Delta-extractie van hetzelfde InfoProvider nodig hebt, moet u twee OHDs voor dezelfde InfoProvider maken. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -81,7 +82,7 @@ Als u deze SAP Business Warehouse open hub-connector wilt gebruiken, moet u het 
 
 - Stel een zelf-hostende Integration Runtime in met versie 3,13 of hoger. Zie [zelf-hostende Integration runtime](create-self-hosted-integration-runtime.md) artikel voor meer informatie.
 
-- Down load de **64-bits [SAP .net connector 3,0](https://support.sap.com/en/product/connectors/msnet.html) ** van de SAP-website en installeer deze op de zelf-hostende IR-computer. Zorg er bij de installatie in het venster optionele installatie stappen voor dat u de optie **Assembly's installeren op GAC** selecteert, zoals wordt weer gegeven in de volgende afbeelding. 
+- Down load de **64-bits [SAP .net connector 3,0](https://support.sap.com/en/product/connectors/msnet.html)** van de SAP-website en installeer deze op de zelf-hostende IR-computer. Zorg er bij de installatie in het venster optionele installatie stappen voor dat u de optie **Assembly's installeren op GAC** selecteert, zoals wordt weer gegeven in de volgende afbeelding. 
 
     ![SAP .NET-connector installeren](./media/connector-sap-business-warehouse-open-hub/install-sap-dotnet-connector.png)
 
@@ -90,7 +91,7 @@ Als u deze SAP Business Warehouse open hub-connector wilt gebruiken, moet u het 
     - Autorisatie voor RFC en SAP BW. 
     - Machtigingen voor de activiteit ' uitvoeren ' van het autorisatie object ' S_SDSAUTH '.
 
-- Maak SAP open hub doel type als **database tabel** met de optie "technische sleutel" ingeschakeld.  Het is ook raadzaam om het verwijderen van gegevens uit de tabel als uitgeschakeld te laten, hoewel dit niet vereist is. Maak gebruik van de DTP (rechtstreeks uit te voeren of te integreren in bestaande proces keten) om gegevens van bron object (zoals kubus) te gebruiken die u hebt gekozen voor de open hub-doel tabel.
+- Maak SAP open hub doel type als **database tabel** met de optie "technische sleutel" ingeschakeld.  Het is ook raadzaam om het verwijderen van gegevens uit de tabel als uitgeschakeld te laten, hoewel dit niet vereist is. Gebruik de DTP (rechtstreeks uitvoeren of integreren in bestaande proces keten) om gegevens uit het bron object (zoals kubus) te gebruiken die u hebt gekozen voor de open hub-doel tabel.
 
 ## <a name="getting-started"></a>Aan de slag
 

@@ -3,7 +3,7 @@ title: 'PowerShell-voorbeeld: basisinformatie voor toepassingsproxy-apps vermeld
 description: PowerShell-voorbeeld waarin Azure Active Directory (Azure AD)-toepassingsproxytoepassingen worden vermeld, samen met de toepassings-id (AppId), de naam (DisplayName) en de object-id (ObjId).
 services: active-directory
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 1e8b1a0671fd72209d55777991894f148e170e05
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: db23d2381d0532c760df8ca38d823a71225a1af5
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859348"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258402"
 ---
 # <a name="get-all-application-proxy-apps-and-list-basic-information"></a>Alle toepassingsproxy-apps ophalen en basisinformatie vermelden
 

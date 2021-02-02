@@ -1,45 +1,40 @@
 ---
-title: Beheerde identiteiten en vertrouwde opslag
-description: Media Services kan worden gebruikt met beheerde identiteiten voor het inschakelen van vertrouwde opslag.
+title: Beheerde identiteiten
+description: Media Services kan worden gebruikt met door Azure beheerde identiteiten.
+keywords: ''
 services: media-services
 author: IngridAtMicrosoft
 manager: femila
 ms.service: media-services
 ms.topic: conceptual
-ms.date: 11/04/2020
+ms.date: 1/29/2020
 ms.author: inhenkel
-ms.openlocfilehash: 291508a6beaa687b3a10f55df4591ce601ab51a0
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 71a2b8f0734de80f71dbb2372f8600b464d6c606
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956171"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258436"
 ---
-# <a name="managed-identities-and-trusted-storage-with-media-services"></a>Beheerde identiteiten en vertrouwde opslag met Media Services
+# <a name="managed-identities"></a>Beheerde identiteiten
 
-Media Services kan worden gebruikt met [beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md) voor het inschakelen van vertrouwde opslag. Wanneer u een Media Services-account maakt, moet u dit koppelen aan een opslag account. Media Services hebben toegang tot dat opslag account met behulp van systeem verificatie. Media Services valideert of het Media Services-account en het opslag account zich in hetzelfde abonnement bevinden en valideert dat de gebruiker die de koppeling toevoegt, toegang heeft tot het opslag account met Azure Resource Manager RBAC.
+Een veelvoorkomende uitdaging voor ontwikkelaars is het beheer van geheimen en referenties om communicatie tussen verschillende services te beveiligen. In Azure elimineren beheerde identiteiten de noodzaak voor ontwikkelaars om referenties te beheren door een identiteit voor de Azure-resource in Azure AD op te geven en deze te gebruiken voor het verkrijgen van Azure Active Directory-tokens (Azure AD).
 
-## <a name="trusted-storage"></a>Vertrouwde opslag
-
-Als u echter een firewall wilt gebruiken om uw opslag account te beveiligen, moet u beheerde identiteits verificatie gebruiken. Hiermee kan Media Services toegang krijgen tot het opslag account dat is geconfigureerd met een firewall of een VNet-beperking via vertrouwde opslag toegang.  Zie [Azure Storage firewalls en virtuele netwerken configureren](../../storage/common/storage-network-security.md#trusted-microsoft-services)voor meer informatie over vertrouwde micro soft-Services.
-
-## <a name="media-services-managed-identity-scenarios"></a>Scenario's voor beheerde identiteiten van Media Services
-
-Er zijn momenteel twee scenario's waarbij beheerde identiteit kan worden gebruikt met Media Services:
+Er zijn momenteel twee scenario's waarin beheerde identiteiten kunnen worden gebruikt met Media Services:
 
 - Gebruik de beheerde identiteit van het Media Services-account voor toegang tot opslag accounts.
 
 - Gebruik de beheerde identiteit van het Media Services account om toegang te krijgen tot Key Vault voor toegang tot klant sleutels.
 
-In de volgende twee secties worden de verschillen in de twee scenario's beschreven.
+In de volgende twee secties worden de stappen van de twee scenario's beschreven.
 
-### <a name="use-the-managed-identity-of-the-media-services-account-to-access-storage-accounts"></a>De beheerde identiteit van het Media Services account gebruiken voor toegang tot opslag accounts
+## <a name="use-the-managed-identity-of-the-media-services-account-to-access-storage-accounts"></a>De beheerde identiteit van het Media Services account gebruiken voor toegang tot opslag accounts
 
 1. Maak een Media Services-account met een beheerde identiteit.
 1. Verleen de beheerde identiteits-Principal toegang tot een opslag account dat u bezit.
 1. Media Services kunt vervolgens met behulp van de beheerde identiteit toegang krijgen tot het opslag account.
 
-### <a name="use-the-managed-identity-of-the-media-services-account-to-access-key-vault-to-access-customer-keys"></a>De beheerde identiteit van het Media Services account gebruiken om toegang te krijgen tot Key Vault voor toegang tot klant sleutels
+## <a name="use-the-managed-identity-of-the-media-services-account-to-access-key-vault-to-access-customer-keys"></a>De beheerde identiteit van het Media Services account gebruiken om toegang te krijgen tot Key Vault voor toegang tot klant sleutels
 
 1. Maak een Media Services-account met een beheerde identiteit.
 1. Verleen de beheerde identiteits-Principal toegang tot een Key Vault waarvan u de eigenaar bent.

@@ -3,7 +3,7 @@ title: Toepassings verificatie van AD FS naar Azure Active Directory verplaatsen
 description: Dit artikel is bedoeld om organisaties te helpen begrijpen hoe toepassingen naar Azure AD kunnen worden verplaatst, met een focus op federatieve SaaS-toepassingen.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
@@ -14,12 +14,12 @@ ms.date: 04/01/2020
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e15009dd935d91971ce4212ff44b67a1ca6fa363
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: b27ccf5a861295ae83b5ddc021e77de75962de48
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745371"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258385"
 ---
 # <a name="moving-application-authentication-from-active-directory-federation-services-to-azure-active-directory"></a>Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "96745371"
 > [!TIP]
 > Dit artikel is geschreven voor een doel groep van ontwikkel aars. Project managers en beheerders die de overstap naar Azure AD van een toepassing plannen, moeten overwegen onze [migratie van verificatie van toepassingen naar Azure AD](https://aka.ms/migrateapps/whitepaper) White Paper (PDF) te lezen.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Als u een on-premises map hebt die gebruikers accounts bevat, hebt u waarschijnlijk veel toepassingen die gebruikers verifiëren. Elk van deze apps is geconfigureerd voor gebruikers om toegang te krijgen tot het gebruik van hun identiteit.
 
@@ -444,11 +444,11 @@ Ongeacht hoe uw bestaande externe gebruikers zijn geconfigureerd, zijn er waarsc
 Volg het migratie proces dat in dit artikel wordt beschreven.
 
 Ga vervolgens naar de [Azure Portal](https://aad.portal.azure.com/) om te testen of de migratie is geslaagd. Volg de onderstaande instructies:
-1. Selecteer **Enterprise Applications**  >  **alle toepassingen** in bedrijfs toepassingen en zoek uw app in de lijst.
+1. Selecteer   >  **alle toepassingen** in bedrijfs toepassingen en zoek uw app in de lijst.
 
-1. Selecteer **Manage**  >  **gebruikers en groepen** beheren om ten minste één gebruiker of groep aan de app toe te wijzen.
+1. Selecteer   >  **gebruikers en groepen** beheren om ten minste één gebruiker of groep aan de app toe te wijzen.
 
-1. Selecteer **Manage**  >  **voorwaardelijke toegang** beheren. Controleer uw lijst met beleids regels en zorg ervoor dat u de toegang tot de toepassing niet blokkeert met een [beleid voor voorwaardelijke toegang](../conditional-access/overview.md).
+1. Selecteer   >  **voorwaardelijke toegang** beheren. Controleer uw lijst met beleids regels en zorg ervoor dat u de toegang tot de toepassing niet blokkeert met een [beleid voor voorwaardelijke toegang](../conditional-access/overview.md).
 
 Afhankelijk van hoe u uw app configureert, controleert u of SSO goed werkt.
 

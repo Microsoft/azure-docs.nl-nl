@@ -1,24 +1,36 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassing inrichten
 description: Nieuwe en bijgewerkte documentatie voor het inrichten van de Azure Active Directory-toepassing.
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
 ms.author: kenwith
 author: kenwith
-manager: CelesteDG
-ms.openlocfilehash: 053d342c8fbdd506ac5d4ba0916a1ae9361e7189
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+manager: daveba
+ms.openlocfilehash: a127552c47b9e1ee86d2164926971c8628367dc0
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562205"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255998"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory toepassing inrichten: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie over het inrichten van toepassingen. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de inrichtings service.
+
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="new-articles"></a>Nieuwe artikelen
+- [Hoe Azure Active Directory inrichting integreert met workday](workday-integration-reference.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+- [Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md)
+- [Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory](customize-application-attributes.md)
+- [Hoe Azure Active Directory inrichting kan worden geïntegreerd met SAP-SuccessFactors](sap-successfactors-integration-reference.md)
+- [Toepassing inrichten in quarantaine status](application-provisioning-quarantine-status.md)
+
 
 ## <a name="december-2020"></a>December 2020
 

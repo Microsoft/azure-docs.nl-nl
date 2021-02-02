@@ -3,19 +3,19 @@ title: Naslag informatie over Azure Active Directory en SAP SuccessFactors-integ
 description: Technisch diep gaande kennis in SAP SuccessFactors-HR ingericht inrichten
 services: active-directory
 author: cmmdesai
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: e97be7fef09287e6c4f8696e217702b97853fa6a
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: ed97600ca1802629f81f93f4f51c92ad4b1c9bd1
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569450"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256218"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-sap-successfactors"></a>Hoe Azure Active Directory inrichting kan worden geïntegreerd met SAP-SuccessFactors 
 

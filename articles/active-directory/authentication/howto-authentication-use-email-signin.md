@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: calui
-ms.openlocfilehash: 0ca5f6a853852acbb4ef97adfce2364592bae270
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 4e39d7f15e3ca3c6e241c767a5f881d7170c6379
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559837"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255964"
 ---
 # <a name="sign-in-to-azure-active-directory-using-email-as-an-alternate-login-id-preview"></a>Meld u aan Azure Active Directory gebruik te maken van een e-mail adres als een alternatieve aanmeldings-ID (preview-versie)
 
@@ -113,7 +113,7 @@ Tijdens de preview-periode kunt u op dit moment alleen de optie aanmelden met e-
 1. Controleer als volgt of het *HomeRealmDiscoveryPolicy* -beleid al bestaat in uw Tenant met behulp van de cmdlet [Get-AzureADPolicy][Get-AzureADPolicy] :
 
     ```powershell
-    Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *
+    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
     ```
 
 1. Als er op dit moment geen beleid is geconfigureerd, retourneert de opdracht niets. Als er een beleid wordt geretourneerd, slaat u deze stap over en gaat u verder met de volgende stap om een bestaand beleid bij te werken.
@@ -121,10 +121,22 @@ Tijdens de preview-periode kunt u op dit moment alleen de optie aanmelden met e-
     Als u het *HomeRealmDiscoveryPolicy* -beleid aan de Tenant wilt toevoegen, gebruikt u de cmdlet [New-AzureADPolicy][New-AzureADPolicy] en stelt u het kenmerk *AlternateIdLogin* in op *' enabled ': True* , zoals wordt weer gegeven in het volgende voor beeld:
 
     ```powershell
-    New-AzureADPolicy -Definition @('{"HomeRealmDiscoveryPolicy" :{"AlternateIdLogin":{"Enabled": true}}}') `
-        -DisplayName "BasicAutoAccelerationPolicy" `
-        -IsOrganizationDefault $true `
-        -Type "HomeRealmDiscoveryPolicy"
+    $AzureADPolicyDefinition = @(
+      @{
+         "HomeRealmDiscoveryPolicy" = @{
+            "AlternateIdLogin" = @{
+               "Enabled" = $true
+            }
+         }
+      } | ConvertTo-JSON -Compress
+    )
+    $AzureADPolicyParameters = @{
+      Definition            = $AzureADPolicyDefinition
+      DisplayName           = "BasicAutoAccelerationPolicy"
+      IsOrganizationDefault = $true
+      Type                  = "HomeRealmDiscoveryPolicy"
+    }
+    New-AzureADPolicy @AzureADPolicyParameters
     ```
 
     Wanneer het beleid is gemaakt, retourneert de opdracht de beleids-ID, zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
@@ -156,17 +168,31 @@ Tijdens de preview-periode kunt u op dit moment alleen de optie aanmelden met e-
     In het volgende voor beeld wordt het kenmerk *AlternateIdLogin* toegevoegd en wordt het *AllowCloudPasswordValidation* -kenmerk bewaard dat mogelijk al is ingesteld:
 
     ```powershell
-    Set-AzureADPolicy -id b581c39c-8fe3-4bb5-b53d-ea3de05abb4b `
-        -Definition @('{"HomeRealmDiscoveryPolicy" :{"AllowCloudPasswordValidation":true,"AlternateIdLogin":{"Enabled": true}}}') `
-        -DisplayName "BasicAutoAccelerationPolicy" `
-        -IsOrganizationDefault $true `
-        -Type "HomeRealmDiscoveryPolicy"
+    $AzureADPolicyDefinition = @(
+      @{
+         "HomeRealmDiscoveryPolicy" = @{
+            "AllowCloudPasswordValidation" = $true
+            "AlternateIdLogin" = @{
+               "Enabled" = $true
+            }
+         }
+      } | ConvertTo-JSON -Compress
+    )
+    $AzureADPolicyParameters = @{
+      ID                    = "b581c39c-8fe3-4bb5-b53d-ea3de05abb4b"
+      Definition            = $AzureADPolicyDefinition
+      DisplayName           = "BasicAutoAccelerationPolicy"
+      IsOrganizationDefault = $true
+      Type                  = "HomeRealmDiscoveryPolicy"
+    }
+    
+    Set-AzureADPolicy @AzureADPolicyParameters
     ```
 
     Controleer of het bijgewerkte beleid uw wijzigingen weergeeft en of het kenmerk *AlternateIdLogin* nu is ingeschakeld:
 
     ```powershell
-    Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *
+    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
     ```
 
 Wanneer het beleid is toegepast, kan het tot een uur duren voordat gebruikers zich kunnen aanmelden met hun alternatieve aanmeldings-ID.
@@ -207,7 +233,12 @@ U hebt *Tenant beheerders* machtigingen nodig om de volgende stappen uit te voer
 4. Als er geen bestaande beleids regels voor gefaseerde implementatie zijn voor deze functie, maakt u een nieuw beleid voor gefaseerde implementatie en noteert u de beleids-ID:
 
    ```powershell
-   New-AzureADMSFeatureRolloutPolicy -Feature EmailAsAlternateId -DisplayName "EmailAsAlternateId Rollout Policy" -IsEnabled $true
+   $AzureADMSFeatureRolloutPolicy = @{
+      Feature    = "EmailAsAlternateId"
+      DisplayName = "EmailAsAlternateId Rollout Policy"
+      IsEnabled   = $true
+   }
+   New-AzureADMSFeatureRolloutPolicy @AzureADMSFeatureRolloutPolicy
    ```
 
 5. Zoek de directoryObject-ID voor de groep die moet worden toegevoegd aan het beleid voor gefaseerde implementatie. Let op de geretourneerde waarde voor de *id-* para meter, omdat deze wordt gebruikt in de volgende stap.
@@ -250,7 +281,7 @@ Als gebruikers problemen ondervinden met aanmeldings gebeurtenissen met hun e-ma
 1. Controleer of het kenmerk *AlternateIdLogin* van het Azure AD *HomeRealmDiscoveryPolicy* -beleid is ingesteld op *' enabled ': True*:
 
     ```powershell
-    Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *
+    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
     ```
 
 ## <a name="next-steps"></a>Volgende stappen

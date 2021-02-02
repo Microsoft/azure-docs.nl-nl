@@ -3,7 +3,7 @@ title: SCIM, Microsoft Graph en Azure AD gebruiken voor het inrichten van gebrui
 description: SCIM en de Microsoft Graph samen gebruiken om gebruikers in te richten en uw toepassing te verrijken met de benodigde gegevens.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 04/26/2020
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: ba8dec19443bbafa300144b1aa42b3973cce9e6d
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 0a5d84585f28f6d13cbceb1fec41d6cdabf6d08c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655149"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255624"
 ---
 # <a name="using-scim-and-microsoft-graph-together-to-provision-users-and-enrich-your-application-with-the-data-it-needs"></a>SCIM en Microsoft Graph samen gebruiken om gebruikers in te richten en uw toepassing te verrijken met de benodigde gegevens
 

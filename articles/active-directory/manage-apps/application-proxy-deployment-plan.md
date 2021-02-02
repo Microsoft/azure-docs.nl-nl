@@ -3,19 +3,19 @@ title: Een Azure Active Directory-toepassingsproxy-implementatie plannen
 description: Een end-to-end-hand leiding voor het plannen van de implementatie van toepassings proxy in uw organisatie
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/31/2020
 ms.author: kenwith
-ms.openlocfilehash: 08289987dac81905584ee65b808cfcbf35525728
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 213f7d95916555ea32925a5b0af0865d900b0209
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835139"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257910"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Plan een implementatie voor de Azure AD-toepassingsproxy
 
@@ -124,7 +124,7 @@ Hier volgen enkele gebieden waarvoor u de zakelijke vereisten van uw organisatie
 
 * De prestaties van de toepassing worden niet verminderd ten opzichte van de toegang tot de toepassing vanuit het interne netwerk.
 
-**Gebruikers ervaring**
+**Gebruikerservaring**
 
 * Gebruikers weten hoe ze toegang krijgen tot hun toepassingen met behulp van vertrouwde bedrijfs-Url's op elk platform.
 

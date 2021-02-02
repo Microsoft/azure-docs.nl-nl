@@ -3,19 +3,19 @@ title: 'Quickstart: Eenmalige aanmelding (SSO) op basis van OIDC instellen voor 
 description: In deze quickstart wordt het proces voor het instellen van eenmalige aanmelding (SSO) op basis van OIDC voor een toepassing in uw Azure Active Directory-tenant (Azure AD) besproken.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 2ff35a8d86534a99b8957a9272f9a1eb59fc27ab
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: e5695d5ded92e9bb41d39a082790cfbb456dbc38
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97399975"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258351"
 ---
 # <a name="quickstart-set-up-oidc-based-single-sign-on-sso-for-an-application-in-your-azure-active-directory-azure-ad-tenant"></a>Quickstart: Eenmalige aanmelding (SSO) op basis van OIDC instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)
 

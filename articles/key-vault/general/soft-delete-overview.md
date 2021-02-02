@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 12/15/2020
-ms.openlocfilehash: 0f428954ac6ef74253e6e6e430977a85a3943f99
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 68c690b9cbd2028f73492550adbe86111f9ec3a7
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589981"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257943"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Azure Key Vault: overzicht van voorlopig verwijderen
 
@@ -37,7 +37,7 @@ Azure-sleutel kluizen zijn bijgehouden resources die worden beheerd door Azure R
 
 2. In een ander scenario kan een Rogue-gebruiker proberen een sleutel kluis of een sleutel kluis object te verwijderen, zoals een sleutel binnen een kluis, om een bedrijfs onderbreking te veroorzaken. Het verwijderen van de sleutel kluis of het sleutel kluis object van de daad werkelijke verwijdering van de onderliggende gegevens kan worden gebruikt als een veiligheids maatregel, bijvoorbeeld door de machtigingen voor het verwijderen van gegevens te beperken tot een andere vertrouwde rol. Deze benadering vereist een quorum voor een bewerking die anders kan leiden tot een onmiddellijk verlies van gegevens.
 
-### <a name="soft-delete-behavior"></a>Gedrag bij zacht verwijderen
+### <a name="soft-delete-behavior"></a>Gedrag bij voorlopig verwijderen
 
 Als de functie voor voorlopig verwijderen is ingeschakeld, worden de resources die zijn gemarkeerd als verwijderde resources, gedurende een opgegeven periode (standaard 90 dagen) bewaard. De service biedt verder een mechanisme voor het herstellen van het verwijderde object, waardoor het verwijderen in feite ongedaan wordt.
 
@@ -99,5 +99,6 @@ In het algemeen zijn er slechts twee bewerkingen mogelijk: ' opschonen ' en ' he
 
 De volgende twee hand leidingen bieden de primaire gebruiks scenario's voor het gebruik van voorlopig verwijderen.
 
+- [Key Vault Soft-verwijdering gebruiken met de portal](https://docs.microsoft.com/azure/key-vault/general/key-vault-recovery?tabs=azure-portal)
 - [De Key Vault-functie voor voorlopig verwijderen gebruiken met PowerShell](./key-vault-recovery.md) 
 - [De Key Vault-functie voor voorlopig verwijderen gebruiken met CLI](./key-vault-recovery.md)

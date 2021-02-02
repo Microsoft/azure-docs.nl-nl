@@ -3,7 +3,7 @@ title: Bekende problemen met het inrichten van toepassingen in azure AD
 description: Meer informatie over bekende problemen bij het werken met geautomatiseerde toepassings inrichting in azure AD.
 author: kenwith
 ms.author: kenwith
-manager: celestedg
+manager: daveba
 services: active-directory
 ms.service: active-directory
 ms.subservice: app-provisioning
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 01/05/2021
 ms.reviewer: arvinh
-ms.openlocfilehash: bde5cecc4052724f795cac03f6efceb3451ea2ee
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 9eba671f6c824c8c88388f2b9d61512dfb1d122f
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914345"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256640"
 ---
 # <a name="known-issues-application-provisioning"></a>Bekende problemen: toepassings inrichting
 Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inrichten van apps. U kunt feedback geven over de Application Provisioning-Service op UserVoice, de [Azure AD-toepassing inrichten UserVoice](https://aka.ms/appprovisioningfeaturerequest). We kijken naar UserVoice zodat we de service kunnen verbeteren. 

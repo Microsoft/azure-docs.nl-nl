@@ -4,7 +4,7 @@ description: Meer informatie over het beheren van het inrichten van gebruikers a
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: how-to
@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 9c42a83b4f7f3c6b5ff501525a04ebd96c2a692a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ee18043f0485ae6290b1b323648ba9b2b83258b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88234836"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255913"
 ---
 # <a name="managing-user-account-provisioning-for-enterprise-apps-in-the-azure-portal"></a>Het inrichten van gebruikers accounts voor zakelijke apps beheren in de Azure Portal
 
@@ -31,9 +31,9 @@ In dit artikel worden de algemene stappen beschreven voor het beheren van het au
 Gebruik de Azure Active Directory portal voor het weer geven en beheren van alle toepassingen die zijn geconfigureerd voor eenmalige aanmelding in een directory. Zakelijke apps zijn apps die in uw organisatie worden geïmplementeerd en gebruikt. Volg deze stappen om uw bedrijfs toepassingen weer te geven en te beheren:
 
 1. Open de [Azure Active Directory Portal](https://aad.portal.azure.com).
-1. Selecteer **bedrijfs toepassingen** in het linkerdeel venster. Er wordt een lijst met alle geconfigureerde apps weer gegeven, met inbegrip van apps die zijn toegevoegd vanuit de galerie.
+1. Selecteer **Enterprise-toepassingen** in het linkerdeelvenster. Er wordt een lijst met alle geconfigureerde apps weergegeven, met inbegrip van apps die zijn toegevoegd vanuit de galerie.
 1. Selecteer een app om het resource venster te laden, waar u rapporten kunt weer geven en app-instellingen beheert.
-1. Selecteer **inrichting** om de instellingen voor het inrichten van gebruikers accounts voor de geselecteerde app te beheren.
+1. Selecteer **Inrichten** om de instellingen voor het inrichten van gebruikersaccounts voor de geselecteerde app te beheren.
 
    ![Inrichtings scherm voor het beheren van inrichtings instellingen voor gebruikers accounts](./media/configure-automatic-user-provisioning-portal/enterprise-apps-provisioning.png)
 
@@ -53,7 +53,7 @@ Het **inrichtings** deel venster begint met een **modus** menu, waarin de inrich
 
 Selecteer de optie **automatisch** om instellingen op te geven voor beheerders referenties, toewijzingen, starten en stoppen en synchronisatie.
 
-### <a name="admin-credentials"></a>Beheerders referenties
+### <a name="admin-credentials"></a>Referenties voor beheerder
 
 Vouw de **beheerders referenties** uit om de referenties in te voeren die vereist zijn voor Azure AD om verbinding te maken met de gebruikers beheer-API van de toepassing. De vereiste invoer varieert, afhankelijk van de toepassing. Zie de [configuratie handleiding voor deze specifieke toepassing](user-provisioning.md)voor meer informatie over de referentie typen en vereisten voor specifieke toepassingen.
 

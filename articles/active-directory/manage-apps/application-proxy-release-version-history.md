@@ -3,7 +3,7 @@ title: 'Azure AD-toepassingsproxy: release geschiedenis van versie'
 description: In dit artikel wordt een overzicht gegeven van alle versies van Azure AD-toepassingsproxy en worden nieuwe functies en opgeloste problemen beschreven
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.topic: reference
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/22/2020
 ms.subservice: app-mgmt
 ms.author: kenwith
-ms.openlocfilehash: 8000d07824c27f60dd5d8d6a457521691fe2b7d7
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a4b029a1397a2522dfaa6eba9c0206dd5a031875
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658397"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258130"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD-toepassingsproxy: release geschiedenis van versie
 In dit artikel vindt u een overzicht van de versies en functies van de toepassings proxy van Azure Active Directory (Azure AD) die is uitgebracht. Het Azure AD-team werkt de toepassings proxy regel matig bij met nieuwe functies en functionaliteit. Application proxy-connectors worden automatisch bijgewerkt wanneer een nieuwe versie wordt uitgebracht. 

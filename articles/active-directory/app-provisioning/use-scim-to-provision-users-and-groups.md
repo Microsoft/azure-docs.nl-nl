@@ -3,7 +3,7 @@ title: 'Zelfstudie: een SCIM-eindpunt ontwikkelen voor het inrichten van gebruik
 description: Met System for Cross-domain Identity Management (SCIM) wordt het automatisch inrichten van gebruikers gestandaardiseerd. In deze zelfstudie leert u hoe u een SCIM-eindpunt ontwikkelt, uw SCIM-API integreert met Azure Active Directory en begint met het automatiseren van het inrichten van gebruikers en groepen in uw Cloud-toepassingen.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6250aef5ec69c65dcdfe457a56d4e077b31af4d1
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: a6895a47bc6d99a09408ca002ec48405a5c78682
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051665"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255675"
 ---
 # <a name="tutorial-develop-and-plan-provisioning-for-a-scim-endpoint"></a>Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt
 
@@ -69,7 +69,7 @@ Het hierboven gedefinieerde schema wordt weergegeven met behulp van de onderstaa
      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
       "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
       "urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User"],
-     "userName":"bjensen",
+     "userName":"bjensen@testuser.com",
      "externalId":"bjensen",
      "name":{
        "familyName":"Jensen",
@@ -961,7 +961,7 @@ Als het antwoord op een query van de webservice voor een gebruiker met een `exte
      "urn:ietf:params:scim:schemas:core:2.0:User",
      "urn:ietf:params:scim:schemas:extension:enterprise:2.0User"],
    "externalId":"jyoung",
-   "userName":"jyoung",
+   "userName":"jyoung@testuser.com",
    "active":true,
    "addresses":null,
    "displayName":"Joy Young",

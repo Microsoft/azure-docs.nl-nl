@@ -3,7 +3,7 @@ title: Cloud-HR-toepassing plannen voor Azure Active Directory gebruikers inrich
 description: In dit artikel wordt het implementatie proces beschreven voor de integratie van Cloud-HR-systemen, zoals workday en SuccessFactors, met Azure Active Directory. Het integreren van Azure AD met uw Cloud-HR-systeem resulteert in een volledig identiteits levenscyclus beheer systeem.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/22/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: 64418a727ecb9a300912a4766a9ea2066328ad31
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9c896d4cccf898b8818b4c363c5bc891a8734ca5
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174897"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256708"
 ---
 # <a name="plan-cloud-hr-application-to-azure-active-directory-user-provisioning"></a>Cloud-HR-toepassing plannen voor Azure Active Directory gebruikers inrichting
 

@@ -7,12 +7,12 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/21/2020
-ms.openlocfilehash: cdf029e0dd9ae126310842b8919c818f4721218e
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 7841affc7a8988cb113af3b728ae117093000011
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054734"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257454"
 ---
 # <a name="azure-database-for-mysql---flexible-server-preview"></a>Azure Database for MySQL Flexible Server (preview-versie)
 
@@ -132,20 +132,20 @@ De service voert de communityversie van MySQL uit. Dit biedt volledige toepassin
 
 Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het wereldwijde bereik. De flexibele server voor Azure Database for MySQL is nu beschikbaar in de volgende Azure-regio's:
 
-| Regio | Hoge beschikbaarheid | 
-| --- | --- |
-| Europa -west | :heavy_check_mark: | 
-| Europa - noord | :heavy_check_mark: | 
-| Verenigd Koninkrijk Zuid | BxDxH | 
-| VS - oost 2 | :heavy_check_mark: | 
-| VS - west 2 | :heavy_check_mark: | 
-| VS - centraal | BxDxH | 
-| VS - oost | :heavy_check_mark: | 
-| Canada - midden | BxDxH | 
-| Azië - zuidoost | :heavy_check_mark: | 
-| Korea - centraal | BxDxH | 
-| Japan - oost | BxDxH | 
-| Australië - oost | :heavy_check_mark: |
+| Region | Beschikbaarheid | Zone redundante HA | 
+| --- | --- | --- |
+| Europa -west | :heavy_check_mark: | :heavy_check_mark: |
+| Europa - noord | :heavy_check_mark: | :heavy_check_mark: |
+| Verenigd Koninkrijk Zuid | :heavy_check_mark: | BxDxH | 
+| VS - oost 2 | :heavy_check_mark: | :heavy_check_mark: |
+| VS - west 2 | :heavy_check_mark: | :heavy_check_mark: |
+| VS - centraal | :heavy_check_mark: | BxDxH | 
+| VS - oost | :heavy_check_mark: | :heavy_check_mark: |
+| Canada - midden | :heavy_check_mark: | BxDxH | 
+| Azië - zuidoost | :heavy_check_mark: | :heavy_check_mark: |
+| Korea - centraal | :heavy_check_mark: | BxDxH | 
+| Japan - oost | :heavy_check_mark: | BxDxH | 
+| Australië - oost | :heavy_check_mark: | :heavy_check_mark: |
 
 We werken binnenkort met het toevoegen van nieuwe regio's.
 

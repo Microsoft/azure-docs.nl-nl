@@ -4,7 +4,7 @@ description: Problemen oplossen die kunnen optreden wanneer er geen werkende con
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -16,12 +16,12 @@ ms.date: 05/21/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a9b43660889a318b2085f3aa8c1060daebe0244
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cec028dec2bf2e6295f59aae9c2e243da2209827
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764737"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257031"
 ---
 # <a name="no-working-connector-group-found-for-an-application-proxy-application"></a>Er is geen Working connector-groep gevonden voor een toepassings proxy toepassing
 
@@ -46,7 +46,7 @@ Om het probleem op te lossen, opent u het menu toepassings proxy in uw toepassin
 
    ![Selectie van connector groep in Azure Portal](./media/application-proxy-connectivity-no-working-connector/no-active-connector.png)
 
-Zie de bijbehorende sectie hieronder voor meer informatie over elk van deze opties. In de instructies wordt ervan uitgegaan dat u begint vanaf de pagina voor het beheren van connectors. Als u het bovenstaande fout bericht bekijkt, kunt u naar deze pagina gaan door te klikken op het waarschuwings bericht. U kunt de pagina ook openen door naar **Azure Active Directory**te gaan, op **bedrijfs toepassingen**en vervolgens op **toepassings proxy** te klikken.
+Zie de bijbehorende sectie hieronder voor meer informatie over elk van deze opties. In de instructies wordt ervan uitgegaan dat u begint vanaf de pagina voor het beheren van connectors. Als u het bovenstaande fout bericht bekijkt, kunt u naar deze pagina gaan door te klikken op het waarschuwings bericht. U kunt de pagina ook openen door naar **Azure Active Directory** te gaan, op **bedrijfs toepassingen** en vervolgens op **toepassings proxy** te klikken.
 
    ![Groeps beheer voor connectors in Azure Portal](./media/application-proxy-connectivity-no-working-connector/app-proxy.png)
 

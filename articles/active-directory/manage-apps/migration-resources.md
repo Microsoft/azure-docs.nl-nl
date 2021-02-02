@@ -3,7 +3,7 @@ title: Resources voor het migreren van apps naar Azure Active Directory | Micros
 description: Bronnen die u helpen bij het migreren van de toegang tot en verificatie van toepassingen naar Azure Active Directory (Azure AD).
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
@@ -11,14 +11,14 @@ ms.workload: identity
 ms.date: 02/29/2020
 ms.author: kenwith
 ms.reviewer: baselden
-ms.openlocfilehash: c470987fe6e699a186fa44d17bc731da048a2262
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ac7e273ebcc4cf541bd94bf7e7fad05802db8d0b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658754"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258300"
 ---
-# <a name="resources-for-migrating-applications-to-azure-active-directory"></a>Bronnen voor het migreren van toepassingen naar Azure Active Directory
+# <a name="resources-for-migrating-applications-to-azure-active-directory"></a>Resources voor het migreren van toepassingen naar Azure Active Directory
 
 Bronnen die u helpen bij het migreren van de toegang tot en verificatie van toepassingen naar Azure Active Directory (Azure AD).
 

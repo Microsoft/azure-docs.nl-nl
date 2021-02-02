@@ -4,7 +4,7 @@ description: Meer informatie over het bieden van eenmalige aanmelding voor on-pr
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,14 +16,14 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7d51aa7e75d7e94d1c2ac66d7edb92a3ef9395b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 03c688952f37bf9fc91e9dd25e09d9c31cd980d4
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657462"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257065"
 ---
-# <a name="saml-single-sign-on-for-on-premises-applications-with-application-proxy"></a>Eenmalige aanmelding via SAML voor on-premises toepassingen met toepassings proxy
+# <a name="saml-single-sign-on-for-on-premises-applications-with-application-proxy"></a>Eenmalige aanmelding op basis van SAML voor on-premises toepassingen via toepassingsproxy
 
 U kunt eenmalige aanmelding (SSO) bieden voor on-premises toepassingen die zijn beveiligd met SAML-verificatie en externe toegang bieden tot deze toepassingen via toepassings proxy. Met eenmalige aanmelding via SAML wordt Azure Active Directory (Azure AD) geverifieerd bij de toepassing met behulp van het Azure AD-account van de gebruiker. Azure AD geeft de aanmeldingsgegevens door aan de toepassing via een verbindingsprotocol. U kunt ook gebruikers aan specifieke toepassings rollen toewijzen op basis van de regels die u in uw SAML-claims definieert. Door toepassings proxy naast SAML SSO in te scha kelen, hebben uw gebruikers externe toegang tot de toepassing en een naadloze SSO-ervaring.
 

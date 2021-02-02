@@ -3,7 +3,7 @@ title: Toegang tot Self-service toepassingen gebruiken in azure AD
 description: Selfservice inschakelen zodat gebruikers apps kunnen vinden in azure AD
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere,asteen
-ms.openlocfilehash: d99f0021ee53e972dacfdadb3e488498a3fc4ad0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 13f91fdd9e2d9501fba426bd6facbf9824a39285
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372460"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257014"
 ---
 # <a name="how-to-use-self-service-application-access"></a>Toegang tot Self-service toepassingen gebruiken
 
@@ -43,18 +43,18 @@ Volg de onderstaande stappen om de toegang van selfservice toepassingen voor een
 1. Open de [**Azure Portal**](https://portal.azure.com/) en meld u aan als **globale beheerder.**
 2. Open de **uitbrei ding Azure Active Directory** door **alle services** boven aan het hoofd navigatie menu te selecteren.
 3. Typ **' Azure Active Directory**' in het vak Zoek opdracht filteren en selecteer het **Azure Active Directory** item.
-4. Selecteer **bedrijfs toepassingen** in het navigatie menu Azure Active Directory aan de linkerkant.
-5. Selecteer **alle toepassingen** om een lijst met al uw toepassingen weer te geven.
+4. Selecteer **Bedrijfstoepassingen** in het linkernavigatiemenu van Azure Active Directory.
+5. Selecteer **Alle toepassingen** om een lijst met al uw toepassingen weer te geven.
    * Als u de toepassing die u wilt weer geven hier niet ziet, gebruikt u het **filter** besturings element boven aan de **lijst alle toepassingen** en stelt u de optie voor het **weer geven** van **alle toepassingen in.**
 6. Selecteer de toepassing waarvoor u selfservice toegang wilt inschakelen in de lijst.
 7. Zodra de toepassing is geladen, selecteert u **self-service** in het navigatie menu van de toepassing aan de linkerkant.
 8. Als u toegang voor selfservice toepassingen voor deze toepassing wilt inschakelen, schakelt u de optie **gebruikers toestaan om toegang te vragen tot deze toepassing?** in op **Ja.**
 9. Vervolgens selecteert u de groep waartoe gebruikers die toegang tot deze toepassing vragen moeten worden toegevoegd, selecteert u de kiezer naast het label **waaraan gebruikers moeten worden toegevoegd** en selecteert u een groep.
-10. **Optioneel:** Als u een zakelijke goed keuring wilt vereisen voordat gebruikers toegang worden verleend, **stelt u de**optie **goed keuring vereisen alvorens toegang tot deze toepassing verlenen** in.
+10. **Optioneel:** Als u een zakelijke goed keuring wilt vereisen voordat gebruikers toegang worden verleend, **stelt u de** optie **goed keuring vereisen alvorens toegang tot deze toepassing verlenen** in.
 11. **Optioneel: voor toepassingen die alleen gebruikmaken van wacht woord voor eenmalige aanmelding,** als u wilt toestaan dat de goed keurders van deze gebruiker de wacht woorden opgeven die naar deze toepassing worden verzonden voor goedgekeurde gebruikers, stelt u de **goed keurders toestaan om gebruikers wachtwoorden in te stellen voor deze toepassing?** **in-of uitschakelen.**
 12. **Optioneel:** De zakelijke goed keurders opgeven die de toegang tot deze app mogen goed keuren. Selecteren **wie de toegang tot deze toepassing mag goed keuren?** Selecteer vervolgens Maxi maal 10 afzonderlijke goed keurders voor bedrijven.
     * Groepen worden niet ondersteund.
-13. **Optioneel:** **voor toepassingen die rollen beschikbaar**maken, moet u, als u goedgekeurde selfservice gebruikers wilt toewijzen aan een rol, de selector selecteren naast de **rol waaraan gebruikers moeten worden toegewezen in deze toepassing?** om de rol te selecteren waaraan deze gebruikers moeten worden toegewezen.
+13. **Optioneel:** **voor toepassingen die rollen beschikbaar** maken, moet u, als u goedgekeurde selfservice gebruikers wilt toewijzen aan een rol, de selector selecteren naast de **rol waaraan gebruikers moeten worden toegewezen in deze toepassing?** om de rol te selecteren waaraan deze gebruikers moeten worden toegewezen.
 14. Selecteer de knop **Opslaan** bovenaan om te volt ooien.
 
 Zodra u de configuratie van de selfservice toepassing hebt voltooid, kunnen gebruikers naar [mijn apps](https://myapps.microsoft.com/) navigeren en de knop **+ toevoegen** selecteren om de apps te vinden waarvoor u selfservice toegang hebt ingeschakeld. Zakelijke goed keurders zien ook een melding op de pagina [mijn apps](https://myapps.microsoft.com/) . U kunt een e-mail bericht ontvangen wanneer een gebruiker toegang tot een toepassing heeft aangevraagd waarvoor de goed keuring is vereist. 

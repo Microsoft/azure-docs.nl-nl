@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: justinha
-ms.openlocfilehash: d5dbb7b71e2d67ed5b3f624c93c3c143d6c98e5d
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
-ms.translationtype: HT
+ms.openlocfilehash: 6da1d285440daa5d1d5a230905a77057728d4ae6
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618532"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256539"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Zelfstudie: Secure LDAP configureren voor een door Azure Active Directory Domain Services beheerd domein
 
@@ -212,6 +212,12 @@ Er wordt een melding weergegeven dat Secure LDAP wordt geconfigureerd voor het b
 Het duurt enkele minuten om Secure LDAP in te schakelen voor uw beheerde domein. Als het Secure LDAP-certificaat dat u opgeeft niet voldoet aan de vereiste criteria, kunt u Secure LDAP niet inschakelen voor het beheerde domein.
 
 Enkele veelvoorkomende redenen hiervoor zijn een onjuiste domeinnaam, het versleutelingsalgoritme voor het certificaat is niet ingesteld op *TripleDES-SHA1* of het certificaat verloopt binnenkort of is al verlopen. U kunt het certificaat opnieuw maken met geldige parameters en vervolgens Secure LDAP inschakelen met dit bijgewerkte certificaat.
+
+## <a name="change-an-expiring-certificate"></a>Een verlopen certificaat wijzigen
+
+1. Maak een vervangend beveiligd LDAP-certificaat door de stappen te volgen om [een certificaat voor beveiligde LDAP te maken](#create-a-certificate-for-secure-ldap).
+1. Als u het vervangende certificaat wilt Toep assen op Azure AD DS, selecteert u in het menu links voor Azure AD DS in de Azure Portal **secure LDAP** en selecteert u vervolgens **certificaat wijzigen**.
+1. Distribueer het certificaat naar clients die verbinding maken met behulp van secure LDAP. 
 
 ## <a name="lock-down-secure-ldap-access-over-the-internet"></a>Secure LDAP-toegang via internet beperken
 

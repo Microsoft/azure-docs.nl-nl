@@ -3,19 +3,19 @@ title: Toegang tot apps beheren met Azure AD
 description: Hierin wordt beschreven hoe u met beAzure Active Directory organisaties de apps kunt opgeven waarvoor elke gebruiker toegang heeft.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/16/2017
 ms.author: kenwith
-ms.openlocfilehash: c73a5ccd9e16fb5efd9fefca6253701f942c3202
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5afc6aa8f52011eba6d7cfdfaa09b0ab995183e8
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367785"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257420"
 ---
 # <a name="managing-access-to-apps"></a>Toegang tot apps beheren
 
@@ -88,7 +88,7 @@ Er zijn drie belang rijke manieren waarop een gebruiker toegang kan krijgen tot 
 
 Sommige toepassingen combi neren deze methoden. Bepaalde micro soft-toepassingen maken bijvoorbeeld deel uit van een Microsoft 365-abonnement, maar vereisen nog wel toestemming.
 
-Gebruikers hebben toegang tot Microsoft 365 toepassingen via hun Office 365-portals. U kunt ook Microsoft 365-toepassingen weer geven of verbergen in mijn apps met de [Office 365-zicht baarheid](hide-application-from-user-portal.md) in de **gebruikers instellingen**van uw Directory. 
+Gebruikers hebben toegang tot Microsoft 365 toepassingen via hun Office 365-portals. U kunt ook Microsoft 365-toepassingen weer geven of verbergen in mijn apps met de [Office 365-zicht baarheid](hide-application-from-user-portal.md) in de **gebruikers instellingen** van uw Directory. 
 
 Net als bij zakelijke apps kunt u [gebruikers toewijzen](assign-user-or-group-access-portal.md) aan bepaalde micro soft-toepassingen via de Azure portal of, als de portal optie niet beschikbaar is, met behulp van Power shell.
 

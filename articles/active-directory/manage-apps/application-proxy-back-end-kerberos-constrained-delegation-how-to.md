@@ -3,7 +3,7 @@ title: Problemen oplossen met beperkte Kerberos-overdracht-app proxy
 description: Problemen met Kerberos-beperkte overdrachts configuraties voor toepassings proxy oplossen
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,14 +11,14 @@ ms.topic: troubleshooting
 ms.date: 04/23/2019
 ms.author: kenwith
 ms.reviewer: asteen, japere
-ms.openlocfilehash: c28e79c9a6f8c489a97d360c4fe142d431b5ab5d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 65d68924fbc3a777ef7ef59d2532a1ae20e23c48
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656544"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258215"
 ---
-# <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Problemen met Kerberos-beperkte overdrachts configuraties voor toepassings proxy oplossen
+# <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Problemen oplossen met Kerberos-beperkte overdrachtsconfiguraties voor toepassingsproxy
 
 De beschik bare methoden voor het bereiken van eenmalige aanmelding voor gepubliceerde toepassingen kunnen variëren van de ene toepassing naar de andere. Een optie die Azure Active Directory (Azure AD)-toepassings proxy biedt standaard een Kerberos-beperkte delegering (KCD). U kunt voor uw gebruikers een connector configureren om beperkte Kerberos-verificatie uit te voeren op back-end-toepassingen.
 

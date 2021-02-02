@@ -3,7 +3,7 @@ title: 'Quickstart: De lijst met toepassingen weergeven die gebruikmaken van uw 
 description: In deze quickstart gebruikt u Azure Portal om de lijst met toepassingen weer te geven die zijn geregistreerd voor het gebruik van uw Azure Active Directory-tenant (Azure AD) voor identiteitsbeheer.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 04/09/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: it-pro
-ms.openlocfilehash: 281e408ca79697edbee308e15b70a2cf2055b212
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: 4bf0353148a5f8474270b314a85d55c3cfd753ab
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658890"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257558"
 ---
 # <a name="quickstart-view-the-list-of-applications-that-are-using-your-azure-active-directory-azure-ad-tenant-for-identity-management"></a>Quickstart: De lijst met toepassingen weergeven die gebruikmaken van uw Azure Active Directory-tenant (Azure AD) voor identiteitsbeheer
 

@@ -3,19 +3,19 @@ title: Problemen oplossen met eenmalige aanmelding op basis van SAML in Azure Ac
 description: Problemen oplossen met een Azure AD-app die is geconfigureerd voor eenmalige aanmelding op basis van SAML.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: 2e8508d4fceb1e7fb580350c726dd70eeaea31c6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b169616042892c379196dd1d38c2343704aa1030
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658873"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257523"
 ---
 # <a name="troubleshoot-saml-based-single-sign-on-in-azure-active-directory"></a>Problemen oplossen met eenmalige aanmelding op basis van SAML in Azure Active Directory
 Als er een probleem optreedt bij het configureren van een toepassing. Controleer of u alle stappen in de zelf studie voor de toepassing hebt gevolgd. In de configuratie van de toepassing hebt u inline-documentatie over het configureren van de toepassing. U kunt ook toegang krijgen tot de [lijst met zelf studies over het integreren van SaaS-apps met Azure Active Directory](../saas-apps/tutorial-list.md) voor een gedetailleerde stapsgewijze uitleg.

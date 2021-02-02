@@ -3,7 +3,7 @@ title: Een gebruiker op aanvraag inrichten met behulp van Azure Active Directory
 description: Synchronisatie afdwingen
 services: active-directory
 author: msmimart
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/01/2020
 ms.author: mimart
 ms.reviewer: arvinh
-ms.openlocfilehash: f7cbe9e9f81b3b71ee7da2feac2908c36f1777e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be03a149f34c16621905081a2f9bb663d85bc53c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629009"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255658"
 ---
 # <a name="on-demand-provisioning"></a>Inrichting on-demand
 Inrichting op aanvraag gebruiken om binnen enkele seconden een gebruiker in te richten in een toepassing. U kunt met behulp van deze mogelijkheid onder andere het volgende:
@@ -124,7 +124,7 @@ Ten slotte neemt de inrichtings service een actie, zoals het maken, bijwerken, v
 
 Hier volgt een voor beeld van wat u kunt zien nadat het inrichten van een gebruiker op aanvraag is voltooid:
 
-:::image type="content" source="media/provision-on-demand/success-on-demand-provision.jpg" alt-text="Scherm opname van de Azure Portal gebruikers interface voor het inrichten van een gebruiker op aanvraag.":::
+:::image type="content" source="media/provision-on-demand/success-on-demand-provision.jpg" alt-text="Scherm afbeelding met de geslaagde on-demand inrichting van een gebruiker.":::
 
 #### <a name="view-details"></a>Details weergeven
 

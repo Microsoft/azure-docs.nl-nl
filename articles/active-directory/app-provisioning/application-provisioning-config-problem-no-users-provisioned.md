@@ -3,7 +3,7 @@ title: Gebruikers worden niet ingericht in mijn toepassing
 description: Veelvoorkomende problemen oplossen die zich voordoen wanneer u geen gebruikers ziet die worden weer gegeven in een Azure AD Gallery-toepassing die u hebt geconfigureerd voor het inrichten van gebruikers met Azure AD
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/03/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 89a5838524daa1959ecf6b4fe3c17d6175ca8553
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 429f993764273d6b6eb23d75d0132b374d5d0ca0
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571773"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256351"
 ---
 # <a name="no-users-are-being-provisioned"></a>Er worden geen gebruikers ingericht 
 >[!NOTE]

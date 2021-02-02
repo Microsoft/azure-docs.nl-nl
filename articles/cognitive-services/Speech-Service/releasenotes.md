@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 1c9c07d3770d2b71bee8f8e789022be6f831cc8f
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 4393607d6714bc4c1b10ac89d5ac69c173f8fef4
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092865"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257318"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
 
@@ -26,7 +26,7 @@ ms.locfileid: "99092865"
 
 **Overzicht van hooglichten**
 - Kleiner geheugen en schijf ruimte waardoor de SDK efficiënter wordt.
-- Verbeterde aangepaste spraak kwaliteit en gebruiks gemak. 
+- Er zijn hoogwaardige uitvoer indelingen beschikbaar voor de aangepaste preview-versie van Neural Voice private.
 - De intentie herkenning kan nu retour neren meer dan het hoogste doel, waardoor u de mogelijkheid hebt om een afzonderlijke beoordeling te maken over de intentie van uw klant.
 - Uw Voice-assistent of bot is nu gemakkelijker te installeren en u kunt deze niet meteen meer laten Luis teren en meer controle uitoefenen over hoe deze reageert op fouten.
 - Verbeterd bij de prestaties van het apparaat door compressie optioneel te maken.
@@ -43,7 +43,7 @@ ms.locfileid: "99092865"
   - Android-bibliotheken zijn 3-5% kleiner.
 
 **Nieuwe functies**
-- **Alle: de** aangepaste spraak kwaliteit blijft beter. De 48kHz-indeling voor aangepaste TTS-stemmen is toegevoegd, waardoor de audio kwaliteit van aangepaste stemmen waarvan de oorspronkelijke uitvoer voorbeeld tarieven hoger zijn dan 24kHz, wordt verbeterd.
+- **Alle**: nieuwe 48KHz-uitvoer indelingen die beschikbaar zijn voor de persoonlijke preview van aangepaste Neural-stem via de TTS Speech Synthesis API: Audio48Khz192KBitRateMonoMp3, audio-48KHz-192kbitrate-mono-mp3, Audio48Khz96KBitRateMonoMp3, audio-48KHz-96kbitrate-mono-mp3, Raw48Khz16BitMonoPcm, RAW-48KHz-16-mono-PCM, Riff48Khz16BitMonoPcm, RIFF-48KHz-16-mono-PCM.
 - **Alle**: aangepaste spraak is ook eenvoudiger te gebruiken. Er is ondersteuning toegevoegd voor het instellen van aangepaste spraak via `EndpointId` ([C++](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setendpointid), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.endpointid?view=azure-dotnet#Microsoft_CognitiveServices_Speech_SpeechConfig_EndpointId), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setendpointid?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setEndpointId_String_), [Java script](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#endpointId), [objectief-C](https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#endpointid), [python](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#endpoint-id)). Voordat deze wijziging werd doorgebracht, moeten aangepaste Voice-gebruikers de eind punt-URL instellen via de- `FromEndpoint` methode. Klanten kunnen de methode nu gebruiken `FromSubscription` zoals bij open bare stemmen en vervolgens de implementatie-id opgeven door in te stellen `EndpointId` . Dit vereenvoudigt het instellen van aangepaste stemmen. 
 - **C++/c #/Java/Objective-C/python**: haalt meer op dan het hoogste doel van `IntentRecognizer` . Het ondersteunt nu het configureren van het JSON-resultaat met alleen de intenties en niet alleen de bovenste Score intentie via de `LanguageUnderstandingModel FromEndpoint` methode met behulp van de `verbose=true` URI-para meter. Hiermee wordt [github-probleem #880](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/880). Zie de bijgewerkte documentatie [hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition/#add-a-languageunderstandingmodel-and-intents).
 - **C++/c #/Java**: u kunt het Luis teren van uw Voice Assistant of bot voor komen. `DialogServiceConnector` ([C++](https://docs.microsoft.com/cpp/cognitive-services/speech/dialog-dialogserviceconnector), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-dotnet), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-java-stable)) beschikt nu over een `StopListeningAsync()` methode om te worden meegeleverd `ListenOnceAsync()` . Hiermee wordt de audio-opname onmiddellijk gestopt en wordt er gewacht op een resultaat, waardoor het ideaal is voor gebruik met de knop nu stoppen.

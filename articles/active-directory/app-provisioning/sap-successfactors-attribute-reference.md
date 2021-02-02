@@ -3,7 +3,7 @@ title: Naslag informatie over SAP SuccessFactors-kenmerken
 description: Meer informatie over de kenmerken van SuccessFactors die worden ondersteund door SuccessFactors-HR ingericht inrichten
 services: active-directory
 author: cmmdesai
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
 ms.reviewer: celested
-ms.openlocfilehash: ef2da377c7720cfb7b431d1ce0fed56656a2b8c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d1a25f67d3550e79b2339ee060d37acaea0c1c4
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87808504"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255539"
 ---
 # <a name="sap-successfactors-attribute-reference"></a>Naslag informatie over SAP SuccessFactors-kenmerken
 
@@ -34,7 +34,7 @@ In de onderstaande tabel wordt de lijst met SuccessFactors-kenmerken die standaa
 
 Raadpleeg de [Naslag informatie over SAP SuccessFactors-integratie](./sap-successfactors-integration-reference.md#retrieving-additional-attributes) om het schema uit te breiden voor extra kenmerken. 
 
-| \# | SuccessFactors entiteit                  | SuccessFactors-kenmerk     | Bewerkings type |
+| \# | SuccessFactors entiteit                  | SuccessFactors-kenmerk     | Type bewerking |
 |----|----------------------------------------|------------------------------|----------------|
 | 1  | PerPerson                              | personIdExternal             | Lezen           |
 | 2  | PerPerson                              | personId                     | Lezen           |

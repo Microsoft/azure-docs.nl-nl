@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: alkemper
-ms.openlocfilehash: 4e19574e5848d1ee86d13aa02a9cf583b92eff02
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 39ad20bd57e3da6345c63d4601f34b19e640c1d6
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929562"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256472"
 ---
 # <a name="azure-app-configuration-faq"></a>Veelgestelde vragen over Azure-app configuratie
 
@@ -105,13 +105,13 @@ U kunt een archief niet van de Standard-laag naar de gratis laag downgradeen. U 
 
 ## <a name="are-there-any-limits-on-the-number-of-requests-made-to-app-configuration"></a>Gelden er limieten voor het aantal aanvragen dat is gemaakt voor de app-configuratie?
 
-Configuratie archieven in de gratis laag zijn beperkt tot 1.000 aanvragen per dag. Configuratie archieven in de Standard-laag kunnen tijdelijk worden beperkt wanneer de aanvraag snelheid 20.000 aanvragen per uur overschrijdt.
+Bij het lezen van sleutel waarden in app-configuratie worden gegevens gepagineerd en elke aanvraag kan Maxi maal 100 sleutel waarden lezen. Bij het schrijven van sleutel waarden kan elke aanvraag één sleutel waarde maken of bijwerken. Dit wordt ondersteund via de REST API, Sdk's van de app-configuratie en configuratie providers. Configuratie archieven in de gratis laag zijn beperkt tot 1.000 aanvragen per dag. Configuratie archieven in de Standard-laag kunnen tijdelijk worden beperkt wanneer de aanvraag snelheid 20.000 aanvragen per uur overschrijdt.
 
 Wanneer de limiet van een Store is bereikt, wordt de HTTP-status code 429 geretourneerd voor alle aanvragen die worden gedaan totdat de periode is verstreken. De `retry-after-ms` header in het antwoord geeft een aanbevolen wacht tijd (in milliseconden) aan voordat de aanvraag opnieuw wordt uitgevoerd.
 
 Als uw toepassing regel matig HTTP-status code 429 reacties ondervindt, kunt u deze het beste opnieuw ontwerpen om het aantal aanvragen te verminderen. Zie [aanvragen beperken tot app-configuratie](./howto-best-practices.md#reduce-requests-made-to-app-configuration) voor meer informatie.
 
-## <a name="my-application-receives-http-status-code-429-responses-why"></a>Mijn toepassing ontvangt HTTP-status code 429-reacties. Waarom?
+## <a name="my-application-receives-http-status-code-429-responses-why"></a>Mijn toepassing ontvangt HTTP-status code 429-reacties. Hoe komt dat?
 
 In deze gevallen ontvangt u een HTTP-status code van 429:
 

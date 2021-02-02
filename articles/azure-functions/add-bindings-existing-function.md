@@ -1,16 +1,16 @@
 ---
-title: Bindingen toevoegen aan een bestaande functie in Azure Functions
-description: Meer informatie over het toevoegen van bindingen aan een bestaande functie in uw Azure Functions-project.
+title: Functies verbinden met andere Azure-Services
+description: Meer informatie over het toevoegen van bindingen die verbinding maken met andere Azure-Services met een bestaande functie in uw Azure Functions project.
 ms.topic: how-to
 ms.date: 04/29/2020
-ms.openlocfilehash: 23b7b05f9a9f9da5a48511ee555e3b6184a74179
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1c6f5bb8ca5fcf995b8a8d326abbec96f1d2e35
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91654122"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258198"
 ---
-# <a name="add-bindings-to-an-existing-function-in-azure-functions"></a>Bindingen toevoegen aan een bestaande functie in Azure Functions
+# <a name="connect-functions-to-azure-services-using-bindings"></a>Functies verbinden met Azure-Services met behulp van bindingen
 
 Wanneer u een functie maakt, wordt de taalspecifieke trigger code toegevoegd aan het project vanuit een set trigger sjablonen. Als u uw functie wilt verbinden met andere services met behulp van invoer-of uitvoer bindingen, moet u in uw functie specifieke bindings definities toevoegen. Zie [Concepten van Azure Functions-triggers en -bindingen](functions-triggers-bindings.md) voor meer informatie over bindingen.
 

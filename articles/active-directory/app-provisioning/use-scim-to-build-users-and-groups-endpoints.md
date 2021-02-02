@@ -3,7 +3,7 @@ title: Een SCIM-eind punt bouwen om gebruikers in te richten op apps van Azure A
 description: Met System for Cross-domain Identity Management (SCIM) wordt het automatisch inrichten van gebruikers gestandaardiseerd. Leer hoe u een SCIM-eind punt ontwikkelt, uw SCIM-API integreert met Azure Active Directory en begin met het automatiseren van het inrichten van gebruikers en groepen in uw Cloud toepassingen met Azure Active Directory.
 services: active-directory
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 34fa76197c4e08cffd1d8c66d6877b3e427e9fd6
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 6b7451b0d664995a6b647f7926d856b0db6090d8
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918141"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256099"
 ---
 # <a name="tutorial-develop-a-sample-scim-endpoint"></a>Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen
 

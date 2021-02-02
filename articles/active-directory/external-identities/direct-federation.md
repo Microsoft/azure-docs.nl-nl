@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5beae56a5d38c4620481c27c3f42c52602984e6b
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: c9afb5a078d5359ed236b44c0a6712985bf8c305
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860623"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257182"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Directe Federatie met AD FS en providers van derden voor gast gebruikers (preview-versie)
 
@@ -78,7 +78,8 @@ Ja. Als het domein niet is geverifieerd en de Tenant geen [beheerder](../enterpr
 Wanneer directe Federatie wordt ingesteld met een partner organisatie, heeft dit prioriteit boven de e-mail verificatie voor eenmalige authenticatie voor nieuwe gast gebruikers van die organisatie. Als een gast gebruiker een uitnodiging heeft ingewisseld met verificatie met eenmalige wachtwoord code voordat u direct Federatie instelt, blijven ze gebruikmaken van verificatie met een eenmalige wachtwoord code. 
 ### <a name="does-direct-federation-address-sign-in-issues-due-to-a-partially-synced-tenancy"></a>Worden er problemen met het aanmelden van direct Federation-adressen veroorzaakt door een gedeeltelijk gesynchroniseerde pacht?
 Nee, de functie voor [eenmalige e-mail wachtwoord code](one-time-passcode.md) moet in dit scenario worden gebruikt. Een ' gedeeltelijk gesynchroniseerde pacht ' verwijst naar een Azure AD-Tenant van de partner, waarbij on-premises gebruikers identiteiten niet volledig worden gesynchroniseerd met de Cloud. Een gast waarvan de identiteit nog niet bestaat in de Cloud, maar die probeert uw B2B-uitnodiging in te wisselen, kan zich niet aanmelden. Met de functie voor eenmalige wachtwoord code kan deze gast zich aanmelden. De functie directe Federatie biedt een oplossing voor scenario's waarbij de gast een eigen IdP organisatie account heeft, maar de organisatie helemaal geen Azure AD-aanwezigheid heeft.
-
+### <a name="once-direct-federation-is-configured-with-an-organization-does-each-guest-need-to-be-sent-and-redeem-an-individual-invitation"></a>Zodra direct Federation is geconfigureerd met een organisatie, moet elke gast een individuele uitnodiging verzenden en inwisselen?
+Door directe Federatie in te stellen, wordt de verificatie methode niet gewijzigd voor gast gebruikers die van u al een uitnodiging hebben ingewisseld. U kunt de verificatie methode van een gast gebruiker bijwerken door het gast gebruikers account uit de map te verwijderen en ze opnieuw uit te nodigen.
 ## <a name="step-1-configure-the-partner-organizations-identity-provider"></a>Stap 1: de ID-provider van de partner organisatie configureren
 Eerst moet uw partner organisatie hun ID-provider configureren met de vereiste claims en Relying Party-vertrouwens relaties. 
 

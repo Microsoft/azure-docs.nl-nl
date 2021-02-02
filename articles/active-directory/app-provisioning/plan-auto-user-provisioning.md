@@ -3,7 +3,7 @@ title: Een automatische implementatie van gebruikers inrichten plannen voor Azur
 description: Richt lijnen voor het plannen en uitvoeren van automatische gebruikers inrichting
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/31/2020
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: 8855969a9f1e431fc45b831063732501eead7e99
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: d36bcbd64c1169c923c6a1decdf907a8a9d6697b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051784"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255760"
 ---
 # <a name="plan-an-automatic-user-provisioning-deployment"></a>Implementatie van een automatische gebruikersinrichting plannen
 

@@ -3,7 +3,7 @@ title: Problemen met toepassings proxy oplossen | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u fouten in azure AD-toepassingsproxy oplost.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 06/24/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 413cfe4f3aed446ad26a210b4faa452c4f624685
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb8fb0e194b4c43b5e247f2ea5d1e38d924591db
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88640851"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257960"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Problemen en foutberichten met Application Proxy oplossen
 
@@ -26,7 +26,7 @@ Als er fouten optreden bij het openen van een gepubliceerde toepassing of bij he
 
 * Open de console van Windows-Services. Controleer of de **micro soft Aad Application proxy connector** -service is ingeschakeld en wordt uitgevoerd. Mogelijk wilt u ook de pagina eigenschappen van de toepassings proxy service bekijken, zoals wordt weer gegeven in de volgende afbeelding:  
   ![Micro soft AAD Application proxy connector venster Eigenschappen scherm afbeelding](./media/application-proxy-troubleshoot/connectorproperties.png)
-* Open Logboeken en zoek naar connector gebeurtenissen van toepassings proxy in **toepassingen en services**  >  **micro soft**  >  **AadApplicationProxy**-  >  **connector**-  >  **beheerder**Logboeken.
+* Open Logboeken en zoek naar connector gebeurtenissen van toepassings proxy in **toepassingen en services**  >  **micro soft**  >  **AadApplicationProxy**-  >  **connector**-  >  **beheerder** Logboeken.
 * Als dat nodig is, kunt u meer gedetailleerde logboeken vinden door [de Application proxy Connector-sessie Logboeken in te scha kelen](application-proxy-connectors.md#under-the-hood).
 
 ## <a name="the-page-is-not-rendered-correctly"></a>De pagina wordt niet correct weer gegeven
@@ -36,7 +36,7 @@ Als u bijvoorbeeld het pad publiceert `https://yourapp/app` terwijl de toepassin
 
 ## <a name="connector-errors"></a>Connector fouten
 
-Als de registratie mislukt tijdens de installatie van de wizard connector, zijn er twee manieren om de reden voor de fout weer te geven. Kijk in het gebeurtenis logboek onder **toepassingen en services Logs\Microsoft\AadApplicationProxy\Connector\Admin**of voer de volgende Windows Power shell-opdracht uit:
+Als de registratie mislukt tijdens de installatie van de wizard connector, zijn er twee manieren om de reden voor de fout weer te geven. Kijk in het gebeurtenis logboek onder **toepassingen en services Logs\Microsoft\AadApplicationProxy\Connector\Admin** of voer de volgende Windows Power shell-opdracht uit:
 
 ```powershell
 Get-EventLog application –source "Microsoft AAD Application Proxy Connector" –EntryType "Error" –Newest 1

@@ -3,7 +3,7 @@ title: Verwijzing voor het schrijven van expressies voor kenmerk toewijzingen in
 description: Meer informatie over het gebruik van expressie toewijzingen om kenmerk waarden te transformeren naar een acceptabele indeling tijdens het automatisch inrichten van SaaS-app-objecten in Azure Active Directory. Bevat een naslag lijst met functies.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/05/2020
 ms.author: kenwith
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: e87211789280c3439d71d8fa63da09416eaaf18e
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 8f5a4d3695722aae14b73bf6bba5f2e38593e08d
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805138"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255794"
 ---
 # <a name="reference-for-writing-expressions-for-attribute-mappings-in-azure-ad"></a>Naslag informatie voor het schrijven van expressies voor kenmerk toewijzingen in azure AD
 
@@ -49,7 +49,7 @@ De syntaxis voor expressies voor kenmerk toewijzingen is reminiscent van Visual 
 
 **Instellen**
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
 | **achtervoegsel** |Vereist |Tekenreeks |De teken reeks die u wilt toevoegen aan het einde van de bron waarde. |
@@ -67,7 +67,7 @@ Met andere woorden: het retourneert 0 in alle gevallen, behalve wanneer de overe
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Value1** |Vereist |num |Numerieke waarde die moet worden AND'ed met Value2|
 | **enzovoort** |Vereist |num |Numerieke waarde die moet worden AND'ed met waarde1|
@@ -87,7 +87,7 @@ Met andere woorden: het retourneert 0 in alle gevallen, behalve wanneer de overe
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **expression** |Vereist | expressie | Een geldige expressie |
 
@@ -103,7 +103,7 @@ Retourneert waar als beide kenmerken dezelfde waarde hebben.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **source1 ... Bronn** | Vereist | Tekenreeks |Vereist, variabele-aantal keren. Doorgaans naam van het kenmerk van het bron object. |
 | **Standaard** | Optioneel | Tekenreeks | De standaard waarde die moet worden gebruikt wanneer alle bron waarden NULL zijn. Kan een lege teken reeks zijn ("").
@@ -116,7 +116,7 @@ Retourneert waar als beide kenmerken dezelfde waarde hebben.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |De teken reeks die moet worden geconverteerd naar basis 64|
 
@@ -133,7 +133,7 @@ Retourneert "SABlAGwAbABvACAAdwBvAHIAbABkACEA"
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Teken reeks die moet worden geconverteerd naar UTF8 hex|
 
@@ -150,7 +150,7 @@ Retourneert 48656C6C6F20776F726C6421
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **geschreven** |Vereist |kenmerk |Kenmerk met meerdere waarden waarvoor elementen worden geteld|
 
@@ -162,7 +162,7 @@ Retourneert 48656C6C6F20776F726C6421
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **value** |Vereist | Numeriek, verwijzing of Booleaanse waarde | Dit kan een numerieke waarde, een referentie kenmerk of een Boolean zijn. |
 
@@ -179,7 +179,7 @@ Retourneert "CN = Joe, DC = contoso, DC = com"
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **value** |Vereist | Datum | De AD-datum die moet worden geconverteerd naar een DateTime-type |
 
@@ -198,7 +198,7 @@ Retourneert een datum/tijd van 1 januari 2012 om 11:13:00.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
 | **inputFormat** |Vereist |Tekenreeks |Verwachte indeling van de bron waarde. Zie [/DotNet/Standard/Base-types/Custom-date-and-time-format-strings](/dotnet/standard/base-types/custom-date-and-time-format-strings)voor ondersteunde indelingen. |
@@ -218,7 +218,7 @@ Retourneert een datum/tijd van 1 januari 2012 om 11:13:00.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **regeling** |Vereist |Variabele of expressie |Een waarde of expressie die als waar of ONWAAR kan worden geëvalueerd. |
 | **valueIfTrue** |Vereist |Variabele of teken reeks | Als de voor waarde wordt geëvalueerd als waar, wordt de geretourneerde waarde. |
@@ -235,7 +235,7 @@ Retourneert een datum/tijd van 1 januari 2012 om 11:13:00.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Value1** |Vereist |Tekenreeks |Teken reeks die moet worden doorzocht |
 | **enzovoort** |Vereist |Tekenreeks |Teken reeks die moet worden gevonden |
@@ -259,7 +259,7 @@ Evalueert tot 7
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
@@ -277,7 +277,7 @@ De inverse van deze functie heeft de naam IsPresent.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
@@ -294,7 +294,7 @@ Retourneert waar als het kenmerk niet aanwezig is of een lege teken reeks is.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
@@ -309,7 +309,7 @@ Retourneert waar als het kenmerk niet aanwezig is of een lege teken reeks is.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **expression** |Vereist |expressie |Expressie die moet worden geëvalueerd |
 
@@ -321,7 +321,7 @@ Retourneert waar als het kenmerk niet aanwezig is of een lege teken reeks is.
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **geschreven** |Vereist |Kenmerk |Kenmerk met meerdere waarden dat moet worden doorzocht |
 | **TabIndex** |Vereist |Geheel getal | Index naar een item in de teken reeks met meerdere waarden|
@@ -339,7 +339,7 @@ Als een van de bron waarden een kenmerk met meerdere waarden is, wordt elke waar
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **scheiding** |Vereist |Tekenreeks |Teken reeks die wordt gebruikt om bron waarden te scheiden wanneer ze worden samengevoegd tot één teken reeks. Kan zijn als er geen scheidings teken is vereist. |
 | **source1 ... Bronn** |Vereist, variabele-aantal keren |Tekenreeks |Teken reeks waarden die samen moeten worden samengevoegd. |
@@ -355,7 +355,7 @@ Als teken reeks minder tekens bevat dan het getal dat is opgegeven in numChars, 
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Tekenreeks** |Vereist |Kenmerk | De teken reeks waaruit tekens moeten worden opgehaald |
 | **NumChars** |Vereist |Geheel getal | Een getal waarmee het aantal tekens wordt aangegeven dat moet worden geretourneerd vanaf het begin (links) van de teken reeks|
@@ -373,7 +373,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Meestal naam van het kenmerk. |
 | **starten** |Vereist |geheel getal |Index in de **bron** teken reeks waarin de subtekenreeks moet worden gestart. Het eerste teken in de teken reeks heeft index 1, tweede teken heeft index 2, enzovoort. |
@@ -387,7 +387,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks | Meestal een voor naam-of achternaam-kenmerk. |
 
@@ -399,7 +399,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Booleaanse teken reeks |Verwachte **bron** waarden zijn ' True ' of ' false '. |
 
@@ -411,7 +411,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **value** |Vereist | Tekenreeks | Datum en tijd teken reeks in de ondersteunde indeling. Zie voor ondersteunde indelingen https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx . |
 
@@ -431,7 +431,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **geschreven** |Vereist |Kenmerk met meerdere waarden |Kenmerk met meerdere waarden waarvoor duplicaten worden verwijderd|
 
@@ -463,7 +463,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het **bron** object. |
 | **oldValue** |Optioneel |Tekenreeks |De waarde die moet worden vervangen in de **bron** of de **sjabloon**. |
@@ -488,7 +488,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **uniqueValueRule1 ... uniqueValueRuleN** |Ten minste 2 zijn vereist, geen bovengrens |Tekenreeks | Lijst met regels voor het genereren van unieke waarden om te evalueren. |
 
@@ -501,7 +501,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **AppRoleAssignments** |Vereist |Tekenreeks |object **[appRoleAssignments]** . |
 
@@ -513,7 +513,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |**bron** waarde die moet worden bijgewerkt. |
 | **vorm** |Vereist |Tekenreeks |Hiermee geeft u het teken op dat wordt gebruikt om de teken reeks te splitsen (bijvoorbeeld: ",") |
@@ -526,7 +526,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |**bron** waarde die moet worden bijgewerkt. |
 
@@ -538,7 +538,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |**Bron** waarde die moet worden bijgewerkt. |
 | **Standaard** |Optioneel |Tekenreeks |De standaard waarde die moet worden gebruikt als de bron niet overeenkomt met een sleutel. Kan een lege teken reeks zijn (""). |
@@ -553,7 +553,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object |
 | **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2*, waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
@@ -566,7 +566,7 @@ Retourneert "Joh".
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
 | **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2*, waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
@@ -583,7 +583,7 @@ Als teken reeks minder dan cijfer woorden bevat, of teken reeks geen woorden die
 
 **Instellen** 
 
-| Naam | Vereist/herhalend | Type | Opmerkingen |
+| Name | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Tekenreeks** |Vereist |Kenmerk met meerdere waarden |De teken reeks waarmee een woord moet worden geretourneerd.|
 | **WordNumber** |Vereist | Geheel getal | Nummer waarmee het woord nummer moet worden geretourneerd|

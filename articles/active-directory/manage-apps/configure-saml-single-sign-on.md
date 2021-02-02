@@ -3,7 +3,7 @@ title: Meer informatie over op SAML gebaseerde eenmalige aanmelding (SSO) voor a
 description: Meer informatie over op SAML gebaseerde eenmalige aanmelding (SSO) voor apps in Azure Active Directory
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/28/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 32e654f002e3ba0c8bf72fb781b32d9098d83c00
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f6422c3f751a7aaa430b93ee68ca1a3520ac915f
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219841"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257689"
 ---
 # <a name="understand-saml-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van SAML
 
@@ -114,7 +114,7 @@ Nadat u uw toepassing hebt geconfigureerd voor het gebruik van Azure AD als id-p
 
 Selecteer **testen** en kies vervolgens om te testen met de gebruiker die momenteel is aangemeld of als iemand anders. 
 
-Als de aanmelding is geslaagd, kunt u gebruikers en groepen toewijzen aan uw SAML-toepassing. Gefeliciteerd.
+Als de aanmelding is geslaagd, kunt u gebruikers en groepen toewijzen aan uw SAML-toepassing. Gefeliciteerd
 
 Als er een fout bericht wordt weer gegeven, voert u de volgende stappen uit:
 

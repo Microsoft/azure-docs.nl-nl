@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dfe99a2ed57ecc953c69d1bad89e2b2c8816ca3
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: a58fbf874339bf287ce1af62e1edb39ec6227d99
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741442"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257099"
 ---
 # <a name="frequently-asked-questions-about-azure-ad-multi-factor-authentication"></a>Veelgestelde vragen over Azure AD Multi-Factor Authentication
 
@@ -124,7 +124,7 @@ Meer informatie over MFA-providers vindt u in [aan de slag met een Azure multi-f
 
 In sommige gevallen Ja.
 
-Als uw Directory een Azure Multi-Factor Authentication provider *per gebruiker* heeft, kunt u MFA-licenties toevoegen. Gebruikers met licenties worden niet meegeteld in de facturering op basis van verbruik per gebruiker. Gebruikers zonder licenties kunnen nog steeds worden ingeschakeld voor MFA via de MFA-provider. Als u licenties aanschaft en toewijst voor alle gebruikers die zijn geconfigureerd voor het gebruik van Multi-Factor Authentication, kunt u de Azure Multi-Factor Authentication-provider verwijderen. U kunt altijd een andere MFA-provider per gebruiker maken als u in de toekomst meer gebruikers dan licenties hebt.
+Als uw Directory een Azure Multi-Factor Authentication provider *per gebruiker* heeft, kunt u MFA-licenties toevoegen. Gebruikers met licenties worden niet geteld in de facturering op basis van verbruik per gebruiker. Gebruikers zonder licenties kunnen nog steeds worden ingeschakeld voor MFA via de MFA-provider. Als u licenties aanschaft en toewijst voor alle gebruikers die zijn geconfigureerd voor het gebruik van Multi-Factor Authentication, kunt u de Azure Multi-Factor Authentication-provider verwijderen. U kunt altijd een andere MFA-provider per gebruiker maken als u in de toekomst meer gebruikers dan licenties hebt.
 
 Als uw Directory een Azure Multi-Factor Authentication provider *per verificatie* heeft, wordt u altijd gefactureerd voor elke verificatie, zolang de MFA-provider is gekoppeld aan uw abonnement. U kunt MFA-licenties toewijzen aan gebruikers, maar u wordt nog steeds gefactureerd voor elke verificatie aanvraag in twee stappen, ongeacht of deze afkomstig is van iemand met een MFA-licentie die is toegewezen of niet.
 

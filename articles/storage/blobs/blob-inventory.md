@@ -10,12 +10,12 @@ ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 86ded3dea819702631b1fa04dbc56f727566fc98
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: a41966c2b3ba73d7b68399b1b99d14313e220833
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602679"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257808"
 ---
 # <a name="use-azure-storage-blob-inventory-to-manage-blob-data-preview"></a>Azure Storage BLOB-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)
 
@@ -32,6 +32,8 @@ De voor beeld van de BLOB-inventaris is beschikbaar voor opslag accounts in de v
 - Frankrijk - centraal
 - Canada - midden
 - Canada - oost
+- VS - oost
+- VS - oost 2
 
 ### <a name="pricing-and-billing"></a>Prijzen en facturering
 
@@ -57,7 +59,7 @@ Schakel de BLOB-inventaris rapporten in door een beleid toe te voegen aan uw ops
 Inventarisatie beleidsregels worden volledig gelezen of geschreven. Gedeeltelijke updates worden niet ondersteund.
 
 > [!IMPORTANT]
-> Als u firewall regels inschakelt voor uw opslag account, worden inventarisatie aanvragen mogelijk geblokkeerd. U kunt deze aanvragen deblokkeren door uitzonde ringen op te geven voor vertrouwde micro soft-Services. Zie de sectie uitzonde ringen in [firewalls en virtuele netwerken configureren](../common/storage-network-security.md#exceptions)voor meer informatie.
+> Als u firewallregels voor uw opslagaccount inschakelt, worden voorraadaanvragen mogelijk geblokkeerd. U kunt deze aanvragen deblokkeren door uitzonderingen op te geven voor vertrouwde Microsoft-services. Zie de sectie uitzonde ringen in [firewalls en virtuele netwerken configureren](../common/storage-network-security.md#exceptions)voor meer informatie.
 
 De uitvoering van een BLOB-inventaris wordt automatisch elke dag gepland. Het kan tot 24 uur duren voordat een inventarisatie is voltooid. Een inventaris rapport wordt geconfigureerd door een inventaris beleid toe te voegen met een of meer regels.
 
@@ -85,7 +87,7 @@ Een inventarisatie beleid is een verzameling regels in een JSON-document.
 
 Bekijk de JSON voor een inventaris beleid door het tabblad **code weergave** te selecteren in het gedeelte **BLOB-inventaris** van het Azure Portal.
 
-| Parameternaam | Parameter type        | Notities | Vereist? |
+| Parameternaam | Parametertype        | Notities | Vereist? |
 |----------------|-----------------------|-------|-----------|
 | doel    | Tekenreeks                | De doel container waar alle inventarisatie bestanden worden gegenereerd. De doel container moet al bestaan. | Ja |
 | enabled        | Booleaans               | Wordt gebruikt om het hele beleid uit te scha kelen. Als deze eigenschap is ingesteld op **True**, wordt deze para meter overschreven door het veld op regel niveau ingeschakeld. Wanneer dit is uitgeschakeld, wordt de inventarisatie voor alle regels uitgeschakeld. | Ja |
@@ -97,7 +99,7 @@ Met een regel worden de filter voorwaarden en uitvoer parameters voor het genere
 
 Elke regel in het beleid heeft verschillende para meters:
 
-| Parameternaam | Parameter type                 | Notities | Vereist? |
+| Parameternaam | Parametertype                 | Notities | Vereist? |
 |----------------|--------------------------------|-------|-----------|
 | naam           | Tekenreeks                         | Een regel naam kan Maxi maal 256 hoofdletter gevoelige alfanumerieke tekens bevatten. De naam moet uniek zijn binnen een beleid. | Ja |
 | enabled        | Booleaans                        | Een vlag waarmee een regel kan worden ingeschakeld of uitgeschakeld. De standaard waarde is **True**. | Ja |

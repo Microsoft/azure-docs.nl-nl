@@ -3,12 +3,12 @@ title: Aanbevolen procedures voor sjablonen
 description: Hierin worden aanbevolen benaderingen beschreven voor het ontwerpen van Azure Resource Manager sjablonen (ARM-sjablonen). Biedt suggesties om veelvoorkomende problemen te voor komen bij het gebruik van sjablonen.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: c0b26c300a9474cc5db0b1a7b732c4416a9e6f5f
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 583a113df9cdb1951daf1002dd69531f050cfb54
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696343"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257994"
 ---
 # <a name="arm-template-best-practices"></a>Aanbevolen procedures voor ARM-sjablonen
 
@@ -276,6 +276,8 @@ De volgende informatie kan nuttig zijn wanneer u met [resources](template-syntax
 
    > [!NOTE]
    > Gebruik de `protectedSettings` eigenschap van de relevante extensies om ervoor te zorgen dat geheimen worden versleuteld wanneer ze worden door gegeven als para meters voor vm's en uitbrei dingen.
+
+* Geef expliciete waarden op voor eigenschappen die standaard waarden hebben die in de loop van de tijd kunnen worden gewijzigd. Als u bijvoorbeeld een AKS-cluster implementeert, kunt u de eigenschap opgeven of weglaten `kubernetesVersion` . Als u deze niet opgeeft, [wordt het cluster standaard ingesteld op de N-1-secundaire versie en de meest recente patch](../../aks/supported-kubernetes-versions.md#azure-portal-and-cli-versions). Wanneer u het cluster implementeert met een ARM-sjabloon, is dit standaard gedrag mogelijk niet wat u verwacht. Als u uw sjabloon opnieuw implementeert, kan dit ertoe leiden dat het cluster onverwacht wordt bijgewerkt naar een nieuwe Kubernetes-versie. U kunt in plaats daarvan een expliciet versie nummer opgeven en dit vervolgens hand matig wijzigen wanneer u klaar bent om uw cluster bij te werken.
 
 ## <a name="use-test-toolkit"></a>Test Toolkit gebruiken
 

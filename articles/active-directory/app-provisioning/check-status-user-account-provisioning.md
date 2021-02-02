@@ -3,7 +3,7 @@ title: Automatische toewijzing van gebruikers accounts aan SaaS-toepassingen rap
 description: Informatie over het controleren van de status van automatische toewijzing van gebruikers accounts en het oplossen van problemen met het inrichten van afzonderlijke gebruikers.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/09/2018
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 3dcbb2567b9a92ea7d806acedb5d1cc6a31a966e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: e6839026c83a10a4acebd7b7a6ab55b210e7ef14
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92069803"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256674"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>Zelf studie: rapportage over automatische toewijzing van gebruikers accounts
 
@@ -46,9 +46,9 @@ Als u informatie over het inrichtings rapport voor een bepaalde toepassing wilt 
 
 Hier kunt u toegang krijgen tot de voortgangs balk voor het inrichten en de inrichtings logboeken, zoals hieronder wordt beschreven.
 
-## <a name="provisioning-progress-bar"></a>Voortgangs balk inrichten
+## <a name="provisioning-progress-bar"></a>Voortgangsbalk van het inrichten
 
-De [voortgangs balk](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar) voor het inrichten wordt weer gegeven op het tabblad **inrichten** voor de opgegeven toepassing. Deze bevindt zich in de **huidige status** sectie onder **instellingen**en toont de status van de huidige initiële of incrementele cyclus. In deze sectie ziet u ook:
+De [voortgangs balk](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar) voor het inrichten wordt weer gegeven op het tabblad **inrichten** voor de opgegeven toepassing. Deze bevindt zich in de **huidige status** sectie onder **instellingen** en toont de status van de huidige initiële of incrementele cyclus. In deze sectie ziet u ook:
 
 * Het totale aantal gebruikers en/of groepen dat is gesynchroniseerd en zich momenteel in het bereik bevindt voor de inrichting van het bron systeem en het doel systeem.
 * De laatste keer dat de synchronisatie is uitgevoerd. Synchronisaties worden meestal om de 20-40 minuten uitgevoerd nadat een [eerste cyclus](../app-provisioning/how-provisioning-works.md#provisioning-cycles-initial-and-incremental) is voltooid.
@@ -57,7 +57,7 @@ De [voortgangs balk](application-provisioning-when-will-provisioning-finish-spec
 
 De **huidige status** moet de eerste locatie beheerders zijn om de operationele status van de inrichtings taak te controleren.
 
- ![Samenvattings rapport](./media/check-status-user-account-provisioning/provisioning-progress-bar-section.png)
+ ![Samenvattings rapport](./media/check-status-user-account-provisioning/provisioning-progress-bar-section.png)
 
 ## <a name="provisioning-logs-preview"></a>Inrichtings Logboeken (preview-versie)
 

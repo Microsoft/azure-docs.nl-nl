@@ -4,7 +4,7 @@ description: Kies welke proxy oplossing het meest geschikt is als u een upgrade 
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cccabaf069a3027e615892e36e218f865a6c983a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7d089d8f57bf8ef1278d262129cc8ddfc81d581
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90706655"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257740"
 ---
 # <a name="compare-remote-access-solutions"></a>Oplossingen voor externe toegang vergelijken
 

@@ -15,12 +15,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9be6efeba101dc922a1045042b64ac64bc6cd093
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e339e88bb62e81b1f873e8cf7e855f4dff8daade
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89322531"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257403"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Hulp zoeken en een ondersteunings ticket openen voor Azure Active Directory
 Micro soft biedt wereld wijde technische, voor verkoop-, facturerings-en abonnements ondersteuning voor Azure Active Directory (Azure AD). Ondersteuning is online en telefonisch beschikbaar voor Microsoft Azure betaalde en proef abonnementen. Telefonische ondersteuning en online-ondersteuning bij factureren zijn in meer talen beschikbaar. 
@@ -41,8 +41,8 @@ Als u geen antwoorden kunt vinden met behulp van Self-Help-bronnen, opent u een 
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-azure-portal"></a>Een ondersteunings ticket openen voor Azure AD in de Azure Portal
 
 > [!NOTE]
-> Voor facturerings-of abonnements problemen moet u het [Microsoft 365-beheer centrum](https://admin.microsoft.com)gebruiken.
-> 
+> * Voor facturerings-of abonnements problemen moet u het [Microsoft 365-beheer centrum](https://admin.microsoft.com)gebruiken.  
+> * Als u Azure AD B2C gebruikt, opent u een ondersteunings ticket door eerst te scha kelen naar een Azure AD-Tenant waaraan een Azure-abonnement is gekoppeld. Dit is normaal gesp roken de Tenant van uw werk nemer of de standaard Tenant die voor u is gemaakt toen u zich registreerde voor een Azure-abonnement. Zie [hoe een Azure-abonnement is gerelateerd aan Azure AD](active-directory-how-subscriptions-associated-directory.md)voor meer informatie.
 
 1. Meld u aan bij [de Azure Portal](https://portal.azure.com) en open **Azure Active Directory**.
    
@@ -52,11 +52,11 @@ Als u geen antwoorden kunt vinden met behulp van Self-Help-bronnen, opent u een 
 
 1. Selecteer uw **abonnement**.
 
-1. Selecteer **Azure Active Directory**voor de **service**.
+1. Selecteer **Azure Active Directory** voor de **service**.
 
 1. Maak een **samen vatting** voor de aanvraag. De samen vatting moet langer zijn dan 140 tekens.
   
-1. Selecteer een **probleem type**en selecteer vervolgens een categorie voor dat type. U krijgt op dit moment zelf Help-informatie over uw probleem categorie.
+1. Selecteer een **probleem type** en selecteer vervolgens een categorie voor dat type. U krijgt op dit moment zelf Help-informatie over uw probleem categorie.
   
 1. Voeg de overige informatie over uw probleem toe en klik op **volgende**. 
 
@@ -74,21 +74,21 @@ Als u geen antwoorden kunt vinden met behulp van Self-Help-bronnen, opent u een 
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Een ondersteunings ticket openen voor Azure AD in het Microsoft 365-beheer centrum
 
 > [!NOTE]
-> Ondersteuning voor Azure AD in het [Microsoft 365-beheer centrum](https://admin.microsoft.com) wordt alleen aangeboden voor beheerders. 
+> Ondersteuning voor Azure AD in het [Microsoft 365-beheer centrum](https://admin.microsoft.com) wordt alleen aangeboden voor beheerders.
 
 1. Meld u aan bij het [Microsoft 365-beheer centrum](https://admin.microsoft.com) met een account met een Enterprise Mobility + Security-licentie (EMS).
 
-1. Selecteer **nieuwe service aanvraag**op de tegel **ondersteuning** :
+1. Selecteer **nieuwe service aanvraag** op de tegel **ondersteuning** :
 
 1. Op de pagina **overzicht van ondersteuning** selecteert u **identiteits beheer** of **gebruikers-en domein beheer**:
 
-1. Voor **functie**selecteert u de Azure AD-functie waarvoor u ondersteuning wilt.
+1. Voor **functie** selecteert u de Azure AD-functie waarvoor u ondersteuning wilt.
 
-1. Selecteer voor **symptoom**een geschikt symptoom, vat uw probleem samen en geef de relevante gegevens op en selecteer **volgende**.
+1. Selecteer voor **symptoom** een geschikt symptoom, vat uw probleem samen en geef de relevante gegevens op en selecteer **volgende**.
 
 1. Selecteer een van de aangeboden Self-Help-bronnen of selecteer **Ja, door gaan** of **Nee, aanvraag annuleren**.
 
-1. Als u doorgaat, wordt u gevraagd om meer informatie. U kunt alle bestanden toevoegen die het probleem vertegenwoordigen en vervolgens **volgende**selecteren.
+1. Als u doorgaat, wordt u gevraagd om meer informatie. U kunt alle bestanden toevoegen die het probleem vertegenwoordigen en vervolgens **volgende** selecteren.
 
 1. Geef uw contact gegevens op en selecteer **aanvraag verzenden**.
 

@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory Business-to-Customer (B2C)
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory Business-to-Customer (B2C).
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,53 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 8805caad990cd472b3199bda27130d8d63be3071
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 5e58f54d991cd190aba6eeb851e6cf2aec78e695
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559724"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255166"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: wat is er nieuw
 
 Welkom bij wat is er nieuw in Azure Active Directory B2C documentatie. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../active-directory/fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de B2C-service.
+
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [De gebruikers interface in Azure Active Directory B2C aanpassen](customize-ui.md)
+- [Limieten en beperkingen voor Azure Active Directory B2C-service](service-limits.md)
+- [Registratie instellen en aanmelden met een Azure AD B2C account van een andere Azure AD B2C Tenant](identity-provider-azure-ad-b2c.md)
+- [De ID-provider van het lokale account instellen](identity-provider-local.md)
+- [Een aanmeldings stroom instellen in Azure Active Directory B2C](add-sign-in-policy.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Gebruikers gedrag bijhouden in Azure Active Directory B2C met behulp van Application Insights](analytics-with-application-insights.md)
+- [TechnicalProfiles](technicalprofiles.md)
+- [De gebruikers interface aanpassen met HTML-sjablonen in Azure Active Directory B2C](customize-ui-with-html.md)
+- [Azure AD B2C beheren met Microsoft Graph](microsoft-graph-operations.md)
+- [AD FS toevoegen als een SAML-ID-provider met behulp van aangepast beleid in Azure Active Directory B2C](identity-provider-adfs.md)
+- [Aanmelden met een Sales Force SAML-provider instellen met behulp van het SAML-protocol in Azure Active Directory B2C](identity-provider-salesforce-saml.md)
+- [Zelfstudie: Een webtoepassing registreren in Azure Active Directory B2C](tutorial-register-applications.md)
+- [Registratie instellen en aanmelden met een Amazon-account met Azure Active Directory B2C](identity-provider-amazon.md)
+- [Registratie instellen en aanmelden met een Azure AD B2C account van een andere Azure AD B2C Tenant](identity-provider-azure-ad-b2c.md)
+- [Aanmelden voor multi tenant-Azure Active Directory instellen met behulp van aangepast beleid in Azure Active Directory B2C](identity-provider-azure-ad-multi-tenant.md)
+- [Aanmelden instellen voor een specifieke Azure Active Directory organisatie in Azure Active Directory B2C](identity-provider-azure-ad-single-tenant.md)
+- [Registratie instellen en aanmelden met een Facebook-account met Azure Active Directory B2C](identity-provider-facebook.md)
+- [Stel registratie in en meld u aan met een GitHub-account met behulp van Azure Active Directory B2C](identity-provider-github.md)
+- [Registratie instellen en aanmelden met een Google-account met behulp van Azure Active Directory B2C](identity-provider-google.md)
+- [Stel registratie in en meld u aan met een ID.me-account met behulp van Azure Active Directory B2C](identity-provider-id-me.md)
+- [Registratie instellen en aanmelden met een LinkedIn-account met behulp van Azure Active Directory B2C](identity-provider-linkedin.md)
+- [Registratie instellen en aanmelden met een Microsoft-account met behulp van Azure Active Directory B2C](identity-provider-microsoft-account.md)
+- [Stel registratie in en meld u aan met een QQ-account met behulp van Azure Active Directory B2C](identity-provider-qq.md)
+- [Registratie instellen en aanmelden met een Sales Force-account met behulp van Azure Active Directory B2C](identity-provider-salesforce.md)
+- [Registratie instellen en aanmelden met een Twitter-account met behulp van Azure Active Directory B2C](identity-provider-twitter.md)
+- [Stel registratie in en meld u aan met een WeChat-account met behulp van Azure Active Directory B2C](identity-provider-wechat.md)
+- [Stel registratie in en meld u aan met een Weibo-account met behulp van Azure Active Directory B2C](identity-provider-weibo.md)
+- [Overzicht van Azure AD B2C aangepaste beleids regels](custom-policy-trust-frameworks.md)
+
 
 ## <a name="december-2020"></a>December 2020
 

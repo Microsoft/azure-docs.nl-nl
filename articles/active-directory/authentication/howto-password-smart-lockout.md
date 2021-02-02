@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8a57e77ea572f899bf540714e8ac9968988f028
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: a5f501c19da3c2ddc06ad89fe5649789477af7ec
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741725"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255370"
 ---
 # <a name="protect-user-accounts-from-attacks-with-azure-active-directory-smart-lockout"></a>Gebruikers accounts beveiligen tegen aanvallen met Azure Active Directory slimme vergren deling
 
@@ -69,7 +69,7 @@ Op basis van de vereisten van uw organisatie kunt u de waarden voor de slimme ve
 
 Voer de volgende stappen uit om de slimme vergrendelings waarden voor uw organisatie te controleren of te wijzigen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek en selecteer *Azure Active Directory* en selecteer **beveiligings**  >  **verificatie methoden**  >  **wachtwoord beveiliging**.
 1. Stel de **drempel waarde voor vergren deling** in op basis van het aantal mislukte aanmeldingen dat is toegestaan voor een account voordat het voor het eerst wordt vergrendeld.
 
@@ -89,6 +89,8 @@ Voer de volgende stappen uit om de slimme vergrendelings waarden voor uw organis
 Wanneer de drempel waarde voor slim vergren delen wordt geactiveerd, wordt het volgende bericht weer gegeven wanneer het account is vergrendeld:
 
 *Uw account is tijdelijk vergrendeld om onbevoegd gebruik te voor komen. Probeer het later opnieuw. Neem contact op met de beheerder als u nog steeds problemen ondervindt.*
+
+Wanneer u slim vergren delen test, worden uw aanmeldings aanvragen mogelijk verwerkt door verschillende data centers als gevolg van de geografische gedistribueerde en taak verdeling van de Azure AD-verificatie service. In dat scenario, omdat elk Azure AD-Data Center de vergren deling onafhankelijk spoort, kan het langer duren dan het gedefinieerde vergrendelings drempelnummer van pogingen om een vergren deling te veroorzaken. Een gebruiker heeft (*threshold_limit * datacenter_count*) aantal mislukte pogingen als de gebruiker aan elk Data Center komt voordat een vergren deling optreedt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -3,7 +3,7 @@ title: Informatie over eenmalige aanmelding op basis van OIDC (SSO) voor apps in
 description: Informatie over eenmalige aanmelding op basis van OIDC voor apps in Azure Active Directory.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.date: 10/19/2020
 ms.author: kenwith
 ms.reviewer: arajpathak7
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d1acdc47d5a702faf7d5dbd5f2a4ea6826e97981
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: ffaa55d4aa482e8f0eda93b1b32db6310d17e2a3
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033235"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255246"
 ---
 # <a name="understand-oidc-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van OIDC
 In de [Quick](view-applications-portal.md) start-serie op toepassings beheer hebt u geleerd hoe u Azure AD als id-provider (IDP) gebruikt voor een toepassing. In dit artikel vindt u meer informatie over apps die gebruikmaken van de OpenID Connect Connect-standaard voor het implementeren van eenmalige aanmelding. 
@@ -31,11 +31,11 @@ In de [Quick Start serie](add-application-portal-setup-oidc-sso.md)is er een art
 
 Het mooie van het toevoegen van een app die gebruikmaakt van de OIDC-standaard voor eenmalige aanmelding is dat de configuratie mini maal is. Hier volgt een korte video waarin wordt weer gegeven hoe u een OIDC-app toevoegt aan uw Tenant.
 
-Een op OIDC gebaseerde app toevoegen in Azure Active Directory
+Een OIDC-app toevoegen in Azure Active Directory
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
 
-Zie [Wat is toestemming van gebruikers en beheerders](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent)? voor meer informatie over de toestemming van de gebruiker en de beheerder.
+Raadpleeg [Gebruikers- en beheerderstoestemming begrijpen](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent) voor meer informatie over gebruikers- of beheerderstoestemming.
 
 ## <a name="next-steps"></a>Volgende stappen
 

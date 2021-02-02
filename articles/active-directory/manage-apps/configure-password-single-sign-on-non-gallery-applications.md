@@ -3,19 +3,19 @@ title: Informatie over eenmalige aanmelding op basis van wacht woorden (SSO) voo
 description: Informatie over eenmalige aanmelding op basis van wacht woorden (SSO) voor apps in Azure Active Directory
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/29/2020
 ms.author: kenwith
-ms.openlocfilehash: 2bb190ea01098e8e7b21a00f54fc37cd817f3743
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: bac04bd70469d7b9c4d9485b6a87fd7133967154
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053276"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255302"
 ---
 # <a name="understand-password-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van wacht woorden
 

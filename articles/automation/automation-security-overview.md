@@ -4,14 +4,14 @@ description: Dit artikel bevat een overzicht van de verificatie van Azure Automa
 keywords: automation-beveiliging, veilige automation; automation-verificatie
 services: automation
 ms.subservice: process-automation
-ms.date: 01/21/2021
+ms.date: 02/01/2021
 ms.topic: conceptual
-ms.openlocfilehash: e08a8bf3b06ca976cb10249af25099c7652e1b49
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: e3ed14a0845d90a1b9b951dd5175acf6233f8718
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053828"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254996"
 ---
 # <a name="automation-account-authentication-overview"></a>Overzicht van Automation-accountverificatie
 

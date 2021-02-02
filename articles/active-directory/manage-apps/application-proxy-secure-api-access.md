@@ -3,7 +3,7 @@ title: Toegang tot on-premises Api's met Azure AD-toepassingsproxy
 description: Met de toepassings proxy van Azure Active Directory kunnen systeem eigen apps veilig toegang krijgen tot Api's en bedrijfs logica die u on-premises of op Cloud-Vm's host.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/12/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: eaa4a8f92809dcf44969958573231ad37d908daa
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 9341646f32f6a2e05397b072d3f63186964fbd88
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835694"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258979"
 ---
 # <a name="secure-access-to-on-premises-apis-with-azure-ad-application-proxy"></a>Veilige toegang tot on-premises Api's met Azure AD-toepassingsproxy
 
@@ -106,7 +106,7 @@ De systeem eigen app AppProxyNativeAppSample registreren:
 
 1. Selecteer op de pagina **overzicht** van Azure Active Directory **app-registraties**, en selecteer boven in het deel venster **app-registraties** de optie **nieuwe registratie**.
 
-1. Op de pagina **een toepassing registreren** :
+1. Op de pagina **Een toepassing registreren** gaat u als volgt te werk:
 
    1. Voer onder **naam** *AppProxyNativeAppSample* in.
 
@@ -120,7 +120,7 @@ De systeem eigen app AppProxyNativeAppSample registreren:
 
 U hebt de AppProxyNativeAppSample-app nu geregistreerd in Azure Active Directory. Om uw eigen app toegang te geven tot de SecretAPI-Web-API:
 
-1. **Overview**  >  Selecteer de **AppProxyNativeAppSample** -app op de pagina overzicht van **app-registraties** Azure Active Directory.
+1.   >  Selecteer de **AppProxyNativeAppSample** -app op de pagina overzicht van **app-registraties** Azure Active Directory.
 
 1. Selecteer op de pagina **AppProxyNativeAppSample** de optie **API-machtigingen** in het linkernavigatievenster.
 

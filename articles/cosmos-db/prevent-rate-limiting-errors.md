@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 01/13/2021
 ms.author: gahllevy
-ms.openlocfilehash: 73c2aba3028f42621f241bd8f295e83e0ef96e68
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: e1ccf55d38a9a3a5a1d0a3622c90dd7b51e5e477
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540543"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258487"
 ---
 # <a name="prevent-rate-limiting-errors-for-azure-cosmos-db-api-for-mongodb-operations"></a>Fouten beperken voor de Azure Cosmos DB-API voor MongoDB-bewerkingen
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -21,10 +21,9 @@ Azure Cosmos DB-API voor MongoDB-bewerkingen kan mislukken met snelheids beperki
 
 U kunt de SSR-functie (server side retry) inschakelen en deze bewerkingen automatisch door de server laten uitvoeren. De aanvragen worden opnieuw uitgevoerd na een korte vertraging voor alle verzamelingen in uw account. Deze functie is een handig alternatief voor het afhandelen van fouten beperken in de client toepassing.
 
-
 ## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Navigeer naar uw Azure Cosmos DB-API voor MongoDB-account.
 
@@ -36,6 +35,31 @@ U kunt de SSR-functie (server side retry) inschakelen en deze bewerkingen automa
 
 :::image type="content" source="./media/prevent-rate-limiting-errors/portal-features-server-side-retry.png" alt-text="Scherm afbeelding van de functie nieuwe poging aan server zijde voor de Azure Cosmos DB-API voor MongoDB":::
 
+## <a name="use-the-azure-cli"></a>Azure CLI gebruiken
+
+1. Controleer of SSR al is ingeschakeld voor uw account:
+```bash
+az cosmosdb show --name accountname --resource-group resourcegroupname
+```
+2. **Inschakelen** SSR voor alle verzamelingen in uw database account. Het kan tot 15min duren voordat deze wijziging van kracht wordt.
+```bash
+az cosmosdb update --name accountname --resource-group resourcegroupname --capabilities EnableMongo DisableRateLimitingResponses
+```
+Met de volgende opdracht wordt SSR **uitgeschakeld** voor alle verzamelingen in uw database account. Het kan tot 15min duren voordat deze wijziging van kracht wordt.
+```bash
+az cosmosdb update --name accountname --resource-group resourcegroupname --capabilities EnableMongo DisableRateLimitingResponses
+```
+
+## <a name="frequently-asked-questions"></a>Veelgestelde vragen
+* Hoe worden aanvragen opnieuw geprobeerd?
+    * Aanvragen worden doorlopend opnieuw geprobeerd (boven en na) tot een time-out van 60 seconden is bereikt. Als de time-out is bereikt, ontvangt de client een [ExceededTimeLimit-uitzonde ring (50)](mongodb-troubleshoot.md).
+*  Hoe kan ik de effecten van SSR controleren?
+    *  U kunt de frequentie beperkende fouten (429s) die opnieuw worden geprobeerd, in het deel venster met metrische gegevens van Cosmos DB weer geven. Houd er wel van uit dat deze fouten niet naar de client gaan wanneer SSR is ingeschakeld, omdat deze worden verwerkt en server zijde opnieuw wordt uitgevoerd. 
+    *  U kunt zoeken naar logboek vermeldingen met ' estimatedDelayFromRateLimitingInMilliseconds ' in uw [Cosmos DB-bron logboeken](cosmosdb-monitor-resource-logs.md).
+*  Heeft SSR invloed op het niveau van mijn consistentie?
+    *  SSR heeft geen invloed op de consistentie van een aanvraag. Aanvragen worden opnieuw geprobeerd aan de server zijde als de frequentie beperkt is (met een 429-fout). 
+*  Is SSR van invloed op elk type fout dat kan worden ontvangen van mijn client?
+    *  Nee, SSR is alleen van invloed op frequentie beperkende fouten (429s) door de server opnieuw te proberen. Deze functie voor komt dat u de fout beperkende fouten in de client toepassing moet afhandelen. Alle [andere fouten](mongodb-troubleshoot.md) gaan naar de client. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

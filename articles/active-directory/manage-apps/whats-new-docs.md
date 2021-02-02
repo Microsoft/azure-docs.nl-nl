@@ -1,24 +1,51 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassings beheer
 description: Nieuwe en bijgewerkte documentatie voor het Azure Active Directory toepassings beheer.
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
 ms.workload: identity
 ms.author: kenwith
 author: kenwith
-manager: CelesteDG
-ms.openlocfilehash: ea2e08db91d23e9523b7bc95e01b7adc9c93b3cc
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+manager: daveba
+ms.openlocfilehash: 53339623ee435362d248b794776681972000173e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054818"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258571"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassings beheer. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [Wat is er nieuw in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de Application Management-service.
+
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="new-articles"></a>Nieuwe artikelen
+- [Azure Active Directory mijn apps-configuratie plannen](my-apps-deployment-plan.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+- [Probleem bij het installeren van de connector voor de toepassingsproxyagent](application-proxy-connector-installation-problem.md)
+- [Problemen oplossen met eenmalige aanmelding op basis van wachtwoord in Azure Active Directory](troubleshoot-password-based-sso.md)
+- [Best practices voor toepassingsbeheer](application-management-fundamentals.md)
+- [Hand leiding voor het integreren van Azure Active Directory met toepassingen](plan-an-application-integration.md)
+- [Wat is toepassingsbeheer?](what-is-application-management.md)
+- [Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)](application-proxy-faq.md)
+- [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
+- [Werken met bestaande on-premises proxyservers](application-proxy-configure-connectors-with-proxy-servers.md)
+- [Line-of-Business-Apps ontwikkelen voor Azure Active Directory](developer-guidance-for-integrating-applications.md)
+- [Azure AD-toepassingsproxy-connectors begrijpen](application-proxy-connectors.md)
+- [Informatie over gekoppelde aanmelding](configure-linked-sign-on.md)
+- [Informatie over eenmalige aanmelding op basis van wacht woorden](configure-password-single-sign-on-non-gallery-applications.md)
+- [Informatie over eenmalige aanmelding op basis van SAML](configure-saml-single-sign-on.md)
+- [Veelvoorkomende problemen oplossen bij het toevoegen of verwijderen van een toepassing aan Azure Active Directory](troubleshoot-adding-apps.md)
+- [Apps weer geven met uw Azure AD-Tenant voor identiteits beheer](application-types.md)
+- [Begrijpen hoe gebruikers worden toegewezen aan apps in Azure Active Directory](ways-users-get-assigned-to-applications.md)
+- [Quickstart: Een toepassing verwijderen uit uw Azure Active Directory-tenant (Azure AD)](delete-application-portal.md)
+- [Remote Desktop publiceren met Azure AD-toepassingsproxy](application-proxy-integrate-with-remote-desktop-services.md)
+- [Actie onderneemt over overbevoegd of verdachte toepassingen in Azure Active Directory](manage-application-permissions.md)
+
 
 ## <a name="december-2020"></a>December 2020
 

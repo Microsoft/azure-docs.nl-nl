@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1825767d8140421d4f0e22f9ebfde42f8262da5e
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 8a572221ca8899c5e4f4cf76e4b89c995952a2f3
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201073"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258554"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Azure-beveiligings basislijn voor API Management
 
@@ -90,15 +90,11 @@ Als u API Management die is ingericht in een intern Vnet combineert met de Appli
 
 Opmerking: deze functie is beschikbaar in de Premium-en Developer-laag van API Management.
 
-Schakel Azure DDoS Protection standaard in op het Vnet dat is gekoppeld aan uw API Management-implementatie om te beschermen tegen DDoS-aanvallen (Distributed Denial of service).
-
 Gebruik Azure Security Center geïntegreerde bedreigings informatie om communicatie met bekende of ongebruikte Internet-IP-adressen te weigeren.
 
 * [API Management integreren in een intern VNET met Application Gateway](./api-management-howto-integrate-internal-vnet-appgateway.md)
 
 * [Azure-toepassing gateway begrijpen](../application-gateway/index.yml)
-
-* [Azure DDoS Protection Standard configureren](../ddos-protection/manage-ddos-protection.md)
 
 * [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
@@ -184,8 +180,7 @@ Let op: bij het configureren van een NSG op het subnet van API Management, moet 
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
 
-**Hulp**: Definieer en implementeer standaard beveiligings configuraties voor netwerk instellingen met betrekking tot uw Azure API Management-implementaties. Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. ApiManagement ' en ' micro soft. Network ' om aangepast beleid te maken om de netwerk configuratie van uw Azure API Management-implementaties en gerelateerde resources te controleren of af te dwingen. U kunt ook gebruikmaken van ingebouwde beleids definities voor virtuele Azure-netwerken, zoals:
-- De DDoS Protection-standaard moet zijn ingeschakeld
+**Hulp**: Definieer en implementeer standaard beveiligings configuraties voor netwerk instellingen met betrekking tot uw Azure API Management-implementaties. Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. ApiManagement ' en ' micro soft. Network ' om aangepast beleid te maken om de netwerk configuratie van uw Azure API Management-implementaties en gerelateerde resources te controleren of af te dwingen. 
 
 U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties te vereenvoudigen door sleutel omgevings artefacten, zoals Azure Resource Manager sjablonen, Toegangs beheer op basis van rollen (Azure RBAC) en beleids regels in één blauw definitie te verpakken. U kunt de blauw druk eenvoudig Toep assen op nieuwe abonnementen, omgevingen en het beheer en de verwerkings mogelijkheden van versies.
 

@@ -14,14 +14,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 10/16/2020
+ms.date: 02/01/2021
 ms.author: radeltch
-ms.openlocfilehash: c97975d6920cd0f04a7d2d4e73c00104a2b13235
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6ce169eee4f931d02071a326c65ba94cfe723ae1
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685609"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259030"
 ---
 # <a name="high-availability-of-sap-hana-scale-out-system-on-red-hat-enterprise-linux"></a>Hoge Beschik baarheid van SAP HANA scale-out systeem op Red Hat Enterprise Linux 
 
@@ -91,7 +91,7 @@ Raadpleeg voordat u begint de volgende SAP-opmerkingen en-documenten:
   * [Red Hat Enterprise Linux oplossing voor SAP HANA Scale-Out en systeem replicatie](https://access.redhat.com/solutions/4386601)
 * [NetApp SAP-toepassingen op Microsoft Azure met behulp van Azure NetApp Files][anf-sap-applications-azure]
 * [Documentatie over Azure NetApp Files][anf-azure-doc] 
-
+* [NFS v4.1-volumes in Azure NetApp Files voor SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 
 ## <a name="overview"></a>Overzicht
 
@@ -1172,4 +1172,5 @@ We raden u aan om de SAP HANA-cluster configuratie grondig te testen door ook de
 * [Azure Virtual Machines planning en implementatie voor SAP][planning-guide]
 * [Azure Virtual Machines-implementatie voor SAP][deployment-guide]
 * [Azure Virtual Machines DBMS-implementatie voor SAP][dbms-guide]
+* [NFS v4.1-volumes in Azure NetApp Files voor SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 * Zie [hoge Beschik baarheid van SAP Hana op azure virtual machines (vm's)][sap-hana-ha]voor meer informatie over het instellen van hoge Beschik baarheid en het plannen van nood herstel van SAP Hana op Azure-vm's.

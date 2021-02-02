@@ -3,7 +3,7 @@ title: Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD m
 description: Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 59d733bfe5580e64d531eeac1db443982a308517
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 5d314331059a96388f23cd43667fca20a689f167
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033626"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258843"
 ---
 # <a name="troubleshoot-problems-signing-in-to-an-application-from-azure-ad-my-apps"></a>Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps
 

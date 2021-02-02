@@ -3,7 +3,7 @@ title: On-premises apps publiceren met Azure AD-toegangsproxy
 description: Begrijp waarom u een toegangsproxy moet gebruiken voor het extern publiceren van on-premises webtoepassingen aan externe gebruikers. Meer informatie over de architectuur van een toegangsproxy, connectors, verificatiemethoden en beveiligingsvoordelen.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/31/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 02b08e6fcdd6714886f8afea1c0a461eb6128fe4
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 1569e577ec535a4680cfaec6f7975c056275ecbe
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832638"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258775"
 ---
 # <a name="using-azure-ad-application-proxy-to-publish-on-premises-apps-for-remote-users"></a>Een toegangsproxy van Azure AD gebruiken om on-premises apps te publiceren voor externe gebruikers
 

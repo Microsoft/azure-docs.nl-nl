@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 07/21/2020
-ms.openlocfilehash: 772fc9f21f36a1487e2e3a1acbe644f9fd12e0f4
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 545359cd68c18fea8bf1369a57226d024489f293
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563191"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258915"
 ---
 # <a name="tutorial-migrateupgrade-azure-db-for-postgresql---single-server-to-azure-db-for-postgresql---single-server--online-using-dms-via-the-azure-portal"></a>Zelfstudie: Azure DB for PostgreSQL - Single Server online migreren/upgraden naar Azure DB for PostgreSQL - Single Server online met behulp van DMS via de Azure-portal
 
@@ -54,7 +54,7 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 * [Maak een Azure Database for PostgreSQL-server](../postgresql/quickstart-create-server-database-portal.md) of [maak een Azure Database for PostgreSQL - Hyperscale (Citus)-server](../postgresql/quickstart-create-hyperscale-portal.md) als de doeldatabaseserver om gegevens naar te migreren.
 * Maak een virtueel Microsoft Azure-netwerk voor Azure Database Migration Service met behulp van het implementatiemodel Azure Resource Manager. Voor meer informatie over het maken van een virtueel netwerk raadpleegt u de [Documentatie over virtuele netwerken](../virtual-network/index.yml) en dan met name de quickstart-artikelen met stapsgewijze informatie.
 
-* Zorg ervoor dat de regels voor netwerkbeveiligingsgroepen voor uw virtuele netwerk niet de volgende poorten voor inkomende communicatie naar Azure Database Migration Service blokkeren: 443, 53, 9354, 445, 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
+* Zorg ervoor dat de NSG-regels (netwerk beveiligings groep) voor uw virtuele netwerk de volgende uitgaande communicatie poorten niet blok keren tot Azure Database Migration Service: 443, 53, 9354, 445, 12000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
 * Maak een [firewallregel](../azure-sql/database/firewall-configure.md) op serverniveau voor de bron van Azure Database for PostgreSQL om Azure Database Migration Service toegang te bieden tot de brondatabases. Geef het subnetbereik van het virtuele netwerk op dat wordt gebruikt voor Azure Database Migration Service.
 * Maak een [firewallregel](../azure-sql/database/firewall-configure.md) op serverniveau voor het doel van Azure Database for PostgreSQL om Azure Database Migration Service toegang te bieden tot de doeldatabases. Geef het subnetbereik van het virtuele netwerk op dat wordt gebruikt voor Azure Database Migration Service.
 * [Logische replicatie inschakelen](../postgresql/concepts-logical.md) in de Azure Database for PostgresSQL-bron. 

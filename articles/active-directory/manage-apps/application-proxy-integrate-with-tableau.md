@@ -3,7 +3,7 @@ title: Azure Active Directory-toepassingsproxy en tableau | Microsoft Docs
 description: Meer informatie over het gebruik van Azure Active Directory (Azure AD)-toepassings proxy om externe toegang te bieden voor uw tableau-implementatie.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6df0a0bf21f4be824738d86ac6bdb3c75c9c3564
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6720a5ad963bc73e11ef7b46150e946521928c01
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764499"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258622"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory-toepassingsproxy en tableau 
 
@@ -66,7 +66,7 @@ Voor:
 
 6. Selecteer **toevoegen** boven aan de Blade. Uw toepassing wordt toegevoegd en het menu snel starten wordt geopend. 
 
-7. Selecteer in het menu snel starten de optie **een gebruiker toewijzen voor testen**en voeg ten minste één gebruiker toe aan de toepassing. Zorg ervoor dat dit test account toegang heeft tot de on-premises toepassing. 
+7. Selecteer in het menu snel starten de optie **een gebruiker toewijzen voor testen** en voeg ten minste één gebruiker toe aan de toepassing. Zorg ervoor dat dit test account toegang heeft tot de on-premises toepassing. 
 
 8. Selecteer **toewijzen** om de gebruikers toewijzing test op te slaan. 
 

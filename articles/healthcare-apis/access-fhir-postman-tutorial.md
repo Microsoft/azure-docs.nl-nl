@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.reviewer: dseven
 ms.author: matjazl
 author: matjazl
-ms.date: 02/07/2019
-ms.openlocfilehash: b0acfbf9636c2ad1df7df3197a0a1a83ec91b5c3
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.date: 02/01/2021
+ms.openlocfilehash: 5771f95da7b63c6c16bb581b84cc28c4b838ec27
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747337"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259013"
 ---
 # <a name="access-azure-api-for-fhir-with-postman"></a>Azure API for FHIR openen met Postman
 
@@ -23,7 +23,8 @@ Een clienttoepassing wil toegang tot een FHIR-API via een [REST API](https://www
 ## <a name="prerequisites"></a>Vereisten
 
 - Een FHIR-eindpunt in Azure. U kunt dat instellen met behulp van de beheerde Azure API for FHIR of de Open Source FHIR-server voor Azure. Stel de beheerde Azure API for FHIR in met behulp van [Azure Portal](fhir-paas-portal-quickstart.md), [PowerShell](fhir-paas-powershell-quickstart.md)of [Azure CLI](fhir-paas-cli-quickstart.md).
-- Een [ clienttoepassing](register-confidential-azure-ad-client-app.md) die u gebruikt om toegang te krijgen tot de FHIR-service.
+- Een  [client toepassing](register-confidential-azure-ad-client-app.md) die u gaat gebruiken voor toegang tot de FHIR-service.
+- U hebt machtigingen verleend, bijvoorbeeld ' FHIR data contributor ', aan de client toepassing om toegang te krijgen tot de FHIR-service. Meer informatie over het [configureren van Azure RBAC voor FHIR](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac)
 - Postman is geïnstalleerd. U kunt het programma downloaden op [https://www.getpostman.com](https://www.getpostman.com)
 
 ## <a name="fhir-server-and-authentication-details"></a>Details van FHIR-server en verificatie

@@ -118,9 +118,8 @@
         - name: Azure AD met Batch Management
           href: batch-aad-auth-management.md
         - name: Key Vault veilig openen met Batch
+          displayName: 'credential, certificate'
           href: credential-access-key-vault.md
-        - name: Certificaten gebruiken met Batch
-          href: batch-certificates.md
     - name: Bestanden en toepassingen kopiëren naar groepsknooppunten
       items:
         - name: Toepassingen en gegevens kopiëren naar groepsknooppunten

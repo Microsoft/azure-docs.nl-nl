@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 4cab1765a387bbae61c9c242a8e7a1ca881ea1f5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 42098786bb92e98b89b1dbfba01a2e071398f460
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966646"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258538"
 ---
 # <a name="tutorial-use-custom-allocation-policies-with-device-provisioning-service-dps"></a>Zelfstudie: Aangepast toewijzingsbeleid gebruiken met Device Provisioning Service (DPS)
 
@@ -347,7 +347,7 @@ Met deze voorbeeldcode wordt een opstartprocedure van het apparaat gesimuleerd w
     hsm_type = SECURE_DEVICE_TYPE_SYMMETRIC_KEY;
     ```
 
-6. Zoek in de functie `main()` de aanroep naar `Prov_Device_Register_Device()`. Voeg net vóór die aanroep de volgende regels code toe die gebruikmaken van [`Prov_Device_Set_Provisioning_Payload()`](/azure/iot-hub/iot-c-sdk-ref/prov-device-client-h/prov-device-set-provisioning-payload) voor het doorgeven van een aangepaste JSON-payload tijdens het inrichten. Dit kan worden gebruikt om meer informatie over uw aangepaste toewijzingsfuncties te krijgen. Dit kan ook worden gebruikt om het apparaattype door te geven in plaats van de registratie-id te onderzoeken.
+6. Zoek in de functie `main()` de aanroep naar `Prov_Device_Register_Device()`. Voeg net vóór die aanroep de volgende regels code toe die gebruikmaken van [`Prov_Device_Set_Provisioning_Payload()`](/azure/iot-hub/iot-c-sdk-ref/prov-device-client-h/prov-device-set-provisioning-payload) voor het doorgeven van een aangepaste JSON-payload tijdens het inrichten. Dit kan worden gebruikt om meer informatie over uw aangepaste toewijzingsfuncties te krijgen. Dit kan ook worden gebruikt om het apparaattype door te geven in plaats van de registratie-id te onderzoeken. Zie voor meer informatie over het verzenden en ontvangen van nettoladingen van aangepaste gegevens met DPS [over het overdragen van payloads tussen apparaten en DPS](how-to-send-additional-data.md).
 
     ```c
     // An example custom payload

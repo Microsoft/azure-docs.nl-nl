@@ -3,16 +3,16 @@ title: Richtlijnen en aanbevolen procedures
 description: Ontdek de aanbevolen procedures en richt lijnen voor het maken van een back-up van de Cloud en on-premises werk belasting naar de Cloud
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: 522f7d2502a49b912f34f392c52e5046eba8d01f
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 7b65556d8dd9b5b12e8da25055f6e39732c83afd
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092304"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258758"
 ---
 # <a name="backup-cloud-and-on-premises-workloads-to-cloud"></a>Back-ups in de Cloud en on-premises naar de Cloud
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Backup beveiligt uw gegevensassets in azure met behulp van een eenvoudige, veilige en kosteneffectieve oplossing waarvoor geen infra structuur nodig is. Het is een Azure's ingebouwde oplossing voor gegevens bescherming voor een breed scala aan werk belastingen. Het helpt u bij het beveiligen van uw bedrijfskritische workloads die worden uitgevoerd in de Cloud, en zorgt ervoor dat uw back-ups altijd beschikbaar zijn en op schaal worden beheerd in het hele back-ups.
 
@@ -71,11 +71,11 @@ U kunt één kluis of meerdere kluizen gebruiken om uw back-up te organiseren en
 * Als uw workloads allemaal worden beheerd door één abonnement en één resource, kunt u één kluis gebruiken om uw back-up te controleren en te beheren.
 
 * Als uw werk belastingen verspreid zijn over abonnementen, kunt u meerdere kluizen maken, een of meer abonnementen per abonnement.
-  * Met het Back-upcentrum kunt u een enkel glas venster hebben voor het beheren van alle taken met betrekking tot het maken van een back-up. Meer [informatie vindt u hier]().
-  * U kunt uw weer gaven aanpassen met werkmap sjablonen. Backup Explorer is een sjabloon voor Azure-Vm's. Meer [informatie vindt u hier](monitor-azure-backup-with-backup-explorer.md).
-  * Als u een consistent beleid voor de kluizen nodig hebt, kunt u Azure Policy gebruiken om het back-upbeleid door te geven over meerdere kluizen. U kunt een aangepaste [Azure Policy definitie](../governance/policy/concepts/definition-structure.md) schrijven die het effect [' deployifnotexists '](../governance/policy/concepts/effects.md#deployifnotexists) gebruikt voor het door geven van een back-upbeleid op meerdere kluizen. U toewijst [deze Azure Policy definitie toe aan](../governance/policy/assign-policy-portal.md) een bepaald bereik (abonnement of RG), zodat de resource een ' back-upbeleid ' implementeert op alle Recovery Services kluizen in het bereik van de Azure Policy toewijzing. De instellingen van het back-upbeleid (zoals back-upfrequentie, retentie, enzovoort) moeten door de gebruiker worden opgegeven als para meters in de toewijzing van de Azure Policy.
+  * Met het Back-upcentrum kunt u een enkel glas venster hebben voor het beheren van alle taken met betrekking tot het maken van een back-up. [Klik hier voor meer informatie]().
+  * U kunt uw weer gaven aanpassen met werkmap sjablonen. Backup Explorer is een sjabloon voor Azure-Vm's. [Klik hier voor meer informatie](monitor-azure-backup-with-backup-explorer.md).
+  * Als u een consistent beleid voor de kluizen nodig hebt, kunt u Azure Policy gebruiken om het back-upbeleid door te geven over meerdere kluizen. U kunt een aangepaste [Azure Policy definitie](../governance/policy/concepts/definition-structure.md) schrijven die het effect [' deployifnotexists '](../governance/policy/concepts/effects.md#deployifnotexists) gebruikt voor het door geven van een back-upbeleid op meerdere kluizen. U kunt deze Azure Policy definitie ook [toewijzen](../governance/policy/assign-policy-portal.md) aan een bepaald bereik (abonnement of RG), zodat de resource een ' back-upbeleid ' implementeert op alle Recovery Services kluizen in het bereik van de Azure Policy toewijzing. De instellingen van het back-upbeleid (zoals back-upfrequentie, retentie, enzovoort) moeten door de gebruiker worden opgegeven als para meters in de toewijzing van de Azure Policy.
 
-* Als uw organisatie footprint groeit, wilt u mogelijk werk belastingen verplaatsen tussen abonnementen om de volgende redenen: uitlijnen op back-upbeleid, kluizen samen voegen, afhandelen tegen lagere redundantie om kosten op te slaan (van GRS naar LRS).  Azure Backup ondersteunt het verplaatsen van een Recovery Services kluis over Azure-abonnementen of naar een andere resource groep binnen hetzelfde abonnement. Meer [informatie vindt u hier](backup-azure-move-recovery-services-vault.md).
+* Als uw organisatie footprint groeit, wilt u mogelijk werk belastingen verplaatsen tussen abonnementen om de volgende redenen: uitlijnen op back-upbeleid, kluizen samen voegen, afhandelen tegen lagere redundantie om kosten op te slaan (van GRS naar LRS).  Azure Backup ondersteunt het verplaatsen van een Recovery Services kluis over Azure-abonnementen of naar een andere resource groep binnen hetzelfde abonnement. [Klik hier voor meer informatie](backup-azure-move-recovery-services-vault.md).
 
 ### <a name="review-default-settings"></a>Standaard instellingen controleren
 
@@ -85,13 +85,13 @@ Controleer de standaard instellingen voor het type opslag replicatie en de bevei
 
 * *Voorlopig verwijderen* is standaard ingeschakeld op nieuwe kluizen om back-upgegevens te beschermen tegen onbedoelde of schadelijke verwijderingen. Volg [deze](backup-azure-security-feature-cloud.md#enabling-and-disabling-soft-delete) stappen om de instellingen te controleren en te wijzigen.
 
-* Met de functie voor het *terugzetten van meerdere regio's* kunt u virtuele Azure-machines herstellen in een secundaire regio, een Azure-gekoppelde regio. Met deze optie kunt u oefeningen uitvoeren om te voldoen aan controle-of nalevings vereisten en om de virtuele machine of de schijf te herstellen als er sprake is van een nood geval in de primaire regio. CRR is een opt-in-functie voor een GRS-kluis. Meer [informatie vindt u hier](backup-create-rs-vault.md#set-cross-region-restore).
+* Met de functie voor het *terugzetten van meerdere regio's* kunt u virtuele Azure-machines herstellen in een secundaire regio, een Azure-gekoppelde regio. Met deze optie kunt u oefeningen uitvoeren om te voldoen aan controle-of nalevings vereisten en om de virtuele machine of de schijf te herstellen als er sprake is van een nood geval in de primaire regio. CRR is een opt-in-functie voor een GRS-kluis. [Klik hier voor meer informatie](backup-create-rs-vault.md#set-cross-region-restore).
 
 * Voordat u uw kluis ontwerp voltooit, raadpleegt u de [ondersteunings matrix](backup-support-matrix.md#vault-support) voor de kluis om inzicht te krijgen in de factoren die uw ontwerp keuzen kunnen beïnvloeden of beperken.
 
 ## <a name="backup-policy-considerations"></a>Overwegingen voor het back-upbeleid
 
-Azure Backup beleid heeft twee onderdelen: *schema* (wanneer back-up moet worden gemaakt) en *bewaren* (hoelang de back-up moet worden bewaard). U kunt het beleid definiëren op basis van het type gegevens waarvan een back-up wordt gemaakt, RTO/RPO-vereisten, operationele of reglementaire nalevings behoeften en type werk belasting (bijvoorbeeld VM, Data Base, bestanden). Meer [informatie vindt u hier](backup-architecture.md#backup-policy-essentials).
+Azure Backup beleid heeft twee onderdelen: *schema* (wanneer back-up moet worden gemaakt) en *bewaren* (hoelang de back-up moet worden bewaard). U kunt het beleid definiëren op basis van het type gegevens waarvan een back-up wordt gemaakt, RTO/RPO-vereisten, operationele of reglementaire nalevings behoeften en type werk belasting (bijvoorbeeld VM, Data Base, bestanden). [Klik hier voor meer informatie](backup-architecture.md#backup-policy-essentials).
 
 Houd rekening met de volgende richt lijnen bij het maken van een back-upbeleid:
 
@@ -130,7 +130,7 @@ Houd rekening met de volgende richt lijnen bij het maken van een back-upbeleid:
   * Een back-upbeleid wordt toegewezen aan een kluis.
   * Er is een limiet voor het aantal items per beleid (bijvoorbeeld 100 Vm's). Als u wilt schalen, kunt u dubbele beleids regels maken met dezelfde of een andere planning.
   * U kunt specifieke herstel punten niet selectief verwijderen.
-  * U kunt de geplande back-up niet volledig uitschakelen en de gegevens bron in een beveiligde status laten staan. De minst frequente back-up die u met het beleid kunt configureren, heeft één wekelijks geplande back-up. Een alternatief zou zijn om de beveiliging met behoud van gegevens te stoppen en de beveiliging in te scha kelen telkens wanneer u een back-up wilt maken, een back-up op aanvraag te maken en vervolgens de beveiliging uit te scha kelen, maar de back-upgegevens te bewaren. Meer [informatie vindt u hier](backup-azure-manage-vms.md#stop-protecting-a-vm).
+  * U kunt de geplande back-up niet volledig uitschakelen en de gegevens bron in een beveiligde status laten staan. De minst frequente back-up die u met het beleid kunt configureren, heeft één wekelijks geplande back-up. Een alternatief zou zijn om de beveiliging met behoud van gegevens te stoppen en de beveiliging in te scha kelen telkens wanneer u een back-up wilt maken, een back-up op aanvraag te maken en vervolgens de beveiliging uit te scha kelen, maar de back-upgegevens te bewaren. [Klik hier voor meer informatie](backup-azure-manage-vms.md#stop-protecting-a-vm).
 
 ## <a name="security-considerations"></a>Beveiligingsoverwegingen
 
@@ -138,9 +138,9 @@ Azure Backup zorgt voor de bescherming van uw back-upgegevens en het voldoen aan
 
 ### <a name="authentication-and-authorization"></a>Verificatie en autorisatie
 
-* Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u nauw keuriger toegang beheren, de schei ding van taken binnen uw team en alleen de hoeveelheid toegang verlenen aan gebruikers die nodig zijn om hun taken uit te voeren. Meer [informatie vindt u hier](backup-rbac-rs-vault.md).
+* Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u nauw keuriger toegang beheren, de schei ding van taken binnen uw team en alleen de hoeveelheid toegang verlenen aan gebruikers die nodig zijn om hun taken uit te voeren. [Klik hier voor meer informatie](backup-rbac-rs-vault.md).
 
-* Azure Backup biedt drie ingebouwde rollen voor het beheren van de bewerkingen voor back-upbeheer: back-upinzenders, Opera tors en lezers. Meer [informatie vindt u hier](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions).
+* Azure Backup biedt drie ingebouwde rollen voor het beheren van de bewerkingen voor back-upbeheer: back-upinzenders, Opera tors en lezers. [Klik hier voor meer informatie](backup-rbac-rs-vault.md#mapping-backup-built-in-roles-to-backup-management-actions).
 
 * Azure Backup heeft verschillende beveiligings mechanismen die zijn ingebouwd in de service om beveiligings problemen te voor komen, te detecteren en op te lossen (meer informatie)
 
@@ -154,19 +154,19 @@ Versleuteling beschermt uw gegevens en helpt u om te voldoen aan de beveiligings
 
 * Back-upgegevens worden automatisch versleuteld met door micro soft beheerde sleutels. U kunt ook uw eigen sleutels gebruiken, ook wel bekend als door de [klant beheerde sleutels](encryption-at-rest-with-cmk.md).
 
-* Azure Backup ondersteunt back-ups en herstel bewerkingen van Azure-Vm's waarvan het besturings systeem/de gegevens schijven zijn versleuteld met Azure Disk Encryption (ADE). Meer [informatie vindt u hier](backup-azure-vms-encryption.md).
+* Azure Backup ondersteunt back-ups en herstel bewerkingen van Azure-Vm's waarvan het besturings systeem/de gegevens schijven zijn versleuteld met Azure Disk Encryption (ADE). [Klik hier voor meer informatie](backup-azure-vms-encryption.md).
 
 ### <a name="protection-of-backup-data-from-unintentional-deletes"></a>Beveiliging van back-upgegevens tegen onbedoelde verwijderingen
 
-Azure Backup biedt beveiligings functies voor het beveiligen van back-upgegevens, zelfs na verwijdering. Als een gebruiker de back-up verwijdert (van een VM, SQL Server-Data Base, Azure-bestands share, SAP HANA-data base), wordt de back-upgegevens voor 14 extra dagen bewaard, waardoor het herstel van het back-upitem zonder gegevens verlies wordt toegestaan. De extra 14 dagen retentie van back-upgegevens in de status ' voorlopig verwijderen ' brengt geen kosten voor u in rekening. Meer [informatie vindt u hier](backup-azure-security-feature-cloud.md).
+Azure Backup biedt beveiligings functies voor het beveiligen van back-upgegevens, zelfs na verwijdering. Als een gebruiker de back-up verwijdert (van een VM, SQL Server-Data Base, Azure-bestands share, SAP HANA-data base), wordt de back-upgegevens voor 14 extra dagen bewaard, waardoor het herstel van het back-upitem zonder gegevens verlies wordt toegestaan. De extra 14 dagen retentie van back-upgegevens in de status ' voorlopig verwijderen ' brengt geen kosten voor u in rekening. [Klik hier voor meer informatie](backup-azure-security-feature-cloud.md).
 
 ### <a name="monitoring-and-alerts-of-suspicious-activity"></a>Bewaking en waarschuwingen van verdachte activiteiten
 
-Azure Backup biedt ingebouwde mogelijkheden voor bewaking en waarschuwingen voor het weer geven en configureren van acties voor gebeurtenissen die betrekking hebben op Azure Backup. Meer [informatie vindt u hier](security-overview.md#monitoring-and-alerts-of-suspicious-activity).
+Azure Backup biedt ingebouwde mogelijkheden voor bewaking en waarschuwingen voor het weer geven en configureren van acties voor gebeurtenissen die betrekking hebben op Azure Backup. [Klik hier voor meer informatie](security-overview.md#monitoring-and-alerts-of-suspicious-activity).
 
 ### <a name="security-features-to-help-protect-hybrid-backups"></a>Beveiligings functies voor het beveiligen van hybride back-ups
 
-Azure Backup-Service gebruikt de Microsoft Azure Recovery Services-agent (MARS) om back-ups te maken van bestanden, mappen en het volume of de systeem status van een on-premises computer naar Azure. MARS biedt nu beveiligings functies: een wachtwoordzin die moet worden versleuteld voordat uploaden en ontsleutelen na het downloaden van Azure Backup. verwijderde back-upgegevens worden gedurende een extra 14 dagen vanaf de datum van verwijdering bewaard, en kritieke bewerking (bijvoorbeeld het wijzigen van een wachtwoordzin) kan alleen worden uitgevoerd door gebruikers die geldige Azure-referenties hebben. Meer [informatie vindt u hier](backup-azure-security-feature.md).
+Azure Backup-Service gebruikt de Microsoft Azure Recovery Services-agent (MARS) om back-ups te maken van bestanden, mappen en het volume of de systeem status van een on-premises computer naar Azure. MARS biedt nu beveiligings functies: een wachtwoordzin die moet worden versleuteld voordat uploaden en ontsleutelen na het downloaden van Azure Backup. verwijderde back-upgegevens worden gedurende een extra 14 dagen vanaf de datum van verwijdering bewaard, en kritieke bewerking (bijvoorbeeld het wijzigen van een wachtwoordzin) kan alleen worden uitgevoerd door gebruikers die geldige Azure-referenties hebben. [Klik hier voor meer informatie](backup-azure-security-feature.md).
 
 ## <a name="network-considerations"></a>Overwegingen voor het netwerk
 
@@ -184,7 +184,7 @@ Azure Backup moet gegevens van uw werk belasting naar de Recovery Services kluis
 
 Persoonlijk Azure- [eind punt](../private-link/private-endpoint-overview.md) is een netwerk interface waarmee u privé en veilig een service kunt verbinden met een persoonlijke Azure-koppeling. Met Azure Backup kunt u veilig back-ups van uw gegevens maken en uw Recovery Services kluizen herstellen met behulp van privé-eind punten.
 
-* Wanneer u privé-eind punten voor de kluis inschakelt, worden ze alleen gebruikt voor back-up en herstel van SQL-en SAP HANA-workloads in een Azure-VM en voor MARS-agent back-ups.  U kunt ook de kluis gebruiken voor het maken van back-ups van andere werk belastingen (er zijn echter geen persoonlijke eind punten nodig). Naast de back-up van SQL-en SAP HANA-workloads en-back-ups met behulp van de MARS-agent worden persoonlijke eind punten ook gebruikt voor het herstellen van bestanden in het geval van een back-up van Azure VM. Meer [informatie vindt u hier](private-endpoints.md#recommended-and-supported-scenarios).
+* Wanneer u privé-eind punten voor de kluis inschakelt, worden ze alleen gebruikt voor back-up en herstel van SQL-en SAP HANA-workloads in een Azure-VM en voor MARS-agent back-ups.  U kunt ook de kluis gebruiken voor het maken van back-ups van andere werk belastingen (er zijn echter geen persoonlijke eind punten nodig). Naast de back-up van SQL-en SAP HANA-workloads en-back-ups met behulp van de MARS-agent worden persoonlijke eind punten ook gebruikt voor het herstellen van bestanden in het geval van een back-up van Azure VM. [Klik hier voor meer informatie](private-endpoints.md#recommended-and-supported-scenarios).
 
 * Azure Active Directory biedt momenteel geen ondersteuning voor persoonlijke eind punten. Daarom moeten Ip's en FQDN-namen die vereist zijn voor Azure Active Directory, uitgaande toegang hebben vanaf het beveiligde netwerk bij het uitvoeren van back-ups van data bases in azure-Vm's en-back-ups met behulp van de MARS-agent. U kunt ook NSG Tags en Azure Firewall Tags gebruiken om toegang te verlenen tot Azure AD, zoals van toepassing. Meer informatie over de [vereisten vindt u hier](./private-endpoints.md#before-you-start).
 
@@ -194,15 +194,15 @@ Governance in azure wordt voornamelijk geïmplementeerd met [Azure Policy](../go
 
 ### <a name="azure-backup-support-two-key-scenarios-via-built-in-azure-policy"></a>Azure Backup ondersteunen twee belang rijke scenario's via ingebouwde Azure Policy
 
-* Zorg ervoor dat nieuwe bedrijfs kritieke machines automatisch worden gemaakt met de juiste Bewaar instellingen. Azure Backup biedt een ingebouwd beleid (met behulp van Azure Policy) dat kan worden toegewezen aan alle virtuele Azure-machines in een opgegeven locatie binnen een abonnement of resource groep. Wanneer dit beleid is toegewezen aan een bepaald bereik, worden alle nieuwe Vm's die in dat bereik zijn gemaakt, automatisch geconfigureerd voor back-up naar een bestaande kluis op dezelfde locatie en hetzelfde abonnement. De gebruiker kan de kluis en het Bewaar beleid opgeven waarnaar de back-ups van virtuele machines moeten worden gekoppeld. Meer [informatie vindt u hier](backup-azure-auto-enable-backup.md).
+* Zorg ervoor dat nieuwe bedrijfs kritieke machines automatisch worden gemaakt met de juiste Bewaar instellingen. Azure Backup biedt een ingebouwd beleid (met behulp van Azure Policy) dat kan worden toegewezen aan alle virtuele Azure-machines in een opgegeven locatie binnen een abonnement of resource groep. Wanneer dit beleid is toegewezen aan een bepaald bereik, worden alle nieuwe Vm's die in dat bereik zijn gemaakt, automatisch geconfigureerd voor back-up naar een bestaande kluis op dezelfde locatie en hetzelfde abonnement. De gebruiker kan de kluis en het Bewaar beleid opgeven waarnaar de back-ups van virtuele machines moeten worden gekoppeld. [Klik hier voor meer informatie](backup-azure-auto-enable-backup.md).
 
-* Zorg ervoor dat voor nieuwe kluizen diagnostische gegevens zijn ingeschakeld voor de ondersteuning van rapporten. Vaak is het toevoegen van een diagnostische instelling hand matig per kluis een lastigere taak. Daarnaast moet voor elke nieuwe kluis die wordt gemaakt, diagnostische instellingen zijn ingeschakeld, zodat u rapporten voor deze kluis kunt weer geven. Azure Backup biedt een ingebouwde Azure Policy om het maken van diagnostische instellingen op schaal te vereenvoudigen (met Log Analytics als doel). Dit beleid voegt een diagnostische instelling voor LA toe aan alle kluizen in elk abonnement of resource groep. De volgende secties bevatten instructies over het gebruik van dit beleid. Meer [informatie vindt u hier](azure-policy-configure-diagnostics.md).
+* Zorg ervoor dat voor nieuwe kluizen diagnostische gegevens zijn ingeschakeld voor de ondersteuning van rapporten. Vaak is het toevoegen van een diagnostische instelling hand matig per kluis een lastigere taak. Daarnaast moet voor elke nieuwe kluis die wordt gemaakt, diagnostische instellingen zijn ingeschakeld, zodat u rapporten voor deze kluis kunt weer geven. Azure Backup biedt een ingebouwde Azure Policy om het maken van diagnostische instellingen op schaal te vereenvoudigen (met Log Analytics als doel). Dit beleid voegt een diagnostische instelling voor LA toe aan alle kluizen in elk abonnement of resource groep. De volgende secties bevatten instructies over het gebruik van dit beleid. [Klik hier voor meer informatie](azure-policy-configure-diagnostics.md).
 
 ### <a name="azure-backup-cost-considerations"></a>Overwegingen voor Azure Backup kosten
 
 De mogelijkheden van de Azure Backup-service bieden u de flexibiliteit om uw kosten effectief te beheren en nog steeds te voldoen aan uw bedrijfs vereisten voor BCDR (bedrijfs continuïteit en nood herstel). Houd rekening met de volgende richtlijnen:
 
-* Gebruik de prijs calculator om de kosten te evalueren en te optimaliseren door verschillende hendels aan te passen. [Meer informatie vindt u hier](azure-backup-pricing.md)
+* Gebruik de prijs calculator om de kosten te evalueren en te optimaliseren door verschillende hendels aan te passen. [Klik hier voor meer informatie](azure-backup-pricing.md)
 
 * Back-upverkenner: gebruik back-upverkenner of back-uprapporten om de groei van back-upopslag te begrijpen en te optimaliseren, back-ups te stoppen voor niet-kritieke werk belastingen of verwijderde Vm's. U kunt een samengevoegde weer gave van uw hele onroerend goed verkrijgen vanuit een back-upperspectief. Dit omvat niet alleen informatie over uw back-upitems, maar ook voor bronnen die niet zijn geconfigureerd voor back-up. Zo zorgt u ervoor dat u nooit de essentiële gegevens in uw groeiende erfgoed beschermt en uw back-ups zijn geoptimaliseerd voor niet-essentiële werk belastingen of verwijderde workloads.
 
@@ -213,9 +213,9 @@ De mogelijkheden van de Azure Backup-service bieden u de flexibiliteit om uw kos
 
 * Selectieve back-upschijven: schijf uitsluiten (preview-functie) biedt een efficiënte en rendabele keuze om selectief back-ups te maken van belang rijke gegevens. Maak bijvoorbeeld een back-up van slechts één schijf wanneer u geen back-up wilt maken van de rest van de schijven die zijn gekoppeld aan een virtuele machine. Dit is ook handig wanneer u meerdere back-upoplossingen hebt. Wanneer u bijvoorbeeld een back-up maakt van uw data bases of gegevens met een back-upoplossing voor werk belasting (SQL Server-data base in azure VM-back-up) en u back-ups op Azure-VM-niveau wilt gebruiken voor geselecteerde schijven.
 
-* Azure Backup maakt moment opnamen van virtuele Azure-machines en slaat ze samen met de schijven op om het maken van herstel punten te stimuleren en om herstel bewerkingen sneller uit te voeren. Dit wordt direct terugzetten genoemd. Moment opnamen voor direct terugzetten worden standaard twee dagen bewaard. Met deze functie kan een herstel bewerking van deze moment opnamen worden uitgevoerd door de herstel tijden te verlagen. Het vermindert de tijd die nodig is om gegevens terug te zetten en te kopiëren van de kluis. Als gevolg hiervan worden opslag kosten weer gegeven die overeenkomen met moment opnamen die zijn gemaakt tijdens deze periode. Meer [informatie vindt u hier](backup-instant-restore-capability.md#configure-snapshot-retention).
+* Azure Backup maakt moment opnamen van virtuele Azure-machines en slaat ze samen met de schijven op om het maken van herstel punten te stimuleren en om herstel bewerkingen sneller uit te voeren. Dit wordt direct terugzetten genoemd. Moment opnamen voor direct terugzetten worden standaard twee dagen bewaard. Met deze functie kan een herstel bewerking van deze moment opnamen worden uitgevoerd door de herstel tijden te verlagen. Het vermindert de tijd die nodig is om gegevens terug te zetten en te kopiëren van de kluis. Als gevolg hiervan worden opslag kosten weer gegeven die overeenkomen met moment opnamen die zijn gemaakt tijdens deze periode. [Klik hier voor meer informatie](backup-instant-restore-capability.md#configure-snapshot-retention).
 
-* Het type opslag replicatie van Azure Backup kluis is standaard ingesteld op geo-redundant (GRS). Deze optie kan niet worden gewijzigd na het beveiligen van items. Geo-redundante opslag (GRS) biedt een hoger niveau aan gegevens duurzaamheid dan lokaal redundante opslag (LRS), zodat u een opt-in kunt gebruiken voor het herstellen van meerdere regio's en de kosten. Bekijk de wissel werking tussen lagere kosten en een hogere duurzaamheid van de gegevens en beslis wat het beste is voor uw scenario. [Meer informatie vindt u hier](backup-create-rs-vault.md#set-storage-redundancy)
+* Het type opslag replicatie van Azure Backup kluis is standaard ingesteld op geo-redundant (GRS). Deze optie kan niet worden gewijzigd na het beveiligen van items. Geo-redundante opslag (GRS) biedt een hoger niveau aan gegevens duurzaamheid dan lokaal redundante opslag (LRS), zodat u een opt-in kunt gebruiken voor het herstellen van meerdere regio's en de kosten. Bekijk de wissel werking tussen lagere kosten en een hogere duurzaamheid van de gegevens en beslis wat het beste is voor uw scenario. [Klik hier voor meer informatie](backup-create-rs-vault.md#set-storage-redundancy)
 
 * Als u de werk belasting die wordt uitgevoerd in een virtuele machine en de virtuele machine zelf beveiligt, controleert u of deze dubbele beveiliging nodig is.
 
@@ -225,9 +225,9 @@ Als back-upgebruiker of-beheerder moet u alle back-upoplossingen kunnen bewaken 
 
 ### <a name="monitoring"></a>Bewaking
 
-* Azure Backup voorziet **in ingebouwde taak bewaking** voor bewerkingen, zoals het configureren van back-ups, back-ups maken, herstellen, verwijderen van back-ups, enzovoort. Dit is het bereik van de kluis en ideaal voor het bewaken van één kluis. Meer [informatie vindt u hier](backup-azure-monitoring-built-in-monitor.md#backup-jobs-in-recovery-services-vault).
+* Azure Backup voorziet **in ingebouwde taak bewaking** voor bewerkingen, zoals het configureren van back-ups, back-ups maken, herstellen, verwijderen van back-ups, enzovoort. Dit is het bereik van de kluis en ideaal voor het bewaken van één kluis. [Klik hier voor meer informatie](backup-azure-monitoring-built-in-monitor.md#backup-jobs-in-recovery-services-vault).
 
-* Als u operationele activiteiten op schaal wilt bewaken, biedt **back-up Verkenner** een geaggregeerde weer gave van uw volledige back-upbestand, zodat u gedetailleerde inzoom analyse en probleem oplossing kunt uitvoeren. Het is een ingebouwde Azure Monitor werkmap die één centrale locatie biedt voor het bewaken van operationele activiteiten in het hele back-upbestand op Azure, voor het overspanning van tenants, locaties, abonnementen, resource groepen en kluizen. Meer [informatie vindt u hier](monitor-azure-backup-with-backup-explorer.md).
+* Als u operationele activiteiten op schaal wilt bewaken, biedt **back-up Verkenner** een geaggregeerde weer gave van uw volledige back-upbestand, zodat u gedetailleerde inzoom analyse en probleem oplossing kunt uitvoeren. Het is een ingebouwde Azure Monitor werkmap die één centrale locatie biedt voor het bewaken van operationele activiteiten in het hele back-upbestand op Azure, voor het overspanning van tenants, locaties, abonnementen, resource groepen en kluizen. [Klik hier voor meer informatie](monitor-azure-backup-with-backup-explorer.md).
   * Gebruik het om resources te identificeren die niet zijn geconfigureerd voor back-up en zorg ervoor dat u geen problemen ondervindt bij het beveiligen van belang rijke gegevens in uw groeiende erfgoed.
   * Het dash board bevat operationele activiteiten gedurende de afgelopen zeven dagen (maximum). Als u deze gegevens wilt behouden, kunt u exporteren als een Excel-bestand en deze bewaren.
   * Als u een Azure Lighthouse-gebruiker bent, kunt u informatie weer geven over meerdere tenants, zodat deze minder kan worden bewaakt.
@@ -238,8 +238,8 @@ Als back-upgebruiker of-beheerder moet u alle back-upoplossingen kunnen bewaken 
   * De belangrijkste trends op verschillende niveaus nauw keurig te identificeren.
 
 * Bovendien
-  * U kunt gegevens (bijvoorbeeld taken, beleids regels, enzovoort) verzenden naar de **log Analytics** -werk ruimte. Hiermee schakelt u de functies van Azure Monitor Logboeken in om de correlatie van gegevens in te scha kelen met andere bewakings gegevens die door Azure Monitor zijn verzameld, het consolideren van logboek vermeldingen van meerdere Azure-abonnementen en-tenants naar één locatie voor analyse, gebruik dan logboek query's om complexe analyses uit te voeren en uitgebreide inzichten op logboek vermeldingen te verkrijgen. Meer [informatie vindt u hier](../azure-monitor/platform/activity-log.md#send-to-log-analytics-workspace).
-  * U kunt gegevens verzenden naar Event hub voor het verzenden van vermeldingen buiten Azure, bijvoorbeeld naar een SIEM (Security Information and Event Management) of een andere log Analytics-oplossing. Meer [informatie vindt u hier](../azure-monitor/platform/activity-log.md#send-to-azure-event-hubs).
+  * U kunt gegevens (bijvoorbeeld taken, beleids regels, enzovoort) verzenden naar de **log Analytics** -werk ruimte. Hiermee schakelt u de functies van Azure Monitor Logboeken in om de correlatie van gegevens in te scha kelen met andere bewakings gegevens die door Azure Monitor zijn verzameld, het consolideren van logboek vermeldingen van meerdere Azure-abonnementen en-tenants naar één locatie voor analyse, gebruik dan logboek query's om complexe analyses uit te voeren en uitgebreide inzichten op logboek vermeldingen te verkrijgen. [Klik hier voor meer informatie](../azure-monitor/platform/activity-log.md#send-to-log-analytics-workspace).
+  * U kunt gegevens verzenden naar Event hub voor het verzenden van vermeldingen buiten Azure, bijvoorbeeld naar een SIEM (Security Information and Event Management) of een andere log Analytics-oplossing. [Klik hier voor meer informatie](../azure-monitor/platform/activity-log.md#send-to-azure-event-hubs).
   * U kunt gegevens naar een Azure Storage account verzenden als u uw logboek gegevens langer dan 90 dagen wilt bewaren voor controle, statische analyse of back-up. Als u uw gebeurtenissen gedurende 90 dagen of minder hoeft te bewaren, hoeft u geen archieven in te stellen voor een opslag account, omdat activiteiten in het Azure-platform gedurende 90 dagen worden bewaard. [Meer informatie](../azure-monitor/platform/activity-log.md#send-to--azure-storage).
 
 ### <a name="alerting"></a>Waarschuwingen
@@ -247,9 +247,9 @@ Als back-upgebruiker of-beheerder moet u alle back-upoplossingen kunnen bewaken 
 * Waarschuwingen zijn voornamelijk een manier om een melding te ontvangen om relevante actie te ondernemen. In het gedeelte back-upwaarschuwingen worden waarschuwingen weer gegeven die zijn gegenereerd door de Azure Backup-service.
 
 * Azure Backup biedt een **ingebouwd** mechanisme voor waarschuwings meldingen via e-mail voor fouten, waarschuwingen en kritieke bewerkingen. U kunt afzonderlijke e-mail adressen of distributie lijsten opgeven die moeten worden gewaarschuwd wanneer er een waarschuwing wordt gegenereerd. U kunt ook kiezen of u wilt worden gewaarschuwd voor elke afzonderlijke waarschuwing of ze wilt groeperen in een samen vatting per uur en vervolgens een melding ontvangen.
-  * Deze waarschuwingen worden gedefinieerd door de service en bieden ondersteuning voor beperkte scenario's: back-up-en herstel fouten, beveiliging stoppen met het bewaren van gegevens of beveiliging tegen het verwijderen van gegevens, enzovoort. Meer [informatie vindt u hier](backup-azure-monitoring-built-in-monitor.md#alert-scenarios).
+  * Deze waarschuwingen worden gedefinieerd door de service en bieden ondersteuning voor beperkte scenario's: back-up-en herstel fouten, beveiliging stoppen met het bewaren van gegevens of beveiliging tegen het verwijderen van gegevens, enzovoort. [Klik hier voor meer informatie](backup-azure-monitoring-built-in-monitor.md#alert-scenarios).
   * Als er een destructieve bewerking wordt uitgevoerd, zoals het stoppen van de beveiliging bij het verwijderen van gegevens, wordt er een waarschuwing gegenereerd en wordt er een e-mail bericht verzonden naar de eigen aren van het abonnement, beheerders en mede beheerders, zelfs als er **geen** meldingen zijn geconfigureerd voor de Recovery Services kluis.
-  * Bepaalde werk belastingen kunnen een hoge frequentie van fouten genereren (bijvoorbeeld SQL Server om de 15 minuten). Om te voor komen dat er wordt overspoeld met waarschuwingen die worden gegenereerd voor elk fout voorval, worden de waarschuwingen geconsolideerd. Meer [informatie vindt u hier](backup-azure-monitoring-built-in-monitor.md#consolidated-alerts).
+  * Bepaalde werk belastingen kunnen een hoge frequentie van fouten genereren (bijvoorbeeld SQL Server om de 15 minuten). Om te voor komen dat er wordt overspoeld met waarschuwingen die worden gegenereerd voor elk fout voorval, worden de waarschuwingen geconsolideerd. [Klik hier voor meer informatie](backup-azure-monitoring-built-in-monitor.md#consolidated-alerts).
   * De ingebouwde waarschuwingen kunnen niet worden aangepast en zijn beperkt tot e-mail berichten die zijn gedefinieerd in de Azure Portal.
 
 * Als u **aangepaste waarschuwingen wilt maken** (bijvoorbeeld waarschuwingen van geslaagde taken), gebruikt u log Analytics. In Azure Monitor kunt u uw eigen waarschuwingen maken in een Log Analytics-werk ruimte. Hybride werk belastingen (DPM/MABS) kunnen ook gegevens verzenden naar LA en LA gebruiken om algemene waarschuwingen te bieden voor werk belastingen die door Azure Backup worden ondersteund.

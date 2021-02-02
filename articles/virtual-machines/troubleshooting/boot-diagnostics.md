@@ -10,12 +10,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
-ms.openlocfilehash: fa133e7c62b7970a1c48c7fd86c877bcf699e034
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 9030adb9904095ac9b909e650ec6f11dcdf85ed3
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201600"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475519"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Diagnostische gegevens over opstarten gebruiken om problemen met virtuele machines in azure op te lossen
 
@@ -52,7 +52,7 @@ Controleer op het tabblad **beheer** in het gedeelte **bewaking** of **Diagnosti
 ![VM maken](./media/virtual-machines-common-boot-diagnostics/enable-boot-diagnostics-vm.png)
 
 > [!NOTE]
-> De functie diagnostische gegevens over opstarten biedt geen ondersteuning voor het Premium Storage-account of het zone type redundante opslag. Als u het Premium-opslag account gebruikt voor diagnostische gegevens over opstarten, kan de StorageAccountTypeNotSupported-fout worden weer gegeven wanneer u de virtuele machine start.
+> De functie diagnostische gegevens over opstarten biedt geen ondersteuning voor het Premium Storage-account of het zone type redundante opslag. Als u het Premium-opslag account gebruikt voor diagnostische gegevens over opstarten, kan de StorageAccountTypeNotSupported-fout worden weer gegeven wanneer u de virtuele machine start. 
 >
 
 ### <a name="deploying-from-an-azure-resource-manager-template"></a>Implementeren vanuit een Azure Resource Manager sjabloon

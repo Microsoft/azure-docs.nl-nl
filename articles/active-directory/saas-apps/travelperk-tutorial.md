@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/23/2020
 ms.author: jeedes
-ms.openlocfilehash: 23a741e96807acdb7b162b65597c651a2a6c3235
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: eefc47e1308dc5b59d8b57d7481a5250a7d2af93
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92509230"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475740"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-travelperk"></a>Zelfstudie: eenmalige aanmelding van Azure Active Directory integreren met TravelPerk
 
@@ -31,7 +31,7 @@ In deze zelfstudie leert u hoe u TravelPerk integreert met Azure Active Director
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Een abonnement op TravelPerk waarvoor eenmalige aanmelding is ingeschakeld.
+* Een TravelPerk-account met een Premium-abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -39,23 +39,23 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * TravelPerk ondersteunt door **SP** geïnitieerde eenmalige aanmelding
 
-* TravelPerk ondersteunt **Just-In-Time** -gebruikersinrichting
+* TravelPerk ondersteunt **Just-In-Time**-gebruikersinrichting
 
 ## <a name="adding-travelperk-from-the-gallery"></a>TravelPerk toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van TravelPerk met Azure Active Directory moet u TravelPerk vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in het gedeelte **Toevoegen uit de galerie** in het zoekvak de tekst **TravelPerk** .
+1. Typ in het gedeelte **Toevoegen uit de galerie** in het zoekvak de tekst **TravelPerk**.
 1. Selecteer **TravelPerk** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-sso-for-travelperk"></a>Eenmalige aanmelding van Azure Active Directory voor TravelPerk configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure Active Directory bij TravelPerk met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure Active Directory-gebruiker en de bijbehorende gebruiker in TravelPerk.
+Configureer en test eenmalige aanmelding van Azure Active Directory bij TravelPerk met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure Active Directory-gebruiker en de bijbehorende gebruiker in TravelPerk.
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory bij TravelPerk te configureren en testen:
 
@@ -70,8 +70,8 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in Azure Portal op de integratiepagina van de toepassing **TravelPerk** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in Azure Portal op de integratiepagina van de toepassing **TravelPerk** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -85,9 +85,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<COMPANY>.travelperk.com/accounts/saml2/callback/<APPLICATION_ID>/?acs`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL, antwoord-URL en id. Neem contact op met het [klantondersteuningsteam van TravelPerk](mailto:trex@travelperk.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL, antwoord-URL en id. U kunt de waarden vinden in uw TravelPerk-account: Ga naar **bedrijfs instellingen**  >  **integraties**  >  **eenmalige aanmelding**. Ga voor hulp naar de [TravelPerk Helpcenter](https://support.travelperk.com/hc/en-us/articles/360052450271-How-can-I-setup-SSO-for-Azure-SAML-).
 
-1. De TravelPerk-app verwacht de SAML-asserties in een specifieke indeling. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van de SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **emailaddress** is toegewezen aan **user.mail** . De TravelPerk-app verwacht dat **emailaddress** wordt toegewezen met **user.userprincipalname** . Daarom moet u de toewijzing van het kenmerk bewerken door op het pictogram **Bewerken** te klikken en de toewijzing van het kenmerk te wijzigen.
+1. De TravelPerk-app verwacht de SAML-asserties in een specifieke indeling. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van de SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven. In de standaard toewijzing is **EmailAddress** toegewezen aan **gebruiker. mail**. De TravelPerk-toepassing verwacht echter dat **EmailAddress** moet worden toegewezen aan **User. userPrincipalName**. Voor TravelPerk moet u de kenmerk toewijzing bewerken: Klik op het **bewerkings** pictogram en wijzig vervolgens de kenmerk toewijzing. Als u een kenmerk wilt bewerken, klikt u op het kenmerk om de bewerkings modus te openen.
 
     ![image](common/default-attributes.png)
 
@@ -102,25 +102,25 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot TravelPerk.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **TravelPerk** in de lijst met apps.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol** . Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-travelperk-sso"></a>Eenmalige aanmelding voor TravelPerk configureren
 
@@ -134,7 +134,7 @@ In deze sectie wordt in TravelPerk een gebruiker gemaakt met de naam B.Simon. Tr
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-1. Klik in Azure Portal op **Deze toepassing testen** . U wordt omgeleid naar de aanmeldings-URL van TravelPerk, waar u de aanmeldingsstroom kunt initiëren. 
+1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van TravelPerk, waar u de aanmeldingsstroom kunt initiëren. 
 
 2. Ga rechtstreeks naar de aanmeldings-URL van TravelPerk en initieer daar de aanmeldingsstroom.
 

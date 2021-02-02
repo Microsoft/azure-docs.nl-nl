@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: abd30c22aa2b4df20cdb795013768cd175cfef4c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 69f7ec5114ad650f33eae740a54a3821b76ef2ac
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780736"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475536"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Logboeken ophalen uit IoT Edge-implementaties
 
@@ -51,8 +51,8 @@ Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd
              "id": "regex string",
              "filter": {
                 "tail": "int",
-                "since": "int",
-                "until": "int",
+                "since": "string",
+                "until": "string",
                 "loglevel": "int",
                 "regex": "regex string"
              }
@@ -70,8 +70,8 @@ Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd
 | Id | tekenreeks | Een reguliere expressie die de module naam levert. Dit kan overeenkomen met meerdere modules op een edge-apparaat. Indeling van [reguliere .net-expressies](/dotnet/standard/base-types/regular-expressions) wordt verwacht. |
 | filter | JSON-sectie | Logboek filters die moeten worden toegepast op de modules die overeenkomen met de `id` reguliere expressie in de tuple. |
 | 13,Arabische | geheel getal | Het aantal logboek regels in het verleden dat moet worden opgehaald vanaf de laatste. Beschrijving. |
-| moment | geheel getal | Als duur (1 d, 90 m, 2 dagen 3 uur 2 minuten), rfc3339-tijds tempel of UNIX-Time Stamp, worden er sinds dit tijdstip alleen logboeken geretourneerd.  Als beide `tail` en `since` worden opgegeven, worden de logboeken opgehaald met de `since` waarde eerst. Vervolgens wordt de `tail` waarde toegepast op het resultaat en wordt het uiteindelijke resultaat geretourneerd. Beschrijving. |
-| totdat | geheel getal | Alleen logboeken retour neren vóór de opgegeven tijd, als rfc3339 Time Stamp, UNIX time stamp of duration (1 d, 90 m, 2 dagen 3 uur 2 minuten). Beschrijving. |
+| moment | tekenreeks | Als duur (1 d, 90 m, 2 dagen 3 uur 2 minuten), rfc3339-tijds tempel of UNIX-Time Stamp, worden er sinds dit tijdstip alleen logboeken geretourneerd.  Als beide `tail` en `since` worden opgegeven, worden de logboeken opgehaald met de `since` waarde eerst. Vervolgens wordt de `tail` waarde toegepast op het resultaat en wordt het uiteindelijke resultaat geretourneerd. Beschrijving. |
+| totdat | tekenreeks | Alleen logboeken retour neren vóór de opgegeven tijd, als rfc3339 Time Stamp, UNIX time stamp of duration (1 d, 90 m, 2 dagen 3 uur 2 minuten). Beschrijving. |
 | logboek niveau | geheel getal | Filter logboek regels die kleiner zijn dan of gelijk zijn aan het opgegeven logboek niveau. Logboek regels moeten de aanbevolen logboek registratie-indeling volgen en standaard [syslog-urgentie niveau](https://en.wikipedia.org/wiki/Syslog#Severity_level) gebruiken. Beschrijving. |
 | reguliere | tekenreeks | Filter logboek regels die inhoud hebben die overeenkomt met de opgegeven reguliere expressie met behulp van de notatie voor [reguliere expressies van .net](/dotnet/standard/base-types/regular-expressions) . Beschrijving. |
 | gecodeerd | tekenreeks | `gzip` of `none`. De standaardinstelling is `none`. |
@@ -160,8 +160,8 @@ Deze methode accepteert een JSON-nettolading vergelijkbaar met **GetModuleLogs**
              "id": "regex string",
              "filter": {
                 "tail": "int",
-                "since": "int",
-                "until": "int",
+                "since": "string",
+                "until": "string",
                 "loglevel": "int",
                 "regex": "regex string"
              }
@@ -293,8 +293,8 @@ Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd
 |-|-|-|
 | schemaVersion | tekenreeks | Ingesteld op `1.0` |
 | sasURL | teken reeks (URI) | [Shared Access Signature URL met schrijf toegang tot de Azure Blob Storage-container](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer) |
-| moment | geheel getal | Als duur (1 d, 90 m, 2 dagen 3 uur 2 minuten), rfc3339-tijds tempel of UNIX-Time Stamp, worden er sinds dit tijdstip alleen logboeken geretourneerd. Beschrijving. |
-| totdat | geheel getal | Alleen logboeken retour neren vóór de opgegeven tijd, als rfc3339 Time Stamp, UNIX time stamp of duration (1 d, 90 m, 2 dagen 3 uur 2 minuten). Beschrijving. |
+| moment | tekenreeks | Als duur (1 d, 90 m, 2 dagen 3 uur 2 minuten), rfc3339-tijds tempel of UNIX-Time Stamp, worden er sinds dit tijdstip alleen logboeken geretourneerd. Beschrijving. |
+| totdat | tekenreeks | Alleen logboeken retour neren vóór de opgegeven tijd, als rfc3339 Time Stamp, UNIX time stamp of duration (1 d, 90 m, 2 dagen 3 uur 2 minuten). Beschrijving. |
 | edgeRuntimeOnly | booleaans | Indien waar, worden alleen logboeken geretourneerd van de Edge-agent, Edge-hub en de Edge Security daemon. Standaard: onwaar.  Beschrijving. |
 
 > [!IMPORTANT]

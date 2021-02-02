@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 02/02/2021
 ms.author: tisande
-ms.openlocfilehash: 4d2ad9cf6b47d8307d9652419b82de8ffcbcb099
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 79791bf2db888912d5c1f016f4bf357e76bddcba
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681647"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475097"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -42,10 +42,7 @@ In Azure Cosmos DB is de totale hoeveelheid verbruikte opslag de combi natie van
 
 * De index grootte is afhankelijk van het indexerings beleid. Als alle eigenschappen zijn geïndexeerd, kan de index grootte groter zijn dan de grootte van de gegevens.
 * Wanneer gegevens worden verwijderd, worden de indexen bijna voortdurend gecomprimeerd. Voor kleine gegevens verwijderingen is het echter mogelijk dat u niet onmiddellijk een afname van de index grootte ziet.
-* De index grootte kan in de volgende gevallen toenemen:
-
-  * Duur van partitie splitsing: de index ruimte wordt vrijgegeven nadat het splitsen van de partitie is voltooid.
-  * Wanneer een partitie wordt gesplitst, neemt de index ruimte tijdens het splitsen van de partitie tijdelijk toe. 
+* De index grootte kan tijdelijk toenemen wanneer fysieke partities worden gesplitst. De index ruimte wordt vrijgegeven nadat het splitsen van de partitie is voltooid.
 
 ## <a name="including-and-excluding-property-paths"></a><a id="include-exclude-paths"></a>Eigenschaps paden opnemen en uitsluiten
 
@@ -186,33 +183,35 @@ U moet het indexerings beleid aanpassen zodat u alle benodigde query's kunt uitv
 
 Als een query filters heeft voor twee of meer eigenschappen, kan het handig zijn om een samengestelde index voor deze eigenschappen te maken.
 
-Denk bijvoorbeeld aan de volgende query met een gelijkheids filter voor twee eigenschappen:
+Bekijk bijvoorbeeld de volgende query met zowel een gelijkheids-als bereik filter:
 
 ```sql
-SELECT * FROM c WHERE c.name = "John" AND c.age = 18
+SELECT *
+FROM c
+WHERE c.name = "John" AND c.age > 18
 ```
 
-Deze query is efficiënter, neemt minder tijd in beslag en verbruikt meer dan één RU, als het een samengestelde index op (naam ASC, Age ASC) kan gebruiken.
+Deze query is efficiënter, neemt minder tijd in beslag en verbruikt meer dan één RU, als een samengestelde index op kan worden gebruikt `(name ASC, age ASC)` .
 
-Query's met bereik filters kunnen ook worden geoptimaliseerd met een samengestelde index. De query kan echter slechts één bereik filter hebben. Bereik filters zijn onder andere `>` ,, `<` `<=` , `>=` en `!=` . Het bereik filter moet als laatste worden gedefinieerd in de samengestelde index.
+Query's met meerdere bereik filters kunnen ook worden geoptimaliseerd met een samengestelde index. Elke afzonderlijke samengestelde index kan echter slechts één bereik filter optimaliseren. Bereik filters zijn onder andere `>` ,, `<` `<=` , `>=` en `!=` . Het bereik filter moet als laatste worden gedefinieerd in de samengestelde index.
 
-Houd rekening met de volgende query met filters voor gelijkheid en bereik:
+Houd rekening met de volgende query met een gelijkheids filter en twee bereik filters:
 
 ```sql
-SELECT * FROM c WHERE c.name = "John" AND c.age > 18
+SELECT *
+FROM c
+WHERE c.name = "John" AND c.age > 18 AND c._ts > 1612212188
 ```
 
-Deze query is efficiënter met een samengestelde index op (naam ASC, Age ASC). De query maakt echter geen gebruik van een samengestelde index op (leeftijd ASC, naam ASC), omdat de gelijkheids filters eerst moeten worden gedefinieerd in de samengestelde index.
+Deze query is efficiënter met een samengestelde index op `(name ASC, age ASC)` en `(name ASC, _ts ASC)` . De query maakt echter geen gebruik van een samengestelde index op `(age ASC, name ASC)` omdat de eigenschappen met gelijkheids filters eerst moeten worden gedefinieerd in de samengestelde index. Er zijn twee afzonderlijke samengestelde indexen vereist in plaats van één samengestelde index, `(name ASC, age ASC, _ts ASC)` omdat elke samengestelde index alleen een filter voor één bereik kan optimaliseren.
 
 De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen voor query's met filters voor meerdere eigenschappen
 
+- Filter expressies kunnen gebruikmaken van meerdere samengestelde indexen.
 - De eigenschappen in het filter van de query moeten overeenkomen met die in de samengestelde index. Als een eigenschap zich in de samengestelde index bevindt maar niet is opgenomen in de query als een filter, wordt de samengestelde index niet gebruikt voor de query.
 - Als een query extra eigenschappen in het filter heeft die niet in een samengestelde index zijn gedefinieerd, wordt een combi natie van samengestelde en bereik indexen gebruikt om de query te evalueren. Hiervoor is minder RU vereist dan exclusief het gebruik van bereik indexen.
-- Als een eigenschap een bereik filter heeft ( `>` ,,, `<` `<=` `>=` of `!=` ), dan moet deze eigenschap als laatste worden gedefinieerd in de samengestelde index. Als een query meer dan één bereik filter heeft, wordt de samengestelde index niet gebruikt.
+- Als een eigenschap een bereik filter heeft ( `>` ,,, `<` `<=` `>=` of `!=` ), dan moet deze eigenschap als laatste worden gedefinieerd in de samengestelde index. Als een query meer dan één bereik filter heeft, kan het profiteren van meerdere samengestelde indexen.
 - Bij het maken van een samengestelde index voor het optimaliseren van query's met meerdere filters, `ORDER` heeft de samengestelde index geen invloed op de resultaten. Deze eigenschap is optioneel.
-- Als u geen samengestelde index voor een query met filters voor meerdere eigenschappen definieert, zal de query toch slagen. De RU-kosten van de query kunnen echter worden verminderd met een samengestelde index.
-- Query's met beide statistische functies (bijvoorbeeld aantal of som) en filters hebben ook voor deel van samengestelde indexen.
-- Filter expressies kunnen gebruikmaken van meerdere samengestelde indexen.
 
 Bekijk de volgende voor beelden waarin een samengestelde index is gedefinieerd voor de eigenschappen naam, leeftijd en tijds tempel:
 
@@ -227,43 +226,76 @@ Bekijk de volgende voor beelden waarin een samengestelde index is gedefinieerd v
 | ```(name ASC, age ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp = 123049923``` | ```No```            |
 | ```(name ASC, age ASC) and (name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.name = "John" AND c.age < 18 AND c.timestamp > 123049923``` | ```Yes```            |
 
-### <a name="queries-with-a-filter-as-well-as-an-order-by-clause"></a>Query's met een filter en een ORDER BY-component
+### <a name="queries-with-a-filter-and-order-by"></a>Query's met een filter en sorteren op
 
 Als een query filtert op een of meer eigenschappen en andere eigenschappen in de ORDER BY-component heeft, kan het handig zijn om de eigenschappen in het filter toe te voegen aan de- `ORDER BY` component.
 
-Bijvoorbeeld, door de eigenschappen in het filter toe te voegen aan de ORDER BY-component, kan de volgende query worden herschreven om gebruik te maken van een samengestelde index:
+Als u bijvoorbeeld de eigenschappen in het filter aan de- `ORDER BY` component toevoegt, kan de volgende query worden herschreven om gebruik te maken van een samengestelde index:
 
 Query's uitvoeren met de bereik index:
 
 ```sql
-SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp
+SELECT *
+FROM c 
+WHERE c.name = "John" 
+ORDER BY c.timestamp
 ```
 
 Query's uitvoeren met samengestelde index:
 
 ```sql
-SELECT * FROM c WHERE c.name = "John" ORDER BY c.name, c.timestamp
+SELECT * 
+FROM c 
+WHERE c.name = "John"
+ORDER BY c.name, c.timestamp
 ```
 
-Dezelfde patroon-en query optimalisaties kunnen worden gegeneraliseerd voor query's met meerdere gelijkheids filters:
+Dezelfde query optimalisaties kunnen worden gegeneraliseerd voor `ORDER BY` query's met filters, zodat afzonderlijke samengestelde indexen slechts één bereik filter kunnen ondersteunen.
 
 Query's uitvoeren met de bereik index:
 
 ```sql
-SELECT * FROM c WHERE c.name = "John", c.age = 18 ORDER BY c.timestamp
+SELECT * 
+FROM c 
+WHERE c.name = "John" AND c.age = 18 AND c.timestamp > 1611947901 
+ORDER BY c.timestamp
 ```
 
 Query's uitvoeren met samengestelde index:
 
 ```sql
-SELECT * FROM c WHERE c.name = "John", c.age = 18 ORDER BY c.name, c.age, c.timestamp
+SELECT * 
+FROM c 
+WHERE c.name = "John" AND c.age = 18 AND c.timestamp > 1611947901 
+ORDER BY c.name, c.age, c.timestamp
+```
+
+Daarnaast kunt u samengestelde indexen gebruiken om query's te optimaliseren met systeem functies en volg orde op:
+
+Query's uitvoeren met de bereik index:
+
+```sql
+SELECT * 
+FROM c 
+WHERE c.firstName = "John" AND Contains(c.lastName, "Smith", true) 
+ORDER BY c.lastName
+```
+
+Query's uitvoeren met samengestelde index:
+
+```sql
+SELECT * 
+FROM c 
+WHERE c.firstName = "John" AND Contains(c.lastName, "Smith", true) 
+ORDER BY c.firstName, c.lastName
 ```
 
 De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen voor het optimaliseren van een query met een filter en `ORDER BY` component:
 
-* Als de query filtert op Eigenschappen, moeten deze eerst worden opgenomen in de `ORDER BY` component.
-* Als de query filtert op meerdere eigenschappen, moeten de gelijkheids filters de eerste eigenschappen in de `ORDER BY` component zijn
 * Als u geen samengestelde index definieert voor een query met een filter voor één eigenschap en een afzonderlijke `ORDER BY` component met behulp van een andere eigenschap, zal de query toch slagen. De RU-kosten van de query kunnen echter worden verminderd met een samengestelde index, met name als de eigenschap in de `ORDER BY` component een hoge kardinaliteit heeft.
+* Als de query filtert op Eigenschappen, moeten deze eerst worden opgenomen in de `ORDER BY` component.
+* Als de query filtert op meerdere eigenschappen, moeten de gelijkheids filters de eerste eigenschappen in de `ORDER BY` component zijn.
+* Als de query filtert op meerdere eigenschappen, kunt u Maxi maal één bereik filter of systeem functie gebruiken per samengestelde index. De eigenschap die in het bereik filter of de systeem functie wordt gebruikt, moet als laatste worden gedefinieerd in de samengestelde index.
 * Alle overwegingen voor het maken van samengestelde indexen voor `ORDER BY` query's met meerdere eigenschappen en query's met filters voor meerdere eigenschappen zijn nog steeds van toepassing.
 
 
@@ -276,6 +308,7 @@ De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen
 | ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC``` | ```No```   |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC``` | `Yes` |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC``` | `No` |
+
 
 ## <a name="modifying-the-indexing-policy"></a>Het indexerings beleid wijzigen
 

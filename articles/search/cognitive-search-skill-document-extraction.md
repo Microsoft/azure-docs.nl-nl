@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: chalton
-ms.openlocfilehash: 5098d897d84ff6af31d430c0ddd2e26d8d6b08a7
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: d6dd2b891cb3bf9ebb5442f541021c20a34ce1a1
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814292"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99474843"
 ---
 # <a name="document-extraction-cognitive-skill"></a>Cognitieve vaardigheid van document extractie
 
@@ -34,10 +34,10 @@ Microsoft.Skills.Util.DocumentExtractionSkill
 
 Parameters zijn hoofdlettergevoelig.
 
-| Invoer | Toegestane waarden | Beschrijving |
+| Invoerwaarden | Toegestane waarden | Beschrijving |
 |-----------------|----------------|-------------|
 | `parsingMode`   | `default` <br/> `text` <br/> `json`  | Is ingesteld op `default` voor document extractie van bestanden die geen zuivere tekst of JSON zijn. Ingesteld op `text` om de prestaties van tekst bestanden te verbeteren. Stel in om `json` gestructureerde inhoud op te halen uit json-bestanden. Als `parsingMode` niet expliciet is gedefinieerd, wordt deze ingesteld op `default` . |
-| `dataToExtract` | `contentAndMetadata` <br/> `allMetadata` | Stel in op `contentAndMetadata` om alle meta gegevens en tekst inhoud van elk bestand uit te pakken. Stel deze waarde in op `allMetadata` alleen de [meta gegevens](search-howto-indexing-azure-blob-storage.md#ContentSpecificMetadata) van het inhoudtype extra heren (bijvoorbeeld meta gegevens die uniek zijn voor PNG-bestanden). Als `dataToExtract` niet expliciet is gedefinieerd, wordt deze ingesteld op `contentAndMetadata` . |
+| `dataToExtract` | `contentAndMetadata` <br/> `allMetadata` | Stel in op `contentAndMetadata` om alle meta gegevens en tekst inhoud van elk bestand uit te pakken. Stel deze in op `allMetadata` alleen de [meta gegevens eigenschappen voor het inhouds type](search-blob-metadata-properties.md) (bijvoorbeeld meta gegevens die uniek zijn voor PNG-bestanden) te extra heren. Als `dataToExtract` niet expliciet is gedefinieerd, wordt deze ingesteld op `contentAndMetadata` . |
 | `configuration` | Zie hieronder. | Een woorden lijst met optionele para meters die aanpassen hoe de document extractie wordt uitgevoerd. Zie de onderstaande tabel voor beschrijvingen van ondersteunde configuratie-eigenschappen. |
 
 | Configuratie parameter   | Toegestane waarden | Beschrijving |
@@ -146,7 +146,7 @@ Dit bestands referentie object kan op een van de volgende drie manieren worden g
 }
 ```
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 + [Ingebouwde vaardigheden](cognitive-search-predefined-skills.md)
 + [Een vaardig heden definiëren](cognitive-search-defining-skillset.md)

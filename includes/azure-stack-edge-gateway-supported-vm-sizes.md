@@ -4,16 +4,16 @@ ms.service: databox
 ms.topic: include
 ms.date: 12/09/2020
 ms.author: alkohli
-ms.openlocfilehash: 9ea5fb26a52c967c5296f1a83976e748c86c9e18
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: ae7cb05aeda296ffb3aa9d7f6e2c88fe59364975
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763803"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475034"
 ---
-De grootte van een VM bepaalt de hoeveelheid rekenresources, zoals CPU, GPU en geheugen, die voor de VM beschikbaar zijn gesteld. Virtuele machines moeten worden gemaakt met een grootte die geschikt is voor de werkbelasting. Hoewel alle computers worden uitgevoerd op dezelfde hardware, hebben computer grootten verschillende limieten voor schijf toegang, die u kan helpen bij het beheren van de algemene schijf toegang op uw Vm's. Als een werkbelasting toeneemt, kan de grootte van een bestaande virtuele machine ook worden gewijzigd.
+De VM-grootte bepaalt de hoeveelheid reken resources (zoals CPU, GPU en geheugen) die beschikbaar worden gesteld voor de virtuele machine. U moet virtuele machines maken met behulp van een VM-grootte die geschikt is voor de werk belasting. Hoewel alle computers worden uitgevoerd op dezelfde hardware, hebben computer grootten verschillende limieten voor schijf toegang. Dit kan u helpen bij het beheren van de algemene schijf toegang op uw Vm's. Als een werk belasting toeneemt, kunt u ook de grootte van een bestaande virtuele machine wijzigen.
 
-De volgende virtuele machines worden ondersteund voor maken op Azure Stack edge-apparaat.
+De volgende virtuele machines worden ondersteund voor maken op uw Azure Stack edge-apparaat.
 
 ### <a name="dv2-series"></a>Dv2-serie
 |Grootte     |vCPU     |Geheugen (GiB) | Bron schijf grootte (GiB)  | Grootte van de besturingssysteem schijf (GiB) | Max. aantal gegevensschijven | Max. aantal NIC's |
@@ -40,7 +40,7 @@ De volgende virtuele machines worden ondersteund voor maken op Azure Stack edge-
 |**Standard_DS13_v2**|8   |56  |112|32000 |1000 |16 |8 |
 
 
-Ga voor meer informatie naar [dv2 Series op algemeen VM-grootten](../articles/virtual-machines/dv2-dsv2-series.md#dv2-series).
+Zie [dv2 and DSv2-Series](../articles/virtual-machines/dv2-dsv2-series.md#dv2-series)voor meer informatie.
 
 ### <a name="ncast4_v3-series-preview"></a>NCasT4_v3-serie (preview-versie)
 
@@ -51,7 +51,7 @@ Deze grootten worden ondersteund voor GPU-Vm's op uw apparaat en zijn geoptimali
 |**Standard_NC4as_T4_v3** |4   |28  |180   |1000|1 |16   |4 |
 |**Standard_NC8as_T4_v3** |8   |56  |360   |1000|1 |16  |8 |
 
-Ga voor meer informatie naar [NCasT4_v3-Series op GPU geoptimaliseerde VM-grootten](../articles/virtual-machines/nct4-v3-series.md).
+Zie [NCasT4_v3-serie](../articles/virtual-machines/nct4-v3-series.md)voor meer informatie.
 
 ### <a name="f-series"></a>F-serie
 
@@ -70,5 +70,5 @@ Deze reeksen zijn geoptimaliseerd voor reken werkbelastingen en worden uitgevoer
 | Standard_F8s | 8 | 16 |32 |1000| 32 |  8 |
 | Standard_F16s | 16 | 32 |64 |1000| 64 |  8 |
 
-Ga voor meer informatie naar [Fsv2-series over geoptimaliseerde virtuele machines met reken capaciteit](../articles/virtual-machines/fsv2-series.md).
+Zie [Fsv2-Series](../articles/virtual-machines/fsv2-series.md)voor meer informatie.
 

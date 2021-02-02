@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: jingwang
-ms.openlocfilehash: f560a01c4ec00649157a9c43aedf0ed6cfc2e050
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 440dd561beddc9696ec703142fe82655b69fbb48
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83871922"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99474944"
 ---
 # <a name="copy-data-from-sharepoint-online-list-by-using-azure-data-factory"></a>Gegevens uit de share point online-lijst kopiëren met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -182,6 +182,9 @@ Als u gegevens wilt kopiëren uit de share point online-lijst, worden de volgend
     }
 ]
 ```
+
+> [!NOTE]
+> In Azure Data Factory kunt u niet meer dan één *keuze* gegevens type selecteren voor een share point online-lijst Bron.
 
 ## <a name="data-type-mapping-for-sharepoint-online-list"></a>Toewijzing van gegevens type voor share point online-lijst
 

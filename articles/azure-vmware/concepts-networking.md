@@ -3,12 +3,12 @@ title: Concepten-netwerk-interconnectiviteit
 description: Meer informatie over belang rijke aspecten en gebruiks voorbeelden van netwerken en interconnectiviteit in azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 9369c0fff31de4c6575d8e4903420cfa01461bf4
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: eb701a7fca2be08d70e603734b9c4d8e266959cd
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062117"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475417"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution-netwerken en interconnectiviteit-concepten
 
@@ -58,8 +58,11 @@ In het onderstaande diagram ziet u de interconnectiviteit on-premises naar de pr
 Voor een volledige interconnectiviteit in uw privécloud schakelt u ExpressRoute Global Reach in en vraagt u een autorisatie sleutel en een privé-peering-ID voor Global Reach op in de Azure Portal. De autorisatie sleutel en de peering-ID worden gebruikt om Global Reach te maken tussen een ExpressRoute-circuit in uw abonnement en het ExpressRoute-circuit voor uw nieuwe privécloud. Zodra de twee ExpressRoute-circuits zijn gekoppeld, worden netwerk verkeer tussen uw on-premises omgevingen gerouteerd naar uw privécloud.  Zie de [zelf studie voor het maken van een ExpressRoute Global Reach peering naar een privécloud](tutorial-expressroute-global-reach-private-cloud.md)voor meer informatie over de procedures om de autorisatie sleutel en de PEERING-id te vragen en te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen 
-Meer informatie over [concepten voor persoonlijke Cloud opslag](concepts-storage.md).
 
+Nu u deze netwerk-en interconnectiviteit-concepten hebt behandeld, wilt u mogelijk meer informatie over:
+
+- [Concepten van Azure VMware-oplossingen opslag](concepts-storage.md).
+- [Concepten van Azure VMware-oplossings identiteiten](concepts-identity.md)
 
 <!-- LINKS - external -->
 [enable Global Reach]: ../expressroute/expressroute-howto-set-global-reach.md

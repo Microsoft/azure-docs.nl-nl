@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/02/2020
+ms.date: 02/02/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9276fca62e96395150c9545b8f4dcb5c8c0afb87
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 3315500e0d8ce090b058cbe0cb11d9ab8e56e193
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954239"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99474995"
 ---
 # <a name="authentication-methods-in-azure-active-directory---oath-tokens"></a>Verificatie methoden in Azure Active Directory OATH-tokens
 
@@ -49,7 +49,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 ```  
 
 > [!NOTE]
-> Zorg ervoor dat u de rij met koppen in het CSV-bestand opneemt.
+> Zorg ervoor dat u de rij met koppen in het CSV-bestand opneemt. Als een UPN een enkele aanhalings tekens heeft, kunt u deze met een andere aanhalings teken met één citaat escapen. Als de UPN bijvoorbeeld mijn is user@domain.com , wijzigt u deze in mijn ' ' user@domain.com bij het uploaden van het bestand.
 
 Als een beheerder zich heeft geformatteerd als een CSV-bestand, kunt u zich aanmelden bij de Azure Portal, naar **Azure Active Directory > Security > MFA > OATH-tokens** gaan en het resulterende CSV-bestand uploaden.
 

@@ -246,6 +246,8 @@
               href: search-howto-index-json-blobs.md
             - name: Versleutelde blobs indexeren
               href: search-howto-index-encrypted-blobs.md
+            - name: Eigenschappen van meta gegevens voor blob-inhoud
+              href: search-blob-metadata-properties.md
         - name: Azure-tabellen
           href: search-howto-indexing-azure-tables.md
         - name: Azure Cosmos DB

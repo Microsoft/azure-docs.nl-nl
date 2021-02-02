@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: memildin
-ms.openlocfilehash: 83c1d8ac316703d9d22d0716c86c5731c3db7133
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: d5de16c8156762a229d6c707080bc197dc206a7c
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226468"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475587"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -38,7 +38,7 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 ### <a name="kubernetes-workload-protection-recommendations-will-soon-be-released-for-general-availability-ga"></a>De aanbevelingen voor de beveiliging van Kubernetes-workloads worden binnenkort uitgebracht voor algemene Beschik baarheid (GA)
 
-**Geschatte datum van wijziging:** Januari 2021
+**Geschatte datum voor wijziging:** Februari 2021
 
 De aanbevelingen voor de beveiliging van Kubernetes-workloads die worden beschreven in [uw Kubernetes-workloads beveiligen](kubernetes-workload-protections.md) , zijn momenteel beschikbaar als preview-versie. Hoewel een aanbeveling een preview-versie is, wordt er geen resource weer gegeven en is deze niet opgenomen in de berekeningen van uw beveiligde Score.
 

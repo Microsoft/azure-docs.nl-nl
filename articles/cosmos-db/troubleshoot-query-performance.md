@@ -4,16 +4,16 @@ description: Meer informatie over het identificeren, vaststellen en oplossen van
 author: timsander1
 ms.service: cosmos-db
 ms.topic: troubleshooting
-ms.date: 10/12/2020
+ms.date: 02/02/2021
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: 42f01b140a44d7aa6d75dece9a4398fd7b41bf5a
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: d50893fc3bf5d890efbdc1f5b59cf52f35d91a15
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905108"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475723"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Query-problemen bij het gebruik van Azure Cosmos DB oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -62,6 +62,8 @@ Raadpleeg de volgende secties om inzicht te krijgen in de relevante query optima
 - [Neem de benodigde paden op in het indexerings beleid.](#include-necessary-paths-in-the-indexing-policy)
 
 - [Begrijpen welke systeem functies de index gebruiken.](#understand-which-system-functions-use-the-index)
+
+- [De uitvoering van de teken reeks systeem functie verbeteren.](#improve-string-system-function-execution)
 
 - [Begrijp welke statistische query's de index gebruiken.](#understand-which-aggregate-queries-use-the-index)
 
@@ -198,10 +200,11 @@ U kunt op elk gewenst moment eigenschappen toevoegen aan het indexerings beleid,
 
 De meeste systeem functies gebruiken indexen. Hier volgt een lijst met enkele veelgebruikte teken reeks functies die gebruikmaken van indexen:
 
-- STARTSWITH (str_expr1, str_expr2 bool_expr)  
-- CONTAINs (str_expr, str_expr, bool_expr)
-- LEFT(str_expr, num_expr) = str_expr
-- Subtekenreeks (str_expr, num_expr, num_expr) = str_expr, maar alleen als de eerste num_expr 0 is
+- StartsWith
+- Contains
+- RegexMatch
+- Links
+- Subtekenreeks, maar alleen als de eerste num_expr 0 is
 
 Hieronder volgen enkele algemene systeem functies die de index niet gebruiken en elk document moeten laden:
 
@@ -210,11 +213,21 @@ Hieronder volgen enkele algemene systeem functies die de index niet gebruiken en
 | BOVENSTE/ONDERSTE                             | In plaats van de systeem functie te gebruiken voor het normaliseren van gegevens voor vergelijkingen, normaliseert u de behuizing bij het invoegen. Een query zoals dat ```SELECT * FROM c WHERE UPPER(c.name) = 'BOB'``` wordt ```SELECT * FROM c WHERE c.name = 'BOB'``` . |
 | Wiskundige functies (non-aggregaties) | Als u een waarde regel matig in uw query wilt berekenen, kunt u overwegen om de waarde op te slaan als een eigenschap in het JSON-document. |
 
-------
+### <a name="improve-string-system-function-execution"></a>De uitvoering van de teken reeks systeem functie verbeteren
 
-Als een systeem functie indexen gebruikt en nog steeds een hoge RU-kosten heeft, kunt u proberen `ORDER BY` de query toe te voegen. In sommige gevallen `ORDER BY` kan het toevoegen van het systeem functie-index worden verbeterd, met name als de query lange tijd wordt uitgevoerd of meerdere pagina's omvat.
+Voor sommige systeem functies die gebruikmaken van indexen, kunt u de uitvoering van query's verbeteren door een `ORDER BY` component aan de query toe te voegen. 
 
-Denk bijvoorbeeld aan de onderstaande query met `CONTAINS` . `CONTAINS` u moet een index gebruiken, maar stel dat u na het toevoegen van de relevante index nog steeds een zeer hoge RU-kosten ziet wanneer u de onderstaande query uitvoert:
+Meer in het bijzonder, een systeem functie waarvan de RU-kosten toenemen naarmate de kardinaliteit van de eigenschap toeneemt, kan het voor deel zijn van `ORDER BY` de query. Deze query's voeren een index scan uit, dus als u de query resultaten sorteert, kan de query efficiënter worden.
+
+Deze optimalisatie kan de uitvoering van de volgende systeem functies verbeteren:
+
+- StartsWith (indien hoofdletter gevoelig = True)
+- StringEquals (indien hoofdletter gevoelig = True)
+- Contains
+- RegexMatch
+- EndsWith
+
+Denk bijvoorbeeld aan de onderstaande query met `CONTAINS` . `CONTAINS` maakt gebruik van indexen maar soms, zelfs nadat de relevante index is toegevoegd, kunt u nog steeds een zeer hoge RU-kosten bekijken wanneer u de onderstaande query uitvoert.
 
 Oorspronkelijke query:
 
@@ -224,13 +237,32 @@ FROM c
 WHERE CONTAINS(c.town, "Sea")
 ```
 
-De query is bijgewerkt met `ORDER BY` :
+U kunt de uitvoering van query's verbeteren door het volgende toe te voegen `ORDER BY` :
 
 ```sql
 SELECT *
 FROM c
 WHERE CONTAINS(c.town, "Sea")
 ORDER BY c.town
+```
+
+Dezelfde optimalisatie kan helpen bij query's met extra filters. In dit geval is het raadzaam om ook eigenschappen met gelijkheids filters aan de component toe te voegen `ORDER BY` .
+
+Oorspronkelijke query:
+
+```sql
+SELECT *
+FROM c
+WHERE c.name = "Samer" AND CONTAINS(c.town, "Sea")
+```
+
+U kunt de uitvoering van query's verbeteren `ORDER BY` door [een samengestelde index](index-policy.md#composite-indexes) toe te voegen voor (c.name, c. stad):
+
+```sql
+SELECT *
+FROM c
+WHERE c.name = "Samer" AND CONTAINS(c.town, "Sea")
+ORDER BY c.name, c.town
 ```
 
 ### <a name="understand-which-aggregate-queries-use-the-index"></a>Begrijpen welke statistische query's de index gebruiken

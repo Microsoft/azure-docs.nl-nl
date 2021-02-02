@@ -4,12 +4,12 @@ description: Een Azure Active Directory-service-principal maken en beheren voor 
 services: container-service
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: c6f50b152174cee1ee2cc37baa22432957107d2c
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: b7f8060666612049026f2602ab7c8511aea22757
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614792"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475434"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Service-principals met AKS (Azure Kubernetes Service)
 
@@ -128,7 +128,7 @@ Houd rekening met het volgende wanneer u werkt met AKS en Azure AD-service-princ
 - Als u een Service-Principal niet specifiek doorgeeft in extra AKS CLI-opdrachten, wordt de standaard Service-Principal `~/.azure/aksServicePrincipal.json` gebruikt.  
 - U kunt desgewenst ook de aksServicePrincipal.jsin het bestand verwijderen en AKS maakt een nieuwe service-principal.
 - Wanneer u een AKS-cluster verwijdert dat is gemaakt met [az aks create][az-aks-create], wordt de automatisch gemaakte service-principal niet verwijderd.
-    - Als u de service-principal wilt verwijderen, zoekt u *servicePrincipalProfile.clientId* op met een query. Vervolgens verwijdert u de service-principal met [az ad app delete][az-ad-app-delete]. Vervang de volgende brongroeps- en clusternamen door uw eigen waarden:
+    - Als u de Service-Principal wilt verwijderen, voert u een query uit voor uw cluster *servicePrincipalProfile. clientId* en verwijdert u vervolgens met [AZ AD SP Delete] [AZ-AD-SP-Delete]. Vervang de volgende brongroeps- en clusternamen door uw eigen waarden:
 
         ```azurecli
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)

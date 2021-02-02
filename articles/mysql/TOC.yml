@@ -412,6 +412,10 @@
       items:
         - name: Wat is Flexible Server?
           href: flexible-server/overview.md
+        - name: Ondersteunde versies
+          href: flexible-server/concepts-supported-versions.md
+        - name: Berekeningen en opslag
+          href: flexible-server/concepts-compute-storage.md
     - name: Snelstartgidsen
       expanded: true
       items:
@@ -437,93 +441,8 @@
               href: flexible-server/connect-java.md
             - name: .NET
               href: flexible-server/connect-csharp.md
-    - name: Zelfstudies
-      items:
-        - name: WordPress in Azure Kubernetes
-          href: flexible-server/tutorial-deploy-wordpress-on-aks.md
-        - name: PHP-app (Laravel) bouwen met database
-          href: flexible-server/tutorial-php-database-app.md
-        - name: Verbinding maken met privé-web-app
-          href: flexible-server/tutorial-webapp-server-vnet.md
-    - name: Concepten
-      items:
-        - name: Servers
-          href: flexible-server/concept-servers.md
-        - name: Ondersteunde versies
-          href: flexible-server/concepts-supported-versions.md
-        - name: Beperkingen
-          href: flexible-server/concepts-limitations.md
-        - name: Berekeningen en opslag
-          href: flexible-server/concepts-compute-storage.md
-        - name: Netwerken
-          href: flexible-server/concepts-networking.md
-          displayName: 'virtual network, IP address, public access'
-        - name: Onderhoud
-          href: flexible-server/concepts-maintenance.md
-        - name: Bedrijfscontinuïteit
-          items:
-            - name: Overzicht voor bedrijfscontinuïteit
-              href: flexible-server/concepts-business-continuity.md
-            - name: Back-ups en herstellen
-              href: flexible-server/concepts-backup-restore.md
-            - name: Hoge beschikbaarheid
-              href: flexible-server/concepts-high-availability.md
-        - name: Bewaking en logboeken
-          items:
-            - name: Serverparameters
-              href: flexible-server/concepts-server-parameters.md
-            - name: Logboeken voor langzame query's
-              href: flexible-server/concepts-slow-query-logs.md
-            - name: Auditlogboeken
-              href: flexible-server/concepts-audit-logs.md
-            - name: Metrische gegevens
-              href: flexible-server/concepts-monitoring.md
-        - name: Replicatie
-          items:
-            - name: Leesreplica's
-              href: flexible-server/concepts-read-replicas.md
-    - name: Instructiegidsen
-      items:
-        - name: Een server beheren
-          items:
-            - name: Azure Portal
-              href: flexible-server/how-to-manage-server-portal.md
-            - name: Azure CLI
-              href: flexible-server/how-to-manage-server-cli.md
-        - name: Onderhoud
-          items:
-            - name: Azure Portal
-              href: flexible-server/how-to-maintenance-portal.md
-        - name: Server stoppen/starten
-          items:
-            - name: Azure Portal
-              href: flexible-server/how-to-stop-start-server-portal.md
-        - name: Een server terugzetten
-          items:
-            - name: Azure Portal
-              href: flexible-server/how-to-restore-server-portal.md
-        - name: Hoge beschikbaarheid
-          items:
-            - name: Azure Portal
-              href: flexible-server/how-to-configure-high-availability.md
-        - name: Netwerken
-          items:
-            - name: Privétoegang (VNet-integratie)
-              items:
-                - name: Azure Portal
-                  href: flexible-server/how-to-manage-virtual-network-portal.md
-                - name: Azure CLI
-                  href: flexible-server/how-to-manage-virtual-network-cli.md
-            - name: Openbare toegang (toegestane IP-adressen)
-              items:
-                - name: Azure Portal
-                  href: flexible-server/how-to-manage-firewall-portal.md
-                - name: Azure CLI
-                  href: flexible-server/how-to-manage-firewall-cli.md
-            - name: TLS/SSL
-              items:
-                - name: Verbinding maken met behulp van TLS/SSL
-                  href: flexible-server/how-to-connect-tls-ssl.md
+        - name: Verbinding maken met behulp van TLS/SSL
+          href: flexible-server/how-to-connect-tls-ssl.md
         - name: Parameters van de server configureren
           items:
             - name: Azure Portal
@@ -532,32 +451,104 @@
             - name: Azure CLI
               href: flexible-server/how-to-configure-server-parameters-cli.md
               displayName: 'server parameters, cli'
-        - name: Bewaking en logboeken
-          items:
-            - name: Waarschuwingen maken op basis van metrische gegevens
-              href: flexible-server/how-to-alert-on-metric.md
-            - name: Logboeken voor langzame query's
-              items:
-                - name: Azure Portal
-                  href: flexible-server/how-to-configure-slow-query-logs-portal.md
-            - name: Auditlogboeken
-              items:
-                - name: Azure Portal
-                  href: flexible-server/how-to-configure-audit-logs-portal.md
-        - name: Server opnieuw opstarten
+        - name: Databases en gebruikers maken
+          href: howto-create-users.md
+          displayName: users
+        - name: Server bewaken
+          href: flexible-server/how-to-alert-on-metric.md
+    - name: Ontwikkeling van toepassingen
+      items:
+        - name: WordPress in Azure Kubernetes
+          href: flexible-server/tutorial-deploy-wordpress-on-aks.md
+        - name: PHP-app (Laravel) bouwen met database
+          href: flexible-server/tutorial-php-database-app.md
+        - name: Verbinding maken met privé-web-app
+          href: flexible-server/tutorial-webapp-server-vnet.md
+    - name: Server Management
+      items:
+        - name: Concepten
+          href: flexible-server/concept-servers.md
+        - name: Serverparameters
+          href: flexible-server/concepts-server-parameters.md
+        - name: Beperkingen
+          href: flexible-server/concepts-limitations.md
+        - name: Een server beheren
           items:
             - name: Azure Portal
-              href: flexible-server/how-to-restart-server-portal.md
-        - name: Replicatie
+              href: flexible-server/how-to-manage-server-portal.md
+            - name: Azure CLI
+              href: flexible-server/how-to-manage-server-cli.md
+        - name: Server stoppen/starten met Azure Portal
+          href: flexible-server/how-to-stop-start-server-portal.md
+        - name: De server opnieuw opstarten met Azure Portal
+          href: flexible-server/how-to-restart-server-portal.md
+    - name: Netwerken
+      items:
+        - name: Concepten
+          href: flexible-server/concepts-networking.md
+          displayName: 'virtual network, IP address, public access'
+        - name: Privétoegang (VNet-integratie)
           items:
-            - name: Leesreplica's maken in de Azure-portal
+            - name: Persoonlijke toegang configureren met behulp van Azure Portal
+              href: flexible-server/how-to-manage-virtual-network-portal.md
+            - name: Persoonlijke toegang configureren met behulp van Azure CLI
+              href: flexible-server/how-to-manage-virtual-network-cli.md
+        - name: Openbare toegang (toegestane IP-adressen)
+          items:
+            - name: Open bare toegang configureren met behulp van Azure Portal
+              href: flexible-server/how-to-manage-firewall-portal.md
+            - name: Open bare toegang configureren met Azure CLI
+              href: flexible-server/how-to-manage-firewall-cli.md
+    - name: Onderhoud van de service
+      items:
+        - name: Gepland onderhoud
+          href: flexible-server/concepts-maintenance.md
+        - name: Gepland onderhoud configureren met behulp van Azure Portal
+          href: flexible-server/how-to-maintenance-portal.md
+    - name: Hoge beschikbaarheid
+      items:
+        - name: Overzicht voor bedrijfscontinuïteit
+          href: flexible-server/concepts-business-continuity.md
+        - name: Hoge beschikbaarheid
+          href: flexible-server/concepts-high-availability.md
+        - name: Hoge Beschik baarheid configureren met behulp van Azure Portal
+          href: flexible-server/how-to-configure-high-availability.md
+    - name: Bewaking en logboeken
+      items:
+        - name: Concepten
+          href: flexible-server/concepts-monitoring.md
+        - name: Langzame query logboeken
+          items:
+            - name: Concepten
+              href: flexible-server/concepts-slow-query-logs.md
+            - name: Langzame query logboeken configureren met behulp van Azure Portal
+              href: flexible-server/how-to-configure-slow-query-logs-portal.md
+        - name: Auditlogboeken
+          items:
+            - name: Concepten
+              href: flexible-server/concepts-audit-logs.md
+            - name: Audit logboeken configureren
+              href: flexible-server/how-to-configure-audit-logs-portal.md
+    - name: Replicatie
+      items:
+        - name: Leesreplica's
+          href: flexible-server/concepts-read-replicas.md
+        - name: Lees replica's maken
+          items:
+            - name: Replica's met Azure Portal maken
               href: flexible-server/how-to-read-replicas-portal.md
-            - name: Leesreplica's maken met de Azure CLI
+            - name: Replica's maken met behulp van Azure CLI
               href: flexible-server/how-to-read-replicas-cli.md
-        - name: Problemen oplossen
-          items:
-            - name: Verbindingsfouten
-              href: flexible-server/how-to-troubleshoot-common-connection-issues.md
+    - name: Back-up & herstellen
+      items:
+        - name: Concepten
+          href: flexible-server/concepts-backup-restore.md
+        - name: Een server herstellen met behulp van de Azure-portal
+          href: flexible-server/how-to-restore-server-portal.md
+    - name: Problemen oplossen
+      items:
+        - name: Verbindings fouten oplossen
+          href: flexible-server/how-to-troubleshoot-common-connection-issues.md
 - name: Migratie
   items:
     - name: Gegevens migreren met mysqldump of phpmyadmin

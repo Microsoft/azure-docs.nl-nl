@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: ceb560a3f0c56a13b9f8da6c867f513b2b08e59b
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 0b04ebd9672990738d77bc5ae09d7f7fae4ffb9d
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962200"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500197"
 ---
 # <a name="azure-instance-metadata-service-imds"></a>Azure Instance Metadata Service (IMDS)
 
@@ -78,7 +78,7 @@ Alle aanvragen die **niet voldoen aan** deze vereisten, worden geweigerd door de
 IMDS is **niet** bedoeld om te worden gebruikt achter een proxy en dit wordt niet ondersteund. De meeste HTTP-clients bieden een optie waarmee u proxy's op uw aanvragen kunt uitschakelen en deze functionaliteit moet worden gebruikt bij de communicatie met IMDS. Raadpleeg de documentatie van uw client voor meer informatie.
 
 > [!IMPORTANT]
-> Zelfs als u geen proxy configuratie kent in uw omgeving, **moet u de standaard instellingen voor de client proxy negeren**. Proxy configuraties kunnen automatisch worden gedetecteerd. Als u dergelijke configuraties niet wilt passeren, worden er outrage Risico's weer gegeven. de configuratie van de machine kan in de toekomst worden gewijzigd.
+> Zelfs als u geen proxy configuratie kent in uw omgeving, **moet u de standaard instellingen voor de client proxy negeren**. Proxy configuraties kunnen automatisch worden gedetecteerd en niet worden omzeild, waardoor dergelijke configuraties worden weer gegeven om te voor komen dat er storingen optreden, moet de configuratie van de computer in de toekomst worden gewijzigd.
 
 ## <a name="rate-limiting"></a>Snelheidsbeperking
 
@@ -106,7 +106,7 @@ http://169.254.169.254/metadata/instance/compute?api-version=2019-06-04&format=j
 
 Hiermee geeft u de para meters op:
 
-| Naam | Waarde |
+| Name | Waarde |
 |------|-------|
 | `api-version` | `2019-06-04`
 | `format` | `json`
@@ -317,7 +317,7 @@ GET /metadata/instance
 
 #### <a name="parameters"></a>Parameters
 
-| Naam | Vereist/optioneel | Beschrijving |
+| Name | Vereist/optioneel | Beschrijving |
 |------|-------------------|-------------|
 | `api-version` | Vereist | De versie die wordt gebruikt om de aanvraag te onderhouden.
 | `format` | Beschrijving | De indeling ( `json` of `text` ) van het antwoord. * Opmerking: is mogelijk vereist bij het gebruik van aanvraag parameters
@@ -721,7 +721,7 @@ GET /metadata/attested/document
 
 #### <a name="parameters"></a>Parameters
 
-| Naam | Vereist/optioneel | Beschrijving |
+| Name | Vereist/optioneel | Beschrijving |
 |------|-------------------|-------------|
 | `api-version` | Vereist | De versie die wordt gebruikt om de aanvraag te onderhouden.
 | `nonce` | Optioneel | Een teken reeks van 10 cijfers die fungeert als een cryptografische nonce. Als er geen waarde wordt gegeven, gebruikt IMDS de huidige UTC-tijds tempel.

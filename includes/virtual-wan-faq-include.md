@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: af0082ef04416d6b3700bbcd96995a154614e0d6
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: b451e2509ee618ac0996fd91191a7d59dcfd9fc9
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98798632"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500347"
 ---
 ### <a name="is-azure-virtual-wan-in-ga"></a>Is Azure Virtual WAN algemeen beschikbaar?
 
@@ -140,6 +140,10 @@ Per virtuele hub worden maximaal 1000 verbindingen ondersteund. Elke verbinding 
 ### <a name="what-is-a-branch-connection-to-azure-virtual-wan"></a>Wat is een vertakkingsverbinding met Azure Virtual WAN?
 
 Een verbinding vanaf een vertakkings- of VPN-apparaat in Azure Virtual WAN is niets anders dan een VPN-verbinding die virtueel verbinding maakt met de VPN-site en de Azure-VPN Gateway in een virtuele hub.
+
+### <a name="what-happens-if-the-on-premise-vpn-device-only-has-1-tunnel-to-a-azure-virtual-wan-vpn-gateway"></a>Wat gebeurt er als het on-premises VPN-apparaat slechts één tunnel naar een Azure Virtual WAN VPN-gateway heeft?
+
+Een virtuele WAN-verbinding van Azure bestaat uit twee tunnels. Een virtuele WAN VPN-gateway wordt geïmplementeerd in virtuele hub in de modus actief-actief, wat impliceert dat er afzonderlijke tunnels zijn van on-premises apparaten die op afzonderlijke isntances worden afgesloten. Dit is de aanbeveling voor alle gebruikers. Als de gebruiker echter kiest dat er slechts één tunnel moet worden verzonden naar een van de virtuele WAN-gateway exemplaren, als dit om een bepaalde reden gaat (onderhoud, patches, enzovoort)  de gateway-instantie moest offline worden gehaald, de tunnel wordt verplaatst naar het secundaire actieve exemplaar en de gebruiker kan een nieuwe verbinding maken. Houd er ook rekening mee dat de BGP-sessie niet over alle exemplaren wordt verplaatst.
 
 ### <a name="can-the-on-premises-vpn-device-connect-to-multiple-hubs"></a>Kan het on-premises VPN-apparaat verbinding maken met meerdere hubs?
 

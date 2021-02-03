@@ -4,20 +4,20 @@ ms.service: databox
 ms.topic: include
 ms.date: 08/03/2020
 ms.author: alkohli
-ms.openlocfilehash: caa17a02305c9e9fcba30cf8c39c4288d83d3da9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92688051cf591470246094dd0d8ea1d436a8efb1
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89419389"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99500056"
 ---
-Maak verbinding met de virtuele machine met het privé-IP-adres dat u hebt door gegeven tijdens het maken van de virtuele machine.
+Maak verbinding met de VM met behulp van het privé-IP-adres dat u hebt doorgegeven tijdens het maken van de VM.
 
 Open een SSH-sessie om verbinding te maken met het IP-adres.
 
 `ssh -l <username> <ip address>`
 
-Wanneer u hierom wordt gevraagd, geeft u het wacht woord op dat u hebt gebruikt bij het maken van de virtuele machine.
+Geef als hierom wordt gevraagd het wachtwoord op dat u hebt gebruikt tijdens het maken van de VM.
 
 Als u de SSH-sleutel moet opgeven, gebruikt u deze opdracht.
 
@@ -70,4 +70,4 @@ Als u een openbaar IP-adres hebt gebruikt tijdens het maken van de virtuele mach
 ```powershell
 $publicIp = Get-AzureRmPublicIpAddress -Name <Public IP> -ResourceGroupName <Resource group name>
 ```
-Het open bare IP-adres is in dit geval hetzelfde als het privé-IP-adres dat u tijdens het maken van de virtuele netwerk interface hebt door gegeven.
+Het open bare IP-adres is in dit geval hetzelfde als het privé-IP-adres dat u hebt door gegeven tijdens het maken van de virtuele netwerk interface.

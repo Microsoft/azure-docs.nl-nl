@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/05/2021
 ms.author: jeedes
-ms.openlocfilehash: 512436c9d72e0318ec14bf7551a2fde76c6ef3d8
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 520eb25bcb138c96b24166816d3374255fb7c3b2
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735904"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493986"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-notion"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Notion
 
@@ -40,7 +40,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 * Notion ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
 * Notion biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 > [!NOTE]
-> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
+> De id van deze toepassing is een vaste teken reeks waarde, zodat één gepaarde werk ruimte in één Tenant kan worden geconfigureerd.
 
 
 ## <a name="adding-notion-from-the-gallery"></a>Notion toevoegen vanuit de galerie
@@ -80,14 +80,14 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
 
-    In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon: `https://www.notion.so/sso/saml/<CUSTOM_ID>`
+    Voer in het tekstvak **antwoord-URL** de URL in met het volgende patroon dat u kunt ophalen uit de werk ruimte- **instellingen & leden** > **beveiliging &** > **URL voor eenmalige aanmelding**:  `https://www.notion.so/sso/saml/<CUSTOM_ID>`
 
 1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
 
-    In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://www.notion.so/sso/saml/<CUSTOM_ID>`
+    Voer in het tekstvak **URL voor aanmelding** de volgende URL in:  `https://www.notion.so/login`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de echte antwoord-URL en aanmeldings-URL. Neem contact op met het [Klantondersteuningsteam van Notion](mailto:team@makenotion.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de echte antwoord-URL en aanmeldings-URL. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. In Notion worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -102,7 +102,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | achternaam | user.surname |
 
 
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u in de sectie **SAML-handtekeningcertificaat** op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
+1. Klik op de pagina **eenmalige aanmelding met SAML instellen** , in de sectie **SAML-handtekening certificaat** , op de knop kopiëren om de URL voor de **federatieve meta gegevens** van de app te kopiëren. Ga naar de **werk ruimte** - **instellingen & leden**  >  **beveiliging & identiteit** en plak de waarde die u hebt gekopieerd in het veld **URL van IDP-meta gegevens** .
 
     ![De link om het certificaat te downloaden](common/copy-metadataurl.png)
 
@@ -132,7 +132,13 @@ In deze sectie gaat u B.Simon toestemming geven voor gebruik van eenmalige aanme
 
 ## <a name="configure-notion-sso"></a>Eenmalige aanmelding configureren voor Notion
 
-Als u eenmalige aanmelding aan de zijde van **Notion** wilt configureren, moet u de **App-URL voor federatieve metagegevens** naar het [ondersteuningsteam van Notion](mailto:team@makenotion.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Ga naar de **werk ruimte** - **instellingen & leden**  >  **beveiliging & identiteit** en plak de URL-waarde van de **app Federation-meta gegevens** die u hebt gekopieerd naar het veld **URL van IDP-meta gegevens** .
+
+Klik op dezelfde instellingen pagina onder **e-mail domeinen** op **contact opnemen met ondersteuning** om de e-mail domeinen van uw organisatie toe te voegen.
+
+Nadat uw e-mail domeinen zijn goedgekeurd en toegevoegd, schakelt u SAML SSO in met de **Schakel optie SAML inschakelen** .
+
+Na een geslaagde test kunt u SAML SSO afdwingen met behulp van SAML-wissels **afdwingen** . Houd er rekening mee dat uw theoretische werk ruimte administrastrators de mogelijkheid biedt om u aan te melden bij e-mail, maar dat alle andere leden SAML SSO moeten gebruiken om zich aan te melden bij het begrip.
 
 ### <a name="create-notion-test-user"></a>Notion-testgebruiker maken
 

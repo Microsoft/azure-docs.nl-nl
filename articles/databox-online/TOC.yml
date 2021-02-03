@@ -278,6 +278,8 @@
           items:
             - name: Metrische grafieken gebruiken
               href: azure-stack-edge-monitor.md
+            - name: Waarschuwingen voor gebeurtenis apparaten beheren
+              href: azure-stack-edge-gpu-manage-device-event-alert-notifications.md
             - name: Kubernetes-dashboard gebruiken
               href: azure-stack-edge-gpu-monitor-kubernetes-dashboard.md
             - name: Azure Monitor gebruiken

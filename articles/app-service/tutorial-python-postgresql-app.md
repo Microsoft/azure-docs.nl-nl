@@ -3,7 +3,7 @@ title: 'Zelfstudie: Een Python Django-app met Postgres implementeren'
 description: Een Python-web-app maken met een PostgreSQL-database en deze implementeren naar Azure. Deze zelfstudie gebruikt het Django-framework en de app wordt gehost op Azure App Service op Linux.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 01/04/2021
+ms.date: 02/02/2021
 ms.custom:
 - mvc
 - seodec18
@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: ffde74a0567661d6b9f77e45a80bfd585e5c7212
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
-ms.translationtype: HT
+ms.openlocfilehash: 05bdbd6c9d5dc3862c3191e4564a79e7a44bc0b8
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898586"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99494053"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Zelfstudie: Een Django-web-app implementeren met PostgreSQL in Azure App Service
 
@@ -39,7 +39,7 @@ U kunt ook de [versie voor de Azure-portal van deze zelfstudie](/azure/developer
 
 1. U moet beschikken over een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 1. Installeer <a href="https://www.python.org/downloads/" target="_blank">Python 3.6 of hoger</a>.
-1. Installeer de <a href="/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> 2.0.80 of hoger, waarmee u opdrachten kunt uitvoeren in elke willekeurige shell voor het inrichten en configureren van Azure-resources.
+1. Installeer de <a href="/cli/azure/install-azure-cli" target="_blank">Azure cli</a> 2.18.0 of hoger, waarmee u opdrachten in een shell uitvoert om Azure-resources in te richten en te configureren.
 
 Open een terminalvenster en controleer of uw Python-versie 3.6 of hoger is:
 
@@ -63,11 +63,13 @@ py -3 --version
 
 ---
 
-Controleer of uw Azure CLI-versie 2.0.80 of hoger is:
+Controleer of uw Azure CLI-versie 2.18.0 of hoger is:
 
 ```azurecli
 az --version
 ```
+
+Als u een upgrade wilt uitvoeren, voert u de `az upgrade` opdracht uit (versie 2.11 + vereist) of raadpleegt u <a href="/cli/azure/install-azure-cli" target="_blank">de Azure cli installeren</a>.
 
 Meld u vervolgens aan bij Azure via de CLI:
 
@@ -229,7 +231,7 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 
     Vervang `<app-name>` door de naam die u eerder hebt gebruikt in de opdracht `az webapp up`.
 
-    U kunt in macOS en Linux ook verbinding maken met een SSH-sessie met de opdracht [`az webapp ssh`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az_webapp_ssh).
+    U kunt een alternatieve verbinding maken met een SSH-sessie met behulp van de [`az webapp ssh`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az_webapp_ssh) opdracht. Voor Windows is voor deze opdracht de Azure CLI 2.18.0 of hoger vereist.
 
     Als u geen verbinding kunt maken met de SSH-sessie, kan de app zelf niet worden gestart. [Raadpleeg de diagnostische logboeken](#6-stream-diagnostic-logs) voor meer informatie. Als u de benodigde app-instellingen in de vorige sectie bijvoorbeeld niet hebt gemaakt, wordt in de logboeken `KeyError: 'DBNAME'` aangegeven.
 
@@ -239,8 +241,11 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
     # Change to the app folder
     cd $APP_PATH
     
-    # Activate the venv (requirements.txt is installed automatically)
+    # Activate the venv
     source /antenv/bin/activate
+
+    # Install requirements
+    pip install -r requirements.txt
 
     # Run database migrations
     python manage.py migrate
@@ -398,6 +403,7 @@ Open opnieuw een SSH-sessie in de browser door naar `https://<app-name>.scm.azur
 ```
 cd $APP_PATH
 source /antenv/bin/activate
+pip instal -r requirements.txt
 python manage.py migrate
 ```
 

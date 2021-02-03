@@ -4,19 +4,19 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 10/18/2020
 ms.author: glenga
-ms.openlocfilehash: 29a31948c5bfc9b5fd3a31f39144d186dbfe4885
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 99ae35aca485ac928f7c5ef9f98295eed4bc1245
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027525"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500107"
 ---
 ## <a name="create-supporting-azure-resources-for-your-function"></a>Ondersteunende Azure-resources maken voor uw functie
 
 Voordat u uw functiecode kunt implementeren in Azure, moet u drie resources maken:
 
-- Een resourcegroep, wat een logische container is voor gerelateerde resources.
-- Een Storage-account, waarin de status en andere gegevens van uw projecten worden onderhouden.
+- Een [resource groep](../articles/azure-resource-manager/management/overview.md), een logische container voor gerelateerde resources.
+- Een [opslag account](../articles/storage/common/storage-account-create.md), dat wordt gebruikt om de status en andere informatie over uw functies te onderhouden.
 - Een functie-app, die de omgeving biedt voor het uitvoeren van uw functiecode. Een functie-app wordt gekoppeld aan uw lokale functieproject en maakt het mogelijk om functies te groeperen als een logische eenheid, zodat u resources eenvoudiger kunt beheren, implementeren en delen.
 
 Gebruik de volgende opdrachten om deze items te maken. Zowel Azure CLI als PowerShell worden ondersteund.

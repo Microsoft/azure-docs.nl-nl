@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 01/15/2021
 ms.author: aahi
-ms.openlocfilehash: 43864d3593fda986031cf9b59251b920672476bb
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: c1ff099dd6dffe06e9707ff23fffd57ae753ab64
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097257"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99500315"
 ---
 De NER-functie voor Text Analytics retourneert de volgende algemene (niet-identificerende) entiteits categorieën. bijvoorbeeld bij het verzenden van aanvragen naar het `/entities/recognition/general` eind punt.
 
@@ -34,6 +34,7 @@ De NER-functie voor Text Analytics retourneert de volgende algemene (niet-identi
 | [URL](#category-url) | Url's naar websites. |
 | [IP](#category-ip) | IP-adressen van het netwerk. |
 | [Datum/tijd](#category-datetime) | Datums en tijden van de dag. |
+| [Aantal](#category-quantity) | Numerieke metingen en eenheden. |
 
 
 ### <a name="category-person"></a>Categorie: persoon

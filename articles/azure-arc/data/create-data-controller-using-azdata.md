@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 3d2652d2f6c1bb56dd009a9e4de375c42786986d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 50ab5a0d47292e36216a565a5bd39fbe7e850131
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734996"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99494007"
 ---
 # <a name="create-azure-arc-data-controller-using-the-azure-data-cli-azdata"></a>Een Azure-Arc-gegevens controller maken met behulp van de [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
@@ -269,6 +269,8 @@ Wanneer u de opdracht hebt uitgevoerd, gaat u door met om [de aanmaak status te 
 Voor Azure Red Hat open Shift is een beveiligings context beperking vereist.
 
 #### <a name="apply-the-security-context"></a>De beveiligings context Toep assen
+
+Voordat u de gegevens controller op Azure Red Hat open SHIFT maakt, moet u specifieke beveiligings context beperkingen (SCC) Toep assen. Voor de preview-versie versoepelt deze de beveiligings beperkingen. Toekomstige releases bieden bijgewerkte SCC.
 
 [!INCLUDE [apply-security-context-constraint](includes/apply-security-context-constraint.md)]
 

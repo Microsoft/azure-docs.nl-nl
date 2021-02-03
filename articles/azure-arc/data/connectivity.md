@@ -9,22 +9,22 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: c7bff21a17af3c908caeed6a1e60de8e2fe4efc9
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: d148509af45b93dce8dbd99b9afc674276b149b6
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287590"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493969"
 ---
-# <a name="connectivity-modes-and-requirements"></a>Connectiviteits modi en vereisten
+# <a name="connectivity-modes-and-requirements"></a>Connectiviteitsmodi en -vereisten
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="connectivity-modes"></a>Connectiviteits modi
+## <a name="connectivity-modes"></a>Connectiviteitsmodi
 
 Er zijn meerdere opties voor de mate van connectiviteit vanuit uw Azure Arc enabled Data Services-omgeving naar Azure. Als uw vereisten variëren op basis van bedrijfs beleid, overheids regelgeving of de beschik baarheid van de netwerk verbinding met Azure, kunt u kiezen uit de volgende connectiviteits modi.
 
-Met Azure Arc enabled Data Services hebt u de mogelijkheid om verbinding te maken met Azure in twee verschillende *connectiviteits modi* : 
+Met Azure Arc enabled Data Services hebt u de mogelijkheid om verbinding te maken met Azure in twee verschillende *connectiviteits modi*: 
 
 - Rechtstreeks verbonden 
 - Indirect verbonden
@@ -37,12 +37,10 @@ Daarnaast kunnen Azure Active Directory-en Azure Role-Based Access Control worde
 
 Sommige services die zijn gekoppeld aan Azure, zijn alleen beschikbaar wanneer ze rechtstreeks kunnen worden bereikt, zoals de Azure Defender-beveiligings Services, container Insights en Azure Backup naar Blob-opslag.
 
-Op dit moment wordt alleen de indirect verbonden modus ondersteund in de preview-versie. 
-
 ||**Indirect verbonden**|**Rechtstreeks verbonden**|**Nooit verbonden**|
 |---|---|---|---|
 |**Beschrijving**|Indirect verbonden modus biedt de meeste beheer services lokaal in uw omgeving zonder directe verbinding met Azure.  Een minimale hoeveelheid gegevens moet _alleen_ worden verzonden naar Azure voor inventaris-en facturerings doeleinden. Deze wordt geëxporteerd naar een bestand en minstens eenmaal per maand geüpload naar Azure.  Er is geen rechtstreekse of doorlopende verbinding met Azure vereist.  Sommige functies en services waarvoor een verbinding met Azure is vereist, zijn niet beschikbaar.|Direct verbonden modus biedt alle beschik bare Services wanneer een directe verbinding met Azure tot stand kan worden gebracht. Verbindingen worden altijd _vanuit_ uw omgeving naar Azure geïnitieerd en gebruiken standaard poorten en protocollen zoals HTTPS/443.|Er kunnen op geen enkele wijze gegevens naar of van Azure worden verzonden.|
-|**Huidige Beschik baarheid**| Beschikbaar in preview.|Gepland voor preview in de toekomst.|Momenteel niet ondersteund.|
+|**Huidige Beschik baarheid**| Beschikbaar in preview.|Beschikbaar in preview.|Momenteel niet ondersteund.|
 |**Typische gebruiks voorbeelden**|On-premises data centers die geen verbinding in of uit het gegevens gebied van het Data Center mogen maken als gevolg van het beleid voor de naleving van het bedrijf of regelgeving of van problemen met externe aanvallen of gegevens exfiltration.  Typische voor beelden: financiële instellingen, gezondheids zorg, overheid. <br/><br/>Edge-site locaties waar de Edge-site doorgaans geen verbinding met internet heeft.  Typische voor beelden: olie/gas of militaire veld toepassingen.  <br/><br/>Edge-site locaties die een onregelmatige verbinding hebben met lange Peri Oden van storingen.  Typische voor beelden: stadiums, schip schepen. | Organisaties die open bare Clouds gebruiken.  Typische voor beelden: Azure, AWS of Google Cloud.<br/><br/>Edge-site locaties waar Internet connectiviteit meestal aanwezig is en is toegestaan.  Typische voor beelden: winkels, productie.<br/><br/>Zakelijke data centers met een strengere beleids regels voor de connectiviteit van/naar het gegevens gebied van het Data Center op internet.  Typische voor beelden: niet-gereguleerde bedrijven, kleine/middel grote bedrijven|Echt "Air-gapped"-omgevingen waar geen gegevens onder een bepaalde omstandigheden van de gegevens omgeving kunnen komen of vergaan. Typische voor beelden: belangrijkste Amerikaanse overheids faciliteiten.|
 |**Hoe gegevens worden verzonden naar Azure**|Er zijn drie opties voor de manier waarop de facturerings-en inventaris gegevens naar Azure kunnen worden verzonden:<br><br> 1) gegevens worden uit het gegevens gebied geëxporteerd door een geautomatiseerd proces dat verbinding heeft met de beveiligde gegevens regio en Azure.<br><br>2) gegevens worden uit het gegevens gebied geëxporteerd met een geautomatiseerd proces binnen het gegevens gebied, automatisch naar een minder veilige regio gekopieerd en een geautomatiseerd proces in de minder beveiligde regio uploadt de gegevens naar Azure.<br><br>3) gegevens worden hand matig geëxporteerd door een gebruiker binnen het beveiligde gebied, hand matig uit de beveiligde regio en hand matig geüpload naar Azure. <br><br>De eerste twee opties zijn een geautomatiseerd doorlopend proces dat kan worden gepland om regel matig te worden uitgevoerd, zodat de overdracht van gegevens naar Azure alleen minimale vertraging heeft voor de beschik bare verbinding met Azure.|Gegevens worden automatisch en doorlopend naar Azure verzonden.|Er worden nooit gegevens verzonden naar Azure.|
 
@@ -87,7 +85,7 @@ Op dit moment wordt alleen de indirect verbonden modus ondersteund in de preview
 Momenteel wordt in de preview-fase alleen de indirect verbonden modus ondersteund. In deze modus zijn er slechts drie verbindingen vereist voor services die beschikbaar zijn op internet. Deze verbindingen zijn onder andere:
 
 - [Micro soft Container Registry (MCR)](#microsoft-container-registry-mcr)
-- [Azure Resource Manager-Api's](#azure-resource-manager-apis)
+- [Azure Resource Manager API's](#azure-resource-manager-apis)
 - [Azure monitor-Api's](#azure-monitor-apis)
 
 Alle HTTPS-verbindingen met Azure en de micro soft-Container Registry worden versleuteld met behulp van SSL/TLS met behulp van officieel ondertekende en geverifieerde certificaten.
@@ -122,7 +120,7 @@ Ja
 
 Geen
 
-### <a name="azure-resource-manager-apis"></a>Azure Resource Manager-Api's
+### <a name="azure-resource-manager-apis"></a>Azure Resource Manager API's
 Azure Data Studio [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] en Azure cli maken verbinding met de Azure Resource Manager api's om gegevens van en naar Azure te verzenden en op te halen voor bepaalde functies.
 
 #### <a name="connection-source"></a>Verbindingsbron

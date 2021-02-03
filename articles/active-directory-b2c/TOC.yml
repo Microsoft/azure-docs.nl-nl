@@ -432,6 +432,9 @@
     - name: Beveiligde API Management-API
       href: secure-api-management.md
       displayName: 'apim, api management, migrate, b2clogin.com'
+    - name: Op de telefoon gebaseerde MFA beveiligen
+      href: phone-based-mfa.md
+      displayName: 'multi-factor authentication, Azure Monitor, Log Analytics'
     - name: Logboeken en controle
       items:
         - name: Auditlogboeken

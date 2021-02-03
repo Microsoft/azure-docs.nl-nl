@@ -12,23 +12,23 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 01/11/2021
+ms.date: 02/02/2021
 ms.author: timlt
-ms.openlocfilehash: 286f00318715764a5943387e6b362b3c8e69a82e
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 93278a2c8e83541f49ca76542de1c352fbc02239
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808149"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524241"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>StorSimple 8000-serie: een Hybrid Cloud Storage oplossing
 
 [!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 ## <a name="overview"></a>Overzicht
-Welkom bij Microsoft Azure StorSimple, een geïntegreerde opslag oplossing voor het beheer van opslag taken tussen on-premises apparaten en Microsoft Azure Cloud opslag. StorSimple is een efficiënte, rendabele en eenvoudig te beheren Storage Area Network oplossing (SAN) waarmee veel van de problemen en kosten die zijn gekoppeld aan ondernemings opslag en gegevens bescherming, worden geëlimineerd. StorSimple gebruikt het eigen apparaat uit de StorSimple 8000-reeks, integreert met cloudservices en biedt een reeks hulpprogramma’s voor beheer voor een naadloze weergave van alle Enterprise-opslag, waaronder cloudopslag. (De StorSimple-implementatie gegevens die op de Microsoft Azure-website worden gepubliceerd, is alleen van toepassing op apparaten met StorSimple 8000-serie. Als u een StorSimple 5000/7000-serie apparaat gebruikt, gaat u naar [StorSimple Help](http://onlinehelp.storsimple.com/).)
+Welkom bij Microsoft Azure StorSimple, een geïntegreerde opslag oplossing voor het beheer van opslag taken tussen on-premises apparaten en Microsoft Azure Cloud opslag. StorSimple is een efficiënte, rendabele en gemakkelijk te beheren Storage Area Network-oplossing (SAN) waarmee veel van de problemen en onkosten die zijn gekoppeld aan ondernemings opslag en gegevens bescherming, worden geëlimineerd. StorSimple gebruikt het eigen apparaat uit de StorSimple 8000-reeks, integreert met cloudservices en biedt een reeks hulpprogramma’s voor beheer voor een naadloze weergave van alle Enterprise-opslag, waaronder cloudopslag. (De StorSimple-implementatie gegevens die op de Microsoft Azure-website worden gepubliceerd, is alleen van toepassing op apparaten met StorSimple 8000-serie. Als u een StorSimple 5000/7000-serie apparaat gebruikt, gaat u naar [StorSimple Help](http://onlinehelp.storsimple.com/).)
 
-StorSimple maakt gebruik van [opslag lagen](#automatic-storage-tiering) voor het beheren van opgeslagen gegevens op verschillende opslag media. De huidige werkset wordt lokaal opgeslagen op Ssd's (Solid state drives), gegevens die minder vaak worden gebruikt, worden opgeslagen op de harde schijven (Hdd's) en de archiverings gegevens worden naar de Cloud gepusht. Bovendien gebruikt StorSimple ontdubbeling en compressie om de hoeveelheid opslag ruimte die de gegevens verbruikt te verminderen. Ga voor meer informatie naar [ontdubbeling en compressie](#deduplication-and-compression). Voor definities van andere belang rijke termen en concepten die worden gebruikt in de StorSimple 8000 Series-documentatie, gaat u naar [StorSimple terminologie](#storsimple-terminology) aan het einde van dit artikel.
+StorSimple maakt gebruik van [opslag lagen](#automatic-storage-tiering) voor het beheren van opgeslagen gegevens op verschillende opslag media. De huidige werkset wordt opgeslagen op de lokale vaste schijf (Ssd's). Gegevens die minder vaak worden gebruikt, worden opgeslagen op de harde schijven (Hdd's) en Archief gegevens worden naar de Cloud gepusht. Bovendien gebruikt StorSimple ontdubbeling en compressie om de hoeveelheid opslag ruimte die de gegevens verbruikt te verminderen. Ga voor meer informatie naar [ontdubbeling en compressie](#deduplication-and-compression). Voor definities van andere belang rijke termen en concepten die worden gebruikt in de StorSimple 8000 Series-documentatie, gaat u naar [StorSimple terminologie](#storsimple-terminology) aan het einde van dit artikel.
 
 Naast opslag beheer kunt u met StorSimple-functies voor gegevens bescherming op aanvraag en geplande back-ups maken en deze vervolgens lokaal of in de Cloud opslaan. Back-ups worden gemaakt in de vorm van incrementele moment opnamen, wat betekent dat ze snel kunnen worden gecreëerd en teruggezet. Cloud momentopnamen kunnen zeer belang rijk zijn in scenario's voor herstel na nood gevallen, omdat ze secundaire opslag systemen (zoals tape back-ups) vervangen en u zo nodig gegevens kunt herstellen naar uw Data Center of naar alternatieve sites.
 
@@ -41,7 +41,7 @@ In de volgende tabel worden enkele van de belangrijkste voor delen beschreven di
 
 | Functie | Voordeel |
 | --- | --- |
-| Transparante integratie |Maakt gebruik van het iSCSI-protocol om onzichtbaar faciliteiten voor gegevens opslag te koppelen. Dit zorgt ervoor dat gegevens die zijn opgeslagen in de Cloud, op het Data Center of op externe servers, op één locatie worden opgeslagen. |
+| Transparante integratie |Maakt gebruik van het iSCSI-protocol om onzichtbaar faciliteiten voor gegevens opslag te koppelen. Gegevens die zijn opgeslagen in de Cloud, op het Data Center of op externe servers, worden op één locatie opgeslagen. |
 | Lagere opslag kosten |Wijst voldoende lokale of Cloud opslag toe om te voldoen aan de huidige vereisten en breidt de Cloud opslag alleen uit als dat nodig is. Het vermindert de opslag vereisten en-uitgaven door redundante versies van dezelfde gegevens (ontdubbeling) te elimineren en door compressie te gebruiken. |
 | Vereenvoudigd opslag beheer |Biedt hulpprogram ma's voor systeem beheer voor het configureren en beheren van gegevens die zijn opgeslagen op locatie, op een externe server en in de Cloud. Daarnaast kunt u back-up-en herstel functies beheren vanuit een MMC-module (micro soft Management Console).|
 | Verbeterd herstel na nood gevallen en naleving |Vereist geen uitgebreide herstel tijd. In plaats daarvan worden de gegevens hersteld wanneer dat nodig is, zodat normale bewerkingen met minimale onderbrekingen kunnen worden voortgezet. Daarnaast kunt u beleids regels configureren voor het opgeven van back-upscheman en het bewaren van gegevens. |
@@ -49,7 +49,7 @@ In de volgende tabel worden enkele van de belangrijkste voor delen beschreven di
 | Bedrijfscontinuïteit |Hiermee kunnen gebruikers van de StorSimple 5000-7000-serie hun gegevens migreren naar een StorSimple 8000 Series-apparaat. |
 | Beschik baarheid in de Azure Government Portal |StorSimple is beschikbaar in de Azure Government Portal. Zie [uw on-premises StorSimple-apparaat implementeren in de overheids Portal](storsimple-8000-deployment-walkthrough-gov-u2.md)voor meer informatie. |
 | Gegevens bescherming en-beschik baarheid |De StorSimple 8000-serie ondersteunt zone redundante opslag (ZRS), naast lokaal redundante opslag (LRS) en geografisch redundante opslag (GRS). Raadpleeg [dit artikel over Azure Storage redundantie opties](../storage/common/storage-redundancy.md) voor ZRS-gegevens. |
-| Ondersteuning voor essentiële toepassingen |Met StorSimple kunt u de juiste volumes identificeren die lokaal zijn vastgemaakt. Dit zorgt ervoor dat de gegevens die door essentiële toepassingen worden vereist, niet in de cloud worden gelaagd. Lokaal vastgemaakte volumes zijn niet onderhevig aan Cloud latenties of verbindings problemen. Zie [de StorSimple-Apparaatbeheer-service gebruiken voor het beheren van volumes](storsimple-8000-manage-volumes-u2.md)voor meer informatie over lokaal vastgemaakte volumes. |
+| Ondersteuning voor essentiële toepassingen |Met StorSimple kunt u de juiste volumes identificeren als lokaal vastgemaakt om ervoor te zorgen dat de gegevens die door essentiële toepassingen worden vereist, niet in de cloud worden gelaagd. Lokaal vastgemaakte volumes zijn niet onderhevig aan Cloud latenties of verbindings problemen. Zie [de StorSimple-Apparaatbeheer-service gebruiken voor het beheren van volumes](storsimple-8000-manage-volumes-u2.md)voor meer informatie over lokaal vastgemaakte volumes. |
 | Lage latentie en hoge prestaties |U kunt Cloud apparaten maken die gebruikmaken van de functies van hoge prestaties en lage latentie van Azure Premium Storage. Zie [een StorSimple Cloud Appliance in azure implementeren en beheren](storsimple-8000-cloud-appliance-u2.md)voor meer informatie over StorSimple Premium-Cloud apparaten. |
 
 
@@ -57,9 +57,9 @@ In de volgende tabel worden enkele van de belangrijkste voor delen beschreven di
 De Microsoft Azure StorSimple oplossing omvat de volgende onderdelen:
 
 * **Microsoft Azure StorSimple-apparaat** : een on-premises hybride opslag matrix die Ssd's en hdd's bevat, samen met redundante controllers en automatische failover-mogelijkheden. De controllers beheren opslag lagen, op dit moment gebruikte (of dynamische) gegevens op lokale opslag plaatsen (op het apparaat of op on-premises servers), terwijl er minder vaak gebruikte gegevens naar de cloud worden verplaatst.
-* **StorSimple Cloud Appliance** , ook wel bekend als het virtuele StorSimple, is dit een software versie van het StorSimple-apparaat dat de architectuur en de meeste mogelijkheden van het fysieke Hybrid Storage-apparaat repliceert. De StorSimple Cloud Appliance wordt uitgevoerd op één knoop punt in een virtuele Azure-machine. Premium virtuele apparaten, die profiteren van Azure Premium Storage, zijn beschikbaar in update 2 en hoger.
+* **StorSimple Cloud Appliance** , ook wel bekend als het virtuele StorSimple-apparaat. Een software versie van het StorSimple-apparaat dat de architectuur en de meeste mogelijkheden van het fysieke Hybrid Storage-apparaat repliceert. De StorSimple Cloud Appliance wordt uitgevoerd op één knoop punt in een virtuele Azure-machine. Premium virtuele apparaten, die profiteren van Azure Premium Storage, zijn beschikbaar in update 2 en hoger.
 * **StorSimple Apparaatbeheer-service** : een uitbrei ding van de Azure Portal waarmee u een StorSimple-apparaat of StorSimple Cloud Appliance kunt beheren vanuit één webinterface. U kunt de StorSimple Apparaatbeheer-service gebruiken voor het maken en beheren van services, het weer geven en beheren van apparaten, het weer geven van waarschuwingen, het beheren van volumes en het weer geven en beheren van back-upbeleid en de back-catalogus.
-* **Windows PowerShell voor StorSimple** : een opdracht regel interface die u kunt gebruiken om het StorSimple-apparaat te beheren. Windows PowerShell voor StorSimple beschikt over functies waarmee u uw StorSimple-apparaat kunt registreren, de netwerk interface op uw apparaat kunt configureren, bepaalde soorten updates kunt installeren, het apparaat moet oplossen door toegang te krijgen tot de ondersteunings sessie en de apparaatstatus te wijzigen. U hebt toegang tot Windows PowerShell voor StorSimple door verbinding te maken met de seriële console of door Windows Power shell Remoting te gebruiken.
+* **Windows PowerShell voor StorSimple** : een opdracht regel interface die u kunt gebruiken om het StorSimple-apparaat te beheren. Windows PowerShell voor StorSimple beschikt over functies waarmee u uw StorSimple-apparaat kunt registreren, de netwerk interface op uw apparaat kunt configureren, bepaalde soorten updates kunt installeren, het apparaat moet oplossen door toegang te krijgen tot de ondersteunings sessie en de apparaatstatus te wijzigen. U kunt toegang krijgen tot Windows PowerShell voor StorSimple door verbinding te maken met de seriële console of door middel van externe communicatie van Windows Power shell.
 * **Azure PowerShell StorSimple-cmdlets** : een verzameling Windows Power shell-cmdlets waarmee u taken op service niveau en migratie kunt automatiseren vanaf de opdracht regel. Ga naar de [cmdlet-verwijzing](/powershell/module/servicemanagement/azure.service/?view=azuresmps-3.7.0&preserve-view=true#azure)voor meer informatie over de Azure PowerShell-cmdlets voor StorSimple.
 * **StorSimple Snapshot Manager** : een MMC-module die gebruikmaakt van volume groepen en de Windows-Volume Shadow Copy service voor het genereren van toepassings consistente back-ups. Daarnaast kunt u StorSimple Snapshot Manager gebruiken om back-upschemas te maken en volumes te klonen of te herstellen.
 * **StorSimple-adapter voor share point** : een hulp programma waarmee Microsoft Azure StorSimple opslag en gegevens beveiliging op transparante wijze kan worden uitgebreid naar share Point server-farms, terwijl StorSimple-opslag kan worden weer gegeven en beheerd vanuit de portal voor Centraal beheer van share point.
@@ -68,7 +68,7 @@ In het onderstaande diagram ziet u een weer gave op hoog niveau van de Microsoft
 
 ![StorSimple-architectuur](./media/storsimple-overview/overview-big-picture.png)
 
-In de volgende secties wordt elk van deze onderdelen uitvoeriger beschreven en wordt uitgelegd hoe de oplossing gegevens rangschikt, opslag ruimte en opslag beheer en gegevens beveiliging vereenvoudigt. De laatste sectie bevat definities voor een aantal belang rijke termen en concepten met betrekking tot StorSimple-onderdelen en het beheer ervan.
+In de volgende secties wordt elk van deze onderdelen uitvoeriger beschreven en wordt uitgelegd hoe de oplossing gegevens rangschikt, opslag ruimte en opslag beheer en gegevens beveiliging vereenvoudigt. De laatste sectie bevat definities voor een aantal van de belangrijkste termen en concepten die betrekking hebben op StorSimple-onderdelen en het beheer ervan.
 
 ## <a name="storsimple-device"></a>StorSimple-apparaat
 Het Microsoft Azure StorSimple-apparaat is een on-premises hybride opslag matrix die primaire opslag-en iSCSI-toegang biedt tot gegevens die zijn opgeslagen. Het beheert communicatie met Cloud opslag en helpt de veiligheid en vertrouwelijkheid te garanderen van alle gegevens die zijn opgeslagen op de Microsoft Azure StorSimple oplossing.
@@ -111,7 +111,7 @@ Microsoft Azure StorSimple biedt een webinterface (de StorSimple Apparaatbeheer-
 * Prestaties bewaken.
 * Controleer de systeem instellingen en Identificeer mogelijke problemen.
 
-U kunt de StorSimple-Apparaatbeheer-service gebruiken om alle beheer taken uit te voeren, behalve die waarvoor systeem tijd nodig is, zoals de eerste installatie en installatie van updates.
+U kunt de StorSimple Apparaatbeheer-service gebruiken om alle beheer taken uit te voeren, behalve taken waarvoor systeem tijd nodig is, zoals de eerste installatie en installatie van updates.
 
 Ga voor meer informatie naar [Gebruik de StorSimple Apparaatbeheer-service om uw StorSimple-apparaat te beheren](storsimple-8000-manager-service-administration.md).
 
@@ -182,11 +182,14 @@ De opslag lagen worden als volgt uitgevoerd:
 6. Microsoft Azure maakt meerdere replica's van de gegevens in het Data Center en in een extern Data Center, zodat de gegevens kunnen worden hersteld als er sprake is van een nood geval.
 7. Wanneer de bestands Server gegevens aanvraagt die in de Cloud zijn opgeslagen, retourneert StorSimple naadloos en wordt een kopie opgeslagen in de laag SSD van het StorSimple-apparaat.
 
+> [!IMPORTANT]
+> Wanneer u StorSimple gebruikt, kunt u geen blobs naar archivering converteren, zelfs niet als uw apparaat is uitgevallen. Als u gegevens wilt ophalen van het apparaat, moet u de blobs van het archief opnieuw inpluggen tot het warme of coole type. Dit resulteert in aanzienlijke kosten.
+
 #### <a name="how-storsimple-manages-cloud-data"></a>Hoe StorSimple Cloud gegevens beheert
 
 StorSimple ontdubbelt klant gegevens over alle moment opnamen en de primaire gegevens (gegevens die door hosts zijn geschreven). Hoewel ontdubbeling ideaal is voor opslag efficiëntie, wordt de vraag ' wat is in de cloud ' gecompliceerd. De gelaagde primaire gegevens en de momentopname gegevens overlappen elkaar. Eén deel van de gegevens in de cloud kan worden gebruikt als gelaagde primaire gegevens en er ook naar wordt verwezen door verschillende moment opnamen. Elke Cloud momentopname zorgt ervoor dat een kopie van alle tijdgebonden gegevens in de Cloud wordt vergrendeld totdat de moment opname wordt verwijderd.
 
-Er worden alleen gegevens uit de Cloud verwijderd wanneer er geen verwijzingen naar die gegevens zijn. Als we bijvoorbeeld een Cloud momentopname maken van alle gegevens die zich op het StorSimple-apparaat bevinden en vervolgens enkele primaire gegevens verwijderen, zien we dat de _primaire gegevens_ onmiddellijk worden teruggehaald. De _gegevens_ van de Cloud, die de gelaagde gegevens en de back-ups bevatten, blijven hetzelfde. De reden hiervoor is dat er nog steeds naar de Cloud gegevens wordt verwezen met een moment opname. Nadat de moment opname van de Cloud is verwijderd (en een andere moment opname die naar dezelfde gegevens verwijst), wordt het Cloud verbruik neergezet. Voordat we Cloud gegevens verwijderen, wordt gecontroleerd of er nog geen moment opnamen zijn die naar de gegevens verwijzen. Dit proces heet _Garbage Collection_ en is een achtergrond service die op het apparaat wordt uitgevoerd. Het verwijderen van Cloud gegevens is niet direct omdat de garbagecollection-service voor andere verwijzingen naar die gegevens controleert vóór de verwijdering. De snelheid van de garbagecollection is afhankelijk van het totale aantal moment opnamen en de totale gegevens. Normaal gesp roken worden de Cloud gegevens in minder dan een week opgeruimd.
+Er worden alleen gegevens uit de Cloud verwijderd wanneer er geen verwijzingen naar die gegevens zijn. Als we bijvoorbeeld een Cloud momentopname hebben genomen van alle gegevens in het StorSimple-apparaat en vervolgens enkele primaire gegevens hebben verwijderd, zien we dat de _primaire gegevens_ onmiddellijk worden teruggehaald. De _gegevens_ van de Cloud, waaronder de gelaagde gegevens en de back-ups, blijven hetzelfde, omdat er nog steeds naar de Cloud gegevens wordt verwezen met een moment opname. Nadat de moment opname van de Cloud is verwijderd (en een andere moment opname die naar dezelfde gegevens verwijst), wordt het Cloud verbruik neergezet. Voordat we Cloud gegevens verwijderen, wordt gecontroleerd of er nog geen moment opnamen zijn die naar de gegevens verwijzen. Dit proces heet _Garbage Collection_ en is een achtergrond service die op het apparaat wordt uitgevoerd. Het verwijderen van Cloud gegevens is niet direct omdat de garbagecollection-service voor andere verwijzingen naar die gegevens controleert vóór de verwijdering. De snelheid van de garbagecollection is afhankelijk van het totale aantal moment opnamen en de totale gegevens. Normaal gesp roken worden de Cloud gegevens in minder dan een week opgeruimd.
 
 
 ### <a name="thin-provisioning"></a>Thin provisioning
@@ -210,10 +213,10 @@ Hieronder vindt u een overzicht van de ondersteunde StorSimple-workloads.
 
 | Scenario | Workload | Ondersteund | Beperkingen | Versie |
 | --- | --- | --- | --- | --- |
-| Samenwerking |Bestanden delen |Ja | |Alle versies |
-| Samenwerking |Distributed File Sharing |Ja | |Alle versies |
+| Samenwerking |Bestanden delen |Yes | |Alle versies |
+| Samenwerking |Distributed File Sharing |Yes | |Alle versies |
 | Samenwerking |SharePoint |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Update 2 en hoger |
-| Archivering |Eenvoudige bestands archivering |Ja | |Alle versies |
+| Archivering |Eenvoudige bestands archivering |Yes | |Alle versies |
 | Virtualisatie |Virtuele machines |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Update 2 en hoger |
 | Database |SQL |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Update 2 en hoger |
 | Videobewaking |Videobewaking |Ja* |Ondersteund wanneer het StorSimple-apparaat alleen aan deze werk belasting is toegewezen |Update 2 en hoger |
@@ -237,7 +240,7 @@ Hier volgt een lijst van de StorSimple-ondersteunde infrastructuur onderdelen.
 
 | Scenario | Workload | Ondersteund | Beperkingen | Versie |
 | --- | --- | --- | --- | --- |
-| Algemeen |ExpressRoute |Ja | |Alle versies |
+| Algemeen |ExpressRoute |Yes | |Alle versies |
 | Algemeen |DataCore FC |Ja* |Ondersteund met DataCore SANsymphony |Alle versies |
 | Algemeen |DFSR |Ja* |Alleen ondersteund met lokaal vastgemaakte volumes |Alle versies |
 | Algemeen |Indexeren |Ja* |Voor gelaagde volumes wordt alleen het indexeren van meta gegevens ondersteund (geen gegevens).<br>Voor lokaal vastgemaakte volumes wordt volledige indexering ondersteund. |Alle versies |
@@ -258,7 +261,7 @@ Hieronder volgt een lijst met andere software die met StorSimple wordt gebruikt 
 Voordat u uw Microsoft Azure StorSimple-oplossing implementeert, wordt u aangeraden de volgende voor waarden en definities te bekijken.
 
 ### <a name="key-terms-and-definitions"></a>Belangrijkste termen en definities
-| Term (acroniem of afkorting) | Beschrijving |
+| Term (acroniem of afkorting) | Description |
 | --- | --- |
 | Access Control Record (ACR) |Een record die is gekoppeld aan een volume op uw Microsoft Azure StorSimple-apparaat dat bepaalt welke hosts er verbinding mee kunnen maken. De bepaling is gebaseerd op de iSCSI Qualified Name (IQN) van de hosts (opgenomen in de ACR) die verbinding maken met uw StorSimple-apparaat. |
 | AES-256 |Een 256-bits Advanced Encryption Standard (AES)-algoritme voor het versleutelen van gegevens tijdens het verplaatsen van en naar de Cloud. |

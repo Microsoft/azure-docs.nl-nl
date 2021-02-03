@@ -8,12 +8,12 @@ ms.date: 02/02/2021
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: d50893fc3bf5d890efbdc1f5b59cf52f35d91a15
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 6875fc53a651b89fcfe88d3217ff86bd21204f6c
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475723"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524284"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Query-problemen bij het gebruik van Azure Cosmos DB oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -206,12 +206,15 @@ De meeste systeem functies gebruiken indexen. Hier volgt een lijst met enkele ve
 - Links
 - Subtekenreeks, maar alleen als de eerste num_expr 0 is
 
-Hieronder volgen enkele algemene systeem functies die de index niet gebruiken en elk document moeten laden:
+Hieronder volgen enkele algemene systeem functies die de index niet gebruiken en elk document moeten worden geladen in een- `WHERE` component:
 
 | **Systeem functie**                     | **Ideeën voor optimalisatie**             |
 | --------------------------------------- |------------------------------------------------------------ |
-| BOVENSTE/ONDERSTE                             | In plaats van de systeem functie te gebruiken voor het normaliseren van gegevens voor vergelijkingen, normaliseert u de behuizing bij het invoegen. Een query zoals dat ```SELECT * FROM c WHERE UPPER(c.name) = 'BOB'``` wordt ```SELECT * FROM c WHERE c.name = 'BOB'``` . |
+| Bovenste/onderste                         | In plaats van de systeem functie te gebruiken voor het normaliseren van gegevens voor vergelijkingen, normaliseert u de behuizing bij het invoegen. Een query zoals dat ```SELECT * FROM c WHERE UPPER(c.name) = 'BOB'``` wordt ```SELECT * FROM c WHERE c.name = 'BOB'``` . |
+| GetCurrentDateTime/GetCurrentTimestamp/GetCurrentTicks | Bereken de huidige tijd voordat de query wordt uitgevoerd en gebruik deze teken reeks waarde in de- `WHERE` component. |
 | Wiskundige functies (non-aggregaties) | Als u een waarde regel matig in uw query wilt berekenen, kunt u overwegen om de waarde op te slaan als een eigenschap in het JSON-document. |
+
+Bij gebruik in de `SELECT` -component heeft inefficiënte systeem functies geen invloed op de manier waarop query's indexen kunnen gebruiken.
 
 ### <a name="improve-string-system-function-execution"></a>De uitvoering van de teken reeks systeem functie verbeteren
 

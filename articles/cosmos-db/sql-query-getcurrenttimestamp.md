@@ -1,19 +1,19 @@
 ---
 title: GetCurrentTimestamp in Azure Cosmos DB-query taal
 description: Meer informatie over de SQL-functie GetCurrentTimestamp in Azure Cosmos DB.
-author: ginamr
+author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 08/19/2020
-ms.author: girobins
+ms.date: 02/03/2021
+ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 6720b0e5d13f2baaaf063fef2244b0c1f1863571
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: fa7d1ec2af12065fb7d761073cd982a561cf53c1
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341923"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524258"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>GetCurrentTimestamp (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -34,7 +34,8 @@ Retourneert een ondertekende numerieke waarde, het huidige aantal milliseconden 
 
 GetCurrentTimestamp () is een niet-deterministische functie. Het geretourneerde resultaat is UTC (Coordinated Universal Time).
 
-Deze systeem functie maakt geen gebruik van de index.
+> [!NOTE]
+> Deze systeem functie maakt geen gebruik van de index. Als u waarden wilt vergelijken met de huidige tijd, moet u de huidige tijd ophalen voordat de query wordt uitgevoerd en die constante teken reeks waarde gebruiken in de `WHERE` component.
 
 ## <a name="examples"></a>Voorbeelden
   

@@ -5,12 +5,12 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-js
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: e280fddbe83da2a7ee89185046883f6c2c77167a
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
-ms.translationtype: HT
+ms.openlocfilehash: 96384d2c50e7d5b4b5b6e652d01c4a89cd519573
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739809"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493372"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Azure Functions verbinden met Azure Storage met behulp van Visual Studio Code
 
@@ -96,7 +96,7 @@ Nu kunt u de Storage-uitvoerbinding toevoegen aan uw project.
 
 In functies moet voor elk type binding een `direction`, `type`en een unieke `name` worden gedefinieerd in het bestand function.json. De manier waarop u deze kenmerken definieert, is afhankelijk van de taal van uw functie-app.
 
-::: zone pivot="programming-language-javascript,programming-language-typescript,programming-language-python,programming-language-powershell,programming-language-java"
+::: zone pivot="programming-language-javascript,programming-language-typescript,programming-language-python,programming-language-powershell"
 
 [!INCLUDE [functions-add-output-binding-json](../../includes/functions-add-output-binding-json.md)]
 
@@ -148,35 +148,25 @@ Nadat de binding is gedefinieerd, kunt u de `name` van de binding gebruiken om d
 
 [!INCLUDE [functions-add-storage-binding-java-code](../../includes/functions-add-storage-binding-java-code.md)]
 
-## <a name="update-the-test-set"></a>De testset bijwerken
+## <a name="update-the-tests"></a>De tests bijwerken
 
 [!INCLUDE [functions-add-output-binding-java-test](../../includes/functions-add-output-binding-java-test.md)]
 
 ::: zone-end  
 
-<!--- Local testing section --->
+## <a name="run-the-function-locally"></a>De functie lokaal uitvoeren
 
-::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-python"
+1. Net als in het vorige artikel drukt u op <kbd>F5</kbd> om het functie-app-project en de belangrijkste hulpprogram ma's te starten. 
 
-[!INCLUDE [functions-run-function-test-local-vs-code](../../includes/functions-run-function-test-local-vs-code.md)]
+1. Ga naar het gedeelte **functies van Azure:** als u kern hulpprogramma's uitvoert. Vouw onder **functies** **lokale project**  >  **functies** uit. Klik met de rechter muisknop (CTRL + klik op Mac) de `HttpExample` functie en kies **functie nu uitvoeren...**.
 
-::: zone-end
+    :::image type="content" source="../../includes/media/functions-run-function-test-local-vs-code/execute-function-now.png" alt-text="De functie nu uitvoeren vanuit Visual Studio code":::
 
-::: zone pivot="programming-language-powershell"
+1. In de **hoofd tekst** van de aanvraag ziet u de waarde van de aanvraag bericht hoofdtekst van `{ "name": "Azure" }` . Druk op ENTER om dit aanvraag bericht naar uw functie te verzenden.  
+ 
+1. Nadat een antwoord is geretourneerd, drukt u op <kbd>CTRL + C</kbd> om de kern hulpprogramma's te stoppen.
 
-[!INCLUDE [functions-run-function-test-local-vs-code-ps](../../includes/functions-run-function-test-local-vs-code-ps.md)]
-
-::: zone-end
-
-Wanneer de uitvoerbinding voor het eerst wordt gebruikt, wordt er door de runtime van Functions een nieuwe wachtrij met de naam **outqueue** gemaakt in uw opslagaccount. U gebruikt Storage Explorer om te controleren of de wachtrij is gemaakt met het nieuwe bericht.
-
-::: zone pivot="programming-language-java"  
-
-## <a name="update-the-tests"></a>De tests bijwerken
-
-[!INCLUDE [functions-add-output-binding-java-test](../../includes/functions-add-output-binding-java-test.md)]
-
-::: zone-end
+Omdat u de opslag connection string gebruikt, maakt de functie verbinding met het Azure Storage-account wanneer het lokaal wordt uitgevoerd. Wanneer de uitvoerbinding voor het eerst wordt gebruikt, wordt er door de runtime van Functions een nieuwe wachtrij met de naam **outqueue** gemaakt in uw opslagaccount. U gebruikt Storage Explorer om te controleren of de wachtrij is gemaakt met het nieuwe bericht.
 
 ### <a name="connect-storage-explorer-to-your-account"></a>Storage Explorer verbinden met uw account
 
@@ -212,11 +202,7 @@ Nu is het tijd om de bijgewerkte functie-app opnieuw te publiceren naar Azure.
 
 1. Kies de functie-app die u in het eerste artikel hebt gemaakt. Omdat u uw project opnieuw implementeert voor dezelfde app, selecteert u **Implementeren** om de waarschuwing over het overschrijven van bestanden te negeren.
 
-1. Nadat de implementatie is voltooid, kunt u de opnieuw geïmplementeerde functie weer testen door cURL of een browser te gebruiken. Voeg, net als voorheen, de queryreeks `&name=<yourname>` toe aan de URL, zoals in het volgende voorbeeld:
-
-    ```bash
-    curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....&name=<yourname>
-    ```
+1. Nadat de implementatie is voltooid, kunt u opnieuw de functie **nu uitvoeren** gebruiken om de functie in azure te activeren.
 
 1. [Bekijk het bericht in de opslagwachtrij](#examine-the-output-queue) om te controleren of de uitvoerbinding opnieuw een nieuw bericht in de wachtrij genereert.
 

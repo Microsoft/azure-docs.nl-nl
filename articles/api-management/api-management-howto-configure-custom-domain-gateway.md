@@ -4,23 +4,20 @@ description: In dit onderwerp worden de stappen beschreven voor het configureren
 services: api-management
 documentationcenter: ''
 author: vladvino
-manager: gwallace
-editor: ''
 ms.service: api-management
-ms.workload: integration
 ms.topic: article
 ms.date: 03/31/2020
 ms.author: apimpm
-ms.openlocfilehash: 0894203be4867e305c8e15467a2a867b9bfdc727
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d52bf87b74ae9b1770ed5092738fd05eb9f54fde
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86506805"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99490993"
 ---
-# <a name="configure-a-custom-domain-name"></a>Een aangepaste domeinnaam configureren
+# <a name="configure-a-custom-domain-name-for-a-self-hosted-gateway"></a>Een aangepaste domein naam configureren voor een zelf-hostende gateway
 
-Wanneer u een [zelf-hostende Azure API Management Gateway](self-hosted-gateway-overview.md) inricht, wordt er geen hostnaam toegewezen en waarnaar wordt verwezen door het bijbehorende IP-adres. In dit artikel wordt beschreven hoe u een bestaande aangepaste DNS-naam (ook wel hostname genoemd) toewijst aan een zelf-hostende gateway.
+Wanneer u een [zelf-hostende Azure API Management Gateway](self-hosted-gateway-overview.md)inricht, wordt er geen hostnaam toegewezen en moet ernaar worden verwezen met het IP-adres. In dit artikel wordt beschreven hoe u een bestaande aangepaste DNS-naam (ook wel hostname genoemd) toewijst aan een zelf-hostende gateway.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -34,18 +31,16 @@ Voor het uitvoeren van de stappen die in dit artikel worden beschreven, hebt u h
 - Een zelf-hostende gateway. Zie [zelf-hostende gateway inrichten](api-management-howto-provision-self-hosted-gateway.md) voor meer informatie
 -   Een aangepaste domein naam die eigendom is van u of uw organisatie. In dit onderwerp vindt u geen instructies voor het aanschaffen van een aangepaste domein naam.
 -   Een DNS-record die wordt gehost op een DNS-server die de aangepaste domein naam toewijst aan het IP-adres van de zelf-hostende gateway. In dit onderwerp vindt u geen instructies voor het hosten van een DNS-record.
--   U moet een geldig certificaat met een open bare en persoonlijke sleutel hebben (. PFX). Het onderwerp of de alternatieve naam voor het onderwerp (SAN) moet overeenkomen met de domein naam (dit maakt het mogelijk dat API Management exemplaar veilig Url's weergeeft via TLS).
+-   U moet een geldig certificaat met een open bare en persoonlijke sleutel hebben (. PFX). Het onderwerp of de alternatieve naam voor het onderwerp (SAN) moet overeenkomen met de domein naam (dit maakt het API Management exemplaar veilig Url's via TLS beschikbaar).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
 ## <a name="add-custom-domain-certificate-to-your-api-management-service"></a>Aangepast domein certificaat toevoegen aan uw API Management-service
 
-1. Selecteer **certificaten** uit de **beveiliging**.
-2. Selecteer **+ Toevoegen**.
-3. Voer een resource naam in voor het certificaat in het veld **id** .
-4. Selecteer het bestand met het certificaat (. PFX) door het veld **certificaat** of het mappictogram ernaast te selecteren.
-5. Voer het wacht woord voor het certificaat in het veld **wacht woord** in.
-6. Selecteer **maken** om het certificaat toe te voegen aan uw API Management-service.
+Een aangepast domein certificaat toevoegen (. PFX-bestand naar uw API Management-exemplaar of verwijs naar een certificaat dat is opgeslagen in Azure Key Vault. Volg de stappen in [Secure back-endserver-Services met verificatie op basis van client certificaten in Azure API Management](api-management-howto-mutual-certificates.md).
+
+> [!NOTE]
+> Het is raadzaam om een sleutel kluis certificaat te gebruiken voor het zelf-hostende gateway domein.
 
 ## <a name="use-the-azure-portal-to-set-a-custom-domain-name-for-your-self-hosted-gateway"></a>De Azure Portal gebruiken om een aangepaste domein naam voor uw zelf-hostende gateway in te stellen
 

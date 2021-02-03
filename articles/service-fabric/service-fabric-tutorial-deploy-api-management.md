@@ -4,12 +4,12 @@ description: Meer informatie over hoe u snel aan de slag kunt gaan met Azure API
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: b89204e2df5c8e79200b780de38d06b1a93c1fa3
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: f1ae658ac4944f8d39dc11769669d32958fd14f4
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97702188"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491279"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>API Management integreren met Service Fabric in azure
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u [Azure API Management](../api-management/a
 Voordat u begint:
 
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-* Installeer [Azure Powershell](/powershell/azure/install-az-ps) of [Azure CLI](/cli/azure/install-azure-cli).
+* Installeer [Azure PowerShell](/powershell/azure/install-az-ps) of [Azure CLI](/cli/azure/install-azure-cli).
 * Maak een beveiligd [Windows-cluster](service-fabric-tutorial-create-vnet-and-windows-cluster.md) in een netwerk beveiligings groep.
 * Als u een Windows-cluster implementeert, richt u een Windows-ontwikkelomgeving in. Installeer [Visual Studio 2019](https://www.visualstudio.com) en de workloads voor **Azure-ontwikkeling**, **ASP.NET-ontwikkeling en webontwikkeling** en **.NET Core platformoverschrijdende ontwikkeling**.  Richt vervolgens een [.NET-ontwikkelomgeving in](service-fabric-get-started.md).
 
@@ -190,7 +190,7 @@ Vul in *apim.parameters.json* de volgende lege parameters in voor uw implementat
 |---|---|
 |apimInstanceName|sf-apim|
 |apimPublisherEmail|myemail@contosos.com|
-|apimSku|Developer|
+|apimSku|Ontwikkelaar|
 |serviceFabricCertificateName|sfclustertutorialgroup320171031144217|
 |certificatePassword|q6D7nN%6ck@6|
 |serviceFabricCertificateThumbprint|C4C1E541AD512B8065280292A8BA6079C3F26F10 |
@@ -293,6 +293,8 @@ az group delete --name $ResourceGroupName
 
 Meer informatie over het gebruik van [API Management](../api-management/import-and-publish.md).
 
+U kunt ook de [Azure Portal](../api-management/how-to-configure-service-fabric-backend.md) gebruiken om service Fabric back-ends voor API management te maken en te beheren.
+
 [azure-powershell]: /powershell/azure/
 
 [apim-arm]:https://github.com/Azure/service-fabric-scripts-and-templates/blob/master/templates/service-integration/apim.json
@@ -303,7 +305,6 @@ Meer informatie over het gebruik van [API Management](../api-management/import-a
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png
-Vice-Fabric-scripts-en-sjablonen/BLOB/Master/templates/Service-integratie/network-apim.parameters.jsopn
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png

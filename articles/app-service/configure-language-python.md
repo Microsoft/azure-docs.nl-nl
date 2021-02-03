@@ -2,15 +2,15 @@
 title: Linux Python-apps configureren
 description: Meer informatie over het configureren van de Python-container waarin web-apps worden uitgevoerd, met behulp van de Azure-portal en de Azure CLI.
 ms.topic: quickstart
-ms.date: 11/16/2020
+ms.date: 02/01/2021
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 7589b5c66bf4fa86db243574f551ec585ccccea1
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
-ms.translationtype: HT
+ms.openlocfilehash: 83c49eea8bda10d665c0a08666276e905c60c584
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855053"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493699"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -67,10 +67,13 @@ U kunt een niet-ondersteunde versie van Python uitvoeren door in plaats daarvan 
 
 Oryx, het buildsysteem van App Service, voert de volgende stappen uit wanneer u de app implementeert met Git of zip-pakketten:
 
-1. Voer een aangepast pre-buildscript uit als dit wordt opgegeven via de instelling `PRE_BUILD_COMMAND`.
+1. Voer een aangepast pre-buildscript uit als dit wordt opgegeven via de instelling `PRE_BUILD_COMMAND`. (Het script kan zichzelf andere python-en Node.js-scripts, PIP-en NPM-opdrachten en op knoop punten gebaseerde hulpprogram ma's zoals garens uitvoeren, bijvoorbeeld `yarn install` en `yarn build` .)
+
 1. Voer `pip install -r requirements.txt` uit. Het bestand *requirements.txt* moet aanwezig zijn in de hoofdmap van het project. Anders wordt de volgende fout gerapporteerd door het buildproces: Kan setup.py of requirements.txt niet vinden; PIP-installatie wordt niet uitgevoerd.
+
 1. Als *manage.py* wordt aangetroffen in de hoofdmap van de opslagplaats (wat aangeeft dat het een Django-app is), voert u *manage.py collectstatic* uit. Als de instelling `DISABLE_COLLECTSTATIC` echter `true` is, wordt deze stap overgeslagen.
-1. Voer een aangepast post-buildscript uit als dit wordt opgegeven via de instelling `POST_BUILD_COMMAND`.
+
+1. Voer een aangepast post-buildscript uit als dit wordt opgegeven via de instelling `POST_BUILD_COMMAND`. (Nogmaals kan het script andere python-en Node.js-scripts, PIP-en NPM-opdrachten en op knoop punten gebaseerde hulp middelen uitvoeren.)
 
 De instellingen `PRE_BUILD_COMMAND`, `POST_BUILD_COMMAND` en `DISABLE_COLLECTSTATIC` zijn standaard leeg. 
 
@@ -131,6 +134,52 @@ In de volgende tabel vindt u een beschrijving van de relevante productie-instell
 | `ALLOWED_HOSTS` | In een productieomgeving is voor Django vereist dat u de URL van de app opneemt in de `ALLOWED_HOSTS`-matrix van *settings.py*. U kunt deze URL tijdens runtime ophalen met de code, `os.environ['WEBSITE_HOSTNAME']`. App Service stelt de omgevingsvariabele `WEBSITE_HOSTNAME` automatisch in op de URL van de app. |
 | `DATABASES` | Definieer instellingen in App Service voor de databaseverbinding en laad deze als omgevingsvariabelen om de woordenlijst [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES) in te vullen. U kunt de waarden (met name de gebruikersnaam en het wachtwoord) ook opslaan als [Azure Key Vault-geheimen](../key-vault/secrets/quick-create-python.md). |
 
+## <a name="serve-static-files-for-django-apps"></a>Statische bestanden voor Django-apps verwerken
+
+Als uw Django-web-app statische front-end-bestanden bevat, volgt u eerst de instructies voor het [beheren van statische bestanden](https://docs.djangoproject.com/en/3.1/howto/static-files/) in de Django-documentatie.
+
+Voor App Service maakt u de volgende wijzigingen:
+
+1. Overweeg het gebruik van omgevings variabelen (voor lokale ontwikkeling) en app-instellingen (bij het implementeren naar de Cloud) om de Django en variabelen dynamisch in te stellen `STATIC_URL` `STATIC_ROOT` . Bijvoorbeeld:    
+
+    ```python
+    STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")
+    STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", "./static/")    
+    ```
+
+    `DJANGO_STATIC_URL` en `DJANGO_STATIC_ROOT` kan indien nodig worden gewijzigd voor uw lokale en Cloud omgevingen. Als het bouw proces voor uw statische bestanden bijvoorbeeld wordt geplaatst in een map met de naam `django-static` , kunt u instellen `DJANGO_STATIC_URL` om te `/django-static/` voor komen dat de standaard instelling wordt gebruikt.
+
+1. Als u een pre-build-script hebt waarmee statische bestanden worden gegenereerd in een andere map, neemt u die map op in de Django- `STATICFILES_DIRS` variabele, zodat deze door het proces van Django worden `collectstatic` gevonden. Als u bijvoorbeeld `yarn build` in de front-end-map uitvoert en garen een `build/static` map met statische bestanden genereert, voegt u die map als volgt toe:
+
+    ```python
+    FRONTEND_DIR = "path-to-frontend-folder" 
+    STATICFILES_DIRS = [os.path.join(FRONTEND_DIR, 'build', 'static')]    
+    ```
+
+    Hier kunt `FRONTEND_DIR` u een pad maken naar waar een hulp programma zoals garens wordt uitgevoerd. U kunt de gewenste omgevings variabele en app-instelling opnieuw gebruiken.
+
+1. Voeg `whitenoise` uw *requirements.txt* -bestand toe. [Whitenoise](http://whitenoise.evans.io/en/stable/) (whitenoise.Evans.io) is een python-pakket waarmee u eenvoudig een productie-Django-app kunt gebruiken voor de eigen statische bestanden. Whitenoise is specifiek bedoeld voor de bestanden die worden gevonden in de map die is opgegeven door de `STATIC_ROOT` variabele django.
+
+1. Voeg in uw *Settings.py* -bestand de volgende regel toe voor Whitenoise:
+
+    ```python
+    STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+    ```
+
+1. Wijzig ook de `MIDDLEWARE` lijsten en en `INSTALLED_APPS` Geef Whitenoise op:
+
+    ```python
+    MIDDLEWARE = [
+        "whitenoise.middleware.WhiteNoiseMiddleware",
+        # Other values follow
+    ]
+
+    INSTALLED_APPS = [
+        "whitenoise.runserver_nostatic",
+        # Other values follow
+    ]
+    ```
+
 ## <a name="container-characteristics"></a>Containerkenmerken
 
 Python-apps die zijn geïmplementeerd in App Service worden uitgevoerd binnen een Docker-container voor Linux die is gedefinieerd in de [GitHub-opslagplaats voor App Service Python](https://github.com/Azure-App-Service/python). U vindt de afbeeldingsconfiguraties binnen de versiespecifieke mappen.
@@ -150,6 +199,8 @@ Deze container heeft de volgende kenmerken:
 
 - App Service definieert automatisch een omgevingsvariabele met de naam `WEBSITE_HOSTNAME` met de URL van de web-app, bijvoorbeeld `msdocs-hello-world.azurewebsites.net`. App Service definieert ook `WEBSITE_SITE_NAME` met de naam van uw app, zoals `msdocs-hello-world`. 
    
+- NPM en Node.js zijn geïnstalleerd in de container, zodat u op knoop punten gebaseerde build-hulpprogram ma's kunt uitvoeren, zoals garens.
+
 ## <a name="container-startup-process"></a>Opstartproces met container
 
 Tijdens het opstarten voert de App Service met Linux-container de volgende stappen uit:
@@ -270,7 +321,7 @@ Als u bijvoorbeeld een app-instelling met de naam `DATABASE_SERVER` hebt gemaakt
 ```python
 db_server = os.environ['DATABASE_SERVER']
 ```
-    
+
 ## <a name="detect-https-session"></a>HTTPS-sessie detecteren
 
 In App Service vindt [SSL-beëindiging](https://wikipedia.org/wiki/TLS_termination_proxy) (wikepedia.org) plaats in de load balancers voor het netwerk, zodat alle HTTPS-aanvragen uw app bereiken als niet-versleutelde HTTP-aanvragen. Inspecteer de header `X-Forwarded-Proto` als de app-logica moet controleren of de aanvragen van gebruikers al dan niet zijn versleuteld.

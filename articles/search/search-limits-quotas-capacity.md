@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/15/2020
-ms.openlocfilehash: 5d265fe02d801cf0d2d66be37a8dc2a220e19b34
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.date: 02/02/2021
+ms.openlocfilehash: 9e43521e26a6292141e1bbae7b39db3656df962c
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591341"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493038"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Servicelimieten in Azure Cognitive Search
 
@@ -139,7 +139,7 @@ Een [AI-verrijkings pijplijn](cognitive-search-concept-intro.md) die aanroepen n
 
 ## <a name="throttling-limits"></a>Beperkings limieten
 
-Zoek query's en indexerings aanvragen worden beperkt naarmate het systeem de piek capaciteit benadert. Bandbreedte beperking werkt anders voor verschillende Api's. Query-Api's (zoeken/suggesties/automatisch volt ooien) en het indexeren van Api's worden dynamisch beperkt op basis van de belasting van de service. Index-Api's hebben limieten voor statisch aantal aanvragen. 
+API-aanvragen worden beperkt naarmate het systeem de piek capaciteit benadert. Bandbreedte beperking werkt anders voor verschillende Api's. Query-Api's (zoeken/suggesties/automatisch volt ooien) en het indexeren van Api's worden dynamisch beperkt op basis van de belasting van de service. Index-Api's en service bewerkingen-API hebben limieten voor statisch aantal aanvragen. 
 
 Limieten voor statische frequentie aanvragen voor bewerkingen met betrekking tot een index:
 
@@ -148,6 +148,10 @@ Limieten voor statische frequentie aanvragen voor bewerkingen met betrekking tot
 + Create Index (POST/Indexes): 12 per minuut per Zoek eenheid
 + Index maken of bijwerken (PUT/Indexes/MyIndex): 6 per seconde per Zoek eenheid
 + Index verwijderen (/Indexes/MyIndex verwijderen): 12 per minuut per Zoek eenheid 
+
+Limieten voor statische frequentie aanvragen voor bewerkingen met betrekking tot een service:
+
++ Service statistieken (GET/servicestats): 4 per seconde per Zoek eenheid
 
 ## <a name="api-request-limits"></a>API-aanvraag limieten
 * Maxi maal 16 MB per aanvraag <sup>1</sup>

@@ -3,12 +3,12 @@ title: Een TypeScript-functie maken met behulp van Visual Studio Code - Azure Fu
 description: Leer hoe u een TypeScript-functie maakt en publiceer vervolgens het lokale Node.js-project naar serverloze hosting in Azure Functions met behulp van de Azure Functions-extensie in Visual Studio Code.
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: 48295aab80b8a15a313ce7fa7acf94606357930b
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.openlocfilehash: 4470741c8c7f2f6c9832ea73aa9c6207764bc903
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424797"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493461"
 ---
 # <a name="quickstart-create-a-function-in-azure-with-typescript-using-visual-studio-code"></a>Quickstart: Een functie maken in Azure met TypeScript met behulp van Visual Studio Code
 
@@ -74,7 +74,7 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
 
 1. Kies het Azure-pictogram in de activiteitenbalk en selecteer vervolgens in het gedeelte **Azure: In het gebied** Functies kiest u de knop **Implementeren in functie-app ...** .
 
-    ![Uw project naar Azure publiceren](media/functions-create-first-function-vs-code/function-app-publish-project.png)
+    ![Uw project naar Azure publiceren](../../includes/media/functions-publish-project-vscode/function-app-publish-project.png)
 
 1. Geef de volgende informatie op bij de prompts:
 
@@ -90,17 +90,19 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
 
     + **Selecteer een locatie voor nieuwe resources**:  Kies voor betere prestaties een [regio](https://azure.microsoft.com/regions/) bij u in de buurt.
 
+    De uitbrei ding toont de status van afzonderlijke resources, aangezien deze worden gemaakt in Azure in het systeemvak.
+
+    :::image type="content" source="../../includes/media/functions-publish-project-vscode/resource-notification.png" alt-text="Melding van het maken van Azure-resources":::
+
 1. Wanneer dit is voltooid, worden de volgende Azure-resources in uw abonnement gemaakt met behulp van namen op basis van de naam van uw functie-app:
 
-    + Een resourcegroep, wat een logische container is voor gerelateerde resources.
-    + Een standaard Azure Storage-account, waarin de status en andere gegevens van uw projecten worden onderhouden.
-    + Een verbruiksplan dat de onderliggende host definieert voor uw serverloze functie-app. 
-    + Een functie-app, die de omgeving biedt voor het uitvoeren van uw functiecode. Met een functie-app kunt u functies groeperen in een logische eenheid, zodat u resources eenvoudiger kunt beheren, implementeren en delen binnen hetzelfde hostingabonnement.
-    + Een Application Insights-exemplaar dat is verbonden met de functie-app, die het gebruik van uw serverloze functie bijhoudt.
+    [!INCLUDE [functions-vs-code-created-resources](../../includes/functions-vs-code-created-resources.md)]
 
     Nadat de functie-app is gemaakt en het implementatiepakket is toegepast, wordt er een melding weergegeven. 
 
-1. Selecteer in deze melding de optie **Uitvoer weergeven** om de resultaten van het maken en implementeren te bekijken, inclusief de Azure-resources die u hebt gemaakt. Als u de melding mist, selecteert u het belpictogram in de rechterbenedenhoek om deze opnieuw weer te geven.
+    [!INCLUDE [functions-vs-code-create-tip](../../includes/functions-vs-code-create-tip.md)]
+
+4. Selecteer in deze melding de optie **Uitvoer weergeven** om de resultaten van het maken en implementeren te bekijken, inclusief de Azure-resources die u hebt gemaakt. Als u de melding mist, selecteert u het belpictogram in de rechterbenedenhoek om deze opnieuw weer te geven.
 
     ![Volledige melding maken](./media/functions-create-first-function-vs-code/function-create-notifications.png)
 
@@ -110,7 +112,7 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt een functie-app met een eenvoudige HTTP-geactiveerde functie gemaakt in Visual Studio Code. In het volgende artikel vouwt u die functie uit door een uitvoerbinding toe te voegen. Met deze binding wordt de tekenreeks van de HTTP-aanvraag naar een bericht in een Azure Queue Storage-wachtrij geschreven. 
+U hebt [Visual Studio code](functions-develop-vs-code.md?tabs=javascript) gebruikt voor het maken van een functie-app met een eenvoudige, door http geactiveerde functie. In het volgende artikel vouwt u die functie uit door verbinding te maken met Azure Storage. Zie [bindingen toevoegen aan een bestaande functie in azure functions](add-bindings-existing-function.md?tabs=typescript)voor meer informatie over het maken van verbinding met andere Azure-Services.   
 
 > [!div class="nextstepaction"]
 > [Verbinding maken met een Azure Storage-wachtrij](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-typescript)

@@ -1,14 +1,14 @@
 ---
 title: VM-extensie inschakelen met Azure Resource Manager sjabloon
 description: In dit artikel wordt beschreven hoe u virtuele-machine uitbreidingen implementeert voor Azure Arc-servers die worden uitgevoerd in hybride Cloud omgevingen met behulp van een Azure Resource Manager sjabloon.
-ms.date: 11/06/2020
+ms.date: 02/03/2021
 ms.topic: conceptual
-ms.openlocfilehash: d5c7f5055f3e41a91fa00e1e3ad08e7686145b9e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: cfba14ac30553178bd509d0b0e7ba9c60332d299
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94353863"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493325"
 ---
 # <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Azure VM-extensies inschakelen met ARM-sjabloon
 
@@ -625,7 +625,7 @@ Als u de Azure Monitor dependency agent-extensie wilt gebruiken, is het volgende
 
 ## <a name="deploy-azure-key-vault-vm-extension-preview"></a>Azure Key Vault VM-extensie implementeren (preview)
 
-De volgende JSON toont het schema voor de extensie van de Key Vault-VM (preview). Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen ervan worden beschouwd als open bare informatie. De uitbrei ding vereist een lijst met bewaakte certificaten, polling frequentie en het doel certificaat archief. Specifiek:
+De volgende JSON toont het schema voor de extensie van de Key Vault-VM (preview). Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen ervan worden beschouwd als open bare informatie. De uitbrei ding vereist een lijst met bewaakte certificaten, polling frequentie en het doel certificaat archief. Met name:
 
 ### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
 
@@ -698,6 +698,90 @@ Sla het sjabloon bestand op schijf op. U kunt vervolgens de uitbrei ding install
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\KeyVaultExtension.json"
+```
+
+## <a name="deploy-the-azure-defender-integrated-scanner"></a>De geïntegreerde Azure Defender-scanner implementeren
+
+Als u de Azure Defender Integrated-scanner uitbreiding wilt gebruiken, wordt het volgende voor beeld gegeven om te worden uitgevoerd op Windows en Linux. Als u niet bekend bent met de geïntegreerde scanner, raadpleegt u [overzicht van de oplossing voor de evaluatie van beveiligings problemen van Azure Defender](../../security-center/deploy-vulnerability-assessment-vm.md) voor hybride computers.
+
+### <a name="template-file-for-windows"></a>Sjabloon bestand voor Windows
+
+```json
+{
+  "properties": {
+    "mode": "Incremental",
+    "template": {
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "parameters": {
+        "vmName": {
+          "type": "string"
+        },
+        "apiVersionByEnv": {
+          "type": "string"
+        }
+      },
+      "resources": [
+        {
+          "type": "resourceType/providers/WindowsAgent.AzureSecurityCenter",
+          "name": "[concat(parameters('vmName'), '/Microsoft.Security/default')]",
+          "apiVersion": "[parameters('apiVersionByEnv')]"
+        }
+      ]
+    },
+    "parameters": {
+      "vmName": {
+        "value": "resourceName"
+      },
+      "apiVersionByEnv": {
+        "value": "2015-06-01-preview"
+      }
+    }
+  }
+}
+```
+
+### <a name="template-file-for-linux"></a>Sjabloon bestand voor Linux
+
+```json
+{
+  "properties": {
+    "mode": "Incremental",
+    "template": {
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "parameters": {
+        "vmName": {
+          "type": "string"
+        },
+        "apiVersionByEnv": {
+          "type": "string"
+        }
+      },
+      "resources": [
+        {
+          "type": "resourceType/providers/LinuxAgent.AzureSecurityCenter",
+          "name": "[concat(parameters('vmName'), '/Microsoft.Security/default')]",
+          "apiVersion": "[parameters('apiVersionByEnv')]"
+        }
+      ]
+    },
+    "parameters": {
+      "vmName": {
+        "value": "resourceName"
+      },
+      "apiVersionByEnv": {
+        "value": "2015-06-01-preview"
+      }
+    }
+  }
+}
+```
+
+Sla het sjabloon bestand op schijf op. U kunt vervolgens de uitbrei ding installeren op alle verbonden computers in een resource groep met de volgende opdracht.
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\AzureDefenderScanner.json"
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

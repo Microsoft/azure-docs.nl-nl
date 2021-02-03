@@ -3,12 +3,12 @@ title: Zelfstudie voor video-opname op basis van gebeurtenissen in de cloud en a
 description: In deze zelfstudie leert u hoe u Azure Live Video Analytics in Azure IoT Edge kunt gebruiken om een video-opname op basis van gebeurtenissen te maken in de cloud, en deze af te spelen vanuit de cloud.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 7f99eef626e2152e8acb01f0ade88b3b67aebcea
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 497c512c4d3874959e26b7a11c312abdda475b4e
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99052209"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491855"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Zelfstudie: Video-opname op basis van gebeurtenissen in de cloud en afspelen vanuit de cloud
 
@@ -77,7 +77,7 @@ In het diagram ziet u een afbeelding van een [mediagrafiek](media-graph-concept.
     
 Zoals in het diagram wordt getoond, gebruikt u een [RTSP-bronknooppunt](media-graph-concept.md#rtsp-source) in de mediagrafiek om de gesimuleerde livevideo van verkeer op een snelweg vast te leggen en deze video naar twee paden te verzenden:
 
-* Het eerste pad loopt naar een HTTP-extensieknooppunt. Het knooppunt test de videoframes op een waarde die is ingesteld door u, met behulp van het veld `samplingOptions`, en geeft vervolgens de frames als afbeeldingen door naar de AI-module YOLOv3, wat een objectdetector is. Het knooppunt ontvangt de resultaten. Dit zijn de objecten (voertuigen in het verkeer) die via het model zijn gedetecteerd. Het HTTP-extensieknooppunt publiceert vervolgens de resultaten via het IoT Hub Message Sink-knooppunt naar de IoT Edge-hub.
+* Het eerste pad is naar een HTTP extension-knoop punt. Het knooppunt test de videoframes op een waarde die is ingesteld door u, met behulp van het veld `samplingOptions`, en geeft vervolgens de frames als afbeeldingen door naar de AI-module YOLOv3, wat een objectdetector is. Het knooppunt ontvangt de resultaten. Dit zijn de objecten (voertuigen in het verkeer) die via het model zijn gedetecteerd. Het HTTP-extensieknooppunt publiceert vervolgens de resultaten via het IoT Hub Message Sink-knooppunt naar de IoT Edge-hub.
 * De objectCounter-module is ingesteld om berichten te ontvangen van de IoT Edge-hub, waaronder de objectdetectieresultaten (voertuigen in het verkeer). De module controleert deze berichten op objecten van een bepaald type, die zijn geconfigureerd via een instelling. Wanneer een dergelijk object is gevonden, wordt via deze module een bericht verzonden naar de IoT Edge-hub. Deze berichten met 'object gevonden' worden vervolgens doorgestuurd naar het IoT Hub-bronknooppunt van de mediagrafiek. Na ontvangst van een dergelijk bericht activeert het IoT Hub-bronknooppunt in de mediagrafiek het [signaalpoortprocessor](media-graph-concept.md#signal-gate-processor)-knooppunt. Het signaalpoortprocessor-knooppunt is vervolgens gedurende een geconfigureerde tijdsperiode geopend. De video stroomt gedurende die tijd door de poort naar het Asset Sink-knooppunt. Dit gedeelte van de live stream wordt vervolgens opgenomen via het [Asset Sink](media-graph-concept.md#asset-sink)-knooppunt naar een [Asset](terminology.md#asset) in uw Azure Media Services-account.
 
 ## <a name="set-up-your-development-environment"></a>De ontwikkelomgeving instellen

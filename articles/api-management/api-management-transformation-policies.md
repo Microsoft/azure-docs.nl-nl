@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 212a6b0786b371bfb92f2e193e67d9accd432bf8
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c0c7a6b25c15be2e521e0985c315baf819650aa5
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657240"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491753"
 ---
 # <a name="api-management-transformation-policies"></a>Transformatiebeleid API Management
 In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids regels. Zie [beleid in API Management](./api-management-policies.md)voor meer informatie over het toevoegen en configureren van beleid.
@@ -214,7 +214,7 @@ of
 ```
 
 > [!NOTE]
-> Back-end-entiteiten kunnen worden beheerd via beheer- [API](/rest/api/apimanagement/2019-12-01/backend) en [Power shell](https://www.powershellgallery.com/packages?q=apimanagement).
+> Back-end-entiteiten kunnen worden beheerd via [Azure Portal](how-to-configure-service-fabric-backend.md), beheer- [API](/rest/api/apimanagement)en [Power shell](https://www.powershellgallery.com/packages?q=apimanagement).
 
 ### <a name="example"></a>Voorbeeld
 
@@ -269,7 +269,7 @@ In dit voor beeld stuurt het beleid de aanvraag naar een service Fabric-back-end
 |Naam|Beschrijving|Vereist|Standaard|
 |----------|-----------------|--------------|-------------|
 |basis-URL|Basis-URL van nieuwe back-end-service.|Een van `base-url` of `backend-id` moet aanwezig zijn.|N.v.t.|
-|back-end-id|De id van de back-end waarnaar moet worden doorgestuurd. (Back-upentiteiten worden beheerd via [API](/rest/api/apimanagement/2019-12-01/backend) en [Power shell](https://www.powershellgallery.com/packages?q=apimanagement).)|Een van `base-url` of `backend-id` moet aanwezig zijn.|N.v.t.|
+|back-end-id|De id van de back-end waarnaar moet worden doorgestuurd. (Back-upentiteiten worden beheerd via [Azure Portal](how-to-configure-service-fabric-backend.md), [API](/rest/api/apimanagement)en [Power shell](https://www.powershellgallery.com/packages?q=apimanagement).)|Een van `base-url` of `backend-id` moet aanwezig zijn.|N.v.t.|
 |SF-partitie-Key|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Wordt gebruikt voor het omzetten van een specifieke partitie van de service voor naam omzetting.|Nee|N.v.t.|
 |SF-replica-type|Alleen van toepassing wanneer de back-end een Service Fabric-service is en is opgegeven met behulp van back-end-id. Hiermee wordt bepaald of de aanvraag naar de primaire of secundaire replica van een partitie moet gaan. |Nee|N.v.t.|
 |EB-oplossen-voor waarde|Alleen van toepassing wanneer de back-end een Service Fabric-service is. Voor waarde waarmee wordt aangegeven of de aanroep van Service Fabric back-end moet worden herhaald met de nieuwe oplossing.|Nee|N.v.t.|

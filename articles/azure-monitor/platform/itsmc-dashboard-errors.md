@@ -1,75 +1,89 @@
 ---
-title: Algemene fouten
-description: Dit document bevat informatie over algemene fouten die zich in het dash board bevinden
+title: Connector status fouten in het ITSMC-dash board
+description: Meer informatie over veelvoorkomende fouten in het dash board van IT Service Management-connector.
 ms.subservice: alerts
 ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/18/2021
-ms.openlocfilehash: be6d47d8f40746bfb2154ddb62cf2e9ce93e74aa
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: d1ba698cd95a074c021aa351a98eb12fc8ae0fc3
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955680"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492515"
 ---
-# <a name="errors-in-the-connector-status-section"></a>Fouten in de sectie connector status
+# <a name="connector-status-errors-in-the-itsmc-dashboard"></a>Connector status fouten in het ITSMC-dash board
 
-In het gedeelte connector status lijst in het dash board vindt u fouten die u kunnen helpen bij het oplossen van problemen in uw ITSM-connector.
+Het ITSMC-dash board (IT Service Management-connector) bevat fouten die u kunnen helpen bij het oplossen van problemen in uw connector.
 
-## <a name="status-common-errors"></a>Status veelvoorkomende fouten
+In de volgende secties worden veelvoorkomende fouten beschreven die worden weer gegeven in de sectie connector status van het dash board en hoe u deze kunt oplossen.
 
-In deze sectie vindt u de algemene fouten die worden weer gegeven in de sectie connector status en hoe u deze moet oplossen:
+## <a name="unexpected-response"></a>Onverwachte reactie
 
-* **Fout: er** is een onverwachte reactie van ServiceNow samen met de status code voor geslaagd. Antwoord: {"import_set": "{import_set_id}", "staging_table": "x_mioms_microsoft_oms_incident", "resultaat": [{"transform_map": "OMS-incident", "tabel": "incident", "status": "Error", "error_message": "{target record is niet gevonden | Ongeldige tabel | Ongeldige faserings tabel}
+**Fout: er** is een onverwachte reactie van ServiceNow samen met de status code voor geslaagd. Antwoord: {"import_set": "{import_set_id}", "staging_table": "x_mioms_microsoft_oms_incident", "resultaat": [{"transform_map": "OMS-incident", "tabel": "incident", "status": "Error", "error_message": "{target record is niet gevonden | Ongeldige tabel | Ongeldige faserings tabel}
 
-    **Oorzaak**: een dergelijke fout wordt geretourneerd vanuit ServiceNow wanneer:
-  * Een aangepast script dat in ServiceNow-exemplaar is geïmplementeerd, zorgt ervoor dat incidenten worden genegeerd.
-  * De code van de OMS integrator-app is gewijzigd op de ServiceNow-kant, bijvoorbeeld het script onBefore.
+**Oorzaak**: ServiceNow retourneert deze fout wanneer:
 
-  **Oplossing**: Schakel alle aangepaste scripts of code wijzigingen uit.
+* Een aangepast script dat in een ServiceNow-exemplaar wordt geïmplementeerd, zorgt ervoor dat incidenten worden genegeerd.
+* De code van de OMS integrator-app is gewijzigd aan de kant van de ServiceNow (bijvoorbeeld door middel van het `onBefore` script).
 
-* **Fout**: "{" Error ": {" bericht ":" de bewerking is mislukt "," detail ":" de uitzonde ring van de toegangs beheer lijst is mislukt vanwege beveiligings beperkingen "}"
+**Oplossing**: Schakel alle aangepaste scripts of code wijzigingen uit.
 
-    **Oorzaak**: onjuiste configuratie van ServiceNow-machtigingen
+## <a name="exception-update-failure"></a>Fout bij het bijwerken van uitzonde ring
 
-    **Oplossing**: Controleer of alle functies juist zijn toegewezen zoals [opgegeven](itsmc-connections-servicenow.md#install-the-user-app-and-create-the-user-role).
+**Fout**: "{" Error ": {" bericht ":" de bewerking is mislukt "," detail ":" de uitzonde ring van de toegangs beheer lijst is mislukt vanwege beveiligings beperkingen "}"
 
-* **Fout**: er is een fout opgetreden tijdens het verzenden van de aanvraag.
+**Oorzaak**: ServiceNow-machtigingen zijn onjuist geconfigureerd.
 
-    **Oorzaak**: "ServiceNow-instantie niet beschikbaar"
+**Oplossing**: Controleer of alle functies op de juiste wijze zijn toegewezen als [opgegeven](itsmc-connections-servicenow.md#install-the-user-app-and-create-the-user-role).
 
-    **Oplossing**: Controleer uw exemplaar in ServiceNow het mogelijk is verwijderd of niet beschikbaar is.
+## <a name="problem-sending-a-request"></a>Probleem bij het verzenden van een aanvraag
 
-* **Fout**: "ServiceDeskHttpBadRequestException: status code = 429"
+**Fout**: er is een fout opgetreden tijdens het verzenden van de aanvraag.
 
-    **Oorzaak**: de limieten voor de ServiceNow-frequentie zijn te hoog/laag.
+**Oorzaak**: een ServiceNow-exemplaar is niet beschikbaar.
 
-    **Oplossing**: Verhoog of annuleer de frequentie limieten in het ServiceNow-exemplaar, zoals [hier](https://docs.servicenow.com/bundle/london-application-development/page/integrate/inbound-rest/task/investigate-rate-limit-violations.html)wordt uitgelegd.
+**Oplossing**: Controleer uw exemplaar in ServiceNow. Deze is mogelijk verwijderd of niet beschikbaar.
 
-* **Fout**: AccessToken en RefreshToken zijn ongeldig. De gebruiker moet zich opnieuw verifiëren. "
+## <a name="servicenow-rate-problem"></a>ServiceNow-rate probleem
 
-    **Oorzaak**: het vernieuwings token is verlopen.
+**Fout**: "ServiceDeskHttpBadRequestException: status code = 429"
 
-    **Oplossing**: synchroniseer de ITSM-connector om een nieuw vernieuwings token te genereren, zoals [hier](./itsmc-resync-servicenow.md)wordt uitgelegd.
+**Oorzaak**: de limieten voor de ServiceNow-frequentie zijn te hoog of te laag.
 
-* **Fout**: kan werk item niet maken/bijwerken voor waarschuwing {alertnaam}. ITSM-connector {connectionIdentifier} bestaat niet of is verwijderd. "
+**Oplossing**: Verhoog of annuleer de frequentie limieten in het ServiceNow-exemplaar, zoals wordt uitgelegd in de [ServiceNow-documentatie](https://docs.servicenow.com/bundle/london-application-development/page/integrate/inbound-rest/task/investigate-rate-limit-violations.html).
 
-    **Oorzaak**: ITSM-connector is verwijderd.
+## <a name="invalid-refresh-token"></a>Ongeldig vernieuwings token
 
-    **Oplossing**: de ITSM-connector is verwijderd, maar er zijn nog steeds ITSM-actie groepen gekoppeld. Er zijn twee opties om dit probleem op te lossen:
-  * Dergelijke actie groepen zoeken en uitschakelen of verwijderen
-  * [Configureer de actie groep opnieuw voor het](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts) gebruik van een bestaande ITSM-connector.
-  * [Maak een nieuwe ITSM-connector](./itsmc-definition.md#create-an-itsm-connection) en [Configureer de actie groep opnieuw om deze te gebruiken](itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
+**Fout**: AccessToken en RefreshToken zijn ongeldig. De gebruiker moet zich opnieuw verifiëren. "
 
-## <a name="ui-common-errors"></a>Veelvoorkomende fouten in gebruikers interface
+**Oorzaak**: een vernieuwings token is verlopen.
 
-* **Fout**: er is iets verkeerd gegaan. Kan geen verbindings gegevens ophalen. " Deze fout wordt weer gegeven wanneer de klant ITSM-actie groep definieert.
+**Oplossing**: Synchroniseer ITSMC om een nieuw vernieuwings token te genereren, zoals wordt beschreven in [hand matig synchronisatie problemen oplossen](./itsmc-resync-servicenow.md).
 
-    **Oorzaak**: een dergelijke fout wordt weer gegeven wanneer:
-    * De zojuist gemaakte ITSM-connector heeft nog de eerste synchronisatie voltooid.
-    * De connector is niet juist gedefinieerd
+## <a name="missing-connector"></a>Connector ontbreekt
 
-    **Oplossing**: 
-    * Wanneer er een nieuwe ITSM-connector wordt gemaakt, begint ITSM-connector met het synchroniseren van gegevens van ITSM systeem, zoals werk-item sjablonen en werk items. Synchroniseer de ITSM-connector om een nieuw vernieuwings token te genereren, zoals [hier](./itsmc-resync-servicenow.md)wordt uitgelegd.
-    * Controleer de verbindings gegevens in de ITSM-connector, zoals [hier](./itsmc-connections-servicenow.md#create-a-connection) wordt uitgelegd en controleer of uw ITSM-connector kan worden [gesynchroniseerd](./itsmc-resync-servicenow.md).
+**Fout**: kan werk item niet maken/bijwerken voor waarschuwing {alertnaam}. ITSM-connector {connectionIdentifier} bestaat niet of is verwijderd. "
+
+**Oorzaak**: ITSMC is verwijderd.
+
+**Oplossing**: ITSMC is verwijderd, maar de gedefinieerde ITSM-actie groepen (IT Service Management) zijn nog steeds gekoppeld. Er zijn drie opties om dit probleem op te lossen:
+
+* Dergelijke actie groepen zoeken en uitschakelen of verwijderen.
+* [Configureer de actie groepen opnieuw](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts) om een bestaand ITSMC-exemplaar te gebruiken.
+* [Maak een nieuw ITSMC-exemplaar](./itsmc-definition.md#create-an-itsm-connection) en [Configureer de actie groepen opnieuw om het te gebruiken](itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
+
+## <a name="lack-of-connection-details"></a>Geen verbindings Details
+
+**Fout**: er is iets verkeerd gegaan. Kan geen verbindings gegevens ophalen. " Deze fout wordt weer gegeven wanneer u een ITSM-actie groep definieert.
+
+**Oorzaak**: een dergelijke fout wordt weer gegeven in een van de volgende situaties:
+
+* Een nieuw gemaakt ITSM-connector-exemplaar heeft nog de eerste synchronisatie voltooid.
+* De connector is niet op de juiste wijze gedefinieerd.
+
+**Oplossing**: 
+
+* Wanneer een nieuw ITSMC-exemplaar wordt gemaakt, wordt de synchronisatie van gegevens van het ITSM-systeem gestart, zoals werk [SYNCHRONISEER ITSMC om een nieuw vernieuwings token te genereren](./itsmc-resync-servicenow.md).
+* [Controleer uw verbindings gegevens in ITSMC](./itsmc-connections-servicenow.md#create-a-connection) en controleer of de ITSMC kan worden [gesynchroniseerd](./itsmc-resync-servicenow.md).

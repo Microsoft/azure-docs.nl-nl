@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: 6400d3f3c721619551ba3989a2e5799b72ff9f38
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: e485c2f0a7deeffe68c932688658ef099fec510e
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831921"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492752"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -70,7 +70,9 @@ Azure Machine Learning kunt getrainde machine learning modellen implementeren in
     - [Het aantal knoop punten in een AKS-cluster hand matig schalen](../aks/scale-cluster.md)
     - [Automatische cluster schaal instellen in AKS](../aks/cluster-autoscaler.md)
 
-## <a name="azure-kubernetes-service-version"></a>Versie van de Azure Kubernetes-service
+- __Werk het cluster niet rechtstreeks bij met behulp van een yaml-configuratie__. Hoewel Azure Kubernetes Services updates ondersteunt via YAML-configuratie, worden de wijzigingen door Azure Machine Learning implementaties genegeerd. De enige twee YAML-velden die niet worden overschreven, zijn __aanvraag limieten__ en __CPU en geheugen__.
+
+## <a name="azure-kubernetes-service-version"></a>Azure Kubernetes Service-versie
 
 Met de Azure Kubernetes-service kunt u een cluster maken met behulp van verschillende Kubernetes-versies. Zie [ondersteunde Kubernetes-versies in azure Kubernetes service](../aks/supported-kubernetes-versions.md)voor meer informatie over de beschik bare versies.
 
@@ -190,7 +192,7 @@ Voor meer informatie over de klassen, methoden en para meters die in dit voor be
 * [ComputeTarget. Create](/python/api/azureml-core/azureml.core.compute.computetarget?preserve-view=true&view=azure-ml-py#create-workspace--name--provisioning-configuration-)
 * [ComputeTarget.wait_for_completion](/python/api/azureml-core/azureml.core.compute.computetarget?preserve-view=true&view=azure-ml-py#wait-for-completion-show-output-false-)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 az ml computetarget create aks -n myaks
@@ -253,7 +255,7 @@ Voor meer informatie over de klassen, methoden en para meters die in dit voor be
 * [AksCompute.ClusterPurpose](/python/api/azureml-core/azureml.core.compute.aks.akscompute.clusterpurpose?preserve-view=true&view=azure-ml-py)
 * [AksCompute. attach](/python/api/azureml-core/azureml.core.compute.computetarget?preserve-view=true&view=azure-ml-py#attach-workspace--name--attach-configuration-)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een bestaand cluster wilt koppelen met behulp van de CLI, moet u de bron-ID van het bestaande cluster ophalen. Gebruik de volgende opdracht om deze waarde op te halen. Vervang door `myexistingcluster` de naam van uw AKS-cluster. Vervang door `myresourcegroup` de resource groep die het cluster bevat:
 
@@ -366,7 +368,7 @@ Gebruik een van de volgende methoden om een cluster los te koppelen van uw werk 
 aks_target.detach()
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om het bestaande cluster los te koppelen aan uw werk ruimte. Vervang door `myaks` de naam die het AKS-cluster aan uw werk ruimte is gekoppeld. Vervang door `myresourcegroup` de resource groep die uw werk ruimte bevat. Vervang door `myworkspace` de naam van uw werk ruimte.
 
@@ -381,7 +383,6 @@ Selecteer in Azure Machine Learning Studio __Compute__, __clusters__ afstellen e
 ---
 
 ## <a name="troubleshooting"></a>Problemen oplossen
-
 ### <a name="update-the-cluster"></a>Het cluster bijwerken
 
 Updates voor Azure Machine Learning onderdelen die zijn geïnstalleerd in een Azure Kubernetes service-cluster, moeten hand matig worden toegepast. 

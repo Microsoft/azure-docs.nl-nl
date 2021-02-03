@@ -2,6 +2,8 @@
   href: index.yml
 - name: Overzicht
   href: overview.md
+- name: Wat is er nieuw in azure Sentinel?
+  href: whats-new.md
 - name: Snelstartgidsen
   expanded: true
   items:
@@ -225,7 +227,7 @@
           href: livestream.md
     - name: Azure Sentinel verwijderen
       href: offboard.md
-- name: Naslaginformatie
+- name: Referentie
   items:
     - name: Azure RBAC-rollen
       items:

@@ -5,18 +5,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: 89d749a04c22967198be217350ff38751336fe67
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5f694dec6deffde9efb32fefbab91ae3b7a44a2c
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944108"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99490857"
 ---
 # <a name="hdinsight-management-ip-addresses"></a>IP-adressen beheren met HDInsight
 
 In dit artikel vindt u de IP-adressen die worden gebruikt door Azure HDInsight Health and Management Services. Als u netwerk beveiligings groepen (Nsg's) of door de gebruiker gedefinieerde routes (Udr's) gebruikt, moet u mogelijk enkele van deze IP-adressen toevoegen aan de acceptatie lijst voor binnenkomend netwerk verkeer.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
  
 > [!Important]
 > In de meeste gevallen kunt u nu [service Tags](hdinsight-service-tags.md) gebruiken voor netwerk beveiligings groepen, in plaats van het hand matig toevoegen van IP-adressen. IP-adressen worden niet gepubliceerd voor nieuwe Azure-regio's en ze hebben alleen gepubliceerde service tags. De vaste IP-adressen voor beheer-IP-adressen zullen uiteindelijk worden afgeschaft.
@@ -79,6 +79,7 @@ Verkeer toestaan van de IP-adressen die worden vermeld voor de Azure HDInsight-s
 | &nbsp; | Verenigd Koninkrijk Zuid | 51.140.47.39</br>51.140.52.16 | \*: 443 | Inkomend |
 | Verenigde Staten | VS - centraal | 13.89.171.122</br>13.89.171.124 | \*: 443 | Inkomend |
 | &nbsp; | VS - oost | 13.82.225.233</br>40.71.175.99 | \*: 443 | Inkomend |
+| &nbsp; | VS - oost 2 | 20.44.16.8/29</br>20.49.102.48/29 | \*: 443 | Inkomend |
 | &nbsp; | VS - noord-centraal | 157.56.8.38</br>157.55.213.99 | \*: 443 | Inkomend |
 | &nbsp; | VS - west-centraal | 52.161.23.15</br>52.161.10.167 | \*: 443 | Inkomend |
 | &nbsp; | VS - west | 13.64.254.98</br>23.101.196.19 | \*: 443 | Inkomend |

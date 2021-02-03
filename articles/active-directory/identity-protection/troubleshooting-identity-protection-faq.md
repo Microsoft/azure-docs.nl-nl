@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c169847c96d10d1c9fb47b210bc85a15e0690e32
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 6117b1ac78faf84d73f5a78202709aec7a1f84d9
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183112"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492583"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Veelgestelde vragen over identiteits beveiliging in Azure Active Directory
 
@@ -37,7 +37,7 @@ Als u een Azure AD Identity Protection klant bent, gaat u naar de weer gave [Ris
 
 ### <a name="why-was-my-sign-in-blocked-but-identity-protection-didnt-generate-a-risk-detection"></a>Waarom is mijn aanmelding geblokkeerd, maar heeft de identiteits beveiliging geen risico detectie gegenereerd?
 Aanmeldingen kunnen om verschillende redenen worden geblokkeerd. Het is belang rijk te weten dat identiteits beveiliging alleen risico detecties genereert wanneer de juiste referenties worden gebruikt in de verificatie aanvraag. Als een gebruiker onjuiste referenties gebruikt, wordt deze niet gemarkeerd door identiteits beveiliging, omdat er geen risico is op referentie inbreuk, tenzij een ongeldige actor de juiste referenties gebruikt. Er zijn een aantal redenen waarom een gebruiker kan worden geblokkeerd bij het ondertekenen waarbij geen detectie van identiteits beveiliging wordt gegenereerd:
-* De **IP kan worden geblokkeerd** vanwege schadelijke activiteiten van het IP-adres. Het door de IP geblokkeerde bericht niet onderscheidt of de referenties juist zijn of niet. Als het IP-adres wordt geblokkeerd en de juiste referenties niet worden gebruikt, wordt er geen detectie van identiteits beveiliging gegenereerd
+* Het **IP-adres kan worden geblokkeerd** vanwege schadelijke activiteiten van het IP-adressen. Het door de IP geblokkeerde bericht niet onderscheidt of de referenties juist zijn of niet. Als het IP-adres wordt geblokkeerd en de juiste referenties niet worden gebruikt, wordt er geen detectie van identiteits beveiliging gegenereerd
 * **[Slimme vergren deling](../authentication/howto-password-smart-lockout.md)** kan het account blok keren van aanmelden na meerdere mislukte pogingen
 * Een **beleid voor voorwaardelijke toegang** kan worden afgedwongen waarbij andere voor waarden dan risico niveau worden gebruikt voor het blok keren van een verificatie aanvraag
 

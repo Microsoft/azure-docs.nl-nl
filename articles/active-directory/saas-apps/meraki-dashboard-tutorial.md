@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: f635a4c4c6e0b1dcb4d4842d3cddb337d2b26407
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 74009c7e7f2ad28655c9c5322a063a17da96e0c5
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735153"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493902"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-meraki-dashboard"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Meraki Dashboard
 
@@ -103,7 +103,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![SAML-handtekeningcertificaat bewerken](common/edit-certificate.png)
 
-1. Kopieer in de sectie **SAML-handtekeningcertificaat** de **Vingerafdrukwaarde** en sla deze op de computer op.
+1. Kopieer in de sectie **SAML-handtekeningcertificaat** de **Vingerafdrukwaarde** en sla deze op de computer op. Deze waarde moet worden geconverteerd om dubbele punten op te nemen om het dash board van Meraki te kunnen begrijpen. Als de vinger afdruk van Azure bijvoorbeeld is, `C2569F50A4AAEDBB8E` moet deze worden gewijzigd in `C2:56:9F:50:A4:AA:ED:BB:8E` om later in Meraki dash board te gebruiken.
 
     ![Waarde van vingerafdruk kopiëren](common/copy-thumbprint.png)
 
@@ -165,7 +165,7 @@ In deze sectie stelt u in dat B.Simon eenmalige aanmelding van Azure kan gebruik
 
     ![Een SAML-IdP toevoegen op het Meraki-dashboard](./media/meraki-dashboard-tutorial/configure-3.png)
 
-1. Plak de waarde van **Thumbprint**, die u vanuit Azure Portal hebt gekopieerd in het tekstvak **X.590 cert SHA1 fingerprint**. Klik vervolgens op **Opslaan**. Na het opslaan wordt de URL van de consument weergegeven. Kopieer de URL van de consument in het tekstvak **Reply URL** in de sectie **Basic SAML Configuration** in Azure Portal.
+1. Plak de geconverteerde **vingerafdruk** waarde, die u hebt gekopieerd uit de Azure Portal en geconverteerd in de opgegeven indeling, zoals vermeld in stap 9 van de vorige sectie in **X. 590 certificaat SHA1-vingerafdruk** tekst. Klik vervolgens op **Opslaan**. Na het opslaan wordt de URL van de consument weergegeven. Kopieer de URL van de consument in het tekstvak **Reply URL** in de sectie **Basic SAML Configuration** in Azure Portal.
 
     ![Configuratie van Meraki Dashboard](./media/meraki-dashboard-tutorial/configure-4.png)
 

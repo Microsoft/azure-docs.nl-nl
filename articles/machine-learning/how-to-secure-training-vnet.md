@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 131feaf6ff01659b7d126604a5d081275e64508f
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 9ef339fb0ccd14314a65d03b59e501069446c870
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029563"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493834"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Een Azure Machine Learning-trainings omgeving beveiligen met virtuele netwerken
 
@@ -62,16 +62,19 @@ Als u een [beheerd Azure machine learning __Compute-doel__](concept-compute-targ
 > * Als de Azure Storage account (s) voor de werk ruimte ook worden beveiligd in een virtueel netwerk, moeten ze zich in hetzelfde virtuele netwerk bevinden als de Azure Machine Learning Reken instantie of het cluster. 
 > * Zorg ervoor dat de communicatie tussen websockets niet is uitgeschakeld voor de Jupyter-functionaliteit van reken instanties. Zorg ervoor dat uw netwerk WebSocket-verbindingen toestaat naar *. instances.azureml.net en *. instances.azureml.ms. 
 > * Wanneer reken instantie wordt geïmplementeerd in een persoonlijke koppelings werkruimte, kan deze alleen worden geopend vanuit een virtueel netwerk. Als u een aangepast DNS-of hosts-bestand gebruikt, voegt u een vermelding toe voor met het privé `<instance-name>.<region>.instances.azureml.ms` -IP-adres van het persoonlijke eind punt van de werk ruimte. Zie het [aangepaste DNS-](./how-to-custom-dns.md) artikel voor meer informatie.
+> * Het subnet dat wordt gebruikt voor het implementeren van het reken cluster/exemplaar, mag niet worden gedelegeerd naar een andere service, zoals ACI
+> * Het eindpunt beleid van de virtuele netwerk service werkt niet voor reken cluster-en exemplaar systeem opslag accounts
+
     
 > [!TIP]
 > Het Machine Learning Reken exemplaar of cluster wijst automatisch extra netwerk bronnen toe __aan de resource groep die het virtuele netwerk bevat__. Voor elk reken exemplaar of cluster wijst de service de volgende bronnen toe:
 > 
 > * Eén netwerk beveiligings groep
-> * Eén openbaar IP-adres
+> * Eén openbaar IP-adres. Als u het maken van een openbaar IP-adres door Azure Policy hebt toegestaan, mislukt de implementatie van het cluster/de exemplaren
 > * Een load balancer
 > 
 > In het geval van clusters worden deze bronnen verwijderd (en opnieuw gemaakt) elke keer dat het cluster wordt geschaald naar 0 knoop punten, maar voor een instantie waarvan de bronnen worden vastgehouden, is het exemplaar volledig verwijderd (stoppen wordt niet verwijderd uit de resources). 
-> De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement.
+> De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Als de resource groep van het virtuele netwerk is vergrendeld, mislukt de verwijdering van het reken cluster of het exemplaar. De Load Balancer kan pas worden verwijderd als het berekenings cluster/exemplaar is verwijderd.
 
 
 ### <a name="required-ports"></a><a id="mlcports"></a> Vereiste poorten

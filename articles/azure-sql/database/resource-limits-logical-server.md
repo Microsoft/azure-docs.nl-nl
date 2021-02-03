@@ -10,13 +10,13 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
-ms.date: 1/14/2021
-ms.openlocfilehash: e21a5a5be03ffa4ada362247c488ee7d12bd50f7
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.date: 02/02/2021
+ms.openlocfilehash: e8f18f56c746f0d12f43cc2fb6ce9088a9b82b45
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222221"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492379"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Resource limieten voor Azure SQL Database en Azure Synapse Analytics-servers
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -69,7 +69,8 @@ Wanneer u gebruik maakt van hoge ruimte, kunt u onder andere het volgende doen:
 
 - De maximale grootte van de data base of elastische pool verg Roten of meer opslag toevoegen. Zie bronnen van [één data base schalen](single-database-scale.md) en [elastische pool resources schalen](elastic-pool-scale.md).
 - Als de data base zich in een elastische pool bevindt, kan de data base buiten de pool worden geplaatst, zodat de opslag ruimte niet wordt gedeeld met andere data bases.
-- Een Data Base verkleinen om ongebruikte ruimte te claimen. Zie [Bestands ruimte beheren in Azure SQL database](file-space-manage.md) voor meer informatie.
+- Een Data Base verkleinen om ongebruikte ruimte te claimen. Zie [Bestands ruimte beheren in Azure SQL database](file-space-manage.md)voor meer informatie.
+- Controleer of het gebruik van hoge ruimte wordt veroorzaakt door een piek in de grootte van de permanente versie opslag (PVS). PVS maakt deel uit van elke Data Base en wordt gebruikt om  [versneld database herstel](../accelerated-database-recovery.md)te implementeren. Zie [PVS Troubleshooting](https://docs.microsoft.com/sql/relational-databases/accelerated-database-recovery-management#troubleshooting)(Engelstalig) om de huidige grootte van de PVS te bepalen. Een veelvoorkomende reden voor grote PVS is een trans actie die lange tijd (uren) is geopend, waardoor het opruimen van oudere versies in PVS wordt voor komen.
 
 ### <a name="sessions-and-workers-requests"></a>Sessies en werk nemers (aanvragen)
 

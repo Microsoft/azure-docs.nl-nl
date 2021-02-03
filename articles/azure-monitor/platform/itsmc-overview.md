@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 12/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 6d9ad775f91778f95380a19fbe253e2cbbebd3fc
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: ed13837eabadc38cee50efac3b9340c973c8ea70
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736453"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492430"
 ---
 # <a name="it-service-management-connector-overview"></a>Overzicht van IT Service Management-connector
 
@@ -46,7 +46,7 @@ U kunt ITSMC gaan gebruiken door de volgende stappen uit te voeren:
 1. [Stel uw ITSM-omgeving in om waarschuwingen van Azure te accepteren.](./itsmc-connections.md)
 1. [Azure ITSM-oplossing configureren](./itsmc-definition.md#add-it-service-management-connector)
 1. [Configureer de Azure ITSM-connector voor uw ITSM-omgeving.](./itsmc-definition.md#create-an-itsm-connection)
-1. [Configureer de actie groep om gebruik te maken van de ITSM-connector.](./itsmc-definition.md#use-itsmc)
+1. [Configureer de actie groep om gebruik te maken van de ITSM-connector.](./itsmc-definition.md#define-a-template)
 
 ## <a name="next-steps"></a>Volgende stappen
 

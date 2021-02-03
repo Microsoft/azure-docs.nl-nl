@@ -5,19 +5,43 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 01/07/2021
+ms.date: 02/02/2021
 ms.author: tisande
-ms.openlocfilehash: f959e4e230c1d9f89ad5141713b6a17a8cbb17a2
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 1dccb8e51fbc578f8f218fe1582f95f7bcaf42d7
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018901"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493784"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Werken met matrices en objecten in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Een belang rijke functie van de Azure Cosmos DB SQL API is matrix en het maken van objecten.
+Een belang rijke functie van de Azure Cosmos DB SQL API is matrix en het maken van objecten. In dit document worden voor beelden gebruikt die opnieuw kunnen worden gemaakt met behulp van de [Family-gegevensset](sql-query-getting-started.md#upload-sample-data).
+
+Hier volgt een voor beeld van een item in deze gegevensset:
+
+```json
+{
+  "id": "AndersenFamily",
+  "lastName": "Andersen",
+  "parents": [
+     { "firstName": "Thomas" },
+     { "firstName": "Mary Kay"}
+  ],
+  "children": [
+     {
+         "firstName": "Henriette Thaulow",
+         "gender": "female",
+         "grade": 5,
+         "pets": [{ "givenName": "Fluffy" }]
+     }
+  ],
+  "address": { "state": "WA", "county": "King", "city": "Seattle" },
+  "creationDate": 1431620472,
+  "isRegistered": true
+}
+```
 
 ## <a name="arrays"></a>Matrices
 
@@ -177,6 +201,8 @@ U ziet deze uitvoer:
 
 > [!NOTE]
 > Wanneer u het sleutel woord IN gebruikt voor iteratie, kunt u geen eigenschappen meer filteren of projecteren buiten de matrix. In plaats daarvan moet u [samen voegingen](sql-query-join.md)gebruiken.
+
+Lees voor meer voor beelden onze [blog post over het werken met matrices in azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/understanding-how-to-query-arrays-in-azure-cosmos-db/).
 
 ## <a name="next-steps"></a>Volgende stappen
 

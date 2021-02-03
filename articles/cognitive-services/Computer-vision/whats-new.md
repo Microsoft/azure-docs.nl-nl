@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: d59826ba0e53c4b4146c13b354a85a124ac29b23
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: f10319de67a105b4b5e4641c4171ccd0a6e63440
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98738098"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99490874"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
@@ -30,6 +30,12 @@ Er is een nieuwe versie van de [container voor ruimtelijke analyse](spatial-anal
 * [Bewerkingen voor ruimtelijke analyse](spatial-analysis-operations.md) kunnen nu worden geconfigureerd om te detecteren of een persoon gezichtsbedekkende bescherming draagt, zoals een masker. 
     * Voor de bewerkingen `personcount`, `personcrossingline` en `personcrossingpolygon` kan een maskerclassificatie worden ingeschakeld door parameter `ENABLE_FACE_MASK_CLASSIFIER` te configureren.
     * De kenmerken `face_mask` en `face_noMask` worden geretourneerd als metagegevens met een betrouwbaarheidsscore voor elke persoon die in de videostroom wordt gedetecteerd
+* De bewerking *personcrossingpolygon* is uitgebreid om de berekening van de woning tijd van een persoon in een zone mogelijk te maken. U kunt de `type` para meter in de zone configuratie voor de bewerking instellen op `zonedwelltime` en een nieuwe gebeurtenis van het type *personZoneDwellTimeEvent* bevat het `durationMs` veld dat is ingevuld met het aantal milliseconden dat de persoon die aan de zone heeft gewerkt.
+* **Laatste wijziging**: de naam van de gebeurtenis *personZoneEvent* is gewijzigd in *personZoneEnterExitEvent*. Deze gebeurtenis wordt gegenereerd door de *personcrossingpolygon* -bewerking wanneer een persoon de zone invoert of verlaat en de genummerde zijde van de gekruiste zone bevat.
+* De video-URL kan in alle bewerkingen als ' persoonlijke para meter/verborgen ' worden gegeven. De functie voor het maken van een donkere weeres is nu optioneel en werkt alleen als u `KEY` en als `IV` omgevings variabelen hebt ingesteld.
+* Kalibratie is standaard ingeschakeld voor alle bewerkingen. Stel `do_calibration: false` deze optie in op uitschakelen.
+* Er is ondersteuning toegevoegd voor automatisch opnieuw kalibreren (standaard uitgeschakeld) via de `enable_recalibration` para meter. Raadpleeg de [ruimtelijke analyse bewerkingen](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-operations) voor meer informatie
+* Camera kalibratie parameters naar `DETECTOR_NODE_CONFIG` . Raadpleeg de [ruimtelijke analyse bewerkingen](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-operations) voor meer informatie.
 
 
 ## <a name="october-2020"></a>Oktober 2020

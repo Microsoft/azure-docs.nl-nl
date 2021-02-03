@@ -103,6 +103,8 @@
       href: How-To/change-default-answer.md
     - name: Serviceconfiguratie
       href: reference-app-service.md
+    - name: Richtlijnen voor contentindelingen
+      href: reference-document-format-guidelines.md
     - name: Content- en gegevensformaten
       items:
         - name: Richtlijnen voor contentindelingen

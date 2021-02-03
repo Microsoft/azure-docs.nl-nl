@@ -4,12 +4,12 @@ description: Meer informatie over het weer geven en opvragen van Azure Functions
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 14b6ed3964900e3395ca335c301dfd0285da46e7
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 2a991157962b0588e3d49510e8a82a9abcfb9aed
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937294"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493767"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Azure Functions telemetrie in Application Insights analyseren 
 
@@ -77,18 +77,18 @@ Kies **Logboeken** om te verkennen of een query uit te zoeken naar vastgelegde g
 
 Hier volgt een voor beeld van een query waarin de distributie van aanvragen per werk nemer in de afgelopen 30 minuten wordt weer gegeven.
 
-<pre>
+```kusto
 requests
 | where timestamp > ago(30m) 
 | summarize count() by cloud_RoleInstance, bin(timestamp, 1m)
 | render timechart
-</pre>
+```
 
 De tabellen die beschikbaar zijn, worden weer gegeven op het tabblad **schema** aan de linkerkant. In de volgende tabellen vindt u gegevens die zijn gegenereerd door functie aanroepen:
 
 | Tabel | Beschrijving |
 | ----- | ----------- |
-| **traceringen** | Logboeken die zijn gemaakt door de runtime en traceringen van uw functie code. |
+| **traceringen** | Logboeken die zijn gemaakt door de runtime, schaal controller en traceringen van uw functie code. |
 | **aanvragen** | Eén aanvraag voor elke functie aanroep. |
 | **uitzonderingen** | Eventuele uitzonde ringen die worden veroorzaakt door de runtime. |
 | **customMetrics** | Het aantal geslaagde en mislukte aanroepen, succes percentage en duur. |
@@ -99,12 +99,38 @@ De andere tabellen zijn voor beschikbaarheids testen en voor client-en browser-t
 
 In elke tabel bevindt zich een deel van de functions-specifieke gegevens in een `customDimensions` veld.  De volgende query haalt bijvoorbeeld alle traceringen op die logboek niveau hebben `Error` .
 
-<pre>
+```kusto
 traces 
 | where customDimensions.LogLevel == "Error"
-</pre>
+```
 
 De runtime levert de `customDimensions.LogLevel` `customDimensions.Category` velden en. U kunt extra velden opgeven in de logboeken die u in uw functie code schrijft. Zie voor een voor beeld in C# [Structured logging](functions-dotnet-class-library.md#structured-logging) in de .net Class Library-ontwikkelaars handleiding.
+
+## <a name="query-scale-controller-logs"></a>Logboeken voor query Scale-controller
+
+_Deze functie is beschikbaar als preview-versie._
+
+Na het inschakelen van zowel [logboek registratie](configure-monitoring.md#configure-scale-controller-logs) voor de schaal van de controller als [Application Insights-integratie](configure-monitoring.md#enable-application-insights-integration), kunt u de logboeken van de uitgebrachte schaal controller in het Application Insights zoeken naar een query. Schaal controller logboeken worden opgeslagen in de `traces` verzameling onder de categorie **ScaleControllerLogs** .
+
+De volgende query kan worden gebruikt om te zoeken naar alle logboeken van de schaal controller voor de huidige functie-app binnen de opgegeven tijds periode:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+```
+
+Met de volgende query wordt de vorige query uitgebreid om te laten zien hoe u alleen logboeken kunt ophalen die een wijziging in de schaal aangeven:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+| where message == "Instance count changed"
+| extend Reason = CustomDimensions.Reason
+| extend PreviousInstanceCount = CustomDimensions.PreviousInstanceCount
+| extend NewInstanceCount = CustomDimensions.CurrentInstanceCount
+```
 
 ## <a name="consumption-plan-specific-metrics"></a>Verbruiks plan-specifieke metrische gegevens
 

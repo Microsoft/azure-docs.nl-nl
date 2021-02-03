@@ -8,12 +8,12 @@ ms.service: api-management
 ms.topic: article
 ms.date: 12/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 4cde4dadee33ec1c3f91ab4770dbfe697289cef3
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 344500d5635f591b34a45130c7dd6b63659ad84d
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504729"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491006"
 ---
 # <a name="use-named-values-in-azure-api-management-policies"></a>Benoemde waarden gebruiken in azure API Management-beleid
 
@@ -43,7 +43,7 @@ Het gebruik van sleutel kluis geheimen wordt aanbevolen omdat hiermee API Manage
 
 * Geheimen die zijn opgeslagen in sleutel kluizen, kunnen opnieuw worden gebruikt in verschillende services
 * Gedetailleerd [toegangs beleid](../key-vault/general/secure-your-key-vault.md#data-plane-and-access-policies) kan worden toegepast op geheimen
-* Geheimen die in de sleutel kluis zijn bijgewerkt, worden automatisch geroteerd in API Management. Na de update in de sleutel kluis wordt een benoemde waarde in API Management bijgewerkt binnen vier uur. 
+* Geheimen die in de sleutel kluis zijn bijgewerkt, worden automatisch geroteerd in API Management. Na de update in de sleutel kluis wordt een benoemde waarde in API Management bijgewerkt binnen vier uur. U kunt het geheim ook hand matig vernieuwen met behulp van de Azure Portal of via de beheer REST API.
 
 ### <a name="prerequisites-for-key-vault-integration"></a>Vereisten voor sleutel kluis integratie
 
@@ -58,25 +58,16 @@ Het gebruik van sleutel kluis geheimen wordt aanbevolen omdat hiermee API Manage
 
 Als u het sleutel kluis geheim wilt gebruiken, moet u [een benoemde waarde toevoegen of bewerken](#add-or-edit-a-named-value)en een type **sleutel kluis** opgeven. Selecteer het geheim in de sleutel kluis.
 
-> [!CAUTION]
-> Wanneer u een sleutel kluis geheim in API Management gebruikt, moet u ervoor zorgen dat u het geheim, de sleutel kluis of de beheerde identiteit die wordt gebruikt voor toegang tot de sleutel kluis niet verwijdert.
-
-Als [Key Vault firewall](../key-vault/general/network-security.md) is ingeschakeld in uw sleutel kluis, zijn de volgende aanvullende vereisten voor het gebruik van sleutel kluis geheimen:
-
-* U moet de door het **systeem toegewezen** beheerde identiteit van het API Management exemplaar gebruiken voor toegang tot de sleutel kluis.
-* Schakel in Key Vault firewall de optie **vertrouwde micro soft-services mogen deze firewall overs Laan** in.
-
-Als het API Management-exemplaar in een virtueel netwerk is geïmplementeerd, moet u ook de volgende netwerk instellingen configureren:
-* Schakel een [service-eind punt](../key-vault/general/overview-vnet-service-endpoints.md) in om te Azure Key Vault op het API Management subnet.
-* Configureer een regel voor een netwerk beveiligings groep (NSG) om uitgaand verkeer naar de AzureKeyVault-en AzureActiveDirectory- [service Tags](../virtual-network/service-tags-overview.md)toe te staan. 
-
-Zie netwerk configuratie details in [verbinding maken met een virtueel netwerk](api-management-using-with-vnet.md#-common-network-configuration-issues)voor meer informatie.
+[!INCLUDE [api-management-key-vault-network](../../includes/api-management-key-vault-network.md)]
 
 ## <a name="add-or-edit-a-named-value"></a>Een benoemde waarde toevoegen of bewerken
 
 ### <a name="add-a-key-vault-secret"></a>Een sleutel kluis geheim toevoegen
 
 Zie [vereisten voor de integratie van sleutel kluis](#prerequisites-for-key-vault-integration).
+
+> [!CAUTION]
+> Wanneer u een sleutel kluis geheim in API Management gebruikt, moet u ervoor zorgen dat u het geheim, de sleutel kluis of de beheerde identiteit die wordt gebruikt voor toegang tot de sleutel kluis niet verwijdert.
 
 1. Blader in [Azure Portal](https://portal.azure.com) naar uw API Management-exemplaar.
 1. Selecteer onder **api's** de optie **benoemde waarden**  >  **+ toevoegen**.
@@ -109,7 +100,7 @@ Zodra de benoemde waarde is gemaakt, kunt u deze bewerken door de naam te select
 
 In de voor beelden in deze sectie worden de genoemde waarden gebruikt die in de volgende tabel worden weer gegeven.
 
-| Naam               | Waarde                      | Geheim | 
+| Name               | Waarde                      | Geheim | 
 |--------------------|----------------------------|--------|---------|
 | ContosoHeader      | `TrackingId`                 | Niet waar  | 
 | ContosoHeaderValue | ••••••••••••••••••••••     | Waar   | 

@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Aangepaste gebeurtenissen verzenden naar opslagwachtrij - Event Grid, Azure CLI'
 description: 'Quickstart: Gebruik Azure Event Grid en Azure CLI om een onderwerp te publiceren en u te abonneren op deze gebeurtenis. Er wordt een opslagwachtrij gebruikt voor het eindpunt.'
-ms.date: 07/07/2020
+ms.date: 02/02/2021
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4de7aa1c111b5b21a27b155474ae10f78feba083
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
-ms.translationtype: HT
+ms.openlocfilehash: 00808e7eca13824833673ef820d39b70bf618dd2
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566313"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493257"
 ---
 # <a name="quickstart-route-custom-events-to-azure-queue-storage-with-azure-cli-and-event-grid"></a>Quickstart: Aangepaste gebeurtenissen naar Azure Queue Storage routeren met behulp van Azure CLI en Event Grid
 
@@ -116,6 +116,11 @@ done
 Navigeer naar de opslagwachtrij in de portal en u ziet dat Event Grid deze drie gebeurtenissen naar de wachtrij heeft verzonden.
 
 ![Berichten weergeven](./media/custom-event-to-queue-storage/messages.png)
+
+> [!NOTE]
+> Als u een [Azure-wachtrij opslag trigger gebruikt voor Azure functions](../azure-functions/functions-bindings-storage-queue-trigger.md) voor een wachtrij die berichten van Event grid ontvangt, wordt het volgende fout bericht weer gegeven bij de uitvoering van de functie: `The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.`
+> 
+> De reden hiervoor is dat wanneer u een [Azure Queue-opslag trigger](../azure-functions/functions-bindings-storage-queue-trigger.md)gebruikt, Azure functions een **Base64-gecodeerde teken reeks** verwacht, maar Event grid berichten naar een opslag wachtrij verzendt in een tekst zonder opmaak. Het is momenteel niet mogelijk om de wachtrij trigger voor Azure Functions te configureren voor het accepteren van tekst zonder opmaak. 
 
 
 ## <a name="clean-up-resources"></a>Resources opschonen

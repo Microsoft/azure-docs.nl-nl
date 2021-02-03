@@ -3,12 +3,12 @@ title: Resources implementeren in beheer groep
 description: Hierin wordt beschreven hoe u resources kunt implementeren in het bereik van de beheer groep in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: d6c6b925ad1533fc1f3bf490a9b996280164bd57
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: a203dd2c52bdc889452a6755fb025c7ed5721a59
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184013"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491626"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Implementaties van beheer groepen met ARM-sjablonen
 
@@ -112,7 +112,7 @@ Zie voor meer gedetailleerde informatie over implementatie opdrachten en opties 
 
 Voor implementaties op beheer groepniveau moet u een locatie opgeven voor de implementatie. De locatie van de implementatie is gescheiden van de locatie van de resources die u implementeert. De implementatie locatie geeft aan waar de implementatie gegevens moeten worden opgeslagen. Voor [abonnementen](deploy-to-subscription.md) en [Tenant](deploy-to-tenant.md) -implementaties is ook een locatie vereist. Voor implementaties van [resource groepen](deploy-to-resource-group.md) wordt de locatie van de resource groep gebruikt om de implementatie gegevens op te slaan.
 
-U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam **azuredeploy.jsop** implementeert, maakt de standaard implementatie naam **azuredeploy**.
+U kunt een naam opgeven voor de implementatie of de naam van de standaard implementatie gebruiken. De standaard naam is de naam van het sjabloon bestand. Als u bijvoorbeeld een sjabloon met de naam _azuredeploy.jsop_ implementeert, maakt de standaard implementatie naam **azuredeploy**.
 
 Voor elke implementatie naam is de locatie onveranderbaar. U kunt geen implementatie op één locatie maken wanneer er een bestaande implementatie met dezelfde naam op een andere locatie is. Als u bijvoorbeeld een implementatie van een beheer groep maakt met de naam **deployment1** in **centraalus**, kunt u later geen andere implementatie maken met de naam **deployment1** maar een locatie van **westus**. Als u de fout code krijgt `InvalidDeploymentLocation` , moet u een andere naam of dezelfde locatie gebruiken als de vorige implementatie voor die naam.
 
@@ -164,9 +164,9 @@ Voor het gebruik van een implementatie van een beheer groep voor het maken van e
 
 ### <a name="scope-to-tenant"></a>Bereik naar Tenant
 
-U kunt resources maken op de Tenant door de `scope` set in te stellen op `/` . De gebruiker die de sjabloon implementeert, moet de [vereiste toegang hebben om te implementeren op de Tenant](deploy-to-tenant.md#required-access).
+Stel de in op om resources te maken in de Tenant `scope` `/` . De gebruiker die de sjabloon implementeert, moet de [vereiste toegang hebben om te implementeren op de Tenant](deploy-to-tenant.md#required-access).
 
-U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
+Als u een geneste implementatie wilt gebruiken, stelt u `scope` en in `location` .
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/management-group-to-tenant.json" highlight="9,10,14":::
 
@@ -222,7 +222,7 @@ In het volgende voor beeld wordt een nieuwe beheer groep gemaakt in de beheer gr
 
 ## <a name="azure-policy"></a>Azure Policy
 
-Aangepaste beleids definities die worden geïmplementeerd in de beheer groep zijn uitbrei dingen van de beheer groep. Als u de ID van een aangepaste beleids definitie wilt ophalen, gebruikt u de functie [extensionResourceId ()](template-functions-resource.md#extensionresourceid) . Ingebouwde beleids definities zijn resources op Tenant niveau. Als u de ID van een ingebouwde beleids definitie wilt ophalen, gebruikt u de functie [tenantResourceId](template-functions-resource.md#tenantresourceid) .
+Aangepaste beleids definities die worden geïmplementeerd in de beheer groep zijn uitbrei dingen van de beheer groep. Als u de ID van een aangepaste beleids definitie wilt ophalen, gebruikt u de functie [extensionResourceId ()](template-functions-resource.md#extensionresourceid) . Ingebouwde beleids definities zijn resources op Tenant niveau. Als u de ID van een ingebouwde beleids definitie wilt ophalen, gebruikt u de functie [tenantResourceId ()](template-functions-resource.md#tenantresourceid) .
 
 In het volgende voor beeld ziet u hoe u een beleid [definieert](../../governance/policy/concepts/definition-structure.md) op het niveau van de beheer groep en dit toewijst.
 

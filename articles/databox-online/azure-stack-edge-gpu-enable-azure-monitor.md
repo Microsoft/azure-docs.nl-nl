@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: 3485c6ca5c2672fa48b6118a78600b9745994ce1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 171b4dbfb2a5852e270c483a28cad31f97dcb42b
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466443"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493909"
 ---
 # <a name="enable-azure-monitor-on-your-azure-stack-edge-pro-gpu-device"></a>Azure Monitor op uw Azure Stack Edge Pro GPU-apparaat inschakelen
 
@@ -30,7 +30,7 @@ Voordat u begint, hebt u het volgende nodig:
 - U hebt de stappen voor het configureren van de **reken** procedure voltooid volgens de [zelf studie: Configureer Compute op uw Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-deploy-configure-compute.md) op uw apparaat. Op uw apparaat moet een IoT Hub resource, een IoT-apparaat en een IoT Edge apparaat zijn geïnstalleerd.
 
 
-## <a name="create-log-analytics-workspace"></a>Log Analytics-werk ruimte maken.
+## <a name="create-log-analytics-workspace"></a>Een Log Analytics-werkruimte maken
 
 Voer de volgende stappen uit om een log Analytics-werk ruimte te maken. Een log Analytics-werk ruimte is een logische opslag eenheid waar de logboek gegevens worden verzameld en opgeslagen.
 
@@ -118,8 +118,8 @@ Voer de volgende stappen uit om container Insights in te scha kelen in uw werk r
 
 1. De resource-ID en-locatie ophalen. Ga naar `Your Log Analytics workspace > General > Properties`. Kopieer de volgende gegevens:
 
-    - **resource-id** . Dit is de volledig gekwalificeerde Azure-resource-id van de Azure log Analytics-werk ruimte. 
-    - de **locatie** van de Azure-regio.
+    - **resource-id**: dit is de volledig gekwalificeerde Azure-resource-id van de Azure log Analytics-werk ruimte. 
+    - **locatie**, de Azure-regio.
 
     ![Eigenschappen van Log Analytics werk ruimte](media/azure-stack-edge-gpu-enable-azure-monitor/log-analytics-workspace-properties-1.png) 
 
@@ -241,3 +241,4 @@ Voer de volgende stappen uit om container Insights in te scha kelen in uw werk r
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [het bewaken van Kubernetes-workloads via het Kubernetes-dash board](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md).
+- Meer informatie over het [beheren van waarschuwings meldingen voor gebeurtenis apparaten](azure-stack-edge-gpu-manage-device-event-alert-notifications.md). 

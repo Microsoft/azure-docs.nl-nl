@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 04/15/2019
+ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: cd75eb0f7de602979f2233a873c01ef742471e37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 388be1b13f89a50bed003731c01c6ab6287faaf9
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904402"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491061"
 ---
 # <a name="monitor-your-azure-stack-edge-pro"></a>Uw Azure Stack Edge Pro bewaken
 
@@ -26,7 +26,6 @@ In dit artikel leert u het volgende:
 > * De gebeurtenissen van het apparaat en de bijbehorende waarschuwingen weer geven
 > * De apparaatstatus van de onderdelen van apparaten weer geven
 > * Metrische gegevens over capaciteit en trans acties voor uw apparaat weer geven
-> * Waarschuwingen configureren en beheren
 
 ## <a name="view-device-events"></a>Faxgebeurtenissen weer geven
 
@@ -59,29 +58,26 @@ In de volgende tabel ziet u een volledige lijst met metrische gegevens:
 
 |Metrische gegevens over capaciteit                     |Beschrijving  |
 |-------------------------------------|-------------|
-|**Beschik bare capaciteit**               | Verwijst naar de grootte van de gegevens die naar het apparaat kunnen worden geschreven. Met andere woorden, dit is de capaciteit die beschikbaar kan worden gemaakt op het apparaat. <br></br>U kunt de capaciteit van het apparaat vrijmaken door de lokale kopie van bestanden te verwijderen die zowel op het apparaat als in de Cloud zijn gekopieerd.        |
-|**Totale capaciteit**                   | Verwijst naar het totale aantal bytes op het apparaat om gegevens naar te schrijven. Dit wordt ook wel de totale grootte van de lokale cache genoemd. <br></br> U kunt nu de capaciteit van een bestaand virtueel apparaat verg Roten door een gegevens schijf toe te voegen. Voeg een gegevens schijf toe via het Hyper Visor beheer voor de virtuele machine en start vervolgens de virtuele machine opnieuw op. De lokale opslag groep van het gateway-apparaat wordt uitgebreid met de nieuwe toegevoegde gegevens schijf. <br></br>Ga voor meer informatie naar [een harde schijf toevoegen voor Hyper-V virtuele machine](https://www.youtube.com/watch?v=EWdqUw9tTe4). |
+|**Beschik bare capaciteit**               | Verwijst naar de grootte van de gegevens die naar het apparaat kunnen worden geschreven. Met andere woorden, deze metriek is de capaciteit die beschikbaar kan worden gemaakt op het apparaat. <br></br>U kunt de capaciteit van het apparaat vrijmaken door de lokale kopie van bestanden te verwijderen die een kopie hebben op het apparaat en in de Cloud.        |
+|**Totale capaciteit**                   | Verwijst naar het totale aantal bytes op het apparaat waarnaar gegevens worden geschreven. dit wordt ook wel de totale grootte van de lokale cache genoemd. <br></br> U kunt nu de capaciteit van een bestaand virtueel apparaat verg Roten door een gegevens schijf toe te voegen. Voeg een gegevens schijf toe via het Hyper Visor beheer voor de virtuele machine en start vervolgens de virtuele machine opnieuw op. De lokale opslag groep van het gateway-apparaat wordt uitgebreid met de nieuwe toegevoegde gegevens schijf. <br></br>Ga voor meer informatie naar [een harde schijf toevoegen voor Hyper-V virtuele machine](https://www.youtube.com/watch?v=EWdqUw9tTe4). |
 
 |Metrische gegevens voor transacties              | Beschrijving         |
 |-------------------------------------|---------|
 |**Geüploade Cloud bytes (apparaat)**    | Som van alle bytes die zijn geüpload over alle shares op uw apparaat        |
-|**Geüploade Cloud bytes (delen)**     | Geüploade bytes per share. Dit kan zijn: <br></br> Gem. Dit is het (de som van alle geüploade bytes per share/aantal shares),  <br></br>Max. Dit is het maximum aantal bytes dat van een share is geüpload <br></br>Min. Dit is het minimum aantal bytes dat van een share is geüpload      |
-|**Door Voer van Cloud downloaden (delen)**| Geladen bytes per share. Dit kan zijn: <br></br> Gem. Dit is de (som van alle bytes die worden gelezen of gedownload naar een share/aantal shares) <br></br> Max. Dit is het maximum aantal bytes dat is gedownload van een share<br></br> en min. Dit is het minimum aantal bytes dat is gedownload van een share  |
+|**Geüploade Cloud bytes (delen)**     | Geüploade bytes per share. Deze waarde kan zijn: <br></br> Gem. Dit is het (de som van alle geüploade bytes per share/aantal shares),  <br></br>Max. Dit is het maximum aantal bytes dat van een share is geüpload <br></br>Min. Dit is het minimum aantal bytes dat van een share is geüpload      |
+|**Door Voer van Cloud downloaden (delen)**| Geladen bytes per share. Deze waarde kan zijn: <br></br> Gem. Dit is de (som van alle bytes die worden gelezen of gedownload naar een share/aantal shares) <br></br> Max. Dit is het maximum aantal bytes dat is gedownload van een share<br></br> en min. Dit is het minimum aantal bytes dat is gedownload van een share  |
 |**Lees doorvoer voor Cloud**            | Som van alle bytes die in de Cloud zijn gelezen over alle shares op uw apparaat     |
 |**Upload doorvoer van Cloud**          | Som van alle bytes die in de Cloud zijn geschreven over alle shares op uw apparaat     |
 |**Upload doorvoer van Cloud (delen)**  | De som van alle bytes die naar de cloud worden geschreven vanuit een share/aantal shares is gemiddeld, Max en min per aandeel      |
-|**Lees doorvoer (netwerk)**           | Bevat de systeem netwerk doorvoer voor alle bytes die in de Cloud zijn gelezen. Deze weer gave kan gegevens bevatten die niet zijn beperkt tot shares. <br></br>Bij het splitsen wordt het verkeer voor alle netwerk adapters op het apparaat weer gegeven. Dit omvat adapters die niet zijn verbonden of ingeschakeld.      |
-|**Schrijf doorvoer (netwerk)**       | Bevat de systeem netwerk doorvoer voor alle bytes die worden geschreven naar de Cloud. Deze weer gave kan gegevens bevatten die niet zijn beperkt tot shares. <br></br>Bij het splitsen wordt het verkeer voor alle netwerk adapters op het apparaat weer gegeven. Dit omvat adapters die niet zijn verbonden of ingeschakeld.          |
+|**Lees doorvoer (netwerk)**           | Bevat de systeem netwerk doorvoer voor alle bytes die in de Cloud zijn gelezen. Deze weer gave kan gegevens bevatten die niet zijn beperkt tot shares. <br></br>Bij het splitsen wordt het verkeer voor alle netwerk adapters op het apparaat weer gegeven, met inbegrip van adapters die niet zijn verbonden of ingeschakeld.      |
+|**Schrijf doorvoer (netwerk)**       | Bevat de systeem netwerk doorvoer voor alle bytes die worden geschreven naar de Cloud. Deze weer gave kan gegevens bevatten die niet zijn beperkt tot shares. <br></br>Bij het splitsen wordt het verkeer voor alle netwerk adapters op het apparaat weer gegeven, met inbegrip van adapters die niet zijn verbonden of ingeschakeld.          |
 
 | Metrische reken gegevens              | Beschrijving         |
 |-------------------------------------|---------|
 |**Edge Compute-geheugen gebruik**      |           |
 |**Edge Compute-percentage CPU**    |         |
 
-## <a name="manage-alerts"></a>Waarschuwingen beheren
-
-[!INCLUDE [Supported OS for clients connected to device](../../includes/data-box-edge-gateway-manage-alerts.md)]
-
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over [Bandbreedte beheren](azure-stack-edge-manage-bandwidth-schedules.md).
+Meer informatie over het [beheren van waarschuwings meldingen voor gebeurtenis apparaten](azure-stack-edge-gpu-manage-device-event-alert-notifications.md).

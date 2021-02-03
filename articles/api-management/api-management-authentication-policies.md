@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/12/2020
+ms.date: 01/27/2021
 ms.author: apimpm
-ms.openlocfilehash: 44ebd2d3084ab8df63f2c941e6e924e6f2a86d65
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 22d2960801cac2222f868c384a55b4bf436bc75b
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071282"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492600"
 ---
 # <a name="api-management-authentication-policies"></a>API Management-verificatiebeleid
 In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids regels. Zie [beleid in API Management](./api-management-policies.md)voor meer informatie over het toevoegen en configureren van beleid.
@@ -67,7 +67,10 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 -   **Beleids bereik:** alle bereiken
 
 ##  <a name="authenticate-with-client-certificate"></a><a name="ClientCertificate"></a> Verifiëren met client certificaat
- Gebruik het `authentication-certificate` beleid om te verifiëren met een back-end-service met behulp van het client certificaat. Het certificaat moet eerst worden [geïnstalleerd in API Management](./api-management-howto-mutual-certificates.md) en wordt geïdentificeerd door de vinger afdruk.
+ Gebruik het `authentication-certificate` beleid om met een back-end-service te verifiëren met behulp van een client certificaat. Het certificaat moet eerst worden [geïnstalleerd in API Management](./api-management-howto-mutual-certificates.md) en wordt geïdentificeerd aan de hand van de vinger afdruk of certificaat-id (resource naam). 
+
+> [!CAUTION]
+> Als het certificaat verwijst naar een certificaat dat is opgeslagen in Azure Key Vault, identificeert u dit met de certificaat-ID. Wanneer een sleutel kluis certificaat wordt geroteerd, wordt de vinger afdruk in API Management gewijzigd en wordt het nieuwe certificaat niet door het beleid omgezet als dit wordt geïdentificeerd door de vinger afdruk.
 
 ### <a name="policy-statement"></a>Beleids verklaring
 
@@ -77,18 +80,17 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 
 ### <a name="examples"></a>Voorbeelden
 
-In dit voor beeld wordt het client certificaat aangeduid met de vinger afdruk:
-
-```xml
-<authentication-certificate thumbprint="CA06F56B258B7A0D4F2B05470939478651151984" />
-```
-
-In dit voor beeld wordt het client certificaat aangeduid met de naam van de resource:
+In dit voor beeld wordt het client certificaat aangeduid met de certificaat-ID:
 
 ```xml  
 <authentication-certificate certificate-id="544fe9ddf3b8f30fb490d90f" />  
 ``` 
 
+In dit voor beeld wordt het client certificaat aangeduid met de vinger afdruk:
+
+```xml
+<authentication-certificate thumbprint="CA06F56B258B7A0D4F2B05470939478651151984" />
+```
 In dit voor beeld wordt het client certificaat ingesteld in het beleid in plaats van opgehaald uit het ingebouwde certificaat archief:
 
 ```xml
@@ -200,4 +202,4 @@ Zie voor meer informatie over het gebruik van beleid:
 + [Beleid in API Management](api-management-howto-policies.md)
 + [Api's transformeren](transform-api.md)
 + [Beleids verwijzing](./api-management-policies.md) voor een volledige lijst met beleids instructies en hun instellingen
-+ [Voor beelden van beleid](./policy-reference.md)
++ [Voorbeelden van beleid](./policy-reference.md)

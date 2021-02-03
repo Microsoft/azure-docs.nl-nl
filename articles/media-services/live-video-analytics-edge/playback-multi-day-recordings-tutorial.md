@@ -3,12 +3,12 @@ title: Opnamen van meerdere dagen afspelen - Azure
 description: In deze zelfstudie leert u hoe u Azure Media Service-API's gebruikt om een continue video-opname van meerdere dagen af te spelen.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 1ec9260be7241057478b06446ac2aa53c14bcb47
-ms.sourcegitcommit: 23aa0cf152b8f04a294c3fca56f7ae3ba562d272
-ms.translationtype: HT
+ms.openlocfilehash: 81a778b40649c1318b3738a289f0db37fd35376a
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91803429"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492786"
 ---
 # <a name="tutorial-playback-of-multi-day-recordings"></a>Zelfstudie: Opnamen van meerdere dagen afspelen  
 
@@ -57,7 +57,7 @@ Als onderdeel van de [zelfstudie voor CVR](continuous-video-recording-tutorial.m
 }
 ```
 
-Open vervolgens in Visual Studio Code de map src/ams-asset-player. Deze map bevat de bestanden die nodig zijn voor deze zelfstudie. Open het bestand appSettings.json en kopieer de inhoud naar een nieuw bestand, appsettings.development.json. Voer de volgende bewerkingen uit in het laatste bestand:
+Open vervolgens in Visual Studio Code de map src/ams-asset-player. Deze map bevat de bestanden die nodig zijn voor deze zelfstudie. Open het bestand appSettings.json en kopieer de inhoud naar een nieuw bestand, appsettings.development.json. Maak de volgende bewerkingen voor de nieuwe appsettings.development.jsop:
 
 ```
   "AMS" : {
@@ -78,7 +78,7 @@ Open vervolgens in Visual Studio Code de map src/ams-asset-player. Deze map beva
 1. Zoek 'Uitgebreid bericht tonen' en schakel deze optie in.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Extensie-instellingen":::
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
 1. <!--In Visual Studio Code, you can click-->Klik aan de linkerkant op het pictogram Uitvoeren (of Ctrl + Shift + D) om de beschikbare toepassingen te tonen die kunnen worden uitgevoerd:
 
     ![In de schermafbeelding wordt een menu weergegeven in Visual Studio Code; Item uitvoeren is geselecteerd.](./media/playback-multi-day-recordings-tutorial/run.png)

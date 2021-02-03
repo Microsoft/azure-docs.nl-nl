@@ -3,12 +3,12 @@ title: Sjabloon functies in implementaties met een bereik
 description: Hierin wordt beschreven hoe sjabloon functies worden omgezet in implementaties met een bereik. Het bereik kan een Tenant, beheer groepen, abonnementen en resource groepen zijn.
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: cb02a3dc808604a80fd9943138c1cd0d8648904e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: f128448380612bc9b8d9114226e8a3036feeead8
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681589"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492090"
 ---
 # <a name="arm-template-functions-in-deployment-scopes"></a>ARM-sjabloon functies in implementatie bereiken
 
@@ -40,15 +40,15 @@ Wanneer u implementeert in verschillende bereiken, zijn er enkele belang rijke a
 * Gebruik de functie [extensionResourceId ()](template-functions-resource.md#extensionresourceid) voor resources die zijn geïmplementeerd als uitbrei dingen van de beheer groep. Aangepaste beleids definities die worden geïmplementeerd in de beheer groep zijn uitbrei dingen van de beheer groep.
 
   Als u de resource-ID voor een aangepaste beleids definitie op het niveau van de beheer groep wilt ophalen, gebruikt u:
-  
+
   ```json
   "policyDefinitionId": "[extensionResourceId(variables('mgScope'), 'Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
   ```
 
-* Gebruik de functie [tenantResourceId](template-functions-resource.md#tenantresourceid) om de id op te halen voor een resource die is geïmplementeerd op de Tenant. Ingebouwde beleids definities zijn resources op Tenant niveau. Wanneer u een ingebouwd beleid toewijst op het niveau van de beheer groep, gebruikt u de functie tenantResourceId.
+* Gebruik de functie [tenantResourceId ()](template-functions-resource.md#tenantresourceid) om de id op te halen van een resource die is geïmplementeerd op de Tenant. Ingebouwde beleids definities zijn resources op Tenant niveau. Wanneer u een ingebouwd beleid toewijst op het niveau van de beheer groep, gebruikt u de functie tenantResourceId.
 
   Als u de resource-ID voor een ingebouwde beleids definitie wilt ophalen, gebruikt u:
-  
+
   ```json
   "policyDefinitionId": "[tenantResourceId('Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
   ```
@@ -98,7 +98,7 @@ De uitvoer van het vorige voor beeld is:
  linkedRG         String                     Linked resource group is linkedgroup
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group create --name parentGroup --location southcentralus
@@ -138,6 +138,6 @@ De uitvoer van het vorige voor beeld is:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht in de structuur en syntaxis van Azure Resource Manager sjablonen](template-syntax.md)voor meer informatie over het definiëren van para meters in uw sjabloon.
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor informatie over het definiëren van para meters in uw sjabloon.
 * Zie [problemen met algemene Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor tips over het oplossen van veelvoorkomende implementatie fouten.
-* Zie voor meer informatie over het implementeren van een sjabloon waarvoor een SAS-token is vereist een [persoonlijke sjabloon implementeren met SAS-token](secure-template-with-sas-token.md).
+* Zie voor meer informatie over het implementeren van een sjabloon waarvoor een SAS-token is vereist een [persoonlijke arm-sjabloon implementeren met SAS-token](secure-template-with-sas-token.md).

@@ -4,15 +4,15 @@ description: Hierin worden gegevens bronnen en connectors beschreven die worden 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 02/02/2021
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b778cf55ea485d7b3b4d3730d3659750f27b2697
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6e558962ad8a84b5f44abe21bc7c0ab67a4861ba
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685592"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493817"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Ondersteunde gegevensbronnen in Azure Analysis Services
 
@@ -128,7 +128,9 @@ Provider=MSOLEDBSQL;Data Source=[server];Initial Catalog=[database];Authenticati
 
 ## <a name="oauth-credentials"></a>OAuth-referenties
 
-Voor modellen in tabel vorm met het compatibiliteits niveau 1400 en hoger met behulp van de in-Memory modus, Azure SQL Database, Azure Synapse, Dynamics 365 en share Point List ondersteunen OAuth-referenties. Azure Analysis Services beheert het vernieuwen van tokens voor OAuth-gegevens bronnen om time-outs voor langdurige vernieuwings bewerkingen te voor komen. Als u geldige tokens wilt genereren, stelt u referenties in met behulp van Power Query.
+Voor modellen in tabel vorm met het compatibiliteits niveau 1400 en hoger met behulp *van de in-Memory* modus, Azure SQL database, Azure Synapse, Dynamics 365 en share Point List ondersteunen OAuth-referenties. Als u geldige tokens wilt genereren, stelt u referenties in met behulp van Power Query. Azure Analysis Services beheert het vernieuwen van tokens voor OAuth-gegevens bronnen om time-outs voor langdurige vernieuwings bewerkingen te voor komen. 
+> [!NOTE]
+> Het vernieuwen van beheerde tokens wordt niet ondersteund voor gegevens bronnen die toegankelijk zijn via een gateway. Een of meer mashup-query gegevens bronnen zijn bijvoorbeeld toegankelijk via een gateway en/of de eigenschap [ASPaaS\AlwaysUseGateway](analysis-services-vnet-gateway.md) is ingesteld op **True**. 
 
 De direct query-modus wordt niet ondersteund met OAuth-referenties.
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 79706b66dba46253843b1f53a26481170d6ff723
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 907a78b15cca4718308f79bc6be2e6258bc04d19
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97729666"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492668"
 ---
 # <a name="connect-system-center-service-manager-with-it-service-management-connector"></a>System Center Service Manager verbinden met IT Service Management-connector
 
@@ -32,7 +32,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 
 > [!NOTE]
 > - ITSM-connector kan alleen verbinding maken met ServiceNow-exemplaren op basis van de Cloud. On-premises ServiceNow-instanties worden momenteel niet ondersteund.
-> - Als u aangepaste [sjablonen](./itsmc-definition.md#template-definitions) wilt gebruiken als onderdeel van de acties, moet de para meter "ProjectionType" in de sjabloon SCSM worden toegewezen aan "IncidentManagement! System. WorkItem. incident. ProjectionType "
+> - Als u aangepaste [sjablonen](./itsmc-definition.md#define-a-template) wilt gebruiken als onderdeel van de acties, moet de para meter "ProjectionType" in de sjabloon SCSM worden toegewezen aan "IncidentManagement! System. WorkItem. incident. ProjectionType "
 
 ## <a name="connection-procedure"></a>Verbindings procedure
 
@@ -165,6 +165,6 @@ In de volgende voorbeeld afbeelding ziet u de details van een geslaagde verbindi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Overzicht van ITSM-connector](itsmc-overview.md)
+* [ITSM-connectoroverzicht](itsmc-overview.md)
 * [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts)
 * [Problemen oplossen in ITSM-connector](./itsmc-resync-servicenow.md)

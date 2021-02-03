@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
-ms.date: 04/15/2020
+ms.date: 02/02/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: d855e124c84dee8554073d05fa04fe078b92ddaa
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: cb7acb2ab74cc3f1304e5278524918865185463f
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208886"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491296"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Azure Active Directory-app-manifest
 
@@ -105,7 +105,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| allowPublicClient | Boolean |
+| allowPublicClient | Booleaans |
 
 Hiermee wordt het type terugval toepassing opgegeven. Azure AD leidt het toepassings type standaard af van de replyUrlsWithType. Er zijn bepaalde scenario's waarin het app-type van de client niet kan worden bepaald door Azure AD. Een voor beeld hiervan is de [ROPC](https://tools.ietf.org/html/rfc6749#section-4.3) -stroom waarbij een HTTP-aanvraag wordt uitgevoerd zonder URL-omleiding). In dergelijke gevallen interpreteert Azure AD het toepassings type op basis van de waarde van deze eigenschap. Als deze waarde is ingesteld op True, wordt het type terugval toepassing ingesteld als open bare client, zoals een geïnstalleerde app die wordt uitgevoerd op een mobiel apparaat. De standaard waarde is False. Dit betekent dat het type terugval toepassing vertrouwelijk is, zoals web-app.
 
@@ -315,7 +315,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| oauth2AllowImplicitFlow | Boolean |
+| oauth2AllowImplicitFlow | Booleaans |
 
 Hiermee geeft u op of deze web-app OAuth 2.0 impliciet flow-toegangs tokens kan aanvragen. De standaardwaarde is false. Deze markering wordt gebruikt voor apps die zijn gebaseerd op de browser, zoals Java script-apps met één pagina. Als u meer wilt weten, voert u `OAuth 2.0 implicit grant flow` in de inhouds opgave in en raadpleegt u de onderwerpen over impliciete stroom.
 
@@ -329,7 +329,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| oauth2AllowIdTokenImplicitFlow | Boolean |
+| oauth2AllowIdTokenImplicitFlow | Booleaans |
 
 Hiermee geeft u op of deze web-app OAuth 2.0 impliciete stroom-ID-tokens kan aanvragen. De standaardwaarde is false. Deze markering wordt gebruikt voor apps die zijn gebaseerd op de browser, zoals Java script-apps met één pagina.
 
@@ -368,7 +368,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| oauth2RequiredPostResponse | Boolean |
+| oauth2RequiredPostResponse | Booleaans |
 
 Hiermee geeft u op of door Azure AD POST-aanvragen worden toegestaan als onderdeel van OAuth 2,0-token aanvragen. De standaard waarde is False. Hiermee wordt aangegeven dat alleen GET-aanvragen worden toegestaan.
 
@@ -450,7 +450,7 @@ Het geverifieerde uitgevers domein voor de toepassing. Alleen-lezen.
 Voorbeeld:
 
 ```json
-    "publisherDomain": "https://www.contoso.com",
+    "publisherDomain": "{tenant}.onmicrosoft.com",
 ```
 
 ### <a name="replyurlswithtype-attribute"></a>replyUrlsWithType-kenmerk

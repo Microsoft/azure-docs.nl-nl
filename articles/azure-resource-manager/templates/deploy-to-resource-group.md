@@ -3,12 +3,12 @@ title: Resources implementeren in resource groepen
 description: Hierin wordt beschreven hoe u resources in een Azure Resource Manager sjabloon implementeert. U ziet hoe u meer dan één resource groep kunt bereiken.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: 9eb70e5ce69a2c7bc7ac9b8c9a7a558d09ecbef0
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: c3401346f31d34d92da1f52ca79f691e94e7eb78
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186223"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491551"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Implementaties van resource groepen met ARM-sjablonen
 
@@ -128,9 +128,9 @@ Zie [resource groep maken](#create-resource-group)voor een voorbeeld sjabloon.
 
 ### <a name="scope-to-tenant"></a>Bereik naar Tenant
 
-U kunt resources maken op de Tenant door de `scope` set in te stellen op `/` . De gebruiker die de sjabloon implementeert, moet de [vereiste toegang hebben om te implementeren op de Tenant](deploy-to-tenant.md#required-access).
+Stel de in op om resources te maken in de Tenant `scope` `/` . De gebruiker die de sjabloon implementeert, moet de [vereiste toegang hebben om te implementeren op de Tenant](deploy-to-tenant.md#required-access).
 
-U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
+Als u een geneste implementatie wilt gebruiken, stelt u `scope` en in `location` .
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-to-tenant.json" highlight="9,10,14":::
 
@@ -142,7 +142,7 @@ Zie [beheer groep](deploy-to-management-group.md#management-group)voor meer info
 
 ## <a name="deploy-to-target-resource-group"></a>Implementeren naar doel resource groep
 
-Als u resources wilt implementeren in de doel resource groep, definieert u deze resources in het gedeelte **resources** van de sjabloon. Met de volgende sjabloon maakt u een opslag account in de resource groep die is opgegeven in de implementatie bewerking.
+Als u resources wilt implementeren in de doel resource groep, definieert u deze resources in de `resources` sectie van de sjabloon. Met de volgende sjabloon maakt u een opslag account in de resource groep die is opgegeven in de implementatie bewerking.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json":::
 

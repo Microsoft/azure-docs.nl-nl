@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: overview
 ms.date: 10/13/2020
 ms.author: cherylmc
-ms.openlocfilehash: f4aa1ef29ffb27efb29d969e48af4cf5288e08ae
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 18672d76c262f8919489ccf132532c117666abe4
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183883"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492175"
 ---
 # <a name="what-is-azure-bastion"></a>Wat is Azure Bastion?
 
@@ -30,7 +30,7 @@ RDP en SSH zijn twee van de fundamentele middelen waarmee u verbinding kunt make
 
 In deze afbeelding ziet u de architectuur van een Azure Bastion-implementatie. In dit diagram:
 
-* Is de Bastion-host geïmplementeerd in het virtuele netwerk.
+* De bastion-host wordt geïmplementeerd in het virtuele netwerk dat het AzureBastionSubnet-subnet bevat met een minimum/27-voor voegsel.
 * Maakt de gebruiker verbinding met Azure Portal met behulp van een HTML5-browser.
 * Selecteert de gebruiker de virtuele machine waarmee verbinding moet worden gemaakt.
 * Wordt de RDP-/SSH-sessie met één klik geopend in de browser.

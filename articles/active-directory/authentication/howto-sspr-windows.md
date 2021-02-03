@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 478ae6146caeb8a27cdaf13b7f33e421b8121afc
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: fa2d910c017d3cc626f737bdab50315aef8d1e77
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741487"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491382"
 ---
 # <a name="enable-azure-active-directory-self-service-password-reset-at-the-windows-sign-in-screen"></a>Schakel Azure Active Directory selfservice voor wachtwoord herstel in op het Windows-aanmeldings scherm
 
@@ -40,7 +40,7 @@ De volgende beperkingen zijn van toepassing op het gebruik van SSPR in het Windo
 - Hybride Azure AD-computers moeten over een netwerk verbinding beschikken om het nieuwe wacht woord te kunnen gebruiken en referenties in de cache op te slaan. Dit betekent dat apparaten op het interne netwerk van de organisatie of op een VPN met netwerk toegang tot een on-premises domein controller moeten zijn.
 - Als u een installatie kopie gebruikt voordat u Sysprep uitvoert, moet u ervoor zorgen dat de webcache voor de ingebouwde beheerder is gewist voordat u de stap CopyProfile uitvoert. Meer informatie over deze stap vindt u in de ondersteunings artikelen [verslechte prestaties bij gebruik van aangepast standaard gebruikers profiel](https://support.microsoft.com/help/4056823/performance-issue-with-custom-default-user-profile).
 - De volgende instellingen zijn bekend om te voor komen dat wacht woorden op Windows 10-apparaten kunnen worden gebruikt en opnieuw worden ingesteld:
-    - Als Ctrl + Alt + del is vereist voor het beleid in versies van Windows 10 vóór v1909, werkt **wacht woord opnieuw instellen** niet.
+    - Als Ctrl + Alt + del is vereist voor het beleid in Windows 10, werkt **wacht woord opnieuw instellen** niet.
     - Als er meldingen op het vergrendelings scherm zijn uitgeschakeld, werkt **wacht woord opnieuw instellen** niet.
     - *HideFastUserSwitching* is ingesteld op ingeschakeld of 1
     - *DontDisplayLastUserName* is ingesteld op ingeschakeld of 1
@@ -51,6 +51,10 @@ De volgende beperkingen zijn van toepassing op het gebruik van SSPR in het Windo
     - Interactieve aanmelding: CTRL + ALT + DEL = disabled is uitgeschakeld
     - *DisableLockScreenAppNotifications* = 1 of ingeschakeld
     - Windows SKU is niet Home of Professional Edition
+
+> [!NOTE]
+> Deze beperkingen zijn ook van toepassing op de pincode van Windows hello voor bedrijven reset op het vergrendelings scherm van het apparaat.
+>
 
 ## <a name="windows-10-password-reset"></a>Windows 10-wacht woord opnieuw instellen
 
@@ -75,8 +79,8 @@ Het implementeren van de configuratie wijziging om SSPR in te scha kelen vanuit 
 #### <a name="create-a-device-configuration-policy-in-intune"></a>Een beleid voor apparaatconfiguratie maken in Intune
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en selecteer **intune**.
-1. Maak een nieuw configuratie profiel voor het apparaat door naar **configuratie** profielen voor apparaten te gaan  >  **Profiles** en vervolgens **+ profiel maken** te selecteren.
-   - Kies **Platform** voor platform *Windows 10 en hoger*
+1. Maak een nieuw configuratie profiel voor het apparaat door naar **configuratie** profielen voor apparaten te gaan  >  en vervolgens **+ profiel maken** te selecteren.
+   - Kies  voor platform *Windows 10 en hoger*
    - Kies bij **profiel type** de optie *aangepast*
 1. Selecteer **maken** en geef een beschrijvende naam op voor het profiel, zoals *Windows 10-aanmeld scherm SSPR*
 

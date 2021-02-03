@@ -4,7 +4,7 @@
   items:
     - name: Over Lab-Services
       href: lab-services-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Aan de slag
       href: get-started-manage-labs.md
@@ -58,6 +58,8 @@
               href: class-type-matlab.md
             - name: SolidWorks computer-aided design (CAD)
               href: class-type-solidworks.md
+            - name: Netwerken met GNS3
+              href: class-type-networking-gns3.md
             - name: Lead The Way-project
               href: class-type-pltw.md
         - name: Azure Lab Services gebruiken binnen Teams

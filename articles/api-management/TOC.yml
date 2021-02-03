@@ -68,6 +68,8 @@
           href: ./security-controls-policy.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
+    - name: Back-ends
+      href: backends.md
     - name: Abonnementen
       href: api-management-subscriptions.md
     - name: Versies
@@ -104,10 +106,10 @@
           href: import-function-app-as-api.md
         - name: Een logische app importeren
           href: import-logic-app-as-api.md
-        - name: Een Service Fabric-app importeren
-          href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
         - name: Een API bewerken
           href: edit-api.md
+        - name: Service Fabric back-end configureren
+          href: how-to-configure-service-fabric-backend.md
     - name: Inrichten en schaal aanpassen
       items:
         - name: Metrische capaciteitswaarde

@@ -16,19 +16,19 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions
-ms.openlocfilehash: d6e8c4f4b6646254aeea12cf587f47047e661e3f
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 93d5d422709fad3d4f732b3b232f67d60d79b507
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222867"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493716"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Openbaar IP-adres upgraden
 
-Open bare IP-adressen van Azure worden gemaakt met een SKU: Basic of Standard, waarmee de aspecten van hun functionaliteit worden bepaald (inclusief toewijzings methode, gebruik in verschillende beschikbaarheids zones en aan welke resources ze kunnen worden gekoppeld). 
+Open bare IP-adressen van Azure worden gemaakt met een SKU: Basic of Standard, waarmee de aspecten van hun functionaliteit worden bepaald (inclusief toewijzings methode, ondersteuning van functies en de resources waaraan ze kunnen worden gekoppeld). 
 
 De volgende scenario's worden in dit artikel gecontroleerd:
-* Een upgrade uitvoeren van een basis-SKU openbaar IP-adres naar een standaard-SKU openbaar IP-adres (met behulp van portal, Power shell of CLI)
+* Een upgrade uitvoeren van een basis-SKU openbaar IP-adres naar een standaard-SKU openbaar IP-adres (met Power shell of CLI)
 * Een klassieke Azure-Gereserveerd IP migreren naar een Azure Resource Manager Basic SKU open bare IP
 
 ## <a name="upgrade-public-ip-address-from-basic-to-standard-sku"></a>Het open bare IP-adres van de Basic-naar de standaard-SKU bijwerken

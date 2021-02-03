@@ -1,6 +1,6 @@
 ---
 title: Snelstart - Een gesimuleerd X.509-apparaat inrichten voor Azure IoT Hub met behulp van C#
-description: Snelstart - Een gesimuleerd X.509-apparaat met de SDK voor C# maken en inrichten voor Azure IoT Hub Device Provisioning Service (DPS). In deze snelstart wordt gebruikgemaakt van afzonderlijke inschrijvingen.
+description: 'Quick Start: een X. 509-apparaat maken en inrichten met de SDK van C# voor Azure IoT Hub Device Provisioning Service (DPS). In deze snelstart wordt gebruikgemaakt van afzonderlijke inschrijvingen.'
 author: wesmc7777
 ms.author: wesmc
 ms.date: 02/01/2021
@@ -9,18 +9,18 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: a6e859a39cbcf867e3c0a21bb59c6154cbd47412
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 06f1d34e7d8da9a3ece206fc1ff804accf9454ff
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430579"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493851"
 ---
-# <a name="quickstart-create-and-provision-a-simulated-x509-device-using-c-device-sdk-for-iot-hub-device-provisioning-service"></a>Snelstart: Een gesimuleerd X.509-apparaat met de SDK voor C# maken en inrichten voor IoT Hub Device Provisioning Service
+# <a name="quickstart-create-and-provision-an-x509-device-using-c-device-sdk-for-iot-hub-device-provisioning-service"></a>Snelstartgids: een X. 509-apparaat maken en inrichten met behulp van de SDK voor C#-apparaten voor IoT Hub Device Provisioning Service
 
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
-Deze stappen laten u zien hoe u de [Azure IoT-voorbeelden voor C#](https://github.com/Azure-Samples/azure-iot-samples-csharp) gebruikt om een X.509-apparaat te simuleren op een ontwikkelcomputer met het Windows-besturingssysteem. In het voorbeeld wordt het gesimuleerde apparaat ook verbonden met een IoT Hub met behulp van de Device Provisioning Service.
+In deze stappen wordt uitgelegd hoe u met behulp van de programma code van de [Azure IOT-voor beelden voor C#](https://github.com/Azure-Samples/azure-iot-samples-csharp) een X. 509-apparaat inricht. In dit artikel voert u voorbeeld code van het apparaat uit op uw ontwikkel computer om verbinding te maken met een IoT Hub met behulp van de Device Provisioning Service.
 
 Raadpleeg het overzicht [Inrichten](about-iot-dps.md#provisioning-process) als u niet bekend bent met het proces van automatisch inrichten. Controleer ook of u de stappen in [IoT Hub Device Provisioning Service instellen met Azure Portal](./quick-setup-auto-provision.md) hebt voltooid voordat u verdergaat. 
 
@@ -53,13 +53,13 @@ In dit artikel worden afzonderlijke inschrijvingen gedemonstreerd.
 
 ## <a name="create-a-self-signed-x509-device-certificate"></a>Een zelfondertekend X.509-apparaatcertificaat maken
 
-In deze sectie maakt u een zelfondertekend X. 509-test certificaat dat wordt gebruikt `iothubx509device1` als de algemene naam van het onderwerp. Het is belang rijk dat u rekening houdt met het volgende:
+In deze sectie maakt u een zelfondertekend X. 509-test certificaat dat wordt gebruikt `iothubx509device1` als de algemene naam van het onderwerp. Het is belangrijk rekening te houden met de volgende punten:
 
 * Zelfondertekende certificaten zijn alleen voor testdoeleinden en moeten niet in productieomgevingen worden gebruikt.
 * De standaardvervaltermijn voor een zelfondertekend certificaat is één jaar.
 * De apparaat-ID van het IoT-apparaat wordt de algemene naam van het onderwerp op het certificaat. Zorg ervoor dat u een onderwerpnaam gebruikt die voldoet aan de vereisten voor de [teken reeks voor de apparaat-id](../iot-hub/iot-hub-devguide-identity-registry.md#device-identity-properties).
 
-U gaat voorbeeldcode uit [Provisioning Device Client Sample - X.509 Attestation](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/X509Sample) gebruiken om het certificaat te maken dat moet worden gebruikt met de afzonderlijke inschrijvingsvermelding voor het gesimuleerde apparaat.
+U gebruikt voorbeeld code uit de [X509Sample](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/X509Sample) om het certificaat te maken dat moet worden gebruikt met de afzonderlijke inschrijvings vermelding voor het apparaat.
 
 
 1. In een Power shell-prompt wijzigt u de directory's in de projectmap voor het X. 509 Device Provisioning-voor beeld.
@@ -106,7 +106,7 @@ U gaat voorbeeldcode uit [Provisioning Device Client Sample - X.509 Attestation]
 3. Voer in het deelvenster **Inschrijving toevoegen** de volgende gegevens in:
    - Selecteer **X.509** als *mechanisme* voor identiteitscontrole.
    - Kies onder het *PEM- of CER-bestand van het primaire certificaat* voor *Selecteer een bestand* om het certificaatbestand **certificate.cer** te selecteren dat in de vorige stappen is gemaakt.
-   - Laat **Apparaat-id** leeg. Uw apparaat wordt ingericht met de apparaat-id ingesteld op de algemene naam (CN) in het X.509-certificaat, **iothubx509device1**. Dit is ook de naam die wordt gebruikt voor de registratie-id voor de vermelding voor de afzonderlijke registratie. 
+   - Laat **Apparaat-id** leeg. Uw apparaat wordt ingericht met de apparaat-id ingesteld op de algemene naam (CN) in het X.509-certificaat, **iothubx509device1**. Deze algemene naam is ook de naam die wordt gebruikt voor de registratie-ID voor de afzonderlijke inschrijvings vermelding. 
    - Desgewenst kunt u de volgende informatie verstrekken:
        - Selecteer een IoT-hub die is gekoppeld aan uw inrichtingsservice.
        - Werk de **initiële status van de apparaatdubbel** bij met de gewenste beginconfiguratie voor het apparaat.
@@ -118,7 +118,7 @@ U gaat voorbeeldcode uit [Provisioning Device Client Sample - X.509 Attestation]
 
 
 
-## <a name="provision-the-simulated-device"></a>Het gesimuleerde apparaat inrichten
+## <a name="provision-the-device"></a>Het apparaat inrichten
 
 1. Ga naar de blade **Overzicht** voor de provisioning-service en noteer de waarde van **_Id-bereik_**.
 
@@ -157,7 +157,7 @@ U gaat voorbeeldcode uit [Provisioning Device Client Sample - X.509 Attestation]
     Finished.
     ```
 
-4. Controleer of het apparaat is ingericht. Als het gesimuleerde apparaat is ingericht met de IoT-hub die is gekoppeld met de provisioning-service, wordt de apparaat-id weergegeven op de blade **IoT-apparaten** van de hub. 
+4. Controleer of het apparaat is ingericht. Wanneer het apparaat is ingericht met de IoT-hub die is gekoppeld aan uw provisioning-service, wordt de apparaat-ID weer gegeven op de Blade **IOT-apparaten** van de hub. 
 
     ![Apparaat wordt geregistreerd voor de IoT-hub](./media/quick-create-simulated-device-x509-csharp/registration.png) 
 
@@ -175,7 +175,7 @@ Als u wilt blijven doorwerken met het voorbeeld van de apparaatclient en deze be
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een gesimuleerd X.509-apparaat op uw Windows-computer gemaakt en het ingericht voor uw IoT-hub met de Azure IoT Hub Device Provisioning Service in de portal. Als u wilt weten hoe u uw X.509-apparaat programmatisch kunt registreren, gaat u verder met de quickstart voor programmatische registratie van een X.509-apparaat. 
+In deze Quick Start hebt u een X. 509-apparaat ingericht voor uw IoT-hub met behulp van de Azure-IoT Hub Device Provisioning Service. Als u wilt weten hoe u uw X.509-apparaat programmatisch kunt registreren, gaat u verder met de quickstart voor programmatische registratie van een X.509-apparaat. 
 
 > [!div class="nextstepaction"]
 > [Azure-quickstart: X.509-apparaat inschrijven bij Azure IoT Hub Device Provisioning Service](quick-enroll-device-x509-csharp.md)

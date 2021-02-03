@@ -11,18 +11,21 @@ ms.topic: reference
 ms.date: 08/24/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4237aba81a01423a3356a30879fbd27450c876bd
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: 491549933817a127a92180b0e4b455e461e4d3a2
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976500"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492243"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
 Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verbeteringen in hun pagina-elementen. In het volgende wijzigingslog bestand worden de wijzigingen aangegeven die in elke versie zijn geïntroduceerd.
 
 ## <a name="self-asserted-page-selfasserted"></a>Zelfbevestigende pagina (selfasserted)
+
+**omschreven**
+- Het probleem met lokalisatie van code ring voor talen zoals Spaans en Frans is opgelost.
 
 **2.1.1**
 
@@ -70,6 +73,10 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 - Eerste release
 
 ## <a name="unified-sign-in-sign-up-page-with-password-reset-link-unifiedssp"></a>Aanmeldings pagina voor Unified Sign-in met de koppeling voor het opnieuw instellen van een wacht woord (unifiedssp)
+
+**omschreven**
+- Het probleem met lokalisatie van code ring voor talen zoals Spaans en Frans is opgelost.
+- De koppeling ' wacht woord verg eten ' toestaan om te gebruiken als claims uitwisseling zoals sociale IDP.
 
 **2.1.1**
 - Voeg een UXString toe `heading` , naast `intro` de weer gave op de pagina als titel. Dit is standaard verborgen.

@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 09/28/2020
 ms.author: glenga
-ms.openlocfilehash: a525d1e14e642a64235c263ba29bf7a181bf9e30
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 2517f132578b5de6b062b38ce94581f118327a13
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008165"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493584"
 ---
 ## <a name="publish-the-project-to-azure"></a>Het project naar Azure publiceren
 
@@ -21,7 +21,7 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
 
 1. Kies het Azure-pictogram in de activiteitenbalk en selecteer vervolgens in het gedeelte **Azure: In het gebied** Functies kiest u de knop **Implementeren in functie-app ...** .
 
-    ![Uw project naar Azure publiceren](media/functions-publish-project-vscode/function-app-publish-project.png)
+    ![Uw project naar Azure publiceren](./media/functions-publish-project-vscode/function-app-publish-project.png)
 
 1. Geef de volgende informatie op bij de prompts:
 
@@ -35,16 +35,18 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
     
     - **Selecteer een locatie voor nieuwe resources**:  Kies voor betere prestaties een [regio](https://azure.microsoft.com/regions/) bij u in de buurt. 
     
+    De uitbrei ding toont de status van afzonderlijke resources, aangezien deze worden gemaakt in Azure in het systeemvak.
+
+    :::image type="content" source="media/functions-publish-project-vscode/resource-notification.png" alt-text="Melding van het maken van Azure-resources":::
+    
 1.  Wanneer dit is voltooid, worden de volgende Azure-resources in uw abonnement gemaakt met behulp van namen op basis van de naam van uw functie-app:
     
-    - Een resourcegroep, wat een logische container is voor gerelateerde resources.
-    - Een standaard Azure Storage-account, waarin de status en andere gegevens van uw projecten worden onderhouden.
-    - Een verbruiksplan dat de onderliggende host definieert voor uw serverloze functie-app. 
-    - Een functie-app, die de omgeving biedt voor het uitvoeren van uw functiecode. Met een functie-app kunt u functies groeperen in een logische eenheid, zodat u resources eenvoudiger kunt beheren, implementeren en delen binnen hetzelfde hostingabonnement.
-    - Een Application Insights-exemplaar dat is verbonden met de functie-app, die het gebruik van uw serverloze functie bijhoudt.
+    [!INCLUDE [functions-vs-code-created-resources](functions-vs-code-created-resources.md)]
 
     Nadat de functie-app is gemaakt en het implementatiepakket is toegepast, wordt er een melding weergegeven. 
-    
-1. Selecteer in deze melding de optie **Uitvoer weergeven** om de resultaten van het maken en implementeren te bekijken, inclusief de Azure-resources die u hebt gemaakt. Als u de melding mist, selecteert u het belpictogram in de rechterbenedenhoek om deze opnieuw weer te geven.
+
+    [!INCLUDE [functions-vs-code-create-tip](functions-vs-code-create-tip.md)]
+
+4. Selecteer in deze melding de optie **Uitvoer weergeven** om de resultaten van het maken en implementeren te bekijken, inclusief de Azure-resources die u hebt gemaakt. Als u de melding mist, selecteert u het belpictogram in de rechterbenedenhoek om deze opnieuw weer te geven.
 
     ![Volledige melding maken](media/functions-publish-project-vscode/function-create-notifications.png)

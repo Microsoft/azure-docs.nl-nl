@@ -3,12 +3,12 @@ title: Bereik voor uitbreidings resource typen
 description: Hierin wordt beschreven hoe u de eigenschap scope gebruikt bij het implementeren van uitbreidings bron typen.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: 75c2c8b8409cc9f8e7a8e71965589ece6660607a
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: ce08ca951e24c1c0a5450052cf814a68888837c2
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179976"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492158"
 ---
 # <a name="setting-scope-for-extension-resources-in-arm-templates"></a>Bereik instellen voor uitbreidings resources in ARM-sjablonen
 
@@ -85,6 +85,6 @@ In het volgende voor beeld wordt een opslag account gemaakt en wordt er een rol 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht in de structuur en syntaxis van Azure Resource Manager sjablonen](template-syntax.md)voor meer informatie over het definiëren van para meters in uw sjabloon.
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor informatie over het definiëren van para meters in uw sjabloon.
 * Zie [problemen met algemene Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor tips over het oplossen van veelvoorkomende implementatie fouten.
-* Zie voor meer informatie over het implementeren van een sjabloon waarvoor een SAS-token is vereist een [persoonlijke sjabloon implementeren met SAS-token](secure-template-with-sas-token.md).
+* Zie voor meer informatie over het implementeren van een sjabloon waarvoor een SAS-token is vereist een [persoonlijke arm-sjabloon implementeren met SAS-token](secure-template-with-sas-token.md).

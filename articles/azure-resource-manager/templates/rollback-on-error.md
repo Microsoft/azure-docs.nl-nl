@@ -2,25 +2,34 @@
 title: Fout bij het terugdraaien naar een geslaagde implementatie
 description: Geef op dat een mislukte implementatie moet worden teruggedraaid naar een geslaagde implementatie.
 ms.topic: conceptual
-ms.date: 10/04/2019
-ms.openlocfilehash: 206c794996f58a4c5b6982c551ae50128ed4f5eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/02/2021
+ms.openlocfilehash: 742a8f16a2dce3204b48085759091540586a4522
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79460140"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492209"
 ---
 # <a name="rollback-on-error-to-successful-deployment"></a>Ongedaan maken bij fout bij geslaagde implementatie
 
-Wanneer een implementatie mislukt, kunt u automatisch een eerdere, geslaagde implementatie uit de implementatie geschiedenis opnieuw implementeren. Deze functie is handig als u een bekende goede status hebt voor de implementatie van uw infra structuur en u wilt terugkeren naar deze status. Er zijn een aantal voor behoud en beperkingen:
+Wanneer een implementatie mislukt, kunt u automatisch een eerdere, geslaagde implementatie uit de implementatie geschiedenis opnieuw implementeren. Deze functie is handig als u een bekende goede status hebt voor de implementatie van uw infra structuur en u wilt terugkeren naar deze status. U kunt een bepaalde eerdere implementatie of de laatste geslaagde implementatie opgeven.
 
+> [!IMPORTANT]
+> Met deze functie wordt een mislukte implementatie teruggedraaid door een eerdere implementatie opnieuw te implementeren. Dit resultaat kan afwijken van wat u zou verwachten van het ongedaan maken van de mislukte implementatie. Zorg ervoor dat u begrijpt hoe de eerdere implementatie opnieuw wordt geïmplementeerd.
+
+## <a name="considerations-for-redeploying"></a>Overwegingen voor opnieuw implementeren
+
+Voordat u deze functie gaat gebruiken, moet u rekening houden met de volgende informatie over de manier waarop de implementatie wordt verwerkt:
+
+- De vorige implementatie wordt uitgevoerd met de [volledige modus](./deployment-modes.md#complete-mode), zelfs als u tijdens de eerdere implementatie de [incrementele modus](./deployment-modes.md#incremental-mode) hebt gebruikt. Opnieuw implementeren in de volledige modus kan leiden tot onverwachte resultaten wanneer de eerdere implementatie incrementeel werd gebruikt. De volledige modus houdt in dat alle resources die niet in de vorige implementatie zijn opgenomen, worden verwijderd. Geef een eerdere implementatie op die alle resources en de bijbehorende statussen vertegenwoordigt die u in de resource groep wilt bevinden. Zie [implementatie modi](./deployment-modes.md)voor meer informatie.
 - De implementatie wordt precies zo uitgevoerd als deze eerder met dezelfde para meters is uitgevoerd. U kunt de para meters niet wijzigen.
-- De vorige implementatie wordt uitgevoerd met de [volledige modus](./deployment-modes.md#complete-mode). Alle resources die geen deel uitmaken van de vorige implementatie worden verwijderd en alle resource configuraties worden ingesteld op de vorige status. Zorg ervoor dat u de [implementatie modi](./deployment-modes.md)volledig begrijpt.
 - De herimplementatie heeft alleen invloed op de resources, maar wijzigingen in de gegevens worden niet beïnvloed.
-- U kunt deze functie alleen gebruiken met implementaties van resource groepen, niet op abonnementen of op het niveau van beheer groepen. Zie [resource groepen en-resources op abonnements niveau maken](./deploy-to-subscription.md)voor meer informatie over de implementatie op abonnements niveau.
+- U kunt deze functie alleen gebruiken met implementaties van resource groepen. Er wordt geen ondersteuning geboden voor abonnementen, beheer groepen of implementaties op Tenant niveau. Zie [resource groepen en-resources op abonnements niveau maken](./deploy-to-subscription.md)voor meer informatie over de implementatie op abonnements niveau.
 - U kunt deze optie alleen gebruiken bij implementaties op hoofd niveau. Implementaties van een geneste sjabloon zijn niet beschikbaar voor opnieuw implementeren.
 
-Als u deze optie wilt gebruiken, moeten uw implementaties unieke namen hebben zodat deze in de geschiedenis kunnen worden geïdentificeerd. Als u geen unieke namen hebt, kan de huidige mislukte implementatie de eerder geslaagde implementatie in de geschiedenis overschrijven.
+Als u deze optie wilt gebruiken, moeten uw implementaties unieke namen hebben in de implementatie geschiedenis. Het is alleen mogelijk met unieke namen die een specifieke implementatie kan identificeren. Als u geen unieke namen hebt, kan een mislukte implementatie worden overschreven in de geschiedenis.
+
+Als u een eerdere implementatie opgeeft die niet voor komt in de implementatie geschiedenis, retourneert het terugdraaien een fout.
 
 ## <a name="powershell"></a>PowerShell
 
@@ -115,7 +124,5 @@ De opgegeven implementatie moet zijn geslaagd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Azure Deployment Manager](deployment-manager-overview.md)als u uw service veilig wilt implementeren in meer dan één regio.
-- Zie [Azure Resource Manager implementatie modi](deployment-modes.md)om op te geven hoe u resources wilt afhandelen die in de resource groep aanwezig zijn, maar die niet zijn gedefinieerd in de sjabloon.
+- Zie [Azure Resource Manager implementatie modi](deployment-modes.md)voor meer informatie over de volledige en incrementele modus.
 - Zie [inzicht in de structuur en syntaxis van Azure Resource Manager sjablonen](template-syntax.md)voor meer informatie over het definiëren van para meters in uw sjabloon.
-- Zie voor meer informatie over het implementeren van een sjabloon waarvoor een SAS-token is vereist een [persoonlijke sjabloon implementeren met SAS-token](secure-template-with-sas-token.md).

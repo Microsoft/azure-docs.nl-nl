@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: thvankra
 ms.reviewer: thvankra
-ms.openlocfilehash: 74088d749279ab72851e714a50b558dc2adbc0d7
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 3cbcb7eb3695e6f57daef741d4cd4b15577d8f58
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516552"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493269"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-azure-databricks"></a>Gegevens migreren van Cassandra naar Azure Cosmos DB Cassandra-API-account met behulp van Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -114,7 +114,28 @@ DFfromNativeCassandra
 ```
 
 > [!NOTE]
-> De `spark.cassandra.output.concurrent.writes` `connections_per_executor_max` configuraties en zijn belang rijk voor het voor komen van [frequentie beperkingen](/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/), wat gebeurt wanneer aanvragen om Cosmos DB de ingerichte door voer te overschrijden ([aanvraag eenheden](./request-units.md)). Het kan zijn dat u deze instellingen moet aanpassen, afhankelijk van het aantal uitnodigingen in het Spark-cluster en mogelijk de grootte (en dus RU cost) van elke record die naar de doel tabellen wordt geschreven.
+> De `spark.cassandra.output.batch.size.rows` - `spark.cassandra.output.concurrent.writes` en- `connections_per_executor_max` configuraties zijn belang rijk om de [frequentie beperking](/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/)te voor komen. dit gebeurt wanneer aanvragen om Azure Cosmos DB de ingerichte door voer te overschrijden/([aanvraag eenheden](./request-units.md)). Het kan zijn dat u deze instellingen moet aanpassen, afhankelijk van het aantal uitnodigingen in het Spark-cluster en mogelijk de grootte (en dus RU cost) van elke record die naar de doel tabellen wordt geschreven.
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+### <a name="rate-limiting-429-error"></a>Frequentie beperking (429-fout)
+Mogelijk wordt de fout code 429 of `request rate is large` de fout tekst weer geven, ondanks de bovenstaande instellingen tot hun minimum waarden. Hier volgen enkele van de volgende scenario's:
+
+- **De door Voer die is toegewezen aan de tabel, is kleiner dan 6000 [aanvraag eenheden](./request-units.md)**. Zelfs op minimale instellingen kan Spark schrijf bewerkingen uitvoeren met een snelheid van ongeveer 6000 aanvraag eenheden of meer. Als u een tabel hebt ingericht in een spatie waarvoor gedeelde door Voer is ingericht, is het mogelijk dat deze tabel minder is dan 6000 RUs beschikbaar tijdens runtime. Zorg ervoor dat de tabel die u migreert, ten minste 6000 RUs beschikbaar heeft wanneer de migratie wordt uitgevoerd, en, indien nodig, toegewezen aanvraag eenheden aan de tabel toewijzen. 
+- **Buitensporige gegevens scheefheid met groot gegevens volume**. Als u een grote hoeveelheid gegevens (d.w.z. tabel rijen) hebt om te migreren naar een bepaalde tabel, maar een aanzienlijk scheefheid heeft in de gegevens (dat wil zeggen een groot aantal records dat wordt geschreven voor dezelfde partitie sleutel waarde), is het mogelijk dat de frequentie beperkt blijft, zelfs als u een grote hoeveelheid [aanvraag eenheden](./request-units.md) hebt die in de tabel zijn ingericht. Dit komt doordat de aanvraag eenheden gelijkmatig zijn verdeeld over fysieke partities, en een zware schei van gegevens kan leiden tot een knel punt van aanvragen naar één partitie, waardoor de frequentie wordt beperkt. In dit scenario wordt geadviseerd om de minimale doorvoer instellingen in Spark te verlagen om de frequentie beperking te voor komen en de migratie af te dwingen. Dit scenario kan vaker voor komen bij het migreren van referentie-of beheer tabellen, waarbij toegang minder frequent is, maar scheefheid kan hoog zijn. Als er echter een aanzienlijk scheefheid in een ander type tabel aanwezig is, kan het ook raadzaam zijn om uw gegevens model te controleren om problemen met de warme partitie voor uw werk belasting te voor komen tijdens een bewerking met constante status. 
+- **Kan het aantal voor de grote tabel niet ophalen**. Uitvoeren `select count(*) from table` wordt momenteel niet ondersteund voor grote tabellen. U kunt het aantal berekenen op basis van metrische gegevens in Azure Portal (Zie het [artikel over het oplossen van problemen](cassandra-troubleshoot.md)), maar als u het aantal van een grote tabel in de context van een Spark-taak moet bepalen, kunt u deze naar een tijdelijke tabel kopiëren en vervolgens Spark SQL gebruiken om het aantal op te halen, bijvoorbeeld hieronder (vervangen `<primary key>` door een veld uit de resulterende tijdelijke tabel).
+
+  ```scala
+  val ReadFromCosmosCassandra = sqlContext
+    .read
+    .format("org.apache.spark.sql.cassandra")
+    .options(cosmosCassandra)
+    .load
+
+  ReadFromCosmosCassandra.createOrReplaceTempView("CosmosCassandraResult")
+  %sql
+  select count(<primary key>) from CosmosCassandraResult
+  ```
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6deb0c005b5ed7daf5b30bea8a65ee70d8b460c5
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 205136437fa1a2a33b3b337f5cc9f2dde283faef
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837461"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491937"
 ---
-# <a name="configure-authentication-session-management-with-conditional-access"></a>Beheer van verificatiesessies met voorwaardelijke toegang configureren
+# <a name="configure-authentication-session-management-with-conditional-access"></a>Verificatie sessie beheer met voorwaardelijke toegang configureren
 
 In complexe implementaties moeten organisaties wellicht verificatie sessies beperken. Enkele scenario's zijn onder andere:
 
@@ -88,7 +88,7 @@ Met de Azure AD-standaard voor browser sessie persistent kunnen gebruikers op pe
 Voorwaardelijke toegang is een Azure AD Premium mogelijkheid en vereist een Premium-licentie. Zie [Wat is voorwaardelijke toegang in azure Active Directory?](overview.md#license-requirements) voor meer informatie over voorwaardelijke toegang.
 
 > [!WARNING]
-> Als u de configuratie van de [Configureer bare levens duur van tokens](../develop/active-directory-configurable-token-lifetimes.md) gebruikt die momenteel beschikbaar is in de preview-versie, is het niet mogelijk om twee verschillende beleids regels te maken voor dezelfde combi natie van gebruiker of app: een met deze functie en een andere met een Configureer bare levens duur van tokens. Micro soft is van plan de Configureer bare levens duur van tokens voor vernieuwings-en sessie token levensduur op 30 januari 2021 aan te trekken en te vervangen door de beheer functie voor de verificatie van de voorwaardelijke toegang.  
+> Als u de configuratie van de [Configureer bare levens duur van tokens](../develop/active-directory-configurable-token-lifetimes.md) gebruikt die momenteel beschikbaar is in de preview-versie, is het niet mogelijk om twee verschillende beleids regels te maken voor dezelfde combi natie van gebruiker of app: een met deze functie en een andere met een Configureer bare levens duur van tokens. Micro soft heeft de Configureer bare levens duur van het token voor vernieuwing-en sessie token levensduur op 30 januari 2021 buiten gebruik gesteld en vervangen door de beheer functie voor de verificatie van voorwaardelijke toegang.  
 >
 > Voordat u de aanmeldings frequentie inschakelt, moet u ervoor zorgen dat andere instellingen voor opnieuw verifiëren zijn uitgeschakeld in uw Tenant. Als ' MFA op vertrouwde apparaten onthouden ' is ingeschakeld, moet u deze uitschakelen voordat u de aanmeldings frequentie gebruikt. Als u deze twee instellingen samen gebruikt, kan dit ertoe leiden dat gebruikers onverwachts worden gevraagd. Voor meer informatie over het opnieuw verifiëren van de verificatie en de levens duur van de sessie raadpleegt u het artikel, [Optimaliseer de prompts voor herverificatie en de levens duur van sessies voor Azure AD multi-factor Authentication](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 

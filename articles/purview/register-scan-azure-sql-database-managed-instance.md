@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 2391a36c02e0bdfe0ea98be7f19fc64f1fbb676f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: f9791fa8932792398efdea39fe0d39a967420596
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879929"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491720"
 ---
 # <a name="register-and-scan-an-azure-sql-database-managed-instance"></a>Azure SQL Database Managed Instance registeren en scannen
 
@@ -104,20 +104,6 @@ Het is vereist om de toepassings-id en het geheim van de service-principal op te
 1. Selecteer **Maken** om te voltooien
 1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
 1. Maak tot slot [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de service-principal om uw scan in te stellen
-
-### <a name="firewall-settings"></a>Firewallinstellingen
-
-De databaseserver moet toestaan dat Azure-verbindingen worden ingeschakeld. Hierdoor kan Azure Purview de server bereiken en er verbinding mee maken. U kunt de instructiegids voor [Verbindingen vanuit Azure](../azure-sql/database/firewall-configure.md#connections-from-inside-azure) volgen.
-
-1. Navigeer naar uw databaseaccount
-1. Selecteer de servernaam op de pagina **Overzicht**
-1. Selecteer **Beveiliging > Firewalls en virtuele netwerken**
-1. Selecteer **Ja** bij **Toestaan dat Azure-services en -resources toegang tot deze server krijgen**
-
-    :::image type="content" source="media/register-scan-azure-sql-database/sql-firewall.png" alt-text="opties voor bronnen registreren" border="true":::
-    
-> [!Note]
-> Momenteel biedt Azure Purview geen ondersteuning voor VNET-configuratie. Daarom kunt u geen firewall-instellingen op basis van IP uitvoeren.
 
 ## <a name="register-an-azure-sql-database-managed-instance-data-source"></a>Een gegevensbron van Azure SQL Database Managed Instance registeren
 

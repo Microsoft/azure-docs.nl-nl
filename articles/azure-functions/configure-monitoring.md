@@ -4,12 +4,12 @@ description: Leer hoe u uw functie-app kunt verbinden met Application Insights v
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: e24f2b1a61d77dafd7a23b04d225d0301f82ca59
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 5007009d9aabf9a1c1c6e1d5c2f286c0ba25b340
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070137"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493750"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -229,6 +229,8 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 --setting-names SCALE_CONTROLLER_LOGGING_ENABLED
 ```
 
+Als de logboek registratie van de schaal controller is ingeschakeld, kunt u [de logboeken van de schaal besturing nu opvragen](analyze-telemetry-data.md#query-scale-controller-logs). 
+
 ## <a name="enable-application-insights-integration"></a>Application Insights-integratie inschakelen
 
 Voor een functie-app voor het verzenden van gegevens naar Application Insights, moet de instrumentatie sleutel van een Application Insights resource bekend zijn. De sleutel moet een app-instelling met de naam **APPINSIGHTS_INSTRUMENTATIONKEY** hebben.
@@ -271,30 +273,6 @@ Als een Application Insights resource niet is gemaakt met uw functie-app, gebrui
 
 > [!NOTE]
 > Vroege versies van functies gebruiken ingebouwde bewaking. dit wordt niet meer aanbevolen. Wanneer u Application Insights integratie inschakelt voor een dergelijke functie-app, moet u ook [ingebouwde logboek registratie uitschakelen](#disable-built-in-logging).  
-
-## <a name="query-scale-controller-logs"></a>Logboeken voor query Scale-controller
-
-Na het inschakelen van zowel logboek registratie voor de schaal van de controller als Application Insights-integratie, kunt u de logboeken van de uitgebrachte schaal controller in het Application Insights zoeken naar een query. Schaal controller logboeken worden opgeslagen in de `traces` verzameling onder de categorie **ScaleControllerLogs** .
-
-De volgende query kan worden gebruikt om te zoeken naar alle logboeken van de schaal controller voor de huidige functie-app binnen de opgegeven tijds periode:
-
-```kusto
-traces 
-| extend CustomDimensions = todynamic(tostring(customDimensions))
-| where CustomDimensions.Category == "ScaleControllerLogs"
-```
-
-Met de volgende query wordt de vorige query uitgebreid om te laten zien hoe u alleen logboeken kunt ophalen die een wijziging in de schaal aangeven:
-
-```kusto
-traces 
-| extend CustomDimensions = todynamic(tostring(customDimensions))
-| where CustomDimensions.Category == "ScaleControllerLogs"
-| where message == "Instance count changed"
-| extend Reason = CustomDimensions.Reason
-| extend PreviousInstanceCount = CustomDimensions.PreviousInstanceCount
-| extend NewInstanceCount = CustomDimensions.CurrentInstanceCount
-```
 
 ## <a name="disable-built-in-logging"></a>Ingebouwde logboekregistratie uitschakelen
 

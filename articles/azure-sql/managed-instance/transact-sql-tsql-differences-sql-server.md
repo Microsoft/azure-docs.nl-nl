@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 0a462c7d713ea9285096db48b4a3bb5c5b0d9874
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 66198291420d48e04df0821d8d110812d6aa01d7
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737367"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525802"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -487,6 +487,7 @@ Service Broker met meerdere exemplaren wordt niet ondersteund:
   - `remote access`
   - `remote data archive`
   - `remote proc trans`
+  - `scan for startup procs`
 - `sp_execute_external_scripts` wordt niet ondersteund. Zie [sp_execute_external_scripts](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql#examples).
 - `xp_cmdshell` wordt niet ondersteund. Zie [xp_cmdshell](/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
 - `Extended stored procedures` worden niet ondersteund, inclusief `sp_addextendedproc` en `sp_dropextendedproc` . Zie [uitgebreide opgeslagen procedures](/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/05/2021
+ms.date: 02/03/2021
 ms.author: memildin
-ms.openlocfilehash: e881c61d16cd167ace78abb96dca7e714436cfc0
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: bd64ca877f0bfd81597e091ef8ef000ad1b76992
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752212"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526429"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Beveiligingsscore in Azure Security Center
 
@@ -244,8 +244,8 @@ Hoewel het standaard Security Initiative van Security Center is gebaseerd op de 
     <td class="tg-lboi"; width=55%>- Adaptieve toepassings besturings elementen moeten worden ingeschakeld op virtuele machines<br>- Bewakings agent moet worden geïnstalleerd op uw virtuele machines<br>- Bewakings agent moet op uw computers zijn geïnstalleerd<br>- Log Analytics agent moet worden geïnstalleerd op uw op Windows gebaseerde Azure Arc-machines (preview)<br>- Log Analytics agent moet worden geïnstalleerd op uw op Linux gebaseerde Azure-Arc-machines (preview)<br>- Controle agent status problemen moeten worden opgelost op uw computers</td>
   </tr>
   <tr>
-    <td class="tg-lboi"><strong><p style="font-size: 16px">Gegevens classificatie Toep assen (maximum score 2)</p></strong>Door de gegevens van uw organisatie te classificeren door middel van gevoeligheid en bedrijfs impact kunt u de waarde bepalen en toewijzen aan de gegevens en de strategie en basis voor governance bieden.<br><a href="/azure/information-protection/what-is-information-protection">Azure Information Protection</a> kunnen helpen bij het classificeren van gegevens. Het maakt gebruik van versleuteling, identiteit en autorisatie beleid om gegevens te beveiligen en gegevens toegang te beperken. Sommige classificaties die micro soft gebruikt, zijn niet-zakelijk, openbaar, algemeen, vertrouwelijk en zeer vertrouwelijk.</td>
-    <td class="tg-lboi"; width=55%>- Gevoelige gegevens in uw SQL-data bases moeten worden geclassificeerd (preview-versie)</td>
+    <td class="tg-lboi"><strong><p style="font-size: 16px">Gegevens classificatie Toep assen (maximum score 0)</p></strong>Door de gegevens van uw organisatie te classificeren door middel van gevoeligheid en bedrijfs impact kunt u de waarde bepalen en toewijzen aan de gegevens en de strategie en basis voor governance bieden.<br><a href="/azure/information-protection/what-is-information-protection">Azure Information Protection</a> kunnen helpen bij het classificeren van gegevens. Het maakt gebruik van versleuteling, identiteit en autorisatie beleid om gegevens te beveiligen en gegevens toegang te beperken. Sommige classificaties die micro soft gebruikt, zijn niet-zakelijk, openbaar, algemeen, vertrouwelijk en zeer vertrouwelijk.</td>
+    <td class="tg-lboi"; width=55%>- Gevoelige gegevens in uw SQL-data bases moeten worden geclassificeerd</td>
   </tr>
   <tr>
     <td class="tg-lboi"><strong><p style="font-size: 16px">Toepassingen beveiligen tegen DDoS-aanvallen (maximum score 2)</p></strong>Gedistribueerde Denial-of-service-aanvallen (DDoS) zorgen voor bronnen en renderen toepassingen onbruikbaar. Gebruik <a href="/azure/virtual-network/ddos-protection-overview">Azure DDoS Protection standaard</a> om uw organisatie te beschermen tegen de drie belangrijkste typen DDoS-aanvallen:<br>- <strong>Volumetrische aanvallen</strong> flooden het netwerk met legitiem verkeer. DDoS Protection standaard verkleint deze aanvallen door ze automatisch te absorberen of te reinigen.<br>- <strong>Protocol aanvallen</strong> genereren een doel dat niet toegankelijk is door zwakke plekken in de laag 3-en laag 4-protocol stack te exploiteren. DDoS Protection standaard verkleint deze aanvallen door schadelijk verkeer te blok keren.<br>- <strong>Resource (toepassing) laag aanvallen</strong> doel webtoepassing pakketten. Tegen dit type beschermen met een Web Application Firewall en DDoS Protection Standard.</td>

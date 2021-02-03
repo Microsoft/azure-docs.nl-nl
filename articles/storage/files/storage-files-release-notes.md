@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 4dd1941e6a749c2ccf7ca082ab89ef2a70baa0d6
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 4f2bdf3d5c34ffb4f3ec95c27bbdaf312adb4204
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509533"
+ms.locfileid: "99526395"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Releaseopmerkingen voor de Azure File Sync-agent
 Met Azure File Sync kunt u bestandsshares van uw organisatie in Azure Files centraliseren zonder in te leveren op de flexibiliteit, prestaties en compatibiliteit van een on-premises bestandsserver. Uw installaties van Windows Server worden getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server gebruiken voor lokale toegang tot uw gegevens (inclusief SMB, NFS en FTPS) en u kunt zoveel caches hebben als u waar ook ter wereld nodig hebt.
@@ -25,7 +25,7 @@ De volgende Azure File Sync agent versies worden ondersteund:
 
 | Mijlpalen | Versienummer agent | Releasedatum | Status |
 |----|----------------------|--------------|------------------|
-| V 11.2 release- [KB4539952](https://support.microsoft.com/en-us/help/4539952)| 11.2.0.0 | 2 februari 2021 | Ondersteund-Flighting |
+| V 11.2 release- [KB4539952](https://support.microsoft.com/topic/azure-file-sync-agent-v11-2-release-february-2021-c956eaf0-cd8e-4511-98c0-e5a1f2c84048)| 11.2.0.0 | 2 februari 2021 | Ondersteund-Flighting |
 | V. w release- [KB4539951](https://support.microsoft.com/en-us/help/4539951)| 11.1.0.0 | 4 november 2020 | Ondersteund |
 | V 10.1 release- [KB4522411](https://support.microsoft.com/en-us/help/4522411)| 10.1.0.0 | 5 juni 2020 | Ondersteund |
 | Update pakket van mei 2020- [KB4522412](https://support.microsoft.com/help/4522412)| 10.0.2.0 | 19 mei 2020 | Ondersteund |

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 6a0aebc727233cdd838f3e1bf8eeb5cd247b9836
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0c85049d6c8921432a753bf08989cab473b7c734
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014020"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525124"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Reverse DNS lookup zones in Azure DNS
 
@@ -28,7 +28,7 @@ Dit artikel begeleidt u stapsgewijs door de stappen voor het maken van uw eerste
 
 ## <a name="create-a-reverse-lookup-dns-zone"></a>Een DNS-zone voor reverse lookup maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer in het menu **hub** **nieuwe**  >  **netwerken** en selecteer vervolgens **DNS-zone**.
 
    ![De selectie van de DNS-zone](./media/dns-reverse-dns-hosting/figure1.png)
@@ -44,7 +44,7 @@ De naam van een IPv4-zone voor reverse lookup is gebaseerd op het IP-bereik dat 
 >
 > Voor het IP-bereik 192.0.2.128/26 moet u bijvoorbeeld `128-26.2.0.192.in-addr.arpa` de zone naam gebruiken in plaats van `128/26.2.0.192.in-addr.arpa` .
 >
-> Hoewel de DNS-standaard beide methoden ondersteunen, ondersteunt Azure DNS geen DNS-zone namen die voor komen in een slash ( `/` )-teken.
+> Hoewel de DNS-standaard beide methoden ondersteunen, ondersteunt Azure DNS geen DNS-zone namen die het slash- `/` teken () bevatten.
 
 In het volgende voor beeld ziet u hoe u een omgekeerde DNS-zone voor Class C `2.0.192.in-addr.arpa` met de naam in azure DNS maakt via de Azure portal:
 

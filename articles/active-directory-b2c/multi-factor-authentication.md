@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 02/01/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 8449c5437bad6d0036d332ca5c35709b5d571cfa
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: d7bc92af31eb179155fd473356c741f365a07a35
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225155"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525141"
 ---
 # <a name="enable-multi-factor-authentication-in-azure-active-directory-b2c"></a>Meervoudige verificatie inschakelen in Azure Active Directory B2C
 
@@ -41,9 +41,12 @@ Deze functie helpt toepassingen bij het afhandelen van scenario's zoals:
 1. Selecteer de gebruikers stroom waarvoor u MFA wilt inschakelen. Bijvoorbeeld *B2C_1_signinsignup*.
 1. Selecteer **Eigenschappen**.
 1. Selecteer in de sectie multi- **Factor Authentication** de gewenste **MFA-methode** en selecteer vervolgens onder **MFA Enforcement** de optie **altijd aan** of **voorwaardelijk (aanbevolen)**.
-  > [!NOTE]
-  > Als u **voorwaardelijk (aanbevolen)** selecteert, moet u ook [een beleid voor voorwaardelijke toegang toevoegen](conditional-access-identity-protection-setup.md#add-a-conditional-access-policy) en de apps opgeven waarop u het beleid wilt Toep assen.
-1. Selecteer Opslaan. MFA is nu ingeschakeld voor deze gebruikers stroom.
+   > [!NOTE]
+   >
+   > - Als u **voorwaardelijk (aanbevolen)** selecteert, moet u ook [een beleid voor voorwaardelijke toegang toevoegen](conditional-access-identity-protection-setup.md#add-a-conditional-access-policy) en de apps opgeven waarop u het beleid wilt Toep assen.
+   > - Multi-factor Authentication (MFA) is standaard uitgeschakeld voor het registreren van gebruikers stromen. U kunt MFA inschakelen in gebruikers stromen met aanmelding via de telefoon, maar omdat een telefoon nummer wordt gebruikt als de primaire id, is e-mail One-time wachtwoord code de enige optie die beschikbaar is voor de tweede verificatie factor.
+
+1. Selecteer **Opslaan**. MFA is nu ingeschakeld voor deze gebruikers stroom.
 
 U kunt de **gebruikers stroom uitvoeren** gebruiken om de ervaring te controleren. Bevestig het volgende scenario:
 

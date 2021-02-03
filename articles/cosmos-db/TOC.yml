@@ -110,8 +110,38 @@
       href: cosmosdb-jupyter-notebooks.md
     - name: Servicequota
       href: concepts-limits.md
-    - name: Gereedheid voor bedrijven - naleving
-      href: compliance.md
+    - name: Gereedheid voor bedrijven
+      items:
+        - name: Inleiding tot back-ups maken en herstellen
+          href: online-backup-and-restore.md
+        - name: Doorlopende back-up
+          items:
+            - name: Doorlopende back-up-Inleiding
+              href: continuous-backup-restore-introduction.md
+            - name: Doorlopende back-up-Veelgestelde vragen
+              href: continuous-backup-restore-frequently-asked-questions.md
+            - name: Doorlopende back-up-resource model
+              items:
+                - name: Overzicht van resource model
+                  href: continuous-backup-restore-resource-model.md
+                - name: Herstorable accounts-lijst
+                  href: restorable-database-accounts-list.md
+                - name: 'Restorable accounts: lijst per locatie'
+                  href: restorable-database-accounts-list-by-location.md
+                - name: Restorable SQL resources-lijst
+                  href: restorable-sql-resources-list.md
+                - name: Restorable SQL-data bases-lijst
+                  href: restorable-sql-databases-list.md
+                - name: Restorable SQL-containers-lijst
+                  href: restorable-sql-containers-list.md
+                - name: Restorable MongoDB-resources-lijst
+                  href: restorable-mongodb-resources-list.md
+                - name: Restorable MongoDB-verzamelingen-lijst
+                  href: restorable-mongodb-collections-list.md
+                - name: Restorable MongoDB-data bases-lijst
+                  href: restorable-mongodb-databases-list.md
+        - name: Naleving
+          href: compliance.md
     - name: Automatische aanbevelingen
       href: automated-recommendations.md
 - name: SQL/Core API
@@ -1365,8 +1395,20 @@
           href: how-to-setup-cmk.md
     - name: Gereedheid voor bedrijven
       items:
-        - name: Online back-ups maken en on-demand herstellen
-          href: online-backup-and-restore.md
+        - name: Doorlopende back-up beheren
+          items:
+            - name: 'Continue back-up: machtigingen en rollen'
+              href: continuous-backup-restore-permissions.md
+            - name: Doorlopende back-up-Portal
+              href: continuous-backup-restore-portal.md
+            - name: Doorlopende back-up-power shell
+              href: continuous-backup-restore-powershell.md
+            - name: Doorlopende back-up-CLI
+              href: continuous-backup-restore-command-line.md
+            - name: Continue back-uparm
+              href: continuous-backup-restore-template.md
+        - name: Periodieke back-ups beheren
+          href: configure-periodic-backup-restore.md
         - name: Verhoging van quotum aanvragen
           href: create-support-request-quota-increase.md
     - name: Controleren

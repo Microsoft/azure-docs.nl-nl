@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/03/2021
+ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 225fc83133aba0a7d669f36dc9c8e7cd20c8e42e
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: b4a4fa8a207320a5867b6cdf1dc347bbb2f453af
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507516"
+ms.locfileid: "99525735"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
 
@@ -60,9 +60,11 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 | Korea - centraal | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - noord-centraal | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa - noord | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Zuid-Afrika - noord | `https://southafricanorth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| VS - west-centraal | `https://westcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - west | `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -211,8 +213,7 @@ In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak
 
 | Header | Description | Vereist/optioneel |
 |--------|-------------|---------------------|
-| `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
-| `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |
+| `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Vereist |
 | `Content-Type` | Hiermee geeft u het type inhoud op voor de opgegeven tekst. Geaccepteerde waarde: `application/ssml+xml` . | Vereist |
 | `X-Microsoft-OutputFormat` | Hiermee geeft u de indeling van de audio-uitvoer. Zie [audio-uitvoer](#audio-outputs)voor een volledige lijst met geaccepteerde waarden. | Vereist |
 | `User-Agent` | De toepassingsnaam. De gegeven waarde moet kleiner zijn dan 255 tekens. | Vereist |
@@ -278,5 +279,5 @@ Als de HTTP-status is `200 OK` , bevat de hoofd tekst van het antwoord een audio
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-- [Asynchrone synthese voor lange-vorm audio](./long-audio-api.md)
+- [Asynchrone synthese voor lange-vorm audio](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
 - [Aan de slag met Custom Voice](how-to-custom-voice.md)

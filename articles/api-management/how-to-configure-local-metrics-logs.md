@@ -1,6 +1,6 @@
 ---
 title: Lokale metrische gegevens en logboeken configureren voor Azure API Management zelf-hostende gateway | Microsoft Docs
-description: Meer informatie over het configureren van lokale metrische gegevens en logboeken voor Azure API Management zelf-hostende gateway
+description: Meer informatie over het configureren van lokale metrische gegevens en logboeken voor Azure API Management zelf-hostende gateway in een Kubernetes-Custer
 services: api-management
 documentationcenter: ''
 author: miaojiang
@@ -10,18 +10,18 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 04/30/2020
+ms.date: 02/01/2021
 ms.author: apimpm
-ms.openlocfilehash: ac147863fe54be3343eda653fc863ebd08dac54d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e34c25b2e3bfa845e258dc5d9699497d7ffcb004
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86254500"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526667"
 ---
 # <a name="configure-local-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Lokale metrische gegevens en logboeken voor Azure API Management zelf-hostende gateway configureren
 
-In dit artikel vindt u informatie over het configureren van lokale metrische gegevens en logboeken voor de [zelf-hostende gateway](./self-hosted-gateway-overview.md). Raadpleeg [dit artikel](how-to-configure-cloud-metrics-logs.md)voor informatie over het configureren van metrische gegevens en logboeken voor de Cloud. 
+In dit artikel vindt u informatie over het configureren van lokale metrische gegevens en logboeken voor de [zelf-hostende gateway](./self-hosted-gateway-overview.md) die is geïmplementeerd op een Kubernetes-cluster. Raadpleeg [dit artikel](how-to-configure-cloud-metrics-logs.md)voor informatie over het configureren van metrische gegevens en logboeken voor de Cloud. 
 
 ## <a name="metrics"></a>Metrische gegevens
 De zelf-hostende gateway ondersteunt [Statistieken](https://github.com/statsd/statsd), die een afsluitend protocol vormen voor verzameling van metrische gegevens en aggregatie. In deze sectie worden de stappen beschreven voor het implementeren van statistieken voor Kubernetes, het configureren van de gateway voor het verzenden van metrische gegevens via statistieken en het gebruik van [Prometheus](https://prometheus.io/) om de metrische gegevens te bewaken. 
@@ -65,7 +65,7 @@ spec:
     spec:
       containers:
       - name: sputnik-metrics-statsd
-        image: prom/statsd-exporter
+        image: mcr.microsoft.com/aks/hcp/prom/statsd-exporter
         ports:
         - name: tcp
           containerPort: 9102
@@ -80,7 +80,7 @@ spec:
           - mountPath: /tmp
             name: sputnik-metrics-config-files
       - name: sputnik-metrics-prometheus
-        image: prom/prometheus
+        image: mcr.microsoft.com/oss/prometheus/prometheus
         ports:
         - name: tcp
           containerPort: 9090
@@ -189,7 +189,7 @@ Nu alles is geïmplementeerd en geconfigureerd, moet de zelf-hostende gateway me
 
 Maak een aantal API-aanroepen via de zelf-hostende gateway als alles correct is geconfigureerd, kunt u de onderstaande metrische gegevens weer geven:
 
-| Gegevens  | Beschrijving |
+| Metrisch  | Beschrijving |
 | ------------- | ------------- |
 | Aanvragen  | Aantal API-aanvragen in de periode |
 | DurationInMS | Aantal milliseconden vanaf het moment dat de gateway de aanvraag ontving tot het moment dat het antwoord volledig werd verzonden |

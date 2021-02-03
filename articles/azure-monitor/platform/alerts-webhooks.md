@@ -6,17 +6,17 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.subservice: alerts
-ms.openlocfilehash: 47ed723ecfc544673ac8aa6374c27ae5a7cf166b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1519dbe9439f1d56a558082f993b15b4a312ecfa
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87852103"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526870"
 ---
 # <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Een webhook met een klassieke waarschuwing voor metrische gegevens in Azure Monitor aanroepen
 
 > [!WARNING]
-> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen gebruikt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](./alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md), maar zijn nog steeds beperkt in beperkte functionaliteit voor resources die de nieuwe waarschuwingen nog niet ondersteunen.
+> In dit artikel wordt beschreven hoe u oudere klassieke metrische waarschuwingen gebruikt. Azure Monitor ondersteunt nu [nieuwere bijna realtime waarschuwingen voor metrische gegevens en een nieuwe meldings ervaring](./alerts-overview.md). Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar zijn nog steeds beperkt in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen.
 >
 
 U kunt webhooks gebruiken om een Azure-waarschuwings melding naar andere systemen te routeren voor nabewerkingen of aangepaste acties. U kunt een webhook gebruiken voor een waarschuwing om deze te routeren naar services die SMS-berichten verzenden, fouten in het logboek registreren, een team informeren via chat-of bericht Services of voor verschillende andere acties. 
@@ -79,13 +79,13 @@ De POST-bewerking bevat de volgende JSON-nettolading en het schema voor alle waa
 | tijdstempel |J | |Het tijdstip waarop de waarschuwing is geactiveerd. |
 | id |J | |Elke waarschuwings regel heeft een unieke ID. |
 | naam |J | |De naam van de waarschuwing. |
-| description |J | |Een beschrijving van de waarschuwing. |
+| beschrijving |J | |Een beschrijving van de waarschuwing. |
 | conditionType |J |Metrische gegevens, gebeurtenis |Er worden twee soorten waarschuwingen ondersteund: metric en Event. Metrische waarschuwingen zijn gebaseerd op een metrische voor waarde. Gebeurtenis waarschuwingen zijn gebaseerd op een gebeurtenis in het activiteiten logboek. Gebruik deze waarde om te controleren of de waarschuwing is gebaseerd op een metrische waarde of een gebeurtenis. |
 | regeling |J | |De specifieke velden die moeten worden gecontroleerd op basis van de waarde van **conditionType** . |
 | metricName |Voor metrische waarschuwingen | |De naam van de metriek die definieert wat de regel controleert. |
 | metricUnit |Voor metrische waarschuwingen |Bytes, BytesPerSecond, aantal, CountPerSecond, percentage, seconden |De eenheid die is toegestaan in de metriek. Bekijk de [toegestane waarden](/previous-versions/azure/reference/dn802430(v=azure.100)). |
 | metricValue |Voor metrische waarschuwingen | |De werkelijke waarde van de metriek die de waarschuwing heeft veroorzaakt. |
-| spreek |Voor metrische waarschuwingen | |De drempel waarde waarmee de waarschuwing wordt geactiveerd. |
+| threshold |Voor metrische waarschuwingen | |De drempel waarde waarmee de waarschuwing wordt geactiveerd. |
 | windowSize |Voor metrische waarschuwingen | |De periode die wordt gebruikt voor het bewaken van de waarschuwings activiteit op basis van de drempel waarde. De waarde moet tussen 5 minuten en 1 dag liggen. De waarde moet de ISO 8601-duur notatie hebben. |
 | timeAggregation |Voor metrische waarschuwingen |Gemiddelde, laatste, maximum, minimum, geen, totaal |Hoe de verzamelde gegevens in de loop van de tijd moeten worden gecombineerd. De standaard waarde is gemiddelde. Bekijk de [toegestane waarden](/previous-versions/azure/reference/dn802410(v=azure.100)). |
 | operator |Voor metrische waarschuwingen | |De operator die wordt gebruikt om de huidige metrische gegevens te vergelijken met de ingestelde drempel waarde. |

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/01/2020
 ms.author: trbye
-ms.openlocfilehash: 9e230ff4e84eba7b61846540fef2915765fa4f77
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: baa48ede04b9de98bd69de69753c97b5fcee7329
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509670"
+ms.locfileid: "99525259"
 ---
 # <a name="what-is-custom-neural-voice"></a>Wat is aangepaste neurale Voice?
 
@@ -51,7 +51,7 @@ Met de aanpassings mogelijkheid van aangepaste Neural Voice kunt u de Neural TTS
 
 ## <a name="responsible-use-of-ai"></a>Verantwoordelijk gebruik van AI
 
-Zie de [Opmerking over transparantie](https://docs.microsoft.com/legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice)als u wilt weten hoe u aangepaste Neural-Voice-degelijken kunt gebruiken. De transparantie notities van micro soft zijn bedoeld om u te helpen begrijpen hoe onze AI-technologie werkt, de keuzes van systeem eigen aren kunnen de prestaties en het gedrag van het systeem beïnvloeden en het belang van het hele systeem, met inbegrip van de technologie, de personen en de omgeving.
+Zie de [Opmerking over transparantie](/legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context)als u wilt weten hoe u aangepaste Neural-Voice-degelijken kunt gebruiken. De transparantie notities van micro soft zijn bedoeld om u te helpen begrijpen hoe onze AI-technologie werkt, de keuzes van systeem eigen aren kunnen de prestaties en het gedrag van het systeem beïnvloeden en het belang van het hele systeem, met inbegrip van de technologie, de personen en de omgeving.
 
 ## <a name="next-steps"></a>Volgende stappen
 

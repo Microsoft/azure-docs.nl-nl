@@ -4,12 +4,12 @@ description: Een virtuele Azure-machine herstellen vanaf een herstel punt met be
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 56bd41aaa607a3bc0f319f46ce5d0c3f8c78d27a
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 4575aedff425fc80f2974be21604be52ccb9525d
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919596"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526192"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
@@ -25,7 +25,6 @@ Azure Backup biedt een aantal manieren om een virtuele machine te herstellen.
 **Schijf herstellen** | Hiermee wordt een VM-schijf hersteld, die vervolgens kan worden gebruikt om een nieuwe virtuele machine te maken.<br/><br/> Azure Backup biedt u een sjabloon waarmee u een nieuwe virtuele machine kunt aanpassen en maken. <br/><br> De herstel taak genereert een sjabloon die u kunt downloaden en gebruiken om aangepaste VM-instellingen op te geven en om een virtuele machine te maken.<br/><br/> De schijven worden gekopieerd naar de resourcegroep die u opgeeft.<br/><br/> U kunt de schijf ook koppelen aan een bestaande virtuele machine of een nieuwe virtuele machine maken met behulp van Power shell.<br/><br/> Deze optie is handig als u de virtuele machine wilt aanpassen, configuratie-instellingen wilt toevoegen die niet waren geconfigureerd op het moment van de back-up of instellingen wilt toevoegen die moeten worden geconfigureerd met de sjabloon of PowerShell.
 **Bestaande schijf vervangen** | U kunt een schijf herstellen en gebruiken om een schijf op de bestaande virtuele machine te vervangen.<br/><br/> De huidige VM moet bestaan. Als deze is verwijderd, kan deze optie niet worden gebruikt.<br/><br/> Azure Backup maakt een moment opname van de bestaande virtuele machine voordat de schijf wordt vervangen en slaat deze op in de faserings locatie die u opgeeft. Bestaande schijven die zijn verbonden met de virtuele machine worden vervangen door het geselecteerde herstelpunt.<br/><br/> De moment opname wordt gekopieerd naar de kluis en bewaard in overeenstemming met het Bewaar beleid. <br/><br/> Na de vervangen schijf bewerking wordt de oorspronkelijke schijf in de resource groep bewaard. U kunt ervoor kiezen om de oorspronkelijke schijven hand matig te verwijderen als ze niet nodig zijn. <br/><br/>Bestaande vervangen wordt ondersteund voor niet-versleutelde beheerde Vm's, waaronder Vm's [die zijn gemaakt met behulp van aangepaste installatie kopieën](https://azure.microsoft.com/resources/videos/create-a-custom-virtual-machine-image-in-azure-resource-manager-with-powershell/). Het wordt niet ondersteund voor klassieke Vm's.<br/><br/> Als het herstel punt meer of minder schijven heeft dan de huidige virtuele machine, wordt in het aantal schijven in het herstel punt alleen de VM-configuratie weer gegeven.<br><br> Bestaande vervangen wordt ook ondersteund voor Vm's met gekoppelde resources, zoals door de [gebruiker toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) of [Key Vault](../key-vault/general/overview.md).
 **In meerdere regio's (secundaire regio)** | Het terugzetten van meerdere regio's kan worden gebruikt om virtuele Azure-machines in de secundaire regio te herstellen. Dit is een [Azure-gekoppelde regio](../best-practices-availability-paired-regions.md#what-are-paired-regions).<br><br> U kunt alle virtuele machines van Azure voor het geselecteerde herstel punt herstellen als de back-up wordt uitgevoerd in de secundaire regio.<br><br> Tijdens het maken van de back-up worden moment opnamen niet gerepliceerd naar de secundaire regio. Alleen de gegevens die zijn opgeslagen in de kluis worden gerepliceerd. Daarom worden de herstel [lagen](about-azure-vm-restore.md#concepts) van de secundaire regio alleen hersteld. De herstel tijd voor de secundaire regio is bijna hetzelfde als de herstel tijd van de kluis-laag voor de primaire regio.  <br><br> Deze functie is beschikbaar voor de volgende opties:<br> <li> [Een VM maken](#create-a-vm): <br> <li> [Schijven herstellen](#restore-disks) <br><br> De optie [bestaande schijven vervangen](#replace-existing-disks) wordt momenteel niet ondersteund.<br><br> Machtigingen<br> De herstel bewerking op de secundaire regio kan worden uitgevoerd met back-upbeheerders en app-beheerders.
-**Cross-zonegebonden herstellen** | U kunt cross-zonegebonden Restore gebruiken om met [Azure zone vastgemaakte vm's](https://docs.microsoft.com/azure/virtual-machines/windows/create-portal-availability-zone) te herstellen in alle [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview) van dezelfde regio. <br> <br> U kunt alle door Azure zone vastgemaakte Vm's herstellen voor het geselecteerde herstel punt waarvan een back-up is gemaakt na de release van deze functie, naar de zone van uw keuze. De gegevens worden standaard teruggezet in dezelfde zone als waarvan een back-up is gemaakt. <br> <br> Dit kan worden gebruikt tijdens nood herstel scenario's, als de vastgemaakte zone van de virtuele machine niet meer beschikbaar is.
 
 > [!NOTE]
 > U kunt ook specifieke bestanden en mappen op een virtuele Azure-machine herstellen. [Meer informatie](backup-azure-restore-files-from-vm.md).
@@ -180,11 +179,9 @@ De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de
 >- De functie voor het terugzetten van meerdere regio's herstelt CMK (door de klant beheerde sleutels) ingeschakelde Azure-Vm's waarvoor geen back-up wordt gemaakt in een CMK ingeschakeld Recovery Services kluis als niet-CMK ingeschakelde virtuele machines in de secundaire regio.
 >- De Azure-rollen die nodig zijn voor het herstellen van de secundaire regio, zijn hetzelfde als die in de primaire regio.
 
-## <a name="cross-zonal-restore"></a>Cross-zonegebonden herstellen
+Met [Azure zone vastgemaakte vm's](https://docs.microsoft.com/azure/virtual-machines/windows/create-portal-availability-zone) kunnen worden hersteld in alle [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview) van dezelfde regio.
 
-U kunt cross-zonegebonden Restore gebruiken om met [Azure zone vastgemaakte vm's](https://docs.microsoft.com/azure/virtual-machines/windows/create-portal-availability-zone) te herstellen in alle [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview) van dezelfde regio.
-
-In het herstel proces ziet u de optie **beschikbaarheids zone.** U ziet eerst uw standaard zone. Als u een andere zone wilt kiezen, kiest u het gewenste nummer voor de zone. Kies een andere zone als de standaard beschikbaarheids zone niet beschikbaar is vanwege een storing, of om een andere reden om te herstellen in een andere zone.
+In het herstel proces ziet u de optie **beschikbaarheids zone.** U ziet eerst uw standaard zone. Als u een andere zone wilt kiezen, kiest u het gewenste nummer voor de zone. Als de zone vastgemaakt niet beschikbaar is, kunt u de gegevens niet herstellen naar een andere zone, omdat de gegevens waarvan een back-up is gemaakt, niet zonally worden gerepliceerd.
 
 ![Beschikbaarheids zone kiezen](./media/backup-azure-arm-restore-vms/cross-zonal-restore.png)
 

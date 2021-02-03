@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: dimitri-furman
 ms.author: dfurman
 ms.reviewer: ''
-ms.date: 03/03/2020
-ms.openlocfilehash: 4ea1982e7545f4ac39a5ecd15dc9e19a582ae31c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.date: 02/03/2021
+ms.openlocfilehash: c6faa1703b0935d66d291281f33027b3a66a59d4
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459642"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526819"
 ---
 # <a name="azure-sql-database-hyperscale-faq"></a>Veelgestelde vragen over Azure SQL Database grootschalige
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -166,7 +166,7 @@ De grootte van de data base neemt automatisch toe tijdens het invoegen/opnemen v
 
 ### <a name="what-is-the-smallest-database-size-that-hyperscale-supports-or-starts-with"></a>Wat is de kleinste grootte van de data base die grootschalige ondersteunt of begint met
 
-40 GB. Een grootschalige-data base wordt gemaakt met een begin grootte van 10 GB. Vervolgens begint het te groeien met 10 GB om de 10 minuten, totdat de grootte van 40 GB wordt bereikt. Elk van deze 10 GB chucks wordt toegewezen in een andere pagina Server, zodat er meer IOPS en een hogere I/O-parallellisme kunnen worden gemaakt. Vanwege deze optimalisatie, zelfs als u de oorspronkelijke grootte van de data base kleiner dan 40 GB kiest, wordt de data base automatisch uitgebreid tot ten minste 40 GB.
+40 GB. Een grootschalige-data base wordt gemaakt met een begin grootte van 10 GB. Vervolgens begint het te groeien met 10 GB om de 10 minuten, totdat de grootte van 40 GB wordt bereikt. Elk van deze 10 GB-segmenten wordt toegewezen in een andere pagina Server om meer IOPS en een hogere I/O-parallellisme te bieden. Vanwege deze optimalisatie, zelfs als u de oorspronkelijke grootte van de data base kleiner dan 40 GB kiest, wordt de data base automatisch uitgebreid tot ten minste 40 GB.
 
 ### <a name="in-what-increments-does-my-database-size-grow"></a>In welke stappen groeit de grootte van mijn data base
 
@@ -233,7 +233,7 @@ Grootschalige is geschikt voor het gebruik van 100 MB/s met nieuwe/gewijzigde ge
 
 U kunt een client toepassing gegevens laten lezen van Azure Storage en laden van gegevens in een grootschalige-data base (net als bij andere data bases in Azure SQL Database). Poly Base wordt momenteel niet ondersteund in Azure SQL Database. Als alternatief voor snelle belasting kunt u [Azure Data Factory](../../data-factory/index.yml)gebruiken, of een Spark-taak gebruiken in [Azure Databricks](/azure/azure-databricks/) met de Spark- [Connector voor SQL](spark-connector.md). De Spark-connector naar SQL ondersteunt bulksgewijze invoeging.
 
-Het is ook mogelijk om gegevens te lezen uit een Azure Blob Store met behulp van BULK INSERT of OPENROWSET: [voor beelden van bulk toegang tot gegevens in Azure Blob Storage](/sql/relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage?view=sql-server-2017#accessing-data-in-a-csv-file-referencing-an-azure-blob-storage-location).
+Het is ook mogelijk om gegevens te lezen uit een Azure Blob Store met behulp van BULK INSERT of OPENROWSET: [voor beelden van bulk toegang tot gegevens in Azure Blob Storage](/sql/relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage#accessing-data-in-a-csv-file-referencing-an-azure-blob-storage-location).
 
 Het eenvoudige herstel-of bulk logboek model wordt niet ondersteund in grootschalige. Een volledig herstel model is vereist voor een hoge Beschik baarheid en herstel naar een bepaald tijdstip. Grootschalige-logboek architectuur biedt echter betere gegevens opname frequentie vergeleken met andere Azure SQL Database-Service lagen.
 

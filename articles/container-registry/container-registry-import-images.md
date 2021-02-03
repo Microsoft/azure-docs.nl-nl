@@ -2,13 +2,13 @@
 title: Containerinstallatiekopieën importeren
 description: Container installatie kopieën importeren in een Azure container Registry met behulp van Azure Api's, zonder dat u docker-opdrachten hoeft uit te voeren.
 ms.topic: article
-ms.date: 09/18/2020
-ms.openlocfilehash: 3950b9fb24b80db4d9654a615521c0eb82914499
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/15/2021
+ms.openlocfilehash: 364c90b857d0d7d479152e2aa56db4d80041f037
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019970"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524495"
 ---
 # <a name="import-container-images-to-a-container-registry"></a>Container installatie kopieën importeren in een container register
 
@@ -35,6 +35,11 @@ Als u container installatie kopieën wilt importeren, moet u de Azure CLI in Azu
 > [!NOTE]
 > Als u identieke container installatie kopieën wilt distribueren over meerdere Azure-regio's, ondersteunt Azure Container Registry ook [geo-replicatie](container-registry-geo-replication.md). Door Geo-replicatie van een REGI ster (Premium-servicelaag vereist), kunt u meerdere regio's met identieke installatie kopieën en label namen uit één REGI ster gebruiken.
 >
+
+> [!IMPORTANT]
+> Wijzigingen in het importeren van afbeeldingen tussen twee Azure-container registers zijn geïntroduceerd vanaf januari 2021:
+> * Voor het importeren van of naar een netwerk met een beperkt Azure container Registry is het beperkte REGI ster vereist om [**toegang door vertrouwde services**](allow-access-trusted-services.md) toe te staan om het netwerk over te slaan. De instelling is standaard ingeschakeld en kan worden geïmporteerd. Als de instelling niet is ingeschakeld in een zojuist gemaakt REGI ster met een persoonlijk eind punt of met de firewall regels voor het REGI ster, mislukt het importeren. 
+> * In een bestaand, door het netwerk beperkt Azure container Registry dat als import bron of-doel wordt gebruikt, is het inschakelen van deze netwerk beveiligings functie optioneel, maar wordt aanbevolen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -92,6 +97,8 @@ U kunt een installatie kopie importeren uit een Azure container registry in deze
 * Het REGI ster kan zich in hetzelfde of een ander Azure-abonnement bevindt als de Tenant van hetzelfde Active Directory.
 
 * [Open bare toegang](container-registry-access-selected-networks.md#disable-public-network-access) tot het bron register is mogelijk uitgeschakeld. Als open bare toegang is uitgeschakeld, geeft u het bron register op Resource-ID op in plaats van de naam van de aanmeldings server van het REGI ster.
+
+* Als voor het bron register en/of het doel register een privé-eind punt of de firewall regels voor het REGI ster zijn toegepast, moet u ervoor zorgen dat [vertrouwde services](allow-access-trusted-services.md) toegang tot het netwerk toestaat met het beperkte REGI ster.
 
 ### <a name="import-from-a-registry-in-the-same-subscription"></a>Importeren uit een REGI ster in hetzelfde abonnement
 

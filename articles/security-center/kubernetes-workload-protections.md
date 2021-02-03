@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: ce0808bc53ae663b80da793bf33b5b371d881961
-ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
+ms.openlocfilehash: 99e217c6d8065d19f7b03419306f4992735cb587
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222180"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526722"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Kubernetes-workloads beveiligen
 
@@ -35,10 +35,10 @@ Security Center biedt meer container beveiligings functies als u Azure Defender 
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|**Eigenaar** of **beveiligings beheerder** voor het bewerken van een toewijzing<br>**Lezer** voor het weer geven van de aanbevelingen|
-|Ondersteunde clusters:|Kubernetes v 1.14 (of hoger) is vereist<br>Geen PodSecurityPolicy-resource (oud PSP-model) op de clusters<br>Windows-knoop punten worden niet ondersteund|
+|Omgevings vereisten:|Kubernetes v 1.14 (of hoger) is vereist<br>Geen PodSecurityPolicy-resource (oud PSP-model) op de clusters<br>Windows-knoop punten worden niet ondersteund|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||
 
@@ -52,6 +52,8 @@ Azure Security Center bevat een bundel van aanbevelingen die beschikbaar zijn wa
 Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoeg toepassing voor Kubernetes**. 
 
 - U kunt deze invoeg toepassing automatisch implementeren, zoals wordt uitgelegd in [automatische inrichting van uitbrei dingen inschakelen](security-center-enable-data-collection.md#enable-auto-provisioning-of-extensions). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
+
+    :::image type="content" source="media/defender-for-kubernetes-usage/policy-add-on-auto-provision.png" alt-text="Het hulp programma voor automatische inrichting van Security Center gebruiken om de beleids-invoeg toepassing voor Kubernetes te installeren":::
 
 - De invoeg toepassing hand matig implementeren:
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 12/10/2020
+ms.date: 02/02/2021
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: d529c5900d851368d60099091bb5745660036dea
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 542eed34f2be05cce3829baab2f07a5c58413ba0
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029886"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526293"
 ---
 ::: zone target="docs"
 
@@ -30,7 +30,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voltooi voordat u begint de [Zelfstudie: Gegevens kopiëren naar de Azure Data Box-schijf en deze gegevens controleren](data-box-disk-deploy-copy-data.md).
+Voordat u begint, moet u ervoor zorgen dat u de [zelf studie hebt voltooid: gegevens kopiëren naar Azure data Box disk en verifiëren](data-box-disk-deploy-copy-data.md).
 
 ## <a name="ship-data-box-disk-back"></a>Een Data Box Disk terugsturen
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit als u het apparaat vanuit de VS of Canada retournee
 
     - Bel met UPS in de buurt (gratis land-/regiospecifiek nummer).
     - Vermeld in uw gesprek het trackingnummer voor de retournering, zoals weergegeven op het afgedrukte label.
-    - Als het trackingnummer niet wordt vermeld, moet u bij het afhalen door UPS extra kosten betalen.
+    - Als het tracking nummer niet wordt vermeld, moet u een extra kosten betalen tijdens het ophalen.
     - In plaats van het ophalen te plannen, kunt u de Data Box Disk ook zelf naar de dichtstbijzijnde inleverlocatie brengen.
 
 
@@ -83,7 +83,7 @@ Voer de volgende stappen uit als u het apparaat retourneert vanuit Europa of het
 
 Voor Azure-datacenters in Australië geldt een extra beveiligingsmaatregel. Alle inkomende verzendingen moeten een melding vooraf hebben. Voer de volgende stappen uit voor retourneren vanuit Australië.
 
-1. Gebruik het meegeleverde retourlabel en controleer of de TAU-code (het referentienummer) erop staat. Als het retourlabel ontbreekt of als u andere problemen hebt, kunt u een e-mail sturen naar [Data Box Asia Operations](mailto:adbo@microsoft.com). Geef de ordernaam en details over het probleem op in de onderwerpregel.
+1. Gebruik het meegeleverde retourlabel en controleer of de TAU-code (het referentienummer) erop staat. Als het retourlabel ontbreekt of als u andere problemen hebt, kunt u een e-mail sturen naar [Data Box Asia Operations](mailto:adbo@microsoft.com). Geef de naam van de bestelling op in de kop van het onderwerp en de details van het probleem.
 2. Bevestig het label op de doos.
 3. Boek online een afspraak voor de retourzending via de link https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference.
 
@@ -119,13 +119,13 @@ Zo nodig kunt u contact opnemen met de ondersteuning van Quantium Solutions (in 
 1. Zorg ervoor dat u de vrachtbrief voor de retourzending bijlevert.
 2. Ophalen pakket aanvragen indien vrachtbrief aanwezig is:
     1. Bel de hotline van *Quantium Solutions International* op 070-8231-1418 (tijdens kantooruren, 10 tot 17 uur, maandag t/m vrijdag). U noemt *Microsoft Azure pickup* en het serviceaanvraagnummer om een ophaalafspraak te maken.  
-    2. Als de hotline bezet is, stuurt u een e-mail aan `microsoft@rocketparcel.com`, met als onderwerp *Microsoft Azure Pickup* en het serviceaanvraagnummer als referentie.
-    3. Als de koerier niet komt om het pakket op te halen, belt u de hotline van *Quantium Solutions International* voor een alternatieve oplossing.
+    2. Als de Hotline bezet is, e-mail bericht [microsoft@rocketparcel.com](mailto:microsoft@rocketparcel.com) met het onderwerp van de e-mail *Microsoft Azure ophalen* en het nummer van de service aanvraag voor referentie.
+    3. Roep *Quantium Solutions International* Hotline aan voor alternatieve regelingen als de courier niet arriveert voor verzameling.
     4. U ontvangt een e-mail ter bevestiging van de ophaalafspraak.
-3. Voer deze stap alleen uit als de vrachtbrief niet aanwezig is. Ophalen aanvragen:
-    1. Bel de hotline van *Quantium Solutions International* op 070-8231-1418 (tijdens kantooruren, 10 tot 17 uur, maandag t/m vrijdag). U noemt *Microsoft Azure pickup* en het serviceaanvraagnummer om een ophaalafspraak te maken. Geef op dat u een nieuwe vrachtbrief wilt hebben om een ophaalafspraak te maken. Vermeld de gegevens van de afzender (klant), de ontvanger (Azure-datacenter) en het referentienummer (serviceaanvraagnummer). 
-    2. Als de hotline bezet is, stuurt u een e-mail aan `microsoft@rocketparcel.com`, met als onderwerp *Microsoft Azure Pickup* en het serviceaanvraagnummer als referentie.
-    3. Als de koerier niet komt om het pakket op te halen, belt u de hotline van *Quantium Solutions International* voor een alternatieve oplossing.
+3. Voer deze stap alleen uit als de begeleidende notitie niet aanwezig is. Ophalen aanvragen:
+    1. Bel de hotline van *Quantium Solutions International* op 070-8231-1418 (tijdens kantooruren, 10 tot 17 uur, maandag t/m vrijdag). U noemt *Microsoft Azure pickup* en het serviceaanvraagnummer om een ophaalafspraak te maken. Geef op dat u een nieuwe vrachtbrief wilt hebben om een ophaalafspraak te maken. Vermeld de gegevens van de afzender (klant), de ontvanger (Azure-datacenter) en het referentienummer (serviceaanvraagnummer).
+    2. Als de Hotline bezet is, e-mail [microsoft@rocketparcel.com](mailto:microsoft@rocketparcel.com) , met het onderwerp van de e-mail *Microsoft Azure ophalen* en het nummer van de service aanvraag als referentie.
+    3. Roep *Quantium Solutions International* Hotline aan voor alternatieve regelingen als de courier niet arriveert voor verzameling.
     4. U krijgt een mondelinge bevestiging als de aanvraag via de telefoon wordt gedaan.
 
 ### <a name="singapore"></a>[Singapore](#tab/in-singapore)
@@ -152,7 +152,7 @@ Zo nodig kunt u contact opnemen met de ondersteuning van Quantium Solutions (in 
    > * Vóór 15.00 uur is de ophaaltijd op de volgende werkdag tussen 09.00 en 13.00.
    > * Na 15.00 uur is de ophaaltijd op de volgende werkdag tussen 14.00 en 18.00.
 
-   Als u problemen ondervindt, neemt u contact op met Data Box Operations Asia via adbo@microsoft.com. Geef de naam van de taak op in het onderwerp en het probleem dat is opgetreden.
+   Als u problemen ondervindt, neemt u contact op met Data Box Operations Asia op [adbo@microsoft.com](mailto:adbo@microsoft.com) . Geef de naam van de taak op in het onderwerp en het probleem dat is opgetreden.
 
 3. Overhandig het pakket aan de koerier.
 
@@ -185,7 +185,7 @@ Voer de volgende stappen uit als u het apparaat vanuit Zuid-Afrika retourneert.
 
     * Of lever het pakket af bij het dichtstbijzijnde DHL-servicepunt.
 
-5. Als u problemen hebt, stuurt u een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met details van de problemen die zich hebben voorgedaan. Vermeld het vrachtnummer in de onderwerpregel. U kunt ook bellen naar +27(0)119213902.
+5. Als u problemen ondervindt, stuurt u een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met details van de problemen. Vermeld het vrachtnummer in de onderwerpregel. U kunt ook bellen naar +27(0)119213902.
 
 ### <a name="china"></a>[China](#tab/in-china)
 
@@ -205,7 +205,7 @@ Voer de volgende stappen uit als het apparaat vanuit China retourneert.
 
 3. Nadat het boeken van de retournering is voltooid, ontvangt u een e-mailbevestiging van FedEx.  
 
-4. Als u problemen hebt, stuurt u een e-mail naar [DL-DC-SHA@oe.21vianet.com](mailto:DL-DC-SHA@oe.21vianet.com) met details van het aangetroffen probleem. Vermeld de ordernaam in de onderwerpregel.
+4. Als u problemen ondervindt, kunt u e-mail berichten [DL-DC-SHA@oe.21vianet.com](mailto:DL-DC-SHA@oe.21vianet.com) met details van het probleem (en) en de naam van de bestelling in de onderwerp: regel plaatsen.
 
 #### <a name="premier-customer-care-contact-information"></a>Contactgegevens van Premier Customer Care
 
@@ -229,20 +229,20 @@ Voer de volgende stappen uit als het apparaat vanuit China retourneert.
 
 ### <a name="self-managed"></a>[Zelfbeheerd](#tab/in-selfmanaged)
 
-Als uAls u Data Box Disk gebruikt in de Amerikaanse overheid, Japan, Singapore, Korea, West-Europa, Zuid-Afrika of India en de bezorgoptie Zelfbeheerde verzending hebt geselecteerd tijdens een bestelling, volgt u deze instructies.
+Als u Data Box Disk gebruikt in Amerikaanse overheid, Japan, Singapore, Korea, Verenigd Konink rijk, Europa-west, Australië, Zuid-Afrika of India en de optie zelf beheerde verzen ding hebt geselecteerd tijdens het maken van de order, volgt u deze instructies.
 
 1. Ga naar de blade **Overzicht** van uw bestelling in de Azure-portal. Loop de instructies door die worden weergegeven wanneer u **Ophalen plannen** selecteert. U ziet een autorisatiecode die wordt gebruikt op het moment dat de bestelling wordt bezorgd.
 
-2. Wanneer u klaar bent om het apparaat terug te sturen, stuurt u een e-mail naar het Azure Data Box-team met de volgende sjabloon.
+2. Stuur een e-mail naar het Azure Data Box Operations-team met behulp van de volgende sjabloon wanneer u klaar bent om het apparaat te retour neren.
 
     ```
     To: adbops@microsoft.com
     Subject: Request for Azure Data Box Disk drop-off for order: 'orderName'
     Body:
      a. Order name
-     b. Contact name of the person dropping off. You will need to display a Government approved ID during the drop off.
+     b. Contact name of the person dropping off. You will need to display a Government approved ID during the drop-off.
     ```
-3. Het Azure Data Box-team werkt samen met u verder om de bezorging bij het Azure-datacentrum te regelen.
+3. Azure Data Box Operations-team werkt samen met u om de vervolg keuzelijst voor het Azure-Data Center te rangschikken.
 
 ---
 
@@ -256,7 +256,7 @@ In deze zelfstudie zijn verschillende onderwerpen besproken over de Azure Data B
 >
 > * Een Data Box Disk naar Microsoft verzenden
 
-Ga naar de volgende procedure om te leren hoe u het uploaden van gegevens vanuit Data Box Disk naar het Azure Storage-account kunt controleren.
+Ga naar de volgende procedure om te leren hoe u het uploaden van gegevens van Data Box Disk naar het Azure-opslag account kunt controleren.
 
 > [!div class="nextstepaction"]
 > [Gegevens uploaden vanuit Azure Data Box Disk controleren](./data-box-disk-deploy-upload-verify.md)

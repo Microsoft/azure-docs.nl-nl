@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: how-to
-ms.date: 08/12/2020
+ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: 9643e62f085888808b95698d068c5e383fb8d539
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 07529b18191c71776a9a36edbfa4cfd8ded5af4f
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337964"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524546"
 ---
 # <a name="use-self-managed-shipping-for-azure-data-box-in-the-azure-portal"></a>Zelf-beheerde verzen ding voor Azure Data Box gebruiken in de Azure Portal
 
@@ -24,18 +24,20 @@ In dit artikel worden zelf beheerde verzend taken beschreven voor het best Ellen
 Zelf-beheerde verzen ding is beschikbaar als optie wanneer u [Azure data Box order](data-box-deploy-ordered.md). Zelf-beheerde verzen ding is alleen beschikbaar in de volgende regio's:
 
 * Amerikaanse overheid
+* Verenigd Koninkrijk
 * West-Europa
 * Japan
 * Singapore
 * Zuid-Korea
 * India
 * Zuid-Afrika
+* Australië
 
 ## <a name="use-self-managed-shipping"></a>Zelfbeheerde verzending gebruiken
 
 Wanneer u een Data Box order plaatst, kunt u de optie zelf beheerde verzen ding kiezen.
 
-1. Selecteer in uw Azure Data Box bestelling, onder de **contact gegevens** , **+ Verzend adres toevoegen**.
+1. Selecteer in uw Azure Data Box bestelling, onder de **contact gegevens**, **+ Verzend adres toevoegen**.
  
    ![Zelf-beheerde verzen ding, verzend adres toevoegen](media\data-box-portal-customer-managed-shipping\choose-self-managed-shipping-1.png)
 
@@ -61,7 +63,7 @@ Wanneer u een Data Box order plaatst, kunt u de optie zelf beheerde verzen ding 
 
    ![De autorisatie code van uw apparaat weer geven](media\data-box-portal-customer-managed-shipping\data-box-portal-auth-01b.png)
 
-   Noteer deze **autorisatie code**. Volgens de beveiligings vereisten, op het moment van het plannen van het verzamelen van de planning, moet de naam van de persoon die de registratie aankomt, worden weer gegeven.
+   Noteer deze **autorisatie code**. Volgens de beveiligings vereisten moet u, op het moment van het plannen van de planning, de naam van de persoon presen teren die zou arriveren voor ophalen.
 
    U moet ook details opgeven van wie gaat naar het Data Center voor ophalen. U of het contact punt moet een door de overheid goedgekeurde foto-ID hebben die wordt gevalideerd op het Data Center.
 
@@ -73,16 +75,16 @@ Wanneer u een Data Box order plaatst, kunt u de optie zelf beheerde verzen ding 
 
 8. Nadat het apparaat is opgehaald, kopieert u gegevens naar de Data Box op uw site. Wanneer het kopiëren van de gegevens is voltooid, kunt u voorbereiden om de Data Box te verzenden. Zie [voorbereiding voor verzending](data-box-deploy-picked-up.md#prepare-to-ship)voor meer informatie.
 
-   De **voorbereiding voor verzending** stap moet zonder kritieke fouten worden voltooid, anders moet u deze stap opnieuw uitvoeren nadat u de benodigde oplossingen hebt gemaakt. Nadat de voor bereiding is voltooid, kunt u de autorisatie code voor de vervolg keuzelijst bekijken op de lokale gebruikers interface van het apparaat.
+   De **voorbereiding voor verzending** stap moet worden voltooid zonder kritieke fouten. Anders moet u deze stap opnieuw uitvoeren nadat u de benodigde oplossingen hebt gemaakt. Nadat de **voorbereiding voor verzending** stap is voltooid, kunt u de autorisatie code voor de vervolg keuzelijst bekijken op de lokale gebruikers interface van het apparaat.
 
    > [!NOTE]
    > Deel de autorisatie code niet via e-mail. Dit wordt alleen gecontroleerd bij het Data Center tijdens het verwijderen.
 
-9. Als u een afspraak hebt ontvangen voor een vervolg keuzelijst, moet de order zijn **gereed om te ontvangen** met de status van Azure Data Center in de Azure Portal. Volg de instructies in de **vervolg keuzelijst planning** om het apparaat te retour neren.
+9. Als u een afspraak hebt ontvangen voor vervolg keuzelijst, moet de volg orde van de status van **Azure Data Center** in de Azure Portal zijn voltooid. Volg de instructies in de **vervolg keuzelijst planning** om het apparaat te retour neren.
 
    ![Instructies voor het verwijderen van apparaten](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-02b.png)
 
-10. Nadat uw ID en autorisatie code zijn geverifieerd en u het apparaat in het Data Center hebt verwijderd, moet de status van de bestelling worden **ontvangen**.
+10. Nadat uw ID en autorisatie code zijn geverifieerd en u het apparaat in het Data Center hebt verwijderd, moet u de status van de bestelling **ontvangen**.
 
     ![Een order met de status ontvangen](media\data-box-portal-customer-managed-shipping\data-box-portal-received-complete-01.png)
 

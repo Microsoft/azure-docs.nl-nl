@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 01/08/2021
+ms.date: 02/03/2021
 ms.topic: conceptual
-ms.openlocfilehash: 86d524665b70725108324b1d88521a4c3cb8ff05
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 5f12ea90a4398b63eaa19a1fc5a375c15bdfa8c5
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033962"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526361"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -99,7 +99,7 @@ Service Tags:
 
 Adres
 
-| Agentresource | Beschrijving |
+| Agentresource | Description |
 |---------|---------|
 |`management.azure.com`|Azure Resource Manager|
 |`login.windows.net`|Azure Active Directory|
@@ -111,14 +111,14 @@ Adres
 
 Voor preview-agents (versie 0,11 en lager) hebt u ook toegang tot de volgende Url's nodig:
 
-| Agentresource | Beschrijving |
+| Agentresource | Description |
 |---------|---------|
 |`agentserviceapi.azure-automation.net`|Gastconfiguratie|
 |`*-agentservice-prod-1.azure-automation.net`|Gastconfiguratie|
 
-Zie voor een lijst met IP-adressen voor elke servicetag/regio het JSON-bestand- [Azure IP-bereiken en de service Tags – open bare Cloud](https://www.microsoft.com/download/details.aspx?id=56519). Micro soft publiceert wekelijkse updates met elke Azure-service en de IP-bereiken die worden gebruikt. Bekijk [service Tags](../../virtual-network/network-security-groups-overview.md#service-tags)voor meer informatie.
+Zie voor een lijst met IP-adressen voor elke servicetag/regio het JSON-bestand- [Azure IP-bereiken en de service Tags – open bare Cloud](https://www.microsoft.com/download/details.aspx?id=56519). Micro soft publiceert wekelijkse updates met elke Azure-service en de IP-bereiken die worden gebruikt. Deze informatie in het JSON-bestand is de huidige punt-in-time-lijst van de IP-bereiken die overeenkomen met elke servicetag. De IP-adressen zijn onderhevig aan wijzigingen. Als IP-adresbereiken vereist zijn voor de configuratie van de firewall, moet de **Cloud** -servicetag worden gebruikt om toegang tot alle Azure-Services toe te staan. Schakel de beveiligings controle of inspectie van deze Url's niet uit, en sta ze toe als andere Internet verkeer.
 
-De Url's in de vorige tabel zijn vereist naast de IP-adres bereik gegevens van de service label, omdat de meeste services momenteel geen servicetag registratie hebben. Zo kunnen de IP-adressen worden gewijzigd. Als IP-adresbereiken vereist zijn voor de configuratie van de firewall, moet de **Cloud** -servicetag worden gebruikt om toegang tot alle Azure-Services toe te staan. Schakel de beveiligings controle of inspectie van deze Url's niet uit, en sta ze toe als andere Internet verkeer.
+Raadpleeg [service Tags Overview](../../virtual-network/service-tags-overview.md)voor meer informatie.
 
 ### <a name="register-azure-resource-providers"></a>Azure-resourceproviders registreren
 
@@ -175,7 +175,7 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * De volgende installatie mappen worden tijdens de installatie gemaakt.
 
-    |Map |Beschrijving |
+    |Map |Description |
     |-------|------------|
     |%ProgramFiles%\AzureConnectedMachineAgent |Standaardpad met de agent ondersteunings bestanden.|
     |%ProgramData%\AzureConnectedMachineAgent |Bevat de configuratie bestanden voor de agent.|
@@ -187,7 +187,7 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * De volgende Windows-Services worden tijdens de installatie van de agent gemaakt op de doel machine.
 
-    |Servicenaam |Weergavenaam |Procesnaam |Beschrijving |
+    |Servicenaam |Weergavenaam |Procesnaam |Description |
     |-------------|-------------|-------------|------------|
     |himds |Azure Hybrid Instance Metadata Service |himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
     |GCArcService |Gast configuratie Arc-service |gc_service |Bewaakt de gewenste status configuratie van de machine.|
@@ -195,14 +195,14 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt.
 
-    |Naam |Standaardwaarde |Beschrijving |
+    |Name |Standaardwaarde |Beschrijving |
     |-----|--------------|------------|
     |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
     |IMDS_ENDPOINT |http://localhost:40342 ||
 
 * Er zijn verschillende logboek bestanden beschikbaar voor het oplossen van problemen. Deze worden beschreven in de volgende tabel.
 
-    |Logboek |Beschrijving |
+    |Logboek |Description |
     |----|------------|
     |%ProgramData%\AzureConnectedMachineAgent\Log\himds.log |Registreert gegevens van de agents (HIMDS) en de interactie met Azure.|
     |%ProgramData%\AzureConnectedMachineAgent\Log\azcmagent.log |Bevat de uitvoer van de azcmagent-hulp programma-opdrachten wanneer het argument uitgebreid (-v) wordt gebruikt.|
@@ -227,7 +227,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * De volgende installatie mappen worden tijdens de installatie gemaakt.
 
-    |Map |Beschrijving |
+    |Map |Description |
     |-------|------------|
     |/var/opt/azcmagent/ |Standaardpad met de agent ondersteunings bestanden.|
     |/opt/azcmagent/ |
@@ -239,7 +239,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * De volgende daemons worden tijdens de installatie van de agent gemaakt op de doel machine.
 
-    |Servicenaam |Weergavenaam |Procesnaam |Beschrijving |
+    |Servicenaam |Weergavenaam |Procesnaam |Description |
     |-------------|-------------|-------------|------------|
     |himdsd. service |Azure Connected machine Agent-service |himds |Deze service implementeert de Azure instance meta data service (IMDS) voor het beheren van de verbinding met Azure en de Azure-identiteit van de verbonden machine.|
     |gcad.servce |GC-Arc-service |gc_linux_service |Bewaakt de gewenste status configuratie van de machine. |
@@ -247,7 +247,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * Er zijn verschillende logboek bestanden beschikbaar voor het oplossen van problemen. Deze worden beschreven in de volgende tabel.
 
-    |Logboek |Beschrijving |
+    |Logboek |Description |
     |----|------------|
     |/var/opt/azcmagent/log/himds.log |Registreert gegevens van de agents (HIMDS) en de interactie met Azure.|
     |/var/opt/azcmagent/log/azcmagent.log |Bevat de uitvoer van de azcmagent-hulp programma-opdrachten wanneer het argument uitgebreid (-v) wordt gebruikt.|
@@ -258,7 +258,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt. Deze variabelen worden ingesteld in `/lib/systemd/system.conf.d/azcmagent.conf` .
 
-    |Naam |Standaardwaarde |Beschrijving |
+    |Name |Standaardwaarde |Beschrijving |
     |-----|--------------|------------|
     |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
     |IMDS_ENDPOINT |http://localhost:40342 ||

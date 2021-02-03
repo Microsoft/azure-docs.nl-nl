@@ -101,6 +101,8 @@
               href: container-registry-access-selected-networks.md
             - name: Toegang met een service-eindpunt beperken (preview)
               href: container-registry-vnet.md
+            - name: Toegang toestaan door vertrouwde services
+              href: allow-access-trusted-services.md
             - name: Versleutelen met een door de klant beheerde sleutel
               href: container-registry-customer-managed-keys.md
             - name: Toegang achter een firewall

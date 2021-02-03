@@ -3,12 +3,12 @@ title: Fouten bij niet-gevonden resources
 description: Hierin wordt beschreven hoe u fouten oplost wanneer een bron niet kan worden gevonden. De fout kan optreden bij het implementeren van een Azure Resource Manager sjabloon of bij het nemen van beheer acties.
 ms.topic: troubleshooting
 ms.date: 06/10/2020
-ms.openlocfilehash: 224af4ce0fe5053201f25d8207f4ca8cdc73e638
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40f3c2ac61b6a6d5fdbcefdf62761668b013b1db
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84667944"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526243"
 ---
 # <a name="resolve-resource-not-found-errors"></a>Fouten bij niet-gevonden resources oplossen
 
@@ -105,7 +105,7 @@ Gebruik in de functie Reference `Full` om alle eigenschappen op te halen, inclus
 
 Het patroon is:
 
-`"[reference(resourceId(<resource-provider-namespace>, <resource-name>, <API-version>, 'Full').Identity.propertyName]"`
+`"[reference(resourceId(<resource-provider-namespace>, <resource-name>), <API-version>, 'Full').Identity.propertyName]"`
 
 > [!IMPORTANT]
 > Gebruik niet het patroon:

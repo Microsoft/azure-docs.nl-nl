@@ -8,12 +8,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 02/02/2021
-ms.openlocfilehash: 8154e1adff8d8c2bdfe7fedc9309f95e5c5880bd
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 0eb3b8feda09d931654d1781ea37737d68a1b377
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99500719"
+ms.locfileid: "99526633"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -46,7 +46,7 @@ Azure Sentinel ondersteunt nu de nieuwe [AZ. SecurityInsights](https://www.power
 
 De **AZ. SecurityInsights** -module ondersteunt algemene Azure Sentinel use-cases, zoals interactie met incidenten voor het wijzigen van Statues, Ernst, eigenaar, enzovoort, het toevoegen van opmerkingen en labels aan incidenten en het maken van blad wijzers.
 
-We raden u aan om [Azure Resource Manager-sjablonen (arm)](/azure/azure-resource-manager/templates/) te gebruiken voor uw CI/cd-pijp lijn, de module **AZ. SecurityInsights** is handig voor taken na de implementatie en is specifiek gericht op Soc Automation.  Uw SOC-automatisering kan bijvoorbeeld stappen bevatten voor het configureren van gegevens connectors, het maken van analyse regels of het toevoegen van automatiserings acties aan Analytics-regels.
+We raden u aan om [Azure Resource Manager-sjablonen (arm)](/azure/azure-resource-manager/templates/) te gebruiken voor uw CI/cd-pijp lijn, de module **AZ. SecurityInsights** is handig voor taken na de implementatie en is bedoeld voor Soc Automation.  Uw SOC-automatisering kan bijvoorbeeld stappen bevatten voor het configureren van gegevens connectors, het maken van analyse regels of het toevoegen van automatiserings acties aan Analytics-regels.
 
 Zie de [documentatie van AZ. SecurityInsights Power shell](/powershell/module/az.securityinsights/)(Engelstalig) voor meer informatie, inclusief een volledige lijst en een beschrijving van de beschik bare cmdlets, parameter beschrijvingen en voor beelden.
 
@@ -78,7 +78,7 @@ Zie [Azure monitor specifieke clusters vastleggen in Logboeken](https://docs.mic
 
 ### <a name="logic-apps-managed-identities"></a>Beheerde identiteiten van Logic apps
 
-Azure Sentinel ondersteunt nu beheerde identiteiten voor de Azure Sentinel Logic Apps-Connector, zodat u machtigingen kunt verlenen aan een rechtstreeks aan een specifieke Playbook, in plaats van extra identiteiten te maken.
+Azure Sentinel ondersteunt nu beheerde identiteiten voor de Azure Sentinel Logic Apps-Connector, zodat u machtigingen rechtstreeks kunt toewijzen aan een specifieke Playbook om te kunnen omgaan met Azure Sentinel in plaats van extra identiteiten te maken.
 
 - **Zonder een beheerde identiteit** vereist de Logic Apps Connector een afzonderlijke identiteit met een Azure Sentinel RBAC-rol om te kunnen worden uitgevoerd op Azure Sentinel. De afzonderlijke identiteit kan een Azure AD-gebruiker of een Service-Principal zijn, zoals een geregistreerde Azure AD-toepassing.
 
@@ -123,7 +123,7 @@ Deze update voor Azure Sentinel bevat nieuwe jacht-query's die dekking bieden in
 
 De toegevoegde jacht-query's zijn ontworpen om u te helpen verdachte activiteiten in uw omgeving te vinden. Hoewel ze geldige activiteiten en mogelijk schadelijke activiteiten kunnen retour neren, kunnen ze nuttig zijn om uw jacht te verrijken. 
 
-Als u na het uitvoeren van deze query's zeker weet dat de resultaten worden gevonden, kunt u deze converteren naar Analytics-regels of de zoek resultaten toevoegen aan bestaande of nieuwe incidenten.
+Als u na het uitvoeren van deze query's zeker weet wat de resultaten zijn, wilt u deze wellicht converteren naar Analytics-regels of kunt u de zoek resultaten toevoegen aan bestaande of nieuwe incidenten.
 
 Alle toegevoegde query's zijn beschikbaar via de Azure Sentinel jacht-pagina. Zie voor meer informatie zoeken [naar bedreigingen met Azure Sentinel](hunting.md).
 

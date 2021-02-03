@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 12/16/2020
 ms.author: rolyon
-ms.openlocfilehash: 00fd00112dad9efc31cea83f69bb458a8e1ca935
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 1444ee3643222ceebc67298bdb580955b1432104
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617371"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526412"
 ---
 # <a name="best-practices-for-azure-rbac"></a>Aanbevolen procedures voor Azure RBAC
 
@@ -41,6 +41,10 @@ U moet een maximum van 3 abonnements eigenaren hebben om de kans te verkleinen d
 Als u geprivilegieerde accounts van kwaad aardige aanvallen wilt beveiligen, kunt u Azure Active Directory Privileged Identity Management (PIM) gebruiken om de belichtings tijd van bevoegdheden te verlagen en uw zicht baarheid te verg Roten met rapporten en waarschuwingen. PIM helpt geprivilegieerde accounts te beveiligen door just-in-time privileged toegang te bieden tot Azure AD en Azure-resources. De toegang kan worden toegewezen aan de tijds limiet, waarna de bevoegdheden automatisch worden ingetrokken. 
 
 Zie [Wat is Azure AD privileged Identity Management?](../active-directory/privileged-identity-management/pim-configure.md)voor meer informatie.
+
+## <a name="assign-roles-to-groups-not-users"></a>Rollen toewijzen aan groepen, niet voor gebruikers
+
+Als u roltoewijzingen meer wilt beheren, moet u rollen beter niet rechtstreeks aan gebruikers toewijzen. Wijs in plaats daarvan rollen toe aan groepen. Het toewijzen van rollen aan groepen in plaats van gebruikers verkleint ook het aantal roltoewijzingen, met een [limiet van 2.000 roltoewijzingen per abonnement](troubleshooting.md#azure-role-assignments-limit). 
 
 ## <a name="next-steps"></a>Volgende stappen
 

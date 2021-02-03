@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een AKS-cluster (private Azure K
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 56d3b36d17ee044ce7aba2337429c45123801ca5
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 2749e66375fbd808a9e87f252a813f1054ceff21
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99254509"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525565"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
 
@@ -126,7 +126,7 @@ Zoals gezegd, is peering in virtuele netwerken een manier om toegang te krijgen 
 ## <a name="limitations"></a>Beperkingen 
 * Toegestane IP-bereiken kunnen niet worden toegepast op het eind punt van de persoonlijke API-server, maar zijn alleen van toepassing op de open bare API-server
 * De beperkingen van de [Azure Private Link-service][private-link-service] zijn van toepassing op persoonlijke clusters.
-* Geen ondersteuning voor door micro soft gehoste DevOps-agents van Azure met persoonlijke clusters. Overweeg [zelf-hostende agents](/azure/devops/pipelines/agents/agents?preserve-view=true&tabs=browser&view=azure-devops)te gebruiken. 
+* Geen ondersteuning voor door micro soft gehoste DevOps-agents van Azure met persoonlijke clusters. Overweeg [zelf-hostende agents](/azure/devops/pipelines/agents/agents?tabs=browser)te gebruiken. 
 * Voor klanten die Azure Container Registry kunnen gebruiken met persoonlijke AKS, moet het virtuele netwerk Container Registry worden gekoppeld aan het virtuele netwerk van het agent cluster.
 * Geen ondersteuning voor het converteren van bestaande AKS-clusters naar particuliere clusters
 * Als u het persoonlijke eind punt in het subnet van de klant verwijdert of wijzigt, werkt het cluster niet meer. 

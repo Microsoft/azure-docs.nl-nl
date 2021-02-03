@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 12/10/2020
+ms.date: 02/02/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 9b40ff3a5c9ce2103cde00b26543711d4c05efb0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 228f837a8826612bbbadf2ca8c5ef339ab248397
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028373"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524989"
 ---
 ::: zone target="docs"
 
@@ -322,7 +322,7 @@ Once the upload to Azure is complete, the Data Box erases the data on its disks 
 
 ## <a name="self-managed"></a>[Zelfbeheerd](#tab/in-selfmanaged)
 
-Volg deze instructies als u de Data Box gebruikt in de Amerikaanse overheid, Japan, Singapore, Korea, India, Zuid-Afrika of West-Europa, en u Zelfbeheerde verzending hebt geselecteerd tijdens het maken van de order.
+Als u Data Box gebruikt in Amerikaanse overheid, Japan, Singapore, Korea, India, Zuid-Afrika, Verenigd Konink rijk, Europa-west of Australië en u zelf-beheerde verzen ding hebt geselecteerd tijdens het maken van uw bestelling, volgt u deze instructies.
 
 1. Noteer de autorisatiecode die wordt weergegeven op de pagina **Voorbereiding voor verzending** van de lokale web-UI voor de Data Box, nadat deze stap is voltooid.
 2. Schakel het apparaat uit en verwijder de kabels. Rol het meegeleverde netsnoer op en plaats het in de opberglade aan de achterkant van het apparaat.

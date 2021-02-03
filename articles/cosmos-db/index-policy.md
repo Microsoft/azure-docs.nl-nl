@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 02/02/2021
 ms.author: tisande
-ms.openlocfilehash: 79791bf2db888912d5c1f016f4bf357e76bddcba
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 58ee3bcd0ba14359ea9adaa131b8280b81008b57
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475097"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526752"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -309,8 +309,7 @@ De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC``` | `Yes` |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC``` | `No` |
 
-
-## <a name="modifying-the-indexing-policy"></a>Het indexerings beleid wijzigen
+## <a name="index-transformationmodifying-the-indexing-policy"></a><index-Transform>het wijzigen van het indexerings beleid
 
 Het indexerings beleid van een container kan op elk gewenst moment worden bijgewerkt [met behulp van de Azure portal of een van de ondersteunde sdk's](how-to-manage-indexing-policy.md). Een update voor het indexerings beleid activeert een trans formatie van de oude index naar de nieuwe, die online en in-place wordt uitgevoerd (zodat er geen extra opslag ruimte wordt verbruikt tijdens de bewerking). Het oude indexerings beleid is efficiënt getransformeerd naar het nieuwe beleid zonder dat dit van invloed is op de beschik baarheid, lees Beschik baarheid of de door Voer die is ingericht op de container. Index transformatie is een asynchrone bewerking en de tijd die nodig is om te volt ooien, is afhankelijk van de ingerichte door Voer, het aantal items en de grootte ervan.
 

@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: a866c21e067293481a52dd563873892de8b5444c
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 3b5002873160490dfb7b8d3ad9790f9c6f1e8ae6
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955272"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525785"
 ---
 # <a name="scenario-any-to-any"></a>Scenario: any-to-any
 
-Wanneer u werkt met virtuele WAN-hub routering, zijn er heel veel beschik bare scenario's. In een wille keurig scenario kan elke spoke een andere spoke bereiken. Als er meerdere hubs bestaan, is hub-naar-hub-route ring (ook wel inter-hub genoemd) standaard ingeschakeld in standaard virtueel WAN. U kunt deze configuratie maken met verschillende methoden, zoals de Azure Portal, of een [Azure Quick](https://azure.microsoft.com/resources/templates/201-virtual-wan-with-all-gateways/)start-sjabloon. Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor meer informatie over virtuele-hub-route ring. 
+Wanneer u werkt met virtuele WAN-hub routering, zijn er heel veel beschik bare scenario's. In een wille keurig scenario kan elke spoke een andere spoke bereiken. Als er meerdere hubs bestaan, is hub-naar-hub-route ring (ook wel inter-hub genoemd) standaard ingeschakeld in standaard virtueel WAN. U kunt deze configuratie maken met verschillende methoden, zoals de Azure Portal, of een [Azure Quick](quickstart-any-to-any-template.md)start-sjabloon. Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor meer informatie over virtuele-hub-route ring. 
 
 ## <a name="design"></a><a name="design"></a>Ontwerp
 

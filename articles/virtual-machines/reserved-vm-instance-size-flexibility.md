@@ -1,25 +1,25 @@
 ---
 title: Flexibiliteit van grootte van virtuele machine-Azure Reserved VM Instances
 description: Meer informatie over welke grootte reeks een reserverings korting geldt wanneer u een gereserveerde VM-instantie gebruikt.
-author: manish-shukla01
+author: yashesvi
 ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 08/03/2018
-ms.author: manshuk
-ms.openlocfilehash: 381023a0650b078a74c01ff7b698aebacb256147
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/02/2021
+ms.author: yashesvi
+ms.openlocfilehash: e6e96ff41503751741c8afc2229d66fd596e0806
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88855512"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525361"
 ---
 # <a name="virtual-machine-size-flexibility-with-reserved-vm-instances"></a>Flexibiliteit van de VM-grootte met gereserveerde VM-instanties
 
 Wanneer u een gereserveerde VM-instantie koopt, kunt u ervoor kiezen om te optimaliseren voor de flexibiliteit van de instantie grootte of de prioriteit van de capaciteit. Zie voor meer informatie over het instellen of wijzigen van de instelling Optimize voor gereserveerde VM-instanties [de instelling optimaliseren wijzigen voor gereserveerde](../cost-management-billing/reservations/manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances)VM-instanties.
 
-Met een gereserveerde virtuele machine-instantie die is geoptimaliseerd voor flexibiliteit van de instantie grootte, kan de door u gekochte reserve ring gelden voor de grootte van virtuele machines (Vm's) in dezelfde groep voor de flexibiliteit van de instantie grootte. Als u bijvoorbeeld een reserve ring aanschaft voor een VM-grootte die wordt vermeld in de DSv2-serie, zoals Standard_DS5_v2, kan de reserverings korting van toepassing zijn op de andere vier grootten die worden vermeld in die zelfde groep voor de grotere instantie grootte:
+Met een gereserveerde virtuele machine-instantie die is geoptimaliseerd voor flexibiliteit van de instantie grootte, kan de door u gekochte reserve ring gelden voor de grootte van virtuele machines (Vm's) in dezelfde groep voor de flexibiliteit van de instantie grootte. Als u bijvoorbeeld een reserve ring aanschaft voor een VM-grootte die wordt vermeld in de DSv2-serie, zoals Standard_DS3_v2, kan de reserverings korting van toepassing zijn op de andere grootten die worden vermeld in die zelfde groep voor dezelfde instantie grootte:
 
 - Standard_DS1_v2
 - Standard_DS2_v2

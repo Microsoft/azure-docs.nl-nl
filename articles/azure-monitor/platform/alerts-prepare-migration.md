@@ -6,17 +6,17 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: 60a721af9acf980e88ad60504e75d2488c8a4d81
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: dc0be351253a15bf9039839c8cae2246681d41e2
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944474"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526650"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Uw logische apps en runbooks voorbereiden voor de migratie van klassieke waarschuwingsregels
 
 > [!NOTE]
-> Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. De datum van beëindiging voor deze waarschuwingen is verder uitgebreid. Binnenkort wordt een nieuwe datum aangekondigd.
+> Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. De datum van beëindiging voor deze waarschuwingen is verder uitgebreid. Binnenkort wordt een nieuwe datum aangekondigd.
 >
 
 Als u ervoor kiest om uw klassieke waarschuwings regels vrijwillig te migreren naar nieuwe waarschuwings regels, moet u er rekening mee houden dat er verschillen zijn tussen de twee systemen. In dit artikel worden deze verschillen beschreven en wordt uitgelegd hoe u de wijziging kunt voor bereiden.
@@ -29,7 +29,7 @@ De volgende tabel bevat een verwijzing naar de programmatische interfaces voor z
 
 | Implementatie script type | Klassieke waarschuwingen | Nieuwe metrische waarschuwingen |
 | ---------------------- | -------------- | ----------------- |
-|REST API     | [micro soft. Insights/alertrules](/rest/api/monitor/alertrules)         | [micro soft. Insights/metricalerts](/rest/api/monitor/metricalerts)       |
+|REST-API     | [micro soft. Insights/alertrules](/rest/api/monitor/alertrules)         | [micro soft. Insights/metricalerts](/rest/api/monitor/metricalerts)       |
 |Azure CLI     | [AZ-monitor waarschuwing](/cli/azure/monitor/alert)        | [waarschuwing AZ monitor Metrics](/cli/azure/monitor/metrics/alert)        |
 |PowerShell      | [Verwijzing](/powershell/module/az.monitor/add-azmetricalertrule)       |  [Verwijzing](/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Azure Resource Manager-sjabloon | [Voor klassieke waarschuwingen](./alerts-enable-template.md)|[Voor nieuwe metrische waarschuwingen](./alerts-metric-create-templates.md)|

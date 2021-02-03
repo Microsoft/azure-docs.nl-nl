@@ -4,16 +4,16 @@ description: Meer informatie over hoe het automatische migratie proces werkt.
 ms.topic: conceptual
 ms.date: 08/19/2019
 ms.subservice: alerts
-ms.openlocfilehash: 6a2d032c6aa33b72fe422638df45ca48bf8b1036
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ce3550dcef174a4d970917fabfda3c4fd2a8df4
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87847279"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526548"
 ---
 # <a name="understand-the-automatic-migration-process-for-your-classic-alert-rules"></a>Meer informatie over het automatische migratie proces voor uw klassieke waarschuwings regels
 
-Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. Als onderdeel van het pensioen proces is [er een hulp programma voor migratie](alerts-using-migration-tool.md) beschikbaar in de Azure portal voor klanten om de migratie zelf te activeren.
+Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. Als onderdeel van het pensioen proces is [er een hulp programma voor migratie](alerts-using-migration-tool.md) beschikbaar in de Azure portal voor klanten om de migratie zelf te activeren.
 Dit artikel begeleidt u bij het automatische migratie proces en helpt u bij het oplossen van eventuele problemen.
 
   > [!NOTE]
@@ -21,9 +21,9 @@ Dit artikel begeleidt u bij het automatische migratie proces en helpt u bij het 
 
 ## <a name="what-will-happen-during-the-automatic-migration-process"></a>Wat gebeurt er tijdens het automatische migratie proces?
 
-- Vanaf **1 September 2019**kunnen klanten geen nieuwe klassieke waarschuwings regels maken, met uitzonde ring van [bepaalde metrische gegevens](alerts-understand-migration.md#manually-migrating-classic-alerts-to-newer-alerts).
+- Vanaf **1 September 2019** kunnen klanten geen nieuwe klassieke waarschuwings regels maken, met uitzonde ring van [bepaalde metrische gegevens](alerts-understand-migration.md#manually-migrating-classic-alerts-to-newer-alerts).
 - Voor de uitzonde ringen kan de klant nieuwe regels voor klassieke waarschuwingen blijven maken en hun klassieke waarschuwingen gebruiken tot verdere aankondiging.
-- Vanaf **1 September 2019**wordt de migratie van klassieke waarschuwingen geactiveerd in batches voor klanten die klassieke waarschuwingen hebben.
+- Vanaf **1 September 2019** wordt de migratie van klassieke waarschuwingen geactiveerd in batches voor klanten die klassieke waarschuwingen hebben.
 - Net als bij het hulp programma voor vrijwillige migratie blijven bepaalde klassieke waarschuwings regels die niet kunnen worden gemigreerd, ongewijzigd. Deze klassieke waarschuwings regels worden nog steeds ondersteund tot verdere aankondiging. Eventuele ongeldige klassieke waarschuwings regels worden echter verwijderd omdat ze niet functioneel zijn.
 Klassieke waarschuwings regels die het controleren van verwijderde doel bronnen of [metrische gegevens die niet meer worden ondersteund](alerts-understand-migration.md#classic-alert-rules-on-deprecated-metrics) , worden als ongeldig beschouwd.
 - Zodra de migratie voor uw abonnement wordt gestart, wordt de migratie binnen een uur voltooid, tenzij er problemen zijn. Klanten kunnen de status van de migratie controleren op [de Blade migratie in azure monitor](https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/MigrationBladeViewModel).
@@ -56,5 +56,5 @@ Raadpleeg de [hand leiding voor probleem oplossing](alerts-understand-migration.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Voorbereiden op de migratie](alerts-prepare-migration.md)
+- [Voorbereiden voor de migratie](alerts-prepare-migration.md)
 - [Werking van het hulpprogramma voor migratie](alerts-understand-migration.md)

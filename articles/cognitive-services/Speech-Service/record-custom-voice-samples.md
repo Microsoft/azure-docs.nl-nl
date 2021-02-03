@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: erhopf
-ms.openlocfilehash: 966b11e2c9a0f7ffc5e6ec9238080b9076d37af6
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: a44ff15300d05713e812f5c60ad3bf00d9f13104
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98572422"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526853"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Stemvoorbeelden vastleggen om een aangepaste stem te maken
 
@@ -112,7 +112,7 @@ Onder copyright recht kan een actor het lezen van auteurs rechtelijk beschermde 
 
 Gelukkig is het mogelijk om deze problemen volledig te voor komen. Er zijn veel tekst bronnen die u kunt gebruiken zonder toestemming of licentie.
 
-|Tekst bron|Beschrijving|
+|Tekst bron|Description|
 |-|-|
 |[CMU Arctic verzameling](http://festvox.org/cmu_arctic/)|Ongeveer 1100 zinnen die u hebt geselecteerd in auteurs rechtelijk beschermde werken speciaal voor gebruik in spraak-synthese projecten. Een uitstekend uitgangs punt.|
 |Werkt niet meer<br>onder copyright|Werkt normaal gesp roken vóór 1923. Voor het Engels biedt [Project Gutenberg](https://www.gutenberg.org/) tien duizenden van deze werken. Mogelijk wilt u zich richten op nieuwere werken, omdat de taal dichter bij het moderne Engels ligt.|

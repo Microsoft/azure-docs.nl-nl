@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/29/2020
+ms.date: 02/01/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0ce9b60ead9aff792bf2e4e98841469d58620ccd
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 1ed0ca069f29413083356a3147d4b97f1b6ed981
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754617"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525192"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-for-user-flows-preview"></a>Registratie van de telefoon en aanmelding voor gebruikers stromen instellen (preview-versie)
 
@@ -39,15 +39,15 @@ Multi-factor Authentication (MFA) is standaard uitgeschakeld wanneer u een gebru
 
 E-mail aanmelding is standaard ingeschakeld in de instellingen van uw lokale account-ID-provider. U kunt de identiteits typen die u in uw Tenant ondersteunt, wijzigen door e-mail registratie, gebruikers naam of telefoon nummer te selecteren of uit te scha kelen.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Zorg ervoor dat u de map met uw Azure AD B2C-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD-Tenant bevat.
 
 3. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 
-4. Selecteer onder **beheren** de optie **id-providers**.
+4. Onder **Beheren** selecteert u **Id-providers**.
 
-5. Selecteer in de lijst ID-provider de optie **lokaal account**.
+5. In de lijst met id-providers selecteert u **Lokaal account**.
 
    ![Id-providers lokale account selecteren](media/phone-authentication-user-flows/identity-provider-local-account.png)
 
@@ -59,7 +59,7 @@ E-mail aanmelding is standaard ingeschakeld in de instellingen van uw lokale acc
 
 ## <a name="add-phone-sign-up-to-a-user-flow"></a>Aanmelding via de telefoon toevoegen aan een gebruikers stroom
 
-Nadat u de optie voor het registreren van de telefoon hebt toegevoegd als een identiteit voor lokale accounts, kunt u deze toevoegen aan gebruikers stromen zolang ze de meest recente **Aanbevolen** versie van de gebruikers stroom zijn. Hier volgt een voor beeld waarin wordt getoond hoe u een telefoon aanmelding kunt toevoegen aan nieuwe gebruikers stromen. Maar u kunt ook telefoon aanmelding toevoegen aan bestaande gebruikers stromen voor aanbevolen versies (Selecteer **Gebruikersstromen**  >  *gebruikers stroom naam* van het  >  **Identity providers**  >  **lokale account telefoon-aanmelden**). 
+Nadat u de optie voor het registreren van de telefoon hebt toegevoegd als een identiteit voor lokale accounts, kunt u deze toevoegen aan gebruikers stromen zolang ze de meest recente **Aanbevolen** versie van de gebruikers stroom zijn. Hier volgt een voor beeld waarin wordt getoond hoe u een telefoon aanmelding kunt toevoegen aan nieuwe gebruikers stromen. Maar u kunt ook telefoon aanmelding toevoegen aan bestaande gebruikers stromen voor aanbevolen versies (Selecteer **Gebruikersstromen**  >  *gebruikers stroom naam* van het  >    >  **lokale account telefoon-aanmelden**). 
 
 Hier volgt een voor beeld waarin wordt getoond hoe u een telefoon aanmelding kunt toevoegen aan een nieuwe gebruikers stroom.
 
@@ -75,7 +75,7 @@ Hier volgt een voor beeld waarin wordt getoond hoe u een telefoon aanmelding kun
 
 5. Selecteer op de pagina **Een gebruikersstroom maken** de gebruikersstroom **Registreren en aanmelden**.
 
-    ![Selecteer een pagina gebruikers stroom met registratie en aanmeldings stroom gemarkeerd](./media/phone-authentication-user-flows/select-user-flow-type.png)
+    ![Een gebruikersstroompagina selecteren waarop registratie en aanmelding is gemarkeerd](./media/phone-authentication-user-flows/select-user-flow-type.png)
 
 6. Onder **Selecteer een versie** selecteert u **Aanbevolen** en vervolgens **Maken**. ([Meer informatie](user-flow-versions.md) over gebruikersstroomversies.)
 
@@ -89,11 +89,11 @@ Hier volgt een voor beeld waarin wordt getoond hoe u een telefoon aanmelding kun
 9. Onder **Social id-providers** selecteert u andere id-providers die u voor deze gebruikers stroom wilt toestaan.
 
    > [!NOTE]
-   > Multi-factor Authentication (MFA) is standaard uitgeschakeld. U kunt MFA inschakelen voor een gebruikers stroom voor het aanmelden via een telefoon, maar omdat een telefoon nummer wordt gebruikt als de primaire id, is e-mail eenmalige wachtwoord code de enige optie die beschikbaar is voor de tweede verificatie factor.
+   > Multi-factor Authentication (MFA) is standaard uitgeschakeld voor het registreren van gebruikers stromen. U kunt MFA inschakelen voor een gebruikers stroom voor het aanmelden via een telefoon, maar omdat een telefoon nummer wordt gebruikt als de primaire id, is e-mail eenmalige wachtwoord code de enige optie die beschikbaar is voor de tweede verificatie factor.
 
 1. Kies in de sectie **gebruikers kenmerken en Token claims** de claims en kenmerken die u wilt verzamelen en verzenden van de gebruiker tijdens de registratie. Selecteer bijvoorbeeld **Meer weergeven** en kies vervolgens kenmerken en claims voor **Land/regio**, **Weergavenaam** en **Postcode**. Selecteer **OK**.
 
-1. Selecteer **maken** om de gebruikers stroom toe te voegen. Het voorvoegsel *B2C_1* wordt automatisch voor de naam geplaatst.
+1. Selecteer **Maken** om de gebruikersstroom toe te voegen. Het voorvoegsel *B2C_1* wordt automatisch voor de naam geplaatst.
 
 ## <a name="enable-the-recovery-email-prompt-preview"></a>De waarschuwing voor het herstellen van e-mail inschakelen (preview)
 
@@ -129,9 +129,9 @@ U kunt de prompt voor het herstellen van e-mail inschakelen in de eigenschappen 
 
 Nadat u aanmelding via de telefoon en aanmelding hebt ingeschakeld en de herstel-e-mail in uw gebruikers stroom hebt, kunt u **gebruikers stroom uitvoeren** gebruiken om de gebruikers ervaring te testen.
 
-1. Selecteer **beleids regels**  >  **gebruikers stromen** en selecteer vervolgens de gebruikers stroom die u hebt gemaakt. Op de overzichts pagina van de gebruikers stroom selecteert u **gebruikers stroom uitvoeren**.
+1. Selecteer **Beleid** > **Gebruikersstromen** en selecteer vervolgens de gebruikersstroom die u hebt gemaakt. Op de overzichtspagina van de gebruikersstroom selecteert u **Gebruikersstroom uitvoeren**.
 
-2. Selecteer voor **toepassing** de webtoepassing die u in stap 1 hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+2. Voor **Toepassing** selecteert u de webtoepassing die u in stap 1 hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
 
 3. Selecteer **gebruikers stroom uitvoeren** en controleer het volgende gedrag:
 

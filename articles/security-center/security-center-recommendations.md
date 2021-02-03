@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: dbda0aecdadd81da0f7681a5fc9b140157d5e8f3
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 3b2f111f83dbd731b69671e58d4bf9dc648a596f
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756814"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526494"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Aanbevelingen voor beveiliging in Azure Security Center 
 
@@ -39,11 +39,19 @@ Elke aanbeveling biedt u het volgende:
 
 ## <a name="how-does-microsoft-decide-what-needs-securing-and-hardening"></a>Hoe beslist micro soft wat er nodig is om te beveiligen en te beschermen?
 
-De aanbevelingen van Security Center zijn gebaseerd op de beveiligings benchmark van Azure. 
+De aanbevelingen van Security Center zijn gebaseerd op de beveiligings benchmark van Azure. Bijna elke aanbeveling heeft een onderliggend beleid dat is afgeleid van een vereiste in de Bench Mark.
 
-Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
+Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging. Meer informatie over [Azure Security Benchmark](../security/benchmarks/introduction.md).
 
-Meer informatie over [Azure Security Benchmark](../security/benchmarks/introduction.md).
+Wanneer u de details van een aanbeveling bekijkt, is het vaak handig om het onderliggende beleid te kunnen zien. Voor elke aanbeveling die wordt ondersteund door een beleid, gebruikt u de koppeling **beleids definitie weer geven** op de pagina aanbevelings Details om rechtstreeks naar het Azure Policy item voor het relevante beleid te gaan:
+
+:::image type="content" source="media/release-notes/view-policy-definition.png" alt-text="Koppeling naar Azure Policy pagina voor het specifieke beleid dat een aanbeveling ondersteunt":::
+
+Gebruik deze koppeling om de beleids definitie weer te geven en de evaluatie logica te controleren. 
+
+Als u de lijst met aanbevelingen in onze [Naslag Gids voor beveiligings aanbevelingen](recommendations-reference.md)bekijkt, ziet u ook koppelingen naar de pagina met beleids definities:
+
+:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Toegang tot de Azure Policy-pagina voor een specifiek beleid rechtstreeks op de pagina met Azure Security Center aanbevelingen":::
 
 ## <a name="monitor-recommendations"></a>Aanbevelingen controleren <a name="monitor-recommendations"></a>
 
@@ -63,9 +71,12 @@ Security Center analyseert de beveiligings status van uw resources om mogelijke 
 
     De pagina bevat:
 
-    1. Knoppen op ondersteunde aanbevelingen **afdwingen** en **weigeren** (Zie [geen onjuiste configuraties met afdwingen/weigeren](prevent-misconfigurations.md))
+    1. Voor ondersteunde aanbevelingen toont de bovenste werk balk een of meer van de volgende knoppen:
+        - **Afdwingen** en **weigeren** (Zie [niet-onjuiste configuraties met afdwingen/aanbevelingen weigeren](prevent-misconfigurations.md))
+        - **Bekijk de beleids definitie** om rechtstreeks naar het Azure Policy item voor het onderliggende beleid te gaan
     1. **Ernst indicator**
-    1. **Interval voor versheid**  (indien van toepassing) 
+    1. **Interval voor versheid** (indien van toepassing)
+    1. **Aantal vrijgestelde resources** als er uitzonde ringen voor deze aanbeveling bestaan, wordt hier het aantal resources weer gegeven dat is uitgesloten
     1. **Beschrijving** : een korte beschrijving van het probleem
     1. Herstels **tappen** : een beschrijving van de hand matige stappen die nodig zijn om het beveiligings probleem op de betrokken resources op te lossen. Voor aanbevelingen met snelle oplossing kunt u **herstel logica weer geven** selecteren voordat u de voorgestelde oplossing toepast op uw resources. 
     1. **Betrokken resources** : uw resources worden in tabbladen gegroepeerd.

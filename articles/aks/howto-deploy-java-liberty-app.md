@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/01/2021
 keywords: Java, jakartaee, javaee, microprofile, open-vrijheid, WebSphere-vrijheid, AKS, kubernetes
-ms.openlocfilehash: 4d6e335cd4b522593091094ac6251acc97873208
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 2e025c706512b6ab3945118da996b11a5a8a9585
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99508050"
+ms.locfileid: "99526887"
 ---
 # <a name="deploy-a-java-application-with-open-liberty-or-websphere-liberty-on-an-azure-kubernetes-service-aks-cluster"></a>Een Java-toepassing met open vrijheid of WebSphere vrijheid implementeren op een Azure Kubernetes service-cluster (AKS)
 
@@ -31,7 +31,7 @@ In deze hand leiding wordt gedemonstreerd hoe u uw Java-, Java EE-, [Jakarta ee]
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een Azure-resourcegroep is een logische groep waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resource groep, *Java-vrijheids project* met behulp van de opdracht [AZ Group Create](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az_group_create) op de locatie *eastus* . Het wordt gebruikt voor het maken van het ACR-exemplaar (Azure Container Registry) en het AKS-cluster later. 
+Een Azure-resourcegroep is een logische groep waarin Azure-resources worden geïmplementeerd en beheerd. Maak een resource groep, *Java-vrijheids project* met behulp van de opdracht [AZ Group Create](/cli/azure/group#az_group_create) op de locatie *eastus* . Het wordt gebruikt voor het maken van het ACR-exemplaar (Azure Container Registry) en het AKS-cluster later. 
 
 ```azurecli-interactive
 az group create --name java-liberty-project --location eastus
@@ -39,7 +39,7 @@ az group create --name java-liberty-project --location eastus
 
 ## <a name="create-an-acr-instance"></a>Een ACR-exemplaar maken
 
-Gebruik de opdracht [AZ ACR Create](/cli/azure/acr?view=azure-cli-latest&preserve-view=true#az_acr_create) om het ACR-exemplaar te maken. In het volgende voor beeld wordt een ACR-exemplaar gemaakt met de naam *youruniqueacrname*. Zorg ervoor dat *youruniqueacrname* uniek is binnen Azure.
+Gebruik de opdracht [AZ ACR Create](/cli/azure/acr#az_acr_create) om het ACR-exemplaar te maken. In het volgende voor beeld wordt een ACR-exemplaar gemaakt met de naam *youruniqueacrname*. Zorg ervoor dat *youruniqueacrname* uniek is binnen Azure.
 
 ```azurecli-interactive
 az acr create --resource-group java-liberty-project --name youruniqueacrname --sku Basic --admin-enabled
@@ -70,7 +70,7 @@ U ziet `Login Succeeded` aan het einde van de opdracht uitvoer als u zich hebt a
 
 ## <a name="create-an-aks-cluster"></a>Een AKS-cluster maken
 
-Gebruik de opdracht [az aks create](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
+Gebruik de opdracht [az aks create](/cli/azure/aks#az_aks_create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
 
 ```azurecli-interactive
 az aks create --resource-group java-liberty-project --name myAKSCluster --node-count 1 --generate-ssh-keys --enable-managed-identity
@@ -87,13 +87,13 @@ Na enkele minuten is de opdracht voltooid en retourneert deze informatie over de
 
 ### <a name="connect-to-the-aks-cluster"></a>Verbinding maken met het AKS-cluster
 
-Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_install_cli):
+Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli](/cli/azure/aks#az_aks_install_cli):
 
 ```azurecli-interactive
 az aks install-cli
 ```
 
-Gebruik de opdracht [az aks get-credentials](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_get_credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
+Gebruik de opdracht [az aks get-credentials](/cli/azure/aks#az_aks_get_credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group java-liberty-project --name myAKSCluster --overwrite-existing
@@ -220,7 +220,7 @@ Open een webbrowser op het externe IP-adres en de poort van uw service ( `52.152
 
 ## <a name="clean-up-the-resources"></a>Resources opschonen
 
-Om Azure-kosten te vermijden, moet u overbodige resources opschonen.  Wanneer het cluster niet meer nodig is, gebruikt u de opdracht [AZ Group delete](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az_group_delete) om de resource groep, container service, container Registry en alle gerelateerde resources te verwijderen.
+Om Azure-kosten te vermijden, moet u overbodige resources opschonen.  Wanneer het cluster niet meer nodig is, gebruikt u de opdracht [AZ Group delete](/cli/azure/group#az_group_delete) om de resource groep, container service, container Registry en alle gerelateerde resources te verwijderen.
 
 ```azurecli-interactive
 az group delete --name java-liberty-project --yes --no-wait

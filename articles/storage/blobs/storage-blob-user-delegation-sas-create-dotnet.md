@@ -1,27 +1,27 @@
 ---
-title: .NET gebruiken om een gebruikers delegering SA'S te maken voor een container of BLOB
+title: .NET gebruiken om een gebruikers delegering SA'S te maken voor een container, Directory of BLOB
 titleSuffix: Azure Storage
 description: Meer informatie over het maken van een gebruiker met Azure Active Directory referenties met behulp van de .NET-client bibliotheek voor Azure Storage.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/13/2021
+ms.date: 02/03/2021
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 512b949fceda850e968a6f97b3788ae3a602f56d
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 13491735f73cb1696f3c36f3434cc781a1e2b739
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98199254"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526802"
 ---
-# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net"></a>Een SAS voor gebruikers overdracht maken voor een container of BLOB met .NET
+# <a name="create-a-user-delegation-sas-for-a-container-directory-or-blob-with-net"></a>Een SAS voor gebruikers overdracht maken voor een container, Directory of BLOB met .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-In dit artikel wordt beschreven hoe u Azure Active Directory (Azure AD)-referenties gebruikt om een gebruikers delegering SA'S te maken voor een container of BLOB met de Azure Storage-client bibliotheek voor .NET versie 12.
+In dit artikel wordt beschreven hoe u Azure Active Directory (Azure AD)-referenties gebruikt om een gebruikers delegering SA'S te maken voor een container, map of BLOB met de Azure Storage-client bibliotheek voor .NET versie 12.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
@@ -99,7 +99,7 @@ In het volgende voor beeld worden de SA'S voor gebruikers overdracht getest die 
 
 ## <a name="get-a-user-delegation-sas-for-a-directory"></a>Een SAS voor gebruikers overdracht ophalen voor een directory
 
-In het volgende code voorbeeld ziet u hoe u een SAS voor gebruikers overdracht kunt genereren voor een directory wanneer een hiërarchische naam ruimte is ingeschakeld:
+In het volgende code voorbeeld ziet u hoe u een SAS voor gebruikers overdracht kunt genereren voor een directory wanneer een hiërarchische naam ruimte is ingeschakeld voor het opslag account:
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Sas.cs" id="Snippet_GetUserDelegationSasDirectory":::
 

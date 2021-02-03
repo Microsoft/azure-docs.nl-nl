@@ -3,12 +3,12 @@ title: Problemen met het netwerk oplossen met het REGI ster
 description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen bij het openen van een Azure container registry in een virtueel netwerk of achter een firewall
 ms.topic: article
 ms.date: 10/01/2020
-ms.openlocfilehash: 2f15eb8a830ce93ecf942663fc8a44b9df86d6d6
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: cf2f308f782ac7d6011c98afd181b194f2b3e09f
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99052158"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525073"
 ---
 # <a name="troubleshoot-network-issues-with-registry"></a>Problemen met het netwerk oplossen met het REGI ster
 
@@ -105,20 +105,20 @@ Gerelateerde links:
 
 ### <a name="configure-service-access"></a>Service toegang configureren
 
-Op dit moment kan Azure Security Center geen [installatie kopie van het beveiligings probleem](../security-center/defender-for-container-registries-introduction.md?bc=%2fazure%2fcontainer-registry%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fcontainer-registry%2ftoc.json) in een REGI ster scannen waarmee de toegang wordt beperkt tot persoonlijke eind punten, geselecteerde subnetten of IP-adressen. Resources van de volgende services kunnen ook geen toegang krijgen tot een container register met netwerk beperkingen:
+Momenteel is toegang tot een container register met netwerk beperkingen niet toegestaan vanuit verschillende Azure-Services:
 
-* Azure DevOps Services 
-* Azure Container Instances
-* Azure Container Registry Tasks
+* Azure Security Center kunt het [scannen van de installatie kopie](../security-center/defender-for-container-registries-introduction.md?bc=%2fazure%2fcontainer-registry%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fcontainer-registry%2ftoc.json) niet uitvoeren in een REGI ster waarmee de toegang wordt beperkt tot persoonlijke eind punten, geselecteerde subnetten of IP-adressen. 
+* Resources van bepaalde Azure-Services hebben geen toegang tot een container register met netwerk beperkingen, met inbegrip van Azure App Service en Azure Container Instances.
 
 Als toegang tot of integratie van deze Azure-Services met het container register is vereist, verwijdert u de netwerk beperking. U kunt bijvoorbeeld de persoonlijke eind punten van het REGI ster verwijderen of de open bare toegangs regels van het REGI ster verwijderen of wijzigen.
+
+Vanaf januari 2021 kunt u een in het netwerk beperkt REGI ster configureren om [toegang te verlenen](allow-access-trusted-services.md) voor het selecteren van vertrouwde services.
 
 Gerelateerde links:
 
 * [Azure Container Registry afbeeldingen scannen door Security Center](../security-center/defender-for-container-registries-introduction.md)
 * [Feedback](https://feedback.azure.com/forums/347535-azure-security-center/suggestions/41091577-enable-vulnerability-scanning-for-images-that-are) geven
-* [Open bare IP-netwerk regels configureren](container-registry-access-selected-networks.md)
-* [Persoonlijke verbinding maken met een Azure container Registry met behulp van een persoonlijke Azure-koppeling](container-registry-private-link.md)
+* [Vertrouwde services veilig toegang geven tot een container register in het netwerk](allow-access-trusted-services.md)
 
 
 ## <a name="advanced-troubleshooting"></a>Geavanceerde probleemoplossing
@@ -140,5 +140,5 @@ Als u uw probleem hier niet kunt oplossen, raadpleegt u de volgende opties.
   * [Problemen met register aanmelding oplossen](container-registry-troubleshoot-login.md) 
   * [Problemen met het REGI ster oplossen](container-registry-troubleshoot-performance.md)
 * Opties voor [Community-ondersteuning](https://azure.microsoft.com/support/community/)
-* [Microsoft Q&A](/answers/products/)
+* [Microsoft Q&A](https://docs.microsoft.com/answers/products/)
 * [Een ondersteuningsticket openen](https://azure.microsoft.com/support/create-ticket/)

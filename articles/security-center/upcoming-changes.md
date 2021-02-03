@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: memildin
-ms.openlocfilehash: d5de16c8156762a229d6c707080bc197dc206a7c
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 8ef0fedcbf7ce06063db22fb345a0711acddcb4d
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475587"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526378"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -31,39 +31,8 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 ## <a name="planned-changes"></a>Geplande wijzigingen
 
-- [De aanbevelingen voor de beveiliging van Kubernetes-workloads worden binnenkort uitgebracht voor algemene Beschik baarheid (GA)](#kubernetes-workload-protection-recommendations-will-soon-be-released-for-general-availability-ga)
 - [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated)
 - [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)
-
-
-### <a name="kubernetes-workload-protection-recommendations-will-soon-be-released-for-general-availability-ga"></a>De aanbevelingen voor de beveiliging van Kubernetes-workloads worden binnenkort uitgebracht voor algemene Beschik baarheid (GA)
-
-**Geschatte datum voor wijziging:** Februari 2021
-
-De aanbevelingen voor de beveiliging van Kubernetes-workloads die worden beschreven in [uw Kubernetes-workloads beveiligen](kubernetes-workload-protections.md) , zijn momenteel beschikbaar als preview-versie. Hoewel een aanbeveling een preview-versie is, wordt er geen resource weer gegeven en is deze niet opgenomen in de berekeningen van uw beveiligde Score.
-
-Deze aanbevelingen worden binnenkort uitgebracht voor algemene Beschik baarheid (GA *), en worden dus opgenomen* in de score berekening. Als u deze nog niet hebt doorgevoerd, kan dit leiden tot een geringe invloed op uw beveiligde Score.
-
-Herstel ze waar mogelijk (meer informatie over het [oplossen van aanbevelingen in azure Security Center](security-center-remediate-recommendations.md)).
-
-De aanbevelingen voor de beveiliging van Kubernetes-werk belasting zijn:
-
-- Azure Policy-invoeg toepassing voor Kubernetes moet zijn geïnstalleerd en ingeschakeld op uw clusters
-- De CPU- en geheugenlimieten van containers moeten worden afgedwongen
-- Bevoegde containers moeten worden vermeden
-- Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers
-- Container met escalatie van bevoegdheden moet worden vermeden
-- Het uitvoeren van containers als hoofdgebruiker moet worden vermeden
-- Containers die gevoelige hostnaamruimten delen, moeten worden vermeden
-- Minimaal bevoegde Linux-functies moeten worden afgedwongen voor containers
-- Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst
-- Containers mogen alleen op toegestane poorten luisteren
-- Services mogen alleen op toegestane poorten luisteren
-- Het gebruik van hostnetwerken en -poorten moet worden beperkt
-- Het overschrijven of uitschakelen van het AppArmor-profiel voor containers moet worden beperkt
-- Container installatie kopieën moeten alleen worden geïmplementeerd vanuit vertrouwde registers             
-
-Meer informatie over deze aanbevelingen vindt [u in Beveilig uw Kubernetes-workloads](kubernetes-workload-protections.md).
 
 ### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
 
@@ -83,11 +52,7 @@ Meer informatie over deze aanbevelingen vindt u op de [overzichts pagina met aan
 
 **Geschatte datum voor wijziging:** Q2 2021
 
-De huidige versie van de gevoelige aanbevelings **gegevens in uw SQL-data bases moet worden geclassificeerd** in het beveiligings beheer **gegevens classificatie Toep assen** wordt vervangen door een nieuwe versie die beter is afgestemd op de strategie voor gegevens classificatie van micro soft. Als gevolg hiervan:
-
-- De aanbeveling heeft geen invloed meer op uw beveiligde Score
-- Het beveiligings beheer (' gegevens classificatie Toep assen ') heeft geen invloed meer op uw beveiligde Score
-- De ID van de aanbeveling wordt ook gewijzigd (momenteel b0df6f56-862d-4730-8597-38c0fd4ebd59)
+De gevoelige aanbevelings **gegevens in uw SQL-data bases moeten worden geclassificeerd** in het beveiligings beheer **gegevens classificatie Toep assen** wordt vervangen door een nieuwe versie die beter is afgestemd op de strategie voor gegevens classificatie van micro soft. Als gevolg hiervan wordt de ID van de aanbeveling ook gewijzigd (momenteel b0df6f56-862d-4730-8597-38c0fd4ebd59).
 
 
 

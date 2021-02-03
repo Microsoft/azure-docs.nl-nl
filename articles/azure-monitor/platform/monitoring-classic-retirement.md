@@ -7,20 +7,20 @@ ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 720a0e25f3486f32ffed897e54033fd4b68dace4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 368ab1bc6a1fc13c3001b437c3c2a8be2bbb9c04
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87848122"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525988"
 ---
 # <a name="unified-alerting--monitoring-in-azure-monitor-replaces-classic-alerting--monitoring"></a>Unified Alerting-& bewaking in Azure Monitor vervangt klassieke waarschuwingen & bewaking
 
 Azure Monitor is nu een geïntegreerde volledige stack monitoring-service, die nu ondersteuning biedt voor ' één metrische ' en ' One Alerts ' in resources. Zie voor meer informatie ons [blog bericht over nieuwe Azure monitor](https://azure.microsoft.com/blog/new-full-stack-monitoring-capabilities-in-azure-monitor/). De nieuwe Azure-bewakings-en waarschuwings platformen zijn gebouwd om sneller, slimmer en uitbreidbaar te zijn, met de groeiende Expanse van Cloud Computing en online met micro soft intelligent Cloud filosofie.
 
-Wanneer het nieuwe Azure-bewakings-en waarschuwings platform aanwezig is, worden klassieke waarschuwingen in Azure Monitor buiten gebruik gesteld, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. De datum van beëindiging voor deze waarschuwingen is verder uitgebreid. Binnenkort wordt een nieuwe datum aangekondigd voor de resterende migratie van waarschuwingen, [Azure Government Cloud](../../azure-government/documentation-government-welcome.md)en [Azure China 21vianet](https://docs.azure.cn/).
+Wanneer het nieuwe Azure-bewakings-en waarschuwings platform aanwezig is, worden de klassieke waarschuwingen in Azure Monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog steeds in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen. De datum van beëindiging voor deze waarschuwingen is verder uitgebreid. Binnenkort wordt een nieuwe datum aangekondigd voor de resterende migratie van waarschuwingen, [Azure Government Cloud](../../azure-government/documentation-government-welcome.md)en [Azure China 21vianet](https://docs.azure.cn/).
 
- ![Klassieke waarschuwing in Azure Portal](media/monitoring-classic-retirement/monitor-alert-screen2.png) 
+ ![Klassieke waarschuwing in Azure Portal](media/monitoring-classic-retirement/monitor-alert-screen2.png) 
 
 We raden u aan om aan de slag te gaan en uw waarschuwingen opnieuw te maken op het nieuwe platform.
 
@@ -48,7 +48,7 @@ Nieuwe metrische gegevens voor Azure-resources zijn beschikbaar als:
 
 ## <a name="retirement-of-classic-monitoring-and-alerting-platform"></a>Buiten gebruik stellen van klassiek bewakings-en waarschuwings platform
 
-Zoals eerder aangegeven, zijn oudere klassieke bewakings-en waarschuwings functies buiten gebruik gesteld. met inbegrip van de sluiting van gerelateerde Api's, Azure Portal-interface en services, is er nog steeds een beperkt gebruik van resources die de nieuwe waarschuwingen nog niet ondersteunen. Deze functies worden met name afgeschaft:
+Zoals eerder aangegeven, zijn oudere klassieke bewakings-en waarschuwings functies buiten gebruik gesteld voor open bare Cloud gebruikers. met inbegrip van de sluiting van gerelateerde Api's, Azure Portal-interface en services, is er nog steeds een beperkt gebruik van resources die de nieuwe waarschuwingen nog niet ondersteunen. Deze functies worden met name afgeschaft:
 
 - Oudere (klassieke) metrische gegevens en waarschuwingen voor Azure-resources als momenteel beschikbaar via [waarschuwingen (klassiek)](./alerts-classic.overview.md) van Azure Portal. toegankelijk als [micro soft. Insights/alertrules-](/rest/api/monitor/alertrules) resource
 - Ouder (klassiek) platform en aangepaste metrische gegevens voor Application Insights, evenals een waarschuwing voor de functies die beschikbaar zijn via [waarschuwingen (klassiek)](./alerts-classic.overview.md) van Azure Portal en die toegankelijk zijn als [micro soft. Insights-alertrules](/rest/api/monitor/alertrules) resource

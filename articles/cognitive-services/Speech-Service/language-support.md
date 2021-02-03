@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 83d7263d430ed9dc8f2f61711fc4c1339ba03810
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 118ab33c8d8ce46559957236daa21ba494655e69
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98662927"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526276"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -392,10 +392,30 @@ Meer dan 75 standaard stemmen zijn beschikbaar in meer dan 45 talen en land inst
 
 ### <a name="customization"></a>Aanpassing
 
-Stem aanpassing is beschikbaar voor,,,,,, `de-DE` `en-GB` , en `en-IN` `en-US` `es-MX` `fr-FR` `it-IT` `pt-BR` `zh-CN` . Selecteer de juiste land instelling die overeenkomt met de trainings gegevens die u nodig hebt om een aangepast spraak model te trainen. Als de opname gegevens die u hebt gesp roken in het Engels met een Britse accent, selecteert u bijvoorbeeld `en-GB` .
+Aangepaste spraak is beschikbaar in de Standard-en Neural-laag. De ondersteunde talen verschillen voor deze twee lagen. 
+
+| Taal | Landinstelling | Standard | Neural |
+|--|--|--|--|
+| Chinees (Mandarijn, vereenvoudigd) | `zh-CN` | Ja | Ja |
+| Chinees (Mandarijn, vereenvoudigd), Engels, tweetalig | `zh-CN` meertalige | Ja | Ja |
+| Engels (Australië) | `en-AU` | Nee | Ja |
+| Engels (India) | `en-IN` | Ja | Ja |
+| Engels (Verenigd Koninkrijk) | `en-GB` | Ja | Ja |
+| Engels (Verenigde Staten) | `en-US` | Ja | Ja |
+| Frans (Canada) | `fr-CA` | Nee | Ja |
+| Frans (Frankrijk) | `fr-FR` | Ja | Ja |
+| Duits (Duitsland) | `de-DE` | Ja | Ja |
+| Italiaans (Italië) | `it-IT` | Ja | Ja |
+| Japans (Japan) | `ja-JP` | Nee | Ja |
+| Koreaans (Korea) | `ko-KR` | Nee | Ja |
+| Portugees (Brazilië) | `pt-BR` | Ja | Ja |
+| Spaans (Mexico) | `es-MX` | Ja | Ja |
+| Spaans (Spanje) | `es-ES` | Nee | Ja |
+
+Selecteer de juiste land instelling die overeenkomt met de trainings gegevens die u nodig hebt om een aangepast spraak model te trainen. Als de opname gegevens die u hebt gesp roken in het Engels met een Britse accent, selecteert u bijvoorbeeld `en-GB` .
 
 > [!NOTE]
-> We bieden geen ondersteuning voor bidirectionele model trainingen in aangepaste spraak, met uitzonde ring van de Chinese-English bi. Selecteer ' Chinees-Engels-tweetalig ' als u een Chinese stem wilt trainen die ook Engels kan spreken. Spraak training in alle land instellingen begint met een gegevensset van 2000 + uitingen, met uitzonde ring van de `en-US` en `zh-CN` waar u kunt beginnen met elke grootte van de trainings gegevens.
+> We bieden geen ondersteuning voor bidirectionele model trainingen in aangepaste spraak, met uitzonde ring van de Chinese-English bi. Selecteer ' Chinees-Engels-tweetalig ' als u een Chinese stem wilt trainen die ook Engels kan spreken. Chinese-English tweetalige model training met de standaard methode is alleen beschikbaar in Europa-noord en Noord-Centraal vs. Aangepaste Neural-stem training is beschikbaar in UK-zuid en VS-Oost.
 
 ## <a name="speech-translation"></a>Spraakomzetting
 

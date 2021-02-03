@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: how-to
 ms.date: 1/28/2021
-ms.openlocfilehash: 62faaed3672f721b26587d1bca3ddb0947f733e7
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: ea2dc877c7bc6db387985e7b5cd1153e195ab4f1
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220833"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509567"
 ---
 # <a name="major-version-upgrade-in-azure-database-for-mysql-single-server"></a>Upgrade van primaire versie in Azure Database for MySQL één server
 
@@ -121,15 +121,7 @@ Het GA van deze functie is gepland voor MySQL v 5.6 buiten gebruik gesteld. De f
 
 ### <a name="will-this-cause-downtime-of-the-server-and-if-so-how-long"></a>Leidt dit tot uitval tijd van de server en zo ja, hoe lang?
 
-Ja, de server is tijdens het upgrade proces niet beschikbaar. u wordt aangeraden deze bewerking uit te voeren tijdens het geplande onderhouds venster. De geschatte uitval tijd is afhankelijk van de grootte van de data base, de opslag grootte (IOPs ingericht) en het aantal tabellen in de data base. De upgrade tijd is direct evenredig met het aantal tabellen op de server. De upgrades van de Basic SKU-servers worden naar verwachting meer tijd in beslag nemen op het standaard-opslag platform. Als u de downtime voor uw server omgeving wilt schatten, raden we u aan om eerst een upgrade uit te voeren op de herstelde kopie van de server.  
-
-### <a name="it-is-noted-that-it-is-not-supported-on-replica-server-yet-what-does-that-mean-concrete"></a>Het wordt opgemerkt dat deze nog niet wordt ondersteund op de replica server. Wat betekent dat concreet?
-
-Op dit moment wordt de upgrade van de primaire versie niet ondersteund voor de replica server. Dit betekent dat u deze niet hoeft uit te voeren voor servers die betrokken zijn bij de replicatie (bron-of replica server). Als u de upgrade van de servers die betrokken zijn bij de replicatie wilt testen voordat we de replica-ondersteuning voor de upgrade functie toevoegen, kunt u het beste de volgende stappen uitvoeren:
-
-1. Tijdens uw geplande onderhoud [stopt u replicatie en verwijdert u de replica server](howto-read-replicas-portal.md) na het vastleggen van de naam en alle configuratie gegevens (Firewall instellingen, configuratie van de server parameter als deze verschilt van de bron server).
-2. Voer een upgrade uit van de bron server.
-3. Richt een nieuwe Lees replica-server in met dezelfde naam en configuratie-instellingen die u in stap 1 hebt vastgelegd. De nieuwe replica server bevindt zich automatisch op v 5.7 nadat de bron server is bijgewerkt naar v 5.7.
+Ja, de server is tijdens het upgrade proces niet beschikbaar. u wordt aangeraden deze bewerking uit te voeren tijdens het geplande onderhouds venster. De geschatte uitval tijd is afhankelijk van de grootte van de data base, de opslag grootte (IOPs ingericht) en het aantal tabellen in de data base. De upgrade tijd is direct evenredig met het aantal tabellen op de server. De upgrades van de Basic SKU-servers worden naar verwachting meer tijd in beslag nemen op het standaard-opslag platform. Als u de downtime voor uw server omgeving wilt schatten, raden we u aan om eerst een upgrade uit te voeren op de herstelde kopie van de server. Overweeg [het uitvoeren van een minimale downtime van de primaire versie van mysql 5,6 naar MySQL 5,7 met lees replica.](#perform-minimal-downtime-major-version-upgrade-from-mysql-56-to-mysql-57-using-read-replicas)
 
 ### <a name="what-will-happen-if-we-do-not-choose-to-upgrade-our-mysql-v56-server-before-february-5-2021"></a>Wat gebeurt er als we niet vóór 5 februari 2021 een upgrade van onze MySQL-server zullen uitvoeren?
 

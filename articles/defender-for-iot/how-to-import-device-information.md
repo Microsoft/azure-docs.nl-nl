@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 7cb805f60ba9feb0ae2d1483b2ab2df4e03639d8
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 333ffbf4107dfd005ba7e7fae6a079a618e0c645
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625411"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509432"
 ---
 # <a name="import-device-information-to-a-sensor"></a>Apparaatgegevens importeren in een sensor
 
@@ -160,7 +160,7 @@ Het IP-adres, het besturings systeem en het patch niveau importeren:
 
    - **Besturings systeem**: Selecteer een optie in de vervolg keuzelijst.
 
-   - **Laatste update**: gebruik de notatie JJJJ-MM-DD.
+   - **Datum van de laatste update**: gebruik de notatie JJJJ-MM-DD.
 
     :::image type="content" source="media/how-to-import-device-information/last-update-screen.png" alt-text="De inhoud van het scherm.":::
 
@@ -172,7 +172,7 @@ Het IP-adres, het besturings systeem en het patch niveau importeren:
 
 De autorisatie status importeren:
 
-1. Down load het [authorized_devices.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) -bestand en sla het op in het Help Center van Defender voor IOT. Controleer of u het bestand hebt opgeslagen als CSV.
+1. Down load en sla het [authorized_devices-examples.csv- ](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) bestand op in het Help Center van Defender voor IOT. Controleer of u het bestand hebt opgeslagen als CSV.
 
 2. Voer de gegevens in als:
 

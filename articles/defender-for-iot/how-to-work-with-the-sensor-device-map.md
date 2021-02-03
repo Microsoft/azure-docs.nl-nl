@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/7/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: fd1721060bdc4b18f324a94f7c367bacde6ed4e8
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: edd1438a665e4917d5dd4cdcfba08d9cee01d3bb
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976755"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509045"
 ---
 # <a name="investigate-sensor-detections-in-the-device-map"></a>Detectie van sensors in de apparaattoewijzing onderzoeken
 
@@ -36,7 +36,7 @@ De volgende hulpprogram ma's worden gebruikt om te werken in de kaart.
 
 De gebruikersrol bepaalt welke hulpprogram ma's beschikbaar zijn in het venster met het kaart apparaat. Zie [gebruikers maken en beheren](how-to-create-and-manage-users.md) voor meer informatie over gebruikers rollen.
 
-| Symbool | Beschrijving |
+| Symbool | Description |
 |---|---|
 | :::image type="icon" source="media/how-to-work-with-maps/search-bar-icon-v2.png" border="false":::| Zoeken op IP-adres of MAC-adres voor een specifiek apparaat. Voer het IP-adres of MAC-adres in het tekstvak in. De kaart geeft het apparaat weer dat u hebt gezocht met apparaten die zijn verbonden. |
 | Groeps markeringen en filters <br /> :::image type="content" source="media/how-to-work-with-maps/group-highlight-and-filters-v2.png" alt-text="Scherm opname van de groeps markeringen en filters."::: | Filter of markeer de kaart op basis van standaard groepen en aangepaste apparaatgroepen. |
@@ -63,7 +63,7 @@ In de afbeelding hieronder ziet u een samengevouwen IT-subnet met 27 IT-netwerk 
 
 De functie voor het samen vouwen van IT-netwerken inschakelen:
 
-- Controleer in het venster systeem instelling of de functie IT-netwerken is ingeschakeld.
+- Zorg ervoor dat in het venster **systeem instellingen** de groepering van de functie voor het wisselen van IT-netwerken is ingeschakeld.
 
 :::image type="content" source="media/how-to-work-with-maps/shrunk-it-subnet-v2.png" alt-text="Venster systeem instellingen":::
 
@@ -76,7 +76,7 @@ Een IT-subnet uitbreiden:
 
    :::image type="content" source="media/how-to-work-with-maps/subnet-list.png" alt-text="Configuratie van subnetten":::
 
-2. Wis in het venster subnetten configureren het subnet ICS voor elk subnet dat u wilt definiëren als een IT-subnet. De IT-subnetten worden samengevouwen in de apparaattoewijzing weer gegeven met de meldingen voor ICS-apparaten, zoals een controller of PLC, in IT-netwerken.
+2. Schakel in het venster **subnetten configuratie bewerken** het selectie vakje **ICS-subnet** uit voor elk subnet dat u wilt definiëren als een IT-subnet. De IT-subnetten worden samengevouwen in de apparaattoewijzing weer gegeven met de meldingen voor ICS-apparaten, zoals een controller of PLC, in IT-netwerken.
 
    :::image type="content" source="media/how-to-work-with-maps/edit-config.png" alt-text="Configuratie subnetten bewerken":::
 
@@ -106,31 +106,32 @@ Het pictogram voor samen vouwen wordt bijgewerkt met het bijgewerkte aantal uitg
 
 ## <a name="view-or-highlight-device-groups"></a>Apparaatgroepen weer geven of markeren
 
-U kunt de kaart weergave aanpassen op basis van apparaatgroepen. Bijvoorbeeld groepen apparaten die zijn gekoppeld aan een specifiek VLAN of subnet. Er zijn vooraf gedefinieerde groepen beschikbaar en aangepaste groepen kunnen worden gemaakt.
+U kunt de kaart weergave aanpassen op basis van apparaatgroepen. Bijvoorbeeld groepen apparaten die zijn gekoppeld aan een specifiek OT, VLAN of subnet. Er zijn vooraf gedefinieerde groepen beschikbaar en aangepaste groepen kunnen worden gemaakt.
 
 Groepen weer geven op:
 
   - **Markeren:** Markeer de apparaten die deel uitmaken van een specifieke groep in het blauw.
 
-  - **Filteren:** Alleen apparaten op de kaart alleen weer geven die deel uitmaken van een specifieke groep.
+  - **Filteren:** Alleen apparaten weer geven die deel uitmaken van een specifieke groep.
 
 :::image type="content" source="media/how-to-work-with-maps/port-standard.png" alt-text="Standaard weergave van uw poort":::
 
 De volgende vooraf gedefinieerde groepen zijn beschikbaar:
 
-| Groepsnaam | Beschrijving |
+| Groepsnaam | Description |
 |--|--|
-| **Bekende toepassingen of niet-standaard poorten (standaard)** | Apparaten die gebruikmaken van gereserveerde poorten, zoals TCP. Apparaten die gebruikmaken van niet-standaard poorten of poorten waaraan geen alias is toegewezen. |
-| **OT protocollen (standaard)** | Apparaten die het verkeer verwerken. |
-| **Autorisatie (standaard)** | Apparaten die in het netwerk zijn gedetecteerd tijdens het trainings proces of die zijn toegevoegd aan het netwerk |
+| **Bekende toepassingen** | Apparaten die gebruikmaken van gereserveerde poorten, zoals TCP.  |
+| **niet-standaard poorten (standaard)** | Apparaten die gebruikmaken van niet-standaard poorten of poorten waaraan geen alias is toegewezen. |
+| **OT protocollen (standaard)** | Apparaten die bekende verkeer verwerken. |
+| **Autorisatie (standaard)** | Apparaten die tijdens het trainings proces zijn gedetecteerd in het netwerk of die officieel op het netwerk zijn toegelaten. |
 | **Filters voor de inventarisatie van apparaten** | Apparaten gegroepeerd op basis van de filters worden opgeslagen in de inventarisatie tabel van het apparaat. |
 | **Polling intervallen** | Apparaten gegroepeerd op polling-intervallen. De polling intervallen worden automatisch gegenereerd volgens cyclische kanalen of punten. Bijvoorbeeld 15,0 seconden, 3,0 seconden, 1,5 seconden of een wille keurig interval. Door deze informatie te bekijken, kunt u zien of systemen te snel of traag worden gecontroleerd. |
-| **Programmering** | Engineering stations en geprogrammeerde controllers |
+| **Programmering** | Technische stations en programmeer machines. |
 | **Subnetten** | Apparaten die deel uitmaken van een specifiek subnet. |
 | **VLAN** | Apparaten die zijn gekoppeld aan een specifieke VLAN-ID. |
-| **Verbinding tussen subnetten** | Apparaten die zijn gekoppeld aan een verbinding tussen subnet. |
+| **Verbindingen tussen subnet** | Apparaten die communiceren van het ene subnet naar een ander subnet. |
 | **Vastgemaakte waarschuwingen** | Apparaten waarvoor de gebruiker een waarschuwing heeft vastgemaakt. |
-| **Aanvals vector simulaties** | Kwets bare apparaten gedetecteerd in aanvals vector rapporten. Als u deze apparaten op de kaart wilt weer geven, schakelt u het selectie vakje **weer geven op apparaat toewijzen** bij het genereren van de aanvals vector. :::image type="content" source="media/how-to-work-with-maps/add-attack-v2.png" alt-text="Aanvals vector-simulaties toevoegen"::: |
+| **Aanvals vector simulaties** | Kwets bare apparaten gedetecteerd in aanvals vector rapporten. Als u deze apparaten op de kaart wilt weer geven, schakelt u het selectie vakje **weer geven op apparaat toewijzen** bij het genereren van de aanvals vector. :::image type="content" source="media/how-to-work-with-maps/add-attack-v2.png" alt-text="Aanvals vector-simulaties toevoegen":::. |
 | **Voor het laatst gezien** | Apparaten gegroepeerd op het tijds bestek dat ze het laatst hebben gezien, bijvoorbeeld: één uur, zes uur, één dag, zeven dagen. |
 | **Niet in Active Directory** | Alle niet-PLC-apparaten die niet communiceren met de Active Directory. |
 
@@ -142,7 +143,7 @@ Apparaten markeren of filteren:
 
 3. Selecteer in het deel venster groepen de groep die u wilt markeren of filteren op apparaten.
 
-4. Selecteer **markeren** of **filteren**.
+4. Selecteer **markeren** of **filteren**. Scha kelen tussen dezelfde selectie om de markering of het filter te verwijderen.
 
 ## <a name="define-custom-groups"></a>Aangepaste groepen definiëren
 
@@ -155,20 +156,20 @@ Ga als volgt te werk om een groep te maken:
 
 1. Selecteer **apparaten** in het menu aan de zijkant. De apparaattoewijzing wordt weer gegeven.
 
-2. Selecteer :::image type="content" source="media/how-to-work-with-maps/menu-icon.png" alt-text="groeps instelling"::: om de instellingen van de groepen weer te geven.
+1. Selecteer :::image type="content" source="media/how-to-work-with-maps/menu-icon.png" alt-text="groeps instelling"::: om de instellingen van de groepen weer te geven.
 
-3. Selecteer :::image type="content" source="media/how-to-work-with-maps/create-group-v2.png" alt-text="groepen"::: om een nieuwe aangepaste groep te maken.
+1. Selecteer :::image type="content" source="media/how-to-work-with-maps/create-group-v2.png" alt-text="groepen"::: om een nieuwe aangepaste groep te maken.
 
 :::image type="content" source="media/how-to-work-with-maps/custom-group-v2.png" alt-text="Een aangepast groeps scherm maken":::
 
-4. Voeg de naam van de groep toe. gebruik Maxi maal 30 tekens.
+1. Voeg de naam van de groep toe. gebruik Maxi maal 30 tekens.
 
-5. Selecteer de relevante apparaten als volgt:
+1. Selecteer de relevante apparaten als volgt:
 
    - Voeg de apparaten uit dit menu toe door ze te selecteren in de lijst (Selecteer de pijl knop),<br /> Of <br /> 
    - Voeg de apparaten uit dit menu toe door ze te kopiëren van een geselecteerde groep (Selecteer de pijl knop)
 
-6. Selecteer **Groep toevoegen**.
+1. Selecteer **groep toevoegen** om bestaande groepen toe te voegen aan aangepaste groepen.
 
 ### <a name="add-devices-to-a-custom-group"></a>Apparaten toevoegen aan een aangepaste groep
 
@@ -176,13 +177,13 @@ U kunt apparaten toevoegen aan een aangepaste groep of een nieuwe aangepaste gro
 
 1. Klik met de rechter muisknop op een of meer apparaten op de kaart.
 
-2. Selecteer **toevoegen aan groep**.
+1. Selecteer **toevoegen aan groep**.
 
-3. Voer een groeps naam in het veld groep in en selecteer +. De nieuwe groep wordt weer gegeven. Als de groep al bestaat, wordt deze toegevoegd aan de bestaande aangepaste groep.
+1. Voer een groeps naam in het veld groep in en selecteer +. De nieuwe groep wordt weer gegeven. Als de groep al bestaat, wordt deze toegevoegd aan de bestaande aangepaste groep.
 
    :::image type="content" source="media/how-to-work-with-maps/groups-section-v2.png" alt-text="Groepsnaam":::
 
-4. Voeg apparaten toe aan een groep door stap 1-3 te herhalen.
+1. Voeg apparaten toe aan een groep door stap 1-3 te herhalen.
 
 ## <a name="map-zoom-views"></a>Weergave zoom weergaven
 
@@ -266,7 +267,7 @@ Er zijn tal van hulpprogram ma's beschikbaar voor meer informatie over apparaten
 
 De volgende labels en indica toren kunnen worden weer gegeven op apparaten op de kaart:
 
-| Label apparaat | Beschrijving |
+| Label apparaat | Description |
 |--|--|
 | :::image type="content" source="media/how-to-work-with-maps/host-v2.png" alt-text="IP-hostnaam"::: | Hostnaam en IP-adres van IP-adres, of subnet adressen |
 | :::image type="content" source="media/how-to-work-with-maps/amount-alerts-v2.png" alt-text="Aantal waarschuwingen"::: | Aantal waarschuwingen dat is gekoppeld aan het apparaat |
@@ -312,24 +313,24 @@ De volgende informatie kan hand matig worden bijgewerkt. Gegevens die hand matig
 
   - Purdue-laag
 
-  - Beschrijving
+  - Description
 
 | Item | Beschrijving |
 |--|--|
 | Algemene informatie | De basis informatie die nodig is. |
-| Naam | De apparaatnaam. <br /> De sensor detecteert standaard de apparaatnaam zoals deze in het netwerk is gedefinieerd. Bijvoorbeeld een naam die is gedefinieerd in de DNS-server. <br /> Als er geen namen zijn gedefinieerd, wordt het IP-adres van het apparaat weer gegeven in dit veld. <br /> U kunt de naam van een apparaat hand matig wijzigen. Geef uw apparaten duidelijke namen die overeenkomen met de functionaliteit ervan. |
+| Name | De apparaatnaam. <br /> De sensor detecteert standaard de apparaatnaam zoals deze in het netwerk is gedefinieerd. Bijvoorbeeld een naam die is gedefinieerd in de DNS-server. <br /> Als er geen namen zijn gedefinieerd, wordt het IP-adres van het apparaat weer gegeven in dit veld. <br /> U kunt de naam van een apparaat hand matig wijzigen. Geef uw apparaten duidelijke namen die overeenkomen met de functionaliteit ervan. |
 | Type | Het apparaattype dat door de sensor is gedetecteerd. <br /> Zie [apparaattypen weer geven](#view-device-types)voor meer informatie. |
-| Leverancier | De leverancier van het apparaat. |
-| Besturingssysteem | Het besturings systeem van het apparaat. |
+| Leverancier | De leverancier van het apparaat. Dit wordt bepaald door de voorloop tekens van het MAC-adres van het apparaat. Dit veld is alleen-lezen. |
+| Besturingssysteem | Het besturings systeem van het apparaat is gedetecteerd door de sensor. |
 | Purdue-laag | De Purdue-laag geïdentificeerd door de sensor voor dit apparaat, met inbegrip van: <br /> -Automatische <br /> -Proces beheer <br /> -Toezicht <br /> - Enterprise |
-| Beschrijving | Een gratis tekst veld. <br /> Meer informatie over het apparaat toevoegen. |
+| Description | Een gratis tekst veld. <br /> Meer informatie over het apparaat toevoegen. |
 | Kenmerken | Aanvullende informatie die tijdens de leer periode op het apparaat is gedetecteerd en niet tot andere categorieën behoort, wordt weer gegeven in de sectie kenmerken. <br /> De informatie is RO. |
-| Instellingen | U kunt de apparaatinstellingen hand matig wijzigen om valse positieven te voor komen: <br /> - **Geautoriseerd apparaat**: tijdens de leer periode worden alle apparaten die in het netwerk worden gedetecteerd geïdentificeerd als geautoriseerde apparaten. Wanneer een apparaat na de leer periode wordt gedetecteerd, wordt het standaard weer gegeven als een niet-geautoriseerd apparaat. U kunt deze definitie hand matig wijzigen. <br /> - **Bekend als scanner**: Schakel deze optie in als u weet dat dit apparaat wordt aangeduid als scanner en er geen waarschuwing moet worden gesteld. <br /> - **Programmerings apparaat**: Schakel deze optie in als u weet dat dit apparaat een apparaat met een programma wordt genoemd en er geen waarschuwingen meer nodig zijn. |
+| Instellingen | U kunt de apparaatinstellingen hand matig wijzigen om valse positieven te voor komen: <br /> - **Geautoriseerd apparaat**: tijdens de leer periode worden alle apparaten die in het netwerk worden gedetecteerd geïdentificeerd als geautoriseerde apparaten. Wanneer een apparaat na de leer periode wordt gedetecteerd, wordt het standaard weer gegeven als een niet-geautoriseerd apparaat. U kunt deze definitie hand matig wijzigen. <br /> - **Bekend als scanner**: Schakel deze optie in als u weet dat dit apparaat wordt aangeduid als scanner en er geen waarschuwing moet worden gesteld. <br /> - **Programmerings apparaat**: Schakel deze optie in als u weet dat dit apparaat een programma wordt genoemd en wordt gebruikt om programma wijzigingen door te voeren. Als u deze identificeert als een programmeer apparaat, voor komt u waarschuwingen voor het Program meren van wijzigingen die afkomstig zijn van deze asset. |
 | Aangepaste groepen | De aangepaste groepen in de apparaattoewijzing waarvan dit apparaat deel uitmaakt. |
 | Staat | De beveiliging en de autorisatie status van het apparaat: <br /> -De status is `Secured` wanneer er geen waarschuwingen zijn <br /> -Wanneer er waarschuwingen over het apparaat zijn, wordt het aantal waarschuwingen weer gegeven <br /> -De status `Unauthorized` wordt weer gegeven voor apparaten die na de leer periode zijn toegevoegd aan het netwerk. U kunt het apparaat hand matig definiëren, zoals `Authorized Device` in de instellingen <br /> -In het geval het adres van dit apparaat is gedefinieerd als een dynamisch adres, `DHCP` wordt het toegevoegd aan de status. |
 
 
-| Netwerk | Beschrijving |
+| Netwerk | Description |
 |--|--|
 | Interfaces | De apparaatfuncties. Een RO-veld. |
 | Protocollen | De protocollen die door het apparaat worden gebruikt. Een RO-veld. |
@@ -369,7 +370,7 @@ De apparaatgegevens weer geven:
 
 2. Klik met de rechter muisknop op een apparaat en selecteer **Eigenschappen weer geven**. De venster Eigenschappen van het apparaat wordt weer gegeven.
 
-3. Selecteer op de vereiste waarschuwing onder aan dit venster om gedetailleerde informatie over waarschuwingen voor dit apparaat weer te geven.
+3. Selecteer de vereiste waarschuwing om gedetailleerde informatie over waarschuwingen voor dit apparaat weer te geven.
 
 ### <a name="backplane-properties"></a>Eigenschappen van backplane
 
@@ -429,7 +430,7 @@ Verbeter forensische door programma gebeurtenissen die worden uitgevoerd op uw n
 
 U kunt een geprogrammeerd apparaat weer geven en door verschillende programma wijzigingen bladeren die door andere apparaten worden uitgevoerd.
 
-De code weer geven die is toegevoegd, gewijzigd, verwijderd of ongewijzigd door het programmeer apparaat. Zoeken naar wijzigingen in het programma op basis van bestands typen, datums of tijdstippen van belang.
+De code weer geven die is toegevoegd, gewijzigd, verwijderd of opnieuw geladen door het programmeer apparaat. Zoeken naar wijzigingen in het programma op basis van bestands typen, datums of tijdstippen van belang.
 
 ### <a name="when-to-review-programming-activity"></a>Wanneer moet u de programmeer activiteit controleren? 
 
@@ -443,7 +444,7 @@ Mogelijk moet u de programmeer activiteit controleren:
 
 :::image type="content" source="media/how-to-work-with-maps/differences.png" alt-text="Wijzigings logboek Program meren":::
 
-Met extra opties kunt u het volgende doen:
+Met andere opties kunt u:
 
   - Markeer gebeurtenissen die van belang zijn met een ster.
 
@@ -476,19 +477,19 @@ Waarschuwingen worden geactiveerd wanneer onbevoegde programmeer apparaten progr
 :::image type="content" source="media/how-to-work-with-maps/unauthorized.png" alt-text="Onbevoegde programmeer waarschuwingen":::
 
 > [!NOTE]
-> U kunt ook elementaire programmeer informatie weer geven in het apparaat venster Eigenschappen en de inventaris van apparaten. Zie [informatie over de programmering van apparaten: aanvullende locaties](#device-programming-information-additional-locations) voor meer informatie.
+> U kunt ook elementaire programmeer informatie weer geven in het apparaat venster Eigenschappen en de inventaris van apparaten.
 
 ### <a name="working-in-the-programming-timeline-window"></a>Werken in het venster tijd lijn Program meren
 
 In deze sectie wordt beschreven hoe u programmeer bestanden weergeeft en versies vergelijkt. Zoeken naar specifieke bestanden die naar een geprogrammeerd apparaat zijn verzonden. Zoeken naar bestanden op basis van:
 
-  - Date
+  - Datum
 
   - Bestands type
 
 :::image type="content" source="media/how-to-work-with-maps/timeline-view.png" alt-text="venster tijd lijn Program meren":::
 
-|Type programmeer tijdlijn | Beschrijving |
+|Type programmeer tijdlijn | Description |
 |--|--|
 | Geprogrammeerd apparaat | Geeft details over het apparaat dat is geprogrammeerd, met inbegrip van de hostnaam en het bestand. |
 | Recente gebeurtenissen | Hiermee worden de 50 meest recente gebeurtenissen weer gegeven die zijn gedetecteerd door de sensor. <br />Als u een gebeurtenis wilt markeren, plaatst u de muis aanwijzer erop en klikt u op de ster. :::image type="icon" source="media/how-to-work-with-maps/star.png" border="false"::: <br /> De laatste 50 gebeurtenissen kunnen worden weer gegeven. |
@@ -539,11 +540,11 @@ Vergelijken:
 
 5. Het bestand dat u in het deel venster recente gebeurtenissen/bestanden hebt geselecteerd, wordt altijd aan de rechter kant weer gegeven.
 
-### <a name="device-programming-information-additional-locations"></a>Informatie over de programmering van apparaten: extra locaties
+### <a name="device-programming-information-other-locations"></a>Informatie over de programmering van apparaten: andere locaties
 
 Naast het controleren van de details in de programmeer tijdlijn, hebt u toegang tot programmeer informatie op het apparaat venster Eigenschappen en de inventaris van het apparaat.
 
-| Apparaattype | Beschrijving |
+| Apparaattype | Description |
 |--|--|
 | Apparaateigenschappen | Het venster Apparaateigenschappen bevat informatie over de laatste programmeer gebeurtenis die is gedetecteerd op de device\. :::image type="content" source="media/how-to-work-with-maps/information-from-device-v2.png" alt-text="De eigenschappen van uw apparaat"::: |
 | De inventaris van het apparaat | De inventaris van het apparaat geeft aan of het apparaat een programmeer device\. is :::image type="content" source="media/how-to-work-with-maps/inventory-v2.png" alt-text="De inventaris van apparaten"::: |
@@ -556,7 +557,7 @@ De sensor werkt de apparaten niet rechtstreeks op het netwerk bij of beïnvloedt
 
 Mogelijk wilt u een apparaat verwijderen als de informatie die u hebt geleerd niet relevant is. Bijvoorbeeld:
 
-  - Een contractant van een partner bij een technisch werk station maakt verbinding met het uitvoeren van configuratie-updates. Nadat de taak is voltooid, moet het apparaat niet meer worden bewaakt.
+  - Een contractant van een partner bij een technisch werk station maakt tijdelijk verbinding om configuratie-updates uit te voeren. Wanneer de taak is voltooid, wordt het apparaat verwijderd.
 
   - Als gevolg van wijzigingen in het netwerk zijn sommige apparaten niet meer verbonden.
 
@@ -566,7 +567,7 @@ Er wordt mogelijk een waarschuwing weer gegeven waarin wordt aangegeven dat het 
 
 Het apparaat wordt verwijderd uit de apparaattoewijzing, de inventarisatie van apparaten en rapporten van gegevens analyse. Andere informatie, bijvoorbeeld: informatie die is opgeslagen in widgets, wordt behouden.
 
-Het apparaat moet ten minste tien minuten actief zijn om het te kunnen verwijderen.
+Het apparaat moet ten minste tien minuten inactief zijn om het te kunnen verwijderen.
 
 Een apparaat verwijderen van de apparaattoewijzing:
 
@@ -576,15 +577,17 @@ Een apparaat verwijderen van de apparaattoewijzing:
 
 ### <a name="merge-devices"></a>Apparaten samen voegen
 
-Onder bepaalde omstandigheden moet u mogelijk apparaten samen voegen. Dit kan vereist zijn als de sensor afzonderlijke netwerk entiteiten detecteert die één uniek apparaat zijn. Bijvoorbeeld:
+Onder bepaalde omstandigheden moet u mogelijk apparaten samen voegen. Dit kan vereist zijn als de sensor afzonderlijke netwerk entiteiten detecteert die zijn gekoppeld aan één uniek apparaat. Bijvoorbeeld:
 
-  - Een PLC met vier netwerk kaarten
+  - Een PLC met vier netwerk kaarten.
 
-  - Een laptop met WIFI en fysieke kaart
+  - Een laptop met WIFI en een fysieke kaart.
+  
+  - Een werk station met twee of meer netwerk kaarten.
 
 Bij het samen voegen vraagt u de sensor de apparaateigenschappen van twee apparaten te combi neren in één. Wanneer u dit doet, worden de venster Eigenschappen-en sensor rapporten van het apparaat bijgewerkt met de nieuwe eigenschappen van het apparaat.
 
-Als u bijvoorbeeld twee apparaten samenvoegt met een IP-adres, worden beide IP-adressen weer gegeven als afzonderlijke interfaces in het apparaat venster Eigenschappen. U kunt alleen geautoriseerde apparaten samen voegen.
+Als u bijvoorbeeld twee apparaten samenvoegt, elk met een IP-adres, worden beide IP-adressen weer gegeven als afzonderlijke interfaces in het apparaat venster Eigenschappen. U kunt alleen geautoriseerde apparaten samen voegen.
 
 :::image type="content" source="media/how-to-work-with-maps/device-properties-v2.png" alt-text="Apparaat venster Eigenschappen":::
 
@@ -596,7 +599,7 @@ U kunt het samen voegen van apparaten niet ongedaan maken. Als u per ongeluk twe
 
 Apparaten samen voegen:
 
-1. Selecteer twee apparaten en klik er met de rechter muisknop op.
+1. Selecteer twee apparaten (Houd SHIFT ingedrukt) en klik vervolgens met de rechter muisknop op een ervan.
 
 2. Selecteer **samen voegen** om de apparaten samen te voegen. Het kan tot twee minuten duren voordat de samen voeging is voltooid.
 
@@ -622,7 +625,7 @@ Als u een apparaat verplaatst op de kaart of de apparaateigenschappen hand matig
 
 #### <a name="unauthorized-devices---attack-vectors-and-risk-assessment-reports"></a>Niet-geautoriseerde apparaten-rapporten over aanvals vectoren en risico analyse
 
-Niet-geautoriseerde apparaten worden berekend opgenomen in rapporten over risico analyse en aanvals vectoren.
+Niet-geautoriseerde apparaten zijn opgenomen in rapporten over risico analyse en aanvals vectoren.
 
 - **Aanvals vector rapporten:** Apparaten die als niet-geautoriseerd zijn gemarkeerd, worden opgelost in de aanvals vector als verdachte Rogue-apparaten die een bedreiging voor het netwerk kunnen zijn.
 
@@ -706,6 +709,6 @@ Exporteren:
 
 1. Selecteer een export optie.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Sensor detecties onderzoeken in een inventaris van een apparaat](how-to-investigate-sensor-detections-in-a-device-inventory.md)

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/20/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 56751adedfc01b3927acc65f47910c3b1281f09c
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: edeb383317d4bdc0e7beef1f8390ddabd350f002
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811640"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507567"
 ---
 # <a name="sensor-data-mining-queries"></a>Sensor gegevens analyse query's
 
@@ -55,11 +55,11 @@ Gegevens analyse query's die u maakt, worden dynamisch bijgewerkt telkens wannee
 
 U kunt query's gebruiken om een uitgebreide reeks beveiligings behoeften voor verschillende beveiligings teams te verwerken:
 
-- **Soc-incident respons**: een rapport in realtime genereren om te helpen bij het direct reageren op incidenten. Genereer bijvoorbeeld een rapport voor een lijst met apparaten waarvoor patches nodig zijn.
+- **Soc-incident respons**: een rapport in realtime genereren om te helpen bij het direct reageren op incidenten. Gegevens analyse kan bijvoorbeeld een rapport genereren voor een lijst met apparaten waarvoor patches nodig zijn.
 
 - **Forensische**: Genereer een rapport op basis van historische gegevens voor onderzoek rapporten.
 
-- **IT-netwerk integriteit**: Genereer een rapport waarmee u de algehele netwerk beveiliging kunt verbeteren. Genereer bijvoorbeeld een rapport met een lijst met apparaten met zwakke verificatie referenties.
+- **IT-netwerk integriteit**: Genereer een rapport waarmee u de algehele netwerk beveiliging kunt verbeteren. U kunt bijvoorbeeld een rapport genereren met een lijst met apparaten met zwakke verificatie referenties.
 
 - **Zicht baarheid**: een rapport genereren met alle query-items om alle basislijn parameters van uw netwerk weer te geven.
 
@@ -138,7 +138,7 @@ Een rapport voor gegevens analyse maken:
 
 In de volgende tabel worden de beheer opties voor gegevens analyse beschreven:
 
-| Pictogram afbeelding | Beschrijving |
+| Pictogram afbeelding | Description |
 |--|--|
 | :::image type="icon" source="media/how-to-generate-reports/edit-a-simulation-icon.png" border="false"::: | Bewerk de rapport parameters. |
 | :::image type="icon" source="media/how-to-generate-reports/export-as-pdf-icon.png" border="false"::: | Exporteren als PDF. |

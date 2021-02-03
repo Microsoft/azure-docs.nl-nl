@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: ad09bcb1ea4aa32bdd04af47d3503f74c850a10b
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: c0670f37da0cead5e3bd05a1d69e17191e8c0ccf
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98803506"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508740"
 ---
 # <a name="manage-alert-events"></a>Waarschuwings gebeurtenissen beheren
 
@@ -45,7 +45,7 @@ In bepaalde situaties wilt u mogelijk niet dat een sensor een gedetecteerde gebe
 
 Nadat u de oplossing of het onderzoek hebt uitgevoerd, kunt u de sensor de waarschuwing laten verbergen door **bevestiging** te selecteren. Als de gebeurtenis opnieuw wordt gedetecteerd, wordt de waarschuwing opnieuw geactiveerd.
 
-De waarschuwing verbergen:
+De waarschuwing wissen:
 
   - Selecteer **erkennen**.
 
@@ -70,9 +70,9 @@ In deze situaties is Learning niet beschikbaar. Wanneer u niet meer wilt weten e
 
 ### <a name="what-traffic-is-muted"></a>Welk verkeer is gedempt?
 
-Een gedempt scenario bevat de netwerk apparaten en het verkeer dat voor een gebeurtenis is gedetecteerd. In de titel van de waarschuwing wordt het verkeer beschreven dat wordt gedempt.
+Een gedempt scenario omvat de netwerk apparaten en verkeer gedetecteerd voor een gebeurtenis. In de titel van de waarschuwing wordt het verkeer beschreven dat wordt gedempt.
 
-Het apparaat of de apparaten die worden gedempt, worden weer gegeven als een afbeelding in de waarschuwing. Als er twee apparaten worden weer gegeven, wordt het verkeer tussen ze gedempt.
+Het apparaat of de apparaten die worden gedempt, worden weer gegeven als een afbeelding in de waarschuwing. Als er twee apparaten worden weer gegeven, wordt het specifieke, gewaarschuwde verkeer ertussen gedempt.
 
 **Voorbeeld 1**
 

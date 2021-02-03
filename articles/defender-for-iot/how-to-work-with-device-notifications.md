@@ -1,5 +1,5 @@
 ---
-title: Werken met meldingen van apparaten
+title: Werken met apparaatmeldingen
 description: Meldingen bevatten informatie over netwerk activiteit die mogelijk uw aandacht vereist, samen met aanbevelingen voor het afhandelen van deze activiteit.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: d113805322bd45584987460d57ad6bdba241ec10
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: cac8d609272be1d9f34b7e0d6404e0a0ea524df7
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840555"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509028"
 ---
-# <a name="work-with-device-notifications"></a>Werken met meldingen van apparaten
+# <a name="work-with-device-notifications"></a>Werken met apparaatmeldingen
 
 Meldingen bevatten informatie over netwerk activiteit die mogelijk uw aandacht vereist, samen met aanbevelingen voor het afhandelen van deze activiteit. U kunt bijvoorbeeld een melding ontvangen over:
 
@@ -48,7 +48,7 @@ Meldingen weer geven:
 
 Gebruik Zoek filters om meldingen weer te geven die voor u van belang zijn.
 
-| Filteren op | Beschrijving |
+| Filteren op | Description |
 |--|--|
 | Filteren op type | Meldingen weer geven die betrekking hebben op een specifiek interesse gebied. Bekijk bijvoorbeeld alleen meldingen voor inactieve apparaten. |
 | Filteren op datum bereik | Meldingen weer geven die betrekking hebben op een bepaald tijds bereik. Bekijk bijvoorbeeld meldingen die alleen in de afgelopen week zijn verzonden. |
@@ -58,15 +58,15 @@ Gebruik Zoek filters om meldingen weer te geven die voor u van belang zijn.
 
 In de volgende tabel worden de meldings gebeurtenis typen beschreven die u kunt ontvangen, samen met de opties voor het afhandelen van deze gebeurtenissen. U kunt de apparaatgegevens bijwerken met een aanbevolen waarde of de melding negeren. Wanneer u een melding negeert, worden de gegevens van het apparaat niet bijgewerkt met de aanbevolen informatie. Als het verkeer opnieuw wordt gedetecteerd, wordt de melding opnieuw verzonden.
 
-| Meldings gebeurtenis typen | Beschrijving | Antwoorden |
+| Meldings gebeurtenis typen | Description | Antwoorden |
 |--|--|--|
-| Nieuwe IP-adressen | Er is een nieuw IP-adres gekoppeld aan het apparaat. Er kunnen vijf scenario's worden gedetecteerd: <br /><br /> Er is een extra IP-adres aan een apparaat gekoppeld. Dit apparaat is ook gekoppeld aan een bestaand MAC-adres.<br /><br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een bestaand MAC-adres. Het apparaat communiceert momenteel niet met behulp van een IP-adres.<br /> <br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een NetBIOS-naam. <br /><br /> Er is een IP-adres gedetecteerd als de beheer interface voor een apparaat dat is gekoppeld aan een MAC-adres. <br /><br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een virtueel IP-adres. | **Extra IP-adres op apparaat instellen** (apparaten samen voegen) <br /> <br />**Bestaande IP vervangen** <br /> <br /> **Negeren**<br /> Verwijder de melding. |
+| Nieuw IP-adres gedetecteerd | Er is een nieuw IP-adres gekoppeld aan het apparaat. Er kunnen vijf scenario's worden gedetecteerd: <br /><br /> Er is een extra IP-adres aan een apparaat gekoppeld. Dit apparaat is ook gekoppeld aan een bestaand MAC-adres.<br /><br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een bestaand MAC-adres. Het apparaat communiceert momenteel niet met behulp van een IP-adres.<br /> <br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een NetBIOS-naam. <br /><br /> Er is een IP-adres gedetecteerd als de beheer interface voor een apparaat dat is gekoppeld aan een MAC-adres. <br /><br /> Er is een nieuw IP-adres gedetecteerd voor een apparaat dat gebruikmaakt van een virtueel IP-adres. | **Extra IP-adres op apparaat instellen** (apparaten samen voegen) <br /> <br />**Bestaande IP vervangen** <br /> <br /> **Negeren**<br /> Verwijder de melding. |
 | Inactieve apparaten | Verkeer is langer dan 60 dagen niet op een apparaat gedetecteerd. | **Verwijderen** <br /> Als dit apparaat geen deel uitmaakt van uw netwerk, kunt u het verwijderen. <br /><br />**Negeren** <br /> Verwijder de melding als het apparaat deel uitmaakt van uw netwerk. Als het apparaat inactief is (bijvoorbeeld omdat het niet per ongeluk is losgekoppeld van het netwerk), sluit u de melding en maakt u opnieuw verbinding met het apparaat. |
-| Nieuw binnenstation | Een subnet bevat een binnenstation dat niet is gedefinieerd in een ICS-subnet. <br /><br /> Elk subnet met ten minste één IP-apparaat kan worden gedefinieerd als een ICS-subnet. Zo kunt u onderscheid maken tussen de en de IT-apparaten op de kaart. | **Instellen als ICS-subnet** <br /> <br /> **Negeren** <br />Verwijder de melding als het apparaat geen deel uitmaakt van het subnet. |
+| Nieuwe apparaten | Een subnet bevat een binnenstation dat niet is gedefinieerd in een ICS-subnet. <br /><br /> Elk subnet met ten minste één IP-apparaat kan worden gedefinieerd als een ICS-subnet. Zo kunt u onderscheid maken tussen de en de IT-apparaten op de kaart. | **Instellen als ICS-subnet** <br /> <br /> **Negeren** <br />Verwijder de melding als het apparaat geen deel uitmaakt van het subnet. |
 | Er zijn geen subnetten geconfigureerd | Er zijn momenteel geen subnetten geconfigureerd in uw netwerk. <br /><br /> Configureer subnetten voor een betere weer gave in de kaart en de mogelijkheid om onderscheid te maken tussen OT en IT-apparaten. | **Open subnetten configuratie** en Configureer subnetten. <br /><br />**Negeren** <br /> Verwijder de melding. |
 | Wijzigingen van het besturings systeem | Er zijn een of meer nieuwe besturings systemen aan het apparaat gekoppeld. | Selecteer de naam van het nieuwe besturings systeem dat u wilt koppelen aan het apparaat.<br /><br /> **Negeren** <br /> Verwijder de melding. |
-| Er zijn subnetten gedetecteerd | Er zijn nieuwe subnetten gedetecteerd. | **Learn**<br />Voeg het subnet automatisch toe.<br />**Configuratie van subnet openen**<br />Voeg alle ontbrekende subnetgegevens toe.<br />**Negeren**<br />Verwijder de melding. |
-| Er is een wijziging in het apparaattype gedetecteerd | Er is een nieuw apparaattype aan het apparaat gekoppeld. | **Instellen als {...}**<br />Koppel het nieuwe type aan het apparaat.<br />**Negeren**<br />Verwijder de melding. |
+| Nieuwe subnetten | Er zijn nieuwe subnetten gedetecteerd. | **Learn**<br />Voeg het subnet automatisch toe.<br />**Configuratie van subnet openen**<br />Voeg alle ontbrekende subnetgegevens toe.<br />**Negeren**<br />Verwijder de melding. |
+| Wijzigingen van het apparaattype | Er is een nieuw apparaattype aan het apparaat gekoppeld. | **Instellen als {...}**<br />Koppel het nieuwe type aan het apparaat.<br />**Negeren**<br />Verwijder de melding. |
 
 ## <a name="respond-to-many-notifications-simultaneously"></a>Op meerdere meldingen tegelijk reageren
 
@@ -98,6 +98,6 @@ Onderzoek de aanbevelingen om de besturingssysteem classificatie te verrijken. D
 
 Wanneer u een aanbeveling accepteert, wordt de informatie over het type besturings systeem in de sensor bijgewerkt.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Waarschuwingen weergeven](how-to-view-alerts.md)

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/13/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 419e32a127947cde1d3761507f0df7a889528ff2
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: cb984ca1a74d8b3838b857f2f5679264d1445187
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621925"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508605"
 ---
 # <a name="basic-concepts"></a>Basisbegrippen 
 
@@ -20,9 +20,9 @@ In dit artikel worden de belangrijkste voor delen van Azure Defender voor IoT be
 
 ## <a name="rapid-non-invasive-deployment-and-passive-monitoring"></a>Snelle, niet-invasieve implementatie en passieve bewaking
 
-Defender voor IoT Sens oren maken verbinding met een SPANNe-poort of netwerk en beginnen met het verzamelen van ICS-netwerk verkeer via passieve bewaking (zonder agent). Diepe pakket inspectie (DPI) wordt gebruikt voor het dissect van verkeer van zowel het seriële als het Ethernet-beheer netwerk apparatuur. Defender voor IoT heeft geen invloed op de netwerken, omdat deze niet worden geplaatst in het gegevenspad en niet actief worden gescand op apparaten. 
+Defender voor IoT Sens oren maakt verbinding met switch-poorten (mirror) en netwerk kranen en beginnen onmiddellijk met het verzamelen van ICS-netwerk verkeer via passieve bewaking (zonder agent). Diepe pakket inspectie (DPI) wordt gebruikt voor het dissect van verkeer van zowel het seriële als het Ethernet-beheer netwerk apparatuur. Defender voor IoT heeft geen invloed op de netwerken, omdat deze niet worden geplaatst in het gegevenspad en niet actief worden gescand op apparaten. 
 
-Voor het leveren van directe moment opnamen van gedetailleerde apparaatgegevens biedt Defender voor IoT sensor een passieve bewaking met een optioneel actief onderdeel. Dit onderdeel maakt gebruik van veilige, door de leverancier goedgekeurde opdrachten om zowel Windows-als controller apparaten te doorzoeken op apparaatgegevens, zo vaak of zo vaak als u wilt.
+Voor het leveren van directe moment opnamen van gedetailleerde Windows-apparaatgegevens, kan Defender voor IoT-sensor worden geconfigureerd voor een extra passieve bewaking met een optioneel actief onderdeel. Dit onderdeel maakt gebruik van veilige, door de leverancier goedgekeurde opdrachten om Windows-apparaten te doorzoeken op apparaatgegevens, zo vaak of zo vaak als u wilt.
 
 ## <a name="embedded-knowledge-of-ics-protocols-devices-and-applications"></a>Inge sloten kennis van ICS-protocollen,-apparaten en-toepassingen
 

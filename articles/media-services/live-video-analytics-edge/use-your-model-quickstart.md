@@ -4,18 +4,16 @@ description: In deze snelstart gebruikt u computer vision om de live videofeed v
 ms.topic: quickstart
 ms.date: 04/27/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 8e3f0a5cb6a97ce55d848c2d3311ebab5151e186
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: d3ba937abcc7bbfd9bb2afe7b15aec28ebb57446
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494984"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508483"
 ---
 # <a name="quickstart-analyze-live-video-by-using-your-own-http-model"></a>Quickstart: Livevideo analyseren met uw eigen HTTP-model
 
 In deze quickstart leert u hoe u Live Video Analytics in IoT Edge kunt gebruiken om de live-videofeed van een (gesimuleerde) IP-camera te analyseren. U ziet hoe u een computer vision-model kunt toepassen om objecten te detecteren. Een subset van de frames in de livevideofeed wordt verzonden naar een deductieservice. De resultaten worden verzonden naar IoT Edge-hub. 
-
-In deze quickstart wordt gebruikgemaakt van een Azure-VM als een IoT Edge-apparaat en van een gesimuleerde livevideostream. De quickstart is gebaseerd op de voorbeeldcode die is geschreven in C# en bouwt voort op de quickstart [Beweging detecteren en gebeurtenissen verzenden](detect-motion-emit-events-quickstart.md). 
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [header](includes/analyze-live-video-your-http-model-quickstart/csharp/header.md)]

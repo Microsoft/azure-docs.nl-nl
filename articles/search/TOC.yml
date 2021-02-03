@@ -302,10 +302,10 @@
               href: knowledge-store-projections-examples.md
     - name: Query's
       items:
-        - name: Querytypen en querysamenstelling
-          href: search-query-overview.md
         - name: Een basisquery maken
           href: search-query-create.md
+        - name: Querytypen en querysamenstelling
+          href: search-query-overview.md
         - name: Eenvoudige syntaxis gebruiken (voorbeelden)
           href: search-query-simple-examples.md
         - name: Volledige Lucene-syntaxis gebruiken (voorbeelden)

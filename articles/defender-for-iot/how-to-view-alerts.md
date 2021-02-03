@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/02/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 4803691a82a97cd2be5fa3beafd4419010e7a9c9
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: bce83e11a0d4567d37e78388445c108385ca9a61
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840682"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509064"
 ---
 # <a name="view-alerts"></a>Waarschuwingen weergeven
 
@@ -32,7 +32,7 @@ Ga als volgt te werk als u waarschuwingen wilt weergeven:
 
 U kunt waarschuwingen weer geven op basis van verschillende categorieën in de hoofd weergave van **waarschuwingen** . Selecteer een waarschuwing om de details te bekijken en de gebeurtenis te beheren.
 
-| Sorteren op type | Beschrijving |
+| Sorteren op type | Description |
 |--|--|
 | **Belang rijke waarschuwingen** | Waarschuwingen die op urgentie zijn gesorteerd. |
 | **Vastgemaakte waarschuwingen** | Waarschuwingen die de gebruiker heeft vastgemaakt voor nader onderzoek. Vastgemaakte waarschuwingen worden niet gearchiveerd en worden 14 dagen opgeslagen in de vastgemaakte map. |
@@ -84,7 +84,7 @@ Wanneer geen van de opties zijn geselecteerd, worden alle waarschuwingen weer ge
 
 :::image type="content" source="media/how-to-work-with-alerts-sensor/alerts-security.png" alt-text="Beveiliging in het scherm waarschuwingen.":::
 
-## <a name="alert-window-options"></a>Opties waarschuwings venster
+## <a name="alert-page-options"></a>Opties voor waarschuwings pagina
 
 Waarschuwings berichten bieden de volgende acties:
 
@@ -101,6 +101,8 @@ Waarschuwings berichten bieden de volgende acties:
 - Selecteer deze optie :::image type="icon" source="media/how-to-work-with-alerts-sensor/learn-and-acknowledge-all-alerts.png" border="false"::: om alle waarschuwingen te leren en te bevestigen.
 
 - Selecteer de :::image type="icon" source="media/how-to-work-with-alerts-sensor/export-to-csv.png" border="false"::: lijst met waarschuwingen exporteren naar een CSV-bestand en selecteer de optie exporteren. Kies **waarschuwing exporteren** voor de reguliere optie exporteren naar CSV. Of kies **uitgebreide waarschuwing exporteren** voor de mogelijkheid om afzonderlijke rijen toe te voegen voor aanvullende informatie over een waarschuwing in het CSV-bestand.
+
+## <a name="alert-pop-up-window-options"></a>Pop-upvenster Opties voor waarschuwingen
 
 - Selecteer het :::image type="icon" source="media/how-to-work-with-alerts-sensor/export-to-pdf.png" border="false"::: pictogram om een waarschuwings rapport te downloaden als een PDF-bestand.
 
@@ -120,6 +122,6 @@ Waarschuwings berichten bieden de volgende acties:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[De waarschuwings gebeurtenis beheren](how-to-manage-the-alert-event.md)
+[De waarschuwingsgebeurtenis beheren](how-to-manage-the-alert-event.md)
 
 [Waarschuwings werk stromen versnellen](how-to-accelerate-alert-incident-response.md)

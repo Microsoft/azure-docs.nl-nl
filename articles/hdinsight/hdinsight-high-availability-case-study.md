@@ -5,12 +5,12 @@ keywords: Hadoop hoge Beschik baarheid
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/08/2020
-ms.openlocfilehash: 0616694d05e3fc9d2255ad97647ebe3bce545a93
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 6b995e2ab5ba663f6e33b009062859eb32928cc1
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945364"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508588"
 ---
 # <a name="azure-hdinsight-highly-available-solution-architecture-case-study"></a>Casestudy Azure HDInsight met hoge Beschik baarheid voor oplossings architectuur
 
@@ -71,7 +71,7 @@ In de volgende afbeelding ziet u de architectuur van de hoge Beschik baarheid vo
 
 **Hive en Spark** gebruiken [actieve primaire en secundaire replicatie modellen op aanvraag](hdinsight-business-continuity-architecture.md#apache-spark) tijdens normale tijdstippen. Het Hive-replicatie proces wordt regel matig uitgevoerd en wordt geleverd met de Hive Azure SQL-meta Store en Hive-opslag account replicatie. Het Spark-opslag account wordt periodiek gerepliceerd met behulp van ADF DistCP. De tijdelijke aard van deze clusters helpt de kosten te optimaliseren. Replicaties worden elke 4 uur gepland om aan een RPO te komen die binnen de vereiste van vijf uur goed is.
 
-**HBase** -replicatie maakt gebruik van het model van de [leider – follower](hdinsight-business-continuity-architecture.md#apache-hbase) tijdens de normale tijdstippen om ervoor te zorgen dat gegevens altijd worden verwerkt, ongeacht de regio en de RPO nul is.
+**HBase** -replicatie maakt gebruik van het model van de [leider – follower](hdinsight-business-continuity-architecture.md#apache-hbase) gedurende een normale periode om ervoor te zorgen dat de gegevens altijd worden verwerkt, ongeacht de regio en de RPO zeer laag is.
 
 Als er sprake is van een regionale fout in de primaire regio, worden de inhoud van de webpagina en de back-end gedurende 5 uur met een zekere mate van veroudering van de secundaire regio bediend. Als het Azure service Health-dash board geen herstel ETA in het venster van vijf uur aangeeft, maakt de retail-handels versie van Contoso de Hive-en Spark-transformatie laag in de secundaire regio en wijst vervolgens alle gegevens bronnen stroomopwaarts naar de secundaire regio. Het maken van de secundaire regio kan leiden tot een failbackproces waarbij replicatie weer wordt uitgevoerd naar de primaire.
 

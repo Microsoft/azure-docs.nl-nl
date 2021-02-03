@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 9c868685ad943c1ab9ab263a164111e46294c042
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: c15dc62cad796f5f74f2316d148e217052dc9678
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625428"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508859"
 ---
 # <a name="investigate-sensor-detections-in-a-device-inventory"></a>Alle sensordetecties in een apparaatinventaris onderzoeken
 
@@ -32,18 +32,18 @@ De volgende kenmerken worden weer gegeven in de inventarisatie tabel van het app
 
 | Parameter | Beschrijving |
 |--|--|
-| Name | De naam van het apparaat als de sensor dat deze heeft gedetecteerd. |
-| Type | Het type apparaat. |
+| Name | De naam van het apparaat als de sensor dat deze heeft gedetecteerd of dat door de gebruiker is ingevoerd. |
+| Type | Het type apparaat, zoals bepaald door de sensor, of zoals ingevoerd door de gebruiker. |
 | Leverancier | De naam van de leverancier van het apparaat, zoals gedefinieerd in het MAC-adres. |
-| Besturingssysteem | Het besturings systeem van het apparaat. |
-| Firmware | De firmware van het apparaat. |
-| IP-adres | Het IP-adres van het apparaat. |
+| Besturingssysteem | Het besturings systeem van het apparaat, indien gedetecteerd. |
+| Firmwareversie | De firmware van het apparaat, indien gedetecteerd. |
+| IP-adres | Het IP-adres van het apparaat waar gedefinieerd. |
 | VLAN | Het VLAN van het apparaat. Zie [VLAN-namen definiëren](how-to-manage-the-on-premises-management-console.md#define-vlan-names)voor meer informatie over het instrueren van de sensor om vlan's te detecteren. (How-to-define-Management-Console-Network-Settings. MD # define-VLAN-names). |
 | MAC-adres | Het MAC-adres van het apparaat. |
 | Protocollen | De protocollen die door het apparaat worden gebruikt. |
 | Niet-bevestigde waarschuwingen | Het aantal niet-bevestigde waarschuwingen dat is gekoppeld aan dit apparaat. |
 | Is geautoriseerd | De autorisatie status die is gedefinieerd door de gebruiker:<br />- **Waar**: het apparaat is geautoriseerd.<br />- **Onwaar**: het apparaat is niet geautoriseerd. |
-| Staat bekend als scanner | Als scan apparaat door de gebruiker gedefinieerd. |
+| Staat bekend als scanner | Gedefinieerd als netwerk scanapparaat door de gebruiker. |
 | Is programmerings apparaat | Gedefinieerd als een geautoriseerd programmeer apparaat door de gebruiker. <br />- **Waar**: het apparaat voert programmeer activiteiten uit voor PLCs, RTUs en controllers, die relevant zijn voor de technische stations. <br />- **Onwaar**: het apparaat is geen programmeer apparaat. |
 | Groepen | De groepen waarvan dit apparaat deel uitmaakt. |
 | Laatste activiteit | De laatste activiteit die door het apparaat is uitgevoerd. |
@@ -111,7 +111,7 @@ Wanneer u overschakelt naar de kaart weergave, worden de gefilterde apparaten ge
 
 ## <a name="learn-windows-registry-details"></a>Meer informatie over Windows-REGI ster
 
-Naast het leren van een apparaat, kunt u IT-apparaten detecteren, waaronder micro soft Windows-werk stations en-servers. Deze apparaten worden ook weer gegeven in de inventaris van apparaten. Nadat u apparaten hebt leren, kunt u de inventaris van het apparaat verrijken met gedetailleerde Windows-informatie, zoals:
+Naast het leren van een apparaat, kunt u micro soft Windows-werk stations en-servers ontdekken. Deze apparaten worden ook weer gegeven in de inventaris van apparaten. Nadat u apparaten hebt leren, kunt u de inventaris van het apparaat verrijken met gedetailleerde Windows-informatie, zoals:
 
 - Windows-versie geïnstalleerd
 
@@ -217,7 +217,7 @@ Importeren:
 
 ## <a name="export-device-inventory-information"></a>Inventaris gegevens van het apparaat exporteren
 
-U kunt inventaris gegevens van apparaten exporteren naar een Excel-bestand. De huidige gegevens worden overschreven door geïmporteerde gegevens.
+U kunt inventaris gegevens van apparaten exporteren naar een Excel-bestand.
 
 Een CSV-bestand exporteren:
 

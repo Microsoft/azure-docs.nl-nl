@@ -14,8 +14,6 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: Quota en limieten
       href: speech-services-quotas-and-limits.md
-    - name: Wat is er nieuw in Docs?
-      href: whats-new.md
 - name: Spraak naar tekst
   items:
     - name: Documentatie over spraak naar tekst
@@ -113,22 +111,10 @@
           href: long-audio-api.md
     - name: Aanpassing
       items:
-        - name: Verantwoordelijke implementatie
-          items:
-            - name: Beperking van Custom Voice
-              href: concepts-gating-overview.md
-            - name: Implementatie van synthetische technologie
-              href: concepts-guidelines-responsible-deployment-synthetic.md
-            - name: Openbaarmaking voor spraaktalent
-              href: /legal/cognitive-services/speech-service/disclosure-voice-talent
-            - name: Richtlijnen voor het ontwerpen van openbaarmakingen
-              href: concepts-disclosure-guidelines.md
-            - name: Ontwerppatronen van openbaarmakingen
-              href: concepts-disclosure-patterns.md
-            - name: Gedragscode
-              href: /legal/cognitive-services/speech-service/tts-code-of-conduct
         - name: Custom Voice-portal
           items:
+            - name: Wat is aangepaste neurale Voice?
+              href: custom-neural-voice.md
             - name: Aan de slag met Custom Voice
               displayName: 'custom voice, neural voice'
               href: how-to-custom-voice.md
@@ -142,6 +128,32 @@
           items:
             - name: Audio-inhoud maken
               href: how-to-audio-content-creation.md
+    - name: Verantwoordelijk gebruik van AI
+      items:
+        - name: Aangepaste Neural-stem
+          items:
+            - name: Transparantienotitie
+              items:
+                - name: Gebruiks voorbeelden voor aangepaste neurale Voice
+                  href: /legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
+                - name: Kenmerken en beperkingen
+                  href: /legal/cognitive-services/speech-service/custom-neural-voice/characteristics-and-limitations-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
+            - name: Integratie en verantwoordelijk gebruik
+              items:
+                - name: Beperkte toegang
+                  href: /legal/cognitive-services/speech-service/custom-neural-voice/limited-access-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
+                - name: Verantwoordelijke implementatie van synthetische spraak
+                  href: concepts-guidelines-responsible-deployment-synthetic.md
+                - name: Openbaarmaking voor spraaktalent
+                  href: /legal/cognitive-services/speech-service/disclosure-voice-talent?context=/azure/cognitive-services/speech-service/context/context
+                - name: Richtlijnen voor het ontwerpen van openbaarmakingen
+                  href: concepts-disclosure-guidelines.md
+                - name: Ontwerppatronen van openbaarmakingen
+                  href: concepts-disclosure-patterns.md
+                - name: Gedragscode
+                  href: /legal/cognitive-services/speech-service/tts-code-of-conduct?context=/azure/cognitive-services/speech-service/context/context
+            - name: 'Gegevens, privacy en beveiliging'
+              href: /legal/cognitive-services/speech-service/custom-neural-voice/data-privacy-security-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
     - name: Naslaginformatie
       items:
         - name: C++

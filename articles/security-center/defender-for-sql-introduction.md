@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 81ae46a7b6c19557eeadd2d5b28ad2fa46e77115
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 28ec6659430cfdbc81533f05863ccb0ddc560e32
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881364"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508029"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -72,7 +72,6 @@ Waarschuwingen bevatten details over het incident waardoor ze zijn geactiveerd e
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel bent u meer te weten gekomen over Azure Defender voor SQL.
+In dit artikel bent u meer te weten gekomen over Azure Defender voor SQL. Voor het gebruik van de services die zijn beschreven:
 
-> [!div class="nextstepaction"]
-> [Uw SQL-servers scannen op beveiligingsproblemen met Azure Defender](defender-for-sql-usage.md)
+- Azure Defender voor SQL-servers op machines gebruiken om [uw SQL-servers te scannen op beveiligings problemen](defender-for-sql-usage.md)

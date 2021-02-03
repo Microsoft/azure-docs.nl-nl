@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/17/2020
+ms.date: 02/02/2021
 ms.author: trbye
-ms.openlocfilehash: e48dfd224a9656c7d8327dd77f1b55e9a744f3af
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 756c40be52f2739d3a7682752b038bfe3958d47d
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573085"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507707"
 ---
 # <a name="get-started-with-custom-voice"></a>Aan de slag met Custom Voice
 
@@ -39,10 +39,7 @@ In het onderstaande diagram worden de stappen beschreven voor het maken van een 
 
 ## <a name="custom-neural-voices"></a>Aangepaste Neural stemmen
 
-Aangepaste spraak ondersteunt momenteel zowel de standaard-als de Neural-laag. Aangepaste neurale Voice biedt gebruikers de mogelijkheid om hoogwaardige stem modellen te bouwen, terwijl ze minder gegevens nodig hebben en maat regelen bieden om u te helpen AI-verantwoording te implementeren. We raden u aan aangepaste Neural-stem te gebruiken om realistischere stemmen te ontwikkelen voor meer natuurlijke conversatie-interfaces en uw klanten en eind gebruikers in staat te stellen om te profiteren van de nieuwste technologie voor tekst naar spraak, op een verantwoordelijke manier. Meer [informatie over aangepaste Neural-stem](https://aka.ms/CNV-Transparency-Note). 
-
-> [!NOTE]
-> Als onderdeel van de toezeg ging van micro soft om verantwoordelijk AI te ontwerpen, hebben we het gebruik van aangepaste Neural-stem beperkt. U krijgt mogelijk pas toegang tot de technologie nadat uw toepassingen zijn gecontroleerd en u hebt vastgelegd dat u deze kunt gebruiken in overeenstemming met onze nalevings AI-principes. Lees hier meer over ons [beleid over het beperken van toegang en de](https://aka.ms/gating-overview) [toepassing](https://aka.ms/customneural). De [talen](language-support.md#customization) en [regio's](regions.md#custom-voices) die worden ondersteund voor de Standard-en Neural-versie van aangepaste spraak, verschillen. Controleer de details voordat u begint.  
+De aanpassings functie voor Neural stem is momenteel beschikbaar als open bare preview, beperkt tot geselecteerde klanten. Vul dit [toepassings formulier](https://go.microsoft.com/fwlink/?linkid=2108737) in om aan de slag te gaan.
 
 ## <a name="set-up-your-azure-account"></a>Uw Azure-account instellen
 
@@ -56,7 +53,7 @@ Zodra u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u 
 4. Als u wilt overschakelen naar een ander spraak abonnement, gebruikt u het tandwiel-pictogram in de bovenste navigatie balk.
 
 > [!NOTE]
-> U moet een F0 of een S0 Speech Service-sleutel hebben gemaakt in azure voordat u de service kunt gebruiken. Aangepaste Neural-Voice ondersteunt alleen de S0-laag. 
+> U moet een F0 of een S0-sleutel hebben gemaakt in azure voordat u de service kunt gebruiken.
 
 ## <a name="how-to-create-a-project"></a>Een project maken
 

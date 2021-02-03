@@ -13,12 +13,12 @@ ms.date: 02/02/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: cb7acb2ab74cc3f1304e5278524918865185463f
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: d544d884a82a7532bf343f38049102dfccae342f
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491296"
+ms.locfileid: "99507267"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Azure Active Directory-app-manifest
 
@@ -173,7 +173,8 @@ Hiermee wordt de `groups` claim geconfigureerd die is uitgegeven in een gebruike
 - `"None"`
 - `"SecurityGroup"` (voor beveiligings groepen en Azure AD-rollen)
 - `"ApplicationGroup"` (deze optie omvat alleen groepen die zijn toegewezen aan de toepassing)
-- `"All"` (Hiermee worden alle beveiligings groepen, distributie groepen en Azure AD-adreslijst rollen opgehaald waarvan de aangemelde gebruiker lid is.
+- `"DirectoryRole"` (Hiermee worden de Azure AD-adreslijst functies opgehaald waarvan de gebruiker lid is)
+- `"All"` (Hiermee worden alle beveiligings groepen, distributie groepen en Azure AD-adreslijst rollen opgehaald waarvan de aangemelde gebruiker lid is).
 
 Voorbeeld:
 

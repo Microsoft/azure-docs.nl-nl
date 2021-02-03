@@ -1,5 +1,5 @@
 ---
-title: Sensor activiteit volgen
+title: Sensoractiviteit volgen
 description: In de tijd lijn van de gebeurtenis ziet u een tijd lijn voor activiteiten die zijn gedetecteerd op uw netwerk, waaronder waarschuwingen en waarschuwings beheer acties, netwerk gebeurtenissen en gebruikers bewerkingen, zoals het aanmelden van gebruikers en het verwijderen van gebruikers.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/10/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 3895e01b1fbfcde79ff91bd1eade8d902c33b852
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 6dbe15da85a85303742ef28c7ca609755193f25e
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840722"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509096"
 ---
-# <a name="track-sensor-activity"></a>Sensor activiteit volgen
+# <a name="track-sensor-activity"></a>Sensoractiviteit volgen
 
 ## <a name="event-timeline"></a>Tijd lijn van gebeurtenis
 
@@ -59,15 +59,15 @@ De tijd lijn filteren:
 
 2. Stel gebeurtenis filters als volgt in:
 
-   - **Adres insluiten**: specifieke gebeurtenis apparaten weer geven.
+   - **Adres toevoegen**: gebeurtenissen weer geven voor specifieke apparaten.
 
-   - **Adres uitsluiten**: specifieke gebeurtenis apparaten verbergen.
+   - **Adres uitsluiten**: gebeurtenissen voor specifieke apparaten verbergen.
 
    - **Gebeurtenis typen toevoegen**: specifieke gebeurtenis typen weer geven.
 
-   - **Gebeurtenis typen uitsluiten**: specifieke gebeurtenis typen verbergen.
+   - **Uitsluiten gebeurtenis typen**: specifieke gebeurtenis typen verbergen.
 
-   - **Apparaatgroep**: Selecteer een apparaatgroep, zoals deze in de apparaattoewijzing is gedefinieerd. Alleen de gebeurtenissen van deze groep worden weer gegeven.
+   - **Apparaatgroep**: Selecteer een apparaatgroep, zoals deze in de apparaattoewijzing is gedefinieerd. Alleen de gebeurtenissen uit deze groep worden weer gegeven.
 
 3. Selecteer **Alles wissen** om alle geselecteerde filters te wissen.
 
@@ -87,8 +87,8 @@ De tijd lijn filteren:
 
     - Selecteer **pcap-bestand** om het pcap-bestand te downloaden (als dit bestaat) met daarin een pakket opname van het hele netwerk op een specifiek tijdstip. 
     
-      Het PCAP-bestand bevat technische informatie waarmee technici precies kunnen bepalen waar de gebeurtenis zich voordoet en wat er gebeurt. U kunt het PCAP-bestand analyseren met een Network Protocol Analyzer, zoals wireshark, een gratis toepassing.
+      Het PCAP-bestand bevat technische informatie die netwerk engineers kunnen helpen bij het bepalen van de exacte para meters van de gebeurtenis. U kunt het PCAP-bestand analyseren met een Network Protocol Analyzer, zoals wireshark, een open source-toepassing.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Waarschuwingen weergeven](how-to-view-alerts.md)

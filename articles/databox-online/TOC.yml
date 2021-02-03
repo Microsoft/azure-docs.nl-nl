@@ -176,6 +176,8 @@
               href: azure-stack-edge-gpu-deploy-sample-module.md
             - name: GPU-module via Marketplace
               href: azure-stack-edge-gpu-deploy-sample-module-marketplace.md
+            - name: Module via Azure Portal
+              href: azure-stack-edge-gpu-deploy-compute-module-simple.md
         - name: Kubernetes-werkbelastingen implementeren
           items:
             - name: Via kubectl

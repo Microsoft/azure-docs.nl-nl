@@ -4,6 +4,15 @@
   items:
     - name: Wat is Virtual WAN?
       href: virtual-wan-about.md
+- name: Quickstarts
+  expanded: true
+  items:
+    - name: ARM-sjablonen
+      expanded: true
+      items:
+        - name: Any-to-any-route ring
+          displayName: Resource Manager Any-to-any routing
+          href: quickstart-any-to-any-template.md
 - name: Zelfstudies
   expanded: true
   items:

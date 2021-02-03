@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 908460bd0a034e21524b6ea6d3042f362cc810d4
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 7d045ad104f8e2055ae85b74f4aae8f4d3fd61a4
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623586"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509516"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Uw sensor activeren en instellen
 
@@ -81,7 +81,7 @@ Aanmelden en activeren:
 
     :::image type="content" source="media/how-to-activate-and-set-up-your-sensor/azure-defender-for-iot-sensor-log-in-screen.png" alt-text="Azure Defender voor IoT-sensor.":::
 
-1. Voer de referenties in die tijdens de installatie van de sensor zijn gedefinieerd. Als u een vooraf geconfigureerde sensor van pijl hebt aangeschaft, moet u eerst een wacht woord genereren. Voor meer informatie over wachtwoord herstel raadpleegt u [wachtwoord fout onderzoeken bij de eerste aanmelding](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md#investigate-password-failure-at-initial-sign-in).
+1. Voer de referenties in die tijdens de installatie van de sensor zijn gedefinieerd, of selecteer de optie voor **wachtwoord herstel** . Als u een vooraf geconfigureerde sensor van pijl hebt aangeschaft, moet u eerst een wacht woord genereren. Voor meer informatie over wachtwoord herstel raadpleegt u [wachtwoord fout onderzoeken bij de eerste aanmelding](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md#investigate-password-failure-at-initial-sign-in).
 
 1. Nadat u zich hebt aangemeld, wordt het dialoog venster **Activering** geopend. Selecteer **uploaden** en ga naar het activerings bestand dat u hebt gedownload tijdens het voorbereiden van de sensor.
 
@@ -152,7 +152,7 @@ Definieer de systeem instellingen van de sensor. Bijvoorbeeld:
 
 - Als DHCP wordt gebruikt, definieert u legitieme DHCP-bereiken.
 
-- Integratie met Active Directory en e-mail servers definiëren.
+- Definieer zo nodig integratie met Active Directory en de mail-server.
 
 ### <a name="disable-learning-mode"></a>Leer modus uitschakelen
 
@@ -181,7 +181,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 | -----------|--|--|
 | Dashboard | :::image type="icon" source="media/concept-sensor-console-overview/dashboard-icon-azure.png" border="false"::: | Bekijk een intuïtieve moment opname van de status van de beveiliging van het netwerk. |
 | Apparaattoewijzing | :::image type="icon" source="media/concept-sensor-console-overview/asset-map-icon-azure.png" border="false"::: | Bekijk de netwerk apparaten, de verbindingen van apparaten en de apparaateigenschappen in een kaart. Er zijn verschillende opties voor inzoomen, markeren en filteren beschikbaar om uw netwerk weer te geven. |
-| Inventaris van apparaten | :::image type="icon" source="media/concept-sensor-console-overview/asset-inventory-icon-azure.png" border="false":::  | De apparaat-inventaris toont een uitgebreid scala aan kenmerken van apparaten die deze sensor detecteert. Opties zijn beschikbaar voor: <br /> -De gegevens filteren op basis van de tabel velden en de gefilterde gegevens weer geven. <br /> -Informatie exporteren naar een CSV-bestand. <br /> -Details van het Windows-REGI ster importeren.|
+| Inventaris van apparaten | :::image type="icon" source="media/concept-sensor-console-overview/asset-inventory-icon-azure.png" border="false":::  | De apparaat-inventaris toont een lijst met kenmerken van het apparaat die deze sensor detecteert. Opties zijn beschikbaar voor: <br /> -Sorteer of filter de gegevens op basis van de tabel velden en Bekijk de gefilterde gegevens die worden weer gegeven. <br /> -Informatie exporteren naar een CSV-bestand. <br /> -Details van het Windows-REGI ster importeren.|
 | Waarschuwingen | :::image type="icon" source="media/concept-sensor-console-overview/alerts-icon-azure.png" border="false"::: | Waarschuwingen weer geven als er schendingen van het beleid optreden, worden er afwijkingen van het basislijn gedrag optreden of wordt een wille keurig type verdachte activiteit in het netwerk gedetecteerd. |
 | Rapporten | :::image type="icon" source="media/concept-sensor-console-overview/reports-icon-azure.png" border="false"::: | Rapporten weer geven die zijn gebaseerd op query's voor gegevens analyse. |
 
@@ -196,7 +196,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 | Venster | Pictogram | Description |
 |---|---|---|
 | Gegevens analyse | :::image type="icon" source="media/concept-sensor-console-overview/data-mining-icon-azure.png" border="false"::: | Uitgebreide en gedetailleerde informatie over de apparaten van uw netwerk op verschillende lagen genereren. |
-| Trends en statistieken | :::image type="icon" source="media/concept-sensor-console-overview/trends-and-statistics-icon-azure.jpg" border="false"::: | Bekijk trends en statistieken in een uitgebreid scala aan widgets. |
+| Onderzoek | :::image type="icon" source="media/concept-sensor-console-overview/trends-and-statistics-icon-azure.jpg" border="false"::: | Bekijk trends en statistieken in een uitgebreid scala aan widgets. |
 | Risico-evaluatie | :::image type="icon" source="media/concept-sensor-console-overview/vulnerabilities-icon-azure.png" border="false"::: | Het venster **beveiligings problemen** weer geven. |
 
 **Beheerder**
@@ -204,7 +204,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 | Venster | Pictogram | Description |
 |---|---|---|
 | Gebruikers | :::image type="icon" source="media/concept-sensor-console-overview/users-icon-azure.png" border="false"::: | Definieer gebruikers en rollen met verschillende toegangs niveaus. |
-| Doorsturen | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Stuur waarschuwings gegevens door naar partners die zijn geïntegreerd met Defender voor IoT, e-mail adressen, webhook-servers en meer. <br /> Zie [informatie over het door sturen van waarschuwingen](how-to-forward-alert-information-to-partners.md) voor meer informatie. |
+| Doorsturen | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Stuur waarschuwings gegevens door naar partners en interne bronnen (bijvoorbeeld Sentinel) die zijn geïntegreerd met Defender voor IoT, naar e-mail adressen, webhook-servers en meer. <br /> Zie [informatie over het door sturen van waarschuwingen](how-to-forward-alert-information-to-partners.md) voor meer informatie. |
 | Systeeminstellingen | :::image type="icon" source="media/concept-sensor-console-overview/system-settings-icon-azure.png" border="false"::: | Configureer de systeem instellingen. U kunt bijvoorbeeld de DHCP-instellingen definiëren, de details van de e-mail server opgeven of poort aliassen maken. |
 | Importinstellingen | :::image type="icon" source="media/concept-sensor-console-overview/import-settings-icon-azure.png" border="false"::: | Het venster **import instellingen** weer geven. U kunt hand matige wijzigingen in de gegevens van een apparaat uitvoeren.<br /> Zie [informatie](how-to-import-device-information.md) over het importeren van apparaten voor meer informatie. |
 

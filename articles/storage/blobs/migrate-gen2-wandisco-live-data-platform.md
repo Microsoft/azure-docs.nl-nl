@@ -5,16 +5,16 @@ author: normesta
 ms.topic: how-to
 ms.author: normesta
 ms.reviewer: b-pauls
-ms.date: 11/06/2020
+ms.date: 11/17/2020
 ms.service: storage
 ms.custom: references_regions
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: db95f22a17c3776d84f12249693fb23b3d2d94e6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a0d02530ba2b8758b467b77ff639437675e4cc81
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95914436"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508926"
 ---
 # <a name="meet-demanding-migration-requirements-with-wandisco-livedata-platform-for-azure-preview"></a>Voldoen aan veeleisende migratie vereisten met het WANdisco LiveData platform voor Azure (preview)
 
@@ -34,7 +34,9 @@ In tegens telling tot het _offline_ migreren van gegevens door [statische gegeve
 
 ## <a name="key-features-of-wandisco-livedata-platform-for-azure"></a>Belangrijkste functies van het WANdisco LiveData platform voor Azure
 
-[WANdisco LiveData platform voor Azure](https://docs.wandisco.com/live-data-platform/docs/landing/) maakt gebruik van een unieke, op Wide Area-netwerk geschikte consensus-Engine om consistentie van gegevens te krijgen en om gegevens replicatie op schaal uit te voeren terwijl toepassingen de gegevens onder replicatie kunnen blijven wijzigen.  
+[WANdisco LiveData platform voor Azure](https://docs.wandisco.com/live-data-platform/docs/landing/) maakt gebruik van een unieke, op Wide Area-netwerk geschikte consensus-Engine om consistentie van gegevens te krijgen en om gegevens replicatie op schaal uit te voeren terwijl toepassingen de gegevens onder replicatie kunnen blijven wijzigen. <br><br>
+
+>[!VIDEO https://www.youtube.com/embed/KRrmcYPxEho] 
 
 De belangrijkste functies van het platform zijn onder andere:
 
@@ -86,7 +88,9 @@ Grootschalige migraties van on-premises gegevens meren naar Azure moeten toepass
 Houd uw gegevens consistent in on-premises Hadoop-clusters en Azure Storage met LiveData-vlak voor Azure na de initiële migratie:
 
 1. Richt LiveData-vlak in voor Azure on-premises en in azure, vanaf de Azure Portal. Er zijn geen wijzigingen in de toepassing vereist.
+
 2. Configureer replicatie regels die betrekking hebben op de gegevens locaties die u consistent wilt blijven, bijvoorbeeld: `/user/contoso/sales/region/WA` .
+
 3. Voer toepassingen uit die gegevens op een van beide locaties openen en wijzigen als een Hadoop-compatibel bestands systeem dat u nodig hebt.
 
 LiveData-vlak voor Azure houdt uw gegevens consistent zonder dat er aanzienlijke overhead wordt toegepast op cluster bewerkingen of toepassings prestaties. Gegevens wijzigen of opnemen terwijl alle wijzigingen consistent worden gerepliceerd.

@@ -6,17 +6,17 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/12/2020
-ms.openlocfilehash: 7c05ca6462d49d1d41791e5b93b7723ac681d448
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a70cfc7ab01dabd3d740d878acb453b4d1e76b5f
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93080829"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507415"
 ---
 # <a name="partitioning-and-horizontal-scaling-in-azure-cosmos-db"></a>Partitionering en horizontaal schalen in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Azure Cosmos DB maakt gebruik van partitionering om afzonderlijke containers in een Data Base te schalen om te voldoen aan de prestatie behoeften van uw toepassing. In partitioneren worden de items in een container onderverdeeld in afzonderlijke subsets met de naam *logische partities* . Logische partities worden gevormd op basis van de waarde van een *partitie sleutel* die is gekoppeld aan elk item in een container. Alle items in een logische partitie hebben dezelfde partitie sleutel waarde.
+Azure Cosmos DB maakt gebruik van partitionering om afzonderlijke containers in een Data Base te schalen om te voldoen aan de prestatie behoeften van uw toepassing. In partitioneren worden de items in een container onderverdeeld in afzonderlijke subsets met de naam *logische partities*. Logische partities worden gevormd op basis van de waarde van een *partitie sleutel* die is gekoppeld aan elk item in een container. Alle items in een logische partitie hebben dezelfde partitie sleutel waarde.
 
 Een container bevat bijvoorbeeld items. Elk item heeft een unieke waarde voor de `UserID` eigenschap. Als `UserID` fungeert als de partitie sleutel voor de items in de container en er 1.000 unieke `UserID` waarden zijn, worden er voor de container 1.000 logische partities gemaakt.
 
@@ -36,10 +36,13 @@ Er is geen limiet voor het aantal logische partities in de container. Elke logis
 
 Een container wordt geschaald door gegevens en door voer te distribueren over fysieke partities. Intern worden een of meer logische partities toegewezen aan één fysieke partitie. Doorgaans hebben kleinere containers een groot aantal logische partities, maar er is slechts één fysieke partitie nodig. In tegens telling tot logische partities vormen fysieke partities een interne implementatie van het systeem en ze worden volledig beheerd door Azure Cosmos DB.
 
-Het aantal fysieke partities in de container is afhankelijk van de volgende configuratie:
+Het aantal fysieke partities in de container is afhankelijk van het volgende:
 
 * Het aantal ingerichte door Voer (elke afzonderlijke fysieke partitie kan een doorvoer snelheid hebben van Maxi maal 10.000 aanvraag eenheden per seconde).
 * De totale gegevens opslag (elke afzonderlijke fysieke partitie kan Maxi maal 50 GB gegevens bevatten).
+
+> [!NOTE]
+> Fysieke partities zijn een interne implementatie van het systeem en ze worden volledig beheerd door Azure Cosmos DB. Bij het ontwikkelen van uw oplossingen kunt u zich niet richten op fysieke partities omdat u deze niet kunt beheren in plaats daarvan op de partitie sleutels. Als u een partitie sleutel kiest die het doorvoer verbruik gelijkmatig distribueert over logische partities, zorgt u ervoor dat het doorvoer verbruik over fysieke partities evenwichtig is.
 
 Er is geen limiet voor het totale aantal fysieke partities in de container. Als uw ingerichte door Voer of gegevens grootte groeit, Azure Cosmos DB automatisch nieuwe fysieke partities maken door bestaande te splitsen. Fysieke partitie splitsingen hebben geen invloed op de beschik baarheid van uw toepassing. Nadat de fysieke partitie is gesplitst, worden alle gegevens in één logische partitie nog steeds opgeslagen op dezelfde fysieke partitie. Een fysieke partitie splitsing maakt simpelweg een nieuwe toewijzing van logische partities aan fysieke partities.
 
@@ -49,12 +52,9 @@ U kunt de fysieke partities van uw container bekijken in de sectie **opslag** va
 
 :::image type="content" source="./media/partitioning-overview/view-partitions-zoomed-out.png" alt-text="Aantal fysieke partities weer geven" lightbox="./media/partitioning-overview/view-partitions-zoomed-in.png" ::: 
 
-In de bovenstaande scherm afbeelding is een container `/foodGroup` de partitie sleutel. Elk van de drie balken in de grafiek vertegenwoordigt een fysieke partitie. In de installatie kopie is het **partitie sleutel bereik** hetzelfde als een fysieke partitie. De geselecteerde fysieke partitie bevat drie logische partities: `Beef Products` , `Vegetable and Vegetable Products` en `Soups, Sauces, and Gravies` .
+In de bovenstaande scherm afbeelding is een container `/foodGroup` de partitie sleutel. Elk van de drie balken in de grafiek vertegenwoordigt een fysieke partitie. In de installatie kopie is het **partitie sleutel bereik** hetzelfde als een fysieke partitie. De geselecteerde fysieke partitie bevat de belangrijkste drie logische partities voor de meest significante grootte: `Beef Products` , `Vegetable and Vegetable Products` en `Soups, Sauces, and Gravies` .
 
 Als u een door Voer van 18.000 aanvraag eenheden per seconde (RU/s) inricht, kan elk van de drie fysieke partities 1/3 van de totale ingerichte door Voer gebruiken. Binnen de geselecteerde fysieke partitie, de logische partitie sleutels `Beef Products` , `Vegetable and Vegetable Products` en `Soups, Sauces, and Gravies` kan gezamenlijk de 6.000 ingerichte ru/s van de fysieke partitie gebruiken. Omdat de ingerichte door Voer gelijkmatig is verdeeld over de fysieke partities van uw container, is het belang rijk om een partitie sleutel te kiezen waarmee het doorvoer verbruik gelijkmatig kan worden verdeeld door [de juiste logische partitie sleutel te kiezen](#choose-partitionkey). 
-
-> [!NOTE]
-> Als u een partitie sleutel kiest die het doorvoer verbruik gelijkmatig distribueert over logische partities, zorgt u ervoor dat het doorvoer verbruik over fysieke partities evenwichtig is.
 
 ## <a name="managing-logical-partitions"></a>Logische partities beheren
 
@@ -74,11 +74,11 @@ Normaal gesp roken vereist kleinere containers alleen één fysieke partitie, ma
 
 In de volgende afbeelding ziet u hoe logische partities worden toegewezen aan fysieke partities die globaal worden gedistribueerd:
 
-:::image type="content" source="./media/partitioning-overview/logical-partitions.png" alt-text="Aantal fysieke partities weer geven" border="false":::
+:::image type="content" source="./media/partitioning-overview/logical-partitions.png" alt-text="Een afbeelding die Azure Cosmos DB partitionering demonstreert" border="false":::
 
 ## <a name="choosing-a-partition-key"></a><a id="choose-partitionkey"></a>Een partitiesleutel kiezen
 
-Een partitie sleutel bestaat uit twee onderdelen: het pad van de **partitie sleutel** en de waarde van de **partitie sleutel** . U kunt bijvoorbeeld een item {"userId": "Andrew", "worksFor": "micro soft"} als u "userId" als de partitie sleutel kiest, de volgende twee partitie sleutel onderdelen zijn:
+Een partitie sleutel bestaat uit twee onderdelen: het pad van de **partitie sleutel** en de waarde van de **partitie sleutel**. U kunt bijvoorbeeld een item {"userId": "Andrew", "worksFor": "micro soft"} als u "userId" als de partitie sleutel kiest, de volgende twee partitie sleutel onderdelen zijn:
 
 * Het pad van de partitie sleutel (bijvoorbeeld: "/userId"). Het pad naar de partitie sleutel accepteert alfanumerieke tekens en een onderstrepings teken (_). U kunt geneste objecten ook gebruiken met behulp van de standaard notatie voor paden (/).
 
@@ -114,9 +114,9 @@ Als uw container kan worden uitgebreid naar meer dan een paar fysieke partities,
 
 ## <a name="using-item-id-as-the-partition-key"></a>Item-ID als de partitie sleutel gebruiken
 
-Als uw container een eigenschap heeft die een breed scala aan mogelijke waarden heeft, is het waarschijnlijk een goede keuze voor de partitie sleutel. Een mogelijk voor beeld van een dergelijke eigenschap is de *item-id* . Voor kleine alleen-lezen containers of schrijf bare containers van elke grootte is de *item-id* natuurlijk een fantastische keuze voor de partitie sleutel.
+Als uw container een eigenschap heeft die een breed scala aan mogelijke waarden heeft, is het waarschijnlijk een goede keuze voor de partitie sleutel. Een mogelijk voor beeld van een dergelijke eigenschap is de *item-id*. Voor kleine alleen-lezen containers of schrijf bare containers van elke grootte is de *item-id* natuurlijk een fantastische keuze voor de partitie sleutel.
 
-De *item-id* van de systeem eigenschap bevindt zich in elk item in de container. Mogelijk hebt u andere eigenschappen die een logische ID van uw item vertegenwoordigen. In veel gevallen zijn dit ook fantastische opties voor partitie sleutels om dezelfde redenen als de *item-id* .
+De *item-id* van de systeem eigenschap bevindt zich in elk item in de container. Mogelijk hebt u andere eigenschappen die een logische ID van uw item vertegenwoordigen. In veel gevallen zijn dit ook fantastische opties voor partitie sleutels om dezelfde redenen als de *item-id*.
 
 De *item-id* is een fantastische partitie sleutel keuze om de volgende redenen:
 

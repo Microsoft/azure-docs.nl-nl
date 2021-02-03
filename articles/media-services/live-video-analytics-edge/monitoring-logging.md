@@ -3,12 +3,12 @@ title: Bewaking en logboek registratie-Azure
 description: Dit artikel bevat een overzicht van bewaking en logboek registratie in live video Analytics op IoT Edge.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: 6dc0a6d499d06c95bdccbc9e386d7f9288971ee8
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: a77ca6cf9dc66d1efda5741266f1a2eecc2599c0
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878101"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507812"
 ---
 # <a name="monitoring-and-logging"></a>Bewaking en registratie
 
@@ -208,7 +208,7 @@ Gebeurtenis typen worden toegewezen aan een naam ruimte op basis van dit schema:
 
 #### <a name="event-classes"></a>Gebeurtenisklassen
 
-|Klassenaam|Beschrijving|
+|Klassenaam|Description|
 |---|---|
 |Analyse  |Gebeurtenissen die worden gegenereerd als onderdeel van inhouds analyse.|
 |Diagnostiek    |Gebeurtenissen die helpen bij het diagnosticeren van problemen en prestaties.|
@@ -230,7 +230,7 @@ De tijd van de gebeurtenis wordt opgemaakt in een ISO 8601-teken reeks. Deze gee
 
 Deze metrische gegevens worden gerapporteerd uit de live video Analytics op IoT Edge module:  
 
-|Naam van metrische gegevens|Type|Label|Beschrijving|
+|Naam van metrische gegevens|Type|Label|Description|
 |-----------|----|-----|-----------|
 |lva_active_graph_instances|Meter|iothub, edge_device, module_name, graph_topology|Totaal aantal actieve grafieken per topologie.|
 |lva_received_bytes_total|Prestatiemeteritem|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node|Totaal aantal bytes dat door een knoop punt is ontvangen. Alleen ondersteund voor RTSP-bronnen.|
@@ -254,14 +254,14 @@ Volg deze stappen om het verzamelen van metrische gegevens in te scha kelen op d
       urls = ["http://edgeHub:9600/metrics", "http://edgeAgent:9600/metrics", "http://{LVA_EDGE_MODULE_NAME}:9600/metrics"]
 
     [[outputs.azure_monitor]]
-      namespace_prefix = ""
+      namespace_prefix = "lvaEdge"
       region = "westus"
       resource_id = "/subscriptions/{SUBSCRIPTON_ID}/resourceGroups/{RESOURCE_GROUP}/providers/Microsoft.Devices/IotHubs/{IOT_HUB_NAME}"
     ```
     > [!IMPORTANT]
     > Zorg ervoor dat u de variabelen vervangt in het. toml-bestand. De variabelen worden aangegeven door accolades ( `{}` ).
 
-1. Maak in dezelfde map een `.dockerfile` die de volgende opdrachten bevat:
+1. Maak in dezelfde map een Dockerfile die de volgende opdrachten bevat:
     ```
         FROM telegraf:1.15.3-alpine
         COPY telegraf.toml /etc/telegraf/telegraf.conf
@@ -305,12 +305,27 @@ Volg deze stappen om het verzamelen van metrische gegevens in te scha kelen op d
      `AZURE_CLIENT_SECRET`: Hiermee geeft u het app-geheim op dat moet worden gebruikt.  
      
      >[!TIP]
-     > U kunt de functie voor de uitgever van de **bewakings gegevens** voor de Service-Principal opgeven.
+     > U kunt de functie voor de uitgever van de **bewakings gegevens** voor de Service-Principal opgeven. Volg de stappen in **[Create Service Principal](https://docs.microsoft.com/azure/azure-arc/data/upload-metrics-and-logs-to-azure-monitor?pivots=client-operating-system-macos-and-linux#create-service-principal)** om de service-principal te maken en de rol toe te wijzen.
 
 1. Nadat de modules zijn geïmplementeerd, worden metrische gegevens weer gegeven in Azure Monitor onder één naam ruimte. Metrische namen komen overeen met die van Prometheus. 
 
    In dit geval gaat u naar de IoT-hub in het Azure Portal en selecteert u **metrische gegevens** in het linkerdeel venster. Hier ziet u de metrische gegevens.
 
+Door Prometheus te gebruiken in combi natie met [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/log-analytics-tutorial)kunt u [metrische gegevens genereren en bewaken](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported) , zoals het gebruik van CPUPercent, MemoryUsedPercent, enzovoort. U kunt met behulp van de Kusto-query taal query's schrijven zoals hieronder en het CPU-percentage ophalen dat wordt gebruikt door de IoT Edge-modules.
+```kusto
+let cpu_metrics = promMetrics_CL
+| where Name_s == "edgeAgent_used_cpu_percent"
+| extend dimensions = parse_json(Tags_s)
+| extend module_name = tostring(dimensions.module_name)
+| where module_name in ("lvaEdge","yolov3","tinyyolov3")
+| summarize cpu_percent = avg(Value_d) by bin(TimeGenerated, 5s), module_name;
+cpu_metrics
+| summarize cpu_percent = sum(cpu_percent) by TimeGenerated
+| extend module_name = "Total"
+| union cpu_metrics
+```
+
+[![Diagram waarin de metrische gegevens worden weer gegeven met behulp van de Kusto-query.](./media/telemetry-schema/metrics.png)](./media/telemetry-schema/metrics.png#lightbox)
 ## <a name="logging"></a>Logboekregistratie
 
 Net als bij andere IoT Edge modules kunt u ook [de container logboeken](../../iot-edge/troubleshoot.md#check-container-logs-for-issues) op het apparaat Edge bekijken. U kunt de informatie die naar de logboeken wordt geschreven, configureren met behulp van de [volgende module dubbele](module-twin-configuration-schema.md) eigenschappen:

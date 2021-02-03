@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 53052b35a50899d6f9e761301f31b9ffd20a4b91
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 38012c5b4bb9338c1200d9583256193ee8402c98
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610009"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507876"
 ---
 # <a name="trusted-platform-module-tpm-and-virtualization-based-securityvbs-enclave-attestation-protocol"></a>Trusted Platform Module (TPM) en enclave Attestation-Protocol (virtualisatie Security) 
 
@@ -55,7 +55,7 @@ Azure-Attestation->-client
 
 **Challenge** (BASE64URL (octetten)): wille keurige waarde die door de service is uitgegeven.
 
-**service_context** (BASE64URL (octetten)): ondoorzichtige, versleutelde context gemaakt door de service, waaronder, onder andere, de uitdaging en een verloop tijd voor die uitdaging. 
+**service_context** (BASE64URL (octetten)): ondoorzichtige context gemaakt door de service.
 
 
 ### <a name="request-message"></a>Aanvraag bericht
@@ -236,7 +236,7 @@ TPM + VBS enclave-voor beeld:
 
 - **value_type (teken reeks)**: gegevens type van de claim waarde
 
-**service_context** (BASE64URL (octetten)): ondoorzichtige, versleutelde context gemaakt door de service, waaronder onder andere de uitdaging en een verloop tijd voor die uitdaging.
+**service_context** (BASE64URL (octetten)): ondoorzichtige context gemaakt door de service.
 
 ### <a name="report-message"></a>Rapport bericht
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 3bf3ecefb17f4c9fda6405da7fb2bdc2650f5324
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 4dd1941e6a749c2ccf7ca082ab89ef2a70baa0d6
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131471"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509533"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Releaseopmerkingen voor de Azure File Sync-agent
 Met Azure File Sync kunt u bestandsshares van uw organisatie in Azure Files centraliseren zonder in te leveren op de flexibiliteit, prestaties en compatibiliteit van een on-premises bestandsserver. Uw installaties van Windows Server worden getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server gebruiken voor lokale toegang tot uw gegevens (inclusief SMB, NFS en FTPS) en u kunt zoveel caches hebben als u waar ook ter wereld nodig hebt.
@@ -25,6 +25,7 @@ De volgende Azure File Sync agent versies worden ondersteund:
 
 | Mijlpalen | Versienummer agent | Releasedatum | Status |
 |----|----------------------|--------------|------------------|
+| V 11.2 release- [KB4539952](https://support.microsoft.com/en-us/help/4539952)| 11.2.0.0 | 2 februari 2021 | Ondersteund-Flighting |
 | V. w release- [KB4539951](https://support.microsoft.com/en-us/help/4539951)| 11.1.0.0 | 4 november 2020 | Ondersteund |
 | V 10.1 release- [KB4522411](https://support.microsoft.com/en-us/help/4522411)| 10.1.0.0 | 5 juni 2020 | Ondersteund |
 | Update pakket van mei 2020- [KB4522412](https://support.microsoft.com/help/4522412)| 10.0.2.0 | 19 mei 2020 | Ondersteund |
@@ -48,6 +49,32 @@ De volgende Azure File Sync agent versies zijn verlopen en worden niet meer onde
 ### <a name="azure-file-sync-agent-update-policy"></a>Updatebeleid Azure File Sync-agent
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]
 
+## <a name="agent-version-11200"></a>11.2.0.0 van agent versie
+De volgende release opmerkingen zijn voor versie 11.2.0.0 van de Azure File Sync agent die is uitgebracht op 2 februari 2021. Deze opmerkingen zijn opgenomen in aanvulling op de release opmerkingen van versie 11.1.0.0.
+
+### <a name="improvements-and-issues-that-are-fixed"></a>Verbeteringen en problemen die zijn opgelost 
+- Als een synchronisatie sessie is geannuleerd vanwege een groot aantal fouten per item, kan de synchronisatie door de afstemming worden uitgevoerd wanneer een nieuwe sessie wordt gestart als de Azure File Sync-service bepaalt dat er een aangepaste synchronisatie sessie is vereist om de fouten per item te corrigeren.
+- Het registreren van een server met behulp van de cmdlet Register-AzStorageSyncServer kan mislukken met de fout ' onverwerkte uitzonde ring '.
+- Nieuwe Power shell-cmdlet (add-StorageSyncAllowedServerEndpointPath) om toegestane server eindpunten paden op een server te configureren. Deze cmdlet is handig voor scenario's waarin de Azure File Sync-implementatie wordt beheerd door een Cloud Solution Provider (CSP) of een service provider en de klant de toegestane server eindpunten paden op een server wil configureren. Bij het maken van een server eindpunt, mislukt het maken van het server eindpunt als het opgegeven pad zich niet in de acceptatie lijst bevindt. Opmerking: dit is een optionele functie en alle ondersteunde paden zijn standaard toegestaan bij het maken van een server eindpunt.  
+
+    
+    - Voer de volgende Power shell-opdrachten uit op de server om een pad naar het server eindpunt toe te voegen dat is toegestaan:
+
+    ```powershell
+    Import-Module 'C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll' -verbose
+    Add-StorageSyncAllowedServerEndpointPath -Path <path>
+    ```  
+
+    - Voer de volgende Power shell-opdracht uit om de lijst met ondersteunde paden op te halen:
+    
+    ```powershell
+    Get-StorageSyncAllowedServerEndpointPath
+    ```     
+    - Als u een pad wilt verwijderen, voert u de volgende Power shell-opdracht uit:
+    
+    ```powershell
+    Remove-StorageSyncAllowedServerEndpointPath -Path <path>
+    ```  
 ## <a name="agent-version-11100"></a>11.1.0.0 van agent versie
 De volgende release opmerkingen zijn voor versie 11.1.0.0 van de Azure File Sync agent (uitgebracht 4 november 2020).
 

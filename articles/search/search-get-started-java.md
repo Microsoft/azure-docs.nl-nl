@@ -1,29 +1,29 @@
 ---
-title: "Quickstart: Een zoekindex maken in Java met behulp van REST API's"
+title: 'Snelstartgids: een zoek index maken in Java'
 titleSuffix: Azure Cognitive Search
-description: In deze Java-quickstart leert u hoe u een index maakt, gegevens laadt en query's uitvoert met behulp van de REST API's van Azure Cognitive Search.
+description: In deze Java Quick Start leert u hoe u een index maakt, gegevens laadt en query's uitvoert met behulp van de Azure Cognitive Search-client bibliotheek voor Java.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.devlang: java
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/25/2020
+ms.date: 01/25/2021
 ms.custom: devx-track-java
-ms.openlocfilehash: 8c688b1ba80050c49b9e2a36696ed7a2fb863e3f
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 9e05e41ca0c293e31a29dc25a7b4ec7b87734246
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089390"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509415"
 ---
-# <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Quickstart: Een Azure Cognitive Search-index maken in Java met behulp van REST API's
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-java"></a>Snelstartgids: een Azure Cognitive Search-index maken in Java
 > [!div class="op_single_selector"]
+> * [Java](search-get-started-java.md)
 > * [JavaScript](search-get-started-javascript.md)
 > * [C#](search-get-started-dotnet.md)
-> * [Java](search-get-started-java.md)
 > * [Portal](search-get-started-portal.md)
-> * [PowerShell](./search-get-started-powershell.md)
+> * [PowerShell](search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
 > * [REST](search-get-started-rest.md)
 
@@ -49,11 +49,9 @@ Voor aanroepen naar de service zijn voor elke aanvraag een URL-eindpunt en een t
 
 1. [Meld u aan bij Azure Portal](https://portal.azure.com/) en haal op de pagina **Overzicht** van uw zoekservice de URL op. Een eindpunt ziet er bijvoorbeeld uit als `https://mydemo.search.windows.net`.
 
-2. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
+1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
 
-   Maak ook een querysleutel. Het is een aanbevolen procedure voor het uitgeven van queryaanvragen met alleen-lezen-toegang.
-
-:::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
+   :::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="De naam van de service en de querysleutels voor beheer ophalen" border="false":::
 
 Voor elke aanvraag die naar uw service is verzonden, hebt u een API-sleutel nodig. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
@@ -88,21 +86,72 @@ Open eerst IntelliJ IDEA en stel een nieuw project in.
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <modelVersion>4.0.0</modelVersion>
-    
         <groupId>AzureSearchQuickstart</groupId>
         <artifactId>AzureSearchQuickstart</artifactId>
+        <packaging>jar</packaging>
         <version>1.0-SNAPSHOT</version>
+        <properties>
+            <jackson.version>2.12.1</jackson.version>
+            <auto-value.version>1.6.2</auto-value.version>
+            <junit.version>5.4.2</junit.version>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        </properties>
+        <name>azuresearch-console</name>
+        <url>http://maven.apache.org</url>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.value</groupId>
+                <artifactId>auto-value-annotations</artifactId>
+                <version>${auto-value.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.value</groupId>
+                <artifactId>auto-value</artifactId>
+                <version>${auto-value.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.azure</groupId>
+                <artifactId>azure-search-documents</artifactId>
+                <version>11.1.3</version>
+            </dependency>
+        </dependencies>
+    
         <build>
-            <sourceDirectory>src</sourceDirectory>
             <plugins>
+                <!--put generated source files to generated-sources-->
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.8.0</version>
                     <configuration>
                         <source>11</source>
                         <target>11</target>
                     </configuration>
                 </plugin>
+                <!-- For JUnit -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                </plugin>
+                <!-- Add exec plugin to run demo program -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
@@ -115,27 +164,21 @@ Open eerst IntelliJ IDEA en stel een nieuw project in.
                         </execution>
                     </executions>
                     <configuration>
-                        <mainClass>main.java.app.App</mainClass>
+                        <mainClass>com.microsoft.azure.search.samples.demo.App</mainClass>
                         <cleanupDaemonThreads>false</cleanupDaemonThreads>
                     </configuration>
                 </plugin>
             </plugins>
         </build>
-        <dependencies>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.json</artifactId>
-                <version>1.0.2</version>
-            </dependency>
-        </dependencies>   
     </project>
     ```
 
+<!-- STOPPED HERE -- SENT EMAIL TO TONG XU ASKING FOR INFO -->
 ### <a name="set-up-the-project-structure"></a>De projectstructuur instellen
 
 1. Selecteer **Bestand** > **Projectstructuur**.
 1. Selecteer **Modules** en vouw de bronstructuur uit voor toegang tot de inhoud van de map `src` >  `main`.
-1. Voeg in de map `src` >  `main` > `java` de mappen `app` en `service` toe. Selecteer hiervoor de map `java`, druk op Alt + Insert en voer vervolgens de mapnaam in.
+1. Voeg in de `src`  >   `main`  >  `java` map mappen toe voor `com` , `microsoft` ,,, `azure` `search` `samples` , `demo` . Selecteer hiervoor de map `java`, druk op Alt + Insert en voer vervolgens de mapnaam in.
 1. Voeg in de map `src` >  `main` >`resources` de mappen `app` en `service` toe.
 
     Als u klaar bent, moet de projectstructuur er als in de volgende afbeelding uitzien.
@@ -511,7 +554,7 @@ De definitie van de hotelsindex bevat eenvoudige velden en één complex veld. V
     }
     ```
 
-    De indexnaam is hotels-quickstart. Kenmerken in de indexvelden bepalen hoe de geïndexeerde gegevens kunnen worden gezocht in een toepassing. Het kenmerk `IsSearchable` moet bijvoorbeeld worden toegewezen aan elk veld dat moet worden opgenomen in een zoekopdracht naar volledige tekst. Zie [Verzameling van velden en veldkenmerken](search-what-is-an-index.md#fields-collection) voor meer informatie over kenmerken.
+    De indexnaam is hotels-quickstart. Kenmerken in de indexvelden bepalen hoe de geïndexeerde gegevens kunnen worden gezocht in een toepassing. Het kenmerk `IsSearchable` moet bijvoorbeeld worden toegewezen aan elk veld dat moet worden opgenomen in een zoekopdracht naar volledige tekst. Zie [Create Index (rest) (Engelstalig)](/rest/api/searchservice/create-index)voor meer informatie over kenmerken.
     
     Voor het `Description`-veld in deze index wordt de optionele `analyzer`-eigenschap gebruikt om de standaard Lucene-taalanalysefuncties te overschrijven. Voor het veld `Description_fr` wordt de Franse Lucene-analyse `fr.lucene` gebruikt, omdat hierin Franse tekst wordt opgeslagen. Voor `Description` wordt de optionele Microsoft-taalanalysefunctie en.lucene gebruikt. Zie [Analysefuncties voor tekstverwerking in Azure Cognitive Search](search-analyzers.md) voor meer informatie over analysefuncties.
 

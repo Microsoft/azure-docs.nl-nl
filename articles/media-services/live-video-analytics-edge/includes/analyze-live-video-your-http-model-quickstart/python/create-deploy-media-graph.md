@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1b5dd2fb4ef8cb3f6fd169477d9ee82e912c146e
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 7cbb9a09a6f8eae6a9325f060664d50c5725e09f
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98956266"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508484"
 ---
 ### <a name="examine-and-edit-the-sample-files"></a>De voorbeeld bestanden bekijken en bewerken
 
@@ -16,16 +16,13 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
 
 1. Ga naar de map *src/cloud-to-device-console-app*. Hier ziet u het bestand *appsettings.json* en enkele andere bestanden:
 
-    * ***c2d-console-app.csproj** _: het projectbestand voor Visual Studio Code.
-    _ ***operations.json** _: een lijst met de bewerkingen die u het programma wilt laten uitvoeren.
-    _ ***Program.cs** _: de voorbeeldprogrammacode. Deze code:
+    * operations.json: een lijst met de bewerkingen die u het programma wilt laten uitvoeren.
+    * main.py: de voorbeeldprogrammacode. Deze code:
 
-        _ laadt de app-instellingen.
-        * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om livevideostreams te analyseren door de bijbehorende [directe methoden](../../../direct-methods.md) aan te roepen.
+        * De app-instellingen laden.
+        * Roept directe methoden aan die worden weergegeven door de module Live Video Analytics in IoT Edge. U kunt de module gebruiken om livevideostreams te analyseren door de bijbehorende directe methoden aan te roepen.
         * Pauzeert, zodat u de uitvoer van het programma kunt controleren in het **TERMINAL**-venster en de gebeurtenissen die zijn gegenereerd door de module kunt controleren in het **UITVOER**-venster.
-        * Roept directe methoden aan voor het opschonen van resources.
-
-
+        * Roept directe methoden aan voor het opschonen van resources.  
 1. Bewerk het bestand *operations.json*:
     * Wijzig de link naar de graaftopologie:
 

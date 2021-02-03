@@ -3,12 +3,12 @@ title: Concepten-updates en upgrades voor Privécloud
 description: Meer informatie over de belangrijkste upgrade processen en functies in de Azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 6fb65a0e192fbf1f054857223b3fdaf58fc6a903
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.openlocfilehash: 8338666d70bd0ca4ea3c6b32bd8f8d205feaf7c0
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809646"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509194"
 ---
 # <a name="azure-vmware-solution-private-cloud-updates-and-upgrades"></a>Updates en upgrades voor persoonlijke Clouds in azure VMware-oplossing
 
@@ -57,7 +57,10 @@ Voor meer informatie over de versies van VMware-software raadpleegt u het [conce
 
 ## <a name="next-steps"></a>Volgende stappen
 
-De volgende stap is het [maken van een privécloud](tutorial-create-private-cloud.md).
+Nu u de belangrijkste upgrade processen en functies in de Azure VMware-oplossing hebt behandeld, wilt u mogelijk meer informatie over:
+
+- [Een privécloud maken](tutorial-create-private-cloud.md).
+- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
 
 <!-- LINKS - external -->
 

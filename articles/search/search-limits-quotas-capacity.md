@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/02/2021
-ms.openlocfilehash: 9e43521e26a6292141e1bbae7b39db3656df962c
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 994ed74750d159dfdb83259e9fe921f870ec2241
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493038"
+ms.locfileid: "99509364"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Servicelimieten in Azure Cognitive Search
 
@@ -124,14 +124,6 @@ Het maximum aantal synoniemen toewijzingen varieert per laag. Elke regel kan Max
 | -------- | -----|------ |----|----|----|-------|---|----|
 | Maximum aantal synoniemen |3 |3|5 |10 |20 |20 | 10 | 10 |
 | Maximum aantal regels per kaart |5000 |20.000|20.000 |20.000 |20.000 |20.000 | 20.000 | 20.000  |
-
-## <a name="queries-per-second-qps"></a>Query's per seconde (QPS)
-
-QPS-schattingen moeten onafhankelijk van elke klant worden ontwikkeld. De grootte en complexiteit van de index, de grootte en complexiteit van query's en de hoeveelheid verkeer zijn primaire determinanten van QPS. Er is geen manier om zinvolle schattingen te bieden wanneer dergelijke factoren onbekend zijn.
-
-Schattingen zijn meer voorspelbaar wanneer ze worden berekend op Services die worden uitgevoerd op speciale resources (Basic-en Standard-lagen). U kunt de QPS nauw keuriger schatten omdat u meer controle hebt over de para meters. Zie [Azure Cognitive Search prestaties en optimalisatie](search-performance-optimization.md)voor meer informatie over het aanpaken van de schatting.
-
-Voor de lagen geoptimaliseerd voor opslag (L1 en L2) moet u een lagere query door Voer en een hogere latentie dan de standaard lagen.
 
 ## <a name="data-limits-ai-enrichment"></a>Gegevens limieten (AI-verrijking)
 

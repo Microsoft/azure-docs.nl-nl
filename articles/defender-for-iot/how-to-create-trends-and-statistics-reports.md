@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/24/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 8bfbacc77843c7978bcb1d364bd93f5e09381144
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 20b47204ea8f64bc430f436a9bcf1b2311409aa6
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811634"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509483"
 ---
 # <a name="sensor-trends-and-statistics-reports"></a>Sensor trends en statistieken rapporten
 
@@ -26,19 +26,29 @@ U kunt widget grafieken en cirkel diagrammen maken om inzicht te krijgen in netw
 Het dash board bestaat uit widgets die de volgende typen informatie grafisch beschrijven:
 
 - Verkeer per poort
+- Hoofd verkeer per poort
 - Kanaal bandbreedte
 - Totale band breedte
 - Actieve TCP-verbinding
+- Bovenste band breedte per VLAN
 - Apparaten:
   - Nieuwe apparaten
   - Apparaten bezet
   - Apparaten op leverancier
   - Apparaten op besturings systeem
+  - Aantal apparaten per VLAN
   - Niet-verbonden apparaten
-- Connectiviteits mogelijkheden per uur
+- Connectiviteit valt per uur
 - Waarschuwingen voor incidenten per type
 - Database tabel toegang
 - Widgets van protocol sectie
+- DELTAV
+  - DeltaV Roc-verwerkings distributie
+  - DeltaV Roc gebeurtenissen op naam
+  - DeltaV gebeurtenissen op tijd
+- AMS
+  - AMS verkeer per server poort
+  - AMS-verkeer via opdracht
 - Ethernet-en IP-adres:
   - Ethernet-en IP-adres verkeer door overschrijvings service
   - Ethernet-en IP-adres verkeer door overschrijvings klasse
@@ -49,6 +59,15 @@ Het dash board bestaat uit widgets die de volgende typen informatie grafisch bes
 - Siemens S7:
   - S7 verkeer per besturings functie
   - S7 verkeer per subfunctie
+- VLAN
+  - Aantal apparaten per VLAN
+  - Bovenste band breedte per VLAN
+- 60870-5-104
+  - IEC-60870-verkeer door ASDU
+- BACNET
+  - BACnet Services
+- DNP3
+  - DNP3-verkeer per functie
 - SRTP:
   - SRTP verkeer per service code
   - SRTP-fouten per dag

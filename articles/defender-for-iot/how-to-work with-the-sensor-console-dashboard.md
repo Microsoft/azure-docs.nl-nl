@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 11/03/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 735b1ce4391598d05a1bf0b4486503092f4de37d
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: c9afc22cd123a782c9ee0247952c78c72ee916c0
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840627"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509070"
 ---
 # <a name="the-dashboard"></a>Het dash board
 
@@ -28,7 +28,7 @@ Met het dash board kunt u snel de beveiligings status van uw netwerk bekijken. H
 
 - Waarschuwingen
 
-- De twee meters in het midden van de pagina geven de pakketten per seconde (PPS) en niet-bevestigde waarschuwingen (UA) aan. **PPS** is het aantal pakketten dat per seconde door het systeem is bevestigd. **Ua** is het aantal waarschuwingen dat nog niet is bevestigd.
+- In de twee indica toren in het midden van de pagina worden de pakketten per seconde (PPS) en niet-bevestigde waarschuwingen (UA) weer gegeven. **PPS** is het aantal pakketten dat per seconde door het systeem is bevestigd. **Ua** is het aantal waarschuwingen dat nog niet is bevestigd.
 
 - Lijst met niet-bevestigde waarschuwingen met hun beschrijving.
 
@@ -46,7 +46,7 @@ De UA-meter (niet-bevestigde waarschuwingen) in het midden van de pagina geeft h
 
 In deze sectie wordt elk status venster beschreven.
 
-| Status en meters | Beschrijving |
+| Status en meters | Description |
 | -------------- | -------------- |
 | :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/critical-alert-status-box-v2.png" alt-text="Kritieke waarschuwingen"::: | **Kritieke waarschuwingen** : in het vak aan de bovenkant van de pagina wordt het aantal kritieke waarschuwingen aangegeven. Schakel dit selectie vakje in om beschrijvingen van de waarschuwingen weer te geven op de tijd lijn en op de lijst onder de meters, indien van toepassing.                              |
 | :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/major-alert-status-box-v2.png" alt-text="Grote waarschuwingen"::: | **Grote waarschuwingen** : het vak in de rechter bovenhoek van de pagina geeft het aantal grote waarschuwingen aan. Schakel dit selectie vakje in om beschrijvingen van de waarschuwingen weer te geven op de tijd lijn en op de lijst onder de meters, indien van toepassing.                                     |
@@ -78,28 +78,28 @@ Selecteer **de pijl-omlaag onder aan** een waarschuwings venster om de waarschuw
 
 :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/extended-alert-screen.png" alt-text="Informatie over waarschuwings vermeldingen en apparaten":::
 
-- Het apparaat selecteren of **apparaten weer geven** om de fysieke-modus toewijzing weer te geven. De onderhevige apparaten zijn gemarkeerd.
+- Selecteer het apparaat om de fysieke-modus toewijzing weer te geven. De onderhevige apparaten zijn gemarkeerd.
+
+- Klik ergens in het waarschuwings venster om aanvullende details over de waarschuwing weer te geven. Er wordt een pop-upvenster weer gegeven dat er ongeveer als volgt uitziet
 
 - Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/excel-icon.png" alt-text="Excel"::: om een CSV-bestand over de waarschuwing te exporteren.
 
 - Alleen beheerders en beveiligings analisten: Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/approve-all-icon.png" alt-text="alles bevestigen"::: om alle bijbehorende waarschuwingen te **bevestigen** .
 
-- Selecteer de vermelding van de waarschuwing om het type en de beschrijving van de waarschuwing weer te geven:
-
 - Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/pdf-icon.png" alt-text="PDF":::om een waarschuwings rapport te downloaden als een PDF-bestand.
 
-- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/pin-icon.png" alt-text="vastmaken":::om de waarschuwing vast te maken of te losmaken.
+- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/pin-icon.png" alt-text="vastmaken":::om de waarschuwing vast te maken of te losmaken. Als u pincode selecteert, wordt deze toegevoegd aan het venster **vastgemaakte waarschuwingen** in het scherm **waarschuwingen** .
 
-- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/download-icon.png" alt-text="downloaden"::: om de waarschuwing te onderzoeken door het pcap-bestand te downloaden met een netwerkprotocol analyse.
+- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/download-icon.png" alt-text="downloaden"::: om de waarschuwing te onderzoeken door het gerelateerde pcap-bestand te downloaden met een netwerkprotocol analyse.
 
-- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/cloud-download-icon.png" alt-text="Cloud"::: om een gefilterd pcap-bestand te downloaden dat alleen de waarschuwings-relevante pakketten bevat, waardoor de grootte van het uitvoer bestand wordt verkleind en een meer gerichte analyse mogelijk is. U kunt deze weer geven met behulp van [wireshark](https://www.wireshark.org/).
+- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/cloud-download-icon.png" alt-text="Cloud"::: om een gerelateerd gefilterd pcap-bestand te downloaden dat alleen de waarschuwings-relevante pakketten bevat, waardoor de grootte van het uitvoer bestand wordt verkleind en een meer gerichte analyse mogelijk is. U kunt deze weer geven met behulp van [wireshark](https://www.wireshark.org/).
 
-- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/navigate-icon.png" alt-text="Navigatie"::: om naar de gebeurtenis tijdlijn te navigeren op het tijdstip van de aangevraagde waarschuwing.
+- Selecteer :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/navigate-icon.png" alt-text="Navigatie"::: om naar de gebeurtenis tijdlijn te navigeren op het tijdstip van de aangevraagde waarschuwing. Op deze manier kunt u andere gebeurtenissen evalueren die kunnen optreden rond de specifieke waarschuwing.
 
 - Alleen beheerders en beveiligings analisten: Wijzig de status van de waarschuwing van niet bevestigd in bevestigd. Selecteer leren om de gedetecteerde activiteit goed te keuren.
 
 :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/unauthorized-internet-connectivity-detection-v3.png" alt-text="Niet-geautoriseerde Internet connectiviteit gedetecteerd":::
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Werken met waarschuwingen op uw sensor](how-to-work-with-alerts-on-your-sensor.md)

@@ -3,12 +3,12 @@ title: Aan de slag met Live Video Analytics in IoT Edge - Azure
 description: Deze quickstart laat zien hoe u aan de slag kunt met Live Video Analytics in IoT Edge. Leer hoe u beweging kunt detecteren in een live-videostream.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: fde82dde7df3fa9756c145940178f35ed255ce37
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 93eb2ab4df77afd3c2a55a04db2d39591a46e726
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986544"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507778"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Quickstart: Over Live Video Analytics in IoT Edge
 
@@ -48,6 +48,8 @@ Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescript voor Live Video Analytics-resources](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) om de vereiste Azure-resources in uw Azure-abonnement te implementeren. Voer hiervoor de volgende stappen uit:
 
 1. Ga naar [Azure Portal](https://portal.azure.com) en selecteer het Cloud shell pictogram.
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="./media/quickstarts/cloud-shell.png" alt-text="Cloud Shell":::
 1. Als u Cloud Shell voor het eerst gebruikt, wordt u gevraagd een abonnement te selecteren voor het maken van een opslagaccount en een Microsoft Azure-bestandsshare. Selecteer **Opslag maken** om een opslagaccount te maken voor de gegevens van uw Cloud Shell-sessie. Dit opslagaccount is gescheiden van het account dat door het script wordt gemaakt voor gebruik bij uw Azure Media Services-account.
 1. Selecteer in de vervolgkeuzelijst aan de linkerkant van het Cloud Shell-venster **Bash** als uw omgeving.
 
@@ -76,10 +78,10 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
 In de scriptuitvoer bevat een tabel met resources de naam van de IoT-hub. Zoek het resourcetype **`Microsoft.Devices/IotHubs`** en noteer de naam. U hebt deze naam nodig in de volgende stap.  
 
 > [!NOTE]
-> Het script genereert ook enkele configuratiebestanden in de map **_~/clouddrive/lva-sample/_* _. U hebt deze bestanden verderop in de quickstart nodig.
+> Het script genereert ook enkele configuratiebestanden in de map ***~/clouddrive/LVA-sample/*** . U hebt deze bestanden verderop in de quickstart nodig.
 
 > [!TIP]
-> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze _ *[probleemoplossingsgids](troubleshoot-how-to.md#common-error-resolutions)* * waarmee u enkele veelvoorkomende problemen kunt oplossen.
+> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze **[probleemoplossingsgids](troubleshoot-how-to.md#common-error-resolutions)** , waarmee u enkele veelvoorkomende problemen kunt oplossen.
 
 ## <a name="deploy-modules-on-your-edge-device"></a>Modules op uw edge-apparaat implementeren
 

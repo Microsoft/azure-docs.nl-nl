@@ -3,12 +3,12 @@ title: Concepten-persoonlijke Clouds en clusters
 description: Meer informatie over de belangrijkste mogelijkheden van de Azure VMware-oplossing software-gedefinieerde data centers en vSphere-clusters.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: 234e705ad3b39a575c6f8c475bede4b81efa4b96
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 6a2bb0f41bb1809d0f43b08c71766acc914c0689
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99474910"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509262"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Azure VMware-oplossing persoonlijke Cloud-en cluster concepten
 
@@ -66,10 +66,11 @@ De persoonlijke Cloud-vCenter-en NSX-T-configuraties worden gepland volgens een 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u deze concepten van Azure VMware-oplossingen hebt behandeld, wilt u mogelijk meer informatie over: 
+Nu u Azure VMware-oplossingen hebt ondergebracht, kunt u het volgende weten: 
 
 - [Azure VMware-oplossingen voor netwerk-en interconnectiviteit-concepten](concepts-networking.md).
 - [Concepten van Azure VMware-oplossingen opslag](concepts-storage.md).
+- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
 
 <!-- LINKS - internal -->
 

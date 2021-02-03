@@ -3,12 +3,12 @@ title: 'Concepten: identiteit en toegang'
 description: Meer informatie over de identiteits-en toegangs concepten van de Azure VMware-oplossing
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: e9c0d62968d94e2b018186f67072b6ae7078db02
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: bd1b4cd918ce977cf57d641908b127f7a2d1b0cc
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94536095"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509296"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Concepten van Azure VMware-oplossings identiteiten
 
@@ -53,7 +53,11 @@ Gebruik het account Administrator om toegang te krijgen tot NSX-T-beheer. Het he
   
 ## <a name="next-steps"></a>Volgende stappen
 
-De volgende stap is om meer te weten te komen over de concepten van een [upgrade][concepts-upgrades]van de privécloud.
+Nu u Azure VMware-oplossings toegang en identiteits concepten hebt behandeld, kunt u het volgende weten:
+
+- [Concepten](concepts-upgrades.md)van de upgrade van de privécloud.
+- [vSphere op rollen gebaseerd toegangs beheer voor de Azure VMware-oplossing](concepts-role-based-access-control.md).
+- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
 
 <!-- LINKS - external -->
 

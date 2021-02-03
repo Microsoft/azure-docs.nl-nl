@@ -8,25 +8,25 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/01/2021
-ms.openlocfilehash: 422346430e32ccb8745d5a5d829c5d61089a99c6
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: b8881d3fa7ade08da103c5af4b828a12e74cc355
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430425"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509449"
 ---
 # <a name="how-to-index-plain-text-blobs-in-azure-cognitive-search"></a>Blobs met tekst zonder opmaak indexeren in azure Cognitive Search
 
-Wanneer u een [BLOB Indexeer functie](search-howto-indexing-azure-blob-storage.md) gebruikt om Doorzoek bare tekst te extra heren voor zoeken in volledige tekst, kunt u verschillende parserings modi aanroepen om betere index resultaten te krijgen. De Indexeer functie parseert de blob-inhoud standaard als één tekst segment. Als alle blobs echter onbewerkte tekst in dezelfde code ring bevatten, kunt u de indexerings prestaties aanzienlijk verbeteren met behulp van de verwerkings `text` modus.
+Wanneer u een [BLOB Indexeer functie](search-howto-indexing-azure-blob-storage.md) gebruikt om Doorzoek bare BLOB-tekst te extra heren voor zoeken in volledige tekst, kunt u een parseringsfout toewijzen om betere index resultaten te krijgen. De Indexeer functie parseert de blob-inhoud standaard als één tekst segment. Als alle blobs echter onbewerkte tekst in dezelfde code ring bevatten, kunt u de indexerings prestaties aanzienlijk verbeteren met behulp van de verwerkings `text` modus.
 
-Gebruik de `text` parserings modus als:
+De aanbevelingen voor `text` het gebruik van parsering zijn onder andere:
 
 + Bestands type is. txt
 + Bestanden zijn van elk type, maar de inhoud zelf is tekst (bijvoorbeeld programma bron code, HTML, XML enzovoort). Voor bestanden in een markerings taal worden de syntaxis tekens weer geven als statische tekst.
 
-Haal de Indexeer functies uit de serialisatie op JSON. De inhoud van het hele tekst bestand wordt in een groot veld geïndexeerd `"content": "<file-contents>"` . Nieuwe regel-en retour instructies worden weer gegeven als `\r\n\` .
+U kunt alle Indexeer functies serialiseren naar JSON. Standaard wordt de inhoud van het hele tekst bestand geïndexeerd in één groot veld als `"content": "<file-contents>"` . Nieuwe regel-en retour instructies zijn Inge sloten in het veld inhoud en worden weer gegeven als `\r\n\` .
 
-Als u een gedetailleerdere uitkomst wilt, kunt u de volgende oplossingen overwegen:
+Als u een meer granulair resultaat wilt hebben en als het bestands type compatibel is, kunt u de volgende oplossingen overwegen:
 
 + [`delimitedText`](search-howto-index-csv-blobs.md) de geparseerde modus, als de bron CSV is
 + [ `jsonArray` of `jsonLines` ](search-howto-index-json-blobs.md), als de bron JSON is

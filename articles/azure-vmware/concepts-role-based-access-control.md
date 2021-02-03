@@ -3,12 +3,12 @@ title: Concepten-vSphere op rollen gebaseerd toegangs beheer (vSphere RBAC)
 description: Meer informatie over de belangrijkste mogelijkheden van toegangs beheer op basis van rollen voor Azure VMware-oplossing
 ms.topic: conceptual
 ms.date: 10/23/2020
-ms.openlocfilehash: fbd5b48ce30a6612c45ebd97f08812efd29c50b3
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 6f5c30b070b010f312d038d8286be994039c56f8
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888399"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509245"
 ---
 # <a name="vsphere-role-based-access-control-vsphere-rbac-for-azure-vmware-solution"></a>vSphere op rollen gebaseerd toegangs beheer (vSphere RBAC) voor Azure VMware-oplossing
 
@@ -23,9 +23,6 @@ In een implementatie van een Azure VMware-oplossing heeft de beheerder geen toeg
 
 De gebruiker van de privécloud heeft geen toegang tot en kan geen specifieke beheer onderdelen configureren die door micro soft worden ondersteund en beheerd. Bijvoorbeeld clusters, hosts, gegevens opslag en gedistribueerde virtuele switches.
 
-
-
-
 ## <a name="azure-vmware-solution-cloudadmin-role-on-vcenter"></a>Azure VMware-oplossing CloudAdmin Role in vCenter
 
 U kunt de bevoegdheden weer geven die zijn verleend aan de Azure VMware Solution CloudAdmin-rol in uw Azure VMware-oplossing privécloud-vCenter.
@@ -38,7 +35,7 @@ U kunt de bevoegdheden weer geven die zijn verleend aan de Azure VMware Solution
 
 De CloudAdmin-rol in de Azure VMware-oplossing heeft de volgende bevoegdheden op vCenter. Raadpleeg de [VMware-product documentatie](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-ED56F3C4-77D0-49E3-88B6-B99B8B437B62.html) voor een gedetailleerde uitleg van elke bevoegdheid.
 
-| Bevoegdheid | Beschrijving |
+| Bevoegdheid | Description |
 | --------- | ----------- |
 | **Waarschuwingen** | Waarschuwing bevestigen<br />Alarm maken<br />Waarschuwings actie uitschakelen<br />Waarschuwing wijzigen<br />Waarschuwing verwijderen<br />Waarschuwings status instellen |
 | **Machtigingen** | Machtigingen wijzigen |
@@ -63,7 +60,11 @@ De CloudAdmin-rol in de Azure VMware-oplossing heeft de volgende bevoegdheden op
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [VMware-product documentatie](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-ED56F3C4-77D0-49E3-88B6-B99B8B437B62.html) voor een gedetailleerde uitleg van elke bevoegdheid.
+Nu u de basis principes van het toegangs beheer op basis van rollen voor Azure VMware-oplossing hebt behandeld, wilt u mogelijk meer informatie over:
+
+- De details van elke bevoegdheid in de [VMware-product documentatie](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-ED56F3C4-77D0-49E3-88B6-B99B8B437B62.html).
+- [Hoe Azure VMware Solution bewaakt en herstelt persoonlijke Clouds](concepts-monitor-repair-private-cloud.md).
+- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
 
 <!-- LINKS - internal -->
 

@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: ade5880a6b06f448df23eb77d81201a521f1d240
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 5fc47599d09e5be60311dbda15868d87de4d91d2
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430042"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509381"
 ---
-# <a name="create-a-search-indexer"></a>Een Indexeer functie maken
+# <a name="creating-indexers-in-azure-cognitive-search"></a>Indexeer functies maken in azure Cognitive Search
 
 Een Indexeer functie biedt een geautomatiseerde werk stroom voor het overbrengen van documenten en inhoud vanuit een externe gegevens bron naar een zoek index in uw zoek service. Zoals oorspronkelijk is ontworpen, worden tekst en meta gegevens uit een Azure-gegevens bron geëxtraheerd, worden documenten geserialiseerd in JSON en worden de resulterende documenten door gegeven aan een zoek machine voor het indexeren. Dit is sindsdien uitgebreid ter ondersteuning van [AI-verrijking](cognitive-search-concept-intro.md) voor grondige verwerking van inhoud. 
 
@@ -99,7 +99,7 @@ De volgende scherm afbeelding laat zien waar u deze functies in de portal kunt v
 
 ### <a name="use-a-rest-client"></a>Een REST-client gebruiken
 
-Postman en Visual Studio code (met een extensie voor Azure Cognitive Search) kunnen worden gebruikt als een indexer-client. Met beide hulp middelen kunt u verbinding maken met uw zoek service en aanvragen verzenden waarmee Indexeer functies en andere objecten worden gemaakt. Er zijn talloze zelf studies en voor beelden waarin REST-clients voor het maken van objecten worden gedemonstreerd. 
+Postman en Visual Studio code (met een extensie voor Azure Cognitive Search) kunnen worden gebruikt als een indexer-client. Met beide hulp middelen kunt u verbinding maken met uw zoek service en aanvragen voor [Indexeer functie (rest)](/rest/api/searchservice/create-indexer) verzenden. Er zijn talloze zelf studies en voor beelden waarin REST-clients voor het maken van objecten worden gedemonstreerd. 
 
 Begin met een van deze artikelen voor meer informatie over elke client:
 
@@ -110,7 +110,7 @@ Raadpleeg de [operationser-bewerkingen (rest)](/rest/api/searchservice/Indexer-o
 
 ### <a name="use-an-sdk"></a>Een SDK gebruiken
 
-Voor Cognitive Search implementeren de Azure-Sdk's algemeen beschik bare functies. Zo kunt u een van de Sdk's gebruiken om objecten die aan de Indexeer functie zijn gerelateerd te maken. Allemaal implementeren een **SearchIndexerClient** die methoden biedt voor het maken van Indexeer functies en gerelateerde objecten, waaronder vaardig heden.
+Voor Cognitive Search implementeren de Azure-Sdk's algemeen beschik bare functies. Zo kunt u een van de Sdk's gebruiken om objecten die aan de Indexeer functie zijn gerelateerd te maken. Allemaal bieden een **SearchIndexerClient** met methoden voor het maken van Indexeer functies en gerelateerde objecten, waaronder vaardig heden.
 
 | Azure SDK | Client | Voorbeelden |
 |-----------|--------|----------|

@@ -3,12 +3,12 @@ title: Concepten-netwerk-interconnectiviteit
 description: Meer informatie over belang rijke aspecten en gebruiks voorbeelden van netwerken en interconnectiviteit in azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: eb701a7fca2be08d70e603734b9c4d8e266959cd
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 49261f34f879c68f21b57f9256a58a9b0a44d637
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475417"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509279"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution-netwerken en interconnectiviteit-concepten
 
@@ -59,10 +59,11 @@ Voor een volledige interconnectiviteit in uw privécloud schakelt u ExpressRoute
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-Nu u deze netwerk-en interconnectiviteit-concepten hebt behandeld, wilt u mogelijk meer informatie over:
+Nu u de Azure VMware-oplossingen voor netwerk-en interconnectiviteit-concepten hebt behandeld, wilt u mogelijk meer informatie over:
 
 - [Concepten van Azure VMware-oplossingen opslag](concepts-storage.md).
-- [Concepten van Azure VMware-oplossings identiteiten](concepts-identity.md)
+- [Concepten van Azure VMware-oplossings identiteiten](concepts-identity.md).
+- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).
 
 <!-- LINKS - external -->
 [enable Global Reach]: ../expressroute/expressroute-howto-set-global-reach.md

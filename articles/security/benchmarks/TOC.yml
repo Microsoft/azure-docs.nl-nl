@@ -231,3 +231,7 @@
       href: ../../vpn-gateway/security-baseline.md
     - name: Windows Virtual Desktop-beveiligings basislijn
       href: ../../virtual-desktop/security-baseline.md
+- name: Resources
+  items:
+    - name: Toewijzing tussen ASB en CIS-Bench Mark
+      href: v2-cis-benchmark.md

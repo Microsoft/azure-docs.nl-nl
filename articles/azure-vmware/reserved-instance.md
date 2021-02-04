@@ -2,13 +2,13 @@
 title: Bespaar kosten met het gereserveerde exemplaar van Azure VMware-oplossing
 description: Meer informatie over het kopen van een gereserveerde instantie voor de Azure VMware-oplossing.
 ms.topic: how-to
-ms.date: 11/12/2020
-ms.openlocfilehash: 74344889cd107350e5026c4a0369382fb9c7ef51
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.date: 02/03/2021
+ms.openlocfilehash: 227ea9274f70cc58468e7e0b3ddcf8239f5b7f5b
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600869"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550972"
 ---
 # <a name="save-costs-with-azure-vmware-solution"></a>Bespaar kosten met de Azure VMware-oplossing
 
@@ -22,7 +22,7 @@ Gereserveerde instanties zijn beschikbaar met enkele uitzonde ringen.
 
 -   **Onvoldoende quotum** : voor een reserverings scope in één/gedeeld abonnement moet het quotum van de host zijn opgenomen in het abonnement voor het nieuwe gereserveerde exemplaar. U kunt een [aanvraag voor quotum verhoging maken](enable-azure-vmware-solution.md) om dit probleem op te lossen.
 
--   **Aanbiedings recht**: u hebt een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft nodig.
+-   **Aanbiedings recht**: u hebt een [Azure Enterprise overeenkomst (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft nodig.
 
 -   **Capaciteits beperkingen** : in zeldzame omstandigheden beperkt Azure de aanschaf van nieuwe reserve ringen voor Azure VMware Solution host sku's vanwege een geringe capaciteit in een regio.
 
@@ -54,11 +54,11 @@ Deze vereisten zijn van toepassing op het kopen van een gereserveerde, toegeweze
 
    | Veld        |  Beschrijving |
    | ------------ | ------------ |
-   | Abonnement | Het abonnement dat wordt gebruikt om te betalen voor de reserve ring. Via de betalingswijze voor het abonnement worden de kosten voor de reservering in rekening gebracht. Het abonnements type moet een Enter prise Agreement zijn (nummer van de aanbieding: MS-AZR-0017P of MS-AZR-0148P), micro soft-klant overeenkomst of een afzonderlijk abonnement met betalen per gebruik-tarieven (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P). De kosten worden in mindering gebracht op basis van de voor uitbetaling van Azure (voorheen monetaire toezeg ging)-saldo, indien beschikbaar, of in rekening gebracht als overschrijding. Voor een abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht voor de credit card van het abonnement of een factuur betalings methode. |
+   | Abonnement | Het abonnement dat wordt gebruikt om te betalen voor de reserve ring. Via de betalingswijze voor het abonnement worden de kosten voor de reservering in rekening gebracht. Het abonnements type moet een Enter prise Agreement zijn (nummer van de aanbieding: MS-AZR-0017P of MS-AZR-0148P), micro soft-klant overeenkomst of een afzonderlijk abonnement met betalen per gebruik-tarieven (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P). De kosten worden in mindering gebracht op het saldo van Azure-vooruitbetaling (voorheen financiële toezegging), indien beschikbaar, of in rekening gebracht als overschrijding. Voor een abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht voor de credit card van het abonnement of een factuur betalings methode. |
    | Bereik        | Het bereik van de reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert:<br><ul><li><b>Bereik van één resource groep</b> : past de reserverings korting alleen toe op de overeenkomende resources in de geselecteerde resource groep.</li><li><b>Bereik van één abonnement</b> : past de reserverings korting toe op de overeenkomende resources in het geselecteerde abonnement.</li><li><b>Gedeeld bereik</b> : past de reserverings korting toe op overeenkomende resources in in aanmerking komende abonnementen in de facturerings context. Voor EA-klanten is de facturerings context de inschrijving. Voor afzonderlijke abonnementen met tarieven voor betalen per gebruik is het factureringsbereik alle in aanmerking komende abonnementen die zijn gemaakt door de accountbeheerder.</li></ul>       |
-   | Regio       | De Azure-regio die wordt gedekt door de reserve ring.   |
+   | Region       | De Azure-regio die wordt gedekt door de reserve ring.   |
    | Grootte van de host    | AV36    |
-   | Term         | Eén jaar of drie jaar.  |
+   | Termijn         | Eén jaar of drie jaar.  |
    | Aantal     | Het aantal exemplaren dat moet worden gekocht binnen de reserve ring. De hoeveelheid is het aantal actieve Azure VMware-oplossings hosts dat de facturerings korting kan krijgen.    |
 
 ### <a name="buy-reserved-instances-for-a-csp-subscription"></a>Gereserveerde instanties voor een CSP-abonnement kopen
@@ -85,9 +85,9 @@ Csp's die gereserveerde instanties voor hun klanten willen aanschaffen, moeten d
    | ------------ | ------------ |
    | Abonnement | Het abonnement dat wordt gebruikt om te betalen voor de reserve ring. Via de betalingswijze voor het abonnement worden de kosten voor de reservering in rekening gebracht. Het abonnements type moet een in aanmerking komende abonnement zijn, in dit geval een CSP-abonnement|
    | Bereik        | Het bereik van de reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert:<br><ul><li><b>Bereik van één resource groep</b> : past de reserverings korting alleen toe op de overeenkomende resources in de geselecteerde resource groep.</li><li><b>Bereik van één abonnement</b> : past de reserverings korting toe op de overeenkomende resources in het geselecteerde abonnement.</li><li><b>Gedeeld bereik</b> : past de reserverings korting toe op overeenkomende resources in in aanmerking komende abonnementen in de facturerings context. Voor EA-klanten is de facturerings context de inschrijving. Voor afzonderlijke abonnementen met tarieven voor betalen per gebruik is het factureringsbereik alle in aanmerking komende abonnementen die zijn gemaakt door de accountbeheerder.</li></ul>       |
-   | Regio       | De Azure-regio die wordt gedekt door de reserve ring.   |
+   | Region       | De Azure-regio die wordt gedekt door de reserve ring.   |
    | Grootte van de host    | AV36    |
-   | Term         | Eén jaar of drie jaar.  |
+   | Termijn         | Eén jaar of drie jaar.  |
    | Aantal     | Het aantal exemplaren dat moet worden gekocht binnen de reserve ring. De hoeveelheid is het aantal actieve Azure VMware-oplossings hosts dat de facturerings korting kan krijgen.     |
 
 Zie [Azure-reserve ringen weer geven als een Cloud Solution Provider (CSP)](../cost-management-billing/reservations/how-to-view-csp-reservations.md) -artikel voor meer informatie over het weer geven van de aangeschafte reserve ringen voor uw klant.
@@ -132,3 +132,12 @@ Zie voor meer informatie over door CSP beheerde reserve ringen [verkoop Microsof
 Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [Selfserviceopties voor inwisselen en retourneren van Azure-reserveringen](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) voor meer informatie.
 
 Csp's kunnen reserve ringen annuleren, uitwisselen of terugbetalen, met bepaalde beperkingen, gekocht voor hun klant. Zie voor meer informatie [beheren, annuleren, uitwisselen of terugbetalen Microsoft Azure reserve ringen voor klanten](/partner-center/azure-reservations-manage).
+
+## <a name="next-steps"></a>Volgende stappen
+
+Nu u een gereserveerde instantie van Azure VMware-oplossing hebt gekocht, wilt u mogelijk meer informatie over:
+
+- [Een Azure VMware-oplossings evaluatie maken](../migrate/how-to-create-azure-vmware-solution-assessment.md).
+- [DHCP voor Azure VMware-oplossing beheren](manage-dhcp.md).
+- [Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen](lifecycle-management-of-azure-vmware-solution-vms.md).
+ 

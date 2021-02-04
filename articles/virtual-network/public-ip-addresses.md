@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: deb9f60cd3f75eacdf0adc06f6f7470819949555
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 702ca4f4c3fc92eca70479ba02b1ddc8f6858857
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223224"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549657"
 ---
 # <a name="public-ip-addresses"></a>Openbare IP-adressen
 
@@ -54,7 +54,7 @@ Standaard-SKU open bare IP-adressen:
 - Hebben een aanpasbare time-out voor inactiviteit van de stroom met inkomende gegevens van 4-30 minuten (de standaardwaarde is vier minuten), en een vaste time-out voor inactiviteit van de stroom met uitgaande gegevens van vier minuten.
 - Standaard beveiligd en gesloten voor binnenkomend verkeer. Lijst met binnenkomend verkeer met een [netwerk beveiligings groep](./network-security-groups-overview.md#network-security-groups)toestaan.
 - Toegewezen aan netwerk interfaces, standaard open bare load balancers of toepassings gateways. Zie voor meer informatie over standaard load balancer [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- Kan zone-redundante (op te maken van alle drie zones) of zonegebonden (kan worden gemaakt zonegebonden en worden gegarandeerd in een specifieke beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](../availability-zones/az-region.md) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
+- Kan zone-redundante (op te maken van alle drie zones), zonegebonden (gegarandeerd in een specifieke vooraf geselecteerde beschikbaarheids zone) of geen zone (niet gekoppeld aan een specifieke vooraf geselecteerde beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](../availability-zones/az-region.md) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
 - Kan worden gebruikt als anycast frontend-Ip's voor [meerdere regio's load balancers](../load-balancer/cross-region-overview.md) (Preview-functionaliteit).
  
 > [!NOTE]

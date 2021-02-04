@@ -1,15 +1,18 @@
 - name: Documentatie over Azure DB for MariaDB
   href: index.yml
 - name: Overzicht
+  expanded: true
   items:
     - name: Wat is Azure DB voor MariaDB?
       href: overview.md
     - name: Welke MariaDB-optie moet ik kiezen?
       href: select-right-deployment-type.md
-    - name: Service-updates
-      items:
-        - name: SSL-basiscertificaat verloopt
-          href: concepts-certificate-rotation.md
+    - name: Ondersteunde versies
+      href: concepts-supported-versions.md
+    - name: Prijscategorieën
+      href: concepts-pricing-tiers.md
+    - name: Vooruitbetalen voor reservecapaciteit
+      href: concept-reserved-pricing.md
 - name: Snelstartgidsen
   expanded: true
   items:
@@ -28,7 +31,29 @@
       items:
         - name: MySQL Workbench
           href: connect-workbench.md
-- name: Zelfstudies
+        - name: Verbindingsreeksen
+          items:
+            - name: Toepassingen koppelen
+              href: howto-connection-string.md
+            - name: Azure PowerShell
+              href: howto-connection-string-powershell.md
+        - name: Verbinding maken met omleiding
+          href: howto-redirection.md
+    - name: SSL configureren
+      href: howto-configure-ssl.md
+    - name: Gebruikers maken
+      href: howto-create-users.md
+    - name: Parameters van de server configureren
+      items:
+        - name: Azure Portal
+          href: howto-server-parameters.md
+        - name: Azure CLI
+          href: howto-configure-server-parameters-cli.md
+        - name: Azure PowerShell
+          href: howto-configure-server-parameters-using-powershell.md
+    - name: Server bewaken
+      href: howto-alert-metric.md
+- name: Ontwikkeling van toepassingen
   items:
     - name: Een database ontwerpen
       items:
@@ -38,134 +63,26 @@
           href: tutorial-design-database-cli.md
         - name: Azure PowerShell
           href: tutorial-design-database-using-powershell.md
-- name: Voorbeelden
+    - name: Voorbeelden
+      items:
+        - name: Azure CLI
+          href: sample-scripts-azure-cli.md
+    - name: Compatibiliteit van stuurprogramma's en hulpprogramma's
+      href: concepts-compatibility.md
+    - name: Verbindingstolerantie
+      href: concepts-connectivity.md
+- name: Server Management
   items:
-    - name: Azure CLI
-      href: sample-scripts-azure-cli.md
-- name: Concepten
-  items:
-    - name: DB en servers
-      items:
-        - name: Servers
-          href: concepts-servers.md
-        - name: Ondersteunde versies
-          href: concepts-supported-versions.md
-        - name: Hoge beschikbaarheid
-          href: concepts-high-availability.md
-    - name: Resources
-      items:
-        - name: Prijscategorieën
-          href: concepts-pricing-tiers.md
-        - name: Vooruitbetalen voor reservecapaciteit
-          href: concept-reserved-pricing.md
-        - name: Beperkingen
-          href: concepts-limits.md
-    - name: Gegevenstoegang en -beveiliging
-      items:
-        - name: Beveiligingsoverzicht
-          href: concepts-security.md
-        - name: SSL configureren
-          href: concepts-ssl-connection-security.md
-        - name: Connectiviteitsarchitectuur
-          href: concepts-connectivity-architecture.md
-        - name: Firewall-regels
-          href: concepts-firewall-rules.md
-        - name: Virtual Network
-          href: concepts-data-access-security-vnet.md
-        - name: Private Link
-          href: concepts-data-access-security-private-link.md
-        - name: Advanced Threat Protection
-          href: concepts-data-access-and-security-threat-protection.md
-        - name: Besturingselementen voor beveiliging van Azure Policy
-          displayName: 'regulatory, compliance, standards, domains'
-          href: ./security-controls-policy.md
-        - name: Beveiligingsbasislijn
-          href: security-baseline.md
-    - name: Gepland onderhoud
-      href: concepts-planned-maintenance-notification.md
-    - name: Bedrijfscontinuïteit
-      items:
-        - name: Inleiding tot bedrijfscontinuïteit
-          displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
-          href: concepts-business-continuity.md
-        - name: Back-ups en herstellen
-          href: concepts-backup.md
-    - name: Controleren en afstemmen
-      items:
-        - name: Controleren
-          href: concepts-monitoring.md
-        - name: Logboeken voor langzame query's
-          href: concepts-server-logs.md
-        - name: Auditlogboeken
-          href: concepts-audit-logs.md
-        - name: Query Store
-          href: concepts-query-store.md
-        - name: Inzicht in queryprestaties
-          href: concepts-query-performance-insight.md
-        - name: Aanbevelingen voor prestaties
-          href: concepts-performance-recommendations.md
-        - name: Serverparameters
-          href: concepts-server-parameters.md
-    - name: Ontwikkeling
-      items:
-        - name: Compatibiliteit van stuurprogramma's en hulpprogramma's
-          href: concepts-compatibility.md
-        - name: Verbindingstolerantie
-          href: concepts-connectivity.md
-    - name: Replicatie
-      items:
-        - name: Replicatie van binnenkomende gegevens
-          href: concepts-data-in-replication.md
-        - name: Leesreplica's
-          href: concepts-read-replicas.md
-- name: Instructiegidsen
-  items:
+    - name: Server concepten
+      href: concepts-servers.md
+    - name: Beperkingen
+      href: concepts-limits.md
+    - name: Serverparameters
+      href: concepts-server-parameters.md
     - name: Een server beheren
       items:
         - name: Azure Portal
           href: howto-create-manage-server-portal.md
-    - name: Firewall-regels
-      items:
-        - name: Azure Portal
-          href: howto-manage-firewall-portal.md
-        - name: Azure CLI
-          href: howto-manage-firewall-cli.md
-    - name: Een server terugzetten
-      items:
-        - name: Azure Portal
-          href: howto-restore-server-portal.md
-        - name: Azure CLI
-          href: howto-restore-server-cli.md
-        - name: Azure PowerShell
-          href: howto-restore-server-powershell.md
-    - name: Een database migreren
-      items:
-        - name: Dumpen en terugzetten
-          href: howto-migrate-dump-restore.md
-    - name: Toepassingen koppelen
-      items:
-        - name: Gebruikers maken
-          href: howto-create-users.md
-        - name: Verbindingsreeksen
-          items:
-            - name: Toepassingen koppelen
-              href: howto-connection-string.md
-            - name: Azure PowerShell
-              href: howto-connection-string-powershell.md
-        - name: SSL configureren
-          href: howto-configure-ssl.md
-        - name: TLS configureren
-          href: howto-tls-configurations.md
-        - name: Verbinding maken met omleiding
-          href: howto-redirection.md
-    - name: Parameters van de server configureren
-      items:
-        - name: Azure Portal
-          href: howto-server-parameters.md
-        - name: Azure CLI
-          href: howto-configure-server-parameters-cli.md
-        - name: Azure PowerShell
-          href: howto-configure-server-parameters-using-powershell.md
     - name: Opslag automatisch vergroten
       items:
         - name: Azure Portal
@@ -174,60 +91,6 @@
           href: howto-auto-grow-storage-cli.md
         - name: Azure PowerShell
           href: howto-auto-grow-storage-powershell.md
-    - name: Openbare netwerktoegang weigeren
-      items:
-        - name: Azure Portal
-          href: howto-deny-public-network-access.md
-    - name: Serverlogboeken openen
-      items:
-        - name: Logboeken voor langzame query's
-          items:
-            - name: Azure Portal
-              href: howto-configure-server-logs-portal.md
-            - name: Azure CLI
-              href: howto-configure-server-logs-cli.md
-        - name: Auditlogboeken
-          items:
-            - name: Azure Portal
-              href: howto-configure-audit-logs-portal.md
-            - name: Azure CLI
-              href: howto-configure-audit-logs-cli.md
-    - name: Controleren
-      items:
-        - name: Waarschuwingen maken op basis van metrische gegevens
-          href: howto-alert-metric.md
-    - name: Replicatie
-      items:
-        - name: Replicatie van binnenkomende gegevens configureren
-          href: howto-data-in-replication.md
-        - name: Leesreplica's maken in de Azure-portal
-          href: howto-read-replicas-portal.md
-        - name: 'Leesreplica''s maken met de Azure CLI, REST API'
-          href: howto-read-replicas-cli.md
-        - name: Leesreplica's maken met Azure PowerShell
-          href: howto-read-replicas-powershell.md
-    - name: Problemen oplossen
-      items:
-        - name: Verbindingsfouten oplossen
-          href: howto-troubleshoot-common-connection-issues.md
-        - name: Prestatieproblemen van query's oplossen
-          href: howto-troubleshoot-query-performance.md
-    - name: Advanced Threat Protection
-      items:
-        - name: Azure Portal
-          href: howto-database-threat-protection-portal.md
-    - name: Virtual Network
-      items:
-        - name: Azure Portal
-          href: howto-manage-vnet-portal.md
-        - name: Azure CLI
-          href: howto-manage-vnet-cli.md
-    - name: Private Link
-      items:
-        - name: Azure Portal
-          href: howto-configure-privatelink-portal.md
-        - name: Azure CLI
-          href: howto-configure-privatelink-cli.md
     - name: Server opnieuw opstarten
       items:
         - name: Azure Portal
@@ -236,10 +99,134 @@
           href: howto-restart-server-cli.md
         - name: Azure PowerShell
           href: howto-restart-server-powershell.md
-    - name: Schakelen tussen regio's
+    - name: Server verplaatsen tussen regio's
+      href: howto-move-regions-portal.md
+- name: Hoge beschikbaarheid
+  items:
+    - name: Inleiding tot bedrijfscontinuïteit
+      displayName: 'backup, restore, backups, restores, georestore, geo-restore, outage'
+      href: concepts-business-continuity.md
+    - name: Concepten met hoge Beschik baarheid
+      href: concepts-high-availability.md
+- name: Netwerken
+  items:
+    - name: Connectiviteitsarchitectuur
+      href: concepts-connectivity-architecture.md
+    - name: Concepten van firewall regels
+      href: concepts-firewall-rules.md
+    - name: Firewall regels configureren
+      items:
+        - name: Firewall regels configureren met behulp van Azure Portal
+          href: howto-manage-firewall-portal.md
+        - name: Firewall regels configureren met behulp van Azure CLI
+          href: howto-manage-firewall-cli.md
+    - name: Virtual Network
+      href: concepts-data-access-security-vnet.md
+    - name: Virtual Network configureren
+      items:
+        - name: Azure Portal gebruiken
+          href: howto-manage-vnet-portal.md
+        - name: Azure CLI
+          href: howto-manage-vnet-cli.md
+    - name: Private Link
+      href: concepts-data-access-security-private-link.md
+    - name: Private Link
+      items:
+        - name: Een persoonlijke koppeling configureren met Azure Portal
+          href: howto-configure-privatelink-portal.md
+        - name: Een persoonlijke koppeling configureren met Azure CLI
+          href: howto-configure-privatelink-cli.md
+    - name: Openbare netwerktoegang weigeren
       items:
         - name: Azure Portal
-          href: howto-move-regions-portal.md
+          href: howto-deny-public-network-access.md
+- name: Beveiliging
+  items:
+    - name: Beveiligingsoverzicht
+      href: concepts-security.md
+    - name: Beveiligingsbasislijn
+      href: security-baseline.md
+    - name: Besturingselementen voor beveiliging van Azure Policy
+      displayName: 'regulatory, compliance, standards, domains'
+      href: ./security-controls-policy.md
+    - name: Netwerk beveiliging configureren met SSL
+      href: concepts-ssl-connection-security.md
+    - name: TLS configureren
+      href: howto-tls-configurations.md
+    - name: Advanced Threat Protection
+      href: concepts-data-access-and-security-threat-protection.md
+    - name: Advanced Threat Protection configureren
+      href: howto-database-threat-protection-portal.md
+    - name: Controle concepten
+      href: concepts-audit-logs.md
+    - name: Audit logboeken configureren
+      items:
+        - name: Azure Portal
+          href: howto-configure-audit-logs-portal.md
+        - name: Azure CLI
+          href: howto-configure-audit-logs-cli.md
+- name: Onderhoud van de service
+  items:
+    - name: Gepland onderhoud
+      href: concepts-planned-maintenance-notification.md
+    - name: SSL-basiscertificaat verloopt
+      href: concepts-certificate-rotation.md
+- name: Back-up en herstel
+  items:
+    - name: Concepten
+      href: concepts-backup.md
+    - name: Een server terugzetten
+      items:
+        - name: Azure Portal
+          href: howto-restore-server-portal.md
+        - name: Azure CLI
+          href: howto-restore-server-cli.md
+        - name: Azure PowerShell
+          href: howto-restore-server-powershell.md
+- name: Controleren en afstemmen
+  items:
+    - name: Concepten
+      href: concepts-monitoring.md
+    - name: Logboeken voor langzame query's
+      href: concepts-server-logs.md
+    - name: Toegang tot langzame query logboeken
+      items:
+        - name: Azure Portal
+          href: howto-configure-server-logs-portal.md
+        - name: Azure CLI
+          href: howto-configure-server-logs-cli.md
+    - name: Query Store
+      href: concepts-query-store.md
+    - name: Inzicht in queryprestaties
+      href: concepts-query-performance-insight.md
+    - name: Aanbevelingen voor prestaties
+      href: concepts-performance-recommendations.md
+- name: Replicatie
+  items:
+    - name: Replicatie van binnenkomende gegevens
+      href: concepts-data-in-replication.md
+    - name: Replicatie van gegevens configureren
+      href: howto-data-in-replication.md
+    - name: Leesreplica's
+      href: concepts-read-replicas.md
+    - name: Lees replica's maken
+      items:
+        - name: Leesreplica's maken in de Azure-portal
+          href: howto-read-replicas-portal.md
+        - name: 'Leesreplica''s maken met de Azure CLI, REST API'
+          href: howto-read-replicas-cli.md
+        - name: Leesreplica's maken met Azure PowerShell
+          href: howto-read-replicas-powershell.md
+- name: Migratie
+  items:
+    - name: Een server migreren
+      href: howto-migrate-dump-restore.md
+- name: Problemen oplossen
+  items:
+    - name: Verbindingsfouten oplossen
+      href: howto-troubleshoot-common-connection-issues.md
+    - name: Prestatieproblemen van query's oplossen
+      href: howto-troubleshoot-query-performance.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

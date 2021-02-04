@@ -2,13 +2,13 @@
 title: GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
 description: Meer informatie over het instellen van GitHub Enter prise server op uw Azure VMware-oplossing privécloud.
 ms.topic: how-to
-ms.date: 09/22/2020
-ms.openlocfilehash: 00b3acf721dd7f7a1a15bcd0d24eccf3ca27ff58
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.date: 02/03/2021
+ms.openlocfilehash: 2b05e352fd8a81d6d180d4c60e67ab48465b284f
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326910"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549099"
 ---
 # <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
 
@@ -61,7 +61,7 @@ Pas uw instellingen toe.  Terwijl het exemplaar opnieuw wordt gestart, kunt u do
 
 Wanneer het exemplaar opnieuw is opgestart, maakt u een nieuw beheerders account op het exemplaar. Zorg er ook voor dat u het wacht woord van deze gebruiker noteert.
 
-### <a name="additional-configuration-steps"></a>Aanvullende configuratie stappen
+### <a name="other-configuration-steps"></a>Andere configuratie stappen
 
 Als u uw exemplaar wilt beveiligen voor gebruik in de productie omgeving, kunt u het beste de volgende optionele installatie stappen uitvoeren:
 
@@ -72,7 +72,7 @@ Als u uw exemplaar wilt beveiligen voor gebruik in de productie omgeving, kunt u
     - Storingen in virtualisatie hostsysteem
     - Logisch of fysiek ernstig netwerk
 
-2. [Configure](https://docs.github.com/en/enterprise/admin/configuration/configuring-backups-on-your-appliance) [Back-ups configureren-hulpprogram ma's](https://github.com/github/backup-utils), voorzien in versie-moment opnamen voor herstel na nood gevallen, gehost in Beschik baarheid die gescheiden is van het primaire exemplaar.
+2. [](https://docs.github.com/en/enterprise/admin/configuration/configuring-backups-on-your-appliance) [Back-ups configureren-hulpprogram ma's](https://github.com/github/backup-utils), voorzien in versie-moment opnamen voor herstel na nood gevallen, gehost in Beschik baarheid die gescheiden is van het primaire exemplaar.
 3. De [isolatie van subdomeinen instellen](https://docs.github.com/en/enterprise/admin/configuration/enabling-subdomain-isolation)met behulp van een geldig TLS-certificaat om cross-site scripting en andere gerelateerde beveiligings problemen te beperken.
 
 ## <a name="configuring-blob-storage-for-github-actions"></a>Blob Storage configureren voor GitHub-acties
@@ -182,7 +182,7 @@ Hier gaan we de app beschikbaar maken voor alle organisaties, maar u kunt ook de
 
 ## <a name="optional-configuring-github-connect"></a>Beschrijving GitHub Connect configureren
 
-Hoewel deze stap optioneel is, raden we u aan deze te gebruiken als u open-source acties wilt verbruiken die beschikbaar zijn op GitHub.com. Op die manier kunt u op het werk van anderen samen werken door te verwijzen naar deze herbruikbare acties in uw werk stromen.
+Hoewel deze stap optioneel is, wordt het aanbevolen als u open-source acties wilt gebruiken die beschikbaar zijn op GitHub.com. Zo kunt u het werk van anderen bouwen door te verwijzen naar deze herbruikbare acties in uw werk stromen.
 
 Als u GitHub Connect wilt inschakelen, volgt u de stappen in [automatische toegang tot github.com-acties inschakelen met behulp van github Connect](https://docs.github.com/en/enterprise/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect).
 
@@ -221,16 +221,14 @@ Als alles goed is uitgevoerd, ziet u een nieuw probleem in uw opslag plaats, get
 
 :::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Voor beeld in opslag plaats.":::
 
-Gefeliciteerd. U hebt zojuist uw eerste werk stroom voor acties voltooid op GitHub Enter prise server, die wordt uitgevoerd op uw persoonlijke cloud van Azure VMware-oplossing.
+Gefeliciteerd U hebt zojuist uw eerste werk stroom voor acties voltooid op GitHub Enter prise server, die wordt uitgevoerd op uw persoonlijke cloud van Azure VMware-oplossing.
 
-We gaan gewoon het Opper vlak van wat u kunt doen met GitHub-acties. Voor meer inspiratie kunt u de lijst met acties op [Marketplace van github](https://github.com/marketplace)afhandelen of [uw eigen actie maken](https://docs.github.com/en/actions/creating-actions).
+In dit artikel hebben we een nieuw exemplaar van GitHub Enter prise server ingesteld, het zelf-hostende equivalent van GitHub.com, bovenop uw persoonlijke cloud van Azure VMware-oplossingen. Dit exemplaar bevat ondersteuning voor GitHub-acties en maakt gebruik van Azure Blob Storage voor persistentie van Logboeken en artefacten. Maar we krassen gewoon het Opper vlak van wat u kunt doen met GitHub-acties. Bekijk de lijst met acties op [Marketplace van github](https://github.com/marketplace)of [Maak een eigen](https://docs.github.com/en/actions/creating-actions)actie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebben we een nieuw exemplaar van GitHub Enter prise server ingesteld, het zelf-hostende equivalent van GitHub.com, bovenop uw persoonlijke cloud van Azure VMware-oplossingen. Dit exemplaar bevat ondersteuning voor GitHub-acties en maakt gebruik van Azure Blob Storage voor persistentie van Logboeken en artefacten. Dit is een fantastische combi natie van een moderne, samen werkende en veilige ervaring op het gebied van software ontwikkeling. Het is gebaseerd op een solide basis van de Azure VMware-oplossing, zodat u cloud resources in een vertrouwde instelling kunt gebruiken.
+Nu u hebt gezien hoe u GitHub Enter prise server instelt in de privécloud van uw Azure VMware-oplossing, kunt u het volgende weten: 
 
-Raadpleeg de volgende bronnen voor meer informatie:
-
-- [Aan de slag met GitHub-acties](https://docs.github.com/en/actions)
-- [Word lid van het bèta programma](https://resources.github.com/beta-signup/)
-- [Meer informatie over het beheer van GitHub Enter prise server](https://githubtraining.github.io/admin-training/#/00_getting_started)
+- [Aan de slag met github-acties](https://docs.github.com/en/actions).
+- Deel [nemen aan het bèta programma](https://resources.github.com/beta-signup/).
+- [Beheer van github Enter prise server](https://githubtraining.github.io/admin-training/#/00_getting_started).

@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/24/2021
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 5f70f74accba5df439351547fda7497656e2c06e
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 3fca96c6cf11e0b35cd830fe4c0d8ccac8e66bd2
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986680"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548861"
 ---
-# <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>De set normen aanpassen in uw nalevings dashboard voor regelgeving
+# <a name="customize-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>De set van standaarden aanpassen in het dash board nalevings regelgeving
 
 Azure Security Center vergelijkt voortdurend de configuratie van uw resources met vereisten in de industrie normen,-voor schriften en-benchmarks. Het **nalevings dashboard** van de regelgeving biedt inzicht in uw nalevings postuur op basis van de manier waarop u aan specifieke nalevings vereisten voldoet.
 
@@ -123,5 +123,5 @@ In dit artikel hebt u geleerd hoe u **nalevings normen kunt toevoegen** om uw na
 Zie de volgende pagina's voor gerelateerde materialen:
 
 - [Azure Security-benchmark](../security/benchmarks/introduction.md)
-- [Security Center-nalevings dashboard voor regelgeving](security-center-compliance-dashboard.md)
+- [Security Center compliance-nalevings dashboard](security-center-compliance-dashboard.md) : informatie over het volgen en exporteren van uw nalevings gegevens met Security Center en externe hulpprogram ma's
 - [Werken met beveiligingsbeleid](tutorial-security-policy.md)

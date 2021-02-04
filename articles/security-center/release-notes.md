@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/03/2021
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: cdc29f89307a986b2d71604ca495eac45458632b
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: fe031fa6de86b8059ba175fc4e1df6385ca7e796
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526616"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99551022"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -37,7 +37,8 @@ De updates in februari zijn onder andere:
 
 - [Aanbevelingen voor de beveiliging van Kubernetes-werk belasting uitgebracht voor algemene Beschik baarheid (GA)](#kubernetes-workload-protection-recommendations-released-for-general-availability-ga)
 - [Pagina direct koppelen aan beleid van aanbevelings gegevens](#direct-link-to-policy-from-recommendation-details-page)
-- [Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score](#sql-data-classification-recommendation-no-longer-affect-your-secure-score)
+- [Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score](#sql-data-classification-recommendation-no-longer-affects-your-secure-score)
+- [Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview)
 
 ### <a name="kubernetes-workload-protection-recommendations-released-for-general-availability-ga"></a>Aanbevelingen voor de beveiliging van Kubernetes-werk belasting uitgebracht voor algemene Beschik baarheid (GA)
 
@@ -63,15 +64,21 @@ Wanneer u de details van een aanbeveling bekijkt, is het vaak handig om het onde
 
 Gebruik deze koppeling om de beleids definitie weer te geven en de evaluatie logica te controleren. 
 
-Als u de lijst met aanbevelingen in onze [Naslag Gids voor beveiligings aanbevelingen](recommendations-reference.md)bekijkt, ziet u ook deze koppelingen naar de pagina met beleids definities:
+Als u de lijst met aanbevelingen in onze [Naslag Gids voor beveiligings aanbevelingen](recommendations-reference.md)bekijkt, ziet u ook koppelingen naar de pagina met beleids definities:
 
-:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Toegang tot de Azure Policy-pagina voor een specifiek beleid rechtstreeks op de pagina met Azure Security Center aanbevelingen":::
+:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Toegang tot de Azure Policy-pagina voor een specifiek beleid rechtstreeks op de pagina met Azure Security Center aanbevelingen" lightbox="media/release-notes/view-policy-definition-from-documentation.png":::
 
 
-### <a name="sql-data-classification-recommendation-no-longer-affect-your-secure-score"></a>Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score
+### <a name="sql-data-classification-recommendation-no-longer-affects-your-secure-score"></a>Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score
 
 De aanbeveling **gevoelige gegevens in uw SQL-data bases moeten worden geclassificeerd** die niet langer van invloed zijn op uw beveiligde Score. Dit is de enige aanbeveling in het beveiligings beheer **gegevens classificatie Toep assen** , zodat het besturings element nu een beveiligde Score waarde van 0 heeft.
 
+
+### <a name="workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview"></a>Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)
+
+We hebben een derde gegevens type toegevoegd aan de trigger opties voor uw werk stroom Automatiseringen: wijzigingen in de nalevings beoordeling van de regelgeving.
+
+:::image type="content" source="media/release-notes/regulatory-compliance-triggers-workflow-automation.png" alt-text="Wijzigingen in de nalevings beoordeling van de regelgeving gebruiken om een werk stroom automatisering te activeren" lightbox="media/release-notes/regulatory-compliance-triggers-workflow-automation.png":::
 
 
 ## <a name="january-2021"></a>Januari 2021
@@ -111,7 +118,7 @@ Bestaande aanbevelingen worden niet beïnvloed en naarmate de Bench Mark groeit,
 Ga voor meer informatie naar de volgende pagina's:
 
 - [Meer informatie over Azure Security Benchmark](../security/benchmarks/introduction.md)
-- [De set normen aanpassen in uw nalevings dashboard voor regelgeving](update-regulatory-compliance-packages.md)
+- [De set van standaarden aanpassen in het dash board nalevings regelgeving](update-regulatory-compliance-packages.md)
 
 ### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga"></a>Evaluatie van beveiligings problemen voor on-premises en multi-Cloud machines wordt uitgebracht voor algemene Beschik baarheid (GA)
 
@@ -161,7 +168,7 @@ De overname van subdomeinen is een veelvoorkomende bedreiging van hoge urgentie 
 
 Met de overname van subdomeinen kunnen bedreigings gegevens verkeer dat is bedoeld voor het domein van een organisatie, omleiden naar een site die schadelijke activiteiten uitvoert.
 
-Azure Defender voor App Service detecteert nu Dangling DNS-vermeldingen wanneer een App Service website buiten gebruik wordt gesteld. Dit is het moment waarop de DNS-vermelding verwijst naar een niet-bestaande resource en uw website kwetsbaar is voor een overname van een subdomein. Deze beveiligingen zijn beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een extern domein registratie en van toepassing zijn op zowel App Service op Windows als App Service in Linux.
+Azure Defender voor App Service detecteert nu Dangling DNS-vermeldingen wanneer een App Service website buiten gebruik wordt gesteld. Dit is het moment waarop de DNS-vermelding verwijst naar een niet-bestaande bron en uw website is kwetsbaar voor een overname van een subdomein. Deze beveiligingen zijn beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een extern domein registratie en van toepassing zijn op zowel App Service op Windows als App Service in Linux.
 
 Meer informatie:
 
@@ -499,7 +506,7 @@ Gerelateerde links:
 
 De NIST SP 800-171 R2-standaard is nu beschikbaar als ingebouwd initiatief voor gebruik met het nalevingsdashboard voor Azure Security Center. De toewijzingen voor de controles worden beschreven in [Details van het ingebouwde NIST SP 800-171 R2-nalevingsinitiatief](../governance/policy/samples/nist-sp-800-171-r2.md). 
 
-Als u de standaard wilt toepassen op uw abonnementen en uw nalevingsstatus continu wilt monitoren, gebruikt u de instructies in [De set standaarden in uw nalevingsdasboard aanpassen](update-regulatory-compliance-packages.md).
+Als u de standaard wilt Toep assen op uw abonnementen en voortdurend uw nalevings status wilt controleren, gebruikt u de instructies in [de set met standaarden aanpassen in uw nalevings dashboard voor regelgeving](update-regulatory-compliance-packages.md).
 
 :::image type="content" source="media/release-notes/nist-sp-800-171-r2-standard.png" alt-text="De NIST SP 800 171 R2-standaard in het nalevingsdashboard van Security Center":::
 

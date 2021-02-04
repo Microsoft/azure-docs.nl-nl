@@ -6,20 +6,20 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 10/27/2020
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 674ba1cf03f48eb1c746b115d981740b5b938aab
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 652986c4850a0b51fc86b84133d7e93813423c9a
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919524"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550316"
 ---
 # <a name="automate-responses-to-security-center-triggers"></a>Reacties op Security Center triggers automatiseren
 
 Elk beveiligings programma bevat meerdere werk stromen voor reactie op incidenten. Deze processen kunnen het melden van relevante belanghebbenden, het starten van een wijzigings beheer proces en het Toep assen van specifieke herbemiddelings stappen zijn. Beveiligings experts raden u aan zo veel mogelijk stappen van deze procedures te automatiseren. Automation vermindert de overhead. Het kan ook de beveiliging verbeteren door ervoor te zorgen dat de proces stappen snel, consistent en volgens uw vooraf gedefinieerde vereisten worden uitgevoerd.
 
-In dit artikel wordt de functie werk stroom automatisering van Azure Security Center beschreven. Deze functie kan Logic Apps activeren over beveiligings waarschuwingen en aanbevelingen. U kunt bijvoorbeeld Security Center een e-mail bericht verzenden wanneer er een waarschuwing wordt weer gegeven. U leert ook hoe u Logic Apps maakt met behulp van [Azure Logic apps](../logic-apps/logic-apps-overview.md).
+In dit artikel wordt de functie werk stroom automatisering van Azure Security Center beschreven. Deze functie kan Logic Apps activeren over beveiligings waarschuwingen, aanbevelingen en wijzigingen in de naleving van de regelgeving. U kunt bijvoorbeeld Security Center een e-mail bericht verzenden wanneer er een waarschuwing wordt weer gegeven. U leert ook hoe u Logic Apps maakt met behulp van [Azure Logic apps](../logic-apps/logic-apps-overview.md).
 
 
 ## <a name="availability"></a>Beschikbaarheid
@@ -70,10 +70,12 @@ In dit artikel wordt de functie werk stroom automatisering van Azure Security Ce
 
     De ontwerp functie voor logische Apps ondersteunt deze Security Center-triggers:
 
-    * **Wanneer een Azure Security Center aanbeveling wordt gemaakt of geactiveerd** : als uw logische app gebruikmaakt van een aanbeveling die wordt afgeschaft of vervangen, werkt de automatisering niet meer en moet u de trigger bijwerken. Zie [Azure Security Center opmerkingen](release-notes.md)bij de release als u wijzigingen in aanbevelingen wilt bijhouden.
+    - **Wanneer een Azure Security Center aanbeveling wordt gemaakt of geactiveerd** : als uw logische app gebruikmaakt van een aanbeveling die wordt afgeschaft of vervangen, werkt de automatisering niet meer en moet u de trigger bijwerken. Zie [Azure Security Center opmerkingen](release-notes.md)bij de release als u wijzigingen in aanbevelingen wilt bijhouden.
 
-    * **Wanneer een Azure Security Center waarschuwing wordt gemaakt of geactiveerd** , kunt u de trigger aanpassen zodat deze alleen betrekking heeft op waarschuwingen met de ernst niveaus die u interesseren.
+    - **Wanneer een Azure Security Center waarschuwing wordt gemaakt of geactiveerd** , kunt u de trigger aanpassen zodat deze alleen betrekking heeft op waarschuwingen met de ernst niveaus die u interesseren.
     
+    - **Wanneer een Security Center reglementaire nalevings beoordeling wordt gemaakt of geactiveerd** , worden Automation-activeringen uitgevoerd op basis van updates voor nalevings evaluaties van de regelgeving.
+
     > [!NOTE]
     > Als u de verouderde trigger gebruikt wanneer een reactie op een Azure Security Center waarschuwing wordt geactiveerd, worden uw logische apps niet gestart door de functie werk stroom automatisering. Gebruik in plaats daarvan een van de hierboven genoemde triggers. 
 

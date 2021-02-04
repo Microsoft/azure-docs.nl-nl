@@ -11,12 +11,12 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: ff9bd328dd98fbd614a3bb63a1edddc2027d97b2
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: f0bb354bce0c4696f60e2be5c6186760518c7431
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879778"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549183"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning
 
@@ -102,8 +102,8 @@ Voordat u uw experiment gaat configureren, uploadt u uw gegevensbestand naar uw 
         Kolomkoppen| Geeft aan hoe eventuele koppen van de gegevensset worden behandeld.| Alle bestanden hebben dezelfde koppen
         Rijen overslaan | Geeft aan hoeveel rijen er eventueel worden overgeslagen in de gegevensset.| Geen
 
-    1. Met het formulier **Schema** kunt u uw gegevens verder configureren voor dit experiment. Voor dit voorbeeld maken we geen selecties. Selecteer **Next**.
-
+    1. Met het formulier **Schema** kunt u uw gegevens verder configureren voor dit experiment. Voor dit voor beeld selecteert u de wissel knop voor de **day_of_week**, zodat u deze niet kunt gebruiken. Selecteer **Next**.
+         ![Schema formulier](./media/tutorial-first-experiment-automated-ml/schema-tab-config.gif)
     1. Controleer of de informatie in het formulier **Details bevestigen** overeenkomt met wat voorheen in de formulieren **Basisinformatie, Gegevensarchief en bestandselectie** en **Instellingen en voorbeeld** is ingevuld.
     
     1. Selecteren **Maken** om uw gegevensset te voltooien.
@@ -170,12 +170,6 @@ Nadat u uw gegevens hebt geladen en geconfigureerd, kunt u uw experiment instell
         
         Selecteer **Opslaan**.
     
-    1. Selecteer **Instellingen voor featurization weergeven**. Selecteer voor dit voorbeeld de schakeloptie voor de functie **day_of_week**, zodat deze geen deel uitmaakt van featurization in dit experiment.
-
-        ![Featurization-selectie](./media/tutorial-first-experiment-automated-ml/featurization-setting-config.gif)   
- 
-        Selecteer **Opslaan**.
-
 1. Selecteer **Voltooien** om het experiment uit te voeren. Het scherm **Details uitvoering** opent en de **Uitvoeringsstatus** wordt bovenaan weergegeven terwijl de voorbereidingen voor het experiment beginnen. Deze status wordt bijgewerkt wanneer het experiment wordt uitgevoerd. Meldingen worden ook weergegeven in de rechterbovenhoek van Studio, zodat u op de hoogte blijft van de status van het experiment.
 
 >[!IMPORTANT]

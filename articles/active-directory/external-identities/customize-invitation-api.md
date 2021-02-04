@@ -5,18 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 04/11/2017
+ms.date: 02/03/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7cbcdb4b947e4b45a5473dc0f9f0252b5ad1d5c
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8160859bb782ee8ffc4fef5ee03b61b6f54be1bb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442045"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548658"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>Azure Active Directory B2B-samenwerkings-API en-aanpassing
 
@@ -67,6 +66,16 @@ De API biedt de volgende mogelijkheden:
     "invitedUserType": "Member"
     ```
 
+## <a name="determine-if-a-user-was-already-invited-to-your-directory"></a>Bepalen of een gebruiker al is uitgenodigd voor uw Directory
+
+U kunt de API voor uitnodigingen gebruiken om te bepalen of een gebruiker al bestaat in de resource-Tenant. Dit kan handig zijn wanneer u een App ontwikkelt die gebruikmaakt van de API voor uitnodigingen voor het uitnodigen van een gebruiker. Als de gebruiker al bestaat in de resource directory, ontvangt deze geen uitnodiging, dus u kunt eerst een query uitvoeren om te bepalen of het al-e-mail bericht bestaat als UPN of een andere aanmeldings eigenschap.
+
+1. Zorg ervoor dat het e-mail domein van de gebruiker geen deel uitmaakt van het geverifieerde domein van uw resource Tenant.
+2. Gebruik in de resource-Tenant de volgende gebruikers query ophalen waarbij {0} het e-mail adres is dat u uitnodigt:
+
+   ```
+   “userPrincipalName eq '{0}' or mail eq '{0}' or proxyAddresses/any(x:x eq 'SMTP:{0}') or signInNames/any(x:x eq '{0}') or otherMails/any(x:x eq '{0}')"
+   ```
 
 ## <a name="authorization-model"></a>Autorisatie model
 

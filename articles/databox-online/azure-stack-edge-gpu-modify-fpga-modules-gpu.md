@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/01/2021
+ms.date: 02/03/2021
 ms.author: alkohli
-ms.openlocfilehash: c23022a1a1ee7796ada32d9111855b9e3bfb7d46
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 6e9e1319b90ab859c63c022e478bc26c4b8aedeb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539618"
+ms.locfileid: "99550215"
 ---
 # <a name="run-existing-iot-edge-modules-from-azure-stack-edge-pro-fpga-devices-on-azure-stack-edge-pro-gpu-device"></a>Bestaande IoT Edge-modules uitvoeren vanaf Azure Stack Edge Pro FPGA-apparaten op Azure Stack Edge Pro GPU-apparaat
 
@@ -205,8 +205,7 @@ Als u geheugen-en CPU-gebruik wilt instellen, gebruikt u processor limieten voor
 ```
 De specificatie van geheugen en CPU is niet nodig, maar is in het algemeen goed te gebruiken. Als `requests` niet wordt opgegeven, worden de waarden die zijn ingesteld in limieten gebruikt als mini maal vereist. 
 
-Het gebruik van gedeeld geheugen voor modules vereist ook een andere manier. <!-- should we give an example-->
-
+Het gebruik van gedeeld geheugen voor modules vereist ook een andere manier. U kunt bijvoorbeeld de host IPC-modus gebruiken voor gedeeld geheugen gebruik tussen live video analyses en oplossingen voor het afnemen van problemen zoals beschreven in [Live video Analytics implementeren op Azure stack Edge](../media-services/live-video-analytics-edge/deploy-azure-stack-edge-how-to.md#deploy-live-video-analytics-edge-module-using-azure-portal).
 
 
 ## <a name="web-proxy"></a>Webproxy 

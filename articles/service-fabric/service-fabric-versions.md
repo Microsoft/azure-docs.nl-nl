@@ -3,12 +3,12 @@ title: De versie van uw Azure Service Fabric-cluster bijwerken
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: a99b38a33a5bb83345898769b466ce0cab0a4d4d
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 5abfe83fcb68fcab7df22f1fd266cc695f2b9c80
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918106"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549065"
 ---
 # <a name="upgrade-your-azure-service-fabric-cluster-version"></a>De versie van uw Azure Service Fabric-cluster bijwerken
 
@@ -40,7 +40,7 @@ Azure Service Fabric-clusters die worden uitgevoerd op versies van 5,7 naar 6.3.
 Voer een upgrade uit naar een ondersteunde versie van Service Fabric om uitval tijd of verlies van functionaliteit die betrekking heeft op deze wijziging te voor komen. Zorg ervoor dat op uw clusters ten minste de volgende versies worden uitgevoerd om problemen in uw omgeving te voor komen.
 
 > [!Note]
-> Alle uitgebrachte versies van 7,2 bevatten de benodigde wijzigingen.
+> **Alle uitgebrachte versies van 7,2 bevatten de benodigde wijzigingen**.
   
   | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch |
   | --- | --- |--- |
@@ -75,9 +75,15 @@ Om uitval tijd of verlies van functionaliteit te voor komen, moet u ervoor zorge
 De versies van Service Fabric in de tabel bevatten de benodigde wijzigingen om verlies van functionaliteit te voor komen. Zorg ervoor dat u een van deze versies gebruikt.  
 
 > [!Note]
-> Alle release versies van 7,2 bevatten de benodigde wijzigingen.
+> **Azure service Fabric-clusters die worden uitgevoerd op versie 6,5, moeten meerdere upgrades tegelijk uitvoeren voordat de infrastucuture worden gewijzigd om verlies van functionaliteit aan het cluster te voor komen**. 
+>   -   1. Voer een upgrade uit naar 7.0.466. **Clusters waarop het Windows-besturings systeem wordt uitgevoerd en waarop de functie Windows-containers is ingeschakeld, kunnen zich niet op deze tussenliggende versie betreden. De volgende stap (II) moet hieronder worden uitgevoerd. dat wil zeggen.  Voer een upgrade uit naar veiliger en compatibele versie om service onderbrekingen te voor komen**
+>   -   2. Voer een upgrade uit naar de meest recente versie van de klacht in 7,0 * release (7.0.478) of een van de hogere versies die hieronder worden weer gegeven.
 
-  | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch |
+
+> [!Note]
+> **Alle release versies van 7,2 bevatten de benodigde wijzigingen**.
+
+ | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch |
   | --- | --- |--- |
   | Windows | 7,0. * | 7.0.478.9590 |
   | Windows | 7,1. * | 7.1.503.9590 |

@@ -138,7 +138,7 @@
       href: service-fabric-best-practices.md
 - name: 'Controle, bewaking en bewerkingen'
   items:
-    - name: Geavanceerde beveiliging tegen bedreigingen
+    - name: Bescherming tegen bedreigingen
       href: threat-detection.md
     - name: Logboekregistratie en bewaking in Azure
       href: log-audit.md

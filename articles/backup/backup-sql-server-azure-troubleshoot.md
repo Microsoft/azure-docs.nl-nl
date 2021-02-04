@@ -3,12 +3,12 @@ title: Problemen met SQL Server database back-up oplossen
 description: Informatie over het oplossen van back-ups van SQL Server-data bases die worden uitgevoerd op virtuele machines van Azure met Azure Backup.
 ms.topic: troubleshooting
 ms.date: 06/18/2019
-ms.openlocfilehash: d502a4188b4f9f383188804f86abbb9a6d05d146
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 1e4ee2bdcd0826b655aa71d83674ff1e0c06a8cb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99429463"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549895"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Problemen met SQL Server database back-up oplossen met behulp van Azure Backup
 
@@ -202,6 +202,13 @@ De bewerking is geblokkeerd omdat u de limiet hebt bereikt van het aantal bewerk
 |---|---|---|
 De bewerking is geblokkeerd omdat de kluis de maximum limiet heeft bereikt voor dergelijke bewerkingen die zijn toegestaan in een periode van 24 uur. | Wanneer u de Maxi maal toegestane limiet voor een bewerking in een periode van 24 uur hebt bereikt, wordt deze fout weer gegeven. Deze fout wordt meestal weer gegeven wanneer er op schaal bewerkingen worden uitgevoerd, zoals het wijzigen van beleid of automatische beveiliging. In tegens telling tot het geval van CloudDosAbsoluteLimitReached is het niet veel mogelijk om deze status op te lossen. Azure Backup service voert de bewerkingen in feite intern uit voor alle betreffende items.<br> Als er bijvoorbeeld sprake is van een groot aantal gegevens bronnen dat wordt beveiligd met een beleid en u het beleid probeert te wijzigen, worden de beveiligings taken voor elk van de beveiligde items geactiveerd en kan de maximum limiet voor dergelijke bewerkingen per dag worden bereikt.| Azure Backup service wordt deze bewerking na 24 uur automatisch opnieuw uitgevoerd.
 
+### <a name="workloadextensionnotreachable"></a>WorkloadExtensionNotReachable
+
+| Foutbericht | Mogelijke oorzaken | Aanbevolen actie |
+|---|---|---|
+De extensie bewerking voor de AzureBackup-workload is mislukt. | De VM wordt afgesloten (of) de virtuele machine kan geen verbinding maken met Azure Backup service vanwege problemen met de Internet verbinding.| -Controleer of de virtuele machine actief is en verbinding heeft met internet.<br>- [Registreer de extensie opnieuw op de SQL Server-VM](https://docs.microsoft.com/azure/backup/manage-monitor-sql-database-backup#re-register-extension-on-the-sql-server-vm).
+
+
 ### <a name="usererrorvminternetconnectivityissue"></a>UserErrorVMInternetConnectivityIssue
 
 | Foutbericht | Mogelijke oorzaken | Aanbevolen actie |
@@ -212,7 +219,7 @@ De virtuele machine kan geen verbinding maken met Azure Backup service vanwege p
 
 Controleer op een of meer van de volgende symptomen voordat u de bewerking opnieuw registreren start:
 
-- Alle bewerkingen (zoals back-up, herstel en configuratie back-up) mislukken op de virtuele machine met een van de volgende fout codes: **WorkloadExtensionNotReachable**, **UserErrorWorkloadExtensionNotInstalled**, **WorkloadExtensionNotPresent**, **WorkloadExtensionDidntDequeueMsg**.
+- Alle bewerkingen (zoals back-up, herstel en configuratie back-up) mislukken op de virtuele machine met een van de volgende fout codes: **[WorkloadExtensionNotReachable](#workloadextensionnotreachable)**, **UserErrorWorkloadExtensionNotInstalled**, **WorkloadExtensionNotPresent**, **WorkloadExtensionDidntDequeueMsg**.
 - Als het gebied voor de **back-upstatus** voor het back-upitem **niet bereikbaar** is, geeft u alle andere oorzaken uit die kunnen resulteren in dezelfde status:
 
   - Onvoldoende machtigingen voor het uitvoeren van back-upbewerkingen op de VM.

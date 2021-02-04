@@ -4,12 +4,12 @@ description: Vind video demo's voor het werken met Azure-Services in de portal. 
 keywords: ''
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 131ec94e321388a3578cd2fd59fdb2fd75339c5e
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: d0b356729f2fab418b2322aeb20a44fc74cb199c
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852605"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550438"
 ---
 # <a name="azure-portal-how-to-video-series"></a>Videoserie met instructies voor de Azure-portal
 
@@ -17,17 +17,17 @@ In de video serie van de Azure Portal wordt beschreven hoe u kunt werken met Azu
 
 ## <a name="featured-video"></a>Aanbevolen video
 
-In deze aanbevolen video laten we u zien hoe u aan de slag kunt gaan in azure met behulp van het Azure Quick Start Center.
+In deze aanbevolen video laten we zien hoe u Azure Cost Management weergaven kunt gebruiken.
 
-> [!VIDEO https://www.youtube.com/embed/mb5k9nXMtBM]
+> [!VIDEO https://www.youtube.com/embed/VRJA5bn2VH0]
 
-[Aan de slag met Azure met behulp van het Azure Quick Start Center](https://www.youtube.com/watch?v=mb5k9nXMtBM)
+[Azure Cost Management weergaven gebruiken](https://www.youtube.com/watch?v=VRJA5bn2VH0)
 
 Over deze recente Video's die u mogelijk hebt gemist:
 
-| [Toepassingen beheren in azure Kubernetes service](https://www.youtube.com/watch?v=YfARHb52Bp4)  | [Azure-werkmappen maken met behulp van Logboeken en para meters](https://www.youtube.com/watch?v=EC7n1Oo6D-o)  | [Een aangepast domein toevoegen en beveiligen op uw App Service web-app](https://www.youtube.com/watch?v=bXP6IvNYISw) |
+| [Medicijnen gebruiken om te filteren in de Azure Portal](https://www.youtube.com/watch?v=XyKh_3NxUlM)  | [Een visualisatie weergave van uw resources krijgen](https://www.youtube.com/watch?v=wudqkkJd5E4)  | [Inhoud vastmaken aan uw Azure Portal-dash board](https://www.youtube.com/watch?v=eyOJkhYItSg) |
 | ------| ------ | ------ |
-| [![Afbeelding van YouTube video over het beheren van toepassingen in azure Kubernetes service](https://i.ytimg.com/vi/YfARHb52Bp4/hqdefault.jpg)](https://www.youtube.com/watch?YfARHb52Bp4) | [![Afbeelding van YouTube video over het bouwen van Azure-werkmappen met behulp van Logboeken en para meters](https://i.ytimg.com/vi/EC7n1Oo6D-o/hqdefault.jpg)](http://www.youtube.com/watch?v=EC7n1Oo6D-o) | [![Afbeelding van YouTube video over het toevoegen en beveiligen van een aangepast domein op uw App Service web-app](https://i.ytimg.com/vi/bXP6IvNYISw/hqdefault.jpg)](http://www.youtube.com/watch?v=bXP6IvNYISw) |
+| [![Afbeelding van YouTube video over het gebruik van Pills om in de Azure Portal te filteren](https://i.ytimg.com/vi/XyKh_3NxUlM/hqdefault.jpg)](https://www.youtube.com/watch?XyKh_3NxUlM) | [![Afbeelding van YouTube video over het verkrijgen van een visualisatie weergave van uw resources](https://i.ytimg.com/vi/wudqkkJd5E4/hqdefault.jpg)](http://www.youtube.com/watch?v=wudqkkJd5E4) | [![Afbeelding van YouTube video over het vastmaken van inhoud aan uw Azure Portal-dash board](https://i.ytimg.com/vi/eyOJkhYItSg/hqdefault.jpg)](http://www.youtube.com/watch?v=eyOJkhYItSg) |
 
 ## <a name="video-playlist"></a>Video-afspeel lijst
 

@@ -4,8 +4,7 @@ description: In dit artikel vindt u een overzicht van het test proces voor indri
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: barbkess
-editor: TomSh
+manager: rkarlin
 ms.assetid: 695d918c-a9ac-4eba-8692-af4526734ccc
 ms.service: security
 ms.subservice: security-fundamentals
@@ -13,22 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/24/2020
+ms.date: 02/03/2021
 ms.author: terrylan
-ms.openlocfilehash: 84229ce3562f9cdcc4b55704eaa4f3b891a43d75
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 9f65133f622c71189f35a1533e278ca09ab02085
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968939"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550198"
 ---
 # <a name="penetration-testing"></a>Penetratietesten
 
 Een van de voor delen van het gebruik van Azure voor het testen en implementeren van toepassingen is dat u snel omgevingen kunt maken. U hoeft zich geen zorgen te maken over uw eigen on-premises hardware voor het aanvragen van opdrachten, voor het verkrijgen en ' rekken en stapelen '.
 
 Het snel maken van omgevingen is geweldig, maar u moet er wel voor zorgen dat u uw normale beveiligings toelaat. Een van de dingen die u waarschijnlijk wilt doen, is de toepassingen die u in azure implementeert, door penetratie testen.
-
-Mogelijk weet u dat micro soft de [Azure-omgeving indringings tests](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)uitvoert. Deze tests helpen Azure-verbeteringen te stimuleren.
 
 Er worden geen indringings tests van uw toepassing voor u uitgevoerd, maar we begrijpen dat u dat wilt en moet testen uitvoeren op uw eigen toepassingen. Het is een goed idee, omdat wanneer u de beveiliging van uw toepassingen verbetert, u het volledige Azure-ecosysteem beter kunt beveiligen.
 

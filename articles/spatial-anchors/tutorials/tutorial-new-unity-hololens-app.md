@@ -5,15 +5,15 @@ author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
 ms.author: parkerra
-ms.date: 11/20/2020
+ms.date: 2/3/2021
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ee0bf9b4ce009f37dd1931d4ed030defa24e7d38
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-ms.translationtype: HT
+ms.openlocfilehash: 0233e58a404721586af0ae2fbdf78dbab6d424ed
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95996254"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550375"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Zelfstudie: Stapsgewijze instructies voor het maken van een nieuwe HoloLens Unity-app met behulp van Azure Spatial Anchors
 
@@ -140,36 +140,13 @@ We kunnen nu de Update()-lus gebruiken om te controleren of er een actie in de w
 
 ## <a name="get-the-azure-spatial-anchors-sdk"></a>De Azure Spatial Anchors SDK ophalen
 
-## <a name="via-unity-package-manager-upm-package"></a>[Via het UPM-pakket (Unity Package Manager)](#tab/UPMPackage)
+### <a name="download-packages"></a>Pakketten downloaden
+[!INCLUDE [Download Unity Packages](../../../includes/spatial-anchors-unity-download-packages.md)]
 
-Deze methode is compatibel met Unity versie 2019.1+.
+### <a name="import-packages"></a>Pakketten importeren
+[!INCLUDE [Import Unity Packages](../../../includes/spatial-anchors-unity-import-packages.md)]
 
-### <a name="add-the-registry-to-your-unity-project"></a>Het register toevoegen aan uw Unity-project
-
-1. Ga in een verkenner naar de map `Packages` van uw Unity-project. Open in een teksteditor manifestbestand `manifest.json` van het project.
-2. Voeg boven aan het bestand, op hetzelfde niveau als de sectie `dependencies`, de volgende vermelding toe om het register van Azure Spatial Anchors in uw project op te nemen. De vermelding `scopedRegistries` geeft voor Unity aan waar de Azure Spatial Anchors-SDK-pakketten zijn te vinden.
-
-    [!code-json[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-scoped-registry-setup.md?range=9-19&highlight=2-10)]
-
-### <a name="add-the-sdk-package-to-your-unity-project"></a>Het SDK-pakket toevoegen aan uw Unity-project
-
-1. Voeg een vermelding met de naam van het Azure Spatial Anchors Windows-SDK-pakket(`com.microsoft.azure.spatial-anchors-sdk.windows`) en de versie van het pakket toe aan de sectie `dependencies` in uw projectmanifest. Hieronder vindt u een voorbeeld.
-
-    [!code-json[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-scoped-registry-setup.md?range=9-20&highlight=12)]
-
-2. Sla het bestand `manifest.json` op en sluit het vervolgens. Wanneer u terugkeert naar Unity, zou Unity de wijziging in het projectmanifest automatisch moeten detecteren en de opgegeven pakketten ophalen. U kunt de map `Packages` in uw projectweergave uitvouwen om te controleren of de juiste pakketten zijn geïmporteerd.
-
-## <a name="via-unity-asset-package"></a>[Via het Unity-assetpakket](#tab/UnityAssetPackage)
-
-> [!WARNING]
-> De verdeling van Unity-assetpakket voor de Azure Spatial Anchors-SDK wordt afgeschaft na SDK-versie 2.5.0.
-
-Laten nu de Azure Spatial Anchors-SDK gaan downloaden. Ga naar de pagina met [GitHub-releases van Azure Spatial Anchors](https://github.com/Azure/azure-spatial-anchors-samples/releases). Download **AzureSpatialAnchors.unitypackage** onder **Assets**. Ga in Unity naar **Assets** selecteer **Import Package** > **Custom Package...** . Navigeer naar het pakket en selecteer **Open**.
-
-Schakel in het nieuwe venster **Import Unity Package** dat wordt weergegeven de optie **Plugins** uit en selecteer vervolgens **Import** in de rechterbenedenhoek.
-
----
-
+### <a name="prepare-code"></a>Code voorbereiden
 Voeg in uw **Visual Studio**-oplossing de volgende import toe aan uw `<ProjectName>\Assets\Scripts\AzureSpatialAnchorsScript.cs`:
 
 [!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=18-21&highlight=1)]

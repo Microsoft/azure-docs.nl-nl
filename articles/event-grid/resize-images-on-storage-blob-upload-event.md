@@ -3,12 +3,12 @@ title: 'Zelfstudie: Formaat van geüploade afbeeldingen automatisch wijzigen met
 description: 'Zelfstudie: U kunt instellen dat Azure Event Grid wordt geactiveerd als er blobs worden geüpload in Azure Storage. Dit is handig om afbeeldingsbestanden naar Azure Storage die worden geüpload naar Azure Storage te verzenden naar andere services, zoals Azure Functions, voor het aanpassen van het formaat en andere verbeteringen.'
 ms.topic: tutorial
 ms.date: 07/07/2020
-ms.openlocfilehash: 47ac8cad6d7c2ead8d25aa3525aafdab735f9e71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: ca231fc65162fe38f4dcb8b8d5677ef42c7807bb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326555"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550508"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Zelfstudie: Formaat van geüploade afbeeldingen automatisch wijzigen met Event Grid
 
@@ -43,7 +43,7 @@ Vereisten voor het voltooien van deze zelfstudie:
 
 U moet de vorige zelfstudie over blobopslag hebben voltooid: [Afbeeldingsgegevens uploaden in de cloud met Azure Storage][previous-tutorial].
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+U hebt een [Azure-abonnement](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing)nodig. Deze zelf studie werkt niet met het **gratis** abonnement. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -263,7 +263,7 @@ Een gebeurtenisabonnement geeft aan welke door de provider gegenereerde gebeurte
 
 1.  Selecteer **Integratie**, kies vervolgens de **Event Grid-trigger** en vervolgens **Event Grid-abonnement maken**.
 
-    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="De functie Miniatuur in de portal kiezen" :::
+    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="Navigeren naar Event Grid-abonnement toevoegen in de Azure Portal" :::
 
 1. Gebruik de instellingen voor het gebeurtenisabonnement zoals die zijn opgegeven in de tabel onder de afbeelding.
     
@@ -283,7 +283,7 @@ Een gebeurtenisabonnement geeft aan welke door de provider gegenereerde gebeurte
 
 1. Open het tabblad **Filters** en voer de volgende acties uit:
     1. Selecteer de optie **Filteren van onderwerpen inschakelen**.
-    1. Voor **Onderwerp begint met** voert u de volgende waarde in: **/blobServices/default/containers/images/blobs/** .
+    1. Voer voor **onderwerp begint met** de volgende waarde in: **/blobServices/default/containers/images/**.
 
         ![Een filter opgeven voor het gebeurtenisabonnement](./media/resize-images-on-storage-blob-upload-event/event-subscription-filter.png)
 

@@ -3,14 +3,14 @@ title: Modules beheren in Azure Automation
 description: In dit artikel leest u hoe u Power shell-modules gebruikt om cmdlets in te scha kelen in runbooks en DSC-resources in DSC-configuraties.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 01/25/2021
+ms.date: 02/01/2021
 ms.topic: conceptual
-ms.openlocfilehash: d62ed96f86078839e66a4cf2ce71f304de2abf4d
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a784127cfd6019629f1c2714d0f36850406c3b9d
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98936623"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548765"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Modules beheren in Azure Automation
 
@@ -40,7 +40,11 @@ Dit zijn bekende beperkingen met betrekking tot de sandbox. De aanbevolen tijdel
 
 ## <a name="default-modules"></a>Standaard modules
 
-De volgende tabel bevat de modules die standaard door Azure Automation worden geïmporteerd wanneer u uw Automation-account maakt. Met Automation kunnen nieuwere versies van deze modules worden geïmporteerd. U kunt de oorspronkelijke versie echter niet verwijderen uit uw Automation-account, zelfs als u een nieuwere versie verwijdert. Houd er rekening mee dat deze standaard modules verschillende AzureRM-modules bevatten. 
+De volgende tabel bevat de modules die standaard door Azure Automation worden geïmporteerd wanneer u uw Automation-account maakt. Met Automation kunnen nieuwere versies van deze modules worden geïmporteerd. U kunt de oorspronkelijke versie echter niet verwijderen uit uw Automation-account, zelfs als u een nieuwere versie verwijdert. Houd er rekening mee dat deze standaard modules verschillende AzureRM-modules bevatten.
+
+De standaard modules worden ook wel globale modules genoemd. In de Azure Portal is de eigenschap **Global module** **True** wanneer een module wordt weer gegeven die werd geïmporteerd toen het account werd gemaakt.
+
+![Scherm opname van eigenschap Global module in azure Portal](../media/modules/automation-global-modules.png)
 
 Automation importeert de hoofdmap AZ module niet automatisch in nieuwe of bestaande Automation-accounts. Zie [Migrating to AZ modules](#migrate-to-az-modules)(Engelstalig) voor meer informatie over het werken met deze modules.
 

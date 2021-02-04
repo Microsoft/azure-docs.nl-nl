@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: raynew
-ms.openlocfilehash: bb8cfa3e1aa874f807ce46b254a22f3003c2f600
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: ab4b8f5a691bc8e4091e9f3f01b709391deeddb0
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222812"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550705"
 ---
 # <a name="common-questions"></a>Veelgestelde vragen
 
@@ -49,6 +49,10 @@ Met Resource Mover kunt u momenteel de volgende resources tussen regio's verplaa
 ### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Kan ik resources verplaatsen tussen abonnementen wanneer ik deze Verplaats tussen regio's?
 
 U kunt het abonnement wijzigen nadat u resources naar de doel regio hebt verplaatst. Meer [informatie](../azure-resource-manager/management/move-resource-group-and-subscription.md) over het verplaatsen van resources naar een ander abonnement. 
+
+### <a name="does-azure-resource-move-service-store-customer-data"></a>Worden klant gegevens door Azure resource Move service opgeslagen? 
+Nee. De resource Move-service slaat geen klant gegevens op; hierin worden alleen meta gegevens opgeslagen die de tracering en voortgang van de resources die zijn geselecteerd voor verplaatsing, vergemakkelijkt door de klant.
+
 
 ### <a name="where-is-the-metadata-for-moving-across-regions-stored"></a>Waar worden de meta gegevens voor het verplaatsen van meerdere opgeslagen regio's?
 

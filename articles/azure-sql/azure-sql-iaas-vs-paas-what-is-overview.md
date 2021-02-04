@@ -12,21 +12,21 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 07/27/2020
-ms.openlocfilehash: 99703acc4965a38337a39fe23cc19cafddd1531d
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.openlocfilehash: 7f267b4909817e89444883403bef6662771332ad
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791117"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550875"
 ---
 # <a name="what-is-azure-sql"></a>Wat is Azure SQL? 
 [!INCLUDE[appliesto-asf](includes/appliesto-asf.md)]
 
 Azure SQL is een serie beheerde, veilige en intelligente producten waarvoor de SQL Server-database-engine in de Azure-cloud wordt gebruikt.
 
-- **Azure SQL Database** : ondersteun moderne cloudtoepassingen met een intelligente, beheerde databaseservice die serverloze rekenkracht biedt. 
-- **Azure SQL Managed Instance** : moderniseer uw bestaande SQL Server-toepassingen op schaal met een intelligente, volledig beheerde instantie als een service, met bijna 100% functiepariteit met de SQL Server-database-engine. Geschikt voor de meeste migraties naar de cloud.
-- **SQL Server op Azure-VM's** : maak gemakkelijk gebruik van lift-and-shift voor uw SQL Server-workloads en behoud 100% SQL Server-compatibiliteit en toegang op besturingssysteemniveau. 
+- **Azure SQL Database**: ondersteun moderne cloudtoepassingen met een intelligente, beheerde databaseservice die serverloze rekenkracht biedt. 
+- **Azure SQL Managed Instance**: moderniseer uw bestaande SQL Server-toepassingen op schaal met een intelligente, volledig beheerde instantie als een service, met bijna 100% functiepariteit met de SQL Server-database-engine. Geschikt voor de meeste migraties naar de cloud.
+- **SQL Server op Azure-VM's**: maak gemakkelijk gebruik van lift-and-shift voor uw SQL Server-workloads en behoud 100% SQL Server-compatibiliteit en toegang op besturingssysteemniveau. 
  
 Azure SQL is gebaseerd op de vertrouwde SQL Server-engine, zodat u toepassingen eenvoudig kunt migreren en de hulpmiddelen, talen en bronnen die u kent, kunt blijven gebruiken. Uw vaardigheden en ervaring worden overgebracht naar de cloud, zodat u nog meer kunt doen met wat u al hebt. 
 
@@ -53,7 +53,7 @@ Besteed meer tijd aan innoveren en minder tijd aan het patchen en bijwerken van 
 
 Azure controleert uw gegevens voortdurend op bedreigingen. Met Azure SQL kunt u het volgende doen:
 
-- Mogelijke bedreigingen in realtime oplossen met intelligente [Advanced Threat Detection](../security/fundamentals/threat-detection.md#advanced-threat-detection-features-other-azure-services) en proactieve waarschuwingen voor de evaluatie van beveiligingsproblemen. 
+- Mogelijke bedreigingen in realtime oplossen met intelligente [Advanced Threat Detection](../security/fundamentals/threat-detection.md#threat-protection-features-other-azure-services) en proactieve waarschuwingen voor de evaluatie van beveiligingsproblemen. 
 - Profiteren van toonaangevende beveiliging met meerdere lagen met [ingebouwd beveiligingsbeheer](https://azure.microsoft.com/overview/security/), waaronder T-SQL, verificatie, netwerken en sleutelbeheer. 
 - Gebruikmaken van de meest uitgebreide [nalevings](https://azure.microsoft.com/overview/trusted-cloud/compliance/)dekking van elke clouddatabaseservice. 
 
@@ -128,7 +128,7 @@ Of u nu een startup bent die geld nodig heeft of een team in een goedlopend bedr
 Op dit moment worden zowel **SQL Database** als **SQL Managed Instance** als een service verkocht en zijn ze beschikbaar met verschillende opties en in verschillende servicelagen met verschillende prijzen voor resources die allemaal per uur worden gefactureerd tegen een vast tarief op basis van de servicelaag en de gekozen rekenkracht. Zie [Aankoopmodel op basis van DTU voor SQL Database](database/service-tiers-dtu.md) en [Aankoopmodel op basis van vCore voor zowel SQL Database als SQL Managed Instance](database/service-tiers-vcore.md) voor de meest recente informatie over de huidige ondersteunde servicelagen, rekengrootten en opslaghoeveelheden.
 
 - Bij SQL Database kunt u een servicelaag kiezen die aan uw behoeften voldoet met diverse prijzen vanaf $ 5/maand voor de basislaag en u kunt [elastische pools](database/elastic-pool-overview.md) maken om resources te delen tussen databases om de kosten te verlagen en gebruikspieken het hoofd te bieden.
-- Bij SQL Managed Instance kunt u ook uw eigen licentie meenemen. Zie voor meer informatie over het meenemen van uw eigen licentie [License Mobility via Software Assurance in Azure](https://azure.microsoft.com/pricing/license-mobility/) of gebruik de [Azure Hybrid Benefit-calculator](https://azure.microsoft.com/pricing/hybrid-benefit/#sql-database) om te zien hoe u **tot 40% bespaart** .
+- Bij SQL Managed Instance kunt u ook uw eigen licentie meenemen. Zie voor meer informatie over het meenemen van uw eigen licentie [License Mobility via Software Assurance in Azure](https://azure.microsoft.com/pricing/license-mobility/) of gebruik de [Azure Hybrid Benefit-calculator](https://azure.microsoft.com/pricing/hybrid-benefit/#sql-database) om te zien hoe u **tot 40% bespaart**.
 
 Bovendien wordt uitgaand internetverkeer in rekening gebracht bij u tegen het reguliere [tarief voor gegevensoverdracht](https://azure.microsoft.com/pricing/details/data-transfers/). U kunt servicelagen en de rekenkracht dynamisch aanpassen om te voldoen aan de uiteenlopende doorvoerbehoeften van uw toepassing.
 

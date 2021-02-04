@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Load Balancer?
       href: load-balancer-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Een openbare load balancer maken - Portal
       href: quickstart-load-balancer-standard-public-portal.md
@@ -79,6 +79,8 @@
       href: load-balancer-standard-availability-zones.md
     - name: Zwevende IP-configuratie
       href: load-balancer-floating-ip.md
+    - name: Distributielijst
+      href: distribution-mode-concepts.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn

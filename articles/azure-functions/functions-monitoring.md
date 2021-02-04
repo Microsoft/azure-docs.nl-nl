@@ -5,12 +5,12 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.custom: devx-track-csharp, fasttrack-edit, contperf-fy21q2, devx-track-js
-ms.openlocfilehash: 6dc3c582466fe0646b0350213947ff2173368bde
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 637f09c5ee52928631b965dfa6caea9368b44991
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936835"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550756"
 ---
 # <a name="monitor-azure-functions"></a>Azure Functions controleren
 
@@ -88,6 +88,10 @@ Raadpleeg de ontwikkelaars handleiding voor uw taal voor meer informatie over he
 + [JavaScript](functions-reference-node.md#write-trace-output-to-logs) 
 + [PowerShell](functions-reference-powershell.md#logging)
 + [Python](functions-reference-python.md#logging)
+
+## <a name="analyze-data"></a>Gegevens analyseren
+
+De gegevens die zijn verzameld uit de functie-app worden standaard opgeslagen in Application Insights. In de [Azure Portal](https://portal.azure.com)biedt Application Insights een uitgebreide set visualisaties van uw telemetriegegevens. U kunt inzoomen op fouten logboeken en query's uitvoeren op gebeurtenissen en metrische gegevens. Zie [Azure functions telemetrie in Application Insights analyseren](analyze-telemetry-data.md)voor meer informatie, waaronder eenvoudige voor beelden van het weer geven en opvragen van uw verzamelde gegevens. 
 
 ## <a name="streaming-logs"></a>Streaming-logboeken
 

@@ -7,29 +7,29 @@ ms.author: jimmyca
 ms.date: 02/20/2020
 ms.topic: article
 ms.service: azure-app-configuration
-ms.openlocfilehash: 640be797b2653f9e6c969306b7e2b99393b99c39
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 12a62bbd06cf9adf3b5978bb061e1d014599b44c
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078201"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550739"
 ---
 # <a name="reacting-to-azure-app-configuration-events"></a>Reageren op Azure-app configuratie gebeurtenissen
 
 Met Azure-app configuratie gebeurtenissen kunnen toepassingen reageren op wijzigingen in sleutel waarden. Dit gebeurt zonder dat er complexe code of dure en inefficiënte polling services nodig zijn. In plaats daarvan worden gebeurtenissen gepusht via [Azure Event grid](https://azure.microsoft.com/services/event-grid/) naar abonnees zoals [Azure functions](https://azure.microsoft.com/services/functions/), [Azure Logic apps](https://azure.microsoft.com/services/logic-apps/)of zelfs naar uw eigen aangepaste HTTP-listener. Kritiek, u betaalt alleen voor wat u gebruikt.
 
-Azure-app configuratie gebeurtenissen worden verzonden naar de Azure Event Grid die betrouw bare leverings services beschikbaar maakt voor uw toepassingen via een uitgebreid beleid voor opnieuw proberen en levering van onbestelbare berichten. Zie [Event grid aflevering van berichten en probeer het opnieuw](../event-grid/delivery-and-retry.md).
+Azure-app configuratie gebeurtenissen worden verzonden naar de Azure Event Grid, waarmee betrouw bare leverings Services voor uw toepassingen kunnen worden uitgevoerd via een uitgebreid beleid voor opnieuw proberen en levering van onbestelbare berichten. Zie [Event grid aflevering van berichten en probeer het opnieuw](../event-grid/delivery-and-retry.md).
 
 Algemene scenario's voor app-configuratie gebeurtenissen zijn onder andere het vernieuwen van de toepassings configuratie, het activeren van implementaties of een configuratie gerichte werk stroom. Als de wijzigingen niet worden doorgevoerd, maar voor uw scenario een onmiddellijke reactie nodig is, kan de architectuur op basis van gebeurtenissen bijzonder efficiënt zijn.
 
-Bekijk de [Route Azure-app configuratie gebeurtenissen naar een aangepast webeindpunt-cli](./howto-app-configuration-event.md) voor een kort voor beeld. 
+Bekijk het [gebruik Event grid voor gegevens wijzigings meldingen](./howto-app-configuration-event.md) voor een snel voor beeld. 
 
 ![Event Grid model](./media/event-grid-functional-model.png)
 
 ## <a name="available-azure-app-configuration-events"></a>Beschik bare Azure-app configuratie gebeurtenissen
 Gebeurtenisraster maakt gebruik van [gebeurtenisabonnementen](../event-grid/concepts.md#event-subscriptions) om gebeurtenisberichten te routen naar abonnees. Azure-app configuratie gebeurtenis abonnementen kunnen twee typen gebeurtenissen bevatten:  
 
-> |Gebeurtenisnaam|Beschrijving|
+> |Naam van de gebeurtenis|Description|
 > |----------|-----------|
 > |`Microsoft.AppConfiguration.KeyValueModified`|Wordt geactiveerd wanneer een sleutel waarde wordt gemaakt of vervangen|
 > |`Microsoft.AppConfiguration.KeyValueDeleted`|Wordt geactiveerd wanneer een sleutel waarde wordt verwijderd|
@@ -37,7 +37,7 @@ Gebeurtenisraster maakt gebruik van [gebeurtenisabonnementen](../event-grid/conc
 ## <a name="event-schema"></a>Gebeurtenisschema
 Azure-app configuratie gebeurtenissen bevatten alle informatie die u nodig hebt om te reageren op wijzigingen in uw gegevens. U kunt een gebeurtenis voor de configuratie van een app identificeren omdat de eigenschap Event type begint met ' micro soft. AppConfiguration '. Meer informatie over het gebruik van Event Grid gebeurtenis eigenschappen wordt beschreven in [Event grid-gebeurtenis schema](../event-grid/event-schema.md).  
 
-> |Eigenschap|Type|Beschrijving|
+> |Eigenschap|Type|Description|
 > |-------------------|------------------------|-----------------------------------------------------------------------|
 > |onderwerp|tekenreeks|Volledige Azure Resource Manager-id van de app-configuratie waarmee de gebeurtenis wordt verzonden.|
 > |Onderwerp|tekenreeks|De URI van de sleutel waarde die het onderwerp van de gebeurtenis is.|
@@ -87,4 +87,4 @@ Toepassingen die app-configuratie gebeurtenissen verwerken, moeten de volgende a
 Meer informatie over Event Grid en het geven van Azure-app configuratie gebeurtenissen een try:
 
 - [Over Event Grid](../event-grid/overview.md)
-- [Azure-app configuratie gebeurtenissen naar een aangepast eind punt van een web routeren](./howto-app-configuration-event.md)
+- [Event Grid voor gegevens wijzigings meldingen gebruiken](./howto-app-configuration-event.md)

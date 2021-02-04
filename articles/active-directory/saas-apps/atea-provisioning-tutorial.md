@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2021
 ms.author: Zhchia
-ms.openlocfilehash: 51410bd86fa9679aea76f6d5c48f267ddec79026
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 67b114ac355b293db61d00b89816ab73aaa2e5b2
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430693"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550265"
 ---
 # <a name="tutorial-configure-atea-for-automatic-user-provisioning"></a>Zelf studie: Atea configureren voor automatische gebruikers inrichting
 
@@ -48,7 +48,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 ## <a name="step-2-configure-atea-to-support-provisioning-with-azure-ad"></a>Stap 2. Atea configureren voor ondersteuning bij het inrichten met Azure AD
 
-Voor het configureren van een Internet verbinding voor het inrichten met Azure AD moet de **Tenant-URL** en het **geheime token** worden opgehaald door een e-mail naar het [Atea-ondersteunings team](mailto:servicedesk@atea.dk)te verwijderen. Deze waarden worden ingevoerd in het veld **geheime token** en **Tenant-URL** op het tabblad inrichten van de toepassing van uw Atea in azure Portal.
+Als u Atea wilt configureren voor ondersteuning bij het inrichten met Azure AD, schrijft u een e-mail naar het ondersteunings team van Atea <SSO.Support@atea.com>
 
 ## <a name="step-3-add-atea-from-the-azure-ad-application-gallery"></a>Stap 3. Atea toevoegen vanuit de Azure AD-toepassings galerie
 

@@ -7,14 +7,14 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 01/25/2021
 ms.author: lle
-ms.openlocfilehash: 8a722550d12d019e25ff39de27cc0df2c2762a01
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 3735d7b21faf62905ed4c06dbef80c9737e7329e
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98942053"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99551073"
 ---
-# <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration runtime oplossen
+# <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration Runtime oplossen
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
@@ -244,7 +244,7 @@ Installeer Stuur Programma's voor de bron-en doel gegevens opslag in de doel-IR 
  
 Als het verkeer niet via het netwerk kan worden door gegeven tussen twee gegevens opslag (bijvoorbeeld omdat deze zijn geconfigureerd in twee virtuele netwerken), is het mogelijk dat u niet in één activiteit kopieert, zelfs niet als de IR is geïnstalleerd. Als u het kopiëren in één activiteit niet kunt volt ooien, kunt u twee Kopieer activiteiten maken met twee IRs, elk in een ventilator: 
 * Eén IR kopiëren van Data Store 1 naar Azure Blob Storage
-* Kopieer een andere IR van Azure Blob Storage naar ddatastore 2. 
+* Kopieer een andere IR vanuit Azure Blob Storage naar Data Store 2. 
 
 Deze oplossing kan de vereiste voor het gebruik van de IR simuleren om een brug te maken waarmee twee niet-verbonden gegevens opslag worden verbonden.
 
@@ -710,7 +710,7 @@ Deze melding is van toepassing op de volgende scenario's:
 
 Controleren of u dit ondervindt:
 
-- U *wordt niet* beïnvloed als u firewall regels definieert op basis van FQDN-namen (Fully Qualified Domain names) die gebruikmaken van de methode die wordt beschreven in [een firewall configuratie en acceptatie lijst instellen voor IP-adressen](data-movement-security-considerations.md#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway).
+- U *wordt niet* beïnvloed als u firewall regels definieert op basis van FQDN-namen (Fully Qualified Domain names) die gebruikmaken van de methode die wordt beschreven in [een firewall configuratie en acceptatie lijst instellen voor IP-adressen](data-movement-security-considerations.md#firewall-configurations-and-allow-list-setting-up-for-ip-addresses).
 
 - Dit *wordt* beïnvloed als u de acceptatie lijst expliciet inschakelt voor uitgaande IP-adressen in uw bedrijfs firewall.
 

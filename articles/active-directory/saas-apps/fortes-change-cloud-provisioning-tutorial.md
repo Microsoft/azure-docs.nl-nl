@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2021
 ms.author: Zhchia
-ms.openlocfilehash: 89e64b6e8018fafb22820e8594bc2b3c888bb04a
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 43b783d9462205b01d3ac4de0c5779fdc9864470
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732145"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550426"
 ---
 # <a name="tutorial-configure-fortes-change-cloud-for-automatic-user-provisioning"></a>Zelf studie: Veertigs wijzigen Cloud voor automatische gebruikers inrichting
 
@@ -50,11 +50,11 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 ## <a name="step-2-configure-fortes-change-cloud-to-support-provisioning-with-azure-ad"></a>Stap 2. De ondersteuning voor het inrichten met Azure AD configureren voor de service Veertigs wijzigen
 
-1. Meld u aan met uw beheerders account om de wijzigings Cloud te Veertign. Klik op het **Instellingen pictogram** en navigeer vervolgens naar **scim-instellingen**.
+1. Meld u aan met uw beheerders account om de wijzigings Cloud te Veertign. Klik op het **Instellingen pictogram** en navigeer vervolgens naar **User Provisioning (scim)**.
 
     [![De instelling ](media/fortes-change-cloud-provisioning-tutorial/scim-settings.png) voor het wijzigen van de Cloud scim in Fort](media/fortes-change-cloud-provisioning-tutorial/scim-settings.png#lightbox)
 
-2. Kopieer in het nieuwe venster het **primaire token** en sla het op. Deze waarde wordt ingevoerd in het veld geheime token op het tabblad inrichten van de toepassing changes Cloud in de Azure Portal.
+2. Kopieer in het nieuwe venster de **Tenant-URL** en het **primaire token** en sla deze op. De Tenant-URL wordt ingevoerd in het veld voor de **Tenant-URL** * en het primaire token wordt ingevoerd in het veld **geheime** *-token op het tabblad inrichten van de toepassing changes Cloud in de Azure Portal.
      
       [![Het primaire token van veertig veranderingen in de Cloud](media/fortes-change-cloud-provisioning-tutorial/primary-token.png)](media/fortes-change-cloud-provisioning-tutorial/primary-token.png#lightbox)
 

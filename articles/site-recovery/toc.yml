@@ -478,6 +478,8 @@
       href: hyper-v-vmm-powershell-resource-manager.md
     - name: Automation-runbooks aan herstelplannen toevoegen
       href: site-recovery-runbook-automation.md
+    - name: ARM-sjablonen
+      href: asr-arm-templates.md
 - name: Bewaking
   items:
     - name: Veelgestelde vragen over bewaking

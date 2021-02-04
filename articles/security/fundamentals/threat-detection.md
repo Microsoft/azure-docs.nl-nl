@@ -1,10 +1,10 @@
 ---
-title: Detectie van Azure Advanced Threat | Microsoft Docs
-description: Meer informatie over de ingebouwde geavanceerde detectie functie voor bedreigingen voor Azure, zoals de Azure AD Identity Protection-Service.
+title: Beveiliging van Azure Threat | Microsoft Docs
+description: Meer informatie over de ingebouwde functie voor beveiliging tegen bedreigingen voor Azure, zoals de Azure AD Identity Protection-Service.
 services: security
 documentationcenter: na
-author: UnifyCloud
-manager: barbkess
+author: TerryLanfear
+manager: rkarlin
 editor: TomSh
 ms.assetid: ''
 ms.service: security
@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/24/2021
-ms.author: TomSh
-ms.openlocfilehash: c8fbb2f6d858b2f654ff404bef3b415bf170ab37
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.date: 02/03/2021
+ms.author: terrylan
+ms.openlocfilehash: eb8332bda2105c3f83c0c1cc28fb7db4b1ca0102
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747270"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549922"
 ---
-# <a name="azure-advanced-threat-detection"></a>Geavanceerde bedreigingsdetectie van Azure
+# <a name="azure-threat-protection"></a>Beveiliging van Azure Threat
 
-Azure biedt ingebouwde functionaliteit voor de detectie van geavanceerde bedreigingen via Services als Azure Active Directory (Azure AD), Azure Monitor-logboeken en Azure Security Center. Deze verzameling beveiligings Services en-mogelijkheden biedt een eenvoudige en snelle manier om te begrijpen wat er gebeurt in uw Azure-implementaties.
+Azure biedt ingebouwde functies voor bedreigings beveiliging via Services als Azure Active Directory (Azure AD), Azure Monitor-logboeken en Azure Security Center. Deze verzameling beveiligings Services en-mogelijkheden biedt een eenvoudige en snelle manier om te begrijpen wat er gebeurt in uw Azure-implementaties.
 
 Azure biedt een breed scala aan opties voor het configureren en aanpassen van de beveiliging om te voldoen aan de vereisten van uw app-implementaties. In dit artikel wordt beschreven hoe u aan deze vereisten voldoet.
 
@@ -84,23 +84,9 @@ Naast het bieden van waardevolle services zelf, kunnen Azure Monitor logboeken w
 
 ### <a name="holistic-security-and-compliance-posture"></a>Holistische beveiligings-en nalevings postuur
 
-Het [Log Analytics beveiliging en audit-dash board](../../security-center/security-center-introduction.md) biedt een uitgebreid overzicht van de IT-beveiligings postuur van uw organisatie, met ingebouwde Zoek query's voor de belangrijkste problemen die uw aandacht vereisen. Het Beveiliging en audit-dash board is het begin scherm voor alles wat te maken heeft met beveiliging in Azure Monitor-Logboeken. Het zorgt voor hoogwaardig inzicht in de beveiligingsstatus van uw computers. U kunt ook alle gebeurtenissen van de afgelopen 24 uur, 7 dagen of een andere aangepaste periode bekijken.
+[Azure Security Center](../../security-center/security-center-introduction.md) biedt een uitgebreid overzicht van de IT-beveiligings postuur van uw organisatie, met ingebouwde Zoek query's voor belang rijke problemen die uw aandacht vereisen. Het zorgt voor hoogwaardig inzicht in de beveiligingsstatus van uw computers. U kunt ook alle gebeurtenissen van de afgelopen 24 uur, 7 dagen of een andere aangepaste periode weer geven.
 
 Azure Monitor logboeken helpen u snel en eenvoudig inzicht te krijgen in de algemene beveiligings postuur van elke omgeving, in de context van IT-bewerkingen, inclusief software-update beoordeling, antimalware-evaluatie en configuratie basislijnen. Beveiligings logboek gegevens zijn gemakkelijk toegankelijk om de beveiligings-en nalevings controle processen te stroom lijnen.
-
-![Het Log Analytics Beveiliging en audit dash board](./media/threat-detection/azure-threat-detection-fig3.jpg)
-
-Het Log Analytics Beveiliging en audit dash board is onderverdeeld in vier hoofd categorieën:
-
--   **Beveiligings domeinen**: Hiermee kunt u beveiligings records na verloop van tijd verkennen. toegang tot malware-evaluaties; Update-evaluaties; informatie over netwerk beveiliging, identiteit en toegang weer geven; computers weer geven met beveiligings gebeurtenissen; en snel toegang tot het dash board van Azure Security Center.
-
--   Opvallende **problemen**: Hiermee kunt u snel het aantal actieve problemen en de ernst van de problemen identificeren.
-
--   **Detecties (preview)**: Hiermee kunt u aanvals patronen identificeren door beveiligings waarschuwingen weer te geven die voor uw resources worden uitgevoerd.
-
--   **Threat Intelligence**: Hiermee kunt u aanvals patronen identificeren door het totale aantal servers met uitgaand schadelijk IP-verkeer, het type schadelijke dreigingen en een kaart van de ip's-locaties weer te geven.
-
--   **Veelvoorkomende beveiligings query's**: bevat een lijst met de meest voorkomende beveiligings query's die u kunt gebruiken om uw omgeving te bewaken. Wanneer u een query selecteert, wordt het zoek venster geopend en worden de resultaten voor de query weer gegeven.
 
 ### <a name="insight-and-analytics"></a>Inzicht en analyse
 In het midden van [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md) bevindt zich de opslag plaats, die wordt gehost door Azure.
@@ -109,21 +95,16 @@ In het midden van [Azure monitor logboeken](../../azure-monitor/log-query/log-qu
 
 U kunt gegevens in de opslag plaats verzamelen van verbonden bronnen door gegevens bronnen te configureren en oplossingen toe te voegen aan uw abonnement.
 
-![Het dash board Azure Monitor logboeken](./media/threat-detection/azure-threat-detection-fig5.png)
-
 Gegevens bronnen en oplossingen maken elk afzonderlijke record typen met hun eigen set eigenschappen, maar u kunt ze wel samen analyseren in query's naar de opslag plaats. U kunt dezelfde hulpprogram ma's en methoden gebruiken om te werken met een verscheidenheid aan gegevens die door verschillende bronnen worden verzameld.
-
 
 De meeste interactie met Azure Monitor Logboeken is via de Azure Portal, die in een browser wordt uitgevoerd en die u toegang biedt tot configuratie-instellingen en meerdere hulpprogram ma's om verzamelde gegevens te analyseren en er actie op te ondernemen. Vanuit de portal kunt u het volgende gebruiken:
 * [Zoek opdrachten in Logboeken](../../azure-monitor/log-query/log-query-overview.md) waar u query's samen stelt om verzamelde gegevens te analyseren.
 * [Dash boards](../../azure-monitor/learn/tutorial-logs-dashboards.md), die u kunt aanpassen met grafische weer gaven van uw meest waardevolle Zoek opdrachten.
 * [Oplossingen](../../azure-monitor/insights/solutions.md)die aanvullende functionaliteit en analyse hulpprogramma's bieden.
 
-![Analyse hulpprogramma's](./media/threat-detection/azure-threat-detection-fig6.png)
-
 Oplossingen voegen functionaliteit toe aan Azure Monitor Logboeken. Ze worden voornamelijk uitgevoerd in de Cloud en bieden een analyse van de gegevens die worden verzameld in de log Analytics-opslag plaats. Oplossingen kunnen ook nieuwe record typen definiëren die kunnen worden geanalyseerd met Zoek opdrachten in Logboeken of door een aanvullende gebruikers interface te gebruiken die door de oplossing in het dash board van log Analytics wordt geboden.
 
-Het Beveiliging en audit-dash board is een voor beeld van deze typen oplossingen.
+Security Center is een voor beeld van deze typen oplossingen.
 
 ### <a name="automation-and-control-alert-on-security-configuration-drifts"></a>Automatisering en controle: waarschuwing over de beveiligings configuratie van drift
 
@@ -216,7 +197,7 @@ Azure Security Center werkt met beveiligings onderzoek en data wetenschappen tea
 
 Deze gecombineerde inspanningen culminate in nieuwe en verbeterde detecties, die u direct kunt voor delen. U hoeft geen actie te ondernemen.
 
-## <a name="advanced-threat-detection-features-other-azure-services"></a>Geavanceerde functies voor detectie van bedreigingen: andere Azure-Services
+## <a name="threat-protection-features-other-azure-services"></a>Beveiligings functies voor bedreigingen: andere Azure-Services
 
 ### <a name="virtual-machines-microsoft-antimalware"></a>Virtuele machines: micro soft antimalware
 
@@ -348,9 +329,9 @@ Met hulpprogramma's om schaduw-IT te onthullen, risico's te beoordelen, beleid a
 | -------- | ----------- |
 | Ontdekken | Onthul Shadow IT met Cloud App Security. Krijg meer inzicht door apps, activiteiten, gebruikers, gegevens en bestanden in uw cloudomgeving te detecteren. Detecteer apps van derden die zijn verbonden met uw cloud.|
 |Onderzoeken | Onderzoek uw cloud-apps met forensische hulpprogramma's voor de cloud om riskante apps, specifieke gebruikers en bestanden in uw netwerk diepgaand te onderzoeken. Vind patronen in de gegevens die vanuit de cloud worden verzameld. U kunt rapporten genereren om uw cloud te bewaken. |
-| Beheer | Beperk risico's door beleidsregels en waarschuwingen in te stellen om maximale controle over het netwerkverkeer in de cloud te behalen. Gebruik Cloud App Security om uw gebruikers te migreren naar veilige, goedgekeurde alternatieven voor de cloud-app. |
+| Controle | Beperk risico's door beleidsregels en waarschuwingen in te stellen om maximale controle over het netwerkverkeer in de cloud te behalen. Gebruik Cloud App Security om uw gebruikers te migreren naar veilige, goedgekeurde alternatieven voor de cloud-app. |
 | Beveiligen | Gebruik Cloud App Security om toepassingen goed te keuren of te verbieden, preventie van gegevens verlies af te dwingen, machtigingen te beheren en te delen en aangepaste rapporten en waarschuwingen te genereren. |
-| Beheer | Beperk risico's door beleidsregels en waarschuwingen in te stellen om maximale controle over het netwerkverkeer in de cloud te behalen. Gebruik Cloud App Security om uw gebruikers te migreren naar veilige, goedgekeurde alternatieven voor de cloud-app. |
+| Controle | Beperk risico's door beleidsregels en waarschuwingen in te stellen om maximale controle over het netwerkverkeer in de cloud te behalen. Gebruik Cloud App Security om uw gebruikers te migreren naar veilige, goedgekeurde alternatieven voor de cloud-app. |
 
 
 ![Cloud App Security diagram](./media/threat-detection/azure-threat-detection-fig14.png)
@@ -367,7 +348,7 @@ Cloud App Security integreert de zicht baarheid met uw Cloud door:
 
 Bij het verzamelen van gegevens uit deze bronnen, voert Cloud App Security geavanceerde analyse uit. U wordt direct op de hoogte gesteld van afwijkende activiteiten en u krijgt meer inzicht in uw cloudomgeving. U kunt een beleid configureren in Cloud App Security en dit vervolgens gebruiken om alles in uw cloudomgeving te beveiligen.
 
-## <a name="third-party-advanced-threat-detection-capabilities-through-the-azure-marketplace"></a>Geavanceerde detectie mogelijkheden van derden via de Azure Marketplace
+## <a name="third-party-threat-protection-capabilities-through-the-azure-marketplace"></a>Mogelijkheden voor beveiliging tegen bedreigingen van derden via Azure Marketplace
 
 ### <a name="web-application-firewall"></a>Web Application Firewall
 

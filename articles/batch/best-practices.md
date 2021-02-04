@@ -1,14 +1,14 @@
 ---
 title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
-ms.date: 12/18/2020
+ms.date: 02/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 95dca907f9380de29bd3c9b0e52b120c9114b5ee
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 278aae410af536a5cc41e55dabf1dd71de04151b
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732408"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550858"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -169,6 +169,8 @@ Als u een probleem ondervindt met betrekking tot het gedrag van een knoop punt o
 
 Bij batch-accounts voor gebruikers abonnementen kan automatische besturingssysteem upgrades de taak voortgang onderbreken, met name als de taken langlopend zijn. Het [maken van idempotent-taken](#build-durable-tasks) kan helpen bij het verminderen van fouten die zijn veroorzaakt door deze onderbrekingen. U wordt ook aangeraden [upgrades van installatie kopieën van besturings systemen te plannen voor tijden waarop de taken niet naar verwachting worden uitgevoerd](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md#manually-trigger-os-image-upgrades).
 
+Voor Windows-groepen `enableAutomaticUpdates` is standaard ingesteld op `true` . Het toestaan van automatische updates wordt aanbevolen, maar u kunt deze waarde instellen op `false` Als u er zeker van wilt zijn dat een update van het besturings systeem onverwacht niet wordt uitgevoerd.
+
 ## <a name="isolation-security"></a>Isolatie beveiliging
 
 Als voor uw scenario het isoleren van taken van elkaar is vereist, moet u deze in afzonderlijke groepen laten staan. Een pool is de grens van beveiligings isolatie in batch, en twee groepen zijn standaard niet zichtbaar of kunnen met elkaar communiceren. Vermijd het gebruik van afzonderlijke batch-accounts als isolatie methode.
@@ -189,8 +191,7 @@ Raadpleeg de volgende richt lijnen met betrekking tot de connectiviteit in uw ba
 
 ### <a name="network-security-groups-nsgs-and-user-defined-routes-udrs"></a>Netwerk beveiligings groepen (Nsg's) en door de gebruiker gedefinieerde routes (Udr's)
 
-Bij het inrichten van [batch-Pools in een virtueel netwerk](batch-virtual-network.md), moet u ervoor zorgen dat u voldoet aan de richt lijnen met betrekking tot het gebruik van de `BatchNodeManagement` service tags, poorten, protocollen en richting van de regel.
-Het gebruik van het servicetag wordt sterk aanbevolen, in plaats van het gebruik van de onderliggende batch service-IP-adressen. Dit komt doordat de IP-adressen na verloop van tijd kunnen worden gewijzigd. Het rechtstreeks gebruiken van IP-adressen van batch Services kan leiden tot instabiliteit, onderbrekingen of storingen voor uw batch-Pools.
+Bij het inrichten van [batch-Pools in een virtueel netwerk](batch-virtual-network.md), moet u ervoor zorgen dat u voldoet aan de richt lijnen met betrekking tot het gebruik van de `BatchNodeManagement` service tags, poorten, protocollen en richting van de regel. Het gebruik van het servicetag wordt sterk aanbevolen, in plaats van het gebruik van de onderliggende batch service-IP-adressen. Dit komt doordat de IP-adressen na verloop van tijd kunnen worden gewijzigd. Het rechtstreeks gebruiken van IP-adressen van batch Services kan leiden tot instabiliteit, onderbrekingen of storingen voor uw batch-Pools.
 
 Voor door de gebruiker gedefinieerde routes (Udr's), moet u ervoor zorgen dat u over een proces beschikt om de batch service-IP-adressen periodiek bij te werken in uw route tabel, omdat deze adressen in de loop van de tijd veranderen. Zie [on-premises service Tags](../virtual-network/service-tags-overview.md)voor meer informatie over het verkrijgen van de lijst met IP-adressen van batch-service. De IP-adressen van de batch-service worden gekoppeld aan de servicetag `BatchNodeManagement` (of de regionale variant die overeenkomt met de regio van uw batch-account).
 

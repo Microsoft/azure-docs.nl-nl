@@ -4,12 +4,12 @@ description: Meer informatie over het weer geven en opvragen van Azure Functions
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 2a991157962b0588e3d49510e8a82a9abcfb9aed
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 9e03a36824853a3e43bbf8628fd12481cfbcaf25
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493767"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549555"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Azure Functions telemetrie in Application Insights analyseren 
 
@@ -60,7 +60,7 @@ Zie de [Application Insights-documentatie](/azure/application-insights/)voor mee
 
 De volgende gebieden van Application Insights kunnen nuttig zijn bij het evalueren van het gedrag, de prestaties en de fouten in uw functies:
 
-| Onderzoeken | Beschrijving |
+| Onderzoeken | Description |
 | ---- | ----------- |
 | **[Fouten](../azure-monitor/app/asp-net-exceptions.md)** |  Grafieken en waarschuwingen maken op basis van functie fouten en server uitzonderingen. De **naam** van de bewerking is de naam van de functie. Storingen in afhankelijkheden worden niet weer gegeven, tenzij u aangepaste telemetrie implementeert voor afhankelijkheden. |
 | **[Prestaties](../azure-monitor/app/performance-counters.md)** | Analyseer prestatie problemen door het resource gebruik en de door Voer per **Cloud-rolinstanties** weer te geven. Deze prestatie gegevens kunnen nuttig zijn voor het opsporen van fouten in scenario's waarbij functies worden bogging van uw onderliggende resources. |
@@ -139,6 +139,18 @@ Bij het uitvoeren van een [verbruiks abonnement](consumption-plan.md)wordt de ui
 De volgende telemetrie-query's zijn specifiek voor metrische gegevens die van invloed zijn op de kosten van het uitvoeren van functies in het verbruiks abonnement.
 
 [!INCLUDE [functions-consumption-metrics-queries](../../includes/functions-consumption-metrics-queries.md)]
+
+## <a name="azure-monitor-metrics"></a>Azure Monitor metrische gegevens
+
+Naast de telemetriegegevens die zijn verzameld door Application Insights, kunt u ook gegevens ophalen over de manier waarop de functie-app wordt uitgevoerd vanuit [Azure monitor metrische](../azure-monitor/platform/data-platform-metrics.md)gegevens. Naast de gebruikelijke [metrische gegevens die beschikbaar zijn voor app service-apps](../app-service/web-sites-monitor.md#understand-metrics), zijn er twee metrische gegevens die specifiek zijn voor functies die van belang zijn:
+
+| Metrisch | Beschrijving |
+| ---- | ---- |
+| **FunctionExecutionCount** | Aantal uitvoeringen van functie geeft het aantal keer aan dat uw functie-app is uitgevoerd. Dit is een correlatie tussen het aantal keren dat een functie wordt uitgevoerd in uw app. Deze metrische gegevens worden momenteel niet ondersteund voor Premium-en speciale (App Service)-abonnementen die worden uitgevoerd op Linux. |
+| **FunctionExecutionUnits** | Eenheden voor de uitvoering van functies zijn een combi natie van uitvoer tijd en het geheugen gebruik.  Geheugen gegevens zijn momenteel niet beschikbaar via Azure Monitor. Als u echter het geheugen gebruik van uw app wilt optimaliseren, kunt u de gegevens van de prestatie meter items die worden verzameld door Application Insights gebruiken. Deze metrische gegevens worden momenteel niet ondersteund voor Premium-en speciale (App Service)-abonnementen die worden uitgevoerd op Linux.|
+
+Voor meer informatie over het berekenen van de kosten voor een verbruiks abonnement met Application Insights gegevens raadpleegt u [kosten voor verbruiks plan schatten](functions-consumption-costs.md). Zie aan de slag [met Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md)voor meer informatie over het gebruik van de monitor Verkenner voor het weer geven van metrische gegevens.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

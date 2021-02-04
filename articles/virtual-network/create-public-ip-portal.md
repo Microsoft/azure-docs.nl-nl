@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 02a6e934b517cdd118b6175d9cfef73bee4c996d
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 7d0c83f1ae18d36557a7a5b0222aee2905e05cb7
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223003"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550232"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Snelstartgids: een openbaar IP-adres maken met behulp van de Azure Portal
 
 In dit artikel wordt beschreven hoe u een open bare IP-adres bron maakt met behulp van de Azure Portal. Zie [open bare IP-adressen](./public-ip-addresses.md)voor meer informatie over de resources waaraan dit kan worden gekoppeld, het verschil tussen de basis-en standaard-SKU en andere gerelateerde informatie.  In dit voor beeld richten we zich alleen op IPv4-adressen. Zie voor meer informatie over IPv6-adressen [IPv6 voor Azure VNet](./ipv6-overview.md).
 
-# <a name="standard-sku---using-zones"></a>[**Standaard-SKU-zones gebruiken**](#tab/option-create-public-ip-standard-zones)
+# <a name="standard-sku"></a>[**Standaard SKU**](#tab/option-create-public-ip-standard-zones)
 
 Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres te maken met de naam **myStandardZRPublicIP**.
 
@@ -37,16 +37,16 @@ Voer de volgende stappen uit om een standaard zone-redundant openbaar IP-adres t
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | selecteer **Standard**         |
     | Laag (indien weer gegeven *)                  | **Regionaal** selecteren         |
-    | Naam                    | *MyStandardZRPublicIP* invoeren          |
+    | Name                    | *MyStandardZRPublicIP* invoeren          |
     | IP-adrestoewijzing   | Opmerking: dit wordt vergrendeld als ' statisch '                                        |
     | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
     | DNS-naamlabel          | Laat de waarde leeg    |
     | Abonnement            | Selecteer uw abonnement.   |
     | Resourcegroep          | Selecteer **nieuwe maken** , voer myResourceGroup in en selecteer **OK** . |
-    | Locatie                | Selecteer **VS Oost 2**      |
-    | Beschikbaarheidszone       | **Zone selecteren-redundant** of specifieke zone kiezen (zie opmerking hieronder) |
+    | Locatie                | Selecteer **US - oost 2**      |
+    | Beschikbaarheidszone       | Selecteer **zone-redundant**, geen zone of specifieke zone kiezen (zie opmerking hieronder) |
 
-Houd er rekening mee dat dit alleen geldige selecties zijn in regio's met [Beschikbaarheidszones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  (U kunt ook een specifieke zone in deze regio's selecteren, maar het is niet mogelijk om een zonegebonden fout te maken.)
+Houd er rekening mee dat dit alleen geldige selecties zijn in regio's met [Beschikbaarheidszones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  (U kunt ook een specifieke zone in deze regio's selecteren, maar het is niet mogelijk om een zonegebonden fout te maken.)  Zie [overzicht van beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview)voor meer informatie over beschikbaarheids zones.
 
 \* = De laag maakt deel uit van de functionaliteit voor [Load Balancer van meerdere regio's](../load-balancer/cross-region-overview.md) , momenteel als preview-versie beschikbaar.
 
@@ -64,13 +64,13 @@ Voer de volgende stappen uit om een eenvoudig, statisch openbaar IP-adres te mak
     | ---                     | ---                         |
     | IP-versie              | IPv4 selecteren                 |    
     | SKU                     | selecteer **Standard**         |
-    | Naam                    | *MyBasicPublicIP* invoeren          |
+    | Name                    | *MyBasicPublicIP* invoeren          |
     | IP-adrestoewijzing   | **Statisch** kiezen (zie opmerking hieronder)                                     |
     | Time-out voor inactiviteit (minuten)  | Wijzig de waarde in 4        |
     | DNS-naamlabel          | Laat de waarde leeg    |
     | Abonnement            | Selecteer uw abonnement.   |
     | Resourcegroep          | Selecteer **nieuwe maken** , voer myResourceGroup in en selecteer **OK** . |
-    | Locatie                | Selecteer **VS Oost 2**      |
+    | Locatie                | Selecteer **US - oost 2**      |
 
 Als het IP-adres acceptabel is om na verloop van tijd te wijzigen, kan **dynamische** IP-toewijzing worden geselecteerd.
 

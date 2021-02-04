@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 12/30/2020
-ms.openlocfilehash: ee6c116d02a7be1682d9e8379037ef1b8c92bce8
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.date: 02/03/2021
+ms.openlocfilehash: d4500229800fa5d1743779b29927637777647e47
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967035"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550654"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Een integratieserviceomgeving (ISE) maken met behulp van de Logic Apps REST API
 
@@ -188,17 +188,28 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
 
 ## <a name="add-custom-root-certificates"></a>Aangepaste basis certificaten toevoegen
 
-U gebruikt vaak een ISE om verbinding te maken met aangepaste services op uw virtuele netwerk of on-premises. Deze aangepaste services worden vaak beschermd door een certificaat dat is uitgegeven door een aangepaste basis certificerings instantie, zoals een bedrijfs certificerings instantie of een zelfondertekend certificaat. Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Voor uw ISE om verbinding te maken met deze services via Transport Layer Security (TLS), moet uw ISE toegang hebben tot deze basis certificaten. Als u uw ISE wilt bijwerken met een aangepast vertrouwd basis certificaat, maakt u deze HTTPS- `PATCH` aanvraag:
+U gebruikt vaak een ISE om verbinding te maken met aangepaste services op uw virtuele netwerk of on-premises. Deze aangepaste services worden vaak beschermd door een certificaat dat is uitgegeven door een aangepaste basis certificerings instantie, zoals een bedrijfs certificerings instantie of een zelfondertekend certificaat. Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Voor uw ISE om verbinding te maken met deze services via Transport Layer Security (TLS), moet uw ISE toegang hebben tot deze basis certificaten.
 
-`PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01`
+#### <a name="considerations-for-adding-custom-root-certificates"></a>Overwegingen voor het toevoegen van aangepaste basis certificaten
 
-Lees de volgende overwegingen voordat u deze bewerking uitvoert:
+Lees de volgende overwegingen voordat u uw ISE bijwerkt met een aangepast vertrouwd basis certificaat:
 
 * Zorg ervoor dat u het basis certificaat *en* alle tussenliggende certificaten uploadt. Het maximum aantal certificaten is 20.
 
 * Het uploaden van basis certificaten is een vervangings bewerking waarbij de meest recente upload het vorige uploaden overschrijft. Als u bijvoorbeeld een aanvraag verzendt die één certificaat uploadt en vervolgens een andere aanvraag verzendt om een ander certificaat te uploaden, gebruikt uw ISE alleen het tweede certificaat. Als u beide certificaten moet gebruiken, voegt u deze samen in dezelfde aanvraag toe.  
 
 * Het uploaden van basis certificaten is een asynchrone bewerking die enige tijd kan duren. Als u de status of het resultaat wilt controleren, kunt u een aanvraag verzenden met `GET` behulp van dezelfde URI. Het antwoord bericht bevat een `provisioningState` veld dat de `InProgress` waarde retourneert wanneer de upload bewerking nog actief is. Wanneer `provisioningState` de waarde is `Succeeded` , is de upload bewerking voltooid.
+
+#### <a name="request-syntax"></a>Syntaxis van aanvraag
+
+Als u uw ISE wilt bijwerken met een aangepast vertrouwd basis certificaat, verzendt u de volgende HTTPS-PATCH-aanvraag naar de URL van de [Azure Resource Manager, die afwijkt van uw Azure-omgeving](../azure-resource-manager/management/control-plane-and-data-plane.md#control-plane), bijvoorbeeld:
+
+| Omgeving | Azure Resource Manager URL |
+|-------------|----------------------------|
+| Azure Global (meerdere tenants) | `PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01` |
+| Azure Government | `PATCH https://management.usgovcloudapi.net/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01` |
+| Microsoft Azure China 21Vianet | `PATCH https://management.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01` |
+|||
 
 #### <a name="request-body-syntax-for-adding-custom-root-certificates"></a>Syntaxis van de aanvraag tekst voor het toevoegen van aangepaste basis certificaten
 

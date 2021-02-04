@@ -4,18 +4,29 @@ description: In dit artikel vindt u informatie over de bewakings-en meldings mog
 ms.topic: conceptual
 ms.date: 03/05/2019
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
-ms.openlocfilehash: 978e98bc623cecd768b1f2dda0a129e0459521da
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 74669a1347fac9f61d028d9cb1f3da174bb71f96
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174003"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550337"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Bewaking Azure Backup werk belastingen
 
 Azure Backup biedt meerdere back-upoplossingen op basis van de back-upvereisten en infrastructuur topologie (on-premises versus Azure). Elke back-upgebruiker of beheerder moet zien wat er gebeurt met alle oplossingen en kan worden geïnformeerd over belang rijke scenario's. In dit artikel vindt u meer informatie over de bewakings-en meldings mogelijkheden van Azure Backup service.
 
 [!INCLUDE [backup-center.md](../../includes/backup-center.md)]
+
+## <a name="backup-items-in-recovery-services-vault"></a>Back-upitems in Recovery Services kluis
+
+U kunt al uw back-upitems bewaken via een Recovery Services kluis. Als u naar de sectie **Back-upitems** in de kluis navigeert, wordt een weer gave geopend met het aantal back-upitems van elk type werk belasting dat is gekoppeld aan de kluis. Als u op een rij klikt, wordt een gedetailleerde weer gave geopend met alle back-upitems van het opgegeven type werk belasting, met informatie over de laatste back-upstatus voor elk item, het laatste herstel punt dat beschikbaar is, enzovoort.
+
+![RS-kluis back-upitems](media/backup-azure-monitoring-laworkspace/backup-items-view.png)
+
+> [!NOTE]
+> Voor items waarvan een back-up is gemaakt met behulp van DPM, worden in de lijst alle gegevens bronnen weer gegeven die zijn beveiligd (zowel schijf als online) via de DPM-server. Als de beveiliging is gestopt voor de gegevens bron met de back-upgegevens die worden bewaard, wordt de gegevens bron nog steeds weer gegeven in de portal. U kunt naar de details van de gegevens bron gaan om te zien of de herstel punten aanwezig zijn op de schijf, online of beide. Ook gegevens bronnen waarvoor de online beveiliging is gestopt, maar die wel worden bewaard, worden in rekening gebracht voor de online herstel punten totdat de gegevens volledig worden verwijderd.
+>
+> De DPM-versie moet DPM 1807 (5.1.378.0) of DPM 2019 (versie 10.19.58.0 of hoger) zijn, zodat de back-upitems zichtbaar zijn in de Recovery Services kluis Portal.
 
 ## <a name="backup-jobs-in-recovery-services-vault"></a>Back-uptaken in Recovery Services kluis
 
@@ -105,7 +116,7 @@ Als de frequentie is ingesteld op een samen vatting per uur en er binnen een uur
 
 ## <a name="inactivating-alerts"></a>Waarschuwingen inactiveren
 
-Als u een actieve waarschuwing wilt inactief maken/oplossen, kunt u het lijst item selecteren dat overeenkomt met de waarschuwing die u wilt deactiveren. Hiermee opent u een scherm waarin gedetailleerde informatie over de waarschuwing wordt weer gegeven, met een knop **actief** aan de bovenkant. Als u deze knop selecteert, wordt de status van de waarschuwing gewijzigd in **inactief**. U kunt ook een waarschuwing inactief maken door met de rechter muisknop te klikken op het item in de lijst dat overeenkomt met die waarschuwing en **inactief**te selecteren.
+Als u een actieve waarschuwing wilt inactief maken/oplossen, kunt u het lijst item selecteren dat overeenkomt met de waarschuwing die u wilt deactiveren. Hiermee opent u een scherm waarin gedetailleerde informatie over de waarschuwing wordt weer gegeven, met een knop **actief** aan de bovenkant. Als u deze knop selecteert, wordt de status van de waarschuwing gewijzigd in **inactief**. U kunt ook een waarschuwing inactief maken door met de rechter muisknop te klikken op het item in de lijst dat overeenkomt met die waarschuwing en **inactief** te selecteren.
 
 ![Waarschuwing voor RS-kluis inactivering](media/backup-azure-monitoring-laworkspace/vault-alert-inactivation.png)
 

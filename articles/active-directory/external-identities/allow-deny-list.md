@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 07/15/2018
+ms.date: 02/03/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cc336781e9a55bbcb6c51677b01bfc402126f4a
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: bb5a785cba4a560fc15963363d4e5f6b811af97a
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071897"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548828"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Uitnodigingen aan B2B-gebruikers van specifieke organisaties toestaan of blokkeren
 
@@ -27,7 +27,7 @@ U kunt een lijst met toegestane of een lijst weigeren gebruiken om uitnodigingen
 
 - U kunt een acceptatie lijst of een weiger lijst maken. U kunt niet beide typen lijsten instellen. Standaard zijn alle domeinen die zich niet in de acceptatie lijst bevinden in de Deny-lijst en vice versa. 
 - U kunt slechts één beleid per organisatie maken. U kunt het beleid bijwerken zodat er meer domeinen worden toegevoegd, of u kunt het beleid verwijderen om een nieuw domein te maken. 
-- Het aantal domeinen dat u kunt toevoegen aan een lijst met toegestane of geweigerde lijsten, wordt alleen beperkt door de grootte van het beleid. De maximale grootte van het hele beleid is 25 KB (25.000 tekens), waaronder de lijst met toegestane of geweigerde en andere para meters die voor andere functies zijn geconfigureerd.
+- Het aantal domeinen dat u kunt toevoegen aan een lijst met toegestane of geweigerde lijsten, wordt alleen beperkt door de grootte van het beleid. Deze limiet is van toepassing op het aantal tekens, zodat u meer domeinen of minder domeinen kunt hebben. De maximale grootte van het hele beleid is 25 KB (25.000 tekens), waaronder de lijst met toegestane of geweigerde en andere para meters die voor andere functies zijn geconfigureerd.
 - Deze lijst werkt onafhankelijk van OneDrive voor bedrijven en share point online-lijsten voor toestaan/blok keren. Als u het delen van afzonderlijke bestanden in share point online wilt beperken, moet u een lijst voor toestaan of weigeren instellen voor OneDrive voor bedrijven en share point online. Zie [beperkte domeinen delen in share point online en OneDrive voor bedrijven](https://support.office.com/article/restricted-domains-sharing-in-sharepoint-online-and-onedrive-for-business-5d7589cd-0997-4a00-a2ba-2320ec49c4e9)voor meer informatie.
 - De lijst is niet van toepassing op externe gebruikers die de uitnodiging al hebben ingewisseld. De lijst wordt afgedwongen nadat de lijst is ingesteld. Als een uitnodiging voor een gebruiker de status in behandeling heeft en u een beleid instelt waarmee het domein wordt geblokkeerd, mislukt de gebruiker de uitnodiging inwisselen.
 

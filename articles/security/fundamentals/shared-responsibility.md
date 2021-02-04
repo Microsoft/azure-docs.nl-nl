@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/16/2019
+ms.date: 02/03/2021
 ms.author: terrylan
-ms.openlocfilehash: 8f16105d6bda1798828bc423ec8a158d49e0cf2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d9d3878c34bd203b6c14b45e1196245ef8524f6
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "72518367"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548946"
 ---
 # <a name="shared-responsibility-in-the-cloud"></a>Gedeelde verantwoordelijkheid in de cloud
 
@@ -50,4 +50,4 @@ In het volgende diagram ziet u een traditionele benadering waarbij veel beveilig
 In de Cloud-aanpak kunt u ook gebruikmaken van cloud-gebaseerde beveiligings mogelijkheden voor meer effectiviteit en Cloud Intelligence gebruiken om de detectie en reactie tijd van bedreigingen te verbeteren. Door verantwoordelijkheden te verplaatsen naar de Cloud provider, kunnen organisaties meer beveiligings dekking krijgen, waardoor ze beveiligings bronnen en budget opnieuw aan andere zakelijke prioriteiten kan toewijzen.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [gedeelde verantwoordelijkheden voor Cloud Computing](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91)voor meer informatie over het delen van de verantwoordelijkheid tussen u en micro soft in een SaaS-, Paas-en IaaS-implementatie.
+Zie [gedeelde verantwoordelijkheden voor Cloud Computing](https://azure.microsoft.com/resources/shared-responsibility-for-cloud-computing/)voor meer informatie over het delen van de verantwoordelijkheid tussen u en micro soft in een SaaS-, Paas-en IaaS-implementatie.

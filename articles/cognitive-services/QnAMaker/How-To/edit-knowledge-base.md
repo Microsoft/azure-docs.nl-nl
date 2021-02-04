@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.openlocfilehash: 9541320f65060a0b1f2b5c84a131c08e92554e9e
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: f5d7094920a21af630e10aec2aa759ce9c505050
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351704"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550581"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>QnA-paren in uw Knowledge Base bewerken
 
@@ -19,6 +19,23 @@ Met QnA Maker kunt u de inhoud van uw Knowledge Base beheren door een gebruiks v
 QnA-paren worden toegevoegd uit een gegevens bron, zoals een bestand of URL, of worden toegevoegd als een redactionele bron. Een redactionele bron geeft aan dat het QnA paar hand matig is toegevoegd in de QnA-Portal. Alle QnA-paren zijn beschikbaar om te bewerken.
 
 <a name="add-an-editorial-qna-set"></a>
+
+## <a name="question-and-answer-pairs"></a>Vraag-en-antwoord-paren
+
+Een Knowledge Base bestaat uit vraag-en antwoord paren (QnA).  Elk paar heeft één antwoord en een paar bevat alle informatie die aan het _antwoord_ is gekoppeld. Een antwoord kan een Data Base-rij of een gegevens structuur-exemplaar in een keer lijken. De **vereiste** instellingen in een vraag-en-antwoord-paar (QnA) zijn:
+
+* een **vraag** : tekst van de gebruikers query, die wordt gebruikt om de machine trainingen van de gebruiker uit te QnA Maker, om af te stemmen met de vraag van gebruikers met andere woorden, maar hetzelfde antwoord
+* het **antwoord: het antwoord van** het paar is het antwoord dat wordt geretourneerd wanneer een gebruikers query overeenkomt met de bijbehorende vraag
+
+Elk paar wordt vertegenwoordigd door een **id**.
+
+De **optionele** instellingen voor een paar zijn onder andere:
+
+* **Alternatieve vormen van de vraag** : dit helpt QnA Maker het juiste antwoord te retour neren voor een groter aantal vraag frasen
+* **Meta gegevens**: meta gegevens zijn tags die zijn gekoppeld aan een QnA paar en worden weer gegeven als sleutel-waardeparen. Tags voor meta gegevens worden gebruikt voor het filteren van QnA-paren en het beperken van de set waarover overeenkomende query's worden uitgevoerd.
+* **Vragen over meerdere schakelingen**, gebruikt om door te gaan met een gesprek op meerdere locaties
+
+![Knowledge Base van QnA Maker](../media/qnamaker-concepts-knowledgebase/knowledgebase.png)
 
 ## <a name="add-an-editorial-qna-pair"></a>Een redactionel QnA-paar toevoegen
 
@@ -129,6 +146,14 @@ Selecteer regel matig **opslaan en trainen** na het maken van bewerkingen om te 
 Met [RTF-bewerking](#add-an-editorial-qna-set) van antwoorden kunt u, als auteur, een opmaak werkbalk gebruiken om snel tekst te selecteren en op te maken.
 
 De [prijs verlaging](../reference-markdown-format.md) is een beter hulp middel wanneer u inhoud automatisch moet genereren om kennis te maken van de Knowledge bases die als onderdeel van een CI/cd-pijp lijn of voor [batch tests](../index.yml)moeten worden geïmporteerd.
+
+## <a name="editing-your-knowledge-base-locally"></a>Uw kennis database lokaal bewerken
+
+Zodra een Knowledge Base is gemaakt, wordt het aanbevolen dat u wijzigingen aanbrengt in de Knowledge Base-tekst in de [QnA Maker Portal](https://qnamaker.ai)in plaats van het exporteren en opnieuw importeren via lokale bestanden. Het is echter mogelijk dat u een kennis database lokaal moet bewerken.
+
+Exporteer de Knowledge Base van de pagina **instellingen** en bewerk vervolgens de Knowledge Base met micro soft Excel. Als u ervoor kiest om een andere toepassing te gebruiken om het geëxporteerde bestand te bewerken, kan de toepassing syntaxis fouten veroorzaken omdat deze niet volledig TSV-compatibel is. De TSV-bestanden van micro soft Excel voeren doorgaans geen opmaak fouten uit.
+
+Wanneer u klaar bent met uw bewerkingen, importeert u het TSV-bestand opnieuw vanaf de pagina **instellingen** . Hiermee wordt de huidige Knowledge Base volledig vervangen door de geïmporteerde kennis database.
 
 ## <a name="next-steps"></a>Volgende stappen
 

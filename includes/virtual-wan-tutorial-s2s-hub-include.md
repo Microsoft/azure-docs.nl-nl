@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 64470b42efeea49b7c778d6dffd88465b8445e36
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 31cfb321a60e700aecfdc1288ccdd379b89658ba
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90606505"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99531896"
 ---
 1. Zoek naar de virtuele WAN die u hebt gemaakt. Op de pagina Virtuele WAN, onder het gedeelte **Connectiviteit**, selecteert u **Hubs**.
 2. Op de pagina Hubs selecteert u **+Nieuwe hub** om de pagina **Virtuele hub maken** te openen.
@@ -25,7 +25,7 @@ ms.locfileid: "90606505"
 
    * Regio (voorheen Locatie genoemd)
    * Naam
-   * Privé-adresruimte van hub. De minimale adresruimte is /24 voor het maken van een hub, wat impliceert dat alles tussen /25 en /32 een fout produceert tijdens het maken. Azure Virtual WAN is een beheerde service van Microsoft en maakt de juiste subnetten in de virtuele hub voor de verschillende gateways/services (bijvoorbeeld VPN-gateways, ExpressRoute-gateways, gebruikers-VPN/punt-naar-site gateways, firewall, routering, enzovoort). De gebruiker hoeft niet uitdrukkelijk de adresruimte van het subnet voor de services in de virtuele hub in te plannen, aangezien Microsoft dit al doet als onderdeel van de service.
+   * Privé-adresruimte van hub. De minimale adresruimte is /24 voor het maken van een hub, wat impliceert dat alles tussen /25 en /32 een fout produceert tijdens het maken. We raden u echter aan een/23-adres ruimte of groter toe te wijzen om ervoor te zorgen dat er voldoende IP-adressen zijn voor de ondersteuning van toekomstige services die in de virtuele hub kunnen worden geïmplementeerd. Azure Virtual WAN is een beheerde service van Microsoft en maakt de juiste subnetten in de virtuele hub voor de verschillende gateways/services (bijvoorbeeld VPN-gateways, ExpressRoute-gateways, gebruikers-VPN/punt-naar-site gateways, firewall, routering, enzovoort). De gebruiker hoeft niet uitdrukkelijk de adresruimte van het subnet voor de services in de virtuele hub in te plannen, aangezien Microsoft dit al doet als onderdeel van de service.
 4. Selecteer **Volgende: Site-naar-site**
 
     ![Schermopname van het deelvenster Virtuele hub maken waarin Site-naar-site is geselecteerd.](./media/virtual-wan-tutorial-hub-include/site-to-site.png "Site-naar-site")

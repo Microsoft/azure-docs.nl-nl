@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 744343fe99b276da0264f9a7e40442f754b01169
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 21b84a40621f5a529c09dc0c03e024c4ea6d5c95
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "99214681"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99531833"
 ---
 Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 
@@ -16,6 +16,8 @@ Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescript voor Live Video Analytics-resources](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) om de vereiste Azure-resources in uw Azure-abonnement te implementeren. Voer hiervoor de volgende stappen uit:
 
 1. Open [Azure Cloud Shell](https://ms.portal.azure.com/#cloudshell/).
+    > [!div class="mx-imgBorder"]
+    > :::image type="content" source="../../../media/quickstarts/cloud-shell.png" alt-text="Cloud Shell":::
 1. Als u Cloud Shell voor het eerst gebruikt, wordt u gevraagd een abonnement te selecteren voor het maken van een opslagaccount en een Microsoft Azure-bestandsshare. Selecteer **Opslag maken** om een opslagaccount te maken voor de gegevens van uw Cloud Shell-sessie. Dit opslagaccount is gescheiden van het account dat door het script wordt gemaakt voor gebruik bij uw Azure Media Services-account.
 1. Selecteer in de vervolgkeuzelijst aan de linkerkant van het Cloud Shell-venster **Bash** als uw omgeving.
 
@@ -41,12 +43,12 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
     1. **Container Registry** : dit helpt bij het opslaan en beheren van uw persoonlijke docker-container installatie kopieën en gerelateerde artefacten.
 1. Als het script is voltooid, selecteert u de accolades om de mapstructuur zichtbaar te maken. Er bevinden zich enkele bestanden in de map *~/clouddrive/lva-sample*. Van belang voor deze quickstart zijn:
 
-     * * **~/clouddrive/lva-sample/edge-deployment/.env** _: dit bestand bevat eigenschappen die Visual Studio Code gebruikt om modules te implementeren op een edge-apparaat.
-     _ * **~/clouddrive/lva-sample/appsetting.json** _ - in Visual Studio Code wordt dit bestand gebruikt om de voorbeeldcode uit te voeren.
+     * ***~/clouddrive/lva-sample/edge-deployment/.env***: dit bestand bevat eigenschappen die Visual Studio Code gebruikt om modules te implementeren op een edge-apparaat.
+     * ***~/clouddrive/lva-sample/appsetting.json***: dit bestand wordt gebruikt door Visual Studio Code voor het uitvoeren van de voorbeeldcode.
      
     U hebt deze bestanden nodig wanneer u uw ontwikkelomgeving in Visual Studio Code instelt in de volgende sectie. U kunt deze voorlopig in een lokaal bestand kopiëren.
     
     ![App-instellingen](../../../media/quickstarts/clouddrive.png)
 
 > [!TIP]
-> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze _ *[probleemoplossingsgids](../../../troubleshoot-how-to.md#common-error-resolutions)* * waarmee u enkele veelvoorkomende problemen kunt oplossen.
+> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze **[probleemoplossingsgids](../../../troubleshoot-how-to.md#common-error-resolutions)** , waarmee u enkele veelvoorkomende problemen kunt oplossen.

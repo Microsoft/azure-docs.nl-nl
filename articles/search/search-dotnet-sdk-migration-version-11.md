@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c5f070f59df69bb186041af450e6ca922469d960
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: df8841cb2dcac6335b09a5e7715f42c508c69e76
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043741"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536812"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Upgrade uitvoeren naar Azure Cognitive Search .NET SDK versie 11
 
@@ -168,8 +168,8 @@ Versie 11,1 voegt het volgende toe:
 
 De volgende versie 10-functies zijn nog niet beschikbaar in versie 11. Als u deze functies nodig hebt, moet u de migratie uitschakelen totdat deze worden ondersteund.
 
-+ georuimtelijke typen
-+ [Knowledge Store](knowledge-store-concept-intro.md)
++ [Kennisarchief](knowledge-store-concept-intro.md)
++ Georuimtelijke typen: de ondersteuning van de eerste klasse voor georuimtelijke typen wordt nog steeds uitgevoerd. Het [micro soft. spatiale](https://www.nuget.org/packages/Microsoft.Spatial/) pakket kan nu worden gebruikt om geografische bewerkingen te ondersteunen. Voor beelden zijn beschikbaar voor [System.Text.Jsop](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/core/Microsoft.Azure.Core.Spatial/README.md) en [Newtonsoft.Jsop](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/core/Microsoft.Azure.Core.Spatial.NewtonsoftJson/README.md).
 
 <a name="UpgradeSteps"></a>
 

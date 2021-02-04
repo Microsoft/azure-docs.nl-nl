@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 98b9734bb1c31b08e7f4784558efaba3a393d0b0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 882ba60e16f770651a1d9fe3b02b61be2b4c34c8
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88690940"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99531000"
 ---
 U gaat de module Live Video Analytics in IoT Edge gebruiken om beweging in de inkomende livevideostream te detecteren en gebeurtenissen naar IoT Hub te verzenden. Volg deze stappen om deze gebeurtenissen te bekijken:
 
@@ -13,3 +13,9 @@ U gaat de module Live Video Analytics in IoT Edge gebruiken om beweging in de in
 1. Klik met de rechtermuisknop op **Iva-sample-device** en selecteer **Bewaking van ingebouwd gebeurteniseindpunt starten**.
 
     ![Bewaking van ingebouwd gebeurteniseindpunt starten](../../../media/quickstarts/start-monitoring-iothub-events.png)
+
+> [!NOTE]
+> Mogelijk wordt u gevraagd om ingebouwde eindpunt gegevens voor de IoT Hub op te geven. Als u deze informatie wilt ophalen, gaat u in Azure Portal naar uw IoT Hub en zoekt u naar de optie **ingebouwde eind punten** in het navigatie deel venster links. Klik op deze en zoek naar het **eind punt Event hub** onder **Event hub-compatibel eind punt** . Kopieer en gebruik de tekst in het vak. Het eind punt ziet er ongeveer als volgt uit:  
+    ```
+    Endpoint=sb://iothub-ns-xxx.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX;EntityPath=<IoT Hub name>
+    ```

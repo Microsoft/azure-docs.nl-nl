@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: eff73888a449de20b2b460d519b36c0f03c4ea77
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 8bcef40dad9c67e9e2c6d6c4a051045999487027
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88690998"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99531627"
 ---
 Wanneer u de mediagrafiek uitvoert, gaan de resultaten van het knooppunt van de bewegingsdetectorprocessor via het knooppunt van de IoT Hub-sink naar de IoT-hub. De berichten die u ziet in het **UITVOER**-venster van Visual Studio Code bevatten een sectie `body` en een sectie `applicationProperties`. Zie [IoT Hub-berichten maken en lezen](../../../../../iot-hub/iot-hub-devguide-messages-construct.md) voor meer informatie.
 
@@ -61,21 +61,12 @@ Hier volgt een voorbeeld van dit bericht:
         }  
       }  
     ]  
-  },  
-  "applicationProperties": {  
-    "topic": "/subscriptions/{subscriptionID}/resourceGroups/{name}/providers/microsoft.media/mediaservices/hubname",  
-    "subject": "/graphInstances/GRAPHINSTANCENAME/processors/md",  
-    "eventType": "Microsoft.Media.Graph.Analytics.Inference",  
-    "eventTime": "2020-04-17T20:26:32.7010000Z",
-    "dataVersion": "1.0"  
-  }  
+  } 
 }  
 ```
 
 In dit voorbeeld geldt het volgende: 
 
-* In `applicationProperties` verwijst `subject` naar het knooppunt in de mediagraaf vanwaaruit het bericht is gegenereerd. In dit geval is het bericht afkomstig van de bewegingsdetectieprocessor.
-* In `applicationProperties` geeft `eventType` aan dat deze gebeurtenis een analytische gebeurtenis is.
 * De waarde `eventTime` is het tijdstip waarop de gebeurtenis heeft plaatsgevonden.
 * De waarde `body` bevat gegevens over de analytische gebeurtenis. In dit geval is de gebeurtenis een deductiegebeurtenis en bevat de hoofdtekst daarom `timestamp`- en `inferences`-gegevens.
 * De `inferences`-gegevens geven aan dat het `type` `motion` is. Deze bevatten aanvullende gegevens over die `motion`-gebeurtenis.

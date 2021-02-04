@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 58ad4acaa60abe56849490df39c91949abec2f5d
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 8bb0c8e58c7b5eb1a0ba8a8ca4006ef04b2e2423
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98948334"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99532138"
 ---
 <a name="HOLTop"></a>
 
@@ -255,9 +255,21 @@ Sla in uw klasse **Programma** een verwijzing op naar de URL van de afbeelding w
 
 ### <a name="call-the-read-api"></a>De Read-API aanroepen
 
-Voeg de volgende methode toe, die de **ReadAsync** -methode voor de opgegeven afbeelding aanroept. Hiermee wordt een bewerkings-id geretourneerd en wordt een asynchroon proces gestart om de inhoud van de afbeelding te lezen. Vervolgens haalt u de bewerkings-ID op die wordt geretourneerd door de **ReadAsync** -aanroep, en gebruikt u deze om de service te pollen voor de resultaten van de bewerking. Druk tot slot de geëxtraheerde tekst af naar de-console.
+Definieer de nieuwe methode voor het lezen van tekst. Voeg de onderstaande code toe, die de methode **ReadAsync** aanroept voor de gegeven afbeelding. Hiermee wordt een bewerkings-id geretourneerd en wordt een asynchroon proces gestart om de inhoud van de afbeelding te lezen.
 
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_read_url)]
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_readfileurl_1)]
+
+### <a name="get-read-results"></a>Leesresultaten ophalen
+
+Vervolgens haalt u de bewerkings-id op die wordt geretourneerd vanaf de **ReadAsync**-aanroep en gebruikt u deze om de service te doorzoeken op de resultaten van de bewerking. Met de volgende code wordt de bewerking gecontroleerd totdat de resultaten worden geretourneerd. Vervolgens worden de geëxtraheerde tekstgegevens afgedrukt naar de console.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_readfileurl_2)]
+
+### <a name="display-read-results"></a>Leesresultaten weergeven
+
+Voeg de volgende code toe om de opgehaalde tekstgegevens te parseren en weer te geven, en voltooi de methodedefinitie.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ComputerVision/ComputerVisionQuickstart.cs?name=snippet_readfileurl_3)]
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 

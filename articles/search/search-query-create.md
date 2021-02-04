@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/03/2021
-ms.openlocfilehash: 9419e5f419a358be50fbb3b8478d62dfe6e3dff0
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: b013c66feefade077c85194ba3b1ff04ff4c4aa5
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509347"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536829"
 ---
 # <a name="creating-queries-in-azure-cognitive-search"></a>Query's maken in azure Cognitive Search
 
@@ -23,7 +23,7 @@ Als u een query voor de eerste keer bouwt, worden in dit artikel benaderingen en
 
 Een query is een alleen-lezen aanvraag voor de docs-verzameling van een enkele zoek index. Er wordt een ' query type ' en een query-expressie opgegeven, hoewel de para meter ' Search ' is. De query-expressie kan zoek termen, een gegroepeerde aanhalings tekens en Opera tors bevatten.
 
-Een query kan ook ' count ' bevatten om het aantal gevonden overeenkomsten in de index te retour neren, ' Select ' selecteren om te kiezen welke velden worden geretourneerd in het Zoek resultaat en ' OrderBy ' om de resultaten te sorteren. In de volgende voor beelden ziet u een query aanvraag met een subset van de beschik bare para meters. Zie [query typen en-samen stellingen](search-query-overview.md) en [documenten zoeken (rest)](/rest/api/searchservice/search-documents)voor meer informatie over het samen stellen van query's.
+Een query kan ook ' count ' bevatten om het aantal gevonden overeenkomsten in de index te retour neren, ' Select ' selecteren om te kiezen welke velden worden geretourneerd in het Zoek resultaat en ' OrderBy ' om de resultaten te sorteren. In het volgende voor beeld krijgt u een algemeen idee van een query aanvraag door een subset van de beschik bare para meters weer te geven. Zie [query typen en-samen stellingen](search-query-overview.md) en [documenten zoeken (rest)](/rest/api/searchservice/search-documents)voor meer informatie over het samen stellen van query's.
 
 ```http
 POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/search?api-version=2020-06-30
@@ -38,7 +38,7 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
 ## <a name="choose-a-client"></a>Kies een client
 
-U hebt een hulp programma of API nodig voor het maken van een query, zoals Azure Portal of Postman, of code waarmee een query-client wordt geïnstantieerd. We raden u aan de Azure Portal-of REST-Api's voor vroegtijdige ontwikkeling en test-of-concept tests uit te voeren.
+U hebt een hulp programma nodig zoals Azure Portal of Postman, of code waarmee een query-client met Api's wordt geïnstantieerd. We raden u aan de Azure Portal-of REST-Api's voor vroegtijdige ontwikkeling en test-of-concept tests uit te voeren.
 
 ### <a name="permissions"></a>Machtigingen
 
@@ -111,14 +111,6 @@ Zie [Create Index (rest API)](/rest/api/searchservice/create-index)voor een besc
 Tijdens het indexeren gebruikt de zoek machine een analyse programma voor het uitvoeren van tekst analyse op teken reeksen, waardoor het mogelijk is om op query tijd te zoeken. Teken reeksen zijn mini maal in kleine letters, maar kunnen ook lemmatisering en het verwijderen van woorden worden gestopt. Grotere teken reeksen of samengestelde woorden worden meestal gesplitst door witruimte, afbreek streepjes of streepjes, en geïndexeerd als afzonderlijke tokens. 
 
 Het punt om dit te doen, is dat uw index er als volgt uitziet: wat u in werkelijkheid vindt, en wat u erin kunt onderscheiden. Als query's geen verwachte resultaten retour neren, kunt u de tokens die door de analyse zijn gemaakt, inspecteren via de [analyse tekst (rest API)](/rest/api/searchservice/test-analyzer). Zie voor meer informatie over het door geven van de tokens en de invloed op query's [gedeeltelijke term zoeken en patronen met speciale tekens](search-query-partial-matching.md).
-
-## <a name="about-queries-per-second-qps"></a>Over query's per seconde (QPS)
-
-Vanwege het grote aantal factoren dat de query prestaties verbiedt, publiceert micro soft verwachte QPS-aantallen niet. QPS-schattingen moeten onafhankelijk van elke klant worden ontwikkeld met behulp van de servicelaag, configuratie, index en query constructies die geldig zijn voor uw toepassing. De grootte en complexiteit van de index, de grootte en complexiteit van query's en de hoeveelheid verkeer zijn primaire determinanten van QPS. Er is geen manier om zinvolle schattingen te bieden wanneer dergelijke factoren onbekend zijn.
-
-Schattingen zijn meer voorspelbaar wanneer ze worden berekend op Services die worden uitgevoerd op speciale resources (Basic-en Standard-lagen). U kunt de QPS nauw keuriger schatten omdat u meer controle hebt over de para meters. Zie [Azure Cognitive Search prestaties en optimalisatie](search-performance-optimization.md)voor meer informatie over het aanpaken van de schatting.
-
-Voor de lagen geoptimaliseerd voor opslag (L1 en L2) moet u een lagere query door Voer en een hogere latentie dan de standaard lagen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

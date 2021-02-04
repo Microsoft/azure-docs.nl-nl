@@ -2,14 +2,14 @@
 title: End-to-end-tracering en diagnostische gegevens Azure Service Bus | Microsoft Docs
 description: Overzicht van Service Bus client diagnoses en end-to-end tracering (client via alle services die bij de verwerking betrokken zijn).
 ms.topic: article
-ms.date: 01/17/2021
+ms.date: 02/03/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: edfd789f8803acf9fc8d76202805dec0187d220e
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 19b284aceb83fbbc2bcf662b2b58941e6a5b36f9
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601252"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539210"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Gedistribueerde tracering en correlatie via Service Bus berichten
 
@@ -22,7 +22,7 @@ Microsoft Azure Service Bus Messa ging heeft eigenschappen van Payload gedefinie
 Het protocol is gebaseerd op het [http-correlatie protocol](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md).
 
 # <a name="azuremessagingservicebus-sdk-latest"></a>[Azure. Messa ging. ServiceBus SDK (nieuwste)](#tab/net-standard-sdk-2)
-| Eigenschapsnaam        | Beschrijving                                                 |
+| Eigenschapsnaam        | Description                                                 |
 |----------------------|-------------------------------------------------------------|
 |  Diagnostic-Id       | De unieke id van een externe aanroep van de producent naar de wachtrij. Raadpleeg de [aanvraag-id in het HTTP-protocol](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#request-id) voor de motivering, overwegingen en indeling |
 
@@ -135,12 +135,6 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 In dit voor beeld worden de duur, het resultaat, de unieke id en de start tijd van de listener voor elke Service Bus bewerking geregistreerd.
 
 ### <a name="events"></a>Gebeurtenissen
-Voor elke bewerking worden twee gebeurtenissen verzonden: Start en stop. Waarschijnlijk bent u alleen geïnteresseerd in ' Stop '-gebeurtenissen. Ze bieden het resultaat van de bewerking en de start tijd en duur als eigenschappen van de activiteit.
-
-De nettolading van de gebeurtenis biedt een listener met de context van de bewerking, repliceert de API-binnenkomende para meters en retour waarden. De nettolading van de gebeurtenis stop heeft alle eigenschappen van de nettolading van de gebeurtenis, dus u kunt de gebeurtenis start volledig negeren.
-
-Voor elke gebeurtenis ' Stop ' is een `Status` eigenschap met `TaskStatus` asynchrone bewerking voltooid, die ook in de volgende tabel wordt wegge laten voor eenvoud.
-
 Alle gebeurtenissen hebben de volgende eigenschappen die voldoen aan de specificatie van de open telemetrie: https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/trace/api.md .
 
 - `message_bus.destination` -wachtrij/onderwerp/pad naar abonnement
@@ -201,7 +195,7 @@ Als er meerdere `DiagnosticSource` listeners voor dezelfde bron aanwezig zijn, i
 
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
-| Eigenschapsnaam        | Beschrijving                                                 |
+| Eigenschapsnaam        | Description                                                 |
 |----------------------|-------------------------------------------------------------|
 |  Diagnostic-Id       | De unieke id van een externe aanroep van de producent naar de wachtrij. Raadpleeg de [aanvraag-id in het HTTP-protocol](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#request-id) voor de motivering, overwegingen en indeling |
 |  Correlation-Context | Bewerkings context, die wordt door gegeven voor alle services die bij de verwerking van de bewerking betrokken zijn. Zie [correlatie-context in http-protocol](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#correlation-context) voor meer informatie. |

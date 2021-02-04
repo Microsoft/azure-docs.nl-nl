@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/29/2020
 ms.author: duau
-ms.openlocfilehash: 1a8064c3ff89c0bc8b0ceb5249492b912c219ce8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d001a7a24d44c46a19bde08051e21d3ae3c5acb8
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91535828"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538048"
 ---
 # <a name="caching-with-azure-front-door"></a>Caching met de voor deur van Azure
 In het volgende document worden gedragingen voor de voor deur opgegeven met routerings regels waarvoor caching is ingeschakeld. Front deur is een modern Content Delivery Network (CDN) met dynamische site versnelling en taak verdeling, maar biedt ook ondersteuning voor het opslaan in cache, net als bij andere CDN.
@@ -24,13 +24,13 @@ In het volgende document worden gedragingen voor de voor deur opgegeven met rout
 ## <a name="delivery-of-large-files"></a>Levering van grote bestanden
 Azure front-deur levert grote bestanden zonder een limiet voor de bestands grootte. De voor deur maakt gebruik van een techniek die object Chunking wordt genoemd. Als er een groot bestand wordt aangevraagd, haalt Front Door kleine onderdelen van het bestand op uit de back-end. Na ontvangst van een volledige of byte-Range-aanvraag vraagt het bestand van de back-end in de segmenten van 8 MB.
 
-</br>Nadat het segment in de front-deur omgeving arriveert, wordt het in de cache geplaatst en direct aan de gebruiker geleverd. De voor deur haalt vervolgens het volgende segment parallel op. Met deze vooraf opgehaalde, zorgt u ervoor dat de inhoud één segment vóór de gebruiker blijft, waardoor de latentie wordt verminderd. Dit proces wordt voortgezet totdat het hele bestand wordt gedownload (indien aangevraagd) of de client sluit de verbinding.
+Nadat het segment in de front-deur omgeving arriveert, wordt het in de cache geplaatst en direct aan de gebruiker geleverd. De voor deur haalt vervolgens het volgende segment parallel op. Met deze vooraf opgehaalde, zorgt u ervoor dat de inhoud één segment vóór de gebruiker blijft, waardoor de latentie wordt verminderd. Dit proces wordt voortgezet totdat het hele bestand wordt gedownload (indien aangevraagd) of de client sluit de verbinding.
 
-</br>Lees [RFC 7233](https://web.archive.org/web/20171009165003/http://www.rfc-base.org/rfc-7233.html)voor meer informatie over de aanvraag voor byte bereik.
+Lees [RFC 7233](https://web.archive.org/web/20171009165003/http://www.rfc-base.org/rfc-7233.html)voor meer informatie over de aanvraag voor byte bereik.
 Bij de voor deur worden eventuele segmenten in de cache opgeslagen, zodat het hele bestand niet in de cache hoeft te worden opgeslagen in de front-deur cache. Aanvragen voor het bestand of de byte bereiken worden verwerkt vanuit de cache. Als de segmenten niet in de cache zijn opgeslagen, wordt vooraf ophalen gebruikt om segmenten van de back-end op te vragen. Deze optimalisatie is afhankelijk van de mogelijkheid van de back-end om aanvragen voor byte bereik te ondersteunen. Als de back-end geen aanvragen voor byte bereik ondersteunt, is deze optimalisatie niet effectief.
 
 ## <a name="file-compression"></a>Bestandscompressie
-De voor deur kan inhoud op de rand dynamisch comprimeren, wat resulteert in een kleinere en snellere reactie tijd voor uw clients. Alle bestanden komen in aanmerking voor compressie. Een bestand moet echter een MIME-type zijn om in aanmerking te komen voor compressie. Op dit moment mag deze lijst niet worden gewijzigd. De huidige lijst is:</br>
+De voor deur kan inhoud op de rand dynamisch comprimeren, wat resulteert in een kleinere en snellere reactie tijd voor uw clients. Om een bestand in aanmerking te laten komen voor compressie, moet caching zijn ingeschakeld en moet het bestand een MIME-type zijn om in aanmerking te komen voor compressie. Op dit moment mag deze lijst niet worden gewijzigd. De huidige lijst is:
 - ' Application/EOT '
 - toepassing/letter type
 - "toepassing/letter type-sfnt"
@@ -93,7 +93,7 @@ Met de voor deur wordt activa in de cache geplaatst totdat de TTL (time-to-Live)
 
 De best practice om ervoor te zorgen dat uw gebruikers altijd de nieuwste kopie van uw assets verkrijgen, is om uw assets voor elke update te maken en ze als nieuwe Url's te publiceren. Met de voor deur worden onmiddellijk de nieuwe assets opgehaald voor de volgende client aanvragen. Soms wilt u in de cache opgeslagen inhoud uit alle Edge-knoop punten verwijderen en alle nieuwe bijgewerkte assets laten afdwingen. De reden hiervoor is dat er updates voor uw webtoepassing zijn of dat u snel assets kunt bijwerken die onjuiste informatie bevatten.
 
-Selecteer de activa die u wilt verwijderen uit de Edge-knoop punten. Als u alle assets wilt wissen, selecteert u **Alles opschonen**. Als dat niet het geval is, voert u in het **pad**het pad in van elk activum dat u wilt leegmaken.
+Selecteer de activa die u wilt verwijderen uit de Edge-knoop punten. Als u alle assets wilt wissen, selecteert u **Alles opschonen**. Als dat niet het geval is, voert u in het **pad** het pad in van elk activum dat u wilt leegmaken.
 
 Deze indelingen worden ondersteund in de lijsten met te verwijderen paden:
 

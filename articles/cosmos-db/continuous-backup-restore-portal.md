@@ -7,17 +7,22 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: a5be4c16b93f22037152147ada8c4ba2b4443eba
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: e0fb337defc69354aa625fe63bef9768dbc4cf1f
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527577"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538836"
 ---
-# <a name="configure-and-manage-continuous-backup-and-point-in-time-restore---using-azure-portal"></a>Continue back-ups en herstel tijdstippen configureren en beheren-Azure Portal gebruiken
+# <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-portal"></a>Continue back-ups en herstel naar een tijdstip configureren en beheren (preview)-Azure Portal gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-Met de functie voor herstel naar een bepaald tijdstip van Azure Cosmos DB kunt u een onbedoelde wijziging binnen een container herstellen, een verwijderd account, een Data Base of een container herstellen of herstellen in een wille keurige regio (waarbij back-ups bestaan). Met de continue back-upmodus kunt u een herstel bewerking uitvoeren naar een wille keurig tijdstip in de afgelopen 30 dagen.
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+Met de functie voor het terugzetten van het tijdstip van een onbedoelde wijziging in een container kunt u een verwijderde account, data base of container herstellen of herstellen in een regio (waarbij back-ups bestaan). Azure Cosmos DB Met de continue back-upmodus kunt u een herstel bewerking uitvoeren naar een wille keurig tijdstip in de afgelopen 30 dagen.
 
 In dit artikel wordt beschreven hoe u het herstel punt identificeert en doorlopende back-up configureert met Azure Portal.
 

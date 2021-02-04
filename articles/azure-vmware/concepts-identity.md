@@ -2,13 +2,13 @@
 title: 'Concepten: identiteit en toegang'
 description: Meer informatie over de identiteits-en toegangs concepten van de Azure VMware-oplossing
 ms.topic: conceptual
-ms.date: 11/11/2020
-ms.openlocfilehash: bd1b4cd918ce977cf57d641908b127f7a2d1b0cc
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.date: 02/02/2021
+ms.openlocfilehash: 0f58cbdaa641af24cef53c3cfd9604cf1b0c1c3b
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509296"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538938"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Concepten van Azure VMware-oplossings identiteiten
 

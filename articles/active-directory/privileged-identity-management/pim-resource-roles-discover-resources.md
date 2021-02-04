@@ -14,12 +14,12 @@ ms.subservice: pim
 ms.date: 09/29/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be48e6e175beae751003895e60322a458cfbc8bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42d38990289169412f06b0c7e4bcbdf67f688da7
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568077"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539006"
 ---
 # <a name="discover-azure-resources-to-manage-in-privileged-identity-management"></a>Azure-resources ontdekken om te beheren in Privileged Identity Management
 
@@ -66,7 +66,7 @@ Wanneer u Privileged Identity Management voor het eerst instelt voor Azure-resou
 
     ![Paneel voor detectie waarvoor een resource is geselecteerd en de optie resource beheren gemarkeerd](./media/pim-resource-roles-discover-resources/discovery-manage-resource.png)
 
-1. Als er een bericht wordt weer gegeven waarin u de onboarding van de geselecteerde resource voor beheer bevestigt, selecteert u **Ja**.
+1. Als er een bericht wordt weer gegeven waarin u de onboarding van de geselecteerde resource voor beheer bevestigt, selecteert u **Ja**. PIM wordt vervolgens geconfigureerd voor het beheren van alle nieuwe en bestaande onderliggende objecten onder de bron (nen).
 
     ![Bericht dat er wordt bevestigd dat de geselecteerde resources voor beheer worden vrijgegeven](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 

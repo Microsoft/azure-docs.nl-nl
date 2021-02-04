@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 60bb5ac652a80b5ae52c91f91fa0c80440e9cc82
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 6f63315c3e9b150a54e122d9a1c6948087603d51
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359078"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537404"
 ---
 # <a name="configure-a-sql-server-always-on-availability-group-across-different-azure-regions"></a>Een SQL Server AlwaysOn-beschikbaarheids groep configureren in verschillende Azure-regio's
 
@@ -86,6 +86,7 @@ Voer de volgende stappen uit om een replica te maken in een extern Data Center:
    - Gebruik een TCP-poort test die specifiek is voor het IP-adres.
    - Een taakverdelings regel hebben die specifiek is voor de SQL Server in dezelfde regio.  
    - Een Standard Load Balancer als de virtuele machines in de back-endadresgroep geen deel uitmaken van een enkele beschikbaarheidsset of een virtuele-machine schaalset. Raadpleeg [Azure Load Balancer standaard overzicht](../../../load-balancer/load-balancer-overview.md)voor meer informatie.
+   - Een Standard Load Balancer als de twee virtuele netwerken in twee verschillende regio's worden gekoppeld via globale VNet-peering. Zie voor meer informatie [Azure Virtual Network Veelgestelde vragen (FAQ)](../../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers).
 
 1. [Voeg de functie Failover Clustering toe aan de nieuwe SQL Server](availability-group-manually-configure-prerequisites-tutorial.md#add-failover-clustering-features-to-both-sql-server-vms).
 

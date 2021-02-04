@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 61e1e729ab0aeac1f7b8e5ee6787da38c5fef108
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: cd90043c8f03361244d3500f83f6df5347f1d867
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020142"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539397"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Het rouleren van een geheim voor resources met één set verificatiereferenties automatiseren
 
@@ -45,7 +45,7 @@ U kunt de onderstaande implementatiekoppeling gebruiken als u geen bestaande sle
 
 [![Afbeelding met een knop met het label Implementeren naar Azure.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmain%2FARM-Templates%2FInitial-Setup%2Fazuredeploy.json)
 
-1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**. Geef de groep de naam **akvrotation**.
+1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**. Groep een naam geven, gebruiken we **akvrotation** in deze zelf studie.
 1. Typ bij **Aanmeldgegevens SQL-beheerder** de aanmeldings-id van de SQL-beheerder. 
 1. Selecteer **Controleren + maken**.
 1. Selecteer **Maken**

@@ -7,17 +7,22 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 3614a85a6df2e793a73a2609d6f5762e4dc873fb
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 9d30f5325162b9ea447d54aadc092dbd9aa29132
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527620"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538690"
 ---
 # <a name="manage-permissions-to-restore-an-azure-cosmos-db-account"></a>Machtigingen voor het herstellen van een Azure Cosmos DB-account beheren
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-Met Azure Cosmos DB kunt u de herstel machtigingen voor een continu back-upaccount isoleren en beperken tot een specifieke rol of een principal. De eigenaar van het account kan een Restore activeren en een rol toewijzen aan andere principals om de herstel bewerking uit te voeren. Deze machtigingen kunnen worden toegepast op het abonnements bereik of nauw keuriger in het bereik van de bron account, zoals wordt weer gegeven in de volgende afbeelding:
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+Met Azure Cosmos DB kunt u de herstel machtigingen voor een doorlopende back-upaccount (preview) voor een specifieke rol of Principal isoleren en beperken. De eigenaar van het account kan een Restore activeren en een rol toewijzen aan andere principals om de herstel bewerking uit te voeren. Deze machtigingen kunnen worden toegepast op het abonnements bereik of nauw keuriger in het bereik van de bron account, zoals wordt weer gegeven in de volgende afbeelding:
 
 :::image type="content" source="./media/continuous-backup-restore-permissions/restore-roles-permissions.png" alt-text="Lijst met rollen die vereist zijn voor het uitvoeren van een herstel bewerking." lightbox="./media/continuous-backup-restore-permissions/restore-roles-permissions.png" border="false":::
 

@@ -103,6 +103,8 @@
       href: ./linux/tutorial-elasticsearch.md
     - name: Pakketfilter van FreeBSD
       href: ./linux/freebsd-pf-nat.md
+    - name: Mainframe opnieuw hosten
+      href: ./workloads/mainframe-rehosting/overview.md
     - name: Databases
       items:
         - name: MySQL in SUSE
@@ -1448,6 +1450,8 @@
               href: ./linux/move-vm.md
             - name: PowerShell
               href: ./windows/move-vm.md
+            - name: Abonnement voor Marketplace-Vm's wijzigen
+              href: azure-cli-change-subscription-marketplace.md
         - name: Virtuele machines naar een andere regio verplaatsen
           href: ../site-recovery/azure-to-azure-tutorial-migrate.md
         - name: Naar een beschikbaarheidszone verplaatsen

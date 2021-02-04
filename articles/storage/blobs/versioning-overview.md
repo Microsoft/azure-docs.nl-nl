@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/09/2020
+ms.date: 02/02/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e2d74519b9adf9a74e5af180a3da28918a9a8dab
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: e5f8264221ada261ccae1b347c47cdf27967d5d8
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96001878"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537152"
 ---
 # <a name="blob-versioning"></a>BLOB-versie beheer
 
@@ -93,11 +93,11 @@ Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, activeren al
 
 Voor pagina-blobs en toevoeg-blobs wordt alleen een subset van schrijf-en verwijder bewerkingen geactiveerd waarmee een versie wordt gemaakt. Deze bewerkingen zijn onder andere:
 
-- [BLOB plaatsen](/rest/api/storageservices/put-blob)
+- [Blob plaatsen](/rest/api/storageservices/put-blob)
 - [Blokkerings lijst plaatsen](/rest/api/storageservices/put-block-list)
-- [BLOB verwijderen](/rest/api/storageservices/delete-blob)
+- [Blob verwijderen](/rest/api/storageservices/delete-blob)
 - [BLOB-meta gegevens instellen](/rest/api/storageservices/set-blob-metadata)
-- [BLOB kopiëren](/rest/api/storageservices/copy-blob)
+- [Blob kopiëren](/rest/api/storageservices/copy-blob)
 
 Met de volgende bewerkingen wordt het maken van een nieuwe versie niet geactiveerd. Als u wijzigingen van deze bewerkingen wilt vastleggen, moet u een hand matige moment opname maken:
 
@@ -189,8 +189,8 @@ In de volgende tabel ziet u welke Azure RBAC-acties ondersteuning bieden voor he
 
 | Description | Blob service bewerking | Azure RBAC-gegevens actie vereist | Ondersteuning voor ingebouwde rollen van Azure |
 |----------------------------------------------|------------------------|---------------------------------------------------------------------------------------|-------------------------------|
-| De huidige versie van de BLOB verwijderen | BLOB verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/verwijderen** | Inzender voor Storage Blob-gegevens |
-| Een versie verwijderen | BLOB verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/deleteBlobVersion/Action** | Eigenaar van opslagblobgegevens |
+| De huidige versie van de BLOB verwijderen | Blob verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/verwijderen** | Inzender voor Storage Blob-gegevens |
+| Een versie verwijderen | Blob verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/deleteBlobVersion/Action** | Eigenaar van opslagblobgegevens |
 
 ### <a name="shared-access-signature-sas-parameters"></a>Para meters voor Shared Access Signature (SAS)
 

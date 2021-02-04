@@ -38,6 +38,14 @@
           href: quickstarts/voice-video-calling/calling-client-samples.md
         - name: Voeg u aanroepende app toe aan een Teams-meeting
           href: quickstarts/voice-video-calling/get-started-teams-interop.md
+    - name: UI-Framework
+      items:
+        - name: Aan de slag met samengestelde onderdelen
+          href: quickstarts/ui-framework/get-started-with-composites.md
+        - name: Aan de slag met basis onderdelen
+          href: quickstarts/ui-framework/get-started-with-components.md
+        - name: Uw eigen UI Framework-onderdeel maken
+          href: quickstarts/ui-framework/create-your-own-components.md
 - name: Zelfstudies
   expanded: false
   items:
@@ -70,6 +78,12 @@
           href: concepts/voice-video-calling/about-call-types.md
         - name: Interoperabiliteit met Teams
           href: concepts/voice-video-calling/teams-interop.md
+    - name: UI-Framework
+      items:
+        - name: Overzicht van UI Framework
+          href: concepts/ui-framework/ui-sdk-overview.md
+        - name: Mogelijkheden van UI-Framework
+          href: concepts/ui-framework/ui-sdk-features.md
     - name: Architectuur van client en server
       href: concepts/client-and-server-architecture.md
     - name: Aanroepstromen

@@ -8,12 +8,12 @@ mms.devlang: na
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: kumud
-ms.openlocfilehash: f6cba0118a98ea50e8020b91b9c2064299ca4ccf
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: a7a21dcaea22ed0d1c077d0c42ddb5b4bd50d24f
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019156"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539329"
 ---
 # <a name="partnering-with-azure-ddos-protection-standard"></a>Partnering met Azure DDoS Protection Standard
 In dit artikel worden de mogelijkheden voor partner ondersteuning beschreven die worden ingeschakeld door de Azure DDoS Protection Standard. Dit artikel is bedoeld om product managers en rollen van bedrijfs ontwikkeling inzicht te geven in de investerings paden en om inzicht te krijgen in de verwerkings waarde van de partner.
@@ -80,7 +80,7 @@ De volgende stappen zijn vereist voor partners voor het configureren van integra
 - [Naslag informatie over Azure DDoS Protection-API](/rest/api/virtualnetwork/ddosprotectionplans)
 - [Naslag informatie over Azure Virtual Network API](/rest/api/virtualnetwork/virtualnetworks)
 
-### <a name="get-help"></a>Help opvragen
+### <a name="get-help"></a>Hulp vragen
 
 - Neem contact op met de [Azure-beveiligings Community](https://techcommunity.microsoft.com/t5/security-identity/bd-p/Azure-Security)als u vragen hebt over de integratie van toepassingen, services of producten met Azure DDoS Protection Standard.
 - Volg de discussies op [stack overflow](https://stackoverflow.com/tags/azure-ddos/).
@@ -94,3 +94,4 @@ De volgende stappen zijn vereist voor partners voor het configureren van integra
 Bestaande partner integraties weer geven:
 
 - [Barracuda WAF-as-a-Service](https://www.barracuda.com/waf-as-a-service)
+- [Azure Cloud WAF van Radware](https://www.radware.com/resources/microsoft-azure/)

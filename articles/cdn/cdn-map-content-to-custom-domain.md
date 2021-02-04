@@ -7,15 +7,15 @@ author: asudbring
 manager: KumudD
 ms.service: azure-cdn
 ms.topic: tutorial
-ms.date: 11/06/2020
+ms.date: 02/04/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 03ed47ee97f52aca708118f202fad583753549bf
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
-ms.translationtype: HT
+ms.openlocfilehash: b0e8f2b14d506eb408660b939a7c925a33215cca
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331205"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537743"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-endpoint"></a>Zelfstudie: Een aangepast domein aan uw eindpunt toevoegen
 
@@ -163,6 +163,10 @@ Maken van een CNAME-record voor uw aangepaste domein:
 
 Nadat u uw aangepaste domein hebt geregistreerd, kunt u dit toevoegen aan uw CDN-eindpunt. 
 
+
+---
+# <a name="azure-portal"></a>[**Azure Portal**](#tab/azure-portal)
+
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/) en blader naar het CDN-profiel met het eindpunt dat u wilt toewijzen aan een aangepast domein.
     
 2. Op de **CDN-profiel** pagina, selecteert u het CDN-eindpunt dat u wilt koppelen aan het aangepaste domein.
@@ -189,7 +193,43 @@ Nadat u uw aangepaste domein hebt geregistreerd, kunt u dit toevoegen aan uw CDN
     - Profielen van **Azure CDN Standard van Akamai** worden doorgaans binnen één minuut doorgegeven. 
     - Profielen van **Azure CDN Standard van Verizon** en **Azure CDN Premium van Verizon** worden normaal gesproken binnen 10 minuten doorgegeven.   
 
+# <a name="powershell"></a>[**PowerShell**](#tab/azure-powershell)
 
+1. Meld u aan bij Azure PowerShell:
+
+```azurepowershell-interactive
+    Connect-AzAccount
+
+```
+2. Gebruik [New-AzCdnCustomDomain](/powershell/module/az.cdn/new-azcdncustomdomain) om het aangepaste domein toe te wijzen aan uw CDN-eind punt. 
+
+    * Vervang **myendpoint8675.azureedge.net** door uw eind punt-URL.
+    * Vervang **myendpoint8675** door de naam van uw CDN-eind punt.
+    * Vervang **www.contoso.com** door de naam van uw aangepaste domein.
+    * Vervang **myCDN** door de naam van uw CDN-profiel.
+    * Vervang **myResourceGroupCDN** door de naam van de resource groep.
+
+```azurepowershell-interactive
+    $parameters = @{
+        Hostname = 'myendpoint8675.azureedge.net'
+        EndPointName = 'myendpoint8675'
+        CustomDomainName = 'www.contoso.com'
+        ProfileName = 'myCDN'
+        ResourceGroupName = 'myResourceGroupCDN'
+    }
+    New-AzCdnCustomDomain @parameters
+```
+
+Azure controleert of het CNAME-record bestaat dat u voor de domeinnaam hebt ingevoerd. Als de CNAME juist is, wordt uw aangepaste domein gevalideerd. 
+
+   Het kan even duren voordat de nieuwe instellingen van het aangepaste domein zijn doorgegeven aan alle CDN-edge-knooppunten: 
+
+- Voor profielen van **Azure CDN Standard van Microsoft** is het doorgeven gewoonlijk binnen 10 minuten voltooid. 
+- Profielen van **Azure CDN Standard van Akamai** worden doorgaans binnen één minuut doorgegeven. 
+- Profielen van **Azure CDN Standard van Verizon** en **Azure CDN Premium van Verizon** worden normaal gesproken binnen 10 minuten doorgegeven.   
+
+
+---
 ## <a name="verify-the-custom-domain"></a>Het aangepaste domein verifiëren
 
 Nadat u de registratie van uw aangepaste domein hebt voltooid, verifieert u dat het aangepaste domein verwijst naar uw CDN-eindpunt.
@@ -200,6 +240,9 @@ Nadat u de registratie van uw aangepaste domein hebt voltooid, verifieert u dat 
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
+---
+# <a name="azure-portal"></a>[**Azure Portal**](#tab/azure-portal-cleanup)
+
 Als u uw eindpunt niet langer aan een aangepast domein wilt koppelen, verwijdert u het aangepaste domein door de volgende stappen uit te voeren:
  
 1. Selecteer het eindpunt met het aangepaste domein dat u wilt verwijderen in uw CDN-profiel.
@@ -208,6 +251,29 @@ Als u uw eindpunt niet langer aan een aangepast domein wilt koppelen, verwijdert
 
    Het aangepaste domein is ontkoppeld van het eindpunt.
 
+# <a name="powershell"></a>[**PowerShell**](#tab/azure-powershell-cleanup)
+
+Als u uw eindpunt niet langer aan een aangepast domein wilt koppelen, verwijdert u het aangepaste domein door de volgende stappen uit te voeren:
+
+1. Gebruik [Remove-AzCdnCustomDomain](/powershell/module/az.cdn/remove-azcdncustomdomain) om het aangepaste domein te verwijderen uit het eind punt:
+
+    * Vervang **myendpoint8675** door de naam van uw CDN-eind punt.
+    * Vervang **www.contoso.com** door de naam van uw aangepaste domein.
+    * Vervang **myCDN** door de naam van uw CDN-profiel.
+    * Vervang **myResourceGroupCDN** door de naam van de resource groep.
+
+
+```azurepowershell-interactive
+    $parameters = @{
+        CustomDomainName = 'www.contoso.com'
+        EndPointName = 'myendpoint8675'
+        ProfileName = 'myCDN'
+        ResourceGroupName = 'myResourceGroupCDN'
+    }
+    Remove-AzCdnCustomDomain @parameters
+```
+
+---
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze zelfstudie heeft u het volgende geleerd:

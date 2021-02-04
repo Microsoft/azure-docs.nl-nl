@@ -1,6 +1,6 @@
 ---
 title: 'Zelfstudie: Cisco ServiceNow configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD naar ServiceNow.
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar ServiceNow.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -11,156 +11,162 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 928b8118c614d7d16293c8d6e0cec194a270314e
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b3b62e7c16106fd9d94d4a3438331dab4ce8b6e8
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729903"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539034"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Zelfstudie: ServiceNow configureren voor automatische gebruikersinrichting
 
-In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel ServiceNow als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [ServiceNow](https://www.servicenow.com/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelf studie worden de stappen beschreven die u kunt uitvoeren in zowel ServiceNow als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer Azure AD is geconfigureerd, worden gebruikers en groepen automatisch door de Azure AD-inrichtings service [ServiceNow](https://www.servicenow.com/) . 
+
+Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
 > * Gebruikers maken in ServiceNow
-> * Gebruikers uit ServiceNow verwijderen wanneer ze geen toegang meer nodig hebben
+> * Gebruikers in ServiceNow verwijderen wanneer ze niet meer toegang nodig hebben
 > * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en ServiceNow
 > * Groepen en groepslidmaatschappen inrichten in ServiceNow
-> * [Eenmalige aanmelding](servicenow-tutorial.md) bij ServiceNow (aanbevolen)
+> * [Eenmalige aanmelding](servicenow-tutorial.md) toestaan voor ServiceNow (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
-* Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
+* Een gebruikers account in azure AD met [toestemming](../roles/permissions-reference.md) voor het configureren van inrichting (toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder)
 * Een [ServiceNow-exemplaar](https://www.servicenow.com/) van Calgary of hoger
 * Een [ServiceNow Express-exemplaar](https://www.servicenow.com/) van Helsinki of hoger
 * Een gebruikersaccount in ServiceNow met de beheerdersrol
 
-## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
+## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1: plan uw inrichtings implementatie
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en ServiceNow](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-servicenow-to-support-provisioning-with-azure-ad"></a>Stap 2. ServiceNow configureren ter ondersteuning van het inrichten met Azure AD
+## <a name="step-2-configure-servicenow-to-support-provisioning-with-azure-ad"></a>Stap 2: ServiceNow configureren voor ondersteuning bij het inrichten met Azure AD
 
-1. Identificeer de naam van uw ServiceNow-exemplaar. U kunt de naam van het exemplaar vinden in de URL die u gebruikt voor toegang tot ServiceNow. In het onderstaande voorbeeld is de naam van het exemplaar dev35214.
+1. Identificeer de naam van uw ServiceNow-exemplaar. U kunt de naam van het exemplaar vinden in de URL die u gebruikt voor toegang tot ServiceNow. In het volgende voor beeld is de naam van het exemplaar **dev35214**.
 
-   ![ServiceNow-exemplaar](media/servicenow-provisioning-tutorial/servicenow-instance.png)
+   ![Scherm opname van een ServiceNow-exemplaar.](media/servicenow-provisioning-tutorial/servicenow-instance.png)
 
-2. Referenties voor een beheerder in ServiceNow verkrijgen. Navigeer naar het gebruikersprofiel in ServiceNow en controleer of de gebruiker de beheerdersrol heeft. 
+2. Referenties voor een beheerder in ServiceNow verkrijgen. Ga naar het gebruikers profiel in ServiceNow en controleer of de gebruiker de rol Admin heeft. 
 
-   ![Beheerdersrol van ServiceNow](media/servicenow-provisioning-tutorial/servicenow-admin-role.png)
-
-
-## <a name="step-3-add-servicenow-from-the-azure-ad-application-gallery"></a>Stap 3. ServiceNow toevoegen vanuit de galerie met Azure AD-toepassingen
-
-Voeg ServiceNow toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het inrichten voor ServiceNow. Als u ServiceNow eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
-
-## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
-
-Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
-
-* Wanneer u gebruikers en groepen toewijst aan ServiceNow, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
-
-* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
+   ![Scherm afbeelding met een ServiceNow-beheerdersrol.](media/servicenow-provisioning-tutorial/servicenow-admin-role.png)
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-servicenow"></a>Stap 5. Automatische gebruikersinrichting configureren voor ServiceNow 
+## <a name="step-3-add-servicenow-from-the-azure-ad-application-gallery"></a>Stap 3: ServiceNow toevoegen vanuit de Azure AD-toepassings galerie
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
+Voeg ServiceNow toe vanuit de galerie met Azure AD-toepassingen om te beginnen met het inrichten voor ServiceNow. Als u eerder ServiceNow voor eenmalige aanmelding (SSO) hebt ingesteld, kunt u dezelfde toepassing gebruiken. We raden u echter aan om een afzonderlijke app te maken wanneer u de integratie test. [Meer informatie over het toevoegen van een toepassing uit de galerie](../manage-apps/add-application-portal.md). 
 
-### <a name="to-configure-automatic-user-provisioning-for-servicenow-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor ServiceNow in Azure AD:
+## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4: definiëren wie binnen het bereik van de inrichting valt 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
+Met de Azure AD-inrichtings service kunt u bereiken die worden ingericht op basis van de toewijzing aan de toepassing, of op basis van kenmerken van de gebruiker of groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van de toewijzing, kunt u de [stappen gebruiken om gebruikers en groepen toe te wijzen aan de toepassing](../manage-apps/assign-user-or-group-access-portal.md). Als u kiest voor het bereik dat alleen wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u [een bereik filter gebruiken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+Houd de volgende tips in acht:
+
+* Wanneer u gebruikers en groepen toewijst aan ServiceNow, moet u een andere rol dan de standaard toegang selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als de enige rol die beschikbaar is op de toepassing de standaard rol Access is, kunt u [het toepassings manifest bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om meer rollen toe te voegen. 
+
+* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen toe te wijzen aan de app. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [op kenmerken gebaseerd bereik filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)opgeven. 
+
+
+## <a name="step-5-configure-automatic-user-provisioning-to-servicenow"></a>Stap 5: automatische gebruikers inrichting configureren voor ServiceNow 
+
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en groepen in TestApp te maken, bij te werken en uit te scha kelen. U kunt de configuratie baseren op toewijzingen van gebruikers en groepen in azure AD.
+
+Automatische gebruikersinrichting configureren voor ServiceNow in Azure AD:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** > **Alle toepassingen**.
+
+    ![Schermopname van het deelvenster Ondernemingstoepassing.](common/enterprise-applications.png)
 
 2. Selecteer **ServiceNow** in de lijst met toepassingen.
 
-    ![De koppeling ServiceNow in de lijst met toepassingen](common/all-applications.png)
+    ![Scherm opname van een lijst met toepassingen.](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
     ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
-4. Stel de **Inrichtingsmodus** in op **Automatisch**.
+4. Stel **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
+    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
 
-5. Voer uw beheerdersreferenties en gebruikersnaam voor ServiceNow in de sectie **Beheerdersreferenties** in. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met ServiceNow. Als de verbinding mislukt, moet u controleren of uw ServiceNow-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+5. Voer in de sectie **beheerders referenties** uw ServiceNow-beheerders referenties en de gebruikers naam in. Selecteer **verbinding testen** om te controleren of Azure AD verbinding kan maken met ServiceNow. Als de verbinding mislukt, zorg er dan voor dat uw ServiceNow-account beheerders machtigingen heeft en probeer het opnieuw.
 
-    ![Schermopname toont de Inrichtingspagina van de service, waar u Beheerdersreferenties kunt invoeren.](./media/servicenow-provisioning-tutorial/servicenow-provisioning.png)
+    ![Scherm opname van de pagina voor het inrichten van de service, waar u beheerders referenties kunt invoeren.](./media/servicenow-provisioning-tutorial/servicenow-provisioning.png)
 
-6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
+6. Voer in het vak **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de meldingen voor de inrichtingsfouten moeten ontvangen. Schakel vervolgens het selectie vakje **e-mail melding verzenden wanneer een fout optreedt** in.
 
-    ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
+    ![Scherm afbeelding van de vakken voor de meldings-e-mail.](common/provisioning-notification-email.png)
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met ServiceNow**.
+8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met ServiceNow**.
 
-9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met ServiceNow worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in ServiceNow te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van ServiceNow het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met ServiceNow worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in ServiceNow te vinden voor updatebewerkingen. 
 
-10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met ServiceNow**.
+   Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de SERVICENOW-API het filteren van gebruikers op basis van dat kenmerk ondersteunt. 
+   
+   Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+
+10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met ServiceNow**.
 
 11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD met ServiceNow worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de groepen in ServiceNow te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. Raadpleeg de instructies in de [Zelfstudie bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) als u bereikfilters wilt configureren.
 
-13. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor ServiceNow.
+13. Als u de Azure AD-inrichtings service voor **ServiceNow wilt inschakelen, moet u de** **inrichtings status** wijzigen in in het gedeelte **instellingen** .
 
-    ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
+    ![Scherm opname waarin de inrichtings status wordt weer gegeven.](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u aan ServiceNow wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen** te kiezen.
+14. Definieer de gebruikers en groepen die u wilt inrichten voor ServiceNow door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
 
-    ![Inrichtingsbereik](common/provisioning-scope.png)
+    ![Scherm opname van de opties voor het inrichtings bereik.](common/provisioning-scope.png)
 
-15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
+15. Selecteer **Opslaan** als u klaar bent om in te richten.
 
-    ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
+    ![Scherm afbeelding van de knop voor het opslaan van een inrichtings configuratie.](common/provisioning-configuration-save.png)
 
-Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
+Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. Het duurt langer voordat de eerste cyclus is uitgevoerd. Volgende cycli komen ongeveer elke 40 minuten voor, zolang de Azure AD-inrichtings service wordt uitgevoerd. 
 
-## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
-Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
+## <a name="step-6-monitor-your-deployment"></a>Stap 6: uw implementatie bewaken
+Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende bronnen om uw implementatie te bewaken:
 
-1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
-2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
-3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
+- Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht.
+- Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid.
+- Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. Meer [informatie over quarantaine statussen](../app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## <a name="troubleshooting-tips"></a>Tips voor probleemoplossing
-* **InvalidLookupReference:** Bij het inrichten van bepaalde kenmerken, zoals Afdeling en Locatie in ServiceNow, moeten de waarden al bestaan in een referentietabel in ServiceNow. U kunt bijvoorbeeld twee locaties (Seattle, Los Angeles) en drie afdelingen (Sales, Finance, Marketing) hebben in de tabel **Tabelnaam invoegen** in ServiceNow. Als u een gebruiker wilt inrichten waarbij zijn afdeling ‘Sales’ is en de locatie ‘Seattle’ is, wordt hij met succes ingericht. Als u probeert een gebruiker in te richten met afdeling ‘Sales’ en locatie ‘LA’, wordt de gebruiker niet ingericht. De locatie LA moet worden toegevoegd aan de referentietabel in ServiceNow of het gebruikerskenmerk in Azure AD moet worden bijgewerkt zodat dit overeenkomt met de indeling in ServiceNow. 
-* **EntryJoiningPropertyValueIsMissing:** Controleer uw [Kenmerktoewijzingen](../app-provisioning/customize-application-attributes.md) om het overeenkomende kenmerk te identificeren. Deze waarde moet aanwezig zijn op de gebruiker of groep die u wilt inrichten. 
-* Bekijk de [ServiceNow SOAP API](https://docs.servicenow.com/bundle/newyork-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html) om de vereisten of beperkingen te begrijpen (bijvoorbeeld de indeling om een landnummer op te geven voor een gebruiker)
-* Inrichtingsaanvragen worden standaard verzonden naar https://{your-instance-name}.service-now.com/{table-name}. Als u een aangepaste tenant-URL nodig hebt, kunt u de volledige URL opgeven in het veld exemplaarnaam.
-* **ServiceNowInstanceInvalid** 
+* Wanneer u bepaalde kenmerken (zoals **afdeling** en **locatie**) in ServiceNow wilt inrichten, moeten de waarden al bestaan in een verwijzings tabel in ServiceNow. Als dat niet het geval is, krijgt u een **InvalidLookupReference** -fout. 
+
+   U kunt bijvoorbeeld twee locaties hebben (Seattle, Los Angeles) en drie afdelingen (verkoop, financiën, marketing) in een bepaalde tabel in ServiceNow. Als u een gebruiker wilt inrichten waarvan de afdeling ' verkoop ' is en de locatie ' Seattle ' is, wordt die gebruiker met succes ingericht. Als u een gebruiker wilt inrichten waarvan de afdeling ' verkoop ' is en waarvan de locatie ' LA ' is, wordt de gebruiker niet ingericht. De locatie ' LA ' moet worden toegevoegd aan de verwijzings tabel in ServiceNow, of het gebruikers kenmerk in azure AD moet worden bijgewerkt zodat dit overeenkomt met de indeling in ServiceNow. 
+* Als u een **EntryJoiningPropertyValueIsMissing** -fout krijgt, controleert u de [kenmerk toewijzingen](../app-provisioning/customize-application-attributes.md) om het overeenkomende kenmerk te identificeren. Deze waarde moet aanwezig zijn op de gebruiker of groep die u wilt inrichten. 
+* Raadpleeg de [SERVICENOW SOAP API](https://docs.servicenow.com/bundle/newyork-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html)voor meer informatie over de vereisten of beperkingen (bijvoorbeeld de notatie voor het opgeven van een land code voor een gebruiker).
+* Inrichtingsaanvragen worden standaard verzonden naar https://{your-instance-name}.service-now.com/{table-name}. Als u een aangepaste Tenant-URL nodig hebt, kunt u de volledige URL opgeven als de naam van het exemplaar.
+* De **ServiceNowInstanceInvalid** -fout geeft aan dat er een probleem is met de communicatie met het ServiceNow-exemplaar. Dit is de tekst van de fout:
   
   `Details: Your ServiceNow instance name appears to be invalid.  Please provide a current ServiceNow administrative user name and          password along with the name of a valid ServiceNow instance.`                                                              
 
-   Deze fout wijst op een probleem in de communicatie met het ServiceNow-exemplaar. 
+  Als u verbindings problemen hebt, kiest u **Nee** voor de volgende instellingen in ServiceNow:
    
-   Als u problemen hebt met de testverbinding, kunt u proberen de volgende instellingen **uit te schakelen** in ServiceNow:
-   
-   1. Selecteer **Systeembeveiliging** > **Instellingen voor hoge beveiliging** > **Basisverificatie vereisen voor inkomende SCHEMA-aanvragen**.
-   2. Selecteer **Systeemeigenschappen** > **Webservices** > **Standaard autorisatie vereisen voor binnenkomende SOAP-aanvragen**.
+  - **Systeem beveiliging**  >  Instellingen voor hoge **beveiliging**  >  **Basis verificatie vereisen voor inkomende schema aanvragen**
+  - **Systeem eigenschappen**  >  **Webservices**  >  **Basis autorisatie vereisen voor inkomende SOAP-aanvragen**
 
-   ![SOAP-aanvraag goedkeuren](media/servicenow-provisioning-tutorial/servicenow-webservice.png)
+     ![Scherm afbeelding met de optie voor het machtigen van SOAP-aanvragen.](media/servicenow-provisioning-tutorial/servicenow-webservice.png)
 
-   Als dit uw problemen niet oplost, neemt u contact op met ServiceNow en vraagt u hen SOAP-foutopsporing te schakelen om de fouten op te lossen. 
+  Als u het probleem nog steeds niet kunt oplossen, neemt u contact op met de ServiceNow-ondersteuning en vraagt u de SOAP-fout opsporing in te scha kelen voor probleem oplossing. 
 
-* **IP-bereiken** 
-
-   De Azure AD-inrichtingsservice werkt momenteel onder bepaalde IP-bereiken. Indien nodig kunt u andere IP-bereiken beperken en deze specifieke IP-bereiken aan de acceptatielijst van uw toepassing toevoegen om verkeer van de Azure AD-inrichtingsservice naar uw toepassing te laten stromen. Raadpleeg de documentatie onder [IP-bereiken](../app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges).
+* De Azure AD-inrichtings service werkt momenteel met bepaalde [IP-bereiken](../app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges). Indien nodig kunt u andere IP-adresbereiken beperken en deze specifieke IP-bereiken toevoegen aan de acceptatie lijst van uw toepassing. Met deze techniek is verkeer stroom van de Azure AD-inrichtings service naar uw toepassing mogelijk.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
-* [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+* [Gebruikersaccounts inrichten voor zakelijke apps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Single sign-on to applications in Azure Active Directory](../manage-apps/what-is-single-sign-on.md) (Eenmalige aanmelding bij toepassingen met Azure Active Directory)
 
 ## <a name="next-steps"></a>Volgende stappen
 

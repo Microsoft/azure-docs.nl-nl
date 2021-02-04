@@ -2,13 +2,13 @@
 title: Concepten-opslag
 description: Meer informatie over de mogelijkheden voor de belangrijkste opslag in azure VMware-oplossingen voor persoonlijke Clouds.
 ms.topic: conceptual
-ms.date: 11/03/2020
-ms.openlocfilehash: da5117de4b066fd9872558fa6d018ab898a576f4
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.date: 02/02/2021
+ms.openlocfilehash: 522e4f651b36532ac0c144b3889b2b67c91dc77b
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509213"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536947"
 ---
 #  <a name="azure-vmware-solution-storage-concepts"></a>Concepten van Azure VMware-oplossingen opslag
 
@@ -32,11 +32,11 @@ vSAN data stores gebruiken standaard versleuteling voor Data-at-rest. De versleu
 
 ## <a name="scaling"></a>Schalen
 
-De capaciteit van de systeem eigen cluster opslag wordt geschaald door hosts toe te voegen aan een cluster. Voor clusters die fungeren als host, wordt de onbewerkte capaciteit van het cluster uitgebreid met 15,4 TB per extra host. Clusters die zijn gebouwd met GP-hosts hebben hun onbewerkte capaciteit met 7,7 TB gestegen met elke extra host. In beide typen clusters nemen hosts ongeveer 10 minuten toe om aan een cluster te worden toegevoegd. Zie voor instructies voor het schalen van clusters de [zelf studie][tutorial-scale-private-cloud]over het schalen van een privécloud.
+De capaciteit van de systeem eigen cluster opslag wordt geschaald door hosts toe te voegen aan een cluster. Voor clusters die fungeren als host, wordt de onbewerkte cluster capaciteit met 15,4 TB verhoogd met elke toegevoegde host. Clusters die zijn gebouwd met GP-hosts hebben hun onbewerkte capaciteit verhoogd met 7,7 TB met elke toegevoegde host. In beide typen clusters nemen hosts ongeveer 10 minuten toe om aan een cluster te worden toegevoegd. Zie voor instructies voor het schalen van clusters de [zelf studie][tutorial-scale-private-cloud]over het schalen van een privécloud.
 
 ## <a name="azure-storage-integration"></a>Integratie van Azure Storage
 
-U kunt Azure Storage-services gebruiken voor workloads die worden uitgevoerd in uw privécloud. De Azure Storage-services omvatten opslag accounts, Table Storage en Blob Storage. Met de verbinding van werk belastingen voor Azure Storage-services wordt het Internet niet gepasseren. Deze connectiviteit biedt extra beveiliging en maakt het u mogelijk om op SLA gebaseerde Azure Storage-services te gebruiken in uw werk belastingen in uw privécloud.
+U kunt Azure Storage-services gebruiken voor workloads die worden uitgevoerd in uw privécloud. De Azure Storage-services omvatten opslag accounts, Table Storage en Blob Storage. Met de verbinding van werk belastingen voor Azure Storage-services wordt het Internet niet gepasseren. Deze connectiviteit biedt meer beveiliging en maakt het u mogelijk om op SLA gebaseerde Azure Storage-services te gebruiken in uw werk belastingen in uw privécloud.
 
 ## <a name="next-steps"></a>Volgende stappen
 

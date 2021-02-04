@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.openlocfilehash: 286d826f61a6c99396ef04af0a0855567bc4d1e4
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 7615e1dbce040002d9d1a13502637f78100965fb
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951380"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538904"
 ---
 # <a name="features-of-azure-cognitive-search"></a>Functies van Azure Cognitive Search
 
@@ -49,7 +49,7 @@ Azure Cognitive Search biedt een zoek machine in volledige tekst, een permanente
 
 | Rubriek&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Functies |
 |-------------------|----------|
-| Gegevensversleuteling | [**Door Microsoft beheerde versleuteling van inactieve gegevens**](search-security-overview.md#encrypted-transmissions-and-storage) is ingebouwd in de interne opslaglaag en is onherroepelijk. <br/><br/>Door de [**klant beheerde versleutelings sleutels**](search-security-manage-encryption-keys.md) die u maakt en beheert in azure Key Vault kunnen worden gebruikt voor aanvullende versleuteling van indexen en synoniemen. Voor services die na augustus 1 2020 zijn gemaakt, wordt CMK-versleuteling uitgebreid naar gegevens op tijdelijke schijven, voor een volledige dubbele versleuteling van geïndexeerde inhoud.|
+| Gegevensversleuteling | [**Door Microsoft beheerde versleuteling van inactieve gegevens**](search-security-overview.md#encryption) is ingebouwd in de interne opslaglaag en is onherroepelijk. <br/><br/>Door de [**klant beheerde versleutelings sleutels**](search-security-manage-encryption-keys.md) die u maakt en beheert in azure Key Vault kunnen worden gebruikt voor aanvullende versleuteling van indexen en synoniemen. Voor services die na augustus 1 2020 zijn gemaakt, wordt CMK-versleuteling uitgebreid naar gegevens op tijdelijke schijven, voor een volledige dubbele versleuteling van geïndexeerde inhoud.|
 | Endpoint Protection | Met [**IP-regels voor binnenkomende firewall ondersteuning**](service-configure-firewall.md) kunt u IP-bereiken instellen waarover de zoek service aanvragen zal accepteren.<br/><br/>[**Maak een persoonlijk eind punt**](service-create-private-endpoint.md) met behulp van een persoonlijke Azure-koppeling om alle aanvragen via een virtueel netwerk af te dwingen. |
 | Uitgaande beveiliging (indexeerfuncties) | Met [**gegevens toegang via persoonlijke eind punten**](search-indexer-howto-access-private.md) kunt u een Indexeer functie gebruiken om verbinding te maken met Azure-resources die zijn beveiligd met een persoonlijke Azure-koppeling.<br/><br/>[**Gegevens toegang met behulp van een vertrouwde identiteit**](search-howto-managed-identities-data-sources.md) betekent dat verbindings reeksen met externe gegevens bronnen gebruikers namen en wacht woorden kunnen weglaten. Wanneer een Indexeer functie verbinding maakt met de gegevens bron, kan de verbinding met de bron worden gemaakt als de zoek service eerder is geregistreerd als een vertrouwde service. |
 

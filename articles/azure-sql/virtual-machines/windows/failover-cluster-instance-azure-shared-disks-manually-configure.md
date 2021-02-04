@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: 8daec71745c9eff9a7db5bb34cb3596973def4aa
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 70f4ac69721db57aa06c0d8fda12189f43e79686
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736409"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537827"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Een FCI maken met gedeelde Azure-schijven (SQL Server op virtuele machines van Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -32,7 +32,7 @@ Zie voor meer informatie een overzicht van [FCI met SQL Server op Azure vm's](fa
 Voordat u de instructies in dit artikel hebt voltooid, hebt u het volgende nodig:
 
 - Een Azure-abonnement. Ga [gratis](https://azure.microsoft.com/free/)aan de slag. 
-- [Twee of meer virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md). [Beschikbaarheids sets](../../../virtual-machines/windows/tutorial-availability-sets.md) en [proximity placement groups](../../../virtual-machines/co-location.md#proximity-placement-groups) (PPGs) die worden ondersteund voor Premium-SSD-en [beschikbaarheids zones](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , worden ondersteund voor Ultra disks. Als u een PPG gebruikt, moeten alle knoop punten zich in dezelfde groep bevinden.
+- [Twee of meer virtuele Windows Azure-machines](failover-cluster-instance-prepare-vm.md). [Beschikbaarheids sets](../../../virtual-machines/windows/tutorial-availability-sets.md) en [proximity placement groups](../../../virtual-machines/co-location.md#proximity-placement-groups) (PPGs) die worden ondersteund voor Premium-SSD-en [beschikbaarheids zones](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , worden ondersteund voor Ultra disks. Alle knoop punten moeten zich in dezelfde [plaatsings groep](../../../virtual-machines/co-location.md#proximity-placement-groups)bevinden.
 - Een account met machtigingen voor het maken van objecten op zowel virtuele Azure-machines als in Active Directory.
 - De meest recente versie van [Power shell](/powershell/azure/install-az-ps). 
 

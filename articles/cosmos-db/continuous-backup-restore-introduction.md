@@ -8,17 +8,22 @@ ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
 ms.custom: references_regions
-ms.openlocfilehash: f8ba08c6147320160e99e522536f00fc98855eb4
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 036f086c88267f6a20da51746ca875c48a248712
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527627"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538842"
 ---
-# <a name="continuous-backup-with-point-in-time-restore-feature-in-azure-cosmos-db"></a>Doorlopende back-up met functie voor herstel naar een bepaald tijdstip in Azure Cosmos DB
+# <a name="continuous-backup-with-point-in-time-restore-preview-feature-in-azure-cosmos-db"></a>Doorlopende back-up met een functie voor herstel naar een bepaald tijdstip in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-De functie voor herstel naar een bepaald tijdstip van Azure Cosmos DB kan in meerdere scenario's voor komen, zoals de volgende:
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+De functie voor het terugzetten van een bepaald tijdstip van Azure Cosmos DB (preview) helpt in meerdere scenario's zoals de volgende:
 
 * Herstellen van een onbedoelde schrijf-of verwijder bewerking binnen een container.
 * Een verwijderd account, een Data Base of een container herstellen.
@@ -58,17 +63,17 @@ Hier volgen enkele van de belangrijkste scenario's die worden verholpen door de 
 
 :::image type="content" source="./media/continuous-backup-restore-introduction/restorable-account-scenario.png" alt-text="Levenscyclus gebeurtenissen met tijds tempels voor een restorable-account." lightbox="./media/continuous-backup-restore-introduction/restorable-account-scenario.png" border="false":::
 
-a. **Verwijderd account herstellen** : alle verwijderde accounts die u kunt herstellen, worden weer gegeven in het deel venster **herstellen** . Als bijvoorbeeld ' account A ' wordt verwijderd bij tijds tempel T3. In dit geval is de tijds tempel net vóór T3, locatie, doel accountnaam, resource groep en doel account naam voldoende om te herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md#restore-deleted-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md).  
+a. **Verwijderd account herstellen** : alle verwijderde accounts die u kunt herstellen, worden weer gegeven in het deel venster **herstellen** . Als bijvoorbeeld ' account A ' wordt verwijderd bij tijds tempel T3. In dit geval is de tijds tempel net vóór T3, locatie, doel accountnaam, resource groep en doel account naam voldoende om te herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md#restore-deleted-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore).  
 
 :::image type="content" source="./media/continuous-backup-restore-introduction/restorable-container-database-scenario.png" alt-text="Levenscyclus gebeurtenissen met tijds tempels voor een onstorbare data base en container." lightbox="./media/continuous-backup-restore-introduction/restorable-container-database-scenario.png" border="false":::
 
-b. **Gegevens herstellen van een account in een bepaalde regio** , bijvoorbeeld als ' account a ' bestaat in twee REGIO'S ' vs-Oost ' en ' westelijke VS ' op tijds tempel T3. Als u een kopie van account A in West-VS nodig hebt, kunt u een herstel punt in de tijd herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md), [Power shell](continuous-backup-restore-powershell.md)of [cli](continuous-backup-restore-command-line.md) met VS-West als doel locatie.
+b. **Gegevens herstellen van een account in een bepaalde regio** , bijvoorbeeld als ' account a ' bestaat in twee REGIO'S ' vs-Oost ' en ' westelijke VS ' op tijds tempel T3. Als u een kopie van account A in West-VS nodig hebt, kunt u een herstel punt in de tijd herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore) met VS-West als doel locatie.
 
-c. **Herstellen van een onbedoelde schrijf-of verwijder bewerking binnen een container met een bekende Restore-tijds tempel** , bijvoorbeeld als u **weet** dat de inhoud van container 1 binnen Data Base 1 per ongeluk is gewijzigd bij tijds tempel T3. U kunt een herstel punt van [Azure Portal](continuous-backup-restore-portal.md), [Power shell](continuous-backup-restore-powershell.md)of [cli](continuous-backup-restore-command-line.md) in een ander account in time stamp T3 uitvoeren om de gewenste status van de container te herstellen.
+c. **Herstellen van een onbedoelde schrijf-of verwijder bewerking binnen een container met een bekende Restore-tijds tempel** , bijvoorbeeld als u **weet** dat de inhoud van container 1 binnen Data Base 1 per ongeluk is gewijzigd bij tijds tempel T3. U kunt een herstel punt van [Azure Portal](continuous-backup-restore-portal.md#restore-live-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore) in een ander account in time stamp T3 uitvoeren om de gewenste status van de container te herstellen.
 
-d. **Een account herstellen naar een eerder tijdstip voordat de data base per ongeluk is verwijderd** -in de [Azure Portal](continuous-backup-restore-portal.md), kunt u het deel venster gebeurtenis invoer gebruiken om te bepalen wanneer een Data Base is verwijderd en de herstel tijd te vinden. Op dezelfde manier kunt u met [Azure cli](continuous-backup-restore-command-line.md) en [Power shell](continuous-backup-restore-powershell.md)de gebeurtenis voor het verwijderen van de data base detecteren door de invoer van database gebeurtenissen te inventariseren en vervolgens de opdracht Restore te activeren met de vereiste para meters.
+d. **Een account herstellen naar een eerder tijdstip voordat de data base per ongeluk is verwijderd** -in de [Azure Portal](continuous-backup-restore-portal.md#restore-live-account), kunt u het deel venster gebeurtenis invoer gebruiken om te bepalen wanneer een Data Base is verwijderd en de herstel tijd te vinden. Op dezelfde manier kunt u met [Azure cli](continuous-backup-restore-command-line.md#trigger-restore) en [Power shell](continuous-backup-restore-powershell.md#trigger-restore)de gebeurtenis voor het verwijderen van de data base detecteren door de invoer van database gebeurtenissen te inventariseren en vervolgens de opdracht Restore te activeren met de vereiste para meters.
 
-e. **Een account herstellen naar een eerder tijdstip voordat de container eigenschappen per ongeluk zijn verwijderd of gewijzigd.** -In [Azure Portal](continuous-backup-restore-portal.md)kunt u het deel venster gebeurtenis invoer gebruiken om te bepalen wanneer een container is gemaakt, gewijzigd of verwijderd om de herstel tijd te vinden. Op dezelfde manier kunt u met [Azure cli](continuous-backup-restore-command-line.md) en [Power shell](continuous-backup-restore-powershell.md)alle container gebeurtenissen detecteren door de feed voor container gebeurtenissen op te sommen en vervolgens de opdracht Restore te activeren met de vereiste para meters.
+e. **Een account herstellen naar een eerder tijdstip voordat de container eigenschappen per ongeluk zijn verwijderd of gewijzigd.** -In [Azure Portal](continuous-backup-restore-portal.md#restore-live-account)kunt u het deel venster gebeurtenis invoer gebruiken om te bepalen wanneer een container is gemaakt, gewijzigd of verwijderd om de herstel tijd te vinden. Op dezelfde manier kunt u met [Azure cli](continuous-backup-restore-command-line.md#trigger-restore) en [Power shell](continuous-backup-restore-powershell.md#trigger-restore)alle container gebeurtenissen detecteren door de feed voor container gebeurtenissen op te sommen en vervolgens de opdracht Restore te activeren met de vereiste para meters.
 
 ## <a name="permissions"></a>Machtigingen
 

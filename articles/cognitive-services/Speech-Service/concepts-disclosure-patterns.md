@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: shlo
-ms.openlocfilehash: 5cf933a11956bb8459bf6f5cd1b2b366eb8419d8
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 425096bf7cb75ae3560c06cbcd32778536dc1952
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99508639"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537337"
 ---
 # <a name="disclosure-design-patterns"></a>Ontwerppatronen van openbaarmakingen
 Nu u&#39;dat u het juiste [niveau van openbaar making](concepts-disclosure-guidelines.md#disclosure-assessment) hebt vastgesteld voor uw synthetische spraak ervaring,&#39;een goede tijd om mogelijke ontwerp patronen te verkennen.
@@ -237,20 +237,14 @@ Gebruik openbaar making als een kans om zonder problemen te werken.
 - [Mogelijkheden bieden voor meer informatie over hoe de stem is gemaakt](#providing-opportunities-to-learn-more-about-how-the-voice-was-made)
 - [Voor mensen](#conversational-transparency)
 
-
-
 ## <a name="additional-resources"></a>Aanvullende bronnen
 - [Richt lijnen voor micro soft bot](https://www.microsoft.com/research/uploads/prod/2018/11/Bot_Guidelines_Nov_2018.pdf)
 - [Richt lijnen voor Cortana-ontwerp](/cortana/voice-commands/voicecommand-design-guidelines)
 - [Richt lijnen voor spraak ontwerp van micro soft Windows UWP](/windows/uwp/design/input/speech-interactions)
 - [Richt lijnen voor spraak opdrachten voor micro soft Windows Mixed Reality](/windows/mixed-reality/voice-design#top-things-users-should-know-about-speech-in-mixed-reality)
 
-## <a name="reference-docs"></a>Naslagdocumentatie
+## <a name="see-also"></a>Zie ook
 
-* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)
+* [Openbaar making voor spraak-talen](https://docs.microsoft.com/legal/cognitive-services/speech-service/disclosure-voice-talent?context=/azure/cognitive-services/speech-service/context/context)
 * [Richt lijnen voor de verantwoordelijke implementatie van synthetische spraak technologie](concepts-guidelines-responsible-deployment-synthetic.md)
 * [Vrijgeven](concepts-disclosure-guidelines.md)
-
-## <a name="next-steps"></a>Volgende stappen
-
-* [Openbaar making voor spraak-talen](/legal/cognitive-services/speech-service/disclosure-voice-talent)

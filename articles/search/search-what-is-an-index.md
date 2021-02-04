@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/03/2021
-ms.openlocfilehash: d9f4ba48a7dc6cdcf6d60e4e9da5f68fcc6b1f28
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: d0cc7630a3bea67a99c3cb65d2015e934e8ac2da
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509330"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539091"
 ---
 # <a name="creating-search-indexes-in-azure-cognitive-search"></a>Zoek indexen maken in azure Cognitive Search
 
-In een zoek index wordt Doorzoek bare inhoud opgeslagen die wordt gebruikt voor volledige tekst en gefilterde query's. Een index wordt gedefinieerd door een schema en opgeslagen in de service, met het importeren van gegevens na een tweede stap. 
+Cognitive Search Zoek bare inhoud die wordt gebruikt voor volledige tekst en gefilterde query's in een *zoek index* worden opgeslagen. Een index wordt gedefinieerd door een schema en opgeslagen in de service, met het importeren van gegevens na een tweede stap. 
 
-Indexen bevatten *documenten*. Een document is conceptueel gezien een enkele eenheid van Doorzoek bare gegevens in uw index. Een detail handelaar kan voor elk product een document hebben, een nieuws organisatie heeft mogelijk een document voor elk artikel, enzovoort. Deze concepten toewijzen aan meer vertrouwde database equivalenten: een *zoek index* is gelijk aan een *tabel* en *documenten* zijn ongeveer gelijk aan *rijen* in een tabel.
+Indexen bevatten *Zoek documenten*. Een document is conceptueel gezien een enkele eenheid van Doorzoek bare gegevens in uw index. Een detail handelaar kan voor elk product een document hebben, een nieuws organisatie heeft mogelijk een document voor elk artikel, enzovoort. Deze concepten toewijzen aan meer vertrouwde database equivalenten: een *zoek index* is gelijk aan een *tabel* en *documenten* zijn ongeveer gelijk aan *rijen* in een tabel.
 
 ## <a name="whats-an-index-schema"></a>Wat is een index schema?
 
@@ -106,7 +106,9 @@ Voor Cognitive Search implementeren de Azure-Sdk's algemeen beschik bare functie
 | Javascript | [SearchIndexClient](/javascript/api/@azure/search-documents/searchindexclient) | [Indexen](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/search/search-documents/samples/javascript/src/indexes) |
 | Python | [SearchIndexClient](/python/api/azure-search-documents/azure.search.documents.indexes.searchindexclient) | [sample_index_crud_operations. py](https://github.com/Azure/azure-sdk-for-python/blob/7cd31ac01fed9c790cec71de438af9c45cb45821/sdk/search/azure-search-documents/samples/sample_index_crud_operations.py) |
 
-## <a name="defining-fields"></a>Velden definiëren
+## <a name="define-fields"></a>Velden definiëren
+
+Er wordt een zoek document gedefinieerd door de `fields` verzameling. U hebt velden nodig voor query's en sleutels. U hebt waarschijnlijk ook velden nodig om filters, facetten en sorteer bewerkingen te ondersteunen. Mogelijk hebt u ook velden nodig voor gegevens die een gebruiker nooit ziet, bijvoorbeeld velden voor winst marges of marketing promoties die u kunt gebruiken om de zoek positie te wijzigen.
 
 Eén veld van het type EDM. string moet worden opgegeven als de document sleutel. Het wordt gebruikt om elk zoek document uniek te identificeren. U kunt een document ophalen op basis van de sleutel om een detail pagina in te vullen.  
 
@@ -146,9 +148,11 @@ In de volgende scherm afbeelding ziet u de index opslag patronen die voortkomen 
 
 ![Index grootte op basis van kenmerk selectie](./media/search-what-is-an-index/realestate-index-size.png "Index grootte op basis van kenmerk selectie")
 
-Hoewel deze index varianten kunst matig zijn, kunnen we ernaar verwijzen naar een uitgebreidere vergelijking van de manier waarop kenmerken van opslag worden beïnvloed. Verhoogt u de index grootte met de instelling ' ophaalbaar '? Nee. Voegt velden toe aan een **suggestie** voor het verg Roten van index grootte? Ja.
+Hoewel deze index varianten kunst matig zijn, kunnen we ernaar verwijzen naar een uitgebreidere vergelijking van de manier waarop kenmerken van opslag worden beïnvloed. Verhoogt u de index grootte met de instelling ' ophaalbaar '? Nee. Voegt velden toe aan een **suggestie** voor het verg Roten van index grootte? Ja. 
 
-Indexen die ondersteuning bieden voor filteren en sorteren, zijn proportioneel groter dan indexen die alleen zoeken in volledige tekst ondersteunen. Dit komt doordat filter-en sorteer bewerkingen zoeken naar exacte overeenkomsten, waarbij Verbatim-tekst teken reeksen moeten worden uitgevoerd. In tegens telling tot Doorzoek bare velden die volledige-tekst query's ondersteunen, wordt gebruikgemaakt van omgekeerde indexen, die worden gevuld met tokens die minder ruimte in beslag nemen dan voor hele documenten. 
+Het is ook mogelijk om een veld filterbaar of sorteerbaar toe te voegen aan het opslag verbruik omdat gefilterde en gesorteerde velden niet worden getokend zodat teken reeksen kunnen worden vergeleken met Verbatim.
+
+Ook niet gereflecteerd in de bovenstaande tabel is de impact van [analyse](search-analyzers.md)functies. Als u de edgeNgram-tokenizer gebruikt om Verbatim reeksen van tekens (a, AB, ABC, ABCD) op te slaan, is de grootte van de index groter dan wanneer u een Standard Analyzer hebt gebruikt.
 
 > [!Note]
 > Opslag architectuur wordt beschouwd als een implementatie details van Azure Cognitive Search en kan zonder kennisgeving worden gewijzigd. Er is geen garantie dat het huidige gedrag in de toekomst blijft behouden.
@@ -169,9 +173,9 @@ De volgende opties kunnen worden ingesteld voor CORS:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt meteen aan de slag gaan met het maken van een index met behulp van nagenoeg elk voor beeld of overzicht van Cognitive Search. U kunt een van de Quick starts kiezen uit de inhouds opgave om aan de slag te gaan.
+U kunt meteen aan de slag gaan met het maken van een index met behulp van nagenoeg elk voor beeld of overzicht van Cognitive Search. Voor starters kunt u een van de Snelstartgids kiezen uit de inhouds opgave.
 
-U wilt ook vertrouwd raken met methoden voor het laden van een index met gegevens. Index definitie en populatie worden samen gemaakt. De volgende artikelen bevatten meer informatie.
+Maar u wilt ook vertrouwd raken met methoden voor het laden van een index met gegevens. Definities van index definitie en gegevens import worden samen gedefinieerd. De volgende artikelen bevatten meer informatie over het laden van een index.
 
 + [Overzicht van gegevensimport](search-what-is-data-import.md)
 

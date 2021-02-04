@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 849c159f31a14441ef9c6aa19b8704b286727bd7
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 7c89bfab6c4914cee26726006e6928eeb14c0686
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507178"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538184"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -1046,18 +1046,19 @@ Kan alle aspecten van het Exchange-product beheren.
 | --- | --- |
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-| micro soft. Directory/groepen/Unified/appRoleAssignments/update | Werk de eigenschap groups. Unified in Azure Active Directory. |
-| micro soft. Directory/groepen/Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken. |
-| micro soft. Directory/groepen/Unified/Create | Microsoft 365 groepen maken. |
-| micro soft. Directory/groepen/Unified/Delete | Verwijder Microsoft 365 groepen. |
-| micro soft. map/groepen/Unified/members/update | Lidmaatschap van Microsoft 365 groepen bijwerken. |
-| micro soft. Directory/groepen/Unified/Owners/update | Het eigendom van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen/hiddenMembers/lezen | Verborgen leden van een groep lezen |
+| micro soft. Directory/groepen. Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Create | Microsoft 365 groepen maken. |
+| micro soft. Directory/groepen. Unified/Delete | Verwijder Microsoft 365 groepen. |
+| micro soft. Directory/groepen. Unified/Restore | Microsoft 365 groepen herstellen |
+| micro soft. Directory/groepen. Unified/members/update | Lidmaatschap van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/eigen aren/bijwerken | Het eigendom van Microsoft 365 groepen bijwerken. |
 | micro soft. office365. Exchange/alallTasks | Beheer alle aspecten van Exchange Online. |
 | micro soft. office365. netwerk/prestaties/allProperties/lezen | Lees de pagina netwerk prestaties in Microsoft 365 beheer centrum. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-| micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
-| micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+| micro soft. office365. usageReports/cons/allProperties/lezen | Lees de gebruiks rapporten van Office 365. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="external-id-user-flow-administrator-permissions"></a>Beheer machtigingen voor gebruikers stroom externe ID
 
@@ -1295,23 +1296,24 @@ Kan alle aspecten van het intune-product beheren.
 | micro soft. Directory/apparaten/extensionAttributes/update | Alle waarden voor de eigenschap devices. extensionAttributes in Azure Active Directory bijwerken. |
 | micro soft. Directory/apparaten/registeredOwners/update | Werk de eigenschap devices. registeredOwners bij in Azure Active Directory. |
 | micro soft. Directory/apparaten/registeredUsers/update | Werk de eigenschap devices. registeredUsers bij in Azure Active Directory. |
-| micro soft. Directory/groepen/appRoleAssignments/update | Werk de eigenschap groups. appRoleAssignments bij in Azure Active Directory. |
-| micro soft. Directory/groepen/basis/bijwerken | Basis eigenschappen van groepen in Azure Active Directory bijwerken. |
-| micro soft. map/groepen/maken | Groepen maken in Azure Active Directory. |
-| micro soft. Directory/groepen/createAsOwner | Groepen maken in Azure Active Directory. De Maker wordt toegevoegd als de eerste eigenaar en het gemaakte object telt op het quotum van 250 gemaakte objecten van de maker. |
-| micro soft. Directory/groepen/verwijderen | Groepen verwijderen in Azure Active Directory. |
+| micro soft. map/deviceManagementPolicies/standaard/lezen | Standaard eigenschappen voor het toepassings beleid van Apparaatbeheer lezen |
+| micro soft. map/deviceRegistrationPolicy/standaard/lezen | Lees de standaard eigenschappen van het registratie beleid voor apparaten |
 | micro soft. Directory/groepen/hiddenMembers/lezen | Lees de eigenschap groups. hiddenMembers in Azure Active Directory. |
-| micro soft. map/groepen/leden/bijwerken | Werk de eigenschap groups. members bij in Azure Active Directory. |
-| micro soft. Directory/groepen/eigen aren/bijwerken | Werk de eigenschap groups. Owners bij in Azure Active Directory. |
-| micro soft. Directory/groepen/herstellen | Groepen herstellen in Azure Active Directory. |
-| micro soft. Directory/groepen/instellingen/bijwerken | Werk de eigenschap groups. settings bij in Azure Active Directory. |
-| micro soft. Directory/Users/appRoleAssignments/update | Werk de eigenschap users. appRoleAssignments bij in Azure Active Directory. |
+| micro soft. Directory/groepen. beveiliging/basis/bijwerken | Basis eigenschappen van groepen in Azure Active Directory bijwerken. |
+| micro soft. Directory/groepen. beveiliging/classificatie/bijwerken | De classificatie-eigenschap van de beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
+| micro soft. Directory/groepen. beveiliging/maken | Groepen maken in Azure Active Directory. |
+| micro soft. Directory/groepen. beveiliging/verwijderen | Groepen verwijderen in Azure Active Directory. |
+| micro soft. Directory/groups. Security/dynamicMembershipRule/update | De eigenschap dynamicMembershipRule van de beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
+| micro soft. Directory/groups. Security/groupType/update | Groeps type-eigenschap van de beveiligings groepen bijwerken met uitsluiting van door rollen toewijs bare groepen |
+| micro soft. Directory/groepen. beveiliging/leden/bijwerken | Werk de eigenschap groups. members bij in Azure Active Directory. |
+| micro soft. Directory/groepen. beveiliging/eigen aren/bijwerken | Werk de eigenschap groups. Owners bij in Azure Active Directory. |
+| micro soft. Directory/groepen. beveiliging/zicht baarheid/bijwerken | De zichtbaarheids eigenschap van de beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 | micro soft. map/gebruikers/basis/bijwerken | Basis eigenschappen van gebruikers in Azure Active Directory bijwerken. |
 | micro soft. map/gebruikers/Manager/Update | Werk de eigenschap users. Manager bij in Azure Active Directory. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
 | micro soft. intune/toestemmingen/allTasks | Beheer alle aspecten van intune. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-| micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="kaizala-administrator-permissions"></a>Kaizala-beheerders machtigingen
 
@@ -1458,13 +1460,18 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 | micro soft. map/Contacts/maken | Maak contact personen in Azure Active Directory. |
 | micro soft. map/contact personen/verwijderen | Verwijder contact personen in Azure Active Directory. |
 | micro soft. map/groepen/maken | Groepen maken in Azure Active Directory. |
-| micro soft. Directory/groepen/createAsOwner | Groepen maken in Azure Active Directory. De Maker wordt toegevoegd als de eerste eigenaar en het gemaakte object telt op het quotum van 250 gemaakte objecten van de maker. |
+| micro soft. Directory/groepen/verwijderen | Groepen verwijderen, met uitzonde ring van functie-toewijs bare groep |
 | micro soft. map/groepen/leden/bijwerken | Werk de eigenschap groups. members bij in Azure Active Directory. |
 | micro soft. Directory/groepen/eigen aren/bijwerken | Werk de eigenschap groups. Owners bij in Azure Active Directory. |
-| micro soft. Directory/Users/appRoleAssignments/update | Werk de eigenschap users. appRoleAssignments bij in Azure Active Directory. |
+| micro soft. Directory/groepen/herstellen | Verwijderde groepen herstellen |
+| micro soft. Directory/oAuth2PermissionGrants/allProperties/allTasks | OAuth 2,0-machtigings subsidies maken en verwijderen en alle eigenschappen lezen en bijwerken |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Principal-roltoewijzingen van service bijwerken |
 | micro soft. Directory/gebruikers/assignLicense | Licenties op gebruikers beheren in Azure Active Directory. |
 | micro soft. map/gebruikers/basis/bijwerken | Basis eigenschappen van gebruikers in Azure Active Directory bijwerken. |
+| micro soft. map/gebruikers/maken | Gebruikers toevoegen |
 | micro soft. map/gebruikers/verwijderen | Verwijder gebruikers in Azure Active Directory. |
+| micro soft. map/gebruikers/uitschakelen | Gebruikers uitschakelen |
+| micro soft. map/gebruikers/inschakelen | Gebruikers inschakelen |
 | micro soft. Directory/gebruikers/invalidateAllRefreshTokens | De tokens voor het vernieuwen van alle gebruikers in Azure Active Directory ongeldig te maken. |
 | micro soft. map/gebruikers/Manager/Update | Werk de eigenschap users. Manager bij in Azure Active Directory. |
 | micro soft. map/gebruikers/wacht woord/bijwerken | Wacht woorden bijwerken voor alle gebruikers in Azure Active Directory. Raadpleeg de online documentatie voor meer informatie. |
@@ -1472,9 +1479,9 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 | micro soft. map/gebruikers/userPrincipalName/update | Werk de eigenschap users. userPrincipalName bij in Azure Active Directory. |
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-| micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="partner-tier2-support-permissions"></a>Tier2-ondersteunings machtigingen voor partners
 
@@ -1498,16 +1505,25 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 | micro soft. map/Contacts/basis/update | Basis eigenschappen van contact personen in Azure Active Directory bijwerken. |
 | micro soft. map/Contacts/maken | Maak contact personen in Azure Active Directory. |
 | micro soft. map/contact personen/verwijderen | Verwijder contact personen in Azure Active Directory. |
-| micro soft. Directory/domeinen/allTasks | Maak en verwijder domeinen en lees de standaard eigenschappen in Azure Active Directory en werk deze bij. |
+| micro soft. Directory/domeinen/Basic/allTasks | Maak en verwijder domeinen en lees de standaard eigenschappen in Azure Active Directory en werk deze bij. |
 | micro soft. map/groepen/maken | Groepen maken in Azure Active Directory. |
 | micro soft. Directory/groepen/verwijderen | Groepen verwijderen in Azure Active Directory. |
 | micro soft. map/groepen/leden/bijwerken | Werk de eigenschap groups. members bij in Azure Active Directory. |
+| micro soft. Directory/groepen/eigen aren/bijwerken | Eigen aren van groepen bijwerken, met uitzonde ring van op rollen toewijs bare groepen |
 | micro soft. Directory/groepen/herstellen | Groepen herstellen in Azure Active Directory. |
+| micro soft. Directory/oAuth2PermissionGrants/allProperties/allTasks | OAuth 2,0-machtigings subsidies maken en verwijderen en alle eigenschappen lezen en bijwerken |
 | micro soft. map/organisatie/basis/bijwerken | Basis eigenschappen van de organisatie in Azure Active Directory bijwerken. |
-| micro soft. Directory/Users/appRoleAssignments/update | Werk de eigenschap users. appRoleAssignments bij in Azure Active Directory. |
+| micro soft. Directory/roleAssignments/allProperties/allTasks | Roltoewijzingen maken en verwijderen en alle roltoewijzings eigenschappen lezen en bijwerken |
+| micro soft. Directory/roleDefinitions/allProperties/allTasks | Roldefinities maken en verwijderen, en alle eigenschappen lezen en bijwerken |
+| micro soft. Directory/scopedRoleMemberships/allProperties/allTasks | ScopedRoleMemberships maken en verwijderen en alle eigenschappen lezen en bijwerken |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Principal-roltoewijzingen van service bijwerken |
+| micro soft. map/subscribedSkus/standaard/lezen | Basis eigenschappen voor abonnementen lezen |
 | micro soft. Directory/gebruikers/assignLicense | Licenties op gebruikers beheren in Azure Active Directory. |
 | micro soft. map/gebruikers/basis/bijwerken | Basis eigenschappen van gebruikers in Azure Active Directory bijwerken. |
+| micro soft. map/gebruikers/maken | Gebruikers toevoegen |
 | micro soft. map/gebruikers/verwijderen | Verwijder gebruikers in Azure Active Directory. |
+| micro soft. map/gebruikers/uitschakelen | Gebruikers uitschakelen |
+| micro soft. map/gebruikers/inschakelen | Gebruikers inschakelen |
 | micro soft. Directory/gebruikers/invalidateAllRefreshTokens | De tokens voor het vernieuwen van alle gebruikers in Azure Active Directory ongeldig te maken. |
 | micro soft. map/gebruikers/Manager/Update | Werk de eigenschap users. Manager bij in Azure Active Directory. |
 | micro soft. map/gebruikers/wacht woord/bijwerken | Wacht woorden bijwerken voor alle gebruikers in Azure Active Directory. Raadpleeg de online documentatie voor meer informatie. |
@@ -1515,9 +1531,9 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 | micro soft. map/gebruikers/userPrincipalName/update | Werk de eigenschap users. userPrincipalName bij in Azure Active Directory. |
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-| micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="password-administrator-permissions"></a>Wachtwoord beheerders machtigingen
 
@@ -1785,18 +1801,18 @@ Kan alle aspecten van de share point-service beheren.
 | --- | --- |
 | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-| micro soft. Directory/groepen/Unified/appRoleAssignments/update | Werk de eigenschap groups. Unified in Azure Active Directory. |
-| micro soft. Directory/groepen/Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken. |
-| micro soft. Directory/groepen/Unified/Create | Microsoft 365 groepen maken. |
-| micro soft. Directory/groepen/Unified/Delete | Verwijder Microsoft 365 groepen. |
-| micro soft. map/groepen/Unified/members/update | Lidmaatschap van Microsoft 365 groepen bijwerken. |
-| micro soft. Directory/groepen/Unified/Owners/update | Het eigendom van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Create | Microsoft 365 groepen maken. |
+| micro soft. Directory/groepen. Unified/Delete | Verwijder Microsoft 365 groepen. |
+| micro soft. Directory/groepen. Unified/members/update | Lidmaatschap van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/eigen aren/bijwerken | Het eigendom van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Restore | Microsoft 365 groepen herstellen |
 | micro soft. office365. netwerk/prestaties/allProperties/lezen | Lees de pagina netwerk prestaties in het M365-beheer centrum. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 | micro soft. office365. share point/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. office365. share point en werk deze bij. |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-| micro soft. office365. usageReports/de aflezingen/lezen    | Lees de gebruiks rapporten van Office 365. |
-| micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+| micro soft. office365. usageReports/cons/allProperties/lezen | Lees de gebruiks rapporten van Office 365. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="teams-communications-administrator-permissions"></a>Beheerders machtigingen voor teams communicatie
 
@@ -1880,16 +1896,19 @@ Kan de micro soft teams-service beheren.
 | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
 | micro soft. Directory/groepen/hiddenMembers/lezen | Lees de eigenschap groups. hiddenMembers in Azure Active Directory. |
 | micro soft. Directory/groepen/Unified/appRoleAssignments/update | Werk de eigenschap groups. Unified in Azure Active Directory. |
-| micro soft. Directory/groepen/Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken. |
-| micro soft. Directory/groepen/Unified/Create | Microsoft 365 groepen maken. |
-| micro soft. Directory/groepen/Unified/Delete | Verwijder Microsoft 365 groepen. |
-| micro soft. map/groepen/Unified/members/update | Lidmaatschap van Microsoft 365 groepen bijwerken. |
-| micro soft. Directory/groepen/Unified/Owners/update | Het eigendom van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Create | Microsoft 365 groepen maken. |
+| micro soft. Directory/groepen. Unified/Delete | Verwijder Microsoft 365 groepen. |
+| micro soft. Directory/groepen. Unified/members/update | Lidmaatschap van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/eigen aren/bijwerken | Het eigendom van Microsoft 365 groepen bijwerken. |
+| micro soft. Directory/groepen. Unified/Restore | Microsoft 365 groepen herstellen |
+| micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Toestemming geven voor gedelegeerde machtigingen namens een groep |
 | micro soft. office365. netwerk/prestaties/allProperties/lezen | Lees de pagina netwerk prestaties in het M365-beheer centrum. |
 | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+| micro soft. office365. skypeForBusiness/cons/allTasks | Alle aspecten van Skype voor bedrijven online beheren |
 | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-| micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
-| micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+| micro soft. office365. usageReports/cons/allProperties/lezen | Lees de gebruiks rapporten van Office 365. |
+| micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 | micro soft. teams//allProperties/allTasks | Alle resources in teams beheren. |
 
 ### <a name="usage-summary-reports-reader-permissions"></a>Lees machtigingen voor gebruiks samenvattings rapporten

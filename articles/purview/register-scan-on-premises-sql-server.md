@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 09/18/2020
-ms.openlocfilehash: 0d282ee805ac61ba17ceb3ecc6a3d8179ea7b319
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 26012b23a10f560158e3ba3919e12f5c15759189
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555896"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539312"
 ---
 # <a name="register-and-scan-an-on-premises-sql-server"></a>Een on-premises SQL server registreren en scannen
 
@@ -50,21 +50,17 @@ Er is slechts één manier om verificatie voor SQL Server on-premises in te stel
 
 ### <a name="sql-authentication"></a>SQL-verificatie
 
-De SQL-identiteit moet toegang hebben tot de primaire data base. Deze locatie is waar `sys.databases` opgeslagen. De controle sfeer liggen-scanner moet worden geïnventariseerd `sys.databases` om alle SQL data base-exemplaren op de server te kunnen vinden.
+Het SQL-account moet toegang hebben tot de **hoofd** database. Dit komt doordat de `sys.databases` zich in de data base Master bevindt. De controle sfeer liggen-scanner moet worden geïnventariseerd `sys.databases` om alle SQL-data bases op de server te kunnen vinden.
 
 #### <a name="using-an-existing-server-administrator"></a>Een bestaande server beheerder gebruiken
 
 Als u van plan bent een bestaande sa-gebruiker (Server beheerder) te gebruiken om uw on-premises SQL-Server te scannen, controleert u het volgende:
 
-1. `sa` is geen Windows-verificatie type.
+1. `sa` is geen Windows-verificatie account.
 
-2. De gebruiker op server niveau die u wilt gebruiken, moet beschikken over Server rollen van openbaar en sysadmin. U kunt dit controleren door te navigeren naar SQL Server Management Studio (SSMS), verbinding te maken met de server, te navigeren naar beveiliging, de aanmeldings gegevens te selecteren die u wilt gebruiken, met de rechter muisknop op **Eigenschappen** en vervolgens **Server functies** te selecteren.
+2. De aanmeldings gegevens op server niveau die u wilt gebruiken, moeten Server rollen van openbaar en sysadmin hebben. U kunt dit controleren door verbinding te maken met de server, te navigeren naar SQL Server Management Studio (SSMS), naar de beveiliging te navigeren, de aanmeldings gegevens te selecteren die u wilt gebruiken, met de rechter muisknop op **Eigenschappen** en vervolgens **Server functies** te selecteren.
 
    :::image type="content" source="media/register-scan-on-premises-sql-server/server-level-login.png" alt-text="Aanmelden op server niveau.":::
-
-3. De data bases worden toegewezen aan een gebruiker die ten minste db_datareader niveau toegang heeft voor elke Data Base.
-
-   :::image type="content" source="media/register-scan-on-premises-sql-server/user-mapping-sa.png" alt-text="gebruikers toewijzing voor SA.":::
 
 #### <a name="creating-a-new-login-and-user"></a>Een nieuwe aanmelding en gebruiker maken
 
@@ -74,9 +70,9 @@ Als u een nieuwe aanmelding en gebruiker wilt maken om uw SQL-Server te kunnen s
 
    :::image type="content" source="media/register-scan-on-premises-sql-server/create-new-login-user.png" alt-text="Nieuwe aanmelding en gebruiker maken.":::
 
-2. Selecteer Server functies in het linkernavigatievenster en selecteer zowel openbaar als sysadmin.
+2. Selecteer Server functies in de linkernavigatiebalk en zorg ervoor dat de open bare rol is toegewezen.
 
-3. Selecteer gebruikers toewijzing in het linkernavigatievenster en selecteer alle data bases in de kaart.
+3. Selecteer in het navigatie venster links de optie gebruikers toewijzing, selecteer alle data bases in de kaart en selecteer de databaserol: **db_datareader**.
 
    :::image type="content" source="media/register-scan-on-premises-sql-server/user-mapping.png" alt-text="gebruikers toewijzing.":::
 
@@ -88,8 +84,7 @@ Als u een nieuwe aanmelding en gebruiker wilt maken om uw SQL-Server te kunnen s
 
 #### <a name="storing-your-sql-login-password-in-a-key-vault-and-creating-a-credential-in-purview"></a>Uw SQL-aanmeldings wachtwoord opslaan in een sleutel kluis en een referentie maken in controle sfeer liggen
 
-1. Ga in Azure Portal naar uw sleutelkluis
-1. Selecteer **Instellingen > Geheimen**
+1. Navigeer naar uw sleutel kluis in de Azure-portal1. Selecteer **Instellingen > Geheimen**
 1. Selecteer **+ genereren/importeren** en voer de **naam** en **waarde** in als het *wacht woord* van uw SQL Server-aanmelding
 1. Selecteer **Maken** om te voltooien
 1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)

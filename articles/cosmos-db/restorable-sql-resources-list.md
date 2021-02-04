@@ -6,14 +6,19 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/03/2021
 ms.author: govindk
-ms.openlocfilehash: dbee87098dcc712669c332deac656cf5656ef4c4
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: e31423ae5afd4955ebe7acf1d456496f15f14a6b
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527365"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537286"
 ---
 # <a name="list-restorable-sql-api-resources-in-azure-cosmos-db-using-rest-api"></a>Restorable SQL API-resources in Azure Cosmos DB weer geven met behulp van REST API
+
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Een lijst met de data base en container combinatie retour neren die op het account bestaan op basis van de opgegeven tijds tempel en locatie. Dit helpt in scenario's om te valideren welke resources bestaan op bepaalde tijds tempel en locatie. Deze API vereist `Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read` machtiging.
 

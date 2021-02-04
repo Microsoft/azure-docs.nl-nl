@@ -10,17 +10,17 @@ tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2019
 ms.author: anupand
-ms.openlocfilehash: f718471c3f79e9a33b0e03b088f8c8d2ae0231d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 555c903dc3375080a8b0d006d2aac7216854c939
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73587509"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539295"
 ---
 # <a name="subnet-extension"></a>Subnetextensie
 De migratie van werk belastingen naar de open bare Cloud vereist een zorgvuldige planning en coördinatie. Een van de belangrijkste overwegingen is de mogelijkheid om uw IP-adressen te bewaren. Dit kan bijzonder belang rijk zijn als uw toepassingen afhankelijk zijn van IP-adressen of als u nalevings vereisten hebt voor het gebruik van specifieke IP-adressen. Met Azure Virtual Network wordt dit probleem voor u opgelost, zodat u VNet en subnetten kunt maken met behulp van een IP-adres bereik van uw keuze.

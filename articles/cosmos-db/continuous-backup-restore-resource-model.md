@@ -7,17 +7,22 @@ ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 64033182356e66d6a69bd47c1780b7081416019e
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 91421b66af441ed2c7e9c8b66c16ee83f489b03e
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527396"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538498"
 ---
-# <a name="resource-model-for-the-azure-cosmos-db-point-in-time-restore-feature"></a>Resource model voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaald tijdstip
+# <a name="resource-model-for-the-azure-cosmos-db-point-in-time-restore-feature-preview"></a>Resource model voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaald tijdstip (preview-versie)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-In dit artikel wordt het resource model uitgelegd voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaalde tijd. Hierin worden de para meters uitgelegd die ondersteuning bieden voor de continue back-up en bronnen die kunnen worden hersteld in Azure Cosmos DB-API voor SQL-en MongoDB-accounts.
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+In dit artikel wordt het resource model uitgelegd voor de functie voor het herstellen van Azure Cosmos DB naar een bepaald tijdstip (preview-versie). Hierin worden de para meters uitgelegd die ondersteuning bieden voor de continue back-up en bronnen die kunnen worden hersteld in Azure Cosmos DB-API voor SQL-en MongoDB-accounts.
 
 ## <a name="database-accounts-resource-model"></a>Resource model van het database account
 

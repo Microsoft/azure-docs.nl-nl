@@ -7,17 +7,22 @@ ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 7a41eb8bdd573ac08b0c76eb9a6c2b0724637c39
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: c0af1db12f3ade2945524f48e4539d2d2e9aa6b9
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527720"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539176"
 ---
-# <a name="frequently-asked-questions-on-the-azure-cosmos-db-point-in-time-restore-feature"></a>Veelgestelde vragen over de functie voor het terugzetten van Azure Cosmos DB naar een bepaalde tijd
+# <a name="frequently-asked-questions-on-the-azure-cosmos-db-point-in-time-restore-feature-preview"></a>Veelgestelde vragen over de functie voor het terugzetten van Azure Cosmos DB naar een bepaald tijdstip (preview-versie)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-In dit artikel vindt u een lijst met veelgestelde vragen over de functionaliteit van het Azure Cosmos DB herstel naar een bepaald tijdstip met behulp van de doorlopende back-upmodus.
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+In dit artikel vindt u een lijst met veelgestelde vragen over de functionaliteit van het Azure Cosmos DB herstel naar een bepaald tijdstip (preview) die wordt behaald met behulp van de doorlopende back-upmodus.
 
 ## <a name="how-much-time-does-it-takes-to-restore"></a>Hoe lang duurt het om te herstellen?
 De duur van het herstel is afhankelijk van de grootte van uw gegevens.

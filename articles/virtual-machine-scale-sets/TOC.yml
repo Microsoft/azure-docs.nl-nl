@@ -4,7 +4,7 @@
   items:
     - name: Wat zijn schaalsets voor virtuele machines?
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Maken in Azure Portal
       href: quick-create-portal.md
@@ -63,6 +63,8 @@
       items:
         - name: Een virtuele-machineschaalset maken
           href: ./scripts/cli-sample-create-simple-scale-set.md
+        - name: Een schaalset voor virtuele machines maken en beheren
+          href: ./scripts/cli-sample-manage-scale-set.md
         - name: Een schaalset maken op basis van een aangepaste VM-installatiekopie
           href: ./scripts/cli-sample-create-scale-set-from-custom-image.md
         - name: Toepassingen installeren in een schaalset

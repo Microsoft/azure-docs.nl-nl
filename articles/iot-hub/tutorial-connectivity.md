@@ -16,12 +16,12 @@ ms.custom:
 ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: d9ca9dd345be7fb8f1a2b613386bdca7bdcd835a
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 253ec23a421415c11e4b47670dca870ebc463256
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070375"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538705"
 ---
 # <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Zelfstudie: Een gesimuleerd apparaat gebruiken om connectiviteit met uw IoT-hub te testen
 
@@ -66,15 +66,15 @@ Een apparaat moet door uw hub worden geverifieerd voordat het gegevens kan uitwi
 
 Meld u aan bij de portal en ga naar uw IoT Hub. Ga vervolgens naar het hulpprogramma **IoT-apparaten**:
 
-![Hulpprogramma IoT-apparaten](media/tutorial-connectivity/iot-devices-tool.png)
+:::image type="content" source="media/tutorial-connectivity/iot-devices-tool.png" alt-text="Hulpprogramma IoT-apparaten":::
 
-Om een nieuw apparaat te registreren, klikt u op **+ Toevoegen**, stelt u het **Apparaat-id** in op **MyTestDevice** en klikt u op **Opslaan**:
+Als u een nieuw apparaat wilt registreren, klikt u op **+ Nieuw**, stelt u **apparaat-id** in op **MyTestDevice** en klikt u op **Opslaan**.
 
-![Een nieuw apparaat toevoegen](media/tutorial-connectivity/add-device.png)
+:::image type="content" source="media/tutorial-connectivity/add-device.png" alt-text="Een nieuw apparaat toevoegen":::
 
-Klik op de verbindingsreeks voor **MyTestDevice** in de lijst van apparaten om die op te halen en kopieer vervolgens de waarde van de **Primaire sleutel van de verbindingsreeks**. De verbindingsreeks bevat de *gedeelde toegangssleutel* voor het apparaat.
+Als u de connection string voor **MyTestDevice** wilt ophalen, klikt u erop in de lijst met apparaten en kopieert u de waarde van de **primaire verbindings reeks** . De verbindingsreeks bevat de *gedeelde toegangssleutel* voor het apparaat.
 
-![De apparaatverbindingsreeks ophalen](media/tutorial-connectivity/copy-connection-string.png)
+:::image type="content" source="media/tutorial-connectivity/copy-connection-string.png" alt-text="Connection string van apparaat ophalen}":::
 
 Voer de Node.js-toepassing Gesimuleerd apparaat uit dat u eerder hebt gedownload om te simuleren dat **MyTestDevice** telemetriegegevens naar uw IoT Hub verzendt.
 
@@ -218,7 +218,7 @@ Het gesimuleerd apparaat drukt een bericht af op de console wanneer het een aanr
 
 ![Gesimuleerd apparaat ontvangt aanroep via directe methode](media/tutorial-connectivity/receive-method-call.png)
 
-Wanneer een gesimuleerd apparaat een aanroep via directe methode ontvangt, zendt het een bevestiging terug naar de hub:
+Wanneer het gesimuleerde apparaat de aanroep directe methode heeft ontvangen, stuurt het een bevestiging terug naar de hub:
 
 ![Bevestiging directe methode ontvangen](media/tutorial-connectivity/method-acknowledgement.png)
 

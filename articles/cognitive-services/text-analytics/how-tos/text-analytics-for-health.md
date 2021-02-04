@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 02/03/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: d7f71afd1cf47ab1a94d984090e8fb52ee69c6b4
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: f7ba6363ec3a38d37ea3df0f76409289069638e8
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99088935"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537793"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Procedure: Text Analytics gebruiken voor de status (preview)
 
@@ -113,6 +113,9 @@ De documenten mogen niet meer dan 5.120 tekens per document bevatten. Zie het ar
 ### <a name="structure-the-api-request-for-the-hosted-asynchronous-web-api"></a>De API-aanvraag voor de gehoste asynchrone Web-API structureren
 
 Voor zowel de container als de gehoste Web-API moet u een POST-aanvraag maken. U kunt [met behulp van Postman](text-analytics-how-to-call-api.md), een krul opdracht of de **API-test console** in de [Text Analytics voor status gehoste API-referentie](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Health) snel een post-aanvraag samen stellen en verzenden naar de gehoste Web-API in uw gewenste regio. 
+
+> [!NOTE]
+> Zowel de asynchrone `/analyze` als de `/health` eind punten zijn alleen beschikbaar in de volgende REGIO'S: VS-West 2, VS-Oost 2, VS-centraal, Europa-noord en Europa-West.  Als u geslaagde aanvragen voor deze eind punten wilt maken, controleert u of uw resource is gemaakt in een van deze regio's.
 
 Hieronder ziet u een voor beeld van een JSON-bestand dat is gekoppeld aan de Text Analytics voor de hoofd tekst van de status-API-aanvraag:
 

@@ -6,14 +6,19 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/03/2021
 ms.author: govindk
-ms.openlocfilehash: 442f7e3abdf065377c78f71f003733ee295b312a
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 71aafc756e5291e148c3b162f8946544b6e3c2d0
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527660"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537574"
 ---
 # <a name="list-restorable-database-accounts-using-azure-cosmos-db-rest-api"></a>Restorable database accounts weer geven met behulp van Azure Cosmos DB REST API
+
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Een lijst met alle herstor bare Azure Cosmos DB database accounts die beschikbaar zijn in het abonnement. Voor deze aanroep is `Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read` toestemming vereist.
 

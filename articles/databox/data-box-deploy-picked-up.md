@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 02/02/2020
+ms.date: 02/02/2021
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 228f837a8826612bbbadf2ca8c5ef339ab248397
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 267094ea6a7295a65b93fb7700c97e4280da341d
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524989"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539108"
 ---
 ::: zone target="docs"
 
@@ -267,6 +267,35 @@ Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box
     ```
 
 Als u problemen ondervindt, stuurt u een e-mail naar Data Box Operations Asia [adbo@microsoft.com](mailto:adbo@microsoft.com) met details van de problemen. Vermeld de taaknaam in de onderwerpregel.
+
+::: zone target="chromeless"
+
+## <a name="verify-data-upload-to-azure"></a>De gegevensupload naar Azure controleren
+
+[!INCLUDE [data-box-verify-upload](../../includes/data-box-verify-upload.md)]
+
+## <a name="erasure-of-data-from-data-box"></a>Gegevens verwijderen uit de Data Box
+ 
+
+::: zone-end
+
+## <a name="united-arab-emirates"></a>[Verenigde Arabische Emiraten](#tab/in-uae)
+
+1. Bewaar de oorspronkelijke doos om het apparaat terug te sturen.
+2. Zorg ervoor dat het kopiëren van gegevens naar het apparaat is voltooid en dat de **voorbereiding voor verzending** stap is voltooid.
+3. Noteer het referentie nummer op de pagina **voorbereiding voor verzending** van de lokale web-UI van het apparaat.
+4. Schakel het apparaat uit en verwijder de kabels. Rol het meegeleverde netsnoer op en plaats het in de opberglade aan de achterkant van het apparaat.
+6. Verpak het apparaat in de oorspronkelijke doos om het apparaat terug te sturen.
+7. E-mail [Azure data Box bewerkingen](mailto:adbops@microsoft.com) voor het verkrijgen van een id die wordt gebruikt om het pakket te identificeren wanneer het op het Data Center arriveert.
+8. Noteer deze ID op het gedrukte verzend label naast het retour adres zodat het duidelijk zichtbaar is.  
+9. U kunt online een ophaling boeken door te gaan naar [DHL Express VAE](https://mydhl.express.dhl/ae/en/home.html#/schedulePickupTab)  >  **een ophaling plannen**.
+   - Voer het referentie nummer van de **voorbereiding voor verzending** pagina van de lokale web-gebruikers interface van het apparaat in het veld vracht nummer in.
+   - Boekingen worden geaccepteerd van 9:00 uur-2:00 uur zes dagen per week (met uitzonde ring van VR en open bare feest dagen).
+   - Aanvragen voor ophalen moeten ten minste 90 minuten vóór de sluitings tijd van de klant worden geplaatst.
+10. Als u een probleem ondervindt met het DHL-boekings programma, kunt u op een van de volgende manieren contact opnemen met DHL:
+    - Bel 04-2924545.
+    - E-mail bericht [ecom.ae@dhl.com](mailto:ecom.ae@dhl.com) met details van de probleem (en) en plaats het nummer van de vracht brief in het onderwerp: regel.
+    - Bel met de klant ondersteuning van DHL op 600 567567.
 
 ::: zone target="chromeless"
 

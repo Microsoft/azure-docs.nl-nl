@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
-ms.openlocfilehash: 8d984a303234a24423ceae100bd139cb484d6495
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: d848c1ed1ab9d4cb24dec9423d93ec62ab45633b
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702782"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537218"
 ---
 # <a name="estimate-and-manage-capacity-of-an-azure-cognitive-search-service"></a>De capaciteit van een Azure Cognitive Search-service schatten en beheren
 
@@ -207,6 +207,14 @@ Algemene aanbevelingen voor hoge Beschik baarheid zijn:
 Service Level Agreements (SLA) voor Azure Cognitive Search zijn gericht op query bewerkingen en bij index updates die bestaan uit het toevoegen, bijwerken of verwijderen van documenten.
 
 Basic-laag oplopend op één partitie en drie replica's. Als u wilt dat de flexibiliteit onmiddellijk reageert op schommelingen in de vraag naar het indexeren en door Voer van query's, overweeg dan een van de standaard lagen.  Als u vindt dat uw opslag vereisten veel sneller groeien dan de door Voer van query's, overweeg dan een van de geoptimaliseerde opslag lagen.
+
+## <a name="about-queries-per-second-qps"></a>Over query's per seconde (QPS)
+
+Vanwege het grote aantal factoren dat de query prestaties verbiedt, publiceert micro soft verwachte QPS-aantallen niet. QPS-schattingen moeten onafhankelijk van elke klant worden ontwikkeld met behulp van de servicelaag, configuratie, index en query constructies die geldig zijn voor uw toepassing. De grootte en complexiteit van de index, de grootte en complexiteit van query's en de hoeveelheid verkeer zijn primaire determinanten van QPS. Er is geen manier om zinvolle schattingen te bieden wanneer dergelijke factoren onbekend zijn.
+
+Schattingen zijn meer voorspelbaar wanneer ze worden berekend op Services die worden uitgevoerd op speciale resources (Basic-en Standard-lagen). U kunt de QPS nauw keuriger schatten omdat u meer controle hebt over de para meters. Zie [Azure Cognitive Search prestaties en optimalisatie](search-performance-optimization.md)voor meer informatie over het aanpaken van de schatting.
+
+Voor de lagen geoptimaliseerd voor opslag (L1 en L2) moet u een lagere query door Voer en een hogere latentie dan de standaard lagen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -3,13 +3,13 @@ title: 'Concepten: persoonlijke Clouds van Azure VMware-oplossing controleren en
 description: Meer informatie over hoe de Azure VMware-oplossing VMware ESXi servers bewaakt en herstelt in een persoonlijke cloud van Azure VMware-oplossing.
 ms.topic: conceptual
 ms.custom: contperf-fy21q2
-ms.date: 11/20/2020
-ms.openlocfilehash: 7f367a6ef9b86f235a16a698735cfb58a11f6862
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.date: 02/03/2021
+ms.openlocfilehash: 6174df429fd9b21c7f685c8ba14e6d5c0bba4c83
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033592"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538955"
 ---
 # <a name="monitor-and-repair-azure-vmware-solution-private-clouds"></a>Persoonlijke Clouds van Azure VMware-oplossing controleren en herstellen
 
@@ -43,10 +43,7 @@ Het proces voor het door voeren van een host begint met het toevoegen van een ni
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Hier volgen enkele onderwerpen die u mogelijk wilt meer informatie over:
+Nu u hebt laten zien hoe u met Azure VMware-oplossing persoonlijke Clouds bewaakt en herstelt, kunt u het volgende weten:
 
-- [Azure VMware-oplossing, upgrades voor privécloud](concepts-upgrades.md)
-- [Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen](lifecycle-management-of-azure-vmware-solution-vms.md)
-- [Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie](azure-security-integration.md)
-- [Back-ups maken van Azure VMware-oplossing Vm's met Azure Backup Server](backup-azure-vmware-solution-virtual-machines.md)
-- [Herstel na nood geval voor virtuele machines met behulp van de Azure VMware-oplossing volt ooien](disaster-recovery-for-virtual-machines.md)
+- [Azure VMware-oplossing persoonlijke Cloud upgrades](concepts-upgrades.md).
+- [Informatie over het inschakelen van de Azure VMware Solution-resource](enable-azure-vmware-solution.md).

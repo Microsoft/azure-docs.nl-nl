@@ -7,12 +7,12 @@ author: DaleKoetke
 ms.author: dalek
 ms.date: 5/7/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 69ac1e82c267dee521143c4ed5f6c2be4d32e2ea
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 477a96f1bf66255b11b2fee36c38e55b18cddb69
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531323"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556120"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gebruik en kosten van Application Insights beheren
 
@@ -186,7 +186,7 @@ De hoeveelheid gegevens die u verzendt, kan worden beheerd met behulp van de vol
 
 * **Steek proef**: u kunt steek proeven gebruiken om de hoeveelheid telemetrie te verminderen die wordt verzonden vanaf uw server-en client-apps, met minimale verstoring van metrische gegevens. Steek proeven zijn het primaire hulp programma dat u kunt gebruiken om de hoeveelheid gegevens die u verzendt af te stemmen. Meer informatie over [sampling-functies](./sampling.md).
 
-* **Ajax-aanroepen beperken**: u kunt [het aantal Ajax-aanroepen beperken dat kan worden gerapporteerd](./javascript.md#configuration) in elke pagina weergave, of de Ajax-rapportage uitschakelen.
+* **Ajax-aanroepen beperken**: u kunt [het aantal Ajax-aanroepen beperken dat kan worden gerapporteerd](./javascript.md#configuration) in elke pagina weergave, of de Ajax-rapportage uitschakelen. Houd er rekening mee dat door het uitschakelen van Ajax-aanroepen [Java script-correlatie](./javascript.md#enable-correlation)wordt uitgeschakeld
 
 * **Overbodige modules uitschakelen**: [Bewerk ApplicationInsights.config](./configuration-with-applicationinsights-config.md) om verzamelings modules uit te scha kelen die u niet nodig hebt. U kunt bijvoorbeeld besluiten dat prestatie meter items of afhankelijkheids gegevens inessentieel zijn.
 

@@ -1,5 +1,5 @@
 ---
-title: Gebruik Azure Sentinel Watchlists
+title: Azure Sentinel-volglijsten gebruiken
 description: In dit artikel wordt beschreven hoe u Azure Sentinel Watchlists-onderzoek bedreigingen kunt gebruiken, zakelijke gegevens kunt importeren, lijsten voor toestaan en verrijkende gebeurtenis gegevens maakt.
 services: sentinel
 author: yelevin
@@ -10,14 +10,14 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.custom: mvc
 ms.date: 09/06/2020
-ms.openlocfilehash: e31128687cfcc1f4e32879328ad3227182efb9ce
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 97509b878fb5e0cb28bddc5d1b58c21b32c34675
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797362"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555651"
 ---
-# <a name="use-azure-sentinel-watchlists"></a>Gebruik Azure Sentinel Watchlists
+# <a name="use-azure-sentinel-watchlists"></a>Azure Sentinel-volglijsten gebruiken
 
 > [!IMPORTANT]
 > De functie Watchlists is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
@@ -28,7 +28,7 @@ Veelvoorkomende scenario's voor het gebruik van Watchlists zijn:
 
 - Het **onderzoeken van bedreigingen** en het snel reageren op incidenten met de snelle invoer van IP-adressen, bestands-hashes en andere gegevens uit CSV-bestanden. Na het importeren kunt u watch list-naam/waarde-paren gebruiken voor samen voegingen en filters in waarschuwings regels, Threat-jacht, werkmappen, notitie blokken en algemene query's.
 
-- **Bedrijfs gegevens importeren** als een Watchlists. Importeer bijvoorbeeld gebruikers lijsten met geprivilegieerde systeem toegang of beëindigde werk nemers, en gebruik vervolgens de watch list om lijsten toe te voegen en te weigeren die worden gebruikt om te voor komen dat gebruikers zich kunnen aanmelden bij het netwerk.
+- **Bedrijfs gegevens importeren** als een watch list. Importeer bijvoorbeeld gebruikers lijsten met geprivilegieerde systeem toegang of beëindigde werk nemers, en gebruik vervolgens de watch list om lijsten toe te voegen en te weigeren die worden gebruikt om te voor komen dat gebruikers zich kunnen aanmelden bij het netwerk.
 
 - **Waarschuwings-vermoeidheid verlagen**. Maak allow-lijsten om waarschuwingen van een groep gebruikers te onderdrukken, zoals gebruikers van geautoriseerde IP-adressen waarmee taken worden uitgevoerd waarmee de waarschuwing normaal gesp roken wordt geactiveerd, en voor komt dat ongeoorloofde gebeurtenissen waarschuwingen ontvangen.
 

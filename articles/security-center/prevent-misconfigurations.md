@@ -6,16 +6,16 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 09/08/2020
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 19e9a33350b6a1a67986dc35a372f737e45ab39a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3da9cdea543894aa7aec66112e28658beac84b5
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906391"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99558195"
 ---
-# <a name="prevent-misconfigurations-with-enforcedeny-recommendations"></a>Onjuiste configuraties voor komen met aanbevelingen voor afdwingen/weigeren
+# <a name="prevent-misconfigurations-with-enforcedeny-recommendations"></a>Onjuiste configuraties voorkomen met afdwingen/weigeren
 
 Onjuiste beveiligingsconfiguraties zijn een belangrijke oorzaak van beveiligingsincidenten. Security Center biedt nu de mogelijkheid om onjuiste configuratie van nieuwe resources met betrekking tot specifieke aanbevelingen te helpen *voorkomen*. 
 
@@ -41,18 +41,18 @@ Deze vindt u boven aan de pagina Resource Details voor geselecteerde beveiliging
     > [!TIP]
     > U kunt de drie punten aan het einde van de rij gebruiken om één abonnement te wijzigen of de selectie vakjes gebruiken om meerdere abonnementen of groepen te selecteren. Selecteer vervolgens **wijzigen in weigeren**.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-prevent-resource-creation.png" alt-text="De pagina aanbeveling met de knop weigeren gemarkeerd":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-prevent-resource-creation.png" alt-text="Het bereik instellen voor Azure Policy weigeren":::
 
 
 ## <a name="enforce-a-secure-configuration"></a>Een veilige configuratie afdwingen
 
 1. Open de aanbeveling voor het implementeren van een sjabloon implementatie voor als nieuwe resources niet voldoen en selecteer de knop **afdwingen** boven aan de pagina.
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="De pagina aanbeveling met de knop weigeren gemarkeerd":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-button.png" alt-text="De pagina aanbeveling met de knop afdwingen gemarkeerd":::
 
     Het configuratie venster wordt geopend met alle configuratie opties voor het beleid. 
 
-    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-config.png" alt-text="De pagina aanbeveling met de knop weigeren gemarkeerd":::
+    :::image type="content" source="./media/security-center-remediate-recommendations/recommendation-enforce-config.png" alt-text="Configuratie opties afdwingen":::
 
 1. Stel het bereik, de naam van de toewijzing en andere relevante opties in.
 
@@ -62,32 +62,51 @@ Deze vindt u boven aan de pagina Resource Details voor geselecteerde beveiliging
 
 Deze aanbevelingen kunnen worden gebruikt in combi natie met de optie **weigeren** :
 
-- Virtuele machines moeten worden gemigreerd naar nieuwe Azure Resource Manager-resources
-- Opslagaccounts moeten worden gemigreerd naar nieuwe Azure Resource Manager-resources
-- Alle autorisatieregels behalve RootManageSharedAccessKey moeten worden verwijderd uit de Event hub-naamruimte
-- Alle autorisatieregels met uitzondering van RootManageSharedAccessKey moeten worden verwijderd uit Service Bus-naamruimte
-- Beveiligde overdracht naar opslagaccounts moet zijn ingeschakeld
+- Toegang tot opslagaccounts met configuraties voor firewalls en virtuele netwerken moet worden beperkt
+- Azure Cache voor Redis moet zich in een virtueel netwerk bevinden
+- Voor Azure Cosmos DB-accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest
+- Azure Machine Learning-werkruimten moeten worden versleuteld met een door de klant beheerde sleutel (CMK)
+- Azure Spring Cloud moet netwerkinjectie gebruiken
+- Voor Cognitive Services accounts moet gegevens versleuteling worden ingeschakeld met een door de klant beheerde sleutel (CMK)
+- De CPU- en geheugenlimieten van containers moeten worden afgedwongen
+- Containerinstallatiekopieën mogen alleen worden geïmplementeerd vanuit vertrouwde registers
+- Containerregisters moeten worden versleuteld met een door de klant beheerde sleutel (CMK)
+- Container met escalatie van bevoegdheden moet worden vermeden
+- Containers die gevoelige hostnaamruimten delen, moeten worden vermeden
+- Containers mogen alleen op toegestane poorten luisteren
+- Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers
+- Key Vault-sleutels moeten een vervaldatum hebben
+- Key Vault-geheimen moeten een vervaldatum hebben
+- Beveiliging tegen leegmaken moet zijn ingeschakeld voor sleutelkluizen
+- Voorlopig verwijderen moet zijn ingeschakeld voor sleutelkluizen
+- Minimaal bevoegde Linux-functies moeten worden afgedwongen voor containers
 - Alleen beveiligde verbindingen met uw Redis Cache moeten zijn ingeschakeld
-- Automation-accountvariabelen moeten worden versleuteld
-- Service Fabric-clusters mogen alleen gebruikmaken van Azure Active Directory voor clientverificatie
+- Het overschrijven of uitschakelen van het AppArmor-profiel voor containers moet worden beperkt
+- Bevoegde containers moeten worden vermeden
+- Het uitvoeren van containers als hoofdgebruiker moet worden vermeden
+- Beveiligde overdracht naar opslagaccounts moet zijn ingeschakeld
 - Voor Service Fabric-clusters moet de eigenschap ClusterProtectionLevel zijn ingesteld op EncryptAndSign
-- Onbeperkte netwerktoegang tot opslagaccounts controleren
-
+- Service Fabric-clusters mogen alleen gebruikmaken van Azure Active Directory voor clientverificatie
+- Services mogen alleen op toegestane poorten luisteren
+- Opslagaccounts moeten worden gemigreerd naar nieuwe Azure Resource Manager-resources
+- Opslagaccounts moeten netwerktoegang beperken met behulp van regels voor virtuele netwerken
+- Het gebruik van hostnetwerken en -poorten moet worden beperkt
+- Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst om de toegang tot knooppunten te beperken voor de containers die zijn gecompromitteerd
+- De geldigheidsperiode van certificaten die in Azure Key Vault zijn opgeslagen, mag niet langer zijn dan twaalf maanden
+- Virtuele machines moeten worden gemigreerd naar nieuwe Azure Resource Manager-resources
+- Web Application Firewall (WAF) moet zijn ingeschakeld voor Application Gateway
+- Web Application firewall (WAF) moet zijn ingeschakeld voor de service service van Azure voor de voor deur
 
 Deze aanbevelingen kunnen worden gebruikt in combi natie met de optie **afdwingen** :
 
-- Diagnostische logboeken in Logic Apps moeten zijn ingeschakeld
-- Diagnostische logboeken in Data Lake Analytics moeten zijn ingeschakeld
-- Diagnostische logboeken in IoT Hub moeten zijn ingeschakeld
-- Diagnostische logboeken in Batch-accounts moeten worden ingeschakeld
+- Controle op SQL-servers moet zijn ingeschakeld
+- Azure Backup moet zijn ingeschakeld voor virtuele machines
+- Azure Defender voor SQL moet zijn ingeschakeld voor uw SQL-servers
 - Diagnostische logboeken in Azure Stream Analytics moeten zijn ingeschakeld
-- Diagnostische logboeken in Service Bus moeten zijn ingeschakeld
-- Diagnostische logboeken in zoekservices moeten zijn ingeschakeld
+- Diagnostische logboeken in Batch-accounts moeten worden ingeschakeld
+- Diagnostische logboeken in Data Lake Analytics moeten zijn ingeschakeld
 - Diagnostische logboeken in Event Hub moeten zijn ingeschakeld
-- Diagnostische logboeken in Microsoft Azure Virtual Machine Scale Sets moeten zijn ingeschakeld
 - Diagnostische logboeken in Key Vault moeten zijn ingeschakeld
-- Controle op SQL Server moet zijn ingeschakeld
-- Advanced Data Security moet zijn ingeschakeld op uw SQL-servers
-
-
-
+- Diagnostische logboeken in Logic Apps moeten zijn ingeschakeld
+- Diagnostische logboeken in zoekservices moeten zijn ingeschakeld
+- Diagnostische logboeken in Service Bus moeten zijn ingeschakeld

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/07/2020
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 5b257e45a86a7b22e9064fcfc6092b3c946ae99b
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 13cbc2e9451221fef951eb6fac4c6b2772275122
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757632"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556422"
 ---
 # <a name="organize-management-groups-subscriptions-and-tenant-wide-visibility"></a>Beheer groepen, abonnementen en zicht baarheid van de hele Tenant organiseren
 
@@ -81,12 +81,14 @@ U kunt abonnementen toevoegen aan de beheer groep die u hebt gemaakt.
 
 ## <a name="grant-tenant-wide-permissions-to-yourself"></a>Machtigingen voor de hele Tenant verlenen
 
-Een gebruiker met de Azure Active Directory-rol **Globale beheerder** kan verantwoordelijkheden hebben voor de hele tenant, maar geen Azure-machtigingen om deze organisatiebrede informatie te bekijken in Azure Security Center. 
+Een gebruiker met de Azure Active Directory (AD) rol van de **globale beheerder** heeft mogelijk verantwoordelijkheden voor de hele Tenant, maar heeft geen toegang tot de Azure-machtigingen voor het weer geven van de organisatie-brede informatie in azure Security Center. Machtigings verhoging is vereist omdat Azure AD-roltoewijzingen geen toegang verlenen tot Azure-resources. 
 
 > [!TIP]
-> Als uw organisatie toegang tot resources beheert met [Azure AD privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-configure.md)of een ander PIM-hulp programma, moet de rol van globale beheerder actief zijn voor de gebruiker die deze wijzigingen aanbrengt.
+> Meer informatie over de uitbrei ding van machtigingen voor de rol globale beheerder in toegangs rechten voor het [beheren van alle Azure-abonnementen en-beheer groepen](../role-based-access-control/elevate-access-global-admin.md).
 
 Machtigingen op Tenant niveau toewijzen:
+
+1. Als uw organisatie toegang tot resources beheert met [Azure AD privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-configure.md)of een ander PIM-hulp programma, moet de rol globale beheerder actief zijn voor de gebruiker die volgt op de onderstaande procedure.
 
 1. Als globale beheerder als gebruiker zonder een toewijzing in de hoofd beheer groep van de Tenant, opent u de **overzichts** pagina van Security Center en selecteert u de koppeling voor de **zicht baarheid voor de hele Tenant** in de banner. 
 
@@ -140,7 +142,7 @@ Verhoogde machtigingen aanvragen bij de globale beheerder:
 ## <a name="assign-azure-roles-to-other-users"></a>Azure-rollen toewijzen aan andere gebruikers
 
 ### <a name="assign-azure-roles-to-users-through-the-azure-portal"></a>Wijs Azure-rollen toe aan gebruikers via de Azure Portal: 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 1. Als u beheer groepen wilt weer geven, selecteert u **alle services** onder het hoofd menu van Azure en selecteert u vervolgens **beheergroepen**.
 1.  Selecteer een beheer groep en selecteer **Details**.
 

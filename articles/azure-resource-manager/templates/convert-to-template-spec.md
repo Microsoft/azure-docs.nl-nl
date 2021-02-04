@@ -2,31 +2,21 @@
 title: Portal sjabloon converteren naar sjabloon specificatie
 description: Hierin wordt beschreven hoe u een bestaande sjabloon in de Azure Portal galerie converteert naar een sjabloon versie.
 ms.topic: conceptual
-ms.date: 01/22/2021
+ms.date: 02/04/2021
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 8fe02f55348f2cdcabb43e05bb547819d4b51228
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: c59275fca1eb3037b48b7293fc9e507df46b7fcb
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98739093"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555934"
 ---
 # <a name="convert-template-gallery-in-portal-to-template-specs"></a>Sjabloon galerie in de portal naar sjabloon specificaties converteren
 
-De Azure Portal biedt een manier om Azure Resource Manager sjablonen (ARM-sjablonen) op te slaan in uw account. **Deze functie wordt afgeschaft.** Als u sjablonen in deze galerie wilt blijven gebruiken, converteert u deze naar [sjabloon specificaties](template-specs.md).
+De Azure Portal biedt een manier om Azure Resource Manager sjablonen (ARM-sjablonen) op te slaan in uw account. [Sjabloon specificaties](template-specs.md) bieden echter een gemakkelijke manier om uw sjablonen te delen met gebruikers in uw organisatie en om te koppelen met andere sjablonen. In dit artikel wordt beschreven hoe u bestaande sjablonen in de sjabloon galerie converteert naar sjabloon specificaties.
 
-In dit artikel wordt beschreven hoe u bestaande sjablonen in de sjabloon galerie converteert naar sjabloon specificaties.
-
-In de portal wordt de functie die wordt afgeschaft **Sjablonen genoemd (preview-versie)**. Als u wilt zien of u sjablonen hebt om te converteren, bekijkt u de [sjabloon galerie in de portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Gallery%2Fmyareas%2Fgalleryitems). Deze sjablonen hebben het resource type `Microsoft.Gallery/myareas/galleryitems` .
-
-## <a name="deprecation-of-portal-feature"></a>Afschaffing van de portal functie
-
-De sjabloon galerie in de portal wordt afgeschaft op 21 januari 2021. U kunt deze blijven gebruiken tot 21 februari. Vanaf 22 februari kunt u geen nieuwe sjablonen maken in de portal galerie, maar nog steeds bestaande sjablonen bekijken en implementeren.
-
-Op 22 juni wordt de functie verwijderd uit de portal en worden alle API-bewerkingen geblokkeerd. U kunt geen sjablonen uit de galerie weer geven of implementeren.
-
-Vóór 22 juni moet u de sjablonen migreren die u wilt blijven gebruiken. U kunt een van de methoden die in dit artikel worden weer gegeven, gebruiken om de sjablonen te migreren. Nadat de functie is verwijderd, moet u een ondersteunings aanvraag openen om sjablonen op te halen die u niet hebt gemigreerd.
+Als u wilt zien of u sjablonen hebt om te converteren, bekijkt u de [sjabloon galerie in de portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Gallery%2Fmyareas%2Fgalleryitems). Deze sjablonen hebben het resource type `Microsoft.Gallery/myareas/galleryitems` .
 
 ## <a name="convert-with-powershell-script"></a>Converteren met Power shell-script
 

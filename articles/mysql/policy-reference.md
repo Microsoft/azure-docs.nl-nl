@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Database for MySQL
 description: Een overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure Database for MySQL. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: reference
 author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 28d6f180d388ee958b59799d5dec53d869d47459
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 6f567f58c8df447b899ff0486f7c9057edf30f97
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096356"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555158"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-database-for-mysql"></a>Ingebouwde Azure Policy-definities voor Azure Database for MySQL
 

@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 10/23/2020
-ms.openlocfilehash: 2dd60d1962734f7a4264587fd1b5b0d2a03c9ff0
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
-ms.translationtype: HT
+ms.openlocfilehash: 37ba5fc7ce118e2e8532ea4db18634265aaacb64
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359741"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556859"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Welkom bij Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -46,7 +46,7 @@ Snel bouwen met open source-API's, meerdere SDK's, schemaloze gegevens en analys
 - Apps bouwen op Core (SQL)-API met behulp van de talen van uw keuze met SDK's voor .NET, Java, Node.js en Python. Of uw keuze van stuurprogramma's voor een van de andere database-API's.
 - Analyses zonder ETL uitvoeren via de bijna realtime operationele gegevens die zijn opgeslagen in Azure Cosmos DB met Azure Synapse Analytics.
 - Met wijzigingenfeed kunt u eenvoudig wijzigingen in databasecontainers bijhouden en beheren en geactiveerde gebeurtenissen maken met Azure Functions.
-- Met de schemaloze service van Azure Cosmos DB worden automatisch al uw gegevens geïndexeerd, ongeacht het gegevensmodel, om razendsnelle query's te leveren.
+- Met de service schema-less van Azure Cosmos DB worden automatisch al uw gegevens geïndexeerd, ongeacht het gegevens model, voor het leveren van razendsnelle snelle query's.
 
 ### <a name="mission-critical-ready"></a>Essentieel gereed
 

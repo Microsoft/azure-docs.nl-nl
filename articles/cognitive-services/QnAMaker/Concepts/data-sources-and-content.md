@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: a6488d2c7611513528ff02d4e620124763912730
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 0d4d32aba34a97c6a060c999694f66d79933d011
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353252"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556037"
 ---
 # <a name="importing-from-data-sources"></a>Importeren uit gegevensbronnen
 
@@ -100,4 +100,4 @@ Meer informatie over de [richt lijnen](../reference-document-format-guidelines.m
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Begrijpen welke informatie wordt opgeslagen in een [vraag-en antwoord-paar (QnA)](question-answer-set.md).
+Meer informatie over het [bewerken van QnAs](../how-to/edit-knowledge-base.md).

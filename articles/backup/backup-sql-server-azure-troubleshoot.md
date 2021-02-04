@@ -3,12 +3,12 @@ title: Problemen met SQL Server database back-up oplossen
 description: Informatie over het oplossen van back-ups van SQL Server-data bases die worden uitgevoerd op virtuele machines van Azure met Azure Backup.
 ms.topic: troubleshooting
 ms.date: 06/18/2019
-ms.openlocfilehash: 1e4ee2bdcd0826b655aa71d83674ff1e0c06a8cb
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 2cf0ed0200de9b2787f5d9f38bd343f93648bc78
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549895"
+ms.locfileid: "99557747"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Problemen met SQL Server database back-up oplossen met behulp van Azure Backup
 
@@ -206,14 +206,14 @@ De bewerking is geblokkeerd omdat de kluis de maximum limiet heeft bereikt voor 
 
 | Foutbericht | Mogelijke oorzaken | Aanbevolen actie |
 |---|---|---|
-De extensie bewerking voor de AzureBackup-workload is mislukt. | De VM wordt afgesloten (of) de virtuele machine kan geen verbinding maken met Azure Backup service vanwege problemen met de Internet verbinding.| -Controleer of de virtuele machine actief is en verbinding heeft met internet.<br>- [Registreer de extensie opnieuw op de SQL Server-VM](https://docs.microsoft.com/azure/backup/manage-monitor-sql-database-backup#re-register-extension-on-the-sql-server-vm).
+De extensie bewerking voor de AzureBackup-workload is mislukt. | De virtuele machine wordt afgesloten, of de virtuele machine kan geen verbinding maken met de Azure Backup-service vanwege problemen met de Internet verbinding.| <li> Zorg ervoor dat de virtuele machine actief is en een Internet verbinding heeft.<li> [Registreer de extensie opnieuw op de SQL Server-VM](manage-monitor-sql-database-backup.md#re-register-extension-on-the-sql-server-vm).
 
 
 ### <a name="usererrorvminternetconnectivityissue"></a>UserErrorVMInternetConnectivityIssue
 
 | Foutbericht | Mogelijke oorzaken | Aanbevolen actie |
 |---|---|---|
-De virtuele machine kan geen verbinding maken met Azure Backup service vanwege problemen met de Internet verbinding. | De virtuele machine heeft een uitgaande verbinding nodig voor Azure Backup Service, Azure Storage of Azure Active Directory Services.| -Als u NSG gebruikt om de verbinding te beperken, moet u de *AzureBackup* -servicetag gebruiken om uitgaande toegang tot Azure backup-service toe te staan en op dezelfde manier als de services Azure AD (*AzureActiveDirectory*) en Azure Storage (*opslag*). Volg deze [stappen](./backup-sql-server-database-azure-vms.md#nsg-tags) om toegang te verlenen.<br>-Zorg ervoor dat DNS Azure-eind punten omzet.<br>-Controleer of de virtuele machine zich achter een load balancer Internet toegang blokkeert. Wanneer u een openbaar IP-adres toewijst aan de Vm's, werkt de detectie.<br>-Controleer of er geen firewall/anti virus/proxy is die aanroepen naar de bovenstaande drie doel Services blokkeert.
+De virtuele machine kan geen verbinding maken met Azure Backup service vanwege problemen met de Internet verbinding. | De virtuele machine heeft een uitgaande verbinding nodig voor Azure Backup Service, Azure Storage of Azure Active Directory Services.| <li> Als u NSG gebruikt om de connectiviteit te beperken, moet u de *AzureBackup* -servicetag gebruiken om uitgaande toegang tot Azure backup-service toe te staan en op dezelfde manier als de services Azure AD (*AzureActiveDirectory*) en Azure Storage (*opslag*). Volg deze [stappen](./backup-sql-server-database-azure-vms.md#nsg-tags) om toegang te verlenen. <li> Zorg ervoor dat DNS Azure-eind punten omzet. <li> Controleer of de virtuele machine zich achter een load balancer Internet toegang blokkeert. Wanneer u een openbaar IP-adres toewijst aan de Vm's, werkt de detectie. <li> Controleer of er geen firewall/anti virus/proxy is die aanroepen naar de bovenstaande drie doel Services blokkeert.
 
 ## <a name="re-registration-failures"></a>Fouten bij opnieuw registreren
 

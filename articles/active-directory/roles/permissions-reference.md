@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1c544bd6d3965bc71df2024e66defbdf9443c8f
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 4982acb54207a9ed08a96414877603a8253c2ade
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550722"
+ms.locfileid: "99557755"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -2058,7 +2058,7 @@ Teams-communicatiebeheerder | Teams-communicatiebeheerder | baf37b3a-610e-45da-9
 Ondersteuningstechnicus voor Teams-communicatie | Ondersteuningstechnicus voor Teams-communicatie | f70938a0-fc10-4177-9e90-2178f8765737
 Ondersteuningsspecialist voor Teams-communicatie | Ondersteuningsspecialist voor Teams-communicatie | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
 Teams-apparaatbeheerder | Teams-apparaatbeheerder | 3d762c5a-1b6c-493f-843e-55a3b42923d4
-Team beheerder | Team beheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
+Teams-servicebeheerder | Teams-servicebeheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Lezer van gebruiks samenvattings rapporten | Lezer van gebruiks samenvattings rapporten | 75934031-6c7e-415a-99d7-48dbd49e875e
 Gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | a0b1b346-4d3e-4e8b-98f8-753987be4970
 Gebruikersbeheerder | Gebruikersbeheerder | fe930be7-5e62-47db-91af-98c3a49a38b1

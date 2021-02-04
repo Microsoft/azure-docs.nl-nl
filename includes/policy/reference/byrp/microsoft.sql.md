@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 92589a0ba5f17e8a8da38b516019d832ea2b71d0
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: be5e8ee63258d058bdc8bfa21607ae11b99fce2f
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99215123"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556842"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -19,6 +19,7 @@ ms.locfileid: "99215123"
 |[Een Azure Active Directory-beheerder moet worden ingericht voor SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1f314764-cb73-4fc9-b863-8eca98ac36e9) |Controleer inrichting van een Azure Active Directory-beheerder voor uw SQL-Server om Azure AD-verificatie in te schakelen. Azure AD-verificatie maakt vereenvoudigd beheer van machtigingen en gecentraliseerd identiteitsbeheer van databasegebruikers en andere Microsoft-services mogelijk |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SQL_DB_AuditServerADAdmins_Audit.json) |
 |[Controle op SQL Server moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9) |Controle op uw SQL Server moet zijn ingeschakeld om database-activiteiten te volgen voor alle databases op de server en deze op te slaan in een auditlogboek. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditing_Audit.json) |
 |[Voor Azure SQL Database moet minimaal TLS-versie 1.2 worden gebruikt](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F32e6bbec-16b6-44c2-be37-c5b672d103cf) |Als u de minimale TLS-versie instelt op 1.2, verbetert u de beveiliging door ervoor te zorgen dat uw Azure SQL Database alleen toegankelijk is vanaf clients met TLS 1.2. Het is raadzaam geen lagere TLS-versies dan 1.2 te gebruiken, omdat deze goed gedocumenteerde beveiligingsproblemen hebben. |Controle, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_MiniumTLSVersion_Audit.json) |
+|[Implementatie-Diagnostische instellingen voor SQL-data bases implementeren-configureren voor Log Analytics werk ruimte](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb79fa14e-238a-4c2d-b376-442ce508fc84) |Hiermee worden de diagnostische instellingen voor SQL-data bases geïmplementeerd voor het streamen van Diagnostische logboeken naar een Log Analytics-werk ruimte wanneer een SQL Database waarvoor deze diagnostische instellingen ontbreken, worden gemaakt of bijgewerkt. |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/DataConnectosSqlLogs_PolicyAssignment.json) |
 |[Advanced Data Security implementeren op SQL-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6134c3db-786f-471e-87bc-8f479dc890f6) |Met dit beleid wordt Advanced Data Security op SQL-servers ingeschakeld. Dit omvat het inschakelen van bedreigingsdetectie en evaluatie van beveiligingsproblemen. Er wordt automatisch een opslagaccount in dezelfde regio en resourcegroep gemaakt als de SQL-server voor het opslaan van scanresultaten, met het voorvoegsel ‘sqlva’. |DeployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAdvancedDataSecurity_Deploy.json) |
 |[Controle op SQL-servers implementeren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff4c68484-132f-41f9-9b6d-3e4b1cb55036) |Dit beleid zorgt ervoor dat Controle is ingeschakeld op SQL-servers voor verbeterde beveiliging en naleving. Er wordt automatisch een opslagaccount gemaakt in dezelfde regio als de SQL-server voor het opslaan van controlerecords. |DeployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditing_Deploy.json) |
 |[Diagnostische instellingen voor Azure SQL Database toepassen op Event Hub](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9a7c7a7d-49e5-4213-bea8-6a502b6272e0) |Hiermee worden de diagnostische instellingen voor Azure SQL Database geïmplementeerd en naar een regionale Event Hub gestreamd wanneer een Azure SQL Database-exemplaar waarvoor deze diagnostische instellingen ontbreken, wordt gemaakt of bijgewerkt. |DeployIfNotExists |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlDB_DiagnosticsLog_Deploy.json) |

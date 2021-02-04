@@ -4,16 +4,19 @@ description: Meer informatie over het gebruik van met AAD pod beheerde beheerde 
 services: container-service
 ms.topic: article
 ms.date: 12/01/2020
-ms.openlocfilehash: d992c5c5384c04fe39511481550ab7b0ea47069e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 22b7a03a8598aa6e4b7c392567905d467776360c
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217869"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99557353"
 ---
 # <a name="use-azure-active-directory-pod-managed-identities-in-azure-kubernetes-service-preview"></a>Azure Active Directory door Pod beheerde identiteiten gebruiken in azure Kubernetes service (preview)
 
 Azure Active Directory door Pod beheerde identiteiten gebruikt Kubernetes primitieven om [beheerde identiteiten te koppelen voor Azure-resources][az-managed-identities] en-identiteiten in azure Active Directory (Aad) met een Peul. Beheerders maken identiteiten en bindingen als Kubernetes primitieven die een Peule toegang bieden tot Azure-bronnen die afhankelijk zijn van AAD als een id-provider.
+
+> [!NOTE]
+> Als u een bestaande installatie van AADPODIDENTITY hebt, moet u de bestaande installatie verwijderen. Als u deze functie inschakelt, betekent dit dat het microfoon onderdeel niet nodig is.
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 

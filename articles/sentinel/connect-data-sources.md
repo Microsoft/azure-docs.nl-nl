@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: cffc41264dfa30fd833aef465a13abc799334b2f
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: c3bb05af3e0a24ebb10dc98b9174cfb235ddda13
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567472"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555932"
 ---
 # <a name="connect-data-sources"></a>Verbinding maken met gegevensbronnen
 
@@ -66,11 +66,13 @@ De volgende gegevens verbindings methoden worden ondersteund door Azure Sentinel
 
 - **Externe oplossingen via API**: sommige gegevens bronnen zijn verbonden via api's die worden meegeleverd met de verbonden gegevens bron. Doorgaans bieden de meeste beveiligings technologieën een set Api's waarmee gebeurtenis logboeken kunnen worden opgehaald. De Api's maken verbinding met Azure Sentinel en verzamelen specifieke gegevens typen en verzenden ze naar Azure Log Analytics. Apparaten verbonden via API zijn:
     
+    - [Agari phishing-verdediging en merk beveiliging](connect-agari-phishing-defense.md)
     - [Alcide kAudit](connect-alcide-kaudit.md)
     - [Barracuda WAF](connect-barracuda.md)
     - [Barracuda CloudGen-firewall](connect-barracuda-cloudgen-firewall.md)
     - [BETTER Mobile Threat Defense](connect-better-mtd.md)
     - [Meer dan beveiliging beSECURE](connect-besecure.md)
+    - [Cisco Umbrella](connect-cisco-umbrella.md)
     - [Citrix Analytics (Security)](connect-citrix-analytics.md)
     - [F5 BIG-IP](connect-f5-big-ip.md)
     - [Forcepoint DLP](connect-forcepoint-dlp.md)
@@ -95,6 +97,7 @@ De volgende gegevens verbindings methoden worden ondersteund door Azure Sentinel
 
     - **Firewalls, proxy's en eind punten-CEF:**
         - [AI Vectra Detect](connect-ai-vectra-detect.md)
+        - [Akamai-beveiligings gebeurtenissen](connect-akamai-security-events.md)
         - [Check Point](connect-checkpoint.md)
         - [Cisco ASA](connect-cisco.md)
         - [Citrix WAF](connect-citrix-waf.md)
@@ -104,24 +107,27 @@ De volgende gegevens verbindings methoden worden ondersteund door Azure Sentinel
         - [Force Point-producten](connect-forcepoint-casb-ngfw.md)
         - [Fortinet](connect-fortinet.md)
         - [Illusive Networks AMS](connect-illusive-attack-management-system.md)
+        - [Imperva WAF-gateway](connect-imperva-waf-gateway.md)
         - [One Identity Safeguard](connect-one-identity.md)
         - [Palo Alto Networks](connect-paloalto.md)
-        - [Thycotic-geheim server](connect-thycotic-secret-server.md)
+        - [Thycotic Secret Server](connect-thycotic-secret-server.md)
         - [Deep Security van Trend Micro](connect-trend-micro.md)
         - [Trend Micro TippingPoint](connect-trend-micro-tippingpoint.md)
         - [Wirex Network forensische-platform](connect-wirex-systems.md)
         - [Zscaler](connect-zscaler.md)
         - [Andere op CEF gebaseerde apparaten](connect-common-event-format.md)
     - **Firewalls, proxy's en eind punten-syslog:**
+        - [Alsid voor Active Directory](connect-alsid-active-directory.md)
         - [Cisco Unified computing System (UCS)](connect-cisco-ucs.md)
         - [Infoblox NIOS](connect-infoblox.md)
         - [Juniper SRX](connect-juniper-srx.md)
         - [Pulse Connect Secure](connect-pulse-connect-secure.md)
         - [Sophos XG](connect-sophos-xg-firewall.md)
-        - [Pijl inktvis-proxy](connect-squid-proxy.md)
+        - [Squid Proxy](connect-squid-proxy.md)
         - [Symantec Proxy SG](connect-symantec-proxy-sg.md)
         - [Symantec VIP](connect-symantec-vip.md)
         - [Andere apparaten op basis van syslog](connect-syslog.md)
+    - [Apache HTTP-server](connect-apache-http-server.md)
     - DLP-oplossingen
     - [Providers van bedreigingsinformatie](connect-threat-intelligence.md)
     - [DNS-machines](connect-dns.md) -agent rechtstreeks geïnstalleerd op de DNS-computer
@@ -132,7 +138,6 @@ De volgende gegevens verbindings methoden worden ondersteund door Azure Sentinel
 ## <a name="agent-connection-options"></a>Verbindingsopties voor agenten<a name="agent-options"></a>
 
 Om uw externe apparaat te verbinden met Azure Sentinel, moet de agent worden geïmplementeerd op een toegewezen machine (VM of on-premises) om de communicatie tussen het apparaat en de Azure-Sentinel te ondersteunen. U kunt de agent automatisch of handmatig implementeren. Automatische implementatie is alleen beschikbaar als uw toegewezen computer een nieuwe VM is die u in azure maakt. 
-
 
 ![CEF in azure](./media/connect-cef/cef-syslog-azure.png)
 

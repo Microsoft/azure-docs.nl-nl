@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 520d572478074a86c9b5cececacd34d7cd41539d
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 31ca126c75d5c2e3fa7fd91f3398202fad418183
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071610"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555617"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Services die beheerde identiteiten voor Azure-resources ondersteunen
 
@@ -307,8 +307,8 @@ Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regi
 
 |Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
-| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machine Scale Sets te configureren (in regio's waar beschikbaar):
 
@@ -324,8 +324,8 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machine
 
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
-| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machines te configureren (in regio's waar beschikbaar):
 

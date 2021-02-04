@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: memildin
-ms.openlocfilehash: 8ef0fedcbf7ce06063db22fb345a0711acddcb4d
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: a2c29049decc056f0d3c8083d21574456610c124
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526378"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555140"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -33,6 +33,7 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 - [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated)
 - [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)
+- [Afschaffing van 11 Azure Defender-waarschuwingen](#deprecation-of-11-azure-defender-alerts)
 
 ### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
 
@@ -53,6 +54,37 @@ Meer informatie over deze aanbevelingen vindt u op de [overzichts pagina met aan
 **Geschatte datum voor wijziging:** Q2 2021
 
 De gevoelige aanbevelings **gegevens in uw SQL-data bases moeten worden geclassificeerd** in het beveiligings beheer **gegevens classificatie Toep assen** wordt vervangen door een nieuwe versie die beter is afgestemd op de strategie voor gegevens classificatie van micro soft. Als gevolg hiervan wordt de ID van de aanbeveling ook gewijzigd (momenteel b0df6f56-862d-4730-8597-38c0fd4ebd59).
+
+
+### <a name="deprecation-of-11-azure-defender-alerts"></a>Afschaffing van 11 Azure Defender-waarschuwingen
+
+**Geschatte datum voor wijziging:** 2021 maart
+
+De volgende maand worden de elf Azure Defender-waarschuwingen die hieronder worden weer gegeven, afgeschaft.
+
+- Nieuwe waarschuwingen vervangen deze twee waarschuwingen en bieden een betere dekking:
+
+    | AlertType                | AlertDisplayName                                                         |
+    |--------------------------|--------------------------------------------------------------------------|
+    | ARM_MicroBurstDomainInfo | VOOR beeld-microburst Toolkit ' Get-AzureDomainInfo ' uitgevoerde functie gedetecteerd |
+    | ARM_MicroBurstRunbook    | VOOR beeld-microburst Toolkit ' Get-AzurePasswords ' uitgevoerde functie gedetecteerd  |
+    |                          |                                                                          |
+
+- Deze negen waarschuwingen hebben betrekking op een Azure Active Directory Identity Protection connector die al is afgeschaft:
+
+    | AlertType           | AlertDisplayName              |
+    |---------------------|-------------------------------|
+    | UnfamiliarLocation  | Onbekende aanmeldingseigenschappen |
+    | AnonymousLogin      | Anoniem IP-adres          |
+    | InfectedDeviceLogin | Aan malware gekoppeld IP-adres     |
+    | ImpossibleTravel    | Ongewoon traject               |
+    | MaliciousIP         | Schadelijk IP-adres          |
+    | LeakedCredentials   | Gelekte referenties            |
+    | PasswordSpray       | Wachtwoord spuit                |
+    | LeakedCredentials   | Azure AD-bedreigingsinformatie  |
+    | AADAI               | Azure AD AI                   |
+    |                     |                               |
+ 
 
 
 

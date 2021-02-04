@@ -1,15 +1,15 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure Event Grid
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure Event Grid. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: sample
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: c9be86b13174fa94d97609bcad8fcdc283edbe20
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 19d91ad94021a1ef4c653e8d697a39a65c94b1a0
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99182639"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99557411"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-event-grid"></a>Azure Policy regulerende nalevings controles voor Azure Event Grid
 

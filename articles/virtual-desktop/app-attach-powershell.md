@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8aa6a2168bff6e90d636770804900fa93f081ced
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 1196982fedc7321805e36cceed27c90e43a6e705
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97425877"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99558332"
 ---
 # <a name="set-up-msix-app-attach-preview-using-powershell"></a>MSIX-app-koppeling instellen (preview) met behulp van Power shell
 
@@ -30,6 +30,7 @@ Dit is wat u nodig hebt om de MSIX-app-koppeling te configureren:
 
 - Een werkende implementatie van virtueel bureau blad in Windows. Zie [een Tenant maken in Windows Virtual Desktop](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md)voor meer informatie over het implementeren van Windows virtueel bureau blad (klassiek). Zie [een hostgroep maken met de Azure Portal](./create-host-pools-azure-marketplace.md)voor meer informatie over het implementeren van Windows virtueel bureau blad met Azure Resource Manager-integratie.
 - Een Windows-host voor virtuele Bureau bladen met ten minste één actieve sessiehost.
+- Deze hostgroep moet zich in de validatie omgeving bestaan.
 - Een extern bureau blad-app-groep.
 - Het MSIX-verpakkings programma.
 - Een MSIX-toepassing die is uitgepakt in een MSIX-installatie kopie die is geüpload naar een bestands share.

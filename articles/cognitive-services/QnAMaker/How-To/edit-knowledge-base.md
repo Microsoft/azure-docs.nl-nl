@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.openlocfilehash: f5d7094920a21af630e10aec2aa759ce9c505050
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 8d9f54c1fcd142c77fb73c294b81bf0f11ee083f
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550581"
+ms.locfileid: "99557684"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>QnA-paren in uw Knowledge Base bewerken
 
@@ -38,6 +38,8 @@ De **optionele** instellingen voor een paar zijn onder andere:
 ![Knowledge Base van QnA Maker](../media/qnamaker-concepts-knowledgebase/knowledgebase.png)
 
 ## <a name="add-an-editorial-qna-pair"></a>Een redactionel QnA-paar toevoegen
+
+Als u geen vooraf bestaande inhoud hebt om de Knowledge Base te vullen, kunt u QnA paren op de QnA Maker-portal toevoegen.
 
 1. Meld u aan bij de [QnA-Portal](https://www.qnamaker.ai/)en selecteer vervolgens de Knowledge Base waaraan u het QnA-paar wilt toevoegen.
 1. Selecteer op de pagina **bewerken** van de Knowledge Base **QnA paar toevoegen** om een nieuw QnA-paar toe te voegen.

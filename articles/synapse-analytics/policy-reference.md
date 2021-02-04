@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleids definities
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure Synapse Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: reference
 author: julieMSFT
 ms.author: jrasnick
 ms.service: synapse-analytics
 ms.custom: subject-policy-reference
-ms.openlocfilehash: cd591f82622872cecd00cd7cf950b41c6ac74455
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: b28758a2e2d99a1cc80b58f74425e00987a02686
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092419"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555791"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-synapse-analytics"></a>Azure Policy ingebouwde definities voor Azure Synapse Analytics 
 

@@ -1,15 +1,15 @@
 ---
 title: Details van de naleving van de regelgeving voor Azure Security Bench Mark v1
 description: Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: d895c2bc191cfbbe6b54413e7ce921f6b273093b
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 3091cbc110106be63a9d14fc4b57714361e9f2e9
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99091728"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560673"
 ---
 # <a name="details-of-the-azure-security-benchmark-v1-regulatory-compliance-built-in-initiative"></a>Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief
 

@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: e485c2f0a7deeffe68c932688658ef099fec510e
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 97042479419cbc9d634a06e2dcbcccf9c8fde62b
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492752"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560470"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -210,7 +210,7 @@ Zie [Compute-doelen maken in azure machine learning Studio](how-to-create-attach
 
 **Geschatte tijd:** Ongeveer 5 minuten.
 
-Als u al een AKS-cluster in uw Azure-abonnement hebt en versie 1,17 of lager is, kunt u het gebruiken om uw installatie kopie te implementeren.
+Als u al een AKS-cluster in uw Azure-abonnement hebt, kunt u het gebruiken met uw werk ruimte.
 
 > [!TIP]
 > Het bestaande AKS-cluster kan zich in een andere Azure-regio bevinden dan uw Azure Machine Learning-werk ruimte.

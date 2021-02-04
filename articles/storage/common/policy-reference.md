@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Storage
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Storage. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: reference
 author: tamram
 ms.author: tamram
 ms.service: storage
 ms.custom: subject-policy-reference
-ms.openlocfilehash: e68149ed05b975f466536437e576ae6d5b4d8884
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 878ccaa73ba0db54bf4d45f37135b68fd66b7c55
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097748"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99558899"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-storage"></a>Ingebouwde Azure Policy-definities voor Azure Storage
 

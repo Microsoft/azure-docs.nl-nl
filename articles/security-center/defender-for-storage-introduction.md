@@ -3,19 +3,18 @@ title: Azure Defender for Storage - de voordelen en functies
 description: Kom meer te weten over de voordelen en functies van Azure Defender for Storage.
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 02/04/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 42e8a1f4ff06f6ca6af4afd428008ca174823c5f
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: eb1635cec2b0bcf7f2c13101b2aeab25a869dc66
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98916418"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99558528"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Inleiding tot Azure Defender for Storage
-
 
 **Azure Defender voor opslag** is een beveiligingsintelligentielaag van Azure voor de detectie van ongebruikelijke en mogelijk schadelijke pogingen om toegang te verkrijgen tot of misbruik te maken van uw opslagaccounts. Er wordt gebruikgemaakt van de geavanceerde mogelijkheden van beveiligings-AI en [Microsoft-bedreigingsinformatie](https://go.microsoft.com/fwlink/?linkid=2128684) om contextuele beveiligingswaarschuwingen en aanbevelingen te bieden.
 
@@ -68,7 +67,40 @@ Wanneer wordt vermoed dat een bestand malware bevat, wordt in Security Center ee
 >
 > U kunt **Azure Defender for Storage** inschakelen op abonnementsniveau of op resourceniveau.
 
+## <a name="trigger-a-test-alert-for-azure-defender-for-storage"></a>Een test waarschuwing activeren voor Azure Defender voor opslag
 
+Als u de beveiligings waarschuwingen van Azure Defender wilt testen voor opslag in uw omgeving, genereert u de waarschuwing ' toegang vanaf een Tor-eind knooppunt naar een opslag account ' door de volgende stappen uit te voeren:
+
+1. Open een opslag account met Azure Defender voor opslag ingeschakeld.
+1. Selecteer in de zijbalk ' containers ' en open een bestaande container of maak een nieuwe.
+
+    :::image type="content" source="media/defender-for-storage-introduction/opening-storage-container.png" alt-text="Een BLOB-container openen vanuit een Azure Storage-account" lightbox="media/defender-for-storage-introduction/opening-storage-container.png":::
+
+1. Upload een bestand naar die container.
+
+    > [!CAUTION]
+    > Upload een bestand met gevoelige gegevens niet.
+
+1. Selecteer in het context menu op het geüploade bestand de optie SAS genereren.
+
+    :::image type="content" source="media/defender-for-storage-introduction/generate-sas.png" alt-text="De optie SAS genereren voor een bestand in een BLOB-container":::
+
+1. Wijzig de standaard opties en selecteer **SAS-token en URL genereren**.
+
+1. Kopieer de gegenereerde SAS-URL.
+
+1. Open de Tor-browser op de lokale computer.
+
+    > [!TIP]
+    > U kunt Tor downloaden van de Tor-project site [https://www.torproject.org/download/](https://www.torproject.org/download/) .
+
+1. Navigeer in de Tor-browser naar de SAS-URL.
+
+1. Down load het bestand dat u in stap 3 hebt geüpload.
+
+    Binnen twee uur krijgt u de volgende beveiligings waarschuwing van Security Center:
+
+    :::image type="content" source="media/defender-for-storage-introduction/tor-access-alert-storage.png" alt-text="Beveiligings waarschuwing met betrekking tot toegang vanaf een Tor-eind knooppunt":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

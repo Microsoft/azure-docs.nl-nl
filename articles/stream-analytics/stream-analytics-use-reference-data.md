@@ -6,12 +6,12 @@ ms.author: jeanb
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/18/2020
-ms.openlocfilehash: d4053cd02dd11922a402971c7f3934a8b818eaa4
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: e05a4cbbc5fefbfe8a92914ef480f32bdf43ca37
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015900"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560214"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Referentie gegevens gebruiken voor Zoek opdrachten in Stream Analytics
 
@@ -32,7 +32,7 @@ Stream Analytics biedt ondersteuning voor Azure Blob Storage en Azure SQL Databa
 
 ## <a name="azure-blob-storage"></a>Azure Blob Storage
 
-Referentie gegevens worden gemodelleerd als een reeks blobs (gedefinieerd in de invoer configuratie) in oplopende volg orde van de datum/tijd die is opgegeven in de naam van de blob. Het kan **alleen** worden toegevoegd aan het einde van de reeks door gebruik te maken van een datum/tijd die **groter is** dan de waarde die is opgegeven door de laatste Blob in de reeks.
+Referentie gegevens worden gemodelleerd als een reeks blobs (gedefinieerd in de invoer configuratie) in oplopende volg orde van de datum/tijd die is opgegeven in de naam van de blob. Het kan **alleen** worden toegevoegd aan het einde van de reeks door gebruik te maken van een datum/tijd die **groter is** dan de waarde die is opgegeven door de laatste Blob in de reeks. Zie [referentie gegevens van een Blob Storage gebruiken voor een Azure stream Analytics taak](data-protection.md)voor meer informatie.
 
 ### <a name="configure-blob-reference-data"></a>BLOB-referentie gegevens configureren
 
@@ -81,7 +81,7 @@ Azure Stream Analytics automatisch wordt gescand op vernieuwde referentie gegeve
 3. Referentie gegevens-blobs worden **niet** gerangschikt op de tijd ' laatst gewijzigd ' van de blob, maar alleen door de tijd en de datum die zijn opgegeven in de naam van de blob met de {date}-en {time} vervangingen.
 3. Om te voor komen dat een groot aantal blobs wordt vermeld, kunt u overwegen om zeer oude blobs te verwijderen waarvoor de verwerking niet meer wordt uitgevoerd. ASA kan worden uitgevoerd om een kleine hoeveelheid opnieuw te verwerken in sommige scenario's, zoals opnieuw opstarten.
 
-## <a name="azure-sql-database"></a>Azure SQL-database
+## <a name="azure-sql-database"></a>Azure SQL Database
 
 Azure SQL Database referentie gegevens worden opgehaald door uw Stream Analytics-taak en worden opgeslagen als een moment opname in het geheugen voor verwerking. De moment opname van de referentie gegevens wordt ook opgeslagen in een container in een opslag account dat u opgeeft in de configuratie-instellingen. De container wordt automatisch gemaakt wanneer de taak wordt gestart. Als de taak wordt gestopt of een mislukte status krijgt, worden de automatisch gemaakte containers verwijderd wanneer de taak opnieuw wordt gestart.  
 

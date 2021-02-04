@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 02/04/2021
 ms.author: alexeyo
-ms.openlocfilehash: 51989a9219cdbfebf833c99849dba67c939cf77a
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: c9af0cda14261e8eab7f1ecc05c50a289d7ddfdb
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786839"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559661"
 ---
 # <a name="use-speech-services-through-a-private-endpoint"></a>Spraak Services gebruiken via een persoonlijk eind punt
 
@@ -268,8 +268,6 @@ Als u van plan bent om toegang te krijgen tot de resource door alleen een persoo
              westeurope.prod.vnet.cog.trafficmanager.net
    ```
 
-3. Controleer of het IP-adres overeenkomt met het IP-adres van uw persoonlijke eind punt.
-
 > [!NOTE]
 > Het omgezette IP-adres wijst naar een eind punt van een virtuele netwerk proxy, waarmee het netwerk verkeer wordt verzonden naar het persoonlijke eind punt voor de Cognitive Services bron. Het gedrag verschilt voor een resource met een aangepaste domein naam, maar *zonder* persoonlijke eind punten. Zie [deze sectie](#dns-configuration) voor meer informatie.
 
@@ -311,6 +309,10 @@ Dit is een voor beeld van een aanvraag-URL:
 ```http
 https://westeurope.api.cognitive.microsoft.com/speechtotext/v3.0/transcriptions
 ```
+
+> [!NOTE]
+> Zie [dit artikel](sovereign-clouds.md) voor Azure Government en Azure China-eind punten.
+
 Nadat u een aangepast domein hebt ingeschakeld voor een spraak bron (die nodig is voor persoonlijke eind punten), gebruikt die resource het volgende DNS-naam patroon voor het basis REST API-eind punt: <p/>`{your custom name}.cognitiveservices.azure.com`.
 
 Dat betekent dat in het volgende voor beeld de naam van het REST API-eind punt is: <p/>`my-private-link-speech.cognitiveservices.azure.com`.
@@ -334,42 +336,35 @@ De [spraak-naar-tekst rest API voor korte audio](rest-speech-to-text.md#speech-t
 - [Cognitive Services regionale eind punten](../cognitive-services-custom-subdomains.md#is-there-a-list-of-regional-endpoints) voor de communicatie met de Cognitive Services rest API voor het verkrijgen van een autorisatie token
 - Speciale eind punten voor alle andere bewerkingen
 
-De gedetailleerde beschrijving van de speciale eind punten en hoe hun URL moet worden getransformeerd voor een spraak bron met privé-eind punt, is in [Deze subsectie](#general-principles) opgenomen over gebruik met de spraak-SDK. Hetzelfde principe dat voor de SDK wordt beschreven, is van toepassing op de spraak-naar-tekst REST API v 1.0 en de tekst-naar-spraak-REST API.
+> [!NOTE]
+> Zie [dit artikel](sovereign-clouds.md) voor Azure Government en Azure China-eind punten.
+
+De gedetailleerde beschrijving van de speciale eind punten en hoe hun URL moet worden getransformeerd voor een spraak bron met privé-eind punt, is in [Deze subsectie](#construct-endpoint-url) opgenomen over gebruik met de spraak-SDK. Hetzelfde principe dat voor de SDK wordt beschreven, is van toepassing op de REST API voor spraak naar tekst voor korte audio en de tekst naar spraak REST API.
 
 Raadpleeg het volgende voor beeld om vertrouwd te raken met het materiaal in de Subsectie in de vorige alinea. In het voor beeld wordt de REST API van tekst naar spraak beschreven. Het gebruik van de spraak-naar-tekst REST API voor korte audio is volledig gelijkwaardig.
 
 > [!NOTE]
-> Wanneer u de spraak-naar-tekst REST API gebruikt voor korte audio in scenario's met een persoonlijk eind punt, gebruikt u een autorisatie token dat u via de header hebt [door gegeven](rest-speech-to-text.md#request-headers) `Authorization` [](rest-speech-to-text.md#request-headers). Het door geven van een sleutel voor een spraak abonnement op het speciale eind punt via de `Ocp-Apim-Subscription-Key` koptekst zal *niet* werken en genereert fout 401.
+> Wanneer u gebruikmaakt van de spraak-naar-tekst REST API voor korte audio-en tekst-naar-spraak-REST API in scenario's met een persoonlijk eind punt, gebruikt u een abonnements sleutel die wordt door gegeven via de `Ocp-Apim-Subscription-Key` koptekst. (Zie de Details voor [spraak naar tekst rest API voor korte audio](rest-speech-to-text.md#request-headers) en [tekst naar spraak rest API](rest-text-to-speech.md#request-headers))
+>
+> Het gebruik van een autorisatie token en het door geven aan het speciale eind punt via de `Authorization` header werkt *alleen* als u de optie **alle netwerken** hebt ingeschakeld in de sectie **netwerken** van uw spraak bron. In andere gevallen krijgt u een `Forbidden` `BadRequest` fout melding wanneer u probeert een autorisatie token te verkrijgen.
 
 **Voor beeld van het gebruik van tekst naar spraak REST API**
 
 We gebruiken Europa-west als een voor beeld van een Azure `my-private-link-speech.cognitiveservices.azure.com` -regio en als een voor beeld van een DNS-naam voor een spraak bron (aangepast domein). De aangepaste domein naam `my-private-link-speech.cognitiveservices.azure.com` in ons voor beeld maakt deel uit van de spraak bron die in de Europa-West regio is gemaakt.
 
-Ga als volgt te werk om de lijst met stemmen die in de regio worden ondersteund, op te halen:
+Als u de lijst met stemmen die in de regio worden ondersteund, wilt ophalen, voert u de volgende aanvraag uit:
 
-- Een autorisatie token verkrijgen:
-  ```http
-  https://westeurope.api.cognitive.microsoft.com/sts/v1.0/issuetoken
-  ```
-- Als u het token gebruikt, haalt u de lijst met stemmen op:
-  ```http
-  https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list
-  ```
-Zie de voor gaande stappen in de [tekst-naar-spraak-rest API documentatie](rest-text-to-speech.md)voor meer informatie.
+```http
+https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list
+```
+Meer informatie vindt u in de [tekst-naar-spraak-rest API documentatie](rest-text-to-speech.md).
 
-Voor de spraak resource met persoonlijk eind punt is ingeschakeld, moeten de eind punt-Url's voor dezelfde bewerkings reeks worden gewijzigd. Dezelfde volg orde ziet er als volgt uit:
+Voor de spraak resource met persoonlijk eind punt is ingeschakeld, moet de eind punt-URL voor dezelfde bewerking worden gewijzigd. Dezelfde aanvraag ziet er als volgt uit:
 
-- Een autorisatie token verkrijgen:
-  ```http
-  https://my-private-link-speech.cognitiveservices.azure.com/v1.0/issuetoken
-  ```
-  Zie de gedetailleerde uitleg in de Subsectie eerder [spraak-naar-tekst-rest API v 3.0](#speech-to-text-rest-api-v30) .
-
-- Als u het verkregen token gebruikt, haalt u de lijst met stemmen op:
-  ```http
-  https://my-private-link-speech.cognitiveservices.azure.com/tts/cognitiveservices/voices/list
-  ```
-  Zie de Subsectie [algemene principes](#general-principles) voor de Speech SDK voor een gedetailleerde uitleg.
+```http
+https://my-private-link-speech.cognitiveservices.azure.com/tts/cognitiveservices/voices/list
+```
+Zie een gedetailleerde uitleg in de Subsectie URL van het [Construct-eind punt](#construct-endpoint-url) voor de spraak-SDK.
 
 #### <a name="speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk"></a>Spraak bron met een aangepaste domein naam en een persoonlijk eind punt: gebruik met de spraak-SDK
 
@@ -377,9 +372,9 @@ Voor het gebruik van de Speech SDK met een aangepaste domein naam en spraak bron
 
 We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor beeld van een DNS-naam voor een spraak bron (aangepast domein) voor deze sectie.
 
-##### <a name="general-principles"></a>Algemene principes
+##### <a name="construct-endpoint-url"></a>Eind punt-URL maken
 
-Doorgaans in SDK-scenario's (en in de REST API scenario's voor tekst naar spraak), gebruiken spraak bronnen de toegewezen regionale eind punten voor verschillende service aanbiedingen. De indeling van de DNS-naam voor deze eind punten is:
+Doorgaans in SDK-scenario's (en in de spraak-naar-tekst REST API voor korte audio-en tekst-naar-spraak-REST API scenario's), gebruiken spraak bronnen de toegewezen regionale eind punten voor verschillende service aanbiedingen. De indeling van de DNS-naam voor deze eind punten is:
 
 `{region}.{speech service offering}.speech.microsoft.com`
 
@@ -387,15 +382,15 @@ Een voor beeld van een DNS-naam is:
 
 `westeurope.stt.speech.microsoft.com`
 
-Alle mogelijke waarden voor de regio (eerste element van de DNS-naam) worden weer gegeven in [regio's met spraak Services](regions.md)die worden ondersteund. De volgende tabel bevat de mogelijke waarden voor de speech services-aanbieding (tweede element van de DNS-naam):
+Alle mogelijke waarden voor de regio (eerste element van de DNS-naam) worden weer gegeven in [regio's met spraak Services](regions.md)die worden ondersteund. (Zie [dit artikel](sovereign-clouds.md) voor eind punten van Azure Government en Azure China.) De volgende tabel bevat de mogelijke waarden voor de speech services-aanbieding (tweede element van de DNS-naam):
 
 | DNS-naam waarde | Spraak service aanbieding                                    |
 |----------------|-------------------------------------------------------------|
 | `commands`     | [Aangepaste opdrachten](custom-commands.md)                       |
 | `convai`       | [Gesprekstranscriptie](conversation-transcription.md) |
 | `s2s`          | [Speech Translation](speech-translation.md)                 |
-| `stt`          | [Spraak-naar-tekst](speech-to-text.md)                         |
-| `tts`          | [Tekst naar spraak](text-to-speech.md)                         |
+| `stt`          | [Spraak naar tekst](speech-to-text.md)                         |
+| `tts`          | [Tekst-naar-spraak](text-to-speech.md)                         |
 | `voice`        | [Aangepaste stem](how-to-custom-voice.md)                      |
 
 Het vorige voor beeld ( `westeurope.stt.speech.microsoft.com` ) staat voor een spraak-naar-tekst-eind punt in Europa-West.
@@ -459,7 +454,7 @@ Volg deze stappen om uw code te wijzigen:
 
 2. Een exemplaar maken met `SpeechConfig` behulp van een volledige eind punt-URL:
 
-   1. Wijzig het eind punt dat u zojuist hebt bepaald, zoals beschreven in de sectie eerdere [algemene principes](#general-principles) .
+   1. Wijzig het eind punt dat u zojuist hebt bepaald, zoals beschreven in de sectie voor de vorige URL voor het maken van een [eind punt](#construct-endpoint-url) .
 
    1. Wijzig de manier waarop u het exemplaar maakt `SpeechConfig` . Het is waarschijnlijk dat uw toepassing er ongeveer als volgt gebruikt:
       ```csharp
@@ -537,78 +532,36 @@ Het gebruik van spraak-naar-tekst REST API v 3.0 is volledig gelijk aan het geva
 
 ##### <a name="speech-to-text-rest-api-for-short-audio-and-text-to-speech-rest-api"></a>Spraak-naar-tekst REST API voor korte audio en tekst naar spraak REST API
 
-In dit geval is het gebruik van de spraak-naar-tekst REST API voor korte audio en het gebruik van de tekst-naar-spraak-REST API geen verschillen van het algemene geval, met één uitzonde ring voor de spraak-naar-tekst REST API voor korte audio. (Zie de volgende opmerking.) U moet beide Api's gebruiken zoals beschreven in de [rest API voor spraak naar tekst voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) en [tekst naar spraak rest API](rest-text-to-speech.md) documentatie.
+In dit geval is het gebruik van de spraak-naar-tekst REST API voor korte audio en het gebruik van de tekst-naar-spraak-REST API geen verschillen van het algemene geval, met één uitzonde ring. (Zie de volgende opmerking.) U moet beide Api's gebruiken zoals beschreven in de [rest API voor spraak naar tekst voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio) en [tekst naar spraak rest API](rest-text-to-speech.md) documentatie.
 
 > [!NOTE]
-> Wanneer u de spraak-naar-tekst REST API gebruikt voor korte audio in scenario's met aangepaste domeinen, gebruikt u een autorisatie token dat is [door gegeven via](rest-speech-to-text.md#request-headers) een `Authorization` [header](rest-speech-to-text.md#request-headers). Het door geven van een sleutel voor een spraak abonnement op het speciale eind punt via de `Ocp-Apim-Subscription-Key` koptekst zal *niet* werken en genereert fout 401.
+> Wanneer u de spraak-naar-tekst REST API gebruikt voor korte audio-en tekst-naar-spraak-REST API in aangepaste domein scenario's, gebruikt u een abonnements sleutel die wordt door gegeven via de `Ocp-Apim-Subscription-Key` koptekst. (Zie de Details voor [spraak naar tekst rest API voor korte audio](rest-speech-to-text.md#request-headers) en [tekst naar spraak rest API](rest-text-to-speech.md#request-headers))
+>
+> Het gebruik van een autorisatie token en het door geven aan het speciale eind punt via de `Authorization` header werkt *alleen* als u de optie **alle netwerken** hebt ingeschakeld in de sectie **netwerken** van uw spraak bron. In andere gevallen krijgt u een `Forbidden` `BadRequest` fout melding wanneer u probeert een autorisatie token te verkrijgen.
 
 #### <a name="speech-resource-with-a-custom-domain-name-and-without-private-endpoints-usage-with-the-speech-sdk"></a>Spraak bron met een aangepaste domein naam en zonder persoonlijke eind punten: gebruik met de spraak-SDK
 
-Het gebruik van de Speech SDK met aangepaste spraak bronnen *zonder* persoonlijke eind punten vereist de beoordeling van en waarschijnlijke wijzigingen in de toepassings code. Houd er rekening mee dat deze wijzigingen afwijken van het geval van een [spraak resource met persoonlijke eind punten](#speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk). We werken aan de naadloze ondersteuning van persoonlijke eind punten en aangepaste domein scenario's.
+Het gebruik van de Speech SDK met aangepaste, door het domein ingeschakelde spraak bronnen *zonder* persoonlijke eind punten is gelijk aan het algemene geval zoals beschreven in de [Speech SDK-documentatie](speech-sdk.md).
 
-We gebruiken `my-private-link-speech.cognitiveservices.azure.com` als een voor beeld van een DNS-naam voor een spraak bron (aangepast domein) voor deze sectie.
+Als u uw code hebt gewijzigd voor het gebruik van een [spraak bron met privé-eind punt](#speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk), moet u rekening houden met het volgende.
 
 In het gedeelte over [spraak bronnen met een persoonlijk eind punt](#speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk)is een uitleg over het bepalen van de eind punt-URL, het wijzigen ervan en het maken van een eind punt voor de initialisatie van het `SpeechConfig` klasse-exemplaar.
 
 Als u echter dezelfde toepassing probeert uit te voeren nadat alle persoonlijke eind punten zijn verwijderd (waardoor enige tijd voor het opnieuw inrichten van de bijbehorende DNS-record is toegestaan), krijgt u een interne service fout (404). De [DNS-record](#dns-configuration) verwijst nu naar het regionale Cognitive Services-eind punt in plaats van de virtuele netwerk proxy en de URL-paden `/stt/speech/recognition/conversation/cognitiveservices/v1?language=en-US` worden daar niet gevonden.
 
-Als u uw toepassing terugdraait naar de standaard instantie van `SpeechConfig` in de stijl van de volgende code, wordt uw toepassing beëindigd met de verificatie fout (401):
+U moet uw toepassing terugdraaien naar de standaard instantie van `SpeechConfig` in de stijl van de volgende code:
 
 ```csharp
 var config = SpeechConfig.FromSubscription(subscriptionKey, azureRegion);
 ```
 
-##### <a name="modifying-applications"></a>Toepassingen wijzigen
-
-Voer de volgende stappen uit om ervoor te zorgen dat uw toepassing een spraak bron gebruikt met een aangepaste domein naam en zonder persoonlijke eind punten:
-
-1. Een autorisatie token aanvragen bij de Cognitive Services REST API. In [dit artikel](../authentication.md#authenticate-with-an-authentication-token) wordt uitgelegd hoe u het token kunt ophalen.
-
-   Gebruik uw aangepaste domein naam in de URL van het eind punt. In ons voor beeld is deze URL:
-   ```http
-   https://my-private-link-speech.cognitiveservices.azure.com/sts/v1.0/issueToken
-   ```
-   > [!TIP]
-   > U kunt deze URL vinden in de Azure Portal. Selecteer op de pagina voor spraak bronnen onder de groep **resource beheer** de optie **sleutels en eind punt**.
-
-1. Maak een `SpeechConfig` exemplaar met behulp van het autorisatie token dat u in de vorige sectie hebt verkregen. Stel dat de volgende variabelen zijn gedefinieerd:
-
-   - `token`: het autorisatie token dat is verkregen in de vorige sectie
-   - `azureRegion`: de naam van de resource [regio](regions.md) voor spraak (bijvoorbeeld: `westeurope` )
-   - `outError`: (alleen voor de [doel stelling C](/objectivec/cognitive-services/speech/spxspeechconfiguration#initwithauthorizationtokenregionerror) )
-
-   Maak een `SpeechConfig` instantie als volgt:
-
-   ```csharp
-   var config = SpeechConfig.FromAuthorizationToken(token, azureRegion);
-   ```
-   ```cpp
-   auto config = SpeechConfig::FromAuthorizationToken(token, azureRegion);
-   ```
-   ```java
-   SpeechConfig config = SpeechConfig.fromAuthorizationToken(token, azureRegion);
-   ```
-   ```python
-   import azure.cognitiveservices.speech as speechsdk
-   speech_config = speechsdk.SpeechConfig(auth_token=token, region=azureRegion)
-   ```
-   ```objectivec
-   SPXSpeechConfiguration *speechConfig = [[SPXSpeechConfiguration alloc] initWithAuthorizationToken:token region:azureRegion error:outError];
-   ```
-> [!NOTE]
-> De aanroeper moet ervoor zorgen dat het autorisatie token geldig is. Voordat het autorisatie token verloopt, moet de aanroeper het vernieuwen door deze Setter aan te roepen met een nieuwe geldige token. Omdat configuratie waarden worden gekopieerd wanneer u een nieuwe Recognizer of synthesizer maakt, is de nieuwe token waarde niet van toepassing op recognizers of synthesizers die al zijn gemaakt.
->
-> Stel hiervoor het autorisatie token van de bijbehorende Recognizer of synthesizer in om het token te vernieuwen. Als u het token niet vernieuwt, zal de herkenner of synthesizer tijdens het werken fouten tegen komen.
-
-Na deze wijziging moet uw toepassing werken met spraak bronnen die gebruikmaken van een aangepaste domein naam zonder persoonlijke eind punten.
-
 ## <a name="pricing"></a>Prijzen
 
 Zie [prijzen van Azure Private Link](https://azure.microsoft.com/pricing/details/private-link) voor meer informatie over prijzen.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 * [Azure Private Link](../../private-link/private-link-overview.md)
 * [Speech-SDK](speech-sdk.md)
-* [REST API voor spraak naar tekst](rest-speech-to-text.md)
-* [REST API van tekst naar spraak](rest-text-to-speech.md)
+* [REST API voor spraak-naar-tekst](rest-speech-to-text.md)
+* [REST API voor tekst-naar-spraak](rest-text-to-speech.md)

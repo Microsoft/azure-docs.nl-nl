@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Container Registry
 description: Toont beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Container Registry. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: sample
 author: dlepow
 ms.author: danlep
 ms.service: container-registry
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 52de1f99d37d0709d7e9f66d591a980b3c80aee1
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 344ada6d06cec29e4d05a82314cb4968a3e5f1e6
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99095525"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559976"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-container-registry"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Container Registry
 

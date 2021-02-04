@@ -1,15 +1,15 @@
 ---
 title: Lijst met ingebouwde beleidsinitiatieven
 description: Toont ingebouwde beleidsinitiatieven voor Azure Policy. Categorieën omvatten Naleving van regelgeving, Gastconfiguratie en meer.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 7bec632388c59e2e94e7c7bc31359450107f7674
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 194f785202a26b60453e30c59088d8cd189f522f
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219771"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560785"
 ---
 # <a name="azure-policy-built-in-initiative-definitions"></a>Ingebouwde Azure Policy-initiatiefdefinities
 

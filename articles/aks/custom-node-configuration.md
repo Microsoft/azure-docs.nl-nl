@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/03/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: d60a241506dbcf3e038f79c99830ef1a81c06b88
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 589081149d08983d3cd5a4a8822873f5a6cfca0e
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735261"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559437"
 ---
 # <a name="customize-node-configuration-for-azure-kubernetes-service-aks-node-pools-preview"></a>De knooppunt configuratie voor Azure Kubernetes service (AKS)-knooppunt Pools aanpassen (preview-versie)
 
@@ -166,7 +166,7 @@ Maak een `linuxosconfig.json` bestand met de volgende inhoud:
 }
 ```
 
-Maak een nieuw cluster met de kublet-en besturingssysteem configuraties met behulp van de JSON-bestanden die in de vorige stap zijn gemaakt. 
+Maak een nieuw cluster met de kubelet-en besturingssysteem configuraties met behulp van de JSON-bestanden die in de vorige stap zijn gemaakt. 
 
 > [!NOTE]
 > Wanneer u een cluster maakt, kunt u de configuratie van de kubelet, de configuratie van het besturings systeem of beide opgeven. Als u een configuratie opgeeft wanneer u een cluster maakt, wordt deze configuratie alleen toegepast op de knoop punten in de eerste knooppunt groep. Instellingen die niet in het JSON-bestand zijn geconfigureerd, behouden de standaard waarde.

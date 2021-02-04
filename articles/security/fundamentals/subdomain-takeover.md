@@ -11,21 +11,21 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/29/2020
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 7c09a7f6c6a313852fc6212c6190a584ba5f67bd
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7821d94ed032fd0fc52a756766e6a9af7c82cfde
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409889"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559228"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Dangling DNS-vermeldingen voor komen en de overname van subdomeinen voor komen
 
 In dit artikel wordt de veelvoorkomende bedreiging van de beveiliging van subdomeinen beschreven en de stappen die u kunt nemen om het probleem te verhelpen.
 
 
-## <a name="what-is-subdomain-takeover"></a>Wat is een subdomein-overname?
+## <a name="what-is-a-subdomain-takeover"></a>Wat is een overname voor subdomeinen?
 
 De overname van subdomeinen is een veelvoorkomende bedreiging van hoge urgentie voor organisaties die regel matig veel resources maken en verwijderen. Een overname van een subdomein kan optreden wanneer u een [DNS-record](../../dns/dns-zones-records.md#dns-records) hebt die naar een niet-ingerichte Azure-resource verwijst. Dergelijke DNS-records worden ook wel ' Dangling DNS-vermeldingen genoemd. CNAME-records zijn met name gevoelig voor deze bedreiging. Met de overname van subdomeinen kunnen kwaadwillende actoren verkeer dat is bedoeld voor het domein van een organisatie, omleiden naar een site die schadelijke activiteiten uitvoert.
 
@@ -144,6 +144,15 @@ Zorg ervoor dat uw organisatie de processen heeft geïmplementeerd om te voor ko
 
 Sommige functies van Azure Services bieden ondersteuning bij het maken van preventieve maat regelen en worden hieronder beschreven. Andere methoden om dit probleem te voor komen, moeten worden vastgesteld door de aanbevolen procedures van uw organisatie of door de standaard-werk procedures.
 
+### <a name="enable-azure-defender-for-app-service"></a>Azure Defender voor App Service inschakelen
+
+Het geïntegreerde CWPP (Cloud workload Protection platform) van Azure Security Center, Azure Defender, biedt diverse plannen voor het beveiligen van uw Azure-, hybride en multi-cloud resources en-workloads.
+
+Het **Azure Defender for app service** -abonnement bevat Dangling DNS-detectie. Als dit abonnement is ingeschakeld, ontvangt u beveiligings waarschuwingen als u een App Service website buiten gebruik stelt, maar het aangepaste domein niet uit uw DNS-REGI ster verwijdert.
+
+De Dangling DNS-beveiliging van Azure Defender is beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een externe domein registratie en van toepassing zijn op App Service in Windows en Linux.
+
+Meer informatie over deze en andere voor delen van dit Azure Defender-plan vindt [u in Inleiding tot Azure Defender voor app service](../../security-center/defender-for-app-service-introduction.md).
 
 ### <a name="use-azure-dns-alias-records"></a>Azure DNS alias records gebruiken
 
@@ -201,6 +210,8 @@ Het is vaak tot ontwikkel aars en operationele teams om opschoon processen uit t
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie de volgende pagina's voor meer informatie over gerelateerde services en Azure-functies die u kunt gebruiken om te beschermen tegen de overname van subdomeinen.
+
+- [Azure Defender voor app service inschakelen](../../security-center/defender-for-app-service-introduction.md) : er worden waarschuwingen weer gegeven wanneer Dangling DNS-vermeldingen worden gedetecteerd
 
 - [Dangling DNS-records met Azure DNS voor komen](../../dns/dns-alias.md#prevent-dangling-dns-records)
 

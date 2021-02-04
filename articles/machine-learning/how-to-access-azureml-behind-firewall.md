@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 150e1aee38a724a0d52c83219c4d214265be9274
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: dc8044ee72689634a1d4ce3e0e8b1a499404c5ce
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538065"
+ms.locfileid: "99560304"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>De werk ruimte achter een firewall gebruiken voor Azure Machine Learning
 
@@ -93,6 +93,7 @@ Zie [een Azure batch groep maken in een virtueel netwerk](../batch/batch-virtual
 
     | **Hostnaam** | **Doel** |
     | ---- | ---- |
+    | **graph.windows.net** | Wordt gebruikt door Azure Machine Learning Reken instantie/cluster. |
     | **anaconda.com**</br>**\*. anaconda.com** | Wordt gebruikt om standaard pakketten te installeren. |
     | **\*. anaconda.org** | Wordt gebruikt om opslag plaats-gegevens op te halen. |
     | **pypi.org** | Wordt gebruikt voor het weer geven van afhankelijkheden uit de standaard index, indien aanwezig, en de index wordt niet overschreven door gebruikers instellingen. Als de index wordt overschreven, moet u ook **\* . pythonhosted.org** toestaan. |
@@ -145,6 +146,7 @@ De hosts in deze sectie zijn eigendom van micro soft en bieden services die nodi
 | **Vereist voor** | **Openbare Azure-peering** | **Azure Government** | **Azure China 21Vianet** |
 | ----- | ----- | ----- | ----- |
 | Reken cluster/exemplaar | \*. batchai.core.windows.net | \*. batchai.core.usgovcloudapi.net |\*. batchai.ml.azure.cn |
+| Reken cluster/exemplaar | graph.windows.net |  |  |
 | Rekenproces | \*. instances.azureml.net | \*. instances.azureml.us | \*. instances.azureml.cn |
 | Rekenproces | \*. instances.azureml.ms |  |  |
 

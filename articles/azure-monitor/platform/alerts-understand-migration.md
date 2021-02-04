@@ -6,16 +6,16 @@ ms.date: 07/10/2019
 ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 6509425f11b09a2fa5229f9dd68a508241391925
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: e57b3dd31455db245103469874c517fe54479110
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875917"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526904"
 ---
 # <a name="understand-migration-options-to-newer-alerts"></a>Meer informatie over migratie opties voor nieuwere waarschuwingen
 
-Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md), maar zijn nog steeds beperkt in beperkte functionaliteit voor resources die de nieuwe waarschuwingen nog niet ondersteunen. Binnenkort wordt een nieuwe datum aangekondigd voor de resterende migratie van waarschuwingen, [Azure Government Cloud](../../azure-government/documentation-government-welcome.md)en [Azure China 21vianet](https://docs.azure.cn/).
+Klassieke waarschuwingen worden [buiten gebruik gesteld](./monitoring-classic-retirement.md) voor open bare Cloud gebruikers, maar zijn nog steeds beperkt in beperkte mate voor resources die de nieuwe waarschuwingen nog niet ondersteunen. Binnenkort wordt een nieuwe datum aangekondigd voor de resterende migratie van waarschuwingen, [Azure Government Cloud](../../azure-government/documentation-government-welcome.md)en [Azure China 21vianet](https://docs.azure.cn/).
 
 In dit artikel wordt uitgelegd hoe de hand matige migratie en het hulp programma voor vrijwillige migratie werken, dat wordt gebruikt voor het migreren van resterende waarschuwings regels. Ook worden oplossingen voor enkele veelvoorkomende problemen beschreven.
 
@@ -103,7 +103,7 @@ Dit zijn klassieke waarschuwings regels voor metrische gegevens die eerder werde
 |-------------|----------------- |
 | Microsoft.DBforMySQL/servers | compute_consumption_percent, compute_limit |
 | Microsoft.DBforPostgreSQL/servers | compute_consumption_percent, compute_limit |
-| Microsoft.Network/publicIPAddresses | defaultddostriggerrate |
+| Micro soft. Network/publicIPAddresses | defaultddostriggerrate |
 | Micro soft. SQL/servers/data bases | service_level_objective, storage_limit, storage_used, beperken, dtu_consumption_percent, storage_used |
 | Micro soft. Web/hostingEnvironments/multirolepools | averagememoryworkingset |
 | Micro soft. Web/hostingEnvironments/workerpools | BytesReceived, httpqueuelength |
@@ -193,7 +193,7 @@ Voor Cosmos DB zijn equivalente gegevens zoals hieronder weer gegeven:
 | Metrische gegevens in klassieke waarschuwingen | Equivalente metrische gegevens in nieuwe waarschuwingen | Opmerkingen|
 |--------------------------|---------------------------------|---------|
 | AvailableStorage     |AvailableStorage|   |
-| Gegevens grootte | DataUsage| |
+| Gegevensgrootte | DataUsage| |
 | Aantal documenten | DocumentCount||
 | Index grootte | IndexUsage||
 | Aanvraag kosten voor aantal Mongo| MongoRequestCharge met dimensie "opdrachtnaam" = "aantal"||
@@ -264,4 +264,4 @@ Als onderdeel van de migratie worden nieuwe metrische waarschuwingen en nieuwe a
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Het hulpprogramma voor migratie gebruiken](alerts-using-migration-tool.md)
-- [Voorbereiden op de migratie](alerts-prepare-migration.md)
+- [Voorbereiden voor de migratie](alerts-prepare-migration.md)

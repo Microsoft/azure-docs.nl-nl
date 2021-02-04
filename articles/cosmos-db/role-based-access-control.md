@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: mjbrown
-ms.openlocfilehash: 2a5ec03bcd7d5002f85d32ed63614d277e95cfa0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: db6721754802a3eeda387339498dadb9d25b3685
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943751"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526938"
 ---
 # <a name="azure-role-based-access-control-in-azure-cosmos-db"></a>Toegangs beheer op basis van rollen in Azure in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,7 +26,8 @@ Hier volgen de ingebouwde rollen die door Azure Cosmos DB worden ondersteund:
 |---------|---------|
 |[Inzender voor DocumentDB-accounts](../role-based-access-control/built-in-roles.md#documentdb-account-contributor)|Kan Azure Cosmos DB accounts beheren.|
 |[Lezer van Cosmos DB-account](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role)|Kan gegevens van Azure Cosmos DB-account lezen.|
-|[Cosmos-back-upoperator](../role-based-access-control/built-in-roles.md#cosmosbackupoperator)|Kan een herstel aanvraag indienen voor een Azure Cosmos-data base of een container. Geen toegang tot gegevens of gebruik Data Explorer.|
+|[Cosmos-back-upoperator](../role-based-access-control/built-in-roles.md#cosmosbackupoperator)| Kan een terugzet aanvraag indienen voor Azure Portal voor een Data Base die is ingeschakeld voor periodieke back-ups of een container. Kan het back-upinterval en de retentie op de Azure Portal wijzigen. Geen toegang tot gegevens of gebruik Data Explorer.  |
+| [CosmosRestoreOperator](../role-based-access-control/built-in-roles.md) | Kan de herstel actie voor Azure Cosmos DB-account uitvoeren met de modus continue back-up.|
 |[Cosmos DB-operator](../role-based-access-control/built-in-roles.md#cosmos-db-operator)|Kan Azure Cosmos-accounts,-data bases en-containers inrichten. Geen toegang tot gegevens of gebruik Data Explorer.|
 
 > [!IMPORTANT]
@@ -36,7 +37,7 @@ Hier volgen de ingebouwde rollen die door Azure Cosmos DB worden ondersteund:
 
 Het deel venster **toegangs beheer (IAM)** in de Azure portal wordt gebruikt voor het configureren van toegangs beheer op basis van rollen in azure Cosmos-resources. De rollen worden toegepast op gebruikers, groepen, service-principals en beheerde identiteiten in Active Directory. U kunt ingebouwde rollen of aangepaste rollen gebruiken voor individuen en groepen. De volgende scherm afbeelding toont Active Directory Integration (Azure RBAC) met behulp van toegangs beheer (IAM) in de Azure Portal:
 
-:::image type="content" source="./media/role-based-access-control/database-security-identity-access-management-rbac.png" alt-text="Toegangs beheer (IAM) in de Azure Portal-demonstrerende database beveiliging":::
+:::image type="content" source="./media/role-based-access-control/database-security-identity-access-management-rbac.png" alt-text="Toegangs beheer (IAM) in de Azure Portal-demonstring data base Security.":::
 
 ## <a name="custom-roles"></a>Aangepaste rollen
 

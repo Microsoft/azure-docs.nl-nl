@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: chmutali
-ms.openlocfilehash: d39e00a80ab167936a749c73867b4343e6ed9d76
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 3260787dec4ae26cd6ef7cc3bd562f39db8e3655
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006435"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526972"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Zelfstudie: Write-back van kenmerken van Azure AD naar SAP SuccessFactors configureren
 Het doel van deze zelfstudie is om de stappen te laten zien voor write-back van kenmerken van Azure AD naar SAP SuccessFactors Employee Central. 
@@ -52,11 +52,11 @@ Alle inrichtingsconnectors van SuccessFactors vereisen referenties van een Succe
 * [Machtigingsrol verlenen aan de machtigingsgroep](#grant-permission-role-to-the-permission-group)
 
 ### <a name="createidentify-api-user-account-in-successfactors"></a>API-gebruikersaccount maken/identificeren in SuccessFactors
-Werk samen met uw SuccessFactors-beheerteam of implementatiepartner om een gebruikersaccount in SuccessFactors te maken of te identificeren dat wordt gebruikt om de OData-API's aan te roepen. De referenties van de gebruikersnaam en het wachtwoord van dit account zijn vereist bij het configureren van de inrichtings-apps in Azure AD. 
+Werk samen met uw beheerders van SuccessFactors of uw implementatiepartner om een gebruikersaccount in SuccessFactors te maken of te identificeren dat wordt gebruikt om de OData-API's aan te roepen. De gebruikersnaam en het wachtwoord van dit account zijn vereist bij het configureren van de inrichtings-apps in Azure AD. 
 
 ### <a name="create-an-api-permissions-role"></a>Een API-machtigingenrol maken
 
-1. Meld u aan bij SAP SuccessFactors met een gebruikersaccount dat toegang heeft tot het beheercentrum.
+1. Meld u aan bij SAP SuccessFactors met een gebruikersaccount dat toegang heeft tot het Admin Center.
 1. Zoek naar *Machtigingsrollen beheren* en selecteer **Machtigingsrollen beheren** in de zoekresultaten.
 
    ![Machtigingsrollen beheren](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
@@ -66,60 +66,60 @@ Werk samen met uw SuccessFactors-beheerteam of implementatiepartner om een gebru
    > [!div class="mx-imgBorder"]
    > ![Nieuwe machtigingsrol maken](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 
-1. Voeg een **Rolnaam** en **Beschrijving** voor de nieuwe machtigingsrol toe. De naam en beschrijving moeten aangeven dat de rol bestemd is voor API-gebruiksmachtigingen.
+1. Geef waarden op voor **Role Name** en **Description** voor de nieuwe machtigingsrol. De naam en beschrijving moeten aangeven dat de rol bestemd is voor API-gebruiksmachtigingen.
 
    > [!div class="mx-imgBorder"]
    > ![Details van machtigingsrol](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
 
-1. Klik onder machtigingsinstellingen op **Machtiging...** , schuif vervolgens omlaag in de lijst met machtigingen en klik op **Integratie-hulpprogramma's beheren**. Schakel het vakje in voor **Beheerder toegang tot OData-API toestaan via basisverificatie**.
+1. Klik onder Permission settings op **Permission...** , schuif vervolgens omlaag in de lijst met machtigingen en klik op **Manage Integration Tools**. Schakel het selectievakje van **Allow Admin to Access to OData API through Basic Authentication** in.
 
    > [!div class="mx-imgBorder"]
    > ![Integratie-hulpprogramma’s beheren](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
 
-1. Schuif omlaag in hetzelfde vak en selecteer **Employee Central-API**. Voeg machtigingen toe, zoals hieronder wordt weergegeven, voor meer informatie over het gebruik van ODATA-API en bewerken met de ODATA-API. Selecteer de optie bewerken als u hetzelfde account wilt gebruiken voor het scenario voor write-back naar SuccessFactors. 
+1. Schuif omlaag in dezelfde lijst en selecteer **Employee Central-API**. Voeg machtigingen toe, zoals hieronder wordt weergegeven, voor meer informatie over het gebruik van ODATA-API en bewerken met de ODATA-API. Selecteer de optie bewerken als u hetzelfde account wilt gebruiken voor het scenario voor write-back naar SuccessFactors. 
 
    > [!div class="mx-imgBorder"]
    > ![Machtigingen voor lezen en schrijven](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
 
-1. Klik op **Gereed**. Klik op **Wijzigingen opslaan**.
+1. Klik op **Done**. Klik op **Wijzigingen opslaan**.
 
 ### <a name="create-a-permission-group-for-the-api-user"></a>Een machtigingsgroep maken voor de API-gebruiker
 
-1. Zoek in het beheercentrum van SuccessFactors naar *Machtigingsgroepen beheren* en selecteer vervolgens **Machtigingsgroepen beheren** uit de zoekresultaten.
+1. Zoek in het SuccessFactors Admin Center naar *Manage Permission Groups* en selecteer vervolgens **Manage Permission Groups** in de zoekresultaten.
 
    > [!div class="mx-imgBorder"]
    > ![Machtigingsgroepen beheren](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
 
-1. Klik in het venster Machtigingsgroepen beheren op **Nieuwe maken**.
+1. Klik in het venster Manage Permission Groups op **Create New**.
 
    > [!div class="mx-imgBorder"]
    > ![Nieuwe groep toevoegen](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
 
-1. Een groepsnaam voor de nieuwe groep toevoegen. De groepsnaam moet aangeven dat de groep voor API-gebruikers is.
+1. Geef een naam op voor de nieuwe groep. De groepsnaam moet aangeven dat de groep voor API-gebruikers is.
 
    > [!div class="mx-imgBorder"]
    > ![Naam van machtigingsgroep](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
 
-1. Leden toevoegen aan de groep. U kunt bijvoorbeeld **Gebruikersnaam** selecteren in de vervolgkeuzelijst People Pool en vervolgens de gebruiker naam invoeren van het API-account dat wordt gebruikt voor de integratie. 
+1. Voeg leden toe aan de groep. U kunt bijvoorbeeld **Username** selecteren in de vervolgkeuzelijst People Pool en vervolgens de gebruikersnaam invoeren van het API-account dat wordt gebruikt voor de integratie. 
 
    > [!div class="mx-imgBorder"]
    > ![Groepsleden toevoegen](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
 
-1. Klik op **Gereed** om de Machtigingsgroep te maken.
+1. Klik op **Done** om de machtigingsgroep te maken.
 
-### <a name="grant-permission-role-to-the-permission-group"></a>Machtigingsrol verlenen aan de Machtigingsgroep
+### <a name="grant-permission-role-to-the-permission-group"></a>Machtigingsrol verlenen aan de machtigingsgroep
 
-1. Zoek in het beheercentrum van SuccessFactors naar *Machtigingsrollen beheren* en selecteer vervolgens **Machtigingsrollen beheren** uit de zoekresultaten.
-1. Selecteer de rol die u hebt gemaakt voor de machtigingen voor API-gebruik in de **Lijst met machtigingsrollen**.
-1. Klik onder **Deze rol toekennen aan...** op de knop **Toevoegen...** .
-1. Selecteer **Machtigingsgroep...** in de vervolgkeuzelijst en klik vervolgens op **Selecteren...** om het venster Groepen te openen en de hierboven gemaakte groep te selecteren. 
+1. Zoek in het SuccessFactors Admin Center naar *Manage Permission Roles* en selecteer vervolgens **Manage Permission Roles** in de zoekresultaten.
+1. Selecteer bij **Permission Role List** de rol die u hebt gemaakt voor de machtigingen voor API-gebruik.
+1. Klik onder **Grant this role to...** op de knop **Add...**
+1. Selecteer **Permission Group...** in de vervolgkeuzelijst en klik vervolgens op **Select...** om het venster Groups te openen en de hierboven gemaakte groep te selecteren. 
 
    > [!div class="mx-imgBorder"]
    > ![Machtigingsgroep toevoegen](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
 
-1. Beoordeel het verlenen van de Machtigingsrol aan de Machtigingsgroep. 
+1. Controleer de gegevens voor het verlenen van de machtigingsrol aan de machtigingsgroep. 
    > [!div class="mx-imgBorder"]
-   > ![Machtingingsrol en Groepsdetail](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
+   > ![Machtingingsrol en groepsdetails](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
 
 1. Klik op **Wijzigingen opslaan**.
 
@@ -231,7 +231,7 @@ Deze sectie bevat stappen voor
 
 1. Ga naar <https://portal.azure.com>
 
-2. Selecteer **Azure Active Directory** in de navigatiebalk aan de linkerkant
+2. Selecteer **Azure Active Directory** in de navigatiebalk aan de linkerkant.
 
 3. Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -241,21 +241,21 @@ Deze sectie bevat stappen voor
 
 6. Nadat de app is toegevoegd en het scherm met details van de app wordt weergegeven, selecteert u **Inrichten**
 
-7. Wijzig **Inrichten** **Modus** naar **Automatisch**
+7. Stel **Inrichtings** **modus** in op **Automatisch**.
 
-8. Voer het volgende uit in de sectie  **Beheerdersreferenties**:
+8. Ga als volgt te werk om de sectie **Referenties voor beheerder** af te ronden:
 
-   * **Gebruikersnaam van beheerder** - Voer de gebruikersnaam van de gebruikersaccount van de SuccessFactors-API in, waarbij de bedrijfs-ID is toegevoegd. Het heeft de volgende indeling: **gebruikersnaam\@bedrijfsID**
+   * **Gebruikersnaam van beheerder** - Voer de gebruikersnaam van de gebruikersaccount van de SuccessFactors-API in, waarbij de bedrijfs-ID is toegevoegd. Deze heeft de volgende indeling: **gebruikersnaam\@bedrijfsid**
 
-   * **Beheerderswachtwoord -** Voer het wachtwoord in van de gebruikersaccount van de SuccessFactors-API. 
+   * **Beheerderswachtwoord -** Voer het wachtwoord in van het gebruikersaccount van de SuccessFactors-API. 
 
    * **Tenant-URL -** Voer de naam in van het SuccessFactors OData-API-service-eindpunt. Voer alleen de hostnaam van de server in zonder http of https. De waarde moet er als volgt uitzien: `api4.successfactors.com`.
 
    * **E-mailadres voor meldingen -** Voer uw e-mailadres in en schakel het selectie vakje ‘e-mail verzenden als er een fout is opgetreden’ in.
     > [!NOTE]
-    > De Azure AD-inrichtingsservice verzendt een e-mailmelding als de inrichtingstaak een [quarantaine](../app-provisioning/application-provisioning-quarantine-status.md)status heeft.
+    > De Azure AD-inrichtingsservice verzendt een e-mailmelding als de inrichtingstaak in [quarantaine](../app-provisioning/application-provisioning-quarantine-status.md) is geplaatst.
 
-   * Klik op de knop **Verbinding testen**. Als de verbindingstest is geslaagd, klikt u bovenaan op de knop **Opslaan**. Als dit mislukt, controleert u nogmaals of de SuccessFactors-referenties en -URL geldig zijn.
+   * Klik op de knop **Verbinding testen**. Als de verbindingstest is gelukt, klikt u bovenaan op de knop **Opslaan**. Als de test mislukt, controleert u nogmaals of de SuccessFactors-referenties en -URL geldig zijn.
     >[!div class="mx-imgBorder"]
     >![Azure-portal](./media/sap-successfactors-inbound-provisioning/sfwb-provisioning-creds.png)
 
@@ -282,7 +282,7 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van SuccessFactors 
    | 3 | 8448 | emailType | Deze constante waarde is de SuccessFactors-id-waarde die aan een zakelijk e-mailadres is gekoppeld. Werk deze waarde bij zodat deze overeenkomt met uw SuccessFactors-omgeving. Zie de sectie [Constante waarde ophalen voor emailType](#retrieve-constant-value-for-emailtype) voor stappen om deze waarde in te stellen. |
    | 4 | waar | emailIsPrimary | Gebruik dit kenmerk om zakelijke e-mail in te stellen als primair in SuccessFactors. Als zakelijke e-mail niet primair is, stelt u deze markering in op onwaar. |
    | 5 | userPrincipalName | [custom01 – custom15] | Met **Nieuwe toewijzing toevoegen** kunt u optioneel userPrincipalName of een ander Azure AD-kenmerk schrijven naar een aangepast attribuut dat beschikbaar is in het gebruikersobject van SuccessFactors.  |
-   | 6 | on-prem-samAccountName | gebruikersnaam | Met **Nieuwe toewijzing toevoegen** kunt u optioneel een on-premises samAccountName toewijzen aan het gebruikersnaamkenmerk van SuccessFactors. |
+   | 6 | On-premises SamAccountName | gebruikersnaam | Met **Nieuwe toewijzing toevoegen** kunt u optioneel een on-premises samAccountName toewijzen aan het gebruikersnaamkenmerk van SuccessFactors. Gebruik [Azure AD Connect Sync: Directory-extensies](../hybrid/how-to-connect-sync-feature-directory-extensions.md) om sAMAccountName te synchroniseren met Azure AD. Deze wordt weer gegeven in de vervolg keuzelijst bron als *extension_yourTenantGUID_samAccountName* |
    | 7 | Eenmalige aanmelding | loginMethod | Als de SuccessFactors-tenant is ingesteld voor [gedeeltelijke eenmalige aanmelding (SSO)](https://apps.support.sap.com/sap/support/knowledge/en/2320766) dan kunt u vervolgens eventueel met Nieuwe toewijzing toevoegen loginMethod instellen op een constante waarde van 'SSO' of 'PW '. |
    | 8 | telephoneNumber | businessPhoneNumber | Gebruik deze toewijzing om *telephoneNumber* van Azure AD naar SuccessFactors zakelijk/werktelefoonnummer te laten stromen. |
    | 9 | 10605 | businessPhoneType | Deze constante waarde is de SuccessFactors-id-waarde die aan een zakelijk telefoonnummer is gekoppeld. Werk deze waarde bij zodat deze overeenkomt met uw SuccessFactors-omgeving. Zie de sectie [Constante waarde ophalen voor phoneType](#retrieve-constant-value-for-phonetype) voor stappen om deze waarde in te stellen. |

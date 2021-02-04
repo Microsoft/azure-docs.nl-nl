@@ -6,16 +6,16 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: d7bcf3e5c0b50d3d6eb8f71dc70f0ff064ff3465
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 4f17afc6fb5001b4bbee16fe84697b58d062b292
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536027"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526921"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Gebruik het hulp programma voor vrijwillige migratie om uw klassieke waarschuwings regels te migreren
 
-Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. Er is een hulp programma voor migratie beschikbaar in de Azure Portal voor klanten die klassieke waarschuwings regels hebben gebruikt en die migratie zelf willen activeren. In dit artikel wordt uitgelegd hoe u het hulp programma voor migratie gebruikt, dat ook wordt gebruikt voor de resterende waarschuwingen die in behandeling zijn.
+Zoals [eerder aangekondigd](monitoring-classic-retirement.md), worden klassieke waarschuwingen in azure monitor buiten gebruik gesteld voor open bare Cloud gebruikers, maar nog steeds beperkt in beperkte mate van resources die de nieuwe waarschuwingen nog niet ondersteunen. Er is een hulp programma voor migratie beschikbaar in de Azure Portal voor klanten die klassieke waarschuwings regels hebben gebruikt en die migratie zelf willen activeren. In dit artikel wordt uitgelegd hoe u het hulp programma voor migratie gebruikt, dat ook wordt gebruikt voor de resterende waarschuwingen die in behandeling zijn.
 
 ## <a name="benefits-of-new-alerts"></a>Voor delen van nieuwe waarschuwingen
 

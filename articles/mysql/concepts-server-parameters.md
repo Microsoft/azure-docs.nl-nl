@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 1/26/2021
-ms.openlocfilehash: 9485d346384344bd7c35d0577245419ca1f56574
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 1b0bcf528a16e2f75bf21235980424b5375f8824
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98951307"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539481"
 ---
 # <a name="server-parameters-in-azure-database-for-mysql"></a>Server parameters in Azure Database for MySQL
 
@@ -31,7 +31,7 @@ Raadpleeg de volgende secties voor meer informatie over de limieten van de versc
 
 ### <a name="thread-pools"></a>Thread groepen
 
-MySQL wijst traditioneel een thread toe voor elke client verbinding. Naarmate het aantal gelijktijdige gebruikers toeneemt, is er een overeenkomstige drop in-vorm. Veel actieve threads kunnen van invloed zijn op de prestaties aanzienlijk als gevolg van een grotere context omschakeling, thread-conflicten en een onjuiste plaats voor CPU-caches.
+MySQL wijst traditioneel een thread toe voor elke client verbinding. Naarmate het aantal gelijktijdige gebruikers toeneemt, is er een overeenkomende daling van de prestaties. Veel actieve threads kunnen van invloed zijn op de prestaties aanzienlijk als gevolg van een grotere context omschakeling, thread-conflicten en een onjuiste plaats voor CPU-caches.
 
 Thread groepen die zich op de server functie bevindt en die verschillend zijn van groepsgewijze verbindingen, maximaliseren de prestaties door een dynamische groep werk thread te introduceren die kan worden gebruikt om het aantal actieve threads dat op de server wordt uitgevoerd, te beperken en de thread verloop tot een minimum te beperken. Dit zorgt ervoor dat de server niet meer bronnen heeft of niet meer wordt gecrasht vanwege onvoldoende geheugen. Thread groepen zijn het meest efficiënt voor korte query's en CPU-intensieve workloads, bijvoorbeeld OLTP-workloads.
 

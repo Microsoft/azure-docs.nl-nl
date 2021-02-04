@@ -1,36 +1,35 @@
 ---
-title: Informatie over resource sets
+title: Informatie over resourcesets
 description: In dit artikel wordt uitgelegd wat resource sets zijn en hoe Azure controle sfeer liggen ze maakt.
-author: yaronyg
-ms.author: yarong
+author: djpmsft
+ms.author: daperlov
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
-ms.date: 10/19/2020
-ms.openlocfilehash: 55efa9443fd59b66a7677c9c460e473715f201df
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.date: 02/03/2021
+ms.openlocfilehash: e4b48729f13ec0234a7a711032a2db34e55a8bd1
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552712"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539464"
 ---
-# <a name="understanding-resource-sets"></a>Informatie over resource sets
+# <a name="understanding-resource-sets"></a>Informatie over resourcesets
 
 Dit artikel helpt u te begrijpen hoe Azure controle sfeer liggen gebruikmaakt van resource sets om gegevensassets toe te wijzen aan logische resources.
-
 ## <a name="background-info"></a>Achtergrond informatie
 
 Bij schaal bare gegevens verwerkings systemen wordt één tabel op een schijf opgeslagen als meerdere bestanden. Dit concept wordt weer gegeven in azure controle sfeer liggen met behulp van resource sets. Een resourceset is een enkel object in de catalogus dat een groot aantal assets in de opslag vertegenwoordigt.
 
-Stel bijvoorbeeld dat uw Spark-cluster een data frame heeft opgeslagen in een ADLS Gen2 gegevens bron. Hoewel de tabel er in Spark uitziet als een enkele logische resource, is er op de schijf waarschijnlijk duizenden Parquet-bestanden, die elk een partitie van de totale inhoud van de data frame vertegenwoordigen. IoT-gegevens en Web-logboek gegevens hebben dezelfde uitdaging. Stel dat u een sensor hebt die logboek bestanden een aantal malen per seconde uitvoert. Het duurt niet lang voordat u honderd duizenden logboek bestanden van die ene sensor hebt.
+Stel bijvoorbeeld dat uw Spark-cluster een data frame heeft opgeslagen in een Azure data Lake Storage (ADLS) Gen2-gegevens bron. Hoewel de tabel er in Spark uitziet als een enkele logische resource, is er op de schijf waarschijnlijk duizenden Parquet-bestanden, die elk een partitie van de totale inhoud van de data frame vertegenwoordigen. IoT-gegevens en Web-logboek gegevens hebben dezelfde uitdaging. Stel dat u een sensor hebt die logboek bestanden een aantal malen per seconde uitvoert. Het duurt niet lang voordat u honderd duizenden logboek bestanden van die ene sensor hebt.
 
 Azure controle sfeer liggen maakt gebruik van resource sets om de uitdaging van het toewijzen van een groot aantal gegevensassets aan één logische resource te verhelpen.
 
 ## <a name="how-azure-purview-detects-resource-sets"></a>Hoe Azure controle sfeer liggen bron sets detecteert
 
-Azure controle sfeer liggen biedt alleen ondersteuning voor het detecteren van resource sets in azure-blobs, ADLS Gen1 en ADLS Gen2.
+Azure controle sfeer liggen ondersteunt het detecteren van resource sets in Azure Blob Storage, ADLS Gen1 en ADLS Gen2.
 
-Azure controle sfeer liggen detecteert automatisch resource sets door gebruik te maken van een functie die automatische detectie van bron sets wordt genoemd. Deze functie bekijkt alle gegevens die worden opgenomen via scannen en vergelijkt deze met een set gedefinieerde patronen.
+Azure controle sfeer liggen detecteert automatisch resource sets tijdens het scannen. Deze functie bekijkt alle gegevens die worden opgenomen via scannen en vergelijkt deze met een set gedefinieerde patronen.
 
 Stel bijvoorbeeld dat u een gegevens bron scant waarvan de URL is `https://myaccount.blob.core.windows.net/mycontainer/machinesets/23/foo.parquet` . Azure controle sfeer liggen kijkt naar de padsegmenten en bepaalt of ze overeenkomen met ingebouwde patronen. Het heeft ingebouwde patronen voor GUID'S, cijfers, datum notaties, lokalisatie codes (bijvoorbeeld en-US), enzovoort. In dit geval komt het numerieke patroon overeen met *23*. In azure controle sfeer liggen wordt ervan uitgegaan dat dit bestand deel uitmaakt van een resourceset met de naam `https://myaccount.blob.core.windows.net/mycontainer/machinesets/{N}/foo.parquet` .
 
@@ -42,12 +41,9 @@ Met deze strategie worden de volgende resources in azure controle sfeer liggen t
 - `https://myaccount.blob.core.windows.net/mycontainer/weblogs/cy_gb/234.json`
 - `https://myaccount.blob.core.windows.net/mycontainer/weblogs/de_Ch/23434.json`
 
-> [!Note]
-> Azure Data Lake Storage Gen2 is nu overal algemeen beschikbaar. We raden aan vandaag nog hierop over te stappen. Zie de [productpagina](https://azure.microsoft.com/en-us/services/storage/data-lake-storage/) voor meer informatie.
-
 ## <a name="file-types-that-azure-purview-will-not-detect-as-resource-sets"></a>Bestands typen die door Azure controle sfeer liggen niet worden gedetecteerd als resource sets
 
-Controle sfeer liggen probeert de meeste document bestands typen, zoals Word, Excel of PDF, niet in te delen als resource sets. De uitzonde ring is Csv's omdat dit een gemeen schappelijke bestands indeling is.
+Controle sfeer liggen probeert de meeste document bestands typen als Word-, Excel-of PDF-bron sets niet te classificeren. De uitzonde ring is CSV-indeling omdat dit een gemeen schappelijke bestands indeling is.
 
 ## <a name="how-azure-purview-scans-resource-sets"></a>Hoe Azure controle sfeer liggen resource sets scant
 
@@ -66,16 +62,47 @@ Naast één schema en classificaties bevat Azure controle sfeer liggen de volgen
 ## <a name="built-in-resource-set-patterns"></a>Ingebouwde patronen voor de vaste resource
 
 Azure controle sfeer liggen ondersteunt de volgende resource set-patronen. Deze patronen kunnen worden weer gegeven als een naam in een map of als onderdeel van een bestands naam.
+### <a name="regex-based-patterns"></a>Op regex gebaseerde patronen
 
 | Patroon naam | Weergavenaam | Beschrijving |
 |--------------|--------------|-------------|
-| GUID         | GPT       | Een Globally Unique Identifier, zoals gedefinieerd in [RFC 4122](https://tools.ietf.org/html/rfc4122). |
-| Getal       | Nvt          | Een of meer cijfers. |
-| Datum-/tijdnotatie | Nvt     | Azure controle sfeer liggen ondersteunt verschillende soorten datum/tijd-indelingen, maar alle zijn beperkt tot een reeks van {N} s. |
-| 4ByteHex     | BOVENAANZICHT        | Een hexadecimaal getal van vier cijfers. |
-| Lokalisatie | Loc        | Een taal code, zoals gedefinieerd in [BCP 47](https://tools.ietf.org/html/bcp47). Azure controle sfeer liggen ondersteunt Tags die een koppel teken (-) of een onderstrepings teken (_) bevatten. Bijvoorbeeld en_ca en en nl-ca. |
+| Guid         | GPT       | Een Globally Unique Identifier zoals gedefinieerd in [RFC 4122](https://tools.ietf.org/html/rfc4122) |
+| Aantal       | Nvt          | Een of meer cijfers |
+| Datum-/tijdnotatie | Jaareinde Blijft Profieldag Nvt     | Er worden verschillende datum-en tijd notaties ondersteund, maar alle worden weer gegeven met {Year} [scheidings teken] {month} [scheidings teken] {Day} of een reeks van {N} s. |
+| 4ByteHex     | BOVENAANZICHT        | Een HEXADECIMAAL getal van vier cijfers. |
+| Lokalisatie | Loc        | Een taal code zoals gedefinieerd in [BCP 47](https://tools.ietf.org/html/bcp47), zowel-als _-namen worden ondersteund (bijvoorbeeld en_ca en en en CA) |
 
-## <a name="issues-with-resource-sets"></a>Problemen met resource sets
+### <a name="complex-patterns"></a>Complexe patronen
+
+| Patroon naam | Weergavenaam | Beschrijving |
+|--------------|--------------|-------------|
+| SparkPath    | {SparkPartitions} | Bestands-id van Spark-partitie |
+| Pad naar datum (jjjj/mm/dd)  | {Year}/{Month}/{Day} | Patroon van jaar/maand/dag dat meerdere mappen omspannen |
+
+
+## <a name="how-resource-sets-are-displayed-in-the-azure-purview-catalog"></a>Hoe resource sets worden weer gegeven in de Azure controle sfeer liggen-catalogus
+
+Wanneer Azure controle sfeer liggen overeenkomt met een groep assets in een resourceset, wordt geprobeerd de meest nuttige informatie uit te pakken om als weergave naam in de catalogus te gebruiken. Enkele voor beelden van de standaard naamgevings Conventie wordt toegepast: 
+
+### <a name="example-1"></a>Voorbeeld 1
+
+Gekwalificeerde naam: https://myblob.blob.core.windows.net/sample-data/name-of-spark-output/{SparkPartitions}
+
+Weergave naam: ' naam van Spark-uitvoer '
+
+### <a name="example-2"></a>Voorbeeld 2
+
+Gekwalificeerde naam: https://myblob.blob.core.windows.net/my-partitioned-data/{Year}-{Month}-{Day}/{N}-{N}-{N}-{N}/{GUID}
+
+Weergave naam: mijn gepartitioneerde gegevens
+
+### <a name="example-3"></a>Voorbeeld 3
+
+Gekwalificeerde naam: https://myblob.blob.core.windows.net/sample-data/data{N}.csv
+
+Weergave naam: "gegevens"
+
+## <a name="known-issues-with-resource-sets"></a>Bekende problemen met resource sets
 
 Hoewel resource sets goed werken in de meeste gevallen, kunnen de volgende problemen optreden, waarin Azure controle sfeer liggen:
 
@@ -85,4 +112,4 @@ Hoewel resource sets goed werken in de meeste gevallen, kunnen de volgende probl
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)om aan de slag te gaan met Data Catalog.
+Zie [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)om aan de slag te gaan met Azure controle sfeer liggen.

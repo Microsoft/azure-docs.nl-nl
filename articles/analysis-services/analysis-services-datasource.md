@@ -4,15 +4,15 @@ description: Hierin worden gegevens bronnen en connectors beschreven die worden 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 02/03/2021
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6e558962ad8a84b5f44abe21bc7c0ab67a4861ba
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 2b4ae4aa8f6b08b273088c98d120d339db7deadb
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493817"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539447"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Ondersteunde gegevensbronnen in Azure Analysis Services
 
@@ -36,7 +36,7 @@ Gegevens bronnen en connectors die worden weer gegeven in de wizard gegevens oph
 **Opmerkingen:**
 
 <a name="tab1400a">1</a> : alleen modellen in tabel vorm 1400 en hoger.  
-<a name="azprovider">2</a> -als de gegevens bron van een *provider* in tabellaire 1200 en hoger modellen is opgegeven, is voor zowel in-Memory als DirectQuery-modellen micro soft OLE DB-stuur programma vereist voor SQL Server MSOLEDBSQL (aanbevolen), SQL Server Native Client 11,0 of .NET Framework gegevens provider voor SQL Server.  
+<a name="azprovider">2</a> -als de gegevens bron van een *provider* in tabellaire 1200 en hoger modellen is opgegeven, is voor zowel in-Memory als DirectQuery-modellen micro soft OLE DB-stuur programma vereist voor SQL Server MSOLEDBSQL (aanbevolen) of .NET Framework gegevens provider voor SQL Server.  
 <a name="azsqlmanaged">3</a> -Azure SQL Managed instance wordt ondersteund. Omdat het beheerde exemplaar van SQL wordt uitgevoerd in azure VNet met een privé-IP-adres, moet het open bare eind punt zijn ingeschakeld voor het exemplaar. Als deze niet is ingeschakeld, is een [on-premises gegevens gateway](analysis-services-gateway.md) vereist.  
 <a name="databricks">4</a> -Azure Databricks het gebruik van de Spark-connector wordt momenteel niet ondersteund.  
 <a name="gen2">5</a> -ADLS Gen2 connector wordt momenteel niet ondersteund, maar de Azure Blob Storage-connector kan worden gebruikt met een ADLS Gen2-gegevens bron.

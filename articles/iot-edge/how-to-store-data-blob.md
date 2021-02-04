@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 2ee4e313366bafdd2f6e3bd0e104abd9f11b7776
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 6cefb60d794defcce54766b9c7f71e7fbf40fe5c
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108667"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539430"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Gegevens opslaan aan de rand met Azure Blob Storage op IoT Edge
 
@@ -184,6 +184,7 @@ De documentatie voor Azure Blob Storage bevat voorbeeld code van Quick Start in 
 De volgende Quick start-voor beelden gebruiken talen die ook door IoT Edge worden ondersteund, zodat u deze kunt implementeren als IoT Edge modules naast de module Blob Storage:
 
 * [.NET](../storage/blobs/storage-quickstart-blobs-dotnet.md)
+  * De Azure Blob Storage op IOT Edge module v 1.4.0 en eerdere versies zijn compatibel met WindowsAzure. Storage 9.3.3 SDK en v 1.4.1 ondersteunt ook Azure. storage. blobs 12.8.0 SDK.
 * [Python](../storage/blobs/storage-quickstart-blobs-python.md)
   * Versies vóór V 2.1 van de python-SDK hebben een bekend probleem waarbij de module de aanmaak tijd van de BLOB niet retourneert. Vanwege dat probleem werkt sommige methoden als lijst-blobs niet. Als tijdelijke oplossing stelt u de API-versie op de BLOB-client expliciet in op ' 2017-04-17 '. Hierbij  `block_blob_service._X_MS_VERSION = '2017-04-17'`
   * [Voor beeld van BLOB toevoegen](https://github.com/Azure/azure-storage-python/blob/master/samples/blob/append_blob_usage.py)
@@ -257,7 +258,7 @@ Geboden
 Niet-ondersteunde
 
 * Lease-BLOB
-* Momentopname maken van blob
+* Moment opname-BLOB
 * Kopieer-BLOB kopiëren en afbreken
 * Blob verwijderen ongedaan maken
 * BLOB-laag instellen
@@ -292,7 +293,7 @@ Deze Azure Blob Storage op IoT Edge module biedt nu integratie met Event Grid op
 
 ## <a name="release-notes"></a>Releaseopmerkingen
 
-Dit zijn de [release opmerkingen in docker hub](https://hub.docker.com/_/microsoft-azure-blob-storage) voor deze module
+Dit zijn de [release opmerkingen in docker hub](https://hub.docker.com/_/microsoft-azure-blob-storage) voor deze module. Mogelijk kunt u meer informatie vinden met betrekking tot fout oplossingen en herstel in de release opmerkingen van een specifieke versie.
 
 ## <a name="suggestions"></a>Suggesties
 

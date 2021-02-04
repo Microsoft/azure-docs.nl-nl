@@ -6,14 +6,19 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/03/2021
 ms.author: govindk
-ms.openlocfilehash: d3d72cff5fcfeed17d60e2f856be4adc1a983819
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 218a39a2bf8e9269e43c4876c1654d94be886997
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527366"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539498"
 ---
 # <a name="list-restorable-sql-api-databases-in-azure-cosmos-db-using-rest-api"></a>Restorable SQL API-data bases in Azure Cosmos DB weer geven met behulp van REST API
+
+> [!IMPORTANT]
+> De functie voor herstel naar een bepaald tijdstip (doorlopende back-upmodus) voor Azure Cosmos DB is momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
+> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 De gebeurtenis feed weer geven van alle mutaties die zijn uitgevoerd op alle Azure Cosmos DB SQL-data bases onder het restorable-account. Dit helpt in het scenario waarin de data base per ongeluk is verwijderd om de verwijderings tijd te verkrijgen. Voor deze API is `Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read` toestemming vereist
 

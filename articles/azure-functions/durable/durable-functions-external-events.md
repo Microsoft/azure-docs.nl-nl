@@ -4,12 +4,12 @@ description: Meer informatie over het afhandelen van externe gebeurtenissen in d
 ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 3cd04c93d508bd06c4ddd2e05074084202b9fc60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c08306edcea02a9207ab5a15eb62b7fffc2ecb44
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87014936"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576326"
 ---
 # <a name="handling-external-events-in-durable-functions-azure-functions"></a>Externe gebeurtenissen in Durable Functions verwerken (Azure Functions)
 
@@ -20,7 +20,7 @@ Orchestrator-functies hebben de mogelijkheid om te wachten op externe gebeurteni
 
 ## <a name="wait-for-events"></a>Wachten op gebeurtenissen
 
-Met de methoden [WaitForExternalEvent](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_WaitForExternalEvent_) (.net), `waitForExternalEvent` (Java script) en `wait_for_external_event` (python) van de [Orchestrator-trigger binding](durable-functions-bindings.md#orchestration-trigger) kan een Orchestrator-functie asynchroon worden gewacht en geluisterd op een externe gebeurtenis. De functie voor het Luis teren van Orchestrator declareert de *naam* van de gebeurtenis en de *vorm van de gegevens* die ze verwacht te ontvangen.
+Met de methoden [WaitForExternalEvent](/dotnet/api/microsoft.azure.webjobs.durableorchestrationcontextbase.waitforexternalevent?view=azure-dotnet-legacy) (.net), `waitForExternalEvent` (Java script) en `wait_for_external_event` (python) van de [Orchestrator-trigger binding](durable-functions-bindings.md#orchestration-trigger) kan een Orchestrator-functie asynchroon worden gewacht en geluisterd op een externe gebeurtenis. De functie voor het Luis teren van Orchestrator declareert de *naam* van de gebeurtenis en de *vorm van de gegevens* die ze verwacht te ontvangen.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -230,9 +230,9 @@ main = df.Orchestrator.create(orchestrator_function)
 
 ## <a name="send-events"></a>Gebeurtenissen verzenden
 
-U kunt de methoden [RaiseEventAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RaiseEventAsync_) (.net) of `raiseEventAsync` (Java script) gebruiken om een externe gebeurtenis naar een indeling te verzenden. Deze methoden worden weer gegeven door de [Orchestration-client](durable-functions-bindings.md#orchestration-client) binding. U kunt ook de ingebouwde [HTTP-API](durable-functions-http-api.md#raise-event) voor het activeren van gebeurtenissen gebruiken om een externe gebeurtenis naar een indeling te verzenden.
+U kunt de methoden [RaiseEventAsync](/dotnet/api/microsoft.azure.webjobs.durableorchestrationclientbase.raiseeventasync?view=azure-dotnet-legacy) (.net) of `raiseEventAsync` (Java script) gebruiken om een externe gebeurtenis naar een indeling te verzenden. Deze methoden worden weer gegeven door de [Orchestration-client](durable-functions-bindings.md#orchestration-client) binding. U kunt ook de ingebouwde [HTTP-API](durable-functions-http-api.md#raise-event) voor het activeren van gebeurtenissen gebruiken om een externe gebeurtenis naar een indeling te verzenden.
 
-Een verhoogde gebeurtenis omvat een *exemplaar-id*, een *eventname*en *Event Data* als para meters. Orchestrator-functies verwerken deze gebeurtenissen met behulp van de `WaitForExternalEvent` api's (.net) of `waitForExternalEvent` (Java script). De *eventname* moet overeenkomen met de verzend-en ontvangst eindigt om de gebeurtenis te verwerken. De gebeurtenis gegevens moeten ook JSON-serialiseerbaar zijn.
+Een verhoogde gebeurtenis omvat een *exemplaar-id*, een *eventname* en *Event Data* als para meters. Orchestrator-functies verwerken deze gebeurtenissen met behulp van de `WaitForExternalEvent` api's (.net) of `waitForExternalEvent` (Java script). De *eventname* moet overeenkomen met de verzend-en ontvangst eindigt om de gebeurtenis te verwerken. De gebeurtenis gegevens moeten ook JSON-serialiseerbaar zijn.
 
 Intern worden de mechanismen ' gebeurtenis verhogen ' gebruikt om een bericht in de wachtrij te plaatsen dat wordt opgehaald door de functie voor wachtende functies. Als het exemplaar niet op de opgegeven *gebeurtenis naam wacht,* wordt het gebeurtenis bericht toegevoegd aan een in-Memory wachtrij. Als het Orchestrator-exemplaar later begint met Luis teren naar die *gebeurtenis naam,* wordt de wachtrij gecontroleerd op gebeurtenis berichten.
 

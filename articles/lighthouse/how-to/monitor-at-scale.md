@@ -1,14 +1,14 @@
 ---
 title: Gedelegeerde resources op schaal controleren
 description: Meer informatie over het effectief gebruiken van Azure Monitor-logboeken op schaal bare wijze over de tenants van de klant die u beheert.
-ms.date: 02/01/2021
+ms.date: 02/02/2021
 ms.topic: how-to
-ms.openlocfilehash: b214f63fba9a5d13aac0f4bf86ce0810f16f0c9c
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 8847c2e5ee4986d35ad676440720b150794003e8
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509466"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575903"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Gedelegeerde resources op schaal controleren
 
@@ -49,9 +49,9 @@ Nadat u uw beleid hebt geïmplementeerd, worden de gegevens vastgelegd in de Log
 
 U kunt [waarschuwingen](../../azure-monitor/platform/alerts-overview.md) weer geven voor de gedelegeerde abonnementen in de tenants van de klant die u beheert.
 
-Als u waarschuwingen automatisch over meerdere klanten wilt vernieuwen, gebruikt u een [Azure resource Graph](../../governance/resource-graph/overview.md) -query om te filteren op waarschuwingen. U kunt de query aan uw dash board vastmaken en alle relevante klanten en abonnementen selecteren.
+Vanuit uw Tenant beheren kunt u [waarschuwingen voor activiteiten logboeken maken, weer geven en beheren](../../azure-monitor/platform/alerts-activity-log.md) in de Azure portal of via api's en beheer hulpprogramma's.
 
-In de volgende voorbeeld query worden de waarschuwingen Ernst 0 en 1 weer gegeven, die elke 60 minuten worden vernieuwd.
+Als u waarschuwingen automatisch over meerdere klanten wilt vernieuwen, gebruikt u een [Azure resource Graph](../../governance/resource-graph/overview.md) -query om te filteren op waarschuwingen. U kunt de query aan uw dash board vastmaken en alle relevante klanten en abonnementen selecteren. Met de onderstaande query worden bijvoorbeeld de waarschuwingen Ernst 0 en 1 weer gegeven, die elke 60 minuten worden vernieuwd.
 
 ```kusto
 alertsmanagementresources

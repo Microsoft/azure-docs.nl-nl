@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: db85bf19c1b040fea1ed2f5d6dcf904288366c7f
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 5658bfcf0bf877db1dd001c2af58a40f3b027bd9
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050235"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576241"
 ---
 # <a name="tutorial-explore-azure-digital-twins-with-a-sample-client-app"></a>Zelfstudie: Azure Digital Twins verkennen met een voorbeeldclient-app
 
@@ -274,12 +274,15 @@ Een hoofdfunctie van Azure Digital Twins is de mogelijkheid om gemakkelijk en ef
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Het project in deze zelfstudie vormt de basis voor de volgende zelfstudie, [*Zelfstudie: Een end-to-end-oplossing verbinden*](tutorial-end-to-end.md). Als u van plan bent door te gaan naar de volgende zelfstudie, kunt u de resources die u hier hebt ingesteld behouden en deze Azure Digital Twins-instantie en geconfigureerde voorbeeld-app blijven gebruiken.
-* In dit geval kunt u de voorbeeld-apps `DeleteAllTwins` en `DeleteAllModels` gebruiken om de tweelingen respectievelijk de modellen in uw instantie op te ruimen. Hiermee krijgt u een schone lei voor de volgende zelfstudie.
+Nadat u deze zelf studie hebt voltooid, kunt u kiezen welke resources u wilt verwijderen, afhankelijk van wat u nu wilt doen.
+
+* **Als u van plan bent om door te gaan met de volgende zelf studie**, kunt u de resources die u hier instelt, blijven gebruiken voor het gebruik van dit Azure Digital apparaatdubbels-exemplaar en de voor beeld-app configureren voor de volgende zelf studie
+
+* **Als u het Azure Digital apparaatdubbels-exemplaar wilt blijven gebruiken, maar alle modellen, apparaatdubbels en relaties wilt verwijderen**, kunt u de voor beeld-app `DeleteAllTwins` en `DeleteAllModels` -opdrachten gebruiken om respectievelijk de apparaatdubbels en modellen in uw exemplaar te wissen. Hiermee krijgt u een schone lei voor de volgende zelfstudie.
 
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-Verwijder ten slotte de voorbeeldprojectmap die u hebt gedownload naar uw lokale computer.
+Misschien wilt u ook de projectmap van uw lokale computer verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen 
 

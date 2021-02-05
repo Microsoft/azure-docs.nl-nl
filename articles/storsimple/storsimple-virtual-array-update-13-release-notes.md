@@ -6,12 +6,12 @@ author: v-dalc
 ms.topic: article
 ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 02611bdf9689d2f62f661f558fd547ea46bd4d36
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 52b30730ee8ab126521ad0760204ee48ef6a63fe
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744628"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576005"
 ---
 # <a name="storsimple-virtual-array-update-13-release-notes"></a>Release opmerkingen bij Update 1,3 StorSimple Virtual array
 
@@ -28,15 +28,15 @@ Update 1,3 komt overeen met de software versie 10.0.10319.0.
 
 ## <a name="whats-new-in-update-13"></a>Wat is er nieuw in update 1,3
 
-Deze update bevat de volgende verbeteringen:
+Deze update bevat de volgende verbeteringen: KB4540725
 
 - Transport Layer Security (TLS) 1,2 is een verplichte update en moet worden geïnstalleerd. Vanaf deze release wordt TLS 1,2 het standaard protocol voor alle Azure Portal communicatie.
 - Problemen met garbagecollection-fouten verbeteren de prestaties van de garbagecollection-cyclus wanneer het apparaat en het opslag account zich in twee externe regio's bevinden.
 - Oplossing voor back-upfouten vanwege BLOB-time-outs.
 - Bijgewerkte beveiligings patches voor OS/. NET Framework:
-  - [KB4540725](\\winsehotfix.segroup.winse.corp.microsoft.com\hotfixes\Windows6.3\RTM\KB4540725\V1.001\free\NEU\X64): maart 2020 Ssu (onderhoud stack update)
-  - [KB4565541](\\winsehotfix.segroup.winse.corp.microsoft.com\hotfixes\Windows6.3\RTM\KB4565541\V1.014\free\NEU\X64): 2020-Rollup van juli
-  - [KB4565622](\\winsehotfix.segroup.winse.corp.microsoft.com\hotfixes\Partner\DOTNET47x\KB4565622\V1.000\free\NEU\x64): juli 2020 .NET Framework update
+  - [KB4540725](https://support.microsoft.com/topic/servicing-stack-update-for-windows-8-1-rt-8-1-and-server-2012-r2-march-10-2020-cfa082a3-0b58-a8a3-7dc7-ab424de91b86): maart 2020 Ssu (onderhoud stack update)
+  - [KB4565541](https://support.microsoft.com/topic/july-14-2020-kb4565541-monthly-rollup-fed6b2b1-3d23-5981-34df-9215a8d8ce01): 2020-Rollup van juli
+  - [KB4565622](https://support.microsoft.com/topic/security-and-quality-rollup-for-net-framework-4-6-4-6-1-4-6-2-4-7-4-7-1-4-7-2-for-windows-8-1-rt-8-1-and-windows-server-2012-r2-kb4565622-b7320848-1889-a624-da01-719f55ee8a00): juli 2020 .NET Framework update
 
 ## <a name="download-update-13"></a>Update 1,3 downloaden
 
@@ -55,7 +55,7 @@ Er zijn geen nieuwe problemen vermeld in update 1,3. Alle problemen die in de re
 ## <a name="next-steps"></a>Volgende stappen
 Down load KB4575898 en [Pas de update toe via de lokale web-UI](./storsimple-virtual-array-install-update-1.md#use-the-local-web-ui).
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 Zoekt u een oudere release-Opmerking? Ga naar:
 
 - [Release opmerkingen bij Update 1,2 StorSimple Virtual array](./storsimple-virtual-array-update-12-release-notes.md)

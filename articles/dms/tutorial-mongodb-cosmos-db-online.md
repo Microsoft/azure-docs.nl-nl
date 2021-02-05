@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-nov-2020
 ms.topic: tutorial
-ms.date: 09/25/2019
-ms.openlocfilehash: fed568d67c688a8c2adab979eb68eaf384a72172
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
-ms.translationtype: HT
+ms.date: 02/03/2021
+ms.openlocfilehash: 359f268f69918ccfd9fe34a28c3f8d1c79988393
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539284"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575607"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Zelfstudie: MongoDB online migreren naar de Azure Cosmos DB-API voor MongoDB met behulp van DMS
 
@@ -68,6 +68,18 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 * Zorg ervoor dat de NSG-regels (Network Security Group) van het virtuele netwerk de volgende communicatiepoorten niet blokkeren: 53, 443, 445, 9354 en 10000-20000. Zie het artikel [Netwerkverkeer filteren met netwerkbeveiligingsgroepen](../virtual-network/virtual-network-vnet-plan-design-arm.md) voor meer informatie over verkeer filteren van verkeer via de netwerkbeveiligingsgroep voor virtuele netwerken.
 * Stel uw Windows-firewall open voor toegang van Azure Database Migration Service tot de bronserver van MongoDB. Standaard verloopt deze via TCP-poort 27017.
 * Wanneer u een firewallapparaat gebruikt voor de brondatabase(s), moet u mogelijk firewallregels toevoegen om voor Azure Database Migration Service toegang tot de brondatabase(s) voor de migratie toe te staan.
+
+## <a name="configure-azure-cosmos-db-server-side-retries-for-efficient-migration"></a>Nieuwe pogingen configureren aan de Azure Cosmos DB server voor een efficiënte migratie
+
+Klanten die migreren van MongoDB naar Azure Cosmos DB profiteren van de mogelijkheden van resource beheer, die de mogelijkheid bieden om uw ingerichte RU/s van door Voer volledig te benutten. Azure Cosmos DB kan een opgegeven Data Migration service-aanvraag beperken tijdens de migratie als die aanvraag de door de container ingerichte RU/s overschrijdt. vervolgens moet de aanvraag opnieuw worden geprobeerd. Data Migration service kan nieuwe pogingen uitvoeren, maar de retour tijd die is betrokken bij de netwerk-hop tussen Data Migration service en Azure Cosmos DB beïnvloedt de totale reactie tijd van die aanvraag. Het verbeteren van de reactie tijd voor beperkte aanvragen kan de totale tijd verkorten die nodig is voor de migratie. Met de functie *opnieuw proberen* op de Server van Azure Cosmos db kan de service vertragings fout codes onderscheppen en opnieuw proberen met een veel lagere retour tijd, waardoor de reactie tijden van aanvragen aanzienlijk worden verbeterd.
+
+De functie voor het opnieuw proberen van de server is te vinden op de Blade *functies* van de Azure Cosmos DB Portal
+
+![Scherm opname van MongoDB Server-Side nieuwe poging.](media/tutorial-mongodb-to-cosmosdb-online/mongo-server-side-retry-feature.png)
+
+Als deze optie is *uitgeschakeld*, wordt u aangeraden deze in te scha kelen, zoals hieronder wordt weer gegeven
+
+![Scherm opname van MongoDB Server-Side opnieuw proberen in te scha kelen.](media/tutorial-mongodb-to-cosmosdb-online/mongo-server-side-retry-enable.png)
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Registreer de Microsoft.DataMigration-resourceprovider
 

@@ -3,12 +3,12 @@ title: Beweging detecteren, video opnemen in Azure Media Services
 description: In deze quickstart ziet u hoe u Live Video Analytics kunt gebruiken in IoT Edge om beweging in een live-videostream te detecteren en videoclips op te nemen in Azure Media Services.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 15a9def78c7dddda7e63db66d2b21794506f6a92
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 135e68e2630d74dace6c3a6b70bb3666f77aad89
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632721"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575531"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Quickstart: Beweging detecteren, video opnemen in Media Services
 
@@ -540,10 +540,15 @@ De mediagraaf die u hebt gemaakt, maakt gebruik van het knooppunt van de bewegin
 
 1. Open het deelvenster Explorer in Visual Studio Code en zoek Azure IoT Hub in de linkerbenedenhoek.
 1. Apparaatknooppunt uitvouwen
-1. Klik met de rechtermuisknop op lva-sample-device en kies de optie Bewaking van ingebouwde gebeurtenisbewaking starten
+1. Klik met de rechter muisknop op LVA-sample-device en kies de optie ' controle van ingebouwde gebeurtenis controle starten '.
 
     ![Bewaking van ingebouwde gebeurtenisbewaking starten](./media/quickstarts/start-monitoring-iothub-events.png)
     
+    > [!NOTE]
+    > Mogelijk wordt u gevraagd om ingebouwde eindpunt gegevens voor de IoT Hub op te geven. Als u deze informatie wilt ophalen, gaat u in Azure Portal naar uw IoT Hub en zoekt u naar de optie **ingebouwde eind punten** in het navigatie deel venster links. Klik op deze en zoek naar het **eind punt Event hub** onder **Event hub-compatibel eind punt** . Kopieer en gebruik de tekst in het vak. Het eind punt ziet er ongeveer als volgt uit:  
+        ```
+        Endpoint=sb://iothub-ns-xxx.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX;EntityPath=<IoT Hub name>
+        ```
     Binnen een paar seconden ziet u in het venster Uitvoer de volgende berichten:
 
 ```

@@ -10,17 +10,17 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 01/15/2021
 ms.custom: designer
-ms.openlocfilehash: 6bba5ad17cbb6f1ed72d06b37c6d6af9ebd26495
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: e93f912915303ce903a32ceba4f079593657a4ac
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246465"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576055"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Zelfstudie: Een Machine Learning-model implementeren met de ontwerpfunctie
 
 
-U kunt het voorspellende model dat is ontwikkeld in [deel 1 van de zelfstudie](tutorial-designer-automobile-price-train-score.md) implementeren zodat anderen het ook kunnen gebruiken. In deel een hebt u het model getraind. Nu gaat u nieuwe voorspellingen genereren op basis van gebruikersinvoer. In dit deel van de zelfstudie komen deze onderwerpen aan bod:
+U kunt het voorspellende model dat is ontwikkeld in [deel 1 van de zelfstudie](tutorial-designer-automobile-price-train-score.md) implementeren zodat anderen het ook kunnen gebruiken. In deel een hebt u het model getraind. Nu is het tijd om voor spellingen te genereren op basis van gebruikers invoer. In dit deel van de zelfstudie komen deze onderwerpen aan bod:
 
 > [!div class="checklist"]
 > * Een realtime deductiepijplijn maken.
@@ -122,17 +122,19 @@ Wanneer de inrichting van uw AKS-service is voltooid, gaat u terug naar de realt
 > U kunt ook implementeren naar **Azure container instance** (ACI) als u **Azure container instance** voor **reken type** selecteert in het vak realtime-eindpunt instelling.
 > Azure container instance wordt gebruikt voor testen of ontwikkeling. Gebruik ACI voor werk belastingen op laag schaal die kleiner zijn dan 48 GB RAM-geheugen.
 
-## <a name="view-the-real-time-endpoint"></a>Het realtime-eindpunt bekijken
+## <a name="test-the-real-time-endpoint"></a>Het realtime-eindpunt testen
 
 Nadat de implementatie is voltooid, kunt u uw realtime-eindpunt bekijken door naar de pagina **Eindpunten** te gaan.
 
 1. Selecteer op de pagina **Eindpunten** het eindpunt dat u hebt geïmplementeerd.
 
-1. Op het tabblad **Details** kunt u meer informatie zien, zoals de REST URI, status en tags.
+    Op het tabblad **Details** kunt u meer informatie zien, zoals de rest URI, Swagger-definitie, status en tags.
 
-1. Op het tabblad **Gebruiken** kunt u beveiligingssleutels vinden en verificatiemethoden instellen.
+    Op het tabblad **verbruik** vindt u voorbeeld code, beveiligings sleutels en verificatie methoden.
 
-1. Op het tabblad **Implementatielogboeken** vindt u de gedetailleerde implementatielogboeken van uw realtime-eindpunt. 
+    Op het tabblad **Implementatielogboeken** vindt u de gedetailleerde implementatielogboeken van uw realtime-eindpunt.
+
+1. Ga naar het tabblad **testen** om het eind punt te testen. Hier kunt u test gegevens invoeren en **testen** selecteren Controleer de uitvoer van uw eind punt.
 
 Zie [Een Azure Machine Learning-model gebruiken dat als een webservice is geïmplementeerd](how-to-consume-web-service.md) voor meer informatie over het gebruiken van uw webservice
 

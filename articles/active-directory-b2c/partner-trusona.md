@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 07/30/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a0d5b369e1c143b3df4157329bcf7d3a3f7142d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99368da8b4018e93ad537e4722ffefd476e61291
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87489466"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573684"
 ---
 # <a name="integrating-trusona-with-azure-active-directory-b2c"></a>Trusona integreren met Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 * [Een Azure AD B2C-Tenant](tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
-* Een [proef account](https://www.trusona.com/aadb2c) op Trusona
+* Een [proef account](https://www.trusona.com/) op Trusona
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -53,7 +53,7 @@ In dit scenario fungeert Trusona als een id-provider voor Azure AD B2C voor het 
 
 ## <a name="onboard-with-trusona"></a>Onboard met Trusona
 
-1. Vul het [formulier](https://www.trusona.com/aadb2c) in om een Trusona-account te maken en aan de slag te gaan.
+1. Vul het [formulier](https://www.trusona.com/) in om een Trusona-account te maken en aan de slag te gaan.
 
 2. Down load de mobiele Trusona-app uit de App Store. Installeer de app en registreer uw e-mail adres.
 
@@ -63,7 +63,7 @@ In dit scenario fungeert Trusona als een id-provider voor Azure AD B2C voor het 
 
 5. Selecteer **Ik ben klaar** en verifieer jezelf met je Trusona-app.
 
-6. Kies **OIDC-integraties**in het navigatie deel venster aan de linkerkant.
+6. Kies **OIDC-integraties** in het navigatie deel venster aan de linkerkant.
 
 7. Selecteer **OpenID Connect Connect-integratie maken**.
 
@@ -150,11 +150,11 @@ U ziet nu Trusona als een **nieuwe OpenID Connect Connect ID-provider** die word
 
 1. Selecteer het zojuist gemaakte beleid.
 
-2. Selecteer **gebruikers stroom uitvoeren**.
+2. Selecteer **Gebruikersstroom uitvoeren**.
 
 3. Voer in het formulier de antwoord-URL in.
 
-4. Selecteer **gebruikers stroom uitvoeren**. U moet worden omgeleid naar de Trusona OIDC-gateway. Scan op de Trusona-gateway de weer gegeven beveiligde QR-code met de Trusona-app of met een aangepaste app met de Trusona Mobile SDK.
+4. Selecteer **Gebruikersstroom uitvoeren**. U moet worden omgeleid naar de Trusona OIDC-gateway. Scan op de Trusona-gateway de weer gegeven beveiligde QR-code met de Trusona-app of met een aangepaste app met de Trusona Mobile SDK.
 
 5. Nadat u de beveiligde QR-code hebt gescand, moet u worden omgeleid naar de antwoord-URL die u in stap 3 hebt gedefinieerd.
 

@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 5e6188ca2e8e0972e86bed578144a29a96570876
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: acdb635dec5abd73341cc1dda4991b58b82a18c0
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901195"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99574513"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub actions-werk stromen voor de preview-versie van Azure static Web Apps
 
@@ -38,11 +38,11 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-    - master
+    - main
 
 jobs:
   build_and_deploy_job:
@@ -87,16 +87,16 @@ Met een [trigger](https://help.github.com/actions/reference/events-that-trigger-
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-    - master
+    - main
 ```
 
 Via de instellingen die aan de eigenschap zijn gekoppeld `on` , kunt u definiëren welke vertakkingen een taak activeren en triggers instellen om te worden geactiveerd voor verschillende statussen van pull-aanvragen.
 
-In dit voor beeld wordt een werk stroom gestart terwijl de _hoofd_ vertakking verandert. Wijzigingen die de werk stroom starten, bevatten push door voeren en pull-aanvragen openen voor de gekozen vertakking.
+In dit voor beeld wordt een werk stroom gestart, omdat de _hoofd_ vertakking verandert. Wijzigingen die de werk stroom starten, bevatten push door voeren en pull-aanvragen openen voor de gekozen vertakking.
 
 ## <a name="jobs"></a>Taken
 
@@ -107,7 +107,7 @@ Er zijn twee beschik bare taken in het werk stroom bestand statisch Web Apps.
 | Naam  | Beschrijving |
 |---------|---------|
 |`build_and_deploy_job` | Wordt uitgevoerd wanneer u een push uitvoert of een pull-aanvraag opent voor de vertakking die in de eigenschap wordt vermeld `on` . |
-|`close_pull_request_job` | Wordt alleen uitgevoerd wanneer u een pull-aanvraag sluit die de faserings omgeving verwijdert die is gemaakt van pull-aanvragen. |
+|`close_pull_request_job` | Wordt alleen uitgevoerd wanneer u een pull-aanvraag sluit, waardoor de faserings omgeving die is gemaakt op basis van pull-aanvragen, wordt verwijderd. |
 
 ## <a name="steps"></a>Stappen
 
@@ -138,9 +138,9 @@ with:
 
 | Eigenschap | Beschrijving | Vereist |
 |---|---|---|
-| `app_location` | Locatie van de toepassings code.<br><br>Voer bijvoorbeeld `/` in als de bron code van uw toepassing zich in de hoofdmap van de opslag plaats bevindt, of `/app` als de code van uw toepassing zich in de map bevindt `app` . | Ja |
-| `api_location` | De locatie van uw Azure Functions-code.<br><br>Voer bijvoorbeeld `/api` in als uw app-code zich in een map met de naam bevindt `api` . Als er geen Azure Functions-app wordt gedetecteerd in de map, mislukt de build, wordt ervan uitgegaan dat u geen API wilt. | Nee |
-| `output_location` | Locatie van de map voor het build-uitvoer ten opzichte van de `app_location` .<br><br>Bijvoorbeeld, als de bron code van uw toepassing zich in bevindt `/app` en het build-script bestanden naar de `/app/build` map levert, vervolgens `build` als `output_location` waarde instellen. | Nee |
+| `app_location` | Locatie van de toepassings code.<br><br>Voer bijvoorbeeld `/` in als de bron code van uw toepassing zich in de hoofdmap van de opslag plaats bevindt, of `/app` als de code van uw toepassing zich in de map bevindt `app` . | Yes |
+| `api_location` | De locatie van uw Azure Functions-code.<br><br>Voer bijvoorbeeld `/api` in als uw app-code zich in een map met de naam bevindt `api` . Als er geen Azure Functions-app wordt gedetecteerd in de map, mislukt de build, wordt ervan uitgegaan dat u geen API wilt. | No |
+| `output_location` | Locatie van de map voor het build-uitvoer ten opzichte van de `app_location` .<br><br>Bijvoorbeeld, als de bron code van uw toepassing zich in bevindt `/app` en het build-script bestanden naar de `/app/build` map levert, vervolgens `build` als `output_location` waarde instellen. | No |
 
 De `repo_token` `action` waarden, en `azure_static_web_apps_api_token` worden door Azure static web apps voor u ingesteld, niet hand matig worden gewijzigd.
 
@@ -194,6 +194,53 @@ jobs:
         env: # Add environment variables here
           HUGO_VERSION: 0.58.0
 ```
+
+## <a name="monorepo-support"></a>Monorepo-ondersteuning
+
+Een monorepo is een opslag plaats met code voor meer dan één toepassing. Standaard worden in een statisch Web Apps werk stroom bestand alle bestanden in een opslag plaats bijgehouden, maar u kunt dit aanpassen om een enkele app te richten. Daarom heeft elke statische site voor monorepos een eigen configuratie bestand dat naast elkaar wordt weer in de map *. git* van de opslag plaats.
+
+```files
+├── .git
+│   ├── azure-static-web-apps-purple-pond.yml
+│   └── azure-static-web-apps-yellow-shoe.yml
+│
+├── app1  👉 controlled by: azure-static-web-apps-purple-pond.yml
+├── app2  👉 controlled by: azure-static-web-apps-yellow-shoe.yml
+│
+├── api1  👉 controlled by: azure-static-web-apps-purple-pond.yml
+├── api2  👉 controlled by: azure-static-web-apps-yellow-shoe.yml
+│
+└── readme.md
+```
+
+Als u een werk stroom bestand wilt richten op één app, geeft u de paden op in de `push` `pull_request` secties en.
+
+In het volgende voor beeld ziet u hoe u een `paths` knoop punt toevoegt aan de- `push` en- `pull_request` secties van een bestand met de naam _Azure-static-web-apps-Purple-pond. yml_.
+
+```yml
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - app1/**
+      - api1/**
+      - .github/workflows/azure-static-web-apps-purple-pond.yml
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+    paths:
+      - app1/**
+      - api1/**
+      - .github/workflows/azure-static-web-apps-purple-pond.yml
+```
+
+In dit geval activeren alleen wijzigingen aan bestanden die worden gemaakt met bestanden een nieuwe build:
+
+- Alle bestanden in de map *app1*
+- Alle bestanden in de map *api1*
+- Wijzigingen in het werk stroom bestand *Azure-static-web-apps-Purple-pond. yml* van de app
 
 ## <a name="next-steps"></a>Volgende stappen
 

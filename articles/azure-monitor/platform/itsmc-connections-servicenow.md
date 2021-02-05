@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: cc4f961c399e9ac5e853085106924584eb3935d0
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 222257f5045984a71c2aee9de83b5fa420306728
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223386"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573412"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>ServiceNow verbinden met IT Service Management-connector
 
@@ -123,7 +123,7 @@ Gebruik de volgende procedure om een ServiceNow-verbinding te maken.
    | --- | --- |
    | **Verbindingsnaam**   | Voer een naam in voor het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. U gebruikt deze naam later in Log Analytics wanneer u ITSM-werk items configureert en gedetailleerde analyses weergeeft. |
    | **Partnertype**   | Selecteer **ServiceNow**. |
-   | **Server-URL**   | Voer de URL in van het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. De URL moet verwijzen naar een ondersteunde SaaS-versie met het achtervoegsel *. servicenow.com* (bijvoorbeeld https://XXXXX.service-now.com/) .|
+   | **Server-URL**   | Voer de URL in van het ServiceNow-exemplaar dat u wilt verbinden met ITSMC. De URL moet verwijzen naar een ondersteunde SaaS-versie met het achtervoegsel *. servicenow.com* (bijvoorbeeld `https://XXXXX.service-now.com/` ).|
    | **Gebruikersnaam**   | Voer de gebruikers naam van de integratie in die u hebt gemaakt in de ServiceNow-app om de verbinding met ITSMC te ondersteunen.|
    | **Wachtwoord**   | Voer het wacht woord in dat is gekoppeld aan deze gebruikers naam. **Opmerking**: de gebruikers naam en het wacht woord worden alleen gebruikt voor het genereren van verificatie tokens. Ze worden nergens opgeslagen in de ITSMC-service.  |
    | **Client-id**   | Voer de client-ID in die u wilt gebruiken voor OAuth2-verificatie, die u eerder hebt gegenereerd. Zie [OAuth instellen](https://old.wiki/index.php/OAuth_Setup)voor meer informatie over het genereren van een client-id en een geheim. |

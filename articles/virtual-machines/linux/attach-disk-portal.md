@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: ca8584d6cce3f5487d84f6647c42274879d610dd
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 647564a9b9ca909d2f45ae66673d8beac168a4aa
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198064"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575971"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Een gegevens schijf koppelen aan een virtuele Linux-machine met behulp van de portal 
 Dit artikel laat u zien hoe u met de Azure Portal zowel nieuwe als bestaande schijven kunt koppelen aan een virtuele Linux-machine. U kunt ook [een gegevens schijf koppelen aan een virtuele Windows-machine in de Azure Portal](../windows/attach-managed-disk-portal.md). 
@@ -225,4 +225,7 @@ Er zijn twee manieren om ondersteuning voor het verkleinen van de virtuele Linux
     ```
 
 ## <a name="next-steps"></a>Volgende stappen
+
+Zie [problemen met de apparaatnaam van Linux VM oplossen](../troubleshooting/troubleshoot-device-names-problems.md)voor meer informatie en om schijf problemen op te lossen.
+
 U kunt ook [een gegevens schijf koppelen](add-disk.md) met behulp van de Azure cli.

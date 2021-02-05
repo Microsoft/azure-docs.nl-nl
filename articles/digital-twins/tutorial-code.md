@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 37bd7d91dfe9e4b9e620f89e7504331d8f631a6a
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4851d06ffedaacb441d28cae24d7d32bfe1c611c
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602127"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576258"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Zelfstudie: Coderen met de Azure Digital Twins-API's
 
@@ -253,12 +253,16 @@ Op dit punt in de zelfstudie hebt u een volledige client-app, waarmee u basisact
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/fullClientApp.cs":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
- 
-Het exemplaar dat in deze zelfstudie wordt gebruikt, kan opnieuw worden gebruikt in de volgende zelfstudie, [*Zelfstudie: De basisbeginselen verkennen met een voorbeeldclient-app*](tutorial-command-line-app.md). Als u van plan bent om door te gaan naar de volgende zelfstudie, kunt u het Azure Digital Twins-exemplaar dat u hier instelt, behouden.
+
+Nadat u deze zelf studie hebt voltooid, kunt u kiezen welke resources u wilt verwijderen, afhankelijk van wat u nu wilt doen.
+
+* **Als u van plan bent om door te gaan naar de volgende zelf studie**, kan de instantie die in deze zelf studie wordt gebruikt, opnieuw worden gebruikt in de volgende. U kunt de Azure Digital Apparaatdubbels-resources die u hier instelt, houden en de rest van deze sectie overs Laan.
+
+[!INCLUDE [digital-twins-cleanup-clear-instance.md](../../includes/digital-twins-cleanup-clear-instance.md)]
  
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-Verwijder ten slotte de projectmap die u hebt gemaakt op uw lokale machine.
+Misschien wilt u ook de projectmap van uw lokale computer verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

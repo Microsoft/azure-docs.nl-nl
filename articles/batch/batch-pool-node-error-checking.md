@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 02/03/2020
 ms.topic: how-to
-ms.openlocfilehash: 8901877ab3055c02dfc8c129fb35864418cd19d8
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 2b67eada5dfa89f95e2c9ae045c6bbe3fa0bb1ce
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549132"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576309"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Controleren op groeps-en knooppunt fouten
 
@@ -24,7 +24,7 @@ In dit artikel worden manieren beschreven om fouten in de achtergrond bewerkinge
 
 ### <a name="resize-timeout-or-failure"></a>Grootte van time-out of fout wijzigen
 
-Bij het maken van een nieuwe groep of het wijzigen van de grootte van een bestaande groep, geeft u het doel aantal knoop punten op. De bewerking maken of formaat wijzigen wordt onmiddellijk voltooid, maar de daad werkelijke toewijzing van nieuwe knoop punten of het verwijderen van bestaande knoop punten kan enkele minuten duren. U geeft de time-out voor de grootte van cam op in de API [Create](/rest/api/batchservice/pool/add) of [Resize](/rest/api/batchservice/pool/resize) . Als batch het doel aantal knoop punten niet kan verkrijgen tijdens de time-outperiode voor het wijzigen van de grootte, wordt de groep omgezet in een stabiele status en worden er fouten gerapporteerd.
+Bij het maken van een nieuwe groep of het wijzigen van de grootte van een bestaande groep, geeft u het doel aantal knoop punten op. De bewerking maken of formaat wijzigen wordt onmiddellijk voltooid, maar de daad werkelijke toewijzing van nieuwe knoop punten of het verwijderen van bestaande knoop punten kan enkele minuten duren. U kunt de time-out voor het wijzigen van de grootte opgeven in de API [Create](/rest/api/batchservice/pool/add) of [Resize](/rest/api/batchservice/pool/resize) . Als batch het doel aantal knoop punten niet kan verkrijgen tijdens de time-outperiode voor het wijzigen van de grootte, wordt de groep omgezet in een stabiele status en worden er fouten gerapporteerd.
 
 De eigenschap [ResizeError](/rest/api/batchservice/pool/get#resizeerror) voor de meest recente evaluatie lijst bevat de fouten die zijn opgetreden.
 

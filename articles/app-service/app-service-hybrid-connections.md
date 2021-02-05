@@ -4,15 +4,15 @@ description: Meer informatie over het maken en gebruiken van hybride verbindinge
 author: ccompy
 ms.assetid: 66774bde-13f5-45d0-9a70-4e9536a4f619
 ms.topic: article
-ms.date: 06/08/2020
+ms.date: 02/04/2020
 ms.author: ccompy
 ms.custom: seodec18, fasttrack-edit
-ms.openlocfilehash: 16f6a0660fa9aa20f636ee412f3f337bd5dea9b5
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 20bdeef0a45bb02fab8841c0dd8ec7755143c693
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825977"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575988"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Hybride verbindingen in Azure App Service
 
@@ -42,7 +42,7 @@ Er zijn een aantal voor delen ten opzichte van de Hybride verbindingen mogelijkh
 - Normaal gesp roken is geen firewall-gaten vereist. De verbindingen zijn alle uitgaande via standaard webpoorten.
 - Omdat de functie netwerk niveau is, wordt deze neutraal in de taal die wordt gebruikt door uw app en de technologie die door het eind punt wordt gebruikt.
 - Het kan worden gebruikt om toegang te bieden in meerdere netwerken vanuit één app. 
-- Het wordt ondersteund in GA voor Windows systeem eigen apps en is een preview-versie voor Linux-apps. Het wordt niet ondersteund voor Windows-container-apps.
+- Het wordt ondersteund in GA voor Windows-apps en Linux-apps. Het wordt niet ondersteund voor Windows-container-apps.
 
 ### <a name="things-you-cannot-do-with-hybrid-connections"></a>Wat u niet kunt doen met Hybride verbindingen ###
 

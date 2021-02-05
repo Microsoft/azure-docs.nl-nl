@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f13dfa4221f8f09c24cce3a451f3180d15ee3b99
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 0c4ed5dfee80c33009874361ae6b4d23ec00bc26
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435754"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573327"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Procedure: de implementatie van uw hybride Azure Active Directory-koppeling plannen
 
@@ -81,6 +81,8 @@ Als eerste plannings stap moet u uw omgeving controleren en bepalen of u apparat
 - Hybride Azure AD-samen voeging wordt niet ondersteund op Windows-apparaten op een lager niveau wanneer u Credential roaming of roaming tussen gebruikers profielen of een verplicht profiel gebruikt.
 
 - Server Core-besturings systeem biedt geen ondersteuning voor elk type apparaatregistratie.
+
+- Hulpprogramma voor migratie van gebruikersstatus (USMT) werkt niet met apparaatregistratie.  
 
 ### <a name="os-imaging-considerations"></a>Aandachtspunten voor installatie van besturings systeem
 - Als u afhankelijk bent van het hulp programma voor systeem voorbereiding (Sysprep) en als u een installatie kopie van **vóór Windows 10 1809** gebruikt, moet u ervoor zorgen dat de installatie kopie niet afkomstig is van een apparaat dat al is geregistreerd bij Azure AD als hybride Azure AD-deelname.

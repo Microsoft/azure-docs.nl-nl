@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 09/18/2020
-ms.openlocfilehash: 86942f509ab067a53c47b5132c451f0585760050
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: b5f4218cfcd5f9ccfbe43efac46e2f70fdc30905
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549640"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99574954"
 ---
 # <a name="register-and-scan-an-on-premises-sql-server"></a>Een on-premises SQL server registreren en scannen
 
@@ -67,7 +67,7 @@ Als u van plan bent een bestaande sa-gebruiker (Server beheerder) te gebruiken o
 Als u een nieuwe aanmelding en gebruiker wilt maken om uw SQL-Server te kunnen scannen, volgt u de onderstaande stappen:
 
 > [!Note]
-    > Alle onderstaande stappen kunnen worden uitgevoerd met behulp van de code die u [hier](https://github.com/Azure/Purview-Samples/blob/master/TSQL-Code-Permissions/grant-access-to-on-prem-sql-databases.sql)opgeeft.
+   > Alle onderstaande stappen kunnen worden uitgevoerd met behulp van de code die u [hier](https://github.com/Azure/Purview-Samples/blob/master/TSQL-Code-Permissions/grant-access-to-on-prem-sql-databases.sql) opgeeft
 
 1. Navigeer naar SQL Server Management Studio (SSMS), maak verbinding met de server, navigeer naar beveiliging, klik met de rechter muisknop op aanmelden en maak nieuwe aanmelding. Zorg ervoor dat u SQL-verificatie selecteert.
 

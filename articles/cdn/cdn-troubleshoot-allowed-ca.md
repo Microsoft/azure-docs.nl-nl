@@ -1,30 +1,28 @@
 ---
-title: Toegestane CA voor het inschakelen van aangepaste HTTPS op Azure CDN
+title: Toegestane CA voor het inschakelen van aangepaste HTTPS
+titleSuffix: Azure Content Delivery Network
 description: Als u uw eigen certificaat gebruikt om HTTPS in te scha kelen op een aangepast domein, moet u een toegestane certificerings instantie (CA) gebruiken om deze te maken.
 services: cdn
-documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: ''
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 10/18/2018
+ms.date: 02/04/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 29b6cb25e021e86ce6663b4db5c89217aaf70a37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f98e28c89fa70831108cfbbbaca6e2f316d1b039
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84887404"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573395"
 ---
-# <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-cdn"></a>Toegestane certificerings instanties voor het inschakelen van aangepaste HTTPS op Azure CDN
+# <a name="allowed-certificate-authorities-for-enabling-custom-https"></a>Toegestane certificerings instanties voor het inschakelen van aangepaste HTTPS
 
-U moet voldoen aan specifieke certificaat vereisten wanneer u [de https-functie inschakelt met behulp van uw eigen certificaat](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#tlsssl-certificates) voor een aangepast domein van Azure Content Delivery Network (CDN). Voor de **Azure CDN standaard van micro soft** -profiel is een certificaat van een van de goedgekeurde certificerings instanties (CA) in de volgende lijst vereist. Als een certificaat van een niet-goedgekeurde certificerings instantie of een zelfondertekend certificaat wordt gebruikt, wordt de aanvraag geweigerd. **Azure CDN standaard van Verizon** en **Azure CDN Premium van Verizon** -profielen accepteren een geldig certificaat van een geldige certificerings instantie.
+Specifieke certificaat vereisten zijn vereist wanneer u [de https-functie inschakelt met behulp van uw eigen certificaat](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#tlsssl-certificates) voor een Azure CDN (Content Delivery Network) aangepast domein. 
+
+* Voor de **Azure CDN standaard van micro soft** -profiel is een certificaat van een van de goedgekeurde certificerings instanties (CA) in de volgende lijst vereist. Als een certificaat van een niet-goedgekeurde certificerings instantie of een zelfondertekend certificaat wordt gebruikt, wordt de aanvraag geweigerd. 
+
+* **Azure CDN standaard van Verizon** en **Azure CDN Premium van Verizon** -profielen accepteren een geldig certificaat van een geldige certificerings instantie. Verizon-profielen bieden geen ondersteuning voor zelfondertekende certificaten.
 
 > [!NOTE]
 > De optie voor het gebruik van uw eigen certificaat om de HTTPS-functie van het aangepaste domein in te scha kelen is *niet* beschikbaar voor **Azure CDN standaard van Akamai** -profielen. 

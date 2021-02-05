@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 01/15/2021
+ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 39385a3ea9dc06875806ac85c06c0df6d5db2698
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 3b7b65a558470c4e7f04ed84ea186fc1ea98bc40
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683790"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99557335"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -103,6 +103,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Rol van Cosmos DB-account lezer](#cosmos-db-account-reader-role) | Kan gegevens van Azure Cosmos DB-account lezen. Zie [DocumentDB account Inzender](#documentdb-account-contributor) voor het beheren van Azure Cosmos DB accounts. | fbdf93bf-df7d-467e-a4d2-9458aa1360c8 |
 > | [Cosmos DB-operator](#cosmos-db-operator) | Hiermee kunt u Azure Cosmos DB accounts beheren, maar geen toegang tot gegevens. Hiermee voor komt u toegang tot account sleutels en verbindings reeksen. | 230815da-be43-4aae-9cb4-875f7bd000aa |
 > | [CosmosBackupOperator](#cosmosbackupoperator) | Kan een terugzet aanvraag indienen voor een Cosmos DB-Data Base of een container voor een account | db7b14f2-5adf-42da-9f96-f2ee17bab5cb |
+> | [CosmosRestoreOperator](#cosmosrestoreoperator) | Kan de actie voor het herstellen van Cosmos DB database account met doorlopende back-upmodus uitvoeren | 5432c526-bc82-444a-b7ba-57c5b0b5b34f |
 > | [Inzender voor DocumentDB-accounts](#documentdb-account-contributor) | Kan Azure Cosmos DB accounts beheren. Azure Cosmos DB is voorheen bekend als DocumentDB. | 5bd9cd88-fe45-4216-938b-f97437e15450 |
 > | [Inzender Redis Cache](#redis-cache-contributor) | Hiermee kunt u redis-caches beheren, maar niet de toegang tot deze bestanden. | e0f68234-74aa-48ed-b826-c38b57376e17 |
 > | [Inzender voor SQL-data base](#sql-db-contributor) | Hiermee kunt u SQL-data bases beheren, maar niet de toegang tot ze. U kunt ook hun beveiligings beleid of de bovenliggende SQL-servers niet beheren. | 9b7fa17d-e63e-47b0-bb0a-15c516ac86ec |
@@ -130,7 +131,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Inzender Cognitive Services](#cognitive-services-contributor) | Hiermee kunt u sleutels van Cognitive Services maken, lezen, bijwerken, verwijderen en beheren. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
 > | [Cognitive Services gegevens lezer (preview-versie)](#cognitive-services-data-reader-preview) | Hiermee kunt u Cognitive Services gegevens lezen. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
 > | [Cognitive Services gebruiker](#cognitive-services-user) | Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. | a97b65f3-24c7-4388-baec-2e87135dc908 |
-> | **Mixed reality** |  |  |
+> | **Gemengde realiteit** |  |  |
 > | [Externe rendering-beheerder](#remote-rendering-administrator) | Biedt gebruikers de mogelijkheid om de mogelijkheden voor het omzetten van sessies, rendering en diagnose te beheren voor externe rendering in azure | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
 > | [Client voor externe Rendering](#remote-rendering-client) | Biedt gebruikers de mogelijkheid om sessie, rendering en diagnose te beheren voor de externe rendering van Azure. | d39065c4-c120-43c9-ab0a-63eed9795f0a |
 > | [Inzender voor ruimtelijke ankers](#spatial-anchors-account-contributor) | Hiermee kunt u ruimtelijke ankers in uw account beheren, maar niet verwijderen | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
@@ -1453,6 +1454,7 @@ Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, he
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/Read | Hiermee wordt de status geretourneerd van de bewerking die is uitgevoerd op beveiligde items. |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/Read | Hiermee worden object gegevens van het beveiligde item geretourneerd |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/Action | Direct-item herstel inrichten voor beveiligd item |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/accessToken/Action | AccessToken ophalen voor het terugzetten van meerdere regio's. |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/Read | Herstel punten voor beveiligde items ophalen. |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/Restore/Action | Herstel punten voor beveiligde items herstellen. |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/revokeInstantItemRecovery/Action | Herstel van onmiddellijke items intrekken voor beveiligd item |
@@ -1495,6 +1497,12 @@ Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, he
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupStatus/Action | De back-upstatus voor Recovery Services kluizen controleren |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupPreValidateProtection/Action |  |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupValidateFeatures/Action | Functies valideren |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupAadProperties/Read | Eigenschappen van AAD ophalen voor verificatie in de derde regio voor het terugzetten van meerdere regio's. |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupCrrJobs/Action | Lijst met herstel taken voor meerdere regio's in de secundaire regio voor Recovery Services kluis. |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupCrrJob/Action | Taak Details voor het herstellen van meerdere regio's in de secundaire regio voor Recovery Services kluis ophalen. |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupCrossRegionRestore/Action | Herstel van meerdere regio's activeren. |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupCrrOperationResults/Read | Retourneert CRR-bewerkings resultaat voor Recovery Services kluis. |
+> | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/backupCrrOperationsStatus/Read | Retourneert CRR-bewerkings status voor Recovery Services kluis. |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/vaults/monitoringAlerts/write | Hiermee wordt de waarschuwing opgelost. |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/Operations/Read | Met deze bewerking wordt de lijst met bewerkingen voor een resource provider geretourneerd |
 > | [Micro soft. Recovery Services](resource-provider-operations.md#microsoftrecoveryservices)/locations/operationStatus/Read | Hiermee wordt de bewerkings status voor een bepaalde bewerking opgehaald |
@@ -1527,6 +1535,7 @@ Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, he
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/action",
+        "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/accessToken/action",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/read",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/restore/action",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/revokeInstantItemRecovery/action",
@@ -1569,6 +1578,12 @@ Hiermee kunt u back-upservices beheren, behalve het verwijderen van back-ups, he
         "Microsoft.RecoveryServices/locations/backupStatus/action",
         "Microsoft.RecoveryServices/locations/backupPreValidateProtection/action",
         "Microsoft.RecoveryServices/locations/backupValidateFeatures/action",
+        "Microsoft.RecoveryServices/locations/backupAadProperties/read",
+        "Microsoft.RecoveryServices/locations/backupCrrJobs/action",
+        "Microsoft.RecoveryServices/locations/backupCrrJob/action",
+        "Microsoft.RecoveryServices/locations/backupCrossRegionRestore/action",
+        "Microsoft.RecoveryServices/locations/backupCrrOperationResults/read",
+        "Microsoft.RecoveryServices/locations/backupCrrOperationsStatus/read",
         "Microsoft.RecoveryServices/Vaults/monitoringAlerts/write",
         "Microsoft.RecoveryServices/operations/read",
         "Microsoft.RecoveryServices/locations/operationStatus/read",
@@ -2438,6 +2453,7 @@ Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie
 > | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/queueServices/queues/messages/Delete | Een of meer berichten verwijderen uit een wachtrij. |
 > | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/queueServices/queues/messages/Read | Een of meer berichten uit een wachtrij bekijken of ophalen. |
 > | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/queueServices/queues/messages/write | Een bericht toevoegen aan een wachtrij. |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/queueServices/queues/messages/process/Action | Retourneert het resultaat van de verwerking van een bericht |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -2460,7 +2476,8 @@ Lees-, schrijf-en verwijder Azure Storage-wacht rijen en-wachtrij berichten. Zie
       "dataActions": [
         "Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete",
         "Microsoft.Storage/storageAccounts/queueServices/queues/messages/read",
-        "Microsoft.Storage/storageAccounts/queueServices/queues/messages/write"
+        "Microsoft.Storage/storageAccounts/queueServices/queues/messages/write",
+        "Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action"
       ],
       "notDataActions": []
     }
@@ -3932,6 +3949,49 @@ Kan een terugzet aanvraag indienen voor een Cosmos DB-Data Base of een container
     }
   ],
   "roleName": "CosmosBackupOperator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cosmosrestoreoperator"></a>CosmosRestoreOperator
+
+Kan de actie voor het herstellen van Cosmos DB database account met doorlopende back-upmodus uitvoeren
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/locations/restorableDatabaseAccounts/Restore/Action | Een herstel aanvraag verzenden |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/locations/restorableDatabaseAccounts/*/Read |  |
+> | [Microsoft.DocumentDB](resource-provider-operations.md#microsoftdocumentdb)/locations/restorableDatabaseAccounts/Read | Een restorable data base-account lezen of alle restorable database accounts weer geven |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform restore action for Cosmos DB database account with continuous backup mode",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/5432c526-bc82-444a-b7ba-57c5b0b5b34f",
+  "name": "5432c526-bc82-444a-b7ba-57c5b0b5b34f",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/restore/action",
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read",
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "CosmosRestoreOperator",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -7788,8 +7848,12 @@ Kan Application Insights-onderdelen beheren [meer informatie](../azure-monitor/a
 > | --- | --- |
 > | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Klassieke waarschuwings regels maken en beheren |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/generateLiveToken/Read | Get-token van Live Metrics |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/metricAlerts/* | Nieuwe waarschuwings regels maken en beheren |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Components/* | Insights-onderdelen maken en beheren |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/scheduledqueryrules/* |  |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Topology/Read | Topologie lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/Transactions/Read | Trans acties lezen |
 > | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/webtests/* | Inzichten-webtests maken en beheren |
 > | [Micro soft. ResourceHealth](resource-provider-operations.md#microsoftresourcehealth)/availabilityStatuses/Read | Hiermee worden de beschikbaarheids status waarden opgehaald voor alle resources in het opgegeven bereik |
 > | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
@@ -7815,8 +7879,12 @@ Kan Application Insights-onderdelen beheren [meer informatie](../azure-monitor/a
       "actions": [
         "Microsoft.Authorization/*/read",
         "Microsoft.Insights/alertRules/*",
+        "Microsoft.Insights/generateLiveToken/read",
         "Microsoft.Insights/metricAlerts/*",
         "Microsoft.Insights/components/*",
+        "Microsoft.Insights/scheduledqueryrules/*",
+        "Microsoft.Insights/topology/read",
+        "Microsoft.Insights/transactions/read",
         "Microsoft.Insights/webtests/*",
         "Microsoft.ResourceHealth/availabilityStatuses/read",
         "Microsoft.Resources/deployments/*",

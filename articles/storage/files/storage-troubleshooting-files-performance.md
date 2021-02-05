@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 729c3e46cf329c525ce9204b26d4c6aefa04c89d
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: c3dbd76e76ad6e7bed0808278d4516992bc328f0
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632492"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99574428"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -34,14 +34,28 @@ Als u wilt controleren of uw share wordt beperkt, kunt u Azure-metrische gegeven
 
 1. Selecteer **trans acties** als metrische gegevens.
 
-1. Voeg een filter toe voor het **antwoord type** en controleer vervolgens of er aanvragen van een van de volgende respons codes zijn:
-   * **SuccessWithThrottling**: voor Server Message Block (SMB)
-   * **ClientThrottlingError**: voor rest
+1. Voeg een filter toe voor het **antwoord type** en controleer vervolgens of er aanvragen zijn beperkt. 
 
-   ![Scherm afbeelding van de opties voor de metrische gegevens voor Premium-bestands shares, met een eigenschappen Filter van het type antwoord.](media/storage-troubleshooting-premium-fileshares/metrics.png)
+    Voor standaard bestands shares worden de volgende antwoord typen vastgelegd als een aanvraag wordt beperkt:
 
-   > [!NOTE]
-   > Als u een waarschuwing wilt ontvangen, raadpleegt u de sectie [' een waarschuwing maken als een bestands share is beperkt '](#how-to-create-an-alert-if-a-file-share-is-throttled) verderop in dit artikel.
+    - SuccessWithThrottling
+    - ClientThrottlingError
+
+    Voor Premium-bestands shares worden de volgende antwoord typen vastgelegd als een aanvraag wordt beperkt:
+
+    - SuccessWithShareEgressThrottling
+    - SuccessWithShareIngressThrottling
+    - SuccessWithShareIopsThrottling
+    - ClientShareEgressThrottlingError
+    - ClientShareIngressThrottlingError
+    - ClientShareIopsThrottlingError
+
+    Zie [metrische dimensies](https://docs.microsoft.com/azure/storage/files/storage-files-monitoring-reference#metrics-dimensions)voor meer informatie over elk antwoord type.
+
+    ![Scherm afbeelding van de opties voor de metrische gegevens voor Premium-bestands shares, met een eigenschappen Filter van het type antwoord.](media/storage-troubleshooting-premium-fileshares/metrics.png)
+
+    > [!NOTE]
+    > Als u een waarschuwing wilt ontvangen, raadpleegt u de sectie [' een waarschuwing maken als een bestands share is beperkt '](#how-to-create-an-alert-if-a-file-share-is-throttled) verderop in dit artikel.
 
 ### <a name="solution"></a>Oplossing
 
@@ -219,48 +233,63 @@ U kunt de metrische gegevens van Azure in de portal gebruiken om te bevestigen.
 
 ## <a name="how-to-create-an-alert-if-a-file-share-is-throttled"></a>Een waarschuwing maken als een bestands share wordt beperkt
 
-1. Ga in het Azure Portal naar uw opslag account.
-1. Selecteer in de sectie **controle** de optie **waarschuwingen** en selecteer vervolgens **nieuwe waarschuwings regel**.
-1. Selecteer **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
-1. Selecteer **voor waarde selecteren** om een voor waarde toe te voegen.
-1. Selecteer in de lijst met signalen die worden ondersteund voor het opslag account de metrische gegevens van de **trans acties** .
-1. Selecteer in het deel venster **signaal logica configureren** in de vervolg keuzelijst **dimensie naam** de optie **antwoord type**.
-1. Selecteer in de vervolg keuzelijst **dimensie waarden** **SUCCESSWITHTHROTTLING** (voor SMB) of **ClientThrottlingError** (voor rest).
+1. Ga naar uw **opslag account** in de **Azure Portal**.
+2. Klik in de sectie **bewaking** op **waarschuwingen** en klik vervolgens op **+ nieuwe waarschuwings regel**.
+3. Klik op **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en klik vervolgens op **gereed**. Als de naam van het opslag account bijvoorbeeld is `contoso` , selecteert u de `contoso/file` resource.
+4. Klik op **voor waarde toevoegen** om een voor waarde toe te voegen.
+5. U ziet een lijst met signalen die worden ondersteund voor het opslag account. Selecteer de metrische gegevens van de **trans actie** .
+6. Klik op de Blade **signaal logica configureren** op de vervolg keuzelijst **dimensie naam** en selecteer **antwoord type**.
+7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de juiste antwoord typen voor de bestands share.
+
+    Voor standaard bestands shares selecteert u de volgende antwoord typen:
+
+    - SuccessWithThrottling
+    - ClientThrottlingError
+
+    Voor Premium-bestands shares selecteert u de volgende antwoord typen:
+
+    - SuccessWithShareEgressThrottling
+    - SuccessWithShareIngressThrottling
+    - SuccessWithShareIopsThrottling
+    - ClientShareEgressThrottlingError
+    - ClientShareIngressThrottlingError
+    - ClientShareIopsThrottlingError
 
    > [!NOTE]
-   > Als noch de **SuccessWithThrottling** noch de **ClientThrottlingError** -dimensie waarde wordt weer gegeven, betekent dit dat de resource niet is beperkt. Als u de dimensie waarde wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen**, voert u **SuccessWithThrottling** of **ClientThrottlingError** in, selecteert u **OK** en herhaalt u stap 7.
+   > Als de antwoord typen niet worden weer gegeven in de vervolg keuzelijst **dimensie waarden** , betekent dit dat de resource niet is beperkt. Als u de dimensie waarden wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen**, voert u het type antwoord in (bijvoorbeeld **SuccessWithThrottling**), selecteert u **OK** en herhaalt u deze stappen om alle toepasselijke antwoord typen voor de bestands share toe te voegen.
 
-1. Selecteer in de vervolg keuzelijst **dimensie naam** de optie **Bestands share**.
-1. Selecteer in de vervolg keuzelijst **dimensie waarden** de bestands share of shares waarop u een waarschuwing wilt ontvangen.
+8. Klik op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
+9. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
+
 
    > [!NOTE]
-   > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. In de vervolg keuzelijst dimensie waarden worden de bestands shares niet weer gegeven omdat er geen metrische gegevens beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share in het opslag account wordt beperkt en de waarschuwing niet identificeert welke bestands share is beperkt. Omdat metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, wordt u aangeraden één bestands share per opslag account te gebruiken.
+   > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. De vervolg keuzelijst met dimensie waarden bevat niet de bestands share (s) omdat metrische gegevens per share niet beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share binnen het opslag account wordt beperkt en de waarschuwing niet kan bepalen welke bestands share is beperkt. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
 
-1. Definieer de waarschuwings parameters door de **drempel waarde**, de **operator**, **de granulariteit van de aggregatie** en de **frequentie van de evaluatie** in te voeren en selecteer vervolgens **gereed**.
+10. Definieer de **waarschuwings parameters** (drempel waarde, operator, aggregatie granulatie en frequentie van evaluatie) en klik op **gereed**.
 
     > [!TIP]
-    > Als u een statische drempel waarde gebruikt, kan het meet diagram u helpen een redelijke drempelwaarde te bepalen als de bestands share momenteel wordt beperkt. Als u een dynamische drempel waarde gebruikt, worden de berekende drempel waarden in de grafiek weer gegeven op basis van recente gegevens.
+    > Als u een statische drempel waarde gebruikt, kan de metrische grafiek helpen bij het bepalen van een redelijke drempelwaarde als de bestands share momenteel wordt beperkt. Als u een dynamische drempel waarde gebruikt, worden in de metrische grafiek de berekende drempel waarden weer gegeven op basis van recente gegevens.
 
-1. Selecteer **actie groep selecteren** en voeg vervolgens een actie groep (bijvoorbeeld E-mail of SMS) toe aan de waarschuwing door een bestaande actie groep te selecteren of door een nieuwe actie groep te maken.
-1. Voer de details van de waarschuwing in, zoals naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
-1. Selecteer **waarschuwings regel maken** om de waarschuwing te maken.
+11. Klik op **actie groepen toevoegen** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
+12. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
+13. Klik op **waarschuwings regel maken** om de waarschuwing te maken.
 
 Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)voor meer informatie over het configureren van waarschuwingen in azure monitor.
 
 ## <a name="how-to-create-alerts-if-a-premium-file-share-is-trending-toward-being-throttled"></a>Hoe kan ik waarschuwingen maken als een Premium-bestands share wordt getrendd naar een beperkt aantal
 
 1. Ga in het Azure Portal naar uw opslag account.
-1. Selecteer in de sectie **controle** de optie **waarschuwingen** en selecteer vervolgens **nieuwe waarschuwings regel**.
-1. Selecteer **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
-1. Selecteer **voor waarde selecteren** om een voor waarde toe te voegen.
-1. Selecteer in de lijst met signalen die worden ondersteund voor het opslag **account de waarde** voor uitgaand verkeer.
+2. Selecteer in de sectie **controle** de optie **waarschuwingen** en selecteer vervolgens **nieuwe waarschuwings regel**.
+3. Selecteer **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en selecteer vervolgens **gereed**. Als de naam van het opslag account bijvoorbeeld *Contoso* is, selecteert u de resource contoso/file.
+4. Selecteer **voor waarde selecteren** om een voor waarde toe te voegen.
+5. Selecteer in de lijst met signalen die worden ondersteund voor het opslag **account de waarde** voor uitgaand verkeer.
 
    > [!NOTE]
    > U moet drie afzonderlijke waarschuwingen maken om te worden gewaarschuwd wanneer de waarden voor ingang, uitgaand of trans actie groter zijn dan de drempel waarden die u instelt. Dit komt doordat een waarschuwing alleen wordt geactiveerd wanneer aan alle voor waarden wordt voldaan. Als u bijvoorbeeld alle voor waarden in één waarschuwing opneemt, wordt u alleen gewaarschuwd als binnenkomend, uitgaand en trans acties de drempel waarden overschrijden.
 
-1. Schuif omlaag. Selecteer in de vervolg keuzelijst **dimensie naam** de optie **Bestands share**.
-1. Selecteer in de vervolg keuzelijst **dimensie waarden** de bestands share of shares waarop u een waarschuwing wilt ontvangen.
-1. Definieer de waarschuwings parameters door waarden te selecteren in de **operator**, **drempel waarde**, **aggregatie granulatie** en **frequentie van** vervolg keuzelijsten en selecteer vervolgens **gereed**.
+6. Schuif omlaag. Selecteer in de vervolg keuzelijst **dimensie naam** de optie **Bestands share**.
+7. Selecteer in de vervolg keuzelijst **dimensie waarden** de bestands share of shares waarop u een waarschuwing wilt ontvangen.
+8. Definieer de waarschuwings parameters door waarden te selecteren in de **operator**, **drempel waarde**, **aggregatie granulatie** en **frequentie van** vervolg keuzelijsten en selecteer vervolgens **gereed**.
 
    De metrische gegevens voor uitgang, binnenkomen en trans acties worden per minuut weer gegeven, maar u hebt een uitgangs-, ingangs-en I/O per seconde ingericht. Als uw ingerichte uitvoer bijvoorbeeld 90 &nbsp; mebibytes per seconde (MIB/s) is en u wilt dat uw drempel waarde 80 &nbsp; procent van de ingerichte uitvoer is, selecteert u de volgende waarschuwings parameters: 
    - Voor **drempel waarde**: *75497472* 
@@ -271,9 +300,9 @@ Zie [overzicht van waarschuwingen in Microsoft Azure]( https://docs.microsoft.co
    - Voor **granulatie van aggregatie**: *1 uur*
    - Voor de **frequentie van de evaluatie**: *1 uur*
 
-1. Selecteer **actie groep selecteren** en voeg vervolgens een actie groep (bijvoorbeeld E-mail of SMS) toe aan de waarschuwing door een bestaande actie groep te selecteren of door een nieuwe te maken.
-1. Voer de details van de waarschuwing in, zoals naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
-1. Selecteer **waarschuwings regel maken** om de waarschuwing te maken.
+9. Selecteer **actie groepen toevoegen** en voeg vervolgens een actie groep (bijvoorbeeld E-mail of SMS) toe aan de waarschuwing door een bestaande actie groep te selecteren of door een nieuwe te maken.
+10. Voer de details van de waarschuwing in, zoals naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
+11. Selecteer **waarschuwings regel maken** om de waarschuwing te maken.
 
     > [!NOTE]
     > - Als u een melding wilt ontvangen dat uw Premium-bestands share bijna wordt beperkt *vanwege de ingerichte* inkomende inkomen, volgt u de voor gaande instructies, maar met de volgende wijziging:

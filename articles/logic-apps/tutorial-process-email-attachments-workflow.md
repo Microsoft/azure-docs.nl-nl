@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 02/27/2020
-ms.openlocfilehash: 95cc13a79f39888a5be10e423bda4c7cd7c84cb3
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: bd1715dc0a3767bc5826154616bbdc97c7b61dd3
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054785"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576360"
 ---
 # <a name="tutorial-automate-tasks-to-process-emails-by-using-azure-logic-apps-azure-functions-and-azure-storage"></a>Zelfstudie: Automatiseer taken om e-mails te verwerken met behulp van Azure Logic Apps, Azure Functions en Azure Storage
 
@@ -88,7 +88,7 @@ U kunt binnenkomende e-mails en bijlagen als blobs opslaan in een [Azure-opslagc
 
       ![Kopieer de naam en de sleutel van de opslagaccount en sla deze op](./media/tutorial-process-email-attachments-workflow/copy-save-storage-name-key.png)
 
-   U kunt ook [Azure PowerShell](/powershell/module/az.storage/get-azstorageaccountkey) of [Azure CLI](/cli/azure/storage/account/keys.md#az-storage-account-keys-list) gebruiken om de toegangssleutel van uw opslagaccount op te halen.
+   U kunt ook [Azure PowerShell](/powershell/module/az.storage/get-azstorageaccountkey) of [Azure CLI](/cli/azure/storage/account/keys) gebruiken om de toegangssleutel van uw opslagaccount op te halen.
 
 1. Maak een Blob Storage-container voor uw e-mailbijlagen.
 

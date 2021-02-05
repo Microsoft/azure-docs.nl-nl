@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: f6bd6b13ab4a2e654bdabc86355f2c3388abed31
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 9d09bca246938f972a212f7ee71f03a618e16ac4
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050524"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575675"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Snelstart - Een voorbeeld van een Azure Digital Twins-scenario verkennen met behulp van ADT Explorer
 
@@ -306,11 +306,15 @@ In deze quickstart hebt u de temperatuur handmatig bijgewerkt. Normaal gesproken
 
 Als u het werk voor deze quickstart wilt afronden, moet u eerst de actieve console-app afsluiten. Met deze actie wordt de verbinding met de ADT Explorer-app in de browser afgesloten. U kunt geen livegegevens meer weergeven in de browser. U kunt het browsertabblad sluiten.
 
-Als u van plan bent om door te gaan met de zelfstudies voor Azure Digital Twins, kunt u het exemplaar dat in deze quickstart wordt gebruikt, opnieuw gebruiken voor die artikelen en hoeft u dit niet te verwijderen.
+Vervolgens kunt u kiezen welke resources u wilt verwijderen, afhankelijk van wat u nu wilt doen.
+
+* **Als u van plan bent om door te gaan met de zelf studies voor Azure Digital apparaatdubbels**, kunt u het exemplaar in deze Quick start voor die artikelen gebruiken en hoeft u het niet te verwijderen.
+
+[!INCLUDE [digital-twins-cleanup-clear-instance.md](../../includes/digital-twins-cleanup-clear-instance.md)]
  
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-Verwijder tot slot de voorbeeldmappen van het project die u hebt gedownload naar uw lokale machine (**Azure_Digital_Twins__ADT__explorer**). Mogelijk moet u zowel de gezipte als de uitgepakte versie verwijderen.
+Misschien wilt u ook de projectmap van uw lokale computer verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

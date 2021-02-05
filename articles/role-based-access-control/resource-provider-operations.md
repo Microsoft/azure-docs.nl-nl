@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 01/15/2021
+ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 72735dad6a52fffd6e6e94ad4fb0fb7a9558b4c4
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 768a327421a941a39b6f66be411712a565097f66
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430076"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99557322"
 ---
 # <a name="azure-resource-provider-operations"></a>Azure-resource provider bewerkingen
 
@@ -197,9 +197,17 @@ Azure-service: kern geheugen
 > | Micro soft. Marketplace/privateStores/verwijderen | Hiermee verwijdert u PrivateStore. |
 > | Micro soft. Marketplace/privateStores/aanbiedingen/actie | Update aanbieding in PrivateStore. |
 > | Micro soft. Marketplace/privateStores/lezen | Leest PrivateStores. |
+> | Micro soft. Marketplace/privateStores/meldingen/lezen | Hiermee worden privé archief meldingen gelezen |
 > | Micro soft. Marketplace/privateStores/aanbiedingen/schrijven | Hiermee maakt u een aanbieding in PrivateStore. |
 > | Micro soft. Marketplace/privateStores/aanbiedingen/verwijderen | De aanbieding wordt uit PrivateStore verwijderd. |
 > | Micro soft. Marketplace/privateStores/aanbiedingen/lezen | Hiermee worden PrivateStore-aanbiedingen gelezen. |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/requestApprovals/actie | Goed keuringen voor update aanvragen |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/meldingen/actie | Melding over updates |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/adminRequestApprovals/actie | De aanvraag bijwerken met beslissing over de aanvraag |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/adminRequestApprovals/lezen | Alle details van aanvraag goedkeuringen lezen, alleen beheerders |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/requestApprovals/lezen | Goed keuringen voor lees aanvragen |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/requestApprovals/schrijven | Aanvraaggoedkeuring maken |
+> | Micro soft. Marketplace/privateStores/aanbiedingen/requestApprovals/verwijderen | Aanvraag goedkeuring verwijderen |
 
 ### <a name="microsoftmarketplaceapps"></a>Micro soft. MarketplaceApps
 
@@ -500,6 +508,9 @@ Azure-service: [virtual machines](../virtual-machines/index.yml), [Virtual Machi
 > | Micro soft. Compute/restorePointCollections/restorePoints/write | Hiermee maakt u een nieuw herstel punt |
 > | Micro soft. Compute/restorePointCollections/restorePoints/verwijderen | Hiermee wordt het herstel punt verwijderd |
 > | Micro soft. Compute/restorePointCollections/restorePoints/retrieveSasUris/Action | De eigenschappen van een herstel punt samen met Blob SAS-Uri's ophalen |
+> | Micro soft. Compute/restorePointCollections/restorePoints/diskRestorePoints/lezen | De eigenschappen van een incrementele DiskRestorePoint ophalen |
+> | Micro soft. Compute/restorePointCollections/restorePoints/diskRestorePoints/beginGetAccess/Action | De SAS-URI van de incrementele DiskRestorePoint ophalen |
+> | Micro soft. Compute/restorePointCollections/restorePoints/diskRestorePoints/endGetAccess/Action | De SAS-URI van de incrementele DiskRestorePoint intrekken |
 > | Micro soft. Compute/sharedVMExtensions/lezen | Hiermee worden de eigenschappen van de gedeelde VM-extensie opgehaald |
 > | Micro soft. Compute/sharedVMExtensions/schrijven | Hiermee wordt een nieuwe gedeelde VM-extensie gemaakt of een bestaande bijgewerkt |
 > | Micro soft. Compute/sharedVMExtensions/verwijderen | Hiermee verwijdert u de gedeelde VM-extensie |
@@ -833,6 +844,8 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | Micro soft. Network/applicationGateways/start/Action | Start een toepassings gateway |
 > | Micro soft. Network/applicationGateways/stop/Action | Stopt een toepassings gateway |
 > | Micro soft. Network/applicationGateways/restart/actie | Hiermee wordt een toepassings Gateway opnieuw gestart |
+> | Micro soft. Network/applicationGateways/migrateV1ToV2/Action | Application Gateway migreren van v1 SKU naar v2 SKU |
+> | Micro soft. Network/applicationGateways/getMigrationStatus/Action | Status van gemigreerde Application Gateway van v1 SKU naar v2 SKU ophalen |
 > | Micro soft. Network/applicationGateways/backendAddressPools/samen voegen/actie | Voegt een back-end-adres groep van een toepassings gateway samen. Niet Alertable. |
 > | Micro soft. Network/applicationGateways/privateEndpointConnections/lezen | Hiermee worden Application Gateway PrivateEndpoint-verbindingen opgehaald |
 > | Micro soft. Network/applicationGateways/privateEndpointConnections/schrijven | Updates Application Gateway PrivateEndpoint-verbinding |
@@ -881,6 +894,7 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | Micro soft. netwerk/verbindingen/startpacketcapture/actie | Start een Virtual Network gateway-verbindings pakket vastleggen. |
 > | Micro soft. netwerk/verbindingen/stoppacketcapture/actie | Hiermee stopt u het vastleggen van een Virtual Network gateway-verbindings pakket. |
 > | Micro soft. netwerk/verbindingen/getikesas/actie | Een lijst met IKE-beveiligings koppelingen voor de verbinding |
+> | Micro soft. netwerk/verbindingen/resetconnection/actie | De verbinding voor VNG opnieuw instellen |
 > | Micro soft. netwerk/verbindingen/sharedKey/lezen | Hiermee wordt VirtualNetworkGatewayConnection SharedKey opgehaald |
 > | Micro soft. Network/Connections/sharedKey/write | Hiermee wordt een bestaande VirtualNetworkGatewayConnection-SharedKey gemaakt of bijgewerkt |
 > | Micro soft. Network/customIpPrefixes/lezen | Hiermee wordt een aangepaste IP-prefix definitie opgehaald |
@@ -1295,6 +1309,9 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | micro soft. Network/virtualnetworkgateways/startpacketcapture/Action | Start een Virtual Network gateway-pakket vastleggen. |
 > | micro soft. Network/virtualnetworkgateways/stoppacketcapture/Action | Hiermee stopt u het vastleggen van een Virtual Network gateway pakket. |
 > | micro soft. Network/virtualnetworkgateways/Connections/lezen | VirtualNetworkGatewayConnection ophalen |
+> | micro soft. Network/virtualNetworkGateways/natRules/lezen | Hiermee wordt een NAT-regel Resource opgehaald |
+> | micro soft. Network/virtualNetworkGateways/natRules/schrijven | Hiermee wordt een NAT-regel Resource geplaatst |
+> | micro soft. Network/virtualNetworkGateways/natRules/verwijderen | Hiermee wordt een NAT-regel resource verwijderd |
 > | Micro soft. Network/virtualNetworks/lezen | De virtuele-netwerk definitie ophalen |
 > | Micro soft. Network/virtualNetworks/schrijven | Hiermee wordt een virtueel netwerk gemaakt of een bestaand virtueel netwerk bijgewerkt |
 > | Micro soft. Network/virtualNetworks/verwijderen | Hiermee verwijdert u een virtueel netwerk |
@@ -1361,6 +1378,7 @@ Azure-service: [Application Gateway](../application-gateway/index.yml), [azure B
 > | micro soft. Network/vpnGateways/vpnConnections/startpacketcapture/Action | Pakket opname starten voor geselecteerde gekoppelde in VPN-verbinding |
 > | micro soft. Network/vpnGateways/vpnConnections/stoppacketcapture/Action | Pakket opname stoppen voor geselecteerde gekoppelde in VPN-verbinding |
 > | micro soft. Network/vpnGateways/vpnConnections/vpnLinkConnections/getikesas/Action | Lijst met IKE-beveiligings koppelingen voor VPN-verbinding |
+> | micro soft. Network/vpnGateways/vpnConnections/vpnLinkConnections/resetconnection/Action | De verbinding voor vWAN opnieuw instellen |
 > | micro soft. Network/vpnGateways/vpnConnections/vpnLinkConnections/lezen | Hiermee wordt een VPN-koppelings verbinding opgehaald |
 > | Micro soft. Network/vpnServerConfigurations/lezen | VpnServerConfiguration ophalen |
 > | Micro soft. Network/vpnServerConfigurations/schrijven | VpnServerConfiguration maken of bijwerken |
@@ -3451,6 +3469,7 @@ Azure-service: [Azure database for MariaDB](../mariadb/index.yml)
 > | Micro soft. DBforMariaDB/servers/sleutels/schrijven | Hiermee maakt u een sleutel met de opgegeven para meters of werkt u de eigenschappen of labels voor de opgegeven server sleutel bij. |
 > | Micro soft. DBforMariaDB/servers/sleutels/verwijderen | Hiermee verwijdert u een bestaande server sleutel. |
 > | Micro soft. DBforMariaDB/servers/logboeken/lezen | De lijst met MariaDB-logboeken weer geven. |
+> | Micro soft. DBforMariaDB/servers/performanceTiers/lezen | Hiermee wordt de lijst met prestatie lagen weer gegeven die beschikbaar zijn. |
 > | Micro soft. DBforMariaDB/servers/privateEndpointConnectionProxies/validate/Action | Hiermee wordt een aanroep voor het maken van een privé-eind punt gevalideerd aan de kant van de NRP |
 > | Micro soft. DBforMariaDB/servers/privateEndpointConnectionProxies/lezen | Hiermee wordt de lijst met particuliere endpoint-verbindings proxy's geretourneerd of worden de eigenschappen opgehaald voor de opgegeven verbinding proxy voor het particuliere eind punt. |
 > | Micro soft. DBforMariaDB/servers/privateEndpointConnectionProxies/schrijven | Hiermee maakt u een particuliere endpoint-verbindings proxy met de opgegeven para meters of werkt u de eigenschappen of labels voor de opgegeven verbinding proxy van het particuliere eind punt bij. |
@@ -3545,6 +3564,7 @@ Azure-service: [Azure database for MySQL](../mysql/index.yml)
 > | Micro soft. DBforMySQL/servers/sleutels/schrijven | Hiermee maakt u een sleutel met de opgegeven para meters of werkt u de eigenschappen of labels voor de opgegeven server sleutel bij. |
 > | Micro soft. DBforMySQL/servers/sleutels/verwijderen | Hiermee verwijdert u een bestaande server sleutel. |
 > | Micro soft. DBforMySQL/servers/logboeken/lezen | Retour neer de lijst met MySQL-Logboeken. |
+> | Micro soft. DBforMySQL/servers/performanceTiers/lezen | Hiermee wordt de lijst met prestatie lagen weer gegeven die beschikbaar zijn. |
 > | Micro soft. DBforMySQL/servers/privateEndpointConnectionProxies/validate/Action | Hiermee wordt een aanroep voor het maken van een privé-eind punt gevalideerd aan de kant van de NRP |
 > | Micro soft. DBforMySQL/servers/privateEndpointConnectionProxies/lezen | Hiermee wordt de lijst met particuliere endpoint-verbindings proxy's geretourneerd of worden de eigenschappen opgehaald voor de opgegeven verbinding proxy voor het particuliere eind punt. |
 > | Micro soft. DBforMySQL/servers/privateEndpointConnectionProxies/schrijven | Hiermee maakt u een particuliere endpoint-verbindings proxy met de opgegeven para meters of werkt u de eigenschappen of labels voor de opgegeven verbinding proxy van het particuliere eind punt bij. |
@@ -3629,6 +3649,7 @@ Azure-service: [Azure database for PostgreSQL](../postgresql/index.yml)
 > | Micro soft. DBforPostgreSQL/servers/sleutels/schrijven | Hiermee maakt u een sleutel met de opgegeven para meters of werkt u de eigenschappen of labels voor de opgegeven server sleutel bij. |
 > | Micro soft. DBforPostgreSQL/servers/sleutels/verwijderen | Hiermee verwijdert u een bestaande server sleutel. |
 > | Micro soft. DBforPostgreSQL/servers/logboeken/lezen | De lijst met PostgreSQL-logboeken weer geven. |
+> | Micro soft. DBforPostgreSQL/servers/performanceTiers/lezen | Hiermee wordt de lijst met prestatie lagen weer gegeven die beschikbaar zijn. |
 > | Micro soft. DBforPostgreSQL/servers/privateEndpointConnectionProxies/validate/Action | Hiermee wordt een aanroep voor het maken van een privé-eind punt gevalideerd aan de kant van de NRP |
 > | Micro soft. DBforPostgreSQL/servers/privateEndpointConnectionProxies/lezen | Hiermee wordt de lijst met particuliere endpoint-verbindings proxy's geretourneerd of worden de eigenschappen opgehaald voor de opgegeven verbinding proxy voor het particuliere eind punt. |
 > | Micro soft. DBforPostgreSQL/servers/privateEndpointConnectionProxies/schrijven | Hiermee maakt u een particuliere endpoint-verbindings proxy met de opgegeven para meters of werkt u de eigenschappen of labels voor de opgegeven verbinding proxy van het particuliere eind punt bij. |
@@ -3951,8 +3972,11 @@ Azure-service: [Azure SQL database](../azure-sql/database/index.yml), Azure [SQL
 > | Micro soft. SQL/locaties/instancePoolOperationResults/lezen | Hiermee wordt het resultaat voor een bewerking van een exemplaar groep opgehaald |
 > | Micro soft. SQL/locaties/jobAgentAzureAsyncOperation/lezen | Hiermee wordt de status van een taak agent bewerking opgehaald. |
 > | Micro soft. SQL/locaties/jobAgentOperationResults/lezen | Hiermee wordt het resultaat van een taak agent bewerking opgehaald. |
+> | Micro soft. SQL/locaties/longTermRetentionBackupAzureAsyncOperation/lezen | De status van de back-upbewerking voor lange termijn retentie ophalen |
+> | Micro soft. SQL/locaties/longTermRetentionBackupOperationResults/lezen | De status van de back-upbewerking voor lange termijn retentie ophalen |
 > | Micro soft. SQL/locaties/longTermRetentionBackups/lezen | Een lijst met de back-ups voor lange termijn retentie voor elke Data Base op elke server op een locatie |
-> | Micro soft. SQL/locaties/longTermRetentionManagedInstanceBackupOperationResults/lezen | De status ophalen van de bewerkings status van de back-upbewerking voor de lange termijn voor een beheerde instantie |
+> | Micro soft. SQL/locaties/longTermRetentionManagedInstanceBackupAzureAsyncOperation/lezen | De status van de back-upbewerking voor het bewaren van een lange termijn voor een beheerde instantie ophalen |
+> | Micro soft. SQL/locaties/longTermRetentionManagedInstanceBackupOperationResults/lezen | De status van de back-upbewerking voor het bewaren van een lange termijn voor een beheerde instantie ophalen |
 > | Micro soft. SQL/locaties/longTermRetentionManagedInstanceBackups/lezen | Retourneert een lijst met beheerde exemplaar-LTR-back-ups voor een specifieke locatie  |
 > | Micro soft. SQL/locaties/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/lezen | Retourneert een lijst met LTR-back-ups voor een beheerde exemplaar database |
 > | Micro soft. SQL/locaties/longTermRetentionManagedInstances/longTermRetentionDatabases/longTermRetentionManagedInstanceBackups/verwijderen | Hiermee verwijdert u een LTR-back-up voor een beheerde exemplaar database |
@@ -4091,6 +4115,7 @@ Azure-service: [Azure SQL database](../azure-sql/database/index.yml), Azure [SQL
 > | Micro soft. SQL/managedInstances/vulnerabilityAssessments/verwijderen | De evaluatie van beveiligings problemen voor een bepaald beheerd exemplaar verwijderen |
 > | Micro soft. SQL/managedInstances/vulnerabilityAssessments/lezen | Het beleid voor evaluatie van beveiligings problemen voor een gegeven beheerd exemplaar ophalen |
 > | Micro soft. SQL/Operations/lezen | Beschik bare REST bewerkingen ophalen |
+> | Micro soft. SQL/restorableDroppedManagedInstances/lezen | Retourneert een lijst met verwijderde beheerde exemplaren die verloren zijn gegaan. |
 > | Micro soft. SQL/servers/tdeCertificates/actie | TDE-certificaat maken/bijwerken |
 > | Micro soft. SQL/servers/importeren/actie | Nieuwe Azure SQL Database importeren |
 > | Micro soft. SQL/servers/lezen | De lijst met servers retour neren of de eigenschappen voor de opgegeven server ophalen. |
@@ -5478,6 +5503,24 @@ Azure-service: [Cognitive Services](../cognitive-services/index.yml)
 > | Micro soft. CognitiveServices/accounts/NewsSearch/categorysearch/actie | Hiermee wordt nieuws voor een gegeven categorie geretourneerd. |
 > | Micro soft. CognitiveServices/accounts/NewsSearch/zoeken/actie | Nieuws artikelen ophalen die relevant zijn voor een bepaalde query. |
 > | Micro soft. CognitiveServices/accounts/NewsSearch/trendingtopics/actie | Bekijk onderwerpen over trends die door Bing worden geïdentificeerd. Dit zijn dezelfde onderwerpen die worden weer gegeven in de banner aan de onderkant van de Bing-start pagina. |
+> | Micro soft. CognitiveServices/accounts/Personaler/rang/actie | Een aanvraag voor de rang orde van personalisatie. |
+> | Micro soft. CognitiveServices/accounts/Personaler/beoordelingen/actie | Een nieuwe evaluatie indienen. |
+> | Micro soft. CognitiveServices/accounts/Personaler/configuraties/client/actie | De client configuratie ophalen. |
+> | Micro soft. CognitiveServices/accounts/Personaler/configuraties/beleid/verwijderen | Het huidige beleid verwijderen. |
+> | Micro soft. CognitiveServices/accounts/Personality/configuraties/beleid/lezen | De configuratie van het beleid ophalen. |
+> | Micro soft. CognitiveServices/accounts/Personality/configuraties/beleid/schrijven | De configuratie van het beleid bijwerken. |
+> | Micro soft. CognitiveServices/accounts/Personality/configuraties/service/lezen | De service configuratie ophalen. |
+> | Micro soft. CognitiveServices/accounts/personalisatie/configuraties/service/schrijven | Werk de service configuratie bij. |
+> | Micro soft. CognitiveServices/accounts/Personaler/Beoordelingen/verwijderen | Verwijder de evaluatie versie die is gekoppeld aan de ID. |
+> | Micro soft. CognitiveServices/accounts/Personaler/beoordelingen/lezen | De evaluatie van de ID ophalen. Alle ingediende evaluaties weer geven. * |
+> | Micro soft. CognitiveServices/accounts/persoonlijke voor keur/evenementen/beloning/actie | Rapport beloning om toe te wijzen aan de best gerangschikte actie voor de opgegeven gebeurtenis. |
+> | Micro soft. CognitiveServices/accounts/Personaler/gebeurtenissen/activeren/actie | Meld dat de opgegeven gebeurtenis werkelijk wordt weer gegeven aan de gebruiker en dat er een beloning moet worden verwacht. |
+> | Micro soft. CognitiveServices/accounts/persoonlijker/logboeken/verwijderen | Hiermee worden alle logboeken verwijderd. |
+> | Micro soft. CognitiveServices/accounts/persoonlijker/logboeken/eigenschappen/lezen | Hiermee worden logboek eigenschappen opgehaald. |
+> | Micro soft. CognitiveServices/accounts/Personaler/model/lezen | Huidig model ophalen. |
+> | Micro soft. CognitiveServices/accounts/Personaler/model/verwijderen | Hiermee wordt het model opnieuw ingesteld. |
+> | Micro soft. CognitiveServices/accounts/Personaler/model/eigenschappen/lezen | Model eigenschappen ophalen. |
+> | Micro soft. CognitiveServices/accounts/Personaler/status/lezen | Hiermee wordt de status van de bewerking opgehaald. |
 > | Micro soft. CognitiveServices/accounts/QnAMaker/root/Action | QnA Maker |
 > | Micro soft. CognitiveServices/accounts/QnAMaker. v2/root/actie | QnA Maker |
 > | Micro soft. CognitiveServices/accounts/QnAMaker. v2/wijzigen/lezen | Down loads van runtime. |
@@ -5586,6 +5629,12 @@ Azure-service: [machine learning-service](../machine-learning/index.yml)
 > | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/implementaties/schrijven | Maakt of bijwerkt implementaties in batch-vernieuwings eindpunt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/implementaties/verwijderen | Hiermee verwijdert u implementaties in batch-Afleidings eindpunt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/implementaties/checkNameAvailability/lezen | Controleert naam voor implementatie in batch-afleiding van eind punt in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/implementaties/taken/lezen | Hiermee wordt de taak in een batch-Afleidings implementatie gelezen in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/implementaties/taken/schrijven | Maakt of bijwerkt van een taak in batch-afleiding implementatie in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/implementaties/taken/verwijderen | Hiermee verwijdert u de taak in de batch-deinterferentie implementatie in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/Jobs/lezen | Hiermee leest u de taak in een batch-Afleidings eindpunt in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/Jobs/schrijven | Hiermee wordt een taak in een batch-vernieuwings eindpunt gemaakt of bijgewerkt in Machine Learning Services werk ruimte (n) |
+> | Micro soft. MachineLearningServices/werk ruimten/batchEndpoints/Jobs/verwijderen | Hiermee verwijdert u de taak in de batch-deinterferentie-eind punt in Machine Learning Services werk ruimte (n) |
 > | Micro soft. MachineLearningServices/werk ruimten/reken-en lees bewerkingen | Hiermee worden de reken resources in Machine Learning Services werk ruimte (n) opgehaald |
 > | Microsoft.MachineLearningServices/workspaces/computes/write | Hiermee worden de reken resources in Machine Learning Services werk ruimte (n) gemaakt of bijgewerkt |
 > | Micro soft. MachineLearningServices/werk ruimten/berekenen/verwijderen | Hiermee worden de reken resources in Machine Learning Services werk ruimte (n) verwijderd |
@@ -6101,6 +6150,9 @@ Azure-service: [API Management](../api-management/index.yml)
 > | Micro soft. ApiManagement/service/gateways/api's/lezen | Hiermee wordt een verzameling weer gegeven van de Api's die zijn gekoppeld aan een gateway. |
 > | Micro soft. ApiManagement/service/gateways/api's/schrijven | Hiermee voegt u een API toe aan de opgegeven gateway. |
 > | Micro soft. ApiManagement/service/gateways/api's/verwijderen | Hiermee verwijdert u de opgegeven API van de opgegeven gateway. |
+> | Micro soft. ApiManagement/service/gateways/certificateAuthorities/lezen | Lijst met Ca's van de gateway ophalen. of de toegewezen Details van de certificerings instantie ophalen. |
+> | Micro soft. ApiManagement/service/gateways/certificateAuthorities/schrijven | Hiermee voegt u een API toe aan de opgegeven gateway. |
+> | Micro soft. ApiManagement/service/gateways/certificateAuthorities/verwijderen | Toewijzing van certificerings instantie bij Gateway opheffen. |
 > | Micro soft. ApiManagement/service/gateways/hostnameConfigurations/lezen | Hiermee wordt de verzameling hostname-configuraties voor de opgegeven gateway weer gegeven. |
 > | Micro soft. ApiManagement/service/groepen/lezen | Een lijst met groepen die zijn gedefinieerd binnen een service-exemplaar. of worden de details opgehaald van de groep die is opgegeven door de id. |
 > | Micro soft. ApiManagement/service/groepen/schrijven | Hiermee wordt een groep gemaakt of bijgewerkt. of worden de details van de groep die is opgegeven door de id, bijgewerkt. |
@@ -6143,9 +6195,12 @@ Azure-service: [API Management](../api-management/index.yml)
 > | Micro soft. ApiManagement/service/beleid/verwijderen | De beleids configuratie op Tenant niveau verwijderen |
 > | Micro soft. ApiManagement/service/policyDescriptions/lezen | Een lijst met alle beleids beschrijvingen. |
 > | Micro soft. ApiManagement/service/policySnippets/lezen | Een lijst met alle beleids fragmenten. |
+> | Micro soft. ApiManagement/service/portalRevisions/lezen | Hiermee wordt een verzameling ontwikkelaars Portal revisies weer gegeven. of krijgt de ontwikkelaars Portal revisie die is opgegeven door de id. |
+> | Micro soft. ApiManagement/service/portalRevisions/schrijven | Hiermee maakt u een nieuwe ontwikkelaars Portal-revisie. of werkt de beschrijving van de opgegeven Portal revisie bij of maakt deze actueel. |
 > | Micro soft. ApiManagement/service/portalSettings/lezen | Hiermee wordt een verzameling Portal instellingen weer gegeven. of u kunt aanmeldings instellingen voor de portal ophalen of de instellingen voor het aanmelden ophalen voor de portal. |
 > | Micro soft. ApiManagement/service/portalSettings/schrijven | Sign-In-instellingen bijwerken. of het maken of bijwerken van Sign-In-instellingen. of update de instellingen voor aanmelden of het bijwerken van instellingen voor het aanmelden of het bijwerken van de instellingen voor delegering. of u instellingen voor delegering wilt maken of bijwerken. |
 > | Micro soft. ApiManagement/service/portalSettings/listSecrets/actie | Hiermee wordt de validatie sleutel van instellingen voor portal overdracht opgehaald. of ophalen van BLOB-container-URI van media-inhoud. |
+> | Micro soft. ApiManagement/service/privateLinkResources/lezen | Bronnen voor de groep persoonlijke koppelingen ophalen |
 > | Micro soft. ApiManagement/service/producten/lezen | Een lijst met producten in het opgegeven service-exemplaar. of worden de details opgehaald van het product dat is opgegeven door de id. |
 > | Micro soft. ApiManagement/service/producten/schrijven | Hiermee wordt een product gemaakt of bijgewerkt. of bestaande product gegevens bijwerken. |
 > | Micro soft. ApiManagement/service/producten/verwijderen | Product verwijderen. |
@@ -8042,6 +8097,7 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. Insights/ExtendedDiagnosticSettings/schrijven | Een diagnostische instelling voor het netwerk stroom logboek maken of bijwerken |
 > | Micro soft. Insights/ExtendedDiagnosticSettings/verwijderen | Een diagnostische instelling voor het netwerk stroom logboek verwijderen |
 > | Micro soft. Insights/ExtendedDiagnosticSettings/lezen | Een diagnostische instelling voor het netwerk stroom logboek lezen |
+> | Micro soft. Insights/generateLiveToken/lezen | Get-token van Live Metrics |
 > | Micro soft. Insights/ListMigrationDate/lezen | Migratie datum van abonnement terughalen |
 > | Micro soft. Insights/LogDefinitions/lezen | Logboek definities lezen |
 > | Micro soft. Insights/LogProfiles/schrijven | Een logboek profiel voor het activiteiten logboek maken of bijwerken |
@@ -8379,6 +8435,8 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. Insights/ScheduledQueryRules/lezen | Een geplande query regel lezen |
 > | Micro soft. Insights/ScheduledQueryRules/verwijderen | Een geplande query regel verwijderen |
 > | Micro soft. Insights/tenants/registreren/actie | Initialiseert de micro soft Insights-provider |
+> | Micro soft. Insights/topologie/lezen | Topologie lezen |
+> | Micro soft. Insights/trans acties/lezen | Trans acties lezen |
 > | Micro soft. Insights/webtests/schrijven | Schrijven naar een webtest-configuratie |
 > | Micro soft. Insights/webtestes/verwijderen | Een webtest configuratie verwijderen |
 > | Micro soft. Insights/webtests/lezen | Een configuratie van een webtest lezen |
@@ -8500,6 +8558,7 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/AmlComputeClusterNodeEvent/lezen | Gegevens uit de AmlComputeClusterNodeEvent-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/AmlComputeCpuGpuUtilization/lezen | Gegevens uit de AmlComputeCpuGpuUtilization-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/AmlComputeJobEvent/lezen | Gegevens uit de AmlComputeJobEvent-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/AmlOnlineEndpointConsoleLog/lezen | Gegevens uit de AmlOnlineEndpointConsoleLog-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/AmlRunStatusChangedEvent/lezen | Gegevens uit de AmlRunStatusChangedEvent-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/afwijkingen/lezen | Gegevens uit de tabel afwijkingen lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ApiManagementGatewayLogs/lezen | Gegevens uit de ApiManagementGatewayLogs-tabel lezen |
@@ -8552,6 +8611,7 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/ContainerImageInventory/lezen | Gegevens uit de ContainerImageInventory-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ContainerInventory/lezen | Gegevens uit de ContainerInventory-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ContainerLog/lezen | Gegevens uit de ContainerLog-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/ContainerLogV2/lezen | Gegevens uit de ContainerLogV2-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ContainerNodeInventory/lezen | Gegevens uit de ContainerNodeInventory-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ContainerRegistryLoginEvents/lezen | Gegevens uit de ContainerRegistryLoginEvents-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ContainerRegistryRepositoryEvents/lezen | Gegevens uit de ContainerRegistryRepositoryEvents-tabel lezen |
@@ -8722,6 +8782,7 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/MicrosoftDynamicsTelemetrySystemMetricsLogs/lezen | Gegevens uit de MicrosoftDynamicsTelemetrySystemMetricsLogs-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/MicrosoftHealthcareApisAuditLogs/lezen | Gegevens uit de MicrosoftHealthcareApisAuditLogs-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/NetworkMonitoring/lezen | Gegevens uit de NetworkMonitoring-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/NetworkSessions/lezen | Gegevens uit de NetworkSessions-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/NWConnectionMonitorDestinationListenerResult/lezen | Gegevens uit de NWConnectionMonitorDestinationListenerResult-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/NWConnectionMonitorDNSResult/lezen | Gegevens uit de NWConnectionMonitorDNSResult-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/NWConnectionMonitorPathResult/lezen | Gegevens uit de NWConnectionMonitorPathResult-tabel lezen |
@@ -8730,7 +8791,9 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/bewerking/lezen | Gegevens uit de bewerkings tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/OutboundConnection/lezen | Gegevens uit de OutboundConnection-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/perf/lezen | Gegevens uit de prestatie tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/PowerBIDatasetsTenant/lezen | Gegevens uit de PowerBIDatasetsTenant-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/PowerBIDatasetsTenantPreview/lezen | Gegevens uit de PowerBIDatasetsTenantPreview-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/PowerBIDatasetsWorkspace/lezen | Gegevens uit de PowerBIDatasetsWorkspace-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/PowerBIDatasetsWorkspacePreview/lezen | Gegevens uit de PowerBIDatasetsWorkspacePreview-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ProtectionStatus/lezen | Gegevens uit de ProtectionStatus-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/aanvragen/lezen | Gegevens uit de tabel aanvragen lezen |
@@ -8748,6 +8811,7 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/SecurityNestedRecommendation/lezen | Gegevens uit de SecurityNestedRecommendation-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SecurityRecommendation/lezen | Gegevens uit de SecurityRecommendation-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SecurityRegulatoryCompliance/lezen | Gegevens uit de SecurityRegulatoryCompliance-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/SentinelHealth/lezen | Gegevens uit de SentinelHealth-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ServiceFabricOperationalEvent/lezen | Gegevens uit de ServiceFabricOperationalEvent-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ServiceFabricReliableActorEvent/lezen | Gegevens uit de ServiceFabricReliableActorEvent-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/ServiceFabricReliableServiceEvent/lezen | Gegevens uit de ServiceFabricReliableServiceEvent-tabel lezen |
@@ -8771,8 +8835,11 @@ Azure-service: [Azure monitor](../azure-monitor/index.yml)
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseBuiltinSqlPoolRequestsEnded/lezen | Gegevens uit de SynapseBuiltinSqlPoolRequestsEnded-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseGatewayApiRequests/lezen | Gegevens uit de SynapseGatewayApiRequests-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseGatewayEvents/lezen | Gegevens uit de SynapseGatewayEvents-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/SynapseIntegrationActivityRuns/lezen | Gegevens uit de SynapseIntegrationActivityRuns-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseIntegrationActivityRunsEnded/lezen | Gegevens uit de SynapseIntegrationActivityRunsEnded-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/SynapseIntegrationPipelineRuns/lezen | Gegevens uit de SynapseIntegrationPipelineRuns-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseIntegrationPipelineRunsEnded/lezen | Gegevens uit de SynapseIntegrationPipelineRunsEnded-tabel lezen |
+> | Micro soft. OperationalInsights/werk ruimten/query/SynapseIntegrationTriggerRuns/lezen | Gegevens uit de SynapseIntegrationTriggerRuns-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseIntegrationTriggerRunsEnded/lezen | Gegevens uit de SynapseIntegrationTriggerRunsEnded-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseRBACEvents/lezen | Gegevens uit de SynapseRBACEvents-tabel lezen |
 > | Micro soft. OperationalInsights/werk ruimten/query/SynapseRbacOperations/lezen | Gegevens uit de SynapseRbacOperations-tabel lezen |
@@ -9194,6 +9261,7 @@ Azure-service: [Cost Management en facturering](../cost-management-billing/index
 > | Micro soft. facturering/billingProperty/schrijven |  |
 > | Micro soft. facturering/afdelingen/lezen |  |
 > | Micro soft. facturering/facturen/downloaden/actie | Factuur downloaden met Download koppeling uit lijst |
+> | Micro soft. facturering/facturen/lezen |  |
 > | Micro soft. facturering/bewerkingen/lezen |  |
 
 ### <a name="microsoftblueprint"></a>Micro soft. blauw druk
@@ -9236,6 +9304,7 @@ Azure-service: kern geheugen
 > | Micro soft. capacity/registratie/actie | De registratie van een Tenant ongedaan maken |
 > | Micro soft. capacity/calculateexchange/actie | Hiermee worden de Exchange-hoeveelheid en de prijs van nieuwe aankoop berekend en worden er beleids fouten geretourneerd. |
 > | Micro soft. capacity/Exchange/actie | Alle reserve ringen uitwisselen |
+> | Micro soft. capacity/listSkus/actie | Een lijst met Sku's met filters en zonder beperkingen |
 > | Micro soft. capacity/appliedreservations/lezen | Alle reserve ringen lezen |
 > | Micro soft. capacity/catalogi/lezen | Catalogus van reserve ring lezen |
 > | Micro soft. capacity/commercialreservationorders/lezen | Reserverings orders ophalen die zijn gemaakt in een Tenant |
@@ -9260,6 +9329,9 @@ Azure-service: kern geheugen
 > | Micro soft. capacity/reservationorders/reserve ringen/archiveren/actie | Archiveren van een reserve ring die eerder is gearchiveerd |
 > | Micro soft. capacity/reservationorders/reserve ringen/revisies/lezen | Alle reserve ringen lezen |
 > | Micro soft. capacity/reservationorders/splitoperationresults/lezen | Een splits bewerking pollen |
+> | Micro soft. capacity/resourceProviders/locaties/serviceLimits/lezen | De huidige service limiet of het quotum van de opgegeven resource en locatie ophalen |
+> | Micro soft. capacity/resourceProviders/locaties/serviceLimits/schrijven | Een service limiet of-quotum maken voor de opgegeven resource en locatie |
+> | Micro soft. capacity/resourceProviders/locaties/serviceLimitsRequests/lezen | Aanvraag voor service limiet voor de opgegeven resource en locatie ophalen |
 > | Micro soft. capacity/tenants/registreren/actie | Een Tenant registreren |
 
 ### <a name="microsoftcommerce"></a>Microsoft.Commerce
@@ -9417,10 +9489,15 @@ Azure-service: [Azure Arc enabled Kubernetes](../azure-arc/kubernetes/overview.m
 > [!div class="mx-tableFixed"]
 > | Bewerking | Beschrijving |
 > | --- | --- |
+> | Micro soft. Kubernetes/REGI ster/actie | Hiermee wordt een abonnement geregistreerd bij de resource provider micro soft. Kubernetes |
+> | Micro soft. Kubernetes/registratie/actie | Un-Registers abonnement met resource provider micro soft. Kubernetes |
 > | Micro soft. Kubernetes/connectedClusters/lezen | ConnectedClusters lezen |
 > | Micro soft. Kubernetes/connectedClusters/schrijven | Schrijft connectedClusters |
 > | Micro soft. Kubernetes/connectedClusters/verwijderen | Hiermee worden connectedClusters verwijderd |
 > | Micro soft. Kubernetes/connectedClusters/listClusterUserCredentials/Action | Lijst met clusterUser-referenties |
+> | Micro soft. Kubernetes/locaties/operationstatuses/lezen | Statussen van Lees bewerkingen |
+> | Micro soft. Kubernetes/locaties/operationstatuses/schrijven | Status van schrijf bewerkingen |
+> | Micro soft. Kubernetes/Operations/lezen | Hiermee worden bewerkingen weer gegeven die beschikbaar zijn voor de resource provider micro soft. Kubernetes |
 > | Micro soft. Kubernetes/RegisteredSubscriptions/lezen | Geregistreerde abonnementen lezen |
 > | **DataAction** | **Beschrijving** |
 > | Micro soft. Kubernetes/connectedClusters/admissionregistration. K8S. io/initializerconfigurations/lezen | Initializerconfigurations lezen |

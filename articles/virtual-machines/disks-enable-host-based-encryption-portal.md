@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: fd74872bc1c46f3dddda1b6d15f14f26dc2187cb
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ba7d6d8deb2034f8b2a853cf74635687561c41ea
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499370"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573599"
 ---
 # <a name="use-the-azure-portal-to-enable-end-to-end-encryption-using-encryption-at-host"></a>De Azure Portal gebruiken om end-to-end-versleuteling in te scha kelen met behulp van versleuteling op de host
 
@@ -37,7 +37,7 @@ Wanneer u versleuteling inschakelt op de host, worden gegevens die op de VM-host
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft. com met uw abonnement-Id's om de functie in te scha kelen voor uw abonnementen.
+Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft.com met uw abonnement-id's om de functie in te scha kelen voor uw abonnementen.
 
 Meld u aan bij de Azure Portal met behulp [van de beschik bare koppeling](https://aka.ms/diskencryptionupdates).
 
@@ -60,7 +60,7 @@ U moet een nieuwe VM implementeren om versleuteling op de host in te scha kelen 
 
     :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-basic-blade.png" alt-text="Scherm opname van de Blade basis beginselen voor het maken van virtuele machines, de regio en de grootte van V M zijn gemarkeerd.":::
 
-1. Selecteer op **Disks** de Blade schijven **Ja** voor **versleuteling op host**.
+1. Selecteer op  de Blade schijven **Ja** voor **versleuteling op host**.
 1. Breng de resterende selecties naar wens aan.
 
     :::image type="content" source="media/virtual-machines-disks-encryption-at-host-portal/disks-encryption-at-host-disk-blade.png" alt-text="Scherm opname van de Blade schijven voor het maken van virtuele machines, versleuteling op host is gemarkeerd.":::

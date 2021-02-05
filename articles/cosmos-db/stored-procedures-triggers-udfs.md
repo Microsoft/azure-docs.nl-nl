@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 0bd572da9bba9048e2c8b9c4b426056620c4c265
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: ad9e6b99b396465c2cff95bd6ab340ef9d668085
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340699"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575954"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Opgeslagen procedures, triggers en door de gebruiker gedefinieerde functies
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Azure Cosmos DB biedt taalgeïntegreerde, transactionele uitvoering van Java script. Wanneer u de SQL-API gebruikt in Azure Cosmos DB, kunt u **opgeslagen procedures** , **Triggers** en door de **gebruiker gedefinieerde functies (Udf's)** schrijven in de Java script-taal. U kunt uw logica schrijven in JavaScript die wordt uitgevoerd binnen de database-engine. U kunt triggers, opgeslagen procedures en UDFs maken en uitvoeren met behulp van [Azure Portal](https://portal.azure.com/), de [geïntegreerde Java script language-query-API in azure Cosmos DB](javascript-query-api.md) of de client-SDK'S van de [Cosmos DB SQL API](how-to-use-stored-procedures-triggers-udfs.md).
+Azure Cosmos DB biedt taalgeïntegreerde, transactionele uitvoering van Java script. Wanneer u de SQL-API gebruikt in Azure Cosmos DB, kunt u **opgeslagen procedures**, **Triggers** en door de **gebruiker gedefinieerde functies (Udf's)** schrijven in de Java script-taal. U kunt uw logica schrijven in JavaScript die wordt uitgevoerd binnen de database-engine. U kunt triggers, opgeslagen procedures en UDFs maken en uitvoeren met behulp van [Azure Portal](https://portal.azure.com/), de [geïntegreerde Java script language-query-API in azure Cosmos DB](javascript-query-api.md) of de client-SDK'S van de [Cosmos DB SQL API](how-to-use-stored-procedures-triggers-udfs.md).
 
 ## <a name="benefits-of-using-server-side-programming"></a>Voor delen van het gebruik van programmering aan de server zijde
 
@@ -72,7 +72,7 @@ Opgeslagen procedures en triggers worden altijd uitgevoerd op de primaire replic
 
 ## <a name="bounded-execution"></a>Gebonden uitvoering
 
-Alle Azure Cosmos DB bewerkingen moeten binnen de opgegeven time-outduur volt ooien. Deze beperking is van toepassing op Java script-functies: opgeslagen procedures, triggers en door de gebruiker gedefinieerde functies. Als een bewerking niet binnen deze tijds limiet wordt voltooid, wordt de trans actie teruggedraaid.
+Alle Azure Cosmos DB bewerkingen moeten binnen de opgegeven time-outduur volt ooien. Opgeslagen procedures hebben een time-outlimiet van 5 seconden. Deze beperking is van toepassing op Java script-functies: opgeslagen procedures, triggers en door de gebruiker gedefinieerde functies. Als een bewerking niet binnen deze tijds limiet wordt voltooid, wordt de trans actie teruggedraaid.
 
 U kunt ervoor zorgen dat uw Java script-functies binnen de tijds limiet worden voltooid of een op voortzetting gebaseerd model implementeren voor het uitvoeren van batch/hervatten. Om de ontwikkeling van opgeslagen procedures en triggers voor het afhandelen van tijds limieten te vereenvoudigen, retour neren alle functies onder de Azure Cosmos-container (bijvoorbeeld maken, lezen, bijwerken en verwijderen van items) een Booleaanse waarde die aangeeft of de bewerking wordt voltooid. Als deze waarde False is, is het een indicatie dat de procedure de uitvoering ervan moet oplopen omdat het script meer tijd of ingerichte door Voer verbruikt dan de geconfigureerde waarde. Bewerkingen die in de wachtrij staan vóór de eerste niet-geaccepteerde opslag bewerking, worden gegarandeerd voltooid als de opgeslagen procedure in de tijd is voltooid en er geen aanvragen in de wachtrij worden geplaatst. Bewerkingen moeten dus een voor een in de wachtrij worden geplaatst met de call back-Conventie van Java script om de controle stroom van het script te beheren. Omdat scripts worden uitgevoerd in een omgeving aan de server zijde, zijn ze strikt onderhevig. Scripts die de uitvoerings grenzen herhaaldelijk overschrijden, kunnen worden gemarkeerd als inactief en kunnen niet worden uitgevoerd en ze moeten opnieuw worden gemaakt om de uitvoerings grenzen te controleren.
 

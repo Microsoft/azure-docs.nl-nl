@@ -15,12 +15,12 @@ ms.custom:
 - cog-serv-seo-aug-2020
 - contperf-fy21q2
 keywords: computer vision, computer vision-toepassingen, computer vision-service
-ms.openlocfilehash: 62d82388d975f36c422f7eb1e9feff8ce2725d54
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 69edbf558b4bd452c67478bac828bfde26be5a70
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033286"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575937"
 ---
 # <a name="what-is-computer-vision"></a>Wat is Computer Vision?
 
@@ -32,7 +32,7 @@ U kunt Computer Vision-toepassingen maken met behulp van een [clientbibliotheek-
 
 ## <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
-Computer Vision bevat mogelijkheden voor [Optical Character Recognition (OCR)](concept-recognizing-text.md). U kunt de nieuwe Read-API gebruiken om gedrukte en handgeschreven tekst uit afbeeldingen en documenten te extraheren. De API maakt gebruik van de nieuwste modellen en werkt met tekst op verschillende oppervlakken en achtergronden. Waaronder recepten, posters, visitekaartjes, brieven en whiteboards. De twee OCR-API's bieden ondersteuning voor het extraheren van gedrukte tekst in [diverse talen](./language-support.md). Volg een [snelstart](./quickstarts-sdk/client-library.md) om aan de slag te gaan.
+Computer Vision bevat mogelijkheden voor [Optical Character Recognition (OCR)](concept-recognizing-text.md). U kunt de nieuwe Read-API gebruiken om gedrukte en handgeschreven tekst uit afbeeldingen en documenten te extraheren. Het maakt gebruik van diep gaande modellen en werkt met tekst op verschillende Opper vlakken en achtergronden. Dit zijn onder andere bedrijfs documenten, facturen, bevestigingen, posters, visite kaartjes, brieven en White boards. De OCR-Api's bieden ondersteuning voor het extra heren van gedrukte tekst in [verschillende talen](./language-support.md). Volg een [snelstart](./quickstarts-sdk/client-library.md) om aan de slag te gaan.
 
 ## <a name="computer-vision-for-digital-asset-management"></a>Computer Vision voor beheer van digitale assets
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 8933dd6655223db092597aedf839fd800119864a
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 5ef06f2db487a3e6d897e26758da840f37c3ecaf
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684002"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575802"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -401,18 +401,15 @@ Hier volgt een overzicht van het scenario dat u in deze zelfstudie hebt uitgebou
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de resources die u in deze zelfstudie hebt gemaakt niet meer nodig hebt, kunt u ze verwijderen met de volgende stappen. 
+Nadat u deze zelf studie hebt voltooid, kunt u kiezen welke resources u wilt verwijderen, afhankelijk van wat u nu wilt doen.
 
-Met behulp van [Azure Cloud Shell](https://shell.azure.com) kunt u alle Azure-resources in een resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-delete). Hierdoor wordt verwijderd: de resourcegroep, de Azure Digital Twins-instantie, de IoT-hub en de hubapparaatregistratie, het gebeurtenisrasteronderwerp en de bijbehorende abonnementen, en de Azure Functions-app, inclusief beide functies en bijbehorende resources zoals opslag.
+[!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-> [!IMPORTANT]
-> Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle resources daarin worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert. 
+* **Als u wilt door gaan met het Azure Digital apparaatdubbels-exemplaar dat u in dit artikel hebt ingesteld, maar een aantal of alle modellen, apparaatdubbels en relaties hebt gewist**, kunt u de [AZ DT](/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true) cli-opdrachten in een [Azure Cloud shell](https://shell.azure.com) -venster gebruiken om de elementen te verwijderen die u wilt verwijderen.
 
-```azurecli-interactive
-az group delete --name <your-resource-group>
-```
+    Met deze optie worden geen van de andere Azure-resources verwijderd die in deze zelf studie zijn gemaakt (IoT Hub, Azure Functions app, enzovoort). U kunt deze afzonderlijk verwijderen met behulp van de benodigde [DT-opdrachten](/cli/azure/reference-index?view=azure-cli-latest&preserve-view=true) voor elk resource type.
 
-Verwijder ten slotte de voorbeeldprojectmap die u hebt gedownload naar uw lokale computer.
+Misschien wilt u ook de projectmap van uw lokale computer verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

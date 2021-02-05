@@ -116,24 +116,34 @@
           href: certificates-point-to-site.md
         - name: Azure AD-tenant configureren
           href: openvpn-azure-ad-tenant.md
-        - name: Clientprofiel
-          href: about-vpn-profile-download.md
-        - name: Wereldwijd en op hub gebaseerd profiel
-          href: global-hub-profile.md
-        - name: Azure VPN Client voor Windows 10 configureren
-          href: openvpn-azure-ad-client.md
-        - name: OpenVPN-clients configureren
-          href: howto-openvpn-clients.md?
-        - name: AlwaysOn-VPN-gebruikerstunnel configureren
-          href: howto-always-on-user-tunnel.md
-        - name: AlwaysOn-VPN-apparaattunnel configureren
-          href: howto-always-on-device-tunnel.md
-        - name: MFA (Multi-Factor Authentication) inschakelen
-          href: openvpn-azure-ad-mfa.md
-        - name: Azure AD-verificatie configureren
-          href: virtual-wan-point-to-site-azure-ad.md
-        - name: Azure AD-verificatie met meerde toepassingen instellen
-          href: openvpn-azure-ad-tenant-multi-app.md
+        - name: Client profielen
+          items:
+            - name: Globaal en op de hub gebaseerde profielen downloaden
+              href: global-hub-profile.md
+            - name: Profiel gegevens ophalen en weer geven
+              href: about-vpn-profile-download.md
+            - name: Profielen implementeren met intune
+              href: vpn-profile-intune.md
+        - name: VPN-clients
+          items:
+            - name: Windows 10
+              href: openvpn-azure-ad-client.md
+            - name: OpenVPN
+              href: howto-openvpn-clients.md?
+        - name: Always-On tunnels configureren
+          items:
+            - name: Gebruikers tunnel
+              href: howto-always-on-user-tunnel.md
+            - name: Tunnel van apparaat
+              href: howto-always-on-device-tunnel.md
+        - name: Verificatie
+          items:
+            - name: Multi-Factor Authentication (MFA)
+              href: openvpn-azure-ad-mfa.md
+            - name: Azure Active Directory-verificatie
+              href: virtual-wan-point-to-site-azure-ad.md
+            - name: Azure AD-verificatie met meerdere toepassingen
+              href: openvpn-azure-ad-tenant-multi-app.md
     - name: Routering
       items:
         - name: Virtuele hubroutering configureren

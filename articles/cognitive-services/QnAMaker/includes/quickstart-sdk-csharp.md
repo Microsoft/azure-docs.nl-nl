@@ -3,12 +3,12 @@ title: 'Quickstart: QnA Maker-clientbibliotheek voor .NET'
 description: In deze quickstart ziet u hoe u aan de slag gaat met de QnA Maker-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen.  Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen.
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: e75fdbe49910f9d6fe4fe25a7996fccf415fdf35
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: d853f4729d126590df711554f60efe6d9f2194cc
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947994"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99569459"
 ---
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -151,7 +151,7 @@ Voeg in de methode `Main` van de toepassing variabelen en code toe, zoals wordt 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
 > [!IMPORTANT]
-> Ga naar Azure Portal en zoek de sleutel en het eindpunt voor de QnA Maker-resource die u bij de vereisten hebt gemaakt. U vindt deze op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**.
+> Ga naar Azure Portal en zoek de sleutel en het eindpunt voor de QnA Maker-resource die u bij de vereisten hebt gemaakt. U vindt deze op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/azure-resources?tabs=v1#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
 
 - Maak omgevingsvariabelen met de namen QNA_MAKER_SUBSCRIPTION_KEY, QNA_MAKER_ENDPOINT, en QNA_MAKER_RUNTIME_ENDPOINT om deze waarden op te slaan.
 - De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. 
@@ -163,7 +163,7 @@ Voeg in de methode `Main` van de toepassing variabelen en code toe, zoals wordt 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/version-2)
 
 > [!IMPORTANT]
-> Ga naar Azure Portal en zoek de sleutel en het eindpunt voor de QnA Maker-resource die u bij de vereisten hebt gemaakt. U vindt deze op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**.
+> Ga naar Azure Portal en zoek de sleutel en het eindpunt voor de QnA Maker-resource die u bij de vereisten hebt gemaakt. U vindt deze op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/azure-resources?tabs=v2#keys-in-qna-maker-managed-preview)voor meer informatie over het ontwerpen van sleutels.
 
 - Maak omgevingsvariabelen met de namen QNA_MAKER_SUBSCRIPTION_KEY en QNA_MAKER_ENDPOINT om deze waarden op te slaan.
 - De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. 
@@ -172,6 +172,7 @@ Voeg in de methode `Main` van de toepassing variabelen en code toe, zoals wordt 
 [!code-csharp[Set the resource key and resource name](~/cognitive-services-quickstart-code/dotnet/QnAMaker/Preview-sdk-based-quickstart/Program.cs?name=Resourcevariables)]
 
 ---
+
 
 ## <a name="object-models"></a>Objectmodellen
 

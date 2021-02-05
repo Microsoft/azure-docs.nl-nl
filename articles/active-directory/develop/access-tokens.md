@@ -13,12 +13,12 @@ ms.date: 10/27/2020
 ms.author: hirsin
 ms.reviewer: mmacy, hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 4a798443560f62673ef8fcf0bce970a66071d011
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: e1dcd52660ff43a93c6a170912fea5a5847fe9d3
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232383"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575751"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Toegangs tokens van micro soft Identity platform
 
@@ -241,7 +241,7 @@ Met de bedrijfs logica van uw toepassing wordt deze stap gedicteerd. sommige alg
 * De verificatie status van de aanroepende client valideren met `appidacr` -deze mag niet 0 zijn als open bare clients uw API niet mogen aanroepen.
 * Controleer op een lijst met achterstallige `nonce` claims om te controleren of het token niet opnieuw is afgespeeld.
 * Controleer of het `tid` overeenkomt met een Tenant die uw API mag aanroepen.
-* Gebruik de `acr` claim om te controleren of de gebruiker MFA heeft uitgevoerd. Dit moet worden afgedwongen met behulp van [voorwaardelijke toegang](../conditional-access/overview.md).
+* Gebruik de `amr` claim om te controleren of de gebruiker MFA heeft uitgevoerd. Dit moet worden afgedwongen met behulp van [voorwaardelijke toegang](../conditional-access/overview.md).
 * Als u de `roles` of `groups` claims in het toegangs token hebt aangevraagd, controleert u of de gebruiker zich in de groep bevindt die deze actie mag uitvoeren.
   * Voor tokens die zijn opgehaald met behulp van de impliciete stroom moet u waarschijnlijk de [Microsoft Graph](https://developer.microsoft.com/graph/) voor deze gegevens opvragen, omdat het vaak te groot is voor het token.
 

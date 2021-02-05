@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/25/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e987f96402f4c922bdaca8ecf32348bc99c34199
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 01cd79afe3e718a32663544a76a2a43353bc082e
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98798396"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575378"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-desktop"></a>Azure-beveiligings basislijn voor Windows virtueel bureau blad
 
@@ -64,7 +64,7 @@ Gebruik peering op virtueel netwerk om twee of meer virtuele netwerken in azure 
 
 - [Overzicht van Azure VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md) 
 
-- [Peering op virtueel netwerk](/azure/virtual-network/virtual-network-peering-overvie)
+- [Peering op virtueel netwerk](/azure/virtual-network/virtual-network-peering-overview)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -96,7 +96,7 @@ Als u een wettelijke of andere vereiste hebt voor het gebruik van inbraak detect
 
 - [Azure Marketplace bevat mogelijkheden voor externe ID'S van derden](https://azuremarketplace.microsoft.com/marketplace?search=IDS) 
 
-- [Micro soft Defender ATP EDR-mogelijkheid](/windows/security/threat-protection/microsoft-defender-atp/overviewendpoint-detection-response)
+- [Micro soft Defender ATP EDR-mogelijkheid](/bs-cyrl-ba/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -310,7 +310,7 @@ Zorg ervoor dat de referenties (zoals wachtwoord, certificaat of smartcard) voor
 
 Gebruik Azure Active Directory (Azure AD), micro soft Defender Advanced Threat Protection (ATP) of Microsoft Intune voor het implementeren van een beveiligd en beheerd gebruikers werkstation voor beheer taken. Het beveiligde werk station kan centraal worden beheerd voor het afdwingen van beveiligde configuratie, waaronder sterke authenticatie, software-en hardware-basis lijnen, beperkte logische en netwerk toegang.
 
-- [Meer informatie over privileged Access workstations](/azure/active-directory/devices/concept-azure-managed-workstation) 
+- [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) 
 
 - [Een werkstation met uitgebreide toegang gebruiken](/azure/active-directory/devices/howto-azure-managed-workstation)
 
@@ -488,7 +488,7 @@ Het is raadzaam dat de klant een proces maakt om het kenmerk en de wijzigingen i
 
 ## <a name="logging-and-threat-detection"></a>Logboekregistratie en detectie van bedreigingen
 
-*Zie [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-protection) voor meer informatie.*
+*Zie [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection) voor meer informatie.*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 
@@ -684,7 +684,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 ## <a name="posture-and-vulnerability-management"></a>Beveiligingspostuur en beveiligingsproblemen beheren
 
-*Zie [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](/azure/security/benchmarks/security-controls-v2-vulnerability-management) voor meer informatie.*
+*Zie [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management) voor meer informatie.*
 
 ### <a name="pv-3-establish-secure-configurations-for-compute-resources"></a>PV-3: veilige configuraties voor reken bronnen instellen
 
@@ -765,9 +765,9 @@ Gebruik Azure Automation Updatebeheer of een oplossing van derden om ervoor te z
 
 Gebruik een patch beheer oplossing van derden voor software van derden of System Center Updates Publisher voor Configuration Manager.
 
-- [Updatebeheer configureren voor virtuele machines in azure](/azure/automation/automation-update-management) 
+- [Updatebeheer configureren voor virtuele machines in azure](/azure/automation/update-management/overview) 
 
-- [Updates en patches voor uw Azure-VM's beheren](/azure/automation/automation-tutorial-update-management)
+- [Updates en patches voor uw Azure-VM's beheren](/azure/automation/update-management/manage-updates-for-vm)
 
 - [Micro soft endpoint Configuration Manager configureren voor virtueel bureau blad van Windows](configure-automatic-updates.md)
 
@@ -928,9 +928,9 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 - [Cloud Adoption Framework - Azure data security and encryption best practices](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json) (Cloud Adoption Framework: best practices voor Azure-gegevensbeveiliging en -versleuteling)
 
-- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-benchmark-v2-asset-management) (Azure Security Benchmark: assetmanagement)
+- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-controls-v2-asset-management) (Azure Security Benchmark: assetmanagement)
 
-- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-benchmark-v2-data-protection) (Azure Security Benchmark: gegevensbeveiliging)
+- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-controls-v2-data-protection) (Azure Security Benchmark: gegevensbeveiliging)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -958,7 +958,7 @@ Zorg ervoor dat de segmentatiestrategie consistent wordt geïmplementeerd voor a
 
 **Richtlijnen**: Meet en beperk voortdurend de risico's die alle individuele assets en de omgeving die ze hosten, lopen. Ken hogere prioriteiten toe aan hoogwaardige assets en assets die zeer kwetsbaar zijn voor aanvallen, zoals gepubliceerde toepassingen, punten voor binnenkomend en uitgaand netwerkverkeer, gebruikers- en beheerderseindpunten enzovoort.
 
-- [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -999,7 +999,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 Raadpleeg de volgende bronnen voor meer informatie:
 - [Azure Security Best Practice 11: architectuur. Eén uniforme beveiligingsstrategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark: netwerkbeveiliging](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Azure Security Benchmark: netwerkbeveiliging](/azure/security/benchmarks/security-controls-v2-network-security)
 
 - [Overzicht van Azure-netwerkbeveiliging](../security/fundamentals/network-overview.md)
 
@@ -1027,9 +1027,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Azure Security Benchmark: Identity management](/azure/security/benchmarks/security-benchmark-v2-identity-management) (Azure Security Benchmark: identiteitsbeheer)
+- [Azure Security Benchmark: Identity management](/azure/automation/update-management/overview) (Azure Security Benchmark: identiteitsbeheer)
 
-- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-benchmark-v2-privileged-access) (Azure Security Benchmark: uitgebreide toegang)
+- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-controls-v2-privileged-access) (Azure Security Benchmark: uitgebreide toegang)
 
 - [Azure Security Best Practice 11: architectuur. Eén uniforme beveiligingsstrategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -1061,9 +1061,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Azure Security Benchmark: respons op incidenten](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Benchmark: respons op incidenten](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Azure Security Best Practice 4: proces. Processen voor respons op incidenten bijwerken voor de cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

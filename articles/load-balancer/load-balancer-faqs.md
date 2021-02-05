@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 04/22/2020
 ms.author: errobin
-ms.openlocfilehash: 38054d983b0a9f01f396b7379fec37de452d03b7
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 3752a36d22f879b95b02bd49436be78212fe56a2
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051869"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576038"
 ---
 # <a name="load-balancer-frequently-asked-questions"></a>Veelgestelde vragen over Load Balancer
 
@@ -52,9 +52,11 @@ Nee, dit is niet mogelijk.
 ## <a name="what-is-the-maximum-data-throughput-that-can-be-achieved-via-an-azure-load-balancer"></a>Wat is de maximale gegevens doorvoer die kan worden bereikt via een Azure Load Balancer?
 Omdat Azure LB een Pass-Through-netwerk load balancer is, worden doorvoer beperkingen bepaald door het type virtuele machine dat wordt gebruikt in de back-end-pool. Zie [netwerk doorvoer voor virtuele machines](../virtual-network/virtual-machine-network-throughput.md)voor meer informatie over de andere gerelateerde gegevens voor netwerk doorvoer.
 
-
 ## <a name="how-do-connections-to-azure-storage-in-the-same-region-work"></a>Hoe werken de verbindingen met Azure Storage in dezelfde regio?
 Het is niet nodig om verbinding te maken met opslag in dezelfde regio als de virtuele machine als u uitgaande verbindingen hebt via de bovenstaande scenario's. Als u dit niet wilt, gebruikt u netwerk beveiligings groepen (Nsg's) zoals hierboven is uitgelegd. Voor connectiviteit met opslag in andere regio's is uitgaande connectiviteit vereist. Houd er rekening mee dat wanneer u verbinding maakt met de opslag van een virtuele machine in dezelfde regio, het bron-IP-adres in de logboeken voor diagnostische gegevens van de opslag locatie van de interne provider is en niet het open bare IP-adres van uw virtuele machine. Als u de toegang tot uw opslag account wilt beperken tot Vm's in een of meer Virtual Network subnetten in dezelfde regio, gebruikt u [Virtual Network Service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) en niet uw open bare IP-adres bij het configureren van de firewall van uw opslag account. Zodra service-eind punten zijn geconfigureerd, ziet u uw Virtual Network privé-IP-adres in uw logboeken voor opslag diagnose en niet het adres van de interne provider.
+
+## <a name="does-azure-load-balancer-support-tlsssl-termination"></a>Ondersteunt Azure Load Balancer TLS/SSL-beëindiging?
+Nee, het Azure Load Balancer wordt momenteel niet beëindigd omdat het een Pass-Through netwerk load balancer is. Application Gateway kan een mogelijke oplossing zijn als uw toepassing dit vereist.
 
 ## <a name="what-are-best-practises-with-respect-to-outbound-connectivity"></a>Wat zijn de aanbevolen procedures voor uitgaande verbindingen?
 Standard Load Balancer en standaard open bare IP introduceert mogelijkheden en verschillende gedragingen voor uitgaande connectiviteit. Ze zijn niet hetzelfde als de basis-Sku's. Als u een uitgaande verbinding wilt gebruiken bij het werken met standaard-Sku's, moet u deze expliciet definiëren met een openbaar IP-adres of standaard open bare Load Balancer. Dit omvat het maken van uitgaande connectiviteit bij het gebruik van een interne Standard Load Balancer. U wordt aangeraden om altijd uitgaande regels te gebruiken op een standaard open bare Load Balancer. Dit betekent dat als er een interne Standard Load Balancer wordt gebruikt, u stappen moet nemen om uitgaande connectiviteit te maken voor de virtuele machines in de back-endadresgroep als uitgaande connectiviteit gewenst is. In de context van uitgaande connectiviteit, één zelfstandige virtuele machine, alle virtuele machines in een Beschikbaarheidsset, werken alle exemplaren in een VMSS als groep. Dit betekent dat als er één virtuele machine in een Beschikbaarheidsset is gekoppeld aan een standaard-SKU, alle VM-exemplaren binnen deze Beschikbaarheidsset nu dezelfde regels gedragen als voor de standaard-SKU, zelfs als een afzonderlijke instantie niet rechtstreeks is gekoppeld. Dit gedrag wordt ook waargenomen in het geval van een zelfstandige virtuele machine met meerdere netwerk interface kaarten die aan een load balancer zijn gekoppeld. Als één NIC als zelfstandige wordt toegevoegd, heeft deze hetzelfde gedrag. Lees dit volledige document aandachtig door om inzicht te krijgen in de algemene concepten, Lees [Standard Load Balancer](./load-balancer-overview.md) voor verschillen tussen sku's en controleer de [regels voor uitgaande verbindingen](load-balancer-outbound-connections.md#outboundrules).

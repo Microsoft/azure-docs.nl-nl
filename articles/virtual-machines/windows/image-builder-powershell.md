@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: f94147a09a6d9da75a0d04630822f1e6f738700a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 7e902798284240b55a3b08ea55ab6ee55add2431
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200937"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575835"
 ---
 # <a name="preview-create-a-windows-vm-with-azure-image-builder-using-powershell"></a>Voor beeld: een Windows-VM met Azure Image Builder maken met behulp van Power shell
 
@@ -231,13 +231,25 @@ $disSharedImg = New-AzImageBuilderDistributorObject @disObjParams
 Maak een object voor het aanpassen van de Azure Image Builder.
 
 ```azurepowershell-interactive
-$ImgCustomParams = @{
+$ImgCustomParams01 = @{
   PowerShellCustomizer = $true
   CustomizerName = 'settingUpMgmtAgtPath'
   RunElevated = $false
-  Inline = @("mkdir c:\\buildActions", "echo Azure-Image-Builder-Was-Here  > c:\\buildActions\\buildActionsOutput.txt")
+  Inline = @("mkdir c:\\buildActions", "mkdir c:\\buildArtifacts", "echo Azure-Image-Builder-Was-Here  > c:\\buildActions\\buildActionsOutput.txt")
 }
-$Customizer = New-AzImageBuilderCustomizerObject @ImgCustomParams
+$Customizer01 = New-AzImageBuilderCustomizerObject @ImgCustomParams01
+```
+
+Maak een tweede object voor het aanpassen van de Azure Image Builder.
+
+```azurepowershell-interactive
+$ImgCustomParams02 = @{
+  FileCustomizer = $true
+  CustomizerName = 'downloadBuildArtifacts'
+  Destination = 'c:\\buildArtifacts\\index.html'
+  SourceUri = 'https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/exampleArtifacts/buildArtifacts/index.html'
+}
+$Customizer02 = New-AzImageBuilderCustomizerObject @ImgCustomParams02
 ```
 
 Een Azure Image Builder-sjabloon maken.
@@ -248,7 +260,7 @@ $ImgTemplateParams = @{
   ResourceGroupName = $imageResourceGroup
   Source = $srcPlatform
   Distribute = $disSharedImg
-  Customize = $Customizer
+  Customize = $Customizer01, $Customizer02
   Location = $location
   UserAssignedIdentityId = $identityNameResourceId
 }
@@ -306,7 +318,7 @@ $ArtifactId = (Get-AzImageBuilderRunOutput -ImageTemplateName $imageTemplateName
 New-AzVM -ResourceGroupName $imageResourceGroup -Image $ArtifactId -Name myWinVM01 -Credential $Cred
 ```
 
-## <a name="verify-the-customization"></a>De aanpassing controleren
+## <a name="verify-the-customizations"></a>De aanpassingen controleren
 
 Maak een Extern bureaublad verbinding met de virtuele machine met behulp van de gebruikers naam en het wacht woord die u hebt ingesteld tijdens het maken van de virtuele machine. Open Power shell in de VM en voer uit `Get-Content` zoals weer gegeven in het volgende voor beeld:
 
@@ -319,6 +331,23 @@ U ziet uitvoer op basis van de inhoud van het bestand dat tijdens het aanpassing
 ```Output
 Azure-Image-Builder-Was-Here
 ```
+
+Controleer vanuit dezelfde Power shell-sessie of de tweede aanpassing is geslaagd door te controleren of het bestand aanwezig is `c:\buildArtifacts\index.html` , zoals wordt weer gegeven in het volgende voor beeld:
+
+```azurepowershell-interactive
+Get-ChildItem c:\buildArtifacts\
+```
+
+Het resultaat moet een mapweergave zijn waarin het bestand wordt weer gegeven dat tijdens het aanpassings proces van de installatie kopie is gedownload.
+
+```Output
+    Directory: C:\buildArtifacts
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          29/01/2021    10:04            276 index.html
+```
+
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

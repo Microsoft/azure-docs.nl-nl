@@ -4,21 +4,23 @@ description: In dit artikel wordt beschreven hoe u Server beheerders beheert voo
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 2/4/2021
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 9fdd6b6a195d0c6d4c4bf0489a037cb138a23a42
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 62acb526a247362b17c4dfd4e26c52760deecd71
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351721"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573481"
 ---
 # <a name="manage-server-administrators"></a>Serverbeheerders beheren
 
 Server beheerders moeten een geldige gebruiker, Service-Principal of beveiligings groep in de Azure Active Directory (Azure AD) zijn voor de Tenant waarin de server zich bevindt. U kunt **Analysis Services beheerders** voor uw server gebruiken in azure Portal, Server eigenschappen in SSMS, Power shell of rest API voor het beheren van Server beheerders. 
 
 Gebruik wanneer u een **beveiligings groep** toevoegt `obj:groupid@tenantid` . Service-principals worden niet ondersteund in beveiligings groepen die zijn toegevoegd aan de rol Server beheerder.
+
+Zie [een Service-Principal toevoegen aan de rol Server beheerder](analysis-services-addservprinc-admins.md)voor meer informatie over het toevoegen van een service-principal aan de serverrol server beheer.
 
 Als Server firewall is ingeschakeld, moeten de IP-adressen van de server beheerder-client computer worden opgenomen in een firewall regel. Zie [Server firewall configureren](analysis-services-qs-firewall.md)voor meer informatie.
 

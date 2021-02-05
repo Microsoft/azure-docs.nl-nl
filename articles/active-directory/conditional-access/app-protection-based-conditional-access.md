@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol, rosssmi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 672a3f95efad24c07379fafe8b22088dc731c2df
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 720cd46ac37a82f56aa37c0041ca8d92db177071
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881158"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575768"
 ---
 # <a name="how-to-require-app-protection-policy-and-an-approved-client-app-for-cloud-app-access-with-conditional-access"></a>Procedure: beveiligings beleid voor apps en een goedgekeurde client-app vereisen voor toegang tot Cloud-apps met voorwaardelijke toegang
 
@@ -34,7 +34,7 @@ In de voorwaardelijke toegang zijn deze client-apps bekend om te worden beveilig
 > Niet alle toepassingen worden ondersteund als goedgekeurde toepassingen of bieden ondersteuning voor het beveiligings beleid voor toepassingen. Zie [vereisten voor app-beveiligings beleid](concept-conditional-access-grant.md#require-app-protection-policy)voor een lijst met in aanmerking komende client-apps.
 
 > [!NOTE]
-> Een van de geselecteerde besturings elementen vereisen onder besturings elementen voor Grant is een OR-component. Dit wordt in het beleid gebruikt om gebruikers in staat te stellen apps te gebruiken die ondersteuning bieden voor het **beveiligings beleid voor apps vereisen** of het **verplicht stellen van goedgekeurde client-app** -granting-besturings elementen. **Vereisen dat het beveiligings beleid voor apps** wordt afgedwongen als een app in beide beleids regels wordt ondersteund. Zie [app-beveiligings beleid vereisten](concept-conditional-access-grant.md#require-app-protection-policy)voor meer informatie over de apps die ondersteuning bieden voor de machtiging beheer **beleid voor app-beveiliging vereisen** .
+> Een van de geselecteerde besturings elementen vereisen onder besturings elementen voor Grant is een OR-component. Dit wordt in het beleid gebruikt om gebruikers in staat te stellen apps te gebruiken die ondersteuning bieden voor het **beveiligings beleid voor apps vereisen** of het **verplicht stellen van goedgekeurde client-app** -granting-besturings elementen. **Vereisen dat het beveiligings beleid voor apps** wordt afgedwongen wanneer de app die machtigings beheer ondersteunt. Zie [app-beveiligings beleid vereisten](concept-conditional-access-grant.md#require-app-protection-policy)voor meer informatie over de apps die ondersteuning bieden voor de machtiging beheer **beleid voor app-beveiliging vereisen** .
 
 ## <a name="scenario-1-microsoft-365-apps-require-approved-apps-with-app-protection-policies"></a>Scenario 1: voor Microsoft 365-apps zijn goedgekeurde apps met app-beveiligings beleid vereist
 

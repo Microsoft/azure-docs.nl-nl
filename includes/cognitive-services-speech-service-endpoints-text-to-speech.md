@@ -4,23 +4,23 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2019
 ms.author: wolfma
-ms.openlocfilehash: 650ce0cc9586118b30593767c6a3ddb92f494ac3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: df6f7311613057c445ae714b8b11240d0d5be14b
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95972642"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99569545"
 ---
 ### <a name="standard-and-neural-voices"></a>Standaard en Neural stemmen
 
 Gebruik deze tabel om de beschik baarheid van de standaard-en Neural stemmen per regio/eind punt te bepalen:
 
-| Regio | Eindpunt | Standaard stemmen | Neural stemmen |
+| Region | Eindpunt | Standaard stemmen | Neural stemmen |
 |--------|----------|-----------------|---------------|
 | Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Brazil South | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Nee |
+| Brazilië - zuid | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Nee |
 | Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Central US | `https://centralus.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Nee |
+| VS - centraal | `https://centralus.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Nee |
 | Azië - oost | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Nee |
 | VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
 | VS - oost 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Nee |
@@ -45,12 +45,12 @@ Gebruik deze tabel om de beschik baarheid van de standaard-en Neural stemmen per
 
 Als u een aangepast spraak lettertype hebt gemaakt, gebruikt u het eind punt dat u hebt gemaakt. U kunt ook de onderstaande eind punten gebruiken `{deploymentId}` om de implementatie-id voor uw spraak model te vervangen.
 
-| Regio | Eindpunt |
+| Region | Eindpunt |
 |--------|----------|
 | Australië - oost | `https://australiaeast.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | Brazilië - zuid | `https://brazilsouth.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | Canada - midden | `https://canadacentral.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
-| Central US | `https://centralus.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
+| VS - centraal | `https://centralus.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | Azië - oost | `https://eastasia.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | VS - oost | `https://eastus.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | VS - oost 2 | `https://eastus2.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
@@ -67,3 +67,14 @@ Als u een aangepast spraak lettertype hebt gemaakt, gebruikt u het eind punt dat
 | Europa -west | `https://westeurope.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | VS - west | `https://westus.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
 | VS - west 2 | `https://westus2.voice.speech.microsoft.com/cognitiveservices/v1?deploymentId={deploymentId}` |
+
+### <a name="custom-neural-voice"></a>Aangepaste Neural-stem
+
+De volgende tabel bevat informatie over regionale ondersteuning voor aangepaste Neural-spraak functies.
+
+| Functie | Ondersteunde regio’s |
+|---|---|
+| Host van het spraak model | VS-Oost, VS-West 2, Zuid-Centraal VS, Zuidoost-Azië, UK-zuid, Europa-west, Australië-oost |
+| Realtime tekens | VS-Oost, VS-West 2, Zuid-Centraal VS, Zuidoost-Azië, UK-zuid, Europa-west, Australië-oost |
+| Lange audio tekens | VS-Oost, Europa-west, UK-zuid, Zuidoost-Azië, India, Midden |
+| Aangepaste Neural-training | VS-Oost, UK-zuid |

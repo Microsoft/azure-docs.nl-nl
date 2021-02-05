@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: alkohli
-ms.openlocfilehash: f99a3110880626b3a809e6bab5edc02398094547
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 887aaf32592c74a5884916bc7ad63d79544fb554
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426213"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575852"
 ---
 # <a name="azure-stack-edge-blob-storage-requirements"></a>Vereisten voor Blob-opslag voor Azure Stack Edge
 

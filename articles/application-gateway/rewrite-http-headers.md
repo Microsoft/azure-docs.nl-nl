@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.author: absha
-ms.openlocfilehash: 3e8eb79d519e2f7bfbf006b852f0c5294976b727
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 7c5b4f0d5d4b153684683963c56b7506e76d963e
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397146"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575650"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>HTTP-headers herschrijven met Application Gateway
 
@@ -48,15 +48,15 @@ U kunt een voor waarde gebruiken om te evalueren of een opgegeven variabele aanw
 
 U gebruikt herschrijf acties om de aanvraag-en antwoord headers op te geven die u wilt herschrijven en de nieuwe waarde voor de kopteksten. U kunt een nieuwe header maken, de waarde van een bestaande koptekst wijzigen of een bestaande header verwijderen. De waarde van een nieuwe koptekst of een bestaande koptekst kan worden ingesteld op deze typen waarden:
 
-- SMS.
-- Aanvraag header. Als u een aanvraag header wilt opgeven, moet u de syntaxis {http_req_ *headernaam* } gebruiken.
-- Antwoordheader. Als u een antwoord header wilt opgeven, moet u de syntaxis {http_resp_ *headernaam* } gebruiken.
-- Server variabele. Als u een server variabele wilt opgeven, moet u de syntaxis {var_ *serverVariable* } gebruiken.
+- Tekst.
+- Aanvraag header. Als u een aanvraag header wilt opgeven, moet u de syntaxis {http_req_ *headernaam*} gebruiken.
+- Antwoordheader. Als u een antwoord header wilt opgeven, moet u de syntaxis {http_resp_ *headernaam*} gebruiken.
+- Server variabele. Als u een server variabele wilt opgeven, moet u de syntaxis {var_ *serverVariable*} gebruiken.
 - Een combi natie van tekst, een aanvraag header, een reactie header en een server variabele.
 
 ## <a name="server-variables"></a>Server variabelen
 
-Application Gateway gebruikt Server variabelen om nuttige informatie over de server, de verbinding met de client en de huidige aanvraag op de verbinding op te slaan. Voor beelden van opgeslagen informatie zijn het IP-adres van de client en het type webbrowser. Server variabelen worden dynamisch gewijzigd, bijvoorbeeld wanneer een nieuwe pagina wordt geladen of wanneer een formulier wordt gepost. U kunt deze variabelen gebruiken om herschrijf voorwaarden te evalueren en kopteksten opnieuw te schrijven. Als u de waarde van Server variabelen wilt gebruiken om headers opnieuw te schrijven, moet u deze variabelen opgeven in de syntaxis {var_ *serverVariable* }
+Application Gateway gebruikt Server variabelen om nuttige informatie over de server, de verbinding met de client en de huidige aanvraag op de verbinding op te slaan. Voor beelden van opgeslagen informatie zijn het IP-adres van de client en het type webbrowser. Server variabelen worden dynamisch gewijzigd, bijvoorbeeld wanneer een nieuwe pagina wordt geladen of wanneer een formulier wordt gepost. U kunt deze variabelen gebruiken om herschrijf voorwaarden te evalueren en kopteksten opnieuw te schrijven. Als u de waarde van Server variabelen wilt gebruiken om headers opnieuw te schrijven, moet u deze variabelen opgeven in de syntaxis {var_ *serverVariable*}
 
 Application Gateway ondersteunt deze server variabelen:
 
@@ -69,21 +69,21 @@ Application Gateway ondersteunt deze server variabelen:
 | client_port                | De client poort.                                                  |
 | client_tcp_rtt             | Informatie over de TCP-verbinding van de client. Beschikbaar op systemen die ondersteuning bieden voor de TCP_INFO socket optie. |
 | client_user                | Wanneer HTTP-verificatie wordt gebruikt, wordt de gebruikers naam opgegeven voor verificatie. |
-| host                       | In deze volg orde van prioriteit: de hostnaam van de aanvraag regel, de hostnaam uit het veld met de aanvraag header van de host of de server naam die overeenkomt met een aanvraag. Voor beeld: in de aanvraag *http://contoso.com:8080/article.aspx?id=123&title=fabrikam* is de waarde host *contoso.com* |
+| host                       | In deze volg orde van prioriteit: de hostnaam van de aanvraag regel, de hostnaam uit het veld met de aanvraag header van de host of de server naam die overeenkomt met een aanvraag. Voor beeld: in de aanvraag `http://contoso.com:8080/article.aspx?id=123&title=fabrikam` is de waarde host *contoso.com* |
 | cookie_ *naam*              | De *naam* cookie.                                            |
 | http_method                | De methode die wordt gebruikt om de URL-aanvraag te maken. Bijvoorbeeld GET of POST. |
 | http_status                | De sessie status. Bijvoorbeeld 200, 400 of 403.                       |
 | http_version               | Het aanvraag protocol. Meestal HTTP/1.0, HTTP/1.1 of HTTP/2.0. |
-| query_string               | De lijst met variabele/waarde-paren die volgt op '? ' in de aangevraagde URL. Voor beeld: in de aanvraag is *http://contoso.com:8080/article.aspx?id=123&title=fabrikam* QUERY_STRING waarde *id = 123&titel = fabrikam* |
+| query_string               | De lijst met variabele/waarde-paren die volgt op '? ' in de aangevraagde URL. Voor beeld: in de aanvraag is `http://contoso.com:8080/article.aspx?id=123&title=fabrikam` QUERY_STRING waarde *id = 123&titel = fabrikam* |
 | received_bytes             | De lengte van de aanvraag (inclusief de aanvraag regel, kop en hoofd tekst van de aanvraag). |
 | request_query              | De argumenten in de aanvraag regel.                                |
 | request_scheme             | Het aanvraag schema: http of https.                            |
-| request_uri                | De volledige oorspronkelijke aanvraag-URI (met argumenten). Voor beeld: in de aanvraag is *http://contoso.com:8080/article.aspx?id=123&title=fabrikam* REQUEST_URI waarde */article.aspx? id = 123&titel = fabrikam*   |
+| request_uri                | De volledige oorspronkelijke aanvraag-URI (met argumenten). Voor beeld: in de aanvraag is `http://contoso.com:8080/article.aspx?id=123&title=fabrikam` REQUEST_URI waarde */article.aspx? id = 123&titel = fabrikam*   |
 | sent_bytes                 | Het aantal bytes dat naar een client is verzonden.                             |
 | server_port                | De poort van de server die een aanvraag heeft geaccepteerd.                 |
 | ssl_connection_protocol    | Het Protocol van een tot stand gebrachte TLS-verbinding.        |
 | ssl_enabled                | Aan als de verbinding in de TLS-modus werkt. Zoniet, een lege teken reeks. |
-| uri_path                   | Identificeert de specifieke resource in de host waartoe de webclient toegang wil. Dit is het deel van de aanvraag-URI zonder de argumenten. Voor beeld: in de aanvraag is *http://contoso.com:8080/article.aspx?id=123&title=fabrikam* uri_path waarde */article.aspx*  |
+| uri_path                   | Identificeert de specifieke resource in de host waartoe de webclient toegang wil. Dit is het deel van de aanvraag-URI zonder de argumenten. Voor beeld: in de aanvraag is `http://contoso.com:8080/article.aspx?id=123&title=fabrikam` uri_path waarde */article.aspx*  |
 
 ## <a name="rewrite-configuration"></a>Configuratie opnieuw schrijven
 
@@ -91,19 +91,19 @@ Als u het opnieuw schrijven van HTTP-headers wilt configureren, moet u deze stap
 
 1. De objecten maken die vereist zijn voor het herschrijven van HTTP-headers:
 
-   - **Actie voor herschrijven** : Hiermee geeft u de velden aanvraag en aanvraag header op die u wilt herschrijven en de nieuwe waarde voor de kopteksten. U kunt een of meer herschrijf voorwaarden koppelen met een herschrijf actie.
+   - **Actie voor herschrijven**: Hiermee geeft u de velden aanvraag en aanvraag header op die u wilt herschrijven en de nieuwe waarde voor de kopteksten. U kunt een of meer herschrijf voorwaarden koppelen met een herschrijf actie.
 
-   - **Voor waarde voor herschrijven** : een optionele configuratie. Bij herschrijf voorwaarden wordt de inhoud van de HTTP (S)-aanvragen en-antwoorden geëvalueerd. De actie herschrijven vindt plaats als de HTTP (S)-aanvraag of het antwoord overeenkomt met de voor waarde voor herschrijven.
+   - **Voor waarde voor herschrijven**: een optionele configuratie. Bij herschrijf voorwaarden wordt de inhoud van de HTTP (S)-aanvragen en-antwoorden geëvalueerd. De actie herschrijven vindt plaats als de HTTP (S)-aanvraag of het antwoord overeenkomt met de voor waarde voor herschrijven.
 
      Als u meer dan één voor waarde aan een actie koppelt, treedt de actie alleen op wanneer aan alle voor waarden wordt voldaan. Met andere woorden, de bewerking is een logische en-bewerking.
 
-   - **Regel voor herschrijven** : bevat meerdere combi Naties van actie voor opnieuw schrijven/voor waarden herschrijven.
+   - **Regel voor herschrijven**: bevat meerdere combi Naties van actie voor opnieuw schrijven/voor waarden herschrijven.
 
-   - **Regel volgorde** : helpt bij het bepalen van de volg orde waarin de regels voor herschrijven worden uitgevoerd. Deze configuratie is handig wanneer u meerdere regels voor herschrijven hebt opgegeven in een herschrijfset. Een regel voor herschrijven met een lagere regel reeks waarde wordt eerst uitgevoerd. Als u dezelfde regel reeks aan twee herschrijf regels toewijst, is de volg orde van uitvoering niet-deterministisch.
+   - **Regel volgorde**: helpt bij het bepalen van de volg orde waarin de regels voor herschrijven worden uitgevoerd. Deze configuratie is handig wanneer u meerdere regels voor herschrijven hebt opgegeven in een herschrijfset. Een regel voor herschrijven met een lagere regel reeks waarde wordt eerst uitgevoerd. Als u dezelfde regel reeks aan twee herschrijf regels toewijst, is de volg orde van uitvoering niet-deterministisch.
 
-   - **Set opnieuw schrijven** : bevat meerdere herschrijf regels die worden gekoppeld aan een regel voor het door sturen van aanvragen.
+   - **Set opnieuw schrijven**: bevat meerdere herschrijf regels die worden gekoppeld aan een regel voor het door sturen van aanvragen.
 
-2. Koppel de herschrijfset ( *rewriteRuleSet* ) aan een routerings regel. De herschrijf configuratie wordt gekoppeld aan de bron-listener via de routerings regel. Wanneer u een basis regel voor door sturen gebruikt, wordt de configuratie voor het opnieuw schrijven van kopteksten gekoppeld aan een bronhost en is het herschrijven van de globale header. Wanneer u een op pad gebaseerde routerings regel gebruikt, wordt de configuratie voor het herschrijven van kopteksten gedefinieerd op de URL-pad toewijzing. In dat geval geldt dit alleen voor het specifieke pad van een site.
+2. Koppel de herschrijfset (*rewriteRuleSet*) aan een routerings regel. De herschrijf configuratie wordt gekoppeld aan de bron-listener via de routerings regel. Wanneer u een basis regel voor door sturen gebruikt, wordt de configuratie voor het opnieuw schrijven van kopteksten gekoppeld aan een bronhost en is het herschrijven van de globale header. Wanneer u een op pad gebaseerde routerings regel gebruikt, wordt de configuratie voor het herschrijven van kopteksten gedefinieerd op de URL-pad toewijzing. In dat geval geldt dit alleen voor het specifieke pad van een site.
    > [!NOTE]
    > URL herschrijven wijzigen de headers; de URL voor het pad wordt niet gewijzigd.
 

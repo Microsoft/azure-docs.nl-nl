@@ -7,19 +7,16 @@ author: ChristopherHouser
 ms.author: chrishou
 ms.reviewer: estfan, valthom
 ms.topic: article
-ms.date: 03/06/2019
+ms.date: 02/03/2021
 tags: connectors
-ms.openlocfilehash: ae99e3fa287cc9012e317142cc1e6aef36ce90d6
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7873076618125241d9bdf4f225c194572553d060
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094996"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573429"
 ---
-# <a name="integrate-3270-screen-driven-apps-on-ibm-mainframes-with-azure-by-using-azure-logic-apps-and-ibm-3270-connector"></a>Door 3270-schermen gestuurde apps op IBM-mainframes integreren met Azure met behulp van Azure Logic Apps en de IBM 3270-connector
-
-> [!NOTE]
-> Deze connector bevindt zich in de [*open bare preview*](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
+# <a name="integrate-3270-screen-driven-apps-on-ibm-mainframes-with-azure-by-using-azure-logic-apps-and-ibm-3270-connector"></a>Op het scherm gestuurde apps op IBM-mainframes 3270 integreren met Azure met behulp van Azure Logic Apps en IBM 3270-connector
 
 Met Azure Logic Apps en de IBM 3270-connector kunt u IBM mainframe-apps openen en uitvoeren waar u doorgaans komt via emulatorschermen van 3270. Op die manier kunt u uw IBM mainframe-apps integreren met Azure-, Microsoft- en andere apps, services en systemen door geautomatiseerde werkstromen te maken met Azure Logic Apps. De connector communiceert met IBM-mainframes met behulp van het TN3270-protocol en is beschikbaar in alle Azure Logic Apps-regio's, met uitzondering van Azure Government en Azure China 21Vianet. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md)
 
@@ -55,13 +52,13 @@ Nadat u het bestand met meta gegevens hebt gegenereerd vanuit het ontwerp hulppr
   Als u een ISE gebruikt, selecteert u die ISE als locatie van de logische app.
 
 * [Down load en installeer het hulp programma 3270 design](https://aka.ms/3270-design-tool-download).
-De enige vereiste is [Microsoft .NET Framework 4.6.1](https://aka.ms/net-framework-download).
+De enige vereiste is [Microsoft .NET Framework 4,8](https://aka.ms/net-framework-download).
 
   Dit hulp programma helpt u bij het vastleggen van de schermen, navigatie paden,-methoden en-para meters voor de taken in uw app die u toevoegt en uitvoert als 3270-connector acties. Het hulp programma genereert een HIDX-bestand (Host Integration Designer XML) met de benodigde meta gegevens voor de connector die moet worden gebruikt voor het aansturen van uw mainframe-app.
   
   Nadat u dit hulp programma hebt gedownload en geïnstalleerd, voert u de volgende stappen uit om verbinding te maken met uw host:
 
-  1. Open het hulp programma 3270 design. Selecteer in het menu **sessie** de optie **sessies van hosts** .
+  1. Open het hulp programma 3270 design. Selecteer in het menu **sessie** de optie **sessies van hosts**.
   
   1. Geef de gegevens van de TN3270-host op.
 
@@ -75,22 +72,21 @@ De enige vereiste is [Microsoft .NET Framework 4.6.1](https://aka.ms/net-framewo
 
 ## <a name="create-metadata-overview"></a>Overzicht van meta gegevens maken
 
-In een 3270 scherm-app zijn de schermen en gegevens velden uniek voor uw scenario's, zodat de 3270-connector deze informatie nodig heeft over uw app, die u als meta gegevens kunt opgeven. Deze meta gegevens bevatten informatie over het identificeren en herkennen van uw logische app. hierin wordt beschreven hoe u kunt navigeren tussen schermen, waar u gegevens kunt invoeren en waar u resultaten kunt verwachten. Als u deze meta gegevens wilt opgeven en genereren, gebruikt u het hulp programma 3270 design, dat u doorloopt in deze specifieke *modi* , of in fasen, zoals verderop in meer details wordt beschreven:
+In een 3270 scherm-app zijn de schermen en gegevens velden uniek voor uw scenario's, zodat de 3270-connector deze informatie nodig heeft over uw app, die u als meta gegevens kunt opgeven. Deze meta gegevens bevatten informatie over het identificeren en herkennen van uw logische app. hierin wordt beschreven hoe u kunt navigeren tussen schermen, waar u gegevens kunt invoeren en waar u resultaten kunt verwachten. Als u deze meta gegevens wilt opgeven en genereren, gebruikt u het hulp programma 3270 design, dat u doorloopt in deze specifieke *modi*, of in fasen, zoals verderop in meer details wordt beschreven:
 
-* **Vastleggen** : in deze modus legt u de schermen vast die nodig zijn voor het volt ooien van een specifieke taak met uw mainframe-app, zoals het ophalen van een bank saldo.
+* **Vastleggen**: in deze modus legt u de schermen vast die nodig zijn voor het volt ooien van een specifieke taak met uw mainframe-app, zoals het ophalen van een bank saldo.
 
-* **Navigatie** : in deze modus geeft u het plan of pad op voor het navigeren door de schermen van uw mainframe-app voor de specifieke taak.
+* **Navigatie**: in deze modus geeft u het plan of pad op voor het navigeren door de schermen van uw mainframe-app voor de specifieke taak.
 
-* **Methoden** : in deze modus definieert u de methode, bijvoorbeeld, `GetBalance` die het pad naar het scherm navigatie beschrijft. U kiest ook de velden op elk scherm die de invoer-en uitvoer parameters van de methode worden.
+* **Methoden**: in deze modus definieert u de methode, bijvoorbeeld, `GetBalance` die het pad naar het scherm navigatie beschrijft. U selecteert ook de velden op elk scherm die de invoer-en uitvoer parameters van de methode worden.
 
 ### <a name="unsupported-elements"></a>Niet-ondersteunde elementen
 
 Het ontwerp hulpprogramma biedt geen ondersteuning voor deze elementen:
 
 * Gedeeltelijke IBM Basic mapping-ondersteuning (BMS): als u een BMS-kaart importeert, negeert het ontwerp hulpprogramma gedeeltelijke scherm definities.
-* In/uit-para meters: u kunt in/uit-para meters niet definiëren.
-* Menu verwerking: wordt niet ondersteund tijdens de preview-versie
-* Matrix verwerking: wordt niet ondersteund tijdens de preview-versie
+
+* Menu verwerking
 
 <a name="capture-screens"></a>
 
@@ -98,11 +94,11 @@ Het ontwerp hulpprogramma biedt geen ondersteuning voor deze elementen:
 
 In deze modus markeert u een item op elk 3270 scherm waarmee het scherm uniek wordt geïdentificeerd. U kunt bijvoorbeeld een regel tekst of een complexere set voor waarden opgeven, zoals specifieke tekst en een niet-leeg veld. U kunt deze schermen opnemen via een live-verbinding met de hostserver, of deze gegevens importeren uit een BMS-kaart (IBM Basic mapping support). De live-verbinding maakt gebruik van een TN3270-emulator om verbinding te maken met de host. Elke connector actie moet worden toegewezen aan één taak die begint met het maken van verbinding met uw sessie en eindigt met het verbreken van de verbinding met uw sessie.
 
-1. Als u dat nog niet hebt gedaan, opent u het hulp programma 3270 design. Kies **vastleggen** in de werk balk zodat u de modus vastleggen opgeeft.
+1. Als u dat nog niet hebt gedaan, opent u het hulp programma 3270 design. Selecteer **vastleggen** in de werk balk zodat u de modus vastleggen opgeeft.
 
-1. Als u wilt beginnen met opnemen, drukt u op de toets F5 of selecteert u **opname starten** in het menu **opnemen** . 
+1. Selecteer in het menu **sessie** de optie **verbinding maken**.
 
-1. Selecteer in het menu **sessie** de optie **verbinding maken** .
+1. Als u de opname wilt starten, selecteert u in het menu **opnemen** de optie **opname starten**. (Toetsen bord: Ctrl + E)
 
 1. In het deel venster **vastleggen** , vanaf het eerste scherm in uw app, moet u de app door lopen voor de specifieke taak die u wilt opnemen.
 
@@ -110,13 +106,13 @@ In deze modus markeert u een item op elk 3270 scherm waarmee het scherm uniek wo
 
 1. Selecteer de **verbinding verbreken** in het menu van de **sessie** .
 
-1. Als u de opname wilt stoppen, drukt u op SHIFT + F5 of selecteert u in het menu **opnemen** de optie **opname stoppen** .
+1. Als u de opname wilt stoppen, selecteert u **stoppen met opnemen** in het menu **opnemen** . (Toetsen bord: CTRL + SHIFT + E)
 
    Nadat u de schermen voor een taak hebt vastgelegd, ziet u in het hulp programma voor ontwerpen miniaturen die deze schermen vertegenwoordigen. Enkele opmerkingen over deze miniaturen:
 
    * In uw vastgelegde schermen bevindt zich een scherm met de naam ' empty '.
 
-     Wanneer u voor het eerst verbinding maakt met [CICS](https://www.ibm.com/it-infrastructure/z/cics), moet u de sleutel ' Clear ' verzenden voordat u de naam kunt invoeren voor de trans actie die u wilt uitvoeren. Het scherm waarin u de sleutel ' Clear ' verzendt, heeft geen *herkennings kenmerken* , zoals een scherm titel, die u kunt toevoegen met behulp van de editor voor scherm herkenning. De miniaturen bevatten een scherm met de naam empty om dit scherm weer te geven. U kunt dit scherm later gebruiken voor het scherm waarin u de naam van de trans actie opgeeft.
+     Wanneer u voor het eerst verbinding maakt met [CICS](https://www.ibm.com/it-infrastructure/z/cics), moet u de sleutel ' Clear ' verzenden voordat u de naam kunt invoeren voor de trans actie die u wilt uitvoeren. Het scherm waarin u de sleutel ' Clear ' verzendt, heeft geen *herkennings kenmerken*, zoals een scherm titel, die u kunt toevoegen met behulp van de editor voor scherm herkenning. De miniaturen bevatten een scherm met de naam empty om dit scherm weer te geven. U kunt dit scherm later gebruiken voor het scherm waarin u de naam van de trans actie opgeeft.
 
    * De naam voor een vastgelegd scherm maakt standaard gebruik van het eerste woord op het scherm. Als deze naam al bestaat, wordt de naam met een onderstrepings teken en een nummer, bijvoorbeeld ' WBGB ' en ' WBGB_1 ', toegevoegd.
 
@@ -176,13 +172,13 @@ In deze modus definieert u de stroom of stappen voor het navigeren door de scher
 
 ### <a name="create-plans"></a>Plannen maken
 
-1. Kies op de werk balk van het 3270-ontwerp de optie **Navigatie** om de navigatie modus in te voeren.
+1. Selecteer op de werk balk van het 3270-ontwerp de optie **Navigatie** om de navigatie modus in te voeren.
 
-1. Kies **nieuw plan** in het **Navigatie** deel venster om het plan te starten.
+1. Als u uw plan wilt starten, selecteert u in het **Navigatie** deel venster **nieuw plan**.
 
 1. Voer onder **nieuwe plan naam kiezen** een naam in voor uw abonnement. Selecteer in de lijst **type** het plan type:
 
-   | Plantype | Beschrijving |
+   | Plantype | Description |
    |-----------|-------------|
    | **Proces** | Voor zelfstandige of gecombineerde abonnementen |
    | **Verbinding maken** | Voor Connect-Abonnementen |
@@ -195,7 +191,7 @@ In deze modus definieert u de stroom of stappen voor het navigeren door de scher
 
 1. Rang Schik de schermen in de volg orde waarin de taak wordt beschreven die u definieert.
 
-1. Als u het stroom traject tussen schermen wilt definiëren, met inbegrip van vorken en samen voegingen, kiest u **flow** in de werk balk van het ontwerp hulpprogramma.
+1. Als u het stroom traject tussen schermen wilt definiëren, inclusief vorken en samen voegingen, selecteert u in de werk balk van het ontwerp hulpmiddel **flow**.
 
 1. Kies het eerste scherm in de stroom. Sleep en teken een verbinding met het volgende scherm in de stroom.
 
@@ -260,29 +256,29 @@ Met het ontwerp hulpprogramma kunt u herkennings kenmerken toevoegen, bijvoorbee
 
 In deze modus definieert u een methode die is gekoppeld aan uw navigatie plan. Voor elke methode parameter geeft u het gegevens type op, zoals een teken reeks, een geheel getal, een datum of tijd, enzovoort. Wanneer u klaar bent, kunt u uw methode testen op de Live host en controleren of de methode werkt zoals verwacht. Vervolgens genereert u het meta gegevensbestand of het HIDX-bestand (Host Integration Designer), dat nu de methode definities bevat die moeten worden gebruikt voor het maken en uitvoeren van een actie voor de IBM 3270-connector.
 
-1. Kies op de werk balk van het 3270-ontwerp de optie **methoden** om de modus methoden in te voeren. 
+1. Selecteer op de werk balk van het 3270-ontwerp de optie **methoden** om de modus methoden in te voeren. 
 
 1. Selecteer in het **Navigatie** deel venster het scherm met de gewenste invoer velden.
 
 1. Voer de volgende stappen uit om de eerste invoer parameter voor uw methode toe te voegen:
 
-   1. Kies in het deel venster **vastleggen** in het scherm 3270-emulator het hele veld, niet alleen tekst in het veld, dat u als eerste invoer wilt.
+   1. Selecteer in het deel venster **vastleggen** in het scherm 3270-emulator het hele veld, niet alleen tekst in het veld, dat u als eerste invoer wilt.
 
       > [!TIP]
-      > Om alle velden weer te geven en ervoor te zorgen dat u het veld voltooid selecteert, selecteert u in het menu **weer gave** **alle velden** .
+      > Om alle velden weer te geven en ervoor te zorgen dat u het veld voltooid selecteert, selecteert u in het menu **weer gave** **alle velden**.
 
-   1. Kies **invoer veld** op de werk balk van het ontwerp hulpmiddel. 
+   1. Selecteer **invoer veld** op de werk balk van het ontwerp hulpmiddel. 
 
    Herhaal de vorige stappen voor elke para meter om meer invoer parameters toe te voegen.
 
 1. Voer de volgende stappen uit om de eerste uitvoer parameter voor uw methode toe te voegen:
 
-   1. Kies in het deel venster **vastleggen** in het scherm 3270-emulator het hele veld, niet alleen tekst in het veld, dat u als de eerste uitvoer wilt.
+   1. Selecteer in het deel venster **vastleggen** in het scherm 3270-emulator het hele veld, niet alleen tekst in het veld, dat u als de eerste uitvoer wilt.
 
       > [!TIP]
-      > Om alle velden weer te geven en ervoor te zorgen dat u het veld voltooid selecteert, selecteert u in het menu **weer gave** **alle velden** .
+      > Om alle velden weer te geven en ervoor te zorgen dat u het veld voltooid selecteert, selecteert u in het menu **weer gave** **alle velden**.
 
-   1. Kies **uitvoer veld** op de werk balk van het ontwerp hulpmiddel.
+   1. Op de werk balk van het ontwerp hulpmiddel selecteert u **uitvoer veld**.
 
    Herhaal de vorige stappen voor elke para meter om meer uitvoer parameters toe te voegen.
 
@@ -291,8 +287,8 @@ In deze modus definieert u een methode die is gekoppeld aan uw navigatie plan. V
    | Naam van eigenschap | Mogelijke waarden | 
    |---------------|-----------------|
    | **Gegevens type** | Byte, datum en tijd, decimaal, int, lang, kort, teken reeks |
-   | **De techniek voor veld opvulling** | Para meters ondersteunen deze typen opvullingen, waarbij zo nodig lege waarden worden gevuld: <p><p>- **Type** : Voer tekens opeenvolgend in het veld in. <p>- **Fill** : Vervang de inhoud van het veld door tekens en vul zo nodig lege waarden in. <p>- **EraseEofType** : wis het veld en voer de tekens vervolgens opeenvolgend in het veld in. |
-   | **Teken reeks voor opmaak** | Sommige parameter gegevens typen gebruiken een indelings teken reeks, die de 3270-connector informeert de conversie van tekst van het scherm naar een .NET-gegevens type: <p><p>- **Datum tijd** : de notatie teken reeks voor [datum en tijd volgt de notatie teken reeksen voor .net-aangepaste datums en tijden](/dotnet/standard/base-types/custom-date-and-time-format-strings). De datum `06/30/2019` gebruikt bijvoorbeeld de notatie teken reeks `MM/dd/yyyy` . <p>- **Decimaal** : de teken reeks voor decimale notatie maakt gebruik van de [COBOL-component Picture](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rzasb/picture.htm). Het getal `100.35` gebruikt bijvoorbeeld de notatie teken reeks `999V99` . |
+   | **De techniek voor veld opvulling** | Para meters ondersteunen deze typen opvullingen, waarbij zo nodig lege waarden worden gevuld: <p><p>- **Type**: Voer tekens opeenvolgend in het veld in. <p>- **Fill**: Vervang de inhoud van het veld door tekens en vul zo nodig lege waarden in. <p>- **EraseEofType**: wis het veld en voer de tekens vervolgens opeenvolgend in het veld in. |
+   | **Teken reeks voor opmaak** | Sommige parameter gegevens typen gebruiken een indelings teken reeks, die de 3270-connector informeert de conversie van tekst van het scherm naar een .NET-gegevens type: <p><p>- **Datum tijd**: de notatie teken reeks voor [datum en tijd volgt de notatie teken reeksen voor .net-aangepaste datums en tijden](/dotnet/standard/base-types/custom-date-and-time-format-strings). De datum `06/30/2019` gebruikt bijvoorbeeld de notatie teken reeks `MM/dd/yyyy` . <p>- **Decimaal**: de teken reeks voor decimale notatie maakt gebruik van de [COBOL-component Picture](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rzasb/picture.htm). Het getal `100.35` gebruikt bijvoorbeeld de notatie teken reeks `999V99` . |
    |||
 
 ## <a name="save-and-view-metadata"></a>Meta gegevens opslaan en weer geven
@@ -310,16 +306,16 @@ Als u echter probeert wijzigingen op te slaan in het RAP-voorbeeld bestand of ee
 
 ## <a name="test-your-method"></a>Uw methode testen
 
-1. Als u uw methode op de Live host wilt uitvoeren, terwijl u nog steeds in de modus methoden, drukt u op de toets F5 of kiest u op de werk balk van het ontwerp hulpmiddel **uitvoeren** .
+1. Als u uw methode op de Live host wilt uitvoeren, terwijl u nog steeds in de modus methoden, drukt u op de toets F5 of selecteert u op de werk balk van het ontwerp hulpmiddel **testen**.
 
    > [!TIP]
    > U kunt de modi op elk gewenst moment wijzigen. Selecteer in het menu **bestand** de optie **modus** en selecteer vervolgens de gewenste modus.
 
-1. Voer de waarden van de para meters in en kies **OK** .
+1. Voer de waarden van de para meters in en selecteer **OK**.
 
-1. Klik op **volgende** om door te gaan naar het volgende scherm.
+1. Selecteer **volgende** om door te gaan naar het volgende scherm.
 
-1. Wanneer u klaar bent, kiest u **gereed** , waarin de waarden van de uitvoer parameters worden weer gegeven.
+1. Wanneer u klaar bent, selecteert u **gereed**, waarin de waarden van de uitvoer parameters worden weer gegeven.
 
 <a name="add-metadata-integration-account"></a>
 
@@ -327,13 +323,13 @@ Als u echter probeert wijzigingen op te slaan in het RAP-voorbeeld bestand of ee
 
 Wanneer u klaar bent, genereert u het HIDX-bestand zodat u het kunt uploaden naar uw integratie account. Het 3270-ontwerp hulpprogramma maakt het HIDX-bestand in een nieuwe submap waar u het RAP-bestand hebt opgeslagen.
 
-1. Kies op de werk balk van het 3270-ontwerp de optie **code genereren** .
+1. Selecteer in het hulp programma 3270-ontwerp de optie **definities genereren** in het menu **extra** . (Toetsen bord: F6)
 
 1. Ga naar de map die het RAP-bestand bevat en open de submap die het hulp programma heeft gemaakt na het genereren van het HIDX-bestand. Controleer of het hulp programma het HIDX-bestand heeft gemaakt.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en zoek uw integratie account.
 
-1. Voeg uw HIDX-bestand als een kaart toe aan uw integratie account door [deze vergelijk bare stappen te volgen voor het toevoegen van Maps](../logic-apps/logic-apps-enterprise-integration-liquid-transform.md), maar wanneer u het kaart type selecteert, selecteert u **HIDX** .
+1. Voeg uw HIDX-bestand als een kaart toe aan uw integratie account door [deze vergelijk bare stappen te volgen voor het toevoegen van Maps](../logic-apps/logic-apps-enterprise-integration-liquid-transform.md), maar wanneer u het kaart type selecteert, selecteert u **HIDX**.
 
 Verderop in dit onderwerp, wanneer u een IBM 3270-actie voor het eerst toevoegt aan uw logische app, wordt u gevraagd om een verbinding te maken tussen uw logische app en de hostserver door verbindings gegevens op te geven, zoals de namen voor uw integratie account en de hostserver. Nadat u de verbinding hebt gemaakt, kunt u het eerder toegevoegde HIDX-bestand, de methode die moet worden uitgevoerd, en de te gebruiken para meters selecteren.
 
@@ -347,29 +343,28 @@ Wanneer u al deze stappen hebt voltooid, kunt u de actie die u in uw logische ap
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en open de logische app in de ontwerp functie voor logische apps, als deze nog niet is geopend.
 
-1. Kies **nieuwe stap** onder de laatste stap waarin u een actie wilt toevoegen en selecteer vervolgens **een actie toevoegen** . 
+1. Selecteer **nieuwe stap** **>** **een actie toevoegen** onder de laatste stap waarin u een actie wilt toevoegen. 
 
-1. Kies in het zoekvak de optie **onderneming** . Voer in het zoekvak ' 3270 ' in als uw filter. Selecteer in de lijst acties deze actie: **voert een mainframe-programma uit via een TN3270-verbinding**
+1. Selecteer in het zoekvak **Enter prise**. Voer in het zoekvak `3270` als uw filter in. Selecteer in de lijst acties de actie met de naam **een mainframe programma uitvoeren via een TN3270-verbinding**
 
    ![Actie 3270 selecteren](./media/connectors-create-api-3270/select-3270-action.png)
 
-   Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. 
-   Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen** .
+   Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
-1. Als er nog geen verbinding bestaat, geeft u de benodigde informatie voor de verbinding op en kiest u **maken** .
+1. Als er nog geen verbinding bestaat, geeft u de benodigde informatie voor de verbinding op en selecteert u **maken**.
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
    | **Verbindingsnaam** | Ja | <*verbindings naam*> | De naam voor de verbinding |
-   | **Integratie account-ID** | Ja | <*integratie-account-naam*> | De naam van uw integratie account |
-   | **SAS-URL van integratie account** | Ja | <*integratie-account-SAS-URL*> | De URL van de Shared Access Signature (SAS) van uw integratie account, die u kunt genereren op basis van de instellingen van uw integratie account in de Azure Portal. <p>1. Selecteer in het menu van het integratie account onder **instellingen** de optie **URL voor terugbellen** . <br>2. Kopieer in het rechterdeel venster de waarde voor de **gegenereerde call back-URL** . |
-   | **Server** | Ja | <*TN3270-Server naam*> | De server naam voor uw TN3270-service |
-   | **Poort** | Nee | <*TN3270-Server-poort*> | De poort die wordt gebruikt door uw TN3270-Server. Als dit veld leeg blijft, wordt de connector `23` als de standaard waarde gebruikt. |
-   | **Apparaattype** | Nee | <*IBM-Terminal model*> | De naam of het nummer van het model voor de IBM-Terminal dat moet worden geëmuleerd. Als dit veld leeg blijft, gebruikt de connector standaard waarden. |
-   | **Codepagina** | Nee | <*code-pagina nummer*> | Het nummer van de code pagina voor de host. Als dit veld leeg blijft, wordt de connector `37` als de standaard waarde gebruikt. |
-   | **Naam van logische eenheid** | Nee | <*naam van logische eenheid*> | De naam van de specifieke logische eenheid die moet worden aangevraagd vanaf de host |
-   | **SSL inschakelen?** | Nee | In-of uitschakelen | Schakel TLS-code ring in of uit. |
-   | **SSL-certificaat van host valideren?** | Nee | In-of uitschakelen | De validatie van het server certificaat in-of uitschakelen. |
+   | **Integratie account-ID** | Yes | <*integratie-account-naam*> | De naam van uw integratie account |
+   | **SAS-URL van integratie account** | Yes | <*integratie-account-SAS-URL*> | De URL van de Shared Access Signature (SAS) van uw integratie account, die u kunt genereren op basis van de instellingen van uw integratie account in de Azure Portal. <p>1. Selecteer in het menu van het integratie account onder **instellingen** de optie **URL voor terugbellen**. <br>2. Kopieer in het rechterdeel venster de waarde voor de **gegenereerde call back-URL** . |
+   | **Server** | Yes | <*TN3270-Server naam*> | De server naam voor uw TN3270-service |
+   | **Poort** | No | <*TN3270-Server-poort*> | De poort die wordt gebruikt door uw TN3270-Server. Als dit veld leeg blijft, wordt de connector `23` als de standaard waarde gebruikt. |
+   | **Apparaattype** | No | <*IBM-Terminal model*> | De naam of het nummer van het model voor de IBM-Terminal dat moet worden geëmuleerd. Als dit veld leeg blijft, gebruikt de connector standaard waarden. |
+   | **Codepagina** | No | <*code-pagina nummer*> | Het nummer van de code pagina voor de host. Als dit veld leeg blijft, wordt de connector `37` als de standaard waarde gebruikt. |
+   | **Naam van logische eenheid** | No | <*naam van logische eenheid*> | De naam van de specifieke logische eenheid die moet worden aangevraagd vanaf de host |
+   | **SSL inschakelen?** | No | In-of uitschakelen | Schakel TLS-code ring in of uit. |
+   | **SSL-certificaat van host valideren?** | No | In-of uitschakelen | De validatie van het server certificaat in-of uitschakelen. |
    ||||
 
    Bijvoorbeeld:
@@ -380,8 +375,8 @@ Wanneer u al deze stappen hebt voltooid, kunt u de actie die u in uw logische ap
 
    | Eigenschap | Vereist | Waarde | Beschrijving |
    |----------|----------|-------|-------------|
-   | **Hidx-naam** | Ja | <*HIDX-bestands naam*> | Selecteer het 3270-HIDX-bestand dat u wilt gebruiken. |
-   | **Methode naam** | Ja | <*methode-naam*> | Selecteer de methode in het HIDX-bestand dat u wilt gebruiken. Nadat u een methode hebt geselecteerd, wordt de lijst **nieuwe para meter toevoegen** weer gegeven, zodat u para meters kunt selecteren voor gebruik met deze methode. |
+   | **Hidx-naam** | Yes | <*HIDX-bestands naam*> | Selecteer het 3270-HIDX-bestand dat u wilt gebruiken. |
+   | **Methode naam** | Yes | <*methode-naam*> | Selecteer de methode in het HIDX-bestand dat u wilt gebruiken. Nadat u een methode hebt geselecteerd, wordt de lijst **nieuwe para meter toevoegen** weer gegeven, zodat u para meters kunt selecteren voor gebruik met deze methode. |
    ||||
 
    Bijvoorbeeld:
@@ -405,7 +400,7 @@ Wanneer u al deze stappen hebt voltooid, kunt u de actie die u in uw logische ap
 
 1. Als u de invoer en uitvoer voor elke stap wilt bekijken, vouwt u deze stap uit.
 
-1. Als u de uitvoer wilt bekijken, kiest u **onbewerkte uitvoer weer geven** .
+1. Als u de uitvoer wilt bekijken, selecteert u **onbewerkte uitvoer weer geven**.
 
 ## <a name="connector-reference"></a>Connector-verwijzing
 

@@ -116,6 +116,8 @@
               href: use-dynamic-groups.md
             - name: Informatie over de B2B-gebruiker
               href: user-properties.md
+            - name: Status van aflossingen opnieuw instellen
+              href: reset-redemption-status.md
             - name: B2B voor in Azure AD geïntegreerde apps
               href: configure-saas-apps.md
         - name: Gasttoegang beheren in een hybride organisatie

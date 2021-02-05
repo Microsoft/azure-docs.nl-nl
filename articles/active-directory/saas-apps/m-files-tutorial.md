@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 0df9e4722136dafe94d1bfc84a7767e1e0144d69
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 552e5c2411889ee7f07265eb1cc35d98aed4d7c1
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997219"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99574091"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Zelfstudie: Azure Active Directory-integratie met M-Files
 
@@ -129,7 +129,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
     >[!NOTE]
     >Voer de volgende stappen uit als u eenmalige aanmelding wilt configureren voor uw M-Files-bureaubladtoepassing. Er zijn geen extra stappen vereist als u alleen eenmalige aanmelding voor de M-Files webversie wilt configureren.  
 
-1. Volg de volgende stappen voor het configureren van de M-Files-bureaubladtoepassing om eenmalige aanmelding met Azure Active Directory in te schakelen. Om M-Files te downloaden, gaat u naar de pagina [M-Files downloaden](https://www.m-files.com/en/download-latest-version).
+1. Volg de volgende stappen voor het configureren van de M-Files-bureaubladtoepassing om eenmalige aanmelding met Azure Active Directory in te schakelen. Om M-Files te downloaden, gaat u naar de pagina [M-Files downloaden](https://www.m-files.com/customers/product-downloads/download-update-links/).
 
 1. Open het venster **Bureaubladinstellingen van M-Files**. Klik vervolgens op **Toevoegen**.
    

@@ -5,12 +5,12 @@ ms.custom: subject-cost-optimization
 ms.service: app-service
 ms.topic: how-to
 ms.date: 01/01/2021
-ms.openlocfilehash: 9d742606435f62d48446bb8ad56ece7a31b76e47
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 3df08705859678525526f8fef198826f58249d8b
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736218"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573361"
 ---
 # <a name="plan-and-manage-costs-for-azure-app-service"></a>Kosten plannen en beheren voor Azure App Service
 
@@ -125,7 +125,7 @@ Als u van plan bent een bekend minimum aantal reken instanties voor één jaar o
 
 De prijzen voor gereserveerde instanties zijn van toepassing op de toepasselijke instanties in uw abonnement, tot het aantal exemplaren dat u reserveert. De gereserveerde instanties zijn facturerings zaken en zijn niet gekoppeld aan specifieke reken instanties. Als u minder exemplaren uitvoert dan u op enig moment tijdens de reserverings periode hebt gereserveerd, betaalt u nog steeds voor de gereserveerde instanties. Als u meer exemplaren uitvoert dan u op enig moment tijdens de reserverings periode hebt gereserveerd, betaalt u de normale kosten voor de extra exemplaren.
 
-De **geïsoleerde** laag (app service omgeving) biedt ook ondersteuning voor 1 jaar en 3 jaar reserve ringen tegen een lagere prijs. Zie [hoe reserverings kortingen van toepassing zijn op Azure app service afzonderlijke stem pels](../cost-management-billing/reservations/reservation-discount-app-service-isolated-stamp.md)voor meer informatie.
+De **geïsoleerde** laag (app service omgeving) biedt ook ondersteuning voor 1 jaar en 3 jaar reserve ringen tegen een lagere prijs. Zie [hoe reserverings kortingen van toepassing zijn op Azure app service](../cost-management-billing/reservations/reservation-discount-app-service.md)voor meer informatie.
 
 ## <a name="monitor-costs"></a>Kosten bewaken
 

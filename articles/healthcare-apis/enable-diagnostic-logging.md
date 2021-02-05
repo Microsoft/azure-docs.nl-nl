@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.reviewer: dseven
 ms.author: cavoeg
 author: CaitlinV39
-ms.date: 11/01/2019
-ms.openlocfilehash: 54119585d4f1377b60b85fbad01fe90f097a304f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 02/03/2021
+ms.openlocfilehash: 8dc87ae5b296f322d9d5a4d59c0a8c9b1c50d5da
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95905171"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575433"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Diagnostische logboek registratie inschakelen in azure API voor FHIR
 
@@ -35,9 +35,9 @@ In dit artikel wordt beschreven hoe u diagnostische logboek registratie inschake
     2. **Stroom om te Event hub** voor opname door een service van derden of een aangepaste analytische oplossing. Voordat u deze stap kunt configureren, moet u een Event Hub naam ruimte en Event Hub-beleid maken.
     3. **Streamen naar de log Analytics** -werk ruimte in azure monitor. U moet de werk ruimte voor logboek analyse maken voordat u deze optie kunt selecteren.
 
-6. Selecteer **audit logs bevat** en alle metrische gegevens die u wilt vastleggen. Als u de Azure IoT-connector gebruikt voor FHIR, moet u **fouten, verkeer en latentie** voor metrische gegevens selecteren. 
+6. Selecteer **audit logs bevat** en/of **AllMetrics**. De metrische gegevens zijn onder andere service naam, Beschik baarheid, gegevens grootte, totale latentie, totaal aantal aanvragen, totaal aantal fouten en tijds tempel.
 
-   :::image type="content" source="media/iot-metrics-export/diagnostic-setting-add.png" alt-text="IoT-Connector2" lightbox="media/iot-metrics-export/diagnostic-setting-add.png":::
+   :::image type="content" source="media/diagnostic-logging/fhir-diagnostic-setting.png" alt-text="Diagnostische instellingen voor Azure FHIR. Selecteer audit logs bevat en/of AllMetrics." lightbox="media/diagnostic-logging/fhir-diagnostic-setting.png":::
 
 7. Selecteer **Opslaan**.
 

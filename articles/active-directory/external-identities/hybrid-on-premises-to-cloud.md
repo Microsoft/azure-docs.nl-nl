@@ -12,21 +12,21 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06a6a42724eb172a77079b94f2cf50afb8e9cdf1
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 29aeca30e1fbdd28d3f69597d902a9b714056cd5
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357314"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575920"
 ---
-# <a name="grant-locally-managed-partner-accounts-access-to-cloud-resources-using-azure-ad-b2b-collaboration"></a>Lokaal beheerde partner accounts toegang verlenen tot cloud resources met behulp van Azure AD B2B-samen werking
+# <a name="grant-locally-managed-partner-accounts-access-to-cloud-resources-using-azure-ad-b2b-collaboration"></a>Lokaal beheerde partneraccounts toegang verlenen tot cloudresources met behulp van B2B-samenwerking in Azure AD
 
 Voor Azure Active Directory (Azure AD) hebben organisaties met on-premises identiteits systemen traditioneel beheerde partner accounts in hun on-premises Directory. Wanneer u in een dergelijke organisatie apps gaat verplaatsen naar Azure AD, wilt u er zeker van zijn dat uw partners toegang hebben tot de resources die ze nodig hebben. Het is niet belang rijk of de bronnen on-premises of in de Cloud zijn. Daarnaast wilt u dat uw partner gebruikers dezelfde aanmeldings referenties kunnen gebruiken voor zowel on-premises als Azure AD-resources. 
 
 Als u accounts voor uw externe partners in uw on-premises Directory maakt (u maakt bijvoorbeeld een account met de aanmeldings naam ' wmoran ' voor een externe gebruiker met de naam Wendy Moran in uw partners.contoso.com-domein), kunt u deze accounts nu synchroniseren met de Cloud. Met name kunt u Azure AD Connect gebruiken om de partner accounts te synchroniseren met de Cloud, waarmee een gebruikers account wordt gemaakt met User type = Guest. Hierdoor kunnen uw partner gebruikers toegang krijgen tot Cloud bronnen met dezelfde referenties als hun lokale accounts, zonder dat ze meer toegang hebben dan ze nodig hebben.
 
 > [!NOTE]
-> Zie ook hoe u [interne gebruikers uitnodigt voor B2B-samen werking](invite-internal-users.md) (een open bare preview-functie). Met deze functie kunt u interne gast gebruikers uitnodigen om B2B-samen werking te gebruiken, ongeacht of u de accounts van uw on-premises Directory hebt gesynchroniseerd met de Cloud. Zodra de gebruiker de uitnodiging voor het gebruik van B2B-samen werking heeft geaccepteerd, kunnen ze hun eigen identiteiten en referenties gebruiken om zich aan te melden bij de resources waartoe ze toegang willen hebben. U hoeft geen wacht woorden te onderhouden of de levens cyclus van het account te beheren.
+> Zie ook hoe u [interne gebruikers uitnodigt voor B2B-samen werking](invite-internal-users.md). Met deze functie kunt u interne gast gebruikers uitnodigen om B2B-samen werking te gebruiken, ongeacht of u de accounts van uw on-premises Directory hebt gesynchroniseerd met de Cloud. Zodra de gebruiker de uitnodiging voor het gebruik van B2B-samen werking heeft geaccepteerd, kunnen ze hun eigen identiteiten en referenties gebruiken om zich aan te melden bij de resources waartoe ze toegang willen hebben. U hoeft geen wacht woorden te onderhouden of de levens cyclus van het account te beheren.
 
 ## <a name="identify-unique-attributes-for-usertype"></a>Unieke kenmerken voor User type identificeren
 
@@ -48,6 +48,6 @@ Zie [synchronisatie van User type inschakelen](../hybrid/how-to-connect-sync-cha
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Azure Active Directory B2B-samen werking voor hybride organisaties](hybrid-organizations.md)
-- [B2B-gebruikers in azure AD toegang verlenen tot uw on-premises toepassingen](hybrid-cloud-to-on-premises.md)
+- [B2B-gebruikers in Azure AD toegang verlenen tot uw on-premises toepassingen](hybrid-cloud-to-on-premises.md)
 - Zie [uw on-premises Directory's integreren met Azure Active Directory](../hybrid/whatis-hybrid-identity.md)voor een overzicht van Azure AD Connect.
 

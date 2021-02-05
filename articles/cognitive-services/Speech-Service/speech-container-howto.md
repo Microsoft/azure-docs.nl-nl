@@ -12,12 +12,12 @@ ms.date: 11/17/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: on-premises, docker, container
-ms.openlocfilehash: 79e53bf39e411569f87a46bfc275c784ce84babc
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 7bebaf7558de8ec5c1fcca3c9a4526330da1d695
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703323"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575785"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Docker-containers voor de speech service-Api's installeren en uitvoeren 
 
@@ -41,10 +41,10 @@ Met spraakcontainers kunnen klanten een spraaktoepassingsarchitectuur maken die 
 
 | Container | Functies | Laatste |
 |--|--|--|
-| Spraak naar tekst | Analyseert sentiment en transcribeert doorlopend realtime spraak of batch audio-opnamen met tussenliggende resultaten.  | 2.7.0 |
-| Aangepaste spraak-naar-tekst | Door gebruik te maken van een aangepast model van de [Custom speech Portal](https://speech.microsoft.com/customspeech), transcribeert doorlopend realtime spraak of batch opnames in tekst met tussenliggende resultaten. | 2.7.0 |
-| Tekst naar spraak | Hiermee wordt tekst geconverteerd naar een spreek spraak met tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.9.0 |
-| Aangepaste tekst-naar-spraak | Door gebruik te maken van een aangepast model van de [aangepaste Voice Portal](https://aka.ms/custom-voice-portal), converteert u tekst naar een natuurlijk geluids fragment met de invoer van een tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.9.0 |
+| Spraak naar tekst | Analyseert sentiment en transcribeert doorlopend realtime spraak of batch audio-opnamen met tussenliggende resultaten.  | 2.9.0 |
+| Aangepaste spraak-naar-tekst | Door gebruik te maken van een aangepast model van de [Custom speech Portal](https://speech.microsoft.com/customspeech), transcribeert doorlopend realtime spraak of batch opnames in tekst met tussenliggende resultaten. | 2.9.0 |
+| Tekst naar spraak | Hiermee wordt tekst geconverteerd naar een spreek spraak met tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.11.0 |
+| Aangepaste tekst-naar-spraak | Door gebruik te maken van een aangepast model van de [aangepaste Voice Portal](https://aka.ms/custom-voice-portal), converteert u tekst naar een natuurlijk geluids fragment met de invoer van een tekst zonder opmaak of een SSML (Speech synthese Markup Language). | 1.11.0 |
 | Spraak Taaldetectie | De taal detecteren die in audio bestanden wordt gesp roken. | 1.0 |
 | Neurale tekst-naar-spraak | Hiermee wordt tekst geconverteerd naar spraak herkenning met behulp van diepe Neural-netwerk technologie, waardoor natuurlijk gesynthesizerde spraak kan worden gebruikt. | 1.3.0 |
 
@@ -316,6 +316,28 @@ Met deze opdracht gebeurt het volgende:
 > [!NOTE]
 > Containers ondersteunen gecomprimeerde audio-invoer naar Speech SDK met behulp van GStreamer.
 > Als u GStreamer in een container wilt installeren, volgt u Linux-instructies voor GStreamer in [codec gebruik van gecomprimeerde audio-invoer met de spraak-SDK](how-to-use-codec-compressed-audio-input-streams.md).
+
+#### <a name="diarization-on-the-speech-to-text-output"></a>Diarization voor de uitvoer van spraak naar tekst
+Diarization is standaard ingeschakeld. Als u diarization in uw antwoord wilt ontvangen, gebruikt u `diarize_speech_config.set_service_property` .
+
+1. Stel de uitvoer indeling phrase in op `Detailed` .
+2. De modus van diarization instellen. De ondersteunde modi zijn `Identity` en `Anonymous` .
+```python
+diarize_speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Format',
+    value='Detailed',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+
+diarize_speech_config.set_service_property(
+    name='speechcontext-phraseDetection.speakerDiarization.mode',
+    value='Identity',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
+> [!NOTE]
+> De modus ' identiteit ' retourneert `"SpeakerId": "Customer"` of `"SpeakerId": "Agent"` .
+> De modus Anonymous retourneert `"SpeakerId": "Speaker 1"` of `"SpeakerId": "Speaker 2"`
 
 
 #### <a name="analyze-sentiment-on-the-speech-to-text-output"></a>Sentiment analyseren voor de uitvoer van spraak naar tekst 

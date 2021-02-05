@@ -8,12 +8,12 @@ ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 3e8a94b6b9b71d2d71b634edd70ea4150652b143
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67fa53e565de70d3da0b90e36a968b68d54d667f
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88932794"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573242"
 ---
 # <a name="configure-ip-firewall-for-azure-cognitive-search"></a>IP-Firewall voor Azure Cognitive Search configureren
 
@@ -24,14 +24,14 @@ Azure Cognitive Search ondersteunt IP-regels voor ondersteuning van binnenkomend
 
 ## <a name="configure-an-ip-firewall-using-the-azure-portal"></a><a id="configure-ip-policy"></a> Een IP-Firewall configureren met behulp van de Azure Portal
 
-Als u het beleid voor IP-toegangs beheer wilt instellen in de Azure Portal, gaat u naar de pagina van de Azure Cognitive Search-service en selecteert u **netwerken** in het navigatie menu. De netwerk verbinding met het eind punt moet **openbaar**zijn. Als uw verbinding is ingesteld op **privé**, hebt u alleen toegang tot uw zoek service via een persoonlijk eind punt.
+Als u het beleid voor IP-toegangs beheer wilt instellen in de Azure Portal, gaat u naar de pagina van de Azure Cognitive Search-service en selecteert u **netwerken** in het navigatie menu. De netwerk verbinding met het eind punt moet **openbaar** zijn. Als uw verbinding is ingesteld op **privé**, hebt u alleen toegang tot uw zoek service via een persoonlijk eind punt.
 
 ![Scherm afbeelding die laat zien hoe u de IP-firewall in de Azure Portal configureert](./media/service-configure-firewall/azure-portal-firewall.png)
 
 De Azure Portal biedt de mogelijkheid om IP-adressen en IP-adresbereiken op te geven in de CIDR-indeling. Een voor beeld van een CIDR-notatie is 8.8.8.0/24, waarmee de Ip's worden aangeduid van 8.8.8.0 naar 8.8.8.255.
 
 > [!NOTE]
-> Nadat u het beleid voor IP-toegangs beheer voor uw Azure Cognitive Search-service hebt ingeschakeld, worden alle aanvragen op het gegevens vlak van computers buiten de lijst met IP-adresbereiken geweigerd. Wanneer IP-regels zijn geconfigureerd, worden sommige functies van de Azure Portal uitgeschakeld. U kunt informatie over het service niveau weer geven en beheren, maar de toegang tot de portal voor het indexeren van gegevens en de verschillende onderdelen in de service, zoals de definities index, Indexer en vaardigheids, is beperkt om veiligheids redenen.
+> Nadat u het beleid voor IP-toegangs beheer voor uw Azure Cognitive Search-service hebt ingeschakeld, worden alle aanvragen op het gegevens vlak van computers buiten de lijst met IP-adresbereiken geweigerd. Wanneer IP-regels zijn geconfigureerd, worden sommige functies van de Azure Portal uitgeschakeld. U kunt informatie over het service niveau weer geven en beheren, maar de toegang tot de portal voor het indexeren van gegevens en de verschillende onderdelen in de service, zoals de definities index, Indexer en vaardigheids, is beperkt om veiligheids redenen. Als alternatief voor de portal kunt u de [VS code-extensie](https://aka.ms/vscode-search) gebruiken om te communiceren met de verschillende onderdelen in de service.
 
 ### <a name="requests-from-your-current-ip"></a>Aanvragen van uw huidige IP-adres
 
@@ -39,7 +39,7 @@ Om de ontwikkeling te vereenvoudigen, helpt de Azure Portal u bij het identifice
 
 De portal detecteert automatisch uw client-IP-adres. Dit kan het client-IP-adres van uw computer of netwerk gateway zijn. Zorg ervoor dat u dit IP-adres verwijdert voordat u uw werk belasting naar productie neemt.
 
-Schakel **het IP-adres van uw client toevoegen**in om uw huidige IP toe te voegen aan de lijst met ip's. Selecteer vervolgens **Opslaan**.
+Schakel **het IP-adres van uw client toevoegen** in om uw huidige IP toe te voegen aan de lijst met ip's. Selecteer vervolgens **Opslaan**.
 
 ![Scherm afbeelding van de configuratie van de IP-Firewall-instellingen om het huidige IP-adres toe te staan](./media/service-configure-firewall/enable-current-ip.png)
 

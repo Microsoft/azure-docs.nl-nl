@@ -9,12 +9,12 @@ ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 02/01/2021
 tags: connectors
-ms.openlocfilehash: edf4ce188c9239e697e2148d4fff51966d91f85a
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: cbbc0edf710b8823c1a36daa66bc01d89acf63da
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99252607"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575480"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -504,7 +504,7 @@ Als u geen IDoc-pakketten van SAP kunt verzenden naar de trigger van de logische
   * Neem contact op met de ABAP-Engineer voor uw SAP-systeem om deze segmenten te kunnen vrijgeven door SAP.
 ### <a name="asynchronous-request-reply-for-triggers"></a>Asynchrone aanvraag-antwoord voor triggers
 
-De SAP-connector ondersteunt het [asynchrone antwoord patroon](/azure/architecture/patterns/async-request-reply.md) van Azure voor Logic apps triggers. U kunt dit patroon gebruiken om succes volle aanvragen te maken die anders zouden zijn mislukt met het standaard patroon voor synchrone antwoorden op aanvraag-antwoord. 
+De SAP-connector ondersteunt het [asynchrone antwoord patroon](/azure/architecture/patterns/async-request-reply) van Azure voor Logic apps triggers. U kunt dit patroon gebruiken om succes volle aanvragen te maken die anders zouden zijn mislukt met het standaard patroon voor synchrone antwoorden op aanvraag-antwoord. 
 
 > [!TIP]
 > In Logic apps met meerdere reactie acties moeten alle reactie acties gebruikmaken van hetzelfde antwoord patroon voor aanvragen en antwoorden. Als uw logische app bijvoorbeeld gebruikmaakt van een switch-besturings element met meerdere mogelijke reactie acties, moet u alle antwoord acties configureren voor het gebruik van hetzelfde aanvraag/antwoord patroon, ofwel synchroon of asynchroon. 

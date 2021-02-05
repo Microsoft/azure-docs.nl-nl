@@ -10,12 +10,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: cc1e4bf44827f82b3ca592e41fc3e6640f36e1bb
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: d71f3fa27dda9edc4c88ad9ed563e5c3a95ffa4b
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98875141"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99574530"
 ---
 # <a name="monitoring-azure-files"></a>Bewakings Azure Files
 
@@ -589,13 +589,13 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 
 3. Klik op **Resource bewerken**, selecteer het **bron type** voor het bestand en klik vervolgens op **gereed**. 
 
-4. Klik op **voor waarde selecteren** en geef de volgende informatie op voor de waarschuwing: 
+4. Klik op **voor waarde toevoegen** en geef de volgende informatie op voor de waarschuwing: 
 
     - **Meting**
     - **Dimensie naam**
     - **Waarschuwingslogica**
 
-5. Klik op **actie groep selecteren** en voeg een actie groep (E-mail, SMS, enzovoort) toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
+5. Klik op **actie groepen toevoegen** en voeg een actie groep (E-mail, SMS, enzovoort) toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 
 6. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 
@@ -609,16 +609,31 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 1. Ga naar uw **opslag account** in de **Azure Portal**.
 2. Klik in de sectie **bewaking** op **waarschuwingen** en klik vervolgens op **+ nieuwe waarschuwings regel**.
 3. Klik op **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en klik vervolgens op **gereed**. Als de naam van het opslag account bijvoorbeeld is `contoso` , selecteert u de `contoso/file` resource.
-4. Klik op **voor waarde selecteren** om een voor waarde toe te voegen.
+4. Klik op **voor waarde toevoegen** om een voor waarde toe te voegen.
 5. U ziet een lijst met signalen die worden ondersteund voor het opslag account. Selecteer de metrische gegevens van de **trans actie** .
 6. Klik op de Blade **signaal logica configureren** op de vervolg keuzelijst **dimensie naam** en selecteer **antwoord type**.
-7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer **SUCCESSWITHTHROTTLING** (voor SMB) of **ClientThrottlingError** (voor rest).
+7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de juiste antwoord typen voor de bestands share.
+
+    Voor standaard bestands shares selecteert u de volgende antwoord typen:
+
+    - SuccessWithThrottling
+    - ClientThrottlingError
+
+    Voor Premium-bestands shares selecteert u de volgende antwoord typen:
+
+    - SuccessWithShareEgressThrottling
+    - SuccessWithShareIngressThrottling
+    - SuccessWithShareIopsThrottling
+    - ClientShareEgressThrottlingError
+    - ClientShareIngressThrottlingError
+    - ClientShareIopsThrottlingError
 
    > [!NOTE]
-   > Als de dimensie waarde SuccessWithThrottling of ClientThrottlingError niet wordt weer gegeven, betekent dit dat de resource niet is beperkt. Als u de dimensie waarde wilt toevoegen, klikt u op **aangepaste waarde toevoegen** naast de vervolg keuzelijst **dimensie waarden** , typt u **SuccessWithThrottling** of **ClientThrottlingError**, klikt u op **OK** en herhaalt u stap #7.
+   > Als de antwoord typen niet worden weer gegeven in de vervolg keuzelijst **dimensie waarden** , betekent dit dat de resource niet is beperkt. Als u de dimensie waarden wilt toevoegen, klikt u naast de vervolg keuzelijst **dimensie waarden** op **aangepaste waarde toevoegen**, voert u het type antwoord in (bijvoorbeeld **SuccessWithThrottling**), selecteert u **OK** en herhaalt u deze stappen om alle toepasselijke antwoord typen voor de bestands share toe te voegen.
 
 8. Klik op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
 9. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
+
 
    > [!NOTE]
    > Als de bestands share een standaard bestands share is, selecteert u **alle huidige en toekomstige waarden**. De vervolg keuzelijst met dimensie waarden bevat niet de bestands share (s) omdat metrische gegevens per share niet beschikbaar zijn voor standaard bestands shares. Het beperken van waarschuwingen voor standaard bestands shares wordt geactiveerd als een bestands share binnen het opslag account wordt beperkt en de waarschuwing niet kan bepalen welke bestands share is beperkt. Aangezien metrische gegevens per aandeel niet beschikbaar zijn voor standaard bestands shares, is de aanbeveling één bestands share per opslag account.
@@ -628,8 +643,8 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
     > [!TIP]
     > Als u een statische drempel waarde gebruikt, kan de metrische grafiek helpen bij het bepalen van een redelijke drempelwaarde als de bestands share momenteel wordt beperkt. Als u een dynamische drempel waarde gebruikt, worden in de metrische grafiek de berekende drempel waarden weer gegeven op basis van recente gegevens.
 
-11. Klik op **actie groep selecteren** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
-12. Vul de details van de **waarschuwing** in, zoals de naam van de **waarschuwings regel**, de beschrijving en de **Ernst**.
+11. Klik op **actie groepen toevoegen** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
+12. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 13. Klik op **waarschuwings regel maken** om de waarschuwing te maken.
 
 ### <a name="how-to-create-an-alert-if-the-azure-file-share-size-is-80-of-capacity"></a>Een waarschuwing maken als de grootte van de Azure-bestands share 80% van de capaciteit is
@@ -637,7 +652,7 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 1. Ga naar uw **opslag account** in de **Azure Portal**.
 2. Klik in de sectie **bewaking** op **waarschuwingen** en klik vervolgens op **+ nieuwe waarschuwings regel**.
 3. Klik op **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en klik vervolgens op **gereed**. Als de naam van het opslag account bijvoorbeeld is `contoso` , selecteert u de `contoso/file` resource.
-4. Klik op **voor waarde selecteren** om een voor waarde toe te voegen.
+4. Klik op **voor waarde toevoegen** om een voor waarde toe te voegen.
 5. U ziet een lijst met signalen die worden ondersteund voor het opslag account. Selecteer de metrische **Bestands capaciteit** .
 6. Klik op de Blade **signaal logica configureren** op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
 7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
@@ -647,8 +662,8 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 
 8. Voer de **drempel waarde** in bytes in. Als de grootte van de bestands share bijvoorbeeld 100 TiB is en u een waarschuwing wilt ontvangen wanneer de grootte van de bestands share 80% van de capaciteit is, is de drempel waarde in bytes 87960930222080.
 9. Definieer de overige **para meters** voor de waarschuwing (aggregatie granulatie en frequentie van evaluatie) en klik op **gereed**.
-10. Klik op actie groep selecteren om een actie groep (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
-11. Vul de details van de **waarschuwing** in, zoals de naam van de **waarschuwings regel**, de beschrijving en de **Ernst**.
+10. Klik op **actie groepen toevoegen** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
+11. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 12. Klik op **waarschuwings regel maken** om de waarschuwing te maken.
 
 ### <a name="how-to-create-an-alert-if-the-azure-file-share-egress-has-exceeded-500-gib-in-a-day"></a>Een waarschuwing maken als het uitkomen van de Azure-bestands share op een dag 500 GiB is overschreden
@@ -656,7 +671,7 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 1. Ga naar uw **opslag account** in de **Azure Portal**.
 2. Klik in de sectie bewaking op **waarschuwingen** en klik vervolgens op **+ nieuwe waarschuwings regel**.
 3. Klik op **Resource bewerken**, selecteer het **Bestands bron type** voor het opslag account en klik vervolgens op **gereed**. Als de naam van het opslag account bijvoorbeeld contoso is, selecteert u de resource contoso/file.
-4. Klik op **voor waarde selecteren** om een voor waarde toe te voegen.
+4. Klik op **voor waarde toevoegen** om een voor waarde toe te voegen.
 5. U ziet een lijst met signalen die worden ondersteund voor het opslag account. Selecteer **de waarde** voor uitgaand verkeer.
 6. Klik op de Blade **signaal logica configureren** op de vervolg keuzelijst **dimensie naam** en selecteer **Bestands share**.
 7. Klik op de vervolg keuzelijst **dimensie waarden** en selecteer de bestands share (s) waarop u een waarschuwing wilt ontvangen.
@@ -667,8 +682,8 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 8. Voer **536870912000** bytes in voor de drempel waarde. 
 9. Klik op de vervolg keuzelijst **aggregatie granulatie** en selecteer **24 uur**.
 10. Selecteer de **frequentie van de evaluatie** en **Klik op gereed**.
-11. Klik op **actie groep selecteren** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
-12. Vul de details van de **waarschuwing** in, zoals de naam van de **waarschuwings regel**, de beschrijving en de **Ernst**.
+11. Klik op **actie groepen toevoegen** om een **actie groep** (e-mail, SMS, enzovoort) toe te voegen aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
+12. Vul de details van de **waarschuwing** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 13. Klik op **waarschuwings regel maken** om de waarschuwing te maken.
 
 ## <a name="next-steps"></a>Volgende stappen

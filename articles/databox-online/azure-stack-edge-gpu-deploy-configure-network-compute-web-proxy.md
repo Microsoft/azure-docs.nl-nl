@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/27/2021
+ms.date: 02/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: ac64233467166ca6567f1601c3b90f80fdba3dcf
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 07a4c06b840d41455beea9be4ed0343b4946ddb3
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954645"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594600"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Netwerk configureren voor Azure Stack Edge Pro met GPU
 
@@ -56,15 +56,13 @@ Volg deze stappen voor het configureren van het netwerk voor uw apparaat.
     
     ![Pagina 'Netwerkinstellingen' van lokale webgebruikersinterface](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/network-2a.png)
 
-
-   
 3. Als u de netwerkinstellingen wilt wijzigen, selecteert u een poort en wijzigt u in het rechterdeelvenster dat verschijnt, het IP-adres, het subnet, de gateway, de primaire DNS en de secundaire DNS. 
 
     - Als u poort 1 selecteert, ziet u dat deze vooraf is geconfigureerd als statisch. 
 
         ![Netwerkinstellingen van poort 1 van lokale webinterface](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/network-3.png)
 
-    - Als u poort 2, poort 3, poort 4 of poort 5 selecteert, worden al deze poorten standaard geconfigureerd als DHCP.
+    - Als u poort 2, poort 3, poort 4 of poort 5 selecteert, zijn al deze poorten standaard geconfigureerd als DHCP.
 
         ![Netwerkinstellingen van poort 3 van lokale webinterface](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/network-4.png)
 
@@ -73,7 +71,8 @@ Volg deze stappen voor het configureren van het netwerk voor uw apparaat.
    * Als DHCP is ingeschakeld in uw omgeving, worden netwerkinterfaces automatisch geconfigureerd. Er wordt automatisch een IP-adres, subnet, gateway en DNS toegewezen.
    * Als DHCP niet is ingeschakeld, kunt u indien nodig statische IP-adressen toewijzen.
    * U kunt uw netwerkinterface configureren als IPv4.
-   * Op de 25 Gbps-interfaces kunt u de RDMA-modus (Remote Direct Access Memory) instellen op iWarp of RoCE (RDMA over Converged Ethernet). Wanneer lage latenties de primaire vereiste zijn en schaalbaarheid er niet toe doet, gebruikt u RoCE. Wanneer latentie een belangrijke vereiste is, maar gebruiksgemak en schaalbaarheid ook een hoge prioriteit kennen, is iWARP de beste kandidaat.
+   * U kunt op een interface van 25 Gbps de RDMA-modus (Remote direct Access Memory) instellen op iWarp of RoCE (RDMA over geconvergeerde Ethernet). Wanneer lage latenties de primaire vereiste zijn en schaalbaarheid er niet toe doet, gebruikt u RoCE. Wanneer latentie een belangrijke vereiste is, maar gebruiksgemak en schaalbaarheid ook een hoge prioriteit kennen, is iWARP de beste kandidaat.
+   * Netwerk interface kaart (NIC) samen voeging of koppelings aggregatie wordt niet ondersteund met Azure Stack Edge. 
    * Het serienummer van een poort komt overeen met het serienummer van het knooppunt.
 
     Zodra het apparaatnetwerk is geconfigureerd, wordt de pagina bijgewerkt, zoals hieronder weergegeven.
@@ -81,12 +80,11 @@ Volg deze stappen voor het configureren van het netwerk voor uw apparaat.
     ![Pagina 2, 'Netwerkinstellingen' van lokale webgebruikersinterface](./media/azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy/network-2.png)
 
 
-     >[!NOTE]
-     >
-     > * Het is raadzaam om het lokale IP-adres van de netwerkinterface niet te wijzigen van statisch naar DHCP, tenzij u een ander IP-adres hebt om verbinding te maken met het apparaat. Als u één netwerkinterface gebruikt en u overschakelt naar DHCP, is er geen manier om het DHCP-adres te bepalen. Als u wilt overstappen op een DHCP-adres, wacht u totdat het apparaat bij de service is geactiveerd en brengt u vervolgens de wijziging aan. U kunt vervolgens de IP-adressen van alle adapters in de **Apparaateigenschappen** weergeven in de Azure Portal voor uw service.
+     > [!NOTE]
+     > Het is raadzaam om het lokale IP-adres van de netwerkinterface niet te wijzigen van statisch naar DHCP, tenzij u een ander IP-adres hebt om verbinding te maken met het apparaat. Als u één netwerkinterface gebruikt en u overschakelt naar DHCP, is er geen manier om het DHCP-adres te bepalen. Als u wilt overstappen op een DHCP-adres, wacht u totdat het apparaat bij de service is geactiveerd en brengt u vervolgens de wijziging aan. U kunt vervolgens de IP-adressen van alle adapters in de **Apparaateigenschappen** weergeven in de Azure Portal voor uw service.
 
 
-    Nadat u de netwerkinstellingen hebt geconfigureerd en toegepast, selecteert u Volgende: Berekening om het rekennetwerk te configureren.
+    Nadat u de netwerkinstellingen hebt geconfigureerd en toegepast, selecteert u **Volgende: Berekening** om het rekennetwerk te configureren.
 
 ## <a name="enable-compute-network"></a>Rekennetwerk inschakelen
 

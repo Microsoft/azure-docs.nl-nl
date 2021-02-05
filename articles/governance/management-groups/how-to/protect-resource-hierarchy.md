@@ -1,14 +1,14 @@
 ---
 title: Uw resource hiërarchie beveiligen-Azure governance
 description: Meer informatie over het beveiligen van uw resource hiërarchie met hiërarchie-instellingen, zoals het instellen van de standaard beheer groep.
-ms.date: 09/02/2020
+ms.date: 02/05/2021
 ms.topic: conceptual
-ms.openlocfilehash: cfaf7a732b3233536006009613cecd5aa1649dee
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 0f0afb5401fc646d26598a211604790af191f156
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951890"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594583"
 ---
 # <a name="how-to-protect-your-resource-hierarchy"></a>Uw resource hiërarchie beveiligen
 
@@ -23,7 +23,7 @@ Voor het configureren van een van de hiërarchie-instellingen zijn de volgende t
 - `Microsoft.Management/managementgroups/settings/write`
 - `Microsoft.Management/managementgroups/settings/read`
 
-Met deze bewerkingen kan een gebruiker de hiërarchie-instellingen niet lezen en bijwerken. De bewerkingen bieden geen andere toegang tot de hiërarchie van de beheer groep of resources in de hiërarchie. Beide bewerkingen zijn beschikbaar in de beheerder van de ingebouwde rol hiërarchie- **instellingen**van Azure.
+Met deze bewerkingen kan een gebruiker de hiërarchie-instellingen niet lezen en bijwerken. De bewerkingen bieden geen andere toegang tot de hiërarchie van de beheer groep of resources in de hiërarchie. Beide bewerkingen zijn beschikbaar in de beheerder van de ingebouwde rol hiërarchie- **instellingen** van Azure.
 
 ## <a name="setting---default-management-group"></a>Instelling: standaard beheer groep
 
@@ -39,7 +39,7 @@ Voer de volgende stappen uit om deze instelling te configureren in Azure Portal:
 
 1. Selecteer in de hoofd beheer groep de optie **Details** naast de naam van de beheer groep.
 
-1. Selecteer onder **instellingen**de optie **hiërarchie-instellingen**.
+1. Selecteer onder **instellingen** de optie **hiërarchie-instellingen**.
 
 1. Selecteer de knop **standaard beheer groep wijzigen** .
 
@@ -82,7 +82,7 @@ Voer de volgende stappen uit om deze instelling te configureren in Azure Portal:
 
 1. Selecteer in de hoofd beheer groep de optie **Details** naast de naam van de beheer groep.
 
-1. Selecteer onder **instellingen**de optie **hiërarchie-instellingen**.
+1. Selecteer onder **instellingen** de optie **hiërarchie-instellingen**.
 
 1. Scha kelen tussen **machtigingen vereisen voor het maken van nieuwe beheer groepen.** optie aan aan.
 

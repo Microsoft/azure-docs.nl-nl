@@ -1,7 +1,7 @@
 ---
-title: Bestaande Azure Load Balancer bijwerken of verwijderen die wordt gebruikt door de virtuele-machineschaalset
-titleSuffix: Update or delete existing Azure Load Balancer used by Virtual Machine Scale Set
-description: Aan de hand van dit artikel kunt u aan de slag met Azure Standard Load Balancer en Virtual Machine Scale Sets.
+title: Een bestaande load balancer die wordt gebruikt door virtuele-machine schaal sets bijwerken of verwijderen
+titleSuffix: Update or delete an existing load balancer used by virtual machine scale sets
+description: Met dit artikel kunt u aan de slag met Azure Standard Load Balancer en virtuele-machine schaal sets.
 services: load-balancer
 documentationcenter: na
 author: irenehua
@@ -13,52 +13,65 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/30/2020
 ms.author: irenehua
-ms.openlocfilehash: d5614490bfd2cfb67b6b7afd7b7b8643bbf754bd
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 0c491275f793ce2cd5e830ca6a3014dc45d6d509
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790086"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594532"
 ---
-# <a name="how-to-updatedelete-azure-load-balancer-used-by-virtual-machine-scale-sets"></a>Azure Load Balancer die door Virtual Machine Scale Sets worden gebruikt, bijwerken/verwijderen
+# <a name="update-or-delete-a-load-balancer-used-by-virtual-machine-scale-sets"></a>Een load balancer die wordt gebruikt door virtuele-machine schaal sets bijwerken of verwijderen
 
-## <a name="how-to-set-up-azure-load-balancer-for-scaling-out-virtual-machine-scale-sets"></a>Azure Load Balancer instellen voor uitschalen Virtual Machine Scale Sets
-  * Zorg ervoor dat de Load Balancer de [binnenkomende NAT-pool](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest) heeft ingesteld en dat de schaalset van de virtuele machine in de back-endadresgroep van de Load Balancer wordt geplaatst. Azure Load Balancer maakt automatisch nieuwe binnenkomende NAT-regels in de binnenkomende NAT-groep wanneer er nieuwe exemplaren van virtuele machines worden toegevoegd aan de Schaalset voor virtuele machines. 
-  * Om te controleren of de binnenkomende NAT-groep juist is ingesteld, 
-  1. Meld u aan bij Azure Portal op https://portal.azure.com.
-  
-  1. Selecteer **Alle resources** in het linkermenu en selecteer vervolgens **MyLoadBalancer** in de lijst met resources.
-  
-  1. Selecteer onder **instellingen** **binnenkomende NAT-regels**.
-Als u in het rechterdeel venster ziet, een lijst met regels die zijn gemaakt voor elk afzonderlijk exemplaar in de Schaalset van de virtuele machine, is de gefeliciteerd dat u alles op elk gewenst moment kunt schalen.
+Wanneer u werkt met schaal sets voor virtuele machines en een exemplaar van Azure Load Balancer, kunt u het volgende doen:
 
-## <a name="how-to-add-inbound-nat-rules"></a>Hoe kan ik binnenkomende NAT-regels toevoegen? 
-  * Er kan geen afzonderlijke binnenkomende NAT-regel worden toegevoegd. U kunt echter een set binnenkomende NAT-regels met het gedefinieerde frontend-poort bereik en de back-endserver toevoegen voor alle exemplaren in de Schaalset voor virtuele machines.
-  * Als u een volledige set binnenkomende NAT-regels voor de Virtual Machine Scale Sets wilt toevoegen, moet u eerst een binnenkomende NAT-groep maken in de Load Balancer en vervolgens verwijzen naar de binnenkomende NAT-groep van het netwerk profiel van de virtuele-machine Schaalset. Hieronder ziet u een volledig voor beeld van het gebruik van CLI.
-  * De nieuwe binnenkomende NAT-pool mag geen overlappend frontend-poort bereik met bestaande binnenkomende NAT-groepen hebben. Als u bestaande binnenkomende NAT-groepen wilt weer geven, kunt u deze [cli-opdracht](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest#az_network_lb_inbound_nat_pool_list) gebruiken
+- Regels toevoegen, bijwerken en verwijderen.
+- Configuraties toevoegen.
+- Verwijder de load balancer.
+
+## <a name="set-up-a-load-balancer-for-scaling-out-virtual-machine-scale-sets"></a>Een load balancer instellen voor het uitschalen van virtuele-machine schaal sets
+
+Zorg ervoor dat het exemplaar van Azure Load Balancer een [binnenkomende NAT-groep](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest) heeft ingesteld en dat de schaalset van de virtuele machine in de back-endadresgroep van de Load Balancer wordt geplaatst. Load Balancer maakt automatisch nieuwe binnenkomende NAT-regels in de binnenkomende NAT-groep wanneer er nieuwe exemplaren van virtuele machines worden toegevoegd aan de schaalset voor virtuele machines.
+
+Controleren of de binnenkomende NAT-groep juist is ingesteld:
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Selecteer **alle resources** in het menu links. Selecteer vervolgens **MyLoadBalancer** in de lijst met resources.
+1. Selecteer onder **instellingen** **binnenkomende NAT-regels**. Als u in het rechterdeel venster een lijst met regels hebt gemaakt voor elk afzonderlijk exemplaar in de schaalset van de virtuele machine, kunt u op elk gewenst moment op elke keer naar omhoog schalen.
+
+## <a name="add-inbound-nat-rules"></a>Inkomende NAT-regels toevoegen
+
+Er kunnen geen afzonderlijke binnenkomende NAT-regels worden toegevoegd. Maar u kunt een set binnenkomende NAT-regels met een gedefinieerd front-end poort bereik en een back-end-poort toevoegen voor alle exemplaren in de schaalset van de virtuele machine.
+
+Als u een volledige set binnenkomende NAT-regels voor de virtuele-machine schaal sets wilt toevoegen, maakt u eerst een binnenkomende NAT-groep in de load balancer. Ga vervolgens naar de binnenkomende NAT-pool van het netwerk profiel van de virtuele-machine schaalset. Een volledig voor beeld van het gebruik van CLI wordt weer gegeven.
+
+De nieuwe binnenkomende NAT-groep mag geen overlappende front-end-poort bereik met bestaande binnenkomende NAT-Pools hebben. Als u bestaande binnenkomende NAT-groepen wilt weer geven die zijn ingesteld, gebruikt u deze [cli-opdracht](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest#az_network_lb_inbound_nat_pool_list):
+  
 ```azurecli-interactive
-az network lb inbound-nat-pool create 
-        -g MyResourceGroup 
-        --lb-name MyLb
-        -n MyNatPool 
-        --protocol Tcp 
-        --frontend-port-range-start 80 
-        --frontend-port-range-end 89 
-        --backend-port 80 
-        --frontend-ip-name MyFrontendIp
-az vmss update 
-        -g MyResourceGroup 
-        -n myVMSS 
-        --add virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerInboundNatPools "{'id':'/subscriptions/mySubscriptionId/resourceGroups/MyResourceGroup/providers/Microsoft.Network/loadBalancers/MyLb/inboundNatPools/MyNatPool'}"
-        
-az vmss update-instances
-        -–instance-ids *
-        --resource-group MyResourceGroup
-        --name MyVMSS
+  az network lb inbound-nat-pool create 
+          -g MyResourceGroup 
+          --lb-name MyLb
+          -n MyNatPool 
+          --protocol Tcp 
+          --frontend-port-range-start 80 
+          --frontend-port-range-end 89 
+          --backend-port 80 
+          --frontend-ip-name MyFrontendIp
+  az vmss update 
+          -g MyResourceGroup 
+          -n myVMSS 
+          --add virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerInboundNatPools "{'id':'/subscriptions/mySubscriptionId/resourceGroups/MyResourceGroup/providers/Microsoft.Network/loadBalancers/MyLb/inboundNatPools/MyNatPool'}"
+            
+  az vmss update-instances
+          -–instance-ids *
+          --resource-group MyResourceGroup
+          --name MyVMSS
 ```
-## <a name="how-to-update-inbound-nat-rules"></a>Hoe kan ik binnenkomende NAT-regels bijwerken? 
-  * Afzonderlijke binnenkomende NAT-regel kan niet worden bijgewerkt. U kunt echter een set binnenkomende NAT-regels met het gedefinieerde frontend-poort bereik en de back-endserver bijwerken voor alle exemplaren in de Schaalset van de virtuele machine.
-  * Als u een hele set binnenkomende NAT-regels voor de Virtual Machine Scale Sets wilt bijwerken, moet u de binnenkomende NAT-groep bijwerken in de Load Balancer. 
+## <a name="update-inbound-nat-rules"></a>Inkomende NAT-regels bijwerken
+
+Afzonderlijke binnenkomende NAT-regels kunnen niet worden bijgewerkt. Maar u kunt een set binnenkomende NAT-regels met een gedefinieerd front-end poort bereik en een back-end-poort voor alle exemplaren in de schaalset voor virtuele machines bijwerken.
+
+Als u een hele set binnenkomende NAT-regels voor virtuele-machine schaal sets wilt bijwerken, werkt u de binnenkomende NAT-groep bij in het load balancer.
+    
 ```azurecli-interactive
 az network lb inbound-nat-pool update 
         -g MyResourceGroup 
@@ -68,60 +81,68 @@ az network lb inbound-nat-pool update
         --backend-port 8080
 ```
 
-## <a name="how-to-delete-inbound-nat-rules"></a>Hoe kan ik binnenkomende NAT-regels verwijderen? 
-* Afzonderlijke binnenkomende NAT-regel kan niet worden verwijderd. U kunt echter wel de volledige set binnenkomende NAT-regels verwijderen.
-* Als u de volledige set binnenkomende NAT-regels wilt verwijderen die worden gebruikt door de Schaalset, moet u de NAT-pool eerst verwijderen uit de schaalset. Hieronder ziet u een volledig voor beeld van het gebruik van CLI:
+## <a name="delete-inbound-nat-rules"></a>Inkomende NAT-regels verwijderen
+
+Afzonderlijke binnenkomende NAT-regels kunnen niet worden verwijderd, maar u kunt wel de volledige set binnenkomende NAT-regels verwijderen.
+
+Als u wilt verwijderen van de volledige set binnenkomende NAT-regels die door de schaalset worden gebruikt, verwijdert u eerst de NAT-groep uit de schaalset. Hier wordt een volledig voor beeld van het gebruik van CLI weer gegeven:
+    
 ```azurecli-interactive
-  az vmss update
-     --resource-group MyResourceGroup
-     --name MyVMSS
-   az vmss update-instances 
-     --instance-ids "*" 
-     --resource-group MyResourceGroup
-     --name MyVMSS
-  az network lb inbound-nat-pool delete
-     --resource-group MyResourceGroup
-     -–lb-name MyLoadBalancer
-     --name MyNatPool
+    az vmss update
+       --resource-group MyResourceGroup
+       --name MyVMSS
+     az vmss update-instances 
+       --instance-ids "*" 
+       --resource-group MyResourceGroup
+       --name MyVMSS
+    az network lb inbound-nat-pool delete
+       --resource-group MyResourceGroup
+       -–lb-name MyLoadBalancer
+       --name MyNatPool
 ```
 
-## <a name="how-to-add-multiple-ip-configurations"></a>Meerdere IP-configuraties toevoegen:
-1. Selecteer **Alle resources** in het linkermenu en selecteer vervolgens **MyLoadBalancer** in de lijst met resources.
-   
-1. Selecteer bij **instellingen** de optie **frontend IP-configuraties** en selecteer vervolgens **toevoegen**.
-   
-1. Typ op de pagina **frontend IP-adres toevoegen** de waarden en selecteer **OK** .
+## <a name="add-multiple-ip-configurations"></a>Meerdere IP-configuraties toevoegen
 
-1. Volg [stap 5](./load-balancer-multiple-ip.md#step-5-configure-the-health-probe) en [stap 6](./load-balancer-multiple-ip.md#step-5-configure-the-health-probe) in deze zelf studie als er nieuwe taakverdelings regels nodig zijn
+Meerdere IP-configuraties toevoegen:
 
-1. Maak indien nodig een nieuwe set binnenkomende NAT-regels met de nieuwe front-end-IP-configuraties. Hier vindt u een voor beeld in de [vorige sectie].
+1. Selecteer **alle resources** in het menu links. Selecteer vervolgens **MyLoadBalancer** in de lijst met resources.
+1. Selecteer bij **instellingen** de optie Front **-end-IP-configuratie**. Selecteer vervolgens **Toevoegen**.
+1. Op de pagina **frontend IP-adres toevoegen** voert u de waarden in en selecteert u **OK**.
+1. Volg [stap 5](./load-balancer-multiple-ip.md#step-5-configure-the-health-probe) en [stap 6](./load-balancer-multiple-ip.md#step-5-configure-the-health-probe) in deze zelf studie als er nieuwe taakverdelings regels nodig zijn.
+1. Maak een nieuwe set binnenkomende NAT-regels met behulp van de zojuist gemaakte front-end-IP-configuraties, indien nodig. In de vorige sectie vindt u een voor beeld.
 
-## <a name="how-to-delete-frontend-ip-configuration-used-by-virtual-machine-scale-set"></a>De frontend-IP-configuratie verwijderen die wordt gebruikt door de Schaalset voor virtuele machines: 
- 1. Als u de front-end-IP-configuratie die wordt gebruikt door de Schaalset wilt verwijderen, moet u eerst de binnenkomende NAT-groep (set met binnenkomende NAT-regels) verwijderen die verwijst naar de frontend-IP-configuratie. Instructies voor het verwijderen van de regels voor binnenkomende verbindingen vindt u in de vorige sectie.
- 1. Verwijder de taakverdelings regel die verwijst naar de frontend-IP-configuratie. 
- 1. Verwijder de frontend-IP-configuratie.
+## <a name="delete-the-front-end-ip-configuration-used-by-the-virtual-machine-scale-set"></a>De front-end-IP-configuratie die wordt gebruikt door de virtuele-machine schaalset verwijderen
+
+De front-end-IP-configuratie verwijderen die wordt gebruikt door de schaalset:
+
+ 1. Verwijder eerst de binnenkomende NAT-groep (de set met binnenkomende NAT-regels) die verwijst naar de front-end-IP-configuratie. Instructies voor het verwijderen van de regels voor binnenkomende verbindingen vindt u in de vorige sectie.
+ 1. Verwijder de taakverdelings regel die verwijst naar de front-end-IP-configuratie.
+ 1. Verwijder de front-end-IP-configuratie.
+
+## <a name="delete-a-load-balancer-used-by-a-virtual-machine-scale-set"></a>Een load balancer verwijderen die wordt gebruikt door een schaalset voor virtuele machines
+
+De front-end-IP-configuratie verwijderen die wordt gebruikt door de schaalset:
+
+ 1. Verwijder eerst de binnenkomende NAT-groep (de set met binnenkomende NAT-regels) die verwijst naar de front-end-IP-configuratie. Instructies voor het verwijderen van de regels voor binnenkomende verbindingen vindt u in de vorige sectie.
+ 1. Verwijder de taakverdelings regel die verwijst naar de back-end-pool die de schaalset voor virtuele machines bevat.
+ 1. Verwijder de `loadBalancerBackendAddressPool` verwijzing van het netwerk profiel van de virtuele-machine schaalset.
  
+ Hier wordt een volledig voor beeld van het gebruik van CLI weer gegeven:
 
-## <a name="how-to-delete-azure-load-balancer-used-by-virtual-machine-scale-set"></a>Azure Load Balancer verwijderen die worden gebruikt door de Schaalset voor virtuele machines: 
- 1. Als u de front-end-IP-configuratie die wordt gebruikt door de Schaalset wilt verwijderen, moet u eerst de binnenkomende NAT-groep (set met binnenkomende NAT-regels) verwijderen die verwijst naar de frontend-IP-configuratie. Instructies voor het verwijderen van de regels voor binnenkomende verbindingen vindt u in de vorige sectie.
- 
- 1. Verwijder de taakverdelings regel die verwijst naar de back-end-groep met de Schaalset voor de virtuele machine.
- 
- 1. Verwijder de loadBalancerBackendAddressPool-verwijzing van het netwerk profiel van de virtuele-machine Schaalset. Hieronder ziet u een volledig voor beeld van het gebruik van CLI:
- ```azurecli-interactive
-  az vmss update
-     --resource-group MyResourceGroup
-     --name MyVMSS
-     --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools
-  az vmss update-instances 
-     --instance-ids "*" 
-     --resource-group MyResourceGroup
-     --name MyVMSS
+```azurecli-interactive
+    az vmss update
+       --resource-group MyResourceGroup
+       --name MyVMSS
+       --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerBackendAddressPools
+    az vmss update-instances 
+       --instance-ids "*" 
+       --resource-group MyResourceGroup
+       --name MyVMSS
 ```
-Verwijder ten slotte de Load Balancer resource.
+Verwijder ten slotte de load balancer resource.
  
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over de Azure Load Balancer en de Schaalset voor virtuele machines vindt u meer informatie over de concepten.
+Meer informatie over de Azure Load Balancer en virtuele-machine schaal sets vindt u meer informatie over de concepten.
 
-> [Azure Load Balancer met schaal sets voor virtuele Azure-machines](load-balancer-standard-virtual-machine-scale-sets.md)
+> [Azure Load Balancer met schaal sets voor virtuele machines](load-balancer-standard-virtual-machine-scale-sets.md)

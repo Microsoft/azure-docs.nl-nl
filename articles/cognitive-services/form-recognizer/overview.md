@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: geautomatiseerde gegevensverwerking, documentverwerking, geautomatiseerde gegevensinvoer, formulierverwerking
-ms.openlocfilehash: e1e5a4abf8eab96af62b160e28f98d95cf527eaf
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 2d3a37165994a8c7ff9d46ac24e63b7f58404ce3
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044761"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584563"
 ---
 # <a name="what-is-form-recognizer"></a>Wat is Form Recognizer?
 
@@ -87,13 +87,13 @@ De Form Recognizer gebruikt de [indelings-API](#layout-api) voor meer informatie
 Form Recognizer bevat ook vooraf ontwikkelde modellen voor geautomatiseerde gegevensverwerking van unieke formuliertypen.
 
 ### <a name="prebuilt-invoice-model"></a>Vooraf gebouwd factureringsmodel
-Met het vooraf gebouwde factureringsmodel worden gegevens uit facturen geëxtraheerd in verschillende indelingen, en geretourneerd als gestructureerde gegevens. Met dit model wordt belangrijke informatie geëxtraheerd, zoals factuur-id's, klantgegevens, gegevens van leveranciers, verzendadressen, factuuradressen, totalen, belastingen, en meer. Daarnaast wordt het vooraf gebouwde factureringsmodel getraind om alle tekst en tabellen op de factuur te herkennen en te retourneren. Raadpleeg de conceptuele handleiding voor [Facturen](./concept-invoices.md) voor meer informatie.
+Met het vooraf gebouwde factureringsmodel worden gegevens uit facturen geëxtraheerd in verschillende indelingen, en geretourneerd als gestructureerde gegevens. Met dit model wordt belangrijke informatie geëxtraheerd, zoals factuur-id's, klantgegevens, gegevens van leveranciers, verzendadressen, factuuradressen, totalen, belastingen, en meer. Daarnaast wordt het vooraf gemaakte factuur model getraind om alle tekst en tabellen op de factuur te analyseren en te retour neren. Raadpleeg de conceptuele handleiding voor [Facturen](./concept-invoices.md) voor meer informatie.
 
 :::image type="content" source="./media/overview-invoices.jpg" alt-text="voorbeeldfactuur" lightbox="./media/overview-invoices.jpg":::
 
 ### <a name="prebuilt-receipt-model"></a>Vooraf samengesteld model voor aankoopbewijzen
 
-Het vooraf samengesteld model voor aankoopbewijzen wordt in Australië, Canada, het Verenigd Koninkrijk, India en de Verenigde Staten gebruikt voor het lezen van Engelse aankoopbewijzen&mdash;het type dat wordt gebruikt door restaurants, tankstations, winkels, enzovoort. Dit model haalt belangrijke informatie op, zoals de tijd en datum van de transactie, informatie over de verkoper, btw, regelitems, totalen, enzovoort. Daarnaast wordt het vooraf samengestelde ontvangstbewijsmodel getraind om alle tekst op een ontvangstbewijs te herkennen en te retourneren. Raadpleeg de conceptuele handleiding voor [Verkoopbonnen](./concept-receipts.md) voor meer informatie.
+Het vooraf samengesteld model voor aankoopbewijzen wordt in Australië, Canada, het Verenigd Koninkrijk, India en de Verenigde Staten gebruikt voor het lezen van Engelse aankoopbewijzen&mdash;het type dat wordt gebruikt door restaurants, tankstations, winkels, enzovoort. Dit model haalt belangrijke informatie op, zoals de tijd en datum van de transactie, informatie over de verkoper, btw, regelitems, totalen, enzovoort. Daarnaast wordt het vooraf gedefinieerde ontvangstbewijs model getraind voor het analyseren en retour neren van alle tekst op een ontvangst bewijs. Raadpleeg de conceptuele handleiding voor [Verkoopbonnen](./concept-receipts.md) voor meer informatie.
 
 :::image type="content" source="./media/overview-receipt.jpg" alt-text="voorbeeld van aankoopbewijs" lightbox="./media/overview-receipt.jpg":::
 
@@ -171,4 +171,4 @@ Zoals geldt voor alle services van Cognitive Services, dienen ontwikkelaars die 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voltooi een [quickstart](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een formulierverwerkingsapp met een Form Recognizer in de taal van uw keuze.
+Maak een [Snelstartgids](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van formulieren met een formulier herkenner in de ontwikkelings taal van uw keuze.

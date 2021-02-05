@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 7acfa9c2ffdd4cdd62e965041cdc42dc44d469c5
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 875fa2ad5a3a18c0e2582425a6528730234ac8ed
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845575"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585072"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
@@ -74,7 +74,7 @@ De JSON-uitvoer heeft drie delen:
 
 Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtraheerd. Hieronder vindt u de velden die zijn geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](./media/sample-invoice.jpg))  
 
-|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | tekenreeks | Klant wordt gefactureerd | Micro soft Corp |  |
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
@@ -107,7 +107,7 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 ## <a name="next-steps"></a>Volgende stappen
 
 - Probeer uw eigen facturen en voor beelden in de voor [beeld-UI voor formulier herkenning](https://fott-preview.azurewebsites.net/).
-- Voltooi de [Snelstartgids van een formulier herkenning](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van facturen met de formulier Recognizer in de taal van uw keuze.
+- Voltooi de [Snelstartgids van een formulier herkenning](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van facturen met de formulier herkenner in de ontwikkel taal van uw keuze.
 
 ## <a name="see-also"></a>Zie ook
 

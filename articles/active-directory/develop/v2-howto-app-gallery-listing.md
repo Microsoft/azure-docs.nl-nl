@@ -12,12 +12,12 @@ ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 8f5324e967c5a67ee77559087a02c3421611d8f3
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 3ce00c5182246513aaf3178118058826528619d2
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752863"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584261"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -85,7 +85,7 @@ U kunt een gratis test account krijgen met alle Premium Azure AD-functies-90 dag
 
 ## <a name="step-1---choose-the-right-single-sign-on-standard-for-your-app"></a>Stap 1: Kies de juiste eenmalige aanmelding voor uw app
 
-Als u een toepassing in de Azure AD-App-galerie wilt weer geven, moet u ten minste één van de ondersteunde opties voor eenmalige aanmelding implementeren. Zie [SSO-opties](../manage-apps/sso-options.md)voor meer informatie over de opties voor eenmalige aanmelding en hoe klanten deze configureren in azure AD.
+Als u een toepassing in de Azure AD-App-galerie wilt weer geven, implementeert u ten minste één van de ondersteunde opties voor eenmalige aanmelding. Zie [SSO-opties](../manage-apps/sso-options.md)voor meer informatie over de opties voor eenmalige aanmelding en hoe klanten deze configureren in azure AD.
 
 De volgende tabel vergelijkt de belangrijkste standaarden: open verificatie 2,0 (OAuth 2,0) met OpenID Connect Connect (OIDC), Security Assertion Markup Language (SAML) en Webservices-federatie (WS-started).
 
@@ -186,7 +186,7 @@ U hebt een Azure AD-Tenant nodig om uw app te kunnen testen. Zie [Quick Start: e
 
 Een Azure AD-Tenant wordt ook geleverd met elk Microsoft 365-abonnement. Als u een gratis Microsoft 365 ontwikkel omgeving wilt instellen, raadpleegt u [lid worden van het Microsoft 365 ontwikkelaars programma](/office/developer-program/microsoft-365-developer-program).
 
-Zodra u een Tenant hebt, moet u eenmalige aanmelding en [inrichting](../app-provisioning/use-scim-to-provision-users-and-groups.md#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client)testen. 
+Wanneer u een Tenant hebt, test u eenmalige aanmelding en [inrichting](../app-provisioning/use-scim-to-provision-users-and-groups.md#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client). 
 
 **Voor OIDC-of Oath-toepassingen** [registreert u uw toepassing](quickstart-register-app.md) als multi tenant-toepassing. Selecteer de optie accounts in een organisatorische map en persoonlijke micro soft-accounts in ondersteunde account typen.
 

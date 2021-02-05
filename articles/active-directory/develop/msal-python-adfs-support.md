@@ -13,12 +13,12 @@ ms.date: 11/23/2019
 ms.author: abpati
 ms.reviewer: nacanuma
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 161bcb2a4276b39765361e97a4516812c26ef580
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: d847e38a6114b0e5f8d56f6e994aa47dfbe929e7
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064467"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583702"
 ---
 # <a name="active-directory-federation-services-support-in-msal-for-python"></a>Ondersteuning voor Active Directory Federation Services in MSAL voor python
 
@@ -57,7 +57,7 @@ Wanneer u een map verbindt met AD FS, is de instantie die u wilt gebruiken om uw
 
 MSAL python ondersteunt ADFS 2019.
 
-Er wordt geen rechtstreekse verbinding met ADFS 2016 of ADFS v2 ondersteund. Als u scenario's wilt ondersteunen waarvoor een directe verbinding met ADFS 2016 is vereist, gebruikt u de meest recente versie van ADAL python. Wanneer u uw on-premises systeem hebt bijgewerkt naar ADFS 2019, kunt u MSAL python gebruiken.
+Er wordt geen rechtstreekse verbinding met ADFS 2016 of ADFS v2 ondersteund. Gebruik de meest recente versie van ADAL python om scenario's te ondersteunen die een directe verbinding met ADFS 2016 vereisen. Wanneer u uw on-premises systeem hebt bijgewerkt naar ADFS 2019, kunt u MSAL python gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

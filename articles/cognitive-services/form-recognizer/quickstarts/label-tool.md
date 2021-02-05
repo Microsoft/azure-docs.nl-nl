@@ -11,12 +11,12 @@ ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: 813f5a06915ca7f5dfc0f4cc9a3f9b3e232ca31a
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 0405ea116a1867ec75beff21637f18fb37565627
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221088"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584716"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen
 
@@ -176,7 +176,7 @@ Er wordt ook weergegeven welke tabellen automatisch zijn geëxtraheerd. Klik op 
 
 ### <a name="apply-labels-to-text"></a>Labels op tekst toepassen
 
-Vervolgens maakt u tags (labels) en past u ze toe op de tekstelementen die u door het model wilt laten herkennen.
+Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die door het model moeten worden geanalyseerd.
 
 # <a name="v20"></a>[v2.0](#tab/v2-0)  
 1. Gebruik eerst het deelvenster van de tageditor om de labels te maken die u wilt identificeren.

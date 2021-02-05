@@ -9,20 +9,20 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
-ms.openlocfilehash: 661b0bbf1aa389dc76567d95ad917548255a1b35
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: ee57ccb82e771ee8ab93b09e476a94df32278069
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845594"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585106"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Een trainings gegevensverzameling voor een aangepast model bouwen
 
 Wanneer u het aangepaste model van de formulier Recognizer gebruikt, geeft u uw eigen trainings gegevens op voor de [aangepaste model](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) bewerking voor het trainen, zodat het model kan worden opgeleid voor uw branchespecifieke formulieren. Volg deze hand leiding voor informatie over het verzamelen en voorbereiden van gegevens om het model effectief te trainen.
 
-Als u training hebt zonder hand matige labels, kunt u vijf ingevulde formulieren gebruiken of een leeg formulier (u moet het woord ' empty ' in de bestands naam) plus twee ingevulde formulieren toevoegen. Zelfs als u voldoende ingevulde formulieren hebt, kunt u een leeg formulier toevoegen aan uw trainings gegevensset om de nauw keurigheid van het model te verbeteren.
+U moet ten minste vijf ingevulde formulieren van hetzelfde type hebben.
 
-Als u hand matig gelabelde trainings gegevens wilt gebruiken, moet u beginnen met ten minste vijf ingevulde formulieren van hetzelfde type. Naast de vereiste gegevensset kunt u nog steeds niet-gelabelde formulieren en een leeg formulier gebruiken.
+Als u hand matig gelabelde trainings gegevens wilt gebruiken, moet u beginnen met ten minste vijf ingevulde formulieren van hetzelfde type. Naast de vereiste gegevensset kunt u nog steeds niet-gelabelde formulieren gebruiken.
 
 ## <a name="custom-model-input-requirements"></a>Vereisten voor aangepast model invoer
 

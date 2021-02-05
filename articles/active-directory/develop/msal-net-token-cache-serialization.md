@@ -13,12 +13,12 @@ ms.date: 09/16/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 7e80123f21efded92ab6d59d550965ca72427b1c
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 60ce3d32ffa20fc9117890528eac053d1af9fdf2
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064654"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583905"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Serialisatie van token cache in MSAL.NET
 Nadat een [token is verkregen](msal-acquire-cache-tokens.md), wordt het in de cache opgeslagen door de micro soft Authentication Library (MSAL).  De toepassings code moet proberen een token op te halen uit de cache voordat een token wordt verkregen met een andere methode.  In dit artikel wordt de standaard-en aangepaste serialisatie van de token cache in MSAL.NET beschreven.
@@ -34,7 +34,7 @@ In MSAL.NET wordt standaard een token cache in het geheugen beschikbaar gesteld.
 
 ## <a name="custom-serialization-for-windows-desktop-apps-and-web-appsweb-apis"></a>Aangepaste serialisatie voor Windows-bureau blad-apps en web-apps/web-Api's
 
-Vergeet niet dat aangepaste serialisatie niet beschikbaar is op mobiele platformen (UWP, Xamarin. iOS en Xamarin. Android). MSAL definieert al een veilig en uitvoeren van een serialization-mechanisme voor deze platforms. .NET Desktop-en .NET core-toepassingen hebben echter uiteenlopende architecturen en MSAL kan geen mechanisme voor het serialiseren van algemeen gebruik implementeren. Websites kunnen bijvoorbeeld tokens in een redis-cache opslaan of apps op het bureau blad in een versleuteld bestand opslaan. Serialisatie wordt dus niet out-of-the-box meegeleverd. Als u een permanente token cache-toepassing in .NET desktop of .NET core wilt hebben, moet u de serialisatie aanpassen.
+Vergeet niet dat aangepaste serialisatie niet beschikbaar is op mobiele platformen (UWP, Xamarin. iOS en Xamarin. Android). MSAL definieert al een veilig en uitvoeren van een serialization-mechanisme voor deze platforms. .NET Desktop-en .NET core-toepassingen hebben echter uiteenlopende architecturen en MSAL kan geen mechanisme voor het serialiseren van algemeen gebruik implementeren. Websites kunnen bijvoorbeeld tokens in een redis-cache opslaan of apps op het bureau blad in een versleuteld bestand opslaan. Serialisatie wordt dus niet out-of-the-box meegeleverd. Als u een permanente token cache toepassing in .NET desktop of .NET core wilt, past u de serialisatie aan.
 
 De volgende klassen en interfaces worden gebruikt in de serialisatie van de token cache:
 
@@ -281,7 +281,7 @@ MSAL.NET biedt aangepaste token cache-serialisatie in .NET Framework en .NET cor
 
 De [micro soft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web) -bibliotheek biedt een preview NuGet-pakket [micro soft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) met de token cache-serialisatie:
 
-| Extensie methode | Micro soft. Identity. Web-sub-naam ruimte | Beschrijving  |
+| Extensie methode | Micro soft. Identity. Web-sub-naam ruimte | Description  |
 | ---------------- | --------- | ------------ |
 | `AddInMemoryTokenCaches` | `TokenCacheProviders.InMemory` | In geheugen token cache-serialisatie. Deze implementatie is geweldig in voor beelden. Het is ook handig in productie toepassingen die u niet bedenkt als de token cache verloren gaat wanneer de web-app opnieuw wordt gestart. `AddInMemoryTokenCaches` neemt een optionele para meter van `MsalMemoryTokenCacheOptions` het type waarmee u de duur kunt opgeven waarna de cache vermelding verloopt, tenzij deze wordt gebruikt.
 | `AddSessionTokenCaches` | `TokenCacheProviders.Session` | De token cache is gebonden aan de gebruikers sessie. Deze optie is niet ideaal als het ID-token veel claims bevat omdat de cookie te groot wordt.

@@ -12,16 +12,16 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 73fbda9a3356e2877617391430a7f2b555b1a0e5
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: ee9f374d110115b224c48853f26037dc461e5fa0
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063481"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583838"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
 
-Op Android en iOS kunnen brokers als Microsoft Authenticator en de Android-specifieke Microsoft Intune Bedrijfsportal inschakelen:
+Op Android en iOS kunnen brokers als Microsoft Authenticator en de Android-specifieke Microsoft Intune bedrijfsportal inschakelen:
 
 - **Eenmalige aanmelding (SSO)**: gebruikers hoeven zich niet aan te melden bij elke toepassing.
 - **Apparaat-id**: de Broker heeft toegang tot het certificaat van het apparaat. Dit certificaat wordt gemaakt op het apparaat wanneer het is gekoppeld aan de werk plek.
@@ -91,7 +91,7 @@ Deze methode wordt aangeroepen telkens wanneer de toepassing wordt gestart. Het 
 
 ### <a name="step-4-set-uiviewcontroller"></a>Stap 4: set UIViewController ()
 
-U moet nog steeds in het *AppDelegate.cs* -bestand een object venster instellen. Normaal gesp roken hoeft u het object venster niet in te stellen voor Xamarin iOS, maar u hebt wel een object venster nodig voor het verzenden en ontvangen van antwoorden van de Broker.
+Stel in het *AppDelegate.cs* -bestand nog steeds een object venster in. Normaal gesp roken hoeft u het object venster niet in te stellen voor Xamarin iOS, maar u hebt wel een object venster nodig voor het verzenden en ontvangen van antwoorden van de Broker.
 
 Het object venster instellen:
 
@@ -237,7 +237,7 @@ result = await app.AcquireTokenInteractive(scopes)
 
 ### <a name="step-4-add-a-redirect-uri-to-your-app-registration"></a>Stap 4: een omleidings-URI toevoegen aan de registratie van uw app
 
-MSAL maakt gebruik van Url's om de Broker aan te roepen en vervolgens terug te gaan naar uw app. Als u deze retour ronding wilt volt ooien, moet u een **omleidings-URI** voor uw app registreren met behulp van de [Azure Portal](https://portal.azure.com).
+MSAL maakt gebruik van Url's om de Broker aan te roepen en vervolgens terug te gaan naar uw app. Als u deze retour ronding wilt volt ooien, registreert u een **omleidings-URI** voor uw app met behulp van de [Azure Portal](https://portal.azure.com).
 
 De indeling van de omleidings-URI voor uw toepassing is afhankelijk van het certificaat dat wordt gebruikt voor het ondertekenen van de APK. Bijvoorbeeld:
 

@@ -2,20 +2,21 @@
 title: Technische mogelijkheden voor beveiliging in Azure-Microsoft Azure
 description: Inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen.
 services: security
-author: terrylanfear
+author: TerryLanfear
+manager: rkarlin
 ms.assetid: ''
 ms.service: security
 ms.subservice: security-fundamentals
 ms.devlang: na
 ms.topic: article
-ms.date: 07/13/2020
+ms.date: 02/04/2021
 ms.author: terrylan
-ms.openlocfilehash: 353b1708a1c6014f9108ad2be62f22c1e0b0604c
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 6e0642a2124d58bb3af483313ac824568b6bbb39
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092765"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585140"
 ---
 # <a name="azure-security-technical-capabilities"></a>Technische mogelijkheden van Azure-beveiliging
 Dit artikel bevat een inleiding tot beveiligings Services in azure waarmee u uw gegevens, resources en toepassingen in de cloud kunt beveiligen en voldoen aan de beveiligings behoeften van uw bedrijf.
@@ -431,20 +432,6 @@ Resource Manager biedt diverse voordelen:
 > [!Note]
 > Resource Manager biedt een nieuwe manier om uw oplossingen te implementeren en te beheren. Zie [Resource Manager-implementatie en klassieke implementatie](../../azure-resource-manager/management/deployment-models.md)voor meer informatie over het gebruik van het eerdere implementatie model en over de wijzigingen.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="next-step"></a>Volgende stap
 
-Lees meer over beveiliging door enkele van onze diep gaande onderwerpen over beveiliging te lezen:
-
-- [Controle en logboekregistratie](https://www.microsoft.com/en-us/trustcenter/security/auditingandlogging)
-
-- [Cyber Crime](https://www.microsoft.com/en-us/trustcenter/security/cybercrime)
-
-- [Ontwerp en operationele beveiliging](https://www.microsoft.com/en-us/trustcenter/security/designopsecurity)
-
-- [Versleuteling](https://www.microsoft.com/en-us/trustcenter/security/encryption)
-
-- [Identiteits- en toegangsbeheer](https://www.microsoft.com/en-us/trustcenter/security/identity)
-
-- [Netwerkbeveiliging](https://www.microsoft.com/en-us/trustcenter/security/networksecurity)
-
-- [Beveiligingsbeheer](https://www.microsoft.com/en-us/trustcenter/security/threatmanagement)
+Het [Azure Security Bench Mark](../benchmarks/introduction.md) -programma bevat een verzameling beveiligings aanbevelingen die u kunt gebruiken om de services te beveiligen die u in azure gebruikt.

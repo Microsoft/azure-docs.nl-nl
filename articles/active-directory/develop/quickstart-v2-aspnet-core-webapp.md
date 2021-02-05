@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: b2e42dcaeb72a053f20afa47439d1825445b0ad8
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 9e9c4773b8f50d3d7b47f0eb94c039a42bee1d04
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225830"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584445"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app
 
@@ -62,7 +62,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
-> De voorbeeld code van deze Snelstartgids vereist een **omleidings-URI** van `https://localhost:44321/` en `https://localhost:44321/signin-oidc` en een **URL voor het afmelden van het voor kanaal** van `https://localhost:44321/signout-oidc` . Tokens voor aanvraag-id's worden uitgegeven door het autorisatie-eind punt.
+> Voor het voor beeld van de code in deze Quick start gaat u een **omleidings-URI** van `https://localhost:44321/` en `https://localhost:44321/signin-oidc` en een **front Channel-afmeldings-URL** van toevoegen `https://localhost:44321/signout-oidc` . Tokens voor aanvraag-id's worden uitgegeven door het autorisatie-eind punt.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Deze wijziging voor mij maken]()
 >

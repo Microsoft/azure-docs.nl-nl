@@ -28,8 +28,6 @@
       href: convert-to-dataset.md
     - name: Converteren naar indicatorwaarden
       href: convert-to-indicator-values.md
-    - name: Ontbrekende gegevens opschonen
-      href: clean-missing-data.md
     - name: Metagegevens bewerken
       href: edit-metadata.md
     - name: Gegevens in opslaglocaties groeperen

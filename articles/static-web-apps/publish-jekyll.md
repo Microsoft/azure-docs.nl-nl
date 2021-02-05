@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 673852f8f9aa81c838a7c1db68681bb9ee0b7e0b
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
-ms.translationtype: HT
+ms.openlocfilehash: 8c6764ad5b63aa2fde07326ab986404ea4312316
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862022"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585174"
 ---
 # <a name="tutorial-publish-a-jekyll-site-to-azure-static-web-apps-preview"></a>Zelfstudie: Een Jekyll-site publiceren in Azure Static Web Apps Preview
 
@@ -79,8 +79,11 @@ Azure Static Web Apps gebruikt GitHub om uw website te publiceren. In de volgend
 1. Push de lokale opslagplaats naar GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
+
+   > [!NOTE]
+   > Uw Git-vertakking heeft mogelijk een andere naam dan `main` . Vervang `main` in deze opdracht door de juiste waarde.
 
 ## <a name="deploy-your-web-app"></a>De web-app implementeren
 
@@ -116,7 +119,7 @@ De volgende stappen laten zien hoe u een nieuwe statische site-app maakt en deze
 
 1. Selecteer de **jekyll-static-app** als de _opslagplaats_.
 
-1. Selecteer **hoofd** voor de _Vertakking_.
+1. Selecteer **hoofd** voor de _vertakking_ .
 
     :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Voltooide GitHub-gegevens":::
 
@@ -146,7 +149,7 @@ Vervolgens voegt u configuratie-instellingen toe die tijdens het bouwproces word
 
 1. Open de Jekyll-app in een teksteditor en open het bestand _.github/workflows/azure-pages-<NAAM_VAN-WERKSTROOM>.yml_.
 
-1. Voeg na de regel `- uses: actions/checkout@v2` het volgende configuratieblok toe.
+1. Voeg vóór de regel `- name: Build And Deploy` het volgende configuratie blok toe.
 
     ```yml
     - name: Set up Ruby

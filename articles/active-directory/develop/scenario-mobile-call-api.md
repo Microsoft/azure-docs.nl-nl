@@ -13,12 +13,12 @@ ms.date: 05/18/2020
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 601eefa7957972daa2d538e6ba0d9b7a5311c79d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 656cb167fb47e44c28922afed75d8c46a460aaf1
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756469"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584394"
 ---
 # <a name="call-a-web-api-from-a-mobile-app"></a>Een web-API aanroepen vanuit een mobiele app
 
@@ -117,7 +117,7 @@ task.resume()
 
 ## <a name="make-several-api-requests"></a>Meerdere API-aanvragen doen
 
-Als u dezelfde API meerdere keren moet aanroepen, of als u meerdere Api's moet aanroepen, moet u rekening houden met de volgende onderwerpen wanneer u uw app bouwt:
+Als u dezelfde API meerdere keren aanroept of meerdere Api's aanroept, moet u rekening houden met de volgende onderwerpen wanneer u uw app bouwt:
 
 - **Incrementele toestemming**: met het micro soft Identity-platform kunnen Apps gebruikers toestemming krijgen wanneer er machtigingen zijn vereist in plaats van aan het begin. Telkens wanneer uw app klaar is om een API aan te roepen, moet deze alleen de bereiken aanvragen die het nodig heeft.
 
@@ -125,7 +125,7 @@ Als u dezelfde API meerdere keren moet aanroepen, of als u meerdere Api's moet a
 
 ## <a name="call-several-apis-by-using-incremental-consent-and-conditional-access"></a>Meerdere Api's aanroepen met behulp van incrementele toestemming en voorwaardelijke toegang
 
-Als u meerdere Api's voor dezelfde gebruiker moet aanroepen, kunt u, nadat u een token voor de gebruiker hebt verkregen, voor komen dat de gebruiker herhaaldelijk om referenties wordt gevraagd door u vervolgens `AcquireTokenSilent` aan te roepen om een token op te halen:
+Als u meerdere Api's voor dezelfde gebruiker aanroept, kunt u, nadat u een token voor de gebruiker hebt verkregen, voor komen dat de gebruiker herhaaldelijk om referenties wordt gevraagd door u vervolgens `AcquireTokenSilent` aan te roepen om een token op te halen:
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")

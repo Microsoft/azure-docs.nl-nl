@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 7173efd3dab0e8d2fd3c948a3a9bac07641e78f3
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: c1ae52b2b92c5c8d5a1a98632e19d3140672d6ea
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98792079"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585038"
 ---
 # <a name="form-recognizer-prebuilt-receipt-model"></a>Vooraf gegenereerde ontvangst model voor formulier herkenning
 
@@ -38,7 +38,7 @@ De vooraf ontwikkelde service voor ontvangst behaalt de inhoud van de verkoop on
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden
 
-|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | ReceiptType | tekenreeks | Type verkoop ontvangst | Gespecificeerd |  |
 | Adverteerder | tekenreeks | Naam van de handelaar die de ontvangst heeft uitgegeven | Contoso |  |
@@ -51,7 +51,7 @@ De vooraf ontwikkelde service voor ontvangst behaalt de inhoud van de verkoop on
 | Btw | getal | Belasting op ontvangst, vaak BTW of equivalent | $ 2,00 | 2,00 |
 | Tip | getal | Tip inbegrepen door de koper | $1,00 | 1,00 |
 | Items | matrix van objecten | Geëxtraheerde regel items, met naam, hoeveelheid, eenheids prijs en totale prijs geëxtraheerd | |
-| Naam | tekenreeks | Itemnaam | Surface Pro 6 | |
+| Name | tekenreeks | Itemnaam | Surface Pro 6 | |
 | Aantal | getal | Hoeveelheid van elk item | 1 | |
 | Prijs | getal | Individuele prijs van elke artikel eenheid | $999,00 | 999,00 |
 | Totale prijs | getal | Totale prijs van het regel item | $999,00 | 999,00 |
@@ -467,7 +467,7 @@ De kassabon-API voorziet ook in de [functie voor ontvangst verwerking van de AI 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voltooi de [Snelstartgids van een formulier herkenning](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van een kwitantie met de formulier herkenner in de taal van uw keuze.
+- Voltooi de [Snelstartgids van een formulier herkenning](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van een kwitantie met de formulier herkenner in de ontwikkel taal van uw keuze.
 
 ## <a name="see-also"></a>Zie ook
 

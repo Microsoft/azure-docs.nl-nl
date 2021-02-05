@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: d790b466f669ed067863b6643c8f59662eb628a7
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 5dae14f546a8c51c7df016ba1e39698302be6f40
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226435"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584344"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-toepassing met één pagina (SPA)
 
@@ -413,7 +413,7 @@ De toepassing met één pagina die u met behulp van deze gids hebt gegenereerd, 
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 
-Na de eerste aanmelding wilt u gebruikers niet meer vragen om zich telkens opnieuw te verifiëren wanneer ze een token moeten aanvragen voor toegang tot een resource. Daarom moet de meeste tijd *acquireTokenSilent* worden gebruikt voor het verkrijgen van tokens. Er zijn echter situaties waarin u gebruikers moet dwingen om te communiceren met het micro soft Identity-platform. Voorbeelden zijn:
+Na de eerste aanmelding wilt u gebruikers niet meer vragen om zich telkens opnieuw te verifiëren wanneer ze een token moeten aanvragen voor toegang tot een resource. Daarom moet de meeste tijd *acquireTokenSilent* worden gebruikt voor het verkrijgen van tokens. Er zijn echter situaties waarin u gebruikers dwingt te communiceren met het micro soft Identity-platform. Voorbeelden zijn:
 
 - Gebruikers moeten hun referenties opnieuw opgeven omdat het wachtwoord is verlopen.
 - Uw toepassing vraagt toegang tot een resource waarvoor de gebruiker toestemming moet geven.

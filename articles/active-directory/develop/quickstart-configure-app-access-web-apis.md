@@ -13,12 +13,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: lenalepa, aragra, sureshja
-ms.openlocfilehash: fdaaf935dc458a6a5b2a87a81bb98a1392f1034a
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 460c96ddb06318cacd4e436190f459e4c060536e
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012118"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583685"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>Quickstart: Een clienttoepassing configureren voor toegang tot een web-API
 
@@ -110,7 +110,7 @@ Voor sommige machtigingen, zoals *Files.Read.All* van Microsoft Graph, is toeste
 
 ### <a name="configure-client-credentials"></a>Aanmeldingsgegevens voor de client configureren
 
-Apps die gebruikmaken van app-machtigingen verifiëren zichzelf met hun eigen aanmeldingsgegevens, zonder tussenkomst van de gebruiker. Voordat uw toepassing (of API) toegang kan krijgen tot Microsoft Graph, uw eigen web-API of een andere API met behulp van app-machtigingen, moet u de aanmeldingsgegevens van de clienttoepassing configureren.
+Apps die gebruikmaken van app-machtigingen verifiëren zichzelf met hun eigen aanmeldingsgegevens, zonder tussenkomst van de gebruiker. Voordat uw toepassing (of API) toegang kan krijgen tot Microsoft Graph, uw eigen web-API of een andere API met behulp van toepassings machtigingen, moet u de referenties van die client app configureren.
 
 Zie de sectie [Aanmeldingsgegevens toevoegen](quickstart-register-app.md#add-credentials) in de [quickstart voor meer informatie over het configureren van de aanmeldingsgegevens van een app: Een toepassing registreren bij het Microsoft-identiteitsplatform](quickstart-register-app.md).
 

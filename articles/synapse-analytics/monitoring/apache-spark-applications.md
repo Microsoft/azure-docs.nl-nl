@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 2f9fa6e7ef9a7ee8ea7dd2a09622f26f6fd9739e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 00407b4a55b3c074fa77d4c3664f6e218c23fe21
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223122"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584508"
 ---
 # <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Synapse Studio gebruiken om uw Apache Spark-toepassingen te bewaken
 
@@ -155,6 +155,26 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 6. Controleer de fout gegevens.
 
    ![mislukte taak gegevens](./media/how-to-monitor-spark-applications/failed-job-info.png)
+
+## <a name="compare-apache-spark-applications"></a>Apache Spark toepassingen vergelijken
+Klik op de knop **toepassingen vergelijken** en kies een toepassing om de prestaties te vergelijken. gebruikers kunnen het verschil tussen de twee toepassingen intuïtief zien.
+
+![toepassingen vergelijken](./media/how-to-monitor-spark-applications/compare-applications.png)
+
+1. Gebruik de muis om op een toepassing aan te wijzen en vervolgens het pictogram **toepassingen vergelijken** wordt weer gegeven.
+
+2. Klik op het pictogram **toepassingen vergelijken** en de pagina toepassingen vergelijken wordt weer gegeven.
+
+3. Klik op de knop **toepassing kiezen** om de pagina **vergelijkings toepassing kiezen** te openen.
+
+4. Bij het kiezen van de vergelijkings toepassing moeten gebruikers de URL van de toepassing invoeren of een keuze uit de terugkerende lijst kiezen. Klik vervolgens op de knop **OK** . 
+
+   ![een vergelijkings toepassing kiezen](./media/how-to-monitor-spark-applications/choose-comparison-application.png)
+
+5. Het resultaat van de vergelijking wordt weer gegeven op de pagina toepassingen vergelijken.
+
+   ![resultaat van vergelijking](./media/how-to-monitor-spark-applications/comparison-result.png)
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

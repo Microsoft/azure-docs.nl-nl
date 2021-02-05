@@ -13,12 +13,12 @@ ms.date: 04/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 5bccc39144186b23cc7f9fedf02e5b9d84ea2ee4
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: d477c419bb677a6b8f24a3aae26c403e47cc96cb
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063549"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583939"
 ---
 # <a name="instantiate-a-confidential-client-application-with-configuration-options-using-msalnet"></a>Een vertrouwelijke client toepassing instantiëren met configuratie opties met behulp van MSAL.NET
 
@@ -60,7 +60,7 @@ Een ASP.NET Core toepassings configuratie wordt beschreven in een *appsettings.j
 
 Vanaf MSAL.NET v3. x kunt u uw vertrouwelijke client toepassing configureren vanuit het configuratie bestand.
 
-In de klasse waar u uw toepassing wilt configureren en instantiëren, moet u een object declareren `ConfidentialClientApplicationOptions` .  Koppel de configuratie gelezen van de bron (inclusief de appconfig.jsin het bestand) aan het exemplaar van de toepassings opties, met behulp `IConfigurationRoot.Bind()` van de methode van de [Microsoft.Extensions.Configuratie. Binder nuget-pakket](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
+Declareer een object in de klasse waar u uw toepassing wilt configureren en instantiëren `ConfidentialClientApplicationOptions` .  Koppel de configuratie gelezen van de bron (inclusief de appconfig.jsin het bestand) aan het exemplaar van de toepassings opties, met behulp `IConfigurationRoot.Bind()` van de methode van de [Microsoft.Extensions.Configuratie. Binder NuGet-pakket](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -79,7 +79,7 @@ app = ConfidentialClientApplicationBuilder.CreateWithApplicationOptions(_applica
 ```
 
 ## <a name="add-runtime-configuration"></a>Runtime configuratie toevoegen
-In een vertrouwelijke client toepassing hebt u meestal een cache per gebruiker. Daarom moet u de cache ophalen die aan de gebruiker is gekoppeld en de opbouw functie voor toepassingen op de hoogte stellen die u wilt gebruiken. Op dezelfde manier kunt u een dynamisch berekende omleidings-URI hebben. In dit geval is de code het volgende:
+In een vertrouwelijke client toepassing hebt u meestal een cache per gebruiker. Daarom moet u de cache ophalen die aan de gebruiker is gekoppeld en de opbouw functie voor toepassingen op de hoogte stellen die u wilt gebruiken. Op dezelfde manier kunt u een dynamisch berekende omleidings-URI hebben. In dit geval ziet de code er als volgt uit:
 
 ```csharp
 IConfidentialClientApplication app;

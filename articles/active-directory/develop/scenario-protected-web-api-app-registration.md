@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c3d9cd5e710eb263707e87c4afe0f08809b8d50c
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 5d93df0b6d59e013c22e138942ab4651784421ae
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756458"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584377"
 ---
 # <a name="protected-web-api-app-registration"></a>Beveiligde web-API: app-registratie
 
@@ -58,7 +58,7 @@ Andere instellingen die specifiek zijn voor web-Api's zijn de beschik bare API e
 
 Bereiken hebben meestal het formulier `resourceURI/scopeName` . Voor Microsoft Graph hebben de bereiken snelkoppelingen. `User.Read`Is bijvoorbeeld een snelkoppeling voor `https://graph.microsoft.com/user.read` .
 
-Tijdens de registratie van de app moet u deze para meters definiëren:
+Definieer de volgende para meters tijdens de app-registratie:
 
 - De resource-URI
 - Een of meer scopes
@@ -68,7 +68,7 @@ De portal voor toepassings registratie raadt u standaard aan de resource-URI te 
 
 Voor client toepassingen worden scopes weer gegeven als *gedelegeerde machtigingen* en app-rollen weer gegeven als *toepassings machtigingen* voor uw web-API.
 
-Bereiken worden ook weer gegeven in het venster met toestemming dat wordt gepresenteerd aan gebruikers van uw app. U moet dus de overeenkomende teken reeksen opgeven die het bereik beschrijven:
+Bereiken worden ook weer gegeven in het venster met toestemming dat wordt gepresenteerd aan gebruikers van uw app. Geef daarom de overeenkomende teken reeksen op die het bereik beschrijven:
 
 - Zoals gezien door een gebruiker.
 - Die door een Tenant beheerder worden gezien en die beheerders toestemming kan verlenen.
@@ -99,7 +99,7 @@ In deze sectie leert u hoe u de beveiligde web-API kunt registreren, zodat de da
 
 #### <a name="exposing-application-permissions-app-roles"></a>Toepassings machtigingen beschikbaar maken (app-rollen)
 
-Als u toepassings machtigingen beschikbaar wilt maken, moet u het manifest bewerken.
+Bewerk het manifest om toepassings machtigingen beschikbaar te maken.
 
 1. Selecteer in de registratie van de toepassing voor uw toepassing **manifest**.
 1. Als u het manifest wilt bewerken, gaat u naar de `appRoles` instelling en voegt u toepassings rollen toe. De roldefinities zijn opgenomen in het volgende voor beeld-JSON-blok.

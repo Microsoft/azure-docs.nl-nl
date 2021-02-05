@@ -13,12 +13,12 @@ ms.date: 05/16/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 428405fc200751d2581ad9ca6e8ec97382594c09
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 73dd7877b399d34a009c9fe479550eb1bf6dc0f1
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064841"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583973"
 ---
 # <a name="known-issues-on-internet-explorer-browsers-msaljs"></a>Bekende problemen met browsers in Internet Explorer (MSAL.js)
 
@@ -39,7 +39,7 @@ Dit komt omdat Internet Explorer geen systeem eigen ondersteuning biedt voor Jav
 Het implementeren van uw toepassing naar productie (bijvoorbeeld in azure web apps) werkt normaal, vooropgesteld dat de eind gebruiker pop-ups heeft geaccepteerd. We hebben het getest met Internet Explorer 11.
 
 ### <a name="running-locally"></a>Lokaal uitvoeren
-Als u lokaal wilt uitvoeren en fouten wilt opsporen in uw toepassing die in Internet Explorer wordt uitgevoerd, moet u rekening houden met de volgende overwegingen (Stel dat u uw toepassing wilt uitvoeren als *http://localhost:1234* ):
+Als u lokaal wilt uitvoeren en fouten wilt opsporen in uw toepassing die wordt uitgevoerd in Internet Explorer, moet u rekening houden met de volgende overwegingen (Stel dat u uw toepassing wilt uitvoeren als *http://localhost:1234* ):
 
 - Internet Explorer heeft een beveiligings mechanisme met de naam ' beveiligde modus ', waarmee wordt voor komen dat MSAL.js goed werkt. Nadat u zich hebt aangemeld, kunt u onder andere de pagina omleiden naar http://localhost:1234/null .
 

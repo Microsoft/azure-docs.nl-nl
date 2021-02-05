@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 1fd4279cd35e54e2e04f88973c4a825218a75142
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 4cd762d6c264d95ecb1bd0f3f4c3a4d96eb5a57d
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131119"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585089"
 ---
 # <a name="form-recognizer-prebuilt-business-cards-model"></a>Model voor het maken van een webkaart met formulier herkenning 
 
@@ -31,11 +31,11 @@ De vooraf ontwikkelde Business Card-API extraheert belang rijke velden van visit
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden:
 
-|Naam| Type | Beschrijving | Tekst | 
+|Naam| Type | Description | Tekst | 
 |:-----|:----|:----|:----|
 | ContactNames | matrix van objecten | Naam van contact persoon geëxtraheerd uit visite kaartje | [{"FirstName": "John", "LastName": "Jansen"}] |
 | FirstName | tekenreeks | Eerste (gegeven) naam van contact persoon | Letterlijk | 
-| LastName | tekenreeks | Naam van de laatste persoon (familie) |   Vries | 
+| LastName | tekenreeks | Naam van de laatste persoon (familie) |     Vries | 
 | Bedrijfs naam | tekenreeksmatrix | Bedrijfs naam opgehaald uit visite kaartje | ["Contoso"] | 
 | Afdelingen | tekenreeksmatrix | Afdeling of organisatie van contact persoon | ["R&D"] | 
 | JobTitles | tekenreeksmatrix | Titel van de vermelde functie van de contact persoon | [' Software-Engineer '] | 
@@ -45,7 +45,7 @@ De vooraf ontwikkelde Business Card-API extraheert belang rijke velden van visit
 | MobilePhones | matrix van telefoon nummers | Mobiel telefoon nummer opgehaald uit visite kaartje | ["+ 19876543210"] |
 | Faxberichten | matrix van telefoon nummers | Telefoon nummer van Fax geëxtraheerd uit visite kaartje | ["+ 19876543211"] |
 | WorkPhones | matrix van telefoon nummers | Telefoon nummer werk geëxtraheerd uit visite kaartje | ["+ 19876543231"] |
-| OtherPhones    | matrix van telefoon nummers | Ander telefoon nummer opgehaald van visite kaartje | ["+ 19876543233"] |
+| OtherPhones     | matrix van telefoon nummers | Ander telefoon nummer opgehaald van visite kaartje | ["+ 19876543233"] |
 
 
 De API voor het visite kaartje kan ook alle herkende tekst van de visite kaart retour neren. Deze OCR-uitvoer is opgenomen in het JSON-antwoord.  

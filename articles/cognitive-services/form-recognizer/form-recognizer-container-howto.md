@@ -7,23 +7,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 07/14/2020
+ms.date: 02/04/2021
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 750c24fd84629f709beb7a92e92fd1ecf581c09a
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 53334dfdcdb917c754c9bc4205b0918c6d207da8
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862225"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584784"
 ---
-# <a name="install-and-run-form-recognizer-containers-preview"></a>Containers voor formulier herkenning installeren en uitvoeren (preview-versie)
+# <a name="install-and-run-form-recognizer-containers-retiring"></a>Containers voor formulier herkenning installeren en uitvoeren (buiten gebruik stellen)
 
 [!INCLUDE [Form Recognizer containers limit](includes/container-limit.md)]
 
 Azure Form Recognizer past machine learning technologie toe om sleutel-waardeparen en tabellen uit formulieren te identificeren en uit te pakken. Er worden waarden en tabel items gekoppeld aan de sleutel-waardeparen en vervolgens gestructureerde gegevens uitgevoerd die de relaties in het oorspronkelijke bestand bevatten. 
 
-Als u de complexiteit wilt reduceren en eenvoudig een aangepast model wilt integreren in uw werk stroom automatiserings proces of een andere toepassing, kunt u het model aanroepen met behulp van een eenvoudige REST API. Er zijn slechts vijf formulier documenten (of één leeg formulier en twee ingevulde formulieren) nodig, zodat u snel en nauw keurig resultaten kunt ophalen en aanpassen aan uw specifieke inhoud. Er is geen zware hand matige interventie of uitgebreide expertise van gegevens wetenschap nood zakelijk. Er zijn geen gegevens labeling of gegevens aantekening nodig.
+Als u de complexiteit wilt reduceren en eenvoudig een aangepast model wilt integreren in uw werk stroom automatiserings proces of een andere toepassing, kunt u het model aanroepen met behulp van een eenvoudige REST API. Er zijn slechts vijf formulier documenten nodig, zodat u snel en nauw keurig resultaten kunt ophalen en aanpassen aan uw specifieke inhoud. Er is geen zware hand matige interventie of uitgebreide expertise van gegevens wetenschap nood zakelijk. Er zijn geen gegevens labeling of gegevens aantekening nodig.
 
 | Functie | Functies |
 |----------|----------|
@@ -84,37 +84,9 @@ De minimale en aanbevolen CPU-kernen en het geheugen die moeten worden toegeweze
 > [!Note]
 > De minimale en aanbevolen waarden zijn gebaseerd op docker-limieten en *niet* op de hostcomputer bronnen.
 
-## <a name="get-the-container-images-with-the-docker-pull-command"></a>De container installatie kopieën ophalen met de opdracht docker pull
-
-Container installatie kopieën voor de **formulieren Recognizer** en **tekst herkennen** -aanbiedingen zijn beschikbaar in het volgende container register:
-
-| Container | Volledig gekwalificeerde installatie kopie naam |
-|-----------|------------|
-| Form Recognizer | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest` |
-| Tekst herkennen | `containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest` |
-
-U hebt beide containers nodig, maar u moet er rekening mee houden dat de tekst container voor de **herkenning** [in dit artikel wordt beschreven.](../Computer-vision/computer-vision-how-to-install-containers.md#get-the-container-image-with-docker-pull)
+U hebt de formulieren Recognizer en Tekst herkennen containers nodig, maar u ziet dat de **tekst herkennen** -container [uitvoerig in dit artikel wordt beschreven.](../Computer-vision/computer-vision-how-to-install-containers.md#get-the-container-image-with-docker-pull)
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
-
-### <a name="docker-pull-for-the-form-recognizer-container"></a>Docker-pull voor de formulier Recognizer-container
-
-#### <a name="form-recognizer"></a>Form Recognizer
-
-Gebruik de volgende opdracht om de formulier Recognizer-container op te halen:
-
-```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest
-```
-### <a name="docker-pull-for-the-recognize-text-container"></a>Docker-pull voor de Tekst herkennen container
-
-#### <a name="recognize-text"></a>Tekst herkennen
-
-Als u de container Tekst herkennen wilt ophalen, gebruikt u de volgende opdracht:
-
-```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest
-```
 
 ## <a name="how-to-use-the-container"></a>De container gebruiken
 

@@ -8,13 +8,14 @@ ms.topic: reference
 ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
+ms.custom: subject-monitoring
 ms.date: 10/02/2020
-ms.openlocfilehash: d231de8e262194cd7dda2462a3f54d7d531eb63c
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 6da9c6775a6d5c96bc52183fefc3e5330272e9ff
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95542079"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585123"
 ---
 # <a name="monitoring-azure-machine-learning-data-reference"></a>Naslag informatie over Azure machine learning-gegevens bewaken
 
@@ -24,39 +25,39 @@ Meer informatie over de gegevens en resources die worden verzameld door Azure Mo
 
 In deze sectie vindt u alle automatisch verzamelde platform gegevens die zijn verzameld voor Azure Machine Learning. De resource provider voor deze metrische gegevens is [micro soft. MachineLearningServices/Workspaces](../azure-monitor/platform/metrics-supported.md#microsoftmachinelearningservicesworkspaces).
 
-**Modelleren**
+**Model**
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
-| Model implementeren is mislukt | Aantal | Het aantal model implementaties dat is mislukt. |
-| Model implementeren gestart | Aantal | Het aantal model implementaties is gestart. |
-| Model implementeren is voltooid | Aantal | Het aantal model implementaties dat is geslaagd. |
-| Model register mislukt | Aantal | Het aantal model registraties dat is mislukt. |
-| Model registratie is voltooid | Aantal | Het aantal model registraties dat is geslaagd. |
+| Model implementeren is mislukt | Count | Het aantal model implementaties dat is mislukt. |
+| Model implementeren gestart | Count | Het aantal model implementaties is gestart. |
+| Model implementeren is voltooid | Count | Het aantal model implementaties dat is geslaagd. |
+| Model register mislukt | Count | Het aantal model registraties dat is mislukt. |
+| Model registratie is voltooid | Count | Het aantal model registraties dat is geslaagd. |
 
 **Quota**
 
 Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
-| Actieve kernen | Aantal | Het aantal actieve reken kernen. |
-| Actieve knoop punten | Aantal | Het aantal actieve knoop punten. |
-| Niet-actieve kernen | Aantal | Het aantal niet-actieve Compute-kernen. |
-| Niet-actieve knoop punten | Aantal | Het aantal niet-actieve reken knooppunten. |
-| Kernen verlaten | Aantal | Het aantal Leave-kernen. |
-| Knoop punten verlaten | Aantal | Het aantal knoop punten dat de poort verlaat. |
-| Afgebroken kernen | Aantal | Het aantal afgebroken kernen. |
-| Knoop punten die zijn afgebroken | Aantal | Het aantal knoop punten dat is afgebroken. |
+| Actieve kernen | Count | Het aantal actieve reken kernen. |
+| Actieve knoop punten | Count | Het aantal actieve knoop punten. |
+| Niet-actieve kernen | Count | Het aantal niet-actieve Compute-kernen. |
+| Niet-actieve knoop punten | Count | Het aantal niet-actieve reken knooppunten. |
+| Kernen verlaten | Count | Het aantal Leave-kernen. |
+| Knoop punten verlaten | Count | Het aantal knoop punten dat de poort verlaat. |
+| Afgebroken kernen | Count | Het aantal afgebroken kernen. |
+| Knoop punten die zijn afgebroken | Count | Het aantal knoop punten dat is afgebroken. |
 | Percentage quotum gebruik | Percentage | Het percentage van de gebruikte quota. |
-| Totaal aantal cores | Aantal | Het totale aantal kernen. |
-| Totaal aantal knoop punten | Aantal | Het totale aantal knoop punten. |
-| Onbruikbaar aantal kern geheugens | Aantal | Het aantal onbruikbaar kern geheugens. |
-| Niet-bruikbare knoop punten | Aantal | Het aantal niet-bruikbare knoop punten. |
+| Totaal aantal cores | Count | Het totale aantal kernen. |
+| Totaal aantal knoop punten | Count | Het totale aantal knoop punten. |
+| Onbruikbaar aantal kern geheugens | Count | Het aantal onbruikbaar kern geheugens. |
+| Niet-bruikbare knoop punten | Count | Het aantal niet-bruikbare knoop punten. |
 
 **Resource**
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
 | CpuUtilization | Percentage | Hoeveel procent van de CPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Deze metrische gegevens worden alleen gepubliceerd wanneer een taak wordt uitgevoerd op een knoop punt. Eén taak kan gebruikmaken van een of meer knoop punten. Deze metriek wordt per knoop punt gepubliceerd. |
 | GpuUtilization | Percentage | Hoeveel percentage van de GPU voor een bepaald knoop punt is gebruikt tijdens een uitvoering/taak. Eén knoop punt kan een of meer Gpu's hebben. Deze metrische gegevens worden per GPU per knoop punt gepubliceerd. |
@@ -65,11 +66,11 @@ Quota gegevens zijn alleen voor het berekenen van Azure Machine Learning.
 
 Informatie over trainings uitvoeringen.
 
-| Metrisch | Eenheid | Beschrijving |
+| Metrisch | Eenheid | Description |
 | ----- | ----- | ----- |
-| Voltooide uitvoeringen | Aantal | Het aantal voltooide uitvoeringen. |
-| Mislukte uitvoeringen | Aantal | Het aantal mislukte uitvoeringen. |
-| Gestart uitvoeringen | Aantal | Het aantal gestarte uitvoeringen. |
+| Voltooide uitvoeringen | Count | Het aantal voltooide uitvoeringen. |
+| Mislukte uitvoeringen | Count | Het aantal mislukte uitvoeringen. |
+| Gestart uitvoeringen | Count | Het aantal gestarte uitvoeringen. |
 
 ## <a name="metric-dimensions"></a>Metrische dimensies
 
@@ -77,7 +78,7 @@ Zie [multidimensionale metrische](../azure-monitor/platform/data-platform-metric
 
 Azure Machine Learning heeft de volgende dimensies die zijn gekoppeld aan de metrische gegevens.
 
-| Dimensie | Beschrijving |
+| Dimensie | Description |
 | ---- | ---- |
 | Clusternaam | De naam van de bron van het berekenings cluster. Beschikbaar voor alle quota-metrische gegevens. |
 | Naam van VM-familie | De naam van de VM-familie die door het cluster wordt gebruikt. Beschikbaar voor percentage quotum gebruik. |

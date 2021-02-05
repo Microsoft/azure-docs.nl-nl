@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b437efcfa2b0bb2a725929ae0253f48d97d11552
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 2b8577af2c8a6296ae6f4f090e8ff233e51ee6fb
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754822"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583922"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Toepassingen migreren naar MSAL.NET
 
@@ -145,7 +145,7 @@ MSAL.NET maakt de token cache een verzegelde klasse, waardoor de mogelijkheid om
 
 Als u in v 1.0 de- `https://login.microsoftonline.com/common` instantie gebruikt, kunnen gebruikers zich aanmelden met een Aad-account (voor elke organisatie). Zie [verificatie van de certificerings instantie in ADAL.net](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AuthenticationContext:-the-connection-to-Azure-AD#authority-validation)
 
-Als u de `https://login.microsoftonline.com/common` instantie in v 2.0 gebruikt, kunnen gebruikers zich aanmelden met een Aad-organisatie of een persoonlijk micro soft-account (MSA). Als u de aanmelding op een AAD-account (hetzelfde gedrag als met ADAL.NET) wilt beperken, moet u in MSAL.NET gebruiken `https://login.microsoftonline.com/organizations` . Zie de `authority` para meter in [open bare client toepassing](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications#publicclientapplication)voor meer informatie.
+Als u de `https://login.microsoftonline.com/common` instantie in v 2.0 gebruikt, kunnen gebruikers zich aanmelden met een Aad-organisatie of een persoonlijk micro soft-account (MSA). Als u de aanmelding wilt beperken tot een AAD-account (hetzelfde gedrag als met ADAL.NET), gebruikt u in MSAL.NET `https://login.microsoftonline.com/organizations` . Zie de `authority` para meter in [open bare client toepassing](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications#publicclientapplication)voor meer informatie.
 
 ## <a name="v10-and-v20-tokens"></a>v 1.0 en v 2.0-tokens
 
@@ -182,7 +182,7 @@ string[] scopes = { ResourceId + "Directory.Read", ResourceId + "Directory.Write
 
 #### <a name="warning-should-you-have-one-or-two-slashes-in-the-scope-corresponding-to-a-v10-web-api"></a>Waarschuwing: als u een of twee schuine strepen hebt in het bereik dat overeenkomt met een v 1.0 Web-API
 
-Als u het bereik wilt schrijven dat overeenkomt met de Azure Resource Manager-API ( https://management.core.windows.net/) moet u de volgende scope aanvragen (Let op de twee slashes)
+Als u het bereik wilt schrijven dat overeenkomt met de Azure Resource Manager-API ( https://management.core.windows.net/) , moet u het volgende bereik aanvragen (Let op de twee slashes).
 
 ```csharp
 var scopes = new[] {"https://management.core.windows.net//user_impersonation"};

@@ -2,13 +2,13 @@
 title: Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
 description: Meer informatie over het beveiligen van uw Azure VMware-oplossings-Vm's met de systeem eigen beveiligings tools van Azure vanaf één dash board in Azure Security Center.
 ms.topic: how-to
-ms.date: 11/06/2020
-ms.openlocfilehash: 66270c5abef48f9d9f30ed1b262a6b4f2f8144c8
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.date: 02/04/2021
+ms.openlocfilehash: 58cfa1e8e7faa56675d966f86d3b390e52acec27
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99061461"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584954"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
 
@@ -36,7 +36,12 @@ U kunt de Log Analytics-werk ruimte configureren met Azure Sentinel voor waarsch
 
 - Systeem eigen services van Azure kunnen worden gebruikt voor de beveiliging van hybride omgevingen in azure, Azure VMware-oplossing en on-premises Services.
 - Met een Log Analytics-werk ruimte kunt u de gegevens of de logboeken op één punt verzamelen en dezelfde gegevens presen teren aan verschillende Azure native-Services.
-- Azure Security Center biedt beveiligings functies zoals bestands integriteits controle, aanval op de kwets baarheid van een besturings systeem, evaluatie van de besturingssysteem patch, evaluatie van beveiligings configuraties en evaluatie van Endpoint Protection.
+- Azure Security Center biedt een aantal functies, waaronder:
+    - Bestandsintegriteit controleren
+    - Detectie van bestanden met een aanval
+    - Evaluatie van patch voor besturings systeem 
+    - Evaluatie van onjuiste beveiligingsconfiguratie
+    - Evaluatie van eindpuntbeveiliging
 - Met Azure Sentinel kunt u:
     - Verzamel gegevens op Cloud schaal voor alle gebruikers, apparaten, toepassingen en infra structuur, zowel on-premises als in meerdere clouds.
     - Detecteer eerder niet-gedetecteerde bedreigingen.
@@ -78,7 +83,7 @@ Azure Defender breidt de geavanceerde bedreigings beveiliging van Azure Security
 5. Vul op het tabblad **Resource Details** de volgende gegevens in: 
     - Abonnement
     - Resourcegroep
-    - Regio 
+    - Region 
     - Besturingssysteem
     - Details van de proxy server
     
@@ -183,7 +188,7 @@ Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken 
 
 6. Schakel op het tabblad **incident instellingen** het selectie vakje **incidenten maken van waarschuwingen die door deze Analytics regel zijn geactiveerd** in en selecteer **volgende: automatisch antwoord >**.
  
-    :::image type="content" source="media/azure-security-integration/create-new-analytic-rule-wizard.png" alt-text="Scherm afbeelding van de wizard analytische regel voor het maken van een nieuwe regel in azure Sentinel waarbij incidenten worden gemaakt op basis van waarschuwingen die door deze analyse regel zijn geactiveerd als ingeschakeld.":::
+    :::image type="content" source="media/azure-security-integration/create-new-analytic-rule-wizard.png" alt-text="Scherm afbeelding van de wizard analytische regel voor het maken van een nieuwe regel in azure Sentinel. Toont het maken van incidenten van waarschuwingen die door deze regel worden geactiveerd als ingeschakeld.":::
 
 7. Selecteer **volgende: controleren >**.
 
@@ -235,6 +240,8 @@ U kunt query's maken of de beschik bare vooraf gedefinieerde query gebruiken in 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van het [Azure Defender-dash board](../security-center/azure-defender-dashboard.md).
-- Verken het volledige beveiligings bereik dat door [Azure Defender](../security-center/azure-defender.md)wordt aangeboden.
-- Meer informatie over [Geavanceerde detectie van aanvallen in de Azure-Sentinel](../azure-monitor/learn/quick-create-workspace.md).
+Nu u hebt besproken hoe u uw Azure VMware-oplossing-Vm's kunt beveiligen, wilt u mogelijk meer informatie over:
+
+- Het [Azure Defender-dash board](../security-center/azure-defender-dashboard.md)gebruiken.
+- [Geavanceerde detectie van bedreigingen in azure-Sentinel](../azure-monitor/learn/quick-create-workspace.md).
+- [Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen](lifecycle-management-of-azure-vmware-solution-vms.md).

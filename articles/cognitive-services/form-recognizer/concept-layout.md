@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: a63f910b3a939e33b8c71d8f22d15f6d610a12cc
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: d529e74614a4fd5ee49d7e6161c65f68e8e76fce
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845553"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585055"
 ---
 # <a name="form-recognizer-layout-service"></a>Indelings service voor formulier herkenning
 
@@ -89,7 +89,7 @@ De indeling haalt ook selectie markeringen uit documenten op. De door geëxtrahe
 ## <a name="next-steps"></a>Volgende stappen
 
 - Probeer uw eigen indelings extractie met behulp van de voor [beeld-UI voor formulier herkenning](https://fott-preview.azurewebsites.net/)
-- Voltooi de Quick Start van een [formulier herkenning](quickstarts/client-library.md) om te beginnen met het uitpakken van indelingen in de taal van uw keuze.
+- Voltooi de Quick Start van een [formulier herkenning](quickstarts/client-library.md) om de lay-outs in de ontwikkel taal van uw keuze te halen.
 
 ## <a name="see-also"></a>Zie ook
 

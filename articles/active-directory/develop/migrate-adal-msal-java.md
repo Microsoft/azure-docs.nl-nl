@@ -14,12 +14,12 @@ ms.date: 11/04/2019
 ms.author: sagonzal
 ms.reviewer: nacanuma, twhitney
 ms.custom: aaddev, devx-track-java
-ms.openlocfilehash: 1d1512447b5d0474f8fabe92dbc7a36259f4618c
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 620f77655f8281919ba0831a7e53af8cd28bc5f2
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754975"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583990"
 ---
 # <a name="adal-to-msal-migration-guide-for-java"></a>Migratie handleiding voor ADAL naar MSAL voor Java
 
@@ -80,7 +80,7 @@ MSAL voor Java voegt een [token cache](msal-acquire-cache-tokens.md) toe om het 
 
 Als u in v 1.0 de bevoegdheid gebruikt `https://login.microsoftonline.com/common` , kunnen gebruikers zich aanmelden met een Azure Active Directory (Aad)-account (voor elke organisatie).
 
-Als u de `https://login.microsoftonline.com/common` instantie in v 2.0 gebruikt, kunnen gebruikers zich aanmelden met een Aad-organisatie of zelfs een persoonlijk micro soft-account (MSA). Als u de aanmelding voor een AAD-account wilt beperken, moet u in MSAL voor Java de- `https://login.microsoftonline.com/organizations` instantie (hetzelfde gedrag als met ADAL4J) gebruiken. Als u een instantie wilt opgeven, stelt `authority` u de para meter in de methode [PublicClientApplication. Builder](https://javadoc.io/doc/com.microsoft.azure/msal4j/1.0.0/com/microsoft/aad/msal4j/PublicClientApplication.Builder.html) in wanneer u de `PublicClientApplication` klasse maakt.
+Als u de `https://login.microsoftonline.com/common` instantie in v 2.0 gebruikt, kunnen gebruikers zich aanmelden met een Aad-organisatie of zelfs een persoonlijk micro soft-account (MSA). Als u de aanmelding voor een AAD-account wilt beperken, gebruikt u in MSAL voor Java de- `https://login.microsoftonline.com/organizations` instantie (die hetzelfde gedrag heeft als met ADAL4J). Als u een instantie wilt opgeven, stelt `authority` u de para meter in de methode [PublicClientApplication. Builder](https://javadoc.io/doc/com.microsoft.azure/msal4j/1.0.0/com/microsoft/aad/msal4j/PublicClientApplication.Builder.html) in wanneer u de `PublicClientApplication` klasse maakt.
 
 ## <a name="v10-and-v20-tokens"></a>v 1.0 en v 2.0-tokens
 

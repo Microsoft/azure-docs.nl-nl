@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 07/27/2020
-ms.openlocfilehash: 9abf5a17330566aee2414b8499f228d297880cbf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 39bdf9cb0c97e19a67b23046c6f06b60daa30147
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323791"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584937"
 ---
 # <a name="evaluate-model-module"></a>Model module evalueren
 
@@ -64,7 +64,7 @@ Voor multi-classificatie kunt u het teken bestand met de Verwar ring matrix vind
 > [!div class="mx-imgBorder"]
 > ![Voor beeld van geüploade afbeelding](media/module/multi-class-confusion-matrix.png)
 
-Als u gegevens sets verbindt met zowel de invoer van een **Evalueer model** , bevatten de resultaten metrische gegevens voor beide sets of beide modellen.
+Als u gegevens sets verbindt met zowel de invoer van een **Evalueer model**, bevatten de resultaten metrische gegevens voor beide sets of beide modellen.
 Het model of de gegevens die aan de linker poort zijn gekoppeld, worden eerst in het rapport weer gegeven, gevolgd door de metrieken voor de gegevensset of het model dat is gekoppeld aan de juiste poort.  
 
 De volgende afbeelding vertegenwoordigt bijvoorbeeld een vergelijking van de resultaten van twee cluster modellen die zijn gebouwd op dezelfde gegevens, maar met verschillende para meters.  
@@ -75,7 +75,7 @@ Omdat dit een cluster model is, zijn de evaluatie resultaten anders dan wanneer 
 
 ## <a name="metrics"></a>Metrische gegevens
 
-In deze sectie worden de metrische gegevens die worden geretourneerd voor de specifieke typen modellen beschreven die worden ondersteund voor gebruik met het **Evaluate-model** :
+In deze sectie worden de metrische gegevens die worden geretourneerd voor de specifieke typen modellen beschreven die worden ondersteund voor gebruik met het **Evaluate-model**:
 
 + [classificatie modellen](#metrics-for-classification-models)
 + [regressie modellen](#metrics-for-regression-models)
@@ -94,7 +94,7 @@ De volgende metrische gegevens worden gerapporteerd bij het evalueren van binair
   
 -   De **F1-Score** wordt berekend als het gewogen gemiddelde van de precisie en intrekken tussen 0 en 1, waarbij de ideale waarde voor de F1-score 1 is.  
   
--   **AUC** meet het gebied onder de curve die is getekend met echte positieven op de y-as en fout-positieven op de x-as. Deze meet waarde is nuttig omdat deze een enkel getal bevat waarmee u modellen van verschillende typen kunt vergelijken.  
+-   **AUC** meet het gebied onder de curve die is getekend met echte positieven op de y-as en fout-positieven op de x-as. Deze meet waarde is nuttig omdat deze een enkel getal bevat waarmee u modellen van verschillende typen kunt vergelijken. AUC is classificatie-Threshold-invariant. De oplossing meet de kwaliteit van de voor spellingen van het model, ongeacht welke classificatie drempel is gekozen.
 
 
 ### <a name="metrics-for-regression-models"></a>Metrische gegevens voor regressie modellen
@@ -113,7 +113,7 @@ De metrische gegevens die voor regressie modellen zijn geretourneerd, zijn ontwo
   
 
   
-- De **determinatie coëfficiënt** , vaak R <sup>2</sup>genoemd, vertegenwoordigt de voorspellende kracht van het model als een waarde tussen 0 en 1. Nul betekent dat het model wille keurig is (er wordt niets uitgelegd). 1 betekent dat er een perfecte aanpassing is. Wees echter voorzichtig bij het interpreteren van R<sup>2</sup> -waarden, omdat lage waarden volledig normaal kunnen zijn en hoge waarden kunnen worden verdacht.
+- De **determinatie coëfficiënt**, vaak R <sup>2</sup>genoemd, vertegenwoordigt de voorspellende kracht van het model als een waarde tussen 0 en 1. Nul betekent dat het model wille keurig is (er wordt niets uitgelegd). 1 betekent dat er een perfecte aanpassing is. Wees echter voorzichtig bij het interpreteren van R<sup>2</sup> -waarden, omdat lage waarden volledig normaal kunnen zijn en hoge waarden kunnen worden verdacht.
 
 ###  <a name="metrics-for-clustering-models"></a>Metrische gegevens voor cluster modellen
 
@@ -125,9 +125,9 @@ Omdat de cluster modellen in veel opzichten aanzienlijk verschillen van classifi
   
 De volgende metrische gegevens worden gerapporteerd voor het evalueren van cluster modellen.
     
--   De scores in de kolom, **gemiddelde afstand tot ander midden** , geven aan hoe dicht, op gemiddeld elk punt in het cluster naar de centroids van alle andere clusters gaat.   
+-   De scores in de kolom, **gemiddelde afstand tot ander midden**, geven aan hoe dicht, op gemiddeld elk punt in het cluster naar de centroids van alle andere clusters gaat.   
 
--   De scores in de kolom, **gemiddelde afstand tot cluster centrum** , vertegenwoordigen de dichtheid van alle punten in een cluster naar de massa middelpunt van dat cluster.  
+-   De scores in de kolom, **gemiddelde afstand tot cluster centrum**, vertegenwoordigen de dichtheid van alle punten in een cluster naar de massa middelpunt van dat cluster.  
   
 -   In de kolom **aantal punten** ziet u hoeveel gegevens punten zijn toegewezen aan elk cluster, samen met het totale aantal gegevens punten in een cluster.  
   

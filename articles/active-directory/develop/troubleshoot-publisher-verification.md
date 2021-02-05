@@ -13,12 +13,12 @@ ms.date: 01/28/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 080d7c29a9e6950117fe475445458a84fb092e94
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 9ae5d2279baab69d762a71b2f6400009747c16fe
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090201"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584210"
 ---
 # <a name="troubleshoot-publisher-verification"></a>Problemen met Verificatie van uitgever oplossen
 Als u het proces niet kunt volt ooien of onverwachte problemen ondervindt met de verificatie van de [Uitgever](publisher-verification-overview.md), moet u eerst het volgende doen als u fouten ontvangt of een onverwacht gedrag ziet: 
@@ -52,8 +52,8 @@ Hieronder vindt u enkele veelvoorkomende problemen die zich kunnen voordoen tijd
     1. Ga naar uw [partner profiel](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) en controleer het volgende: 
         - De MPN-ID is juist. 
         - Er zijn geen fouten of acties die in behandeling zijn, en de verificatie status onder juridisch zakelijk profiel en partner informatie hebben beide de tekst "geautoriseerd" of "geslaagd".
-    1. Ga naar de [pagina MPN Tenant beheer](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) en bevestig dat de Tenant waarin de app is geregistreerd en dat u zich aanmeldt met een gebruikers account, zich in de lijst met gekoppelde tenants bevindt. Als u een extra Tenant moet toevoegen, volgt u de instructies [hier](/partner-center/multi-tenant-account). Houd er rekening mee dat alle globale beheerders van alle tenants die u toevoegt, globale beheerders rechten krijgen voor uw partner centrum-account.
-    1. Ga naar de [pagina gebruikers beheer van MPN](https://partner.microsoft.com/pcv/users) en bevestig dat de gebruiker waarbij u zich aanmeldt, een globale beheerder, MPN beheerder of account beheerder is. Als u een gebruiker aan een rol in het partner centrum wilt toevoegen, volgt u de instructies [hier](/partner-center/create-user-accounts-and-set-permissions).
+    1. Ga naar de [pagina MPN Tenant beheer](https://partner.microsoft.com/dashboard/account/v3/tenantmanagement) en bevestig dat de Tenant waarin de app is geregistreerd en dat u zich aanmeldt met een gebruikers account, zich in de lijst met gekoppelde tenants bevindt. Als u een extra Tenant wilt toevoegen, volgt u de instructies [hier](/partner-center/multi-tenant-account). Houd er rekening mee dat alle globale beheerders van alle tenants die u toevoegt, globale beheerders rechten krijgen voor uw partner centrum-account.
+    1. Ga naar de [pagina gebruikers beheer van MPN](https://partner.microsoft.com/pcv/users) en bevestig dat de gebruiker waarbij u zich aanmeldt, een globale beheerder, MPN beheerder of account beheerder is. Volg [de instructies in](/partner-center/create-user-accounts-and-set-permissions)het partner centrum om een gebruiker toe te voegen aan een rol.
 
 - **Wanneer ik me aanmeld in de Azure AD-Portal, zie ik geen geregistreerde apps. Waarom?** 
     Uw app-registraties zijn mogelijk gemaakt met een ander gebruikers account in deze Tenant, een persoonlijk/Consumer account of een andere Tenant. Zorg ervoor dat u bent aangemeld met het juiste account in de Tenant waar de app-registraties zijn gemaakt.

@@ -13,12 +13,12 @@ ms.date: 05/18/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: bf51f39a789b91a4cb0b88eb8bb1f2989bec7358
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 23ba50a6eca1e398b9d459153b84719909f2ecac
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88165818"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583736"
 ---
 # <a name="using-web-browsers-msalnet"></a>Webbrowsers (MSAL.NET) gebruiken
 
@@ -41,15 +41,15 @@ Het is belang rijk om te begrijpen dat bij het interactief ophalen van een token
 
 MSAL.NET is een multi Framework-bibliotheek en heeft Framework-specifieke code voor het hosten van een browser in een besturings element in de gebruikers interface (bijvoorbeeld op de klassieke versie van .NET maakt gebruik van WinForms, op Xamarin wordt gebruikgemaakt van systeem eigen mobiele besturings elementen, enzovoort). Dit besturings element wordt de `embedded` Web-UI genoemd. Daarnaast kunt u met MSAL.NET ook de besturingssysteem browser starten.
 
-Over het algemeen is het raadzaam om de standaard waarde van het platform te gebruiken. Dit is doorgaans de systeem browser. De systeem browser is beter dan de gebruikers die zich hebben aangemeld. Als u dit gedrag moet wijzigen, gebruikt u `WithUseEmbeddedWebView(bool)`
+Over het algemeen is het raadzaam om de standaard waarde van het platform te gebruiken. Dit is doorgaans de systeem browser. De systeem browser is beter dan de gebruikers die zich hebben aangemeld. Als u dit gedrag wilt wijzigen, gebruikt u `WithUseEmbeddedWebView(bool)`
 
-### <a name="at-a-glance"></a>In één oogopslag
+### <a name="at-a-glance"></a>In een oogopslag
 
 | Framework        | Ingesloten | Systeem | Standaard |
 | ------------- |-------------| -----| ----- |
-| .NET-klassiek     | Ja | Ja ^ | Ingesloten |
-| .NET Core     | Nee | Ja ^ | Systeem |
-| .NET Standard | Nee | Ja ^ | Systeem |
+| .NET-klassiek     | Yes | Ja ^ | Ingesloten |
+| .NET Core     | No | Ja ^ | Systeem |
+| .NET Standard | No | Ja ^ | Systeem |
 | UWP | Ja | Nee | Ingesloten |
 | Xamarin.Android | Ja | Ja  | Systeem |
 | Xamarin.iOS | Ja | Ja  | Systeem |
@@ -141,7 +141,7 @@ U kunt ook Inge sloten webweergaven inschakelen in Xamarin. iOS en Xamarin. Andr
 
 Als ontwikkelaar met behulp van de MSAL.NET-Xamarin, kunt u ervoor kiezen om ofwel Inge sloten webweergaven als systeem browsers te gebruiken. Dit is uw keuze, afhankelijk van de gebruikers ervaring en beveiligings problemen die u wilt richten.
 
-Momenteel biedt MSAL.NET nog geen ondersteuning voor de Android-en iOS-brokers. Als u eenmalige aanmelding (SSO) moet bieden, is het mogelijk dat de systeem browser nog steeds een betere optie is. Het ondersteunen van brokers met de Inge sloten webbrowser vindt u in de achterstand van MSAL.NET.
+Momenteel biedt MSAL.NET nog geen ondersteuning voor de Android-en iOS-brokers. Om eenmalige aanmelding (SSO) mogelijk te maken, kan het zijn dat de systeem browser nog steeds een betere optie is. Het ondersteunen van brokers met de Inge sloten webbrowser vindt u in de achterstand van MSAL.NET.
 
 ### <a name="differences-between-embedded-webview-and-system-browser"></a>Verschillen tussen de Inge sloten webweergave en de systeem browser
 Er zijn enkele visuele verschillen tussen de Inge sloten webweergave en de systeem browser in MSAL.NET.

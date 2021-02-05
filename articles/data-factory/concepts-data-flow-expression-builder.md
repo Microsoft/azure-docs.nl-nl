@@ -6,13 +6,13 @@ ms.author: makromer
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 10/30/2020
-ms.openlocfilehash: 8257be28344ac7a03738c80a003c1229282ae305
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.date: 02/04/2021
+ms.openlocfilehash: 753f201fbde5d9e7100b6e257f8dc79e4462d7b6
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145702"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584920"
 ---
 # <a name="build-expressions-in-mapping-data-flow"></a>Expressies bouwen in gegevens stroom toewijzen
 
@@ -46,7 +46,7 @@ In het toewijzen van gegevens stromen kunnen expressies bestaan uit kolom waarde
 
 ![Expressie-elementen](media/data-flow/expression-elements.png "Expressie-elementen")
 
-### <a name="functions"></a>Functies
+### <a name="functions"></a>Functions
 
 Het toewijzen van gegevens stromen heeft ingebouwde functies en Opera tors die kunnen worden gebruikt in expressies. Voor een lijst met beschik bare functies raadpleegt u de [referentie gegevens stroom taal toewijzen](data-flow-expression-functions.md).
 
@@ -73,7 +73,7 @@ Wanneer u kolom namen hebt die speciale tekens of spaties bevatten, plaatst u de
 
 Para meters zijn waarden die tijdens runtime worden door gegeven aan een gegevens stroom vanuit een pijp lijn. Als u wilt verwijzen naar een para meter, klikt u op de para meter in de weer gave **expressie elementen** of verwijst u ernaar met een dollar teken voor de naam. Er wordt bijvoorbeeld naar een para meter met de naam parameter1 verwezen door `$parameter1` . Zie [parameterizing mapping data flows](parameters-data-flow.md)(Engelstalig) voor meer informatie.
 
-### <a name="cached-lookup"></a>Opzoek in cache
+### <a name="cached-lookup"></a>In de cache opgeslagen zoekopdrachten
 
 Met een opzoek bewerking in cache kunt u een inline-lookup uitvoeren van de uitvoer van een sink in de cache. Er zijn twee functies beschikbaar voor gebruik op elke sink, `lookup()` en `outputs()` . De syntaxis om te verwijzen naar deze functies is `cacheSinkName#functionName()` . Zie [cache-sinks](data-flow-sink.md#cache-sink)voor meer informatie.
 
@@ -81,7 +81,7 @@ Met een opzoek bewerking in cache kunt u een inline-lookup uitvoeren van de uitv
 
 `outputs()` accepteert geen para meters en retourneert de volledige cache-Sink als een matrix met complexe kolommen. Dit kan niet worden aangeroepen als sleutel kolommen worden opgegeven in de Sink en alleen worden gebruikt als de cache-Sink een klein aantal rijen bevat. Bij een veelvoorkomende use-case wordt de maximum waarde van een incrementele sleutel toegevoegd. Als een enkele geaggregeerde rij met een cache `CacheMaxKey` een kolom bevat `MaxKey` , kunt u verwijzen naar de eerste waarde door aan te roepen `CacheMaxKey#outputs()[1].MaxKey` .
 
-![Opzoek in cache](media/data-flow/cached-lookup-example.png "Opzoek in cache")
+![In de cache opgeslagen zoekopdrachten](media/data-flow/cached-lookup-example.png "In de cache opgeslagen zoekopdrachten")
 
 ### <a name="locals"></a>Locals
 
@@ -106,6 +106,9 @@ Enkele voor beelden van interpolatie van teken reeksen:
 * ```"Total cost with sales tax is {round(totalcost * 1.08,2)}"```
 
 * ```"{:playerName} is a {:playerRating} player"```
+
+> [!NOTE]
+> Wanneer u de syntaxis van de teken reeks interpolatie in SQL-bron query's gebruikt, moet de query reeks op één regel staan, zonder/n.
 
 ## <a name="commenting-expressions"></a>Expressies voor opmerkingen
 

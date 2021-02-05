@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 09/09/2019
-ms.openlocfilehash: 04ce45f428604275696d83938708bcee0c6c023f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b2925a532d722598ccf16c001c9e2591aed1f2b
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536763"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584987"
 ---
 # <a name="apply-math-operation"></a>Wiskundige bewerking toepassen
 
@@ -138,9 +138,9 @@ Retourneert e verheven tot de macht van de waarde in de geselecteerde kolom. Dez
 
 Retourneert de base-2 exponentiële waarde van de argumenten, oplossing voor y = x * 2<sup>t</sup> , waarbij t een kolom met waarden die exponenten bevatten.  
 
-Selecteer in  **kolom set**de kolom die de exponent waarden t bevat.
+Selecteer in  **kolom set** de kolom die de exponent waarden t bevat.
 
-Voor **Exp2** kunt u een tweede argument x opgeven. Dit kan een constante of een andere kolom met waarden zijn. Geef bij **type tweede argument**aan of u de vermenigvuldiger x als constante wilt opgeven, of een waarde in een kolom.  
+Voor **Exp2** kunt u een tweede argument x opgeven. Dit kan een constante of een andere kolom met waarden zijn. Geef bij **type tweede argument** aan of u de vermenigvuldiger x als constante wilt opgeven, of een waarde in een kolom.  
 
 Als u bijvoorbeeld een kolom met de waarden {0,1,2,3,4,5} voor de vermenigvuldiger en de exponent selecteert, retourneert de functie {0, 2, 8, 24, 64 160).  
 
@@ -181,16 +181,16 @@ Retourneert het ne hoofd van de waarde, met behulp van een n die u opgeeft.
 
 Selecteer de kolommen waarvoor u de basis wilt berekenen met behulp van de optie **kolomset** .  
 
-Selecteer in **tweede type argument**een andere kolom die de hoofdmap bevat of geef een constante op om te gebruiken als basis.  
+Selecteer in **tweede type argument** een andere kolom die de hoofdmap bevat of geef een constante op om te gebruiken als basis.  
 
 Als het tweede argument een kolom is, wordt elke waarde in de kolom gebruikt als de waarde n voor de corresponderende rij. Als het tweede argument een constante is, typt u de waarde voor n in het tekstvak **tweede argument** .
 ### <a name="pow"></a>Pow
 
 Berekent X verheven tot de macht van Y voor elk van de waarden in de geselecteerde kolom.  
 
-Selecteer eerst de kolommen die de **basis**bevatten, die een float moet zijn met behulp van de optie **kolomset** .  
+Selecteer eerst de kolommen die de **basis** bevatten, die een float moet zijn met behulp van de optie **kolomset** .  
 
-In **tweede argument type**selecteert u de kolom die de exponent bevat of geeft u een constante op die als exponent moet worden gebruikt.  
+In **tweede argument type** selecteert u de kolom die de exponent bevat of geeft u een constante op die als exponent moet worden gebruikt.  
 
 Als het tweede argument een kolom is, wordt elke waarde in de kolom gebruikt als exponent voor de corresponderende rij. Als het tweede argument een constante is, typt u de waarde voor de exponent in het tekstvak **tweede argument** .  
 
@@ -249,22 +249,25 @@ Retourneert de waarde die lager is: de waarde in de **kolomset** of de waarde in
 
 Bevat de eenvoudige reken kundige bewerkingen: optellen en aftrekken, delen en vermenigvuldigen.  Omdat de meeste bewerkingen binair zijn, moet u eerst de bewerking kiezen en vervolgens de kolom of getallen kiezen die u in de eerste en tweede argumenten wilt gebruiken.
 
-De volg orde waarin u de kolommen voor het delen en aftrekken hebt gekozen, lijkt onlogisch. om het inzicht in de resultaten gemakkelijker te maken, geeft de kolomkop de naam van de bewerking en de volg orde waarin de kolommen zijn gebruikt.
+De volg orde voor het delen en aftrekken is als volgt: 
+- Aftrekken (Arg1_Arg2) = Arg1-ARG 2
+- Deling (Arg1_Arg2) = Arg1/ARG 2
 
+In de volgende tabel ziet u enkele voor beelden
 Bewerking|Num1|Num2|Resultaten kolom|Resultaat waarde|
 ----|----|----|----|----
-|Optellen|1|5|Toevoegen (Num2_Num1)| 4|
+|Optellen|1|5|Toevoegen (Num2_Num1)| 6|
 |Vermenigvuldigen|1|5|Meerdere (Num2_Num1)|5|
-|Aftrekking|1|5|Aftrekken (Num2_Num1)|4|
-|Aftrekking|0|1|Aftrekken (Num2_Num1)|0|
-|Afdeling|1|5|Delen (Num2_Num1)|5|
-|Afdeling|0|1|Delen (Num2_Num1)|Oneindig|
+|Aftrekking|5|1|Aftrekken (Num2_Num1)|4|
+|Aftrekking|0|1|Aftrekken (Num2_Num1)|-1|
+|Afdeling|5|1|Delen (Num2_Num1)|5|
+|Afdeling|1|0|Delen (Num2_Num1)|Oneindig|
 
 ### <a name="add"></a>Toevoegen
 
-Geef de bron kolommen op met behulp van de **kolomset**en voeg vervolgens aan deze waarden een getal toe dat is opgegeven in het **tweede argument**.  
+Geef de bron kolommen op met behulp van de **kolomset** en voeg vervolgens aan deze waarden een getal toe dat is opgegeven in het **tweede argument**.  
 
-Als u de waarden in twee kolommen wilt toevoegen, kiest u een kolom of kolommen met **kolom sets**en kiest u vervolgens een tweede kolom met een **tweede argument**.  
+Als u de waarden in twee kolommen wilt toevoegen, kiest u een kolom of kolommen met **kolom sets** en kiest u vervolgens een tweede kolom met een **tweede argument**.  
 
 ### <a name="divide"></a>Delen
 
@@ -284,7 +287,7 @@ Azure Machine Learning Designer ondersteunt diverse Afrondings bewerkingen. Voor
 
 - Als u een constante gebruikt, stelt u het **type precisie** in op **constant** en typt u het aantal cijfers als een geheel getal in het tekstvak **constante precisie** . Als u een niet-geheel getal typt, wordt er door de module geen fout gegenereerd, maar de resultaten kunnen onverwacht zijn.  
 
-- Als u een andere precisie waarde voor elke rij in uw gegevensset wilt gebruiken, stelt u het **type precisie** in op **kolomset**en kiest u vervolgens de kolom die de juiste precisie waarden bevat.  
+- Als u een andere precisie waarde voor elke rij in uw gegevensset wilt gebruiken, stelt u het **type precisie** in op **kolomset** en kiest u vervolgens de kolom die de juiste precisie waarden bevat.  
 
 ### <a name="ceiling"></a>Ceiling
 
@@ -296,7 +299,7 @@ Retourneert het kwadratische plafond voor de waarden in de **kolomset**.
 
 ### <a name="floor"></a>Floor
 
-Retourneert de vloer voor de waarden in de **kolomset**naar de opgegeven precisie.  
+Retourneert de vloer voor de waarden in de **kolomset** naar de opgegeven precisie.  
 
 ### <a name="mod"></a>Mod
 
@@ -580,7 +583,7 @@ Stel dat uw gegevensset meerdere kolommen bevat en u de gegevensset aan zichzelf
 |2|3|-1|4|6|-2|
 |0|1|-1|0|2|-2|
 
-Als u complexere berekeningen wilt uitvoeren, kunt u meerdere exemplaren van de **reken kundige bewerking**aan elkaar koppelen. U kunt bijvoorbeeld twee kolommen toevoegen door één instantie van de **wiskundige bewerking Toep assen**te gebruiken en vervolgens een andere instantie van de **reken kundige bewerking Toep assen** om de som te delen door een constante om het gemiddelde te verkrijgen.  
+Als u complexere berekeningen wilt uitvoeren, kunt u meerdere exemplaren van de **reken kundige bewerking** aan elkaar koppelen. U kunt bijvoorbeeld twee kolommen toevoegen door één instantie van de **wiskundige bewerking Toep assen** te gebruiken en vervolgens een andere instantie van de **reken kundige bewerking Toep assen** om de som te delen door een constante om het gemiddelde te verkrijgen.  
   
 U kunt ook een van de volgende modules gebruiken om alle berekeningen tegelijk uit te voeren, met behulp van SQL, R of python-script:
  

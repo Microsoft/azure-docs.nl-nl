@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: ebc22e3cf300b664aae5842f7cf924769d4d907e
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 1187c768a54dd04d25b6de0e6785ebb81a7dfc24
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756488"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584428"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Een mobiele app configureren die web-Api's aanroept
 
@@ -27,7 +27,7 @@ Nadat u de toepassing hebt gemaakt, leert u hoe u de code kunt configureren met 
 
 De volgende typen micro soft Authentication Library (MSAL) ondersteunen mobiele apps.
 
-MSAL | Beschrijving
+MSAL | Description
 ------------ | ----------
 ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Wordt gebruikt voor het ontwikkelen van draag bare toepassingen. MSAL.NET ondersteunt de volgende platforms voor het bouwen van een mobiele toepassing: Universeel Windows-platform (UWP), Xamarin. iOS en Xamarin. Android.
 ![MSAL. iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL. iOS | Wordt gebruikt voor het ontwikkelen van systeem eigen iOS-toepassingen met behulp van objectief-C of SWIFT.
@@ -82,7 +82,7 @@ De volgende secties bevatten meer informatie over het instantiëren van de toepa
 
 ##### <a name="specify-the-parent-ui-window-or-activity"></a>De bovenliggende gebruikers interface, het venster of de activiteit opgeven
 
-Op Android moet u de bovenliggende activiteit door geven voordat u interactieve verificatie doet. Wanneer u in iOS een Broker gebruikt, moet u door sturen `ViewController` . Op dezelfde manier kunt u in het bovenliggende venster het beste door geven aan UWP. U geeft deze door wanneer u het token aanschaft. Maar wanneer u de app maakt, kunt u ook een call back opgeven als een gemachtigde die als resultaat wordt geretourneerd `UIParent` .
+Geef op Android de bovenliggende activiteit door voordat u interactieve verificatie doet. In iOS, wanneer u een Broker, Pass-in gebruikt `ViewController` . Op dezelfde manier kunt u in het bovenliggende venster het beste door geven aan UWP. U geeft deze door wanneer u het token aanschaft. Maar wanneer u de app maakt, kunt u ook een call back opgeven als een gemachtigde die als resultaat wordt geretourneerd `UIParent` .
 
 ```csharp
 IPublicClientApplication application = PublicClientApplicationBuilder.Create(clientId)

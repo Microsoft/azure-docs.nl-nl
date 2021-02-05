@@ -13,18 +13,18 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 15f65da83f14f43a7892d52c6a2ed4e08580d367
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: b28454e9b60654541d4f62ec1d8455b30cfc2906
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614911"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99580824"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>MSAL.NET gebruiken om gebruikers aan te melden met sociale identiteiten
 
 U kunt MSAL.NET gebruiken om gebruikers met sociale identiteiten aan te melden met behulp van [Azure Active Directory B2C (Azure AD B2C)](../../active-directory-b2c/overview.md). Azure AD B2C is gebaseerd op het principe van beleid. In MSAL.NET, waarmee een beleid wordt gezet om een instantie te leveren.
 
-- Wanneer u een instantie van de open bare client toepassing maakt, moet u het beleid opgeven als onderdeel van de certificerings instantie.
+- Wanneer u een instantie van de open bare client toepassing maakt, geeft u het beleid op als onderdeel van de-instantie.
 - Als u een beleid wilt Toep assen, roept u een onderdrukking van `AcquireTokenInteractive` die de `authority` para meter accepteert.
 
 Dit artikel is van toepassing op MSAL.NET 3. x. Zie [Azure AD B2C specifieke informatie in MSAL 2. x](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/AAD-B2C-Specifics-MSAL-2.x) in de MSAL.net-wiki op GitHub voor MSAL.net 2. x.

@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: a1ec8c31681ab6c0ac40ba33e94f33057ee948e7
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 1a56685c830fc7aa717add3e826c68c04449e378
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754793"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99580843"
 ---
 # <a name="differences-between-msaljs-and-adaljs"></a>Verschillen tussen MSAL.js en ADAL.js
 
@@ -48,7 +48,7 @@ U moet echter nog steeds ADAL.js gebruiken als uw toepassing zich moet aanmelden
 
 In v 1.0 `https://login.microsoftonline.com/common` kunnen gebruikers zich aanmelden met een Azure ad-account (voor elke organisatie) met behulp van de-instantie.
 
-In v 2.0 kunnen gebruikers zich met behulp van de `https://login.microsoftonline.com/common` autoriteit aanmelden met een Azure AD-organisatie account of een micro soft-persoonlijk account (MSA). Als u de aanmelding wilt beperken tot alleen Azure AD-accounts (hetzelfde gedrag als bij ADAL.js), moet u gebruiken `https://login.microsoftonline.com/organizations` . Zie voor meer informatie de `authority` configuratie optie in [Initialize met behulp van MSAL.js](msal-js-initializing-client-applications.md).
+In v 2.0 kunnen gebruikers zich met behulp van de `https://login.microsoftonline.com/common` autoriteit aanmelden met een Azure AD-organisatie account of een micro soft-persoonlijk account (MSA). Als u de aanmelding wilt beperken tot alleen Azure AD-accounts (hetzelfde gedrag als bij ADAL.js), gebruikt u `https://login.microsoftonline.com/organizations` . Zie voor meer informatie de `authority` configuratie optie in [Initialize met behulp van MSAL.js](msal-js-initializing-client-applications.md).
 
 ### <a name="scopes-for-acquiring-tokens"></a>Bereiken voor het verkrijgen van tokens
 * Bereik in plaats van resource-para meter in verificatie aanvragen voor het verkrijgen van tokens

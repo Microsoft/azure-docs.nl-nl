@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c58f4a553073eb3ed062ef9ec2a66c8e4f40e57b
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 4a244c543aa83ae84891e3f942995dc340a7209d
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785122"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582652"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -445,7 +445,7 @@ Zie [machtigingen en toestemming van micro soft-identiteits platform](./v2-permi
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-In MSAL.NET moet u het volgende gebruiken:
+Gebruik in MSAL.NET:
 
 ```csharp
 AcquireTokenByIntegratedWindowsAuth(IEnumerable<string> scopes)
@@ -922,7 +922,7 @@ Deze stroom wordt niet ondersteund op MSAL voor macOS.
 
 ### <a name="device-code-flow"></a>Stroom voor apparaatcode
 
-Als u een opdracht regel programma schrijft dat geen Webbe sturings elementen heeft en u de voor gaande stromen niet of wilt gebruiken, moet u de code stroom van het apparaat gebruiken.
+Als u een opdracht regel programma schrijft dat geen Webbe sturings elementen heeft en u de voor gaande stromen niet of wilt gebruiken, gebruikt u de code stroom van het apparaat.
 
 Interactieve verificatie met Azure AD vereist een webbrowser. Zie het [gebruik van webbrowsers](https://aka.ms/msal-net-uses-web-browser)voor meer informatie. Als u gebruikers wilt verifiëren op apparaten of besturings systemen die geen webbrowser hebben, kunt u met de code stroom van het apparaat een ander apparaat gebruiken, zoals een computer of een mobiele telefoon om zich interactief aan te melden. Door gebruik te maken van de code stroom van het apparaat, haalt de toepassing tokens op via een proces met twee stappen dat is ontworpen voor deze apparaten of besturings systemen. Voor beelden van dergelijke toepassingen zijn toepassingen die worden uitgevoerd op iOT of opdracht regel programma's (CLI). Het idee is dat:
 

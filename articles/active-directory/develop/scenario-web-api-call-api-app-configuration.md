@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b8360a22c815fa28626bb07a1518bd82ba6e3e46
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: d1ab7da9753642093505fa91ea76b9327612a6ac
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753515"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582363"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Een web-API die web-Api's aanroept: code configuratie
 
@@ -33,7 +33,7 @@ Micro soft raadt u aan het NuGet-pakket [micro soft. Identity. Web](https://www.
 
 ## <a name="client-secrets-or-client-certificates"></a>Client geheimen of client certificaten
 
-Gezien dat uw web-API nu een stroomafwaartse Web-API aanroept, moet u een client geheim of client certificaat opgeven in de *appsettings.jsin* het bestand. U kunt ook een sectie toevoegen waarin het volgende wordt opgegeven:
+Als uw web-API nu een stroomafwaartse Web-API aanroept, geeft u een client geheim of client certificaat op in het *appsettings.js* bestand. U kunt ook een sectie toevoegen waarin het volgende wordt opgegeven:
 
 - De URL van de stroomafwaartse Web-API
 - De bereiken die vereist zijn voor het aanroepen van de API
@@ -169,7 +169,7 @@ In de volgende afbeelding ziet u de verschillende mogelijkheden van *micro soft.
 :::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.svg" alt-text="Blok diagram met de service configuratie opties in startup dot C S voor het aanroepen van een web-API en het opgeven van een token cache-implementatie":::
 
 > [!NOTE]
-> Als u de code voorbeelden hier volledig wilt begrijpen, moet u bekend zijn met [ASP.net core fundamentals](/aspnet/core/fundamentals), met name bij het [invoegen van afhankelijkheden](/aspnet/core/fundamentals/dependency-injection) en [Opties](/aspnet/core/fundamentals/configuration/options).
+> Als u hier volledig inzicht wilt krijgen in de code voorbeelden, moet u bekend zijn met [ASP.net core fundamentals](/aspnet/core/fundamentals), en met name met [afhankelijkheids injectie](/aspnet/core/fundamentals/dependency-injection) en [Opties](/aspnet/core/fundamentals/configuration/options).
 
 # <a name="java"></a>[Java](#tab/java)
 

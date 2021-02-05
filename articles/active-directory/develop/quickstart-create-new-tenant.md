@@ -13,12 +13,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 869b37aea823cf91dc59211b23fcaccd7646afb9
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 41d70b20708f0f355fab5b5a06790c1c0c6530c6
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012016"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583549"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Quickstart: Een tenant instellen
 
@@ -53,7 +53,7 @@ Veel ontwikkelaars hebben al tenants via services of abonnementen die zijn gekop
    * Als uw account is gekoppeld aan meerdere tenants, kunt u de accountnaam selecteren om een menu te openen waarmee u kunt schakelen tussen de tenants. Elke tenant heeft zijn eigen tenant-id.
 
 > [!TIP]
-> Als u de tenant-id wilt zoeken, kunt u:
+> Als u de Tenant-ID wilt vinden, kunt u het volgende doen:
 > * De muisaanwijzer op uw accountnaam houden om de directory/tenant-ID te zien, of
 > * Zoek en selecteer **Azure Active Directory > Eigenschappen > Tenant-id** in de Azure-portal
 

@@ -13,12 +13,12 @@ ms.date: 08/31/2020
 ms.author: ryanwi
 ms.reviewer: arielgo, jiml
 ms.custom: aaddev, signin_art
-ms.openlocfilehash: 3ee59226853f4ea5aabf57a8866ba014aa874774
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 236e82ab97244e1428441f83295f6a5d4ed56350
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90706197"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581989"
 ---
 # <a name="branding-guidelines-for-applications"></a>Huisstijlrichtlijnen voor apps
 
@@ -27,7 +27,7 @@ Bij het ontwikkelen van toepassingen met het micro soft-identiteits platform moe
 In dit artikel gaat u het volgende doen:
 
 - Meer informatie over de twee soorten gebruikersaccounts die worden beheerd door Microsoft en hoe u in uw toepassing naar Azure AD-accounts kunt verwijzen
-- Meer informatie over wat u moet doen om het micro soft-logo toe te voegen voor gebruik in uw app
+- Meer informatie over de vereisten voor het gebruik van het micro soft-logo in uw app
 - Hoe u de officiële afbeeldingen voor **Aanmelden** of **Aanmelden bij Microsoft** downloadt voor gebruik in uw app
 - De do's en don'ts van huisstijl en navigatie
 

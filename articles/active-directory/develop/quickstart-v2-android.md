@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: 6d05c4ba6af860616e5afdfba2378ad9b17fcc77
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 49c69a79b4841f13623c9e6ab3daea72dd7fde26
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98938266"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583651"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Snelstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 
@@ -35,7 +35,7 @@ Toepassingen moeten worden voorgesteld door een app-object in Azure Active Direc
 
 > [!div class="sxs-lookup" renderon="portal"]
 > ### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
->  De voorbeeld code van deze Snelstartgids vereist een omleidings-URI die compatibel is met de auth Broker.
+> Voeg voor het voorbeeld code in deze Snelstartgids een **omleidings-URI** toe die compatibel is met de auth Broker.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Breng deze wijzigingen voor mij aan]()
 >

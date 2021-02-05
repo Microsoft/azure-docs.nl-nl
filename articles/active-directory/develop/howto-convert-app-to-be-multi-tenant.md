@@ -13,12 +13,12 @@ ms.date: 10/27/2020
 ms.author: ryanwi
 ms.reviewer: marsma, jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: 4f87c3fd0cfda2db535b2c8f7f7330a273e6b767
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 825a7d8c53552120a861657c7f3df7ae8f488c18
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755348"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581717"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Procedure: Een Azure Active Directory-gebruiker aanmelden met behulp van het patroon voor multitenant-toepassingen
 
@@ -125,7 +125,7 @@ Bij app-specifieke machtigingen is er altijd toestemming van een tenantbeheerder
 
 Bepaalde gedelegeerde machtigingen vereisen ook de toestemming van een Tenant beheerder. Het is bijvoorbeeld mogelijk om terug te schrijven naar Azure AD, omdat de aangemelde gebruiker toestemming van de Tenant beheerder nodig heeft. Net als alleen app-machtigingen geldt dat als een gewone gebruiker zich probeert aan te melden bij een toepassing die een gedelegeerde machtiging aanvraagt die toestemming van de beheerder vereist, uw toepassing een fout bericht ontvangt. Of een machtiging beheerders toestemming vereist, wordt bepaald door de ontwikkelaar die de resource heeft gepubliceerd en kan worden gevonden in de documentatie voor de resource. De machtigingen documentatie voor de [Microsoft Graph-API][MSFT-Graph-permission-scopes] geven aan welke machtigingen beheerders toestemming nodig heeft.
 
-Als uw toepassing gebruikmaakt van machtigingen waarvoor beheerders toestemming is vereist, moet u een penbeweging hebben, zoals een knop of koppeling, waar de beheerder de actie kan initiëren. De aanvraag die uw toepassing verzendt voor deze actie is het gebruikelijke OAuth2/OpenID Connect Connect-autorisatie verzoek dat ook de `prompt=admin_consent` query teken reeks parameter bevat. Zodra de beheerder toestemming heeft gegeven en de Service-Principal is gemaakt in de Tenant van de klant, hebben volgende aanmeldings aanvragen de `prompt=admin_consent` para meter niet nodig. Omdat de beheerder heeft vastgesteld dat de aangevraagde machtigingen acceptabel zijn, worden er geen andere gebruikers in de Tenant om vanaf dat moment toestemming gevraagd.
+Als uw toepassing machtigingen gebruikt waarvoor beheerders toestemming is vereist, moet u een penbeweging hebben zoals een knop of koppeling waar de beheerder de actie kan initiëren. De aanvraag die uw toepassing verzendt voor deze actie is het gebruikelijke OAuth2/OpenID Connect Connect-autorisatie verzoek dat ook de `prompt=admin_consent` query teken reeks parameter bevat. Zodra de beheerder toestemming heeft gegeven en de Service-Principal is gemaakt in de Tenant van de klant, hebben volgende aanmeldings aanvragen de `prompt=admin_consent` para meter niet nodig. Omdat de beheerder heeft vastgesteld dat de aangevraagde machtigingen acceptabel zijn, worden er geen andere gebruikers in de Tenant om vanaf dat moment toestemming gevraagd.
 
 Tenantbeheerders kunnen uitschakelen dat normale gebruikers toestemming kunnen geven voor toepassingen. Als dit wordt uitgeschakeld, is er altijd beheerderstoestemming nodig om een toepassing in een tenant te kunnen gebruiken. Als u uw toepassing wilt testen wanneer de toestemming van de eind gebruiker is uitgeschakeld, kunt u de configuratie-switch vinden in de [Azure Portal][AZURE-portal] in de sectie **[gebruikers instellingen](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/UserSettings/menuId/)** onder **bedrijfs toepassingen**.
 

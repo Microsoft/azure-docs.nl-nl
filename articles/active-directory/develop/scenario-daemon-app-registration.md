@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 3b77cc93385efb0bbb8a9b87d29de9bad5cd4ceb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 938a19276839d5e0d2bd3e0244510fc068cb029c
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995999"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582904"
 ---
 # <a name="daemon-app-that-calls-web-apis---app-registration"></a>Daemon-app voor het aanroepen van web-Api's-app-registratie
 
@@ -24,7 +24,7 @@ Voor een daemon-toepassing hebt u het volgende nodig om te weten wanneer u de ap
 
 ## <a name="supported-account-types"></a>Ondersteunde accounttypen
 
-Daemon-toepassingen maken alleen indruk in azure AD-tenants. Wanneer u de toepassing maakt, moet u dus een van de volgende opties kiezen:
+Daemon-toepassingen maken alleen indruk in azure AD-tenants. Wanneer u de toepassing maakt, kiest u een van de volgende opties:
 
 - **Accounts in deze organisatie-Directory alleen**. Dit is het meest voorkomende keuze omdat daemon-toepassingen meestal worden geschreven door LOB-ontwikkel aars (line-of-Business).
 - **Accounts in een organisatorische Directory**. U maakt deze keuze als u een ISV bent die een hulp programma biedt aan uw klanten. U hebt de Tenant beheerders van uw klanten nodig om het goed te keuren.

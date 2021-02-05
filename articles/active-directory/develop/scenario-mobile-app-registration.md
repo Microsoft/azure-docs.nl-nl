@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: cdd32185d1ffddb4c6bc3d62b91690f68dec17ca
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 902348063a24b50d1de0a821d9d6e67931cc53cd
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014719"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582533"
 ---
 # <a name="register-mobile-apps-that-call-web-apis"></a>Mobiele apps registreren die web-Api's aanroepen
 
@@ -79,9 +79,9 @@ Als u de omleidings-URI liever hand matig wilt configureren, kunt u dit doen via
 
 ### <a name="username-password-authentication"></a>Gebruikers naam-wachtwoord verificatie
 
-Als uw app alleen een gebruikers naam-wachtwoord verificatie gebruikt, hoeft u geen omleidings-URI voor uw toepassing te registreren. Deze stroom voert een retour ronding uit naar het micro soft Identity platform versie 2,0-eind punt. Uw toepassing wordt niet terugaangeroepen op een specifieke URI.
+Als uw app alleen een gebruikers naam-wachtwoord verificatie gebruikt, hoeft u geen omleidings-URI voor uw toepassing te registreren. Deze stroom voert een retour ronding uit naar het micro soft Identity-platform. Uw toepassing wordt niet terugaangeroepen op een specifieke URI.
 
-U moet uw toepassing echter identificeren als een open bare client toepassing. Hiervoor doet u het volgende:
+Identificeer uw toepassing echter als een open bare client toepassing. Hiervoor doet u het volgende:
 
 1. Selecteer in de <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span></a>nog steeds uw app in **app-registraties** en selecteer vervolgens **verificatie**.
 1. In **Geavanceerde instellingen**  >  **kunnen open bare client stromen**  >  **de volgende mobiele en desktop stromen inschakelen:**, selecteer **Ja**.

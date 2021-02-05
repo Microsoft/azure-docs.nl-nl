@@ -5,15 +5,15 @@ services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 01/05/2021
+ms.date: 02/04/2021
 ms.author: lle
 ms.reviewer: craigg
-ms.openlocfilehash: 70e4d0c1a9f26f83924c1343e4e8e51c5595b324
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 37da2869f0cf315ac0a6851c9a77dcee4debf71a
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944505"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581683"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Problemen met Azure Data Factory beveiliging en toegangs beheer oplossen
 
@@ -88,9 +88,10 @@ Ga als volgt te werk om te controleren of de Data Factory Fully Qualified Domain
 #### <a name="resolution"></a>Oplossing
 
 Ga als volgt te werk om het probleem op te lossen:
-- Raadpleeg het artikel [over persoonlijke Azure-koppelingen voor Azure Data Factory](./data-factory-private-link.md#dns-changes-for-private-endpoints) . De instructie is voor het configureren van de privé-DNS-zone of-server voor het omzetten van de Data Factory FQDN naar een privé-IP-adres.
 
-- We raden u aan om een aangepaste DNS te gebruiken als de lange termijn oplossing. Als u de privé-DNS-zone of-server echter niet wilt configureren, probeert u de volgende tijdelijke oplossing:
+- Als optie wordt u aangeraden om hand matig een ' Virtual Network-koppeling ' toe te voegen onder de Data Factory ' persoonlijke koppeling DNS-zone '. Raadpleeg de [persoonlijke Azure-koppeling voor Azure Data Factory](./data-factory-private-link.md#dns-changes-for-private-endpoints) artikel voor meer informatie. De instructie is voor het configureren van de privé-DNS-zone of aangepaste DNS-server voor het omzetten van de Data Factory FQDN naar een privé-IP-adres. 
+
+- Als u de privé-DNS-zone of aangepaste DNS-server echter niet wilt configureren, kunt u de volgende tijdelijke oplossing proberen:
 
   1. Wijzig het hostbestand in Windows en wijs het persoonlijke IP-adres (het Azure Data Factory-particuliere eind punt) toe aan de Azure Data Factory FQDN.
   

@@ -2,13 +2,13 @@
 title: Azure Backup Server voor de Azure VMware-oplossing instellen
 description: Stel uw Azure VMware-oplossings omgeving in om een back-up te maken van virtuele machines met behulp van Azure Backup Server.
 ms.topic: how-to
-ms.date: 10/23/2020
-ms.openlocfilehash: 7885c0bc73bd5f7cd802e76ed9db470f77eda30d
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.date: 02/04/2021
+ms.openlocfilehash: e9204b9f86c7e9ef67d2e3d6b45ccf4248d00b32
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703399"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581479"
 ---
 # <a name="set-up-azure-backup-server-for-azure-vmware-solution"></a>Azure Backup Server voor de Azure VMware-oplossing instellen
 
@@ -190,7 +190,7 @@ Volg de stappen in deze sectie om het software pakket te downloaden, uit te pakk
 
 ### <a name="download-the-software-package"></a>Het software pakket downloaden
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Als er al een Recovery Services kluis is geopend, gaat u verder met de volgende stap. Als u geen Recovery Services kluis hebt geopend en u zich in de Azure Portal bevindt, selecteert u in het hoofd menu **Bladeren**.
 
@@ -389,7 +389,7 @@ Azure Backup Server v3 accepteert alleen opslag volumes. Wanneer u een volume to
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door naar de volgende zelf studie voor meer informatie over het configureren van een back-up van virtuele VMware-machines die worden uitgevoerd op de Azure VMware-oplossing met Azure Backup Server.
+Nu u hebt uitgelegd hoe u Azure Backup Server voor de Azure VMware-oplossing instelt, wilt u mogelijk meer informatie over:
 
-> [!div class="nextstepaction"]
-> [Back-ups van Azure VMware-oplossings Vm's configureren](backup-azure-vmware-solution-virtual-machines.md)
+- [Back-ups configureren voor uw Azure VMware-oplossing-vm's](backup-azure-vmware-solution-virtual-machines.md).
+- [Bescherm uw Azure VMware-oplossing-vm's met Azure Security Center-integratie](azure-security-integration.md).

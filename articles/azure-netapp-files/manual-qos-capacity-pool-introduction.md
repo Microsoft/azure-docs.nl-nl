@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/12/2020
+ms.date: 02/04/2021
 ms.author: b-juche
-ms.openlocfilehash: 239b985bf45942afbff8ca49d7e15ead24456304
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 13acee8b21adf946192544afcea17b4a8d9b9ec9
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993979"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581122"
 ---
 # <a name="manual-qos-capacity-pool"></a>Handmatige QoS-capaciteitspool
 
@@ -29,7 +29,7 @@ Dit artikel bevat een inleiding tot de functionaliteit van de capaciteits groep 
 
 Het [QoS-type](azure-netapp-files-understand-storage-hierarchy.md#qos_types) is een kenmerk van een capaciteits groep. Azure NetApp Files biedt twee QoS-typen capaciteits Pools: automatisch (standaard) en hand matig.  
 
-In een *hand matige* QoS-capaciteits groep kunt u de capaciteit en door Voer voor een volume onafhankelijk toewijzen. De totale doorvoer van alle volumes die met een handmatige QoS-capaciteitspool zijn gemaakt, wordt beperkt door de totale doorvoer van de pool. Deze wordt bepaald door de combinatie van poolgrootte en de doorvoer op serviceniveau. 
+In een *hand matige* QoS-capaciteits groep kunt u de capaciteit en door Voer voor een volume onafhankelijk toewijzen. Zie [resource limieten voor Azure NetApp files](azure-netapp-files-resource-limits.md#resource-limits)voor minimale en maximale doorvoer niveaus. De totale doorvoer van alle volumes die met een handmatige QoS-capaciteitspool zijn gemaakt, wordt beperkt door de totale doorvoer van de pool. Deze wordt bepaald door de combinatie van poolgrootte en de doorvoer op serviceniveau. 
 
 In een *automatische* QoS-capaciteits groep wordt de door Voer automatisch toegewezen aan de volumes in de pool, evenredig aan het grootte quotum dat aan de volumes is toegewezen.  
 
@@ -60,4 +60,4 @@ Als u het hand matige QoS-type wilt gebruiken, moet u [de functie registreren](m
 * [Een SMB-volume maken](azure-netapp-files-create-volumes-smb.md)
 * [Een volume met dubbele protocollen maken](create-volumes-dual-protocol.md)
 * [Metrische gegevens voor Azure NetApp Files](azure-netapp-files-metrics.md)
-* [Problemen met de capaciteits pool oplossen](troubleshoot-capacity-pools.md)
+* [Problemen met capaciteitspools oplossen](troubleshoot-capacity-pools.md)

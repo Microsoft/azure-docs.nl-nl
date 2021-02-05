@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/28/2020
+ms.date: 02/04/2021
 ms.author: b-juche
-ms.openlocfilehash: 5e44c2cfc81256a8715c7c625648b6ec25bcd319
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 566cc3b1192d632bbffb8f9ef091f291b4bcc6e6
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91929214"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581143"
 ---
 # <a name="manage-a-manual-qos-capacity-pool"></a>Een handmatige QoS-capaciteitspool maken
 
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u een capaciteits groep beheert die gebruikm
 Zie [opslag hiërarchie van Azure NetApp files](azure-netapp-files-understand-storage-hierarchy.md) en [prestatie overwegingen voor Azure NetApp files](azure-netapp-files-performance-considerations.md) om inzicht te krijgen in de overwegingen met betrekking tot QoS-typen.  
 
 ## <a name="register-the-feature"></a>De functie registreren
-De functie hand matige QoS-type is momenteel beschikbaar als preview-versie. Als u deze functie voor de eerste keer gebruikt, moet u eerst de functie registreren.
+De functie hand matige QoS-type is momenteel beschikbaar als preview-versie. Als dit de eerste keer is dat u deze functie gebruikt, moet u de functie eerst registreren.
   
 1.  De functie registreren:
 
@@ -59,7 +59,8 @@ Een nieuwe capaciteits groep maken met het type hand matig QoS:
 U kunt een capaciteits groep wijzigen die momenteel gebruikmaakt van het type automatische QoS om het hand matige QoS-type te gebruiken.  
 
 > [!IMPORTANT]
-> Het capaciteits type instellen op hand matige QoS is een permanente wijziging. U kunt een hand matig QoS-type capaciteits programma niet converteren naar een automatische QoS-capaciteits groep. 
+> Het capaciteits type instellen op hand matige QoS is een permanente wijziging. U kunt een hand matig QoS-type capaciteits programma niet converteren naar een automatische QoS-capaciteits groep.  
+> Tijdens de conversie kunnen doorvoer niveaus worden beperkt om te voldoen aan de doorvoer limieten voor volumes van het hand matige QoS-type. Zie [resource limieten voor Azure NetApp files](azure-netapp-files-resource-limits.md#resource-limits).
 
 1. Klik op de Blade beheer voor uw NetApp-account op **capaciteits Pools** om bestaande capaciteits groepen weer te geven.   
  
@@ -89,7 +90,7 @@ Als een volume zich in een hand matige QoS-capaciteits groep bevindt, kunt u de 
 * [Een capaciteitspool instellen](azure-netapp-files-set-up-capacity-pool.md)
 * [Metrische gegevens voor Azure NetApp Files](azure-netapp-files-metrics.md)
 * [Prestatie-overwegingen voor Azure NetApp Files](azure-netapp-files-performance-considerations.md)
-* [Problemen met de capaciteits pool oplossen](troubleshoot-capacity-pools.md)
+* [Problemen met capaciteitspools oplossen](troubleshoot-capacity-pools.md)
 * [Opslaghiërarchie van Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
 * [Serviceniveau's voor Azure NetApp Files](azure-netapp-files-service-levels.md)
 * [Kostenmodel voor Azure NetApp Files](azure-netapp-files-cost-model.md)

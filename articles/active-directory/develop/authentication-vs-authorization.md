@@ -13,12 +13,12 @@ ms.date: 05/22/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: b81b34010736bce33085cb1ebf0faa3da6a41bd6
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 5244a8e572abb56c00d87d0bdd7e8d1291af9b9e
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755392"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581904"
 ---
 # <a name="authentication-vs-authorization"></a>Verificatie vs. autorisatie
 
@@ -34,7 +34,7 @@ In dit artikel worden verificatie en autorisatie gedefinieerd. Ook wordt beschre
 
 ## <a name="authentication-and-authorization-using-the-microsoft-identity-platform"></a>Verificatie en autorisatie met het micro soft-identiteits platform
 
-Het maken van apps die elk eigen gebruikers naam-en wachtwoord gegevens onderhouden, wordt een hoge administratieve belasting door het toevoegen of verwijderen van gebruikers aan meerdere apps. In plaats daarvan kunnen uw apps deze verantwoordelijkheid delegeren aan een gecentraliseerde ID-provider.
+Het maken van apps die elk een eigen gebruikers naam en wacht woord onderhoudt, wordt een hoge administratieve belasting voor het toevoegen of verwijderen van gebruikers in meerdere apps. In plaats daarvan kunnen uw apps deze verantwoordelijkheid delegeren aan een gecentraliseerde ID-provider.
 
 Azure Active Directory (Azure AD) is een gecentraliseerde ID-provider in de Cloud. Als u verificatie en autorisatie voor het delegeren uitschakelt, kunnen scenario's zoals:
 

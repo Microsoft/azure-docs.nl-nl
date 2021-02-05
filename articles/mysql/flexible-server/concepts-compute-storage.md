@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 1/28/2021
-ms.openlocfilehash: b1e8093a1991a97220060c2b6936368f9a4be796
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 765ff76578e48135d2e7d4d9200c1868d2501df4
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99052343"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581445"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-mysql---flexible-server-preview"></a>Berekenings-en opslag opties in Azure Database for MySQL-flexibele server (preview-versie)
 
@@ -102,15 +102,14 @@ Wij raden u aan <!--turn on storage auto-grow or to--> Stel een waarschuwing in 
 Opslag automatisch uitbreiden is nog niet beschikbaar voor Azure Database for MySQL flexibele server.
 
 ## <a name="iops"></a>IOPS
-De minimale effectief IOPS is 100 voor alle reken grootten en de Maxi maal bedoel bare IOPS wordt bepaald door de volgende kenmerken: 
-- Compute: de Maxi maal beschik bare IOPS kan worden beperkt door de Maxi maal toegestane IOPS van de geselecteerde reken grootte.
-- Opslag: in alle reken lagen wordt de schaal van IOPS met de ingerichte opslag grootte in een verhouding van 3:1.
 
-U kunt effectief aantal IOPS beschik bare schalen door de ingerichte opslag te verhogen of te verplaatsen naar een grotere reken grootte (als uw IOPS beperkt zijn door Compute). In de preview-periode is het maximum aantal ondersteunde IOPS 20.000 IOPS.
+Azure Database for MySQL: flexibele server ondersteunt het inrichten van extra IOPS. Met deze functie kunt u extra IOPS inrichten boven de limiet van de gratis IOPS. Met deze functie kunt u het aantal IOPS dat wordt ingericht op basis van uw werkbelasting vereisten op elk gewenst moment verg Roten of verkleinen. 
 
-Zie hieronder voor meer informatie over de Max effectief IOPS per reken grootte met behulp van de combi natie van Compute en opslag: 
+De minimale IOPS is 100 voor alle reken grootten en de maximale IOPS wordt bepaald door de geselecteerde reken grootte. In de preview-periode is het maximum aantal IOPS dat wordt ondersteund 20.000 IOPS.
 
-| Reken grootte         | Maximum aantal IOPS  | 
+Voor meer informatie over de maximale IOPS per reken grootte wordt hieronder weer gegeven: 
+
+| Reken grootte         | Maximum aantal IOPS        | 
 |----------------------|---------------------|
 | **Bebreekbaar**        |                     |
 | Standard_B1s         | 320                 |
@@ -133,11 +132,14 @@ Zie hieronder voor meer informatie over de Max effectief IOPS per reken grootte 
 | Standard_E48ds_v4    | 20.000               | 
 | Standard_E64ds_v4    | 20.000               |  
 
-De maximale ingangs limiet is afhankelijk van de Maxi maal beschik bare IOPS per reken grootte. Zie de onderstaande formule en raadpleegt u de kolom Max. niet- *cache geheugen doorvoer: IOPS/Mbps* in de documentatie van de [B-serie](../../virtual-machines/sizes-b-series-burstable.md), [Ddsv4-serie](../../virtual-machines/ddv4-ddsv4-series.md)en [Edsv4-serie](../../virtual-machines/edv4-edsv4-series.md) .
+De maximale IOPS is afhankelijk van de Maxi maal beschik bare IOPS per reken grootte. Raadpleeg de kolom *Max. door Voer van niet in cache opgeslagen schijf: IOPS/Mbps* in de [B-serie](../../virtual-machines/sizes-b-series-burstable.md), [Ddsv4-Series](../../virtual-machines/ddv4-ddsv4-series.md)en [Edsv4-Series-](../../virtual-machines/edv4-edsv4-series.md) documentatie.
 
-**Max effectief IOPS** = minimum (*"Maxi maal aantal niet-gecachete schijf doorvoer: IOPS/Mbps"* van reken grootte, opslag ingericht in GiB * 3)
+> [!Important]
+> De extra **IOPS** zijn gelijk aan het minimum ("Maxi maal aantal niet-gecachede schijf doorvoer: IOPS/Mbps" van de reken grootte, opslag ingericht in GiB * 3)<br>
+> **Minimale IOPS** is 100 voor alle reken grootten<br>
+> De **maximale IOPS** wordt bepaald door de geselecteerde reken grootte. In de preview-periode is het maximum aantal IOPS dat wordt ondersteund 20.000 IOPS.
 
-U kunt uw I/O-verbruik in de Azure Portal (met Azure Monitor) bewaken met de metrische waarde voor [io-percentage](./concepts-monitoring.md) . Als u meer IOPS nodig hebt, moet u weten of u beperkt bent door de berekenings grootte of de opslag ingericht. Schaal de berekenings-of opslag capaciteit van uw server dienovereenkomstig.
+U kunt uw I/O-verbruik in de Azure Portal (met Azure Monitor) bewaken met de metrische waarde voor [io-percentage](./concepts-monitoring.md) . Als u meer IOPS nodig hebt dan het maximum aantal IOPS op basis van compute, moet u de reken kracht van de server schalen.
 
 ## <a name="backup"></a>Backup
 

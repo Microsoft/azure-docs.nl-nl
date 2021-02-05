@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: tutorial
-ms.date: 02/01/2021
+ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: 98da8057fb09cf43a59b921694386cbf3fa8ca21
-ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
+ms.openlocfilehash: 51ba981dcc6f36df3bfaacebb503782faed5c91f
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222214"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581003"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Met HSM beveiligde sleutels importeren in Key Vault (BYOK)
 
@@ -71,10 +71,13 @@ De volgende tabel bevat de vereisten voor het gebruik van BYOK in Azure Key Vaul
 
 ## <a name="supported-key-types"></a>Ondersteunde sleuteltypen
 
-|Sleutelnaam|Type sleutel|Sleutelgrootte|Oorsprong|Beschrijving|
+|Sleutelnaam|Type sleutel|Sleutel grootte/-curve|Oorsprong|Beschrijving|
 |---|---|---|---|---|
 |Key Exchange Key (KEK)|RSA| 2048-bits<br />3072-bits<br />4096-bits|Azure Key Vault-HSM|Een met HSM ondersteund RSA-sleutelpaar dat wordt gegenereerd in Azure Key Vault|
-|Doelsleutel|RSA|2048-bits<br />3072-bits<br />4096-bits|HSM-leverancier|De sleutel die moet worden overgedragen naar de Azure Key Vault-HSM|
+|Doelsleutel|
+||RSA|2048-bits<br />3072-bits<br />4096-bits|HSM-leverancier|De sleutel die moet worden overgedragen naar de Azure Key Vault-HSM|
+||EC|P-256<br />P-384<br />P-521|HSM-leverancier|De sleutel die moet worden overgedragen naar de Azure Key Vault-HSM|
+||||
 
 ## <a name="generate-and-transfer-your-key-to-the-key-vault-hsm"></a>Uw sleutel genereren en overbrengen naar de Key Vault-HSM
 
@@ -120,7 +123,7 @@ Raadpleeg de documentatie van uw HSM-leverancier om het BYOK-hulpprogramma te do
 Draag het BYOK-bestand over naar de verbonden computer.
 
 > [!NOTE] 
-> Het importeren van 1024-bits RSA-sleutels wordt niet ondersteund. Het importeren van een EC-sleutel (Elliptic Curve) wordt momenteel niet ondersteund.
+> Het importeren van 1024-bits RSA-sleutels wordt niet ondersteund. Het importeren van een elliptische curve sleutel met curve P-256 KB wordt niet ondersteund.
 > 
 > **Bekend probleem**: Het importeren van een RSA 4K-doelsleutel van Luna-HSM's wordt alleen ondersteund met firmware 7.4.0 of nieuwer.
 
@@ -128,8 +131,15 @@ Draag het BYOK-bestand over naar de verbonden computer.
 
 Om de sleutelimport te voltooien, draagt u het sleuteloverdrachtspakket (een BYOK-bestand) over van de niet-verbonden computer naar de computer met internetverbinding. Gebruik de opdracht [az keyvault key import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import) om het BYOK-bestand te uploaden naar de Key Vault-HSM.
 
+Als u een RSA-sleutel wilt importeren, gebruikt u de volgende opdracht. Para meter--KTY is optioneel en wordt standaard ingesteld op RSA-HSM.
 ```azurecli
 az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file KeyTransferPackage-ContosoFirstHSMkey.byok
+```
+
+Als u een EC-sleutel wilt importeren, moet u sleutel type en de naam van de curve opgeven.
+
+```azurecli
+az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file --kty EC-HSM --curve-name "P-256" KeyTransferPackage-ContosoFirstHSMkey.byok
 ```
 
 Als het uploaden is gelukt, worden in Azure CLI de eigenschappen van de geïmporteerde sleutel weergegeven.

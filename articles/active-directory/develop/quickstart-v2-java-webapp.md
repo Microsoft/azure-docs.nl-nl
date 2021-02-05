@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: 91aa6c96c714bff26ea7e0df5b2b6971c68edec0
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 601b725e5f1fe06c12416ad8ab36ac657f0412f2
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178565"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583413"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Quickstart: Aanmelden met Microsoft toevoegen aan een Java-webapp
 
@@ -68,7 +68,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
 >
-> Als u het codevoorbeeld uit deze quickstart wilt gebruiken:, moet u het volgende doen:
+> Gebruik het code voorbeeld in deze Snelstartgids:
 >
 > 1. Voeg de antwoord-URL's `https://localhost:8443/msal4jsample/secure/aad` en `https://localhost:8443/msal4jsample/graph/me` toe.
 > 1. Maak een clientgeheim.
@@ -161,7 +161,7 @@ Als u de webtoepassing vanuit een IDE wilt uitvoeren, selecteert u Uitvoeren en 
 
 ##### <a name="running-the-project-from-tomcat"></a>Het project uitvoeren vanuit Tomcat
 
-Als u het webvoorbeeld wilt implementeren met Tomcat, moet u een aantal wijzigingen aanbrengen in de broncode.
+Als u het webvoorbeeld wilt implementeren op Tomcat, brengt u een paar wijzigingen aan in de bron code.
 
 1. Open *ms-identity-java-webapp/pom.xml*.
     - Onder `<name>msal-web-sample</name>` voegt u `<packaging>war</packaging>` toe.

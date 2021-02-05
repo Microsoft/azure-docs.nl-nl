@@ -14,12 +14,12 @@ ms.date: 10/14/2020
 ms.author: marsma
 ms.reviewer: shoatman
 ms.custom: aaddev
-ms.openlocfilehash: bf9b3a154e19fab08c46f9838f555e223f10e8a0
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: ba639bc023affc7c2e6b2b675cdedc1229636893
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672284"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581037"
 ---
 # <a name="adal-to-msal-migration-guide-for-android"></a>Migratie handleiding voor ADAL naar MSAL voor Android
 
@@ -71,7 +71,7 @@ In de registratie van uw app in de portal ziet u een tabblad **API-machtigingen*
 Met ADAL en het Azure AD v1-eind punt, werd gebruikers toestemming verleend voor bronnen waarvan ze eigenaar zijn, gekregen bij het eerste gebruik. Met MSAL en het micro soft-identiteits platform kan toestemming worden gevraagd incrementeel. Incrementele toestemming is handig voor machtigingen die een gebruiker kan beschouwen als hoge bevoegdheid of anders kan worden gevraagd als er geen duidelijke uitleg is over waarom de machtiging is vereist. In ADAL is het mogelijk dat deze machtigingen hebben geresulteerd in de gebruiker bij het aanmelden bij uw app.
 
 > [!TIP]
-> We raden u aan om incrementele toestemming te gebruiken in scenario's waarin u aanvullende context moet opgeven voor uw gebruiker over waarom uw app toestemming nodig heeft.
+> Gebruik incrementele toestemming om gebruikers extra context te bieden over waarom uw app een machtiging nodig heeft.
 
 ### <a name="admin-consent"></a>toestemming van de beheerder
 
@@ -237,7 +237,7 @@ public interface SilentAuthenticationCallback {
 In ADAL is er één uitzonderings type, `AuthenticationException` met een methode voor het ophalen van de `ADALError` Enum-waarde.
 In MSAL is er een hiërarchie met uitzonde ringen en elke groep heeft een eigen set gerelateerde specifieke fout codes.
 
-| Uitzondering                                        | Beschrijving                                                         |
+| Uitzondering                                        | Description                                                         |
 |--------------------------------------------------|---------------------------------------------------------------------|
 | `MsalArgumentException`                          | Deze wordt gegenereerd als een of meer invoer argumenten ongeldig zijn.                 |
 | `MsalClientException`                            | Wordt gegenereerd als de fout aan de kant van de client is.                                 |

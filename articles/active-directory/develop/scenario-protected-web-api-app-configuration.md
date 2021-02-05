@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 3a26157949ff6ef69c9c009dfdd40781b47bc761
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: bdf74a6d8b6798de8aba33baea5afdf987ce1c34
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753583"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582482"
 ---
 # <a name="protected-web-api-code-configuration"></a>Beveiligde web-API: code configuratie
 
-Als u de code voor de beveiligde web-API wilt configureren, moet u het volgende weten:
+Meer informatie over het configureren van de code voor uw beveiligde web API:
 
 - Waarvan Api's als beveiligd worden gedefinieerd.
 - Een Bearer-token configureren.
@@ -195,7 +195,7 @@ De validatie stappen worden vastgelegd in validators, die worden weer gegeven in
 
 In deze tabel worden de validatie functies beschreven:
 
-| Validator | Beschrijving |
+| Validator | Description |
 |---------|---------|
 | **ValidateAudience** | Zorgt ervoor dat het token voor de toepassing is die het token voor u valideert. |
 | **ValidateIssuer** | Hiermee zorgt u ervoor dat het token is uitgegeven door een vertrouwde STS, wat inhoudt dat u vertrouwt. |

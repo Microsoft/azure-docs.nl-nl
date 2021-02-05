@@ -13,12 +13,12 @@ ms.date: 11/20/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 46626c3ebe9d70600be1cc5f73c43677f67bcd09
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 00768f363d08bc476350e57a8eac69eafd9c3589
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98761373"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99580935"
 ---
 # <a name="application-configuration-options"></a>Configuratie opties voor toepassingen
 
@@ -73,7 +73,7 @@ Als u geen exemplaar opgeeft, wordt de app in het open bare Azure-Cloud exemplaa
 
 De aanmeldings doelgroep is afhankelijk van de bedrijfs behoeften van uw app:
 
-- Als u een LOB-ontwikkelaar (line-of-Business) bent, produceert u waarschijnlijk een toepassing met één Tenant die alleen in uw organisatie wordt gebruikt. In dat geval moet u de organisatie opgeven, hetzij door de Tenant-ID (de ID van uw Azure AD-instantie) ofwel door een domein naam die is gekoppeld aan de Azure AD-instantie.
+- Als u een LOB-ontwikkelaar (line-of-Business) bent, produceert u waarschijnlijk een toepassing met één Tenant die alleen in uw organisatie wordt gebruikt. In dat geval geeft u de organisatie op met de Tenant-ID (de ID van uw Azure AD-exemplaar) of met een domein naam die is gekoppeld aan de Azure AD-instantie.
 - Als u een ISV bent, wilt u mogelijk gebruikers aanmelden met hun werk-en school accounts in elke organisatie of in sommige organisaties (multi tenant-app). Maar u wilt ook dat gebruikers zich aanmelden met hun persoonlijke micro soft-accounts.
 
 ### <a name="how-to-specify-the-audience-in-your-codeconfiguration"></a>De doel groep in uw code/configuratie opgeven
@@ -122,9 +122,9 @@ Als u een open bare client-app-ontwikkelaar bent die gebruikmaakt van MSAL:
   | UWP | waarde van `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()` . Hiermee wordt SSO met de browser ingeschakeld door de waarde in te stellen op het resultaat van WebAuthenticationBroker. GetCurrentApplicationCallbackUri () die u moet registreren |
   | .NET Core | `https://localhost`. Op deze manier kan de gebruiker de systeem browser voor interactieve verificatie gebruiken, omdat .NET Core op het moment geen gebruikers interface voor de Inge sloten webweergave heeft. |
 
-- U hoeft geen omleidings-URI toe te voegen als u een Xamarin Android-en iOS-toepassing bouwt die geen ondersteuning biedt voor Broker (de omleidings-URI wordt automatisch ingesteld op `msal{ClientId}://auth` voor Xamarin Android en IOS
+- U hoeft geen omleidings-URI toe te voegen als u een Xamarin Android-en iOS-toepassing bouwt die geen ondersteuning biedt voor de omleidings-URI van de Broker. Deze wordt automatisch ingesteld op `msal{ClientId}://auth` voor Xamarin Android en IOS.
 
-- U moet de omleidings-URI configureren in [app-registraties](https://aka.ms/appregistrations):
+- Configureer de omleidings-URI in [app-registraties](https://aka.ms/appregistrations):
 
    ![Omleidings-URI in App-registraties](media/msal-client-application-configuration/redirect-uri.png)
 

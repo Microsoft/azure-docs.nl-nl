@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 45f3a066283a921f60909a4aa3cfdc76f3faad06
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 54caea62feed6ae7c082a979901999a5dcb3bd71
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753264"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582244"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Web-app die gebruikers aanmeldt: code configuratie
 
@@ -64,13 +64,13 @@ U kunt voor meer informatie over de volledige implementatie verwijzen naar dit v
 
 ## <a name="configuration-files"></a>Configuratie bestanden
 
-Webtoepassingen die gebruikers aanmelden met behulp van het micro soft-identiteits platform, worden geconfigureerd via configuratie bestanden. De instellingen die u moet invullen zijn:
+Webtoepassingen die gebruikers aanmelden met behulp van het micro soft-identiteits platform, worden geconfigureerd via configuratie bestanden. Dit zijn de waarden die u nodig hebt om op te geven in de configuratie:
 
 - De Cloud instantie ( `Instance` ) als u wilt dat uw app in nationale Clouds wordt uitgevoerd, bijvoorbeeld
 - De doel groep in de Tenant-ID ( `TenantId` )
 - De client-ID ( `ClientId` ) voor uw toepassing, zoals gekopieerd van de Azure Portal
 
-Soms kunnen toepassingen worden parametrized door `Authority` , dat wil zeggen een samen voeging van `Instance` en `TenantId` .
+U ziet mogelijk ook verwijzingen naar de `Authority` . De `Authority` waarde is de samen voeging van `Instance` de `TenantId` waarden en.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -133,7 +133,7 @@ In ASP.NET Core bevat een ander bestand ([properties\launchSettings.jsop](https:
 }
 ```
 
-In de Azure Portal moeten de antwoord-Uri's die u moet registreren op de **verificatie** pagina voor uw toepassing, overeenkomen met deze url's. Voor de twee voorafgaande configuratie bestanden zouden ze zijn `https://localhost:44321/signin-oidc` . De reden hiervoor is `applicationUrl` `http://localhost:3110` , maar `sslPort` is opgegeven (44321). `CallbackPath` is `/signin-oidc` , zoals gedefinieerd in `appsettings.json` .
+In de Azure Portal moeten de omleidings-Uri's die u registreert op de **verificatie** pagina voor uw toepassing, overeenkomen met deze url's. Voor de twee voorafgaande configuratie bestanden zouden ze zijn `https://localhost:44321/signin-oidc` . De reden hiervoor is `applicationUrl` `http://localhost:3110` , maar `sslPort` is opgegeven (44321). `CallbackPath` is `/signin-oidc` , zoals gedefinieerd in `appsettings.json` .
 
 Op dezelfde manier wordt de afmeldings-URI ingesteld op `https://localhost:44321/signout-oidc` .
 
@@ -161,7 +161,7 @@ In ASP.NET wordt de toepassing geconfigureerd via het [Web.config](https://githu
   </appSettings>
 ```
 
-In de Azure Portal moeten de antwoord-Uri's die u moet registreren op de **verificatie** pagina voor uw toepassing, overeenkomen met deze url's. Dat wil zeggen dat ze moeten zijn `https://localhost:44326/` .
+In de Azure Portal moeten de antwoord-Uri's die u registreert op de **verificatie** pagina voor uw toepassing, overeenkomen met deze url's. Dat wil zeggen dat ze moeten zijn `https://localhost:44326/` .
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -175,7 +175,7 @@ aad.redirectUriSignin=http://localhost:8080/msal4jsample/secure/aad
 aad.redirectUriGraph=http://localhost:8080/msal4jsample/graph/me
 ```
 
-In de Azure Portal moeten de antwoord-Uri's die u moet registreren op de **verificatie** pagina voor uw toepassing, overeenkomen met de `redirectUri` instanties die de toepassing definieert. Dat wil zeggen dat ze moeten zijn `http://localhost:8080/msal4jsample/secure/aad` en `http://localhost:8080/msal4jsample/graph/me` .
+In de Azure Portal moeten de antwoord-Uri's die u registreert op de **verificatie** pagina voor uw toepassing, overeenkomen met de `redirectUri` instanties die de toepassing definieert. Dat wil zeggen dat ze moeten zijn `http://localhost:8080/msal4jsample/secure/aad` en `http://localhost:8080/msal4jsample/graph/me` .
 
 # <a name="python"></a>[Python](#tab/python)
 

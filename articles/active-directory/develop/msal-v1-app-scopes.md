@@ -12,12 +12,12 @@ ms.date: 11/25/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: b35b39d7072b22d9cc3f7b4f4ef8886431b06f69
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 7e2fcf2dc0dc53038b82bbf182cb12f580d88357
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754670"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583583"
 ---
 # <a name="scopes-for-a-web-api-accepting-v10-tokens"></a>Bereiken voor een web-API die v 1.0-tokens accepteert
 
@@ -37,7 +37,7 @@ var scopes = new [] {  ResourceId+"/user_impersonation"};
 var scopes = [ ResourceId + "/user_impersonation"];
 ```
 
-Als u wilt lezen en schrijven met MSAL.NET Azure AD met behulp van de Microsoft Graph-API (https: \/ /Graph.Microsoft.com/), moet u een lijst met bereiken maken, zoals wordt weer gegeven in de volgende voor beelden:
+Als u wilt lezen en schrijven met MSAL.NET Azure AD met behulp van de Microsoft Graph-API (https: \/ /Graph.Microsoft.com/), maakt u een lijst met bereiken, zoals wordt weer gegeven in de volgende voor beelden:
 
 ```csharp
 string ResourceId = "https://graph.microsoft.com/";
@@ -59,7 +59,7 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 ```
 
 > [!NOTE]
-> U moet twee slashes gebruiken omdat de Azure Resource Manager-API een slash in de claim van de doel groep (AUD) verwacht en vervolgens een slash is om de API-naam van het bereik te scheiden.
+> Gebruik twee slashes omdat de Azure Resource Manager-API een slash in de claim van de doel groep (AUD) verwacht en vervolgens een slash is om de API-naam van het bereik te scheiden.
 
 De logica die door Azure AD wordt gebruikt, is als volgt:
 

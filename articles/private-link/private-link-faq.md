@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: c074c29b7a37f49d5a4c7a5fab00b9a3e41c6893
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: b56c57a0b803a41c095f6f25f69a18a815d182f1
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901535"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582006"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Veelgestelde vragen over persoonlijke koppelingen van Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "97901535"
 ### <a name="how-is-traffic-being-sent-when-using-private-link"></a>Hoe wordt het verkeer verzonden wanneer een persoonlijke koppeling wordt gebruikt?
 Verkeer wordt privé verzonden met micro soft backbone. Er wordt geen verbinding met Internet verzonden. Persoonlijke Azure-koppeling slaat geen klant gegevens op.
  
-### <a name="what-is-the-difference-between-a-service-endpoints-and-a-private-endpoints"></a>Wat is het verschil tussen een service-eind punt en een persoonlijk eind punt?
+### <a name="what-is-the-difference-between-service-endpoints-and-private-endpoints"></a>Wat is het verschil tussen service-eind punten en persoonlijke eind punten?
 - Privé-eind punten verlenen netwerk toegang tot specifieke bronnen achter een bepaalde service die gedetailleerde segmentatie levert. Verkeer kan de service bron van on-premises bereiken zonder gebruik te maken van open bare eind punten.
 - Een service-eind punt blijft een openbaar routeerbaar IP-adres.  Een persoonlijk eind punt is een privé-IP in de adres ruimte van het virtuele netwerk waar het persoonlijke eind punt is geconfigureerd.
 
@@ -34,6 +34,9 @@ Verkeer wordt privé verzonden met micro soft backbone. Er wordt geen verbinding
 Meerdere bron typen voor persoonlijke koppelingen bieden ondersteuning voor toegang via een persoonlijk eind punt. Resources zijn Azure PaaS Services en uw eigen persoonlijke koppelings service. Het is een een-op-veel-relatie. 
 
 Een persoonlijke koppelings service ontvangt verbindingen van meerdere persoonlijke eind punten. Een persoonlijk eind punt maakt verbinding met één privé koppelings service.    
+
+### <a name="do-i-need-to-disable-network-policies-for-private-link"></a>Moet ik netwerk beleid uitschakelen voor persoonlijke koppeling
+Ja. Zowel het persoonlijke eind punt als de persoonlijke koppelings service moeten netwerk beleid uitschakelen om goed te laten functioneren. Beide hebben eigenschappen die onafhankelijk van elkaar zijn.
 
 ## <a name="private-endpoint"></a>Privé-eindpunt 
  
@@ -84,4 +87,4 @@ Nee. Persoonlijke Azure-koppeling biedt deze functionaliteit voor u. U hoeft gee
 
 ##  <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [persoonlijke Azure-koppelingen](private-link-overview.md)
+- Meer informatie over [Azure Private Link](private-link-overview.md)

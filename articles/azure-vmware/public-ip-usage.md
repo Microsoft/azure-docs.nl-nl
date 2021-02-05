@@ -2,13 +2,13 @@
 title: De functionaliteit van het open bare IP-adres in azure VMware gebruiken
 description: In dit artikel wordt uitgelegd hoe u de open bare IP-functionaliteit in azure Virtual WAN kunt gebruiken.
 ms.topic: how-to
-ms.date: 10/28/2020
-ms.openlocfilehash: 036ec00077720e9dc3197bf9235bea34b77fb5f4
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.date: 02/04/2021
+ms.openlocfilehash: 640f359ed8934048bffd7f58b36e8a3eef71c2f1
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517900"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581377"
 ---
 # <a name="how-to-use-the-public-ip-functionality-in-azure-vmware-solution"></a>De functionaliteit van het open bare IP-adres in azure VMware gebruiken
 
@@ -21,7 +21,7 @@ U kunt open bare Internet toegang op twee manieren inschakelen.
 
 Als onderdeel van de implementatie van een privécloud in azure VMware, kunt u bij het inschakelen van de functionaliteit van open bare IP de vereiste onderdelen met Automation Get maken en inschakelen:
 
--  Virtual WAN
+-  Virtuele WAN
 
 -  Virtuele WAN-hub met ExpressRoute-connectiviteit
 
@@ -120,7 +120,7 @@ Zodra alle onderdelen zijn geïmplementeerd, kunt u ze weer geven in de toegevoe
 
 1. Selecteer op het tabblad **DNS** de optie **uitschakelen** en selecteer vervolgens **volgende: regels**.
 
-1. Selecteer **een regel verzameling toevoegen** , geef de onderstaande gegevens op en selecteer **toevoegen** en selecteer vervolgens **volgende: bedreigings informatie**.
+1. Selecteer **een regel verzameling toevoegen**, geef de onderstaande gegevens op en selecteer **toevoegen** en selecteer vervolgens **volgende: bedreigings informatie**.
 
    -  Name
    -  Type regel verzameling-DNAT
@@ -128,8 +128,8 @@ Zodra alle onderdelen zijn geïmplementeerd, kunt u ze weer geven in de toegevoe
    -  Actie verzameling van regel: toestaan
    -  Naam van regel
    -  Bron type- **IP-adres**
-   -  Bron-* *\** _
-   -  Protocol – _ *TCP**
+   -  Bron **\***
+   -  Protocol: **TCP**
    -  Doel poort: **80**
    -  Doel type: **IP-adres**
    -  Doel- **openbaar IP-adres**
@@ -144,7 +144,7 @@ Zodra alle onderdelen zijn geïmplementeerd, kunt u ze weer geven in de toegevoe
 
    :::image type="content" source="media/public-ip-usage/secure-hubs-with-azure-firewall-polcy.png" alt-text="Scherm opname waarin de geselecteerde hubs worden weer gegeven die worden geconverteerd naar beveiligde virtuele hubs." border="true" lightbox="media/public-ip-usage/secure-hubs-with-azure-firewall-polcy.png":::
 
-1. Selecteer **Volgende: Labels**. 
+1. Selecteer **Volgende: Tags**. 
 
 1. Beschrijving Maak naam-en waardeparen om uw resources te categoriseren. 
 
@@ -156,5 +156,7 @@ U kunt 100 open bare Ip's per SDDCs hebben.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het gebruik van open bare IP-adressen met behulp van [Azure Virtual WAN](../virtual-wan/virtual-wan-about.md).
+Nu u hebt laten zien hoe u de open bare IP-functionaliteit in de Azure VMware-oplossing kunt gebruiken, kunt u het volgende weten:
 
+- Het gebruik van open bare IP-adressen met [Azure Virtual WAN](../virtual-wan/virtual-wan-about.md).
+- [Een IPSec-tunnel maken in azure VMware-oplossing](create-ipsec-tunnel.md).

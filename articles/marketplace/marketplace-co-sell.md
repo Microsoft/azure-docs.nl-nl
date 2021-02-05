@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 1/29/2021
-ms.openlocfilehash: 84d37def6aa519eabf26a72ded7b0ab70994c430
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.date: 2/05/2021
+ms.openlocfilehash: abd47a17392e53770802b61e4ee6561252cc4c1e
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063076"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581564"
 ---
 # <a name="co-sell-partner-engagement"></a>Betrokkenheid van partner bij collectieve verkoop
 
@@ -79,6 +79,9 @@ Start uw directe verkoop traject rechtstreeks in het partner centrum volgens ond
 
 1. Sla het concept op voordat u doorgaat.
 1. Nadat u alle vereiste delen van de aanbieding hebt voltooid, kunt u deze voor beoordeling en publicatie indienen. Selecteer in de rechter bovenhoek de optie **controleren en publiceren**. Bekijk de details van de aanbieding en selecteer vervolgens **publiceren**.
+
+> [!NOTE]
+> U hoeft niet langer contact met ons op te nemen om uw aanbieding voor co-sell te benoemen. Nadat u alle vereiste velden op de pagina samen verkopen met micro soft-pagina's hebt voltooid en uw aanbieding opnieuw hebt gepubliceerd, zullen we uw aanbieding bekijken om te bepalen of deze voldoet aan de vereisten voor de co-sell-status.
 
 ## <a name="see-your-offers-co-sell-status"></a>Bekijk de status van de mede verkoop van uw aanbieding
 

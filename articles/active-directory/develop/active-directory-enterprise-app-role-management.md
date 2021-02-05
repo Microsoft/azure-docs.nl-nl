@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 10b61dd4b6cc3a99b8eecf86cb5ba7e718d64743
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 076054b7240712fec57d0908615ce7abbfb62013
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015110"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582227"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: de rol claim configureren die is uitgegeven in het SAML-token voor zakelijke toepassingen
 
@@ -30,7 +30,7 @@ Door Azure Active Directory (Azure AD) te gebruiken, kunt u het claim type voor 
 
 ## <a name="when-to-use-this-feature"></a>Wanneer u deze functie gebruikt
 
-Als uw toepassing verwacht dat aangepaste rollen worden door gegeven in een SAML-respons, moet u deze functie gebruiken. U kunt net zoveel rollen maken als u wilt door sturen van Azure AD naar uw toepassing.
+Gebruik deze functie als uw toepassing aangepaste rollen verwacht in het SAML-antwoord dat door Azure AD wordt geretourneerd. U kunt zoveel rollen maken als u wilt.
 
 ## <a name="create-roles-for-an-application"></a>Rollen maken voor een toepassing
 
@@ -139,7 +139,7 @@ Als uw toepassing verwacht dat aangepaste rollen worden door gegeven in een SAML
     ![Deel venster toewijzing bewerken en rollen selecteren](./media/active-directory-enterprise-app-role-management/graph-explorer-new6.png)
 
     
-    U moet uw sessie vernieuwen in het Azure Portal om nieuwe rollen weer te geven.
+    Vernieuw uw sessie in de Azure Portal om nieuwe rollen weer te geven.
 
 1. Werk de **kenmerken** tabel bij om een aangepaste toewijzing van de rol claim te definiëren.
 

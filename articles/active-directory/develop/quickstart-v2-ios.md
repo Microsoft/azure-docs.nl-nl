@@ -13,12 +13,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: ef2ab6511d80f7f1f836805055e7cc7f48a488e7
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: b43141a3700b9594e2d5fbb875774b7b90e62a0b
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754299"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583447"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Quickstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een iOS- of macOS-app
 
@@ -69,7 +69,7 @@ De quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn alle
 > [!div renderon="portal" class="sxs-lookup"]
 >
 > #### <a name="step-1-configure-your-application"></a>Stap 1: Uw toepassing configureren
-> Voor een juiste werking van het codevoorbeeld uit deze quickstart moet u een omleidings-URI toevoegen die compatibel is met de verificatiebroker.
+> Voor het code voorbeeld voor deze Quick Start, voegt u een **omleidings-URI** toe die compatibel is met de auth Broker.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Deze wijziging voor mij maken]()
 >
@@ -118,7 +118,7 @@ Navigeer in een terminalvenster naar de map met het gedownloade codevoorbeeld en
 >     ```
 > 1. Open de projectinstellingen. Voer in de sectie **Identiteit** de **bundel-id** in die u hebt ingevoerd in de portal.
 > 1. Klik met de rechtermuisknop op **Info.plist** en selecteer **Openen als** > **Broncode**.
-> 1. Vervang onder het dict-hoofdknooppunt `Enter_the_bundle_Id_Here` door de **_bundel-id_* _ die u hebt gebruikt in de portal.
+> 1. Vervang onder het dict-hoofdknooppunt `Enter_the_bundle_Id_Here` door de ***bundel-id*** die u hebt gebruikt in de portal.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>
@@ -180,7 +180,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 
 > |Waar: | Beschrijving |
 > |---------|---------|
-> | `clientId` | De toepassings-id van de toepassing die is geregistreerd in _portal.azure.com* |
+> | `clientId` | De toepassings-id van de toepassing die is geregistreerd in *portal.azure.com* |
 > | `authority` | Het micro soft Identity-platform. In de meeste gevallen is dit `https://login.microsoftonline.com/common` |
 > | `redirectUri` | De omleidings-URI van de toepassing. U kunt 'nil' doorgeven om de standaardwaarde te gebruiken, of uw aangepaste omleidings-URI gebruiken. |
 
@@ -214,7 +214,7 @@ Uw app moet ook het volgende bevatten in uw `AppDelegate`. Hiermee kan de tokenr
     }
  ```
 
-Ten slotte moet de app een `LSApplicationQueriesSchemes`-vermelding bevatten in ***info.plist** _ naast de `CFBundleURLTypes`. In het voorbeeld is deze vermelding al opgenomen.
+Ten slotte moet uw app een `LSApplicationQueriesSchemes`-vermelding bevatten in ***info.plist*** naast de `CFBundleURLTypes`. In het voorbeeld is deze vermelding al opgenomen.
 
    ```xml
    <key>LSApplicationQueriesSchemes</key>
@@ -232,7 +232,7 @@ MSAL biedt twee methoden voor het verkrijgen van tokens: `acquireToken` en `acqu
 
 In sommige situaties moeten gebruikers communiceren met Microsoft identity platform. In dergelijke gevallen kunnen eindgebruikers verplicht zijn om hun account te selecteren, hun referenties in te voeren of toestemming te geven voor de machtigingen van uw app. Bijvoorbeeld:
 
-_De eerste keer dat gebruikers zich aanmelden bij de toepassing
+* De eerste keer dat gebruikers zich aanmelden bij de toepassing
 * Als gebruiker hun wachtwoord opnieuw instellen, moeten ze hun referenties invoeren
 * Wanneer via de toepassing voor het eerst toegang wordt aangevraagd tot een resource
 * Wanneer MFA of ander beleid voor voorwaardelijke toegang is vereist

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 56359ba07513ac648c682b8114001e251b0ee44c
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 0de3c46eba0b9364e38c4a952a320ac1c3de512f
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225796"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583566"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Angular-toepassing met één pagina
 
@@ -53,7 +53,7 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-the-application-in-the-azure-portal"></a>Stap 1: De toepassing configureren in de Azure-portal
-> Het code voorbeeld voor deze Quick Start werkt alleen als u een omleidings-URI toevoegt **http://localhost:4200/** en * * * * impliciete toekenning * * hebt ingeschakeld.
+> Het code voorbeeld in deze Snelstartgids werkt alleen als u een omleidings-URI toevoegt **http://localhost:4200/** en **impliciete toekenning** inschakelt.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Breng deze wijzigingen voor mij aan]()
 >

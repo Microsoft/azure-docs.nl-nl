@@ -11,12 +11,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: marsma, lenalepa, manrath
-ms.openlocfilehash: 30ea74b249937544a0bf9811cad60f02c1ca45c7
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 91df89a69368056c1967e641562cf8515f44ade0
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95752780"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582805"
 ---
 # <a name="redirect-uri-reply-url-restrictions-and-limitations"></a>Omleidings-URI (antwoord-URL) beperkingen en beperkingen
 
@@ -45,7 +45,7 @@ U kunt Maxi maal 256 tekens gebruiken voor elke omleidings-URI die u toevoegt aa
 
 Het toepassings model van Azure Active Directory (Azure AD) ondersteunt momenteel zowel HTTP-als HTTPS-schema's voor apps die werk-of school accounts registreren in de Azure AD-Tenant van elke organisatie. Deze account typen worden opgegeven met de `AzureADMyOrg` `AzureADMultipleOrgs` waarden en in het `signInAudience` veld van het toepassings manifest. Voor apps die zich aanmelden met persoonlijke micro soft-accounts (MSA) *en* werk-en school accounts (de `signInAudience` is ingesteld op `AzureADandPersonalMicrosoftAccount` ), is alleen het HTTPS-schema toegestaan.
 
-Als u omleidings-Uri's wilt toevoegen met een HTTP-schema naar app-registraties waarmee werk-of school accounts worden ondertekend, moet u de manifest editor van de toepassing gebruiken in [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in de Azure Portal. Hoewel het mogelijk is om een HTTP-gebaseerde omleidings-URI in te stellen met behulp van de manifest editor, raden we u *ten zeerste* aan het HTTPS-schema voor uw omleidings-uri's te gebruiken.
+Als u omleidings-Uri's wilt toevoegen met een HTTP-schema naar app-registraties die zijn aangemeld werk-of school accounts, gebruikt u de manifest editor van de toepassing in [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Azure Portal. Hoewel het mogelijk is om een HTTP-gebaseerde omleidings-URI in te stellen met behulp van de manifest editor, raden we u *ten zeerste* aan het HTTPS-schema voor uw omleidings-uri's te gebruiken.
 
 ## <a name="localhost-exceptions"></a>Localhost-uitzonde ringen
 
@@ -65,7 +65,7 @@ Uit het oogpunt van ontwikkeling betekent dit een aantal dingen:
 * Registreer niet meerdere omleidings-Uri's waarbij alleen de poort verschilt. Op de aanmeldings server wordt één wille keurig gekozen en wordt het gedrag gebruikt dat aan die omleidings-URI is gekoppeld (bijvoorbeeld of het een `web` -, `native` -of `spa` -type omleiding is).
 
     Dit is vooral belang rijk wanneer u verschillende verificatie stromen wilt gebruiken in dezelfde toepassings registratie, bijvoorbeeld zowel de autorisatie code subsidie als de impliciete stroom. Om het juiste reactie gedrag te koppelen aan elke omleidings-URI, moet de aanmeldings server kunnen onderscheiden van de omleidings-Uri's en kan dit niet doen als alleen de poort verschilt.
-* Als u meerdere omleidings-Uri's op localhost wilt registreren om verschillende stromen tijdens de ontwikkeling te testen, moet u deze onderscheiden met de *padcomponent* van de URI. `http://localhost/MyWebApp`Komt bijvoorbeeld niet overeen `http://localhost/MyNativeApp` .
+* Als u meerdere omleidings-Uri's op localhost wilt registreren om verschillende stromen tijdens de ontwikkeling te testen, onderscheidt u ze met de *padcomponent* van de URI. `http://localhost/MyWebApp`Komt bijvoorbeeld niet overeen `http://localhost/MyNativeApp` .
 * Het IPv6-loop back-adres ( `[::1]` ) wordt momenteel niet ondersteund.
 
 #### <a name="prefer-127001-over-localhost"></a>Liever 127.0.0.1 via localhost
@@ -84,7 +84,7 @@ Joker teken-Uri's zoals `https://*.contoso.com` mogelijk handig lijken, maar moe
 
 Uri's met Joker tekens worden momenteel niet ondersteund in app-registraties die zijn geconfigureerd voor het aanmelden van persoonlijke micro soft-accounts en werk-of school accounts. Joker teken-Uri's zijn echter toegestaan voor apps die zijn geconfigureerd voor aanmelding alleen werk-of school accounts in de Azure AD-Tenant van een organisatie.
 
-Als u omleidings-Uri's wilt toevoegen met Joker tekens naar app-registraties waarmee werk-of school accounts worden ondertekend, moet u de manifest editor van de toepassing gebruiken in [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in de Azure Portal. Hoewel het mogelijk is om een omleidings-URI met een Joker teken in te stellen met behulp van de manifest editor, raden wij u *ten zeerste* aan de [sectie 3.1.2 van RFC 6749](https://tools.ietf.org/html/rfc6749#section-3.1.2) te voldoen en alleen absolute uri's te gebruiken.
+Als u omleidings-Uri's wilt toevoegen met Joker tekens naar app-registraties die zijn aangemeld werk-of school accounts, gebruikt u de manifest editor van de toepassing in [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) in het Azure Portal. Hoewel het mogelijk is om een omleidings-URI met een Joker teken in te stellen met behulp van de manifest editor, raden wij u *ten zeerste* aan de [sectie 3.1.2 van RFC 6749](https://tools.ietf.org/html/rfc6749#section-3.1.2) te voldoen en alleen absolute uri's te gebruiken.
 
 Als uw scenario meer omleidings-Uri's vereist dan de Maxi maal toegestane limiet, moet u rekening houden met de volgende [status parameter methode](#use-a-state-parameter) in plaats van een omleidings-URI voor joker tekens.
 

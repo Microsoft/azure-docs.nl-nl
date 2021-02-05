@@ -13,12 +13,12 @@ ms.date: 12/3/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 22352f6d0c7dc48b98be5fcb4101f262adc480d6
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: cfbcc8523ff1d5858317a3654b58ec7b2d23607a
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98795629"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582023"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Referenties voor verificatie certificaat voor micro soft-identiteits platform
 
@@ -101,12 +101,12 @@ In de registratie van de Azure-app voor de client toepassing:
 
 ### <a name="updating-the-application-manifest"></a>Het toepassings manifest bijwerken
 
-Als u een certificaat hebt, moet u het volgende berekenen:
+Na het verkrijgen van een certificaat berekent u deze waarden:
 
 - `$base64Thumbprint` -Met base64 gecodeerde waarde van de certificaat-hash
 - `$base64Value` -Base64-gecodeerde waarde van de onbewerkte gegevens van het certificaat
 
-U moet ook een GUID opgeven om de sleutel te identificeren in het manifest van de toepassing ( `$keyId` ).
+Geef een GUID op om de sleutel te identificeren in het manifest van de toepassing ( `$keyId` ).
 
 In de registratie van de Azure-app voor de client toepassing:
 1. Selecteer **manifest** om het toepassings manifest te openen.

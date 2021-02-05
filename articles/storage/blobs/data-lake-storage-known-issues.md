@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/28/2020
+ms.date: 02/04/2021
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 32f8ab3f7e222108bec4ec81b14c113705370096
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: db55a29e53c53e26fbb04d96ddf1864946bafbfd
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913059"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581275"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Bekende problemen met Azure Data Lake Storage Gen2
 
@@ -54,9 +54,6 @@ Deze BLOB REST Api's worden niet ondersteund:
 * [Paginabereiken ophalen](/rest/api/storageservices/get-page-ranges)
 * [BLOB voor incrementele kopie](/rest/api/storageservices/incremental-copy-blob)
 * [Pagina van URL plaatsen](/rest/api/storageservices/put-page-from-url)
-* [Blok toevoegen](/rest/api/storageservices/append-block)
-* [Blok van URL toevoegen](/rest/api/storageservices/append-block-from-url)
-
 
 Niet-beheerde VM-schijven worden niet ondersteund in accounts met een hiërarchische naam ruimte. Als u een hiërarchische naam ruimte wilt inschakelen op een opslag account, plaatst u onbeheerde VM-schijven in een opslag account waarvoor de functie hiërarchische naam ruimte niet is ingeschakeld.
 
@@ -74,7 +71,7 @@ Gebruik alleen de meest recente versie van AzCopy ([AzCopy V10 toevoegen](../com
 
 <a id="storage-explorer"></a>
 
-## <a name="azure-storage-explorer"></a>Azure Opslagverkenner
+## <a name="azure-storage-explorer"></a>Azure Storage Explorer
 
 Gebruik alleen versies `1.6.0` of hoger.
 

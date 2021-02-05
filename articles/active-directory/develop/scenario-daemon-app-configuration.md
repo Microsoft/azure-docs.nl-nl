@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/19/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c858f48a67cd434a620fb610046833d29b7475f7
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 8a01ee4e2b0d4e72c1b17cf56953675e735ead79
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756597"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582887"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Daemon-app die web-Api's aanroept-code configuratie
 
@@ -26,7 +26,7 @@ Meer informatie over het configureren van de code voor uw daemon-toepassing die 
 
 Deze micro soft-bibliotheken ondersteunen daemon-apps:
 
-  MSAL-bibliotheek | Beschrijving
+  MSAL-bibliotheek | Description
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | De .NET Framework-en .NET Core-platformen worden ondersteund voor het bouwen van daemon-toepassingen. (UWP, Xamarin. iOS en Xamarin. Android worden niet ondersteund omdat deze platformen worden gebruikt voor het bouwen van open bare client toepassingen.)
   ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Ondersteuning voor daemon-toepassingen in python.
@@ -111,7 +111,7 @@ Wanneer u een vertrouwelijke client met certificaten bouwt, is het [parameters.j
 
 ### <a name="instantiate-the-msal-application"></a>De MSAL-toepassing instantiëren
 
-Als u de MSAL-toepassing wilt instantiëren, moet u het MSAL-pakket (afhankelijk van de taal) toevoegen, raadplegen of importeren.
+Als u de MSAL-toepassing wilt instantiëren, moet u het MSAL-pakket toevoegen, raadplegen of importeren (afhankelijk van de taal).
 
 De bouw is anders, afhankelijk van of u client geheimen of certificaten gebruikt (of, als een geavanceerd scenario, ondertekende beweringen).
 

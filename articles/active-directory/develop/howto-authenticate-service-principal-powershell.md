@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.openlocfilehash: 096b8ed60bf9880b6904ab952d4558939ca13574
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: b07679c6dd5e03131fde1439213783893971a088
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652072"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581819"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Procedure: Azure PowerShell gebruiken om een service-principal te maken met een certificaat
 
@@ -72,7 +72,7 @@ Het voor beeld in slaap stand gedurende 20 seconden zodat de nieuwe Service-Prin
 
 U kunt de roltoewijzing beperken tot een specifieke resourcegroep met behulp van de parameter **ResourceGroupName**. Of tot een specifieke resource met behulp van de parameters **ResourceType** en **ResourceName**. 
 
-Als u **niet beschikt over Windows 10 of Windows Server 2016**, moet u het [programma voor het genereren van zelfondertekende certificaten](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6/) downloaden van Microsoft Script Center. Pak de inhoud uit en importeer de cmdlet die u nodig hebt.
+Als u **niet beschikt over Windows 10 of Windows Server 2016**, downloadt u de [zelfondertekende certificaat Generator](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6/) vanuit het micro soft Script Center. Pak de inhoud uit en importeer de cmdlet die u nodig hebt.
 
 ```powershell
 # Only run if you could not use New-SelfSignedCertificate
@@ -91,7 +91,7 @@ $cert = Get-ChildItem -path Cert:\CurrentUser\my | where {$PSitem.Subject -eq 'C
 
 ### <a name="provide-certificate-through-automated-powershell-script"></a>Certificaat opgeven via een automatisch PowerShell-script
 
-Wanneer u zich aanmeldt als een service-principal, moet u de tenant-ID van de map voor uw AD-app opgeven. Een Tenant is een exemplaar van Azure AD.
+Wanneer u zich aanmeldt als Service-Principal, geeft u de Tenant-ID van de Directory voor uw AD-app op. Een Tenant is een exemplaar van Azure AD.
 
 ```powershell
 $TenantId = (Get-AzSubscription -SubscriptionName "Contoso Default").TenantId
@@ -151,7 +151,7 @@ Param (
 ```
 
 ### <a name="provide-certificate-through-automated-powershell-script"></a>Certificaat opgeven via een automatisch PowerShell-script
-Wanneer u zich aanmeldt als een service-principal, moet u de tenant-ID van de map voor uw AD-app opgeven. Een Tenant is een exemplaar van Azure AD.
+Wanneer u zich aanmeldt als Service-Principal, geeft u de Tenant-ID van de Directory voor uw AD-app op. Een Tenant is een exemplaar van Azure AD.
 
 ```powershell
 Param (

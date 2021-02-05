@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: api-management
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.openlocfilehash: e171e642440b7c6c99353169e426a722885f1bcf
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1ebb89ae318e57f1d4e0708a08019515ca43158d
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725934"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581326"
 ---
 # <a name="plan-and-manage-costs-for-api-management"></a>Kosten plannen en beheren voor API Management
 
@@ -62,7 +62,7 @@ Wanneer u kosten analyse gebruikt, bekijkt u API Management kosten in grafieken 
 
 API Management kosten voor de kosten analyse weer geven:
 
-1. Meld u aan bij de [Azure-portal](https://azure.microsoft.com).
+1. Meld u aan bij [Azure Portal](https://azure.microsoft.com).
 1. Open het venster **Cost Management en facturering** , selecteer **kosten beheer** in het menu en selecteer vervolgens een **facturerings bereik**. Selecteer bijvoorbeeld een abonnement in de lijst.
 1. Selecteer **Cost Management** in het menu en selecteer vervolgens **kosten analyse**.
 1. Standaard worden de maandelijkse kosten voor alle services weer gegeven in de eerste cirkel diagram. 
@@ -89,10 +89,10 @@ U kunt ook [uw kosten gegevens exporteren](../cost-management-billing/costs/tuto
 
 ### <a name="choose-tier"></a>Laag kiezen
 
-Bekijk de [op functies gebaseerde vergelijking van de Azure API management-lagen](api-management-features.md) om te helpen beslissen welke servicelaag geschikt is voor uw scenario's. De verschillende service lagen ondersteunen combi Naties van functies en mogelijkheden die zijn ontworpen voor verschillende gebruiks scenario's, met verschillende kosten. Voer op elk moment een [upgrade uit](upgrade-and-scale.md) naar een andere servicelaag.
+Bekijk de [op functies gebaseerde vergelijking van de Azure API management-lagen](api-management-features.md) om te helpen beslissen welke servicelaag geschikt is voor uw scenario's. De verschillende service lagen ondersteunen combi Naties van functies en mogelijkheden die zijn ontworpen voor verschillende gebruiks scenario's, met verschillende kosten. 
 
 * De service laag **verbruik** biedt een licht gewicht, serverloze optie waarmee geen vaste kosten in rekening worden gebracht. U wordt gefactureerd op basis van het aantal API-aanroepen naar de service boven een bepaalde drempel waarde. Capaciteit wordt ook automatisch geschaald op basis van de belasting van de service.
-* Andere API Management lagen maken gebruik van maandelijkse kosten en bieden betere door Voer en uitgebreidere functie sets voor evaluatie-en productie werkbelastingen.
+* De **ontwikkel**-, **basis**-, **standaard**-en **Premium** -API management lagen maken gebruik van maandelijkse kosten en bieden betere door Voer en uitgebreidere functie sets voor evaluatie-en productie-workloads. Voer op elk moment een [upgrade uit](upgrade-and-scale.md) naar een andere servicelaag.
 
 ### <a name="scale-using-capacity-units"></a>Schalen met behulp van capaciteits eenheden
 

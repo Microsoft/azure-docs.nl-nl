@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 3c3eaddf1767a3fa4a2ba73ae7a27f1f7df13990
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 0a99ff32f3f1fbcf4af64188640d2edd7f3f5470
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178196"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583125"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Quickstart: Aanmelden met Microsoft toevoegen aan een Python-webapp
 
@@ -65,7 +65,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Typ een beschrijving voor de sleutel (bijvoorbeeld 'app-geheim'), laat de standaardvervaldatum staan, en selecteer **Toevoegen**.
 > 1. Noteer de **Waarde** van het **Clientgeheim** voor later gebruik.
 > 1. Selecteer onder **Beheren** achtereenvolgens **API-machtigingen** > **Een machtiging toevoegen**.
->1.  Zorg ervoor dat het tabblad **Microsoft-API's** is geselecteerd.
+> 1. Zorg ervoor dat het tabblad **Microsoft-API's** is geselecteerd.
 > 1. Selecteer in de sectie *Veelgebruikte Microsoft-API's* de optie **Microsoft Graph**.
 > 1. Zorg ervoor dat in de sectie **Gedelegeerde toestemmingen** de juiste machtigingen zijn aangevinkt: **User.ReadBasic.All**. Gebruik het zoekvak indien nodig.
 > 1. Selecteer de knop **Toestemmingen toevoegen**.
@@ -74,7 +74,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
 >
-> Voor een juiste werking van het codevoorbeeld uit deze quickstart, moet u:
+> Het code voorbeeld in deze Snelstartgids werkt als volgt:
 >
 > 1. Een antwoord-URL toevoegen als `http://localhost:5000/getAToken`.
 > 1. Een clientgeheim maken.

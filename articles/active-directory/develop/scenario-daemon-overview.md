@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/31/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 45af940382a261f1793583e471871b9cceed0a57
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 00a70b585ddf522a25e81703fe5bdf55efbcb7e1
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753836"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582771"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Scenario: Een daemon-app die web-API's aanroept
 
@@ -52,7 +52,7 @@ Toepassingen die een token voor hun eigen identiteiten verkrijgen:
 Voor ontwikkel aars heeft de end-to-end-ervaring voor dit scenario de volgende aspecten:
 
 - Daemon-toepassingen kunnen alleen worden gebruikt in azure AD-tenants. Het kan zinvol zijn om een daemon-toepassing te maken die probeert persoonlijke micro soft-accounts te bewerken. Als u een LOB-app (line-of-Business) bent, maakt u uw daemon-app in uw Tenant. Als u een ISV bent, wilt u mogelijk een multi tenant-daemon-toepassing maken. Elke Tenant beheerder moet toestemming geven.
-- Tijdens de registratie van de [toepassing](./scenario-daemon-app-registration.md)is de antwoord-URI niet nodig. U moet geheimen of certificaten of ondertekende verklaringen delen met Azure AD. U moet ook toepassings machtigingen aanvragen en toestemming van de beheerder verlenen om deze app-machtigingen te gebruiken.
+- Tijdens de registratie van de [toepassing](./scenario-daemon-app-registration.md)is de antwoord-URI niet nodig. Deel geheimen of certificaten of ondertekende verklaringen met Azure AD. U moet ook toepassings machtigingen aanvragen en toestemming van de beheerder verlenen om deze app-machtigingen te gebruiken.
 - De [configuratie](./scenario-daemon-app-configuration.md) van de toepassing moet client referenties opgeven die worden gedeeld met Azure ad tijdens de registratie van de toepassing.
 - Het [bereik](scenario-daemon-acquire-token.md#scopes-to-request) dat wordt gebruikt om een token met de client referentie stroom te verkrijgen, moet een statisch bereik zijn.
 

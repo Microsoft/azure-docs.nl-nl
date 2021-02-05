@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: conceptual
-ms.date: 05/29/2020
+ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: feef35ef86a933f32949468366fea85eb87d4866
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 141abea0c0946c98b6dfe627f32f01682a18be44
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91315776"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581020"
 ---
 # <a name="bring-your-own-key-specification"></a>BYOK-specificatie (Bring Your Own Key)
 
@@ -35,7 +35,7 @@ Hier volgen de vereisten:
 |---|---|---|---|
 |Key Exchange Key (KEK)|RSA|Azure Key Vault-HSM|Een HSM-sleutel paar met back-ups dat is gegenereerd in Azure Key Vault
 Toets inpakken|AES|HSM-leverancier|Een [kortstondig] AES-sleutel gegenereerd door HSM on-premises
-Doel sleutel|RSA, EC, AES|HSM-leverancier|De sleutel die moet worden overgedragen naar de Azure Key Vault-HSM
+Doel sleutel|RSA, EC, AES (alleen beheerde HSM)|HSM-leverancier|De sleutel die moet worden overgedragen naar de Azure Key Vault-HSM
 
 Sleutel **uitwisselings sleutel**: een door HSM ondersteunde sleutel die door de klant wordt gegenereerd in de sleutel kluis waar de BYOK-sleutel wordt geïmporteerd. Deze KEK moet de volgende eigenschappen hebben:
 
@@ -130,9 +130,16 @@ De JSON-BLOB wordt opgeslagen in een bestand met de extensie '. byok ' zodat de 
 
 De klant stuurt de BLOB voor sleutel overdracht ('. byok ') over naar een online werk station en voert vervolgens een opdracht **AZ file kluis Key import** uit om deze BLOB te importeren als een nieuwe met HSM ondersteunde sleutel in Key Vault. 
 
+Als u een RSA-sleutel wilt importeren, gebruikt u deze opdracht:
 ```azurecli
 az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file KeyTransferPackage-ContosoFirstHSMkey.byok --ops encrypt decrypt
 ```
+Als u een EC-sleutel wilt importeren, moet u sleutel type en de naam van de curve opgeven.
+
+```azurecli
+az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file --kty EC-HSM --curve-name "P-256" KeyTransferPackage-ContosoFirstHSMkey.byok --ops sign verify
+```
+
 
 Wanneer de bovenstaande opdracht wordt uitgevoerd, wordt een REST API aanvraag als volgt verzonden:
 
@@ -140,7 +147,7 @@ Wanneer de bovenstaande opdracht wordt uitgevoerd, wordt een REST API aanvraag a
 PUT https://contosokeyvaulthsm.vault.azure.net/keys/ContosoFirstHSMKey?api-version=7.0
 ```
 
-Aanvraagtekst:
+Hoofd tekst van aanvraag bij het importeren van een RSA-sleutel:
 ```json
 {
   "key": {
@@ -156,6 +163,25 @@ Aanvraagtekst:
   }
 }
 ```
+
+Hoofd tekst van aanvraag bij het importeren van een EC-sleutel:
+```json
+{
+  "key": {
+    "kty": "EC-HSM",
+    "crv": "P-256",
+    "key_ops": [
+      "sign",
+      "verify"
+    ],
+    "key_hsm": "<Base64 encoded BYOK_BLOB>"
+  },
+  "attributes": {
+    "enabled": true
+  }
+}
+```
+
 de waarde ' key_hsm ' is de volledige inhoud van de KeyTransferPackage-ContosoFirstHSMkey. byok-code ring in de Base64-indeling.
 
 ## <a name="references"></a>Referenties

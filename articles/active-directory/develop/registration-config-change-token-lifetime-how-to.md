@@ -12,12 +12,12 @@ ms.date: 10/23/2020
 ms.author: ryanwi
 ms.custom: aaddev, seoapril2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5dec4958c3a1d955d8f8c1dce90e27696fbebfe5
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: d39f378171443f028ef6b549b120b22f2a3405c4
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063345"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582938"
 ---
 # <a name="how-to-change-the-token-lifetime-defaults-for-a-custom-developed-application"></a>De standaard waarden voor de levens duur van tokens wijzigen voor een aangepaste toepassing
 
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u Azure AD Power shell gebruikt om een toega
 > Na mei 2020 kunnen tenants geen vernieuwings-en sessie token levensduur meer configureren.  Azure Active Directory zal na 30 januari 2021 niet langer de configuratie van bestaande vernieuwings-en sessie tokens in het beleid naleven. U kunt de levens duur van toegangs tokens na de afschaffing nog steeds configureren. Lees de [levens duur van Configureer bare tokens in azure AD](./active-directory-configurable-token-lifetimes.md)voor meer informatie.
 > Er zijn [mogelijkheden voor verificatie sessie beheer](../conditional-access/howto-conditional-access-session-lifetime.md)geïmplementeerd   in voorwaardelijke toegang tot Azure AD. Met deze nieuwe functie kunt u de levens duur van het vernieuwings token configureren door de aanmeldings frequentie in te stellen.  
 
-Als u een toegangs token levensduur beleid wilt instellen, moet u de [Azure AD Power shell-module](https://www.powershellgallery.com/packages/AzureADPreview)downloaden.
+Down load de [Azure AD Power shell-module](https://www.powershellgallery.com/packages/AzureADPreview)om een beleid voor levens duur van toegangs tokens in te stellen.
 Voer de opdracht **Connect-AzureAD-confirm** uit.
 
 Hier volgt een voor beeld van een beleid dat gebruikers in uw web-app vaker moeten verifiëren. Met dit beleid wordt de levens duur ingesteld van de toegang tot de service-principal van uw web-app. Maak het beleid en wijs dit toe aan uw service-principal. U moet ook de ObjectId voor uw Service-Principal ophalen.

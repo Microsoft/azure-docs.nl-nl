@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: c071cb9a8a27964a93e039e4d1536e078730bfc9
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 6e6eda3d711710ea7450165ab02d7a260067bfcb
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753626"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582550"
 ---
 # <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>Een Token ophalen voor een mobiele app die web-Api's aanroept
 
@@ -26,7 +26,7 @@ Voordat uw app beveiligde web-Api's kan aanroepen, heeft deze een toegangs token
 
 ## <a name="define-a-scope"></a>Een bereik definiëren
 
-Wanneer u een token aanvraagt, moet u een bereik definiëren. Het bereik bepaalt welke gegevens uw app kan gebruiken.
+Wanneer u een token aanvraagt, definieert u een bereik. Het bereik bepaalt welke gegevens uw app kan gebruiken.
 
 De eenvoudigste manier om een bereik te definiëren is het combi neren van de gewenste Web-API `App ID URI` met het bereik `.default` . Deze definitie vertelt het micro soft-identiteits platform dat uw app alle scopes vereist die in de portal zijn ingesteld.
 
@@ -236,7 +236,7 @@ De klasse definieert de volgende constanten:
     Deze optie kan nuttig zijn als het ophalen van het token mislukt en u de gebruiker opnieuw wilt aanmelden. In dit geval verzendt MSAL `prompt=login` naar de ID-provider. U kunt deze optie gebruiken in toepassingen met een eigen beveiliging waarbij de gebruiker zich bij het beheer van de organisatie moet aanmelden elke keer dat ze toegang hebben tot specifieke delen van de toepassing.
 - `Never` is alleen voor .NET 4,5 en Windows Runtime (WinRT). Met deze constante wordt de gebruiker niet gevraagd, maar wordt geprobeerd de cookie te gebruiken die is opgeslagen in de verborgen Inge sloten webweergave. Zie [Using Web browsers with MSAL.net](./msal-net-web-browsers.md)(Engelstalig) voor meer informatie.
 
-    Als deze optie mislukt, wordt `AcquireTokenInteractive` een uitzonde ring gegenereerd om u te waarschuwen dat er een UI-interactie nodig is. Vervolgens moet u een andere `Prompt` para meter gebruiken.
+    Als deze optie mislukt, wordt `AcquireTokenInteractive` een uitzonde ring gegenereerd om u te waarschuwen dat er een UI-interactie nodig is. Gebruik vervolgens een andere `Prompt` para meter.
 - `NoPrompt` Er wordt geen prompt verzonden naar de ID-provider.
 
     Deze optie is alleen nuttig voor beleid voor het bewerken van profielen in Azure Active Directory B2C. Zie [B2C-specifiek](https://aka.ms/msal-net-b2c-specificities)voor meer informatie.

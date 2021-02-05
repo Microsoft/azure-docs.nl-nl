@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/07/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0855395a305624bb2df96d183dc2bcac45f8e6b3
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: e0088fb129e9c6558de7539ba754a45e067dc3d8
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051461"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576834"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Een zelfstandig Azure Automation-account maken
 
@@ -105,4 +105,4 @@ Klassieke uitvoeren als-accounts worden niet standaard gemaakt wanneer u een Azu
 * Zie [zelf studie: een Power shell-Runbook maken](learn/automation-tutorial-runbook-textual-powershell.md)om aan de slag te gaan met Power shell-runbooks.
 * Zie [zelf studie: een Power shell workflow-Runbook maken](learn/automation-tutorial-runbook-textual.md)om aan de slag te gaan met Power shell workflow-runbooks.
 * Zie [zelf studie: een python 3-Runbook maken](learn/automation-tutorial-runbook-textual-python-3.md)om aan de slag te gaan met python 3-runbooks.
-* Zie [Az.Automation](/powershell/module/az.automation&preserve-view=true#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+* Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

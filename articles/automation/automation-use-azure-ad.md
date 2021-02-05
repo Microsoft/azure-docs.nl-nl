@@ -4,12 +4,12 @@ description: In dit artikel leest u hoe u Azure AD in Azure Automation kunt gebr
 services: automation
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 41eaab7be66d446109e1052948a29ad4723b191c
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 336c0387ac9febcc517c2ce358d0b04c80d10678
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98894657"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576800"
 ---
 # <a name="use-azure-ad-to-authenticate-to-azure"></a>Azure AD gebruiken voor verificatie bij Azure
 
@@ -50,7 +50,7 @@ Voordat u de Azure AD-modules op uw computer installeert:
 
 1. Zorg ervoor dat de functie Microsoft .NET Framework 3.5. x is ingeschakeld op de computer. Waarschijnlijk is er een nieuwere versie geïnstalleerd op uw computer, maar achterwaartse compatibiliteit met oudere versies van de .NET Framework kan worden ingeschakeld of uitgeschakeld. 
 
-2. Installeer de 64-bits versie van de [micro soft Online Services-aanmeld hulp](https://www.microsoft.com/download/details.aspx?id=41950).
+2. Installeer de 64-bits versie van de [micro soft Online Services-aanmeld hulp](https://www.microsoft.com/Download/details.aspx?id=28177).
 
 3. Voer Windows Power shell uit als beheerder om een Windows Power shell-opdracht prompt met verhoogde bevoegdheden te maken.
 

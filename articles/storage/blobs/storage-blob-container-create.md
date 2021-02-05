@@ -5,20 +5,20 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/22/2020
+ms.date: 02/04/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3035e0036e5d35729637e35ad8cb1412a0da959f
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: dac50d8e35080a083e42891732512e012fae8fbd
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091029"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576444"
 ---
 # <a name="create-or-delete-a-container-in-azure-storage-with-net"></a>Een container maken of verwijderen in Azure Storage met .NET
 
-Blobs in Azure Storage zijn ingedeeld in containers. Voordat u een BLOB kunt uploaden, moet u eerst een container maken. In dit artikel wordt beschreven hoe u containers maakt en verwijdert met de [Azure Storage-client bibliotheek voor .net](/dotnet/api/overview/azure/storage).
+Blobs in Azure Storage worden georganiseerd in containers. Voordat u een BLOB kunt uploaden, moet u eerst een container maken. In dit artikel wordt beschreven hoe u containers maakt en verwijdert met de [Azure Storage-client bibliotheek voor .net](/dotnet/api/overview/azure/storage).
 
 ## <a name="name-a-container"></a>Een container een naam
 
@@ -38,10 +38,10 @@ Als u een container wilt maken, roept u een van de volgende methoden op:
 
 # <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
 
-- [Maken](/dotnet/api/azure.storage.blobs.blobcontainerclient.create)
-- [CreateAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.createasync)
-- [CreateIfNotExists](/dotnet/api/azure.storage.blobs.blobcontainerclient.createifnotexists)
-- [CreateIfNotExistsAsync](/dotnet/api/azure.storage.blobs.blobcontainerclient.createifnotexistsasync)
+- [CreateBlobContainer](/dotnet/api/azure.storage.blobs.blobserviceclient.createblobcontainer)
+- [CreateBlobContainerAsync](/dotnet/api/azure.storage.blobs.blobserviceclient.createblobcontainerasync)
+
+Deze methoden genereren een uitzonde ring als er al een container met dezelfde naam bestaat.
 
 # <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
 
@@ -49,11 +49,12 @@ Als u een container wilt maken, roept u een van de volgende methoden op:
 - [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync)
 - [CreateIfNotExists](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexists)
 - [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync)
----
 
 De methoden **Create** en **CreateAsync** genereren een uitzonde ring als er al een container met dezelfde naam bestaat.
 
 De **CreateIfNotExists** -en **CreateIfNotExistsAsync** -methoden retour neren een Booleaanse waarde die aangeeft of de container is gemaakt. Als er al een container met dezelfde naam bestaat, retour neren deze methoden **False** om aan te geven dat er geen nieuwe container is gemaakt.
+
+---
 
 Containers worden direct onder het opslag account gemaakt. Het is niet mogelijk om één container onder een andere te nesten.
 
@@ -99,7 +100,7 @@ private static async Task<CloudBlobContainer> CreateSampleContainerAsync(CloudBl
 
 ## <a name="create-the-root-container"></a>De basis container maken
 
-Een basis container fungeert als een standaard container voor uw opslag account. Elk opslag account kan één basis container hebben, die *$root*moet worden genoemd. De basis container moet expliciet worden gemaakt of verwijderd.
+Een basis container fungeert als een standaard container voor uw opslag account. Elk opslag account kan één basis container hebben, die *$root* moet worden genoemd. De basis container moet expliciet worden gemaakt of verwijderd.
 
 U kunt verwijzen naar een blob die is opgeslagen in de hoofd container zonder de naam van de hoofd container op te nemen. Met de hoofd container kunt u verwijzen naar een BLOB op het hoogste niveau van de hiërarchie van het opslag account. U kunt bijvoorbeeld verwijzen naar een blob die zich in de hoofd container op de volgende manier bevindt:
 

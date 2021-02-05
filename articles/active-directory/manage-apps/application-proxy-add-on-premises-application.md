@@ -1,5 +1,5 @@
 ---
-title: Zelfstudie - Een on-premises app toevoegen - Application Proxy in Azure AD
+title: 'Zelf studie: een on-premises app-toepassings proxy toevoegen in Azure Active Directory'
 description: Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. In deze zelfstudie wordt uitgelegd hoe u uw omgeving voorbereidt voor gebruik van Application Proxy. Vervolgens wordt de Azure-portal gebruikt om een on-premises toepassing toe te voegen aan uw Azure AD-tenant.
 services: active-directory
 author: kenwith
@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/20/2021
+ms.date: 02/04/2021
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 04b3dd51aab9686d102b6b94324f89396a268e7d
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: f18126448f5a6dca29e798ad80cb53a8760689d8
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99260076"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576512"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
-Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. In deze zelfstudie wordt uw omgeving voorbereid voor gebruik van Application Proxy. Zodra uw omgeving gereed is, gebruikt u de Azure-portal om een on-premises toepassing toe te voegen aan uw Azure AD-tenant.
+Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. In deze zelfstudie wordt uw omgeving voorbereid voor gebruik van Application Proxy. Zodra uw omgeving gereed is, gebruikt u de Azure-portal om een on-premises toepassing toe te voegen aan uw Azure AD-tenant. Als u **uw apps wilt bekijken en snel** aan de slag wilt gaan met app-beheer in azure, raadpleegt u de Quick Start- [serie](view-applications-portal.md).
 
 :::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Overzichts diagram toepassings proxy" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
 

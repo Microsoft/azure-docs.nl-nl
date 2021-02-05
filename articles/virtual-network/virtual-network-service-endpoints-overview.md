@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 5e97a35a272684a99e1ca21cbec9c8f3edef253c
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 8926e99db926fc8182e98509c3deff0ccc3d1612
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097419"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576664"
 ---
 # <a name="virtual-network-service-endpoints"></a>Service-eindpunten voor virtueel netwerk
 
@@ -126,7 +126,7 @@ Service-eind punten kunnen worden geconfigureerd op virtuele netwerken, onafhank
 
 Zie [ingebouwde rollen van Azure](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over ingebouwde rollen. Zie [aangepaste rollen voor Azure](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het toewijzen van specifieke machtigingen aan aangepaste rollen.
 
-Virtuele netwerken en Azure-serviceresources kunnen binnen hetzelfde abonnement of in verschillende abonnementen aanwezig zijn. Als de virtuele netwerken en Azure-serviceresources in verschillende abonnementen aanwezig zijn, moeten de resources onder dezelfde Active Directory-tenant (AD) vallen. 
+Virtuele netwerken en Azure-serviceresources kunnen binnen hetzelfde abonnement of in verschillende abonnementen aanwezig zijn. Bepaalde Azure-Services (niet alle), zoals Azure Storage en Azure Key Vault bieden ook ondersteuning voor service-eind punten voor verschillende Active Directory (AD)-tenants, dat wil zeggen, het virtuele netwerk en de Azure-service resource kunnen zich in verschillende Active Directory-tenants (AD) bevindt. Raadpleeg de documentatie van de afzonderlijke service voor meer informatie.  
 
 ## <a name="pricing-and-limits"></a>Prijzen en beperkingen
 

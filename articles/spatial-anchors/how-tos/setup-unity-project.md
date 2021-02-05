@@ -8,29 +8,29 @@ ms.author: parkerra
 ms.date: 2/3/2021
 ms.topic: how-to
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: e058186d8848256bf97d99ee1b8b1ddae7d78383
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 56532c17c91e6c703a6acd7990bbae47cd248165
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550620"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576562"
 ---
 # <a name="configuring-azure-spatial-anchors-in-a-unity-project"></a>Ruimtelijke Azure-ankers configureren in een Unity-project
 
 In deze hand leiding wordt uitgelegd hoe u aan de slag gaat met de Azure spatiale-ankers SDK in uw Unity-project.
 
-## <a name="requirements"></a>Vereisten
+## <a name="project-requirements"></a>Project vereisten
 
-De Azure spatiale ankers ondersteunen eenheid 2019,4 (LTS) met de volgende configuraties.
-
-* Unity 2019,4 met AR Foundation 3,1 wordt ondersteund in de Azure spatiale ankers 2.4.0 +.
+[!INCLUDE [Unity Project Requirements](../../../includes/spatial-anchors-unity-project-requirements.md)]
 
 ## <a name="configuring-a-project"></a>Een project configureren
 
-### <a name="download-packages"></a>Pakketten downloaden
+Voordat u de Azure spatiale ankers SDK in uw Unity-project inneemt, moet u ervoor zorgen dat u de [vereiste](#project-requirements) pakketten installeert via unit package manager.
+
+### <a name="download-asa-packages"></a>ASA-pakketten downloaden
 [!INCLUDE [Download Unity Packages](../../../includes/spatial-anchors-unity-download-packages.md)]
 
-### <a name="import-packages"></a>Pakketten importeren
+### <a name="import-asa-packages"></a>ASA-pakketten importeren
 [!INCLUDE [Import Unity Packages](../../../includes/spatial-anchors-unity-import-packages.md)]
 
 ### <a name="android-only-configure-the-maintemplategradle-file"></a>Alleen Android: Configureer het bestand mainTemplate. gradle

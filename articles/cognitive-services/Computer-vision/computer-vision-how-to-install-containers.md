@@ -12,12 +12,12 @@ ms.date: 11/23/2020
 ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: on-premises, OCR, docker, container
-ms.openlocfilehash: a9eae2e547b347c88f8e745742ed34194c37a3b2
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 2298c7b931a5bb51d5067a9f789135ecf86ef3e5
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862470"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576817"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Lees de OCR docker-containers (preview) installeren 
 
@@ -32,17 +32,17 @@ Met de container OCR *lezen* kunt u gedrukte en handgeschreven tekst uit afbeeld
 > [!NOTE]
 > De container Read 3,0-Preview is afgeschaft. 
 
-De container Lees 3,2-Preview biedt het volgende:
+De OCR-container lezen 3,2-Preview bevat:
 * Nieuwe modellen voor verbeterde nauw keurigheid.
-* Ondersteuning voor meerdere talen in hetzelfde document
-* Ondersteuning voor: Nederlands, Engels, Frans, Duits, Italiaans, Portugees en Spaans.
+* Ondersteuning voor meerdere talen in hetzelfde document.
+* Ondersteuning voor een totaal van 73 talen. Zie de volledige lijst met [talen](./language-support.md#optical-character-recognition-ocr)die door OCR worden ondersteund.
 * Eén bewerking voor zowel documenten als installatie kopieën.
 * Ondersteuning voor grotere documenten en installatie kopieën.
-* Betrouwbaarheids scores van 0 tot 1.
-* Ondersteuning voor documenten met zowel gedrukte als handgeschreven tekst
-* Ondersteuning voor vereenvoudigd Chinees en Japans.
-* betrouw bare scores en labels voor gedrukte en handgeschreven tekst. 
+* Betrouwbaarheids scores.
+* Ondersteuning voor documenten met zowel gedrukte als handgeschreven tekst.
 * De mogelijkheid om alleen tekst uit geselecteerde pagina ('s) in een document op te halen.
+* Kies de uitvoer volgorde van de tekst regel van standaard in een natuurlijke Lees volgorde.
+* Tekst lijn classificatie als handgeschreven stijl of niet alleen voor Latijnse talen.
 
 Raadpleeg de [migratie handleiding](read-container-migration-guide.md) voor meer informatie over wijzigingen in de nieuwe versies als u vandaag nog Lees 2,0-containers gebruikt.
 
@@ -207,7 +207,7 @@ Gebruik de host, `http://localhost:5000`, voor container-API's. U kunt het Swagg
 U kunt de- `POST /vision/v3.2/read/analyze` en- `GET /vision/v3.2/read/operations/{operationId}` bewerkingen in concert gebruiken om asynchroon een installatie kopie te lezen, vergelijkbaar met de manier waarop de computer vision-service die bijbehorende rest-bewerkingen gebruikt. De asynchrone POST-methode retourneert een `operationId` die wordt gebruikt als id voor de HTTP GET-aanvraag.
 
 
-Selecteer in de Swagger-gebruikers interface de `asyncBatchAnalyze` om deze uit te vouwen in de browser. Selecteer vervolgens   >  **bestand** uitproberen. In dit voor beeld gebruiken we de volgende afbeelding:
+Selecteer in de Swagger-gebruikers interface de `Analyze` om deze uit te vouwen in de browser. Selecteer vervolgens   >  **bestand** uitproberen. In dit voor beeld gebruiken we de volgende afbeelding:
 
 ![tabbladen versus spaties](media/tabs-vs-spaces.png)
 
@@ -225,51 +225,99 @@ De `operation-location` is de volledig gekwalificeerde URL en is toegankelijk vi
 ```json
 {
   "status": "succeeded",
-  "createdDateTime": "2020-09-02T10:30:14Z",
-  "lastUpdatedDateTime": "2020-09-02T10:30:15Z",
+  "createdDateTime": "2021-02-04T06:32:08.2752706+00:00",
+  "lastUpdatedDateTime": "2021-02-04T06:32:08.7706172+00:00",
   "analyzeResult": {
     "version": "3.2.0",
     "readResults": [
       {
         "page": 1,
-        "angle": 2.12,
+        "angle": 2.1243,
         "width": 502,
         "height": 252,
         "unit": "pixel",
-        "language": "",
         "lines": [
           {
-            "boundingBox": [58, 42, 314, 59, 311, 123, 56, 121],
+            "boundingBox": [
+              58,
+              42,
+              314,
+              59,
+              311,
+              123,
+              56,
+              121
+            ],
             "text": "Tabs vs",
             "appearance": {
-              "style": "handwriting",
-              "styleConfidence": 0.999
+              "style": {
+                "name": "handwriting",
+                "confidence": 0.96
+              }
             },
             "words": [
               {
-                "boundingBox": [85, 45, 242, 62, 241, 122, 83, 123],
+                "boundingBox": [
+                  68,
+                  44,
+                  225,
+                  59,
+                  224,
+                  122,
+                  66,
+                  123
+                ],
                 "text": "Tabs",
-                "confidence": 0.981
+                "confidence": 0.933
               },
               {
-                "boundingBox": [258, 64, 314, 72, 314, 123, 256, 123],
+                "boundingBox": [
+                  241,
+                  61,
+                  314,
+                  72,
+                  314,
+                  123,
+                  239,
+                  122
+                ],
                 "text": "vs",
-                "confidence": 0.958
+                "confidence": 0.977
               }
             ]
           },
           {
-            "boundingBox": [286, 171, 415, 165, 417, 197, 287, 201],
+            "boundingBox": [
+              286,
+              171,
+              415,
+              165,
+              417,
+              197,
+              287,
+              201
+            ],
             "text": "paces",
             "appearance": {
-              "style": "print",
-              "styleConfidence": 0.603
+              "style": {
+                "name": "handwriting",
+                "confidence": 0.746
+              }
             },
             "words": [
               {
-                "boundingBox": [303, 175, 415, 167, 415, 198, 306, 199],
+                "boundingBox": [
+                  286,
+                  179,
+                  404,
+                  166,
+                  405,
+                  198,
+                  290,
+                  201
+                ],
                 "text": "paces",
-                "confidence": 0.918
+                "confidence": 0.938
               }
             ]
           }

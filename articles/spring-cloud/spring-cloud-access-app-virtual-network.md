@@ -7,18 +7,18 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 11/11/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: b6e523fc4a3dcd0eb8c8ed7a44b3d7d9fcdd7d34
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 37c8b4bc186c217ecb27638f5f50297102345de7
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887178"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576528"
 ---
 # <a name="access-your-application-in-a-private-network"></a>Toegang tot uw toepassing in een privé netwerk
 
 In dit document wordt uitgelegd hoe u toegang krijgt tot een eind punt voor uw toepassing in een particulier netwerk.  Als u toegang wilt krijgen, moet u een **Azure privé-DNS-zone** maken in uw abonnement om de privé fully QUALIFIED domain name (FQDN) te vertalen naar het IP-adres.
 
-Wanneer u een **eind punt toewijst** voor toepassingen in een Azure lente-Cloud service-exemplaar in uw virtuele netwerk, is het eind punt een particuliere FQDN. Het domein is alleen toegankelijk in het particuliere netwerk. Apps en services gebruiken het toepassings eindpunt. Ze bevatten het **test eindpunt** dat wordt beschreven in [de faserings implementatie controleren](spring-cloud-howto-staging-environment.md#verify-the-staging-deployment). **Logboek streaming**, die wordt beschreven in [in realtime stream-Logboeken in de cloud van Azure](spring-cloud-howto-log-streaming.md), werkt ook alleen binnen het particuliere netwerk.
+Wanneer u een **eind punt toewijst** voor toepassingen in een Azure lente-Cloud service-exemplaar in uw virtuele netwerk, is het eind punt een particuliere FQDN. Het domein is alleen toegankelijk in het particuliere netwerk. Apps en services gebruiken het toepassings eindpunt. Ze bevatten het **test eindpunt** dat wordt beschreven in [apps en implementaties weer geven](spring-cloud-howto-staging-environment.md#view-apps-and-deployments). **Logboek streaming**, die wordt beschreven in [in realtime stream-Logboeken in de cloud van Azure](spring-cloud-howto-log-streaming.md), werkt ook alleen binnen het particuliere netwerk.
 
 ## <a name="create-a-private-dns-zone"></a>Een privé-DNS-zone maken
 

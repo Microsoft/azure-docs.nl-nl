@@ -13,12 +13,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 421fb7b0c91171756f55ad25c918955870054e3e
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 8e69803f4740a58adb4230bd82cc723221762cb4
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511277"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576613"
 ---
 # <a name="develop-secure-applications-on-azure"></a>Beveiligde toepassingen ontwikkelen in Azure
 In dit artikel bieden we beveiligings activiteiten en-controles waarmee u rekening moet houden bij het ontwikkelen van toepassingen voor de Cloud. Beveiligings vragen en-concepten waarmee u rekening moet houden tijdens de implementatie-en verificatie fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) vallen onder de dekking. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwikkelen.
@@ -140,7 +140,7 @@ Bij [fuzz testen](https://cloudblogs.microsoft.com/microsoftsecure/2007/09/20/fu
 
 Door de kwets baarheid te controleren nadat de code is voltooid, zorgt u ervoor dat alle ontwerp-of implementatie wijzigingen in een toepassing of systeem worden overwogen. Het helpt ervoor te zorgen dat nieuwe aanvals vectoren die zijn gemaakt als gevolg van de wijzigingen, met inbegrip van bedreigings modellen, worden beoordeeld en verholpen.
 
-U kunt een afbeelding van de kwets baarheid bouwen door de toepassing te scannen. Micro soft biedt een hulp programma voor het uitvoeren van een kwets baarheid voor aanvallen met de naam [aanval Surface Analyzer](https://www.microsoft.com/download/details.aspx?id=24487) U kunt kiezen uit veel commerciële, dynamische tests en hulpprogram ma's voor het scannen van problemen of services, waaronder [OWASP schrijving Attack proxy project](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project), [Arachni](http://arachni-scanner.com/), [Skipfish](https://code.google.com/p/skipfish/)en [w3af](http://w3af.sourceforge.net/). Deze scan tools verkennen uw app en wijst de onderdelen van de toepassing toe die toegankelijk zijn via het web. U kunt ook de Azure Marketplace doorzoeken op vergelijk bare [ontwikkel hulpprogramma's](https://azuremarketplace.microsoft.com/marketplace/apps/category/developer-tools?page=1).
+U kunt een afbeelding van de kwets baarheid bouwen door de toepassing te scannen. Micro soft biedt een hulp programma voor het uitvoeren van een kwets baarheid voor aanvallen met de naam [aanval Surface Analyzer](https://www.microsoft.com/download/details.aspx?id=58105) U kunt kiezen uit veel commerciële, dynamische tests en hulpprogram ma's voor het scannen van problemen of services, waaronder [OWASP schrijving Attack proxy project](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project), [Arachni](http://arachni-scanner.com/), [Skipfish](https://code.google.com/p/skipfish/)en [w3af](http://w3af.sourceforge.net/). Deze scan tools verkennen uw app en wijst de onderdelen van de toepassing toe die toegankelijk zijn via het web. U kunt ook de Azure Marketplace doorzoeken op vergelijk bare [ontwikkel hulpprogramma's](https://azuremarketplace.microsoft.com/marketplace/apps/category/developer-tools?page=1).
 
 ### <a name="perform-security-penetration-testing"></a>Beveiligings indringings tests uitvoeren
 

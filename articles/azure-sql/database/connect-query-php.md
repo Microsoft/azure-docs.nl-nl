@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 05/29/2020
-ms.custom: sqldbrb=2 
-ms.openlocfilehash: e8b9f12c57b2e4bf943e5fc9a9ebc2bbadef9ee9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.custom: sqldbrb=2
+ms.openlocfilehash: e0ad8e9e71a0ee2c23412d535fe79955edb39ba8
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86504969"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576647"
 ---
 # <a name="quickstart-use-php-to-query-a-database-in-azure-sql-database"></a>Quickstart: PHP gebruiken om een query uit te voeren voor een Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -54,7 +54,7 @@ U hebt het volgende nodig om deze quickstart te voltooien:
 
   - **Linux**: installeer PHP, het ODBC-stuurprogramma en installeer vervolgens het PHP-stuurprogramma voor SQL Server. Zie [stap 1, 2 en 3](/sql/connect/php/installation-tutorial-linux-mac).
 
-  - **Windows**: installeer PHP voor IIS Express en Chocolatey, en installeer vervolgens het ODBC-stuurprogramma en SQLCMD. Zie [Stap 1.2 en 1.3](https://www.microsoft.com/sql-server/developer-get-started/php/windows/).
+  - **Windows**, Installeer PHP-en PHP-Stuur Programma's en installeer vervolgens het ODBC-stuur programma en Sqlcmd. Zie [Stap 1.2 en 1.3](https://www.microsoft.com/sql-server/developer-get-started/php/windows/).
 
 ## <a name="get-server-connection-information"></a>Server-verbindingsgegevens ophalen
 

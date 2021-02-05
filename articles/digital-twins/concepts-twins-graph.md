@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 105128af60b90324e93bcad1bd9900a55461378f
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 00058f75a2c4378371c427ff9ebabe7e2336b06a
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071712"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576545"
 ---
 # <a name="understand-digital-twins-and-their-twin-graph"></a>Meer informatie over digitale apparaatdubbels en hun twee grafieken
 
@@ -58,9 +58,9 @@ U kunt ook een helper-klasse met de naam gebruiken `BasicDigitalTwin` om eigensc
 
 ### <a name="create-relationships"></a>Relaties maken
 
-Hier volgt een voor beeld van een client code die gebruikmaakt van de [DigitalTwins-api's](/rest/api/digital-twins/dataplane/twins) voor het bouwen van een relatie tussen een van de twee *basis* typen, *GroundFloor* en een *kamer* type digitale dubbele naam *Cafe*.
+Hier volgt een voor beeld van een client code die gebruikmaakt van de [DigitalTwins-api's](/rest/api/digital-twins/dataplane/twins) om een relatie te bouwen tussen een digitaal twee (de ' Bron ' twee) naar een andere digitale dubbele (' doel ' dubbele).
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_other.cs" id="CreateRelationship_3":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_other.cs" id="CreateRelationship_short":::
 
 ## <a name="json-representations-of-graph-elements"></a>JSON-representaties van grafiek elementen
 

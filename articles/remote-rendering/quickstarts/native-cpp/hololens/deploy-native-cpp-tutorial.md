@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/08/2020
 ms.topic: quickstart
-ms.openlocfilehash: d35d6e75b45c2ea263c2e986c5fc6f414cad16e4
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-ms.translationtype: HT
+ms.openlocfilehash: b469f0cae1e356c47bfe60af99c4fa2e73eab78d
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724966"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594024"
 ---
 # <a name="quickstart-deploy-native-c-sample-to-hololens"></a>Quickstart: Systeemeigen C++-voorbeeld implementeren in HoloLens
 
@@ -61,26 +61,26 @@ Schakel de buildconfiguratie om naar *Foutopsporing* (of *Release*) en *ARM64*. 
 
 ![Visual Studio-configuratie](media/vs-config-native-cpp-tutorial.png)
 
-Omdat de accountreferenties worden vastgelegd in de broncode van de zelfstudie, wijzigt u deze in geldige referenties. Hiervoor opent u het bestand `HolographicAppMain.cpp` in Visual Studio en wijzigt u het onderdeel waarin de front-end wordt gemaakt in de constructor van klasse `HolographicAppMain`:
+Omdat de accountreferenties worden vastgelegd in de broncode van de zelfstudie, wijzigt u deze in geldige referenties. Hiervoor opent u bestand `HolographicAppMain.cpp` in Visual Studio en wijzigt u het deel waarbij de client wordt gemaakt in de constructor van klasse `HolographicAppMain` :
 
 ```cpp
-// 2. Create front end
+// 2. Create Client
 {
     // Users need to fill out the following with their account data and model
-    RR::AzureFrontendAccountInfo init;
+    RR::SessionConfiguration init;
     init.AccountId = "00000000-0000-0000-0000-000000000000";
     init.AccountKey = "<account key>";
-    init.AccountDomain = "westus2.mixedreality.azure.com"; // <change to the region that the rendering session should be created in>
-    init.AccountAuthenticationDomain = "westus2.mixedreality.azure.com"; // <change to the region the account was created in>
+    init.RemoteRenderingDomain = "westus2.mixedreality.azure.com"; // <change to the region that the rendering session should be created in>
+    init.AccountDomain = "westus2.mixedreality.azure.com"; // <change to the region the account was created in>
     m_modelURI = "builtin://Engine";
     m_sessionOverride = ""; // If there is a valid session ID to re-use, put it here. Otherwise a new one is created
-    m_frontEnd = RR::ApiHandle(RR::AzureFrontend(init));
+    m_client = RR::ApiHandle(RR::RemoteRenderingClient(init));
 }
 ```
 
 Wijzig met name de volgende waarden:
-* `init.AccountId`, `init.AccountKey` en `init.AccountAuthenticationDomain` om uw accountgegevens te gebruiken. Zie de informatie over het [ophalen van accountgegevens](../../../how-tos/create-an-account.md#retrieve-the-account-information).
-* Geef op waar de Remote Rendering-sessie moet worden gemaakt door het regiogedeelte van de tekenreeks `init.AccountDomain` te wijzigen in andere regio's dan `westus2`, bijvoorbeeld `"westeurope.mixedreality.azure.com"`.
+* `init.AccountId`, `init.AccountKey` en `init.AccountDomain` om uw accountgegevens te gebruiken. Zie de informatie over het [ophalen van accountgegevens](../../../how-tos/create-an-account.md#retrieve-the-account-information).
+* Geef op waar de Remote Rendering-sessie moet worden gemaakt door het regiogedeelte van de tekenreeks `init.RemoteRenderingDomain` te wijzigen in andere regio's dan `westus2`, bijvoorbeeld `"westeurope.mixedreality.azure.com"`.
 * Daarnaast kan `m_sessionOverride` worden gewijzigd in een bestaande sessie-id. Sessies kunnen buiten dit voorbeeld worden gemaakt, bijvoorbeeld door [het PowerShell-script ](../../../samples/powershell-example-scripts.md#script-renderingsessionps1) te gebruiken of door rechtstreeks de [sessie-REST API](../../../how-tos/session-rest-api.md#create-a-session) te gebruiken.
 Het maken van een sessie buiten het voorbeeld wordt aanbevolen wanneer het voorbeeld meerdere keren moet worden uitgevoerd. Als er geen sessie wordt doorgegeven, maakt het voorbeeld een nieuwe sessie bij elke keer opstarten. Dit kan enkele minuten duren.
 

@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/11/2020
 ms.topic: article
-ms.openlocfilehash: f2e63903546e173e17f2b457b78eb41bcdf65dbd
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: e9908c106e57801cb1b7def8b3353a983cc97de0
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555563"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591936"
 ---
 # <a name="pbr-materials"></a>PBR-materialen
 
@@ -51,7 +51,7 @@ Deze eigenschappen zijn gebruikelijk voor alle materialen:
 
 ## <a name="pbr-material-properties"></a>Eigenschappen van het PBR-materiaal
 
-Het belangrijkste idee van het samen stellen van fysiek gebaseerd is het gebruik van *BaseColor* , *metaaling* en *Grove* eigenschappen om een breed scala aan reële materialen te emuleren. Een gedetailleerde beschrijving van PBR valt buiten het bereik van dit artikel. Zie [andere bronnen](http://www.pbr-book.org)voor meer informatie over PBR. De volgende eigenschappen zijn specifiek voor PBR-materialen:
+Het belangrijkste idee van het samen stellen van fysiek gebaseerd is het gebruik van *BaseColor*, *metaaling* en *Grove* eigenschappen om een breed scala aan reële materialen te emuleren. Een gedetailleerde beschrijving van PBR valt buiten het bereik van dit artikel. Zie [andere bronnen](http://www.pbr-book.org)voor meer informatie over PBR. De volgende eigenschappen zijn specifiek voor PBR-materialen:
 
 * **baseColor:** In PBR-materialen wordt de *albedo-kleur* aangeduid als de *basis kleur*. In azure rendering op afstand de eigenschap *albedo Color* is al aanwezig via de algemene eigenschappen van het materiaal, dus er is geen aanvullende eigenschap Base Color.
 
@@ -80,7 +80,7 @@ Het belangrijkste idee van het samen stellen van fysiek gebaseerd is het gebruik
   ![In de bovenstaande afbeelding is de weer gave van een bol met nul tot volledige transparantie ](./media/transparency.png) duidelijk, hoe de meest rechtse sfeer volledig transparant is, maar de reflectie is nog steeds zichtbaar.
 
   > [!IMPORTANT]
-  > Als materialen moeten worden overgeschakeld van dekkend naar transparant tijdens runtime, moet de renderer gebruikmaken van de rendermethode *TileBasedComposition* [rendering mode](../../concepts/rendering-modes.md). Deze beperking is niet van toepassing op materialen die worden geconverteerd als transparante materialen om te beginnen met.
+  > Als materialen moeten worden overgeschakeld van dekkend naar transparant tijdens runtime, moet de renderer gebruikmaken van de rendermethode *TileBasedComposition* [](../../concepts/rendering-modes.md). Deze beperking is niet van toepassing op materialen die worden geconverteerd als transparante materialen om te beginnen met.
 
 ## <a name="technical-details"></a>Technische details
 
@@ -92,9 +92,9 @@ Het is niet altijd mogelijk om van *reflecterende Glossiness* te converteren *na
 ## <a name="api-documentation"></a>API-documentatie
 
 * [C# PbrMaterial-klasse](/dotnet/api/microsoft.azure.remoterendering.pbrmaterial)
-* [C# RemoteManager. CreateMaterial ()](/dotnet/api/microsoft.azure.remoterendering.remotemanager.creatematerial)
+* [C# RenderingConnection. CreateMaterial ()](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.creatematerial)
 * [C++ PbrMaterial-klasse](/cpp/api/remote-rendering/pbrmaterial)
-* [C++ RemoteManager:: CreateMaterial ()](/cpp/api/remote-rendering/remotemanager#creatematerial)
+* [C++ RenderingConnection:: CreateMaterial ()](/cpp/api/remote-rendering/renderingconnection#creatematerial)
 
 ## <a name="next-steps"></a>Volgende stappen
 

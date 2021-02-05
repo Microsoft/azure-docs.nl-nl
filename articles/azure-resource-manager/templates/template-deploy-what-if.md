@@ -3,14 +3,14 @@ title: Sjabloonimlementatie wat-als
 description: Bepaal welke wijzigingen er in uw resources optreden voordat u een Azure Resource Manager sjabloon implementeert.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 02/05/2021
 ms.author: tomfitz
-ms.openlocfilehash: fa70d88b046cf38aa74582066d230c15580465b9
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 8122fa5c00a61017b5f358a112c94a5299539cee
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673967"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591621"
 ---
 # <a name="arm-template-deployment-what-if-operation"></a>ARM template deployment what-if operation (Wat-als-bewerking bij het implementeren van ARM-sjablonen)
 
@@ -18,13 +18,9 @@ Voordat u een Azure Resource Manager sjabloon (ARM-sjabloon) implementeert, kunt
 
 U kunt de What-if-bewerking met Azure PowerShell, Azure CLI of REST API-bewerkingen gebruiken. Wat-als wordt ondersteund voor implementaties van resource groep, abonnement, beheer groep en Tenant niveau.
 
-## <a name="install-azure-powershell-module"></a>Azure PowerShell-module installeren
+## <a name="install-azure-powershell-module"></a>Azure PowerShell module installeren
 
 Als u wilt gebruiken wat-als in Power shell, moet u versie **4,2 of hoger van de module AZ** hebben.
-
-Voordat u de vereiste module installeert, moet u ervoor zorgen dat u Power shell core (6. x of 7. x) hebt. Als u Power shell 5. x of eerder hebt, moet u [uw versie van Power shell bijwerken](/powershell/scripting/install/installing-powershell). U kunt de vereiste module niet installeren op Power shell 5. x of lager.
-
-### <a name="install-latest-version"></a>Nieuwste versie installeren
 
 Als u de module wilt installeren, gebruikt u:
 
@@ -117,7 +113,7 @@ De voor gaande opdrachten retour neren een tekst samenvatting die u hand matig k
 
 Als u de resultaten zonder kleuren wilt retour neren, opent u het configuratie bestand van [Azure cli](/cli/azure/azure-cli-configuration) . Stel **no_color** in op **Ja**.
 
-### <a name="azure-rest-api"></a>Azure REST API
+### <a name="azure-rest-api"></a>Azure REST-API
 
 Voor REST API gebruikt u:
 
@@ -326,7 +322,7 @@ results=$(az deployment group what-if --resource-group ExampleGroup --template-u
 
 De bewerking What-if ondersteunt het gebruik van de [implementatie modus](deployment-modes.md). Als deze modus is ingesteld op volt ooien, worden de resources die niet in de sjabloon staan, verwijderd. In het volgende voor beeld wordt een [sjabloon geïmplementeerd waarvoor geen resources zijn gedefinieerd](https://github.com/Azure/azure-docs-json-samples/blob/master/empty-template/azuredeploy.json) in de volledige modus.
 
-Als u de wijzigingen wilt bekijken voordat u een sjabloon implementeert, gebruikt u de parameter confirm switch met de implementatieopdracht. Als de wijzigingen zijn zoals verwacht, geeft u aan dat u de implementatie wilt voltooien.
+Als u de wijzigingen wilt bekijken voordat u een sjabloon implementeert, gebruikt u de parameter confirm switch met de implementatieopdracht. Als de wijzigingen naar verwachting zijn, moet u reageren op de voltooiing van de implementatie.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

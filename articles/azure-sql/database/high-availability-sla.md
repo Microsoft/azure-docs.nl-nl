@@ -8,16 +8,16 @@ ms.subservice: high-availability
 ms.custom: sqldbrb=2
 ms.devlang: ''
 ms.topic: conceptual
-author: sashan
-ms.author: sashan
-ms.reviewer: sstein, sashan
+author: emlisa
+ms.author: emlisa
+ms.reviewer: sstein, emlisa
 ms.date: 10/28/2020
-ms.openlocfilehash: 15067a046d8adc0ba38101bbe24cdc48cd433d56
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 53b6b4f5d783029cb53de71fe3c47b8cb2d26968
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095437"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593415"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -60,7 +60,7 @@ De zone redundante versie van de architectuur met hoge Beschik baarheid voor de 
 ![Zone redundante configuratie voor algemeen gebruik](./media/high-availability-sla/zone-redundant-for-general-purpose.png)
 
 > [!IMPORTANT]
-> Zie [Services ondersteunen per regio](../../availability-zones/az-region.md)voor actuele informatie over de regio's die zone redundante data bases ondersteunen. De zone-redundante configuratie is alleen beschikbaar wanneer de GEN5 Compute-hardware is geselecteerd. Deze functie is niet beschikbaar in het door SQL beheerde exemplaar.
+> De zone-redundante configuratie is alleen beschikbaar wanneer de GEN5 Compute-hardware is geselecteerd. Deze functie is niet beschikbaar in het door SQL beheerde exemplaar. Zone redundante configuratie voor de laag algemeen is alleen beschikbaar in de volgende regio's: VS-Oost, VS-Oost 2, VS-West 2, Europa-noord, Europa-west, Zuidoost-Azië, Australië-oost, Japan-Oost, UK-zuid en Frankrijk-centraal.
 
 > [!NOTE]
 > Algemeen-data bases met een grootte van 80 VCore kan de prestaties afnemen met de zone redundante configuratie. Bewerkingen zoals back-ups maken, herstellen, kopiëren van data bases en instellen van geo-DR-relaties kunnen leiden tot tragere prestaties voor afzonderlijke data bases die groter zijn dan 1 TB. 

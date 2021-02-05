@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 514ce0a43904048952f38edd6a9d38713f6ef8f3
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: cb33e11af26d5f5a2676f5b236ac142179bdb550
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98936657"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592837"
 ---
 # <a name="azure-ad-b2c-custom-policy-overview"></a>Overzicht van Azure AD B2C aangepaste beleids regels
 
@@ -115,7 +115,7 @@ Elk Starter Pack bevat de volgende bestanden:
 Het overname model is als volgt:
 
 - Het onderliggende beleid op elk niveau kan overnemen van het bovenliggende beleid en het uitbreiden door nieuwe elementen toe te voegen.
-- Voor complexere scenario's kunt u meer overname niveaus toevoegen (Maxi maal 5 in totaal).
+- Voor complexere scenario's kunt u meer overname niveaus toevoegen (Maxi maal 10 in totaal).
 - U kunt meer Relying Party-beleid toevoegen. U kunt bijvoorbeeld mijn account verwijderen, een telefoon nummer wijzigen, het SAML-Relying Party beleid en nog veel meer.
 
 In het volgende diagram ziet u de relatie tussen de beleids bestanden en de Relying Party toepassingen.

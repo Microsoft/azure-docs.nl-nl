@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/09/2020
 ms.author: surmb
-ms.openlocfilehash: 5e5be79371b640431603409a34b1a7812ed5c2a3
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 95b74e5fc6c5d2c09ff04b3f14e920ae675ab6e1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746101"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592752"
 ---
 <a name="troubleshoot-backend-health-issues-in-application-gateway"></a>Problemen met back-endservers oplossen in Application Gateway
 ==================================================
@@ -24,7 +24,7 @@ Azure-toepassing gateway test back-endservers standaard om de status te controle
 
 ### <a name="how-to-check-backend-health"></a>De status van de back-end controleren
 
-Als u de status van uw back-end-pool wilt controleren, kunt u de **back-end-status** pagina gebruiken op de Azure Portal. U kunt ook [Azure PowerShell](/powershell/module/az.network/get-azapplicationgatewaybackendhealth?view=azps-2.6.0), [cli](/cli/azure/network/application-gateway?view=azure-cli-latest#az-network-application-gateway-show-backend-health)of [rest API](/rest/api/application-gateway/applicationgateways/backendhealth)gebruiken.
+Als u de status van uw back-end-pool wilt controleren, kunt u de **back-end-status** pagina gebruiken op de Azure Portal. U kunt ook [Azure PowerShell](/powershell/module/az.network/get-azapplicationgatewaybackendhealth), [cli](/cli/azure/network/application-gateway#az-network-application-gateway-show-backend-health)of [rest API](/rest/api/application-gateway/applicationgateways/backendhealth)gebruiken.
 
 De status die wordt opgehaald door een van deze methoden, kan een van de volgende zijn:
 
@@ -119,7 +119,7 @@ Voer de volgende stappen uit om de time-outwaarde te verhogen:
 
 1.  Als u de standaard-DNS van Azure gebruikt, controleert u of het juiste registratie-of CNAME-record is voltooid.
 
-1.  Als het een persoonlijk of intern domein is, probeert u het probleem op te lossen vanaf een VM in hetzelfde virtuele netwerk. Als u het probleem kunt oplossen, start u Application Gateway opnieuw op en controleert u het opnieuw. Als u Application Gateway opnieuw wilt opstarten, moet u [stoppen](/powershell/module/azurerm.network/stop-azurermapplicationgateway?view=azurermps-6.13.0) en [starten](/powershell/module/azurerm.network/start-azurermapplicationgateway?view=azurermps-6.13.0) met de Power shell-opdrachten die in deze gekoppelde resources worden beschreven.
+1.  Als het een persoonlijk of intern domein is, probeert u het probleem op te lossen vanaf een VM in hetzelfde virtuele netwerk. Als u het probleem kunt oplossen, start u Application Gateway opnieuw op en controleert u het opnieuw. Als u Application Gateway opnieuw wilt opstarten, moet u [stoppen](/powershell/module/azurerm.network/stop-azurermapplicationgateway) en [starten](/powershell/module/azurerm.network/start-azurermapplicationgateway) met de Power shell-opdrachten die in deze gekoppelde resources worden beschreven.
 
 #### <a name="tcp-connect-error"></a>TCP-verbindings fout
 

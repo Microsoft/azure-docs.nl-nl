@@ -1,14 +1,14 @@
 ---
 title: Een beheergroep maken met de portal
 description: In deze quickstart gebruikt u de Azure-portal om een beheergroep te maken om uw resources in een resource-hiërarchie in te delen.
-ms.date: 08/31/2020
+ms.date: 02/05/2021
 ms.topic: quickstart
-ms.openlocfilehash: c8cb7b8bd3ad33d1f315670bfbb1782972e6e97f
-ms.sourcegitcommit: f8d2ae6f91be1ab0bc91ee45c379811905185d07
-ms.translationtype: HT
+ms.openlocfilehash: 5a336fe4caf5d2f825a93b5c7b8f8d05f6255c39
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89661735"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592429"
 ---
 # <a name="quickstart-create-a-management-group"></a>Quickstart: Een beheergroep maken
 
@@ -39,7 +39,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
    - De **beheergroep-ID** is de unieke ID van de map die wordt gebruikt voor het verzenden van opdrachten in deze beheergroep. Deze ID kan niet worden bewerkt nadat deze is gemaakt, omdat deze in het Azure-systeem wordt gebruikt om deze groep te identificeren. De [hoofdbeheergroep](./overview.md#root-management-group-for-each-directory) wordt automatisch gemaakt met een ID die de Azure Active Directory-ID is. Wijs voor alle andere beheergroepen een unieke ID toe.
    - Het veld Weergavenaam is de naam die wordt weergegeven in de Azure-portal. Een afzonderlijke weergavenaam is een optioneel veld bij het maken van de beheergroep en kan op elk gewenst moment worden gewijzigd.
 
-   :::image type="content" source="./media/create_context_menu.png" alt-text="Schermopname van de pagina Beheergroepen, met onderliggende beheergroepen en abonnementen.":::
+   :::image type="content" source="./media/create_context_menu.png" alt-text="Schermopname van de opties Beheergroep toevoegen, voor het maken van een nieuwe beheergroep.":::
 
 1. Selecteer **Opslaan**.
 

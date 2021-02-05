@@ -4,15 +4,15 @@ description: Meer informatie over het maken en gebruiken van hybride verbindinge
 author: ccompy
 ms.assetid: 66774bde-13f5-45d0-9a70-4e9536a4f619
 ms.topic: article
-ms.date: 02/04/2020
+ms.date: 02/05/2020
 ms.author: ccompy
 ms.custom: seodec18, fasttrack-edit
-ms.openlocfilehash: 20bdeef0a45bb02fab8841c0dd8ec7755143c693
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 1b3fc4a254c1157f2c2336e6360ba7621f31364d
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575988"
+ms.locfileid: "99594228"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Hybride verbindingen in Azure App Service
 
@@ -201,9 +201,16 @@ Iedereen met `Reader` toegang tot de relay kan de hybride verbinding _zien_ wann
 
 ## <a name="troubleshooting"></a>Problemen oplossen ##
 
-De status verbonden betekent dat er ten minste één HCM is geconfigureerd met die hybride verbinding en dat Azure kan worden bereikt. Als de status voor uw hybride verbinding niet **verbonden** is, is uw hybride verbinding niet geconfigureerd op een HCM die toegang heeft tot Azure.
+De status verbonden betekent dat er ten minste één HCM is geconfigureerd met die hybride verbinding en dat Azure kan worden bereikt. Als de status voor uw hybride verbinding niet **verbonden** is, is uw hybride verbinding niet geconfigureerd op een HCM die toegang heeft tot Azure. Wanneer uw HCM **niet zijn verbonden** , zijn er enkele dingen die u kunt controleren:
 
-De primaire reden waarom clients geen verbinding kunnen maken met hun eind punt, omdat het eind punt is opgegeven met behulp van een IP-adres in plaats van een DNS-naam. Als uw app het gewenste eind punt niet kan bereiken en u een IP-adres hebt gebruikt, schakelt u over naar het gebruik van een DNS-naam die geldig is op de host waarop de HCM wordt uitgevoerd. Controleer ook of de DNS-naam correct wordt omgezet op de host waarop de HCM wordt uitgevoerd. Controleer of er een verbinding is tussen de host waarop de HCM wordt uitgevoerd voor het hybride verbindings eindpunt.  
+* Heeft uw host uitgaande toegang tot Azure op poort 443? U kunt testen vanaf uw HCM-host met behulp van de Power shell *-opdracht test-NetConnection-bestemming-P poort* 
+* Ligt uw HCM mogelijk in een slechte staat? Probeer de lokale service Azure Hybrid Connection Manager-service opnieuw te starten.
+
+Als uw status **is verbonden** , maar uw app uw eind punt niet kan bereiken, geldt het volgende:
+
+* Zorg ervoor dat u een DNS-naam gebruikt in uw hybride verbinding. Als u een IP-adres gebruikt, kan de vereiste client-DNS-zoek actie niet plaatsvinden. Als de client die in uw web-app wordt uitgevoerd geen DNS-zoek opdracht heeft, werkt de hybride verbinding niet
+* Controleer of de DNS-naam die wordt gebruikt in uw hybride verbinding kan worden omgezet vanaf de HCM-host. Controleer de oplossing met behulp van *nslookup EndpointDNSname* waarbij EndpointDNSname een exacte overeenkomst is voor wat wordt gebruikt in uw hybride verbindings definitie.
+* Test de toegang vanaf uw HCM-host naar uw eind punt met behulp van de Power shell *-opdracht test-NetConnection EndpointDNSname-P-poort*  als u het eind punt niet kunt bereiken vanaf uw HCM-host, en vervolgens firewalls tussen de twee hosts, inclusief op hosts gebaseerde firewalls op de doelhost.
 
 In App Service kan het opdracht regel programma **tcpping** worden aangeroepen vanuit de console geavanceerde hulp middelen (kudu). Met dit hulp programma kunt u aangeven of u toegang hebt tot een TCP-eind punt, maar u krijgt hier geen informatie over als u toegang hebt tot een hybride verbindings eindpunt. Wanneer u het hulp programma gebruikt in de-console op basis van een hybride verbindings eindpunt, bevestigt u alleen dat het gebruikmaakt van een host: poort combinatie.  
 

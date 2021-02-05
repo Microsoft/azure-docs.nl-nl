@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 4e09f9b8564c9319e68984df1c0f8db7a496a6d0
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: beb45d0d650b07f6106a3307d2d3a955095ee8b1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584801"
+ms.locfileid: "99592259"
 ---
 # <a name="manage-qna-maker-resources"></a>QnA Maker-resources beheren
 
@@ -92,60 +92,10 @@ Met deze procedure maakt u de Azure-resources die nodig zijn voor het beheren va
     ![Resource heeft een nieuwe beheerde QnA Maker-service (preview) gemaakt](../media/qnamaker-how-to-setup-service/resources-created-v2.png)
 
     De resource met het _Cognitive Services_ type heeft uw _abonnements_ sleutels.
-
+    
 ---
 
-## <a name="find-authoring-keys-in-the-azure-portal"></a>Zoek sleutels zoeken in de Azure Portal
-
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
-
-U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de QnA Maker resource hebt gemaakt. Deze sleutels kunnen worden aangeduid als abonnements sleutels.
-
-1. Ga naar de QnA Maker resource in de Azure Portal en selecteer de resource met het _Cognitive Services_ type:
-
-    ![QnA Maker Resource lijst](../media/qnamaker-how-to-key-management/qnamaker-resource-list.png)
-
-2. Ga naar **sleutels en eind punt**:
-
-    ![QnA Maker Managed (preview)-abonnements sleutel](../media/qnamaker-how-to-key-management/subscription-key-v2.png)
-
-### <a name="find-query-endpoint-keys-in-the-qna-maker-portal"></a>Zoek eindpunt sleutels zoeken in de QnA Maker Portal
-
-Het eind punt bevindt zich in dezelfde regio als de resource omdat de eindpunt sleutels worden gebruikt voor het aanroepen van de Knowledge Base.
-
-Eindpunt sleutels kunnen worden beheerd vanuit de [QnA Maker Portal](https://qnamaker.ai).
-
-1. Meld u aan bij de [QnA Maker-Portal](https://qnamaker.ai), ga naar uw profiel en selecteer vervolgens service- **instellingen**:
-
-    ![Eindpunt sleutel](../media/qnamaker-how-to-key-management/Endpoint-keys.png)
-
-2. Uw sleutels weer geven of herstellen:
-
-    > [!div class="mx-imgBorder"]
-    > ![Eindpunt sleutel beheer](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)
-
-    >[!NOTE]
-    >Vernieuw uw sleutels als u denkt dat ze zijn aangetast. Hiervoor kunnen eventueel bijbehorende wijzigingen in de client toepassing of bot code worden vereist.
-
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
-
-U kunt uw ontwerp sleutels bekijken en opnieuw instellen in de Azure Portal, waar u de resource voor QnA Maker Managed (preview) hebt gemaakt. Deze sleutels kunnen worden aangeduid als abonnements sleutels.
-
-1. Ga naar de resource QnA Maker Managed (preview) in de Azure Portal en selecteer de resource met het *Cognitive Services* type:
-
-    ![Resource lijst voor door QnA Maker beheerde (preview-versie)](../media/qnamaker-how-to-key-management/qnamaker-v2-resource-list.png)
-
-2. Ga naar **sleutels en eind punt**:
-
-    ![QnA Maker Managed (preview)-abonnements sleutel](../media/qnamaker-how-to-key-management/subscription-key-v2.png)
-
-### <a name="update-the-resources"></a>De resources bijwerken
-
-Meer informatie over het bijwerken van de resources die worden gebruikt door uw Knowledge Base. QnA Maker Managed (preview) is **gratis** tijdens de preview-versie. 
-
----
-
-### <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie
+## <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 

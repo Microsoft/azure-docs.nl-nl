@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/04/2021
 ms.author: allensu
-ms.openlocfilehash: 7f2525b89f03e8bc1a2c3166b46c40b4dbb6ff17
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 22d7af4f307a99d2d2e29bc1f494d327394e4f10
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99562018"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594279"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>De distributie modus voor Azure Load Balancer configureren
 
@@ -46,8 +46,8 @@ U kunt de configuratie van de distributie modus wijzigen door de taakverdelings 
 De volgende opties zijn beschikbaar: 
 
 * **Geen (op hash gebaseerd)** : Hiermee geeft u op dat opeenvolgende aanvragen van dezelfde client door elke virtuele machine kunnen worden verwerkt.
-* **Client-IP (bron-IP-affiniteit 2-tuple)** -geeft aan dat opeenvolgende aanvragen van hetzelfde client-IP-adres worden verwerkt door dezelfde virtuele machine.
-* **Client-IP en-protocol (bron-IP-affiniteit 3-tuple)** : Hiermee geeft u op dat opeenvolgende aanvragen van dezelfde combi natie van client-IP-adres en-protocol worden verwerkt door dezelfde virtuele machine.
+* **Client-IP (bron-IP-affiniteit Two-tuple)** : Hiermee geeft u op dat opeenvolgende aanvragen van hetzelfde client-IP-adres worden verwerkt door dezelfde virtuele machine.
+* **Client-IP en protocol (bron-IP-affiniteit drie Tuples)** : Hiermee geeft u op dat opeenvolgende aanvragen van dezelfde combi natie van client-IP-adres en-protocol worden verwerkt door dezelfde virtuele machine.
 
 5. Kies de distributie modus en selecteer vervolgens **Opslaan**.
 
@@ -66,13 +66,36 @@ $lb.LoadBalancingRules[0].LoadDistribution = 'sourceIp'
 Set-AzLoadBalancer -LoadBalancer $lb
 ```
 
-Stel de waarde van het `LoadDistribution` element in voor de hoeveelheid taak verdeling vereist. 
+Stel de waarde van het `LoadDistribution` element in voor het type taak verdeling dat vereist is. 
 
-Geef **sourceIP** op voor de taak verdeling van twee Tuples (bron-IP en doel-IP). 
+* Geef **SourceIP** op voor de taak verdeling van twee Tuples (bron-IP en doel-IP). 
 
-Geef **sourceIPProtocol** op voor de taak verdeling voor drie Tuples (bron-IP, doel-IP en protocol type). 
+* Geef **SourceIPProtocol** op voor de taak verdeling voor drie Tuples (bron-IP, doel-IP en protocol type). 
 
-**Standaard waarde** voor het standaard gedrag van de taak verdeling van vijf Tuples opgeven.
+* **Standaard waarde** voor het standaard gedrag van de taak verdeling van vijf Tuples opgeven.
+
+# <a name="cli"></a>[**CLI**](#tab/azure-cli)
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+
+Gebruik Azure CLI om de distributie-instellingen voor Load Balancer te wijzigen voor een bestaande regel voor taak verdeling.  De volgende opdracht werkt de distributie modus bij:
+
+```azurecli-interactive
+az network lb rule update \
+    --lb-name myLoadBalancer \
+    --load-distribution SourceIP \
+    --name myHTTPRule \
+    --resource-group myResourceGroupLB 
+```
+Stel de waarde van in `--load-distribution` voor het type taak verdeling dat vereist is.
+
+* Geef **SourceIP** op voor de taak verdeling van twee Tuples (bron-IP en doel-IP). 
+
+* Geef **SourceIPProtocol** op voor de taak verdeling voor drie Tuples (bron-IP, doel-IP en protocol type). 
+
+* **Standaard waarde** voor het standaard gedrag van de taak verdeling van vijf Tuples opgeven.
+
+Zie [AZ Network lb Rule update](/cli/azure/network/lb/rule#az_network_lb_rule_update) (Engelstalig) voor meer informatie over de opdracht die in dit artikel wordt gebruikt.
 
 ---
 

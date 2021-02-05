@@ -4,7 +4,7 @@
   items:
     - name: Wat is identiteitsinrichting?
       href: what-is-provisioning.md
-    - name: Wat is Azure AD Connect Cloud synchronisatie?
+    - name: Wat is Azure AD Connect-cloudsynchronisatie?
       href: what-is-cloud-sync.md
       maintainContext: true
 - name: Zelfstudies
@@ -62,7 +62,7 @@
       items:
         - name: Transformaties
           href: how-to-transformation.md
-        - name: Inkomende synchronisatie met de MS Graph API
+        - name: Cloud synchronisatie programmatisch configureren met behulp van MS Graph API
           href: how-to-inbound-synch-ms-graph.md
         - name: Synchronisatie-API voor Azure AD
           href: /graph/api/resources/synchronization-overview

@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: d031ff4a6ee86da2843f0f18ac428c50f7cfc121
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0945b35f7aff8e93a1a3ba23b89db288db3d8efa
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80681868"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593888"
 ---
 # <a name="object-and-resource-lifetime"></a>Levensduur van objecten en resources
 
@@ -32,7 +32,7 @@ Veel resources zijn onveranderbaar, zoals [netten](meshes.md) en [bitmappatronen
 
 ### <a name="built-in-resources"></a>Ingebouwde resources
 
-Azure remote rendering bevat een aantal ingebouwde resources, die kunnen worden geladen door hun respectieve id in behandeling te nemen `builtin://` tijdens het aanroepen van `AzureSession.Actions.LoadXYZAsync()` . De beschik bare ingebouwde resources vindt u in de documentatie voor elk van de functies. In het [hoofd stuk](../overview/features/sky.md) worden bijvoorbeeld de ingebouwde lucht texturen vermeld.
+Azure remote rendering bevat een aantal ingebouwde resources, die kunnen worden geladen door hun respectieve id in behandeling te nemen `builtin://` tijdens het aanroepen van `RenderingSession.Connection.LoadXYZAsync()` . De beschik bare ingebouwde resources vindt u in de documentatie voor elk van de functies. In het [hoofd stuk](../overview/features/sky.md) worden bijvoorbeeld de ingebouwde lucht texturen vermeld.
 
 ## <a name="general-lifetime"></a>Algemene levens duur
 

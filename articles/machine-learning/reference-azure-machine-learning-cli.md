@@ -9,12 +9,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 06/22/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: e88fbaed77113896f818710497a544fbab486246
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: ee10866791d1e5015ef5c91d98bff286ed6ce67a
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072272"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591902"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Installeer & gebruik de CLI-extensie voor Azure Machine Learning
 
@@ -193,7 +193,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
 + Maak een nieuwe computeinstance.
 
     ```azurecli-interactive
-    az ml computetarget create computeinstance  -n cpu -s "STANDARD_D3_V2" -v
+    az ml computetarget create computeinstance -n cpu -s "STANDARD_D3_V2" -v
     ```
 
     Zie [AZ ml computetarget Create computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-computeinstance)voor meer informatie.
@@ -201,26 +201,26 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
 + Een computeinstance stoppen.
 
     ```azurecli-interactive
-    az ml computetarget stop computeinstance -n cpu -v
+    az ml computetarget computeinstance stop -n cpu -v
     ```
 
-    Zie [AZ ml computetarget stop computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop)voor meer informatie.
+    Zie [AZ ml computetarget computeinstance stop](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop)voor meer informatie.
 
 + Een computeinstance starten.
 
     ```azurecli-interactive
-    az ml computetarget start computeinstance -n cpu -v
+    az ml computetarget computeinstance start -n cpu -v
     ```
 
-    Zie [AZ ml computetarget start computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start)voor meer informatie.
+    Zie [AZ ml computetarget computeinstance start](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start)voor meer informatie.
 
 + Start een computeinstance opnieuw.
 
     ```azurecli-interactive
-    az ml computetarget restart computeinstance -n cpu -v
+    az ml computetarget computeinstance restart -n cpu -v
     ```
 
-    Zie [AZ ml computetarget restart computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart)voor meer informatie.
+    Zie [AZ ml computetarget computeinstance restart](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart)voor meer informatie.
 
 + Een computeinstance verwijderen.
 
@@ -408,7 +408,7 @@ Als u de opdracht hebt gebruikt, wordt er `az ml environment scaffold` een sjabl
 
 De volgende tabel bevat informatie over elk veld op het hoogste niveau in het JSON-bestand, het type en een beschrijving. Als een object type is gekoppeld aan een klasse uit de python-SDK, is er een losse 1:1 overeenkomst tussen elk JSON-veld en de naam van de open bare variabele in de python-klasse. In sommige gevallen kan het veld worden toegewezen aan een constructor-argument in plaats van een klassen variabele. Het veld wordt bijvoorbeeld `environmentVariables` toegewezen aan de `environment_variables` variabele in de- [`Environment`](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py) klasse.
 
-| JSON-veld | Type | Beschrijving |
+| JSON-veld | Type | Description |
 |---|---|---|
 | `name` | `string` | De naam van de omgeving. Start de naam niet met **micro soft** of **AzureML**. |
 | `version` | `string` | De versie van de omgeving. |

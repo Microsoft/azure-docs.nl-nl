@@ -6,12 +6,12 @@ ms.author: nisgoel
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 05/28/2020
-ms.openlocfilehash: 39eb007c85d9f0623b4a5611e36d4ed7a75423e0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 6611f5ca7ddae243c4bc314be73a9030311cec89
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98941182"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594431"
 ---
 # <a name="integrate-apache-spark-and-apache-hive-with-hive-warehouse-connector-in-azure-hdinsight"></a>Apache Spark en Apache Hive integreren met hive Warehouse connector in azure HDInsight
 
@@ -38,7 +38,11 @@ Enkele van de bewerkingen die worden ondersteund door de Hive Warehouse connecto
 ## <a name="hive-warehouse-connector-setup"></a>Setup van Hive Warehouse-connector
 
 > [!IMPORTANT]
-> De HiveServer2 Interactive instance die is geïnstalleerd op Spark 2,4 Enterprise Security Package-clusters wordt niet ondersteund voor gebruik met de Hive Warehouse-connector. In plaats daarvan moet u een afzonderlijk HiveServer2 interactief cluster configureren om uw HiveServer2 Interactive-workloads te hosten. Een component Warehouse-connector configuratie die gebruikmaakt van één Spark 2,4-cluster wordt niet ondersteund.
+> - De HiveServer2 Interactive instance die is geïnstalleerd op Spark 2,4 Enterprise Security Package-clusters wordt niet ondersteund voor gebruik met de Hive Warehouse-connector. In plaats daarvan moet u een afzonderlijk HiveServer2 interactief cluster configureren om uw HiveServer2 Interactive-workloads te hosten. Een component Warehouse-connector configuratie die gebruikmaakt van één Spark 2,4-cluster wordt niet ondersteund.
+> - HWC-bibliotheek (component Warehouse connector) wordt niet ondersteund voor gebruik met interactieve query clusters waarop de functie workload Management (WLM) is ingeschakeld. <br>
+In een scenario waarin u alleen Spark-workloads hebt en HWC-bibliotheek wilt gebruiken, zorgt u ervoor dat voor het interactieve query cluster niet de functie workload Management is ingeschakeld ( `hive.server2.tez.interactive.queue` configuratie is niet ingesteld in Hive-configuraties). <br>
+Voor een scenario waarbij zowel Spark-workloads (HWC) als LLAP systeem eigen werk belastingen bestaan, moet u twee afzonderlijke interactieve query clusters maken met de gedeelde meta base van het gegevens archief. Eén cluster voor systeem eigen LLAP-werk belastingen waarbij WLM functie kan worden ingeschakeld op basis van nood zaak en ander cluster voor HWC alleen werk belasting waarbij WLM-functie niet mag worden geconfigureerd.
+Het is belang rijk te weten dat u de WLM-resource plannen van beide clusters kunt bekijken, zelfs als deze is ingeschakeld in slechts één cluster. Breng geen wijzigingen aan in resource plannen in het cluster waarin de functie WLM is uitgeschakeld, omdat dit van invloed kan zijn op de WLM-functionaliteit in een ander cluster.
 
 Hive Warehouse connector heeft afzonderlijke clusters nodig voor Spark-en interactieve query-workloads. Volg deze stappen om deze clusters in te stellen in azure HDInsight.
 

@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Een beheergroep maken met JavaScript'
 description: In deze quickstart gebruikt u JavaScript om een beheergroep te maken om uw resources in een resourcehiërarchie in te delen.
-ms.date: 11/18/2020
+ms.date: 02/05/2021
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: c1b800f150cebacf8d17785feb1bded5189f1574
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: 25fd93e51c1b49519bb315aab28cdfc44a2a0c58
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886597"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593973"
 ---
 # <a name="quickstart-create-a-management-group-with-javascript"></a>Quickstart: Een beheergroep maken met JavaScript
 
@@ -21,7 +21,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 - Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
-- Voor u begint, moet u ervoor zorgen dat minimaal versie 12 van [Node.js](https://nodejs.org/) is geïnstalleerd.
+- Voordat u begint, moet u ervoor zorgen dat ten minste versie 12 van [Node.js](https://nodejs.org/) is geïnstalleerd.
 
 - Elke Azure AD-gebruiker in de tenant kan een beheergroep maken zonder dat de schrijfmachtiging voor beheergroepen is toegewezen als [Hiërarchie beschermen](./how-to/protect-resource-hierarchy.md#setting---require-authorization) niet is ingeschakeld. Deze nieuwe beheergroep wordt een onderliggend element van de hoofdbeheergroep of de [standaard beheergroep](./how-to/protect-resource-hierarchy.md#setting---default-management-group) en de maker krijgt de roltoewijzing "Eigenaar". Met de beheergroep-service kan deze functie worden toegewezen, zodat roltoewijzingen niet nodig zijn op hoofdmapniveau. Gebruikers hebben geen toegang tot de hoofdbeheergroep wanneer deze wordt gemaakt. Om te voorkomen dat de drempel van het vinden van de Azure AD Global Admins om beheergroepen te kunnen gebruiken te hoog is, wordt het maken van de eerste beheergroepen op hoofdmapniveau toegestaan.
 

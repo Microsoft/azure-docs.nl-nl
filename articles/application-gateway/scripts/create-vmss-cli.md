@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 01/29/2018
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 81c936acc00801f8473c1ec74aa50dbf2abb4936
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.openlocfilehash: 2e766bcdee2afa3ff4ed75476c619326c4c0e0c2
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397016"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591648"
 ---
 # <a name="manage-web-traffic-using-the-azure-cli"></a>Webverkeer beheren met de Azure CLI
 
@@ -48,8 +48,8 @@ In dit script worden de volgende opdrachten gebruikt om de implementatie te make
 | [az group create](/cli/azure/group) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
 | [az network vnet create](/cli/azure/network/vnet) | Hiermee maakt u een virtueel netwerk. |
 | [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) | Hiermee maakt u een subnet in een virtueel netwerk. |
-| [az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest) | Hiermee maakt u het openbare IP-adres voor de toepassingsgateway. |
-| [az network application-gateway create](/cli/azure/network/application-gateway?view=azure-cli-latest) | Maak een toepassingsgateway. |
+| [az network public-ip create](/cli/azure/network/public-ip) | Hiermee maakt u het openbare IP-adres voor de toepassingsgateway. |
+| [az network application-gateway create](/cli/azure/network/application-gateway) | Maak een toepassingsgateway. |
 | [az vmss create](/cli/azure/vmss) | Hiermee maakt u een schaalset voor virtuele machines. |
 | [az network public-ip show](/cli/azure/network/public-ip) | Hiermee haalt u het openbare IP-adres van de toepassingsgateway op. |
 

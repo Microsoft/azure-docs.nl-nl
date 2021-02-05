@@ -1,15 +1,15 @@
 ---
 title: Ondersteunde Azure Resource Manager resource typen
 description: Geef een lijst op met de Azure Resource Manager resource typen die worden ondersteund door de Azure-resource grafiek en de wijzigings geschiedenis.
-ms.date: 01/06/2021
+ms.date: 02/04/2021
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 4198c60bc298eb6a1b9902bb92e3df44648b2c0b
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 865aed468f8a6bcb848b77a82467efc2c531398b
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251774"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594330"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Naslag informatie over de tabel en het resource type van Azure resource Graph
 
@@ -130,6 +130,9 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. azurestack/linkedsubscriptions
 - Micro soft. Azurestack/registraties (Azure Stack hubs)
 - Micro soft. AzureStackHCI/clusters (Azure Stack HCI)
+- micro soft. azurestackhci/galleryimages
+- micro soft. azurestackhci/networkinterfaces
+- micro soft. azurestackhci/virtualnetworks
 - micro soft. baremetal/consoleconnections
 - Micro soft. BareMetal/crayServers (Cray-servers)
 - Micro soft. BareMetal/monitoringServers (bewakings servers)
@@ -331,6 +334,9 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - micro soft. Insights/workbooktemplates (Azure Workbook-sjablonen)
 - Micro soft. IntelligentITDigitalTwin/digitalTwins (Minervas)
 - micro soft. intelligentitdigitaltwin/digitaltwins/assets
+- micro soft. intelligentitdigitaltwin/digitaltwins/executionplans
+- micro soft. intelligentitdigitaltwin/digitaltwins/testplans
+- micro soft. intelligentitdigitaltwin/digitaltwins/tests
 - Micro soft. IoTCentral/IoTApps (IoT Central-toepassingen)
 - Micro soft. IoTSpaces/Graph (digitale Apparaatdubbels (afgeschaft))
 - micro soft. hsmpools
@@ -494,6 +500,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. resources/templateSpecs (sjabloon specificaties)
 - micro soft. resources/templatespecs/versies
 - Micro soft. SaaS/Applications (Software as a Service (klassiek))
+- Micro soft. SaaS/resources (CPX-placeholder)
 - Micro soft. scheduler/jobCollections (scheduler-taak verzamelingen)
 - micro soft. scvmm/Clouds
 - Micro soft. scvmm/informatie (SCVMM virtuele machine-Azure Arc)
@@ -588,6 +595,7 @@ De resource grafiek van Azure biedt ondersteuning voor de volgende **resource ty
 - Micro soft. Web/StaticSites (statische Web Apps (preview))
 - Micro soft. WindowsESU/multipleActivationKeys (meerdere activerings sleutels voor Windows)
 - Micro soft. WindowsIoT/DeviceServices (Windows 10 IoT Core Services)
+- micro soft. workloadbuilder/migrationagents
 - micro soft. workloadbuilder/workloads
 - MyGet. Package Management/Services (MyGet-gehoste NuGet, NPM, Bower en Vsix)
 - Paraleap. CloudMonix/Services (CloudMonix)

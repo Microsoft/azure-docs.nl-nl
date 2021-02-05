@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/18/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 53c0d37d4a25c2f2092a9e52bcae8ea494046bb0
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 730f26039db0f5441563ac7bf5d6b0ab536cbcd2
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210015"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593126"
 ---
 # <a name="app-service-networking-features"></a>App Service-netwerk functies
 
@@ -33,7 +33,7 @@ In plaats van de netwerken te verbinden, hebt u functies nodig om de verschillen
 | Binnenkomende functies | Uitgaande functies |
 |---------------------|-------------------|
 | App-toegewezen adres | Hybride verbindingen |
-| Toegangsbeperkingen | Gateway-vereiste VNet-integratie |
+| Toegangs beperkingen | Gateway-vereiste VNet-integratie |
 | Service-eindpunten | VNet-integratie |
 | Privé-eindpunten ||
 
@@ -47,7 +47,7 @@ Voor een wille keurig gebruik is het mogelijk dat u een aantal manieren hebt om 
 |---------------------|-------------------|
 | Ondersteuning voor op IP gebaseerde SSL-behoeften voor uw app | App-toegewezen adres |
 | Ondersteuning voor niet-gedeeld toegewezen inkomend adres voor uw app | App-toegewezen adres |
-| De toegang tot uw app beperken vanuit een reeks goed gedefinieerde adressen | Toegangsbeperkingen |
+| De toegang tot uw app beperken vanuit een reeks goed gedefinieerde adressen | Toegangs beperkingen |
 | De toegang tot uw app beperken tegen resources in een virtueel netwerk | Service-eindpunten </br> ILB ASE </br> Privé-eindpunten |
 | Uw app beschikbaar maken op een privé-IP in uw virtuele netwerk | ILB ASE </br> Privé-eindpunten </br> Particulier IP-adres voor inkomend verkeer op een Application Gateway-exemplaar met Service-eind punten |
 | Uw app beveiligen met een Web Application Firewall (WAF) | Application Gateway en ILB ASE </br> Application Gateway met persoonlijke eind punten </br> Application Gateway met service-eindpunten </br> Azure front deur met toegangs beperkingen |
@@ -96,7 +96,7 @@ Wanneer u een door de app toegewezen adres gebruikt, loopt uw verkeer nog steeds
 
 Zie [een TLS/SSL-certificaat toevoegen in azure app service][appassignedaddress]voor meer informatie over het instellen van een adres in uw app. 
 
-### <a name="access-restrictions"></a>Toegangsbeperkingen 
+### <a name="access-restrictions"></a>Toegangs beperkingen 
 
 Met toegangs beperkingen kunt u *inkomende* aanvragen filteren. De filter actie vindt plaats op de front-end-rollen die upstream zijn van de werk rollen waar uw apps worden uitgevoerd. Omdat de front-end-rollen upstream van de werk nemers zijn, kunt u de toegangs beperkingen zien als beveiliging op netwerk niveau voor uw apps. 
 
@@ -113,6 +113,9 @@ De functie toegangs beperkingen op basis van IP helpt bij het beperken van de IP
 * Beperk de toegang tot verkeer dat afkomstig is van een externe service voor taak verdeling of andere netwerk apparaten met bekende uitstaande IP-adressen. 
 
 Zie [toegangs beperkingen configureren][iprestrictions]voor meer informatie over het inschakelen van deze functie.
+
+> [!NOTE]
+> Regels voor toegangs beperking op basis van IP verwerken alleen de adresbereiken van het virtuele netwerk wanneer uw app in een App Service Environment is. Als uw app zich in de multi tenant-service bevindt, moet u [service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) gebruiken om het verkeer te beperken tot het selecteren van subnetten in uw virtuele netwerk.
 
 #### <a name="access-restriction-rules-based-on-service-endpoints"></a>Toegangs beperkings regels op basis van service-eind punten 
 

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 48c835070329b5cb0892b10760d37708e46bfa1d
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
-ms.translationtype: HT
+ms.openlocfilehash: cec97134173cfc7879baf1d914d8f224a0736430
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559130"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593041"
 ---
 # <a name="tutorial-manipulating-models"></a>Zelfstudie: Modellen bewerken
 
@@ -37,7 +37,7 @@ De grenzen van een model worden vastgelegd door het vak dat het volledige model 
 1. Maak een nieuw script in dezelfde map als **RemoteRenderedModel** en noem het **RemoteBounds**.
 1. Vervang de inhoud van het script door de volgende code:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -51,8 +51,6 @@ De grenzen van een model worden vastgelegd door het vak dat het volledige model 
     {
         //Remote bounds works with a specific remotely rendered model
         private BaseRemoteRenderedModel targetModel = null;
-
-        private BoundsQueryAsync remoteBoundsQuery = null;
 
         private RemoteBoundsState currentBoundsState = RemoteBoundsState.NotReady;
 
@@ -94,14 +92,8 @@ De grenzen van een model worden vastgelegd door het vak dat het volledige model 
             }
         }
 
-        // Create a query using the model entity
-        private void QueryBounds()
-        {
-            //Implement me
-        }
-
-        // Check the result and apply it to the local Unity bounding box if it was successful
-        private void ProcessQueryResult(BoundsQueryAsync remoteBounds)
+        // Create an async query using the model entity
+        async private void QueryBounds()
         {
             //Implement me
         }
@@ -113,31 +105,21 @@ De grenzen van een model worden vastgelegd door het vak dat het volledige model 
 
     Dit script dient toegevoegd te worden aan hetzelfde GameObject als het script dat **BaseRemoteRenderedModel** implementeert. In dit geval is dat **RemoteRenderedModel**. Net zoals bij eerdere scripts verwerkt deze initiële code alle statuswijzigingen, gebeurtenissen en informatie over externe grenzen.
 
-    Er zijn nog twee methoden om te implementeren: **QueryBounds** en **ProcessQueryResult**. **QueryBounds** haalt de grenzen op en **ProcessQueryResult** neemt het resultaat van de query en past dit toe op de lokale **BoxCollider**.
+    Er is slechts één methode naar links om het volgende te implementeren: **QueryBounds**. **QueryBounds** haalt de grenzen asynchroon op, neemt het resultaat van de query en past deze toe op de lokale **BoxCollider**.
 
-    De **QueryBounds**-methode is eenvoudig: verzend een query naar de externe rendering-sessie en luister naar de `Completed`-gebeurtenis.
+    De methode **QueryBounds** is eenvoudig: verzend een query naar de externe rendering-sessie en wacht op het resultaat.
 
 1. Vervang de **QueryBounds**-methode door de volgende voltooide methode:
 
-    ```csharp
+    ```cs
     // Create a query using the model entity
-    private void QueryBounds()
+    async private void QueryBounds()
     {
         remoteBoundsQuery = targetModel.ModelEntity.QueryLocalBoundsAsync();
         CurrentBoundsState = RemoteBoundsState.Updating;
-        remoteBoundsQuery.Completed += ProcessQueryResult;
-    }
-    ```
+        await remoteBounds;
 
-    **ProcessQueryResult** is ook eenvoudig. We bekijken het resultaat om te zien of dit geslaagd is. Zo ja, zet de geretourneerde grenzen dan om in een indeling die **BoxCollider** kan accepteren en pas ze toe.    
-
-1. Vervang de **ProcessQueryResult**-methode door de volgende voltooide methode:
-
-    ```csharp
-    // Check the result and apply it to the local Unity bounding box if it was successful
-    private void ProcessQueryResult(BoundsQueryAsync remoteBounds)
-    {
-        if (remoteBounds.IsRanToCompletion)
+        if (remoteBounds.IsCompleted)
         {
             var newBounds = remoteBounds.Result.toUnity();
             BoundsBoxCollider.center = newBounds.center;
@@ -151,6 +133,8 @@ De grenzen van een model worden vastgelegd door het vak dat het volledige model 
         }
     }
     ```
+
+    Het resultaat van de query wordt gecontroleerd om te zien of het is gelukt. Zo ja, zet de geretourneerde grenzen dan om in een indeling die **BoxCollider** kan accepteren en pas ze toe.
 
 Wanneer het **RemoteBounds**-script wordt toegevoegd aan hetzelfde gameobject als de **RemoteRenderedModel**, wordt indien nodig een **BoxCollider** toegevoegd. Wanneer het model de status `Loaded` bereikt, worden de grenzen automatisch opgevraagd en toegepast op de **BoxCollider**.
 
@@ -198,7 +182,7 @@ Laten we eerst een statische wrapper maken rond de query's van de externe raycas
 
 1. Maak een nieuw script met de naam **RemoteRayCaster** en vervang de inhoud door de volgende code:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -220,7 +204,8 @@ Laten we eerst een statische wrapper maken rond de query's van de externe raycas
             if(RemoteRenderingCoordinator.instance.CurrentCoordinatorState == RemoteRenderingCoordinator.RemoteRenderingState.RuntimeConnected)
             {
                 var rayCast = new RayCast(origin.toRemotePos(), dir.toRemoteDir(), maxDistance, hitPolicy);
-                return await RemoteRenderingCoordinator.CurrentSession.Actions.RayCastQueryAsync(rayCast).AsTask();
+                var result = await RemoteRenderingCoordinator.CurrentSession.Connection.RayCastQueryAsync(rayCast);
+                return result.Hits;
             }
             else
             {
@@ -243,7 +228,7 @@ Laten we eerst een statische wrapper maken rond de query's van de externe raycas
 
 1. Maak een nieuw script met de naam **RemoteRayCastPointerHandler** en vervang de code door de volgende code:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -314,7 +299,7 @@ Wanneer een raycast is voltooid in de **RemoteRayCastPointerHandler**, wordt de 
 
 1. Maak een nieuw script met de naam **RemoteEntityHelper** en vervang de inhoud door de onderstaande code:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
     
@@ -359,7 +344,7 @@ Hetzelfde proces kan via een programma worden uitgevoerd en vormt de eerste stap
 
 1. Wijzig het **RemoteEntityHelper**-script zodat het ook de volgende methode bevat:
 
-    ```csharp
+    ```cs
     public void MakeSyncedGameObject(Entity entity)
     {
         var entityGameObject = entity.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);

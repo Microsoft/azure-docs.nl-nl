@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b951dab1ad01187c7612fad047bc52eb6aa9700e
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: e01ddf0690f11d41021e0a5ae5958c7c80646743
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701871"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594414"
 ---
 # <a name="textures"></a>Patronen
 
@@ -35,66 +35,54 @@ Als u een bitmappatroon met dezelfde URI twee keer laadt, wordt hetzelfde object
 
 Net als bij het laden van modellen zijn er twee varianten van het adresseren van een texture-asset in de bron-Blob-opslag:
 
-* De Asset Texture kan worden aangepakt door de SAS-URI. Relevante laad functie is `LoadTextureFromSASAsync` met para meter `LoadTextureFromSASParams` . Gebruik deze variant ook bij het laden van [ingebouwde structuren](../overview/features/sky.md#built-in-environment-maps).
-* Het bitmappatroon kan rechtstreeks worden aangepakt door de Blob Storage-para meters, [als de Blob-opslag is gekoppeld aan het account](../how-tos/create-an-account.md#link-storage-accounts). Relevante laad functie in dit geval is een `LoadTextureAsync` para meter `LoadTextureParams` .
+* Het bitmappatroon kan rechtstreeks worden aangepakt door de Blob Storage-para meters, [als de Blob-opslag is gekoppeld aan het account](../how-tos/create-an-account.md#link-storage-accounts). Relevante laad functie in dit geval is een `LoadTextureAsync` para meter `LoadTextureOptions` .
+* De Asset Texture kan worden aangepakt door de SAS-URI. Relevante laad functie is `LoadTextureFromSasAsync` met para meter `LoadTextureFromSasOptions` . Gebruik deze variant ook bij het laden van [ingebouwde structuren](../overview/features/sky.md#built-in-environment-maps).
 
-De volgende voorbeeld code laat zien hoe u een structuur kunt laden via de SAS-URI (of het ingebouwde bitmappatroon): Houd er rekening mee dat alleen de functie/para meter voor het laden verschilt voor de andere Case:
+De volgende voorbeeld code laat zien hoe u een structuur kunt laden:
 
 ```cs
-LoadTextureAsync _textureLoad = null;
-void LoadMyTexture(AzureSession session, string textureUri)
+async void LoadMyTexture(RenderingSession session, string storageContainer, string blobName, string assetPath)
 {
-    _textureLoad = session.Actions.LoadTextureFromSASAsync(new LoadTextureFromSASParams(textureUri, TextureType.Texture2D));
-    _textureLoad.Completed +=
-        (LoadTextureAsync res) =>
-        {
-            if (res.IsRanToCompletion)
-            {
-                //use res.Result
-            }
-            else
-            {
-                System.Console.WriteLine("Texture loading failed!");
-            }
-            _textureLoad = null;
-        };
+    try
+    {
+        LoadTextureOptions options = new LoadTextureOptions(storageContainer, blobName, assetPath, TextureType.Texture2D);
+        Texture texture = await session.Connection.LoadTextureAsync(options);
+    
+        // use texture...
+    }
+    catch (RRException ex)
+    {
+    }
 }
 ```
 
 ```cpp
-void LoadMyTexture(ApiHandle<AzureSession> session, std::string textureUri)
+void LoadMyTexture(ApiHandle<RenderingSession> session, std::string storageContainer, std::string blobName, std::string assetPath)
 {
-    LoadTextureFromSASParams params;
+    LoadTextureOptions params;
     params.TextureType = TextureType::Texture2D;
-    params.TextureUrl = std::move(textureUri);
-    ApiHandle<LoadTextureAsync> textureLoad = *session->Actions()->LoadTextureFromSASAsync(params);
-    textureLoad->Completed([](ApiHandle<LoadTextureAsync> res)
+    params.Blob.StorageAccountName = std::move(storageContainer);
+    params.Blob.BlobContainerName = std::move(blobName);
+    params.Blob.AssetPath = std::move(assetPath);
+    session->Connection()->LoadTextureAsync(params, [](Status status, ApiHandle<Texture> texture)
     {
-        if (res->GetIsRanToCompletion())
-        {
-            //use res->Result()
-        }
-        else
-        {
-            printf("Texture loading failed!");
-        }
+        // use texture...
     });
 }
 ```
 
-Afhankelijk van waarvoor het bitmappatroon moet worden gebruikt, zijn er mogelijk beperkingen voor het type bitmappatroon en de inhoud. De grof toewijzing van een [PBR-materiaal](../overview/features/pbr-materials.md) moet bijvoorbeeld grijs waarden zijn.
+Houd er rekening mee dat in het geval van het gebruik van de SAS-variant alleen de functie/para meter voor het laden overeenkomen.
 
-> [!CAUTION]
-> Alle *async* -functies in ARR retour neren asynchrone bewerkings objecten. U moet een verwijzing naar deze objecten opslaan totdat de bewerking is voltooid. Anders kan de C#-garbage collector de bewerking vroegtijdig verwijderen en kan deze nooit worden voltooid. In de voorbeeld code boven de lidvariabele _textureLoad wordt gebruikt om een verwijzing te bewaren totdat de *voltooide* gebeurtenis arriveert.
+Afhankelijk van waarvoor het bitmappatroon moet worden gebruikt, zijn er mogelijk beperkingen voor het type bitmappatroon en de inhoud. De grof toewijzing van een [PBR-materiaal](../overview/features/pbr-materials.md) moet bijvoorbeeld grijs waarden zijn.
 
 ## <a name="api-documentation"></a>API-documentatie
 
 * [C#-structuur klasse](/dotnet/api/microsoft.azure.remoterendering.texture)
-* [C# RemoteManager. LoadTextureAsync ()](/dotnet/api/microsoft.azure.remoterendering.remotemanager.loadtextureasync)
-* [C# RemoteManager. LoadTextureFromSASAsync ()](/dotnet/api/microsoft.azure.remoterendering.remotemanager.loadtexturefromsasasync)
+* [C# RenderingConnection. LoadTextureAsync ()](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.loadtextureasync)
+* [C# RenderingConnection. LoadTextureFromSasAsync ()](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.loadtexturefromsasasync)
 * [Klasse C++ Texture](/cpp/api/remote-rendering/texture)
-* [C++ RemoteManager:: LoadTextureAsync ()](/cpp/api/remote-rendering/remotemanager#loadtextureasync)
-* [C++ RemoteManager:: LoadTextureFromSASAsync ()](/cpp/api/remote-rendering/remotemanager#loadtexturefromsasasync)
+* [C++ RenderingConnection:: LoadTextureAsync ()](/cpp/api/remote-rendering/renderingconnection#loadtextureasync)
+* [C++ RenderingConnection:: LoadTextureFromSasAsync ()](/cpp/api/remote-rendering/renderingconnection#loadtexturefromsasasync)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -5,14 +5,14 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 02/05/2021
 ms.author: cshoe
-ms.openlocfilehash: acdb635dec5abd73341cc1dda4991b58b82a18c0
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 785fd535c46b67cfd631cd18560f396a6901e5c0
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/05/2021
-ms.locfileid: "99574513"
+ms.locfileid: "99593945"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub actions-werk stromen voor de preview-versie van Azure static Web Apps
 
@@ -197,12 +197,13 @@ jobs:
 
 ## <a name="monorepo-support"></a>Monorepo-ondersteuning
 
-Een monorepo is een opslag plaats met code voor meer dan één toepassing. Standaard worden in een statisch Web Apps werk stroom bestand alle bestanden in een opslag plaats bijgehouden, maar u kunt dit aanpassen om een enkele app te richten. Daarom heeft elke statische site voor monorepos een eigen configuratie bestand dat naast elkaar wordt weer in de map *. git* van de opslag plaats.
+Een monorepo is een opslag plaats met code voor meer dan één toepassing. Standaard worden in een statisch Web Apps werk stroom bestand alle bestanden in een opslag plaats bijgehouden, maar u kunt dit aanpassen om een enkele app te richten. Daarom heeft elke statische app voor monorepos een eigen configuratie bestand dat naast elkaar wordt weer in de map *. github/werk stromen* van de opslag plaats.
 
 ```files
-├── .git
-│   ├── azure-static-web-apps-purple-pond.yml
-│   └── azure-static-web-apps-yellow-shoe.yml
+├── .github
+│   └── workflows
+│       ├── azure-static-web-apps-purple-pond.yml
+│       └── azure-static-web-apps-yellow-shoe.yml
 │
 ├── app1  👉 controlled by: azure-static-web-apps-purple-pond.yml
 ├── app2  👉 controlled by: azure-static-web-apps-yellow-shoe.yml
@@ -210,7 +211,7 @@ Een monorepo is een opslag plaats met code voor meer dan één toepassing. Stand
 ├── api1  👉 controlled by: azure-static-web-apps-purple-pond.yml
 ├── api2  👉 controlled by: azure-static-web-apps-yellow-shoe.yml
 │
-└── readme.md
+└── README.md
 ```
 
 Als u een werk stroom bestand wilt richten op één app, geeft u de paden op in de `push` `pull_request` secties en.
@@ -236,7 +237,7 @@ on:
       - .github/workflows/azure-static-web-apps-purple-pond.yml
 ```
 
-In dit geval activeren alleen wijzigingen aan bestanden die worden gemaakt met bestanden een nieuwe build:
+In dit geval activeren alleen de volgende bestanden een nieuwe build:
 
 - Alle bestanden in de map *app1*
 - Alle bestanden in de map *api1*

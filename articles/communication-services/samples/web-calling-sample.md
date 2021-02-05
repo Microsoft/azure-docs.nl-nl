@@ -9,42 +9,34 @@ ms.author: mariusu
 ms.date: 10/15/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: a00f319c55665695879aac3c8ba711ce13fd5d4e
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: fbd5d3c4489d124014e0d956359f64a8ec9c568a
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763043"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592786"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
+
+Het voorbeeld van webaanroeping is een webtoepassing die als stapsgewijze instructie dient voor de verschillende mogelijkheden van de Communication Services-clientbibliotheek voor webaanroeping. 
+
+Dit voorbeeld is gebouwd voor ontwikkelaars en maakt het eenvoudig om aan de slag te gaan met Communication Services. De gebruikersinterface is onderverdeeld in meerdere secties, elk met de knop 'Code weergeven' waarmee u rechtstreeks vanuit uw browser codes kunt kopiëren naar uw eigen Communication Services-toepassing.
+
+## <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 > [!IMPORTANT]
 > [Dit voorbeeld is beschikbaar op GitHub.](https://github.com/Azure-Samples/communication-services-web-calling-tutorial/).
 
-Het **voorbeeld van webaanroeping** laat zien hoe de clientbibliotheek van Communication Services kan worden gebruikt voor het bouwen van een gesprekservaring met JavaScript.
-
-In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt voordat u het op uw lokale computer gaat uitvoeren. Vervolgens gaat u het voorbeeld in Azure implementeren met behulp van uw eigen Azure Communication Services-resources.
-
-## <a name="overview"></a>Overzicht
-
-Het voorbeeld van webaanroeping is een webtoepassing die als stapsgewijze instructie dient voor de verschillende mogelijkheden van de Communication Services-clientbibliotheek voor webaanroeping. 
-
-Dit voorbeeld is gebouwd voor ontwikkelaars en maakt het eenvoudig om aan de slag te gaan met Communication Services. De gebruikersinterface is onderverdeeld in meerdere secties, elk met de knop 'Code weergeven' waarmee u rechtstreeks vanuit uw browser codes kunt kopiëren naar uw eigen Communication Services-toepassing.
-
-Wanneer de [voorbeeld van webaanroep](https://github.com/Azure-Samples/communication-services-web-calling-tutorial) op uw computer wordt uitgevoerd, ziet u de volgende landingspagina:
+Volg de/project/README.MD om het project in te stellen en lokaal op uw computer uit te voeren.
+Zodra het [webonderdeel](https://github.com/Azure-Samples/communication-services-web-calling-tutorial) voor het gesprek op uw computer wordt uitgevoerd, ziet u de volgende landings pagina:
 
 :::image type="content" source="./media/web-calling-tutorial-page-1.png" alt-text="Zelfstudie voor webaanroeping 1" lightbox="./media/web-calling-tutorial-page-1.png":::
 
 :::image type="content" source="./media/web-calling-tutorial-page-2.png" alt-text="Zelfstudie voor webaanroeping 2" lightbox="./media/web-calling-tutorial-page-2.png":::
 
-
 ## <a name="user-provisioning-and-sdk-initialization"></a>Gebruikersinrichting en SDK-initialisatie 
-
-Als u de demo wilt gaan gebruiken, voert u de verbindingsreeks van uw [Communication Services-resource](../quickstarts/create-communication-resource.md) in `config.json`. Dit wordt gebruikt om een [token voor gebruikerstoegang in te richten](../concepts/authentication.md) zodat de aanroepende SDK kan worden geïnitialiseerd.
-
-Geef uw eigen persoonlijke id op bij het invoeren van de gebruikers-id. Als hier niets wordt geboden, wordt er een willekeurige gebruikers-id gegenereerd. 
 
 Klik op ‘Gebruiker inrichten en SDK initialiseren’ om uw SDK te initialiseren met behulp van een token dat is ingericht door de service voor het inrichten van de back-end-token. Deze back-end-service is te vinden in `/project/webpack.config.js`.
 

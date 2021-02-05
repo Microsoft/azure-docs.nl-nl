@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/07/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d1a7baa25497cf1ba697725ac8530bc04c458aa5
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: c664df586c260b3e16f64c071190055dbaeccd24
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207430"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594041"
 ---
 # <a name="spatial-queries"></a>Ruimtelijke query's
 
@@ -34,7 +34,7 @@ Ruimtelijke query's worden aangedreven door de [Havok-fysieke](https://www.havok
 Een *Ray-cast* is een ruimtelijke query waarbij de runtime controleert welke objecten door een Ray worden doorzocht, vanaf een bepaalde positie en naar een bepaalde richting wijzen. Als Optima Lise ring wordt er ook een maximum Ray-afstand gegeven om niet te zoeken naar objecten die te ver weg staan.
 
 ```cs
-async void CastRay(AzureSession session)
+async void CastRay(RenderingSession session)
 {
     // trace a line from the origin into the +z direction, over 10 units of distance.
     RayCast rayCast = new RayCast(new Double3(0, 0, 0), new Double3(0, 0, 1), 10);
@@ -42,8 +42,8 @@ async void CastRay(AzureSession session)
     // only return the closest hit
     rayCast.HitCollection = HitCollectionPolicy.ClosestHit;
 
-    RayCastHit[] hits = await session.Actions.RayCastQueryAsync(rayCast).AsTask();
-
+    RayCastQueryResult result = await session.Connection.RayCastQueryAsync(rayCast);
+    RayCastHit[] hits = result.Hits;
     if (hits.Length > 0)
     {
         var hitObject = hits[0].HitObject;
@@ -56,23 +56,23 @@ async void CastRay(AzureSession session)
 ```
 
 ```cpp
-void CastRay(ApiHandle<AzureSession> session)
+void CastRay(ApiHandle<RenderingSession> session)
 {
     // trace a line from the origin into the +z direction, over 10 units of distance.
     RayCast rayCast;
-    rayCast.StartPos = { 0, 0, 0 };
-    rayCast.EndPos = { 0, 0, 1 };
+    rayCast.StartPos = {0, 0, 0};
+    rayCast.EndPos = {0, 0, 1};
     rayCast.MaxHits = 10;
 
     // only return the closest hit
     rayCast.HitCollection = HitCollectionPolicy::ClosestHit;
 
-    ApiHandle<RaycastQueryAsync> castQuery = *session->Actions()->RayCastQueryAsync(rayCast);
-
-    castQuery->Completed([](const ApiHandle<RaycastQueryAsync>& async)
+    session->Connection()->RayCastQueryAsync(rayCast, [](Status status, ApiHandle<RayCastQueryResult> result)
+    {
+        if (status == Status::OK)
         {
             std::vector<RayCastHit> hits;
-            async->GetResult(hits);
+            result->GetHits(hits);
 
             if (hits.size() > 0)
             {
@@ -82,16 +82,17 @@ void CastRay(ApiHandle<AzureSession> session)
 
                 // do something with the hit information
             }
-        });
+        }
+    });
 }
 ```
 
 
 Er zijn drie methoden voor het verzamelen van treffers:
 
-* ** `Closest` :** In deze modus wordt alleen de meest overeenkomende treffer gerapporteerd.
-* ** `Any` :** De voor keur geven aan deze modus wanneer u wilt weten *of* een Ray iets zou kunnen raken, maar niet zeker weet wat er precies is bereikt. Deze query kan aanzienlijk goed koper zijn om te evalueren, maar heeft ook maar weinig toepassingen.
-* ** `All` :** In deze modus worden alle treffers langs de Ray gerapporteerd, gesorteerd op afstand. Gebruik deze modus alleen als u meer nodig hebt dan de eerste treffer. Beperk het aantal gerapporteerde treffers met de `MaxHits` optie.
+* **`Closest` :** In deze modus wordt alleen de meest overeenkomende treffer gerapporteerd.
+* **`Any` :** De voor keur geven aan deze modus wanneer u wilt weten *of* een Ray iets zou kunnen raken, maar niet zeker weet wat er precies is bereikt. Deze query kan aanzienlijk goed koper zijn om te evalueren, maar heeft ook maar weinig toepassingen.
+* **`All` :** In deze modus worden alle treffers langs de Ray gerapporteerd, gesorteerd op afstand. Gebruik deze modus alleen als u meer nodig hebt dan de eerste treffer. Beperk het aantal gerapporteerde treffers met de `MaxHits` optie.
 
 Om te voor komen dat objecten selectief worden uitgesloten van Ray-casts, kan het onderdeel [HierarchicalStateOverrideComponent](override-hierarchical-state.md) worden gebruikt.
 
@@ -107,16 +108,16 @@ Het resultaat van een Ray cast-query is een matrix met treffers. De matrix is le
 
 Een treffer heeft de volgende eigenschappen:
 
-* ** `HitEntity` :** De [entiteit](../../concepts/entities.md) is geraakt.
-* ** `SubPartId` :** Welk *subnet* is bereikt in een [MeshComponent](../../concepts/meshes.md). Kan worden gebruikt voor het indexeren `MeshComponent.UsedMaterials` en opzoeken van het [materiaal](../../concepts/materials.md) op dat moment.
-* ** `HitPosition` :** De positie waar de Ray het object kruist.
-* ** `HitNormal` :** De wereld wijde ruimte van het net op de positie van het snij punt.
-* ** `DistanceToHit` :** De afstand tussen de Ray-begin positie en de treffer.
+* **`HitEntity` :** De [entiteit](../../concepts/entities.md) is geraakt.
+* **`SubPartId` :** Welk *subnet* is bereikt in een [MeshComponent](../../concepts/meshes.md). Kan worden gebruikt voor het indexeren `MeshComponent.UsedMaterials` en opzoeken van het [materiaal](../../concepts/materials.md) op dat moment.
+* **`HitPosition` :** De positie waar de Ray het object kruist.
+* **`HitNormal` :** De wereld wijde ruimte van het net op de positie van het snij punt.
+* **`DistanceToHit` :** De afstand tussen de Ray-begin positie en de treffer.
 
 ## <a name="api-documentation"></a>API-documentatie
 
-* [C# RemoteManager. RayCastQueryAsync ()](/dotnet/api/microsoft.azure.remoterendering.remotemanager.raycastqueryasync)
-* [C++ RemoteManager:: RayCastQueryAsync ()](/cpp/api/remote-rendering/remotemanager#raycastqueryasync)
+* [C# RenderingConnection. RayCastQueryAsync ()](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.raycastqueryasync)
+* [C++ RenderingConnection:: RayCastQueryAsync ()](/cpp/api/remote-rendering/renderingconnection#raycastqueryasync)
 
 ## <a name="next-steps"></a>Volgende stappen
 

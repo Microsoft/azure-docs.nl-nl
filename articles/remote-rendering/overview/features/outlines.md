@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 55151ab965b13a944fee5517a2ca8b4f9eb64bb0
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: c04f2312926d3b6d668dff712eedb57d816c8bf3
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207237"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592004"
 ---
 # <a name="outline-rendering"></a>Contourweergave
 
@@ -23,7 +23,7 @@ Overzichts eigenschappen zijn een globale instelling. Alle objecten die gebruikm
 
 Class `OutlineSettings` bevat de instellingen met betrekking tot algemene overzichts eigenschappen. De volgende leden worden beschikbaar gemaakt:
 
-| Parameter      | Type    | Beschrijving                                             |
+| Parameter      | Type    | Description                                             |
 |----------------|---------|---------------------------------------------------------|
 | `Color`          | Color4Ub | De kleur die wordt gebruikt voor het tekenen van het overzicht. Het gedeelte alpha wordt genegeerd.         |
 | `PulseRateHz`    | float   | De snelheid waarmee de overzichts trillingen per seconde|
@@ -36,9 +36,9 @@ Class `OutlineSettings` bevat de instellingen met betrekking tot algemene overzi
 De volgende code toont een voor beeld van het instellen van overzichts parameters via de API:
 
 ```cs
-void SetOutlineParameters(AzureSession session)
+void SetOutlineParameters(RenderingSession session)
 {
-    OutlineSettings outlineSettings = session.Actions.OutlineSettings;
+    OutlineSettings outlineSettings = session.Connection.OutlineSettings;
     outlineSettings.Color = new Color4Ub(255, 255, 0, 255);
     outlineSettings.PulseRateHz = 2.0f;
     outlineSettings.PulseIntensity = 0.5f;
@@ -46,9 +46,9 @@ void SetOutlineParameters(AzureSession session)
 ```
 
 ```cpp
-void SetOutlineParameters(ApiHandle<AzureSession> session)
+void SetOutlineParameters(ApiHandle<RenderingSession> session)
 {
-    ApiHandle<OutlineSettings> outlineSettings = session->Actions()->GetOutlineSettings();
+    ApiHandle<OutlineSettings> outlineSettings = session->Connection()->GetOutlineSettings();
     Color4Ub outlineColor;
     outlineColor.channels = { 255, 255, 0, 255 };
     outlineSettings->SetColor(outlineColor);
@@ -63,8 +63,8 @@ Het weer geven van overzichten kan een grote invloed hebben op de weergave prest
 
 ## <a name="api-documentation"></a>API-documentatie
 
-* [C# RemoteManager. OutlineSettings eigenschap](/dotnet/api/microsoft.azure.remoterendering.remotemanager.outlinesettings)
-* [C++ RemoteManager:: OutlineSettings ()](/cpp/api/remote-rendering/remotemanager#outlinesettings)
+* [C# RenderingConnection. OutlineSettings eigenschap](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.outlinesettings)
+* [C++ RenderingConnection:: OutlineSettings ()](/cpp/api/remote-rendering/renderingconnection#outlinesettings)
 
 ## <a name="next-steps"></a>Volgende stappen
 

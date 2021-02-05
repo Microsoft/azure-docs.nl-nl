@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/25/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 34a947a2a0f6d8c87c0580f273130b671b4f17fc
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 4990f0d0a10709f2c1c5a17806020cd685f999fc
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722229"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593330"
 ---
 # <a name="troubleshoot"></a>Problemen oplossen
 
@@ -191,9 +191,9 @@ In het C++ NuGet-pakket bevindt zich een bestands `microsoft.azure.remoterenderi
 
 In het geval dat gerenderde objecten samen met de hoofd bewegingen worden verplaatst, kunnen er problemen optreden met de *vertraagde fase* van het project (lsr). Raadpleeg de sectie over [vertraagde fase](../overview/features/late-stage-reprojection.md) ring van het project voor richt lijnen voor het aanpaken van een dergelijke situatie.
 
-Een andere reden voor onstabiele hologrammen (Wobbling, krom trekken, jitteren of springende Holograms) kan een slechte netwerk verbinding zijn, met name onvoldoende netwerk bandbreedte of te hoge latentie. Een goede indicator voor de kwaliteit van uw netwerk verbinding is de waarde voor [prestatie statistieken](../overview/features/performance-queries.md) `ARRServiceStats.VideoFramesReused` . Hergebruikte frames geven situaties aan waarbij een oud video frame moet worden hergebruikt aan de client zijde omdat er geen nieuw video frame beschikbaar was, bijvoorbeeld vanwege pakket verlies of vanwege afwijkingen in de netwerk latentie. Als `ARRServiceStats.VideoFramesReused` het regel matig groter is dan nul, duidt dit op een netwerk probleem.
+Een andere reden voor onstabiele hologrammen (Wobbling, krom trekken, jitteren of springende Holograms) kan een slechte netwerk verbinding zijn, met name onvoldoende netwerk bandbreedte of te hoge latentie. Een goede indicator voor de kwaliteit van uw netwerk verbinding is de waarde voor [prestatie statistieken](../overview/features/performance-queries.md) `ServiceStatistics.VideoFramesReused` . Hergebruikte frames geven situaties aan waarbij een oud video frame moet worden hergebruikt aan de client zijde omdat er geen nieuw video frame beschikbaar was, bijvoorbeeld vanwege pakket verlies of vanwege afwijkingen in de netwerk latentie. Als `ServiceStatistics.VideoFramesReused` het regel matig groter is dan nul, duidt dit op een netwerk probleem.
 
-U kunt ook een andere waarde zoeken in `ARRServiceStats.LatencyPoseToReceiveAvg` . Deze moet consistent zijn onder 100 MS. Als u hogere waarden ziet, kan dit erop wijzen dat u verbonden bent met een Data Center dat te ver weg is.
+U kunt ook een andere waarde zoeken in `ServiceStatistics.LatencyPoseToReceiveAvg` . Deze moet consistent zijn onder 100 MS. Als u hogere waarden ziet, kan dit erop wijzen dat u verbonden bent met een Data Center dat te ver weg is.
 
 Zie de [richt lijnen voor netwerk connectiviteit](../reference/network-requirements.md#guidelines-for-network-connectivity)voor een lijst met mogelijke oplossingen.
 

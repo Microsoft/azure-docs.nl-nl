@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/06/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7d8905fbdcfc03f2683698cca57ab6c066e77863
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: b3348e5a999b507aa0d286528970beb0e03f26cd
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205928"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594369"
 ---
 # <a name="cut-planes"></a>Vlakken knippen
 
@@ -22,12 +22,12 @@ In de onderstaande afbeelding ziet u het effect. Links ziet u de oorspronkelijke
 
 ## <a name="cutplanecomponent"></a>CutPlaneComponent
 
-U voegt een knip vlak aan de scène toe door een *CutPlaneComponent*te maken. De locatie en richting van het vlak worden bepaald door de [entiteit](../../concepts/entities.md)van de eigenaar van het onderdeel.
+U voegt een knip vlak aan de scène toe door een *CutPlaneComponent* te maken. De locatie en richting van het vlak worden bepaald door de [entiteit](../../concepts/entities.md)van de eigenaar van het onderdeel.
 
 ```cs
-void CreateCutPlane(AzureSession session, Entity ownerEntity)
+void CreateCutPlane(RenderingSession session, Entity ownerEntity)
 {
-    CutPlaneComponent cutPlane = (CutPlaneComponent)session.Actions.CreateComponent(ObjectType.CutPlaneComponent, ownerEntity);
+    CutPlaneComponent cutPlane = (CutPlaneComponent)session.Connection.CreateComponent(ObjectType.CutPlaneComponent, ownerEntity);
     cutPlane.Normal = Axis.X; // normal points along the positive x-axis of the owner object's orientation
     cutPlane.FadeColor = new Color4Ub(255, 0, 0, 128); // fade to 50% red
     cutPlane.FadeLength = 0.05f; // gradient width: 5cm
@@ -35,9 +35,9 @@ void CreateCutPlane(AzureSession session, Entity ownerEntity)
 ```
 
 ```cpp
-void CreateCutPlane(ApiHandle<AzureSession> session, ApiHandle<Entity> ownerEntity)
+void CreateCutPlane(ApiHandle<RenderingSession> session, ApiHandle<Entity> ownerEntity)
 {
-    ApiHandle<CutPlaneComponent> cutPlane = session->Actions()->CreateComponent(ObjectType::CutPlaneComponent, ownerEntity)->as<CutPlaneComponent>();;
+    ApiHandle<CutPlaneComponent> cutPlane = session->Connection()->CreateComponent(ObjectType::CutPlaneComponent, ownerEntity)->as<CutPlaneComponent>();;
     cutPlane->SetNormal(Axis::X); // normal points along the positive x-axis of the owner object's orientation
     Color4Ub fadeColor;
     fadeColor.channels = { 255, 0, 0, 128 }; // fade to 50% red
@@ -75,10 +75,10 @@ Voorbeelden:
 
 | Filter masker voor knip vlak | Masker voor geometrie filter  | Resultaat van logische `AND` | Vlak knippen is van invloed op geometrie?  |
 |--------------------|-------------------|-------------------|:----------------------------:|
-| (0000 0001) = = 1   | (0000 0001) = = 1  | (0000 0001) = = 1  | Ja |
-| (1111 0000) = = 240 | (0001 0001) = = 17 | (0001 0000) = = 16 | Ja |
-| (0000 0001) = = 1   | (0000 0010) = = 2  | (0000 0000) = = 0  | Nee |
-| (0000 0011) = = 3   | (0000 1000) = = 8  | (0000 0000) = = 0  | Nee |
+| (0000 0001) = = 1   | (0000 0001) = = 1  | (0000 0001) = = 1  | Yes |
+| (1111 0000) = = 240 | (0001 0001) = = 17 | (0001 0000) = = 16 | Yes |
+| (0000 0001) = = 1   | (0000 0010) = = 2  | (0000 0000) = = 0  | No |
+| (0000 0011) = = 3   | (0000 1000) = = 8  | (0000 0000) = = 0  | No |
 
 >[!TIP]
 > Als u een cut instelt `ObjectFilterMask` op 0, heeft dit geen invloed op een geometrie omdat het resultaat van logische waarde `AND` nooit niet-null mag zijn. In het rendering-systeem worden deze schema's in de eerste plaats niet in overweging gegeven. Dit is dus een lichte methode om afzonderlijke knip abonnementen uit te scha kelen. Deze knip abonnementen tellen ook niet mee op basis van de limiet van 8 actieve abonnementen.

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 627d5b15a861c3d564cb4db33b366d3227092d37
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
-ms.translationtype: HT
+ms.openlocfilehash: 775dc2133473354a1e534275fb0d813f299217d1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296247"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593810"
 ---
 # <a name="tutorial-enable-the-ingress-controller-add-on-preview-for-a-new-aks-cluster-with-a-new-application-gateway-instance"></a>Zelfstudie: De invoegtoepassing voor inkomend verkeer (preview) inschakelen voor een nieuw AKS-cluster met een nieuwe Application Gateway-instantie
 
@@ -80,7 +80,7 @@ Als u een nieuw AKS-cluster implementeert terwijl de AGIC-invoegtoepassing is in
 az aks create -n myCluster -g myResourceGroup --network-plugin azure --enable-managed-identity -a ingress-appgw --appgw-name myApplicationGateway --appgw-subnet-prefix "10.2.0.0/16" --generate-ssh-keys
 ```
 
-Zie [dit referentiemateriaal](/cli/azure/aks?view=azure-cli-latest#az-aks-create) voor meer informatie over het configureren van aanvullende parameters voor de opdracht `az aks create`. 
+Zie [dit referentiemateriaal](/cli/azure/aks#az-aks-create) voor meer informatie over het configureren van aanvullende parameters voor de opdracht `az aks create`. 
 
 > [!NOTE]
 > Het AKS-cluster dat u hebt gemaakt, wordt weergegeven in de resourcegroep *myResourceGroup* die u hebt gemaakt. De automatisch gemaakte Application Gateway-instantie bevindt zich echter in het knooppunt van de resourcegroep, waar zich de agentpools bevinden. De resourcegroep van het knooppunt heet standaard *MC_resource-group-name_cluster-name_location*, maar kan worden gewijzigd. 

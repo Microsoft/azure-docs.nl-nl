@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: b2a15bcc9d9dce922470031fd07b66cf9899f0b3
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
-ms.translationtype: HT
+ms.openlocfilehash: c9b5d525954e7f0742cd13fe4d64a73df64ea854
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92281350"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594464"
 ---
 # <a name="quickstart-convert-a-model-for-rendering"></a>Quickstart: Een model converteren voor rendering
 
@@ -70,7 +70,7 @@ Als u op deze knop klikt, wordt het volgende scherm weergegeven waar u de opslag
 Vul het formulier als volgt in:
 
 * Maak een nieuwe resourcegroep via de koppeling onder de vervolgkeuzelijst en geef deze de naam **ARR_Tutorial**
-* Geef bij **Naam opslagaccount** een unieke naam in. **Deze naam moet wereldwijd uniek zijn** , anders wordt er een bericht weergegeven dat de naam al in gebruik is. In deze quickstart kiezen we de naam **arrtutorialstorage** . U moet deze overal waar hij gebruikt wordt in deze quickstart vervangen door uw eigen naam.
+* Geef bij **Naam opslagaccount** een unieke naam in. **Deze naam moet wereldwijd uniek zijn**, anders wordt er een bericht weergegeven dat de naam al in gebruik is. In deze quickstart kiezen we de naam **arrtutorialstorage**. U moet deze overal waar hij gebruikt wordt in deze quickstart vervangen door uw eigen naam.
 * Selecteer een **locatie** dicht bij u in de buurt. Het is best om dezelfde locatie te kiezen die u heeft gebruikt om de rendering in de andere quickstart in te stellen.
 * **Prestatie** ingesteld op 'Standaard'
 * **Soort account** ingesteld op 'StorageV2 (algemeen gebruik v2)'
@@ -117,7 +117,7 @@ Er is een [op de gebruikersinterface gebaseerd hulpprogramma met de naam ARRT](.
 
 ### <a name="2-conversion-via-a-powershell-script"></a>2. Conversie via een PowerShell-script
 
-We bieden een hulpscript aan om de conversieservice voor assets gemakkelijker aan te roepen. Deze bevindt zich in de map *Scripts* en heet **Conversion.ps1** .
+We bieden een hulpscript aan om de conversieservice voor assets gemakkelijker aan te roepen. Deze bevindt zich in de map *Scripts* en heet **Conversion.ps1**.
 
 Dit script
 
@@ -126,7 +126,7 @@ Dit script
 1. bevraagt de conversiestatus van de API met de verkregen conversie-id tot het conversieproces voltooid of mislukt is
 1. haalt een koppeling naar de geconverteerde asset in de uitvoeropslag op
 
-Het script leest de configuratie uit het bestand *Scripts\arrconfig.json* . Open dit JSON-bestand in een teksteditor.
+Het script leest de configuratie uit het bestand *Scripts\arrconfig.json*. Open dit JSON-bestand in een teksteditor.
 
 ```json
 {
@@ -155,16 +155,16 @@ Het script leest de configuratie uit het bestand *Scripts\arrconfig.json* . Open
 
 De configuratie binnen de groep **accountSettings** (account-id en -sleutel) moet overeenkomen met de referenties in de [quickstart 'Een model weergeven met Unity'](render-model.md).
 
-Zorg ervoor dat u in de groep **assetConversionSettings** **resourceGroup** , **blobInputContainerName** en **blobOutputContainerName** aanpast zoals hierboven te zien is.
+Zorg ervoor dat u in de groep **assetConversionSettings** **resourceGroup**, **blobInputContainerName** en **blobOutputContainerName** aanpast zoals hierboven te zien is.
 De waarde **arrtutorialstorage** moet worden vervangen door de unieke naam die u hebt gekozen toen u het opslagaccount maakte.
 
 Wijzig **localAssetDirectoryPath** zodat deze verwijst naar de map op uw schijf die het model bevat dat u wilt converteren. Zorg ervoor dat u backslashes ('\\') tussen escape-tekens plaatst in het pad met dubbele backslashes ('\\\\').
 
-Alle gegevens van het pad dat is opgegeven in **localAssetDirectoryPath** worden geüpload naar de blobcontainer **blobInputContainerName** onder een subpad opgegeven door **inputFolderPath** . In de bovenstaande voorbeeldconfiguratie wordt de inhoud van de map 'D:\\tmp\\robot' geüpload naar de blobcontainer 'arrinput' van het opslagaccount 'arrtutorialstorage' onder het pad 'robotConversion'. Bestaande bestanden worden overschreven.
+Alle gegevens van het pad dat is opgegeven in **localAssetDirectoryPath** worden geüpload naar de blobcontainer **blobInputContainerName** onder een subpad opgegeven door **inputFolderPath**. In de bovenstaande voorbeeldconfiguratie wordt de inhoud van de map 'D:\\tmp\\robot' geüpload naar de blobcontainer 'arrinput' van het opslagaccount 'arrtutorialstorage' onder het pad 'robotConversion'. Bestaande bestanden worden overschreven.
 
 Verander **inputAssetPath** naar het pad van het model dat omgezet moet worden - het pad is afhankelijk van localAssetDirectoryPath. Gebruik '/' in plaats van '\\' als scheidingsteken. Voor een bestand robot.fbx, dat zich in D:\\tmp\\robot bevindt, gebruikt u robot.fbx.
 
-Zodra het model is omgezet, wordt het teruggeschreven naar de opslagcontainer die is opgegeven door **blobOutputContainerName** . U kunt een subpad opgeven met het optionele **outputFolderPath** . In het bovenstaande voorbeeld wordt het resulterende robot.arrAsset gekopieerd naar de blobcontainer voor uitvoer onder converted/robot.
+Zodra het model is omgezet, wordt het teruggeschreven naar de opslagcontainer die is opgegeven door **blobOutputContainerName**. U kunt een subpad opgeven met het optionele **outputFolderPath**. In het bovenstaande voorbeeld wordt het resulterende robot.arrAsset gekopieerd naar de blobcontainer voor uitvoer onder converted/robot.
 
 De configuratie-instelling **outputAssetFileName** bepaalt de naam van de omgezette asset. De parameter is optioneel en indien hij niet gebruikt wordt, zal de bestandsnaam voor de uitvoer worden afgeleid van de bestandsnaam voor invoer.
 
@@ -188,13 +188,13 @@ Deze lijst ziet er ongeveer zo uit: ![Conversion.ps1](./media/successful-convers
 ### <a name="3-conversion-via-api-calls"></a>3. Conversie via API-aanroepen
 
 Zowel de C# als de C++ API bieden een invoerpunt om te communiceren met de service:
-* [C# AzureFrontend.StartAssetConversionAsync()](/dotnet/api/microsoft.azure.remoterendering.azurefrontend.startassetconversionasync)
-* [C++ AzureFrontend::StartAssetConversionAsync()](/cpp/api/remote-rendering/azurefrontend#startassetconversionasync)
+* [C# RemoteRenderingClient. StartAssetConversionAsync ()](/dotnet/api/microsoft.azure.remoterendering.remoterenderingclient.startassetconversionasync)
+* [C++ RemoteRenderingClient:: StartAssetConversionAsync ()](/cpp/api/remote-rendering/remoterenderingclient#startassetconversionasync)
 
 
 ## <a name="insert-new-model-into-quickstart-sample-app"></a>Nieuw model in Quickstart-voorbeeldapp invoegen
 
-Het conversiescript genereert een *SAS* -URI (Shared Access Signature) voor het omgezette model. U kunt deze URI nu als **Modelnaam** kopiëren naar de quickstart-voorbeeldapp (zie [Quickstart: Een model weergeven met Unity](render-model.md)).
+Het conversiescript genereert een *SAS*-URI (Shared Access Signature) voor het omgezette model. U kunt deze URI nu als **Modelnaam** kopiëren naar de quickstart-voorbeeldapp (zie [Quickstart: Een model weergeven met Unity](render-model.md)).
 
 ![Model vervangen in Unity](./media/replace-model-in-unity.png)
 
@@ -205,8 +205,8 @@ Het conversiescript genereert een *SAS* -URI (Shared Access Signature) voor het 
 De SAS-URI die door het conversiescript is gemaakt, is slechts voor 24 uur geldig. Wanneer het model is verlopen, moet u het echter niet opnieuw converteren. In plaats daarvan kunt u in het portal een nieuwe SAS maken, zoals wordt beschreven in de volgende stappen:
 
 1. Ga naar de [Azure-portal](https://www.portal.azure.com)
-1. Klik op de resource van uw **Opslagaccount** : ![Schermopname waarin de geselecteerde Storage-accountresource is gemarkeerd.](./media/portal-storage-accounts.png)
-1. Klik in het volgende scherm op **Storage Explorer** in het deelvenster links en zoek uw uitvoermodel ( *.arrAsset* -bestand) in de Blob Storage-container *arroutput* . Klik met de rechtermuisknop op het bestand en selecteer **Shared Access Signature ophalen** in het contextmenu: ![Signature Access](./media/portal-storage-explorer.png)
+1. Klik op de resource van uw **Opslagaccount**: ![Schermopname waarin de geselecteerde Storage-accountresource is gemarkeerd.](./media/portal-storage-accounts.png)
+1. Klik in het volgende scherm op **Storage Explorer** in het deelvenster links en zoek uw uitvoermodel ( *.arrAsset*-bestand) in de Blob Storage-container *arroutput*. Klik met de rechtermuisknop op het bestand en selecteer **Shared Access Signature ophalen** in het contextmenu: ![Signature Access](./media/portal-storage-explorer.png)
 1. Er wordt een nieuw scherm geopend waarin u een verloopdatum kunt selecteren. Druk op **Maken** en kopieer de URI die in het volgende dialoogvenster wordt weergegeven. Deze nieuwe URI vervangt de tijdelijke URI die het script heeft gemaakt.
 
 ## <a name="next-steps"></a>Volgende stappen

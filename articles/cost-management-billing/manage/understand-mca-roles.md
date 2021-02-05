@@ -5,14 +5,14 @@ author: amberbhargava
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 02/05/2021
 ms.author: banders
-ms.openlocfilehash: 511c0ecdef45a882bcc3a427d5ec602b3ebabc66
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: 00ac61567502984759c5db9837060c86aaee378d
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673828"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593583"
 ---
 # <a name="understand-microsoft-customer-agreement-administrative-roles-in-azure"></a>Informatie over beheerdersrollen voor Microsoft-klantovereenkomsten in Azure
 
@@ -100,6 +100,8 @@ In de volgende tabellen ziet u welke rol u nodig hebt om taken uit te voeren in 
 |Eigenschappen van factureringsprofiel bijwerken |✔|✔|✘|✘|✘|✘|✘|
 |Beleidsregels weergeven die op het factureringsprofiel zijn toegepast, zoals Azure-reserveringsaankopen inschakelen, Azure Marketplace-aankopen inschakelen, enzovoort|✔|✔|✔|✔|✔|✔|✔|
 |Beleidsregels toepassen op het factureringsprofiel |✔|✔|✘|✘|✘|✘|✘|
+|Reserverings orders beheren |✔|✔|✘|✘|✘|✘|✘|
+|Reserverings orders weer geven |✔|✔|✔|✘|✘|✘|✘|
 
 ### <a name="manage-invoices-for-billing-profile"></a>Facturen beheren voor het factureringsprofiel
 

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/07/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 58c07654c174f5b94512574cb4c279d35897dc71
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 9c5ad4b21b428f38bbd4d9f7d19fa633c5161b5c
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701939"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594177"
 ---
 # <a name="sky-reflections"></a>Luchtreflecties
 
@@ -41,57 +41,41 @@ Zie het hoofd stuk [materialen](../../concepts/materials.md) voor meer informati
 Als u de omgevings kaart wilt wijzigen, hoeft u alleen [een structuur te laden](../../concepts/textures.md) en de sessie te wijzigen `SkyReflectionSettings` :
 
 ```cs
-LoadTextureAsync _skyTextureLoad = null;
-void ChangeEnvironmentMap(AzureSession session)
+async void ChangeEnvironmentMap(RenderingSession session)
 {
-    _skyTextureLoad = session.Actions.LoadTextureFromSASAsync(new LoadTextureFromSASParams("builtin://VeniceSunset", TextureType.CubeMap));
-
-    _skyTextureLoad.Completed += (LoadTextureAsync res) =>
-        {
-            if (res.IsRanToCompletion)
-            {
-                try
-                {
-                    session.Actions.SkyReflectionSettings.SkyReflectionTexture = res.Result;
-                }
-                catch (RRException exception)
-                {
-                    System.Console.WriteLine($"Setting sky reflection failed: {exception.Message}");
-                }
-            }
-            else
-            {
-                System.Console.WriteLine("Texture loading failed!");
-            }
-        };
+    try
+    {
+        Texture skyTex = await session.Connection.LoadTextureFromSasAsync(new LoadTextureFromSasOptions("builtin://VeniceSunset", TextureType.CubeMap));
+        session.Connection.SkyReflectionSettings.SkyReflectionTexture = skyTex;
+    }
+    catch (RRException exception)
+    {
+        System.Console.WriteLine($"Setting sky reflection failed: {exception.Message}");
+    }
 }
 ```
 
 ```cpp
-void ChangeEnvironmentMap(ApiHandle<AzureSession> session)
+void ChangeEnvironmentMap(ApiHandle<RenderingSession> session)
 {
-    LoadTextureFromSASParams params;
+    LoadTextureFromSasOptions params;
     params.TextureType = TextureType::CubeMap;
-    params.TextureUrl = "builtin://VeniceSunset";
-    ApiHandle<LoadTextureAsync> skyTextureLoad = *session->Actions()->LoadTextureFromSASAsync(params);
-
-    skyTextureLoad->Completed([&](ApiHandle<LoadTextureAsync> res)
+    params.TextureUri = "builtin://VeniceSunset";
+    session->Connection()->LoadTextureFromSasAsync(params, [&](Status status, ApiHandle<Texture> res) {
+        if (status == Status::OK)
         {
-            if (res->GetIsRanToCompletion())
-            {
-                ApiHandle<SkyReflectionSettings> settings = session->Actions()->GetSkyReflectionSettings();
-                settings->SetSkyReflectionTexture(res->GetResult());
-            }
-            else
-            {
-                printf("Texture loading failed!\n");
-            }
-        });
+            ApiHandle<SkyReflectionSettings> settings = session->Connection()->GetSkyReflectionSettings();
+            settings->SetSkyReflectionTexture(res);
+        }
+        else
+        {
+            printf("Texture loading failed!\n");
+        }
+    });
 }
-
 ```
 
-Houd er rekening mee dat de `LoadTextureFromSASAsync` Variant wordt gebruikt, omdat een ingebouwd bitmappatroon wordt geladen. Gebruik de variant in het geval van het laden vanuit [gekoppelde Blob-opslag](../../how-tos/create-an-account.md#link-storage-accounts) `LoadTextureAsync` .
+Houd er rekening mee dat de `LoadTextureFromSasAsync` Variant wordt gebruikt, omdat een ingebouwd bitmappatroon wordt geladen. Gebruik de variant in het geval van het laden vanuit [gekoppelde Blob-opslag](../../how-tos/create-an-account.md#link-storage-accounts) `LoadTextureAsync` .
 
 ## <a name="sky-texture-types"></a>Lucht patroon typen
 
@@ -105,7 +89,7 @@ Ter referentie is dit een niet-verpakte cubemap:
 
 ![Een onverpakte cubemap](media/Cubemap-example.png)
 
-Gebruiken `AzureSession.Actions.LoadTextureAsync` /  `LoadTextureFromSASAsync` met `TextureType.CubeMap` voor het laden van cubemap-structuren.
+Gebruiken `RenderingSession.Connection.LoadTextureAsync` /  `LoadTextureFromSasAsync` met `TextureType.CubeMap` voor het laden van cubemap-structuren.
 
 ### <a name="sphere-environment-maps"></a>Sphere-omgevings kaarten
 
@@ -113,13 +97,13 @@ Wanneer u een 2D-bitmappatroon als een omgevings kaart gebruikt, moet de afbeeld
 
 ![Een lucht afbeelding in bolvormige coördinaten](media/spheremap-example.png)
 
-Gebruik `AzureSession.Actions.LoadTextureAsync` met `TextureType.Texture2D` om bolvormige-omgevings kaarten te laden.
+Gebruik `RenderingSession.Connection.LoadTextureAsync` met `TextureType.Texture2D` om bolvormige-omgevings kaarten te laden.
 
 ## <a name="built-in-environment-maps"></a>Ingebouwde omgevings kaarten
 
 Externe rendering van Azure biedt een aantal ingebouwde omgevings kaarten die altijd beschikbaar zijn. Alle ingebouwde omgevings kaarten zijn cubemaps.
 
-|Id                         | Beschrijving                                              | Zien                                                      |
+|Id                         | Description                                              | Zien                                                      |
 |-----------------------------------|:---------------------------------------------------------|:-----------------------------------------------------------------:|
 |builtin://Autoshop                 | Diverse Stripe-lampen, heldere basis verlichting    | ![Skybox gebruikt voor het licht van een object](media/autoshop.png)
 |builtin://BoilerRoom               | Lichte instelling voor licht binnenshuis, meerdere venster verlichting      | ![BoilerRoom Skybox gebruikt voor het licht van een object](media/boiler-room.png)
@@ -138,8 +122,8 @@ Externe rendering van Azure biedt een aantal ingebouwde omgevings kaarten die al
 
 ## <a name="api-documentation"></a>API-documentatie
 
-* [C# RemoteManager. SkyReflectionSettings eigenschap](/dotnet/api/microsoft.azure.remoterendering.remotemanager.skyreflectionsettings)
-* [C++ RemoteManager:: SkyReflectionSettings ()](/cpp/api/remote-rendering/remotemanager#skyreflectionsettings)
+* [C# RenderingConnection. SkyReflectionSettings eigenschap](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.skyreflectionsettings)
+* [C++ RenderingConnection:: SkyReflectionSettings ()](/cpp/api/remote-rendering/renderingconnection#skyreflectionsettings)
 
 ## <a name="next-steps"></a>Volgende stappen
 

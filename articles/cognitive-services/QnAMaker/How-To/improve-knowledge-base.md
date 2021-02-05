@@ -6,12 +6,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 3f2e8fef35095a007051999d806f2942089ae19a
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 7c477655dfb24eebab9a2669697d9ef610088198
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584737"
+ms.locfileid: "99592021"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Voorgestelde vragen over actieve trainingen in de Knowledge Base accepteren
 
@@ -81,17 +81,17 @@ Een bot of andere client toepassing moet de volgende architectuur stroom gebruik
 
 * Bot [haalt het antwoord op uit de Knowledge Base](#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers) met de GENERATEANSWER-API met behulp van de `top` eigenschap om een aantal antwoorden op te halen.
 
-#### <a name="use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers"></a>Gebruik de eigenschap Top in de GenerateAnswer-aanvraag om verschillende overeenkomende antwoorden te verkrijgen
+    #### <a name="use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers"></a>Gebruik de eigenschap Top in de GenerateAnswer-aanvraag om verschillende overeenkomende antwoorden te verkrijgen
 
-Bij het indienen van een vraag om QnA Maker voor een antwoord, `top` stelt de eigenschap van de JSON-hoofd tekst het aantal antwoorden in dat moet worden geretourneerd.
+    Bij het indienen van een vraag om QnA Maker voor een antwoord, `top` stelt de eigenschap van de JSON-hoofd tekst het aantal antwoorden in dat moet worden geretourneerd.
 
-```json
-{
-    "question": "wi-fi",
-    "isTest": false,
-    "top": 3
-}
-```
+    ```json
+    {
+        "question": "wi-fi",
+        "isTest": false,
+        "top": 3
+    }
+    ```
 
 * Bot bepaalt expliciete feedback:
     * Met uw eigen [aangepaste bedrijfs logica](#use-the-score-property-along-with-business-logic-to-get-list-of-answers-to-show-user)filtert u de lage scores.

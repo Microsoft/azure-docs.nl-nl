@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/14/2020
+ms.date: 02/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Mini R so I can use it to transfer data to Azure.
-ms.openlocfilehash: 915aca5f7400496aacb3c3cf248120dff39d747c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 1cca747003a127371db7d110500e2b4168f10219
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464260"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594448"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-mini-r"></a>Zelfstudie: Netwerk configureren voor Azure Stack Edge Mini R
 
@@ -108,7 +108,7 @@ Volg deze stappen voor het configureren van het netwerk voor uw apparaat.
 
     ![Netwerkinstellingen van poort 4 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-4.png)
 
-6. Selecteer het Wi-Fi-profiel dat u in de vorige stap hebt toegevoegd en selecteer **Toepassen**. 
+6. Selecteer het Wi-Fi profiel dat u in de vorige stap hebt toegevoegd en selecteer **Toep assen**. 
 
     ![Netwerkinstellingen van poort 5 van lokale webinterface](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-5.png)
 
@@ -126,6 +126,7 @@ Volg deze stappen voor het configureren van het netwerk voor uw apparaat.
    - Als DHCP is ingeschakeld in uw omgeving, worden netwerkinterfaces automatisch geconfigureerd. Er wordt automatisch een IP-adres, subnet, gateway en DNS toegewezen.
    - Als DHCP niet is ingeschakeld, kunt u indien nodig statische IP-adressen toewijzen.
    - U kunt uw netwerkinterface configureren als IPv4.
+   - Netwerk interface kaart (NIC) samen voeging of koppelings aggregatie wordt niet ondersteund met Azure Stack Edge.
    - Het serienummer van een poort komt overeen met het serienummer van het knooppunt. Voor een apparaat uit de K-serie wordt slechts één serienummer weergegeven.
 
      >[!NOTE] 
@@ -152,7 +153,7 @@ Voer de volgende stappen uit om het rekenproces in te schakelen en het rekennetw
     > Kubernetes on Azure Stack Edge maakt gebruik van subnet 172.27.0.0/16 voor pods en subnet 172.28.0.0/16 voor services. Controleer of deze nog niet worden gebruikt in uw netwerk. Als deze subnetten al worden gebruikt in uw netwerk, kunt u deze subnetten wijzigen door de `Set-HcsKubeClusterNetworkInfo`-cmdlet uit te voeren vanuit de PowerShell-interface van het apparaat. Zie [Subnetten voor Kubernetes-pods en -services wijzigen](azure-stack-edge-gpu-connect-powershell-interface.md#change-kubernetes-pod-and-service-subnets) voor meer informatie.
 
 
-1. Wijs **externe IP-adressen voor Kubernetes-services** toe. Dit zijn ook de IP-adressen voor de taakverdeling. Deze aansluitende IP-adressen zijn voor services die u buiten het Kubernetes-cluster zichtbaar wilt maken. U geeft het statische IP-bereik op, afhankelijk van het aantal weergegeven services. 
+1. Wijs **externe IP-adressen voor Kubernetes-services** toe. Dit zijn ook de IP-adressen met taak verdeling. Deze aaneengesloten IP-adressen zijn voor services die u buiten het Kubernetes-cluster zichtbaar wilt maken en u geeft het statische IP-bereik op, afhankelijk van het aantal weer gegeven Services. 
     
     > [!IMPORTANT]
     > U wordt ten sterkste aangeraden minimaal 1 IP-adres voor de Azure Stack Edge Mini R Hub-service op te geven om toegang te krijgen tot de rekenmodules. U kunt desgewenst extra IP-adressen opgeven voor andere services/IoT Edge-modules (één per service/module). Deze moeten toegankelijk zijn van buiten het cluster. De IP-adressen van de service kunnen later worden bijgewerkt. 

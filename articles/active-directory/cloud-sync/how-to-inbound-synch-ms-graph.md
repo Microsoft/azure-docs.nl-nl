@@ -1,5 +1,5 @@
 ---
-title: Inkomende synchronisatie voor Cloud synchronisatie met behulp van MS Graph API
+title: Cloud synchronisatie programmatisch configureren met behulp van MS Graph API
 description: In dit onderwerp wordt beschreven hoe u binnenkomende synchronisatie inschakelt met alleen de Graph API
 services: active-directory
 author: billmath
@@ -11,14 +11,14 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3796b3d86f647e38cf2ff018e8c0c903d9a64e41
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6c84636ea86b3b640aef365c1c5d8e634b9a1f48
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98682035"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593157"
 ---
-# <a name="inbound-synchronization-for-cloud-sync-using-ms-graph-api"></a>Inkomende synchronisatie voor Cloud synchronisatie met behulp van MS Graph API
+# <a name="how-to-programmatically-configure-cloud-sync-using-ms-graph-api"></a>Cloud synchronisatie programmatisch configureren met behulp van MS Graph API
 
 In het volgende document wordt beschreven hoe u een volledig nieuw synchronisatie profiel repliceert met alleen MSGraph-Api's.  
 De structuur van dit proces bestaat uit de volgende stappen.  Dit zijn:
@@ -28,6 +28,7 @@ De structuur van dit proces bestaat uit de volgende stappen.  Dit zijn:
 - [Synchronisatie taak maken](#create-sync-job)
 - [Beoogd domein bijwerken](#update-targeted-domain)
 - [Synchronisatie van wacht woord-hashes inschakelen](#enable-sync-password-hashes-on-configuration-blade)
+- [Onbedoeld verwijderen](#accidental-deletes)
 - [Synchronisatie taak starten](#start-sync-job)
 - [Beoordelings status](#review-status)
 
@@ -211,6 +212,71 @@ Hier is de gemarkeerde ' domein ' waarde de naam van het on-premises Active Dire
 
  Voeg het schema toe aan de hoofd tekst van de aanvraag. 
 
+## <a name="accidental-deletes"></a>Onbedoeld verwijderen
+In deze sectie wordt beschreven hoe u [per ongeluk onopzettelijke verwijderingen](how-to-accidental-deletes.md) kunt in-of uitschakelen en de software kunt gebruiken.
+
+
+### <a name="enabling-and-setting-the-threshold"></a>De drempel waarde inschakelen en instellen
+Er zijn twee instellingen per taak die u kunt gebruiken:
+
+ - DeleteThresholdEnabled: Hiermee wordt onopzettelijke Verwijder preventie voor de taak ingeschakeld wanneer deze is ingesteld op ' True '. Standaard ingesteld op waar.
+ - DeleteThresholdValue: Hiermee definieert u het maximum aantal verwijderingen dat is toegestaan in elke uitvoering van de taak wanneer het onbedoeld verwijderen van een ongeluk is ingeschakeld. De waarde wordt standaard ingesteld op 500.  Als de waarde is ingesteld op 500, is het Maxi maal toegestane aantal verwijderingen voor elke uitvoering 499.
+
+De instellingen voor drempel waarde verwijderen maken deel uit van de `SyncNotificationSettings` en kunnen worden gewijzigd via Graph. 
+
+We moeten de SyncNotificationSettings bijwerken deze configuratie is gericht, dus werk de geheimen bij.
+
+ ```
+ PUT – https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/secrets
+ ```
+
+ Voeg het volgende sleutel/waarde-paar toe in de onderstaande matrix waarde, op basis van wat u probeert te doen:
+
+```
+ Request body -
+ {
+   "value":[
+             {
+               "key":"SyncNotificationSettings",
+               "value": "{\"Enabled\":true,\"Recipients\":\"foobar@xyz.com\",\"DeleteThresholdEnabled\":true,\"DeleteThresholdValue\":50}"
+              }
+            ]
+  }
+
+
+```
+
+De instelling ' ingeschakeld ' in bovenstaand voor beeld is voor het in-en uitschakelen van e-mail meldingen wanneer de taak in quarantaine is geplaatst.
+
+
+Op dit moment bieden we geen ondersteuning voor PATCH aanvragen voor geheimen. Daarom moet u alle waarden toevoegen in de hoofd tekst van de PUT-aanvraag (zoals in het bovenstaande voor beeld) om de andere waarden te behouden.
+
+De bestaande waarden voor alle geheimen kunnen worden opgehaald met behulp van 
+
+```
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/secrets 
+```
+
+### <a name="allowing-deletes"></a>Verwijderingen toestaan
+Als u wilt dat de verwijderingen door lopen nadat de taak in quarantaine is geplaatst, moet u een herstart met alleen ' ForceDeletes ' als het bereik. 
+
+```
+Request:
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/restart
+```
+
+```
+Request Body:
+{
+  "criteria": {"resetScope": "ForceDeletes"}
+}
+```
+
+
+
+
+
+
 ## <a name="start-sync-job"></a>Synchronisatie taak starten
 De taak kan opnieuw worden opgehaald via de volgende opdracht:
 
@@ -252,6 +318,6 @@ Zoek in de sectie ' status ' van het object Return naar relevante Details
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Wat is Azure AD Connect--cloudsynchronisatie?](what-is-cloud-sync.md)
 - [Transformaties](how-to-transformation.md)
 - [Azure AD-synchronisatie-API](/graph/api/resources/synchronization-overview?view=graph-rest-beta)

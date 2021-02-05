@@ -9,14 +9,14 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 9fe5cb13ee352b2c49ab6ae57cabd6116cdfa720
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 410f8ab4de0d93262647cbc07e0792cd39f7a844
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91667670"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593634"
 ---
-# <a name="call-flows"></a>Oproepstromen
+# <a name="call-flows"></a>Aanroepstromen
 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
@@ -44,13 +44,13 @@ Als twee apparaten zich in subnetten bevinden die elkaar niet kunnen bereiken (w
 
 Voor Alice is dat de NAT van de koffiebar en voor Bob de NAT van zijn thuiskantoor. Het apparaat van Alice verzendt het externe adres van haar NAT en Bob doet hetzelfde. De clientbibliotheken komen de externe adressen te weten via een STUN-service (Session Traversal Utilities for NAT) die Azua gratis aanbiedt. De logica die de handshake tussen Alice en Bob verwerkt, is aanwezig in door Azure Communication Services voorziene clientbibliotheken. (U hebt geen aanvullende configuratie nodig)
 
-:::image type="content" source="./media/call-flows/about-voice-case-2.png" alt-text="Diagram van een rechtstreekse VOIP-oproep tussen gebruikers en Communication Services.":::
+:::image type="content" source="./media/call-flows/about-voice-case-2.png" alt-text="Diagram met een VOIP-oproep die een STUN-verbinding gebruikt.":::
 
 ### <a name="case-3-voip-where-neither-a-direct-nor-nat-connection-is-possible"></a>Voorbeeld 3: VoIP waarbij geen rechtstreekse of NAT-verbinding mogelijk is
 
 Als een of beide clientapparaten zich achter een symmetrische NAT bevinden, is een afzonderlijke cloudservice vereist om de media door te sturen tussen twee clientbibliotheken. Deze service heet TURN (Traversal Using Relays around NAT) en wordt ook door de Communication Services voorzien. De Communication Services-clientbibliotheek gebruikt automatisch TURN-services op basis van de gedetecteerde netwerkomstandigheden. Het gebruik van de TURN-service van Microsoft wordt afzonderlijk in rekening gebracht.
 
-:::image type="content" source="./media/call-flows/about-voice-case-3.png" alt-text="Diagram van een rechtstreekse VOIP-oproep tussen gebruikers en Communication Services.":::
+:::image type="content" source="./media/call-flows/about-voice-case-3.png" alt-text="Diagram met een VOIP-oproep die een TURN-verbinding gebruikt.":::
  
 ### <a name="case-4-group-calls-with-pstn"></a>Voorbeeld 4: Groepsoproepen met PSTN
 
@@ -58,7 +58,7 @@ Zowel signalering als media voor PSTN-oproepen gebruiken de telefonieresource va
 
 PSTN-mediaverkeer loopt via een onderdeel dat de mediaprocessor wordt genoemd.
 
-:::image type="content" source="./media/call-flows/about-voice-pstn.png" alt-text="Diagram van een rechtstreekse VOIP-oproep tussen gebruikers en Communication Services.":::
+:::image type="content" source="./media/call-flows/about-voice-pstn.png" alt-text="Diagram waarop een PSTN-groepsgesprek met Communication Services wordt weergegeven.":::
 
 > [!NOTE]
 > Voor degenen die vertrouwd zijn met mediaverwerking, onze mediaprocessor ook een back-to-back gebruikersagent, zoals gedefinieerd in [RFC 3261 SIP: Session Initation Protocol](https://tools.ietf.org/html/rfc3261), wat betekent dat het codecs kan vertalen bij de verwerking van oproepen tussen Microsoft en netwerken van providers. De signaleringscontroller van Azure Communication Services is de implementatie van een SIP-proxy door Microsoft volgens dezelfde RFC.
@@ -70,11 +70,11 @@ Het standaard real-time protocol (RTP) voor groepsgesprekken is UDP (User Datagr
 > [!NOTE]
 > De mediaprocessor kan dienen als Multipoint Control Unit (MCU) of een Selective Forwarding Unit (SFU)
 
-:::image type="content" source="./media/call-flows/about-voice-group-calls.png" alt-text="Diagram van een rechtstreekse VOIP-oproep tussen gebruikers en Communication Services.":::
+:::image type="content" source="./media/call-flows/about-voice-group-calls.png" alt-text="Diagram waarop de UDP-mediaprocesstroom binnen Communication Services wordt weergegeven.":::
 
 Als de clientbibliotheek geen UDP voor media kan gebruiken vanwege beperkingen opgelegd door de firewall, wordt er geprobeerd om het Transmission Control Protocol (TCP) te gebruiken. Houd er rekening mee dat de mediaprocessor UDP nodig heeft. Wanneer dit gebeurt, wordt de TURN-service van Communication Services toegevoegd aan het groepsgesprek om TCP naar UDP te vertalen. In dit geval worden er kosten in rekening gebracht voor TURN, tenzij TURN-mogelijkheden handmatig zijn uitgeschakeld.
 
-:::image type="content" source="./media/call-flows/about-voice-group-calls-2.png" alt-text="Diagram van een rechtstreekse VOIP-oproep tussen gebruikers en Communication Services.":::
+:::image type="content" source="./media/call-flows/about-voice-group-calls-2.png" alt-text="Diagram waarop de TCP-mediaprocesstroom binnen Communication Services wordt weergegeven.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

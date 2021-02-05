@@ -5,12 +5,12 @@ ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
 ms.date: 07/06/2020
 ms.custom: devx-track-dotnet, mvc, seodec18
-ms.openlocfilehash: d59dfe5b0fe3268dcda20fbc83aa31bba8a8713b
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 0bfacc4169de6b30272229283e9aef9a9d69fad5
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936206"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592327"
 ---
 # <a name="app-service-overview"></a>Overzicht van App Service
 
@@ -44,19 +44,19 @@ App Service kan web-apps ook systeemeigen hosten op Linux voor ondersteunde toep
 
 ### <a name="built-in-languages-and-frameworks"></a>Ingebouwde talen en frameworks
 
-App Service op Linux ondersteunt een aantal taalspecifieke ingebouwde afbeeldingen. Implementeer gewoon uw code. Enkele ondersteunde talen: Node.js, Java (JRE 8 & JRE 11), PHP, Python, .NET Core en Ruby. Voer [`az webapp list-runtimes --linux`](/cli/azure/webapp#az-webapp-list-runtimes) uit om de nieuwste talen en ondersteunde versies te zien. Als de runtime die uw toepassing nodig heeft, niet wordt ondersteund in de ingebouwde afbeeldingen, kunt u deze implementeren met een aangepaste container.
+App Service op Linux ondersteunt een aantal taalspecifieke ingebouwde afbeeldingen. Implementeer gewoon uw code. Ondersteunde talen zijn: Node.js, java (JRE 8 & JRE 11), PHP, Python, .NET core en Ruby. Voer [`az webapp list-runtimes --linux`](/cli/azure/webapp#az-webapp-list-runtimes) uit om de nieuwste talen en ondersteunde versies te zien. Als de runtime die uw toepassing nodig heeft, niet wordt ondersteund in de ingebouwde afbeeldingen, kunt u deze implementeren met een aangepaste container.
 
 Verouderde runtimes worden regelmatig verwijderd van de blades Web-apps maken en Configuratie in de portal. Deze runtimes zijn verborgen in de portal wanneer ze zijn afgeschaft via de organisatie die ze onderhoudt, of wanneer ze beveiligingsproblemen bevatten. Deze opties zijn verborgen om klanten naar de meest recente runtimes te leiden, waarmee ze het meest succes behalen. 
 
 Wanneer een verouderde runtime is verborgen in de portal, blijven al uw eventuele bestaande sites die deze versie gebruiken, actief. Als een runtime volledig is verwijderd van het App Service-platform, ontvangen alle eigenaren van uw Azure-abonnement een vóór de verwijdering e-mailmelding.
 
-Als u nog een web-app wilt maken met een verouderde runtimeversie die niet meer wordt weergegeven in de portal, raadpleegt u de handleidingen voor taalconfiguratie, voor instructies over het ophalen van de runtimeversie voor uw site. U kunt Azure CLI gebruiken om nog een site te maken met dezelfde runtime. U kunt ook de knop **Sjabloon exporteren** gebruiken op de blade Web-app in de portal om een ARM-sjabloon van de site te exporteren. U kunt deze sjabloon opnieuw gebruiken om een nieuwe site te implementeren met dezelfde runtime en configuratie.
+Als u nog een web-app wilt maken met een verouderde runtimeversie die niet meer wordt weergegeven in de portal, raadpleegt u de handleidingen voor taalconfiguratie, voor instructies over het ophalen van de runtimeversie voor uw site. U kunt Azure CLI gebruiken om nog een site te maken met dezelfde runtime. U kunt ook de knop **Sjabloon exporteren** gebruiken op de blade Web-app in de portal om een ARM-sjabloon van de site te exporteren. U kunt deze sjabloon gebruiken voor het implementeren van een nieuwe site met dezelfde runtime en configuratie.
 
 ### <a name="limitations"></a>Beperkingen
 
 - App Service op Linux wordt niet ondersteund in de prijscategorie [Gedeeld](https://azure.microsoft.com/pricing/details/app-service/plans/). 
 - Het is niet mogelijk om zowel Windows- als Linux-apps in hetzelfde App Service-plan te combineren.  
-- Binnen dezelfde resourcegroep is het niet mogelijk om zowel Windows- als Linux-apps in dezelfde regio te combineren.
+- In het verleden kunt u Windows-en Linux-apps niet in dezelfde resource groep combi neren. Alle resource groepen die zijn gemaakt op of na 21 januari 2021 bieden echter ondersteuning voor dit scenario. Voor resource groepen die zijn gemaakt vóór 21 januari 2021, is de mogelijkheid om gemengde platform implementaties toe te voegen in azure-regio's (inclusief nationale Cloud regio's) binnenkort.
 - In de Azure-portal worden alleen functies weergegeven die momenteel werken voor Linux-apps. Terwijl functies worden ingeschakeld, worden ze geactiveerd in de portal.
 - Wanneer uw code en inhoud worden geïmplementeerd in ingebouwde afbeeldingen, krijgen ze een opslagvolume voor webinhoud toegewezen, ondersteund door Azure Storage. De schijflatentie van dit volume is hoger en variabeler dan de latentie van het containerbestandssysteem. Apps waarvoor intensieve alleen-lezen toegang tot inhoudsbestanden nodig is, profiteren mogelijk van de aangepaste-containeroptie, die bestanden in het containerbestandssysteem zet in plaats van op het inhoudsvolume.
 

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 05/28/2020
 ms.topic: reference
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b37aabb39e19fa5ec53d2b006a7cbc1793adad72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e2687954fb05ce826e780ae0dbd3931d899885f
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90988038"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594397"
 ---
 # <a name="server-sizes"></a>Servergrootten
 
@@ -30,26 +30,35 @@ Wanneer de renderer op een ' standaard ' server grootte op deze beperking van to
 Het gewenste type server configuratie moet worden opgegeven bij het weer geven van de initialisatie tijd van de sessie. Het kan niet worden gewijzigd in een actieve sessie. De volgende code voorbeelden tonen de plaats waar de server grootte moet worden opgegeven:
 
 ```cs
-async void CreateRenderingSession(AzureFrontend frontend)
+async void CreateRenderingSession(RemoteRenderingClient client)
 {
-    RenderingSessionCreationParams sessionCreationParams = new RenderingSessionCreationParams();
-    sessionCreationParams.Size = RenderingSessionVmSize.Standard; // or  RenderingSessionVmSize.Premium
+    RenderingSessionCreationOptions sessionCreationOptions = default;
+    sessionCreationOptions.Size = RenderingSessionVmSize.Standard; // or  RenderingSessionVmSize.Premium
 
-    AzureSession session = await frontend.CreateNewRenderingSessionAsync(sessionCreationParams).AsTask();
+    CreateRenderingSessionResult result = await client.CreateNewRenderingSessionAsync(sessionCreationOptions);
+    if (result.ErrorCode == Result.Success)
+    {
+        RenderingSession session = result.Session;
+        // do something with the session
+    }
 }
 ```
 
 ```cpp
-void CreateRenderingSession(ApiHandle<AzureFrontend> frontend)
+void CreateRenderingSession(ApiHandle<RemoteRenderingClient> client)
 {
-    RenderingSessionCreationParams sessionCreationParams;
-    sessionCreationParams.Size = RenderingSessionVmSize::Standard; // or  RenderingSessionVmSize::Premium
+    RenderingSessionCreationOptions sessionCreationOptions;
+    sessionCreationOptions.Size = RenderingSessionVmSize::Standard; // or  RenderingSessionVmSize::Premium
 
-    if (auto createSessionAsync = frontend->CreateNewRenderingSessionAsync(sessionCreationParams))
-    {
-        // ...
-    }
+    client->CreateNewRenderingSessionAsync(sessionCreationOptions, [](Status status, ApiHandle<CreateRenderingSessionResult> result) {
+        if (status == Status::OK && result->GetErrorCode() == Result::Success)
+        {
+            ApiHandle<RenderingSession> session = result->GetSession();
+            // do something with the session
+        }
+    });
 }
+
 ```
 
 Voor het [Power shell-voorbeeld script](../samples/powershell-example-scripts.md)moet de gewenste server grootte worden opgegeven in het `arrconfig.json` bestand:
@@ -76,8 +85,8 @@ Daarom is het mogelijk om een toepassing te schrijven die de `standard` grootte 
 ### <a name="how-to-determine-the-number-of-polygons"></a>Het aantal veelhoeken bepalen
 
 Er zijn twee manieren om het aantal veelhoeken van een model of scène te bepalen die bijdragen aan de budget limiet van de `standard` configuratie grootte:
-* Haal het JSON-bestand van de [conversie uitvoer](../how-tos/conversion/get-information.md)op in de sectie model conversie en controleer de `numFaces` vermelding in de [ *inputStatistics* ](../how-tos/conversion/get-information.md#the-inputstatistics-section)
-* Als uw toepassing een dynamische inhoud behandelt, kan het aantal gerenderde veelhoeken dynamisch worden opgevraagd tijdens runtime. Gebruik een [query voor prestatie analyse](../overview/features/performance-queries.md#performance-assessment-queries) en controleer het `polygonsRendered` lid in de `FrameStatistics` struct. Het `polygonsRendered` veld wordt ingesteld op `bad` wanneer de renderer de grens van de veelhoek opraakt. De achtergrond van het dambord is altijd vervaagd met enige vertraging om ervoor te zorgen dat de gebruikers actie kan worden uitgevoerd na deze asynchrone query. Gebruikers actie kan bijvoorbeeld model instanties verbergen of verwijderen.
+* Haal het JSON-bestand van de [conversie uitvoer](../how-tos/conversion/get-information.md)op in de sectie model conversie en controleer de `numFaces` vermelding in de [ *inputStatistics*](../how-tos/conversion/get-information.md#the-inputstatistics-section)
+* Als uw toepassing een dynamische inhoud behandelt, kan het aantal gerenderde veelhoeken dynamisch worden opgevraagd tijdens runtime. Gebruik een [query voor prestatie analyse](../overview/features/performance-queries.md#performance-assessment-queries) en controleer het `polygonsRendered` lid in de `FrameStatistics` struct. Het `PolygonsRendered` veld wordt ingesteld op `bad` wanneer de renderer de grens van de veelhoek opraakt. De achtergrond van het dambord is altijd vervaagd met enige vertraging om ervoor te zorgen dat de gebruikers actie kan worden uitgevoerd na deze asynchrone query. Gebruikers actie kan bijvoorbeeld model instanties verbergen of verwijderen.
 
 ## <a name="pricing"></a>Prijzen
 

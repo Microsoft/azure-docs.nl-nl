@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/28/2020
 ms.topic: how-to
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 662c28196b06f5fbe49f69cb7145fdd33805e000
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15822c357db63db81e6c1efda2467279a98d7c34
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019042"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594143"
 ---
 # <a name="interact-with-unity-game-objects-and-components"></a>Interactie met Unity-gameobjecten en -onderdelen
 
@@ -25,42 +25,21 @@ De eenheids integratie van Azure remote rendering wordt daarom geleverd met extr
 
 Wanneer u een model laadt, krijgt u een verwijzing naar het hoofd object van het geladen model. Deze verwijzing is geen unit-Game object, maar u kunt dit omzetten in een-bestand met behulp van de uitbreidings methode `Entity.GetOrCreateGameObject()` . Deze functie verwacht een argument van het type `UnityCreationMode` . Als u passeert `CreateUnityComponents` , wordt het nieuw gemaakte object Unity Game ook gevuld met proxy onderdelen voor alle onderdelen voor externe rendering die op de host bestaan. We raden u echter aan om `DoNotCreateUnityComponents` de overhead zo min mogelijk te houden.
 
-### <a name="load-model-with-task"></a>Model laden met taak
-
-```cs
-LoadModelAsync _pendingLoadTask = null;
-void LoadModelWithTask()
-{
-    _pendingLoadTask = RemoteManagerUnity.CurrentSession.Actions.LoadModelFromSASAsync(new LoadModelFromSASParams("builtin://Engine"));
-
-    _pendingLoadTask.Completed += (LoadModelAsync res) =>
-    {
-        // turn the root object into a Unity game object
-        var gameObject = res.Result.Root?.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);
-        _pendingLoadTask = null;
-    };
-
-    // also listen to progress updates:
-    _pendingLoadTask.ProgressUpdated += (float progress) =>
-    {
-        // progress is a fraction in [0..1] range
-        int percentage = (int)(progress * 100.0f);
-        // do something...
-        // Since the updates are triggered by the main thread, we may access unity objects here.
-    };
-}
-```
-
 ### <a name="load-model-with-unity-coroutines"></a>Model laden met Unit-routines
 
 ```cs
-IEnumerator LoadModelWithCoroutine()
+IEnumerator LoadModelWithCoroutine(RenderingSession session)
 {
-    LoadModelAsync task = RemoteManagerUnity.CurrentSession.Actions.LoadModelFromSASAsync(new LoadModelFromSASParams("builtin://Engine"));
+    float currentProgress = 0.0f;
+    var task = session.Connection.LoadModelFromSasAsync(new LoadModelFromSasOptions("builtin://Engine"),
+        (float progress) =>
+        {
+            currentProgress = progress;
+        });
 
-    while (!task.IsCompleted)
+    while (!task.IsCompleted && !task.IsFaulted)
     {
-        int percentage = (int)(task.Progress * 100.0f);
+        int percentage = (int)(currentProgress * 100.0f);
         yield return null;
     }
 
@@ -68,22 +47,20 @@ IEnumerator LoadModelWithCoroutine()
     {
         var gameObject = task.Result.Root?.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);
     }
-
-    task = null;
 }
 ```
 
 ### <a name="load-model-with-await-pattern"></a>Model laden met wachtend patroon
 
 ```cs
-async void LoadModelWithAwait()
+async void LoadModelWithAwait(RenderingSession session)
 {
-    var result = await RemoteManagerUnity.CurrentSession.Actions.LoadModelFromSASAsync(new LoadModelFromSASParams("builtin://Engine")).AsTask();
+    var result = await session.Connection.LoadModelFromSasAsync(new LoadModelFromSasOptions("builtin://Engine"), null);
     var gameObject = result.Root?.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);
 }
 ```
 
-De bovenstaande code voorbeelden hebben het laad traject voor het model via SAS gebruikt, omdat het ingebouwde model is geladen. Het model wordt met behulp van de BLOB-containers (met `LoadModelAsync` en `LoadModelParams` ) volledig vergelijkbaar.
+De bovenstaande code voorbeelden hebben het laad traject voor het model via SAS gebruikt, omdat het ingebouwde model is geladen. Het model wordt met behulp van de BLOB-containers (met `LoadModelAsync` en `LoadModelOptions` ) volledig vergelijkbaar.
 
 ## <a name="remoteentitysyncobject"></a>RemoteEntitySyncObject
 

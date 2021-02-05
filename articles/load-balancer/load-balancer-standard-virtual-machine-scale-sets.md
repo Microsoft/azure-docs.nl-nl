@@ -1,7 +1,7 @@
 ---
-title: Azure Standard Load Balancer en virtuele-machineschaalsets
-titleSuffix: Azure Standard Load Balancer and Virtual Machine Scale Sets
-description: Met dit leer traject kunt u aan de slag met Azure Standard Load Balancer en Virtual Machine Scale Sets.
+title: Regels toevoegen voor Azure Standard Load Balancer-en virtuele-machine schaal sets
+titleSuffix: Add rules for Azure Standard Load Balancer and virtual machine scale sets
+description: Met dit leer traject kunt u aan de slag met Azure Standard Load Balancer en virtuele-machine schaal sets.
 services: load-balancer
 documentationcenter: na
 author: irenehua
@@ -13,36 +13,40 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/17/2020
 ms.author: irenehua
-ms.openlocfilehash: 7e1df754a4a4ca5878d93d53282fd39191313b54
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 7a2e0531427343a2ec267de54cee05b5eb25889f
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883160"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592276"
 ---
-# <a name="azure-load-balancer-with-azure-virtual-machine-scale-sets"></a>Azure Load Balancer met schaal sets voor virtuele Azure-machines
+# <a name="add-rules-for-azure-load-balancer-with-virtual-machine-scale-sets"></a>Regels toevoegen voor Azure Load Balancer met schaal sets voor virtuele machines
 
-Wanneer u werkt met schaal sets voor virtuele machines en load balancer, moet u rekening houden met de volgende richt lijnen:
+Houd rekening met de volgende richt lijnen wanneer u werkt met schaal sets voor virtuele machines en Azure Load Balancer.
 
-## <a name="port-forwarding-and-inbound-nat-rules"></a>Poort door sturen en binnenkomende NAT-regels:
-  * Nadat de schaalset is gemaakt, kan de backend-poort niet worden gewijzigd voor een taakverdelings regel die wordt gebruikt door een status test van de load balancer. Als u de poort wilt wijzigen, kunt u de status test verwijderen door de schaalset voor virtuele Azure-machines bij te werken, de poort bij te werken en de status test vervolgens opnieuw te configureren.
-  * Wanneer u de schaalset voor virtuele machines in de back-endadresgroep van de load balancer gebruikt, worden de standaard binnenkomende NAT-regels automatisch gemaakt.
+## <a name="port-forwarding-and-inbound-nat-rules"></a>Poort door sturen en binnenkomende NAT-regels
+
+Nadat de schaalset is gemaakt, kan de back-end-poort niet worden gewijzigd voor een taakverdelings regel die wordt gebruikt door een status test van de load balancer. Als u de poort wilt wijzigen, verwijdert u de status test door de schaalset voor de virtuele machine bij te werken en de poort bij te werken. Configureer de status test vervolgens opnieuw.
+
+Wanneer u de schaalset voor virtuele machines in de back-end-pool van de load balancer gebruikt, worden de standaard binnenkomende NAT-regels automatisch gemaakt.
   
-## <a name="inbound-nat-pool"></a>Binnenkomende NAT-groep:
-  * Elke schaalset voor virtuele machines moet ten minste één binnenkomende NAT-groep hebben. 
-  * De binnenkomende NAT-pool is een verzameling van binnenkomende NAT-regels. Eén binnenkomende NAT-groep kan geen ondersteuning bieden voor meerdere schaal sets voor virtuele machines.
+## <a name="inbound-nat-pool"></a>Binnenkomende NAT-pool
 
-## <a name="load-balancing-rules"></a>Taakverdelings regels:
-  * Wanneer u de schaalset voor virtuele machines in de back-endadresgroep van de load balancer gebruikt, wordt de standaard regel voor taak verdeling automatisch gemaakt.
+Elke schaalset voor virtuele machines moet ten minste één binnenkomende NAT-groep hebben. Een binnenkomende NAT-pool is een verzameling van binnenkomende NAT-regels. Eén binnenkomende NAT-groep kan geen meerdere virtuele-machine schaal sets ondersteunen.
+
+## <a name="load-balancing-rules"></a>Taakverdelingsregels
+
+Wanneer u de schaalset voor virtuele machines in de back-end-pool van de load balancer gebruikt, wordt automatisch de standaard regel voor taak verdeling gemaakt.
   
-## <a name="outbound-rules"></a>Uitgaande regels:
-  *  Als u een uitgaande regel wilt maken voor een back-end-groep waarnaar al wordt verwezen door een taakverdelings regel, moet u eerst **"impliciete uitgaande regels maken"** als **Nee** in de portal markeren wanneer de regel voor binnenkomende taak verdeling wordt gemaakt.
+## <a name="outbound-rules"></a>Regels voor uitgaand verkeer
 
-  :::image type="content" source="./media/vm-scale-sets/load-balancer-and-vm-scale-sets.png" alt-text="Taak verdelings regel maken" border="true":::
+Als u een uitgaande regel wilt maken voor een back-end-pool waarnaar al wordt verwezen door een taakverdelings regel, selecteert u **Nee** onder **impliciete uitgaande regels maken** in het Azure Portal wanneer de regel voor binnenkomende taak verdeling wordt gemaakt.
 
-De volgende methoden kunnen worden gebruikt voor het implementeren van een schaalset voor virtuele machines met een bestaande Azure-load balancer.
+  :::image type="content" source="./media/vm-scale-sets/load-balancer-and-vm-scale-sets.png" alt-text="Scherm opname van het maken van een regel voor taak verdeling." border="true":::
 
-* [Een schaalset voor virtuele machines configureren met een bestaande Azure Load Balancer met behulp van de Azure Portal](./configure-vm-scale-set-portal.md).
-* [Een schaalset voor virtuele machines configureren met een bestaande Azure Load Balancer met behulp van Azure PowerShell](./configure-vm-scale-set-powershell.md).
-* [Een schaalset voor virtuele machines configureren met een bestaande Azure Load Balancer met behulp van de Azure cli](./configure-vm-scale-set-cli.md).
-* [Bestaande Azure Load Balancer die worden gebruikt door de virtuele-machine Schaalset bijwerken of verwijderen](./update-load-balancer-with-vm-scale-set.md)
+Gebruik de volgende methoden voor het implementeren van een schaalset voor virtuele machines met een bestaand exemplaar van Load Balancer:
+
+* [Een schaalset voor virtuele machines configureren met een bestaand exemplaar van Azure Load Balancer met behulp van de Azure Portal](./configure-vm-scale-set-portal.md)
+* [Een schaalset voor virtuele machines configureren met een bestaand exemplaar van Azure Load Balancer met behulp van Azure PowerShell](./configure-vm-scale-set-powershell.md)
+* [Een schaalset voor virtuele machines configureren met een bestaand exemplaar van Azure Load Balancer met behulp van de Azure CLI](./configure-vm-scale-set-cli.md)
+* [Een bestaand exemplaar van Azure Load Balancer dat wordt gebruikt door een virtuele-machine schaalset bijwerken of verwijderen](./update-load-balancer-with-vm-scale-set.md)

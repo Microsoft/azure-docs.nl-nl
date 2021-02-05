@@ -88,6 +88,8 @@
       href: concepts/client-and-server-architecture.md
     - name: Aanroepstromen
       href: concepts/call-flows.md
+    - name: Topologieën voor oproep stromen
+      href: concepts/detailed-call-flows.md
     - name: Clientbibliotheken en REST API's
       href: concepts/sdk-options.md
     - name: Prijsmodel

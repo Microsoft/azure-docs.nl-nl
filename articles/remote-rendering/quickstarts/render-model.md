@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 6258365ab00ab538f3f3502682078d29a391578c
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-ms.translationtype: HT
+ms.openlocfilehash: 525872ca3ad2558c327b7b856254319d3db2dc7f
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724923"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593990"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Quickstart: Een model weergeven met Unity
 
@@ -74,8 +74,8 @@ Het standaardmodel dat we genereren, is een [ingebouwd voorbeeldmodel](../sample
 ![ARR-accountgegevens](./media/arr-sample-account-info.png)
 
 > [!IMPORTANT]
-> Stel **AccountDomain** in op `<region>.mixedreality.azure.com`, waarbij `<region>` staat voor [een van de beschikbare regio's bij u in de buurt](../reference/regions.md).
-> Stel **AccountAuthenticationDomain** in op [accountdomein](../how-tos/create-an-account.md#retrieve-the-account-information), zoals weergegeven in de Azure-portal.
+> Stel **RemoteRenderingDomain** in op `<region>.mixedreality.azure.com` , `<region>` waarbij [een van de beschik bare regio's bij u in de buurt](../reference/regions.md)is. \
+> Stel **AccountDomain** in op [account domein](../how-tos/create-an-account.md#retrieve-the-account-information) zoals wordt weer gegeven in azure Portal.
 
 Later willen we dit project implementeren op een HoloLens-apparaat en vanaf dat apparaat verbinding maken met de Azure Remote Rendering-service. Omdat er geen eenvoudige manier is om de referenties op het apparaat in te voeren, worden in het quickstart-voorbeeld **de referenties opgeslagen in de scène Unity**.
 

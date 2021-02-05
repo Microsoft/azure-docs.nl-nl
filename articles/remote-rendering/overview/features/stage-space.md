@@ -6,16 +6,16 @@ ms.author: chmant
 ms.date: 03/07/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5809494fb8b619569316a24816a2e5d943dee6b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a739907ce0a3b0b6dfcb8791b51d0ea5e7e76e7
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013126"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594007"
 ---
 # <a name="stage-space"></a>Faseruimte
 
-Bij het uitvoeren van ARR op een apparaat dat de gegevens van de hoofd tracering levert, zoals HoloLens 2, wordt het hoofd pose verzonden naar de gebruikers toepassing en de server. De ruimte waarin de hoofd transformatie is gedefinieerd, wordt de *fase ruimte*genoemd.
+Bij het uitvoeren van ARR op een apparaat dat de gegevens van de hoofd tracering levert, zoals HoloLens 2, wordt het hoofd pose verzonden naar de gebruikers toepassing en de server. De ruimte waarin de hoofd transformatie is gedefinieerd, wordt de *fase ruimte* genoemd.
 
 Als u lokale en externe inhoud wilt uitlijnen, wordt ervan uitgegaan dat de stage ruimte en de wereld wijde ruimte identiek zijn op de client en server. Als de gebruiker besluit om boven op de camera een extra trans formatie toe te voegen, moet deze worden verzonden naar de server en moet de lokale en externe inhoud op de juiste manier worden uitgelijnd.
 
@@ -33,9 +33,9 @@ Om de server op de hoogte te stellen dat een extra trans formatie wordt toegepas
 > In de [simulatie van het bureau blad](../../concepts/graphics-bindings.md) wordt de locatie van de camera beschikbaar gesteld door de gebruikers toepassing. In dit geval moet het instellen van de oorsprong van de fase ruimte worden overgeslagen omdat deze al is vermenigvuldigd met de camera transformatie.
 
 ```cs
-void ChangeStageSpace(AzureSession session)
+void ChangeStageSpace(RenderingSession session)
 {
-    StageSpaceSettings settings = session.Actions.StageSpaceSettings;
+    StageSpaceSettings settings = session.Connection.StageSpaceSettings;
 
     // Set position and rotation to the world-space transform of the stage space.
     settings.Position = new Double3(0, 0, 0);
@@ -44,9 +44,9 @@ void ChangeStageSpace(AzureSession session)
 ```
 
 ```cpp
-void ChangeStageSpace(ApiHandle<AzureSession> session)
+void ChangeStageSpace(ApiHandle<RenderingSession> session)
 {
-    ApiHandle<StageSpaceSettings> settings = session->Actions()->GetStageSpaceSettings();
+    ApiHandle<StageSpaceSettings> settings = session->Connection()->GetStageSpaceSettings();
 
     // Set position and rotation to the world-space transform of the stage space.
     settings->SetPosition({0, 0, 0});

@@ -11,52 +11,48 @@ ms.date: 11/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 486a1c6c8103db8dc938a956eb1f77da3f15f49c
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: aa358b0c9d7747584deabe761160d3bcbcde8feb
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613231"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593177"
 ---
 # <a name="aadcloudsynctools-powershell-module-for-azure-ad-connect-cloud-sync"></a>AADCloudSyncTools Power shell-module voor Azure AD Connect Cloud synchronisatie
 
-Met de release van open bare preview vernieuwen 2 heeft micro soft de AADCloudSyncTools Power shell-module geïntroduceerd.  Deze module biedt een aantal nuttige hulpprogram ma's die u kunt gebruiken om uw Azure AD Connect Cloud synchronisatie-implementaties te beheren.
+De AADCloudSyncTools-module biedt een aantal nuttige hulpprogram ma's die u kunt gebruiken om uw Azure AD Connect Cloud synchronisatie-implementaties te beheren.
 
 ## <a name="pre-requisites"></a>Vereisten
 De volgende vereisten zijn vereist:
-- Deze module maakt gebruik van MSAL-verificatie, zodat de module MSAL.PS is geïnstalleerd. Het is niet langer afhankelijk van de preview-versie van Azure AD of Azure AD.   Als u wilt controleren, voert u in een Power shell-venster voor beheerders uit `Get-module MSAL.PS` . Als de module correct is geïnstalleerd, ontvangt u een antwoord.  U kunt gebruiken `Install-AADCloudSyncToolsPrerequisites` voor het installeren van de meest recente versie van MSAL.PS
-- De AzureAD Power shell-module.  Sommige van de cmdlets zijn afhankelijk van de onderdelen van de AzureAD Power shell-module om hun taken uit te voeren.  Als u wilt controleren, voert u in een Power shell-venster voor beheer uit `Get-module AzureAD` . U ontvangt een antwoord.  U kunt gebruiken `Install-AADCloudSyncToolsPrerequisites` om de meest recente versie van de AzureAD Power shell-module te installeren.
-- Het installeren van modules vanuit Power shell kan afdwingen met behulp van TLS 1,2.  Stel het volgende in om ervoor te zorgen dat u modules kunt installeren: \
-`[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 `
+
+- Alle vereisten voor deze module kunnen automatisch worden geïnstalleerd met `Install-AADCloudSyncToolsPrerequisites`
+- Deze module maakt gebruik van MSAL-verificatie, zodat de module MSAL.PS is geïnstalleerd. Als u wilt controleren, voert u in een Power shell-venster uit `Get-module MSAL.PS -ListAvailable` . Als de module correct is geïnstalleerd, ontvangt u een antwoord. U kunt gebruiken `Install-AADCloudSyncToolsPrerequisites` voor het installeren van de meest recente versie van MSAL.PS
+- Hoewel de AzureAD Power shell-module geen vereiste is voor enige functionaliteit van deze module, is het handig om deze ook automatisch te installeren met behulp van `Install-AADCloudSyncToolsPrerequisites` .
+- Hand matig installeren van modules van Power shell vereist het afdwingen van TLS 1,2. Om ervoor te zorgen dat u modules kunt installeren, stelt u het volgende in de Power shell-sessie in voordat u
+  ```
+   Install-Module:
+  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
+  ```
+
 
 ## <a name="install-the-aadcloudsynctools-powershell-module"></a>De AADCloudSyncTools Power shell-module installeren
 Voer de volgende stappen uit om de AADCloudSyncTools-module te installeren en gebruiken:
 
-1.  Open Windows Power shell met beheerders bevoegdheden
-2.  Typ `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12` en druk op ENTER.
-3.  Typ of kopieer en plak het volgende: 
-    ``` powershell
-    Import-module -Name "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Utility\AADCloudSyncTools"
-    ```
-3.  Druk op ENTER.
-4.  Als u wilt controleren of de module is geïnstalleerd, voert u de volgende in of kopieert en plakt u deze:
-    ```powershell
-    Get-module AADCloudSyncTools
-    ```
-5.  U ziet nu informatie over de module.
-6.  Volgende uitvoering
-    ``` powershell
-    Install-AADCloudSyncToolsPrerequisites
-    ```
-7.  Hiermee worden de Power shell-modules ophalen geïnstalleerd.  Sluit het Power shell-venster.
-8.  Open Windows Power shell met beheerders bevoegdheden
-9.  Importeer de module opnieuw met behulp van stap 3.
-10. Uitvoeren `Install-AADCloudSyncToolsPrerequisites` om de MSAL-en AzureAD-modules te installeren
+1. Open Windows Power shell met beheerders bevoegdheden
+2. Typ of kopieer en plak het volgende: `Import-module -Name "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Utility\AADCloudSyncTools"`
+3. Druk op ENTER.
+4. Als u wilt controleren of de module is geïmporteerd, moet u het volgende invoeren of kopiëren en plakken: `Get-module AADCloudSyncTools`
+5. U ziet nu informatie over de module.
+6. Voer vervolgens de volgende stappen uit om de pre-vereisten van de AADCloudSyncTools-module te installeren: `Install-AADCloudSyncToolsPrerequisites`
+7. Bij de eerste uitvoering wordt de module PoweShellGet geïnstalleerd als deze niet aanwezig is. Als u de nieuwe PowershellGet-module wilt laden, sluit u het Power shell-venster en opent u een nieuwe Power shell-sessie met beheerders bevoegdheden. 
+8. Importeer de module opnieuw met behulp van stap 3.
+9. Uitvoeren `Install-AADCloudSyncToolsPrerequisites` om de MSAL-en AzureAD-modules te installeren
 11. Alle pre-reqs moeten zijn geïnstalleerd ![ installatie module installeren](media/reference-powershell/install-1.png)
+
 
 ## <a name="aadcloudsynctools--cmdlets"></a>AADCloudSyncTools-cmdlets
 ### <a name="connect-aadcloudsynctools"></a>Connect-AADCloudSyncTools
-Maakt gebruik van de AzureAD-module om verbinding te maken met Azure AD en de MSAL.PS-module om een token aan te vragen voor Microsoft Graph
+Maakt gebruik van de MSAL.PS-module om een token aan te vragen voor de Azure AD-beheerder om toegang te krijgen tot Microsoft Graph 
 
 
 ### <a name="export-aadcloudsynctoolslogs"></a>Export-AADCloudSyncToolsLogs
@@ -125,5 +121,5 @@ Hiermee wordt de synchronisatie onderbroken.
 ## <a name="next-steps"></a>Volgende stappen 
 
 - [Wat is inrichting?](what-is-provisioning.md)
-- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Wat is Azure AD Connect--cloudsynchronisatie?](what-is-cloud-sync.md)
 

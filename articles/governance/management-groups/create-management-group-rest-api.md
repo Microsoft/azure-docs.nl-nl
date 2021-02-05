@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Een beheergroep maken met REST API'
 description: In deze quickstart gebruikt u de REST API om een beheergroep te maken om uw resources in een resource-hiërarchie in te delen.
-ms.date: 08/31/2020
+ms.date: 02/05/2021
 ms.topic: quickstart
-ms.openlocfilehash: b19fddf8215a1b133254c2a31bbea568a315f721
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: ff1487bf25945c733402ddb74d1e102bea80b4b1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89237000"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592497"
 ---
 # <a name="quickstart-create-a-management-group-with-rest-api"></a>Quickstart: Een beheergroep maken met REST API
 
@@ -20,7 +20,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 - Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
-- Installeer [ARMClient](https://github.com/projectkudu/ARMClient) als u dit nog niet hebt gedaan. Dit is een hulpprogramma waarmee HTTP-aanvragen worden verzonden naar Azure Resource Manager-REST API’s. U kunt ook de functie ‘Probeer het’ in REST-documentatie gebruiken of hulpprogramma’s zoals [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod) of [Postman](https://www.postman.com) in PowerShell.
+- Installeer [ARMClient](https://github.com/projectkudu/ARMClient) als u dit nog niet hebt gedaan. Dit is een hulpprogramma waarmee HTTP-aanvragen worden verzonden naar Azure Resource Manager-REST API’s. In plaats daarvan kunt u de functie ' proberen ' te gebruiken in REST-documentatie of hulpprogram ma's zoals het [aanroepen-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod) of [postman](https://www.postman.com)van Power shell.
 
 - Elke Azure AD-gebruiker in de tenant kan een beheergroep maken zonder dat de schrijfmachtiging voor beheergroepen is toegewezen als [Hiërarchie beschermen](./how-to/protect-resource-hierarchy.md#setting---require-authorization) niet is ingeschakeld. Deze nieuwe beheergroep wordt een onderliggend element van de hoofdbeheergroep of de [standaard beheergroep](./how-to/protect-resource-hierarchy.md#setting---default-management-group) en de maker krijgt de roltoewijzing "Eigenaar". Met de beheergroep-service kan deze functie worden toegewezen, zodat roltoewijzingen niet nodig zijn op hoofdmapniveau. Gebruikers hebben geen toegang tot de hoofdbeheergroep wanneer deze wordt gemaakt. Om te voorkomen dat de drempel van het vinden van de Azure AD Global Admins om beheergroepen te kunnen gebruiken te hoog is, wordt het maken van de eerste beheergroepen op hoofdmapniveau toegestaan.
 

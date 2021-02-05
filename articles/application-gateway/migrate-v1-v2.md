@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 3dd46f4033a568a278d7006c0d5aab451496ff47
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 4757a8237aa6226b78e7c1e79ba50710e31d28e3
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397220"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594262"
 ---
 # <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Azure-toepassing gateway en Web Application firewall migreren van v1 naar v2
 
@@ -37,7 +37,7 @@ Er is een Azure PowerShell script beschikbaar dat het volgende doet:
 * De nieuwe v2-gateway heeft nieuwe open bare en privé IP-adressen. Het is niet mogelijk om de IP-adressen die zijn gekoppeld aan de bestaande v1-gateway naadloos te verplaatsen naar v2. U kunt echter een bestaand (niet-toegewezen) openbaar of privé IP-adres toewijzen aan de nieuwe v2-gateway.
 * U moet een IP-adres ruimte opgeven voor een ander subnet in het virtuele netwerk waarin uw v1-gateway zich bevindt. Het script kan de v2-gateway niet maken in bestaande subnetten die al een v1-gateway hebben. Als het bestaande subnet al een v2-gateway heeft, kan dit echter nog steeds werken omdat er voldoende IP-adres ruimte beschikbaar is.
 * Als u een netwerk beveiligings groep of door de gebruiker gedefinieerde routes hebt die zijn gekoppeld aan het v2-gateway subnet, moet u ervoor zorgen dat ze voldoen aan de vereisten voor [NSG](../application-gateway/configuration-infrastructure.md#network-security-groups) en [UDR](../application-gateway/configuration-infrastructure.md#supported-user-defined-routes) voor een geslaagde migratie
-* [Het beleid voor eindpunten van virtuele netwerken](../virtual-network/virtual-network-service-endpoint-policies-overview.md) wordt momenteel niet ondersteund in een Application Gateway-subnet.
+* [Het beleid voor endpoints van virtuele netwerken](../virtual-network/virtual-network-service-endpoint-policies-overview.md) wordt momenteel niet ondersteund in een Application Gateway-subnet.
 * Als u een TLS/SSL-configuratie wilt migreren, moet u alle TLS/SSL-certificaten opgeven die worden gebruikt in uw v1-gateway.
 * Als de FIPS-modus is ingeschakeld voor uw v1-gateway, wordt deze niet gemigreerd naar de nieuwe v2-gateway. De FIPS-modus wordt niet ondersteund in v2.
 * v2 biedt geen ondersteuning voor IPv6, zodat de voor IPv6 ingeschakelde v1-gateways niet worden gemigreerd. Als u het script uitvoert, wordt het mogelijk niet voltooid.
@@ -125,7 +125,7 @@ Het script uitvoeren:
       $trustedCert = New-AzApplicationGatewayTrustedRootCertificate -Name "trustedCert1" -CertificateFile $certFilePath
       ```
 
-      Zie [New-AzApplicationGatewayTrustedRootCertificate](/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate?view=azps-2.1.0&viewFallbackFrom=azps-2.0.0)als u een lijst met PSApplicationGatewayTrustedRootCertificate-objecten wilt maken.
+      Zie [New-AzApplicationGatewayTrustedRootCertificate](/powershell/module/Az.Network/New-AzApplicationGatewayTrustedRootCertificate)als u een lijst met PSApplicationGatewayTrustedRootCertificate-objecten wilt maken.
    * **privateIpAddress: [teken reeks]: optioneel**. Een specifiek privé-IP-adres dat u wilt koppelen aan uw nieuwe v2-gateway.  Dit moet afkomstig zijn uit hetzelfde VNet dat u toewijst voor uw nieuwe v2-gateway. Als dit niet is opgegeven, wordt door het script een persoonlijk IP-adres voor uw v2-gateway toegewezen.
    * **publicIpResourceId: [teken reeks]: optioneel**. De resourceId van een bestaande open bare IP-adres resource (standaard-SKU) in uw abonnement dat u wilt toewijzen aan de nieuwe v2-gateway. Als dit niet is opgegeven, wijst het script een nieuw openbaar IP-adres toe aan dezelfde resource groep. De naam is de naam van de v2-gateway met *-IP* toegevoegd.
    * **validateMigration: [Switch]: optioneel**. Gebruik deze para meter als u wilt dat het script enkele validaties op basis van de configuratie van de 2-en de configuratie kopie van de v2-gateway. Standaard wordt er geen validatie uitgevoerd.

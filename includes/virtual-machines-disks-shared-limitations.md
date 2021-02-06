@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 76e52758bf88dde9cdc68dad974f0b65fd55140f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4a61399bbb75639fdf4f03da7b77f22a2136adbe
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026953"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99628959"
 ---
 Het inschakelen van gedeelde schijven is alleen beschikbaar voor een subset van schijf typen. Op dit moment kunnen alleen Ultra disks en Premium Ssd's gedeelde schijven inschakelen. Op elke beheerde schijf waarvoor gedeelde schijven zijn ingeschakeld, gelden de volgende beperkingen, geordend op schijf type:
 
@@ -37,7 +37,8 @@ Gedeelde Ultra schijven zijn beschikbaar in alle regio's die standaard ondersteu
 - Wanneer u beschikbaarheids sets en virtuele-machine schaal sets gebruikt met gedeelde Azure-schijven, wordt de uitlijning van het [opslag fout domein](../articles/virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) met het fout domein van de virtuele machine niet afgedwongen voor de gedeelde gegevens schijf.
 - Wanneer u [proximity placement groups (PPG)](../articles/virtual-machines/windows/proximity-placement-groups.md)gebruikt, moeten alle virtuele machines die een schijf delen deel uitmaken van dezelfde PPG.
 - Alleen standaard schijven kunnen worden gebruikt in combi natie met sommige versies van Windows Server-failovercluster, voor meer informatie, [Hardware-vereisten en opslag opties voor failover clustering](/windows-server/failover-clustering/clustering-requirements).
-- Azure Backup-en Azure Site Recovery-ondersteuning is nog niet beschikbaar.
+- Azure Site Recovery-ondersteuning is nog niet beschikbaar.
+- Azure Backup is beschikbaar via [Azure Disk Backup (preview)](../articles/backup/disk-backup-overview.md).
 
 #### <a name="regional-availability"></a>Regionale beschikbaarheid
 

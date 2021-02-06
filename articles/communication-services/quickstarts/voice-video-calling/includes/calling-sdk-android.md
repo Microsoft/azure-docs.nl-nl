@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 5d81e37ab547d12e33cfacb9725d9bdb22666142
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 26e39b8f0429995bfa336c4971c76f90d903ff55
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97628673"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99628879"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -111,7 +111,9 @@ call oneToOneCall = callAgent.call(appContext, participants, startCallOptions);
 
 ### <a name="place-a-1n-call-with-users-and-pstn"></a>Een aanroep van 1: n met gebruikers en PSTN plaatsen
 > [!WARNING]
-> Het aanroepen van de PSTN is niet beschikbaar voor het plaatsen van een 1: n-aanroep naar een gebruiker en een PSTN-nummer. u moet het telefoon nummer van de beller opgeven.
+> De aanroepen op dit moment is niet beschikbaar
+
+Als u wilt een aanroep van 1: n naar een gebruiker en een PSTN-nummer, moet u het telefoon nummer van de genodigde opgeven.
 Uw communicatie service-resource moet worden geconfigureerd om PSTN-aanroepen mogelijk te maken:
 ```java
 CommunicationUser acsUser1 = new CommunicationUser(<USER_ID>);

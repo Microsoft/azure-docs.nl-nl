@@ -8,51 +8,55 @@ ms.topic: include
 ms.date: 06/30/2020
 ms.author: kgremban
 ms.custom: include file
-ms.openlocfilehash: 76c8eb7acf20d8cf68d3573defd947efbc6c3c43
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 6b9ec2017ffa5d4e4148b441aa23ed2eca6ee8b8
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85801693"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99628900"
 ---
-Een van de belangrijkste mogelijkheden van Azure IoT Edge is dat u er code voor uw IoT Edge-apparaten mee kunt implementeren vanuit de cloud. *IoT Edge-modules* zijn uitvoerbare pakketten die zijn geïmplementeerd als containers. In deze sectie implementeert u rechtstreeks vanuit uw Azure IoT Hub een vooraf samengestelde module vanuit de [sectie IoT Edge-modules van de Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules).
+Een van de belangrijkste mogelijkheden van Azure IoT Edge is het implementeren van code naar uw IoT Edge apparaten vanuit de Cloud. *IoT Edge-modules* zijn uitvoerbare pakketten die zijn geïmplementeerd als containers. In deze sectie implementeert u een vooraf ontwikkelde module vanuit het [gedeelte IOT Edge modules van Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules) rechtstreeks vanuit Azure IOT hub.
 
 De module die u in deze sectie implementeert, simuleert een sensor en verzendt gegenereerde gegevens. Deze module is een handig stukje code wanneer u aan de slag gaat met IoT Edge, omdat u de gesimuleerde gegevens kunt gebruiken voor ontwikkel- en testdoeleinden. Als u precies wilt zien wat deze module doet, kunt u de [broncode van de gesimuleerde temperatuursensor bekijken](https://github.com/Azure/iotedge/blob/027a509549a248647ed41ca7fe1dc508771c8123/edge-modules/SimulatedTemperatureSensor/src/Program.cs).
 
-Voer de volgende stappen uit als u uw eerste module vanuit de Microsoft Azure Marketplace wilt implementeren:
+Volg deze stappen om uw eerste module te implementeren vanuit Azure Marketplace.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) en ga naar uw IoT Hub.
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en ga naar uw IOT-hub.
 
-1. Selecteer in het menu in het linkerdeelvenster, onder **Automatisch apparaatbeheer**, de optie **IoT Edge**.
+1. Selecteer in het menu aan de linkerkant onder **automatische Apparaatbeheer** de optie **IOT Edge**.
 
-1. Klik in de lijst met apparaten op de apparaat-id van het doelapparaat.
+1. Selecteer de apparaat-ID van het doel apparaat in de lijst met apparaten.
 
 1. Selecteer op de bovenste balk **Modules instellen**.
 
-   ![Op de pagina met de details van apparaat de optie Modules instellen selecteren](./media/iot-edge-deploy-module/select-set-modules.png)
+   ![Scherm opname van het selecteren van modules instellen.](./media/iot-edge-deploy-module/select-set-modules.png)
 
-1. Klik in het gedeelte **IoT Edge-modules** van de pagina op **Toevoegen** en selecteer **Marketplace-module** in de vervolgkeuzelijst.
+1. Open onder **IOT Edge modules** de vervolg keuzelijst **toevoegen** en selecteer vervolgens **Marketplace-module**.
 
-   ![Marketplace-module toevoegen](./media/iot-edge-deploy-module/add-marketplace-module.png)
+   ![Scherm opname van de vervolg keuzelijst toevoegen.](./media/iot-edge-deploy-module/add-marketplace-module.png)
 
-1. Zoek in **Marketplace van IoT Edge module** op Gesimuleerde temperatuursensor en selecteer die module.
+1. Zoek en selecteer de module in de **Marketplace van IOT Edge-module** `Simulated Temperature Sensor` .
 
-1. U ziet dat de SimulatedTemperatureSensor-module wordt toegevoegd aan het gedeelte IoT Edge-modules, met de gewenste status **running**.
+   De module wordt toegevoegd aan de sectie IoT Edge modules met de gewenste **uitvoerings** status.
 
-   Selecteer **Volgende: Routes** om door te gaan naar de volgende stap in de wizard.
+1. Selecteer **Volgende: Routes** om door te gaan naar de volgende stap in de wizard.
 
-   ![Doorgaan naar de volgende stap zodra de temperatuursensormodule wordt weergegeven](./media/iot-edge-deploy-module/view-temperature-sensor-next-routes.png)
+   ![Scherm opname die laat zien hoe de volgende stap gaat nadat de module is toegevoegd.](./media/iot-edge-deploy-module/view-temperature-sensor-next-routes.png)
 
-1. Op het tabblad **Routes** in de wizard definieert u hoe berichten tussen modules en IoT Hub worden uitgewisseld. Routes worden gemaakt met behulp van naam/waarde-paren. Op deze pagina ziet u twee routes. De standaardroute met de naam **route** verzendt alle berichten naar IoT Hub (dit wordt `$upstream` genoemd). Er is automatisch een tweede route met de naam **SimulatedTemperatureSensorToIoTHub** gemaakt toen u de module van de Marketplace hebt toegevoegd. Met deze route worden alle berichten die specifiek afkomstig zijn van de gesimuleerde temperatuurmodule, verzonden naar IoT Hub. U kunt de standaardroute verwijderen, omdat deze in dit geval overbodig is.
+1. Op het tabblad **routes** verwijdert u de standaard route, **route** en selecteert u **volgende: controleren + maken** om door te gaan naar de volgende stap van de wizard.
 
-   Selecteer **Volgende: Beoordelen en maken** om door te gaan naar de volgende stap in de wizard.
+   >[!Note]
+   >Routes worden gemaakt met behulp van naam-en waardeparen. Op deze pagina ziet u twee routes. De standaard route, **route**, verzendt alle berichten naar IOT hub (dat wordt aangeroepen `$upstream` ). Er is automatisch een tweede route, **SimulatedTemperatureSensorToIoTHub**, gemaakt toen u de module van Azure Marketplace hebt toegevoegd. Deze route verzendt alle berichten van de gesimuleerde temperatuur module naar IoT Hub. U kunt de standaardroute verwijderen, omdat deze in dit geval overbodig is.
 
-   ![Standaardroute verwijderen en naar de volgende stap gaan](./media/iot-edge-deploy-module/delete-route-next-review-create.png)
+   ![Scherm opname van het verwijderen van de standaard route en de volgende stap wordt verplaatst.](./media/iot-edge-deploy-module/delete-route-next-review-create.png)
 
-1. Op het tabblad **Beoordelen en maken** in de wizard kunt u een voorbeeld bekijken van het JSON-bestand waarmee alle modules worden gedefinieerd die op uw IoT Edge-apparaat worden geïmplementeerd. U ziet dat zowel de module **SimulatedTemperatureSensor** als de twee runtimemodules **edgeAgent** en **edgeHub** zijn opgenomen. Selecteer **Maken** wanneer u klaar bent met de beoordeling.
+1. Controleer het JSON-bestand en selecteer vervolgens **maken**. Het JSON-bestand definieert alle modules die u implementeert op uw IoT Edge-apparaat. U ziet de **SimulatedTemperatureSensor** -module en de twee runtime modules, **edgeAgent** en **edgeHub**.
 
-   Wanneer u een nieuwe implementatie bij een IoT Edge-apparaat indient, wordt er niets naar uw apparaat gepusht. In plaats daarvan voert het apparaat regelmatig query’s uit naar eventuele nieuwe instructies. Als het apparaat een manifest van een bijgewerkte implementatie vindt, wordt de informatie over de nieuwe implementatie gebruikt om installatiekopieën van de module op te halen uit de cloud en wordt een lokale uitvoering van de modules gestart. Dit proces kan enkele minuten duren.
+   >[!Note]
+   >Wanneer u een nieuwe implementatie bij een IoT Edge-apparaat indient, wordt er niets naar uw apparaat gepusht. In plaats daarvan voert het apparaat regelmatig query’s uit naar eventuele nieuwe instructies. Als het apparaat een manifest van een bijgewerkte implementatie vindt, wordt de informatie over de nieuwe implementatie gebruikt om installatiekopieën van de module op te halen uit de cloud en wordt een lokale uitvoering van de modules gestart. Dit proces kan enkele minuten duren.
 
-1. Nadat u de informatie over de implementatie van de module hebt gemaakt, gaat de wizard terug naar de pagina met apparaatdetails. Bekijk op de pagina met apparaatdetails de implementatiestatus op het tabblad **Modules**. U ziet hier drie modules: $edgeAgent, $edgeHub en SimulatedTemperatureSensor. Als bij een of meer modules wordt vermeld dat ze worden geïmplementeerd maar niet per apparaat worden gerapporteerd, worden ze nog door uw IoT Edge-apparaat opgestart. Wacht enkele momenten en selecteer **Vernieuwen** bovenaan de pagina.
+1. Nadat u de informatie over de implementatie van de module hebt gemaakt, gaat de wizard terug naar de pagina met apparaatdetails. Bekijk de implementatie status op het tabblad **modules** .
 
-   ![Weergave SimulatedTemperatureSensor in de lijst met geïmplementeerde modules](./media/iot-edge-deploy-module/view-deployed-modules.png)
+   U ziet drie modules: **$edgeAgent**, **$edgeHub** en **SimulatedTemperatureSensor**. Als een of meer van de modules **Ja** zijn onder **opgegeven in de implementatie** , maar niet onder **gerapporteerd door het apparaat**, wordt het IOT edge apparaat nog steeds gestart. Wacht enkele minuten en vernieuw vervolgens de pagina.
+
+   ![Scherm opname van de gesimuleerde temperatuur sensor in de lijst met geïmplementeerde modules.](./media/iot-edge-deploy-module/view-deployed-modules.png)

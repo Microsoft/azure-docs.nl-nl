@@ -6,12 +6,12 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/12/2020
-ms.openlocfilehash: a70cfc7ab01dabd3d740d878acb453b4d1e76b5f
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: b91c846b5a79125c1cee9c36ce81b5c3d3229ba9
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507415"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627764"
 ---
 # <a name="partitioning-and-horizontal-scaling-in-azure-cosmos-db"></a>Partitionering en horizontaal schalen in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -42,7 +42,7 @@ Het aantal fysieke partities in de container is afhankelijk van het volgende:
 * De totale gegevens opslag (elke afzonderlijke fysieke partitie kan Maxi maal 50 GB gegevens bevatten).
 
 > [!NOTE]
-> Fysieke partities zijn een interne implementatie van het systeem en ze worden volledig beheerd door Azure Cosmos DB. Bij het ontwikkelen van uw oplossingen kunt u zich niet richten op fysieke partities omdat u deze niet kunt beheren in plaats daarvan op de partitie sleutels. Als u een partitie sleutel kiest die het doorvoer verbruik gelijkmatig distribueert over logische partities, zorgt u ervoor dat het doorvoer verbruik over fysieke partities evenwichtig is.
+> Fysieke partities zijn een interne implementatie van het systeem en ze worden volledig beheerd door Azure Cosmos DB. Bij het ontwikkelen van uw oplossingen kunt u zich niet richten op fysieke partities omdat u ze niet kunt beheren. Richt u in plaats daarvan op de partitie sleutels. Als u een partitie sleutel kiest die het doorvoer verbruik gelijkmatig distribueert over logische partities, zorgt u ervoor dat het doorvoer verbruik over fysieke partities evenwichtig is.
 
 Er is geen limiet voor het totale aantal fysieke partities in de container. Als uw ingerichte door Voer of gegevens grootte groeit, Azure Cosmos DB automatisch nieuwe fysieke partities maken door bestaande te splitsen. Fysieke partitie splitsingen hebben geen invloed op de beschik baarheid van uw toepassing. Nadat de fysieke partitie is gesplitst, worden alle gegevens in één logische partitie nog steeds opgeslagen op dezelfde fysieke partitie. Een fysieke partitie splitsing maakt simpelweg een nieuwe toewijzing van logische partities aan fysieke partities.
 

@@ -8,12 +8,12 @@ ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: e549a79930cf599b89cd549691e23f3587e8a85c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 4a3f272ab6e4a1788368442d7d060233391442fd
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202705"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627812"
 ---
 # <a name="introduction-to-azure-managed-disks"></a>Inleiding tot beheerde Azure-schijven
 
@@ -44,6 +44,10 @@ Beheerde schijven ondersteunen [beschikbaarheidszones](../availability-zones/az-
 ### <a name="azure-backup-support"></a>Ondersteuning voor Azure Backup
 
 [Azure Backup](../backup/backup-overview.md) kan ter bescherming tegen regionale noodgevallen worden gebruikt om een back-uptaak te maken met back-ups op basis van tijd en beleidsregels voor het bewaren van back-ups. Op die manier kunt u naar wens herstelbewerkingen voor VM's of beheerde schijven uitvoeren. Momenteel ondersteunt Azure Backup schijfgrootten tot 32 TiB (tebibytes). [Meer informatie](../backup/backup-support-matrix-iaas.md) over ondersteuning voor Azure VM-back-ups.
+
+#### <a name="azure-disk-backup"></a>Azure Disk Backup
+
+Azure Backup biedt Azure Disk Backup (preview) als een systeem eigen, cloud-gebaseerde back-upoplossing die uw gegevens beveiligt op beheerde schijven. Het is een eenvoudige, veilige en kosteneffectieve oplossing waarmee u in een paar stappen beveiliging voor beheerde schijven kunt configureren. Azure Disk Backup biedt een kant-en-klare oplossing voor het beheer van de duur van moment opnamen voor beheerde schijven door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor de geconfigureerde duur met behulp van het back-upbeleid. Zie [overzicht van Azure Disk Backup (in Preview)](../backup/disk-backup-overview.md)voor meer informatie over back-ups van Azure-schijven.
 
 ### <a name="granular-access-control"></a>Gedetailleerd toegangsbeheer
 

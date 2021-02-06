@@ -1,14 +1,14 @@
 ---
 title: Implementatie van blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services
 description: Implementeer stappen voor het blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services, waaronder details van de parameters voor blauwdrukartefacten.
-ms.date: 11/02/2020
+ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: acce9ecf906430047fa1e687f719fd4e04daf756
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.openlocfilehash: 8b28954b6145a9e6c1827107cf11aa85326dcc1f
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420273"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627796"
 ---
 # <a name="deploy-the-iso-27001-shared-services-blueprint-sample"></a>Overzicht van de voorbeeldblauwdruk voor ISO 27001 conforme gedeelde services
 
@@ -33,8 +33,8 @@ Implementeer eerst het blauwdrukvoorbeeld door een nieuwe blauwdruk in uw omgevi
 
 1. Voer de _Basisinstellingen_ van het blauwdrukvoorbeeld in:
 
-   - **Naam van blauwdruk** : Geef een naam op voor uw kopie van het ISO 27001-blauwdrukvoorbeeld voor gedeelde services.
-   - **Definitielocatie** : Gebruik het weglatingsteken en selecteer de beheergroep waarin u uw kopie van het voorbeeld wilt opslaan.
+   - **Naam van blauwdruk**: Geef een naam op voor uw kopie van het ISO 27001-blauwdrukvoorbeeld voor gedeelde services.
+   - **Definitielocatie**: Gebruik het weglatingsteken en selecteer de beheergroep waarin u uw kopie van het voorbeeld wilt opslaan.
 
 1. Selecteer het tabblad _Artefacten_ boven aan de pagina of kies **Volgende: Artefacten** onder aan de pagina.
 
@@ -42,7 +42,7 @@ Implementeer eerst het blauwdrukvoorbeeld door een nieuwe blauwdruk in uw omgevi
 
 ## <a name="publish-the-sample-copy"></a>De voorbeeldkopie publiceren
 
-Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is gemaakt in de **Concept** -modus en moet worden **Gepubliceerd** voordat deze kan worden toegewezen en geïmplementeerd. De kopie van het blauwdrukvoorbeeld kan worden aangepast aan uw omgeving en behoeften, maar door die aanpassing is het mogelijk dat de kopie niet meer is voldoet aan de ISO 27001-standaard.
+Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is gemaakt in de **Concept**-modus en moet worden **Gepubliceerd** voordat deze kan worden toegewezen en geïmplementeerd. De kopie van het blauwdrukvoorbeeld kan worden aangepast aan uw omgeving en behoeften, maar door die aanpassing is het mogelijk dat de kopie niet meer is voldoet aan de ISO 27001-standaard.
 
 1. Selecteer **Alle services** in het linkerdeelvenster. Zoek en selecteer **Blauwdrukken**.
 
@@ -52,7 +52,7 @@ Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is ge
 
 ## <a name="assign-the-sample-copy"></a>De voorbeeldkopie toewijzen
 
-Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd** , kan het worden toegewezen aan een abonnement binnen de beheergroep waarin de kopie is opgeslagen. Dit is de stap waarin parameters worden opgegeven om elke implementatie van de kopie van het blauwdrukvoorbeeld uniek te maken.
+Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd**, kan het worden toegewezen aan een abonnement binnen de beheergroep waarin de kopie is opgeslagen. Dit is de stap waarin parameters worden opgegeven om elke implementatie van de kopie van het blauwdrukvoorbeeld uniek te maken.
 
 1. Selecteer **Alle services** in het linkerdeelvenster. Zoek en selecteer **Blauwdrukken**.
 
@@ -64,11 +64,11 @@ Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd** , kan het worden t
 
    - Basisbeginselen
 
-     - **Abonnementen** : Selecteer een of meer van de abonnementen in de beheergroep waarin u uw kopie van het blauwdrukvoorbeeld hebt opgeslagen. Als u meer dan één abonnement selecteert, wordt een toewijzing gemaakt voor elk abonnement waarvoor de ingevoerde parameters worden gebruikt.
-     - **Naam van toewijzing** : De naam wordt vooraf voor u ingevuld op basis van de naam van de blauwdruk.
+     - **Abonnementen**: Selecteer een of meer van de abonnementen in de beheergroep waarin u uw kopie van het blauwdrukvoorbeeld hebt opgeslagen. Als u meer dan één abonnement selecteert, wordt een toewijzing gemaakt voor elk abonnement waarvoor de ingevoerde parameters worden gebruikt.
+     - **Naam van toewijzing**: De naam wordt vooraf voor u ingevuld op basis van de naam van de blauwdruk.
        Wijzig de naam als dat nodig is of gebruik de opgegeven naam.
-     - **Locatie** : Selecteer een regio waarin u de beheerde identiteit wilt maken. Azure Blueprint gebruikt deze beheerde identiteit om alle artefacten in de toegewezen blauwdruk te implementeren. Zie [Beheerde identiteiten voor Azure-resources](../../../../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.
-     - **Blauwdrukdefinitieversie** : Kies een **gepubliceerde** versie van uw kopie van het blauwdrukvoorbeeld.
+     - **Locatie**: Selecteer een regio waarin u de beheerde identiteit wilt maken. Azure Blueprint gebruikt deze beheerde identiteit om alle artefacten in de toegewezen blauwdruk te implementeren. Zie [Beheerde identiteiten voor Azure-resources](../../../../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.
+     - **Blauwdrukdefinitieversie**: Kies een **gepubliceerde** versie van uw kopie van het blauwdrukvoorbeeld.
 
    - Toewijzing vergrendelen
 
@@ -82,9 +82,9 @@ Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd** , kan het worden t
 
      De parameters die in deze sectie worden gedefinieerd, worden door veel van de artefacten in de definitie van de blauwdruk gebruikt om consistentie te bieden.
 
-     - **Naam van de organisatie** : Geef een korte naam op voor uw organisatie. Deze eigenschap wordt voornamelijk gebruikt voor de naamgeving van resources.
-     - **Voorvoegsel van subnetadres van gedeelde services** : Geef de waarde voor de CIDR-notatie op om de geïmplementeerde resources met elkaar te verbinden.
-     - **Locatie van gedeelde services** : Hiermee bepaalt u op welke locatie de artefacten worden geïmplementeerd. Niet alle services zijn op alle locaties beschikbaar. Artefacten die dergelijke services implementeren, bieden een parameteroptie voor de locatie waarop dat artefact moet worden geïmplementeerd.
+     - **Naam van de organisatie**: Geef een korte naam op voor uw organisatie. Deze eigenschap wordt voornamelijk gebruikt voor de naamgeving van resources.
+     - **Voorvoegsel van subnetadres van gedeelde services**: Geef de waarde voor de CIDR-notatie op om de geïmplementeerde resources met elkaar te verbinden.
+     - **Locatie van gedeelde services**: Hiermee bepaalt u op welke locatie de artefacten worden geïmplementeerd. Niet alle services zijn op alle locaties beschikbaar. Artefacten die dergelijke services implementeren, bieden een parameteroptie voor de locatie waarop dat artefact moet worden geïmplementeerd.
      - **Toegestane locatie (Beleid: Blauwdrukinitiatief voor ISO 27001)** : Waarde die de toegestane locaties voor resourcegroepen en resources aangeeft.
      - **Log Analytics-wekruimte voor VM-agenten (Beleid: Blauwdrukinitiatief voor ISO 27001)** : Hiermee geeft u de resource-ID van een werkruimte op. Deze parameter gebruikt een `concat`-functie om de resource-ID te maken.
 
@@ -111,13 +111,13 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Toegestane opslagaccount-SKU's|Beleidstoewijzing|Toegestane opslag-SKU's|Lijst met toegestane opslagaccount-SKU's voor diagnostische logboeken. De standaardwaarde is _["Standard_LRS"]_ .|
 |Toegestane SKU's van virtuele machines|Beleidstoewijzing|Lijst met SKU's voor virtuele machines die mogen worden geïmplementeerd. De standaardwaarde is _["Standard_DS1_v2", "Standard_DS2_v2"]_ .|
 |Blauwdrukinitiatief voor ISO 27001|Beleidstoewijzing|Resourcetypen voor het controleren van diagnostische logboeken|Lijst met resourcetypen die moeten worden gecontroleerd als de instelling voor diagnostische logboeken niet is ingeschakeld. Acceptabele waarden vindt u in de [schema's van diagnostische logboeken van Azure Monitor](../../../../azure-monitor/platform/resource-logs-schema.md#service-specific-schemas).|
-|Log Analytics-resourcegroep|Resourcegroep|Naam|**Vergrendeld** : voegt de **organisatienaam** samen met `-sharedsvsc-log-rg` om de resourcegroep uniek te maken.|
-|Log Analytics-resourcegroep|Resourcegroep|Locatie|**Vergrendeld** : maakt gebruik van de blauwdrukparameter.|
+|Log Analytics-resourcegroep|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-sharedsvsc-log-rg` om de resourcegroep uniek te maken.|
+|Log Analytics-resourcegroep|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Log Analytics-sjabloon|Resource Manager-sjabloon|Servicelaag|Hiermee stelt u de laag van de Log Analytics-werkruimte in. Standaardwaarde is _PerNode_.|
 |Log Analytics-sjabloon|Resource Manager-sjabloon|Behoud van logboeken in dagen|Gegevensretentie in dagen. De standaardwaarde is _365_.|
 |Log Analytics-sjabloon|Resource Manager-sjabloon|Locatie|De regio die wordt gebruikt voor het maken van de Log Analytics-werkruimte. De standaardwaarde is _US - west 2_.|
-|Resourcegroep van netwerk|Resourcegroep|Naam|**Vergrendeld** : voegt de **organisatienaam** samen met `-sharedsvcs-net-rg` om de resourcegroep uniek te maken.|
-|Resourcegroep van netwerk|Resourcegroep|Locatie|**Vergrendeld** : maakt gebruik van de blauwdrukparameter.|
+|Resourcegroep van netwerk|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-sharedsvcs-net-rg` om de resourcegroep uniek te maken.|
+|Resourcegroep van netwerk|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Sjabloon voor Azure Firewall|Resource Manager-sjabloon|Privé-IP-adres voor Azure-firewall|Hiermee configureert u het privé IP-adres van de [Azure-firewall](../../../../firewall/overview.md). Deze waarde wordt ook gebruikt als standaardrouteringstabel voor subnets van gedeelde services. Moet deel uitmaken van de CIDR-notatie die is gedefinieerd in het **voorvoegsel van het subnet van de Azure Firewall**. De standaardwaarde is _10.0.4.4_.|
 |Sjabloon voor Azure Firewall|Resource Manager-sjabloon|Behoud van logboeken in dagen|Gegevensretentie in dagen. De standaardwaarde is _365_.|
 |Sjabloon voor netwerkbeveiligingsgroep|Resource Manager-sjabloon|Behoud van logboeken in dagen|Gegevensretentie in dagen. De standaardwaarde is _365_.|
@@ -128,8 +128,8 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Sjabloon voor virtueel netwerk en routeringstabel|Resource Manager-sjabloon|Voorvoegsel van subnetadres van toepassingsgateway|De CIDR-notatie voor het subnet van de toepassingsgateway. De standaardwaarde is _10.0.2.0/24_.|
 |Sjabloon voor virtueel netwerk en routeringstabel|Resource Manager-sjabloon|Voorvoegsel van subnetadres van gateway voor virtueel netwerk|De CIDR-notatie voor het subnet van de virtuele netwerkgateway. De standaardwaarde is _10.0.3.0/24_.|
 |Sjabloon voor virtueel netwerk en routeringstabel|Resource Manager-sjabloon|Voorvoegsel van subnetadres van Azure Firewall|De CIDR-notatie voor het subnet van de [Azure firewall](../../../../firewall/overview.md). Moet de parameter **Privé-IP-adres voor Azure firewall** bevatten.|
-|Key Vault-resourcegroep|Resourcegroep|Naam|**Vergrendeld** : voegt de **organisatienaam** samen met `-sharedsvcs-kv-rg` om de resourcegroep uniek te maken.|
-|Key Vault-resourcegroep|Resourcegroep|Locatie|**Vergrendeld** : maakt gebruik van de blauwdrukparameter.|
+|Key Vault-resourcegroep|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-sharedsvcs-kv-rg` om de resourcegroep uniek te maken.|
+|Key Vault-resourcegroep|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Key Vault-sjabloon|Resource Manager-sjabloon|Gebruikersnaam van Jumpbox-beheerder|Gebruikersnaam voor de jumpbox. Moet overeenkomen met de eigenschapswaarde in de **JumpBox-sjabloon**. De standaardwaarde is _jb-admin-user_.|
 |Key Vault-sjabloon|Resource Manager-sjabloon|SSH-sleutel of wachtwoord van de Jumpbox- beheerder|De sleutel of het wachtwoord voor het account op de jumpbox. Moet overeenkomen met de eigenschapswaarde in de **JumpBox-sjabloon**. Geen standaardwaarde en mag niet leeg zijn.|
 |Key Vault-sjabloon|Resource Manager-sjabloon|Gebruikersnaam van domeinbeheerder|De gebruikersnaam die wordt gebruikt voor toegang tot de Active Directory-VM en om andere VM's aan een domein toe te voegen. Moet overeenkomen met de eigenschapswaarde van **Domeinbeheerder** in de **Active Directory Domain Services-sjabloon**. De standaardwaarde is _domain-admin-user_.|
@@ -137,14 +137,14 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 |Key Vault-sjabloon|Resource Manager-sjabloon|AAD-object-ID|De AAD-object-id van het account dat toegang moet hebben tot het Key Vault-exemplaar. Geen standaardwaarde en mag niet leeg zijn. Als u deze waarde wilt vinden in de Azure-portal, zoekt en selecteert u Gebruikers onder _Services_. Gebruik het vak _Naam_ om de accountnaam te filteren en selecteer dat account. Selecteer op de pagina _Gebruikersprofiel_ het pictogram Klik om te kopiëren naast de _object-ID_.  |
 |Key Vault-sjabloon|Resource Manager-sjabloon|Behoud van logboeken in dagen|Gegevensretentie in dagen. De standaardwaarde is _365_.|
 |Key Vault-sjabloon|Resource Manager-sjabloon|Key Vault-SKU|Hiermee geeft u de SKU op van de Key Vault die is gemaakt. De standaardwaarde is _Premium_.|
-|JumpBox-resourcegroep|Resourcegroep|Naam|**Vergrendeld** : voegt de **organisatienaam** samen met `-sharedsvcs-jb-rg` om de resourcegroep uniek te maken.|
-|JumpBox-resourcegroep|Resourcegroep|Locatie|**Vergrendeld** : maakt gebruik van de blauwdrukparameter.|
+|JumpBox-resourcegroep|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-sharedsvcs-jb-rg` om de resourcegroep uniek te maken.|
+|JumpBox-resourcegroep|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Jumpbox-sjabloon|Resource Manager-sjabloon|Gebruikersnaam van Jumpbox-beheerder|De gebruikersnaam die wordt gebruikt voor toegang tot Jumpbox-VM's. Moet overeenkomen met de eigenschapswaarde in de **Key Vault-sjabloon**. De standaardwaarde is _jb-admin-user_.|
 |Jumpbox-sjabloon|Resource Manager-sjabloon|JumpBox-beheerderswachtwoord (resource-ID van de Key Vault)|De resource-ID van de Key Vault. Gebruik "/subscriptions/{subscriptionId}/resourceGroups/{orgName}-sharedsvcs-kv-rg/providers/Microsoft.KeyVault/vaults/{orgName}-sharedsvcs-kv" en vervang `{subscriptionId}` door uw abonnements-ID en `{orgName}` door de blauwdrukparameter van de **organisatienaam**.|
 |Jumpbox-sjabloon|Resource Manager-sjabloon|JumpBox-beheerderswachtwoord (geheime naam van de Key Vault)|De gebruikersnaam van de JumpBox-beheerder. Moet overeenkomen met de eigenschapswaarde van de **Gebruikersnaam van JumpBox-beheerder** in de **Key Vault-sjabloon**.|
 |Jumpbox-sjabloon|Resource Manager-sjabloon|Jumpbox-besturingssysteem|Hiermee bepaalt u het besturingssysteem van de jumpbox-VM. De standaardwaarde is _Windows_.|
-|Active Directory Domain Services-resourcegroep|Resourcegroep|Naam|**Vergrendeld** : voegt de **organisatienaam** samen met `-sharedsvcs-adds-rg` om de resourcegroep uniek te maken.|
-|Active Directory Domain Services-resourcegroep|Resourcegroep|Locatie|**Vergrendeld** : maakt gebruik van de blauwdrukparameter.|
+|Active Directory Domain Services-resourcegroep|Resourcegroep|Naam|**Vergrendeld**: voegt de **organisatienaam** samen met `-sharedsvcs-adds-rg` om de resourcegroep uniek te maken.|
+|Active Directory Domain Services-resourcegroep|Resourcegroep|Locatie|**Vergrendeld**: maakt gebruik van de blauwdrukparameter.|
 |Sjabloon voor Active Directory Domain Services|Resource Manager-sjabloon|Gebruikersnaam van domeinbeheerder|Gebruikersnaam voor de ADDS-jumpbox. Moet overeenkomen met de eigenschapswaarde in de **Key Vault-sjabloon**. De standaardwaarde is _adds-admin-user_.|
 |Sjabloon voor Active Directory Domain Services|Resource Manager-sjabloon|Wachtwoord van domeinbeheerder (resource-ID van Key Vault)|De resource-ID van de Key Vault. Gebruik "/subscriptions/{subscriptionId}/resourceGroups/{orgName}-sharedsvcs-kv-rg/providers/Microsoft.KeyVault/vaults/{orgName}-sharedsvcs-kv" en vervang `{subscriptionId}` door uw abonnements-ID en `{orgName}` door de blauwdrukparameter van de **organisatienaam**.|
 |Sjabloon voor Active Directory Domain Services|Resource Manager-sjabloon|Wachtwoord van domeinbeheerder (geheime naam van Key Vault)|De gebruikersnaam van de domeinbeheerder. Moet overeenkomen met de eigenschapswaarde van **Gebruikersnaam van domeinbeheerder** in de **Key Vault-sjabloon**.|

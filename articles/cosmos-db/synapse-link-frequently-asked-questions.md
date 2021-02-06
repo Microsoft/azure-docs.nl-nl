@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: 82133f990c1714276aa13ff22c3f19d0993d16df
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cef5f178ea879ba98df90da36ec9c4b639dd100a
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488711"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627769"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Veelgestelde vragen over Azure Synapse Link voor Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -109,9 +109,9 @@ Momenteel biedt Terraform geen ondersteuning voor containers voor analytische op
 
 ## <a name="analytical-time-to-live-ttl"></a>Analytische time to Live (TTL)
 
-### <a name="is-ttl-for-analytical-data-supported-at-both-container-and-item-level"></a>Is TTl voor analytische gegevens die worden ondersteund op container-en item niveau?
+### <a name="is-ttl-for-analytical-data-supported-at-both-container-and-item-level"></a>Is TTL voor analytische gegevens die worden ondersteund op container-en item niveau?
 
-Op dit moment kan TTl voor analytische gegevens alleen worden geconfigureerd op container niveau en is er geen ondersteuning voor het instellen van de analyse-TTL op item niveau.
+Op dit moment kan TTL voor analytische gegevens alleen worden geconfigureerd op container niveau en is er geen ondersteuning voor het instellen van de analytische TTL op itemniveau.
 
 ### <a name="after-setting-the-container-level--analytical-ttl-on-an-azure-cosmos-db-container-can-i-change-to-a-different-value-later"></a>Kan ik na het instellen van de analyse-TTL op container niveau in een Azure Cosmos DB container later overschakelen naar een andere waarde?
 

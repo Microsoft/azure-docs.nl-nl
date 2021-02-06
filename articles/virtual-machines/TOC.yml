@@ -107,26 +107,15 @@
       href: ./workloads/mainframe-rehosting/overview.md
     - name: Databases
       items:
-        - name: MySQL in SUSE
-          href: ./linux/mysql-on-opensuse.md
         - name: MongoDB
           items:
-            - name: Linux
-              href: ./linux/install-mongodb.md
             - name: Windows
               href: ./windows/install-mongodb.md
-        - name: PostgreSQL
-          href: ./linux/postgresql-install.md
         - name: MS SQL in Linux
           href: /sql/linux/sql-server-linux-azure-virtual-machine
     - name: HPC (High Performance Computing)
       href: /azure/architecture/topics/high-performance-computing/
     - name: Containers
-      items:
-        - name: Docker Machine gebruiken
-          href: ./linux/docker-machine.md
-        - name: Docker Compose gebruiken
-          href: ./linux/docker-compose-quickstart.md
     - name: Visual Studio
       href: ./windows/using-visual-studio-vm.md
 - name: exemplaren
@@ -979,10 +968,18 @@
       href: disks-scalability-targets.md
     - name: Back-up en gegevens beveiliging
       items:
-        - name: Back-up en herstel na noodgeval voor schijven
-          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: Incrementele moment opnamen inschakelen
           href: disks-incremental-snapshots.md
+        - name: Azure Disk Backup
+          items:
+            - name: Overzicht
+              href: ../backup/disk-backup-overview.md?context=/azure/virtual-machines/context/context
+            - name: Back-ups van Azure-schijf configureren
+              href: ../backup/backup-managed-disks.md?context=/azure/virtual-machines/context/context
+            - name: Schijven herstellen met Azure-schijf back-up
+              href: ../backup/restore-managed-disks.md?context=/azure/virtual-machines/context/context
+        - name: Back-up en herstel na noodgeval voor schijven
+          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: Moment opname maken van een schijf-CLI
           href: ./linux/snapshot-copy-managed-disk.md
         - name: Moment opname maken van een schijf-Power shell
@@ -1281,8 +1278,6 @@
       href: ../azure-monitor/insights/monitor-vm-azure.md?context=/azure/virtual-machines/context/context
     - name: Virtuele machines bewaken
       items:
-        - name: Linux
-          href: ./linux/tutorial-monitor.md
         - name: Windows
           href: ./windows/tutorial-monitor.md
     - name: Agents

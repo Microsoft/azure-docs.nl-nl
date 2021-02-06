@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 10/08/2020
+ms.date: 02/04/2021
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: 7ba0f1b6f37da923e389964b99a02295dc3d6050
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.openlocfilehash: f3458c3b12b3151fd20531282f56ed2f1fd29b6b
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359524"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627696"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Zelfstudie: Een site-naar-site-verbinding maken met Azure Virtual WAN
 
@@ -55,7 +55,7 @@ Een hub is een virtueel netwerk dat gateways kan bevatten voor site-naar-site-, 
 
 ## <a name="create-a-site"></a><a name="site"></a>Een site maken
 
-U bent nu klaar om de sites te maken die overeenkomen met uw fysieke locaties. Maak het aantal sites dat u nodig hebt voor uw fysieke locaties. Als u bijvoorbeeld een filiaal in NY, een filiaal in Londen en een filiaal in LA hebt, maakt u drie afzonderlijke sites. Deze sites bevatten de eindpunten voor uw on-premises VPN-apparaat. U kunt maximaal duizend sites per virtuele hub in een virtueel WAN maken. Als u meerdere hubs hebt, kunt u per hub duizend sites maken. Als u een CPE-apparaat van een Virtual WAN-partner (koppeling invoegen) hebt, neemt u contact met de partner op voor meer informatie over automatisering met Azure. Automatisering houdt gewoonlijk in dat u slechts hoeft te klikken om grootschalige vertakkingsgegevens naar Azure te exporteren en connectiviteit hoeft in te stellen vanaf de CPE naar de Azure Virtual WAN VPN-gateway. Zie [Richtlijnen voor automatisering van Azure naar CPE-partners](virtual-wan-configure-automation-providers.md) voor meer informatie.
+In deze sectie maakt u een site. Sites komen overeen met uw fysieke locaties. Maak zoveel sites als u nodig hebt. Als u bijvoorbeeld een filiaal in NY, een filiaal in Londen en een filiaal in LA hebt, maakt u drie afzonderlijke sites. Deze sites bevatten de eindpunten voor uw on-premises VPN-apparaat. U kunt Maxi maal 1000 sites per virtuele hub maken in een virtueel WAN. Als u meerdere hubs hebt, kunt u per hub duizend sites maken. Als u een virtueel WAN-partner CPE-apparaat hebt, kunt u hier contact mee vinden voor meer informatie over automatisering naar Azure. Normaal gesp roken impliceert Automation een eenvoudige klik ervaring voor het exporteren van grootschalige vertakkings gegevens naar Azure en het instellen van connectiviteit vanaf de CPE tot Azure Virtual WAN VPN gateway. Zie [Richtlijnen voor automatisering van Azure naar CPE-partners](virtual-wan-configure-automation-providers.md) voor meer informatie.
 
 [!INCLUDE [Create a site](../../includes/virtual-wan-tutorial-s2s-site-include.md)]
 
@@ -78,19 +78,19 @@ Gebruik de VPN-apparaatconfiguratie om uw on-premises VPN-apparaat te configurer
 3. Wanneer het bestand gereed is, klikt u op de koppeling om het te downloaden.
 4. Pas de configuratie toe op uw on-premises VPN-apparaat.
 
-### <a name="understanding-the-vpn-device-configuration-file"></a>Meer informatie over het configuratiebestand voor uw VPN-apparaat
+### <a name="about-the-vpn-device-configuration-file"></a>Over het configuratie bestand voor het VPN-apparaat
 
 Het apparaatconfiguratiebestand bevat de instellingen die u dient te gebruiken om uw on-premises VPN-apparaat te configureren. Wanneer u dit bestand bekijkt, ziet u de volgende informatie:
 
 * **vpnSiteConfiguration -** in deze sectie vindt u de apparaatgegevens, ingesteld als een site die verbinding maakt met het virtuele WAN. Hier vindt u ook de naam en het openbare ip-adres van het branch-apparaat.
 * **vpnSiteConnections -** deze sectie bevat informatie over de volgende instellingen:
 
-    * **Adresruimte** van het VNet van de virtuele hub(s)<br>Voorbeeld:
+    * **Adres ruimte** van de virtuele hub (s) VNet.<br>Voorbeeld:
  
         ```
         "AddressSpace":"10.1.0.0/24"
         ```
-    * **Adresruimte** van de VNets die zijn verbonden met de hub<br>Voorbeeld:
+    * De **adres ruimte** van de VNets die zijn verbonden met de hub.<br>Voorbeeld:
 
          ```
         "ConnectedSubnets":["10.2.0.0/16","10.3.0.0/16"]
@@ -101,7 +101,7 @@ Het apparaatconfiguratiebestand bevat de instellingen die u dient te gebruiken o
         "Instance0":"104.45.18.186"
         "Instance1":"104.45.13.195"
         ```
-    * **Informatie over verbindingsconfiguratie van VPN-gateway** , zoals BGP, vooraf-gedeelde sleutels, enzovoort. De PSK is de vooraf gedeelde sleutel die automatisch voor u wordt gegenereerd. U kunt altijd de verbinding bewerken op de pagina Overzicht om een aangepaste PSK in te stellen.
+    * **Informatie over verbindingsconfiguratie van VPN-gateway**, zoals BGP, vooraf-gedeelde sleutels, enzovoort. De PSK is de vooraf gedeelde sleutel die automatisch voor u wordt gegenereerd. U kunt altijd de verbinding bewerken op de pagina Overzicht om een aangepaste PSK in te stellen.
   
 ### <a name="example-device-configuration-file"></a>Voorbeeld van een apparaatconfiguratiebestand
 

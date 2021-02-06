@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 284ab3a2aabb2395636982237159117a10151019
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: d20a363a0320ca45f22183e54bcc390d4733c8bc
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014940"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581751"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Procedure: Gebruik de portal voor het maken van een Azure AD-toepassing en service-principal die toegang hebben tot resources
 
@@ -115,7 +115,7 @@ In de volgende sectie ziet u hoe u waarden kunt ophalen die nodig zijn bij het p
 
 ## <a name="get-tenant-and-app-id-values-for-signing-in"></a>Tenant-en App-ID-waarden ophalen voor aanmelden
 
-Wanneer u zich programmatisch aanmeldt, moet u de Tenant-ID door geven aan uw verificatie aanvraag en de toepassings-ID.  U hebt ook een certificaat of een verificatie sleutel nodig (beschreven in de volgende sectie). U kunt deze waarden als volgt ophalen:
+Wanneer u zich programmatisch aanmeldt, geeft u de Tenant-ID door aan uw verificatie aanvraag en de toepassings-ID.  U hebt ook een certificaat of een verificatie sleutel nodig (beschreven in de volgende sectie). U kunt deze waarden als volgt ophalen:
 
 1. Selecteer **Azure Active Directory**.
 1. Selecteer uw toepassing in **app-registraties** in azure AD.
@@ -162,7 +162,7 @@ Het certificaat uploaden:
 
 1. Selecteer **Toevoegen**.
 
-Nadat u het certificaat hebt geregistreerd bij uw toepassing in de portal voor toepassings registratie, moet u de client toepassings code inschakelen om het certificaat te gebruiken.
+Nadat u het certificaat hebt geregistreerd bij uw toepassing in de portal voor toepassings registratie, schakelt u de client toepassings code in om het certificaat te gebruiken.
 
 ### <a name="option-2-create-a-new-application-secret"></a>Optie 2: een nieuw toepassings geheim maken
 

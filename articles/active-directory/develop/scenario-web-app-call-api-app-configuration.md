@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: bcbff131706854c079a5af2f38cad98f97018167
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 2109705116c323fd3632b7230a81ccd9158c1a64
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753320"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582313"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Een web-app die web-Api's aanroept: code configuratie
 
@@ -32,7 +32,7 @@ De [Web-app die zich in gebruikers scenario's aanmeldt](scenario-web-app-sign-us
 
 De volgende bibliotheken in de micro soft Authentication Library (MSAL) ondersteunen de autorisatie code stroom voor web-apps:
 
-| MSAL-bibliotheek | Beschrijving |
+| MSAL-bibliotheek | Description |
 |--------------|-------------|
 | ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Ondersteuning voor .NET Framework-en .NET core-platforms. Niet ondersteund zijn Universeel Windows-platform (UWP), Xamarin. iOS en Xamarin. Android, omdat deze platformen worden gebruikt voor het bouwen van open bare client toepassingen. <br/><br/>Voor ASP.NET Core web apps en Web-Api's wordt MSAL.NET ingekapseld in een bibliotheek op een hoger niveau met de naam [micro soft. Identity. Web](https://aka.ms/ms-identity-web). |
 | ![MSAL Python](media/sample-v2-code/logo_python.png) <br/> MSAL voor Python | Ondersteuning voor python-webtoepassingen. |
@@ -44,7 +44,7 @@ Selecteer het tabblad voor het platform waarin u bent geïnteresseerd:
 
 ## <a name="client-secrets-or-client-certificates"></a>Client geheimen of client certificaten
 
-Gezien dat uw web-app nu een stroomafwaartse Web-API aanroept, moet u een client geheim of client certificaat opgeven in de *appsettings.jsin* het bestand. U kunt ook een sectie toevoegen waarin het volgende wordt opgegeven:
+Als uw web-app nu een stroomafwaartse Web-API aanroept, geeft u een client geheim of client certificaat op in het *appsettings.js* bestand. U kunt ook een sectie toevoegen waarin het volgende wordt opgegeven:
 
 - De URL van de stroomafwaartse Web-API
 - De bereiken die vereist zijn voor het aanroepen van de API
@@ -184,7 +184,7 @@ In de volgende afbeelding ziet u de verschillende mogelijkheden van *micro soft.
 :::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.svg" alt-text="Blok diagram met de service configuratie opties in startup dot C S voor het aanroepen van een web-API en het opgeven van een token cache-implementatie":::
 
 > [!NOTE]
-> Als u de code voorbeelden hier volledig wilt begrijpen, moet u bekend zijn met [ASP.net core fundamentals](/aspnet/core/fundamentals), met name bij het [invoegen van afhankelijkheden](/aspnet/core/fundamentals/dependency-injection) en [Opties](/aspnet/core/fundamentals/configuration/options).
+> Als u hier volledig inzicht wilt krijgen in de code voorbeelden, moet u bekend zijn met [ASP.net core fundamentals](/aspnet/core/fundamentals), en met name met [afhankelijkheids injectie](/aspnet/core/fundamentals/dependency-injection) en [Opties](/aspnet/core/fundamentals/configuration/options).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 

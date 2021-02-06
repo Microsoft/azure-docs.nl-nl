@@ -5,14 +5,14 @@ author: kromerm
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/07/2020
+ms.date: 02/04/2021
 ms.author: makromer
-ms.openlocfilehash: e3152f1dff4a80ce3ae8bd121215ceb2595b9ee2
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: a08457ba041fa39fda367976498a4a89930c56e3
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854002"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585157"
 ---
 # <a name="common-data-model-format-in-azure-data-factory"></a>Gemeen schappelijke gegevens model indeling in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -40,7 +40,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Hoofd locatie: mappad | Locatie van de hoofdmap van de map CDM | ja | Tekenreeks | folderPath |
 | Manifest bestand: pad naar entiteit | Mappad van de entiteit binnen de hoofdmap | nee | Tekenreeks | entityPath |
 | Manifest bestand: manifest naam | De naam van het manifest bestand. Standaard waarde is ' default '  | Nee | Tekenreeks | manifestnaam |
-| Filteren op laatst gewijzigd | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee | Timestamp | modifiedAfter <br> modifiedBefore | 
+| Filteren op laatst gewijzigd | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee | Tijdstempel | modifiedAfter <br> modifiedBefore | 
 | Gekoppelde schema service | De gekoppelde service waar de verzameling zich bevindt | Ja, als u een manifest gebruikt | `'adlsgen2'` of `'github'` | corpusStore | 
 | Container voor entiteits verwijzing | Container verzameling is in | Ja, als u Manifest en verzameling in ADLS Gen2 gebruikt | Tekenreeks | adlsgen2_fileSystem |
 | Opslag plaats voor entiteit verwijzing | Naam van de GitHub-opslagplaats | Ja, als u Manifest en verzameling in GitHub gebruikt | Tekenreeks | github_repository |
@@ -85,6 +85,7 @@ Wanneer u gegevens stroom kolommen aan entiteits eigenschappen in de Sink-trans 
 2. Zoek de partities. Locatie-eigenschap 
 3. Wijzig ' blob.core.windows.net ' in ' dfs.core.windows.net '
 4. De code ring '% 2F ' in de URL naar '/' oplossen
+5. Als u gebruik wilt maken van ADF-gegevens stromen, moeten speciale tekens in het pad van het partitie bestand worden vervangen door alfanumerieke waarden, of overschakelen naar Synapse gegevens stromen
 
 ### <a name="cdm-source-data-flow-script-example"></a>Voor beeld van CDM-bron gegevensstroom script
 

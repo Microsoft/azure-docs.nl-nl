@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: dc6fdadbdfdbdd1d32f640e356a67841187a83c9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3a7e8c47977f0518a3a3e9f8a6fd2e57454e1c42
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999260"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626101"
 ---
 # <a name="set-up-a-lab-for-engineering-classes-using-solidworks"></a>Een Lab voor technische klassen instellen met behulp van SOLIDWORKS
 
@@ -57,7 +57,7 @@ Gebruik de instellingen in de onderstaande tabel bij het instellen van een leslo
 > De grootte van de virtuele machine van **Small GPU (visualisatie)** is zo geconfigureerd dat een hoogwaardige grafische ervaring kan worden uitgevoerd.  Zie het artikel over het [instellen van een Lab met gpu's](./how-to-setup-lab-gpu.md)voor meer informatie over deze grootte van de virtuele machine.
 
 > [!WARNING]
-> Vergeet niet om het [virtuele netwerk](https://www.mathworks.com/support/requirements/matlab-system-requirements.html) voor het lab-account te koppelen aan het virtuele netwerk van de licentie server **voordat** u het Lab maakt.
+> Vergeet niet om het [virtuele netwerk](./how-to-connect-peer-virtual-network.md) voor het lab-account te koppelen aan het virtuele netwerk van de licentie server **voordat** u het Lab maakt.
 
 ## <a name="template-virtual-machine-configuration"></a>Configuratie van de virtuele machine van de sjabloon
 

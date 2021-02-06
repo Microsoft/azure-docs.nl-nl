@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 1d594001340f76c6dde9f3e00de2d76ee4e5104b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 4d78e1e27d70b147bb52dff13675e63b79335d62
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843325"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625462"
 ---
 # <a name="tutorial-remove-azure-resources"></a>Zelfstudie: Azure-resources verwijderen
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelfstudie is deel vijf van een reeks zelfstudies en laat zien hoe u de app en de bijbehorende resources verwijderen zodat er geen kosten in rekening worden gebracht.
 

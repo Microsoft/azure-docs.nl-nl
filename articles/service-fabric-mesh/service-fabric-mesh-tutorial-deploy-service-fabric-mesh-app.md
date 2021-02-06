@@ -5,15 +5,20 @@ author: georgewallace
 ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: gwallace
-ms.custom: mvc, devcenter , devx-track-azurecli
-ms.openlocfilehash: 51e5fd29d16c3f927dc9b89d9c7145a16f4fd49f
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.custom: mvc, devcenter
+ms.openlocfilehash: be1e477bf3f11d487b8a6705535c09ff6e2b9c3e
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748238"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626730"
 ---
 # <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Zelfstudie: Een Service Fabric Mesh-toepassing implementeren
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelfstudie is deel drie van een reeks en laat u zien hoe u een Azure Service Fabric Mesh-webtoepassing rechtstreeks vanuit Visual Studio implementeert.
 
@@ -55,17 +60,17 @@ U vindt de toepassing in de map `src\todolistapp`.
 
 Als u uw Service Fabric Mesh-project in Azure wilt publiceren, klikt u met de rechtermuisknop op **todolistapp** in Visual Studio en selecteert u **Publiceren...** .
 
-Vervolgens ziet u het dialoogvenster **Service Fabric-toepassing publiceren** .
+Vervolgens ziet u het dialoogvenster **Service Fabric-toepassing publiceren**.
 
 ![Dialoogvenster in Visual Studio over Service Fabric Mesh-publicatie](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
 
-Selecteer uw Azure-account en -abonnement. Kies een **Locatie** . In dit artikel wordt gebruikgemaakt van **VS - oost** .
+Selecteer uw Azure-account en -abonnement. Kies een **Locatie**. In dit artikel wordt gebruikgemaakt van **VS - oost**.
 
 Selecteer onder **Resourcegroep** de optie **\<Create New Resource Group...>** . Er verschijnt een dialoogvenster waarin u uw nieuwe resourcegroep maakt. In dit artikel wordt de locatie **VS - oost** gebruikt en krijgt de groep de naam **sfmeshTutorial1RG** (kies een unieke groepsnaam als meerdere mensen in uw organisatie gebruikmaken van hetzelfde abonnement).  Druk op **Maken** om de resourcegroep te maken en ga terug naar het publicatiedialoogvenster.
 
 ![Dialoogvenster in Visual Studio over nieuwe resourcegroep in Service Fabric Mesh](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-resource-group-dialog.png)
 
-In het dialoogvenster **Service Fabric-toepassing publiceren** selecteert u onder **Azure Container Registry** **\<Create New Container Registry...>** . In het dialoogvenster **Containerregister maken** gebruikt u een unieke naam voor de **Containerregisternaam** . Geef een **Locatie** op (in deze tutorial wordt gebruikgemaakt van **VS - oost** ). Selecteer in de vervolgkeuzelijst de **Resourcegroep** die u eerder hebt gemaakt, bijvoorbeeld **sfmeshTutorial1RG** . Stel de **SKU** in op **Basic** en druk op **Maken** om het persoonlijke Azure-containerregister te maken en terug te gaan naar het dialoogvenster Publiceren.
+In het dialoogvenster **Service Fabric-toepassing publiceren** selecteert u onder **Azure Container Registry** **\<Create New Container Registry...>** . In het dialoogvenster **Containerregister maken** gebruikt u een unieke naam voor de **Containerregisternaam**. Geef een **Locatie** op (in deze tutorial wordt gebruikgemaakt van **VS - oost**). Selecteer in de vervolgkeuzelijst de **Resourcegroep** die u eerder hebt gemaakt, bijvoorbeeld **sfmeshTutorial1RG**. Stel de **SKU** in op **Basic** en druk op **Maken** om het persoonlijke Azure-containerregister te maken en terug te gaan naar het dialoogvenster Publiceren.
 
 ![Dialoogvenster in Visual Studio over nieuw containerregister in Service Fabric Mesh](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-container-registry-dialog.png)
 

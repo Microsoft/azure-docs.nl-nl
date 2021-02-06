@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d5517afe7407da7428d4a83f3d2de67836280c7
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: f80990854fd0c584d8e6582fdf35108e67d9202b
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741895"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625124"
 ---
 # <a name="azure-ad-password-protection-on-premises-frequently-asked-questions"></a>Veelgestelde vragen over Azure AD-wachtwoord beveiliging
 
@@ -38,7 +38,7 @@ Met de Azure AD-Portal kunt u de configuratie van on-premises specifieke ' wacht
 
 **V: hoe kan ik de voor delen van Azure AD-wachtwoord beveiliging Toep assen op een subset van mijn on-premises gebruikers?**
 
-Niet ondersteund. Als Azure AD-wachtwoord beveiliging eenmaal is geïmplementeerd en ingeschakeld, krijgen alle gebruikers dezelfde beveiligings voordelen.
+Wordt niet ondersteund. Als Azure AD-wachtwoord beveiliging eenmaal is geïmplementeerd en ingeschakeld, krijgen alle gebruikers dezelfde beveiligings voordelen.
 
 **V: wat is het verschil tussen een wachtwoord wijziging en een wachtwoordset (of opnieuw instellen)?**
 
@@ -70,11 +70,11 @@ Ja. Ondersteuning voor meerdere geregistreerde wachtwoord filter-dll's is een ke
 
 **V: hoe kan ik Azure AD-wachtwoord beveiliging in mijn Active Directory omgeving implementeren en configureren zonder Azure te gebruiken?**
 
-Niet ondersteund. Azure AD-wachtwoord beveiliging is een Azure-functie die ondersteuning biedt voor uitgebreid in een on-premises Active Directory omgeving.
+Wordt niet ondersteund. Azure AD-wachtwoord beveiliging is een Azure-functie die ondersteuning biedt voor uitgebreid in een on-premises Active Directory omgeving.
 
 **V: hoe kan ik de inhoud van het beleid op het Active Directory niveau wijzigen?**
 
-Niet ondersteund. Het beleid kan alleen worden beheerd via de Azure AD-Portal. Zie ook de vorige vraag.
+Wordt niet ondersteund. Het beleid kan alleen worden beheerd via de Azure AD-Portal. Zie ook de vorige vraag.
 
 **V: Waarom is DFSR vereist voor SYSVOL-replicatie?**
 
@@ -150,6 +150,146 @@ De controle modus wordt alleen ondersteund in de on-premises Active Directory om
 **V: mijn gebruikers zien het traditionele Windows-fout bericht wanneer een wacht woord wordt geweigerd door Azure AD-wachtwoord beveiliging. Is het mogelijk om dit fout bericht aan te passen zodat gebruikers weten wat er echt is gebeurd?**
 
 Nee. Het fout bericht dat door gebruikers wordt weer gegeven wanneer een wacht woord wordt geweigerd door een domein controller, wordt beheerd door de client computer, niet door de domein controller. Dit gedrag treedt op of een wacht woord wordt geweigerd door de standaard Active Directory wachtwoord beleid of door een oplossing op basis van een wacht woord filter, zoals Azure AD-wachtwoord beveiliging.
+
+## <a name="password-testing-procedures"></a>Test procedures voor wacht woorden
+
+Mogelijk wilt u een aantal basis tests uitvoeren op verschillende wacht woorden om de juiste werking van de software te valideren en om een beter inzicht te krijgen in de [wachtwoord evaluatie algoritme](concept-password-ban-bad.md#how-are-passwords-evaluated). Deze sectie bevat een overzicht van een methode voor dergelijke tests die zijn ontworpen voor het produceren van Herhaal bare resultaten.
+
+Waarom moet u deze stappen volgen? Er zijn verschillende factoren waardoor het moeilijk is om beheerde, herhaal bare testen van wacht woorden in de on-premises Active Directory omgeving uit te voeren:
+
+* Het wachtwoord beleid is geconfigureerd en persistent gemaakt in azure, en kopieën van het beleid worden periodiek gesynchroniseerd door de on-premises DC-agent (s) met behulp van een Polling-mechanisme. De latentie inherent aan deze polling-cyclus kan leiden tot Verwar ring. Als u bijvoorbeeld het beleid configureert in azure, maar vergeet het niet te synchroniseren met de DC-agent, levert de tests mogelijk niet de verwachte resultaten op. Het polling-interval is momenteel een hardcoded keer per uur, maar wacht een uur tussen beleids wijzigingen is niet ideaal voor een interactief test scenario.
+* Zodra een nieuw wachtwoord beleid is gesynchroniseerd naar een domein controller, treedt er meer latentie op wanneer het wordt gerepliceerd naar andere domein controllers. Deze vertragingen kunnen leiden tot onverwachte resultaten als u een wachtwoord wijziging test op een domein controller die de meest recente versie van het beleid nog niet heeft ontvangen.
+* Door wachtwoord wijzigingen te testen via een gebruikers interface is het moeilijk om vertrouwen in uw resultaten te hebben. Het is bijvoorbeeld eenvoudig om een ongeldig wacht woord te typen in een gebruikers interface, met name omdat de meeste gebruikers interfaces van het wacht woord gebruikers invoer verbergen (bijvoorbeeld de Windows CTRL-ALT-DELETE-> gebruikers interface voor wacht woord wijzigen).
+* Het is niet mogelijk om strikt te bepalen welke domein controller wordt gebruikt bij het testen van wachtwoord wijzigingen van clients die lid zijn van een domein. Het Windows-client besturingssysteem selecteert een domein controller op basis van factoren zoals Active Directory site-en subnet toewijzingen, omgevings specifieke netwerk configuratie, enzovoort.
+
+Als u deze problemen wilt voor komen, kunt u de volgende stappen uitvoeren op basis van de opdracht regel tests voor het opnieuw instellen van wacht woorden terwijl u bent aangemeld bij een domein controller.
+
+> [!WARNING]
+> Deze procedures moeten alleen worden gebruikt in een test omgeving, omdat alle binnenkomende wachtwoord wijzigingen en opnieuw instellen worden geaccepteerd zonder validatie wanneer de DC-Agent service wordt gestopt, en om te voor komen dat de toegenomen Risico's inherent zijn aan het aanmelden bij een domein controller.
+
+Bij de volgende stappen wordt ervan uitgegaan dat u de DC-agent hebt geïnstalleerd op ten minste één domein controller, ten minste één proxy hebt geïnstalleerd en de proxy en het forest hebben geregistreerd.
+
+1. Meld u aan bij een domein controller met behulp van de referenties voor de domein beheerder (of andere referenties die voldoende bevoegdheden hebben om test gebruikers accounts te maken en wacht woorden opnieuw in te stellen), waarbij de software van de DC-agent is geïnstalleerd en opnieuw is opgestart.
+1. Open Logboeken en navigeer naar het [gebeurtenis logboek van de DC-agent beheerder](howto-password-ban-bad-on-premises-monitor.md#dc-agent-admin-event-log).
+1. Open een opdracht prompt venster met verhoogde bevoegdheden.
+1. Een test account maken voor het testen van wacht woorden
+
+   Er zijn veel manieren om een gebruikers account te maken, maar een opdracht regel optie is hier een manier om deze eenvoudig te maken tijdens herhaalde test cycli:
+
+   ```text
+   net.exe user <testuseraccountname> /add <password>
+   ```
+
+   Stel dat we een test account hebben gemaakt met de naam ' ContosoUser ', bijvoorbeeld:
+
+   ```text
+   net.exe user ContosoUser /add <password>
+   ```
+
+1. Open een webbrowser (mogelijk moet u een afzonderlijk apparaat in plaats van uw domein controller gebruiken), Meld u aan bij de [Azure Portal](https://portal.azure.com)en blader naar Azure Active Directory > beveiligings > verificatie methoden > wachtwoord beveiliging.
+1. Wijzig de Azure AD-beleids regels voor wachtwoord beveiliging als dat nodig is voor de tests die u wilt uitvoeren.  U kunt er bijvoorbeeld voor kiezen om de afgedwongen of controle modus te configureren, of u kunt besluiten om de lijst met verboden voor waarden in uw lijst met verboden wacht woorden te wijzigen.
+1. Synchroniseer het nieuwe beleid door de DC-Agent service te stoppen en opnieuw te starten.
+
+   Deze stap kan op verschillende manieren worden uitgevoerd. U kunt ook de beheer console van Service Management gebruiken door met de rechter muisknop op de Azure AD-service voor wachtwoord beveiliging DC-agent te klikken en ' opnieuw opstarten ' te kiezen. Een andere manier kan worden uitgevoerd vanuit het opdracht prompt venster, zoals in de volgende gevallen:
+
+   ```text
+   net stop AzureADPasswordProtectionDCAgent && net start AzureADPasswordProtectionDCAgent
+   ```
+    
+1. Controleer de Logboeken om te controleren of een nieuw beleid is gedownload.
+
+   Telkens wanneer de DC-Agent service wordt gestopt en gestart, ziet u dat er na elkaar 2 30006 gebeurtenissen worden uitgegeven. De eerste 30006-gebeurtenis weerspiegelt het beleid dat in de cache is opgeslagen in de SYSVOL-share. De tweede gebeurtenis van 30006 (indien aanwezig) moet een bijgewerkte Tenant beleids datum hebben en zo ja, dan wordt het beleid weer gegeven dat is gedownload van Azure. De datum waarde van het Tenant beleid is momenteel gecodeerd om de tijds tempel bij benadering weer te geven dat het beleid is gedownload van Azure.
+   
+   Als de tweede gebeurtenis 30006 niet wordt weer gegeven, moet u het probleem oplossen voordat u doorgaat.
+   
+   De 30006-gebeurtenissen zien er ongeveer uit als in dit voor beeld:
+ 
+   ```text
+   The service is now enforcing the following Azure password policy.
+
+   Enabled: 1
+   AuditOnly: 0
+   Global policy date: ‎2018‎-‎05‎-‎15T00:00:00.000000000Z
+   Tenant policy date: ‎2018‎-‎06‎-‎10T20:15:24.432457600Z
+   Enforce tenant policy: 1
+   ```
+
+   Als u bijvoorbeeld tussen afgedwongen en controle modus wijzigt, wordt de vlag AuditOnly gewijzigd (het bovenstaande beleid met AuditOnly = 0 is in afgedwongen modus). wijzigingen in de lijst met aangepaste verboden wacht woorden worden niet direct weer gegeven in de bovenstaande gebeurtenis 30006 (en worden niet op een wille keurige manier geregistreerd om veiligheids redenen). Het beleid van Azure is gedownload nadat deze wijziging ook de aangepaste lijst met geblokkeerde wacht woorden bevat.
+
+1. Voer een test uit door te proberen een nieuw wacht woord opnieuw in te stellen voor het test gebruikers account.
+
+   Deze stap kan worden uitgevoerd in het opdracht prompt venster, bijvoorbeeld:
+
+   ```text
+   net.exe user ContosoUser <password>
+   ```
+
+   Nadat u de opdracht hebt uitgevoerd, kunt u meer informatie over het resultaat van de opdracht krijgen door te kijken in de logboeken. Resultaten van de validatie van het wacht woord worden beschreven in het onderwerp [gebeurtenis logboek van DC-agent beheerder](howto-password-ban-bad-on-premises-monitor.md#dc-agent-admin-event-log) . u gebruikt dergelijke gebeurtenissen om de resultaten van uw test te valideren naast de interactieve uitvoer van de net.exe-opdrachten.
+
+   We gaan een voor beeld proberen: er wordt geprobeerd een wacht woord in te stellen dat is verboden door de globale lijst van micro soft (deze lijst is [niet gedocumenteerd](concept-password-ban-bad.md#global-banned-password-list) , maar we kunnen hier testen met een bekende verboden periode). In dit voor beeld wordt ervan uitgegaan dat u het beleid in afgedwongen modus hebt geconfigureerd en dat er nul voor waarden zijn toegevoegd aan de lijst met geblokkeerde wacht woorden.
+
+   ```text
+   net.exe user ContosoUser PassWord
+   The password does not meet the password policy requirements. Check the minimum password length, password complexity and password history requirements.
+
+   More help is available by typing NET HELPMSG 2245.
+   ```
+
+   Omdat bij de test een wachtwoord herstel bewerking is uitgevoerd, moet u een 10017-en een 30005-gebeurtenis voor de ContosoUser-gebruiker zien.
+
+   De 10017-gebeurtenis moet er als volgt uitzien:
+
+   ```text
+   The reset password for the specified user was rejected because it did not comply with the current Azure password policy. Please see the correlated event log message for more details.
+ 
+   UserName: ContosoUser
+   FullName: 
+   ```
+
+   De 30005-gebeurtenis moet er als volgt uitzien:
+
+   ```text
+   The reset password for the specified user was rejected because it matched at least one of the tokens present in the Microsoft global banned password list of the current Azure password policy.
+ 
+   UserName: ContosoUser
+   FullName: 
+   ```
+
+   Dat is leuk: we proberen nog een voor beeld. Deze keer proberen we een wacht woord in te stellen dat verboden is door de lijst met aangepaste verboden wanneer het beleid zich in de controle modus bevindt. In dit voor beeld wordt ervan uitgegaan dat u de volgende stappen hebt uitgevoerd: het beleid is geconfigureerd in de controle modus, de term ' lachrymose ' toegevoegd aan de lijst met aangepaste geblokkeerde wacht woorden en het resulterende nieuwe beleid is gesynchroniseerd met de domein controller door de DC-Agent service te activeren zoals hierboven wordt beschreven.
+
+   Stel een variant in van het wacht woord verboden:
+
+   ```text
+   net.exe user ContosoUser LaChRymoSE!1
+   The command completed successfully.
+   ```
+
+   Houd er rekening mee dat deze tijd is geslaagd omdat het beleid zich in de controle modus bevindt. U ziet een gebeurtenis van 10025 en een 30007 voor de ContosoUser-gebruiker.
+
+   De 10025-gebeurtenis moet er als volgt uitzien:
+   
+   ```text
+   The reset password for the specified user would normally have been rejected because it did not comply with the current Azure password policy. The current Azure password policy is configured for audit-only mode so the password was accepted. Please see the correlated event log message for more details.
+ 
+   UserName: ContosoUser
+   FullName: 
+   ```
+
+   De 30007-gebeurtenis moet er als volgt uitzien:
+
+   ```text
+   The reset password for the specified user would normally have been rejected because it matches at least one of the tokens present in the per-tenant banned password list of the current Azure password policy. The current Azure password policy is configured for audit-only mode so the password was accepted.
+ 
+   UserName: ContosoUser
+   FullName: 
+   ```
+
+1. Ga door met het testen van verschillende wacht woorden en het controleren van de resultaten in de logboeken met behulp van de procedures beschreven in de vorige stappen. Als u het beleid in de Azure Portal wilt wijzigen, vergeet dan niet om het nieuwe beleid te synchroniseren met de DC-agent zoals eerder beschreven.
+
+We hebben procedures behandeld waarmee u het gedrag van wachtwoord validatie van Azure AD-wachtwoord beveiliging kunt testen. Het opnieuw instellen van gebruikers wachtwoorden vanaf de opdracht regel op een domein controller lijkt een oneven aantal handelingen te doen, maar zoals eerder beschreven, is het ontworpen voor het produceren van Herhaal bare resultaten. Houd bij het testen van verschillende wacht woorden rekening met de [wachtwoord evaluatie algoritme](concept-password-ban-bad.md#how-are-passwords-evaluated) , omdat deze mogelijk kan leiden tot een uitleg van de resultaten die u niet verwacht.
+
+> [!WARNING]
+> Wanneer alle tests zijn voltooid, moet u niet verg eten alle gebruikers accounts te verwijderen die zijn gemaakt voor test doeleinden.
 
 ## <a name="additional-content"></a>Aanvullende inhoud
 

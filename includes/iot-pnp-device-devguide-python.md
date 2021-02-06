@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/19/2020
-ms.openlocfilehash: 7658b5a51c9e24e5530114ebca7455a0ed3ea097
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 236c8856dc2e693518f2f0055b622c9a1c88695c
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511463"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99616376"
 ---
 ## <a name="model-id-announcement"></a>Aankondiging van model-ID
 
@@ -26,6 +26,9 @@ device_client = IoTHubDeviceClient.create_from_symmetric_key(
 
 > [!TIP]
 > Voor modules en IoT Edge, gebruikt u `IoTHubModuleClient` in plaats van `IoTHubDeviceClient` .
+
+> [!TIP]
+> Dit is de enige keer dat een apparaat model-ID kan instellen. Dit kan niet worden bijgewerkt nadat het apparaat verbinding maakt.
 
 ## <a name="dps-payload"></a>DPS-nettolading
 
@@ -283,7 +286,7 @@ Voor de onderdelen van het apparaat worden de gewenste en gerapporteerde secties
 }
 ```
 
-### <a name="commands"></a>Opdrachten
+### <a name="commands"></a>Opdracht
 
 Een standaard onderdeel ontvangt de opdracht naam zoals deze is aangeroepen door de service.
 

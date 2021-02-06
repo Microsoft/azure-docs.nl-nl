@@ -7,25 +7,25 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/12/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 37f1c9f59b6ffb45e1b874d2a6969bf263d2d5eb
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 4ed881b74f240946d98d9868344c898d3e9a9dad
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341362"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627328"
 ---
 # <a name="azure-cosmos-db-resource-model"></a>Azure Cosmos DB-resourcemodel
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Azure Cosmos DB is een volledig beheerd platform-as-a-Service (PaaS). Als u Azure Cosmos DB wilt gaan gebruiken, moet u in eerste instantie een Azure Cosmos-account maken in uw Azure-abonnement en data bases, containers, items daaronder. In dit artikel worden de Azure Cosmos DB resource model en verschillende entiteiten in de resource model hiërarchie beschreven.
 
-Het Azure Cosmos-account is de fundamentele eenheid van wereld wijde distributie en hoge Beschik baarheid. Uw Azure Cosmos-account bevat een unieke DNS-naam en u kunt een account beheren door gebruik te maken van Azure Portal, Azure CLI of door andere taalspecifieke Sdk's te gebruiken. Zie [How to manage your Azure Cosmos account](how-to-manage-database-account.md)(Engelstalig) voor meer informatie. Voor een wereld wijde distributie van uw gegevens en door Voer in meerdere Azure-regio's kunt u op elk gewenst moment Azure-regio's aan uw account toevoegen en eruit verwijderen. U kunt uw account zodanig configureren dat het één regio of meerdere schrijf regio's heeft. Zie [Azure-regio's toevoegen aan en verwijderen uit uw account](how-to-manage-database-account.md)voor meer informatie. U kunt het [standaard consistentie](consistency-levels.md) niveau configureren voor een account.
+Het Azure Cosmos-account is de fundamentele eenheid van wereld wijde distributie en hoge Beschik baarheid. Uw Azure Cosmos-account bevat een unieke DNS-naam en u kunt een account beheren door gebruik te maken van de Azure Portal of de Azure CLI of door andere taalspecifieke Sdk's te gebruiken. Zie [How to manage your Azure Cosmos account](how-to-manage-database-account.md)(Engelstalig) voor meer informatie. Voor een wereld wijde distributie van uw gegevens en door Voer in meerdere Azure-regio's kunt u op elk gewenst moment Azure-regio's aan uw account toevoegen en eruit verwijderen. U kunt uw account zodanig configureren dat het één regio of meerdere schrijf regio's heeft. Zie [Azure-regio's toevoegen aan en verwijderen uit uw account](how-to-manage-database-account.md)voor meer informatie. U kunt het [standaard consistentie](consistency-levels.md) niveau configureren voor een account.
 
 ## <a name="elements-in-an-azure-cosmos-account"></a>Elementen in een Azure Cosmos-account
 
-Azure Cosmos-container is de fundamentele eenheid voor schaal baarheid. U kunt vrijwel een onbeperkte ingerichte door Voer (RU/s) en opslag in een container hebben. Azure Cosmos DB uw container op transparante wijze partitioneren met behulp van de logische partitie sleutel die u opgeeft om uw ingerichte door Voer en opslag elastisch te schalen.
+Een Azure Cosmos-container is de basis eenheid voor schaal baarheid. U kunt vrijwel een onbeperkte ingerichte door Voer (RU/s) en opslag in een container hebben. Azure Cosmos DB uw container op transparante wijze partitioneren met behulp van de logische partitie sleutel die u opgeeft om uw ingerichte door Voer en opslag elastisch te schalen.
 
-Op dit moment kunt u een maximum van 50 Azure Cosmos-accounts maken onder een Azure-abonnement (dit is een zachte limiet die kan worden verhoogd via de ondersteunings aanvraag). Met één Azure Cosmos-account kunt u een onbeperkte hoeveelheid gegevens en ingerichte door Voer beheren. Als u uw gegevens en de ingerichte door voer wilt beheren, kunt u een of meer Azure Cosmos-data bases maken onder uw account en binnen die data base, kunt u een of meer containers maken. In de volgende afbeelding ziet u de hiërarchie van elementen in een Azure Cosmos-account:
+Op dit moment kunt u een maximum van 50 Azure Cosmos-accounts maken onder een Azure-abonnement (dit is een zachte limiet die kan worden verhoogd via de ondersteunings aanvraag). Met één Azure Cosmos-account kan een onbeperkte hoeveelheid gegevens en ingerichte door voer worden beheerd. Als u uw gegevens en de ingerichte door voer wilt beheren, kunt u een of meer Azure Cosmos-data bases maken onder uw account en binnen die data base, kunt u een of meer containers maken. In de volgende afbeelding ziet u de hiërarchie van elementen in een Azure Cosmos-account:
 
 :::image type="content" source="./media/account-databases-containers-items/hierarchy.png" alt-text="Hiërarchie van een Azure Cosmos-account" border="false":::
 
@@ -52,10 +52,10 @@ U kunt communiceren met een Azure Cosmos-data base met Azure Cosmos-Api's, zoals
 
 | Bewerking | Azure CLI | SQL-API | Cassandra-API | Azure Cosmos DB-API voor MongoDB | Gremlin-API | Tabel-API |
 | --- | --- | --- | --- | --- | --- | --- |
-|Alle data bases opsommen| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Ja | NA | NA |
-|Data Base lezen| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Ja | NA | NA |
-|Nieuwe data base maken| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Ja | NA | NA |
-|Data base bijwerken| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Ja | NA | NA |
+|Alle data bases opsommen| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Yes | NA | NA |
+|Data Base lezen| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Yes | NA | NA |
+|Nieuwe data base maken| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Yes | NA | NA |
+|Data base bijwerken| Ja | Ja | Ja (Data Base is toegewezen aan een spatie) | Yes | NA | NA |
 
 ## <a name="azure-cosmos-containers"></a>Azure Cosmos-containers
 
@@ -63,7 +63,7 @@ Een Azure Cosmos-container is de eenheid van schaal baarheid voor ingerichte doo
 
 Wanneer u een container maakt, configureert u door Voer in een van de volgende modi:
 
-* **Toegewezen doorvoer modus voor ingerichte** : de door Voer die is ingericht voor een container is exclusief gereserveerd voor die container en wordt ondersteund door de sla's. Zie [het inrichten van de door Voer voor een container](how-to-provision-container-throughput.md)voor meer informatie.
+* **Toegewezen doorvoer modus voor ingerichte**: de door Voer die is ingericht voor een container is exclusief gereserveerd voor die container en wordt ondersteund door de sla's. Zie [het inrichten van de door Voer voor een container](how-to-provision-container-throughput.md)voor meer informatie.
 
 * **Gedeelde doorvoer modus** voor opslag: deze containers delen de ingerichte door Voer met de andere containers in dezelfde data base (met uitzonde ring van containers die zijn geconfigureerd met een toegewezen ingerichte door Voer). Met andere woorden, de ingerichte door Voer voor de data base wordt gedeeld door alle "gedeelde door Voer"-containers. Zie [de doorvoer snelheid inrichten voor een Data Base](how-to-provision-database-throughput.md)voor meer informatie.
 

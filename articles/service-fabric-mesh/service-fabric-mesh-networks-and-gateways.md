@@ -6,14 +6,20 @@ ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 372e8a46bfe588aa22b0f3be0ef8ae442fa342e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef8b40be366afe24b960f7419d84cc2a9976b592
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842696"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625698"
 ---
 # <a name="introduction-to-networking-in-service-fabric-mesh-applications"></a>Inleiding tot netwerken in Service Fabric-mesh toepassingen
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
+
 In dit artikel worden verschillende soorten load balancers beschreven, hoe gateways het netwerk met uw toepassingen verbinden met andere netwerken en hoe verkeer wordt gerouteerd tussen de services in uw toepassingen.
 
 ## <a name="layer-4-vs-layer-7-load-balancers"></a>Laag 4-load balancers Layer 3 vs Layer 7

@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   ms.service: app-service
   ms.date: 08/06/2020
-  ms.openlocfilehash: 8ace1c6bb530fcc93d06f48bcef0d1ccfdf82306
-  ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-  ms.translationtype: HT
+  ms.openlocfilehash: 2344c7a1507feb6ca3938fe0c53cf618b015f0f4
+  ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/22/2020
-  ms.locfileid: "97724422"
+  ms.lasthandoff: 02/06/2021
+  ms.locfileid: "99627314"
 landingContent:
 - title: Meer informatie over App Service
   linkLists:
@@ -60,46 +60,10 @@ landingContent:
       url: scenario-secure-app-overview.md
   - linkListType: how-to-guide
     links:
-    - text: Diagnostische logboeken inschakelen
-      url: troubleshoot-diagnostic-logs.md
     - text: Verbinding maken met een Linux-container via SSH
       url: configure-linux-open-ssh-session.md
     - text: Actief domein migreren naar App Service
       url: manage-custom-dns-migrate-domain.md
-- title: CRUD-app met database
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: ASP.NET-app met SQL-database
-      url: app-service-web-tutorial-dotnet-sqldatabase.md
-    - text: ASP.NET Core-app met SQL Database
-      url: tutorial-dotnetcore-sqldb-app.md
-    - text: PHP (Laravel)-app met Azure MySQL
-      url: tutorial-php-mysql-app.md
-    - text: Node.js (MEAN.js)-app met MongoDB
-      url: tutorial-nodejs-mongodb-app.md
-    - text: Java (Spring Boot)-app met Cosmos DB
-      url: tutorial-java-spring-cosmosdb.md
-    - text: Python (Django)-app met PostgreSQL
-      url: tutorial-python-postgresql-app.md
-    - text: Ruby (Rails)-app met PostgreSQL
-      url: tutorial-ruby-postgres-app.md
-- title: Uw code of inhoud uploaden
-  linkLists:
-  - linkListType: deploy
-    links:
-    - text: Inhoud uploaden met FTP
-      url: deploy-ftp.md
-    - text: Inhoud uploaden als ZIP-pakketten
-      url: deploy-zip.md
-    - text: Git-push van lokale computer
-      url: deploy-local-git.md
-    - text: Inhoud synchroniseren met OneDrive of Dropbox
-      url: deploy-content-sync.md
-    - text: CI/CD met GitHub, BitBucket, etc.
-      url: deploy-continuous-deployment.md
-    - text: Uitvoeren uit pakket
-      url: deploy-run-package.md
 - title: Aangepaste containers uitvoeren
   linkLists:
   - linkListType: quickstart
@@ -120,6 +84,24 @@ landingContent:
       url: configure-connect-to-azure-storage.md
     - text: Implementeren met GitHub Actions
       url: deploy-container-github-action.md
+- title: CRUD-app met database
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: ASP.NET-app met SQL-database
+      url: app-service-web-tutorial-dotnet-sqldatabase.md
+    - text: ASP.NET Core-app met SQL Database
+      url: tutorial-dotnetcore-sqldb-app.md
+    - text: PHP (Laravel)-app met Azure MySQL
+      url: tutorial-php-mysql-app.md
+    - text: Node.js (MEAN.js)-app met MongoDB
+      url: tutorial-nodejs-mongodb-app.md
+    - text: Java (Spring Boot)-app met Cosmos DB
+      url: tutorial-java-spring-cosmosdb.md
+    - text: Python (Django)-app met PostgreSQL
+      url: tutorial-python-postgresql-app.md
+    - text: Ruby (Rails)-app met PostgreSQL
+      url: tutorial-ruby-postgres-app.md
 - title: Beheren en integreren
   linkLists:
   - linkListType: concept
@@ -146,6 +128,46 @@ landingContent:
       url: configure-domain-traffic-manager.md
     - text: Back-ups van uw app maken in Storage-blobs
       url: manage-backup.md
+- title: Uw code of inhoud uploaden
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Inhoud uploaden met FTP
+      url: deploy-ftp.md
+    - text: Inhoud uploaden als ZIP-pakketten
+      url: deploy-zip.md
+    - text: Git-push van lokale computer
+      url: deploy-local-git.md
+    - text: Inhoud synchroniseren met OneDrive of Dropbox
+      url: deploy-content-sync.md
+    - text: CI/CD met GitHub, BitBucket, etc.
+      url: deploy-continuous-deployment.md
+    - text: Uitvoeren uit pakket
+      url: deploy-run-package.md
+- title: Uw app controleren
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: App Service integratie met Azure Monitor (preview-versie)
+      url: https://azure.github.io/AppService/2019/11/01/App-Service-Integration-with-Azure-Monitor.html
+    - text: Logboek typen voor de integratie van Azure Monitor (preview-versie)
+      url: https://azure.github.io/AppService/2020/06/25/New-Logs-Available-for-Azure-Monitor-Integration.html
+  - linkListType: tutorial
+    links:
+    - text: Fouten oplossen met Azure Monitor (preview)
+      url: tutorial-troubleshoot-monitor.md
+  - linkListType: how-to-guide
+    links:
+    - text: Diagnostische logboeken inschakelen
+      url: troubleshoot-diagnostic-logs.md
+    - text: Resourcegebeurtenissen ophalen
+      url: get-resource-events.md
+    - text: Statuscontrole
+      url: monitor-instances-health-check.md
+  - linkListType: reference
+    links:
+    - text: Quota & waarschuwingen
+      url: web-sites-monitor.md
 - title: Meer bronnen
   linkLists:
   - linkListType: video

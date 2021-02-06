@@ -3,16 +3,21 @@ title: Voor beeld klassen typen op Azure Lab Services | Microsoft Docs
 description: Biedt een aantal typen klassen waarvoor u Labs kunt instellen met behulp van Azure Lab Services.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7ebc89c040be732c230f0c3f54f68fb91466eb68
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 5a90fb128f5954f3eb713714ff22ff40a3beab36
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436399"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627430"
 ---
 # <a name="class-types-overview---azure-lab-services"></a>Overzicht van klassen typen-Azure Lab Services
 
 Met Azure Lab Services kunt u klassikale test omgevingen snel instellen in de Cloud. De artikelen in deze sectie bieden richt lijnen voor het instellen van verschillende soorten Labs met behulp van Azure Lab Services.
+
+## <a name="arcgis"></a>ArcGIS
+[ArcGIS](https://www.esri.com/en-us/arcgis/products/arcgis-solutions/overview) is een type geografisch informatie systeem (GIS).  U kunt een Lab instellen dat gebruikmaakt van verschillende toepassingen van ArcGIS Desktop, zoals [ArcMap](https://desktop.arcgis.com/en/arcmap/latest/map/main/what-is-arcmap-.htm) , om 2D-kaarten te maken, te bewerken en te analyseren.
+
+Zie [een Lab instellen voor ArcMap\ArcGIS Desktop](class-type-arcgis.md)voor meer informatie over het instellen van dit type Lab.
 
 ## <a name="big-data-analytics"></a>Big data-analyse
 U kunt een GPU-Lab instellen om een big data Analytics-klasse te leren. Met dit type klasse leren cursisten hoe ze grote hoeveel heden gegevens verwerken en de algoritmen voor machine-en statistische lessen Toep assen om gegevens inzichten af te leiden. Een belang rijke doel stelling voor studenten is het leren gebruiken van hulpprogram ma's voor gegevens analyse, zoals het open-source software pakket van Apache Hadoop waarmee u big data kunt opslaan, beheren en verwerken. 
@@ -41,6 +46,11 @@ Voor gedetailleerde informatie over het instellen van dit type Lab raadpleegt u 
 
 Voor gedetailleerde informatie over het instellen van dit type Lab raadpleegt [u een Lab instellen om MATLAB te leren](class-type-matlab.md).
 
+## <a name="networking-with-gns3"></a>Netwerken met GNS3
+U kunt een Lab instellen voor een klasse die gericht is op het toestaan van studenten, het configureren, testen en oplossen van problemen met virtuele en Real Networks met behulp van [GNS3](https://www.gns3.com/) -software. 
+
+Voor gedetailleerde informatie over het instellen van dit type Lab raadpleegt [u een Lab instellen voor het leren van een netwerk klasse](class-type-networking-gns3.md).
+
 ## <a name="project-lead-the-way-pltw"></a>Project leider (PLTW)
 [Project leider (PLTW)](https://www.pltw.org/) is een non-profit organisatie die PreK-12-leer plan biedt over de Verenigde Staten in computer wetenschappen, engineering en biomedische wetenschap.  In elke PLTW-klasse gebruiken studenten diverse software toepassingen als onderdeel van hun praktijk ervaring.
 
@@ -61,7 +71,12 @@ Zie [shell scripting op Linux](class-type-shell-scripting-linux.md)voor meer inf
 ## <a name="solidworks-computer-aided-design-cad"></a>SolidWorks computer-aided design (CAD)
 U kunt een GPU-Lab instellen dat technisch studenten toegang biedt tot [SolidWorks](https://www.solidworks.com/).  SolidWorks biedt een 3D-CAD-omgeving voor het model leren van solide objecten.  Met SolidWorks kunnen technici hun ontwerpen eenvoudig maken, visualiseren, simuleren en documenteren.
 
-Zie [een Lab instellen voor technische klassen met SolidWorks](class-type-solidworks.md) voor gedetailleerde informatie over het instellen van dit type Lab.
+Zie [een Lab instellen voor technische klassen met SolidWorks](class-type-solidworks.md)voor gedetailleerde informatie over het instellen van dit type Lab.
+
+## <a name="sql-database-and-management"></a>SQL database en-beheer
+Structured Query Language (SQL) is de standaard taal voor relationeel database beheer, waaronder het toevoegen, openen en beheren van inhoud in een Data Base.  U kunt een Lab instellen om database concepten te leren met behulp van de [MySQL](https://www.mysql.com/) -database server en [SQL Server 2019](https://www.microsoft.com/sql-server/sql-server-2019) -server.
+
+Voor gedetailleerde informatie over het instellen van dit type Lab, Zie [een Lab instellen voor het leren van database beheer voor relationele data bases](class-type-database-management.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen:

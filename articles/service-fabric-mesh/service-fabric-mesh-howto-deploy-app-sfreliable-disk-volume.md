@@ -6,14 +6,20 @@ ms.topic: conceptual
 ms.date: 12/03/2018
 ms.author: asnegi
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 86822c5a9cef84ff4b51bc94b6b2dd3dbdee91bf
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: ac65693f2513338695e07cd8a19acb13333e7281
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97702006"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625783"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Maxi maal beschik bare Service Fabric betrouw bare schijf op basis van schijven koppelen in een Service Fabric mesh-toepassing 
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
+
 De algemene methode voor het persistent maken van de status met container-apps is het gebruik van externe opslag, zoals Azure File Storage of Data Base, zoals Azure Cosmos DB. Dit resulteert in een aanzienlijke Lees-en schrijf latentie voor de externe opslag.
 
 In dit artikel wordt beschreven hoe u de status opslaat in een Maxi maal beschik bare Service Fabric betrouw bare schijf door een volume in de container van een Service Fabric mesh-toepassing te koppelen.

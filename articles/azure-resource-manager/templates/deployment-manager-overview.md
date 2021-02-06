@@ -4,12 +4,12 @@ description: Meer informatie over het implementeren van een service over veel re
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: baed44e04a0beca02cc959d302a4a29906b4a78e
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 63553b0bbca031faa44e0d88480fcc08950a3e2c
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539515"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627496"
 ---
 # <a name="enable-safe-deployment-practices-with-azure-deployment-manager-public-preview"></a>Veilige implementatie procedures met Azure Configuratiebeheer (open bare preview) inschakelen
 
@@ -21,10 +21,10 @@ Azure Configuratiebeheer is beschikbaar als preview-versie. Help ons bij het ver
 
 Als u Configuratiebeheer wilt gebruiken, moet u vier bestanden maken:
 
-* Topologie sjabloon
-* Implementatie sjabloon
-* Parameter bestand voor topologie
-* Parameter bestand voor implementatie
+* Topologie sjabloon.
+* Implementatie sjabloon.
+* Parameter bestand voor topologie.
+* Parameter bestand voor implementatie.
 
 U implementeert de topologie sjabloon voordat u de implementatie sjabloon implementeert.
 

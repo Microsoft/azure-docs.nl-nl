@@ -3,12 +3,12 @@ title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
 ms.date: 02/03/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5f12ea90a4398b63eaa19a1fc5a375c15bdfa8c5
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: ed77ee00510fedaf42226081fcf11c4753b8a63a
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526361"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626305"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -55,6 +55,7 @@ De volgende versies van het Windows-en Linux-besturings systeem worden officieel
 - SUSE Linux Enterprise Server (SLES) 15 (x64)
 - Red Hat Enterprise Linux (RHEL) 7 (x64)
 - Amazon Linux 2 (x64)
+- Oracle Linux 7
 
 > [!WARNING]
 > In de naam van de Linux-host of de Windows-computer mag niet een van de gereserveerde woorden of merken voorkomen, anders mislukt het registreren van de verbonden machine met Azure. Zie [Fouten in de gereserveerde resourcenaam oplossen](../../azure-resource-manager/templates/error-reserved-resource-name.md) voor een lijst met de gereserveerde woorden.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: ba5286b16b6e640e968b50174e39a05328e750a4
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 5f82e8b7359b90d5127e2c20a2b89cc5ad739a56
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797297"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99624756"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -101,7 +101,7 @@ Gebruik de [implementatie uitbreiding Synapse werk ruimte](https://marketplace.v
 
      ![De extensie installeren](media/install-extension.png)
 
-1. Zorg ervoor dat de Service Principle van de Azure DevOps-pijp lijn de machtiging van het abonnement heeft gekregen en ook is toegewezen als werkruimte beheerder voor de doel werkruimte. 
+1. Zorg ervoor dat de service-principal van de Azure DevOps-pijp lijn de machtiging van het abonnement heeft gekregen en ook is toegewezen als werkruimte beheerder voor de doel werkruimte. 
 
 1. Een nieuwe taak maken. Zoek naar de implementatie van de **Synapse-werk ruimte** en selecteer vervolgens **toevoegen**.
 
@@ -139,8 +139,8 @@ Als u gebruik wilt maken van Git-integratie met uw Synapse-werk ruimte en een CI
 
 ### <a name="use-the-synapse-workspace-deployment-task"></a>De implementatie taak voor de Synapse-werk ruimte gebruiken
 
-In Synapse zijn alle soorten artefacten geen ARM-bronnen, die verschillen van de ADF. U kunt geen ARM-sjabloon implementatie taak gebruiken om Synapse artefacten te implementeren
+In Synapse zijn er een aantal artefacten die geen ARM-bronnen zijn. Dit wijkt af van Azure Data Factory. De implementatie taak voor de ARM-sjabloon werkt niet goed voor het implementeren van Synapse-artefacten
  
 ### <a name="unexpected-token-error-in-release"></a>Onverwachte token fout in de release
 
-Als uw parameter bestand parameter waarden bevat die niet worden voorafgegaan door de release pijplijn, kan het bestand niet worden geparseerd met de fout melding van een onverwacht token. U wordt aangeraden om para meters of de sleutel kluis te vervangen door para meters op te halen. U kunt ook dubbel escape-teken als tijdelijke oplossing.
+Als uw parameter bestand parameter waarden bevat die niet worden voorafgegaan, kan de release pijp lijn het bestand niet parseren en wordt de fout ' onverwacht token ' gegenereerd. We raden u aan para meters te overschrijven of Azure-sleutel kluis te gebruiken om parameter waarden op te halen. U kunt ook dubbele escape tekens gebruiken als tijdelijke oplossing.

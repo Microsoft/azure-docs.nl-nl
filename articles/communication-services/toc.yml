@@ -51,6 +51,8 @@
   items:
     - name: Een vertrouwde verificatieservice maken met behulp van Azure Functions
       href: tutorials/trusted-service-tutorial.md
+    - name: 'Een HTTP-aanvraag met een HMAC-hand tekening ondertekenen met C #'
+      href: tutorials/hmac-header-tutorial.md
     - name: Een web-app voorbereiden voor communicatie Services (Node.js)
       href: tutorials/building-app-start.md
 - name: Concepten
@@ -110,6 +112,8 @@
       href: concepts/metrics.md
     - name: Problemen oplossen
       href: concepts/troubleshooting-info.md
+    - name: Bekende problemen
+      href: concepts/known-issues.md
 - name: Voorbeelden
   items:
     - name: Hero-voorbeeld van groepsgesprek

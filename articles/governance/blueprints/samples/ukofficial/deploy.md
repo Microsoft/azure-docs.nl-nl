@@ -1,14 +1,14 @@
 ---
 title: UK OFFICIAL- en UK NHS-blauwdrukvoorbeelden implementeren
 description: Implementeer stappen voor UK OFFICIAL- en UK NHS-blauwdrukvoorbeelden, inclusief de parametergegevens voor blauwdrukartefacten.
-ms.date: 11/02/2020
+ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: 14e832397c21f183c94720bc71f06530d9caaf14
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.openlocfilehash: 0c917134e5807283ceb0e7ce693037824794a6ef
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420322"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627547"
 ---
 # <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>De UK OFFICIAL- en UK NHS-blauwdrukvoorbeelden implementeren
 
@@ -33,8 +33,8 @@ Implementeer eerst het blauwdrukvoorbeeld door een nieuwe blauwdruk in uw omgevi
 
 1. Voer de _Basisinstellingen_ van het blauwdrukvoorbeeld in:
 
-   - **Naam van blauwdruk** : Geef een naam op voor uw kopie van het blauwdrukvoorbeeld.
-   - **Definitielocatie** : Gebruik het weglatingsteken en selecteer de beheergroep waarin u uw kopie van het voorbeeld wilt opslaan.
+   - **Naam van blauwdruk**: Geef een naam op voor uw kopie van het blauwdrukvoorbeeld.
+   - **Definitielocatie**: Gebruik het weglatingsteken en selecteer de beheergroep waarin u uw kopie van het voorbeeld wilt opslaan.
 
 1. Selecteer het tabblad _Artefacten_ boven aan de pagina of kies **Volgende: Artefacten** onder aan de pagina.
 
@@ -42,7 +42,7 @@ Implementeer eerst het blauwdrukvoorbeeld door een nieuwe blauwdruk in uw omgevi
 
 ## <a name="publish-the-sample-copy"></a>De voorbeeldkopie publiceren
 
-Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is gemaakt in de **Concept** -modus en moet worden **Gepubliceerd** voordat deze kan worden toegewezen en geïmplementeerd. De kopie van het blauwdrukvoorbeeld kan worden aangepast aan uw omgeving en behoeften, maar door die aanpassing is het mogelijk dat de kopie niet meer is afgestemd op de standaard.
+Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is gemaakt in de **Concept**-modus en moet worden **Gepubliceerd** voordat deze kan worden toegewezen en geïmplementeerd. De kopie van het blauwdrukvoorbeeld kan worden aangepast aan uw omgeving en behoeften, maar door die aanpassing is het mogelijk dat de kopie niet meer is afgestemd op de standaard.
 
 1. Selecteer **Alle services** in het linkerdeelvenster. Zoek en selecteer **Blauwdrukken**.
 
@@ -52,7 +52,7 @@ Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is ge
 
 ## <a name="assign-the-sample-copy"></a>De voorbeeldkopie toewijzen
 
-Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd** , kan het worden toegewezen aan een abonnement binnen de beheergroep waarin de kopie is opgeslagen. Dit is de stap waarin parameters worden opgegeven om elke implementatie van de kopie van het blauwdrukvoorbeeld uniek te maken.
+Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd**, kan het worden toegewezen aan een abonnement binnen de beheergroep waarin de kopie is opgeslagen. Dit is de stap waarin parameters worden opgegeven om elke implementatie van de kopie van het blauwdrukvoorbeeld uniek te maken.
 
 1. Selecteer **Alle services** in het linkerdeelvenster. Zoek en selecteer **Blauwdrukken**.
 
@@ -64,11 +64,11 @@ Zodra de kopie van het blauwdrukvoorbeeld is **Gepubliceerd** , kan het worden t
 
    - Basisbeginselen
 
-     - **Abonnementen** : Selecteer een of meer van de abonnementen in de beheergroep waarin u uw kopie van het blauwdrukvoorbeeld hebt opgeslagen. Als u meer dan één abonnement selecteert, wordt een toewijzing gemaakt voor elk abonnement waarvoor de ingevoerde parameters worden gebruikt.
-     - **Naam van toewijzing** : De naam wordt vooraf voor u ingevuld op basis van de naam van de blauwdruk.
+     - **Abonnementen**: Selecteer een of meer van de abonnementen in de beheergroep waarin u uw kopie van het blauwdrukvoorbeeld hebt opgeslagen. Als u meer dan één abonnement selecteert, wordt een toewijzing gemaakt voor elk abonnement waarvoor de ingevoerde parameters worden gebruikt.
+     - **Naam van toewijzing**: De naam wordt vooraf voor u ingevuld op basis van de naam van de blauwdruk.
        Wijzig de naam als dat nodig is of gebruik de opgegeven naam.
-     - **Locatie** : Selecteer een regio waarin u de beheerde identiteit wilt maken. Azure Blueprint gebruikt deze beheerde identiteit om alle artefacten in de toegewezen blauwdruk te implementeren. Zie [Beheerde identiteiten voor Azure-resources](../../../../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.
-     - **Blauwdrukdefinitieversie** : Kies een **gepubliceerde** versie van uw kopie van het blauwdrukvoorbeeld.
+     - **Locatie**: Selecteer een regio waarin u de beheerde identiteit wilt maken. Azure Blueprint gebruikt deze beheerde identiteit om alle artefacten in de toegewezen blauwdruk te implementeren. Zie [Beheerde identiteiten voor Azure-resources](../../../../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.
+     - **Blauwdrukdefinitieversie**: Kies een **gepubliceerde** versie van uw kopie van het blauwdrukvoorbeeld.
 
    - Toewijzing vergrendelen
 

@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4982acb54207a9ed08a96414877603a8253c2ade
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 22ac3b9ac5f7a10226e8dc7197fdf60dc0a84e3b
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557755"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627613"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -535,6 +535,7 @@ Kan alle aspecten van app-registraties en bedrijfs-apps maken en beheren.
 > | micro soft. Directory/policies/applicationConfiguration/eigen aren/lezen | Lees de eigenschap policies. applicationConfiguration in Azure Active Directory. |
 > | micro soft. Directory/policies/applicationConfiguration/Owners/update | Werk de eigenschap policies. applicationConfiguration bij in Azure Active Directory. |
 > | micro soft. Directory/policies/applicationConfiguration/policyAppliedTo/lezen | Lees de eigenschap policies. applicationConfiguration in Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Werk de eigenschap servicePrincipals. appRoleAssignedTo bij in Azure Active Directory. |
 > | micro soft. Directory/servicePrincipals/appRoleAssignments/update | Werk de eigenschap servicePrincipals. appRoleAssignments bij in Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/audience/update | Werk de eigenschap servicePrincipals. Audience bij in Azure Active Directory. |
@@ -697,6 +698,7 @@ Kan alle aspecten van app-registraties en bedrijfs-apps maken en beheren, behalv
 > | micro soft. Directory/policies/applicationConfiguration/eigen aren/lezen | Lees de eigenschap policies. applicationConfiguration in Azure Active Directory. |
 > | micro soft. Directory/policies/applicationConfiguration/Owners/update | Werk de eigenschap policies. applicationConfiguration bij in Azure Active Directory. |
 > | micro soft. Directory/policies/applicationConfiguration/policyAppliedTo/lezen | Lees de eigenschap policies. applicationConfiguration in Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Werk de eigenschap servicePrincipals. appRoleAssignedTo bij in Azure Active Directory. |
 > | micro soft. Directory/servicePrincipals/appRoleAssignments/update | Werk de eigenschap servicePrincipals. appRoleAssignments bij in Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/audience/update | Werk de eigenschap servicePrincipals. Audience bij in Azure Active Directory. |
@@ -766,6 +768,7 @@ Kan alle aspecten beheren van Azure AD en micro soft-services die gebruikmaken v
 > | micro soft. Directory/oAuth2PermissionGrants/allProperties/allTasks | Maak en verwijder oAuth2PermissionGrants en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 > | micro soft. map/organisatie-allProperties/allTasks | Maak en verwijder organisatie en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 > | micro soft. Directory/policies/allProperties/allTasks | Maak en verwijder beleids regels en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | micro soft. Directory/roleAssignments/allProperties/allTasks | Maak en verwijder roleAssignments en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 > | micro soft. Directory/roleDefinitions/allProperties/allTasks | Maak en verwijder roleDefinitions en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
 > | micro soft. Directory/scopedRoleMemberships/allProperties/allTasks | Maak en verwijder scopedRoleMemberships en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
@@ -1143,6 +1146,7 @@ Kan alles lezen dat een globale beheerder wel kan, maar geen bewerkingen kan ond
 > | micro soft. map/organisatie/basis/lezen    | Lees de basis eigenschappen van de organisatie in Azure Active Directory. |
 > | micro soft. map/organisatie/trustedCAsForPasswordlessAuth/lezen    | Lees de eigenschap Organization. trustedCAsForPasswordlessAuth in Azure Active Directory. |
 > | micro soft. Directory/beleid/standaard/lezen    | Lees het standaard beleid in Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | micro soft. map/roleAssignments/Basic/lezen    | Lees de basis eigenschappen van roleAssignments in Azure Active Directory. |
 > | micro soft. map/roleDefinitions/Basic/lezen    | Lees de basis eigenschappen van roleDefinitions in Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/read    | Lees de eigenschap servicePrincipals. appRoleAssignedTo in Azure Active Directory. |
@@ -1683,6 +1687,7 @@ Kan aanmeldings-en controle rapporten lezen.
 > | Acties | Beschrijving |
 > | --- | --- |
 > | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 > | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
@@ -1743,6 +1748,7 @@ Kan beveiligings gegevens en-rapporten lezen en configuratie in azure AD en Micr
 > | micro soft. Directory/policies/eigen aren/bijwerken | Werk de eigenschap policies. Owners bij in Azure Active Directory. |
 > | micro soft. Directory/policies/tenantDefault/update | Werk de eigenschap policies. tenantDefault bij in Azure Active Directory. |
 > | micro soft. map/privilegedIdentityManagement/allProperties/lezen | Alle resources in micro soft. Aad. privilegedIdentityManagement lezen. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | microsoft.directory/servicePrincipals/policies/update | Werk de eigenschap servicePrincipals. policies bij in Azure Active Directory. |
 > | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
 > | micro soft. office365. protectionCenter/de aflezingen/lezen | Lees alle aspecten van Office 365 Protection Center. |
@@ -1792,6 +1798,7 @@ Kan beveiligings gegevens en-rapporten in azure AD en Microsoft 365 lezen.
 > | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
 > | micro soft. Aad. identityProtection/aldaar/Lees | Alle resources in micro soft. Aad. identityProtection lezen. |
 > | micro soft. Aad. privilegedIdentityManagement/aldaar/Lees | Alle resources in micro soft. Aad. privilegedIdentityManagement lezen. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 > | micro soft. office365. protectionCenter/de aflezingen/lezen | Lees alle aspecten van Office 365 Protection Center. |

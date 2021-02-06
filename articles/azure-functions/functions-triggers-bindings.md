@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: aa0d78d52ec13c91b82e6a8d10720269076f59a1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 4cafe9af1eb5a765ab86bafb63cc9ab7d0889dc8
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353541"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627596"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Concepten van Azure Functions triggers en bindingen
 
@@ -39,16 +39,19 @@ Deze voor beelden zijn niet volledig, maar zijn bedoeld om te laten zien hoe u t
 
 ###  <a name="trigger-and-binding-definitions"></a>Definities van triggers en bindingen
 
-Triggers en bindingen worden op verschillende manieren gedefinieerd, afhankelijk van de ontwikkelings benadering.
+Triggers en bindingen worden op verschillende manieren gedefinieerd, afhankelijk van de taal van de ontwikkeling.
 
-| Platform | Triggers en bindingen worden geconfigureerd door... |
+| Taal | Triggers en bindingen worden geconfigureerd door... |
 |-------------|--------------------------------------------|
 | C#-klassebibliotheek | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de methoden en para meters voor C#-kenmerken |
-| Alle andere (inclusief Azure Portal) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[function.jsbijwerken op](./functions-reference.md) ([schema](http://json.schemastore.org/function)) |
+| Java | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;het decoreren van methoden en para meters met Java-aantekeningen  | 
+| Java script/Power shell/python/type script | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[function.jsbijwerken op](./functions-reference.md) ([schema](http://json.schemastore.org/function)) |
 
-De portal biedt een gebruikers interface voor deze configuratie, maar u kunt het bestand rechtstreeks bewerken door de **Geavanceerde editor** te openen die beschikbaar is via het tabblad **integreren** van uw functie.
+Voor talen die afhankelijk zijn van function.jsop, biedt de portal een gebruikers interface voor het toevoegen van bindingen op het tabblad **integratie** . U kunt het bestand ook rechtstreeks in de portal bewerken op het tabblad **code en testen** van uw functie. Met Visual Studio code kunt u eenvoudig [een binding toevoegen aan een function.jsin het bestand](functions-develop-vs-code.md?tabs=nodejs#add-a-function-to-your-project) door een handige set prompts te volgen. 
 
-In .NET definieert het parameter type het gegevens type voor invoer gegevens. Gebruik bijvoorbeeld `string` om een binding te maken met de tekst van een wachtrij trigger, een byte matrix die als binair moet worden gelezen en een aangepast type om te deserialiseren naar een object.
+In .NET en Java definieert het parameter type het gegevens type voor invoer gegevens. Gebruik bijvoorbeeld `string` om een binding te maken met de tekst van een wachtrij trigger, een byte matrix die als binair moet worden gelezen en een aangepast type voor het deserialiseren van een object. Omdat de functies van de .NET-klassebibliotheek en Java-functies niet afhankelijk zijn van *function.js* voor bindings definities, kunnen ze niet worden gemaakt en bewerkt in de portal. Het bewerken van c#-portals is gebaseerd op C#-script, dat *function.js* gebruikt in plaats van kenmerken.
+
+Zie [functies verbinden met Azure-Services met behulp van bindingen](add-bindings-existing-function.md)voor meer informatie over het toevoegen van bindingen aan bestaande functies.
 
 Voor talen die dynamisch worden getypt, zoals Java script, gebruikt u de `dataType` eigenschap in de *function.jsin* het bestand. Als u bijvoorbeeld de inhoud van een HTTP-aanvraag in binaire indeling wilt lezen, stelt u het volgende in `dataType` `binary` :
 

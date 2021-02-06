@@ -6,14 +6,20 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: srrengar
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 63c79169646f05cddc7c605c764398bdef7492d4
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 02de8ea5dd5c53192d2b8c7beba8bc36143beac6
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98682068"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626991"
 ---
 # <a name="monitoring-and-diagnostics"></a>Controle en diagnose
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
+
 Azure Service Fabric Mesh is een volledig beheerde service waarmee ontwikkelaars microservices-toepassingen kunnen implementeren zonder virtuele machines, opslag of netwerken hoeven te beheren. Bewaking en diagnose van Service Fabric net zijn onderverdeeld in drie hoofd typen diagnostische gegevens:
 
 - Toepassings logboeken: deze worden gedefinieerd als de logboeken van uw toepassingen met containers, op basis van hoe u uw toepassing hebt geinstrumenteerd (bijvoorbeeld docker-Logboeken)
@@ -43,7 +49,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
 
 In de mesh-omgeving wordt een aantal metrische gegevens weer gegeven die aangeven hoe uw containers worden uitgevoerd. De volgende metrische gegevens zijn beschikbaar via de Azure Portal en Azure monitor CLI:
 
-| Gegevens | Beschrijving | Eenheden|
+| Metrisch | Beschrijving | Eenheden|
 |----|----|----|
 | CpuUtilization | ActualCpu/AllocatedCpu als percentage | % |
 | MemoryUtilization | ActualMem/AllocatedMem als percentage | % |
@@ -58,7 +64,7 @@ In de mesh-omgeving wordt een aantal metrische gegevens weer gegeven die aangeve
 | RestartCount | Aantal herstarts van de container | N.v.t. |
 
 > [!NOTE]
-> De waarden ServiceStatus en ServiceReplicaStatus zijn hetzelfde als die van de [HealthState](/dotnet/api/system.fabric.health.healthstate?view=azure-dotnet) in service Fabric. 
+> De waarden ServiceStatus en ServiceReplicaStatus zijn hetzelfde als die van de [HealthState](/dotnet/api/system.fabric.health.healthstate) in service Fabric.
 
 Elke metriek is beschikbaar op verschillende dimensies, zodat u aggregaties op verschillende niveaus kunt zien. De huidige lijst met dimensies is als volgt:
 

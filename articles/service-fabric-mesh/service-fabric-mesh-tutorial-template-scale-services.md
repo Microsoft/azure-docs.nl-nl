@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: df28083a0522178b7327d9f6d24029d303e417a1
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 02dc5d43a23c572d441da2bbb7386885bf66ece7
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747869"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625380"
 ---
 # <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Zelfstudie: Een toepassing schalen die wordt uitgevoerd in Service Fabric Mesh
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelfstudie is deel twee van een serie. Leer hier hoe u handmatig het aantal service-instanties schaalt van een toepassing die [eerder is geïmplementeerd naar Service Fabric Mesh](service-fabric-mesh-tutorial-template-deploy-app.md). Wanneer u klaar bent, hebt u een front-end service met drie instanties en een gegevensservice met twee instanties.
 
@@ -88,7 +93,7 @@ Sla de wijzigingen in het parameterbestand op.  De parameters *frontEndReplicaCo
     }
 ```
 
-De eigenschap *replicaCount* van de WebFrontEnd-service verwijst naar de parameter *frontEndReplicaCount* en de eigenschap *replicaCount* van de ToDoService-service naar de parameter *serviceReplicaCount* :
+De eigenschap *replicaCount* van de WebFrontEnd-service verwijst naar de parameter *frontEndReplicaCount* en de eigenschap *replicaCount* van de ToDoService-service naar de parameter *serviceReplicaCount*:
 
 ```json
     "services": [

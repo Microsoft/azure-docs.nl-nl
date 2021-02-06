@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 8ed567ee20835cfe076c9b06234f2cba23f3a8bd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 98a16e0a60ddf149e8f0e1a092051f3e98ea8225
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002551"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627059"
 ---
 # <a name="troubleshoot-deploying-windows-virtual-machine-issues-in-azure"></a>Problemen bij het implementeren van virtuele Windows-machines in Azure oplossen
 
@@ -62,7 +62,7 @@ U kunt Windows 7, Windows 8 of Windows 10 gebruiken in azure voor ontwikkel-en t
 
 Er zijn een aantal verschillende manieren om virtuele Windows-machines te implementeren met de Azure Hybrid Use Benefit.
 
-Voor een Enterprise Agreement-abonnement:
+Voor een Enterprise Overeenkomst-abonnement:
 
 • Implementeer Vm's vanaf specifieke Marketplace-installatie kopieën die vooraf zijn geconfigureerd met Azure Hybrid Use Benefit.
 
@@ -84,7 +84,7 @@ Zie de volgende resources voor meer informatie:
 
 Als u uw maandelijkse tegoed wilt activeren, raadpleegt u dit [artikel](https://azure.microsoft.com/offers/ms-azr-0064p/).
 
-## <a name="how-to-add-enterprise-devtest-to-my-enterprise-agreement-ea-to-get-access-to-window-client-images"></a>Enterprise Dev/Test toevoegen aan mijn Enterprise Agreement (EA) om toegang te krijgen tot Window-client installatie kopieën?
+## <a name="how-to-add-enterprise-devtest-to-my-enterprise-agreement-ea-to-get-access-to-window-client-images"></a>Enterprise Dev/Test toevoegen aan mijn Enterprise Overeenkomst (EA) om toegang te krijgen tot Window-client installatie kopieën?
 
 De mogelijkheid om abonnementen te maken op basis van de Enterprise Dev/Test aanbieding is beperkt tot account eigenaren die toestemming hebben gekregen door een ondernemings beheerder. De eigenaar van het account maakt abonnementen via de Azure-account Portal en moet vervolgens actieve Visual Studio-abonnees als co-beheerder toevoegen. Zodat ze de benodigde bronnen voor ontwikkelen en testen kunnen beheren en gebruiken. Zie [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) voor meer informatie.
 
@@ -104,7 +104,7 @@ U kunt de beschik baarheid controleren vanuit de [tabel met beschik bare product
 
 U kunt Windows 7, Windows 8 of Windows 10 gebruiken in azure voor ontwikkel-en test scenario's waarin u hebt gebruikgemaakt van een geschikt MSDN-abonnement (Visual Studio). 
 
-- Windows 10-installatie kopieën zijn beschikbaar in de Azure Gallery binnen [in aanmerking komende ontwikkel-en test aanbiedingen](../windows/client-images.md#eligible-offers). 
+- Windows 10-installatie kopieën zijn beschikbaar in de Azure Gallery binnen [in aanmerking komende ontwikkel-en test aanbiedingen](../windows/client-images.md). 
 - Visual Studio-abonnees binnen elk type aanbieding kunnen ook adequaat een 64-bits Windows 7-, Windows 8-of Windows 10-installatie kopie [voorbereiden en maken](../windows/prepare-for-upload-vhd-image.md) en vervolgens [uploaden naar Azure](../windows/upload-generalized-managed.md). Het gebruik blijft beperkt tot dev/test door actieve Visual Studio-abonnees.
 
 In dit [artikel](../windows/client-images.md) vindt u een overzicht van de vereisten voor het uitvoeren van Windows-client in Azure en het gebruik van de installatie kopieën van Azure galerie.

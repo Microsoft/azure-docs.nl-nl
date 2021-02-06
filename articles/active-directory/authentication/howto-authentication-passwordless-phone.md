@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35eff46a0470d429c8ec6f364ffa836501c65f47
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 62dea67f139857befc7ca24b8b8a105241b5c949
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743595"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626152"
 ---
 # <a name="enable-passwordless-sign-in-with-the-microsoft-authenticator-app-preview"></a>Aanmelding zonder wacht woord inschakelen met de Microsoft Authenticator-app (preview)
 
@@ -57,17 +57,20 @@ Met Azure AD kunt u kiezen welke verificatie methoden tijdens het aanmeldings pr
 Voer de volgende stappen uit om de verificatie methode in te scha kelen voor aanmelding zonder wacht woord.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met een *Algemeen beheerders* account.
-1. Zoek en selecteer *Azure Active Directory* en blader vervolgens naar **beveiligings**  >  **verificatie methoden**  >  **beleid voor verificatie methode (preview)**
-1. Onder **aanmelding met een wacht woord voor aanmelden** kiest u de volgende opties:
+1. Zoek en selecteer *Azure Active Directory* en blader vervolgens naar beleid voor **beveiligings**  >  **verificatie methoden**  >  .
+1. Onder **Microsoft Authenticator (preview)** kiest u de volgende opties:
    1. **Inschakelen** -ja of Nee
    1. **Doel** -alle gebruikers of Selecteer gebruikers
+1. Elke toegevoegde groep of gebruiker is standaard ingeschakeld voor het gebruik van Microsoft Authenticator in zowel de modus voor zowel wacht woorden als push meldingen (' any '). Als u dit wilt wijzigen, voor elke rij:
+   1. Bladeren naar **...**  >  **Configureren**.
+   1. Voor **verificatie modus** : wille keurig, wacht woord of push
 1. Selecteer **Opslaan** om het nieuwe beleid toe te passen.
 
 ## <a name="user-registration-and-management-of-microsoft-authenticator"></a>Gebruikers registratie en het beheer van Microsoft Authenticator
 
 Gebruikers registreren zich voor de verificatie methode met een wacht woord voor Azure AD door de volgende stappen uit te voeren:
 
-1. Ga naar [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) .
+1. Blader naar [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
 1. Meld u aan en voeg de verificator-app toe door **methode toevoegen > verificator-app** te selecteren en vervolgens **toe te voegen**.
 1. Volg de instructies voor het installeren en configureren van de Microsoft Authenticator-app op het apparaat.
 1. Selecteer **gereed** om de configuratie van de verificator te volt ooien.

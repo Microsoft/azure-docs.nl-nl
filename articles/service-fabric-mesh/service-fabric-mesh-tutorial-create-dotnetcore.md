@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 09/18/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-csharp
-ms.openlocfilehash: fa15432072f6478100a378fdbdb697556fdf1dc9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: b0bdb3c09aead812e1c16f4d0d17aae58e141809
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842543"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626790"
 ---
 # <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>Zelfstudie: Een Service Fabric Mesh-toepassing met meerdere services bouwen, foutvrij maken, implementeren en upgraden
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelfstudie is deel één van een serie. U leert hoe u met Visual Studio een Azure Service Fabric Mesh-app maakt die een ASP.NET-webfront-end- en een ASP.NET Core Web API-back-endservice bevat. Vervolgens spoort u de fouten in de app op in uw lokale ontwikkelcluster. Daarna publiceert u de app naar Azure, brengt u wijzigingen aan in de configuratie en de code en werkt u de app bij. Als laatste gaat u ongebruikte Azure-resources opschonen zodat u niet hoeft te betalen voor wat u niet gebruikt.
 

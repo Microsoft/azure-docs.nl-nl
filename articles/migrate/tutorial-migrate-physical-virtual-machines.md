@@ -7,16 +7,16 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: 3e098e64eacf8b126d6a6d72b1f242443e88d55c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: aeeb810174ff5c21a81bcec8aa9265ff100edf91
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881092"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626322"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
-In dit artikel ziet u hoe u machines als fysieke servers naar Azure migreert met het hulpprogramma Azure Migrate:Server Migration. Machines migreren door ze te behandelen als fysieke servers is handig in een aantal scenario's:
+In dit artikel wordt beschreven hoe u computers als fysieke servers naar Azure migreert met behulp van de Azure Migrate: hulp programma voor server migratie. Machines migreren door ze te behandelen als fysieke servers is handig in een aantal scenario's:
 
 - On-premises fysieke servers migreren.
 - VM's migreren die zijn gevirtualiseerd door platforms zoals Xen of KVM.
@@ -28,9 +28,9 @@ In dit artikel ziet u hoe u machines als fysieke servers naar Azure migreert met
 Deze zelfstudie is de derde in een serie die laat zien hoe u fysieke servers kunt evalueren en migreren naar Azure. In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Bereid u voor op het gebruik van Azure met Azure Migrate:Server Migration.
+> * Bereid u voor op het gebruik van Azure met Azure Migrate: Server migratie.
 > * Controleer de vereisten voor de machines die u wilt migreren en bereid een machine voor op het replicatieapparaat van Azure Migrate waarmee machines worden gedetecteerd en gemigreerd naar Azure.
-> * Voeg het hulpprogramma Azure Migrate Server Migration toe in de Azure Migrate-hub.
+> * Voeg het hulpprogramma Azure Migrate: Server Migration toe in de Azure Migrate-hub.
 > * Stel het replicatieapparaat in.
 > * Installeer de Mobility-service op de machines die u wilt migreren.
 > * Schakel replicatie in.
@@ -51,7 +51,7 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 
 ## <a name="prepare-azure"></a>Azure voorbereiden
 
-Bereid Azure voor op een migratie met Server Migration.
+Azure voorbereiden voor migratie met Azure Migrate: Server migratie.
 
 **Taak** | **Details**
 --- | ---
@@ -89,7 +89,7 @@ Ter voorbereiding op de migratie van fysieke servers moet u de fysieke serverins
 Controleer of de machines aan de vereisten voor migratie naar Azure voldoen. 
 
 > [!NOTE]
-> Wanneer u fysieke machines gaat migreren, wordt voor Azure Migrate:Server Migration dezelfde replicatiearchitectuur gebruikt als voor op agents gebaseerd herstel na noodgevallen in de Azure Site Recovery-service, en een aantal onderdelen deelt dezelfde codebasis. Bepaalde inhoud wordt mogelijk gekoppeld aan Site Recovery-documentatie.
+> Bij het migreren van fysieke machines, Azure Migrate: Server migratie maakt gebruik van dezelfde replicatie architectuur als herstel na nood gevallen in de Azure Site Recovery-service en sommige onderdelen delen dezelfde code basis. Bepaalde inhoud wordt mogelijk gekoppeld aan Site Recovery-documentatie.
 
 1. [Controleer](migrate-support-matrix-physical-migration.md#physical-server-requirements) de vereisten voor fysieke servers.
 2. Controleer of de on-premises machines die u naar Azure repliceert, voldoen aan de [VM-vereisten voor Azure](migrate-support-matrix-physical-migration.md#azure-vm-requirements).
@@ -99,7 +99,7 @@ Controleer of de machines aan de vereisten voor migratie naar Azure voldoen.
 
 ### <a name="prepare-a-machine-for-the-replication-appliance"></a>Een machine voorbereiden voor het replicatieapparaat
 
-Azure Migrate:Server Migration gebruikt het replicatieapparaat om machines naar Azure te repliceren. Met het replicatieapparaat worden de volgende onderdelen uitgevoerd.
+Azure Migrate: Server Migration gebruikt het replicatieapparaat om machines naar Azure te repliceren. Met het replicatieapparaat worden de volgende onderdelen uitgevoerd.
 
 - **Configuratieserver**: De configuratieserver coördineert de communicatie tussen on-premises en Azure, en beheert de gegevensreplicatie.
 - **Processerver**: De processerver fungeert als replicatiegateway. Deze ontvangt replicatiegegevens, optimaliseert de gegevens met caching, compressie en versleuteling, en verzendt ze naar het account voor cacheopslag in Azure. 
@@ -116,7 +116,7 @@ Bereid de implementatie van het apparaat als volgt voor:
 
 ## <a name="set-up-the-replication-appliance"></a>Het replicatieapparaat instellen
 
-De eerste stap van de migratie is het instellen van het replicatieapparaat. Als u het apparaat voor de migratie van fysieke servers wilt instellen, downloadt u het installatiebestand voor het apparaat. Vervolgens voert u het uit op de [machine die u hebt voorbereid](#prepare-a-machine-for-the-replication-appliance). Na de installatie van het apparaat registreert u het met Azure Migrate Server Migration.
+De eerste stap van de migratie is het instellen van het replicatieapparaat. Als u het apparaat voor de migratie van fysieke servers wilt instellen, downloadt u het installatiebestand voor het apparaat. Vervolgens voert u het uit op de [machine die u hebt voorbereid](#prepare-a-machine-for-the-replication-appliance). Na de installatie van het apparaat registreert u het met Azure Migrate: Server migratie.
 
 
 ### <a name="download-the-replication-appliance-installer"></a>Het installatieprogramma voor het replicatieapparaat downloaden
@@ -129,7 +129,7 @@ De eerste stap van de migratie is het instellen van het replicatieapparaat. Als 
 4. Selecteer in **Doelregio** de Azure-regio waarnaar u de machines wilt migreren.
 5. Selecteer **Bevestig dat de doelregio voor migratie regionaam is**.
 6. Klik op **Resources maken**. Hiermee maakt u een Azure Site Recovery-kluis op de achtergrond.
-    - Als u migratie al hebt ingesteld met Azure Migrate Server Migration, kunt u deze doeloptie niet configureren, omdat er eerder resources zijn ingesteld.    
+    - Als u de migratie al hebt ingesteld met Azure Migrate: Server migratie, kan de doel optie niet worden geconfigureerd, omdat de resources eerder zijn ingesteld.    
     - U kunt de doelregio voor dit project niet wijzigen nadat u op deze knop hebt geklikt.
     - Alle volgende migraties zijn naar deze regio.
 
@@ -145,7 +145,7 @@ De eerste stap van de migratie is het instellen van het replicatieapparaat. Als 
 
     ![Registratie voltooien](./media/tutorial-migrate-physical-virtual-machines/finalize-registration.png)
 
-Het kan na voltooiing van de registratie enige tijd duren dat de gedetecteerde VM's worden weergegeven in Azure Migrate Server Migration. Als er VM's worden gedetecteerd, neemt het aantel **Gedetecteerde servers** toe.
+Het kan enige tijd duren nadat de registratie is voltooid totdat gedetecteerde computers worden weer gegeven in Azure Migrate: Server migratie. Als er VM's worden gedetecteerd, neemt het aantel **Gedetecteerde servers** toe.
 
 ![Gedetecteerde servers](./media/tutorial-migrate-physical-virtual-machines/discovered-servers.png)
 

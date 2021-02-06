@@ -5,14 +5,19 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 11/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: b8440a168d6d268cd27e1208ff54616a3b1e193a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 651329b1b061f2cf5a06dbdc9d60f73cec64e7d3
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843206"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625546"
 ---
 # <a name="state-management-with-service-fabric"></a>Status beheer met Service Fabric
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Service Fabric ondersteunt veel verschillende opties voor status opslag. Zie [service Fabric concepten: State](../service-fabric/service-fabric-concepts-state.md)(Engelstalig) voor een conceptueel overzicht van de patronen voor status beheer en service Fabric. Al deze concepten zijn van toepassing, ongeacht of uw services binnen of buiten Service Fabric net worden uitgevoerd. 
 

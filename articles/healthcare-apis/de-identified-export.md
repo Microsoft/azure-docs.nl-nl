@@ -7,12 +7,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 9/28/2020
 ms.author: matjazl
-ms.openlocfilehash: bdbab0e032764d07119402686051d391376cb913
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60a2a41a8005e8bd0fbc313c9a177d54df6dac5e
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843867"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627160"
 ---
 # <a name="exporting-de-identified-data-preview"></a>Het exporteren van de niet-geïdentificeerde gegevens (preview-versie)
 
@@ -23,7 +23,10 @@ De opdracht $export kan ook worden gebruikt voor het exporteren van de niet-geï
 
  `https://<<FHIR service base URL>>/$export?_container=<<container_name>>&_anonymizationConfig=<<config file name>>&_anonymizationConfigEtag=<<ETag on storage>>`
 
-|Query parameter            | Voorbeeld |Optionele| Beschrijving|
+> [!Note] 
+> Momenteel ondersteunt de Azure-API voor FHIR alleen de niet-geïdentificeerde export op het systeem niveau ($export).
+
+|Queryparameter            | Voorbeeld |Optionele| Description|
 |---------------------------|---------|-----------|------------|
 | _\_anonymizationConfig_   |DemoConfig.jsop|Vereist voor de niet-geïdentificeerde export |De naam van het configuratie bestand. Bekijk [hier](https://github.com/microsoft/FHIR-Tools-for-Anonymization#configuration-file-format)de indeling van het configuratie bestand. Dit bestand moet worden bewaard in een container met de naam **anoniem maken** binnen hetzelfde Azure-opslag account dat is geconfigureerd als de export locatie. |
 | _\_anonymizationConfigEtag_|"0x8D8494A069489EC"|Optioneel voor de niet-geïdentificeerde export|Dit is de ETAG van het configuratie bestand. U kunt de ETAG ophalen met behulp van Azure Storage Explorer vanuit de BLOB-eigenschap|

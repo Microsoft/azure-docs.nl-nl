@@ -12,16 +12,16 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/12/2021
+ms.date: 02/05/2021
 ms.author: b-juche
-ms.openlocfilehash: beadd250ec4472b894f0f474b1057ad44cf474ed
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 526ef0af08833954aef4136716930cec0df40eea
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133511"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625244"
 ---
-# <a name="how-azure-netapp-files-snapshots-work"></a>Hoe Azure NetApp Files moment opnamen werken?
+# <a name="how-azure-netapp-files-snapshots-work"></a>Hoe Azure NetApp Files-momentopnamen werken
 
 In dit artikel wordt uitgelegd hoe Azure NetApp Files moment opnamen werken. Azure NetApp Files snap shot-technologie levert stabiliteit, schaal baarheid en snellere herstel mogelijkheden, zonder dat dit van invloed is op de prestaties. Azure NetApp Files snap shot-technologie biedt de basis voor oplossingen voor gegevens beveiliging, waaronder het terugzetten van één bestand, het herstellen van volumes en klonen en replicatie tussen regio's. 
 
@@ -49,26 +49,26 @@ Ondertussen blijven de gegevens blokken die naar van een moment opname verwijzen
 
 Omdat een volume momentopname alleen de wijzigingen van het blok heeft geregistreerd sinds de laatste moment opname, biedt dit de volgende belang rijke voor delen:
 
-* Moment opnamen zijn ***opslag-efficiënt** _.   
-    Moment opnamen nemen minimale opslag ruimte in beslag omdat hiermee niet de gegevens blokken van het hele volume worden gekopieerd. Twee moment opnamen die in volg orde zijn genomen, verschillen alleen door de blokken die zijn toegevoegd of gewijzigd in het tijds interval tussen de twee. Dit blok-incrementeel gedrag beperkt het gekoppelde opslag capaciteits verbruik. Veel alternatieve implementaties van moment opnamen maken gebruik van opslag volumes die gelijk zijn aan het actieve bestands systeem, waarbij de vereisten voor de opslag capaciteit worden verhoogd. Afhankelijk van de dagelijkse wijzigings tarieven van de toepassing _block-niveau worden er Azure NetApp Files moment opnamen meer of minder capaciteit verbruikt, maar alleen voor gewijzigde gegevens. Gemiddeld dagelijks moment opnamen zijn alleen van 1-5% van de gebruikte volume capaciteit voor veel toepassings volumes, of tot 20-30% voor volumes, zoals SAP HANA database volumes. Zorg ervoor dat u [uw volume-en momentopname gebruik bewaakt](azure-netapp-files-metrics.md#volumes) voor het capaciteits verbruik van de moment opname ten opzichte van het aantal gemaakte en beheerde moment opnamen.   
+* Moment opnamen zijn ***opslag efficiënt***.   
+    Moment opnamen nemen minimale opslag ruimte in beslag omdat hiermee niet de gegevens blokken van het hele volume worden gekopieerd. Twee moment opnamen die in volg orde zijn genomen, verschillen alleen door de blokken die zijn toegevoegd of gewijzigd in het tijds interval tussen de twee. Dit blok-incrementeel gedrag beperkt het gekoppelde opslag capaciteits verbruik. Veel alternatieve implementaties van moment opnamen maken gebruik van opslag volumes die gelijk zijn aan het actieve bestands systeem, waarbij de vereisten voor de opslag capaciteit worden verhoogd. Afhankelijk van *het dagelijks aantal* wijzigings tarieven van de toepassing, verbruikt Azure NetApp files moment opnamen meer of minder capaciteit, maar alleen op gewijzigde gegevens. Gemiddeld dagelijks moment opnamen zijn alleen van 1-5% van de gebruikte volume capaciteit voor veel toepassings volumes, of tot 20-30% voor volumes, zoals SAP HANA database volumes. Zorg ervoor dat u [uw volume-en momentopname gebruik bewaakt](azure-netapp-files-metrics.md#volumes) voor het capaciteits verbruik van de moment opname ten opzichte van het aantal gemaakte en beheerde moment opnamen.   
 
-* Moment opnamen zijn ***snel om _ te maken, te repliceren, te herstellen of te klonen**.   
+* Moment opnamen zijn ***snel te maken, te repliceren, te herstellen of te klonen***.   
     Het duurt slechts enkele seconden om een moment opname te maken, te repliceren, te herstellen of te klonen, ongeacht de grootte van het volume en het niveau van de activiteiten. U kunt [op aanvraag](azure-netapp-files-manage-snapshots.md#create-an-on-demand-snapshot-for-a-volume)een moment opname van een volume maken. U kunt ook een [momentopname beleid](azure-netapp-files-manage-snapshots.md#manage-snapshot-policies) gebruiken om op te geven wanneer Azure NetApp files automatisch een moment opname moet maken en hoeveel moment opnamen voor een volume moeten worden bewaard.  Toepassings consistentie kan worden bereikt door moment opnamen te organiseren met de toepassingslaag, bijvoorbeeld met behulp van het [hulp programma AzAcSnap](azacsnap-introduction.md) voor SAP Hana.
 
-_ Moment opnamen hebben geen invloed op het volume ***prestaties** _.   
+* Moment opnamen hebben geen invloed op de ***prestaties*** van het volume.   
     Vanwege het ' omleiden van de aard van de onderhouds technologie, het opslaan of bewaren van Azure NetApp Files moment opnamen heeft geen invloed op de prestaties, zelfs met een zware gegevens activiteit. Het verwijderen van een moment opname heeft in de meeste gevallen ook weinig gevolgen voor de prestaties. 
 
-_ Moment opnamen bieden ***schaal baarheid** _ omdat ze regel matig kunnen worden gemaakt en veel kunnen worden bewaard.   
+* Moment opnamen bieden ***schaal baarheid*** omdat ze regel matig kunnen worden gemaakt en veel kunnen worden bewaard.   
     Azure NetApp Files-volumes bieden ondersteuning voor Maxi maal 255 moment opnamen. De mogelijkheid om een groot aantal, vaak gemaakte moment opnamen met weinig effect op te slaan, verhoogt de kans dat de gewenste versie van gegevens correct kan worden hersteld.
 
-_ Moment opnamen bieden * de **zicht baarheid** van de gebruiker en bestanden kunnen worden _*_hersteld_*_.   
+* Moment opnamen bieden ***gebruikers zichtbaarheid** _ en _ *_bestanden herstellen_* *.   
 De hoge prestaties, schaal baarheid en stabiliteit van Azure NetApp Files snap shot-technologie betekent dat het een ideale online back-up voor door de gebruiker gestuurde herstel mogelijkheden biedt. U kunt moment opnamen van gebruikers toegankelijk maken voor bestanden, mappen of volume herstel doeleinden. Met extra oplossingen kunt u back-ups kopiëren naar offline opslag of [meerdere regio's repliceren](cross-region-replication-introduction.md) voor retentie of herstel na nood gevallen.
 
 ## <a name="ways-to-create-snapshots"></a>Manieren om moment opnamen te maken   
 
 U kunt verschillende methoden gebruiken om moment opnamen te maken en te onderhouden:
 
-_ Hand matig (op aanvraag) door gebruik te maken van:   
+* Hand matig (op aanvraag) met behulp van:   
     * De [Azure Portal](azure-netapp-files-manage-snapshots.md#create-an-on-demand-snapshot-for-a-volume), [rest API](/rest/api/netapp/snapshots), [Azure cli](/cli/azure/netappfiles/snapshot)of [Power shell](/powershell/module/az.netappfiles/new-aznetappfilessnapshot) -hulpprogram ma's
     * Scripts (Zie [voor beelden](azure-netapp-files-solution-architectures.md#sap-tech-community-and-blog-posts))
 
@@ -161,7 +161,7 @@ Zie [moment opnamen verwijderen](azure-netapp-files-manage-snapshots.md#delete-s
 * [Problemen met momentopnamebeleid oplossen](troubleshoot-snapshot-policies.md)
 * [Resourcelimieten voor Azure NetApp Files](azure-netapp-files-resource-limits.md)
 * [Video over Azure NetApp Files-moment opnamen 101](https://www.youtube.com/watch?v=uxbTXhtXCkw)
-* [NetApp-moment opname-NetApp-video bibliotheek](https://tv.netapp.com/detail/video/2579133646001/snapshot)
+* [Overzicht van Azure NetApp Files moment opnamen](https://anfcommunity.com/2021/01/31/azure-netapp-files-snapshot-overview/)
 
 
 

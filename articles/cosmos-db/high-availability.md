@@ -4,15 +4,15 @@ description: In dit artikel wordt beschreven hoe Azure Cosmos DB hoge Beschik ba
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 01/18/2021
+ms.date: 02/05/2021
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: d827011c4f831433a7446c90eed0c30c7b1e94d7
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 16d2bf39d61961e2f83910735db1d0ddf1c91849
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600553"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627362"
 ---
 # <a name="how-does-azure-cosmos-db-provide-high-availability"></a>Hoe biedt Azure Cosmos DB hoge Beschik baarheid?
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -80,7 +80,7 @@ Voor zeldzame gevallen van regionale uitval zorgt Azure Cosmos DB ervoor dat uw 
 
 * Tijdens een onderbreking van de Lees regio worden Azure Cosmos-accounts die gebruikmaken van een consistentie niveau of sterke consistentie met drie of meer Lees regio's, Maxi maal beschikbaar voor lees-en schrijf bewerkingen.
 
-* Azure Cosmos-accounts die gebruikmaken van sterke consistentie met twee of minder Lees regio's (inclusief de Lees & schrijf regio), verliezen de Lees Beschik baarheid tijdens de onderbreking van een lees bare regio.
+* Azure Cosmos-accounts die gebruikmaken van sterke consistentie met drie of minder totale regio's (één schrijven, twee gelezen), verliezen de schrijf beschikbaarheid tijdens een onderbreking van de Lees regio. Klanten met vier of meer totaal regio's kunnen zich echter aanmelden voor het gebruik van dynamische Lees quorums door een ondersteunings ticket in te dienen. Accounts die ten minste twee Lees regio's in deze configuratie onderhouden, behouden de beschik baarheid van schrijf bewerkingen.
 
 * De verbinding met het betrokken gebied wordt automatisch verbroken en wordt offline gemarkeerd. De [Azure Cosmos DB sdk's](sql-api-sdk-dotnet.md) omleiden Lees aanroepen naar de volgende beschik bare regio in de lijst voorkeurs regio.
 
@@ -112,15 +112,15 @@ De volgende tabel bevat een overzicht van de mogelijkheden voor hoge Beschik baa
 |Zone fouten-Beschik baarheid | Beschikbaarheids verlies | Geen beschikbaar verlies | Geen beschikbaar verlies | Geen beschikbaar verlies |
 |Regionale storing – gegevens verlies | Gegevensverlies |  Gegevensverlies | Afhankelijk van consistentie niveau. Bekijk [consistentie, Beschik baarheid en prestaties](consistency-levels-tradeoffs.md) voor meer informatie. | Afhankelijk van consistentie niveau. Bekijk [consistentie, Beschik baarheid en prestaties](consistency-levels-tradeoffs.md) voor meer informatie.
 |Regionale storingen-Beschik baarheid | Beschikbaarheids verlies | Beschikbaarheids verlies | Geen Beschik baarheid in het geval van een storing in de Lees regio, tijdelijke fout bij het schrijven van regio's | Geen beschikbaar verlies |
-|Prijs (**_1_* _) | N.v.t. | Ingericht aantal RU/s x 1,25 | Ingericht aantal RU/s x 1,25 (_*_2_*_) | Schrijf frequentie voor meerdere regio's |
+|Prijs (***1** _) | N.v.t. | Ingericht aantal RU/s x 1,25 | Ingericht aantal RU/s x 1,25 (_ *_2_* *) | Schrijf frequentie voor meerdere regio's |
 
-_*_1_*_ voor serverloze accounts aanvraag eenheden (ru) worden vermenigvuldigd met een factor van 1,25.
+***1*** voor serverloze accounts aanvraag eenheden (ru) worden vermenigvuldigd met een factor van 1,25.
 
-_*_2_*_ 1,25 rente alleen toegepast op de REGIO'S waarin AZ is ingeschakeld.
+***2*** 1,25 rente alleen toegepast op de REGIO'S waarin AZ is ingeschakeld.
 
 Beschikbaarheidszones kan worden ingeschakeld via:
 
-_ [Azure Portal](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
+* [Azure-portal](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
 
 * [Azure PowerShell](manage-with-powershell.md#create-account)
 

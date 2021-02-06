@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 331830c50206d14f7894aa837b483656de4222f2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 8a71e854f03bee75b757e0a0aa02e7aa2c24469b
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747850"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626558"
 ---
 # <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Zelfstudie: Een Service Fabric-toepassing upgraden die wordt uitgevoerd in Service Fabric Mesh
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelfstudie is deel drie van een serie. U leert hoe u een Service Fabric-toepassing kunt upgraden die [eerder in Service Fabric Mesh was geïmplementeerd](service-fabric-mesh-tutorial-template-deploy-app.md) door de toegewezen CPU-bronnen uit te breiden.  Als u klaar bent, beschikt u over een front-endwebservice die met uitgebreidere CPU-bronnen wordt uitgevoerd.
 
@@ -50,7 +55,7 @@ In deze zelfstudie wordt het voorbeeld To Do List gebruikt als voorbeeld. Dit vo
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp
 ```
 
-In de implementatiesjabloon voor de toepassingsresource heeft elke service een eigenschap *cpu* die kan worden gebruikt om de aangevraagde CPU-bronnen in te stellen. Een toepassing kan bestaan uit meerdere services, waarbij elke service een unieke *cpu* -instelling heeft, die samen worden geïmplementeerd en beheerd. Als u de CPU-bronnen van de web-front-endservice wilt uitbreiden, wijzigt u de waarde *cpue* in de implementatiesjabloon of het parameterbestand.  Vervolgens voert u een upgrade van de toepassing uit.
+In de implementatiesjabloon voor de toepassingsresource heeft elke service een eigenschap *cpu* die kan worden gebruikt om de aangevraagde CPU-bronnen in te stellen. Een toepassing kan bestaan uit meerdere services, waarbij elke service een unieke *cpu*-instelling heeft, die samen worden geïmplementeerd en beheerd. Als u de CPU-bronnen van de web-front-endservice wilt uitbreiden, wijzigt u de waarde *cpue* in de implementatiesjabloon of het parameterbestand.  Vervolgens voert u een upgrade van de toepassing uit.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Parameters van implementatiesjabloon wijzigen
 
@@ -80,7 +85,7 @@ De parameter *frontEndCpu* wordt gedeclareerd in de sectie *parameters* van het 
 }
 ```
 
-De eigenschap *codePackages->resources->requests->cpu* van de WebFrontEnd-service verwijst naar de parameter *frontEndCpu* :
+De eigenschap *codePackages->resources->requests->cpu* van de WebFrontEnd-service verwijst naar de parameter *frontEndCpu*:
 
 ```json
     "services": [

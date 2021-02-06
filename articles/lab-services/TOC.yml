@@ -36,7 +36,7 @@
           href: classroom-labs-scenarios.md
         - name: Labservices gebruiken voor een hackathon
           href: hackathon-labs.md
-        - name: labs - klassetypen
+        - name: Typen Lab-klassen
           items:
             - name: Overzicht van klastypen
               href: class-types.md
@@ -46,9 +46,11 @@
               href: class-type-shell-scripting-linux.md
             - name: Ethisch hacken
               href: class-type-ethical-hacking.md
+            - name: Netwerken met GNS3
+              href: class-type-networking-gns3.md
             - name: Databasebeheer
               href: class-type-database-management.md
-            - name: Azure SQL Database-beheer en -ontwikkeling
+            - name: Beheer en ontwikkeling van SQL-data base
               href: class-type-sql-server.md
             - name: Python en Jupyter Notebooks
               href: class-type-jupyter-notebook.md
@@ -58,8 +60,8 @@
               href: class-type-matlab.md
             - name: SolidWorks computer-aided design (CAD)
               href: class-type-solidworks.md
-            - name: Netwerken met GNS3
-              href: class-type-networking-gns3.md
+            - name: ArcGIS
+              href: class-type-arcgis.md
             - name: Lead The Way-project
               href: class-type-pltw.md
         - name: Azure Lab Services gebruiken binnen Teams

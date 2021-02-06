@@ -5,14 +5,19 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 10/1/2018
 ms.topic: overview
-ms.openlocfilehash: 32e855ef1580dd065ee681e635994064a9038f77
-ms.sourcegitcommit: b87c7796c66ded500df42f707bdccf468519943c
-ms.translationtype: HT
+ms.openlocfilehash: 64880a9ac3d6d48ce6d39d0b3a7a3aff6587f328
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91840265"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626974"
 ---
 # <a name="what-is-service-fabric-mesh"></a>Wat is Service Fabric?
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze video geeft een kort overzicht van Service Fabric Mesh.
 > [!VIDEO https://www.youtube.com/embed/7qWeVGzAid0]

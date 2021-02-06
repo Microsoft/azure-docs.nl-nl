@@ -6,14 +6,19 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: aa3ac9d8835cd17387346bb29b3e7c30f286cd1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40bba03c35568c013e383c08f0a13f765c1cc8bd
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839721"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625851"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Een gateway bron configureren om aanvragen te routeren
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Een gateway resource wordt gebruikt om binnenkomend verkeer te routeren naar het netwerk dat uw toepassing bevat. Configureer het om regels op te geven waarmee aanvragen worden omgeleid naar specifieke services of eind punten op basis van de structuur van de aanvraag. Zie [Inleiding tot netwerken in service Fabric mesh](service-fabric-mesh-networks-and-gateways.md) voor meer informatie over netwerken en gateways in net. 
 

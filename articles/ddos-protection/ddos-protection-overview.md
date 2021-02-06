@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/9/2020
 ms.author: yitoh
-ms.openlocfilehash: 114c723b127a17ffdd9c7ed91c6e777838d68e8e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 71eada0dcd7f7684e6c6be935bcb44405eb95322
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223343"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626203"
 ---
 # <a name="azure-ddos-protection-standard-overview"></a>Overzicht van Azure DDoS Protection Standard
 
@@ -51,6 +51,10 @@ DDoS-beschermings plannen hebben een vaste maandelijkse kosten van $2.944 per ma
 Onder een Tenant kan één DDoS-beveiligings plan worden gebruikt voor meerdere abonnementen, zodat er niet meer dan één DDoS-beveiligings plan hoeft te worden gemaakt.
 
 Zie [Azure DDoS Protection Standard-prijzen](https://azure.microsoft.com/pricing/details/ddos-protection/)voor meer informatie over Azure DDoS Protection standaard prijzen.
+
+## <a name="reference-architectures"></a>Referentiearchitecturen
+
+DDoS Protection Standard is ontworpen voor [Services die zijn geïmplementeerd in een virtueel netwerk](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services). Voor andere services is de standaard DDoS Protection Basic-service van toepassing. Zie [DDoS Protection referentie architecturen](https://docs.microsoft.com/azure/ddos-protection/ddos-protection-reference-architectures)voor meer informatie over ondersteunde architecturen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

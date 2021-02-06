@@ -6,14 +6,19 @@ ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: vturecek
 ms.custom: mvc, devcenter
-ms.openlocfilehash: a7f25d4156c3d2671e1a15a1253ed7ba22265af0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 650755cf2692b613b2998e8ef7b706e09022b178
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91354867"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626906"
 ---
 # <a name="introduction-to-service-fabric-resource-model"></a>Inleiding tot het Service Fabric-resourcemodel
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Het Service Fabric resource model beschrijft een eenvoudige benadering voor het definiëren van resources waaruit een Service Fabric mesh-toepassing bestaat. Afzonderlijke bronnen kunnen worden geïmplementeerd in elke Service Fabric omgeving.  Het Service Fabric resource model is ook compatibel met het Azure Resource Manager model. De volgende typen resources worden momenteel ondersteund in dit model:
 

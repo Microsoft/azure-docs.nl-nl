@@ -4,8 +4,7 @@ description: Meer informatie over de belangrijkste Azure-beveiligings functies d
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: barbkess
-editor: TomSh
+manager: rkarlin
 ms.assetid: 5aa0a7ac-8f18-4ede-92a1-ae0dfe585e28
 ms.service: security
 ms.subservice: security-fundamentals
@@ -13,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/19/2018
+ms.date: 02/05/2021
 ms.author: terrylan
 Customer intent: As an IT Pro or decision maker I am trying to learn about identity management capabilities in Azure
-ms.openlocfilehash: 2c7d51da361816841ff556c1da696a48d2ce6a06
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d931d3923ff49dde2bea234278c995e79670429f
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843686"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627630"
 ---
-# <a name="azure-identity-management-security-overview"></a>Overzicht van Azure Identity Management-beveiliging
+# <a name="azure-identity-management-security-overview"></a>Overzicht van beveiliging met Azure-identiteitsbeheer
 
  Identiteits beheer is het proces van het verifiëren en autoriseren van [beveiligings-principals](/windows/security/identity-protection/access-control/security-principals). Het omvat ook het beheren van informatie over deze principals (identiteiten). Beveiligings-principals (identiteiten) kunnen services, toepassingen, gebruikers, groepen, enzovoort bevatten. Met de oplossingen voor identiteits-en toegangs beheer van micro soft kunt u de toegang tot toepassingen en resources in het bedrijfs centrum en in de Cloud beveiligen. Dergelijke bescherming maakt extra validatie niveaus mogelijk, zoals Multi-Factor Authentication en beleid voor voorwaardelijke toegang. Het bewaken van verdachte activiteiten via geavanceerde beveiligings rapportage, controle en waarschuwingen helpt mogelijke beveiligings problemen te verhelpen. [Azure Active Directory Premium](../../active-directory/fundamentals/active-directory-whatis.md) biedt eenmalige aanmelding (SSO) voor duizenden cloud software as a Service (SaaS)-apps en toegang tot web-apps die u on-premises uitvoert.
  
@@ -62,9 +61,9 @@ Gebruikers hoeven niet alleen meerdere sets met gebruikers namen en wacht woorde
 
 Meer informatie:
 
-* [Overzicht van eenmalige aanmelding](https://azure.microsoft.com/documentation/videos/overview-of-single-sign-on/)
-* [What is application access and single sign-on with Azure Active Directory?](../../active-directory/manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-* [Quick Start Series op het beheer van apps](../../active-directory/manage-apps/view-applications-portal.md)
+* [Overzicht van SSO](../../active-directory/manage-apps/what-is-single-sign-on.md)
+* [Video over de basis principes van verificatie](https://www.youtube.com/watch?v=fbSVgC8nGz4&feature=emb_title)
+* [Quick Start Series op toepassings beheer](../../active-directory/manage-apps/view-applications-portal.md)
 
 ## <a name="reverse-proxy"></a>Omgekeerde proxy
 

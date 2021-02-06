@@ -5,12 +5,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: 88e2161cfddf95f7f250b8b76c067d045f1529da
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 6e37501a56bdf247bce2111e8e5a5bf02f37d898
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092231"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626118"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Opmerkingen bij de release van Azure HDInsight
 
@@ -51,7 +51,7 @@ Met HDInsight zijn netwerk beveiligings groepen (Nsg's) en Udr's-controle (User-
 De volgende wijzigingen worden uitgevoerd in toekomstige releases.
 
 ### <a name="breaking-change-for-net-for-apache-spark-100"></a>Belang rijke wijziging voor .NET voor Apache Spark 1.0.0
-HDInsight introduceert de eerste belang rijke officiële versie van .NET voor Apache Spark in de volgende release. Het biedt data frame API-volledigheid voor Spark 2.4. x en Spark 3.0. x, samen met andere functies. Als er wijzigingen worden opgesplitst voor deze primaire versie, raadpleegt u [deze migratie-GUID](https://github.com/dotnet/spark/blob/master/docs/migration-guide.md#upgrading-from-microsoftspark-0x-to-10) om de stappen te begrijpen die nodig zijn om uw code en pijp lijnen bij te werken. Klik [hier](https://docs.microsoft.com/azure/hdinsight/spark/spark-dotnet-version-update#using-net-for-apache-spark-v10-in-hdinsight) voor meer informatie.
+HDInsight introduceert de eerste belang rijke officiële versie van .NET voor Apache Spark in de volgende release. Het biedt data frame API-volledigheid voor Spark 2.4. x en Spark 3.0. x, samen met andere functies. Er zijn wijzigingen in deze hoofd versie opgesplitst. Raadpleeg [deze migratie handleiding](https://github.com/dotnet/spark/blob/master/docs/migration-guide.md#upgrading-from-microsoftspark-0x-to-10) voor informatie over de stappen die nodig zijn om uw code en pijp lijnen bij te werken. Klik [hier](https://docs.microsoft.com/azure/hdinsight/spark/spark-dotnet-version-update#using-net-for-apache-spark-v10-in-hdinsight) voor meer informatie.
 
 ### <a name="default-cluster-vm-size-will-be-changed-to-ev3-family"></a>De standaard grootte van een cluster-VM wordt gewijzigd in de Ev3-serie
 Vanaf de volgende release (rond einde januari) worden standaard cluster-VM-grootten gewijzigd van D-serie naar Ev3-familie. Deze wijziging is van toepassing op hoofd knooppunten en worker-knoop punten. U kunt deze wijziging vermijden door de VM-grootten op te geven die u wilt gebruiken in de ARM-sjabloon.

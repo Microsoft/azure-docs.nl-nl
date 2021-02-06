@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b239cf6d253c1c2d2e36d213e92e0b218add3f8c
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: dcd8222b46262f6ec70459ec670789ae4a433c1d
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94885985"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625261"
 ---
 # <a name="chat-client-library-overview"></a>Overzicht van de chat-clientbibliotheek
 
@@ -26,7 +26,7 @@ Chat-clientbibliotheken van Azure Communication Services kunnen worden gebruikt 
 
 De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de Communication Services die chat-clientbibliotheken aanroepen.
 
-| Groep van functies | Mogelijkheid                                                                                                          | JS  | Java | .NET | Python |
+| Groep functies | Mogelijkheid                                                                                                          | JS  | Java | .NET | Python |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- | --- | ----- | ---- | -----  |
 | Belangrijkste mogelijkheden | Een chatgesprek maken tussen 2 of meer gebruikers (max. 250 gebruikers)                                                       | ✔️   | ✔️  | ✔️    | ✔️   |
 |                   | Het onderwerp van een chatgesprek bijwerken                                                                              | ✔️   | ✔️ | ✔️    | ✔️   |
@@ -53,6 +53,17 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 | Bewaking        | Gebruik (aantal verzonden berichten) bewaken                                                                               | ✔️   | ✔️  | ✔️    | ✔️  |
 |                    | De kwaliteit en status van API-aanvragend or uw app bewaken en waarschuwingen configureren via de portal                                                          | ✔️   | ✔️  | ✔️    | ✔️  |
 |Aanvullende functies | [Cognitive Services-API's](../../../cognitive-services/index.yml) gebruiken in combinatie met de chat-clientbibliotheek om intelligente functies in te schakelen: *vertaling en sentimentanalyse van het binnenkomende bericht op een client, spraak-naar-tekst-conversie om een bericht op te stellen wanneer het lid spreekt, enzovoort.*                                                                                         | ✔️   | ✔️  | ✔️    | ✔️  |
+
+## <a name="javascript-chat-client-library-support-by-os-and-browser"></a>Java script chat-client bibliotheek ondersteuning per besturings systeem en browser
+
+De volgende tabel bevat de set van ondersteunde browsers en versies die momenteel beschikbaar zijn.
+
+|                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    | iPad OS|
+| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ | -------|
+| **Chat-client bibliotheek** | Firefox *, Chrome*, nieuwe Edge | Firefox *, Chrome*, Safari * | Chrome*  | Chrome* | Chrome* | Safari | Safari |
+
+
+* Naast de vorige twee releases wordt de meest recente versie ondersteund.<br/>
 
 ## <a name="next-steps"></a>Volgende stappen
 

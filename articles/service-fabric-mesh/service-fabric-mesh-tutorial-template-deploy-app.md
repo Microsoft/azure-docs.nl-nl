@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 54ac7b27ada62a969dd40428fd9a753bb5a99530
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 589e881eb48daf7da9cd2a934b14acfcc76dc5f9
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499829"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625413"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Zelfstudie: Een toepassing in Service Fabric Mesh implementeren met behulp van een sjabloon
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelfstudie is deel één van een serie. U leert hou een Azure Service Fabric Mesh-toepassing kunt implementeren met behulp van een sjabloon.  De toepassing bestaat uit een ASP.NET-web-front-endservice en een ASP.NET Core Web API-back-endservice. Deze zijn te vinden in Docker Hub.  U haalt de twee containerinstallatiekopieën uit Docker Hub en pusht ze vervolgens naar uw eigen persoonlijke register. Vervolgens maakt u een Azure RM-sjabloon voor de toepassing en implementeert u de toepassing vanuit uw containerregister naar Service Fabric Mesh. Als u klaar bent, hebt u een eenvoudige takenlijsttoepassing die in Service Fabric Mesh wordt uitgevoerd.
 

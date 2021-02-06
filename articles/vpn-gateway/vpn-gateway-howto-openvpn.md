@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/02/2020
+ms.date: 02/05/2021
 ms.author: cherylmc
-ms.openlocfilehash: 57bc53c28866b3f16e742c27b6a1600bfe6f44ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e2f7f754ae9a1547d6543dba65c69511ab7ceb1
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89418820"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99624909"
 ---
 # <a name="configure-openvpn-for-azure-point-to-site-vpn-gateway"></a>OpenVPN configureren voor Azure punt-naar-site-VPN Gateway
 
@@ -29,7 +29,7 @@ Als u nog geen werkende Point-to-site-omgeving hebt, volgt u de instructie om er
 
 ## <a name="2-enable-openvpn-on-the-gateway"></a><a name="enable"></a>2. Schakel OpenVPN in op de gateway
 
-Schakel OpenVPN in op uw gateway. Zorg ervoor dat de gateway al is geconfigureerd voor punt-naar-site (IKEv2 of SSTP) voordat u de volgende opdrachten uitvoert:
+Schakel OpenVPN in op uw gateway.
 
 ```azurepowershell-interactive
 $gw = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $name

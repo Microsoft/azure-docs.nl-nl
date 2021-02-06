@@ -5,14 +5,19 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 11/27/2018
 ms.topic: quickstart
-ms.openlocfilehash: c81b53b68c689f4b890d2ff628f38b734aea63dc
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: f34034394d2492dba64214c612a239b92f4b9c46
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499880"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625715"
 ---
 # <a name="quickstart-deploy-hello-world-to-service-fabric-mesh"></a>Quickstart: Hallo wereld implementeren in Service Fabric Mesh
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Met [Service Fabric Mesh](service-fabric-mesh-overview.md) kunt u eenvoudig microservicetoepassingen in Azure maken en beheren, zonder dat u daarvoor virtuele machines hoeft in te richten. In deze snelstart gaat u een Hallo wereld-toepassing maken in Azure en deze op internet beschikbaar maken. Deze bewerking wordt uitgevoerd in één opdracht. In slechts een paar minuten ziet u deze weergave in uw browser:
 

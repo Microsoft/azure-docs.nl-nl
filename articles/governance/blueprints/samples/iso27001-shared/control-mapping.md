@@ -1,14 +1,14 @@
 ---
 title: Beheeropties voor blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services
 description: Toewijzing van beheeropties voor blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 11/05/2020
+ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: c79159fca9d619b727ef651bf42044182144ab35
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 64266e72bf2aa24ac7fbf70f87f27739709fa0be
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842512"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626339"
 ---
 # <a name="control-mapping-of-the-iso-27001-shared-services-blueprint-sample"></a>Toewijzing van beheeropties voor blauwdrukvoorbeeld voor ISO 27001 conforme gedeelde services
 
@@ -45,7 +45,7 @@ Dankzij meer inzicht in resources die in strijd zijn met deze beleidsregels kunt
 
 ## <a name="a923-management-of-privileged-access-rights"></a>A.9.2.3 Beheer van bevoegde toegangsrechten
 
-Met deze blauwdruk kunt u rechten voor bevoegde toegang beperken en beheren door vier [Azure Policy](../../../policy/overview.md)-definities toe te wijzen voor de controle van externe accounts met eigenaars- en/of schrijfrechten en accounts met eigenaars- en/of schrijfrechten waarvoor geen meervoudige verificatie is ingeschakeld. Via het op rollen gebaseerde toegangsbeheer van Azure (Azure RBAC) wordt beheerd wie toegang heeft tot Azure-resources. Met deze blauwdruk wordt ook drie Azure Policy-definities toegewezen om het gebruik van Azure Active Directory-verificatie voor SQL-servers en Service Fabric te controleren. Met behulp van Azure Active Directory-verificatie maakt vereenvoudigd beheer van machtigingen en gecentraliseerd identiteitsbeheer van databasegebruikers en andere Microsoft-services mogelijk. Met deze blauwdruk wordt ook een Azure Policy-definitie toegewezen om het gebruik van aangepaste Azure RBAC-regels te controleren. Wanneer u weet waar aangepaste Azure RBAC-regels zijn geïmplementeerd, kan dit u helpen om te controleren of deze nodig zijn en of deze correct zijn geïmplementeerd, omdat aangepaste Azure RBAC-regels foutgevoelig zijn.
+Met deze blauwdruk kunt u rechten voor bevoegde toegang beperken en beheren door vier [Azure Policy](../../../policy/overview.md)-definities toe te wijzen voor de controle van externe accounts met eigenaars- en/of schrijfrechten en accounts met eigenaars- en/of schrijfrechten waarvoor geen meervoudige verificatie is ingeschakeld. In Azure wordt op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) geïmplementeerd om te beheren wie toegang heeft tot Azure-resources. Met deze blauwdruk wordt ook drie Azure Policy-definities toegewezen om het gebruik van Azure Active Directory-verificatie voor SQL-servers en Service Fabric te controleren. Met behulp van Azure Active Directory-verificatie maakt vereenvoudigd beheer van machtigingen en gecentraliseerd identiteitsbeheer van databasegebruikers en andere Microsoft-services mogelijk. Met deze blauwdruk wordt ook een Azure Policy-definitie toegewezen om het gebruik van aangepaste Azure RBAC-regels te controleren. Wanneer u weet waar aangepaste Azure RBAC-regels zijn geïmplementeerd, kan dit u helpen om te controleren of deze nodig zijn en of deze correct zijn geïmplementeerd, omdat aangepaste Azure RBAC-regels foutgevoelig zijn.
 
 - MFA moet zijn ingeschakeld voor accounts met eigenaarsmachtigingen voor uw abonnement
 - MFA moet zijn ingeschakeld voor accounts met schrijfmachtigingen voor uw abonnement

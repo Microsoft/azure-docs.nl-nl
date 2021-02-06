@@ -6,14 +6,19 @@ ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-csharp
-ms.openlocfilehash: 2d74841e1873e5bd84d839122e0e662ef65ccd11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1020613eb43177ba159601f253848f8d03f385a8
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841999"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625429"
 ---
 # <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Zelf studie: meer informatie over het bijwerken van een Service Fabric-toepassing met Visual Studio
+
+> [!IMPORTANT]
+> De preview-versie van Azure Service Fabric Mesh is buiten gebruik gesteld. Nieuwe implementaties zijn niet langer toegestaan via de API van Service Fabric net. Ondersteuning voor bestaande implementaties gaat door tot 28 april 2021.
+> 
+> Zie [Azure service Fabric Netpreview buiten](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/)gebruik stellen voor meer informatie.
 
 Deze zelf studie is deel vier van een reeks en laat zien hoe u een Azure Service Fabric-mesh-toepassing rechtstreeks vanuit Visual Studio bijwerkt. De upgrade bevat een code-update en een configuratie-update. U ziet dat de stappen voor het uitvoeren van een upgrade en publicatie in Visual Studio hetzelfde zijn.
 
@@ -47,7 +52,7 @@ Wanneer u een Service Fabric mesh-app maakt, voegt Visual Studio een yaml-bestan
 
 De `WebFrontEnd_cpu` para meter wordt bijgewerkt om de CPU-Resources bij te werken naar `1.5` in afwachting dat de Webfront- **End** -service intensief wordt gebruikt.
 
-1. Open in het project **todolistapp** onder **environments**  >  **Cloud**het bestand **para meters. yaml** . Wijzig de `WebFrontEnd_cpu` waarde, in `1.5` . De parameter naam wordt voorafgegaan door de service naam `WebFrontEnd_` als een best practice om deze te onderscheiden van para meters met dezelfde naam die van toepassing zijn op verschillende services.
+1. Open in het project **todolistapp** onder **environments**  >  **Cloud** het bestand **para meters. yaml** . Wijzig de `WebFrontEnd_cpu` waarde, in `1.5` . De parameter naam wordt voorafgegaan door de service naam `WebFrontEnd_` als een best practice om deze te onderscheiden van para meters met dezelfde naam die van toepassing zijn op verschillende services.
 
     ```xml
     WebFrontEnd_cpu: 1.5
@@ -55,7 +60,7 @@ De `WebFrontEnd_cpu` para meter wordt bijgewerkt om de CPU-Resources bij te werk
 
 2. Open het bestand **service. yaml** van het **webfrontend** onder **webfrontend**-  >  **service resources**.
 
-    Houd er rekening mee dat de in `resources:` -sectie `cpu:` is ingesteld op `"[parameters('WebFrontEnd_cpu')]"` . Als het project wordt gebouwd voor de Cloud, wordt de waarde voor `'WebFrontEnd_cpu` opgehaald uit het **Environments**  >  **Cloud**  >  yaml-bestand Cloud**para meters.** `1.5` Als het project wordt gebouwd om lokaal te worden uitgevoerd, wordt de waarde opgehaald uit het yaml-bestand van de **omgeving**  >  **Local**  >  **para meters** en wordt ' 0,5 '.
+    Houd er rekening mee dat de in `resources:` -sectie `cpu:` is ingesteld op `"[parameters('WebFrontEnd_cpu')]"` . Als het project wordt gebouwd voor de Cloud, wordt de waarde voor `'WebFrontEnd_cpu` opgehaald uit het   >    >  yaml-bestand Cloud **para meters.** `1.5` Als het project wordt gebouwd om lokaal te worden uitgevoerd, wordt de waarde opgehaald uit het yaml-bestand van de **omgeving**  >  **Local**  >  **para meters** en wordt ' 0,5 '.
 
 > [!Tip]
 > Standaard wordt het parameter bestand dat een peer is van het profiel. yaml-bestand gebruikt om de waarden voor dat profiel. yaml-bestand op te geven.
@@ -131,7 +136,7 @@ Gebruik de vervolg keuzelijst **doel profiel** om het bestand profile. yaml te s
 
 ![Dialoogvenster in Visual Studio over Service Fabric Mesh-publicatie](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
 
-Selecteer uw Azure-account en -abonnement. Stel de **locatie** in op de locatie die u hebt gebruikt toen u de to-do-app voor het eerst naar Azure hebt gepubliceerd. In dit artikel wordt **VS-Oost**gebruikt.
+Selecteer uw Azure-account en -abonnement. Stel de **locatie** in op de locatie die u hebt gebruikt toen u de to-do-app voor het eerst naar Azure hebt gepubliceerd. In dit artikel wordt **VS-Oost** gebruikt.
 
 Stel de **resource groep** in op de resource groep die u hebt gebruikt toen u de to-do-app voor het eerst naar Azure hebt gepubliceerd.
 

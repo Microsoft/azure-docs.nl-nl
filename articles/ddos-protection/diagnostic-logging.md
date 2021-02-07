@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 22c49502883cb444027bd59a24bfb5bb3c32da4c
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 42d4467a6441e517ef3194f701eb47e7e68505b1
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915161"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806304"
 ---
 # <a name="view-and-configure-ddos-diagnostic-logging"></a>Registratie in DDoS-diagnoselogboek bekijken en configureren
 
@@ -75,7 +75,7 @@ De volgende tabel bevat de namen en beschrijvingen van velden:
 | **ResourceGroup** | De resource groep met uw open bare IP-adres en virtuele netwerk. |
 | **Abonnements** | De abonnements-ID van uw DDoS-beschermings plan. |
 | **Resource** | De naam van uw open bare IP-adres. |
-| **Resource** | Dit is altijd `PUBLICIPADDRESS` . |
+| **ResourceType** | Dit is altijd `PUBLICIPADDRESS` . |
 | **OperationName** | Voor meldingen is dit `DDoSProtectionNotifications` .  |
 | **Bericht** | Details van de aanval. |
 | **Type** | Type melding. Mogelijke waarden zijn `MitigationStarted` . `MitigationStopped`. |
@@ -91,7 +91,7 @@ De volgende tabel bevat de namen en beschrijvingen van velden:
 | **ResourceGroup** | De resource groep met uw open bare IP-adres en virtuele netwerk. |
 | **Abonnements** | De abonnements-ID van uw DDoS-beschermings plan. |
 | **Resource** | De naam van uw open bare IP-adres. |
-| **Resource** | Dit is altijd `PUBLICIPADDRESS` . |
+| **ResourceType** | Dit is altijd `PUBLICIPADDRESS` . |
 | **OperationName** | Voor stroom Logboeken is dit `DDoSMitigationFlowLogs` . |
 | **Bericht** | Details van de aanval. |
 | **SourcePublicIpAddress** | Het open bare IP-adres van de client die verkeer naar uw open bare IP-adres genereert. |
@@ -110,7 +110,7 @@ De volgende tabel bevat de namen en beschrijvingen van velden:
 | **ResourceGroup** | De resource groep met uw open bare IP-adres en virtuele netwerk. |
 | **Abonnements** | De abonnements-ID van uw DDoS-beschermings plan. |
 | **Resource** | De naam van uw open bare IP-adres. |
-| **Resource** | Dit is altijd `PUBLICIPADDRESS` . |
+| **ResourceType** | Dit is altijd `PUBLICIPADDRESS` . |
 | **OperationName** | Voor risico beperkings rapporten is dit `DDoSMitigationReports` . |
 | **Report type** | Mogelijke waarden zijn `Incremental` : `PostMitigation` .|
 | **MitigationPeriodStart** | De datum en tijd in UTC waarop de beperking is gestart.  |
@@ -128,7 +128,7 @@ De volgende tabel bevat de namen en beschrijvingen van velden:
 
 ## <a name="enable-diagnostic-logging-on-all-public-ips"></a>Diagnostische logboek registratie inschakelen voor alle open bare Ip's
 
-Met deze [sjabloon](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Enable%20Diagnostic%20Logging/Azure%20Policy) maakt u een definitie van een Azure Policy om automatisch diagnostische logboek registratie in te scha kelen voor alle open bare IP-Logboeken in een gedefinieerd bereik.
+Met deze [sjabloon](https://aka.ms/ddosdiaglogs) maakt u een definitie van een Azure Policy om automatisch diagnostische logboek registratie in te scha kelen voor alle open bare IP-Logboeken in een gedefinieerd bereik.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FEnable%2520Diagnostic%2520Logging%2FAzure%2520Policy%2FDDoSLogs.json)
 
@@ -142,7 +142,7 @@ U kunt Logboeken verbinden met Azure Sentinel, uw gegevens in werkmappen bekijke
 
 ### <a name="azure-ddos-protection-workbook"></a>Azure DDoS Protection werkmap
 
-U kunt deze Azure Resource Manager (ARM)-sjabloon gebruiken voor het implementeren van een aanvals Analytics-werkmap. Met deze werkmap kunt u aanvals gegevens op verschillende deel Vensters visualiseren om eenvoudig inzicht te krijgen in wat het aandeel is. 
+U kunt [deze Azure Resource Manager (arm)-sjabloon](https://aka.ms/ddosworkbook) gebruiken voor het implementeren van een aanvals Analytics-werkmap. Met deze werkmap kunt u aanvals gegevens op verschillende deel Vensters visualiseren om eenvoudig inzicht te krijgen in wat het aandeel is. 
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520DDoS%2520Protection%2520Workbook%2FAzureDDoSWorkbook_ARM.json)
 

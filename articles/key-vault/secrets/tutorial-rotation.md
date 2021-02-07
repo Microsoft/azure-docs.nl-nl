@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cd90043c8f03361244d3500f83f6df5347f1d867
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 526c3d2d85a3f2877f82b3b764f395c51f7c05c0
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539397"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805227"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Het rouleren van een geheim voor resources met één set verificatiereferenties automatiseren
 
@@ -213,7 +213,7 @@ Als u een geheim met een korte vervaldatum maakt, wordt een `SecretNearExpiry`-g
 
 Als u wilt controleren of het geheim is gerouleerd, gaat u naar **Key Vault** > **Geheimen**:
 
-:::image type="content" source="../media/rotate-8.png" alt-text="Naar Geheimen gaan":::
+:::image type="content" source="../media/rotate-8.png" alt-text="Scherm afbeelding die laat zien hoe u toegang krijgt tot Key Vault > geheimen.":::
 
 Open het **sqlPassword**-geheim en bekijk de oorspronkelijke en gerouleerde versies:
 

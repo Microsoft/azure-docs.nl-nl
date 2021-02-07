@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 758f7de46c524406f31a40072250eb7d59745d42
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 648e7991784212e4fe781efd5d9f01cb571c5012
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736085"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807849"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Azure-beveiligings basislijn voor App Service
 
@@ -1111,7 +1111,7 @@ Daarnaast kunt u ook eenvoudig abonnementen markeren (bijvoorbeeld productie, ni
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
-**Richt lijnen**: uw Security Center waarschuwingen en aanbevelingen exporteren met de functie continue export. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. Gebruik de Security Center Data Connector om de waarschuwings-Sentinel te streamen volgens de behoeften van het bedrijf.
+**Richt lijnen**: uw Security Center waarschuwingen en aanbevelingen exporteren met de functie continue export. Met doorlopend exporteren kunt u waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren. Gebruik de Security Center Data Connector om de waarschuwingen te streamen naar Azure Sentinel volgens de behoeften van het bedrijf.
 
 - [Continue export configureren](../security-center/continuous-export.md)
 

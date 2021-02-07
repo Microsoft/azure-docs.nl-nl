@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: yelevin
-ms.openlocfilehash: a9d2cd48e3b686614f7361d2007f6f8183c2361e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 66c315132ef0ef4d320e9edd8e9bcc28b2240924
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657020"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805087"
 ---
 # <a name="normalization-in-azure-sentinel"></a>Normalisatie in azure Sentinel
 
@@ -105,13 +105,13 @@ Bij het opslaan van een query functie kan het nodig zijn om de query Verkenner t
 
 #### <a name="using-the-parsers"></a>De parsers gebruiken
 
-Wanneer deze functie is ingeschakeld, kunt u de meta-parser gebruiken om een query uit te geven op een gecombineerde weer gave op alle momenteel ingeschakelde parsers. Als u dit wilt doen, gaat u naar de pagina verklikker logboeken en voert u een query uit op de meta-parser:
+Wanneer deze functie is ingeschakeld, kunt u de meta-parser gebruiken om een query uit te geven op een gecombineerde weer gave op alle momenteel ingeschakelde parsers. Als u dit wilt doen, gaat u naar de pagina Azure Sentinel logs en voert u een query uit op de meta-parser:
 
 :::image type="content" source="./media/normalization/query-parser.png" alt-text="Query uitvoeren op de parser":::
  
-U kunt ook toegang krijgen tot de meta-parser of de afzonderlijke parsers met behulp van query Explorer op de pagina verklikker logboeken door te klikken op query Explorer:
+U kunt ook de meta-parser of de afzonderlijke parsers openen met behulp van query Explorer op de pagina logboeken door op query Explorer te klikken:
 
-:::image type="content" source="./media/normalization/query-explorer.png" alt-text="Queryverkenner":::
+:::image type="content" source="./media/normalization/query-explorer.png" alt-text="Query Verkenner":::
 
 Vouw in het deel venster aan de rechter kant het gedeelte ' opgeslagen query's ' uit en zoek de map ' NormalizedNetworkParsers ' (of de naam van de categorie die u hebt gekozen bij het maken van de parsers):
 

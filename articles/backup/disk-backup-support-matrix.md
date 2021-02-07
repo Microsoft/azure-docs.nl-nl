@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: d6a8276de9674266415604e8654034f129da8f50
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 7d6de863a45bcadd73e847cbf407c13363952151
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430944"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806101"
 ---
 # <a name="azure-disk-backup-support-matrix-in-preview"></a>Ondersteunings matrix voor Azure Disk Backup (in Preview)
 
@@ -22,7 +22,7 @@ U kunt [Azure backup](./backup-overview.md) gebruiken om Azure-schijven te bevei
 
 ## <a name="supported-regions"></a>Ondersteunde regio’s
 
-Azure Disk Backup is beschikbaar als preview in de volgende regio's: VS-West, VS-West-Centraal, Oost-VS2, Canada-centraal, UK-west, Australië-centraal, Korea-centraal, Korea-zuid, Japan-West, Azië-oost, UAE-noord, Brazilië-zuid, Centraal-India. 
+Azure Disk Backup is beschikbaar als preview in de volgende regio's: VS-West, West-Centraal VS, Oost-VS2, Canada-centraal, UK-west, Zwitserland-noord, Zwitserland-west, Australië-centraal, Australië-centraal 2, Korea-centraal, Korea-zuid, Japan-West, Azië-oost, UAE-noord, Brazilië-zuid, Centraal-India. 
 
 Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 

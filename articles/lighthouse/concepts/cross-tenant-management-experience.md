@@ -3,12 +3,12 @@ title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
 ms.date: 02/02/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5180b2c28bc1157cb785c04f794cc5c9636764c8
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 41047a35328d4eac370d98a6d660f20e5006a2bb
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576681"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805171"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -143,7 +143,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 
 - Azure-Sentinel-resources beheren [in de tenants van de klant](../../sentinel/multiple-tenants-service-providers.md)
 - [Aanvallen bijhouden en beveiligings waarschuwingen op meerdere tenants weer geven](https://techcommunity.microsoft.com/t5/azure-sentinel/using-azure-lighthouse-and-azure-sentinel-to-monitor-across/ba-p/1043899)
-- [Incidenten weer geven](../../sentinel/multiple-workspace-view.md) in meerdere Sentinel-werk ruimten die over de tenants worden verspreid
+- [Incidenten weer geven](../../sentinel/multiple-workspace-view.md) in meerdere Azure-Sentinel-werk ruimten, verdeeld over tenants
 
 [Azure service Health](../../service-health/index.yml):
 

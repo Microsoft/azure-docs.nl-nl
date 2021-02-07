@@ -8,20 +8,20 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 01/06/2021
 ms.author: yelevin
-ms.openlocfilehash: df132c35ebb04596d91720431f5b08cb88e2abd9
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: a3a09ceffc75e2d396d7bd7aeedd97b7f2b6ec2b
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104188"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807730"
 ---
 # <a name="connect-azure-sql-database-diagnostics-and-auditing-logs"></a>Diagnostische gegevens en controle logboeken van Azure SQL database verbinden
 
 Azure SQL is een volledig beheerde PaaS-data base-engine (platform-as-a-Service) die de meeste database beheer functies, zoals upgrades, patches, back-ups en bewaking, afhandelt, zonder tussen komst van de gebruiker. 
 
-Met de Azure SQL database-connector kunt u de controle-en Diagnostische logboeken van uw data bases streamen naar Sentinel, zodat u de activiteiten in al uw instanties voortdurend kunt bewaken.
+Met de Azure SQL database-connector kunt u de controle-en Diagnostische logboeken van uw data bases streamen naar Azure Sentinel, zodat u de activiteiten in al uw instanties voortdurend kunt bewaken.
 
-- Met de verbinding met Diagnostische logboeken kunt u Diagnostische logboeken voor data bases van verschillende gegevens typen naar uw Sentinel-werk ruimte verzenden.
+- Met de verbinding met Diagnostische logboeken kunt u Diagnostische logboeken voor data bases van verschillende gegevens typen verzenden naar uw Azure Sentinel-werk ruimte.
 
 - Door controle logboeken te verbinden kunt u beveiligingscontrole logboeken streamen vanuit alle Azure SQL-data bases op server niveau.
 

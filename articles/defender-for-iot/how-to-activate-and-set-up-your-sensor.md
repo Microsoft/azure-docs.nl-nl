@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 7d045ad104f8e2055ae85b74f4aae8f4d3fd61a4
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 5d2d923fc448beeff8fa165226890d88d97d01ad
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509516"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805662"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Uw sensor activeren en instellen
 
@@ -204,7 +204,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 | Venster | Pictogram | Description |
 |---|---|---|
 | Gebruikers | :::image type="icon" source="media/concept-sensor-console-overview/users-icon-azure.png" border="false"::: | Definieer gebruikers en rollen met verschillende toegangs niveaus. |
-| Doorsturen | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Stuur waarschuwings gegevens door naar partners en interne bronnen (bijvoorbeeld Sentinel) die zijn geïntegreerd met Defender voor IoT, naar e-mail adressen, webhook-servers en meer. <br /> Zie [informatie over het door sturen van waarschuwingen](how-to-forward-alert-information-to-partners.md) voor meer informatie. |
+| Doorsturen | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Stuur waarschuwings gegevens door naar partners en interne bronnen (bijvoorbeeld Azure Sentinel) die zijn geïntegreerd met Defender voor IoT, naar e-mail adressen, webhook-servers en meer. <br /> Zie [informatie over het door sturen van waarschuwingen](how-to-forward-alert-information-to-partners.md) voor meer informatie. |
 | Systeeminstellingen | :::image type="icon" source="media/concept-sensor-console-overview/system-settings-icon-azure.png" border="false"::: | Configureer de systeem instellingen. U kunt bijvoorbeeld de DHCP-instellingen definiëren, de details van de e-mail server opgeven of poort aliassen maken. |
 | Importinstellingen | :::image type="icon" source="media/concept-sensor-console-overview/import-settings-icon-azure.png" border="false"::: | Het venster **import instellingen** weer geven. U kunt hand matige wijzigingen in de gegevens van een apparaat uitvoeren.<br /> Zie [informatie](how-to-import-device-information.md) over het importeren van apparaten voor meer informatie. |
 

@@ -1,6 +1,6 @@
 ---
 title: 'Quickstart: Onboarden in Azure Sentinel'
-description: In deze quickstart ontdekt u hoe u Azure Sentinel kunt onboarden door eerst Sentinel in te schakelen en vervolgens gegevensbronnen te verbinden.
+description: In deze Quick Start leert u hoe u een Azure-Sentinel op de trein maakt door deze eerst in te scha kelen en vervolgens verbinding te maken met gegevens bronnen.
 services: sentinel
 author: yelevin
 ms.author: yelevin
@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 10/14/2020
 ms.custom: references_regions
-ms.openlocfilehash: 107806b6372360e501fe9cc0a21d25cff5cc35f9
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
-ms.translationtype: HT
+ms.openlocfilehash: 7cb8cb4d99ca8a63195eba21d82814fcd7820f5c
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95248642"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807764"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Quickstart: Azure Sentinel onboarden
 
@@ -41,7 +41,7 @@ Nadat u verbinding hebt gemaakt met uw gegevensbronnen, kiest u uit een galerie 
 
 ### <a name="geographical-availability-and-data-residency"></a>Geografische beschikbaarheid en gegevenslocatie
 
-- Azure Sentinel kan worden uitgevoerd op werkruimten in de meeste [GA-regio’s van Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor), behalve de regio's China en Duitsland (soevereine regio's). Soms kan het bij nieuwe Log Analytics-regio's enige tijd duren om de Sentinel-service uit te voeren. 
+- Azure Sentinel kan worden uitgevoerd op werkruimten in de meeste [GA-regio’s van Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor), behalve de regio's China en Duitsland (soevereine regio's). Soms kan het enige tijd duren voordat nieuwe Log Analytics regio's de Azure Sentinel service niet meer nodig hebben. 
 
 - Gegevens die worden gegenereerd door Azure Sentinel, zoals incidenten, bladwijzers en analytics-regels, bevatten mogelijk wat klantgegevens die afkomstig zijn uit de Log Analytics-werkruimten van de klant. Deze door Azure Sentinel gegenereerde gegevens worden opgeslagen in de geografie die wordt vermeld in de volgende tabel, op basis van de geografie waar de werkruimte zich bevindt:
 

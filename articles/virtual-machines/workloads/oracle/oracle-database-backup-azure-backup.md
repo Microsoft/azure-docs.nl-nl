@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/28/2021
 ms.author: cholse
 ms.reviewer: dbakevlar
-ms.openlocfilehash: 3122b1c5d7ac8b9dca0e244a4b7e73a57c4c5fca
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: ac045694e8975509635e03221a8cb9cc84446b55
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072401"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806406"
 ---
 # <a name="back-up-and-recover-an-oracle-database-19c-database-on-an-azure-linux-vm-using-azure-backup"></a>Back-ups maken en herstellen van een Oracle Database 19c-Data Base op een virtuele Azure Linux-machine met Azure Backup
 
@@ -697,7 +697,7 @@ Voer de volgende stappen uit om de hele virtuele machine te herstellen:
 
    1. Selecteer in de Azure Portal **+ een resource maken** en zoek en selecteer een **opslag account**.
     
-      ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/storage-1.png)
+      ![Scherm afbeelding die laat zien waar een resource wordt gemaakt.](./media/oracle-backup-recovery/storage-1.png)
     
     
    1. Kies op de pagina opslag account maken de bestaande resource groep **RG-Oracle**, geef uw opslag account de naam **Oracrestore** en kies **Storage v2 (Generalpurpose v2)** voor het soort account. Wijzig de replicatie naar **lokaal redundante opslag (LRS)** en stel de prestaties in op **standaard**. Zorg ervoor dat de locatie is ingesteld op dezelfde regio als alle andere resources in de resource groep. 
@@ -877,7 +877,7 @@ Nadat de virtuele machine is hersteld, moet u het oorspronkelijke IP-adres aan d
 
 5.  Nu moet u de NIC die is gemaakt met de bewerking voor het terugzetten van de VM, loskoppelen omdat deze is geconfigureerd als de primaire interface. Klik op **netwerk interface ontkoppelen** en kies de nieuwe NIC vergelijkbaar met **vmoracle19c-NIC-XXXXXXXXXXXX** en klik vervolgens op **OK** .
 
-    ![Waarde van IP-adres](./media/oracle-backup-recovery/create-ip-05.png)
+    ![Scherm afbeelding die laat zien waar u de netwerk interface loskoppelen selecteert.](./media/oracle-backup-recovery/create-ip-05.png)
     
     De opnieuw gemaakte VM heeft nu de oorspronkelijke NIC, die is gekoppeld aan het oorspronkelijke IP-adres en de regels voor de netwerk beveiligings groep
     

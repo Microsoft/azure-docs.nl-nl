@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 11/06/2020
-ms.openlocfilehash: 4070f373175f3497156ced011a57e2ed7bd6e770
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2e1536d4f2ea7d71691c611e9127109c154f3266
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009769"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807340"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Overzicht: de implementatie voor Azure Logic Apps automatiseren met behulp van Azure Resource Manager sjablonen
 
@@ -627,7 +627,7 @@ Wanneer uw logische app verbindingen met andere services en het systeem maakt en
 }
 ```
 
-Bron definities voor verbindingen verwijzen naar de para meters op het hoogste niveau van de sjabloon voor hun waarden. Dit betekent dat u deze waarden tijdens de implementatie kunt opgeven met behulp van een parameter bestand. Zorg ervoor dat verbindingen dezelfde Azure-resource groep en-locatie gebruiken als uw logische app.
+Bron definities voor verbindingen verwijzen naar de para meters op het hoogste niveau van de sjabloon voor hun waarden, zodat u deze waarden tijdens de implementatie kunt opgeven met behulp van een parameter bestand. Zorg ervoor dat verbindingen dezelfde Azure-resource groep en-locatie gebruiken als uw logische app.
 
 Hier volgt een voor beeld van een resource definitie voor een Office 365 Outlook-verbinding en de bijbehorende sjabloon parameters:
 
@@ -746,12 +746,12 @@ In dit voor beeld ziet u de interacties tussen de resource definitie van uw logi
                      }
                   }
                }
-            },
-            <other-logic-app-resource-information>,
-            "dependsOn": [
-               "[resourceId('Microsoft.Web/connections', parameters('office365_1_Connection_Name'))]"
-            ]
-         }
+            }
+         },
+         <other-logic-app-resource-information>,
+         "dependsOn": [
+            "[resourceId('Microsoft.Web/connections', parameters('office365_1_Connection_Name'))]"
+         ]
          // End logic app resource definition
       },
       // Office 365 Outlook API connection resource definition

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: e373556d189e9fffc0626d19250e79c09962a004
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: a88c837c986db346bcb4fbb1b15ceab6a304347d
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062101"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806220"
 ---
 # <a name="tutorial-scan-data-with-azure-purview-preview"></a>Zelfstudie: Gegevens scannen met Azure Purview (preview)
 
@@ -91,7 +91,9 @@ Voordat u de PowerShell-scripts uitvoert als een bootstrap voor de catalogus, ha
    1. Selecteer de sectie **Overzicht** en sla de GUID voor de **Abonnements-id** op.
 
    > [!NOTE]
-   > Zorg ervoor dat u hetzelfde abonnement gebruikt als waarin u het Azure Purview-account hebt gemaakt. Dit is hetzelfde abonnement dat is opgenomen in de acceptatielijst.
+   > - Zorg ervoor dat u hetzelfde abonnement gebruikt als waarin u het Azure Purview-account hebt gemaakt. Dit is hetzelfde abonnement dat is opgenomen in de acceptatielijst.
+   > - Afkomst kunnen soms in azure controle sfeer liggen ontbreken na het uitvoeren van het Start pakket. De reden hiervoor is dat de Data Factory gemaakt door de Starter Kit ontbrekende machtigingen heeft in controle sfeer liggen. Selecteer [**deze document koppeling**](how-to-link-azure-data-factory.md#view-existing-data-factory-connections)  om te controleren of de Data Factory juist is geconfigureerd en de juiste rol heeft toegewezen in controle sfeer liggen
+
 
 * CatalogName: De naam van het Azure Purview-account dat u hebt gemaakt in [Een Azure Purview-account maken](create-catalog-portal.md).
 

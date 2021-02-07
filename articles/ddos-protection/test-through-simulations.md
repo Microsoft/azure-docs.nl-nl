@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 55042c8d1e612598cc5728668c9e87b054fb3afa
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: e95495e48725a68ab1fe3f37d235e5765b2c8015
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98537827"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806236"
 ---
 # <a name="test-through-simulations"></a>Testen via simulaties
 
@@ -63,7 +63,7 @@ Zodra de bron is aangevallen, ziet u dat de waarde wordt gewijzigd van **0** in 
 
 ### <a name="breakingpoint-cloud-api-script"></a>BreakingPoint Cloud-API-script
 
-Dit [API-script](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Breaking%20Point%20SDK) kan worden gebruikt om DDoS-tests te automatiseren door één keer uit te voeren of door gebruik te maken van cron om regel matige tests te plannen. Dit is handig om te controleren of uw logboek registratie juist is geconfigureerd en dat detectie-en antwoord procedures effectief zijn. De scripts vereisen een Linux-besturings systeem (getest met Ubuntu 18,04 LTS) en python 3. Installeer de vereisten en API-client met behulp van het meegeleverde script of door de documentatie op de [BreakingPoint-Cloud](http://breakingpoint.cloud/) website te gebruiken.
+Dit [API-script](https://aka.ms/ddosbreakingpoint) kan worden gebruikt om DDoS-tests te automatiseren door één keer uit te voeren of door gebruik te maken van cron om regel matige tests te plannen. Dit is handig om te controleren of uw logboek registratie juist is geconfigureerd en dat detectie-en antwoord procedures effectief zijn. De scripts vereisen een Linux-besturings systeem (getest met Ubuntu 18,04 LTS) en python 3. Installeer de vereisten en API-client met behulp van het meegeleverde script of door de documentatie op de [BreakingPoint-Cloud](http://breakingpoint.cloud/) website te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

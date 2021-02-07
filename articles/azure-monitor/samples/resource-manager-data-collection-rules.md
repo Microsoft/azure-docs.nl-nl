@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: bff13c24e0b5818b352e76df1d8ecd8251a5f12c
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: f8664886203e32baadda5cdf993fbaf7b2a62ed7
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430223"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805915"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Resource Manager-voorbeeldsjablonen voor gegevensverzamelingsregels in Azure Monitor
 Dit artikel bevat [Azure Resource Manager-sjablonen](../../azure-resource-manager/templates/template-syntax.md) die dienen als voorbeeld voor het implementeren en configureren van de [Log Analytics-agent](../platform/log-analytics-agent.md) en [de diagnostische extensie](../platform/diagnostics-extension-overview.md) voor virtuele machines in Azure Monitor. Elk voorbeeld bevat een sjabloonbestand en een parameterbestand met voorbeeldwaarden voor het sjabloon.
@@ -82,7 +82,7 @@ In het volgende voor beeld wordt een koppeling gemaakt tussen een virtuele machi
 
 ## <a name="create-association-with-azure-arc"></a>Koppeling maken met Azure Arc
 
-In het volgende voorbeeld wordt de Azure Monitor-agent op een virtuele Windows Azure-machine geïnstalleerd. Er wordt een koppeling gemaakt tussen een Azure Arc-servermachine en een gegevensverzamelingsregel.
+In het volgende voor beeld wordt een koppeling gemaakt tussen een Azure-server met Arc-functionaliteit en een gegevens verzamelings regel.
 
 ### <a name="template-file"></a>Sjabloonbestand
 

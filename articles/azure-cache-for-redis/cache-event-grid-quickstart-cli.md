@@ -1,17 +1,17 @@
 ---
 title: 'Snelstartgids: Azure-cache voor redis-gebeurtenissen naar een webeindpunt door sturen met Azure CLI'
-description: Gebruik Azure Event Grid om u te abonneren op Azure cache voor redis-gebeurtenissen, de gebeurtenissen te verzenden naar een webhook en de gebeurtenissen in een webtoepassing te verwerken.
+description: Gebruik Azure Event Grid om u te abonneren op Azure cache voor redis-gebeurtenissen, een gebeurtenis te activeren en de resultaten weer te geven.
 author: curib
 ms.author: cauribeg
 ms.date: 1/5/2021
 ms.topic: quickstart
 ms.service: cache
-ms.openlocfilehash: 55c4c6bb5352d70c9bc688b28c3e0ab6eccd34fd
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 7f33ca0043400962054fabb1aadb1da612fe5426
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055515"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806423"
 ---
 # <a name="quickstart-route-azure-cache-for-redis-events-to-web-endpoint-with-azure-cli"></a>Snelstartgids: Azure-cache voor redis-gebeurtenissen naar een webeindpunt door sturen met Azure CLI
 

@@ -3,12 +3,12 @@ title: Azure Monitor inschakelen voor containers | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u Azure Monitor voor containers inschakelt en configureert, zodat u kunt zien hoe uw container presteert en welke problemen met betrekking tot de prestaties zijn geïdentificeerd.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: f598b42f1a8d9fcb42f09d17e40850cf3a1282be
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 56f60b58cff351aa37e98cdba933c929aaaedab6
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943826"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806001"
 ---
 # <a name="enable-azure-monitor-for-containers"></a>Azure Monitor inschakelen voor containers
 
@@ -35,6 +35,12 @@ U kunt Azure Monitor voor containers inschakelen voor een nieuwe implementatie o
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
+
+> [!IMPORTANT]
+> Log Analytics in containers geplaatste Linux-agent (POD) maakt API-aanroepen naar alle Windows-knoop punten op Kubelet beveiligde poort (10250) in het cluster voor het verzamelen van metrische gegevens over het knoop punt en de container prestaties. Kubelet beveiligde poort (: 10250) moet worden geopend in het virtuele netwerk van het cluster voor zowel binnenkomend als uitgaand verkeer voor Windows-knoop punten en de verzameling metrische prestatie gegevens over de container.
+>
+> Als u een Kubernetes-cluster met Windows-knoop punten hebt, kunt u de netwerk beveiligings groep en het netwerk beleid controleren en configureren om ervoor te zorgen dat de Kubelet beveiligde poort (: 10250) wordt geopend voor zowel binnenkomend als uitgaand verkeer in het virtuele netwerk van het cluster.
+
 
 - U hebt een Log Analytics-werk ruimte.
 

@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa6726bb5c60dceab0a58632da99c04361183246
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 26403c20d7f3274e8f3f2dcae479f72e9a7e3354
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97932687"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807017"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Een API-connector toevoegen aan een gebruikers stroom
 
@@ -38,7 +38,7 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 6. Geef de **eind punt-URL** voor de API-aanroep op.
 7. Geef de verificatie gegevens op voor de API.
 
-   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u een dummy **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld https []() ://contoso.azurewebsites.net/API/endpoint <b>? code = 0123456789</b>).
+   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u een dummy **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint?code=0123456789` ).
 
    ![Een nieuwe API-connector configureren](./media/self-service-sign-up-add-api-connector/api-connector-config.png)
 8. Selecteer **Opslaan**.
@@ -109,7 +109,7 @@ Volg deze stappen om een API-connector toe te voegen aan een self-service voor h
 
 ## <a name="after-signing-in-with-an-identity-provider"></a>Nadat u zich hebt aangemeld met een id-provider
 
-Een API-connector in deze stap van het registratie proces wordt direct geactiveerd nadat de gebruiker zich bij een id-provider (Google, Facebook, Azure AD) heeft geverifieerd. Deze stap gaat vooraf aan de *-*_kenmerk verzamelings pagina_* _. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. 
+Een API-connector in deze stap van het registratie proces wordt direct geactiveerd nadat de gebruiker zich bij een id-provider (Google, Facebook, Azure AD) heeft geverifieerd. Deze stap gaat vooraf aan de ***pagina kenmerk verzameling***. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. 
 
 <!-- The following are examples of API connector scenarios you may enable at this step:
 - Use the email or federated identity that the user provided to look up claims in an existing system. Return these claims from the existing system, pre-fill the attribute collection page, and make them available to return in the token.
@@ -251,8 +251,8 @@ Content-type: application/json
 | -------------------------------------------------- | ----------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | versie                                            | Tekenreeks            | Ja      | De versie van de API.                                                                                                                                                                                                                                                                |
 | actie                                             | Tekenreeks            | Ja      | Waarde moet zijn `Continue` .                                                                                                                                                                                                                                                              |
-| \<builtInUserAttribute>                            | \<attribute-type> | Nee       | Waarden kunnen worden opgeslagen in de map als ze zijn geselecteerd als een _ *claim om * te ontvangen* in de API-connector configuratie en **gebruikers kenmerken** voor een gebruikers stroom. Waarden kunnen worden geretourneerd in het token als deze zijn geselecteerd als een **toepassings claim**.                                              |
-| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Nee       | De geretourneerde claim hoeft niet te bevatten `_<extensions-app-id>_` . Waarden worden opgeslagen in de map als deze zijn geselecteerd als een **claim om te ontvangen** in de API-connector configuratie en het **gebruikers kenmerk** voor een gebruikers stroom. Aangepaste kenmerken kunnen niet terug worden verzonden in het token. |
+| \<builtInUserAttribute>                            | \<attribute-type> | No       | Waarden kunnen worden opgeslagen in de map als ze zijn geselecteerd als een **claim om te ontvangen** in de API-connector configuratie en **gebruikers kenmerken** voor een gebruikers stroom. Waarden kunnen worden geretourneerd in het token als deze zijn geselecteerd als een **toepassings claim**.                                              |
+| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | No       | De geretourneerde claim hoeft niet te bevatten `_<extensions-app-id>_` . Waarden worden opgeslagen in de map als deze zijn geselecteerd als een **claim om te ontvangen** in de API-connector configuratie en het **gebruikers kenmerk** voor een gebruikers stroom. Aangepaste kenmerken kunnen niet terug worden verzonden in het token. |
 
 ### <a name="example-of-a-blocking-response"></a>Voor beeld van een blokkerend antwoord
 
@@ -274,7 +274,7 @@ Content-type: application/json
 | versie     | Tekenreeks | Ja      | De versie van de API.                                                    |
 | actie      | Tekenreeks | Ja      | Waarde moet `ShowBlockPage`                                              |
 | userMessage | Tekenreeks | Ja      | Bericht dat wordt weergegeven aan de gebruiker.                                            |
-| code        | Tekenreeks | Nee       | Foutcode. Kan worden gebruikt voor fout opsporing. Niet weer gegeven voor de gebruiker. |
+| code        | Tekenreeks | No       | Foutcode. Kan worden gebruikt voor fout opsporing. Niet weer gegeven voor de gebruiker. |
 
 **Eind gebruikers ervaring met een blokkerend antwoord**
 
@@ -299,9 +299,9 @@ Content-type: application/json
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
 | versie     | Tekenreeks  | Ja      | De versie van de API.                                                    |
 | actie      | Tekenreeks  | Ja      | Waarde moet zijn `ValidationError` .                                           |
-| status      | Geheel getal | Ja      | Dit moet een waarde zijn `400` voor een ValidationError-antwoord.                        |
+| status      | Geheel getal | Yes      | Dit moet een waarde zijn `400` voor een ValidationError-antwoord.                        |
 | userMessage | Tekenreeks  | Ja      | Bericht dat wordt weergegeven aan de gebruiker.                                            |
-| code        | Tekenreeks  | Nee       | Foutcode. Kan worden gebruikt voor fout opsporing. Niet weer gegeven voor de gebruiker. |
+| code        | Tekenreeks  | No       | Foutcode. Kan worden gebruikt voor fout opsporing. Niet weer gegeven voor de gebruiker. |
 
 **Eind gebruikers ervaring met validatie-fout bericht**
 

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 01/25/2021
-ms.openlocfilehash: 8e5b43383e0b49c0fe6fffdd9ffee6667fb540f8
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.date: 02/05/2021
+ms.openlocfilehash: 6c064acc44e180d3e99bdcf68d2e1e129d52fd5d
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054751"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805931"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -427,6 +427,12 @@ In deze sectie worden alleen de inkomende IP-adressen voor de Azure Logic Apps-s
 
 > [!TIP]
 > Als [u de complexiteit](../virtual-network/service-tags-overview.md)wilt beperken wanneer u beveiligings regels maakt, kunt u eventueel de servicetag **LogicAppsManagement** gebruiken in plaats van inkomende Logic apps IP-adres voorvoegsels op te geven voor elke regio. U kunt eventueel ook de **AzureConnectors** -service code gebruiken voor beheerde connectors die inkomende webhook-retour aanroepen naar de Logic apps-service maken, in plaats van inkomende IP-adres voorvoegsels voor beheerde connectors op te geven voor elke regio. Deze tags werken in de regio's waar de Logic Apps-service beschikbaar is.
+>
+> De volgende connectors maken inkomende webhook-retour aanroepen naar de Logic Apps-service:
+>
+> Adobe Creative Cloud, Adobe Sign, Adobe-teken demo, Adobe Sign preview, Adobe Sign stage, Azure Sentinel, Business Central, Calendly, Common Data Service, DocuSign, DocuSign demo, Dynamics 365 voor Fin & OPS, LiveChat, Office 365 Outlook, Outlook.com, Parserer, SAP *, shifts voor micro soft teams, teamwork-projecten, Typeform
+>
+> \***SAP**: de retour aanroeper is afhankelijk van of de implementatie omgeving een multi tenant-Azure-of ISE is. De on-premises gegevens gateway wordt in de omgeving met meerdere tenants teruggebeld naar de Logic Apps-service. In een ISE maakt de SAP-connector de oproep terug naar de Logic Apps-service.
 
 <a name="multi-tenant-inbound"></a>
 
@@ -543,7 +549,7 @@ In deze sectie vindt u de uitgaande IP-adressen voor de Azure Logic Apps-service
 
 #### <a name="azure-government---outbound-ip-addresses"></a>Azure Government-uitgaande IP-adressen
 
-| Regio | Logic Apps IP-adres | IP van beheerde connectors |
+| Region | Logic Apps IP-adres | IP van beheerde connectors |
 |--------|---------------|-----------------------|
 | US DoD Central | 52.182.48.215, 52.182.92.143 | 52.127.58.160 - 52.127.58.175, 52.182.54.8, 52.182.48.136, 52.127.61.192 - 52.127.61.223 |
 | VS (overheid) - Arizona | 52.244.67.143, 52.244.65.66, 52.244.65.190 | 52.127.2.160 - 52.127.2.175, 52.244.69.0, 52.244.64.91, 52.127.5.224 - 52.127.5.255 |

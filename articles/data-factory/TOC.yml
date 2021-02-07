@@ -760,6 +760,10 @@
           href: solution-template-databricks-notebook.md
     - name: Inzicht krijgen in prijzen
       items:
+        - name: Overzicht van gereserveerde capaciteit van gegevens stroom
+          href: data-flow-reserved-capacity-overview.md
+        - name: Gegevens stroom begrijpen reserverings kosten
+          href: data-flow-understand-reservation-charges.md
         - name: Kosten voorspellen en beheren
           href: plan-manage-costs.md
         - name: Prijsvoorbeelden

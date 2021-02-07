@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/28/2021
 ms.author: cholse
 ms.reviewer: dbakevlar
-ms.openlocfilehash: 695f151e6d6cc0a677942f60c751567da0cfca7c
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: fce947c43e8559f4ea2a65645805e987a9015d3f
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063880"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806270"
 ---
 # <a name="back-up-and-recover-an-oracle-database-19c-database-on-an-azure-linux-vm-using-azure-storage"></a>Back-ups maken en herstellen van een Oracle Database 19c-Data Base op een virtuele Azure Linux-machine met Azure Storage
 
@@ -31,19 +31,19 @@ In dit artikel wordt het gebruik van Azure Storage als een medium beschreven voo
    ssh azureuser@<publicIpAddress>
    ```
    
-2. Ga naar de **_root_* _ gebruiker:
+2. Schakel over naar de ***hoofd*** gebruiker:
  
    ```bash
    sudo su -
    ```
     
-3. Voeg de Oracle-gebruiker toe aan de _*_ /etc/-sudoers_ * _ bestand:
+3. Voeg de Oracle-gebruiker toe aan het ***/etc/sudoers*** -bestand:
 
    ```bash
    echo "oracle   ALL=(ALL)      NOPASSWD: ALL" >> /etc/sudoers
    ```
 
-4. Bij deze stap wordt ervan uitgegaan dat u een Oracle-exemplaar (test) hebt dat wordt uitgevoerd op een virtuele machine met de naam _vmoracle19c *.
+4. Bij deze stap wordt ervan uitgegaan dat u een Oracle-exemplaar (test) hebt dat wordt uitgevoerd op een virtuele machine met de naam *vmoracle19c*.
 
    Gebruiker overschakelen naar de *Oracle* -gebruiker:
 
@@ -182,31 +182,31 @@ Stel eerst uw opslag account in.
 
 1. File Storage configureren in het Azure Portal
 
-    Selecteer in de Azure Portal ***+ een resource maken** _ en zoek en selecteer een _*_opslag account_*_
+    Selecteer in de Azure Portal ***+ een resource maken** _ en zoek en selecteer _ *_opslag account_**
     
-    ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/storage-1.png)
+    ![Scherm afbeelding die laat zien waar u een resource maakt en opslag account selecteert.](./media/oracle-backup-recovery/storage-1.png)
     
-2. Kies op de pagina opslag account maken de bestaande resource groep _*_RG-Oracle_*_, geef uw opslag account de naam _*_Oracbkup1_*_ en kies _*_Storage v2 (Generalpurpose v2)_*_ voor het soort account. Wijzig de replicatie naar _*_lokaal redundante opslag (LRS)_*_ en stel de prestaties in op _*_standaard_*_. Zorg ervoor dat de locatie is ingesteld op dezelfde regio als alle andere resources in de resource groep. 
+2. Kies op de pagina opslag account maken de bestaande resource groep ***RG-Oracle** _, geef uw opslag account de naam _*_Oracbkup1_*_ en kies _*_opslag v2 (Generalpurpose v2)_*_ voor het soort account. Wijzig de replicatie naar _*_lokaal redundante opslag (LRS)_*_ en stel de prestaties in op _ *_standaard_* *. Zorg ervoor dat de locatie is ingesteld op dezelfde regio als alle andere resources in de resource groep. 
     
-    ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/file-storage-1.png)
+    ![Scherm afbeelding die laat zien waar u de bestaande resource groep kunt kiezen.](./media/oracle-backup-recovery/file-storage-1.png)
    
    
-3. Klik op het tabblad _*_Geavanceerd_*_ en onder Azure files _*_grote bestands shares_*_ instellen op _*_ingeschakeld_*_. Klik op controleren + maken en klik vervolgens op maken.
+3. Klik op het tabblad ***Geavanceerd** _ en onder Azure files _*_grote bestands shares_*_ instellen op _ *_ingeschakeld_* *. Klik op controleren + maken en klik vervolgens op maken.
     
-    ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/file-storage-2.png)
-    
-    
-4. Wanneer het opslag account is gemaakt, gaat u naar de resource en kiest u _*_Bestands shares_*_
-    
-    ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/file-storage-3.png)
-    
-5. Klik op _*_ + bestand share_ *_ en op de Blade _*_nieuwe bestands share_*_ de naam van uw bestands share _*_orabkup1_*_. Stel _*_quotum_*in op* _ _10240_*_ GiB en controleer _*_trans acties geoptimaliseerde_*_ als de laag. Het quotum weerspiegelt een bovengrens waarmee de bestands share kan worden uitgebreid. Omdat we standaard opslag gebruiken, worden de resources PAYG en niet ingericht, dus als u deze instelt op 10 TiB, worden er geen kosten in rekening gebracht die verder gaan dan wat u gebruikt. Als uw back-upstrategie meer opslag ruimte vereist, moet u het quotum instellen op een geschikt niveau voor alle back-ups.   Wanneer u de Blade nieuwe bestands share hebt voltooid, klikt u op _*_maken_* _.
-    
-    ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/file-storage-4.png)
+    ![Scherm opname van de locatie waar grote bestands shares moeten worden ingesteld.](./media/oracle-backup-recovery/file-storage-2.png)
     
     
-6. Wanneer u dit hebt gemaakt, klikt u op _*_orabkup1_*_ op de pagina instellingen voor bestands share. 
-    Klik op het tabblad _*_verbinding maken_*_ om de Blade verbinding maken te openen en klik vervolgens op het tabblad _*_Linux_*_ . Kopieer de opdrachten voor het koppelen van de bestands share met het SMB-protocol. 
+4. Wanneer het opslag account is gemaakt, gaat u naar de resource en kiest u ***Bestands shares***
+    
+    ![Scherm afbeelding die laat zien waar u bestands shares selecteert.](./media/oracle-backup-recovery/file-storage-3.png)
+    
+5. Klik op ***+ Bestands share** _ en op de Blade _*_nieuwe bestands share_*_ de naam van de bestands share _*_orabkup1_*_. Stel _*_quota_*_ in op _*_10240_*_ GiB en controleer of de _*_trans actie is geoptimaliseerd_*_ als laag. Het quotum weerspiegelt een bovengrens waarmee de bestands share kan worden uitgebreid. Omdat we standaard opslag gebruiken, worden de resources PAYG en niet ingericht, dus als u deze instelt op 10 TiB, worden er geen kosten in rekening gebracht die verder gaan dan wat u gebruikt. Als uw back-upstrategie meer opslag ruimte vereist, moet u het quotum instellen op een geschikt niveau voor alle back-ups.   Wanneer u de Blade nieuwe bestands share hebt voltooid, klikt u op _ *_maken_* *.
+    
+    ![Scherm afbeelding die laat zien waar een nieuwe bestands share moet worden toegevoegd.](./media/oracle-backup-recovery/file-storage-4.png)
+    
+    
+6. Wanneer u dit hebt gemaakt, klikt u op ***orabkup1*** op de pagina instellingen voor bestands share. 
+    Klik op het tabblad ***verbinding maken** om de Blade verbinding maken te openen en klik vervolgens op het tabblad _ *_Linux_**. Kopieer de opdrachten voor het koppelen van de bestands share met het SMB-protocol. 
     
     ![Pagina voor toevoegen van opslag account](./media/oracle-backup-recovery/file-storage-5.png)
 
@@ -371,7 +371,7 @@ Hoewel het gebruik van RMAN en Azure File Storage voor database back-ups veel vo
 
     ```bash
     cd /u02/oradata/TEST
-    rm -f _.dbf
+    rm -f *.dbf
     ```
 
 3. De volgende opdrachten gebruiken RMAN om de ontbrekende datafiles te herstellen en de data base te herstellen:

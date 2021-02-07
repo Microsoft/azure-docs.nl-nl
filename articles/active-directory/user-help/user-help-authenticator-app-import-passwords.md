@@ -11,12 +11,12 @@ ms.topic: end-user-help
 ms.date: 01/28/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: b0d7eeeb840a3efc560c20310b38bee93a038795
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: ecc6580148dfba92077336a26ff9160fbe88eb2c
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99056027"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806152"
 ---
 # <a name="import-passwords-into-the-microsoft-authenticator-app"></a>Wacht woorden importeren in de app Microsoft Authenticator
 
@@ -39,21 +39,21 @@ Google Chrome-gebruikers op Android-en Apple-telefoons kunnen hun wacht woord re
 
 1. Tik ![ op het menu Google Chrome ellips rechtsboven ](./media/user-help-authenticator-app-import-passwords/ellipsis-chrome.png) voor Android-telefoons of rechtsonder op Ios-apparaten en tik vervolgens op **instellingen.**
 
-   &nbsp; | &nbsp;
+   Platform | Koppeling
    ---------- | --------
    Android | ![Menu locatie voor Google Chrome-instellingen](./media/user-help-authenticator-app-import-passwords/android-settings-menu.png)
    iOS | ![Menu pictogram Google Chrome-instellingen](./media/user-help-authenticator-app-import-passwords/apple-settings-menu.png)
 
 1. Open **wacht woorden** in **instellingen**.
 
-   &nbsp; | &nbsp;
+   Platform | Koppeling
    ---------- | --------
    Android | ![Locatie van de opdracht Andoid Chrome-wacht woorden](./media/user-help-authenticator-app-import-passwords/android-passwords-location.png)
    iOS | ![Opdracht locatie voor Apple Chrome-wacht woorden](./media/user-help-authenticator-app-import-passwords/apple-passwords-location.png)
 
 1. Op Android-apparaten tikt u op het ![ menu Google Chrome ellips rechtsboven ](./media/user-help-authenticator-app-import-passwords/ellipsis-chrome.png) voor Android-telefoons of rechtsonder op Ios-apparaten en tikt u vervolgens op **wacht woorden exporteren**.
 
-   &nbsp; | &nbsp;
+   Platform | Koppeling
    ---------- | --------
    Android | ![Locatie voor exporteren van Android Chrome-wacht woorden](./media/user-help-authenticator-app-import-passwords/android-export-passwords-location.png)
    iOS | ![Locatie van Apple Chrome-export wachtwoorden](./media/user-help-authenticator-app-import-passwords/apple-export-passwords-location.png)
@@ -62,7 +62,7 @@ Google Chrome-gebruikers op Android-en Apple-telefoons kunnen hun wacht woord re
 
 1. Nadat de wacht woorden zijn geëxporteerd, wordt u door Chrome gevraagd om te kiezen in welke app u wilt importeren. Selecteer **verificator** om te beginnen met het importeren van wacht woorden. U wordt op de hoogte gesteld van de import status wanneer deze is voltooid.
 
-   &nbsp; | &nbsp;
+   Platform | Koppeling
    ---------- | --------
    Android | ![Locatie van wacht woorden voor Android Chrome importeren](./media/user-help-authenticator-app-import-passwords/android-chrome-import.png)
    iOS | ![Locatie van Apple Chrome import-wacht woorden](./media/user-help-authenticator-app-import-passwords/apple-chrome-import.png)
@@ -105,7 +105,7 @@ In Firefox kunnen alleen wacht woorden van de bureaublad browser worden geëxpor
 
       1. U kunt het geëxporteerde CSV-bestand op uw Android-of iOS-telefoon overdragen met behulp van de voor keur en de veilige manier en het vervolgens downloaden. Vervolgens deelt u het CSV-bestand met de verificator-app om het importeren te starten.
 
-         &nbsp; | &nbsp;
+         Platform | Koppeling
          ---------- | --------
          Android | ![Locatie van wacht woorden voor Android Chrome importeren](./media/user-help-authenticator-app-import-passwords/android-chrome-import.png)
          iOS | ![Locatie van Apple Chrome import-wacht woorden](./media/user-help-authenticator-app-import-passwords/apple-chrome-import.png)
@@ -134,7 +134,7 @@ LastPass biedt alleen ondersteuning voor het exporteren van wacht woorden vanuit
 
       1. Zet het geëxporteerde CSV-bestand op uw smartphone door met een voor keur en een veilige manier en down load het. Deel vervolgens het CSV-bestand met de verificator-app om het importeren te starten.
 
-         &nbsp; | &nbsp;
+         Platform | Koppeling
          ---------- | --------
          Android | ![Locatie van import wachtwoorden voor Android LastPass](./media/user-help-authenticator-app-import-passwords/android-chrome-import.png)
          iOS | ![Locatie van Apple LastPass-import wachtwoorden](./media/user-help-authenticator-app-import-passwords/apple-chrome-import.png)
@@ -153,7 +153,7 @@ Bitwarden biedt alleen ondersteuning voor het exporteren van wacht woorden vanui
 
       1. Zet het geëxporteerde CSV-bestand op uw smartphone door met een voor keur en een veilige manier en down load het. Deel vervolgens het CSV-bestand met de verificator-app om het importeren te starten.
 
-         &nbsp; | &nbsp;
+         Platform | Koppeling
          ---------- | --------
          Android | ![Locatie van import wachtwoorden voor Android Bitwarden](./media/user-help-authenticator-app-import-passwords/android-chrome-import.png)
          iOS | ![Locatie van Apple Bitwarden-import wachtwoorden](./media/user-help-authenticator-app-import-passwords/apple-chrome-import.png)
@@ -186,7 +186,7 @@ RoboForm staat alleen het exporteren van wacht woorden uit de desktop-app toe, d
 
       1. Zet het geëxporteerde CSV-bestand op uw smartphone door met een voor keur en een veilige manier en down load het. Deel vervolgens het CSV-bestand met de verificator-app om het importeren te starten.
 
-         &nbsp; | &nbsp;
+         Platform | Koppeling
          ---------- | --------
          Android | ![Locatie van import wachtwoorden voor Android RoboForm](./media/user-help-authenticator-app-import-passwords/android-chrome-import.png)
          iOS | ![Locatie van Apple RoboForm-import wachtwoorden](./media/user-help-authenticator-app-import-passwords/apple-chrome-import.png)
@@ -209,7 +209,7 @@ Als de stappen voor het importeren van wacht woorden uit uw wachtwoord beheerder
 
       1. Zet het geëxporteerde CSV-bestand op uw smartphone door met een voor keur en een veilige manier en down load het. Deel vervolgens het CSV-bestand met de verificator-app om het importeren te starten.
 
-         &nbsp; | &nbsp;
+         Platform | Koppeling
          ---------- | --------
          Android | ![Locatie van wacht woorden voor Android CSV-Import](./media/user-help-authenticator-app-import-passwords/android-chrome-import.png)
          iOS | ![Locatie van Apple CSV-Import wachtwoorden](./media/user-help-authenticator-app-import-passwords/apple-chrome-import.png)

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 08ab78171376f702aecb1f49571dda583eae5d82
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: df53062c7c897493a47d88ea2873f9710b9825bf
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813867"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806253"
 ---
 # <a name="manage-ddos-protection-plans-permissions-and-restrictions"></a>DDoS Protection plannen beheren: machtigingen en beperkingen
 
@@ -30,7 +30,7 @@ Een DDoS-beschermings plan werkt in verschillende regio's en abonnementen. Hetze
 
 Als u wilt werken met DDoS-beveiligings plannen, moet uw account worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) rol waaraan de juiste acties in de volgende tabel zijn toegewezen:
 
-| Actie                                            | Naam                                     |
+| Bewerking                                            | Name                                     |
 | ---------                                         | -------------                            |
 | Micro soft. Network/ddosProtectionPlans/lezen        | Een DDoS-beschermings plan lezen              |
 | Micro soft. Network/ddosProtectionPlans/schrijven       | Een DDoS-beschermings plan maken of bijwerken  |
@@ -43,12 +43,12 @@ Als u DDoS-beveiliging wilt inschakelen voor een virtueel netwerk, moet aan uw a
 
 Het is niet nodig om meer dan één abonnement te maken voor de meeste organisaties. Een plan kan niet worden verplaatst tussen abonnementen. Als u het abonnement wilt wijzigen, moet u het bestaande schema verwijderen en een nieuw plan maken.
 
-Voor klanten die verschillende abonnementen hebben en die ervoor willen zorgen dat één plan wordt geïmplementeerd in hun Tenant voor kosten beheer, kunt u Azure Policy gebruiken om het [maken van Azure DDoS Protection standaard plannen te beperken](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Restrict%20creation%20of%20Azure%20DDoS%20Protection%20Standard%20Plans%20with%20Azure%20Policy). Met dit beleid wordt het maken van DDoS-abonnementen geblokkeerd, tenzij het abonnement eerder als een uitzonde ring is gemarkeerd. In dit beleid wordt ook een lijst weer gegeven met alle abonnementen waarvoor een DDoS-abonnement is geïmplementeerd, maar die niet moeten worden gemarkeerd als niet-compatibel.
+Voor klanten die verschillende abonnementen hebben en die ervoor willen zorgen dat één plan wordt geïmplementeerd in hun Tenant voor kosten beheer, kunt u Azure Policy gebruiken om het [maken van Azure DDoS Protection standaard plannen te beperken](https://aka.ms/ddosrestrictplan). Met dit beleid wordt het maken van DDoS-abonnementen geblokkeerd, tenzij het abonnement eerder als een uitzonde ring is gemarkeerd. In dit beleid wordt ook een lijst weer gegeven met alle abonnementen waarvoor een DDoS-abonnement is geïmplementeerd, maar die niet moeten worden gemarkeerd als niet-compatibel.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
+Ga door naar de zelfstudies voor meer informatie over het weergeven en configureren van telemetrie voor uw DDoS-beschermingsplan.
 
 > [!div class="nextstepaction"]
 > [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

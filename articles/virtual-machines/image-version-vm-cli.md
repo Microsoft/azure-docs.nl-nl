@@ -1,5 +1,5 @@
 ---
-title: Een installatiekopie van een VM maken
+title: Een installatie kopie van een virtuele machine maken met behulp van Azure CLI
 description: Meer informatie over het maken van een installatie kopie in een galerie met gedeelde afbeeldingen van een virtuele machine in Azure.
 author: cynthn
 ms.service: virtual-machines
@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b8aa2623722b5e75480e68324d76e4a1493501df
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: ca354ee662ebad0cd514d4822794b056ee6f9850
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685137"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805374"
 ---
 # <a name="create-an-image-version-from-a-vm-in-azure-using-the-azure-cli"></a>Een installatie kopie versie maken op basis van een virtuele machine in azure met behulp van Azure CLI
 

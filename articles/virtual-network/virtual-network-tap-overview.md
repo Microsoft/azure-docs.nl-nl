@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/14/2019
 ms.author: kaanan
-ms.openlocfilehash: c468f289c9dbfe949890c5462dd7c9be3e548d5a
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 8347dcd60dcdfbf03f52e25eb24744909c69465a
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938757"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99804867"
 ---
 # <a name="virtual-network-tap"></a>Virtual Network TAP
 > [!IMPORTANT]
@@ -38,7 +38,7 @@ Voordat u een virtueel netwerk maakt, moet u een bevestigings bericht hebben ont
 
 De accounts die u gebruikt voor het Toep assen van TIKT op netwerk interfaces, moeten worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste rol](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) waaraan de nodige acties zijn toegewezen in de volgende tabel:
 
-| Actie | Name |
+| Bewerking | Name |
 |---|---|
 | Micro soft. Network/virtualNetworkTaps/* | Vereist voor het maken, bijwerken, lezen en verwijderen van een virtueel netwerk Tik op resource |
 | Micro soft. Network/networkInterfaces/lezen | Vereist voor het lezen van de netwerk interface bron waarop de Tik wordt geconfigureerd |
@@ -49,7 +49,7 @@ De accounts die u gebruikt voor het Toep assen van TIKT op netwerk interfaces, m
 
 ### <a name="network-packet-brokers"></a>Netwerkpakket Brokers
 
-- [Gigamon GigaSECURE](https://blog.gigamon.com/2018/09/13/why-microsofts-new-vtap-service-works-even-better-with-gigasecure-for-azure)
+- [GigaVUE Cloud Suite voor Azure](https://www.gigamon.com/solutions/cloud/public-cloud/gigavue-cloud-suite-azure.html)
 - [Ixia CloudLens](https://www.ixiacom.com/cloudlens/cloudlens-azure)
 - [Nubeva Prisms](https://www.nubeva.com/azurevtap)
 - [Big-Switch infrastructuur Big](https://www.bigswitch.com/products/big-monitoring-fabric/public-cloud/microsoft-azure)

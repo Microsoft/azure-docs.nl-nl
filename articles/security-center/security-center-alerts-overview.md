@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: memildin
-ms.openlocfilehash: c1406e6a1f2f36c5d42544c52ade3f991fe2ba0a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: b26d42ca32f0048bb2bedcb5fef337c3ac1d7d65
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433016"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807221"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Beveiligingswaarschuwingen in Azure Security Center
 
@@ -23,7 +23,7 @@ In Security Center zijn er diverse waarschuwingen voor veel verschillende resour
 
 Beveiligings waarschuwingen worden geactiveerd door geavanceerde detecties en zijn alleen beschikbaar met Azure Defender. Er is een gratis proefversie beschikbaar. U kunt de pagina **prijzen &-instellingen** bijwerken. Meer informatie over [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/).
 
-## <a name="respond-to-todays-threats"></a>Reageer op de bedreigingen <a name="respond-threats"> </a> van vandaag
+## <a name="respond-to-todays-threats"></a>Reageer op de bedreigingen <a name="respond-threats"></a> van vandaag
 
 De bedreigingen zijn de afgelopen 20 jaar aanzienlijk veranderd. In het verleden moesten bedrijven meestal zich richten op een website met individuele aanvallers die meestal geïnteresseerd zijn in de weer gave ' wat ze zouden kunnen doen '. De huidige aanvallers zijn veel geavanceerder en georganiseerd. Ze hebben vaak specifieke financiële en strategische doelstellingen. Ze hebben ook meer bronnen beschikbaar, aangezien ze kunnen worden gefinancierd door de status van de Staten of een georganiseerde criminaliteit.
 
@@ -91,7 +91,7 @@ U hebt verschillende mogelijkheden voor het weer geven van uw waarschuwingen bui
 
 - **Down load het CSV-rapport** in het dash board waarschuwingen en biedt een eenmalige export naar CSV.
 - Met **continue export** van prijzen & instellingen kunt u stromen van beveiligings waarschuwingen en aanbevelingen configureren voor log Analytics werk ruimten en Event hubs. [Meer informatie over continue export](continuous-export.md)
-- Beveiligings waarschuwingen van Azure Security Center worden door **Azure Sentinel connector** naar Azure Sentinel gestreamd. [Meer informatie over het verbinden van Azure Security Center met Sentinel](../sentinel/connect-azure-security-center.md)
+- Beveiligings waarschuwingen van Azure Security Center worden door **Azure Sentinel connector** naar Azure Sentinel gestreamd. [Meer informatie over het verbinden van Azure Security Center met Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 
 ## <a name="next-steps"></a>Volgende stappen

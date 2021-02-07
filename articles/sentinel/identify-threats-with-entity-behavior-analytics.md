@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: yelevin
-ms.openlocfilehash: 7944ea48feaca1eb8312e01d876bf9627af429d1
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 458c801e1434832bf65da669ca89cb5c5eebe2e8
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784792"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807560"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
 
 > [!IMPORTANT]
 >
-> - De functies UEBA en Entity pages zijn nu beschikbaar in de **algemene Beschik baarheid** in **_alle _ de_* Azure Sentinel-geografische gebieden en-regio's.
+> - De functies UEBA en Entity pages zijn nu **algemeen beschikbaar** in **_alle_** Azure Sentinel-geografi en-regio's.
 
 ## <a name="what-is-user-and-entity-behavior-analytics-ueba"></a>Wat is UEBA (User and entity Behavior Analytics)?
 
@@ -35,7 +35,7 @@ Het identificeren van bedreigingen in uw organisatie en hun mogelijke gevolgen: 
 
 De UEBA-functie in azure Sentinel elimineert de drudgery van de workloads van uw analisten en de onzekerheid van hun inspanningen, en levert hoogwaardige, beschik bare intelligentie, zodat ze zich kunnen concentreren op onderzoeken en herstel.
 
-Omdat Azure Sentinel logboeken en waarschuwingen van alle verbonden gegevens bronnen verzamelt, worden deze geanalyseerd en worden er basis profielen voor basislijn gedrag van de entiteiten van uw organisatie (gebruikers, hosts, IP-adressen, toepassingen, enzovoort) weer gegeven in de periode tussen tijd en peer groep. Met behulp van verschillende technieken en machine learning mogelijkheden kan Sentinel afwijkende activiteiten identificeren en kunt u bepalen of een activum is aangetast. Dat is niet alleen dat, maar kan ook de relatieve gevoeligheid van bepaalde activa bepalen, peer groepen met activa identificeren en de mogelijke gevolgen van een gegeven aangetaste activa evalueren (de ' versterking van de ' straal '). Met deze informatie kunt u effectief bepalen hoe uw onderzoek en incidenten worden verwerkt. 
+Omdat Azure Sentinel logboeken en waarschuwingen van alle verbonden gegevens bronnen verzamelt, worden deze geanalyseerd en worden de basis profielen van uw organisatie (zoals gebruikers, hosts, IP-adressen en toepassingen) in de periode en peer groep horizon taal samengesteld. Met behulp van verschillende technieken en machine learning mogelijkheden kan Azure Sentinel vervolgens afwijkende activiteiten identificeren en kunt u bepalen of een Asset is aangetast. Dat is niet alleen dat, maar kan ook de relatieve gevoeligheid van bepaalde activa bepalen, peer groepen met activa identificeren en de mogelijke gevolgen van een gegeven aangetaste activa evalueren (de ' versterking van de ' straal '). Met deze informatie kunt u effectief bepalen hoe uw onderzoek en incidenten worden verwerkt. 
 
 ### <a name="architecture-overview"></a>Overzicht van de architectuur
 
@@ -45,7 +45,7 @@ Omdat Azure Sentinel logboeken en waarschuwingen van alle verbonden gegevens bro
 
 Azure Sentinel is geïnspireerd op het paradigma van Gartner voor UEBA-oplossingen en biedt een "buiten-in" benadering, op basis van drie referentie frames:
 
-- _ *Use cases:** door prioriteiten te stellen voor relevante aanvals vectoren en scenario's op basis van beveiligings onderzoek dat is afgestemd op het MITRE att&verzonken Framework van tactieken, technieken en subtechnieken die verschillende entiteiten als slacht offers, Perpetrators of draaiings punten in de Kill-keten plaatsen; Azure Sentinel richt zich specifiek op de meest waardevolle logboeken die elke gegevens bron kan bieden.
+- **Use cases:** Door prioriteit te geven aan relevante aanvals vectoren en-scenario's op basis van beveiligings onderzoek dat is afgestemd op Security Research, uitgelijnd met het MITRE ATT&verzonken Framework van tactieken, technieken en subtechnieken die verschillende entiteiten als slacht offers, Perpetrators of draaiings punten in de Kill-keten plaatsen; Azure Sentinel richt zich specifiek op de meest waardevolle logboeken die elke gegevens bron kan bieden.
 
 - **Gegevens bronnen:** Hoewel Azure-gegevens bronnen voor het eerst worden ondersteund, worden de gegevens bronnen van derden op basis van de eerste en beste ondersteuning geselecteerd om gegevens te leveren die overeenkomen met onze bedreigings scenario's.
 
@@ -68,7 +68,7 @@ Voor elke activiteit wordt gescoord met ' onderzoek prioriteits Score ', waarmee
 
 Bekijk hoe gedrags analyses in [Microsoft Cloud app Security](https://techcommunity.microsoft.com/t5/microsoft-security-and/prioritize-user-investigations-in-cloud-app-security/ba-p/700136) wordt gebruikt voor een voor beeld van hoe dit werkt.
 
-## <a name="entities-in-azure-sentinel"></a>Entiteiten in azure Sentinel
+## <a name="entities-in-azure-sentinel"></a>Entiteiten in Azure Sentinel
 
 ### <a name="entity-identifiers"></a>Entiteit-id's
 
@@ -150,7 +150,7 @@ Entiteits pagina's zijn ontworpen om deel uit te maken van meerdere gebruiks sce
 
 ### <a name="behavior-analytics-table"></a>Tabel met gedrags analyse
 
-| Veld                     | Beschrijving                                                         |
+| Veld                     | Description                                                         |
 |---------------------------|---------------------------------------------------------------------|
 | TenantId                  | uniek ID-nummer van de Tenant                                      |
 | SourceRecordId            | het unieke ID-nummer van de EBA-gebeurtenis                                   |

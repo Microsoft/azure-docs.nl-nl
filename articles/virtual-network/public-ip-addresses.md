@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: 9a80242422631995f6d5c24ba2118ee98a9b8d32
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: f2818965013e44cbbe3202887bf79a737dbbbb58
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576173"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806953"
 ---
 # <a name="public-ip-addresses"></a>Openbare IP-adressen
 
@@ -64,7 +64,7 @@ Standaard-SKU open bare IP-adressen:
 > Alleen open bare IP-adressen met de basis-SKU zijn beschikbaar wanneer IMDS wordt gebruikt voor het gebruiken van [meta gegevens service](../virtual-machines/windows/instance-metadata-service.md). De standaard-SKU wordt niet ondersteund.
 
 > [!NOTE]
-> Diagnostische instellingen worden niet weer gegeven op de Blade van de resource bron wanneer een standaard-SKU openbaar IP-adres wordt gebruikt. Als u logboek registratie wilt inschakelen voor uw open bare IP-adres bron van Stanrd navigeert u naar Diagnostische instellingen onder de Blade Azure Monitor en selecteert u uw IP-adres bron.
+> Diagnostische instellingen worden niet weer gegeven op de Blade van de resource bron wanneer een standaard-SKU openbaar IP-adres wordt gebruikt. Als u logboek registratie wilt inschakelen voor uw standaard open bare IP-adres resource navigeert u naar Diagnostische instellingen onder de Blade Azure Monitor en selecteert u uw IP-adres bron.
 
 ### <a name="basic"></a>Basic
 

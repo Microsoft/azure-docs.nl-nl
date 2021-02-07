@@ -10,12 +10,12 @@ ms.custom: how-to, automl, responsible-ml
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: 19cebefd64f5b6dce9c265a591c8d5072fcd83db
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: fe0b2abb7fa2ca986a896a75e5f6d4c238d70109
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222731"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807255"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Interpreteerbaarheid: modeluitleg in geautomatiseerde machine learning (preview)
 
@@ -40,7 +40,7 @@ In dit artikel leert u het volgende:
 
 Haal de uitleg op uit de `best_run` , die uitleg bevat voor zowel onbewerkte als ontworpen functies.
 
-> [!Warning]
+> [!NOTE]
 > Interpretiteit, aanbevolen model uitleg is niet beschikbaar voor het automatisch ML van prognose experimenten waarbij de volgende algoritmen worden aanbevolen als het beste model: 
 > * TCNForecaster
 > * AutoArima

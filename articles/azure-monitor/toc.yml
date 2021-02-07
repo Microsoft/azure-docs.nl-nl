@@ -1044,6 +1044,8 @@
               href: insights/container-insights-enable-new-cluster.md
             - name: Inschakelen voor bestaand AKS-cluster
               href: insights/container-insights-enable-existing-clusters.md
+            - name: Inschakelen voor AKS met Azure Policy
+              href: containers/container-insights-enable-aks-policy.md
             - name: Inschakelen voor een cluster dat geschikt is voor Arc
               href: insights/container-insights-enable-arc-enabled-clusters.md
             - name: Inschakelen voor een hybride cluster

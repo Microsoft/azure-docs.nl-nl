@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4bda3622c1bb1cb66e83b82df0d13cbfee9e20a3
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: b50ab8cae91aab56be287f517fa6e6a0b25db8e1
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878118"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807866"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Azure-beveiligings basislijn voor Azure Web Application firewall
 
@@ -135,7 +135,7 @@ Kies Azure PowerShell of Azure CLI om op basis van hun labels acties op resource
 
 **Hulp** bij het configureren van Azure Web Application firewall-Logboeken (WAF) die moeten worden verzonden naar een beheer oplossing voor centraal beveiligings logboeken, zoals Azure Sentinel, of een Siem van derden. Deze logboeken bevatten Azure-activiteiten, diagnostische gegevens en real-time WAF-Logboeken. deze logboeken kunnen vervolgens worden weer gegeven in verschillende hulpprogram ma's, zoals Azure Monitor, Excel en Power BI. De logboeken van de firewall van Azure Web Application geven inzicht in de gegevens die door de Azure-WAF worden geëvalueerd, vergeleken en geblokkeerd.
 
-Azure Sentinel heeft een ingebouwde Azure WAF-werkmap, die een overzicht geeft van de beveiligings gebeurtenissen op de Azure-WAF. Deze werkmap bevat gebeurtenissen, overeenkomsten die overeenkomen met en geblokkeerde regels en alles wat er wordt geregistreerd in de firewall Logboeken. Deze telemetrie kan worden gebruikt om Playbook Automation uit te voeren om acties op basis van WAF-gebeurtenissen die door Sentinel worden verzameld, te melden of op te lossen.
+Azure Sentinel heeft een ingebouwde Azure WAF-werkmap, die een overzicht geeft van de beveiligings gebeurtenissen op de Azure-WAF. Deze werkmap bevat gebeurtenissen, overeenkomsten die overeenkomen met en geblokkeerde regels en alles wat er wordt geregistreerd in de firewall Logboeken. Deze telemetrie kan worden gebruikt om Playbook Automation uit te voeren om acties op basis van WAF-gebeurtenissen die door Azure Sentinel worden verzameld, op de hoogte te stellen of op te lossen.
 
 - [Activiteiten logboeken weer geven](../azure-resource-manager/management/view-activity-logs.md)
 

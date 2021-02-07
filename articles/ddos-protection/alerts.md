@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: d9b77def3ccefe3c866ccef78684d38da0b8a268
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ea62b5df7159440a7538c7db0711b7d8f63ec220
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915144"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806287"
 ---
 # <a name="view-and-configure-ddos-protection-alerts"></a>DDoS-beschermingswaarschuwingen bekijken en configureren
 
@@ -41,13 +41,13 @@ In deze zelfstudie leert u het volgende:
 Met deze sjablonen kunt u waarschuwingen configureren voor alle open bare IP-adressen waarvoor u diagnostische logboek registratie hebt ingeschakeld. Om deze waarschuwings sjablonen te kunnen gebruiken, hebt u eerst een Log Analytics-werk ruimte nodig waarvoor Diagnostische instellingen zijn ingeschakeld. Zie [DDoS diagnostische logboek registratie weer geven en configureren](diagnostic-logging.md).
 
 ### <a name="azure-monitor-alert-rule"></a>Waarschuwings regel Azure Monitor
-Met deze [Azure monitor waarschuwings regel](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Azure%20Monitor%20Alert%20-%20DDoS%20Mitigation%20Started) wordt een eenvoudige query uitgevoerd om te detecteren wanneer er een actieve DDoS-beperking optreedt. Dit duidt op een mogelijke aanval. Actie groepen kunnen worden gebruikt om acties als resultaat van de waarschuwing aan te roepen.
+Met deze [Azure monitor waarschuwings regel](https://aka.ms/ddosmitigationstatus) wordt een eenvoudige query uitgevoerd om te detecteren wanneer er een actieve DDoS-beperking optreedt. Dit duidt op een mogelijke aanval. Actie groepen kunnen worden gebruikt om acties als resultaat van de waarschuwing aan te roepen.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520Monitor%2520Alert%2520-%2520DDoS%2520Mitigation%2520Started%2FDDoSMitigationStarted.json)
 
 ### <a name="azure-monitor-alert-rule-with-logic-app"></a>Waarschuwings regel Azure Monitor met logische app
 
-Met deze [sjabloon](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/DDoS%20Mitigation%20Alert%20Enrichment) worden de benodigde onderdelen van een verrijkte waarschuwing voor DDoS-beperking geïmplementeerd: Azure monitor waarschuwings regel, actie groep en logische app. Het resultaat van het proces is een e-mail waarschuwing met details over het IP-adres onder aanval, met inbegrip van informatie over de bron die aan het IP is gekoppeld. De eigenaar van de resource wordt toegevoegd als ontvanger van het e-mail bericht, samen met het beveiligings team. Er wordt ook een Basic-beschikbaarheids test voor toepassingen uitgevoerd en de resultaten worden opgenomen in de e-mail waarschuwing.
+Met deze [sjabloon](https://aka.ms/ddosalert) worden de benodigde onderdelen van een verrijkte waarschuwing voor DDoS-beperking geïmplementeerd: Azure monitor waarschuwings regel, actie groep en logische app. Het resultaat van het proces is een e-mail waarschuwing met details over het IP-adres onder aanval, met inbegrip van informatie over de bron die aan het IP is gekoppeld. De eigenaar van de resource wordt toegevoegd als ontvanger van het e-mail bericht, samen met het beveiligings team. Er wordt ook een Basic-beschikbaarheids test voor toepassingen uitgevoerd en de resultaten worden opgenomen in de e-mail waarschuwing.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FDDoS%2520Mitigation%2520Alert%2520Enrichment%2FEnrich-DDoSAlert.json)
 
@@ -64,7 +64,7 @@ U kunt een van de beschik bare metrische gegevens voor DDoS-beveiliging selecter
     |---------                |---------                                                                                           |
     | Bereik                   | Selecteer **Resource selecteren**. </br> Selecteer het **abonnement** met het open bare IP-adres dat u wilt registreren, selecteer **openbaar IP-adres** voor het **bron type** en selecteer vervolgens het specifieke open bare IP-adres waarvoor u metrische gegevens wilt vastleggen. </br> Selecteer **Gereed**. | 
     | Voorwaarde | Selecteer **voor waarde selecteren**. </br> Onder signaal naam selecteert u **onder DDoS-aanval of niet**. </br> Selecteer onder **operator** de optie **groter dan of gelijk aan**. </br> Onder **aggregatie type** selecteert u **maximum**. </br> Voer bij **drempel waarde** *1* in. Voor de **onder DDoS-aanval of niet** metrisch betekent **0** dat u geen aanval ondervindt terwijl **1** betekent dat u een aanval ondervindt. </br> Selecteer **Gereed**. | 
-    | Actions | Selecteer **actie groepen toevoegen**. </br> Selecteer **Actiegroep maken**. </br> Onder **meldingen**, onder **meldings type**, selecteert u **e-mail/SMS-bericht/push/stem**. </br> Voer onder **naam** _MyUnderAttackEmailAlert_ in. </br> Klik op de knop bewerken, selecteer **e-mail adres** en zoveel van de volgende opties die u nodig hebt, en selecteer vervolgens **OK**. </br> Selecteer **Controleren + maken**. | 
+    | Acties | Selecteer **actie groepen toevoegen**. </br> Selecteer **Actiegroep maken**. </br> Onder **meldingen**, onder **meldings type**, selecteert u **e-mail/SMS-bericht/push/stem**. </br> Voer onder **naam** _MyUnderAttackEmailAlert_ in. </br> Klik op de knop bewerken, selecteer **e-mail adres** en zoveel van de volgende opties die u nodig hebt, en selecteer vervolgens **OK**. </br> Selecteer **Controleren + maken**. | 
     | Details van waarschuwingsregel | Voer _MyDdosAlert_ in bij **naam van waarschuwings regel**. |
 
 Binnen een paar minuten van aanvals detectie ontvangt u een e-mail bericht van Azure Monitor metrische gegevens die er ongeveer als volgt uitzien:

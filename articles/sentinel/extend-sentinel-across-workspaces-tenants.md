@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2020
 ms.author: yelevin
-ms.openlocfilehash: 4312a819f8fd41805dca095556efdc6189f23af9
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: dfd8f94dc7ab4e428647b8f44a86a2cd06634e2a
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757116"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807238"
 ---
 # <a name="extend-azure-sentinel-across-workspaces-and-tenants"></a>Azure-Sentinel uitbreiden in werkruimten en tenants
 
@@ -127,7 +127,7 @@ Met de functie voor het zoeken in meerdere werk ruimten kunt u met behulp van de
 
 Als u meerdere Azure-Sentinel-werk ruimten wilt configureren en beheren, moet u het gebruik van de Azure Sentinel Management API automatiseren. Zie voor meer informatie over het automatiseren van de implementatie van Azure Sentinel-resources, waaronder waarschuwings regels, jacht-query's, werkmappen en playbooks, [uitbrei ding van Azure Sentinel: api's, integratie en beheer automatisering](https://techcommunity.microsoft.com/t5/azure-sentinel/extending-azure-sentinel-apis-integration-and-management/ba-p/1116885).
 
-Zie ook [Azure Sentinel implementeren en beheren als code](https://techcommunity.microsoft.com/t5/azure-sentinel/deploying-and-managing-azure-sentinel-as-code/ba-p/1131928) en [Azure Lighthouse combi neren met de DevOps-mogelijkheden van Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/combining-azure-lighthouse-with-sentinel-s-devops-capabilities/ba-p/1210966) voor een geconsolideerde, door de Community gestuurde methodologie voor het beheren van Azure Sentinel als code en voor het implementeren en configureren van bronnen vanuit een persoonlijke github-opslag plaats. 
+Zie ook [Azure Sentinel implementeren en beheren als code](https://techcommunity.microsoft.com/t5/azure-sentinel/deploying-and-managing-azure-sentinel-as-code/ba-p/1131928) en [Azure Lighthouse combi neren met de DevOps-mogelijkheden van Azure Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/combining-azure-lighthouse-with-sentinel-s-devops-capabilities/ba-p/1210966) voor een geconsolideerde, door de Community gestuurde methodologie voor het beheren van Azure Sentinel as code en voor het implementeren en configureren van bronnen vanuit een persoonlijke github-opslag plaats. 
 
 ## <a name="managing-workspaces-across-tenants-using-azure-lighthouse"></a>Werk ruimten beheren via tenants met behulp van Azure Lighthouse
 

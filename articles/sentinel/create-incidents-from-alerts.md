@@ -15,16 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: fabf847b672f4dbf3e680a21bc7015655c612552
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c7c3d69bb26773171e9e0afc9f79ff25909a12a
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906306"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807289"
 ---
 # <a name="automatically-create-incidents-from-microsoft-security-alerts"></a>Automatisch incidenten maken op basis van beveiligings waarschuwingen van micro soft
 
-Waarschuwingen die zijn geactiveerd in micro soft-beveiligings oplossingen die zijn verbonden met Azure Sentinel, zoals Microsoft Cloud App Security en micro soft Defender voor identiteit (voorheen Azure ATP), maken geen incidenten in azure Sentinel niet automatisch. Wanneer u een micro soft-oplossing verbindt met Azure Sentinel, wordt elke waarschuwing die in die service wordt gegenereerd, als onbewerkte gegevens opgeslagen in azure Sentinel, in de tabel beveiligings waarschuwing in uw Azure Sentinel-werk ruimte. U kunt deze gegevens vervolgens gebruiken, zoals andere onbewerkte gegevens die u in Sentinel maakt.
+Waarschuwingen die zijn geactiveerd in micro soft-beveiligings oplossingen die zijn verbonden met Azure Sentinel, zoals Microsoft Cloud App Security en micro soft Defender voor identiteit (voorheen Azure ATP), maken geen incidenten in azure Sentinel niet automatisch. Wanneer u een micro soft-oplossing verbindt met Azure Sentinel, wordt elke waarschuwing die in die service wordt gegenereerd, als onbewerkte gegevens opgeslagen in azure Sentinel, in de tabel beveiligings waarschuwing in uw Azure Sentinel-werk ruimte. U kunt deze gegevens vervolgens gebruiken, zoals andere onbewerkte gegevens die u in azure Sentinel maakt.
 
 U kunt Azure Sentinel zo configureren dat er automatisch incidenten worden gemaakt telkens wanneer er een waarschuwing wordt geactiveerd in een verbonden micro soft-beveiligings oplossing, door de instructies in dit artikel te volgen.
 
@@ -51,7 +51,7 @@ Gebruik de ingebouwde regels die beschikbaar zijn in azure Sentinel om te kiezen
 
     ![Wizard regel maken](media/incidents-from-alerts/create-rule-wizard.png)
 
-1. U kunt ook een nieuwe **micro soft-beveiligings** regel maken waarmee waarschuwingen van verschillende micro soft-beveiligings services worden gefilterd door te klikken op **+ maken** en de regel voor het maken van een **micro soft-incident**te selecteren
+1. U kunt ook een nieuwe **micro soft-beveiligings** regel maken waarmee waarschuwingen van verschillende micro soft-beveiligings services worden gefilterd door te klikken op **+ maken** en de regel voor het maken van een **micro soft-incident** te selecteren
 
     ![Regel voor het maken van incidenten](media/incidents-from-alerts/incident-creation-rule.png)
 

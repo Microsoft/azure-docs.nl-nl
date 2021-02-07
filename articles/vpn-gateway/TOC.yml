@@ -167,7 +167,7 @@
               href: vpn-profile-intune.md
         - name: OpenVPN
           items:
-            - name: OpenVPN configureren voor punt-naar-site-verbindingen
+            - name: OpenVPN-tunnel type configureren
               href: vpn-gateway-howto-openvpn.md
             - name: OpenVPN-clients configureren
               href: vpn-gateway-howto-openvpn-clients.md

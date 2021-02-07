@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: 0e993cb1e53645f7081a20fc6a2785b8cfef1cce
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 010cfc307d2b2c10c31168fce73673fb1fb611b8
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954176"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807645"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Verbinding maken met Azure Data Factory en Azure controle sfeer liggen
 
@@ -107,29 +107,29 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 
 ### <a name="data-factory-copy-data-support"></a>Ondersteuning voor Data Factory Gegevens kopiëren
 
-| Systeem voor gegevens opslag | Ondersteund als bron | Ondersteund als Sink |
-| ------------------- | ------------------- | ----------------- |
-| ADLS Gen1 | Yes | Ja (alleen niet-binaire kopie) |
-| ADLS Gen2 | Ja | Ja |
-| Azure Blob | Ja | Ja |
-| Azure Cosmos DB (SQL-API) | Ja | Ja |
-| Azure Cosmos DB (Mongo-API) | Ja | Ja |
-| Azure Cognitive Search | Ja | Ja |
-| Azure Data Explorer | Ja | Ja |
-| Azure data base for Maria DB \* | Ja | Ja |
-| Azure data base for MYSQL \* | Ja | Ja |
-| Azure Database for PostgreSQL \* | Ja | Ja |
-| Azure File Storage | Ja | Ja |
-| Azure Table Storage | Ja | Ja |
-| Azure SQL Database \* | Ja | Ja |
-| Azure SQL MI \* | Ja | Ja |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Ja | Ja |
-| SQL Server on-premises (SHIR vereist) \* | Ja | Ja |
-| Amazon S3 | Ja | Ja |
-| Teradata | Ja | Ja |
-| SAP S4 Hana | Ja | Ja |
-| SAP ECC | Ja | Ja |
-| Hive | Ja | Ja |
+| Systeem voor gegevens opslag | Ondersteund als bron | 
+| ------------------- | ------------------- | 
+| ADLS Gen1 | Yes | 
+| ADLS Gen2 | Yes | 
+| Azure Blob | Yes |
+| Azure Cosmos DB (SQL-API) | Yes | 
+| Azure Cosmos DB (Mongo-API) | Yes |
+| Azure Cognitive Search | Yes | 
+| Azure Data Explorer | Yes | 
+| Azure data base for Maria DB \* | Yes | 
+| Azure data base for MYSQL \* | Yes | 
+| Azure Database for PostgreSQL \* | Yes |
+| Azure File Storage | Ja | 
+| Azure Table Storage | Ja |
+| Azure SQL Database \* | Yes | 
+| Azure SQL MI \* | Yes | 
+| Azure Synapse Analytics (voorheen SQL DW) \* | Yes | 
+| On-premises SQL Server  \* | Yes | 
+| Amazon S3 | Ja | 
+| Teradata | Ja | 
+| SAP-tabel connector | Yes |
+| SAP ECC | Yes | 
+| Hive | Yes | 
 
 > [!Note]
 > De functie afkomst heeft bepaalde prestatie overhead in Data Factory Kopieer activiteit. Voor degenen die data factory verbindingen in controle sfeer liggen in te stellen, kunt u controleren of bepaalde Kopieer taken langer duren. Meestal is de impact geen te verwaarlozen. Neem contact op met ondersteuning met een tijd vergelijking als de Kopieer taken aanzienlijk langer duren dan normaal.
@@ -137,7 +137,7 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 ### <a name="data-factory-data-flow-support"></a>Ondersteuning voor Data Factory gegevens stroom
 
 | Systeem voor gegevens opslag | Ondersteund |
-| ------------------- | ------------------- | ----------------- |
+| ------------------- | ------------------- | 
 | ADLS Gen1 | Yes |
 | ADLS Gen2 | Yes |
 | Azure Blob | Yes |
@@ -147,7 +147,7 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 ### <a name="data-factory-execute-ssis-package-support"></a>Ondersteuning voor het uitvoeren van SSIS-pakketten Data Factory
 
 | Systeem voor gegevens opslag | Ondersteund |
-| ------------------- | ------------------- | ----------------- |
+| ------------------- | ------------------- |
 | Azure Blob | Yes |
 | ADLS Gen1 | Yes |
 | ADLS Gen2 | Yes |

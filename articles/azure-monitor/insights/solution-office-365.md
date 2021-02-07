@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
-ms.openlocfilehash: eb20bf4164cb2153f6786dbec04f79453554fa25
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bde1c503d0aaaff1afcee67a26245d5021c43bb4
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995859"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807747"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Office 365-beheer oplossing in azure (preview-versie)
 
@@ -96,7 +96,7 @@ ms.locfileid: "95995859"
 > - [Aangepaste analyseregels maken om verdachte bedreigingen te detecteren](../../sentinel/tutorial-detect-threats-custom.md)
 > - [Uw gegevens bewaken](../../sentinel/tutorial-monitor-your-data.md)
 > - [Incidenten onderzoeken met Azure Sentinel](../../sentinel/tutorial-investigate-cases.md)
-> - [Automatische bedreigings reacties instellen in azure Sentinel](../../sentinel/tutorial-respond-threats-playbook.md)
+> - [Geautomatiseerde bedreigingsreacties instellen in Azure Sentinel](../../sentinel/tutorial-respond-threats-playbook.md)
 > - [Azure Sentinel GitHub-Community](https://github.com/Azure/Azure-Sentinel/tree/master/Playbooks)
 > 
 > ### <a name="q-does-azure-sentinel-provide-additional-connectors-as-part-of-the-solution"></a>V: biedt Azure Sentinel extra connectors als onderdeel van de oplossing?
@@ -109,7 +109,7 @@ ms.locfileid: "95995859"
 > - Als u uw oplossing niet hand matig niet meer vrijgeven op 31 oktober, worden uw gegevens automatisch losgekoppeld en wordt de **OfficeActivity** -tabel verwijderd. U kunt de tabel zelfs herstellen als u de Office 365-connector inschakelt in azure Sentinel, zoals hieronder wordt uitgelegd.
 > 
 > ### <a name="q-will-my-data-transfer-to-the-new-solution"></a>V: zullen mijn gegevens worden overgedragen naar de nieuwe oplossing?
-> Ja. Wanneer u de **Office 365** -oplossing uit uw werk ruimte verwijdert, worden de bijbehorende gegevens tijdelijk niet beschikbaar omdat het schema wordt verwijderd. Wanneer u de nieuwe **Office 365** -connector inschakelt in Sentinel, wordt het schema teruggezet naar de werk ruimte en worden alle gegevens die al zijn verzameld, beschikbaar. 
+> Ja. Wanneer u de **Office 365** -oplossing uit uw werk ruimte verwijdert, worden de bijbehorende gegevens tijdelijk niet beschikbaar omdat het schema wordt verwijderd. Wanneer u de nieuwe **Office 365** -connector inschakelt in azure Sentinel, wordt het schema teruggezet naar de werk ruimte en worden alle gegevens die al zijn verzameld beschikbaar. 
  
 
 Met de Office 365-beheer oplossing kunt u uw Office 365-omgeving in Azure Monitor bewaken.
@@ -226,7 +226,7 @@ U kunt de Office 365-beheer oplossing verwijderen met behulp van het proces in [
 
 U wordt gevraagd om referenties. Geef de referenties op voor uw Log Analytics-werk ruimte.
 
-## <a name="data-collection"></a>Gegevensverzameling
+## <a name="data-collection"></a>Gegevens verzamelen
 
 Het kan enkele uren duren voordat gegevens worden verzameld. Zodra het verzamelen begint, verzendt Office 365 een [webhook-melding](/office/office-365-management-api/office-365-management-activity-api-reference#receiving-notifications) met gedetailleerde gegevens om Azure monitor telkens wanneer een record wordt gemaakt. Deze record is binnen een paar minuten na ontvangst beschikbaar in Azure Monitor.
 
@@ -272,7 +272,7 @@ De volgende eigenschappen zijn gebruikelijk voor alle Office 365-records.
 | ResultStatus | Geeft aan of de actie (opgegeven in de eigenschap Operation) al dan niet is gelukt. Mogelijke waarden zijn geslaagd, PartiallySucceeded of mislukt. Voor Exchange-beheer activiteiten is de waarde True of false. |
 | UserId | De UPN (User Principal Name) van de gebruiker die de actie heeft uitgevoerd die heeft geresulteerd in het registreren van de record. bijvoorbeeld my_name@my_domain_name . Houd er rekening mee dat records voor activiteiten die worden uitgevoerd door systeem accounts (zoals SHAREPOINT\system of NTAUTHORITY\SYSTEM) ook worden opgenomen. | 
 | UserKey | Een alternatieve ID voor de gebruiker die in de eigenschap UserId is geïdentificeerd.  Deze eigenschap wordt bijvoorbeeld gevuld met de unieke Pass Port-ID (PUID) voor gebeurtenissen die worden uitgevoerd door gebruikers in share point, OneDrive voor bedrijven en Exchange. Deze eigenschap kan ook dezelfde waarde opgeven als de eigenschap UserID voor gebeurtenissen die optreden in andere services en gebeurtenissen die worden uitgevoerd door systeem accounts|
-| UserType | Het type gebruiker dat de bewerking heeft uitgevoerd.<br><br>Administrator<br>Toepassing<br>DcAdmin<br>Regelmatig<br>Gereserveerd<br>ServicePrincipal<br>Systeem |
+| UserType | Het type gebruiker dat de bewerking heeft uitgevoerd.<br><br>Beheerder<br>Toepassing<br>DcAdmin<br>Regelmatig<br>Gereserveerd<br>ServicePrincipal<br>Systeem |
 
 
 ### <a name="azure-active-directory-base"></a>Azure Active Directory basis
@@ -462,7 +462,7 @@ Deze records worden gemaakt als reactie op Bestands bewerkingen in share point.
 
 De volgende tabel bevat voorbeeld logboek query's voor update records die door deze oplossing zijn verzameld.
 
-| Query | Description |
+| Query’s uitvoeren | Description |
 | --- | --- |
 |Aantal bewerkingen voor uw Office 365-abonnement |Aantal OfficeActivity &#124;-overzicht () per bewerking |
 |Gebruik van share point-sites|OfficeActivity &#124; waarbij OfficeWorkload = ~ ' share point ' &#124; samenvattings aantal () door de waarde voor SiteUrl \| sorteren op aantal ASC|

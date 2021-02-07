@@ -15,18 +15,18 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 09/08/2020
 ms.author: yelevin
-ms.openlocfilehash: eb1752ea66f2cbebf6a653705b5a760e8e268240
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cd97aef5d8c959aeb2e0314e051790fd0421585
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90935208"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806932"
 ---
 # <a name="azure-sentinel-data-normalization-schema-reference"></a>Naslag informatie over het Azure Sentinel data normalisatie-schema
 
 ## <a name="terminology"></a>Terminologie
 
-De volgende terminologie wordt gebruikt in schema's van Sentinel:
+De volgende terminologie wordt gebruikt in azure Sentinel-schema's:
 
 | Termijn | Definitie |
 | ---- | ---------- |
@@ -45,7 +45,7 @@ De waarden moeten worden genormaliseerd op basis van de onderstaande richt lijne
 | **IP-adres** | IP-adres | Het schema heeft geen afzonderlijke IPv4-en IPv6-adressen. Elk IP-adres veld kan een IPv4-adres of een IPv6-adres zijn:<ul><li>IPv4 in een punt decimale notatie</li><li>IPv6 in 8 hextets-notatie, waardoor de korte formulieren hier worden beschreven.</li></ul> |
 | **Gebruiker** | Tekenreeks | De volgende drie gebruikers velden zijn beschikbaar:<ul><li>Gebruikersnaam</li><li>UPN van gebruiker</li><li>Gebruikers domein</li></ul> |
 | **Gebruikers-id** | Tekenreeks | De volgende twee gebruikers-Id's worden momenteel ondersteund:<ul><li>Gebruikers-SID</li><li>Azure Active Directory-ID</li></ul> |
-| **Apparaat** | Tekenreeks | De volgende drie apparaat-en host-kolommen worden ondersteund:<ul><li>Id</li><li>Naam</li><li>Fully Qualified Domain Name (FQDN)</li></ul> |
+| **Apparaat** | Tekenreeks | De volgende drie apparaat-en host-kolommen worden ondersteund:<ul><li>Id</li><li>Name</li><li>Fully Qualified Domain Name (FQDN)</li></ul> |
 | **Land** | Tekenreeks | Een teken reeks die gebruikmaakt van ISO 3166-1 volgens deze prioriteit:<ul><li>Alfanumerieke 2-codes (dus voor de Verenigde Staten)</li><li>Alpha-3-codes (Verenigde Staten voor de Verenigde Staten)</li><li>Korte naam</li></ul> |
 | **Regio** | Tekenreeks | De subafdelings naam van het land met ISO 3166-2 |
 | **Plaats** | Tekenreeks | |
@@ -64,7 +64,7 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | EventType | Tekenreeks | Verkeer | Het type gebeurtenis dat wordt verzameld | Gebeurtenis |
 | EventSubType | Tekenreeks | Verificatie | Aanvullende beschrijving van het type, indien van toepassing | Gebeurtenis |
 | EventCount | Geheel getal  | 10 | Het aantal gebeurtenissen dat is geaggregeerd, indien van toepassing. | Gebeurtenis |
-| EventEndTime | Datum en tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis is beëindigd | Gebeurtenis |
+| EventEndTime | Datum/tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis is beëindigd | Gebeurtenis |
 | EventMessage | tekenreeks |  toegang geweigerd | Een algemeen bericht of beschrijving, hetzij opgenomen in, ofwel gegenereerd op basis van de record | Gebeurtenis |
 | DvcIpAddr | IP-adres |  23.21.23.34 | Het IP-adres van het apparaat dat de record genereert | Apparaatconfiguratie<br>IP |
 | DvcMacAddr | Tekenreeks | 06:10:9F: EB: 8F: 14 | Het MAC-adres van de netwerk interface van het rapport apparaat waarvan de gebeurtenis is verzonden. | Apparaatconfiguratie<br>Mac |
@@ -79,10 +79,10 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | EventSchemaVersion | Realistische | 0,1 | Versie van het Sentinel-schema van Azure. Momenteel 0,1. | Gebeurtenis |
 | EventSeverity | Tekenreeks | Beperkt | Als de geregistreerde activiteit een beveiligings effect heeft, duidt dit op de ernst van de impact. | Gebeurtenis |
 | EventOriginalUid | Tekenreeks | af6ae8fe-ff43-4a4c-b537-8635976a2b51 | De record-ID van het rapport apparaat. | Gebeurtenis |
-| EventStartTime | Datum en tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis is opgegeven | Gebeurtenis |
-| TimeGenerated | Datum en tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis heeft plaatsgevonden, zoals gerapporteerd door de rapport bron. | Aangepast veld |
-| EventTimeIngested | Datum en tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis is opgenomen in azure Sentinel. Wordt toegevoegd door Azure Sentinel. | Gebeurtenis |
-| EventUid | GUID (teken reeks) | 516a64e3-8360-4f1e-a67c-d96b3d52df54 | De unieke id die door Sentinel wordt gebruikt om een rij te markeren. | Gebeurtenis |
+| EventStartTime | Datum/tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis is opgegeven | Gebeurtenis |
+| TimeGenerated | Datum/tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis heeft plaatsgevonden, zoals gerapporteerd door de rapport bron. | Aangepast veld |
+| EventTimeIngested | Datum/tijd | Zie "gegevens typen" | Het tijdstip waarop de gebeurtenis is opgenomen in azure Sentinel. Wordt toegevoegd door Azure Sentinel. | Gebeurtenis |
+| EventUid | GUID (teken reeks) | 516a64e3-8360-4f1e-a67c-d96b3d52df54 | De unieke id die door Azure Sentinel wordt gebruikt om een rij te markeren. | Gebeurtenis |
 | NetworkApplicationProtocol | Tekenreeks | HTTPS | Het protocol voor de toepassings laag dat wordt gebruikt door de verbinding of de sessie. | Netwerk |
 | DstBytes | int | 32455 | Het aantal bytes dat vanaf het doel naar de bron voor de verbinding of sessie is verzonden. | Doel |
 | SrcBytes | int | 46536 | Het aantal bytes dat vanaf de bron naar het doel voor de verbinding of sessie is verzonden. | Bron |
@@ -95,8 +95,8 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | DstDomainHostname | tekenreeks | CONTOSO | Het domein van de bestemming, het domein van de doelhost (website, domein naam, enzovoort), bijvoorbeeld voor DNS-Zoek opdrachten of NS-zoek acties | Doel |
 | DstInterfaceName | tekenreeks | Microsoft Hyper-V netwerk adapter | De netwerk interface die wordt gebruikt voor de verbinding of de sessie door het doel apparaat. | Doel |
 | DstInterfaceGuid | tekenreeks | 2BB33827-6BB6-48DB-8DE6-DB9E0B9F9C9B | GUID van de netwerk interface die voor de verificatie aanvraag is gebruikt  | Doel |
-| DstIpAddr | Het IP-adres | 2001: db8:: FF00:42:8329 | Het IP-adres van de verbinding of sessie doel, meestal aangeduid als de doel-IP in het netwerk pakket | Beoogde<br>IP |
-| DstDvcIpAddr | Het IP-adres | 75.22.12.2 | Het doel-IP-adres van een apparaat dat niet rechtstreeks is gekoppeld aan het netwerk pakket | Beoogde<br>Apparaatconfiguratie<br>IP
+| DstIpAddr | IP-adres | 2001: db8:: FF00:42:8329 | Het IP-adres van de verbinding of sessie doel, meestal aangeduid als de doel-IP in het netwerk pakket | Beoogde<br>IP |
+| DstDvcIpAddr | IP-adres | 75.22.12.2 | Het doel-IP-adres van een apparaat dat niet rechtstreeks is gekoppeld aan het netwerk pakket | Beoogde<br>Apparaatconfiguratie<br>IP
 | DstGeoLatitude | Breedte graad (dubbel) | 44,475833 | De breedte graad van de geografische coördinaat die is gekoppeld aan het doel-IP-adres | Beoogde<br>Geo |
 | DstMacAddr | Tekenreeks | 06:10:9F: EB: 8F: 14 | Het MAC-adres van de netwerk interface waarbij de verbinding of sessie is beëindigd, meestal aangeduid als de doel-MAC in het netwerk pakket | Beoogde<br>MAC |
 | DstDvcMacAddr | Tekenreeks | 06:10:9F: EB: 8F: 14 | Het MAC-adres van het doel van een apparaat dat niet direct aan het netwerk pakket is gekoppeld. | Beoogde<br>Apparaatconfiguratie<br>MAC |
@@ -104,7 +104,7 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | DstPortNumber | Geheel getal | 443 | De doel-IP-poort. | Beoogde<br>Poort |
 | DstGeoRegion | Regio (teken reeks) | Vermont | De regio binnen een land dat is gekoppeld aan het doel-IP-adres | Beoogde<br>Geo |
 | DstResourceId | Apparaat-ID (teken reeks) |  /subscriptions/3c1bb38c-82e3-4f8d-a115-a7110ba70d05 /resourcegroups/contoso77/providers /microsoft.compute/virtualmachines /victim | De resource-id van het doel apparaat. | Doel |
-| DstNatIpAddr | Het IP-adres | 2::1 | Als dit wordt gerapporteerd door een tussenliggend NAT-apparaat, zoals een firewall, wordt het IP-adres dat door het NAT-apparaat wordt gebruikt voor communicatie met de bron. | Doel-NAT,<br>IP |
+| DstNatIpAddr | IP-adres | 2::1 | Als dit wordt gerapporteerd door een tussenliggend NAT-apparaat, zoals een firewall, wordt het IP-adres dat door het NAT-apparaat wordt gebruikt voor communicatie met de bron. | Doel-NAT,<br>IP |
 | DstNatPortNumber | int | 443 | Als dit wordt gerapporteerd door een tussenliggend NAT-apparaat, zoals een firewall, wordt de poort die door het NAT-apparaat wordt gebruikt voor communicatie met de bron. | Doel-NAT,<br>Poort |
 | DstUserSid | Gebruikers-SID |  S-12-1445 | De gebruikers-ID van de identiteit die is gekoppeld aan de doel bestemming van de sessie. Normaal gesp roken is dit de identiteit die wordt gebruikt om een server te verifiëren. Zie "gegevens typen" voor meer informatie. | Beoogde<br>Gebruiker |
 | DstUserAadId | Teken reeks (GUID) | ae92b0b4-cfba-4b42-85a0-fbd862f4df54 | De object-ID van het Azure AD-account van de gebruiker aan het doel einde van de sessie | Beoogde<br>Gebruiker |
@@ -134,12 +134,12 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | SrcDvcDomain | tekenreeks | EVILORG | Domein van het apparaat waarvandaan de sessie is gestart | Bron<br>Apparaat |
 | SrcDvcOs | Tekenreeks | iOS | Het besturings systeem van het bron apparaat | Bron<br>Apparaat |
 | SrcDvcModelName | Tekenreeks | Samsung Galaxy Opmerking | De model naam van het bron apparaat | Bron<br>Apparaat |
-| SrcDvcModelNumber | Tekenreeks | 10,0 | Het model nummer van het bron apparaat | Bron<br>Apparaat |
+| SrcDvcModelNumber | Tekenreeks | 10.0 | Het model nummer van het bron apparaat | Bron<br>Apparaat |
 | SrcDvcType | Tekenreeks | Mobiel | Het type van het bron apparaat | Bron<br> Apparaat |
 | SrcIntefaceName | Tekenreeks | eth01 | De netwerk interface die wordt gebruikt voor de verbinding of de sessie van het bron apparaat. | Bron |
 | SrcInterfaceGuid | Tekenreeks | 46ad544b-eaf0-47ef-827c-266030f545a6 | GUID van de gebruikte netwerk interface | Bron |
-| SrcIpAddr | Het IP-adres | 77.138.103.108 | Het IP-adres waarmee de verbinding of sessie afkomstig is. | Bron<br>IP |
-| SrcDvcIpAddr | Het IP-adres | 77.138.103.108 | Het bron-IP-adres van een apparaat dat niet rechtstreeks is gekoppeld aan het netwerk pakket (verzameld door een provider of expliciet is berekend). | Bron<br>Apparaatconfiguratie<br>IP |
+| SrcIpAddr | IP-adres | 77.138.103.108 | Het IP-adres waarmee de verbinding of sessie afkomstig is. | Bron<br>IP |
+| SrcDvcIpAddr | IP-adres | 77.138.103.108 | Het bron-IP-adres van een apparaat dat niet rechtstreeks is gekoppeld aan het netwerk pakket (verzameld door een provider of expliciet is berekend). | Bron<br>Apparaatconfiguratie<br>IP |
 | SrcGeoLatitude | Breedte graad (dubbel) | 44,475833 | De breedte graad van het geografische coördinaat dat is gekoppeld aan het bron-IP-adres | Bron<br>Geo |
 | SrcGeoLongitude | Lengte graad (double) | -73,211944 | De lengte graad van de geografische coördinaat die is gekoppeld aan het bron-IP-adres | Bron<br>Geo |
 | SrcMacAddr | Tekenreeks | 06:10:9F: EB: 8F: 14 | Het MAC-adres van de netwerk interface waarvan de verbinding met de sessie verod is. | Bron<br>Mac |
@@ -147,7 +147,7 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | SrcPortNumber | Geheel getal | 2335 | De IP-poort van waaruit de verbinding afkomstig is. Is mogelijk niet relevant voor een sessie die bestaat uit meerdere verbindingen. | Bron<br>Poort |
 | SrcGeoRegion | Regio (teken reeks) | Vermont | De regio binnen een land dat is gekoppeld aan het bron-IP-adres | Bron<br>Geo |
 | SrcResourceId | Tekenreeks | /subscriptions/3c1bb38c-82e3-4f8d-a115-a7110ba70d05 /resourcegroups/contoso77/providers /microsoft.compute/virtualmachines /syslogserver1 | De resource-ID van het apparaat dat het bericht genereert. | Bron |
-| SrcNatIpAddr | Het IP-adres | 4.3.2.1 | Als dit wordt gerapporteerd door een tussenliggend NAT-apparaat, zoals een firewall, wordt het IP-adres dat door het NAT-apparaat wordt gebruikt voor communicatie met het doel. | Bron-NAT,<br>IP |
+| SrcNatIpAddr | IP-adres | 4.3.2.1 | Als dit wordt gerapporteerd door een tussenliggend NAT-apparaat, zoals een firewall, wordt het IP-adres dat door het NAT-apparaat wordt gebruikt voor communicatie met het doel. | Bron-NAT,<br>IP |
 | SrcNatPortNumber | Geheel getal | 345 | Als dit wordt gerapporteerd door een tussenliggend NAT-apparaat, zoals een firewall, wordt de poort die door het NAT-apparaat wordt gebruikt voor communicatie met het doel. | Bron-NAT,<br>Poort |
 | SrcUserSid | Gebruikers-ID (teken reeks) | S-15-1445 | De gebruikers-ID van de identiteit die is gekoppeld aan de sessie bron. Normaal gesp roken voert gebruiker een actie uit op de client. Zie "gegevens typen" voor meer informatie. | Bron<br>Gebruiker |
 | SrcUserAadId | Teken reeks (GUID) | 16c8752c-7dd2-4cad-9e03-fb5d1cee5477 | De object-ID van het Azure AD-account van de gebruiker aan het bron einde van de sessie | Bron<br>Gebruiker |
@@ -169,7 +169,7 @@ Hieronder ziet u het schema van de tabel netwerk sessies, versiond 1.0.0
 | File Extension |  Tekenreeks | exe | Het type van het bestand dat wordt verzonden via de netwerk verbindingen voor protocollen zoals FTP en HTTP. | File
 | FileMimeType | Tekenreeks | toepassings-MSWord | Het MIME-type van het bestand dat wordt verzonden via de netwerk verbindingen voor protocollen zoals FTP en HTTP | File |
 | FileSize | Geheel getal | 23500 | De bestands grootte, in bytes, van het bestand dat via de netwerk verbindingen voor protocollen wordt verzonden. | File |
-| HttpVersion | Tekenreeks | 2.0 | De versie van de HTTP-aanvraag voor HTTP/HTTPS-netwerk verbindingen. | HTTP |
+| HttpVersion | Tekenreeks | 2,0 | De versie van de HTTP-aanvraag voor HTTP/HTTPS-netwerk verbindingen. | HTTP |
 | HttpRequestMethod | Tekenreeks | GET | De HTTP-methode voor HTTP/HTTPS-netwerk sessies. | HTTP |
 | Http status code | Tekenreeks | 404 | De HTTP-status code voor HTTP/HTTPS-netwerk sessies. | HTTP |
 | HttpContentType | Tekenreeks | meerdelige/formulier-data; grens = iets | De header van het inhouds type van het HTTP-antwoord voor HTTP/HTTPS-netwerk sessies. | HTTP |

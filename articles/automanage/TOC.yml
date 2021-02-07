@@ -23,6 +23,8 @@
       href: common-errors.md
     - name: Een beschadigd Automanage-account herstellen
       href: repair-automanage-account.md
+    - name: Een automatische beheerde virtuele machine verplaatsen naar verschillende regio's
+      href: move-automanaged-vms.md
 - name: Resources
   expanded: true
   items:

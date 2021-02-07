@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 5f42b5f2b2a7660ee0de975068f64572c470503a
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 78187b2cbb6603a0ae0df55465b9a5ce5e7dca7f
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874903"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807543"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
 
@@ -84,7 +84,7 @@ Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/select-power-bi-data-source.png" alt-text="Afbeelding van de lijst met beschik bare gegevens bronnen":::
 
-1. Geef uw Power BI-exemplaar een beschrijvende naam.
+3. Geef uw Power BI-exemplaar een beschrijvende naam.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-friendly-name.png" alt-text="Afbeelding van Power BI gegevens bron-beschrijvende naam":::
 
@@ -94,17 +94,21 @@ Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-datasource-registered.png" alt-text="Power BI gegevens bron geregistreerd":::
 
-1. Geef een naam op voor de scan. U ziet dat de enige verificatie methode die wordt ondersteund, **beheerde identiteit** is.
+    > [!Note]
+    > Voor Power BI is registratie van gegevens bronnen en scans alleen toegestaan voor één exemplaar.
+
+
+4. Geef een naam op voor de scan. U ziet dat de enige verificatie methode die wordt ondersteund, **beheerde identiteit** is.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Afbeelding van installatie van Power BI scanner":::
 
     De scan naam moet tussen de 3-63 tekens lang zijn en mag alleen letters, cijfers, onderstrepings tekens en afbreek streepjes bevatten.  Spaties zijn niet toegestaan.
 
-1. Stel een scan trigger in. Uw opties zijn **eenmaal**, **elke 7 dagen** en **om de 30 dagen**.
+5. Stel een scan trigger in. Uw opties zijn **eenmaal**, **elke 7 dagen** en **om de 30 dagen**.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/scan-trigger.png" alt-text="Afbeelding van trigger voor scannen":::
 
-1. Bij **nieuwe scan controleren** selecteert u **opslaan en uitvoeren** om de scan te starten.
+6. Bij **nieuwe scan controleren** selecteert u **opslaan en uitvoeren** om de scan te starten.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Power BI scherm afbeelding opslaan en uitvoeren":::
 

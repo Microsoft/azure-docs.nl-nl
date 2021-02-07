@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/26/2020
 ms.author: yelevin
-ms.openlocfilehash: bde11c8e06891025be96810acf6d87952a3d8d2f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 5bf94d7c5889bb5a743655d65e48f021e91e01b7
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660777"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807136"
 ---
 # <a name="import-threat-intelligence-into-azure-sentinel"></a>Bedreigingsinformatie importeren in Azure Sentinel
 
@@ -36,7 +36,7 @@ U kunt Threat Intelligence (TI) integreren in azure Sentinel via de volgende act
 - Gebruik de ingebouwde **analyse** regel sjablonen om beveiligings waarschuwingen en incidenten te genereren met behulp van uw geïmporteerde bedreigings informatie.
 - Visualiseren van belang rijke gegevens over uw bedreigings informatie in azure Sentinel met de **Threat Intelligence-werkmap**.
 
-Threat Intelligence biedt ook nuttige context binnen andere Azure-Sentinel-ervaringen, zoals **jacht** en **notebooks**, en hoewel dit niet in dit artikel wordt behandeld, worden deze ervaringen behandeld in [dit fantastische blog bericht door Ian hellen op Jupyter notebooks in Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/using-threat-intelligence-in-your-jupyter-notebooks/ba-p/860239), dat het gebruik van CTI binnen notebooks behandelt.
+Threat Intelligence biedt ook nuttige context binnen andere onderverklikker ervaringen van Azure, zoals **jacht** en **notebooks**, en hoewel dit niet in dit artikel wordt behandeld, worden deze ervaringen behandeld in [dit fantastische blog bericht door Ian hellen op Jupyter-notebooks in azure Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/using-threat-intelligence-in-your-jupyter-notebooks/ba-p/860239), dat betrekking heeft op het gebruik van CTI in notitie blokken.
 
 ## <a name="azure-sentinel-data-connectors-for-threat-intelligence"></a>Azure Sentinel data connectors voor bedreigings informatie
 

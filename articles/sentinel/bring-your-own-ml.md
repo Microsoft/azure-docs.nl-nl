@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: yelevin
-ms.openlocfilehash: 6a891a301d5869603a7d90d28bb9063d7d5bdb1d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f8d795dcf64230140e1dd07e3f30ca3aa6825ab4
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660573"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807000"
 ---
 # <a name="bring-your-own-machine-learning-ml-into-azure-sentinel"></a>Breng uw eigen Machine Learning (ML) over naar Azure Sentinel
 
@@ -79,10 +79,10 @@ Als u al Databricks of een andere Spark-omgeving hebt en u de bestaande instelli
 
 Het BYO ML-pakket bevat de aanbevolen procedures en onderzoek van micro soft aan de front-end van de ML voor beveiliging. In dit pakket bieden we de volgende lijst met hulpprogram ma's, notitie blokken en algoritme sjablonen voor beveiligings problemen.
 
-| Bestandsnaam | Beschrijving |
+| Bestandsnaam | Description |
 | --------- | ----------- |
 | azure_sentinel_utilities. WHL | Bevat hulpprogram ma's voor het lezen van blobs van Azure en het schrijven naar Log Analytics. |
-| AnomalousRASampleData | Notebook toont het gebruik van afwijkend bron toegangs model in Sentinel met gegenereerde training en test voorbeeld gegevens. |
+| AnomalousRASampleData | Notebook toont het gebruik van afwijkend bron toegangs model in azure Sentinel met gegenereerde training en test voorbeeld gegevens. |
 | AnomalousRATraining. ipynb | Notebook om het algoritme te trainen, de modellen te bouwen en op te slaan. |
 | AnomalousRAScoring. ipynb | Notitie blok om het model te plannen dat moet worden uitgevoerd, visualiseer het resultaat en schrijf de Score terug naar Azure Sentinel. |
 |
@@ -99,7 +99,7 @@ Als u er nog geen hebt, moet u uw eigen Databricks-omgeving instellen. Raadpleeg
 
 ### <a name="auto-export-instruction"></a>Instructie voor automatisch exporteren
 
-Als u aangepaste ML-modellen wilt maken op basis van uw eigen gegevens in Sentinel, moet u uw gegevens exporteren van Log Analytics naar een Blob Storage-of event hub-bron, zodat het ML-model er toegang toe heeft vanuit Databricks. Meer informatie over het [opnemen van gegevens in azure Sentinel](connect-data-sources.md).
+Als u aangepaste ML-modellen wilt maken op basis van uw eigen gegevens in azure Sentinel, moet u uw gegevens exporteren van Log Analytics naar een Blob Storage-of event hub-bron, zodat het ML-model er toegang toe kan krijgen via Databricks. Meer informatie over het [opnemen van gegevens in azure Sentinel](connect-data-sources.md).
 
 Voor dit voor beeld moet u uw trainings gegevens voor het logboek bestands share toegang hebben in de Azure Blob-opslag. De indeling van de gegevens wordt gedocumenteerd in het notitie blok en de bibliotheken.
 
@@ -141,7 +141,7 @@ Voor aangepaste gegevens die niet worden ondersteund door Log Analytics automati
 
 ### <a name="correlate-with-data-outside-of-azure-sentinel"></a>Correleren met gegevens buiten Azure Sentinel
 
-U kunt ook gegevens van buiten Azure-Sentinel naar de Blob-opslag of event hub halen en deze correleren met de verklikker gegevens om uw ML-modellen te bouwen. 
+U kunt ook gegevens van buiten Azure-Sentinel naar de Blob-opslag of event hub halen en deze correleren met de gegevens van de Azure-Sentinel om uw ML-modellen te bouwen. 
  
 ### <a name="copy-and-install-the-related-packages"></a>De gerelateerde pakketten kopiëren en installeren
 

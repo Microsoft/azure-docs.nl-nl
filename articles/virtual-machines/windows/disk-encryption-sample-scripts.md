@@ -1,5 +1,5 @@
 ---
-title: Voorbeeldscripts voor Azure Disk Encryption
+title: Voorbeeld scripts voor Windows-Vm's Azure Disk Encryption
 description: Dit artikel is de bijlage voor Microsoft Azure schijf versleuteling voor Windows-Vm's.
 author: msmbaldwin
 ms.service: virtual-machines-windows
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 255e284cf8d54a9be59f09f5613cb2728417d234
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: f113a1e559798328a2ef81336e8afff02732bb90
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912035"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99804951"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Voorbeeldscripts voor Azure Disk Encryption 
 
@@ -59,9 +59,9 @@ In de volgende tabel ziet u welke para meters kunnen worden gebruikt in het Powe
 |$keyVaultName|De naam van de kluis waarin de versleutelings sleutels moeten worden geplaatst. Er wordt een nieuwe kluis met deze naam gemaakt als er nog geen bestaat.| Waar|
 |$location|Locatie van de sleutel kluis. Zorg ervoor dat de sleutel kluis en de virtuele machines die moeten worden gecodeerd, zich op dezelfde locatie bevinden. Haal een locatielijst op met `Get-AzLocation`.|Waar|
 |$subscriptionId|De id van het Azure-abonnement dat moet worden gebruikt.  U kunt uw abonnements-ID ophalen met `Get-AzSubscription`.|Waar|
-|$aadAppName|De naam van de Azure AD-toepassing die wordt gebruikt om geheimen te schrijven naar de sleutel kluis. Als er nog geen toepassing met deze naam bestaat, wordt deze aangemaakt. Als deze app al bestaat, geeft u de para meter aadClientSecret door aan het script.|False|
-|$aadClientSecret|Client geheim van de Azure AD-toepassing die eerder is gemaakt.|False|
-|$keyEncryptionKeyName|Naam van optionele coderings sleutel in de sleutel kluis. Er wordt een nieuwe sleutel met deze naam gemaakt als deze nog niet bestaat.|False|
+|$aadAppName|De naam van de Azure AD-toepassing die wordt gebruikt om geheimen te schrijven naar de sleutel kluis. Als er nog geen toepassing met deze naam bestaat, wordt deze aangemaakt. Als deze app al bestaat, geeft u de para meter aadClientSecret door aan het script.|Niet waar|
+|$aadClientSecret|Client geheim van de Azure AD-toepassing die eerder is gemaakt.|Niet waar|
+|$keyEncryptionKeyName|Naam van optionele coderings sleutel in de sleutel kluis. Er wordt een nieuwe sleutel met deze naam gemaakt als deze nog niet bestaat.|Niet waar|
 
 ## <a name="resource-manager-templates"></a>Resource Manager-sjablonen
 
@@ -81,7 +81,7 @@ In de volgende tabel ziet u welke para meters kunnen worden gebruikt in het Powe
 De volgende secties zijn nodig om een vooraf versleutelde Windows VHD voor te bereiden voor implementatie als een versleutelde VHD in azure IaaS. Gebruik de informatie om een nieuwe virtuele Windows-machine (VHD) voor te bereiden en op te starten op Azure Site Recovery of Azure. Zie [een gegeneraliseerde VHD uploaden en deze gebruiken om nieuwe virtuele machines in azure te maken](upload-generalized-managed.md)voor meer informatie over het voorbereiden en uploaden van een VHD.
 
 ### <a name="update-group-policy-to-allow-non-tpm-for-os-protection"></a>Groeps beleid bijwerken om niet-TPM voor beveiliging van het besturings systeem toe te staan
-Configureer de instelling van de BitLocker-groepsbeleid **BitLocker-stationsversleuteling** , die u vindt onder computer configuratie van **lokaal computer beleid**  >  **Computer Configuration**  >  **Beheersjablonen**  >  **Windows-onderdelen** . Voor het wijzigen van deze instelling op stations van het **besturings systeem**  >  **is voor het opstarten van BitLocker extra verificatie vereist**  >  **zonder compatibele TPM** , zoals wordt weer gegeven in de volgende afbeelding:
+Configureer de instelling van de BitLocker-groepsbeleid **BitLocker-stationsversleuteling**, die u vindt onder computer configuratie van **lokaal computer beleid**  >    >  **Beheersjablonen**  >  **Windows-onderdelen**. Voor het wijzigen van deze instelling op stations van het **besturings systeem**  >  **is voor het opstarten van BitLocker extra verificatie vereist**  >  **zonder compatibele TPM**, zoals wordt weer gegeven in de volgende afbeelding:
 
 ![Microsoft Antimalware in Azure](../media/disk-encryption/disk-encryption-fig8.png)
 

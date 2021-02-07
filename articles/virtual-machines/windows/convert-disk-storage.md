@@ -1,5 +1,5 @@
 ---
-title: Opslag van beheerde schijven converteren tussen Standard en Premium SSD
+title: Opslag van beheerde schijven converteren tussen de Standard-en Premium-SSD met behulp van Azure PowerShell
 description: Het converteren van Azure Managed disks van Standard naar Premium of Premium naar Standard met behulp van Azure PowerShell.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: d81cd0ac57a5a18d90144584e8705cbffcba6f9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13159e527fac76a1a79118e9363b94904935a2be
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88871425"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807492"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Het opslag type van een beheerde schijf bijwerken
 
@@ -118,7 +118,7 @@ Volg deze stappen:
 4. Selecteer de schijf die u wilt converteren.
 5. Selecteer **configuratie** in het menu.
 6. Wijzig het **account type** van **Standard-HDD** in **Premium-SSD**.
-7. Klik op **Opslaan**en sluit het deel venster schijf.
+7. Klik op **Opslaan** en sluit het deel venster schijf.
 
 De schijf type conversie is onmiddellijk. U kunt de virtuele machine na de conversie starten.
 

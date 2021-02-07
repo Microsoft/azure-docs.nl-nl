@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: yelevin
-ms.openlocfilehash: ba37b2280ba4d7138f4ed652b7b330bcaf7b9935
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 3684b5a8069a6b683ae562c527af89814362a7f9
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99566773"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806983"
 ---
 # <a name="connect-your-agari-phishing-defense-and-brand-protection-solutions-to-azure-sentinel"></a>Verbind uw Agari-beschermings-en merk beveiligings oplossingen met Azure Sentinel
 
@@ -58,7 +58,7 @@ Agari-oplossingen kunnen Logboeken rechtstreeks integreren en exporteren naar Az
 
 1. **Beschrijving De beveiligings Graph API inschakelen:** 
 
-    Met de Agari-functie-app kunt u bedreigings informatie delen met Sentinel via de beveiligings Graph API. Als u deze functie wilt gebruiken, moet u de connector voor de [Sentinel Threat Intelligence-platforms](connect-threat-intelligence.md) inschakelen en ook [een toepassing registreren](/graph/auth-register-app-v2) in azure Active Directory.
+    Met de Agari-functie-app kunt u bedreigings informatie delen met Azure Sentinel via de beveiligings Graph API. Als u deze functie wilt gebruiken, moet u de connector voor de [Sentinel Threat Intelligence-platforms](connect-threat-intelligence.md) inschakelen en ook [een toepassing registreren](/graph/auth-register-app-v2) in azure Active Directory.
 
     Dit proces biedt u drie stukjes informatie voor gebruik bij het implementeren van de functie-app hieronder: de **Tenant-id** van de grafiek, de **grafiek-client-id** en het **client geheim** van de grafiek.
 

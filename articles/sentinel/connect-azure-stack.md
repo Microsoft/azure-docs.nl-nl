@@ -1,6 +1,6 @@
 ---
 title: De virtuele machines van Azure Stack hub onboarden naar de Azure-Sentinel | Microsoft Docs
-description: In dit artikel wordt beschreven hoe u de extensie van de virtuele machine voor Azure Monitor, update en configuratie beheer kunt inrichten op virtuele machines met Azure Stack hub en deze kunt volgen met Sentinel.
+description: In dit artikel wordt beschreven hoe u de extensie van de virtuele machine voor Azure Monitor, update en configuratie beheer kunt inrichten op virtuele machines met Azure Stack hub en deze kunt controleren met Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 068296a02af0abd2fb18d284fdaf01b7c1b198fa
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 120f160e3c7bc7a9a0e81586ea4b97ee827dd33e
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631139"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807425"
 ---
 # <a name="connect-azure-stack-hub-virtual-machines-to-azure-sentinel"></a>Azure Stack hub virtuele machines verbinden met Azure Sentinel
 

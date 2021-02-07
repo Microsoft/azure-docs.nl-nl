@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
-ms.date: 10/14/2020
-ms.openlocfilehash: bc369b072f90e675cf882d52b2edae30530f1c18
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.date: 02/07/2021
+ms.openlocfilehash: 03061f71ee0cceaa39c7ab9b258f9d3a0a84f1be
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895965"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807883"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -28,8 +28,7 @@ Alle gegevens uit de opgenomen tabellen worden zonder een filter geëxporteerd. 
 ## <a name="other-export-options"></a>Andere export opties
 Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit een Log Analytics-werk ruimte. Andere opties voor het exporteren van gegevens voor bepaalde scenario's zijn onder andere:
 
-- Geplande export vanuit een logboek query met behulp van een logische app. Dit is vergelijkbaar met de functie voor gegevens export, maar u kunt gefilterde of geaggregeerde gegevens verzenden naar Azure Storage. Deze methode is afhankelijk van de [query limieten](../service-limits.md#log-analytics-workspaces)  van het logboek Zie [gegevens van log Analytics werk ruimte archiveren in azure Storage met behulp van een logische app](logs-export-logic-app.md).
-- Eenmalig exporteren met behulp van een logische app. Zie [Azure monitor logs connector voor Logic apps en energie automatisering](logicapp-flow-connector.md).
+- Geplande export vanuit een logboek query met behulp van een logische app. Dit is vergelijkbaar met de functie voor gegevens export, maar u kunt gefilterde of geaggregeerde gegevens verzenden naar Azure Storage. Deze methode is afhankelijk van de [limieten](../service-limits.md#log-analytics-workspaces)voor het vastleggen van query's, Zie [gegevens van log Analytics werk ruimte archiveren in azure Storage met behulp van een logische app](logs-export-logic-app.md).
 - Eenmalig exporteren naar een lokale computer met behulp van Power shell-script. Zie [invoke-AzOperationalInsightsQueryExport](https://www.powershellgallery.com/packages/Invoke-AzOperationalInsightsQueryExport).
 
 
@@ -47,16 +46,7 @@ Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit
 - U kunt twee regels voor exporteren in een werk ruimte maken: in kan één regel Event Hub en één regel voor het opslag account zijn.
 - Het doel-opslag account of het Event Hub moet zich in dezelfde regio bevinden als de Log Analytics-werk ruimte.
 - De namen van de tabellen die moeten worden geëxporteerd mogen niet langer zijn dan 60 tekens voor een opslag account en Maxi maal 47 tekens voor een Event Hub. Tabellen met meer namen worden niet geëxporteerd.
-
-> [!NOTE]
-> Log Analytics gegevens export schrijft gegevens als een toevoeg-blob die momenteel als preview-versie beschikbaar is voor Azure Data Lake Storage Gen2. U moet een ondersteunings aanvraag openen voordat u exporteren naar deze opslag configureert. Gebruik de volgende Details voor deze aanvraag.
-> - Type probleem: Technisch
-> - Abonnement: Uw abonnement
-> - Service: Data Lake Storage Gen2
-> - Resource: de resource naam
-> - Samen vatting: abonnements registratie aanvragen om gegevens van Log Analytics gegevens export te accepteren.
-> - Probleem type: connectiviteit
-> - Subtype van probleem: connectiviteits probleem
+- Ondersteuning voor het toevoegen van blobs voor Azure Data Lake Storage is nu in [beperkte open bare preview-versie](https://azure.microsoft.com/updates/append-blob-support-for-azure-data-lake-storage-preview/)
 
 ## <a name="data-completeness"></a>Gegevens volledigheid
 Bij het exporteren van gegevens zal het verzenden van gegevens tot 30 minuten blijven duren, in het geval dat de bestemming niet beschikbaar is. Als het na 30 minuten nog steeds niet beschikbaar is, worden de gegevens verwijderd totdat de bestemming weer beschikbaar wordt.
@@ -76,6 +66,9 @@ De gegevens indeling van het opslag account is [JSON-lijnen](./resource-logs-blo
 [![Voorbeeld gegevens voor opslag](media/logs-data-export/storage-data.png)](media/logs-data-export/storage-data.png#lightbox)
 
 Log Analytics gegevens export kan toevoeg-blobs schrijven naar onveranderlijke opslag accounts wanneer de instelling *allowProtectedAppendWrites* is ingeschakeld voor het Bewaar beleid op basis van tijd. Hierdoor kunnen nieuwe blokken naar een toevoeg-BLOB worden geschreven, terwijl de beveiliging en naleving van Onveranderbaarheid behouden blijven. Zie het [schrijven van beveiligde toevoeg-blobs toestaan](../../storage/blobs/storage-blob-immutable-storage.md#allow-protected-append-blobs-writes).
+
+> [!NOTE]
+> Ondersteuning voor het toevoegen van blobs voor Azure Data Lake opslag is nu beschikbaar als preview-versie in alle Azure-regio's. [Schrijf u in voor de beperkte open bare preview](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR4mEEwKhLjlBjU3ziDwLH-pURDk2NjMzUTVEVzU5UU1XUlRXSTlHSlkxQS4u) voordat u een export regel voor Azure data Lake opslag maakt. Exporteren werkt niet zonder deze registratie.
 
 ### <a name="event-hub"></a>Event Hub
 Gegevens worden bijna in realtime naar uw Event Hub verzonden, omdat deze Azure Monitor bereikt. Er wordt een Event Hub gemaakt voor elk gegevens type dat u exporteert *,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een event hub met de naam *am-SecurityEvent*. Als u wilt dat de geëxporteerde gegevens een specifieke Event Hub bereiken, of als u een tabel hebt met een naam die groter is dan de limiet van 47 tekens, kunt u uw eigen Event Hub naam opgeven en alle gegevens voor gedefinieerde tabellen naar de groep exporteren.

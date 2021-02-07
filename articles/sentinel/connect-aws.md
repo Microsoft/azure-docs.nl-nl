@@ -1,6 +1,6 @@
 ---
 title: AWS CloudTrail verbinden met Azure Sentinel | Microsoft Docs
-description: Gebruik de AWS-connector voor het delegeren van Azure Sentinel Access to AWS resource logs, het maken van een vertrouwens relatie tussen AWS CloudTrail en Sentinel.
+description: Gebruik de AWS-connector voor het delegeren van Azure Sentinel Access to AWS resource logs, het maken van een vertrouwens relatie tussen AWS CloudTrail en Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2020
 ms.author: yelevin
-ms.openlocfilehash: a7405824d2477d2d39c45a56ae545e58a090c321
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 3d24fa1ea046a860feb40d09a6d0a57c79371450
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436603"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807594"
 ---
 # <a name="connect-azure-sentinel-to-aws-cloudtrail"></a>Azure Sentinel verbinden met AWS CloudTrail
 
 Gebruik de AWS-connector om uw AWS CloudTrail Management-gebeurtenissen in azure Sentinel te streamen. Dit verbindings proces delegeert de toegang voor Azure Sentinel naar uw AWS-bron logboeken, waardoor er een vertrouwens relatie tussen AWS CloudTrail en Azure Sentinel wordt gemaakt. Dit wordt bereikt op AWS door een rol te maken waarmee u toegang krijgt tot de AWS-logboeken van Azure.
 
 > [!NOTE]
-> AWS CloudTrail heeft [ingebouwde beperkingen](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html) in de LOOKUPEVENTS-API. Het kan Maxi maal twee trans acties per seconde (TPS) per account bevatten en elke query kan Maxi maal 50 records retour neren. Als één Tenant voortdurend meer dan 100 records per seconde in de ene regio genereert, zullen de achterstand en vertragingen in gegevens opname resulteren.
+> AWS CloudTrail heeft [ingebouwde beperkingen](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html) in de LOOKUPEVENTS-API. Het kan Maxi maal twee trans acties per seconde (TPS) per account bevatten en elke query kan Maxi maal 50 records retour neren. Het gevolg hiervan is dat als één tenant constant meer dan 100 records per seconde genereert in één regio, dit leidt tot achterstand en vertragingen in de gegevensopname.
 
 ## <a name="prerequisites"></a>Vereisten
 

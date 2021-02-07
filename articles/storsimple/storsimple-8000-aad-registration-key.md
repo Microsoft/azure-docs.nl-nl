@@ -6,14 +6,14 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 0e071a20051f047efbd040dfc01a30e3c1381367
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b09d68e7859a787c05a2fc62294f081c4345ae08
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631321"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805037"
 ---
-# <a name="use-azuer-active-directory-ad-authentication-for-your-storsimple"></a>Azure Active Directory (AD)-verificatie gebruiken voor uw StorSimple
+# <a name="use-azure-active-directory-ad-authentication-for-your-storsimple"></a>Azure Active Directory-verificatie (AD) gebruiken voor uw StorSimple
 
 [!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
@@ -75,7 +75,7 @@ Voer de volgende stappen uit om een AAD-service registratie sleutel te genereren
 
 #### <a name="to-generate-the-aad-service-registration-key"></a>De registratie sleutel voor AAD-Services genereren
 
-1. Ga in **StorSimple Apparaatbeheer**naar **beheer &gt; ** **sleutels**. U kunt ook de zoek balk gebruiken om te zoeken naar _sleutels_.
+1. Ga in **StorSimple Apparaatbeheer** naar **beheer &gt;** **sleutels**. U kunt ook de zoek balk gebruiken om te zoeken naar _sleutels_.
     
 2. Klik op **sleutel genereren**.
 

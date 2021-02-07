@@ -9,12 +9,12 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: e051a36b3c91fadc0c3b602cb4ba8e3dbcff1294
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: daf7a9fe3291850bea8c78680bcf375931383020
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94367128"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805594"
 ---
 # <a name="full-backup-and-restore"></a>Volledige back-up en herstel
 
@@ -97,7 +97,7 @@ skey=$(az storage account keys list --query '[0].value' -o tsv --account-name mh
 sas=$(az storage container generate-sas -n mhsmdemobackupcontainer --account-name mhsmdemobackup --permissions rl --expiry $end --account-key $skey -o tsv --subscription a1ba9aaa-b7f6-4a33-b038-6e64553a6c7b)
 ```
 
-## <a name="backup-hsm"></a>Back-up maken van HSM
+## <a name="restore-hsm"></a>HSM herstellen
 
 ```
 az keyvault restore start --hsm-name mhsmdemo2 --storage-account-name mhsmdemobackup --blob-container-name mhsmdemobackupcontainer --storage-container-SAS-token $sas --backup-folder mhsm-mhsmdemo-2020083120161860

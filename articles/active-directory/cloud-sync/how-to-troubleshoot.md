@@ -8,12 +8,12 @@ ms.date: 01/19/2021
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 33af92c1987d9cd0c88e689dd7bafccadd60cb06
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: fad065795345314c58e83c8d2614ed01c9e78e49
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613257"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805526"
 ---
 # <a name="cloud-sync-troubleshooting"></a>Problemen met Cloud synchronisatie oplossen
 
@@ -164,7 +164,7 @@ Met Cloud Sync wordt de status van uw configuratie gecontroleerd en worden de be
 
 Als u de status selecteert, ziet u aanvullende informatie over de quarantaine. U kunt ook de fout code en het bericht ophalen.
 
-![Status informatie voor quarantaine](media/how-to-troubleshoot/quarantine-2.png)
+![Scherm afbeelding met aanvullende informatie over de quarantaine.](media/how-to-troubleshoot/quarantine-2.png)
 
 Met de rechter muisknop op de status krijgt u extra opties:
     
@@ -172,7 +172,7 @@ Met de rechter muisknop op de status krijgt u extra opties:
    - agent weer geven
    - quarantaine wissen
 
-![Status informatie voor quarantaine](media/how-to-troubleshoot/quarantine-4.png)
+![Scherm afbeelding met de opties voor klikken met de rechter muisknop.](media/how-to-troubleshoot/quarantine-4.png)
 
 
 ### <a name="resolve-a-quarantine"></a>Een quarantaine omzetten
@@ -186,7 +186,7 @@ Als u het water merk wilt wissen en een Delta synchronisatie wilt uitvoeren voor
 
 U ziet dat de quarantaine wordt gewist.
 
-![Status informatie voor quarantaine](media/how-to-troubleshoot/quarantine-5.png)
+![Scherm afbeelding met de mede deling dat de quarantaine wordt gewist.](media/how-to-troubleshoot/quarantine-5.png)
 
 Vervolgens ziet u de status van de agent als in orde.
 

@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 1/15/2021
+ms.date: 2/5/2021
 ms.author: yohaddad
-ms.openlocfilehash: 6c3d9f6858ced1838e062084ba08de8953e7990f
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 2f7670dfeb83611fe6168f9ed06e7f3e754eed60
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250897"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807696"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Azure Guest OS releases en SDK Compatibility Matrix
 Voorziet in actuele informatie over de nieuwste versies van het Azure-gast besturingssysteem voor Cloud Services. Deze informatie helpt u bij het plannen van het upgradepad voordat een gast besturingssysteem wordt uitgeschakeld. Als u uw rollen configureert voor het gebruik van *automatische* updates van gast besturingssystemen zoals beschreven in de update-instellingen van het [Azure-gast besturingssysteem][Azure Guest OS Update Settings], is het niet belang rijk dat u deze pagina leest.
@@ -41,6 +41,9 @@ Voorziet in actuele informatie over de nieuwste versies van het Azure-gast bestu
 Weet u niet zeker hoe u uw gast besturingssysteem kunt bijwerken? Bekijk [Dit][cloud updates] uit.
 
 ## <a name="news-updates"></a>Nieuws updates
+
+###### <a name="february-5-2021"></a>**5 februari 2021**
+Het besturings systeem voor januari gast is uitgebracht. 
 
 ###### <a name="january-15-2021"></a>**15 januari 2021**
 Het besturings systeem december gast is uitgebracht. 
@@ -152,8 +155,9 @@ Het besturings systeem september gast is uitgebracht.
 
 | Configuratie teken reeks | Releasedatum | Datum uitschakelen |
 | --- | --- | --- |
+|  WA-GUEST-OS-6.27 _202101-01 |  5 februari 2021  |  Post 6,29  |  
 |  WA-GUEST-OS-6.26 _202012-01 |  15 januari 2021  |  Post 6,28  |  
-|  WA-GUEST-OS-6,25 _202011-01 |  19 december 2020  |  Post 6,27  |  
+|~~WA-GUEST-OS-6,25 _202011-01~~|  19 december 2020  |  5 februari 2021  |  
 |~~WA-GUEST-OS-6.24 _202010-02~~|  17 november 2020  |  15 januari 2021  |  
 |~~WA-GUEST-OS-6.23 _202009-01~~|  10 oktober 2020  |  19 december 2020  |  
 |~~WA-GUEST-OS-6.22 _202008-02~~|  5 september 2020  |  17 november 2020  |  
@@ -191,8 +195,9 @@ Het besturings systeem september gast is uitgebracht.
 
 | Configuratie teken reeks | Releasedatum | Datum uitschakelen |
 | --- | --- | --- |
+|  WA-GUEST-OS-5.51 _202101-01  |  5 februari 2021  |  Post 5,53  | 
 |  WA-GUEST-OS-5.50 _202012-01  |  15 januari 2021  |  Post 5,52  | 
-|  WA-GUEST-OS-5.49 _202011-01  |  19 december 2020  |  Post 5,51  | 
+|~~WA-GUEST-OS-5.49 _202011-01~~|  19 december 2020  |  5 februari 2021  | 
 |~~WA-GUEST-OS-5.48 _202010-02~~|  17 november 2020  |  15 januari 2021  | 
 |~~WA-GUEST-OS-5.47 _202009-01~~|  10 oktober 2020  |  19 december 2020  | 
 |~~WA-GUEST-OS-5.46 _202008-02~~|  5 september 2020  |  17 november 2020  |  
@@ -227,8 +232,9 @@ Het besturings systeem september gast is uitgebracht.
 
 | Configuratie teken reeks | Releasedatum | Datum uitschakelen |
 | --- | --- | --- |
+|  WA-GUEST-OS-4.86 _202101-01  |  5 februari 2021  |  Post 4,88  | 
 |  WA-GUEST-OS-4.85 _202012-01  |  15 januari 2021  |  Post 4,87  | 
-|  WA-GUEST-OS-4.84 _202011-01  |  19 december 2020  |  Post 4,86  | 
+|~~WA-GUEST-OS-4.84 _202011-01~~|  19 december 2020  |  5 februari 2021  | 
 |~~WA-GUEST-OS-4.83 _202010-02~~|  17 november 2020  |  15 januari 2021  | 
 |~~WA-GUEST-OS-4.82 _202009-01~~|  10 oktober 2020  |  19 december 2020  | 
 |~~WA-GUEST-OS-4.81 _202008-02~~|  5 september 2020  |  17 november 2020  | 
@@ -263,8 +269,9 @@ Het besturings systeem september gast is uitgebracht.
 
 | Configuratie teken reeks | Releasedatum | Datum uitschakelen |
 | --- | --- | --- |
+|  WA-GUEST-OS-3.93 _202101-01  |  5 februari 2021  |  Post 3,95  |
 |  WA-GUEST-OS-3.92 _202012-01  |  15 januari 2021  |  Post 3,94  |  
-|  WA-GUEST-OS-3.91 _202011-01  |  19 december 2020  |  Post 3,93  |  
+|~~WA-GUEST-OS-3.91 _202011-01~~|  19 december 2020  |  5 februari 2021  |  
 |~~WA-GUEST-OS-3.90 _202010-02~~|  17 november 2020  |  15 januari 2021  |  
 |~~WA-GUEST-OS-3.89 _202009-01~~|  10 oktober 2020  |  19 december 2020  |  
 |~~WA-GUEST-OS-3.88 _202008-02~~|  5 september 2020  |  17 november 2020  |  
@@ -299,8 +306,9 @@ Het besturings systeem september gast is uitgebracht.
 
 | Configuratie teken reeks | Releasedatum | Datum uitschakelen |
 | --- | --- | --- |
+|  WA-GUEST-OS-2.106 _202101-01  |  5 februari 2021  |  Post 2,108  |  
 |  WA-GUEST-OS-2.105 _202012-01  |  15 januari 2021  |  Post 2,107  |  
-|  WA-GUEST-OS-2.104 _202011-01  |  19 december 2020  |  Post 2,106  |  
+|~~WA-GUEST-OS-2.104 _202011-01~~|  19 december 2020  |  5 februari 2021  |  
 |~~WA-GUEST-OS-2.103 _202010-02~~|  17 november 2020  |  15 januari 2021  |  
 |~~WA-GUEST-OS-2.102 _202009-01~~|  10 oktober 2020  |  19 december 2020  |  
 |~~WA-GUEST-OS-2.101 _202008-02~~|  5 september 2020  |  17 november 2020 |    

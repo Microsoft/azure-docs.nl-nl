@@ -63,6 +63,8 @@
       href: azure-netapp-files-faqs.md
     - name: Wat is het hulpprogramma Azure Application Consistent Snapshot
       href: azacsnap-introduction.md
+    - name: Wat kan worden gewijzigd naar het volume vaste quotum
+      href: volume-hard-quota-guidelines.md
 - name: Instructiegidsen
   items:
     - name: Registreren voor Azure NetApp Files

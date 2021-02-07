@@ -7,16 +7,16 @@ ms.service: web-application-firewall
 ms.date: 10/12/2020
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: 525ec334e73ca010d319b40ab864d08dae32f493
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 6e1d9b8a53eaf69c2294ab42dc0718863e6c1837
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997284"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99804934"
 ---
 # <a name="using-azure-sentinel-with-azure-web-application-firewall"></a>Azure Sentinel gebruiken met Azure Web Application firewall
 
-Azure Web Application firewall (WAF) in combi natie met Azure Sentinel kan beveiligings gegevens gebeurtenis beheer bieden voor WAF-resources. Azure Sentinel biedt beveiligings analyse met behulp van Log Analytics, waarmee u eenvoudig uw WAF-gegevens kunt opdelen en weer geven. Door middel van Sentinel kunt u toegang krijgen tot vooraf gemaakte werkmappen en deze aanpassen aan de behoeften van uw organisatie. De werkmap kan Analytics weer geven voor WAF op Azure Content Delivery Network (CDN), WAF in azure front-deur en WAF op Application Gateway in verschillende abonnementen en werk ruimten.
+Azure Web Application firewall (WAF) in combi natie met Azure Sentinel kan beveiligings gegevens gebeurtenis beheer bieden voor WAF-resources. Azure Sentinel biedt beveiligings analyse met behulp van Log Analytics, waarmee u eenvoudig uw WAF-gegevens kunt opdelen en weer geven. Met Azure Sentinel hebt u toegang tot vooraf gemaakte werkmappen en kunt u deze aanpassen aan de behoeften van uw organisatie. De werkmap kan Analytics weer geven voor WAF op Azure Content Delivery Network (CDN), WAF in azure front-deur en WAF op Application Gateway in verschillende abonnementen en werk ruimten.
 
 ## <a name="waf-log-analytics-categories"></a>WAF log Analytics-Categorieën
 
@@ -40,11 +40,11 @@ In de volgende WAF werkmap-voor beelden worden voorbeeld gegevens weer gegeven:
 
 :::image type="content" source="media//waf-sentinel/waf-actions-filter.png" alt-text="WAF-actie filter":::
 
-:::image type="content" source="media//waf-sentinel/top-50-event-trigger.png" alt-text="WAF-actie filter":::
+:::image type="content" source="media//waf-sentinel/top-50-event-trigger.png" alt-text="Belangrijkste 50 gebeurtenissen":::
 
-:::image type="content" source="media//waf-sentinel/attack-events.png" alt-text="WAF-actie filter":::
+:::image type="content" source="media//waf-sentinel/attack-events.png" alt-text="Aanvals gebeurtenissen":::
 
-:::image type="content" source="media//waf-sentinel/top-10-attacking-ip-address.png" alt-text="WAF-actie filter":::
+:::image type="content" source="media//waf-sentinel/top-10-attacking-ip-address.png" alt-text="Top 10 van IP-adressen voor aanvallen":::
 
 ## <a name="launch-a-waf-workbook"></a>Een WAF-werkmap openen
 
@@ -62,21 +62,21 @@ Als u log Analytics voor elke resource wilt inschakelen, gaat u naar uw afzonder
       1. Application Gateway: ' ApplicationGatewayAccessLog ' en ' ApplicationGatewayFirewallLog '
       1. Azure front-deur: ' FrontDoorAccessLog ' en ' FrontDoorFirewallLog '
       1. CDN: ' AzureCdnAccessLog '
-   1. Selecteer **Save** (Opslaan).
+   1. Selecteer **Opslaan**.
 
-   :::image type="content" source="media//waf-sentinel/diagnostics-setting.png" alt-text="WAF-actie filter":::
+   :::image type="content" source="media//waf-sentinel/diagnostics-setting.png" alt-text="Diagnostische instelling":::
 
 4. Op de start pagina van Azure typt u **Azure Sentinel** in de zoek balk en selecteert u de **Azure-Sentinel** -resource. 
-2. Selecteer een al actieve werk ruimte of maak een nieuwe werk ruimte in Sentinel. 
+2. Selecteer een al actieve werk ruimte of maak een nieuwe werk ruimte. 
 3. Klik in het linkerdeel venster onder **Configuration** Select **Data connectors**.
 4. Zoek naar **micro soft Web Application firewall** en selecteer **micro soft Web Application firewall (WAF)**. Selecteer de pagina **connector openen** aan de rechter kant.
 
-   :::image type="content" source="media//waf-sentinel/data-connectors.png" alt-text="WAF-actie filter":::
+   :::image type="content" source="media//waf-sentinel/data-connectors.png" alt-text="Gegevensconnectors":::
 
 8. Volg de instructies onder **configuratie** voor elke WAF-resource waarvoor u logboek analyse gegevens wilt hebben als u dit nog niet eerder hebt gedaan.
 6. Als u de afzonderlijke WAF-resources hebt geconfigureerd, selecteert u het tabblad **volgende stappen** . Selecteer een van de aanbevolen werkmappen. In deze werkmap worden alle logboek analyse gegevens gebruikt die eerder zijn ingeschakeld. Er moet nu een Working WAF-werkmap bestaan voor uw WAF-resources.
 
-   :::image type="content" source="media//waf-sentinel/waf-workbooks.png" alt-text="WAF-actie filter":::
+   :::image type="content" source="media//waf-sentinel/waf-workbooks.png" alt-text="WAF werkmappen":::
 
 
 ## <a name="next-steps"></a>Volgende stappen

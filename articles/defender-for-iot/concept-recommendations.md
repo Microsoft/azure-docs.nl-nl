@@ -4,21 +4,21 @@ description: Meer informatie over het concept van beveiligings aanbevelingen en 
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/09/2020
-ms.author: mlottner
-ms.openlocfilehash: 0eccab6c3d59ad68ddc8f96c3d84c57dc1bbeeca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/25/2021
+ms.author: shhazam
+ms.openlocfilehash: d11154e26e2ffe97a1ea102a11dddb746db9433a
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936289"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809266"
 ---
 # <a name="security-recommendations"></a>Aanbevelingen voor beveiliging
 
@@ -27,40 +27,40 @@ Beveiligings aanbevelingen zijn maat regelen en zijn bedoeld om klanten te helpe
 
 In dit artikel vindt u een lijst met aanbevelingen die kunnen worden geactiveerd op uw IoT Hub en/of IoT-apparaten.
 
-## <a name="recommendations-for-iot-devices"></a>Aanbevelingen voor IoT-apparaten
+## <a name="agent-based-recommendations"></a>Aanbevelingen op basis van een agent
 
 Aanbevelingen voor apparaten bieden inzichten en suggesties voor het verbeteren van de beveiliging van postuur.
 
-| Ernst | Naam                                                      | Gegevensbron | Beschrijving                                                                                                                                                                                           |
-|----------|-----------------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Normaal   | Poorten op het apparaat openen                                      | Agent       | Er is een luisterend eind punt gevonden op het apparaat.                                                                                                                                                        |
-| Normaal   | Permissief firewall beleid gevonden in een van de ketens. | Agent       | Toegestaan firewall beleid gevonden (invoer/uitvoer). Het firewall beleid moet standaard al het verkeer weigeren en regels definiëren om de benodigde communicatie met/van het apparaat mogelijk te maken.                               |
-| Normaal   | Er is een strikte firewall regel in de invoer keten gevonden     | Agent       | Er is een regel in de firewall gevonden die een soepel patroon bevat voor een breed scala aan IP-adressen of poorten.                                                                                    |
-| Normaal   | Er is een strikte firewall regel in de uitvoer keten gevonden    | Agent       | Er is een regel in de firewall gevonden die een soepel patroon bevat voor een breed scala aan IP-adressen of poorten.                                                                                   |
-| Normaal   | Validatie van de basislijn planning van het besturings systeem is mislukt           | Agent       | Het apparaat voldoet niet aan de [CIS Linux-Benchmarks](https://www.cisecurity.org/cis-benchmarks/).                                                                                                        |
+| Severity | Name | Gegevensbron | Description |
+|--|--|--|--|
+| Normaal | Poorten op het apparaat openen | Klassieke beveiligings module | Er is een luisterend eind punt gevonden op het apparaat. |
+| Normaal | Permissief firewall beleid gevonden in een van de ketens. | Klassieke beveiligings module | Toegestaan firewall beleid gevonden (invoer/uitvoer). Het firewall beleid moet standaard al het verkeer weigeren en regels definiëren om de benodigde communicatie met/van het apparaat mogelijk te maken. |
+| Normaal | Er is een strikte firewall regel in de invoer keten gevonden | Klassieke beveiligings module | Er is een regel in de firewall gevonden die een soepel patroon bevat voor een breed scala aan IP-adressen of poorten. |
+| Normaal | Er is een strikte firewall regel in de uitvoer keten gevonden | Klassieke beveiligings module | Er is een regel in de firewall gevonden die een soepel patroon bevat voor een breed scala aan IP-adressen of poorten. |
+| Normaal | Validatie van de basislijn planning van het besturings systeem is mislukt | Klassieke beveiligings module | Het apparaat voldoet niet aan de [CIS Linux-Benchmarks](https://www.cisecurity.org/cis-benchmarks/). |
 
-### <a name="operational-recommendations-for-iot-devices"></a>Operationele aanbevelingen voor IoT-apparaten
+### <a name="agent-based-operational-recommendations"></a>Aanbevelingen op basis van agents
 
 Operationele aanbevelingen bieden inzichten en suggesties voor het verbeteren van de configuratie van de beveiligings agent.
 
-| Ernst | Naam                                    | Gegevensbron | Beschrijving                                                                       |
-|----------|-----------------------------------------|-------------|-----------------------------------------------------------------------------------|
-| Beperkt      | Agent verzendt ongebruikte berichten          | Agent       | 10% of meer beveiligings berichten zijn in de afgelopen 24 uur kleiner dan 4 KB.  |
-| Beperkt      | Dubbele configuratie voor beveiliging niet optimaal | Agent       | De dubbele configuratie van beveiliging is niet optimaal.                                        |
-| Beperkt      | Conflict tussen beveiligings configuratie    | Agent       | Er zijn conflicten gevonden in de beveiligings-dubbele configuratie. |                          |
-|
+| Severity | Name | Gegevensbron | Description |
+|--|--|--|--|
+| Beperkt | Agent verzendt ongebruikte berichten | Klassieke beveiligings module | 10% of meer beveiligings berichten zijn in de afgelopen 24 uur kleiner dan 4 KB. |
+| Beperkt | Dubbele configuratie voor beveiliging niet optimaal | Klassieke beveiligings module | De dubbele configuratie van beveiliging is niet optimaal. |
+| Beperkt | Conflict tussen beveiligings configuratie | Klassieke beveiligings module | Er zijn conflicten gevonden in de beveiligings-dubbele configuratie. |  |
 
-## <a name="recommendations-for-iot-hub"></a>Aanbevelingen voor IoT Hub
+
+## <a name="built-in-recommendations-in-iot-hub"></a>Ingebouwde aanbevelingen in IoT Hub
 
 Aanbevelings waarschuwingen bieden inzicht en suggesties voor acties om de beveiliging postuur van uw omgeving te verbeteren.
 
-| Ernst | Naam                                                     | Gegevensbron | Beschrijving                                                                                                                                                                                                             |
-|----------|----------------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hoog     | Identieke verificatie referenties die worden gebruikt door meerdere apparaten | IoT Hub     | IoT Hub authenticatie referenties worden gebruikt door meerdere apparaten. Dit kan duiden op een illegitimate-apparaat dat een legitiem apparaat imiteert. Dubbel referentie gebruik verhoogt het risico van imitatie van apparaten door een schadelijke actor. |
-| Normaal   | Het standaard IP-filter beleid moet worden geweigerd                  | IoT Hub     | Voor de configuratie van de IP-filter moeten regels worden gedefinieerd voor het toegestane verkeer, en standaard moeten alle andere verkeer standaard worden geweigerd.                                                                                                     |
-| Normaal   | De IP-filter regel bevat een groot IP-bereik                   | IoT Hub     | Een IP-adres bereik van de bron filter regel toestaan is te groot. Over de regel matig strikte regels kunnen uw IoT-hub beschikbaar maken voor kwaad aardige actors.                                                                                       |
-| Beperkt      | Diagnostische logboeken inschakelen in IoT Hub                       | IoT Hub     | Logboeken inschakelen en ze tot een jaar bewaren. Door Logboeken te behouden, kunt u de activiteiten sporen voor onderzoek doeleinden opnieuw maken wanneer er een beveiligings incident optreedt of uw netwerk is aangetast.                                       |
-|
+| Severity | Name | Gegevensbron | Description |
+|--|--|--|--|
+| Hoog | Identieke verificatie referenties die worden gebruikt door meerdere apparaten | IoT Hub | IoT Hub authenticatie referenties worden gebruikt door meerdere apparaten. Dit proces duidt mogelijk op een illegitimate-apparaat dat een legitiem apparaat imiteert. Dubbel referentie gebruik verhoogt het risico van imitatie van apparaten door een schadelijke actor. |
+| Normaal | Het standaard IP-filter beleid moet worden geweigerd | IoT Hub | Voor de configuratie van de IP-filter moeten regels worden gedefinieerd voor het toegestane verkeer, en standaard moeten alle andere verkeer standaard worden geweigerd. |
+| Normaal | De IP-filter regel bevat een groot IP-bereik | IoT Hub | Een IP-adres bereik van de bron filter regel toestaan is te groot. Over de regel matig strikte regels kunnen uw IoT-hub beschikbaar maken voor kwaad aardige actors. |
+| Beperkt | Diagnostische logboeken inschakelen in IoT Hub | IoT Hub | Logboeken inschakelen en ze tot een jaar bewaren. Door Logboeken te behouden, kunt u de activiteiten sporen voor onderzoek doeleinden opnieuw maken wanneer er een beveiligings incident optreedt of uw netwerk is aangetast. |
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

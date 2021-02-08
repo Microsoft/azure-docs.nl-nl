@@ -4,30 +4,30 @@ description: Meer informatie over de beveiligings module voor Azure RTO'S-onders
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/07/2020
-ms.author: mlottner
-ms.openlocfilehash: 9950f3727aac365205e979d9590edacebd32f1fc
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.date: 01/14/2021
+ms.author: shhazam
+ms.openlocfilehash: 47b2b49a21a82be13c987b95c7c775f5014a532e
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832740"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809079"
 ---
 # <a name="overview-defender-for-iot-security-module-for-azure-rtos-preview"></a>Overzicht: Defender voor IoT Security module voor Azure RTO'S (preview)
 
-De beveiligings module van Azure Defender voor IoT biedt een uitgebreide beveiligings oplossing voor apparaten die gebruikmaken van Azure RTO'S. Het biedt dekking voor veelvoorkomende bedreigingen en mogelijke schadelijke activiteiten op real-time besturings systemen (RTO'S). Azure RTO'S wordt nu geleverd met de ingebouwde Azure IoT-beveiligings module.
+De Azure Defender voor IoT micro-module biedt een uitgebreide beveiligings oplossing voor apparaten die gebruikmaken van Azure RTO'S. Het biedt dekking voor veelvoorkomende bedreigingen en mogelijke schadelijke activiteiten op real-time besturings systemen (RTO'S). Azure RTO'S wordt nu geleverd met de ingebouwde Azure IoT-beveiligings module.
 
 :::image type="content" source="./media/architecture/azure-rtos-security-monitoring.png" alt-text="Visualisatie van Defender voor IoT Azure RTO'S.":::
 
 
-De beveiligings module voor Azure RTO'S biedt de volgende functies:
+De micro module voor Azure RTO'S biedt de volgende functies:
 
 - Detectie van schadelijke netwerk activiteiten
 - Gedrag van op aangepaste waarschuwingen gebaseerd apparaat basis lijnen

@@ -1,30 +1,30 @@
 ---
-title: Aggregatie van gebeurtenissen
+title: Aggregatie van klassieke gebeurtenissen van beveiligings module
 description: Meer informatie over Defender voor IoT-gebeurtenis aggregatie.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/03/2020
-ms.author: mlottner
-ms.openlocfilehash: c823f0034db7d5fbe1f6b46f6af74e9fa374a6de
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.date: 1/20/2021
+ms.author: shhazam
+ms.openlocfilehash: 0718c2637658e5519760a68f29c7a816b2aa61a1
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832366"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809215"
 ---
-# <a name="defender-for-iot-event-aggregation"></a>Defender voor IoT-gebeurtenis aggregatie
+# <a name="security-module-classic-event-aggregation"></a>Aggregatie van klassieke gebeurtenissen van beveiligings module
 
-Defender voor IoT-beveiligings agenten verzamelen gegevens en systeem gebeurtenissen van uw lokale apparaat en verzenden deze gegevens naar de Azure-Cloud voor verwerking en analyse. De beveiligings agent verzamelt veel soorten apparaatfuncties, waaronder nieuw proces en nieuwe verbindings gebeurtenissen. Het nieuwe proces en de nieuwe verbindings gebeurtenissen kunnen zich binnen een tweede keer regel matig voordoen op een apparaat, en hoewel belang rijk voor de robuuste en uitgebreide beveiliging, kan het aantal berichten dat beveiligings agenten voor verzen ding geforceerd snel worden bereikt of groter zijn dan uw IoT Hub quotum en kosten limieten. Deze gebeurtenissen bevatten echter zeer waardevolle beveiligings informatie die essentieel is voor het beveiligen van uw apparaat.
+Defender voor IoT-beveiligings agenten verzamelt gegevens en systeem gebeurtenissen van uw lokale apparaat en verzenden deze gegevens naar de Azure-Cloud voor verwerking en analyse. De beveiligings agent verzamelt veel soorten apparaatfuncties, waaronder nieuw proces en nieuwe verbindings gebeurtenissen. Het nieuwe proces en de nieuwe verbindings gebeurtenissen kunnen zich binnen een tweede keer regel matig voordoen op een apparaat, en hoewel belang rijk voor de robuuste en uitgebreide beveiliging, kan het aantal berichten dat beveiligings agenten voor verzen ding geforceerd snel worden bereikt of groter zijn dan uw IoT Hub quotum en kosten limieten. Deze gebeurtenissen bevatten echter zeer waardevolle beveiligings informatie die essentieel is voor het beveiligen van uw apparaat.
 
-Om het extra quotum en de kosten te verminderen terwijl uw apparaten beveiligd blijven, kunnen Defender voor IoT-agents dit type gebeurtenissen samen stellen.
+Om het extra quotum en de kosten te verminderen en uw apparaten te beveiligen, worden met Defender voor IoT-agents deze typen gebeurtenissen geaggregeerd.
 
 Gebeurtenis aggregatie is standaard **ingeschakeld** en hoewel dit niet wordt aanbevolen, kan op elk gewenst moment hand matig **worden uitgeschakeld.**
 
@@ -45,7 +45,7 @@ De agent verhoogt het aantal treffers van deze specifieke gebeurtenis, wanneer d
 Gebeurtenissen worden alleen als identiek beschouwd wanneer aan de volgende voor waarden wordt voldaan:
 
 * ProcessCreate-gebeurtenissen: wanneer **commandline**, **uitvoer bare bestand**, **gebruikers naam** en **GebruikersID** identiek zijn
-* ConnectionCreate-gebeurtenissen: wanneer **commandline**, **GebruikersID**, **Direction**, **lokaal adres**, **extern adres**, * * protocol en **doel poort** identiek zijn
+* ConnectionCreate-gebeurtenissen: **Wanneer commandline**, **GebruikersID**, **Direction**, **lokaal adres**, **extern adres**, **protocol** en **doel poort** identiek zijn.
 * ProcessTerminate-gebeurtenissen: wanneer het **uitvoer bare bestand** en de status van het **Afsluiten** identiek zijn
 
 ### <a name="working-with-aggregated-events"></a>Werken met geaggregeerde gebeurtenissen
@@ -70,11 +70,11 @@ Breng wijzigingen aan in de configuratie van Defender voor IoT-gebeurtenis aggre
 | Configuratie naam | Mogelijke waarden | Details | Opmerkingen |
 |:-----------|:---------------|:--------|:--------|
 | aggregationEnabledProcessCreate | booleaans | Gebeurtenis aggregatie voor het maken van proces gebeurtenissen in-of uitschakelen |
-| aggregationIntervalProcessCreate | ISO8601 time span-teken reeks | Aggregatie-interval voor het maken van proces gebeurtenissen |
+| aggregationIntervalProcessCreate | ISO8601 time span-teken reeks | Aggregatie interval voor het proces maakt gebeurtenissen |
 | aggregationEnabledConnectionCreate | booleaans| Aggregatie van gebeurtenissen in-of uitschakelen voor het maken van verbinding |
-| aggregationIntervalConnectionCreate | ISO8601 time span-teken reeks | Aggregatie-interval voor het maken van verbindings gebeurtenissen |
+| aggregationIntervalConnectionCreate | ISO8601 time span-teken reeks | Aggregatie interval voor verbinding maakt gebeurtenissen |
 | aggregationEnabledProcessTerminate | booleaans | Gebeurtenis aggregatie voor proces beëindigings gebeurtenissen in-/uitschakelen | Alleen in Windows|
-| aggregationIntervalProcessTerminate | ISO8601 time span-teken reeks | Aggregatie-interval voor gebeurtenissen voor proces beëindigen | Alleen in Windows|
+| aggregationIntervalProcessTerminate | ISO8601 time span-teken reeks | Aggregatie-interval voor het proces heeft gebeurtenissen beëindigd | Alleen in Windows|
 |
 
 ## <a name="default-configurations-settings"></a>Standaard configuratie-instellingen

@@ -3,12 +3,12 @@ title: Een functie in Go of Rust maken met behulp van Visual Studio Code - Azure
 description: Leer hoe u een Go-functie maakt als een aangepaste Azure Functies-handler en publiceer vervolgens het lokale project naar serverloze hosting in Azure Functions met behulp van de Azure Functions-extensie in Visual Studio Code.
 ms.topic: quickstart
 ms.date: 12/4/2020
-ms.openlocfilehash: 4f2e0b30c4bf5e6c4629fc63f3125e5ddda70ad2
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: a3ef7bdd19badf7a7deaa8376440016e39e0d14b
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493652"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809560"
 ---
 # <a name="quickstart-create-a-go-or-rust-function-in-azure-using-visual-studio-code"></a>Quickstart: Een Go- of Rust-functie maken in Azure met behulp van Visual Studio Code
 
@@ -262,7 +262,7 @@ In deze sectie publiceert u uw project naar Azure in een functie-app met Linux. 
     ```cmd
     set GOOS=linux
     set GOARCH=amd64
-    go build hello.go
+    go build handler.go
     ```
 
     Wijzig de `defaultExecutablePath` in *host.json* van `handler.exe` in `handler`. Dit geeft de functie-app opdracht om het binaire Linux-bestand uit te voeren.

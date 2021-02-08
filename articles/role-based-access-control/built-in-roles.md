@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 3b7b65a558470c4e7f04ed84ea186fc1ea98bc40
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 384d00ee41f2b6bfc2e91815bfcf54819c7d9ab2
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557335"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809370"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -75,6 +75,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Afzender gegevens bericht van opslag wachtrij](#storage-queue-data-message-sender) | Berichten toevoegen aan een Azure Storage wachtrij. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
 > | [Gegevens lezer van de opslag wachtrij](#storage-queue-data-reader) | Azure Storage-wacht rijen en-wachtrij berichten lezen en weer geven. Zie [machtigingen voor het aanroepen van BLOB-en wachtrij gegevens](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations)voor meer informatie over welke acties vereist zijn voor een bepaalde gegevens bewerking. | 19e7f393-937e-4f77-808e-94535e297925 |
 > | **Web** |  |  |
+> | [Inzender voor Azure Maps gegevens](#azure-maps-data-contributor) | Hiermee wordt toegang verleend tot lees-, schrijf-en verwijder toegang om gerelateerde gegevens vanuit een Azure Maps-account toe te wijzen. | 8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204 |
 > | [Gegevens lezer Azure Maps](#azure-maps-data-reader) | Hiermee wordt toegang verleend om gerelateerde gegevens te lezen vanuit een Azure Maps-account. | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
 > | [Inzender Search Service](#search-service-contributor) | Hiermee kunt u zoek services beheren, maar niet de toegang tot ze. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | [Signaal/AccessKey-lezer](#signalr-accesskey-reader) | Toegangs sleutels voor de seingevings service lezen | 04165923-9d83-45d5-8227-78b77b0a687e |
@@ -129,7 +130,15 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Toegang tot Block Chain-leden knooppunt (preview-versie)](#blockchain-member-node-access-preview) | Hiermee wordt toegang tot Block Chain-leden knooppunten toegestaan | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
 > | **AI en machine learning** |  |  |
 > | [Inzender Cognitive Services](#cognitive-services-contributor) | Hiermee kunt u sleutels van Cognitive Services maken, lezen, bijwerken, verwijderen en beheren. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
+> | [Cognitive Services Custom Vision Inzender](#cognitive-services-custom-vision-contributor) | Volledige toegang tot het project, inclusief de mogelijkheid om projecten weer te geven, te maken, te bewerken of te verwijderen. | c1ff6cc2-C111-46fe-8896-e0ef812ad9f3 |
+> | [Implementatie van Cognitive Services Custom Vision](#cognitive-services-custom-vision-deployment) | Modellen publiceren, publicatie ongedaan maken of exporteren. Implementatie kan het project weer geven, maar kan het niet bijwerken. | 5c4089e1-6d96-4d2f-b296-c1bc7137275f |
+> | [Cognitive Services Custom Vision Labeler](#cognitive-services-custom-vision-labeler) | Bekijk, trainings afbeeldingen bewerken en de afbeeldings Tags maken, toevoegen, verwijderen of verwijderen. Labelers kunnen het project weer geven, maar kunnen andere niet bijwerken dan trainingen en tags. | 88424f51-ebe7-446f-bc41-7fa16989e96c |
+> | [Custom Vision lezer Cognitive Services](#cognitive-services-custom-vision-reader) | Alleen-lezen acties in het project. Lezers kunnen het project niet maken of bijwerken. | 93586559-c37d-4a6b-ba08-b9f0940c2d73 |
+> | [Cognitive Services Custom Vision trainer](#cognitive-services-custom-vision-trainer) | Bekijk, bewerk projecten en train de modellen, inclusief de mogelijkheid om de modellen te publiceren, de publicatie ervan ongedaan te maken en te exporteren. Trainers kunnen het project niet maken of verwijderen. | 0a5ae4ab-0d65-4eeb-be61-29fc9b54394b |
 > | [Cognitive Services gegevens lezer (preview-versie)](#cognitive-services-data-reader-preview) | Hiermee kunt u Cognitive Services gegevens lezen. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
+> | [Cognitive Services metrics Advisor-beheerder](#cognitive-services-metrics-advisor-administrator) | Volledige toegang tot het project, met inbegrip van de configuratie van het systeem niveau. | cb43c632-a144-4ec5-977c-e80c4affc34a |
+> | [Cognitive Services QnA Maker editor](#cognitive-services-qna-maker-editor) | U kunt een KB maken, bewerken, importeren en exporteren. U kunt geen KB publiceren of verwijderen. | f4cc2bf9-21be-47a1-bdf1-5c5804381025 |
+> | [QnA Maker lezer Cognitive Services](#cognitive-services-qna-maker-reader) | Laten we alleen een KB lezen en testen. | 466ccd10-b268-4a11-b098-b4849f024126 |
 > | [Cognitive Services gebruiker](#cognitive-services-user) | Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. | a97b65f3-24c7-4388-baec-2e87135dc908 |
 > | **Gemengde realiteit** |  |  |
 > | [Externe rendering-beheerder](#remote-rendering-administrator) | Biedt gebruikers de mogelijkheid om de mogelijkheden voor het omzetten van sessies, rendering en diagnose te beheren voor externe rendering in azure | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
@@ -162,6 +171,8 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Inzender beheerde identiteit](#managed-identity-contributor) | Aan de gebruiker toegewezen identiteit maken, lezen, bijwerken en verwijderen | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | [Beheerde identiteits operator](#managed-identity-operator) | Door gebruiker toegewezen identiteit lezen en toewijzen | f1a07417-d97a-45cb-824c-7a7467783830 |
 > | **Beveiliging** |  |  |
+> | [Bijdrager aan verklaring](#attestation-contributor) | Kan de Attestation-provider instantie lezen of verwijderen | bbf86eb8-f7b4-4cce-96e4-18cddf81d86e |
+> | [Attestation-lezer](#attestation-reader) | Kan de eigenschappen van de Attestation-provider lezen | fd1bd22b-8476-40bc-a0bc-69b95687b9f3 |
 > | [Azure Sentinel Contributor](#azure-sentinel-contributor) | Azure Sentinel Contributor | ab8e14d6-4a74-4a29-9ba8-549422addade |
 > | [Azure Sentinel Reader](#azure-sentinel-reader) | Azure Sentinel Reader | 8d289c81-5878-46d4-8554-54e1e3d8b5cb |
 > | [Azure Sentinel Responder](#azure-sentinel-responder) | Azure Sentinel Responder | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
@@ -174,6 +185,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Key Vault lezer (preview-versie)](#key-vault-reader-preview) | Lees de meta gegevens van sleutel kluizen en de bijbehorende certificaten, sleutels en geheimen. Kan geen gevoelige waarden lezen, zoals geheime inhoud of sleutel materiaal. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 21090545-7ca7-4776-b22c-e363652d74d2 |
 > | [Key Vaulte geheimen-auditeur (preview-versie)](#key-vault-secrets-officer-preview) | Acties uitvoeren op de geheimen van een sleutel kluis, met uitzonde ring van machtigingen beheren. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
 > | [Key Vault geheimen gebruiker (preview-versie)](#key-vault-secrets-user-preview) | Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het machtigings model ' Azure op rollen gebaseerd toegangs beheer '. | 4633458b-17de-408a-b874-0445c86b69e6 |
+> | [Beheerde HSM-Inzender](#managed-hsm-contributor) | Hiermee kunt u beheerde HSM-groepen beheren, maar niet de toegang tot de Pools. | 18500a29-7fe2-46b2-a342-b16a415e101d |
 > | [Beveiligingsbeheerder](#security-admin) | Machtigingen voor Security Center weer geven en bijwerken. Dezelfde machtigingen als de rol van beveiligings lezer en kunnen ook het beveiligings beleid bijwerken en waarschuwingen en aanbevelingen negeren. | fb1c8493-542b-48eb-b624-b4c8fea62acd |
 > | [Inzender voor beveiligings beoordeling](#security-assessment-contributor) | Hiermee kunt u evaluaties naar Security Center pushen | 612c2aa1-cb24-443b-ac28-3ab7272de6f5 |
 > | [Beveiligings beheer (verouderd)](#security-manager-legacy) | Dit is een verouderde rol. Gebruik in plaats daarvan beveiligings beheerder. | e3d13bf0-dd5a-482e-ba6b-9b8433878d10 |
@@ -210,6 +222,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer beheer groep](#management-group-reader) | Rol van lezer van beheer groep | ac63b705-f282-497d-ac71-919bf39d939d |
 > | [Nieuwe Inzender voor Relic APM-account](#new-relic-apm-account-contributor) | Hiermee kunt u New Relic Application Performance Management accounts en-toepassingen beheren, maar niet de toegang tot ze. | 5d28c62d-5b37-4476-8438-e587778df237 |
 > | [Policy Insights Data Writer (preview-versie)](#policy-insights-data-writer-preview) | Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel beleids gebeurtenissen toegestaan. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
+> | [Reserve ring-verkoper](#reservation-purchaser) | Hiermee kunt u reserve ringen kopen | f7b75c60-3036-4b75-91c3-6b41c27c1689 |
 > | [Inzender voor resourcebeleid](#resource-policy-contributor) | Gebruikers met rechten voor het maken/wijzigen van het resource beleid, het maken van een ondersteunings ticket en het lezen van resources/hiërarchie. | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | [Site Recovery-inzender](#site-recovery-contributor) | Hiermee kunt u Site Recovery-service beheren, behalve het maken van een kluis en roltoewijzing | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
 > | [Site Recovery-operator](#site-recovery-operator) | Een failover en failback, maar geen andere Site Recovery beheer bewerkingen uitvoeren | 494ae006-db33-4328-bf46-533a6560a3ca |
@@ -220,8 +233,22 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Azure Digital Apparaatdubbels-gegevens eigenaar](#azure-digital-twins-data-owner) | Volledige Access-rol voor Digital Apparaatdubbels data-vlak | bcd981a7-7f74-457b-83e1-cceb9e632ffe |
 > | [Azure Digital Apparaatdubbels-gegevens lezer](#azure-digital-twins-data-reader) | Alleen-lezen rol voor Digital Apparaatdubbels data-vlak-eigenschappen | d57506d4-4c8d-48b1-8587-93c323f6a5a3 |
 > | [BizTalk-bijdrager](#biztalk-contributor) | Hiermee kunt u BizTalk Services beheren, maar niet de toegang tot de service. | 5e3c6656-6cfa-4708-81fe-0de47ac73342 |
+> | [Inzender voor bureau blad-Virtualisatiehost](#desktop-virtualization-application-group-contributor) | Bijdrager van de toepassings groep bureau blad-virtualisatie. | 86240b0e-9422-4c43-887b-b61143f32ba8 |
+> | [Lezer van toepassings groep voor desktop-virtualisatie](#desktop-virtualization-application-group-reader) | Lezer van de toepassings groep bureau blad-virtualisatie. | aebf23d0-b568-4e86-b8f9-fe83a2c6ab55 |
+> | [Inzender voor bureau blad-virtualisatie](#desktop-virtualization-contributor) | Inzender van bureau blad-virtualisatie. | 082f0a83-3be5-4ba1-904c-961cca79b387 |
+> | [Inzender voor RD Virtualization hostgroep](#desktop-virtualization-host-pool-contributor) | Inzender van de hostgroep voor bureau blad-virtualisatie. | e307426c-f9b6-4e81-87de-d99efb3c32bc |
+> | [Lezer van hostgroep voor desktop-virtualisatie](#desktop-virtualization-host-pool-reader) | Lezer van de hostgroep voor bureau blad-virtualisatie. | ceadfde2-b300-400a-ab7b-6143895aa822 |
+> | [Desktop Virtualization-lezer](#desktop-virtualization-reader) | Lezer van bureau blad-virtualisatie. | 49a72310-ab8d-41df-bbb0-79b649203868 |
+> | [Host-operator voor bureau blad-Virtualisatiehost](#desktop-virtualization-session-host-operator) | Operator van de host van de bureau blad-Virtualisatiehost. | 2ad6aaab-ead9-4eaa-8ac5-da422f562408 |
 > | [Gebruiker van bureau blad-virtualisatie](#desktop-virtualization-user) | Hiermee kunnen gebruikers de toepassingen in een toepassings groep gebruiken. | 1d18fff3-a72a-46b5-b4a9-0b38a3cd7e63 |
+> | [Operator voor de gebruikers sessie van de bureau blad-Virtualisatiehost](#desktop-virtualization-user-session-operator) | Operator van de Uesr-sessie voor bureau blad-virtualisatie. | ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6 |
+> | [Mede werker van de werk ruimte bureau blad-virtualisatie](#desktop-virtualization-workspace-contributor) | Inzender van de werk ruimte bureau blad-virtualisatie. | 21efdde3-836f-432b-bf3d-3e8e734d4b2b |
+> | [Werkruimte lezer voor desktop-virtualisatie](#desktop-virtualization-workspace-reader) | Lezer van de werk ruimte bureau blad-virtualisatie. | 0fa44ee9-7a7d-466b-9bb2-2bf446b1204d |
+> | [Back-uplezer van schijf](#disk-backup-reader) | Biedt machtiging voor back-upkluis voor het uitvoeren van schijf back-ups. | 3e5e47e6-65f7-47ef-90b5-e5dd4d455f24 |
+> | [Schijf herstel operator](#disk-restore-operator) | Biedt machtigingen voor het maken van een back-upkluis om schijf herstel uit te voeren. | b50d9833-a0cb-478e-945f-707fcc997c13 |
+> | [Inzender voor schijf momentopnamen](#disk-snapshot-contributor) | Biedt machtiging voor back-upkluis voor het beheren van moment opnamen van schijven. | 7efff54f-a5b4-42b5-a1c5-5411624893ce |
 > | [Inzender voor scheduler-taak verzamelingen](#scheduler-job-collections-contributor) | Hiermee kunt u scheduler-taak verzamelingen beheren, maar niet de toegang tot deze taken. | 188a0f2f-5c9e-469b-ae67-2aa5ce574b94 |
+> | [Operator Services hub](#services-hub-operator) | Met de operator Services hub kunt u alle Lees-, schrijf-en verwijder bewerkingen uitvoeren met betrekking tot services hub-connectors. | 82200a5b-e217-47a5-b665-6d8765ee745b |
 
 
 ## <a name="general"></a>Algemeen
@@ -2612,9 +2639,52 @@ Azure Storage-wacht rijen en-wachtrij berichten lezen en weer geven. Zie [machti
 ## <a name="web"></a>Web
 
 
+### <a name="azure-maps-data-contributor"></a>Inzender voor Azure Maps gegevens
+
+Hiermee wordt toegang verleend tot lees-, schrijf-en verwijder toegang om gerelateerde gegevens vanuit een Azure Maps-account toe te wijzen. [Meer informatie](../azure-maps/azure-maps-authentication.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | *geen* |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. Maps](resource-provider-operations.md#microsoftmaps)/accounts/*/Read |  |
+> | [Micro soft. Maps](resource-provider-operations.md#microsoftmaps)/accounts/*/write |  |
+> | [Micro soft. Maps](resource-provider-operations.md#microsoftmaps)/accounts/*/Delete |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Grants access to read, write, and delete access to map related data from an Azure maps account.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204",
+  "name": "8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Maps/accounts/*/read",
+        "Microsoft.Maps/accounts/*/write",
+        "Microsoft.Maps/accounts/*/delete"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Maps Data Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="azure-maps-data-reader"></a>Gegevens lezer Azure Maps
 
-Hiermee wordt toegang verleend om gerelateerde gegevens te lezen vanuit een Azure Maps-account.
+Hiermee wordt toegang verleend om gerelateerde gegevens te lezen vanuit een Azure Maps-account. [Meer informatie](../azure-maps/azure-maps-authentication.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -5278,6 +5348,249 @@ Hiermee kunt u sleutels van Cognitive Services maken, lezen, bijwerken, verwijde
 }
 ```
 
+### <a name="cognitive-services-custom-vision-contributor"></a>Cognitive Services Custom Vision Inzender
+
+Volledige toegang tot het project, inclusief de mogelijkheid om projecten weer te geven, te maken, te bewerken of te verwijderen. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Full access to the project, including the ability to view, create, edit, or delete projects.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/c1ff6cc2-c111-46fe-8896-e0ef812ad9f3",
+  "name": "c1ff6cc2-c111-46fe-8896-e0ef812ad9f3",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-deployment"></a>Implementatie van Cognitive Services Custom Vision
+
+Modellen publiceren, publicatie ongedaan maken of exporteren. Implementatie kan het project weer geven, maar kan het niet bijwerken. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/*/Read |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/Predictions/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/iterations/Publish/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/iterations/export/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/QuickTest/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/classify/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/detect/* |  |
+> | **NotDataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/export/Read | Hiermee exporteert u een project. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Publish, unpublish or export models. Deployment can view the project but can't update.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/5c4089e1-6d96-4d2f-b296-c1bc7137275f",
+  "name": "5c4089e1-6d96-4d2f-b296-c1bc7137275f",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*/read",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/predictions/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/iterations/publish/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/iterations/export/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/quicktest/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/classify/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/detect/*"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Deployment",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-labeler"></a>Cognitive Services Custom Vision Labeler
+
+Bekijk, trainings afbeeldingen bewerken en de afbeeldings Tags maken, toevoegen, verwijderen of verwijderen. Labelers kunnen het project weer geven, maar kunnen andere niet bijwerken dan trainingen en tags. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/*/Read |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/Predictions/query/Action | Down load installatie kopieën die naar uw Voorspellings eindpunt zijn verzonden. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/images/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/Tags/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/images/suggested/* |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/tagsandregions/Suggestions/Action | Met deze API worden voorgestelde Tags en regio's voor een matrix/batch met niet-gecodeerde installatie kopieën en vertrouwens elementen voor de Tags opgehaald. Er wordt een lege matrix geretourneerd als er geen tags worden gevonden. |
+> | **NotDataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/export/Read | Hiermee exporteert u een project. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "View, edit training images and create, add, remove, or delete the image tags. Labelers can view the project but can't update anything other than training images and tags.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/88424f51-ebe7-446f-bc41-7fa16989e96c",
+  "name": "88424f51-ebe7-446f-bc41-7fa16989e96c",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*/read",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/predictions/query/action",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/images/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/tags/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/images/suggested/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/tagsandregions/suggestions/action"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Labeler",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-reader"></a>Custom Vision lezer Cognitive Services
+
+Alleen-lezen acties in het project. Lezers kunnen het project niet maken of bijwerken. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/*/Read |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/Predictions/query/Action | Down load installatie kopieën die naar uw Voorspellings eindpunt zijn verzonden. |
+> | **NotDataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/export/Read | Hiermee exporteert u een project. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read-only actions in the project. Readers can't create or update the project.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/93586559-c37d-4a6b-ba08-b9f0940c2d73",
+  "name": "93586559-c37d-4a6b-ba08-b9f0940c2d73",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*/read",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/predictions/query/action"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-trainer"></a>Cognitive Services Custom Vision trainer
+
+Bekijk, bewerk projecten en train de modellen, inclusief de mogelijkheid om de modellen te publiceren, de publicatie ervan ongedaan te maken en te exporteren. Trainers kunnen het project niet maken of verwijderen. [Meer informatie](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/* |  |
+> | **NotDataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/Action | Een project maken. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/Delete | Een specifiek project verwijderen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/import/Action | Hiermee wordt een project geïmporteerd. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/CustomVision/projects/export/Read | Hiermee exporteert u een project. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "View, edit projects and train the models, including the ability to publish, unpublish, export the models. Trainers can't create or delete the project.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0a5ae4ab-0d65-4eeb-be61-29fc9b54394b",
+  "name": "0a5ae4ab-0d65-4eeb-be61-29fc9b54394b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/action",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/delete",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/import/action",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Trainer",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="cognitive-services-data-reader-preview"></a>Cognitive Services gegevens lezer (preview-versie)
 
 Hiermee kunt u Cognitive Services gegevens lezen.
@@ -5312,6 +5625,209 @@ Hiermee kunt u Cognitive Services gegevens lezen.
     }
   ],
   "roleName": "Cognitive Services Data Reader (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-metrics-advisor-administrator"></a>Cognitive Services metrics Advisor-beheerder
+
+Volledige toegang tot het project, met inbegrip van de configuratie van het systeem niveau. [Meer informatie](../cognitive-services/metrics-advisor/how-tos/alerts.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/MetricsAdvisor/* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Full access to the project, including the system level configuration.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/cb43c632-a144-4ec5-977c-e80c4affc34a",
+  "name": "cb43c632-a144-4ec5-977c-e80c4affc34a",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/MetricsAdvisor/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services Metrics Advisor Administrator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-qna-maker-editor"></a>Cognitive Services QnA Maker editor
+
+U kunt een KB maken, bewerken, importeren en exporteren. U kunt geen KB publiceren of verwijderen. [Meer informatie](../cognitive-services/qnamaker/reference-role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/roleAssignments/Read | Informatie over een roltoewijzing ophalen. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/roleDefinitions/Read | Informatie over een roldefinitie ophalen. |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/Read | Hiermee wordt een lijst opgehaald met de Knowledge bases of Details van een specifieke Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/Download/Read | Down load de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/Create/write | Asynchrone bewerking voor het maken van een nieuwe Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/write | Asynchrone bewerking om een Knowledge Base te wijzigen of de inhoud van de Knowledge Base te vervangen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/generateanswer/Action | GenerateAnswer-aanroep voor het uitvoeren van een query op de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/Train/Action | Train gesprek om suggesties toe te voegen aan de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/Alterations/Read | Down loads van runtime. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/Alterations/write | Vervangings gegevens vervangen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointkeys/refreshkeys/Action | Hiermee wordt een eindpunt sleutel opnieuw gegenereerd. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointsettings/write | Seettings voor een eind punt bijwerken. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/Operations/Read | Hiermee worden details van een specifieke langlopende bewerking opgehaald. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/Read | Hiermee wordt een lijst opgehaald met de Knowledge bases of Details van een specifieke Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/Download/Read | Down load de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/Create/write | Asynchrone bewerking voor het maken van een nieuwe Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/write | Asynchrone bewerking om een Knowledge Base te wijzigen of de inhoud van de Knowledge Base te vervangen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/generateanswer/Action | GenerateAnswer-aanroep voor het uitvoeren van een query op de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/Train/Action | Train gesprek om suggesties toe te voegen aan de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/Alterations/Read | Down loads van runtime. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/Alterations/write | Vervangings gegevens vervangen. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/refreshkeys/Action | Hiermee wordt een eindpunt sleutel opnieuw gegenereerd. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/write | Seettings voor een eind punt bijwerken. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/Operations/Read | Hiermee worden details van een specifieke langlopende bewerking opgehaald. |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Let's you create, edit, import and export a KB. You cannot publish or delete a KB.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/f4cc2bf9-21be-47a1-bdf1-5c5804381025",
+  "name": "f4cc2bf9-21be-47a1-bdf1-5c5804381025",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read",
+        "Microsoft.Authorization/roleAssignments/read",
+        "Microsoft.Authorization/roleDefinitions/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/create/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/train/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/alterations/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointkeys/refreshkeys/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointsettings/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/operations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/create/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/train/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/refreshkeys/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/operations/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services QnA Maker Editor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-qna-maker-reader"></a>QnA Maker lezer Cognitive Services
+
+Laten we alleen een KB lezen en testen. [Meer informatie](../cognitive-services/qnamaker/reference-role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Read |  |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/roleAssignments/Read | Informatie over een roltoewijzing ophalen. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/roleDefinitions/Read | Informatie over een roldefinitie ophalen. |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/Read | Hiermee wordt een lijst opgehaald met de Knowledge bases of Details van een specifieke Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/Download/Read | Down load de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/knowledgebases/generateanswer/Action | GenerateAnswer-aanroep voor het uitvoeren van een query op de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/Alterations/Read | Down loads van runtime. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/Read | Hiermee wordt een lijst opgehaald met de Knowledge bases of Details van een specifieke Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/Download/Read | Down load de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/knowledgebases/generateanswer/Action | GenerateAnswer-aanroep voor het uitvoeren van een query op de Knowledge Base. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/Alterations/Read | Down loads van runtime. |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointkeys/Read | Hiermee worden eindpunt sleutels voor een eind punt opgehaald |
+> | [Micro soft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/accounts/QnAMaker.v2/endpointsettings/Read | Hiermee worden de eindpunt instellingen voor een eind punt opgehaald |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Let's you read and test a KB only.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/466ccd10-b268-4a11-b098-b4849f024126",
+  "name": "466ccd10-b268-4a11-b098-b4849f024126",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read",
+        "Microsoft.Authorization/roleAssignments/read",
+        "Microsoft.Authorization/roleDefinitions/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services QnA Maker Reader",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -6729,6 +7245,88 @@ Aan de gebruiker toegewezen identiteit lezen en toewijzen [meer informatie](../a
 ## <a name="security"></a>Beveiliging
 
 
+### <a name="attestation-contributor"></a>Bijdrager aan verklaring
+
+Kan het exemplaar van de Attestation-provider lezen of verwijderen. meer [informatie](../attestation/quickstart-powershell.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | Microsoft.Attestation/attestationProviders/attestation/read |  |
+> | Microsoft.Attestation/attestationProviders/attestation/write |  |
+> | Microsoft.Attestation/attestationProviders/attestation/delete |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read write or delete the attestation provider instance",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/bbf86eb8-f7b4-4cce-96e4-18cddf81d86e",
+  "name": "bbf86eb8-f7b4-4cce-96e4-18cddf81d86e",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Attestation/attestationProviders/attestation/read",
+        "Microsoft.Attestation/attestationProviders/attestation/write",
+        "Microsoft.Attestation/attestationProviders/attestation/delete"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Attestation Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="attestation-reader"></a>Attestation-lezer
+
+Kan de eigenschappen van de Attestation-provider lezen [meer informatie](../attestation/troubleshoot-guide.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | Microsoft.Attestation/attestationProviders/attestation/read |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read the attestation provider properties",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/fd1bd22b-8476-40bc-a0bc-69b95687b9f3",
+  "name": "fd1bd22b-8476-40bc-a0bc-69b95687b9f3",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Attestation/attestationProviders/attestation/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Attestation Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="azure-sentinel-contributor"></a>Azure Sentinel Contributor
 
 Azure Sentinel contributor [meer informatie](../sentinel/roles.md)
@@ -7458,6 +8056,45 @@ Geheime inhoud lezen. Werkt alleen voor sleutel kluizen die gebruikmaken van het
     }
   ],
   "roleName": "Key Vault Secrets User (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="managed-hsm-contributor"></a>Beheerde HSM-Inzender
+
+Hiermee kunt u beheerde HSM-groepen beheren, maar niet de toegang tot de Pools. [Meer informatie](../key-vault/managed-hsm/secure-your-managed-hsm.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft.](resource-provider-operations.md#microsoftkeyvault)/managedHSMs/* |  |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage managed HSM pools, but not access to them.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/18500a29-7fe2-46b2-a342-b16a415e101d",
+  "name": "18500a29-7fe2-46b2-a342-b16a415e101d",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.KeyVault/managedHSMs/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Managed HSM contributor",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -9229,6 +9866,63 @@ Hiermee wordt lees toegang tot bron beleid en schrijf toegang tot bron onderdeel
 }
 ```
 
+### <a name="reservation-purchaser"></a>Reserve ring-verkoper
+
+Hiermee kunt u reserve ringen kopen voor [meer informatie](../cost-management-billing/reservations/prepare-buy-reservation.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/Read | Hiermee wordt de lijst met abonnementen opgehaald. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. capacity](resource-provider-operations.md#microsoftcapacity)/register/Action | Hiermee wordt de resource provider voor capaciteit geregistreerd en wordt het maken van capaciteits resources ingeschakeld. |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/register/Action | Hiermee wordt een abonnement geregistreerd bij de resource provider micro soft. compute |
+> | [Micro soft. SQL](resource-provider-operations.md#microsoftsql)/register/Action | Hiermee wordt het abonnement voor de resource provider van micro soft SQL Database geregistreerd en wordt het maken van micro soft SQL-data bases mogelijk. |
+> | [Micro soft. verbruik](resource-provider-operations.md#microsoftconsumption)/register/Action | Registreren voor gebruik van RP |
+> | [Micro soft. capacity](resource-provider-operations.md#microsoftcapacity)/Catalogs/Read | Catalogus van reserve ring lezen |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/roleAssignments/Read | Informatie over een roltoewijzing ophalen. |
+> | [Micro soft. verbruik](resource-provider-operations.md#microsoftconsumption)/reservationRecommendations/Read | Een lijst met enkele of gedeelde aanbevelingen voor gereserveerde instanties voor een abonnement. |
+> | [Micro soft. support](resource-provider-operations.md#microsoftsupport)/Supporttickets/write | Staat het maken en bijwerken van een ondersteunings ticket toe |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you purchase reservations",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/f7b75c60-3036-4b75-91c3-6b41c27c1689",
+  "name": "f7b75c60-3036-4b75-91c3-6b41c27c1689",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Capacity/register/action",
+        "Microsoft.Compute/register/action",
+        "Microsoft.SQL/register/action",
+        "Microsoft.Consumption/register/action",
+        "Microsoft.Capacity/catalogs/read",
+        "Microsoft.Authorization/roleAssignments/read",
+        "Microsoft.Consumption/reservationRecommendations/read",
+        "Microsoft.Support/supporttickets/write"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Reservation Purchaser",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="resource-policy-contributor"></a>Inzender voor resourcebeleid
 
 Gebruikers met rechten voor het maken/wijzigen van het resource beleid, het maken van een ondersteunings ticket en het lezen van resources/hiërarchie. [Meer informatie](../governance/policy/overview.md)
@@ -9871,6 +10565,363 @@ Hiermee kunt u BizTalk Services beheren, maar niet de toegang tot de service.
 }
 ```
 
+### <a name="desktop-virtualization-application-group-contributor"></a>Inzender voor bureau blad-Virtualisatiehost
+
+Bijdrager van de toepassings groep bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/applicationgroups/* |  |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/Read | Hostpools lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/sessionhosts/Read | Hostpools/sessionhosts lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of the Desktop Virtualization Application Group.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/86240b0e-9422-4c43-887b-b61143f32ba8",
+  "name": "86240b0e-9422-4c43-887b-b61143f32ba8",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/applicationgroups/*",
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Application Group Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-application-group-reader"></a>Lezer van toepassings groep voor desktop-virtualisatie
+
+Lezer van de toepassings groep bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/applicationgroups/*/Read |  |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/applicationgroups/Read | Applicationgroups lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/Read | Hostpools lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/sessionhosts/Read | Hostpools/sessionhosts lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/Read | Hiermee wordt een lijst met implementaties opgehaald of weer gegeven. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/Read | Een klassieke waarschuwing voor metrische gegevens lezen |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of the Desktop Virtualization Application Group.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/aebf23d0-b568-4e86-b8f9-fe83a2c6ab55",
+  "name": "aebf23d0-b568-4e86-b8f9-fe83a2c6ab55",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/applicationgroups/*/read",
+        "Microsoft.DesktopVirtualization/applicationgroups/read",
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Application Group Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-contributor"></a>Inzender voor bureau blad-virtualisatie
+
+Inzender van bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/* |  |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of Desktop Virtualization.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/082f0a83-3be5-4ba1-904c-961cca79b387",
+  "name": "082f0a83-3be5-4ba1-904c-961cca79b387",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-host-pool-contributor"></a>Inzender voor RD Virtualization hostgroep
+
+Inzender van de hostgroep voor bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/* |  |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of the Desktop Virtualization Host Pool.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/e307426c-f9b6-4e81-87de-d99efb3c32bc",
+  "name": "e307426c-f9b6-4e81-87de-d99efb3c32bc",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Host Pool Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-host-pool-reader"></a>Lezer van hostgroep voor desktop-virtualisatie
+
+Lezer van de hostgroep voor bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/*/Read |  |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/Read | Hostpools lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/Read | Hiermee wordt een lijst met implementaties opgehaald of weer gegeven. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/Read | Een klassieke waarschuwing voor metrische gegevens lezen |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of the Desktop Virtualization Host Pool.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/ceadfde2-b300-400a-ab7b-6143895aa822",
+  "name": "ceadfde2-b300-400a-ab7b-6143895aa822",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/*/read",
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Host Pool Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-reader"></a>Desktop Virtualization-lezer
+
+Lezer van bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/*/Read |  |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/Read | Hiermee wordt een lijst met implementaties opgehaald of weer gegeven. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/Read | Een klassieke waarschuwing voor metrische gegevens lezen |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of Desktop Virtualization.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/49a72310-ab8d-41df-bbb0-79b649203868",
+  "name": "49a72310-ab8d-41df-bbb0-79b649203868",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-session-host-operator"></a>Host-operator voor bureau blad-Virtualisatiehost
+
+Operator van de host van de bureau blad-Virtualisatiehost. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/Read | Hostpools lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/sessionhosts/* |  |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Operator of the Desktop Virtualization Session Host.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/2ad6aaab-ead9-4eaa-8ac5-da422f562408",
+  "name": "2ad6aaab-ead9-4eaa-8ac5-da422f562408",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Session Host Operator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="desktop-virtualization-user"></a>Gebruiker van bureau blad-virtualisatie
 
 Hiermee kunnen gebruikers de toepassingen in een toepassings groep gebruiken. [Meer informatie](../virtual-desktop/delegated-access-virtual-desktop.md)
@@ -9882,7 +10933,7 @@ Hiermee kunnen gebruikers de toepassingen in een toepassings groep gebruiken. [M
 > | **NotActions** |  |
 > | *geen* |  |
 > | **DataActions** |  |
-> | Micro soft. DesktopVirtualization/applicationGroups/useApplications/Action | Variabele applicationgroup gebruiken |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/applicationGroups/useApplications/Action | Variabele applicationgroup gebruiken |
 > | **NotDataActions** |  |
 > | *geen* |  |
 
@@ -9905,6 +10956,310 @@ Hiermee kunnen gebruikers de toepassingen in een toepassings groep gebruiken. [M
     }
   ],
   "roleName": "Desktop Virtualization User",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-user-session-operator"></a>Operator voor de gebruikers sessie van de bureau blad-Virtualisatiehost
+
+Operator van de Uesr-sessie voor bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/Read | Hostpools lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/sessionhosts/Read | Hostpools/sessionhosts lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/hostpools/sessionhosts/usersessions/* |  |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Operator of the Desktop Virtualization Uesr Session.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6",
+  "name": "ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/usersessions/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization User Session Operator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-workspace-contributor"></a>Mede werker van de werk ruimte bureau blad-virtualisatie
+
+Inzender van de werk ruimte bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/Workspaces/* |  |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/applicationgroups/Read | Applicationgroups lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/* | Een klassieke waarschuwing voor metrische gegevens maken en beheren |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of the Desktop Virtualization Workspace.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/21efdde3-836f-432b-bf3d-3e8e734d4b2b",
+  "name": "21efdde3-836f-432b-bf3d-3e8e734d4b2b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/workspaces/*",
+        "Microsoft.DesktopVirtualization/applicationgroups/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Workspace Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-workspace-reader"></a>Werkruimte lezer voor desktop-virtualisatie
+
+Lezer van de werk ruimte bureau blad-virtualisatie. [Meer informatie](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/Workspaces/Read | Werk ruimten lezen |
+> | [Micro soft. DesktopVirtualization](resource-provider-operations.md#microsoftdesktopvirtualization)/applicationgroups/Read | Applicationgroups lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/Read | Hiermee wordt een lijst met implementaties opgehaald of weer gegeven. |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Insights](resource-provider-operations.md#microsoftinsights)/alertRules/Read | Een klassieke waarschuwing voor metrische gegevens lezen |
+> | [Micro soft. ondersteuning](resource-provider-operations.md#microsoftsupport)/* | Een ondersteunings ticket maken en bijwerken |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of the Desktop Virtualization Workspace.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0fa44ee9-7a7d-466b-9bb2-2bf446b1204d",
+  "name": "0fa44ee9-7a7d-466b-9bb2-2bf446b1204d",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/workspaces/read",
+        "Microsoft.DesktopVirtualization/applicationgroups/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Workspace Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="disk-backup-reader"></a>Back-uplezer van schijf
+
+Biedt machtiging voor back-upkluis voor het uitvoeren van schijf back-ups. [Meer informatie](../backup/disk-backup-faq.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/disks/Read | De eigenschappen van een schijf ophalen |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/disks/beginGetAccess/Action | De SAS-URI van de schijf ophalen voor BLOB-toegang |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Provides permission to backup vault to perform disk backup.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/3e5e47e6-65f7-47ef-90b5-e5dd4d455f24",
+  "name": "3e5e47e6-65f7-47ef-90b5-e5dd4d455f24",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Compute/disks/read",
+        "Microsoft.Compute/disks/beginGetAccess/action"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Disk Backup Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="disk-restore-operator"></a>Schijf herstel operator
+
+Biedt machtigingen voor het maken van een back-upkluis om schijf herstel uit te voeren. [Meer informatie](../backup/restore-managed-disks.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/disks/write | Hiermee wordt een nieuwe schijf gemaakt of een bestaande bijgewerkt |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/disks/Read | De eigenschappen van een schijf ophalen |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Provides permission to backup vault to perform disk restore.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b50d9833-a0cb-478e-945f-707fcc997c13",
+  "name": "b50d9833-a0cb-478e-945f-707fcc997c13",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Compute/disks/write",
+        "Microsoft.Compute/disks/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Disk Restore Operator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="disk-snapshot-contributor"></a>Inzender voor schijf momentopnamen
+
+Biedt machtiging voor back-upkluis voor het beheren van moment opnamen van schijven. [Meer informatie](../backup/backup-managed-disks.md)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/snapshots/Delete | Een moment opname verwijderen |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/snapshots/write | Een nieuwe moment opname maken of een bestaand abonnement bijwerken |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/snapshots/Read | De eigenschappen van een moment opname ophalen |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/snapshots/beginGetAccess/Action | De SAS-URI van de moment opname voor BLOB-toegang ophalen |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/snapshots/endGetAccess/Action | De SAS-URI van de moment opname intrekken |
+> | [Micro soft. Compute](resource-provider-operations.md#microsoftcompute)/disks/beginGetAccess/Action | De SAS-URI van de schijf ophalen voor BLOB-toegang |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/listkeys/Action | Retourneert de toegangs sleutels voor het opgegeven opslag account. |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/write | Hiermee maakt u een opslag account met de opgegeven para meters of werkt u de eigenschappen of labels bij of voegt u een aangepast domein toe voor het opgegeven opslag account. |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/Read | Retourneert de lijst met opslag accounts of haalt de eigenschappen voor het opgegeven opslag account op. |
+> | [Micro soft. Storage](resource-provider-operations.md#microsoftstorage)/storageAccounts/Delete | Hiermee verwijdert u een bestaand opslag account. |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Provides permission to backup vault to manage disk snapshots.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/7efff54f-a5b4-42b5-a1c5-5411624893ce",
+  "name": "7efff54f-a5b4-42b5-a1c5-5411624893ce",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Compute/snapshots/delete",
+        "Microsoft.Compute/snapshots/write",
+        "Microsoft.Compute/snapshots/read",
+        "Microsoft.Compute/snapshots/beginGetAccess/action",
+        "Microsoft.Compute/snapshots/endGetAccess/action",
+        "Microsoft.Compute/disks/beginGetAccess/action",
+        "Microsoft.Storage/storageAccounts/listkeys/action",
+        "Microsoft.Storage/storageAccounts/write",
+        "Microsoft.Storage/storageAccounts/read",
+        "Microsoft.Storage/storageAccounts/delete"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Disk Snapshot Contributor",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -9956,6 +11311,61 @@ Hiermee kunt u scheduler-taak verzamelingen beheren, maar niet de toegang tot de
     }
   ],
   "roleName": "Scheduler Job Collections Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="services-hub-operator"></a>Operator Services hub
+
+Met de operator Services hub kunt u alle Lees-, schrijf-en verwijder bewerkingen uitvoeren met betrekking tot services hub-connectors. [Meer informatie](/services-hub/health/sh-connector-roles)
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | [Micro soft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Read | Rollen en roltoewijzingen lezen |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Subscriptions/resourceGroups/Read | Hiermee worden resource groepen opgehaald of weer gegeven. |
+> | [Micro soft. resources](resource-provider-operations.md#microsoftresources)/Deployments/* | Een implementatie maken en beheren |
+> | [Micro soft. ServicesHub](resource-provider-operations.md#microsoftserviceshub)/connectors/write | Een service hub-connector maken of bijwerken |
+> | [Micro soft. ServicesHub](resource-provider-operations.md#microsoftserviceshub)/connectors/Read | Service hub-connectors weer geven of vermelden |
+> | [Micro soft. ServicesHub](resource-provider-operations.md#microsoftserviceshub)/connectors/Delete | Services hub-connectors verwijderen |
+> | [Micro soft. ServicesHub](resource-provider-operations.md#microsoftserviceshub)/connectors/checkAssessmentEntitlement/Action | Geeft een lijst van de beoordelings rechten voor een bepaalde services hub-werk ruimte |
+> | [Micro soft. ServicesHub](resource-provider-operations.md#microsoftserviceshub)/supportOfferingEntitlement/Read | De rechten van de ondersteunings aanbieding voor een bepaalde services hub-werk ruimte weer geven |
+> | [Micro soft. ServicesHub](resource-provider-operations.md#microsoftserviceshub)/Workspaces/Read | De services hub-werk ruimten voor een bepaalde gebruiker weer geven |
+> | **NotActions** |  |
+> | *geen* |  |
+> | **DataActions** |  |
+> | *geen* |  |
+> | **NotDataActions** |  |
+> | *geen* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Services Hub Operator allows you to perform all read, write, and deletion operations related to Services Hub Connectors.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/82200a5b-e217-47a5-b665-6d8765ee745b",
+  "name": "82200a5b-e217-47a5-b665-6d8765ee745b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.ServicesHub/connectors/write",
+        "Microsoft.ServicesHub/connectors/read",
+        "Microsoft.ServicesHub/connectors/delete",
+        "Microsoft.ServicesHub/connectors/checkAssessmentEntitlement/action",
+        "Microsoft.ServicesHub/supportOfferingEntitlement/read",
+        "Microsoft.ServicesHub/workspaces/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Services Hub Operator",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }

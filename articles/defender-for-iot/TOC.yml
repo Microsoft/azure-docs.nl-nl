@@ -3,75 +3,81 @@
 - name: Overzicht
   href: overview.md
   items:
-    - name: Architectuur voor de oplossing
-      href: architecture.md
     - name: Wat is nieuw?
       href: release-notes.md
-    - name: Snelstartgidsen
-      expanded: true
+    - name: Architectuur van oplossing zonder agent
+      href: architecture.md
+    - name: Architectuur van oplossingen op basis van agent
+      href: architecture-agent-based.md
+- name: Snelstartgidsen
+  expanded: true
+  items:
     - name: Oplossing zonder agent voor organisaties
       items:
         - name: Systeemvereisten
           href: quickstart-system-prerequisites.md
         - name: Aan de slag met Azure Defender for IoT
           href: getting-started.md
-    - name: Oplossing met agent voor apparaatbouwer
+    - name: Oplossing met agent voor apparaatbouwers
       items:
-        - name: Beveiligingsmodule configureren voor Azure RTOS
+        - name: Beveiligings module voor Azure RTO'S configureren
           href: quickstart-azure-rtos-security-module.md
-        - name: IoT Hub
-          href: quickstart-iot-hub-integration.md
-        - name: Azure Defender for IoT onboarden in IoT Hub
+        - name: Onboarden naar Defender voor IoT-oplossing op basis van een agent
           href: quickstart-onboard-iot-hub.md
-        - name: Beveiligingsagents
-          href: security-agent-architecture.md
-        - name: De oplossing configureren
+        - name: Een Defender IOT micro Agent-module maken (preview)
+          href: quickstart-create-micro-agent-module-twin.md
+        - name: Defender installeren voor IoT micro agent (preview)
+          href: quickstart-standalone-agent-binary-installation.md
+        - name: De Defender voor IoT micro agent bouwen op basis van de bron code (preview)
+          href: quickstart-building-the-defender-micro-agent-from-source.md
+        - name: Azure-resources toevoegen aan uw IoT-oplossing
           href: quickstart-configure-your-solution.md
-        - name: Een moduledubbel maken voor Azure Defender for IoT
-          href: quickstart-create-security-twin.md
-        - name: Beveiligingsaanbevelingen onderzoeken
-          href: quickstart-investigate-security-recommendations.md
-        - name: Aangepaste beveiligingswaarschuwingen maken
-          href: quickstart-create-custom-alerts.md
-        - name: Beveiligingswaarschuwingen onderzoeken
-          href: quickstart-investigate-security-alerts.md
+        - name: Klassiek
+          items:
+            - name: Overzicht van de beveiligings agent
+              href: security-agent-architecture.md
+            - name: Een azureiotsecurity-module maken dubbele
+              href: quickstart-create-security-twin.md
 - name: Concepten
   items:
     - name: Oplossing zonder agent voor organisaties
       items:
         - name: Belangrijkste concepten
           href: concept-key-concepts.md
-    - name: Oplossing met agent voor apparaatbouwers
+    - name: Oplossing met agent voor apparaatbouwer
       items:
-        - name: Beveiligingsmodule voor Azure RTOS
-          href: iot-security-azure-rtos.md
-          items:
-            - name: Inzicht in de beveiligingsmodule voor Azure RTOS
-              href: concept-rtos-security-module.md
-            - name: Beveiligingsmodule voor Azure RTOS-waarschuwingen en -aanbevelingen
-              href: concept-rtos-security-alerts-recommendations.md
-        - name: Edge-beveiligingsmodule
-          href: security-edge-architecture.md
-        - name: Beveiligingsagents
-          href: overview-security-agents.md
-        - name: Verificatie voor beveiligingsagents
-          href: concept-security-agent-authentication-methods.md
-        - name: Beveiligingsmodule
-          href: concept-security-module.md
+        - name: Overzicht van agent portfolio en ondersteuning van besturings systemen (preview-versie)
+          href: concept-agent-portfolio-overview-os-support.md
+        - name: Overzicht van zelfstandige micro agent (preview-versie)
+          href: concept-standalone-micro-agent-overview.md
+        - name: Verificatie van beveiligings agent (preview-versie)
+          href: concept-security-agent-authentication.md
+        - name: Security postuur-CIS-Bench Mark
+          href: concept-security-posture.md
+        - name: Gebeurtenis aggregatie (preview-versie)
+          href: concept-event-aggregation.md
         - name: Beveiligingswaarschuwingen
           href: concept-security-alerts.md
-        - name: Aanpasbare beveiligingswaarschuwingen
+        - name: Aangepaste beveiligings waarschuwingen
           href: concept-customizable-security-alerts.md
-        - name: Beveiliging
+        - name: Aanbevelingen voor beveiliging
+          href: concept-recommendations.md
+        - name: Klassiek
           items:
-            - name: Aanbevelingen voor beveiliging
-              href: concept-recommendations.md
-            - name: Beveiligingsbasislijn
+            - name: Beveiligingsmodule
+              href: concept-security-module.md
+            - name: Edge-beveiligingsmodule
+              href: security-edge-architecture.md
+            - name: Beveiligingsagents
+              href: overview-security-agents.md
+            - name: Verificatie voor beveiligingsagents
+              href: concept-security-agent-authentication-methods.md
+            - name: Basislijn
+              href: concept-baseline.md
+            - name: Azure-beveiligings basislijn voor Azure Defender voor IoT
               href: security-baseline.md
-        - name: Basislijn
-          href: concept-baseline.md
-        - name: Aggregatie van gebeurtenissen
-          href: event-aggregation.md
+            - name: Aggregatie van klassieke gebeurtenissen van beveiligings module
+              href: event-aggregation.md
 - name: Instructiegidsen
   items:
     - name: Oplossing zonder agent voor organisaties
@@ -147,8 +153,10 @@
               href: how-to-manage-the-alert-event.md
             - name: Incidentrespons op waarschuwingen versnellen
               href: how-to-accelerate-alert-incident-response.md
+              displayName: 'custom, alerts, comments, groups'
             - name: Waarschuwingsinformatie doorsturen
               href: how-to-forward-alert-information-to-partners.md
+              displayName: 'integration, partners, vendor, Syslog server, NetWitness,CEF, LEEF, email'
         - name: 'Inzicht krijgen in globale, regionale en lokale bedreigingen'
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
         - name: Werken met waarschuwingen in de on-premises beheerconsole
@@ -176,11 +184,12 @@
               displayName: 'import, enrich'
         - name: Sensoractiviteit volgen
           href: how-to-track-sensor-activity.md
-          displayName: 'timeline, time line, time-line, event'
+          displayName: 'timeline, time line, time-line, event, audit'
         - name: Problemen met de sensor en on-premises beheerconsole oplossen
           href: how-to-troubleshoot-the-sensor-and-on-premises-management-console.md
         - name: SNMP MIB-bewaking instellen
           href: how-to-set-up-snmp-mib-monitoring.md
+          displayName: health
         - name: Integreren met partners
           items:
             - name: Cisco ISE pxGrid-integratie
@@ -197,40 +206,65 @@
               href: integration-splunk.md
     - name: Oplossing met agent voor apparaatbouwers
       items:
-        - name: Werken met beveiligingsmodule voor Azure RTOS
-          href: how-to-azure-rtos-security-module.md
-        - name: Welke agent moet ik implementeren?
+        - name: Beveiligingsmodule voor Azure RTOS
+          href: iot-security-azure-rtos.md
           items:
-            - name: Selecteer een te implementeren agent
-              href: how-to-deploy-agent.md
-            - name: Een beveiligingsagent op basis van C# implementeren op een Windows-apparaat
-              href: how-to-deploy-windows-cs.md
-            - name: Een beveiligingsagent op basis van C# implementeren op een Linux-apparaat
-              href: how-to-deploy-linux-cs.md
-            - name: Een beveiligingsagent op basis van C implementeren op een Linux-apparaat
-              href: how-to-deploy-linux-c.md
-        - name: Problemen met een beveiligingsagent oplossen
-          items:
-            - name: Problemen met een Linux-beveiligingsagent voor Azure Defender for IoT oplossen
-              href: troubleshoot-agent.md
-            - name: C in lokale configuratie
-              href: azure-iot-security-local-configuration-c.md
-            - name: C# in lokale configuratie
-              href: azure-iot-security-local-configuration-csharp.md
-        - name: Edge-beveiligingsmodule implementeren
-          href: how-to-deploy-edge.md
-        - name: Beveiligingsagents configureren
-          href: how-to-agent-configuration.md
-        - name: Uw eigen beveiligingsberichten verzenden
-          href: how-to-send-security-messages.md
-        - name: Toegang tot onbewerkte beveiligingsgegevens
-          href: how-to-security-data-access.md
-        - name: Een apparaat onderzoeken
-          href: how-to-investigate-device.md
+            - name: Werken met beveiligingsmodule voor Azure RTOS
+              href: how-to-azure-rtos-security-module.md
+            - name: Inzicht in de beveiligingsmodule voor Azure RTOS
+              href: concept-rtos-security-module.md
+            - name: Beveiligingsmodule voor Azure RTOS-waarschuwingen en -aanbevelingen
+              href: concept-rtos-security-alerts-recommendations.md
         - name: Verbinding maken met Azure Sentinel
           href: how-to-configure-with-sentinel.md
-        - name: Uw agent aanpassen
-          href: how-to-customize-solution.md
+        - name: Azure Defender voor IoT-oplossing op basis van een agent configureren
+          href: how-to-configure-agent-based-solution.md
+        - name: Aanbeveling voor CIS-benchmark tests onderzoeken
+          href: how-to-investigate-cis-benchmark.md
+        - name: Beveiligingsaanbevelingen onderzoeken
+          href: quickstart-investigate-security-recommendations.md
+        - name: Beveiligingswaarschuwingen onderzoeken
+          href: quickstart-investigate-security-alerts.md
+        - name: Aangepaste waarschuwingen maken
+          href: quickstart-create-custom-alerts.md
+        - name: Klassiek
+          items:
+            - name: Welke agent moet ik implementeren?
+              items:
+                - name: Selecteer een te implementeren agent
+                  href: how-to-deploy-agent.md
+                - name: Een beveiligingsagent op basis van C# implementeren op een Windows-apparaat
+                  href: how-to-deploy-windows-cs.md
+                - name: Een beveiligingsagent op basis van C# implementeren op een Linux-apparaat
+                  href: how-to-deploy-linux-cs.md
+                - name: Een beveiligingsagent op basis van C implementeren op een Linux-apparaat
+                  href: how-to-deploy-linux-c.md
+            - name: Problemen met een beveiligingsagent oplossen
+              items:
+                - name: Problemen met een Linux-beveiligingsagent voor Azure Defender for IoT oplossen
+                  href: troubleshoot-agent.md
+                - name: C in lokale configuratie
+                  href: azure-iot-security-local-configuration-c.md
+                - name: C# in lokale configuratie
+                  href: azure-iot-security-local-configuration-csharp.md
+            - name: Edge-beveiligingsmodule implementeren
+              href: how-to-deploy-edge.md
+            - name: Beveiligingsagents configureren
+              href: how-to-agent-configuration.md
+            - name: Uw eigen beveiligingsberichten verzenden
+              href: how-to-send-security-messages.md
+            - name: Toegang tot onbewerkte beveiligingsgegevens
+              href: how-to-security-data-access.md
+            - name: Een apparaat onderzoeken
+              href: how-to-investigate-device.md
+- name: Problemen oplossen
+  items:
+    - name: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
+      href: troubleshoot-defender-micro-agent.md
+- name: Functie ondersteuning en buiten gebruik stellen
+  items:
+    - name: Functie ondersteuning en buiten gebruik stellen
+      href: edge-security-module-deprecation.md
 - name: Verwijzingen
   items:
     - name: Oplossing zonder agent voor organisaties

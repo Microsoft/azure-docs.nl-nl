@@ -3,16 +3,16 @@ title: Uw GCP-account verbinden met Azure Security Center
 description: Uw GCP-resources bewaken vanuit Azure Security Center
 author: memildin
 ms.author: memildin
-ms.date: 01/24/2021
+ms.date: 02/07/2021
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: d5f8278765c3f62fded44e4b89fb5fded6137c94
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 8ee7b37861be299dd36a596ae1cd4899b0ebffab
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757607"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809402"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Uw GCP-accounts verbinden met Azure Security Center
 
@@ -20,7 +20,7 @@ Veel workloads in de cloud beslaan meerdere cloudplatforms, dus moeten cloudbeve
 
 Azure Security Center biedt bescherming voor workloads in Azure, Amazon Web Services (AWS) en Google Cloud Platform (GCP).
 
-Met de onboarding van uw GCP-account in Security Center worden GCP Security Command en Azure Security Center geïntegreerd. Security Center biedt zo inzicht in en bescherming van beide cloudomgevingen, waardoor het volgende mogelijk wordt:
+De GCP-accounts in Security Center worden voor bereid, integreert GCP Security-opdracht en Azure Security Center. Security Center biedt zo inzicht in en bescherming van beide cloudomgevingen, waardoor het volgende mogelijk wordt:
 
 - Detectie van onjuiste beveiligingsconfiguraties
 - Een enkele weergave met aanbevelingen van Security Center en bevindingen van GCP Command Center
@@ -44,7 +44,10 @@ In de onderstaande schermopname ziet u de GCP-projecten die worden weergegeven i
 
 ## <a name="connect-your-gcp-account"></a>Verbinding maken met uw GCP-account
 
-Volg de onderstaande stappen om uw GCP-cloudconnector te maken. 
+Volg de onderstaande stappen om uw GCP-Cloud connector te maken om uw Google cloud-resources te verbinden op het niveau van de organisatie of het project. 
+
+> [!TIP]
+> Meer informatie over de Google Cloud resource Hierarchy in hun [online docs.](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
 
 ### <a name="step-1-set-up-gcp-security-command-center-with-security-health-analytics"></a>Stap 1. GCP Security Command Center instellen met Security Health Analytics
 
@@ -120,6 +123,15 @@ Als u alle actieve aanbevelingen voor uw resources op resourcetype wilt weergeve
 
 :::image type="content" source="./media/quickstart-onboard-gcp/gcp-resource-types-in-inventory.png" alt-text="Het filter voor resourcetypen van de pagina Assetvoorraad met de opties voor GCP"::: 
 
+
+## <a name="faq-for-connecting-gcp-accounts-to-azure-security-center"></a>Veelgestelde vragen over het verbinden van GCP-accounts met Azure Security Center
+
+### <a name="can-i-connect-multiple-gcp-accounts-to-security-center"></a>Kan ik meerdere GCP-accounts verbinden met Security Center?
+Ja. Zoals hierboven vermeld, kunt u uw Google cloud-resources verbinden op het niveau van de organisatie of het project. Meer informatie over de Google Cloud resource Hierarchy in hun [online docs.](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
+
+
+### <a name="is-there-an-api-for-connecting-my-gcp-resources-to-security-center"></a>Is er een API voor het koppelen van mijn GCP-resources aan Security Center?
+Ja. Zie de details van de [API connectors](/rest/api/securitycenter/connectors)om Security Center Cloud connectors te maken, bewerken of verwijderen met een rest API.
 
 ## <a name="next-steps"></a>Volgende stappen
 

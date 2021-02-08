@@ -8,14 +8,14 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: 0b04ebd9672990738d77bc5ae09d7f7fae4ffb9d
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 0121ea65b190f254f032085133f12f6eb0f374ca
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99500197"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99808453"
 ---
-# <a name="azure-instance-metadata-service-imds"></a>Azure Instance Metadata Service (IMDS)
+# <a name="azure-instance-metadata-service"></a>Azire Instance Metadata Service
 
 De Azure Instance Metadata Service (IMDS) bevat informatie over actieve exemplaren van virtuele machines. U kunt deze gebruiken om uw virtuele machines te beheren en te configureren.
 Deze informatie omvat de gebeurtenissen SKU, opslag, netwerk configuraties en gepland onderhoud. Zie overzicht van de [eindpunt categorieën](#endpoint-categories)voor een volledige lijst met beschik bare gegevens.
@@ -88,7 +88,7 @@ Over het algemeen zijn aanvragen voor IMDS beperkt tot 5 aanvragen per seconde. 
 
 De volgende HTTP-termen worden momenteel ondersteund:
 
-| Verb | Beschrijving |
+| Verb | Description |
 |------|-------------|
 | `GET` | De aangevraagde resource ophalen
 
@@ -268,7 +268,7 @@ Het hoofd eindpunt is `http://169.254.169.254/metadata` .
 
 De IMDS-API bevat meerdere eindpunt categorieën die verschillende gegevens bronnen vertegenwoordigen, waarvan elk een of meer eind punten bevat. Zie elke categorie voor meer informatie.
 
-| Hoofdmap van categorie | Beschrijving | Geïntroduceerde versie |
+| Hoofdmap van categorie | Description | Geïntroduceerde versie |
 |---------------|-------------|--------------------|
 | `/metadata/attested` | Zie [attested data](#attested-data) | 2018-10-01
 | `/metadata/identity` | Zie [beheerde identiteit via IMDS](#managed-identity) | 2018-02-01
@@ -332,7 +332,7 @@ Schema-uitsplitsing:
 
 **Compute**
 
-| Gegevens | Beschrijving | Geïntroduceerde versie |
+| Gegevens | Description | Geïntroduceerde versie |
 |------|-------------|--------------------|
 | `azEnvironment` | Azure-omgeving waarin de virtuele machine wordt uitgevoerd | 2018-10-01
 | `customData` | Deze functie is momenteel uitgeschakeld. Deze documentatie wordt bijgewerkt wanneer deze beschikbaar wordt | 2019-02-01
@@ -373,7 +373,7 @@ Het opslag profiel van een virtuele machine is onderverdeeld in drie categorieë
 
 Het verwijzings object voor de afbeelding bevat de volgende informatie over de installatie kopie van het besturings systeem:
 
-| Gegevens | Beschrijving |
+| Gegevens | Description |
 |------|-------------|
 | `id` | Resource-id
 | `offer` | Aanbieding van de installatie kopie van het platform of de Marketplace
@@ -383,7 +383,7 @@ Het verwijzings object voor de afbeelding bevat de volgende informatie over de i
 
 Het object van de besturingssysteem schijf bevat de volgende informatie over de besturingssysteem schijf die wordt gebruikt door de virtuele machine:
 
-| Gegevens | Beschrijving |
+| Gegevens | Description |
 |------|-------------|
 | `caching` | Cache vereisten
 | `createOption` | Informatie over de manier waarop de virtuele machine is gemaakt
@@ -398,7 +398,7 @@ Het object van de besturingssysteem schijf bevat de volgende informatie over de 
 
 De matrix gegevens schijven bevat een lijst met gegevens schijven die zijn gekoppeld aan de VM. Elk gegevens schijf object bevat de volgende informatie:
 
-Gegevens | Beschrijving |
+Gegevens | Description |
 -----|-------------|
 | `caching` | Cache vereisten
 | `createOption` | Informatie over de manier waarop de virtuele machine is gemaakt
@@ -414,7 +414,7 @@ Gegevens | Beschrijving |
 
 **Netwerk**
 
-| Gegevens | Beschrijving | Geïntroduceerde versie |
+| Gegevens | Description | Geïntroduceerde versie |
 |------|-------------|--------------------|
 | `ipv4.privateIpAddress` | Lokaal IPv4-adres van de virtuele machine | 2017-04-02
 | `ipv4.publicIpAddress` | Openbaar IPv4-adres van de virtuele machine | 2017-04-02
@@ -746,7 +746,7 @@ Voor virtuele machines die zijn gemaakt met behulp van het klassieke implementat
 
 Het gedecodeerde document bevat de volgende velden:
 
-| Gegevens | Beschrijving | Geïntroduceerde versie |
+| Gegevens | Description | Geïntroduceerde versie |
 |------|-------------|--------------------|
 | `licenseType` | Het type licentie voor de [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit). Dit is alleen aanwezig voor Vm's met AHB-functionaliteit. | 2020-09-01
 | `nonce` | Een teken reeks die optioneel kan worden meegeleverd met de aanvraag. Als er geen `nonce` is opgegeven, wordt de huidige UTC (Coordinated Universal Time Time Stamp) gebruikt. | 2018-10-01

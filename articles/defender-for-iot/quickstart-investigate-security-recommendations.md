@@ -1,10 +1,10 @@
 ---
-title: 'Quickstart: Beveiligingsaanbevelingen onderzoeken'
+title: Beveiligings aanbevelingen onderzoeken
 description: Onderzoek beveiligingsaanbevelingen met de Defender for IoT-beveiligingsservice.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
-ms.author: mlottner
-ms.openlocfilehash: 66b5694823096f0747ea099b631a53198a819816
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
-ms.translationtype: HT
+ms.author: shhazam
+ms.openlocfilehash: 0e902db38e4145bf94ab6a235bc1210b520327a1
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835037"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809181"
 ---
 # <a name="quickstart-investigate-security-recommendations"></a>Quickstart: Beveiligingsaanbevelingen onderzoeken
 
@@ -46,22 +46,19 @@ In de lijst met IoT Hub-aanbevelingen worden alle geaggregeerde beveiligingsaanb
 
 Open elke geaggregeerde aanbeveling om de gedetailleerde beschrijving van de aanbeveling, herstelstappen en apparaat-id weer te geven voor elk apparaat dat een aanbeveling heeft geactiveerd. Ook wordt de ernst van de aanbeveling en directe toegang tot onderzoek weergegeven met behulp van Log Analytics.
 
-1.  Selecteer en open een willekeurige beveiligingsaanbeveling in de lijst **IoT Hub** \> **Beveiliging** \> **Aanbevelingen**.
+1.  Selecteer en open een beveiligings aanbeveling in de   >    >  lijst met beveiligings **aanbevelingen** van IOT hub.
 
 1.  Bekijk de **beschrijving**, **ernst** **apparaatgegevens** voor de aanbeveling van alle apparaten die deze aanbeveling hebben uitgegeven tijdens de aggregatie. 
 
 1.  Nadat u de details van de aanbeveling hebt bekeken, gebruikt u de instructies uit de **stap handmatig herstel** om het probleem dat de aanbeveling heeft veroorzaakt, te herstellen en op te lossen. 
 
-    [ :::image type="content" source="media/quickstart/remediate-security-recommendations-expanded.png#lightbox" alt-text="Beveiligingsaanbevelingen herstellen met ASC for IoT](media/quickstart/remediate-security-recommendations-inline.png)":::
-
+    :::image type="content" source="media/quickstart/remediate-security-recommendations-inline.png" alt-text="Beveiligingsaanbevelingen met ASC voor IoT opvolgen" lightbox="media/quickstart/remediate-security-recommendations-expanded.png":::
 
 1.  Bekijk de aanbevelingsdetails voor een specifiek apparaat door het gewenste apparaat te selecteren op de inzoompagina.
 
-    [ :::image type="content" source="media/quickstart/explore-security-recommendation-detail-expanded.png#lightbox" alt-text="Specifieke beveiligingsaanbevelingen voor een apparaat onderzoeken met ASC for IoT](media/quickstart/explore-security-recommendation-detail-inline.png)":::
-
+    :::image type="content" source="media/quickstart/explore-security-recommendation-detail-inline.png" alt-text="Onderzoek specifieke beveiligingsaanbevelingen voor een apparaat met ASC voor IoT" lightbox="media/quickstart/explore-security-recommendation-detail-expanded.png":::
 
 1.  Als verder onderzoek is vereist, kunt u **De aanbevelingen onderzoeken in Log Analytics** via de koppeling. 
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

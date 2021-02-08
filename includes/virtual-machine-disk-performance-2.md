@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/12/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 086ebf71e2da19a96433f32cfb1bae133e875400
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 3c4ab8362b2a717a348a59c0baf829b61e1a8006
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518052"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99808467"
 ---
 ![Grafiek met de specificaties van D s v 3.](media/vm-disk-performance/dsv3-documentation.jpg)
 
@@ -137,17 +137,18 @@ We hebben metrische gegevens over Azure die inzicht bieden in hoe uw virtuele ma
 - **Schrijf bewerkingen op de schijf per seconde**: het aantal uitvoer bewerkingen dat is geschreven in een tweede van alle schijven die zijn gekoppeld aan een virtuele machine.
 
 ## <a name="storage-io-utilization-metrics"></a>Metrische gegevens over gebruik van i/o-opslag
+Met de volgende metrische gegevens kunt u knel punten in de combi natie van virtuele machines en schijven vaststellen. Deze metrische gegevens zijn alleen beschikbaar wanneer u een virtuele machine met Premium ingeschakeld gebruikt. Deze metrische gegevens zijn beschikbaar voor alle schijf typen, met uitzonde ring van Ultra. 
 
 Metrische gegevens die helpen bij het vaststellen van de oorzaak van schijf-i/o-limiet:
 
 - **Verbruikte percentage van de gegevens schijf (IOPS**): het percentage dat is berekend door de gegevens schijf IOPS is voltooid via de ingerichte gegevens schijf IOPS. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de IOPS-limiet van uw gegevens schijf.
-- **Percentage gebruikte band breedte**van de gegevens schijf: het percentage dat is berekend door de door Voer van de gegevens schijf is voltooid voor de door Voer van de ingerichte gegevens schijf. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de bandbreedte limiet van uw gegevens schijf.
+- **Percentage gebruikte band breedte** van de gegevens schijf: het percentage dat is berekend door de door Voer van de gegevens schijf is voltooid voor de door Voer van de ingerichte gegevens schijf. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de bandbreedte limiet van uw gegevens schijf.
 - **Verbruikte percentage van de besturingssysteem schijf**: het percentage dat is berekend door de schijf-IOPS van het besturings systeem dat is voltooid voor de ingerichte IOPS van de besturingssysteem schijf. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de IOPS-limiet van de besturingssysteem schijf.
 - **Percentage van verbruikte schijf bandbreedte van het besturings systeem**: het percentage dat is berekend door de door Voer van de besturingssysteem schijf is voltooid voor de door Voer van de ingerichte besturingssysteem schijf. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de bandbreedte limiet van uw besturings systeem.
 
 Metrische gegevens die helpen bij het vaststellen van de oorzaak van het opsporen van VM-IO:
 
-- **In cache opgeslagen IOPS percentage**van de VM: het percentage dat is berekend door het totale aantal IOPS dat is voltooid voor de maximale IOPS-limiet van de virtuele machine in de cache. Als dit bedrag ten 100% bedraagt, wordt er in de toepassing IO afgetopteerd van de IOPS-limiet van de cache van de virtuele machine.
+- **In cache opgeslagen IOPS percentage** van de VM: het percentage dat is berekend door het totale aantal IOPS dat is voltooid voor de maximale IOPS-limiet van de virtuele machine in de cache. Als dit bedrag ten 100% bedraagt, wordt er in de toepassing IO afgetopteerd van de IOPS-limiet van de cache van de virtuele machine.
 - **Percentage van verbruikte band breedte in de cache**: het percentage dat is berekend door de totale door Voer van de schijf is voltooid voor de maximale door Voer van de virtuele machine in de cache. Als dit bedrag 100% is, wordt er in de toepassing die wordt uitgevoerd, IO-limiet van de band breedte van de virtuele machine in de cache gebruikt.
 - **VM ongecached percentage verbruikte IOPS**: het percentage dat is berekend door het totale aantal IOPS op een virtuele machine is voltooid met de Maxi maal aantal IOPS-limieten voor virtuele machines die niet in de cache zijn geplaatst. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de IOPS-limiet van uw VM.
 - **Percentage van verbruikte band breedte voor VM niet in cache**: het percentage dat is berekend door de totale schijf doorvoer voor een virtuele machine, is voltooid met de Maxi maal ingerichte door Voer van de virtuele machine. Als dit bedrag ten 100% bedraagt, wordt de toepassing IO afgetopteerd van de bandbreedte limiet voor de niet-cache van uw VM.

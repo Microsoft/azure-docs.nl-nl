@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Aangepaste waarschuwingen maken'
-description: Aangepaste apparaatwaarschuwingen voor de Azure Defender for IoT-beveiligingsservice begrijpen, maken en toewijzen.
+title: Aangepaste waarschuwingen maken
+description: Aangepaste waarschuwingen voor Azure Defender voor IoT-beveiligings service begrijpen, maken en toewijzen.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: 48682e465374c1a0e1fb74fc6627016696ff6d2c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: e59bcca9561c33610170f4bc3674eef307cf0de9
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90945079"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809034"
 ---
-# <a name="quickstart-create-custom-alerts"></a>Quickstart: Aangepaste waarschuwingen maken
+# <a name="create-custom-alerts"></a>Aangepaste waarschuwingen maken
 
 Met aangepaste beveiligingsgroepen en waarschuwingen kunt u optimaal profiteren van de end-to-end beveiligingsinformatie en categorische apparaatkennis om te zorgen voor een betere beveiliging van uw IoT-oplossing.
 
@@ -65,17 +65,23 @@ Gebruik beveiligingsgroepen om uw apparaten in logische categorieën te groepere
 
 ## <a name="customize-an-alert"></a>Een waarschuwing aanpassen
 
-1. Open uw Azure IoT-hub en selecteer **Instellingen** in het menu **Beveiliging**. 
-1. Klik op **Aangepaste waarschuwingen**.
+1. Open uw Azure IoT-hub en selecteer **Instellingen** in het menu **Beveiliging**.
+
+1. Selecteer **aangepaste waarschuwingen**.
+
 1. Kies een beveiligingsgroep waarop u de aanpassing wilt toepassen.
-1. Klik op **Een aangepaste waarschuwing toevoegen**.
+
+1. Selecteer **een aangepaste waarschuwing toevoegen**.
+
 1. Selecteer een aangepaste waarschuwing in de vervolgkeuzelijst.
-1. Bewerk de gewenste eigenschappen, klik op **OK**.
-1. Zorg ervoor dat u op **Opslaan** klikt. Wanneer u de nieuwe waarschuwing niet opslaat, wordt de waarschuwing verwijderd wanneer u de volgende keer IoT Hub sluit.
+
+1. Bewerk de vereiste eigenschappen, selecteer **OK**.
+
+1. Zorg ervoor dat u **Opslaan** selecteert. Wanneer u de nieuwe waarschuwing niet opslaat, wordt de waarschuwing verwijderd wanneer u de volgende keer IoT Hub sluit.
 
 ## <a name="alerts-available-for-customization"></a>Waarschuwingen die beschikbaar zijn voor aanpassing
 
-Defender for IoT biedt een groot aantal waarschuwingen dat kan worden aangepast op basis van uw specifieke behoeften. Bekijk de [tabel met aanpasbare waarschuwingen](concept-customizable-security-alerts.md) voor de ernst van de waarschuwing, de gegevensbron, de beschrijving en onze voorgestelde herstelstappen als en wanneer elke waarschuwing wordt ontvangen.
+Defender voor IoT biedt een groot aantal waarschuwingen dat kan worden aangepast op basis van uw specifieke behoeften. Bekijk de [aanpas bare waarschuwings tabel](concept-customizable-security-alerts.md) voor de ernst van de waarschuwing, de gegevens bron, de beschrijving en de voorgestelde herstels tappen als en wanneer elke waarschuwing wordt ontvangen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

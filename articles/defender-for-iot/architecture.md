@@ -1,6 +1,6 @@
 ---
-title: Azure Defender voor IoT-architectuur
-description: Meer informatie over Azure Defender voor IoT-architectuur en informatie stroom.
+title: Architectuur van oplossing zonder agent
+description: Meer informatie over Azure Defender voor IoT-architectuur zonder agents en informatie stroom.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -11,18 +11,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 1/13/2021
+ms.date: 1/25/2021
 ms.author: shhazam
-ms.openlocfilehash: 66b960bf874cc46985230e488c749663eff0b835
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 1eb939a63edc4abc638dc128af0d9ebbd7241bef
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621094"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809300"
 ---
 # <a name="azure-defender-for-iot-architecture"></a>Azure Defender voor IoT-architectuur
 
-In dit artikel wordt de functionele systeem architectuur van de Defender voor IoT-oplossing beschreven. Azure Defender voor IoT biedt twee mogelijkheden voor het aanpassen van de behoeften van uw omgeving, de oplossing zonder agent voor organisaties en oplossingen op basis van agents voor apparaten.
+In dit artikel wordt de functionele systeem architectuur van de Defender voor IoT-oplossing zonder agent beschreven. Azure Defender voor IoT biedt twee mogelijkheden voor het aanpassen van de behoeften van uw omgeving, de oplossing zonder agent voor organisaties en oplossingen op basis van agents voor apparaten.
 
 ## <a name="agentless-solution-for-organizations"></a>Oplossing zonder agent voor organisaties
 ### <a name="defender-for-iot-components"></a>Defender voor IoT-onderdelen
@@ -47,15 +47,15 @@ Azure Defender voor IoT bevat de volgende onderdelen:
 
 ### <a name="azure-defender-for-iot-sensors"></a>Azure Defender voor IoT Sens oren
 
-Met Defender voor IoT Sens oren worden netwerk apparaten gedetecteerd en doorlopend gecontroleerd. Sens oren verzamelen ICS-netwerk verkeer met behulp van passieve bewaking (zonder agent) op IoT-en OT-apparaten. 
+De Defender voor IoT Sens oren detecteren en doorlopend bewaken netwerk apparaten. Sens oren verzamelen ICS-netwerk verkeer met behulp van passieve bewaking (zonder agent) op IoT-en OT-apparaten. 
  
 De technologie zonder agent is ontworpen voor IoT-en OT-netwerken en levert diep gaande inzicht in IoT en het risico binnen enkele minuten nadat verbinding is gemaakt met het netwerk. Het heeft geen invloed op de prestaties van het netwerk en de netwerk apparaten vanwege de methode van de niet-invasieve analyse van netwerk verkeer (NTA). 
  
-Door gebruik te maken van een gepatenteerde, IoT-en OTische analyse en laag-7 diepe pakket inspectie (DPI), kunt u met deze oplossing meer dan traditionele oplossingen op basis van hand tekeningen analyseren om direct geavanceerde IoT-en OT-bedreigingen (zoals malware zonder bestanden) te detecteren op basis van afwijkende of niet-geautoriseerde activiteiten. 
+Het Toep assen van gepatenteerde, IoT-en niet-bewuste gedrags analyse en Layer-7 diepe pakket inspectie (DPI), stelt u in staat om te analyseren naast traditionele oplossingen op basis van hand tekeningen om direct geavanceerde IoT-en OT bedreigingen te detecteren (zoals malware zonder bestanden) op basis van afwijkende of niet-geautoriseerde activiteiten. 
   
 Defender voor IoT Sens oren maakt verbinding met een SPANNe-poort of netwerk-Tik en begint direct met het uitvoeren van DPI op IoT en het netwerk verkeer. 
  
-Het verzamelen, verwerken, analyseren en Signa lering van gegevens vindt direct plaats op de sensor. Dit maakt het ideaal voor locaties met een lage band breedte of een connectiviteit met een hoge latentie, omdat alleen meta gegevens worden overgedragen naar de beheer console.
+Het verzamelen, verwerken, analyseren en Signa lering van gegevens vindt direct plaats op de sensor. Dit proces maakt het ideaal voor locaties met een lage band breedte of een connectiviteit met een hoge latentie, omdat alleen meta gegevens worden overgedragen naar de beheer console.
 
 De sensor bevat vijf analyse detectie-engines. De engines activeren waarschuwingen op basis van de analyse van zowel realtime als vooraf opgenomen verkeer. De volgende engines zijn beschikbaar: 
 
@@ -90,13 +90,13 @@ De on-premises beheer console maakt SOC-Opera tors (Security Operations Center) 
 
 Deze architectuur biedt een uitgebreide, uniforme weer gave van het netwerk op het niveau van SOC, geoptimaliseerde waarschuwingen en het beheer van operationele netwerk beveiliging, om ervoor te zorgen dat het besluit vorming en risico beheer probleemloos blijft.
 
-Naast de afstands bediening voor multitenancy, bewaking, gegevens analyse en gecentraliseerde sensors biedt de beheer console extra hulpprogram ma's voor systeem onderhoud (zoals waarschuwings uitsluiting) en volledig aangepaste rapportage functies voor elk van de externe apparaten. Deze schaal bare architectuur ondersteunt zowel lokaal beheer op site niveau, zone niveau als globaal beheer binnen het SOC.
+Naast de afstands bediening voor multitenancy, bewaking, gegevens analyse en gecentraliseerde sensors biedt de beheer console extra hulpprogram ma's voor systeem onderhoud (zoals waarschuwings uitsluiting) en volledig aangepaste rapportage functies voor elk van de externe apparaten. Deze architectuur ondersteunt zowel lokaal beheer op site niveau, zone niveau als globaal beheer binnen het SOC.
 
 De-beheer console kan worden geïmplementeerd voor een configuratie met een hoge Beschik baarheid, die een back-upconsole biedt waarmee periodiek back-ups worden ontvangen van alle configuratie bestanden die nodig zijn voor herstel. Als er een storing optreedt in de primaire console, worden de lokale site beheer apparaten automatisch gefailovert om te synchroniseren met de back-upconsole om zonder onderbreking de beschik baarheid te behouden.
 
 Nauw geïntegreerd met uw SOC-werk stromen en rapporten uitvoeren, maakt het eenvoudig om de prioriteit van oplossings activiteiten en de correlatie van bedreigingen op meerdere locaties te verbeteren.
 
-- Holistische-Verminder complexiteit met één uniform platform voor Apparaatbeheer, risico-en beveiligings problemen en het controleren van bedreigingen met incident reacties.
+- Holistische-Verminder complexiteit met één uniform platform voor Apparaatbeheer, Risico's en beveiligings problemen en bewaking van bedreigingen met incident reacties.
 
 - Aggregatie en correlatie: gegevens en waarschuwingen die zijn verzameld van alle sites weer geven, verzamelen en analyseren.
 
@@ -111,30 +111,10 @@ De Defender voor IoT-Portal in azure wordt gebruikt om u te helpen:
 - Oplossings apparaten kopen
 
 - Software installeren en bijwerken
+
 - Trein opstaande Sens oren
+
 - Update van Threat Intelligence-pakketten
-
-## <a name="agent-based-solution-for-device-builders"></a>Oplossing met agent voor apparaatbouwers
-
-### <a name="embedded-security-agent-built-in-mode"></a>Inge sloten beveiligings agent: ingebouwde modus
-
-In de **ingebouwde** modus is Defender voor IOT ingeschakeld wanneer u ervoor kiest om de optie **beveiliging** in uw IOT-hub in te scha kelen. Dankzij realtime bewaking, aanbevelingen en waarschuwingen biedt de ingebouwde modus een beschermte en ongeëvenaarde beveiliging voor apparaten in één stap. Voor de build-in modus is geen agent geïnstalleerd op apparaten en wordt gebruikgemaakt van geavanceerde analyses op geregistreerde activiteiten om uw veld apparaat en IoT-hub te analyseren en beveiligen.
-
-### <a name="embedded-security-agent-enhanced-mode"></a>Inge sloten beveiligings agent: uitgebreide modus
-
-Na het inschakelen van de optie **beveiliging** in uw IOT-hub in de **uitgebreide** modus en het installeren van Defender voor IOT-apparaten op uw apparaten, verzamelen en analyseren de agents onbewerkte beveiligings gebeurtenissen van uw apparaten. Onbewerkte beveiligings gebeurtenissen kunnen IP-verbindingen, het maken van processen, gebruikers aanmeldingen en andere informatie over beveiliging zijn. Defender voor IoT-apparaat-agents verwerken ook gebeurtenissen aggregatie om te voor komen dat een hoge netwerk doorvoer. De agents zijn zeer aanpasbaar, zodat u ze kunt gebruiken voor specifieke taken, zoals het verzenden van belang rijke informatie op de snelste SLA, of voor het samen voegen van uitgebreide beveiligings informatie en-context in grotere segmenten, waardoor er hogere service kosten worden bespaard.
-
-Apparaat-agents en andere toepassingen gebruiken de Azure-SDK voor het **verzenden van beveiligings berichten** om beveiligings gegevens te verzenden naar Azure IOT hub. IoT hub haalt deze informatie op en stuurt deze door naar de Defender voor IoT-service.
-
-Zodra de Defender voor IoT-service is ingeschakeld, worden door IoT hub naast de doorgestuurde gegevens ook alle interne gegevens verzonden voor analyse door Defender voor IoT. Deze gegevens omvatten onder andere de bewerkingen voor het bewerkings logboek van de Cloud, apparaat-id's en de configuratie van de hub. Al deze informatie helpt u bij het maken van de Defender voor IoT Analytics-pijp lijn.
-
-Defender voor IoT Analytics-pijp lijn ontvangt ook extra Threat Intelligence-streams van verschillende bronnen in micro soft-en micro soft-partners. De volledige analyse pijplijn van Defender voor IoT werkt met elke klant configuratie die is gemaakt voor de service (zoals aangepaste waarschuwingen en het gebruik van de SDK voor het verzenden van beveiligings berichten).
-
-Met behulp van de analytische pijp lijn combineert Defender voor IoT alle gegevens stromen om aanbevelingen en waarschuwingen te genereren die actie kunnen ondernemen. De pijp lijn bevat zowel aangepaste regels die zijn gemaakt door veiligheids onderzoekers als experts, en machine learning modellen zoekt naar afwijkingen vanuit het standaard gedrag van apparaten en risico analyse.
-
-Defender voor IoT-aanbevelingen en-waarschuwingen (analyse pijplijn uitvoer) worden geschreven naar de Log Analytics werk ruimte van elke klant. Met inbegrip van de onbewerkte gebeurtenissen in de werk ruimte en de waarschuwingen en aanbevelingen kunnen grondige onderzoeken en query's worden uitgevoerd met de exacte details van de gedetecteerde verdachte activiteiten.
-
-:::image type="content" source="media/architecture/micro-agent-architecture.png" alt-text="De architectuur van micro agent.":::
 
 ## <a name="see-also"></a>Zie ook
 

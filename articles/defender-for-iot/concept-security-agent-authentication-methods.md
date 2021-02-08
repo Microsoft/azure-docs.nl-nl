@@ -4,21 +4,21 @@ description: Meer informatie over de verschillende verificatie methoden die besc
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/09/2020
-ms.author: mlottner
-ms.openlocfilehash: 896baa70fb6e18165a025459a063e33d705261ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/24/2021
+ms.author: shhazam
+ms.openlocfilehash: aa5a8a842a750e44d4beeb915008f86c6b5bbb70
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936266"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809249"
 ---
 # <a name="security-agent-authentication-methods"></a>Verificatie methoden voor beveiligings agenten
 
@@ -32,7 +32,7 @@ Voor elk apparaat dat in de IoT Hub op Defender voor IoT is geïnstalleerd, is e
 
 ## <a name="authentication-methods"></a>Verificatiemethoden
 
-De twee methoden voor de AzureIoTSecurity-agent om verificatie uit te voeren:
+De twee methoden voor de Defender voor IoT AzureIoTSecurity-agent om verificatie uit te voeren:
 
 - **SecurityModule** -verificatie modus<br>
 De agent wordt geverifieerd met behulp van de identiteit van de beveiligings module, onafhankelijk van de apparaat-id.
@@ -55,7 +55,7 @@ Zie [para meters voor de beveiligings agent installeren](#security-agent-install
 Wanneer u [een beveiligings agent implementeert](how-to-deploy-agent.md), moeten de verificatie gegevens als argumenten worden gegeven.
 Deze argumenten worden beschreven in de volgende tabel.
 
-|Naam van Linux-para meter | Naam van Windows-para meter | Steno parameter |Beschrijving|Opties|
+|Naam van Linux-para meter | Naam van Windows-para meter | Steno parameter |Description|Opties|
 |---------------------|---------------|---------|---------------|---------------|
 |verificatie-identiteit|AuthenticationIdentity|aui|Verificatie-identiteit| **SecurityModule** of **apparaat**|
 |verificatie-methode|Authentic|aum|Verificatiemethode|**SymmetricKey** of **SelfSignedCertificate**|

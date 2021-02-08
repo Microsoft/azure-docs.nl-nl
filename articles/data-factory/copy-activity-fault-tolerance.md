@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: yexu
-ms.openlocfilehash: e64f4ab31aed5c4c3e70ef10faf2049027525014
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 0fb6beb776f5a553e85f690d49e3433f93b9ee16
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593639"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809538"
 ---
 #  <a name="fault-tolerance-of-copy-activity-in-azure-data-factory"></a>Fouttolerantie van kopieeractiviteit in Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -58,7 +58,8 @@ Wanneer u binaire bestanden tussen opslag archieven kopieert, kunt u fout tolera
     "skipErrorFile": { 
         "fileMissing": true, 
         "fileForbidden": true, 
-        "dataInconsistency": true 
+        "dataInconsistency": true,
+        "invalidFileName": true     
     }, 
     "validateDataConsistency": true, 
     "logSettings": {
@@ -83,6 +84,7 @@ skipErrorFile | Een groep eigenschappen om de typen fouten op te geven die u wil
 fileMissing | Een van de sleutel-waardeparen in skipErrorFile eigenschappen verzameling om te bepalen of u bestanden wilt overs laan die door andere toepassingen worden verwijderd wanneer ADF in de tussen tijd wordt gekopieerd. <br/> -True: u wilt de rest kopiëren door de bestanden die worden verwijderd door andere toepassingen over te slaan. <br/> -False: u wilt de Kopieer activiteit afbreken zodra er bestanden uit het bron archief worden verwijderd in het midden van het verplaatsen van gegevens. <br/>Houd er rekening mee dat deze eigenschap is ingesteld op True als standaard. | True (standaard) <br/>Niet waar | No
 fileForbidden | Een van de sleutel-waardeparen in de verzameling skipErrorFile om te bepalen of u de specifieke bestanden wilt overs Laan, wanneer de Acl's van deze bestanden of mappen een hoger machtigings niveau hebben dan de verbinding die in ADF is geconfigureerd. <br/> -True: u wilt de rest kopiëren door de bestanden over te slaan. <br/> -False: u wilt de Kopieer activiteit afbreken zodra u het probleem met de machtiging voor mappen of bestanden hebt opgehaald. | Waar <br/>False (standaard) | No
 dataInconsistency | Een van de sleutel-waardeparen in de skipErrorFile-eigenschappen verzameling om te bepalen of u de inconsistente gegevens tussen de bron-en doel opslag wilt overs Laan. <br/> -True: u wilt de rest kopiëren door inconsistente gegevens over te slaan. <br/> -False: u wilt de Kopieer activiteit afbreken zodra inconsistente gegevens zijn gevonden. <br/>Houd er rekening mee dat deze eigenschap alleen geldig is wanneer u validateDataConsistency instelt als waar. | Waar <br/>False (standaard) | No
+invalidFileName | Een van de sleutel-waardeparen in de skipErrorFile-eigenschappen verzameling om te bepalen of u de specifieke bestanden wilt overs Laan, wanneer de bestands namen ongeldig zijn voor het doel archief. <br/> -True: u wilt de rest kopiëren door de bestanden met ongeldige bestands namen over te slaan. <br/> -False: u wilt de Kopieer activiteit afbreken zodra alle bestanden Ongeldige bestands namen hebben. <br/>Houd er rekening mee dat deze eigenschap werkt bij het kopiëren van binaire bestanden uit een opslag archief naar het ADLS Gen2 of kopiëren van binaire bestanden van AWS S3 naar een opslag archief. | Waar <br/>False (standaard) | No
 logSettings  | Een groep eigenschappen die kan worden opgegeven wanneer u de overgeslagen object namen wilt vastleggen. | &nbsp; | No
 linkedServiceName | De gekoppelde service van [Azure Blob Storage](connector-azure-blob-storage.md#linked-service-properties) of [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#linked-service-properties) voor het opslaan van de sessie logboek bestanden. | De namen van de `AzureBlobStorage` gekoppelde service van een of het `AzureBlobFS` type, die verwijst naar het exemplaar dat u gebruikt voor het opslaan van het logboek bestand. | No
 leertraject | Het pad van de logboek bestanden. | Geef het pad op dat u gebruikt om de logboek bestanden op te slaan. Als u geen pad opgeeft, maakt de service een container voor u. | No
@@ -166,7 +168,7 @@ De Kopieer activiteit ondersteunt drie scenario's voor het detecteren, overs Laa
     Bijvoorbeeld: gegevens kopiëren van een SQL-Server naar een SQL database. Er wordt een primaire sleutel gedefinieerd in de Sink-SQL database, maar er is geen dergelijke primaire sleutel gedefinieerd in de SQL-bron server. De dubbele rijen die aanwezig zijn in de bron, kunnen niet naar de Sink worden gekopieerd. Met de Kopieer activiteit wordt alleen de eerste rij van de bron gegevens naar de Sink gekopieerd. De volgende bron rijen die de dubbele primaire-sleutel waarde bevatten, worden gedetecteerd als incompatibel en worden overgeslagen.
 
 >[!NOTE]
->- Als u gegevens wilt laden in azure Synapse Analytics (voorheen SQL Data Warehouse) met poly Base, configureert u de instellingen voor de systeem eigen fout tolerantie van poly Base door beleid voor afwijzen via '[polyBaseSettings](connector-azure-sql-data-warehouse.md#azure-sql-data-warehouse-as-sink)' op te geven in de Kopieer activiteit. U kunt nog steeds niet-compatibele poly base-rijen omleiden naar BLOB of ADLS, zoals hieronder wordt weer gegeven.
+>- Als u gegevens in azure Synapse Analytics wilt laden met poly Base, configureert u de systeem eigen fout tolerantie-instellingen van poly Base door beleid voor afwijzen via '[polyBaseSettings](connector-azure-sql-data-warehouse.md#azure-sql-data-warehouse-as-sink)' op te geven in de Kopieer activiteit. U kunt nog steeds niet-compatibele poly base-rijen omleiden naar BLOB of ADLS, zoals hieronder wordt weer gegeven.
 >- Deze functie is niet van toepassing wanneer Kopieer activiteit is geconfigureerd voor het aanroepen van [Amazon Redshift Unload](connector-amazon-redshift.md#use-unload-to-copy-data-from-amazon-redshift).
 >- Deze functie is niet van toepassing wanneer Kopieer activiteit is geconfigureerd voor het aanroepen [van een opgeslagen procedure vanuit een SQL-Sink](./connector-azure-sql-database.md#invoke-a-stored-procedure-from-a-sql-sink).
 

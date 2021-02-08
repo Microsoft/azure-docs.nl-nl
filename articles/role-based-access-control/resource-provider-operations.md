@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 768a327421a941a39b6f66be411712a565097f66
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 72a8f2eb93a9c12510b093e29c7b8fc6867cb2eb
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557322"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809375"
 ---
 # <a name="azure-resource-provider-operations"></a>Azure-resource provider bewerkingen
 
@@ -160,7 +160,9 @@ Klik op de naam van de resource provider in de volgende tabel om de lijst met be
 | [Microsoft.Intune](#microsoftintune) |
 | **Overige** |
 | [Microsoft.BingMaps](#microsoftbingmaps) |
+| [Micro soft. DesktopVirtualization](#microsoftdesktopvirtualization) |
 | [Micro soft. DigitalTwins](#microsoftdigitaltwins) |
+| [Micro soft. ServicesHub](#microsoftserviceshub) |
 
 
 ## <a name="general"></a>Algemeen
@@ -10268,6 +10270,51 @@ Azure-service: [Bing Maps](/BingMaps/)
 > | Micro soft. BingMaps/mapApis/listUsageMetrics/Action | De metrische gegevens voor micro soft. BingMaps/mapApis weer geven |
 > | Micro soft. BingMaps/Operations/lezen | De bewerkingen voor micro soft. BingMaps weer geven |
 
+### <a name="microsoftdesktopvirtualization"></a>Micro soft. DesktopVirtualization
+
+Azure-service: [virtueel bureau blad van Windows](../virtual-desktop/index.yml)
+
+> [!div class="mx-tableFixed"]
+> | Bewerking | Beschrijving |
+> | --- | --- |
+> | Micro soft. DesktopVirtualization/REGI ster/actie | Abonnement registreren |
+> | Micro soft. DesktopVirtualization/applicationgroups/lezen | Applicationgroups lezen |
+> | Micro soft. DesktopVirtualization/applicationgroups/schrijven | Applicationgroups schrijven |
+> | Micro soft. DesktopVirtualization/applicationgroups/verwijderen | Applicationgroups verwijderen |
+> | Micro soft. DesktopVirtualization/applicationgroups/Applications/lezen | Applicationgroups/toepassingen lezen |
+> | Micro soft. DesktopVirtualization/applicationgroups/Applications/write | Applicationgroups/toepassingen schrijven |
+> | Micro soft. DesktopVirtualization/applicationgroups/toepassingen/verwijderen | Applicationgroups/toepassingen verwijderen |
+> | Micro soft. DesktopVirtualization/applicationgroups/Desk tops/lezen | Applicationgroups/Bureau bladen lezen |
+> | Micro soft. DesktopVirtualization/applicationgroups/Desk tops/schrijven | Applicationgroups/Bureau bladen schrijven |
+> | Micro soft. DesktopVirtualization/applicationgroups/Desk tops/verwijderen | Applicationgroups/Bureau bladen verwijderen |
+> | Micro soft. DesktopVirtualization/applicationgroups/externaluserassignments/lezen |  |
+> | Micro soft. DesktopVirtualization/applicationgroups/providers/micro soft. Insights/diagnosticSettings/lezen | Hiermee wordt de diagnostische instelling opgehaald |
+> | Micro soft. DesktopVirtualization/applicationgroups/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling gemaakt of bijgewerkt |
+> | Micro soft. DesktopVirtualization/applicationgroups/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald |
+> | Micro soft. DesktopVirtualization/applicationgroups/startmenuitems/lezen | Items in het menu Start lezen |
+> | Micro soft. DesktopVirtualization/hostpools/lezen | Hostpools lezen |
+> | Micro soft. DesktopVirtualization/hostpools/schrijven | Hostpools schrijven |
+> | Micro soft. DesktopVirtualization/hostpools/verwijderen | Hostpools verwijderen |
+> | Micro soft. DesktopVirtualization/hostpools/providers/micro soft. Insights/diagnosticSettings/lezen | Hiermee wordt de diagnostische instelling opgehaald |
+> | Micro soft. DesktopVirtualization/hostpools/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling gemaakt of bijgewerkt |
+> | Micro soft. DesktopVirtualization/hostpools/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/lezen | Hostpools/sessionhosts lezen |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/write | Hostpools/sessionhosts schrijven |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/verwijderen | Hostpools/sessionhosts verwijderen |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/usersessions/lezen | Hostpools/sessionhosts/usersessions lezen |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/usersessions/schrijven | Hostpools/sessionhosts/usersessions schrijven |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/usersessions/verwijderen | Hostpools/sessionhosts/usersessions verwijderen |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/usersessions/Disconnect/actie | Verbreekt de verbinding met de sessie host van de gebruikers sessie |
+> | Micro soft. DesktopVirtualization/hostpools/sessionhosts/usersessions/sendMessage/actie | Bericht verzenden naar gebruikers sessie |
+> | Micro soft. DesktopVirtualization/werk ruimten/lezen | Werk ruimten lezen |
+> | Micro soft. DesktopVirtualization/werk ruimten/schrijven | Werk ruimten schrijven |
+> | Micro soft. DesktopVirtualization/werk ruimten/verwijderen | Werk ruimten verwijderen |
+> | Micro soft. DesktopVirtualization/werk ruimten/providers/micro soft. Insights/diagnosticSettings/lezen | Hiermee wordt de diagnostische instelling opgehaald |
+> | Micro soft. DesktopVirtualization/werk ruimten/providers/micro soft. Insights/diagnosticSettings/schrijven | Hiermee wordt de diagnostische instelling gemaakt of bijgewerkt |
+> | Micro soft. DesktopVirtualization/werk ruimten/providers/micro soft. Insights/logDefinitions/lezen | Hiermee worden de beschik bare logboeken opgehaald |
+> | **DataAction** | **Beschrijving** |
+> | Micro soft. DesktopVirtualization/applicationgroups/useapplications/Action | Variabele applicationgroup gebruiken |
+
 ### <a name="microsoftdigitaltwins"></a>Micro soft. DigitalTwins
 
 Azure-service: [Azure Digital apparaatdubbels](../digital-twins/index.yml)
@@ -10316,6 +10363,20 @@ Azure-service: [Azure Digital apparaatdubbels](../digital-twins/index.yml)
 > | Micro soft. DigitalTwins/modellen/lezen | Een model lezen |
 > | Micro soft. DigitalTwins/modellen/schrijven | Een model maken of bijwerken |
 > | Micro soft. DigitalTwins/modellen/verwijderen | Elk model verwijderen |
+
+### <a name="microsoftserviceshub"></a>Micro soft. ServicesHub
+
+Azure-service: [Services hub](/services-hub/)
+
+> [!div class="mx-tableFixed"]
+> | Bewerking | Beschrijving |
+> | --- | --- |
+> | Micro soft. ServicesHub/connectors/schrijven | Een service hub-connector maken of bijwerken |
+> | Micro soft. ServicesHub/connectors/lezen | Service hub-connectors weer geven of vermelden |
+> | Micro soft. ServicesHub/connectors/verwijderen | Services hub-connectors verwijderen |
+> | Micro soft. ServicesHub/connectors/checkAssessmentEntitlement/Action | Geeft een lijst van de beoordelings rechten voor een bepaalde services hub-werk ruimte |
+> | Micro soft. ServicesHub/supportOfferingEntitlement/lezen | De rechten van de ondersteunings aanbieding voor een bepaalde services hub-werk ruimte weer geven |
+> | Micro soft. ServicesHub/werk ruimten/lezen | De services hub-werk ruimten voor een bepaalde gebruiker weer geven |
 
 ## <a name="next-steps"></a>Volgende stappen
 

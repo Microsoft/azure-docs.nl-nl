@@ -1,24 +1,24 @@
 ---
-title: 'Quickstart: De oplossing configureren'
+title: Azure-resources toevoegen aan uw IoT-oplossing
 description: In deze quickstart leert u hoe u uw end-to-end IoT-oplossing configureert met behulp van Azure Defender for IoT.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: Shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/06/2020
-ms.author: mlottner
-ms.openlocfilehash: f949d52d4ba461da94153cbbd17ca5fb3eb214d7
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
-ms.translationtype: HT
+ms.date: 01/25/2021
+ms.author: shhazam
+ms.openlocfilehash: 8912e8d66ae0cc1b5dba80ee9aabb0fbd288e3c6
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092083"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809017"
 ---
 # <a name="quickstart-configure-your-azure-defender-for-iot-solution"></a>Quickstart: Configureer uw Azure Defender for IoT
 
@@ -28,7 +28,7 @@ In dit artikel wordt uitgelegd hoe u een eerste configuratie van uw IoT-beveilig
 
 Defender for IoT biedt uitgebreide end-to-end beveiliging voor Azure-gebaseerde IoT-oplossingen.
 
-Met Defender for IoT kunt u uw hele IoT-oplossing bewaken in één dashboard, waar al uw IoT-apparaten, IoT-platforms en back-endresources in Azure worden getoond.
+Met Defender voor IoT kunt u uw volledige IoT-oplossing in één dash board bewaken, halen al uw IoT-apparaten, IoT-platformen en back-end-resources in Azure.
 
 Zodra Defender for IoT is ingeschakeld op uw IoT-hub, identificeert het automatisch andere Azure-services die ook verbonden zijn met uw IoT-hub en gerelateerd zijn aan uw IoT-oplossing.
 
@@ -36,16 +36,19 @@ Naast automatische relatiedetectie kunt u ook zelf kiezen welke andere Azure-res
 
 Uw selecties stellen u in staat hele abonnementen, resourcegroepen of afzonderlijke resources toe te voegen.
 
-Nadat u alle resourcerelaties hebt gedefinieerd, maakt Defender for IoT gebruik van Defender om u beveiligingsaanbevelingen en -waarschuwingen voor deze resources te geven.
+Nadat u alle resource relaties hebt gedefinieerd, gebruikt Defender voor IoT Defender om u te voorzien van beveiligings aanbevelingen en waarschuwingen voor deze resources.
 
 ## <a name="add-azure-resources-to-your-iot-solution"></a>Azure-resources toevoegen aan uw IoT-oplossing
 
-Doe het volgende om nieuwe resources toe te voegen aan uw IoT-oplossing:
+Nieuwe resource toevoegen aan uw IoT-oplossing:
 
 1. Open uw **IoT-hub** in de Azure-portal.
-1. Onder **Beveiliging** selecteert u **Overzicht** gevolgd door **Instellingen** > Selecteer vervolgens **Bewaakte resources** .
+
+1. Onder **Beveiliging** selecteert u **Overzicht** gevolgd door **Instellingen**> Selecteer vervolgens **Bewaakte resources**.
+
 1. Selecteer **Bewerken** en selecteer de bewaakte resources die bij uw IoT-oplossing horen.
-1. Klik op **Add** .
+
+1. Selecteer **Toevoegen**.
 
 Gefeliciteerd. U hebt een nieuwe resourcegroep toegevoegd aan uw IoT-oplossing.
 

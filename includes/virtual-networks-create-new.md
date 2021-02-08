@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 03/01/2020
 ms.author: allensu
 ms.custom: include file
-ms.openlocfilehash: 81db46b52c9b4fe800f2fbfeadad966995d66e12
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: e1d4d29f8edca87ec1cca0ffced7b3e1bca90717
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012068"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99808530"
 ---
-## <a name="create-the-virtual-network"></a>Het virtuele netwerk maken
+## <a name="create-the-virtual-network-and-subnet"></a>Het virtuele netwerk en subnet maken
 
 In deze sectie gaat u een virtueel netwerk en een subnet maken.
 

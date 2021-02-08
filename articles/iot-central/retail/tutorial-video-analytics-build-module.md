@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: c2f6f386f4a8ea062980c0efc97d0cfb4f37f4f2
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
-ms.translationtype: HT
+ms.openlocfilehash: e5236bb7034ae4d5f86ab2f8f965bdbfbc3d6ccd
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124891"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832042"
 ---
 # <a name="tutorial-modify-and-build-the-live-video-analytics-gateway-modules"></a>Zelfstudie: De gatewaymodules voor livevideoanalyse wijzigen en bouwen
 
@@ -73,6 +73,13 @@ Open de lokale *live-video-analytics*-opslagplaatsmap met VS Code.
 1. Gebruik de VS Code-terminal om de opdracht **npm version patch** uit te voeren. Met dit buildscript worden de installatiekopieën geïmplementeerd in het containerregister. In de uitvoer van het VS code-terminalvenster wordt weergegeven of de build is geslaagd.
 
 1. De versie van de installatiekopie **LvaEdgeGatewayModule** wordt verhoogd telkens wanneer de build is voltooid. U moet deze versie gebruiken in het manifestbestand voor de implementatie.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Als u klaar bent met de toepassing, kunt u alle resources die u hebt gemaakt, als volgt verwijderen:
+
+1. Ga in de IoT Central-toepassing naar de pagina **Uw toepassing** in de sectie **Beheer**. Selecteer vervolgens **Verwijderen**.
+1. Verwijder in Azure Portal de resourcegroep **lva-rg**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

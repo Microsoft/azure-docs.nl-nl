@@ -7,16 +7,18 @@ ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 10ec761313ce39beb4b24b838d156478704f943e
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: b2b17cffb8abd748315c437f46000995c4cb598a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820027"
+ms.locfileid: "99831889"
 ---
 # <a name="quickstart---set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Quick Start: Stel uw omgeving in voor de Snelstartgids en zelf studies voor IoT Plug en Play
 
 Voordat u een van de IoT Plug en Play-Quick starts en zelf studies kunt volt ooien, moet u een IoT-hub en de Device Provisioning Service (DPS) configureren in uw Azure-abonnement. U hebt ook lokale kopieën nodig van de model bestanden die worden gebruikt door de voorbeeld toepassingen en het hulp programma Azure IoT Explorer.
+
+## <a name="prerequisites"></a>Vereisten
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
@@ -130,7 +132,7 @@ Configureer het hulp programma voor het gebruik van de model bestanden die u eer
 
 Zie [Azure IoT Explorer installeren en gebruiken](howto-use-iot-explorer.md) voor meer informatie.
 
-## <a name="remove-the-resources"></a>De resources verwijderen
+## <a name="clean-up-resources"></a>Resources opschonen
 
 U kunt de IoT hub en het DPS-exemplaar gebruiken voor alle IoT Plug en Play Quick starts en zelf studies, zodat u de stappen in dit artikel maar één keer hoeft uit te voeren. Wanneer u klaar bent, kunt u deze verwijderen uit uw abonnement met de volgende opdracht:
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 6851253e2737d56ab2c3f812ebb0b38133163460
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
-ms.translationtype: HT
+ms.openlocfilehash: 1b3df832dc857602959d0d47afcdf0745cd0bca0
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122458"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831957"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-device-application-running-on-linux-or-windows-to-iot-hub"></a>Quickstart: Een voorbeeld van een IoT Plug and Play-apparaattoepassing die in Linux of Windows wordt uitgevoerd, verbinden met IoT Hub
 
@@ -46,6 +46,10 @@ ms.locfileid: "96122458"
 [!INCLUDE [iot-pnp-connect-device-python](../../includes/iot-pnp-connect-device-python.md)]
 
 :::zone-end
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Als u klaar bent met de Quick starts en zelf studies, raadpleegt u [resources opschonen](set-up-environment.md#clean-up-resources).
 
 ## <a name="next-steps"></a>Volgende stappen
 

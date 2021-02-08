@@ -1,20 +1,20 @@
 ---
-title: De IoT-bronnen instellen die u nodig hebt voor IoT Plug en Play | Microsoft Docs
-description: Maak een IoT Hub-en Device Provisioning service-exemplaar voor gebruik met de Snelstartgids en zelf studies van IoT Plug en Play.
+title: 'Quick Start: Stel de IoT-resources in die u nodig hebt voor IoT Plug en Play | Microsoft Docs'
+description: 'Quick Start: een IoT Hub-en Device Provisioning service-exemplaar maken voor gebruik met de Snelstartgids en zelf studies van IoT Plug en Play.'
 author: dominicbetts
 ms.author: dobett
 ms.date: 08/11/2020
-ms.topic: how-to
+ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 6e6c090c02798103a30cc68f2ca28e8c4f7f2f17
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 10ec761313ce39beb4b24b838d156478704f943e
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96004259"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820027"
 ---
-# <a name="set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Uw omgeving instellen voor de Snelstartgids en zelf studies voor IoT Plug en Play
+# <a name="quickstart---set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Quick Start: Stel uw omgeving in voor de Snelstartgids en zelf studies voor IoT Plug en Play
 
 Voordat u een van de IoT Plug en Play-Quick starts en zelf studies kunt volt ooien, moet u een IoT-hub en de Device Provisioning Service (DPS) configureren in uw Azure-abonnement. U hebt ook lokale kopieën nodig van de model bestanden die worden gebruikt door de voorbeeld toepassingen en het hulp programma Azure IoT Explorer.
 

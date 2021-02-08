@@ -5,6 +5,7 @@
     - name: Oplossingen voor de overheid bouwen met Azure IoT Central
       href: overview-iot-central-government.md
 - name: Zelfstudies
+  expanded: true
   items:
     - name: Een verbonden app voor afvalbeheer maken
       href: tutorial-connected-waste-management.md

@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: fd154ec40ed4d1650e44a67fd5d362a2bc0c519d
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: f4ce830c889feaeda05745eeb02b72f55ad9314a
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813935"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99819840"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Snelstartgids: Azure DDoS Protection standaard maken en configureren
 
 Ga aan de slag met Azure DDoS Protection Standard met behulp van de Azure Portal. 
 
-In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt één DDoS-beveiligings plan configureren voor uw organisatie en virtuele netwerken vanuit meerdere abonnementen koppelen aan hetzelfde abonnement. 
+In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt voor uw organisatie één DDoS-beschermingsplan configureren en virtuele netwerken vanuit meerdere abonnementen aan hetzelfde plan koppelen. 
 
 In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een virtueel netwerk. 
 
@@ -77,7 +77,7 @@ U kunt een virtueel netwerk niet verplaatsen naar een andere resource groep of e
 
 ### <a name="enable-ddos-protection-for-all-virtual-networks"></a>DDoS-beveiliging inschakelen voor alle virtuele netwerken
 
-Met dit [beleid](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Policy%20-%20Virtual%20Networks%20should%20be%20associated%20with%20an%20Azure%20DDoS%20Protection%20Standard%20plan) worden alle virtuele netwerken gedetecteerd in een gedefinieerd bereik waarvoor geen DDoS Protection standaard is ingeschakeld. vervolgens kunt u desgewenst een herstel taak maken waarmee de koppeling wordt gemaakt om het VNet te beveiligen. Zie voor gedetailleerde stapsgewijze instructies voor het implementeren van dit beleid https://aka.ms/ddosvnetpolicy-techcommunity .
+Met dit [beleid](https://aka.ms/ddosvnetpolicy) worden alle virtuele netwerken gedetecteerd in een gedefinieerd bereik waarvoor geen DDoS Protection standaard is ingeschakeld. vervolgens kunt u desgewenst een herstel taak maken waarmee de koppeling wordt gemaakt om het VNet te beveiligen. Zie voor gedetailleerde stapsgewijze instructies voor het implementeren van dit beleid https://aka.ms/ddosvnetpolicy-techcommunity .
 
 ## <a name="validate-and-test"></a>Valideren en testen
 
@@ -113,7 +113,7 @@ Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele ne
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
+Ga door naar de zelfstudies voor meer informatie over het weergeven en configureren van telemetrie voor uw DDoS-beschermingsplan.
 
 > [!div class="nextstepaction"]
 > [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

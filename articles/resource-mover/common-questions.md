@@ -5,25 +5,18 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/04/2021
 ms.author: raynew
-ms.openlocfilehash: ab4b8f5a691bc8e4091e9f3f01b709391deeddb0
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: c586832386f3bf6419d8af94ad23662c6801b1ae
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550705"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820871"
 ---
 # <a name="common-questions"></a>Veelgestelde vragen
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over [Azure resource-Overdrijfing](overview.md).
-
-## <a name="general"></a>Algemeen
-
-### <a name="is-resource-mover-generally-available"></a>Is resource-overdrijfing algemeen beschikbaar?
-
-Resource-overdrijfing is momenteel beschikbaar als open bare preview. Werk belastingen voor productie worden ondersteund.
-
 
 
 ## <a name="moving-across-regions"></a>Verplaatsen tussen regio's
@@ -45,6 +38,9 @@ Met Resource Mover kunt u momenteel de volgende resources tussen regio's verplaa
 - Interne en openbare load balancers 
 - Azure SQL-databases en elastische pools
 
+### <a name="can-i-move-disks-across-regions"></a>Kan ik schijven verplaatsen tussen regio's?
+
+U kunt geen schijven als bronnen selecteren voor de verplaatsing tussen regio's. Schijven worden echter verplaatst als onderdeel van het verplaatsen van een virtuele machine.
 
 ### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Kan ik resources verplaatsen tussen abonnementen wanneer ik deze Verplaats tussen regio's?
 
@@ -97,6 +93,12 @@ Het abonnement is verplaatst naar een andere Tenant. | Schakel de beheerde ident
 ### <a name="how-can-i-do-multiple-moves-together"></a>Hoe kan ik meerdere verplaatsen tegelijk uitvoeren?
 
 Wijzig zo nodig de bron-en doel combinaties met de optie wijzigen in de portal.
+
+### <a name="what-happens-when-i-remove-a-resource-from-a-list-of-move-resources"></a>Wat gebeurt er wanneer ik een resource Verwijder uit een lijst met resources verplaatsen?
+
+U kunt resources verwijderen die u hebt toegevoegd aan de lijst verplaatsen. Gedrag wanneer u een resource uit de lijst verwijdert, is afhankelijk van de status van de resource. [Meer informatie](remove-move-resources.md#vm-resource-state-after-removing).
+
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

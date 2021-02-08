@@ -10,15 +10,15 @@ ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
 zone_pivot_groups: acs-plat-azp-net
-ms.openlocfilehash: a93ac3b5d988be33c0f27726a75b1006f990d1da
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: d861f6bfbe38ad73715ef521a36cc097b8538c9b
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886110"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99819998"
 ---
 # <a name="quickstart-create-and-manage-communication-services-resources"></a>Quickstart: Communication Services-resources maken en beheren
-
+ 
 [!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 Ga aan de slag met Azure Communication Services door uw eerste Communication Services-resource te provisioneren. Communication Services-resources kunnen worden ingericht via de Azure Portal of met de .NET beheer-clientbibliotheek. Met de beheer-clientbibliotheek kunt u uw resource en interfaces maken, configureren, bijwerken en verwijderen met [Azure Resource Manager](../../azure-resource-manager/management/overview.md), de implementatie- en beheerservice van Azure. Alle beschikbare functies in de clientbibliotheken zijn beschikbaar in de Azure Portal. 
@@ -28,6 +28,10 @@ Ga aan de slag met Azure Communication Services door uw eerste Communication Ser
 
 ::: zone pivot="platform-azp"
 [!INCLUDE [Azure portal](./includes/create-resource-azp.md)]
+::: zone-end
+
+::: zone pivot="platform-azcli"
+[!INCLUDE [Azure CLI](./includes/create-resource-azcli.md)]
 ::: zone-end
 
 ::: zone pivot="platform-net"
@@ -41,6 +45,14 @@ Met verbindingsreeksen kunnen de Communication Services-clientbibliotheken verbi
 Nadat u naar uw Communication Services-resource hebt genavigeerd, selecteert u **Sleutels** in het navigatiemenu en kopieert u de **Verbindingsreeks**- of **Eindpunt**-waarden voor gebruik door de Communication Services-clientbibliotheken. Houd er rekening mee dat u toegang hebt tot de primaire en secundaire sleutels. Dit kan handig zijn in scenario's waarin u tijdelijke toegang tot uw Communication Services-resources wilt verlenen aan een derde partij of staging-omgeving.
 
 :::image type="content" source="./media/key.png" alt-text="Schermafbeelding van de sleutelpagina van de Communication Services.":::
+
+U hebt ook toegang tot belang rijke informatie met behulp van Azure CLI:
+
+```azurecli
+az communication list --resource-group "<resourceGroup>"    
+
+az communication list-key --name "<communicationName>" --resource-group "<resourceGroup>"
+```
 
 ## <a name="store-your-connection-string"></a>Uw verbindingsreeks bijwerken
 

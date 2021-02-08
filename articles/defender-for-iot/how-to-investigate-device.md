@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: cd7802fa4a88c3b05140d30ab4d8b2bbd4adc8f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7b51138abe6d8e97f55ceae11d4cf13b9ebc136
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936461"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820599"
 ---
 # <a name="investigate-a-suspicious-iot-device"></a>Een verdacht IoT-apparaat onderzoeken
 
@@ -37,7 +37,7 @@ Standaard worden met Defender voor IoT uw beveiligings waarschuwingen en aanbeve
 De Log Analytics-werk ruimte voor gegevens opslag zoeken:
 
 1. Open uw IoT-hub,
-1. Selecteer onder **beveiliging**de optie **instellingen**en selecteer vervolgens **gegevens verzameling**.
+1. Selecteer onder **beveiliging** de optie **instellingen** en selecteer vervolgens **gegevens verzameling**.
 1. Wijzig de configuratie gegevens van uw Log Analytics werk ruimte.
 1. Klik op **Opslaan**.
 

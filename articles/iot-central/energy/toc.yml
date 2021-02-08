@@ -5,6 +5,7 @@
     - name: Oplossingen voor de energiesector bouwen met Azure IoT Central
       href: overview-iot-central-energy.md
 - name: Zelfstudies
+  expanded: true
   items:
     - name: Een app maken om slimme meters te bewaken
       href: tutorial-smart-meter-app.md

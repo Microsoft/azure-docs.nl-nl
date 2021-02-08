@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/05/2020
-ms.openlocfilehash: feca2e83646264b28e42125b3fdebf41266c06bd
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 489c6be7bf977d01207fee4d1bd1fda13dc12025
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422719"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820514"
 ---
 # <a name="api-versions-in-azure-cognitive-search"></a>API-versies in azure Cognitive Search
 
@@ -87,7 +87,7 @@ De volgende tabel bevat koppelingen naar recentere SDK-versies.
 
 | SDK-versie | Status | Beschrijving |
 |-------------|--------|------------------------------|
-| [Azure.Search.Documents 11](/dotnet/api/overview/azure/search.documents-readme) | Stabiel | Nieuwe client bibliotheek van de Azure .NET SDK, uitgebracht op 2020 juli. Streeft naar de Search REST API-Version = 2020-06-30 REST API, maar nog niet ondersteund, geo-filters. |
+| [Azure.Search.Documents 11](/dotnet/api/overview/azure/search.documents-readme) | Stabiel | Nieuwe client bibliotheek van de Azure .NET SDK, uitgebracht op 2020 juli. Streeft naar de Search REST API-Version = 2020-06-30 REST API, maar biedt nog geen systeem eigen ondersteuning voor geo-filters. [Micro soft. ruimtelijk pakket wordt](https://www.nuget.org/packages/Microsoft.Spatial/) aanbevolen voor geografische bewerkingen. Voor beelden zijn beschikbaar voor [System.Text.Jsop](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/core/Microsoft.Azure.Core.Spatial/README.md) en [Newtonsoft.Jsop](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/core/Microsoft.Azure.Core.Spatial.NewtonsoftJson/README.md). |
 | [Micro soft. Azure. Search 10](https://www.nuget.org/packages/Microsoft.Azure.Search/) | Stabiel | Uitgebracht op 2019 mei. Streeft naar de Search REST API-Version = 2019-05-06.|
 | [Micro soft. Azure. Management. Search 4.0.0](/dotnet/api/overview/azure/search/management) | Stabiel | Streeft naar de beheer REST API-Version = 2020-08-01.  |
 | Micro soft. Azure. Management. Search 3.0.0 | Stabiel | Streeft naar de beheer REST API-Version = 2015-08-19.  |

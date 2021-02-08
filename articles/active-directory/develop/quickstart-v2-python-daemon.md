@@ -12,19 +12,19 @@ ms.workload: identity
 ms.date: 10/22/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: b6087140380fab00e2f24ea7f3b94334c4b79a71
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 734fad7d3f4fb7a2a816d9ad10fb6b15e2faf9e2
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583159"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820399"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-python-console-app-using-apps-identity"></a>Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Python-console-app met behulp van de identiteit van de app
 
 In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe u met een Python-toepassing een toegangstoken kunt krijgen, met behulp van de app-id, om de Microsoft Graph API aan te roepen en een [lijst met gebruikers](/graph/api/user-list) weer te geven in de map. Het codevoorbeeld laat zien hoe een taak of Windows-service zonder toezicht kan worden uitgevoerd met een toepassings-id, in plaats van een gebruikers-id. 
 
 > [!div renderon="docs"]
-> ![Toont hoe de voorbeeld-app werkt die is gegenereerd door deze snelstart](media/quickstart-v2-netcore-daemon/netcore-daemon-intro.svg)
+> ![Toont hoe de voorbeeld-app werkt die is gegenereerd door deze snelstart](media/quickstart-v2-python-daemon/python-console-daemon.svg)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,7 +42,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar de quickstart <a href="https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/PythonDaemonQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Ga naar de quickstart-ervaring <a href="https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/PythonDaemonQuickstartPage/sourceType/docs" target="_blank">Azure-portal - App-registraties</a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >
@@ -52,7 +52,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
 >
-> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 > 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
 > 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
@@ -65,7 +65,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 > 1. Selecteer onder het knooppunt **Gebruiker** de optie **User.Read.All**. Selecteer vervolgens **Machtigingen toevoegen**.
 
 > [!div class="sxs-lookup" renderon="portal"]
-> ### <a name="download-and-configure-your-quickstart-app"></a>Uw snelstart-app downloaden en configureren
+> ### <a name="download-and-configure-the-quickstart-app"></a>De Quick Start-app downloaden en configureren
 >
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
 > Voor het code voorbeeld in deze Snelstartgids werkt u een client geheim en voegt u de gebruiker van de Graph API **. alle** machtigingen voor alle toepassingen toe.
@@ -75,7 +75,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Al geconfigureerd](media/quickstart-v2-netcore-daemon/green-check.png) Uw toepassing is al geconfigureerd met deze kenmerken.
 
-#### <a name="step-2-download-your-python-project"></a>Stap 2: Uw Python-project downloaden
+#### <a name="step-2-download-the-python-project"></a>Stap 2: het python-project downloaden
 
 > [!div renderon="docs"]
 > [Het Python-deamonproject downloaden](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
@@ -89,10 +89,10 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 
 
 > [!div renderon="docs"]
-> #### <a name="step-3-configure-your-python-project"></a>Stap 3: Uw Python-project configureren
+> #### <a name="step-3-configure-the-python-project"></a>Stap 3: het python-project configureren
 >
 > 1. Pak het zip-bestand uit in een lokale map dicht bij de hoofdmap van de schijf, bijvoorbeeld **C:\Azure-Samples**.
-> 1. Navigeer naar de submap **1-Call-MsGraph-WithSecret"** .
+> 1. Ga naar de submap **1-call-MSGraph-WithSecret**.
 > 1. Bewerk **parameters.json** en vervang de waarden van de velden `authority`, `client_id` en `secret` door het volgende fragment:
 >
 >    ```json
@@ -119,10 +119,10 @@ Als u op dit moment probeert de toepassing uit te voeren, krijgt u de foutmeldin
 ##### <a name="global-tenant-administrator"></a>Globale tenantbeheerder
 
 > [!div renderon="docs"]
-> Als u een globale tenantbeheerder bent, gaat u naar de pagina **API-machtigingen** in de registratie van toepassingen (preview) in de Azure-portal en selecteer **Beheerder toestemming verlenen voor {tenantnaam}** (waarbij {tenantnaam} de naam van uw map is).
+> Als u een globale Tenant beheerder bent, gaat u naar de pagina met **API-machtigingen** in **App-registraties** in de Azure Portal en selecteert u **toestemming van de beheerder toekennen voor {Tenant naam}** (waarbij {Tenant naam} de naam van uw directory is).
 
 > [!div renderon="portal" class="sxs-lookup"]
-> Als u een globale beheerder bent, gaat u naar de pagina **API-machtigingen** en selecteert u **Beheerder toestemming verlenen voor Enter_the_Tenant_Name_Here**
+> Als u een globale beheerder bent, gaat u naar de pagina **API-machtigingen** en selecteert u **beheerder toestemming geven voor Enter_the_Tenant_Name_Here**.
 > > [!div id="apipermissionspage"]
 > > [Ga naar de pagina API-machtigingen]()
 
@@ -145,7 +145,7 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 > [!div renderon="docs"]
 > #### <a name="step-5-run-the-application"></a>Stap 5: De toepassing uitvoeren
 
-U moet de afhankelijkheden van dit voorbeeld eenmaal installeren
+U moet de afhankelijkheden van dit voor beeld één keer installeren.
 
 ```console
 pip install -r requirements.txt
@@ -160,7 +160,7 @@ python confidential_client_secret_sample.py parameters.json
 U moet op de console-uitvoer een JSON-fragment zien met een lijst van gebruikers in uw Azure AD-map.
 
 > [!IMPORTANT]
-> Deze quickstarttoepassing gebruikt een clientgeheim om zichzelf te identificeren als vertrouwelijke client. Omdat het clientgeheim als platte tekst aan uw projectbestanden wordt toegevoegd, wordt u om veiligheidsredenen aangeraden een certificaat te gebruiken in plaats van een clientgeheim voordat u de toepassing als productietoepassing beschouwt. Zie voor meer informatie over het gebruik van een certificaat [deze instructies](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/README.md) in dezelfde GitHub-opslagplaats voor dit voorbeeld, maar in de tweede map **2-Call-MsGraph-WithCertificate**
+> Deze quickstarttoepassing gebruikt een clientgeheim om zichzelf te identificeren als vertrouwelijke client. Omdat het clientgeheim als platte tekst aan uw projectbestanden wordt toegevoegd, wordt u om veiligheidsredenen aangeraden een certificaat te gebruiken in plaats van een clientgeheim voordat u de toepassing als productietoepassing beschouwt. Zie voor meer informatie over het gebruik van een certificaat [deze instructies](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/README.md) in dezelfde github-opslag plaats voor dit voor beeld, maar in de tweede map **2-Call-MSGraph-WithCertificate**.
 
 ## <a name="more-information"></a>Meer informatie
 
@@ -196,7 +196,7 @@ app = msal.ConfidentialClientApplication(
 > | `config["client_id"]` | Is de **Toepassings-id (client-id)** voor de toepassing die is geregistreerd in de Azure-portal. U vindt deze waarde op de pagina **Overzicht** in de Azure-portal. |
 > | `config["authority"]`    | Het STS-eindpunt voor de gebruiker voor verificatie. Dat is meestal `https://login.microsoftonline.com/{tenant}` voor de openbare cloud, waarbij {tenant} de naam van uw tenant of uw tenant-id is.|
 
-Zie de [naslagdocumentatie voor `ConfidentialClientApplication`](https://msal-python.readthedocs.io/en/latest/#confidentialclientapplication) voor meer informatie
+Raadpleeg de [referentie documentatie voor voor `ConfidentialClientApplication` ](https://msal-python.readthedocs.io/en/latest/#confidentialclientapplication)meer informatie.
 
 ### <a name="requesting-tokens"></a>Tokens aanvragen
 
@@ -213,15 +213,15 @@ if not result:
 
 > |Waar:| Beschrijving |
 > |---------|---------|
-> | `config["scope"]` | De aangevraagde bereiken bevat. Voor vertrouwelijke clients moet hiervoor de indeling worden gebruikt die vergelijkbaar is met `{Application ID URI}/.default` om aan te geven dat de aangevraagde bereiken dezelfde zijn die statisch zijn gedefinieerd in het app-object dat is ingesteld in de Azure-portal (voor Microsoft Graph verwijst `{Application ID URI}` naar `https://graph.microsoft.com`). Voor aangepaste web-API's wordt `{Application ID URI}` gedefinieerd in de sectie **Een API beschikbaar maken** in de registratie van toepassingen (preview) van de Azure-portal. |
+> | `config["scope"]` | De aangevraagde bereiken bevat. Voor vertrouwelijke clients moet dit de indeling gebruiken die lijkt op `{Application ID URI}/.default` om aan te geven dat de bereiken die worden aangevraagd, statisch zijn gedefinieerd in het app-object dat is ingesteld in de Azure Portal (voor Microsoft Graph, `{Application ID URI}` punten `https://graph.microsoft.com` ). Voor aangepaste web-Api's `{Application ID URI}` wordt gedefinieerd onder de sectie **een API beschikbaar** maken in **app-registraties** in azure Portal.|
 
-Zie de [naslagdocumentatie voor `AcquireTokenForClient`](https://msal-python.readthedocs.io/en/latest/#msal.ConfidentialClientApplication.acquire_token_for_client) voor meer informatie
+Raadpleeg de [referentie documentatie voor voor `AcquireTokenForClient` ](https://msal-python.readthedocs.io/en/latest/#msal.ConfidentialClientApplication.acquire_token_for_client)meer informatie.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de landingspagina van het scenario voor meer informatie over daemontoepassingen
+Zie voor meer informatie over daemon-toepassingen de landings pagina van het scenario.
 
 > [!div class="nextstepaction"]
 > [Een daemon-app die web-API's aanroept](scenario-daemon-overview.md)

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/06/2020
+ms.date: 02/07/2021
 ms.author: memildin
-ms.openlocfilehash: 103f2c87cf9d14f81462fed145ff8df3d69bfca0
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: cc35f9ee25511faec5723b49763cbdae8963e88b
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98916130"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820752"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Besturings elementen voor adaptieve toepassingen gebruiken om de kwets bare Opper vlakken van uw computers te verminderen
 
@@ -44,7 +44,7 @@ Door lijsten met bekende veilige toepassingen te definiëren en waarschuwingen t
 - Voor komen dat specifieke software wordt geblokkeerd door uw organisatie
 - Het toezicht verhogen van apps die toegang hebben tot gevoelige gegevens
 
-
+Er zijn geen afdwingings opties beschikbaar en er zijn geen instellingen gepland. Besturings elementen voor adaptieve toepassingen zijn bedoeld om beveiligings waarschuwingen te bieden als een andere toepassing dan de toepassingen die u hebt gedefinieerd als veilig worden uitgevoerd.
 
 ## <a name="availability"></a>Beschikbaarheid
 
@@ -235,7 +235,12 @@ Enkele van de functies die beschikbaar zijn via de REST API:
    > Verwijder de volgende eigenschappen voordat u de JSON gebruikt in de put-aanvraag: recommendationStatus, configurationStatus, issues, location en hebben.
 
 
+## <a name="faq---adaptive-application-controls"></a>Veelgestelde vragen-besturings elementen voor adaptieve toepassingen
 
+### <a name="are-there-any-options-to-enforce-the-application-controls"></a>Zijn er opties voor het afdwingen van de besturings elementen van de toepassing?
+Er zijn geen afdwingings opties beschikbaar en er zijn geen instellingen gepland. Besturings elementen voor adaptieve toepassingen zijn bedoeld om **beveiligings waarschuwingen** te bieden als een andere toepassing dan de toepassingen die u hebt gedefinieerd als veilig worden uitgevoerd. Ze hebben diverse voor delen ([Wat zijn de voor delen van adaptieve toepassings besturings elementen?](#what-are-the-benefits-of-adaptive-application-controls)) en zijn zeer aanpasbaar, zoals op deze pagina wordt weer gegeven.
+
+ 
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u adaptief toepassings beheer in Azure Security Center kunt gebruiken om lijst toestaan te definiëren van toepassingen die worden uitgevoerd op uw Azure-en niet-Azure-machines. Zie voor meer informatie over enkele van de andere functies van de Cloud beveiliging van een andere Security Center.

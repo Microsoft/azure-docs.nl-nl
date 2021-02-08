@@ -1,21 +1,21 @@
 ---
-title: De toepassings sjabloon video Analytics-object en bewegings detectie implementeren Azure IoT Central
-description: Deze hand leiding bevat een overzicht van de stappen voor het implementeren van een Azure IoT Central-toepassing met behulp van de toepassings sjabloon video Analytics-object en Motion-detectie.
+title: 'Zelf studie: de toepassings sjabloon video Analytics-object en bewegings detectie implementeren Azure IoT Central'
+description: 'Zelf studie: in deze hand leiding vindt u een overzicht van de stappen voor het implementeren van een Azure IoT Central-toepassing met behulp van de toepassings sjabloon video Analytics-object en Motion-detectie.'
 services: iot-central
 ms.service: iot-central
 ms.subservice: iot-central-retail
-ms.topic: how-to
+ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: decfa7020be7778e8ca64a9fb0cb4aac1657da27
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: abeae674cef8f13a092b53bde6040ad853bd0cca
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873333"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820361"
 ---
-# <a name="how-to-deploy-an-iot-central-application-using-the-video-analytics---object-and-motion-detection-application-template"></a>Een IoT Central-toepassing implementeren met behulp van de toepassings sjabloon video Analytics-object en Motion detectie
+# <a name="tutorial-how-to-deploy-an-iot-central-application-using-the-video-analytics---object-and-motion-detection-application-template"></a>Zelf studie: een IoT Central-toepassing implementeren met behulp van de toepassing video Analytics-object-en bewegings detectie
 
 Zie [object-en bewegings detectie video Analytics-toepassings architectuur](architecture-video-analytics.md)voor een overzicht van de belangrijkste *video analyse-* onderdelen voor het detecteren van objecten en motion-toepassingen.
 
@@ -45,4 +45,10 @@ Voer de volgende stappen uit om een IoT Central-toepassing te implementeren met 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt nu een overzicht van de stappen voor het implementeren en gebruiken van de toepassing video Analytics. Zie [een video Analytics-toepassing maken in azure IOT Central (YOLO v3)](tutorial-video-analytics-create-app-yolo-v3.md) of [een video-analyse maken in azure IOT Central &trade; (](tutorial-video-analytics-create-app-openvino.md) openladen) om aan de slag te gaan.
+Nu hebt u een overzicht van de stappen voor het implementeren en gebruiken van de toepassing video Analytics, zie
+
+> [!div class="nextstepaction"]
+> [Een video Analytics-toepassing maken in Azure IOT Central (YOLO v3)](tutorial-video-analytics-create-app-yolo-v3.md) of
+
+> [!div class="nextstepaction"]
+> [Maak een video analyse in Azure IOT Central (openladen &trade; )](tutorial-video-analytics-create-app-openvino.md) om aan de slag te gaan.

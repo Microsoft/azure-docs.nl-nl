@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/03/2021
-ms.openlocfilehash: 9c79a1ab46513da54d61f1da5c1ba3a6dd480a95
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 23bc476c0d4fd90e19428d52b1468d090ffe2a1b
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785360"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820786"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Zelfstudie: SQL Server migreren naar een offline exemplaar van Azure SQL Database met behulp van DMS
 
@@ -237,6 +237,9 @@ Nadat de service is gemaakt, zoek deze op in de Azure-portal, open hem en maak v
 1. Geef in het scherm **Doel selecteren** de details van de verbinding op voor de doel-Azure SQL-database, dit is de vooraf ingerichte Azure SQL-database waarnaar het **Adventureworks2016**-schema is geïmplementeerd met behulp van de Data Migration Assistant.
 
     ![Doel selecteren](media/tutorial-sql-server-to-azure-sql/dms-select-target2.png)
+    
+    > [!NOTE]
+    > Particuliere endpoint-verbindingen met de doel-Azure SQL Database worden ondersteund door de Azure Database Migration Service, behalve wanneer u een aangepaste DNS-naam gebruikt. 
 
 2. Selecteer **Volgende: Toewijzen aan doeldatabases** en wijs de bron- en doeldatabase voor de migratie toe.
 

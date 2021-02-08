@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: e5fa4bde316f4b1677f78c65e913a6303a9f4735
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: eb5f2c6293042f44de5e3c061c6d379bee6e5b06
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019139"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820582"
 ---
 # <a name="about-high-availability"></a>Over hoge Beschik baarheid
 
@@ -149,6 +149,6 @@ Bijwerken met hoge Beschik baarheid:
 
 3. De Sens oren bijwerken.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Uw on-premises beheerconsole activeren en instellen](how-to-activate-and-set-up-your-on-premises-management-console.md)

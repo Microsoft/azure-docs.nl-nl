@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.subservice: logs
-ms.openlocfilehash: c25c53159fd0504956eed2cf7f968c573e9fc289
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a6f8e681f68fb53d7cf88582b4bf4416efc11c86
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927726"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820548"
 ---
 # <a name="create-diagnostic-settings-to-send-platform-logs-and-metrics-to-different-destinations"></a>Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen
 [Platformlogboeken](platform-logs-overview.md) in Azure, inclusief het Azure-activiteitenlogboek en de Azure-resourcelogboeken, bieden gedetailleerde diagnose- en controlegegevens voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. [Metrische platformgegevens](data-platform-metrics.md) worden standaard verzameld en gewoonlijk opgeslagen in de database met metrische gegevens van Azure Monitor. In dit artikel vindt u informatie over het maken en configureren van diagnostische instellingen voor het verzenden van metrische platformgegevens en platformlogboeken naar verschillende bestemmingen.
@@ -43,7 +43,7 @@ In de volgende video vindt u een route ring van platform logboeken met Diagnosti
 ## <a name="destinations"></a>Bestemmingen
 Platform-logboeken en-metrische gegevens kunnen worden verzonden naar de doelen in de volgende tabel. 
 
-| Doel | Beschrijving |
+| Doel | Description |
 |:---|:---|
 | [Log Analytics werk ruimte](design-logs-deployment.md) | Door Logboeken en metrische gegevens naar een Log Analytics-werk ruimte te verzenden, kunt u ze analyseren met andere bewakings informatie die door Azure Monitor wordt verzameld met behulp van krachtige logboek query's en ook om gebruik te maken van andere Azure Monitor functies, zoals waarschuwingen en visualisaties. |
 | [Event hubs](../../event-hubs/index.yml) | Door Logboeken en metrische gegevens naar Event Hubs te verzenden, kunt u met externe systemen, zoals Siem's van derden en andere log Analytics-oplossingen.  |
@@ -175,6 +175,24 @@ Zie [Diagnostische instellingen](/rest/api/monitor/diagnosticsettings) voor het 
 
 ## <a name="create-using-azure-policy"></a>Maken met behulp van Azure Policy
 Omdat een diagnostische instelling moet worden gemaakt voor elke Azure-resource, kan Azure Policy worden gebruikt om automatisch een diagnostische instelling te maken wanneer elke resource wordt gemaakt. Zie [Azure monitor op schaal implementeren met behulp van Azure Policy](../deploy-scale.md) voor meer informatie.
+
+## <a name="metric-category-is-not-supported-error"></a>De categorie meet waarde wordt niet ondersteund
+Wanneer u een diagnostische instelling implementeert, wordt het volgende fout bericht weer gegeven:
+
+   "Metrische categorie '*xxxx*' wordt niet ondersteund"
+
+Bijvoorbeeld: 
+
+   "Metrische categorie" ActionsFailed "wordt niet ondersteund"
+
+waar eerder uw implementatie is geslaagd. 
+
+Het probleem treedt op wanneer u een resource manager-sjabloon gebruikt, de diagnostische instellingen REST API, Azure CLI of Azure PowerShell. Diagnostische instellingen die zijn gemaakt via de Azure Portal worden niet beïnvloed omdat alleen de ondersteunde categorie namen worden weer gegeven.
+
+Het probleem wordt veroorzaakt door een recente wijziging in de onderliggende API. Andere meet Categorieën dan ' AllMetrics ' worden niet ondersteund en zijn nooit toegestaan in een zeer specifieke lijst met toegestane IP-adressen. In het verleden werden andere categorie namen genegeerd bij het implementeren van een diagnostische instelling. De Azure Monitor back-end heeft deze categorieën eenvoudigweg omgeleid naar ' AllMetrics '.  Vanaf februari 2021 is de back-end bijgewerkt om ervoor te zorgen dat de gegeven metrische categorie nauw keurig wordt bevestigd. Deze wijziging heeft ertoe geleid dat sommige implementaties mislukken.
+
+Als u dit fout bericht ontvangt, moet u uw implementaties bijwerken om de naam van een metrische categorie te vervangen door ' AllMetrics ' om het probleem op te lossen. Als de implementatie eerder meerdere categorieën heeft toegevoegd, moet er slechts één met de verwijzing ' AllMetrics ' worden bewaard. Als het probleem blijft bestaan, neemt u contact op met de ondersteuning van Azure via de Azure Portal. 
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

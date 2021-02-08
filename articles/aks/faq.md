@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Kubernetes service (AKS)
 description: Vind antwoorden op enkele veelgestelde vragen over Azure Kubernetes service (AKS).
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 7fc348ae7b3edb79e75aa1acd08941fec447da6f
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 6c2eddf3b7002b101fed8face4a58f2d2b2f4878
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127631"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820259"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Veelgestelde vragen over AKS (Azure Kubernetes Service)
 
@@ -132,7 +132,9 @@ Windows Server-ondersteuning voor de knooppunt groep bevat enkele beperkingen di
 
 ## <a name="does-aks-offer-a-service-level-agreement"></a>Biedt AKS een service overeenkomst?
 
-AKS biedt SLA-garanties als een optionele invoeg functie met [Sla voor uptime][uptime-sla].
+AKS biedt SLA-garanties als een optionele invoeg functie met [Sla voor uptime][uptime-sla]. 
+
+De gratis SLA die standaard wordt aangeboden, biedt geen garantie voor een Maxi maal beschik bare API-server eindpunt (onze serviceniveau doelstelling is 99,5%). Het kan gebeuren dat tijdelijke verbindings problemen worden waargenomen in het geval van upgrades, slechte aan-knoop punten, onderhoud van het platform, enzovoort... Als uw workload niet APIServer opnieuw wordt opgestart, wordt u aangeraden om de SLA voor uptime te gebruiken.
 
 ## <a name="can-i-apply-azure-reservation-discounts-to-my-aks-agent-nodes"></a>Kan ik Azure-reserverings kortingen Toep assen op mijn AKS-agent knooppunten?
 

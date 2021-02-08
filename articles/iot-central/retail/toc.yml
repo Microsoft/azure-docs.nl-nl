@@ -5,6 +5,7 @@
     - name: Oplossingen voor de detailhandel bouwen met Azure IoT Central
       href: overview-iot-central-retail.md
 - name: Zelfstudies
+  expanded: true
   items:
     - name: In-Store Analytics-betaling
       items:

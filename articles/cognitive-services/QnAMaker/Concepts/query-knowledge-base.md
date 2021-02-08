@@ -3,12 +3,12 @@ title: Query's uitvoeren op de Knowledge Base-QnA Maker
 description: Een Knowledge Base moet worden gepubliceerd. Zodra de Knowledge Base is gepubliceerd, wordt deze in de runtime-Voorspellings eindpunt opgevraagd met behulp van de generateAnswer-API.
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: d8f986299edee46bf5cace7a9f4c805c29b3ce0c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: deefc53fdc94851da0e9e255962fbf85692d1393
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96346202"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820378"
 ---
 # <a name="query-the-knowledge-base-for-answers"></a>De Knowledge Base doorzoeken op antwoorden
 
@@ -31,7 +31,7 @@ Het proces wordt uitgelegd in de volgende tabel.
 |1|De client toepassing verzendt de query van de gebruiker naar de [GenerateAnswer-API](../how-to/metadata-generateanswer-usage.md).|
 |2|QnA Maker de gebruikers query met taal detectie, spellingen en woord afbreekers verwerkt.|
 |3|Deze voor verwerking wordt gebruikt om de query van de gebruiker voor de beste Zoek resultaten te wijzigen.|
-|4|Deze gewijzigde query wordt verzonden naar een Azure Cognitive Search-index, die het `top` aantal resultaten ontvangt. Als het juiste antwoord niet in deze resultaten voor komt, verhoogt u de waarde `top` enigszins. Over het algemeen is de waarde 10 voor `top` Works in 90% van de query's.|
+|4|Deze gewijzigde query wordt verzonden naar een Azure Cognitive Search-index, die het `top` aantal resultaten ontvangt. Als het juiste antwoord niet in deze resultaten voor komt, verhoogt u de waarde `top` enigszins. Over het algemeen is de waarde 10 voor `top` Works in 90% van de query's. In azure Search worden de woorden in deze stap [gestopt](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/STOPWORDS.md) .|
 |5|QnA Maker maakt gebruik van syntactische en semantische parametrisatie om de gelijkenis tussen de gebruikers query en de opgehaalde QnA-resultaten te bepalen.|
 |6|Het door de machine geleerde rangorde model maakt gebruik van de verschillende functies uit stap 5 om de betrouwbaarheids scores en de nieuwe volg orde van de rang schikking te bepalen.|
 |7|De nieuwe resultaten worden weer gegeven in de rang orde van de client toepassing.|
@@ -54,7 +54,7 @@ Het proces wordt uitgelegd in de volgende tabel.
 |1|De client toepassing verzendt de query van de gebruiker naar de [GenerateAnswer-API](../how-to/metadata-generateanswer-usage.md).|
 |2|QnA Maker de gebruikers query met taal detectie, spellingen en woord afbreekers verwerkt.|
 |3|Deze voor verwerking wordt gebruikt om de query van de gebruiker voor de beste Zoek resultaten te wijzigen.|
-|4|Deze gewijzigde query wordt verzonden naar een Azure Cognitive Search-index, die het `top` aantal resultaten ontvangt. Als het juiste antwoord niet in deze resultaten voor komt, verhoogt u de waarde `top` enigszins. Over het algemeen is de waarde 10 voor `top` Works in 90% van de query's.|
+|4|Deze gewijzigde query wordt verzonden naar een Azure Cognitive Search-index, die het `top` aantal resultaten ontvangt. Als het juiste antwoord niet in deze resultaten voor komt, verhoogt u de waarde `top` enigszins. Over het algemeen is de waarde 10 voor `top` Works in 90% van de query's. In azure Search worden de woorden in deze stap [gestopt](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/STOPWORDS.md) .|
 |5|QnA Maker maakt gebruik van een model op basis van de status van een Transformeer bewerking voor het vergelijken van de overeenkomst tussen de gebruikers query en de QnA resultaten van de kandidaat die zijn opgehaald uit Azure Cognitive Search. Het model op basis van een transformator is een dieper leren model voor meerdere talen, wat horizon taal werkt voor het bepalen van de betrouwbaarheids scores en de nieuwe classificatie volgorde.|
 |6|De nieuwe resultaten worden weer gegeven in de rang orde van de client toepassing.|
 |||
@@ -125,4 +125,4 @@ Het HTTP-antwoord is het antwoord dat is opgehaald uit de Knowledge Base, op bas
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Betrouwbaarheidsscore](./confidence-score.md)
+> [Betrouwbaarheids Score](./confidence-score.md)

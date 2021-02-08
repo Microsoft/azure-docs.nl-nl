@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: tutorial
-ms.date: 09/09/2020
+ms.date: 02/04/2021
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 9fe43125c83436f89bf93cbe975317efec2beb46
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: 4678a6128be13ac61dc4ac67bbd1a17e99c6d24d
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95542810"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820226"
 ---
 # <a name="tutorial-move-azure-sql-database-resources-to-another-region"></a>Zelfstudie: Azure SQL Database-resources naar een andere regio verplaatsen
 
@@ -272,8 +272,11 @@ Voltooi als volgt het verplaatsen van databases en elastische pools:
 
 Na de verplaatsing kunt u desgewenst de resources in de bronregio verwijderen. 
 
-1. Klik in **Tussen regio's** op de naam van elke bronresource die u wilt verwijderen.
-2. Selecteer **Verwijderen** op de eigenschappenpagina van elke resource.
+> [!NOTE]
+> SQL Server servers kunnen niet worden verwijderd uit de portal en moeten worden verwijderd van de eigenschappen pagina van de resource.
+
+1. In **meerdere regio's** klikt u op de naam van de bron resource die u wilt verwijderen.
+2. Selecteer **bron verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

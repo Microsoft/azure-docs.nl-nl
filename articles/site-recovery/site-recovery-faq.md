@@ -4,12 +4,12 @@ description: In dit artikel worden populaire algemene vragen over Azure Site Rec
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: ca30f9ba190dfa3c7e224e47b90be4d3bc5d47ae
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 9db91a15c0ee5c982f73f36a36f12b38b969a125
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746472"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820193"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Algemene vragen over Azure Site Recovery
 
@@ -188,7 +188,7 @@ Ja, [ExpressRoute kan worden gebruikt](concepts-expressroute-with-site-recovery.
 
 ### <a name="if-i-replicate-to-azure-what-kind-of-storage-account-or-managed-disk-do-i-need"></a>Als ik naar Azure repliceer, wat voor soort opslag account of Managed Disk heb ik nodig?
 
-U hebt een LRS-of GRS-opslag nodig. GRS wordt aanbevolen, omdat de gegevens dan flexibel zijn te gebruiken als er sprake is van regionale uitval of als de primaire regio niet kan worden hersteld. Het account moet zich in dezelfde regio bevinden als de Recovery Services-kluis. Premium-opslag wordt ondersteund voor virtuele VMware-machines, Hyper-V-machines en fysieke server replicatie wanneer u Site Recovery implementeert in de Azure Portal. Beheerde schijven bieden alleen ondersteuning voor LRS.
+Het gebruik van opslag accounts als doel opslag wordt niet ondersteund door Azure Site Recovery. Het is raadzaam Managed disks te gebruiken als de doel opslag voor uw machines. Managed disks ondersteunen alleen LRS type voor gegevens tolerantie.
 
 ### <a name="how-often-can-i-replicate-data"></a>Hoe vaak kan ik gegevens repliceren?
 * **Hyper-V:** Virtuele Hyper-V-machines kunnen elke 30 seconden worden gerepliceerd (met uitzonde ring van Premium-opslag), vijf minuten of 15 minuten.

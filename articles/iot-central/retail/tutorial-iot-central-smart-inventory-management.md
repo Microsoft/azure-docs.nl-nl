@@ -7,22 +7,21 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: b1b7069cb723bffd758c3603cc957329dd6d2a9b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 2b26b4390cb19b832349b49d4e95a5355caed594
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463267"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820293"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Zelfstudie: Een toepassingssjabloon voor slim voorraadbeheer implementeren en doorlopen
 
-
-
 In deze zelfstudie leert u hoe u aan de slag gaat door een toepassingssjabloon voor **slim voorraadbeheer** voor IoT Central te implementeren. U leert hoe u de sjabloon implementeert, wat er kant-en-klaar in is opgenomen, en wat u hierna kunt doen.
 
-In deze zelfstudie leert u het volgende: 
-* een toepassing voor slim voorraadbeheer maken 
-* de toepassing doorlopen 
+In deze zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+> een Smart Inventory Management-toepassing maken door de toepassing te laten lopen 
 
 ## <a name="prerequisites"></a>Vereisten
 

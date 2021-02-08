@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 5/07/2020
 ms.custom: references_regions
-ms.openlocfilehash: 6381170df93fdf52c2d0dc7059ad47bbff734025
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 999cb4c764e9960c509d19faa61016b2522259ac
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378029"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99819857"
 ---
 # <a name="support-matrix-for-azure-file-share-backup"></a>Ondersteunings matrix voor back-up van Azure-bestands share
 
@@ -39,7 +39,7 @@ Back-ups van Azure-bestands shares zijn beschikbaar in alle regio's, **met uitzo
 | Premium                                            | Ondersteund |
 | Bestands shares die zijn verbonden met de Azure File Sync-Service | Ondersteund |
 
-## <a name="protection-limits"></a>Beveiligings limieten
+## <a name="protection-limits"></a>Beschermingslimieten
 
 | Instelling                                                      | Limiet |
 | ------------------------------------------------------------ | ----- |
@@ -60,7 +60,7 @@ Back-ups van Azure-bestands shares zijn beschikbaar in alle regio's, **met uitzo
 | Instelling                                                      | Limiet   |
 | ------------------------------------------------------------ | ------- |
 | Maximum aantal herstel bewerkingen per dag                           | 10      |
-| Maximum aantal bestanden per herstel bewerking                         | 10      |
+| Maximum aantal bestanden per herstel bewerking                         | 99      |
 | Maximale aanbevolen grootte voor herstellen per herstel voor grote bestands shares | 15 TiB |
 
 ## <a name="retention-limits"></a>Bewaarlimieten

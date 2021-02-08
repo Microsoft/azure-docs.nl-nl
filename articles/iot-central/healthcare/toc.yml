@@ -5,6 +5,7 @@
     - name: Oplossingen voor de gezondheidszorg bouwen met Azure IoT Central
       href: overview-iot-central-healthcare.md
 - name: Zelfstudies
+  expanded: true
   items:
     - name: Een app voor continue patiëntbewaking maken
       href: tutorial-continuous-patient-monitoring.md

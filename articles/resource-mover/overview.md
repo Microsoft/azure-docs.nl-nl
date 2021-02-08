@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/09/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 621c5e7b0061ccd76fd0109552107915b943511f
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
-ms.translationtype: HT
+ms.openlocfilehash: 06d6352f018238318c3bb4625ae86a2974f14569
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89653292"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820160"
 ---
 # <a name="what-is-azure-resource-mover"></a>Wat is Azure Resource Mover?
 
@@ -29,8 +29,6 @@ U kunt resources vanwege de volgende doeleinden naar verschillende Azure-regio's
 - **Reageren op implementatievereisten**: Verplaats resources die foutief zijn geïmplementeerd of verplaats als reactie op capaciteitsbehoeften.
 - **Reageren uit buitengebruikstelling**: Verplaats resources omdat een regio buiten gebruik is gesteld.
 
-> [!IMPORTANT]
-> Azure Resource Mover is momenteel beschikbaar als openbare preview-versie.
 
 ## <a name="why-use-resource-mover"></a>Waarom zou u Azure Resource Mover gebruiken?
 
@@ -62,6 +60,7 @@ U kunt resources verplaatsen tussen regio's in de Resource Mover-hub of vanuit e
 Met Resource Mover kunt u momenteel de volgende resources tussen regio's verplaatsen:
 
 - Azure-VM's en gekoppelde schijven
+- Versleutelde virtuele machines en gekoppelde schijven van Azure. Dit omvat Vm's waarvoor Azure Disk Encryption is ingeschakeld en Azure-Vm's met behulp van standaard versleuteling aan de server zijde (beide met door het platform beheerde sleutels en door de klant beheerde sleutels)
 - NIC’s
 - Beschikbaarheidssets 
 - Virtuele netwerken van Azure. 

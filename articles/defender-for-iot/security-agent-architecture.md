@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: shhazam
-ms.openlocfilehash: 929b8de8a6b70519bb44e41ba5cfede9ec12f110
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: ff837fe88f878c522366b2b6bc19a1ef3954b667
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99808858"
+ms.locfileid: "99820650"
 ---
 # <a name="security-agent-reference-architecture"></a>Referentie architectuur beveiligings agent
 
@@ -34,7 +34,7 @@ Beveiligings agenten bieden ondersteuning voor de volgende functies:
 
 - Verdeel onbewerkte beveiligings gebeurtenissen in berichten die via IoT Hub worden verzonden.
 
-- Configureer op afstand via het gebruik van de **azureiotsecurity** -module dubbele. Zie [een Defender voor IOT-agent configureren](how-to-agent-configuration.md)voor meer informatie.
+- Configureer op afstand via het gebruik van de **azureiotsecurity** -module dubbele. Zie [Configure a Defender for IOT agent](how-to-agent-configuration.md)(Engelstalig) voor meer informatie.
 
 Defender voor IoT-beveiligings agenten is ontwikkeld als open-source projecten en zijn verkrijgbaar via GitHub:
 

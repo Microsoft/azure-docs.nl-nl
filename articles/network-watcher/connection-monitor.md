@@ -15,17 +15,20 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 24b1549b2e460bc0e72fb76f5437b15838604949
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
-ms.translationtype: HT
+ms.openlocfilehash: a4f3e0bbd282fb1253e206e71c2eb1667773248e
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97896359"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834082"
 ---
 # <a name="tutorial-monitor-network-communication-between-two-virtual-machines-using-the-azure-portal"></a>Zelfstudie: Netwerkcommunicatie tussen twee virtuele machines bewaken met behulp van de Azure-portal
 
 > [!NOTE]
 > In deze zelfstudie wordt Verbindingsmonitor (klassiek) behandeld. Probeer de nieuwe en verbeterde [Verbindingsmonitor](connection-monitor-overview.md) voor verbeterde connectiviteitsbewaking
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe monitors voor verbinding toevoegen in de verbindings monitor (klassiek), maar bestaande verbindings monitors die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u van verbindings monitor (klassiek) naar de nieuwe verbindings monitor](migrate-to-connection-monitor-from-connection-monitor-classic.md) in azure Network Watcher vóór 29 februari 2024.
 
 Geslaagde communicatie tussen een virtuele machine (VM) en een eindpunt, zoals een andere virtuele machine, kan zijn essentieel voor uw organisatie. Soms ontstaan configuratiewijzigingen die de communicatie kunnen verbreken. In deze zelfstudie leert u het volgende:
 

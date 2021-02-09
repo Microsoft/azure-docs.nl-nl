@@ -6,14 +6,17 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 2c20f668c57e8c2e74c320ca535aea18e633daf8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6502d4259aa383c1466967d01282cecfbb8d1ded
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87326117"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832960"
 ---
 # <a name="network-performance-monitor-solution-performance-monitoring"></a>Netwerkprestatiemeter oplossing: prestatie bewaking
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
 
 Met de functie prestatie meter in [Netwerkprestatiemeter](network-performance-monitor.md) kunt u de netwerk connectiviteit op verschillende punten in uw netwerk bewaken. U kunt Cloud implementaties en on-premises locaties, meerdere data centers en filialen, en bedrijfskritische toepassingen voor multi-tier of micro services bewaken. Met prestatie meter kunt u netwerk problemen detecteren voordat uw gebruikers klagen. De belangrijkste voor delen zijn: 
 
@@ -41,7 +44,7 @@ Een nieuw netwerk maken:
 
 
 1. Selecteer het tabblad **netwerken** .
-1. Selecteer **netwerk toevoegen**en voer vervolgens de naam en beschrijving van het netwerk in. 
+1. Selecteer **netwerk toevoegen** en voer vervolgens de naam en beschrijving van het netwerk in. 
 2. Selecteer een of meer subnetten en selecteer vervolgens **toevoegen**. 
 3. Selecteer **Opslaan** om de configuratie op te slaan. 
 
@@ -59,13 +62,13 @@ Aangepaste bewakings regels maken:
 
 1. Selecteer **regel toevoegen** op het tabblad **monitor** en voer de naam en beschrijving van de regel in.
 2. Selecteer het paar netwerk-of subnetwerk koppelingen dat u vanuit de lijsten wilt bewaken. 
-3. Selecteer in de vervolg keuzelijst netwerk het netwerk dat de gewenste subnetwerken bevat. Selecteer vervolgens de subnetwerken in de vervolg keuzelijst met de bijbehorende subnetwerk. Als u alle subnetwerken in een netwerk koppeling wilt bewaken, selecteert u **alle subnetwerken**. Selecteer op dezelfde manier de andere subnetwerken die u wilt. Selecteer **uitzonde ring toevoegen**om bewaking uit te sluiten voor bepaalde subnetwerk koppelingen van de selecties die u hebt gemaakt. 
+3. Selecteer in de vervolg keuzelijst netwerk het netwerk dat de gewenste subnetwerken bevat. Selecteer vervolgens de subnetwerken in de vervolg keuzelijst met de bijbehorende subnetwerk. Als u alle subnetwerken in een netwerk koppeling wilt bewaken, selecteert u **alle subnetwerken**. Selecteer op dezelfde manier de andere subnetwerken die u wilt. Selecteer **uitzonde ring toevoegen** om bewaking uit te sluiten voor bepaalde subnetwerk koppelingen van de selecties die u hebt gemaakt. 
 4. Kies tussen ICMP-en TCP-protocollen om synthetische trans acties uit te voeren. 
-5. Als u geen status gebeurtenissen wilt maken voor de items die u hebt geselecteerd, schakelt u **status controle inschakelen in op de koppelingen waarop deze regel van toepassing**is. 
+5. Als u geen status gebeurtenissen wilt maken voor de items die u hebt geselecteerd, schakelt u **status controle inschakelen in op de koppelingen waarop deze regel van toepassing** is. 
 6. Kies bewakings voorwaarden. Als u aangepaste drempels wilt instellen voor het genereren van status gebeurtenissen, voert u drempel waarden in. Wanneer de waarde van de voor waarde de geselecteerde drempel overschrijdt voor het geselecteerde netwerk of subnetwerk, wordt een status gebeurtenis gegenereerd. 
 7. Selecteer **Opslaan** om de configuratie op te slaan. 
 
-Nadat u een bewakings regel hebt opgeslagen, kunt u deze regel met Waarschuwingenbeheer integreren door **waarschuwing maken**te selecteren. Er wordt automatisch een waarschuwings regel gemaakt met de zoek query. Andere vereiste para meters worden automatisch ingevuld. U kunt met behulp van een waarschuwings regel e-mail waarschuwingen ontvangen, naast de bestaande waarschuwingen in Netwerkprestatiemeter. Waarschuwingen kunnen ook herstel bewerkingen activeren met runbooks, of ze kunnen integreren met bestaande Service beheer oplossingen met behulp van webhooks. Selecteer **waarschuwing beheren** om de instellingen van de waarschuwing te bewerken. 
+Nadat u een bewakings regel hebt opgeslagen, kunt u deze regel met Waarschuwingenbeheer integreren door **waarschuwing maken** te selecteren. Er wordt automatisch een waarschuwings regel gemaakt met de zoek query. Andere vereiste para meters worden automatisch ingevuld. U kunt met behulp van een waarschuwings regel e-mail waarschuwingen ontvangen, naast de bestaande waarschuwingen in Netwerkprestatiemeter. Waarschuwingen kunnen ook herstel bewerkingen activeren met runbooks, of ze kunnen integreren met bestaande Service beheer oplossingen met behulp van webhooks. Selecteer **waarschuwing beheren** om de instellingen van de waarschuwing te bewerken. 
 
 U kunt nu meer regels voor prestatie controle maken of naar het dash board van de oplossing gaan om de mogelijkheid te gebruiken.
 
@@ -94,7 +97,7 @@ Houd rekening met de volgende informatie voordat u een protocol kiest:
 
 Als u ervoor kiest om ICMP te gebruiken tijdens de implementatie, kunt u op elk gewenst moment overstappen op TCP door de standaard regel voor bewaking te bewerken.
 
-1. Ga naar de **netwerk prestatie**   >  **meter**   >  **Configure**   >  **monitor**configureren. Selecteer vervolgens **standaard regel**. 
+1. Ga naar de **netwerk prestatie**   >  **meter**   >  ****   >  **monitor** configureren. Selecteer vervolgens **standaard regel**. 
 2. Ga naar de sectie **protocol** en selecteer het protocol dat u wilt gebruiken. 
 3. Selecteer **Opslaan** om de instelling toe te passen. 
 
@@ -129,4 +132,3 @@ In de volgende afbeelding wordt de hoofd oorzaak van de probleem gebieden naar d
 
 ## <a name="next-steps"></a>Volgende stappen
 [Zoek logboeken](../log-query/log-query-overview.md) om gedetailleerde gegevens records voor netwerk prestaties weer te geven.
-

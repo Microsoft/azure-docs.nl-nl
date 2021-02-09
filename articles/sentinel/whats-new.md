@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: 0eb3b8feda09d931654d1781ea37737d68a1b377
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.date: 02/04/2021
+ms.openlocfilehash: 37a9294b156bd41b72e777696f10a1c4ac2bb354
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526633"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832756"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -32,6 +32,7 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 
 ## <a name="january-2021"></a>Januari 2021
 
+- [Wizard analyse regel: verbeterde mogelijkheden voor het bewerken van query's (open bare preview)](#analytics-rule-wizard-improved-query-editing-experience-public-preview)
 - [AZ. SecurityInsights Power shell-module (open bare preview)](#azsecurityinsights-powershell-module-public-preview)
 - [SQL database-connector](#sql-database-connector)
 - [Verbeterde reacties op incidenten](#improved-incident-comments)
@@ -40,6 +41,16 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 - [Verbeterde regel afstemming met de voorbeeld grafieken van Analytics-regels](#improved-rule-tuning-with-the-analytics-rule-preview-graphs-public-preview)
 
 
+## <a name="analytics-rule-wizard-improved-query-editing-experience-public-preview"></a>Wizard analyse regel: verbeterde mogelijkheden voor het bewerken van query's (open bare preview)
+
+De Azure Sentinel Scheduled Analytics regel wizard biedt nu de volgende verbeteringen voor het schrijven en bewerken van query's:
+
+-   Een uitbreidbaar bewerkings venster dat u meer scherm ruimte biedt om uw query te bekijken.
+-   Het markeren van belang rijke woorden in uw query code.
+-   Uitgebreide ondersteuning voor automatisch volt ooien.
+-   Validatie van query's in realtime. Fouten in uw query worden nu weer gegeven als een rood blok in de schuif balk en als een rode stip op de naam van het tabblad **regel logica instellen** . Daarnaast kan een query met fouten niet worden opgeslagen.
+
+Zie voor meer informatie [zelf studie: Threats out-of-the-box detecteren](tutorial-detect-threats-built-in.md).
 ### <a name="azsecurityinsights-powershell-module-public-preview"></a>AZ. SecurityInsights Power shell-module (open bare preview)
 
 Azure Sentinel ondersteunt nu de nieuwe [AZ. SecurityInsights](https://www.powershellgallery.com/packages/Az.SecurityInsights/) Power shell-module.

@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 07/15/2020
+ms.date: 02/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 4deeec1b6c9db80c15b001efb7b40bdb4bb9d515
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c87c8cfd40903f6296f0a36f5c83c0b5c5cb7818
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452645"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831571"
 ---
 # <a name="azure-stack-edge-pro-system-requirements"></a>Systeem vereisten voor Azure Stack Edge Pro
 
 In dit artikel worden de belangrijkste systeem vereisten beschreven voor uw Microsoft Azure Stack Edge Pro-oplossing en voor de clients die verbinding maken met Azure Stack Edge Pro. We raden u aan de informatie zorgvuldig te bekijken voordat u uw Azure Stack Edge Pro implementeert. U kunt deze informatie naar behoefte terugsturen tijdens de implementatie en de volgende bewerking.
 
-De systeem vereisten voor de Azure Stack Edge Pro zijn onder andere:
+De systeem vereisten voor de Azure Stack Edge Pro zijn onder andere: 
 
 - **Software vereisten voor hosts** : beschrijft de ondersteunde platforms, browsers voor de lokale configuratie-UI, SMB-clients en eventuele aanvullende vereisten voor de clients die toegang hebben tot het apparaat.
 - **Netwerk vereisten voor het apparaat** : bevat informatie over eventuele netwerk vereisten voor de werking van het fysieke apparaat.

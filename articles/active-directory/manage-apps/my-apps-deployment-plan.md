@@ -11,17 +11,17 @@ ms.workload: identity
 ms.date: 02/29/2020
 ms.author: kenwith
 ms.reviewer: baselden
-ms.openlocfilehash: 13fe9c52312ba6053a6093ec51d42f05a44627e0
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 10e548eb87b7ac4254fa916f804a6710252be7fc
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258283"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99830716"
 ---
 # <a name="plan-azure-active-directory-my-apps-configuration"></a>Azure Active Directory mijn apps-configuratie plannen
 
 > [!NOTE]
-> Dit artikel is bedoeld voor IT-professionals die de configuratie van de portal mijn apps van uw organisatie moeten plannen. Zie voor informatie over het gebruik van mijn apps en verzamelingen, [Aanmelden en apps starten vanuit de portal mijn apps](../user-help/my-apps-portal-end-user-access.md).
+> Dit artikel is bedoeld voor IT-professionals die de configuratie van de portal mijn apps van uw organisatie moeten plannen. 
 >
 > **Zie voor documentatie voor de eind gebruiker [Aanmelden en apps starten vanuit de portal mijn apps](../user-help/my-apps-portal-end-user-access.md)**.
 

@@ -7,21 +7,19 @@ ms.author: anvar
 ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: fbafed60019005fe2d81c96fb9557e3c307669ac
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: cc207522048e3f0491e3aa54f2ae21d2e7e63bc2
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233760"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834031"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Nieuwe functies in Azure Migrate
 
 [Azure Migrate](migrate-services-overview.md) helpt u bij het detecteren, evalueren en migreren van on-premises servers, apps en gegevens naar de Microsoft Azure-cloud. In dit artikel vindt u een overzicht van nieuwe releases en functies in Azure Migrate.
 
 ## <a name="update-january-2021"></a>Update (januari 2021)
--  Migratie van VMware-VM's naar virtuele Azure-machines met schijven die zijn versleuteld met behulp van dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels (CMK), met behulp van Azure Migrate-servermigratie (replicatie zonder agent), is nu beschikbaar in Azure Portal.
-- Migratie van VMware-VM's naar virtuele Azure-machines met schijven die zijn versleuteld met behulp van versleuteling aan de serverzijde (SSE) met door de klant beheerde sleutels (CMK) en dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels, met behulp van Azure Migrate-servermigratie (replicatie met agent), is nu beschikbaar in Azure Portal.
-- Migratie van fysieke servers en VM's van andere clouds zoals AWS en GCP naar virtuele Azure-machines met schijven die zijn versleuteld met behulp van versleuteling aan de serverzijde (SSE) met door de klant beheerde sleutels (CMK) en dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels, met behulp van Azure Migrate-servermigratie (replicatie zonder agent), is nu beschikbaar in Azure Portal.
+-  Azure Migrate: met het hulp programma voor server migratie kunt u nu virtuele VMware-machines, fysieke servers en virtuele machines migreren van andere Clouds naar Azure virtual machines met schijven die zijn versleuteld met versleuteling aan de server zijde met door de klant beheerde sleutels (CMK).
 
 ## <a name="update-december-2020"></a>Update (december 2020)
 - In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent.

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: 1967a2fb5adebe01ef4bff8d58f7832bffe95762
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: f98482a43516683499e83bebafe4eeadc5b7a8b7
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531267"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832501"
 ---
 # <a name="tutorial-deploy-and-walkthrough-a-continuous-patient-monitoring-app-template"></a>Zelfstudie: Een sjabloon voor het controleren van een continue patiëntbewaking implementeren en bewaken
 
@@ -24,6 +24,10 @@ In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
 > * Een toepassingssjabloon maken
 > * De toepassingssjabloon doorlopen
+
+## <a name="prerequisites"></a>Vereisten
+
+Een Azure-abonnement wordt aanbevolen. U kunt ook een gratis proefversie voor zeven dagen gebruiken. Als u geen Azure-abonnement hebt, kunt u er een maken via de [Azure-registratiepagina](https://aka.ms/createazuresubscription).
 
 ## <a name="create-an-application-template"></a>Een toepassingssjabloon maken
 
@@ -61,11 +65,11 @@ Nadat u de app-sjabloon hebt geïmplementeerd, gaat u eerst naar het **Lamna-das
 
 * Wijzig de **patiëntstatus** van het apparaat om aan te geven of het apparaat wordt gebruikt voor een extern scenario of een scenario met een opgenomen patiënt.
 
-:::image type="content" source="media/lamna-in-patient.png" alt-text="Sjabloon voor gezondheidszorgapp":::
+:::image type="content" source="media/lamna-in-patient.png" alt-text="Status van patiënten":::
 
 U kunt ook **Ga naar het dashboard voor externe patiënten** selecteren om het operatordashboard voor het Burkville Hospital weer te geven. Dit dashboard bevat een soortgelijke set acties, telemetrie en informatie. U kunt ook meerdere gebruikte apparaten bekijken en de **firmware bijwerken** voor de afzonderlijke apparaten.
 
-:::image type="content" source="media/lamna-remote.png" alt-text="Sjabloon voor gezondheidszorgapp":::
+:::image type="content" source="media/lamna-remote.png" alt-text="Extern dashboard voor operators":::
 
 ### <a name="device-templates"></a>Apparaatsjablonen
 
@@ -75,7 +79,7 @@ Als u **Apparaatsjablonen** selecteert, ziet u de twee apparaattypen in de sjabl
 
 * **Smart Knee Brace**: Dit apparaat vertegenwoordigt een kniebrace die patiënten gebruiken bij het herstellen van een knievervangende operatie. Als u deze sjabloon selecteert, worden de mogelijkheden, zoals apparaatgegevens, het bewegingsbereik en de versnelling, weergegeven.
 
-:::image type="content" source="media/smart-vitals-device-template.png" alt-text="Sjabloon voor gezondheidszorgapp":::
+:::image type="content" source="media/smart-vitals-device-template.png" alt-text="Sjabloon voor intelligente patches":::
 
 ### <a name="device-groups"></a>Device groups
 
@@ -93,7 +97,7 @@ Als u **Regels** selecteert, ziet u de drie regels in de sjabloon:
 
 * **Accu van patch laag**: Deze regel wordt geactiveerd wanneer het accuniveau op het apparaat lager is dan 10%. Gebruik deze regel om een melding naar de patiënt te activeren om het apparaat op te laden.
 
-:::image type="content" source="media/brace-temp-rule.png" alt-text="Sjabloon voor gezondheidszorgapp":::
+:::image type="content" source="media/brace-temp-rule.png" alt-text="Regels":::
 
 ### <a name="jobs"></a>Taken
 
@@ -113,7 +117,7 @@ Op het tabblad **Eigenschappen** kunt u eigenschappen van de cloud en de lees-/s
 
 Met het tabblad **Opdrachten** kunt u opdrachten uitvoeren op het apparaat.
 
-:::image type="content" source="media/knee-brace-dashboard.png" alt-text="Sjabloon voor gezondheidszorgapp":::
+:::image type="content" source="media/knee-brace-dashboard.png" alt-text="Dashboard voor kniebrace":::
 
 ### <a name="data-export"></a>Gegevensexport
 
@@ -123,7 +127,7 @@ Met gegevensexport kunt u de gegevens continu exporteren naar andere Azure-Servi
 
 Als u deze toepassing niet meer wilt gebruiken, verwijdert u de toepassing door **Beheer > Toepassingsinstellingen** te bezoeken en klikt u op **Verwijderen**.
 
-:::image type="content" source="media/admin-delete.png" alt-text="Sjabloon voor gezondheidszorgapp":::
+:::image type="content" source="media/admin-delete.png" alt-text="Resources opruimen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -4,15 +4,13 @@ ms.author: dominicbetts
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/15/2019
-ms.openlocfilehash: 6cd983b6421fc821853aa22d4dc2c297f672d292
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 647226091c3e15a19bf8262c23e62d95018488b3
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87336889"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831197"
 ---
-## <a name="clean-up-resources"></a>Resources opschonen
-
 Als u van plan bent om door te gaan met aanvullende IoT Plug en Play-artikelen, kunt u de resources die u in dit artikel hebt gebruikt, behouden en opnieuw gebruiken. Als dat niet het geval is, kunt u de resources die u in dit artikel hebt gemaakt, verwijderen om extra kosten te vermijden.
 
 U kunt zowel de hub als het geregistreerde apparaat tegelijk verwijderen door met de volgende Azure CLI-opdracht de hele resourcegroep te verwijderen. Gebruik deze opdracht niet als deze resources een resourcegroep delen met andere resources die u wilt houden.

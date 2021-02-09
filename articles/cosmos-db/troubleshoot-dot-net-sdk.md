@@ -3,18 +3,18 @@ title: Problemen vaststellen en oplossen bij het gebruik van Azure Cosmos DB .NE
 description: Gebruik functies als logboek registratie aan client zijde en andere hulpprogram ma's van derden voor het identificeren, diagnosticeren en Azure Cosmos DB oplossen van problemen met het gebruik van .NET SDK.
 author: anfeldma-ms
 ms.service: cosmos-db
-ms.date: 09/12/2020
+ms.date: 02/05/2021
 ms.author: anfeldma
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 6a78b38bd71a2822d94e58834ab17824c9ef6ec6
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 04813b9d70557314e619fded5294644f5f6fadf5
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683109"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831243"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Problemen vaststellen en oplossen bij het gebruik van Azure Cosmos DB .NET SDK
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -55,7 +55,7 @@ Raadpleeg de [sectie met github-problemen](https://github.com/Azure/azure-cosmos
 Door de [metrische gegevens](./monitor-cosmos-db.md) van de portal te controleren, kunt u bepalen of het een probleem aan de client zijde is of dat er een probleem is met de service. Als de metrische gegevens bijvoorbeeld een hoog aantal aanvragen met een rente beperking bevatten (HTTP-status code 429), wat betekent dat de aanvraag wordt beperkt, controleert u de sectie [aanvraag snelheid is te groot](troubleshoot-request-rate-too-large.md) . 
 
 ## <a name="retry-logic"></a>Logica voor opnieuw proberen <a id="retry-logics"></a>
-Cosmos DB SDK bij een i/o-fout probeert de mislukte bewerking opnieuw uit te voeren als het probleem zich voordoet in de SDK. Als er een nieuwe poging wordt gedaan om fouten te voor komen, is het een goed idee. Het is raadzaam om de nieuwste SDK te gebruiken als de logica voor nieuwe pogingen voortdurend wordt verbeterd.
+Cosmos DB SDK bij een IO-fout probeert de mislukte bewerking opnieuw uit te voeren als opnieuw proberen in de SDK kans van slagen heeft. Als er een nieuwe poging wordt gedaan om fouten te voor komen, is het een goed idee. Het is raadzaam om de nieuwste SDK te gebruiken als de logica voor nieuwe pogingen voortdurend wordt verbeterd.
 
 1. Bij lees-en query-i/o-fouten wordt opnieuw geprobeerd door de SDK zonder de halen aan de eind gebruiker.
 2. Schrijf bewerkingen (maken, Upsert, vervangen, verwijderen) zijn ' not ' idempotent en daarom kan SDK niet altijd een blinde schrijf bewerking uitvoeren. De toepassings logica van de gebruiker is vereist voor het afhandelen van de fout en het opnieuw proberen.
@@ -63,10 +63,11 @@ Cosmos DB SDK bij een i/o-fout probeert de mislukte bewerking opnieuw uit te voe
 
 ## <a name="common-error-status-codes"></a>Algemene fout status codes <a id="error-codes"></a>
 
-| Statuscode | Beschrijving | 
+| Statuscode | Description | 
 |----------|-------------|
 | 400 | Ongeldige aanvraag (afhankelijk van het fout bericht)| 
 | 401 | [Niet geautoriseerd](troubleshoot-unauthorized.md) | 
+| 403 | [Verboden](troubleshoot-forbidden.md) |
 | 404 | [Kan de resource niet vinden](troubleshoot-not-found.md) |
 | 408 | [Time-out van aanvraag](troubleshoot-dot-net-sdk-request-timeout.md) |
 | 409 | Conflict fout is opgetreden wanneer de ID van een resource voor een schrijf bewerking is genomen door een bestaande resource. Gebruik een andere ID voor de resource om dit probleem op te lossen. de ID moet uniek zijn binnen alle documenten met dezelfde partitie sleutel waarde. |

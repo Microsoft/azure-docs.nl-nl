@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 9ac616ddf1c3475f2ca3b3e8097bb74da72faa77
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-ms.translationtype: HT
+ms.openlocfilehash: 33eaa1ea928cc0650c91948c70d46daf499f3b4b
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95500268"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831198"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Zelfstudie: Een IoT Plug en Play-apparaat verbinden (C#)
 
@@ -20,7 +20,12 @@ In deze zelfstudie wordt uitgelegd hoe u een algemene IoT Plug en Play-[module](
 
 Een apparaat is een IoT Plug en Play-apparaat als het de eigen model-id publiceert wanneer het verbinding maakt met een IoT-hub en de eigenschappen en methoden implementeert die worden beschreven in het DTDL-model (Digital Twins Definition Language) dat wordt aangeduid door de model-id. Zie [Handleiding voor IoT Plug en Play-ontwikkelaars](./concepts-developer-guide-device.md) voor meer informatie over de wijze waarop apparaten een DTDL en een model-id gebruiken. Modules maken op dezelfde wijze gebruik van model-id's en DTDL-modellen.
 
-In deze zelfstudie wordt uitgelegd hoe u de C#-voorbeeldcode voor apparaten voor een thermostaat converteert naar een algemene module om te laten zien hoe u een IoT Plug en Play-module implementeert.
+Deze zelf studie laat zien hoe u het volgende kunt demonstreren om te laten zien hoe u een IoT Plug en Play-module implementeert:
+
+> [!div class="checklist"]
+> * Een apparaat met een module toevoegen aan uw IoT-hub.
+> * Converteer het voor beeld van een C#-apparaat in een algemene module.
+> * Gebruik de Service-SDK om met de module te communiceren.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -232,6 +237,10 @@ U kunt met de Azure IoT-verkenner het volgende bekijken:
 * Telemetrie van het IoT Edge-apparaat.
 * Updates van eigenschappen van de IoT Edge-moduledubbel die IoT Plug en Play-meldingen activeren.
 * De reactie van de IoT Edge-module op uw IoT Plug en Play-opdrachten.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+[!INCLUDE [iot-pnp-clean-resources](../../includes/iot-pnp-clean-resources.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

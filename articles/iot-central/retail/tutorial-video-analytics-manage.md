@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: 1c1ddeb8cafd8aa7584da48a715139c5d12eeb10
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
-ms.translationtype: HT
+ms.openlocfilehash: fbfef094cd062e437f2a28369162de96631ef41b
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874795"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832603"
 ---
 # <a name="tutorial-monitor-and-manage-a-video-analytics---object-and-motion-detection-application"></a>Zelfstudie: Een Video Analytics-toepassingssjabloon voor object- en bewegingsdetectie bewaken en beheren
 
@@ -61,7 +61,7 @@ Als u twee camera's hebt aangesloten op uw IoT Edge-gatewayapparaat, herhaalt u 
 
 Selecteer het tabblad **Downstreamapparaten** voor het **LVA Gateway 001**-apparaat om de camera-apparaten te zien die u zojuist hebt toegevoegd:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/inspect-downstream.png" alt-text="Camera toevoegen":::
+:::image type="content" source="media/tutorial-video-analytics-manage/inspect-downstream.png" alt-text="Inspecteren":::
 
 De camera-apparaten worden ook weergegeven in de lijst op de pagina **Apparaten** in de toepassing.
 
@@ -98,7 +98,7 @@ Selecteer **Opslaan**.
 
 Na enkele seconden ziet u het bevestigingsbericht **Geaccepteerd** voor elke instelling:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/object-detection.png" alt-text="Camera toevoegen":::
+:::image type="content" source="media/tutorial-video-analytics-manage/object-detection.png" alt-text="Objectdetectie":::
 
 ## <a name="start-lva-processing"></a>LVA-verwerking starten
 
@@ -108,13 +108,13 @@ Voer de opdracht **LVA-verwerking starten** uit.
 
 Wanneer de opdracht is voltooid, bekijkt u de opdrachtgeschiedenis om te controleren op eventuele fouten:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/start-processing.png" alt-text="Camera toevoegen":::
+:::image type="content" source="media/tutorial-video-analytics-manage/start-processing.png" alt-text="Opdracht LVA-verwerking starten":::
 
 ## <a name="monitor-the-cameras"></a>De camera’s bewaken
 
 Ga naar het **camera-003**-apparaat en selecteer het tabblad **Dashboard**:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/camera-dashboard.png" alt-text="Camera toevoegen":::
+:::image type="content" source="media/tutorial-video-analytics-manage/camera-dashboard.png" alt-text="Cameradashboard":::
 
 Op de tegel **Aantal detecties** wordt het gemiddelde aantal detecties weergegeven voor elk geselecteerde detectieklasseobject gedurende een detectie-interval van één seconde.
 
@@ -157,7 +157,7 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
 
 Ga naar het **camera-003**-apparaat en selecteer het tabblad **Dashboard**. Klik vervolgens op een van de hyperlinks naar de vastgelegde objectdetectie op de tegel **Video voor deductiegebeurtenis**. De video wordt vertoond op een pagina die wordt weergegeven met de lokale videospeler:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Camera toevoegen":::
+:::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Videofragment":::
 
 ## <a name="change-the-simulated-devices-in-application-dashboards"></a>De gesimuleerde apparaten op het toepassingsdashboard wijzigen
 
@@ -182,7 +182,7 @@ De toepassingsdashboards zijn oorspronkelijk gevuld met telemetrie en eigenschap
 
 Het dashboard **Monitor van echte camera** geeft nu waarden weer van het echte camera-apparaat:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/update-real-cameras.png" alt-text="Camera toevoegen":::
+:::image type="content" source="media/tutorial-video-analytics-manage/update-real-cameras.png" alt-text="Toepassingsdashboard voor echte camera’s":::
 
 ## <a name="pause-processing"></a>Verwerking onderbreken
 
@@ -195,7 +195,7 @@ U kunt Live Video Analytics-verwerking in de toepassing onderbreken:
     * Klik op de resource **Streaming-eindpunt**.
     * Selecteer op de pagina **Details van streaming-eindpunt** de optie **Stoppen**.
 
-## <a name="tidy-up"></a>Opruimen
+## <a name="clean-up-resources"></a>Resources opschonen
 
 Als u klaar bent met de toepassing, kunt u alle resources die u hebt gemaakt, als volgt verwijderen:
 

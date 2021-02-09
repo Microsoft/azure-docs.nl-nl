@@ -1,5 +1,5 @@
 ---
-title: Oplossingen voor de overheid bouwen met Azure IoT Central
+title: Wat zijn de Azure IoT Central government-oplossingen?
 description: Meer informatie over het bouwen van Smart City-oplossingen met behulp van Azure IoT Central-toepassingssjablonen.
 author: miriambrus
 ms.author: miriamb
@@ -7,14 +7,14 @@ ms.date: 12/11/2020
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 72b0e3c3cee0ed9131fe6ee1f50cee10ec03a7b7
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: a903622f698107f7f1a593946f083fca1573d53e
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590814"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834337"
 ---
-# <a name="building-government-solutions-with-azure-iot-central"></a>Oplossingen voor de overheid bouwen met Azure IoT Central
+# <a name="what-are-the-iot-central-government-solutions"></a>Wat zijn de IoT Central government-oplossingen?
 
 Begin met het bouwen van Smart City-oplossingen met behulp van Azure IoT Central-toepassingssjablonen. Begin nu met **bewaking van waterkwaliteit**, **bewaking van waterverbruik** en **verbonden afvalbeheer**.
 
@@ -71,8 +71,6 @@ Aan de slag met de [Zelfstudie over de app 'Verbonden afvalbeheer'](./tutorial-c
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Probeer gratis een van de overheidstoepassingssjablonen in IoT Central [om een app te maken](https://apps.azureiotcentral.com/build/government)
 * Meer informatie over de [Concepten van 'Bewaking van waterkwaliteit'](./concepts-waterqualitymonitoring-architecture.md)
 * Meer informatie over de [Concepten van 'Bewaking van waterverbruik'](./concepts-waterconsumptionmonitoring-architecture.md)
 * Meer informatie over de [Concepten van 'Verbonden afvalbeheer'](./concepts-connectedwastemanagement-architecture.md)  
-* Zie [Overzicht van IoT Central](../core/overview-iot-central.md) voor meer informatie over IoT Central

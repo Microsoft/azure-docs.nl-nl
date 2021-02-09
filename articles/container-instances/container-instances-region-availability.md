@@ -4,12 +4,12 @@ description: Beschik baarheid van reken-en geheugen resources voor de Azure Cont
 ms.topic: article
 ms.date: 04/27/2020
 ms.custom: references_regions
-ms.openlocfilehash: 63ec7c9027f957714108263dcbb4300a3cc68388
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: a415a739cd9c1e2ca39ebeaef1d8903ab72cf0c4
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661371"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831277"
 ---
 # <a name="resource-availability-for-azure-container-instances-in-azure-regions"></a>Beschik baarheid van resources voor Azure Container Instances in azure-regio's
 
@@ -29,12 +29,12 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 > [!IMPORTANT]
 > De maximale bronnen in een regio verschillen afhankelijk van uw implementatie. Een regio kan bijvoorbeeld een andere maximale CPU-en geheugen grootte hebben in een implementatie van een virtueel Azure-netwerk dan voor een algemene implementatie. Dezelfde regio kan ook een andere set maximum waarden hebben voor een implementatie met GPU-resources. Controleer uw implementatie type voordat u de onderstaande tabellen controleert op de maximum waarden in uw regio.
 
-| Regio | Maximaal CPU-gebruik | Maxi maal geheugen (GB) | Maximale CPU voor VNET | Max. VNET-geheugen (GB) | Opslag (GB) | GPU-Sku's (preview-versie) |
+| Region | Maximaal CPU-gebruik | Maxi maal geheugen (GB) | Maximale CPU voor VNET | Max. VNET-geheugen (GB) | Opslag (GB) | GPU-Sku's (preview-versie) |
 | -------- | :---: | :---: | :----: | :-----: | :-------: | :----: |
 | Australië - oost | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Brazilië - zuid | 4 | 16 | 2 | 8 | 50 | N.v.t. |
 | Canada - midden | 4 | 16 | 4 | 16 | 50 | N.v.t. |
-| India - centraal | 4 | 16 | N.v.t. | N.v.t. | 50 | V100 |
+| India - centraal | 4 | 16 | 4 | 4 | 50 | V100 |
 | VS - centraal | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Azië - oost | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | VS - oost | 4 | 16 | 4 | 16 | 50 | K80, P100, V100 |
@@ -53,7 +53,7 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | VS - west-centraal| 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Europa -west | 4 | 16 | 4 | 16 | 50 | K80, P100, V100 |
 | VS - west | 4 | 16 | 4 | 16 | 50 | N.v.t. |
-| West US 2 | 4 | 16 | 4 | 16 | 50 | K80, P100, V100 |
+| VS - west 2 | 4 | 16 | 4 | 16 | 50 | K80, P100, V100 |
 
 De volgende maximum bronnen zijn beschikbaar voor een container groep die is geïmplementeerd met [GPU-bronnen](container-instances-gpu.md) (preview-versie).
 
@@ -81,7 +81,7 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 > [!NOTE]
 > Zie [host-en container versie compatibiliteit](/virtualization/windowscontainers/deploy-containers/update-containers#host-and-container-version-compatibility) voor meer informatie over de hosts van 1B, 2b en 3b.
 
-| Regio | 1B/2B maximum CPU | 1B/2B Max. geheugen (GB) |3B maximum CPU | 3B Max. geheugen (GB) | Opslag (GB) |
+| Region | 1B/2B maximum CPU | 1B/2B Max. geheugen (GB) |3B maximum CPU | 3B Max. geheugen (GB) | Opslag (GB) |
 | -------- | :---: | :---: | :----: | :-----: | :-------: |
 | Australië - oost | 2 | 8 | 2 | 8 | 20 |
 | Brazilië - zuid | 4 | 16 | 4 | 16 | 20 |
@@ -102,7 +102,7 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | VS - west-centraal | 4 | 16 | 2 | 8 | 20 |
 | Europa -west | 4 | 16 | 4 | 16 | 20 |
 | VS - west | 4 | 16 | 2 | 8 | 20 |
-| West US 2 | 2 | 8 | 2 | 3,5 | 20 |
+| VS - west 2 | 2 | 8 | 2 | 3,5 | 20 |
 
 
 ### <a name="windows-server-2019-ltsc"></a>Windows Server 2019 LTSC
@@ -110,7 +110,7 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 > [!NOTE]
 > Zie [host-en container versie compatibiliteit](/virtualization/windowscontainers/deploy-containers/update-containers#host-and-container-version-compatibility) voor meer informatie over de hosts van 1B, 2b en 3b.
 
-| Regio | 1B/2B maximum CPU | 1B/2B Max. geheugen (GB) |3B maximum CPU | 3B Max. geheugen (GB) | Opslag (GB) |
+| Region | 1B/2B maximum CPU | 1B/2B Max. geheugen (GB) |3B maximum CPU | 3B Max. geheugen (GB) | Opslag (GB) |
 | -------- | :---: | :---: | :----: | :-----: | :-------: |
 | Australië - oost | 4 | 16 | 4 | 16 | 20 |
 | Brazilië - zuid | 4 | 16 | 4 | 16 | 20 |
@@ -132,7 +132,7 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | VS - west-centraal | 4 | 16 | 4 | 16 | 20 |
 | Europa -west | 4 | 16 | 4 | 16 | 20 |
 | VS - west | 4 | 16 | 4 | 16 | 20 |
-| West US 2 | 2 | 8 | 4 | 16 | 20 |
+| VS - west 2 | 2 | 8 | 4 | 16 | 20 |
 
 ## <a name="next-steps"></a>Volgende stappen
 

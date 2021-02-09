@@ -6,16 +6,19 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 10/12/2018
-ms.openlocfilehash: 8047e340f3262ba84484f5a8b57c17bf34a4af73
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 1faeb047783b9db24348425e5a6453754e550d4d
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625162"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833011"
 ---
 # <a name="network-performance-monitor-solution-faq"></a>Veelgestelde vragen over Netwerkprestatiemeter oplossingen
 
 ![Netwerkprestatiemeter-symbool](media/network-performance-monitor-faq/npm-symbol.png)
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
 
 In dit artikel worden de veelgestelde vragen over Netwerkprestatiemeter (NPM) in azure vastgelegd
 
@@ -34,7 +37,7 @@ Hieronder vindt u de platform vereisten voor de verschillende mogelijkheden van 
 - De ExpressRoute-monitor functie van NPM ondersteunt alleen het besturings systeem Windows Server (2008 SP1 of hoger).
 
 ### <a name="can-i-use-linux-machines-as-monitoring-nodes-in-npm"></a>Kan ik Linux-machines gebruiken als bewakings knooppunten in NPM?
-De mogelijkheid om netwerken met Linux-knoop punten te bewaken, is nu algemeen beschikbaar. Zien [hier](../../virtual-machines/extensions/oms-linux.md)de agent. 
+De mogelijkheid om netwerken met Linux-knoop punten te bewaken, is nu algemeen beschikbaar. Open [hier](../../virtual-machines/extensions/oms-linux.md)de agent. 
 
 ### <a name="what-are-the-size-requirements-of-the-nodes-to-be-used-for-monitoring-by-npm"></a>Wat zijn de grootte vereisten van de knoop punten die moeten worden gebruikt voor bewaking door NPM?
 Voor het uitvoeren van de NPM-oplossing op knoop punt-Vm's voor het bewaken van netwerken, moeten de knoop punten ten minste 500 MB geheugen en één kern hebben. U hoeft geen afzonderlijke knoop punten te gebruiken voor het uitvoeren van NPM. De oplossing kan worden uitgevoerd op knoop punten waarop andere workloads worden uitgevoerd. De oplossing biedt de mogelijkheid om het bewakings proces te stoppen als er meer dan 5% CPU wordt gebruikt.
@@ -255,10 +258,10 @@ Dit kan gebeuren als:
 * De on-premises en Azure-knoop punten die zijn gekozen voor het bewaken van het ExpressRoute-circuit in de bewakings configuratie, hebben geen verbinding met elkaar via het beoogde ExpressRoute-circuit. Zorg ervoor dat u de juiste knoop punten hebt gekozen die met elkaar zijn verbonden via het ExpressRoute-circuit dat u wilt bewaken.
 
 ### <a name="why-does-expressroute-monitor-report-my-circuitpeering-as-unhealthy-when-it-is-available-and-passing-data"></a>Waarom controleert ExpressRoute mijn circuit/peering als beschadigd wanneer deze beschikbaar zijn en gegevens door gegeven.
-De monitor ExpressRoute vergelijkt de netwerk prestatie waarden (verlies, latentie en bandbreedte gebruik) die worden gerapporteerd door de agents/service met de drempels die tijdens de configuratie zijn ingesteld. Als de gerapporteerde bandbreedte bezetting groter is dan de drempel waarde die is ingesteld in de configuratie, wordt het circuit gemarkeerd als beschadigd. Als het verlies, de latentie of de gebruikte bandbreedte benutting groter is dan de drempel waarde die in de configuratie is ingesteld, wordt de peering als beschadigd gemarkeerd. NPM maakt geen gebruik van metrische gegevens of enige andere vorm van data voor deicde-status.
+De monitor ExpressRoute vergelijkt de netwerk prestatie waarden (verlies, latentie en bandbreedte gebruik) die worden gerapporteerd door de agents/service met de drempels die tijdens de configuratie zijn ingesteld. Als het gerapporteerde bandbreedte gebruik groter is dan de drempel waarde die in de configuratie is ingesteld, wordt het circuit als beschadigd gemarkeerd. Als de gerapporteerde verlies, latentie of bandbreedte gebruik hoger is dan de drempel waarde die in de configuratie is ingesteld, wordt de peering als beschadigd gemarkeerd. NPM maakt geen gebruik van metrische gegevens of enige andere vorm van informatie om de status te bepalen.
 
-### <a name="why-does-expressroute-monitorbandwidth-utilisation-report-a-value-differrent-from-metrics-bits-inout"></a>Waarom rapporteert ExpressRoute Monitor'bandwidth-gebruik een waarde andere van metrische bits in/uit
-Voor ExpressRoute monitor is band breedte utiliation het gemiddelde van de inkomende en uitgaande band breedte in de afgelopen 20 minuten. deze worden uitgedrukt in bits per seconde. Voor metrische gegevens van snelle route zijn bit-in-en uitgangs punten per minuut. De gegevensset die voor beide wordt gebruikt, is niet alleen hetzelfde, maar de aggregatie valies tussen NPM en de metrische gegevens. Voor gedetailleerde, minuut per minuut controleren en snelle waarschuwingen wordt u aangeraden waarschuwingen rechtstreeks in te stellen op basis van de maat eenheden.
+### <a name="why-does-expressroute-monitorbandwidth-utilization-report-a-value-different-from-metrics-bits-inout"></a>Waarom rapporteert ExpressRoute Monitor'bandwidth gebruik een waarde die afwijkt van de metrische bits in/out
+Het bandbreedte gebruik voor ExpressRoute-monitor is het gemiddelde van de inkomende en uitgaande band breedte in de afgelopen 20 minuten. deze worden uitgedrukt in bits per seconde. Voor metrische gegevens van snelle route zijn bit-in-en uitgangs punten per minuut. De gegevensset die voor beide wordt gebruikt, is niet alleen hetzelfde, maar de aggregatie varieert tussen NPM en de maat meters. Voor gedetailleerde, minuut per minuut controleren en snelle waarschuwingen wordt u aangeraden waarschuwingen rechtstreeks in te stellen op basis van de maat eenheden.
 
 ### <a name="while-configuring-monitoring-of-my-expressroute-circuit-the-azure-nodes-are-not-being-detected"></a>Tijdens het configureren van de bewaking van mijn ExpressRoute-circuit worden de Azure-knoop punten niet gedetecteerd.
 Dit kan gebeuren als de Azure-knoop punten zijn verbonden via Operations Manager. De ExpressRoute-monitor mogelijkheid biedt alleen ondersteuning voor Azure-knoop punten die zijn verbonden als rechtstreekse agents.
@@ -300,4 +303,3 @@ NPM rondt de latentie nummers af in de gebruikers interface en in milliseconden.
 ## <a name="next-steps"></a>Volgende stappen
 
 - Raadpleeg [Netwerkprestatiemeter-oplossing in azure](./network-performance-monitor.md)voor meer informatie over Netwerkprestatiemeter.
-

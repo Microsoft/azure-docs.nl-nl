@@ -3,12 +3,12 @@ title: Sjabloon functies-vergelijking
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om waarden te vergelijken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 1b7192db361f510e0246a737de47930534a1cb9d
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 95655a4c92a1de9bb7a7faebcdaa83fb0fa75696
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920522"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833997"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Vergelijkingsfuncties voor ARM-sjablonen
 
@@ -33,8 +33,8 @@ Retourneert de eerste waarde die niet null is van de para meters. Lege teken ree
 
 | Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |int, String, array of object |De eerste waarde die moet worden getest op null. |
-| aanvullende argumenten |No |int, String, array of object |Aanvullende waarden om te testen op null. |
+| Arg1 |Ja |int, String, array of object |De eerste waarde die moet worden getest op null. |
+| aanvullende argumenten |Nee |int, String, array of object |Aanvullende waarden om te testen op null. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -106,11 +106,11 @@ param objectToTest object = {
   ]
 }
 
-output stringOutput string = coalesce(objectToTest.null1, objectToTest.null2, objectToTest.string)
-output intOutput int = coalesce(objectToTest.null1, objectToTest.null2, objectToTest.int)
-output objectOutput object = coalesce(objectToTest.null1, objectToTest.null2, objectToTest.object)
-output arrayOutput array = coalesce(objectToTest.null1, objectToTest.null2, objectToTest.array)
-output emptyOutput bool =empty(coalesce(objectToTest.null1, objectToTest.null2))
+output stringOutput string = objectToTest.null1 ?? objectToTest.null2 ?? objectToTest.string
+output intOutput int = objectToTest.null1 ?? objectToTest.null2 ?? objectToTest.int
+output objectOutput object = objectToTest.null1 ?? objectToTest.null2 ?? objectToTest.object
+output arrayOutput array = objectToTest.null1 ?? objectToTest.null2 ?? objectToTest.array
+output emptyOutput bool =empty(objectToTest.null1 ?? objectToTest.null2)
 ```
 
 ---
@@ -135,8 +135,8 @@ Hiermee wordt gecontroleerd of twee waarden gelijk zijn aan elkaar. De `equals` 
 
 | Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |int, String, array of object |De eerste waarde die moet worden gecontroleerd op gelijkheid. |
-| Arg2 |Yes |int, String, array of object |De tweede waarde om te controleren op gelijkheid. |
+| Arg1 |Ja |int, String, array of object |De eerste waarde die moet worden gecontroleerd op gelijkheid. |
+| Arg2 |Ja |int, String, array of object |De tweede waarde om te controleren op gelijkheid. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -319,8 +319,8 @@ Controleert of de eerste waarde groter is dan de tweede waarde. De `greater` fun
 
 | Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |int of String |De eerste waarde voor de grotere vergelijking. |
-| Arg2 |Yes |int of String |De tweede waarde voor de grotere vergelijking. |
+| Arg1 |Ja |int of String |De eerste waarde voor de grotere vergelijking. |
+| Arg2 |Ja |int of String |De tweede waarde voor de grotere vergelijking. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -400,8 +400,8 @@ Hiermee wordt gecontroleerd of de eerste waarde groter is dan of gelijk is aan d
 
 | Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |int of String |De eerste waarde voor de grotere of gelijk zijnde vergelijking. |
-| Arg2 |Yes |int of String |De tweede waarde voor de groter of gelijke vergelijking. |
+| Arg1 |Ja |int of String |De eerste waarde voor de grotere of gelijk zijnde vergelijking. |
+| Arg2 |Ja |int of String |De tweede waarde voor de groter of gelijke vergelijking. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -481,8 +481,8 @@ Controleert of de eerste waarde lager is dan de tweede waarde. De `less` functie
 
 | Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |int of String |De eerste waarde voor de minder vergelijkingen. |
-| Arg2 |Yes |int of String |De tweede waarde voor de minder vergelijkingen. |
+| Arg1 |Ja |int of String |De eerste waarde voor de minder vergelijkingen. |
+| Arg2 |Ja |int of String |De tweede waarde voor de minder vergelijkingen. |
 
 ### <a name="return-value"></a>Retourwaarde
 
@@ -562,8 +562,8 @@ Hiermee wordt gecontroleerd of de eerste waarde kleiner is dan of gelijk is aan 
 
 | Parameter | Vereist | Type | Description |
 |:--- |:--- |:--- |:--- |
-| Arg1 |Yes |int of String |De eerste waarde voor de vergelijking met minder of gelijk aan. |
-| Arg2 |Yes |int of String |De tweede waarde voor de vergelijking met minder of gelijk aan. |
+| Arg1 |Ja |int of String |De eerste waarde voor de vergelijking met minder of gelijk aan. |
+| Arg2 |Ja |int of String |De tweede waarde voor de vergelijking met minder of gelijk aan. |
 
 ### <a name="return-value"></a>Retourwaarde
 

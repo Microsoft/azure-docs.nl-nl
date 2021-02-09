@@ -4,15 +4,15 @@ description: Leer concepten voor een oplossing voor het bewaken van het waterver
 author: miriambrus
 ms.author: miriamb
 ms.date: 12/11/2020
-ms.topic: tutorial
+ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: a291a32c8fd635c9124a7e1f997b6c676c8c0bd4
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: da1eafee719919d7f3086a059d8d2c70ef8d8cb1
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586785"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831651"
 ---
 # <a name="water-consumption-monitoring-reference-architecture"></a>Referentiearchitectuur voor de bewaking van waterverbruik 
 

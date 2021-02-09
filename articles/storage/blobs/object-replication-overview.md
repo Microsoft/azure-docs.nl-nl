@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/13/2021
+ms.date: 02/08/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e7fa6b1ee7c92f82c3e15335991f5a240c7acc52
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 391c33e72f45e7c0c0b56128b32a8e73399e417a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762886"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834320"
 ---
 # <a name="object-replication-for-block-blobs"></a>Object replicatie voor blok-blobs
 
@@ -42,6 +42,8 @@ Voor object replicatie moeten de volgende Azure Storage-functies ook zijn ingesc
 - [BLOB-versie beheer](versioning-overview.md): moet zijn ingeschakeld op zowel de bron-als de doel account. Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer informatie over het inschakelen van versie beheer.
 
 Het inschakelen van wijzigings feed-en BLOB-versie beheer kan extra kosten in beslag nemen. Raadpleeg de [pagina met Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/)voor meer informatie.
+
+Object replicatie wordt alleen ondersteund voor v2-opslag accounts voor algemeen gebruik. De bron-en doel accounts moeten algemeen gebruik v2 zijn. 
 
 ## <a name="how-object-replication-works"></a>Werking van object replicatie
 

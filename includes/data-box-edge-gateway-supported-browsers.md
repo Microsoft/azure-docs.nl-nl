@@ -2,14 +2,14 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 11/05/2018
+ms.date: 02/05/2021
 ms.author: alkohli
-ms.openlocfilehash: a4adef26153870dbce4c24303a403c69285f7252
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5fa444e223991ba6f7e6587a66df858fb7f9c31
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176476"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831570"
 ---
 Hier volgt een lijst met browsers die worden ondersteund voor de lokale web-UI voor het virtuele apparaat.
 
@@ -17,5 +17,5 @@ Hier volgt een lijst met browsers die worden ondersteund voor de lokale web-UI v
 |---------|---------|---------|
 |Google Chrome   |Nieuwste versie         |         |
 |Microsoft Edge    | Nieuwste versie        |         |
-|Internet Explorer     | Nieuwste versie        |         |
+|Internet Explorer     | Nieuwste versie        |Als Verbeterde beveiligings functies zijn ingeschakeld, hebt u mogelijk geen toegang tot de lokale web-UI-pagina's. Schakel de verbeterde beveiliging uit en start de browser opnieuw. |
 |FireFox    |Nieuwste versie         |         |

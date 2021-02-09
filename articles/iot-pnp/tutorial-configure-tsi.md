@@ -7,18 +7,23 @@ ms.date: 10/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 299730bcdab3ae7e558f39cc7f7d5076ffc58ea9
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 08ae21c2cd0859b7c361756a4f0380d3ab322a28
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820177"
+ms.locfileid: "99834354"
 ---
 # <a name="tutorial-create-and-configure-a-time-series-insights-gen2-environment"></a>Zelf studie: een Time Series Insights Gen2-omgeving maken en configureren
 
 In deze zelfstudie leert u hoe u een [Time Series Insights Gen2](../time-series-insights/overview-what-is-tsi.md)-omgeving maakt en configureert voor integratie met uw IoT Plug en Play-oplossing. Gebruik Time Series Insights om tijdreeksgegevens te verzamelen, te verwerken, op te slaan, te visualiseren en er query's op uit te voeren op de schaal van IoT (Internet of Things).
 
-Eerst richt u een Time Series Insights-omgeving in en verbindt u de IoT-hub als een streaming-gebeurtenisbron. Vervolgens voert u modelsynchronisatie uit om uw [Time Series-model](../time-series-insights/concepts-model-overview.md) te maken. U gebruikt de [DTDL-voorbeeldmodelbestanden (Digital Twins Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) die u hebt gebruikt voor de temperatuurregelings- en thermostaatapparaten.
+In deze zelfstudie hebt u
+
+> [!div class="checklist"]
+> * Richt een Time Series Insights omgeving in en verbind uw IoT-hub als een streaming-gebeurtenis bron.
+> * Werk met model synchronisatie om uw [Time Series-model](../time-series-insights/concepts-model-overview.md)te ontwerpen.
+> * Gebruik de [DTDL-voorbeeld model bestanden (Digital Apparaatdubbels Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl) die u hebt gebruikt voor de temperatuur regelaar en de Thermo staat-apparaten.
 
 > [!NOTE]
 > Deze integratie tussen Time Series Insights en IoT-Plug en Play is in preview. De manier waarop DTDL-apparaatmodellen worden toegewezen aan het Time Series-model van Time Series Insights, kan wijzigen. 
@@ -222,10 +227,11 @@ Ga terug naar het grafiekdeelvenster en vouw **Apparaatvloot** > uw apparaat uit
 
 ![Schermopname van het wijzigen van een instantietype voor thermostaat2.](./media/tutorial-configure-tsi/charting-values.png)
 
+## <a name="clean-up-resources"></a>Resources opschonen
+
+[!INCLUDE [iot-pnp-clean-resources](../../includes/iot-pnp-clean-resources.md)]
+
 ## <a name="next-steps"></a>Volgende stappen
 
-* Raadpleeg [Azure Time Series Insights Explorer](../time-series-insights/concepts-ux-panels.md) voor meer informatie over de verschillende grafiekopties, waaronder intervalgroottes en y-asbesturingselementen.
-
-* Raadpleeg het artikel [Time Series-model in Azure Time Series Insights Gen2](../time-series-insights/concepts-model-overview.md) voor een gedetailleerd overzicht van het Time Series-model van uw omgeving.
-
-* Raadpleeg [Query-API's voor Azure Time Series Insights Gen2](/rest/api/time-series-insights/reference-query-apis) voor meer informatie over de query-API's en de syntaxis van Time Series-expressies.
+> [!div class="nextstepaction"]
+> Raadpleeg [Azure Time Series Insights Explorer](../time-series-insights/concepts-ux-panels.md) voor meer informatie over de verschillende grafiekopties, waaronder intervalgroottes en y-asbesturingselementen.

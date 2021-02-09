@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: a95f1befcdc9b59293eb97330ba7ceae3034a74b
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
-ms.translationtype: HT
+ms.openlocfilehash: d9b5af45ab9a1003cc25e8b1ea2059b83bc715c4
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516766"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833300"
 ---
 # <a name="tutorial-create-and-walk-through-the-smart-meter-monitoring-app-template"></a>Zelfstudie: Een app-sjabloon maken en leren kennen om de werking van slimme meters te bewaken 
 
@@ -102,8 +102,7 @@ Als u besluit deze toepassing niet te blijven gebruiken, verwijdert u de toepass
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Lees meer over de architectuur van de app voor slimme meters in 
+Zie voor meer informatie over de architectuur van de slimme meter-app:
+
 > [!div class="nextstepaction"]
-> [het conceptartikel](./concept-iot-central-smart-meter-app.md)
-* Maak gratis toepassingssjablonen voor slimme meters: [slimme meter-app](https://apps.azureiotcentral.com/build/new/smart-meter-monitoring)
-* Zie [Overzicht van IoT Central](../index.yml) voor meer informatie over IoT Central
+> [Toepassings architectuur voor slimme meter](./concept-iot-central-smart-meter-app.md)

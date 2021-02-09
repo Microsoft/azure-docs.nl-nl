@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: KishorIoT
 ms.author: nandab
 ms.date: 10/06/2020
-ms.openlocfilehash: ecc32908aea2fb474d2ebe5bd94f556527eda814
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
-ms.translationtype: HT
+ms.openlocfilehash: 70769ec97affcd95d07a1365d6357262072c86ec
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763410"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832064"
 ---
 # <a name="tutorial-create-a-video-analytics---object-and-motion-detection-application-in-azure-iot-central-yolo-v3"></a>Zelfstudie: Een toepassing Videoanalyse: object- en bewegingsdetectie maken in Azure IoT Central (YOLO v3)
 
@@ -127,3 +127,25 @@ Selecteer op de pagina **LVA Edge Gateway v2** de optie **+ Manifest vervangen**
 Navigeer naar de map *lva-configuration* en selecteer het manifestbestand *deployment.amd64.json* dat u eerder hebt bewerkt. Selecteer **Uploaden**. Wanneer de validatie is voltooid, selecteert u **Vervangen**.
 
 [!INCLUDE [iot-central-video-analytics-part4](../../../includes/iot-central-video-analytics-part4.md)]
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Als u klaar bent met de toepassing, kunt u alle resources die u hebt gemaakt, als volgt verwijderen:
+
+1. Ga in de IoT Central-toepassing naar de pagina **Uw toepassing** in de sectie **Beheer**. Selecteer vervolgens **Verwijderen**.
+1. Verwijder in Azure Portal de resourcegroep **lva-rg**.
+1. Stop op de lokale machine de Docker-container **amp-viewer**.
+
+## <a name="next-steps"></a>Volgende stappen
+
+U hebt nu een IoT Central-toepassing gemaakt met behulp van de toepassingssjabloon **Videoanalyse: object- en bewegingsdetectie**, een apparaatsjabloon voor het gatewayapparaat gemaakt en een gatewayapparaat aan de toepassing toegevoegd.
+
+Als u de toepassing ‘Videoanalyse: object- en bewegingsdetectie’ wilt uitproberen met behulp van IoT Edge-modules die een cloud-VM uitvoeren met gesimuleerde videostreams:
+
+> [!div class="nextstepaction"]
+> [Een IoT Edge-exemplaar voor videoanalyse maken (Linux-VM)](tutorial-video-analytics-iot-edge-vm.md)
+
+Als u de toepassing ‘Videoanalyse: object- en bewegingsdetectie’ wilt uitproberen met behulp van IoT Edge-modules die een echt apparaat uitvoeren met een echte **ONVIF**-camera:
+
+> [!div class="nextstepaction"]
+> [Een IoT Edge-exemplaar voor videoanalyse maken (Intel NUC)](tutorial-video-analytics-iot-edge-nuc.md)

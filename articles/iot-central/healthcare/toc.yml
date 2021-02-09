@@ -1,4 +1,4 @@
-- name: Documentatie voor Azure IoT Central for Healthcare
+- name: Documentatie voor Azure IoT Central voor gezondheids zorg
   href: index.yml
 - name: Overzicht
   items:
@@ -9,6 +9,8 @@
   items:
     - name: Een app voor continue patiëntbewaking maken
       href: tutorial-continuous-patient-monitoring.md
+    - name: Een triagedashboard maken met gezondheidsgegevens
+      href: howto-health-data-triage.md
 - name: Concepten
   items:
     - name: Architectuur van continue patiëntbewaking
@@ -19,8 +21,6 @@
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
 - name: Instructiegidsen
   items:
-    - name: Een triagedashboard maken met gezondheidsgegevens
-      href: howto-health-data-triage.md
     - name: Apparaten verbinden en ontwikkelen
       items:
         - name: Een Rigado Cascade 500 voorbereiden en verbinden

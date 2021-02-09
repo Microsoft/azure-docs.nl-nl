@@ -766,6 +766,8 @@
                   href: troubleshoot-not-found.md
                 - name: Probleem 'Niet geautoriseerd' oplossen
                   href: troubleshoot-unauthorized.md
+                - name: Problemen oplossen verboden
+                  href: troubleshoot-forbidden.md
                 - name: Beschikbaarheidsproblemen oplossen in omgevingen in meerdere regio's
                   href: troubleshoot-sdk-availability.md
             - name: .NET

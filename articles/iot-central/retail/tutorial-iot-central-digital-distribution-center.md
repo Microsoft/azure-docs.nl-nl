@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 2b8ed417de966f8731542e8f5ca12a6a05e2dc8a
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 9d7c4d2afa8eaf197ec05bcb0aed654153fb8f0d
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820276"
+ms.locfileid: "99831294"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Zelfstudie: Een toepassingssjabloon voor een digitaal distributiecentrum implementeren en doorlopen
 
@@ -109,8 +109,8 @@ Als u deze app niet meer wilt gebruiken, verwijdert u de app door **Beheer** > *
 > ![Schermopname die laat zien hoe u de toepassing verwijdert wanneer u deze niet meer nodig hebt](./media/tutorial-iot-central-ddc/ddc-cleanup.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over de architectuur van de oplossing Digital Distribution Center 
+
+Meer informatie over de oplossings architectuur van Digital Distribution Center:
+
 > [!div class="nextstepaction"]
 > [concept van digitaal distributiecentrum](./architecture-digital-distribution-center.md)
-* Meer informatie over andere [IoT Central-retailsjablonen](./overview-iot-central-retail.md)
-* Zie [Overzicht van IoT Central](../core/overview-iot-central.md) voor meer informatie over IoT Central

@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 2b26b4390cb19b832349b49d4e95a5355caed594
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 4bade4cfe5bf82aefcc967d86362e27605a005f3
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820293"
+ms.locfileid: "99832178"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Zelfstudie: Een toepassingssjabloon voor slim voorraadbeheer implementeren en doorlopen
 
@@ -109,8 +109,8 @@ Als u deze app niet meer wilt gebruiken, verwijdert u de app door **Beheer** > *
 > ![Schermopname die laat zien hoe u de toepassing verwijdert wanneer u deze niet meer nodig hebt](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_cleanup.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over slim voorraadbeheer 
+
+Meer informatie over Smart Inventory Management:
+
 > [!div class="nextstepaction"]
 > [Concept van slim voorraadbeheer](./architecture-smart-inventory-management.md)
-* Meer informatie over andere [IoT Central-retailsjablonen](./overview-iot-central-retail.md)
-* Zie [Overzicht van IoT Central](../core/overview-iot-central.md) voor meer informatie over IoT Central

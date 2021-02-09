@@ -7,12 +7,12 @@ ms.date: 05/13/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 6852b0532b23e46c7b986926b21cd0b7e9f9736d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.openlocfilehash: 429400bb6cb41ede89597dc739a612d1bf9893f2
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421376"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831260"
 ---
 # <a name="tutorial---use-mqtt-to-develop-an-iot-plug-and-play-device-client"></a>Zelfstudie - Een IoT Plug en Play-apparaatclient ontwikkelen met MQTT
 
@@ -137,15 +137,14 @@ De volgende definities zijn voor de MQTT-onderwerpen die het apparaat gebruikt o
 * `DEVICE_TELEMETRY_MESSAGE` definieert het onderwerp dat het apparaat gebruikt om telemetriegegevens naar uw IoT-hub te verzenden.
 
 Ga voor meer informatie over MQTT naar de GitHub-opslagplaats [MQTT Samples for Azure IoT](https://github.com/Azure-Samples/IoTMQTTSample/) (MQTT-voorbeelden voor Azure IoT).
-  
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+[!INCLUDE [iot-pnp-clean-resources](../../includes/iot-pnp-clean-resources.md)]
+
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u een MQTT-apparaatclient kunt wijzigen om de regels voor IoT Plug en Play te volgen. Voor meer informatie over IoT Plug and Play, bekijk:
-
-> [!div class="nextstepaction"]
-> [Architectuur](concepts-architecture.md)
-
-Voor meer informatie over IoT Hub-ondersteuning voor het MQTT-protocol, gaat u naar:
+In deze zelfstudie hebt u geleerd hoe u een MQTT-apparaatclient kunt wijzigen om de regels voor IoT Plug en Play te volgen. Voor meer informatie over IoT Hub-ondersteuning voor het MQTT-protocol, gaat u naar:
 
 > [!div class="nextstepaction"]
 > [Communiceren met uw IoT-hub met het MQTT-protocol](../iot-hub/iot-hub-mqtt-support.md)

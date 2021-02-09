@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc, contperf-fy21q2
-ms.openlocfilehash: b5f4b6d42d67b69bd8b6be1ada6f5651d0cb8675
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: e6971fa129c01fc4cdf64e0dc681ac0fab4f707b
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029835"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833810"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
@@ -156,9 +156,6 @@ Voor elk Azure-abonnement gelden standaardquota die invloed kunnen hebben op het
 
 Nu u een overzicht van IoT Central hebt, zijn dit mogelijke volgende stappen:
 
-- Lees wat de beschikbare [Azure-technologieën en -services zijn voor het maken van IoT-oplossingen](../../iot-fundamentals/iot-services-and-technologies.md).
 - Als u apparaatontwikkelaar bent en u meer wilt weten over coderen, kunt u het beste de stap [Create and connect a client application to your Azure IoT Central application](./tutorial-connect-device.md) (Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing) volgen.
 - Raak vertrouwd met de [gebruikersinterface van Azure IoT Central](overview-iot-central-tour.md).
 - Ga aan de slag door [een Azure IoT Central-toepassing te maken](quick-deploy-iot-central.md).
-- Lees hoe u [een Azure IoT Edge-apparaat verbindt](./tutorial-add-edge-as-leaf-device.md).
-- Lees meer over [Azure IoT-technologieën en -services](../../iot-fundamentals/iot-services-and-technologies.md).

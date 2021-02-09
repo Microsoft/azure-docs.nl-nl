@@ -3,7 +3,7 @@ title: DDoS-beveiligings waarschuwingen voor Azure DDoS Protection Standard weer
 description: Meer informatie over het weer geven en configureren van DDoS-beveiligings waarschuwingen voor Azure DDoS Protection Standard.
 services: ddos-protection
 documentationcenter: na
-author: yitoh
+author: aletheatoh
 ms.service: ddos-protection
 ms.devlang: na
 ms.topic: article
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: ea62b5df7159440a7538c7db0711b7d8f63ec220
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 2d72027082ed2b57b28a15a736c35801ba88188c
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806287"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832518"
 ---
 # <a name="view-and-configure-ddos-protection-alerts"></a>DDoS-beschermingswaarschuwingen bekijken en configureren
 
@@ -41,7 +41,8 @@ In deze zelfstudie leert u het volgende:
 Met deze sjablonen kunt u waarschuwingen configureren voor alle open bare IP-adressen waarvoor u diagnostische logboek registratie hebt ingeschakeld. Om deze waarschuwings sjablonen te kunnen gebruiken, hebt u eerst een Log Analytics-werk ruimte nodig waarvoor Diagnostische instellingen zijn ingeschakeld. Zie [DDoS diagnostische logboek registratie weer geven en configureren](diagnostic-logging.md).
 
 ### <a name="azure-monitor-alert-rule"></a>Waarschuwings regel Azure Monitor
-Met deze [Azure monitor waarschuwings regel](https://aka.ms/ddosmitigationstatus) wordt een eenvoudige query uitgevoerd om te detecteren wanneer er een actieve DDoS-beperking optreedt. Dit duidt op een mogelijke aanval. Actie groepen kunnen worden gebruikt om acties als resultaat van de waarschuwing aan te roepen.
+
+Met deze [Azure monitor waarschuwings regel](https://aka.ms/DDOSmitigationstatus) wordt een eenvoudige query uitgevoerd om te detecteren wanneer er een actieve DDoS-beperking optreedt. Dit duidt op een mogelijke aanval. Actie groepen kunnen worden gebruikt om acties als resultaat van de waarschuwing aan te roepen.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520Monitor%2520Alert%2520-%2520DDoS%2520Mitigation%2520Started%2FDDoSMitigationStarted.json)
 

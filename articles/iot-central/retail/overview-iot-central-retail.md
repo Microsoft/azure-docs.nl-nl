@@ -1,5 +1,5 @@
 ---
-title: Oplossingen voor de detailhandel bouwen met Azure IoT Central | Microsoft Docs
+title: Wat zijn de Azure IoT Central Retail oplossingen | Microsoft Docs
 description: Krijg meer informatie over het gebruik van Azure IoT Central-toepassingssjablonen om oplossingen te bouwen voor verbonden logistiek, digitale distributiecentra, in-storeanalyse, voorwaardebewaking, betalingen, slim voorraadbeheer en de detailhandel.
 author: avneet723
 ms.author: avneets
@@ -8,14 +8,14 @@ ms.topic: overview
 ms.service: iot-central
 ms.subservice: iot-central-retail
 services: iot-central
-ms.openlocfilehash: 43bf91c83f66b05c448e52286b34c51a9fd30a2b
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
-ms.translationtype: HT
+ms.openlocfilehash: 56198cf661001bcfcec45d483d0f691234851894
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124959"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832280"
 ---
-# <a name="building-retail-solutions-with-azure-iot-central"></a>Oplossingen voor de detailhandel bouwen met Azure IoT Central
+# <a name="what-are-the-iot-central-retail-solutions"></a>Wat zijn de IoT Central handels oplossingen?
 
 Azure IoT Central is een platform voor IoT-apps dat de inzet en kosten verlaagt die gepaard gaan met het ontwikkelen, beheren en onderhouden van geavanceerde IoT-oplossingen. Als u ervoor kiest om toepassingen met Azure IoT Central te bouwen, hebt u de mogelijkheid om tijd, geld en energie te besteden aan de transformatie van uw bedrijf met IoT-gegevens, in plaats van alleen maar een complexe en voortdurend veranderende IoT-infrastructuur te onderhouden en bij te werken.
 
@@ -41,9 +41,9 @@ Oplossingen voor verbonden logistiek kennen onder andere de volgende voordelen:
 
 In de volgende schermopnamen ziet u het kant-en-klare dashboard in de toepassingssjabloon. Het dashboard kan volledig worden aangepast aan uw specifieke vereisten voor de oplossing:
 
-:::image type="content" source="media/overview-iot-central-retail/connected-logistics-dashboard1.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/connected-logistics-dashboard1.png" alt-text="Schermopname van de bovenste helft van het dashboard voor verbonden logistieke bewerkingen.":::
 
-:::image type="content" source="media/overview-iot-central-retail/connected-logistics-dashboard2.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/connected-logistics-dashboard2.png" alt-text="Schermopname van de onderste helft van het dashboard voor verbonden logistieke bewerkingen.":::
 
 Zie de zelfstudie [Een toepassingssjabloon voor verbonden logistiek implementeren en doorlopen](./tutorial-iot-central-connected-logistics.md) voor meer informatie.
 
@@ -64,7 +64,7 @@ Een digitaal distributiecentrum heeft onder meer de volgende voordelen:
 
 In de volgende schermopname ziet u het kant-en-klare dashboard in de toepassingssjabloon. Het dashboard kan volledig worden aangepast aan uw specifieke vereisten voor de oplossing: 
 
-:::image type="content" source="media/overview-iot-central-retail/digital-distribution-center-dashboard.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/digital-distribution-center-dashboard.png" alt-text="Dashboard van een digitaal distributiecentrum":::
 
 Zie de zelfstudie [Een toepassingssjabloon voor een digitaal distributiecentrum implementeren en doorlopen](./tutorial-iot-central-digital-distribution-center.md) voor meer informatie.
 
@@ -86,7 +86,7 @@ De toepassingssjabloon wordt geleverd met een aantal apparaatsjablonen en er wor
 
 In de volgende schermopname ziet u het kant-en-klare dashboard in de toepassingssjabloon. Het dashboard kan volledig worden aangepast aan uw specifieke vereisten voor de oplossing: 
 
-:::image type="content" source="media/overview-iot-central-retail/in-store-analytics-condition-dashboard.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/in-store-analytics-condition-dashboard.png" alt-text="In-Store Analytics: bewaking van condities":::
 
 Raadpleeg de zelfstudie [Een in-store analysetoepassing maken in Azure IoT Central](./tutorial-in-store-analytics-create-app.md) voor meer informatie.
 
@@ -108,7 +108,7 @@ De toepassingssjabloon wordt geleverd met een aantal apparaatsjablonen en er wor
 
 In de volgende schermopname ziet u het kant-en-klare dashboard in de toepassingssjabloon. Het dashboard kan volledig worden aangepast aan uw specifieke vereisten voor de oplossing: 
 
-:::image type="content" source="media/overview-iot-central-retail/In-Store-Analytics-Checkout-Dashboard.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/In-Store-Analytics-Checkout-Dashboard.png" alt-text="In-Store Analytics: betaling":::
 
 Raadpleeg de zelfstudie [Een in-store analysetoepassing maken in Azure IoT Central](./tutorial-in-store-analytics-create-app.md) voor meer informatie.
 
@@ -128,7 +128,7 @@ Deze toepassingssjabloon is gericht op de connectiviteit van apparaten en de con
 
 In de volgende schermopname ziet u het kant-en-klare dashboard in de toepassingssjabloon. Het dashboard kan volledig worden aangepast aan uw specifieke vereisten voor de oplossing:
 
-:::image type="content" source="media/overview-iot-central-retail/smart-inventory-management-dashboard.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/smart-inventory-management-dashboard.png" alt-text="Dashboard voor slim voorraadbeheer":::
 
 Zie de zelfstudie [Een toepassingssjabloon voor slim voorraadbeheer implementeren en doorlopen](./tutorial-iot-central-smart-inventory-management.md) voor meer informatie.
 
@@ -148,7 +148,7 @@ Met het toepassingssjabloon kunt u onder meer:
 
 In de volgende schermopname ziet u het kant-en-klare dashboard in de toepassingssjabloon. Het dashboard kan volledig worden aangepast aan uw specifieke vereisten voor de oplossing:
 
-:::image type="content" source="media/overview-iot-central-retail/MFC-Dashboard.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/MFC-Dashboard.png" alt-text="Micro-uitvoeringscentrum":::
 
 Zie de zelfstudie [Een toepassingssjabloon voor een micro-uitvoeringscentrum implementeren en doorlopen](./tutorial-micro-fulfillment-center.md) voor meer informatie.
 
@@ -165,7 +165,7 @@ De toepassingssjabloon omvat vier toepassingsdashboards:
 * **(Voorbeeld) Real Camera Management** gebruikt gesimuleerde camera's om te laten zien hoe u uw camera's vanuit de toepassing kunt beheren.
 * **(Voorbeeld) Real Camera Monitor** gebruikt gesimuleerde camera's om te laten zien hoe u uw camera's vanuit de toepassing kunt bewaken.
 
-:::image type="content" source="media/overview-iot-central-retail/live-video-analytics.png" alt-text="Overzicht van Azure IoT Retail":::
+:::image type="content" source="media/overview-iot-central-retail/live-video-analytics.png" alt-text="Videoanalyse: object- en bewegingsdetectie":::
 
 Zie [De architectuur van de videoanalysetoepassing](architecture-video-analytics.md) voor meer informatie over de architectuur van een oplossing.
 
@@ -180,9 +180,5 @@ Zie de zelfstudie [Een videoanalysetoepassing maken in Azure IoT Central](tutori
 U begint als volgt met het maken van een oplossing voor de detailhandel:
 
 * Ga aan de slag met de zelfstudie [Een In-Store Analytics-toepassing in Azure IoT Central maken](./tutorial-in-store-analytics-create-app.md). Hierin leert u stap voor stap hoe u een oplossing bouwt met een van de In-Store Analytics-toepassingssjablonen.
-* [Een toepassingssjabloon voor verbonden logistiek implementeren en doorlopen](./tutorial-iot-central-connected-logistics.md).
-* [Een toepassingssjabloon voor een digitaal distributiecentrum implementeren en doorlopen](./tutorial-iot-central-digital-distribution-center.md).
-* [Een toepassingssjabloon voor slim voorraadbeheer implementeren en doorlopen](./tutorial-iot-central-smart-inventory-management.md).
-* [Een toepassingssjabloon voor een micro-uitvoeringscentrum implementeren en doorlopen](./tutorial-micro-fulfillment-center.md).
 * [Een toepassingssjabloon voor de videoanalysetoepassing implementeren en doorlopen](./tutorial-video-analytics-deploy.md).
-* Zie [Overzicht van IoT Central](../core/overview-iot-central.md) voor meer informatie over IoT Central.
+* [Een toepassingssjabloon voor verbonden logistiek implementeren en doorlopen](./tutorial-iot-central-connected-logistics.md).

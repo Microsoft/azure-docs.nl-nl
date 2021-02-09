@@ -11,12 +11,12 @@ ms.custom:
 ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
-ms.openlocfilehash: fca9a72fa237a11a02b6d4fbe30ebba5857384cf
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
-ms.translationtype: HT
+ms.openlocfilehash: 2695b34745ff02d55f18cebbe87a468f807ca77a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346364"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831685"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Zelfstudie: Gegevens exporteren uit Azure IoT Central en inzichten visualiseren in Power BI
 
@@ -504,6 +504,4 @@ U kunt de Power BI-gegevenssets en het dashboard verwijderen door de werkruimte 
 In deze drie zelfstudies hebt u een end-to-end oplossing gezien die gebruikmaakt van de toepassingssjabloon **In-Store Analytics: betaling**. U hebt apparaten verbonden met de toepassing, IoT Central gebruikt om de apparaten te bewaken en Power BI gebruikt om een dashboard te maken voor het visualiseren van inzichten op basis van de telemetrie van de apparaten. Een aanbevolen volgende stap is om een van de andere toepassingssjablonen van IoT Central te verkennen:
 
 > [!div class="nextstepaction"]
-> * [Oplossingen voor de energiesector bouwen met IoT Central](../energy/overview-iot-central-energy.md)
-> * [Oplossingen voor de overheid bouwen met IoT Central](../government/overview-iot-central-government.md)
-> * [Oplossingen voor de gezondheidszorg bouwen met IoT Central](../healthcare/overview-iot-central-healthcare.md)
+> [Oplossingen voor de energiesector bouwen met IoT Central](../energy/overview-iot-central-energy.md)

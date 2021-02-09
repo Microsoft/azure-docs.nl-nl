@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 01/27/2021
+ms.date: 02/08/2021
 ms.author: alkohli
-ms.openlocfilehash: 6fff5b9d41c960ebe37098695c694725de0226e0
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: eb01ae5e9c7e134e33460674eb2c44b710671a4a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954611"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833351"
 ---
 # <a name="azure-stack-edge-2101-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2101
 
@@ -47,8 +47,8 @@ De volgende tabel bevat een samen vatting van bekende problemen in de 2101-relea
 |**3.**|Kubernetes |Het Edge-container register werkt niet als webproxy is ingeschakeld.|De functionaliteit is beschikbaar in een toekomstige versie. |
 |**4.**|Kubernetes |Het Edge-container register werkt niet met IoT Edge-modules.| |
 |**5.**|Kubernetes |Kubernetes biedt geen ondersteuning voor ': ' in namen van omgevings variabelen die worden gebruikt door .NET-toepassingen. Dit is ook vereist voor het functioneren van de module Event grid IoT Edge op Azure Stack edge-apparaat en andere toepassingen. Zie [ASP.net core-documentatie](/aspnet/core/fundamentals/configuration/?tabs=basicconfiguration&view=aspnetcore-3.1&preserve-view=true#environment-variables)voor meer informatie.|Vervang ":" door dubbel onderstrepen. Zie [Kubernetes issue](https://github.com/kubernetes/kubernetes/issues/53201) (Engelstalig) voor meer informatie.|
-|**6.** |Azure Arc + Kubernetes-cluster |Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster.  |U moet `--sync-garbage-collection`  in Arc OperatorParams instellen om het verwijderen van resources toe te staan wanneer deze uit de Git-opslag plaats wordt verwijderd. Zie [een configuratie verwijderen](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters)voor meer informatie. |
-|**7.**|NFS |Toepassingen die gebruikmaken van NFS-shares op uw apparaat om gegevens te schrijven, moeten exclusieve schrijf bewerkingen gebruiken. Dit zorgt ervoor dat de schrijf bewerkingen naar de schijf worden geschreven.| |
+|**6.** |Azure Arc + Kubernetes-cluster |Wanneer `yamls` een resource wordt verwijderd uit de Git-opslag plaats, worden de bijbehorende resources standaard niet verwijderd uit het Kubernetes-cluster.  |Als u het verwijderen van resources wilt toestaan wanneer deze uit de Git-opslag plaats worden verwijderd, stelt u `--sync-garbage-collection` in Arc OperatorParams in. Zie [een configuratie verwijderen](../azure-arc/kubernetes/use-gitops-connected-cluster.md#additional-parameters)voor meer informatie. |
+|**7.**|NFS |Toepassingen die gebruikmaken van NFS-shares op uw apparaat om gegevens te schrijven, moeten exclusieve schrijf bewerkingen gebruiken. Zo zorgt u ervoor dat de schrijf bewerkingen naar de schijf worden geschreven.| |
 |**achtste.**|Compute-configuratie |De reken configuratie mislukt in netwerk configuraties waarbij gateways of switches of routers reageren op ARP-aanvragen (Address Resolution Protocol) voor systemen die niet bestaan in het netwerk.| |
 |**9,4.**|Compute en Kubernetes |Als Kubernetes eerst op uw apparaat is ingesteld, worden alle beschik bare Gpu's claimen. Daarom is het niet mogelijk om Azure Resource Manager Vm's te maken met behulp van Gpu's nadat u de Kubernetes hebt ingesteld. |Als uw apparaat 2 Gpu's heeft, kunt u één virtuele machine maken die gebruikmaakt van de GPU en vervolgens Kubernetes configureren. In dit geval maakt Kubernetes gebruik van de resterende beschik bare 1 GPU. |
 
@@ -73,11 +73,12 @@ In de volgende tabel vindt u een overzicht van de bekende problemen die in de vo
 |**12.**|Kubernetes |Kubernetes ondersteunt momenteel geen LoadBalancer-Services met meerdere protocollen. Bijvoorbeeld een DNS-service die luistert op TCP en UDP. |Om deze beperking van Kubernetes met MetalLB te omzeilen, kunnen twee services (een voor TCP, een voor UDP) worden gemaakt op dezelfde pod selector. Deze services gebruiken dezelfde uitwisselings sleutel en spec. loadBalancerIP om hetzelfde IP-adres te delen. Ip's kunnen ook worden gedeeld als u meer services hebt dan beschik bare IP-adressen. <br> Zie [IP-adres delen](https://metallb.universe.tf/usage/#ip-address-sharing)voor meer informatie.|
 |**13.**|Kubernetes-cluster|Bestaande Azure IoT Edge Marketplace-modules kunnen wijzigingen vereisen om te worden uitgevoerd op IoT Edge op Azure Stack edge-apparaat.|Zie voor meer informatie Azure IoT Edge modules van Marketplace aanpassen zodat ze op Azure Stack edge-apparaat kunnen worden uitgevoerd.<!-- insert link-->|
 |**15.**|Kubernetes |BIND koppelingen op basis van een bestand worden niet ondersteund met Azure IoT Edge op Kubernetes op Azure Stack edge-apparaat.|IoT Edge maakt gebruik van een Vertaal laag om `ContainerCreate` Opties om te zetten in Kubernetes-constructies. Het `Binds` is niet mogelijk om toewijzingen te maken naar een `hostpath` map en daarom BIND koppelingen op basis van een bestand kunnen niet worden gebonden aan paden in IOT Edge containers. Als dat mogelijk is, wijst u de bovenliggende map toe.|
-|**15.**|Kubernetes |Als u uw eigen certificaten voor IoT Edge en deze toevoegt op uw Azure Stack edge-apparaat nadat de berekening op het apparaat is geconfigureerd, worden de nieuwe certificaten niet opgehaald.|U kunt dit probleem omzeilen door de certificaten te uploaden voordat u Compute op het apparaat configureert. Als de compute al is geconfigureerd, [maakt u verbinding met de Power shell-interface van het apparaat en voert u IOT Edge opdrachten uit](azure-stack-edge-gpu-connect-powershell-interface.md#use-iotedge-commands). Opnieuw opstarten `iotedged` en `edgehub` peulen.|
+|**15.**|Kubernetes |Als u uw eigen certificaten voor IoT Edge en deze certificaten toevoegt op uw Azure Stack edge-apparaat nadat de berekening op het apparaat is geconfigureerd, worden de nieuwe certificaten niet opgehaald.|U kunt dit probleem omzeilen door de certificaten te uploaden voordat u Compute op het apparaat configureert. Als de compute al is geconfigureerd, [maakt u verbinding met de Power shell-interface van het apparaat en voert u IOT Edge opdrachten uit](azure-stack-edge-gpu-connect-powershell-interface.md#use-iotedge-commands). Opnieuw opstarten `iotedged` en `edgehub` peulen.|
 |**18.**|Certificaten |In bepaalde gevallen kan de status van het certificaat in de lokale gebruikers interface enkele seconden duren voordat deze wordt bijgewerkt. |De volgende scenario's in de lokale gebruikers interface kunnen worden beïnvloed.<ul><li>De kolom **status** op de pagina **certificaten** .</li><li>De tegel **beveiliging** op de pagina **aan de slag** .</li><li>**Configuratie** tegel op de pagina **overzicht** .</li></ul>  |
 |**Nr.**|IoT Edge |Modules die via IoT Edge worden geïmplementeerd, kunnen geen gebruik van het doelnet werken. | |
 |**18,0.**|Compute + Kubernetes |Compute/Kubernetes biedt geen ondersteuning voor NTLM-webproxy. ||
 |**19.**|Kubernetes + update |Eerdere software versies, zoals 2008 releases, hebben een update probleem voor de race situatie waardoor de update mislukt met ClusterConnectionException. |Het gebruik van de nieuwere builds helpt dit probleem te voor komen. Als dit probleem zich blijft voordoen, kunt u de tijdelijke oplossing het beste opnieuw proberen.|
+|**20**|Internet Explorer|Als Verbeterde beveiligings functies zijn ingeschakeld, hebt u mogelijk geen toegang tot de lokale web-UI-pagina's. | Schakel de verbeterde beveiliging uit en start de browser opnieuw.|
 
 
 <!--|**18.**|Azure Private Edge Zone (Preview) |There is a known issue with Virtual Network Function VM if the VM was created on Azure Stack Edge device running earlier preview builds such as 2006/2007b and then the device was updated to 2009 GA release. The issue is that the VNF information can't be retrieved or any new VNFs can't be created unless the VNF VMs are deleted before the device is updated.  |Before you update Azure Stack Edge device to 2009 release, use the PowerShell command `get-mecvnf` followed by `remove-mecvnf <VNF guid>` to remove all Virtual Network Function VMs one at a time. After the upgrade, you will need to redeploy the same VNFs.|-->

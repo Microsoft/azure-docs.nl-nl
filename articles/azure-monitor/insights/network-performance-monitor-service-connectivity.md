@@ -6,14 +6,17 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 18c07266cec68aaf6e95fe4085b9d21244fecff4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d7c7068c4a8669cdff782267030d38ac0f73584
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761036"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832926"
 ---
 # <a name="service-connectivity-monitor"></a>Bewaking van serviceverbinding
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
 
 U kunt de monitor functie voor service connectiviteit in [Netwerkprestatiemeter](network-performance-monitor.md) gebruiken om de netwerk verbinding te bewaken met een eind punt met een open TCP-poort. Dergelijke eind punten omvatten websites, SaaS-toepassingen, PaaS-toepassingen en SQL-data bases. 
 
@@ -52,22 +55,22 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 Begin met het maken van uw tests om de netwerk verbinding met de service-eind punten te bewaken.
 
 1. Selecteer het tabblad **monitor voor service connectiviteit** .
-2. Selecteer **test toevoegen**en voer de naam en beschrijving van de test in. U kunt Maxi maal 450 tests per werk ruimte maken. 
+2. Selecteer **test toevoegen** en voer de naam en beschrijving van de test in. U kunt Maxi maal 450 tests per werk ruimte maken. 
 3. Selecteer het type test:<br>
 
     * Selecteer **Web** voor het controleren van de verbinding met een service die reageert op http/S-aanvragen, zoals outlook.office365.com of Bing.com.<br>
     * Selecteer **netwerk** om de verbinding met een service te bewaken die op TCP-aanvragen reageert, maar niet reageert op http/S-aanvragen, zoals een SQL-Server, FTP-server of SSH-poort. 
     * Bijvoorbeeld: als u een webtest wilt maken naar een Blob Storage-account, selecteert u **Web** en voert u doel in als *yourstorageaccount*. blob.core.Windows.net. Op dezelfde manier kunt u tests maken voor andere tabel opslag, wachtrij opslag en Azure Files met behulp van [deze koppeling.](../../storage/common/storage-account-overview.md#storage-account-endpoints)
 4. Als u geen netwerk metingen wilt uitvoeren, zoals netwerk latentie, pakket verlies en topologie detectie, schakelt u het selectie vakje **netwerk metingen uitvoeren** uit. Zorg ervoor dat deze optie is geselecteerd om Maxi maal voor deel te halen uit de mogelijkheid. 
-5. In **doel**voert u de URL/FQDN/IP-adres in waarmee u de netwerk verbinding wilt bewaken.
-6. In **poort nummer**voert u het poort nummer van de doel service in. 
-7. In **test frequentie**voert u een waarde in voor hoe vaak de test moet worden uitgevoerd. 
+5. In **doel** voert u de URL/FQDN/IP-adres in waarmee u de netwerk verbinding wilt bewaken.
+6. In **poort nummer** voert u het poort nummer van de doel service in. 
+7. In **test frequentie** voert u een waarde in voor hoe vaak de test moet worden uitgevoerd. 
 8. Selecteer de knoop punten waarvan u de netwerk verbinding met de service wilt bewaken. Zorg ervoor dat het aantal agents dat per test is toegevoegd, kleiner is dan 150. Elke agent kan Maxi maal 150 eind punten/agents testen.
 
     >[!NOTE]
     > Voor knoop punten op basis van Windows Server gebruikt de mogelijkheid TCP-aanvragen om de netwerk metingen uit te voeren. Voor knoop punten op basis van Windows-clients gebruikt de mogelijkheid ICMP-gebaseerde aanvragen voor het uitvoeren van de netwerk metingen. In sommige gevallen blokkeert de doel toepassing binnenkomende ICMP-gebaseerde aanvragen wanneer de knoop punten op Windows-clients zijn gebaseerd. De oplossing kan geen netwerk metingen uitvoeren. In dergelijke gevallen kunt u het beste Windows Server-knoop punten gebruiken. 
 
-9. Als u geen status gebeurtenissen wilt maken voor de items die u selecteert, schakelt u **status controle inschakelen in de doelen waarop deze test betrekking**heeft. 
+9. Als u geen status gebeurtenissen wilt maken voor de items die u selecteert, schakelt u **status controle inschakelen in de doelen waarop deze test betrekking** heeft. 
 10. Kies bewakings voorwaarden. U kunt aangepaste drempel waarden instellen voor het genereren van status gebeurtenissen door drempel waarde in te voeren. Wanneer de waarde van de voor waarde boven de geselecteerde drempelwaarde voor het geselecteerde netwerk of subnetwerk komt, wordt een status gebeurtenis gegenereerd. 
 11. Selecteer **Opslaan** om de configuratie op te slaan. 
 
@@ -134,4 +137,3 @@ Voor de regio van de Amerikaanse overheids-Virginia zijn alleen DOD-Url's ingebo
 
 ## <a name="next-steps"></a>Volgende stappen
 [Zoek logboeken](../log-query/log-query-overview.md) om gedetailleerde gegevens records voor netwerk prestaties weer te geven.
-

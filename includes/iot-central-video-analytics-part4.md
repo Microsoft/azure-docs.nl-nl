@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 0b3ccc31c9159b5d7b1615add89e8fdc308bf8df
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
-ms.translationtype: HT
+ms.openlocfilehash: d9c2aea284a2ab84b5d45fe35a35785adfc88123
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763411"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832063"
 ---
 ### <a name="publish-the-device-template"></a>De apparaatsjabloon publiceren
 
@@ -61,16 +61,3 @@ U hebt de referenties nodig waarmee het apparaat verbinding kan maken met uw IoT
 
 1. Selecteer **Sluiten**.
 
-## <a name="next-steps"></a>Volgende stappen
-
-U hebt nu een IoT Central-toepassing gemaakt met behulp van de toepassingssjabloon **Videoanalyse: object- en bewegingsdetectie**, een apparaatsjabloon voor het gatewayapparaat gemaakt en een gatewayapparaat aan de toepassing toegevoegd.
-
-Als u de toepassing ‘Videoanalyse: object- en bewegingsdetectie’ wilt uitproberen met behulp van IoT Edge-modules die een cloud-VM uitvoeren met gesimuleerde videostreams:
-
-> [!div class="nextstepaction"]
-> [Een IoT Edge-exemplaar voor videoanalyse maken (Linux-VM)](../articles/iot-central/retail/tutorial-video-analytics-iot-edge-vm.md)
-
-Als u de toepassing ‘Videoanalyse: object- en bewegingsdetectie’ wilt uitproberen met behulp van IoT Edge-modules die een echt apparaat uitvoeren met een echte **ONVIF**-camera:
-
-> [!div class="nextstepaction"]
-> [Een IoT Edge-exemplaar voor videoanalyse maken (Intel NUC)](../articles/iot-central/retail/tutorial-video-analytics-iot-edge-nuc.md)

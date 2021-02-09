@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 20c6841bb596c7f4a32ef689423515a8da59a945
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 45447a26c0455fc5945af8b8e9f7442af7facfbe
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541552"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99830682"
 ---
 # <a name="application-development-overview-for-azure-database-for-mysql"></a>Overzicht van toepassings ontwikkeling voor Azure Database for MySQL 
 In dit artikel worden ontwerp overwegingen beschreven die een ontwikkelaar moet volgen bij het schrijven van toepassings code om verbinding te maken met Azure Database for MySQL. 
@@ -23,7 +23,7 @@ In dit artikel worden ontwerp overwegingen beschreven die een ontwikkelaar moet 
 Er zijn codevoorbeelden beschikbaar voor verschillende programmeertalen en platforms. U vindt koppelingen naar de code voorbeelden op: [connectiviteits bibliotheken die worden gebruikt om verbinding te maken met Azure database for MySQL](concepts-connection-libraries.md)
 
 ## <a name="tools"></a>Hulpprogramma's
-Azure Database for MySQL maakt gebruik van de MySQL-Community-versie die compatibel is met de algemene beheer hulpprogramma's van MySQL, zoals Workbench of MySQL-hulpprogram ma's zoals mysql.exe, [phpMyAdmin](https://www.phpmyadmin.net/), [Navicat](https://www.navicat.com/products/navicat-for-mysql)en anderen. U kunt ook de Azure Portal, Azure CLI en REST-Api's gebruiken om te communiceren met de database service.
+Azure Database for MySQL maakt gebruik van de MySQL-Community-versie die compatibel is met de algemene beheer hulpprogramma's van MySQL, zoals Workbench of MySQL-hulpprogram ma's zoals mysql.exe, [phpMyAdmin](https://www.phpmyadmin.net/), [Navicat](https://www.navicat.com/products/navicat-for-mysql), [dbForge Studio voor mysql](https://www.devart.com/dbforge/mysql/studio/) en anderen. U kunt ook de Azure Portal, Azure CLI en REST-Api's gebruiken om te communiceren met de database service.
 
 ## <a name="resource-limitations"></a>Resourcebeperkingen
 Azure Database for MySQL beheert de bronnen die beschikbaar zijn voor een server met behulp van twee verschillende mechanismen: 

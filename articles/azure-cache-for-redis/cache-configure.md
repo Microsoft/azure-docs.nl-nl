@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: 2ff97dd30d9b993385f52ea531653a89197f8756
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: c13821544ff9725a387534370fc716c70072bb85
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734620"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831770"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Azure-cache configureren voor redis
 In dit onderwerp worden de configuraties beschreven die beschikbaar zijn voor uw Azure-cache voor redis-exemplaren. In dit onderwerp wordt ook de standaard redis-server configuratie voor Azure cache voor redis-exemplaren besproken.
@@ -236,10 +236,7 @@ Op de Blade **updates plannen** kunt u een onderhouds venster voor redis-server 
 
 Als u een onderhouds venster wilt opgeven, controleert u de gewenste dagen en geeft u het onderhouds venster voor elke dag op en klikt u op **OK**. De tijd van het onderhouds venster is UTC.
 
-> [!IMPORTANT]
-> De functionaliteit voor het **plannen van updates** is alleen beschikbaar voor Premium-laag caches. Zie voor meer informatie en instructies [Azure cache voor redis-beheer-updates plannen](cache-administration.md#schedule-updates).
->
->
+Zie voor meer informatie en instructies [Azure cache voor redis-beheer-updates plannen](cache-administration.md#schedule-updates)
 
 ### <a name="geo-replication"></a>Geo-replicatie
 

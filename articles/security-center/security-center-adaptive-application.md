@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/07/2021
 ms.author: memildin
-ms.openlocfilehash: cc35f9ee25511faec5723b49763cbdae8963e88b
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: a7ad5f661d4eca07deb0942c7684b89ac59931a2
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820752"
+ms.locfileid: "99834388"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Besturings elementen voor adaptieve toepassingen gebruiken om de kwets bare Opper vlakken van uw computers te verminderen
 
@@ -44,7 +44,7 @@ Door lijsten met bekende veilige toepassingen te definiëren en waarschuwingen t
 - Voor komen dat specifieke software wordt geblokkeerd door uw organisatie
 - Het toezicht verhogen van apps die toegang hebben tot gevoelige gegevens
 
-Er zijn geen afdwingings opties beschikbaar en er zijn geen instellingen gepland. Besturings elementen voor adaptieve toepassingen zijn bedoeld om beveiligings waarschuwingen te bieden als een andere toepassing dan de toepassingen die u hebt gedefinieerd als veilig worden uitgevoerd.
+Er zijn momenteel geen afdwingings opties beschikbaar. Besturings elementen voor adaptieve toepassingen zijn bedoeld om beveiligings waarschuwingen te bieden als een andere toepassing dan de toepassingen die u hebt gedefinieerd als veilig worden uitgevoerd.
 
 ## <a name="availability"></a>Beschikbaarheid
 
@@ -238,7 +238,7 @@ Enkele van de functies die beschikbaar zijn via de REST API:
 ## <a name="faq---adaptive-application-controls"></a>Veelgestelde vragen-besturings elementen voor adaptieve toepassingen
 
 ### <a name="are-there-any-options-to-enforce-the-application-controls"></a>Zijn er opties voor het afdwingen van de besturings elementen van de toepassing?
-Er zijn geen afdwingings opties beschikbaar en er zijn geen instellingen gepland. Besturings elementen voor adaptieve toepassingen zijn bedoeld om **beveiligings waarschuwingen** te bieden als een andere toepassing dan de toepassingen die u hebt gedefinieerd als veilig worden uitgevoerd. Ze hebben diverse voor delen ([Wat zijn de voor delen van adaptieve toepassings besturings elementen?](#what-are-the-benefits-of-adaptive-application-controls)) en zijn zeer aanpasbaar, zoals op deze pagina wordt weer gegeven.
+Er zijn momenteel geen afdwingings opties beschikbaar. Besturings elementen voor adaptieve toepassingen zijn bedoeld om **beveiligings waarschuwingen** te bieden als een andere toepassing dan de toepassingen die u hebt gedefinieerd als veilig worden uitgevoerd. Ze hebben diverse voor delen ([Wat zijn de voor delen van adaptieve toepassings besturings elementen?](#what-are-the-benefits-of-adaptive-application-controls)) en zijn zeer aanpasbaar, zoals op deze pagina wordt weer gegeven.
 
  
 

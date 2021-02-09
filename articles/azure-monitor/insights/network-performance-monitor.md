@@ -6,17 +6,19 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 1bb2b7ca22896ed279c8aac215109b7f7bc7854c
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 2856366fc8383f7aaec9d96c29acb7621ea801ae
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394268"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832909"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Netwerkprestatiemeter oplossing in azure
 
 ![Netwerkprestatiemeter-symbool](./media/network-performance-monitor/npm-symbol.png)
 
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
 
 Netwerkprestatiemeter is een op de cloud gebaseerde oplossing voor hybride netwerk bewaking waarmee u de netwerk prestaties tussen verschillende punten in uw netwerk infrastructuur kunt bewaken. Daarnaast kunt u hiermee de netwerkverbinding met de service en toepassingseindpunten bewaken, evenals de prestaties van Azure ExpressRoute. 
 
@@ -48,7 +50,7 @@ NPM kan de connectiviteit tussen netwerken en toepassingen in elk deel van de we
 * VS - zuid-centraal
 * Central US
 * VS - oost
-* US - oost 2
+* VS - oost 2
 * US - west 2
 * Japan-Oost
 * Azië - zuidoost
@@ -78,19 +80,19 @@ Gebruik de basis procedures voor het installeren van agents op [Windows-computer
 
 ### <a name="where-to-install-the-agents"></a>Waar de agents moeten worden geïnstalleerd 
 
-* **Prestatie meter** : Installeer log Analytics agents op ten minste één knoop punt dat is verbonden met elk subnetwerk van waaruit u de netwerk verbinding met andere subnetwerken wilt bewaken.
+* **Prestatie meter**: Installeer log Analytics agents op ten minste één knoop punt dat is verbonden met elk subnetwerk van waaruit u de netwerk verbinding met andere subnetwerken wilt bewaken.
 
     Als u een netwerk koppeling wilt bewaken, installeert u agents op beide eind punten van die koppeling. Als u niet zeker bent van de topologie van uw netwerk, installeert u de agents op servers met kritieke werk belastingen waartussen u de netwerk prestaties wilt bewaken. Als u bijvoorbeeld de netwerk verbinding tussen een webserver en een server met SQL wilt bewaken, installeert u op beide servers een agent. Agents bewaken de netwerk verbinding (koppelingen) tussen hosts, niet de hosts zelf. 
 
-* **Monitor voor service connectiviteit** : installeer een log Analytics agent op elk knoop punt van waaruit u de netwerk verbinding met het service-eind punt wilt bewaken. Een voor beeld is als u de netwerk connectiviteit wilt bewaken voor Microsoft 365 van uw Office-sites met het opschrift O1, O2 en O3. Installeer de Log Analytics agent op ten minste één knoop punt elk in O1, O2 en O3. 
+* **Monitor voor service connectiviteit**: installeer een log Analytics agent op elk knoop punt van waaruit u de netwerk verbinding met het service-eind punt wilt bewaken. Een voor beeld is als u de netwerk connectiviteit wilt bewaken voor Microsoft 365 van uw Office-sites met het opschrift O1, O2 en O3. Installeer de Log Analytics agent op ten minste één knoop punt elk in O1, O2 en O3. 
 
-* **ExpressRoute-monitor** : Installeer ten minste één log Analytics agent in uw virtuele Azure-netwerk. Installeer ook ten minste één agent in uw on-premises subnetwerk dat is verbonden via ExpressRoute-persoonlijke peering.  
+* **ExpressRoute-monitor**: Installeer ten minste één log Analytics agent in uw virtuele Azure-netwerk. Installeer ook ten minste één agent in uw on-premises subnetwerk dat is verbonden via ExpressRoute-persoonlijke peering.  
 
 ### <a name="configure-log-analytics-agents-for-monitoring"></a>Log Analytics agents voor bewaking configureren 
 
 Netwerkprestatiemeter maakt gebruik van synthetische trans acties voor het bewaken van de netwerk prestaties tussen bron-en doel agents. U kunt kiezen tussen TCP en ICMP als het protocol voor bewaking in prestatie meter en mogelijkheden voor de connectiviteits controle van de service. Alleen TCP is beschikbaar als het bewakings protocol voor de ExpressRoute-monitor. Zorg ervoor dat de firewall communicatie toestaat tussen de Log Analytics agents die worden gebruikt voor de bewaking van het gekozen protocol. 
 
-* **TCP-protocol** : als u TCP kiest als protocol voor bewaking, opent u de firewall poort op de agents die worden gebruikt voor de monitor Netwerkprestatiemeter en ExpressRoute om er zeker van te zijn dat de agents verbinding met elkaar kunnen maken. Voor Windows-computers kunt u de poort openen door de [EnableRules.ps1](https://aka.ms/npmpowershellscript) Power shell-script uit te voeren zonder para meters in een Power shell-venster met Administrator bevoegdheden.
+* **TCP-protocol**: als u TCP kiest als protocol voor bewaking, opent u de firewall poort op de agents die worden gebruikt voor de monitor Netwerkprestatiemeter en ExpressRoute om er zeker van te zijn dat de agents verbinding met elkaar kunnen maken. Voor Windows-computers kunt u de poort openen door de [EnableRules.ps1](https://aka.ms/npmpowershellscript) Power shell-script uit te voeren zonder para meters in een Power shell-venster met Administrator bevoegdheden.
 Voor Linux-machines moet portNumbers die moeten worden gebruikt, hand matig worden gewijzigd. 
 * Navigeer naar pad:/var/opt/Microsoft/omsagent/npm_state. 
 * Bestand openen: npmdregistry
@@ -108,7 +110,7 @@ Het script maakt register sleutels die vereist zijn voor de oplossing. Er worden
 
     
 
-* **ICMP-protocol** : als u ICMP kiest als protocol voor bewaking, schakelt u de volgende firewall regels in om op betrouw bare wijze ICMP te gebruiken:
+* **ICMP-protocol**: als u ICMP kiest als protocol voor bewaking, schakelt u de volgende firewall regels in om op betrouw bare wijze ICMP te gebruiken:
     
    ```
    netsh advfirewall firewall add rule name="NPMDICMPV4Echo" protocol="icmpv4:8,any" dir=in action=allow 
@@ -130,15 +132,15 @@ Het script maakt register sleutels die vereist zijn voor de oplossing. Er worden
 
 4. Op de pagina **Setup** ziet u de optie voor het installeren van log Analytics agents en het configureren van de agents voor bewaking in de weer gave **algemene instellingen** . Zoals eerder uitgelegd: als u Log Analytics agents hebt geïnstalleerd en geconfigureerd, selecteert u de weer gave **instellen** om de mogelijkheid te configureren die u wilt gebruiken. 
 
-   **Prestatie meter** : Kies het protocol dat u wilt gebruiken voor synthetische trans acties in de **standaard** regel voor prestatie meter en selecteer **Opslaan & door gaan**. Deze protocol selectie geldt alleen voor de standaard regel die door het systeem is gegenereerd. Telkens wanneer u een regel voor prestatie meter expliciet maakt, moet u het protocol kiezen. U kunt altijd overstappen op de **standaard** regel instellingen op het tabblad **prestatie meter** (deze wordt weer gegeven nadat u de configuratie van de dag-0 hebt voltooid) en het protocol later te wijzigen. Als u de prestatie meter niet wilt inschakelen, kunt u de standaard regel uitschakelen via de **standaard** regel instellingen op het tabblad **prestatie meter** .
+   **Prestatie meter**: Kies het protocol dat u wilt gebruiken voor synthetische trans acties in de **standaard** regel voor prestatie meter en selecteer **Opslaan & door gaan**. Deze protocol selectie geldt alleen voor de standaard regel die door het systeem is gegenereerd. Telkens wanneer u een regel voor prestatie meter expliciet maakt, moet u het protocol kiezen. U kunt altijd overstappen op de **standaard** regel instellingen op het tabblad **prestatie meter** (deze wordt weer gegeven nadat u de configuratie van de dag-0 hebt voltooid) en het protocol later te wijzigen. Als u de prestatie meter niet wilt inschakelen, kunt u de standaard regel uitschakelen via de **standaard** regel instellingen op het tabblad **prestatie meter** .
 
    ![Weer gave prestatie meter](media/network-performance-monitor/npm-synthetic-transactions.png)
     
-   **Monitor voor service connectiviteit** : de mogelijkheid biedt ingebouwde vooraf geconfigureerde tests om de netwerk connectiviteit met Microsoft 365 en Dynamics 365 van uw agents te bewaken. Kies de Microsoft 365 en Dynamics 365-services die u wilt bewaken door de selectie vakjes ernaast in te scha kelen. Selecteer **agents toevoegen** om de agents te kiezen die u wilt bewaken. Als u deze mogelijkheid niet wilt gebruiken of later wilt instellen, kiest u niets en selecteert u **opslaan & door gaan**.
+   **Monitor voor service connectiviteit**: de mogelijkheid biedt ingebouwde vooraf geconfigureerde tests om de netwerk connectiviteit met Microsoft 365 en Dynamics 365 van uw agents te bewaken. Kies de Microsoft 365 en Dynamics 365-services die u wilt bewaken door de selectie vakjes ernaast in te scha kelen. Selecteer **agents toevoegen** om de agents te kiezen die u wilt bewaken. Als u deze mogelijkheid niet wilt gebruiken of later wilt instellen, kiest u niets en selecteert u **opslaan & door gaan**.
 
    ![Weer gave service connectiviteits monitor](media/network-performance-monitor/npm-service-endpoint-monitor.png)
 
-   **Monitor voor ExpressRoute** : Selecteer **nu detecteren** om alle ExpressRoute persoonlijke peerings te detecteren die zijn verbonden met de virtuele netwerken in het Azure-abonnement dat is gekoppeld aan deze log Analytics-werk ruimte. 
+   **Monitor voor ExpressRoute**: Selecteer **nu detecteren** om alle ExpressRoute persoonlijke peerings te detecteren die zijn verbonden met de virtuele netwerken in het Azure-abonnement dat is gekoppeld aan deze log Analytics-werk ruimte. 
 
    ![Weer gave ExpressRoute monitor](media/network-performance-monitor/npm-express-route.png)
 
@@ -206,15 +208,15 @@ Nadat u de Netwerkprestatiemeter oplossing hebt ingeschakeld, biedt de tegel opl
 
 ### <a name="network-performance-monitor-dashboard"></a>Netwerkprestatiemeter dash board 
 
-* **Belangrijkste netwerk status gebeurtenissen** : deze pagina bevat een lijst met de meest recente status gebeurtenissen en waarschuwingen in het systeem en de tijd sinds de gebeurtenissen actief zijn. Er wordt een status gebeurtenis of waarschuwing gegenereerd wanneer de waarde van de gekozen metriek (verlies, latentie, respons tijd of bandbreedte gebruik) voor de bewakings regel de drempel waarde overschrijdt. 
+* **Belangrijkste netwerk status gebeurtenissen**: deze pagina bevat een lijst met de meest recente status gebeurtenissen en waarschuwingen in het systeem en de tijd sinds de gebeurtenissen actief zijn. Er wordt een status gebeurtenis of waarschuwing gegenereerd wanneer de waarde van de gekozen metriek (verlies, latentie, respons tijd of bandbreedte gebruik) voor de bewakings regel de drempel waarde overschrijdt. 
 
 * **Controle** programma voor ExpressRoute: deze pagina bevat status overzichten voor de verschillende ExpressRoute-peering verbindingen die door de oplossing worden bewaakt. De **topologie** tegel toont het aantal netwerk paden via de ExpressRoute-circuits die in uw netwerk worden bewaakt. Selecteer deze tegel om naar de weer gave **topologie** te gaan.
 
-* **Monitor voor service connectiviteit** : deze pagina bevat status overzichten voor de verschillende tests die u hebt gemaakt. De **topologie** tegel toont het aantal eind punten dat wordt bewaakt. Selecteer deze tegel om naar de weer gave **topologie** te gaan.
+* **Monitor voor service connectiviteit**: deze pagina bevat status overzichten voor de verschillende tests die u hebt gemaakt. De **topologie** tegel toont het aantal eind punten dat wordt bewaakt. Selecteer deze tegel om naar de weer gave **topologie** te gaan.
 
-* **Prestatie meter** : deze pagina bevat status overzichten voor de koppelingen van het **netwerk** en het **subnetwerk** die door de oplossing worden bewaakt. In de **topologie** tegel wordt het aantal netwerk paden weer gegeven dat in uw netwerk wordt bewaakt. Selecteer deze tegel om naar de weer gave **topologie** te gaan. 
+* **Prestatie meter**: deze pagina bevat status overzichten voor de koppelingen van het **netwerk** en het **subnetwerk** die door de oplossing worden bewaakt. In de **topologie** tegel wordt het aantal netwerk paden weer gegeven dat in uw netwerk wordt bewaakt. Selecteer deze tegel om naar de weer gave **topologie** te gaan. 
 
-* **Algemene query's** : deze pagina bevat een set Zoek query's waarmee u de onbewerkte gegevens van netwerk bewaking rechtstreeks ophaalt. U kunt deze query's gebruiken als uitgangs punt om uw eigen query's te maken voor aangepaste rapportage. 
+* **Algemene query's**: deze pagina bevat een set Zoek query's waarmee u de onbewerkte gegevens van netwerk bewaking rechtstreeks ophaalt. U kunt deze query's gebruiken als uitgangs punt om uw eigen query's te maken voor aangepaste rapportage. 
 
    ![Netwerkprestatiemeter dash board](media/network-performance-monitor/npm-dashboard.png)
 
@@ -262,7 +264,7 @@ De topologie die in de kaart wordt weer gegeven, is een laag-3-topologie en beva
 ![Topologie toewijzing](media/network-performance-monitor/topology-map.png)
  
 
-## <a name="log-queries-in-azure-monitor"></a>Query's in Azure Monitor vastleggen
+## <a name="log-queries-in-azure-monitor"></a>Logboekquery's in Azure Monitor
 
 Alle gegevens die grafisch worden weer gegeven via de Netwerkprestatiemeter dash board en inzoom pagina's, zijn ook ingebouwd in [logboek query's](../log-query/log-query-overview.md). U kunt een interactieve analyse van gegevens in de opslag plaats uitvoeren en gegevens uit verschillende bronnen correleren. U kunt ook aangepaste waarschuwingen en weer gaven maken en de gegevens exporteren naar Excel, Power BI of een deel bare koppeling. Het gebied **algemene query's** in het dash board bevat enkele nuttige query's die u als uitgangs punt kunt gebruiken om uw eigen query's en rapporten te maken. 
 
@@ -300,4 +302,3 @@ Informatie over prijzen is [online](network-performance-monitor-pricing-faq.md)b
 
 ## <a name="next-steps"></a>Volgende stappen 
 Meer informatie over [prestatie meter](network-performance-monitor-performance-monitor.md), [service Connectivity monitor](network-performance-monitor-performance-monitor.md)en [ExpressRoute monitor](network-performance-monitor-expressroute.md). 
-

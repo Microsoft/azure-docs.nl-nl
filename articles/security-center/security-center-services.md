@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 ms.author: memildin
-ms.openlocfilehash: 04dfd731f1dcf0e9e7c045e0f7ef335c8db5b359
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: e827178d8ccb0f7de8d32433d03502a7412d1139
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805632"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834047"
 ---
 # <a name="feature-coverage-for-machines"></a>Functiedekking voor machines
 
@@ -54,7 +54,7 @@ De twee tabbladen hieronder tonen de functies van Azure Security Center die besc
 
 |**Functie**|**Azure Virtual Machines**|**Virtuele Azure-machineschaalsets**|**Machines met Azure Arc**|**Azure Defender vereist**
 |----|:----:|:----:|:----:|:----:|
-|[Microsoft Defender for Endpoint-integratie](security-center-wdatp.md)|-|-|-|Ja|
+|[Microsoft Defender for Endpoint-integratie](security-center-wdatp.md)|-|-|-|-|
 |[Gedragsanalyse van virtuele machine (en beveiligingswaarschuwingen)](./azure-defender.md)|✔</br>(in ondersteunde versies)|✔</br>(in ondersteunde versies)|✔|Ja|
 |[Bestandsloze beveiligingswaarschuwingen](alerts-reference.md#alerts-windows)|-|-|-|Ja|
 |[Op netwerk gebaseerde beveiligingswaarschuwingen](other-threat-protections.md#network-layer)|✔|✔|-|Ja|
@@ -96,10 +96,10 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 | Trend Micro - Deep Security | Windows Server-familie  | Nee | Ja |
 | Symantec v12.1.1100+| Windows Server-familie  | Nee | Ja |
 | McAfee v10+ | Windows Server-familie  | Nee | Ja |
-| McAfee v10+ | Linux Server-familie  | Nee | Ja * *\** _ |
-| Sophos V9+| Linux Server-familie  | Nee | Ja _*\**_  |
+| McAfee v10+ | Linux Server-familie  | Nee | Ja **\*** |
+| Sophos V9+| Linux Server-familie  | Nee | Ja  **\***  |
 
- _*\**_ De status van de dekking en de ondersteunende gegevens zijn momenteel alleen beschikbaar in de Log Analytics-werkruimte die aan uw beveiligde abonnementen is gekoppeld. Deze wordt niet weergegeven in de Azure Security Center-portal.
+ **\*** De status van de dekking en de ondersteunende gegevens zijn momenteel alleen beschikbaar in de Log Analytics-werkruimte die aan uw beveiligde abonnementen is gekoppeld. Deze wordt niet weergegeven in de Azure Security Center-portal.
 
 > [!NOTE]
 > Voor de detectie van System Center Endpoint Protection (SCEP) op een virtuele machine met Windows Server 2008 R2 moet SCEP worden geïnstalleerd na PowerShell (v 3.0 of nieuwer).
@@ -132,11 +132,11 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender voor DNS](defender-for-dns-introduction.md)|-|-|
 |[Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
-|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔ (2)|✔ (2)|
+|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔ (2)|
 |[Beveiliging van Kubernetes-werk belasting](kubernetes-workload-protections.md)|-|-|
 |||
 
-(1) Vereist _ *Azure Defender voor servers**
+(1) vereist **Azure Defender voor servers**
 
 (2) Gedeeltelijk
 

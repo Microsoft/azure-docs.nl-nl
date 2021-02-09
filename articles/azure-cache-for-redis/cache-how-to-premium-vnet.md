@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 10/09/2020
-ms.openlocfilehash: 9343bc424a0a38da173a56701528c4fd7549aabd
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 908254fec0d9e92b0e30c2e4968c3c505bbbdbf8
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734654"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833827"
 ---
 # <a name="configure-virtual-network-support-for-a-premium-tier-azure-cache-for-redis-instance"></a>Ondersteuning voor virtuele netwerken configureren voor een Azure-cache met een Premium-laag voor een redis-exemplaar
 
@@ -77,7 +77,7 @@ Ondersteuning voor virtuele netwerken is geconfigureerd in het deel venster **ni
 
 1. U kunt eventueel op het tabblad **labels** de naam en waarde opgeven als u de resource wilt categoriseren.
 
-1. Selecteer **Controleren en maken**. U gaat naar het tabblad **controleren + maken** , waar Azure uw configuratie valideert.
+1. Selecteer **Controleren + maken**. U gaat naar het tabblad **controleren + maken** , waar Azure uw configuratie valideert.
 
 1. Wanneer het bericht groene **validatie is voltooid** wordt weer gegeven, selecteert u **maken**.
 
@@ -178,7 +178,7 @@ Er zijn netwerk connectiviteits vereisten voor Azure cache voor redis die mogeli
 * Uitgaande netwerk verbinding met Azure Storage eind punten wereld wijd. Eind punten die zich in dezelfde regio bevinden als de Azure-cache voor redis-exemplaren en opslag eindpunten die zich in *andere* Azure-regio's bevinden, worden opgenomen. Azure Storage-eind punten worden omgezet onder de volgende DNS-domeinen: *Table.core.Windows.net*, *blob.core.Windows.net*, *Queue.core.Windows.net* en *File.core.Windows.net*.
 * Uitgaande netwerk verbinding met *OCSP.Digicert.com*, *crl4.Digicert.com*, *OCSP.msocsp.com*, *mscrl.Microsoft.com*, *crl3.Digicert.com*, *cacerts.Digicert.com*, *oneocsp.Microsoft.com* en *CRL.Microsoft.com*. Deze connectiviteit is vereist voor de ondersteuning van TLS/SSL-functionaliteit.
 * De DNS-configuratie voor het virtuele netwerk moet geschikt zijn voor het oplossen van alle eind punten en domeinen die worden vermeld in de eerdere punten. Aan deze DNS-vereisten kan worden voldaan door ervoor te zorgen dat een geldige DNS-infra structuur is geconfigureerd en onderhouden voor het virtuele netwerk.
-* Uitgaande netwerk verbinding met de volgende Azure Monitor-eind punten die worden omgezet onder de volgende DNS-domeinen: *shoebox2-Black.shoebox2.Metrics.nsatc.net*, *North-prod2.prod2.Metrics.nsatc.net*, *azglobal-Black.azglobal.Metrics.nsatc.net*, *shoebox2-Red.shoebox2.Metrics.nsatc.net*, *East-prod2.prod2.Metrics.nsatc.net* en *azglobal-Red.azglobal.Metrics.nsatc.net*.
+* Uitgaande netwerk verbinding met de volgende Azure Monitor-eind punten die worden omgezet onder de volgende DNS-domeinen: *shoebox2-Black.shoebox2.Metrics.nsatc.net*, *North-prod2.prod2.Metrics.nsatc.net*, *azglobal-Black.azglobal.Metrics.nsatc.net*, *shoebox2-Red.shoebox2.Metrics.nsatc.net*, *East-prod2.prod2.Metrics.nsatc.net*, *azglobal-Red.azglobal.Metrics.nsatc.net*, *shoebox3.Prod.microsoftmetrics.com*, *shoebox3-Red.Prod.microsoftmetrics.com* en *shoebox3-Black.Prod.microsoftmetrics.com*.
 
 ### <a name="how-can-i-verify-that-my-cache-is-working-in-a-virtual-network"></a>Hoe kan ik controleren of mijn cache werkt in een virtueel netwerk?
 

@@ -8,18 +8,22 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 1/25/2021
+ms.date: 02/08/2021
 ms.author: kenwith
-ms.openlocfilehash: 89b40ac68143c2af0d94434ddedec489a2208839
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 03eacf4405217ee883689a088499d86d6f2262b5
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99256404"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99830699"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
 Microsoft Azure AD biedt ondersteuning voor het inrichten van gebruikers voor SaaS-toepassingen van derden, zoals Sales Force en G suite. Als u het inrichten van gebruikers inschakelt voor een SaaS-toepassing van derden, worden de kenmerkwaarden van de toepassing in de Azure-portal bepaalt via kenmerktoewijzingen.
+
+Voordat u aan de slag gaat, moet u ervoor zorgen dat u bekend bent met de concepten van app management en **Single Sign-On (SSO)** , de volgende koppelingen bekijken:
+- [Quickstartreeks over app-beheer in Azure AD](../manage-apps/view-applications-portal.md)
+- [Wat is single Sign-On (SSO)?](../manage-apps/what-is-single-sign-on.md)
 
 Er zijn vooraf geconfigureerde sets met kenmerken en kenmerktoewijzingen beschikbaar voor de koppeling tussen gebruikersobjecten van Azure AD en van de SaaS-app. Sommige apps beheren andere typen objecten naast gebruikersobjecten, zoals objecten voor groepen.
 

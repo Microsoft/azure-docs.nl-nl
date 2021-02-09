@@ -2,13 +2,13 @@
 title: Azure NetApp Files met Azure VMware-oplossing
 description: Gebruik Azure NetApp Files met virtuele machines van Azure VMware-oplossingen voor het migreren en synchroniseren van gegevens over on-premises servers, virtuele machines met Azure VMware-oplossingen en Cloud infrastructuren.
 ms.topic: how-to
-ms.date: 02/01/2021
-ms.openlocfilehash: 8c101b652ffcefe05e9b6c11f166c1da3df2ede1
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.date: 02/08/2021
+ms.openlocfilehash: 69d4e3a99de28d55b2fd95b1fc05c04c2ae0a37b
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539363"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988658"
 ---
 # <a name="azure-netapp-files-with-azure-vmware-solution"></a>Azure NetApp Files met Azure VMware-oplossing
 
@@ -16,7 +16,7 @@ In dit artikel wordt uitgelegd hoe u Azure NetApp Files integreert met Azure VMw
 
 ## <a name="azure-netapp-files-overview"></a>Overzicht van Azure NetApp Files
 
-[Azure NetApp files](../azure-netapp-files/azure-netapp-files-introduction.md) is een Azure-service voor de eerste partij voor de migratie en het uitvoeren van de meest veeleisende bedrijfs bestanden-workloads in de Cloud, inclusief data bases, SAP en toepassingen met hoge prestaties, zonder code wijzigingen.
+[Azure NetApp files](../azure-netapp-files/azure-netapp-files-introduction.md) is een Azure-service voor migratie en het uitvoeren van de meest veeleisende bedrijfs bestanden-workloads in de Cloud. Dit omvat data bases, SAP en high performance computing-toepassingen, zonder code wijzigingen.
 
 ### <a name="features"></a>Functies
 (Services waarbij Azure NetApp Files worden gebruikt.)
@@ -31,7 +31,7 @@ Azure NetApp Files is beschikbaar in veel Azure-regio's en ondersteunt replicati
 
 ## <a name="reference-architecture"></a>Referentiearchitectuur
 
-In het volgende diagram ziet u een verbinding via Azure ExpressRoute naar een privécloud van Azure VMware-oplossing. Hier wordt het gebruik van een Azure NetApp Files-share weer gegeven, gekoppeld op Vm's van Azure VMware-oplossingen, die worden geopend door de Azure VMware-oplossings omgeving.
+In het volgende diagram ziet u een verbinding via Azure ExpressRoute naar een privécloud van Azure VMware-oplossing. De Azure VMware-oplossings omgeving heeft toegang tot de Azure NetApp Files share, die is gekoppeld aan virtuele machines van Azure VMware-oplossingen.
 
 ![Diagram met NetApp-bestanden voor Azure VMware-oplossings architectuur.](media/net-app-files/net-app-files-topology.png)
 
@@ -83,11 +83,11 @@ De volgende stappen omvatten het verifiëren van de vooraf geconfigureerde Azure
 
     :::image type="content" source="media/net-app-files/configuration-of-volume.png" alt-text="Scherm afbeelding met configuratie details van een volume.":::
 
-    U kunt zien dat het volume anfvolume, met een grootte van 200 GiB, is gemaakt in de capaciteits groep anfpool1 en geëxporteerd als een NFS-bestands share via 10.22.3.4:/ANFVOLUME. Er is één privé-IP-adres van de Azure Virtual Network (VNet) gemaakt voor Azure NetApp Files en het NFS-pad dat moet worden gekoppeld aan de virtuele machine. Zie [prestatie overwegingen voor Azure NetApp files](../azure-netapp-files/azure-netapp-files-performance-considerations.md)voor informatie over Azure NetApp files volume prestaties ten opzichte van grootte (' quotum '). 
+    U kunt zien dat het volume anfvolume een grootte van 200 GiB heeft en zich in de anfpool1 voor de capaciteits groep bevindt.  Deze wordt geëxporteerd als een NFS-bestands share via 10.22.3.4:/ANFVOLUME. Er is één privé-IP-adres van de Azure Virtual Network (VNet) gemaakt voor Azure NetApp Files en het NFS-pad dat moet worden gekoppeld aan de virtuele machine. Zie [prestatie overwegingen voor Azure NetApp files](../azure-netapp-files/azure-netapp-files-performance-considerations.md)als u meer wilt weten over de prestaties van Azure NetApp files volumes op grootte of quotum. 
 
 ## <a name="verify-pre-configured-azure-vmware-solution-vm-share-mapping"></a>De vooraf geconfigureerde Azure VMware-oplossing voor VM-share toewijzing controleren
 
-Voordat u de toegankelijkheid van Azure NetApp Files-share aan een Azure VMware-oplossings-VM doorgeeft, is het belang rijk dat u de toewijzing van SMB en NFS-share begrijpt. Pas nadat u de SMB-of NFS-volumes hebt geconfigureerd, kunnen ze worden gekoppeld zoals hier wordt beschreven.
+Als u een Azure NetApp Files share toegankelijk wilt maken voor een Azure VMware-oplossings-VM, is het belang rijk dat u de toewijzing van SMB-en NFS-shares begrijpt. Pas nadat u de SMB-of NFS-volumes hebt geconfigureerd, kunnen ze worden gekoppeld zoals hier wordt beschreven.
 
 - SMB-share: een Active Directory verbinding maken voordat een SMB-volume wordt geïmplementeerd. De opgegeven domein controllers moeten toegankelijk zijn voor het gedelegeerde subnet van Azure NetApp Files voor een geslaagde verbinding. Zodra de Active Directory is geconfigureerd binnen het Azure NetApp Files account, wordt deze weer gegeven als een selecteerbaar item tijdens het maken van SMB-volumes.
 
@@ -103,7 +103,7 @@ Hier volgen slechts enkele aantrekkelijke Azure NetApp Files use cases.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Wanneer u Azure NetApp Files hebt geïntegreerd met uw Azure VMware-oplossings werk belastingen, wilt u mogelijk meer informatie over:
+Nu u de integratie van Azure NetApp Files met uw Azure VMware-oplossings workloads hebt besproken, kunt u het volgende weten:
 
 - [Resource limieten voor Azure NetApp files](../azure-netapp-files/azure-netapp-files-resource-limits.md#resource-limits).
 - [Richt lijnen voor het plannen van Azure NetApp files netwerk](../azure-netapp-files/azure-netapp-files-network-topologies.md).

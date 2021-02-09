@@ -206,6 +206,8 @@
                   href: azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md
                 - name: Stateless-app implementeren via GitOps
                   href: azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md
+                - name: Azure Arc data controller implementeren
+                  href: azure-stack-edge-gpu-deploy-arc-data-controller.md
         - name: Azure Resource Manager (preview) configureren
           items:
             - name: Verbinding maken via Azure PowerShell

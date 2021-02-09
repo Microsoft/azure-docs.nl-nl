@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor het configureren van een Azure-Kubernetes-cluster met Arc-functionaliteit (preview-versie)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, AKS, containers
-ms.openlocfilehash: a068ed90ea53b3b25a1f41cebd9a5b8e607afa54
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 72dc42fffb3653de81477fa504c11b9b0328d2eb
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737181"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988696"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 
@@ -148,17 +148,17 @@ Hier vindt u meer para meters die u kunt gebruiken om de configuratie aan te pas
 
 `--helm-operator-params` : *Optionele* grafiek waarden voor de operator helm (indien ingeschakeld).  Bijvoorbeeld: '--set helm. Verses = v3 '.
 
-`--helm-operator-chart-version` : *Optionele* grafiek versie voor de helm-operator (indien ingeschakeld). Standaard: ' 1.2.0 '.
+`--helm-operator-version` : *Optionele* grafiek versie voor de helm-operator (indien ingeschakeld). Gebruik ' 1.2.0 ' of hoger. Standaard: ' 1.2.0 '.
 
 `--operator-namespace` : *Optionele* naam voor de operator naam ruimte. Standaard: standaard. Maxi maal 23 tekens.
 
-`--operator-params` : *Optionele* para meters voor de operator. Moet binnen enkele aanhalings tekens worden opgegeven. Bijvoorbeeld: ```--operator-params='--git-readonly --git-path=releases --sync-garbage-collection' ```
+`--operator-params` : *Optionele* para meters voor de operator. Moet binnen enkele aanhalings tekens worden opgegeven. Bijvoorbeeld: ```--operator-params='--git-readonly --sync-garbage-collection --git-branch=main' ```
 
 Opties die worden ondersteund in--operator-params
 
 | Optie | Beschrijving |
 | ------------- | ------------- |
-| --Git-Branch  | Vertakking van Git opslag plaats die moet worden gebruikt voor Kubernetes-manifesten. De standaard waarde is ' Master '. |
+| --Git-Branch  | Vertakking van Git opslag plaats die moet worden gebruikt voor Kubernetes-manifesten. De standaard waarde is ' Master '. Nieuwere opslag plaatsen hebben hoofd vertakking met de naam Main. in dat geval moet u--git-branch = Main instellen. |
 | --Git-pad  | Relatief pad binnen de Git-opslag plaats voor stroom om Kubernetes-manifesten te vinden. |
 | --Git-ReadOnly | Git-opslag plaats worden als alleen-lezen beschouwd. Er wordt geen poging gedaan om te schrijven naar de stroom. |
 | --Manifest-generatie  | Als deze functie is ingeschakeld, zoekt stroom. stroom. yaml en voert u Kustomize of andere manifest generatoren uit. |
@@ -226,16 +226,13 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 }
 ```
 
-Wanneer de `sourceControlConfiguration` is gemaakt, zijn er enkele dingen die zich op de schermen voordoen:
+Wanneer een `sourceControlConfiguration` wordt gemaakt of bijgewerkt, vinden er een aantal dingen plaats op de schermen:
 
-1. De Azure-Arc `config-agent` bewaakt Azure Resource Manager voor nieuwe of bijgewerkte configuraties ( `Microsoft.KubernetesConfiguration/sourceControlConfigurations` )
-1. `config-agent`de nieuwe configuratie wordt gekennisgevingd `Pending`
-1. `config-agent` de configuratie-eigenschappen worden gelezen en voor bereidingen voor het implementeren van een beheerd exemplaar van `flux`
-    * `config-agent` maakt de doel naam ruimte
-    * `config-agent` bereidt een Kubernetes-service account voor met de juiste machtiging ( `cluster` of `namespace` bereik)
-    * `config-agent` implementeert een exemplaar van `flux`
-    * `flux` genereert een SSH-sleutel en registreert de open bare sleutel (als u de optie SSH gebruikt met door de stroom gegenereerde sleutels)
-1. `config-agent` rapporteert de status terug naar de `sourceControlConfiguration` resource in azure
+1. De Azure-Arc `config-agent` is bewaking Azure Resource Manager voor nieuwe of bijgewerkte configuraties ( `Microsoft.KubernetesConfiguration/sourceControlConfigurations` ) en de nieuwe `Pending` configuratie.
+1. De `config-agent` configuratie-eigenschappen worden gelezen en de doel naam ruimte wordt gemaakt.
+1. De Azure-Arc `controller-manager` bereidt een Kubernetes-service account voor met de juiste machtiging ( `cluster` of `namespace` bereik) en implementeert vervolgens een exemplaar van `flux` .
+1. Als u de optie SSH gebruikt met door stromen gegenereerde sleutels, `flux` genereert een SSH-sleutel en registreert de open bare sleutel.
+1. De `config-agent` status rapporteert terug naar de `sourceControlConfiguration` resource in Azure.
 
 Terwijl het inrichtings proces plaatsvindt, `sourceControlConfiguration` wordt de status van een aantal wijzigingen gewijzigd. Bewaak de voortgang met de `az k8sconfiguration show ...` bovenstaande opdracht:
 

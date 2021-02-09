@@ -2,13 +2,13 @@
 title: Traffic Manager implementeren om werk belastingen van Azure VMware-oplossingen te verdelen
 description: Meer informatie over het integreren van Traffic Manager met de Azure VMware-oplossing om de werk belastingen van toepassingen te verdelen over meerdere eind punten in verschillende regio's.
 ms.topic: how-to
-ms.date: 12/29/2020
-ms.openlocfilehash: 6dbd58f17e29b045bd654bee90b6390f608803ab
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.date: 02/08/2021
+ms.openlocfilehash: 46570c5a61fc0a641d83126fd0f8ef35b3dc42cc
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809731"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988591"
 ---
 # <a name="deploy-traffic-manager-to-balance-azure-vmware-solution-workloads"></a>Traffic Manager implementeren om werk belastingen van Azure VMware-oplossingen te verdelen
 
@@ -130,9 +130,9 @@ In de volgende stappen wordt de configuratie van het NSX-T-segment in de Azure V
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over:
+Nu u Azure Traffic Manager hebt geïntegreerd met de Azure VMware-oplossing, kunt u het volgende weten:
 
-- [Azure-toepassing gateway gebruiken op de Azure VMware-oplossing](protect-azure-vmware-solution-with-application-gateway.md)
-- [Methoden voor het doorsturen van Traffic Manager](../traffic-manager/traffic-manager-routing-methods.md)
-- [Services voor taak verdeling combi neren in azure](../traffic-manager/traffic-manager-load-balancing-azure.md)
-- [Prestaties meten Traffic Manager](../traffic-manager/traffic-manager-performance-considerations.md)
+- [Gebruik Azure-toepassing gateway op de Azure VMware-oplossing](protect-azure-vmware-solution-with-application-gateway.md).
+- [Routerings methoden Traffic Manager](../traffic-manager/traffic-manager-routing-methods.md).
+- Hiermee worden [taakverdelings Services in azure gecombineerd](../traffic-manager/traffic-manager-load-balancing-azure.md).
+- Het [meten van Traffic manager prestaties](../traffic-manager/traffic-manager-performance-considerations.md).

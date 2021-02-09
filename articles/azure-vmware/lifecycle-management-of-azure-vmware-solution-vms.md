@@ -2,13 +2,13 @@
 title: Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 description: Meer informatie over het beheren van alle aspecten van de levens cyclus van uw Azure VMware-oplossing-Vm's met Microsoft Azure systeem eigen hulpprogram ma's.
 ms.topic: conceptual
-ms.date: 09/11/2020
-ms.openlocfilehash: 5bba9cbbc8783cc285ff09f790ee1b35b20ba358
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.date: 02/08/2021
+ms.openlocfilehash: d8224a37e46b336ebf889fe1c075930f34f10ca4
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062893"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988533"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 
@@ -110,3 +110,11 @@ Azure Monitor is een uitgebreide oplossing voor het verzamelen, analyseren en we
     - [Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure monitor](../azure-monitor/platform/alerts-log.md).
     - [Actie regels](../azure-monitor/platform/alerts-action-rules.md) om geautomatiseerde acties en meldingen in te stellen.
     - [Verbind Azure met ITSM-hulpprogram ma's met behulp van IT Service Management-connector](../azure-monitor/platform/itsmc-overview.md).
+    
+ ## <a name="next-steps"></a>Volgende stappen
+
+Nu u de systeem eigen hulpprogram ma's van Azure hebt gebruikt voor het beheren van uw Azure VMware-oplossings-Vm's gedurende de levens cyclus, wilt u mogelijk meer informatie over:
+
+- [Bescherm uw Azure VMware-oplossing-vm's met Azure Security Center](azure-security-integration.md).
+- [Instellen van Azure backup server voor de Azure VMware-oplossing](set-up-backup-server-for-azure-vmware-solution.md).
+- [Integratie van de Azure VMware-oplossing in een hub-en-spoke-architectuur](concepts-hub-and-spoke.md).

@@ -8,14 +8,14 @@ manager: gwallace
 editor: ''
 ms.service: api-management
 ms.topic: article
-ms.date: 04/26/2020
+ms.date: 01/25/2021
 ms.author: apimpm
-ms.openlocfilehash: b560b02544eeb96167e68ed305d4d9942d2b1e0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 48abce693ca22163c0a1742ba71faf36fc6156a1
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82232969"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989098"
 ---
 # <a name="self-hosted-gateway-overview"></a>Overzicht van zelf-hostende gateway
 
@@ -49,7 +49,7 @@ De volgende functionaliteit gevonden in de beheerde gateways is **niet beschikba
 
 - Azure Monitor-logboeken
 - Upstream (back-end) TLS-versie en versleutelings beheer
-- Validatie van server-en client certificaten met [CA-basis certificaten](api-management-howto-ca-certificates.md) die zijn geüpload naar API Management service. Als u ondersteuning wilt toevoegen voor een aangepaste certificerings instantie, voegt u een laag toe aan de zelf-hostende gateway container installatie kopie waarmee het basis certificaat van de certificerings instantie wordt geïnstalleerd.
+- Validatie van server-en client certificaten met [CA-basis certificaten](api-management-howto-ca-certificates.md) die zijn geüpload naar API Management service. Zie [certificaat validatie in zelf-hostende gateway](api-management-howto-mutual-certificates-for-clients.md#certificate-validation-in-self-hosted-gateway)voor meer informatie.
 - Integratie met de [service Fabric](../service-fabric/service-fabric-api-management-overview.md)
 - Hervatting van TLS-sessies
 - Opnieuw onderhandelen van client certificaat. Dit betekent dat voor [verificatie van client certificaten](api-management-howto-mutual-certificates-for-clients.md) aan work API-consumers hun certificaten moeten worden weer gegeven als onderdeel van de eerste TLS-handshake. Schakel de instelling onderhandelen client certificaat in bij het configureren van een zelf-hostende gateway aangepaste hostnaam.

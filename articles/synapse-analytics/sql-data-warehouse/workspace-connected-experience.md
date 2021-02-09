@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/23/2020
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5efb1df378df323585bc0ca1094451cdb095fe4e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d477693667c8d78687d27b291d2b3c15612a0f30
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499778"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989039"
 ---
 # <a name="enabling-synapse-workspace-features-on-an-existing-dedicated-sql-pool-formerly-sql-dw"></a>Functies van Synapse-werk ruimte inschakelen op een bestaande toegewezen SQL-groep (voorheen SQL DW)
 
@@ -31,8 +31,8 @@ Nu de Synapse-werk ruimte beschikbaar is in de overzichts sectie van DW Portal, 
 De volgende informatie is van toepassing wanneer u een speciale SQL-DW (voorheen SQL DW) gebruikt en de functies van de Synapse-werk ruimte ingeschakeld zijn: 
 - **SQL-mogelijkheden** Alle SQL-mogelijkheden blijven met de logische SQL-Server, nadat de Synapse-werkruimte functie is ingeschakeld. Toegang tot de server via de SQL-resource provider is nog steeds mogelijk nadat de werk ruimte is ingeschakeld. Alle beheer functies kunnen worden gestart via de werk ruimte en de bewerking wordt uitgevoerd op de logische SQL Server die als host fungeert voor uw SQL-groepen. Er worden geen bestaande automatisering, hulpprogram ma's of verbindingen verbroken of onderbroken wanneer een werk ruimte is ingeschakeld.  
 - **Resource verplaatsen**  Het initiëren van een resource verplaatsing op een server waarop de functie Synapse-werk ruimte is ingeschakeld, zorgt ervoor dat de koppeling tussen de server en de werk ruimte wordt verbroken en dat u geen toegang meer hebt tot uw bestaande toegewezen SQL-groep (voorheen SQL DW)-exemplaren van de werk ruimte. Om ervoor te zorgen dat de verbinding wordt behouden, is het raadzaam dat beide resources binnen hetzelfde abonnement en dezelfde resource groep blijven. 
-- **Bewaking** SQL-aanvragen die via de Synapse Studio worden verzonden in een toegewezen SQL-groep (voorheen SQL DW), kunnen worden weer gegeven in de monitor hub. Voor alle andere bewakings activiteiten kunt u naar Azure Portal specifieke SQL-groep (voorheen SQL DW) controleren. 
-- **Beveiligings** -en **toegangs** beheer zoals hierboven is vermeld, blijven alle management functies voor uw SQL Server-en toegewezen SQL-groepen (voorheen SQL DW) aanwezig op de logische SQL-Server. Deze functies omvatten, firewall regel beheer, het instellen van de Azure AD-beheerder van de server en alle toegangs beheer voor de gegevens in uw toegewezen SQL-groep (voorheen SQL DW). De volgende stappen moeten worden uitgevoerd om ervoor te zorgen dat uw specifieke SQL-groep (voorheen SQL DW) toegankelijk is en kan worden gebruikt via de werk ruimte Synapse. De lidmaatschappen van de werk ruimte geven gebruikers geen machtigingen voor de gegevens in een toegewezen SQL-groep (voorheen SQL DW-exemplaren). Volg uw normale [SQL-verificatie](sql-data-warehouse-authentication.md) beleid om ervoor te zorgen dat gebruikers toegang hebben tot de toegewezen SQL-groep (voorheen SQL DW)-exemplaren op de logische server. 
+- **Bewaking** SQL-aanvragen die via de Synapse Studio worden verzonden in een toegewezen SQL-groep (voorheen SQL DW), kunnen worden weer gegeven in de monitor hub. Voor alle andere controleactiviteiten kunt u de controlefunctie voor toegewezen SQL-pools (voorheen SQL DW) van de Azure-portal gebruiken. 
+- **Beveiligings** -en **toegangs** beheer zoals hierboven is vermeld, blijven alle management functies voor uw SQL Server-en toegewezen SQL-groepen (voorheen SQL DW) aanwezig op de logische SQL-Server. Deze functies omvatten, firewall regel beheer, het instellen van de Azure AD-beheerder van de server en alle toegangs beheer voor de gegevens in uw toegewezen SQL-groep (voorheen SQL DW). De volgende stappen moeten worden uitgevoerd om ervoor te zorgen dat uw specifieke SQL-groep (voorheen SQL DW) toegankelijk is en kan worden gebruikt via de werk ruimte Synapse. De lidmaatschappen van de werk ruimte geven gebruikers geen machtigingen voor de gegevens in een toegewezen SQL-groep (voorheen SQL DW-exemplaren). Volg uw normale [SQL-verificatie](sql-data-warehouse-authentication.md) beleid om ervoor te zorgen dat gebruikers toegang hebben tot de toegewezen SQL-groep (voorheen SQL DW)-exemplaren op de logische server. Als er al een beheerde identiteit is toegewezen aan de toegewezen SQL-groep (voorheen SQL DW), is de naam van de beheerde identiteit hetzelfde als die van de werk ruimte die wordt beheerd met een identiteit die automatisch wordt gemaakt ter ondersteuning van de werkruimte partner Services (bijvoorbeeld ADF-pijp lijnen).  Er kunnen twee beheerde identiteiten met dezelfde naam bestaan in een verbonden scenario. Een beheerde identiteit kan worden onderscheiden door hun Azure AD-object-Id's, functionaliteit voor het maken van SQL-gebruikers met behulp van object-Id's binnenkort beschikbaar.
 
     ```sql
     CREATE USER [<workspace managed identity] FROM EXTERNAL PROVIDER 

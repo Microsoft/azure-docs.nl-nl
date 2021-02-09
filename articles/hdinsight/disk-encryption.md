@@ -5,12 +5,12 @@ description: In dit artikel worden de twee coderings lagen beschreven die beschi
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/10/2020
-ms.openlocfilehash: c9e50885a7283d3f7fcd231bf222415389212a93
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 58b3d892ea24430a9d951a5a0230282f6c4fd584
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927319"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988616"
 ---
 # <a name="azure-hdinsight-double-encryption-for-data-at-rest"></a>Dubbele versleuteling van Azure HDInsight voor Data-at-rest
 
@@ -18,7 +18,7 @@ In dit artikel worden methoden beschreven voor het versleutelen van gegevens in 
 
 Dit document bevat geen informatie over de gegevens die zijn opgeslagen in uw Azure Storage-account. Uw clusters kunnen een of meer gekoppelde Azure Storage-accounts bevatten waarbij de versleutelings sleutels ook door micro soft worden beheerd of door de klant worden beheerd, maar de versleutelings service verschilt. Zie [Azure Storage encryption for Data at rest](../storage/common/storage-service-encryption.md)(Engelstalig) voor meer informatie over Azure Storage versleuteling.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Er zijn drie hoofd rollen voor beheerde schijven in Azure: de gegevens schijf, de besturingssysteem schijf en de tijdelijke schijf. Zie [Introduction to Azure Managed disks](../virtual-machines/managed-disks-overview.md)(Engelstalig) voor meer informatie over verschillende typen Managed disks. 
 
@@ -116,7 +116,7 @@ HDInsight ondersteunt alleen Azure Key Vault. Als u uw eigen sleutel kluis hebt,
 
 U bent nu klaar om een nieuw HDInsight-cluster te maken. Door de klant beheerde sleutels kunnen alleen worden toegepast op nieuwe clusters tijdens het maken van het cluster. Versleuteling kan niet worden verwijderd uit door de klant beheerde sleutel clusters en door de klant beheerde sleutels kunnen niet worden toegevoegd aan bestaande clusters.
 
-Vanaf de [release van November 2020](hdinsight-release-notes.md#release-date-11182020)ondersteunt HDInsight het maken van clusters met behulp van versie-en versie-minder sleutel-uri's. Als u het cluster maakt met een sleutel-URI met een versie-less, probeert het HDInsight-cluster de automatische draaiing van sleutels uit te voeren wanneer de sleutel wordt bijgewerkt in uw Azure Key Vault. Als u het cluster met een versie sleutel-URI maakt, moet u een hand matige rotatie van de sleutel uitvoeren zoals wordt beschreven in [de versleutelings sleutel draaien](#rotating-the-encryption-key).
+Vanaf de release van november 2020 ondersteunt HDInsight het maken van clusters met behulp van versie-en versie-minder sleutel-Uri's. Als u het cluster maakt met een sleutel-URI met een versie-less, probeert het HDInsight-cluster de automatische draaiing van sleutels uit te voeren wanneer de sleutel wordt bijgewerkt in uw Azure Key Vault. Als u het cluster met een versie sleutel-URI maakt, moet u een hand matige rotatie van de sleutel uitvoeren zoals wordt beschreven in [de versleutelings sleutel draaien](#rotating-the-encryption-key).
 
 Voor clusters die zijn gemaakt voor de release van november 2020, moet u hand matig een sleutel draaiing uitvoeren met behulp van de versie sleutel-URI.
 

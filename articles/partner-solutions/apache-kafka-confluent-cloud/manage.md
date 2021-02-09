@@ -3,17 +3,17 @@ title: Een confluente Cloud beheren-Azure-partner oplossingen
 description: In dit artikel wordt het beheer van een confluente Cloud op de Azure Portal beschreven. Eenmalige aanmelding instellen, een confluente organisatie verwijderen en ondersteuning krijgen.
 ms.service: partner-services
 ms.topic: conceptual
-ms.date: 01/15/2021
+ms.date: 02/08/2021
 author: tfitzmac
 ms.author: tomfitz
-ms.openlocfilehash: 2d13c183f0b3891fa92b5e2a6534acbf8102e032
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: f8a54096ecda4729f7070120a02be3055f933cea
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253393"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989142"
 ---
-# <a name="manage-the-confluent-cloud-resource"></a>De confluente Cloud resource beheren
+# <a name="manage-the-confluent-cloud-resource"></a>Confluent Cloud-resource beheren
 
 In dit artikel wordt beschreven hoe u uw exemplaar van Apache Kafka beheert voor confluente Cloud in Azure. U ziet hoe u eenmalige aanmelding (SSO) instelt, een confluente organisatie verwijdert en een ondersteunings aanvraag maakt.
 
@@ -23,7 +23,7 @@ Als u SSO wilt implementeren voor uw organisatie, kan de Tenant beheerder de gal
 
 Voer de volgende stappen uit om SSO in te scha kelen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Navigeer naar het **overzicht** voor uw exemplaar van de confluente Cloud resource.
 1. Selecteer de koppeling om te **beheren op confluente Cloud**.
 
@@ -43,7 +43,7 @@ Wanneer u uw confluente Cloud resource niet meer nodig hebt, verwijdert u de res
 
 De resources in azure verwijderen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer **alle resources** en **filter op de naam** van de confluente Cloud resource of het **resource type** _Confluent-organisatie_. In de Azure Portal zoekt u de naam van de resource.
 1. Selecteer **verwijderen** in het **overzicht** van de resource.
 
@@ -66,13 +66,23 @@ Als u een ondersteunings aanvraag wilt indienen, neemt u contact op met [Conflue
 > [!NOTE]
 > Stel voor de eerste keer dat gebruikers uw wacht woord opnieuw in om u aan te melden bij de portal voor Confluent-ondersteuning. Als u geen account hebt met confluente Cloud, stuurt u een e-mail naar `cloud-support@confluent.io` voor verdere ondersteuning.
 
+In de portal kunt u een aanvraag indienen via Azure Help en ondersteuning, of rechtstreeks vanuit uw exemplaar van Apache Kafka voor confluente Cloud in Azure.
+
+Een aanvraag indienen via Azure Help en ondersteuning:
+
+1. Selecteer **Help en ondersteuning**.
+1. Selecteer **een ondersteunings aanvraag maken**.
+1. Selecteer in het formulier **Technical** voor **probleem type**. Selecteer uw abonnement. Selecteer in de lijst met Services de optie **Confluent op Azure**.
+
+    :::image type="content" source="media/support-request-help.png" alt-text="Maak een ondersteunings aanvraag via de Help.":::
+
 Voer de volgende stappen uit om een aanvraag in te dienen bij uw resource:
 
 1. Selecteer uw confluente organisatie in de Azure Portal.
 1. Selecteer **nieuwe ondersteunings aanvraag** in het menu aan de linkerkant van het scherm.
 1. Als u een ondersteunings aanvraag wilt maken, selecteert u de koppeling naar de **confluente Portal**.
 
-    :::image type="content" source="media/support-request.png" alt-text="Een ondersteunings aanvraag maken.":::
+    :::image type="content" source="media/support-request.png" alt-text="Een ondersteunings aanvraag maken op basis van een exemplaar.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

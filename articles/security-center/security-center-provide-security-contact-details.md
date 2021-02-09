@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/01/2020
+ms.date: 02/09/2021
 ms.author: memildin
-ms.openlocfilehash: 72ded01b141aafb7fd3e4d761882a10eaf0c4b33
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 4dc9855afe7ed53db120f4dbc6c09ac4db0f58d9
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920406"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988572"
 ---
 # <a name="configure-email-notifications-for-security-alerts"></a>E-mailmeldingen voor beveiligingswaarschuwingen configureren 
 
@@ -26,8 +26,8 @@ Beveiligingswaarschuwingen moeten de juiste personen in uw organisatie bereiken.
 
 Als u uw eigen voorkeuren voor e-mailmeldingen wilt definiëren, kunt u die kiezen op de instellingspagina **E-mailmeldingen** van Azure Security Center:
 
-- **_Wie_ moet worden gewaarschuwd**: e-mailberichten kunnen worden verzonden naar geselecteerde personen of naar iedereen met een specifieke Azure-rol voor een abonnement. 
-- **_Waarover_ moeten ze worden gewaarschuwd**: wijzig de ernstniveaus van meldingen die door Security Center moeten worden verzonden.
+- ***Wie* moet worden gewaarschuwd**: e-mailberichten kunnen worden verzonden naar geselecteerde personen of naar iedereen met een specifieke Azure-rol voor een abonnement. 
+- ***Waarover* moeten ze worden gewaarschuwd**: wijzig de ernstniveaus van meldingen die door Security Center moeten worden verzonden.
 
 Security Center beperkt het aantal uitgaande e-mails om te voorkomen dat waarschuwingen niet meer serieus worden genomen. Security Center verzendt voor elk abonnement:
 
@@ -48,8 +48,7 @@ Security Center beperkt het aantal uitgaande e-mails om te voorkomen dat waarsch
 |||
 
 
-## <a name="customize-the-security-alerts-email-notifications"></a>E-mailmeldingen voor beveiligingswaarschuwingen aanpassen<a name="email"></a>
-
+## <a name="customize-the-security-alerts-email-notifications-via-the-portal"></a>De e-mail meldingen over beveiligings waarschuwingen aanpassen via de portal<a name="email"></a>
 U kunt e-mailmeldingen verzenden naar individuele personen of naar alle gebruikers met specifieke Azure-rollen.
 
 1. Selecteer in het gebied **Prijzen en instellingen** van Security Center het relevante abonnement en selecteer **E-mailmailmeldingen**.
@@ -60,6 +59,28 @@ U kunt e-mailmeldingen verzenden naar individuele personen of naar alle gebruike
     - Voer specifieke e-mailadressen in, gescheiden door komma's. U kunt een onbeperkt aantal e-mailadressen invoeren.
 
 1. Als u de contactgegevens voor beveiliging wilt toepassen op uw abonnement, selecteert u **Opslaan**.
+
+## <a name="customize-the-alerts-email-notifications-through-the-api"></a>De e-mail meldingen voor waarschuwingen aanpassen via de API
+U kunt ook uw e-mail meldingen beheren via de geleverde REST API. Zie de [SECURITYCONTACTS API-documentatie](https://docs.microsoft.com/rest/api/securitycenter/securitycontacts)voor meer informatie.
+
+Dit is een voor beeld van een aanvraag tekst voor de PUT-aanvraag bij het maken van een beveiligings contact configuratie:
+
+```json
+{
+    "properties": {
+        "emails": admin@contoso.com;admin2@contoso.com,
+        "notificationsByRole": {
+            "state": "On",
+            "roles": ["AccountAdmin", "Owner"]
+        },
+        "alertNotifications": {
+            "state": "On",
+            "minimalSeverity": "High"
+        },
+        "phone": ""
+    }
+}
+```
 
 
 ## <a name="see-also"></a>Zie ook

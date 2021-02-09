@@ -1,74 +1,66 @@
 ---
 title: "Cognitive Services: What's New in docs"
-description: Wat is er nieuw in de documenten van Cognitive Services 1 december 2020 tot en met 31 december 2020.
+description: Wat is er nieuw in de documenten van Cognitive Services 1 januari 2021 tot en met 31 januari 2021.
 author: erhopf
 manager: nitinme
 ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
-ms.date: 01/05/2021
-ms.openlocfilehash: 41acfb2465382e8de4751b54c5b93e77bd12daaf
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.date: 02/08/2021
+ms.openlocfilehash: 92d75289fd4459db8c469a4cb562fe28e8aab779
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937318"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989009"
 ---
-# <a name="cognitive-services-docs-whats-new-for-december-1-2020---december-31-2020"></a>Cognitive Services documenten: wat is er nieuw voor 1 december 2020 tot 31 december 2020
+# <a name="cognitive-services-docs-whats-new-for-january-1-2021---january-31-2021"></a>Cognitive Services documenten: wat is er nieuw voor 1 januari 2021-31 januari 2021
 
-Welkom bij wat er nieuw is in de Cognitive Services docs van 1 december 2020 tot en met 31 december 2020. In dit artikel vindt u een overzicht van enkele belang rijke wijzigingen in docs tijdens deze periode.
+Welkom bij what's New in the Cognitive Services docs van 1 januari 2021 tot en met 31 januari 2021. In dit artikel vindt u een overzicht van enkele belang rijke wijzigingen in docs tijdens deze periode.
 
 ## <a name="cognitive-services"></a>Cognitive Services
 
-### <a name="new-articles"></a>Nieuwe artikelen
+**Bijgewerkte artikelen**
 
 - [Kosten plannen en beheren voor Azure Cognitive Services](plan-manage-costs.md)
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Virtuele Azure Cognitive Services-netwerken configureren](cognitive-services-virtual-networks.md)
-
-## <a name="anomaly-detector"></a>Anomaly Detector
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Anomalie detectie REST API Snelstartgids](./anomaly-detector/quickstarts/client-libraries.md?pivots=rest-api&tabs=windows)
-
-## <a name="bing-visual-search"></a>Bing Visuele zoekopdrachten
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Een Insights-token gebruiken om inzichten op te halen voor een installatie kopie](./bing-visual-search/use-insights-token.md)
-
-## <a name="containers"></a>Containers
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Container implementeren en uitvoeren in Azure Container Instance](./containers/azure-container-instance-recipe.md)
+- [Azure Cognitive Services-containers](cognitive-services-container-support.md)
 
 ## <a name="form-recognizer"></a>Form Recognizer
 
-### <a name="updated-articles"></a>Bijgewerkte artikelen
+**Nieuwe artikelen**
 
-- [Landings pagina voor formulier herkenning](./form-recognizer/index.yml)
-- [Quickstart: De clientbibliotheek van Form Recognizer gebruiken](./form-recognizer/quickstarts/client-library.md)
+- [Zelfstudie: formuliergegevens bulksgewijs extraheren met behulp van Azure Data Factory](/azure/cognitive-services/form-recognizer/tutorial-bulk-processing.md)
+
+**Bijgewerkte artikelen**
+
+- [Wat is Form Recognizer?](/azure/cognitive-services/form-recognizer/overview.md)
+
+## <a name="immersive-reader"></a>Immersive Reader
+
+**Bijgewerkte artikelen**
+
+- [Een resource voor insluitende lezer maken en Azure Active Directory authenticatie configureren](/azure/cognitive-services/immersive-reader/how-to-create-immersive-reader.md)
+
+## <a name="personalizer"></a>Personalizer
+
+**Bijgewerkte artikelen**
+
+- [Functies zijn informatie over acties en context](/azure/cognitive-services/personalizer/concepts-features.md)
 
 ## <a name="text-analytics"></a>Text Analytics
 
-### <a name="updated-articles"></a>Bijgewerkte artikelen
+**Bijgewerkte artikelen**
 
-- [Ondersteuning voor Text Analytics-API v3-taal](./text-analytics/language-support.md)
-- [De Text Analytics aanroepen REST API](./text-analytics/how-tos/text-analytics-how-to-call-api.md)
-- [Benoemde entiteits herkenning gebruiken in Text Analytics](./text-analytics/how-tos/text-analytics-how-to-entity-linking.md)
-- [Voor beeld: sleutel zinnen extra heren met behulp van Text Analytics](./text-analytics/how-tos/text-analytics-how-to-keyword-extraction.md)
-- [Documentatie voor de Text Analytics API - zelfstudies, API-verwijzing - Azure Cognitive Services  | Microsoft Docs](./text-analytics/index.yml)
-- [Quickstart: de clientbibliotheek en REST API van Text Analytics gebruiken](./text-analytics/quickstarts/client-libraries-rest-api.md)
+- [Ondersteuning voor Text Analytics-API v3-taal](/azure/cognitive-services/text-analytics/language-support.md)
+- [Migreren naar versie 3. x van de Text Analytics-API](/azure/cognitive-services/text-analytics/migration-guide.md)
+- [Wat is er nieuw in de Text Analytics-API?](/azure/cognitive-services/text-analytics/whats-new.md)
 
 ## <a name="community-contributors"></a>Community-inzenders
 
-De volgende mensen hebben tijdens deze periode bijgedragen aan de Cognitive Services documenten. Met vriendelijke groet,
+De volgende mensen hebben tijdens deze periode bijgedragen aan de Cognitive Services documenten. Met vriendelijke groet, Meer informatie over hoe u kunt bijdragen door de koppelingen onder ' Get betrokken ' te volgen op de [pagina wat is er nieuw land](index.yml).
 
-- [hyoshioka0128](https://github.com/hyoshioka0128) -Hiroshi Yoshioka (1)
-- [pymia](https://github.com/pymia) -quote//Huai-Wen Chang (1)
+- [AnweshGangula](https://github.com/AnweshGangula) -Anwesh Gangula (1)
+- [cdglasz](https://github.com/cdglasz) -Christopher Glasz (1)
+- [huybuidac](https://github.com/huybuidac) -bui DAC Huy (1)
 
 [!INCLUDE [Service specific updates](./includes/service-specific-updates.md)]

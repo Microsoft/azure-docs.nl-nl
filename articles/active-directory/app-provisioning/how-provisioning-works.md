@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 1f4466dea35fe3d52f86386f0bf0cc0c3b6a658f
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 048adee21d5c2e49ef02f518002a1dc6025c1ecd
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99256336"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988981"
 ---
 # <a name="how-provisioning-works"></a>Hoe inrichting werkt
 
@@ -43,7 +43,7 @@ Als u een automatische Azure AD-inrichtings connector wilt aanvragen voor een ap
 
 ## <a name="authorization"></a>Autorisatie
 
-Er zijn referenties vereist voor Azure AD om verbinding te maken met de gebruikers beheer-API van de toepassing. Tijdens het configureren van het automatisch inrichten van gebruikers voor een toepassing, moet u geldige referenties invoeren. Voor galerie toepassingen kunt u referentie typen en vereisten voor de toepassing vinden door te verwijzen naar de zelf studie over apps. Voor niet-galerie toepassingen kunt u de [scim](./use-scim-to-provision-users-and-groups.md#authorization-for-provisioning-connectors-in-the-application-gallery) -documentatie raadplegen om inzicht te krijgen in de referentie typen en vereisten. In de Azure Portal kunt u de referenties testen door Azure AD te proberen verbinding te maken met de inrichtings-app van de app met behulp van de opgegeven referenties.
+Er zijn referenties vereist voor Azure AD om verbinding te maken met de gebruikers beheer-API van de toepassing. Tijdens het configureren van het automatisch inrichten van gebruikers voor een toepassing, moet u geldige referenties invoeren. Voor galerie toepassingen kunt u referentie typen en vereisten voor de toepassing vinden door te verwijzen naar de zelf studie over apps. Voor niet-galerie toepassingen kunt u de [scim](./use-scim-to-provision-users-and-groups.md#authorization-to-provisioning-connectors-in-the-application-gallery) -documentatie raadplegen om inzicht te krijgen in de referentie typen en vereisten. In de Azure Portal kunt u de referenties testen door Azure AD te proberen verbinding te maken met de inrichtings-app van de app met behulp van de opgegeven referenties.
 
 ## <a name="mapping-attributes"></a>Kenmerken toewijzen
 

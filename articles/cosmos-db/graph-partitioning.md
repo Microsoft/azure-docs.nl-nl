@@ -8,19 +8,19 @@ ms.subservice: cosmosdb-graph
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 91516c9815cfd71ffb59c399ea6580c6e28d8fce
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 4d76bdcb385ed2fe4b8a697f24187b8e3d5addbc
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576461"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988752"
 ---
 # <a name="using-a-partitioned-graph-in-azure-cosmos-db"></a>Gepartitioneerde graaf gebruiken in Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
 
 Een van de belangrijkste functies van de Gremlin-API in Azure Cosmos DB is de mogelijkheid om grootschalige grafieken te verwerken door middel van Horizon taal schalen. De containers kunnen onafhankelijk van de voor waarden van opslag en door voer worden geschaald. U kunt containers maken in Azure Cosmos DB die automatisch kunnen worden geschaald om grafiek gegevens op te slaan. De gegevens worden automatisch gebalanceerd op basis van de opgegeven **partitie sleutel**.
 
-Partitioneren wordt intern uitgevoerd als de container verwacht meer dan 20 GB op te slaan of als u meer dan 10.000 aanvraag eenheden per seconde (RUs) wilt toewijzen. Gegevens worden automatisch gepartitioneerd op basis van de partitie sleutel die u opgeeft. De partitie sleutel is vereist als u grafiek containers maakt op basis van de Azure Portal of de 3. x of hogere versies van Gremlin-Stuur Programma's. De partitie sleutel is niet vereist als u 2. x of een lagere versie van Gremlin-Stuur Programma's gebruikt. 
+Partitioneren wordt intern uitgevoerd als de container verwacht meer dan 20 GB op te slaan of als u meer dan 10.000 aanvraag eenheden per seconde (RUs) wilt toewijzen. Gegevens worden automatisch gepartitioneerd op basis van de partitie sleutel die u opgeeft. De partitie sleutel is vereist als u grafiek containers maakt op basis van de Azure Portal of de 3. x of hogere versies van Gremlin-Stuur Programma's. De partitie sleutel is niet vereist als u 2. x of een lagere versie van Gremlin-Stuur Programma's gebruikt.
 
 Dezelfde algemene principes van het [Azure Cosmos DB partitioneren-mechanisme](partitioning-overview.md) zijn van toepassing met een aantal grafische specifieke optimalisaties die hieronder worden beschreven.
 

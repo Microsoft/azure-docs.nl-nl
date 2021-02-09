@@ -12,12 +12,12 @@ ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 3ce00c5182246513aaf3178118058826528619d2
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: f2a04a341239b62290eecac8c0e1ce70b7c927c1
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584261"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988898"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -186,7 +186,7 @@ U hebt een Azure AD-Tenant nodig om uw app te kunnen testen. Zie [Quick Start: e
 
 Een Azure AD-Tenant wordt ook geleverd met elk Microsoft 365-abonnement. Als u een gratis Microsoft 365 ontwikkel omgeving wilt instellen, raadpleegt u [lid worden van het Microsoft 365 ontwikkelaars programma](/office/developer-program/microsoft-365-developer-program).
 
-Wanneer u een Tenant hebt, test u eenmalige aanmelding en [inrichting](../app-provisioning/use-scim-to-provision-users-and-groups.md#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client). 
+Wanneer u een Tenant hebt, test u eenmalige aanmelding en [inrichting](../app-provisioning/use-scim-to-provision-users-and-groups.md#integrate-your-scim-endpoint-with-the-aad-scim-client). 
 
 **Voor OIDC-of Oath-toepassingen** [registreert u uw toepassing](quickstart-register-app.md) als multi tenant-toepassing. Selecteer de optie accounts in een organisatorische map en persoonlijke micro soft-accounts in ondersteunde account typen.
 

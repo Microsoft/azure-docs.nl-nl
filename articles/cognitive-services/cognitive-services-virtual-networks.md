@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 01/27/2021
+ms.date: 02/09/2021
 ms.author: aahi
-ms.openlocfilehash: 8fa10164ae2d697f68156777f224b92f0562475f
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: eaffa535b51b786a53f1e6cc35233c55dd837233
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98940049"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989081"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Virtuele Azure Cognitive Services-netwerken configureren
 
@@ -59,7 +59,7 @@ Virtuele netwerken (VNETs) worden ondersteund in [regio's waar Cognitive service
 
 
 > [!NOTE]
-> Als u LUIS gebruikt, kunt u met de tag **CognitiveServicesManagement** alleen de service gebruiken met de SDK of de rest API. Als u de LUIS-Portal vanuit een virtueel netwerk wilt openen en gebruiken, moet u de volgende tags gebruiken:  
+> Als u gebruikmaakt van LUIS of spraak Services, kunt u met de tag **CognitiveServicesManagement** alleen de service gebruiken met de SDK of de rest API. Als u LUIS-Portal en/of speech Studio vanuit een virtueel netwerk wilt openen en gebruiken, moet u de volgende tags gebruiken:  
 > * **AzureActiveDirectory**
 > * **AzureFrontDoor. front-end**
 > * **AzureResourceManager** 
@@ -157,7 +157,7 @@ U kunt de standaard regels voor netwerk toegang voor Cognitive Services resource
         --default-action Allow
     ```
 
-**_
+***
 
 ## <a name="grant-access-from-a-virtual-network"></a>Toegang verlenen vanuit een virtueel netwerk
 
@@ -169,7 +169,7 @@ Elke Cognitive Services Resource ondersteunt Maxi maal 100 regels voor virtuele 
 
 ### <a name="required-permissions"></a>Vereiste machtigingen
 
-Als u een regel voor een virtueel netwerk wilt Toep assen op een Cognitive Services resource, moet de gebruiker de juiste machtigingen hebben voor de subnetten die worden toegevoegd. De vereiste machtiging is de standaard _Contributor * rol of de rol *Cognitive Services Inzender* . De vereiste machtigingen kunnen ook worden toegevoegd aan aangepaste roldefinities.
+Als u een regel voor een virtueel netwerk wilt Toep assen op een Cognitive Services resource, moet de gebruiker de juiste machtigingen hebben voor de subnetten die worden toegevoegd. De vereiste machtiging is de standaard rol *Inzender* of de rol *Cognitive Services Inzender* . De vereiste machtigingen kunnen ook worden toegevoegd aan aangepaste roldefinities.
 
 Cognitive Services resource en de virtuele netwerken die toegang hebben verleend, kunnen zich in verschillende abonnementen bevinden, met inbegrip van abonnementen die deel uitmaken van een andere Azure AD-Tenant.
 
@@ -325,10 +325,10 @@ U kunt regels voor virtuele netwerken voor Cognitive Services resources beheren 
         --subnet $subnetid
     ```
 
-**_
+***
 
 > [!IMPORTANT]
-> Zorg ervoor dat u [de standaard regel instelt](#change-the-default-network-access-rule) op _ * weigeren * * of netwerk regels geen effect hebben.
+> Zorg ervoor dat u [de standaard regel instelt](#change-the-default-network-access-rule) op **weigeren** of dat netwerk regels geen effect hebben.
 
 ## <a name="grant-access-from-an-internet-ip-range"></a>Toegang verlenen vanuit een IP-bereik
 
@@ -472,10 +472,10 @@ U kunt IP-netwerk regels voor Cognitive Services resources beheren via de Azure 
         --ip-address "16.17.18.0/24"
     ```
 
-**_
+***
 
 > [!IMPORTANT]
-> Zorg ervoor dat u [de standaard regel instelt](#change-the-default-network-access-rule) op _ * weigeren * * of netwerk regels geen effect hebben.
+> Zorg ervoor dat u [de standaard regel instelt](#change-the-default-network-access-rule) op **weigeren** of dat netwerk regels geen effect hebben.
 
 ## <a name="use-private-endpoints"></a>Privé-eindpunten gebruiken
 

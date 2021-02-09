@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: apimpm
-ms.openlocfilehash: 4e5522c162e08f0257bd6f20b058bf8bb858cff3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 553b4527796db3e5d0f430afd6c5e614626187e5
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099343"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988888"
 ---
 # <a name="how-to-secure-apis-using-client-certificate-authentication-in-api-management"></a>API's beveiligen met behulp van verificatie via clientcertificaten in API Management
 
@@ -94,6 +94,18 @@ In het volgende voor beeld ziet u hoe u de vinger afdruk van een client certific
 > [!TIP]
 > Probleem met het publiceren van het client certificaat dat in dit [artikel](https://techcommunity.microsoft.com/t5/Networking-Blog/HTTPS-Client-Certificate-Request-freezes-when-the-Server-is/ba-p/339672) wordt beschreven, kan zich op verschillende manieren manifesteren, zoals het blok keren van aanvragen, aanvragen met de `403 Forbidden` status code na een time-out `context.Request.Certificate` `null` . Dit probleem is doorgaans `POST` van invloed op en `PUT` aanvragen met een inhouds lengte van ongeveer 60KB of hoger.
 > Ga als volgt te werk om te voor komen dat dit probleem optreedt bij het inschakelen van de instelling onderhandelend client certificaat voor gewenste hostnamen op de Blade Custom Domains, zoals wordt weer gegeven in de eerste afbeelding van dit document. Deze functie is niet beschikbaar in de laag verbruik.
+
+## <a name="certificate-validation-in-self-hosted-gateway"></a>Certificaat validatie in een zelf-hostende gateway
+
+De standaard [-API Management zelf-hostende gateway](self-hosted-gateway-overview.md) installatie kopie biedt geen ondersteuning voor het valideren van server-en client certificaten met behulp van [CA-basis certificaten](api-management-howto-ca-certificates.md) die zijn geüpload naar een API Management-exemplaar. Clients die een aangepast certificaat aan de zelf-hostende gateway aanbieden, kunnen trage reacties ondervinden, omdat validatie van de intrekkings lijst (CRL) lang kan duren op de gateway. 
+
+Als tijdelijke oplossing voor het uitvoeren van de gateway kunt u het IP-adres van de PKI zo configureren dat dit verwijst naar het localhost-adres (127.0.0.1) in plaats van het API Management-exemplaar. Dit zorgt ervoor dat de CRL-validatie snel mislukt wanneer de gateway het client certificaat probeert te valideren. Als u de gateway wilt configureren, voegt u een DNS-vermelding voor het API Management-exemplaar toe om te leiden naar de localhost in het `/etc/hosts` bestand in de container. U kunt deze vermelding toevoegen tijdens de implementatie van de gateway:
+ 
+* Voor docker-implementatie: Voeg de `--add-host <hostname>:127.0.0.1` para meter toe aan de `docker run` opdracht. Zie [vermeldingen toevoegen aan container bestand hosts](https://docs.docker.com/engine/reference/commandline/run/#add-entries-to-container-hosts-file---add-host) voor meer informatie.
+ 
+* Voor de implementatie van Kubernetes-een `hostAliases` specificatie toevoegen aan het `myGateway.yaml` configuratie bestand. Zie [vermeldingen toevoegen aan pod bestand/etc/hosts met Host-aliassen](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)voor meer informatie.
+
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -3,15 +3,15 @@ title: Key Vault-referenties gebruiken
 description: Meer informatie over het instellen van Azure App Service en Azure Functions om Azure Key Vault verwijzingen te gebruiken. Key Vault geheimen beschikbaar maken voor uw toepassings code.
 author: mattchenderson
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 02/05/2021
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: bb220da0b906c9d7a5f45dcc841129e14c7c6c51
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: b55aeb68d5fa740d34c8823f555f804be54895a7
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205843"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988766"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Gebruik Key Vault verwijzingen voor App Service en Azure Functions
 
@@ -38,26 +38,26 @@ Als u geheimen van Key Vault wilt lezen, moet er een kluis zijn gemaakt en moet 
 Een Key Vault verwijzing is van het formulier `@Microsoft.KeyVault({referenceString})` , waarbij `{referenceString}` wordt vervangen door een van de volgende opties:
 
 > [!div class="mx-tdBreakAll"]
-> | Verwijzings reeks                                                            | Beschrijving                                                                                                                                                                                 |
+> | Verwijzings reeks                                                            | Description                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | SecretUri =_SecretUri_                                                       | De **SecretUri** moet de volledige gegevenslaag URI zijn van een geheim in Key Vault, met inbegrip van een versie, bijvoorbeeld https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931  |
-> | Kluisnaam =_kluis_; Geheim =_geheim_; SecretVersion =_SecretVersion_ | De **kluisnaam** moet de naam van uw Key Vault-resource zijn. De **naam van het doel** geheim is. De **SecretVersion** moet de versie zijn van het geheim dat moet worden gebruikt. |
+> | SecretUri =_SecretUri_                                                       | De **SecretUri** moet de volledige gegevenslaag URI zijn van een geheim in Key Vault, eventueel met inbegrip van een versie, bijvoorbeeld, `https://myvault.vault.azure.net/secrets/mysecret/` of `https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931`  |
+> | Kluisnaam =_kluis_; Geheim =_geheim_; SecretVersion =_SecretVersion_ | De **kluisnaam** is vereist en moet de naam van uw Key Vault bron zijn. De naam van het **geheim** is vereist en moet het doel geheim zijn. De **SecretVersion** is optioneel, maar als deze aanwezig is, is dit de versie van het geheim dat moet worden gebruikt. |
 
-> [!NOTE] 
-> Er zijn momenteel versies vereist. Bij het draaien van geheimen moet u de versie in de configuratie van de toepassing bijwerken.
 Een volledige verwijzing ziet er bijvoorbeeld als volgt uit:
 
-
 ```
-@Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931)
+@Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret)
 ```
 
 U kunt ook het volgende doen:
 
 ```
-@Microsoft.KeyVault(VaultName=myvault;SecretName=mysecret;SecretVersion=ec96f02080254f109c51a1f14cdb1931)
+@Microsoft.KeyVault(VaultName=myvault;SecretName=mysecret)
 ```
 
+## <a name="rotation"></a>Rotatie
+
+Als er in de verwijzing geen versie is opgegeven, gebruikt de app de nieuwste versie die in Key Vault aanwezig is. Als nieuwere versies beschikbaar komen, zoals bij een rotatie gebeurtenis, wordt de app automatisch bijgewerkt en wordt de nieuwste versie binnen één dag gebruikt. Wijzigingen in de configuratie van de app zorgen ervoor dat de meest recente versies van alle geheimen waarnaar wordt verwezen direct worden bijgewerkt.
 
 ## <a name="source-application-settings-from-key-vault"></a>Instellingen van de bron toepassing van Key Vault
 

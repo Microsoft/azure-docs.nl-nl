@@ -299,6 +299,8 @@
       href: partner-center-portal/downloads-dashboard.md
     - name: Dashboard voor classificaties en beoordelingen
       href: partner-center-portal/ratings-reviews.md
+    - name: Afwijkings detectie voor facturering met data limiet
+      href: anomaly-detection.md
     - name: Algemene vragen over analyses
       href: analytics-faq.md
 - name: Beleidsregels en voorwaarden

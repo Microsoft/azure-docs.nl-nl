@@ -4,19 +4,47 @@ description: Opmerkingen bij de release van Azure HDInsight. Bekijk ontwikkel ti
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 10/07/2020
-ms.openlocfilehash: 8e6f27c378a6cea8fffbdcda58c4fc3bb865e51e
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.date: 02/08/2021
+ms.openlocfilehash: 902b13c947cb005189e23dee943867100809564e
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98932172"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988552"
 ---
 # <a name="archived-release-notes"></a>Gearchiveerde releaseopmerkingen
 
 ## <a name="summary"></a>Samenvatting
 
 Azure HDInsight is onder zakelijke klanten een van de meest populaire services voor open source Apache Hadoop- en Apache Spark-analyses in Azure.
+
+## <a name="release-date-11182020"></a>Release datum: 11/18/2020
+
+Deze versie is van toepassing op zowel HDInsight 3,6 als HDInsight 4,0. HDInsight-release wordt beschikbaar gesteld voor alle regio's over enkele dagen. De release datum geeft hier de release datum van de eerste regio aan. Als de onderstaande wijzigingen niet worden weer gegeven, wacht u tot de release over enkele dagen in uw regio actief is.
+
+### <a name="new-features"></a>Nieuwe functies
+#### <a name="auto-key-rotation-for-customer-managed-key-encryption-at-rest"></a>Automatische rotatie van de sleutel voor door de klant beheerde sleutel versleuteling bij rest
+Vanaf deze release kunnen klanten met de Azure KeyValut-versie versleutelings sleutel-Url's voor door de klant beheerde sleutel versleuteling in rust gebruiken. HDInsight roteert de sleutels automatisch wanneer deze verlopen of worden vervangen door nieuwe versies. Meer informatie [vindt u hier](./disk-encryption.md).
+
+#### <a name="ability-to-select-different-zookeeper-virtual-machine-sizes-for-spark-hadoop-and-ml-services"></a>Mogelijkheid om verschillende Zookeeper van virtuele machines te selecteren voor Spark-, Hadoop-en ML-Services
+HDInsight biedt nog geen ondersteuning voor het aanpassen van de Zookeeper-knooppunt grootte voor de cluster typen Spark, Hadoop en ML Services. De standaard instelling is dat de grootte van de virtuele machines van/a2 wordt A2_v2, die gratis worden meegeleverd. In deze versie kunt u een grootte van een virtuele Zookeeper-machine selecteren die het meest geschikt is voor uw scenario. Zookeeper-knoop punten met een andere grootte dan A2_v2/a2 worden in rekening gebracht. A2_v2 en a2 virtuele machines worden nog gratis beschikbaar gesteld.
+
+#### <a name="moving-to-azure-virtual-machine-scale-sets"></a>Verplaatsen naar schaal sets voor virtuele Azure-machines
+HDInsight maakt nu gebruik van virtuele machines van Azure om het cluster in te richten. Vanaf deze release wordt de service geleidelijk naar [virtuele-machine schaal sets van Azure](../virtual-machine-scale-sets/overview.md)gemigreerd. Het hele proces kan maanden duren. Nadat uw regio's en abonnementen zijn gemigreerd, worden nieuw gemaakte HDInsight-clusters uitgevoerd op virtuele-machine schaal sets zonder klant acties. Er wordt geen breuk wijziging verwacht.
+
+### <a name="deprecation"></a>Afschaffing
+#### <a name="deprecation-of-hdinsight-36-ml-services-cluster"></a>Afschaffing van HDInsight 3,6 ML Services-cluster
+Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten kunnen na december 31 2020 geen nieuwe clusters van 3,6 ML-services meer maken. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#available-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
+
+#### <a name="disabled-vm-sizes"></a>Uitgeschakelde VM-grootten
+Vanaf november 16 2020 worden nieuwe klanten die clusters maken met behulp van standand_A8, standand_A9 standand_A10 en standand_A11 VM-grootten geblokkeerd door HDInsight. Bestaande klanten die deze VM-grootten in de afgelopen drie maanden hebben gebruikt, worden niet beïnvloed. Formulier wordt gestart 9 2021. HDInsight blokkeert alle klanten die clusters maken met behulp van standand_A8, standand_A9, standand_A10 en standand_A11 VM-grootten. Bestaande clusters worden uitgevoerd. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
+
+### <a name="behavior-changes"></a>Gedrags wijzigingen
+#### <a name="add-nsg-rule-checking-before-scaling-operation"></a>Controle van NSG-regel toevoegen vóór schaal bewerking
+Met HDInsight zijn netwerk beveiligings groepen (Nsg's) en Udr's-controle (User-defined routes) toegevoegd met een schaal bewerking. Dezelfde validatie wordt uitgevoerd voor het schalen van clusters behalve bij het maken van het cluster. Deze validatie helpt onvoorspelbare fouten te voor komen. Als de validatie niet is geslaagd, mislukt het schalen. Zie [IP-adressen voor HDInsight-beheer](./hdinsight-management-ip-addresses.md)voor meer informatie over het correct configureren van Nsg's en udr's.
+
+### <a name="component-version-change"></a>Onderdeel versie wijzigen
+Er is geen wijziging van de onderdeel versie voor deze versie. In [dit document](./hdinsight-component-versioning.md)vindt u de huidige versie van de onderdelen voor hdinsight 4,0 en hdinsight 3,6.
 
 ## <a name="release-date-11092020"></a>Release datum: 11/09/2020
 
@@ -595,11 +623,11 @@ De nieuwe updates en mogelijkheden vallen in op de volgende categorieën:
 
     b.  [**Nieuwe functies in Apache Kafka 1,0**](https://kafka.apache.org/downloads#1.0.0)
 
-*  ***Update R Server 9,1 naar Machine Learning Services 9,3** _ – met deze versie bieden we gegevens wetenschappers en technici de beste open source, verbeterd met algoritme-innovaties en uitoefening, die allemaal beschikbaar zijn in de gewenste taal met de snelheid van Apache Spark. Deze release breidt uit van de mogelijkheden die worden aangeboden in R Server met toegevoegde ondersteuning voor python, waardoor de cluster naam van R Server tot ML-Services wordt gewijzigd. 
+*  ***Werk R Server 9,1 toe aan Machine Learning Services 9,3*** – met deze versie bieden we gegevens wetenschappers en technici de beste open source, verbeterd met algoritme-innovaties en uitoefening, die allemaal beschikbaar zijn in de gewenste taal met de snelheid van Apache Spark. Deze release breidt uit van de mogelijkheden die worden aangeboden in R Server met toegevoegde ondersteuning voor python, waardoor de cluster naam van R Server tot ML-Services wordt gewijzigd. 
 
-_ ***Ondersteuning voor Azure data Lake Storage Gen2** _ – HDInsight biedt ondersteuning voor de preview-versie van Azure data Lake Storage Gen2. In de beschik bare regio's kunnen klanten een ADLS Gen2 account kiezen als primair of secundair archief voor hun HDInsight-clusters.
+*  ***Ondersteuning voor Azure data Lake Storage Gen2*** : HDInsight biedt ondersteuning voor de preview-versie van Azure data Lake Storage Gen2. In de beschik bare regio's kunnen klanten een ADLS Gen2 account kiezen als primair of secundair archief voor hun HDInsight-clusters.
 
-_ ***HDInsight Enterprise Security package updates (preview)** _ – (preview) [Virtual Network Service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) ondersteuning voor Azure Blob Storage, ADLS gen1, Cosmos DB en Azure db.
+*  ***Updates voor HDInsight Enterprise Security Package (preview)*** : (preview) [Virtual Network Service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) ondersteuning voor Azure Blob Storage, ADLS gen1, Cosmos DB en Azure db.
 
 ### <a name="component-versions"></a>Onderdeel versies
 
@@ -797,7 +825,7 @@ Deze release bevat HBase 1.1.2 en de volgende Apache-patches.
 
 Deze release bevat component 1.2.1 en hive 2.1.0 naast de volgende patches:
 
-_ *Apache-patches component 1.2.1:**
+**Patch voor Hive 1.2.1 Apache:**
 
 -   [*Hive-10697*](https://issues.apache.org/jira/browse/HIVE-10697): ObjectInspectorConvertors \# UnionConvertor heeft een defecte conversie.
 

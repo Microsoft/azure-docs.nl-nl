@@ -2,13 +2,13 @@
 title: Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op de Azure VMware-oplossing
 description: Configureer Azure-toepassing gateway zo dat uw web-apps die worden uitgevoerd op een Azure VMware-oplossing, veilig zichtbaar zijn.
 ms.topic: how-to
-ms.date: 11/13/2020
-ms.openlocfilehash: 02e439989c985354dbe06fa3e231d5daf7099d70
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.date: 02/08/2021
+ms.openlocfilehash: fdef37bd76b08a8778db8401a1e8a0406c2ed652
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628989"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988629"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op de Azure VMware-oplossing
 
@@ -50,7 +50,7 @@ Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegew
 
     :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/create-app-gateway.png" alt-text="Scherm opname van de pagina Toepassings gateway maken in Azure Portal.":::
 
-3. Kies het type van het frontend-IP-adres. Kies voor openbaar een bestaand openbaar IP-adres of maak een nieuw account. Selecteer **volgende: back** -ends>.
+3. Kies het type van het frontend-IP-adres. Kies voor openbaar een bestaand openbaar IP-adres of maak een nieuw account. Selecteer **volgende: back**-ends>.
 
     > [!NOTE]
     > Alleen standaard-en WAF-Sku's (Web Application firewall) worden ondersteund voor privé-front-end.
@@ -188,4 +188,8 @@ Met deze procedure wordt beschreven hoe u back-mailadres groepen kunt definiëre
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [documentatie over Azure-toepassing gateway](../application-gateway/index.yml) voor meer configuratie voorbeelden.
+Nu u hebt gebruikgemaakt van Application Gateway voor het beveiligen van een web-app die wordt uitgevoerd op de Azure VMware-oplossing, kunt u het volgende doen:
+
+- [Azure-toepassing gateway configureren voor verschillende scenario's](../application-gateway/configuration-overview.md).
+- [Implementatie van Traffic Manager om werk belastingen van Azure VMware-oplossingen te verdelen](deploy-traffic-manager-balance-workloads.md).
+- [Integratie van Azure NetApp files met op Azure VMware-oplossingen gebaseerde workloads](netapp-files-with-azure-vmware-solution.md).

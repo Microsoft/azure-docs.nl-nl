@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/04/2017
 ms.author: robinsh
 ms.custom: mqtt, devx-track-csharp
-ms.openlocfilehash: 8d45ad630d09a4909cf00b830df139057cc0fcaf
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 43cafb8c5efe0581fe7c4136aa41980b3d817be2
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92142292"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981405"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-net"></a>Bestanden van uw apparaat uploaden naar de Cloud met IoT Hub (.NET)
 
@@ -64,7 +64,7 @@ Aan het einde van deze zelf studie voert u twee .NET-console-apps uit:
 
 In deze sectie wijzigt u de apparaat-app die u hebt gemaakt in [Cloud-naar-apparaat-berichten verzenden met IOT hub](iot-hub-csharp-csharp-c2d.md) om Cloud-naar-apparaat-berichten van de IOT-hub te ontvangen.
 
-1. Klik in Visual Studio Solution Explorer met de rechter muisknop op het project **SimulatedDevice** en selecteer **Add**  >  **bestaand item**toevoegen. Zoek een afbeeldings bestand en voeg dit toe aan uw project. In deze zelf studie wordt ervan uitgegaan dat de installatie kopie een naam heeft `image.jpg` .
+1. Klik in Visual Studio Solution Explorer met de rechter muisknop op het project **SimulatedDevice** en selecteer   >  **bestaand item** toevoegen. Zoek een afbeeldings bestand en voeg dit toe aan uw project. In deze zelf studie wordt ervan uitgegaan dat de installatie kopie een naam heeft `image.jpg` .
 
 1. Klik met de rechter muisknop op de afbeelding en selecteer vervolgens **Eigenschappen**. Zorg ervoor dat de **map kopiëren naar uitvoermap** is ingesteld op **kopiëren altijd**.
 
@@ -79,16 +79,15 @@ In deze sectie wijzigt u de apparaat-app die u hebt gemaakt in [Cloud-naar-appar
 1. Voeg de volgende methode toe aan de klasse **Program**:
 
     ```csharp
-    private static async void SendToBlobAsync()
+    private static async Task SendToBlobAsync(string fileName)
     {
-        string fileName = "image.jpg";
         Console.WriteLine("Uploading file: {0}", fileName);
         var watch = System.Diagnostics.Stopwatch.StartNew();
 
-        using (var sourceData = new FileStream(@"image.jpg", FileMode.Open))
-        {
-            await deviceClient.UploadToBlobAsync(fileName, sourceData);
-        }
+        await deviceClient.GetFileUploadSasUriAsync(new FileUploadSasUriRequest { BlobName = fileName });
+        var blob = new CloudBlockBlob(sas.GetBlobUri());
+        await blob.UploadFromFileAsync(fileName);
+        await deviceClient.CompleteFileUploadAsync(new FileUploadCompletionNotification { CorrelationId = sas.CorrelationId, IsSuccess = true });
 
         watch.Stop();
         Console.WriteLine("Time to upload file: {0}ms\n", watch.ElapsedMilliseconds);
@@ -100,7 +99,7 @@ In deze sectie wijzigt u de apparaat-app die u hebt gemaakt in [Cloud-naar-appar
 1. Voeg de volgende regel toe aan de methode **Main** , rechts voor `Console.ReadLine()` :
 
     ```csharp
-    SendToBlobAsync();
+    await SendToBlobAsync("image.jpg");
     ```
 
 > [!NOTE]
@@ -116,15 +115,15 @@ In dit artikel maakt u een back-end-service om meldings berichten over het uploa
 
 In deze sectie schrijft u een .NET-console-app die berichten over het uploaden van bestanden van IoT Hub ontvangt.
 
-1. Selecteer in de huidige Visual Studio-oplossing **bestand**  >  **Nieuw**  >  **project**. Selecteer in **een nieuw project maken de**optie **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
+1. Selecteer in de huidige Visual Studio-oplossing **bestand**  >  **Nieuw**  >  **project**. Selecteer in **een nieuw project maken de** optie **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
 
-1. Geef het project de naam *ReadFileUploadNotification*. Onder **oplossing**selecteert **u toevoegen aan oplossing**. Selecteer **Maken** om het project te maken.
+1. Geef het project de naam *ReadFileUploadNotification*. Onder **oplossing** selecteert **u toevoegen aan oplossing**. Selecteer **Maken** om het project te maken.
 
     ![Het ReadFileUploadNotification-project in Visual Studio configureren](./media/iot-hub-csharp-csharp-file-upload/read-file-upload-project-configure.png)
 
 1. Klik in Solution Explorer met de rechter muisknop op het project **ReadFileUploadNotification** en selecteer **NuGet-pakketten beheren**.
 
-1. Selecteer in **NuGet package manager**de optie **Browse**. Zoek en selecteer **micro soft. Azure. devices.** Selecteer vervolgens **installeren**.
+1. Selecteer in **NuGet package manager** de optie **Browse**. Zoek en selecteer **micro soft. Azure. devices.** Selecteer vervolgens **installeren**.
 
     Deze stap downloadt, installeert en voegt een verwijzing toe naar het [Azure IOT Service SDK NuGet-pakket](https://www.nuget.org/packages/Microsoft.Azure.Devices/) in het **ReadFileUploadNotification** -project.
 
@@ -182,7 +181,7 @@ U kunt nu de toepassingen gaan uitvoeren.
 
 1. Klik in Solution Explorer met de rechter muisknop op uw oplossing en selecteer vervolgens **opstart projecten instellen**.
 
-1. Selecteer in **algemene eigenschappen**  >  **opstart project** **meerdere opstart projecten**en selecteer vervolgens de actie **starten** voor **ReadFileUploadNotification** en **SimulatedDevice**. Selecteer **OK** om uw wijzigingen op te slaan.
+1. Selecteer in **algemene eigenschappen**  >  **opstart project** **meerdere opstart projecten** en selecteer vervolgens de actie **starten** voor **ReadFileUploadNotification** en **SimulatedDevice**. Selecteer **OK** om uw wijzigingen op te slaan.
 
 1. Druk op **F5**. Beide toepassingen moeten worden gestart. U ziet dat de Upload voltooid is in één console-app en het bericht voor het uploaden van meldingen dat is ontvangen door de andere console-app. U kunt de Server Explorer [Azure Portal](https://portal.azure.com/) of Visual Studio gebruiken om te controleren of het geüploade bestand aanwezig is in uw Azure Storage-account.
 

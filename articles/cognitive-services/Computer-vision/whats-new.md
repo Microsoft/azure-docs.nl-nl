@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: ec340e3371b0fe337354006b1284a21420a11f3a
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 1128504ee5f8c086d6a3c30a9fdd021550394f3f
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99573633"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981762"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
@@ -25,12 +25,12 @@ Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij d
 
 ### <a name="read-api-v32-public-preview-with-ocr-support-for-73-languages"></a>Lees API v 3.2 Public Preview met OCR-ondersteuning voor 73 talen
 De open bare preview van de Lees-API v 3.2 van Computer Vision omvat de volgende mogelijkheden:
-* OCR voor een totaal van [73 talen](./language-support.md#optical-character-recognition-ocr) , waaronder vereenvoudigd en traditioneel Chinees, Japans, Koreaans en primaire Latijnse talen.
-* Kies of u de tekst regels wilt uitvoeren in de linker-en de onderste (standaard) volg orde of een natuurlijke Lees volgorde.
-* Geef voor elke tekst regel uitvoer op of de hand schrift stijl of niet samen met een betrouwbaarheids Score (alleen Latijnse talen).
+* [OCR voor 73 talen](./language-support.md#optical-character-recognition-ocr) , waaronder vereenvoudigd en traditioneel Chinees, Japans, Koreaans en Latijns talen.
+* De tekst regels in de natuurlijke Lees volgorde uitvoeren.
+* Tekst regels classificeren als handschrift stijl of niet samen met een betrouw bare Score (alleen Latijnse talen).
 * Extraheer alleen tekst voor de geselecteerde pagina's of het paginabereik voor een document met meerdere pagina's.
 
-Zie het [Lees-API: overzicht](concept-recognizing-text.md) voor meer informatie.
+Zie [Preview-functies lezen](concept-recognizing-text.md#natural-reading-order-output) voor meer informatie.
 
 > [!div class="nextstepaction"]
 > [De Lees-API v 3.2 open bare preview gebruiken](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)

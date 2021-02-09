@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, data4ml
 ms.date: 05/14/2020
-ms.openlocfilehash: b7eaf374e72997013f09b1c94ce16c67d115a818
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: a4f15a1a0911e5a33da8b5f9445709cb42e7e10e
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94987368"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981507"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Azure Machine Learning gegevensset maken en verkennen met labels
 
@@ -39,6 +39,9 @@ Wanneer u een gegevens label project hebt voltooid, kunt u de label gegevens uit
 ### <a name="coco"></a>COCO 
 
  Het COCO-bestand wordt gemaakt in de Blob-standaardopslag van de Azure Machine Learning-werkruimte in een map binnen *export/coco*. 
+ 
+>[!NOTE]
+>In object detectie projecten worden de geëxporteerde waarden ' BBox ': [x, y, width, height] ' genormaliseerd. Ze worden geschaald tot 1. Voor beeld: een omsluitend kader op locatie (10, 10), met een breedte van 30 pixels, een hoogte van 60 pixels, in een afbeelding van 640x480 pixels (0,015625). 0,02083, 0,046875, 0,125). Omdat de coordintes zijn genormaliseerd, wordt deze weer gegeven als ' 0,0 ' als ' breedte ' en ' hoogte ' voor alle installatie kopieën. De werkelijke breedte en hoogte kunnen worden verkregen met behulp van python-bibliotheek, zoals OpenCV of Pillow (PIL).
 
 ### <a name="azure-machine-learning-dataset"></a>Azure Machine Learning gegevensset
 

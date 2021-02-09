@@ -9,13 +9,13 @@ ms.topic: how-to
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto, sstein
-ms.date: 05/07/2019
-ms.openlocfilehash: 73fa4d4988c7a036dc1d2eb7dc81c3c1c5d77026
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 02/08/2021
+ms.openlocfilehash: 7d5f40be895aea26a234d9ae622aa5bf22528231
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788278"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981439"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-managed-instance"></a>Openbaar eindpunt configureren in een beheerd Azure SQL-exemplaar
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -112,7 +112,7 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 ## <a name="obtaining-the-managed-instance-public-endpoint-connection-string"></a>Het open bare endpoint van het beheerde exemplaar verkrijgen connection string
 
 1. Ga naar de configuratie pagina van het beheerde exemplaar die is ingeschakeld voor het open bare eind punt. Selecteer het tabblad **verbindings reeksen** onder de configuratie- **instellingen** .
-1. Houd er rekening mee dat de hostnaam van het open bare eind punt de indeling <mi_name> bevat. **Public** . <dns_zone>. database.Windows.net en de poort die voor de verbinding wordt gebruikt, is 3342.
+1. Houd er rekening mee dat de hostnaam van het open bare eind punt de indeling <mi_name> bevat. **Public**. <dns_zone>. database.Windows.net en de poort die voor de verbinding wordt gebruikt, is 3342. Hier volgt een voor beeld van een server waarde van de connection string het identificeren van de open bare eindpunt poort die in SQL Server Management Studio of Azure Data Studio verbindingen kan worden gebruikt: `<mi_name>.public.<dns_zone>.database.windows.net,3342`
 
     ![Scherm afbeelding toont de verbindings reeksen voor uw open bare en privé-eind punten.](./media/public-endpoint-configure/mi-public-endpoint-conn-string.png)
 

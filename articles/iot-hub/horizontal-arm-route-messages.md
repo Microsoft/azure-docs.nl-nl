@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.date: 08/24/2020
 ms.author: robinsh
 ms.custom: mvc, subject-armqs
-ms.openlocfilehash: 1b9c576ce03d808fe6a4d0cac5196dfcd1b73eab
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.openlocfilehash: fc8ddba2ec9b7bc9f1c2db8673ab805810afe17e
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545477"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981286"
 ---
 # <a name="quickstart-deploy-an-azure-iot-hub-and-a-storage-account-using-an-arm-template"></a>Quickstart: Een Azure IoT Hub en een opslagaccount implementeren met een ARM-sjabloon
 
-In deze quickstart gebruikt u een Azure Resource Manager-sjabloon (ARM-sjabloon) om een IoT Hub te maken voor het doorsturen van berichten naar Azure Storage, en een opslagaccount voor het opslaan van berichten. Nadat u handmatig een virtueel IoT-apparaat aan de hub hebt toegevoegd om de berichten te verzenden, configureert u de verbindingsgegevens in een toepassing met de naam  *arm-read-write* , om berichten van het apparaat naar de hub te verzenden. De hub is zo geconfigureerd dat de berichten die naar de hub worden verzonden, automatisch worden doorgestuurd naar het opslagaccount. Aan het einde van deze quickstart kunt u het opslagaccount openen en de verzonden berichten bekijken.
+In deze quickstart gebruikt u een Azure Resource Manager-sjabloon (ARM-sjabloon) om een IoT Hub te maken voor het doorsturen van berichten naar Azure Storage, en een opslagaccount voor het opslaan van berichten. Nadat u handmatig een virtueel IoT-apparaat aan de hub hebt toegevoegd om de berichten te verzenden, configureert u de verbindingsgegevens in een toepassing met de naam  *arm-read-write*, om berichten van het apparaat naar de hub te verzenden. De hub is zo geconfigureerd dat de berichten die naar de hub worden verzonden, automatisch worden doorgestuurd naar het opslagaccount. Aan het einde van deze quickstart kunt u het opslagaccount openen en de verzonden berichten bekijken.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -91,7 +91,7 @@ In deze sectie vindt u de stappen om de sjabloon te implementeren, een virtueel 
 
 1. De laatste omgevingsvariabele is de **Apparaat-id**. Stel in het opdrachtvenster de opdracht in en voer deze uit.
 
-   ```cms
+   ```cmd
    SET IOT_DEVICE_ID=<device-id-goes-here>
    ```
 

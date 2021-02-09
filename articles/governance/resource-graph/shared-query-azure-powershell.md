@@ -4,12 +4,12 @@ description: In deze quickstart volgt u de stappen voor het maken van een gedeel
 ms.date: 01/11/2021
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d7efc02cad3aaa67c639a319f1a7bb455d6e04b0
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
-ms.translationtype: HT
+ms.openlocfilehash: 2b771253b1dea4bd1d2913bf7c48062112019a19
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98128075"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981541"
 ---
 # <a name="quickstart-create-a-resource-graph-shared-query-using-azure-powershell"></a>Quickstart: Een gedeelde Resource Graph-query maken met behulp van Azure PowerShell
 
@@ -36,7 +36,7 @@ In dit artikel wordt beschreven hoe u een gedeelde Azure Resource Graph-query ku
 
 ## <a name="create-a-resource-graph-shared-query"></a>Een gedeelde Resource Graph-query maken
 
-Nu de PowerShell-module `Az.ResourceGraph` is toegevoegd aan uw gewenste omgeving, kunt u een gedeelde Resource Graph-query maken. De gedeelde query is een Azure Resource Manager-object waaraan u machtigingen kunt verlenen of dat u kunt uitvoeren in Azure Resource Graph Explorer. De query biedt een overzicht van het aantal resources, gegroepeerd op _locatie_.
+Als de Power shell-module **AZ. ResourceGraph** is toegevoegd aan uw omgeving van Choice, is het tijd om een gedeelde query voor resource Graph te maken. De gedeelde query is een Azure Resource Manager-object waaraan u machtigingen kunt verlenen of dat u kunt uitvoeren in Azure Resource Graph Explorer. De query biedt een overzicht van het aantal resources, gegroepeerd op _locatie_.
 
 1. Maak een resourcegroep met [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) om de gedeelde Azure Resource Graph-query op te slaan. Deze resourcegroep heet `resource-graph-queries` en de locatie is `westus2`.
 
@@ -47,7 +47,7 @@ Nu de PowerShell-module `Az.ResourceGraph` is toegevoegd aan uw gewenste omgevin
    New-AzResourceGroup -Name resource-graph-queries -Location westus2
    ```
 
-1. Maak de gedeelde Azure Resource Graph-query met behulp van de PowerShell-module `Az.ResourceGraph` en de cmdlet [New-AzResourceGraphQuery](/powershell/module/az.resourcegraph/new-azresourcegraphquery):
+1. Maak de gedeelde Azure resource Graph-query met de Power shell-module **AZ. ResourceGraph** en de cmdlet [New-AzResourceGraphQuery](/powershell/module/az.resourcegraph/new-azresourcegraphquery) :
 
    ```azurepowershell-interactive
    # Create the Azure Resource Graph shared query
@@ -80,7 +80,7 @@ Nu de PowerShell-module `Az.ResourceGraph` is toegevoegd aan uw gewenste omgevin
 Als u de gedeelde Resource Graph-query en resourcegroep uit uw Azure-omgeving wilt verwijderen, gebruikt u de volgende opdracht:
 
 - [Remove-AzResourceGraphQuery](/powershell/module/az.resourcegraph/remove-azresourcegraphquery)
-- [Remove-AzResourceGroup](/cli/azure/group#az_group_delete)
+- [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup)
 
 ```azurepowershell-interactive
 # Delete the Azure Resource Graph shared query

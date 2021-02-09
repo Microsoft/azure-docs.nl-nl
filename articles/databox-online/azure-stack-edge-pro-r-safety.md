@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 12/18/2020
+ms.date: 02/04/2021
 ms.author: alkohli
-ms.openlocfilehash: 627196c0a76f1de23f7e5421c47a33356a73967f
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: cc24839396116a5b581758b29b087c237a6f902b
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709432"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981337"
 ---
 # <a name="azure-stack-edge-pro-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge Pro R
 
@@ -27,17 +27,17 @@ Lees alle veiligheids informatie in dit artikel voordat u uw Azure Stack Edge Pr
 
 De volgende signaal woorden voor waarschuwings signalen voor waarschuwingen zijn:
 
-| Pictogram | Beschrijving |
+| Pictogram | Description |
 |:--- |:--- |
 | ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png)| **Gevaar:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, leidt tot dood of ernstige schade. <br> **Waarschuwing:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot overlijden of ernstige schade. <br> **Let op:** Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot kleine of gemiddelde schade.|
 |
 
 De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en uitvoeren van uw Azure Stack Edge Pro R edge-apparaat:
 
-| Pictogram | Beschrijving |
+| Pictogram | Description |
 |:--- |:--- |
 | ![Lees eerst alle instructies](./media/azure-stack-edge-pro-r-safety/icon-safety-read-all-instructions.png) | Lees eerst alle instructies |
-| ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Waarschuwings symbool |
+| ![Meldings pictogram ](./media/azure-stack-edge-mini-r-safety/icon-safety-notice.png) **:** | Geeft aan dat de informatie die belang rijk is, maar niet met een risico is betrokken. || ![Waarschuwings symbool](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Waarschuwings symbool |
 | ![Pictogram Tip-risico](./media/azure-stack-edge-pro-r-safety/icon-safety-tip-hazard.png)  | Tip-risico|
 | ![Pictogram met een dik gewicht](./media/azure-stack-edge-pro-r-safety/icon-safety-heavy-weight.png)  | Zwaar gewichts risico|
 | ![Pictogram elektrische schok](./media/azure-stack-edge-pro-r-safety/icon-safety-electric-shock.png) | Elektrisch schok gevaar |
@@ -88,6 +88,7 @@ De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en 
   * Voorzien van voldoende ruimte om toegang te krijgen tot de stroom kabel (s), omdat ze fungeren als de hoofd stroom voor het verbreken van het product.
 * Ethernet-kabels worden niet meegeleverd met het product. Om elektromagnetische interferentie te verminderen, wordt aanbevolen dat Cat 6 shielded twisted-paar-bekabeling (STP) wordt gebruikt.
 * Het instellen van de apparatuur in een werk ruimte die de nodige lucht omloop rond de apparatuur toestaat; Zorg ervoor dat de voor-en achterkant volledig worden verwijderd terwijl het apparaat wordt uitgevoerd.
+* Ethernet-kabels worden niet meegeleverd met het product. Om elektromagnetische interferentie te verminderen, wordt aanbevolen dat Cat 6 afgeschermde (STP)-bekabeling wordt gebruikt.
 * Installeer de apparatuur in het gebied van de door de Tempe ratuur bewaakte ruimte vrij van verontreinigingen en sta voldoende lucht omloop rond de apparatuur toe.
 * Houd de apparatuur weg van bronnen van vloei bare en buitensporig vochtige omgevingen.
 * Geen Liquid of een afwijkend object toestaan om het systeem in te voeren. Plaats geen dranken of andere liquide containers op of in de buurt van het systeem.
@@ -207,7 +208,7 @@ A device that has a UPS installed is designed to operate in the following enviro
 > Maximum corrosive contaminant levels measured at &lt;/= 50% relative humidity. --> 
 
 
-> ![Opmerking ](./media/azure-stack-edge-pro-r-safety/icon-safety-notice.png) **:** &nbsp; wijzigingen of wijzigingen in het apparaat dat niet uitdrukkelijk door micro soft is goedgekeurd, kunnen de bevoegdheid van de gebruiker voor het uitvoeren van de apparatuur ongeldig maken.
+> ![Meldings pictogram-2 ](./media/azure-stack-edge-pro-r-safety/icon-safety-notice.png) **kennisgeving:** &nbsp; wijzigingen of wijzigingen aan de apparatuur die niet expliciet door micro soft zijn goedgekeurd, kunnen de bevoegdheid van de gebruiker voor het uitvoeren van de apparatuur ongeldig maken.
 
 CANADA en USA:
 

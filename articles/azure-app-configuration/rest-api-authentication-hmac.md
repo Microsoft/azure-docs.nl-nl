@@ -6,12 +6,12 @@ ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: f761d86bd7dbe54b687e8db75ecb3df2dbba3384
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 4b5a073459fad734a11d3a75718240d0ebbb486a
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932707"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981388"
 ---
 # <a name="hmac-authentication---rest-api-reference"></a>HMAC-verificatie-REST API referentie
 
@@ -22,7 +22,7 @@ U kunt HTTP-aanvragen verifiëren met behulp van het HMAC-SHA256-verificatie sch
 - **Referentie** - \<Access Key ID\>
 - De **geheime** sleutel waarde voor een gedecodeerde toegangs code. ``base64_decode(<Access Key Value>)``
 
-De waarden voor referentie (ook wel genoemd `id` ) en geheim (ook wel genoemd `value` ) moeten worden verkregen van het exemplaar van Azure-app configuratie. U kunt dit doen met behulp van de [Azure Portal](https://portal.azure.com) of de [Azure cli](/cli/azure/?preserve-view=true&view=azure-cli-latest).
+De waarden voor referentie (ook wel genoemd `id` ) en geheim (ook wel genoemd `value` ) moeten worden verkregen van het exemplaar van Azure-app configuratie. U kunt dit doen met behulp van de [Azure Portal](https://portal.azure.com) of de [Azure cli](/cli/azure/).
 
 Geef elke aanvraag met alle HTTP-headers die vereist zijn voor authenticatie. De mini maal vereiste waarde is:
 

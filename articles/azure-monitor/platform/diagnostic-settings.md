@@ -5,14 +5,14 @@ author: bwren
 ms.author: bwren
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 04/27/2020
+ms.date: 02/08/2021
 ms.subservice: logs
-ms.openlocfilehash: a6f8e681f68fb53d7cf88582b4bf4416efc11c86
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 5e1a1c62cafd982d44be3e06b98fc8c30461021c
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820548"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979977"
 ---
 # <a name="create-diagnostic-settings-to-send-platform-logs-and-metrics-to-different-destinations"></a>Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen
 [Platformlogboeken](platform-logs-overview.md) in Azure, inclusief het Azure-activiteitenlogboek en de Azure-resourcelogboeken, bieden gedetailleerde diagnose- en controlegegevens voor Azure-resources en het Azure-platform waarvan ze afhankelijk zijn. [Metrische platformgegevens](data-platform-metrics.md) worden standaard verzameld en gewoonlijk opgeslagen in de database met metrische gegevens van Azure Monitor. In dit artikel vindt u informatie over het maken en configureren van diagnostische instellingen voor het verzenden van metrische platformgegevens en platformlogboeken naar verschillende bestemmingen.
@@ -189,7 +189,7 @@ waar eerder uw implementatie is geslaagd.
 
 Het probleem treedt op wanneer u een resource manager-sjabloon gebruikt, de diagnostische instellingen REST API, Azure CLI of Azure PowerShell. Diagnostische instellingen die zijn gemaakt via de Azure Portal worden niet beïnvloed omdat alleen de ondersteunde categorie namen worden weer gegeven.
 
-Het probleem wordt veroorzaakt door een recente wijziging in de onderliggende API. Andere meet Categorieën dan ' AllMetrics ' worden niet ondersteund en zijn nooit toegestaan in een zeer specifieke lijst met toegestane IP-adressen. In het verleden werden andere categorie namen genegeerd bij het implementeren van een diagnostische instelling. De Azure Monitor back-end heeft deze categorieën eenvoudigweg omgeleid naar ' AllMetrics '.  Vanaf februari 2021 is de back-end bijgewerkt om ervoor te zorgen dat de gegeven metrische categorie nauw keurig wordt bevestigd. Deze wijziging heeft ertoe geleid dat sommige implementaties mislukken.
+Het probleem wordt veroorzaakt door een recente wijziging in de onderliggende API. Andere meet Categorieën dan ' AllMetrics ' worden niet ondersteund en zijn nooit exclusief voor enkele specifieke Azure-Services. In het verleden werden andere categorie namen genegeerd bij het implementeren van een diagnostische instelling. De Azure Monitor back-end heeft deze categorieën eenvoudigweg omgeleid naar ' AllMetrics '.  Vanaf februari 2021 is de back-end bijgewerkt om ervoor te zorgen dat de gegeven metrische categorie nauw keurig wordt bevestigd. Deze wijziging heeft ertoe geleid dat sommige implementaties mislukken.
 
 Als u dit fout bericht ontvangt, moet u uw implementaties bijwerken om de naam van een metrische categorie te vervangen door ' AllMetrics ' om het probleem op te lossen. Als de implementatie eerder meerdere categorieën heeft toegevoegd, moet er slechts één met de verwijzing ' AllMetrics ' worden bewaard. Als het probleem blijft bestaan, neemt u contact op met de ondersteuning van Azure via de Azure Portal. 
 

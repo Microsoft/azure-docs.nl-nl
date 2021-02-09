@@ -8,12 +8,12 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-js
-ms.openlocfilehash: 3bc24e88368af056e4d4506a5cf688e1172d4930
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: e0c0d18dbb3596733d02430554fd40ec16180c64
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051561"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980657"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Aangepaste Sdk's voor Azure Digital Apparaatdubbels maken met auto rest
 
@@ -112,6 +112,9 @@ In de niet-query paginerings patroon ziet u hier een voor beeld van het ophalen 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindOutgoingRelationshipsMethod":::
 
 Het tweede patroon wordt alleen gegenereerd voor de query-API. Er wordt een `continuationToken` expliciete methode gebruikt.
+
+>[!TIP]
+> Een belangrijkste reden voor het ophalen van pagina's is het berekenen van de kosten voor de [query-eenheid](concepts-query-units.md) voor een query-API-aanroep.
 
 Hier volgt een voor beeld met dit patroon:
 

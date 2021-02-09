@@ -5,15 +5,15 @@ services: automation
 author: mgoedtel
 ms.service: automation
 ms.topic: include
-ms.date: 10/21/2020
+ms.date: 02/08/2021
 ms.author: magoedte
 ms.custom: include file
-ms.openlocfilehash: 4a6b21d3782931e3bee4a13ff95e7f313dcc1af2
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
-ms.translationtype: HT
+ms.openlocfilehash: 3ee44509997a16fc7f06fd5a24e473d7011bde40
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92379756"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974632"
 ---
 #### <a name="process-automation"></a>Procesautomatisering
 
@@ -22,9 +22,10 @@ ms.locfileid: "92379756"
 | Maximumaantal nieuwe taken dat elke 30 seconden per Azure Automation-account kan worden verzonden (niet-geplande taken) |100 |Wanneer deze limiet wordt bereikt, mislukken de volgende verzoeken om een taak te maken. De client ontvangt een foutmelding.|
 | Maximumaantal gelijktijdige actieve taken om dezelfde tijd per Automation-account (niet-geplande taken) |200 |Wanneer deze limiet wordt bereikt, mislukken de volgende verzoeken om een taak te maken. De client ontvangt een foutmelding.|
 | Maximale opslaggrootte van taakmetagegevens voor een doorlopende periode van 30 dagen | 10 GB (ongeveer 4 miljoen taken)|Wanneer deze limiet wordt bereikt, mislukken de volgende verzoeken om een taak te maken. |
-| Maximale limiet voor taakstreams|1 MiB|Eén stream kan niet groter zijn dan 1 MB.|
+| Maximale limiet voor taakstreams|1 MiB|Eén stroom kan niet groter zijn dan 1 MiB.|
 | Maximumaantal modules dat elke 30 seconden per Automation-account kan worden geïmporteerd |5 ||
 | Maximale grootte van een module |100 MB ||
+| Maximale grootte van een configuratie bestand voor het knoop punt | 1 MB | Van toepassing op status configuratie |
 | Taak-runtime, Gratis laag |500 minuten per abonnement per kalendermaand ||
 | Maximale hoeveelheid schijfruimte die per sandbox is toegestaan<sup>1</sup> |1 GB |Alleen van toepassing op Azure-sandboxes.|
 | Maximale hoeveelheid geheugen die aan een sandbox wordt gegeven<sup>1</sup> |400 MB |Alleen van toepassing op Azure-sandboxes.|

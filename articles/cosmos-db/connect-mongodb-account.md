@@ -8,12 +8,16 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 03/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 06b03ac1cfe37307a5839be0d5ca3b1003db35af
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+adobe-target: true
+adobe-target-activity: DocsExp-A/B-384740-MongoDB-2.8.2021
+adobe-target-experience: Experience B
+adobe-target-content: connect-mongodb-account-experimental.md
+ms.openlocfilehash: d3e619559f1fb2500904aa7349aa131fd9b5fc00
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93072405"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980776"
 ---
 # <a name="connect-a-mongodb-application-to-azure-cosmos-db"></a>Een MongoDB-toepassing verbinden met Azure Cosmos DB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -34,8 +38,8 @@ In deze zelfstudie kunt u op twee manieren gegevens van verbindingsreeksen ophal
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)in een Internet browser.
 2. Selecteer op de Blade **Azure Cosmos DB** de API.
-3. Klik in het linkerdeel venster van de Blade account op **Quick Start** .
-4. Kies uw platform ( **.net** , **Node.js** , **MongoDb shell** , **Java** , **python** ). Als uw stuur programma of hulp programma niet wordt weer gegeven, kunt u geen zorgen maken, we maken continu meer code fragmenten voor verbindings codes. Geef hieronder een opmerking over wat u wilt zien. Als u wilt weten hoe u uw eigen verbinding maakt, leest u [de Connection String gegevens van het account ophalen](#get-the-mongodb-connection-string-to-customize).
+3. Klik in het linkerdeel venster van de Blade account op **Quick Start**.
+4. Kies uw platform (**.net**, **Node.js**, **MongoDb shell**, **Java**, **python**). Als uw stuur programma of hulp programma niet wordt weer gegeven, kunt u geen zorgen maken, we maken continu meer code fragmenten voor verbindings codes. Geef hieronder een opmerking over wat u wilt zien. Als u wilt weten hoe u uw eigen verbinding maakt, leest u [de Connection String gegevens van het account ophalen](#get-the-mongodb-connection-string-to-customize).
 5. Kopieer en plak het code fragment in uw MongoDB-app.
 
     :::image type="content" source="./media/connect-mongodb-account/QuickStartBlade.png" alt-text="Blade snel starten":::
@@ -44,15 +48,15 @@ In deze zelfstudie kunt u op twee manieren gegevens van verbindingsreeksen ophal
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)in een Internet browser.
 2. Selecteer op de Blade **Azure Cosmos DB** de API.
-3. Klik in het linkerdeel venster van de Blade account op **verbindings reeks** .
+3. Klik in het linkerdeel venster van de Blade account op **verbindings reeks**.
 4. De Blade **verbindings reeks** wordt geopend. Het bevat alle informatie die nodig is om verbinding te maken met het account met behulp van een stuur programma voor MongoDB, inclusief een geconstrueerde connection string.
 
-   :::image type="content" source="./media/connect-mongodb-account/ConnectionStringBlade.png" alt-text="Blade snel starten" lightbox= "./media/connect-mongodb-account/ConnectionStringBlade.png" :::
+   :::image type="content" source="./media/connect-mongodb-account/ConnectionStringBlade.png" alt-text="De blade Verbindingsreeks" lightbox= "./media/connect-mongodb-account/ConnectionStringBlade.png" :::
 
 ## <a name="connection-string-requirements"></a>Vereisten voor de verbindings reeks
 
 > [!Important]
-> Voor Azure Cosmos DB gelden strenge beveiligingsvereisten en -normen. Azure Cosmos DB-accounts vereisen verificatie en beveiligde communicatie via *TLS* .
+> Voor Azure Cosmos DB gelden strenge beveiligingsvereisten en -normen. Azure Cosmos DB-accounts vereisen verificatie en beveiligde communicatie via *TLS*.
 
 Azure Cosmos DB ondersteunt de standaard MongoDB-connection string URI-indeling, met een aantal specifieke vereisten: Azure Cosmos DB accounts vereisen verificatie en beveiligde communicatie via TLS. De connection string indeling is dus:
 

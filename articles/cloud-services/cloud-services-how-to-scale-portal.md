@@ -1,6 +1,6 @@
 ---
 title: Een Cloud service (klassiek) automatisch schalen in de portal | Microsoft Docs
-description: Meer informatie over het gebruik van de portal voor het configureren van regels voor automatisch schalen voor een web-of werk rollen van de Cloud service in Azure.
+description: Meer informatie over het gebruik van de portal voor het configureren van regels voor automatisch schalen voor een Cloud service (klassieke) rollen in Azure.
 ms.topic: article
 ms.service: cloud-services
 ms.date: 10/14/2020
@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: a3e7f72dbe16c51280b922da2b5fc6550dee1d34
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: ba7b2279969acab93ac96c42e0033e76e9d0542d
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98743352"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980827"
 ---
 # <a name="how-to-configure-auto-scaling-for-a-cloud-service-classic-in-the-portal"></a>Automatisch schalen configureren voor een Cloud service (klassiek) in de portal
 
@@ -23,7 +23,7 @@ ms.locfileid: "98743352"
 Er kunnen voor waarden worden ingesteld voor een werk rollen van de Cloud service die een schaal-of uitvoer bewerking activeren. De voor waarden voor de rol kunnen worden gebaseerd op de CPU, schijf of netwerk belasting van de rol. U kunt ook een voor waarde instellen op basis van een berichten wachtrij of de metriek van een andere Azure-resource die aan uw abonnement is gekoppeld.
 
 > [!NOTE]
-> Dit artikel richt zich op Web-en werk rollen van de Cloud service. Wanneer u een virtuele machine (klassiek) rechtstreeks maakt, wordt deze gehost in een Cloud service. U kunt een standaard virtuele machine schalen door deze te koppelen aan een [beschikbaarheidsset](/previous-versions/azure/virtual-machines/windows/classic/configure-availability-classic) en ze hand matig in of uit te scha kelen.
+> Dit artikel is gericht op de Cloud service (klassiek). Wanneer u een virtuele machine (klassiek) rechtstreeks maakt, wordt deze gehost in een Cloud service. U kunt een standaard virtuele machine schalen door deze te koppelen aan een [beschikbaarheidsset](/previous-versions/azure/virtual-machines/windows/classic/configure-availability-classic) en ze hand matig in of uit te scha kelen.
 
 ## <a name="considerations"></a>Overwegingen
 U moet rekening houden met de volgende informatie voordat u schaling voor uw toepassing configureert:

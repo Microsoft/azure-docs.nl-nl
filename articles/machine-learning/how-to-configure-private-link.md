@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/30/2020
-ms.openlocfilehash: 2953f85a5c21cdd670d6e133d09ffacf06f178ef
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5ba1b9d53255406a73b1b74dbc59fe39e3f9a0d7
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842699"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979178"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Machine Learning-werk ruimte
 
@@ -35,7 +35,8 @@ Als u van plan bent een persoonlijke koppeling in te scha kelen met een door de 
 
 ## <a name="limitations"></a>Beperkingen
 
-Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de regio's Azure Government regio's en Azure China 21Vianet.
+* Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de regio's Azure Government regio's en Azure China 21Vianet.
+* Als u open bare toegang inschakelt voor een werk ruimte die is beveiligd met een persoonlijke koppeling en gebruikmaakt van Azure Machine Learning Studio via het open bare Internet, kunnen sommige functies, zoals de ontwerper, geen toegang krijgen tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account.
 
 ## <a name="create-a-workspace-that-uses-a-private-endpoint"></a>Een werk ruimte maken die gebruikmaakt van een persoonlijk eind punt
 
@@ -158,6 +159,31 @@ Omdat de communicatie met de werk ruimte alleen is toegestaan vanuit het virtuel
 > Om te voor komen dat de verbinding tijdelijk wordt verbroken, raadt micro soft aan de DNS-cache te wissen op computers die verbinding maken met de werk ruimte nadat een persoonlijke koppeling is ingeschakeld. 
 
 Raadpleeg de [virtual machines documentatie](../virtual-machines/index.yml)voor meer informatie over Azure virtual machines.
+
+## <a name="enable-public-access"></a>Open bare toegang inschakelen
+
+Nadat u een werk ruimte met een persoonlijk eind punt hebt geconfigureerd, kunt u eventueel open bare toegang tot de werk ruimte inschakelen. Als u dit doet, wordt het persoonlijke eind punt niet verwijderd. Hiermee wordt open bare toegang tot de persoonlijke toegang ingeschakeld. Als u open bare toegang tot een werk ruimte met persoonlijke koppelingen wilt inschakelen, gebruikt u de volgende stappen:
+
+# <a name="python"></a>[Python](#tab/python)
+
+Gebruik [Workspace.delete_private_endpoint_connection](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#delete-private-endpoint-connection-private-endpoint-connection-name-) om een persoonlijk eind punt te verwijderen.
+
+```python
+from azureml.core import Workspace
+
+ws = Workspace.from_config()
+ws.update(allow_public_access_when_behind_vnet=True)
+```
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace update](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_update) . Als u open bare toegang tot de werk ruimte wilt inschakelen, voegt u de para meter toe `--allow-public-access true` .
+
+# <a name="portal"></a>[Portal](#tab/azure-portal)
+
+Er is momenteel geen manier om deze functionaliteit in te scha kelen met behulp van de portal.
+
+---
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -6,14 +6,17 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 11/27/2018
-ms.openlocfilehash: a9f268e5080a5c04c5cdb4767f2db5fd2d77cd3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91bb303fca4517f84ad8b430f26543e9f116fddc
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87326151"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833079"
 ---
 # <a name="expressroute-monitor"></a>Monitor voor ExpressRoute
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt de tests die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter naar de nieuwe verbindings monitor](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) in azure Network Watcher vóór 29 februari 2024.
 
 U kunt de Azure ExpressRoute-monitor mogelijkheid gebruiken in [Netwerkprestatiemeter](network-performance-monitor.md) om end-to-end connectiviteit en prestaties te bewaken tussen uw filialen en Azure, via Azure ExpressRoute. De belangrijkste voor delen zijn: 
 
@@ -81,7 +84,7 @@ Als u een lijst met alle bewaakte ExpressRoute-circuits wilt weer geven, selecte
 
 ### <a name="trends-of-loss-latency-and-throughput"></a>Trends van verlies, latentie en door Voer 
 
-Het bandbreedte gebruik, de latentie en de verlies grafieken zijn interactief. U kunt inzoomen op elke sectie van deze grafieken met behulp van muis besturings elementen. U kunt ook de band breedte, latentie en gegevens verlies bekijken voor andere intervallen. Selecteer in de linkerbovenhoek onder de knop **acties** de optie **datum/tijd**. 
+Het bandbreedte gebruik, de latentie en de verlies grafieken zijn interactief. U kunt inzoomen op elke sectie van deze grafieken met behulp van muis besturings elementen. U kunt ook de band breedte, latentie en gegevens verlies bekijken voor andere intervallen. Selecteer in de linkerbovenhoek onder de knop **acties** de optie  **datum/tijd**. 
 
 ![ExpressRoute-latentie](media/network-performance-monitor-expressroute/expressroute-latency.png) 
 
@@ -93,7 +96,7 @@ Als u een lijst wilt weer geven met alle verbindingen met virtuele netwerken via
 
 ### <a name="circuit-topology"></a>Circuit topologie 
 
-Als u de circuit topologie wilt weer geven, selecteert u de tegel **topologie** . Met deze actie gaat u naar de weer gave topologie van het geselecteerde circuit of peering. Het topologie diagram geeft de latentie voor elk segment op het netwerk en elke Layer 3-hop wordt vertegenwoordigd door een knoop punt van het diagram. Als u een hop selecteert, worden er meer details over de hop. Verplaats de schuif regelaar onder **filters**om het zichtbaarheids niveau voor het toevoegen van lokale hops te verg Roten. Als u de schuif regelaar naar links of rechts verplaatst, wordt het aantal hops in de topologie grafiek verg root of verkleind. De latentie voor elk segment is zichtbaar, zodat er een snellere isolatie van segmenten met een hoge latentie in uw netwerk mogelijk is.
+Als u de circuit topologie wilt weer geven, selecteert u de tegel **topologie** . Met deze actie gaat u naar de weer gave topologie van het geselecteerde circuit of peering. Het topologie diagram geeft de latentie voor elk segment op het netwerk en elke Layer 3-hop wordt vertegenwoordigd door een knoop punt van het diagram. Als u een hop selecteert, worden er meer details over de hop. Verplaats de schuif regelaar onder **filters** om het zichtbaarheids niveau voor het toevoegen van lokale hops te verg Roten. Als u de schuif regelaar naar links of rechts verplaatst, wordt het aantal hops in de topologie grafiek verg root of verkleind. De latentie voor elk segment is zichtbaar, zodat er een snellere isolatie van segmenten met een hoge latentie in uw netwerk mogelijk is.
 
 ![ExpressRoute-topologie](media/network-performance-monitor-expressroute/expressroute-topology.png)
 
@@ -109,7 +112,7 @@ Netwerkprestatiemeter helpt u bij het vaststellen van verschillende verbindings 
 
 U kunt de meldings codes bekijken en waarschuwingen instellen via **LogAnalytics**. Op de pagina **Diagnostische gegevens over NPM** ziet u beschrijvingen voor elk geactiveerde diagnostische berichten.
 
-| Meldings code (Logboeken) | Beschrijving |
+| Meldings code (Logboeken) | Description |
 | --- | --- |
 | 5501 | Kan niet door de secundaire verbinding van het ExpressRoute-circuit bladeren |
 | 5502 | Kan niet door de primaire verbinding van het ExpressRoute-circuit bladeren |
@@ -141,4 +144,3 @@ U kunt de meldings codes bekijken en waarschuwingen instellen via **LogAnalytics
 
 ## <a name="next-steps"></a>Volgende stappen
 [Zoek logboeken](../log-query/log-query-overview.md) om gedetailleerde gegevens records voor netwerk prestaties weer te geven.
-

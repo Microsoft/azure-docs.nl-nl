@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: overview
-ms.date: 09/09/2020
+ms.date: 02/01/2021
 ms.author: raynew
-ms.openlocfilehash: 5261904dd1ee7f280209015d8f756a055dfab57e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: facbb30201aa6bde2044ca647383cc32ecd9ba26
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522938"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980555"
 ---
 # <a name="about-the-move-process"></a>Over het verplaatsingsproces
 
@@ -46,7 +46,7 @@ Elke verplaatsingsresource voor volgt de stappen in het overzicht.
 **Stap 4: Verplaatsing starten** | Het verplaatsingsproces starten. De verplaatsingsmethode is afhankelijk van het resourcetype:<br/><br/> - **Staatloos**: Voor stateless resources implementeert het verplaatsingsproces meestal een geïmporteerde sjabloon in de doelregio. De sjabloon is gebaseerd op de instellingen van de bronresource en op eventuele handmatige wijzigingen die u aan de doelinstellingen aanbrengt.<br/><br/> - **Stateful**: Voor stateful resources kan het verplaatsingsproces ook de resource maken of een kopie inschakelen in de doel regio.<br/><br/>  Alleen voor stateful resources kan het starten van een verplaatsing leiden tot downtime van bronresources. Bijvoorbeeld VM's en SQL. | Bij het starten gaat de status over in *Startverplaatsing wordt uitgevoerd*.<br/><br/> Na een geslaagde startverplaatsing gaat de status probleemloos over in *Doorvoerverplaatsing in behandeling*. <br/><br/> Na een mislukte verplaatsing gaat de status over in *Startverplaatsing mislukt*.
 **Stap 5, optie 1: Verplaatsing negeren** | Na de startverplaatsing kunt u beslissen of u door wilt gaan met een volledige verplaatsing. Als dat niet het geval is, kunt u de verplaatsing negeren. Resource Mover verwijdert de resources die in het doel zijn gemaakt. Het replicatieproces voor stateful resources wordt na het verwijderen voortgezet. Deze optie is handig voor het testen. | Tijdens het verwijderen van de resources gaat de status over in *Verwijderen wordt uitgevoerd*.<br/><br/> Als de resources zijn verwijderd, gaat de status probleemloos over in *Startverplaatsing in behandeling*.<br/><br/> Als de verwijdering mislukt, gaat de status over in *Verwijderingsverplaatsing mislukt*. 
 **Stap 5, optie 2: Doorvoerverplaatsing** | Als u na de startverplaatsing wilt doorgaan met een volledige verplaatsing, controleert u de resources in de doelregio en wanneer u klaar bent, voert u de verplaatsing door.<br/><br/> Alleen voor stateful resources kan het doorvoeren ertoe leiden dat bronresources, zoals VM's of SQL, ontoegankelijk worden. | Als u de verplaatsing doorvoert, gaat de resourcestatus over in *Doorvoerverplaatsing wordt uitgevoerd**.<br/><br/> Na een geslaagde doorvoer gaat de resourcestatus probleemloos over in *Doorvoerverplaatsing voltooid*.<br/><br/> Bij een mislukte doorvoer gaat de status over in *Doorvoerverplaatsing mislukt*.
-**Stap 6: Bron verwijderen** | Nadat u de verplaatsing hebt doorgevoerd en de resources in de doelregio hebt gecontroleerd, kunt u de bronresource verwijderen. | Nadat de verplaatsing is doorgevoerd, gaat de resourcestatus over in *Verwijderen bron in behandeling*.
+**Stap 6: Bron verwijderen** | Nadat u de verplaatsing hebt doorgevoerd en de resources in de doelregio hebt gecontroleerd, kunt u de bronresource verwijderen. | Na het door voeren wordt een resource status verplaatst naar de *bron verwijderen in behandeling*. U kunt vervolgens de bron bron selecteren en deze verwijderen.<br/><br/> Alleen-bronnen in de status *verwijderings bron in behandeling* kunnen worden verwijderd. | Het verwijderen van een resource groep of-SQL Server in de resource-overdrijf portal wordt niet ondersteund. Deze resources kunnen alleen worden verwijderd van de pagina met resource-eigenschappen.
 
 
 ## <a name="move-region-states"></a>Status van verplaatsingsregio

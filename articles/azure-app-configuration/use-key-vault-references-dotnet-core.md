@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 04/08/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 94bab9506d2bf7c29f997bcbfd400a412d5ac041
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: 37bc7fbcd366455668d5316e45ffbf79127a49f3
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932231"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981219"
 ---
 # <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Zelfstudie: Key Vault-referenties gebruiken in een ASP.NET Core-app
 
@@ -93,7 +93,7 @@ Als u een geheim wilt toevoegen aan de Key Vault, hoeft u maar een paar extra st
 
 ## <a name="connect-to-key-vault"></a>Verbinding maken met Key Vault
 
-1. In deze zelfstudie gebruikt u een service-principal voor verificatie voor Key Vault. Om deze service-principal te maken gebruikt u de Azure CLI-opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac):
+1. In deze zelfstudie gebruikt u een service-principal voor verificatie voor Key Vault. Om deze service-principal te maken gebruikt u de Azure CLI-opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac):
 
     ```azurecli
     az ad sp create-for-rbac -n "http://mySP" --sdk-auth

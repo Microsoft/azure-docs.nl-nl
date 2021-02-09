@@ -1,5 +1,5 @@
 ---
-title: Oplossingen voor de gezondheidszorg ontwikkelen met Azure IoT Central | Microsoft Docs
+title: Wat zijn de Azure IoT Central-gezondheids zorg oplossingen | Microsoft Docs
 description: Meer informatie over het ontwikkelen van gezondheidszorgoplossingen met behulp van Azure IoT Central-toepassingssjablonen.
 author: philmea
 ms.author: philmea
@@ -8,14 +8,14 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: c46ce28801c74d0dcc37d23f9d384a69f022ecc4
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: e8a72195f0fcacce2c994e8770157b05b65d70ee
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820344"
+ms.locfileid: "99833147"
 ---
-# <a name="building-healthcare-solutions-with-azure-iot-central"></a>Oplossingen voor de gezondheidszorg bouwen met Azure IoT Central
+# <a name="what-are-the-iot-central-healthcare-solutions"></a>Wat zijn de IoT Central gezondheids zorg oplossingen?
 
 Meer informatie over het ontwikkelen van gezondheidszorgoplossingen met behulp van Azure IoT Central-toepassingssjablonen.
 

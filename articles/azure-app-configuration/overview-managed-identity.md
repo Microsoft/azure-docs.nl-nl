@@ -7,12 +7,12 @@ ms.date: 02/25/2020
 ms.author: barbkess
 ms.reviewer: lcozzens
 ms.service: azure-app-configuration
-ms.openlocfilehash: 270f8d471a95e67939a31357bc1cc056fe8ea4a1
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: e6ced30e8c8c5eb60eea3806d9c8080df7c2a12d
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072795"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979586"
 ---
 # <a name="how-to-use-managed-identities-for-azure-app-configuration"></a>Beheerde identiteiten gebruiken voor Azure-app configuratie
 
@@ -99,7 +99,7 @@ Met de volgende stappen wordt u begeleid bij het maken van een door de gebruiker
 
 ## <a name="removing-an-identity"></a>Een identiteit verwijderen
 
-Een door het systeem toegewezen identiteit kan worden verwijderd door de functie uit te scha kelen met behulp van de opdracht [AZ appconfig Identity Remove](/cli/azure/appconfig/identity?view=azure-cli-latest#az-appconfig-identity-remove) in de Azure cli. Door de gebruiker toegewezen identiteiten kunnen afzonderlijk worden verwijderd. Als u een door het systeem toegewezen identiteit op deze manier verwijdert, wordt deze ook uit AAD verwijderd. Door het systeem toegewezen identiteiten worden ook automatisch verwijderd uit AAD wanneer de app-resource wordt verwijderd.
+Een door het systeem toegewezen identiteit kan worden verwijderd door de functie uit te scha kelen met behulp van de opdracht [AZ appconfig Identity Remove](/cli/azure/appconfig/identity#az-appconfig-identity-remove) in de Azure cli. Door de gebruiker toegewezen identiteiten kunnen afzonderlijk worden verwijderd. Als u een door het systeem toegewezen identiteit op deze manier verwijdert, wordt deze ook uit AAD verwijderd. Door het systeem toegewezen identiteiten worden ook automatisch verwijderd uit AAD wanneer de app-resource wordt verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -15,14 +15,17 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: 57228c6b7da04b139c7075c83e313b207907e214
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 0fa5e09dbe7c0a8cd45557d535353ea4a0a00b16
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898008"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833096"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Netwerk connectiviteit controleren met verbindings monitor
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt ook geen nieuwe monitors voor verbinding toevoegen in de verbindings monitor (klassiek). U kunt de tests en verbindings monitors die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter ](migrate-to-connection-monitor-from-network-performance-monitor.md) of  [migreert u van het klassieke verbindings](migrate-to-connection-monitor-from-connection-monitor-classic.md) controleprogramma naar de nieuwe verbindings monitor in azure Network Watcher vóór 29 februari 2024.
 
 De verbindings monitor biedt een geïntegreerde end-to-end-verbindings bewaking in azure Network Watcher. De functie verbindings monitor ondersteunt hybride en Azure-Cloud implementaties. Network Watcher biedt hulpprogram ma's voor het bewaken, diagnosticeren en weer geven van connectiviteits gegevens voor uw Azure-implementaties.
 
@@ -111,7 +114,7 @@ De verbindings monitor bevat de volgende entiteiten:
 
  ![Diagram van een verbindings monitor, waarbij de relatie tussen test groepen en tests wordt gedefinieerd](./media/connection-monitor-2-preview/cm-tg-2.png)
 
-U kunt een verbindings monitor maken met behulp van [Azure Portal](./connection-monitor-create-using-portal.md) of [ARMClient](./connection-monitor-create-using-template.md)
+U kunt een verbindings monitor maken met behulp van [Azure Portal](./connection-monitor-create-using-portal.md), [ARMClient](./connection-monitor-create-using-template.md) of [Power shell](connection-monitor-create-using-powershell.md)
 
 Alle bronnen, doelen en test configuraties die u toevoegt aan een test groep, worden opgesplitst naar afzonderlijke tests. Hier volgt een voor beeld van hoe bronnen en bestemmingen worden uitgesplitst:
 
@@ -271,12 +274,13 @@ In verbindings monitors die zijn gemaakt voor de ervaring van de verbindings mon
 
 Wanneer u metrische gegevens gebruikt, stelt u het resource type in als micro soft. Network/networkWatchers/connectionMonitors
 
-| Gegevens | Weergavenaam | Eenheid | Type aggregatie | Beschrijving | Afmetingen |
+| Metrisch | Weergavenaam | Eenheid | Type aggregatie | Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
-| ProbesFailedPercent | % Tests mislukt | Percentage | Gemiddeld | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
-| AverageRoundtripMs | Gem. retour tijd (MS) | Milliseconden | Gemiddeld | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |
-| ChecksFailedPercent (preview-versie) | % Controles mislukt (preview-versie) | Percentage | Gemiddeld | Percentage mislukte controles voor een test. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Region |
-| RoundTripTimeMs (preview-versie) | Retour tijd (MS) (preview-versie) | Milliseconden | Gemiddeld | RTT voor controles die worden verzonden tussen de bron en de bestemming. Deze waarde is niet van het gemiddelde. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Region |
+| ProbesFailedPercent (klassiek) | % Tests mislukt (klassiek) | Percentage | Gemiddeld | Het percentage van de connectiviteits controle tests is mislukt. | Geen dimensies |
+| AverageRoundtripMs (klassiek) | Gem. retour tijd (MS) (klassiek) | Milliseconden | Gemiddeld | Gemiddelde netwerk-RTT voor connectiviteits controle tests die zijn verzonden tussen de bron en de bestemming. |             Geen dimensies |
+| ChecksFailedPercent | % Controles mislukt | Percentage | Gemiddeld | Percentage mislukte controles voor een test. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Region |
+| RoundTripTimeMs | Retour tijd (MS) | Milliseconden | Gemiddeld | RTT voor controles die worden verzonden tussen de bron en de bestemming. Deze waarde is niet van het gemiddelde. | ConnectionMonitorResourceId <br>SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>Region |
+| TestResult | Test resultaat | Count | Gemiddeld | Test resultaat verbindings monitor | SourceAddress <br>SourceName <br>SourceResourceId <br>SourceType <br>Protocol <br>DestinationAddress <br>Doel locatie <br>DestinationResourceId <br>DestinationType <br>DestinationPort <br>TestGroupName <br>TestConfigurationName <br>SourceIP <br>DestinationIP <br>SourceSubnet <br>DestinationSubnet |
 
 #### <a name="metric-based-alerts-for-connection-monitor"></a>Waarschuwingen op basis van metrische gegevens voor verbindings monitor
 

@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: 664264f2cd810f232b967f5af78ba3d522f0a41f
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 857fba6dfa6191163c06c423cefb42d57f25dc1d
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060007"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980572"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
 
@@ -137,6 +137,15 @@ In het volgende netwerk diagram ziet u een beveiligde Azure Machine Learning-wer
 ### <a name="limitations"></a>Beperkingen
 - AKS-clusters moeten deel uitmaken van hetzelfde VNet als de werk ruimte en de bijbehorende resources. 
 
+## <a name="optional-enable-public-access"></a>Optioneel: open bare toegang inschakelen
+
+U kunt de werk ruimte achter een VNet beveiligen met behulp van een persoonlijk eind punt en toch toegang toestaan via het open bare Internet. De initiële configuratie is hetzelfde als de [beveiliging van de werk ruimte en de bijbehorende resources](#secure-the-workspace-and-associated-resources). 
+
+Nadat u de werk ruimte hebt beveiligd met een persoonlijke koppeling, [schakelt u open bare toegang in](how-to-configure-private-link.md#enable-public-access). Daarna kunt u toegang krijgen tot de werk ruimte vanuit het open bare Internet en het VNet.
+
+### <a name="limitations"></a>Beperkingen
+
+- Als u Azure Machine Learning Studio via het open bare Internet gebruikt, kunnen sommige functies, zoals de ontwerper, geen toegang krijgen tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account.
 ## <a name="optional-enable-studio-functionality"></a>Optioneel: de functionaliteit van Studio inschakelen
 
 [De werk ruimte beveiligen](#secure-the-workspace-and-associated-resources)  >  [De trainings omgeving beveiligen](#secure-the-training-environment)  >  [De omgeving](#secure-the-inferencing-environment)  >  voor het afwijzen beveiligen De **functionaliteit**  >  van Studio inschakelen [Firewall instellingen configureren](#configure-firewall-settings)

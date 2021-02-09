@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 0eb7dec2fd4ee327905acdea7a07456221bcbd46
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 882384b5e57db27cff981f80e790dfd41b624c93
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945997"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980691"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Toegang tot Apache Hadoop GARENs van toepassings logboeken op HDInsight op basis van Linux
 
@@ -37,7 +37,7 @@ De lijn van een garen tijdlijn server bevat het volgende type gegevens:
 
 ## <a name="yarn-applications-and-logs"></a>Toepassingen en logboeken van garen
 
-Toepassings Logboeken (en de bijbehorende container Logboeken) zijn van cruciaal belang bij het opsporen van fouten in problemen met Hadoop-toepassingen. GARENs bieden een goed kader voor het verzamelen, samen voegen en opslaan van toepassings logboeken met [logboek aggregatie](https://hortonworks.com/blog/simplifying-user-logs-management-and-access-in-yarn/).
+Toepassings Logboeken (en de bijbehorende container Logboeken) zijn van cruciaal belang bij het opsporen van fouten in problemen met Hadoop-toepassingen. GARENs bieden een goed kader voor het verzamelen, samen voegen en opslaan van toepassings logboeken met logboek aggregatie.
 
 Met de functie voor het samen voegen van Logboeken wordt toegang tot toepassings logboeken meer deterministisch. Hiermee worden logboeken samengevoegd over alle containers op een werk knooppunt en worden deze opgeslagen als één geaggregeerd logboek bestand per worker-knoop punt. Het logboek wordt opgeslagen op het standaard bestandssysteem nadat een toepassing is voltooid. Uw toepassing kan honderden of duizenden containers gebruiken, maar logboeken voor alle containers die worden uitgevoerd op één worker-knoop punt worden altijd geaggregeerd naar één bestand. Er is slechts één logboek per werk knooppunt dat door uw toepassing wordt gebruikt. Logboek aggregatie is standaard ingeschakeld op HDInsight-clusters versie 3,0 en hoger. Samengevoegde logboeken bevinden zich in de standaard opslag voor het cluster. Het volgende pad is het HDFS-pad naar de logboeken:
 

@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/28/2020
+ms.date: 02/01/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 518df665db0ba3770bee757f45d02b6ccd303a00
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 1df2f12d6947734314609dc50787a59a2fa88731
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803864"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980508"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Herstel naar een bepaald tijdstip voor blok-blobs
 
@@ -32,6 +32,10 @@ Als u herstel naar een bepaald tijdstip wilt inschakelen, maakt u een beheer bel
 Als u een herstel tijdstip voor een bepaald tijdstip wilt initiëren, roept u de bewerking [BLOB Ranges herstellen](/rest/api/storagerp/storageaccounts/restoreblobranges) aan en geeft u een herstel punt op in UTC-tijd. U kunt lexicographical-bereiken van container-en BLOB-namen opgeven om te herstellen, of het bereik weglaten om alle containers in het opslag account te herstellen. Er worden Maxi maal 10 lexicographical-bereiken ondersteund per herstel bewerking.
 
 Azure Storage analyseert alle wijzigingen die zijn aangebracht in de opgegeven blobs tussen het aangevraagde herstel punt, opgegeven in UTC-tijd en het huidige moment. De herstel bewerking is atomisch, waardoor alle wijzigingen volledig worden hersteld of niet kan worden uitgevoerd. Als er blobs zijn die niet kunnen worden hersteld, mislukt de bewerking en worden lees-en schrijf bewerkingen naar de betrokken containers hervat.
+
+In het volgende diagram ziet u hoe het herstellen van tijdstippen werkt. Een of meer containers of BLOB-bereiken worden *n* dagen geleden teruggezet naar de status van de container, waarbij *n* kleiner is dan of gelijk is aan de Bewaar periode voor herstel naar een bepaald tijdstip. Het effect is het terugzetten van schrijf-en verwijder bewerkingen die zijn opgetreden tijdens de Bewaar periode.
+
+:::image type="content" source="media/point-in-time-restore-overview/point-in-time-restore-diagram.png" alt-text="Diagram waarin wordt getoond hoe de containers naar een eerdere status worden teruggezet":::
 
 Er kan slechts één herstel bewerking tegelijk worden uitgevoerd op een opslag account. Een herstel bewerking kan niet worden geannuleerd zodra deze wordt uitgevoerd, maar er kan wel een tweede herstel bewerking worden uitgevoerd om de eerste bewerking ongedaan te maken.
 

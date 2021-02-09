@@ -1,27 +1,27 @@
 ---
-title: Problemen met Azure Data Factory connectors oplossen
+title: Problemen met Azure Data Factory-connectors oplossen
 description: Meer informatie over het oplossen van connector problemen in Azure Data Factory.
 services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 01/07/2021
+ms.date: 02/08/2021
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: fdc4bbd463c45fecfc9e3961e42f81ed93d820ae
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 2395e8e0027755357e65aab247185c02f7b1723d
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054633"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980708"
 ---
-# <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory connectors oplossen
+# <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 In dit artikel worden algemene manieren besproken om problemen met Azure Data Factory-connectors op te lossen.
-  
+
 ## <a name="azure-blob-storage"></a>Azure Blob Storage
 
 ### <a name="error-code-azurebloboperationfailed"></a>Fout code: AzureBlobOperationFailed
@@ -109,7 +109,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
             
 ## <a name="azure-cosmos-db-sql-api"></a>Azure Cosmos DB (SQL-API)
 
-### <a name="error-code--cosmosdbsqlapioperationfailed"></a>Fout code: CosmosDbSqlApiOperationFailed
+### <a name="error-code-cosmosdbsqlapioperationfailed"></a>Fout code: CosmosDbSqlApiOperationFailed
 
 - **Bericht**: `CosmosDbSqlApi operation Failed. ErrorMessage: %msg;.`
 
@@ -161,17 +161,13 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 - **Bericht**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
 
-- **Oorzaak**: als Azure data Lake Storage Gen2 deze fout genereert, is de bewerking mislukt.
+- **Oorzaken en aanbevelingen**: verschillende oorzaken kunnen leiden tot deze fout. Raadpleeg de onderstaande lijst voor mogelijke oorzaak analyse en gerelateerde aanbevelingen.
 
-- **Aanbeveling**: Raadpleeg het gedetailleerde fout bericht dat wordt gegenereerd door Azure data Lake Storage Gen2. Als de fout een tijdelijke fout is, voert u de bewerking opnieuw uit. Neem contact op met Azure Storage ondersteuning voor meer informatie en geef de aanvraag-ID op in een fout bericht.
-
-- **Oorzaak**: als het fout bericht de teken reeks ' verboden ' bevat, is de service-principal of beheerde identiteit die u gebruikt mogelijk niet gemachtigd om toegang te krijgen tot Azure data Lake Storage Gen2.
-
-- **Aanbeveling**: Zie [gegevens kopiëren en transformeren in azure data Lake Storage Gen2 met behulp van Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication)om deze fout op te lossen.
-
-- **Oorzaak**: als het fout bericht de teken reeks ' InternalServerError ' bevat, wordt de fout geretourneerd door Azure data Lake Storage Gen2.
-
-- **Aanbeveling**: de fout wordt mogelijk veroorzaakt door een tijdelijke fout. Als dat het geval is, voert u de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met Azure Storage ondersteuning en geeft u de aanvraag-ID op uit het fout bericht.
+  | Oorzaak van analyse                                               | Aanbeveling                                               |
+  | :----------------------------------------------------------- | :----------------------------------------------------------- |
+  | Als Azure Data Lake Storage Gen2 een fout genereert die een bepaalde bewerking is mislukt.| Controleer het gedetailleerde fout bericht dat wordt gegenereerd door Azure Data Lake Storage Gen2. Als de fout een tijdelijke fout is, voert u de bewerking opnieuw uit. Neem contact op met Azure Storage ondersteuning voor meer informatie en geef de aanvraag-ID op in een fout bericht. |
+  | Als het fout bericht de teken reeks ' verboden ' bevat, is de service-principal of beheerde identiteit die u gebruikt mogelijk niet gemachtigd om toegang te krijgen tot Azure Data Lake Storage Gen2. | Zie [gegevens in azure data Lake Storage Gen2 kopiëren en transformeren met behulp van Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication)om deze fout op te lossen. |
+  | Als het fout bericht de teken reeks "InternalServerError" bevat, wordt de fout geretourneerd door Azure Data Lake Storage Gen2. | De fout wordt mogelijk veroorzaakt door een tijdelijke fout. Als dat het geval is, voert u de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met Azure Storage ondersteuning en geeft u de aanvraag-ID op uit het fout bericht. |
 
 ### <a name="request-to-azure-data-lake-storage-gen2-account-caused-a-timeout-error"></a>De aanvraag voor het Azure Data Lake Storage Gen2-account heeft een time-outfout veroorzaakt
 
@@ -204,7 +200,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
                   
 ## <a name="azure-files-storage"></a>Opslag Azure Files
 
-### <a name="error-code--azurefileoperationfailed"></a>Fout code: AzureFileOperationFailed
+### <a name="error-code-azurefileoperationfailed"></a>Fout code: AzureFileOperationFailed
 
 - **Bericht**: `Azure File operation Failed. Path: %path;. ErrorMessage: %msg;.`
 
@@ -215,55 +211,34 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="azure-synapse-analytics-azure-sql-database-and-sql-server"></a>Azure Synapse Analytics, Azure SQL Database en SQL Server
 
-### <a name="error-code--sqlfailedtoconnect"></a>Fout code: SqlFailedToConnect
+### <a name="error-code-sqlfailedtoconnect"></a>Foutcode: SqlFailedToConnect
 
 - **Bericht**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
+- **Oorzaken en aanbevelingen**: verschillende oorzaken kunnen leiden tot deze fout. Raadpleeg de onderstaande lijst voor mogelijke oorzaak analyse en gerelateerde aanbevelingen.
 
-- **Oorzaak**: als het fout bericht de teken reeks ' SqlErrorNumber = 47073 ' bevat, betekent dit dat de open bare netwerk toegang wordt geweigerd in de connectiviteits instelling.
-
-- **Aanbeveling**: Stel op de Azure SQL-firewall de optie **open bare netwerk toegang weigeren** in op *Nee*. Zie [Azure SQL-connectiviteits instellingen](https://docs.microsoft.com/azure/azure-sql/database/connectivity-settings#deny-public-network-access)voor meer informatie.
-
-- **Oorzaak**: als het fout bericht een SQL-fout code bevat, zoals "SqlErrorNumber = [error code]", raadpleegt u de Azure SQL-probleemoplossings handleiding.
-
-- **Aanbeveling**: Zie [verbindings problemen en andere fouten oplossen met Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-errors-issues)(Engelstalig) voor een aanbeveling.
-
-- **Oorzaak**: Controleer of poort 1433 wordt weer geven in de lijst met toegestane firewalls.
-
-- **Aanbeveling**: Zie [poorten die worden gebruikt door SQL Server](https://docs.microsoft.com/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by-)voor meer informatie.
-
-- **Oorzaak**: als het fout bericht de teken reeks ' SQLException ' bevat, SQL database de fout geeft aan dat een bepaalde bewerking is mislukt.
-
-- **Aanbeveling**: Zoek op SQL-fout code in [Data Base Engine-fouten](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie. Neem contact op met de ondersteuning van Azure SQL voor meer informatie.
-
-- **Oorzaak**: als dit een tijdelijk probleem is (bijvoorbeeld een instabiele netwerk verbinding), voegt u de nieuwe poging in het activiteiten beleid toe om de oplossing te verkleinen.
-
-- **Aanbeveling**: Zie [pijp lijnen en activiteiten in azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities#activity-policy)voor meer informatie.
-
-- **Oorzaak**: als het fout bericht de teken reeks ' client met IP-adres '... ' bevat heeft geen toegang tot de server, en u probeert verbinding te maken met Azure SQL Database, de fout wordt meestal veroorzaakt door een probleem met de Azure SQL Database firewall.
-
-- **Aanbeveling**: Schakel in de configuratie van de Azure SQL Server-firewall de optie **Azure-Services en-resources toestaan toegang tot deze server** in. Zie [Azure SQL database en Azure Synapse IP-firewall regels](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)voor meer informatie.
-
-
-### <a name="error-code--sqloperationfailed"></a>Fout code: SqlOperationFailed
+    | Oorzaak van analyse                                               | Aanbeveling                                               |
+    | :----------------------------------------------------------- | :----------------------------------------------------------- |
+    | Als het fout bericht de teken reeks ' SqlErrorNumber = 47073 ' bevat, betekent dit dat de open bare netwerk toegang wordt geweigerd in de connectiviteits instelling. | Stel op de Azure SQL-firewall de optie **open bare netwerk toegang weigeren** in op *Nee*. Zie [Azure SQL-connectiviteits instellingen](https://docs.microsoft.com/azure/azure-sql/database/connectivity-settings#deny-public-network-access)voor meer informatie. |
+    | Raadpleeg de Azure SQL-probleemoplossings handleiding als het fout bericht een SQL-fout code zoals "SqlErrorNumber = [error code]" bevat voor Azure SQL. | Zie [verbindings problemen en andere fouten oplossen met Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/database/troubleshoot-common-errors-issues)(Engelstalig) voor een aanbeveling. |
+    | Controleer of poort 1433 wordt weer geven in de lijst met toegestane firewalls. | Zie [poorten die worden gebruikt door SQL Server](https://docs.microsoft.com/sql/sql-server/install/configure-the-windows-firewall-to-allow-sql-server-access#ports-used-by-)voor meer informatie. |
+    | Als het fout bericht de teken reeks ' SqlException ' bevat, SQL Database de fout geeft aan dat een bepaalde bewerking is mislukt. | Zoek op SQL-fout code in [Data Base Engine-fouten](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
+    | Als dit een tijdelijk probleem is (bijvoorbeeld een instabiele netwerk verbinding), voegt u de nieuwe poging in het activiteiten beleid toe om de oplossing te verkleinen. | Zie [pijp lijnen en activiteiten in azure Data Factory](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities#activity-policy)voor meer informatie. |
+    | Als het fout bericht de teken reeks ' client met IP-adres '... ' bevat heeft geen toegang tot de server, en u probeert verbinding te maken met Azure SQL Database, de fout wordt meestal veroorzaakt door een probleem met de Azure SQL Database firewall. | Schakel in de configuratie van de Azure SQL Server-firewall de optie **Azure-Services en-resources toestaan toegang tot deze server** in. Zie [Azure SQL database en Azure Synapse IP-firewall regels](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)voor meer informatie. |
+    
+### <a name="error-code-sqloperationfailed"></a>Foutcode: SqlOperationFailed
 
 - **Bericht**: `A database operation failed. Please search error to get more details.`
 
-- **Oorzaak**: als het fout bericht de teken reeks ' SQLException ' bevat, wordt door SQL database een fout gegenereerd die aangeeft dat een bepaalde bewerking is mislukt.
+- **Oorzaken en aanbevelingen**: verschillende oorzaken kunnen leiden tot deze fout. Raadpleeg de onderstaande lijst voor mogelijke oorzaak analyse en gerelateerde aanbevelingen.
 
-- **Aanbeveling**: als de SQL-fout niet duidelijk is, probeert u de data base te wijzigen in het meest recente compatibiliteits niveau ' 150 '. Het kan de meest recente versie van SQL-fouten genereren. Raadpleeg de [documentatie](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat) voor meer informatie.
-
-    Zoek op SQL-fout code in [Data Base Engine-fouten](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie over het oplossen van SQL-problemen. Neem contact op met de ondersteuning van Azure SQL voor meer informatie.
-
-- **Oorzaak**: als het fout bericht de teken reeks ' PdwManagedToNativeInteropException ' bevat, wordt dit meestal veroorzaakt door een niet-overeenkomende waarde voor de grootte van de bron-en Sink-kolom.
-
-- **Aanbeveling**: Controleer de grootte van de kolommen bron en Sink. Neem contact op met de ondersteuning van Azure SQL voor meer informatie.
-
-- **Oorzaak**: als het fout bericht de teken reeks ' InvalidOperationException ' bevat, wordt dit meestal veroorzaakt door ongeldige invoer gegevens.
-
-- **Aanbeveling**: als u wilt identificeren in welke rij het probleem is opgetreden, schakelt u de functie fout tolerantie in voor de Kopieer activiteit, waarmee problematische rijen kunnen worden omgeleid naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor meer informatie.
+    | Oorzaak van analyse                                               | Aanbeveling                                               |
+    | :----------------------------------------------------------- | :----------------------------------------------------------- |
+    | Als het fout bericht de teken reeks "SqlException" bevat, genereert SQL Database een fout die aangeeft dat een bepaalde bewerking is mislukt. | Als de SQL-fout niet duidelijk is, probeert u de data base te wijzigen in het meest recente compatibiliteits niveau ' 150 '. Het kan de meest recente versie van SQL-fouten genereren. Raadpleeg de [documentatie](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#backwardCompat) voor meer informatie. <br/> Zoek op SQL-fout code in [Data Base Engine-fouten](https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors)voor meer informatie over het oplossen van SQL-problemen. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
+    | Als het fout bericht de teken reeks ' PdwManagedToNativeInteropException ' bevat, wordt dit meestal veroorzaakt door een niet-overeenkomende waarde voor de grootte van de bron-en Sink-kolom. | Controleer de grootte van de kolommen source en Sink. Neem contact op met de ondersteuning van Azure SQL voor meer informatie. |
+    | Als het fout bericht de teken reeks "InvalidOperationException" bevat, wordt dit meestal veroorzaakt door ongeldige invoer gegevens. | Als u wilt identificeren in welke rij het probleem zich heeft voorgedaan, schakelt u de functie fout tolerantie in voor de Kopieer activiteit, waarmee problematische rijen kunnen worden omgeleid naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor meer informatie. |
 
 
-### <a name="error-code--sqlunauthorizedaccess"></a>Fout code: SqlUnauthorizedAccess
+### <a name="error-code-sqlunauthorizedaccess"></a>Fout code: SqlUnauthorizedAccess
 
 - **Bericht**: `Cannot connect to '%connectorName;'. Detail Message: '%message;'`
 
@@ -272,7 +247,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer of het aanmeldings account voldoende machtigingen heeft voor toegang tot de SQL database.
 
 
-### <a name="error-code--sqlopenconnectiontimeout"></a>Fout code: SqlOpenConnectionTimeout
+### <a name="error-code-sqlopenconnectiontimeout"></a>Fout code: SqlOpenConnectionTimeout
 
 - **Bericht**: `Open connection to database timeout after '%timeoutValue;' seconds.`
 
@@ -281,7 +256,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Voer de bewerking opnieuw uit om de gekoppelde Service Connection String bij te werken met een grotere time-outwaarde voor de verbinding.
 
 
-### <a name="error-code--sqlautocreatetabletypemapfailed"></a>Fout code: SqlAutoCreateTableTypeMapFailed
+### <a name="error-code-sqlautocreatetabletypemapfailed"></a>Fout code: SqlAutoCreateTableTypeMapFailed
 
 - **Bericht**: `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
 
@@ -290,7 +265,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: werk het kolom Type in *toewijzingen* bij of maak de Sink-tabel hand matig op de doel server.
 
 
-### <a name="error-code--sqldatatypenotsupported"></a>Fout code: SqlDataTypeNotSupported
+### <a name="error-code-sqldatatypenotsupported"></a>Fout code: SqlDataTypeNotSupported
 
 - **Bericht**: `A database operation failed. Check the SQL errors.`
 
@@ -303,7 +278,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: werk het overeenkomstige kolom Type bij naar het type *DATETIME2* in de Sink-tabel.
 
 
-### <a name="error-code--sqlinvaliddbstoredprocedure"></a>Fout code: SqlInvalidDbStoredProcedure
+### <a name="error-code-sqlinvaliddbstoredprocedure"></a>Fout code: SqlInvalidDbStoredProcedure
 
 - **Bericht**: `The specified Stored Procedure is not valid. It could be caused by that the stored procedure doesn't return any data. Invalid Stored Procedure script: '%scriptName;'.`
 
@@ -312,7 +287,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Valideer de opgeslagen procedure met behulp van SQL-hulpprogram ma's. Zorg ervoor dat de opgeslagen procedure gegevens kan retour neren.
 
 
-### <a name="error-code--sqlinvaliddbquerystring"></a>Fout code: SqlInvalidDbQueryString
+### <a name="error-code-sqlinvaliddbquerystring"></a>Fout code: SqlInvalidDbQueryString
 
 - **Bericht**: `The specified SQL Query is not valid. It could be caused by that the query doesn't return any data. Invalid query: '%query;'`
 
@@ -321,7 +296,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Valideer de SQL-query met behulp van SQL-hulpprogram ma's. Zorg ervoor dat de query gegevens kan retour neren.
 
 
-### <a name="error-code--sqlinvalidcolumnname"></a>Fout code: SqlInvalidColumnName
+### <a name="error-code-sqlinvalidcolumnname"></a>Fout code: SqlInvalidColumnName
 
 - **Bericht**: `Column '%column;' does not exist in the table '%tableName;', ServerName: '%serverName;', DatabaseName: '%dbName;'.`
 
@@ -330,7 +305,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer de kolom in de query, de *structuur* in de gegevensset en de *toewijzingen* in de activiteit.
 
 
-### <a name="error-code--sqlbatchwritetimeout"></a>Fout code: SqlBatchWriteTimeout
+### <a name="error-code-sqlbatchwritetimeout"></a>Fout code: SqlBatchWriteTimeout
 
 - **Bericht**: `Timeouts in SQL write operation.`
 
@@ -339,7 +314,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Voer de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact op met de Azure SQL-ondersteuning.
 
 
-### <a name="error-code--sqlbatchwritetransactionfailed"></a>Fout code: SqlBatchWriteTransactionFailed
+### <a name="error-code-sqlbatchwritetransactionfailed"></a>Foutcode: SqlBatchWriteTransactionFailed
 
 - **Bericht**: `SQL transaction commits failed.`
 
@@ -352,7 +327,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Voer de activiteit opnieuw uit en controleer de metrische gegevens aan de SQL database zijde.
 
 
-### <a name="error-code--sqlbulkcopyinvalidcolumnlength"></a>Fout code: SqlBulkCopyInvalidColumnLength
+### <a name="error-code-sqlbulkcopyinvalidcolumnlength"></a>Fout code: SqlBulkCopyInvalidColumnLength
 
 - **Bericht**: `SQL Bulk Copy failed due to receive an invalid column length from the bcp client.`
 
@@ -361,7 +336,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: als u wilt identificeren in welke rij het probleem is opgetreden, schakelt u de functie fout tolerantie in voor de Kopieer activiteit. Dit kan problematische rijen omleiden naar de opslag voor verdere onderzoek. Zie [fout tolerantie van Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance)voor meer informatie.
 
 
-### <a name="error-code--sqlconnectionisclosed"></a>Fout code: SqlConnectionIsClosed
+### <a name="error-code-sqlconnectionisclosed"></a>Fout code: SqlConnectionIsClosed
 
 - **Bericht**: `The connection is closed by SQL Database.`
 
@@ -480,7 +455,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="azure-table-storage"></a>Azure Table Storage
 
-### <a name="error-code--azuretableduplicatecolumnsfromsource"></a>Fout code: AzureTableDuplicateColumnsFromSource
+### <a name="error-code-azuretableduplicatecolumnsfromsource"></a>Fout code: AzureTableDuplicateColumnsFromSource
 
 - **Bericht**: `Duplicate columns with same name '%name;' are detected from source. This is NOT supported by Azure Table Storage sink.`
 
@@ -493,7 +468,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="db2"></a>DB2
 
-### <a name="error-code--db2driverrunfailed"></a>Fout code: DB2DriverRunFailed
+### <a name="error-code-db2driverrunfailed"></a>Fout code: DB2DriverRunFailed
 
 - **Bericht**: `Error thrown from driver. Sql code: '%code;'`
 
@@ -504,7 +479,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="delimited-text-format"></a>Tekstindeling met scheidingstekens
 
-### <a name="error-code--delimitedtextcolumnnamenotallownull"></a>Fout code: DelimitedTextColumnNameNotAllowNull
+### <a name="error-code-delimitedtextcolumnnamenotallownull"></a>Fout code: DelimitedTextColumnNameNotAllowNull
 
 - **Bericht**: `The name of column index %index; is empty. Make sure column name is properly specified in the header row.`
 
@@ -513,26 +488,22 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer de eerste rij en los de waarde op als deze leeg is.
 
 
-### <a name="error-code--delimitedtextmorecolumnsthandefined"></a>Fout code: DelimitedTextMoreColumnsThanDefined
+### <a name="error-code-delimitedtextmorecolumnsthandefined"></a>Fout code: DelimitedTextMoreColumnsThanDefined
 
 - **Bericht**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %expectedColumnCount;.`
 
-- **Oorzaak**: het aantal kolommen in de problematische rij is groter dan het aantal kolommen in de eerste rij. Dit kan worden veroorzaakt door een gegevens probleem of door onjuiste instellingen voor het kolom scheidings teken of de aanhalings tekens.
+- **Oorzaken en aanbevelingen**: verschillende oorzaken kunnen leiden tot deze fout. Raadpleeg de onderstaande lijst voor mogelijke oorzaak analyse en gerelateerde aanbevelingen.
 
-- **Aanbeveling**: Haal het aantal rijen op uit het fout bericht, Controleer de kolom van de rij en los de gegevens op.
-
-- **Oorzaak**: als het verwachte aantal kolommen in een fout bericht ' 1 ' is, hebt u mogelijk verkeerde compressie-of notatie-instellingen opgegeven, waardoor Data Factory uw bestanden onjuist hebt geparseerd.
-
-- **Aanbeveling**: Controleer de indelings instellingen om er zeker van te zijn dat ze overeenkomen met de bron bestanden.
-
-- **Oorzaak**: als uw bron een map is, kunnen de bestanden in de opgegeven map een ander schema hebben.
-
-- **Aanbeveling**: Zorg ervoor dat de bestanden in de opgegeven map een identiek schema hebben.
+  | Oorzaak van analyse                                               | Aanbeveling                                               |
+  | :----------------------------------------------------------- | :----------------------------------------------------------- |
+  | Het aantal kolommen in de problematische rij is groter dan het aantal kolommen in de eerste rij. Dit kan worden veroorzaakt door een gegevens probleem of door onjuiste instellingen voor het kolom scheidings teken of de aanhalings tekens. | Haal het aantal rijen op uit het fout bericht, Controleer de kolom van de rij en los de gegevens op. |
+  | Als het verwachte aantal kolommen in een fout bericht ' 1 ' is, hebt u mogelijk verkeerde compressie-of indelings instellingen opgegeven, waardoor Data Factory uw bestanden onjuist hebt geparseerd. | Controleer de indelings instellingen om er zeker van te zijn dat ze overeenkomen met de bron bestanden. |
+  | Als uw bron een map is, kunnen de bestanden in de opgegeven map een ander schema hebben. | Zorg ervoor dat de bestanden in de opgegeven map een identiek schema hebben. |
 
 
 ## <a name="dynamics-365-common-data-service-and-dynamics-crm"></a>Dynamics 365, Common Data Service en Dynamics CRM
 
-### <a name="error-code--dynamicscreateserviceclienterror"></a>Fout code: DynamicsCreateServiceClientError
+### <a name="error-code-dynamicscreateserviceclienterror"></a>Fout code: DynamicsCreateServiceClientError
 
 - **Bericht**: `This is a transient issue on Dynamics server side. Try to rerun the pipeline.`
 
@@ -550,7 +521,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Voeg de kolommen hand matig toe op het tabblad toewijzing.
 
 
-### <a name="error-code--dynamicsmissingtargetformultitargetlookupfield"></a>Fout code: DynamicsMissingTargetForMultiTargetLookupField
+### <a name="error-code-dynamicsmissingtargetformultitargetlookupfield"></a>Fout code: DynamicsMissingTargetForMultiTargetLookupField
 
 - **Bericht**: `Cannot find the target column for multi-target lookup field: '%fieldName;'.`
 
@@ -561,7 +532,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
   2. Voeg de doel kolom toe aan de kolom toewijzing. Zorg ervoor dat de kolom Sink de indeling *{FieldName} @EntityReference* heeft.
 
 
-### <a name="error-code--dynamicsinvalidtargetformultitargetlookupfield"></a>Fout code: DynamicsInvalidTargetForMultiTargetLookupField
+### <a name="error-code-dynamicsinvalidtargetformultitargetlookupfield"></a>Fout code: DynamicsInvalidTargetForMultiTargetLookupField
 
 - **Bericht**: `The provided target: '%targetName;' is not a valid target of field: '%fieldName;'. Valid targets are: '%validTargetNames;'`
 
@@ -570,7 +541,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Geef een geldige entiteits naam op voor het opzoek veld met meerdere doelen.
 
 
-### <a name="error-code--dynamicsinvalidtypeformultitargetlookupfield"></a>Fout code: DynamicsInvalidTypeForMultiTargetLookupField
+### <a name="error-code-dynamicsinvalidtypeformultitargetlookupfield"></a>Fout code: DynamicsInvalidTypeForMultiTargetLookupField
 
 - **Bericht**: `The provided target type is not a valid string. Field: '%fieldName;'.`
 
@@ -579,18 +550,18 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Geef een geldige teken reeks op in de kolom multi-doel lookup-doel.
 
 
-### <a name="error-code--dynamicsfailedtorequetserver"></a>Fout code: DynamicsFailedToRequetServer
+### <a name="error-code-dynamicsfailedtorequetserver"></a>Fout code: DynamicsFailedToRequetServer
 
 - **Bericht**: `The Dynamics server or the network is experiencing issues. Check network connectivity or check Dynamics server log for more details.`
 
 - **Oorzaak**: de Dynamics-Server is onstabiel of ontoegankelijk, of het netwerk ondervindt problemen.
 
 - **Aanbeveling**: Controleer de netwerk verbinding of Controleer het logboek van Dynamics Server voor meer informatie. Neem contact op met de ondersteuning voor Dynamics voor meer informatie.
-    
+  
 
 ## <a name="ftp"></a>FTP
 
-### <a name="error-code--ftpfailedtoconnecttoftpserver"></a>Fout code: FtpFailedToConnectToFtpServer
+### <a name="error-code-ftpfailedtoconnecttoftpserver"></a>Fout code: FtpFailedToConnectToFtpServer
 
 - **Bericht**: `Failed to connect to FTP server. Please make sure the provided server information is correct, and try again.`
 
@@ -601,7 +572,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="http"></a>HTTP
 
-### <a name="error-code--httpfilefailedtoread"></a>Fout code: HttpFileFailedToRead
+### <a name="error-code-httpfilefailedtoread"></a>Fout code: HttpFileFailedToRead
 
 - **Bericht**: `Failed to read data from http server. Check the error from http server：%message;`
 
@@ -627,31 +598,20 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="orc-format"></a>ORC-indeling
 
-### <a name="error-code--orcjavainvocationexception"></a>Fout code: OrcJavaInvocationException
+### <a name="error-code-orcjavainvocationexception"></a>Fout code: OrcJavaInvocationException
 
 - **Bericht**: `An error occurred when invoking Java, message: %javaException;.`
+- **Oorzaken en aanbevelingen**: verschillende oorzaken kunnen leiden tot deze fout. Raadpleeg de onderstaande lijst voor mogelijke oorzaak analyse en gerelateerde aanbevelingen.
 
-- **Oorzaak**: wanneer het fout bericht de teken reeksen ' Java. lang. OutOfMemory ', ' Java heap Space ' en ' doubleCapacity ' bevat, is dit doorgaans een probleem met het geheugen beheer in een oudere versie van Integration runtime.
+    | Oorzaak van analyse                                               | Aanbeveling                                               |
+    | :----------------------------------------------------------- | :----------------------------------------------------------- |
+    | Wanneer het fout bericht de teken reeksen ' Java. lang. OutOfMemory ', ' Java heap Space ' en ' doubleCapacity ' bevat, is dit doorgaans een probleem met het geheugen beheer in een oudere versie van Integration runtime. | Als u zelf-hostende Integration Runtime gebruikt, raden we u aan om een upgrade uit te voeren naar de nieuwste versie. |
+    | Wanneer het fout bericht de teken reeks ' Java. lang. OutOfMemory ' bevat, heeft de Integration runtime onvoldoende bronnen om de bestanden te verwerken. | Beperk de gelijktijdige uitvoeringen van de Integration runtime. Voor zelf-hostende IR kunt u omhoog schalen naar een krachtige computer met geheugen dat groter is dan of gelijk is aan 8 GB. |
+    |Als het fout bericht de teken reeks ' NullPointerReference ' bevat, is de oorzaak mogelijk een tijdelijke fout. | Voer de bewerking opnieuw uit. Neem contact op met de ondersteuning als het probleem zich blijft voordoen. |
+    | Als het fout bericht de teken reeks ' BufferOverflowException ' bevat, is de oorzaak mogelijk een tijdelijke fout. | Voer de bewerking opnieuw uit. Neem contact op met de ondersteuning als het probleem zich blijft voordoen. |
+    | Wanneer het fout bericht de teken reeks ' Java. lang. ClassCastException:org. apache. Hadoop. component. serde2. io. HiveCharWritable bevat, kan niet worden geconverteerd naar org. apache. Hadoop. io. Text ', is de oorzaak mogelijk een probleem met een type conversie in Java runtime. Normaal gesp roken betekent dit dat de bron gegevens niet goed kunnen worden verwerkt in Java runtime. | Dit is een gegevens probleem. Probeer een teken reeks te gebruiken in plaats van char of Varchar in ORC-indelings gegevens. |
 
-- **Aanbeveling**: als u gebruikmaakt van zelf-hostende Integration runtime, raden we u aan om een upgrade uit te voeren naar de nieuwste versie.
-
-- **Oorzaak**: wanneer het fout bericht de teken reeks ' Java. lang. OutOfMemory ' bevat, heeft de Integration runtime onvoldoende bronnen om de bestanden te verwerken.
-
-- **Aanbeveling**: Beperk de gelijktijdige uitvoeringen van de Integration runtime. Voor zelf-hostende IR kunt u omhoog schalen naar een krachtige computer met geheugen dat groter is dan of gelijk is aan 8 GB.
-
-- **Oorzaak**: wanneer het fout bericht de teken reeks ' NullPointerReference ' bevat, is de oorzaak mogelijk een tijdelijke fout.
-
-- **Aanbeveling**: Voer de bewerking opnieuw uit. Neem contact op met de ondersteuning als het probleem zich blijft voordoen.
-
-- **Oorzaak**: wanneer het fout bericht de teken reeks ' BufferOverflowException ' bevat, is de oorzaak mogelijk een tijdelijke fout.
-
-- **Aanbeveling**: Voer de bewerking opnieuw uit. Neem contact op met de ondersteuning als het probleem zich blijft voordoen.
-
-- **Oorzaak**: wanneer het fout bericht de teken reeks ' Java. lang. ClassCastException:org. apache. Hadoop. component. serde2. io. HiveCharWritable bevat, kan niet worden geconverteerd naar org. apache. Hadoop. io. Text, ' de oorzaak is mogelijk een probleem met type conversie in Java runtime. Normaal gesp roken betekent dit dat de bron gegevens niet goed kunnen worden verwerkt in Java runtime.
-
-- **Aanbeveling**: dit is een gegevens probleem. Probeer een teken reeks te gebruiken in plaats van char of Varchar in ORC-indelings gegevens.
-
-### <a name="error-code--orcdatetimeexceedlimit"></a>Fout code: OrcDateTimeExceedLimit
+### <a name="error-code-orcdatetimeexceedlimit"></a>Fout code: OrcDateTimeExceedLimit
 
 - **Bericht**: `The Ticks value '%ticks;' for the datetime column must be between valid datetime ticks range -621355968000000000 and 2534022144000000000.`
 
@@ -662,24 +622,19 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="parquet-format"></a>Parquet-indeling
 
-### <a name="error-code--parquetjavainvocationexception"></a>Fout code: ParquetJavaInvocationException
+### <a name="error-code-parquetjavainvocationexception"></a>Fout code: ParquetJavaInvocationException
 
 - **Bericht**: `An error occurred when invoking java, message: %javaException;.`
 
-- **Oorzaak**: wanneer het fout bericht de teken reeksen ' Java. lang. OutOfMemory ', ' Java heap Space ' en ' doubleCapacity ' bevat, is dit doorgaans een probleem met het geheugen beheer in een oude versie van Integration runtime.
+- **Oorzaken en aanbevelingen**: verschillende oorzaken kunnen leiden tot deze fout. Raadpleeg de onderstaande lijst voor mogelijke oorzaak analyse en gerelateerde aanbevelingen.
 
-- **Aanbeveling**: als u een zelf-hostende IR gebruikt en de versie eerder is dan 3.20.7159.1, raden we u aan om een upgrade uit te voeren naar de meest recente versie.
+    | Oorzaak van analyse                                               | Aanbeveling                                               |
+    | :----------------------------------------------------------- | :----------------------------------------------------------- |
+    | Als het fout bericht de teken reeksen ' Java. lang. OutOfMemory ', ' Java heap Space ' en ' doubleCapacity ' bevat, is dit doorgaans een probleem met het geheugen beheer in een oude versie van Integration Runtime. | Als u een zelf-hostende IR gebruikt en de versie eerder is dan 3.20.7159.1, raden we u aan om een upgrade uit te voeren naar de meest recente versie. |
+    | Wanneer het fout bericht de teken reeks ' Java. lang. OutOfMemory ' bevat, heeft de Integration runtime onvoldoende bronnen om de bestanden te verwerken. | Beperk de gelijktijdige uitvoeringen van de Integration runtime. Voor zelf-hostende IR schaalt u tot een krachtige computer met een geheugen dat gelijk is aan of groter is dan 8 GB. |
+    | Wanneer het fout bericht de teken reeks ' NullPointerReference ' bevat, is dit mogelijk een tijdelijke fout. | Voer de bewerking opnieuw uit. Neem contact op met de ondersteuning als het probleem zich blijft voordoen. |
 
-- **Oorzaak**: wanneer het fout bericht de teken reeks ' Java. lang. OutOfMemory ' bevat, heeft de Integration runtime onvoldoende bronnen om de bestanden te verwerken.
-
-- **Aanbeveling**: Beperk de gelijktijdige uitvoeringen van de Integration runtime. Voor zelf-hostende IR schaalt u tot een krachtige computer met een geheugen dat gelijk is aan of groter is dan 8 GB.
-
-- **Oorzaak**: wanneer het fout bericht de teken reeks ' NullPointerReference ' bevat, is het mogelijk een tijdelijke fout.
-
-- **Aanbeveling**: Voer de bewerking opnieuw uit. Neem contact op met de ondersteuning als het probleem zich blijft voordoen.
-
-
-### <a name="error-code--parquetinvalidfile"></a>Fout code: ParquetInvalidFile
+### <a name="error-code-parquetinvalidfile"></a>Fout code: ParquetInvalidFile
 
 - **Bericht**: `File is not a valid Parquet file.`
 
@@ -688,7 +643,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer of de invoer een geldig Parquet-bestand is.
 
 
-### <a name="error-code--parquetnotsupportedtype"></a>Fout code: ParquetNotSupportedType
+### <a name="error-code-parquetnotsupportedtype"></a>Fout code: ParquetNotSupportedType
 
 - **Bericht**: `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
 
@@ -697,7 +652,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer de bron gegevens met behulp van [ondersteunde bestands indelingen en compressie-codecs op basis van de kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs).
 
 
-### <a name="error-code--parquetmisseddecimalprecisionscale"></a>Fout code: ParquetMissedDecimalPrecisionScale
+### <a name="error-code-parquetmisseddecimalprecisionscale"></a>Fout code: ParquetMissedDecimalPrecisionScale
 
 - **Bericht**: `Decimal Precision or Scale information is not found in schema for column: %column;.`
 
@@ -706,7 +661,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: de bron geeft niet de juiste precisie en schaal informatie weer. Controleer de kolom probleem voor de informatie.
 
 
-### <a name="error-code--parquetinvaliddecimalprecisionscale"></a>Fout code: ParquetInvalidDecimalPrecisionScale
+### <a name="error-code-parquetinvaliddecimalprecisionscale"></a>Fout code: ParquetInvalidDecimalPrecisionScale
 
 - **Bericht**: `Invalid Decimal Precision or Scale. Precision: %precision; Scale: %scale;.`
 
@@ -715,7 +670,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Raadpleeg de kolom probleem voor Precision en scale.
 
 
-### <a name="error-code--parquetcolumnnotfound"></a>Fout code: ParquetColumnNotFound
+### <a name="error-code-parquetcolumnnotfound"></a>Fout code: ParquetColumnNotFound
 
 - **Bericht**: `Column %column; does not exist in Parquet file.`
 
@@ -724,7 +679,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer de toewijzingen in de activiteit. Zorg ervoor dat de bron kolom kan worden toegewezen aan de juiste Sink-kolom.
 
 
-### <a name="error-code--parquetinvaliddataformat"></a>Fout code: ParquetInvalidDataFormat
+### <a name="error-code-parquetinvaliddataformat"></a>Fout code: ParquetInvalidDataFormat
 
 - **Bericht**: `Incorrect format of %srcValue; for converting to %dstType;.`
 
@@ -733,7 +688,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer de bron gegevens of geef het juiste gegevens type voor deze kolom op in de kolom toewijzing van de Kopieer activiteit. Zie [ondersteunde bestands indelingen en compressie-codecs per Kopieer activiteit in azure Data Factory](https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs)voor meer informatie.
 
 
-### <a name="error-code--parquetdatacountnotmatchcolumncount"></a>Fout code: ParquetDataCountNotMatchColumnCount
+### <a name="error-code-parquetdatacountnotmatchcolumncount"></a>Fout code: ParquetDataCountNotMatchColumnCount
 
 - **Bericht**: `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
 
@@ -742,7 +697,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: dubbel Controleer of het aantal bron kolommen gelijk is aan het aantal Sink-kolommen in ' mapping '.
 
 
-### <a name="error-code--parquetdatatypenotmatchcolumntype"></a>Fout code: ParquetDataTypeNotMatchColumnType
+### <a name="error-code-parquetdatatypenotmatchcolumntype"></a>Fout code: ParquetDataTypeNotMatchColumnType
 
 - **Bericht**: `The data type %srcType; is not match given column type %dstType; at column '%columnIndex;'.`
 
@@ -751,7 +706,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Geef een juist type op in mapping. sink.
 
 
-### <a name="error-code--parquetbridgeinvaliddata"></a>Fout code: ParquetBridgeInvalidData
+### <a name="error-code-parquetbridgeinvaliddata"></a>Fout code: ParquetBridgeInvalidData
 
 - **Bericht**: `%message;`
 
@@ -760,7 +715,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Voer de bewerking opnieuw uit. Als het probleem zich blijft voordoen, neemt u contact met ons op.
 
 
-### <a name="error-code--parquetunsupportedinterpretation"></a>Fout code: ParquetUnsupportedInterpretation
+### <a name="error-code-parquetunsupportedinterpretation"></a>Fout code: ParquetUnsupportedInterpretation
 
 - **Bericht**: `The given interpretation '%interpretation;' of Parquet format is not supported.`
 
@@ -769,7 +724,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: ' ParquetInterpretFor ' mag niet ' sparkSql ' zijn.
 
 
-### <a name="error-code--parquetunsupportfilelevelcompressionoption"></a>Fout code: ParquetUnsupportFileLevelCompressionOption
+### <a name="error-code-parquetunsupportfilelevelcompressionoption"></a>Fout code: ParquetUnsupportFileLevelCompressionOption
 
 - **Bericht**: `File level compression is not supported for Parquet.`
 
@@ -778,7 +733,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Verwijder ' CompressionType ' in de payload.
 
 
-### <a name="error-code--usererrorjniexception"></a>Fout code: UserErrorJniException
+### <a name="error-code-usererrorjniexception"></a>Fout code: UserErrorJniException
 
 - **Bericht**: `Cannot create JVM: JNI return code [-6][JNI call failed: Invalid arguments.]`
 
@@ -818,7 +773,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="rest"></a>REST
 
-### <a name="error-code--restsinkcallfailed"></a>Fout code: RestSinkCallFailed
+### <a name="error-code-restsinkcallfailed"></a>Fout code: RestSinkCallFailed
 
 - **Bericht**: `Rest Endpoint responded with Failure from server. Check the error from server:%message;`
 
@@ -850,7 +805,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="sftp"></a>SFTP
 
-#### <a name="error-code--sftpoperationfail"></a>Fout code: SftpOperationFail
+#### <a name="error-code-sftpoperationfail"></a>Fout code: SftpOperationFail
 
 - **Bericht**: `Failed to '%operation;'. Check detailed error from SFTP.`
 
@@ -859,7 +814,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Raadpleeg de fout Details van SFTP.
 
 
-### <a name="error-code--sftprenameoperationfail"></a>Fout code: SftpRenameOperationFail
+### <a name="error-code-sftprenameoperationfail"></a>Fout code: SftpRenameOperationFail
 
 - **Bericht**: `Failed to rename the temp file. Your SFTP server doesn't support renaming temp file, set "useTempFileRename" as false in copy sink to disable uploading to temp file.`
 
@@ -868,7 +823,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Stel ' useTempFileRename ' in als False in de Kopieer-Sink om het uploaden naar het tijdelijke bestand uit te scha kelen.
 
 
-### <a name="error-code--sftpinvalidsftpcredential"></a>Fout code: SftpInvalidSftpCredential
+### <a name="error-code-sftpinvalidsftpcredential"></a>Fout code: SftpInvalidSftpCredential
 
 - **Bericht**: `Invalid SFTP credential provided for '%type;' authentication type.`
 
@@ -932,15 +887,15 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Oplossing**: als u wilt vaststellen of de kolom AccMngr bestaat, controleert u de configuratie van uw gegevensset door de kolom doel gegevensset te koppelen.
 
 
-### <a name="error-code--sftpfailedtoconnecttosftpserver"></a>Fout code: SftpFailedToConnectToSftpServer
+### <a name="error-code-sftpfailedtoconnecttosftpserver"></a>Fout code: SftpFailedToConnectToSftpServer
 
 - **Bericht**: `Failed to connect to SFTP server '%server;'.`
 
-- **Oorzaak**: als het fout bericht de teken reeks ' Lees bewerking van socket heeft na 30000 milliseconden een time-out heeft, ' een mogelijke oorzaak is dat er een onjuist gekoppeld Service type voor de sftp-server wordt gebruikt. U kunt bijvoorbeeld de gekoppelde FTP-service gebruiken om verbinding te maken met de SFTP-server.
+- **Oorzaak**: als het fout bericht de teken reeks ' Lees bewerking van socket heeft na 30.000 milliseconden, een time-out heeft, is een mogelijke oorzaak dat er een onjuist gekoppeld Service type voor de sftp-server wordt gebruikt. U kunt bijvoorbeeld de gekoppelde FTP-service gebruiken om verbinding te maken met de SFTP-server.
 
 - **Aanbeveling**: Controleer de poort van de doel server. SFTP gebruikt standaard poort 22.
 
-- **Oorzaak**: als het fout bericht de teken reeks ' server antwoord heeft geen SSH-protocol-id bevat ', een mogelijke oorzaak is dat de sftp-server de verbinding heeft beperkt. Data Factory maakt het mogelijk om meerdere verbindingen te maken om te downloaden van de SFTP-server, en soms wordt er een SFTP-server beperking aangetroffen. Normaal gesp roken retour neren verschillende servers verschillende fouten wanneer er beperkingen optreden.
+- **Oorzaak**: als het fout bericht de teken reeks ' server antwoord heeft geen SSH-protocol-id ' bevat, kan een mogelijke oorzaak zijn dat de sftp-server de verbinding heeft beperkt. Data Factory maakt het mogelijk om meerdere verbindingen te maken om te downloaden van de SFTP-server, en soms wordt er een SFTP-server beperking aangetroffen. Normaal gesp roken retour neren verschillende servers verschillende fouten wanneer er beperkingen optreden.
 
 - **Aanbeveling**:  
 
@@ -953,7 +908,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="sharepoint-online-list"></a>SharePoint Online-lijst
 
-### <a name="error-code--sharepointonlineauthfailed"></a>Fout code: SharePointOnlineAuthFailed
+### <a name="error-code-sharepointonlineauthfailed"></a>Fout code: SharePointOnlineAuthFailed
 
 - **Bericht**: `The access token generated failed, status code: %code;, error message: %message;.`
 
@@ -964,7 +919,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="xml-format"></a>XML-indeling
 
-### <a name="error-code--xmlsinknotsupported"></a>Fout code: XmlSinkNotSupported
+### <a name="error-code-xmlsinknotsupported"></a>Fout code: XmlSinkNotSupported
 
 - **Bericht**: `Write data in XML format is not supported yet, choose a different format!`
 
@@ -973,7 +928,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: gebruik een gegevensset in een andere indeling dan die van de Sink-gegevensset.
 
 
-### <a name="error-code--xmlattributecolumnnameconflict"></a>Fout code: XmlAttributeColumnNameConflict
+### <a name="error-code-xmlattributecolumnnameconflict"></a>Fout code: XmlAttributeColumnNameConflict
 
 - **Bericht**: `Column names %attrNames;' for attributes of element '%element;' conflict with that for corresponding child elements, and the attribute prefix used is '%prefix;'.`
 
@@ -982,7 +937,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Stel een andere waarde in voor de eigenschap ' attributePrefix '.
 
 
-### <a name="error-code--xmlvaluecolumnnameconflict"></a>Fout code: XmlValueColumnNameConflict
+### <a name="error-code-xmlvaluecolumnnameconflict"></a>Fout code: XmlValueColumnNameConflict
 
 - **Bericht**: `Column name for the value of element '%element;' is '%columnName;' and it conflicts with the child element having the same name.`
 
@@ -991,7 +946,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Stel een andere waarde in voor de eigenschap ' valueColumn '.
 
 
-### <a name="error-code--xmlinvalid"></a>Fout code: XmlInvalid
+### <a name="error-code-xmlinvalid"></a>Fout code: XmlInvalid
 
 - **Bericht**: `Input XML file '%file;' is invalid with parsing error '%error;'.`
 
@@ -1002,7 +957,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
 ## <a name="general-copy-activity-error"></a>Fout met algemene Kopieer activiteit
 
-### <a name="error-code--jrenotfound"></a>Fout code: JreNotFound
+### <a name="error-code-jrenotfound"></a>Fout code: JreNotFound
 
 - **Bericht**: `Java Runtime Environment cannot be found on the Self-hosted Integration Runtime machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the Self-hosted Integration Runtime machine.`
 
@@ -1011,7 +966,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 - **Aanbeveling**: Controleer uw Integration runtime-omgeving, Zie [zelf-hostende Integration runtime gebruiken](https://docs.microsoft.com/azure/data-factory/format-parquet#using-self-hosted-integration-runtime).
 
 
-### <a name="error-code--wildcardpathsinknotsupported"></a>Fout code: WildcardPathSinkNotSupported
+### <a name="error-code-wildcardpathsinknotsupported"></a>Fout code: WildcardPathSinkNotSupported
 
 - **Bericht**: `Wildcard in path is not supported in sink dataset. Fix the path: '%setting;'.`
 

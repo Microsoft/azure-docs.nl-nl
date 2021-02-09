@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 71e74789654d2df91d9a087eaaf8d8f2a2664f7b
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 86d0c75d8b4c7c331e3e7ad90271e3fb42ff1964
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664109"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980725"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Azure Digital Apparaatdubbels integreren met de Azure signalerings service
 
@@ -69,7 +69,7 @@ Ga eerst naar de browser waar de Azure Portal is geopend en voer de volgende sta
 
 Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open de code oplossing in de map *Digital-apparaatdubbels-samples-master > ADTSampleApp* . Voer vervolgens de volgende stappen uit om de functies te maken:
 
-1. Maak een nieuwe C#-klasse met de naam **SignalRFunctions.cs** in het *SampleFunctionsApp* -project.
+1. Maak in het project *SampleFunctionsApp* een nieuwe C#-klasse met de naam **SignalRFunctions.cs**.
 
 1. Vervang de inhoud van het klassen bestand door de volgende code:
     
@@ -82,7 +82,9 @@ Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open 
 
     Hiermee worden eventuele afhankelijkheids problemen in de klasse opgelost.
 
-Publiceer vervolgens uw functie in azure, met behulp van de stappen die worden beschreven in het [gedeelte *de app publiceren*](tutorial-end-to-end.md#publish-the-app) van de zelf studie *een end-to-end oplossing verbinden* . U kunt het publiceren naar dezelfde app service/function-app die u in de end-to-end-zelf studie vereisten hebt gebruikt, of een nieuwe maken, maar u kunt deze ook gebruiken om de duplicatie te minimaliseren. U kunt de app ook publiceren met de volgende stappen:
+Publiceer vervolgens uw functie in azure, met behulp van de stappen die worden beschreven in het [gedeelte *de app publiceren*](tutorial-end-to-end.md#publish-the-app) van de zelf studie *een end-to-end oplossing verbinden* . U kunt het publiceren naar dezelfde app service/function-app die u hebt gebruikt in de end-to-end [-zelf studie](#prerequisites), of een nieuwe maken, maar u kunt ook dezelfde versie gebruiken om de duplicatie te minimaliseren. 
+
+Voltooi vervolgens de app met de volgende stappen:
 1. De **http-eind punt-URL** van de *onderhandelings* functie verzamelen. Ga hiervoor naar de pagina [functie-apps](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp) van Azure Portal en selecteer de functie-app in de lijst. Selecteer in het menu app *functies* en kies de functie *onderhandelen* .
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/functions-negotiate.png" alt-text="Azure Portal weer gave van de functie-app, waarbij ' functies ' in het menu is gemarkeerd. De lijst met functies wordt weer gegeven op de pagina en de functie Negotiate is ook gemarkeerd.":::
@@ -124,23 +126,11 @@ Klik op **Maken** op de pagina *Gebeurtenisabonnement maken*.
 
 ## <a name="configure-and-run-the-web-app"></a>De web-app configureren en uitvoeren
 
-In deze sectie ziet u het resultaat in actie. Eerst start u de voor beeld- **app voor gesimuleerde apparaten** die telemetriegegevens verzendt via uw Azure Digital apparaatdubbels-exemplaar. Vervolgens configureert u de voor **beeld-web-app** van de client om verbinding te maken met de Azure seingevings stroom die u hebt ingesteld. Daarna moet u de gegevens kunnen zien die de voor beeld-web-app in realtime bijwerken.
-
-### <a name="run-the-device-simulator"></a>De Device Simulator uitvoeren
-
-Tijdens de end-to-end-zelf studie hebt u [de Device Simulator geconfigureerd voor het](tutorial-end-to-end.md#configure-and-run-the-simulation) verzenden van gegevens via een IOT hub en naar uw Azure Digital apparaatdubbels-exemplaar.
-
-Nu hoeft u alleen maar het simulator-project te starten, dat zich bevindt in *Digital-apparaatdubbels-samples-master > DeviceSimulator > DeviceSimulator. SLN*. Als u Visual Studio gebruikt, kunt u het project openen en dit vervolgens uitvoeren met deze knop op de werk balk:
-
-:::image type="content" source="media/how-to-integrate-azure-signalr/start-button-simulator.png" alt-text="De startknop van Visual Studio (project DeviceSimulator)":::
-
-Er wordt een consolevenster geopend waar gesimuleerde telemetrieberichten met temperaturen worden weergegeven. Deze worden via uw Azure Digital Apparaatdubbels-exemplaar verzonden, waar ze vervolgens worden opgehaald door de Azure-functies en-Signa lering.
-
-U hoeft niets anders te doen in deze console, maar laat deze draaien terwijl u de volgende stappen voltooit.
+In deze sectie ziet u het resultaat in actie. Configureer eerst de voor **beeld-client-web-app** om verbinding te maken met de Azure seingevings stroom die u hebt ingesteld. Vervolgens start u de voor beeld- **app voor gesimuleerde apparaten** die telemetriegegevens verzendt via uw Azure Digital apparaatdubbels-exemplaar. Daarna bekijkt u de voor beeld-web-app om de gesimuleerde apparaatgegevens te zien die de voor beeld-web-app in realtime bijwerken.
 
 ### <a name="configure-the-sample-client-web-app"></a>De voor beeld-client-web-app configureren
 
-Vervolgens stelt u het voor **beeld van de web-app voor Signa lering integratie** in met de volgende stappen:
+Stel het voor **beeld van een signalerings integratie-web-app** in met de volgende stappen:
 1. Open met behulp van Visual Studio of een wille keurige code-editor de map ungezipted _**Azure_Digital_Twins_SignalR_integration_web_app_sample**_ die u hebt gedownload in het gedeelte [*de voorbeeld toepassingen downloaden*](#download-the-sample-applications) .
 
 1. Open het bestand *src/App.js* en vervang de URL in `HubConnectionBuilder` door de http-eind punt-URL van de **onderhandelings** functie die u eerder hebt opgeslagen:
@@ -161,6 +151,18 @@ Stel vervolgens in het Azure Portal machtigingen in uw functie-app in:
 1. Schuif omlaag in het menu exemplaar en selecteer *CORS*. Voeg op de CORS-pagina `http://localhost:3000` als een toegestane oorsprong toe door deze in het lege vak in te voeren. Schakel het selectie vakje *Access-Control-Allow-credentials* in en klik op *Opslaan*.
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/cors-setting-azure-function.png" alt-text="CORS-instelling in azure function":::
+
+### <a name="run-the-device-simulator"></a>De Device Simulator uitvoeren
+
+Tijdens de end-to-end-zelf studie hebt u [de Device Simulator geconfigureerd voor het](tutorial-end-to-end.md#configure-and-run-the-simulation) verzenden van gegevens via een IOT hub en naar uw Azure Digital apparaatdubbels-exemplaar.
+
+Nu hoeft u alleen maar het simulator-project te starten, dat zich bevindt in *Digital-apparaatdubbels-samples-master > DeviceSimulator > DeviceSimulator. SLN*. Als u Visual Studio gebruikt, kunt u het project openen en dit vervolgens uitvoeren met deze knop op de werk balk:
+
+:::image type="content" source="media/how-to-integrate-azure-signalr/start-button-simulator.png" alt-text="De startknop van Visual Studio (project DeviceSimulator)":::
+
+Er wordt een consolevenster geopend waar gesimuleerde telemetrieberichten met temperaturen worden weergegeven. Deze worden via uw Azure Digital Apparaatdubbels-exemplaar verzonden, waar ze vervolgens worden opgehaald door de Azure-functies en-Signa lering.
+
+U hoeft niets anders in deze console te doen, maar blijft actief terwijl u de volgende stap voltooit.
 
 ### <a name="see-the-results"></a>De resultaten weergeven
 

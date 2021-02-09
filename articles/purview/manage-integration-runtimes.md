@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/03/2021
-ms.openlocfilehash: 72efcacf20b0d67c9d6a8255426a09f9813f17b4
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 9276f845c95b5e736180159b282ddedc33523c17
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550495"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980742"
 ---
 # <a name="create-and-manage-a-self-hosted-integration-runtime"></a>Een zelf-hostende Integration runtime maken en beheren
 
@@ -41,7 +41,7 @@ In dit artikel wordt beschreven hoe u een zelf-hostende Integration runtime (SHI
 
    - Kopieer en plak de verificatie sleutel.
 
-   - Down load de zelf-hostende Integration runtime van [Azure Data Factory Integration runtime](https://www.microsoft.com/download/details.aspx?id=39717) op een lokale Windows-computer. Voer het installatieprogramma uit.
+   - Down load de zelf-hostende Integration runtime van [Microsoft Integration runtime](https://www.microsoft.com/download/details.aspx?id=39717) op een lokale Windows-computer. Voer het installatieprogramma uit.
 
    - Plak op de pagina **Integration runtime (zelf-hostend) registreren** een van de twee sleutels die u eerder hebt opgeslagen en selecteer **registreren**.
 

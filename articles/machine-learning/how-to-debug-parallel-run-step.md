@@ -11,12 +11,12 @@ ms.reviewer: larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 09/23/2020
-ms.openlocfilehash: 6ea796fb2ec038a03595d37d903fe8ee3ce904db
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: a0f813253520d76731a9b49a89b0bcace7c2ef34
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070266"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979161"
 ---
 # <a name="troubleshooting-the-parallelrunstep"></a>Probleem met de ParallelRunStep oplossen
 
@@ -171,7 +171,16 @@ Als u wilt weten hoe elk knoop punt het Score script heeft uitgevoerd, bekijkt u
     - Het totale aantal items, het aantal items dat is verwerkt en het aantal mislukte items.
     - De tijd van begin tijd, duur, proces tijd en uitvoerings methode.
 
-U kunt ook informatie vinden over het resource gebruik van de processen voor elke werk nemer. Deze informatie bevindt zich in CSV-indeling en bevindt zich op `~/logs/sys/perf/<ip_address>/node_resource_usage.csv` . Informatie over elk proces is beschikbaar onder `~logs/sys/perf/<ip_address>/processes_resource_usage.csv` .
+U kunt ook de resultaten van periodieke controles van het resource gebruik voor elk knoop punt weer geven. De logboek bestanden en installatie bestanden bevinden zich in deze map:
+
+- `~/logs/perf`: Stel `--resource_monitor_interval` in dat het controle-interval in seconden moet worden gewijzigd. Het standaard interval is `600` ongeveer 10 minuten. Als u de bewaking wilt stoppen, stelt u de waarde in op `0` . Elke `<ip_address>` map bevat:
+
+    - `os/`: Informatie over alle actieve processen in het knoop punt. Met één controle wordt de opdracht van een besturings systeem uitgevoerd en wordt het resultaat opgeslagen in een bestand. In Linux is dit de opdracht `ps` . Gebruik in Windows `tasklist` .
+        - `%Y%m%d%H`: De naam van de submap is de tijd tot uur.
+            - `processes_%M`: Het bestand eindigt op de minuut van de controle tijd.
+    - `node_disk_usage.csv`: Gedetailleerd schijf gebruik van het knoop punt.
+    - `node_resource_usage.csv`: Overzicht van resource gebruik van het knoop punt.
+    - `processes_resource_usage.csv`: Overzicht van resource gebruik van elk proces.
 
 ### <a name="how-do-i-log-from-my-user-script-from-a-remote-context"></a>Hoe kan ik logboek van mijn gebruikers script vanuit een externe context?
 
@@ -233,25 +242,25 @@ Gebruiker kan invoer gegevens sets door geven met Service-Principal-verificatie 
 
 ```python
 service_principal = ServicePrincipalAuthentication(
-    tenant_id="**_",
-    service_principal_id="_*_",
-    service_principal_password="_*_")
+    tenant_id="***",
+    service_principal_id="***",
+    service_principal_password="***")
  
 ws = Workspace(
-    subscription_id="_*_",
-    resource_group="_*_",
-    workspace_name="_*_",
+    subscription_id="***",
+    resource_group="***",
+    workspace_name="***",
     auth=service_principal
     )
  
-default_blob_store = ws.get_default_datastore() # or Datastore(ws, '_*_datastore-name_*_') 
-ds = Dataset.File.from_files(default_blob_store, '_*path**_')
-registered_ds = ds.register(ws, '_*_dataset-name_*_', create_new_version=True)
+default_blob_store = ws.get_default_datastore() # or Datastore(ws, '***datastore-name***') 
+ds = Dataset.File.from_files(default_blob_store, '**path***')
+registered_ds = ds.register(ws, '***dataset-name***', create_new_version=True)
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
 
-_ Bekijk deze [Jupyter-notebooks die Azure machine learning pijp lijnen demonstreren](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
+* Bekijk deze [Jupyter-notebooks die Azure machine learning pijp lijnen demonstreren](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 
 * Raadpleeg de SDK-Naslag informatie voor hulp met het pakket met de stappen voor de [azureml-pipelines](/python/api/azureml-pipeline-steps/azureml.pipeline.steps?preserve-view=true&view=azure-ml-py) . Referentie [documentatie](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?preserve-view=true&view=azure-ml-py) voor de klasse ParallelRunStep weer geven.
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/04/2020
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 3289db9b0f27aa528e027ab2e355852947187e76
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: 9a4bda216a91efc8139c1f87c5c350c50ae8741d
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98187153"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980933"
 ---
 1. Selecteer vanuit het menu van Azure Portal of op de **startpagina** de optie **Een resource maken**.
 
@@ -27,7 +27,7 @@ ms.locfileid: "98187153"
     | **[Resourcegroep](../articles/azure-resource-manager/management/overview.md)** |  *myResourceGroup* | Naam voor de nieuwe resourcegroep waarin uw functie-app moet worden gemaakt. |
     | **Naam van de functie-app** | Wereldwijd unieke naam | Naam waarmee uw nieuwe functie-app wordt aangeduid. Geldige tekens zijn `a-z` (hoofdlettergevoelig), `0-9` en `-`.  |
     |**Publiceren**| Code | Optie voor het publiceren van codebestanden of een Docker-container. |
-    | **Runtimestack** | Voorkeurstaal | Kies een runtime die uw favoriete functieprogrammeertaal ondersteunt. Bewerken in de portal wordt momenteel niet ondersteund voor [Python-ontwikkeling](../articles/azure-functions/functions-reference-python.md). |
+    | **Runtimestack** | Voorkeurstaal | Kies een runtime die uw favoriete functieprogrammeertaal ondersteunt. Bewerken in de portal is alleen beschikbaar voor Java script-, Power shell-, type script-en C#-scripts. De functies C# Class Library, Java en python moeten [lokaal worden ontwikkeld](../articles/azure-functions/functions-develop-local.md#local-development-environments).  |
     |**Versie**| Versienummer | Kies de versie van uw geïnstalleerde runtime. |
     |**Regio**| Voorkeursregio | Kies een [regio](https://azure.microsoft.com/regions/) in de buurt of in de buurt van andere services die door uw functie worden gebruikt. |
 

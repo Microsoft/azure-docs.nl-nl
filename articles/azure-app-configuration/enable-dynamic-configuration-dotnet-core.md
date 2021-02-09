@@ -15,16 +15,16 @@ ms.custom: devx-track-csharp
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.author: abarora
-ms.openlocfilehash: aebe7772c673162d60f35d6a81725ba1452d16a8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 95c48bded224a40879328dba5861b3564f0ebcf8
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012353"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979858"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-a-net-core-app"></a>Zelfstudie: Dynamische configuratie in een .Net Core-app gebruiken
 
-De App Configuration .NET Core-clientbibliotheek biedt ondersteuning voor het bijwerken van een set configuratie-instellingen op aanvraag zonder dat een toepassing opnieuw hoeft te worden opgestart. Dit kan worden geïmplementeerd door eerst een exemplaar van `IConfigurationRefresher` op te halen uit de opties voor de configuratieprovider en vervolgens `TryRefreshAsync` aan te roepen voor dat exemplaar, waar dan ook in uw code.
+De app-configuratie .NET core client library ondersteunt het bijwerken van configuratie op aanvraag zonder dat een toepassing opnieuw moet worden opgestart. Dit kan worden geïmplementeerd door eerst een exemplaar van `IConfigurationRefresher` op te halen uit de opties voor de configuratieprovider en vervolgens `TryRefreshAsync` aan te roepen voor dat exemplaar, waar dan ook in uw code.
 
 Om de instellingen actueel te houden en te veel aanroepen naar de configuratieopslag te voorkomen, wordt er voor elke instelling een cache gebruikt. Totdat de in de cache opgeslagen waarde van een instelling is verlopen, wordt de waarde niet door de vernieuwingsbewerking bijgewerkt, zelfs niet wanneer de waarde is gewijzigd in de configuratieopslag. De standaardvervaltijd voor elke aanvraag is 30 seconden, maar kan indien nodig worden gewijzigd.
 

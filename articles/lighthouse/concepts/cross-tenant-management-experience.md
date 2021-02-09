@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 02/02/2021
+ms.date: 02/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 41047a35328d4eac370d98a6d660f20e5006a2bb
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: b76723c9ea94581561f5bdb04ea1fd8335da77b7
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805171"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981082"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -165,6 +165,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 Ondersteunings aanvragen:
 
 - [Ondersteunings aanvragen openen vanuit **Help en ondersteuning**](../../azure-portal/supportability/how-to-create-azure-support-request.md#getting-started) in de Azure portal voor gedelegeerde resources (het ondersteunings abonnement selecteren dat beschikbaar is voor het gedelegeerde bereik)
+- Gebruik de [Azure quota API](/rest/api/reserved-vm-instances/quotaapi) voor het weer geven en beheren van Azure-service quota's voor gedelegeerde klant resources
 
 ## <a name="current-limitations"></a>Huidige beperkingen
 

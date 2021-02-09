@@ -12,14 +12,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: a6ba9c02b384c1b30977d962659983d600c7b2ac
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bd13712d137ec5a1fdfa6dec8e6f6d1e0a7432cb
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95545717"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833164"
 ---
 # <a name="create-a-monitor-in-connection-monitor-by-using-the-azure-portal"></a>Een monitor maken in de verbindings monitor met behulp van de Azure Portal
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt ook geen nieuwe monitors voor verbinding toevoegen in de verbindings monitor (klassiek). U kunt de tests en verbindings monitors die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter ](migrate-to-connection-monitor-from-network-performance-monitor.md) of  [migreert u van het klassieke verbindings](migrate-to-connection-monitor-from-connection-monitor-classic.md) controleprogramma naar de nieuwe verbindings monitor in azure Network Watcher vóór 29 februari 2024.
 
 Meer informatie over het gebruik van verbindings monitor om de communicatie tussen uw resources te bewaken. In dit artikel wordt beschreven hoe u een monitor maakt met behulp van de Azure Portal. De verbindings monitor ondersteunt hybride en Azure-Cloud implementaties.
 

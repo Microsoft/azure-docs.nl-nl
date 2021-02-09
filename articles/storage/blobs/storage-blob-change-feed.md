@@ -3,17 +3,17 @@ title: Feed wijzigen in Azure Blob Storage | Microsoft Docs
 description: Meer informatie over wijzigingen in feed-Logboeken in Azure Blob Storage en hoe u deze kunt gebruiken.
 author: normesta
 ms.author: normesta
-ms.date: 09/08/2020
+ms.date: 02/08/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: 7174f7dd53387de9a569a5ddcadc08c32692c749
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9a439541880cc8e20457edc8d24c5600ba2747c8
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997100"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979216"
 ---
 # <a name="change-feed-support-in-azure-blob-storage"></a>Ondersteuning voor feed wijzigen in Azure Blob Storage
 
@@ -21,9 +21,15 @@ Het doel van de wijzigings feed is het bieden van transactie logboeken van alle 
 
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
+## <a name="how-the-change-feed-works"></a>Hoe de wijzigings feed werkt
+
 De wijzigings feed wordt opgeslagen als [blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) in een speciale container in uw opslag account tegen standaard [prijs voor blobs](https://azure.microsoft.com/pricing/details/storage/blobs/) . U kunt de Bewaar periode van deze bestanden beheren op basis van uw vereisten (Zie de [voor waarden](#conditions) van de huidige versie). Wijzigings gebeurtenissen worden toegevoegd aan de wijzigings feed als records in de [Apache Avro](https://avro.apache.org/docs/1.8.2/spec.html) Format-specificatie: een compacte, snelle en binaire indeling die voorziet in uitgebreide gegevens structuren met inline-schema's. Deze indeling wordt veel gebruikt in het Hadoop-ecosysteem, het Stream Analytics en het Azure Data Factory.
 
 U kunt deze logboeken asynchroon, incrementeel of volledig verwerken. Een wille keurig aantal client toepassingen kan onafhankelijk van de wijzigings feed, parallel en in hun eigen tempo lezen. Analyse toepassingen zoals [Apache Drill](https://drill.apache.org/docs/querying-avro-files/) of [Apache Spark](https://spark.apache.org/docs/latest/sql-data-sources-avro.html) kunnen Logboeken rechtstreeks gebruiken als Avro-bestanden, waarmee u ze kunt verwerken tegen lage kosten, met een hoge band breedte en zonder dat u een aangepaste toepassing hoeft te schrijven.
+
+In het volgende diagram ziet u hoe records worden toegevoegd aan de feed voor wijzigingen:
+
+:::image type="content" source="media/storage-blob-change-feed/change-feed-diagram.png" alt-text="Diagram waarin wordt getoond hoe de wijzigings feed werkt om een geordend logboek met wijzigingen in blobs op te geven":::
 
 De ondersteuning voor het wijzigen van feeds is heel geschikt voor scenario's waarin gegevens worden verwerkt op basis van objecten die zijn gewijzigd. Toepassingen kunnen bijvoorbeeld:
 

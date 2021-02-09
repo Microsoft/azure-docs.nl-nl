@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: how-to
-ms.date: 10/11/2020
+ms.date: 02/08/2021
 ms.author: raynew
-ms.openlocfilehash: fa0017b0633d856906609818dd56b5971b1879a7
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 3022b2d4954ffaef71e17ed28dd9b6f141d4da70
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222795"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980487"
 ---
 # <a name="support-for-moving-azure-vms-between-azure-regions"></a>Ondersteuning voor het verplaatsen van virtuele Azure-machines tussen Azure-regio's
 
@@ -116,7 +116,7 @@ Uitbreidingen | Niet ondersteund | Extensies worden niet naar de virtuele machin
 Deze tabel bevat een overzicht van de ondersteuning voor de Azure VM-besturingssysteem schijf, de gegevens schijf en de tijdelijke schijf. Het is belang rijk om te kijken naar de schijfruimte limieten en doelen van de virtuele machine voor [beheerde schijven](../virtual-machines/disks-scalability-targets.md) om prestatie problemen te voor komen.
 
 > [!NOTE]
-> De grootte van de doel-VM moet gelijk zijn aan of groter zijn dan de bron-VM. De para meters die worden gebruikt voor validatie zijn: aantal gegevens schijven, Nic's aantal, beschik bare Cpu's, geheugen in GB. Als dit niet het geval is, wordt er een fout bericht weer gegeven.
+> De grootte van de doel-VM moet gelijk zijn aan of groter zijn dan de bron-VM. De para meters die worden gebruikt voor validatie zijn: aantal gegevens schijven, Nic's aantal, beschik bare Cpu's, geheugen in GB. Als er een fout optreedt, wordt deze sn't.
 
 
 **Onderdeel** | **Ondersteuning** | **Details**
@@ -134,6 +134,8 @@ Beheerde schijf (Premium) | Ondersteund |
 Standard SSD | Ondersteund |
 Generatie 2 (UEFI-opstart) | Ondersteund
 Opslag account voor diagnostische gegevens over opstarten | Niet ondersteund | Schakel deze opnieuw in nadat u de virtuele machine naar de doel regio hebt verplaatst.
+Vm's met Azure Disk Encryption ingeschakeld | Ondersteund | [Meer informatie](tutorial-move-region-encrypted-virtual-machines.md)
+Vm's die versleuteling aan de server zijde gebruiken met door de klant beheerde sleutel | Ondersteund | [Meer informatie](tutorial-move-region-encrypted-virtual-machines.md)
 
 ### <a name="limits-and-data-change-rates"></a>Limieten en snelheid van gegevens wijzigingen
 

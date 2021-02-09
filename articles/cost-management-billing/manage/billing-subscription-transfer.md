@@ -8,15 +8,15 @@ tags: billing,top-support-issue
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 01/06/2021
+ms.date: 02/05/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: ae588708a41c1259628b726a3a471034dba7d131
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 87f29395e716ad3f06a99d6243b080acf86e4310
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601536"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979424"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Eigendom van de facturering van een Azure-abonnement overdragen aan een ander account
 
@@ -80,7 +80,7 @@ Er is slechts één overdrachtsaanvraag tegelijk actief. Een overdrachtsaanvraag
 Een overdrachtsaanvraag annuleren:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Ga naar **Abonnementen** > selecteer het abonnement waarvoor u een overdrachtsaanvraag hebt verzonden > selecteer **Eigendom van facturering overdragen**.
+1. Navigeer naar **abonnementen** > Selecteer het abonnement waarvoor u een aanvraag voor een overdracht hebt verzonden en selecteer vervolgens **eigendom van facturering overdragen**.
 1. Selecteer onder aan de pagina **De overdrachtsaanvraag annuleren**.
 
 :::image type="content" source="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" alt-text="Voorbeeld van het venster Eigendom van facturering overdragen met de optie De overdrachtsaanvraag annuleren" lightbox="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" :::
@@ -88,6 +88,20 @@ Een overdrachtsaanvraag annuleren:
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 Gebruik de volgende gegevens om u te helpen bij het oplossen van eventuele problemen met het overdragen van abonnementen.
+
+### <a name="original-azure-subscription-billing-owner-leaves-your-organization"></a>Oorspronkelijke facturerings eigenaar van het Azure-abonnement verlaat uw organisatie
+
+Het is mogelijk dat de oorspronkelijke eigenaar van de facturering die een Azure-account heeft gemaakt en een Azure-abonnement uw organisatie verlaat. Als deze situatie zich voordoet, is de gebruikers-id niet meer in de Azure Active Directory van de organisatie. Het Azure-abonnement heeft dan geen facturerings eigenaar. Deze situatie voor komt dat iedereen facturerings bewerkingen voor het account kan uitvoeren, met inbegrip van het bekijken en betalen van facturen. Het abonnement kan een status in het verleden hebben. Het abonnement kan uiteindelijk worden uitgeschakeld omdat er geen betaling is. Het abonnement kan uiteindelijk worden verwijderd. Dit is van invloed op elke service die op het abonnement wordt uitgevoerd.
+
+Wanneer een abonnement niet langer een geldige facturerings eigenaar heeft, stuurt Azure een e-mail naar andere eigen aren van facturering, service beheerders, mede beheerders en abonnements eigenaren die hen van de situatie informeren en voorzien ze een koppeling om het eigendom van het abonnement te accepteren. Een van de gebruikers kan de koppeling selecteren om het eigendom van de facturering te accepteren. Zie [facturerings rollen](understand-mca-roles.md) en [klassieke rollen en Azure RBAC-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md)voor meer informatie over facturerings rollen.
+
+Hier volgt een voor beeld van hoe het e-mail bericht eruit ziet.
+
+:::image type="content" source="./media/billing-subscription-transfer/orphaned-subscription-email.png" alt-text="Scherm afbeelding van een voor beeld van een e-mail bericht voor het accepteren van de facturering." lightbox="./media/billing-subscription-transfer/orphaned-subscription-email.png" :::
+
+Daarnaast wordt in azure een banner weer gegeven in het venster Details van het abonnement in de Azure Portal voor facturering van eigen aren, service beheerders, mede beheerders en abonnements eigenaren. Selecteer de koppeling in de banner om eigendom van de facturering te accepteren.
+
+:::image type="content" source="./media/billing-subscription-transfer/orphaned-subscription-example.png" alt-text="Scherm afbeelding met een voor beeld van een abonnement zonder een geldige facturerings eigenaar." lightbox="./media/billing-subscription-transfer/orphaned-subscription-example.png" :::
 
 ### <a name="the-transfer-subscription-option-is-unavailable"></a>De optie 'Abonnement overdragen' is niet beschikbaar
 

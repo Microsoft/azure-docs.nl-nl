@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: drewbat
-ms.openlocfilehash: 4d80c034ab03fed6b9ae2ed0c4c0420afe6f7e32
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 7bd163781203a277f4c9d6866a156c11e4d5d520
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728088"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979569"
 ---
 # <a name="pull-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen voor app-configuratie ophalen met Azure-pijp lijnen
 
@@ -60,7 +60,7 @@ Wijs de juiste app-configuratie functie toe aan de service verbinding die wordt 
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak in een Azure DevOps build-pijp lijn.
 
-1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp** lijnen  >  **pijp lijnen**. Zie  [uw eerste pijp lijn maken](/azure/devops/pipelines/create-first-pipeline?view=azure-devops&tabs=net%2Ctfs-2018-2%2Cbrowser)voor informatie over het bouwen van pijp lijnen.
+1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp** lijnen  >  **pijp lijnen**. Zie  [uw eerste pijp lijn maken](/azure/devops/pipelines/create-first-pipeline?tabs=net%2Ctfs-2018-2%2Cbrowser)voor informatie over het bouwen van pijp lijnen.
       - Als u een nieuwe build-pijp lijn maakt, klikt u op **nieuwe pijp lijn** en selecteert u de opslag plaats voor de pijp lijn. Selecteer de optie **assistent weer geven** aan de rechter kant van de pijp lijn en zoek naar de **Azure-app configuratie** taak.
       - Als u een bestaande build-pijp lijn gebruikt, selecteert u **bewerken** om de pijp lijn te bewerken. Op het tabblad **taken** zoekt u naar de **Azure-app configuratie** taak.
 1. Configureer de vereiste para meters voor de taak om de sleutel waarden uit het app-configuratie archief op te halen. Beschrijvingen van de para meters zijn beschikbaar in de sectie **para meters** hieronder en in knop info naast elke para meter.
@@ -73,10 +73,10 @@ Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie taak in een Azure DevOps release-pijp lijn.
 
-1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Zie [release pipelines](/azure/devops/pipelines/release?view=azure-devops)(Engelstalig) voor informatie over de release pijplijn.
+1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Zie [release pipelines](/azure/devops/pipelines/release)(Engelstalig) voor informatie over de release pijplijn.
 1. Kies een bestaande release pijplijn. Als u er nog geen hebt, klikt u op **nieuwe pijp lijn** om een nieuwe te maken.
 1. Selecteer de knop **bewerken** in de rechter bovenhoek om de release pijplijn te bewerken.
-1. Kies het **stadium** om de taak toe te voegen. Zie voor meer informatie over stadia [fasen, afhankelijkheden en & voor waarden toevoegen](/azure/devops/pipelines/release/environments?view=azure-devops).
+1. Kies het **stadium** om de taak toe te voegen. Zie voor meer informatie over stadia [fasen, afhankelijkheden en & voor waarden toevoegen](/azure/devops/pipelines/release/environments).
 1. Klik op **+** voor "uitvoeren op agent" en voeg vervolgens de taak **configuratie van Azure-app** toe op het tabblad **taken toevoegen** .
 1. Configureer de vereiste para meters in de taak om uw sleutel waarden uit uw app-configuratie archief op te halen. Beschrijvingen van de para meters zijn beschikbaar in de sectie **para meters** hieronder en in knop info naast elke para meter.
       - Stel de para meter van het **Azure-abonnement** in op de naam van de service verbinding die u in een vorige stap hebt gemaakt.

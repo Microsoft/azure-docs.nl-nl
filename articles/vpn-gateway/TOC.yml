@@ -161,7 +161,7 @@
               href: openvpn-azure-ad-mfa.md
             - name: Een VPN-client configureren
               href: openvpn-azure-ad-client.md
-            - name: Info over het downloadbestand van het VPN-profiel voor de client
+            - name: Werken met VPN-client profiel bestanden
               href: about-vpn-profile-download.md
             - name: Intune - VPN-clientprofiel implementeren
               href: vpn-profile-intune.md

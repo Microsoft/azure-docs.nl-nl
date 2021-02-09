@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 0864db8a653ff1d6f89ed0b1c857e51053ff50ff
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: f46a0938ebb8d9fe7e032162120056dca96b9567
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99592600"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979759"
 ---
 # <a name="azure-resources-for-qna-maker"></a>Azure-resources voor QnA Maker
 
@@ -244,74 +244,6 @@ Nadat de resources zijn gemaakt, hebben ze dezelfde naam, met uitzonde ring van 
 > [!TIP]
 > Gebruik een naamgevings Conventie om prijs categorieën aan te geven binnen de naam van de resource of de resource groep. Wanneer er fouten optreden bij het maken van een nieuwe Knowledge Base of het toevoegen van nieuwe documenten, is de Cognitive Search prijs categorie limiet een veelvoorkomend probleem.
 
-### <a name="resource-purposes"></a>Resource doeleinden
-
-Elke Azure-resource die is gemaakt met QnA Maker heeft een specifiek doel:
-
-* QnA Maker resource
-* Cognitive Search resource
-* App Service
-* App-plan service
-* Application Insights-service
-
-
-### <a name="cognitive-search-resource"></a>Cognitive Search resource
-
-De [Cognitive Search](../../../search/index.yml) resource wordt gebruikt voor het volgende:
-
-* De QnA-paren opslaan
-* Geef de eerste positie (#1) van de QnA-paren op tijdens runtime
-
-#### <a name="index-usage"></a>Index gebruik
-
-De resource houdt één index om te fungeren als de test index en de resterende indexen voldoen aan één gepubliceerde kennis database.
-
-Een resource die is geprijsd op 15 indexen, houdt 14 gepubliceerde kennis grondslagen en een index wordt gebruikt voor het testen van de kennis bases. Deze test index is gepartitioneerd door de Knowledge Base zodat een query die gebruikmaakt van het interactieve test deel venster de test index gebruikt, maar alleen resultaten van de specifieke partitie die is gekoppeld aan de specifieke Knowledge Base, worden geretourneerd.
-
-#### <a name="language-usage"></a>Taal gebruik
-
-De eerste Knowledge Base die in de QnA Maker resource wordt gemaakt, wordt gebruikt om de _afzonderlijke_ taal sets voor de Cognitive Search resource en alle bijbehorende indexen te bepalen. U kunt slechts _één taal instellen_ voor een QnA Maker-service.
-
-### <a name="qna-maker-resource"></a>QnA Maker resource
-
-De QnA Maker-resource biedt toegang tot de ontwerp-en publicatie-Api's, evenals de NLP (QnA) op basis van de laag voor natuurlijke taal verwerking (micro #2) die tijdens de uitvoering worden gemaakt.
-
-Met de tweede classificatie worden intelligente filters toegepast die meta gegevens en opvolgings vragen kunnen bevatten.
-
-#### <a name="qna-maker-resource-configuration-settings"></a>Configuratie-instellingen van QnA Maker bron
-
-Wanneer u een nieuwe Knowledge Base maakt in de [QnA Maker Portal](https://qnamaker.ai), is de **taal** instelling de enige instelling die op het resource niveau wordt toegepast. U selecteert de taal bij het maken van de eerste Knowledge Base voor de resource.
-
-### <a name="app-service-and-app-service-plan"></a>App service-en app service-plan
-
-De [app service](../../../app-service/index.yml) wordt door uw client toepassing gebruikt om toegang te krijgen tot de gepubliceerde kennis grondslagen via het runtime-eind punt.
-
-Als u een query wilt uitvoeren voor de gepubliceerde kennis database, gebruiken alle gepubliceerde kennis bases hetzelfde URL-eind punt, maar geeft u de **Knowledge Base-id** op in de route.
-
-`{RuntimeEndpoint}/qnamaker/knowledgebases/{kbId}/generateAnswer`
-
-### <a name="application-insights"></a>Application Insights
-
-[Application Insights](../../../azure-monitor/app/app-insights-overview.md) wordt gebruikt voor het verzamelen van chat logboeken en telemetrie. Bekijk de algemene [Kusto-query's](../how-to/get-analytics-knowledge-base.md) voor informatie over uw service.
-
-## <a name="share-services-with-qna-maker"></a>Services delen met QnA Maker
-
-QnA Maker maakt verschillende Azure-resources. Gebruik de volgende tabel om te begrijpen wat u wel en niet kunt delen om het beheer te beperken en te profiteren van het delen van kosten:
-
-|Service|Delen|Reden|
-|--|--|--|
-|Cognitive Services|X|Niet mogelijk door het ontwerp|
-|App Service-plan|✔|Er is een vaste schijf ruimte toegewezen voor een App Service plan. Als andere apps die hetzelfde App Service plan delen, veel schijf ruimte gebruiken, ondervinden de QnAMaker App Service-instantie problemen.|
-|App Service|X|Niet mogelijk door het ontwerp|
-|Application Insights|✔|Kan worden gedeeld|
-|Zoekservice|✔|1. `testkb` is een gereserveerde naam voor de QnAMaker-service en kan niet worden gebruikt door anderen.<br>2. het synoniem van de map met de naam `synonym-map` is gereserveerd voor de QnAMaker-service.<br>3. het aantal gepubliceerde kennis grondslagen is beperkt door de zoek service laag. Als er gratis indexen beschikbaar zijn, kunnen andere services deze gebruiken.|
-
-### <a name="using-a-single-cognitive-search-service"></a>Eén Cognitive Search-service gebruiken
-
-Als u een QnA-service en de bijbehorende afhankelijkheden (zoals zoeken) maakt via de portal, wordt er een zoek service voor u gemaakt en gekoppeld aan de QnA Maker-service. Nadat deze resources zijn gemaakt, kunt u de App Service-instelling bijwerken om een eerder bestaande zoek service te gebruiken en de toepassing verwijderen die u zojuist hebt gemaakt.
-
-Meer informatie [over het configureren](../How-To/set-up-qnamaker-service-azure.md#configure-qna-maker-to-use-different-cognitive-search-resource) van QnA Maker voor het gebruik van een andere cognitieve service resource dan die welke is gemaakt als onderdeel van het QnA maker van het maken van resources.
-
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 De resource naam voor de QnA Maker Managed (preview)-resource, zoals `qna-westus-f0-b` , wordt ook gebruikt om de andere resources een naam te geven.
@@ -330,12 +262,87 @@ In het venster Azure Portal maken kunt u een resource voor QnA Maker Managed (pr
 > [!TIP]
 > Gebruik een naamgevings Conventie om prijs categorieën aan te geven binnen de naam van de resource of de resource groep. Wanneer er fouten optreden bij het maken van een nieuwe Knowledge Base of het toevoegen van nieuwe documenten, is de Cognitive Search prijs categorie limiet een veelvoorkomend probleem.
 
-### <a name="resource-purposes"></a>Resource doeleinden
+---
+
+## <a name="resource-purposes"></a>Resource doeleinden
+
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
+
+Elke Azure-resource die is gemaakt met QnA Maker heeft een specifiek doel:
+
+* QnA Maker resource
+* Cognitive Search resource
+* App Service
+* App-plan service
+* Application Insights-service
+
+### <a name="qna-maker-resource"></a>QnA Maker resource
+
+De QnA Maker-resource biedt toegang tot de ontwerp-en publicatie-Api's, evenals de NLP (QnA) op basis van de laag voor natuurlijke taal verwerking (micro #2) die tijdens de uitvoering worden gemaakt.
+
+Met de tweede classificatie worden intelligente filters toegepast die meta gegevens en opvolgings vragen kunnen bevatten.
+
+#### <a name="qna-maker-resource-configuration-settings"></a>Configuratie-instellingen van QnA Maker bron
+
+Wanneer u een nieuwe Knowledge Base maakt in de [QnA Maker Portal](https://qnamaker.ai), is de **taal** instelling de enige instelling die op het resource niveau wordt toegepast. U selecteert de taal bij het maken van de eerste Knowledge Base voor de resource.
+
+### <a name="cognitive-search-resource"></a>Cognitive Search resource
+
+De [Cognitive Search](../../../search/index.yml) resource wordt gebruikt voor het volgende:
+
+* De QnA-paren opslaan
+* Geef de eerste positie (#1) van de QnA-paren op tijdens runtime
+
+#### <a name="index-usage"></a>Index gebruik
+
+De resource houdt één index om te fungeren als de test index en de resterende indexen voldoen aan één gepubliceerde kennis database.
+
+Een resource die is geprijsd op 15 indexen, houdt 14 gepubliceerde kennis grondslagen en een index wordt gebruikt voor het testen van de kennis bases. Deze test index is gepartitioneerd door de Knowledge Base zodat een query die gebruikmaakt van het interactieve test deel venster de test index gebruikt, maar alleen resultaten van de specifieke partitie die is gekoppeld aan de specifieke Knowledge Base, worden geretourneerd.
+
+#### <a name="language-usage"></a>Taal gebruik
+
+De eerste Knowledge Base die in de QnA Maker resource wordt gemaakt, wordt gebruikt om de _afzonderlijke_ taal sets voor de Cognitive Search resource en alle bijbehorende indexen te bepalen. U kunt slechts _één taal instellen_ voor een QnA Maker-service.
+
+#### <a name="using-a-single-cognitive-search-service"></a>Eén Cognitive Search-service gebruiken
+
+Als u een QnA-service en de bijbehorende afhankelijkheden (zoals zoeken) maakt via de portal, wordt er een zoek service voor u gemaakt en gekoppeld aan de QnA Maker-service. Nadat deze resources zijn gemaakt, kunt u de App Service-instelling bijwerken om een eerder bestaande zoek service te gebruiken en de toepassing verwijderen die u zojuist hebt gemaakt.
+
+Meer informatie [over het configureren](../How-To/set-up-qnamaker-service-azure.md#configure-qna-maker-to-use-different-cognitive-search-resource) van QnA Maker voor het gebruik van een andere cognitieve service resource dan die welke is gemaakt als onderdeel van het QnA maker van het maken van resources.
+
+### <a name="app-service-and-app-service-plan"></a>App service-en app service-plan
+
+De [app service](../../../app-service/index.yml) wordt door uw client toepassing gebruikt om toegang te krijgen tot de gepubliceerde kennis grondslagen via het runtime-eind punt.
+
+Als u een query wilt uitvoeren voor de gepubliceerde kennis database, gebruiken alle gepubliceerde kennis bases hetzelfde URL-eind punt, maar geeft u de **Knowledge Base-id** op in de route.
+
+`{RuntimeEndpoint}/qnamaker/knowledgebases/{kbId}/generateAnswer`
+
+### <a name="application-insights"></a>Application Insights
+
+[Application Insights](../../../azure-monitor/app/app-insights-overview.md) wordt gebruikt voor het verzamelen van chat logboeken en telemetrie. Bekijk de algemene [Kusto-query's](../how-to/get-analytics-knowledge-base.md) voor informatie over uw service.
+
+### <a name="share-services-with-qna-maker"></a>Services delen met QnA Maker
+
+QnA Maker maakt verschillende Azure-resources. Gebruik de volgende tabel om te begrijpen wat u wel en niet kunt delen om het beheer te beperken en te profiteren van het delen van kosten:
+
+|Service|Delen|Reden|
+|--|--|--|
+|Cognitive Services|X|Niet mogelijk door het ontwerp|
+|App Service-plan|✔|Er is een vaste schijf ruimte toegewezen voor een App Service plan. Als andere apps die hetzelfde App Service plan delen, veel schijf ruimte gebruiken, ondervinden de QnAMaker App Service-instantie problemen.|
+|App Service|X|Niet mogelijk door het ontwerp|
+|Application Insights|✔|Kan worden gedeeld|
+|Zoekservice|✔|1. `testkb` is een gereserveerde naam voor de QnAMaker-service en kan niet worden gebruikt door anderen.<br>2. het synoniem van de map met de naam `synonym-map` is gereserveerd voor de QnAMaker-service.<br>3. het aantal gepubliceerde kennis grondslagen is beperkt door de zoek service laag. Als er gratis indexen beschikbaar zijn, kunnen andere services deze gebruiken.|
+
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Elke Azure-resource die is gemaakt met QnA Maker Managed (preview) heeft een specifiek doel:
 
 * QnA Maker resource
 * Cognitive Search resource
+
+### <a name="qna-maker-resource"></a>QnA Maker resource
+
+De resource QnA Maker Managed (preview) biedt toegang tot de ontwerp-en publicatie-Api's, host de runtime voor de classificatie en biedt ook telemetrie.
 
 ### <a name="azure-cognitive-search-resource"></a>Azure Cognitive Search-resource
 
@@ -353,10 +360,6 @@ Als uw laag bijvoorbeeld 15 toegestane indexen heeft, kunt u 14 Knowledge bases 
 #### <a name="language-usage"></a>Taal gebruik
 
 Met QnA Maker Managed (preview) hebt u de mogelijkheid om uw QnA Maker-service in te stellen voor Knowledge bases in één taal of in meerdere talen. U maakt deze keuze tijdens het maken van de eerste Knowledge Base in uw QnA Maker-service. [Hier](#pricing-tier-considerations) ziet u hoe u de taal instellingen per Knowledge Base inschakelt.
-
-### <a name="qna-maker-resource"></a>QnA Maker resource
-
-De resource QnA Maker Managed (preview) biedt toegang tot de ontwerp-en publicatie-Api's, host de runtime voor de classificatie en biedt ook telemetrie.
 
 ---
 

@@ -10,12 +10,12 @@ ms.date: 02/02/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e5f8264221ada261ccae1b347c47cdf27967d5d8
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 267fd57b2fd359a73d5c1e01568aba14594e9290
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99537152"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980202"
 ---
 # <a name="blob-versioning"></a>BLOB-versie beheer
 
@@ -37,6 +37,10 @@ Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer i
 Een versie legt de status van een BLOB op een bepaald moment vast. Wanneer BLOB-versie beheer is ingeschakeld voor een opslag account, maakt Azure Storage automatisch een nieuwe versie van een BLOB wanneer die BLOB wordt gewijzigd of verwijderd.
 
 Wanneer u een BLOB maakt waarvoor versie beheer is ingeschakeld, is de nieuwe BLOB de huidige versie van de BLOB (of de basis-blob). Als u deze BLOB vervolgens wijzigt, maakt Azure Storage een versie die de status van de BLOB vastlegt voordat deze is gewijzigd. De gewijzigde BLOB wordt de nieuwe huidige versie. Telkens wanneer u de BLOB wijzigt, wordt een nieuwe versie gemaakt.
+
+In het volgende diagram ziet u hoe versies worden gemaakt voor schrijf-en verwijderings bewerkingen en hoe een eerdere versie kan worden gepromoveerd tot de huidige versie:
+
+:::image type="content" source="media/versioning-overview/blob-versioning-diagram.png" alt-text="Diagram waarin wordt weer gegeven hoe BLOB versie beheer werkt":::
 
 Een groot aantal versies per Blob kan de latentie verhogen voor bewerkingen in BLOB-vermeldingen. Micro soft raadt aan om minder dan 1000 versies per BLOB te onderhouden. U kunt levenscyclus beheer gebruiken om oude versies automatisch te verwijderen. Zie [kosten optimaliseren door Azure Blob Storage Access-lagen te automatiseren](storage-lifecycle-management-concepts.md)voor meer informatie over levenscyclus beheer.
 

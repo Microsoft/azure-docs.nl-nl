@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 12/16/2020
-ms.openlocfilehash: 49dfed7faac1e55a40bc7b7ddd5e9555519350a2
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: a0653f24eeb0a96c28714d00f1d943dfc7d336db
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617303"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979688"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Azure SQL Database lange termijn retentie van back-ups beheren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -183,7 +183,7 @@ Remove-AzSqlDatabaseLongTermRetentionBackup -ResourceId $ltrBackup.ResourceId
 ```
 
 > [!IMPORTANT]
-> LTR-back-up verwijderen is niet-omkeerbaar. Als u een LTR-back-up wilt verwijderen nadat de server is verwijderd, moet u een machtiging voor het abonnements bereik hebben. U kunt meldingen over elke verwijderings bewerking instellen in Azure Monitor door te filteren op een back-up van een lange termijn retentie verwijderen. Het activiteiten logboek bevat informatie over wie en wanneer de aanvraag is ingediend. Zie [waarschuwingen voor activiteiten logboeken maken](../../azure-monitor/platform/alerts-activity-log.md) voor gedetailleerde instructies.
+> LTR-back-up verwijderen is niet-omkeerbaar. Als u een LTR-back-up wilt verwijderen nadat de server of resource groep is verwijderd, moet u een machtiging voor het abonnements bereik hebben. U kunt meldingen over elke verwijderings bewerking instellen in Azure Monitor door te filteren op een back-up van een lange termijn retentie verwijderen. Het activiteiten logboek bevat informatie over wie en wanneer de aanvraag is ingediend. Zie [waarschuwingen voor activiteiten logboeken maken](../../azure-monitor/platform/alerts-activity-log.md) voor gedetailleerde instructies.
 
 ### <a name="restore-from-ltr-backups"></a>Herstellen vanuit LTR-back-ups
 
@@ -196,7 +196,7 @@ Restore-AzSqlDatabase -FromLongTermRetentionBackup -ResourceId $ltrBackup.Resour
 ```
 
 > [!IMPORTANT]
-> Als u een LTR-back-up wilt herstellen nadat de server is verwijderd, moet u machtigingen hebben die zijn afgestemd op het abonnement van de server en dat abonnement actief is. U moet ook de optionele para meter-ResourceGroupName weglaten.
+> Als u een LTR-back-up wilt herstellen nadat de server of resource groep is verwijderd, moet u machtigingen hebben die zijn afgestemd op het abonnement van de server en dat abonnement actief is. U moet ook de optionele para meter-ResourceGroupName weglaten.
 
 > [!NOTE]
 > Hier kunt u verbinding maken met de herstelde database met behulp van SQL Server Management Studio om noodzakelijke taken uit te voeren, zoals een deel van de gegevens uit de herstelde database extraheren om naar de bestaande database te kopiëren, of de bestaande database verwijderen en de naam van de herstelde database wijzigen in de naam van de bestaande database. Zie [herstel punt in tijd](recovery-using-backups.md#point-in-time-restore).

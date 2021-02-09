@@ -5,37 +5,30 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 07/31/2020
+ms.date: 02/08/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: fc2393cfe87e2639ce40e66e6053d4d430518719
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3eb2d9469ab3a3d2c1d09e4adc3ee2cb1f86e6e
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87515301"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979063"
 ---
-## <a name="1-download-the-file"></a>1. down load het bestand
-
-Voer de volgende opdrachten uit. Kopieer de URL van het resultaat naar uw browser om het profiel-zip-bestand te downloaden.
-
-```azurepowershell-interactive
-$profile = New-AzVpnClientConfiguration -ResourceGroupName AADAuth -Name AADauthGW -AuthenticationMethod "EapTls"
-   
-$PROFILE.VpnProfileSASUrl
-```
-
-## <a name="2-extract-the-zip-file"></a>2. Pak het zip-bestand uit
+## <a name="extract-the-zip-file"></a>Het zip-bestand uitpakken
 
 Pak het gecomprimeerde bestand uit. Het bestand bevat de volgende mappen:
 
 * AzureVPN
 * Algemeen
-* OpenVPN (als u de OpenVPN hebt ingeschakeld met **Azure** -certificaat **-of RADIUS-verificatie** -instellingen op de gateway). Zie [een Tenant maken](../articles/vpn-gateway/openvpn-azure-ad-tenant.md)voor VPN gateway. Zie voor virtuele WAN [-VWAN een Tenant maken](../articles/virtual-wan/openvpn-azure-ad-tenant.md).
+* OpenVPN (als u de OpenVPN hebt ingeschakeld met **Azure** -certificaat **-of RADIUS-verificatie** -instellingen op de gateway). Selecteer het betreffende artikel dat overeenkomt met uw configuratie om een Tenant te maken.
 
-## <a name="3-retrieve-information"></a>3. informatie ophalen
+  * [VPN gateway: een Tenant maken](../articles/vpn-gateway/openvpn-azure-ad-tenant.md).
+  * [Virtueel WAN: een Tenant maken](../articles/virtual-wan/openvpn-azure-ad-tenant.md).
 
-Ga in de map **AzureVPN** naar het ***azurevpnconfig.xml*** -bestand en open het met Klad blok. Noteer de tekst tussen de volgende tags.
+## <a name="retrieve-information"></a>Gegevens ophalen
+
+Ga in de map **AzureVPN** naar het **_azurevpnconfig.xml_** -bestand en open het met Klad blok. Noteer de tekst tussen de volgende tags.
 
 ```
 <audience>          </audience>
@@ -49,11 +42,11 @@ Ga in de map **AzureVPN** naar het ***azurevpnconfig.xml*** -bestand en open het
 
 Wanneer u een verbinding toevoegt, gebruikt u de gegevens die u in de vorige stap hebt verzameld voor de pagina Profiel Details. De velden komen overeen met de volgende informatie:
 
-   * **Doel groep:** Identificeert de resource van de ontvanger waarvoor het token is bedoeld
-   * **Verlener:** Identificeert de Security Token Service (STS) die het token heeft verzonden, evenals de Azure AD-Tenant
-   * **Tenant:** Bevat een onveranderbare, unieke id van de Directory-Tenant die het token heeft uitgegeven
-   * **FQDN:** De Fully Qualified Domain Name (FQDN) op de Azure VPN-gateway
-   * **ServerSecret:** De vooraf gedeelde VPN gateway-sleutel
+* **Doel groep:** Hiermee wordt de bron van de ontvanger aangegeven waarvoor het token is bedoeld.
+* **Verlener:** Identificeert de Security Token Service (STS) die het token heeft verzonden, evenals de Azure AD-Tenant.
+* **Tenant:** Bevat een onveranderbare, unieke id van de Directory-Tenant die het token heeft uitgegeven.
+* **FQDN:** De Fully Qualified Domain Name (FQDN) op de Azure VPN-gateway.
+* **ServerSecret:** De vooraf gedeelde VPN gateway-sleutel.
 
 ## <a name="folder-contents"></a>Mapinhoud
 

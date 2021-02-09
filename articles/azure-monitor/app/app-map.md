@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: devx-track-csharp
 ms.reviewer: sdash
-ms.openlocfilehash: 3383b4a3c2eab1f62d180c31e278f07b92c649c5
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: d301ad1a9f5f55a41f87cd1316c9e5e4b38afd51
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853512"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980079"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Toepassings overzicht: gedistribueerde toepassingen sorteren
 
@@ -222,6 +222,21 @@ appInsights.addTelemetryInitializer((envelope) => {
   envelope.tags["ai.cloud.roleInstance"] = "your role instance";
 });
 });
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+Voor python kunnen de [python-telemetrie-processors van Opentellingen](api-filtering-sampling.md#opencensus-python-telemetry-processors) worden gebruikt.
+
+```python
+def callback_function(envelope):
+   envelope.tags['ai.cloud.role'] = 'new_role_name'
+   
+// AzureLogHandler
+handler.add_telemetry_processor(callback_function)
+
+// AzureExporter
+exporter.add_telemetry_processor(callback_function)
 ```
 ---
 

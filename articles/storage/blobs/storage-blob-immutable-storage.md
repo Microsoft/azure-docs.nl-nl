@@ -5,18 +5,18 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/13/2020
+ms.date: 02/01/2021
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: acb2ebb0d7ce70c6b5963a8a6c3e392091e4bb1e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9654ff6eab53acfe3e656afdcacd758c548232ba
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010058"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979131"
 ---
-# <a name="store-business-critical-blob-data-with-immutable-storage"></a>Bedrijfs kritieke blobgegevens opslaan met onveranderlijke opslag
+# <a name="store-business-critical-blob-data-with-immutable-storage"></a>Bedrijfskritieke blobgegevens opslaan met onveranderlijke opslag
 
 Onveranderbare opslag voor Azure Blob-opslag stelt gebruikers in staat om bedrijfskritische gegevens objecten op te slaan in een WORM (eenmaal schrijven, gelezen). Met deze status worden de gegevens niet-kan worden gewist en niet kunnen worden gewijzigd voor een door de gebruiker opgegeven interval. Voor de duur van het retentie-interval kunnen blobs worden gemaakt en gelezen, maar niet worden gewijzigd of verwijderd. Onveranderbare opslag is beschikbaar voor de algemene v1-, BlobStorage-en BlockBlobStorage-accounts voor algemeen gebruik in alle Azure-regio's.
 
@@ -42,7 +42,7 @@ Onveranderbare opslag ondersteunt de volgende functies:
 
 - **[Ondersteuning voor beleid voor juridische bewaring](#legal-holds)**: als het Bewaar interval niet bekend is, kunnen gebruikers juridische bewaringen instellen om onveranderbare gegevens op te slaan totdat de juridische bewaring is gewist.  Als er een beleid voor juridische bewaring is ingesteld, kunnen blobs worden gemaakt en gelezen, maar niet gewijzigd of verwijderd. Elke juridische bewaring is gekoppeld aan een door de gebruiker gedefinieerde alfanumerieke code (zoals een case-ID, gebeurtenis naam enzovoort) die wordt gebruikt als een id-teken reeks. 
 
-- **Ondersteuning voor alle BLOB-lagen**: het virus beleid is onafhankelijk van de Azure Blob Storage-laag en is van toepassing op alle lagen: Hot, cool en Archive. Gebruikers kunnen gegevens verplaatsen naar de laag die het meest rendabel is voor hun werkbelastingen, met behoud van de onveranderbaarheid van gegevens.
+- **Ondersteuning voor alle blob-lagen**: WORM-beleidsregels zijn onafhankelijk van de Azure Blob Storage-laag en worden toegepast op alle lagen, dynamische toegang, statische toegang en archieftoegang. Gebruikers kunnen gegevens verplaatsen naar de laag die het meest rendabel is voor hun werkbelastingen, met behoud van de onveranderbaarheid van gegevens.
 
 - **Configuratie op container niveau**: gebruikers kunnen op het niveau van de Bewaar termijn op basis van een op tijd gebaseerd beleid voor het bewaren van inhoud en juridische bewarings codes configureren. Door eenvoudige instellingen op containerniveau te gebruiken, kunnen gebruikers retentiebeleid op basis van tijd maken en vergrendelen, retentieperioden verlengen, juridische bewaring instellen en opheffen enzovoort. Deze beleidsregels zijn van toepassing op alle blobs in de container - zowel op bestaande als nieuwe blobs.
 
@@ -53,6 +53,10 @@ Onveranderbare opslag ondersteunt de volgende functies:
 Onveranderbare opslag voor Azure Blobs ondersteunt twee soorten WORM-beleidsregels of beleidsregels voor onveranderbare opslag: retentie op basis van tijd en juridische bewaring. Wanneer een Bewaar beleid op basis van tijd of wettelijk geblokkeerd wordt toegepast op een container, worden alle bestaande blobs in minder dan 30 seconden omgezet in een onveranderbare WORM status. Alle nieuwe blobs die zijn geüpload naar die beleids beveiligde container, worden ook verplaatst naar een onveranderlijke status. Zodra alle Blobs een onveranderbare status hebben, wordt het onveranderbare beleid bevestigd en kunnen de overschrijvings-of verwijderings bewerkingen in de onveranderbare container niet worden toegestaan.
 
 Het verwijderen van containers en opslag accounts is ook niet toegestaan als er blobs in een container zijn die zijn beveiligd met een juridische bewaring of een vergrendeld op tijd gebaseerd beleid. Een juridisch bewarings beleid kan worden beveiligd tegen het verwijderen van een blob, container en opslag account. Zowel ontgrendeld als vergrendeld op tijd gebaseerd beleid zorgt ervoor dat het verwijderen van blobs gedurende de opgegeven tijd wordt beschermd. Zowel ontgrendeld als vergrendeld op tijd gebaseerd beleid voor het verwijderen van de container wordt alleen beveiligd als er ten minste één Blob in de container bestaat. Alleen een container met *vergrendeld* op tijd gebaseerd beleid wordt beschermd tegen het verwijderen van het opslag account; containers met niet-vergrendelde op tijd gebaseerde beleids regels bieden geen bescherming tegen het verwijderen van opslag accounts en naleving.
+
+In het volgende diagram ziet u hoe het Bewaar beleid op basis van tijd en juridische bewaringen geen schrijf-en verwijder bewerkingen kunnen uitvoeren wanneer ze van kracht zijn.
+
+:::image type="content" source="media/storage-blob-immutable-storage/worm-diagram.png" alt-text="Diagram waarin wordt getoond hoe het Bewaar beleid en juridische bewaringen schrijf-en verwijder bewerkingen voor komen":::
 
 Zie [Onveranderbaarheid-beleid instellen en beheren voor Blob Storage](storage-blob-immutability-policies-manage.md)voor meer informatie over het instellen en vergren delen van op tijd gebaseerd Bewaar beleid.
 

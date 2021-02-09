@@ -12,14 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: 99bcef2ba702235279c1327a2a5e51a8c6ab806d
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 7f175d82b650871437a506ea4513f0ae28360f68
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018476"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833028"
 ---
 # <a name="create-a-connection-monitor-by-using-powershell"></a>Een verbindings monitor maken met behulp van Power shell
+
+> [!IMPORTANT]
+> Vanaf 1 juli 2021 kunt u geen nieuwe tests toevoegen in een bestaande werk ruimte of een nieuwe werk ruimte inschakelen in Netwerkprestatiemeter. U kunt ook geen nieuwe monitors voor verbinding toevoegen in de verbindings monitor (klassiek). U kunt de tests en verbindings monitors die zijn gemaakt vóór 1 juli 2021 blijven gebruiken. Als u de service onderbreking voor uw huidige workloads wilt minimaliseren, [migreert u uw tests van Netwerkprestatiemeter ](migrate-to-connection-monitor-from-network-performance-monitor.md) of  [migreert u van het klassieke verbindings](migrate-to-connection-monitor-from-connection-monitor-classic.md) controleprogramma naar de nieuwe verbindings monitor in azure Network Watcher vóór 29 februari 2024.
+
 
 Meer informatie over het gebruik van de functie verbindings controle van Azure Network Watcher om de communicatie tussen uw resources te bewaken.
 

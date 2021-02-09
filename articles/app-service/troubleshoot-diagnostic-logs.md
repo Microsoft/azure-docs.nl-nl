@@ -5,12 +5,12 @@ ms.assetid: c9da27b2-47d4-4c33-a3cb-1819955ee43b
 ms.topic: article
 ms.date: 09/17/2019
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 3b7f8f5a0f48bf0cdca7f72e5fb364ea0a5d1315
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 8f3fb0be08bb806d74c689a7656c1c55019eb105
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576596"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980606"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Diagnostische logboek registratie inschakelen voor apps in Azure App Service
 ## <a name="overview"></a>Overzicht
@@ -189,12 +189,13 @@ De volgende tabel bevat de ondersteunde logboek typen en beschrijvingen:
 |-|-|-|-|-|-|
 | AppServiceConsoleLogs | Java SE & Tomcat | Ja | Ja | Ja | Standaard uitvoer en standaard fout |
 | AppServiceHTTPLogs | Ja | Ja | Ja | Ja | Webserver logboeken |
-| AppServiceEnvironmentPlatformLogs | Yes | N.v.t. | Ja | Ja | App Service Environment: schalen, configuratie wijzigingen en status logboeken|
+| AppServiceEnvironmentPlatformLogs | Ja | N.v.t. | Ja | Ja | App Service Environment: schalen, configuratie wijzigingen en status logboeken|
 | AppServiceAuditLogs | Ja | Ja | Ja | Ja | Aanmeldings activiteiten via FTP en kudu |
-| AppServiceFileAuditLogs | Ja | Ja | TBA | TBA | Bestands wijzigingen in de site-inhoud; alleen beschikbaar voor de Premium-laag en hoger |
+| AppServiceFileAuditLogs | Ja | Ja | TBA | TBA | Bestands wijzigingen in de site-inhoud; **alleen beschikbaar voor de Premium-laag en hoger** |
 | AppServiceAppLogs | ASP.NET | ASP.NET | Java SE & Tomcat verwerkt installatie kopieën <sup>1</sup> | Java SE & Tomcat verwerkt installatie kopieën <sup>1</sup> | Toepassings logboeken |
 | AppServiceIPSecAuditLogs  | Ja | Ja | Ja | Ja | Aanvragen van IP-regels |
 | AppServicePlatformLogs  | TBA | Ja | Ja | Ja | Container bewerkings logboeken |
+| AppServiceAntivirusScanAuditLogs | Ja | Ja | Ja | Ja | [Anti virus scan logboeken](https://azure.github.io/AppService/2020/12/09/AzMon-AppServiceAntivirusScanAuditLogs.html) met micro soft Defender; **alleen beschikbaar voor de Premium-laag** | 
 
 <sup>1</sup> voor Java SE-apps voegt u ' $website _AZMON_PREVIEW_ENABLED ' toe aan de app-instellingen en stelt u deze in op 1 of op True.
 

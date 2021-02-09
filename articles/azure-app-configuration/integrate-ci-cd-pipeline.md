@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom: devx-track-csharp
 ms.date: 04/19/2020
 ms.author: alkemper
-ms.openlocfilehash: d076bdf09626ec9ed08fcf43b95fc63d2f4a7dd7
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: 3a4d171f0e3225db195c5c2b71ca99a3386e3a36
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928446"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979841"
 ---
 # <a name="integrate-with-a-cicd-pipeline"></a>Integreren met een CI/CD-pijplijn
 
@@ -35,9 +35,9 @@ U kunt elke code-editor gebruiken om de stappen in deze zelfstudie uit te voeren
 
 ### <a name="prerequisites"></a>Vereisten
 
-Als u lokaal bouwt, downloadt en installeert u de [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) als u dit nog niet hebt gedaan.
+Als u lokaal bouwt, downloadt en installeert u de [Azure CLI](/cli/azure/install-azure-cli) als u dit nog niet hebt gedaan.
 
-Als u een cloud-build gebruikt, bijvoorbeeld met Azure DevOps, zorgt u ervoor dat de [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) is geïnstalleerd in het buildsysteem.
+Als u een cloud-build gebruikt, bijvoorbeeld met Azure DevOps, zorgt u ervoor dat de [Azure CLI](/cli/azure/install-azure-cli) is geïnstalleerd in het buildsysteem.
 
 ### <a name="export-an-app-configuration-store"></a>Een App Configuration-archief exporteren
 
@@ -107,4 +107,4 @@ Als u een cloud-build gebruikt, bijvoorbeeld met Azure DevOps, zorgt u ervoor da
 In deze zelfstudie hebt u Azure App Configuration-gegevens geëxporteerd die moeten worden gebruikt in een implementatiepijplijn. Voor meer informatie over het gebruik van App Configuration gaat u verder naar de Azure CLI-voorbeelden.
 
 > [!div class="nextstepaction"]
-> [Azure-CLI](/cli/azure/appconfig?view=azure-cli-latest)
+> [Azure-CLI](/cli/azure/appconfig)

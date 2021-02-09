@@ -5,14 +5,14 @@ manager: evansma
 author: rayne-wiselman
 ms.service: resource-move
 ms.topic: how-to
-ms.date: 09/10/2020
+ms.date: 02/08/2021
 ms.author: raynew
-ms.openlocfilehash: 27e7c899f0d22789c10541fc98a0d2c63a7843ec
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: eb28e4c8f6b465e2a9b38cc4571bc4a00baf4ef7
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95533052"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979620"
 ---
 # <a name="modify-target-settings"></a>Doelinstelling wijzigen
 
@@ -37,15 +37,15 @@ De configuratie-instellingen die u kunt wijzigen, worden in de tabel samenvatten
 **Resource** | **Opties** 
 --- | --- | --- 
 **VM-naam** | Opties:<br/><br/> -Maak een nieuwe virtuele machine met dezelfde naam in de doel regio.<br/><br/> -Maak een nieuwe virtuele machine met een andere naam in de doel regio.<br/><br/> -Gebruik een bestaande virtuele machine in de doel regio.<br/><br/> Als u een nieuwe virtuele machine maakt, met uitzonde ring van de instellingen die u wijzigt, krijgt de nieuwe doel-VM dezelfde instellingen als de bron.
-**VM-beschikbaarheids zone** | De beschikbaarheids zone waarin de doel-VM wordt geplaatst. Dit kan worden gemarkeerd als **n.v.t.** als u de bron instellingen niet wilt wijzigen of als u de virtuele machine niet in een beschikbaarheids zone wilt plaatsen.
+**VM-beschikbaarheids zone** | De beschikbaarheids zone waarin de doel-VM wordt geplaatst. Selecteer **niet van toepassing** als u de bron instellingen niet wilt wijzigen of als u de virtuele machine niet in een beschikbaarheids zone wilt plaatsen.
 **VM-SKU** | Het [VM-type](https://azure.microsoft.com/pricing/details/virtual-machines/series/) (beschikbaar in de doel regio) dat wordt gebruikt voor de doel-VM.<br/><br/> De geselecteerde doel-VM mag niet kleiner zijn dan de bron-VM.
-**Netwerk bronnen** | Opties voor virtuele netwerken (VNets)/Network-beveiligings groepen/netwerk interfaces:<br/><br/> -Maak een nieuwe resource met dezelfde naam in de doel regio.<br/><br/> -Maak een nieuwe resource met een andere naam in de doel regio.<br/><br/> -Gebruik een bestaande netwerk bron in de doel regio.<br/><br/> Als u een nieuwe doel bron maakt, met uitzonde ring van de instellingen die u wijzigt, worden dezelfde instellingen toegewezen als voor de bron resource.
-**Naam openbaar IP-adres** | Geef de naam op.
-**Openbaar IP-adres SKU** | Geef de [SKU](../virtual-network/public-ip-addresses.md#sku)op.
-**Zone openbaar IP-adres** | Geef de [zone](../virtual-network/public-ip-addresses.md#standard) op voor standaard open bare IP-adressen.<br/><br/> Als u het zone redundant wilt maken, voert u in als **zone redundant**.
-**Naam van load balancer** | Geef de naam op.
-**Load Balancer-SKU** | Basic of Standard. We raden u aan om standaard te gebruiken.
-**Load Balancer-zone** | Geef een zone op voor de load balancer. <br/><br/> Als u het zone redundant wilt maken, voert u in als **zone redundant**.
+* * Beschik bare VM-set | De beschikbaarheidsset waarin de doel-VM wordt geplaatst. Selecteer **niet van toepassing**  dat u de bron instellingen niet wilt wijzigen of als u de virtuele machine niet in een beschikbaarheidsset wilt plaatsen.
+**VM-sleutel kluis** | De bijbehorende sleutel kluis wanneer u Azure Disk Encryption inschakelt voor een virtuele machine.
+**Schijf versleuteling instellen** | De gekoppelde schijf versleuteling is ingesteld als de virtuele machine gebruikmaakt van een door de klant beheerde sleutel voor versleuteling aan de server zijde.
+**Resourcegroep** | De resource groep waarin de doel-VM wordt geplaatst.
+**Netwerk bronnen** | Opties voor netwerk interfaces, virtuele netwerken (VNets/) en netwerk beveiligings groepen/netwerk interfaces:<br/><br/> -Maak een nieuwe resource met dezelfde naam in de doel regio.<br/><br/> -Maak een nieuwe resource met een andere naam in de doel regio.<br/><br/> -Gebruik een bestaande netwerk bron in de doel regio.<br/><br/> Als u een nieuwe doel bron maakt, met uitzonde ring van de instellingen die u wijzigt, worden dezelfde instellingen toegewezen als voor de bron resource.
+**Naam van openbaar IP-adres, SKU en zone** | Hiermee geeft u de naam, [SKU](../virtual-network/public-ip-addresses.md#sku)en [zone](../virtual-network/public-ip-addresses.md#standard) voor standaard open bare IP-adressen op.<br/><br/> Als u het zone redundant wilt maken, voert u in als **zone redundant**.
+* * Naam van Load Balancer, SKU en zone * * | Hiermee geeft u de naam, SKU (Basic of Standard) en de zone voor de load balancer op.<br/><br/> We raden u aan om standaard-sKU te gebruiken.<br/><br/> Als u wilt dat het zone redundant is, geeft u als **zone redundante** op.
 **Bronafhankelijkheden** | Opties voor elke afhankelijkheid:<br/><br/>-De resource maakt gebruik van bron afhankelijke resources die worden verplaatst naar de doel regio.<br/><br/> -De resource gebruikt verschillende afhankelijke resources die zich in de doel regio bevinden. In dit geval kunt u kiezen uit vergelijk bare resources in de doel regio.
 
 ### <a name="edit-vm-target-settings"></a>VM-doel instellingen bewerken

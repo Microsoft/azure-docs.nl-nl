@@ -713,8 +713,6 @@
                   href: service-fabric-cluster-security-update-certs-azure.md
                 - name: Extern verbinding maken met de VM die het clusterknooppunt vormt
                   href: service-fabric-cluster-remote-connect-to-azure-cluster-node.md
-                - name: Cluster-knooppunten upgraden om beheerde schijven te gebruiken
-                  href: upgrade-managed-disks.md
         - name: Zelfstandige clusters
           items:
             - name: Maken

@@ -10,12 +10,12 @@ author: aashishb
 ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 8399cfb4ceed9f50a5c9de0d3d16912a718bbfaa
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 68163f7ca8cc1b37bda4e1224330f966265554c2
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070113"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980469"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 
@@ -28,6 +28,8 @@ U gebruikt [https](https://en.wikipedia.org/wiki/HTTPS) om de toegang tot webser
 > De Azure Machine Learning SDK gebruikt de term ' SSL ' voor eigenschappen die betrekking hebben op beveiligde communicatie. Dit betekent niet dat uw webservice geen gebruik maakt van *TLS*. SSL is slechts een vaker herken bare periode.
 >
 > Met name webservices die via Azure Machine Learning worden geïmplementeerd, ondersteunen TLS-versie 1,2 voor AKS en ACI. Als u een oudere TLS-versie hebt, wordt u aangeraden om in ACI-implementaties opnieuw te implementeren om de meest recente versie van TLS op te halen.
+>
+> TLS-versie 1,3 voor Azure Machine Learning-AKS wordt niet ondersteund.
 
 TLS en SSL zijn beide afhankelijk van *digitale certificaten*, die u helpen bij het versleutelen en verifiëren van de identiteit. Zie de [open bare-sleutel infrastructuur](https://en.wikipedia.org/wiki/Public_key_infrastructure)van het Wikipedia-onderwerp voor meer informatie over de werking van digitale certificaten.
 

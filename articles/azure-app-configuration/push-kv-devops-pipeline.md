@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: alkemper
-ms.openlocfilehash: fd3f7dbfd824360dcba9f8a166c579e3b55527ba
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: c5e0cc3eb29fb612460b16d8de9dee62949b5bd2
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932112"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979603"
 ---
 # <a name="push-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen pushen naar app-configuratie met Azure-pijp lijnen
 
@@ -56,7 +56,7 @@ Wijs de juiste toewijzingen van de functie app-configuratie toe aan de referenti
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push taak in een Azure DevOps build-pijp lijn.
 
-1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp** lijnen  >  **pijp lijnen**. Documentatie voor Build-pijp lijnen vindt u [hier](/azure/devops/pipelines/create-first-pipeline?tabs=tfs-2018-2&view=azure-devops).
+1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp** lijnen  >  **pijp lijnen**. Documentatie voor Build-pijp lijnen vindt u [hier](/azure/devops/pipelines/create-first-pipeline?tabs=tfs-2018-2).
       - Als u een nieuwe build-pijp lijn maakt, selecteert u de optie **assistent weer geven** aan de rechter kant van de pijp lijn en zoekt u naar de **Azure-app push** taak voor de configuratie.
       - Als u een bestaande build-pijp lijn gebruikt, navigeert u naar het tabblad **taken** bij het bewerken van de pijp lijn en zoekt u naar de push taak voor de **Azure-app-configuratie** .
 2. Configureer de vereiste para meters voor de taak om de sleutel waarden van het configuratie bestand naar de app-configuratie opslag te pushen. De para meter **pad naar configuratie bestand** begint bij de hoofdmap van de bestands opslagplaats.
@@ -66,10 +66,10 @@ Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push taak in een Azure DevOps-release pijplijn.
 
-1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Documentatie voor release pijplijnen vindt u [hier](/azure/devops/pipelines/release?view=azure-devops).
+1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Documentatie voor release pijplijnen vindt u [hier](/azure/devops/pipelines/release).
 1. Kies een bestaande release pijplijn. Als u er nog geen hebt, selecteert u **+ Nieuw** om een nieuw item te maken.
 1. Selecteer de knop **bewerken** in de rechter bovenhoek om de release pijplijn te bewerken.
-1. Kies het **stadium** om de taak toe te voegen. Meer informatie over de stadia vindt u [hier](/azure/devops/pipelines/release/environments?view=azure-devops).
+1. Kies het **stadium** om de taak toe te voegen. Meer informatie over de stadia vindt u [hier](/azure/devops/pipelines/release/environments).
 1. Selecteer **+** voor die taak en voeg vervolgens de taak **configuratie push Azure-app** op het tabblad **implementeren** toe.
 1. Configureer de benodigde para meters in de taak om uw sleutel waarden van het configuratie bestand naar uw app-configuratie archief te pushen. Uitleg van de para meters zijn beschikbaar in de sectie **para meters** hieronder en in knop info naast elke para meter.
 1. Een release opslaan en in de wachtrij plaatsen. In het release logboek worden eventuele fouten weer gegeven die zijn opgetreden tijdens de uitvoering van de taak.

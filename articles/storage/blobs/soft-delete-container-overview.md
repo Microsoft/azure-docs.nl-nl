@@ -6,33 +6,39 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/06/2021
+ms.date: 02/08/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 85d880966c4c3864206c7e92256eb8e705812f20
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 0c15be86c282451440f9b81d57f17e835559b5ae
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962173"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979097"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
-Met voorlopig verwijderen voor containers (preview) wordt voor komen dat uw gegevens per ongeluk of onbedoeld worden gewijzigd of verwijderd. Wanneer de container soft delete is ingeschakeld voor een opslag account, worden verwijderde containers en de inhoud ervan bewaard in Azure Storage voor de periode die u opgeeft. Tijdens de retentie periode kunt u eerder verwijderde containers en alle blobs erin herstellen.
+Met voorlopig verwijderen voor containers (preview) wordt voor komen dat uw gegevens per ongeluk of opzettelijk worden verwijderd. Wanneer de container soft delete is ingeschakeld voor een opslag account, worden verwijderde containers en de inhoud ervan bewaard in Azure Storage voor de periode die u opgeeft. Tijdens de retentie periode kunt u eerder verwijderde containers herstellen. Als u een container herstelt, worden de blobs in die container hersteld wanneer deze is verwijderd.
 
 Micro soft raadt u aan de volgende functies voor gegevens beveiliging in te scha kelen voor end-to-end-beveiliging voor uw BLOB-gegevens:
 
-- Container soft delete, ter bescherming tegen onbedoeld verwijderen of overschrijven van een container. Zie voor meer informatie over het inschakelen van de container Soft soft delete [voor containers, voorlopig verwijderen inschakelen en beheren](soft-delete-container-enable.md).
-- Zacht verwijderen van BLOB, om te beschermen tegen onbedoeld verwijderen of overschrijven van een afzonderlijke blob. Zie [voorlopig verwijderen voor blobs](soft-delete-blob-overview.md)voor meer informatie over het inschakelen van de optie voor het voorlopig verwijderen van blobs.
+- Container soft delete, om een verwijderde container te herstellen. Zie voor meer informatie over het inschakelen van de container Soft soft delete [voor containers, voorlopig verwijderen inschakelen en beheren](soft-delete-container-enable.md).
 - BLOB-versie beheer om eerdere versies van een blob automatisch te onderhouden. Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd. Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer informatie over het inschakelen van BLOB-versies.
+- Zacht verwijderen van BLOB, voor het herstellen van een BLOB of versie die is verwijderd. Zie voor het inschakelen van het voorlopig verwijderen van blobs de optie [voorlopig verwijderen inschakelen en beheren voor blobs](soft-delete-blob-enable.md).
 
 > [!WARNING]
-> Het verwijderen van een opslag account kan niet ongedaan worden gemaakt. Zacht verwijderen beschermt niet tegen het verwijderen van een opslag account. Configureer een **CannotDelete** -vergren deling voor de bron van het opslag account om onbedoeld verwijderen van een opslag account te voor komen. Zie [resources vergren delen om onverwachte wijzigingen](../../azure-resource-manager/management/lock-resources.md)te voor komen voor meer informatie over het vergren delen van Azure-resources.
+> Het verwijderen van een opslag account kan niet ongedaan worden gemaakt. Zacht verwijderen beschermt niet tegen het verwijderen van een opslag account, maar alleen voor het verwijderen van gegevens objecten in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een **CannotDelete** -vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over het vergren delen van Azure Resource Manager resources.
 
 ## <a name="how-container-soft-delete-works"></a>De werking van de functie voor voorlopig verwijderen van containers
 
 Wanneer u de optie voor het voorlopig verwijderen van een container inschakelt, kunt u een Bewaar periode voor verwijderde containers opgeven tussen 1 en 365 dagen. De standaard Bewaar periode is 7 dagen. Tijdens de retentie periode kunt u een verwijderde container herstellen door de bewerking voor het verwijderen van een **container** op te roepen.
+
+Wanneer u een container herstelt, worden de blobs en BLOB-versies van de container ook hersteld. U kunt de container soft delete echter alleen gebruiken om blobs te herstellen als de container zelf is verwijderd. Als u een verwijderde BLOB wilt herstellen wanneer de bovenliggende container niet is verwijderd, moet u de eigenschap zacht verwijderen of BLOB-versie beheer gebruiken.
+
+In het volgende diagram ziet u hoe een verwijderde container kan worden hersteld wanneer de container zacht verwijderen is ingeschakeld:
+
+:::image type="content" source="media/soft-delete-container-overview/container-soft-delete-diagram.png" alt-text="Diagram waarin wordt getoond hoe een voorlopig verwijderde container kan worden hersteld":::
 
 Wanneer u een container herstelt, kunt u deze terugzetten naar de oorspronkelijke naam als die naam niet opnieuw is gebruikt. Als de oorspronkelijke container naam is gebruikt, kunt u de container herstellen met een nieuwe naam.
 
@@ -42,7 +48,7 @@ Het uitschakelen van de container soft delete heeft geen permanente verwijdering
 
 ## <a name="about-the-preview"></a>Over de preview-versie
 
-De container soft delete is beschikbaar als preview-versie in alle open bare Azure-regio's.
+De container soft delete is beschikbaar als preview-versie in alle Azure-regio's.
 
 > [!IMPORTANT]
 > De container Soft-voor beeld van verwijderen is alleen bedoeld voor niet-productie gebruik. Service Level Agreements (Sla's) op het niveau van de productie zijn momenteel niet beschikbaar.
@@ -76,7 +82,7 @@ Register-AzProviderFeature -ProviderNamespace Microsoft.Storage `
 Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u zich wilt registreren bij Azure CLI, roept u de opdracht [AZ feature REGI ster](/cli/azure/feature#az-feature-register) aan.
 
@@ -99,7 +105,7 @@ Als u de status van uw registratie met Power shell wilt controleren, roept u de 
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName ContainerSoftDelete
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de status van uw registratie met Azure CLI wilt controleren, roept u de opdracht [AZ functie](/cli/azure/feature#az-feature-show) aan.
 

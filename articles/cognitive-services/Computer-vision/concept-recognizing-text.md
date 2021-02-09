@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 17a7ad29596c5ab5ed65868fde0e814bc83e8c37
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 1d633b1a9f5fee0a5cceb48f2b37aaec2092069f
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576731"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979526"
 ---
 # <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
@@ -132,20 +132,20 @@ Zie het volgende voor beeld van een geslaagde JSON-reactie:
 }
 ```
 
-## <a name="select-pages-or-page-ranges-for-text-extraction"></a>Pagina ('s) of paginabereiken selecteren voor tekst extractie
-Met de [lezen 3,2 Preview-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)voor grote documenten met meerdere pagina's, gebruikt `pages` u de query parameter om pagina nummers of paginabereiken op te geven om alleen tekst uit die pagina's op te halen. In het volgende voor beeld ziet u bijvoorbeeld een document met 10 pagina's voor beide gevallen: alle pagina's (1-10) en geselecteerde pagina's (3-6).
+## <a name="natural-reading-order-output"></a>Uitvoer van natuurlijke Lees volgorde
+Met de [Lees-API voor lezen 3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)geeft u de volg orde op waarin de tekst regels worden uitgevoerd met de `readingOrder` query parameter. Gebruik `natural` dit voor een meer mensen vriendelijke Lees volgorde, zoals wordt weer gegeven in het volgende voor beeld.
 
-:::image border type="content" source="./Images/ocr-select-pages.png" alt-text="Uitvoer van geselecteerde pagina's":::
-
-## <a name="specify-text-line-order-in-the-output"></a>De volg orde van de tekst regel in de uitvoer opgeven
-Met de [Lees-API voor lezen 3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)geeft u de volg orde op waarin de tekst regels worden uitgevoerd met de `read order` query parameter. Kies `basic` een van de standaard waarden voor links en boven aan de rechter kant of `natural` voor een meer Lees vriendelijke lijn volgorde. In het volgende voor beeld worden beide sets van regel volgorde nummers weer gegeven voor hetzelfde document met twee kolommen. U ziet dat in de afbeelding aan de rechter kant de opeenvolgende regel nummers in elke kolom worden weer gegeven om de Lees volgorde weer te geven.
-
-:::image border type="content" source="./Images/ocr-read-order.png" alt-text="Voor beeld van OCR-Lees volgorde":::
+:::image border type="content" source="./Images/ocr-reading-order-example.png" alt-text="Voor beeld van OCR-Lees volgorde":::
 
 ## <a name="handwritten-classification-for-text-lines-latin-only"></a>Handgeschreven classificatie voor tekst regels (alleen Latijn)
 Het antwoord op de preview-versie van de [Lees-3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005) bevat classificatie voor elke tekst regel of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen. In het volgende voor beeld ziet u de handgeschreven classificatie voor de tekst in de afbeelding.
 
-:::image border type="content" source="./Images/handwritten-text-line.png" alt-text="Voor beeld van de classificatie van OCR-hand schrift":::
+:::image border type="content" source="./Images/ocr-handwriting-classification.png" alt-text="Voor beeld van de classificatie van OCR-hand schrift":::
+
+## <a name="select-pages-or-page-ranges-for-text-extraction"></a>Pagina ('s) of paginabereiken selecteren voor tekst extractie
+Met de [lezen 3,2 Preview-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)voor grote documenten met meerdere pagina's, gebruikt `pages` u de query parameter om pagina nummers of paginabereiken op te geven om alleen tekst uit die pagina's op te halen. In het volgende voor beeld ziet u een document met 10 pagina's, waarbij de tekst wordt geëxtraheerd voor beide gevallen: alle pagina's (1-10) en geselecteerde pagina's (3-6).
+
+:::image border type="content" source="./Images/ocr-select-pages.png" alt-text="Uitvoer van geselecteerde pagina's":::
 
 ## <a name="supported-languages"></a>Ondersteunde talen
 De Lees-Api's ondersteunen in totaal 73 talen voor de tekst van de afdruk stijl. Raadpleeg de volledige lijst met door [OCR ondersteunde talen](./language-support.md#optical-character-recognition-ocr). De handgeschreven stijl OCR wordt alleen ondersteund voor Engels.

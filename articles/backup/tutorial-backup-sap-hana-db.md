@@ -3,12 +3,12 @@ title: 'Zelfstudie: back-ups maken van SAP HANA-databases in virtuele Azure-mach
 description: In deze zelfstudie ontdekt u hoe u een back-up naar een Azure Backup Recovery Services-kluis maakt van SAP HANA-databases die op een virtuele Azure-machine worden uitgevoerd.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: 31a0a773096ec0f69e87bfd4a05f8ba98185e6cf
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
-ms.translationtype: HT
+ms.openlocfilehash: ede8ebab205e814de3988a2b5c432a21f965eb55
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695211"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987777"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Zelfstudie: Een back-up maken van SAP HANA-databases in een Azure-VM
 
@@ -98,6 +98,46 @@ U kunt ook de volgende FQDN's gebruiken om toegang te verlenen tot de vereiste s
 ### <a name="use-an-http-proxy-server-to-route-traffic"></a>Een HTTP-proxyserver gebruiken om verkeer te routeren
 
 Wanneer u een back-up maakt van een SAP HANA-database die wordt uitgevoerd op een virtuele Azure-machine, gebruikt de back-upextensie op de virtuele machine de HTTPS-API's voor het verzenden van beheeropdrachten naar Azure Backup en gegevens naar Azure Storage. De back-upextensie maakt ook gebruik van Azure AD voor verificatie. Leid het verkeer van de back-upextensie voor deze drie services via de HTTP-proxy. Gebruik de lijst met IP-adressen en FQDN's die hierboven worden genoemd om toegang tot de vereiste services toe te staan. Geverifieerde proxyservers worden niet ondersteund.
+
+## <a name="understanding-backup-and-restore-throughput-performance"></a>Meer informatie over de prestaties van back-up en herstel
+
+De back-ups (logboek en niet-logboek) in SAP HANA Azure-Vm's die via Backint worden meegeleverd, zijn stromen naar Azure Recovery Services-kluizen. het is dus belang rijk om deze streaming-methodologie te begrijpen.
+
+Het Backint-onderdeel van HANA biedt de ' sluizen ' (een pipe om te lezen van en een pipe om naar te schrijven), verbonden met onderliggende schijven waar database bestanden zich bevinden, die vervolgens worden gelezen door de Azure Backup-service en worden getransporteerd naar Azure Recovery Services kluis. De Azure Backup-service voert ook een controlesom uit voor het valideren van de stromen, naast de systeem eigen validatie controles van backint. Deze validaties zorgen ervoor dat de gegevens die aanwezig zijn in azure Recovery Services kluis inderdaad betrouwbaar zijn en kunnen worden hersteld.
+
+Aangezien de stromen voornamelijk worden verwerkt met schijven, moet u inzicht hebben in de schijf prestaties om de back-up-en herstel prestaties te meten. Raadpleeg [dit artikel](https://docs.microsoft.com/azure/virtual-machines/disks-performance) voor uitgebreide informatie over de door Voer van schijven en prestaties in azure vm's. Deze zijn ook van toepassing op back-up-en herstel prestaties.
+
+**De Azure backup-service probeert Maxi maal ~ 420 Mbps te behalen voor back-ups van niet-Logboeken (zoals volledig, differentieel en incrementeel) en tot 100 Mbps voor logboek back-ups voor Hana**. Zoals hierboven vermeld, zijn dit niet gegarandeerde snelheden en zijn ze afhankelijk van de volgende factoren:
+
+* Maximale door Voer van schijf in cache van de virtuele machine
+* Onderliggend schijf type en de door Voer
+* Het aantal processen dat op hetzelfde moment wordt geprobeerd te lezen en te schrijven naar dezelfde schijf.
+
+> [!IMPORTANT]
+> In kleinere virtuele machines, waarbij de door Voer van niet-cache geheugen bijna bijna gelijk is aan of kleiner is dan 400 MBps, is het mogelijk dat de gehele schijf-IOPS wordt verbruikt door de back-upservice. Dit kan van invloed zijn op de bewerkingen van SAP HANA die betrekking hebben op lezen/schrijven van de schijven. Als u in dat geval het verbruik van de back-upservice beperkt of beperkt tot de maximum limiet, kunt u naar de volgende sectie verwijzen.
+
+### <a name="limiting-backup-throughput-performance"></a>Prestaties van de back-updoorvoer beperken
+
+Als u het gebruik van de back-upservice-schijf wilt beperken tot een maximum waarde, voert u de volgende stappen uit.
+
+1. Ga naar de map opt/msawb/bin
+2. Maak een nieuw JSON-bestand met de naam ' ExtensionSettingOverrides.JSop '
+3. Voeg als volgt een sleutel-waardepaar toe aan het JSON-bestand:
+
+    ```json
+    {
+    "MaxUsableVMThroughputInMBPS": 200
+    }
+    ```
+
+4. Wijzig de machtigingen en het eigendom van het bestand als volgt:
+    
+    ```bash
+    chmod 750 ExtensionSettingsOverrides.json
+    chown root:msawb ExtensionSettingsOverrides.json
+    ```
+
+5. U hoeft geen service opnieuw op te starten. De Azure Backup-service zal proberen de doorvoer prestaties te beperken zoals vermeld in dit bestand.
 
 ## <a name="what-the-pre-registration-script-does"></a>Wat doet het script vóór registratie
 

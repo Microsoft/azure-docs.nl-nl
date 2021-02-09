@@ -6,17 +6,23 @@ ms.author: anmuk
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: reference
-ms.date: 11/20/2020
-ms.openlocfilehash: 7458b027add8be86d9491c674c2f1a0bc9fbc68c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.date: 2/5/2021
+ms.openlocfilehash: d98f2f80bf22627eb34855234e22e314c241c852
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552827"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988307"
 ---
 # <a name="supported-classifications-in-azure-purview"></a>Ondersteunde classificaties in azure controle sfeer liggen
 
 In dit artikel vindt u een overzicht van de ondersteunde en gedefinieerde systeem classificaties in azure controle sfeer liggen (preview).
+
+
+- **Drempel waarde voor DISTINCT**: het totale aantal afzonderlijke gegevens waarden dat in een kolom moet worden gevonden voordat de scanner het gegevens patroon erop uitvoert. Voor onze systeem classificatie regels moet u ten minste 8 afzonderlijke waarden in elke kolom hebben om ze te kunnen classificeren. Het systeem vereist deze waarde om ervoor te zorgen dat de kolom voldoende gegevens bevat voor de scanner om deze nauw keurig te classificeren. Een kolom die bijvoorbeeld meerdere rijen bevat die alle de waarde 1 bevatten, wordt niet geclassificeerd. Kolommen die één rij met een waarde bevatten en de rest van de rijen hebben null-waarden, worden ook niet geclassificeerd. Als u meerdere patronen opgeeft, geldt deze waarde voor elk patroon.
+
+- **Drempel waarde voor minimum overeenkomst**: dit is het minimum percentage van de gegevens waarde komt overeen met een kolom die moet worden gevonden door de scanner zodat de classificatie kan worden toegepast. De waarde van de systeem classificatie is ingesteld op 60%.
+
 
 ## <a name="defined-system-classifications"></a>Gedefinieerde systeem classificaties
 
@@ -274,7 +280,7 @@ Driver's License#
 Driver's Licenses#
 ```
 
-## <a name="australia-medical-account-number"></a>Medisch account nummer in Australië
+## <a name="australian-medicare-number"></a>Australische Medicare-nummer
 
 ### <a name="format"></a>Indeling
 
@@ -291,7 +297,7 @@ Driver's Licenses#
 
 ### <a name="keywords"></a>Trefwoorden
 
-#### <a name="keyword_australia_medical_account_number"></a>Keyword_Australia_Medical_Account_Number
+#### <a name="keyword_australia_medicare_number"></a>Keyword_Australia_Medicare_Number
 
 ```
 bank account details

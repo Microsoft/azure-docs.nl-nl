@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: ef018e58f8336220b96eba568c94efc40a0fb0c7
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 3bf910d3309285c8b700c39af68fb90715f8863a
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045390"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987723"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Open bare Azure-Load Balancer bijwerken
 [Azure Standard Load Balancer](load-balancer-overview.md) biedt een uitgebreide set functionaliteit en hoge Beschik baarheid via zone redundantie. Zie [vergelijkings tabel](./skus.md#skus)voor meer informatie over Load Balancer SKU.
@@ -21,6 +21,9 @@ Er zijn twee fasen in een upgrade:
 
 1. Wijzig de IP-toewijzings methode van dynamisch in statisch.
 2. Voer het Power shell-script uit om de upgrade en verkeer migratie te volt ooien.
+
+> [!IMPORTANT]
+> Het script is momenteel onderhouds werkzaamheden. U kunt [hier](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address-upgrade?tabs=option-upgrade-cli%2Coption-migrate-powershell#tabpanel_CeZOj-G++Q_option-upgrade-cli) de instructies raadplegen voor het upgraden van open bare IP-adressen van de Basic-SKU en de standaard-SKU.
 
 ## <a name="upgrade-overview"></a>Overzicht van de upgrade
 

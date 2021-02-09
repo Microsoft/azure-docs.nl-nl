@@ -6,13 +6,13 @@ ms.author: anmuk
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 11/1/2020
-ms.openlocfilehash: 53c71eec4c913c606669b7d36ca9a71ac8f3e2f1
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.date: 2/5/2021
+ms.openlocfilehash: 3cc29e0bd806ab76c4980128df5a89761e465fe7
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97693456"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988384"
 ---
 # <a name="custom-classifications-in-azure-purview"></a>Aangepaste classificaties in azure controle sfeer liggen 
 
@@ -39,7 +39,7 @@ Als u een aangepaste classificatie wilt maken, gaat u als volgt te werk:
     :::image type="content" source="media/create-a-custom-classification-and-classification-rule/new-classification.png" alt-text="Nieuwe classificatie" border="true":::
 
 Het deel venster **nieuwe classificatie toevoegen** wordt geopend, waarin u een naam en beschrijving voor de classificatie kunt opgeven. Het is raadzaam een Conventie voor naam afstand te gebruiken, zoals `your company name.classification name` .
-De systeem classificaties van micro soft worden gegroepeerd onder de gereserveerde `MS.` naam ruimte. Een voor beeld is **MS. Government. VS. Sofi \_ - \_ nummer**.
+De systeem classificaties van micro soft worden gegroepeerd onder de gereserveerde `MICROSOFT.` naam ruimte. Een voor beeld hiervan is **micro soft. Government. VS. Sofi \_ - \_ nummer**.
 
 De naam van uw classificatie moet beginnen met een letter gevolgd door een reeks letters, cijfers en punten (.) of onderstrepings tekens.
 Er zijn geen spaties toegestaan. Terwijl u typt, genereert de UX automatisch een beschrijvende naam. Deze beschrijvende naam is wat gebruikers te zien krijgen wanneer u deze toepast op een asset in de catalogus.

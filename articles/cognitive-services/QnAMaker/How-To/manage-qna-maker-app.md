@@ -5,21 +5,17 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: e4f0e229488093067b231a5c92334238ca216234
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 652489e8de68d61707fd419843f0dbb2ffd83754
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550552"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987930"
 ---
 # <a name="manage-qna-maker-app"></a>QnA Maker-app beheren
 
 Met QnA Maker kunt u samen werken met verschillende auteurs en inhouds editors door een mogelijkheid te bieden om de toegang van mede werkers te beperken op basis van de rol van de mede werker.
 Meer informatie over de [concepten van QnA Maker-samen werker-authenticatie](../Concepts/role-based-access-control.md).
-
-U kunt de kwaliteit van uw Knowledge Base ook verbeteren door alternatieve vragen te stellen via [actief leren](../Concepts/active-learning-suggestions.md). Gebruikers-inzendingen worden in aanmerking genomen en worden als suggesties weer gegeven in de lijst met alternatieve vragen. U hebt de flexibiliteit om deze suggesties als alternatieve vragen toe te voegen of af te wijzen.
-
-Uw kennis database wordt niet automatisch gewijzigd. Als u een wijziging wilt door voeren, moet u de suggesties accepteren. Deze suggesties Voeg vragen toe, maar u kunt geen bestaande vragen wijzigen of verwijderen.
 
 ## <a name="add-azure-role-based-access-control-azure-rbac"></a>Op rollen gebaseerd toegangs beheer voor Azure (Azure RBAC) toevoegen
 

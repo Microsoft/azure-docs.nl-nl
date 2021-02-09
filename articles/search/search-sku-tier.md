@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 320f02f6ece106b4d0e14293f95533aa5b4e0743
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: df218c2a4c066343ef571c6f24554ecaa806b639
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98693448"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987880"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Een prijs categorie kiezen voor Azure Cognitive Search
 
@@ -60,7 +60,8 @@ De meeste functies zijn beschikbaar op alle lagen, met inbegrip van de gratis la
 | [Beheerde of vertrouwde identiteiten voor uitgaande toegang (Indexeer functie)](search-howto-managed-identities-data-sources.md) | Niet beschikbaar in de gratis laag.|
 | [Door de klant beheerde versleutelingssleutels](search-security-manage-encryption-keys.md) | Niet beschikbaar in de gratis laag. |
 | [Toegang tot IP-firewall](service-configure-firewall.md) | Niet beschikbaar in de gratis laag. |
-| [Persoonlijk eind punt (integratie met persoonlijke Azure-koppeling)](service-create-private-endpoint.md) | Voor inkomende verbindingen met een zoek service, niet beschikbaar in de gratis laag. Voor uitgaande verbindingen door Indexeer functies aan andere Azure-resources, niet beschikbaar op Free of S3 HD. Voor Indexeer functies die gebruikmaken van vaardig heden, niet beschikbaar op Free, Basic, S1 of S3 HD.|
+| [Persoonlijk eind punt (integratie met persoonlijke Azure-koppeling)](service-create-private-endpoint.md) | Voor inkomende verbindingen met een zoek service, niet beschikbaar in de gratis laag. Voor uitgaande verbindingen door Indexeer functies aan andere Azure-resources, niet beschikbaar op Free of S3 HD. Voor Indexeer functies die gebruikmaken van vaardig heden, niet beschikbaar op Free, Basic, S1 of S3 HD.| 
+| [Beschikbaarheidszones](search-performance-optimization.md) | Niet beschikbaar in de gratis laag en de laag Basic. |
 
 Resource-intensieve functies werken mogelijk niet goed, tenzij u voldoende capaciteit hebt. [AI-verrijking](cognitive-search-concept-intro.md) heeft bijvoorbeeld langlopende vaardig heden waarvoor een time-out optreedt op een gratis service, tenzij de gegevensset klein is.
 

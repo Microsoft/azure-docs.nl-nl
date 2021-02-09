@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/04/2021
-ms.openlocfilehash: 68c50cf72c5592b7593c9f87445679b08116dd43
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 393270018cd5706b9cbcfa544a6e6a54d5ab9cc6
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980100"
+ms.locfileid: "99988210"
 ---
-# <a name="partner-solutions"></a>Partneroplossingen
+# <a name="partner-spotlight"></a>Partner Spotlight
 
 Krijg deskundige hulp van micro soft-partners die end-to-end-oplossingen bouwen die Azure Cognitive Search omvatten. De volgende partners hebben een diep gaande ervaring in het gebruik van zoek opdrachten in volledige tekst en AI-verrijking over diverse bedrijfs-en technische scenario's.
 

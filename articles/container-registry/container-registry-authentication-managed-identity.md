@@ -3,12 +3,12 @@ title: Verifiëren met beheerde identiteit
 description: Toegang bieden tot installatie kopieën in uw persoonlijke container register met behulp van een door de gebruiker toegewezen of door het systeem toegewezen beheerde Azure-identiteit.
 ms.topic: article
 ms.date: 01/16/2019
-ms.openlocfilehash: 9a144f0e865cfc9bf857752eed65dbe5cda88bd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68564cc5743b1deb43bf39f897c239dc683c334c
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91253459"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987744"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Een door Azure beheerde identiteit gebruiken om te verifiëren bij een Azure container Registry 
 
@@ -49,11 +49,11 @@ Gebruik vervolgens de identiteit voor verificatie bij elke [service die onderste
 
 Als u nog geen Azure container Registry hebt, maakt u een REGI ster en pusht u een voor beeld van een container installatie kopie. Zie [Quick Start: een persoonlijk container register maken met behulp van de Azure cli](container-registry-get-started-azure-cli.md)voor stappen.
 
-In dit artikel wordt ervan uitgegaan dat u de `aci-helloworld:v1` container installatie kopie hebt opgeslagen in het REGI ster. In de voor beelden wordt de register naam *myContainerRegistry*gebruikt. Vervang door uw eigen register-en afbeeldings namen in latere stappen.
+In dit artikel wordt ervan uitgegaan dat u de `aci-helloworld:v1` container installatie kopie hebt opgeslagen in het REGI ster. In de voor beelden wordt de register naam *myContainerRegistry* gebruikt. Vervang door uw eigen register-en afbeeldings namen in latere stappen.
 
 ## <a name="create-a-docker-enabled-vm"></a>Een VM maken die is ingeschakeld voor docker
 
-Maak een Ubuntu-virtuele machine met docker-functionaliteit. U moet ook de [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) installeren op de virtuele machine. Als u al een virtuele machine van Azure hebt, kunt u deze stap overs Laan om de virtuele machine te maken.
+Maak een Ubuntu-virtuele machine met docker-functionaliteit. U moet ook de [Azure cli](/cli/azure/install-azure-cli) installeren op de virtuele machine. Als u al een virtuele machine van Azure hebt, kunt u deze stap overs Laan om de virtuele machine te maken.
 
 Implementeer een standaard-Ubuntu Azure-virtuele machine met [AZ VM Create][az-vm-create]. In het volgende voor beeld wordt een VM gemaakt met de naam *myDockerVM* in een bestaande resource groep met de naam *myResourceGroup*:
 
@@ -86,7 +86,7 @@ sudo apt install docker.io -y
 Na de installatie voert u de volgende opdracht uit om te controleren of docker correct wordt uitgevoerd op de VM:
 
 ```bash
-sudo docker run -it hello-world
+sudo docker run -it mcr.microsoft.com/hello-world
 ```
 
 Uitvoer:
@@ -99,7 +99,7 @@ This message shows that your installation appears to be working correctly.
 
 ### <a name="install-the-azure-cli"></a>Azure-CLI installeren
 
-Volg de stappen in [Azure cli installeren met apt](/cli/azure/install-azure-cli-apt?view=azure-cli-latest) om de Azure CLI op uw virtuele Ubuntu-machine te installeren. Voor dit artikel moet u versie 2.0.55 of hoger installeren.
+Volg de stappen in [Azure cli installeren met apt](/cli/azure/install-azure-cli-apt) om de Azure CLI op uw virtuele Ubuntu-machine te installeren. Voor dit artikel moet u versie 2.0.55 of hoger installeren.
 
 Sluit de SSH-sessie af.
 
@@ -107,7 +107,7 @@ Sluit de SSH-sessie af.
 
 ### <a name="create-an-identity"></a>Een identiteit maken
 
-Maak een identiteit in uw abonnement met behulp van de opdracht [AZ Identity Create](/cli/azure/identity?view=azure-cli-latest#az-identity-create) . U kunt dezelfde resource groep gebruiken die u eerder hebt gebruikt voor het maken van het container register of de virtuele machine of een andere.
+Maak een identiteit in uw abonnement met behulp van de opdracht [AZ Identity Create](/cli/azure/identit#az-identity-create) . U kunt dezelfde resource groep gebruiken die u eerder hebt gebruikt voor het maken van het container register of de virtuele machine of een andere.
 
 ```azurecli-interactive
 az identity create --resource-group myResourceGroup --name myACRId

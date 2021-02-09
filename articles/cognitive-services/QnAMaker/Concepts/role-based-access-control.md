@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: cb6d0ee9c651ca1dcc554f5951a5733727af2d6b
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: f43fa06cf93d383efcb0fe746de28ab143280e50
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954103"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988021"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Samen werken met andere auteurs en editors
 
@@ -46,7 +46,7 @@ Als u van plan bent om de [ontwerp-api's](../index.yml)aan te roepen, leest u me
 
 ## <a name="authenticate-by-qna-maker-portal"></a>Verifiëren door QnA Maker Portal
 
-Als u de QnA Maker Portal ontwerpt en gebruikt, nadat u [de juiste rol aan de resource voor een samen werker hebt toegevoegd](../index.yml), beheert de QnA Maker-Portal alle toegangs machtigingen.
+Als u de QnA Maker Portal ontwerpt en gebruikt, nadat u de juiste rol aan de resource voor een samen werker hebt toegevoegd, beheert de QnA Maker-Portal alle toegangs machtigingen.
 
 ## <a name="authenticate-by-qna-maker-apis-and-sdks"></a>Verifiëren door QnA Maker Api's en Sdk's
 
@@ -54,4 +54,4 @@ Als u de Api's met behulp van REST of de Sdk's wilt ontwerpen en samen werken, m
 
 ## <a name="next-step"></a>Volgende stap
 
-* Een kennis database ontwerpen voor [talen](../index.yml) en voor [client toepassingen](../index.yml)
+* Een kennis database ontwerpen voor talen en voor client toepassingen

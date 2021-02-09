@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: e523b35afca33213a40060819a1293e94d413b00
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: bf5582016f74e67926c38111a3d8d2f468f3ac79
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222862"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987986"
 ---
 # <a name="plan-your-qna-maker-app"></a>Uw QnA Maker-app plannen
 
@@ -124,17 +124,17 @@ Ontwerp uw gesprek stroom met een lus, zodat een gebruiker weet hoe uw bot moet 
 
 Mede werkers kunnen andere ontwikkel aars zijn die de volledige ontwikkelings stack van de Knowledge Base-toepassing delen of kunnen worden beperkt tot alleen het ontwerpen van de kennis database.
 
-Knowledge Base-ontwerp ondersteunt diverse op [rollen gebaseerde toegangs machtigingen](../reference-role-based-access-control.md) die u in de Azure Portal toepast om het bereik van de mogelijkheden van een samen werker te beperken.
+Knowledge Base-ontwerp ondersteunt diverse op rollen gebaseerde toegangs machtigingen die u in de Azure Portal toepast om het bereik van de mogelijkheden van een samen werker te beperken.
 
 ## <a name="integration-with-client-applications"></a>Integratie met client toepassingen
 
-De integratie met [client toepassingen](../index.yml) wordt gerealiseerd door een query naar het runtime-eind punt voor de voor spelling te verzenden. Er wordt een query naar uw specifieke Knowledge Base verzonden met een SDK of op REST gebaseerde aanvraag naar het eind punt van de Web-App van uw QnA Maker.
+De integratie met client toepassingen wordt gerealiseerd door een query naar het runtime-eind punt voor de voor spelling te verzenden. Er wordt een query naar uw specifieke Knowledge Base verzonden met een SDK of op REST gebaseerde aanvraag naar het eind punt van de Web-App van uw QnA Maker.
 
 Als u een client aanvraag correct wilt verifiëren, moet de client toepassing de juiste referenties en de Knowledge Base-ID verzenden. Als u een Azure Bot Service gebruikt, configureert u deze instellingen als onderdeel van de bot-configuratie in de Azure Portal.
 
 ### <a name="conversation-flow-in-a-client-application"></a>Conversatie stroom in een client toepassing
 
-De conversatie stroom in een [client toepassing](../index.yml), zoals een Azure-bot, vereist mogelijk functionaliteit voor en na interactie met de Knowledge Base.
+De conversatie stroom in een client toepassing, zoals een Azure-bot, vereist mogelijk functionaliteit voor en na interactie met de Knowledge Base.
 
 Ondersteunt uw client toepassing gesprek stroom door alternatieve manieren te bieden voor het verwerken van vervolg vragen of met inbegrip van Chit-Chit? Als dit het geval is, ontwerpt u deze vroege en zorgt u ervoor dat de query van de client toepassing correct wordt verwerkt door een andere service of wanneer deze naar uw kennis database wordt verzonden.
 
@@ -148,7 +148,7 @@ In een dergelijk scenario met een [gedeelde architectuur](../choose-natural-lang
 
 ### <a name="active-learning-from-a-client-application"></a>Actief leren vanuit een client toepassing
 
-QnA Maker maakt gebruik van _actief leren_ om uw Knowledge Base te verbeteren door alternatieve vragen te stellen aan een antwoord. De client toepassing is verantwoordelijk voor een deel van dit [actief onderwijs](active-learning-suggestions.md). Via gesprek prompts kan de client toepassing bepalen dat de Knowledge Base een antwoord heeft geretourneerd dat niet nuttig is voor de gebruiker en kan een beter antwoord vaststellen. De client toepassing moet [die gegevens naar de Knowledge Base verzenden](active-learning-suggestions.md#how-you-give-explicit-feedback-with-the-train-api) om de kwaliteit van de voor spelling te verbeteren.
+QnA Maker maakt gebruik van _actief leren_ om uw Knowledge Base te verbeteren door alternatieve vragen te stellen aan een antwoord. De client toepassing is verantwoordelijk voor een deel van dit [actief onderwijs](../How-To/use-active-learning.md). Via gesprek prompts kan de client toepassing bepalen dat de Knowledge Base een antwoord heeft geretourneerd dat niet nuttig is voor de gebruiker en kan een beter antwoord vaststellen. De client toepassing moet die gegevens naar de Knowledge Base verzenden om de kwaliteit van de voor spelling te verbeteren.
 
 ### <a name="providing-a-default-answer"></a>Een standaard antwoord opgeven
 
@@ -208,16 +208,16 @@ De [ontwikkelings levenscyclus](development-lifecycle-knowledge-base.md) van een
 
 ### <a name="knowledge-base-development-of-qna-maker-pairs"></a>Knowledge Base-ontwikkeling van QnA Maker paren
 
-Uw [QnA-paren](question-answer-set.md) moeten zijn ontworpen en ontwikkeld op basis van het gebruik van uw client toepassing.
+Uw QnA-paren moeten zijn ontworpen en ontwikkeld op basis van het gebruik van uw client toepassing.
 
 Elk paar kan het volgende bevatten:
 * Meta gegevens kunnen worden gefilterd bij het uitvoeren van query's zodat u uw QnA-paren kunt labelen met aanvullende informatie over de bron, de inhoud, de indeling en het doel van uw gegevens.
 * Vervolg vragen: helpt u bij het bepalen van een pad via uw kennis database, zodat de gebruiker bij het juiste antwoord komt.
-* Alternatieve vragen: belang rijk zodat Zoek resultaten kunnen worden vergeleken met je antwoord in verschillende vormen van de vraag. [Actieve Learning suggesties](active-learning-suggestions.md) veranderen in alternatieve vragen.
+* Alternatieve vragen: belang rijk zodat Zoek resultaten kunnen worden vergeleken met je antwoord in verschillende vormen van de vraag. [Actieve Learning suggesties](../How-To/use-active-learning.md) veranderen in alternatieve vragen.
 
 ### <a name="devops-development"></a>DevOps-ontwikkeling
 
-Voor het ontwikkelen van een Knowledge Base voor het invoegen van een DevOps-pijp lijn moet de Knowledge Base tijdens [batch tests](../index.yml)worden geïsoleerd.
+Voor het ontwikkelen van een Knowledge Base voor het invoegen van een DevOps-pijp lijn moet de Knowledge Base tijdens batch tests worden geïsoleerd.
 
 Een Knowledge Base deelt de Cognitive Search index met alle andere kennis grondslagen op de QnA Maker resource. Hoewel de Knowledge Base is geïsoleerd per partitie, kan het delen van de index een verschil in de Score veroorzaken in vergelijking met de gepubliceerde kennis database.
 

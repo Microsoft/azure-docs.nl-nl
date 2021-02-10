@@ -3,12 +3,12 @@ title: Gebeurtenis levering, beheerde service-identiteit en persoonlijke koppeli
 description: In dit artikel wordt beschreven hoe u de beheerde service-identiteit voor een Azure Event grid-onderwerp inschakelt. Gebruik dit om gebeurtenissen door te sturen naar ondersteunde bestemmingen.
 ms.topic: how-to
 ms.date: 01/28/2021
-ms.openlocfilehash: ca154c252976911627184a63386cba1544ed21e0
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 3e643465db7cc918499ca962c4697cb61cb4b594
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054414"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007768"
 ---
 # <a name="event-delivery-with-a-managed-identity"></a>Gebeurtenis levering met een beheerde identiteit
 In dit artikel wordt beschreven hoe u een [beheerde service-identiteit](../active-directory/managed-identities-azure-resources/overview.md) inschakelt voor aangepaste onderwerpen of domeinen van Azure Event grid. Gebruik dit om gebeurtenissen door te sturen naar ondersteunde bestemmingen, zoals Service Bus-wacht rijen en-onderwerpen, Event hubs en opslag accounts.
@@ -237,7 +237,7 @@ az eventgrid event-subscription create
 ```
 
 ### <a name="use-the-azure-cli---azure-storage-queue"></a>De Azure CLI-Azure Storage-wachtrij gebruiken 
-In deze sectie leert u hoe u de Azure CLI gebruikt om het gebruik van een door het systeem toegewezen identiteit in te scha kelen voor het leveren van gebeurtenissen in een Azure Storage wachtrij. De identiteit moet lid zijn van de rol **Storage BLOB data Inzender** op het opslag account.
+In deze sectie leert u hoe u de Azure CLI gebruikt om het gebruik van een door het systeem toegewezen identiteit in te scha kelen voor het leveren van gebeurtenissen in een Azure Storage wachtrij. De identiteit moet lid zijn van de rol **afzender gegevens bericht van de opslag wachtrij** op het opslag account. Het moet ook lid zijn van de rol **Storage BLOB data Inzender** op het opslag account dat wordt gebruikt voor het onbestelen van berichten.
 
 #### <a name="define-variables"></a>Variabelen definiëren  
 

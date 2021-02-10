@@ -13,16 +13,16 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 12/01/2020
+ms.date: 02/04/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 2be66904898ecdf2006952f5e80c17dc78b81c06
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 3f1be2e64435cb0bcdb369a398a9a65fc3714fb2
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825806"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008533"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Veelgestelde vragen en bekende problemen met beheerde identiteiten voor Azure-resources
 
@@ -48,6 +48,10 @@ Nee. Beheerde identiteiten en Azure AD-app registraties zijn niet hetzelfde als 
 App-registraties hebben twee onderdelen: een toepassings object + een Service-Principal-object. Beheerde identiteiten voor Azure-resources hebben slechts een van deze onderdelen: een Service-Principal-object. 
 
 Beheerde identiteiten hebben geen toepassings object in de map, wat vaak wordt gebruikt om app-machtigingen voor MS Graph te verlenen. In plaats daarvan moeten de MS Graph-machtigingen voor beheerde identiteiten rechtstreeks aan de service-principal worden verleend.  
+
+### <a name="can-the-same-managed-identity-be-used-across-multiple-regions"></a>Kan dezelfde beheerde identiteit worden gebruikt in meerdere regio's?
+
+Kortom, ja, u kunt door de gebruiker toegewezen beheerde identiteiten gebruiken in meer dan één Azure-regio. Het langere antwoord is dat terwijl door de gebruiker toegewezen beheerde identiteiten worden gemaakt als regionale resources de bijbehorende [Service-Principal](../develop/app-objects-and-service-principals.md#service-principal-object) (SPN) die is gemaakt in azure AD is wereld wijd beschikbaar. De service-principal kan vanuit elke Azure-regio worden gebruikt en de beschik baarheid ervan is afhankelijk van de beschik baarheid van Azure AD. Als u bijvoorbeeld een door de gebruiker toegewezen beheerde identiteit in de South-Central regio hebt gemaakt en deze regio niet beschikbaar is, is dit probleem alleen van invloed op de [beheer](../../azure-resource-manager/management/control-plane-and-data-plane.md) activiteiten op de beheerde identiteit zelf.  De activiteiten die worden uitgevoerd door resources die al zijn geconfigureerd voor het gebruik van de beheerde identiteiten, worden niet beïnvloed.
 
 ### <a name="does-managed-identities-for-azure-resources-work-with-azure-cloud-services"></a>Werken beheerde identiteiten voor Azure-resources met Azure Cloud Services?
 

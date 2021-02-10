@@ -3,12 +3,12 @@ title: Ondersteunde inhouds indelingen
 description: Meer informatie over inhouds indelingen die worden ondersteund door Azure Container Registry, waaronder docker-compatibele container installatie kopieën, helm-grafieken, OCI-afbeeldingen en OCI-artefacten.
 ms.topic: article
 ms.date: 08/30/2019
-ms.openlocfilehash: ab915385f46f83c7b655acd1a48d66df84b50653
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2a54c65d149a27ed9eae85c3308d657ed3471a3
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84695263"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008329"
 ---
 # <a name="content-formats-supported-in-azure-container-registry"></a>Inhouds indelingen die worden ondersteund in Azure Container Registry
 
@@ -20,11 +20,11 @@ De volgende indelingen van de docker-container installatie kopieën worden onder
 
 * [Manifest voor docker-installatie kopie v2, schema 1](https://docs.docker.com/registry/spec/manifest-v2-1/)
 
-* [Docker-installatie kopie-manifest v2, schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/) : bevat manifest lijsten waarmee registers meerdere platform afbeeldingen kunnen opslaan onder één ' image: tag '-verwijzing
+* [Docker-installatie kopie manifest v2, schema 2](https://docs.docker.com/registry/spec/manifest-v2-2/) : bevat manifest lijsten waarmee registers [installatie kopieën met meerdere architecturen](push-multi-architecture-images.md) kunnen opslaan onder één `image:tag` Referentie
 
 ## <a name="oci-images"></a>OCI-afbeeldingen
 
-Azure Container Registry ondersteunt installatie kopieën die voldoen aan de indeling van het [opening container Initiative (OCI)-afbeelding](https://github.com/opencontainers/image-spec/blob/master/spec.md). Pakket indelingen zijn onder andere de indeling van de [enkelvouds afbeelding](https://github.com/sylabs/sif).
+Azure Container Registry ondersteunt installatie kopieën die voldoen aan de specificatie van de [indeling open container Initiative (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md), met inbegrip van de optionele definitie van de [installatie kopie-index](https://github.com/opencontainers/image-spec/blob/master/image-index.md) . Pakket indelingen zijn onder andere de indeling van de [enkelvouds afbeelding](https://github.com/sylabs/sif).
 
 ## <a name="oci-artifacts"></a>OCI-artefacten
 

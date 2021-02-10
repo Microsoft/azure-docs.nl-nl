@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: 056eba8694d1727350809121f763181e3cdbdc64
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8192d7104daf1474a2123331183edf05e6fa1ada
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968601"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007411"
 ---
 # <a name="azure-monitor-for-sap-solutions-providers-preview"></a>Azure monitor voor SAP-oplossingen providers (preview-versie)
 
@@ -41,7 +41,7 @@ Als klanten geen providers configureren op het moment van de implementatie van d
 
 Klanten kunnen een of meer providers van provider type configureren *SAP Hana* om het verzamelen van gegevens vanuit SAP Hana data base in te scha kelen. De SAP HANA provider maakt verbinding met de SAP HANA data base via SQL-poort, haalt telemetriegegevens op uit de data base en duwt deze naar de Log Analytics-werk ruimte in het abonnement van de klant. De SAP HANA provider verzamelt gegevens elke 1 minuut van de SAP HANA-data base.  
 
-In de open bare Preview kunnen klanten verwachten dat de volgende gegevens worden weer gegeven met SAP HANA provider: onderliggend infrastructuur gebruik, SAP HANA host-status, SAP HANA systeem replicatie en SAP HANA back-upgegevens voor telemetrie. Als u SAP HANA provider wilt configureren, moet u het IP-adres van de host, HANA SQL-poort nummer en SYSTEMDB-gebruikers naam en-wacht woord opgeven. Klanten wordt aangeraden SAP HANA provider te configureren op basis van SYSTEMDB, maar extra providers kunnen worden geconfigureerd voor andere database tenants.
+In de open bare Preview kunnen klanten verwachten dat de volgende gegevens worden weer gegeven met SAP HANA provider: onderliggend infrastructuur gebruik, SAP HANA host-status, SAP HANA systeem replicatie en SAP HANA back-upgegevens voor telemetrie. Als u SAP HANA provider wilt configureren, moet u het IP-adres van de host, HANA SQL-poort nummer en SYSTEMDB-gebruikers naam en-wacht woord opgeven. Klanten wordt aangeraden SAP HANA provider te configureren op basis van SYSTEMDB, maar meer providers kunnen worden geconfigureerd voor andere database tenants.
 
 ![Azure Monitor voor SAP Solutions-providers-SAP HANA](./media/azure-monitor-sap/azure-monitor-providers-hana.png)
 
@@ -68,10 +68,38 @@ Voor het configureren van een cluster provider met hoge Beschik baarheid, zijn e
    Als u de cluster provider met maximale Beschik baarheid wilt configureren, is de volgende informatie vereist:
    
    - **Naam**. Een naam voor deze provider. Deze moet uniek zijn voor dit Azure Monitor voor SAP-oplossingen.
-   - **Prometheus-eind punt**. Meestal http \: // \<servername or ip address\> : 9664/meet waarden.
+   - **Prometheus-eind punt**. http \: // \<servername or ip address\> : 9664/meet waarden.
    - **Sid**. Voor SAP-systemen gebruikt u de SAP-SID. Gebruik voor andere systemen (bijvoorbeeld NFS-clusters) een naam die uit drie tekens bestaan voor het cluster. De SID moet uniek zijn van andere clusters die worden bewaakt.   
    - **Cluster naam**. De cluster naam die wordt gebruikt bij het maken van het cluster. De cluster naam kan worden gevonden in de eigenschap cluster `cluster-name` .
    - **Hostnaam**. De Linux-hostnaam van de virtuele machine.  
+
+
+## <a name="provider-type-os-linux"></a>Provider type besturings systeem (Linux)
+Klanten kunnen een of meer providers van provider type OS (Linux) configureren om gegevens verzameling van BareMetal of VM-knoop punt in te scha kelen. De OS-provider (Linux) maakt verbinding met BareMetal-of VM-knoop punten met behulp van [Node_Exporter](https://github.com/prometheus/node_exporter)   -eind punt, haalt telemetriegegevens op van de knoop punten en duwt deze naar log Analytics werk ruimte in het klant abonnement. De provider van het besturings systeem (Linux) verzamelt gegevens elke 60 seconden voor de meeste meet waarden van knoop punten. 
+
+In de open bare Preview kunnen klanten verwachten de volgende gegevens te zien met de OS-provider (Linux): 
+   - CPU-gebruik, CPU-gebruik per proces 
+   - Schijf gebruik, I/O-lees & schrijven 
+   - Geheugen distributie, geheugen gebruik, geheugen gebruik wisselen 
+   - Netwerk gebruik, binnenkomend netwerk & Details uitgaand verkeer. 
+
+Als u een OS-provider (Linux) wilt configureren, zijn er twee primaire stappen betrokken:
+1. Installeer [Node_Exporter](https://github.com/prometheus/node_exporter)   op elke BareMetal of VM-knoop punten.
+   U hebt twee opties voor het installeren van [Node_exporter](https://github.com/prometheus/node_exporter): 
+      - Voor een automatiserings installatie met Ansible gebruikt u [Node_Exporter](https://github.com/prometheus/node_exporter) op elke BAREMETAL of VM-knoop punten om de OS-provider (Linux) te installeren.  
+      - Een [hand matige installatie](https://prometheus.io/docs/guides/node-exporter/)uitvoeren.
+
+2. Configureer een OS-provider (Linux) voor elk exemplaar van het BareMetal-of VM-knoop punt in uw omgeving. 
+   Als u de provider van het besturings systeem (Linux) wilt configureren, is de volgende informatie vereist: 
+      - Naam. Een naam voor deze provider. Deze moet uniek zijn voor dit Azure Monitor voor SAP-oplossingen. 
+      - Eind punt van knoop punt exporteren. Doorgaans http:// <servername or ip address> : 9100/meet waarden 
+
+> [!NOTE]
+> 9100 is een poort die beschikbaar is voor Node_Exporter-eind punt.
+
+> [!Warning]
+> Zorg ervoor dat de knooppunt Exporter actief blijft na het opnieuw opstarten van het knoop punt. 
+
 
 ## <a name="provider-type-microsoft-sql-server"></a>Provider type micro soft SQL Server
 
@@ -79,7 +107,7 @@ Klanten kunnen een of meer providers van provider type configureren *Microsoft S
 
 In de open bare Preview kunnen klanten verwachten dat de volgende gegevens worden weer gegeven met SQL Server provider: onderliggend infrastructuur gebruik, de belangrijkste SQL-instructies, de belangrijkste grootste tabel, problemen die zijn vastgelegd in de SQL Server fout logboeken, het blok keren van processen en anderen.  
 
-Als u Microsoft SQL Server provider wilt configureren, moeten de SAP-systeem-ID, het IP-adres van de host, SQL Server poort nummer en de SQL Server aanmeldings naam en het wacht woord zijn vereist.
+Als u Microsoft SQL Server provider wilt configureren, zijn de SAP-systeem-ID, het IP-adres van de host, het SQL Server poort nummer en de SQL Server aanmeldings naam en het wacht woord vereist.
 
 ![Azure Monitor voor SAP Solutions-providers-SQL](./media/azure-monitor-sap/azure-monitor-providers-sql.png)
 

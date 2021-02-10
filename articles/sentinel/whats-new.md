@@ -8,12 +8,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 02/04/2021
-ms.openlocfilehash: 37a9294b156bd41b72e777696f10a1c4ac2bb354
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 9136947767bffb7bea800cdd2a735794baf8f329
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99832756"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007360"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -41,7 +41,7 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 - [Verbeterde regel afstemming met de voorbeeld grafieken van Analytics-regels](#improved-rule-tuning-with-the-analytics-rule-preview-graphs-public-preview)
 
 
-## <a name="analytics-rule-wizard-improved-query-editing-experience-public-preview"></a>Wizard analyse regel: verbeterde mogelijkheden voor het bewerken van query's (open bare preview)
+### <a name="analytics-rule-wizard-improved-query-editing-experience-public-preview"></a>Wizard analyse regel: verbeterde mogelijkheden voor het bewerken van query's (open bare preview)
 
 De Azure Sentinel Scheduled Analytics regel wizard biedt nu de volgende verbeteringen voor het schrijven en bewerken van query's:
 

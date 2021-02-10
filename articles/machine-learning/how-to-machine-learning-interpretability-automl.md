@@ -10,12 +10,12 @@ ms.custom: how-to, automl, responsible-ml
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: fe0b2abb7fa2ca986a896a75e5f6d4c238d70109
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 709c85bed4a028c6c168c79cd9fffd6b7b40cb68
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807255"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008040"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Interpreteerbaarheid: modeluitleg in geautomatiseerde machine learning (preview)
 
@@ -51,7 +51,7 @@ Haal de uitleg op uit de `best_run` , die uitleg bevat voor zowel onbewerkte als
 > * Gemiddelde seizoen 
 > * Seizoen Naive
 
-### <a name="download-engineered-feature-importance-from-artifact-store"></a>Belang rijk onderdeel van de artefact opslag downloaden
+### <a name="download-the-engineered-feature-importances-from-the-best-run"></a>De belang rijke functies van de functie downloaden van de beste uitvoering
 
 U kunt gebruiken `ExplanationClient` voor het downloaden van de toelichtingen van de functie die door de engine zijn verstrekt vanuit het artefact archief van de `best_run` . 
 
@@ -61,6 +61,18 @@ from azureml.interpret import ExplanationClient
 client = ExplanationClient.from_run(best_run)
 engineered_explanations = client.download_model_explanation(raw=False)
 print(engineered_explanations.get_feature_importance_dict())
+```
+
+### <a name="download-the-raw-feature-importances-from-the-best-run"></a>De onbewerkte functies van de beste uitvoering downloaden
+
+U kunt gebruiken `ExplanationClient` om de onbewerkte functie verklaringen te downloaden uit het artefact archief van de `best_run` .
+
+```python
+from azureml.interpret import ExplanationClient
+
+client = ExplanationClient.from_run(best_run)
+raw_explanations = client.download_model_explanation(raw=True)
+print(raw_explanations.get_feature_importance_dict())
 ```
 
 ## <a name="interpretability-during-training-for-any-model"></a>Interpretiteit tijdens de training voor elk model 
@@ -75,7 +87,7 @@ automl_run, fitted_model = local_run.get_output(metric='accuracy')
 
 ### <a name="set-up-the-model-explanations"></a>De beschrijving van het model instellen
 
-Gebruiken `automl_setup_model_explanations` om de uitgevende uitleg te verkrijgen. De `fitted_model` kan de volgende items genereren:
+Gebruiken `automl_setup_model_explanations` voor het ophalen van de toelichte en onbewerkte uitleg. De `fitted_model` kan de volgende items genereren:
 
 - Aanbevolen gegevens uit getrainde of test voorbeelden
 - Lijst met functies voor de functie naam
@@ -114,13 +126,25 @@ explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator,
                          explainer_kwargs=automl_explainer_setup_obj.surrogate_model_params)
 ```
 
-### <a name="use-mimicexplainer-for-computing-and-visualizing-engineered-feature-importance"></a>MimicExplainer gebruiken voor het berekenen en visualiseren van de belang rijke functie
+### <a name="use-mimic-explainer-for-computing-and-visualizing-engineered-feature-importance"></a>Geïmiteerde uitleg gebruiken voor het berekenen en visualiseren van het belang van de functie van technici
 
-U kunt de `explain()` methode in MimicWrapper aanroepen met de getransformeerde test voorbeelden om het belang van de functie voor de gegenereerde functies te verkrijgen. U kunt ook gebruiken `ExplanationDashboard` om de visualisatie van het dash board weer te geven van de belang rijke waarden van de functie van de gegenereerde, ontworpen functies door AutoML featurizers.
+U kunt de `explain()` methode in MimicWrapper aanroepen met de getransformeerde test voorbeelden om het belang van de functie voor de gegenereerde functies te verkrijgen. U kunt zich ook aanmelden bij [Azure machine learning Studio](https://ml.azure.com/) om de dashboard visualisatie weer te geven van de belang rijke waarden van de functie van de gegenereerde, ontworpen functies door AutoML featurizers.
 
 ```python
 engineered_explanations = explainer.explain(['local', 'global'], eval_dataset=automl_explainer_setup_obj.X_test_transform)
 print(engineered_explanations.get_feature_importance_dict())
+```
+
+### <a name="use-mimic-explainer-for-computing-and-visualizing-raw-feature-importance"></a>Geïmiteerde uitleg gebruiken voor het berekenen en visualiseren van de urgentie van RAW-onderdelen
+
+U kunt de `explain()` methode in MimicWrapper aanroepen met de getransformeerde test voorbeelden om het belang van de functie voor de onbewerkte functies te verkrijgen. In [machine learning Studio](https://ml.azure.com/)kunt u de dashboard visualisatie van de belang rijke waarden van de functie van de onbewerkte functies bekijken.
+
+```python
+raw_explanations = explainer.explain(['local', 'global'], get_raw=True,
+                                     raw_feature_names=automl_explainer_setup_obj.raw_feature_names,
+                                     eval_dataset=automl_explainer_setup_obj.X_test_transform,
+                                     raw_eval_dataset=automl_explainer_setup_obj.X_test_raw)
+print(raw_explanations.get_feature_importance_dict())
 ```
 
 ## <a name="interpretability-during-inference"></a>Interpretiteit tijdens deinterferentie
@@ -174,6 +198,48 @@ with open("myenv.yml","r") as f:
 
 ```
 
+### <a name="create-the-scoring-script"></a>Het Score script maken
+
+Een script schrijven dat uw model laadt en voor spellingen en uitleg produceert op basis van een nieuwe batch met gegevens.
+
+```python
+%%writefile score.py
+import joblib
+import pandas as pd
+from azureml.core.model import Model
+from azureml.train.automl.runtime.automl_explain_utilities import automl_setup_model_explanations
+
+
+def init():
+    global automl_model
+    global scoring_explainer
+
+    # Retrieve the path to the model file using the model name
+    # Assume original model is named automl_model
+    automl_model_path = Model.get_model_path('automl_model')
+    scoring_explainer_path = Model.get_model_path('scoring_explainer')
+
+    automl_model = joblib.load(automl_model_path)
+    scoring_explainer = joblib.load(scoring_explainer_path)
+
+
+def run(raw_data):
+    data = pd.read_json(raw_data, orient='records')
+    # Make prediction
+    predictions = automl_model.predict(data)
+    # Setup for inferencing explanations
+    automl_explainer_setup_obj = automl_setup_model_explanations(automl_model,
+                                                                 X_test=data, task='classification')
+    # Retrieve model explanations for engineered explanations
+    engineered_local_importance_values = scoring_explainer.explain(automl_explainer_setup_obj.X_test_transform)
+    # Retrieve model explanations for raw explanations
+    raw_local_importance_values = scoring_explainer.explain(automl_explainer_setup_obj.X_test_transform, get_raw=True)
+    # You can return any data type as long as it is JSON-serializable
+    return {'predictions': predictions.tolist(),
+            'engineered_local_importance_values': engineered_local_importance_values,
+            'raw_local_importance_values': raw_local_importance_values}
+```
+
 ### <a name="deploy-the-service"></a>De service implementeren
 
 Implementeer de service met het Conda-bestand en het Score bestand uit de vorige stappen.
@@ -216,11 +282,13 @@ if service.state == 'Healthy':
     print(output['predictions'])
     # Print the engineered feature importances for the predicted value
     print(output['engineered_local_importance_values'])
+    # Print the raw feature importances for the predicted value
+    print('raw_local_importance_values:\n{}\n'.format(output['raw_local_importance_values']))
 ```
 
 ### <a name="visualize-to-discover-patterns-in-data-and-explanations-at-training-time"></a>Visualiseer om patronen in gegevens en uitleg te ontdekken tijdens de trainings tijd
 
-U kunt het grafiek onderdeel urgentie in uw werk ruimte in [Azure machine learning Studio](https://ml.azure.com)visualiseren. Nadat de AutoML-uitvoering is voltooid, selecteert u **model details weer geven** om een specifieke uitvoering weer te geven. Selecteer het tabblad **uitleg** om het visualisatie dashboard te bekijken.
+U kunt het grafiek onderdeel urgentie in uw werk ruimte in [machine learning Studio](https://ml.azure.com)visualiseren. Nadat de AutoML-uitvoering is voltooid, selecteert u **model details weer geven** om een specifieke uitvoering weer te geven. Selecteer het tabblad **uitleg** om het visualisatie dashboard te bekijken.
 
 [![Architectuur van Machine Learning-interpretaties](./media/how-to-machine-learning-interpretability-automl/automl-explanation.png)](./media/how-to-machine-learning-interpretability-automl/automl-explanation.png#lightbox)
 

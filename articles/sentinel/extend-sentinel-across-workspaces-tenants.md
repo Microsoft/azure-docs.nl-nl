@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2020
 ms.author: yelevin
-ms.openlocfilehash: dfd8f94dc7ab4e428647b8f44a86a2cd06634e2a
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 9cbafa2a87db9aa59769ac759da9b56a6463874a
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807238"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006680"
 ---
 # <a name="extend-azure-sentinel-across-workspaces-and-tenants"></a>Azure-Sentinel uitbreiden in werkruimten en tenants
 
@@ -98,7 +98,7 @@ U kunt vervolgens een query op beide werk ruimten schrijven door te beginnen met
 <!-- Bookmark added for backward compatibility with old heading -->
 Query's voor meerdere werk ruimten kunnen nu worden opgenomen in geplande analyse regels, afhankelijk van de volgende beperkingen:
 
-- Er kunnen Maxi maal 15 werk ruimten in één query worden opgenomen.
+- Maxi maal 20 werk ruimten kunnen worden opgenomen in één query.
 - Azure Sentinel moet worden geïmplementeerd op elke werk ruimte waarnaar wordt verwezen in de query.
 
 > [!NOTE] 

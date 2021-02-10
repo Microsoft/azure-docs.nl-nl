@@ -252,6 +252,8 @@
           href: automation-solution-vm-management-config.md
         - name: Query's uitvoeren op logboeken vanuit VM's buiten bedrijfsuren starten/stoppen
           href: automation-solution-vm-management-logs.md
+        - name: VM's buiten bedrijfsuren starten/stoppen verwijderen
+          href: automation-solution-vm-management-remove.md
         - name: Problemen oplossen met VM's buiten bedrijfsuren starten/stoppen
           href: troubleshoot/start-stop-vm.md
     - name: Updatebeheer

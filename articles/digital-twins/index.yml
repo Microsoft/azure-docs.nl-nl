@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 02/12/2020
-  ms.openlocfilehash: bcba2b48fdecda311ce349f90ba43023b906bd44
-  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-  ms.translationtype: HT
+  ms.openlocfilehash: 29f3b0bf0a00c9e4e238e8bb514f80e7451d30a6
+  ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/26/2020
-  ms.locfileid: "96186402"
+  ms.lasthandoff: 02/09/2021
+  ms.locfileid: "100007751"
 landingContent:
 - title: Over Azure Digital Twins
   linkLists:
@@ -23,6 +23,14 @@ landingContent:
     links:
     - text: Wat is Azure Digital Twins?
       url: overview.md
+  - linkListType: concept
+    links:
+    - text: Aangepaste modellen
+      url: concepts-models.md
+    - text: Digital twins en het tweelinggrafiek
+      url: concepts-twins-graph.md
+    - text: Querytaal
+      url: concepts-query-language.md
 - title: Aan de slag met de quickstart
   linkLists:
   - linkListType: quickstart
@@ -43,20 +51,6 @@ landingContent:
     links:
     - text: Een end-to-end-oplossing verbinden
       url: tutorial-end-to-end.md
-- title: Leren
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Aangepaste modellen
-      url: concepts-models.md
-  - linkListType: concept
-    links:
-    - text: Digital twins en het tweelinggrafiek
-      url: concepts-twins-graph.md
-  - linkListType: concept
-    links:
-    - text: Querytaal
-      url: concepts-query-language.md
 - title: Ontwikkelen
   linkLists:
   - linkListType: how-to-guide
@@ -115,3 +109,19 @@ landingContent:
     links:
     - text: Aangepaste swaggers voor Logic Apps-connector
       url: /samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/
+- title: Leren op basis van scenario's met Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: 'Leer traject: Ontwikkelen met Azure Digital Apparaatdubbels'
+      url: /learn/paths/develop-azure-digital-twins/
+  - linkListType: learn
+    links:
+    - text: 'Informatie over de module: Inleiding tot Azure Digital Apparaatdubbels'
+      url: /learn/modules/develop-with-azure-digital-twins/introduction-to-azure-digital-twins/
+    - text: 'Module leren: een Azure Digital Apparaatdubbels-grafiek bouwen voor een chocolade fabriek productie regel'
+      url: /learn/modules/develop-with-azure-digital-twins/build-azure-digital-twins-graph-for-chocolate-factory/
+    - text: 'Informatie over de module: gegevens opnemen in azure Digital Apparaatdubbels'
+      url: /learn/modules/develop-with-azure-digital-twins/ingest-data-into-azure-digital-twins/
+    - text: 'Meer informatie over de module: uitvoer van Azure Digital Apparaatdubbels naar downstream-Services'
+      url: /learn/modules/develop-with-azure-digital-twins/route-output-from-azure-digital-twins-to-downstream-services/

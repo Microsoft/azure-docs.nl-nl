@@ -58,6 +58,8 @@
 - name: Concepten
   expanded: false
   items:
+    - name: Interoperabiliteit met Teams
+      href: concepts/teams-interop.md
     - name: Chat
       items:
         - name: Overzicht van de chat-clientbibliotheek
@@ -78,8 +80,6 @@
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Audio- en videoconcepten
           href: concepts/voice-video-calling/about-call-types.md
-        - name: Interoperabiliteit met Teams
-          href: concepts/voice-video-calling/teams-interop.md
     - name: UI-Framework
       items:
         - name: Overzicht van UI Framework

@@ -6,19 +6,20 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 19d2ef1d4d711738d60938aac502dfd490e021a1
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 0cdbcf0a895a2fc9b81df464f364e04aa79abf99
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97729676"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006765"
 ---
 # <a name="connect-provance-with-it-service-management-connector"></a>Provance verbinden met IT Service Management-connector
 
 Dit artikel bevat informatie over het configureren van de verbinding tussen uw Provance-exemplaar en de IT Service Management-connector (ITSMC) in Log Analytics om uw werk items centraal te beheren.
 
 > [!NOTE]
-> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](./action-groups.md#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
+> Van 1-okt-2020 Provance ITSM-integratie met Azure-waarschuwing is niet langer beschikbaar voor nieuwe klanten. Nieuwe ITSM-verbindingen worden niet ondersteund.
+> Bestaande ITSM-verbindingen worden ondersteund.
 
 De volgende secties bevatten informatie over het aansluiten van uw Provance-product op ITSMC in Azure.
 
@@ -69,6 +70,6 @@ Gebruik de volgende procedure om een Provance-verbinding te maken:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Overzicht van ITSM-connector](itsmc-overview.md)
+* [ITSM-connectoroverzicht](itsmc-overview.md)
 * [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts)
 * [Problemen oplossen in ITSM-connector](./itsmc-resync-servicenow.md)

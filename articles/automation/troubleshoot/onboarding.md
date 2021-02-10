@@ -5,12 +5,12 @@ services: automation
 ms.subservice: ''
 ms.date: 06/30/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 6668fe3c30bd5187016ac2e0c766e7e78d5b3e8c
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 41388e46f5204acaa53f376bc05cebf975361dad
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896508"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008159"
 ---
 # <a name="troubleshoot-feature-deployment-issues"></a>Problemen met implementatie van functies oplossen
 
@@ -148,7 +148,7 @@ Verwijder de resources voor de volgende functies uit uw werk ruimte als u ze geb
 Nadat u de functie resources hebt verwijderd, kunt u uw werk ruimte ontkoppelen. Het is belang rijk om bestaande artefacten uit deze functies op te schonen vanuit uw werk ruimte en uw Automation-account:
 
 * Verwijder voor Updatebeheer **Update-implementaties (schema's)** uit uw Automation-account.
-* Verwijder voor VM's buiten bedrijfsuren starten/stoppen alle vergren delingen voor onderdeel onderdelen in uw Automation-account onder **instellingen**  >  **vergrendelingen**. Zie [de functie verwijderen](../automation-solution-vm-management.md#remove-the-feature)voor meer informatie.
+* Verwijder voor VM's buiten bedrijfsuren starten/stoppen alle vergren delingen voor onderdeel onderdelen in uw Automation-account onder **instellingen**  >  **vergrendelingen**. Zie [de functie verwijderen](../automation-solution-vm-management-remove.md)voor meer informatie.
 
 ## <a name="log-analytics-for-windows-extension-failures"></a><a name="mma-extension-failures"></a>Log Analytics voor Windows-extensie fouten
 

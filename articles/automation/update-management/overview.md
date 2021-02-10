@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 718e812a8193797ad350fa61444bb05fe5a4b724
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 6e312d354a25113a764bca5e9492909d22af9873
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896898"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007734"
 ---
 # <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
@@ -74,7 +74,7 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 
 |Besturingssysteem  |Notities  |
 |---------|---------|
-|Windows Server 2019 (Data Center/Data Center core/Standard)<br>Windows Server 2016 (Data Center/Data Center core/Standard)<br>Windows Server 2012 R2 (Data Center/Standard)<br>Windows Server 2012 |
+|Windows Server 2019 (Data Center/Standard, inclusief Server Core)<br><br>Windows Server 2016 (Data Center/Standard m.u.v. Server Core)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 | |
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
 |CentOS 6 en 7 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
 |Red Hat Enter prise 6 en 7 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
@@ -167,7 +167,7 @@ Zie [Connect Operations Manager to Azure monitor logs](../../azure-monitor/platf
 
 De volgende tabel beschrijft de verbonden bronnen die Updatebeheer ondersteunt:
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 | --- | --- | --- |
 | Windows-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
 | Linux-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |

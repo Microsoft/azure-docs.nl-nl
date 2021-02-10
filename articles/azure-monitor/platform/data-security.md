@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: a618a5d94513f7d648d118ae3bebdb34e4f5b1c4
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b1e0dbd23fa14c1bd79275d3f9ff6a164293ac19
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728856"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007343"
 ---
 # <a name="log-analytics-data-security"></a>Log Analytics gegevens beveiliging
 Dit document is bedoeld om informatie te verschaffen die specifiek is voor Log Analytics, een functie van Azure Monitor, om de informatie over [Vertrouwenscentrum van Azure](https://www.microsoft.com/en-us/trust-center?rtc=1)aan te vullen.  
@@ -173,6 +173,8 @@ Zoals hierboven beschreven, worden gegevens van de beheer server of direct verbo
 De Log Analytics-service zorgt ervoor dat inkomende gegevens afkomstig zijn van een vertrouwde bron door certificaten en de integriteit van gegevens te valideren met Azure-verificatie. De onverwerkte onbewerkte gegevens worden vervolgens opgeslagen in een Azure Event hub in de regio waarin de gegevens uiteindelijk worden opgeslagen in rust. Het type gegevens dat wordt opgeslagen, is afhankelijk van de typen oplossingen die zijn geïmporteerd en gebruikt voor het verzamelen van gegevens. Vervolgens worden de onbewerkte gegevens door de Log Analytics-Service verwerkt en opgenomen in de-data base.
 
 De Bewaar periode van verzamelde gegevens die zijn opgeslagen in de data base is afhankelijk van het geselecteerde prijs plan. Voor de *gratis* laag zijn verzamelde gegevens zeven dagen beschikbaar. Verzamelde gegevens voor de laag *betaald* zijn standaard 31 dagen beschikbaar, maar kunnen worden verlengd tot 730 dagen. Gegevens worden in de rest van Azure Storage versleuteld opgeslagen om gegevens geheim te controleren en de gegevens worden gerepliceerd binnen de lokale regio met behulp van lokaal redundante opslag (LRS). De laatste twee weken van gegevens worden ook opgeslagen in de cache op SSD-basis en deze cache is versleuteld.
+
+Gegevens in database opslag kunnen niet worden gewijzigd wanneer deze zijn opgenomen, maar kunnen worden verwijderd via het pad van de [ *opschoon* -API](personal-data-mgmt.md#delete). Hoewel de gegevens niet kunnen worden gewijzigd, moeten voor sommige certificeringen gegevens onveranderlijk worden bewaard en kunnen ze niet worden gewijzigd of verwijderd in de opslag. Gegevens Onveranderbaarheid kunnen worden bereikt met behulp van [gegevens export](logs-data-export.md) naar een opslag account dat is geconfigureerd als [onveranderlijke opslag](../../storage/blobs/storage-blob-immutability-policies-manage.md).
 
 ## <a name="4-use-log-analytics-to-access-the-data"></a>4. gebruik Log Analytics om toegang te krijgen tot de gegevens
 Als u toegang wilt krijgen tot uw Log Analytics-werk ruimte, meldt u zich aan bij de Azure Portal met behulp van het organisatie account of Microsoft-account dat u eerder hebt ingesteld. Al het verkeer tussen de portal en de Log Analytics-service wordt verzonden via een beveiligd HTTPS-kanaal. Wanneer u de portal gebruikt, wordt er een sessie-ID gegenereerd op de gebruikers-client (webbrowser) en worden gegevens opgeslagen in een lokale cache totdat de sessie wordt beëindigd. Wanneer het is beëindigd, wordt de cache verwijderd. Cookies aan de client zijde, die geen persoons gegevens bevatten, worden niet automatisch verwijderd. Sessie cookies zijn gemarkeerd als HTTPOnly en zijn beveiligd. Na een vooraf vastgestelde niet-actieve periode wordt de Azure Portal-sessie beëindigd.

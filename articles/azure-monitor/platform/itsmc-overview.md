@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 12/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: ed13837eabadc38cee50efac3b9340c973c8ea70
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: d22bb05ad6db3630e9b0242e098fd81f65e34b05
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492430"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007309"
 ---
 # <a name="it-service-management-connector-overview"></a>Overzicht van IT Service Management-connector
 
@@ -32,7 +32,8 @@ ITSMC ondersteunt verbindingen met de volgende ITSM-hulpprogram ma's:
 -   Cherwell
 
    >[!NOTE]
-> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](./action-groups.md#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
+> Met ingang van 1-okt-2020 Cher well-en Provance ITSM-integratie met Azure-waarschuwing is niet langer beschikbaar voor nieuwe klanten. Nieuwe ITSM-verbindingen worden niet ondersteund.
+> Bestaande ITSM-verbindingen worden ondersteund.
 
 Met ITSMC kunt u het volgende doen:
 

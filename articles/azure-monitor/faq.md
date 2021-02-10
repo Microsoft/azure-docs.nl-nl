@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 2ca8a814fbaf2d8c257d094f81d17a5c871793b0
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: a8d3ded1d11a350ff53ffda71348b2cc707760b8
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878932"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008414"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -81,10 +81,12 @@ Azure Data Explorer is een snelle en zeer schaalbare service voor gegevensverken
 
 ### <a name="how-do-i-retrieve-log-data"></a>Hoe kan ik logboek gegevens ophalen?
 Alle gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een logboek query die is geschreven met Kusto query language (KQL). U kunt uw eigen query's schrijven of oplossingen en inzichten gebruiken die logboek query's bevatten voor een bepaalde toepassing of service. Zie [overzicht van logboek query's in azure monitor](log-query/log-query-overview.md).
-p
+
 ### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Kan ik gegevens verwijderen uit een Log Analytics-werk ruimte?
 Gegevens worden uit een werk ruimte verwijderd op basis van de [Bewaar periode](platform/manage-cost-storage.md#change-the-data-retention-period). U kunt specifieke gegevens verwijderen voor privacy-of nalevings redenen. Zie [persoonlijke gegevens exporteren en verwijderen](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) voor meer informatie.
 
+### <a name="is-log-analytics-storage-immutable"></a>Is Log Analytics opslag onveranderbaar?
+Gegevens in database opslag kunnen niet worden gewijzigd wanneer deze zijn opgenomen, maar kunnen worden verwijderd via het [  pad van de API voor het verwijderen van persoonlijke gegevens](platform/personal-data-mgmt.md#delete). Hoewel de gegevens niet kunnen worden gewijzigd, moeten voor sommige certificeringen gegevens onveranderlijk worden bewaard en kunnen ze niet worden gewijzigd of verwijderd in de opslag. Gegevens Onveranderbaarheid kunnen worden bereikt met behulp van [gegevens export](platform/logs-data-export.md) naar een opslag account dat is geconfigureerd als [onveranderlijke opslag](../storage/blobs/storage-blob-immutability-policies-manage.md).
 
 ### <a name="what-is-a-log-analytics-workspace"></a>Wat is een Log Analytics-werkruimte?
 Alle door Azure Monitor verzamelde logboek gegevens worden opgeslagen in een Log Analytics-werk ruimte. Een werk ruimte is in feite een container waarin logboek gegevens worden verzameld uit verschillende bronnen. Mogelijk hebt u een enkele Log Analytics-werk ruimte voor al uw bewakings gegevens of hebt u vereisten voor meerdere werk ruimten. Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](platform/design-logs-deployment.md).

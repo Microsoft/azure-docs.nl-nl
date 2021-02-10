@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 1128504ee5f8c086d6a3c30a9fdd021550394f3f
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 31ca65099d645b7fdfee70275515f0a864cd905f
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981762"
+ms.locfileid: "100007394"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
@@ -24,13 +24,14 @@ Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij d
 ## <a name="february-2021"></a>Februari 2021
 
 ### <a name="read-api-v32-public-preview-with-ocr-support-for-73-languages"></a>Lees API v 3.2 Public Preview met OCR-ondersteuning voor 73 talen
-De open bare preview van de Lees-API v 3.2 van Computer Vision omvat de volgende mogelijkheden:
+De open bare preview-versie van Computer Vision Lees-API v 3.2, beschikbaar als Cloud service en docker-container, omvat de volgende updates:
 * [OCR voor 73 talen](./language-support.md#optical-character-recognition-ocr) , waaronder vereenvoudigd en traditioneel Chinees, Japans, Koreaans en Latijns talen.
-* De tekst regels in de natuurlijke Lees volgorde uitvoeren.
-* Tekst regels classificeren als handschrift stijl of niet samen met een betrouw bare Score (alleen Latijnse talen).
-* Extraheer alleen tekst voor de geselecteerde pagina's of het paginabereik voor een document met meerdere pagina's.
+* Natuurlijke Lees volgorde voor de tekst regel uitvoer.
+* Classificatie van handschrift stijlen voor tekst regels samen met een betrouwbaarheids Score (alleen Latijnse talen).
+* Alleen tekst extra heren voor geselecteerde pagina's voor een document met meerdere pagina's.
+* Beschikbaar als een [Distroless-container](./computer-vision-how-to-install-containers.md?tabs=version-3-2) voor on-premises implementatie.
 
-Zie [Preview-functies lezen](concept-recognizing-text.md#natural-reading-order-output) voor meer informatie.
+Meer [informatie](concept-recognizing-text.md) over de Lees-API.
 
 > [!div class="nextstepaction"]
 > [De Lees-API v 3.2 open bare preview gebruiken](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)

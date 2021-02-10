@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: conceptual
 ms.date: 02/04/2021
 ms.author: raynew
-ms.openlocfilehash: c586832386f3bf6419d8af94ad23662c6801b1ae
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: a75cd3c5dbf205f49aa606bfe96623a61bce39db
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820871"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007053"
 ---
 # <a name="common-questions"></a>Veelgestelde vragen
 
@@ -42,6 +42,10 @@ Met Resource Mover kunt u momenteel de volgende resources tussen regio's verplaa
 
 U kunt geen schijven als bronnen selecteren voor de verplaatsing tussen regio's. Schijven worden echter verplaatst als onderdeel van het verplaatsen van een virtuele machine.
 
+### <a name="what-does-it-mean-to-move-a-resource-group"></a>Wat betekent het verplaatsen van een resource groep?
+
+Wanneer een resource wordt geselecteerd voor verplaatsen, wordt de bijbehorende resource groep automatisch toegevoegd voor verplaatsen. Dit is nodig omdat de doel resource moet worden geplaatst onder een resource groep, zoals in het doel. U kunt ervoor kiezen om een bestaande-resource groep aan te passen en op te geven nadat deze is toegevoegd voor verplaatsen. Houd er rekening mee dat het verplaatsen van een resource groep **niet** betekent dat alle resources in de resource groep van de bron worden verplaatst.
+
 ### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Kan ik resources verplaatsen tussen abonnementen wanneer ik deze Verplaats tussen regio's?
 
 U kunt het abonnement wijzigen nadat u resources naar de doel regio hebt verplaatst. Meer [informatie](../azure-resource-manager/management/move-resource-group-and-subscription.md) over het verplaatsen van resources naar een ander abonnement. 
@@ -69,7 +73,7 @@ Ja, zowel onderweg als in rust.
 - Als u resources verplaatst tussen regio's in de portal, wordt dit proces automatisch uitgevoerd.
 - Als u resources verplaatst met behulp van Power shell, voert u cmdlets uit om een door het systeem toegewezen identiteit toe te wijzen aan de verzameling en vervolgens een rol met de juiste abonnements machtigingen toe te wijzen aan de id-principal. 
 
-### <a name="what-managed-identity-permissions-does-resource-mover-need"></a>Welke beheerde identiteits machtigingen moeten resource-overschakeling hebben?
+### <a name="what-managed-identity-permissions-does-resource-mover-need"></a>Welke beheerde identiteits machtigingen moeten resource-overschakeling hebben? 
 
 De beheerde identiteit van de Azure Resource Mover moet ten minste de volgende machtigingen hebben: 
 

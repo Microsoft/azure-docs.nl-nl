@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 02/04/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35ffae55e749c7493b9cd8af13dfd5216abf5822
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: d003008ea5b0d2591574f6f488b0145ee6f08a5e
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515503"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008125"
 ---
 # <a name="microsoft-365-external-sharing-and-azure-active-directory-azure-ad-b2b-collaboration"></a>Microsoft 365 extern delen en Azure Active Directory (Azure AD) B2B-samen werking
 
@@ -32,8 +32,7 @@ OneDrive/share point online heeft een afzonderlijke uitnodigings Manager. Onders
 
 - Uitgenodigde Azure AD B2B-samenwerkings verbanden kunnen worden gekozen in de dialoog vensters van OneDrive/share point online delen. Gebruikers van OneDrive/share point online worden ook in azure AD weer gegeven na het inwisselen van hun uitnodigingen.
 
-- De licentie vereisten verschillen. Zie voor meer informatie over licentie verlening [Azure AD B2B-licenties](./external-identities-pricing.md) en [' wat is een externe gebruiker? ' in het overzicht van extern delen in share point online](/sharepoint/external-sharing-overview#what-happens-when-users-share).
-
+- De licentie vereisten verschillen. Zie [licentie verlening voor externe Azure AD-identiteiten](./external-identities-pricing.md) en [het overzicht van extern delen van share point online](/sharepoint/external-sharing-overview)voor meer informatie over licentie verlening.
 Als u extern delen in OneDrive of share point online wilt beheren met Azure AD B2B-samen werking, stelt u de instelling voor extern delen van OneDrive/share point online in op **alleen delen toestaan met de externe gebruikers die al bestaan in de adres lijst van uw organisatie**. Gebruikers kunnen naar extern gedeelde sites gaan en kiezen uit externe deel nemers die de beheerder heeft toegevoegd. De beheerder kan de externe deel nemers toevoegen via de uitnodiging-Api's voor B2B-samen werking.
 
 

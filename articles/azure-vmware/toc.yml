@@ -107,7 +107,7 @@
         - name: Opent een ondersteuningsaanvraag voor implementatiefouten
           href: fix-deployment-provisioning-failures.md
     - name: Veelgestelde vragen
-      href: faq.md
+      href: faq.yml
 - name: Naslaginformatie
   items:
     - name: Azure CLI

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: trbye
-ms.openlocfilehash: 4e487a3eab70e7d561468a8fac2103e177d2abc5
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: eff51c8568ce82c9d8d21bff7a2ba079c291679c
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524972"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007292"
 ---
 # <a name="get-started-with-custom-voice"></a>Aan de slag met Custom Voice
 
@@ -60,12 +60,24 @@ Zodra u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u 
 
 ## <a name="how-to-create-a-project"></a>Een project maken
 
-Inhoud, zoals gegevens, modellen, testen en eind punten, zijn ingedeeld in **projecten** in de aangepaste Voice Portal. Elk project is specifiek voor een land/taal en het geslacht van de stem die u wilt maken. U kunt bijvoorbeeld een project voor een vrouwelijke stem maken voor de chat bots van uw Call Center die Engels gebruiken in de Verenigde Staten (en-US).
+Inhoud, zoals gegevens, modellen, testen en eind punten, zijn ingedeeld in **projecten** in de aangepaste Voice Portal. Elk project is specifiek voor een land/taal en het geslacht van de stem die u wilt maken. U kunt bijvoorbeeld een project maken voor een vrouwelijke stem voor het chat-bots van uw Call Center dat Engels gebruikt in de Verenigde Staten (' nl-US ').
 
 Als u uw eerste project wilt maken, selecteert u het tabblad **tekst naar spraak/aangepast stem** en klikt u vervolgens op **Nieuw project**. Volg de instructies in de wizard om het project te maken. Nadat u een project hebt gemaakt, ziet u vier tabbladen: **gegevens**, **training**, **testen** en **implementatie**. Gebruik de koppelingen in de [volgende stappen](#next-steps) voor meer informatie over het gebruik van elk tabblad.
 
 > [!IMPORTANT]
 > De [aangepaste Voice Portal](https://aka.ms/custom-voice) is onlangs bijgewerkt. Als u eerdere gegevens, modellen, tests en gepubliceerde eind punten in de CRIS.ai-portal of met Api's hebt gemaakt, moet u een nieuw project maken in de nieuwe portal om verbinding met deze oude entiteiten te maken.
+
+## <a name="how-to-migrate-to-custom-neural-voice"></a>Migreren naar Custom Neural Voice
+
+Als u de niet-Neural (of standaard) aangepaste Voice gebruikt, kunt u het beste de migratie naar aangepaste Neural-stem uitvoeren, direct na de volgende stappen. Als u overstapt op aangepaste neurale Voice, kunt u realistischere stemmen ontwikkelen voor nog meer natuurlijke conversatie-interfaces en kunnen uw klanten en eind gebruikers profiteren van de nieuwste tekst-naar-spraak-technologie, op een verantwoordelijke manier. 
+
+1. Lees hier meer over ons [beleid over het beperken van toegang en de](https://aka.ms/gating-overview) [toepassing](https://aka.ms/customneural). Houd er rekening mee dat de toegang tot de aangepaste Neural Voice-service is onderhevig aan de enige keuze van micro soft op basis van onze geschiktheids criteria. Klanten kunnen pas toegang krijgen tot de technologie nadat hun toepassing is [gecontroleerd en ze](https://microsoft.com/ai/responsible-ai) hebben doorgegaan met het gebruik van deze in overeenstemming met onze nalevings voorwaarden en de [gedrags code](https://aka.ms/custom-neural-code-of-conduct). 
+2. Zodra uw toepassing is goedgekeurd, ontvangt u de toegang tot de training ' Neural '. Zorg ervoor dat u zich bij de [aangepaste Voice Portal](https://speech.microsoft.com/customvoice) aanmeldt met hetzelfde Azure-abonnement dat u in uw toepassing hebt verstrekt. 
+    > [!IMPORTANT]
+    > Voor het beschermen van stem talen en om training van spraak modellen te voor komen met niet-geautoriseerde opnamen of zonder de bevestiging van de Voice-talen, moet de klant een vastgelegde verklaring van de Voice-talen uploaden die zijn of haar toestemming verleent. Zorg er bij het voorbereiden van het opname script voor dat u deze zin opneemt. "I [Geef uw voor-en achternaam op] Houd er rekening mee dat de opnamen van mijn stem worden gebruikt door [de naam van het bedrijf te vermelden] om een synthetische versie van mijn stem te maken en te gebruiken."
+    > Deze zin moet worden geüpload naar het tabblad **spraak-talen** als een mondelinge toestemmings bestand. Deze wordt gebruikt om te controleren of de opnamen in uw trainings gegevens sets worden uitgevoerd door dezelfde persoon die de toestemming doet.
+3. Nadat het aangepaste Neural-spraak model is gemaakt, implementeert u het spraak model op een nieuw eind punt. Als u een nieuw aangepast spraak eindpunt wilt maken met uw Neural-spraak model, gaat u naar **tekst-naar-spraak > aangepaste spraak >-implementatie**. Selecteer **model implementeren** en voer een **naam** en **Beschrijving** in voor het aangepaste eind punt. Selecteer vervolgens het aangepaste Neural-spraak model dat u wilt koppelen aan dit eind punt en bevestig de implementatie.  
+4. Werk uw code bij in uw apps als u een nieuw eind punt met een nieuw model hebt gemaakt. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

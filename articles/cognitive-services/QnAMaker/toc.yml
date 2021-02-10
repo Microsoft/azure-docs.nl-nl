@@ -8,12 +8,10 @@
       href: whats-new.md
 - name: Snelstartgidsen
   items:
-    - name: Met de QnA Maker-portal
-      items:
-        - name: Een knowledge base maken
-          href: Quickstarts/create-publish-knowledge-base.md
-        - name: Een query uitvoeren op een Knowledge Base
-          href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
+    - name: Knowledge Base maken op QnA Maker Portal
+      href: Quickstarts/create-publish-knowledge-base.md
+    - name: Een Knowledge Base opvragen met REST-Api's
+      href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: Client bibliotheken of REST API gebruiken
       href: Quickstarts/quickstart-sdk.md
 - name: Zelfstudies
@@ -38,6 +36,8 @@
     - name: Levenscyclus van ontwikkeling
       href: Concepts/development-lifecycle-knowledge-base.md
       displayName: 'version control, test, index, publish, monitor usage, create'
+    - name: Nauwkeurige antwoorden
+      href: reference-precise-answering.md
     - name: Aanbevolen procedures
       href: Concepts/best-practices.md
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
@@ -50,6 +50,13 @@
       displayName: 'azure, resource, key, upgrade, pricing, tier,'
     - name: Toegang tot QnA Maker bronnen beheren
       href: How-To/manage-qna-maker-app.md
+    - name: Actief leren instellen om de Knowledge Base te verbeteren
+      items:
+        - name: Actief leren inschakelen
+          href: How-To/use-active-learning.md
+        - name: Voorgestelde alternatieve vragen ophalen
+          href: How-to/improve-knowledge-base.md
+          displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
     - name: Actief leren inschakelen
       href: How-To/use-active-learning.md
     - name: Knowledge base beheren
@@ -86,16 +93,10 @@
       href: Overview/language-support.md
     - name: Limieten
       href: limits.md
-    - name: Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)
-      href: Concepts/role-based-access-control.md
-    - name: Actief leren
-      href: Concepts/active-learning-suggestions.md
     - name: Betrouwbaarheidsscore
       href: Concepts/confidence-score.md
     - name: Problemen oplossen
       href: troubleshooting.md
-    - name: Nauwkeurige antwoorden
-      href: reference-precise-answering.md
     - name: Beveiligde SharePoint-bestanden toevoegen
       href: How-To/add-sharepoint-datasources.md
       displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'

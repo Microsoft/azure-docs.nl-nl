@@ -3,12 +3,12 @@ title: Over opslag plaatsen & installatie kopieën
 description: Inleiding tot de belangrijkste concepten van Azure-container registers, opslag plaatsen en container installatie kopieën.
 ms.topic: article
 ms.date: 06/16/2020
-ms.openlocfilehash: cd2f93c119817c722401f7290064894f3d39dac9
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 0cc7df22236c60bd473385d92c8db563be68f688
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335891"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008516"
 ---
 # <a name="about-registries-repositories-and-images"></a>Over registers, opslag plaatsen en installatie kopieën
 
@@ -61,7 +61,7 @@ Zie voor de volledige naamgevings regels voor opslag plaatsen de [specificatie o
 
 Een container installatie kopie of ander artefact in een REGI ster is gekoppeld aan een of meer tags, heeft een of meer lagen en wordt geïdentificeerd door een manifest. Meer informatie over hoe deze onderdelen aan elkaar zijn gerelateerd, kan u helpen uw REGI ster effectief te beheren.
 
-### <a name="tag"></a>Label
+### <a name="tag"></a>Tag
 
 De- *tag* voor een afbeelding of ander artefact specificeert de versie. Een enkel artefact in een opslag plaats kan worden toegewezen aan een of meer tags en kan ook ' zonder Tags ' zijn. Dat wil zeggen dat u alle tags uit een installatie kopie kunt verwijderen terwijl de gegevens van de afbeelding (de lagen) in het REGI ster blijven.
 
@@ -73,7 +73,7 @@ Raadpleeg de [docker-documentatie](https://docs.docker.com/engine/reference/comm
 
 ### <a name="layer"></a>Laag
 
-Container installatie kopieën bestaan uit een of meer *lagen* , die overeenkomen met een regel in de Dockerfile die de afbeelding definieert. Installatie kopieën in een REGI ster delen algemene lagen, waardoor de efficiëntie van opslag wordt verhoogd. Het is bijvoorbeeld mogelijk dat verschillende installatie kopieën in verschillende opslag plaatsen dezelfde Alpine Linux-basis laag delen, maar er wordt slechts één exemplaar van die laag opgeslagen in het REGI ster.
+Container installatie kopieën bestaan uit een of meer *lagen*, die overeenkomen met een regel in de Dockerfile die de afbeelding definieert. Installatie kopieën in een REGI ster delen algemene lagen, waardoor de efficiëntie van opslag wordt verhoogd. Het is bijvoorbeeld mogelijk dat verschillende installatie kopieën in verschillende opslag plaatsen dezelfde Alpine Linux-basis laag delen, maar er wordt slechts één exemplaar van die laag opgeslagen in het REGI ster.
 
 Laag delen optimaliseert ook laag distributie naar knoop punten met meerdere afbeeldingen die algemene lagen delen. Als een afbeelding die al in een knoop punt staat, bijvoorbeeld de Alpine Linux-laag als basis bevat, wordt de laag door de volgende pull-bewerking van een andere afbeelding die verwijst naar dezelfde laag, niet overgedragen naar het knoop punt. In plaats daarvan verwijst deze naar de laag die al bestaat op het knoop punt.
 
@@ -81,7 +81,30 @@ Lagen worden niet gedeeld door de verschillende registers om te zorgen voor veil
 
 ### <a name="manifest"></a>Manifest
 
-Elke container installatie kopie of artefact die naar een container register is gepusht, is gekoppeld aan een *manifest*. Het manifest dat door het REGI ster wordt gegenereerd wanneer de installatie kopie wordt gepusht, identificeert de afbeelding uniek en geeft de bijbehorende lagen aan. U kunt de manifesten voor een opslag plaats weer geven met de Azure CLI [-opdracht AZ ACR repository show-manifests][az-acr-repository-show-manifests]:
+Elke container installatie kopie of artefact die naar een container register is gepusht, is gekoppeld aan een *manifest*. Het manifest dat door het REGI ster wordt gegenereerd wanneer de installatie kopie wordt gepusht, identificeert de afbeelding uniek en geeft de bijbehorende lagen aan. 
+
+Een basis manifest voor een Linux- `hello-world` installatie kopie ziet er ongeveer als volgt uit:
+
+  ```json
+  {
+    "schemaVersion": 2,
+    "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+    "config": {
+        "mediaType": "application/vnd.docker.container.image.v1+json",
+        "size": 1510,
+        "digest": "sha256:fbf289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e"
+      },
+    "layers": [
+        {
+          "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+          "size": 977,
+          "digest": "sha256:2c930d010525941c1d56ec53b97bd057a67ae1865eebf042686d2a2d18271ced"
+        }
+      ]
+  }
+  ```
+
+U kunt de manifesten voor een opslag plaats weer geven met de Azure CLI [-opdracht AZ ACR repository show-manifests][az-acr-repository-show-manifests]:
 
 ```azurecli
 az acr repository show-manifests --name <acrName> --repository <repositoryName>

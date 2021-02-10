@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 5bedb7da2f088c065d95d60effeda1e4db15d44a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 64955cdc1e4eb0088b53ad73d9c464c9533aa0fa
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88589483"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007717"
 ---
 # <a name="supported-language-and-runtime-versions-for-apache-spark-and-dependent-components"></a>Ondersteunde taal-en runtime versies voor Apache Spark en afhankelijke onderdelen  
 
@@ -30,7 +30,7 @@ Apache Spark in azure Synapse wordt uitgevoerd op Ubuntu versie 16,04.
 
 ## <a name="java-version"></a>Java-versie
 
-Apache Spark in azure Synapse bevat Java-versie 1.8.0 _222
+Apache Spark in azure Synapse bevat Java-versie 1.8.0 _272
 
 ## <a name="scala-version"></a>Scala-versie
 
@@ -38,15 +38,15 @@ Apache Spark in azure Synapse bevat scala 2.11.12
 
 ## <a name="net-core-version"></a>.NET core-versie
 
-Apache Spark in azure Synapse bevat .NET Core 3,0
+Apache Spark in azure Synapse bevat .NET Core 3,1
 
 ## <a name="net-support-for-apache-spark"></a>.NET-ondersteuning voor Apache Spark
 
-Azure Synapse bevat .NET-ondersteuning voor Apache Spark 0.11.0
+Azure Synapse bevat .NET-ondersteuning voor Apache Spark 1.0.0
 
 ## <a name="delta-lake"></a>Delta Lake
 
-Synapse Analytics bevat ondersteuning voor Delta Lake 0.6.0
+Synapse Analytics bevat ondersteuning voor Delta Lake 0.6.1
 
 ## <a name="python-version"></a>Python-versie
 

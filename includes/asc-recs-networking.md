@@ -2,15 +2,15 @@
 author: memildin
 ms.service: security-center
 ms.topic: include
-ms.date: 01-26-2021
+ms.date: 02/09/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: dc70457cbe507ccf1727ea8736e7235edfdb76ca
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 4a303e5af2ce05102de6889d0bc5fce8af232a32
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797224"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007597"
 ---
 Deze categorie bevat **15** aanbevelingen.
 

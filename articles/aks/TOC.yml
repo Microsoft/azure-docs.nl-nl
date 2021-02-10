@@ -338,7 +338,7 @@
         - name: Een app maken met MySQL
           href: ../mysql/flexible-server/tutorial-deploy-wordpress-on-aks.md
           maintainContext: true
-        - name: Een open vrijheids-of WebSphere vrijheids-app implementeren
+        - name: App bouwen met open vrijheid of WebSphere vrijheid
           href: howto-deploy-java-liberty-app.md
         - name: Azure API Management gebruiken
           href: ../api-management/api-management-kubernetes.md

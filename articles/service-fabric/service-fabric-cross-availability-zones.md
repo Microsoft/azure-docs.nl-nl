@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: ff7de678e40a02b364451e7c88d661d2e38ed9d4
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 50ab66a1f98d06d79a46d61f683d56822b619721
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918920"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007037"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -374,8 +374,8 @@ Het Service Fabric nodeType moet zijn ingeschakeld voor de ondersteuning van mee
 * De eerste waarde is **multipleAvailabilityZones** die moet worden ingesteld op True voor het NodeType.
 * De tweede waarde is **sfZonalUpgradeMode** en is optioneel. Deze eigenschap kan niet worden gewijzigd als er al een NodeType met meerdere AZ is aanwezig in het cluster.
       De eigenschap bepaalt de logische groepering van Vm's in upgrade domeinen.
-          Als waarde is ingesteld op False (platte modus): Vm's onder het knooppunt type worden gegroepeerd in UD die de zone gegevens in 5 UDs negeren.
-          Als waarde wordt wegge laten of is ingesteld op True (hiërarchische modus): de Vm's worden gegroepeerd op basis van de zonegebonden-distributie in Maxi maal 15 UDs. Elk van de drie zones heeft 5 UDs.
+          Als waarde is ingesteld op ' parallel ': Vm's onder het NodeType worden gegroepeerd in de zone gegevens in 5 UDs genegeerd.
+          Als waarde wordt wegge laten of is ingesteld op hiërarchisch: Vm's worden gegroepeerd op basis van de zonegebonden-distributie in Maxi maal 15 UDs. Elk van de drie zones heeft 5 UDs.
           Deze eigenschap definieert alleen het upgrade gedrag voor ServiceFabric toepassings-en code-upgrades. De onderliggende upgrades voor virtuele-machine schaal sets worden nog steeds parallel in alle AZ-computers.
       Deze eigenschap heeft geen invloed op de UD-distributie voor knooppunt typen waarvoor geen meerdere zones zijn ingeschakeld.
 * De derde waarde is **vmssZonalUpgradeMode = parallel**. Dit is een *verplichte* eigenschap die in het cluster moet worden geconfigureerd als een NodeType met meerdere AZs wordt toegevoegd. Met deze eigenschap wordt de upgrade modus gedefinieerd voor de updates voor de schaalset van virtuele machines die parallel worden uitgevoerd in alle AZ tegelijk.

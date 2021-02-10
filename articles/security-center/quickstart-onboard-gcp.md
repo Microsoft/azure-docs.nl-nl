@@ -3,16 +3,16 @@ title: Uw GCP-account verbinden met Azure Security Center
 description: Uw GCP-resources bewaken vanuit Azure Security Center
 author: memildin
 ms.author: memildin
-ms.date: 02/07/2021
+ms.date: 02/08/2021
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 8ee7b37861be299dd36a596ae1cd4899b0ebffab
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 94c7a800fc551faf6650b8e30fe7c2188f7d2dbb
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809402"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008380"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Uw GCP-accounts verbinden met Azure Security Center
 
@@ -44,10 +44,16 @@ In de onderstaande schermopname ziet u de GCP-projecten die worden weergegeven i
 
 ## <a name="connect-your-gcp-account"></a>Verbinding maken met uw GCP-account
 
-Volg de onderstaande stappen om uw GCP-Cloud connector te maken om uw Google cloud-resources te verbinden op het niveau van de organisatie of het project. 
+Maak een connector voor elke organisatie die u van Security Center wilt bewaken.
 
-> [!TIP]
-> Meer informatie over de Google Cloud resource Hierarchy in hun [online docs.](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
+Wanneer u uw GCP-accounts verbindt met specifieke Azure-abonnementen, moet u rekening houden met de [Google Cloud resource Hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#resource-hierarchy-detail) en deze richt lijnen:
+
+- U kunt uw GCP-accounts verbinden met ASC op het niveau van de *organisatie*
+- U kunt meerdere organisaties verbinden met één Azure-abonnement
+- U kunt meerdere organisaties verbinden met meerdere Azure-abonnementen
+- Wanneer u verbinding maakt met een organisatie, worden alle *projecten* in die organisatie toegevoegd aan Security Center
+
+Volg de onderstaande stappen om uw GCP-cloudconnector te maken. 
 
 ### <a name="step-1-set-up-gcp-security-command-center-with-security-health-analytics"></a>Stap 1. GCP Security Command Center instellen met Security Health Analytics
 
@@ -64,7 +70,7 @@ Wanneer u Security Health Analytics voor het eerst inschakelt, kan het enkele ur
 
 ### <a name="step-2-enable-gcp-security-command-center-api"></a>Stap 2. GCP Security Command Center-API inschakelen
 
-1. Selecteer in de **Cloud Console API Library** van Google het project dat u wilt verbinden met Azure Security Center.
+1. Selecteer in de **Cloud console-API-bibliotheek** van Google elk project in de organisatie waarmee u verbinding wilt maken Azure Security Center.
 1. Zoek en selecteer **Security Command Center API** in de API-bibliotheek.
 1. Selecteer **ENABLE** op de pagina van de API.
 
@@ -73,7 +79,11 @@ Meer informatie over de [Security Command Center API](https://cloud.google.com/s
 
 ### <a name="step-3-create-a-dedicated-service-account-for-the-security-configuration-integration"></a>Stap 3. Een toegewezen serviceaccount maken voor de integratie van de beveiligingsconfiguratie
 
-1. Selecteer in de **GCP-console** het project dat u wilt verbinden met Security Center.
+1. Selecteer in de **GCP-console** een project uit de organisatie waarin u het vereiste service account maakt. 
+
+    > [!NOTE]
+    > Wanneer dit service account wordt toegevoegd op organisatie niveau, wordt het gebruikt om toegang te krijgen tot de gegevens die zijn verzameld door Security Command Center van alle andere ingeschakelde projecten in de organisatie. 
+
 1. Selecteer **Service accounts** in het **Navigatiemenu** onder **IAM & Admin**.
 1. Selecteer **CREATE SERVICE ACCOUNT** (Serviceaccount maken).
 1. Voer een accountnaam in en selecteer **Create** (Maken).
@@ -84,7 +94,7 @@ Meer informatie over de [Security Command Center API](https://cloud.google.com/s
     1. Schakel over naar organisatieniveau.
     1. Selecteer **ADD** (Toevoegen).
     1. Plak in het veld **New members** (Nieuwe leden) de **E-mailwaarde** die u eerder hebt gekopieerd.
-    1. Geef de Role (Rol) op als **Security Center Admin Viewer** en selecteer Save (Opslaan).
+    1. Geef de rol op als **Security Center beheer Viewer** en selecteer vervolgens **Opslaan**.
         :::image type="content" source="./media/quickstart-onboard-gcp/iam-settings-gcp-permissions-admin-viewer.png" alt-text="De relevante GCP-machtigingen instellen":::
 
 
@@ -97,7 +107,7 @@ Meer informatie over de [Security Command Center API](https://cloud.google.com/s
 1. Sla dit JSON-bestand op voor later gebruik.
 
 
-### <a name="step-5-connect-gcp-to-security-center"></a>Stap 5. GCP verbinden met Security Center 
+### <a name="step-5-connect-gcp-to-security-center"></a>Stap 5. GCP verbinden met Security Center
 1. Selecteer **Cloudconnectors** in het menu van Security Center.
 1. Selecteer GCP-account toevoegen.
 1. Ga op de onboardingpagina als volgt te werk en selecteer **Volgende**.
@@ -126,8 +136,12 @@ Als u alle actieve aanbevelingen voor uw resources op resourcetype wilt weergeve
 
 ## <a name="faq-for-connecting-gcp-accounts-to-azure-security-center"></a>Veelgestelde vragen over het verbinden van GCP-accounts met Azure Security Center
 
-### <a name="can-i-connect-multiple-gcp-accounts-to-security-center"></a>Kan ik meerdere GCP-accounts verbinden met Security Center?
-Ja. Zoals hierboven vermeld, kunt u uw Google cloud-resources verbinden op het niveau van de organisatie of het project. Meer informatie over de Google Cloud resource Hierarchy in hun [online docs.](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)
+### <a name="can-i-connect-multiple-gcp-organizations-to-security-center"></a>Kan ik meerdere GCP-organisaties verbinden met Security Center?
+Ja. De GCP-connector van Security Center verbindt uw Google cloud-resources op *organisatie* niveau. 
+
+Maak een connector voor elke GCP-organisatie die u van Security Center wilt bewaken. Wanneer u verbinding maakt met een organisatie, worden alle projecten in die organisatie toegevoegd aan Security Center.
+
+Meer informatie over de Google Cloud resource Hierarchy in [de online docs van Google](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy).
 
 
 ### <a name="is-there-an-api-for-connecting-my-gcp-resources-to-security-center"></a>Is er een API voor het koppelen van mijn GCP-resources aan Security Center?
@@ -138,3 +152,4 @@ Ja. Zie de details van de [API connectors](/rest/api/securitycenter/connectors)o
 Het koppelen van uw GCP-account maakt deel uit van de ervaring voor meerdere clouds die beschikbaar is in Azure Security Center. Zie de volgende pagina voor gerelateerde informatie:
 
 - [Uw AWS-accounts verbinden met Azure Security Center](quickstart-onboard-aws.md)
+- [Google Cloud resource Hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy)--meer informatie over de Google Cloud resource Hierarchy in de online docs van Google

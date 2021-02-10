@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 192a57dbca523125ea5c13c7f9c41efd7fe99baa
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: a4f16067fa8837fa0f1062ba4cc8c2c1daf5d22b
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99558154"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091280"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -147,6 +147,20 @@ Zie [HIPAA HITRUST 9.2](https://www.hhs.gov/hipaa/for-professionals/security/law
 |Beveiliging van netwerkservices |0837.09.n2Organizational.2 - 09.n |Formele overeenkomsten met externe informatiesysteemproviders omvatten specifieke verplichtingen met betrekking tot beveiliging en privacy. |[Network Watcher moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb6e2945c-0b7b-40f5-9233-7a5323b5cdc6) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkWatcher_Enabled_Audit.json) |
 |Beveiliging van netwerkservices |0886.09n2Organizational.4 - 09.n |De organisatie maakt gebruik van en documenteert in een formele overeenkomst of in een ander document, het beleid i) allow-all, deny-by-exception (alles toestaan, weigeren bij uitzondering) of ii) deny-all, permit-by-exception (alles weigeren, toestaan bij uitzondering) (het voorkeursbeleid) voor het toestaan van verbindingen tussen specifieke informatiesystemen en externe informatiesystemen. |[Network Watcher moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb6e2945c-0b7b-40f5-9233-7a5323b5cdc6) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkWatcher_Enabled_Audit.json) |
 |Beveiliging van netwerkservices |0888.09n2Organizational.6 - 09.n |Het contract met de externe/uitbestede serviceprovider bevat de specificatie dat de serviceprovider verantwoordelijk is voor de bescherming van gedekte informatie die wordt gedeeld. |[Network Watcher moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb6e2945c-0b7b-40f5-9233-7a5323b5cdc6) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkWatcher_Enabled_Audit.json) |
+
+## <a name="new-zealand-ism"></a>Nieuw-Zeeland ISM
+
+Zie [Azure Policy regelgevings naleving-Nieuw-Zeeland Information Security-hand leiding voor informatie](../../../../articles/governance/policy/samples/new-zealand-ism.md)over de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services die zijn gekoppeld aan deze nalevings standaard.
+Zie [New-Zeeland Information Security Manual](https://www.nzism.gcsb.govt.nz/)(Engelstalig) voor meer informatie over deze nalevings standaard.
+
+|Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
+|---|---|---|---|---|
+|Netwerkbeveiliging |NS-5 |18.3.19 inhoud van een DoS-respons plan (Denial of service) |[Azure DDoS-beveiligingsstandaard moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa7aca53f-2ed4-4466-a25e-0b45ade68efd) |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableDDoSProtection_Audit.json) |
+|Netwerkbeveiliging |NS-7 |18.4.10 schadelijke code Counters-metingen |[Alle internetverkeer moet worden gerouteerd via uw geïmplementeerde Azure Firewall](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffc5e4038-4584-4632-8c85-c0448d374b2c) |[3.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/ASC_All_Internet_traffic_should_be_routed_via_Azure_Firewall.json) |
+|Netwerkbeveiliging |NS-7 |18.4.10 schadelijke code Counters-metingen |[Web Application Firewall (WAF) moet zijn ingeschakeld voor Application Gateway](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F564feb30-bf6a-4854-b4bb-0d2d2d1e6c66) |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayEnabled_Audit.json) |
+|Netwerkbeveiliging |NS-7 |18.4.10 schadelijke code Counters-metingen |[Web Application firewall (WAF) moet zijn ingeschakeld voor de service service van Azure voor de voor deur](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F055aa869-bc98-4af8-bafc-23f1ab6ffe2c) |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Enabled_Audit.json) |
+|Netwerkbeveiliging |NS-7 |18.4.10 schadelijke code Counters-metingen |[Web Application Firewall (WAF) moet de opgegeven modus gebruiken voor Application Gateway](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F12430be1-6cc8-4527-a9a8-e3d38f250096) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayMode_Audit.json) |
+|Netwerkbeveiliging |NS-7 |18.4.10 schadelijke code Counters-metingen |[Web Application Firewall (WAF) moet de opgegeven modus gebruiken voor Azure Front Door Service](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F425bea59-a659-4cbb-8d31-34499bd030b8) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Mode_Audit.json) |
 
 ## <a name="nist-sp-800-171-r2"></a>NIST SP 800-171 R2
 

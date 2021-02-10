@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleids definities voor Azure Data Box
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure Data Box. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
 ms.service: databox
 author: alkohli
 ms.author: alkohli
-ms.openlocfilehash: 374ccb0702d81f6c19c7a763a251383fb7cd587d
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: ecfc855d589a51487fb76cfb1534e73c4be9808f
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99556416"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090498"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-data-box"></a>Azure Policy ingebouwde definities voor Azure Data Box
 

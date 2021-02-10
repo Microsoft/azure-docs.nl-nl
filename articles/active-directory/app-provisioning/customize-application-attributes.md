@@ -10,18 +10,18 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/08/2021
 ms.author: kenwith
-ms.openlocfilehash: 03eacf4405217ee883689a088499d86d6f2262b5
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 100f66d6217533ff6eba7881f938e877b98c735e
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99830699"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091105"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
 Microsoft Azure AD biedt ondersteuning voor het inrichten van gebruikers voor SaaS-toepassingen van derden, zoals Sales Force en G suite. Als u het inrichten van gebruikers inschakelt voor een SaaS-toepassing van derden, worden de kenmerkwaarden van de toepassing in de Azure-portal bepaalt via kenmerktoewijzingen.
 
-Voordat u aan de slag gaat, moet u ervoor zorgen dat u bekend bent met de concepten van app management en **Single Sign-On (SSO)** , de volgende koppelingen bekijken:
+Voordat u aan de slag gaat, moet u ervoor zorgen dat u bekend bent met de concepten voor app-beheer en **Single Sign-On (SSO)** . Bekijk de volgende koppelingen:
 - [Quickstartreeks over app-beheer in Azure AD](../manage-apps/view-applications-portal.md)
 - [Wat is single Sign-On (SSO)?](../manage-apps/what-is-single-sign-on.md)
 

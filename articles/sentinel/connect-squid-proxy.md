@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: b183abf8d42e6f4b1c43db2d87b2650721e0c2a9
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: eec88bf85f1b7a2ec8db2bf23c43629d84cc5106
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567900"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090442"
 ---
 # <a name="connect-your-squid-proxy-to-azure-sentinel"></a>Uw inktvis-proxy verbinden met Azure Sentinel
 
 > [!IMPORTANT]
 > De pijl inktvis proxy connector is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
-In dit artikel wordt uitgelegd hoe u uw inktvis-proxy apparaat verbindt met Azure Sentinel. Met de pijl inktvis proxy data connector kunt u eenvoudig uw inktvis-logboeken verbinden met Azure Sentinel, zodat u de gegevens in werkmappen kunt bekijken, gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om het onderzoek te verbeteren. Integratie tussen pijl inktvis-proxy en Azure Sentinel maakt gebruik van syslog.
+In dit artikel wordt uitgelegd hoe u uw inktvis-proxy apparaat verbindt met Azure Sentinel. Met de pijl inktvis proxy data connector kunt u eenvoudig uw inktvis-logboeken verbinden met Azure Sentinel, zodat u de gegevens in werkmappen kunt bekijken, gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om het onderzoek te verbeteren. Integratie tussen pijl inktvis-proxy en Azure-Sentinel maakt gebruik van lokale bestands verwerking door de Log Analytics-agent.
 
 > [!NOTE]
 > Gegevens worden opgeslagen in de geografische locatie van de werk ruimte waarop u Azure Sentinel uitvoert.
@@ -35,9 +35,9 @@ In dit artikel wordt uitgelegd hoe u uw inktvis-proxy apparaat verbindt met Azur
 
 - U moet lees-en schrijf machtigingen hebben voor de Azure Sentinel-werk ruimte.
 
-## <a name="forward-squid-proxy-logs-to-the-syslog-agent"></a>Pijl inktvis-proxy logboeken naar de syslog-agent sturen  
+## <a name="forward-squid-proxy-logs-to-the-log-analytics-agent"></a>Richting van de proxy logboeken van inktvis naar de Log Analytics-agent  
 
-Configureer de proxy inktvis voor het door sturen van syslog-berichten naar uw Azure-werk ruimte via de syslog-agent.
+Configureer de proxy inktvis om logboek bestanden te verzenden naar uw Azure-werk ruimte via de Log Analytics-agent.
 
 1. Selecteer in het navigatie menu van de Azure-Sentinel de optie **Data connectors**.
 

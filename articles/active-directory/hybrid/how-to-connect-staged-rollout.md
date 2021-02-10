@@ -10,12 +10,12 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10fe3b895ea5084247822f1c35275e68d80b73fa
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: c9e0a645bc580ab3a0794ca6ded1e60159df7d92
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762972"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090595"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Migreren naar Cloud authenticatie met behulp van gefaseerde implementatie (preview-versie)
 
@@ -83,10 +83,6 @@ De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
     - Dynamische groepen worden *niet ondersteund* voor gefaseerde implementatie.
     - Met de objecten in de groep wordt de groep geblokkeerd, zodat deze niet meer kan worden toegevoegd.
 
-- U moet nog steeds de uiteindelijke cutover van federatieve naar Cloud authenticatie maken met behulp van Azure AD Connect of Power shell. Gefaseerde implementatie verwisselt geen domeinen van federatieve naar beheerd.  Zie voor meer informatie over Domain cutover [migreren van Federatie naar wacht woord hash-synchronisatie](plan-migrate-adfs-password-hash-sync.md) en [migreren van Federatie naar Pass-Through-verificatie](plan-migrate-adfs-pass-through-authentication.md)
-
-
-
 - Wanneer u voor het eerst een beveiligings groep voor gefaseerde implementatie toevoegt, bent u beperkt tot 200 gebruikers om een UX-time-out te voor komen. Nadat u de groep hebt toegevoegd, kunt u, indien nodig, meer gebruikers toevoegen.
 
 - Wanneer gebruikers zich in de gefaseerde implementatie bevinden, wordt het beleid voor het verlopen van wacht woorden ingesteld op 90 dagen, wanneer EnforceCloudPasswordPolicyForPasswordSyncedUsers is ingeschakeld. 
@@ -95,7 +91,9 @@ De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
 
 - Windows 10 Hybrid Join's of Azure AD koppelt het primaire vernieuwings token voor alle versies, wanneer de on-premises UPN van de gebruiker niet routeerbaar is. Dit scenario gaat terug naar het WS-Trust-eind punt in de modus voor gefaseerde implementatie, maar werkt niet meer wanneer de gefaseerde migratie is voltooid en de aanmelding van de gebruiker is niet langer afhankelijk van de Federatie server.
 
-
+  >[!NOTE]
+  >U moet nog steeds de uiteindelijke cutover van federatieve naar Cloud authenticatie maken met behulp van Azure AD Connect of Power shell. Gefaseerde implementatie verwisselt geen domeinen van federatieve naar beheerd.  Zie voor meer informatie over Domain cutover [migreren van Federatie naar wacht woord hash-synchronisatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso) en [migreren van Federatie naar Pass-Through-verificatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)
+  
 ## <a name="get-started-with-staged-rollout"></a>Aan de slag met gefaseerde implementatie
 
 Als u het aanmelden voor *wachtwoord hash-synchronisatie* wilt testen met behulp van gefaseerde implementatie, volgt u de voor bereide instructies in de volgende sectie.
@@ -257,3 +255,5 @@ A: Ja. Zie [Preview van Azure AD](/powershell/module/azuread/?view=azureadps-2.0
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Azure AD 2,0 Preview](/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout )
+- [De aanmeldings methode voor het synchroniseren van wacht woord-hashes wijzigen](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)
+- [Aanmeldings methode wijzigen in Pass-Through-verificatie](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)

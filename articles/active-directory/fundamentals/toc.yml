@@ -143,6 +143,8 @@
                   href: resilience-client-app.md
                 - name: Daemontoepassingen
                   href: resilience-daemon-app.md
+            - name: Toepassings status voor tolerantie bewaken
+              href: monitor-sign-in-health-for-resilience.md
         - name: Autoriteiten certificeren die in Azure worden gebruikt
           href: certificate-authorities.md
     - name: Implementatiehandleiding

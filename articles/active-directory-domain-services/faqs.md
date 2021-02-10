@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 02/09/2021
 ms.author: justinha
-ms.openlocfilehash: 89671d0e69d4e526e30c80619b57d698d5a5acc5
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 3d0f2b44f37cb318be2117b5dc5d8b42b418ff19
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491162"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090986"
 ---
 # <a name="frequently-asked-questions-faqs-about-azure-active-directory-ad-domain-services"></a>Veelgestelde vragen over Azure Active Directory (AD) Domain Services
 
@@ -152,7 +152,7 @@ Azure AD Domain Services is opgenomen in de gratis proef versie voor Azure. U ku
 Nee. Zodra u een Azure AD Domain Services beheerd domein hebt ingeschakeld, is de service beschikbaar in het geselecteerde virtuele netwerk totdat u het beheerde domein verwijdert. Er is geen manier om de service te onderbreken. De facturering blijft elk uur in beslag totdat u het beheerde domein verwijdert.
 
 ### <a name="can-i-fail-over-azure-ad-domain-services-to-another-region-for-a-dr-event"></a>Kan ik een failover uitvoeren van Azure AD Domain Services naar een andere regio voor een DR-gebeurtenis?
-Nee. Azure AD Domain Services biedt momenteel geen geo-redundant implementatie model. Het is beperkt tot één virtueel netwerk in een Azure-regio. Als u meerdere Azure-regio's wilt gebruiken, moet u uw Active Directory-domein-controllers uitvoeren op virtuele Azure IaaS-machines. Zie [uw on-premises Active Directory domein uitbreiden naar Azure](/azure/architecture/reference-architectures/identity/adds-extend-domain)voor architectuur richtlijnen.
+Ja, om geografische tolerantie voor een beheerd domein te bieden, kunt u een extra [replicaset](tutorial-create-replica-set.md) maken in een gekoppeld virtueel netwerk in een Azure-regio die ondersteuning biedt voor Azure AD DS. Replica sets delen dezelfde naam ruimte en configuratie met het beheerde domein.
 
 ### <a name="can-i-get-azure-ad-domain-services-as-part-of-enterprise-mobility-suite-ems-do-i-need-azure-ad-premium-to-use-azure-ad-domain-services"></a>Kan ik Azure AD Domain Services krijgen als onderdeel van de Enter prise Mobility Suite (EMS)? Heb ik Azure AD Premium nodig om Azure AD Domain Services te gebruiken?
 Nee. Azure AD Domain Services is een Azure-service voor betalen naar gebruik en maakt geen deel uit van EMS. Azure AD Domain Services kunnen worden gebruikt in combi natie met alle versies van Azure AD (gratis en Premium). U wordt gefactureerd per uur, afhankelijk van het gebruik.

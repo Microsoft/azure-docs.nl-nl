@@ -11,89 +11,27 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: 46e0687056d697afc2d4355bdf900af138273eaf
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 06ae46eb96db39f44cd052e6e9b0d1a19f898007
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99061831"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091519"
 ---
-# <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Hoe u Jupyter-notebooks uitvoert in uw werkruimte
+# <a name="run-jupyter-notebooks-in-your-workspace"></a>Jupyter-notebooks uitvoeren in uw werk ruimte
 
 Meer informatie over het rechtstreeks uitvoeren van uw Jupyter-notebook in uw werk ruimte in Azure Machine Learning Studio. Hoewel u [Jupyter](https://jupyter.org/) of [jjupyterlab](https://jupyterlab.readthedocs.io)kunt starten, kunt u uw notitie blokken ook bewerken en uitvoeren zonder de werk ruimte te verlaten.
+
+Zie [bestanden in uw werk ruimte maken en beheren](how-to-manage-files.md)voor meer informatie over het maken en beheren van bestanden, met inbegrip van notitie blokken.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://aka.ms/AMLFree) aan voordat u begint.
 * Een Machine Learning-werkruimte. Raadpleeg [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md).
 
-## <a name="create-notebooks"></a><a name="create"></a> Notitie blokken maken
-
-Maak in uw Azure Machine Learning-werk ruimte een nieuw Jupyter-notitie blok en ga aan de slag. Het zojuist gemaakte notitie blok wordt opgeslagen in de standaard werkruimte opslag. Dit notitie blok kan worden gedeeld met iedereen die toegang heeft tot de werk ruimte. 
-
-Een nieuw notitie blok maken: 
-
-1. Open uw werk ruimte in [Azure machine learning Studio](https://ml.azure.com).
-1. Selecteer aan de linkerkant **notitie blokken**. 
-1. Selecteer het pictogram  **nieuw bestand maken** boven de lijst **gebruikers bestanden** in de sectie **mijn bestanden** .
-
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/create-new-file.png" alt-text="Nieuw bestand maken":::
-
-1. Geef het bestand een naam. 
-1. Voor Jupyter notebook-bestanden selecteert u **notebook** als het bestands type.
-1. Selecteer een bestands directory.
-1. Selecteer **Maken**.
-
-U kunt ook tekst bestanden maken.  Selecteer **tekst** als het bestands type en voeg de extensie toe aan de naam (bijvoorbeeld myfile.py of myfile.txt)  
-
-U kunt ook mappen en bestanden, met inbegrip van notitie blokken, uploaden met de hulp middelen boven aan de pagina met notitie blokken.  De notitie blokken en de meeste tekst bestands typen worden weer gegeven in de sectie voor beeld.  Er is geen voor beeld beschikbaar voor de meeste andere bestands typen.
-
-> [!IMPORTANT]
-> Inhoud in notitie blokken en scripts kan mogelijk gegevens van uw sessies lezen en toegang krijgen tot gegevens zonder uw organisatie in Azure.  Laad alleen bestanden van vertrouwde bronnen. Zie [Aanbevolen procedures voor veilige code](concept-secure-code-best-practice.md#azure-ml-studio-notebooks)voor meer informatie.
-
-### <a name="clone-samples"></a>Voor beelden klonen
-
-Uw werk ruimte bevat een map met voor **beelden** met notebooks die zijn ontworpen om u te helpen de SDK te verkennen en als voor beeld voor uw eigen machine learning projecten te gebruiken.  U kunt deze notitie blokken klonen in uw eigen map in uw opslag container voor werk ruimten.  
-
-Zie [zelf studie: uw eerste ml-experiment maken](tutorial-1st-experiment-sdk-setup.md#azure)voor een voor beeld.
-
-### <a name="use-files-from-git-and-version-my-files"></a><a name="terminal"></a> Bestanden van Git en versie van mijn bestanden gebruiken
-
-U kunt toegang krijgen tot alle Git-bewerkingen via een Terminal venster. Alle Git-bestanden en-mappen worden opgeslagen in het bestands systeem van de werk ruimte.
-
-> [!NOTE]
-> Voeg uw bestanden en mappen toe aan de map **~/cloudfiles/code/users** , zodat deze in al uw Jupyter-omgevingen zichtbaar zijn.
-
-Voor toegang tot de terminal:
-
-1. Open uw werk ruimte in [Azure machine learning Studio](https://ml.azure.com).
-1. Selecteer aan de linkerkant **notitie blokken**.
-1. Selecteer een notitie blok dat zich in de sectie **gebruikers bestanden** aan de linkerkant bevindt.  Als u nog geen notitie blokken hebt, maakt u eerst [een notitie blok](#create)
-1. Selecteer een **Compute** -doel of maak een nieuw en wacht tot het wordt uitgevoerd.
-1. Selecteer het pictogram **Open Terminal** .
-
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/open-terminal.png" alt-text="Terminal openen":::
-
-1. Als u het pictogram niet ziet, selecteert u de **..** . rechts van het berekenings doel en selecteert u vervolgens **Terminal openen**.
-
-    :::image type="content" source="media/how-to-run-jupyter-notebooks/alt-open-terminal.png" alt-text="Terminal openen vanuit...":::
-
-
-Meer informatie over [het klonen van Git-opslag plaatsen in het bestands systeem van de werk ruimte](concept-train-model-git-integration.md#clone-git-repositories-into-your-workspace-file-system).
-
-### <a name="copy-and-paste-in-terminal"></a>Kopiëren en plakken in Terminal
-
-> * Windows: `Ctrl-Insert` kopiëren en gebruiken `Ctrl-Shift-v` of `Shift-Insert` Plakken.
-> * Mac OS: `Cmd-c` om te kopiëren en `Cmd-v` te plakken.
-> * FireFox/IE ondersteunt mogelijk geen juiste Klembord machtigingen.
-
-### <a name="share-notebooks-and-other-files"></a>Notitie blokken en andere bestanden delen
-
-Kopieer en plak de URL om een notitie blok of bestand te delen.  Alleen andere gebruikers van de werk ruimte hebben toegang tot deze URL.  Meer informatie over [het verlenen van toegang tot uw werk ruimte](how-to-assign-roles.md).
-
 ## <a name="edit-a-notebook"></a>Een notitie blok bewerken
 
-Als u een notitie blok wilt bewerken, opent u een notitie blok dat zich bevindt in het gedeelte **gebruikers bestanden** van uw werk ruimte. Klik op de cel die u wilt bewerken. 
+Als u een notitie blok wilt bewerken, opent u een notitie blok dat zich bevindt in het gedeelte **gebruikers bestanden** van uw werk ruimte. Klik op de cel die u wilt bewerken.  Als u in deze sectie geen notitie blokken hebt, raadpleegt u [bestanden maken en beheren in uw werk ruimte](how-to-manage-files.md).
 
 U kunt het notitie blok bewerken zonder verbinding te maken met een reken instantie.  Wanneer u de cellen in het notitie blok wilt uitvoeren, selecteert of maakt u een reken instantie.  Als u een gestopt Compute-exemplaar selecteert, wordt het automatisch gestart wanneer u de eerste cel uitvoert.
 
@@ -101,7 +39,7 @@ Wanneer een reken instantie wordt uitgevoerd, kunt u ook de voltooiing van code 
 
 U kunt Jupyter of Jjupyterlab ook starten via de werk balk van het notitie blok.  Azure Machine Learning biedt geen updates en corrigeert fouten van Jupyter of Jjupyterlab, omdat deze open source-producten zijn buiten de grenzen van Microsoft Ondersteuning.
 
-### <a name="focus-mode"></a>Focusmodus
+## <a name="focus-mode"></a>Focusmodus
 
 Gebruik de focus modus om uw huidige weer gave uit te breiden zodat u zich kunt concentreren op uw actieve tabbladen. De focus modus verbergt de bestanden Verkenner van notitie blokken.
 
@@ -110,14 +48,13 @@ Gebruik de focus modus om uw huidige weer gave uit te breiden zodat u zich kunt 
 
     :::image type="content" source="media/how-to-run-jupyter-notebooks/focusmode.gif" alt-text="Focus modus/standaard weergave in-/uitschakelen":::
 
-
-### <a name="use-intellisense"></a>IntelliSense gebruiken
+## <a name="use-intellisense"></a>IntelliSense gebruiken
 
 [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) is een hulp programma voor het volt ooien van de code die een aantal functies omvat: lijst leden, parameter info, snelle informatie en volledig woord. Deze functies helpen u meer te weten te komen over de code die u gebruikt, het bijhouden van de para meters die u typt en het toevoegen van aanroepen aan eigenschappen en methoden met slechts enkele toetsaanslagen.  
 
 Wanneer u code typt, gebruikt u Ctrl + spatie om IntelliSense te activeren.
 
-### <a name="clean-your-notebook-preview"></a>Uw notitie blok opschonen (preview-versie)
+## <a name="clean-your-notebook-preview"></a>Uw notitie blok opschonen (preview-versie)
 
 > [!IMPORTANT]
 > De functie verzamelen is momenteel beschikbaar als open bare preview.
@@ -133,7 +70,7 @@ Tijdens het maken van een notitie blok gaat u meestal naar cellen die u hebt geb
 
 Het nieuwe notitie blok bevat alleen code cellen, waarbij alle cellen zijn vereist voor het produceren van dezelfde resultaten als de cel die u hebt geselecteerd voor het verzamelen van gegevens.
 
-### <a name="save-and-checkpoint-a-notebook"></a>Een notitie blok opslaan en controle punten
+## <a name="save-and-checkpoint-a-notebook"></a>Een notitie blok opslaan en controle punten
 
 Azure Machine Learning een controlepunt bestand maakt wanneer u een *ipynb* -bestand maakt.
 
@@ -145,24 +82,34 @@ Elk notitie blok wordt elke 30 seconden autobespaard. Met automatisch opslaan wo
  
 Selecteer **controle punten** in het menu van het notitie blok om een benoemd controle punt te maken en de notitie blok terug te zetten naar een opgeslagen controle punt.
 
-## <a name="delete-a-notebook"></a>Een notebook verwijderen 
+## <a name="export-a-notebook"></a>Een notitie blok exporteren
 
-U *kunt* de voor **beelden** van notitie blokken niet verwijderen.  Deze notitie blokken maken deel uit van de studio en worden bijgewerkt telkens wanneer een nieuwe SDK wordt gepubliceerd.  
+Selecteer in de werk balk van het notitie blok het menu en vervolgens **exporteren als** om het notitie blok te exporteren als een van de ondersteunde typen:
 
-U *kunt* notitie blokken met **gebruikers bestanden** op een van de volgende manieren verwijderen:
+* Notebook
+* Python
+* HTML
+* LaTeX
 
-* Selecteer in de Studio de **..** . aan het einde van een map of bestand.  Zorg ervoor dat u een ondersteunde browser (micro soft Edge, Chrome of Firefox) gebruikt.
-* Selecteer op elke werk balk van een notitie blok de optie [**Terminal openen**](#terminal)  om toegang te krijgen tot het Terminal venster voor het reken exemplaar.
-* In Jupyter of Jjupyterlab met hun hulp middelen.
+:::image type="content" source="media/how-to-run-jupyter-notebooks/export-notebook.png" alt-text="Een notitie blok exporteren naar uw computer":::
+
+Het geëxporteerde bestand wordt op uw computer opgeslagen.
 
 ## <a name="run-a-notebook-or-python-script"></a>Een notitie blok of python-script uitvoeren
 
-Als u een notitie blok of een python-script wilt uitvoeren, maakt u eerst verbinding met een actief [reken exemplaar](concept-compute-instance.md). Als u geen reken instantie hebt, gebruikt u deze stappen om er een te maken: 
+Als u een notitie blok of een python-script wilt uitvoeren, maakt u eerst verbinding met een actief [reken exemplaar](concept-compute-instance.md).
 
-1. Selecteer **+** in de werk balk van het notitie blok of script. 
-2. Geef de berekening een naam en kies een grootte voor de **virtuele machine**. 
-3. Selecteer **Maken**.
-4. Het reken proces is automatisch verbonden met het bestand.  U kunt nu de notebook-cellen of het python-script uitvoeren met het hulp programma aan de linkerkant van het reken exemplaar
+* Als u geen reken instantie hebt, gebruikt u deze stappen om er een te maken:
+
+    1. Selecteer **+ New Compute** in de werk balk voor het notitie blok of het script rechts van de vervolg keuzelijst voor berekeningen. Afhankelijk van uw scherm grootte, kan dit zich bevinden onder een **...** -menu.
+        :::image type="content" source="media/how-to-run-jupyter-notebooks/new-compute.png" alt-text="Een nieuwe Compute maken":::
+    1. Geef de berekening een naam en kies een grootte voor de **virtuele machine**. 
+    1. Selecteer **Maken**.
+    1. Het reken proces is automatisch verbonden met het bestand.  U kunt nu de notebook-cellen of het python-script uitvoeren met het hulp programma aan de linkerkant van het reken exemplaar.
+
+* Als u een gestopt Compute-exemplaar hebt, selecteert u  **Compute starten** rechts van de vervolg keuzelijst compute. Afhankelijk van uw scherm grootte, kan dit zich bevinden onder een **...** -menu.
+
+    :::image type="content" source="media/how-to-run-jupyter-notebooks/start-compute.png" alt-text="Reken instantie starten":::
 
 Alleen u kunt de compute-instanties zien en gebruiken die u maakt.  Uw **gebruikers bestanden** worden afzonderlijk van de virtuele machine opgeslagen en worden gedeeld door alle reken instanties in de werk ruimte.
 
@@ -209,33 +156,12 @@ Met deze acties wordt de status van het notitie blok opnieuw ingesteld en worden
 | Compute stoppen     |    Er worden geen cellen uitgevoerd  |
 | Notitie blok openen in Jupyter of Jjupyterlab     |    Notitie blok geopend op een nieuw tabblad.  |
 
-### <a name="add-new-kernels"></a>Nieuwe kernels toevoegen
+## <a name="add-new-kernels"></a>Nieuwe kernels toevoegen
 
-Het notitie blok vindt automatisch alle Jupyter-kernels die zijn geïnstalleerd op het verbonden Compute-exemplaar.  Een kernel toevoegen aan het reken exemplaar:
+[Gebruik de Terminal ](how-to-access-terminal.md#add-new-kernels) om nieuwe kernels te maken en toe te voegen aan uw reken exemplaar. Het notitie blok vindt automatisch alle Jupyter-kernels die zijn geïnstalleerd op het verbonden Compute-exemplaar.
 
-1. Selecteer [**Terminal openen**](#terminal) op de werk balk van het notitie blok.
-1. Gebruik het Terminal venster om een nieuwe omgeving te maken.  De onderstaande code maakt bijvoorbeeld `newenv` :
-    ```shell
-    conda create -y --name newenv
-    ```
-1. Activeer de omgeving.  Bijvoorbeeld na het maken van `newenv` :
+Gebruik de vervolg keuzelijst kernel aan de rechter kant om een van de geïnstalleerde kernels te wijzigen.  
 
-    ```shell
-    conda activate newenv
-    ```
-1. PIP-en ipykernel-pakket installeren in de nieuwe omgeving en een kernel maken voor die Conda env
-
-    ```shell
-    conda install -y pip
-    conda install -y ipykernel
-    python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
-    ```
-1. Nadat u de kernel hebt geïnstalleerd, moet u de pagina vernieuwen en een notitie blok openen. De nieuwe kernel wordt nu weer geven in de lijst met kernels.
-
-> [!NOTE]
-> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd**, in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
-
-Een van de [beschik bare Jupyter-kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) kan worden geïnstalleerd.
 
 ### <a name="status-indicators"></a>Status indicatoren
 

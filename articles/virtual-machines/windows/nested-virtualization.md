@@ -7,12 +7,12 @@ ms.date: 10/09/2017
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.workload: infrastructure
-ms.openlocfilehash: 03df7db13ebd3ebec407bb046cc735c835e01068
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e85ac58c80e1fd695938bf09b6435dba1f4ee083
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87074242"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091343"
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Geneste virtualisatie inschakelen in een Azure VM
 
@@ -24,7 +24,7 @@ In dit artikel wordt beschreven hoe u Hyper-V op een virtuele Azure-machine insc
 
 Maak een nieuwe Windows Server 2016 Azure-VM. Bekijk het [artikel Azure Compute unit](../acu.md)voor een volledige lijst met grootten voor virtuele machines die ondersteuning bieden voor nesten.
 
-Vergeet niet om een VM-grootte te kiezen die groot genoeg is om de vereisten van een virtuele gast machine te ondersteunen. In dit voor beeld gebruiken we een Azure-VM met een grootte van D3_v3. 
+Vergeet niet om een VM-grootte te kiezen die groot genoeg is om de vereisten van een virtuele gast machine te ondersteunen. In dit voor beeld gebruiken we een Azure-VM met een grootte van D4_v3. 
 
 U kunt [hier](https://azure.microsoft.com/regions/services/)de regionale Beschik baarheid van virtuele machines van de Dv3-of Ev3-serie bekijken.
 
@@ -143,15 +143,15 @@ Volg de onderstaande stappen om DHCP op de virtuele machine van de host te confi
   
 2. Klik in de wizard op **volgende** totdat de pagina Server functies.
   
-3. Schakel het selectie vakje **DHCP-server** in, klik op **onderdelen toevoegen**en klik vervolgens op **volgende** totdat u de wizard hebt voltooid.
+3. Schakel het selectie vakje **DHCP-server** in, klik op **onderdelen toevoegen** en klik vervolgens op **volgende** totdat u de wizard hebt voltooid.
   
-4. Klik op **Install**.
+4. Klik op **Installeren**.
 
 #### <a name="configure-a-new-dhcp-scope"></a>Een nieuwe DHCP-scope configureren
 
 1. Open DHCP-beheer.
   
-2. Vouw in het navigatie deel venster de server naam uit, klik met de rechter muisknop op **IPv4**en klik op **nieuwe scope**. De wizard Nieuwe scope wordt weer gegeven, klikt u op **volgende**.
+2. Vouw in het navigatie deel venster de server naam uit, klik met de rechter muisknop op **IPv4** en klik op **nieuwe scope**. De wizard Nieuwe scope wordt weer gegeven, klikt u op **volgende**.
   
 3. Voer een naam en beschrijving voor het bereik in en klik op **volgende**.
   

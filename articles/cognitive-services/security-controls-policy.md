@@ -1,18 +1,18 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure Cognitive Services
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure Cognitive Services. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 01/27/2021
+ms.date: 02/09/2021
 ms.topic: sample
 author: nitinme
 ms.author: nitinme
 ms.service: cognitive-services
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: f37f574d8b970f65fbf2e10c2216cb9d9e62fd8f
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: bcc4a044f32f7b6be17342382a1d82994487814a
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576965"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090854"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-cognitive-services"></a>Azure Policy regulerende nalevings controles voor Azure Cognitive Services
 

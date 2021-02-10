@@ -1,15 +1,15 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor servers met Azure Arc (preview)
 description: Een overzicht van besturingselementen voor de naleving van Azure Policy-regelgeving voor servers met Azure Arc (preview). Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: sample
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: f2eb944e43ee52a6520c90afc27282f0f2586974
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: a36259c64cb1a789750cfd7e5db5ff758f7de3d5
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99561129"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091088"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-arc-enabled-servers"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor servers met Azure Arc
 

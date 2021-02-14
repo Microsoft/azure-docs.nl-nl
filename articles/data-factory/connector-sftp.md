@@ -1,23 +1,18 @@
 ---
 title: Gegevens kopiëren van en naar SFTP-server
 description: Meer informatie over het kopiëren van gegevens van en naar SFTP-server met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/28/2020
-ms.openlocfilehash: c1f49fffae091dd0d069c48cea75c3da40def645
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 9b8402e5ae4d0358d17342d30ddf36f5e1228f65
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346075"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393459"
 ---
 # <a name="copy-data-from-and-to-the-sftp-server-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar de SFTP-server met behulp van Azure Data Factory
 
@@ -229,13 +224,13 @@ De volgende eigenschappen worden ondersteund voor SFTP onder de `storeSettings` 
 | Eigenschap                 | Beschrijving                                                  | Vereist                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
 | type                     | De eigenschap *type* onder `storeSettings` moet worden ingesteld op *SftpReadSettings*. | Yes                                           |
-| ***De te kopiëren bestanden zoeken** |  |  |
-| OPTIE 1: statisch pad<br> | Kopieer vanuit de map of het bestandspad dat is opgegeven in de gegevensset. Als u alle bestanden uit een map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `_` . |  |
+| ***De te kopiëren bestanden zoeken*** |  |  |
+| OPTIE 1: statisch pad<br> | Kopieer vanuit de map of het bestandspad dat is opgegeven in de gegevensset. Als u alle bestanden uit een map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `*` . |  |
 | OPTIE 2: Joker teken<br>- wildcardFolderPath | Het mappad met Joker tekens om de bron mappen te filteren. <br>Toegestane joker tekens zijn `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruiken `^` om te escapen als uw werkelijke mapnaam een Joker teken of escape-teken bevat. <br>Zie voor [beelden van mappen en bestanden](#folder-and-file-filter-examples)voor meer voor beelden. | No                                            |
 | OPTIE 2: Joker teken<br>- wildcardFileName | De naam van het bestand met Joker tekens onder het opgegeven folderPath/wildcardFolderPath voor het filteren van bron bestanden. <br>Toegestane joker tekens zijn `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruiken `^` om te escapen als uw werkelijke bestands naam Joker teken of escape-teken bevat.  Zie voor [beelden van mappen en bestanden](#folder-and-file-filter-examples)voor meer voor beelden. | Yes |
 | OPTIE 3: een lijst met bestanden<br>- fileListPath | Hiermee wordt aangegeven dat een opgegeven set bestanden moet worden gekopieerd. Wijs naar een tekst bestand met een lijst met bestanden die u wilt kopiëren (één bestand per regel, met het relatieve pad naar het pad dat in de gegevensset is geconfigureerd).<br/>Wanneer u deze optie gebruikt, geeft u de bestands naam niet op in de gegevensset. Zie voor [beelden van bestands lijst](#file-list-examples)voor meer voor beelden. |No |
-| ***Aanvullende instellingen** _ |  | |
-| recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Als recursief is ingesteld op True en de Sink een archief op basis van bestanden is, wordt een lege map of submap niet gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn _true * (standaard) en *Onwaar*.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |
+| ***Aanvullende instellingen*** |  | |
+| recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Als recursief is ingesteld op True en de Sink een archief op basis van bestanden is, wordt een lege map of submap niet gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn *True* (standaard) en *Onwaar*.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |
 | deleteFilesAfterCompletion | Hiermee wordt aangegeven of de binaire bestanden uit het bron archief worden verwijderd nadat naar het doel archief is verplaatst. Het verwijderen van bestanden is per bestand, dus wanneer de Kopieer activiteit mislukt, ziet u dat er al een aantal bestanden naar het doel is gekopieerd en verwijderd uit de bron, terwijl andere nog steeds in het bron archief blijven staan. <br/>Deze eigenschap is alleen geldig in het scenario voor het kopiëren van binaire bestanden. De standaard waarde is False. |No |
 | modifiedDatetimeStart    | Bestanden worden gefilterd op basis van het kenmerk dat het *laatst is gewijzigd*. <br>De bestanden worden geselecteerd als het tijdstip van de laatste wijziging binnen het bereik van `modifiedDatetimeStart` tot is `modifiedDatetimeEnd` . De tijd wordt toegepast op de UTC-tijd zone in de indeling *2018-12-01T05:00:00Z*. <br> De eigenschappen kunnen NULL zijn, wat betekent dat er geen filter voor bestands kenmerken wordt toegepast op de gegevensset.  Wanneer `modifiedDatetimeStart` heeft een datum/tijd `modifiedDatetimeEnd` -waarde, maar null is, betekent dit dat de bestanden waarvan het kenmerk laatst gewijzigd is groter dan of gelijk is aan de datum/tijd-waarde zijn geselecteerd.  Wanneer `modifiedDatetimeEnd` heeft een datum/tijd `modifiedDatetimeStart` -waarde, maar is null, betekent dit dat de bestanden waarvan het kenmerk laatst gewijzigd is, kleiner zijn dan de waarde voor datum/tijd.<br/>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . | No                                            |
 | modifiedDatetimeEnd      | Hetzelfde als hierboven.                                               | No                                            |

@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 91cf6729911cdb674c5451f172e76a2e9d5943e4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 1818dc558ba45e318b71e1443556cc48feaede8b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466787"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367670"
 ---
 # <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop-preview"></a>Problemen met Azure Monitor voor virtueel bureau blad van Windows oplossen (preview-versie)
 
@@ -20,9 +20,9 @@ ms.locfileid: "96466787"
 
 In dit artikel vindt u bekende problemen en oplossingen voor veelvoorkomende problemen in Azure Monitor voor virtueel bureau blad van Windows (preview).
 
-## <a name="the-configuration-workbook-isnt-working-properly"></a>De configuratie werkmap werkt niet correct
+## <a name="issues-with-configuration-and-setup"></a>Problemen met configuratie en installatie
 
-Als de Azure Monitor-configuratie werkmap niet werkt, kunt u deze resources gebruiken om de onderdelen hand matig in te stellen:
+Als de configuratie werkmap niet goed werkt om Setup te automatiseren, kunt u deze bronnen gebruiken om uw omgeving hand matig in te stellen:
 
 - Als u Diagnostische gegevens hand matig wilt inschakelen of toegang wilt krijgen tot de Log Analytics-werk ruimte, raadpleegt [u Windows diagnostische gegevens over virtueel bureau blad naar log Analytics](diagnostics-log-analytics.md)
 - Zie [log Analytics virtuele-machine-extensie voor Windows](../virtual-machines/extensions/oms-windows.md)als u de log Analytics-extensie hand matig wilt installeren op een host.
@@ -30,27 +30,29 @@ Als de Azure Monitor-configuratie werkmap niet werkt, kunt u deze resources gebr
 - Zie [Configuring Performance Counters](../azure-monitor/platform/data-sources-performance-counters.md)om prestatie meter items toe te voegen of te verwijderen.
 - Zie [gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met log Analytics agent](../azure-monitor/platform/data-sources-windows-events.md)voor het configureren van gebeurtenissen voor een log Analytics-werk ruimte.
 
-Het probleem kan ook worden veroorzaakt door een tekort aan resources of niet met de vereiste machtigingen.
-
-Als het abonnement geen virtuele Windows-bureau blad-resources heeft, wordt deze niet weer gegeven in de para meter van het *abonnement* .
-
-Als u geen lees toegang hebt tot de juiste abonnementen, worden deze niet weer gegeven in de para meter *abonnement* en worden de gegevens in het dash board niet zichtbaar. Als u dit probleem wilt oplossen, neemt u contact op met de eigenaar van uw abonnement en vraagt u om Lees toegang.
-
 ## <a name="my-data-isnt-displaying-properly"></a>Mijn gegevens worden niet correct weer gegeven
 
-Als uw gegevens niet goed worden weer gegeven, is er mogelijk een probleem opgetreden tijdens het Azure Monitor configuratie proces. Zorg er eerst voor dat u alle velden in de configuratie werkmap hebt ingevuld, zoals beschreven in [Azure monitor voor Windows Virtual Desktop gebruiken om uw implementatie te controleren](azure-monitor.md). U kunt de instellingen voor zowel nieuwe als bestaande omgevingen op elk gewenst moment wijzigen. Als er items of gebeurtenissen ontbreken, worden de bijbehorende gegevens niet weer gegeven in de Azure Portal.
+Als uw gegevens niet correct worden weer gegeven, controleert u uw configuratie, machtigingen en controleert u of de vereiste IP-adressen zijn gedeblokkeerd. 
 
-Als u geen gegevens mist, maar uw gegevens nog steeds niet goed worden weer gegeven, is er mogelijk een probleem in de query of de gegevens bronnen. 
+- Zorg er eerst voor dat u alle velden in de configuratie werkmap hebt ingevuld, zoals beschreven in [Azure monitor voor Windows Virtual Desktop gebruiken om uw implementatie te controleren](azure-monitor.md). Als er items of gebeurtenissen ontbreken, worden de bijbehorende gegevens niet weer gegeven in de Azure Portal.
 
-Als er geen Setup-fouten worden weer gegeven en u de verwachte gegevens nog steeds niet ziet, kunt u het beste 15 minuten wachten en de feed vernieuwen. Azure Monitor heeft een latentie periode van 15 minuten voor het invullen van de logboek gegevens. Zie [gegevens opname tijd vastleggen in azure monitor](../azure-monitor/platform/data-ingestion-time.md)voor meer informatie.
+- Controleer uw toegangs machtigingen & Neem contact op met de resource-eigen aren om ontbrekende machtigingen aan te vragen. iedereen die Windows virtueel bureau blad bewaakt, vereist de volgende machtigingen:
 
-Ten slotte, als u geen gegevens mist, maar uw gegevens nog steeds niet worden weer gegeven, is er mogelijk een probleem in de query of de gegevens bronnen. Mogelijk moet u contact opnemen met de ondersteuning om het probleem op te lossen, als dat het geval is.
+    - Lees toegang tot de Azure-abonnementen die uw virtueel bureau blad-resources van Windows bevatten
+    - Lees toegang tot de resource groepen van het abonnement die uw Windows Virtual Desktop-sessie hosts bevatten 
+    - Lees toegang tot de Log Analytics-werk ruimte
+
+- Mogelijk moet u uitgaande poorten in de firewall van uw server openen zodat Azure Monitor gegevens naar de portal kunt verzenden. Zie [uitgaande poorten](https://docs.microsoft.com/azure/azure-monitor/app/ip-addresses). 
+
+- Ziet u geen gegevens uit de recente activiteit? Mogelijk wilt u 15 minuten wachten en de feed vernieuwen. Azure Monitor heeft een latentie periode van 15 minuten voor het invullen van de logboek gegevens. Zie [gegevens opname tijd vastleggen in azure monitor](../azure-monitor/platform/data-ingestion-time.md)voor meer informatie.
+
+Als u geen gegevens mist, maar uw gegevens nog steeds niet goed worden weer gegeven, is er mogelijk een probleem in de query of de gegevens bronnen. Bekijk onze bekende problemen en beperkingen. 
 
 ## <a name="i-want-to-customize-azure-monitor-for-windows-virtual-desktop"></a>Ik wil Azure Monitor aanpassen voor het virtuele bureau blad van Windows
 
 Azure Monitor voor virtueel bureau blad van Windows maakt gebruik van Azure Monitor-werkmappen. Met werkmappen kunt u een kopie van de sjabloon virtuele Windows-bureau blad-werkmap opslaan en uw eigen aanpassingen door voeren.
 
-Aangepaste sjablonen worden niet bijgewerkt wanneer de oorspronkelijke sjabloon wordt bijgewerkt door de product groep. Dit is in het hulp programma werkmappen ontworpen, u moet een kopie van de bijgewerkte sjabloon opslaan en uw aanpassingen opnieuw bouwen om updates te kunnen aanbrengen. Zie voor meer informatie [problemen oplossen op basis van een werkmap](../azure-monitor/insights/troubleshoot-workbooks.md) en het [overzicht van werkmappen](../azure-monitor/platform/workbooks-overview.md).
+Met behulp van aangepaste werkmap sjablonen worden niet automatisch updates van de product groep toegepast. Zie voor meer informatie [problemen oplossen op basis van een werkmap](../azure-monitor/insights/troubleshoot-workbooks.md) en het [overzicht van werkmappen](../azure-monitor/platform/workbooks-overview.md).
 
 ## <a name="i-cant-interpret-the-data"></a>Ik kan de gegevens niet interpreteren
 
@@ -58,24 +60,36 @@ Meer informatie over de gegevens termen vindt u in de [woorden lijst Azure monit
 
 ## <a name="the-data-i-need-isnt-available"></a>De benodigde gegevens zijn niet beschikbaar
 
+Als u meer prestatie meter items of gebeurtenissen wilt bewaken, kunt u ze in staat stellen om naar uw Log Analytics-werk ruimte te verzenden en ze te controleren in diagnostische gegevens van hosts: host browser. 
+
+- Zie [prestatie meter items configureren](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-performance-counters#configuring-performance-counters) voor meer informatie over het toevoegen van prestatie meter items
+- Zie [Windows-gebeurtenis logboeken configureren](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-windows-events#configuring-windows-event-logs) voor meer informatie over het toevoegen van Windows-gebeurtenissen.
+
 Kunt u geen gegevens punt vinden om te helpen bij het vaststellen van een probleem? Stuur ons feedback.
 
 - Zie [probleemoplossings overzicht, feedback en ondersteuning voor virtueel bureau blad van Windows](troubleshoot-set-up-overview.md)voor meer informatie over het geven van feedback.
 - U kunt ook feedback geven voor Windows virtueel bureau blad op de [Windows Virtual Desktop feedback hub](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) of [ons UserVoice-forum](https://windowsvirtualdesktop.uservoice.com/forums/921118-general).
 
-## <a name="known-issues"></a>Bekende problemen
+## <a name="known-issues-and-limitations"></a>Bekende problemen en beperkingen
 
-Dit zijn de problemen waarvan we momenteel op de hoogte zijn en die kunnen worden gebruikt om het probleem op te lossen:
+Dit zijn de problemen en beperkingen die momenteel van pas komen en werken aan het oplossen van:
 
-- U kunt momenteel slechts één abonnement, resource groep en hostgroep selecteren om tegelijk te bewaken. Daarom moet u, wanneer u de pagina gebruikers rapporten gebruikt om inzicht te krijgen in de gebruikers ervaring, controleren of u de juiste hostgroep hebt die door de gebruiker is gebruikt of dat de gegevens niet in de visuals worden ingevuld.
+- U kunt slechts één hostgroep per keer bewaken. 
 
-- Het is momenteel niet mogelijk om favoriete instellingen op te slaan in Azure Monitor tenzij u een aangepaste sjabloon van de werkmap opslaat. Dit betekent dat de IT-beheerder de naam, de namen van de resource groepen en de voor keuren voor de hostgroep moet invoeren telkens wanneer ze Azure Monitor voor Windows virtueel bureau blad openen.
-
-- Er is momenteel geen manier om gegevens van Azure Monitor voor virtuele Windows-Bureau bladen te exporteren naar Excel.
-
-- Alle waarschuwingen voor Ernst 1 Azure Monitor voor alle producten binnen het geselecteerde abonnement worden weer gegeven op de pagina overzicht. Dit is een ontwerp, omdat waarschuwingen van andere producten in het abonnement van invloed kunnen zijn op het virtuele bureau blad van Windows. Op dit moment is de query beperkt tot waarschuwingen van Ernst 1, met uitzonde ring van Ernst 0-waarschuwingen met hoge prioriteit van de pagina overzicht.
+- Als u de favoriete instellingen wilt opslaan, moet u een aangepaste sjabloon van de werkmap opslaan. Met aangepaste sjablonen worden niet automatisch updates van de product groep aangenomen.
 
 - Sommige fout berichten worden niet op een gebruiks vriendelijke manier aangeduid en niet alle fout berichten worden beschreven in de documentatie.
+
+- Het prestatie meter item voor het totale aantal sessies kan aantal sessies met een klein aantal overschrijdingen en uw totale sessies worden mogelijk boven uw maximum aantal sessies weer gegeven.
+
+- Aantal beschik bare sessies komt niet overeen met het schaal beleid voor de hostgroep. 
+    
+- In zeldzame gevallen kan de voltooiings gebeurtenis van een verbinding ontbreken. Dit kan invloed hebben op sommige visuele elementen, zoals verbindingen gedurende een bepaalde periode en de verbindings status van de gebruiker.  
+    
+- De configuratie werkmap ondersteunt alleen het configureren van hosts in dezelfde regio als de resource groep. 
+
+- Tijd om verbinding te maken omvat de tijd die gebruikers nodig hebben om hun referenties in te voeren. Dit heeft betrekking op de ervaring, maar in sommige gevallen kunnen onjuiste pieken worden weer gegeven. 
+    
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -154,6 +154,8 @@
           href: howto-password-ban-bad-on-premises-faq.md
         - name: Versiegeschiedenis van agent
           href: howto-password-ban-bad-on-premises-agent-versions.md
+    - name: Een tijdelijke toegangs doorvoer (preview-versie) gebruiken
+      href: howto-authentication-temporary-access-pass.md
     - name: Verificatie op basis van SMS gebruiken
       href: howto-authentication-sms-signin.md
     - name: E-mail adres aanmelden gebruiken

@@ -3,12 +3,12 @@ title: host.jsbij verwijzing voor Azure Functions 2. x
 description: Referentie documentatie voor de Azure Functions host.jsin het bestand met v2 runtime.
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 735c92720f4a3f871499ad3a0565446a02b438eb
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 7ab60fb364eb3268a03c04bb4950251ae030f015
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654809"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374045"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Referentie naar host.json voor Azure Functions 2.x en hoger 
 
@@ -39,6 +39,7 @@ In het volgende voor beeld *host.js* bestand voor versie 2. x + zijn alle mogeli
         "flushTimeout": "00:00:30"
     },
     "extensions": {
+        "blobs": {},
         "cosmosDb": {},
         "durableTask": {},
         "eventHubs": {},
@@ -216,6 +217,10 @@ Voor meer informatie over moment opnamen raadpleegt u [debug-moment opnamen op u
 | thresholdForSnapshotting | 1 | Hoe vaak Application Insights een uitzonde ring moet zien voordat er wordt gevraagd om moment opnamen. |
 | uploaderProxy | null | Hiermee wordt de proxy server die wordt gebruikt in het Uploader-proces voor moment opnamen onderdrukt. Mogelijk moet u deze instelling gebruiken als uw toepassing verbinding maakt met Internet via een proxy server. De Snapshot Collector wordt uitgevoerd binnen het proces van uw toepassing en maakt gebruik van dezelfde proxy-instellingen. De moment opname Uploader wordt echter als een afzonderlijk proces uitgevoerd en u moet de proxy server mogelijk hand matig configureren. Als deze waarde Null is, probeert Snapshot Collector automatisch het adres van de proxy te detecteren door .net. WebRequest. DefaultWebProxy te onderzoeken en door te geven aan de waarde van de uploader van de moment opname. Als deze waarde niet null is, wordt er geen automatische detectie gebruikt en wordt de proxy server die hier is opgegeven, gebruikt in de uploader voor moment opnamen. |
 
+## <a name="blobs"></a>blobs
+
+Configuratie-instellingen vindt u in de [opslag-BLOB triggers en bindingen](functions-bindings-storage-blob.md#hostjson-settings).  
+
 ## <a name="cosmosdb"></a>cosmosDb
 
 De configuratie-instelling vindt u in [Cosmos DB triggers en bindingen](functions-bindings-cosmosdb-v2-output.md#host-json).
@@ -378,7 +383,7 @@ Managed dependency is een functie die momenteel alleen wordt ondersteund met Pow
 
 ## <a name="queues"></a>Bestel
 
-Configuratie-instellingen vindt u in de [opslag wachtrij Triggers en bindingen](functions-bindings-storage-queue-output.md#host-json).  
+Configuratie-instellingen vindt u in de [opslag wachtrij Triggers en bindingen](functions-bindings-storage-queue.md#host-json).  
 
 ## <a name="retry"></a>retry
 

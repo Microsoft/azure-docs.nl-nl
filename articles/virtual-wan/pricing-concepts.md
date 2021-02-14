@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: reyandap
 ms.custom: references_pricing
-ms.openlocfilehash: 8ced9bb33be341d35904967092414676a6ffe3ac
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 13451291544f704000ab61d41ed5014fa69298e4
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905533"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517685"
 ---
 # <a name="about-virtual-wan-pricing"></a>Over de prijzen voor Virtual WAN
 
@@ -23,8 +23,7 @@ Azure Virtual WAN brengt meerdere netwerk-en beveiligings Services samen in een 
 Voor elke service in Virtual WAN is de prijs. Daarom is het Voorst Ellen van een enkele prijs niet van toepassing op virtuele WAN. De [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/) biedt een mechanisme voor het afleiden van de kosten, gebaseerd op de services die zijn ingericht in een virtueel WAN. In dit artikel worden veelgestelde vragen over de prijzen van virtuele WAN besproken.
 
 >[!NOTE]
->Zie [prijzen voor Virtual WAN](https://azure.microsoft.com/pricing/details/virtual-wan/)voor actuele prijs informatie.
->
+>Zie [prijzen voor Virtual WAN](https://azure.microsoft.com/pricing/details/virtual-wan/)voor actuele prijs informatie. Kosten voor inter-hub (hub naar hub) worden niet weer gegeven op de pagina met virtuele WAN-prijzen, omdat de kosten Inter-Region voor [Azure-gegevens overdracht](https://azure.microsoft.com/pricing/details/bandwidth/)in rekening worden gebracht.
 
 ## <a name="common-pricing-questions"></a><a name="questions"></a>Veelgestelde vragen over prijzen
 

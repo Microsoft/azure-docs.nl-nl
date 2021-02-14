@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van en naar Azure Databricks Delta Lake
 description: Informatie over het kopiëren van gegevens van en naar Azure Databricks Delta Lake met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/24/2020
-ms.openlocfilehash: e32b93c669bffd382b1eb648111f9b8931b07eac
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: bdf71276d59dec9a19e29ae7f49cb92a0512c05a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221139"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364236"
 ---
 # <a name="copy-data-to-and-from-azure-databricks-delta-lake-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Databricks Delta Lake met behulp van Azure Data Factory
 
@@ -151,8 +147,8 @@ Als u gegevens wilt kopiëren uit Azure Databricks Delta Lake, worden de volgend
 | type                         | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzureDatabricksDeltaLakeSource**. | Yes      |
 | query          | Geef de SQL-query op om gegevens te lezen. Volg het onderstaande patroon voor het besturings element tijd reizen:<br>- `SELECT * FROM events TIMESTAMP AS OF timestamp_expression`<br>- `SELECT * FROM events VERSION AS OF version` | No       |
 | exportSettings | Geavanceerde instellingen voor het ophalen van gegevens uit de Delta tabel. | No       |
-| ***Onder `exportSettings` :** _ |  |  |
-| type | Het type opdracht voor exporteren, ingesteld op _ * AzureDatabricksDeltaLakeExportCommand * *. | Yes |
+| ***Onder `exportSettings` :*** |  |  |
+| type | Het type export opdracht, ingesteld op **AzureDatabricksDeltaLakeExportCommand**. | Yes |
 | Notatie | Format teer het datum type in een teken reeks met een datum notatie. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd` . | No |
 | timestampFormat | Notatie van tijds tempel type op teken reeks met een notatie van een tijds tempel. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` . | No |
 
@@ -265,8 +261,8 @@ Als u gegevens wilt kopiëren naar Azure Databricks Delta Lake, worden de volgen
 | type          | De eigenschap type van de Sink van de Kopieer activiteit is ingesteld op **AzureDatabricksDeltaLakeSink**. | Yes      |
 | preCopyScript | Geef een SQL-query op voor het uitvoeren van de Kopieer activiteit die moet worden uitgevoerd voordat gegevens worden geschreven in de Databricks-Delta tabel in elke run. U kunt deze eigenschap gebruiken om de vooraf geladen gegevens op te schonen of een afgekapte tabel of vacuüm instructie toe te voegen. | No       |
 | importSettings | Geavanceerde instellingen voor het schrijven van gegevens in de Delta tabel. | No |
-| **_Onder `importSettings` :_* _ |                                                              |  |
-| type | Het type import opdracht, ingesteld op _ * AzureDatabricksDeltaLakeImportCommand * *. | Yes |
+| ***Onder `importSettings` :*** |                                                              |  |
+| type | Het type van de opdracht importeren, ingesteld op **AzureDatabricksDeltaLakeImportCommand**. | Yes |
 | Notatie | Teken reeks tot datum type opmaken met een datum notatie. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd` . | No |
 | timestampFormat | Teken reeks opmaken naar tijds tempel type met een notatie van een tijds tempel. Aangepaste datum notaties volgen de notaties op [DateTime-patroon](https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html). Als u niets opgeeft, wordt de standaard waarde gebruikt `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` . | No |
 

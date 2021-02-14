@@ -11,12 +11,12 @@ ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: 0405ea116a1867ec75beff21637f18fb37565627
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 9642f9ce51cd3eb90344f96bc099da7adea93022
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584716"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364785"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen
 
@@ -228,7 +228,7 @@ Volg de bovenstaande stappen om ten minste vijf formulieren te labelen.
 U kunt desgewenst het verwachte gegevenstype voor elk label instellen. Open het contextmenu rechts van een label en selecteer een type in het menu. Met deze functie kunnen bepaalde aannames worden gedaan waarmee de nauwkeurigheid van de tekstdetectie wordt verbeterd. Het zorgt er ook voor dat de gedetecteerde waarden worden geretourneerd in een gestandaardiseerde indeling in de uiteindelijke JSON-uitvoer. Informatie over waardetypen wordt opgeslagen in het bestand *fields.json*, op hetzelfde pad als uw labelbestanden.
 
 > [!div class="mx-imgBorder"]
-> ![Selectie van waardetypen met het voorbeeldhulpprogramma voor labelen](../media/whats-new/formre-value-type.png)
+> ![Selectie van waardetypen met het voorbeeldhulpprogramma voor labelen](../media/whats-new/value-type.png)
 
 De volgende waardetypen en variaties worden momenteel ondersteund:
 * `string`

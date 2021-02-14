@@ -1,22 +1,17 @@
 ---
 title: Gegevens uit een webtabel kopiëren met behulp van Azure Data Factory
 description: Meer informatie over web Table connector van Azure Data Factory waarmee u gegevens kunt kopiëren van een webtabel naar gegevens archieven die door Data Factory worden ondersteund als Sinks.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 0eb4d37342685c13027a69bb6cb85f618fa63f20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ab45868afd8d1b7ba1f61f5eaacca283817e6d6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81410217"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367007"
 ---
 # <a name="copy-data-from-web-table-by-using-azure-data-factory"></a>Gegevens uit een webtabel kopiëren met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -59,9 +54,9 @@ De volgende eigenschappen worden ondersteund voor gekoppelde webtabelgegevens:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Web** |Ja |
-| url | URL naar de webbron |Ja |
-| authenticationType | Toegestane waarde is: **anoniem**. |Ja |
+| type | De eigenschap type moet worden ingesteld op: **Web** |Yes |
+| url | URL naar de webbron |Yes |
+| authenticationType | Toegestane waarde is: **anoniem**. |Yes |
 | connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Een zelf-hostende Integration Runtime is vereist zoals vermeld in de [vereisten](#prerequisites). |Ja |
 
 **Voorbeeld:**
@@ -91,7 +86,7 @@ Als u gegevens wilt kopiëren uit een webtabel, stelt u de eigenschap type van d
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **Webtable** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **Webtable** | Yes |
 | leertraject |Een relatieve URL naar de resource die de tabel bevat. |Nee. Wanneer pad niet is opgegeven, wordt alleen de URL gebruikt die is opgegeven in de definitie van de gekoppelde service. |
 | index |De index van de tabel in de resource. Zie [index ophalen van een tabel in een sectie met een HTML-pagina](#get-index-of-a-table-in-an-html-page) voor de stappen voor het ophalen van index van een tabel in een HTML-pagina. |Ja |
 
@@ -167,7 +162,7 @@ Als u de index wilt ophalen van een tabel die u in de [Eigenschappen](#dataset-p
     ![Vanuit het dialoog venster Web](./media/copy-data-from-web-table/FromWeb-DialogBox.png)
 
     URL die in dit voor beeld wordt gebruikt: https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies
-4. Als u het dialoog venster **webinhoud openen** ziet, selecteert u de juiste **URL**, **verificatie**en klikt u op **verbinding maken**.
+4. Als u het dialoog venster **webinhoud openen** ziet, selecteert u de juiste **URL**, **verificatie** en klikt u op **verbinding maken**.
 
    ![Het dialoog venster toegang tot webinhoud](./media/copy-data-from-web-table/AccessWebContentDialog.png)
 5. Klik in de structuur weergave op een **tabel** item om de inhoud van de tabel te bekijken en klik vervolgens onderaan op de knop **bewerken** .  

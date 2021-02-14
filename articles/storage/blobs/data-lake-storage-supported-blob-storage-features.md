@@ -5,15 +5,14 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/12/2020
+ms.date: 02/11/2021
 ms.author: normesta
-ms.reviewer: stewu
-ms.openlocfilehash: 2b195d865a07af9f3166c5225e8de3d0a9b0e749
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 769163dd09ec29c2c206d0273e71de27732fb9db
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879306"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516275"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Blob-opslag functies die beschikbaar zijn in Azure Data Lake Storage Gen2
 
@@ -45,18 +44,19 @@ De volgende tabel laat zien hoe elke Blob Storage-functie wordt ondersteund met 
 |Onveranderbare opslag|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|Preview<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|[Bedrijfskritieke blobgegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md)|
 |Container zacht verwijderen|Preview|Preview|[Voorlopig verwijderen voor containers (preview-versie)](soft-delete-container-overview.md)|
 |Azure Storage voorraad|Preview|Preview|[Azure Storage-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)](blob-inventory.md)|
+|Aangepaste domeinen|Preview<div role="complementary" aria-labelledby="preview-form-2"><sup>2</sup></div>|Preview<div role="complementary" aria-labelledby="preview-form-2"><sup>2</sup></div>|[Een aangepast domein toewijzen aan een Azure Blob Storage-eind punt](storage-custom-domain-name.md)|
 |BLOB zacht verwijderen|Nog niet ondersteund|Nog niet ondersteund|[Blobs voorlopig verwijderen](./soft-delete-blob-overview.md)|
 |Blobfuse|Algemeen beschikbaar|Algemeen beschikbaar|[Blob-opslag koppelen als een bestands systeem met blobfuse](storage-how-to-mount-container-linux.md)|
 |Anonieme toegang voor iedereen |Algemeen beschikbaar|Algemeen beschikbaar| Zie [anonieme open bare Lees toegang configureren voor containers en blobs](anonymous-read-access-configure.md).|
 |Door de klant beheerde account-failover|Nog niet ondersteund|Nog niet ondersteund|[Herstel na nood gevallen en failover van accounts](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Door de klant verschafte sleutels|Nog niet ondersteund|Nog niet ondersteund|[Geef een versleutelings sleutel op voor een aanvraag voor Blob-opslag](encryption-customer-provided-keys.md)|
-|Aangepaste domeinen|Nog niet ondersteund|Nog niet ondersteund|[Een aangepast domein toewijzen aan een Azure Blob Storage-eind punt](storage-custom-domain-name.md)|
 |Versleutelingsbereiken|Nog niet ondersteund|Nog niet ondersteund|[Versleutelings bereiken maken en beheren (preview-versie)](encryption-scope-manage.md)|
 |Feed wijzigen|Nog niet ondersteund|Nog niet ondersteund|[Ondersteuning voor feed wijzigen in Azure Blob-opslag](storage-blob-change-feed.md)|
 |Objectreplicatie|Nog niet ondersteund|Nog niet ondersteund|[Object replicatie configureren voor blok-blobs](object-replication-configure.md)|
 |BLOB-versie beheer|Nog niet ondersteund|Nog niet ondersteund|[BLOB-versie beheer inschakelen en beheren](versioning-enable.md)|
 
 <div id="preview-form"><sup>1</sup> Als u moment opnamen, onveranderlijke opslag of statische websites met Data Lake Storage Gen2 wilt gebruiken, moet u dit <a href=https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2EUNXd_ZNJCq_eDwZGaF5VUOUc3NTNQSUdOTjgzVUlVT1pDTzU4WlRKRy4u>formulier</a>invullen in de preview-versie.  </div>
+<div id="preview-form-2"><sup>2</sup> Een aangepaste domein naam kan alleen worden toegewezen aan het eind punt van de BLOB-service of een statisch website. Het Data Lake Storage-eind punt wordt niet </a> ondersteund.  </div>
 
 ## <a name="see-also"></a>Zie ook
 

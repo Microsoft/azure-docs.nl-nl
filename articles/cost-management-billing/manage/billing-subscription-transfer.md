@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/05/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 87f29395e716ad3f06a99d6243b080acf86e4310
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 2fb1a8c3e583a4bdc88f2b61844e9bcb16dc7cdf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979424"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367194"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Eigendom van de facturering van een Azure-abonnement overdragen aan een ander account
 
@@ -91,9 +91,12 @@ Gebruik de volgende gegevens om u te helpen bij het oplossen van eventuele probl
 
 ### <a name="original-azure-subscription-billing-owner-leaves-your-organization"></a>Oorspronkelijke facturerings eigenaar van het Azure-abonnement verlaat uw organisatie
 
-Het is mogelijk dat de oorspronkelijke eigenaar van de facturering die een Azure-account heeft gemaakt en een Azure-abonnement uw organisatie verlaat. Als deze situatie zich voordoet, is de gebruikers-id niet meer in de Azure Active Directory van de organisatie. Het Azure-abonnement heeft dan geen facturerings eigenaar. Deze situatie voor komt dat iedereen facturerings bewerkingen voor het account kan uitvoeren, met inbegrip van het bekijken en betalen van facturen. Het abonnement kan een status in het verleden hebben. Het abonnement kan uiteindelijk worden uitgeschakeld omdat er geen betaling is. Het abonnement kan uiteindelijk worden verwijderd. Dit is van invloed op elke service die op het abonnement wordt uitgevoerd.
+> [!Note]
+> Deze sectie is specifiek van toepassing op een facturerings account voor een klant overeenkomst van micro soft. Controleer of u toegang hebt tot een [micro soft-klant overeenkomst](mca-request-billing-ownership.md#check-for-access).
 
-Wanneer een abonnement niet langer een geldige facturerings eigenaar heeft, stuurt Azure een e-mail naar andere eigen aren van facturering, service beheerders, mede beheerders en abonnements eigenaren die hen van de situatie informeren en voorzien ze een koppeling om het eigendom van het abonnement te accepteren. Een van de gebruikers kan de koppeling selecteren om het eigendom van de facturering te accepteren. Zie [facturerings rollen](understand-mca-roles.md) en [klassieke rollen en Azure RBAC-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md)voor meer informatie over facturerings rollen.
+Het is mogelijk dat de oorspronkelijke eigenaar van het facturerings account die een Azure-account heeft gemaakt en een Azure-abonnement uw organisatie verlaat. Als deze situatie zich voordoet, is de gebruikers-id niet meer in de Azure Active Directory van de organisatie. Het Azure-abonnement heeft dan geen facturerings eigenaar. Deze situatie voor komt dat iedereen facturerings bewerkingen voor het account kan uitvoeren, met inbegrip van het bekijken en betalen van facturen. Het abonnement kan een status in het verleden hebben. Het abonnement kan uiteindelijk worden uitgeschakeld omdat er geen betaling is. Het abonnement kan uiteindelijk worden verwijderd. Dit is van invloed op elke service die op het abonnement wordt uitgevoerd.
+
+Wanneer een abonnement geen geldige eigenaar van een facturerings account meer heeft, stuurt Azure een e-mail naar andere eigen aren van het facturerings account, service beheerders (indien van toepassing), Co-Administrators (indien van toepassing) en kunnen abonnements eigenaren hiervan een koppeling maken om het eigendom van het abonnement te accepteren. Een van de gebruikers kan de koppeling selecteren om het eigendom van de facturering te accepteren. Zie [facturerings rollen](understand-mca-roles.md) en [klassieke rollen en Azure RBAC-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md)voor meer informatie over facturerings rollen.
 
 Hier volgt een voor beeld van hoe het e-mail bericht eruit ziet.
 

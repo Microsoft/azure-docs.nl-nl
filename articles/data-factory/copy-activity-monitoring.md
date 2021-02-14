@@ -1,22 +1,17 @@
 ---
 title: Kopieeractiviteit bewaken
 description: Meer informatie over het controleren van de uitvoering van de Kopieer activiteit in Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.author: jingwang
-ms.openlocfilehash: 92119709aa260f3180c503a77064f6e80dece6e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 58860e404dff3030e51ff2977eaee081a15247f7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89440606"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388291"
 ---
 # <a name="monitor-copy-activity"></a>Kopieeractiviteit bewaken
 
@@ -48,9 +43,9 @@ In de **Details van de onderste uitvoering en de duur** worden de belangrijkste 
 
 ## <a name="monitor-programmatically"></a>Programmatisch controleren
 
-De details van de gegevens van de Kopieer activiteit en prestatie kenmerken worden ook weer gegeven in de sectie uitvoer resultaat van de **Kopieer activiteit**  >  **Output** , die wordt gebruikt om de weer gave van de UI-bewaking te genereren. Hieronder vindt u een volledige lijst met eigenschappen die kunnen worden geretourneerd. U ziet alleen de eigenschappen die van toepassing zijn op uw Kopieer scenario. Zie [programmatisch een Azure-Data Factory bewaken](monitor-programmatically.md)voor meer informatie over het uitvoeren van een programma voor het bewaken van activiteiten in het algemeen.
+De details van de gegevens van de Kopieer activiteit en prestatie kenmerken worden ook weer gegeven in de sectie uitvoer resultaat van de **Kopieer activiteit**  >   , die wordt gebruikt om de weer gave van de UI-bewaking te genereren. Hieronder vindt u een volledige lijst met eigenschappen die kunnen worden geretourneerd. U ziet alleen de eigenschappen die van toepassing zijn op uw Kopieer scenario. Zie [programmatisch een Azure-Data Factory bewaken](monitor-programmatically.md)voor meer informatie over het uitvoeren van een programma voor het bewaken van activiteiten in het algemeen.
 
-| Naam van eigenschap  | Beschrijving | Eenheid in uitvoer |
+| Naam van eigenschap  | Description | Eenheid in uitvoer |
 |:--- |:--- |:--- |
 | dataRead | De werkelijke hoeveelheid gegevens die uit de bron is gelezen. | Int64-waarde, in bytes |
 | dataWritten | De werkelijke koppeling van gegevens die zijn geschreven/doorgevoerd in de sink. De grootte kan afwijken van de `dataRead` grootte, omdat in elk gegevens archief de gegevens worden opgeslagen. | Int64-waarde, in bytes |
@@ -67,7 +62,7 @@ De details van de gegevens van de Kopieer activiteit en prestatie kenmerken word
 | doorvoer | Frequentie van gegevens overdracht. | Drijvende-komma getal, in KBps |
 | sourcePeakConnections | Het maximum aantal gelijktijdige verbindingen dat tot het bron gegevens archief is gemaakt tijdens het uitvoeren van de Kopieer activiteit. | Int32-waarde (geen eenheid) |
 | sinkPeakConnections| Het maximum aantal gelijktijdige verbindingen dat tot stand is gebracht met het sink-gegevens archief tijdens het uitvoeren van de Kopieer activiteit.| Int32-waarde (geen eenheid) |
-| sqlDwPolyBase | Hiermee wordt aangegeven of poly Base wordt gebruikt wanneer gegevens worden gekopieerd naar Azure Synapse Analytics (voorheen SQL Data Warehouse). | Booleaans |
+| sqlDwPolyBase | Hiermee wordt aangegeven of poly Base wordt gebruikt wanneer gegevens naar Azure Synapse Analytics worden gekopieerd. | Booleaans |
 | redshiftUnload | Hiermee wordt aangegeven of verwijderen wordt gebruikt wanneer gegevens uit Redshift worden gekopieerd. | Booleaans |
 | hdfsDistcp | Hiermee wordt aangegeven of DistCp wordt gebruikt wanneer gegevens worden gekopieerd uit HDFS. | Booleaans |
 | effectiveIntegrationRuntime | Het uitvoeren van de uitvoering van de activiteit (IR) of runtime (Integration runtime), in de indeling `<IR name> (<region if it's Azure IR>)` . | Tekst (teken reeks) |
@@ -163,6 +158,6 @@ De details van de gegevens van de Kopieer activiteit en prestatie kenmerken word
 ## <a name="next-steps"></a>Volgende stappen
 Zie de andere artikelen over Kopieer activiteiten:
 
-\- [Overzicht van kopieeractiviteiten](copy-activity-overview.md)
+\-[Overzicht van de Kopieer activiteit](copy-activity-overview.md)
 
 \- [Prestaties van kopieeractiviteit](copy-activity-performance.md)

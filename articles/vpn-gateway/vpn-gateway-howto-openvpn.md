@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 02/05/2021
 ms.author: cherylmc
-ms.openlocfilehash: 34f24b8fbdb28e1b1f73e9db428c510d3f4661ce
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 4b48e98ab35b620030b15165d4c9341c0f11b440
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804837"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393272"
 ---
 # <a name="configure-openvpn-for-azure-point-to-site-vpn-gateway"></a>OpenVPN configureren voor Azure punt-naar-site-VPN Gateway
 
@@ -31,12 +31,12 @@ Dit artikel helpt u bij het instellen van **OpenVPN®-protocol** op Azure VPN ga
 ## <a name="portal"></a>Portal
 
 1. Navigeer in de portal naar de gateway van het **virtuele netwerk > punt-naar-site-configuratie**.
-1. Selecteer voor **Tunnel Type** **openvpn (SSL)** of **IKEv2 en openvpn (SSL)** in de vervolg keuzelijst.
+1. Selecteer voor **Tunnel Type** **openvpn (SSL)** in de vervolg keuzelijst.
 
    :::image type="content" source="./media/vpn-gateway-howto-openvpn/portal.png" alt-text="OpenVPN SSL selecteren in de vervolg keuzelijst":::
 1. Sla de wijzigingen op en ga door met de **volgende stappen**.
 
-Schakel OpenVPN in op uw gateway.
+## <a name="enable-openvpn-on-your-gateway-using-powershell"></a>Schakel OpenVPN in op uw gateway met behulp van Power shell.
 
 1. Schakel OpenVPN in op uw gateway met behulp van het volgende voor beeld:
 

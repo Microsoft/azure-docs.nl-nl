@@ -1,22 +1,18 @@
 ---
 title: 'Data Factory zelf studie: eerste gegevens pijplijn '
 description: In deze Azure Data Factory zelf studie wordt uitgelegd hoe u een data factory maakt en plant waarmee gegevens worden verwerkt met behulp van Hive-script op een Hadoop-cluster.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: a79872c11d76a74932fe232fa3f7818edc58ffcc
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 7f1de53e20614ca66c91735ce462da5a194d1836
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496208"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377224"
 ---
 # <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Zelf studie: uw eerste pijp lijn maken om gegevens te transformeren met een Hadoop-cluster
 > [!div class="op_single_selector"]

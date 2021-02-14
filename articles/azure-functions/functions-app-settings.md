@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: a28530fd4e4731065c4ddcc2f39e9a4660529921
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 8cb3e12c48adf1273c58f4914e34590e21b9d3cc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881920"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378295"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -19,7 +19,7 @@ App-instellingen in een functie-app bevatten globale configuratie opties die van
 Er zijn andere globale configuratie opties in de [host.jsop](functions-host-json.md) bestand en in de [local.settings.jsvoor](functions-run-local.md#local-settings-file) het bestand.
 
 > [!NOTE]  
-> U kunt toepassings instellingen gebruiken om host.jsvoor het instellen van waarden te negeren zonder dat u de host.jsin het bestand zelf hoeft te wijzigen. Dit is handig voor scenario's waarin u specifieke host.jsvoor instellingen voor een specifieke omgeving moet configureren of wijzigen. Op deze manier kunt u host.jsop instellingen wijzigen zonder dat u het project opnieuw hoeft te publiceren. Zie de [host.jsover referentie artikel](functions-host-json.md#override-hostjson-values)voor meer informatie.  
+> U kunt toepassings instellingen gebruiken om host.jsvoor het instellen van waarden te negeren zonder dat u de host.jsin het bestand zelf hoeft te wijzigen. Dit is handig voor scenario's waarin u specifieke host.jsvoor instellingen voor een specifieke omgeving moet configureren of wijzigen. Op deze manier kunt u host.jsop instellingen wijzigen zonder dat u het project opnieuw hoeft te publiceren. Zie de [host.jsover referentie artikel](functions-host-json.md#override-hostjson-values)voor meer informatie. Wijzigingen in de functie-app-instellingen vereisen dat uw functie-app opnieuw wordt gestart.
 
 ## <a name="appinsights_instrumentationkey"></a>APPINSIGHTS_INSTRUMENTATIONKEY
 
@@ -213,7 +213,7 @@ De waarde voor deze instelling duidt op een aangepaste pakket index-URL voor pyt
 
 Zie [aangepaste afhankelijkheden](functions-reference-python.md#remote-build-with-extra-index-url) in de python-Naslag informatie voor ontwikkel aars voor meer informatie.
 
-## <a name="scale_controller_logging_enable"></a>\_logboek registratie van schaal controller \_ \_ inschakelen
+## <a name="scale_controller_logging_enabled"></a>\_logboek registratie van schaal controller \_ \_ ingeschakeld
 
 _Deze instelling is momenteel beschikbaar als preview-versie._  
 
@@ -221,7 +221,7 @@ Met deze instelling bepaalt u de logboek registratie van de Azure Functions Scal
 
 |Sleutel|Voorbeeldwaarde|
 |-|-|
-|SCALE_CONTROLLER_LOGGING_ENABLE|AppInsights: uitgebreid|
+|SCALE_CONTROLLER_LOGGING_ENABLED|AppInsights: uitgebreid|
 
 De waarde voor deze sleutel wordt opgegeven in de indeling `<DESTINATION>:<VERBOSITY>` , die als volgt is gedefinieerd:
 
@@ -235,7 +235,7 @@ Verbindings reeks voor het opslag account waarin de code en configuratie van de 
 |---|------------|
 |WEBSITE_CONTENTAZUREFILECONNECTIONSTRING|DefaultEndpointsProtocol = https; AccountName = [name]; AccountKey = [sleutel]|
 
-Wordt alleen gebruikt bij het implementeren van een verbruik of Premium-abonnementen die worden uitgevoerd op Windows. Niet ondersteund voor Linux. Als u deze instelling wijzigt of verwijdert, wordt de functie-app mogelijk niet gestart. Zie [dit artikel over probleem oplossing](functions-recover-storage-account.md#storage-account-application-settings-were-deleted)voor meer informatie. 
+Wordt alleen gebruikt bij de implementatie in een Premium-abonnement of op een verbruiks abonnement dat wordt uitgevoerd op Windows. Niet ondersteund voor verbruiks abonnementen waarop Linux wordt uitgevoerd. Als u deze instelling wijzigt of verwijdert, wordt de functie-app mogelijk niet gestart. Zie [dit artikel over probleem oplossing](functions-recover-storage-account.md#storage-account-application-settings-were-deleted)voor meer informatie. 
 
 ## <a name="website_contentovervnet"></a>WEBSITE- \_ CONTENTOVERVNET
 
@@ -253,7 +253,7 @@ Het bestandspad naar de code en configuratie van de functie-app in een op gebeur
 |---|------------|
 |WEBSITE_CONTENTSHARE|functionapp091999e2|
 
-Wordt alleen gebruikt door functie-apps op een verbruik of Premium-abonnementen die worden uitgevoerd op Windows. Niet ondersteund voor Linux. Als u deze instelling wijzigt of verwijdert, wordt de functie-app mogelijk niet gestart. Zie [dit artikel over probleem oplossing](functions-recover-storage-account.md#storage-account-application-settings-were-deleted)voor meer informatie.
+Wordt alleen gebruikt bij de implementatie in een Premium-abonnement of op een verbruiks abonnement dat wordt uitgevoerd op Windows. Niet ondersteund voor verbruiks abonnementen waarop Linux wordt uitgevoerd. Als u deze instelling wijzigt of verwijdert, wordt de functie-app mogelijk niet gestart. Zie [dit artikel over probleem oplossing](functions-recover-storage-account.md#storage-account-application-settings-were-deleted)voor meer informatie.
 
 Wanneer u een Azure Resource Manager gebruikt voor het maken van een functie-app tijdens de implementatie, neemt u WEBSITE_CONTENTSHARE niet op in de sjabloon. Deze toepassings instelling wordt gegenereerd tijdens de implementatie. Zie voor meer informatie [resource-implementatie automatiseren voor uw functie-app](functions-infrastructure-as-code.md#windows).   
 

@@ -9,14 +9,14 @@ ms.topic: tutorial
 author: aminsaied
 ms.author: amsaied
 ms.reviewer: sgilley
-ms.date: 09/15/2020
+ms.date: 02/11/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 43a483f49a9e9004a4f487e82195198f2600a919
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
-ms.translationtype: HT
+ms.openlocfilehash: 18f76480d1327d6ab41c475395a689f8024d7b25
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071150"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369018"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Zelfstudie: Een Python-script voor 'Hallo wereld' uitvoeren (deel 2 van 4)
 
@@ -48,15 +48,7 @@ print("Hello world!")
 
 De structuur van uw projectmap ziet er nu als volgt uit:
 
-```Bash
-tutorial
-└──.azureml
-|  └──config.json
-└──src
-|  └──hello.py
-└──01-create-workspace.py
-└──02-create-compute.py
-```
+:::image type="content" source="media/tutorial-1st-experiment-hello-world/directory-structure.png" alt-text="Mappen structuur toont hello.py in de submap src":::
 
 
 ### <a name="test-your-script-locally"></a><a name="test"></a>Uw script lokaal testen

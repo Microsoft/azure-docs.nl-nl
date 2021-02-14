@@ -3,7 +3,7 @@ title: Problemen met het beheer van rechten oplossen-Azure AD
 description: Meer informatie over sommige items die u moet controleren om u te helpen bij het oplossen van Azure Active Directory rechten beheer.
 services: active-directory
 documentationCenter: ''
-author: barclayn
+author: ajburnle
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.subservice: compliance
 ms.date: 12/23/2020
-ms.author: barclayn
+ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bca78195d4fb7bb265c4a7fd8d78ea49a35335b6
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 5b01321c2cbb15be5526bbe9ed04f52238390574
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746708"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516886"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Het beheer van rechten voor Azure AD oplossen
 
@@ -47,7 +47,6 @@ In dit artikel worden enkele items beschreven die u moet controleren om te helpe
 
 * Wanneer u een lid van een team verwijdert, worden deze ook uit de groep Microsoft 365 verwijderd. Het verwijderen uit de chatfunctionaliteit van het team kan worden uitgesteld. Zie [groepslid maatschap](/microsoftteams/office-365-groups#group-membership)voor meer informatie.
 
-* Zorg ervoor dat uw directory niet is geconfigureerd voor Multi-Geo. Rechtenbeheer biedt momenteel geen ondersteuning voor Multi-Geo-locaties voor SharePoint Online. SharePoint Online-sites moeten zich in de standaard geo-locatie bevinden om te worden beheerd met rechtenbeheer. Zie [multi-geo-mogelijkheden in OneDrive en share point online](/Microsoft 365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365)voor meer informatie.
 
 ## <a name="access-packages"></a>Toegangspakketten
 

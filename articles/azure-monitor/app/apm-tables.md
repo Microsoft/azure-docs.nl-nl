@@ -3,14 +3,14 @@ title: Op werkruimte gebaseerd resourceschema van Azure Monitor Application Insi
 description: Meer informatie over de nieuwe tabel structuur en het schema voor Azure Monitor resources op basis van Application Insights werk ruimte.
 ms.topic: conceptual
 ms.date: 05/09/2020
-ms.openlocfilehash: 8f0bee64d74cfd5b6abef5c918c023974fda3fcf
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: e63d4a680ad76ccd6895aed53f3276a5775b1226
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931050"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385962"
 ---
-# <a name="workspace-based-resource-changes-preview"></a>Resource wijzigingen op basis van werk ruimten (preview-versie)
+# <a name="workspace-based-resource-changes"></a>Wijzigingen van resources op basis van werk ruimten
 
 Vóór de introductie van [Application Insights resources op basis van een werk ruimte](create-workspace-resource.md), zijn Application Insights gegevens gescheiden van andere logboek gegevens opgeslagen in azure monitor. Beide zijn gebaseerd op Azure Data Explorer en gebruiken dezelfde Kusto query language (KQL). Dit wordt beschreven in de [Logboeken van Azure monitor](../platform/data-platform-logs.md).
 
@@ -18,7 +18,7 @@ Met Application Insights resources-gegevens op basis van een werk ruimte worden 
 
 ## <a name="table-structure"></a>Tabelstructuur
 
-| Verouderde tabel naam | Nieuwe tabel naam | Beschrijving |
+| Verouderde tabel naam | Nieuwe tabelnaam | Description |
 |:---|:---|:---|
 | availabilityResults | AppAvailabilityResults |  Samenvattings gegevens van beschikbaarheids testen.|
 | browserTimings | AppBrowserTimings | Gegevens over client prestaties, zoals de tijd die nodig is om de binnenkomende gegevens te verwerken.|
@@ -49,7 +49,7 @@ Verouderde tabel: Beschik baarheid
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -66,7 +66,7 @@ Verouderde tabel: Beschik baarheid
 |Item type|tekenreeks|Type|Tekenreeks|
 |location|tekenreeks|Locatie|tekenreeks|
 |message|tekenreeks|Bericht|tekenreeks|
-|naam|tekenreeks|Naam|tekenreeks|
+|naam|tekenreeks|Name|tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -93,7 +93,7 @@ Verouderde tabel: browserTimings
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -106,7 +106,7 @@ Verouderde tabel: browserTimings
 |itemCount|int|ItemCount|int|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|tekenreeks|
-|naam|tekenreeks|Naam|datum/tijd|
+|naam|tekenreeks|Name|datum/tijd|
 |networkDuration|werkelijk|NetworkDurationMs|werkelijk|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
@@ -137,7 +137,7 @@ Verouderde tabel: afhankelijkheden
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -153,7 +153,7 @@ Verouderde tabel: afhankelijkheden
 |itemCount|int|ItemCount|int|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|Tekenreeks|
-|naam|tekenreeks|Naam|tekenreeks|
+|naam|tekenreeks|Name|tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -182,7 +182,7 @@ Verouderde tabel: customEvents
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -195,7 +195,7 @@ Verouderde tabel: customEvents
 |itemCount|int|ItemCount|int|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|tekenreeks|
-|naam|tekenreeks|Naam|tekenreeks|
+|naam|tekenreeks|Name|tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -219,7 +219,7 @@ Verouderde tabel: customMetrics
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -230,7 +230,7 @@ Verouderde tabel: customMetrics
 |iKey|tekenreeks|IKey|tekenreeks|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|tekenreeks|
-|naam|tekenreeks|Naam|tekenreeks|
+|naam|tekenreeks|Name|tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -260,7 +260,7 @@ Verouderde tabel: page views
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -275,7 +275,7 @@ Verouderde tabel: page views
 |itemCount|int|ItemCount|int|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|Tekenreeks|
-|naam|tekenreeks|Naam|tekenreeks|
+|naam|tekenreeks|Name|tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -302,7 +302,7 @@ Verouderde tabel: Performance Counters
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -315,7 +315,7 @@ Verouderde tabel: Performance Counters
 |exemplaar|tekenreeks|Exemplaar|tekenreeks|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|tekenreeks|
-|naam|tekenreeks|Naam|tekenreeks|
+|naam|tekenreeks|Name|tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -340,7 +340,7 @@ Verouderde tabel: aanvragen
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -355,7 +355,7 @@ Verouderde tabel: aanvragen
 |itemCount|int|ItemCount|int|
 |itemId|tekenreeks|\_ItemId|tekenreeks|
 |Item type|tekenreeks|Type|Tekenreeks|
-|naam|tekenreeks|Naam|Tekenreeks|
+|naam|tekenreeks|Name|Tekenreeks|
 |operation_Id|tekenreeks|OperationId|tekenreeks|
 |operation_Name|tekenreeks|OperationName|tekenreeks|
 |operation_ParentId|tekenreeks|OperationParentId|tekenreeks|
@@ -385,7 +385,7 @@ Verouderde tabel: uitzonde ringen
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|
@@ -436,7 +436,7 @@ Verouderde tabel: traceringen
 |client_Browser|tekenreeks|ClientBrowser|tekenreeks|
 |client_City|tekenreeks|ClientCity|tekenreeks|
 |client_CountryOrRegion|tekenreeks|ClientCountryOrRegion|tekenreeks|
-|client_IP|tekenreeks|Client|tekenreeks|
+|client_IP|tekenreeks|ClientIP|tekenreeks|
 |client_Model|tekenreeks|ClientModel|tekenreeks|
 |client_OS|tekenreeks|ClientOS|tekenreeks|
 |client_StateOrProvince|tekenreeks|ClientStateOrProvince|tekenreeks|

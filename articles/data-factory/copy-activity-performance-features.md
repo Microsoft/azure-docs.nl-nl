@@ -1,23 +1,18 @@
 ---
 title: Functies voor het optimaliseren van de activiteit prestaties
 description: Meer informatie over de belangrijkste functies waarmee u de prestaties van de Kopieer activiteit kunt optimaliseren in Azure Data Factory Marketplace.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/24/2020
-ms.openlocfilehash: 8e46e9b323657b747fd73bad3b25ed66390f3aa9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ecb4550b218b069273cba2e3d70a9510c1cc74ca
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324328"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387798"
 ---
 # <a name="copy-activity-performance-optimization-features"></a>Functies voor het optimaliseren van de activiteit prestaties
 
@@ -126,7 +121,7 @@ Wanneer u een waarde voor de `parallelCopies` eigenschap opgeeft, neemt u de bel
 
 Wanneer u gegevens uit een brongegevens archief naar een Sink-gegevens archief kopieert, kunt u ervoor kiezen om Azure Blob Storage of Azure Data Lake Storage Gen2 te gebruiken als een tijdelijke faserings opslag. Fase ring is met name handig in de volgende gevallen:
 
-- **U wilt gegevens uit verschillende gegevens archieven opnemen in azure Synapse Analytics (voorheen SQL Data Warehouse) via Poly Base, gegevens kopiëren van/naar sneeuw of gegevens opnemen vanuit Amazon Redshift/HDFS performantly.** Meer informatie over:
+- **U wilt gegevens uit verschillende gegevens archieven opnemen in azure Synapse Analytics via Poly Base, gegevens kopiëren van/naar sneeuw of gegevens opnemen vanuit Amazon Redshift/HDFS performantly.** Meer informatie over:
   - [Gebruik poly Base om gegevens te laden in azure Synapse Analytics](connector-azure-sql-data-warehouse.md#use-polybase-to-load-data-into-azure-synapse-analytics).
   - [Sneeuw-connector](connector-snowflake.md)
   - [Amazon Redshift-connector](connector-amazon-redshift.md)
@@ -150,10 +145,10 @@ Configureer de instelling **enableStaging** in de Kopieer activiteit om op te ge
 
 | Eigenschap | Beschrijving | Standaardwaarde | Vereist |
 | --- | --- | --- | --- |
-| enableStaging |Geef op of u gegevens wilt kopiëren via een tijdelijke faserings opslag. |False |Nee |
+| enableStaging |Geef op of u gegevens wilt kopiëren via een tijdelijke faserings opslag. |Niet waar |No |
 | linkedServiceName |Geef de naam op van een [Azure Blob-opslag](connector-azure-blob-storage.md#linked-service-properties) of [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#linked-service-properties) gekoppelde service, die verwijst naar het exemplaar van de opslag die u gebruikt als een tijdelijke faserings opslag. |N.v.t. |Ja, wanneer **enableStaging** is ingesteld op True |
-| leertraject |Geef het pad op dat u wilt dat de gefaseerde gegevens bevat. Als u geen pad opgeeft, maakt de service een container om tijdelijke gegevens op te slaan. |N.v.t. |Nee |
-| enableCompression |Hiermee geeft u op of gegevens moeten worden gecomprimeerd voordat ze naar het doel worden gekopieerd. Deze instelling vermindert het volume van de gegevens die worden overgedragen. |False |Nee |
+| leertraject |Geef het pad op dat u wilt dat de gefaseerde gegevens bevat. Als u geen pad opgeeft, maakt de service een container om tijdelijke gegevens op te slaan. |N.v.t. |No |
+| enableCompression |Hiermee geeft u op of gegevens moeten worden gecomprimeerd voordat ze naar het doel worden gekopieerd. Deze instelling vermindert het volume van de gegevens die worden overgedragen. |Niet waar |No |
 
 >[!NOTE]
 > Als u een gefaseerde kopie gebruikt terwijl compressie is ingeschakeld, wordt de service-principal of MSI-verificatie voor de gekoppelde BLOB-hostservice niet ondersteund.
@@ -197,8 +192,8 @@ Er worden kosten in rekening gebracht op basis van twee stappen: de duur en het 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de andere artikelen over Kopieer activiteiten:
 
-- [Overzicht van kopieeractiviteiten](copy-activity-overview.md)
-- [Gids voor de prestaties en schaal baarheid van de Kopieer activiteit](copy-activity-performance.md)
+- [Overzicht van de Kopieer activiteit](copy-activity-overview.md)
+- [Handleiding voor prestaties en schaalbaarheid van kopieeractiviteit](copy-activity-performance.md)
 - [Prestaties van de Kopieer activiteit oplossen](copy-activity-performance-troubleshooting.md)
 - [Azure Data Factory gebruiken om gegevens van uw data Lake of Data Warehouse te migreren naar Azure](data-migration-guidance-overview.md)
 - [Gegevens migreren van Amazon S3 naar Azure Storage](data-migration-guidance-s3-azure-storage.md)

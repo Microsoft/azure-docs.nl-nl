@@ -1,24 +1,18 @@
 ---
 title: Gegevens eenvoudig kopiëren met de wizard kopiëren-Azure
 description: Meer informatie over het gebruik van de wizard voor het Data Factory kopiëren om gegevens te kopiëren van ondersteunde gegevens bronnen naar Sinks.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: f904972f-cd33-48db-9755-2b3196ae4168
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 28169e43d0e6949a16cc56c7e7d5d91d6db1ef57
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f3686a22291e8595deabe3e207ce66744c3cdd82
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003035"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376901"
 ---
 # <a name="copy-or-move-data-easily-with-azure-data-factory-copy-wizard"></a>Gegevens eenvoudig kopiëren of verplaatsen met Azure Data Factory wizard kopiëren
 > [!NOTE]

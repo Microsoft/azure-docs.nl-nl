@@ -6,19 +6,19 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 23d1e4b06c9c0278742da0cec8ac565b5f80a362
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 08c9f7a6c5f8fd4a51c464018438bf6e7db119fb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88004904"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374895"
 ---
 # <a name="windows-virtual-desktop-classic-powershell"></a>Windows virtueel bureau blad (klassiek) Power shell
 
 >[!IMPORTANT]
 >Deze inhoud is van toepassing op Windows Virtual Desktop (klassiek), dat geen ondersteuning biedt voor Azure Resource Manager Windows Virtual Desktop-objecten. Raadpleeg [dit artikel](../troubleshoot-powershell.md) als u Azure Resource Manager Windows Virtual Desktop-objecten probeert te beheren.
 
-Gebruik dit artikel om fouten en problemen op te lossen bij het gebruik van Power shell met Windows virtueel bureau blad. Zie [Windows Virtual Desktop Power shell](/powershell/module/windowsvirtualdesktop/)(Engelstalig) voor meer informatie over Extern bureaublad-services Power shell.
+Gebruik dit artikel om fouten en problemen op te lossen bij het gebruik van Power shell met Windows virtueel bureau blad. Zie [Windows Virtual Desktop Power shell](/powershell/windows-virtual-desktop/overview)(Engelstalig) voor meer informatie over Extern bureaublad-services Power shell.
 
 ## <a name="provide-feedback"></a>Feedback geven
 

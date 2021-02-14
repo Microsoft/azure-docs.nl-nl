@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 30852b6b3f9a4b490c4b58fe07f34ee49c60fa9f
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 250c1ef837793c2149ff653f395f40272cf43335
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955243"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384942"
 ---
 # <a name="create-a-postgresql-hyperscale-server-group-using-kubernetes-tools"></a>Een PostgreSQL grootschalige-Server groep maken met Kubernetes-hulpprogram ma's
 
@@ -44,14 +44,14 @@ data:
   password: <your base64 encoded password>
 kind: Secret
 metadata:
-  name: example-login-secret
+  name: pg1-login-secret
 type: Opaque
 ---
 apiVersion: arcdata.microsoft.com/v1alpha1
 kind: postgresql-12
 metadata:
   generation: 1
-  name: example
+  name: pg1
 spec:
   engine:
     extensions:
@@ -107,7 +107,7 @@ echo '<your string to encode here>' | base64
 
 ### <a name="customizing-the-name"></a>De naam aanpassen
 
-De sjabloon heeft de waarde ' example ' voor het naam kenmerk.  U kunt dit wijzigen, maar dit moet tekens zijn die de DNS-naamgevings standaarden volgen.  U moet ook de naam van het geheim wijzigen zodat deze overeenkomt.  Als u bijvoorbeeld de naam van de PostgreSQL grootschalige-Server groep wijzigt in ' postgres1 ', moet u de naam van het geheim wijzigen van ' voor beeld-aanmelden-geheim ' in ' postgres1-login-Secret '
+De sjabloon heeft de waarde ' PG1 ' voor het naam kenmerk.  U kunt dit wijzigen, maar dit moet tekens zijn die de DNS-naamgevings standaarden volgen.  U moet ook de naam van het geheim wijzigen zodat deze overeenkomt.  Als u bijvoorbeeld de naam van de PostgreSQL grootschalige-Server groep wijzigt in ' PG2 ', moet u de naam van het geheim wijzigen van ' PG1-login-Secret ' in ' PG2-login-Secret '
 
 ### <a name="customizing-the-engine-version"></a>De engine versie aanpassen
 
@@ -152,10 +152,10 @@ kubectl create -n <your target namespace> -f <path to your yaml file>
 Het duurt enkele minuten voordat de Server groep PostgreSQL grootschalige is gemaakt. U kunt de voortgang in een ander Terminal venster bewaken met de volgende opdrachten:
 
 > [!NOTE]
->  In de onderstaande voor beelden wordt ervan uitgegaan dat u een PostgreSQL grootschalige-Server groep hebt gemaakt met de naam ' postgres1 ' en Kubernetes naam ruimte met de name ' Arc '.  Als u de naam van een andere naam ruimte/PostgreSQL grootschalige-Server groep hebt gebruikt, kunt u ' Arc ' en ' postgres1 ' vervangen door uw namen.
+>  In de onderstaande voor beelden wordt ervan uitgegaan dat u een PostgreSQL grootschalige-Server groep hebt gemaakt met de naam ' PG1 ' en Kubernetes naam ruimte met de name ' Arc '.  Als u de naam van een andere naam ruimte/PostgreSQL grootschalige-Server groep hebt gebruikt, kunt u ' Arc ' en ' PG1 ' vervangen door uw namen.
 
 ```console
-kubectl get postgresql-12/postgres1 --namespace arc
+kubectl get postgresql-12/pg1 --namespace arc
 ```
 
 ```console
@@ -168,7 +168,7 @@ U kunt ook de status van de aanmaak van een bepaalde pod controleren door een op
 kubectl describe po/<pod name> --namespace arc
 
 #Example:
-#kubectl describe po/postgres1-0 --namespace arc
+#kubectl describe po/pg1-0 --namespace arc
 ```
 
 ## <a name="troubleshooting-creation-problems"></a>Problemen bij het maken oplossen

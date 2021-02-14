@@ -1,23 +1,18 @@
 ---
 title: Copy Activity performance and tuning guide (Gids voor prestaties en configuratie van Activiteit kopiëren)
 description: Meer informatie over de belangrijkste factoren die van invloed zijn op de prestaties van het verplaatsen van gegevens in Azure Data Factory wanneer u de Kopieer activiteit gebruikt.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 4b9a6a4f-8cf5-4e0a-a06f-8133a2b7bc58
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/25/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 5910b94dba03f105197a94cf1ea1805f45249f3f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9a890719de39a71d8336d39f9932e73f7baccf87
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451355"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377207"
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Copy Activity performance and tuning guide (Gids voor prestaties en configuratie van Activiteit kopiëren)
 
@@ -207,10 +202,10 @@ Configureer de instelling **enableStaging** in de Kopieer activiteit om op te ge
 
 | Eigenschap | Beschrijving | Standaardwaarde | Vereist |
 | --- | --- | --- | --- |
-| **enableStaging** |Geef op of u gegevens wilt kopiëren via een tijdelijke faserings opslag. |Niet waar |Nee |
+| **enableStaging** |Geef op of u gegevens wilt kopiëren via een tijdelijke faserings opslag. |Niet waar |No |
 | **linkedServiceName** |Geef de naam op van een gekoppelde [opslag](data-factory-azure-blob-connector.md#azure-storage-linked-service) -of [azurestoragesas zijn](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service) -service, die verwijst naar het exemplaar van de opslag die u gebruikt als een tijdelijke faserings opslag. <br/><br/> U kunt geen opslag gebruiken met een Shared Access Signature om gegevens te laden in azure Synapse Analytics via Poly base. U kunt deze gebruiken in alle andere scenario's. |N.v.t. |Ja, wanneer **enableStaging** is ingesteld op True |
-| **path** |Geef het pad op van de Blob-opslag waarvoor u de gefaseerde gegevens wilt opnemen. Als u geen pad opgeeft, maakt de service een container om tijdelijke gegevens op te slaan. <br/><br/> Geef alleen een pad op als u opslag gebruikt met een hand tekening voor gedeelde toegang of als u wilt dat tijdelijke gegevens zich op een specifieke locatie bevinden. |N.v.t. |Nee |
-| **enableCompression** |Hiermee geeft u op of gegevens moeten worden gecomprimeerd voordat ze naar het doel worden gekopieerd. Deze instelling vermindert het volume van de gegevens die worden overgedragen. |Niet waar |Nee |
+| **path** |Geef het pad op van de Blob-opslag waarvoor u de gefaseerde gegevens wilt opnemen. Als u geen pad opgeeft, maakt de service een container om tijdelijke gegevens op te slaan. <br/><br/> Geef alleen een pad op als u opslag gebruikt met een hand tekening voor gedeelde toegang of als u wilt dat tijdelijke gegevens zich op een specifieke locatie bevinden. |N.v.t. |No |
+| **enableCompression** |Hiermee geeft u op of gegevens moeten worden gecomprimeerd voordat ze naar het doel worden gekopieerd. Deze instelling vermindert het volume van de gegevens die worden overgedragen. |Niet waar |No |
 
 Hier volgt een voor beeld van de definitie van de Kopieer activiteit met de eigenschappen die in de voor gaande tabel worden beschreven:
 
@@ -413,7 +408,7 @@ In dit geval kan bzip2 gegevens compressie de volledige pijp lijn vertragen. Als
 
 ![Scenario 3](./media/data-factory-copy-activity-performance/scenario-3.png)
 
-## <a name="reference"></a>Naslaginformatie
+## <a name="reference"></a>Referentie
 Hier volgen de prestaties en het afstemmen van verwijzingen voor een aantal ondersteunde gegevens archieven:
 
 * Azure Blob-opslag: [schaal baarheid en prestatie doelen voor Blob Storage](../../storage/blobs/scalability-targets.md) en de [controle lijst voor prestaties en schaal baarheid voor Blob Storage](../../storage/blobs/storage-performance-checklist.md).

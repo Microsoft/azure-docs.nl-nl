@@ -1,22 +1,22 @@
 ---
 title: Planning voor de migratie van klassiek naar Azure Resource Manager
-description: In dit artikel vindt u informatie over het plannen van de migratie van IaaS-resources van klassiek naar Azure Resource Manager in Linux.
-services: virtual-machines-linux
+description: In dit artikel vindt u informatie over het plannen van de migratie van IaaS-resources van klassiek naar Azure Resource Manager.
+services: virtual-machines
 author: tanmaygore
 manager: vashan
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 271a20c5c9b6e157343246afb79f40894fe8a097
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: c29ca5f51e59775479fa5e97e88b28dba110d866
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94904700"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366072"
 ---
-# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager-in-linux"></a>Planning voor de migratie van IaaS-resources van klassiek naar Azure Resource Manager in Linux
+# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Planning voor de migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager
 
 > [!IMPORTANT]
 > Nu gebruiken we op ongeveer 90% IaaS Vm's [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). Vanaf 28 februari 2020 zijn klassieke Vm's afgeschaft en worden ze volledig buiten gebruik gesteld op 1 maart 2023. Meer [informatie]( https://aka.ms/classicvmretirement) over deze afschaffing en [hoe dit van invloed is op u](classic-vm-deprecation.md#how-does-this-affect-me).

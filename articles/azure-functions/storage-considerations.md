@@ -3,12 +3,12 @@ title: Aandachtspunten voor de opslag van Azure Functions
 description: Meer informatie over de opslag vereisten van Azure Functions en over het versleutelen van opgeslagen gegevens.
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.openlocfilehash: 66bfded384be47224e86ee8e0a2999fe3d4ed5d9
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: c4ffb622482585e35337caf8e43b69e0f3b0385c
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936155"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517260"
 ---
 # <a name="storage-considerations-for-azure-functions"></a>Aandachtspunten voor de opslag van Azure Functions
 
@@ -19,7 +19,7 @@ Azure Functions moet een Azure Storage-account zijn wanneer u een exemplaar van 
 |---------|---------|
 | [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md)     | Status-en functie sleutels van bindingen onderhouden.  <br/>Wordt ook gebruikt door [taak hubs in Durable functions](durable/durable-functions-task-hubs.md). |
 | [Azure Files](../storage/files/storage-files-introduction.md)  | Bestands share gebruikt om de code van uw functie-app op te slaan en uit te voeren in een [verbruiks abonnement](consumption-plan.md) en een [Premium-abonnement](functions-premium-plan.md). |
-| [Azure-wachtrij opslag](../storage/queues/storage-queues-introduction.md)     | Wordt gebruikt door [taak hubs in Durable functions](durable/durable-functions-task-hubs.md).   |
+| [Azure Queue Storage](../storage/queues/storage-queues-introduction.md)     | Wordt gebruikt door [taak hubs in Durable functions](durable/durable-functions-task-hubs.md).   |
 | [Azure Table storage](../storage/tables/table-storage-overview.md)  |  Wordt gebruikt door [taak hubs in Durable functions](durable/durable-functions-task-hubs.md).       |
 
 > [!IMPORTANT]
@@ -27,7 +27,7 @@ Azure Functions moet een Azure Storage-account zijn wanneer u een exemplaar van 
 
 ## <a name="storage-account-requirements"></a>Vereisten voor een opslagaccount
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. Dit komt omdat functies afhankelijk zijn van Azure Storage voor bewerkingen, zoals het beheren van triggers en de uitvoering van logboek functies. Sommige opslag accounts bieden geen ondersteuning voor wacht rijen en tabellen. Deze accounts omvatten alleen Blob-opslag accounts, Azure Premium Storage en opslag accounts voor algemeen gebruik met ZRS-replicatie.
+Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. Dit komt omdat functies afhankelijk zijn van Azure Storage voor bewerkingen, zoals het beheren van triggers en de uitvoering van logboek functies. Sommige opslag accounts bieden geen ondersteuning voor wacht rijen en tabellen. Deze accounts zijn onder andere alleen-Blob Storage-accounts en Azure Premium Storage.
 
 Zie [Introductie van de Azure Storage-services](../storage/common/storage-introduction.md#core-storage-services) voor meer informatie over opslagaccounttypen. 
 

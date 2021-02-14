@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): weer gave van & opnieuw uitvoeren van experimenten
 description: Experiment-uitvoeringen beheren in Azure Machine Learning Studio (klassiek). U kunt op elk gewenst moment eerdere uitvoeringen van uw experimenten bekijken om te controleren, opnieuw te bezoeken en uiteindelijk de vorige hypo Thesen te bevestigen of te verfijnen.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 03/20/2017
-ms.openlocfilehash: c958de5e49fbb7519ae71b13e9deba9af0c698de
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 419a696da1244afab7aa03cd8c4521ea819a5298
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312880"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515951"
 ---
 # <a name="manage-experiment-runs-in-azure-machine-learning-studio-classic"></a>Experiment-uitvoeringen beheren in Azure Machine Learning Studio (klassiek)
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Het ontwikkelen van een voorspellend analyse model is een iteratief proces: wanneer u de verschillende functies en para meters van uw experiment wijzigt, worden de resultaten geconvergeerd voordat u tevreden bent over een getraind, effectief model. De sleutel voor dit proces is het bijhouden van de verschillende iteraties van uw experiment-para meters en configuraties.
@@ -45,7 +45,7 @@ Stel dat u een experiment met de [lineaire regressie][linear-regression] module 
 | 0,1 |9/11/2014 4:18:58 uur |
 | 0,2 |9/11/2014 4:24:33 uur |
 | 0,4 |9/11/2014 4:28:36 uur |
-| 0.5 |9/11/2014 4:33:31 uur |
+| 0,5 |9/11/2014 4:33:31 uur |
 
 Als u op **uitvoerings geschiedenis weer geven** klikt, ziet u een lijst met al deze uitvoeringen:
 
@@ -58,7 +58,7 @@ Klik op een van deze uitvoeringen om een moment opname van het experiment weer t
 > 
 > 
 
-In de lijst met experimenten op het tabblad **experimenten** in machine learning Studio (klassiek) wordt altijd de nieuwste versie van een experiment weer gegeven. Als u een vorige uitvoering van het experiment (met **eerdere uitvoering** of **uitvoerings geschiedenis** ) opent, kunt u terugkeren naar de concept versie door te klikken op **uitvoerings geschiedenis weer geven** en de iteratie te selecteren met de **status** **bewerkbaar**.
+In de lijst met experimenten op het tabblad **experimenten** in machine learning Studio (klassiek) wordt altijd de nieuwste versie van een experiment weer gegeven. Als u een vorige uitvoering van het experiment (met **eerdere uitvoering** of **uitvoerings geschiedenis**) opent, kunt u terugkeren naar de concept versie door te klikken op **uitvoerings geschiedenis weer geven** en de iteratie te selecteren met de **status** **bewerkbaar**.
 
 ## <a name="run-a-previous-experiment"></a>Een vorig experiment uitvoeren
 Wanneer u klikt op **vorige uitvoeren** of **uitvoerings geschiedenis bekijken** en een eerdere uitvoering openen, kunt u een voltooid experiment bekijken in de modus alleen-lezen.

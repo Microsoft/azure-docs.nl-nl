@@ -1,22 +1,18 @@
 ---
 title: Releaseopmerkingen voor Data Management Gateway
 description: Opmerkingen bij de release van Data Management Gateway Tory
-services: data-factory
 author: nabhishek
-manager: anandsub
-ms.assetid: 14762e82-76d9-41c4-ba9f-14a54da29c36
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 0538777cadf7935a6684932a17fadc10849518d8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b5bf0c6d6996a67e8b0fec3ec51e31fef8eedf26
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001623"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363913"
 ---
 # <a name="release-notes-for-data-management-gateway"></a>Releaseopmerkingen voor Data Management Gateway
 > [!NOTE]
@@ -46,12 +42,12 @@ De release opmerkingen worden hier niet meer onderhouden. Lees [hier](https://go
 
 ## <a name="2963132"></a>2.9.6313.2
 ### <a name="enhancements-"></a>Opties
--   U kunt DNS-vermeldingen toevoegen om Service Bus in plaats van alle IP-adressen van Azure van uw firewall toe te staan (indien nodig). Meer informatie vindt u hier.
--   U kunt nu gegevens kopiëren van/naar een enkele blok-BLOB tot 4,75 TB. Dit is de Maxi maal ondersteunde grootte van een blok-blob. (eerdere limiet is 195 GB).
--   Opgelost: onvoldoende geheugen bij het uitgepakt van verschillende kleine bestanden tijdens de Kopieer activiteit.
--   Opgelost: probleem bij het kopiëren van de document database naar SQL Server met de functie idempotentie.
--   Opgelost: SQL Cleanup script werkt niet met SQL Server van de wizard kopiëren.
--   Fixed: de naam van de kolom met de ruimte aan het einde werkt niet in de Kopieer activiteit.
+-    U kunt DNS-vermeldingen toevoegen om Service Bus in plaats van alle IP-adressen van Azure van uw firewall toe te staan (indien nodig). Meer informatie vindt u hier.
+-    U kunt nu gegevens kopiëren van/naar een enkele blok-BLOB tot 4,75 TB. Dit is de Maxi maal ondersteunde grootte van een blok-blob. (eerdere limiet is 195 GB).
+-    Opgelost: onvoldoende geheugen bij het uitgepakt van verschillende kleine bestanden tijdens de Kopieer activiteit.
+-    Opgelost: probleem bij het kopiëren van de document database naar SQL Server met de functie idempotentie.
+-    Opgelost: SQL Cleanup script werkt niet met SQL Server van de wizard kopiëren.
+-    Fixed: de naam van de kolom met de ruimte aan het einde werkt niet in de Kopieer activiteit.
 
 ## <a name="28662833"></a>2.8.66283.3
 ### <a name="enhancements-"></a>Opties
@@ -64,7 +60,7 @@ De release opmerkingen worden hier niet meer onderhouden. Lees [hier](https://go
 - Fixed: onjuiste Lees van de decimale waarde van Oracle als bron.
 
 ## <a name="2661922"></a>2.6.6192.2
-### <a name="whats-new"></a>Nieuwe functies
+### <a name="whats-new"></a>Nieuw
 - Klanten kunnen feedback geven over de registratie van de gateway.
 - Een nieuwe compressie-indeling ondersteunen: ZIP (effenen)
 
@@ -81,7 +77,7 @@ De release opmerkingen worden hier niet meer onderhouden. Lees [hier](https://go
 
 ## <a name="2461511"></a>2.4.6151.1
 
-### <a name="whats-new"></a>Nieuwe functies
+### <a name="whats-new"></a>Nieuw
 
 - U kunt de referenties van de gegevens bron nu lokaal opslaan. De referenties zijn versleuteld. De referenties van de gegevens bron kunnen worden hersteld en hersteld met behulp van het back-upbestand dat vanaf de bestaande gateway, al op locatie, kan worden geëxporteerd.
 

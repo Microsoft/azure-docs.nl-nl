@@ -3,17 +3,16 @@ title: Bron transformatie in gegevens stroom toewijzen
 description: Meer informatie over het instellen van een bron transformatie in het toewijzen van gegevens stroom.
 author: kromerm
 ms.author: makromer
-manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/08/2020
-ms.openlocfilehash: d375632ad02f9ec7cacf1708ac81c4f257916609
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 72c36a60227c1f8598909c4e1888084c02b90c7b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929239"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368027"
 ---
 # <a name="source-transformation-in-mapping-data-flow"></a>Bron transformatie in gegevens stroom toewijzen
 

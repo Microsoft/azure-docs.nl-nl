@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a5812d4dbbd1a63b16d5bee77bb018ea18dd1d6
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c8e6c13600cb5940351d31b54af403584cc68a5f
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937683"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515645"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Overdracht en rollen in het beheer van rechten van Azure AD
 
@@ -76,7 +76,7 @@ Na de overdracht heeft de marketing afdeling mogelijk rollen die vergelijkbaar z
 
 Het beheer van rechten heeft de volgende rollen die specifiek zijn voor het beheer van rechten.
 
-| Rol van rechten beheer | Beschrijving |
+| Rol van rechten beheer | Description |
 | --- | --- |
 | Maker van catalogus | Maak en beheer catalogi. Doorgaans een IT-beheerder die geen globale beheerder of een resource-eigenaar is voor een verzameling resources. De persoon die een catalogus maakt, wordt automatisch de eerste catalogus eigenaar van de catalogus en kan extra catalogus eigenaren toevoegen. Een maker van de catalogus kan geen catalogi beheren of weer geven die niet eigenaar zijn en resources niet kunnen toevoegen die niet zijn opgenomen in een catalogus. Als de maker van de catalogus een andere catalogus moet beheren of resources toevoegt waarvan ze geen eigenaar zijn, kunnen ze een mede-eigenaar van die catalogus of resource aanvragen. |
 | Catalogus eigenaar | Bestaande catalogi bewerken en beheren. Doorgaans een IT-beheerder of eigenaar van een resource, of een gebruiker die de eigenaar van de catalogus heeft opgegeven. |
@@ -85,7 +85,7 @@ Het beheer van rechten heeft de volgende rollen die specifiek zijn voor het behe
 
 Daarnaast hebben een aangewezen goed keurder en een aanvrager van een toegangs pakket ook rechten, hoewel ze geen rollen zijn.
 
-| Rechts | Beschrijving |
+| Rechts | Description |
 | --- | --- |
 | Fiatteur | Geautoriseerd door een beleid voor het goed keuren of weigeren van aanvragen voor toegang tot pakketten, hoewel ze de toegangs pakket definities niet kunnen wijzigen. |
 | Requestor | Geautoriseerd door een beleid van een toegangs pakket om het toegangs pakket aan te vragen. |
@@ -133,9 +133,6 @@ Voor een gebruiker die geen globale beheerder of gebruikers beheerder is, om gro
 | [Toepassings beheerder](../roles/permissions-reference.md) | Catalogus eigenaar |  |  | :heavy_check_mark: |  |
 | [Beheerder van de Cloud toepassing](../roles/permissions-reference.md) | Catalogus eigenaar |  |  | :heavy_check_mark: |  |
 | Gebruiker | Catalogus eigenaar | Alleen als de groeps eigenaar | Alleen als de groeps eigenaar | Alleen als de eigenaar van de app |  |
-
-> [!NOTE]
-> Als een gebruiker een beveiligings groep of Microsoft 365 groep toevoegt, kan de groep niet aan een functie worden toegewezen. Als de gebruiker een groep toevoegt die door de rol kan worden toegewezen bij het maken van het toegangs pakket, moet deze ook de eigenaar zijn van de groep die kan worden toegewezen. Raadpleeg voor meer informatie [het artikel een door een functie toewijs bare groep maken in azure Active Directory](../roles/groups-create-eligible.md).
 
 Als u de minst bevoorrechte rol voor een taak wilt bepalen, kunt u ook verwijzen naar [beheerders rollen per beheer taak in azure Active Directory](../roles/delegate-by-task.md#entitlement-management).
 

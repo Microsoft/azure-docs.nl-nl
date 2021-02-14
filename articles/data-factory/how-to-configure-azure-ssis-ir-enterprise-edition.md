@@ -1,21 +1,17 @@
 ---
 title: De Enter prise-editie voor de Azure-SSIS Integration Runtime inrichten
 description: In dit artikel worden de functies van de Enter prise-editie voor de Azure-SSIS Integration Runtime beschreven en wordt uitgelegd hoe u deze kunt inrichten
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/09/2020
 author: swinarko
 ms.author: sawinark
-ms.reviewer: douglasl
-manager: anandsub
-ms.openlocfilehash: be49d56d301c23791777f4d89e8c6c6fd35d7035
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: f700729c2d059648b1c3a7e451526aefcb436818
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636303"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387543"
 ---
 # <a name="provision-enterprise-edition-for-the-azure-ssis-integration-runtime"></a>De Enter prise-editie voor de Azure-SSIS Integration Runtime inrichten
 
@@ -30,7 +26,7 @@ Met de Enter prise-editie van de Azure-SSIS Integration Runtime kunt u de volgen
 
 Voor sommige van deze functies moet u extra onderdelen installeren om de Azure-SSIS IR aan te passen. Zie [aangepaste installatie voor de Azure-SSIS Integration runtime](how-to-configure-azure-ssis-ir-custom-setup.md)voor meer informatie over het installeren van extra onderdelen.
 
-## <a name="enterprise-features"></a>Enterprise-functies
+## <a name="enterprise-features"></a>Enter prise-functies
 
 | **Enter prise-functies** | **Beschreven** |
 |---|---|

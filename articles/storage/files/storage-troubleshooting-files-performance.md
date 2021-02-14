@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: c3dbd76e76ad6e7bed0808278d4516992bc328f0
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 54b92c24b5a50ef1674dcb47df555b27259a350b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99574428"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393850"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -22,7 +22,7 @@ In dit artikel worden enkele veelvoorkomende problemen met betrekking tot Azure-
 
 ### <a name="cause-1-share-was-throttled"></a>Oorzaak 1: de share is beperkt
 
-Aanvragen worden beperkt wanneer de I/O-bewerkingen per seconde (IOPS), ingangs-of uitstel limieten voor een bestands share zijn bereikt. Zie [Bestands share en bestands schaal doelen](./storage-files-scale-targets.md#file-share-and-file-scale-targets)voor meer informatie over de limieten voor standaard-en Premium-bestands shares.
+Aanvragen worden beperkt wanneer de I/O-bewerkingen per seconde (IOPS), ingangs-of uitstel limieten voor een bestands share zijn bereikt. Zie [Bestands share en bestands schaal doelen](./storage-files-scale-targets.md#azure-file-share-scale-targets)voor meer informatie over de limieten voor standaard-en Premium-bestands shares.
 
 Als u wilt controleren of uw share wordt beperkt, kunt u Azure-metrische gegevens openen en gebruiken in de portal.
 

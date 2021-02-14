@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): webservices beheren-Azure'
 description: Beheer uw Machine Learning nieuwe en klassieke webservices met behulp van de Microsoft Azure Machine Learning Web Services-portal. Aangezien klassieke webservices en nieuwe webservices zijn gebaseerd op verschillende onderliggende technologieën, hebt u voor elk van deze onderdelen enigszins verschillende beheer mogelijkheden.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: 37f10cc8eb3d606d99eb5b3f821a486e9e4ea2fe
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8b04119f4a9ff702356f942cec5bebed1e23926b
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322350"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515934"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-classic-web-services-portal"></a>Een webservice beheren via de portal voor webservices van Azure Machine Learning Studio (klassiek)
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 U kunt uw Machine Learning nieuwe en klassieke webservices beheren met behulp van de Microsoft Azure Machine Learning Web Services-portal. Aangezien klassieke webservices en nieuwe webservices zijn gebaseerd op verschillende onderliggende technologieën, hebt u voor elk van deze onderdelen enigszins verschillende beheer mogelijkheden.

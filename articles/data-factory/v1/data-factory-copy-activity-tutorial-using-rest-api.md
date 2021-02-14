@@ -1,24 +1,18 @@
 ---
 title: 'Zelfstudie: REST-API gebruiken voor het maken van een Azure Data Factory-pijplijn '
 description: In deze zelfstudie gebruikt u REST API om een Azure Data Factory-pijplijn te maken met een kopieeractiviteit om gegevens uit een Azure-blobopslag naar Azure SQL Database te kopiëren.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: 1704cdf8-30ad-49bc-a71c-4057e26e7350
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 91a92f9dd0eaf55b8ba35f38102ee30b8cda4bfa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 7488834252dcd4e231c2d91a1435838befe7b1d1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87053807"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377020"
 ---
 # <a name="tutorial-use-rest-api-to-create-an-azure-data-factory-pipeline-to-copy-data"></a>Zelfstudie: REST-API gebruiken voor het maken van een Azure Data Factory-pijplijn om gegevens te kopiëren 
 > [!div class="op_single_selector"]
@@ -181,7 +175,7 @@ De volgende tabel bevat beschrijvingen van de JSON-eigenschappen die in het code
 |:--- |:--- |
 | type | De eigenschap type wordt ingesteld op **AzureBlob**, omdat de gegevens zich in een Azure-blobopslag bevinden. |
 | linkedServiceName | Deze eigenschap verwijst naar de **AzureStorageLinkedService** die u eerder hebt gemaakt. |
-| folderPath | Deze eigenschap verwijst naar de blob**container** en de **map** die de blobs voor invoer bevat. In deze zelfstudie is adftutorial de blobcontainer en is folder de hoofdmap. | 
+| folderPath | Deze eigenschap verwijst naar de blob **container** en de **map** die de blobs voor invoer bevat. In deze zelfstudie is adftutorial de blobcontainer en is folder de hoofdmap. | 
 | fileName | Deze eigenschap is optioneel. Als u deze eigenschap niet opgeeft, worden alle bestanden uit folderPath gekozen. In deze zelfstudie wordt **emp.txt** opgegeven voor de fileName, zodat alleen dat bestand wordt opgehaald voor de verwerking. |
 | format -> type |Het invoerbestand is in de tekstindeling, zodat we **TextFormat** gebruiken. |
 | columnDelimiter | De kolommen in het invoerbestand worden gescheiden door een **komma (`,`)** . |
@@ -351,7 +345,7 @@ In deze stap maakt u een Azure-gegevensfactory met de naam **ADFCopyTutorialDF**
 
 Houd rekening met de volgende punten:
 
-* De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als u de volgende fout in de resultaten ziet: **Naam gegevensfactory 'ADFCopyTutorialDF' is niet beschikbaar**, voert u de volgende stappen uit:  
+* De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als u de fout in de resultaten ziet: **Data Factory name "ADFCopyTutorialDF" is niet beschikbaar**, voert u de volgende stappen uit:  
   
   1. Wijzig de naam (bijvoorbeeld uwnaamADFCopyTutorialDF) in het **datafactory.json**-bestand.
   2. In de eerste opdracht waar de **$cmd**-variabele een waarde is toegewezen, vervangt u ADFCopyTutorialDF door de nieuwe naam en voert u de opdracht uit. 

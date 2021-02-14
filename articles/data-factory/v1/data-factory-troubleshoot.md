@@ -1,24 +1,19 @@
 ---
 title: Problemen met Azure Data Factory oplossen
 description: Meer informatie over het oplossen van problemen met het gebruik van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
-ms.assetid: 38fd14c1-5bb7-4eef-a9f5-b289ff9a6942
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 author: dcstwh
 ms.author: weetok
 ms.reviewer: maghan
-manager: anandsub
 robots: noindex
-ms.openlocfilehash: bd18a26a1c199e1ecc32cfc371d2931b1dee0c3f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ed831e5f07eb29110b858dfb16b73f276926424f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494967"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388240"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Problemen met Data Factory oplossen
 > [!NOTE]
@@ -35,14 +30,15 @@ Als u dit foutbericht ontvangt, is de resourceprovider van Azure Data Factory ni
 1. Start Azure PowerShell.
 2. Meld u aan bij uw Azure-account met de volgende opdracht.
 
-    ```powershell
-    Connect-AzAccount
-    ```
+   ```powershell
+   Connect-AzAccount
+   ```
+
 3. Voer de volgende opdracht uit om de Azure Data Factory provider te registreren.
 
-    ```powershell        
-    Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
-    ```
+   ```powershell
+   Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
+   ```
 
 ### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Probleem: niet-geautoriseerde fout bij het uitvoeren van een Data Factory-cmdlet
 Waarschijnlijk gebruikt u een verkeerd Azure-account of -abonnement met de Azure PowerShell. Gebruik de volgende cmdlets om het juiste Azure-account en -abonnement te selecteren voor gebruik met de Azure PowerShell.
@@ -67,7 +63,7 @@ Start **Data Management Gateway Configuration Manager** op de gateway computer e
 ### <a name="problem-input-slices-are-in-waiting-state-forever"></a>Probleem: de invoer segmenten bevinden zich in de wacht status permanent
 Het segment kan om verschillende redenen een **wacht** status hebben. Een van de meest voorkomende redenen is dat de eigenschap **External** niet is ingesteld op **True**. Een gegevensset die buiten het bereik van Azure Data Factory wordt geproduceerd, moet worden gemarkeerd met een **externe** eigenschap. Deze eigenschap geeft aan dat de gegevens extern zijn en niet worden ondersteund door pijp lijnen in de data factory. De gegevenssegmenten worden gemarkeerd als **Gereed** wanneer de gegevens beschikbaar zijn in het desbetreffende archief.
 
-Raadpleeg het volgende voorbeeld voor het gebruik van de eigenschap **external**. U kunt eventueel **externalData** _ opgeven wanneer u external instelt op True.
+Raadpleeg het volgende voorbeeld voor het gebruik van de eigenschap **external**. U kunt optioneel **externalData*** opgeven wanneer u external instelt op True.
 
 Raadpleeg het artikel [Datasets](data-factory-create-datasets.md) (Gegevenssets) voor meer informatie over deze eigenschap.
 
@@ -97,7 +93,7 @@ Raadpleeg het artikel [Datasets](data-factory-create-datasets.md) (Gegevenssets)
 }
 ```
 
-Om de fout op te lossen, voegt u de eigenschap _ *External** en de optionele sectie **externalData** toe aan de JSON-definitie van de invoer tabel en maakt u de tabel opnieuw.
+U kunt het probleem oplossen door de eigenschap **external** en de optionele sectie **externalData** toe te voegen aan de JSON-definitie van de invoertabel en de tabel vervolgens opnieuw te maken.
 
 ### <a name="problem-hybrid-copy-operation-fails"></a>Probleem: de hybride Kopieer bewerking is mislukt
 Zie problemen met [gateway problemen oplossen](data-factory-data-management-gateway.md#troubleshooting-gateway-issues) voor stappen voor het oplossen van problemen met het kopiëren van/naar een on-premises gegevens archief met behulp van de Data Management Gateway.

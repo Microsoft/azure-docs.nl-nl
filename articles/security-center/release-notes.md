@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/04/2021
+ms.date: 02/10/2021
 ms.author: memildin
-ms.openlocfilehash: fe031fa6de86b8059ba175fc4e1df6385ca7e796
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: d40d6107d3eee4b45f2184a61b1cdfc99559e9c7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99551022"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379006"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -39,6 +39,7 @@ De updates in februari zijn onder andere:
 - [Pagina direct koppelen aan beleid van aanbevelings gegevens](#direct-link-to-policy-from-recommendation-details-page)
 - [Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score](#sql-data-classification-recommendation-no-longer-affects-your-secure-score)
 - [Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview)
+- [Pagina-uitbrei dingen Asset Inventory](#asset-inventory-page-enhancements)
 
 ### <a name="kubernetes-workload-protection-recommendations-released-for-general-availability-ga"></a>Aanbevelingen voor de beveiliging van Kubernetes-werk belasting uitgebracht voor algemene Beschik baarheid (GA)
 
@@ -70,16 +71,32 @@ Als u de lijst met aanbevelingen in onze [Naslag Gids voor beveiligings aanbevel
 
 
 ### <a name="sql-data-classification-recommendation-no-longer-affects-your-secure-score"></a>Aanbeveling voor SQL-gegevens classificatie heeft geen invloed meer op uw beveiligde Score
-
 De aanbeveling **gevoelige gegevens in uw SQL-data bases moeten worden geclassificeerd** die niet langer van invloed zijn op uw beveiligde Score. Dit is de enige aanbeveling in het beveiligings beheer **gegevens classificatie Toep assen** , zodat het besturings element nu een beveiligde Score waarde van 0 heeft.
 
 
 ### <a name="workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview"></a>Werk stroom automatisering kan worden geactiveerd door wijzigingen in de nalevings evaluaties van de regelgeving (preview-versie)
-
 We hebben een derde gegevens type toegevoegd aan de trigger opties voor uw werk stroom Automatiseringen: wijzigingen in de nalevings beoordeling van de regelgeving.
 
 :::image type="content" source="media/release-notes/regulatory-compliance-triggers-workflow-automation.png" alt-text="Wijzigingen in de nalevings beoordeling van de regelgeving gebruiken om een werk stroom automatisering te activeren" lightbox="media/release-notes/regulatory-compliance-triggers-workflow-automation.png":::
 
+
+### <a name="asset-inventory-page-enhancements"></a>Pagina-uitbrei dingen Asset Inventory
+De pagina Asset Inventory van Security Center is verbeterd op de volgende manieren:
+
+- Samen vattingen boven aan de pagina bevatten nu niet- **geregistreerde abonnementen**, met het aantal abonnementen zonder Security Center ingeschakeld.
+
+    :::image type="content" source="media/release-notes/unregistered-subscriptions.png" alt-text="Aantal niet-geregistreerde abonnementen in de samen vattingen boven aan de pagina Asset Inventory":::
+
+- Filters zijn uitgevouwen en uitgebreid, zodat ze het volgende bevatten:
+    - **Aantal** -elk filter geeft het aantal resources aan dat voldoet aan de criteria van elke categorie
+
+        :::image type="content" source="media/release-notes/counts-in-inventory-filters.png" alt-text="Telt in de filters op de pagina Asset Inventory van Azure Security Center":::
+
+    - **Bevat filter uitzonde ringen** (optioneel): Verfijn de resultaten tot resources die/geen uitzonde ringen hebben. Dit filter wordt niet standaard weer gegeven, maar is wel toegankelijk via de knop **filter toevoegen** .
+
+        :::image type="content" source="media/release-notes/adding-contains-exemption-filter.gif" alt-text="Het filter ' bevat uitzonde ring ' wordt toegevoegd aan de pagina Asset Inventory van Azure Security Center":::
+
+Meer informatie over hoe u [uw resources kunt verkennen en beheren met inventarisatie van activa](asset-inventory.md).
 
 ## <a name="january-2021"></a>Januari 2021
 
@@ -630,7 +647,7 @@ Het Dashboard Naleving van regelgeving van Security Center biedt inzicht in uw n
 
 Het dashboard bevat een vaste set reglementaire standaarden. Als een van de opgegeven standaarden niet relevant is voor uw organisatie, is het nu een eenvoudig proces om ze te verwijderen uit de gebruikers interface voor een abonnement. Standaarden kunnen alleen worden verwijderd op het niveau van het *abonnement*, niet in het bereik van de beheergroep.
 
-Meer informatie vindt u in [Removing a standard from your dashboard](update-regulatory-compliance-packages.md#removing-a-standard-from-your-dashboard) (Een standaard uit uw dashboard verwijderen).
+Meer informatie vindt [u in een standaard verwijderen van uw dash board](update-regulatory-compliance-packages.md#remove-a-standard-from-your-dashboard).
 
 
 ### <a name="microsoftsecuritysecuritystatuses-table-removed-from-azure-resource-graph-arg"></a>Tabel Microsoft.Security/securityStatuses is verwijderd uit Azure Resource Graph (ARG)

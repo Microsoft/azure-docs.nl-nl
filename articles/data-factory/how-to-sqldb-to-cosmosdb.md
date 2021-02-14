@@ -1,19 +1,17 @@
 ---
 title: Azure SQL Database tabellen migreren naar Azure CosmosDB met Azure Data Factory
 description: Maak een bestaand genormaliseerd database schema van Azure SQL Database en Migreer naar een genormaliseerde Azure CosmosDB-container met Azure Data Factory.
-services: data-factory
 author: kromerm
+ms.author: makromer
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.author: makromer
-ms.openlocfilehash: 5d93cb49c77a4c8164a8b4e9bca349a805f39678
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 3d67ac9474704fac39dbe7eb91aead5c4babc4ce
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041626"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383939"
 ---
 # <a name="migrate-normalized-database-schema-from-azure-sql-database-to-azure-cosmosdb-denormalized-container"></a>Genormaliseerd database schema migreren van Azure SQL Database naar een gedenormaliseerde Azure CosmosDB-container
 
@@ -50,7 +48,7 @@ In de resulterende CosmosDB-container wordt de interne query in één document I
 
 2. Een gegevens stroom activiteit toevoegen
 
-3. Selecteer in de activiteit gegevens stroom de optie **nieuwe toewijzings gegevens stroom** .
+3. Selecteer in de activiteit gegevens stroom de optie **nieuwe toewijzings gegevens stroom**.
 
 4. Hieronder wordt deze gegevensstroom grafiek samen stellen
 

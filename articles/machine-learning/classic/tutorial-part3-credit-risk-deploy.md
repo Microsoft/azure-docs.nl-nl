@@ -6,15 +6,15 @@ author: likebupt
 ms.author: keli19
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 3afcf87c360651ac314450910fbf5ab72afd289a
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-ms.translationtype: HT
+ms.openlocfilehash: 68a5f6773543b922d024336556e4de24dd96fd33
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503902"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517379"
 ---
 # <a name="tutorial-3-deploy-credit-risk-model---azure-machine-learning-studio-classic"></a>Zelfstudie 3: Een kredietrisicomodel implementeren - Azure Machine Learning Studio (klassiek)
 
@@ -48,12 +48,12 @@ Voltooi [deel twee van de zelfstudie](tutorial-part2-credit-risk-train.md).
 ## <a name="prepare-for-deployment"></a>Implementatie voorbereiden
 Als u anderen de mogelijkheid wilt bieden om het voorspellende model te gebruiken dat u in deze zelfstudie hebt ontwikkeld, kunt u het als webservice implementeren in Azure.
 
-Tot nu hebt u geëxperimenteerd met het trainen van het model. Met de geïmplementeerde service wordt echter niet meer getraind - hij wordt gebruikt om nieuwe voorspellingen te genereren door de invoer van de gebruiker te beoordelen op basis van het model. We gaan nu voorbereidingen treffen om dit experiment van een ***trainingsexperiment** _ te converteren naar een _*_voorspellend_*_ experiment. 
+Tot nu hebt u geëxperimenteerd met het trainen van het model. Met de geïmplementeerde service wordt echter niet meer getraind - hij wordt gebruikt om nieuwe voorspellingen te genereren door de invoer van de gebruiker te beoordelen op basis van het model. Daarom gaan we een voor bereiding doen om dit experiment te converteren van een ***training** _ experiment naar een _ voor *_speld_** experiment. 
 
 Het voorbereiden op de implementatie bestaat uit drie stappen:  
 
 1. Een van de modellen verwijderen
-1. Het _trainingsexperiment* dat u hebt gemaakt, converteren naar een *voorspellend experiment*
+1. Het *trainingsexperiment* dat u hebt gemaakt, converteren naar een *voorspellend experiment*
 1. Het voorspellende experiment implementeren als webservice
 
 ### <a name="remove-one-of-the-models"></a>Een van de modellen verwijderen

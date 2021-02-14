@@ -3,12 +3,12 @@ title: Concepten-netwerk-interconnectiviteit
 description: Meer informatie over belang rijke aspecten en gebruiks voorbeelden van netwerken en interconnectiviteit in azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 02/02/2021
-ms.openlocfilehash: bc8a2f8c07a2a4fe37c4899dc33d5173a99dc423
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: ddf8f5b6aa06154a6edde7b4a78902d8f13eab78
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538972"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364899"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution-netwerken en interconnectiviteit-concepten
 
@@ -69,4 +69,5 @@ Nu u de Azure VMware-oplossingen voor netwerk-en interconnectiviteit-concepten h
 [enable Global Reach]: ../expressroute/expressroute-howto-set-global-reach.md
 
 <!-- LINKS - internal -->
-
+[concepts-upgrades]: ./concepts-upgrades.md
+[concepts-storage]: ./concepts-storage.md

@@ -1,22 +1,18 @@
 ---
 title: Problemen met Data Management Gateway oplossen
 description: Tips voor het oplossen van problemen met betrekking tot Data Management Gateway.
-services: data-factory
 author: nabhishek
-manager: anandsub
-ms.assetid: c6756c37-4e5a-4d1e-ab52-365f149b4128
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/01/2017
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 7b12ff431b2d164baf4f70fa5341f538b16bca51
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 284486c5db248ced8ada6e7194c7bc5a9be5689f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896562"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388342"
 ---
 # <a name="troubleshoot-issues-with-using-data-management-gateway"></a>Problemen oplossen met behulp van Data Management Gateway
 Dit artikel bevat informatie over het oplossen van problemen met het gebruik van Data Management Gateway.
@@ -99,7 +95,7 @@ Als de installatie actueel/recent en de gateway nog bestaan op de portal, genere
 ### <a name="6-problem"></a>6. probleem
 Mogelijk wordt het volgende fout bericht weer gegeven wanneer u een gateway registreert.
 
-`Error: Gateway has been online for a while, then shows “Gateway is not registered” with the status “Gateway key is invalid”`
+`Error: Gateway has been online for a while, then shows "Gateway is not registered" with the status "Gateway key is invalid"`
 
 ![De gateway sleutel is ongeldig of leeg](media/data-factory-troubleshoot-gateway-issues/gateway-not-registered-key-invalid.png)
 
@@ -107,7 +103,7 @@ Mogelijk wordt het volgende fout bericht weer gegeven wanneer u een gateway regi
 Deze fout kan optreden omdat de gateway is verwijderd of de gekoppelde gateway sleutel opnieuw is gegenereerd.
 
 #### <a name="resolution"></a>Oplossing
-Als de gateway is verwijderd, maakt u de gateway opnieuw vanuit de portal, klikt u op **registreren** , kopieert u de sleutel uit de portal, plakt u deze en probeert u de gateway te registreren.
+Als de gateway is verwijderd, maakt u de gateway opnieuw vanuit de portal, klikt u op **registreren**, kopieert u de sleutel uit de portal, plakt u deze en probeert u de gateway te registreren.
 
 Als de gateway nog bestaat, maar de bijbehorende sleutel opnieuw is gegenereerd, gebruikt u de nieuwe sleutel om de gateway te registreren. Als u de sleutel niet hebt, genereert u de sleutel opnieuw vanuit de portal.
 
@@ -167,7 +163,7 @@ De gateway kan geen verbinding maken met de Cloud service via Service Bus.
 #### <a name="resolution"></a>Oplossing
 Volg deze stappen om de gateway weer online te krijgen:
 
-1. Uitgaande IP-adres regels op de gateway computer en de bedrijfs firewall toestaan. U kunt IP-adressen vinden in het Windows-gebeurtenis logboek (ID = = 401): er is geprobeerd toegang te krijgen tot een socket op een manier die is verboden door de toegangs machtigingen XX. XX. XX. XX: 9350.
+1. Uitgaande IP-adres regels op de gateway computer en de bedrijfs firewall toestaan. U kunt IP-adressen vinden in het Windows-gebeurtenis logboek (ID = = 401): er is geprobeerd toegang te krijgen tot een socket op een manier die is verboden door de toegangs machtigingen XX. XX. XX. xx: 9350.
 1. Configureer de proxy-instellingen op de gateway. Zie de sectie overwegingen bij de proxy server voor meer informatie.
 1. Schakel uitgaande poorten 5671 en 9350-9354 in op zowel de Windows Firewall op de gateway computer als de firewall van het bedrijf. Zie de sectie poorten en Firewall voor meer informatie. Deze stap is optioneel, maar het is raadzaam om de prestaties te verbeteren.
 
@@ -204,7 +200,7 @@ Het TLS/SSL-certificaat is mogelijk verloren gegaan op de gateway computer. De g
 Volg deze stappen om het probleem op te lossen:
 
 1. Start Data Management Gateway Configuration Manager.
-2. Schakel over naar het tabblad **Instellingen** .  
+2. Schakel over naar het tabblad **Instellingen**.  
 3. Klik op de knop **wijzigen** om het TLS/SSL-certificaat te wijzigen.
 
    ![Knop certificaat wijzigen](media/data-factory-troubleshoot-gateway-issues/change-button-ssl-certificate.png)
@@ -278,7 +274,7 @@ Klik op de koppeling **Archief gateway logboeken** om logboeken te archiveren en
 ### <a name="locate-gateway-logs"></a>Gateway logboeken zoeken
 Gedetailleerde informatie over de gateway Logboeken vindt u in de Windows-gebeurtenis Logboeken.
 
-1. Start Windows **Logboeken** .
+1. Start Windows **Logboeken**.
 2. Zoek Logboeken in de **Logboeken van toepassingen en services**  >  **Data Management Gateway** map.
 
    Wanneer u problemen met de gateway wilt oplossen, zoekt u naar fout niveau gebeurtenissen in de logboeken.

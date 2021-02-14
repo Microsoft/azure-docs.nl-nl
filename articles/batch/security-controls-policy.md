@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Batch
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Batch. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: sample
 author: JnHs
 ms.author: jenhayes
 ms.service: batch
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 2b586cd3273f3d5a48d72fed134a7d4abeabffa9
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 804f2154f4100cf2040309abc0c0ad8282208327
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99558126"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097468"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-batch"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Batch
 

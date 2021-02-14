@@ -7,12 +7,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/25/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: b45e1fbaf912cc045ba51a79db434baecbabdf43
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
-ms.translationtype: HT
+ms.openlocfilehash: eea42ab17311b85bdce429e22e8d0ed694e2f0ec
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608262"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096341"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Zelfstudie: Een bestaande aangepaste DNS-naam toewijzen aan Azure App Service
 
@@ -309,17 +309,20 @@ Als u een HTTP 404-fout (niet gevonden) ontvangt bij het bladeren naar de URL va
 - Bij het geconfigureerde aangepaste domein ontbreekt een A-record of een CNAME-record.
 - De browserclient heeft het oude IP-adres van uw domein in de cache. Maak de cache leeg en test DNS-omzetting opnieuw. Op een Windows-computer, leegt u de cache met `ipconfig /flushdns`.
 
-<a name="virtualdir" aria-hidden="true"></a>
-
 ## <a name="migrate-an-active-domain"></a>Een actief domein migreren
 
 Zie voor het zonder downtime migreren van een live site en de DNS-domeinnaam naar App Service [Een actieve DNS-naam migreren naar Azure App Service](manage-custom-dns-migrate-domain.md).
+
+<a name="virtualdir" aria-hidden="true"></a>
 
 ## <a name="redirect-to-a-custom-directory"></a>Een aangepaste map omleiden
 
 Standaard stuurt App Service webaanvragen naar de hoofdmap van uw app-code. Bepaalde web-frameworks starten echter niet in de hoofdmap. Bijvoorbeeld: [Laravel](https://laravel.com/) start in de submap `public`. Om door te gaan met het DNS-voorbeeld `contoso.com`, is een dergelijke app toegankelijk op `http://contoso.com/public`, maar u moet in plaats daarvan eigenlijk `http://contoso.com` naar de map `public` sturen. Deze stap heeft geen betrekking op DNS-omzetting, maar gaat over het aanpassen van de virtuele map.
 
-Als u een virtuele map wilt aanpassen, selecteert u **Toepassingsinstellingen** in het linkerdeelvenster op de pagina van uw web-app.
+Als u een virtuele map voor Windows-Apps wilt aanpassen, selecteert u **Toepassings instellingen** in het linkerdeel venster van de web-app-pagina. 
+
+> [!NOTE]
+> Linux-apps beschikken niet over deze pagina. Als u de hoofdmap van de site voor Linux-Apps wilt wijzigen, raadpleegt u de taalspecifieke configuratie handleidingen (bijvoorbeeld[php](configure-language-php.md?pivots=platform-linux#change-site-root)).
 
 Aan de onderkant van de pagina verwijst de virtuele hoofdmap `/` standaard naar `site\wwwroot`. Dit is de hoofdmap van uw app-code. Wijzig deze om in plaats daarvan bijvoorbeeld te verwijzen naar de `site\wwwroot\public` en sla de wijzigingen op.
 

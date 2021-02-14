@@ -781,6 +781,8 @@
             - name: Beschikbaarheidswaarschuwingen
               displayname: 'alerts, global, alerting'
               href: app/availability-alerts.md
+            - name: SLA-rapport
+              href: app/sla-report.md
             - name: Problemen oplossen
               displayname: 'availability, troubleshoot, troubleshoot availability'
               href: app/troubleshoot-availability.md
@@ -794,8 +796,8 @@
         - name: Live Metrics-stream
           displayname: 'live, quickpulse, quick pulse, live metrics'
           href: app/live-stream.md
-        - name: SLA-rapport
-          href: app/sla-report.md
+        - name: Integratie van werk items
+          href: app/work-item-integration.md
         - name: Metrische gegevens
           items:
             - name: Vooraf samengevoegde metrische gegevens op basis van logboeken

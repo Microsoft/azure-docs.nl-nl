@@ -3,12 +3,12 @@ title: Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 description: Hierin wordt beschreven hoe u back-ups van virtuele Azure-machines maakt en herstelt met Azure Backup met Power shell
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 90bb6f60712fc59aec05ff2e85364fccf00ff1df
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 66b8fe0109a4dd2e054106b67f893def2ee596b0
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804792"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095081"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Back-ups van virtuele Azure-machines maken en herstellen met Power shell
 
@@ -526,6 +526,53 @@ Een gebruiker kan selectief enkele schijven herstellen in plaats van de volledig
 > Eén moet selectief back-ups maken van schijven om selectief schijven te herstellen. Meer informatie vindt u [hier](selective-disk-backup-restore.md#selective-disk-restore).
 
 Wanneer u de schijven herstelt, gaat u naar de volgende sectie om de virtuele machine te maken.
+
+#### <a name="restore-disks-to-a-secondary-region"></a>Schijven terugzetten naar een secundaire regio
+
+Als de functie voor het terugzetten van meerdere regio's is ingeschakeld op de kluis waarmee u uw Vm's hebt beveiligd, worden de back-upgegevens gerepliceerd naar de secundaire regio. U kunt de back-upgegevens gebruiken om een herstel bewerking uit te voeren. Voer de volgende stappen uit om een herstel bewerking in de secundaire regio te activeren:
+
+1. [Haal de kluis-id](#fetch-the-vault-id) op waarmee uw vm's zijn beveiligd.
+1. Selecteer het [juiste back-upitem om te herstellen](#select-the-vm-when-restoring-files).
+1. Selecteer het juiste herstel punt in de secundaire regio die u wilt gebruiken om de herstel bewerking uit te voeren.
+
+    Voer de volgende opdracht uit om deze stap te volt ooien:
+
+    ```powershell
+    $rp=Get-AzRecoveryServicesBackupRecoveryPoint -UseSecondaryRegion -Item $backupitem -VaultId $targetVault.ID
+    $rp=$rp[0]
+    ```
+
+1. Voer de cmdlet [Restore-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) uit met de `-RestoreToSecondaryRegion` para meter om een herstel bewerking in de secundaire regio te activeren.
+
+    Voer de volgende opdracht uit om deze stap te volt ooien:
+
+    ```powershell
+    $restorejob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks" -VaultId $targetVault.ID -VaultLocation $targetVault.Location -RestoreToSecondaryRegion -RestoreOnlyOSDisk
+    ```
+
+    De uitvoer ziet er ongeveer als volgt uit:
+
+    ```output
+    WorkloadName     Operation             Status              StartTime                 EndTime          JobID
+    ------------     ---------             ------              ---------                 -------          ----------
+    V2VM             CrossRegionRestore   InProgress           4/23/2016 5:00:30 PM                       cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
+    ```
+
+1. Voer de cmdlet [Get-AzRecoveryServicesBackupJob](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) uit met de `-UseSecondaryRegion` para meter om de herstel taak te controleren.
+
+    Voer de volgende opdracht uit om deze stap te volt ooien:
+
+    ```powershell
+    Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -To (Get-Date).ToUniversalTime() -UseSecondaryRegion -VaultId $targetVault.ID
+    ```
+
+    De uitvoer ziet er ongeveer als volgt uit:
+
+    ```output
+    WorkloadName     Operation            Status               StartTime                 EndTime                   JobID
+    ------------     ---------            ------               ---------                 -------                   -----
+    V2VM             CrossRegionRestore   InProgress           2/8/2021 4:24:57 PM                                 2d071b07-8f7c-4368-bc39-98c7fb2983f7
+    ```
 
 ## <a name="replace-disks-in-azure-vm"></a>Schijven in azure VM vervangen
 

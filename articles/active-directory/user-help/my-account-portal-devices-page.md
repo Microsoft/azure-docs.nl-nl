@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 07/29/2020
+ms.date: 01/19/2021
 ms.author: curtand
-ms.openlocfilehash: 784ee418c3713cce53d7e99e30fd445e75d144da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d82b59e887eb35a972812dd82dbca5ca6bc5179b
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88798207"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096205"
 ---
 # <a name="manage-your-connected-devices-from-the-devices-page"></a>Uw verbonden apparaten beheren via de pagina apparaten
 
@@ -27,7 +27,12 @@ De pagina **apparaten** van de portal van **Mijn account** helpt u bij het beher
 - Schakel alle apparaten uit die u niet meer bezit, verloren of die zijn gestolen.
 
 >[!Important]
->Dit artikel is bedoeld voor gebruikers die proberen de apparaatgegevens bij te werken die zijn verbonden met een werk-of school account. Als u een beheerder bent die op zoek is naar informatie over Apparaatbeheer voor uw werk nemers en andere toepassingen, raadpleegt u de [documentatie voor apparaat-id's](../devices/index.yml).
+>Dit artikel is bedoeld voor gebruikers die proberen de apparaatgegevens bij te werken die zijn verbonden met een werk-of school account. Als er een fout optreedt tijdens het aanmelden met een persoonlijke Microsoft-account, kunt u zich nog steeds aanmelden met de domein naam voor uw organisatie (zoals contoso.com) of de **Tenant-id** van uw organisatie van uw beheerder in een van de volgende url's:
+>
+>   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+>   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
+>
+>Als u een beheerder bent die op zoek is naar informatie over Apparaatbeheer voor uw werk nemers en andere toepassingen, raadpleegt u de [documentatie voor apparaat-id's](../devices/index.yml).
 
 ## <a name="view-your-connected-devices"></a>Uw verbonden apparaten weer geven
 

@@ -10,17 +10,72 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 2/5/2021
+ms.date: 2/9/2021
 ms.author: yohaddad
-ms.openlocfilehash: d5892d0b2ae2004f8604333294411e849dc8394b
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: bd295a753447771654522b3aef938b9a32c468c5
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805881"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100105127"
 ---
 # <a name="azure-guest-os"></a>Azure-gast besturingssysteem
 In de volgende tabellen ziet u de micro soft Security Response Center-updates (MSRC) die zijn toegepast op het Azure-gast besturingssysteem. Zoek in dit artikel om te bepalen of een bepaalde update van toepassing is op het gast besturingssysteem dat u gebruikt. Updates worden altijd uitgevoerd voor de desbetreffende [familie][family-explain] waarin ze zijn geïntroduceerd.
+
+## <a name="february-2021-guest-os"></a>Februari 2021-gast besturingssysteem
+
+>[!NOTE] 
+
+>Het februari-gast besturingssysteem wordt momenteel geïmplementeerd naar Cloud service-Vm's die zijn geconfigureerd voor automatische updates. Wanneer de implementatie is voltooid, wordt deze versie beschikbaar gesteld voor hand matige updates via de Azure Portal-en configuratie bestanden. De volgende patches zijn opgenomen in het besturings systeem voor februari gast. Deze lijst is onderhevig aan wijzigingen. 
+
+| Productcategorie | Bovenliggend KB-artikel | Beschrijving van het beveiligingslek | Gastbesturingssysteem | Datum eerste geïntroduceerd |
+| --- | --- | --- | --- | --- |
+|  Rel 21-02 |  [4601345]  |  Meest recente cumulatieve update (LCU) | 6,28 | 9 februari 2021 |
+|  Rel 21-02 |  [4580325]  |  Flash-Update | 3,94, 4,87, 5,52, 6,28 | 13 oktober 2020 |
+|  Rel 21-02 |  [4586768]  |  Cumulatieve updates voor Internet Explorer | 2,107, 3,94, 4,87 | 10 november 2020 |
+|  Rel 21-02 |  [4601318]  |  Meest recente cumulatieve update (LCU) | 5,52 | 9 februari 2021 |
+|  Rel 21-02 |  [4578952]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 2,107 | 12 januari 2021 |
+|  Rel 21-02 |  [4578955]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 2,107 | 12 januari 2021 |
+|  Rel 21-02 |  [4578953]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 4,87 | 12 januari 2021 |
+|  Rel 21-02 |  [4578956]  |  .NET Framework 4.5.2 beveiliging en kwaliteit samen vouwen | 4,87 | 12 januari 2021 |
+|  Rel 21-02 |  [4578950]  |  .NET Framework 3,5-beveiliging en-kwaliteit samen vouwen | 3,94 | 12 januari 2021 |
+|  Rel 21-02 |  [4578954]  |  . NET Framework 4.5.2 Security en Quality totalisatie | 3,94 | 12 januari 2021 |
+|  Rel 21-02 |  [4578966]  |  . NET Framework 3,5 en cumulatieve update 4.7.2 | 6,28 | 13 oktober 2020 |
+|  Rel 21-02 |  [4601347]  |  Maandelijks samen vouwen | 2,107 | 9 februari 2021 |
+|  Rel 21-02 |  [4601348]  |  Maandelijks samen vouwen | 3,94 | 9 februari 2021 |
+|  Rel 21-02 |  [4601384]  |  Maandelijks samen vouwen | 4,87 | 9 februari 2021 |
+|  Rel 21-02 |  [4566426]  |  Onderhouds stack-update | 3,94 | 14 juli 2020 |
+|  Rel 21-02 |  [4566425]  |  Onderhouds stack-update | 4,87 | 14 juli 2020 |
+|  OOB rel 21-02 |  [4578013]  |  Zelfstandige beveiligings update | 4,87 | 19 augustus 2020 |
+|  Rel 21-02 |  [4601392]  |  Onderhouds stack-update | 5,52 | 9 februari 2021 |
+|  Rel 21-02 |  [4592510]  |  Onderhouds stack-update | 2,107 | 8 december 2020 |
+|  Rel 21-02 |  [4601393]  |  Onderhouds stack-update | 6,28 | 9 februari 2021 |
+|  Rel 21-02 |  [4494175]  |  Micro | 5,52 | 1 sep, 2020 |
+|  Rel 21-02 |  [4494174]  |  Micro | 6,28 | 1 sep, 2020 |
+
+[4601345]: https://support.microsoft.com/kb/4601345
+[4580325]: https://support.microsoft.com/kb/4580325
+[4586768]: https://support.microsoft.com/kb/4586768
+[4601318]: https://support.microsoft.com/kb/4601318
+[4578952]: https://support.microsoft.com/kb/4578952
+[4578955]: https://support.microsoft.com/kb/4578955
+[4578953]: https://support.microsoft.com/kb/4578953
+[4578956]: https://support.microsoft.com/kb/4578956
+[4578950]: https://support.microsoft.com/kb/4578950
+[4578954]: https://support.microsoft.com/kb/4578954
+[4578966]: https://support.microsoft.com/kb/4578966
+[4601347]: https://support.microsoft.com/kb/4601347
+[4601348]: https://support.microsoft.com/kb/4601348
+[4601384]: https://support.microsoft.com/kb/4601384
+[4566426]: https://support.microsoft.com/kb/4566426
+[4566425]: https://support.microsoft.com/kb/4566425
+[4578013]: https://support.microsoft.com/kb/4578013
+[4601392]: https://support.microsoft.com/kb/4601392
+[4592510]: https://support.microsoft.com/kb/4592510
+[4601393]: https://support.microsoft.com/kb/4601393
+[4494175]: https://support.microsoft.com/kb/4494175
+[4494174]: https://support.microsoft.com/kb/4494174
+
 
 ## <a name="january-2021-guest-os"></a>Januari 2021-gast besturingssysteem
 

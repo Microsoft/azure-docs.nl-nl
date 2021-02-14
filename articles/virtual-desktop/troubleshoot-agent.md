@@ -6,19 +6,19 @@ ms.topic: troubleshooting
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: 8e3c372cb186d3043e89b0b084a86b7be128146d
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 1500a635d5177ed8899cdc3f1364e57a8525892c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475249"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099945"
 ---
 # <a name="troubleshoot-common-windows-virtual-desktop-agent-issues"></a>Veelvoorkomende problemen met Windows Virtual Desktop agent oplossen
 
 De Windows Virtual Desktop-agent kan verbindings problemen veroorzaken vanwege meerdere factoren:
    - Er is een fout opgetreden in de Broker waardoor de agent de service stopt.
    - Problemen met updates.
-   - Problemen met het installeren van de installatie tijdens de agent, waardoor de verbinding met de sessiehost wordt verstoord.
+   - Problemen met de installatie tijdens de installatie van de agent, waardoor de verbinding met de sessie-host wordt verstoord.
 
 Dit artikel leidt u door oplossingen voor deze algemene scenario's en over het oplossen van verbindings problemen.
 
@@ -184,7 +184,7 @@ Wijzig de drempel waarde voor heartbeats om dit probleem op te lossen:
 1. Open de opdracht prompt als beheerder.
 2. Voer de opdracht **qwinsta** uit en voer deze uit.
 3. Er moeten twee stack onderdelen worden weer gegeven: **RDP-TCP** en **RDP-SxS**. 
-   - Afhankelijk van de versie van het besturings systeem dat u gebruikt, kan **RDP-SxS** worden gevolgd door het build-nummer, zoals wordt weer gegeven in de volgende scherm afbeelding. Als dat het geval is, moet u ervoor zorgen dat u dit nummer later wegschrijft.
+   - Afhankelijk van de versie van het besturings systeem dat u gebruikt, kan **RDP-SxS** worden gevolgd door het build-nummer. Als dat het geval is, moet u ervoor zorgen dat u dit nummer later wegschrijft.
 4. Open de register-editor.
 5. Ga naar **HKEY_LOCAL_MACHINE**  >  **System**  >  **CurrentControlSet**  >  **Control**  >  **Terminal Server**-  >  **winst**.
 6. Onder **winst** kunt u enkele mappen zien voor verschillende stack versies. Selecteer de map die overeenkomt met het versie nummer uit stap 3.
@@ -207,7 +207,7 @@ U kunt dit probleem oplossen door de ruimte op uw schijf te maken door:
 Open een Power shell-venster als beheerder en voer de volgende cmdlet uit:
 
 ```powershell
-Get-AzWvdSessionHost -TenantName <tenantname> -HostPoolName <hostpoolname>|Select-Object *
+Get-AzWvdSessionHost -ResourceGroupName <resourcegroupname> -HostPoolName <hostpoolname> | Select-Object *
 ```
 
 Als de status die wordt vermeld voor de sessiehost of hosts in uw hostgroep altijd **niet beschikbaar** is of **een upgrade uitvoert**, is de agent of stack-installatie mogelijk mislukt

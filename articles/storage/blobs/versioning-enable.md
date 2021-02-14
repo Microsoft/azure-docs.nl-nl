@@ -6,20 +6,20 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5802070bf9b495c0e866d160d6661349369a444e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 5b6bd16eacf4b1bbb7b93f5500813e7fa9dc7eef
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95993738"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095835"
 ---
 # <a name="enable-and-manage-blob-versioning"></a>BLOB-versie beheer inschakelen en beheren
 
-U kunt versie beheer van Blob Storage inschakelen om automatisch eerdere versies van een object te onderhouden.  Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
+U kunt versie beheer van Blob Storage inschakelen om automatisch eerdere versies van een BLOB te behouden wanneer deze wordt gewijzigd of verwijderd. Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd.
 
 In dit artikel wordt beschreven hoe u BLOB-versie beheer in-of uitschakelt voor het opslag account met behulp van de Azure Portal of een Azure Resource Manager sjabloon. Zie [BLOB-versie beheer](versioning-overview.md)voor meer informatie over blob-versie beheer.
 
@@ -27,15 +27,41 @@ In dit artikel wordt beschreven hoe u BLOB-versie beheer in-of uitschakelt voor 
 
 ## <a name="enable-blob-versioning"></a>Blobversiebeheer inschakelen
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-BLOB-versie beheer inschakelen in de Azure Portal:
+Als u BLOB-versie beheer wilt inschakelen voor een opslag account in de Azure Portal:
 
 1. Navigeer naar uw opslag account in de portal.
 1. Kies onder **BLOB service** de optie **gegevens beveiliging**.
 1. Selecteer **ingeschakeld** in de sectie **versie beheer** .
 
 :::image type="content" source="media/versioning-enable/portal-enable-versioning.png" alt-text="Scherm afbeelding die laat zien hoe u BLOB-versie beheer inschakelt in Azure Portal":::
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Als u BLOB-versie beheer wilt inschakelen voor een opslag account met Power shell, installeert u eerst de [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) -module versie 2.3.0 of hoger. Vervolgens roept u de opdracht [Update-AzStorageBlobServiceProperty](/powershell/module/az.storage/update-azstorageblobserviceproperty) aan om versie beheer in te scha kelen, zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om de waarden tussen punt haken te vervangen door uw eigen waarden:
+
+```powershell
+# Set resource group and account variables.
+$rgName = "<resource-group>"
+$accountName = "<storage-account>"
+
+# Enable versioning.
+Update-AzStorageBlobServiceProperty -ResourceGroupName $rgName `
+    -StorageAccountName $accountName `
+    -IsVersioningEnabled $true
+```
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u BLOB-versie beheer wilt inschakelen voor een opslag account met Azure CLI, installeert u eerst de Azure CLI-versie 2.2.0 of hoger. Vervolgens roept u de opdracht [AZ Storage account BLOB-Service-Properties update](/cli/azure/ext/storage-blob-preview/storage/account/blob-service-properties#ext_storage_blob_preview_az_storage_account_blob_service_properties_update) aan om versie beheer in te scha kelen, zoals wordt weer gegeven in het volgende voor beeld. Vergeet niet om de waarden tussen punt haken te vervangen door uw eigen waarden:
+
+```azurecli
+az storage account blob-service-properties update \
+    --resource-group <resource_group> \
+    --account-name <storage-account> \
+    --enable-versioning true
+```
 
 # <a name="template"></a>[Sjabloon](#tab/template)
 

@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 84a49ea2f6ce4a5119af024ab3de67fa2b89c02e
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: f1f2caa194972bb870dc58cfa0bd6ccb2f8db053
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539733"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099911"
 ---
 # <a name="session-host-virtual-machine-configuration"></a>Configuratie van sessiehost-VM's
 
@@ -193,7 +193,7 @@ In de uitvoer van **qwinsta** wordt **RDP-SxS** vermeld in de uitvoer als de sid
 > [!div class="mx-imgBorder"]
 > ![Side-by-side stack is geïnstalleerd of ingeschakeld met qwinsta die worden vermeld als RDP-SxS in de uitvoer.](media/23b8e5f525bb4e24494ab7f159fa6b62.png)
 
-Controleer de hieronder vermelde Register vermeldingen en controleer of de waarden overeenkomen. Als er register sleutels ontbreken of als de waarden niet overeenkomen, volgt u de instructies in [een hostgroep maken met Power shell](create-host-pools-powershell.md) voor informatie over het opnieuw installeren van de side-by-side-stack.
+Controleer de hieronder vermelde Register vermeldingen en controleer of de waarden overeenkomen. Als er register sleutels ontbreken of als er geen overeenkomende waarden worden gevonden, moet u ervoor zorgen dat u [een ondersteund besturings systeem](troubleshoot-agent.md#error-operating-a-pro-vm-or-other-unsupported-os)gebruikt. Als dat het geval is, volgt u de instructies in [een hostgroep maken met Power shell](create-host-pools-powershell.md) voor informatie over het opnieuw installeren van de side-by-side-stack.
 
 ```registry
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal

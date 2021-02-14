@@ -6,18 +6,25 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 02/08/2021
+ms.date: 02/09/2021
 ms.custom: references_regions
-ms.openlocfilehash: 7e3f6eeab13a29eddd671411f46ac2220c10f68f
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 08491dcaf66789f13aa9f2e058303a28e7ab8388
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820854"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099520"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
 Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan deze pagina om up-to-date te blijven over de service. Bekijk de [lijst met preview-functies](search-api-preview.md) om openbare preview-functies weer te geven.
+
+## <a name="february-2021"></a>Februari 2021
+
+|Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  Beschrijving | Beschikbaarheid  |
+|------------------------------|---------------|---------------|
+| [Documenten opnieuw instellen (preview-versie)](search-howto-run-reset-indexers.md) |  Afzonderlijke geselecteerde Zoek documenten in de werk belasting van de Indexeer functie opnieuw verwerken. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/index-preview) |
+| Ondersteuning voor beschikbaarheids zone | Zoek Services met twee of meer replica's in bepaalde regio's, zoals wordt weer gegeven in [schaal voor prestaties](search-performance-optimization.md), profiteer van tolerantie door replica's te hebben op twee of meer verschillende fysieke locaties.  | De regio en de datum waarop de zoek service is gemaakt, bepalen de beschik baarheid. Zie het document voor het afstemmen van de prestaties voor meer informatie. |
 
 ## <a name="january-2021"></a>Januari 2021
 

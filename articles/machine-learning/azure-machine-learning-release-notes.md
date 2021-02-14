@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: a01aab13b87398b7d27af02fa84dd7fadf7b8345
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: b814c12a0d57230a81a68f6030a26ded93bd0399
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430994"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097072"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -162,7 +162,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
 ## <a name="2020-11-30"></a>2020-11-30
 ### <a name="azure-machine-learning-studio-notebooks-experience-november-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van november)
 + **Nieuwe functies**
-   + Systeem eigen terminal. Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de [Geïntegreerde Terminal.](./how-to-run-jupyter-notebooks.md#terminal)
+   + Systeem eigen terminal. Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de [Geïntegreerde Terminal.](./how-to-access-terminal.md)
   + Dubbele map 
   + Kostprijs berekening voor de vervolg keuzelijst compute 
   + Offline Compute-Pylance 
@@ -940,7 +940,7 @@ U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewe
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
     
-| Webgebaseerd hulp programma  |     Beschrijving  |
+| Webgebaseerd hulp programma  |     Description  |
 |---|---|
 | Azure ML Studio-notebooks   |     Eerste in-class ontwerpen voor notebook-bestanden en biedt ondersteuning voor alle bewerkingen die beschikbaar zijn in de Azure ML python SDK. | 
 
@@ -1452,7 +1452,7 @@ Vanuit de Studio kunt u Azure Machine Learning assets trainen, testen, implement
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
 
-| Webgebaseerd hulp programma | Beschrijving | 
+| Webgebaseerd hulp programma | Description | 
 |-|-|-|
 | VM van notebook (preview-versie) | Volledig beheerd werk station in de Cloud | 
 | [Automatische machine learning](tutorial-first-experiment-automated-ml.md) (preview-versie) | Geen code-ervaring voor het automatiseren van de ontwikkeling van machine learning modellen | 

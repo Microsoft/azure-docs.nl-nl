@@ -1,18 +1,18 @@
 ---
 title: Azure Cosmos DB
 description: Overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure Cosmos DB. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 34afa8b7293ee40979ce07f08bed6e2dcb5889ac
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 19a755a0a7c73439bbe9d9b58628085b327190ce
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99559043"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098470"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-cosmos-db"></a>Ingebouwde Azure Policy-definities voor Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]

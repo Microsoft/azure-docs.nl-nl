@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
-ms.date: 01/20/2021
-ms.openlocfilehash: a74868beea6e5903b6b17a7bc0c82cc822fcd36f
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.date: 02/12/2021
+ms.openlocfilehash: d7ed3fb268920d6f4d015886c560b2d9fcbdc632
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055175"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104498"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Beveiligde toegang en gegevens in Azure Logic Apps
 
@@ -123,11 +123,11 @@ In de hoofd tekst, neemt `KeyType` u de eigenschap op als `Primary` of `Secondar
 
 ### <a name="enable-azure-active-directory-open-authentication-azure-ad-oauth"></a>Verificatie Azure Active Directory openen inschakelen (Azure AD OAuth)
 
-Voor inkomende aanroepen naar een eind punt dat is gemaakt door een trigger die is gebaseerd op een aanvraag, kunt u [Azure Active Directory open verificatie (Azure AD OAuth)](../active-directory/develop/index.yml) inschakelen door een autorisatie beleid te definiëren of toe te voegen voor uw logische app. Op deze manier gebruiken inkomende oproepen OAuth- [toegangs tokens](../active-directory/develop/access-tokens.md) voor verificatie.
+Voor inkomende aanroepen naar een eind punt dat is gemaakt door een trigger die is gebaseerd op een aanvraag, kunt u [Azure AD OAuth](../active-directory/develop/index.yml) inschakelen door een autorisatie beleid te definiëren of toe te voegen voor uw logische app. Op deze manier gebruiken inkomende oproepen OAuth- [toegangs tokens](../active-directory/develop/access-tokens.md) voor verificatie.
 
 Wanneer uw logische app een binnenkomende aanvraag met een OAuth-toegangs token ontvangt, vergelijkt de Azure Logic Apps-service de claims van het token met de claims die zijn opgegeven door elk autorisatie beleid. Als er een overeenkomst is tussen de claims van het token en alle claims in ten minste één beleid, is de autorisatie geslaagd voor de inkomende aanvraag. Het token kan meer claims hebben dan het aantal dat is opgegeven door het autorisatie beleid.
 
-Lees de volgende overwegingen voordat u Azure AD OAuth inschakelt:
+#### <a name="considerations-before-you-enable-azure-ad-oauth"></a>Overwegingen voordat u Azure AD OAuth inschakelt
 
 * Een inkomende oproep naar het eind punt van de aanvraag kan slechts één autorisatie schema, ofwel Azure AD OAuth of [Shared Access Signature (SAS)](#sas), gebruiken. Hoewel het gebruik van één schema het andere schema niet uitschakelt, veroorzaakt het gebruik van beide schema's tegelijk een fout omdat de Logic Apps-service niet weet welk schema u moet kiezen.
 
@@ -180,11 +180,15 @@ Lees de volgende overwegingen voordat u Azure AD OAuth inschakelt:
    }
    ```
 
+#### <a name="enable-azure-ad-oauth-for-your-logic-app"></a>Azure AD OAuth inschakelen voor uw logische app
+
+Volg deze stappen voor de Azure Portal-of Azure Resource Manager sjabloon:
+
 <a name="define-authorization-policy-portal"></a>
 
-#### <a name="define-authorization-policy-in-azure-portal"></a>Autorisatie beleid definiëren in Azure Portal
+#### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Als u Azure AD OAuth wilt inschakelen voor uw logische app in de Azure Portal, voert u de volgende stappen uit om een of meer autorisatie beleid toe te voegen aan uw logische app:
+Voeg in de [Azure Portal](https://portal.azure.com)een of meer autorisatie beleid toe aan uw logische app:
 
 1. Zoek en open uw logische app in het [Azure Portal](https://portal.microsoft.com)in de ontwerp functie voor logische apps.
 
@@ -198,8 +202,8 @@ Als u Azure AD OAuth wilt inschakelen voor uw logische app in de Azure Portal, v
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
-   | **Naam van beleid** | Yes | De naam die u wilt gebruiken voor het autorisatie beleid |
-   | **Claims** | Yes | De claim typen en-waarden die uw logische app accepteert van binnenkomende oproepen. De claim waarde is beperkt tot een [maximum aantal tekens](logic-apps-limits-and-config.md#authentication-limits). Dit zijn de beschik bare claim typen: <p><p>- **Verlener** <br>- **Gericht** <br>- **Onderwerp** <br>- **JWT-id** (JSON Web token-id) <p><p>De **claim** lijst moet mini maal de claim van de **verlener** bevatten, die een waarde heeft die begint met `https://sts.windows.net/` of `https://login.microsoftonline.com/` als de id van de Azure AD-Uitgever. Zie [claims in azure AD-beveiligings tokens](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens)voor meer informatie over deze claim typen. U kunt ook uw eigen claim type en-waarde opgeven. |
+   | **Naam van beleid** | Ja | De naam die u wilt gebruiken voor het autorisatie beleid |
+   | **Claims** | Ja | De claim typen en-waarden die uw logische app accepteert van binnenkomende oproepen. De claim waarde is beperkt tot een [maximum aantal tekens](logic-apps-limits-and-config.md#authentication-limits). Dit zijn de beschik bare claim typen: <p><p>- **Verlener** <br>- **Gericht** <br>- **Onderwerp** <br>- **JWT-id** (JSON Web token-id) <p><p>De **claim** lijst moet mini maal de claim van de **verlener** bevatten, die een waarde heeft die begint met `https://sts.windows.net/` of `https://login.microsoftonline.com/` als de id van de Azure AD-Uitgever. Zie [claims in azure AD-beveiligings tokens](../active-directory/azuread-dev/v1-authentication-scenarios.md#claims-in-azure-ad-security-tokens)voor meer informatie over deze claim typen. U kunt ook uw eigen claim type en-waarde opgeven. |
    |||
 
 1. Selecteer een van de volgende opties om een claim toe te voegen:
@@ -216,9 +220,9 @@ Als u Azure AD OAuth wilt inschakelen voor uw logische app in de Azure Portal, v
 
 <a name="define-authorization-policy-template"></a>
 
-#### <a name="define-authorization-policy-in-azure-resource-manager-template"></a>Autorisatie beleid definiëren in Azure Resource Manager sjabloon
+#### <a name="resource-manager-template"></a>[Resource Manager-sjabloon](#tab/azure-resource-manager)
 
-Als u Azure AD OAuth wilt inschakelen in de ARM-sjabloon voor het implementeren van uw logische app, volgt u deze stappen en de volgende syntaxis:
+Definieer in uw ARM-sjabloon een autorisatie beleid volgens de volgende stappen en syntaxis:
 
 1. Voeg in de `properties` sectie voor de [resource definitie van de logische app](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#logic-app-resource-definition)een `accessControl` object toe als er geen bestaat, dat een `triggers` object bevat.
 
@@ -271,6 +275,8 @@ Dit is de syntaxis die u moet volgen:
 ],
 ```
 
+---
+
 <a name="include-auth-header"></a>
 
 #### <a name="include-authorization-header-in-request-trigger-outputs"></a>Kop ' Authorization ' insluiten in uitvoer van aanvragen trigger
@@ -310,11 +316,13 @@ Samen met Shared Access Signature (SAS) kunt u de clients die uw logische app ku
 
 Ongeacht de IP-adressen die u opgeeft, kunt u nog steeds een logische app met een op aanvragen gebaseerde trigger uitvoeren met behulp van de [Logic Apps rest API: werk stroom triggers-aanvraag uitvoeren](/rest/api/logic/workflowtriggers/run) of door middel van API management. Voor dit scenario is echter nog steeds [verificatie](../active-directory/develop/authentication-vs-authorization.md) vereist voor de Azure-rest API. Alle gebeurtenissen worden weer gegeven in het controle logboek van Azure. Zorg ervoor dat u de beleids regels voor toegangs beheer dienovereenkomstig instelt.
 
+Volg de volgende stappen voor de Azure Portal of uw Azure Resource Manager sjabloon om de inkomende IP-adressen voor uw logische app te beperken:
+
 <a name="restrict-inbound-ip-portal"></a>
 
-#### <a name="restrict-inbound-ip-ranges-in-azure-portal"></a>Binnenkomende IP-bereiken in Azure Portal beperken
+#### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Wanneer u de portal gebruikt om de inkomende IP-adressen voor uw logische app te beperken, zijn deze beperkingen van invloed op Triggers *en* acties, ondanks de beschrijving in de portal onder **toegestane binnenkomende IP-adressen**. Als u beperkingen wilt instellen voor triggers gescheiden van acties, gebruikt u het [ `accessControl` object in de Azure Resource Manager sjabloon van uw logische app](#restrict-inbound-ip-template) of de [Logic apps rest API: werk stroom-maken of bijwerken](/rest/api/logic/workflows/createorupdate).
+In de [Azure Portal](https://portal.azure.com)beïnvloedt dit filter zowel triggers *als* acties, in tegens telling tot de beschrijving in de portal onder **toegestane binnenkomende IP-adressen**. Als u dit filter afzonderlijk wilt instellen voor triggers en voor acties, gebruikt u het `accessControl` object in een Azure Resource Manager sjabloon voor uw logische app of de [Logic apps rest API: werk stroom-maken of bijwerken](/rest/api/logic/workflows/createorupdate).
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
@@ -323,23 +331,23 @@ Wanneer u de portal gebruikt om de inkomende IP-adressen voor uw logische app te
 1. Kies in het gedeelte **toegangs beheer configuratie** onder **toegestane inkomende IP-adressen** het pad voor uw scenario:
 
    * Als u wilt dat uw logische app alleen kan worden opgeroepen als een geneste logische app met behulp van de ingebouwde [Azure Logic apps actie](../logic-apps/logic-apps-http-endpoint.md), selecteert u **alleen andere Logic apps**. dit werkt *alleen* wanneer u de **Azure Logic apps** actie gebruikt om de geneste logische app aan te roepen.
-   
+
      Met deze optie wordt een lege matrix naar de logische app-resource geschreven en is vereist dat alleen aanroepen vanuit bovenliggende logische apps die gebruikmaken van de ingebouwde **Azure Logic apps** actie, de geneste logische app kunnen activeren.
 
    * Als u wilt dat uw logische app alleen kan worden opgeroepen als een geneste app met behulp van de HTTP-actie, selecteert u **specifieke IP-bereiken**, *niet* **alleen andere Logic apps**. Wanneer het vak **IP-bereiken voor triggers** wordt weer gegeven, voert u de [uitgaande IP-adressen](../logic-apps/logic-apps-limits-and-config.md#outbound)van de bovenliggende logische app in. Een geldig IP-bereik maakt gebruik van de volgende indelingen: *x. x. x. x/x* of *x. x. x. x-x. x. x*. x.
-   
+
      > [!NOTE]
      > Als u de **enige andere Logic apps** optie en de http-actie gebruikt om uw geneste logische app aan te roepen, wordt de aanroep geblokkeerd en krijgt u de fout melding ' 401 niet toegestaan '.
-        
+
    * Voor scenario's waarbij u de inkomende aanroepen van andere IP-adressen wilt beperken, geeft u de IP-adresbereiken op die de trigger accepteert wanneer het vak **IP-bereiken voor triggers** wordt weer gegeven. Een geldig IP-bereik maakt gebruik van de volgende indelingen: *x. x. x. x/x* of *x. x. x. x-x. x. x*. x.
 
 1. U kunt, onder **aanroepen voor het ophalen van invoer-en uitvoer berichten van de uitvoerings geschiedenis naar de opgegeven IP-adressen beperken**, de IP-adresbereiken voor inkomende oproepen opgeven die toegang hebben tot invoer-en uitvoer berichten in de uitvoerings geschiedenis.
 
 <a name="restrict-inbound-ip-template"></a>
 
-#### <a name="restrict-inbound-ip-ranges-in-azure-resource-manager-template"></a>Binnenkomende IP-bereiken in Azure Resource Manager sjabloon beperken
+#### <a name="resource-manager-template"></a>[Resource Manager-sjabloon](#tab/azure-resource-manager)
 
-Als u de [implementatie van Logic apps automatiseert met behulp van Resource Manager-sjablonen](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), kunt u de toegestane binnenkomende IP-adresbereiken in de resource definitie van de logische app opgeven met behulp van de `accessControl` sectie. In deze sectie gebruikt u de `triggers` , `actions` , en de optionele `contents` secties, afhankelijk van de `allowedCallerIpAddresses` sectie met de `addressRange` eigenschap en stelt u de waarde van de eigenschap in op het toegestane IP-adres bereik in *x.* x. x. x/x of *x. x. x. x-x,* x. x. x.
+Geef in uw ARM-sjabloon de toegestane binnenkomende IP-adresbereiken in de resource definitie van de logische app op met behulp van de `accessControl` sectie. In deze sectie gebruikt u de `triggers` , `actions` , en de optionele `contents` secties, afhankelijk van de `allowedCallerIpAddresses` sectie met de `addressRange` eigenschap en stelt u de waarde van de eigenschap in op het toegestane IP-adres bereik in *x.* x. x. x/x of *x. x. x. x-x,* x. x. x-indeling.
 
 * Als uw geneste logische app gebruikmaakt van de **enige andere Logic apps** optie, waarmee binnenkomende oproepen alleen worden toegestaan vanuit andere Logic apps die de Azure Logic apps actie gebruiken, stelt `addressRange` u de eigenschap in op een lege matrix (**[]**).
 
@@ -439,6 +447,8 @@ In dit voor beeld ziet u een resource definitie voor een geneste logische app di
 }
 ```
 
+---
+
 <a name="secure-operations"></a>
 
 ## <a name="access-to-logic-app-operations"></a>Toegang tot logische app-bewerkingen
@@ -473,11 +483,15 @@ Als u de toegang tot de invoer en uitvoer in de uitvoerings geschiedenis van de 
 
 ### <a name="restrict-access-by-ip-address-range"></a>Toegang beperken op basis van IP-adres bereik
 
-U kunt de toegang tot de invoer en uitvoer in de uitvoerings geschiedenis van de logische app beperken zodat alleen aanvragen van specifieke IP-adresbereiken die gegevens kunnen weer geven. Als u bijvoorbeeld wilt blok keren dat iedereen toegang heeft tot invoer en uitvoer, geeft u een IP-adres bereik op zoals `0.0.0.0-0.0.0.0` . Alleen gebruikers met beheerders machtigingen kunnen deze beperking verwijderen. Dit biedt de mogelijkheid om just-in-time toegang te krijgen tot de gegevens van uw logische app. U kunt de IP-bereiken opgeven die u wilt beperken door gebruik te maken van de Azure Portal of in een Azure Resource Manager sjabloon die u gebruikt voor de implementatie van logische apps.
+U kunt de toegang tot de invoer en uitvoer in de uitvoerings geschiedenis van de logische app beperken zodat alleen aanvragen van specifieke IP-adresbereiken die gegevens kunnen weer geven.
 
-#### <a name="restrict-ip-ranges-in-azure-portal"></a>IP-bereiken in Azure Portal beperken
+Als u bijvoorbeeld wilt blok keren dat iedereen toegang heeft tot invoer en uitvoer, geeft u een IP-adres bereik op zoals `0.0.0.0-0.0.0.0` . Alleen gebruikers met beheerders machtigingen kunnen deze beperking verwijderen. Dit biedt de mogelijkheid om just-in-time toegang te krijgen tot de gegevens van uw logische app.
 
-1. Open in de Azure Portal uw logische app in de ontwerp functie voor logische apps.
+Voer de volgende stappen uit voor de Azure Portal of uw Azure Resource Manager sjabloon om de toegestane IP-bereiken op te geven:
+
+#### <a name="portal"></a>[Portal](#tab/azure-portal)
+
+1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
 1. Selecteer **werk stroom instellingen** onder **instellingen** in het menu van de logische app.
 
@@ -487,9 +501,9 @@ U kunt de toegang tot de invoer en uitvoer in de uitvoerings geschiedenis van de
 
    Een geldig IP-bereik maakt gebruik van de volgende indelingen: *x. x. x. x/x* of *x. x. x. x-x. x.* x. x
 
-#### <a name="restrict-ip-ranges-in-azure-resource-manager-template"></a>IP-bereiken in Azure Resource Manager sjabloon beperken
+#### <a name="resource-manager-template"></a>[Resource Manager-sjabloon](#tab/azure-resource-manager)
 
-Als u de [implementatie van Logic apps automatiseert met behulp van Resource Manager-sjablonen](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), kunt u de IP-adresbereiken opgeven met behulp van de `accessControl` sectie in de `contents` resource definitie van de logische app, bijvoorbeeld:
+Geef in uw ARM-sjabloon de IP-bereiken op met behulp van de `accessControl` sectie `contents` in de resource definitie van de logische app, bijvoorbeeld:
 
 ``` json
 {
@@ -528,11 +542,41 @@ Als u de [implementatie van Logic apps automatiseert met behulp van Resource Man
 }
 ```
 
+---
+
 <a name="obfuscate"></a>
 
 ### <a name="secure-data-in-run-history-by-using-obfuscation"></a>Gegevens in de uitvoerings geschiedenis beveiligen met behulp van een afvallen
 
-Veel triggers en acties hebben instellingen voor het beveiligen van invoer, uitvoer of beide vanuit de uitvoerings geschiedenis van een logische app. [Lees deze overwegingen](#obfuscation-considerations)voordat u deze instellingen gebruikt voor het beveiligen van deze gegevens.
+Veel triggers en acties hebben instellingen voor het beveiligen van invoer, uitvoer of beide vanuit de uitvoerings geschiedenis van een logische app. Voordat u deze instellingen kunt gebruiken om deze gegevens te beveiligen, raadpleegt u de volgende overwegingen:
+
+* Wanneer u de invoer of uitvoer van een trigger of actie verduidelijkt, worden Logic Apps de beveiligde gegevens niet naar Azure Log Analytics verzonden. U kunt ook geen [bijgehouden eigenschappen](../logic-apps/monitor-logic-apps-log-analytics.md#extend-data) toevoegen aan deze trigger of actie voor bewaking.
+
+* De [Logic apps-API voor het verwerken van de werk stroom geschiedenis](/rest/api/logic/) retourneert geen beveiligde uitvoer.
+
+* Als u uitvoer wilt beveiligen op basis van een actie die invoer verduidelijkt of als deze expliciet worden uitgevoerd, schakelt u de **beveiligde uitvoer** in die actie hand matig in.
+
+* Zorg ervoor dat u **beveiligde invoer** of **beveiligde uitvoer** inschakelt in downstream-acties waarbij u verwacht dat de uitvoerings geschiedenis deze gegevens verduidelijkt.
+
+  **Instelling voor beveiligde uitvoer**
+
+  Wanneer u **beveiligde uitvoer** in een trigger of actie hand matig inschakelt, Logic apps deze uitvoer in de uitvoerings geschiedenis verbergen. Als een stroomafwaartse actie deze beveiligde uitvoer expliciet gebruikt als invoer, Logic Apps de invoer van deze actie in de uitvoerings geschiedenis verbergen, maar wordt de instelling **beveiligde invoer** van de actie *niet ingeschakeld* .
+
+  ![Beveiligde uitvoer als invoer en stroomafwaartse impact op de meeste acties](./media/logic-apps-securing-a-logic-app/secure-outputs-as-inputs-flow.png)
+
+  De acties opstellen, parseren JSON en Response hebben alleen de instelling **beveiligde invoer** . Wanneer deze optie is ingeschakeld, worden de uitvoer van deze acties ook verborgen. Als deze acties expliciet gebruikmaken van de upstream beveiligde uitvoer als invoer, worden de invoer en uitvoer van deze acties door Logic Apps verborgen, maar worden de instelling **beveiligde invoer waarden** *niet ingeschakeld* . Als een stroomafwaartse actie expliciet gebruikmaakt van de verborgen uitvoer van de acties opstellen, parseren van JSON of respons als invoer, Logic Apps *de invoer of uitvoer van deze stroomafwaartse actie niet verbergen*.
+
+  ![Beveiligde uitvoer als invoer met downstream-impact op specifieke acties](./media/logic-apps-securing-a-logic-app/secure-outputs-as-inputs-flow-special.png)
+
+  **Instelling voor beveiligde invoer**
+
+  Wanneer u **beveiligde invoer** in een trigger of actie hand matig inschakelt, Logic apps deze invoer in de uitvoerings geschiedenis verbergen. Als een stroomafwaartse actie expliciet gebruikmaakt van de zicht bare uitvoer van die trigger of actie als invoer, Logic Apps de invoer van deze stroomafwaartse actie verbergen in de uitvoerings geschiedenis, maar worden *geen* **beveiligde invoer** in deze actie ingeschakeld en worden de uitvoer van deze actie niet verborgen.
+
+  ![Beveiligde invoer en downstream van invloed op de meeste acties](./media/logic-apps-securing-a-logic-app/secure-inputs-impact-on-downstream.png)
+
+  Als de acties opstellen, parseren van JSON en respons expliciet gebruikmaken van de zicht bare uitvoer van de trigger of actie die de beveiligde invoer heeft, Logic Apps de invoer en uitvoer van deze acties verbergen, maar schakelt de instelling **beveiligde invoer** van deze actie *niet in* . Als een stroomafwaartse actie expliciet gebruikmaakt van de verborgen uitvoer van de acties opstellen, parseren van JSON of respons als invoer, Logic Apps *de invoer of uitvoer van deze stroomafwaartse actie niet verbergen*.
+
+  ![Beveiligde invoer en downstream-impact op specifieke acties](./media/logic-apps-securing-a-logic-app/secure-inputs-flow-special.png)
 
 #### <a name="secure-inputs-and-outputs-in-the-designer"></a>Invoer en uitvoer in de ontwerp functie beveiligen
 
@@ -575,8 +619,6 @@ In de onderliggende trigger of actie definitie kunt u de matrix toevoegen of bij
 * `"inputs"`: Beveiligt invoer in uitvoerings geschiedenis.
 * `"outputs"`: Hiermee worden uitvoer in uitvoerings geschiedenis beveiligd.
 
-Hier volgen enkele [aandachtspunten om te controleren](#obfuscation-considerations) wanneer u deze instellingen gebruikt om u te helpen bij het beveiligen van deze gegevens.
-
 ```json
 "<trigger-or-action-name>": {
    "type": "<trigger-or-action-type>",
@@ -594,38 +636,6 @@ Hier volgen enkele [aandachtspunten om te controleren](#obfuscation-consideratio
    <other-attributes>
 }
 ```
-
-<a name="obfuscation-considerations"></a>
-
-#### <a name="considerations-when-securing-inputs-and-outputs"></a>Overwegingen bij het beveiligen van invoer en uitvoer
-
-* Wanneer u de invoer of uitvoer van een trigger of actie verduidelijkt, worden Logic Apps de beveiligde gegevens niet naar Azure Log Analytics verzonden. U kunt ook geen [bijgehouden eigenschappen](../logic-apps/monitor-logic-apps-log-analytics.md#extend-data) toevoegen aan deze trigger of actie voor bewaking.
-
-* De [Logic apps-API voor het verwerken van de werk stroom geschiedenis](/rest/api/logic/) retourneert geen beveiligde uitvoer.
-
-* Als u uitvoer wilt beveiligen op basis van een actie die invoer verduidelijkt of als deze expliciet worden uitgevoerd, schakelt u de **beveiligde uitvoer** in die actie hand matig in.
-
-* Zorg ervoor dat u **beveiligde invoer** of **beveiligde uitvoer** inschakelt in downstream-acties waarbij u verwacht dat de uitvoerings geschiedenis deze gegevens verduidelijkt.
-
-  **Instelling voor beveiligde uitvoer**
-
-  Wanneer u **beveiligde uitvoer** in een trigger of actie hand matig inschakelt, Logic apps deze uitvoer in de uitvoerings geschiedenis verbergen. Als een stroomafwaartse actie deze beveiligde uitvoer expliciet gebruikt als invoer, Logic Apps de invoer van deze actie in de uitvoerings geschiedenis verbergen, maar wordt de instelling **beveiligde invoer** van de actie *niet ingeschakeld* .
-
-  ![Beveiligde uitvoer als invoer en stroomafwaartse impact op de meeste acties](./media/logic-apps-securing-a-logic-app/secure-outputs-as-inputs-flow.png)
-
-  De acties opstellen, parseren JSON en Response hebben alleen de instelling **beveiligde invoer** . Wanneer deze optie is ingeschakeld, worden de uitvoer van deze acties ook verborgen. Als deze acties expliciet gebruikmaken van de upstream beveiligde uitvoer als invoer, worden de invoer en uitvoer van deze acties door Logic Apps verborgen, maar worden de instelling **beveiligde invoer waarden** *niet ingeschakeld* . Als een stroomafwaartse actie expliciet gebruikmaakt van de verborgen uitvoer van de acties opstellen, parseren van JSON of respons als invoer, Logic Apps *de invoer of uitvoer van deze stroomafwaartse actie niet verbergen*.
-
-  ![Beveiligde uitvoer als invoer met downstream-impact op specifieke acties](./media/logic-apps-securing-a-logic-app/secure-outputs-as-inputs-flow-special.png)
-
-  **Instelling voor beveiligde invoer**
-
-  Wanneer u **beveiligde invoer** in een trigger of actie hand matig inschakelt, Logic apps deze invoer in de uitvoerings geschiedenis verbergen. Als een stroomafwaartse actie expliciet gebruikmaakt van de zicht bare uitvoer van die trigger of actie als invoer, Logic Apps de invoer van deze stroomafwaartse actie verbergen in de uitvoerings geschiedenis, maar worden *geen* **beveiligde invoer** in deze actie ingeschakeld en worden de uitvoer van deze actie niet verborgen.
-
-  ![Beveiligde invoer en downstream van invloed op de meeste acties](./media/logic-apps-securing-a-logic-app/secure-inputs-impact-on-downstream.png)
-
-  Als de acties opstellen, parseren van JSON en respons expliciet gebruikmaken van de zicht bare uitvoer van de trigger of actie die de beveiligde invoer heeft, Logic Apps de invoer en uitvoer van deze acties verbergen, maar schakelt de instelling **beveiligde invoer** van deze actie *niet in* . Als een stroomafwaartse actie expliciet gebruikmaakt van de verborgen uitvoer van de acties opstellen, parseren van JSON of respons als invoer, Logic Apps *de invoer of uitvoer van deze stroomafwaartse actie niet verbergen*.
-
-  ![Beveiligde invoer en downstream-impact op specifieke acties](./media/logic-apps-securing-a-logic-app/secure-inputs-flow-special.png)
 
 <a name="secure-action-parameters"></a>
 
@@ -934,9 +944,9 @@ Als de optie [basis](../active-directory-b2c/secure-rest-api.md) beschikbaar is,
 
 | Eigenschap (Designer) | Eigenschap (JSON) | Vereist | Waarde | Beschrijving |
 |---------------------|-----------------|----------|-------|-------------|
-| **Verificatie** | `type` | Yes | Basic | Het te gebruiken verificatietype |
-| **Gebruikersnaam** | `username` | Yes | <*gebruikers naam*>| De gebruikers naam voor het verifiëren van de toegang tot het eind punt van de doel service |
-| **Wachtwoord** | `password` | Yes | <*wacht woord*> | Het wacht woord voor het verifiëren van de toegang tot het eind punt van de doel service |
+| **Verificatie** | `type` | Ja | Basic | Het te gebruiken verificatietype |
+| **Gebruikersnaam** | `username` | Ja | <*gebruikers naam*>| De gebruikers naam voor het verifiëren van de toegang tot het eind punt van de doel service |
+| **Wachtwoord** | `password` | Ja | <*wacht woord*> | Het wacht woord voor het verifiëren van de toegang tot het eind punt van de doel service |
 ||||||
 
 Wanneer u [beveiligde para meters](#secure-action-parameters) gebruikt voor het verwerken en beveiligen van gevoelige informatie, bijvoorbeeld in een [Azure Resource Manager sjabloon voor het automatiseren van de implementatie](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), kunt u expressies gebruiken om toegang te krijgen tot deze parameter waarden tijdens runtime. In dit voor beeld van een HTTP-actie definitie wordt de verificatie opgegeven `type` als `Basic` en wordt de [functie para meters ()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) gebruikt om de parameter waarden op te halen:
@@ -965,9 +975,9 @@ Als de optie [client certificaat](../active-directory/authentication/active-dire
 
 | Eigenschap (Designer) | Eigenschap (JSON) | Vereist | Waarde | Beschrijving |
 |---------------------|-----------------|----------|-------|-------------|
-| **Verificatie** | `type` | Yes | **Client certificaat** <br>of <br>`ClientCertificate` | Het verificatie type dat moet worden gebruikt. U kunt certificaten beheren met [Azure API Management](../api-management/api-management-howto-mutual-certificates.md). <p></p>**Opmerking**: aangepaste connectors bieden geen ondersteuning voor verificatie op basis van certificaten voor zowel binnenkomende als uitgaande oproepen. |
-| **Pfx** | `pfx` | Yes | <*encoded-pfx-file-content*> | De met base64 gecodeerde inhoud van een PFX-bestand (Personal Information Exchange) <p><p>Als u het PFX-bestand wilt converteren naar een base64-gecodeerde indeling, kunt u Power shell gebruiken door de volgende stappen uit te voeren: <p>1. Sla de certificaat inhoud op in een variabele: <p>   `$pfx_cert = get-content 'c:\certificate.pfx' -Encoding Byte` <p>2. Converteer de certificaat inhoud met behulp van de `ToBase64String()` functie en sla die inhoud op in een tekst bestand: <p>   `[System.Convert]::ToBase64String($pfx_cert) | Out-File 'pfx-encoded-bytes.txt'` <p><p>**Problemen oplossen**: als u de `cert mmc/PowerShell` opdracht gebruikt, kan deze fout optreden: <p><p>`Could not load the certificate private key. Please check the authentication certificate password is correct and try again.` <p><p>U kunt deze fout oplossen door het PFX-bestand te converteren naar een PEM-bestand en weer terug te zetten met behulp van de `openssl` opdracht: <p><p>`openssl pkcs12 -in certificate.pfx -out certificate.pem` <br>`openssl pkcs12 -in certificate.pem -export -out certificate2.pfx` <p><p>Wanneer u daarna de base64-gecodeerde teken reeks voor het zojuist geconverteerde PFX-bestand van het certificaat krijgt, werkt de teken reeks nu in Azure Logic Apps. |
-| **Wachtwoord** | `password`| No | <*wacht woord voor pfx-bestand*> | Het wacht woord voor toegang tot het PFX-bestand |
+| **Verificatie** | `type` | Ja | **Client certificaat** <br>of <br>`ClientCertificate` | Het verificatie type dat moet worden gebruikt. U kunt certificaten beheren met [Azure API Management](../api-management/api-management-howto-mutual-certificates.md). <p></p>**Opmerking**: aangepaste connectors bieden geen ondersteuning voor verificatie op basis van certificaten voor zowel binnenkomende als uitgaande oproepen. |
+| **Pfx** | `pfx` | Ja | <*encoded-pfx-file-content*> | De met base64 gecodeerde inhoud van een PFX-bestand (Personal Information Exchange) <p><p>Als u het PFX-bestand wilt converteren naar een base64-gecodeerde indeling, kunt u Power shell gebruiken door de volgende stappen uit te voeren: <p>1. Sla de certificaat inhoud op in een variabele: <p>   `$pfx_cert = get-content 'c:\certificate.pfx' -Encoding Byte` <p>2. Converteer de certificaat inhoud met behulp van de `ToBase64String()` functie en sla die inhoud op in een tekst bestand: <p>   `[System.Convert]::ToBase64String($pfx_cert) | Out-File 'pfx-encoded-bytes.txt'` <p><p>**Problemen oplossen**: als u de `cert mmc/PowerShell` opdracht gebruikt, kan deze fout optreden: <p><p>`Could not load the certificate private key. Please check the authentication certificate password is correct and try again.` <p><p>U kunt deze fout oplossen door het PFX-bestand te converteren naar een PEM-bestand en weer terug te zetten met behulp van de `openssl` opdracht: <p><p>`openssl pkcs12 -in certificate.pfx -out certificate.pem` <br>`openssl pkcs12 -in certificate.pem -export -out certificate2.pfx` <p><p>Wanneer u daarna de base64-gecodeerde teken reeks voor het zojuist geconverteerde PFX-bestand van het certificaat krijgt, werkt de teken reeks nu in Azure Logic Apps. |
+| **Wachtwoord** | `password`| Nee | <*wacht woord voor pfx-bestand*> | Het wacht woord voor toegang tot het PFX-bestand |
 |||||
 
 Wanneer u [beveiligde para meters](#secure-action-parameters) gebruikt voor het verwerken en beveiligen van gevoelige informatie, bijvoorbeeld in een [Azure Resource Manager sjabloon voor het automatiseren van de implementatie](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), kunt u expressies gebruiken om toegang te krijgen tot deze parameter waarden tijdens runtime. In dit voor beeld van een HTTP-actie definitie wordt de verificatie opgegeven `type` als `ClientCertificate` en wordt de [functie para meters ()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) gebruikt om de parameter waarden op te halen:
@@ -1004,12 +1014,12 @@ Op aanvraag triggers kunt u [Azure Active Directory open-verificatie (Azure AD O
 
 | Eigenschap (Designer) | Eigenschap (JSON) | Vereist | Waarde | Beschrijving |
 |---------------------|-----------------|----------|-------|-------------|
-| **Verificatie** | `type` | Yes | **Active Directory OAuth** <br>of <br>`ActiveDirectoryOAuth` | Het verificatie type dat moet worden gebruikt. Het [OAuth 2,0-protocol](../active-directory/develop/v2-overview.md)wordt momenteel gevolgd door Logic apps. |
-| **Instantie** | `authority` | No | <*URL-voor-Authority-token-Uitgever*> | De URL voor de instantie die het toegangs token levert. Deze waarde is standaard ingesteld op `https://login.windows.net` . |
-| **Tenant** | `tenant` | Yes | <*Tenant-ID*> | De Tenant-ID voor de Azure AD-Tenant |
-| **Doelgroep** | `audience` | Yes | <*resource-naar-autoriseren*> | De resource die u wilt gebruiken voor autorisatie, bijvoorbeeld `https://management.core.windows.net/` |
-| **Client ID** | `clientId` | Yes | <*client-ID*> | De client-ID voor de app die autorisatie aanvraagt |
-| **Referentie type** | `credentialType` | Yes | Certificaat <br>of <br>Geheim | Het referentie type dat door de client wordt gebruikt voor het aanvragen van autorisatie. Deze eigenschap en waarde worden niet weer gegeven in de onderliggende definitie van de logische app, maar bepaalt de eigenschappen die worden weer gegeven voor het geselecteerde referentie type. |
+| **Verificatie** | `type` | Ja | **Active Directory OAuth** <br>of <br>`ActiveDirectoryOAuth` | Het verificatie type dat moet worden gebruikt. Het [OAuth 2,0-protocol](../active-directory/develop/v2-overview.md)wordt momenteel gevolgd door Logic apps. |
+| **Instantie** | `authority` | Nee | <*URL-voor-Authority-token-Uitgever*> | De URL voor de instantie die het toegangs token levert. Deze waarde is standaard ingesteld op `https://login.windows.net` . |
+| **Bouw** | `tenant` | Ja | <*Tenant-ID*> | De Tenant-ID voor de Azure AD-Tenant |
+| **Doelgroep** | `audience` | Ja | <*resource-naar-autoriseren*> | De resource die u wilt gebruiken voor autorisatie, bijvoorbeeld `https://management.core.windows.net/` |
+| **Client ID** | `clientId` | Ja | <*client-ID*> | De client-ID voor de app die autorisatie aanvraagt |
+| **Referentie type** | `credentialType` | Ja | Certificaat <br>of <br>Geheim | Het referentie type dat door de client wordt gebruikt voor het aanvragen van autorisatie. Deze eigenschap en waarde worden niet weer gegeven in de onderliggende definitie van de logische app, maar bepaalt de eigenschappen die worden weer gegeven voor het geselecteerde referentie type. |
 | **Gescheiden** | `secret` | Ja, maar alleen voor het referentie type ' geheim ' | <*client-geheim*> | Het client geheim voor het aanvragen van autorisatie |
 | **Pfx** | `pfx` | Ja, maar alleen voor het referentie type ' certificaat ' | <*encoded-pfx-file-content*> | De met base64 gecodeerde inhoud van een PFX-bestand (Personal Information Exchange) |
 | **Wachtwoord** | `password` | Ja, maar alleen voor het referentie type ' certificaat ' | <*wacht woord voor pfx-bestand*> | Het wacht woord voor toegang tot het PFX-bestand |
@@ -1058,8 +1068,8 @@ Geef in de trigger of actie die onbewerkte authenticatie ondersteunt de volgende
 
 | Eigenschap (Designer) | Eigenschap (JSON) | Vereist | Waarde | Beschrijving |
 |---------------------|-----------------|----------|-------|-------------|
-| **Verificatie** | `type` | Yes | Onbewerkt | Het te gebruiken verificatietype |
-| **Waarde** | `value` | Yes | <*autorisatie-header-waarde*> | De waarde van de autorisatie-header die moet worden gebruikt voor verificatie |
+| **Verificatie** | `type` | Ja | Onbewerkt | Het te gebruiken verificatietype |
+| **Waarde** | `value` | Ja | <*autorisatie-header-waarde*> | De waarde van de autorisatie-header die moet worden gebruikt voor verificatie |
 ||||||
 
 Wanneer u [beveiligde para meters](#secure-action-parameters) gebruikt voor het verwerken en beveiligen van gevoelige informatie, bijvoorbeeld in een [Azure Resource Manager sjabloon voor het automatiseren van de implementatie](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), kunt u expressies gebruiken om toegang te krijgen tot deze parameter waarden tijdens runtime. In dit voor beeld wordt de HTTP-actie definitie opgegeven `type` als `Raw` , en wordt de [functie para meters ()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) gebruikt om de parameter waarden op te halen:
@@ -1095,9 +1105,9 @@ Wanneer de optie [beheerde identiteit](../active-directory/managed-identities-az
 
    | Eigenschap (Designer) | Eigenschap (JSON) | Vereist | Waarde | Beschrijving |
    |---------------------|-----------------|----------|-------|-------------|
-   | **Verificatie** | `type` | Yes | **Beheerde identiteit** <br>of <br>`ManagedServiceIdentity` | Het te gebruiken verificatietype |
-   | **Beheerde identiteit** | `identity` | Yes | * **Door het systeem toegewezen beheerde identiteit** <br>of <br>`SystemAssigned` <p><p>* <door de *gebruiker toegewezen identiteits naam*> | De beheerde identiteit die moet worden gebruikt |
-   | **Doelgroep** | `audience` | Yes | <*doel-Resource-ID*> | De resource-ID voor de doel resource waartoe u toegang wilt krijgen. <p>`https://storage.azure.com/`Maakt bijvoorbeeld de [toegangs tokens](../active-directory/develop/access-tokens.md) voor verificatie geldig voor alle opslag accounts. U kunt echter ook een URL voor de basis service opgeven, zoals `https://fabrikamstorageaccount.blob.core.windows.net` voor een specifiek opslag account. <p>**Opmerking**: de eigenschap **doel groep** kan in sommige triggers of acties worden verborgen. Als u deze eigenschap zichtbaar wilt maken, opent u de lijst **nieuwe para meter toevoegen** in de trigger of actie en selecteert u **doel groep**. <p><p>**Belang rijk**: Zorg ervoor dat deze doel resource-id *precies overeenkomt* met de waarde die door Azure AD wordt verwacht, inclusief alle vereiste afsluitende slashes. De `https://storage.azure.com/` resource-id voor alle Azure Blob Storage-accounts vereist dus een afsluitende slash. De resource-ID voor een specifiek opslag account vereist echter geen afsluitende slash. Zie [Azure-Services die ondersteuning bieden voor Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)om deze resource-id's te vinden. |
+   | **Verificatie** | `type` | Ja | **Beheerde identiteit** <br>of <br>`ManagedServiceIdentity` | Het te gebruiken verificatietype |
+   | **Beheerde identiteit** | `identity` | Ja | * **Door het systeem toegewezen beheerde identiteit** <br>of <br>`SystemAssigned` <p><p>* <door de *gebruiker toegewezen identiteits naam*> | De beheerde identiteit die moet worden gebruikt |
+   | **Doelgroep** | `audience` | Ja | <*doel-Resource-ID*> | De resource-ID voor de doel resource waartoe u toegang wilt krijgen. <p>`https://storage.azure.com/`Maakt bijvoorbeeld de [toegangs tokens](../active-directory/develop/access-tokens.md) voor verificatie geldig voor alle opslag accounts. U kunt echter ook een URL voor de basis service opgeven, zoals `https://fabrikamstorageaccount.blob.core.windows.net` voor een specifiek opslag account. <p>**Opmerking**: de eigenschap **doel groep** kan in sommige triggers of acties worden verborgen. Als u deze eigenschap zichtbaar wilt maken, opent u de lijst **nieuwe para meter toevoegen** in de trigger of actie en selecteert u **doel groep**. <p><p>**Belang rijk**: Zorg ervoor dat deze doel resource-id *precies overeenkomt* met de waarde die door Azure AD wordt verwacht, inclusief alle vereiste afsluitende slashes. De `https://storage.azure.com/` resource-id voor alle Azure Blob Storage-accounts vereist dus een afsluitende slash. De resource-ID voor een specifiek opslag account vereist echter geen afsluitende slash. Zie [Azure-Services die ondersteuning bieden voor Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)om deze resource-id's te vinden. |
    |||||
 
    Wanneer u [beveiligde para meters](#secure-action-parameters) gebruikt voor het verwerken en beveiligen van gevoelige informatie, bijvoorbeeld in een [Azure Resource Manager sjabloon voor het automatiseren van de implementatie](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), kunt u expressies gebruiken om toegang te krijgen tot deze parameter waarden tijdens runtime. Met deze HTTP-actie definitie geeft u bijvoorbeeld de `type` verificatie `ManagedServiceIdentity` op als en gebruikt u de [functie para meters ()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) om de parameter waarden op te halen:
@@ -1122,8 +1132,8 @@ Wanneer de optie [beheerde identiteit](../active-directory/managed-identities-az
 
    | Eigenschap (Designer) | Vereist | Waarde | Beschrijving |
    |---------------------|----------|-------|-------------|
-   | **Verbindings naam** | Yes | <*verbindings naam*> ||
-   | **Beheerde identiteit** | Yes | **Door het systeem toegewezen beheerde identiteit** <br>of <br> <*door de gebruiker toegewezen beheerde identiteits naam*> | Het te gebruiken verificatietype |
+   | **Verbindings naam** | Ja | <*verbindings naam*> ||
+   | **Beheerde identiteit** | Ja | **Door het systeem toegewezen beheerde identiteit** <br>of <br> <*door de gebruiker toegewezen beheerde identiteits naam*> | Het te gebruiken verificatietype |
    |||||
 
 

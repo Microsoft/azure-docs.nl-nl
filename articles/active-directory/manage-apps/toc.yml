@@ -158,6 +158,8 @@
           href: migration-resources.md
         - name: Een AD FS-app migreren naar Azure
           href: migrate-adfs-apps-to-azure.md
+        - name: Toepassings verificatie migreren naar Azure Active Directory
+          href: migrate-application-authentication-to-azure-active-directory.md
         - name: Het AD FS-toepassingsactiviteitrapport gebruiken (preview)
           href: migrate-adfs-application-activity.md
     - name: On-premises connectors configureren

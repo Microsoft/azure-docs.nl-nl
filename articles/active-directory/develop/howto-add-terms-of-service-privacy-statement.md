@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: 46919a97364aeff29e2b458c619315571dba7710
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 311dfd976610c392909a0ec3d91fecaa4d733539
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013665"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104192"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Procedure: Service voorwaarden en de privacyverklaring voor een app configureren
 
@@ -58,11 +58,11 @@ Wanneer de service voorwaarden en de privacyverklaring gereed zijn, kunt u aan d
 ### <a name="using-the-azure-portal"></a><a name="azure-portal"></a>Azure Portal gebruiken
 Volg deze stappen in de Azure Portal.
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>, selecteer de juiste AzureAD-TENANT (niet B2C).
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure Portal</a> en selecteer de juiste Azure AD-Tenant (niet B2C).
 2. Ga naar de sectie **app-registraties** en selecteer uw app.
-3. Open het deel venster **huis stijl** .
+3. Selecteer onder **beheren** de optie **huis stijl**.
 4. Vul de URL-velden **voor de service voorwaarden** en de **privacyverklaring** in.
-5. Sla uw wijzigingen op.
+5. Selecteer **Opslaan**.
 
     ![App-eigenschappen bevatten de Url's van de service voorwaarden en de privacyverklaring](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
 

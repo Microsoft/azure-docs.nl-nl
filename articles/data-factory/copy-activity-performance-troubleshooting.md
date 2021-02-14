@@ -1,23 +1,18 @@
 ---
 title: Prestaties van de Kopieer activiteit oplossen
 description: Meer informatie over het oplossen van problemen met de prestaties van Kopieer activiteiten in Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/07/2021
-ms.openlocfilehash: 203782ef2d95cd2b47082f630fa12531a110d49e
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 07be5d29ccb55fe97f38123ff4a850d28cd39ead
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98933926"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387679"
 ---
 # <a name="troubleshoot-copy-activity-performance"></a>Prestaties van de Kopieer activiteit oplossen
 
@@ -53,7 +48,7 @@ Als referentie bieden de tips voor het afstemmen van prestaties momenteel sugges
 
 In de details van de uitvoering en de duur onder aan de weer gave controle activiteit kopiëren worden de belangrijkste fasen van uw Kopieer activiteit beschreven (Zie het voor beeld aan het begin van dit artikel). Dit is vooral handig bij het oplossen van problemen met de Kopieer prestaties. Het knel punt van de Kopieer uitvoering is de versie met de langste duur. Raadpleeg de volgende tabel in de definitie van elke fase en leer hoe u de [Kopieer activiteit in azure IR oplost](#troubleshoot-copy-activity-on-azure-ir) en hoe u de [Kopieer activiteit op zelf-hostende IR oplost](#troubleshoot-copy-activity-on-self-hosted-ir) met deze informatie.
 
-| Fase           | Beschrijving                                                  |
+| Fase           | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
 | Wachtrij           | De verstreken tijd totdat de Kopieer activiteit daad werkelijk wordt gestart op de Integration runtime. |
 | Script vooraf kopiëren | De verstreken tijd tussen de Kopieer activiteit, te beginnen bij de IR-en kopieer activiteit, waarbij het vooraf kopiëren van het script in de Sink-gegevens opslag wordt voltooid. Toep assen wanneer u het script voor het vooraf kopiëren van de data base-sinks configureert, bijvoorbeeld wanneer u gegevens schrijft in Azure SQL Database opschonen voordat nieuwe gegevens worden gekopieerd. |

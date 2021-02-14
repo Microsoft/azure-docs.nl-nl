@@ -1,5 +1,5 @@
 ---
-title: Ondersteunde gegevens bronnen en bestands typen
+title: Ondersteunde gegevensbronnen en bestandstypen
 description: Dit artikel bevat conceptuele informatie over ondersteunde gegevens bronnen en bestands typen in controle sfeer liggen.
 author: viseshag
 ms.author: viseshag
@@ -7,12 +7,13 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 6432cc9affd34c0fa9b832aea91932a2b9e7540f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.custom: references_regions
+ms.openlocfilehash: 9a73f9b734d5404d07e05dd37d5ad8571c1aab2e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576669"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383888"
 ---
 # <a name="supported-data-sources-and-file-types-in-azure-purview"></a>Ondersteunde gegevens bronnen en bestands typen in azure controle sfeer liggen
 
@@ -70,6 +71,28 @@ Bestands sampling voor resource sets op bestands typen:
 - **Andere gestructureerde bestands typen (JSON, XML, txt)** -1 in 100 bestanden worden bemonsterd (L3-scan) in een map of groep partitie bestanden die worden beschouwd als een ' resource set '
 - **SQL-objecten en CosmosDB-entiteiten** : elk bestand is N3-scans.
 - **Document bestands typen** : elk bestand wordt gecontroleerd op N3. Patronen voor het instellen van een resource zijn niet van toepassing op deze bestands typen.
+
+## <a name="scan-regions"></a>Scan regio's
+Hier volgt een lijst met alle Azure-gegevens bron regio's (Data Centers) waarop de controle sfeer liggen-scanner wordt uitgevoerd. Als uw Azure-gegevens bron deel uitmaakt van een regio buiten deze lijst, wordt de scanner uitgevoerd in de regio van uw controle sfeer liggen-exemplaar.
+ 
+### <a name="purview-scanner-regions"></a>Controle sfeer liggen-scanner regio's
+
+- EastUs
+- EastUs2 
+- SouthCentralUS
+- WestUs
+- WestUs2
+- SoutheastAsia
+- West-Europa
+- NorthEurope
+- UkSouth
+- AustraliaEast
+- CanadaCentral
+- BrazilSouth
+- CentralIndia
+- JapanEast
+- SouthAfricaNorth
+- FranceCentral
 
 ## <a name="classification"></a>Classificatie
 

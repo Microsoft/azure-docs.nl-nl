@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/30/2020
 ms.author: cfowler
 ms.custom: include file
-ms.openlocfilehash: c6352ee9d29e4e45aa4be449046a0715fee06047
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
-ms.translationtype: HT
+ms.openlocfilehash: 9a003b5c42a6ef4c699a3768d15ae08f86d56e52
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165906"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367284"
 ---
 ## <a name="create-a-new-cdn-profile"></a>Nieuwe CDN-profielen maken
 
@@ -31,7 +31,7 @@ Een CDN-profiel is een container voor CDN-eindpunten waarmee een prijscategorie 
    
     | Instelling  | Waarde |
     | -------- | ----- |
-    | **Naam** | Voer *cdn-profile-123* in als profielnaam. Deze naam moet uniek zijn. Als deze al in gebruik is, moet u een andere naam invoeren. |
+    | **Naam** | Voer *cdn-profile-123* in als profielnaam. |
     | **Abonnement** | Kies een Azure-abonnement in de vervolgkeuzelijst. |
     | **Resourcegroep** | Selecteer **Nieuwe maken** en voer *CDNQuickstart-RG* in als naam van de resourcegroep of selecteer **Bestaande gebruiken** en kies *CDNQuickstart-RG* als u al een groep heeft. | 
     | **Resourcegroeplocatie** | Selecteer een locatie bij u in de buurt in de vervolgkeuzelijst. |

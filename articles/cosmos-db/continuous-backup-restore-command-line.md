@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 2e09542cbe56df7c8d6984a98fe77142f543ec03
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 9ea71dae746ac423e7b17b6235b4d5cd3e143cd7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539187"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377326"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-cli"></a>Continue back-ups en herstel tijdstippen configureren en beheren (preview)-Azure CLI gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -46,7 +46,7 @@ In dit artikel wordt beschreven hoe u een account met doorlopende back-up-en her
 
 ## <a name="provision-a-sql-api-account-with-continuous-backup"></a><a id="provision-sql-api"></a>Een SQL-API-account inrichten met doorlopende back-up
 
-Als u een SQL-API-account wilt inrichten met doorlopende back-up, moet u een extra argument `--backup-policy-type Continuous` door gegeven, samen met de normale inrichtings opdracht. De volgende opdracht is een voor beeld van een enkele regio schrijf account `pitracct2` met een continu back-upbeleid dat is gemaakt in de regio ' vs-West ' onder ' myrg-resource groep:
+Als u een SQL-API-account wilt inrichten met doorlopende back-up, moet u een extra argument `--backup-policy-type Continuous` door gegeven, samen met de normale inrichtings opdracht. De volgende opdracht is een voor beeld van één regio schrijf account `pitracct2` met een continu back-upbeleid dat is gemaakt in de regio *VS-West* onder *myrg* -resource groep:
 
 ```azurecli-interactive
 
@@ -61,7 +61,7 @@ az cosmosdb create \
 
 ## <a name="provision-an-azure-cosmos-db-api-for-mongodb-account-with-continuous-backup"></a><a id="provision-mongo-api"></a>Een Azure Cosmos DB-API inrichten voor een MongoDB-account met doorlopende back-up
 
-Met de volgende opdracht wordt een voor beeld weer gegeven van een schrijf account voor één regio `pitracct3` met de naam met continu back-upbeleid is de regio ' vs West ' onder de resource groep ' myrg ' gemaakt:
+Met de volgende opdracht wordt een voor beeld weer gegeven van een schrijf account voor één regio `pitracct3` met de naam met continu back-upbeleid is de regio *VS West* onder *myrg* -resource groep gemaakt:
 
 ```azurecli-interactive
 
@@ -145,13 +145,13 @@ Het antwoord bevat alle database accounts (zowel live als verwijderd) die kunnen
   }
 ```
 
-Net als de ' CreationTime ' of ' DeletionTime ' voor het account, is er ook een ' CreationTime ' of ' DeletionTime ' voor de regio. Op deze momenten kunt u de juiste regio en een geldig tijds bereik kiezen om in die regio te herstellen.
+Net als de `CreationTime` of `DeletionTime` voor het account, is er `CreationTime` ook een of `DeletionTime` voor de regio. Op deze momenten kunt u de juiste regio en een geldig tijds bereik kiezen om in die regio te herstellen.
 
 **Alle versies van data bases in een live-database account weer geven**
 
 Door alle versies van data bases weer te geven, kunt u de juiste data base kiezen in een scenario waarin de werkelijke tijd voor het bestaan van de data base onbekend is.
 
-Voer de volgende CLI-opdracht uit om alle versies van data bases weer te geven. Deze opdracht werkt alleen met Live-accounts. De para meters ' instanceId ' en ' Location ' worden opgehaald uit de eigenschappen ' name ' en ' Location ' in het antwoord van de `az cosmosdb restorable-database-account list` opdracht. Het kenmerk instanceId is ook een eigenschap van het bron database account dat wordt hersteld:
+Voer de volgende CLI-opdracht uit om alle versies van data bases weer te geven. Deze opdracht werkt alleen met Live-accounts. De `instanceId` `location` para meters en worden opgehaald uit `name` de `location` Eigenschappen en in het antwoord van de `az cosmosdb restorable-database-account list` opdracht. Het kenmerk instanceId is ook een eigenschap van het bron database account dat wordt hersteld:
 
 ```azurecli-interactive
 az cosmosdb sql restorable-database list \
@@ -198,7 +198,7 @@ Deze opdracht uitvoer wordt nu weer gegeven wanneer een Data Base is gemaakt en 
 
 **Alle versies van SQL-containers van een data base in een live data base-account weer geven**
 
-Gebruik de volgende opdracht om alle versies van SQL-containers weer te geven. Deze opdracht werkt alleen met Live-accounts. De para meter ' databaseRid ' is de ' ResourceId ' van de data base die u wilt herstellen. Het is de waarde van het kenmerk ownerResourceid in het antwoord van de `az cosmosdb sql restorable-database list` opdracht.
+Gebruik de volgende opdracht om alle versies van SQL-containers weer te geven. Deze opdracht werkt alleen met Live-accounts. De `databaseRid` para meter is de `ResourceId` Data Base die u wilt herstellen. Het is de waarde van het kenmerk dat is `ownerResourceid` gevonden in het antwoord van de `az cosmosdb sql restorable-database list` opdracht.
 
 ```azurecli-interactive
 az cosmosdb sql restorable-container list \
@@ -265,7 +265,7 @@ az cosmosdb sql restorable-resource list \
 
 ## <a name="enumerate-restorable-resources-for-mongodb-api-account"></a><a id="enumerate-mongodb-api"></a>Herstorable bronnen voor het MongoDB-API-account opsommen
 
-Met de opsommings opdrachten die hieronder worden beschreven, kunt u de resources ontdekken die kunnen worden hersteld met verschillende tijds tempels. Daarnaast bieden ze ook een feed van belang rijke gebeurtenissen voor het herstorable account, de data base en de container bronnen. Net als bij SQL-API kunt u de `az cosmosdb` opdracht gebruiken, maar met ' MongoDb ' als para meter in plaats van ' SQL '. Deze opdrachten werken alleen voor Live-accounts.
+Met de opsommings opdrachten die hieronder worden beschreven, kunt u de resources ontdekken die kunnen worden hersteld met verschillende tijds tempels. Daarnaast bieden ze ook een feed van belang rijke gebeurtenissen voor het herstorable account, de data base en de container bronnen. Net als bij SQL-API kunt u de `az cosmosdb` opdracht gebruiken, maar met `mongodb` als para meter in plaats van `sql` . Deze opdrachten werken alleen voor Live-accounts.
 
 **Alle versies van MongoDb-data bases in een live-database account weer geven**
 

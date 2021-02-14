@@ -1,23 +1,18 @@
 ---
 title: Gegevens uit Sales Force verplaatsen met behulp van Data Factory
 description: Meer informatie over het verplaatsen van gegevens uit Sales Force met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: dbe3bfd6-fa6a-491a-9638-3a9a10d396d1
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: ba95ba57bb57b1b2e9ecde3ad27f6bb5fbca66cb
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: ccc20f415d13356de755af5d1d3afc5b29de72f2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124880"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387050"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Gegevens uit Sales Force verplaatsen met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -49,9 +44,9 @@ Het is ook mogelijk dat de fout melding ' REQUEST_LIMIT_EXCEEDED ' in beide scen
 ## <a name="getting-started"></a>Aan de slag
 U kunt een pijp lijn maken met een Kopieer activiteit waarmee gegevens uit Sales Force worden verplaatst met behulp van verschillende hulpprogram ma's/Api's.
 
-De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren** . Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
+De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio** , **Azure PowerShell** , **Azure Resource Manager sjabloon** , **.net API** en **rest API** . Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -68,11 +63,11 @@ De volgende tabel bevat beschrijvingen van de JSON-elementen die specifiek zijn 
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **Sales Force** . |Ja |
-| environmentUrl | Geef de URL van het Sales Force-exemplaar op. <br><br> -Standaard is ' https: \/ /login.salesforce.com '. <br> -Geef "" op om gegevens uit de sandbox te kopiëren https://test.salesforce.com . <br> -Als u gegevens wilt kopiëren uit een aangepast domein, geeft u bijvoorbeeld ' https://[domain]. mijn. Sales Force. com ' op. |Nee |
-| gebruikersnaam |Geef een gebruikers naam op voor het gebruikers account. |Ja |
-| wachtwoord |Geef een wacht woord op voor het gebruikers account. |Ja |
-| Security |Geef een beveiligings token op voor het gebruikers account. Zie [beveiligings Token ophalen](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) voor instructies over het opnieuw instellen/ophalen van een beveiligings token. Zie [beveiliging en de API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm)voor meer informatie over beveiligings tokens in het algemeen. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **Sales Force**. |Yes |
+| environmentUrl | Geef de URL van het Sales Force-exemplaar op. <br><br> -Standaard is ' https: \/ /login.salesforce.com '. <br> -Geef "" op om gegevens uit de sandbox te kopiëren https://test.salesforce.com . <br> -Als u gegevens wilt kopiëren uit een aangepast domein, geeft u bijvoorbeeld ' https://[domain]. mijn. Sales Force. com ' op. |No |
+| gebruikersnaam |Geef een gebruikers naam op voor het gebruikers account. |Yes |
+| wachtwoord |Geef een wacht woord op voor het gebruikers account. |Yes |
+| Security |Geef een beveiligings token op voor het gebruikers account. Zie [beveiligings Token ophalen](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) voor instructies over het opnieuw instellen/ophalen van een beveiligings token. Zie [beveiliging en de API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm)voor meer informatie over beveiligings tokens in het algemeen. |Yes |
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 Zie het artikel [gegevens sets maken](data-factory-create-datasets.md) voor een volledige lijst met secties en eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. Secties zoals structuur, Beschik baarheid en beleid van een gegevensset-JSON zijn vergelijkbaar voor alle typen gegevens sets (Azure SQL, Azure Blob, Azure Table, enzovoort).
@@ -108,8 +103,8 @@ Als de bron van het type **RelationalSource** (inclusief Sales Force) is in Kopi
 ### <a name="retrieving-data-using-where-clause-on-datetime-column"></a>Ophalen van gegevens met behulp van de component WHERE in de kolom DateTime
 Wanneer u de SOQL of SQL-query opgeeft, moet u rekening best Eden aan het verschil in datum-en tijd notatie. Bijvoorbeeld:
 
-* Voor **beeld van SOQL** :`$$Text.Format('SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= {0:yyyy-MM-ddTHH:mm:ssZ} AND LastModifiedDate < {1:yyyy-MM-ddTHH:mm:ssZ}', WindowStart, WindowEnd)`
-* **SQL** -voor beeld:
+* Voor **beeld van SOQL**:`$$Text.Format('SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= {0:yyyy-MM-ddTHH:mm:ssZ} AND LastModifiedDate < {1:yyyy-MM-ddTHH:mm:ssZ}', WindowStart, WindowEnd)`
+* **SQL**-voor beeld:
     * **Gebruik de wizard kopiëren om de query op te geven:**`$$Text.Format('SELECT * FROM Account WHERE LastModifiedDate >= {{ts\'{0:yyyy-MM-dd HH:mm:ss}\'}} AND LastModifiedDate < {{ts\'{1:yyyy-MM-dd HH:mm:ss}\'}}', WindowStart, WindowEnd)`
     * **JSON bewerken gebruiken om de query op te geven (juist escape-teken):**`$$Text.Format('SELECT * FROM Account WHERE LastModifiedDate >= {{ts\\'{0:yyyy-MM-dd HH:mm:ss}\\'}} AND LastModifiedDate < {{ts\\'{1:yyyy-MM-dd HH:mm:ss}\\'}}', WindowStart, WindowEnd)`
 
@@ -119,8 +114,8 @@ U kunt gegevens ophalen uit Sales Force-rapporten door query op te geven als `{c
 ### <a name="retrieving-deleted-records-from-salesforce-recycle-bin"></a>Ophalen van verwijderde records uit de Prullenbak voor Sales Force
 Als u wilt zoeken in de Prullenbak van het Sales Force-cluster, kunt u **' IsDeleted = 1 '** opgeven in de query. Bijvoorbeeld:
 
-* Als u alleen de verwijderde records wilt opvragen, geeft u ' Select * from MyTable__c **where IsDeleted = 1** '
-* Om alle records op te vragen, inclusief de bestaande en verwijderde, geeft u ' Select * from MyTable__c **where IsDeleted = 0 of IsDeleted = 1** '
+* Als u alleen de verwijderde records wilt opvragen, geeft u ' Select * from MyTable__c **where IsDeleted = 1**'
+* Om alle records op te vragen, inclusief de bestaande en verwijderde, geeft u ' Select * from MyTable__c **where IsDeleted = 0 of IsDeleted = 1**'
 
 ## <a name="json-example-copy-data-from-salesforce-to-azure-blob"></a>JSON-voor beeld: gegevens kopiëren van Sales Force naar Azure Blob
 In het volgende voor beeld worden voor beeld-JSON-definities weer gegeven die u kunt gebruiken om een pijp lijn te maken met behulp van [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) of [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Ze laten zien hoe u gegevens kunt kopiëren van Sales Force naar Azure Blob Storage. Gegevens kunnen echter worden gekopieerd naar de [hier](data-factory-data-movement-activities.md#supported-data-stores-and-formats) opgegeven sinks met behulp van de Kopieer activiteit in azure Data Factory.
@@ -225,7 +220,7 @@ Gegevens worden elk uur naar een nieuwe BLOB geschreven (frequentie: uur, interv
 
 **Pijp lijn met Kopieer activiteit**
 
-De pijp lijn bevat een Kopieer activiteit, die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en die elke uur is gepland om te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **RelationalSource** en het **sink** -type is ingesteld op **BlobSink** .
+De pijp lijn bevat een Kopieer activiteit, die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en die elke uur is gepland om te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **RelationalSource** en het **sink** -type is ingesteld op **BlobSink**.
 
 Zie [Eigenschappen van het type RelationalSource](#copy-activity-properties) voor de lijst met eigenschappen die worden ondersteund door de RelationalSource.
 
@@ -286,7 +281,7 @@ Zie [Eigenschappen van het type RelationalSource](#copy-activity-properties) voo
 | Sales Force-type | . Op het netwerk gebaseerd type |
 | --- | --- |
 | Automatisch nummer |Tekenreeks |
-| Checkbox |Boolean-waarde |
+| Checkbox |Booleaans |
 | Valuta |Decimaal |
 | Date |DateTime |
 | Datum/tijd |DateTime |
@@ -294,7 +289,7 @@ Zie [Eigenschappen van het type RelationalSource](#copy-activity-properties) voo
 | Id |Tekenreeks |
 | Opzoek relatie |Tekenreeks |
 | Meervoudige selectie lijst |Tekenreeks |
-| Getal |Decimaal |
+| Aantal |Decimaal |
 | Percentage |Decimaal |
 | Telefoon |Tekenreeks |
 | Picklist |Tekenreeks |

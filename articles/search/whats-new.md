@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 02/09/2021
 ms.custom: references_regions
-ms.openlocfilehash: 08491dcaf66789f13aa9f2e058303a28e7ab8388
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 13cb22c178be29af71b57d0f50fdbd0e95718069
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/10/2021
-ms.locfileid: "100099520"
+ms.locfileid: "100104600"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -24,7 +24,7 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  Beschrijving | Beschikbaarheid  |
 |------------------------------|---------------|---------------|
 | [Documenten opnieuw instellen (preview-versie)](search-howto-run-reset-indexers.md) |  Afzonderlijke geselecteerde Zoek documenten in de werk belasting van de Indexeer functie opnieuw verwerken. | [Search REST API 2020-06-30-preview](/rest/api/searchservice/index-preview) |
-| Ondersteuning voor beschikbaarheids zone | Zoek Services met twee of meer replica's in bepaalde regio's, zoals wordt weer gegeven in [schaal voor prestaties](search-performance-optimization.md), profiteer van tolerantie door replica's te hebben op twee of meer verschillende fysieke locaties.  | De regio en de datum waarop de zoek service is gemaakt, bepalen de beschik baarheid. Zie het document voor het afstemmen van de prestaties voor meer informatie. |
+| [Beschikbaarheidszones](search-performance-optimization.md#availability-zones)| Zoek Services met twee of meer replica's in bepaalde regio's, zoals vermeld in [dit artikel](search-performance-optimization.md#availability-zones), verwerft tolerantie door replica's te hebben op twee of meer verschillende fysieke locaties.  | De regio en de datum waarop de zoek service is gemaakt, bepalen de beschik baarheid. Zie het document voor het afstemmen van de prestaties voor meer informatie. |
 
 ## <a name="january-2021"></a>Januari 2021
 
@@ -36,7 +36,8 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 
 | Maand | Functie | Beschrijving |
 |-------|---------|-------------|
-| November | [Versleuteling door de klant beheerde sleutel (uitgebreid)](search-security-manage-encryption-keys.md) | breidt door de klant beheerde versleuteling uit over het volledige aantal assets dat door een zoek service wordt gemaakt en beheerd. Algemeen verkrijgbaar.|
+| November | [Versleuteling door de klant beheerde sleutel (uitgebreid)](search-security-manage-encryption-keys.md) | Breidt door de klant beheerde versleuteling uit over het volledige aantal assets dat door een zoek service wordt gemaakt en beheerd. Algemeen verkrijgbaar.|
+| september | [Visual Studio code Extension voor Azure Cognitive Search](search-get-started-vs-code.md) | Hiermee voegt u een werk ruimte, navigatie, IntelliSense en sjablonen toe voor het maken van indexen, Indexeer functies, gegevens bronnen en vaardig heden. | Open bare preview |
 | september | [Beheerde service-identiteit (Indexeer functies)](search-howto-managed-identities-data-sources.md) | Algemeen verkrijgbaar.  |
 | september | [Uitgaande aanvragen met behulp van een privélink](search-indexer-howto-access-private.md) | Algemeen verkrijgbaar.  |
 | september | [Beheer van REST API (2020-08-01)](/rest/api/searchmanagement/management-api-versions) | Algemeen verkrijgbaar. |

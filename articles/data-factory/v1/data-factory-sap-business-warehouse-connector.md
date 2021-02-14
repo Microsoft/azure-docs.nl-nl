@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van SAP Business Warehouse met behulp van Azure Data Factory
 description: Meer informatie over het verplaatsen van gegevens van SAP Business Warehouse met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-editor: ''
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fb91a09ed31658c2d547a7b46cf2f986bfbd0e50
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 513d6b28908b99594eaa525e86690fa75bffb103
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508285"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386965"
 ---
 # <a name="move-data-from-sap-business-warehouse-using-azure-data-factory"></a>Gegevens verplaatsen van SAP Business Warehouse met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -288,7 +283,7 @@ Bij het verplaatsen van gegevens uit SAP BW worden de volgende toewijzingen gebr
 
 Gegevens type in de ABAP-woorden lijst | .NET-gegevens type
 -------------------------------- | --------------
-ACCP |  Int
+ACCP |    Int
 CHAR | Tekenreeks
 CLNT | Tekenreeks
 LOPEN | Decimaal

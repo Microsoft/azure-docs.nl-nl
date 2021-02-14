@@ -7,12 +7,12 @@ ms.date: 01/25/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 99da711038e1fcea3e14584fde09ccd1f79feffa
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 2a3253d1ed8b0814fc20b3256a0f98d3aa0949f6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98916693"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393306"
 ---
 # <a name="introduction-to-azure-defender-for-app-service"></a>Inleiding tot Azure Defender voor App Service
 
@@ -23,13 +23,13 @@ Azure App Service is een volledig beheerd platform voor het bouwen en hosten van
 
 ## <a name="availability"></a>Beschikbaarheid
 
-|Aspect|Details|
-|----|:----|
-|Releasestatus:|Algemene Beschik baarheid (GA)|
-|Prijzen:|Voor [Azure Defender for App Service](azure-defender.md) gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)<br>Op de pagina prijzen en instellingen wordt het aantal exemplaren voor de **resource hoeveelheid** weer gegeven. Dit is het totale aantal reken instanties, in alle App Service plannen voor dit abonnement, dat wordt uitgevoerd op het moment dat u de pagina prijs categorie hebt geopend.<br>Als u het aantal wilt valideren, opent u **app service plannen** in de Azure Portal en controleert u het aantal reken instanties dat door elk abonnement wordt gebruikt.|
-|Ondersteunde App Service-plannen:|![Ja](./media/icons/yes-icon.png) Basic, Standard, Premium, Isolated of Linux<br>![Nee](./media/icons/no-icon.png) Free, Shared of Consumption<br>[Meer informatie over App Service-plannen](https://azure.microsoft.com/pricing/details/app-service/plans/)|
-|Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
-|||
+| Aspect                       | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Releasestatus:               | Algemene Beschik baarheid (GA)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prijzen:                     | Voor [Azure Defender for App Service](azure-defender.md) gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)<br>De facturering is afhankelijk van het totale aantal reken instanties in alle plannen|
+| Ondersteunde App Service-plannen: | Alle App Service plannen worden ondersteund (met één uitzonde ring, zie hieronder). [Meer informatie over app service-abonnementen](https://azure.microsoft.com/pricing/details/app-service/plans/).<br>Azure Functions voor het verbruiks abonnement wordt niet ondersteund. Meer [informatie over Azure functions hosting opties](../azure-functions/functions-scale.md).                                                                                                                                                                                                                                                                   |
+| Clouds:                      | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)                                                                                                                                                                                                                                                                                                                                                                                 |
+|                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-app-service"></a>Wat zijn de voor delen van Azure Defender voor App Service?
 

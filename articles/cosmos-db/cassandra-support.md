@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 3b2d1bbe2de0ae72087fdf3debeaf42f8745fed9
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: f48935edd5746b0f3f3440e249024cbe2901317b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576478"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374368"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Door Azure Cosmos DB Cassandra API ondersteunde Apache Cassandra-functies 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -238,7 +238,7 @@ Azure Cosmos DB Cassandra-API is een beheerd serviceplatform. Het vereist geen b
 
 ## <a name="hosted-cql-shell-preview"></a>Gehoste CQL-shell (preview)
 
-U kunt een gehoste Cassandra-shell (CQLSH v5.0.1) rechtstreeks vanuit Data Explorer openen in de [Azure-portal](data-explorer.md) of in [Azure Cosmos DB Explorer](https://cosmos.azure.com/). Voordat u de CQL-shell inschakelt, moet u de functie [Notebooks](enable-notebooks.md) inschakelen in uw account (als deze nog niet is ingeschakeld, wordt u gevraagd dit te doen wanneer u klikt op `Open Cassandra Shell`). Controleer de gemarkeerde notitie in [Notebooks inschakelen voor Azure Cosmos DB-accounts](enable-notebooks.md) voor ondersteunde Azure-regio's.
+U kunt een gehoste Cassandra-shell (CQLSH v5.0.1) rechtstreeks vanuit Data Explorer openen in de [Azure-portal](data-explorer.md) of in [Azure Cosmos DB Explorer](https://cosmos.azure.com/). Voordat u de CQL-shell inschakelt, moet u de functie [Notebooks](enable-notebooks.md) inschakelen in uw account (als deze nog niet is ingeschakeld, wordt u gevraagd dit te doen wanneer u klikt op `Open Cassandra Shell`). Zie het artikel [notebooks inschakelen voor Azure Cosmos DB accounts](enable-notebooks.md#supported-regions) voor ondersteunde Azure-regio's.
 
 :::image type="content" source="./media/cassandra-support/cqlsh.png" alt-text="CQLSH openen":::
 

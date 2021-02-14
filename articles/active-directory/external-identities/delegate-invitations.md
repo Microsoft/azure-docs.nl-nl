@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 11/30/2020
+ms.date: 02/12/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a249102de6a5bff7354e339e604b7d2efebd4fb
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 68ed67afc949b3a67936f20a098bca8b6906a598
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546168"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365545"
 ---
 # <a name="enable-b2b-external-collaboration-and-manage-who-can-invite-guests"></a>Externe B2B-samenwerking inschakelen en beheren wie gasten kan uitnodigen
 
@@ -45,8 +45,6 @@ Standaard kunnen alle gebruikers, inclusief gasten, gast gebruikers uitnodigen.
 
 4. Kies onder **toegangs beperkingen voor gast gebruikers (preview)** het toegangs niveau dat u wilt dat gast gebruikers hebben:
   
-    ![Instellingen voor toegangs beperkingen van gast gebruikers](./media/delegate-invitations/guest-user-access.png)
-
    - **Gast gebruikers hebben dezelfde toegang als leden (ten opzichte van de meeste)**: met deze optie krijgen gasten dezelfde toegang tot Azure AD-resources en Directory gegevens als gebruikers van een lid.
 
    - **Gast gebruikers hebben beperkte toegang tot de eigenschappen en lidmaatschappen van Directory-objecten**: (standaard) met deze instelling worden gasten geblokkeerd voor bepaalde directory taken, zoals het inventariseren van gebruikers, groepen of andere Directory bronnen. Gasten kunnen lidmaatschap van alle niet-verborgen groepen zien.
@@ -69,13 +67,11 @@ Standaard kunnen alle gebruikers, inclusief gasten, gast gebruikers uitnodigen.
 
 6. Kies onder **e-mail eenmalige wachtwoord code voor gasten** de juiste instellingen (Zie [e-mail met eenmalige wachtwoord code verificatie](one-time-passcode.md)voor meer informatie):
 
-   ![Instellingen voor eenmalige e-mail wachtwoord code](./media/delegate-invitations/email-otp-settings.png)
-
-   - **Eenmalige e-mail wachtwoord voor gasten automatisch inschakelen in maart 2021**. Prijs Als de functie voor eenmalige e-mail wachtwoord code nog niet is ingeschakeld voor uw Tenant, wordt deze in maart 2021 automatisch ingeschakeld. Er is geen verdere actie nodig als u de functie op dat moment wilt inschakelen. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
+   - **Eenmalige e-mail wachtwoord voor gasten automatisch inschakelen in oktober 2021**. Prijs Als de functie voor eenmalige e-mail wachtwoord code nog niet is ingeschakeld voor uw Tenant, wordt deze automatisch ingeschakeld in oktober 2021. Er is geen verdere actie nodig als u de functie op dat moment wilt inschakelen. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
 
    - **Eenmalige e-mail wachtwoord instellen voor gasten die nu effectief** zijn. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code in voor uw Tenant.
 
-   - **Eenmalige e-mail wachtwoord voor gasten uitschakelen**. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code voor uw Tenant uit en voor komt u dat de functie wordt ingeschakeld in maart 2021.
+   - **Eenmalige e-mail wachtwoord voor gasten uitschakelen**. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code voor uw Tenant uit en voor komt u dat de functie wordt ingeschakeld in oktober 2021.
 
    > [!NOTE]
    > In plaats van de bovenstaande opties ziet u de volgende wissel knop als u deze functie hebt ingeschakeld of uitgeschakeld of als u eerder hebt gekozen voor de preview-versie:

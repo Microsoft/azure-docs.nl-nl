@@ -1,21 +1,17 @@
 ---
 title: De prestaties van de Azure-SSIS Integration Runtime configureren
 description: Meer informatie over het configureren van de eigenschappen van de Azure-SSIS Integration Runtime voor hoge prestaties
-services: data-factory
 ms.date: 01/10/2018
 ms.topic: conceptual
 ms.service: data-factory
-ms.workload: data-services
 author: swinarko
 ms.author: sawinark
-ms.reviewer: ''
-manager: anandsub
-ms.openlocfilehash: f0fcd61230d68d7b26017237e2b7e0465fcb1f07
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 5d275100124660b901504b7e7f71cf93518fd077
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635317"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364389"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-for-high-performance"></a>De Azure-SSIS Integration Runtime configureren voor hoge prestaties
 
@@ -118,7 +114,7 @@ De y-as is het aantal pakketten dat in één uur wordt uitgevoerd. Houd er reken
 
 ## <a name="azuressisnodenumber"></a>AzureSSISNodeNumber
 
-**AzureSSISNodeNumber** past de schaal baarheid van de Integration runtime aan. De door Voer van de Integration runtime is evenredig met de **AzureSSISNodeNumber** . Stel eerst de **AzureSSISNodeNumber** in op een kleine waarde, Controleer de door Voer van de Integration runtime en pas vervolgens de waarde voor uw scenario aan. Als u het aantal worker-knoop punten opnieuw wilt configureren, raadpleegt u [een Azure SSIS Integration runtime beheren](manage-azure-ssis-integration-runtime.md).
+**AzureSSISNodeNumber** past de schaal baarheid van de Integration runtime aan. De door Voer van de Integration runtime is evenredig met de **AzureSSISNodeNumber**. Stel eerst de **AzureSSISNodeNumber** in op een kleine waarde, Controleer de door Voer van de Integration runtime en pas vervolgens de waarde voor uw scenario aan. Als u het aantal worker-knoop punten opnieuw wilt configureren, raadpleegt u [een Azure SSIS Integration runtime beheren](manage-azure-ssis-integration-runtime.md).
 
 ## <a name="azuressismaxparallelexecutionspernode"></a>AzureSSISMaxParallelExecutionsPerNode
 

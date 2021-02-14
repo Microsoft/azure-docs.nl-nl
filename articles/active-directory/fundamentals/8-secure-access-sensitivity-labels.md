@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dcb6d24eacbe594a907f084874e76fea963c561
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0ac3141823eb72b17754a771cd63264fe851949d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725125"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365358"
 ---
 # <a name="control-access-with-sensitivity-labels"></a>Toegang beheren met gevoeligheids labels 
 
@@ -66,7 +66,7 @@ Bepaal het volgende als u wilt weten hoe u externe toegang tot uw inhoud bepaalt
 
 * Welke standaard waarden moeten er worden gebruikt voor HBI-gegevens,-sites of-Microsoft 365 groepen?
 
-* Waar gebruikt u gevoeligheids labels voor [labelen en bewaken](/microsoft-365/compliance/label-analytics?view=o365-worldwide), vergeleken met het [afdwingen van versleuteling](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) of het [afdwingen van toegangs beperkingen voor containers](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
+* Waar gebruikt u gevoeligheids labels voor [labelen en bewaken](/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide), vergeleken met het [afdwingen van versleuteling](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) of het [afdwingen van toegangs beperkingen voor containers](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
 
 **Voor e-mail en inhoud**
 

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 0de3c46eba0b9364e38c4a952a320ac1c3de512f
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 95747bb68a904212e7e075fc29b2497932d66e5f
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583566"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103852"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Angular-toepassing met één pagina
 
@@ -35,9 +35,7 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 >
 > ### <a name="option-1-express-register-and-automatically-configure-the-app-and-then-download-the-code-sample"></a>Optie 1 (express): Registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-> 1. Als uw account toegang heeft tot meer dan één tenant, selecteert u het account in de rechterbovenhoek en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
-> 1. Open het nieuwe deelvenster [App-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs) in de Azure-portal.
+> 1. Ga naar de quickstart-ervaring <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">Azure-portal - App-registraties</a>.
 > 1. Voer een naam in voor de toepassing en selecteer dan **Registreren**.
 > 1. Ga naar het deelvenster quickstart en bekijk de Angular-quickstart. Volg de instructies om de nieuwe toepassing te downloaden en automatisch te configureren.
 >
@@ -45,8 +43,8 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 >
 > #### <a name="step-1-register-the-application"></a>Stap 1: Registreer de toepassing
 >
-> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-> 1. Als uw account toegang heeft tot meer dan één tenant, selecteert u uw account rechts bovenin en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
+> 1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 > 1. Volg de [instructies om een toepassing met één pagina te registreren](./scenario-spa-app-registration.md) in de Azure-portal.
 > 1. Voeg een nieuw platform toe aan het deelvenster **Verificatie** van de registratie van uw app en registreer de omleidings-URI: `http://localhost:4200/`.
 > 1. In deze quickstart wordt gebruikgemaakt van de [impliciete toewijzingsstroom](v2-oauth2-implicit-grant-flow.md). Selecteer in de sectie **impliciete toekenning en hybride stromen** **id-tokens** en **toegangs tokens**. Id-tokens en toegangstokens zijn vereist, omdat via de app gebruikers moeten worden aangemeld en een API moet worden aangeroepen.

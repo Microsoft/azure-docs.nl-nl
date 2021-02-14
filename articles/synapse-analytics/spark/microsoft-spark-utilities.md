@@ -1,7 +1,7 @@
 ---
 title: Inleiding tot micro soft Spark-hulpprogram ma's
 description: 'Zelf studie: MSSparkutils in azure Synapse Analytics-notebooks'
-author: ruxu
+author: ruixinxu
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.topic: reference
@@ -10,12 +10,12 @@ ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: d36086052f4e5719fd17989e3326a4b5728ee3ca
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 58672bd68d9a2ea85f58b3761f3b89098b9f5afc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954290"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368656"
 ---
 # <a name="introduction-to-microsoft-spark-utilities"></a>Inleiding tot micro soft Spark-Hulpprogram Ma's
 
@@ -25,7 +25,7 @@ Micro soft Spark-Hulpprogram Ma's (MSSparkUtils) is een ingebouwd pakket waarmee
 
 ### <a name="configure-access-to-azure-data-lake-storage-gen2"></a>Toegang tot Azure Data Lake Storage Gen2 configureren 
 
-Synapse-notebooks gebruiken Azure Active Directory (Azure AD) pass-through om toegang te krijgen tot de ADLS Gen2 accounts. U moet een **Blob Storage Inzender** zijn om toegang te krijgen tot het ADLS Gen2 account (of de map). 
+Synapse-notebooks gebruiken Azure Active Directory (Azure AD) pass-through om toegang te krijgen tot de ADLS Gen2 accounts. U moet **Blob Storage Inzender** zijn om toegang te krijgen tot het ADLS Gen2 account (of de map). 
 
 Synapse-pipelines gebruiken werk ruimte-identiteit (MSI) voor toegang tot de opslag accounts. Als u MSSparkUtils in uw pijplijn activiteiten wilt gebruiken, moet uw werkruimte identiteit worden **Blob Storage Inzender** om toegang te krijgen tot het ADLS Gen2 account (of de map).
 

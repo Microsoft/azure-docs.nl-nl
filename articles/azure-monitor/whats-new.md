@@ -5,17 +5,61 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 01/11/2021
-ms.openlocfilehash: 6347bd3710a4727b9d3f820072ffff21cb57752d
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
-ms.translationtype: HT
+ms.date: 02/10/2021
+ms.openlocfilehash: 35bfc9c752243a69912b0732c4105712fa4a6086
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071864"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377666"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
 In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzienlijk bijgewerkt zijn. Elke eerste week van de maand wordt de lijst bijgewerkt met artikelupdates van de vorige maand.
+
+## <a name="january-2021"></a>Januari 2021 
+
+### <a name="general"></a>Algemeen 
+- [Azure monitor Veelgestelde vragen](faq.md) : er is informatie toegevoegd over de apparaatgegevens voor Application Insights.
+### <a name="agents"></a>Agents  
+- Het [verzamelen van Event Tracing for Windows gebeurtenissen (etw) voor analyse Azure monitor-logboeken](platform/data-sources-event-tracing-windows.md) -nieuw artikel.
+- [Regels voor gegevens verzameling in azure monitor (preview)](platform/data-collection-rule-overview.md) : toegevoegde koppelingen naar Power shell en CLI-voor beelden.
+
+### <a name="alerts"></a>Waarschuwingen  
+- [Configureer Azure om verbinding te maken met ITSM-hulpprogram ma's met behulp van veilig exporteren](platform/itsm-connector-secure-webhook-connections-azure-configuration.md) -nieuw artikel.
+- [Connector status fouten in het nieuwe artikel ITSMC dash board](platform/itsmc-dashboard-errors.md) .
+- [Onderzoek fouten met behulp van het artikel ITSMC dash board](platform/itsmc-dashboard.md) -nieuw.
+- [Problemen met Azure metrische waarschuwingen oplossen](platform/alerts-troubleshoot-metric.md) -secties toegevoegd voor dynamische drempel waarden.
+- [Problemen oplossen in IT Service Management-connector](platform/itsmc-troubleshoot-overview.md) -nieuw artikel.
+
+### <a name="application-insights"></a>Application Insights
+- [Azure-toepassing Insights-correlatie van de telemetrie](app/correlation.md) heeft een tracering correlatie toegevoegd wanneer de ene module een andere aanroept in opentellingen python.
+- [Application Insights voor](app/javascript.md) webpagina's: nieuw artikel.
+- [Klik op Analytics-invoeg toepassing voor automatische verzamelingen voor Application Insights java script SDK](app/javascript-click-analytics-plugin.md) -nieuw artikel.
+- [Bewaak uw apps zonder code wijzigingen-automatische instrumentatie voor Azure monitor](app/codeless-overview.md) python-kolom toegevoegd Application Insights.
+- [React-invoegtoepassing voor Application Insights JavaScript SDK](app/javascript-react-plugin.md): nieuw artikel.
+- [Telemetrie-processors (preview)-Azure Monitor Application Insights voor het schrijven van Java](app/java-standalone-telemetry-processors.md) .
+- [Gebruiks analyse met Azure-toepassing Insights](app/usage-overview.md) -nieuw artikel.
+- [Toepassings wijzigings analyse in azure monitor gebruiken om problemen met web-apps te vinden](app/change-analysis.md) -fout messges toegevoegd.
+
+
+### <a name="insights"></a>Inzichten    
+- [Azure monitor voor Azure Data Explorer (preview)](insights/data-explorer.md) -nieuw artikel.
+
+### <a name="logs"></a>Logboeken    
+- [Azure monitor door de klant beheerde sleutel](platform/customer-managed-keys.md) : een door de gebruiker toegewezen beheerde identiteit introduceren.
+- [Azure monitor registreert toegewezen clusters](log-query/logs-dedicated-clusters.md) -bijgewerkte respons code.
+- [Query-Azure monitor van meerdere services en Azure Data Explorer (preview)](platform/azure-monitor-troubleshooting-logs.md) -nieuw artikel.
+
+### <a name="metrics"></a>Metrische gegevens
+- [Azure monitor metrische gegevens aggregatie en weer gave](platform/metrics-aggregation-explained.md) van statistieken: nieuw artikel.
+
+### <a name="platform-logs"></a>Platform logboeken
+- [Azure monitor resource logboeken ondersteunde services en categorieën](platform/resource-logs-categories.md) : nieuw artikel.
+
+### <a name="visualizations"></a>Visualisaties
+- [Azure monitor werkmappen gegevens bronnen](platform/workbooks-data-sources.md) : toegevoegde samenvoeg-en wijzigings analyse.
+
 
 ## <a name="december-2020"></a>December 2020
 

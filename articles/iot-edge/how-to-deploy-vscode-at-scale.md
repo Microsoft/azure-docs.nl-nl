@@ -9,12 +9,12 @@ ms.date: 1/8/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7f6e90edc0503326dc9dbb06abfcf59fa2d51e1e
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 9ae7009468b548cb9386fd405abfbe110d62f9a3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043813"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377513"
 ---
 # <a name="deploy-iot-edge-modules-at-scale-using-visual-studio-code"></a>IoT Edge-modules op schaal implementeren met behulp van Visual Studio code
 
@@ -82,7 +82,7 @@ Hier volgt een basis implementatie manifest met een module als voor beeld:
             "edgeAgent": {
               "type": "docker",
               "settings": {
-                "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+                "image": "mcr.microsoft.com/azureiotedge-agent:1.1",
                 "createOptions": "{}"
               }
             },
@@ -91,7 +91,7 @@ Hier volgt een basis implementatie manifest met een module als voor beeld:
               "status": "running",
               "restartPolicy": "always",
               "settings": {
-                "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+                "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
                 "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}],\"443/tcp\":[{\"HostPort\":\"443\"}]}}}"
               }
             }
@@ -229,7 +229,7 @@ Nadat u het implementatie manifest en de geconfigureerde labels op het apparaat 
   | Parameter | Beschrijving |
   | --- | --- |
   | Implementatie-ID | De naam van de implementatie die wordt gemaakt in de IoT-hub. Geef uw implementatie een unieke naam van Maxi maal 128 kleine letters. Vermijd spaties en de volgende ongeldige tekens: `& ^ [ ] { } \ | " < > /` . |
-  | Doel voorwaarde | Geef een doel voorwaarde op om te bepalen welke apparaten worden bedoeld voor deze implementatie.De voor waarde is gebaseerd op apparaatspecifieke Tags of dubbele gerapporteerde eigenschappen van het apparaat en moet overeenkomen met de indeling van de expressie.Bijvoorbeeld `tags.environment='test' and properties.reported.devicemodel='4000x'` . |
+  | Doel voorwaarde | Geef een doel voorwaarde op om te bepalen welke apparaten worden bedoeld voor deze implementatie. De voor waarde is gebaseerd op apparaatspecifieke Tags of dubbele gerapporteerde eigenschappen van het apparaat en moet overeenkomen met de indeling van de expressie. Bijvoorbeeld `tags.environment='test' and properties.reported.devicemodel='4000x'`. |
   | Prioriteit |  Een positief geheel getal. Als twee of meer implementaties op hetzelfde apparaat zijn gericht, is de implementatie met de hoogste numerieke waarde voor prioriteit van toepassing. |
 
   Nadat u de prioriteit hebt opgegeven, moet de Terminal de uitvoer weer geven die lijkt op de volgende voors telling:

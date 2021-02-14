@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/24/2019
+ms.date: 02/10/2021
 ms.author: cherylmc
-ms.openlocfilehash: f307ff9e7d609628bc22374fc5874dcbf993e4c2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 9d31bcaad01b9b762e57bd619d45c1f53ffb201e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661185"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376799"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Virtuele netwerken van verschillende implementatie modellen verbinden met behulp van de portal
 
@@ -75,7 +75,7 @@ Voor deze configuratie maakt u een VPN-gateway verbinding via een IPsec/IKE VPN-
 
 In de volgende tabel ziet u een voor beeld van hoe het voor beeld-VNets en de lokale sites worden gedefinieerd:
 
-| Virtual Network | Adresruimte | Regio | Maakt verbinding met de lokale netwerk site |
+| Virtual Network | Adresruimte | Region | Maakt verbinding met de lokale netwerk site |
 |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |VS - west | RMVNetLocal (192.168.0.0/16) |
 | RMVNet | (192.168.0.0/16) |VS - oost |ClassicVNetLocal (10.0.0.0/24) |
@@ -170,7 +170,7 @@ In deze stap maakt u de virtuele netwerkgateway VNet. Het maken van een gateway 
 
 **Voorbeeld waarden:** Lokale netwerk gateway = ClassicVNetLocal
 
-| Virtual Network | Adresruimte | Regio | Maakt verbinding met de lokale netwerk site |Openbaar IP-adres van Gateway|
+| Virtual Network | Adresruimte | Region | Maakt verbinding met de lokale netwerk site |Openbaar IP-adres van Gateway|
 |:--- |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |VS - west | RMVNetLocal (192.168.0.0/16) |Het open bare IP-adres dat is toegewezen aan de ClassicVNet-gateway|
 | RMVNet | (192.168.0.0/16) |VS - oost |ClassicVNetLocal (10.0.0.0/24) |Het open bare IP-adres dat is toegewezen aan de RMVNet-gateway.|

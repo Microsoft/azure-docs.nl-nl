@@ -13,18 +13,19 @@ ms.topic: article
 ms.date: 09/28/2020
 ms.author: duau
 ms.reviewer: tyao
-ms.openlocfilehash: 42697a57d39f4a34eee4866b67e2cde947db1ff5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1cd3d4837c39fdeb0e7addced10ab2e7fd330b9a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449252"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369421"
 ---
 # <a name="geo-filtering-on-a-domain-for-azure-front-door"></a>Geografisch filteren op een domein voor de voor deur van Azure
 
 Standaard reageert Azure front deur op alle gebruikers aanvragen, ongeacht de locatie van waaruit de aanvraag afkomstig is. In sommige scenario's wilt u mogelijk de toegang tot uw webtoepassing beperken op basis van landen/regio's. Met de WAF-service (Web Application firewall) aan de voor deur kunt u een beleid definiëren met aangepaste toegangs regels voor een specifiek pad op uw eind punt om toegang toe te staan of te blok keren voor bepaalde landen/regio's. 
 
-Een WAF-beleid bevat een set aangepaste regels. De regel bestaat uit overeenkomende voor waarden, een actie en een prioriteit. In een match-voor waarde definieert u een matching variabele, operator en match-waarde. Voor een geo-filter regel is een match-variabele REMOTE_ADDR, de operator is geomatch en de waarde is een land/regio code van twee letters. U kunt een geomatch-voor waarde en een REQUEST_URI teken reeks overeenkomst combi neren om een op pad gebaseerde geo-filter regel te maken.
+Een WAF-beleid bevat een set aangepaste regels. De regel bestaat uit overeenkomende voor waarden, een actie en een prioriteit. In een match-voor waarde definieert u een matching variabele, operator en match-waarde. Voor een geo-filter regel is een match-variabele REMOTE_ADDR, de operator is geomatch en de waarde is een land/regio code van twee letters. "ZZ" land code of "onbekend" land registreert IP-adressen die nog niet zijn toegewezen aan een land in de gegevensset. U kunt ZZ toevoegen aan uw match-voor waarde om valse positieven te voor komen. U kunt een geomatch-voor waarde en een REQUEST_URI teken reeks overeenkomst combi neren om een op pad gebaseerde geo-filter regel te maken. 
+
 
 U kunt een beleid voor geofiltering configureren voor uw voor deur door gebruik te maken van [Azure PowerShell](front-door-tutorial-geo-filtering.md) of door gebruik te maken van een Quick Start- [sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-front-door-geo-filtering).
 
@@ -53,7 +54,7 @@ U kunt een beleid voor geofiltering configureren voor uw voor deur door gebruik 
 | BH | Bahrein|
 | BI | Burundi|
 | BJ | Benin|
-| BL | Saint--Barthélemy|
+| BL | Saint Barthélemy|
 | BN | Brunei Darussalam|
 | BO | Bolivia|
 | BR | Brazilië|
@@ -62,7 +63,7 @@ U kunt een beleid voor geofiltering configureren voor uw voor deur door gebruik 
 | BW | Botswana|
 | BY | Belarus|
 | BZ | Belize|
-| CA | Canada|
+| CA (consistentie en beschikbaarheid) | Canada|
 | CD | Democratische Republiek Congo|
 | CF | Centraal-Afrikaanse Republiek|
 | CH | Zwitserland|

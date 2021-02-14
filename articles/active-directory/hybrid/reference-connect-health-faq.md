@@ -16,12 +16,12 @@ ms.topic: reference
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6140f5fd431a0b089b45892130e075bde02a2eb2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6185c5408f74b914ce5ad47634999786ba1d7ab6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91299762"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367993"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Veelgestelde vragen over Azure AD Connect Health
 In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Active Directory (Azure AD) Connect Health. Deze veelgestelde vragen worden behandeld in het gebruik van de service, waaronder het facturerings model, de mogelijkheden, beperkingen en ondersteuning.
@@ -29,7 +29,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Active Direc
 ## <a name="general-questions"></a>Algemene vragen
 **V: ik beheer meerdere Azure AD-mappen. Hoe kan ik overschakelen naar de versie die Azure Active Directory Premium heeft?**
 
-Als u wilt scha kelen tussen verschillende Azure AD-tenants, selecteert u de naam van de momenteel aangemelde **gebruiker** in de rechter bovenhoek en kiest u vervolgens het juiste account. Als het account hier niet wordt vermeld, selecteert u **Afmelden**en gebruikt u vervolgens de globale beheerders referenties van de map waarvoor Azure Active Directory Premium ingeschakeld om u aan te melden.
+Als u wilt scha kelen tussen verschillende Azure AD-tenants, selecteert u de naam van de momenteel aangemelde **gebruiker** in de rechter bovenhoek en kiest u vervolgens het juiste account. Als het account hier niet wordt vermeld, selecteert u **Afmelden** en gebruikt u vervolgens de globale beheerders referenties van de directory met Azure Active Directory Premium (P1 of P2) ingeschakeld om u aan te melden.
 
 **V: welke versie van identiteits rollen wordt ondersteund door Azure AD Connect Health?**
 
@@ -47,8 +47,8 @@ Houd er rekening mee dat de functies die door de service worden door gegeven, mo
 
 **V: hoeveel licenties heb ik nodig voor het bewaken van mijn infra structuur?**
 
-* Voor de eerste Connect Health-Agent is ten minste één Azure AD Premium-licentie vereist.
-* Voor elke aanvullende geregistreerde agent zijn 25 extra licenties voor Azure AD Premium vereist.
+* Voor de eerste Connect Health-Agent is ten minste één Azure AD Premium (P1 of P2)-licentie vereist.
+* Elke aanvullende geregistreerde agent vereist 25 extra Azure AD Premium (P1 of P2)-licenties.
 * Het aantal agents is gelijk aan het totale aantal agents dat is geregistreerd voor alle bewaakte rollen (AD FS, Azure AD Connect en/of AD DS).
 * Voor AAD Connect Health Licensing is het niet nodig om de licentie toe te wijzen aan specifieke gebruikers. U hoeft alleen het vereiste aantal geldige licenties te hebben.
 
@@ -70,10 +70,10 @@ Azure AD Connect Health wordt niet ondersteund in de Duitse Cloud, met uitzonde 
 
 | Rollen | Functies | Ondersteund in de Duitse Cloud |
 | ------ | --------------- | --- |
-| Connect Health voor synchronisatie | Bewaking/inzichten/waarschuwingen/analyse | Nee |
-|  | Synchronisatie fout rapport | Ja |
-| Connect Health voor ADFS | Bewaking/inzichten/waarschuwingen/analyse | Nee |
-| Status van verbinding maken voor toevoegen | Bewaking/inzichten/waarschuwingen/analyse | Nee |
+| Connect Health voor synchronisatie | Bewaking/inzichten/waarschuwingen/analyse | No |
+|  | Synchronisatie fout rapport | Yes |
+| Connect Health voor ADFS | Bewaking/inzichten/waarschuwingen/analyse | No |
+| Status van verbinding maken voor toevoegen | Bewaking/inzichten/waarschuwingen/analyse | No |
 
 Om ervoor te zorgen dat de verbindings status van de agent wordt gesynchroniseerd, moet u de vereisten voor de [installatie](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) dienovereenkomstig configureren.
 

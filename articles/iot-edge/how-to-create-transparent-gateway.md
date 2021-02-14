@@ -11,18 +11,18 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 9f81d059c1a71bf6349d0ef9b4aae8f7a47c161f
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 9ecb1c50fe99cc93417a37e892049e03585945a5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938780"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370424"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Een IoT Edge apparaat configureren om te fungeren als transparante gateway
 
 In dit artikel vindt u gedetailleerde instructies voor het configureren van een IoT Edge apparaat om te werken als een transparante gateway zodat andere apparaten kunnen communiceren met IoT Hub. In dit artikel wordt de term *IOT Edge gateway* gebruikt om te verwijzen naar een IOT edge apparaat dat is geconfigureerd als een transparante gateway. Zie [How a IOT edge-apparaten kunnen worden gebruikt als een gateway](./iot-edge-as-gateway.md)voor meer informatie.
 
-<!-- 1.0.10 -->
+<!-- 1.1 -->
 ::: moniker range="iotedge-2018-06"
 
 >[!NOTE]
@@ -97,8 +97,8 @@ Voor productie scenario's moet u deze bestanden met uw eigen certificerings inst
 2. Als u de certificaten op een andere computer hebt gemaakt, kopieert u deze naar uw IoT Edge-apparaat.
 
 3. Open het configuratie bestand van de beveiligings-daemon op uw IoT Edge-apparaat.
-   * Windows `C:\ProgramData\iotedge\config.yaml`
-   * Spreek `/etc/iotedge/config.yaml`
+   * Windows: `C:\ProgramData\iotedge\config.yaml`
+   * Linux: `/etc/iotedge/config.yaml`
 
 4. Zoek de sectie **certificaat instellingen** van het bestand. Verwijder opmerkingen bij de vier regels die beginnen met **certificaten:** en geef de bestands-uri's op uw drie bestanden op als waarden voor de volgende eigenschappen:
    * **device_ca_cert**: CA-certificaat van apparaat
@@ -110,8 +110,8 @@ Voor productie scenario's moet u deze bestanden met uw eigen certificerings inst
 5. Sla het bestand op en sluit het.
 
 6. Start IoT Edge opnieuw.
-   * Windows `Restart-Service iotedge`
-   * Spreek `sudo systemctl restart iotedge`
+   * Windows: `Restart-Service iotedge`
+   * Linux: `sudo systemctl restart iotedge`
 
 ## <a name="deploy-edgehub-and-route-messages"></a>EdgeHub en router berichten implementeren
 

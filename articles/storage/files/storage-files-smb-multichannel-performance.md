@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: cbded0a9c905bb488e1bae0f92d777e2e7ed7441
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: a9edd93aa265622732be4a7582cce9900959bf6d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630850"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374980"
 ---
 # <a name="smb-multichannel-performance"></a>Prestaties van SMB Multichannel
 
@@ -110,7 +110,7 @@ De belasting is gegenereerd op basis van één 128 GiB-bestand. Als SMB meerdere
 
 - Op één NIC met een grotere gemiddelde i/o-grootte (> ~ 16 KB) zijn er belang rijke verbeteringen aangebracht in lees-en schrijf bewerkingen.
 - Voor kleinere IO-grootten is er een lichte impact van ~ 10% op de prestaties als SMB meerdere kanalen is ingeschakeld. Dit kan worden verholpen door de belasting over meerdere bestanden te spreiden of de functie uit te scha kelen.
-- De prestaties zijn nog steeds afhankelijk van de  [limieten van enkele bestanden](storage-files-scale-targets.md#file-level-limits).
+- De prestaties zijn nog steeds afhankelijk van de [limieten van enkele bestanden](storage-files-scale-targets.md#file-scale-targets).
 
 ## <a name="optimizing-performance"></a>Prestaties optimaliseren
 

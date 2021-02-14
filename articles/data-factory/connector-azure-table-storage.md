@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van en naar Azure-tabel opslag
 description: Informatie over het kopiëren van gegevens van ondersteunde bron archieven naar Azure-tabel opslag of van tabel opslag naar ondersteunde Sink-archieven met behulp van Data Factory.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/20/2020
-ms.openlocfilehash: b70c08df25f3f5d572f88879f5073756de588d52
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 1448bb3ebf541af047759bc886b2c174d89c1c50
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383769"
 ---
 # <a name="copy-data-to-and-from-azure-table-storage-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Table Storage met behulp van Azure Data Factory
 
@@ -55,9 +51,9 @@ U kunt een Azure Storage gekoppelde service maken met behulp van de account sleu
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op **AzureTableStorage** . |Ja |
-| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met opslag voor de Connections Tring-eigenschap. <br/>U kunt ook account sleutel in Azure Key Vault plaatsen en de `accountKey` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. |Ja |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| type | De eigenschap type moet worden ingesteld op **AzureTableStorage**. |Ja |
+| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met opslag voor de Connections Tring-eigenschap. <br/>U kunt ook account sleutel in Azure Key Vault plaatsen en de `accountKey` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. |Yes |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 >[!NOTE]
 >Als u de gekoppelde service van het type ' opslag ' gebruikt, wordt deze nog steeds ondersteund als-is. u wordt aangeraden dit nieuwe ' AzureTableStorage ' gekoppelde Service Type vooruit te gebruiken.
@@ -113,7 +109,7 @@ U kunt ook een gekoppelde opslag service maken met behulp van een hand tekening 
 Een SAS (een handtekening voor gedeelde toegang) biedt gedelegeerde toegang tot resources in uw opslagaccount. U kunt het gebruiken om een bepaalde en een opgegeven set machtigingen toe te kennen aan een client met beperkte machtigingen voor objecten in uw opslag account. U hoeft de toegangs sleutels van uw account niet te delen. De Shared Access-hand tekening is een URI die in de query parameters omvat alle informatie die nodig is voor geverifieerde toegang tot een opslag resource. Om toegang te krijgen tot opslag resources met de hand tekening voor gedeelde toegang, hoeft de client alleen de gedeelde toegangs handtekening door te geven aan de juiste constructor of methode. Zie voor meer informatie over hand tekeningen voor gedeelde toegang, [Shared Access Signatures: inzicht in het model voor de Shared Access-hand tekening](../storage/common/storage-sas-overview.md).
 
 > [!NOTE]
-> Data Factory ondersteunt nu zowel **gedeelde toegangs handtekeningen van services** als **hand tekeningen voor gedeelde toegang van accounts** . Zie voor meer informatie over gedeelde toegangs handtekeningen [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](../storage/common/storage-sas-overview.md). 
+> Data Factory ondersteunt nu zowel **gedeelde toegangs handtekeningen van services** als **hand tekeningen voor gedeelde toegang van accounts**. Zie voor meer informatie over gedeelde toegangs handtekeningen [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](../storage/common/storage-sas-overview.md). 
 
 > [!TIP]
 > U kunt de volgende Power shell-opdrachten uitvoeren om een hand tekening voor gedeelde toegang van een service te genereren voor uw opslag account. Vervang de tijdelijke aanduidingen en Ken de benodigde machtiging toe.
@@ -124,9 +120,9 @@ De volgende eigenschappen worden ondersteund om verificatie van de Shared Access
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op **AzureTableStorage** . |Ja |
-| sasUri | Geef de SAS-URI van de URI van de Shared Access-hand tekening op in de tabel. <br/>Markeer dit veld als een SecureString om het veilig op te slaan in Data Factory. U kunt ook SAS-token in Azure Key Vault plaatsen om automatisch te draaien en het token gedeelte te verwijderen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Ja |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration Runtime of de zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| type | De eigenschap type moet worden ingesteld op **AzureTableStorage**. |Ja |
+| sasUri | Geef de SAS-URI van de URI van de Shared Access-hand tekening op in de tabel. <br/>Markeer dit veld als een SecureString om het veilig op te slaan in Data Factory. U kunt ook SAS-token in Azure Key Vault plaatsen om automatisch te draaien en het token gedeelte te verwijderen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Yes |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration Runtime of de zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 >[!NOTE]
 >Als u de gekoppelde service van het type ' opslag ' gebruikt, wordt deze nog steeds ondersteund als-is. u wordt aangeraden dit nieuwe ' AzureTableStorage ' gekoppelde Service Type vooruit te gebruiken.
@@ -191,11 +187,11 @@ Houd rekening met de volgende punten wanneer u een URI voor een Shared Access-ha
 
 Zie het artikel [gegevens sets](concepts-datasets-linked-services.md) voor een volledige lijst met secties en eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. In deze sectie vindt u een lijst met eigenschappen die worden ondersteund door de Azure Table-gegevensset.
 
-Als u gegevens wilt kopiëren van en naar de Azure-tabel, stelt u de eigenschap type van de gegevensset in op **AzureTable** . De volgende eigenschappen worden ondersteund.
+Als u gegevens wilt kopiëren van en naar de Azure-tabel, stelt u de eigenschap type van de gegevensset in op **AzureTable**. De volgende eigenschappen worden ondersteund.
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de DataSet moet worden ingesteld op **AzureTable** . |Ja |
+| type | De eigenschap type van de DataSet moet worden ingesteld op **AzureTable**. |Yes |
 | tableName |De naam van de tabel in het data base-exemplaar van Table-opslag waarnaar de gekoppelde service verwijst. |Ja |
 
 **Voorbeeld:**
@@ -231,13 +227,13 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="azure-table-as-a-source-type"></a>Azure-tabel als bron type
 
-Als u gegevens wilt kopiëren uit een Azure-tabel, stelt u het bron type in de Kopieer activiteit in op **AzureTableSource** . De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopieer activiteit.
+Als u gegevens wilt kopiëren uit een Azure-tabel, stelt u het bron type in de Kopieer activiteit in op **AzureTableSource**. De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopieer activiteit.
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzureTableSource** . |Ja |
-| azureTableSourceQuery |Gebruik de aangepaste Table-opslag query om gegevens te lezen.<br/>De bron query is een directe kaart van de `$filter` query optie die wordt ondersteund door Azure Table Storage, meer informatie over de syntaxis van [dit document](/rest/api/storageservices/querying-tables-and-entities#supported-query-options)en de voor beelden in de volgende [sectie met azureTableSourceQuery-voor beelden](#azuretablesourcequery-examples). |Nee |
-| azureTableSourceIgnoreTableNotFound |Hiermee wordt aangegeven of de uitzonde ring van de tabel mag worden toegestaan.<br/>Toegestane waarden zijn **True** en **False** (standaard). |Nee |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **AzureTableSource**. |Yes |
+| azureTableSourceQuery |Gebruik de aangepaste Table-opslag query om gegevens te lezen.<br/>De bron query is een directe kaart van de `$filter` query optie die wordt ondersteund door Azure Table Storage, meer informatie over de syntaxis van [dit document](/rest/api/storageservices/querying-tables-and-entities#supported-query-options)en de voor beelden in de volgende [sectie met azureTableSourceQuery-voor beelden](#azuretablesourcequery-examples). |No |
+| azureTableSourceIgnoreTableNotFound |Hiermee wordt aangegeven of de uitzonde ring van de tabel mag worden toegestaan.<br/>Toegestane waarden zijn **True** en **False** (standaard). |No |
 
 ### <a name="azuretablesourcequery-examples"></a>azureTableSourceQuery-voor beelden
 
@@ -260,15 +256,15 @@ Als u de para meter pijplijn gebruikt, moet u de datum-/tijdwaarde casten naar d
 
 ### <a name="azure-table-as-a-sink-type"></a>Azure-tabel als Sink-type
 
-Als u gegevens wilt kopiëren naar de Azure-tabel, stelt u het sink-type in de Kopieer activiteit in op **AzureTableSink** . De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kopieer activiteit.
+Als u gegevens wilt kopiëren naar de Azure-tabel, stelt u het sink-type in de Kopieer activiteit in op **AzureTableSink**. De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kopieer activiteit.
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **AzureTableSink** . |Ja |
-| azureTableDefaultPartitionKeyValue |De standaard waarde voor de partitie sleutel die door de Sink kan worden gebruikt. |Nee |
-| azureTablePartitionKeyName |Geef de naam op van de kolom waarvan de waarden worden gebruikt als partitie sleutels. Als u niets opgeeft, wordt ' AzureTableDefaultPartitionKeyValue ' gebruikt als de partitie sleutel. |Nee |
-| azureTableRowKeyName |Geef de naam op van de kolom waarvan de kolom waarden worden gebruikt als de rij-sleutel. Als u deze niet opgeeft, gebruikt u een GUID voor elke rij. |Nee |
-| azureTableInsertType |De modus om gegevens in de Azure-tabel in te voegen. Met deze eigenschap bepaalt u of bestaande rijen in de uitvoer tabel met overeenkomende partitie-en rijlabels hun waarden vervangen of samengevoegd hebben. <br/><br/>Toegestane waarden zijn **samen voegen** (standaard) en **vervangen** . <br/><br> Deze instelling is van toepassing op het niveau van de rij, niet op het tabel niveau. Geen van beide opties verwijdert rijen in de uitvoer tabel die niet voor komen in de invoer. Zie [entiteit invoegen of samen voegen](/rest/api/storageservices/Insert-Or-Merge-Entity) en [entiteit invoegen of vervangen](/rest/api/storageservices/Insert-Or-Replace-Entity)voor meer informatie over het werken met de instellingen voor samen voegen en vervangen. |Nee |
+| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **AzureTableSink**. |Yes |
+| azureTableDefaultPartitionKeyValue |De standaard waarde voor de partitie sleutel die door de Sink kan worden gebruikt. |No |
+| azureTablePartitionKeyName |Geef de naam op van de kolom waarvan de waarden worden gebruikt als partitie sleutels. Als u niets opgeeft, wordt ' AzureTableDefaultPartitionKeyValue ' gebruikt als de partitie sleutel. |No |
+| azureTableRowKeyName |Geef de naam op van de kolom waarvan de kolom waarden worden gebruikt als de rij-sleutel. Als u deze niet opgeeft, gebruikt u een GUID voor elke rij. |No |
+| azureTableInsertType |De modus om gegevens in de Azure-tabel in te voegen. Met deze eigenschap bepaalt u of bestaande rijen in de uitvoer tabel met overeenkomende partitie-en rijlabels hun waarden vervangen of samengevoegd hebben. <br/><br/>Toegestane waarden zijn **samen voegen** (standaard) en **vervangen**. <br/><br> Deze instelling is van toepassing op het niveau van de rij, niet op het tabel niveau. Geen van beide opties verwijdert rijen in de uitvoer tabel die niet voor komen in de invoer. Zie [entiteit invoegen of samen voegen](/rest/api/storageservices/Insert-Or-Merge-Entity) en [entiteit invoegen of vervangen](/rest/api/storageservices/Insert-Or-Replace-Entity)voor meer informatie over het werken met de instellingen voor samen voegen en vervangen. |No |
 | writeBatchSize |Voegt gegevens in de Azure-tabel in wanneer writeBatchSize of writeBatchTimeout wordt bereikt.<br/>Toegestane waarden zijn integer (aantal rijen). |Nee (de standaard waarde is 10.000) |
 | writeBatchTimeout |Voegt gegevens in de Azure-tabel in wanneer writeBatchSize of writeBatchTimeout wordt bereikt.<br/>Toegestane waarden zijn time span. Een voor beeld is ' 00:20:00 ' (20 minuten). |Nee (de standaard waarde is 90 seconden, standaard time-out van de opslaglaag van de client) |
 

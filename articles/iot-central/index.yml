@@ -1,143 +1,141 @@
-### YamlMime:Hub
-title: Documentatie voor IoT Central-oplossingen
-summary: Verken de documentatie voor Azure IoT Central-service en oplossingen.
-brand: azure
+### YamlMime:Landing
+title: Documentatie over Azure IoT Central
+summary: Azure IoT Central is een IoT-toepassingsplatform waarmee het eenvoudiger is om IoT-oplossingen te maken. Azure IoT Central vereenvoudigt de eerste installatie van uw IoT-oplossing en vermindert de beheerlast, de operationele kosten en overheadkosten van een typisch IoT-project. Leer aan de hand van onze snelstarts en zelfstudies hoe u een Azure IoT Central-toepassing maakt, aanpast, beheert en gebruikt.
 metadata:
-  title: Documentatiehub voor Azure IoT Central
-  description: Verken de documentatie voor Azure IoT Central-service en oplossingen.
+  title: Documentatie over Azure IoT Central
+  description: De Azure IoT Central-toepassing maakt het eenvoudiger om IoT-oplossingen te maken. Leer hoe u een Azure IoT Central-toepassing maakt, aanpast, beheert en gebruikt.
+  services: iot-central
   ms.service: iot-central
-  ms.topic: hub-page
-  author: philmea
-  ms.author: philmea
-  ms.date: 06/30/2020
-  ms.openlocfilehash: 59d95b8ce13161999c06993cbbf9194a66e38ed3
-  ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
-  ms.translationtype: HT
+  ms.topic: landing-page
+  author: dominicbetts
+  ms.author: dobett
+  ms.date: 09/02/2021
+  ms.openlocfilehash: f36d2bd704a00a450385d9766fdee3ea7c1f52a6
+  ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/25/2020
-  ms.locfileid: "96122485"
-highlightedContent:
-  items:
-  - title: Wat is IoT Central?
-    itemType: overview
-    url: ./core/overview-iot-central.md
-  - title: Wat zijn toepassingssjablonen?
-    itemType: concept
-    url: ./core/concepts-app-templates.md
-  - title: Overzicht van het ontwikkelen van IoT Central-apparaten
-    itemType: overview
-    url: ./core/overview-iot-central-developer.md
-  - title: Een nieuwe toepassing maken
-    itemType: quickstart
-    url: ./core/quick-deploy-iot-central.md
-  - title: Een apparaattype definiëren en een apparaat toevoegen
-    itemType: tutorial
-    url: ./core/howto-set-up-template.md
-  - title: Uw apparaten bewaken
-    itemType: tutorial
-    url: ./core/tutorial-create-telemetry-rules.md
-conceptualContent:
-  items:
-  - title: Apparaten verbinden en ontwikkelen
+  ms.lasthandoff: 02/14/2021
+  ms.locfileid: "100365137"
+landingContent:
+- title: Over Azure IoT Central
+  linkLists:
+  - linkListType: overview
     links:
-    - url: ./core/tutorial-connect-device.md
-      itemType: tutorial
-      text: Apparaat verbinden
-    - url: ./core/concepts-get-connected.md
-      itemType: concept
-      text: Connectiviteit van apparaten
-    - url: ./core/concepts-device-templates.md
-      itemType: concept
-      text: Apparaatsjablonen
-    - url: ./core/troubleshoot-connection.md
-      itemType: how-to-guide
-      text: Problemen met apparaatverbinding oplossen
-    footerLink:
-      url: ./core/index.yml
-      text: Meer informatie
-  - title: Blijf verbonden
+    - text: Wat is Azure IoT Central?
+      url: core/overview-iot-central.md
+    - text: Rondleiding door de gebruikersinterface
+      url: core/overview-iot-central-tour.md
+  - linkListType: quickstart
     links:
-    - url: ./core/tutorial-use-device-groups.md
-      itemType: how-to-guide
-      text: Apparaatgroepen gebruiken
-    - url: ./core/howto-manage-devices.md
-      itemType: how-to-guide
-      text: Uw apparaten beheren
-    - url: ./core/howto-run-a-job.md
-      itemType: concept
-      text: Een taak uitvoeren
-    - url: ./core/howto-create-analytics.md
-      itemType: how-to-guide
-      text: Uw apparaatgegevens analyseren
-    footerLink:
-      url: ./core/index.yml
-      text: Meer informatie
-  - title: Transformeren
+    - text: Een nieuwe toepassing maken
+      url: core/quick-deploy-iot-central.md
+  - linkListType: architecture
     links:
-    - url: ./core/tutorial-create-telemetry-rules.md
-      itemType: how-to-guide
-      text: Een telemetrieregel maken
-    - url: ./core/howto-export-data.md
-      itemType: how-to-guide
-      text: Gegevens exporteren naar cloudbestemmingen
-    footerLink:
-      url: ./core/index.yml
-      text: Meer informatie
-productDirectory:
-  title: Beginnen met toepassingssjablonen voor de industrie te bouwen
-  summary: Klaar om te bouwen? Bekijk onze relevante toepassingssjablonen voor de industrie die zijn gemaakt voor oplossingenontwikkelaars.
-  items:
-  - title: Bouwen voor de detailhandel
-    imageSrc: ./retail/media/index/iot-central-retail.svg
+    - text: Azure IoT Central-architectuur
+      url: core/concepts-architecture.md
+    - text: Toepassingssjablonen
+      url: core/concepts-app-templates.md
+  - linkListType: whats-new
     links:
-    - text: Oplossingen voor de detailhandel bouwen met Azure IoT Central
-      url: ./retail/overview-iot-central-retail.md
-    - text: Een in-store-analysetoepassing maken
-      url: ./retail/tutorial-in-store-analytics-create-app.md
-    - text: Een toepassing voor slim voorraadbeheer maken
-      url: ./retail/tutorial-iot-central-smart-inventory-management.md
-    - text: Een verbonden logistieke app maken
-      url: ./retail/tutorial-iot-central-connected-logistics.md
-    - text: Een toepassing voor een digitaal distributiecentrum maken
-      url: ./retail/tutorial-iot-central-digital-distribution-center.md
-    - text: Een toepassing voor videoanalyse maken
-      url: ./retail/tutorial-video-analytics-create-app-yolo-v3.md
-  - title: Bouwen voor de gezondheidszorg
-    imageSrc: ./healthcare/media/index/iot-central-healthcare.svg
-    links:
-    - url: ./healthcare/overview-iot-central-healthcare.md
-      text: Oplossingen voor de gezondheidszorg bouwen met IoT Central
-    - url: ./healthcare/tutorial-continuous-patient-monitoring.md
-      text: Een app voor continue patiëntbewaking maken
-  - title: Bouwen voor de energiesector
-    imageSrc: ./energy/media/index/iot-central-energy.svg
-    links:
-    - url: ./energy/overview-iot-central-energy.md
-      text: Oplossingen voor de energiesector bouwen met IoT Central
-    - url: ./energy/tutorial-smart-meter-app.md
-      text: Een app maken om slimme meters te bewaken
-    - url: ./energy/tutorial-solar-panel-app.md
-      text: Een app maken om zonnepanelen te bewaken
-  - title: Bouwen voor overheden
-    imageSrc: ./government/media/index/iot-central-government.svg
-    links:
-    - url: ./government/overview-iot-central-government.md
-      text: Oplossingen voor de overheid bouwen met IoT Central
-    - url: ./government/tutorial-water-quality-monitoring.md
-      text: Een app voor bewaking van de waterkwaliteit maken
-    - url: ./government/tutorial-water-consumption-monitoring.md
-      text: Een app voor bewaking van waterverbruik maken
-    - url: ./government/tutorial-connected-waste-management.md
-      text: Een verbonden app voor afvalbeheer maken
-additionalContent:
-  sections:
-  - items:
-    - title: IoT Central-API's
-      summary: Verken de IoT Central-API's.
-      url: /rest/api/iotcentral/
-    - title: IoT Central in Microsoft Learn
-      summary: Verken IoT Central in een gratis sandbox-omgeving
-      url: /learn/browse/?products=azure-iot-central
-    - title: Recente updates
-      summary: Ontdek wat er nieuw is in IoT Central.
+    - text: Recente updates
       url: https://azure.microsoft.com/updates/?status=nowavailable&updateType=features&category=iot&query=azure%20iot%20central
+- title: Apparaten ontwikkelen en verbinden
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Overzicht voor apparaatontwikkelaars
+      url: core/overview-iot-central-developer.md
+  - linkListType: tutorial
+    links:
+    - text: Een apparaat maken en verbinden
+      url: core/tutorial-connect-device.md
+  - linkListType: concept
+    links:
+    - text: Connectiviteit van apparaten
+      url: core/concepts-get-connected.md
+    - text: Berichten sturen naar nettoladingen
+      url: core/concepts-telemetry-properties-commands.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een Azure Sphere-apparaat verbinden
+      url: core/howto-connect-sphere.md
+    - text: Problemen met apparaatverbinding oplossen
+      url: core/troubleshoot-connection.md
+- title: Geïntegreerde oplossingen bouwen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Overzicht voor oplossingen bouwers
+      url: core/overview-iot-central-solution-builder.md
+  - linkListType: tutorial
+    links:
+    - text: Regels gebruiken
+      url: core/tutorial-create-telemetry-rules.md
+  - linkListType: how-to-guide
+    links:
+    - text: Een dashboard maken
+      url: core/howto-create-personal-dashboards.md
+    - text: Uw apparaatgegevens analyseren
+      url: core/howto-create-analytics.md
+    - text: Gegevens exporteren naar cloudbestemmingen
+      url: core/howto-export-data.md
+  - linkListType: reference
+    links:
+    - text: REST-API
+      url: /rest/api/iotcentral/
+- title: Uw apparaten beheren
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Apparaatgroepen gebruiken
+      url: core/tutorial-use-device-groups.md
+  - linkListType: how-to-guide
+    links:
+    - text: Apparaten toevoegen, importeren en exporteren
+      url: core/howto-manage-devices.md
+    - text: Een taak uitvoeren
+      url: core/howto-run-a-job.md
+- title: Beheer
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Uw toepassing beheren
+      url: core/howto-administer.md
+    - text: Gebruikers en rollen beheren
+      url: core/howto-manage-users-roles.md
+    - text: Uw factuur weergeven
+      url: core/howto-view-bill.md
+    - text: De gebruikersinterface van de toepassing aanpassen
+      url: core/howto-customize-ui.md
+  - linkListType: sample
+    links:
+    - text: Voor beelden van ARM-SDK
+      url: /samples/azure-samples/azure-iot-central-arm-sdk-samples/azure-iot-central-arm-sdk-samples/
+- title: Leren op basis van scenario's met Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: 'Leer traject: IoT-oplossingen ontwikkelen met Azure IoT Central'
+      url: /learn/paths/develop-iot-solutions-with-azure-iot-central/
+  - linkListType: learn
+    links:
+    - text: 'Module leren: uw eerste Azure IoT Central-app maken'
+      url: /learn/modules/create-your-first-iot-central-app/
+    - text: 'Informatie over de module: regels instellen en actie ondernemen op telemetriegegevens in azure IoT Central'
+      url: /learn/modules/set-up-rules-take-actions-telemetry-data-azure-iot-central/
+    - text: 'Informatie over de module: beheer IoT Central toepassingen met de REST API'
+      url: /learn/modules/manage-iot-central-apps-with-rest-api/
+    - text: 'Leer module: continue gegevens export vanuit Azure IoT Central instellen op een Power BI-app'
+      url: /learn/modules/continuously-export-data-from-iot-central-power-bi/
+- title: Toepassingssjablonen uit de branche
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Retail
+      url: retail/overview-iot-central-retail.md
+    - text: Gezondheidszorg
+      url: healthcare/overview-iot-central-healthcare.md
+    - text: Overheid
+      url: government/overview-iot-central-government.md
+    - text: Energie
+      url: energy/overview-iot-central-energy.md

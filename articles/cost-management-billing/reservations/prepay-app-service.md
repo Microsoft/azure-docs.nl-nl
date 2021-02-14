@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: banders
 ms.custom: references_regions
-ms.openlocfilehash: 89e0c62b580c0c354fc7277e61b452005a86e3d9
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 92a315121ad8ae6fadcadbf6d531eb3e99ae69a9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99577794"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374538"
 ---
 # <a name="save-costs-with-azure-app-service-reserved-instances"></a>Bespaar kosten met Azure App Service gereserveerde instanties
 
@@ -37,24 +37,12 @@ U kunt reserverings aanbevelingen gebruiken om te helpen bij het bepalen van de 
 - U kunt de Api's gebruiken voor het verkrijgen van inkoop aanbevelingen voor zowel het gedeelde bereik als het bereik van één abonnement. Zie voor meer informatie [gereserveerde instanties aankoop aanbeveling api's voor zakelijke klanten](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation).
 - Voor Enterprise Overeenkomst (EA) en klanten overeenkomst (MCA) van micro soft, zijn er aanbevelingen voor het delen van gedeelde en enkelvoudige abonnementen beschikbaar met de [Azure Consumption Insights Power bi inhouds pakket](/power-bi/service-connect-to-azure-consumption-insights).
 
-#### <a name="instance-size-flexibility-setting"></a>Instelling voor de flexibiliteit van de instantiegrootte
-
-De instelling voor de flexibiliteit van de instantiegrootte bepaalt welke services de kortingen voor de gereserveerde instanties ontvangen.
-
-Of de instelling is in-of uitgeschakeld, de reserverings kortingen zijn automatisch van toepassing op het gebruik van overeenkomende Premium v3 gereserveerde instanties.
-
 ### <a name="analyze-your-usage-information"></a>Uw gebruiks gegevens analyseren
 
 Analyseer uw gebruiks gegevens om te helpen bepalen welke reserve ringen u moet aanschaffen. Gebruiks gegevens zijn beschikbaar in het gebruiks bestand en Api's. Gebruik ze samen om te bepalen welke reserve ring moet worden gekocht. Controleren op Premium v3-exemplaren die dagelijks een hoog gebruik hebben om het aantal te kopen reserve ringen te bepalen.
 
 Uw gebruiks bestand toont uw kosten per facturerings periode en dagelijks gebruik. Zie [uw Azure-gebruik en-kosten bekijken en downloaden](../understand/download-azure-daily-usage.md)voor meer informatie over het downloaden van uw gebruiks bestand. Vervolgens kunt u met behulp van de informatie in het gebruiks bestand [bepalen welke reserve ring moet worden gekocht](determine-reservation-purchase.md).
 
-### <a name="purchase-restriction-considerations"></a>Overwegingen voor de aankoop beperking
-
-Er zijn geen reserverings kortingen van toepassing op de volgende Premium v3-exemplaren:
-
-- **Preview-of promotie-instanties** : alle Premium v3 gereserveerde instanties-Series of grootte die in Preview zijn of waarbij promotie meter wordt gebruikt.
-- **Clouds** -reserve ringen zijn niet beschikbaar voor aankopen in de regio's Duitsland en China.
 
 ## <a name="buy-a-premium-v3-reserved-instance"></a>Een gereserveerde Premium v3-instantie kopen
 
@@ -79,7 +67,6 @@ Als u een EA-overeenkomst hebt, kunt u de **optie meer toevoegen** gebruiken om 
 | Bereik | Het bereik van de reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert: <ul><li>**Bereik van één resourcegroep**: de reserveringskorting wordt alleen toegepast op de overeenkomende resources in de geselecteerde resourcegroep. </li><li>**Bereik van één abonnement**: de reserveringskorting wordt toegepast op de overeenkomende resources in het geselecteerde abonnement.</li><li>**Gedeeld bereik**: de reserveringskorting wordt toegepast op overeenkomende resources binnen in aanmerking komende abonnementen die zich in de factureringscontext bevinden. Voor EA-klanten is de facturerings context de inschrijving. Voor afzonderlijke abonnementen met tarieven voor betalen per gebruik is het factureringsbereik alle in aanmerking komende abonnementen die zijn gemaakt door de accountbeheerder.</li></ul> |
 | Region | De Azure-regio die wordt gedekt door de reserve ring. |
 | Grootte van gereserveerde Premium v3-instantie | De grootte van de gereserveerde Premium v3-exemplaren. |
-| Optimaliseren voor | De flexibiliteit van de Premium v3 gereserveerde instantie grootte is standaard geselecteerd. Klik op **Geavanceerde instellingen** om de waarde voor de flexibiliteit van de instantie grootte te wijzigen om de reserverings korting toe te passen op andere Premium v3 gereserveerde instanties in dezelfde [Premium v3 gereserveerd exemplaar formaat groep](../../virtual-machines/reserved-vm-instance-size-flexibility.md). Met de capaciteitsprioriteit wordt prioriteit toegekend aan de datacentercapaciteit voor uw implementaties. Het biedt extra vertrouwen in uw vermogen om de Premium v3 gereserveerde instanties te starten wanneer u ze nodig hebt. Capaciteits prioriteit is alleen beschikbaar wanneer het reserverings bereik één abonnement is. |
 | Termijn | Eén jaar of drie jaar. Er is ook een periode van 5 jaar die alleen beschikbaar is voor HBv2 Premium v3 gereserveerde instanties. |
 | Aantal | Het aantal exemplaren dat wordt aangeschaft binnen de reserve ring. De hoeveelheid is het aantal uitgevoerde Premium v3 gereserveerde instanties waarmee de factuur korting kan worden verkregen. Als u bijvoorbeeld 10 Standard \_ D2 Premium v3 gereserveerde instanties in het VS-Oost hebt uitgevoerd, geeft u hoeveelheid op als 10 om het voor deel te maximaliseren voor alle met Premium v3 gereserveerde instanties. |
 

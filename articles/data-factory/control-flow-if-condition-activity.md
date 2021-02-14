@@ -1,22 +1,18 @@
 ---
 title: Als conditie activiteit in Azure Data Factory
 description: Met de activiteit if-voor waarde kunt u de verwerkings stroom beheren op basis van een voor waarde.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 150efe87565b1949dc1ed29b03af69c26f84a896
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c0dbda298cf808dd3caa7a767e0ec5e847c92108
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499455"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385520"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Als conditie activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -69,7 +65,7 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de activiteit voor de if-voor waarde. | Tekenreeks | Ja
 type | Moet worden ingesteld op **IfCondition** | Tekenreeks | Ja
-expression | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie met Booleaanse waarde voor resultaat type | Ja
+expressie | Expressie die moet worden geëvalueerd als waar of onwaar | Expressie met Booleaanse waarde voor resultaat type | Yes
 ifTrueActivities | Een set activiteiten die worden uitgevoerd wanneer de expressie wordt geëvalueerd `true` . | Matrix | Ja
 ifFalseActivities | Een set activiteiten die worden uitgevoerd wanneer de expressie wordt geëvalueerd `false` . | Matrix | Ja
 

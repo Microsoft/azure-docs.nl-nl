@@ -1,20 +1,18 @@
 ---
 title: Activiteit in Azure Data Factory scha kelen
 description: Met de activiteit switch kunt u de verwerkings stroom beheren op basis van een voor waarde.
-services: data-factory
 author: dcstwh
 ms.author: weetok
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/08/2019
-ms.openlocfilehash: fd5bb37d54183020e233774a778d27f5d4588bb4
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 4d58b032fe0371c9b54cf66ab13f525880867fb6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486001"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385350"
 ---
 # <a name="switch-activity-in-azure-data-factory"></a>Activiteit in Azure Data Factory scha kelen
 
@@ -71,9 +69,9 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de switch activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op *Switch** | Tekenreeks | Ja
-expression | Expressie die moet worden geëvalueerd als teken reeks waarde | Expressie met teken reeks resultaat type | Ja
-meldingen | Set cases die een waarde en een set activiteiten bevatten die moeten worden uitgevoerd wanneer de waarde overeenkomt met de evaluatie van de expressie. U moet ten minste één geval opgeven. Er is een maximum limiet van 25 gevallen. | Reeks Case-objecten | Ja
-defaultActivities | Een set activiteiten die worden uitgevoerd wanneer aan de evaluatie van de expressie niet wordt voldaan. | Matrix van activiteiten | Ja
+expressie | Expressie die moet worden geëvalueerd als teken reeks waarde | Expressie met teken reeks resultaat type | Yes
+meldingen | Set cases die een waarde en een set activiteiten bevatten die moeten worden uitgevoerd wanneer de waarde overeenkomt met de evaluatie van de expressie. U moet ten minste één geval opgeven. Er is een maximum limiet van 25 gevallen. | Reeks Case-objecten | Yes
+defaultActivities | Een set activiteiten die worden uitgevoerd wanneer aan de evaluatie van de expressie niet wordt voldaan. | Matrix van activiteiten | Yes
 
 ## <a name="example"></a>Voorbeeld
 

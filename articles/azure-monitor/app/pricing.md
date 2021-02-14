@@ -5,14 +5,14 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 author: DaleKoetke
 ms.author: dalek
-ms.date: 5/7/2020
+ms.date: 2/7/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: 477a96f1bf66255b11b2fee36c38e55b18cddb69
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 3ae3224ae17d0dee2ed1080669c6057ca62959d9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99556120"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384500"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gebruik en kosten van Application Insights beheren
 
@@ -286,15 +286,18 @@ Als u de dagelijkse e-mails voor volume limieten wilt uitschakelen, selecteert u
 
 Voor vroege toepassers van Azure-toepassing Insights zijn er nog twee mogelijke prijs Categorieën: Basic en Enter prise. De prijs categorie Basic is hetzelfde als hierboven beschreven en is de standaardlaag. Dit omvat alle functies van de Enter prise-laag, zonder extra kosten. De laag basis is vooral afhankelijk van het volume van de gegevens die worden opgenomen.
 
-> [!NOTE]
-> De naam van deze verouderde prijs categorieën is gewijzigd. De Enter prise-prijs categorie wordt nu **per knoop punt** genoemd en de prijs categorie Basic wordt nu **per GB** aangeroepen. Deze nieuwe namen worden hieronder en in de Azure Portal gebruikt.  
+De naam van deze verouderde prijs categorieën is gewijzigd. De Enter prise-prijs categorie wordt nu **per knoop punt** genoemd en de prijs categorie Basic wordt nu **per GB** aangeroepen. Deze nieuwe namen worden hieronder en in de Azure Portal gebruikt.  
 
-De laag per knoop punt (voorheen onderneming) heeft een kosten per knoop punt en elk knoop punt ontvangt een dagelijks gegevens toelage. In de prijs categorie per knoop punt worden er kosten in rekening gebracht voor gegevens die boven de inbegrepen limiet zijn opgenomen. Als u Operations Management Suite gebruikt, kiest u de laag per knoop punt.
+De laag per knoop punt (voorheen onderneming) heeft een kosten per knoop punt en elk knoop punt ontvangt een dagelijks gegevens toelage. In de prijs categorie per knoop punt worden er kosten in rekening gebracht voor gegevens die boven de inbegrepen limiet zijn opgenomen. Als u Operations Management Suite gebruikt, kiest u de laag per knoop punt. In april 2018 hebben we een nieuw prijs model [geïntroduceerd](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) voor Azure-bewaking. In dit model wordt een eenvoudig ' pay-as-u-go-' model voor de volledige Port Folio van bewakings Services aangenomen. Meer informatie over het [nieuwe prijs model](../platform/usage-estimated-costs.md).
 
 Zie [Application Insights prijzen](https://azure.microsoft.com/pricing/details/application-insights/)voor actuele prijzen in uw valuta en regio.
 
-> [!NOTE]
-> In april 2018 hebben we een nieuw prijs model [geïntroduceerd](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) voor Azure-bewaking. In dit model wordt een eenvoudig ' pay-as-u-go-' model voor de volledige Port Folio van bewakings Services aangenomen. Meer informatie over het [nieuwe prijs model](../platform/usage-estimated-costs.md), [het beoordelen van de impact van het verplaatsen naar dit model](../platform/usage-estimated-costs.md#understanding-your-azure-monitor-costs) op basis van uw gebruiks patronen en [hoe u zich kunt aanmelden bij het nieuwe model](../platform/usage-estimated-costs.md#azure-monitor-pricing-model)
+### <a name="understanding-billed-usage-on-the-legacy-enterprise-per-node-tier"></a>Gefactureerd gebruik in de verouderde Enter prise-laag (per knoop punt) 
+
+Zoals hieronder wordt beschreven, combineert de verouderde onderneming (per knoop punt) het gebruik van in alle Application Insights resources in een abonnement om het aantal knoop punten en de gegevens overschrijding te berekenen. Als gevolg van dit combinatie proces **worden het gebruik voor alle Application Insights resources in een abonnement gerapporteerd op basis van een van de resources**.  Dit maakt het mogelijk om het [gefactureerde gebruik](https://docs.microsoft.com/azure/azure-monitor/app/pricing#viewing-application-insights-usage-on-your-azure-bill) te reconciliëren met het gebruik dat u voor elke Application Insights resources zeer ingewikkeld hebt. 
+
+> [!WARNING]
+> Vanwege de complexiteit van het bijhouden en leren van het gebruik van Application Insights resources in de laag verouderde onderneming (per knoop punt), raden we u ten zeerste aan de huidige prijs categorie voor betalen naar gebruik te gebruiken. 
 
 ### <a name="per-node-tier-and-operations-management-suite-subscription-entitlements"></a>De rechten van het abonnement per knooppunt laag en het Operations Management Suite-pakket
 
@@ -347,4 +350,3 @@ U kunt een script schrijven om de prijs categorie in te stellen met behulp van A
 [start]: ./app-insights-overview.md
 [pricing]: https://azure.microsoft.com/pricing/details/application-insights/
 [pricing]: https://azure.microsoft.com/pricing/details/application-insights/
-

@@ -5,16 +5,19 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 6/9/2020
 ms.author: baanders
-ms.openlocfilehash: 08ae189253c6141a6b84035b71016ff5099ec162
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 4a69b2ff15fc4857e9fb292d2f753aa68ed875d4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98689655"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370092"
 ---
 ### <a name="functional-limits"></a>Functionele limieten
 
-De volgende tabel bevat de functionele limieten van Azure Digital Apparaatdubbels.
+De volgende tabel geeft een overzicht van de functionele limieten van Azure Digital Apparaatdubbels. 
+
+> [!TIP]
+> Zie [Aanbevolen procedures voor het ontwerpen van modellen](../articles/digital-twins/concepts-models.md#best-practices-for-designing-models)voor het samen werken van aanbevelingen binnen deze functionele limieten.
 
 | Gebied | Mogelijkheid | Standaardlimiet | Aanpasbaar? |
 | --- | --- | --- | --- |
@@ -28,6 +31,7 @@ De volgende tabel bevat de functionele limieten van Azure Digital Apparaatdubbel
 | Routering | Aantal routes voor één Azure Digital Apparaatdubbels-exemplaar | 6 | Yes |
 | Modellen | Aantal modellen binnen één Azure Digital Apparaatdubbels-exemplaar | 10.000 | Yes |
 | Modellen | Aantal modellen dat kan worden geüpload in één API-aanroep | 250 | No |
+| Modellen | Maximale grootte (van JSON-hoofd tekst in een PUT-of PATCH-aanvraag) van één model | 1 MB | No |
 | Modellen | Aantal geretourneerde items op één pagina | 100 | No |
 | Query’s uitvoeren | Aantal geretourneerde items op één pagina | 100 | Ja |
 | Query’s uitvoeren | Aantal `AND`  /  `OR` expressies in een query | 50 | Ja |

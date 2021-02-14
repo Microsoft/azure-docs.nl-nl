@@ -1,22 +1,18 @@
 ---
 title: Bestanden kopiëren vanuit meerdere containers
 description: Meer informatie over het gebruik van een oplossings sjabloon voor het kopiëren van bestanden uit meerdere containers met behulp van Azure Data Factory.
-services: data-factory
 author: dearandyxu
 ms.author: yexu
-ms.reviewer: douglasl
-manager: anandsub
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/1/2018
-ms.openlocfilehash: f78d0b02c9790234a63ef64200dcab72bc64c033
-ms.sourcegitcommit: 3e8058f0c075f8ce34a6da8db92ae006cc64151a
+ms.openlocfilehash: ec7af1e81e0b295491420597636c8443f4d36512
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629422"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376085"
 ---
 # <a name="copy-multiple-folders-with-azure-data-factory"></a>Meerdere mappen kopiëren met Azure Data Factory
 
@@ -37,8 +33,8 @@ De sjabloon bevat drie activiteiten:
 - **Copy** kopieert elke map uit het opslag archief van de bron naar het doel archief.
 
 Met de sjabloon worden de volgende parameters gedefinieerd:
-- *SourceFileFolder* maakt deel uit van het pad naar de bovenliggende map van uw gegevens bron archief: *SourceFileFolder/SourceFileDirectory* , waar u een lijst van de submappen kunt ophalen. 
-- *SourceFileDirectory* maakt deel uit van het pad naar de bovenliggende map van uw gegevens bron archief: *SourceFileFolder/SourceFileDirectory* , waar u een lijst van de submappen kunt ophalen. 
+- *SourceFileFolder* maakt deel uit van het pad naar de bovenliggende map van uw gegevens bron archief: *SourceFileFolder/SourceFileDirectory*, waar u een lijst van de submappen kunt ophalen. 
+- *SourceFileDirectory* maakt deel uit van het pad naar de bovenliggende map van uw gegevens bron archief: *SourceFileFolder/SourceFileDirectory*, waar u een lijst van de submappen kunt ophalen. 
 - *DestinationFileFolder* maakt deel uit van het pad naar de bovenliggende map: *DestinationFileFolder/DestinationFileDirectory* waar de bestanden worden gekopieerd naar uw doel archief. 
 - *DestinationFileDirectory* maakt deel uit van het pad naar de bovenliggende map: *DestinationFileFolder/DestinationFileDirectory* waar de bestanden worden gekopieerd naar uw doel archief. 
 
@@ -54,7 +50,7 @@ Als u meerdere containers wilt kopiëren onder hoofd mappen tussen opslag archie
 
     ![Een nieuwe verbinding maken met de bestemming](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image2.png)
 
-3. Selecteer **deze sjabloon gebruiken** .
+3. Selecteer **deze sjabloon gebruiken**.
 
     ![Deze sjabloon gebruiken](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image3.png)
     
@@ -62,7 +58,7 @@ Als u meerdere containers wilt kopiëren onder hoofd mappen tussen opslag archie
 
     ![De pijp lijn weer geven](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image4.png)
 
-5. Selecteer **debug** , voer de **para meters** in en selecteer **volt ooien** .
+5. Selecteer **debug**, voer de **para meters** in en selecteer **volt ooien**.
 
     ![De pijplijn uitvoeren](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image5.png)
 

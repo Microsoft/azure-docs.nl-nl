@@ -4,12 +4,12 @@ description: Informatie over het maken van een Azure Batch-account in Azure Port
 ms.topic: how-to
 ms.date: 01/26/2021
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 943fd145dbd4964e0d43d91f726ea5a79fda59de
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: bd9dd9b6d6d3a8d6938427b83528746ae5d09318
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895991"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368503"
 ---
 # <a name="create-a-batch-account-with-the-azure-portal"></a>Een Batch-account maken met behulp van Azure Portal
 
@@ -67,6 +67,9 @@ Als u de [resource quota's](batch-quota-limit.md) wilt weer geven die van toepas
 ## <a name="additional-configuration-for-user-subscription-mode"></a>Aanvullende configuratie voor de modus Gebruikersabonnement
 
 Als u ervoor kiest een Batch-account te maken in de modus Gebruikersabonnement, moet u de volgende aanvullende stappen uitvoeren voordat u het account gaat maken.
+
+> [!IMPORTANT]
+> De gebruiker die het batch-account maakt in de modus gebruikers abonnement moet een rol voor Inzender of eigenaar hebben voor het abonnement waarin het batch-account wordt gemaakt.
 
 ### <a name="allow-azure-batch-to-access-the-subscription-one-time-operation"></a>Azure Batch toegang geven tot het abonnement (eenmalige bewerking)
 

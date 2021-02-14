@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 1/29/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 10bb0364bf7c54cd07d6dfa5725b3a626622d390
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 2ad6f5bf18d362f846e12720e00584b854729366
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097789"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515662"
 ---
 # <a name="collect-telemetry-data-for-search-traffic-analytics"></a>Telemetriegegevens verzamelen voor analyse van het zoek verkeer
 
@@ -168,7 +168,7 @@ Telkens wanneer een zoek opdracht wordt uitgegeven door een gebruiker, moet u zi
 + **ScoringProfile**: (teken reeks) naam van het gebruikte Score profiel, indien van toepassing
 
 > [!NOTE]
-> Vraag het aantal door de gebruiker gegenereerde query's aan door $count = True toe te voegen aan uw zoek query. Zie [documenten zoeken (rest)](/rest/api/searchservice/search-documents#counttrue--false)voor meer informatie.
+> Vraag het aantal door de gebruiker gegenereerde query's aan door $count = True toe te voegen aan uw zoek query. Zie [documenten zoeken (rest)](/rest/api/searchservice/search-documents#query-parameters)voor meer informatie.
 >
 
 **C# gebruiken**

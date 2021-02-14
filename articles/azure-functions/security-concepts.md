@@ -3,12 +3,12 @@ title: Azure Functions beveiligen
 description: Meer informatie over hoe u de functie code die wordt uitgevoerd in azure beter kunt beveiligen tegen veelvoorkomende aanvallen.
 ms.date: 4/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: ee54ff8c1efaee00999888891e6de255060aa416
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 351bdca7ff94b6c058b5ab62fd9c16d707e7dc78
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491321"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368486"
 ---
 # <a name="securing-azure-functions"></a>Azure Functions beveiligen
 
@@ -62,7 +62,7 @@ De volgende tabel vergelijkt het gebruik voor verschillende soorten toegangs sle
 |-----------------------------------------------|--------------------------|--------------------|
 | Een functie uitvoeren                            | Specifieke functie        | Functie           |
 | Een functie uitvoeren                            | Een functie             | Functie of host   |
-| Een Administrator-eind punt aanroepen                        | Function App             | Host (alleen Master) |
+| Een Administrator-eind punt aanroepen                        | Functie-app             | Host (alleen Master) |
 | Api's voor duurzame taak uitbreidingen aanroepen              | Functie-app<sup>1</sup> | Systeem<sup>2</sup> |
 | Een extensie-specifieke webhook aanroepen (intern) | Functie-app<sup>1</sup> | systeem<sup>2</sup> |
 
@@ -107,6 +107,8 @@ Verbindings reeksen en andere referenties die zijn opgeslagen in toepassings ins
 
 [!INCLUDE [app-service-managed-identities](../../includes/app-service-managed-identities.md)]
 
+Beheerde identiteiten kunnen worden gebruikt in plaats van geheimen voor verbindingen van sommige triggers en bindingen. Zie [identiteits verbindingen](#identity-based-connections).
+
 Zie [Managed Identities (beheerde identiteiten gebruiken voor app service en Azure functions](../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json)) voor meer informatie.
 
 #### <a name="restrict-cors-access"></a>CORS-toegang beperken
@@ -136,6 +138,14 @@ U kunt de instellingen standaard ook versleutelen in de local.settings.jsbij het
 Hoewel toepassings instellingen voldoende zijn voor de meeste functies, wilt u mogelijk dezelfde geheimen delen in meerdere services. In dit geval resulteert de redundante opslag van geheimen in meer potentiële beveiligings problemen. Een veiligere benadering is een centrale service voor het opslaan van geheimen en het gebruik van verwijzingen naar deze service in plaats van de geheimen zelf.      
 
 [Azure Key Vault](../key-vault/general/overview.md) is een service die gecentraliseerd geheimen beheer biedt, met volledige controle over het toegangs beleid en de controle geschiedenis. U kunt een Key Vault verwijzing gebruiken in de plaats van een connection string of sleutel in de instellingen van uw toepassing. Zie [Key Vault verwijzingen gebruiken voor app service en Azure functions](../app-service/app-service-key-vault-references.md?toc=%2fazure%2fazure-functions%2ftoc.json)voor meer informatie.
+
+### <a name="identity-based-connections"></a>Verbindingen op basis van identiteiten
+
+Identiteiten kunnen worden gebruikt in plaats van geheimen om verbinding te maken met een aantal resources. Dit heeft het voor deel dat het beheer van een geheim niet vereist is en biedt meer verfijnde toegangs beheer en controle. 
+
+Wanneer u code schrijft waarmee de verbinding wordt gemaakt met [Azure-Services die ondersteuning bieden voor Azure AD-verificatie](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), kunt u kiezen voor het gebruik van een identiteit in plaats van een geheim of Connection String. Details voor beide verbindings methoden worden behandeld in de documentatie voor elke service.
+
+Sommige Azure Functions triggers en bindings uitbreidingen kunnen worden geconfigureerd met behulp van een verbinding op basis van een identiteit. Dit omvat nu de [Azure Blob](./functions-bindings-storage-blob.md) -en [Azure Queue](./functions-bindings-storage-queue.md) -extensies. Zie voor meer informatie over het configureren van deze uitbrei dingen voor het gebruik van een identiteit [identiteits verbindingen gebruiken in azure functions](./functions-reference.md#configure-an-identity-based-connection).
 
 ### <a name="set-usage-quotas"></a>Gebruiks quota's instellen
 

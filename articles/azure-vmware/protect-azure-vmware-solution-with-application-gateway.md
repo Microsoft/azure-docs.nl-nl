@@ -2,13 +2,13 @@
 title: Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op de Azure VMware-oplossing
 description: Configureer Azure-toepassing gateway zo dat uw web-apps die worden uitgevoerd op een Azure VMware-oplossing, veilig zichtbaar zijn.
 ms.topic: how-to
-ms.date: 02/08/2021
-ms.openlocfilehash: fdef37bd76b08a8778db8401a1e8a0406c2ed652
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.date: 02/10/2021
+ms.openlocfilehash: 9b10c206114ca922cc11bd8cb0321941b8ba672c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988629"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384194"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op de Azure VMware-oplossing
 
@@ -35,7 +35,7 @@ Het diagram toont het test scenario dat wordt gebruikt om de Application Gateway
 
 :::image type="content" source="media/hub-spoke/azure-vmware-solution-second-level-traffic-segmentation.png" alt-text="Diagram van het test scenario dat wordt gebruikt om de Application Gateway te valideren met Azure VMware Solution-webtoepassingen." border="false":::
 
-Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegewezen subnet. Het heeft een openbaar IP-adres van Azure. Het is raadzaam om de standaard DDoS-beveiliging voor het virtuele netwerk te activeren. De webserver wordt gehost op een Azure VMware-oplossing privécloud achter NSX t0 en T1-routers. De Azure VMware-oplossing maakt gebruik van [ExpressRoute Global Reach](../expressroute/expressroute-global-reach.md) om communicatie met de hub en on-premises systemen mogelijk te maken.
+Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegewezen subnet. Het heeft een openbaar IP-adres van Azure. Het is raadzaam om de standaard DDoS-beveiliging voor het virtuele netwerk te activeren. De webserver wordt gehost op een privécloud van Azure VMware-oplossing achter NSX t0 en T1-gateways. De Azure VMware-oplossing maakt gebruik van [ExpressRoute Global Reach](../expressroute/expressroute-global-reach.md) om communicatie met de hub en on-premises systemen mogelijk te maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -57,7 +57,7 @@ Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegew
 
 4. Voeg een back-end-groep toe van de virtuele machines die worden uitgevoerd op de infra structuur van Azure VMware-oplossingen. Geef de details op van webservers die worden uitgevoerd in de privécloud van de Azure VMware-oplossing en selecteer **toevoegen**.  Selecteer vervolgens **volgende: configuratie>**.
 
-1. Selecteer op het tabblad **configuratie** **een regel voor het toevoegen van een route ring**.
+5. Selecteer op het tabblad **configuratie** **een regel voor het toevoegen van een route ring**.
 
 6. Geef op het tabblad **listener** de details op voor de listener. Als HTTPS is geselecteerd, moet u een certificaat opgeven, hetzij vanuit een PFX-bestand of een bestaand Azure Key Vault certificaat. 
 
@@ -67,7 +67,7 @@ Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegew
 
 9. Als u op paden gebaseerde regels wilt configureren, selecteert u **meerdere doelen toevoegen om een op pad gebaseerde regel te maken**. 
 
-10. Voeg een op een pad gebaseerde regel toe en selecteer **toevoegen**. Herhaal dit om aanvullende regels op basis van pad toe te voegen. 
+10. Voeg een op een pad gebaseerde regel toe en selecteer **toevoegen**. Herhaal dit om meer op pad gebaseerde regels toe te voegen. 
 
 11. Wanneer u klaar bent met het toevoegen van op het pad gebaseerde regels, selecteert u opnieuw **toevoegen** . Selecteer vervolgens **volgende: labels>**. 
 
@@ -77,7 +77,7 @@ Het Application Gateway exemplaar wordt geïmplementeerd op de hub in een toegew
 
 ## <a name="configuration-examples"></a>Configuratie voorbeelden
 
-In deze sectie leert u hoe u Application Gateway kunt configureren met virtuele machines van Azure VMware-oplossingen als back-end-Pools voor deze use-cases: 
+Nu gaan we Application Gateway configureren met Vm's uit de Azure VMware-oplossing als back-endservers voor de volgende use-cases: 
 
 - [Meerdere sites hosten](#hosting-multiple-sites)
 - [Route ring op URL](#routing-by-url)
@@ -94,7 +94,7 @@ Met deze procedure wordt beschreven hoe u back-mailadres groepen kunt definiëre
 
     :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-multi-backend-pool.png" alt-text="Scherm afbeelding met een overzicht van de details van een webserver in de VSphere-client.":::
 
-    We hebben Windows Server 2016 met Internet Information Services-rol (IIS) gebruikt die is geïnstalleerd om deze zelf studie te demonstreren. Zodra de Vm's zijn geïnstalleerd, voert u de volgende Power shell-opdrachten uit om IIS op elk van de virtuele machines te configureren. 
+    We hebben Windows Server 2016 gebruikt met de functie Internet Information Services (IIS) geïnstalleerd. Zodra de Vm's zijn geïnstalleerd, voert u de volgende Power shell-opdrachten uit om IIS op elk van de virtuele machines te configureren. 
 
     ```powershell
     Install-WindowsFeature -Name Web-Server
@@ -121,7 +121,7 @@ Met deze procedure wordt beschreven hoe u back-mailadres groepen kunt definiëre
 
 ### <a name="routing-by-url"></a>Route ring op URL
 
-Met deze procedure wordt beschreven hoe u back-mailadres groepen kunt definiëren met behulp van Vm's die worden uitgevoerd op een Azure VMware-oplossing privécloud op een bestaande toepassings gateway. Vervolgens maakt u routeringsregels die ervoor zorgen dat webverkeer wordt omgeleid naar de servers in de pools.
+De volgende stappen worden gebruikt voor het definiëren van back-end-adres groepen met virtuele machines die worden uitgevoerd op een Azure VMware-oplossing privécloud. De privécloud bevindt zich op een bestaande toepassings gateway. Vervolgens maakt u routeringsregels die ervoor zorgen dat webverkeer wordt omgeleid naar de servers in de pools.
 
 1. Maak in uw privécloud een virtuele-machine groep om de webfarm aan te duiden. 
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 3bb0aadf81ba501070ce0c734847bb16c0378896
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 04bbb0465f26e82d247c53e7393c4476b9d36fde
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624035"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386846"
 ---
 # <a name="tutorial-migrate-web-service-from-google-maps"></a>Zelfstudie: Webservice migreren vanuit Google Maps
 
@@ -54,7 +54,7 @@ De tabel bevat de service-API's van Azure Maps, die een vergelijkbare functional
 
 De volgende service-API's zijn momenteel niet beschikbaar in Azure Maps:
 
-- Geolocatie
+- Geolocatie-Azure Maps heeft een service met de naam geolocatie, maar biedt ook een IP-adres voor locatie-informatie, maar ondersteunt momenteel geen ondersteuning voor de triangulatie van een celrand of WiFi.
 - Details en foto's van plaatsen: telefoonnummers en website-URL zijn beschikbaar in de zoek-API van Azure Maps.
 - Kaart-URL's
 - Dichtstbijzijnde wegen - dit is te realiseren via de web-SDK, zoals [hier](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Basic%20snap%20to%20road%20logic) te zien is, maar dit is momenteel niet beschikbaar als een service.

@@ -1,22 +1,17 @@
 ---
 title: Meta gegevens en Acl's behouden met Kopieer activiteit in Azure Data Factory
 description: Meer informatie over het bewaren van meta gegevens en Acl's tijdens het kopiëren met de Kopieer activiteit in Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: jingwang
-ms.openlocfilehash: a96b04df56dc7d5ea26463073d673275b8a4a8c4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 396a598d143e85687f9dfbf765b3c18736627e41
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015074"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387713"
 ---
 #  <a name="preserve-metadata-and-acls-using-copy-activity-in-azure-data-factory"></a>Meta gegevens en Acl's behouden met Kopieer activiteit in Azure Data Factory
 
@@ -35,7 +30,7 @@ De Kopieer activiteit biedt ondersteuning voor het behouden van de volgende kenm
 
 **Verschillen in meta gegevens afhandelen:** Amazon S3 en Azure Storage staan verschillende sets tekens toe aan de sleutels van de door de klant opgegeven meta gegevens. Wanneer u ervoor kiest om meta gegevens te bewaren met behulp van Kopieer activiteit, vervangt ADF automatisch de ongeldige tekens door ' _ '.
 
-Wanneer u bestanden kopieert als-afkomstig van Amazon S3/Azure data Lake Storage Gen2/Azure Blob/Azure File Storage naar Azure data Lake Storage Gen2/Azure Blob/Azure File Storage met binaire indeling, kunt u de optie **behouden** vinden op het tabblad instellingen van de **Kopieer activiteit**  >  **Settings** voor het ontwerpen van activiteiten of de pagina **instellingen** in gegevens kopiëren hulp programma.
+Wanneer u bestanden kopieert als-afkomstig van Amazon S3/Azure data Lake Storage Gen2/Azure Blob/Azure File Storage naar Azure data Lake Storage Gen2/Azure Blob/Azure File Storage met binaire indeling, kunt u de optie **behouden** vinden op het tabblad instellingen van de **Kopieer activiteit**  >   voor het ontwerpen van activiteiten of de pagina **instellingen** in gegevens kopiëren hulp programma.
 
 ![De meta gegevens van de Kopieer activiteit behouden](./media/copy-activity-preserve-metadata/copy-activity-preserve-metadata.png)
 
@@ -98,7 +93,7 @@ Als u opgeeft dat u wilt kopiëren vanuit een map, Data Factory repliceert de Ac
 >[!IMPORTANT]
 >Wanneer u ervoor kiest om Acl's te behouden, moet u ervoor zorgen dat u Maxi maal voldoende machtigingen voor Data Factory verleent voor het uitvoeren van uw Sink Data Lake Storage Gen2-account. Gebruik bijvoorbeeld account sleutel verificatie of wijs de rol Storage BLOB data owner toe aan de service-principal of beheerde identiteit.
 
-Wanneer u bron configureert als data Lake Storage gen1/Gen2 met binaire indeling of de optie voor binaire kopieën, en u wilt opvangen als data Lake Storage Gen2 met binaire indeling of de binaire kopie optie, kunt u de optie **behouden** vinden op de pagina **instellingen** van gegevens kopiëren hulp programma of op het tabblad instellingen van de **Kopieer activiteit**  >  **Settings** voor het ontwerpen van een activiteit.
+Wanneer u bron configureert als data Lake Storage gen1/Gen2 met binaire indeling of de optie voor binaire kopieën, en u wilt opvangen als data Lake Storage Gen2 met binaire indeling of de binaire kopie optie, kunt u de optie **behouden** vinden op de pagina **instellingen** van gegevens kopiëren hulp programma of op het tabblad instellingen van de **Kopieer activiteit**  >   voor het ontwerpen van een activiteit.
 
 ![Data Lake Storage Gen1-Gen2 tot Gen2-ACL behouden](./media/connector-azure-data-lake-storage/adls-gen2-preserve-acl.png)
 

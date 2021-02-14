@@ -4,18 +4,14 @@ description: Hierin worden de rollen en machtigingen beschreven die nodig zijn o
 ms.date: 11/5/2018
 ms.topic: conceptual
 ms.service: data-factory
-services: data-factory
-documentationcenter: ''
-ms.workload: data-services
 author: dcstwh
 ms.author: weetok
-manager: anandsub
-ms.openlocfilehash: 30e07b645701cf560534b152ae42559213daf838
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: cec5df9a5046e912ab8542c91bde4344affa0925
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053768"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364474"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Rollen en machtigingen voor Azure Data Factory
 
@@ -54,14 +50,13 @@ Met de rol **Data Factory Inzender** , op het niveau van de resource groep of ho
 
 Machtigingen voor Azure opslag plaatsen en GitHub zijn onafhankelijk van Data Factory machtigingen. Als gevolg hiervan kan een gebruiker met opslag plaats-machtigingen die alleen lid is van de rol lezer, Data Factory onderliggende resources bewerken en wijzigingen door voeren in de opslag plaats, maar kan deze wijzigingen niet publiceren.
 
+
 > [!IMPORTANT]
 > Met de implementatie van de Resource Manager-sjabloon met de rol **Data Factory Inzender** worden uw machtigingen niet verhoogd. Als u bijvoorbeeld een sjabloon implementeert waarmee een virtuele machine van Azure wordt gemaakt en u geen machtiging hebt om virtuele machines te maken, mislukt de implementatie met een autorisatie fout.
 
-> [!IMPORTANT]
-> De machtiging **micro soft. DataFactory/factories/schrijven** is vereist in beide modi binnen de publicatie context.
-
-- Deze machtiging is alleen vereist in de modus Live wanneer de klant globale para meters wijzigt.
-- Deze machtiging is altijd vereist in de Git-modus, aangezien na de publicatie van de klant, omdat het Factory-object met de laatste doorvoer-id is bijgewerkt.
+   In de context van publiceren worden de machtigingen **micro soft. DataFactory/factories/schrijven** toegepast op de volgende modi.
+- Deze machtiging is alleen vereist in de modus Live wanneer de klant de algemene para meters wijzigt.
+- Deze machtiging is altijd vereist in de Git-modus, aangezien na elke keer dat de klant wordt gepubliceerd, het object Factory met de laatste doorvoer-ID moet worden bijgewerkt.
 
 ### <a name="custom-scenarios-and-custom-roles"></a>Aangepaste scenario's en aangepaste rollen
 
@@ -95,6 +90,7 @@ Hier volgen enkele voor beelden van hoe u met aangepaste rollen kunt profiteren:
 - Laat een gebruiker een data factory bijwerken vanuit Power shell of de SDK, maar niet in de Azure Portal.
 
   Wijs de ingebouwde rol **Inzender** toe aan de Data Factory resource voor de gebruiker. Met deze rol kan de gebruiker de resources in de Azure Portal zien, maar de gebruiker heeft geen toegang tot de knoppen  **publiceren** en **publiceren** .
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

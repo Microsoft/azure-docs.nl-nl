@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 05/19/2020
 author: deborahc
 ms.author: dech
-ms.openlocfilehash: 8dca9e3e29796618b905c4d266eb674f82565969
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.openlocfilehash: 4f57d2793a28f4bbb201764c67af82f31d0b9333
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097614"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369795"
 ---
 # <a name="built-in-jupyter-notebooks-support-in-azure-cosmos-db-preview"></a>Ingebouwde ondersteuning voor Jupyter Notebooks in Azure Cosmos DB (preview)
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -61,5 +61,7 @@ Jupyter Notebooks kunnen diverse typen onderdelen bevatten, die zijn georganisee
 Raadpleeg de volgende artikelen om aan de slag te gaan met ingebouwde Jupyter Notebooks in Azure Cosmos DB:
 
 * [Notebooks in een Azure Cosmos-account inschakelen](enable-notebooks.md)
+* [Galerie met voor beelden van notebook verkennen](https://cosmos.azure.com/gallery.html)
 * [Python-notebookfuncties en-opdrachten gebruiken](use-python-notebook-features-and-commands.md)
 * [C#-notebookfuncties en -opdrachten gebruiken](use-csharp-notebook-features-and-commands.md)
+* [Notitie blokken importeren uit een GitHub-opslag plaats](import-github-notebooks.md)

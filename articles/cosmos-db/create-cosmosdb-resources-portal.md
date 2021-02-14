@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 11/10/2020
-ms.openlocfilehash: 731a1fdf9520efc43c954cba79602ed84f983b3d
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 041b930a0c2fa82727216b4ca0c8367387d0d801
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247247"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367249"
 ---
 # <a name="quickstart-create-an-azure-cosmos-account-database-container-and-items-from-the-azure-portal"></a>Quickstart: Een Azure Cosmos-account, -database, -container en -items maken vanuit de Azure-portal
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -71,7 +71,7 @@ Ga naar de [Azure-portal](https://portal.azure.com/) om een Azure Cosmos DB-acco
 > - Geografische redundantie
 > - Schrijven voor meerdere regio's
    
-   :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-create-new-account-detail.png" alt-text="De pagina Nieuw account voor Azure Cosmos DB":::
+   :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-create-new-account-detail-2.png" alt-text="De pagina Nieuw account voor Azure Cosmos DB":::
 
 1. Selecteer **Controleren + maken**. U kunt de secties **Netwerk** en **Tags** overslaan.
 

@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren van en naar een REST-eind punt met behulp van Azure Data Factory
 description: Informatie over het kopiëren van gegevens uit een Cloud of on-premises REST-bron naar ondersteunde Sink-gegevens opslag of van een ondersteund bron gegevens archief naar een REST-Sink met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: jingwang
-ms.openlocfilehash: 3fc567b7d4b2efab03e5d93adda62839d47f7522
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 972a7b32e6308c3aa8a3b42705038838dae9b2be
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223088"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369880"
 ---
 # <a name="copy-data-from-and-to-a-rest-endpoint-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar een REST-eind punt met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -385,7 +380,7 @@ Deze algemene REST-connector ondersteunt de volgende paginerings patronen:
 
 **Voorbeeld:**
 
-Facebook Graph API retourneert een antwoord in de volgende structuur, in dat geval de URL van de volgende pagina wordt weer gegeven in **_paging. volgende_* _:
+Facebook Graph API retourneert een antwoord in de volgende structuur, in dat geval de URL van de volgende pagina wordt weer gegeven in ***paginering. volgende***:
 
 ```json
 {
@@ -440,7 +435,7 @@ In deze sectie wordt beschreven hoe u een oplossings sjabloon gebruikt om gegeve
 ### <a name="about-the-solution-template"></a>Over de oplossings sjabloon
 
 De sjabloon bevat twee activiteiten:
-- _ *Web**-activiteit haalt het Bearer-token op en geeft dit vervolgens door aan de volgende Kopieer activiteit als autorisatie.
+- **Webactiviteit haalt** het Bearer-token op en geeft dit vervolgens door aan de volgende Kopieer activiteit als autorisatie.
 - Met de **Kopieer** activiteit worden gegevens van REST naar Azure data Lake Storage gekopieerd.
 
 De sjabloon definieert twee para meters:

@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein
 ms.date: 12/8/2020
-ms.openlocfilehash: b0d599b7d52d8a0e93f16761d1983ad25fa45c61
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 1b8be7fc6295c6332d26718b5752d2fd8f2a6f73
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687408"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393238"
 ---
 # <a name="azure-sql-database-serverless"></a>Azure SQL Database serverloos
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,14 +25,14 @@ Serverloos is een compute-laag voor afzonderlijke data bases in Azure SQL Databa
 
 ## <a name="serverless-compute-tier"></a>Serverloze compute-laag
 
-De compute-laag zonder server voor afzonderlijke data bases in Azure SQL Database wordt vastgelegd door een bereik voor automatisch schalen van berekeningen en een vertraging van automatische onderbrekingen. De configuratie van deze para meters vormen de prestaties en reken kosten voor de data base.
+De compute-laag zonder server voor afzonderlijke data bases in Azure SQL Database is para meters van een bereik voor automatisch schalen van berekeningen en een vertraging voor automatische onderbrekingen. De configuratie van deze para meters vormen de prestaties en reken kosten voor de data base.
 
 ![facturering zonder server](./media/serverless-tier-overview/serverless-billing.png)
 
 ### <a name="performance-configuration"></a>Configuratie van prestaties
 
 - De **minimale vCores** -en **maximum vCores** zijn Configureer bare para meters die het bereik van berekenings capaciteit bepalen dat voor de data base beschikbaar is. Geheugen-en i/o-limieten zijn evenredig met het opgegeven vCore-bereik.  
-- De **vertraging voor automatische onderbrekingen** is een Configureer bare para meter waarmee de periode wordt gedefinieerd die de data base inactief moet zijn voordat deze automatisch wordt onderbroken. De data base wordt automatisch hervat wanneer de volgende aanmelding of andere activiteit plaatsvindt.  Het is ook mogelijk om autopauzes uit te scha kelen.
+- De **vertraging voor automatisch onderbreken** is een Configureer bare para meter waarmee de periode wordt gedefinieerd die de data base inactief moet zijn voordat deze automatisch wordt onderbroken. De data base wordt automatisch hervat wanneer de volgende aanmelding of andere activiteit plaatsvindt.  U kunt ook automatisch onderbreken uitschakelen.
 
 ### <a name="cost"></a>Kosten
 
@@ -48,16 +48,16 @@ Zie [facturering](serverless-tier-overview.md#billing)voor meer informatie over 
 
 Serverloos is geoptimaliseerd in prijs-prestatieverhouding voor individuele databases met periodieke, onvoorspelbare gebruikspatronen waarbij lichte vertraging bij het maken van berekeningen na een periode van weinig gebruik geen probleem is. De ingerichte rekenlaag is daarentegen geoptimaliseerd in prijs-prestatieverhouding voor individuele databases of meerdere databases in elastische pools met een hoger gemiddeld gebruik dat geen vertraging kan ondervinden bij het maken van berekeningen.
 
-### <a name="scenarios-well-suited-for-serverless-compute"></a>Scenario's goed geschikt voor serverloze compute
+### <a name="scenarios-well-suited-for-serverless-compute"></a>Scenario's die zeer geschikt zijn voor serverloze compute
 
 - Afzonderlijke data bases met periodieke, onvoorspelbare gebruiks patronen tussen Peri Oden van inactiviteit en een lager gemiddelde reken gebruik gedurende een periode.
 - Afzonderlijke data bases in de ingerichte Compute-laag die vaak worden geschaald en klanten die de voor keur geven aan het opnieuw schalen van berekeningen naar de service.
 - Nieuwe afzonderlijke data bases zonder gebruiks geschiedenis waarbij de reken grootte moeilijk is of niet kan worden geschat vóór de implementatie in SQL Database.
 
-### <a name="scenarios-well-suited-for-provisioned-compute"></a>Scenario's zijn goed geschikt voor de ingerichte reken kracht
+### <a name="scenarios-well-suited-for-provisioned-compute"></a>Scenario's die uitstekend geschikt zijn voor ingerichte reken kracht
 
 - Eén data base met meer reguliere, voorspel bare gebruiks patronen en een hoger gemiddelde reken gebruik gedurende een bepaalde periode.
-- Data bases die geen prestatie verhoudingen kunnen verdragen die voortkomen uit meer frequente geheugen inkortingen of vertraging bij autohervatten vanuit een onderbroken status.
+- Data bases die geen prestatie verhoudingen kunnen verdragen die voortkomen uit meer frequente geheugen inkortingen of vertragingen bij het hervatten van een onderbroken status.
 - Meerdere data bases met periodieke, onvoorspelbare gebruiks patronen die kunnen worden geconsolideerd in elastische Pools voor betere optimalisatie van de prijs prestaties.
 
 ## <a name="comparison-with-provisioned-compute-tier"></a>Vergelijking met ingerichte Compute-laag
@@ -93,40 +93,40 @@ In tegens telling tot provisioned Compute-data bases, wordt het geheugen van de 
 - Het actieve cache gebruik wordt als laag beschouwd als de totale grootte van de meest recent gebruikte cache vermeldingen voor een bepaalde tijd onder een drempel waarde valt.
 - Wanneer het inwinnen van de cache wordt geactiveerd, wordt de grootte van de doel cache oplopend verhoogd naar een fractie van de vorige grootte, en wordt er alleen een vrijmaken als het gebruik laag blijft.
 - Wanneer de cache wordt verwijderd, is het beleid voor het selecteren van cache vermeldingen voor het verwijderen hetzelfde selectie beleid als voor provisioned Compute data bases wanneer de geheugen belasting hoog is.
-- De cache grootte wordt nooit kleiner dan de minimale geheugen limiet, zoals gedefinieerd door de minimale vCores die kan worden geconfigureerd.
+- De cache grootte wordt nooit kleiner dan de minimale geheugen limiet, zoals gedefinieerd door min vCores, die kan worden geconfigureerd.
 
 In zowel serverloze als ingerichte Compute-data bases kunnen cache vermeldingen worden verwijderd als alle beschik bare geheugen wordt gebruikt.
 
-Houd er rekening mee dat wanneer het CPU-gebruik laag is, het actieve cache gebruik hoog kan blijven, afhankelijk van het gebruiks patroon en te voor komen dat geheugen wordt terugwinning.  Daarnaast kan er meer vertraging optreden nadat de gebruikers activiteit is gestopt voordat het geheugen wordt terugwinning als gevolg van periodieke achtergrond processen die reageren op eerdere gebruikers activiteit.  Verwijder bewerkingen en QDS opschonings taken genereren bijvoorbeeld Ghost-records die zijn gemarkeerd voor verwijdering, maar die niet fysiek worden verwijderd totdat het Ghost Cleanup-proces wordt uitgevoerd, waardoor het lezen van gegevens pagina's in de cache kan zijn vereist.
+Houd er rekening mee dat wanneer het CPU-gebruik laag is, het actieve cache gebruik hoog kan blijven, afhankelijk van het gebruiks patroon en te voor komen dat geheugen wordt terugwinning.  Er kunnen ook extra vertragingen optreden nadat de gebruikers activiteit wordt gestopt voordat het geheugen wordt terugwinning als gevolg van periodieke achtergrond processen die reageren op eerdere gebruikers activiteit.  Verwijder bewerkingen en QDS opschonings taken genereren bijvoorbeeld spook records die zijn gemarkeerd voor verwijdering, maar die niet fysiek worden verwijderd, totdat de Ghost Cleanup-proces wordt uitgevoerd en dat het lezen van gegevens pagina's in de cache kan omvatten.
 
 #### <a name="cache-hydration"></a>Cache Hydration
 
 De SQL-cache groeit naarmate gegevens op dezelfde manier worden opgehaald van de schijf en met dezelfde snelheid als voor ingerichte data bases. Wanneer de data base bezet is, mag het cache geheugen groter worden dan de Maxi maal toegestane geheugen limiet.
 
-## <a name="autopausing-and-autoresuming"></a>Autopauzeering en autohervatten
+## <a name="auto-pause-and-auto-resume"></a>Automatisch onderbreken en automatisch hervatten
 
-### <a name="autopausing"></a>Autopauzeren
+### <a name="auto-pause"></a>Automatisch onderbreken
 
-Automatische onderbreking wordt geactiveerd als aan de duur van de automatische onderbreking de volgende voor waarden van toepassing zijn:
+Automatisch onderbreken wordt geactiveerd als aan alle volgende voor waarden wordt voldaan voor de duur van de vertraging voor automatisch onderbreken:
 
 - Aantal sessies = 0
 - CPU = 0 voor de werk belasting van de gebruiker die wordt uitgevoerd in de gebruikers groep
 
-Er is een optie voor het uitschakelen van de functie voor het indien gewenst van AutoActiveren.
+Er is een optie voor het uitschakelen van automatisch onderbreken indien gewenst.
 
-De volgende functies bieden geen ondersteuning voor automatische onderbrekingen, maar ondersteunen automatisch schalen.  Als een van de volgende functies wordt gebruikt, moet u automatisch onderbreken uitschakelen en blijft de data base online, ongeacht de duur van de inactiviteit van de Data Base:
+De volgende functies bieden geen ondersteuning voor automatische onderbrekingen, maar ondersteunen automatisch schalen.  Als een van de volgende functies wordt gebruikt, moet automatische onderbrekingen worden uitgeschakeld en de data base online blijven, ongeacht de duur van de inactiviteit van de Data Base:
 
 - Geo-replicatie (actieve groepen met geo-replicatie en automatische failover).
 - Lange termijn retentie van back-ups (LTR).
-- De gesynchroniseerde data base die wordt gebruikt in SQL Data Sync.  In tegens telling tot synchronisatie databases ondersteunen de data bases van hubs en leden automatische onderbrekingen.
+- De gesynchroniseerde data base die wordt gebruikt in SQL Data Sync.  In tegens telling tot synchronisatie databases ondersteunen de data bases van de hub en het lid automatische onderbrekingen.
 - DNS-aliasing
 - De taak database die wordt gebruikt in elastische taken (preview).
 
-Autopauzeren wordt tijdelijk voor komen tijdens de implementatie van sommige service-updates waarvoor de data base online is.  In dergelijke gevallen wordt automatisch onderbreken opnieuw toegestaan zodra de service-update is voltooid.
+Automatische onderbrekingen wordt tijdelijk voor komen tijdens de implementatie van sommige service-updates waarvoor de data base online moet zijn.  In dergelijke gevallen wordt automatische onderbrekingen opnieuw toegestaan zodra de service-update is voltooid.
 
-### <a name="autoresuming"></a>Autohervatten
+### <a name="auto-resuming"></a>Automatisch hervatten
 
-Autohervatten wordt geactiveerd als een van de volgende voor waarden op elk moment waar is:
+Automatisch hervatten wordt geactiveerd als een van de volgende voor waarden op elk moment waar is:
 
 |Functie|Trigger voor automatisch hervatten|
 |---|---|
@@ -139,7 +139,7 @@ Autohervatten wordt geactiveerd als een van de volgende voor waarden op elk mome
 |Evaluatie van beveiligingsproblemen|Ad hoc-scans en periodieke scans als deze functie is ingeschakeld|
 |Gegevens Archief voor query (prestaties)|Query Store-instellingen wijzigen of weer geven|
 |Aanbevelingen voor prestaties|Aanbevelingen voor prestaties weer geven of Toep assen|
-|Autotuning|Toepassing en verificatie van aanbevelingen voor automatische afstemming, zoals automatisch indexeren|
+|Automatisch afstemmen|Toepassing en verificatie van aanbevelingen voor automatisch afstemmen, zoals automatisch indexeren|
 |Data base kopiëren|Maak een Data Base als kopie.<br>Exporteren naar een BACPAC-bestand.|
 |SQL-gegevens synchronisatie|Synchronisatie tussen de data bases van de hub en het lid die worden uitgevoerd op een configureerbaar schema of die hand matig worden uitgevoerd|
 |Bepaalde data base-meta gegevens wijzigen|Nieuwe data base-Tags toevoegen.<br>De maximale vCores, de minimale vCores of de vertraging voor autopause wijzigen.|
@@ -147,7 +147,7 @@ Autohervatten wordt geactiveerd als een van de volgende voor waarden op elk mome
 
 Bewakings-, beheer-of andere oplossingen die een van de hierboven genoemde bewerkingen uitvoeren, activeren automatisch hervatten.
 
-Autohervatten wordt ook geactiveerd tijdens de implementatie van sommige service-updates waarvoor de data base online moet zijn.
+Automatisch hervatten wordt ook geactiveerd tijdens de implementatie van sommige service-updates die vereisen dat de data base online is.
 
 ### <a name="connectivity"></a>Connectiviteit
 
@@ -155,7 +155,7 @@ Als een serverloze data base wordt onderbroken, wordt de data base door de eerst
 
 ### <a name="latency"></a>Latentie
 
-De latentie voor automatisch hervatten en automatisch onderbreken van een serverloze data base is doorgaans 1 minuut tot automatisch hervatten en 1-10 minuten om automatisch te onderbreken.
+De latentie voor het automatisch hervatten en automatisch onderbreken van een serverloze data base is in het algemeen een volg orde van 1 minuut om automatisch te hervatten en 1-10 minuten om automatisch te onderbreken.
 
 ### <a name="customer-managed-transparent-data-encryption-byok"></a>Door de klant beheerde transparante gegevens versleuteling (BYOK)
 
@@ -209,7 +209,7 @@ CREATE DATABASE testdb
 ( EDITION = 'GeneralPurpose', SERVICE_OBJECTIVE = 'GP_S_Gen5_1' ) ;
 ```
 
-Zie [Create Data Base](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current)(Engelstalig) voor meer informatie.  
+Zie [Create Data Base](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true)(Engelstalig) voor meer informatie.  
 
 ### <a name="move-a-database-from-the-provisioned-compute-tier-into-the-serverless-compute-tier"></a>Een Data Base van de ingerichte Compute-laag naar de serverloze Compute-laag verplaatsen
 
@@ -234,14 +234,14 @@ az sql db update -g $resourceGroupName -s $serverName -n $databaseName `
 
 #### <a name="use-transact-sql-t-sql"></a>Transact-SQL (T-SQL) gebruiken
 
-Wanneer u T-SQL gebruikt, worden de standaard waarden toegepast voor de minimale vcores en de vertraging voor autopause.
+Wanneer u T-SQL gebruikt, worden de standaard waarden toegepast voor de min-vcores en de vertraging voor automatisch onderbreken.
 
 ```sql
 ALTER DATABASE testdb 
 MODIFY ( SERVICE_OBJECTIVE = 'GP_S_Gen5_1') ;
 ```
 
-Zie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current)(Engelstalig) voor meer informatie.
+Zie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current&preserve-view=true)(Engelstalig) voor meer informatie.
 
 ### <a name="move-a-database-from-the-serverless-compute-tier-into-the-provisioned-compute-tier"></a>Een Data Base van de serverloze Compute-laag naar de ingerichte Compute-laag verplaatsen
 

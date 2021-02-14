@@ -10,13 +10,13 @@ ms.custom: how-to, devx-track-azurecli
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 09/30/2020
-ms.openlocfilehash: 5ba1b9d53255406a73b1b74dbc59fe39e3f9a0d7
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.date: 02/09/2021
+ms.openlocfilehash: 75ea473c8669e9d50d2e9971a20a5fc1c3070779
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979178"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368010"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Machine Learning-werk ruimte
 
@@ -31,8 +31,9 @@ Met de persoonlijke Azure-koppeling kunt u verbinding maken met uw werk ruimte m
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u van plan bent een persoonlijke koppeling in te scha kelen met een door de klant beheerde sleutel, moet u deze functie aanvragen met behulp van een ondersteunings ticket. Zie [Quota's beheren en verhogen](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases)voor meer informatie.
+* Als u van plan bent een persoonlijke koppeling in te scha kelen met een door de klant beheerde sleutel, moet u deze functie aanvragen met behulp van een ondersteunings ticket. Zie [Quota's beheren en verhogen](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases)voor meer informatie.
 
+* U moet een bestaand virtueel netwerk hebben om het persoonlijke eind punt in te kunnen maken. U moet ook [netwerk beleid voor persoonlijke eind punten uitschakelen](../private-link/disable-private-endpoint-network-policy.md) voordat u het persoonlijke eind punt toevoegt.
 ## <a name="limitations"></a>Beperkingen
 
 * Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de regio's Azure Government regio's en Azure China 21Vianet.
@@ -73,6 +74,19 @@ De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-c
 * `--pe-vnet-name`: Het bestaande virtuele netwerk voor het maken van het persoonlijke eind punt in.
 * `--pe-subnet-name`: De naam van het subnet waarin het persoonlijke eind punt moet worden gemaakt. De standaardwaarde is `default`.
 
+Deze para meters zijn naast andere vereiste para meters voor de opdracht maken. Met de volgende opdracht maakt u bijvoorbeeld een nieuwe werk ruimte in de regio vs-West, met behulp van een bestaande resource groep en VNet:
+
+```azurecli
+az ml workspace create -r myresourcegroup \
+    -l westus \
+    -n myworkspace \
+    --pe-name myprivateendpoint \
+    --pe-auto-approval \
+    --pe-resource-group myresourcegroup \
+    --pe-vnet-name myvnet \
+    --pe-subnet-name mysubnet
+```
+
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
 Op het tabblad __netwerken__ in azure machine learning Studio kunt u een persoonlijk eind punt configureren. Er is echter wel een bestaand virtueel netwerk nodig. Zie [werk ruimten maken in de portal](how-to-manage-workspace.md)voor meer informatie.
@@ -82,10 +96,6 @@ Op het tabblad __netwerken__ in azure machine learning Studio kunt u een persoon
 ## <a name="add-a-private-endpoint-to-a-workspace"></a>Een persoonlijk eind punt toevoegen aan een werk ruimte
 
 Gebruik een van de volgende methoden om een persoonlijk eind punt toe te voegen aan een bestaande werk ruimte:
-
-> [!IMPORTANT]
->
-> U moet een bestaand virtueel netwerk hebben om het persoonlijke eind punt in te kunnen maken. U moet ook [netwerk beleid voor persoonlijke eind punten uitschakelen](../private-link/disable-private-endpoint-network-policy.md) voordat u het persoonlijke eind punt toevoegt.
 
 > [!WARNING]
 >

@@ -101,20 +101,12 @@
       href: ./workloads/oracle/oracle-database-quick-create.md
     - name: Elasticsearch
       href: ./linux/tutorial-elasticsearch.md
-    - name: Pakketfilter van FreeBSD
-      href: ./linux/freebsd-pf-nat.md
     - name: Mainframe opnieuw hosten
       href: ./workloads/mainframe-rehosting/overview.md
-    - name: Databases
-      items:
-        - name: MongoDB
-        - name: MS SQL in Linux
-          href: /sql/linux/sql-server-linux-azure-virtual-machine
+    - name: SQL op Virtual Machines
+      href: 'https://docs.microsoft.com/azure/azure-sql/virtual-machines/'
     - name: HPC (High Performance Computing)
       href: /azure/architecture/topics/high-performance-computing/
-    - name: Containers
-    - name: Visual Studio
-      href: ./windows/using-visual-studio-vm.md
 - name: exemplaren
   items:
     - name: Grootten
@@ -218,6 +210,12 @@
                   href: ./windows/n-series-driver-setup.md
             - name: AMD GPU-stuurprogramma's instellen
               href: ./windows/n-series-amd-driver-setup.md
+        - name: FPGA-versnelde compute
+          items:
+            - name: Overzicht
+              href: sizes-field-programmable-gate-arrays.md?context=/azure/virtual-machines/context/context
+            - name: NP-serie
+              href: np-series.md
         - name: Krachtig rekenvermogen
           displayName: H-series
           items:
@@ -329,7 +327,8 @@
           href: ./linux/tutorial-build-deploy-azure-pipelines.md
         - name: LAMP-stack maken
           href: ./linux/tutorial-lamp-stack.md
-        - name: Webserver beveiligen met SSL
+        - name: Een beveiligde webserver met TLS\SSL
+          displayname: SSL TLS
           items:
             - name: Linux
               href: ./linux/tutorial-secure-web-server.md
@@ -592,6 +591,8 @@
               href: ./linux/flatcar-create-upload-vhd.md
             - name: FreeBSD
               href: ./linux/freebsd-intro-on-azure.md
+            - name: Pakketfilter van FreeBSD
+              href: ./linux/freebsd-pf-nat.md
             - name: Oracle Linux
               href: ./linux/oracle-create-upload-vhd.md
             - name: OpenBSD
@@ -636,6 +637,8 @@
           href: ./windows/capture-image-resource.md
         - name: Een VM maken op basis van een beheerde installatiekopie
           href: ./windows/create-vm-generalized-managed.md
+        - name: Visual Studio
+          href: ./windows/using-visual-studio-vm.md
     - name: Gedeelde installatiekopiegalerieën
       items:
         - name: Overzicht
@@ -1225,6 +1228,8 @@
       href: maintenance-and-updates.md
     - name: Automatische patch-toepassing van VM-gast (preview)
       href: ./windows/automatic-vm-guest-patching.md
+    - name: Upgrade van automatische extensie (preview-versie)
+      href: ./automatic-extension-upgrade.md
     - name: Onderhoudsbeheer
       items:
         - name: Onderhoudsmeldingen

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: 1a15ed6b92ade96dd2ed9ef6ffbbe17e2b1452ef
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 71cc36541b8809d93c84225edf771400d2878b4f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99581394"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376051"
 ---
 # <a name="import-hsm-protected-keys-to-managed-hsm-byok"></a>Met HSM beveiligde sleutels importeren in beheerde HSM (BYOK)
 
@@ -70,6 +70,7 @@ Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-l
 |Securosys SA|Fabrikant, HSM als een service|Primus HSM-serie, Securosys Clouds HSM|[BYOK-hulpprogramma en -documentatie van Primus](https://www.securosys.com/primus-azure-byok)|
 |StorMagic|ISV (Enterprise Key Management System)|Meerdere HSM-merken en -modellen, inclusief<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Raadpleeg de [StorMagic-site voor informatie](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|[SvKMS en Azure Key Vault BYOK](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
 |IBM|Fabrikant|IBM 476x, CryptoExpress|[IBM Enter prise Key Management Foundation](https://www.ibm.com/security/key-management/ekmf-bring-your-own-key-azure)|
+|Utimaco|Fabrikant,<br/>HSM as a service|u. Trust-anker, CryptoServer|[UTIMACO BYOK-hulp programma en integratie handleiding](https://support.hsm.utimaco.com/support/downloads/byok)|
 ||||
 
 

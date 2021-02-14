@@ -2,19 +2,16 @@
 title: De indeling Parquet in Azure Data Factory
 description: In dit onderwerp wordt beschreven hoe u kunt omgaan met de Parquet-indeling in Azure Data Factory.
 author: linda33wj
-manager: shwang
-ms.reviewer: craigg
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/27/2020
 ms.author: jingwang
-ms.openlocfilehash: c99225b53266fc74ea357151de824cd8d8ed2088
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a10403b5f26b551458a9e20330bc817512f707de
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011605"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386388"
 ---
 # <a name="parquet-format-in-azure-data-factory"></a>De indeling Parquet in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -66,7 +63,7 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="parquet-as-source"></a>Parquet als bron
 
-De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* bron***.
+De volgende eigenschappen worden ondersteund in de sectie ***\* bron \**** van de Kopieer activiteit.
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
@@ -75,7 +72,7 @@ De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \
 
 ### <a name="parquet-as-sink"></a>Parquet als Sink
 
-De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* sink***.
+De volgende eigenschappen worden ondersteund in het gedeelte ***\* sink \**** van de Kopieer activiteit.
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 894a90c50f968c892a76160a7375f11fe09390d6
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 00291907ddea75ba4507779d1226502dc8343aea
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784996"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365698"
 ---
 # <a name="enforce-a-naming-policy-on-microsoft-365-groups-in-azure-active-directory"></a>Een naamgevings beleid afdwingen voor Microsoft 365 groepen in Azure Active Directory
 
@@ -78,8 +78,6 @@ Als u een naamgevings beleid wilt configureren, is een van de volgende rollen ve
 Geselecteerde beheerders kunnen worden uitgesloten van dit beleid, in alle werk belastingen en eind punten van groepen, zodat ze groepen kunnen maken met behulp van geblokkeerde woorden en met hun eigen naamgevings regels. Hieronder ziet u de lijst met beheerders rollen die zijn uitgesloten van het groeps naamgevings beleid.
 
 - Globale beheerder
-- Ondersteuning voor partner Tier 1
-- Ondersteuning voor partner Tier 2
 - Gebruikersbeheerder
 
 ## <a name="configure-naming-policy-in-azure-portal"></a>Naamgevings beleid configureren in Azure Portal

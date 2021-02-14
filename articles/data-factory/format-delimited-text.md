@@ -2,19 +2,16 @@
 title: Tekst indeling met scheidings tekens in Azure Data Factory
 description: In dit onderwerp wordt beschreven hoe u kunt omgaan met gescheiden tekst indeling in Azure Data Factory.
 author: linda33wj
-manager: shwang
-ms.reviewer: craigg
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/07/2020
 ms.author: jingwang
-ms.openlocfilehash: 0fa68a8dbdcb1f2c0cc4af1b4df751fd81c0de14
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 5b6367d2765277493ea34a4f7a23cae4b24c4dc4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854628"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386591"
 ---
 # <a name="delimited-text-format-in-azure-data-factory"></a>Tekst indeling met scheidings tekens in Azure Data Factory
 
@@ -76,7 +73,7 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="delimited-text-as-source"></a>Tekst met scheidings tekens als bron 
 
-De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* bron***.
+De volgende eigenschappen worden ondersteund in de sectie ***\* bron \**** van de Kopieer activiteit.
 
 | Eigenschap       | Beschrijving                                                  | Vereist |
 | -------------- | ------------------------------------------------------------ | -------- |
@@ -124,7 +121,7 @@ Ondersteunde **instellingen voor het lezen van tekst met scheidings tekens** ond
 
 ### <a name="delimited-text-as-sink"></a>Tekst met scheidings tekens als Sink
 
-De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* sink***.
+De volgende eigenschappen worden ondersteund in het gedeelte ***\* sink \**** van de Kopieer activiteit.
 
 | Eigenschap       | Beschrijving                                                  | Vereist |
 | -------------- | ------------------------------------------------------------ | -------- |
@@ -157,7 +154,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Meerregelige rijen | Bevat het bron bestand rijen die meerdere regels omspannen. Meerregelige waarden moeten tussen aanhalings tekens staan. | Nee `true` of `false` | multiLineRow |
 | Kolom voor het opslaan van de bestands naam | Een nieuwe kolom maken met de naam en het pad van het bron bestand | nee | Tekenreeks | rowUrlColumn |
 | Na voltooiing | De bestanden na de verwerking verwijderen of verplaatsen. Bestandspad wordt gestart vanuit de hoofdmap van de container | nee | Verwijderen: `true` of `false` <br> Ga `['<from>', '<to>']` | purgeFiles <br> moveFiles |
-| Filteren op laatst gewijzigd | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee | Timestamp | modifiedAfter <br> modifiedBefore |
+| Filteren op laatst gewijzigd | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee | Tijdstempel | modifiedAfter <br> modifiedBefore |
 | Geen bestanden gevonden | Als deze eigenschap waar is, wordt er geen fout gegenereerd als er geen bestanden worden gevonden | nee | `true` of `false` | ignoreNoFilesFound |
 
 ### <a name="source-example"></a>Bron voorbeeld

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 057ff064264485a9aea6fc2b31fe57ce37c805ce
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 18104f06e779046786a2c7794736d01c35139490
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895611"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365800"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Problemen oplossen met hybride Azure Active Directory-gekoppelde, downlevel apparaten 
 
@@ -39,6 +39,7 @@ In dit artikel vindt u richt lijnen voor probleem oplossing voor het oplossen va
 **Wat u moet weten:** 
 
 - Hybride Azure AD-deelname voor down level Windows-apparaten werkt iets anders dan in Windows 10. Veel klanten realiseren zich niet dat ze AD FS nodig hebben (voor federatieve domeinen) of naadloze SSO geconfigureerd (voor beheerde domeinen).
+- Naadloze SSO werkt niet in de modus voor persoonlijke navigatie in Firefox en micro soft Edge-browsers. Het werkt ook niet in Internet Explorer als de browser wordt uitgevoerd in de uitgebreide beveiligde modus.
 - Als het service aansluitpunt (SCP) zo is geconfigureerd dat deze verwijst naar de naam van het beheerde domein (bijvoorbeeld contoso.onmicrosoft.com in plaats van contoso.com), werkt de hybride Azure AD-deelname voor down level Windows-apparaten niet.
 - Hetzelfde fysieke apparaat wordt meerdere keren weer gegeven in azure AD wanneer meerdere domein gebruikers zich aanmelden bij de Down Level Hybrid Azure AD gekoppelde apparaten.  Als bijvoorbeeld *jdoe* -en *jharnett* -aanmelding bij een apparaat, wordt er een afzonderlijke registratie (DeviceID) gemaakt voor elk van deze op het tabblad **gebruikers** gegevens. 
 - U kunt ook meerdere vermeldingen voor een apparaat vinden op het tabblad gebruikers gegevens, omdat het besturings systeem opnieuw wordt geïnstalleerd of hand matig opnieuw wordt geregistreerd.

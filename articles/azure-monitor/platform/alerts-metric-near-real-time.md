@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 02/10/2021
 ms.subservice: alerts
-ms.openlocfilehash: 8f59f3488f6c8f5b35ec68d93db656447f882a92
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: ee281e60a0eb6f6192e63a9733146714e4aaf2eb
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510679"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104379"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Ondersteunde resources voor metrische waarschuwingen in Azure Monitor
 
@@ -35,7 +35,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. AppConfiguration/configurationStores |Ja | Nee | [App-configuratie](./metrics-supported.md#microsoftappconfigurationconfigurationstores) |
 |Micro soft. AppPlatform/lente | Ja | Nee | [Azure Spring Cloud](./metrics-supported.md#microsoftappplatformspring) |
 |Micro soft. Automation/automationAccounts | Ja| Nee | [Automation-accounts](./metrics-supported.md#microsoftautomationautomationaccounts) |
-|Micro soft. AVS/privateClouds | Nee | Nee | |
+|Micro soft. AVS/privateClouds | Nee | Nee | [Azure VMware Solution](./metrics-supported.md#microsoftavsprivateclouds) |
 |Microsoft.Bat-CH/batchAccounts | Ja | Nee | [Batchaccounts](./metrics-supported.md#microsoftbatchbatchaccounts) |
 |Microsoft.Cache/Redis | Ja | Ja | [Azure Cache voor Redis](./metrics-supported.md#microsoftcacheredis) |
 |Micro soft. ClassicCompute/domein naam/sleuven/rollen | Nee | Nee | [Klassieke Cloud Services](./metrics-supported.md#microsoftclassiccomputedomainnamesslotsroles) |
@@ -46,7 +46,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. ClassicStorage/Storage accounts/queueServices | Ja | Nee | [Opslag accounts (klassiek)-wacht rijen](./metrics-supported.md#microsoftclassicstoragestorageaccountsqueueservices) |
 |Micro soft. ClassicStorage/Storage accounts/tableServices | Ja | Nee | [Opslag accounts (klassiek)-tabellen](./metrics-supported.md#microsoftclassicstoragestorageaccountstableservices) |
 |Micro soft. CognitiveServices/accounts | Ja | Nee | [Cognitive Services](./metrics-supported.md#microsoftcognitiveservicesaccounts) |
-|Microsoft.Compute/virtualMachines | Yes | Ja<sup>1</sup> | [Virtual Machines](./metrics-supported.md#microsoftcomputevirtualmachines) |
+|Microsoft.Compute/virtualMachines | Ja | Ja<sup>1</sup> | [Virtual Machines](./metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Schaal sets voor virtuele machines](./metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
 |Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Containergroepen](./metrics-supported.md#microsoftcontainerinstancecontainergroups) |
 |Micro soft. ContainerRegistry/registers | Nee | Nee | [Container registers](./metrics-supported.md#microsoftcontainerregistryregistries) |
@@ -54,7 +54,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. DataBoxEdge/dataBoxEdgeDevices | Ja | Ja | [Data Box](./metrics-supported.md#microsoftdataboxedgedataboxedgedevices) |
 |Micro soft. DataFactory/datafactories| Ja| Nee | [Gegevens fabrieken v1](./metrics-supported.md#microsoftdatafactorydatafactories) |
 |Micro soft. DataFactory/fabrieken |Ja | Nee | [Gegevens fabrieken v2](./metrics-supported.md#microsoftdatafactoryfactories) |
-|Microsoft.DataShare/accounts | Ja | Nee | |
+|Microsoft.DataShare/accounts | Ja | Nee | [Gegevens shares](./metrics-supported.md#microsoftdatashareaccounts) |
 |Microsoft.DBforMariaDB/servers | Nee | Nee | [DB voor MariaDB](./metrics-supported.md#microsoftdbformariadbservers) |
 |Microsoft.DBforMySQL/servers | Nee | Nee |[DB voor MySQL](./metrics-supported.md#microsoftdbformysqlservers)|
 |Microsoft.DBforPostgreSQL/servers | Nee | Nee | [DB voor PostgreSQL](./metrics-supported.md#microsoftdbforpostgresqlservers)|
@@ -62,7 +62,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Microsoft.DBforPostgreSQL/flexibleServers | Ja | Nee | [DB voor PostgreSQL (flexibele servers)](./metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
 |Microsoft.Devices/IotHubs | Ja | Nee |[IoT Hub](./metrics-supported.md#microsoftdevicesiothubs) |
 |Micro soft. devices/provisioningServices| Ja | Nee | [Services voor het inrichten van apparaten](./metrics-supported.md#microsoftdevicesprovisioningservices) |
-|Micro soft. DigitalTwins/digitalTwinsInstances | Ja | Nee | |
+|Micro soft. DigitalTwins/digitalTwinsInstances | Ja | Nee | [Digital Twins](./metrics-supported.md#microsoftdigitaltwinsdigitaltwinsinstances) |
 |Microsoft.DocumentDB/databaseAccounts | Ja | Nee | [Cosmos DB](./metrics-supported.md#microsoftdocumentdbdatabaseaccounts) |
 |Micro soft. EventGrid/domeinen | Ja | Nee | [Event Grid-domeinen](./metrics-supported.md#microsofteventgriddomains) |
 |Micro soft. EventGrid/systemTopics | Ja | Nee | [Event Grid systeem onderwerpen](./metrics-supported.md#microsofteventgridsystemtopics) |
@@ -87,10 +87,10 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Microsoft.Network/expressRouteCircuits | Ja | Nee |[ExpressRoute-circuits](./metrics-supported.md#microsoftnetworkexpressroutecircuits) |
 |Micro soft. Network/expressRoutePorts | Ja | Nee |[ExpressRoute Direct](./metrics-supported.md#microsoftnetworkexpressrouteports) |
 |Micro soft. Network/loadBalancers (alleen voor standaard-Sku's)| Ja| Nee | [Load balancers](./metrics-supported.md#microsoftnetworkloadbalancers) |
-|Micro soft. Network/natGateways| Nee | Nee | |
-|Micro soft. Network/privateEndpoints| Nee | Nee | |
-|Micro soft. Network/privateLinkServices| Nee | Nee |
-|Micro soft. Network/publicipaddresses | Nee | Nee |[Openbare IP-adressen](./metrics-supported.md#microsoftnetworkpublicipaddresses)|
+|Micro soft. Network/natGateways| Nee | Nee | [NAT-gateways](./metrics-supported.md#microsoftnetworknatgateways) |
+|Micro soft. Network/privateEndpoints| Nee | Nee | [Privé-eindpunten](./metrics-supported.md#microsoftnetworkprivateendpoints) |
+|Micro soft. Network/privateLinkServices| Nee | Nee | [Services voor persoonlijke koppelingen](./metrics-supported.md#microsoftnetworkprivatelinkservices) |
+|Micro soft. Network/publicipaddresses | Nee | Nee | [Openbare IP-adressen](./metrics-supported.md#microsoftnetworkpublicipaddresses)|
 |Microsoft.Network/trafficManagerProfiles | Ja | Nee | [Traffic Manager-profielen](./metrics-supported.md#microsoftnetworktrafficmanagerprofiles) |
 |Microsoft.OperationalInsights/workspaces| Ja | Nee | [Log Analytics-werkruimten](./metrics-supported.md#microsoftoperationalinsightsworkspaces)|
 |Micro soft. peering/peering | Ja | Nee | [Peerings](./metrics-supported.md#microsoftpeeringpeerings) |
@@ -107,7 +107,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Storage/Storage accounts/fileServices | Ja| Nee | [Opslag accounts: bestanden](./metrics-supported.md#microsoftstoragestorageaccountsfileservices) |
 |Micro soft. Storage/Storage accounts/queueServices | Ja| Nee | [Opslag accounts-wacht rijen](./metrics-supported.md#microsoftstoragestorageaccountsqueueservices) |
 |Micro soft. Storage/Storage accounts/tableServices | Ja| Nee | [Opslag accounts-tabellen](./metrics-supported.md#microsoftstoragestorageaccountstableservices) |
-|Micro soft. StorageCache/caches | Ja | Nee | |
+|Micro soft. StorageCache/caches | Ja | Nee | [HPC-caches](./metrics-supported.md#microsoftstoragecachecaches) |
 |Micro soft. StorageSync/storageSyncServices | Ja | Nee | [Opslag synchronisatie Services](./metrics-supported.md#microsoftstoragesyncstoragesyncservices) |
 |Micro soft. StreamAnalytics/streamingjobs | Ja | Nee | [Stream Analytics](./metrics-supported.md#microsoftstreamanalyticsstreamingjobs) |
 |Micro soft. Synapse/werk ruimten | Ja | Nee | [Synapse Analytics](./metrics-supported.md#microsoftsynapseworkspaces) |

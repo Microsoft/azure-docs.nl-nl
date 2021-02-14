@@ -3,12 +3,12 @@ title: Release aantekeningen voor Application Insights | Microsoft Docs
 description: Voeg implementatie-of build markeringen toe aan uw grafieken met metrische gegevens Verkenner in Application Insights.
 ms.topic: conceptual
 ms.date: 08/14/2020
-ms.openlocfilehash: 58f6603687838713fafbf4cd5cc3f100e22b7401
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c23c973bc02482e7000cfd1d066a322fff93542a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993717"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386030"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Aantekeningen op metrische grafieken in Application Insights
 
@@ -81,7 +81,7 @@ Maak een afzonderlijke API-sleutel voor elk van de release sjablonen van Azure p
 
 Wanneer u nu de release sjabloon gebruikt om een nieuwe release te implementeren, wordt er een aantekening naar Application Insights verzonden. De aantekeningen kunnen worden weer gegeven op de volgende locaties:
 
-Het deel venster gebruik waarin u ook hand matig release aantekeningen kunt maken:
+Het deel venster **gebruik** waarin u ook hand matig release aantekeningen kunt maken:
 
 ![Scherm afbeelding van een staaf diagram met het aantal bezochte bezoekers gedurende een periode van de gebruiker. Release-aantekeningen worden weer gegeven als groen vinkjes boven de grafiek met het tijdstip waarop een release heeft plaatsgevonden](./media/annotations/usage-pane.png)
 

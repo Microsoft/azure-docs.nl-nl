@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren naar zoek index
 description: Meer informatie over het pushen of kopiëren van gegevens naar een Azure search-index met behulp van de Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/13/2019
-ms.openlocfilehash: 0484d846501ef20e5d474668c45324452d0c8fc8
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8c0fe30961e8ca0f31374bfdb5c5f17d58cb7673
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638224"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385792"
 ---
 # <a name="copy-data-to-an-azure-cognitive-search-index-using-azure-data-factory"></a>Gegevens kopiëren naar een Azure Cognitive Search-index met behulp van Azure Data Factory
 
@@ -44,10 +40,10 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde Azure Cognitive 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **AzureSearch** | Ja |
-| url | URL voor de zoek service. | Ja |
-| sleutel | De beheerders sleutel voor de zoek service. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
-| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| type | De eigenschap type moet worden ingesteld op: **AzureSearch** | Yes |
+| url | URL voor de zoek service. | Yes |
+| sleutel | De beheerders sleutel voor de zoek service. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 > [!IMPORTANT]
 > Wanneer u gegevens uit een gegevens archief in de Cloud naar de zoek index kopieert, moet u in azure Cognitive Search gekoppelde service een Azure Integration Runtime met een expliciete regio in connactVia. Stel de regio in op de locatie waar uw zoek service zich bevindt. Meer informatie vindt u in [Azure Integration runtime](concepts-integration-runtime.md#azure-integration-runtime).
@@ -82,7 +78,7 @@ De volgende eigenschappen worden ondersteund voor het kopiëren van gegevens naa
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **AzureSearchIndex** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **AzureSearchIndex** | Yes |
 | indexName | De naam van de zoek index. Data Factory maakt de index niet. De index moet bestaan in azure Cognitive Search. | Ja |
 
 **Voorbeeld:**
@@ -110,13 +106,13 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="azure-cognitive-search-as-sink"></a>Azure Cognitive Search als Sink
 
-Als u gegevens wilt kopiëren naar Azure Cognitive Search, stelt u het bron type in de Kopieer activiteit in op **AzureSearchIndexSink** . De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kopieer activiteit:
+Als u gegevens wilt kopiëren naar Azure Cognitive Search, stelt u het bron type in de Kopieer activiteit in op **AzureSearchIndexSink**. De volgende eigenschappen worden ondersteund in het gedeelte **sink** van de Kopieer activiteit:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **AzureSearchIndexSink** | Ja |
-| writeBehavior | Hiermee geeft u op of u wilt samen voegen of vervangen wanneer een document al aanwezig is in de index. Zie de [eigenschap WriteBehavior](#writebehavior-property).<br/><br/>Toegestane waarden zijn: **samen voegen** (standaard) en **uploaden** . | Nee |
-| writeBatchSize | Uploadt gegevens in de zoek index wanneer de buffer grootte writeBatchSize bereikt. Zie de [eigenschap WriteBatchSize](#writebatchsize-property) voor meer informatie.<br/><br/>Toegestane waarden zijn: integer 1 tot 1.000; de standaard waarde is 1000. | Nee |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **AzureSearchIndexSink** | Yes |
+| writeBehavior | Hiermee geeft u op of u wilt samen voegen of vervangen wanneer een document al aanwezig is in de index. Zie de [eigenschap WriteBehavior](#writebehavior-property).<br/><br/>Toegestane waarden zijn: **samen voegen** (standaard) en **uploaden**. | No |
+| writeBatchSize | Uploadt gegevens in de zoek index wanneer de buffer grootte writeBatchSize bereikt. Zie de [eigenschap WriteBatchSize](#writebatchsize-property) voor meer informatie.<br/><br/>Toegestane waarden zijn: integer 1 tot 1.000; de standaard waarde is 1000. | No |
 
 ### <a name="writebehavior-property"></a>Eigenschap WriteBehavior
 
@@ -124,10 +120,10 @@ AzureSearchSink upsert bij het schrijven van gegevens. Met andere woorden, wanne
 
 De AzureSearchSink biedt de volgende twee upsert-gedragingen (met behulp van AzureSearch SDK):
 
-- **Samen voegen** : alle kolommen in het nieuwe document combi neren met de bestaande. Voor kolommen met een null-waarde in het nieuwe document, blijft de waarde in de bestaande.
-- **Uploaden** : het nieuwe document vervangt de bestaande. Voor kolommen die niet in het nieuwe document zijn opgegeven, wordt de waarde ingesteld op NULL, ongeacht of er een andere waarde dan Null is in het bestaande document of niet.
+- **Samen voegen**: alle kolommen in het nieuwe document combi neren met de bestaande. Voor kolommen met een null-waarde in het nieuwe document, blijft de waarde in de bestaande.
+- **Uploaden**: het nieuwe document vervangt de bestaande. Voor kolommen die niet in het nieuwe document zijn opgegeven, wordt de waarde ingesteld op NULL, ongeacht of er een andere waarde dan Null is in het bestaande document of niet.
 
-Het standaard gedrag is **samen voegen** .
+Het standaard gedrag is **samen voegen**.
 
 ### <a name="writebatchsize-property"></a>Eigenschap WriteBatchSize
 
@@ -175,7 +171,7 @@ In de volgende tabel wordt aangegeven of een Azure Cognitive Search-gegevens typ
 | Int32 | J |
 | Int64 | J |
 | Dubbel | J |
-| Boolean-waarde | J |
+| Booleaans | J |
 | DataTimeOffset | J |
 | Teken reeks matrix | N |
 | GeographyPoint | N |

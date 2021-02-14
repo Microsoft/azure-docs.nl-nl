@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/29/2018
-ms.openlocfilehash: fe5feed4bb6f9b84a3f161692310922f7a6d2f00
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 49929cfe0abc634dc4b704aba1c7b11a5d7dd777
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92424788"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383582"
 ---
 # <a name="replicate-azure-vms-to-another-azure-region"></a>Virtuele Azure-machines repliceren naar een andere Azure-regio
 
@@ -38,10 +38,10 @@ Schakel replicatie in. Bij deze procedure wordt ervan uitgegaan dat de primaire 
 
      ![Scherm opname van de velden die nodig zijn voor het configureren van de replicatie.](./media/site-recovery-replicate-azure-to-azure/enabledrwizard1.png)
 
-3. Klik in **Virtual Machines > virtuele machines selecteren**op elke virtuele machine die u wilt repliceren en selecteer deze. U kunt alleen machines selecteren waarvoor replicatie kan worden ingeschakeld. Klik vervolgens op **OK**.
+3. Klik in **Virtual Machines > virtuele machines selecteren** op elke virtuele machine die u wilt repliceren en selecteer deze. U kunt alleen machines selecteren waarvoor replicatie kan worden ingeschakeld. Klik vervolgens op **OK**.
     ![Scherm afbeelding van waaruit u virtuele machines selecteert.](./media/site-recovery-replicate-azure-to-azure/virtualmachine_selection.png)
 
-4. In **instellingen**kunt u de instellingen van de doel site eventueel configureren:
+4. In **instellingen** kunt u de instellingen van de doel site eventueel configureren:
 
    - **Doel locatie**: de locatie waar de gegevens van de virtuele bron machine worden gerepliceerd. Afhankelijk van de locatie van de geselecteerde machines, geeft Site Recovery u de lijst met geschikte doel regio's. U wordt aangeraden de doel locatie hetzelfde te laten als de locatie van de Recovery Services kluis.
    - **Doelabonnement**: het doelabonnement dat wordt gebruikt voor herstel na noodgevallen. Standaard is het doelabonnement niet hetzelfde als het bronabonnement.
@@ -53,8 +53,11 @@ Schakel replicatie in. Bij deze procedure wordt ervan uitgegaan dat de primaire 
    - **Virtueel netwerk van doel**: standaard maakt site Recovery een nieuw virtueel netwerk in de doel regio met het achtervoegsel ' ASR ' in de naam. Deze is toegewezen aan uw bron netwerk en wordt gebruikt voor toekomstige beveiliging. [Meer informatie](./azure-to-azure-network-mapping.md) over netwerk toewijzing.
    - **Doel opslag accounts (bron-VM gebruikt geen beheerde schijven)**: standaard maakt site Recovery een nieuw doel-opslag account mimicking de opslag configuratie van de bron-VM. Als het opslag account al bestaat, wordt dit opnieuw gebruikt.
    - **Replica-Managed disks (bron-VM maakt gebruik van beheerde schijven)**: site Recovery maakt nieuwe replica-beheerde schijven in de doel regio om de beheerde schijven van de bron-VM te spie gelen met hetzelfde opslag type (Standard of Premium) als de beheerde schijf van de bron-VM.
-   - **Cache opslag accounts**: site Recovery hebt extra opslag account met de naam cache opslag in de bron regio nodig. Alle wijzigingen die zich voordoen op de bron-Vm's, worden bijgehouden en verzonden naar het cache-opslag account voordat deze naar de doel locatie worden gerepliceerd. Dit opslag account moet standaard zijn.
-   - **Doel beschikbaarheids sets**: standaard maakt site Recovery een nieuwe beschikbaarheidsset in de doel regio met het achtervoegsel ' ASR ' in de naam, voor virtuele machines die deel uitmaken van een beschikbaarheidsset in de bron regio. Als de beschikbaarheidsset die is gemaakt door Site Recovery al bestaat, wordt deze opnieuw gebruikt.
+   - **Cache opslag accounts**: site Recovery hebt extra opslag account met de naam cache opslag in de bron regio nodig. Alle wijzigingen die zich voordoen op de bron-Vm's, worden bijgehouden en verzonden naar het cache-opslag account voordat ze naar de doel locatie worden gerepliceerd. Dit opslag account moet standaard zijn.
+   - **Doel beschikbaarheids sets**: standaard maakt site Recovery een nieuwe beschikbaarheidsset in de doel regio met het achtervoegsel ' Azure site Recovery ' in de naam, voor virtuele machines die deel uitmaken van een beschikbaarheidsset in de bron regio. Als de beschikbaarheidsset die is gemaakt door Site Recovery al bestaat, wordt deze opnieuw gebruikt.
+     >[!NOTE]
+     >Configureer tijdens het configureren van de doel beschikbaarheids sets een andere beschikbaarheidsset voor virtuele machines met verschillende groottes. 
+     >
    - **Doelbeschikbaarheidszones**: in Site Recovery wordt standaard hetzelfde zonenummer toegewezen als de bronregio in de doelregio, als de doelregio ondersteuning biedt voor beschikbaarheidszones.
 
      Als de doelregio geen ondersteuning biedt voor beschikbaarheidszones, worden de doel-VM's standaard geconfigureerd als enkele exemplaren. Indien vereist, kunt u dergelijke VM's configureren als onderdeel van beschikbaarheidssets in de doelregio door op Aanpassen te klikken.
@@ -79,9 +82,9 @@ Als u schijven toevoegt aan een virtuele machine van Azure waarvoor replicatie i
 
 Ga als volgt te werk om replicatie in te scha kelen voor een toegevoegde schijf:
 
-1.  Klik in de kluis > **gerepliceerde items**op de virtuele machine waaraan u de schijf hebt toegevoegd.
-2.  Klik op **schijven**en selecteer vervolgens de gegevens schijf waarvoor u replicatie wilt inschakelen (deze schijven hebben een niet- **beveiligde** status).
-3.  Klik in **schijf Details**op **replicatie inschakelen**.
+1.  Klik in de kluis > **gerepliceerde items** op de virtuele machine waaraan u de schijf hebt toegevoegd.
+2.  Klik op **schijven** en selecteer vervolgens de gegevens schijf waarvoor u replicatie wilt inschakelen (deze schijven hebben een niet- **beveiligde** status).
+3.  Klik in **schijf Details** op **replicatie inschakelen**.
 
     ![Replicatie inschakelen voor toegevoegde schijf](./media/azure-to-azure-how-to-enable-replication/enabled-added.png)
 
@@ -96,14 +99,14 @@ U kunt de standaard doel instellingen wijzigen die door Site Recovery worden geb
 1. Klik op **aanpassen:** naast het doel abonnement om het standaard doel abonnement te wijzigen. Selecteer het abonnement in de lijst met alle abonnementen die beschikbaar zijn in dezelfde Azure Active Directory (AAD)-Tenant.
 
 2. Klik op **aanpassen:** als u de standaard instellingen wilt wijzigen:
-    - Selecteer de resource groep in de **doel resource groep**in de lijst met alle resource groepen op de doel locatie van het abonnement.
-    - Selecteer in **doel-virtueel netwerk**het netwerk uit een lijst met alle virtuele netwerken op de doel locatie.
-    - In de **beschikbaarheidsset**kunt u instellingen voor beschikbaarheids sets toevoegen aan de VM als deze deel uitmaken van een beschikbaarheidsset in de bron regio.
-    - Selecteer in **doel opslag accounts**het account dat u wilt gebruiken.
+    - Selecteer de resource groep in de **doel resource groep** in de lijst met alle resource groepen op de doel locatie van het abonnement.
+    - Selecteer in **doel-virtueel netwerk** het netwerk uit een lijst met alle virtuele netwerken op de doel locatie.
+    - In de **beschikbaarheidsset** kunt u instellingen voor beschikbaarheids sets toevoegen aan de VM als deze deel uitmaken van een beschikbaarheidsset in de bron regio.
+    - Selecteer in **doel opslag accounts** het account dat u wilt gebruiken.
 
         ![Scherm afbeelding die laat zien hoe u de instellingen voor het doel abonnement kunt aanpassen.](./media/site-recovery-replicate-azure-to-azure/customize.PNG)
 3. Klik op **aanpassen:** als u de replicatie-instellingen wilt wijzigen.
-4. In **multi-VM-consistentie**selecteert u de virtuele machines die u samen wilt repliceren.
+4. In **multi-VM-consistentie** selecteert u de virtuele machines die u samen wilt repliceren.
     - Alle machines in een replicatiegroep hebben gedeelde crash-consistente en app-consistente herstelpunten bij een failover.
     - Het inschakelen van multi-VM-consistentie kan de prestaties van de werk belasting beïnvloeden (omdat dit CPU-intensief is). De service mag alleen worden ingeschakeld als op computers dezelfde werk belasting wordt uitgevoerd en u consistentie op meerdere computers nodig hebt.
     - Als een toepassing bijvoorbeeld 2 SQL Server virtuele machines en twee webservers bevat, moet u alleen de SQL Server virtuele machines toevoegen aan een replicatie groep.

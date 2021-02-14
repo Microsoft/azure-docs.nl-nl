@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 09/28/2020
 ms.author: ginle
-ms.openlocfilehash: ae78aa80594e46b02d77adcafed961e801780d4f
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 6dff16f4a68f3db4ff841141e7d7025e794cca8f
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430256"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100105178"
 ---
 # <a name="configure-customer-managed-keys-at-rest"></a>Door de klant beheerde sleutels op rest configureren
 
@@ -26,7 +26,7 @@ In azure wordt dit doorgaans gerealiseerd met behulp van een versleutelings sleu
 - [Een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar](../cosmos-db/how-to-setup-cmk.md#add-an-access-policy-to-your-azure-key-vault-instance)
 - [Een sleutel in Azure Key Vault genereren](../cosmos-db/how-to-setup-cmk.md#generate-a-key-in-azure-key-vault)
 
-## <a name="specify-the-azure-key-vault-key"></a>De Azure Key Vault sleutel opgeven
+## <a name="using-azure-portal"></a>Azure Portal gebruiken
 
 Wanneer u uw Azure-API voor FHIR-account maakt op Azure Portal, ziet u de configuratie optie gegevens versleuteling onder de data base-instellingen op het tabblad aanvullende instellingen. Standaard wordt de optie voor de door de service beheerde sleutel gekozen. 
 
@@ -44,9 +44,100 @@ Voor bestaande FHIR-accounts kunt u de sleutelversleutelingskeuze (door service 
 
 Daarnaast kunt u een nieuwe versie van de opgegeven sleutel maken, waarna uw gegevens worden versleuteld met de nieuwe versie zonder onderbreking van de service. U kunt ook toegang tot de sleutel verwijderen om de toegang tot de gegevens te verwijderen. Als de sleutel is uitgeschakeld, resulteert de query in een fout. Als de sleutel opnieuw wordt ingeschakeld, worden query's opnieuw uitgevoerd.
 
+
+
+
+## <a name="using-azure-powershell"></a>Azure PowerShell gebruiken
+
+Met uw Azure Key Vault sleutel-URI kunt u CMK configureren met behulp van Power shell door de onderstaande Power shell-opdracht uit te voeren:
+
+```powershell
+New-AzHealthcareApisService
+    -Name "myService"
+    -Kind "fhir-R4"
+    -ResourceGroupName "myResourceGroup"
+    -Location "westus2"
+    -CosmosKeyVaultKeyUri "https://<my-vault>.vault.azure.net/keys/<my-key>"
+```
+
+## <a name="using-azure-cli"></a>Azure CLI gebruiken
+
+Net als bij de Power shell-methode kunt u CMK configureren door de sleutel-URI van uw Azure Key Vault door te geven onder de `key-vault-key-uri` para meter en de CLI-opdracht hieronder uit te voeren: 
+
+```azurecli-interactive
+az healthcareapis service create
+    --resource-group "myResourceGroup"
+    --resource-name "myResourceName"
+    --kind "fhir-R4"
+    --location "westus2"
+    --cosmos-db-configuration key-vault-key-uri="https://<my-vault>.vault.azure.net/keys/<my-key>"
+
+```
+## <a name="using-azure-resource-manager-template"></a>Azure Resource Manager-sjabloon gebruiken
+
+Met uw Azure Key Vault sleutel-URI kunt u CMK configureren door deze door te geven onder de eigenschap **keyVaultKeyUri** in het object **Properties** .
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "services_myService_name": {
+            "defaultValue": "myService",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.HealthcareApis/services",
+            "apiVersion": "2020-03-30",
+            "name": "[parameters('services_myService_name')]",
+            "location": "westus2",
+            "kind": "fhir-R4",
+            "properties": {
+                "accessPolicies": [],
+                "cosmosDbConfiguration": {
+                    "offerThroughput": 400,
+                    "keyVaultKeyUri": "https://<my-vault>.vault.azure.net/keys/<my-key>"
+                },
+                "authenticationConfiguration": {
+                    "authority": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47",
+                    "audience": "[concat('https://', parameters('services_myService_name'), '.azurehealthcareapis.com')]",
+                    "smartProxyEnabled": false
+                },
+                "corsConfiguration": {
+                    "origins": [],
+                    "headers": [],
+                    "methods": [],
+                    "maxAge": 0,
+                    "allowCredentials": false
+                }
+            }
+        }
+    ]
+}
+```
+
+En u kunt de sjabloon implementeren met het volgende Power shell-script:
+
+```powershell
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+$accountLocation = "West US 2"
+$keyVaultKeyUri = "https://<my-vault>.vault.azure.net/keys/<my-key>"
+
+New-AzResourceGroupDeployment `
+    -ResourceGroupName $resourceGroupName `
+    -TemplateFile "deploy.json" `
+    -accountName $accountName `
+    -location $accountLocation `
+    -keyVaultKeyUri $keyVaultKeyUri
+```
+
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u geleerd hoe u door de klant beheerde sleutels op rest kunt configureren. Daarna kunt u de sectie met veelgestelde vragen over Azure Cosmos DB bekijken: 
+In dit artikel hebt u geleerd hoe u door de klant beheerde sleutels op rest kunt configureren met behulp van Azure Portal, Power shell, CLI en Resource Manager-sjabloon. U kunt de sectie Veelgestelde vragen over Azure Cosmos DB bekijken voor meer vragen: 
  
 >[!div class="nextstepaction"]
 >[Cosmos DB: CMK instellen](https://docs.microsoft.com/azure/cosmos-db/how-to-setup-cmk#frequently-asked-questions)

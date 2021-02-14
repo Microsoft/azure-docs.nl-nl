@@ -10,12 +10,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - contperf-fy21q1
-ms.openlocfilehash: fb7cb0638ca86ea736749e6fb35e2295128162aa
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 7fc57b46055281c64b39767047f6b7cb5b748ad2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032980"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373824"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Een IoT Edge-apparaat configureren om te communiceren via een proxyserver
 
@@ -245,7 +245,7 @@ Als de omgevings variabelen zijn opgenomen, moet de module definitie eruitzien z
 "edgeHub": {
     "type": "docker",
     "settings": {
-        "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+        "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
         "createOptions": ""
     },
     "env": {
@@ -275,7 +275,7 @@ Als u de omgevings variabele **UpstreamProtocol** in het bestand config. yaml op
 
 Als de proxy die u probeert te gebruiken, verkeer inspectie uitvoert op met TLS beveiligde verbindingen, is het belang rijk te weten dat verificatie met X. 509-certificaten niet werkt. IoT Edge een TLS-kanaal met de versleutelde end-to-end-verbinding tot stand brengen met het certificaat en de sleutel. Als dat kanaal is verbroken voor verkeers inspectie, kan de proxy het kanaal niet opnieuw instellen met de juiste referenties en IoT Hub en de IoT Hub Device Provisioning Service een `Unauthorized` fout retour neren.
 
-Als u een proxy wilt gebruiken die verkeer inspectie uitvoert, moet u verificatie van de Shared Access-hand tekening gebruiken of IoT Hub hebben en de IoT Hub Device Provisioning Service is toegevoegd aan een allowlist om inspectie te voor komen.
+Als u een proxy wilt gebruiken die verkeer inspectie uitvoert, moet u verificatie van de Shared Access-hand tekening gebruiken of IoT Hub hebben en de IoT Hub Device Provisioning Service is toegevoegd aan een lijst met toegestane apparaten om inspectie te voor komen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

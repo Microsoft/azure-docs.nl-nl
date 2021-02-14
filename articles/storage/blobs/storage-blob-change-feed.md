@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: 9a439541880cc8e20457edc8d24c5600ba2747c8
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 3e4211da59193d0c48398d9f2822fd12cc217d8b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979216"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390569"
 ---
 # <a name="change-feed-support-in-azure-blob-storage"></a>Ondersteuning voor feed wijzigen in Azure Blob Storage
 
@@ -159,7 +159,7 @@ Zie [Logboeken voor feed changes in Azure Blob Storage verwerken](storage-blob-c
 
 De wijzigings feed is een logboek met wijzigingen die zijn ingedeeld in **uren** *segmenten* , maar worden toegevoegd aan en bijgewerkt om de paar minuten. Deze segmenten worden alleen gemaakt wanneer er BLOB-wijzigings gebeurtenissen in dat uur optreden. Hierdoor kan uw client toepassing wijzigingen gebruiken die binnen bepaalde Peri Oden optreden zonder dat het hele logboek moet worden doorzocht. Zie de [specificaties](#specifications)voor meer informatie.
 
-Een beschikbaar segment van de wijzigings feed wordt beschreven in een manifest bestand dat de paden specificeert naar de wijzigings bestanden voor dat segment. In de lijst van de `$blobchangefeed/idx/segments/` virtuele map worden deze segmenten weer gegeven op tijd. Het pad van het segment beschrijft het begin van het uur tijd bereik dat het segment vertegenwoordigt. U kunt deze lijst gebruiken om de segmenten van de logboeken te filteren die voor u van belang zijn.
+Een beschikbaar segment van de wijzigings feed wordt beschreven in een manifest bestand dat de paden specificeert naar de wijzigings bestanden voor dat segment. In de lijst van de `$blobchangefeed/idx/segments/` virtuele map worden deze segmenten weer gegeven op tijd. Het pad van het segment beschrijft het begin van het uur tijd bereik dat het segment vertegenwoordigt. U kunt deze lijst gebruiken om de segmenten van logboeken te filteren die van belang zijn voor u.
 
 ```text
 Name                                                                    Blob Type    Blob Tier      Length  Content Type    

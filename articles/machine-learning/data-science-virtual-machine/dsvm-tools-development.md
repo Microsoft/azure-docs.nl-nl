@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Meer informatie over de hulpprogram ma's en geïntegreerde ontwikkel omgevingen die beschikbaar zijn op de Data Science Virtual Machine.
 keywords: hulpprogramma's voor datatechnologie, virtuele machine voor datatechnologie, hulpprogramma voor datatechnologie, linux-datatechnologie
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 42a595246f45b2c7423aaf77c95f17243cf8813c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cecc195b8b97ffd9b25cf12898726352ddd698a9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012380"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519436"
 ---
 # <a name="development-tools-on-the-azure-data-science-virtual-machine"></a>Ontwikkel hulpprogramma's op de Azure Data Science Virtual Machine
 
@@ -63,7 +62,7 @@ De Data Science Virtual Machine (DSVM) bundelt verschillende populaire hulpprogr
 | Wat is het?   | IDE op basis van het web voor R    |
 | Ondersteunde DSVM-versies      | Linux      |
 | Typische toepassingen      |  R-ontwikkeling     |
-| Hoe gebruiken en uitvoeren      | Schakel de service in met _systemctl rstudio-server inschakelen_en start de service vervolgens met _systemctl start rstudio-server_. Meld u vervolgens aan bij de RStudio-server op http: \/ /your-VM-IP: 8787.       |
+| Hoe gebruiken en uitvoeren      | Schakel de service in met _systemctl rstudio-server inschakelen_ en start de service vervolgens met _systemctl start rstudio-server_. Meld u vervolgens aan bij de RStudio-server op http: \/ /your-VM-IP: 8787.       |
 | Gerelateerde hulpprogram ma's op de DSVM      |   Visual Studio, Visual Studio code, RStudio Desktop      |
 
 ## <a name="juno"></a>Juno 

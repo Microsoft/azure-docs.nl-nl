@@ -3,16 +3,16 @@ title: Berichten uitwisselen met Azure Service Bus
 description: Maak geautomatiseerde taken en werk stromen die berichten verzenden en ontvangen met behulp van Azure Service Bus in Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: logicappspm
+ms.reviewer: logicappspm, azla
 ms.topic: conceptual
-ms.date: 10/22/2020
+ms.date: 02/10/2021
 tags: connectors
-ms.openlocfilehash: b6276ff940d8b156a671cb5386ce53ede30dd879
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 98d2ee8a85d25065c0021841a9b99a6d616a35d8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019703"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367415"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Berichten uitwisselen in de Cloud met behulp van Azure Logic Apps en Azure Service Bus
 
@@ -169,7 +169,7 @@ Wanneer u een logische app maakt, kunt u de **gecorreleerde order levering selec
 
 ## <a name="delays-in-updates-to-your-logic-app-taking-effect"></a>Vertragingen in updates voor uw logische app die van kracht worden
 
-Als het polling-interval van een Service Bus trigger klein is, zoals 10 seconden, worden updates van uw logische app mogelijk Maxi maal tien minuten van kracht. U kunt dit probleem omzeilen door het polling-interval tijdelijk te verhogen naar een grotere waarde, zoals 30 seconden of 1 minuut voordat u uw logische app bijwerkt. Nadat u de update hebt gemaakt, kunt u het polling-interval opnieuw instellen op de oorspronkelijke waarde. 
+Als het polling-interval van een Service Bus trigger klein is, zoals 10 seconden, worden updates van uw logische app mogelijk Maxi maal tien minuten van kracht. U kunt dit probleem omzeilen door de logische app uit te scha kelen, de wijzigingen aan te brengen en vervolgens de logische app opnieuw in te scha kelen.
 
 <a name="connector-reference"></a>
 

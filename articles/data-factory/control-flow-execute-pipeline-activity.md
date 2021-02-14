@@ -1,22 +1,18 @@
 ---
 title: De activiteit van de pijp lijn uitvoeren in Azure Data Factory
 description: Meer informatie over hoe u de activiteit pijp lijn uitvoeren kunt gebruiken om een Data Factory pijp lijn vanuit een andere Data Factory pijp lijn aan te roepen.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 7df636bbdc85b9fcdcbfef260daca905f9949d8c
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9bcf8fd62e3b20701136d7912074afb37d567e2f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500039"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383344"
 ---
 # <a name="execute-pipeline-activity-in-azure-data-factory"></a>De activiteit van de pijp lijn uitvoeren in Azure Data Factory
 
@@ -68,9 +64,9 @@ Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de activiteit voor het uitvoeren van de pijp lijn. | Tekenreeks | Ja
 type | Moet worden ingesteld op: **ExecutePipeline**. | Tekenreeks | Ja
-pijp lijn | Pijplijn verwijzing naar de afhankelijke pijp lijn die deze pijp lijn aanroept. Een pijplijn referentie object heeft twee eigenschappen: **referentie** naam en **type**. De eigenschap refernaam geeft de naam van de referentie pijplijn aan. De eigenschap type moet worden ingesteld op PipelineReference. | PipelineReference | Ja
-parameters | De para meters die moeten worden door gegeven aan de aangeroepen pijp lijn | Een JSON-object waarmee parameter namen worden toegewezen aan argument waarden | Nee
-waitOnCompletion | Hiermee definieert u of de uitvoering van de activiteit wacht totdat de afhankelijke uitvoering van de pijp lijn is voltooid. De standaardinstelling is onwaar. | Boolean | Nee
+pijp lijn | Pijplijn verwijzing naar de afhankelijke pijp lijn die deze pijp lijn aanroept. Een pijplijn referentie object heeft twee eigenschappen: **referentie** naam en **type**. De eigenschap refernaam geeft de naam van de referentie pijplijn aan. De eigenschap type moet worden ingesteld op PipelineReference. | PipelineReference | Yes
+parameters | De para meters die moeten worden door gegeven aan de aangeroepen pijp lijn | Een JSON-object waarmee parameter namen worden toegewezen aan argument waarden | No
+waitOnCompletion | Hiermee definieert u of de uitvoering van de activiteit wacht totdat de afhankelijke uitvoering van de pijp lijn is voltooid. De standaardinstelling is onwaar. | Booleaans | No
 
 ## <a name="sample"></a>Voorbeeld
 Dit scenario heeft twee pijp lijnen:

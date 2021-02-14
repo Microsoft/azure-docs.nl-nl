@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: In deze voor beelden en instructies leert u hoe u veelvoorkomende taken en scenario's kunt verwerken met de Data Science Virtual Machine.
 keywords: hulpprogramma's voor datatechnologie, virtuele machine voor datatechnologie, hulpprogramma voor datatechnologie, linux-datatechnologie
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 98a1cd883867aa2f785b15f4c7ae4f2266a421ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cda5dfd936243602775e1f4f965032b9d746b0b7
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012566"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519759"
 ---
 # <a name="samples-on-azure-data-science-virtual-machines"></a>Voor beelden van Azure data Science Virtual Machines
 
@@ -28,7 +27,7 @@ Azure data Science Virtual Machines (Dsvm) bevat een uitgebreide set voorbeeld c
 Als u deze voor beelden wilt uitvoeren, moet u een Ubuntu- [Data Science virtual machine](./dsvm-ubuntu-intro.md)hebben ingericht.
 
 ## <a name="available-samples"></a>Beschikbare voorbeelden
-| Categorie voor beelden | Beschrijving | Locaties |
+| Categorie voor beelden | Description | Locaties |
 | ------------- | ------------- | ------------- |
 | R-taal  | Voor beelden illustreren scenario's zoals het maken van verbinding met gegevens archieven op basis van Azure en het vergelijken van open source R en Microsoft Machine Learning Server. Er wordt ook uitgelegd hoe u operationeel maken modellen op Microsoft Machine Learning Server en SQL Server. <br/> [R-taal](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
 | Python-taal  | Voor beelden van scenario's zoals het maken van verbinding met gegevens archieven op basis van Azure en het werken met Azure Machine Learning.  <br/> [Python-taal](#python-language) | <br/>`~notebooks` <br/><br/>|

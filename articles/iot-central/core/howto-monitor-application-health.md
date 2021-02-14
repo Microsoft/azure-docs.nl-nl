@@ -3,25 +3,25 @@ title: De status van een Azure IoT Central-toepassing controleren | Microsoft Do
 description: Als operator of beheerder bewaakt u de algehele status van de apparaten die zijn verbonden met uw IoT Central-toepassing.
 author: dominicbetts
 ms.author: dobett
-ms.date: 05/14/2020
+ms.date: 01/27/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 12485e07bc3cad9d420141ecc6ee66763ac010b7
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 1c16da10a8a7853b1392383855aba0ff24424f33
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760758"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515866"
 ---
-# <a name="monitor-the-overall-health-of-the-devices-connected-to-an-iot-central-application"></a>De algemene status van de apparaten die zijn verbonden met een IoT Central-toepassing bewaken
+# <a name="monitor-the-overall-health-of-an-iot-central-application"></a>De algehele status van een IoT Central toepassing bewaken
 
 > [!NOTE]
 > Metrische gegevens zijn alleen beschikbaar voor versie 3-IoT Central toepassingen. Zie [over uw toepassing](./howto-get-app-info.md)voor meer informatie over het controleren van de versie van uw toepassing.
 
 *Dit artikel is van toepassing op Opera tors en beheerders.*
 
-In dit artikel leert u hoe u de set metrische gegevens van IoT Central kunt gebruiken om de algemene status van de apparaten die zijn verbonden met uw IoT Central-toepassing te beoordelen.
+In dit artikel leert u hoe u de set metrische gegevens van IoT Central kunt gebruiken om de status van apparaten die zijn verbonden met uw IoT Central toepassing en de status van uw actieve gegevens exports te beoordelen.
 
 Metrische gegevens zijn standaard ingeschakeld voor uw IoT Central-toepassing en u opent deze vanuit de [Azure Portal](https://portal.azure.com/). Het [Azure monitor data platform geeft deze metrische gegevens](../../azure-monitor/platform/data-platform-metrics.md) weer en biedt verschillende manieren waarop u ermee kunt werken. U kunt bijvoorbeeld grafieken gebruiken in de Azure Portal, een REST API of query's in Power shell of de Azure CLI.
 
@@ -31,7 +31,7 @@ Toepassingen die gebruikmaken van het gratis proef abonnement hebben geen bijbeh
 
 ## <a name="view-metrics-in-the-azure-portal"></a>Metrische gegevens weer geven in de Azure Portal
 
-Bij de volgende stappen wordt ervan uitgegaan dat u een [IOT Central toepassing](./quick-deploy-iot-central.md) hebt met een aantal [verbonden apparaten](./tutorial-connect-device.md).
+Bij de volgende stappen wordt ervan uitgegaan dat u een [IOT Central toepassing](./quick-deploy-iot-central.md) hebt met een aantal [verbonden apparaten](./tutorial-connect-device.md) of een actieve [gegevens export](howto-export-data.md).
 
 IoT Central metrische gegevens weer geven in de portal:
 

@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van on-premises HDFS
 description: Meer informatie over het verplaatsen van gegevens van on-premises HDFS met Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 3215b82d-291a-46db-8478-eac1a3219614
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c4393ebeb8b1e287bd881233418a902fc523f7f5
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 52e176e0fed85b649d482614667d695db539e5d1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589610"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383072"
 ---
 # <a name="move-data-from-on-premises-hdfs-using-azure-data-factory"></a>Gegevens verplaatsen van on-premises HDFS met Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -66,13 +61,13 @@ Een gekoppelde service koppelt een gegevens archief aan een data factory. U maak
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **Hdfs** |Ja |
-| URL |URL naar HDFS |Ja |
-| authenticationType |Anoniem of Windows. <br><br> Als u **Kerberos-verificatie** wilt gebruiken voor HDFS-connector, raadpleegt u [deze sectie](#use-kerberos-authentication-for-hdfs-connector) om uw on-premises omgeving dienovereenkomstig in te stellen. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **Hdfs** |Yes |
+| url |URL naar HDFS |Yes |
+| authenticationType |Anoniem of Windows. <br><br> Als u **Kerberos-verificatie** wilt gebruiken voor HDFS-connector, raadpleegt u [deze sectie](#use-kerberos-authentication-for-hdfs-connector) om uw on-premises omgeving dienovereenkomstig in te stellen. |Yes |
 | userName |Gebruikers naam voor Windows-verificatie. Voor Kerberos-verificatie geeft u op `<username>@<domain>.com` . |Ja (voor Windows-verificatie) |
 | wachtwoord |Wacht woord voor Windows-verificatie. |Ja (voor Windows-verificatie) |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de HDFS. |Ja |
-| encryptedCredential |[New-AzDataFactoryEncryptValue-](/powershell/module/az.datafactory/new-azdatafactoryencryptvalue) uitvoer van de toegangs referentie. |Nee |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de HDFS. |Yes |
+| encryptedCredential |[New-AzDataFactoryEncryptValue-](/powershell/module/az.datafactory/new-azdatafactoryencryptvalue) uitvoer van de toegangs referentie. |No |
 
 ### <a name="using-anonymous-authentication"></a>Anonieme verificatie gebruiken
 
@@ -112,6 +107,7 @@ Een gekoppelde service koppelt een gegevens archief aan een data factory. U maak
     }
 }
 ```
+
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 Zie het artikel [gegevens sets maken](data-factory-create-datasets.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. Secties zoals structuur, Beschik baarheid en beleid van een gegevensset-JSON zijn vergelijkbaar voor alle typen gegevens sets (Azure SQL, Azure Blob, Azure Table, enzovoort).
 
@@ -119,11 +115,11 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| folderPath |Pad naar de map. Voorbeeld: `myfolder`<br/><br/>Escape teken ' \ ' gebruiken voor speciale tekens in de teken reeks. Bijvoorbeeld: voor folder\subfolder geeft u een submap op \\ \\ en voor d:\samplefolder, geeft u d: \\ \\ SampleFolder op.<br/><br/>U kunt deze eigenschap combi neren met **partitionBy** om mappaden te laten baseren op de begin-en eind datum van het segment. |Ja |
-| fileName |Geef de naam van het bestand op in de **FolderPath** als u wilt dat de tabel verwijst naar een specifiek bestand in de map. Als u geen waarde voor deze eigenschap opgeeft, wijst de tabel naar alle bestanden in de map.<br/><br/>Als er geen bestands naam is opgegeven voor een uitvoer gegevensset, zou de naam van het gegenereerde bestand de volgende indeling hebben: <br/><br/>`Data.<Guid>.txt` (bijvoorbeeld:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Nee |
-| partitionedBy |partitionedBy kan worden gebruikt om een dynamische folderPath op te geven, filename voor time series-gegevens. Voor beeld: folderPath para meters voor elk uur aan gegevens. |Nee |
-| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |Nee |
-| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
+| folderPath |Pad naar de map. Voorbeeld: `myfolder`<br/><br/>Escape teken ' \ ' gebruiken voor speciale tekens in de teken reeks. Bijvoorbeeld: voor folder\subfolder geeft u een submap op \\ \\ en voor d:\samplefolder, geeft u d: \\ \\ SampleFolder op.<br/><br/>U kunt deze eigenschap combi neren met **partitionBy** om mappaden te laten baseren op de begin-en eind datum van het segment. |Yes |
+| fileName |Geef de naam van het bestand op in de **FolderPath** als u wilt dat de tabel verwijst naar een specifiek bestand in de map. Als u geen waarde voor deze eigenschap opgeeft, wijst de tabel naar alle bestanden in de map.<br/><br/>Als er geen bestands naam is opgegeven voor een uitvoer gegevensset, zou de naam van het gegenereerde bestand de volgende indeling hebben: <br/><br/>`Data.<Guid>.txt` (bijvoorbeeld:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |No |
+| partitionedBy |partitionedBy kan worden gebruikt om een dynamische folderPath op te geven, filename voor time series-gegevens. Voor beeld: folderPath para meters voor elk uur aan gegevens. |No |
+| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |No |
+| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |No |
 
 > [!NOTE]
 > bestands naam en file filter kunnen niet tegelijkertijd worden gebruikt.
@@ -170,7 +166,7 @@ Voor kopieer activiteit, wanneer bron van het type **FileSystemSource** de volge
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True, False (standaard) |Nee |
+| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True, False (standaard) |No |
 
 ## <a name="supported-file-and-compression-formats"></a>Ondersteunde indelingen voor bestanden en compressie
 Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md) artikel voor meer informatie.
@@ -363,25 +359,25 @@ Er zijn twee opties om de on-premises omgeving in te stellen, zodat u Kerberos-v
 
 **Op de gateway computer:**
 
-1.  Voer het hulp programma **Ksetup** uit om de Kerberos KDC-server en-realm te configureren.
+1. Voer het hulp programma **Ksetup** uit om de Kerberos KDC-server en-realm te configureren.
 
-    De machine moet worden geconfigureerd als lid van een werk groep, omdat een Kerberos-realm afwijkt van een Windows-domein. Dit kan worden bereikt door de Kerberos-realm in te stellen en een KDC-server als volgt toe te voegen. Vervang *realm.com* door uw eigen respectieve realm als dat nodig is.
+   De machine moet worden geconfigureerd als lid van een werk groep, omdat een Kerberos-realm afwijkt van een Windows-domein. Dit kan worden bereikt door de Kerberos-realm in te stellen en een KDC-server als volgt toe te voegen. Vervang *realm.com* door uw eigen respectieve realm als dat nodig is.
 
-    ```cmd
-    C:> Ksetup /setdomain REALM.COM
-    C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-    ```
+   ```cmd
+   Ksetup /setdomain REALM.COM
+   Ksetup /addkdc REALM.COM <your_kdc_server_address>
+   ```
 
-    **Start** de computer opnieuw op nadat u deze twee opdrachten hebt uitgevoerd.
+   **Start** de computer opnieuw op nadat u deze twee opdrachten hebt uitgevoerd.
 
-2.  Controleer de configuratie met de opdracht **Ksetup** . De uitvoer moet er als volgt uitzien:
+2. Controleer de configuratie met de opdracht **Ksetup** . De uitvoer moet er als volgt uitzien:
 
-    ```cmd
-    C:> Ksetup
-    default realm = REALM.COM (external)
-    REALM.com:
-        kdc = <your_kdc_server_address>
-    ```
+   ```cmd
+   Ksetup
+   default realm = REALM.COM (external)
+   REALM.com:
+      kdc = <your_kdc_server_address>
+   ```
 
 **In Azure Data Factory:**
 
@@ -390,8 +386,8 @@ Er zijn twee opties om de on-premises omgeving in te stellen, zodat u Kerberos-v
 ### <a name="option-2-enable-mutual-trust-between-windows-domain-and-kerberos-realm"></a><a name="kerberos-mutual-trust"></a>Optie 2: wederzijdse vertrouwens relatie tussen Windows-domein en Kerberos-realm inschakelen
 
 #### <a name="requirement"></a>Regel
-*   De gateway computer moet lid worden van een Windows-domein.
-*   U moet gemachtigd zijn om de instellingen van de domein controller bij te werken.
+*    De gateway computer moet lid worden van een Windows-domein.
+*    U moet gemachtigd zijn om de instellingen van de domein controller bij te werken.
 
 #### <a name="how-to-configure"></a>Configureren:
 
@@ -450,54 +446,54 @@ Er zijn twee opties om de on-premises omgeving in te stellen, zodat u Kerberos-v
 
 **Op domein controller:**
 
-1.  Voer de volgende **Ksetup** -opdrachten uit om een realm-vermelding toe te voegen:
+1. Voer de volgende **Ksetup** -opdrachten uit om een realm-vermelding toe te voegen:
 
-    ```cmd
-    C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-    C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
-    ```
+   ```cmd
+   Ksetup /addkdc REALM.COM <your_kdc_server_address>
+   ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+   ```
 
-2.  Een vertrouwens relatie tot stand brengen tussen Windows-domein en Kerberos-realm. [wacht woord] is het wacht woord voor de principal **krbtgt/realm. COM- \@ AD.com**.
+2. Een vertrouwens relatie tot stand brengen tussen Windows-domein en Kerberos-realm. [wacht woord] is het wacht woord voor de principal **krbtgt/realm. COM- \@ AD.com**.
 
-    ```cmd
-    C:> netdom trust REALM.COM /Domain: AD.COM /add /realm /passwordt:[password]
-    ```
+   ```cmd
+   netdom trust REALM.COM /Domain: AD.COM /add /realm /passwordt:[password]
+   ```
 
-3.  Selecteer het versleutelings algoritme dat in Kerberos wordt gebruikt.
+3. Selecteer het versleutelings algoritme dat in Kerberos wordt gebruikt.
 
-    1. Ga naar Serverbeheer > groepsbeleid beheer > domein >-Groepsbeleid objecten > het standaard beleid of het actieve domein en bewerk.
+   1. Ga naar Serverbeheer > groepsbeleid beheer > domein >-Groepsbeleid objecten > het standaard beleid of het actieve domein en bewerk.
 
-    2. Ga in het pop-upvenster **Groepsbeleidsbeheer-editor** naar Computer configuratie > beleid > Windows-instellingen > beveiligings instellingen > lokale beleids regels > beveiligings opties en configureer **netwerk beveiliging: Configureer versleutelings typen die zijn toegestaan voor Kerberos**.
+   2. Ga in het pop-upvenster **Groepsbeleidsbeheer-editor** naar Computer configuratie > beleid > Windows-instellingen > beveiligings instellingen > lokale beleids regels > beveiligings opties en configureer **netwerk beveiliging: Configureer versleutelings typen die zijn toegestaan voor Kerberos**.
 
-    3. Selecteer de versleutelings algoritme die u wilt gebruiken bij het maken van verbinding met KDC. Normaal gesp roken hoeft u alleen maar alle opties te selecteren.
+   3. Selecteer de versleutelings algoritme die u wilt gebruiken bij het maken van verbinding met KDC. Normaal gesp roken hoeft u alleen maar alle opties te selecteren.
 
-        ![Configuratie versleutelings typen voor Kerberos](media/data-factory-hdfs-connector/config-encryption-types-for-kerberos.png)
+      ![Configuratie versleutelings typen voor Kerberos](media/data-factory-hdfs-connector/config-encryption-types-for-kerberos.png)
 
-    4. Gebruik de opdracht **Ksetup** om de versleutelings algoritme op te geven die moet worden gebruikt voor de specifieke realm.
+   4. Gebruik de opdracht **Ksetup** om de versleutelings algoritme op te geven die moet worden gebruikt voor de specifieke realm.
 
-       ```cmd
-       C:> ksetup /SetEncTypeAttr REALM.COM DES-CBC-CRC DES-CBC-MD5 RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
-       ```
+      ```cmd
+      ksetup /SetEncTypeAttr REALM.COM DES-CBC-CRC DES-CBC-MD5 RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
+      ```
 
-4.  Maak de toewijzing tussen het domein account en de Kerberos-principal, zodat u Kerberos principal in het Windows-domein kunt gebruiken.
+4. Maak de toewijzing tussen het domein account en de Kerberos-principal, zodat u Kerberos principal in het Windows-domein kunt gebruiken.
 
-    1. Start de beheer Programma's > **Active Directory gebruikers en computers**.
+   1. Start de beheer Programma's > **Active Directory gebruikers en computers**.
 
-    2. Configureer geavanceerde functies door te klikken op  >  **geavanceerde functies** weer geven.
+   2. Configureer geavanceerde functies door te klikken op  >  **geavanceerde functies** weer geven.
 
-    3. Zoek het account waaraan u toewijzingen wilt maken en klik met de rechter muisknop om **naam toewijzingen** weer te geven > op het tabblad **Kerberos-namen** .
+   3. Zoek het account waaraan u toewijzingen wilt maken en klik met de rechter muisknop om **naam toewijzingen** weer te geven > op het tabblad **Kerberos-namen** .
 
-    4. Voeg een principal uit de realm toe.
+   4. Voeg een principal uit de realm toe.
 
-        ![Beveiligings identiteit toewijzen](media/data-factory-hdfs-connector/map-security-identity.png)
+      ![Beveiligings identiteit toewijzen](media/data-factory-hdfs-connector/map-security-identity.png)
 
 **Op de gateway computer:**
 
 * Voer de volgende **Ksetup** -opdrachten uit om een realm-vermelding toe te voegen.
 
    ```cmd
-   C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-   C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+   Ksetup /addkdc REALM.COM <your_kdc_server_address>
+   ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
    ```
 
 **In Azure Data Factory:**
@@ -506,7 +502,6 @@ Er zijn twee opties om de on-premises omgeving in te stellen, zodat u Kerberos-v
 
 > [!NOTE]
 > Als u kolommen van de bron-gegevensset wilt toewijzen aan kolommen uit Sink-gegevensset, raadpleegt u [DataSet-kolommen toewijzen in azure Data Factory](data-factory-map-columns.md).
-
 
 ## <a name="performance-and-tuning"></a>Prestaties en afstemming
 Zie [Kopieer activiteit prestaties & afstemmings handleiding](data-factory-copy-activity-performance.md) voor meer informatie over de belangrijkste factoren die invloed hebben op de prestaties van het verplaatsen van gegevens (Kopieer activiteit) in azure Data Factory en verschillende manieren om deze te optimaliseren.

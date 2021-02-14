@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f0c9a01e43f12e8fbe597c85c22b79c0994305e3
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 41662c5e4cc0ed9458f8b1b1279e2753daed789f
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938865"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518450"
 ---
 # <a name="supported-postgresql-major-versions"></a>Ondersteunde PostgreSQL primaire versies
 
@@ -29,11 +29,8 @@ De huidige secundaire versie is 10,11. Raadpleeg de [postgresql-documentatie](ht
 ## <a name="postgresql-version-96"></a>PostgreSQL-versie 9,6
 De huidige secundaire release is 9.6.16. Raadpleeg de [postgresql-documentatie](https://www.postgresql.org/docs/9.6/static/release-9-6-16.html) voor meer informatie over verbeteringen en oplossingen in deze kleine release.
 
-## <a name="postgresql-version-95"></a>PostgreSQL-versie 9,5
-De huidige secundaire release is 9.5.20. Raadpleeg de [postgresql-documentatie](https://www.postgresql.org/docs/9.5/static/release-9-5-20.html) voor meer informatie over verbeteringen en oplossingen in deze kleine release.
-
-> [!NOTE]
-> Bij het uitlijnen met post gres-beleid voor de Community Azure Database for PostgreSQL- [versie](https://www.postgresql.org/support/versioning/)wordt post gres versie 9,5 op 11 februari 2021 buiten gebruik gesteld. Raadpleeg het [Azure database for PostgreSQL-versie beleid](concepts-version-policy.md) voor meer informatie en beperkingen.
+## <a name="postgresql-version-95-retired"></a>PostgreSQL-versie 9,5 (buiten gebruik gesteld)
+Wanneer post gres wordt uitgelijnd met het [versie beleid](https://www.postgresql.org/support/versioning/)van de community, heeft Azure database for PostgreSQL van 11 februari 2021 post gres versie 9,5 buiten gebruik gesteld. Raadpleeg het [Azure database for PostgreSQL-versie beleid](concepts-version-policy.md) voor meer informatie en beperkingen. Als u deze primaire versie uitvoert, moet u een upgrade uitvoeren naar een hogere versie, bij voor keur PostgreSQL 11 op het eerste gemak.
 
 ## <a name="managing-upgrades"></a>Upgrades beheren
 Het PostgreSQL-project ondervindt regel matig kleine releases voor het oplossen van gemelde bugs. Op Azure Database for PostgreSQL-servers worden automatisch patches met secundaire releases toegepast tijdens de maandelijkse implementaties van de service. 

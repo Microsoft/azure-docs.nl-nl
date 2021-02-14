@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van de Oracle-Service-Cloud (preview-versie)
 description: Informatie over het kopiëren van gegevens uit de Oracle Service-Cloud naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.openlocfilehash: c3f9046bd0cca8cb191397413c09a72c4cc11c55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 33f2dcd13b64069949930606c5f619543fa36668
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81416802"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368435"
 ---
 # <a name="copy-data-from-oracle-service-cloud-using-azure-data-factory-preview"></a>Gegevens kopiëren uit de Oracle-Service-Cloud met behulp van Azure Data Factory (preview)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -24,7 +20,7 @@ ms.locfileid: "81416802"
 In dit artikel wordt beschreven hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens uit de Oracle-Service-Cloud te kopiëren. Het is gebaseerd op het artikel overzicht van de [Kopieer activiteit](copy-activity-overview.md) . Dit geeft een algemeen overzicht van de Kopieer activiteit.
 
 > [!IMPORTANT]
-> Deze connector is momenteel beschikbaar als preview-versie. U kunt het uitproberen en feedback geven. Neem contact op met de [ondersteuning van Azure](https://azure.microsoft.com/support/) als u een afhankelijkheid van preview-connectors wilt opnemen in uw oplossing.
+> Deze connector is momenteel beschikbaar in preview. U kunt het uitproberen en feedback geven. Neem contact op met de [ondersteuning van Azure](https://azure.microsoft.com/support/) als u een afhankelijkheid van preview-connectors wilt opnemen in uw oplossing.
 
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
@@ -49,13 +45,13 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde service in de cl
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **OracleServiceCloud** | Ja |
-| host | De URL van het Oracle-Service-Cloud exemplaar.  | Ja |
-| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de Cloud Server van Oracle Service.  | Ja |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in de sleutel username. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Ja |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
+| type | De eigenschap type moet worden ingesteld op: **OracleServiceCloud** | Yes |
+| host | De URL van het Oracle-Service-Cloud exemplaar.  | Yes |
+| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de Cloud Server van Oracle Service.  | Yes |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in de sleutel username. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Yes |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
 
 **Voorbeeld:**
 
@@ -88,7 +84,7 @@ Als u gegevens wilt kopiëren uit de Oracle-Service-Cloud, stelt u de eigenschap
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **OracleServiceCloudObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **OracleServiceCloudObject** | Yes |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -119,7 +115,7 @@ Als u gegevens wilt kopiëren uit de Oracle-Service-Cloud, stelt u het bron type
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **OracleServiceCloudSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **OracleServiceCloudSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

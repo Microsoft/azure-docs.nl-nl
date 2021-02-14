@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: ca60c44d1e167367e2c138af1e7bfd4ba1a69417
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3c8c8b2316a206ba837c0b32fd699dc0ed1eeea
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710070"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519385"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-postgresql---flexible-server"></a>Berekenings-en opslag opties in Azure Database for PostgreSQL-flexibele server
 
@@ -89,13 +89,13 @@ Houd er rekening mee dat IOPS ook worden beperkt door uw VM-type. Hoewel u een w
 U kunt extra opslag capaciteit toevoegen tijdens en na het maken van de-server.
 
 >[!NOTE]
-> Opslag kan alleen omhoog en omlaag worden geschaald.
+> Opslag kan alleen omhoog en niet omlaag worden geschaald.
 
 U kunt uw I/O-gebruik bewaken in de Azure Portal of met behulp van Azure CLI-opdrachten. De relevante metrische gegevens die moeten worden bewaakt [, zijn opslag limiet, opslag percentage, gebruikte opslag en i/o-percentage](concepts-monitoring.md).
 
 ### <a name="maximum-iops-for-your-configuration"></a>Maximale IOPS voor uw configuratie
 
-|SKU-naam            |Opslag grootte in GiB                       |32 |64 |128 |256 |512  |1.024|2048|4.096|8\.192 |16.384|
+|SKU-naam            |Opslag grootte in GiB                       |32 |64 |128 |256 |512  |1\.024|2048|4.096|8\.192 |16.384|
 |--------------------|------------------------------------------|---|---|----|----|-----|-----|-----|-----|------|------|
 |                    |Maximum aantal IOPS                              |120|240|500 |1100|2300 |5000 |7500 |7500 |16000 |18000 |
 |**Bebreekbaar**       |                                          |   |   |    |    |     |     |     |     |      |      |
@@ -122,7 +122,7 @@ Wanneer het is gemarkeerd met een \* , worden IOPS beperkt door het VM-type dat 
 
 ### <a name="maximum-io-bandwidth-mibsec-for-your-configuration"></a>Maximale I/O-band breedte (MiB/sec) voor uw configuratie
 
-|SKU-naam            |Opslag grootte, GiB                             |32 |64 |128 |256 |512  |1.024|2048|4.096|8\.192 |16.384|
+|SKU-naam            |Opslag grootte, GiB                             |32 |64 |128 |256 |512  |1\.024|2048|4.096|8\.192 |16.384|
 |--------------------|----------------------------------------------|---|---|----|----|-----|-----|-----|-----|------|------|
 |                    |**Opslag bandbreedte, MiB per seconde**                |25 |50 |100 |125 |150  |200  |250  |250  |500   |750   |
 |**Bebreekbaar**       |                                              |   |   |    |    |     |     |     |     |      |      |
@@ -151,7 +151,10 @@ Als \* u een I/O-band breedte hebt gemarkeerd, wordt deze beperkt door het VM-ty
 
 Wanneer u de opslag limiet bereikt, wordt het starten van fouten door de server gestart en wordt voor komen dat er verdere wijzigingen worden aangebracht. Dit kan ook problemen veroorzaken met andere operationele activiteiten, zoals back-ups en WAL archivering.
 
+Om deze situatie te voor komen, wordt de server automatisch overgeschakeld naar de **modus alleen-lezen** wanneer het opslag gebruik 95% bereikt of als de beschik bare capaciteit minder dan 5 GiB is.
+
 We raden u aan om de schijf ruimte die in gebruik is, actief te bewaken en de schijf grootte te verhogen van de opslag situatie. U kunt een waarschuwing instellen om u te waarschuwen wanneer uw server opslag bijna geen schijf meer benadert, zodat u problemen met het uitvoeren van de schijf kunt voor komen. Zie de documentatie over het [instellen van een waarschuwing](howto-alert-on-metrics.md)voor meer informatie.
+
 
 ### <a name="storage-auto-grow"></a>Opslag automatisch verg Roten
 

@@ -1,20 +1,20 @@
 ---
-title: 'Quickstart: Een cache voor een Enterprise-laag maken'
-description: In deze quickstart leert u hoe u een instantie van Azure Cache voor Redis voor een Enterprise-laag maakt
+title: 'Quick Start: een redis Enter prise-cache maken'
+description: In deze Quick Start leert u hoe u een exemplaar van Azure cache maakt voor redis in bedrijfs lagen
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 10/28/2020
-ms.openlocfilehash: 95f6e2cf7803ff0b152f33c08f170725b5a0e94e
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
-ms.translationtype: HT
+ms.date: 02/08/2021
+ms.openlocfilehash: 50535ab9ac2a3541ade7b9abd8f355bbeaf6d4b3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95795674"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365001"
 ---
-# <a name="quickstart-create-an-enterprise-tier-cache-preview"></a>Quickstart: Een cache voor een Enterprise-laag maken (preview)
+# <a name="quickstart-create-a-redis-enterprise-cache-preview"></a>Quick Start: een redis Enter prise-cache maken (preview)
 
 De Enterprise-lagen voor Azure Cache voor Redis bieden het volledig geïntegreerde en beheerde [Redis Enterprise](https://redislabs.com/redis-enterprise/) in Azure. Ze zijn momenteel beschikbaar als preview. Er zijn twee nieuwe lagen beschikbaar in deze preview:
 * Enterprise, waarbij gebruik wordt gemaakt van vluchtig geheugen (DRAM) op een virtuele machine om gegevens op te slaan
@@ -22,7 +22,7 @@ De Enterprise-lagen voor Azure Cache voor Redis bieden het volledig geïntegreer
 
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen account hebt, kunt u [een account maken](https://azure.microsoft.com/). Zie [Enterprise-laagvereisten](cache-overview.md#enterprise-tier-requirements) voor meer informatie.
+U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen account hebt, kunt u [een account maken](https://azure.microsoft.com/). Zie [Enterprise-laagvereisten](cache-overview.md#enterprise-and-enterprise-flash-tier-requirements) voor meer informatie.
 
 ## <a name="create-a-cache"></a>Een cache maken
 1. Meld u aan bij de Azure-portal via de link in uw preview-uitnodiging en selecteer **Een resource maken** om een cache te maken.

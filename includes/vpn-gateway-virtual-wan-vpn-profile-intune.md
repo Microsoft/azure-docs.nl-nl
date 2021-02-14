@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/04/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: a1fb1c1be8a0203d9f36712fda8e30f0f9354091
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 8fc3ad3e1597d9b38bd095875c8a6f11260e8711
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576104"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515071"
 ---
 U kunt profielen voor Azure VPN-clients (Windows 10) implementeren met behulp van Microsoft Intune. Dit artikel helpt u bij het maken van een intune-profiel met aangepaste instellingen.
 
@@ -46,21 +46,14 @@ Zie het artikel over [VPNV2 CSP](https://docs.microsoft.com/windows/client-manag
       <PluginProfile>
         <ServerUrlList>azuregateway-7cee0077-d553-4323-87df-069c331f58cb-053dd0f6af02.vpn.azure.com</ServerUrlList> 
         <CustomConfiguration>
+
         </CustomConfiguration>
         <PluginPackageFamilyName>Microsoft.AzureVpn_8wekyb3d8bbwe</PluginPackageFamilyName>
       </PluginProfile>
     </VPNProfile>
    ```
 1. Wijzig de vermelding tussen ```<ServerUrlList>``` en ```</ServerUrlList>``` met de vermelding van het gedownloade profiel (azurevpnconfig.xml). Wijzig de FQDN van ' TrustedNetworkDetection ' zodat deze overeenkomt met uw omgeving.
-1. Open het door Azure gedownloade Profiel (azurevpnconfig.xml) en kopieer de inhoud naar het klem bord door de tekst te markeren en op <ctrl> + C te drukken. Kopieer alles tussen de volgende AzVpnProfile-regels, maar Kopieer de AzVpnProfile-regels zelf niet:
-
-   ```
-   <AzVpnProfile xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/">
-     <any xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Xml"
-       i:nil="true" />
-   For example - copy the text in your xml that is located here.
-   </AzVpnProfile>
-   ```
+1. Open het door Azure gedownloade Profiel (azurevpnconfig.xml) en kopieer de volledige inhoud naar het klem bord door de tekst te markeren en op CTRL + C te drukken. 
 1. Plak de gekopieerde tekst uit de vorige Step Into het bestand dat u in stap 2 hebt gemaakt tussen de ```<CustomConfiguration>  </CustomConfiguration>``` Tags. Sla het bestand op met een XML-extensie.
 1. Noteer de waarde in de ```<name>  </name>``` Tags. Dit is de naam van het profiel. U hebt deze naam nodig bij het maken van het profiel in intune. Sluit het bestand en onthoud de locatie waar het wordt opgeslagen.
 

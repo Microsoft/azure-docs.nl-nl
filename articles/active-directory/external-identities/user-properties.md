@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 06/19/2020
+ms.date: 02/12/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c97958add682a4c49d7832843c0b95ffd2663bf
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 0e9189b6608b74be6a72dbdfe66276c5050f042f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859628"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365460"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker
 
@@ -28,7 +28,7 @@ Afhankelijk van de behoeften van de uitgenodigde organisatie, kan een Azure AD B
 - Status 1: in een extern exemplaar van Azure AD en wordt weer gegeven als gast gebruiker in de uitnodigende organisatie. In dit geval meldt de B2B-gebruiker zich aan met behulp van een Azure AD-account dat deel uitmaakt van de uitgenodigde Tenant. Als de partner organisatie geen gebruik maakt van Azure AD, wordt de gast gebruiker in azure AD nog steeds gemaakt. De vereisten zijn dat ze hun uitnodiging inwisselen en Azure AD verifieert hun e-mail adres. Deze indeling wordt ook wel een just-in-time (JIT) pacht of een ' virale ' pacht genoemd.
 
    > [!IMPORTANT]
-   > **Vanaf 31 maart 2021** heeft Microsoft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en -tenants voor B2B-samenwerkingsscenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
+   > **Vanaf 2021 oktober** heeft micro soft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en-tenants voor B2B-samenwerkings scenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
 
 - Status 2: in een micro soft-account en wordt weer gegeven als gast gebruiker in de organisatie van de host. In dit geval meldt de gast gebruiker zich aan met een Microsoft-account of een sociaal account (google.com of vergelijkbaar). De identiteit van de uitgenodigde gebruiker wordt gemaakt als een Microsoft-account in de directory van de organisatie die wordt uitgenodigd tijdens de aanbieding.
 

@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren en transformeren in azure Synapse Analytics
 description: Meer informatie over het kopiëren van gegevens van en naar Azure Synapse Analytics en het transformeren van gegevens in azure Synapse Analytics met behulp van Data Factory.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
-ms.custom: seo-lt-2019
-ms.date: 01/29/2021
-ms.openlocfilehash: 386547aa6e815ad6ba7d860c513a3e24c4040cca
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.date: 02/10/2021
+ms.openlocfilehash: 38306b2fb3c0a51aeedbf1ebd9079dd787783093
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223223"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364287"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens in azure Synapse Analytics kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -68,7 +63,7 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde Azure Synapse A
 | servicePrincipalId  | Geef de client-ID van de toepassing op.                         | Ja, wanneer u Azure AD-verificatie gebruikt met een service-principal. |
 | servicePrincipalKey | Geef de sleutel van de toepassing op. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja, wanneer u Azure AD-verificatie gebruikt met een service-principal. |
 | tenant              | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja, wanneer u Azure AD-verificatie gebruikt met een service-principal. |
-| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw Azure AD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment** en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | No |
+| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw Azure AD-toepassing is geregistreerd. <br/> Toegestane waarden zijn `AzurePublic` , `AzureChina` , `AzureUsGovernment` en `AzureGermany` . De cloud omgeving van de data factory wordt standaard gebruikt. | No |
 | connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt Azure Integration Runtime of een zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No                                                           |
 
 Raadpleeg de volgende secties over respectievelijk de vereisten en JSON-voor beelden voor verschillende verificatie typen:
@@ -270,11 +265,11 @@ Als u gegevens wilt kopiëren uit Azure Synapse Analytics, stelt u de eigenschap
 | sqlReaderQuery               | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `select * from MyTable`. | No       |
 | sqlReaderStoredProcedureName | De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. | No       |
 | storedProcedureParameters    | Para meters voor de opgeslagen procedure.<br/>Toegestane waarden zijn naam-of waardeparen. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. | No       |
-| isolationLevel | Hiermee geeft u het vergrendelings gedrag van de trans actie voor de SQL-bron op. De toegestane waarden zijn: **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, **snap shot**. Als u niets opgeeft, wordt het standaard isolatie niveau van de data base gebruikt. Raadpleeg [dit document](/dotnet/api/system.data.isolationlevel) voor meer informatie. | No |
+| isolationLevel | Hiermee geeft u het vergrendelings gedrag van de trans actie voor de SQL-bron op. De toegestane waarden zijn: **ReadCommitted**, **ReadUncommitted**, **RepeatableRead**, **Serializable**, **snap shot**. Als u niets opgeeft, wordt het standaard isolatie niveau van de data base gebruikt. Zie [System. data. IsolationLevel](/dotnet/api/system.data.isolationlevel)voor meer informatie. | No |
 | partitionOptions | Hiermee geeft u de opties voor gegevens partities op die worden gebruikt voor het laden van gegevens uit Azure Synapse Analytics. <br>Toegestane waarden zijn: **geen** (standaard), **PhysicalPartitionsOfTable** en **DynamicRange**.<br>Wanneer een partitie optie is ingeschakeld (dat wil zeggen, niet `None` ), is de mate van parallelle uitvoering om gegevens van een Azure Synapse Analytics gelijktijdig te laden, bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling van de Kopieer activiteit. | No |
 | partitionSettings | Geef de groep van de instellingen voor het partitioneren van gegevens op. <br>Toep assen wanneer de partitie optie niet is `None` . | No |
-| **_Onder `partitionSettings` :_* _ | | |
-| partitionColumnName | Geef de naam van de bron kolom _ *op in geheel getal of datum/tijd type** (,,,,,, `int` `smallint` `bigint` `date` `smalldatetime` `datetime` `datetime2` of `datetimeoffset` ) dat wordt gebruikt voor het partitioneren van het bereik voor parallelle kopieën. Als u niets opgeeft, wordt de index of de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als de partitie kolom.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook  `?AdfDynamicRangePartitionCondition ` in de component WHERE. Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
+| ***Onder `partitionSettings` :*** | | |
+| partitionColumnName | Geef de naam op van de bron kolom **in een geheel getal of datum/tijd-type** (,,,,,, `int` `smallint` `bigint` `date` `smalldatetime` `datetime` `datetime2` of `datetimeoffset` ) dat wordt gebruikt voor het partitioneren van het bereik voor parallelle kopieën. Als u niets opgeeft, wordt de index of de primaire sleutel van de tabel automatisch gedetecteerd en gebruikt als de partitie kolom.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Als u een query gebruikt om de bron gegevens op te halen, Hook  `?AdfDynamicRangePartitionCondition ` in de component WHERE. Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
 | partitionUpperBound | De maximum waarde van de partitie kolom voor het splitsen van het partitie bereik. Deze waarde wordt gebruikt om de partitie stride te bepalen, niet voor het filteren van de rijen in de tabel. Alle rijen in het tabel-of query resultaat worden gepartitioneerd en gekopieerd. Als deze optie niet is opgegeven, wordt de waarde automatisch gedetecteerd met de Kopieer activiteit.  <br>Toep assen wanneer de partitie optie is `DynamicRange` . Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
 | partitionLowerBound | De minimum waarde van de partitie kolom voor het splitsen van een partitie bereik. Deze waarde wordt gebruikt om de partitie stride te bepalen, niet voor het filteren van de rijen in de tabel. Alle rijen in het tabel-of query resultaat worden gepartitioneerd en gekopieerd. Als deze optie niet is opgegeven, wordt de waarde automatisch gedetecteerd met de Kopieer activiteit.<br>Toep assen wanneer de partitie optie is `DynamicRange` . Zie de sectie [parallel kopiëren van SQL database](#parallel-copy-from-azure-synapse-analytics) voor een voor beeld. | No |
 
@@ -282,7 +277,7 @@ Als u gegevens wilt kopiëren uit Azure Synapse Analytics, stelt u de eigenschap
 
 - Wanneer de opgeslagen procedure in de bron wordt gebruikt om gegevens op te halen, moet u er rekening mee houden dat uw opgeslagen procedure is ontworpen als een ander schema wanneer een andere parameter waarde wordt door gegeven, er mogelijk een fout optreedt of onverwachte resultaten krijgen bij het importeren van het schema vanuit de gebruikers interface of bij het kopiëren van gegevens naar SQL database met het maken van automatische tabellen.
 
-**Voor beeld: SQL-query gebruiken**
+#### <a name="example-using-sql-query"></a>Voor beeld: SQL-query gebruiken
 
 ```json
 "activities":[
@@ -314,7 +309,7 @@ Als u gegevens wilt kopiëren uit Azure Synapse Analytics, stelt u de eigenschap
 ]
 ```
 
-**Voor beeld: opgeslagen procedure gebruiken**
+#### <a name="example-using-stored-procedure"></a>Voor beeld: opgeslagen procedure gebruiken
 
 ```json
 "activities":[
@@ -350,7 +345,7 @@ Als u gegevens wilt kopiëren uit Azure Synapse Analytics, stelt u de eigenschap
 ]
 ```
 
-**Voor beeld van opgeslagen procedure:**
+#### <a name="sample-stored-procedure"></a>Voor beeld van opgeslagen procedure:
 
 ```sql
 CREATE PROCEDURE CopyTestSrcStoredProcedureWithParameters
@@ -529,7 +524,7 @@ Als niet aan de vereisten wordt voldaan, worden de instellingen door Azure Data 
 
 3. Als uw bron een map is, `recursive` moet u de Kopieer activiteit instellen op True.
 
-4. `wildcardFolderPath` ,,,, `wildcardFilename` `modifiedDateTimeStart` `modifiedDateTimeEnd` `prefix` `enablePartitionDiscovery` en `additionalColumns` zijn niet opgegeven.
+4. `wildcardFolderPath` ,,,,, en `wildcardFilename` `modifiedDateTimeStart` `modifiedDateTimeEnd` `prefix` `enablePartitionDiscovery` `additionalColumns` zijn niet opgegeven.
 
 >[!NOTE]
 >Als uw bron een map is, noteert u met poly base bestanden ophalen uit de map en alle bijbehorende submappen en worden er geen gegevens opgehaald uit bestanden waarvoor de bestands naam begint met een onderstreping (_) of een punt (.), zoals [hier wordt beschreven: locatie argument](/sql/t-sql/statements/create-external-table-transact-sql#arguments-2).
@@ -578,6 +573,9 @@ Als u deze functie wilt gebruiken, maakt u een [gekoppelde azure Blob Storage-se
 >- Wanneer u beheerde identiteits verificatie gebruikt voor uw gekoppelde staging-service, kunt u de benodigde configuraties voor [Azure-Blob](connector-azure-blob-storage.md#managed-identity) en [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#managed-identity) .
 >- Als uw staging-Azure Storage is geconfigureerd met het VNet-service-eind punt, moet u beheerde identiteits verificatie gebruiken met ' vertrouwde micro soft-service toestaan ' die is ingeschakeld voor het opslag account, raadpleegt u de [invloed van het gebruik van VNet-service-eind punten met Azure Storage](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-virtual-network-service-endpoints-with-azure-storage). 
 
+>[!IMPORTANT]
+>Als uw staging-Azure Storage is geconfigureerd met een beheerd privé-eind punt en de opslag firewall is ingeschakeld, moet u beheerde identiteits verificatie gebruiken en machtigingen voor toegang tot de opslag-BLOB-gegevens verlenen aan de Synapse-SQL Server om ervoor te zorgen dat het de gefaseerde bestanden kan openen tijdens het laden van poly base.
+
 ```json
 "activities":[
     {
@@ -617,7 +615,7 @@ Als u deze functie wilt gebruiken, maakt u een [gekoppelde azure Blob Storage-se
 
 ### <a name="best-practices-for-using-polybase"></a>Aanbevolen procedures voor het gebruik van poly base
 
-De volgende secties bevatten aanbevolen procedures, naast de methoden die worden genoemd in [Best Practices for Azure Synapse Analytics](../synapse-analytics/sql/best-practices-sql-pool.md).
+De volgende secties bevatten aanbevolen procedures naast de procedures die worden genoemd in [Aanbevolen procedures voor Azure Synapse Analytics](../synapse-analytics/sql/best-practices-sql-pool.md).
 
 #### <a name="required-database-permission"></a>Vereiste database machtiging
 
@@ -637,17 +635,17 @@ Wijs een grotere resource klasse toe aan de gebruiker die gegevens laadt in azur
 
 #### <a name="polybase-troubleshooting"></a>Poly base-probleem oplossing
 
-**Laden naar decimale kolom**
+#### <a name="loading-to-decimal-column"></a>Laden naar decimale kolom
 
-Als uw bron gegevens in tekst indeling of andere niet-poly base-compatibele archieven (met gefaseerde kopie en poly base) staan en een lege waarde bevat die in de decimale kolom van Azure Synapse Analytics moet worden geladen, kunt u de volgende fout raken:
+Als uw bron gegevens in tekst indeling of andere niet-poly base-compatibele archieven (met gefaseerde kopie en poly base) staan en een lege waarde bevat die moet worden geladen in de decimale kolom van Azure Synapse Analytics, wordt de volgende fout weer gegeven:
 
-```
+```output
 ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data type VARCHAR to DECIMAL.....Detailed Message=Empty string can't be converted to DECIMAL.....
 ```
 
 De oplossing bestaat uit het opheffen van de selectie van de optie **type standaard gebruiken**(als onwaar) in Sink voor kopieer activiteit-> poly base-instellingen. "[USE_TYPE_DEFAULT](/sql/t-sql/statements/create-external-file-format-transact-sql#arguments)" is een poly base systeem eigen configuratie, waarmee wordt aangegeven hoe ontbrekende waarden in tekst bestanden met scheidings tekens moeten worden verwerkt wanneer poly base gegevens ophaalt uit het tekst bestand.
 
-**`tableName` in azure Synapse Analytics**
+#### <a name="check-the-tablename-property-in-azure-synapse-analytics"></a>Controleer de eigenschap TableName in azure Synapse Analytics
 
 De volgende tabel bevat voor beelden van de manier waarop u de eigenschap **TableName** in de JSON-gegevensset kunt opgeven. Er worden verschillende combi Naties van schema-en tabel namen weer gegeven.
 
@@ -660,19 +658,29 @@ De volgende tabel bevat voor beelden van de manier waarop u de eigenschap **Tabl
 
 Als de volgende fout wordt weer gegeven, is het probleem mogelijk de waarde die u hebt opgegeven voor de eigenschap **TableName** . Zie de voor gaande tabel voor de juiste manier om waarden op te geven voor de JSON-eigenschap **TableName** .
 
-```
+```output
 Type=System.Data.SqlClient.SqlException,Message=Invalid object name 'stg.Account_test'.,Source=.Net SqlClient Data Provider
 ```
 
-**Kolommen met standaard waarden**
+#### <a name="columns-with-default-values"></a>Kolommen met standaard waarden
 
 Op dit moment accepteert de functie poly base in Data Factory alleen hetzelfde aantal kolommen als in de doel tabel. Een voor beeld is een tabel met vier kolommen waarvan een van deze is gedefinieerd met een standaard waarde. De invoer gegevens moeten nog vier kolommen hebben. Een invoer-gegevensset met drie kolommen resulteert in een fout die vergelijkbaar is met het volgende bericht:
 
-```
+```output
 All columns of the table must be specified in the INSERT BULK statement.
 ```
 
 De NULL-waarde is een speciale vorm van de standaard waarde. Als de kolom null-waarden bevat, kunnen de invoer gegevens in de BLOB voor die kolom leeg zijn. Maar dit kan niet ontbreken in de invoer gegevensset. Poly base voegt NULL toe voor ontbrekende waarden in azure Synapse Analytics.
+
+#### <a name="external-file-access-failed"></a>Toegang tot extern bestand is mislukt
+
+Als u het volgende fout bericht ontvangt, moet u ervoor zorgen dat u beheerde identiteits verificatie gebruikt en de machtigingen voor de opslag-BLOB-gegevens lezer hebt toegewezen aan de beheerde identiteit van de Azure Synapse-werk ruimte.
+
+```output
+Job failed due to reason: at Sink '[SinkName]': shaded.msdataflow.com.microsoft.sqlserver.jdbc.SQLServerException: External file access failed due to internal error: 'Error occurred while accessing HDFS: Java exception raised on call to HdfsBridge_IsDirExist. Java exception message:\r\nHdfsBridge::isDirExist 
+```
+
+Zie [machtigingen verlenen voor beheerde identiteit na het maken van de werk ruimte](../synapse-analytics/security/how-to-grant-workspace-managed-identity-permissions.md#grant-permissions-to-managed-identity-after-workspace-creation)voor meer informatie.
 
 ## <a name="use-copy-statement-to-load-data-into-azure-synapse-analytics"></a><a name="use-copy-statement"></a> De instructie COPY gebruiken om gegevens te laden in azure Synapse Analytics
 

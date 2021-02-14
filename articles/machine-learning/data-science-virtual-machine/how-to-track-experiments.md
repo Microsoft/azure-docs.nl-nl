@@ -3,18 +3,17 @@ title: Experimenteren en implementeren van modellen
 titleSuffix: Azure Data Science Virtual Machine
 description: Meer informatie over het bijhouden en registreren van experimenten van de Data Science Virtual Machine met Azure Machine Learning en/of MLFlow.
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: samkemp
 ms.author: samkemp
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 7726fce7ac69ebfaabf44049abc49c53f8175718
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 3795d531c5c4c543587ab817c05cd1cfeea6be06
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704537"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518535"
 ---
 # <a name="track-experiments-and-deploy-models-in-azure-machine-learning"></a>Experimenten bijhouden en modellen implementeren in Azure Machine Learning
 
@@ -30,7 +29,7 @@ In het volgende diagram ziet u hoe u met MLflow tracking de metrische gegevens v
 
 ## <a name="create-a-new-notebook"></a>Een nieuwe notebook maken
 
-De SDK voor Azure Machine Learning en MLFlow zijn vooraf geïnstalleerd op de Data Science VM en kunnen worden geopend in de omgeving ** \* azureml_py36_* _ Conda. Klik in Jjupyterlab op het start programma en selecteer de volgende kernel:
+De SDK voor Azure Machine Learning en MLFlow zijn vooraf geïnstalleerd op de Data Science VM en kunnen worden geopend in de **azureml_py36_ \*** Conda-omgeving. Klik in Jjupyterlab op het start programma en selecteer de volgende kernel:
 
 ![kernel selecteren](./media/how-to-track-experiments/experiment-tracking-1.png)
 
@@ -137,7 +136,7 @@ Klik in het menu aan de linkerkant in [AzureML Studio](https://ml.azure.com) op 
 
 In de __nieuwe__ Details van het deel venster voor het delegeren van het cluster paneel voor:
 
-_ Compute-naam
+* Compute name
 * Kubernetes-service-Selecteer nieuwe maken
 * De regio selecteren
 * Selecteer de VM-grootte (in het kader van deze zelf studie is de standaard waarde van Standard_D3_v2 voldoende)

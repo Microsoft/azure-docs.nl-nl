@@ -1,22 +1,18 @@
 ---
 title: Een Azure-data factory programmatisch bewaken
 description: Meer informatie over het bewaken van een pijp lijn in een data factory met behulp van verschillende Sdk's (Software Development Kits).
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/16/2018
 author: dcstwh
 ms.author: weetok
-manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: b5d1f0c0d6aa848e590e68e1f18abf7861674483
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 038da033c2bdf78a0a2547cc713944bc11bf093d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556559"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379893"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Een Azure-data factory programmatisch bewaken
 
@@ -28,12 +24,23 @@ In dit artikel wordt beschreven hoe u een pijp lijn in een data factory bewaakt 
 
 ## <a name="data-range"></a>Gegevens bereik
 
-Data Factory slaat alleen pijplijn run data op voor 45 dagen. Wanneer u een query uitvoert op programmeer niveau voor gegevens over Data Factory pijplijn uitvoeringen, bijvoorbeeld met de Power shell-opdracht, `Get-AzDataFactoryV2PipelineRun` zijn er geen maximum datums voor de optionele `LastUpdatedAfter` `LastUpdatedBefore` para meters. Als u bijvoorbeeld een query uitvoert voor gegevens in het afgelopen jaar, retourneert de query geen fout, maar retourneert alleen pijplijn gegevens uit de afgelopen 45 dagen.
+Data Factory slaat alleen pijplijn run data op voor 45 dagen. Wanneer u een query uitvoert op programmeer niveau voor gegevens over Data Factory pijplijn uitvoeringen, bijvoorbeeld met de Power shell-opdracht, `Get-AzDataFactoryV2PipelineRun` zijn er geen maximum datums voor de optionele `LastUpdatedAfter` `LastUpdatedBefore` para meters. Maar als u een query uitvoert voor gegevens in het afgelopen jaar, wordt er bijvoorbeeld geen fout bericht weer gegeven, maar alleen pijplijn gegevens uit de afgelopen 45 dagen.
 
-Als u de gegevens van de pijplijn periode langer dan 45 dagen wilt behouden, stelt u uw eigen diagnostische logboek registratie in met [Azure monitor](monitor-using-azure-monitor.md).
+Als u de gegevens van de pijp lijn langer dan 45 dagen wilt gebruiken, stelt u uw eigen diagnostische logboek registratie in met [Azure monitor](monitor-using-azure-monitor.md).
+
+## <a name="pipeline-run-information"></a>Informatie over pijplijn uitvoering
+
+Raadpleeg de [PIPELINERUN API-naslag informatie](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/get#pipelinerun)voor de eigenschappen van de pijplijn uitvoering. Een pijplijn uitvoering heeft een andere status tijdens de levens cyclus, de mogelijke waarden van de uitvoerings status worden hieronder weer gegeven:
+
+* In wachtrij
+* InProgress
+* Geslaagd
+* Mislukt
+* Annuleren
+* Geannuleerd
 
 ## <a name="net"></a>.NET
-Zie [een Data Factory en pijp lijn maken met behulp van .net](quickstart-create-data-factory-dot-net.md)voor een volledig overzicht van het maken en bewaken van een pijp lijn met behulp van .NET SDK.
+Zie [een Data Factory en pijp lijn maken met behulp van .net](quickstart-create-data-factory-dot-net.md)voor een volledige instructies voor het maken en bewaken van een pijp lijn met behulp van .NET SDK.
 
 1. Voeg de volgende code toe om continu de status van de pijplijn uitvoering te controleren totdat deze klaar is met het kopiëren van de gegevens.
 
@@ -45,7 +52,7 @@ Zie [een Data Factory en pijp lijn maken met behulp van .net](quickstart-create-
     {
         pipelineRun = client.PipelineRuns.Get(resourceGroup, dataFactoryName, runResponse.RunId);
         Console.WriteLine("Status: " + pipelineRun.Status);
-        if (pipelineRun.Status == "InProgress")
+        if (pipelineRun.Status == "InProgress" || pipelineRun.Status == "Queued")
             System.Threading.Thread.Sleep(15000);
         else
             break;
@@ -71,7 +78,7 @@ Zie [een Data Factory en pijp lijn maken met behulp van .net](quickstart-create-
 Zie [Data Factory Naslag informatie over .NET SDK](/dotnet/api/microsoft.azure.management.datafactory)voor volledige documentatie over .NET SDK.
 
 ## <a name="python"></a>Python
-Zie [een Data Factory en pijp lijn maken met behulp](quickstart-create-data-factory-python.md)van python voor een volledig overzicht van het maken en bewaken van een pijp lijn met behulp van python SDK.
+Zie [een Data Factory en pijp lijn maken met behulp](quickstart-create-data-factory-python.md)van python voor een volledige instructies voor het maken en bewaken van een pijp lijn met behulp van python SDK.
 
 Als u de uitvoering van de pijp lijn wilt controleren, voegt u de volgende code toe:
 
@@ -89,7 +96,7 @@ print_activity_run_details(activity_runs_paged[0])
 Zie [Naslag informatie over Data Factory PYTHON SDK](/python/api/overview/azure/datafactory)voor volledige documentatie over python SDK.
 
 ## <a name="rest-api"></a>REST-API
-Zie [een Data Factory en pijp lijn maken met behulp van rest API](quickstart-create-data-factory-rest-api.md)voor een volledig overzicht van het maken en bewaken van een pijp lijn met behulp van rest API.
+Zie [een Data Factory en pijp lijn maken met behulp van rest API](quickstart-create-data-factory-rest-api.md)voor een volledige instructies voor het maken en bewaken van een pijp lijn met behulp van rest API.
  
 1. Voer het volgende script uit om continu de status van de pijplijnuitvoering te controleren totdat het kopiëren van de gegevens is voltooid.
 
@@ -99,7 +106,7 @@ Zie [een Data Factory en pijp lijn maken met behulp van rest API](quickstart-cre
         $response = Invoke-RestMethod -Method GET -Uri $request -Header $authHeader
         Write-Host  "Pipeline run status: " $response.Status -foregroundcolor "Yellow"
 
-        if ($response.Status -eq "InProgress") {
+        if ( ($response.Status -eq "InProgress") -or ($response.Status -eq "Queued") ) {
             Start-Sleep -Seconds 15
         }
         else {
@@ -119,7 +126,7 @@ Zie [een Data Factory en pijp lijn maken met behulp van rest API](quickstart-cre
 Zie [Data Factory rest API Reference](/rest/api/datafactory/)(Engelstalig) voor volledige documentatie over rest API.
 
 ## <a name="powershell"></a>PowerShell
-Zie [een Data Factory en pijp lijn maken met behulp van Power shell](quickstart-create-data-factory-powershell.md)voor een volledig overzicht van het maken en bewaken van een pijp lijn met behulp van Power shell.
+Zie [een Data Factory en pijp lijn maken met behulp van Power shell](quickstart-create-data-factory-powershell.md)voor een volledige instructies voor het maken en bewaken van een pijp lijn met Power shell.
 
 1. Voer het volgende script uit om continu de status van de pijplijnuitvoering te controleren totdat het kopiëren van de gegevens is voltooid.
 
@@ -128,12 +135,12 @@ Zie [een Data Factory en pijp lijn maken met behulp van Power shell](quickstart-
         $run = Get-AzDataFactoryV2PipelineRun -ResourceGroupName $resourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $runId
 
         if ($run) {
-            if ($run.Status -ne 'InProgress') {
-                Write-Host "Pipeline run finished. The status is: " $run.Status -foregroundcolor "Yellow"
+            if ( ($run.Status -ne "InProgress") -and ($run.Status -ne "Queued") ) {
+                Write-Output ("Pipeline run finished. The status is: " +  $run.Status)
                 $run
                 break
             }
-            Write-Host  "Pipeline is running...status: InProgress" -foregroundcolor "Yellow"
+            Write-Output ("Pipeline is running...status: " + $run.Status)
         }
 
         Start-Sleep -Seconds 30

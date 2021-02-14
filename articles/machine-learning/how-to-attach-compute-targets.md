@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 10/02/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: e4d25b5ec50346c7a2ecabff835209218d1a3b63
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 850b590ae8aeab822367714fb9a56661306c2387
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100093400"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518688"
 ---
 # <a name="set-up-compute-targets-for-model-training-and-deployment"></a>Reken doelen instellen voor model training en implementatie
 
@@ -225,7 +225,7 @@ Als u Azure Databricks als een reken doel wilt koppelen, geeft u de volgende inf
 
 * __Databricks Compute name__: de naam die u wilt toewijzen aan deze Compute-resource.
 * __Naam van de Databricks-werk ruimte__: de naam van de Azure Databricks-werk ruimte.
-* __Databricks-toegangs token__: het toegangs token dat wordt gebruikt voor het verifiëren van Azure Databricks. Als u een toegangs token wilt genereren, raadpleegt u het [verificatie](https://docs.azuredatabricks.net/dev-tools/api/latest/authentication.html) document.
+* __Databricks-toegangs token__: het toegangs token dat wordt gebruikt voor het verifiëren van Azure Databricks. Als u een toegangs token wilt genereren, raadpleegt u het [verificatie](/azure/databricks/dev-tools/api/latest/authentication) document.
 
 De volgende code laat zien hoe u Azure Databricks als een compute-doel koppelt aan de Azure Machine Learning SDK (__de werk ruimte Databricks moet aanwezig zijn in hetzelfde abonnement als uw AML-werk ruimte__):
 

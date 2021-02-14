@@ -1,22 +1,18 @@
 ---
 title: Azure functions-activiteit in Azure Data Factory
 description: Meer informatie over het gebruik van de Azure function-activiteit voor het uitvoeren van een Azure-functie in een Data Factory-pijp lijn
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: f7c8f1e5ae0da9e7c404a942fcb4f554281486a7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 51cf396fb6f1fcc86a0187e9f3be6b81487b86c2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500036"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383397"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Azure functions-activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -28,7 +24,7 @@ Bekijk de volgende video voor een inleiding en demonstratie van acht minuten voo
 
 ## <a name="azure-function-linked-service"></a>Gekoppelde Azure-functie Service
 
-Het retour type van de Azure-functie moet geldig zijn `JObject` . (Houd er wel bij [JArray](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm) dat JArray *geen* is `JObject` .) Een ander retour type dan `JObject` mislukt en de inhoud van het fout bericht van de gebruiker wordt gegenereerd, *is geen geldige JObject*.
+Het retour type van de Azure-functie moet geldig zijn `JObject` . (Houd er wel bij [](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm) dat JArray *geen* is `JObject` .) Een ander retour type dan `JObject` mislukt en de inhoud van het fout bericht van de gebruiker wordt gegenereerd, *is geen geldige JObject*.
 
 | **Eigenschap** | **Beschrijving** | **Vereist** |
 | --- | --- | --- |
@@ -46,7 +42,7 @@ Het retour type van de Azure-functie moet geldig zijn `JObject` . (Houd er wel b
 | gekoppelde service | De gekoppelde Azure-functie service voor de bijbehorende Azure-functie-app  | Verwijzing naar gekoppelde service | ja |
 | functie naam  | De naam van de functie in de Azure-functie-app die deze activiteit aanroept | Tekenreeks | ja |
 | method  | REST API methode voor de functie aanroep | Ondersteunde typen teken reeksen: ' ophalen ', ' POST ', ' PUT '   | ja |
-| koptekst  | Kopteksten die naar de aanvraag worden verzonden. Als u bijvoorbeeld de taal en het type van een aanvraag wilt instellen: ' headers ': {' Accept-Language ': ' nl-nl ', ' content-type ': ' application/json '} | Teken reeks (of expressie met het resultType van de teken reeks) | Nee |
+| koptekst  | Kopteksten die naar de aanvraag worden verzonden. Als u bijvoorbeeld de taal en het type van een aanvraag wilt instellen: ' headers ': {' Accept-Language ': ' nl-nl ', ' content-type ': ' application/json '} | Teken reeks (of expressie met het resultType van de teken reeks) | No |
 | body  | hoofd tekst die samen met de aanvraag wordt verzonden naar de functie-API-methode  | Teken reeks (of expressie met het resultType van de teken reeks) of het object.   | Vereist voor PUT/POST-methoden |
 |   |   |   | |
 
@@ -60,7 +56,7 @@ De Azure function-activiteit biedt ook ondersteuning voor **query's**. Een query
 
 ## <a name="timeout-and-long-running-functions"></a>Time-out en langlopende functies
 
-Azure Functions een time-out na 230 seconden, ongeacht de `functionTimeout` instelling die u in de instellingen hebt geconfigureerd. Zie [dit artikel](../azure-functions/functions-versions.md#timeout)voor meer informatie. U kunt dit probleem omzeilen door een async-patroon te volgen of door Durable Functions te gebruiken. Het voor deel van Durable Functions is dat ze hun eigen status tracerings mechanisme bieden, zodat u uw eigen functie niet hoeft te implementeren.
+Azure Functions een time-out na 230 seconden, ongeacht de `functionTimeout` instelling die u in de instellingen hebt geconfigureerd. Raadpleeg [dit artikel](../azure-functions/functions-versions.md#timeout) voor meer informatie. U kunt dit probleem omzeilen door een async-patroon te volgen of door Durable Functions te gebruiken. Het voor deel van Durable Functions is dat ze hun eigen status tracerings mechanisme bieden, zodat u uw eigen functie niet hoeft te implementeren.
 
 Meer informatie over Durable Functions in [dit artikel](../azure-functions/durable/durable-functions-overview.md). U kunt een Azure function-activiteit instellen om de duurzame functie aan te roepen, waardoor een antwoord wordt geretourneerd met een andere URI, zoals [dit voor beeld](../azure-functions/durable/durable-functions-http-features.md#http-api-url-discovery). Omdat `statusQueryGetUri` de HTTP-Status 202 wordt geretourneerd terwijl de functie wordt uitgevoerd, kunt u de status van de functie navragen met behulp van een webactiviteit. Stel een webactiviteit in waarbij het `url` veld is ingesteld op `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri` . Wanneer de duurzame functie is voltooid, wordt de uitvoer van de functie de uitvoer van de webactiviteit.
 

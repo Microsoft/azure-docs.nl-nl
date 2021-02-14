@@ -9,12 +9,12 @@ ms.subservice: pod
 ms.topic: overview
 ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: dd71b03f55cc1522727f6c496c1bdbe0f42cb828
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
-ms.translationtype: HT
+ms.openlocfilehash: 13c07da7393c70bb1fc61930dd1179994c68ed75
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678612"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389804"
 ---
 # <a name="what-is-azure-data-box"></a>Wat is Azure Data Box?
 
@@ -42,7 +42,7 @@ Hier volgen de verschillende scenario’s waarin Data Box kan worden gebruikt om
 
 - **Herstel na noodgeval** - wanneer een kopie van de gegevens van Azure wordt hersteld naar een on-premises netwerk. In een typisch scenario voor herstel na een noodgeval wordt een grote hoeveelheid Azure-gegevens geëxporteerd naar Data Box. Microsoft stuurt deze Data Box vervolgens door en de gegevens worden in korte tijd op uw locatie hersteld.
 
-- **Beveiligingsvereisten** - wanneer u gegevens moet kunnen exporteren uit Azure omwille van overheids- of beveiligingsvereisten. Azure Storage is bijvoorbeeld beschikbaar in de US Secret- en Top Secret-clouds, en u kunt Data Box gebruiken om gegevens uit Azure te exporteren. 
+- **Beveiligings vereisten** : wanneer u gegevens uit Azure moet kunnen exporteren vanwege overheids-of beveiligings vereisten. Azure Storage is bijvoorbeeld beschikbaar in de US Secret- en Top Secret-clouds, en u kunt Data Box gebruiken om gegevens uit Azure te exporteren. 
 
 - **Terug naar on-premises of een andere cloudserviceprovider migreren**: als u alle gegevens terug naar on-premises of naar een andere cloudserviceprovider wilt overzetten, exporteer dan gegevens via Data Box om de workloads te migreren.
 

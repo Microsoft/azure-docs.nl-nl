@@ -1,20 +1,20 @@
 ---
 title: 'Zelfstudie: een gekoppelde sjabloon implementeren'
 description: Meer informatie over het implementeren van een gekoppelde sjabloon
-ms.date: 01/12/2021
+ms.date: 02/12/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 4ec49fad35e958f010461abf2ee0e3dab8077d55
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: b69d4e8d2748cffec6a4f0cddfa20e6722653c76
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134191"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519011"
 ---
 # <a name="tutorial-deploy-a-linked-template"></a>Zelfstudie: Een gekoppelde sjabloon implementeren
 
-In de [eerdere zelfstudies](./deployment-tutorial-local-template.md)hebt u geleerd hoe u een sjabloon kunt implementeren die is opgeslagen op de lokale computer. Als u complexe oplossingen wilt implementeren, kunt u een sjabloon opsplitsen in een groot aantal sjablonen en deze sjablonen implementeren via een hoofdsjabloon. In deze zelfstudie leert u hoe u een hoofdsjabloon met de verwijzing naar een gekoppelde sjabloon implementeert. Wanneer de hoofdsjabloon wordt geïmplementeerd, wordt de implementatie van de gekoppelde sjabloon geactiveerd. U leert ook hoe u de gekoppelde sjabloon kunt opslaan en beveiligen met behulp van een SAS-token. Dit neemt ongeveer **12 minuten** in beslag.
+In de [eerdere zelfstudies](./deployment-tutorial-local-template.md)hebt u geleerd hoe u een sjabloon kunt implementeren die is opgeslagen op de lokale computer. Als u complexe oplossingen wilt implementeren, kunt u een sjabloon opsplitsen in een groot aantal sjablonen en deze sjablonen implementeren via een hoofdsjabloon. In deze zelfstudie leert u hoe u een hoofdsjabloon met de verwijzing naar een gekoppelde sjabloon implementeert. Wanneer de hoofdsjabloon wordt geïmplementeerd, wordt de implementatie van de gekoppelde sjabloon geactiveerd. U leert ook hoe u de sjablonen kunt opslaan en beveiligen met behulp van SAS-tokens. Dit neemt ongeveer **12 minuten** in beslag.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,15 +32,18 @@ U kunt de resource van het opslagaccount verplaatsen naar een gekoppelde sjabloo
 
 :::code language="json" source="~/resourcemanager-templates/get-started-deployment/linked-template/linkedStorageAccount.json":::
 
-De volgende sjabloon is de hoofdsjabloon. Het gemarkeerde object `Microsoft.Resources/deployments` laat zien hoe u een gekoppelde sjabloon aanroept. De gekoppelde sjabloon kan niet worden opgeslagen als een lokaal bestand of een bestand dat alleen beschikbaar is in uw lokale netwerk. U kunt alleen een URI-waarde opgeven die HTTP of HTTP bevat. De sjabloon moet toegankelijk zijn voor Resource Manager. U kunt ook de gekoppelde sjabloon in een opslagaccount plaatsen en de URI voor dat item gebruiken. De URI wordt doorgegeven aan de sjabloon met behulp van een parameter. Zie de definitie van de gemarkeerde parameter.
+De volgende sjabloon is de hoofdsjabloon. Het gemarkeerde object `Microsoft.Resources/deployments` laat zien hoe u een gekoppelde sjabloon aanroept. De gekoppelde sjabloon kan niet worden opgeslagen als een lokaal bestand of een bestand dat alleen beschikbaar is in uw lokale netwerk. U kunt ofwel een URI-waarde van de gekoppelde sjabloon opgeven die HTTP of HTTPS bevat, of de eigenschap _relativePath_ gebruiken om een extern gekoppelde sjabloon te implementeren op een locatie ten opzichte van de bovenliggende sjabloon. Een optie is om zowel de hoofd sjabloon als de gekoppelde sjabloon in een opslag account te plaatsen.
 
-:::code language="json" source="~/resourcemanager-templates/get-started-deployment/linked-template/azuredeploy.json" highlight="27-32,40-58":::
-
-Sla een kopie van de hoofdsjabloon op de lokale computer op met de extensie _.json_, bijvoorbeeld _azuredeploy.json_. U hoeft geen kopie van de gekoppelde sjabloon op te slaan. De gekoppelde sjabloon wordt gekopieerd van een GitHub-opslagplaats naar een opslagaccount.
+:::code language="json" source="~/resourcemanager-templates/get-started-deployment/linked-template/azuredeploy.json" highlight="34-52":::
 
 ## <a name="store-the-linked-template"></a>De gekoppelde sjabloon opslaan
 
-Met het volgende PowerShell-script maakt u een opslagaccount, maakt u een container en kopieert u de gekoppelde sjabloon vanuit een GitHub-opslagplaats naar de container. Er wordt een kopie van de gekoppelde sjabloon opgeslagen in [GitHub](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json).
+Beide hoofd sjablonen en gekoppelde sjablonen worden opgeslagen in GitHub:
+
+Met het volgende Power shell-script maakt u een opslag account, maakt u een container en kopieert u de twee sjablonen van een GitHub-opslag plaats naar de container. Deze twee sjablonen zijn:
+
+- De hoofdsjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/azuredeploy.json
+- De gekoppelde sjabloon: https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json
 
 Selecteer **Uitproberen** om Cloud Shell te openen, selecteer **Kopiëren** om het PowerShell-script te kopiëren en klik met de rechtermuisknop op het deelvenster van de shell om het script te plakken:
 
@@ -55,11 +58,15 @@ $resourceGroupName = $projectName + "rg"
 $storageAccountName = $projectName + "store"
 $containerName = "templates" # The name of the Blob container to be created.
 
-$linkedTemplateURL = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json" # A completed linked template used in this tutorial.
-$fileName = "linkedStorageAccount.json" # A file name used for downloading and uploading the linked template.
+$mainTemplateURL = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/azuredeploy.json"
+$linkedTemplateURL = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/get-started-deployment/linked-template/linkedStorageAccount.json"
 
-# Download the template
-Invoke-WebRequest -Uri $linkedTemplateURL -OutFile "$home/$fileName"
+$mainFileName = "azuredeploy.json" # A file name used for downloading and uploading the main template.Add-PSSnapin
+$linkedFileName = "linkedStorageAccount.json" # A file name used for downloading and uploading the linked template.
+
+# Download the templates
+Invoke-WebRequest -Uri $mainTemplateURL -OutFile "$home/$mainFileName"
+Invoke-WebRequest -Uri $linkedTemplateURL -OutFile "$home/$linkedFileName"
 
 # Create a resource group
 New-AzResourceGroup -Name $resourceGroupName -Location $location
@@ -76,11 +83,17 @@ $context = $storageAccount.Context
 # Create a container
 New-AzStorageContainer -Name $containerName -Context $context -Permission Container
 
-# Upload the template
+# Upload the templates
 Set-AzStorageBlobContent `
     -Container $containerName `
-    -File "$home/$fileName" `
-    -Blob $fileName `
+    -File "$home/$mainFileName" `
+    -Blob $mainFileName `
+    -Context $context
+
+Set-AzStorageBlobContent `
+    -Container $containerName `
+    -File "$home/$linkedFileName" `
+    -Blob $linkedFileName `
     -Context $context
 
 Write-Host "Press [ENTER] to continue ..."
@@ -88,7 +101,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="deploy-template"></a>Sjabloon implementeren
 
-Als u een privésjabloon in een opslagaccount wilt implementeren, genereert u een SAS-token en neemt u het op in de URI voor de sjabloon. Stel de vervaltijd zo in, dat er genoeg tijd is om de implementatie te voltooien. De blob met de sjabloon is alleen toegankelijk voor de eigenaar van het account. Maar als u een SAS-token voor de blob maakt, is de blob toegankelijk voor iedereen met die URI. Als een andere gebruiker de URI onderschept, kan die gebruiker toegang krijgen tot de sjabloon. Een SAS-token is een goede manier om de toegang tot uw sjablonen te beperken, maar u mag geen gevoelige gegevens zoals wachtwoorden rechtstreeks in de sjabloon toevoegen.
+Als u sjablonen wilt implementeren in een opslag account, genereert u een SAS-token en levert u dit aan de para meter _-query_ server. Stel de vervaltijd zo in, dat er genoeg tijd is om de implementatie te voltooien. De blobs die de sjablonen bevatten, zijn alleen toegankelijk voor de eigenaar van het account. Wanneer u echter een SAS-token voor een BLOB maakt, is de BLOB toegankelijk voor iedereen met die SAS-token. Als een andere gebruiker de URI en het SAS-token onderschept, kan die gebruiker toegang krijgen tot de sjabloon. Een SAS-token is een goede manier om de toegang tot uw sjablonen te beperken, maar u mag geen gevoelige gegevens zoals wachtwoorden rechtstreeks in de sjabloon toevoegen.
 
 Zie [Resourcegroep maken](./deployment-tutorial-local-template.md#create-resource-group) als u de resourcegroep nog niet hebt gemaakt.
 
@@ -97,69 +110,66 @@ Zie [Resourcegroep maken](./deployment-tutorial-local-template.md#create-resourc
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-```azurepowershell
+```azurepowershell-interactive
 
-$projectName = Read-Host -Prompt "Enter a project name:"   # This name is used to generate names for Azure resources, such as storage account name.
-$templateFile = Read-Host -Prompt "Enter the main template file and path"
+$projectName = Read-Host -Prompt "Enter the same project name:"   # This name is used to generate names for Azure resources, such as storage account name.
 
 $resourceGroupName="${projectName}rg"
 $storageAccountName="${projectName}store"
 $containerName = "templates"
-$fileName = "linkedStorageAccount.json" # A file name used for downloading and uploading the linked template.
 
 $key = (Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName).Value[0]
 $context = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $key
 
-# Generate a SAS token
-$linkedTemplateUri = New-AzStorageBlobSASToken `
+$mainTemplateUri = $context.BlobEndPoint + "$containerName/azuredeploy.json"
+$sasToken = New-AzStorageContainerSASToken `
     -Context $context `
     -Container $containerName `
-    -Blob $fileName `
     -Permission r `
-    -ExpiryTime (Get-Date).AddHours(2.0) `
-    -FullUri
+    -ExpiryTime (Get-Date).AddHours(2.0)
+$newSas = $sasToken.substring(1)
 
-# Deploy the template
+
 New-AzResourceGroupDeployment `
   -Name DeployLinkedTemplate `
   -ResourceGroupName $resourceGroupName `
-  -TemplateFile $templateFile `
+  -TemplateUri $mainTemplateUri `
+  -QueryString $newSas `
   -projectName $projectName `
-  -linkedTemplateUri $linkedTemplateUri `
   -verbose
+
+Write-Host "Press [ENTER] to continue ..."
 ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-```azurecli
+```azurecli-interactive
+echo "Enter a project name that is used to generate resource names:" &&
+read projectName &&
 
-echo "Enter a project name that is used to generate resource names:"
-read projectName
-echo "Enter the main template file:"
-read templateFile
+resourceGroupName="${projectName}rg" &&
+storageAccountName="${projectName}store" &&
+containerName="templates" &&
 
-resourceGroupName="${projectName}rg"
-storageAccountName="${projectName}store"
-containerName="templates"
-fileName="linkedStorageAccount.json"
+key=$(az storage account keys list -g $resourceGroupName -n $storageAccountName --query [0].value -o tsv) &&
 
-key=$(az storage account keys list -g $resourceGroupName -n $storageAccountName --query [0].value -o tsv)
-
-linkedTemplateUri=$(az storage blob generate-sas \
+sasToken=$(az storage container generate-sas \
   --account-name $storageAccountName \
   --account-key $key \
-  --container-name $containerName \
-  --name $fileName \
+  --name $containerName \
   --permissions r \
-  --expiry `date -u -d "120 minutes" '+%Y-%m-%dT%H:%MZ'` \
-  --full-uri)
+  --expiry `date -u -d "120 minutes" '+%Y-%m-%dT%H:%MZ'`) &&
+sasToken=$(echo $sasToken | sed 's/"//g')&&
 
-linkedTemplateUri=$(echo $linkedTemplateUri | sed 's/"//g')
+blobUri=$(az storage account show -n $storageAccountName -g $resourceGroupName -o tsv --query primaryEndpoints.blob) &&
+templateUri="${blobUri}${containerName}/azuredeploy.json" &&
+
 az deployment group create \
   --name DeployLinkedTemplate \
   --resource-group $resourceGroupName \
-  --template-file $templateFile \
-  --parameters projectName=$projectName linkedTemplateUri=$linkedTemplateUri \
+  --template-uri $templateUri \
+  --parameters projectName=$projectName \
+  --query-string $sasToken \
   --verbose
 ```
 

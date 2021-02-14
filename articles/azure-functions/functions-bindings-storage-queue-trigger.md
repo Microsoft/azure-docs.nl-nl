@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 95560801d4132735435e4d45e8a588476636ec38
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 59cedb25295770ba4ae4a33aac3287c5fed1297d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96001232"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381491"
 ---
 # <a name="azure-queue-storage-trigger-for-azure-functions"></a>Azure-wachtrij opslag trigger voor Azure Functions
 
@@ -357,13 +357,15 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**direction**| N.v.t. | In de *function.jsalleen voor* het bestand. Moet worden ingesteld op `in`. Deze eigenschap wordt automatisch ingesteld wanneer u de trigger maakt in de Azure-portal. |
 |**name** | N.v.t. |De naam van de variabele die de nettolading van het wachtrij-item bevat in de functie code.  |
 |**queueName** | **QueueName**| De naam van de wachtrij die moet worden gecontroleerd. |
-|**connection** | **Verbinding** |De naam van een app-instelling die de opslag connection string bevat die moet worden gebruikt voor deze binding. Als de naam van de app-instelling begint met ' AzureWebJobs ', kunt u hier alleen de rest van de naam opgeven. Als u bijvoorbeeld instelt `connection` op ' mijn opslag ', zoekt de functie runtime naar een app-instelling met de naam ' mijn opslag '. Als u `connection` leeg laat, gebruikt de functions runtime de standaard opslag Connection String in de app-instelling met de naam `AzureWebJobsStorage` .|
+|**connection** | **Verbinding** |De naam van een app-instelling die de opslag connection string bevat die moet worden gebruikt voor deze binding. Als de naam van de app-instelling begint met ' AzureWebJobs ', kunt u hier alleen de rest van de naam opgeven.<br><br>Als u bijvoorbeeld instelt `connection` op ' mijn opslag ', zoekt de functie runtime naar een app-instelling met de naam ' mijn opslag '. Als u `connection` leeg laat, gebruikt de functions runtime de standaard opslag Connection String in de app-instelling met de naam `AzureWebJobsStorage` .<br><br>Als u [versie 5. x of hoger van de extensie](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher)gebruikt in plaats van een Connection String, kunt u een verwijzing naar een configuratie sectie opgeven waarmee de verbinding wordt gedefinieerd. Zie [verbindingen](./functions-reference.md#connections).|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Gebruik
 
 # <a name="c"></a>[C#](#tab/csharp)
+
+### <a name="default"></a>Standaard
 
 Toegang krijgen tot de bericht gegevens met behulp van een methode parameter, zoals `string paramName` . U kunt verbinding maken met een van de volgende typen:
 
@@ -374,7 +376,17 @@ Toegang krijgen tot de bericht gegevens met behulp van een methode parameter, zo
 
 Als u probeert verbinding te maken met `CloudQueueMessage` een fout bericht, moet u ervoor zorgen dat u een verwijzing naar [de juiste versie van de Storage SDK](functions-bindings-storage-queue.md#azure-storage-sdk-version-in-functions-1x)hebt.
 
+### <a name="additional-types"></a>Aanvullende typen
+
+Apps die gebruikmaken [van de 5.0.0 of hogere versie van de opslag uitbreiding](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) , kunnen ook gebruikmaken van de typen van de [Azure SDK voor .net](/dotnet/api/overview/azure/storage.queues-readme). Deze versie biedt geen ondersteuning voor het oudere `CloudQueueMessage` type voor de volgende typen:
+
+- [QueueMessage](/dotnet/api/azure.storage.queues.models.queuemessage)
+ 
+Zie [de GitHub-opslag plaats voor de uitbrei ding](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples)voor voor beelden van het gebruik van deze typen.
+
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
+
+### <a name="default"></a>Standaard
 
 Toegang krijgen tot de bericht gegevens met behulp van een methode parameter, zoals `string paramName` . De `paramName` is de waarde die is opgegeven in de `name` eigenschap van *function.jsop*. U kunt verbinding maken met een van de volgende typen:
 
@@ -384,6 +396,14 @@ Toegang krijgen tot de bericht gegevens met behulp van een methode parameter, zo
 * [CloudQueueMessage]
 
 Als u probeert verbinding te maken met `CloudQueueMessage` een fout bericht, moet u ervoor zorgen dat u een verwijzing naar [de juiste versie van de Storage SDK](functions-bindings-storage-queue.md#azure-storage-sdk-version-in-functions-1x)hebt.
+
+### <a name="additional-types"></a>Aanvullende typen
+
+Apps die gebruikmaken [van de 5.0.0 of hogere versie van de opslag uitbreiding](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) , kunnen ook gebruikmaken van de typen van de [Azure SDK voor .net](/dotnet/api/overview/azure/storage.queues-readme). Deze versie biedt geen ondersteuning voor het oudere `CloudQueueMessage` type voor de volgende typen:
+
+- [QueueMessage](/dotnet/api/azure.storage.queues.models.queuemessage)
+
+Zie [de GitHub-opslag plaats voor de uitbrei ding](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples)voor voor beelden van het gebruik van deze typen.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -448,7 +468,7 @@ De wachtrij trigger voor komt automatisch dat een functie meerdere malen tegelij
 
 ## <a name="hostjson-properties"></a>host.json-eigenschappen
 
-De [host.jsin](functions-host-json.md#queues) het bestand bevat instellingen die het gedrag van de wachtrij activeren controleren. Zie de sectie [host.jsop instellingen](functions-bindings-storage-queue-output.md#hostjson-settings) voor meer informatie over de beschik bare instellingen.
+De [host.jsin](functions-host-json.md#queues) het bestand bevat instellingen die het gedrag van de wachtrij activeren controleren. Zie de sectie [host.jsop instellingen](functions-bindings-storage-queue.md#hostjson-settings) voor meer informatie over de beschik bare instellingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

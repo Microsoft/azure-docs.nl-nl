@@ -1,22 +1,17 @@
 ---
 title: Incrementeel gegevens kopiëren met change data capture
 description: In deze zelfstudie maakt u een Azure Data Factory-pijplijn waarmee wijzigingsgegevens incrementeel uit een tabel in een Azure SQL Managed Instance-database naar Azure Storage worden gekopieerd.
-services: data-factory
 ms.author: nihurt
 author: hurtn
-manager: ''
-ms.reviewer: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
-ms.custom: ''
 ms.date: 05/04/2020
-ms.openlocfilehash: 754f58fe7ee9bc8d10ba1fa973615781ce4d6dce
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: ba4e5c3998c7c6218d2f0232e3c05930ca82e378
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555913"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391266"
 ---
 # <a name="incrementally-load-data-from-azure-sql-managed-instance-to-azure-storage-using-change-data-capture-cdc"></a>Incrementeel laden van gegevens vanuit Azure SQL Managed Instance naar Azure Storage met behulp van change data capture (CDC)
 
@@ -90,10 +85,10 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
     ```sql
      insert into customers 
-        (customer_id, first_name, last_name, email, city) 
+         (customer_id, first_name, last_name, email, city) 
      values 
-        (1, 'Chevy', 'Leward', 'cleward0@mapy.cz', 'Reading'),
-        (2, 'Sayre', 'Ateggart', 'sateggart1@nih.gov', 'Portsmouth'),
+         (1, 'Chevy', 'Leward', 'cleward0@mapy.cz', 'Reading'),
+         (2, 'Sayre', 'Ateggart', 'sateggart1@nih.gov', 'Portsmouth'),
         (3, 'Nathalia', 'Seckom', 'nseckom2@blogger.com', 'Portsmouth');
     ```
 
@@ -113,7 +108,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
    De naam van de Azure-gegevensfactory moet **wereldwijd uniek** zijn. Als u het volgende foutbericht krijgt, wijzigt u de naam van de gegevensfactory (bijvoorbeeld uwnaamADFTutorialDataFactory) en probeert u het opnieuw. Zie het artikel [Data factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
 
-    *Data factory-naam 'ADFTutorialDataFactory' is niet beschikbaar.*
+    *De naam van de gegevensfactory "ADFTutorialDataFactory" is niet beschikbaar.*
 3. Selecteer **V2** als de **versie**.
 4. Selecteer het Azure-**abonnement** waarin u de gegevensfactory wilt maken.
 5. Voer een van de volgende stappen uit voor de **Resourcegroep**:

@@ -1,6 +1,6 @@
 ---
 title: Toepassings verificatie van AD FS naar Azure Active Directory verplaatsen
-description: Dit artikel is bedoeld om organisaties te helpen begrijpen hoe toepassingen naar Azure AD kunnen worden verplaatst, met een focus op federatieve SaaS-toepassingen.
+description: Dit artikel is bedoeld om organisaties te helpen begrijpen hoe toepassingen naar Azure Active Directory kunnen worden verplaatst, met een focus op federatieve SaaS-toepassingen.
 services: active-directory
 author: kenwith
 manager: daveba
@@ -8,25 +8,22 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.date: 04/01/2020
+ms.date: 02/10/2021
 ms.author: kenwith
 ms.reviewer: baselden
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b27ccf5a861295ae83b5ddc021e77de75962de48
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: b8ad137389ac11a41872190122eae6405a126b5b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258385"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381236"
 ---
 # <a name="moving-application-authentication-from-active-directory-federation-services-to-azure-active-directory"></a>Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory
 
 [Azure Active Directory (Azure AD)](../fundamentals/active-directory-whatis.md) biedt een universeel identiteits platform dat uw gebruikers, partners en klanten een enkele identiteit biedt voor het openen van toepassingen en samen werken vanaf elk platform en apparaat. Azure AD heeft een [volledige reeks mogelijkheden voor identiteits beheer](../fundamentals/active-directory-whatis.md). Door de verificatie van uw toepassing (app) en autorisatie voor Azure AD in te stellen, kunt u profiteren van de voor delen van deze mogelijkheden.
 
 > [!TIP]
-> Dit artikel is geschreven voor een doel groep van ontwikkel aars. Project managers en beheerders die de overstap naar Azure AD van een toepassing plannen, moeten overwegen onze [migratie van verificatie van toepassingen naar Azure AD](https://aka.ms/migrateapps/whitepaper) White Paper (PDF) te lezen.
+> Dit artikel is geschreven voor een doel groep van ontwikkel aars. Project managers en beheerders die de overstap naar Azure AD van een toepassing plannen, moeten overwegen onze [migratie van verificatie van toepassingen naar Azure AD](migrate-application-authentication-to-azure-active-directory.md) -artikel te lezen.
 
 ## <a name="introduction"></a>Introductie
 

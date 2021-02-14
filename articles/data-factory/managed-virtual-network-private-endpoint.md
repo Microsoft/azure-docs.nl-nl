@@ -1,24 +1,20 @@
 ---
 title: Beheerd virtueel netwerk & beheerde privé-eind punten
 description: Meer informatie over beheerde virtuele netwerken en beheerde privé-eind punten in Azure Data Factory.
-services: data-factory
 ms.author: abnarain
 author: nabhishek
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: 81d82bccd6b6bd97b84df5269dd59ffac4903370
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: d950b05dd34788c2c5ef0b34b8ec8ac0b20ad4b6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980355"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379570"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Beheerde Virtual Network Azure Data Factory (preview-versie)
 
@@ -51,7 +47,7 @@ Beheerde privé-eind punten zijn particuliere eind punten die zijn gemaakt in de
 
 ![Nieuw Beheerd privé-eindpunt](./media/tutorial-copy-data-portal-private/new-managed-private-endpoint.png)
 
-Azure Data Factory ondersteunt persoonlijke koppelingen. Met persoonlijke koppeling kunt u Azure-Services (PaaS) (zoals Azure Storage, Azure Cosmos DB, Azure Synapse Analytics (voorheen SQL Data Warehouse)) openen.
+Azure Data Factory ondersteunt persoonlijke koppelingen. Met persoonlijke koppeling kunt u Azure-Services (PaaS) gebruiken (zoals Azure Storage, Azure Cosmos DB, Azure Synapse Analytics).
 
 Wanneer u een persoonlijke koppeling gebruikt, loopt het verkeer tussen uw gegevens archieven en beheerde Virtual Network volledig over het micro soft backbone-netwerk. Private Link beschermt tegen exfiltratie van gegevens. U kunt een privé-koppeling naar een resource tot stand brengen door een privé-eindpunt te maken.
 
@@ -86,7 +82,7 @@ De onderstaande gegevens bronnen worden ondersteund om verbinding te maken via e
 - Azure Files
 - Azure Data Lake Gen2
 - Azure SQL Database (exclusief Azure SQL Managed instance)
-- Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)
+- Azure Synapse Analytics
 - Azure CosmosDB SQL
 - Azure Key Vault
 - Persoonlijke koppelings service van Azure
@@ -115,7 +111,7 @@ De onderstaande gegevens bronnen worden ondersteund om verbinding te maken via e
 - Azure Storage en Azure Data Lake Gen2 worden niet ondersteund om te worden verbonden via een openbaar eind punt van Virtual Network met ADF-beheer.
 
 ### <a name="linked-service-creation-of-azure-key-vault"></a>Het maken van een gekoppelde service van Azure Key Vault 
-- Wanneer u een gekoppelde service voor Azure Key Vault maakt, is er geen Azure Integration Runtime verwijzing. U kunt geen persoonlijk eind punt maken tijdens het maken van de gekoppelde service van Azure Key Vault. Maar wanneer u een gekoppelde service maakt voor gegevens archieven die verwijst naar Azure Key Vault gekoppelde service en deze gekoppelde service verwijst naar Azure Integration Runtime met beheerde Virtual Network ingeschakeld, kunt u tijdens het maken een persoonlijk eind punt voor de gekoppelde Azure Key Vault-service maken. 
+- Wanneer u een gekoppelde service voor Azure Key Vault maakt, is er geen Azure Integration Runtime-verwijzing. U kunt geen persoonlijk eind punt maken tijdens het maken van de gekoppelde service van Azure Key Vault. Maar wanneer u een gekoppelde service maakt voor gegevens archieven die verwijst naar Azure Key Vault gekoppelde service en deze gekoppelde service verwijst naar Azure Integration Runtime met beheerde Virtual Network ingeschakeld, kunt u tijdens het maken een persoonlijk eind punt voor de gekoppelde Azure Key Vault-service maken. 
 - **Test verbindings** bewerking voor de gekoppelde Service van Azure Key Vault valideert alleen de URL-indeling, maar voert geen netwerk bewerking uit.
 
 ## <a name="next-steps"></a>Volgende stappen

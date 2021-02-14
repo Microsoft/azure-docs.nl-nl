@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/27/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: c4ad270b989e0e212c1d362ae4bfafc91fe07f3e
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 61ba50f8ec9e1de18238160b23096670753cffd6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943570"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367500"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Zelfstudie: HTTPS op een aangepast Azure CDN-domein configureren
 
@@ -158,7 +158,9 @@ Geef Azure CDN toegang tot de certificaten (geheimen) in uw Azure Key Vault-acco
 
 5. Selecteer **Toevoegen**. 
 
-    Azure CDN heeft nu toegang tot deze sleutelkluis en de certificaten (geheimen) die in deze sleutelkluis zijn opgeslagen.
+> [!NOTE]
+> Azure CDN heeft nu toegang tot deze sleutelkluis en de certificaten (geheimen) die in deze sleutelkluis zijn opgeslagen. Elk CDN-exemplaar dat in dit abonnement is gemaakt, heeft toegang tot de certificaten in deze sleutel kluis. 
+
  
 ### <a name="select-the-certificate-for-azure-cdn-to-deploy"></a>Het certificaat voor implementatie door Azure CDN selecteren
  

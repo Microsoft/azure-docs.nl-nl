@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/22/2021
-ms.openlocfilehash: a4be96d35116ed40ca61f00ed8f2ddd786760242
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1fec13eefad7f27bcaac8f2c690b99909cd24e59
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735237"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518042"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>Resourcelimieten voor individuele databases met gebruikmaking van het vCore-aankoopmodel
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -42,14 +42,14 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Min-maximale vCores|0.5-1|0.5-2|0,5-4|0,75-6|1.0-8|
 |Min-Maxi maal geheugen (GB)|2.02-3|2.05-6|2.10-12|2,25-18|3,00-24|
 |Min-maximale vertraging voor automatisch onderbreken (minuten)|60-10080|60-10080|60-10080|60-10080|60-10080|
-|Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|
+|Column Store-ondersteuning|Ja*|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Maximale gegevens grootte (GB)|512|1024|1024|1024|1536|
 |Maximale logboek grootte (GB)|154|307|307|307|461|
 |Maximale gegevens grootte TempDB (GB)|32|64|128|192|256|
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
-|Max. gegevensiops *|320|640|1280|1920|2560|
+|Maximum aantal gegevens IOPS \*\*|320|640|1280|1920|2560|
 |Maximale logboek frequentie (MBps)|4.5|9|18|27|36|
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|75|150|300|450|600|
 |Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|30.000|
@@ -58,7 +58,8 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
 
-\* De maximum waarde voor i/o-grootten tussen 8 KB en 64 KB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
+\* Voor service doelstellingen met een kleinere maximale VCore-configuratie is mogelijk onvoldoende geheugen beschikbaar voor het maken en gebruiken van Column Store-indexen.  Als er problemen met de prestaties van het kolom archief optreden, verhoogt u de maximale VCore-configuratie om het Maxi maal beschik bare geheugen te verg Roten.  
+\*\* De maximum waarde voor i/o-grootten tussen 8 KB en 64 KB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
 
 ### <a name="gen5-compute-generation-part-2"></a>GEN5 Compute Generation (deel 2)
 
@@ -212,7 +213,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Maximale logboek grootte (TB)|Onbeperkt |Onbeperkt |Onbeperkt |Onbeperkt |Onbeperkt |Onbeperkt |Onbeperkt |
 |Maximale gegevens grootte TempDB (GB)|512|576|640|768|1024|1280|2560|
 |Opslagtype| [Opmerking 1](#notes) |[Opmerking 1](#notes)|[Opmerking 1](#notes)|[Opmerking 1](#notes) |[Opmerking 1](#notes) |[Opmerking 1](#notes) |[Opmerking 1](#notes) |
-|Max. aantal lokale SSD-IOPS *|64000 |72000 |80000 |96000 |160000 |192000 |204800 |
+|Max. aantal lokale SSD-IOPS *|64000 |72000 |80000 |96000 |128000 |160000 |204800 |
 |Maximale logboek frequentie (MBps)|100 |100 |100 |100 |100 |100 |100 |
 |I/o-latentie (bij benadering)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|1600|1800|2000|2400|3200|4000|8000|

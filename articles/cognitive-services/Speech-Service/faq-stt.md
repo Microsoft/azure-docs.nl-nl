@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: panosper
-ms.openlocfilehash: 61768991fc4e72b44568bd92278427e6af398d52
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 21924ad5da8833ca5cf8373270ed1bfd3facfdc9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226553"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388614"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 
@@ -140,7 +140,7 @@ Zie de [quota en limieten voor spraak Services](speech-services-quotas-and-limit
 
 Voor snellere resultaten gebruikt u een van de [regio's](custom-speech-overview.md#set-up-your-azure-account) waar speciale hardware beschikbaar is voor training. Over het algemeen verwerkt de service ongeveer 10 uur aan audio gegevens per dag in regio's met dergelijke hardware. Het kan alleen ongeveer 1 uur aan audio gegevens per dag in andere regio's verwerken. U kunt het volledig getrainde model naar een andere regio kopiëren met behulp van de [rest API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription). Training met alleen tekst is veel sneller en eindigt doorgaans binnen enkele minuten.
 
-Sommige basis modellen kunnen niet worden aangepast met audio gegevens. Voor hen gebruikt de service alleen de tekst van de transcriptie voor training en worden de audio gegevens genegeerd. De training wordt vervolgens veel sneller uitgevoerd en de resultaten zijn hetzelfde als training met alleen tekst.
+Sommige basis modellen kunnen niet worden aangepast met audio gegevens. Voor hen gebruikt de service alleen de tekst van de transcriptie voor training en worden de audio gegevens genegeerd. De training wordt vervolgens veel sneller uitgevoerd en de resultaten zijn hetzelfde als training met alleen tekst. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
 
 ## <a name="accuracy-testing"></a>Nauw keurig testen
 

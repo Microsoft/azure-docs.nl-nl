@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 7006096154d8958e13e7a86783bd07067b95d293
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 38bf8b3c1c39322aea27f5f4d427c31010837bfb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98872889"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391017"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux uw gouden installatie kopieën met uw eigen abonnement in azure
 
@@ -30,9 +30,6 @@ Red Hat Enterprise Linux-installatie kopieën (RHEL) zijn beschikbaar in azure v
 - De Vm's die zijn ingericht op basis van Red Hat Gold-installatie kopieën, bevatten geen RHEL-vergoedingen die zijn gekoppeld aan RHEL-afbeeldingen met betalen per gebruik.
 - De installatie kopieën hebben geen recht. U moet Red Hat Subscription-Manager gebruiken om de Vm's te registreren en bij te werken om direct updates van Red Hat te krijgen.
 - Het is mogelijk om over te scha kelen van betalen per gebruik-installatie kopieën naar BYOS met behulp van de [Azure Hybrid Benefit](../../linux/azure-hybrid-benefit-linux.md). Het is echter niet mogelijk om over te scha kelen van een aanvankelijk geïmplementeerde BYOS naar facturerings modellen voor Linux-installatie kopieën. Als u het facturerings model wilt overschakelen van BYOS naar betalen per gebruik, moet u de virtuele machine opnieuw implementeren vanuit de respectieve installatie kopie.
-
->[!NOTE]
-> De RHEL BYOS-installatie kopieën van generatie 2 zijn momenteel niet beschikbaar via de Marketplace-aanbieding. Als u een RHEL BYOS-installatie kopie van de tweede generatie nodig hebt, gaat u naar het dash board voor Cloud toegang in Red Hat Subscription Management. Zie de [Red Hat-documentatie](https://access.redhat.com/articles/4847681)voor meer informatie.
 
 ## <a name="requirements-and-conditions-to-access-the-red-hat-gold-images"></a>Vereisten en voor waarden voor toegang tot de Red Hat Gold-installatie kopieën
 

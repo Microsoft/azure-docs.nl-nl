@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren van concur met behulp van Azure Data Factory (preview-versie)
 description: Meer informatie over het kopiëren van gegevens uit concur naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: jingwang
-ms.openlocfilehash: f6d6c830eec8e711e700733a90611c353b68439d
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 974682aa9e9bebd6e2d17237decd8389174ff28d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030795"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383667"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Gegevens kopiëren van concur met behulp van Azure Data Factory (preview-versie)
 
@@ -53,7 +48,7 @@ De volgende eigenschappen worden ondersteund voor concur gekoppelde service:
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op: **concur** | Yes |
 | connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met concur. | Yes |
-| **_Onder `connectionProperties` :_* _ | | |
+| ***Onder `connectionProperties` :*** | | |
 | authenticationType | Toegestane waarden zijn `OAuth_2.0_Bearer` en `OAuth_2.0` (verouderd). De OAuth 2,0-verificatie optie werkt met de oude concur-API die sinds februari 2017 is afgeschaft. | Yes |
 | host | Het eind punt van de concur-server, bijvoorbeeld `implementation.concursolutions.com` .  | Yes |
 | baseUrl | De basis-URL van de autorisatie-URL van uw concur. | Ja voor `OAuth_2.0_Bearer` verificatie |
@@ -65,7 +60,7 @@ De volgende eigenschappen worden ondersteund voor concur gekoppelde service:
 | useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
 | usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
 
-_ *Voor beeld:**
+**Voorbeeld:**
 
 ```json
 { 

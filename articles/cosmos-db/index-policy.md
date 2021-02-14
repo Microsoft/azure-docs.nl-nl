@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 02/10/2021
 ms.author: tisande
-ms.openlocfilehash: 58ee3bcd0ba14359ea9adaa131b8280b81008b57
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 26465eb9826c60daad7b44e1c2fe6ae3c19b1ed0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526752"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378805"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -290,7 +290,7 @@ WHERE c.firstName = "John" AND Contains(c.lastName, "Smith", true)
 ORDER BY c.firstName, c.lastName
 ```
 
-De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen voor het optimaliseren van een query met een filter en `ORDER BY` component:
+De volgende overwegingen zijn van toepassing bij het maken van samengestelde indexen voor het optimaliseren van een query met een filter en een `ORDER BY` component:
 
 * Als u geen samengestelde index definieert voor een query met een filter voor één eigenschap en een afzonderlijke `ORDER BY` component met behulp van een andere eigenschap, zal de query toch slagen. De RU-kosten van de query kunnen echter worden verminderd met een samengestelde index, met name als de eigenschap in de `ORDER BY` component een hoge kardinaliteit heeft.
 * Als de query filtert op Eigenschappen, moeten deze eerst worden opgenomen in de `ORDER BY` component.
@@ -308,6 +308,26 @@ De volgende overwegingen worden gebruikt bij het maken van samengestelde indexen
 | ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC``` | ```No```   |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC``` | `Yes` |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC``` | `No` |
+
+### <a name="queries-with-a-filter-and-an-aggregate"></a>Query's met een filter en een statistische functie 
+
+Als een query filtert op een of meer eigenschappen en een statistische systeem functie heeft, kan het handig zijn om een samengestelde index te maken voor de eigenschappen in de functie filter en aggregatie systeem. Deze optimalisatie is van toepassing op de [Sum](sql-query-aggregate-sum.md) -en [AVG](sql-query-aggregate-avg.md) -systeem functies.
+
+De volgende overwegingen zijn van toepassing bij het maken van samengestelde indexen voor het optimaliseren van een query met een filter en een statistische systeem functie.
+
+* Samengestelde indexen zijn optioneel bij het uitvoeren van query's met aggregaties. De RU-kosten van de query kunnen echter vaak aanzienlijk worden verkleind met een samengestelde index.
+* Als de query filtert op meerdere eigenschappen, moeten de gelijkheids filters de eerste eigenschappen in de samengestelde index zijn.
+* U kunt Maxi maal één bereik filter per samengestelde index hebben en dit moet zich bevindt op de eigenschap in de statistische systeem functie.
+* De eigenschap in de functie aggregate systeem moet als laatste worden gedefinieerd in de samengestelde index.
+* Dit `order` `ASC` `DESC` is niet van belang.
+
+| **Samengestelde index**                      | **Voorbeeld query**                                  | **Ondersteund door samengestelde index?** |
+| ---------------------------------------- | ------------------------------------------------------------ | --------------------------------- |
+| ```(name ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"``` | `Yes` |
+| ```(timestamp ASC, name ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"``` | `No` |
+| ```(name ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name > "John"``` | `No` |
+| ```(name ASC, age ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age = 25``` | `Yes` |
+| ```(age ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age > 25``` | `No` |
 
 ## <a name="index-transformationmodifying-the-indexing-policy"></a><index-Transform>het wijzigen van het indexerings beleid
 

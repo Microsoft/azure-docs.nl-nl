@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 6c441c9f81477a586c3e153e23b1fc63f2f76344
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 4d99cdbb2f50d04eff790cdfe675d0f8031c48a9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99819924"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517175"
 ---
 # <a name="deploy-a-defender-for-iot-c-based-security-agent-for-windows"></a>Een Defender implementeren voor IoT C#-gebaseerde beveiligings agent voor Windows
 
@@ -73,11 +73,11 @@ Als u de beveiligings agent wilt installeren, gebruikt u de volgende werk stroom
 Met dit script worden de volgende acties uitgevoerd:
 
 * Hiermee worden vereisten geïnstalleerd.
-* Hiermee wordt een service gebruiker (met interactieve aanmelding uitgeschakeld) toegevoegd.
+* Hiermee voegt u een service gebruiker toe (waarbij interactieve aanmelding is uitgeschakeld).
 * Installeert de agent als een **systeem service**.
 * Hiermee configureert u de agent met de opgegeven verificatie parameters.
 
-Gebruik de opdracht Get-Help in Power shell voor meer informatie.
+Gebruik de opdracht Get-Help in Power shell voor extra hulp.
 
 Get-Help voor beeld:    ```Get-Help .\InstallSecurityAgent.ps1```
 
@@ -119,7 +119,7 @@ Logboek registratie inschakelen:
 
 1. Start de agent opnieuw door de volgende Power shell of opdracht regel uit te voeren:
 
-    **Zo**
+    **PowerShell**
 
      ```
      Restart-Service "ASC IoT Agent"

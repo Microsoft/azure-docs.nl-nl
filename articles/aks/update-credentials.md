@@ -5,12 +5,12 @@ description: Meer informatie over het bijwerken of opnieuw instellen van de refe
 services: container-service
 ms.topic: article
 ms.date: 03/11/2019
-ms.openlocfilehash: c787f172bc03e11c574c4de967aee05da9df18aa
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: ba2c31872ae026cfdfcb7be17d333fb98194dce6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427510"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389005"
 ---
 # <a name="update-or-rotate-the-credentials-for-azure-kubernetes-service-aks"></a>De referenties voor de Azure Kubernetes-service bijwerken of draaien (AKS)
 
@@ -48,6 +48,9 @@ az ad sp credential list --id $SP_ID --query "[].endDate" -o tsv
 
 Als u de referenties voor de bestaande Service-Principal wilt bijwerken, haalt u de Service-Principal-ID van uw cluster op met de opdracht [AZ AKS show][az-aks-show] . In het volgende voor beeld wordt de ID van het cluster met de naam *myAKSCluster* in de resource groep *myResourceGroup* opgehaald. De Service-Principal-ID wordt ingesteld als een variabele met de naam *SP_ID* voor gebruik in een extra opdracht. Deze opdrachten gebruiken de bash-syntaxis.
 
+> [!WARNING]
+> Wanneer u uw cluster referenties opnieuw instelt op een AKS-cluster dat gebruikmaakt van Azure Virtual Machine Scale Sets, wordt een upgrade van een [knooppunt installatie kopie][node-image-upgrade] uitgevoerd om uw knoop punten bij te werken met de nieuwe referentie gegevens.
+
 ```azurecli-interactive
 SP_ID=$(az aks show --resource-group myResourceGroup --name myAKSCluster \
     --query servicePrincipalProfile.clientId -o tsv)
@@ -82,7 +85,7 @@ De uitvoer lijkt op die in het volgende voorbeeld. Noteer uw eigen `appId` en `p
 }
 ```
 
-Definieer nu variabelen voor de Service-Principal-ID en het client geheim met behulp van de uitvoer van uw eigen [AZ AD SP create-for-RBAC-][az-ad-sp-create] opdracht, zoals wordt weer gegeven in het volgende voor beeld. De *SP_ID* is uw *appId* en de *SP_SECRET* is uw *wacht woord* :
+Definieer nu variabelen voor de Service-Principal-ID en het client geheim met behulp van de uitvoer van uw eigen [AZ AD SP create-for-RBAC-][az-ad-sp-create] opdracht, zoals wordt weer gegeven in het volgende voor beeld. De *SP_ID* is uw *appId* en de *SP_SECRET* is uw *wacht woord*:
 
 ```console
 SP_ID=7d837646-b1f3-443d-874c-fd83c7c739c5
@@ -138,3 +141,4 @@ In dit artikel is de service-principal voor het AKS-cluster zelf en de AAD-integ
 [az-ad-sp-create]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
 [az-ad-sp-credential-list]: /cli/azure/ad/sp/credential#az-ad-sp-credential-list
 [az-ad-sp-credential-reset]: /cli/azure/ad/sp/credential#az-ad-sp-credential-reset
+[node-image-upgrade]: ./node-image-upgrade.md

@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 087073437fe9d6159422799c04ce095c0aae5eca
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 778424cbb81f8fe51a57dd41d94aa9015ffad94e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96001249"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381508"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Azure Queue Storage-uitvoer bindingen voor Azure Functions
 
@@ -398,13 +398,15 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**direction** | N.v.t. | Moet worden ingesteld op `out`. Deze eigenschap wordt automatisch ingesteld wanneer u de trigger maakt in de Azure-portal. |
 |**name** | N.v.t. | De naam van de variabele die de wachtrij in functie code vertegenwoordigt. Instellen op `$return` om te verwijzen naar de functie retour waarde.|
 |**queueName** |**QueueName** | De naam van de wachtrij. |
-|**connection** | **Verbinding** |De naam van een app-instelling die de opslag connection string bevat die moet worden gebruikt voor deze binding. Als de naam van de app-instelling begint met ' AzureWebJobs ', kunt u hier alleen de rest van de naam opgeven. Als u bijvoorbeeld instelt `connection` op ' mijn opslag ', zoekt de functie runtime naar een app-instelling met de naam ' mijn opslag '. Als u `connection` leeg laat, gebruikt de functions runtime de standaard opslag Connection String in de app-instelling met de naam `AzureWebJobsStorage` .|
+|**connection** | **Verbinding** |De naam van een app-instelling die de opslag connection string bevat die moet worden gebruikt voor deze binding. Als de naam van de app-instelling begint met ' AzureWebJobs ', kunt u hier alleen de rest van de naam opgeven.<br><br>Als u bijvoorbeeld instelt `connection` op ' mijn opslag ', zoekt de functie runtime naar een app-instelling met de naam ' mijn opslag '. Als u `connection` leeg laat, gebruikt de functions runtime de standaard opslag Connection String in de app-instelling met de naam `AzureWebJobsStorage` .<br><br>Als u [versie 5. x of hoger van de extensie](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher)gebruikt in plaats van een Connection String, kunt u een verwijzing naar een configuratie sectie opgeven waarmee de verbinding wordt gedefinieerd. Zie [verbindingen](./functions-reference.md#connections).|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Gebruik
 
 # <a name="c"></a>[C#](#tab/csharp)
+
+### <a name="default"></a>Standaard
 
 Een enkel wachtrij bericht schrijven met behulp van een methode parameter, zoals `out T paramName` . U kunt het retour type van de methode gebruiken in plaats van een `out` para meter, en dit `T` kan een van de volgende typen zijn:
 
@@ -420,7 +422,18 @@ Schrijf in C#-en C#-script meerdere wachtrij berichten met behulp van een van de
 * `ICollector<T>` of `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue)
 
+### <a name="additional-types"></a>Aanvullende typen
+
+Apps die gebruikmaken [van de 5.0.0 of hogere versie van de opslag uitbreiding](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) , kunnen ook gebruikmaken van de typen van de [Azure SDK voor .net](/dotnet/api/overview/azure/storage.queues-readme). Deze versie wordt niet ondersteund voor de verouderde en typen die van belang zijn voor `CloudQueue` `CloudQueueMessage` de volgende typen:
+
+- [QueueMessage](/dotnet/api/azure.storage.queues.models.queuemessage)
+- [QueueClient](/dotnet/api/azure.storage.queues.queueclient) voor het schrijven van meerdere wachtrij berichten
+
+Zie [de GitHub-opslag plaats voor de uitbrei ding](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples)voor voor beelden van het gebruik van deze typen.
+
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
+
+### <a name="default"></a>Standaard
 
 Een enkel wachtrij bericht schrijven met behulp van een methode parameter, zoals `out T paramName` . De `paramName` is de waarde die is opgegeven in de `name` eigenschap van *function.jsop*. U kunt het retour type van de methode gebruiken in plaats van een `out` para meter, en dit `T` kan een van de volgende typen zijn:
 
@@ -435,6 +448,15 @@ Schrijf in C#-en C#-script meerdere wachtrij berichten met behulp van een van de
 
 * `ICollector<T>` of `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue)
+
+### <a name="additional-types"></a>Aanvullende typen
+
+Apps die gebruikmaken [van de 5.0.0 of hogere versie van de opslag uitbreiding](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) , kunnen ook gebruikmaken van de typen van de [Azure SDK voor .net](/dotnet/api/overview/azure/storage.queues-readme). Deze versie wordt niet ondersteund voor de verouderde en typen die van belang zijn voor `CloudQueue` `CloudQueueMessage` de volgende typen:
+
+- [QueueMessage](/dotnet/api/azure.storage.queues.models.queuemessage)
+- [QueueClient](/dotnet/api/azure.storage.queues.queueclient) voor het schrijven van meerdere wachtrij berichten
+
+Zie [de GitHub-opslag plaats voor de uitbrei ding](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples)voor voor beelden van het gebruik van deze typen.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -469,38 +491,6 @@ Er zijn twee opties voor het uitvoeren van een wachtrij bericht van een functie:
 | Wachtrij | [Fout codes voor de wachtrij](/rest/api/storageservices/queue-service-error-codes) |
 | BLOB, tabel, wachtrij | [Opslag fout codes](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | BLOB, tabel, wachtrij |  [Problemen oplossen](/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
-
-<a name="host-json"></a>  
-
-## <a name="hostjson-settings"></a>host.jsop instellingen
-
-In deze sectie worden de algemene configuratie-instellingen beschreven die beschikbaar zijn voor deze binding in versie 2. x en hoger. In het volgende voor beeld host.jsin het onderstaande bestand bevat alleen de instellingen van versie 2. x + voor deze binding. Zie voor meer informatie over globale configuratie-instellingen in versie 2. x en verder [host.jsop referentie voor Azure functions](functions-host-json.md).
-
-> [!NOTE]
-> Zie [host.jsbij verwijzing voor Azure functions 1. x](functions-host-json-v1.md)voor een referentie van host.jsin in functions 1. x.
-
-```json
-{
-    "version": "2.0",
-    "extensions": {
-        "queues": {
-            "maxPollingInterval": "00:00:02",
-            "visibilityTimeout" : "00:00:30",
-            "batchSize": 16,
-            "maxDequeueCount": 5,
-            "newBatchThreshold": 8
-        }
-    }
-}
-```
-
-|Eigenschap  |Standaard | Beschrijving |
-|---------|---------|---------|
-|maxPollingInterval|00:00:01|Het maximum interval tussen de polls van de wachtrij. Minimum is 00:00:00.100 (100 MS) en wordt verhoogd naar 00:01:00 (1 min.).  In 1. x is het gegevens type milliseconden en in 2. x en hoger het een time span.|
-|visibilityTimeout|00:00:00|Het tijds interval tussen nieuwe pogingen wanneer het verwerken van een bericht mislukt. |
-|batchSize|16|Het aantal wachtrij berichten dat door de functions-runtime gelijktijdig wordt opgehaald en processen parallel. Wanneer het nummer dat wordt verwerkt, naar de wordt verwerk `newBatchThreshold` , wordt er door de runtime een andere batch opgehaald en worden deze berichten verwerkt. Het maximum aantal gelijktijdige berichten dat per functie wordt verwerkt, is `batchSize` plus `newBatchThreshold` . Deze limiet geldt afzonderlijk voor elke door de wachtrij geactiveerde functie. <br><br>Als u een parallelle uitvoering wilt voor komen voor berichten die worden ontvangen op één wachtrij, kunt u instellen `batchSize` op 1. Met deze instelling elimineert u echter alleen gelijktijdigheid, zolang uw functie-app wordt uitgevoerd op één virtuele machine (VM). Als de functie-app wordt geschaald naar meerdere Vm's, kan elke virtuele machine één exemplaar van elke door de wachtrij geactiveerde functie uitvoeren.<br><br>De maximum waarde `batchSize` is 32. |
-|maxDequeueCount|5|Het aantal keren dat een bericht moet worden verwerkt voordat het naar de verontreinigde wachtrij wordt verplaatst.|
-|newBatchThreshold|batchSize/2|Telkens wanneer het aantal berichten dat gelijktijdig wordt verwerkt, naar dit nummer wordt opgehaald, haalt de runtime een andere batch op.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

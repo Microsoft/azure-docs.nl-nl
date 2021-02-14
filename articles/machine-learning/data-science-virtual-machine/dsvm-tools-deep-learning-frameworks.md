@@ -4,19 +4,18 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Beschik bare uitgebreide lessen en hulpprogram ma's voor Azure Data Science Virtual Machine.
 keywords: hulpprogramma's voor datatechnologie, virtuele machine voor datatechnologie, hulpprogramma voor datatechnologie, linux-datatechnologie
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 ms.custom: devx-track-python
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: c8c6ee3d5eecc02ac921d7b10f2394380af684c2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3c720e2b033d07397f3b13c37e1b4e15251b0a17
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309039"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519487"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Diep gaande lessen en AI-frameworks voor Azure Data Science VM
 Uitgebreide lessen op het DSVM worden hieronder weer gegeven.
@@ -146,5 +145,5 @@ Uitgebreide lessen op het DSVM worden hieronder weer gegeven.
 | ------------- | ------------- |
 | Ondersteunde versies | 1.0.3 |
 | Ondersteunde DSVM-edities      | Ubuntu 16.04 |
-| Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  |Theano is geïnstalleerd in Python 2,7 ( _root_ ) en in de _py35_ -omgeving (python 3,5). |
+| Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  |Theano is geïnstalleerd in Python 2,7 (_root_) en in de _py35_-omgeving (python 3,5). |
 | Het uitvoeren van het programma      |  Terminal: Activeer de python-versie die u wilt (root of py35), voer python uit en importeer Theano.<br/>* Jupyter: Selecteer de python 2,7-of 3,5-kernel en importeer vervolgens Theano.  <br/>Als u een recente MKL-fout (math kernel Library) wilt omzeilen, moet u eerst de MKL-threading Layer als volgt instellen:<br/><br/>`export MKL_THREADING_LAYER=GNU`  |

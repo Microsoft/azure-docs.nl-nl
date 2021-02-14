@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 09/28/2017
+ms.date: 02/11/2021
 ms.author: alkohli
-ms.openlocfilehash: 6dcaa83980210a1f5449e8a2e0982cb8e39ff03d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: fa7616a740e8246fa08e950494428095f41ee404
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966187"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382851"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>StorSimple 8000-serie software, hoge Beschik baarheid en netwerk vereisten
 
@@ -41,7 +41,7 @@ De volgende software vereisten gelden voor de opslaghardware die toegang hebben 
 
 | Ondersteunde besturingssystemen | Versie vereist | Aanvullende vereisten/notities |
 | --- | --- | --- |
-| Windows Server |2008 R2 SP1, 2012, 2012 R2, 2016 |StorSimple iSCSI-volumes worden alleen ondersteund voor gebruik op de volgende Windows-schijf typen:<ul><li>Eenvoudig volume op een standaard schijf</li><li>Eenvoudig en gespiegeld volume op dynamische schijf</li></ul>Alleen de iSCSI-initia tors van de software die standaard aanwezig zijn in het besturings systeem, worden ondersteund. Hardware-iSCSI-initia tors worden niet ondersteund.<br></br>Windows Server 2012 en 2016 Thin Provisioning en ODX-functies worden ondersteund als u een StorSimple iSCSI-volume gebruikt.<br><br>StorSimple kan Thin provisioned en volledig ingerichte volumes maken. Er kunnen geen gedeeltelijk ingerichte volumes worden gemaakt.<br><br>Het opnieuw formatteren van een volume met thin provisioning kan lang duren. Het is raadzaam om het volume te verwijderen en vervolgens een nieuw volume te maken in plaats van het opnieuw te formatteren. Als u echter toch de voorkeur geeft aan opnieuw formatteren:<ul><li>Voer de volgende opdracht uit vóór het opnieuw formatteren om vertragingen wegens vrijmaken van ruimte te voorkomen:  <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Nadat het formatteren is voltooid, gebruikt u de volgende opdracht om het vrijmaken van ruimte opnieuw in te schakelen: <br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Pas de hotfix voor Windows Server 2012 toe, zoals wordt beschreven in [KB 2878635](https://support.microsoft.com/kb/2870270) op uw Windows Server-computer.</li></ul></li></ul></ul> Als u StorSimple Snapshot Manager of StorSimple-adapter configureert voor share point, gaat u naar [Software vereisten voor optionele onderdelen](#software-requirements-for-optional-components). |
+| Windows Server |2008 R2 SP1, 2012, 2012 R2, 2016 |StorSimple iSCSI-volumes worden alleen ondersteund voor gebruik op de volgende Windows-schijf typen:<ul><li>Eenvoudig volume op een standaard schijf</li><li>Eenvoudig en gespiegeld volume op dynamische schijf</li></ul>Alleen de iSCSI-initia tors van de software die standaard aanwezig zijn in het besturings systeem, worden ondersteund. Hardware-iSCSI-initia tors worden niet ondersteund.<br></br>Windows Server 2012 en 2016 Thin Provisioning en ODX-functies worden ondersteund als u een StorSimple iSCSI-volume gebruikt.<br><br>StorSimple kan Thin provisioned en volledig ingerichte volumes maken. Er kunnen geen gedeeltelijk ingerichte volumes worden gemaakt.<br><br>Het opnieuw formatteren van een volume met thin provisioning kan lang duren. Het is raadzaam om het volume te verwijderen en vervolgens een nieuw volume te maken in plaats van het opnieuw te formatteren. Als u echter toch de voorkeur geeft aan opnieuw formatteren:<ul><li>Voer de volgende opdracht uit vóór het opnieuw formatteren om vertragingen wegens vrijmaken van ruimte te voorkomen:  <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Nadat het formatteren is voltooid, gebruikt u de volgende opdracht om het vrijmaken van ruimte opnieuw in te schakelen: <br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Pas de hotfix voor Windows Server 2012 toe, zoals wordt beschreven in [KB 2878635](https://support.microsoft.com/kb/2870270) op uw Windows Server-computer.</li></ul></li></ul></ul> Als u StorSimple Snapshot Manager of StorSimple-adapter configureert voor share point, gaat u naar [Software vereisten voor optionele onderdelen](#software-requirements-for-optional-components). <br> Als uw Windows Server-client het SMB-protocol gebruikt om toegang te krijgen tot het StorSimple-apparaat, gaat u naar [prestaties afstemmen voor SMB-bestands servers](/windows-server/administration/performance-tuning/role/file-server/smb-file-server) voor hulp bij het verhogen van parallelle verwerking.|
 | VMware ESX |5,5 en 6,0 |Ondersteund met VMware vSphere als iSCSI-client. De functie VAAI-Block wordt ondersteund met VMware vSphere op StorSimple-apparaten. |
 | Linux RHEL/CentOS |5, 6 en 7 |Ondersteuning voor Linux iSCSI-clients met open-iSCSI-initiator versies 5, 6 en 7. |
 | Linux |SUSE Linux 11 | |
@@ -63,16 +63,16 @@ De volgende software vereisten gelden voor de optionele StorSimple-onderdelen (S
 
 Uw StorSimple-apparaat is een vergrendeld apparaat. Poorten moeten echter worden geopend in uw firewall om iSCSI-, Cloud-en beheer verkeer toe te staan. De volgende tabel geeft een lijst van de poorten die in uw firewall moeten worden geopend. *In of* uitgaand van deze *tabel verwijst naar* de richting van waar inkomende clients toegang tot uw apparaat aanvragen. *Out* of *uitgaand* verwijst naar de richting waarin uw StorSimple-apparaat gegevens extern verzendt, behalve de implementatie: bijvoorbeeld uitgaand naar Internet.
 
-| Poort nummer<sup>1, 2</sup> | In of uit | Poort bereik | Vereist | Opmerkingen |
+| Poort nummer<sup>1, 2</sup> | In of uit | Poort bereik | Vereist | Notities |
 | --- | --- | --- | --- | --- |
-| TCP 80 (HTTP)<sup>3</sup> |Uit |WAN |Nee |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li></ul> |
-| TCP 443 (HTTPS)<sup>3</sup> |Uit |WAN |Ja |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li><li>Deze poort wordt ook gebruikt op beide controllers voor garbage collection.</li></ul> |
+| TCP 80 (HTTP)<sup>3</sup> |Uit |WAN |No |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot internet om updates op te halen.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li></ul> |
+| TCP 443 (HTTPS)<sup>3</sup> |Uit |WAN |Yes |<ul><li>De uitgaande poort wordt gebruikt voor toegang tot gegevens in de Cloud.</li><li>De uitgaande webproxy kan door de gebruiker worden geconfigureerd.</li><li>Voor het toestaan van systeem updates moet deze poort ook open zijn voor de vaste IP-adressen van de controller.</li><li>Deze poort wordt ook gebruikt op beide controllers voor garbage collection.</li></ul> |
 | UDP 53 (DNS) |Uit |WAN |In sommige gevallen; Zie opmerkingen. |Deze poort is alleen vereist als u een DNS-server op Internet gebruikt. |
 | UDP 123 (NTP) |Uit |WAN |In sommige gevallen; Zie opmerkingen. |Deze poort is alleen vereist als u een NTP-server op Internet gebruikt. |
-| TCP 9354 |Uit |WAN |Ja |De uitgaande poort wordt door het StorSimple-apparaat gebruikt om te communiceren met de StorSimple-Apparaatbeheer service. |
-| 3260 (iSCSI) |In |LAN |Nee |Deze poort wordt gebruikt om toegang te krijgen tot gegevens via iSCSI. |
-| 5985 |In |LAN |Nee |De binnenkomende poort wordt gebruikt door StorSimple Snapshot Manager om te communiceren met het StorSimple-apparaat.<br>Deze poort wordt ook gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTP. |
-| 5986 |In |LAN |Nee |Deze poort wordt gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTPS. |
+| TCP 9354 |Uit |WAN |Yes |De uitgaande poort wordt door het StorSimple-apparaat gebruikt om te communiceren met de StorSimple-Apparaatbeheer service. |
+| 3260 (iSCSI) |In |LAN |No |Deze poort wordt gebruikt om toegang te krijgen tot gegevens via iSCSI. |
+| 5985 |In |LAN |No |De binnenkomende poort wordt gebruikt door StorSimple Snapshot Manager om te communiceren met het StorSimple-apparaat.<br>Deze poort wordt ook gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTP. |
+| 5986 |In |LAN |No |Deze poort wordt gebruikt wanneer u extern verbinding maakt met Windows PowerShell voor StorSimple via HTTPS. |
 
 <sup>1</sup> er moeten geen binnenkomende poorten worden geopend op het open bare Internet.
 
@@ -233,7 +233,7 @@ StorSimple device model 8600 bevat naast de primaire behuizing ook een EBOD-behu
 * Zorg ervoor dat zowel de EBOD Enclosure controller-modules, zowel SAS-kabels als alle harde schijven altijd zijn geïnstalleerd.
 * Als er een storing optreedt in een module van een EBOD Enclosure controller, moet u onmiddellijk een vervanging aanvragen.
 * Als er een fout optreedt in een module van een EBOD Enclosure controller, moet u ervoor zorgen dat de andere controller module actief is voordat u de defecte module vervangt. Als u wilt controleren of een controller actief is, gaat u naar [de actieve controller op het apparaat identificeren](storsimple-8000-controller-replacement.md#identify-the-active-controller-on-your-device).
-* Tijdens een vervanging van een EBOD-controller module controleert u voortdurend de status van het onderdeel in de StorSimple-Apparaatbeheer-service door de hardware-status te **controleren**  >  **Hardware health**.
+* Tijdens een vervanging van een EBOD-controller module controleert u voortdurend de status van het onderdeel in de StorSimple-Apparaatbeheer-service door de hardware-status te **controleren**  >  .
 * Als een SAS-kabel uitvalt of moet worden vervangen (Microsoft Ondersteuning moet worden betrokken bij een dergelijke bepaling), moet u ervoor zorgen dat u alleen de SAS-kabel verwijdert die moet worden vervangen.
 * Verwijder beide SAS-kabels niet gelijktijdig van het systeem op een bepaald moment.
 

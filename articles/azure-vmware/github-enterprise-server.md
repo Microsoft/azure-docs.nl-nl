@@ -2,17 +2,17 @@
 title: GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
 description: Meer informatie over het instellen van GitHub Enter prise server op uw Azure VMware-oplossing privécloud.
 ms.topic: how-to
-ms.date: 02/03/2021
-ms.openlocfilehash: 2b05e352fd8a81d6d180d4c60e67ab48465b284f
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.date: 02/11/2021
+ms.openlocfilehash: 59a76c3976f6fcda88423b7b78344f2abed1ea84
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549099"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382018"
 ---
 # <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
 
-In dit artikel worden de stappen beschreven voor het instellen van GitHub Enter prise server, de ' on-premises ' versie van [github.com](https://github.com/), op uw persoonlijke cloud van Azure VMware-oplossing. Het scenario dat in deze procedure wordt behandeld, is bedoeld voor een GitHub Enter prise Server-exemplaar dat Maxi maal 3.000 ontwikkel aars kan ondersteunen met Maxi maal 25 taken per minuut op GitHub-acties. Het bevat de instellingen van (op het moment van schrijven) *Preview* -functies, zoals github-acties. Als u de installatie voor uw specifieke behoeften wilt aanpassen, raadpleegt u de vereisten die worden vermeld in [github Enter prise server installeren op VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations).
+In dit artikel worden de stappen beschreven voor het instellen van GitHub Enter prise server, de ' on-premises ' versie van [github.com](https://github.com/), op uw persoonlijke cloud van Azure VMware-oplossing. Het scenario dat wij bieden, is een GitHub Enter prise Server-exemplaar dat tot 3.000 ontwikkel aars kan voorzien van Maxi maal 25 taken per minuut op GitHub-acties. Het bevat de instellingen van (op het moment van schrijven) *Preview* -functies, zoals github-acties. Als u de installatie voor uw specifieke behoeften wilt aanpassen, raadpleegt u de vereisten die worden vermeld in [github Enter prise server installeren op VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations).
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -30,7 +30,7 @@ Geef een herken bare naam op voor de nieuwe virtuele machine, zoals GitHubEnterp
 
 Nadat de configuratie is geïmporteerd, [past u de hardwareconfiguratie](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#creating-the-github-enterprise-server-instance) aan op basis van uw behoeften. In het voorbeeld scenario hebt u de volgende configuratie nodig.
 
-| Resource | Standaard instellingen | Standaard instellingen + ' bèta functies ' (acties) |
+| Resource | Standaard instellingen | Standaard instellen + ' bèta functies ' (acties) |
 | --- | --- | --- |
 | vCPUs | 4 | 8 |
 | Geheugen | 32 GB | 61 GB |
@@ -59,7 +59,7 @@ Pas uw instellingen toe.  Terwijl het exemplaar opnieuw wordt gestart, kunt u do
 
 :::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Maak uw beheerders account.":::
 
-Wanneer het exemplaar opnieuw is opgestart, maakt u een nieuw beheerders account op het exemplaar. Zorg er ook voor dat u het wacht woord van deze gebruiker noteert.
+Nadat het exemplaar opnieuw is opgestart, kunt u een nieuw beheerders account maken op het exemplaar. Zorg er ook voor dat u het wacht woord van deze gebruiker noteert.
 
 ### <a name="other-configuration-steps"></a>Andere configuratie stappen
 
@@ -178,7 +178,7 @@ Als u deze loper beschikbaar wilt maken voor organisaties in uw onderneming, bew
 
 :::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Toegang voor lopers bewerken.":::
 
-Hier gaan we de app beschikbaar maken voor alle organisaties, maar u kunt ook de toegang tot een subset van organisaties beperken, zelfs voor specifieke opslag plaatsen.
+Hier maken we het beschikbaar voor alle organisaties, maar u kunt de toegang beperken tot een subset van organisaties, zelfs voor specifieke opslag plaatsen.
 
 ## <a name="optional-configuring-github-connect"></a>Beschrijving GitHub Connect configureren
 
@@ -223,11 +223,11 @@ Als alles goed is uitgevoerd, ziet u een nieuw probleem in uw opslag plaats, get
 
 Gefeliciteerd U hebt zojuist uw eerste werk stroom voor acties voltooid op GitHub Enter prise server, die wordt uitgevoerd op uw persoonlijke cloud van Azure VMware-oplossing.
 
-In dit artikel hebben we een nieuw exemplaar van GitHub Enter prise server ingesteld, het zelf-hostende equivalent van GitHub.com, bovenop uw persoonlijke cloud van Azure VMware-oplossingen. Dit exemplaar bevat ondersteuning voor GitHub-acties en maakt gebruik van Azure Blob Storage voor persistentie van Logboeken en artefacten. Maar we krassen gewoon het Opper vlak van wat u kunt doen met GitHub-acties. Bekijk de lijst met acties op [Marketplace van github](https://github.com/marketplace)of [Maak een eigen](https://docs.github.com/en/actions/creating-actions)actie.
+In dit artikel hebben we een nieuw exemplaar van GitHub Enter prise server ingesteld, het zelf-hostende equivalent van GitHub.com, bovenop uw persoonlijke cloud van Azure VMware-oplossingen. Dit exemplaar bevat ondersteuning voor GitHub-acties en maakt gebruik van Azure Blob Storage voor persistentie van Logboeken en artefacten. Maar we gaan gewoon het Opper vlak van wat u kunt doen met GitHub-acties. Bekijk de lijst met acties op [Marketplace van github](https://github.com/marketplace)of [Maak een eigen](https://docs.github.com/en/actions/creating-actions)actie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u hebt gezien hoe u GitHub Enter prise server instelt in de privécloud van uw Azure VMware-oplossing, kunt u het volgende weten: 
+Nu u de installatie van GitHub Enter prise server hebt gedekt op uw Azure VMware-oplossing, kunt u het volgende weten: 
 
 - [Aan de slag met github-acties](https://docs.github.com/en/actions).
 - Deel [nemen aan het bèta programma](https://resources.github.com/beta-signup/).

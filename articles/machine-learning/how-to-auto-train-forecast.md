@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 2b24b6480e4331f3a9470dcbb49e7ad221809187
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 6e686c7b22eb834a096cdd7a67beb6d8d291ef20
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132079"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392320"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
@@ -128,7 +128,7 @@ Automatische machine learning probeert automatisch verschillende modellen en alg
 >[!Tip]
 > Traditionele regressie modellen worden ook getest als onderdeel van het aanbevelings systeem voor het voors pellen van experimenten. Zie de [tabel ondersteunde](how-to-configure-auto-train.md#supported-models) modellen voor de volledige lijst met modellen. 
 
-Modellen| Beschrijving | Voordelen
+Modellen| Description | Voordelen
 ----|----|---
 Prophet (preview-versie)|Prophet werkt het beste met een tijd reeks met krachtige seizoensgebonden effecten en verschillende seizoenen historische gegevens. Als u gebruik wilt maken van dit model, installeert u het lokaal met `pip install fbprophet` . | Nauw keurige & snelle, robuuste uitbijters, ontbrekende gegevens en dramatische wijzigingen in uw tijd reeks.
 Automatische ARIMA (preview-versie)|Automatisch herlopend, geïntegreerd zwevend gemiddelde (ARIMA) wordt het beste uitgevoerd wanneer de gegevens stationair zijn. Dit betekent dat de statistische eigenschappen, zoals het gemiddelde en de variantie, constant zijn in de hele set. Als u bijvoorbeeld een munten spiegelt, is de kans dat u koppen krijgt, 50%, ongeacht of u vandaag, morgen of volgend jaar spiegelt.| Ideaal voor univariate-Series, aangezien de vorige waarden worden gebruikt om de toekomstige waarden te voors pellen.
@@ -193,6 +193,14 @@ automl_config = AutoMLConfig(task='forecasting',
                              verbosity=logging.INFO,
                              **forecasting_parameters)
 ```
+
+De hoeveelheid gegevens die nodig zijn voor het trainen van een prognose model met automatische MILLILITERs wordt beïnvloed door de `forecast_horizon` `n_cross_validations` waarden,, en `target_lags` of `target_rolling_window_size` die zijn opgegeven bij het configureren van uw `AutoMLConfig` . 
+
+De volgende formule berekent de hoeveelheid historische gegevens die nodig zijn voor het bouwen van de functies van de tijd reeks.
+
+Mini maal vereiste historische gegevens: (2x `forecast_horizon` ) + # `n_cross_validations` + Max (Max ( `target_lags` ), `target_rolling_window_size` )
+
+Er wordt een fout uitzondering gegenereerd voor alle reeksen in de gegevensset die niet voldoen aan de vereiste hoeveelheid historische gegevens voor de opgegeven instellingen. 
 
 ### <a name="featurization-steps"></a>Parametrisatie-stappen
 
@@ -368,7 +376,7 @@ day_datetime,store,week_of_year
 Herhaal de stappen die nodig zijn om deze toekomstige gegevens naar een data frame te laden en voer vervolgens uit `best_run.predict(test_data)` om toekomstige waarden te voors pellen.
 
 > [!NOTE]
-> Waarden kunnen niet worden voor speld voor het aantal Peri Oden dat groter is dan de `forecast_horizon` . Het model moet opnieuw worden getraind met een grotere horizon om toekomstige waarden buiten de huidige horizon te voors pellen.
+> Voor spellingen in het voor beeld worden niet ondersteund voor prognoses met automatische ML wanneer `target_lags` en/of `target_rolling_window_size` zijn ingeschakeld.
 
 
 ## <a name="example-notebooks"></a>Voorbeeldnotebooks

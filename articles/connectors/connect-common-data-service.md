@@ -5,21 +5,21 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jdaly, logicappspm
 ms.topic: conceptual
-ms.date: 12/11/2020
+ms.date: 02/11/2021
 tags: connectors
-ms.openlocfilehash: b17c3d54b7065a18e015363a0362766f844e4e10
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: bec3416195358121b85eb61679ab39647e664a9e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355114"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382345"
 ---
 # <a name="create-and-manage-records-in-common-data-service-microsoft-dataverse-by-using-azure-logic-apps"></a>Records maken en beheren in Common Data Service (micro soft Dataverse) met behulp van Azure Logic Apps
 
 > [!NOTE]
 > In november 2020 is Common Data Service gewijzigd in micro soft Dataverse.
 
-Met [Azure Logic apps](../logic-apps/logic-apps-overview.md) en de [common data service-connector](/connectors/commondataservice/)kunt u geautomatiseerde werk stromen bouwen waarmee records in uw [common data service, nu micro soft Dataverse-data base, worden](/powerapps/maker/common-data-service/data-platform-intro) beheerd. Met deze werk stromen kunnen records worden gemaakt, records worden bijgewerkt en andere bewerkingen worden uitgevoerd. U kunt ook gegevens uit uw Common Data Service-data base ophalen en de uitvoer beschikbaar maken voor andere acties die u in uw logische app kunt gebruiken. Wanneer bijvoorbeeld een record wordt bijgewerkt in uw Common Data Service-data base, kunt u een e-mail bericht verzenden met behulp van de Office 365 Outlook-Connector.
+Met [Azure Logic apps](../logic-apps/logic-apps-overview.md) en de [common data service-connector](/connectors/commondataservice/)kunt u geautomatiseerde werk stromen bouwen waarmee records in uw [common data service, nu micro soft Dataverse-data base, worden](/powerapps/maker/common-data-service/data-platform-intro) beheerd. Met deze werk stromen kunnen records worden gemaakt, records worden bijgewerkt en andere bewerkingen worden uitgevoerd. U kunt ook informatie ophalen uit uw Dataverse-data base en de uitvoer beschikbaar maken voor andere acties die u kunt gebruiken in uw logische app. Wanneer bijvoorbeeld een record wordt bijgewerkt in uw Dataverse-data base, kunt u een e-mail verzenden met behulp van de Office 365 Outlook-Connector.
 
 Dit artikel laat zien hoe u een logische app kunt maken waarmee een taak record wordt gemaakt wanneer er een nieuwe lead record wordt aangemaakt.
 
@@ -32,7 +32,7 @@ Dit artikel laat zien hoe u een logische app kunt maken waarmee een taak record 
   * [Meer informatie: aan de slag met Common Data Service](/learn/modules/get-started-with-powerapps-common-data-service/)
   * [Power platform-overzicht van omgevingen](/power-platform/admin/environments-overview)
 
-* Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md) en de logische app van waaruit u toegang wilt krijgen tot de records in uw common data service-data base. Als u uw logische app wilt starten met een Common Data Service trigger, hebt u een lege logische app nodig. Als u niet bekend bent met Azure Logic Apps, raadpleegt u [Quick Start: uw eerste werk stroom maken met behulp van Azure Logic apps](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md) en de logische app van waaruit u toegang wilt krijgen tot de records in uw Dataverse-data base. Als u uw logische app wilt starten met een Common Data Service trigger, hebt u een lege logische app nodig. Als u niet bekend bent met Azure Logic Apps, raadpleegt u [Quick Start: uw eerste werk stroom maken met behulp van Azure Logic apps](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="add-common-data-service-trigger"></a>Common Data Service trigger toevoegen
 
@@ -56,7 +56,7 @@ Voor dit voor beeld voegt u de trigger Common Data Service toe die wordt geactiv
    |----------|----------|-------------|
    | **Omgeving** | Yes | De omgeving waarin u bijvoorbeeld ' fabrikam Sales production ' wilt bewaken. Zie [overzicht van Power platform-omgevingen](/power-platform/admin/environments-overview)voor meer informatie. |
    | **Naam van entiteit** | Yes | De entiteit die u wilt bewaken, bijvoorbeeld ' leads ' |
-   | **Bereik** | Yes | De bron die de nieuwe record heeft gemaakt, bijvoorbeeld een gebruiker in uw bedrijfs eenheid of een gebruiker in uw organisatie. In dit voor beeld wordt ' Business Unit ' gebruikt. |
+   | **Scope** | Yes | De bron die de nieuwe record heeft gemaakt, bijvoorbeeld een gebruiker in uw bedrijfs eenheid of een gebruiker in uw organisatie. In dit voor beeld wordt ' Business Unit ' gebruikt. |
    ||||
 
 ## <a name="add-common-data-service-action"></a>Common Data Service actie toevoegen
@@ -92,7 +92,7 @@ Voeg nu een Common Data Service actie toe waarmee een taak record voor een nieuw
 
       | Uitvoer activeren | Description |
       |----------------|-------------|
-      | **Voornaam** | De voor naam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |
+      | **Voor naam** | De voor naam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |
       | **Achternaam** | De achternaam van de lead record die moet worden gebruikt als de primaire contact persoon in de taak record |
       | **Beschrijving** | Andere uitvoer die moet worden opgenomen in de taak record, zoals e-mail adres en zakelijk telefoon nummer |
       |||
@@ -170,6 +170,62 @@ Dit voor beeld laat zien hoe met de actie **een nieuwe record maken** een nieuwe
 ## <a name="connector-reference"></a>Connector-verwijzing
 
 Zie de [referentie pagina van de connector](/connectors/commondataservice/)voor technische informatie op basis van de Swagger-beschrijving van de connector, zoals triggers, acties, limieten en andere details.
+
+## <a name="troubleshooting-problems"></a>Problemen oplossen
+
+### <a name="calls-from-multiple-environments"></a>Aanroepen vanuit meerdere omgevingen
+
+Beide connectors, Common Data Service en Common Data Service (huidige omgeving), slaan informatie over de werk stromen voor logische apps die meldingen over entiteits wijzigingen nodig hebben en ontvangen met behulp van de `callbackregistrations` entiteit in uw micro soft-Dataverse. Als u een Dataverse-organisatie kopieert, worden alle webhooks ook gekopieerd. Als u uw organisatie kopieert voordat u werk stromen uitschakelt die aan uw organisatie zijn toegewezen, verwijzen alle gekopieerde webhooks ook naar dezelfde logische apps, die vervolgens meldingen van meerdere organisaties ontvangen.
+
+Als u ongewenste meldingen wilt stoppen, verwijdert u de registratie van de retour aanroep van de organisatie die deze meldingen verzendt door de volgende stappen uit te voeren:
+
+1. Bepaal de Dataverse-organisatie van waaruit u meldingen wilt verwijderen en meld u aan bij die organisatie.
+
+1. Zoek in de Chrome-browser de registratie van de retour aanroep die u wilt verwijderen door de volgende stappen te volgen:
+
+   1. Bekijk de algemene lijst voor alle call back registraties op de volgende OData-URI, zodat u de gegevens in de entiteit kunt bekijken `callbackregistrations` :
+
+      `https://{organization-name}.crm{instance-number}.dynamics.com/api/data/v9.0/callbackregistrations`:
+
+      > [!NOTE]
+      > Als er geen waarden worden geretourneerd, bent u mogelijk niet gemachtigd om dit entiteits type weer te geven of bent u niet aangemeld bij de juiste organisatie.
+
+   1. Filter op de logische naam van de trigger entiteit `entityname` en de meldings gebeurtenis die overeenkomt met de werk stroom van uw logische app (bericht). Elk gebeurtenis type wordt als volgt toegewezen aan het bericht geheel getal:
+
+      | Gebeurtenistype | Geheel getal bericht |
+      |------------|-----------------|
+      | Maken | 1 |
+      | Verwijderen | 2 |
+      | Bijwerken | 3 |
+      | CreateOrUpdate | 4 |
+      | CreateOrDelete | 5 |
+      | UpdateOrDelete | 6 |
+      | CreateOrUpdateOrDelete | 7 |
+      |||
+
+      In dit voor beeld ziet u hoe u kunt filteren `Create` op meldingen op een entiteit `nov_validation` met de naam met behulp van de volgende ODATA-URI voor een voorbeeld organisatie:
+
+      `https://fabrikam-preprod.crm1.dynamics.com/api/data/v9.0/callbackregistrations?$filter=entityname eq 'nov_validation' and message eq 1`
+
+      ![Scherm opname van browser venster en OData-URI in de adres balk.](./media/connect-common-data-service/find-callback-registrations.png)
+
+      > [!TIP]
+      > Als er meerdere triggers voor dezelfde entiteit of gebeurtenis bestaan, kunt u de lijst filteren met behulp van aanvullende filters zoals `createdon` de `_owninguser_value` kenmerken en. De naam van de eigenaar van de gebruiker wordt weer gegeven onder `/api/data/v9.0/systemusers({id})` .
+
+   1. Nadat u de ID voor de registratie van de retour aanroep die u wilt verwijderen hebt gevonden, voert u de volgende stappen uit:
+   
+      1. Open in uw Chrome-browser het Chrome-Ontwikkelhulpprogramma's (toetsen bord: F12).
+
+      1. Selecteer in het venster bovenaan het tabblad **console** .
+
+      1. Voer de volgende opdracht in op de opdracht regel prompt, waarmee een aanvraag wordt verzonden om de opgegeven call back registratie te verwijderen:
+
+         `fetch('http://{organization-name}.crm{instance-number}.dynamics.com/api/data/v9.0/callbackregistrations({ID-to-delete})', { method: 'DELETE'})`
+
+         > [!IMPORTANT]
+         > Zorg ervoor dat u de aanvraag maakt op basis van een niet-Unified client-interface pagina, bijvoorbeeld van de OData-of API-reactie pagina zelf. Anders kan de logica in het app.js bestand de werking van deze bewerking belemmeren.
+
+   1. Als u wilt bevestigen dat de registratie van de retour aanroep niet meer bestaat, controleert u de registraties lijst voor Call Backs.
 
 ## <a name="next-steps"></a>Volgende stappen
 

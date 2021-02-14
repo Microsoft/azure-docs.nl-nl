@@ -11,17 +11,17 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: conceptual
-ms.date: 10/25/2019
-ms.openlocfilehash: dad02735228bb639981bf3f053a74f29d1944e5a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.date: 02/08/2021
+ms.openlocfilehash: 1228234b6a2904c453ec92f3c09a7b3f55604953
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961478"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363760"
 ---
 # <a name="custom-roles-for-sql-server-to-azure-sql-managed-instance-online-migrations"></a>Aangepaste rollen voor SQL Server naar online migraties van Azure SQL Managed instance
 
-Azure Database Migration Service gebruikt een APP-ID om te communiceren met Azure-Services. Voor de APP-ID is de rol Inzender vereist op het abonnements niveau (die veel bedrijfs beveiligings afdelingen niet toestaat) of het maken van aangepaste rollen die de specifieke machtigingen verlenen die de Azure data base Migrations-service nodig heeft. Omdat er een limiet van 2.000 aangepaste rollen in Azure Active Directory, wilt u wellicht alle machtigingen combi neren die specifiek door de APP-ID zijn vereist in een of twee aangepaste rollen, en vervolgens de APP-ID toekennen aan de aangepaste rol voor specifieke objecten of resource groepen (versus op abonnements niveau). Als het aantal aangepaste rollen niet van belang is, kunt u de aangepaste rollen splitsen op resource type om drie aangepaste rollen te maken, zoals hieronder wordt beschreven.
+Azure Database Migration Service gebruikt een APP-ID om te communiceren met Azure-Services. Voor de APP-ID is de rol Inzender vereist op het abonnements niveau (die veel bedrijfs beveiligings afdelingen niet toestaat) of het maken van aangepaste rollen die de specifieke machtigingen verlenen die Azure Database Migration Service vereist. Omdat er een limiet van 2.000 aangepaste rollen in Azure Active Directory, wilt u wellicht alle machtigingen combi neren die specifiek door de APP-ID zijn vereist in een of twee aangepaste rollen, en vervolgens de APP-ID toekennen aan de aangepaste rol voor specifieke objecten of resource groepen (versus op abonnements niveau). Als het aantal aangepaste rollen niet van belang is, kunt u de aangepaste rollen splitsen op resource type om drie aangepaste rollen te maken, zoals hieronder wordt beschreven.
 
 De sectie AssignableScopes van de JSON-teken reeks van de roldefinitie stelt u in staat om te bepalen waar de machtigingen worden weer gegeven in de gebruikers interface van de **roltoewijzing toevoegen** in de portal. Waarschijnlijk wilt u de rol in de resource groep of zelfs op resource niveau definiëren om te voor komen dat de gebruikers interface met extra rollen wordt gewirward. Houd er rekening mee dat hiermee de werkelijke roltoewijzing niet wordt uitgevoerd.
 
@@ -32,7 +32,7 @@ Het is momenteel raadzaam om mini maal twee aangepaste rollen te maken voor de A
 > [!NOTE]
 > De laatste vereiste voor een aangepaste rol kan uiteindelijk worden verwijderd, omdat de nieuwe SQL Managed instance-code wordt geïmplementeerd in Azure.
 
-**Aangepaste rol voor de App-ID**. Deze rol is vereist voor Azure Database Migration Service migratie op het niveau van de *resource* of de *resource groep* (Zie het artikel [de portal gebruiken om een Azure AD-toepassing en Service-Principal te maken die toegang heeft tot resources](../active-directory/develop/howto-create-service-principal-portal.md)voor meer informatie over de App-ID).
+**Aangepaste rol voor de App-ID**. Deze rol is vereist voor Azure Database Migration Service migratie op het niveau van de *resource* of de *resource groep* die als host fungeert voor de Azure database Migration service (Zie het artikel [de portal gebruiken om een Azure AD-toepassing en Service-Principal te maken die toegang heeft tot resources](../active-directory/develop/howto-create-service-principal-portal.md)voor meer informatie over de App-ID).
 
 ```json
 {
@@ -63,7 +63,7 @@ Het is momenteel raadzaam om mini maal twee aangepaste rollen te maken voor de A
 }
 ```
 
-**Aangepaste rol voor het app-ID-abonnement**. Deze rol is vereist voor Azure Database Migration Service migratie op *abonnements* niveau.
+**Aangepaste rol voor het app-ID-abonnement**. Deze rol is vereist voor Azure Database Migration Service-migratie op *abonnements* niveau die als host fungeert voor het SQL Managed instance.
 
 ```json
 {
@@ -87,8 +87,8 @@ Zie het artikel [aangepaste Azure-rollen](../role-based-access-control/custom-ro
 
 Nadat u deze aangepaste rollen hebt gemaakt, moet u roltoewijzingen toevoegen aan gebruikers en APP-ID ('s) aan de juiste resources of resource groepen:
 
-* De rol ' DMS rol-App-ID ' moet worden verleend aan de APP-ID die wordt gebruikt voor de migraties, en op het opslag account, het Azure Database Migration Service exemplaar en het resource niveau van de SQL Managed instance.
-* De rol ' DMS-rol-app-sub' moet worden verleend aan de APP-ID op het abonnements niveau (de toewijzing van de resource of resource groep mislukt). Deze vereiste is tijdelijk totdat een code-update is geïmplementeerd.
+* De rol ' DMS rol-App-ID ' moet worden verleend aan de APP-ID die wordt gebruikt voor de migraties, en op het opslag account, het Azure Database Migration Service exemplaar en het resource niveau van de SQL Managed instance. Deze wordt verleend op het niveau van de resource of de resource groep die als host fungeert voor de Azure Database Migration Service.
+* De rol ' DMS-functie-ID-sub ' moet worden toegekend aan de APP-ID op het abonnements niveau dat als host fungeert voor het beheerde exemplaar van SQL (dat wordt verleend aan de resource of de resource groep). Deze vereiste is tijdelijk totdat een code-update is geïmplementeerd.
 
 ## <a name="expanded-number-of-roles"></a>Uitgebreid aantal rollen
 

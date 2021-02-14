@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/13/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 060bfb6c88bbed8ba12c5b5ebfd2e9617f5abfb2
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 06b37e8b25d932115384124a45156c801fb9708f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637373"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361669"
 ---
 # <a name="choose-how-to-authorize-access-to-blob-data-with-azure-cli"></a>Kies hoe u de toegang tot BLOB-gegevens wilt autoriseren met Azure CLI
 
@@ -33,6 +33,9 @@ Azure CLI-opdrachten voor het lezen en schrijven van BLOB-gegevens bevatten de o
 - Stel de `--auth-mode` para meter in op de verouderde `key` waarde om de toegangs sleutel voor het account op te halen die voor autorisatie moet worden gebruikt. Als u de `--auth-mode` para meter weglaat, probeert de Azure cli ook de toegangs sleutel op te halen.
 
 Als u de `--auth-mode` para meter wilt gebruiken, moet u ervoor zorgen dat u Azure CLI-versie 2.0.46 of hoger hebt geïnstalleerd. Voer uit `az --version` om de geïnstalleerde versie te controleren.
+
+> [!NOTE]
+> Wanneer een opslag account is vergrendeld met een Azure Resource Manager **alleen-lezen** vergrendeling, is de bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) niet toegestaan voor dat opslag account. **Lijst sleutels** is een post-bewerking en alle post-bewerkingen worden voor komen wanneer een **alleen-lezen** vergrendeling voor het account is geconfigureerd. Daarom moeten gebruikers gebruikers die de account sleutels niet al beschikken over Azure AD-referenties gebruiken voor toegang tot BLOB-gegevens, wanneer het account is vergrendeld met een **alleen-lezen** vergrendeling.
 
 > [!IMPORTANT]
 > Als u de `--auth-mode` para meter weglaat of instelt op `key` , probeert de Azure cli de toegangs sleutel voor het account voor autorisatie te gebruiken. In dit geval raadt micro soft u aan de toegangs sleutel op te geven op de opdracht of in de omgevings variabele **AZURE_STORAGE_KEY** . Zie de sectie [omgevings variabelen instellen voor autorisatie parameters](#set-environment-variables-for-authorization-parameters)voor meer informatie over omgevings variabelen.
@@ -82,6 +85,9 @@ az storage container create \
     --account-key <key>
     --auth-mode key
 ```
+
+> [!IMPORTANT]
+> Wanneer een opslag account is vergrendeld met een Azure Resource Manager **alleen-lezen** vergrendeling, is de bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) niet toegestaan voor dat opslag account. **Lijst sleutels** is een post-bewerking en alle post-bewerkingen worden voor komen wanneer een **alleen-lezen** vergrendeling voor het account is geconfigureerd. Daarom moeten gebruikers, wanneer het account is vergrendeld met een **alleen-lezen** vergrendeling, toegang hebben tot gegevens met Azure AD-referenties.
 
 ## <a name="authorize-with-a-sas-token"></a>Autoriseren met een SAS-token
 

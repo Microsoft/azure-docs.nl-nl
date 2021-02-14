@@ -4,12 +4,12 @@ description: Meer informatie over het beheren van certificaten in een Service Fa
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.custom: sfrev
-ms.openlocfilehash: 722c84c25cb5188e45dd96363bab9af6ff93f6dc
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: a8a7e8954f3c9d5b54c2e1ed9caa330ef92d4512
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901263"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099503"
 ---
 # <a name="certificate-management-in-service-fabric-clusters"></a>Certificaat beheer in Service Fabric clusters
 
@@ -427,6 +427,7 @@ De KVVM-extensie, als inrichtings agent, wordt continu uitgevoerd op basis van e
 Mogelijk hebt u de vlag ' linkOnRenewal ' van de KVVM-extensie gezien en is het feit dat deze is ingesteld op false. We adresseren hier dieper aan het gedrag dat door deze vlag wordt geregeld en de implicaties voor het functioneren van een cluster. Houd er rekening mee dat dit gedrag specifiek is voor Windows.
 
 Volgens de [definitie](../virtual-machines/extensions/key-vault-windows.md#extension-schema):
+
 ```json
 "linkOnRenewal": <Only Windows. This feature enables auto-rotation of SSL certificates, without necessitating a re-deployment or binding.  e.g.: false>,
 ```
@@ -456,7 +457,7 @@ Aangezien het uit de bovenstaande JSON-fragmenten is afgeleid, is een specifieke
 
 Om het maken van een beheerde identiteit te verwijderen, of om deze toe te wijzen aan een andere resource, moet de implementatie operator de vereiste rol (ManagedIdentityOperator) hebben in het abonnement of de resource groep, naast de functies die nodig zijn voor het beheren van de andere resources waarnaar wordt verwezen in de sjabloon. 
 
-Uit veiligheids oogpunt herinnert u zich dat de virtuele machine (schaalset) wordt beschouwd als een beveiligings grens met betrekking tot de Azure-identiteit. Dit betekent dat elke toepassing die op de virtuele machine wordt gehost, in principe een toegangs token voor de door de host beheerde identiteits toegangs tokens krijgt verkregen van het niet-geverifieerde IMDS-eind punt. Als u de virtuele machine als een gedeelde of multi tenant omgeving beschouwt, wordt deze methode voor het ophalen van cluster certificaten mogelijk niet aangegeven. Het is echter alleen geschikt voor het inrichtings mechanisme van certificaten.
+Uit veiligheids oogpunt herinnert u zich dat de virtuele machine (schaalset) wordt beschouwd als een beveiligings grens ten aanzien van de Azure-identiteit. Dit betekent dat elke toepassing die op de virtuele machine wordt gehost, in principe een toegangs token voor de door de host beheerde identiteits toegangs tokens krijgt verkregen van het niet-geverifieerde IMDS-eind punt. Als u de virtuele machine als een gedeelde of multi tenant omgeving beschouwt, wordt deze methode voor het ophalen van cluster certificaten mogelijk niet aangegeven. Het is echter alleen geschikt voor het inrichtings mechanisme van certificaten.
 
 ## <a name="troubleshooting-and-frequently-asked-questions"></a>Problemen oplossen en veelgestelde vragen
 

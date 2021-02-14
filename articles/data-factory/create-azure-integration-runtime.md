@@ -1,21 +1,17 @@
 ---
 title: Azure Integration runtime in Azure Data Factory maken
 description: Meer informatie over het maken van Azure Integration runtime in Azure Data Factory, die wordt gebruikt voor het kopiëren van gegevens en trans formatie-activiteiten.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/09/2020
 author: nabhishek
 ms.author: abnarain
-manager: anandsub
-ms.openlocfilehash: 97f3a8f79e503b8870baf67ee982b0091d926b1e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: ecf2a74a16234084fbac4d1c26157d1703b56a13
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895338"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373059"
 ---
 # <a name="how-to-create-and-configure-azure-integration-runtime"></a>Azure Integration Runtime maken en configureren
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -41,7 +37,7 @@ Integration Runtime kunnen worden gemaakt met de Power shell **-cmdlet Set-AzDat
 ```powershell
 Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName "SampleV2DataFactory1" -Name "MySampleAzureIR" -ResourceGroupName "ADFV2SampleRG" -Type Managed -Location "West Europe"
 ```  
-Voor Azure IR moet het type worden ingesteld op **beheerd** . U hoeft geen reken gegevens op te geven omdat deze elastisch volledig worden beheerd in de Cloud. Geef reken gegevens, zoals de knooppunt grootte en het aantal knoop punten, op wanneer u Azure-SSIS IR wilt maken. Zie [Azure-SSIS IR maken en configureren](create-azure-ssis-integration-runtime.md)voor meer informatie.
+Voor Azure IR moet het type worden ingesteld op **beheerd**. U hoeft geen reken gegevens op te geven omdat deze elastisch volledig worden beheerd in de Cloud. Geef reken gegevens, zoals de knooppunt grootte en het aantal knoop punten, op wanneer u Azure-SSIS IR wilt maken. Zie [Azure-SSIS IR maken en configureren](create-azure-ssis-integration-runtime.md)voor meer informatie.
 
 U kunt een bestaande Azure IR configureren om de locatie ervan te wijzigen met behulp van de Set-AzDataFactoryV2IntegrationRuntime Power shell-cmdlet. Zie [Inleiding tot Integration runtime](concepts-integration-runtime.md)voor meer informatie over de locatie van een Azure IR.
 
@@ -52,16 +48,16 @@ Gebruik de volgende stappen om een Azure IR te maken met behulp van Azure Data F
 
    ![De knop Beheren op de startpagina](media/doc-common-process/get-started-page-manage-button.png)
 
-1. Selecteer **Integration Runtimes** in het linkerdeelvenster en selecteer vervolgens **+Nieuw** .
+1. Selecteer **Integration Runtimes** in het linkerdeelvenster en selecteer vervolgens **+Nieuw**.
 
    ![Scherm opname van de integratie-Runtimes in het linkerdeel venster en de knop + Nieuw.](media/doc-common-process/manage-new-integration-runtime.png)
 
-1. Selecteer op de pagina **Integration runtime Setup** de optie **Azure, zelf-hostend** en selecteer **door gaan** . 
+1. Selecteer op de pagina **Integration runtime Setup** de optie **Azure, zelf-hostend** en selecteer **door gaan**. 
 
-1. Selecteer op de volgende pagina **Azure** om een Azure IR te maken en selecteer vervolgens **door gaan** .
+1. Selecteer op de volgende pagina **Azure** om een Azure IR te maken en selecteer vervolgens **door gaan**.
    ![Een Integration Runtime maken](media/create-azure-integration-runtime/new-azure-integration-runtime.png)
 
-1. Voer een naam in voor uw Azure IR en selecteer **maken** .
+1. Voer een naam in voor uw Azure IR en selecteer **maken**.
    ![Een Azure IR maken](media/create-azure-integration-runtime/create-azure-integration-runtime.png)
 
 1. U ziet een pop-upmelding wanneer het maken is voltooid. Controleer op de pagina **Integration Runtimes** of de ZOJUIST gemaakte IR in de lijst wordt weer geven.
@@ -90,5 +86,5 @@ Zodra een Azure IR is gemaakt, kunt u ernaar verwijzen in de definitie van de ge
 ## <a name="next-steps"></a>Volgende stappen
 Raadpleeg de volgende artikelen voor meer informatie over het maken van andere typen Integration Runtimes:
 
-- [Zelf-hostende Integration runtime maken](create-self-hosted-integration-runtime.md)
+- [Een zelf-hostende integratieruntime maken](create-self-hosted-integration-runtime.md)
 - [Azure-SSIS-integratie-runtime maken](create-azure-ssis-integration-runtime.md)

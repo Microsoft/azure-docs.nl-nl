@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: b4ed5a419df97f98b883a07825184122945e092e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 38403eed56dc718afdfce13375dd2662beb13eb6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879558"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374164"
 ---
 # <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Gegevens visualiseren van Azure Time Series Insights in Power BI
 
@@ -37,9 +37,7 @@ Controleer de [beleids regels voor toegang tot de omgeving](./concepts-access-po
 > [!IMPORTANT]
 > * Down load en installeer de nieuwste versie van [Power bi Desktop](https://powerbi.microsoft.com/downloads/). Als u de stappen in dit artikel wilt volgen, moet u ervoor zorgen dat u ten minste de 2.88.321.0-versie (december 2020) van Power BI Desktop hebt geïnstalleerd. 
 
-## <a name="connect-data-from-azure-time-series-insights-to-power-bi"></a>Gegevens verbinden van Azure Time Series Insights naar Power BI
-
-### <a name="1-export-data-into-power-bi-desktop"></a>1. gegevens exporteren naar Power BI bureau blad
+## <a name="export-data-from-azure-time-series-insights-into-power-bi-desktop"></a>Gegevens exporteren van Azure Time Series Insights naar Power BI bureau blad
 
 Aan de slag:
 
@@ -53,37 +51,36 @@ Aan de slag:
    * **Gegevens indeling**: Kies of u de **samengevoegde gegevens** of **onbewerkte gebeurtenissen** wilt exporteren naar Power bi. 
 
        > [!NOTE]
-       > * Als u onbewerkte gebeurtenissen exporteert, kunt u die gegevens later in Power BI samen voegen. Als u echter geaggregeerde gegevens exporteert, kunt u de onbewerkte gegevens in Power BI niet meer herstellen. 
-       > * Er is een limiet van 250.000 gebeurtenissen voor onbewerkte gebeurtenis niveau gegevens.
+       > Als u onbewerkte gebeurtenissen exporteert, kunt u die gegevens later in Power BI samen voegen. Als u echter geaggregeerde gegevens exporteert, kunt u de onbewerkte gegevens in Power BI niet meer herstellen. Er is een limiet van 250.000 gebeurtenissen voor onbewerkte gebeurtenis niveau gegevens.
 
    * **Tijds bereik**: Kies of u een **vast** tijds bereik of de **meest recente** gegevens in Power bi wilt zien. Als u het vaste tijds bereik kiest, worden de gegevens in de zoek reeks die u hebt gediagram, geëxporteerd naar Power BI. Als u het meest recente tijds bereik kiest Power BI, worden de meest recente gegevens voor de door u gekozen Zoek reeks Power BI weer gegeven (bijvoorbeeld als u één uur aan gegevens in een grafiek hebt genoteerd en de instelling ' laatst ' kiest, worden er altijd query's uitgevoerd voor het laatste 1 uur aan gegevens.)
   
-   * **Opslag type**: Kies of u de geselecteerde query wilt uitvoeren voor een **warme Store** of een **koude opslag**. 
+   * **Opslag type**: Kies of u de geselecteerde query wilt uitvoeren voor een **warme Store** of een **koude opslag**. Als u een bereik hebt geselecteerd dat zowel koud als warme winkels omvat, wordt uw query standaard doorgestuurd naar het koude archief, omdat in de warme opslag alleen de meest recente gegevens worden opgenomen. Het is toegestaan om de para meter storeType hand matig te wijzigen, maar niet aanbevolen voor de beste ervaring. 
 
-    > [!TIP]
-    > * Azure Time Series Insights Explorer selecteert automatisch de aanbevolen para meters, afhankelijk van de gegevens die u hebt geselecteerd om te exporteren. 
+    > [!TIP] 
+    > Azure Time Series Insights Explorer selecteert automatisch de aanbevolen para meters, afhankelijk van het zoek bereik en de weer gave van de gegevens die u wilt exporteren. 
 
 1. Nadat u uw instellingen hebt geconfigureerd, selecteert u **query kopiëren naar klem bord**.
 
     [![Modale export van Azure Time Series Insights Explorer](media/how-to-connect-power-bi/choose-explorer-parameters.jpg)](media/how-to-connect-power-bi/choose-explorer-parameters.jpg#lightbox)
 
-2. Start Power BI Desktop.
+1. Start Power BI Desktop.
    
-3. Selecteer in Power BI Desktop op het tabblad **Start** de optie **gegevens ophalen** in de **linkerbovenhoek.**
+1. Selecteer in Power BI Desktop op het tabblad **Start** de optie **gegevens ophalen** in de **linkerbovenhoek.**
 
     [![Gegevens ophalen in Power BI](media/how-to-connect-power-bi/get-data-power-bi.jpg)](media/how-to-connect-power-bi/get-data-power-bi.jpg#lightbox)
 
-4. Zoek naar **Azure time series Insights**, selecteer **Azure time series Insights (bèta)** en vervolgens **verbinding maken**.
+1. Zoek naar **Azure time series Insights**, selecteer **Azure time series Insights (bèta)** en vervolgens **verbinding maken**.
 
     [![Power BI verbinden met Azure Time Series Insights](media/how-to-connect-power-bi/select-tsi-connector.jpg)](media/how-to-connect-power-bi/select-tsi-connector.jpg#lightbox)
 
     U kunt ook naar het tabblad **Azure** gaan, **Azure time series Insights (bèta)** selecteren en vervolgens **verbinding maken**.
 
-5. Plak de query die u hebt gekopieerd uit Azure Time Series Insights Explorer in het **aangepaste query** veld en druk vervolgens op **OK**.
+1. Plak de query die u hebt gekopieerd uit Azure Time Series Insights Explorer in het **aangepaste query** veld en druk vervolgens op **OK**.
 
     [![Plak de aangepaste query en selecteer OK](media/how-to-connect-power-bi/custom-query-load.png)](media/how-to-connect-power-bi/custom-query-load.png#lightbox)  
 
-6.  De gegevens tabel wordt nu geladen. Druk op **laden** om in Power bi te laden. Als u trans formaties voor de gegevens wilt maken, kunt u dit nu doen door te klikken op **gegevens transformeren**. U kunt ook uw gegevens transformeren nadat deze is geladen.
+1.  De gegevens tabel wordt nu geladen. Druk op **laden** om in Power bi te laden. Als u trans formaties voor de gegevens wilt maken, kunt u dit nu doen door te klikken op **gegevens transformeren**. U kunt ook uw gegevens transformeren nadat deze is geladen.
 
     [![Controleer de gegevens in de tabel en selecteer laden](media/how-to-connect-power-bi/review-the-loaded-data-table.png)](media/how-to-connect-power-bi/review-the-loaded-data-table.png#lightbox)  
 

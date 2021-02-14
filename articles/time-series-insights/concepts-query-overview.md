@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.custom: seodec18
-ms.openlocfilehash: bf743bf1997a339664a6da2e5c02f1bcc1deea26
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b1b055fa7f083bd8bccda16498e2894d5d67eace
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736748"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374130"
 ---
 # <a name="querying-data-from-azure-time-series-insights-gen2"></a>Gegevens uit Azure Time Series Insights Gen2 opvragen
 
@@ -54,13 +54,12 @@ De meeste van deze Api's ondersteunen de batch-uitvoerings bewerking om batch-ru
 
 ## <a name="time-series-query-tsq-apis"></a>TSQ-Api's (Time Series query)
 
-Deze Api's zijn beschikbaar in beide winkels (warm en koud) in onze opslag oplossing met meerdere lagen. Query-URL-para meters worden gebruikt om het [Store-type](/rest/api/time-series-insights/dataaccessgen2/query/execute#uri-parameters) op te geven waarop de query moet worden uitgevoerd:
+Deze Api's zijn beschikbaar in beide winkels (warm en koud) in onze opslag oplossing met meerdere lagen. 
 
 * [API voor ophalen van gebeurtenissen](/rest/api/time-series-insights/dataaccessgen2/query/execute#getevents): Hiermee wordt de query en het ophalen van onbewerkte gebeurtenissen en de bijbehorende gebeurtenis tijds tempels ingeschakeld, zoals deze worden vastgelegd in azure time series Insights Gen2 van de bron provider. Met deze API kunt u onbewerkte gebeurtenissen ophalen voor een bepaalde tijd reeks-ID en zoek reeks. Deze API biedt ondersteuning voor paginering voor het ophalen van de volledige reactie gegevensset voor de geselecteerde invoer.
 
   > [!IMPORTANT]
-
-  > * Als onderdeel van de [aanstaande wijzigingen in JSON-afvlakking en-Escape regels](./ingestion-rules-update.md)worden matrices als **dynamisch** type opgeslagen. Payload-eigenschappen die zijn opgeslagen als dit type zijn **alleen toegankelijk via de API voor het ophalen van gebeurtenissen**.
+  > Als onderdeel van de [aanstaande wijzigingen in JSON-afvlakking en-Escape regels](./ingestion-rules-update.md)worden matrices als **dynamisch** type opgeslagen. Payload-eigenschappen die zijn opgeslagen als dit type zijn **alleen toegankelijk via de API voor het ophalen van gebeurtenissen**.
 
 * [Get Series API](/rest/api/time-series-insights/dataaccessgen2/query/execute#getseries): maakt het mogelijk om query's en het ophalen van berekende waarden en de bijbehorende gebeurtenis tijds tempels in te stellen door berekeningen toe te passen die worden gedefinieerd door variabelen op onbewerkte gebeurtenissen. Deze variabelen kunnen worden gedefinieerd in het time series-model of in inline van de query. Deze API biedt ondersteuning voor paginering voor het ophalen van de volledige reactie gegevensset voor de geselecteerde invoer.
 
@@ -69,6 +68,16 @@ Deze Api's zijn beschikbaar in beide winkels (warm en koud) in onze opslag oplos
   Voor een opgegeven zoek reeks en-interval retourneert deze API een geaggregeerde respons per interval per variabele voor een tijd reeks-ID. Het aantal intervallen in de reactie gegevensset wordt berekend door epoche Ticks te tellen (het aantal milliseconden dat is verstreken sinds UNIX-epoche 1 januari, 1970) en de maat streepjes te delen door de grootte van het interval dat is opgegeven in de query.
 
   De tijds tempels die zijn geretourneerd in de antwoordset, zijn de grenzen van het linker interval, niet van de voor beelden van gebeurtenissen uit het interval.
+
+
+### <a name="selecting-store-type"></a>Type archief selecteren
+
+De bovenstaande Api's kunnen alleen worden uitgevoerd voor een van de twee opslag typen (koud of warm) in één aanroep. Query-URL-para meters worden gebruikt om het [Store-type](/rest/api/time-series-insights/dataaccessgen2/query/execute#uri-parameters) op te geven waarop de query moet worden uitgevoerd. 
+
+Als er geen para meter is opgegeven, wordt de query standaard uitgevoerd in de koude opslag. Als een query een tijds bereik omvat dat uit zowel koude als warme opslag bestaat, is het raadzaam om de query om te leiden naar koude opslag voor de beste ervaring, omdat een warme archief alleen gedeeltelijke gegevens bevat. 
+
+Met de [Azure time series Insights Explorer](./concepts-ux-panels.md) -en [Power bi-connector](./how-to-connect-power-bi.md) worden de bovenstaande api's aangeroepen en wordt automatisch de juiste storeType-para meter geselecteerd, indien van toepassing. 
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

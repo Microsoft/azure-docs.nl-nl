@@ -8,12 +8,12 @@ ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
 ms.custom: references_regions
-ms.openlocfilehash: 036f086c88267f6a20da51746ca875c48a248712
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: d1dc108ecec93dddeb768eb61af425ba67f23002
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538842"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393136"
 ---
 # <a name="continuous-backup-with-point-in-time-restore-preview-feature-in-azure-cosmos-db"></a>Doorlopende back-up met een functie voor herstel naar een bepaald tijdstip in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -33,7 +33,7 @@ Azure Cosmos DB gegevens back-up op de achtergrond uitvoeren zonder gebruik te m
 
 :::image type="content" source="./media/continuous-backup-restore-introduction/continuous-backup-restore-blob-storage.png" alt-text="Azure Cosmos DB gegevens back-up naar de Azure-Blob Storage." lightbox="./media/continuous-backup-restore-introduction/continuous-backup-restore-blob-storage.png" border="false":::
 
-Het beschik bare tijd venster voor herstel (ook wel de Bewaar periode genoemd) is de lagere waarde van de volgende twee: "30 dagen terug vanaf nu" of "tot de aanmaak tijd van de resource". Het tijdstip voor het terugzetten kan een tijds tempel zijn binnen de Bewaar periode.
+Het beschik bare tijd venster voor herstel (ook wel de Bewaar periode genoemd) is de lagere waarde van de volgende twee: *30 dagen terug vanaf nu* of *tot de aanmaak tijd van de resource*. Het tijdstip voor het terugzetten kan een tijds tempel zijn binnen de Bewaar periode.
 
 In de open bare preview kunt u het Azure Cosmos DB-account voor de SQL-API of het MongoDB-inhouds punt in de tijd herstellen naar een ander account met behulp van [Azure Portal](continuous-backup-restore-portal.md), de [Azure-opdracht regel interface](continuous-backup-restore-command-line.md) (az CLI), [Azure PowerShell](continuous-backup-restore-powershell.md)of de [Azure Resource Manager](continuous-backup-restore-template.md).
 
@@ -59,17 +59,18 @@ U kunt deze configuraties toevoegen aan het herstelde account nadat het herstell
 
 ## <a name="restore-scenarios"></a>Herstelscenario's
 
-Hier volgen enkele van de belangrijkste scenario's die worden verholpen door de functie voor het herstellen van een bepaald tijdstip. Scenario's [a] tot en met [c] laten zien hoe u een herstel bewerking kunt activeren als de tijds tempel van de terugzet bewerking vooraf bekend is. Er kunnen echter scenario's zijn waarin u niet precies weet wat er per ongeluk is verwijderd of beschadigd. Scenario's [d] en [e] laten zien hoe u de Restore-tijds tempel kunt _detecteren_ met behulp van de nieuwe event feed-api's voor de herstelbare data base of containers.
+Hier volgen enkele van de belangrijkste scenario's die worden verholpen door de functie voor het herstellen van een bepaald tijdstip. Scenario's [a] tot en met [c] laten zien hoe u een herstel bewerking kunt activeren als de tijds tempel van de terugzet bewerking vooraf bekend is.
+Er kunnen echter scenario's zijn waarin u niet precies weet wat er per ongeluk is verwijderd of beschadigd. Scenario's [d] en [e] laten zien hoe u de Restore-tijds tempel kunt _detecteren_ met behulp van de nieuwe event feed-api's voor de herstelbare data base of containers.
 
 :::image type="content" source="./media/continuous-backup-restore-introduction/restorable-account-scenario.png" alt-text="Levenscyclus gebeurtenissen met tijds tempels voor een restorable-account." lightbox="./media/continuous-backup-restore-introduction/restorable-account-scenario.png" border="false":::
 
-a. **Verwijderd account herstellen** : alle verwijderde accounts die u kunt herstellen, worden weer gegeven in het deel venster **herstellen** . Als bijvoorbeeld ' account A ' wordt verwijderd bij tijds tempel T3. In dit geval is de tijds tempel net vóór T3, locatie, doel accountnaam, resource groep en doel account naam voldoende om te herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md#restore-deleted-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore).  
+a. **Verwijderd account herstellen** : alle verwijderde accounts die u kunt herstellen, worden weer gegeven in het deel venster **herstellen** . Als *account A* bijvoorbeeld wordt verwijderd bij tijds tempel T3. In dit geval is de tijds tempel net vóór T3, locatie, doel accountnaam, resource groep en doel account naam voldoende om te herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md#restore-deleted-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore).  
 
 :::image type="content" source="./media/continuous-backup-restore-introduction/restorable-container-database-scenario.png" alt-text="Levenscyclus gebeurtenissen met tijds tempels voor een onstorbare data base en container." lightbox="./media/continuous-backup-restore-introduction/restorable-container-database-scenario.png" border="false":::
 
-b. **Gegevens herstellen van een account in een bepaalde regio** , bijvoorbeeld als ' account a ' bestaat in twee REGIO'S ' vs-Oost ' en ' westelijke VS ' op tijds tempel T3. Als u een kopie van account A in West-VS nodig hebt, kunt u een herstel punt in de tijd herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore) met VS-West als doel locatie.
+b. **Gegevens herstellen van een account in een bepaalde regio** , bijvoorbeeld als *account a* bestaat in twee regio's VS- *Oost* en *VS-West* op tijds tempel T3. Als u een kopie van account A in *West VS* nodig hebt, kunt u een herstel punt in de tijd herstellen vanaf [Azure Portal](continuous-backup-restore-portal.md), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore) met VS-West als doel locatie.
 
-c. **Herstellen van een onbedoelde schrijf-of verwijder bewerking binnen een container met een bekende Restore-tijds tempel** , bijvoorbeeld als u **weet** dat de inhoud van container 1 binnen Data Base 1 per ongeluk is gewijzigd bij tijds tempel T3. U kunt een herstel punt van [Azure Portal](continuous-backup-restore-portal.md#restore-live-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore) in een ander account in time stamp T3 uitvoeren om de gewenste status van de container te herstellen.
+c. **Herstellen van een onbedoelde schrijf-of verwijder bewerking binnen een container met een bekende Restore-tijds tempel** , bijvoorbeeld als u **weet** dat de inhoud van *container 1* in *Data Base 1* per ongeluk is gewijzigd bij tijds tempel T3. U kunt een herstel punt van [Azure Portal](continuous-backup-restore-portal.md#restore-live-account), [Power shell](continuous-backup-restore-powershell.md#trigger-restore)of [cli](continuous-backup-restore-command-line.md#trigger-restore) in een ander account in time stamp T3 uitvoeren om de gewenste status van de container te herstellen.
 
 d. **Een account herstellen naar een eerder tijdstip voordat de data base per ongeluk is verwijderd** -in de [Azure Portal](continuous-backup-restore-portal.md#restore-live-account), kunt u het deel venster gebeurtenis invoer gebruiken om te bepalen wanneer een Data Base is verwijderd en de herstel tijd te vinden. Op dezelfde manier kunt u met [Azure cli](continuous-backup-restore-command-line.md#trigger-restore) en [Power shell](continuous-backup-restore-powershell.md#trigger-restore)de gebeurtenis voor het verwijderen van de data base detecteren door de invoer van database gebeurtenissen te inventariseren en vervolgens de opdracht Restore te activeren met de vereiste para meters.
 
@@ -81,7 +82,7 @@ Met Azure Cosmos DB kunt u de herstel machtigingen voor een continu back-upaccou
 
 ## <a name="pricing"></a><a id="continuous-backup-pricing"></a>Prijzen
 
-Azure Cosmos DB accounts waarvoor continue back-up is ingeschakeld, worden extra kosten in rekening gebracht voor het opslaan van de back-up en het terugzetten van uw gegevens. De herstel kosten worden telkens toegevoegd wanneer de herstel bewerking wordt gestart. Als u een account met doorlopende back-up configureert, maar de gegevens niet herstelt, worden alleen back-upopslagkosten opgenomen in uw factuur.
+Azure Cosmos DB accounts waarvoor continue back-up is ingeschakeld, worden maandelijks extra kosten in rekening gebracht voor *het opslaan van de back-up* en voor het *herstellen van uw gegevens*. De herstel kosten worden telkens toegevoegd wanneer de herstel bewerking wordt gestart. Als u een account met doorlopende back-up configureert, maar de gegevens niet herstelt, worden alleen back-upopslagkosten opgenomen in uw factuur.
 
 Het volgende voor beeld is gebaseerd op de prijs van een Azure Cosmos-account dat is geïmplementeerd in een niet-overheids regio in de Verenigde Staten. De prijzen en berekening kunnen variëren, afhankelijk van de regio die u gebruikt. Zie de [pagina met prijzen voor Azure Cosmos DB](https://azure.microsoft.com/pricing/details/cosmos-db/) voor de meest recente prijs informatie.
 

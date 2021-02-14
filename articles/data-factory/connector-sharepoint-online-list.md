@@ -1,22 +1,17 @@
 ---
 title: Gegevens uit de share point online-lijst kopiëren met behulp van Azure Data Factory
 description: Informatie over het kopiëren van gegevens uit een share point online-lijst naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: jingwang
-ms.openlocfilehash: 440dd561beddc9696ec703142fe82655b69fbb48
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 3f05c90ba3c7e6b47009cbb597c56dac8a01427a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99474944"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393425"
 ---
 # <a name="copy-data-from-sharepoint-online-list-by-using-azure-data-factory"></a>Gegevens uit de share point online-lijst kopiëren met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -81,12 +76,12 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde service van een
 
 | **Eigenschap**        | **Beschrijving**                                              | **Vereist** |
 | ------------------- | ------------------------------------------------------------ | ------------ |
-| type                | De eigenschap type moet worden ingesteld op: **SharePointOnlineList**.  | Ja          |
-| siteUrl             | De URL van de share point online-site, bijvoorbeeld `https://contoso.sharepoint.com/sites/siteName` . | Ja          |
-| servicePrincipalId  | De client-ID van de toepassing die is geregistreerd in Azure Active Directory. | Ja          |
-| servicePrincipalKey | De sleutel van de toepassing. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja          |
-| tenantId            | De Tenant-ID waaronder uw toepassing zich bevindt.          | Ja          |
-| connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie over de [vereisten](#prerequisites)vindt u eerder in dit artikel. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee           |
+| type                | De eigenschap type moet worden ingesteld op: **SharePointOnlineList**.  | Yes          |
+| siteUrl             | De URL van de share point online-site, bijvoorbeeld `https://contoso.sharepoint.com/sites/siteName` . | Yes          |
+| servicePrincipalId  | De client-ID van de toepassing die is geregistreerd in Azure Active Directory. | Yes          |
+| servicePrincipalKey | De sleutel van de toepassing. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes          |
+| tenantId            | De Tenant-ID waaronder uw toepassing zich bevindt.          | Yes          |
+| connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie over de [vereisten](#prerequisites)vindt u eerder in dit artikel. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No           |
 
 **Voorbeeld:**
 
@@ -114,8 +109,8 @@ Zie [gegevens sets en gekoppelde services](concepts-datasets-linked-services.md)
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** van de DataSet moet worden ingesteld op **SharePointOnlineLResource**. | Ja |
-| listName | De naam van de share point online-lijst. | Ja |
+| type | De eigenschap **type** van de DataSet moet worden ingesteld op **SharePointOnlineLResource**. | Yes |
+| listName | De naam van de share point online-lijst. | Yes |
 
 **Voorbeeld**
 
@@ -147,9 +142,9 @@ Als u gegevens wilt kopiëren uit de share point online-lijst, worden de volgend
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **SharePointOnlineListSource**. | Ja |
-| query | Aangepaste OData-query opties voor het filteren van gegevens. Bijvoorbeeld: `"$top=10&$select=Title,Number"`. | Nee |
-| httpRequestTimeout | De time-out (in seconden) voor de HTTP-aanvraag om een antwoord te krijgen. De standaard waarde is 300 (5 minuten). | Nee |
+| type | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **SharePointOnlineListSource**. | Yes |
+| query | Aangepaste OData-query opties voor het filteren van gegevens. Bijvoorbeeld: `"$top=10&$select=Title,Number"`. | No |
+| httpRequestTimeout | De time-out (in seconden) voor de HTTP-aanvraag om een antwoord te krijgen. De standaard waarde is 300 (5 minuten). | No |
 
 **Voorbeeld**
 
@@ -196,7 +191,7 @@ Wanneer u gegevens kopieert vanuit share point online-lijst, worden de volgende 
 | Meerdere tekstregels                          | Edm.String                                           | Tekenreeks                                   |
 | Keuze (menu om uit te kiezen)                    | Edm.String                                           | Tekenreeks                                   |
 | Getal (1, 1,0, 100)                            | Edm.Double                                           | Dubbel                                   |
-| Valuta ($, ¥, €)                              | Edm.Double                                           | Dubbel                                   |
+| Valuta ($, ¥, &euro; )                              | Edm.Double                                           | Dubbel                                   |
 | Datum en tijd                                   | EDM. DateTime                                         | DateTime                                 |
 | Opzoeken (informatie die al op deze site aanwezig is)       | Edm.Int32                                            | Int32                                    |
 | Ja/Nee (selectie vakje)                              | Edm.Boolean                                          | Booleaans                                  |

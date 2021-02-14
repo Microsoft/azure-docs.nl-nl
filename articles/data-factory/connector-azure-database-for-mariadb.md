@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van Azure Database for MariaDB
 description: Informatie over het kopiëren van gegevens van Azure Database for MariaDB naar ondersteunde Sink-gegevens archieven door gebruik te maken van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
-ms.openlocfilehash: c433fc5d919a57476097257cac1b7176a9da598d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c25d217a5e2aea8acc91fcc8f6fe5ffd026ab976
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81410692"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370866"
 ---
 # <a name="copy-data-from-azure-database-for-mariadb-using-azure-data-factory"></a>Gegevens kopiëren van Azure Database for MariaDB met behulp van Azure Data Factory 
 
@@ -48,8 +44,8 @@ De volgende eigenschappen worden ondersteund voor Azure Database for MariaDB gek
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op: **AzureMariaDB** | Ja |
-| connectionString | Een connection string om verbinding te maken met Azure Database for MariaDB. U kunt dit vinden in de Azure Portal-> uw Azure Database for MariaDB-> verbindings reeksen-> ADO.NET één. <br/> U kunt ook wacht woord in Azure Key Vault plaatsen en de `pwd` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Ja |
-| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
+| connectionString | Een connection string om verbinding te maken met Azure Database for MariaDB. U kunt dit vinden in de Azure Portal-> uw Azure Database for MariaDB-> verbindings reeksen-> ADO.NET één. <br/> U kunt ook wacht woord in Azure Key Vault plaatsen en de `pwd` configuratie uit de Connection String halen. Raadpleeg de volgende voor beelden en [Sla referenties op in azure Key Vault](store-credentials-in-key-vault.md) artikel met meer informatie. | Yes |
+| connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 **Voorbeeld:**
 
@@ -78,13 +74,13 @@ De volgende eigenschappen worden ondersteund voor Azure Database for MariaDB gek
         "type": "AzureMariaDB",
         "typeProperties": {
             "connectionString": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; SslMode=Preferred;",
-            "pwd": { 
-                "type": "AzureKeyVaultSecret", 
-                "store": { 
-                    "referenceName": "<Azure Key Vault linked service name>", 
-                    "type": "LinkedServiceReference" 
-                }, 
-                "secretName": "<secretName>" 
+            "pwd": { 
+                "type": "AzureKeyVaultSecret", 
+                "store": { 
+                    "referenceName": "<Azure Key Vault linked service name>", 
+                    "type": "LinkedServiceReference" 
+                }, 
+                "secretName": "<secretName>" 
             }
         },
         "connectVia": {
@@ -103,7 +99,7 @@ De volgende eigenschappen worden ondersteund voor het kopiëren van gegevens uit
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **AzureMariaDBTable** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **AzureMariaDBTable** | Yes |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -133,7 +129,7 @@ Als u gegevens wilt kopiëren uit Azure Database for MariaDB, worden de volgende
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **AzureMariaDBSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **AzureMariaDBSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

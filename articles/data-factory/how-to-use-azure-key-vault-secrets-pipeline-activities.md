@@ -1,21 +1,17 @@
 ---
 title: Azure Key Vault-geheimen gebruiken in pijplijnactiviteiten
 description: Meer informatie over het ophalen van opgeslagen referenties van Azure sleutel kluis en het gebruik ervan tijdens data factory pijplijn uitvoeringen.
-services: data-factory
 author: ChrisLound
-manager: anandsub
-editor: ''
+ms.author: chlound
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2019
-ms.author: chlound
-ms.openlocfilehash: 1766705e73afab5d15cdb5aa2c5bb1487ad3d7c5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d7e1133b8f3880c4c1616ef5ca955ed014348935
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013884"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383956"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Azure Key Vault-geheimen gebruiken in pijplijnactiviteiten
 
@@ -51,7 +47,7 @@ Deze functie is afhankelijk van de data factory beheerde identiteit.  Meer infor
 
     |Eigenschap  |Waarde  |
     |---------|---------|
-    |Beveiligde uitvoer     |True         |
+    |Beveiligde uitvoer     |Waar         |
     |URL     |[Uw geheime URI-waarde]? API-Version = 7.0         |
     |Methode     |GET         |
     |Verificatie     |MSI         |

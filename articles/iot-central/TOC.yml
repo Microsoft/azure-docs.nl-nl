@@ -1,0 +1,317 @@
+- name: Documentatie over Azure IoT Central
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is Azure IoT Central
+      href: core/overview-iot-central.md
+    - name: Rondleiding door de gebruikersinterface
+      href: core/overview-iot-central-tour.md
+    - name: Recente updates
+      items:
+        - name: Nieuwe en bijgewerkte functies van januari 2021
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-january-2021/'
+        - name: Nieuwe en bijgewerkte functies van november 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-november-2020/'
+        - name: Nieuwe en bijgewerkte functies van oktober 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-upadates-october-2020/'
+        - name: Nieuwe en bijgewerkte functies van september 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-september-2020/'
+        - name: Nieuwe en bijgewerkte functies van augustus 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-august-2020/'
+        - name: Nieuwe en bijgewerkte functies van juli 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-july-2020/'
+        - name: Nieuwe en bijgewerkte functies van juni 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-june-2020/'
+        - name: Updates voor de gebruikersinterface en documentatie van juni 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-ui-documenation-updates-june-2020/'
+        - name: Updates in taken metrische gegevens in mei 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-jobs-and-metrics-feature-updates-may-2020/'
+        - name: Dashboardupdates in mei 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-may-2020-dashboard-updates/'
+        - name: Nieuwe functies in april 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-new-features/'
+        - name: Updates in april 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-updates/'
+        - name: Maart 2020
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-march-2020-updates/'
+- name: Snelstartgidsen
+  expanded: true
+  items:
+    - name: 1. Een nieuwe toepassing maken
+      href: core/quick-deploy-iot-central.md
+    - name: 2. Een gesimuleerd apparaat toevoegen
+      href: core/quick-create-simulated-device.md
+    - name: 3. Regels en acties configureren
+      href: core/quick-configure-rules.md
+    - name: 4. Uw apparaten bewaken
+      href: core/quick-monitor-devices.md
+- name: Zelfstudies
+  items:
+    - name: Apparaten ontwikkelen en verbinden
+      items:
+        - name: Een apparaat maken en verbinden
+          href: core/tutorial-connect-device.md
+        - name: Een gateway-apparaatsjabloon maken
+          href: core/tutorial-define-gateway-device-type.md
+        - name: Een IoT Edge-apparaat verbinden
+          href: core/tutorial-add-edge-as-leaf-device.md
+    - name: Geïntegreerde oplossingen bouwen
+      items:
+        - name: Een apparaatgroep maken
+          href: core/tutorial-use-device-groups.md
+        - name: Een regel maken
+          href: core/tutorial-create-telemetry-rules.md
+        - name: De IoT Central-API's verkennen
+          href: /learn/modules/manage-iot-central-apps-with-rest-api/
+    - name: Branchespecifieke oplossingen
+      items:
+        - name: Retail
+          href: retail/overview-iot-central-retail.md
+          items:
+            - name: In-Store Analytics-betaling
+              href: retail/store-analytics-architecture.md
+              items:
+                - name: 1 - Een retailtoepassing maken
+                  href: retail/tutorial-in-store-analytics-create-app.md
+                - name: 2 - Het dashboard van de operator aanpassen
+                  href: retail/tutorial-in-store-analytics-customize-dashboard.md
+                - name: 3 - Gegevens exporteren en inzichten virtualiseren
+                  href: retail/tutorial-in-store-analytics-export-data-visualize-insights.md
+            - name: Slim voorraadbeheer
+              href: retail/architecture-smart-inventory-management.md
+              items:
+                - name: Een toepassing voor slim voorraadbeheer maken
+                  href: retail/tutorial-iot-central-smart-inventory-management.md
+            - name: Verbonden logistiek
+              href: retail/architecture-connected-logistics.md
+              items:
+                - name: Een verbonden logistieke app maken
+                  href: retail/tutorial-iot-central-connected-logistics.md
+            - name: Digitaal distributiecentrum
+              href: retail/architecture-digital-distribution-center.md
+              items:
+                - name: Een toepassing voor een digitaal distributiecentrum maken
+                  href: retail/tutorial-iot-central-digital-distribution-center.md
+            - name: Micro-uitvoeringscentrum
+              href: retail/architecture-micro-fulfillment-center.md
+              items:
+                - name: Een micro-uitvoeringscentrumtoepassing maken
+                  href: retail/tutorial-micro-fulfillment-center.md
+            - name: 'Videoanalyse: object- en bewegingsdetectie'
+              href: retail/architecture-video-analytics.md
+              items:
+                - name: 0 - Een toepassing voor object- en bewegingsdetectie implementeren
+                  href: retail/tutorial-video-analytics-deploy.md
+                - name: 1 - Een toepassing voor videoanalyse maken
+                  items:
+                    - name: Object- en bewegingsdetectie (YOLO v3)
+                      href: retail/tutorial-video-analytics-create-app-yolo-v3.md
+                    - name: Object- en bewegingsdetectie (OpenVINO)
+                      href: retail/tutorial-video-analytics-create-app-openvino.md
+                - name: 2 - Een IoT Edge-apparaat configureren
+                  items:
+                    - name: Apparaat voor videoanalyse aan de rand maken (Linux-VM)
+                      href: retail/tutorial-video-analytics-iot-edge-vm.md
+                    - name: Apparaat voor videoanalyse aan de rand maken (Intel NUC)
+                      href: retail/tutorial-video-analytics-iot-edge-nuc.md
+                - name: 3 - Een toepassing voor videoanalyse bewaken en beheren
+                  href: retail/tutorial-video-analytics-manage.md
+                - name: 4 - De gatewaymodules voor Live Video Analytics wijzigen en ontwikkelen
+                  href: retail/tutorial-video-analytics-build-module.md
+        - name: Energie
+          href: energy/overview-iot-central-energy.md
+          items:
+            - name: Architectuur voor een app voor slimme meters
+              href: energy/concept-iot-central-smart-meter-app.md
+            - name: Een app maken om slimme meters te bewaken
+              href: energy/tutorial-smart-meter-app.md
+            - name: Architectuur voor een app voor zonnepanelen
+              href: energy/concept-iot-central-solar-panel-app.md
+            - name: Een app maken om zonnepanelen te bewaken
+              href: energy/tutorial-solar-panel-app.md
+        - name: Overheid
+          href: government/overview-iot-central-government.md
+          items:
+            - name: Referentiearchitectuur voor verbonden afvalverwerking
+              href: government/concepts-connectedwastemanagement-architecture.md
+            - name: Een verbonden app voor afvalbeheer maken
+              href: government/tutorial-connected-waste-management.md
+            - name: Referentiearchitectuur voor de bewaking van waterverbruik
+              href: government/concepts-waterconsumptionmonitoring-architecture.md
+            - name: Een app voor bewaking van waterverbruik maken
+              href: government/tutorial-water-consumption-monitoring.md
+            - name: Referentiearchitectuur voor de bewaking van waterkwaliteit
+              href: government/concepts-waterqualitymonitoring-architecture.md
+            - name: Een app voor bewaking van de waterkwaliteit maken
+              href: government/tutorial-water-quality-monitoring.md
+            - name: Uw Azure IoT Central-toepassing verbinden met Dynamics 365 Field Services
+              href: government/how-to-configure-connected-field-services.md
+        - name: Gezondheidszorg
+          href: healthcare/overview-iot-central-healthcare.md
+          items:
+            - name: Architectuur van continue patiëntbewaking
+              href: healthcare/concept-continuous-patient-monitoring-architecture.md
+            - name: Een app voor continue patiëntbewaking maken
+              href: healthcare/tutorial-continuous-patient-monitoring.md
+            - name: Een triagedashboard maken met gezondheidsgegevens
+              href: healthcare/howto-health-data-triage.md
+- name: Concepten
+  items:
+    - name: Architectuur
+      href: core/concepts-architecture.md
+    - name: Handleiding van apparaatontiwkkelaar
+      href: core/overview-iot-central-developer.md
+    - name: Solution Builder-hand leiding
+      href: core/overview-iot-central-developer.md
+    - name: Wat zijn toepassingssjablonen?
+      href: core/concepts-app-templates.md
+    - name: Wat zijn apparaatsjablonen?
+      href: core/concepts-device-templates.md
+    - name: Connectiviteit van apparaten
+      href: core/concepts-get-connected.md
+    - name: Berichten sturen naar nettoladingen
+      href: core/concepts-telemetry-properties-commands.md
+    - name: IoT Edge-apparaten verbinden
+      href: core/concepts-iot-edge.md
+- name: Instructiegidsen
+  items:
+    - name: Apparaten ontwikkelen en verbinden
+      items:
+        - name: Een sjabloon van het apparaat instellen
+          href: core/howto-set-up-template.md
+        - name: Versie van de sjabloon van het apparaat
+          href: core/howto-version-device-template.md
+        - name: Eigenschappen gebruiken
+          href: core/howto-use-properties.md
+        - name: Opdrachten gebruiken
+          href: core/howto-use-commands.md
+        - name: Apparaten verbinden met X.509
+          href: core/how-to-connect-devices-x509.md
+        - name: Apparaatconnectiviteit bewaken met Azure CLI
+          href: core/howto-monitor-devices-azure-cli.md
+        - name: Een Azure Sphere DevKit voorbereiden en verbinden
+          href: core/howto-connect-sphere.md
+        - name: Een RuuviTag-apparaat voorbereiden en verbinden
+          href: core/howto-connect-ruuvi.md
+        - name: Een Rigado Cascade 500 voorbereiden en verbinden
+          href: core/howto-connect-rigado-cascade-500.md
+        - name: Verbinding maken met andere IoT-clouds
+          href: core/howto-build-iotc-device-bridge.md
+    - name: Geïntegreerde oplossingen bouwen
+      items:
+        - name: Tegels toevoegen aan uw dashboard
+          href: core/howto-add-tiles-to-your-dashboard.md
+        - name: Regels configureren
+          href: core/howto-configure-rules.md
+        - name: Webhooks voor regels maken
+          href: core/howto-create-webhooks.md
+        - name: Azure Monitor-actiegroepen verbinden met regels
+          href: core/howto-use-action-groups.md
+        - name: Uw apparaatgegevens analyseren
+          href: core/howto-create-analytics.md
+        - name: Gegevens exporteren naar cloudbestemmingen
+          href: core/howto-export-data.md
+        - name: Gegevens exporteren naar cloudbestemmingen (verouderd)
+          href: core/howto-export-data-legacy.md
+        - name: Werkstromen gebruiken voor integratie met andere services
+          href: core/howto-configure-rules-advanced.md
+        - name: Aangepaste regels maken
+          href: core/howto-create-custom-rules.md
+        - name: Aangepaste analyses maken met Databricks
+          href: core/howto-create-custom-analytics.md
+        - name: Uw gegevens visualiseren in Power BI
+          href: core/howto-connect-powerbi.md
+    - name: Uw apparaten beheren
+      items:
+        - name: Apparaten toevoegen en verwijderen
+          href: core/howto-manage-devices.md
+        - name: Een taak uitvoeren
+          href: core/howto-run-a-job.md
+    - name: Uw oplossing beheren
+      items:
+        - name: Toepassingsinstellingen wijzigen
+          href: core/howto-administer.md
+        - name: Gebruikers en rollen beheren
+          href: core/howto-manage-users-roles.md
+        - name: Uw factuur beheren
+          href: core/howto-view-bill.md
+        - name: De gebruikersinterface van de toepassing aanpassen
+          href: core/howto-customize-ui.md
+        - name: Uw toepassing exporteren
+          href: core/howto-use-app-templates.md
+        - name: V2 migreren naar v3-toepassing
+          href: core/howto-migrate.md
+        - name: De status van de toepassing bewaken
+          href: core/howto-monitor-application-health.md
+        - name: Over uw toepassing
+          href: core/howto-get-app-info.md
+        - name: Bestandsuploads configureren en gebruiken
+          href: core/howto-configure-file-uploads.md
+        - name: X.509-certificaten rouleren
+          href: core/how-to-roll-x509-certificates.md
+        - name: Beheren vanuit de Azure-portal
+          href: core/howto-manage-iot-central-from-portal.md
+        - name: Beheren vanuit Azure CLI
+          href: core/howto-manage-iot-central-from-cli.md
+        - name: Beheren vanuit Azure PowerShell
+          href: core/howto-manage-iot-central-from-powershell.md
+        - name: Programmatisch beheren
+          href: core/howto-manage-iot-central-programmatically.md
+        - name: Beheren vanuit CSP-portal
+          href: core/howto-create-and-manage-applications-csp.md
+    - name: Uw oplossing personaliseren
+      items:
+        - name: Een persoonlijk dash board maken
+          href: core/howto-create-personal-dashboards.md
+        - name: Uw persoonlijke voorkeuren beheren
+          href: core/howto-manage-preferences.md
+        - name: Live chat in-/uitschakelen
+          href: core/howto-show-hide-chat.md
+    - name: Problemen oplossen
+      items:
+        - name: Apparaatverbindingen
+          href: core/troubleshoot-connection.md
+    - name: Veelgestelde vragen
+      href: core/howto-faq.md
+- name: Naslaginformatie
+  items:
+    - name: Azure CLI
+      href: /cli/azure/azure-cli-reference-for-IoT
+    - name: Naslaginformatie over de IoT Central-API
+      href: /rest/api/iotcentral/
+- name: Resources
+  items:
+    - name: Codevoorbeelden
+      href: /samples/browse/?expanded=azure&products=azure-iot-central
+    - name: Opties voor ondersteuning en hulp
+      href: ../iot-fundamentals/iot-support-help.md
+    - name: Azure IoT-services
+      items:
+        - name: IoT Hub
+          href: ../iot-hub/index.yml
+        - name: IoT Hub Device Provisioning Service
+          href: ../iot-dps/index.yml
+        - name: IoT Edge
+          href: ../iot-edge/index.yml
+        - name: IoT-oplossingsversnellers
+          href: ../iot-accelerators/index.yml
+        - name: IoT Plug en Play
+          href: ../iot-pnp/index.yml
+        - name: Azure Maps
+          href: ../azure-maps/index.yml
+        - name: Time Series Insights
+          href: ../time-series-insights/index.yml
+    - name: SDK's voor Azure IoT
+      items:
+        - name: IoT Service-SDK's
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks
+        - name: IoT Device-SDK's
+          href: ../iot-hub/iot-hub-devguide-sdks.md#azure-iot-hub-device-sdks
+    - name: Locatie van klantgegevens
+      href: core/iot-central-customer-data-residency.md
+    - name: Aanvragen van klantgegevens
+      href: core/iot-central-customer-data-requests.md
+    - name: Ondersteunde browsers
+      href: core/iot-central-supported-browsers.md
+    - name: Azure IoT Central (verouderde sjablonen)
+      href: /previous-versions/azure/iot-central/core/overview-iot-central

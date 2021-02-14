@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 7c5544ec5f89cfbf2451c19430a99b64825f90bc
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: daeb0d666c0dfb8306663da1d8d59dfba6adc359
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98872601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516920"
 ---
 # <a name="set-up-a-development-environment-with-azure-databricks-and-automl-in-azure-machine-learning"></a>Stel een ontwikkel omgeving in met Azure Databricks en AutoML in Azure Machine Learning 
 
@@ -131,7 +131,7 @@ Uitproberen:
     psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
     ```
 
-    U kunt ook init-scripts gebruiken als u problemen ondervindt bij de installatie van python-bibliotheken. Deze aanpak wordt niet officieel ondersteund. Zie voor meer informatie [cluster-scoped init-scripts](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
+    U kunt ook init-scripts gebruiken als u problemen ondervindt bij de installatie van python-bibliotheken. Deze aanpak wordt niet officieel ondersteund. Zie voor meer informatie [cluster-scoped init-scripts](/azure/databricks/clusters/init-scripts#cluster-scoped-init-scripts).
 
 * **Fout bij importeren: kan naam niet importeren `Timedelta` van `pandas._libs.tslibs`**: als u deze fout ziet wanneer u gebruikmaakt van automatische machine learning, voert u de twee volgende regels uit in uw notitie blok:
     ```

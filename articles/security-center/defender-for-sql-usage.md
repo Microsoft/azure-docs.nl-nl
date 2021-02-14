@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/23/2020
+ms.date: 02/11/2021
 ms.author: memildin
-ms.openlocfilehash: d741aad2e97b211e42dc6c8b6176f102703acc5b
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 205f92d4282f0cad00c1dd136636da319e107f3f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98916486"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391066"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
 
@@ -70,7 +70,7 @@ Beide worden hieronder beschreven.
 
 1. Stel de optie voor **Azure Defender voor SQL-servers op machines** in **op aan**. 
 
-    ![Security Center prijs pagina met optionele abonnementen](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png)
+    :::image type="content" source="./media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png" alt-text="Security Center prijs pagina met optionele abonnementen":::
 
     Het plan wordt ingeschakeld op alle SQL-servers die zijn verbonden met de geselecteerde werk ruimte. De beveiliging is volledig actief na de eerste keer opnieuw opstarten van de SQL Server-instantie.
 

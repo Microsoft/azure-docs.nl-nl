@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 09/21/2020
-ms.openlocfilehash: 098d6e3712a928392547fcd2cba68b68dcca5ef3
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
-ms.translationtype: HT
+ms.openlocfilehash: 18d944cd2b3bfde1a0ee5fc53e83e4016b11b01f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92476141"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379213"
 ---
 # <a name="azure-database-for-postgresql-single-server"></a>Azure Database for PostgreSQL Single Server
 
@@ -69,7 +69,7 @@ Naast systeemeigen verificatie ondersteunt de service voor één server Azure Ac
 
 [Controlelogboekregistratie]() (preview-versie) is beschikbaar om alle activiteiten op databaseniveau bij te houden.
 
-De service voor één server is compatibel met alle toonaangevende certificeringen, zoals FedRAMP, HIPAA en PCI DSS. Bezoek het [Vertrouwenscentrum van Azure]() voor informatie over de beveiliging van het Azure-platform.
+De service met één server voldoet aan alle toonaangevende certificeringen, zoals FedRAMP, HIPAA, PCI DSS. Bezoek het [Vertrouwenscentrum van Azure]() voor informatie over de beveiliging van het Azure-platform.
 
 Zie het [beveiligingsoverzicht]() voor meer informatie over de beveiligingsfuncties van Azure Database for PostgreSQL.
 
@@ -81,8 +81,8 @@ De service voor één server is uitgerust met ingebouwde functies voor prestatie
 
 De service voert de communityversie van PostgreSQL uit. Dit biedt volledige toepassingscompatibiliteit en vereist minimale herstructureringskosten voor het migreren van bestaande toepassingen die zijn ontwikkeld op PostgreSQL-engine naar een service met één server. De migratie naar de enkele server kan worden uitgevoerd met behulp van een van de volgende opties:
 
-- **Dumpen en herstellen** : voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kunnen dumpen en herstellen met behulp van communityhulpprogramma's, zoals Pg_dump en Pg_restore, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dump en herstel](./howto-migrate-using-dump-and-restore.md) voor meer informatie.
-- **Azure Database Migration Service** : voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan Azure Database Migration Service worden gebruikt. Zie [DMS via de portal](../dms/tutorial-postgresql-azure-postgresql-online-portal.md) en [DMS via CLI](../dms/tutorial-postgresql-azure-postgresql-online.md).
+- **Dumpen en herstellen**: voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kunnen dumpen en herstellen met behulp van communityhulpprogramma's, zoals Pg_dump en Pg_restore, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dump en herstel](./howto-migrate-using-dump-and-restore.md) voor meer informatie.
+- **Azure Database Migration Service**: voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan Azure Database Migration Service worden gebruikt. Zie [DMS via de portal](../dms/tutorial-postgresql-azure-postgresql-online-portal.md) en [DMS via CLI](../dms/tutorial-postgresql-azure-postgresql-online.md).
 
 ## <a name="contacts"></a>Contactpersonen
 

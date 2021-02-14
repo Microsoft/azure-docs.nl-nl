@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 78187b2cbb6603a0ae0df55465b9a5ce5e7dca7f
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: a4883bfce2469af0ee8bcc34933f94b0b5329959
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807543"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518076"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Een Power BI-Tenant registreren en scannen (preview)
 
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u Azure controle sfeer liggen Portal kunt ge
 
 ## <a name="create-a-security-group-for-permissions"></a>Een beveiligings groep maken voor machtigingen
 
-Als u verificatie wilt instellen, maakt u een beveiligings groep en voegt u de beheerde identiteit van de catalogus toe.
+Als u verificatie wilt instellen, maakt u een beveiligings groep en voegt u de beheerde identiteit controle sfeer liggen toe.
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)naar **Azure Active Directory**.
 1. Maak een nieuwe beveiligings groep in uw Azure Active Directory door te volgen [een basis groep te maken en leden toe te voegen met behulp van Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
@@ -35,11 +35,11 @@ Als u verificatie wilt instellen, maakt u een beveiligings groep en voegt u de b
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/security-group.png" alt-text="Type beveiligings groep":::
 
-1. De beheerde identiteit van uw catalogus toevoegen aan deze beveiligings groep. Selecteer **leden** en selecteer vervolgens **+ leden toevoegen**.
+1. Voeg uw beheerde controle sfeer liggen-identiteit toe aan deze beveiligings groep. Selecteer **leden** en selecteer vervolgens **+ leden toevoegen**.
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/add-group-member.png" alt-text="Voeg het beheerde exemplaar van de catalogus toe aan de groep.":::
 
-1. Zoek de catalogus en selecteer deze.
+1. Zoek uw beheerde identiteit voor controle sfeer liggen en selecteer deze.
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/add-catalog-to-group-by-search.png" alt-text="Catalogus toevoegen door ernaar te zoeken":::
 
@@ -61,14 +61,14 @@ Als u verificatie wilt instellen, maakt u een beveiligings groep en voegt u de b
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Afbeelding die laat zien hoe service-principals machtigingen voor alleen-lezen Power BI-beheer-API kunnen krijgen":::
 
     > [!Caution]
-    > Wanneer u de beveiligings groep die u hebt gemaakt (met de door de Data Catalog beheerde identiteit als lid) toestaat om alleen-lezen Power BI-beheer-Api's te gebruiken, kunt u ook toegang krijgen tot de meta gegevens (bijvoorbeeld dash board-en rapport namen, eigen aren, beschrijvingen, enzovoort) voor al uw Power BI artefacten in deze Tenant. Nadat de meta gegevens zijn opgehaald naar de Azure-controle sfeer liggen, worden de machtigingen van controle sfeer liggen, niet Power BI machtigingen, bepalen wie de meta gegevens kunnen zien.
+    > Wanneer u de beveiligings groep die u hebt gemaakt (met uw controle sfeer liggen beheerde identiteit als lid) toestaat om alleen-lezen Power BI-beheer-Api's te gebruiken, kunt u de meta gegevens (bijvoorbeeld dash board-en rapport namen, eigen aren, beschrijvingen, enzovoort) voor al uw Power BI artefacten in deze Tenant. Nadat de meta gegevens zijn opgehaald naar de Azure-controle sfeer liggen, worden de machtigingen van controle sfeer liggen, niet Power BI machtigingen, bepalen wie de meta gegevens kunnen zien.
 
     > [!Note]
     > U kunt de beveiligings groep verwijderen uit uw instellingen voor ontwikkel aars, maar de eerder uitgepakte meta gegevens worden niet verwijderd uit het controle sfeer liggen-account. U kunt deze afzonderlijk verwijderen, indien gewenst.
 
 ## <a name="register-your-power-bi-and-set-up-a-scan"></a>Uw Power BI registreren en een scan instellen
 
-Nu u de catalogus machtigingen hebt gegeven om verbinding te maken met de beheer-API van uw Power BI-Tenant, kunt u uw Scan instellen vanuit de catalogus Portal.
+Nu u de controle sfeer liggen beheerde identiteits machtigingen hebt gekregen om verbinding te maken met de beheer-API van uw Power BI-Tenant, kunt u uw Scan instellen vanuit Azure controle sfeer liggen Studio.
 
 Voeg eerst een speciale functie markering toe aan uw controle sfeer liggen-URL 
 

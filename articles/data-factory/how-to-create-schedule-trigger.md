@@ -1,25 +1,21 @@
 ---
 title: Schema triggers maken in Azure Data Factory
 description: Meer informatie over het maken van een trigger in Azure Data Factory die een pijp lijn uitvoert volgens een schema.
-services: data-factory
-documentationcenter: ''
 author: chez-charlie
 ms.author: chez
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/30/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a6f53d6ce41085b2348857ccb5b45c06132d6a99
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3673dd9eba717d2bdb569b4248936bbb59a8eae7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001980"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387577"
 ---
-# <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Een trigger maken waarmee een pijp lijn volgens een planning wordt uitgevoerd
+# <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Een trigger maken voor het uitvoeren van een pijplijn volgens een planning
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Dit artikel bevat informatie over de plannings trigger en de stappen voor het maken, starten en bewaken van een plannings trigger. Zie [pijp lijnen uitvoeren en triggers](concepts-pipeline-execution-triggers.md)voor andere soorten triggers.
@@ -352,10 +348,10 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 | JSON-eigenschap | Description |
 |:--- |:--- |
 | **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime**. <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
-| **endTime** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. Deze eigenschap is optioneel.  <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
+| **Tijd** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. Deze eigenschap is optioneel.  <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
 | **Tijd zone** | De tijd zone waarin de trigger wordt gemaakt. Deze instelling heeft invloed op **StartTime**, **EndTime** en **Schedule**. [Lijst met ondersteunde tijd zones](#time-zone-option) weer geven |
 | **optreden** | Een recurrence-object bepaalt de regels voor het terugkeerpatroon van de trigger. Het recurrence-object ondersteunt de elementen **frequency**, **interval**, **endTime**, **count** en **schedule**. Als een recurrence-object wordt gedefinieerd, is het element **frequency** vereist. De overige elementen van het recurrence-object zijn optioneel. |
-| **ingang** | Hiermee geeft u de frequentie aan waarmee de trigger wordt uitgevoerd. De ondersteunde waarden omvatten 'minuut', 'uur', 'dag', 'week' en 'maand'. |
+| **frequency** | Hiermee geeft u de frequentie aan waarmee de trigger wordt uitgevoerd. De ondersteunde waarden omvatten 'minuut', 'uur', 'dag', 'week' en 'maand'. |
 | **bereik** | Een positief geheel getal dat het interval voor de waarde **frequency** aangeeft. Het bepaalt hoe vaak de trigger wordt uitgevoerd. Als **interval** bijvoorbeeld 3 is en **frequency** 'week', dan wordt de trigger elke 3 weken uitgevoerd. |
 | **planning** | Het terugkeerschema voor de trigger. Een trigger met een opgegeven waarde voor **frequency** wijzigt het terugkeerpatroon op basis van een terugkeerschema. De eigenschap **property** bevat wijzigingen voor het terugkeerpatroon en zijn gebaseerd op minuten, uren, weekdagen, maanddagen en weeknummer.
 
@@ -371,8 +367,8 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 | **startTime** | Tekenreeks | Ja | Geen | Datums en tijden volgens ISO 8601 | voor UTC-tijd zone `"startTime" : "2013-01-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"2013-01-09T09:30:00-08:00"` |
 | **Tijd zone** | Tekenreeks | Ja | Geen | [Waarden van tijd zone](#time-zone-option)  | `"UTC"` |
 | **optreden** | Object | Ja | Geen | Recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **bereik** | Getal | No | 1 | 1 tot 1000 | `"interval":10` |
-| **endTime** | Tekenreeks | Ja | Geen | Een datum/tijdwaarde die een toekomstig tijdstip voorstelt. | voor UTC-tijd zone `"endTime" : "2013-02-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"endTime" : "2013-02-09T09:30:00-08:00"`|
+| **bereik** | Aantal | No | 1 | 1 tot 1000 | `"interval":10` |
+| **Tijd** | Tekenreeks | Ja | Geen | Een datum/tijdwaarde die een toekomstig tijdstip voorstelt. | voor UTC-tijd zone `"endTime" : "2013-02-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"endTime" : "2013-02-09T09:30:00-08:00"`|
 | **planning** | Object | No | Geen | Schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="time-zone-option"></a>Optie tijd zone

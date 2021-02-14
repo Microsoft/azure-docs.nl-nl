@@ -13,20 +13,30 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 10/18/2019
+ms.date: 02/10/2021
 ms.author: b-juche
-ms.openlocfilehash: 870caffe2bd286c2eec3390915bc5e64e0103a07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ac83e5a9366a12c5adce0e08f04f2bb28a7d788d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85483462"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374878"
 ---
 # <a name="troubleshoot-azure-netapp-files-resource-provider-errors"></a>Problemen met Azure NetApp Files-resourceproviders oplossen 
 
 In dit artikel worden veelvoorkomende fouten van Azure NetApp Files Resource providers, de oorzaken, oplossingen en tijdelijke oplossingen beschreven (indien beschikbaar).
 
 ## <a name="common-azure-netapp-files-resource-provider-errors"></a>Veelvoorkomende fouten in Azure NetApp Files Resource provider
+
+***Het maken van `netAppAccounts` is beperkt in deze regio.***
+
+Deze situatie treedt op wanneer het abonnement waitlisted is voor Azure NetApp Files en de gebruiker probeert een NetApp-account te maken.
+
+* Oorzaak:   
+De Azure-resource provider voor Azure NetApp Files is niet geregistreerd. 
+ 
+* Oplossing:   
+Voer alle stappen uit die worden beschreven in [Azure NetApp resource provider registratie](azure-netapp-files-register.md#resource-provider) nadat uw abonnement waitlisted is.
 
 ***BareMetalTenantId kan niet worden gewijzigd.***  
 

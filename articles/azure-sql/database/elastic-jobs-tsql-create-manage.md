@@ -6,44 +6,46 @@ ms.service: sql-database
 ms.subservice: scale-out
 ms.custom: seo-lt-2019, sqldbrb=1
 ms.devlang: ''
+dev_langs:
+- TSQL
 ms.topic: how-to
 ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
-ms.date: 02/07/2020
-ms.openlocfilehash: 76f9fb4ed5c3b88b3a1f69e352f50079586ec336
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.date: 02/01/2021
+ms.openlocfilehash: 11b94ba5bcedf56f0115b8730dc58f808aff5c58
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98663329"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371597"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs-preview"></a>Transact-SQL (T-SQL) gebruiken om Elastic Database taken te maken en te beheren (preview-versie)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Dit artikel bevat een groot aantal voorbeeld scenario's om aan de slag te gaan met elastische taken met behulp van T-SQL.
 
-De voor beelden gebruiken de [opgeslagen procedures](#job-stored-procedures) en [weer gaven](#job-views) die beschikbaar zijn in de [*taak database*](job-automation-overview.md#job-database).
+De voor beelden gebruiken de [opgeslagen procedures](#job-stored-procedures) en [weer gaven](#job-views) die beschikbaar zijn in de [*taak database*](job-automation-overview.md#elastic-job-database).
 
 Transact-SQL (T-SQL) wordt gebruikt om taken te maken, te configureren, uit te voeren en te beheren. Het maken van de elastische taak agent wordt niet ondersteund in T-SQL, dus u moet eerst een *elastische taak agent* maken met behulp van de portal of [Power shell](elastic-jobs-powershell-create.md#create-the-elastic-job-agent).
 
 ## <a name="create-a-credential-for-job-execution"></a>Een referentie maken voor het uitvoeren van taken
 
-De referentie wordt gebruikt om verbinding te maken met uw doel databases voor het uitvoeren van scripts. De referentie moet de juiste machtigingen hebben op de data bases die zijn opgegeven door de doel groep om het script uit te voeren. Wanneer u een [logische SQL-Server](logical-servers.md) en/of een groeps doel groepslid gebruikt, is het zeer raadzaam om een Master referentie te maken voor gebruik om de referentie te vernieuwen vóór de uitbrei ding van de server en/of groep op het moment van de taak uitvoering. De referentie data base-scope wordt gemaakt op de data base van de taak agent. Dezelfde referentie moet worden gebruikt om *een aanmelding te maken* en *een gebruiker te maken op basis van de aanmelding om de aanmeldings database machtigingen te verlenen* voor de doel databases.
+De referentie wordt gebruikt om verbinding te maken met uw doel databases voor het uitvoeren van scripts. De referentie moet de juiste machtigingen hebben op de data bases die zijn opgegeven door de doel groep om het script uit te voeren. Wanneer u een [logisch SQL Server](logical-servers.md) -en/of groeps doel groepslid gebruikt, wordt het nadrukkelijk aanbevolen een referentie te maken voor gebruik om de referentie te vernieuwen vóór de uitbrei ding van de server en/of pool op het moment van de uitvoering van de taak. De referentie data base-scope wordt gemaakt op de data base van de taak agent. Dezelfde referentie moet worden gebruikt om *een aanmelding te maken* en *een gebruiker te maken op basis van de aanmelding om de aanmeldings database machtigingen te verlenen* voor de doel databases.
 
 ```sql
---Connect to the job database specified when creating the job agent
+--Connect to the new job database specified when creating the Elastic Job agent
 
--- Create a db master key if one does not already exist, using your own password.  
+-- Create a database master key if one does not already exist, using your own password.  
 CREATE MASTER KEY ENCRYPTION BY PASSWORD='<EnterStrongPasswordHere>';  
   
--- Create a database scoped credential.  
-CREATE DATABASE SCOPED CREDENTIAL myjobcred WITH IDENTITY = 'jobcred',
+-- Create two database scoped credentials.  
+-- The credential to connect to the Azure SQL logical server, to execute jobs
+CREATE DATABASE SCOPED CREDENTIAL job_credential WITH IDENTITY = 'job_credential',
     SECRET = '<EnterStrongPasswordHere>';
 GO
-
--- Create a database scoped credential for the master database of server1.
-CREATE DATABASE SCOPED CREDENTIAL mymastercred WITH IDENTITY = 'mastercred',
+-- The credential to connect to the Azure SQL logical server, to refresh the database metadata in server
+CREATE DATABASE SCOPED CREDENTIAL refresh_credential WITH IDENTITY = 'refresh_credential',
     SECRET = '<EnterStrongPasswordHere>';
 GO
 ```
@@ -51,20 +53,20 @@ GO
 ## <a name="create-a-target-group-servers"></a>Een doel groep maken (servers)
 
 In het volgende voor beeld ziet u hoe u een taak uitvoert voor alle data bases op een server.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 -- Connect to the job database specified when creating the job agent
 
 -- Add a target group containing server(s)
-EXEC jobs.sp_add_target_group 'ServerGroup1'
+EXEC jobs.sp_add_target_group 'ServerGroup1';
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
-'ServerGroup1',
+@target_group_name = 'ServerGroup1',
 @target_type = 'SqlServer',
-@refresh_credential_name = 'mymastercred', --credential required to refresh the databases in a server
-@server_name = 'server1.database.windows.net'
+@refresh_credential_name = 'refresh_credential', --credential required to refresh the databases in a server
+@server_name = 'server1.database.windows.net';
 
 --View the recently created target group and target group members
 SELECT * FROM jobs.target_groups WHERE target_group_name='ServerGroup1';
@@ -74,29 +76,29 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name='ServerGroup1';
 ## <a name="exclude-an-individual-database"></a>Een afzonderlijke data base uitsluiten
 
 In het volgende voor beeld ziet u hoe u een taak uitvoert voor alle data bases op een server, met uitzonde ring van de data base met de naam *MappingDB*.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- Add a target group containing server(s)
-EXEC [jobs].sp_add_target_group N'ServerGroup'
+EXEC [jobs].sp_add_target_group N'ServerGroup';
 GO
 
 -- Add a server target member
 EXEC [jobs].sp_add_target_group_member
 @target_group_name = N'ServerGroup',
 @target_type = N'SqlServer',
-@refresh_credential_name = N'mymastercred', --credential required to refresh the databases in a server
-@server_name = N'London.database.windows.net'
+@refresh_credential_name = N'refresh_credential', --credential required to refresh the databases in a server
+@server_name = N'London.database.windows.net';
 GO
 
 -- Add a server target member
 EXEC [jobs].sp_add_target_group_member
 @target_group_name = N'ServerGroup',
 @target_type = N'SqlServer',
-@refresh_credential_name = N'mymastercred', --credential required to refresh the databases in a server
-@server_name = 'server2.database.windows.net'
+@refresh_credential_name = N'refresh_credential', --credential required to refresh the databases in a server
+@server_name = 'server2.database.windows.net';
 GO
 
 --Exclude a database target member from the server target group
@@ -105,7 +107,7 @@ EXEC [jobs].sp_add_target_group_member
 @membership_type = N'Exclude',
 @target_type = N'SqlDatabase',
 @server_name = N'server1.database.windows.net',
-@database_name = N'MappingDB'
+@database_name = N'MappingDB';
 GO
 
 --View the recently created target group and target group members
@@ -116,21 +118,21 @@ SELECT * FROM [jobs].target_group_members WHERE target_group_name = N'ServerGrou
 ## <a name="create-a-target-group-pools"></a>Een doel groep maken (groepen)
 
 In het volgende voor beeld ziet u hoe u alle data bases in een of meer elastische Pools kunt richten.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- Add a target group containing pool(s)
-EXEC jobs.sp_add_target_group 'PoolGroup'
+EXEC jobs.sp_add_target_group 'PoolGroup';
 
 -- Add an elastic pool(s) target member
 EXEC jobs.sp_add_target_group_member
-'PoolGroup',
+@target_group_name = 'PoolGroup',
 @target_type = 'SqlElasticPool',
-@refresh_credential_name = 'mymastercred', --credential required to refresh the databases in a server
+@refresh_credential_name = 'refresh_credential', --credential required to refresh the databases in a server
 @server_name = 'server1.database.windows.net',
-@elastic_pool_name = 'ElasticPool-1'
+@elastic_pool_name = 'ElasticPool-1';
 
 -- View the recently created target group and target group members
 SELECT * FROM jobs.target_groups WHERE target_group_name = N'PoolGroup';
@@ -140,20 +142,20 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name = N'PoolGroup';
 ## <a name="deploy-new-schema-to-many-databases"></a>Nieuw schema implementeren in veel data bases
 
 In het volgende voor beeld ziet u hoe u een nieuw schema voor alle data bases implementeert.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 --Add job for create table
-EXEC jobs.sp_add_job @job_name = 'CreateTableTest', @description = 'Create Table Test'
+EXEC jobs.sp_add_job @job_name = 'CreateTableTest', @description = 'Create Table Test';
 
 -- Add job step for create table
 EXEC jobs.sp_add_jobstep @job_name = 'CreateTableTest',
 @command = N'IF NOT EXISTS (SELECT * FROM sys.tables WHERE object_id = object_id(''Test''))
 CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
-@credential_name = 'myjobcred',
-@target_group_name = 'PoolGroup'
+@credential_name = 'job_credential',
+@target_group_name = 'PoolGroup';
 ```
 
 ## <a name="data-collection-using-built-in-parameters"></a>Gegevens verzameling met ingebouwde para meters
@@ -188,7 +190,7 @@ Als u de tabel vooraf hand matig wilt maken, moet deze de volgende eigenschappen
 3. Een niet-geclusterde index `IX_<TableName>_Internal_Execution_ID` met de naam in de internal_execution_id kolom.
 4. Alle machtigingen die hierboven worden vermeld, met uitzonde ring van machtigingen voor `CREATE TABLE` de data base.
 
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdrachten uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdrachten uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -200,32 +202,34 @@ EXEC jobs.sp_add_job @job_name ='ResultsJob', @description='Collection Performan
 EXEC jobs.sp_add_jobstep
 @job_name = 'ResultsJob',
 @command = N' SELECT DB_NAME() DatabaseName, $(job_execution_id) AS job_execution_id, * FROM sys.dm_db_resource_stats WHERE end_time > DATEADD(mi, -20, GETDATE());',
-@credential_name = 'myjobcred',
+@credential_name = 'job_credential',
 @target_group_name = 'PoolGroup',
 @output_type = 'SqlDatabase',
-@output_credential_name = 'myjobcred',
+@output_credential_name = 'job_credential',
 @output_server_name = 'server1.database.windows.net',
 @output_database_name = '<resultsdb>',
-@output_table_name = '<resutlstable>'
-Create a job to monitor pool performance
+@output_table_name = '<resutlstable>';
+
+--Create a job to monitor pool performance
+
 --Connect to the job database specified when creating the job agent
 
--- Add a target group containing master database
-EXEC jobs.sp_add_target_group 'MasterGroup'
+-- Add a target group containing Elastic Job database
+EXEC jobs.sp_add_target_group 'ElasticJobGroup';
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
-@target_group_name = 'MasterGroup',
+@target_group_name = 'ElasticJobGroup',
 @target_type = 'SqlDatabase',
 @server_name = 'server1.database.windows.net',
-@database_name = 'master'
+@database_name = 'master';
 
 -- Add a job to collect perf results
 EXEC jobs.sp_add_job
 @job_name = 'ResultsPoolsJob',
 @description = 'Demo: Collection Performance data from all pools',
 @schedule_interval_type = 'Minutes',
-@schedule_interval_count = 15
+@schedule_interval_count = 15;
 
 -- Add a job step w/ schedule to collect results
 EXEC jobs.sp_add_jobstep
@@ -246,61 +250,61 @@ SELECT elastic_pool_name , end_time, elastic_pool_dtu_limit, avg_cpu_percent, av
         avg_storage_percent, elastic_pool_storage_limit_mb FROM sys.elastic_pool_resource_stats
         WHERE end_time > @poolStartTime and end_time <= @poolEndTime;
 '),
-@credential_name = 'myjobcred',
-@target_group_name = 'MasterGroup',
+@credential_name = 'job_credential',
+@target_group_name = 'ElasticJobGroup',
 @output_type = 'SqlDatabase',
-@output_credential_name = 'myjobcred',
+@output_credential_name = 'job_credential',
 @output_server_name = 'server1.database.windows.net',
 @output_database_name = 'resultsdb',
-@output_table_name = 'resutlstable'
+@output_table_name = 'resutlstable';
 ```
 
 ## <a name="view-job-definitions"></a>Taak definities weer geven
 
 In het volgende voor beeld ziet u hoe huidige taak definities worden weer gegeven.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- View all jobs
-SELECT * FROM jobs.jobs
+SELECT * FROM jobs.jobs;
 
 -- View the steps of the current version of all jobs
 SELECT js.* FROM jobs.jobsteps js
 JOIN jobs.jobs j
-  ON j.job_id = js.job_id AND j.job_version = js.job_version
+  ON j.job_id = js.job_id AND j.job_version = js.job_version;
 
 -- View the steps of all versions of all jobs
-select * from jobs.jobsteps
+SELECT * FROM jobs.jobsteps;
 ```
 
 ## <a name="begin-unplanned-execution-of-a-job"></a>Ongeplande uitvoering van een taak starten
 
 In het volgende voor beeld ziet u hoe u een taak onmiddellijk kunt starten.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- Execute the latest version of a job
-EXEC jobs.sp_start_job 'CreateTableTest'
+EXEC jobs.sp_start_job 'CreateTableTest';
 
 -- Execute the latest version of a job and receive the execution id
-declare @je uniqueidentifier
-exec jobs.sp_start_job 'CreateTableTest', @job_execution_id = @je output
-select @je
+declare @je uniqueidentifier;
+exec jobs.sp_start_job 'CreateTableTest', @job_execution_id = @je output;
+select @je;
 
-select * from jobs.job_executions where job_execution_id = @je
+select * from jobs.job_executions where job_execution_id = @je;
 
 -- Execute a specific version of a job (e.g. version 1)
-exec jobs.sp_start_job 'CreateTableTest', 1
+exec jobs.sp_start_job 'CreateTableTest', 1;
 ```
 
 ## <a name="schedule-execution-of-a-job"></a>De uitvoering van een taak plannen
 
 In het volgende voor beeld ziet u hoe u een taak plant voor toekomstige uitvoering.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -309,13 +313,13 @@ EXEC jobs.sp_update_job
 @job_name = 'ResultsJob',
 @enabled=1,
 @schedule_interval_type = 'Minutes',
-@schedule_interval_count = 15
+@schedule_interval_count = 15;
 ```
 
 ## <a name="monitor-job-execution-status"></a>Uitvoerings status van taak bewaken
 
 In het volgende voor beeld ziet u hoe Details van de uitvoerings status voor alle taken worden weer gegeven.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -323,27 +327,27 @@ Maak verbinding met de [*taak database*](job-automation-overview.md#job-database
 --View top-level execution status for the job named 'ResultsPoolJob'
 SELECT * FROM jobs.job_executions
 WHERE job_name = 'ResultsPoolsJob' and step_id IS NULL
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 
 --View all top-level execution status for all jobs
 SELECT * FROM jobs.job_executions WHERE step_id IS NULL
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 
 --View all execution statuses for job named 'ResultsPoolsJob'
 SELECT * FROM jobs.job_executions
 WHERE job_name = 'ResultsPoolsJob'
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 
 -- View all active executions
 SELECT * FROM jobs.job_executions
 WHERE is_active = 1
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 ```
 
 ## <a name="cancel-a-job"></a>Een taak annuleren
 
 In het volgende voor beeld ziet u hoe u een taak annuleert.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -351,23 +355,23 @@ Maak verbinding met de [*taak database*](job-automation-overview.md#job-database
 -- View all active executions to determine job execution id
 SELECT * FROM jobs.job_executions
 WHERE is_active = 1 AND job_name = 'ResultPoolsJob'
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 GO
 
 -- Cancel job execution with the specified job execution id
-EXEC jobs.sp_stop_job '01234567-89ab-cdef-0123-456789abcdef'
+EXEC jobs.sp_stop_job '01234567-89ab-cdef-0123-456789abcdef';
 ```
 
 ## <a name="delete-old-job-history"></a>Oude taak geschiedenis verwijderen
 
 In het volgende voor beeld ziet u hoe u de taak geschiedenis verwijdert vóór een specifieke datum.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
--- Delete history of a specific job’s executions older than the specified date
-EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-01 00:00:00'
+-- Delete history of a specific job's executions older than the specified date
+EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-01 00:00:00';
 
 --Note: job history is automatically deleted if it is >45 days old
 ```
@@ -375,21 +379,21 @@ EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-
 ## <a name="delete-a-job-and-all-its-job-history"></a>Een taak en alle bijbehorende taak geschiedenis verwijderen
 
 In het volgende voor beeld ziet u hoe u een taak en alle gerelateerde taak geschiedenis verwijdert.  
-Maak verbinding met de [*taak database*](job-automation-overview.md#job-database) en voer de volgende opdracht uit:
+Maak verbinding met de [*taak database*](job-automation-overview.md#elastic-job-database) en voer de volgende opdracht uit:
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
-EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
+EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob';
 
 --Note: job history is automatically deleted if it is >45 days old
 ```
 
 ## <a name="job-stored-procedures"></a>Opgeslagen procedures voor taken
 
-De volgende opgeslagen procedures bevinden zich in de [Jobs-data base](job-automation-overview.md#job-database).
+De volgende opgeslagen procedures bevinden zich in de [Jobs-data base](job-automation-overview.md#elastic-job-database).
 
-|Opgeslagen procedure  |Beschrijving  |
+|Opgeslagen procedure  |Description  |
 |---------|---------|
 |[sp_add_job](#sp_add_job)     |     Hiermee wordt een nieuwe taak toegevoegd.    |
 |[sp_update_job](#sp_update_job)    |      Hiermee wordt een bestaande taak bijgewerkt.   |
@@ -1065,27 +1069,27 @@ In het volgende voor beeld worden alle data bases in de services Londen en NewYo
 
 ```sql
 --Connect to the jobs database specified when creating the job agent
-USE ElasticJobs ;
+USE ElasticJobs;
 GO
 
 -- Add a target group containing server(s)
-EXEC jobs.sp_add_target_group @target_group_name =  N'Servers Maintaining Customer Information'
+EXEC jobs.sp_add_target_group @target_group_name =  N'Servers Maintaining Customer Information';
 GO
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
 @target_group_name = N'Servers Maintaining Customer Information',
 @target_type = N'SqlServer',
-@refresh_credential_name=N'mymastercred', --credential required to refresh the databases in server
-@server_name=N'London.database.windows.net' ;
+@refresh_credential_name=N'refresh_credential', --credential required to refresh the databases in server
+@server_name=N'London.database.windows.net';
 GO
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
 @target_group_name = N'Servers Maintaining Customer Information',
 @target_type = N'SqlServer',
-@refresh_credential_name=N'mymastercred', --credential required to refresh the databases in server
-@server_name=N'NewYork.database.windows.net' ;
+@refresh_credential_name=N'refresh_credential', --credential required to refresh the databases in server
+@server_name=N'NewYork.database.windows.net';
 GO
 
 --View the recently added members to the target group
@@ -1139,12 +1143,12 @@ GO
 
 -- Retrieve the target_id for a target_group_members
 declare @tid uniqueidentifier
-SELECT @tid = target_id FROM [jobs].target_group_members WHERE target_group_name = 'Servers Maintaining Customer Information' and server_name = 'London.database.windows.net'
+SELECT @tid = target_id FROM [jobs].target_group_members WHERE target_group_name = 'Servers Maintaining Customer Information' and server_name = 'London.database.windows.net';
 
 -- Remove a target group member of type server
 EXEC jobs.sp_delete_target_group_member
 @target_group_name = N'Servers Maintaining Customer Information',
-@target_id = @tid
+@target_id = @tid;
 GO
 ```
 
@@ -1202,9 +1206,9 @@ GO
 
 ## <a name="job-views"></a>Taak weergaven
 
-De volgende weer gaven zijn beschikbaar in de [Jobs-data base](job-automation-overview.md#job-database).
+De volgende weer gaven zijn beschikbaar in de [Jobs-data base](job-automation-overview.md#elastic-job-database).
 
-|Weergave  |Beschrijving  |
+|Weergave  |Description  |
 |---------|---------|
 |[job_executions](#job_executions-view)     |  Taak uitvoerings geschiedenis weer geven.      |
 |[functies](#jobs-view)     |   Hiermee worden alle taken weer gegeven.      |

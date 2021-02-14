@@ -1,22 +1,18 @@
 ---
 title: Gegevens verplaatsen van een HTTP-bron-Azure
 description: Meer informatie over het verplaatsen van gegevens van een on-premises of Cloud-HTTP-bron met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/22/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 653a53d6bb5c69cd95fd5e9a2483b51de8293b40
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: ce29b5a112d70575a721b0b527947fd95868da80
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608575"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382919"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Gegevens verplaatsen van een HTTP-bron met behulp van Azure Data Factory
 
@@ -51,12 +47,12 @@ De volgende tabel beschrijft de JSON-elementen die specifiek zijn voor de HTTP-g
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type | De eigenschap **type** moet worden ingesteld op **http**. | Ja |
-| URL | De basis-URL naar de webserver. | Ja |
-| authenticationType | Hiermee geeft u het verificatie type op. Toegestane waarden zijn **anoniem**, **basis**, **Digest**, **Windows** en **ClientCertificate**. <br><br> Raadpleeg latere secties in dit artikel voor meer informatie over de eigenschappen en JSON-voor beelden voor deze verificatie typen. | Ja |
-| enableServerCertificateValidation | Hiermee geeft u op of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld als de bron een HTTPS-webserver is. Stel dit in op **False** als uw HTTPS-server een zelfondertekend certificaat gebruikt. | Nee<br /> (de standaard waarde is **True**) |
+| type | De eigenschap **type** moet worden ingesteld op **http**. | Yes |
+| url | De basis-URL naar de webserver. | Yes |
+| authenticationType | Hiermee geeft u het verificatie type op. Toegestane waarden zijn **anoniem**, **basis**, **Digest**, **Windows** en **ClientCertificate**. <br><br> Raadpleeg latere secties in dit artikel voor meer informatie over de eigenschappen en JSON-voor beelden voor deze verificatie typen. | Yes |
+| enableServerCertificateValidation | Hiermee geeft u op of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld als de bron een HTTPS-webserver is. Stel dit in op **False** als uw HTTPS-server een zelfondertekend certificaat gebruikt. | No<br /> (de standaard waarde is **True**) |
 | gatewayName | De naam van het Data Management Gateway exemplaar dat moet worden gebruikt om verbinding te maken met een on-premises HTTP-bron. | Ja, als u gegevens kopieert van een on-premises HTTP-bron |
-| encryptedCredential | De versleutelde referentie voor toegang tot het HTTP-eind punt. De waarde wordt automatisch gegenereerd wanneer u de verificatie gegevens configureert in de wizard kopiëren of via het dialoog venster **ClickOnce** . | Nee<br /> (alleen Toep assen wanneer u gegevens kopieert van een on-premises HTTP-server) |
+| encryptedCredential | De versleutelde referentie voor toegang tot het HTTP-eind punt. De waarde wordt automatisch gegenereerd wanneer u de verificatie gegevens configureert in de wizard kopiëren of via het dialoog venster **ClickOnce** . | No<br /> (alleen Toep assen wanneer u gegevens kopieert van een on-premises HTTP-server) |
 
 Zie [gegevens verplaatsen tussen on-premises bronnen en de Cloud met behulp van Data Management Gateway](data-factory-move-data-between-onprem-and-cloud.md)voor meer informatie over het instellen van referenties voor een on-premises gegevens bron voor http-connectors.
 
@@ -66,8 +62,8 @@ Stel **authenticationType** in op **Basic**, **Digest** of **Windows**. Naast de
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| userName | De gebruikers naam die moet worden gebruikt voor toegang tot het HTTP-eind punt. | Ja |
-| wachtwoord | Het wacht woord voor de gebruiker (**gebruikers naam**). | Ja |
+| userName | De gebruikers naam die moet worden gebruikt voor toegang tot het HTTP-eind punt. | Yes |
+| wachtwoord | Het wacht woord voor de gebruiker (**gebruikers naam**). | Yes |
 
 **Voor beeld: Basic, Digest of Windows-verificatie gebruiken**
 
@@ -96,7 +92,7 @@ Als u basis verificatie wilt gebruiken, stelt u **authenticationType** in op **C
 | --- | --- | --- |
 | embeddedCertData | De met base64 gecodeerde inhoud van binaire gegevens van het PFX-bestand. | Geef **embeddedCertData** of **certThumbprint** op |
 | certThumbprint | De vinger afdruk van het certificaat dat is geïnstalleerd op het certificaat archief van uw gateway computer. Pas toe wanneer u gegevens van een on-premises HTTP-bron kopieert. | Geef **embeddedCertData** of **certThumbprint** op |
-| wachtwoord | Het wacht woord dat is gekoppeld aan het certificaat. | Nee |
+| wachtwoord | Het wacht woord dat is gekoppeld aan het certificaat. | No |
 
 Als u **certThumbprint** gebruikt voor verificatie en het certificaat is geïnstalleerd in het persoonlijke archief van de lokale computer, verleent u lees machtigingen voor de Gateway Service:
 
@@ -157,13 +153,13 @@ De sectie **typeProperties** verschilt voor elk type gegevensset. De sectie **ty
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | Het **type** van de gegevensset moet worden ingesteld op **http**. | Ja |
-| relativeUrl | Een relatieve URL naar de resource die de gegevens bevat. Wanneer het pad niet is opgegeven, wordt alleen de URL gebruikt die in de definitie van de gekoppelde service is opgegeven. <br><br> Als u een dynamische URL wilt maken, kunt u [Data Factory functies en systeem variabelen](data-factory-functions-variables.md)gebruiken. Voor beeld: **relativeUrl**: **$ $Text. Format ('/My/Report? month = {0: jjjj}-{0: mm} &fmt = CSV ', slice start)**. | Nee |
-| requestMethod | De HTTP-methode. Toegestane waarden zijn **Get** en **post**. | Nee <br />(de standaard waarde is **Get**) |
-| additionalHeaders | Aanvullende HTTP-aanvraag headers. | Nee |
-| requestBody | De hoofd tekst van de HTTP-aanvraag. | Nee |
-| indeling | Als u *de gegevens wilt ophalen van een HTTP-eind punt alsof-is* zonder te parseren, slaat u de instelling van de **indeling** over. <br><br> Als u de inhoud van het HTTP-antwoord tijdens het kopiëren wilt parseren, worden de volgende indelings typen ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat** en **ParquetFormat**. Zie [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, Orc- [indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format)voor meer informatie. |Nee |
-| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
+| type | Het **type** van de gegevensset moet worden ingesteld op **http**. | Yes |
+| relativeUrl | Een relatieve URL naar de resource die de gegevens bevat. Wanneer het pad niet is opgegeven, wordt alleen de URL gebruikt die in de definitie van de gekoppelde service is opgegeven. <br><br> Als u een dynamische URL wilt maken, kunt u [Data Factory functies en systeem variabelen](data-factory-functions-variables.md)gebruiken. Voor beeld: **relativeUrl**: **$ $Text. Format ('/My/Report? month = {0: jjjj}-{0: mm} &fmt = CSV ', slice start)**. | No |
+| requestMethod | De HTTP-methode. Toegestane waarden zijn **Get** en **post**. | No <br />(de standaard waarde is **Get**) |
+| additionalHeaders | Aanvullende HTTP-aanvraag headers. | No |
+| requestBody | De hoofd tekst van de HTTP-aanvraag. | No |
+| indeling | Als u *de gegevens wilt ophalen van een HTTP-eind punt alsof-is* zonder te parseren, slaat u de instelling van de **indeling** over. <br><br> Als u de inhoud van het HTTP-antwoord tijdens het kopiëren wilt parseren, worden de volgende indelings typen ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat** en **ParquetFormat**. Zie [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, Orc- [indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format)voor meer informatie. |No |
+| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |No |
 
 **Voor beeld: de methode GET (standaard) gebruiken**
 
@@ -220,7 +216,7 @@ Op dit moment worden de volgende eigenschappen ondersteund wanneer de bron in de
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| httpRequestTimeout | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Het is de time-out voor het verkrijgen van een reactie, niet de time-out voor het lezen van antwoord gegevens. | Nee<br />(standaard waarde: **00:01:40**) |
+| httpRequestTimeout | De time-out (de time **span** -waarde) voor de HTTP-aanvraag om een antwoord te krijgen. Het is de time-out voor het verkrijgen van een reactie, niet de time-out voor het lezen van antwoord gegevens. | No<br />(standaard waarde: **00:01:40**) |
 
 ## <a name="supported-file-and-compression-formats"></a>Ondersteunde indelingen voor bestanden en compressie
 

@@ -8,14 +8,14 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: b23dabb4388331de9e37ee9db1d4b9d727ccde68
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 79d5583f8c9e562a0d21a91c210aa6259472661d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430557"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383531"
 ---
-# <a name="how-to-set-up-change-and-deletion-detection-for-blobs-in-azure-cognitive-search-indexing"></a>De detectie van wijzigingen en verwijderingen voor blobs in azure Cognitive Search indexeren instellen
+# <a name="change-and-deletion-detection-in-blob-indexing-azure-cognitive-search"></a>Detectie van wijzigingen en verwijdering in BLOB-indexering (Azure Cognitive Search)
 
 Nadat u een eerste zoek index hebt gemaakt, wilt u mogelijk dat er nieuwe en gewijzigde documenten worden opgehaald met de Indexeer functie. Voor zoek inhoud die afkomstig is uit Azure Blob-opslag, wordt de detectie van wijzigingen automatisch uitgevoerd wanneer u een schema gebruikt voor het activeren van indexeren. De service indexeert standaard alleen de gewijzigde blobs, zoals wordt bepaald door de tijds tempel van de BLOB `LastModified` . In tegens telling tot andere gegevens bronnen die worden ondersteund door zoek indexen, hebben blobs altijd een tijds tempel, waardoor het niet meer nodig is om een wijzigings detectie beleid hand matig in te stellen.
 

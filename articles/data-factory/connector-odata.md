@@ -1,22 +1,17 @@
 ---
 title: Gegevens uit OData-bronnen kopiëren met behulp van Azure Data Factory
 description: Informatie over het kopiëren van gegevens van OData-bronnen naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.author: jingwang
-ms.openlocfilehash: 146f9ea918f75e0521209d9db712bdcab76a8e7e
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: 90cc4e3f9915db424cec89cfc764771b5be785e9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096586"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389719"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Gegevens kopiëren van een OData-bron met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -39,7 +34,7 @@ U kunt gegevens uit een OData-bron kopiëren naar elk ondersteund Sink-gegevens 
 Deze OData-connector ondersteunt met name:
 
 - OData-versie 3,0 en 4,0.
-- Gegevens kopiëren met behulp van een van de volgende authenticaties: **anoniem**, **basis**, **Windows**en **Aad-Service-Principal**.
+- Gegevens kopiëren met behulp van een van de volgende authenticaties: **anoniem**, **basis**, **Windows** en **Aad-Service-Principal**.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -59,7 +54,7 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde OData-service:
 |:--- |:--- |:--- |
 | type | De eigenschap **type** moet worden ingesteld op **OData**. |Yes |
 | url | De basis-URL van de OData-service. |Yes |
-| authenticationType | Het type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. Toegestane waarden zijn **anoniem**, **basis**, **Windows**en **AadServicePrincipal**. OAuth op basis van de gebruiker wordt niet ondersteund. U kunt verificatie headers ook configureren in de `authHeader` eigenschap.| Yes |
+| authenticationType | Het type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. Toegestane waarden zijn **anoniem**, **basis**, **Windows** en **AadServicePrincipal**. OAuth op basis van de gebruiker wordt niet ondersteund. U kunt verificatie headers ook configureren in de `authHeader` eigenschap.| Yes |
 | authHeaders | Aanvullende HTTP-aanvraag headers voor authenticatie.<br/> Als u bijvoorbeeld API-sleutel verificatie wilt gebruiken, kunt u verificatie type selecteren als ' anoniem ' en de API-sleutel in de header opgeven. | No |
 | userName | Geef een **gebruikers naam** op als u basis-of Windows-verificatie gebruikt. | No |
 | wachtwoord | Geef het **wacht woord** op voor het gebruikers account dat u hebt opgegeven voor de **gebruikers naam**. Markeer dit veld als **SecureString** -type om het veilig op te slaan in Data Factory. U kunt ook [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
@@ -70,7 +65,7 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde OData-service:
 | servicePrincipalEmbeddedCertPassword | Geef het wacht woord van uw certificaat op als uw certificaat is beveiligd met een wacht woord. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md).  | No|
 | tenant | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | No |
 | aadResourceId | Geef de AAD-resource op die u aanvraagt voor autorisatie.| No |
-| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw AAD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment**en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | No |
+| azureCloudType | Voor Service-Principal-verificatie geeft u het type van de Azure-cloud omgeving op waarvoor uw AAD-toepassing is geregistreerd. <br/> Toegestane waarden zijn **AzurePublic**, **AzureChina**, **AzureUsGovernment** en **AzureGermany**. De cloud omgeving van de data factory wordt standaard gebruikt. | No |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
 
 **Voor beeld 1: anonieme verificatie gebruiken**

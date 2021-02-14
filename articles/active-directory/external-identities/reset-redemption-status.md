@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc51a8af85b85db28265d1fca420a5b9b368b078
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: d843755847d074e00aec9ed2830cb873b6bb3382
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576889"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365409"
 ---
 # <a name="reset-redemption-status-for-a-guest-user"></a>De status van de terugbetaling voor een gast gebruiker opnieuw instellen
 
@@ -26,7 +26,7 @@ Nadat een gast gebruiker de uitnodiging voor B2B-samen werking heeft ingewisseld
 - De gebruiker is verplaatst naar een ander bedrijf, maar er is nog steeds dezelfde toegang tot uw resources nodig
 - De verantwoordelijkheden van de gebruiker zijn door gegeven aan een andere gebruiker
 
-Als u deze scenario's eerder wilt beheren, moet u het gebruikers account van de gast hand matig verwijderen uit de map en de gebruiker opnieuw uitnodigen. U kunt nu Power shell of de API van Microsoft Graph-uitnodiging gebruiken om de uitstel status van de gebruiker opnieuw in te stellen en de gebruiker opnieuw aan te vragen met behoud van de object-ID, groepslid maatschappen en app-toewijzingen van de gebruiker. Wanneer de gebruiker de nieuwe uitnodiging ingewisselt, wordt het nieuwe e-mail adres de UPN van de gebruiker. De gebruiker kan zich vervolgens aanmelden met de nieuwe e-mail of een e-mail bericht dat u hebt toegevoegd aan de `otherMails` eigenschap van het gebruikers object.
+Als u deze scenario's eerder wilt beheren, moet u het gebruikers account van de gast hand matig verwijderen uit de map en de gebruiker opnieuw uitnodigen. U kunt nu Power shell of de API van Microsoft Graph-uitnodiging gebruiken om de uitstel status van de gebruiker opnieuw in te stellen en de gebruiker opnieuw aan te vragen met behoud van de object-ID, groepslid maatschappen en app-toewijzingen van de gebruiker. Wanneer de gebruiker de nieuwe uitnodiging inwisselt, wordt de UPN van de gebruiker niet gewijzigd, maar wordt de aanmeldings naam van de gebruiker gewijzigd in de nieuwe e-mail. De gebruiker kan zich vervolgens aanmelden met de nieuwe e-mail of een e-mail bericht dat u hebt toegevoegd aan de `otherMails` eigenschap van het gebruikers object.
 
 ## <a name="use-powershell-to-reset-redemption-status"></a>Power shell gebruiken om de status van de terugbetaling opnieuw in te stellen
 

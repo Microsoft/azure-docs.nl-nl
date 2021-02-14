@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 09/06/2019
+ms.date: 02/12/2021
 ms.author: erhopf
-ms.openlocfilehash: 85f239afd1b9263440abff1f924c12cdb7eeadaa
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: db3d8f4424f59d8432221753af776a5b55859882
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99560286"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388852"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Transcripties met menselijke labels maken
 
@@ -24,7 +24,12 @@ Als u de nauw keurigheid van de herkenning wilt verbeteren, met name problemen d
 Er is een grote steek proef van transcriptie-gegevens vereist om de herkenning te verbeteren, maar we raden u aan om te bieden tussen 10 en 20 uur aan transcriptie-gegevens. Op deze pagina bekijken we richt lijnen die zijn ontworpen om u te helpen bij het maken van transcripties met hoge kwaliteit. Deze hand leiding is opgedeeld op land instellingen, met secties voor Engels (Verenigde Staten), Mandarijn Chinees en Duits.
 
 > [!NOTE]
-> Niet alle basis modellen ondersteunen aanpassing met audio bestanden. Als een basis model dit niet ondersteunt, wordt de tekst van de transcripties op dezelfde manier gebruikt als gerelateerde tekst.
+> Niet alle basis modellen ondersteunen aanpassing met audio bestanden. Als een basis model dit niet ondersteunt, wordt de tekst van de transcripties op dezelfde manier gebruikt als gerelateerde tekst. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
+
+> [!NOTE]
+> Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+>
+> Als u het probleem voor komt dat in de bovenstaande alinea wordt beschreven, kunt u de trainings tijd snel verlagen door de hoeveelheid audio in de gegevensset te verminderen of deze volledig te verwijderen en alleen de tekst te verlaten. De laatste optie wordt sterk aanbevolen als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 
 ## <a name="us-english-en-us"></a>Amerikaans Engels (nl-nl)
 

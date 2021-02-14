@@ -4,19 +4,19 @@ description: Bewaking van toepassings prestaties voor Azure app Services. Grafie
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
-ms.openlocfilehash: c0ee68659f4729ed8f63b9ea990343adf51513bd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cd203c64695a9a61a93409a96f6a92b9acf9fe70
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186368"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365222"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
 
 Het inschakelen van controle op uw ASP.NET-en ASP.NET Core op webtoepassingen die worden uitgevoerd op [Azure-app Services](../../app-service/index.yml) is nu nog eenvoudiger dan ooit. Voordat u een site-uitbrei ding hand matig moest installeren, is de meest recente extensie/agent nu standaard in de app service-installatie kopie ingebouwd. Dit artikel begeleidt u bij het inschakelen van Application Insights bewaking en voorziet in voorlopige richt lijnen voor het automatiseren van het proces voor grootschalige implementaties.
 
 > [!NOTE]
-> Het hand matig toevoegen van een Application Insights site-uitbrei ding via **hulpprogram ma's voor ontwikkel aars**  >  **Extensions** is afgeschaft. Deze methode van extensie-installatie is afhankelijk van hand matige updates voor elke nieuwe versie. De laatste stabiele versie van de uitbrei ding is nu  [vooraf geïnstalleerd](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) als onderdeel van de app service-installatie kopie. De bestanden bevinden zich in `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` en worden automatisch bijgewerkt met elke stabiele versie. Als u de op agents gebaseerde instructies volgt om de controle hieronder in te scha kelen, wordt de afgeschafte uitbrei ding automatisch verwijderd.
+> Het hand matig toevoegen van een Application Insights site-uitbrei ding via **hulpprogram ma's voor ontwikkel aars**  >   is afgeschaft. Deze methode van extensie-installatie is afhankelijk van hand matige updates voor elke nieuwe versie. De laatste stabiele versie van de uitbrei ding is nu  [vooraf geïnstalleerd](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) als onderdeel van de app service-installatie kopie. De bestanden bevinden zich in `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` en worden automatisch bijgewerkt met elke stabiele versie. Als u de op agents gebaseerde instructies volgt om de controle hieronder in te scha kelen, wordt de afgeschafte uitbrei ding automatisch verwijderd.
 
 ## <a name="enable-application-insights"></a>Application Insights inschakelen
 
@@ -75,7 +75,8 @@ Er zijn twee manieren om toepassings bewaking in te scha kelen voor door Azure-a
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/netcore)
 
-De volgende versies van ASP.NET Core worden ondersteund: ASP.NET Core 2,1, ASP.NET Core 2,2, ASP.NET Core 3,0, ASP.NET Core 3,1
+> [!IMPORTANT]
+> De volgende versies van ASP.NET Core worden ondersteund: ASP.NET Core 2,1, 3,1 en 5,0. Versies 2,0, 2,2 en 3,0 zijn buiten gebruik gesteld en worden niet meer ondersteund. Voer een upgrade uit naar een [ondersteunde versie](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) van .net core voor automatische instrumentatie.
 
 Het is **niet mogelijk** om het volledige Framework te richten op basis van ASP.net core, een zelfstandige implementatie en toepassingen die op Linux zijn gebaseerd. ([Hand matige instrumentatie](./asp-net-core.md) via code werkt in alle eerdere scenario's.)
 
@@ -90,7 +91,7 @@ Het is **niet mogelijk** om het volledige Framework te richten op basis van ASP.
 
      ![Uw web-app instrumenteren](./media/azure-web-apps/create-resource-01.png)
 
-2. Nadat u hebt opgegeven welke resource moet worden gebruikt, kunt u kiezen hoe Application Insights gegevens per platform wilt verzamelen voor uw toepassing. ASP.NET Core biedt **Aanbevolen verzameling** of **uitgeschakeld** voor ASP.net Core 2,1, 2,2, 3,0 en 3,1.
+2. Nadat u hebt opgegeven welke resource moet worden gebruikt, kunt u kiezen hoe Application Insights gegevens per platform wilt verzamelen voor uw toepassing. ASP.NET Core biedt **Aanbevolen verzameling** of **uitgeschakeld** voor ASP.net Core 2,1 en 3,1.
 
     ![Opties per platform kiezen](./media/azure-web-apps/choose-options-new-net-core.png)
 
@@ -420,7 +421,13 @@ Als u serverloze servers en bewaking aan client zijde voor ASP.NET of ASP.NET Co
 
 Wanneer bewaking zonder code wordt gebruikt, is alleen de connection string vereist. We raden u echter aan om de instrumentatie sleutel in te stellen om achterwaartse compatibiliteit met oudere versies van de SDK te behouden wanneer hand matige instrumentatie wordt uitgevoerd.
 
-## <a name="release-notes"></a>Opmerkingen bij de release
+### <a name="difference-between-standard-metrics-from-application-insights-vs-azure-app-service-metrics"></a>Verschil tussen de standaard waarden van Application Insights tegenover Azure App Service metrische gegevens?
+
+Application Insights verzamelt telemetrie voor de aanvragen die aan de toepassing zijn gedaan. Als de fout is opgetreden in webapps/IIS en de aanvraag de gebruikers toepassing niet heeft bereikt, dan heeft Application Insights geen telemetrie over.
+
+De duur van de `serverresponsetime` berekende Application Insights is niet noodzakelijkerwijs gelijk aan de reactie tijd van de server die wordt waargenomen door Web apps. Dit komt omdat Application Insights alleen de duur telt wanneer de aanvraag werkelijk de gebruikers toepassing bereikt. Als de aanvraag is vastgelopen in IIS, wordt de wacht tijd opgenomen in de metrische gegevens van de web-app, maar niet in Application Insights metrische gegevens.
+
+## <a name="release-notes"></a>Releaseopmerkingen
 
 [Raadpleeg de opmerkingen bij de release](./web-app-extension-release-notes.md)voor de nieuwste updates en oplossingen voor problemen.
 

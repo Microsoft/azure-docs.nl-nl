@@ -4,67 +4,101 @@ description: Meer informatie over de schaalbaarheids-en prestatie doelen voor Az
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 10/16/2019
+ms.date: 02/12/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: e10f45af89e19f6fe62ff729f96d870e008c96ec
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 6ef255d78d3dd3ff6fcc5eba7aad522018185299
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611097"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518892"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Schaalbaarheids- en prestatiedoelen in Azure Files
+[Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via de protocollen van het SMB-en NFS-bestands systeem. In dit artikel worden de schaalbaarheids-en prestatie doelen voor Azure Files en Azure File Sync beschreven.
 
-[Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via het industrie standaard SMB-protocol. In dit artikel worden de schaalbaarheids-en prestatie doelen voor Azure Files en Azure File Sync beschreven.
-
-De schaal baarheid en prestatie doelen die hier worden weer gegeven, zijn hoogwaardige doelen, maar kunnen worden beïnvloed door andere variabelen in uw implementatie. De door Voer voor een bestand kan bijvoorbeeld ook worden beperkt door de beschik bare netwerk bandbreedte, niet alleen de servers die als host fungeren voor de Azure Files-service. We raden u ten zeerste aan om uw gebruiks patroon te testen om te bepalen of de schaal baarheid en prestaties van Azure Files voldoen aan uw vereisten. We zijn ook van belang om deze limieten in de loop van de tijd te verhogen. Aarzel niet om ons feedback te geven, hetzij in de opmerkingen hieronder of op het [Azure files UserVoice](https://feedback.azure.com/forums/217298-storage/category/180670-files), over welke limieten u zou willen zien.
-
-## <a name="azure-storage-account-scale-targets"></a>Schaal doelen Azure Storage-account
-
-De bovenliggende resource voor een Azure-bestands share is een Azure-opslag account. Een opslag account vertegenwoordigt een opslag groep in azure die kan worden gebruikt door meerdere opslag Services, waaronder Azure Files, om gegevens op te slaan. Andere services voor het opslaan van gegevens in opslag accounts zijn Azure Blob-opslag, Azure Queue-opslag en Azure-tabel opslag. De volgende doelen zijn van toepassing op alle opslag services die gegevens opslaan in een opslag account:
-
-[!INCLUDE [azure-storage-account-limits-standard](../../../includes/azure-storage-account-limits-standard.md)]
-
-[!INCLUDE [azure-storage-limits-azure-resource-manager](../../../includes/azure-storage-limits-azure-resource-manager.md)]
-
-> [!Important]  
-> Het gebruik van het opslag account voor algemene doel einden van andere opslag Services is van invloed op uw Azure-bestands shares in uw opslag account. Als u bijvoorbeeld de maximale opslag capaciteit met Azure Blob-opslag bereikt, kunt u geen nieuwe bestanden maken op uw Azure-bestands share, zelfs als uw Azure-bestands share lager is dan de maximale share grootte.
+De schaal baarheid en prestatie doelen die hier worden weer gegeven, zijn hoogwaardige doelen, maar kunnen worden beïnvloed door andere variabelen in uw implementatie. De door Voer voor een bestand kan bijvoorbeeld ook worden beperkt door de beschik bare netwerk bandbreedte, niet alleen de servers die als host fungeren voor uw Azure-bestands shares. We raden u ten zeerste aan om uw gebruiks patroon te testen om te bepalen of de schaal baarheid en prestaties van Azure Files voldoen aan uw vereisten. We zijn ook van belang om deze limieten in de loop van de tijd te verhogen. 
 
 ## <a name="azure-files-scale-targets"></a>Azure Files-schaaldoelen
+Azure-bestandsshares worden geïmplementeerd in opslagaccounts. Dat zijn objecten op het hoogste niveau die een gedeelde opslagpool vertegenwoordigen. Deze opslag groep kan worden gebruikt voor het implementeren van meerdere bestands shares. Er zijn drie categorieën die u moet overwegen: opslag accounts, Azure-bestands shares en bestanden.
 
-Er zijn drie categorieën beperkingen waarmee u rekening moet houden voor Azure Files: opslag accounts, shares en bestanden.
+### <a name="storage-account-scale-targets"></a>Schaal doelen van opslag account
+Azure ondersteunt meerdere typen opslag accounts voor verschillende opslag scenario's die klanten kunnen hebben, maar er zijn twee hoofd typen opslag accounts voor Azure Files. Welk type opslag account u moet maken, is afhankelijk van of u een standaard bestands share of een Premium-bestands share wilt maken: 
 
-Bijvoorbeeld: met Premium-bestands shares kan een enkele share 100.000 IOPS behaalt en kan één bestand tot 5.000 IOPS worden geschaald. Als u dus drie bestanden in één share hebt, is het maximale aantal IOPS dat u van deze share kunt verkrijgen 15.000.
+- **GPv2-opslagaccounts (versie twee voor algemeen gebruik)** : Met GPv2-opslagaccounts kunt u Azure-bestandsshares implementeren op (HDD-)hardware met een standaard/harde schijf. Naast het opslaan van Azure-bestandsshares kunnen GPv2-opslagaccounts andere opslagresources, zoals blobcontainers, wachtrijen of tabellen, opslaan. Bestands shares kunnen worden geïmplementeerd in de door de trans actie geoptimaliseerde (standaard), warme of koud lagen.
 
-### <a name="standard-storage-account-limits"></a>Limieten voor standaard opslag accounts
+- **FileStorage-opslagaccounts**: Met FileStorage-opslagaccounts kunt u Azure-bestandsshares implementeren op (SSD-)hardware met een premium/solid-state schijf. FileStorage-accounts kunnen alleen worden gebruikt voor het opslaan van Azure-bestandsshares. Er kunnen geen andere opslagresources (blobcontainers, wachtrijen, tabellen enz.) worden geïmplementeerd in een FileStorage-account.
 
-Zie de sectie [bereik schaal doelen van Azure Storage](#azure-storage-account-scale-targets) voor deze limieten.
+| Kenmerk | GPv2-opslag accounts (standaard) | FileStorage-opslag accounts (Premium) |
+|-|-|-|
+| Aantal opslag accounts per regio per abonnement | 250 | 250 |
+| Maximale capaciteit van opslagaccount | 5 PiB<sup>1</sup> | 100 TiB (ingericht) |
+| Maximum aantal bestands shares | Onbeperkt | Onbeperkt: de totale ingerichte grootte van alle shares moet kleiner zijn dan de maximale capaciteit van het opslag account |
+| Maximum aantal gelijktijdige aanvragen | 20.000 IOPS<sup>1</sup> | 100.000 IOPS |
+| Maximale ingangs | <ul><li>VS/Europa: 10 GBP/Sec<sup>1</sup></li><li>Andere regio's (LRS/ZRS): 10 GBP/Sec<sup>1</sup></li><li>Andere regio's (GRS): 5 GBP/Sec<sup>1</sup></li></ul> | 4.136-MiB per seconde |
+| Maximum aantal uitgangen | 50 GBP/Sec<sup>1</sup> | 6.204-MiB per seconde |
+| Maximum aantal regels voor virtuele netwerken | 200 | 200 |
+| Maximum aantal IP-adres regels | 200 | 200 |
+| Lees bewerkingen voor beheer | 800 per 5 minuten | 800 per 5 minuten |
+| Schrijf bewerkingen voor beheer | 10 per seconde/1200 per uur | 10 per seconde/1200 per uur |
+| Beheer lijst bewerkingen | 100 per 5 minuten | 100 per 5 minuten |
 
-### <a name="premium-filestorage-account-limits"></a>Premium FileStorage-account limieten
+<sup>1</sup> algemene opslag accounts voor versie 2 ondersteunen hogere capaciteits limieten en hogere limieten voor binnenkomend op aanvraag. Neem contact op met de [Azure-ondersteuning](https://azure.microsoft.com/support/faq/) om een hogere accountlimiet aan te vragen.
 
-[!INCLUDE [azure-storage-limits-filestorage](../../../includes/azure-storage-limits-filestorage.md)]
+### <a name="azure-file-share-scale-targets"></a>Schaal doelen voor Azure-bestands shares
+| Kenmerk | Standaard bestands shares<sup>1</sup> | Premiumbestandsshares |
+|-|-|-|
+| Minimale grootte van een bestandsshare | Geen minimum | 100 GiB (ingericht) |
+| Eenheid voor verg Roten/verkleinen van ingerichte grootte | N.v.t. | 1 GiB |
+| Maximale grootte van een bestandsshare | <ul><li>100 TiB, met de functie voor grote bestands shares is<sup>2</sup> ingeschakeld</li><li>5 TiB, standaard</li></ul> | 100 TiB |
+| Maximum aantal bestanden in een bestandsshare | Geen limiet | Geen limiet |
+| Maximum aantal aanvragen (maximum aantal IOPS) | <ul><li>10.000, met de functie voor grote bestands shares is<sup>2</sup> ingeschakeld</li><li>1.000 of 100 aanvragen per 100 MS, standaard</li></ul> | <ul><li>Basis lijn IOPS: 400 + 1 IOPS per GiB, Maxi maal 100.000</li><li>IOPS-bursting: Max (4000, 3x IOPS per GiB), Maxi maal 100.000</li></ul> |
+| Maximum aantal inkomende waarden voor één bestandsshare | <ul><li>Maxi maal 300 MiB/sec. met de functie voor grote bestands shares is<sup>2</sup> ingeschakeld</li><li>Maxi maal 60 MiB per seconde, standaard</li></ul> | 40-MiB/s + 0,04 * ingerichte GiB |
+| Maximum aantal uitgaande waarden voor één bestandsshare | <ul><li>Maxi maal 300 MiB/sec. met de functie voor grote bestands shares is<sup>2</sup> ingeschakeld</li><li>Maxi maal 60 MiB per seconde, standaard</li></ul> | 60-MiB/s + 0,06 * ingerichte GiB |
+| Maximum aantal momentopnamen van shares | 200 moment opnamen | 200 moment opnamen |
+| Maximum lengte van de naam van het object (mappen en bestanden) | 2048 tekens | 2048 tekens |
+| Maximum pathname-onderdeel (in het pad \A\B\C\D is elke letter een onderdeel) | 255 tekens | 255 tekens |
+| Limiet voor vaste koppelingen (alleen NFS) | N.v.t. | 178 |
+| Maximumaantal SMB Multichannel-kanalen | N.v.t. | 4 |
+| Maximaal aantal opgeslagen toegangsbeleidsregels per bestandsshare | 5 | 5 |
 
-> [!IMPORTANT]
-> Limieten voor opslag accounts zijn van toepassing op alle shares. Het omhoog schalen naar het maximum voor FileStorage-accounts wordt alleen behaald als er slechts één share per FileStorage-account is.
+<sup>1</sup> de limieten voor standaard bestands shares zijn van toepassing op alle drie de lagen die beschikbaar zijn voor standaard bestands shares: trans actie geoptimaliseerd, warm en cool.
 
-### <a name="file-share-and-file-scale-targets"></a>Bestands shares en bestands schaal doelen
+<sup>2</sup> standaard op standaard bestands shares is 5 Tib. Zie [grote bestands shares inschakelen en maken](./storage-files-how-to-create-large-file-share.md) voor meer informatie over het uitbreiden van de standaard bestands shares tot 100 Tib.
 
-> [!NOTE]
-> Standaard bestands shares groter dan 5 TiB hebben bepaalde beperkingen. Voor een lijst met beperkingen en instructies voor het inschakelen van grotere bestands share grootten, zie de sectie [grotere bestands shares op standaard bestands](storage-files-planning.md#enable-standard-file-shares-to-span-up-to-100-tib) shares inschakelen in de plannings handleiding.
+### <a name="file-scale-targets"></a>Bestands schaal doelen
+| Kenmerk | Bestanden in standaard bestands shares  | Bestanden in Premium-bestands shares  |
+|-|-|-|
+| Maximale bestandsgrootte | 4 TiB | 4 TiB |
+| Maximum aantal gelijktijdige aanvragen | 1.000 IOPS | Maxi maal 8.000<sup>1</sup> |
+| Maximum aantal binnenkomend voor een bestand | 60-MiB per seconde | 200 MiB per seconde (Maxi maal 1 GiB/s met SMB meerdere kanalen preview)<sup>2</sup>|
+| Maximum aantal uitgangen voor een bestand | 60-MiB per seconde | 300 MiB per seconde (Maxi maal 1 GiB/s met SMB meerdere kanalen preview)<sup>2</sup> |
+| Maximum aantal gelijktijdige ingangen | 2.000 ingangen | 2.000 ingangen  |
 
-[!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
-
-[!INCLUDE [storage-files-premium-scale-targets](../../../includes/storage-files-premium-scale-targets.md)]
+<sup>1 is van toepassing op het lezen en schrijven van Ios (doorgaans kleinere io-grootten die kleiner zijn dan of gelijk zijn aan 64 KiB). Meta gegevensbewerkingen, behalve Lees-en schrijf bewerkingen, kunnen lager zijn.</sup> 
+ <sup>2 onderhevig aan netwerk limieten voor computers, beschik bare band breedte, i/o-grootte, wachtrij diepte en andere factoren. Zie prestaties van [SMB meerdere kanalen](./storage-files-smb-multichannel-performance.md)voor meer informatie.</sup>
 
 ## <a name="azure-file-sync-scale-targets"></a>Azure File Sync-schaaldoelen
+De volgende tabel geeft de grenzen van de test van micro soft aan en geeft ook aan welke doelen vaste limieten zijn:
 
-Azure File Sync is ontworpen met het doel van oneindig gebruik, maar oneindig gebruik is niet altijd mogelijk. De volgende tabel geeft de grenzen van de test van micro soft aan en geeft ook aan welke doelen vaste limieten zijn:
+| Resource | Doel | Harde limiet |
+|----------|--------------|------------|
+| Opslagsynchronisatieservices per regio | 100 opslagsynchronisatieservices | Ja |
+| Synchronisatiegroepen per opslagsynchronisatieservice | 200 synchronisatiegroepen | Ja |
+| Geregistreerde servers per opslagsynchronisatieservice | 99 servers | Ja |
+| Cloudeindpunten per synchronisatiegroep | 1 cloudeindpunt | Ja |
+| Servereindpunten per synchronisatiegroep | 100 servereindpunten | Yes |
+| Servereindpunten per server | 30 servereindpunten | Ja |
+| Bestandssysteemobjecten (mappen en bestanden) per synchronisatiegroep | 100 miljoen objecten | Nee |
+| Maximumaantal bestandssysteemobjecten (mappen en bestanden) in een map | 5 miljoen objecten | Ja |
+| Maximumgrootte beveiligingsbeschrijving (mappen en bestanden) van objecten | 64 KiB | Ja |
+| Bestandsgrootte | 100 GiB | Nee |
+| Minimale bestandsgrootte om een bestand gelaagd te maken | V9 en nieuwer: Op basis van de grootte van het bestandssysteemcluster (dubbele bestandssysteemclustergrootte). Als de cluster grootte van het bestands systeem bijvoorbeeld 4 KiB is, is de minimale bestands grootte 8 KiB.<br> V8 en ouder: 64 KiB  | Ja |
 
-[!INCLUDE [storage-sync-files-scale-targets](../../../includes/storage-sync-files-scale-targets.md)]
+> [!Note]  
+> Een Azure File Sync-eindpunt kan tot de grootte van een Azure-bestandsshare worden opgeschaald. Als de limiet van de Azure-bestandsshare, kan er niet meer worden gesynchroniseerd.
 
 ### <a name="azure-file-sync-performance-metrics"></a>Metrische Azure File Sync-gegevens voor prestaties
-
 Omdat de Azure File Sync-agent wordt uitgevoerd op een Windows Server-computer die verbinding maakt met de Azure-bestands shares, is de daad werkelijke synchronisatie prestaties afhankelijk van een aantal factoren in uw infra structuur: Windows Server en de onderliggende schijf configuratie, netwerk bandbreedte tussen de server en de Azure-opslag, de bestands grootte, de totale gegevensset en de activiteit op de gegevensset. Omdat Azure File Sync op bestands niveau werkt, worden de prestatie kenmerken van een oplossing op basis van een Azure File Sync beter gemeten in het aantal objecten (bestanden en mappen) dat per seconde wordt verwerkt.
 
 Voor Azure File Sync zijn de prestaties in twee fasen kritiek:
@@ -92,14 +126,12 @@ Om u te helpen bij het plannen van uw implementatie voor elk van de fasen, zijn 
 | Door Voer van naam ruimte downloaden | 400 objecten per seconde |
 
 ### <a name="initial-one-time-provisioning"></a>Eerste eenmalige inrichting
-
 **Initiële inventarisatie van de Cloud wijziging**: wanneer er een nieuwe synchronisatie groep wordt gemaakt, is de eerste stap in de inventarisatie voor het wijzigen van de Cloud. In dit proces worden alle items in de Azure-bestands share geïnventariseerd. Tijdens dit proces zijn er geen synchronisatie-activiteiten, dat wil zeggen dat er geen items worden gedownload van het Cloud-eind punt naar het server eindpunt en dat er geen items worden geüpload van het server eindpunt naar het eind punt in de Cloud. De synchronisatie activiteit wordt hervat zodra de oorspronkelijke inventarisatie van wijzigingen in de Cloud is voltooid.
 De snelheid van de prestaties is 20 objecten per seconde. Klanten kunnen een schatting maken van de tijd die nodig is om de initiële inventarisatie van de Cloud wijziging te volt ooien door het aantal items in de Cloud share te bepalen en de volgende formule te gebruiken om de tijd in dagen te berekenen. 
 
    **Tijd (in dagen) voor initiële Cloud inventarisatie = (aantal objecten in het Cloud eindpunt)/(20 * 60 * 60 * 24)**
 
 **Door Voer van naam ruimte downloaden** Wanneer een nieuw server eindpunt wordt toegevoegd aan een bestaande synchronisatie groep, downloadt de Azure File Sync-agent geen bestands inhoud van het eind punt in de Cloud. Eerst wordt de volledige naam ruimte gesynchroniseerd en vervolgens wordt de achtergrond terugroepen geactiveerd om de bestanden te downloaden, in hun geheel of, als Cloud lagen zijn ingeschakeld, naar het beleid voor Cloud lagen dat is ingesteld op het server eindpunt.
-
 
 | Voortdurende synchronisatie  | Details  |
 |-|--|
@@ -120,6 +152,5 @@ Als algemene hand leiding voor uw implementatie moet u een aantal zaken in acht 
 - De object doorvoer is omgekeerd evenredig met de MiB per tweede door voer. Voor kleinere bestanden krijgt u een hogere door Voer in termen van het aantal verwerkte objecten per seconde, maar lagere MiB per seconde door voer. Voor grotere bestanden krijgt u echter minder objecten die per seconde worden verwerkt, maar een hogere MiB per seconde door voer. De MiB per tweede door Voer wordt beperkt door de Azure Files schaal doelen.
 
 ## <a name="see-also"></a>Zie ook
-
 - [Een Azure Files-implementatie plannen](storage-files-planning.md)
 - [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)

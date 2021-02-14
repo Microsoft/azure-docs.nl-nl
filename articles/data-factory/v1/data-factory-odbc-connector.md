@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen vanuit ODBC-gegevens archieven
 description: Meer informatie over het verplaatsen van gegevens uit ODBC-gegevens archieven met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: ad70a598-c031-4339-a883-c6125403cb76
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3c68b1f4d76a1899ce473c57f3a6d5de1eab71c6
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: e847592127d19eba3370255385f5b969b87e886e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636864"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380097"
 ---
 # <a name="move-data-from-odbc-data-stores-using-azure-data-factory"></a>Gegevens van ODBC-gegevens archieven verplaatsen met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -47,9 +42,9 @@ Naast het Data Management Gateway moet u ook het ODBC-stuur programma voor het g
 ## <a name="getting-started"></a>Aan de slag
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van een ODBC-gegevens archief met behulp van verschillende hulpprogram ma's/Api's.
 
-De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren** . Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
+De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio** , **Azure PowerShell** , **Azure Resource Manager sjabloon** , **.net API** en **rest API** . Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -67,12 +62,12 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
 | type |De eigenschap type moet worden ingesteld op: **OnPremisesOdbc** |Ja |
-| connectionString |Het referentie deel voor niet-toegang van de connection string en een optionele versleutelde referentie. Zie de voor beelden in de volgende secties. <br/><br/>U kunt de connection string met een patroon opgeven `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` , of de systeem-DSN (gegevens bron naam) gebruiken die u hebt ingesteld op de gateway computer met `"DSN=<name of the DSN>;"` (u moet nog steeds het referentie deel opgeven in de gekoppelde service). |Ja |
-| referenties |Het deel van de toegangs referentie van de connection string dat is opgegeven in de eigenschaps waarde-indeling van het stuur programma. Bijvoorbeeld: `"Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;"`. |Nee |
-| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met het ODBC-gegevens archief. Mogelijke waarden zijn: anoniem en basis. |Ja |
-| userName |Geef de gebruikers naam op als u basis verificatie gebruikt. |Nee |
-| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |Nee |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het ODBC-gegevens archief. |Ja |
+| connectionString |Het referentie deel voor niet-toegang van de connection string en een optionele versleutelde referentie. Zie de voor beelden in de volgende secties. <br/><br/>U kunt de connection string met een patroon opgeven `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` , of de systeem-DSN (gegevens bron naam) gebruiken die u hebt ingesteld op de gateway computer met `"DSN=<name of the DSN>;"` (u moet nog steeds het referentie deel opgeven in de gekoppelde service). |Yes |
+| referenties |Het deel van de toegangs referentie van de connection string dat is opgegeven in de eigenschaps waarde-indeling van het stuur programma. Bijvoorbeeld: `"Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;"`. |No |
+| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met het ODBC-gegevens archief. Mogelijke waarden zijn: anoniem en basis. |Yes |
+| userName |Geef de gebruikers naam op als u basis verificatie gebruikt. |No |
+| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |No |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het ODBC-gegevens archief. |Yes |
 
 ### <a name="using-basic-authentication"></a>Basis verificatie gebruiken
 
@@ -138,7 +133,7 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| tableName |De naam van de tabel in het ODBC-gegevens archief. |Ja |
+| tableName |De naam van de tabel in het ODBC-gegevens archief. |Yes |
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
 Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van activiteiten. Eigenschappen zoals naam, beschrijving, invoer-en uitvoer tabellen en beleids regels zijn beschikbaar voor alle typen activiteiten.
@@ -149,7 +144,7 @@ Wanneer de bron van het type **RelationalSource** (inclusief ODBC) is in Kopieer
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| query |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. |Ja |
+| query |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. |Yes |
 
 
 ## <a name="json-example-copy-data-from-odbc-data-store-to-azure-blob"></a>JSON-voor beeld: gegevens kopiëren van ODBC-gegevens archief naar een Azure-Blob
@@ -293,7 +288,7 @@ Gegevens worden elk uur naar een nieuwe BLOB geschreven (frequentie: uur, interv
 
 **Kopieer activiteit in een pijp lijn met een ODBC-bron (RelationalSource) en BLOB-Sink (BlobSink)**
 
-De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van deze invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **RelationalSource** en het **sink** -type is ingesteld op **BlobSink** . Met de SQL-query die is opgegeven voor de **query** -eigenschap worden de gegevens in het afgelopen uur geselecteerd om te kopiëren.
+De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van deze invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **RelationalSource** en het **sink** -type is ingesteld op **BlobSink**. Met de SQL-query die is opgegeven voor de **query** -eigenschap worden de gegevens in het afgelopen uur geselecteerd om te kopiëren.
 
 ```json
 {
@@ -357,7 +352,7 @@ Houd bij het kopiëren van gegevens uit relationele gegevens archieven de Herhaa
 ## <a name="troubleshoot-connectivity-issues"></a>Verbindingsproblemen oplossen
 Gebruik het tabblad **Diagnostische gegevens** van **Data Management Gateway Configuration Manager** om verbindings problemen op te lossen.
 
-1. Start **Data Management Gateway Configuration Manager** . U kunt ' C:\Program Files\Microsoft Gegevensbeheer Gateway\1.0\Shared\ConfigManager.exe direct (of) zoeken naar de **Gateway** om een koppeling naar een **micro soft data management gateway** -toepassing te zoeken, zoals wordt weer gegeven in de volgende afbeelding.
+1. Start **Data Management Gateway Configuration Manager**. U kunt ' C:\Program Files\Microsoft Gegevensbeheer Gateway\1.0\Shared\ConfigManager.exe direct (of) zoeken naar de **Gateway** om een koppeling naar een **micro soft data management gateway** -toepassing te zoeken, zoals wordt weer gegeven in de volgende afbeelding.
 
     ![Gateway zoeken](./media/data-factory-odbc-connector/search-gateway.png)
 2. Schakel over naar het tabblad **Diagnostische gegevens** .

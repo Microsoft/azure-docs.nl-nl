@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 12/09/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q2, automl
-ms.openlocfilehash: 747cc88cdea59017483245b59e4b2c56c4b06a40
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: d5556ffb18a7a67e9415310f221e470761bf8cb8
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032929"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098636"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Resultaten van automatische machine learning experimenten evalueren
 
@@ -72,7 +72,7 @@ Hoewel elke methode voor het berekenen van de voor delen een gemeen schappelijke
 
 De volgende tabel bevat een overzicht van de prestatie gegevens van het model die geautomatiseerd ML berekent voor elk classificatie model dat voor uw experiment wordt gegenereerd. Zie de documentatie voor scikit-Learn die is gekoppeld in het veld **berekening** van elke metriek voor meer informatie. 
 
-|Gegevens|Beschrijving|Berekening|
+|Metrisch|Beschrijving|Berekening|
 |--|--|---|
 |AUC | AUC is het gebied onder de [ontvanger van het besturings systeem](#roc-curve).<br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere, <li>`AUC_macro`, het reken kundige gemiddelde van de AUC voor elke klasse.<li> `AUC_micro`, berekend door het combi neren van de werkelijke positieven en de fout-positieven van elke klasse. <li> `AUC_weighted`, reken kundig gemiddelde van de score voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.   |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) | 
 |accuracy| Nauw keurigheid is de verhouding van voor spellingen die exact overeenkomen met de echte klassen labels. <br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)|
@@ -186,13 +186,13 @@ Automatische ML berekent dezelfde metrische gegevens over prestaties voor elk ge
 
 De volgende tabel bevat een overzicht van de prestatie gegevens voor modellen die zijn gegenereerd voor regressie-en prognose experimenten. Net als bij classificatie-metrische gegevens zijn deze metrische gegevens ook gebaseerd op de scikit leer implementaties. De relevante scikit-documentatie is dienovereenkomstig gekoppeld in het veld **berekening** .
 
-|Gegevens|Beschrijving|Berekening|
+|Metrisch|Beschrijving|Berekening|
 --|--|--|
 explained_variance|De uitleg afwijking meet de mate waarin een model accounts voor de variatie in de doel variabele. Het is het percentage afname van de oorspronkelijke gegevens tot de variantie van de fouten. Wanneer het gemiddelde van de fouten 0 is, is het gelijk aan het kwadraat van de berekening (Zie r2_score hieronder). <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** (-inf, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html)|
 mean_absolute_error|De gemiddelde absolute fout is de verwachte waarde van de absolute waarde van het verschil tussen het doel en de voor spelling.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) <br><br> Dergelijke <br>`mean_absolute_error` <br>  `normalized_mean_absolute_error`, de mean_absolute_error gedeeld door het bereik van de gegevens. | [Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)|
 mean_absolute_percentage_error|Gemiddelde absolute percentage fout (MAPE) is een meting van het gemiddelde verschil tussen een voorspelde waarde en de werkelijke waarde.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) ||
 median_absolute_error|Mediaan absolute fout is de mediaan van alle absolute verschillen tussen het doel en de voor spelling. Dit verlies is robuust voor uitbijters.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)<br><br>Dergelijke <br> `median_absolute_error`<br> `normalized_median_absolute_error`: de median_absolute_error gedeeld door het bereik van de gegevens. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.median_absolute_error.html)|
-r2_score|R ^ 2 is de determinatie coëfficiënt of het percentage verlaging in kwadratische fouten ten opzichte van een basislijn model dat het gemiddelde uitvoert. <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** (-inf, 1]|[Berekening](https://scikit-learn.org/0.16/modules/generated/sklearn.metrics.r2_score.html)|
+r2_score|R ^ 2 is de determinatie coëfficiënt of het percentage verlaging in kwadratische fouten ten opzichte van een basislijn model dat het gemiddelde uitvoert. <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [-1, 1] <br><br> Opmerking: R ^ 2 heeft vaak het bereik (-inf, 1], maar automatische ML clips negatieve waarden voor zeer slechte modellen op-1.|[Berekening](https://scikit-learn.org/0.16/modules/generated/sklearn.metrics.r2_score.html)|
 root_mean_squared_error |Root mean error (RMSE) is de vierkantswortel van het verwachte verschil in kwadraat tussen het doel en de voor spelling. Voor een onzuivere Estimator is RMSE gelijk aan de standaard deviatie.<br> <br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)<br><br>Dergelijke<br> `root_mean_squared_error` <br> `normalized_root_mean_squared_error`: de root_mean_squared_error gedeeld door het bereik van de gegevens. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|
 root_mean_squared_log_error|Het wortel gemiddelde van het logaritmische fout is de vierkantswortel van de verwachte kwadratische fout.<br><br>**Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) <br> <br>Dergelijke <br>`root_mean_squared_log_error` <br> `normalized_root_mean_squared_log_error`: de root_mean_squared_log_error gedeeld door het bereik van de gegevens.  |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_log_error.html)|
 spearman_correlation| ' Spearman correlatie ' is een niet-parametrische meting van de monotonicity van de relatie tussen twee gegevens sets. In tegens telling tot de correlatie van Pearson, neemt de ' Spearman-correlatie niet in dat beide gegevens sets normaal gesp roken worden gedistribueerd. Net als andere correlatie coëfficiënten varieert ' Spearman ' tussen-1 en 1 met 0 voor geen correlatie. De correlaties van-1 of 1 impliceren een nauw keurige monotone relatie. <br><br> ' Spearman ' is een rang orde correlatie-metriek, wat betekent dat wijzigingen in voor spelling of werkelijke waarden het resultaat van de taak ' Spearman ' niet wijzigen als de rang orde van voor spelling of werkelijke waarden niet wordt gewijzigd.<br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [-1, 1]|[Berekening](https://docs.scipy.org/doc/scipy-0.16.1/reference/generated/scipy.stats.spearmanr.html)|

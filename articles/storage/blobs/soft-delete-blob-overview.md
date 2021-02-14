@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/09/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: d380b9d6a20cbe28a8fc4b64179437cd31fd2937
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: a370a7f04e0e43b96e4a574313c4f24c4990ab6f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979285"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390353"
 ---
 # <a name="soft-delete-for-blobs"></a>Blobs voorlopig verwijderen
 
@@ -83,7 +83,7 @@ Wanneer **Delete BLOB** wordt aangeroepen op een basis-BLOB (een blob die niet z
 > [!NOTE]  
 > Wanneer een zachte verwijderde BLOB wordt overschreven, wordt er automatisch een voorlopig verwijderde moment opname van de status van de BLOB vóór de schrijf bewerking gegenereerd. De nieuwe BLOB neemt de laag over van de overschreven blob.
 
-Met zacht verwijderen worden uw gegevens niet opgeslagen in gevallen van het verwijderen van containers of accounts, noch wanneer meta gegevens en BLOB-eigenschappen van blobs worden overschreven. Als u een opslag account wilt beveiligen tegen verwijderen, kunt u een vergren deling configureren met behulp van de Azure Resource Manager. Zie voor meer informatie de Azure Resource Manager artikel [vergren delen resources om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).
+Met zacht verwijderen worden uw gegevens niet opgeslagen in gevallen van het verwijderen van containers of accounts, noch wanneer meta gegevens en BLOB-eigenschappen van blobs worden overschreven. Als u een opslag account wilt beveiligen tegen verwijderen, kunt u een vergren deling configureren met behulp van de Azure Resource Manager. Zie voor meer informatie de Azure Resource Manager artikel [vergren delen resources om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).  Als u containers wilt beveiligen tegen onbedoeld verwijderen, configureert u de tijdelijke verwijdering van de container voor het opslag account. Zie [voorlopig verwijderen voor containers (preview)](soft-delete-container-overview.md)voor meer informatie.
 
 De volgende tabel bevat details over het verwachte gedrag wanneer zacht verwijderen is ingeschakeld:
 

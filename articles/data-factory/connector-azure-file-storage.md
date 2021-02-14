@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van/naar Azure File Storage
 description: Informatie over het kopiëren van gegevens van Azure File Storage naar ondersteunde Sink-gegevens archieven (of) van ondersteunde brongegevens archieven naar Azure File Storage met behulp van Azure Data Factory.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/31/2020
-ms.openlocfilehash: 4c5cee412dea286a76b5678f93637e655e308b26
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 3eb9ab7cf33f3829e90edf4205221243b666c9cf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346143"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385843"
 ---
 # <a name="copy-data-from-or-to-azure-file-storage-by-using-azure-data-factory"></a>Gegevens kopiëren vanuit of naar Azure File Storage met behulp van Azure Data Factory
 
@@ -266,14 +262,14 @@ De volgende eigenschappen worden ondersteund voor Azure-File Storage onder `stor
 | Eigenschap                 | Beschrijving                                                  | Vereist                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
 | type                     | De eigenschap type onder `storeSettings` moet worden ingesteld op **AzureFileStorageReadSettings**. | Yes                                           |
-| **_De te kopiëren bestanden zoeken:_* _ |  |  |
-| OPTIE 1: statisch pad<br> | Kopiëren uit de opgegeven map of het opgegeven bestandspad in de gegevensset. Als u alle bestanden uit een map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `_` . |  |
+| ***Zoek de bestanden die moeten worden gekopieerd:*** |  |  |
+| OPTIE 1: statisch pad<br> | Kopiëren uit de opgegeven map of het opgegeven bestandspad in de gegevensset. Als u alle bestanden uit een map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `*` . |  |
 | OPTIE 2: voor voegsel van bestand<br>-voor voegsel | Voor voegsel voor de bestands naam onder de opgegeven bestands share die is geconfigureerd in een gegevensset om bron bestanden te filteren. Bestanden waarvan de naam begint met `fileshare_in_linked_service/this_prefix` zijn geselecteerd. Er wordt gebruikgemaakt van het filter aan de service zijde voor Azure File Storage, dat betere prestaties biedt dan een filter voor joker tekens. Deze functie wordt niet ondersteund bij het gebruik van een [verouderd gekoppeld service model](#legacy-model). | No                                                          |
 | OPTIE 3: Joker teken<br>- wildcardFolderPath | Het mappad met Joker tekens om de bron mappen te filteren. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke mapnaam Joker teken of escape-teken bevat. <br>Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | No                                            |
 | OPTIE 3: Joker teken<br>- wildcardFileName | De naam van het bestand met Joker tekens onder de opgegeven folderPath/wildcardFolderPath voor het filteren van bron bestanden. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke bestands naam Joker teken of escape-teken bevat.  Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | Yes |
 | OPTIE 4: een lijst met bestanden<br>- fileListPath | Hiermee wordt aangegeven dat een opgegeven bestandenset moet worden gekopieerd. Wijs naar een tekst bestand met een lijst met bestanden die u wilt kopiëren, één bestand per regel, het relatieve pad naar het pad dat is geconfigureerd in de gegevensset.<br/>Wanneer u deze optie gebruikt, geeft u geen bestands naam op in DataSet. Meer voor beelden vindt u in [voor beelden van bestands lijsten](#file-list-examples). |No |
-| ***Aanvullende instellingen:** _ |  | |
-| recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Als recursief is ingesteld op True en de Sink een archief op basis van bestanden is, wordt een lege map of submap niet gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn _ *True*(standaard) en **Onwaar**.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |
+| ***Aanvullende instellingen:*** |  | |
+| recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Als recursief is ingesteld op True en de Sink een archief op basis van bestanden is, wordt een lege map of submap niet gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn **True** (standaard) en **Onwaar**.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |
 | deleteFilesAfterCompletion | Hiermee wordt aangegeven of de binaire bestanden uit het bron archief worden verwijderd nadat naar het doel archief is verplaatst. Het verwijderen van bestanden is per bestand, dus wanneer de Kopieer activiteit mislukt, ziet u dat er al een aantal bestanden naar het doel is gekopieerd en verwijderd uit de bron, terwijl andere nog steeds in het bron archief blijven staan. <br/>Deze eigenschap is alleen geldig in het scenario voor het kopiëren van binaire bestanden. De standaard waarde is False. |No |
 | modifiedDatetimeStart    | Bestanden filteren op basis van het kenmerk: laatst gewijzigd. <br>De bestanden worden geselecteerd als het tijdstip van de laatste wijziging binnen het tijds bereik ligt tussen `modifiedDatetimeStart` en `modifiedDatetimeEnd` . De tijd wordt toegepast op UTC-tijd zone in de notatie "2018-12-01T05:00:00Z". <br> De eigenschappen kunnen NULL zijn, wat betekent dat er geen bestands kenmerk filter op de gegevensset wordt toegepast.  Wanneer `modifiedDatetimeStart` heeft datetime-waarde `modifiedDatetimeEnd` , maar is null, betekent dit dat de bestanden waarvan het kenmerk laatst gewijzigd is groter dan of gelijk is aan de datum/tijd-waarde wordt geselecteerd.  Wanneer `modifiedDatetimeEnd` heeft datetime-waarde `modifiedDatetimeStart` , maar is null, betekent dit dat de bestanden waarvan het kenmerk laatst gewijzigd is kleiner is dan de datum/tijd-waarde wordt geselecteerd.<br/>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . | No                                            |
 | modifiedDatetimeEnd      | Hetzelfde als hierboven.                                               | No                                            |

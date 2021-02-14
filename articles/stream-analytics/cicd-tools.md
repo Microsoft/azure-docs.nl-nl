@@ -7,12 +7,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: 9e79e0a2c030e2ebfcd5ddfd49e7c05afdb0dc3c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 3ed3ff44b927fa230dedf16387c1daca889d7c66
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019547"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388699"
 ---
 # <a name="automate-builds-tests-and-deployments-of-an-azure-stream-analytics-job-using-cicd-tools"></a>Bouw-, test-en implementaties van een Azure Stream Analytics-taak automatiseren met CI/CD-hulpprogram ma's
 
@@ -158,7 +158,7 @@ Als u wilt dat de test validatie een bepaalde uitvoer negeert, stelt u het **ver
       "ExpectedOutputs": [
         {
           "OutputAlias": [Output alias string],
-          "FilePath": "Required",
+          "FilePath": [Required],
           "Required": true
         }
       ]

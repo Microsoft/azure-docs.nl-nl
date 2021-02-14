@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 1222108694ff7274e5d8fd063635b70a76ffc59c
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: bcd89274b1f2ba7b31a10a481e3d73901eac2c60
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954746"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375184"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
@@ -84,7 +84,7 @@ Nadat u de *cluster* bron hebt gemaakt, kunt u extra eigenschappen bewerken, zoa
 U kunt Maxi maal twee actieve clusters per abonnement per regio hebben. Als het cluster wordt verwijderd, is het nog steeds 14 dagen gereserveerd. U kunt Maxi maal 4 gereserveerde clusters per abonnement per regio hebben (actief of recent verwijderd).
 
 > [!WARNING]
-> Het maken van een cluster activeert resource toewijzing en inrichting. Het kan een uur duren voordat deze bewerking is voltooid. Het wordt aanbevolen deze asynchroon uit te voeren.
+> Het maken van een cluster activeert resource toewijzing en inrichting. Het volt ooien van deze bewerking kan enkele uren duren. Het wordt aanbevolen deze asynchroon uit te voeren.
 
 Het gebruikers account dat de clusters maakt, moet beschikken over de standaard machtiging voor het maken van een Azure-resource: `Microsoft.Resources/deployments/*` en de schrijf machtiging van het cluster `Microsoft.OperationalInsights/clusters/write` door hun rol toe te voegen aan deze specifieke actie of `Microsoft.OperationalInsights/*` of `*/write` .
 

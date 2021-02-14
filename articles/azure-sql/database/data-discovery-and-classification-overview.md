@@ -11,14 +11,14 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 12/01/2020
+ms.date: 02/11/2021
 tags: azure-synapse
-ms.openlocfilehash: 41ad711de81f075727e4c177c318054677cb0ece
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 254d69c723a97d9007a1f6c0f0eb7b34bcfe3c4e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185351"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392762"
 ---
 # <a name="data-discovery--classification"></a>Gegevensdetectie en -classificatie
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -183,6 +183,13 @@ U kunt de REST API gebruiken om classificaties en aanbevelingen programmatisch t
 - [Get](/rest/api/sql/sensitivitylabels/get): haalt het gevoeligheids label van de opgegeven kolom op.
 - [Lijst actueel op data base](/rest/api/sql/sensitivitylabels/listcurrentbydatabase): Hiermee wordt de huidige sensitivity-labels van de opgegeven Data Base opgehaald.
 - [Lijst aanbevolen door data base](/rest/api/sql/sensitivitylabels/listrecommendedbydatabase): Hiermee wordt de aanbevolen gevoeligheids labels van de opgegeven Data Base opgehaald.
+
+
+## <a name="faq---advanced-classification-capabilities"></a>Veelgestelde vragen-geavanceerde classificatie mogelijkheden
+
+**Vraag**: zal [Azure controle sfeer liggen](https://docs.microsoft.com/azure/purview/overview) de sql-gegevens detectie & classificatie vervangen of zal de classificatie van sql-gegevens detectie & binnenkort worden ingetrokken?
+**Antwoord**: we blijven de classificatie van SQL-gegevens detectie & ondersteunen en moedigen u aan [Azure controle sfeer liggen](https://docs.microsoft.com/azure/purview/overview) te nemen met uitgebreide mogelijkheden om geavanceerde classificatie mogelijkheden en data governance te stimuleren. Als we besluiten een service, functie, API of SKU buiten gebruik te stellen, ontvangt u een aankondiging met een migratie of een overgangs traject. Meer informatie over het micro soft Lifecycle-beleid vindt u hier.
+
 
 ## <a name="next-steps"></a><a id="next-steps"></a>Volgende stappen
 

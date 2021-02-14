@@ -10,7 +10,7 @@
   items:
     - name: Uw eerste app lanceren
       href: spring-cloud-quickstart.md
-    - name: Microservices bouwen en uitvoeren
+    - name: Micro services bouwen en uitvoeren
       expanded: true
       items:
         - name: Inleiding tot de voorbeeld-app
@@ -45,8 +45,12 @@
       href: spring-cloud-concept-metrics.md
     - name: Azure Spring Boot Actuator
       href: spring-cloud-concept-manage-monitor-app-spring-boot-actuator.md
-    - name: Beveiligingsmaatregelen
-      href: spring-cloud-concept-security-controls.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsmaatregelen
+          href: spring-cloud-concept-security-controls.md
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          href: ./security-controls-policy.md
     - name: App-status begrijpen
       href: spring-cloud-concept-app-status.md
     - name: Herstel na noodgeval plannen
@@ -59,7 +63,7 @@
           href: spring-cloud-tutorial-prepare-app-deployment.md
         - name: Een configuratieserver instellen
           href: spring-cloud-tutorial-config-server.md
-        - name: Serviceregistratie inschakelen
+        - name: Service registratie inschakelen
           href: spring-cloud-service-registration.md
     - name: Implementeren
       items:
@@ -153,6 +157,10 @@
           href: /azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud
         - name: Tomcat
           href: /azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud
+- name: Architectuur
+  items:
+    - name: Referentiearchitectuur
+      href: spring-cloud-reference-architecture.md
 - name: DevOps-implementatie
   items:
     - name: CI/CD met Azure DevOps
@@ -167,7 +175,7 @@
       href: spring-cloud-troubleshoot.md
 - name: Naslaginformatie
   items:
-    - name: Azure CLI-invoegtoepassing
+    - name: Azure CLI-invoeg toepassing
       href: /cli/azure/ext/spring-cloud/spring-cloud
     - name: Azure PowerShell
       href: /powershell/module/az.springcloud

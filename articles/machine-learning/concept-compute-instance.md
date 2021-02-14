@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 54da62ce961156b64c917b448557c17e7516e222
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: ef753043218f259c69082dbb8682517be79cf95c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862142"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099792"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Wat is een Azure Machine Learning-rekeninstantie?
 
@@ -30,9 +30,9 @@ Zorg ervoor dat de communicatie tussen websockets niet is uitgeschakeld voor de 
 
 ## <a name="why-use-a-compute-instance"></a>Waarom een reken instantie gebruiken?
 
-Een reken instantie is een volledig beheerd, op de cloud gebaseerd werk station dat is geoptimaliseerd voor uw machine learning-ontwikkel omgeving. Het biedt de volgende voor delen:
+Een reken instantie is een volledig beheerd, op de cloud gebaseerd werk station dat is geoptimaliseerd voor uw machine learning-ontwikkel omgeving. Dit biedt de volgende voordelen:
 
-|Belangrijkste voordelen|Beschrijving|
+|Belangrijkste voordelen|Description|
 |----|----|
 |Productiviteit|U kunt modellen bouwen en implementeren met behulp van geïntegreerde notebooks en de volgende hulpprogram ma's in Azure Machine Learning studio:<br/>-Jupyter<br/>-Jjupyterlab<br/>-RStudio (preview-versie)<br/>Reken instantie is volledig geïntegreerd met Azure Machine Learning werk ruimte en Studio. U kunt notitie blokken en gegevens delen met andere gegevens wetenschappers in de werk ruimte.<br/> U kunt ook [VS code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) gebruiken met reken instanties.
 |Beheerde & beveiligd|Verminder uw beveiligings footprint en voeg naleving toe met beveiligings vereisten voor ondernemingen. Reken instanties bieden robuust beheer beleid en beveiligde netwerk configuraties zoals:<br/><br/>-Autoinrichting van Resource Manager-sjablonen of Azure Machine Learning SDK<br/>- [Op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC)](../role-based-access-control/overview.md)<br/>- [Ondersteuning voor virtuele netwerken](./how-to-secure-training-vnet.md#compute-instance)<br/>-SSH-beleid voor het inschakelen/uitschakelen van SSH-toegang<br/>TLS 1,2 ingeschakeld |
@@ -51,7 +51,7 @@ Met Azure Machine Learning Compute-instantie kunt u modellen ontwerpen, trainen 
 
 U kunt Jupyter-notebooks in [VS code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) uitvoeren met Compute instance als de externe server zonder SSH vereist. U kunt ook VS code-integratie inschakelen via [externe SSH-extensie](https://devblogs.microsoft.com/python/enhance-your-azure-machine-learning-experience-with-the-vs-code-extension/).
 
-U kunt [pakketten installeren](how-to-create-manage-compute-instance.md#install-packages) en [kernels toevoegen](how-to-create-manage-compute-instance.md#add-new-kernels) aan uw reken exemplaar.  
+U kunt [pakketten installeren](how-to-access-terminal.md#install-packages) en [kernels toevoegen](how-to-access-terminal.md#add-new-kernels) aan uw reken exemplaar.  
 
 De volgende hulpprogram ma's en omgevingen zijn al geïnstalleerd op de compute-instantie: 
 
@@ -77,7 +77,7 @@ De volgende hulpprogram ma's en omgevingen zijn al geïnstalleerd op de compute-
 |Anaconda Python||
 |Jupyter en-extensies||
 |Jjupyterlab en-extensies||
-[Azure Machine Learning-SDK voor Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)</br>van PyPI|Omvat het meren deel van de extra azureml-pakketten.  Als u de volledige lijst wilt weer geven, [opent u een Terminal venster op uw reken exemplaar](how-to-run-jupyter-notebooks.md#terminal) en voert u uit <br/> `conda list -n azureml_py36 azureml*` |
+[Azure Machine Learning-SDK voor Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)</br>van PyPI|Omvat het meren deel van de extra azureml-pakketten.  Als u de volledige lijst wilt weer geven, [opent u een Terminal venster op uw reken exemplaar](how-to-access-terminal.md) en voert u uit <br/> `conda list -n azureml_py36 azureml*` |
 |Andere PyPI-pakketten|`jupytext`</br>`tensorboard`</br>`nbconvert`</br>`notebook`</br>`Pillow`|
 |Conda-pakketten|`cython`</br>`numpy`</br>`ipykernel`</br>`scikit-learn`</br>`matplotlib`</br>`tqdm`</br>`joblib`</br>`nodejs`</br>`nb_conda_kernels`|
 |Uitgebreide leer pakketten|`PyTorch`</br>`TensorFlow`</br>`Keras`</br>`Horovod`</br>`MLFlow`</br>`pandas-ml`</br>`scrapbook`|
@@ -124,18 +124,18 @@ Met [Azure RBAC](../role-based-access-control/overview.md) kunt u bepalen welke 
 
 Deze acties kunnen worden beheerd door Azure RBAC:
 * *Micro soft. MachineLearningServices/werk ruimten/reken-en lees bewerkingen*
-* *Micro soft. MachineLearningServices/werk ruimten/reken kracht/schrijven*
+* *Microsoft.MachineLearningServices/workspaces/computes/write*
 * *Micro soft. MachineLearningServices/werk ruimten/berekenen/verwijderen*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/starten/actie*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie*
 
 Als u een reken instantie wilt maken, moet u machtigingen hebben voor de volgende acties:
-* *Micro soft. MachineLearningServices/werk ruimten/reken kracht/schrijven*
-* *Micro soft. MachineLearningServices/werk ruimten/checkComputeNameAvailability/actie*
+* *Microsoft.MachineLearningServices/workspaces/computes/write*
+* *Microsoft.MachineLearningServices/workspaces/checkComputeNameAvailability/action*
 
 
-### <a name="create-a-compute-instance"></a><a name="create"></a>Een reken instantie maken
+### <a name="create-a-compute-instance"></a><a name="create"></a>Een rekenproces maken
 
 Maak in uw werk ruimte in Azure Machine Learning Studio [een nieuw reken exemplaar](how-to-create-attach-compute-studio.md#compute-instance) van het gedeelte **Compute** of in de sectie **notebooks** , wanneer u klaar bent om een van uw notitie blokken uit te voeren. 
 

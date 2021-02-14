@@ -3,12 +3,12 @@ title: Limieten en quota voor Azure-abonnementen
 description: Biedt een lijst met algemene Azure-abonnementen en service limieten, quota's en beperkingen. Dit artikel bevat informatie over het verhogen van de limieten en maximum waarden.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 0a20d38d0f8d5be4a19dcdb8b6b846699bac6cc1
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: ac35f09e1a7274019a8ca504fc697ca81de000f7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920461"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370094"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Limieten, quota's en beperkingen voor het Azure-abonnement en de Azure-service
 
@@ -364,6 +364,9 @@ Zie [SQL database resource limieten voor afzonderlijke data bases](../../azure-s
 
 Zie [Azure Synapse-resource limieten](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)voor limieten voor Azure Synapse Analytics.
 
+## <a name="azure-files-and-azure-file-sync"></a>Azure Files en Azure File Sync
+Zie [Azure files schaal baarheid en prestatie doelen](../../storage/files/storage-files-scale-targets.md)voor meer informatie over de limieten voor Azure Files en file sync.
+
 ## <a name="storage-limits"></a>Opslag limieten
 
 <!--like # storage accts -->
@@ -378,16 +381,6 @@ Zie [schaalbaarheids doelen voor standaard opslag accounts](../../storage/common
 ### <a name="azure-blob-storage-limits"></a>Limieten voor Azure Blob-opslag
 
 [!INCLUDE [storage-blob-scale-targets](../../../includes/storage-blob-scale-targets.md)]
-
-### <a name="azure-files-limits"></a>Azure Files limieten
-
-Zie [Azure files schaal baarheid en prestatie doelen](../../storage/files/storage-files-scale-targets.md)voor meer informatie over Azure files limieten.
-
-[!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
-
-### <a name="azure-file-sync-limits"></a>Azure File Sync limieten
-
-[!INCLUDE [storage-sync-files-scale-targets](../../../includes/storage-sync-files-scale-targets.md)]
 
 ### <a name="azure-queue-storage-limits"></a>Opslag limieten voor Azure Queue
 

@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 ms.author: banders
-ms.openlocfilehash: debe02a89e10712ad8a0b8d61b0fdc3f8a4bd7b2
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: c599c64ce4b22bbf7bece77602b22fef6629d07c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99577782"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369727"
 ---
 # <a name="how-reservation-discounts-apply-to-azure-app-service-premium-v3-instances-and-isolated-stamps"></a>Hoe reserverings kortingen van toepassing zijn op Azure App Service Premium v3-instanties en geïsoleerde stem pels
 
@@ -40,10 +40,6 @@ De korting voor Azure-reserve ringen wordt op elk uur toegepast op het uitvoeren
 4.  In uur 4 is instantie 1 gedurende 0,5 uur actief en instantie 2 gedurende 1 uur. Instantie 1 wordt volledig gedekt door de reservering en van instantie 2 wordt 0,5 uur gedekt. U betaalt het tarief op gebruiksbasis voor de resterende 0,5 uur.
 
 Voor meer informatie over de toepassing van uw Azure-reserveringen in uw gebruiksrapporten voor facturering, raadpleegt u [Inzicht in reserveringsgebruik](understand-reserved-instance-usage-ea.md).
-
-### <a name="discount-can-apply-to-different-sizes"></a>Korting kan van toepassing zijn op verschillende grootten
-
-Wanneer u een gereserveerd Premium v3-exemplaar koopt en **geoptimaliseerd voor de flexibiliteit van de instantie grootte** selecteert, is de kortings dekking van toepassing op de Premium v3-instantie grootte die u selecteert. Dit kan ook van toepassing zijn op andere exemplaar grootten die zich in dezelfde groep van dezelfde reeks-instantie grootte bevinden.
 
 ## <a name="how-reservation-discounts-apply-to-isolated-stamps"></a>Hoe reserverings kortingen van toepassing zijn op geïsoleerde stem pels
 

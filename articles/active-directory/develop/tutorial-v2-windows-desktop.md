@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5bfdf90ddbd500fd9d1c504bd37ed4ac35d8bf70
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: d9db845bfa4a7c0c117220b8932b370eb230f6dc
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752766"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102985"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Zelfstudie: De Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -97,14 +97,14 @@ U kunt uw toepassing op twee manieren registreren.
 ### <a name="option-1-express-mode"></a>Optie 1: Snelle modus
 
 U kunt uw toepassing snel registreren door het volgende te doen:
-1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Ga naar de quickstart-ervaring <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs" target="_blank">Azure-portal - App-registraties</a>.
 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 
 ### <a name="option-2-advanced-mode"></a>Optie 2: Geavanceerde modus
 
 Ga als volgt te werk om de toepassing te registreren en de registratiegegevens van de toepassing toe te voegen aan uw oplossing:
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

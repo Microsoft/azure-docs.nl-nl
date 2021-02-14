@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 03/21/2019
+ms.date: 01/19/2021
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 5ae946f82590f2270719570e4b589d49542ffec8
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4377ed76de971f78336ea9024b59dafc5d513487
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833976"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100094964"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>Problemen met de portal mijn apps oplossen
 
@@ -31,7 +31,7 @@ Als u problemen ondervindt met de installatie van de uitbrei ding voor beveiligd
 
     - **Micro soft Edge.** Wordt uitgevoerd op Windows 10 jubileum Edition of hoger.
 
-    - **Google Chrome.** Wordt uitgevoerd op Windows 7 of hoger en op Mac OS X of hoger.
+    - **Google Chrome.** Wordt uitgevoerd op Windows 7 of hoger en op macOS X of hoger.
 
     - **Mozilla Firefox 26,0 of hoger.** Wordt uitgevoerd op Windows XP SP2 of hoger en op Mac OS X 10,6 of hoger.
 
@@ -46,6 +46,11 @@ Als u problemen ondervindt met de installatie van de uitbrei ding voor beveiligd
 ## <a name="i-cant-sign-in-to-the-my-apps-portal"></a>Ik kan me niet aanmelden bij de portal **mijn apps**
 
 Als u problemen ondervindt bij het aanmelden bij de portal **mijn apps** , kunt u het volgende proberen:
+
+- Als er een fout optreedt bij het aanmelden met een persoonlijke Microsoft-account, kunt u zich nog steeds aanmelden met de domein naam voor uw organisatie (zoals contoso.com) of de **Tenant-id** van uw organisatie van uw beheerder in een van de volgende url's:
+
+   - https://myapplications.microsoft.com?tenantId=*your_domain_name*
+   - https://myapplications.microsoft.com?tenant=*your_tenant_ID*
 
 - Zorg ervoor dat u de juiste URL gebruikt. Dit moet https://myapps.microsoft.com een aangepaste pagina voor uw organisatie zijn, zoals https://myapps.microsoft.com/contoso.com .
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: a5f0a7d8221e970c8c1aa3c1ddffbfc56f2d5715
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 4fccff70fd267aef84550b4e2f5d6f5f9422a341
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226183"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103019"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -93,7 +93,7 @@ Als u de automatisering niet wilt gebruiken, gebruikt u de stappen in de volgend
 
 ### <a name="choose-the-azure-ad-tenant"></a>De Azure AD-tenant kiezen
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 
 
@@ -203,7 +203,7 @@ Dit project heeft web-app- en web-API-projecten. Om deze op Azure-websites te im
 
 ### <a name="create-and-publish-dotnet-web-daemon-v2-to-an-azure-website"></a>Maak en publiceer dotnet-web-daemon-v2 op een Azure-website
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Selecteer in de linkerbovenhoek  **Een resource maken**.
 1. Selecteer **Web** > **Web-apps** en geef uw website een naam. Noem de site bijvoorbeeld **dotnet-web-daemon-v2-contoso.azurewebsites.net**.
 1. Selecteer de gegevens voor **Abonnement**, **Resourcegroep** en **App-serviceabonnement en -lokatie**. **OS** is **Windows** en **Publiceren** is **Code**.
@@ -224,7 +224,7 @@ Visual Studio publiceert het project en opent automatisch een browser naar de UR
 
 ### <a name="update-the-azure-ad-tenant-application-registration-for-dotnet-web-daemon-v2"></a>De toepassingsregistratie van de Azure AD-tenant bijwerken voor dotnet-web-daemon-v2
 
-1. Ga terug naar <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Ga terug naar <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
 1. Selecteer in het linkervenster de **Azure Active Directory**-service en selecteer vervolgens **App-registraties**.
 1. Selecteer de toepassing **dotnet-web-daemon-v2**.
 1. Werk op de pagina **verificatie** voor uw toepassing de velden **voor de afmeldings-URL voor front-Channel** bij met het adres van uw service. Gebruik bijvoorbeeld `https://dotnet-web-daemon-v2-contoso.azurewebsites.net/Account/EndSession`.

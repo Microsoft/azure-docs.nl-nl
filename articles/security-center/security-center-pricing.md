@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/26/2021
+ms.date: 02/11/2021
 ms.author: memildin
-ms.openlocfilehash: 9e537bfa782569fb8fa2a7957c6874bda69d8c06
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: c12ad505777111499fb354709ce606189398458f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805357"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391920"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
@@ -118,10 +118,9 @@ Als u al een licentie hebt voor Microsoft Defender for Endpoint, hoeft u niet te
 Neem contact op met het ondersteuningsteam van Security Center en geef de relevante werkruimte-ID, regio en licentiegegevens van elke relevante licentie op om uw korting te bevestigen.
 
 ### <a name="my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers"></a>Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers? 
-Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) inschakelt in een abonnement, worden alleen actieve servers per uur gefactureerd. Er worden geen kosten in rekening gebracht voor servers die waren uitgeschakeld gedurende die tijd. 
+Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden er geen kosten in rekening gebracht voor servers die de status ' disallocated ' hebben, terwijl ze in die status zijn.
 
-> [!TIP]
-> Dit geldt ook voor de andere typen resources die worden beveiligd door Security Center. 
+:::image type="content" source="media/security-center-pricing/deallocated-virtual-machines.png" alt-text="Azure Virtual Machines het weer geven van een ontoegewezen machine":::
 
 ### <a name="will-i-be-charged-for-machines-without-the-log-analytics-agent-installed"></a>Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?
 Ja. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden de machines in dat abonnement op diverse manieren beveiligd, zelfs als u de Log Analytics-agent niet hebt geïnstalleerd.

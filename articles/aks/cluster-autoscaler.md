@@ -4,12 +4,12 @@ description: Meer informatie over hoe u de cluster-automatische schaal functie k
 services: container-service
 ms.topic: article
 ms.date: 07/18/2019
-ms.openlocfilehash: 5f0754638be1aa29672b6a59218a6c9d695261a5
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: c0564dc3b394b4a65e70a487b6f6989cb306bdda
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223139"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373246"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Een cluster automatisch schalen om te voldoen aan de toepassingsvraag op Azure Kubernetes Service (AKS)
 
@@ -273,6 +273,9 @@ az aks nodepool update \
 ```
 
 Als u de automatisch schalen van het cluster opnieuw wilt inschakelen op een bestaand cluster, kunt u het opnieuw inschakelen met behulp van de opdracht [AZ AKS nodepool update][az-aks-nodepool-update] , waarbij u de `--enable-cluster-autoscaler` `--min-count` `--max-count` para meters, en opgeeft.
+
+> [!NOTE]
+> Als u van plan bent de automatische schaal functie van het cluster uit te voeren met nodepools die meerdere zones omvatten en gebruikmaken van plannings functies die betrekking hebben op zones zoals de topologische planning van een volume, is het raadzaam één nodepool per zone te hebben en de `--balance-similar-node-groups` via het profiel voor automatisch schalen in te scha kelen. Zo zorgt u ervoor dat de automatische schaal baarheid met succes wordt geschaald en de grootte van de nodepools evenwichtig blijft.
 
 ## <a name="next-steps"></a>Volgende stappen
 

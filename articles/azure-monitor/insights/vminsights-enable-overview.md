@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 12/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 655a146ccde9c75629d0a991a6a3aafa91f40764
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 18be0f7d1bd8622735f24bf20161d652846112f7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233964"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373416"
 ---
 # <a name="enable-azure-monitor-for-vms-overview"></a>Overzicht Azure Monitor voor VM's inschakelen
 
@@ -42,7 +42,7 @@ Azure Monitor voor VM's ondersteunt de volgende machines:
 ## <a name="supported-azure-arc-machines"></a>Ondersteunde Azure-Arc-machines
 Azure Monitor voor VM's is beschikbaar voor servers met Azure Arc ingeschakeld in regio's waar de Arc extension-service beschikbaar is. U moet versie 0,9 of hoger van de Arc-agent uitvoeren.
 
-| Verbonden bron | Ondersteund | Beschrijving |
+| Verbonden bron | Ondersteund | Description |
 |:--|:--|:--|
 | Windows-agents | Yes | Naast de [log Analytics-agent voor Windows](../platform/log-analytics-agent.md), hebben Windows-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](../platform/agents-overview.md#supported-operating-systems)voor meer informatie. |
 | Linux-agents | Yes | Naast de [log Analytics-agent voor Linux](../platform/log-analytics-agent.md)hebben Linux-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](#supported-operating-systems)voor meer informatie. |
@@ -66,7 +66,7 @@ Raadpleeg de volgende lijst met overwegingen voor Linux-ondersteuning van de afh
 ## <a name="log-analytics-workspace"></a>Log Analytics-werkruimte
 Voor Azure Monitor voor VM's is een Log Analytics-werk ruimte vereist. Zie [log Analytics werk ruimte configureren voor Azure monitor voor VM's](vminsights-configure-workspace.md) voor details en vereisten van deze werk ruimte.
 ## <a name="agents"></a>Agents
-Azure Monitor voor VM's moeten de volgende twee agents zijn geïnstalleerd op elke virtuele machine of schaalset voor virtuele machines die moet worden bewaakt. Als u de resource wilt vrijgeven, installeert u deze agents en verbindt u deze met de werk ruimte.  Zie [netwerk vereisten](../platform/log-analytics-agent.md#network-requirements) voor de netwerk vereisten voor deze agents.
+Azure Monitor voor VM's moeten de volgende twee agents zijn geïnstalleerd op elke virtuele machine of schaalset voor virtuele machines die moet worden bewaakt. Als u de resource wilt vrijgeven, installeert u deze agents en verbindt u deze met de werk ruimte.  
 
 - [Log Analytics-agent](../platform/log-analytics-agent.md). Verzamelt gebeurtenissen en prestatie gegevens van de virtuele machine of virtuele-machine schaal sets en levert deze aan de Log Analytics-werk ruimte. Voor de implementatie methoden voor de Log Analytics agent op Azure-resources wordt de VM-extensie voor [Windows](../../virtual-machines/extensions/oms-windows.md) en [Linux](../../virtual-machines/extensions/oms-linux.md)gebruikt.
 - Afhankelijkheids agent. Verzamelt gedetecteerde gegevens over processen die worden uitgevoerd op de virtuele machine en de afhankelijkheden van het externe proces, die worden gebruikt door de [kaart functie in azure monitor voor VM's](vminsights-maps.md). De afhankelijkheids agent is afhankelijk van de Log Analytics-agent om de bijbehorende gegevens te leveren aan Azure Monitor. Voor de implementatie methoden voor de afhankelijkheids agent op Azure-resources wordt de VM-extensie voor [Windows](../../virtual-machines/extensions/agent-dependency-windows.md) en [Linux](../../virtual-machines/extensions/agent-dependency-linux.md)gebruikt.
@@ -84,6 +84,10 @@ Hier volgen meerdere methoden voor het implementeren van deze agents.
 | [Hand matige installatie](./vminsights-enable-hybrid.md) | Installeer de agents in het gast besturingssysteem op computers die buiten Azure worden gehost, inclusief in uw Data Center of andere Cloud omgevingen. |
 
 
+## <a name="network-requirements"></a>Netwerkvereisten
+
+- Zie [netwerk vereisten](../platform/log-analytics-agent.md#network-requirements) voor de netwerk vereisten voor de log Analytics-agent.
+- De afhankelijkheids agent vereist een verbinding van de virtuele machine met het adres 169.254.169.254. Dit is het Azure-service-eind punt voor meta gegevens. Zorg ervoor dat de firewall instellingen verbindingen met dit eind punt toestaan.
 
 
 ## <a name="management-packs"></a>Management packs

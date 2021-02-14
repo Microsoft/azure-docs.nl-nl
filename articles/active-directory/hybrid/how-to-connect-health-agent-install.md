@@ -17,12 +17,12 @@ ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 57362aa84886d7b7d764617ce5a43ca2393bed52
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 0e644b7937f6ccb23b4833405b8f4ed3119879a5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018238"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362281"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Installatie van Azure AD Connect Health-Agent
 
@@ -34,7 +34,7 @@ De volgende tabel bevat de vereisten voor het gebruik van Azure AD Connect Healt
 
 | Vereiste | Beschrijving |
 | --- | --- |
-| Azure AD Premium is geïnstalleerd. |Azure AD Connect Health is een functie van Azure AD Premium. Zie [registreren voor Azure AD Premium](../fundamentals/active-directory-get-started-premium.md)voor meer informatie. <br /><br />Als u een gratis proef versie van 30 dagen wilt starten, raadpleegt u [een proef versie starten](https://azure.microsoft.com/trial/get-started-active-directory/). |
+| Er is een Azure AD Premium (P1 of P2) abonnement.  |Azure AD Connect Health is een functie van Azure AD Premium (P1 of P2). Zie [registreren voor Azure AD Premium](../fundamentals/active-directory-get-started-premium.md)voor meer informatie. <br /><br />Als u een gratis proef versie van 30 dagen wilt starten, raadpleegt u [een proef versie starten](https://azure.microsoft.com/trial/get-started-active-directory/). |
 | U bent een globale beheerder in azure AD. |Standaard kunnen alleen globale beheerders de Health-Agents installeren en configureren, de portal openen en bewerkingen uitvoeren in Azure AD Connect Health. Voor meer informatie raadpleegt u [Uw Azure AD-directory beheren](../fundamentals/active-directory-whatis.md). <br /><br /> Door gebruik te maken van op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u andere gebruikers in uw organisatie toegang geven tot Azure AD Connect Health. Zie [Azure RBAC voor Azure AD Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac)voor meer informatie. <br /><br />**Belang rijk**: gebruik een werk-of school account om de agents te installeren. U kunt geen Microsoft-account gebruiken. Zie [registreren voor Azure als organisatie](../fundamentals/sign-up-organization.md)voor meer informatie. |
 | De Azure AD Connect Health-Agent wordt op elke doel server geïnstalleerd. | Health-Agents moeten worden geïnstalleerd en geconfigureerd op de doel servers, zodat ze gegevens kunnen ontvangen en bewakings-en analyse mogelijkheden bieden. <br /><br />Als u bijvoorbeeld gegevens wilt ophalen uit de infra structuur van uw Active Directory Federation Services (AD FS), moet u de agent installeren op de AD FS-server en de webtoepassingsproxy. Op dezelfde manier moet u de agent op de domein controllers installeren om gegevens op te halen van uw on-premises Azure AD Domain Services (Azure AD DS)-infra structuur.  |
 | De eind punten van de Azure-service hebben een uitgaande verbinding. | Tijdens de installatie en runtime moet de agent verbonden zijn met de Azure AD Connect Health-service-eindpunten. Als firewalls uitgaande verbindingen blok keren, voegt u de [uitgaande connectiviteit-eind punten](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) toe aan de acceptatie lijst. |
@@ -195,7 +195,7 @@ Als u wilt controleren of de agent is geïnstalleerd, zoekt u de volgende servic
 ![Scherm afbeelding met de actieve Azure AD Connect Health voor synchronisatie Services op de server.](./media/how-to-connect-health-agent-install/services.png)
 
 > [!NOTE]
-> Houd er rekening mee dat u Azure AD Premium moet hebben om Azure AD Connect Health te gebruiken. Als u niet beschikt over Azure AD Premium, kunt u de configuratie in de Azure Portal niet volt ooien. Zie de [vereisten](how-to-connect-health-agent-install.md#requirements)voor meer informatie.
+> Houd er rekening mee dat u Azure AD Premium (P1 of P2) nodig hebt om Azure AD Connect Health te kunnen gebruiken. Als u niet beschikt over Azure AD Premium, kunt u de configuratie in de Azure Portal niet volt ooien. Zie de [vereisten](how-to-connect-health-agent-install.md#requirements)voor meer informatie.
 >
 >
 
@@ -355,7 +355,7 @@ Hier volgt een voorbeeld:
 
 `Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress myproxyserver: 443`
 
-In dit voorbeeld geldt het volgende:
+In dit voorbeeld:
 * De `address` instelling kan een DNS-herstel bare server naam of een IPv4-adres zijn.
 * U kunt weglaten `port` . Als u dit doet, is 443 de standaard poort.
 

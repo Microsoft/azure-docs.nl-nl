@@ -6,17 +6,17 @@ author: tamram
 services: storage
 ms.author: tamram
 ms.reviewer: ozgun
-ms.date: 11/13/2020
+ms.date: 02/10/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: common
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 01b78fa3250f371cfc4d713668531664ef8c139e
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 2f7092d8ce184d7021774814e96935e46d1ffb56
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363165"
 ---
 # <a name="choose-how-to-authorize-access-to-queue-data-with-azure-cli"></a>Kies hoe u de toegang tot de wachtrij gegevens wilt autoriseren met Azure CLI
 
@@ -34,6 +34,9 @@ Azure CLI-opdrachten voor het lezen en schrijven van wachtrij gegevens bevatten 
 
 Als u de `--auth-mode` para meter wilt gebruiken, zorg er dan voor dat u Azure cli v 2.0.46 of hoger hebt geïnstalleerd. Voer uit `az --version` om de geïnstalleerde versie te controleren.
 
+> [!NOTE]
+> Wanneer een opslag account is vergrendeld met een Azure Resource Manager **alleen-lezen** vergrendeling, is de bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) niet toegestaan voor dat opslag account. **Lijst sleutels** is een post-bewerking en alle post-bewerkingen worden voor komen wanneer een **alleen-lezen** vergrendeling voor het account is geconfigureerd. Als het account is vergrendeld met een **alleen-lezen** vergrendeling, moeten gebruikers gebruikers die niet al over de account sleutels beschikken, Azure AD-referenties gebruiken om toegang te krijgen tot de gegevens in de wachtrij.
+
 > [!IMPORTANT]
 > Als u de `--auth-mode` para meter weglaat of instelt op `key` , probeert de Azure cli de toegangs sleutel voor het account voor autorisatie te gebruiken. In dit geval raadt micro soft u aan de toegangs sleutel op te geven op de opdracht of in de `AZURE_STORAGE_KEY` omgevings variabele. Zie de sectie [omgevings variabelen instellen voor autorisatie parameters](#set-environment-variables-for-authorization-parameters)voor meer informatie over omgevings variabelen.
 >
@@ -41,7 +44,7 @@ Als u de `--auth-mode` para meter wilt gebruiken, zorg er dan voor dat u Azure c
 
 ## <a name="authorize-with-azure-ad-credentials"></a>Autoriseren met Azure AD-referenties
 
-Wanneer u zich aanmeldt bij Azure CLI met Azure AD-referenties, wordt een OAuth 2,0-toegangs token geretourneerd. Dit token wordt automatisch door Azure CLI gebruikt voor het autoriseren van volgende gegevens bewerkingen op Blob Storage of Queue Storage. Voor ondersteunde bewerkingen hoeft u geen account sleutel of SAS-token meer door te geven met de opdracht.
+Wanneer u zich aanmeldt bij Azure CLI met Azure AD-referenties, wordt een OAuth 2,0-toegangs token geretourneerd. Dit token wordt automatisch door Azure CLI gebruikt voor het autoriseren van volgende gegevens bewerkingen tegen Queue Storage. Voor ondersteunde bewerkingen hoeft u geen account sleutel of SAS-token meer door te geven met de opdracht.
 
 U kunt machtigingen voor de wachtrij gegevens toewijzen aan een Azure AD-beveiligings-principal via Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Zie [Manage access rights to Azure Storage Data with Azure RBAC](../common/storage-auth-aad-rbac-portal.md)(Engelstalig) voor meer informatie over Azure-rollen in azure Storage.
 
@@ -55,7 +58,7 @@ Zie [Storage-bewerkingen aanroepen met OAuth-tokens](/rest/api/storageservices/a
 
 In het volgende voor beeld ziet u hoe u een wachtrij maakt vanuit Azure CLI met behulp van uw Azure AD-referenties. Als u de wachtrij wilt maken, moet u zich aanmelden bij de Azure CLI en hebt u een resource groep en een opslag account nodig.
 
-1. Voordat u de wachtrij maakt, moet u de rol van [BLOB voor gegevens opslag](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor) aan uzelf toewijzen. Hoewel u de eigenaar van het account bent, hebt u expliciete machtigingen nodig om gegevens bewerkingen uit te voeren op het opslag account. Zie voor meer informatie over het toewijzen van Azure-functies [de Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](../common/storage-auth-aad-rbac-portal.md).
+1. Voordat u de wachtrij maakt, wijst u de rol [gegevens Inzender voor opslag wachtrij](../../role-based-access-control/built-in-roles.md#storage-queue-data-contributor) toe aan uzelf. Hoewel u de eigenaar van het account bent, hebt u expliciete machtigingen nodig om gegevens bewerkingen uit te voeren op het opslag account. Zie voor meer informatie over het toewijzen van Azure-functies [de Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](../common/storage-auth-aad-rbac-portal.md).
 
     > [!IMPORTANT]
     > Het kan enkele minuten duren voordat Azure-roltoewijzingen worden doorgegeven.
@@ -98,7 +101,7 @@ az storage queue create \
 
 U kunt autorisatie parameters opgeven in omgevings variabelen om te voor komen dat ze worden opgenomen in elke aanroep van een Azure Storage gegevens bewerking. De volgende tabel beschrijft de beschik bare omgevings variabelen.
 
-| Omgevingsvariabele | Beschrijving |
+| Omgevingsvariabele | Description |
 |--|--|
 | **AZURE_STORAGE_ACCOUNT** | De naam van het opslagaccount. Deze variabele moet worden gebruikt in combi natie met de sleutel van het opslag account of een SAS-token. Als er geen van beide aanwezig is, probeert de Azure CLI de toegangs sleutel voor het opslag account op te halen met behulp van het geverifieerde Azure AD-account. Als een groot aantal opdrachten tegelijk wordt uitgevoerd, is het mogelijk dat de Azure Storage Resource provider beperkings limiet is bereikt. Zie [schaalbaarheids-en prestatie doelen voor de resource provider van Azure Storage](../common/scalability-targets-resource-provider.md)voor meer informatie over limieten voor resource providers. |
 | **AZURE_STORAGE_KEY** | De opslagaccountsleutel. Deze variabele moet worden gebruikt in combi natie met de naam van het opslag account. |

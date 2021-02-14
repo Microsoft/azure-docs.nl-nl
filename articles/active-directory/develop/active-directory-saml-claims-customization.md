@@ -13,12 +13,12 @@ ms.date: 12/09/2020
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 0ded249a55e5a59bdcad7407694cbd5ed4cf2352
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 05447f41ca891adfe14533a74dfedf153e3c5773
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756069"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102696"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen
 
@@ -54,7 +54,7 @@ Als de SAML-aanvraag geen element bevat voor NameIDPolicy, wordt het NameID door
 
 U kunt een van de volgende opties selecteren in de vervolg keuzelijst **Kies naam-id-indeling** .
 
-| NameID-indeling | Beschrijving |
+| NameID-indeling | Description |
 |---------------|-------------|
 | **Prijs** | Micro soft Identity platform gebruikt de standaard indeling voor de bron. |
 | **Permanent** | Micro soft Identity platform gebruikt persistent als de NameID-indeling. |
@@ -69,7 +69,7 @@ Selecteer de gewenste bron voor de `NameIdentifier` claim (of NameID). U kunt ki
 
 | Naam | Beschrijving |
 |------|-------------|
-| Email | Het e-mailadres van de gebruiker |
+| E-mail | Het e-mailadres van de gebruiker |
 | userprincipalName | UPN (User Principal Name) van de gebruiker |
 | onpremisessamaccount | SAM-account naam die is gesynchroniseerd vanuit on-premises Azure AD |
 | id | Objectid van de gebruiker in azure AD |
@@ -81,10 +81,8 @@ Zie voor meer informatie [tabel 3: geldige ID-waarden per bron](active-directory
 
 U kunt ook een constante (statische) waarde toewijzen aan claims die u in azure AD definieert. Volg de onderstaande stappen om een constante waarde toe te wijzen:
 
-1. Klik in <a href="https://portal.azure.com/" target="_blank">het <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>, in het gedeelte **gebruikers kenmerken & claims** , op het pictogram **bewerken** om de claims te bewerken.
-
+1. Klik in het <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>, in het gedeelte **gebruikers kenmerken & claims** , op het pictogram **bewerken** om de claims te bewerken.
 1. Klik op de vereiste claim die u wilt wijzigen.
-
 1. Voer de constante waarde zonder aanhalings tekens in het **bron kenmerk** in volgens uw organisatie en klik op **Opslaan**.
 
     ![De sectie kenmerken van org & in het Azure Portal](./media/active-directory-saml-claims-customization/organization-attribute.png)

@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22ac3b9ac5f7a10226e8dc7197fdf60dc0a84e3b
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: fb8533f4ca714402482c666c520c1d0bd745e8cf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627613"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363267"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -67,21 +67,6 @@ Deze rol verleent ook de mogelijkheid om _toestemming_ te geven aan gedelegeerde
 
 Gebruikers met deze rol kunnen toepassings registraties maken wanneer de instelling ' gebruikers kunnen toepassingen registreren ' is ingesteld op Nee. Deze rol verleent ook toestemming om de toestemming te geven aan de hand van een eigen naam wanneer de instelling ' gebruikers kunnen toestemming geven voor het openen van Bedrijfs gegevens namens hun naam ' is ingesteld op Nee. Gebruikers die aan deze rol zijn toegewezen, worden toegevoegd als eigen aren bij het maken van nieuwe toepassings registraties of zakelijke toepassingen.
 
-### <a name="authentication-administrator"></a>[Verificatiebeheerder](#authentication-administrator-permissions)
-
-Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor sommige gebruikers en kunnen wacht woorden voor alle gebruikers bijwerken. Verificatie beheerders kunnen vereisen dat gebruikers die niet-beheerders zijn of aan sommige rollen zijn toegewezen, zich opnieuw registreren bij bestaande referenties zonder wacht woord (bijvoorbeeld MFA of FIDO), en kunnen ook **MFA op het apparaat** intrekken, waarbij wordt gevraagd om MFA bij de volgende aanmelding. Of een verificatie beheerder het wacht woord van een gebruiker opnieuw kan instellen, is afhankelijk van de rol waaraan de gebruiker is toegewezen. Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen waarvoor een verificatie beheerder wacht woorden opnieuw kan instellen.
-
-Met de rol [bevoorrechte verificatie beheerder](#privileged-authentication-administrator) kunt u de registratie en multi-factor Authentication afdwingen voor alle gebruikers.
-
-> [!IMPORTANT]
-> Gebruikers met deze rol kunnen referenties wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van de referenties van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
->
->* Toepassings registratie en eigen aren van bedrijfs toepassingen, die referenties kunnen beheren van apps waarvan ze eigenaar zijn. Deze apps hebben mogelijk privileged-machtigingen in azure AD en elders niet verleend aan verificatie beheerders. Via dit pad kan een verificatie beheerder mogelijk de identiteit van een toepassings eigenaar aannemen en vervolgens de identiteit van een bevoorrechte toepassing verder aannemen door de referenties voor de toepassing bij te werken.
->* Eigen aars van Azure-abonnementen, die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie in Azure.
->* Groeps eigenaren van beveiligings groepen en Microsoft 365, wie groepslid maatschap kan beheren. Deze groepen kunnen toegang verlenen tot gevoelige of persoonlijke informatie of kritieke configuratie in azure AD en elders.
->* Beheerders in andere services buiten Azure AD, zoals Exchange Online, Office Security and Compliance Center en Human Resources Systems.
->* Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
-
 ### <a name="attack-payload-author"></a>[Auteur van aanvals Payload](#attack-payload-author-permissions)
 
 Gebruikers met deze rol kunnen payloads voor aanvallen maken, maar niet daad werkelijk starten of plannen. Er zijn vervolgens nettoladingen voor aanvallen beschikbaar voor alle beheerders in de Tenant die ze kunnen gebruiken om een simulatie te maken.
@@ -89,6 +74,51 @@ Gebruikers met deze rol kunnen payloads voor aanvallen maken, maar niet daad wer
 ### <a name="attack-simulation-administrator"></a>[Simulatie beheerder voor aanvallen](#attack-simulation-administrator-permissions)
 
 Gebruikers met deze rol kunnen alle aspecten van het maken en beheren van aanvallen simuleren, starten/plannen van een simulatie en de beoordeling van simulatie resultaten. Leden van deze rol hebben deze toegang voor alle simulaties in de Tenant.
+
+### <a name="authentication-administrator"></a>[Verificatiebeheerder](#authentication-administrator-permissions)
+
+Gebruikers met deze rol kunnen verificatie methoden (inclusief wacht woorden) voor niet-beheerders en bepaalde rollen instellen of opnieuw instellen. Verificatie beheerders kunnen vereisen dat gebruikers die niet-beheerders zijn of aan sommige rollen zijn toegewezen, zich opnieuw registreren bij bestaande referenties zonder wacht woord (bijvoorbeeld MFA of FIDO), en kunnen ook **MFA op het apparaat** intrekken, waarbij wordt gevraagd om MFA bij de volgende aanmelding. Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen die door een verificatie beheerder kunnen worden gelezen of bijgewerkt authentcation-methoden.
+
+De rol [privileged Authentication Administrator](#privileged-authentication-administrator) heeft toestemming om herregistratie en multi-factor Authentication af te dwingen voor alle gebruikers.
+
+De rol [authenticatie beleids beheerder](#authentication-policy-administrator) heeft machtigingen om het beleid voor de verificatie methode van de Tenant in te stellen dat bepaalt welke methoden elke gebruiker kan registreren en gebruiken.
+
+| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |  
+| ---- | ---- | ---- | ---- | ---- | ---- | 
+| Verificatie beheerder | Ja voor sommige gebruikers (zie hierboven) | Ja voor sommige gebruikers (zie hierboven) | Nee | Nee | Nee | 
+| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers  |Nee | Nee  |Nee | 
+| Verificatie beleids beheerder | Nee  |Nee | Ja | Ja | Ja | 
+
+> [!IMPORTANT]
+> Gebruikers met deze rol kunnen referenties wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van de referenties van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
+>
+>* Toepassings registratie en eigen aren van bedrijfs toepassingen, die referenties kunnen beheren van apps waarvan ze eigenaar zijn. Deze apps hebben mogelijk privileged-machtigingen in azure AD en elders niet verleend aan verificatie beheerders. Via dit pad kan een verificatie beheerder de identiteit van een toepassings eigenaar aannemen en vervolgens de identiteit van een bevoorrechte toepassing verder aannemen door de referenties voor de toepassing bij te werken.
+>* Eigen aars van Azure-abonnementen, die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie in Azure.
+>* Groeps eigenaren van beveiligings groepen en Microsoft 365, wie groepslid maatschap kan beheren. Deze groepen kunnen toegang verlenen tot gevoelige of persoonlijke informatie of kritieke configuratie in azure AD en elders.
+>* Beheerders in andere services buiten Azure AD, zoals Exchange Online, Office Security and Compliance Center en Human Resources Systems.
+>* Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
+
+> [!IMPORTANT]
+> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](https://docs.microsoft.com/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
+
+### <a name="authentication-policy-administrator"></a>[Verificatie beleids beheerder](#authentication-policy-administrator-permissions)
+
+Gebruikers met deze rol kunnen het beleid voor verificatie methoden, MFA-instellingen voor tenants en wachtwoord beveiligings beleid configureren. Met deze rol wordt een machtiging verleend voor het beheren van instellingen voor wachtwoord beveiliging: slimme vergrendelings configuraties en het bijwerken van de lijst met aangepaste verboden wacht woorden. 
+
+De rollen [verificatie beheerder](#authentication-administrator) en [bevoegde authenticatie beheerder](#privileged-authentication-administrator) hebben machtigingen voor het beheren van geregistreerde verificatie methoden voor gebruikers en kunnen herregistratie en multi-factor Authentication afdwingen voor alle gebruikers. 
+
+| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |  
+| ---- | ---- | ---- | ---- | ---- | ---- | 
+| Verificatie beheerder | Ja voor sommige gebruikers (zie hierboven) | Ja voor sommige gebruikers (zie hierboven) | Nee | Nee | Nee | 
+| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers  |Nee | Nee  |Nee | 
+| Verificatie beleids beheerder | Nee  |Nee | Ja | Ja | Ja | 
+
+> [!IMPORTANT]
+> Deze rol is momenteel niet geschikt voor het beheren van MFA-instellingen in de verouderde MFA-beheer Portal.
+
+### <a name="azure-ad-joined-device-local-administrator"></a>[Lokale beheerder van lid van Azure AD-apparaat](#azure-ad-joined-device-local-administrator-permissions)
+
+Deze rol is alleen beschikbaar voor toewijzing als extra lokale beheerder in [Apparaatinstellingen](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Gebruikers met deze rol worden lokale computer beheerders op alle Windows 10-apparaten die lid zijn van Azure Active Directory. Ze kunnen geen apparaten objecten in Azure Active Directory beheren.
 
 ### <a name="azure-devops-administrator"></a>[Azure DevOps-beheerder](#azure-devops-administrator-permissions)
 
@@ -164,12 +194,7 @@ Beheert [klanten-lockbox-aanvragen](/office365/admin/manage/customer-lockbox-req
 
 ### <a name="desktop-analytics-administrator"></a>[Desktop Analytics-beheerder](#desktop-analytics-administrator-permissions)
 
-
 Gebruikers met deze rol kunnen de bureau blad Analytics en de aanpassing van Office-&-beleids Services beheren. Voor desktop Analytics is dit onder andere de mogelijkheid om inventarisatie van assets te bekijken, implementatie plannen te maken, implementatie en status weer te geven. Voor Office Customization & Policy service kunnen gebruikers met deze rol Office-beleid beheren.
-
-### <a name="device-administrators"></a>[Apparaatbeheerders](#device-administrators-permissions)
-
-Deze rol is alleen beschikbaar voor toewijzing als extra lokale beheerder in [Apparaatinstellingen](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Gebruikers met deze rol worden lokale computer beheerders op alle Windows 10-apparaten die lid zijn van Azure Active Directory. Ze kunnen geen apparaten objecten in Azure Active Directory beheren.
 
 ### <a name="directory-readers"></a>[Lezers van mappen](#directory-readers-permissions)
 
@@ -186,14 +211,18 @@ Niet gebruiken. Deze rol wordt automatisch toegewezen aan de Azure AD Connect-se
 ### <a name="directory-writers"></a>[Adreslijstschrijvers](#directory-writers-permissions)
 Gebruikers met deze rol kunnen basis informatie van gebruikers, groepen en service-principals lezen en bijwerken. Wijs deze rol alleen toe aan toepassingen die het [toestemmings raamwerk](../develop/quickstart-register-app.md)niet ondersteunen. Het mag niet worden toegewezen aan gebruikers.
 
-### <a name="dynamics-365-administrator--crm-administrator"></a>[Dynamics 365-beheerder/CRM-beheerder](#crm-service-administrator-permissions)
+### <a name="domain-name-administrator"></a>[Domein naam beheerder](#domain-name-administrator-permissions)
+
+Gebruikers met deze rol kunnen domein namen beheren (lezen, toevoegen, verifiëren, bijwerken en verwijderen). Ze kunnen ook Directory gegevens over gebruikers, groepen en toepassingen lezen, aangezien deze objecten domein afhankelijkheden hebben. Voor on-premises omgevingen kunnen gebruikers met deze rol domein namen voor federatie configureren zodat gekoppelde gebruikers altijd on-premises worden geverifieerd. Deze gebruikers kunnen zich vervolgens aanmelden bij Azure AD-Services met hun on-premises wacht woorden via eenmalige aanmelding. Federatie-instellingen moeten worden gesynchroniseerd via Azure AD Connect, dus gebruikers hebben ook machtigingen voor het beheren van Azure AD Connect.
+
+### <a name="dynamics-365-administrator"></a>[Dynamics 365-beheerder](#dynamics-365-administrator-permissions)
 
 Gebruikers met deze rol hebben algemene machtigingen in micro soft Dynamics 365 online, wanneer de service aanwezig is, evenals de mogelijkheid om ondersteunings tickets te beheren en de service status te controleren. Meer informatie over [het gebruik van de service beheerdersrol om uw Azure AD-organisatie te beheren](/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
 
 > [!NOTE]
 > In de Microsoft Graph-API en Azure AD Power shell wordt deze rol aangeduid als ' Dynamics 365 service Administrator '. Het is "Dynamics 365-beheerder" in de [Azure Portal](https://portal.azure.com).
 
-### <a name="exchange-administrator"></a>[Exchange-beheerder](#exchange-service-administrator-permissions)
+### <a name="exchange-administrator"></a>[Exchange-beheerder](#exchange-administrator-permissions)
 
 Gebruikers met deze rol hebben algemene machtigingen in micro soft Exchange Online, wanneer de service aanwezig is. Biedt ook de mogelijkheid om alle Microsoft 365 groepen te maken en te beheren, ondersteunings tickets te beheren en de service status te controleren. Meer informatie [over Microsoft 365 beheerders rollen](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
@@ -209,7 +238,7 @@ Gebruikers met deze rol kunnen gebruikers stromen maken en beheren (ook wel ' in
 
 Gebruikers met deze rol kunnen aangepaste kenmerken die beschikbaar zijn voor alle gebruikers stromen in de Azure AD-organisatie toevoegen of verwijderen. Als zodanig kunnen gebruikers met deze rol nieuwe elementen wijzigen of toevoegen aan het schema van de eind gebruiker en de invloed hebben op de werking van alle gebruikers stromen en indirect als gevolg van wijzigingen in welke gegevens kunnen worden gesteld aan eind gebruikers en uiteindelijk worden verzonden als claims naar toepassingen. Deze rol kan geen gebruikers stromen bewerken.
 
-### <a name="external-identity-provider-administrator"></a>[Beheerder van externe ID-provider](#external-identity-provider-administrator-permissions)
+### <a name="external-identity-provider-administrator"></a>[Beheerder van externe id-providers](#external-identity-provider-administrator-permissions)
 
 Deze beheerder beheert Federatie tussen Azure AD-organisaties en externe ID-providers. Met deze rol kunnen gebruikers nieuwe id-providers toevoegen en alle beschik bare instellingen configureren (bijvoorbeeld het pad Authentication, Service-ID, toegewezen sleutel containers). Deze gebruiker kan de Azure AD-organisatie in staat stellen verificaties van externe ID-providers te vertrouwen. De impact op de ervaring van de eind gebruiker is afhankelijk van het type organisatie:
 
@@ -272,7 +301,7 @@ Gebruikers met deze rol hebben toegang tot de volledige set beheer mogelijkheden
 ### <a name="insights-business-leader"></a>[Insights-bedrijfsleider](#insights-business-leader-permissions)
 Gebruikers met deze rol hebben toegang tot een set Dash boards en inzichten via de [M365 Insights-toepassing](https://go.microsoft.com/fwlink/?linkid=2129521). Dit omvat volledige toegang tot alle Dash boards en weer gegeven inzicht in de functionaliteit voor het verkennen van gegevens. Gebruikers met deze rol hebben geen toegang tot de configuratie-instellingen van het product. Dit is de verantwoordelijkheid van de rol Insights-beheerder.
 
-### <a name="intune-administrator"></a>[InTune-beheerder](#intune-service-administrator-permissions)
+### <a name="intune-administrator"></a>[InTune-beheerder](#intune-administrator-permissions)
 
 Gebruikers met deze rol hebben algemene machtigingen binnen Microsoft Intune online, wanneer de service aanwezig is. Daarnaast bevat deze rol de mogelijkheid om gebruikers en apparaten te beheren om het beleid te koppelen, en om groepen te maken en te beheren. Meer informatie over op [rollen gebaseerd beheer beheer (RBAC) met Microsoft intune](/intune/role-based-access-control).
 
@@ -333,7 +362,7 @@ Niet gebruiken. Deze rol is afgeschaft en wordt in de toekomst verwijderd uit Az
 
 Gebruikers met deze rol hebben beperkte mogelijkheden voor het beheren van wacht woorden. Deze rol biedt geen mogelijkheid om service aanvragen te beheren of de service status te controleren. Of een wachtwoord beheerder het wacht woord van een gebruiker opnieuw kan instellen, is afhankelijk van de rol waaraan de gebruiker is toegewezen. Zie [machtigingen voor wacht woord opnieuw instellen](#password-reset-permissions)voor een lijst met de rollen die een wachtwoord beheerder in staat stelt wacht woorden opnieuw in te stellen.
 
-### <a name="power-bi-administrator"></a>[Power BI beheerder](#power-bi-service-administrator-permissions)
+### <a name="power-bi-administrator"></a>[Power BI beheerder](#power-bi-administrator-permissions)
 
 Gebruikers met deze rol hebben algemene machtigingen in micro soft Power BI, wanneer de service aanwezig is, evenals de mogelijkheid om ondersteunings tickets te beheren en de service status te controleren. Meer informatie over [de rol van Power bi-beheerder](/power-bi/service-admin-role).
 
@@ -354,7 +383,30 @@ Gebruikers met deze rol kunnen printers registreren en de printer status beheren
 
 ### <a name="privileged-authentication-administrator"></a>[Bevoorrechte verificatiebeheerder](#privileged-authentication-administrator-permissions)
 
-Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor alle gebruikers, met inbegrip van globale beheerders, en kunnen wacht woorden voor alle gebruikers bijwerken. Bevoegde authenticatie beheerders kunnen gebruikers dwingen om zich opnieuw te registreren bij bestaande niet-wachtwoord referenties (zoals MFA of FIDO) en ' MFA onthouden op het apparaat ' in te trekken bij de volgende aanmelding van alle gebruikers.
+Gebruikers met deze rol kunnen een verificatie methode (inclusief wacht woorden) instellen of opnieuw instellen voor alle gebruikers, met inbegrip van globale beheerders. Bevoegde authenticatie beheerders kunnen gebruikers dwingen om zich opnieuw te registreren bij bestaande niet-wachtwoord referenties (zoals MFA of FIDO) en ' MFA onthouden op het apparaat ' in te trekken bij de volgende aanmelding van alle gebruikers. 
+
+De rol [authenticatie beheerder](#authentication-administrator) heeft machtigingen voor het afdwingen van herregistratie en multi-factor Authentication voor standaard gebruikers en gebruikers met sommige beheerders rollen.
+
+De rol [authenticatie beleids beheerder](#authentication-policy-administrator) heeft machtigingen om het beleid voor de verificatie methode van de Tenant in te stellen dat bepaalt welke methoden elke gebruiker kan registreren en gebruiken.
+
+| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |  
+| ---- | ---- | ---- | ---- | ---- | ---- | 
+| Verificatie beheerder | Ja voor sommige gebruikers (zie hierboven) | Ja voor sommige gebruikers (zie hierboven) | Nee | Nee | Nee | 
+| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers  |Nee | Nee  |Nee | 
+| Verificatie beleids beheerder | Nee  |Nee | Ja | Ja | Ja | 
+
+> [!IMPORTANT]
+> Gebruikers met deze rol kunnen referenties wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van de referenties van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
+>
+>* Toepassings registratie en eigen aren van bedrijfs toepassingen, die referenties kunnen beheren van apps waarvan ze eigenaar zijn. Deze apps hebben mogelijk privileged-machtigingen in azure AD en elders niet verleend aan verificatie beheerders. Via dit pad kan een verificatie beheerder de identiteit van een toepassings eigenaar aannemen en vervolgens de identiteit van een bevoorrechte toepassing verder aannemen door de referenties voor de toepassing bij te werken.
+>* Eigen aars van Azure-abonnementen, die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie in Azure.
+>* Groeps eigenaren van beveiligings groepen en Microsoft 365, wie groepslid maatschap kan beheren. Deze groepen kunnen toegang verlenen tot gevoelige of persoonlijke informatie of kritieke configuratie in azure AD en elders.
+>* Beheerders in andere services buiten Azure AD, zoals Exchange Online, Office Security and Compliance Center en Human Resources Systems.
+>* Niet-beheerders als leidinggevenden, juridisch adviseur en Human Resources-werk nemers die mogelijk toegang tot gevoelige of persoonlijke informatie hebben.
+
+
+> [!IMPORTANT]
+> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](https://docs.microsoft.com/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
 
 ### <a name="privileged-role-administrator"></a>[Beheerder voor bevoorrechte rollen](#privileged-role-administrator-permissions)
 
@@ -432,7 +484,7 @@ Gebruikers met deze rol kunnen ondersteunings aanvragen openen met micro soft vo
 > [!NOTE]
 > Voorheen heeft deze rol de naam ' service beheerder ' in [Azure Portal](https://portal.azure.com) en [Microsoft 365 beheer centrum](https://admin.microsoft.com). We hebben de naam gewijzigd in ' service ondersteunings beheerder ' om uit te lijnen met de bestaande-naam in Microsoft Graph-API, Azure AD Graph API en Azure AD Power shell.
 
-### <a name="sharepoint-administrator"></a>[Share point-beheerder](#sharepoint-service-administrator-permissions)
+### <a name="sharepoint-administrator"></a>[Share point-beheerder](#sharepoint-administrator-permissions)
 
 Gebruikers met deze rol hebben algemene machtigingen in micro soft share point online, wanneer de service aanwezig is, evenals de mogelijkheid om alle Microsoft 365 groepen te maken en beheren, ondersteunings tickets te beheren en de service status te controleren. Meer informatie [over beheerders rollen](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
@@ -442,12 +494,16 @@ Gebruikers met deze rol hebben algemene machtigingen in micro soft share point o
 > [!NOTE]
 > Deze rol verleent ook scoped-machtigingen voor de Microsoft Graph-API voor Microsoft Intune, waardoor het beheer en de configuratie van beleids regels die betrekking hebben op share point-en OneDrive-resources.
 
-### <a name="skype-for-business--lync-administrator"></a>[Skype voor bedrijven/Lync-beheerder](#lync-service-administrator-permissions)
+### <a name="skype-for-business-administrator"></a>[Skype voor bedrijven-beheerder](#skype-for-business-administrator-permissions)
 
 Gebruikers met deze rol hebben algemene machtigingen in micro soft Skype voor bedrijven, wanneer de service aanwezig is, en het beheren van Skype-specifieke gebruikers kenmerken in Azure Active Directory. Daarnaast verleent deze rol de mogelijkheid om ondersteunings tickets te beheren en de service status te controleren en om toegang te krijgen tot de teams en het beheer centrum van Skype voor bedrijven. Het account moet ook een licentie hebben voor teams of Power shell-cmdlets kunnen niet worden uitgevoerd. Meer informatie over de licentie gegevens voor [de rol van Skype voor bedrijven-beheerder](https://support.office.com/article/about-the-skype-for-business-admin-role-aeb35bda-93fc-49b1-ac2c-c74fbeb737b5) en teams in [Skype voor bedrijven en micro soft teams-invoeg toepassingen](/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing)
 
 > [!NOTE]
 > In de Microsoft Graph-API en Azure AD Power shell wordt deze rol aangeduid als Lync-service beheerder. Het is "Skype voor bedrijven-beheerder" in de [Azure Portal](https://portal.azure.com/).
+
+### <a name="teams-administrator"></a>[Team beheerder](#teams-administrator-permissions)
+
+Gebruikers met deze rol kunnen alle aspecten van de werk belasting van micro soft teams beheren via micro soft teams & het beheer centrum van Skype voor bedrijven en de respectieve Power shell-modules. Dit omvat onder andere alle beheer hulpprogramma's die betrekking hebben op telefonie, berichten, vergaderingen en de teams zelf. Met deze rol verleent u ook de mogelijkheid om alle Microsoft 365 groepen te maken en beheren, ondersteunings tickets te beheren en de service status te controleren.
 
 ### <a name="teams-communications-administrator"></a>[Teams-communicatiebeheerder](#teams-communications-administrator-permissions)
 
@@ -464,10 +520,6 @@ Gebruikers met deze rol kunnen communicatie problemen in micro soft-teams oploss
 ### <a name="teams-devices-administrator"></a>[Teams-apparaatbeheerder](#teams-devices-administrator-permissions)
 
 Gebruikers met deze rol kunnen [teams met gecertificeerde apparaten](https://www.microsoft.com/microsoft-365/microsoft-teams/across-devices/devices) beheren vanuit het teams beheer centrum. Met deze rol kunnen alle apparaten in één oogopslag worden weer gegeven, met de mogelijkheid om apparaten te zoeken en te filteren. De gebruiker kan de details van elk apparaat controleren, inclusief het aangemelde account, het merk en het model van het apparaat. De gebruiker kan de instellingen op het apparaat wijzigen en de software versies bijwerken. Deze rol verleent geen machtigingen om de activiteit teams te controleren en de kwaliteit van het apparaat aan te roepen. 
-
-### <a name="teams-service-administrator"></a>[Teams-servicebeheerder](#teams-service-administrator-permissions)
-
-Gebruikers met deze rol kunnen alle aspecten van de werk belasting van micro soft teams beheren via micro soft teams & het beheer centrum van Skype voor bedrijven en de respectieve Power shell-modules. Dit omvat onder andere alle beheer hulpprogramma's die betrekking hebben op telefonie, berichten, vergaderingen en de teams zelf. Met deze rol verleent u ook de mogelijkheid om alle Microsoft 365 groepen te maken en beheren, ondersteunings tickets te beheren en de service status te controleren.
 
 ### <a name="usage-summary-reports-reader"></a>[Lezer van gebruiks samenvattings rapporten](#usage-summary-reports-reader-permissions)
 
@@ -566,22 +618,6 @@ Kan toepassings registraties maken onafhankelijk van de instelling gebruikers ku
 > | micro soft. Directory/oAuth2PermissionGrants/createAsOwner | Maak oAuth2PermissionGrants in Azure Active Directory. De Maker wordt toegevoegd als de eerste eigenaar en het gemaakte object telt op het quotum van 250 gemaakte objecten van de maker. |
 > | microsoft.directory/servicePrincipals/createAsOwner | Maak servicePrincipals in Azure Active Directory. De Maker wordt toegevoegd als de eerste eigenaar en het gemaakte object telt op het quotum van 250 gemaakte objecten van de maker. |
 
-### <a name="authentication-administrator-permissions"></a>Verificatie beheerders machtigingen
-
-Voor het weer geven, instellen en opnieuw instellen van verificatie methode-informatie voor een niet-beheerders gebruiker.
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. Directory/gebruikers/invalidateAllRefreshTokens | De tokens voor het vernieuwen van alle gebruikers in Azure Active Directory ongeldig te maken. |
-> | micro soft. Directory/Users/strongAuthentication/update | Geavanceerde verificatie-eigenschappen zoals MFA-referentie gegevens bijwerken. |
-> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
-> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
-> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-> | micro soft. map/gebruikers/wacht woord/bijwerken | Update wacht woorden voor alle gebruikers in de organisatie van Microsoft 365. Raadpleeg de online documentatie voor meer informatie. |
-
 ### <a name="attack-payload-author-permissions"></a>Auteurs machtigingen voor de aanvals Payload
 
 Kan een Payload voor aanvallen maken die later door een beheerder kan worden geïmplementeerd.
@@ -603,13 +639,55 @@ Kan alle aspecten van simulatie van aanvals campagnes maken en beheren.
 > | micro soft. office365. protectionCenter/attackSimulator/Reports/allProperties/lezen | Lees rapporten over simulatie van aanvallen, reacties en bijbehorende trainingen. |
 > | micro soft. office365. protectionCenter/attackSimulator/simulatie/allProperties/allTasks | Simulatie sjablonen voor aanvallen in een aanvals Simulator maken en beheren. |
 
+### <a name="authentication-administrator-permissions"></a>Verificatie beheerders machtigingen
+
+Voor het weer geven, instellen en opnieuw instellen van verificatie methode-informatie voor een niet-beheerders gebruiker.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Directory/gebruikers/invalidateAllRefreshTokens | De tokens voor het vernieuwen van alle gebruikers in Azure Active Directory ongeldig te maken. |
+> | micro soft. Directory/Users/strongAuthentication/update | Geavanceerde verificatie-eigenschappen zoals MFA-referentie gegevens bijwerken. |
+> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+> | micro soft. map/gebruikers/wacht woord/bijwerken | Update wacht woorden voor alle gebruikers in de organisatie van Microsoft 365. Raadpleeg de online documentatie voor meer informatie. |
+
+### <a name="authentication-policy-administrator-permissions"></a>Beheerders machtigingen voor verificatie beleid
+
+Het is toegestaan om het beleid voor verificatie methoden, het wachtwoord beveiligings beleid en de MFA-instellingen voor de Tenant te bekijken en in te stellen.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Directory/organisatie/strongAuthentication/update | Geavanceerde auth-eigenschappen van een organisatie in Azure Active Directory bijwerken. |
+> | micro soft. map/userCredentialPolicies/maken | Referentie beleidsregels maken voor gebruikers in Azure Active Directory. |
+> | micro soft. Directory/userCredentialPolicies/verwijderen | Referentie beleid voor gebruikers in Azure Active Directory verwijderen. |
+> | micro soft. map/userCredentialPolicies/standaard/lezen | Lees de standaard eigenschappen van referentie beleid voor gebruikers in Azure Active Directory. |
+> | micro soft. map/userCredentialPolicies/eigen aren/lezen | Lees de eigen aren van referentie beleidsregels voor gebruikers in Azure Active Directory. |
+> | micro soft. map/userCredentialPolicies/policyAppliedTo/lezen | De navigatie koppeling voor beleid. appliesTo lezen in Azure Active Directory. |
+> | micro soft. Directory/userCredentialPolicies/Basic/update | Basis beleid voor gebruikers in Azure Active Directory bijwerken. |
+> | micro soft. map/userCredentialPolicies/eigen aren/bijwerken | Eigen aren van referentie beleid voor gebruikers in Azure Active Directory bijwerken. |
+> | micro soft. Directory/userCredentialPolicies/tenantDefault/update | Werk de eigenschap Policy. isOrganizationDefault bij in Azure Active Directory. |
+
+### <a name="azure-ad-joined-device-local-administrator-permissions"></a>Lokale beheerders machtigingen van Azure AD toegevoegd aan het apparaat
+
+Gebruikers die aan deze rol zijn toegewezen, worden toegevoegd aan de lokale groep Administrators op apparaten die lid zijn van Azure AD.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. map/groupSettings/Basic/lezen | Lees de basis eigenschappen van groupSettings in Azure Active Directory. |
+> | micro soft. map/groupSettingTemplates/Basic/lezen | Lees de basis eigenschappen van groupSettingTemplates in Azure Active Directory. |
+
 ### <a name="azure-devops-administrator-permissions"></a>Beheerders machtigingen voor Azure DevOps
 
 Kan het Azure DevOps-organisatie beleid en-instellingen beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie [Beschrijving van rol](#azure-devops-administrator) hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -622,7 +700,6 @@ Kan alle aspecten van de Azure Information Protection-Service beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie [Beschrijving van rol](#) hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -658,7 +735,6 @@ Kan algemene taken met betrekking tot facturering uitvoeren, zoals het bijwerken
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -734,86 +810,12 @@ Volledige toegang tot het beheren van apparaten in azure AD.
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 
-### <a name="global-administrator-permissions"></a>Algemene beheerders machtigingen
-
-Kan alle aspecten beheren van Azure AD en micro soft-services die gebruikmaken van Azure AD-identiteiten.
-
-> [!NOTE]
-> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. Aad. cloudAppSecurity/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. Aad. cloudAppSecurity en werk deze bij. |
-> | micro soft. Directory/administrativeUnits/allProperties/allTasks | Maak en verwijder administrativeUnits en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/toepassingen/allProperties/allTasks | Maak en verwijder toepassingen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/appRoleAssignments/allProperties/allTasks | Maak en verwijder appRoleAssignments en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
-> | micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
-> | micro soft. Directory/Contacts/allProperties/allTasks | Maak en Verwijder contact personen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/contracten/allProperties/allTasks | Maak en verwijder contracten en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/apparaten/allProperties/allTasks | Maak en Verwijder apparaten en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/directoryRoles/allProperties/allTasks | Maak en verwijder directoryRoles en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/directoryRoleTemplates/allProperties/allTasks | Maak en verwijder directoryRoleTemplates en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/domeinen/allProperties/allTasks | Maak en verwijder domeinen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/entitlementManagement/allProperties/allTasks | Maak en verwijder resources en Lees alle eigenschappen in het beheer van rechten van Azure AD en werk deze bij. |
-> | micro soft. Directory/groepen/allProperties/allTasks | Maak en verwijder groepen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/groupsAssignableToRoles/allProperties/update | Update groepen waarvoor de eigenschap isAssignableToRole is ingesteld op True in Azure Active Directory. |
-> | micro soft. map/groupsAssignableToRoles/maken | Groepen maken waarvan de eigenschap isAssignableToRole is ingesteld op waar in Azure Active Directory. |
-> | micro soft. Directory/groupsAssignableToRoles/verwijderen | Verwijder groepen waarvoor de eigenschap isAssignableToRole is ingesteld op True in Azure Active Directory. |
-> | micro soft. Directory/groupSettings/allProperties/allTasks | Maak en verwijder groupSettings en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/groupSettingTemplates/allProperties/allTasks | Maak en verwijder groupSettingTemplates en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/loginTenantBranding/allProperties/allTasks | Maak en verwijder loginTenantBranding en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/oAuth2PermissionGrants/allProperties/allTasks | Maak en verwijder oAuth2PermissionGrants en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. map/organisatie-allProperties/allTasks | Maak en verwijder organisatie en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/policies/allProperties/allTasks | Maak en verwijder beleids regels en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
-> | micro soft. Directory/roleAssignments/allProperties/allTasks | Maak en verwijder roleAssignments en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/roleDefinitions/allProperties/allTasks | Maak en verwijder roleDefinitions en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/scopedRoleMemberships/allProperties/allTasks | Maak en verwijder scopedRoleMemberships en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. Directory/serviceAction/activateService | Kan de Activateservice-service actie uitvoeren in Azure Active Directory |
-> | micro soft. Directory/serviceAction/disableDirectoryFeature | Kan de Disabledirectoryfeature-service actie uitvoeren in Azure Active Directory |
-> | micro soft. Directory/serviceAction/enableDirectoryFeature | Kan de Enabledirectoryfeature-service actie uitvoeren in Azure Active Directory |
-> | micro soft. Directory/serviceAction/getAvailableExtentionProperties | Kan de Getavailableextentionproperties-service actie uitvoeren in Azure Active Directory |
-> | microsoft.directory/servicePrincipals/allProperties/allTasks | Maak en verwijder service-principals, geef alle eigenschappen in Azure Active Directory weer en werk deze eigenschappen bij. |
-> | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
-> | micro soft. Directory/subscribedSkus/allProperties/allTasks | Maak en verwijder subscribedSkus en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. map/users/allProperties/allTasks | Maak en verwijder gebruikers en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
-> | micro soft. directorySync/-beleeningen/allTasks | Alle acties in Azure AD Connect uitvoeren. |
-> | micro soft. Aad. identityProtection/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. Aad. identityProtection en werk deze bij. |
-> | micro soft. Aad. privilegedIdentityManagement/aldaar/Lees | Alle resources in micro soft. Aad. privilegedIdentityManagement lezen. |
-> | micro soft. Azure. advancedThreatProtection/Alvan de aflezingen/lezen | Lees alle resources in micro soft. Azure. advancedThreatProtection. |
-> | micro soft. Azure. informationProtection/allTasks | Beheer alle aspecten van Azure Information Protection. |
-> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
-> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-> | micro soft. commerce. facturering/toerekeningen/allTasks | Beheer alle aspecten van de facturering. |
-> | micro soft. intune/toestemmingen/allTasks | Beheer alle aspecten van intune. |
-> | micro soft. office365. complianceManager/cons/allTasks | Alle aspecten van Office 365-nalevings beheer beheren |
-> | micro soft. office365. desktopAnalytics/cons/allTasks | Beheer alle aspecten van Desktop Analytics. |
-> | micro soft. office365. Exchange/alallTasks | Beheer alle aspecten van Exchange Online. |
-> | micro soft. office365. lockbox/cons/allTasks | Alle aspecten van Office 365 Klanten-lockbox beheren |
-> | micro soft. office365. messageCenter/berichten/lezen | Lees berichten in micro soft. office365. messageCenter. |
-> | micro soft. office365. messageCenter/securityMessages/lezen | Lees securityMessages in micro soft. office365. messageCenter. |
-> | micro soft. office365. protectionCenter/cons/allTasks | Beheer alle aspecten van Office 365 Protection Center. |
-> | micro soft. office365. securityComplianceCenter/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. office365. securityComplianceCenter en werk deze bij. |
-> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
-> | micro soft. office365. share point/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. office365. share point en werk deze bij. |
-> | micro soft. office365. skypeForBusiness/cons/allTasks | Beheer alle aspecten van Skype voor bedrijven online. |
-> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-> | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-> | micro soft. powerApps. dynamics365/allTasks | Beheer alle aspecten van Dynamics 365. |
-> | micro soft. powerApps. powerBI/allTasks | Beheer alle aspecten van Power BI. |
-> | micro soft. Windows. defenderAdvancedThreatProtection/geleenheden/lezen | Alle resources in micro soft. Windows. defenderAdvancedThreatProtection lezen. |
-
 ### <a name="compliance-administrator-permissions"></a>Beheerders machtigingen voor naleving
 
 Kan nalevings configuratie en-rapporten in azure AD en Microsoft 365 lezen en beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -832,7 +834,6 @@ Hiermee wordt inhoud voor naleving gemaakt en beheerd.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -862,31 +863,12 @@ Kan mogelijkheden voor voorwaardelijke toegang beheren.
 > | micro soft. Directory/policies/conditionalAccess/policiesAppliedTo/lezen | Lees de eigenschap policies. conditionalAccess in Azure Active Directory. |
 > | micro soft. Directory/policies/conditionalAccess/tenantDefault/update | Werk de eigenschap policies. conditionalAccess bij in Azure Active Directory. |
 
-### <a name="crm-service-administrator-permissions"></a>Beheerders machtigingen voor CRM-Service
-
-Kan alle aspecten van het product Dynamics 365 beheren.
-
-> [!NOTE]
-> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
-> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-> | micro soft. powerApps. dynamics365/allTasks | Beheer alle aspecten van Dynamics 365. |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
-> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-
 ### <a name="customer-lockbox-access-approver-permissions"></a>Machtigingen voor toegang tot de gebruikers-LockBox
 
 Kan micro soft-ondersteunings aanvragen goed keuren voor toegang tot de organisatie gegevens van de klant.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -901,7 +883,6 @@ Kan de bureau blad Analytics en de aanpassing van Office-&-beleids Services behe
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -911,16 +892,6 @@ Kan de bureau blad Analytics en de aanpassing van Office-&-beleids Services behe
 > | micro soft. office365. desktopAnalytics/cons/allTasks | Beheer alle aspecten van Desktop Analytics. |
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-
-### <a name="device-administrators-permissions"></a>Beheerders machtigingen voor apparaten
-
-Gebruikers die aan deze rol zijn toegewezen, worden toegevoegd aan de lokale groep Administrators op apparaten die lid zijn van Azure AD.
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. map/groupSettings/Basic/lezen | Lees de basis eigenschappen van groupSettings in Azure Active Directory. |
-> | micro soft. map/groupSettingTemplates/Basic/lezen | Lees de basis eigenschappen van groupSettingTemplates in Azure Active Directory. |
 
 ### <a name="directory-readers-permissions"></a>Machtigingen voor Directory lezers
 Kan basis informatie over de Directory lezen. Voor het verlenen van toegang tot toepassingen, niet bedoeld voor gebruikers.
@@ -1050,13 +1021,39 @@ Kan basis informatie over de Directory lezen & schrijven. Voor het verlenen van 
 > | micro soft. Directory/gebruikers/reprocessLicenseAssignment | De licentie toewijzingen voor een gebruiker in Azure Active Directory opnieuw verwerken. |
 > | micro soft. map/users/userPrincipalName/update | Werk de eigenschap users. userPrincipalName bij in Azure Active Directory. |
 
-### <a name="exchange-service-administrator-permissions"></a>Beheerders machtigingen voor Exchange-service
+### <a name="domain-name-administrator-permissions"></a>Domein naam beheerders machtigingen
+
+Domein namen kunnen worden beheerd in de Cloud en on-premises.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Directory/domeinen/allProperties/allTasks | Maak en verwijder domeinen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+
+### <a name="dynamics-365-administrator-permissions"></a>Dynamics 365-beheerders machtigingen
+
+Kan alle aspecten van het product Dynamics 365 beheren.
+
+> [!NOTE]
+> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
+> | micro soft. powerApps. dynamics365/allTasks | Beheer alle aspecten van Dynamics 365. |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+
+### <a name="exchange-administrator-permissions"></a>Beheerders machtigingen voor Exchange
 
 Kan alle aspecten van het Exchange-product beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1104,12 +1101,84 @@ Configureer id-providers voor gebruik in directe Federatie.
 > | --- | --- |
 > | micro soft. Aad. B2C/identityProviders/allTasks | Id-providers lezen en configureren in Azure Active Directory B2C. |
 
+### <a name="global-administrator-permissions"></a>Algemene beheerders machtigingen
+
+Kan alle aspecten beheren van Azure AD en micro soft-services die gebruikmaken van Azure AD-identiteiten.
+
+> [!NOTE]
+> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Aad. cloudAppSecurity/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. Aad. cloudAppSecurity en werk deze bij. |
+> | micro soft. Directory/administrativeUnits/allProperties/allTasks | Maak en verwijder administrativeUnits en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/toepassingen/allProperties/allTasks | Maak en verwijder toepassingen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/appRoleAssignments/allProperties/allTasks | Maak en verwijder appRoleAssignments en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
+> | micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
+> | micro soft. Directory/Contacts/allProperties/allTasks | Maak en Verwijder contact personen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/contracten/allProperties/allTasks | Maak en verwijder contracten en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/apparaten/allProperties/allTasks | Maak en Verwijder apparaten en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/directoryRoles/allProperties/allTasks | Maak en verwijder directoryRoles en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/directoryRoleTemplates/allProperties/allTasks | Maak en verwijder directoryRoleTemplates en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/domeinen/allProperties/allTasks | Maak en verwijder domeinen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/entitlementManagement/allProperties/allTasks | Maak en verwijder resources en Lees alle eigenschappen in het beheer van rechten van Azure AD en werk deze bij. |
+> | micro soft. Directory/groepen/allProperties/allTasks | Maak en verwijder groepen en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/groupsAssignableToRoles/allProperties/update | Update groepen waarvoor de eigenschap isAssignableToRole is ingesteld op True in Azure Active Directory. |
+> | micro soft. map/groupsAssignableToRoles/maken | Groepen maken waarvan de eigenschap isAssignableToRole is ingesteld op waar in Azure Active Directory. |
+> | micro soft. Directory/groupsAssignableToRoles/verwijderen | Verwijder groepen waarvoor de eigenschap isAssignableToRole is ingesteld op True in Azure Active Directory. |
+> | micro soft. Directory/groupSettings/allProperties/allTasks | Maak en verwijder groupSettings en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/groupSettingTemplates/allProperties/allTasks | Maak en verwijder groupSettingTemplates en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/loginTenantBranding/allProperties/allTasks | Maak en verwijder loginTenantBranding en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/oAuth2PermissionGrants/allProperties/allTasks | Maak en verwijder oAuth2PermissionGrants en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. map/organisatie-allProperties/allTasks | Maak en verwijder organisatie en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/policies/allProperties/allTasks | Maak en verwijder beleids regels en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
+> | micro soft. Directory/roleAssignments/allProperties/allTasks | Maak en verwijder roleAssignments en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/roleDefinitions/allProperties/allTasks | Maak en verwijder roleDefinitions en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/scopedRoleMemberships/allProperties/allTasks | Maak en verwijder scopedRoleMemberships en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. Directory/serviceAction/activateService | Kan de Activateservice-service actie uitvoeren in Azure Active Directory |
+> | micro soft. Directory/serviceAction/disableDirectoryFeature | Kan de Disabledirectoryfeature-service actie uitvoeren in Azure Active Directory |
+> | micro soft. Directory/serviceAction/enableDirectoryFeature | Kan de Enabledirectoryfeature-service actie uitvoeren in Azure Active Directory |
+> | micro soft. Directory/serviceAction/getAvailableExtentionProperties | Kan de Getavailableextentionproperties-service actie uitvoeren in Azure Active Directory |
+> | microsoft.directory/servicePrincipals/allProperties/allTasks | Maak en verwijder service-principals, geef alle eigenschappen in Azure Active Directory weer en werk deze eigenschappen bij. |
+> | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
+> | micro soft. Directory/subscribedSkus/allProperties/allTasks | Maak en verwijder subscribedSkus en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. map/users/allProperties/allTasks | Maak en verwijder gebruikers en Lees alle eigenschappen in Azure Active Directory en werk deze bij. |
+> | micro soft. directorySync/-beleeningen/allTasks | Alle acties in Azure AD Connect uitvoeren. |
+> | micro soft. Aad. identityProtection/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. Aad. identityProtection en werk deze bij. |
+> | micro soft. Aad. privilegedIdentityManagement/aldaar/Lees | Alle resources in micro soft. Aad. privilegedIdentityManagement lezen. |
+> | micro soft. Azure. advancedThreatProtection/Alvan de aflezingen/lezen | Lees alle resources in micro soft. Azure. advancedThreatProtection. |
+> | micro soft. Azure. informationProtection/allTasks | Beheer alle aspecten van Azure Information Protection. |
+> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
+> | micro soft. commerce. facturering/toerekeningen/allTasks | Beheer alle aspecten van de facturering. |
+> | micro soft. intune/toestemmingen/allTasks | Beheer alle aspecten van intune. |
+> | micro soft. office365. complianceManager/cons/allTasks | Alle aspecten van Office 365-nalevings beheer beheren |
+> | micro soft. office365. desktopAnalytics/cons/allTasks | Beheer alle aspecten van Desktop Analytics. |
+> | micro soft. office365. Exchange/alallTasks | Beheer alle aspecten van Exchange Online. |
+> | micro soft. office365. lockbox/cons/allTasks | Alle aspecten van Office 365 Klanten-lockbox beheren |
+> | micro soft. office365. messageCenter/berichten/lezen | Lees berichten in micro soft. office365. messageCenter. |
+> | micro soft. office365. messageCenter/securityMessages/lezen | Lees securityMessages in micro soft. office365. messageCenter. |
+> | micro soft. office365. protectionCenter/cons/allTasks | Beheer alle aspecten van Office 365 Protection Center. |
+> | micro soft. office365. securityComplianceCenter/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. office365. securityComplianceCenter en werk deze bij. |
+> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. office365. share point/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in micro soft. office365. share point en werk deze bij. |
+> | micro soft. office365. skypeForBusiness/cons/allTasks | Beheer alle aspecten van Skype voor bedrijven online. |
+> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+> | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. powerApps. dynamics365/allTasks | Beheer alle aspecten van Dynamics 365. |
+> | micro soft. powerApps. powerBI/allTasks | Beheer alle aspecten van Power BI. |
+> | micro soft. Windows. defenderAdvancedThreatProtection/geleenheden/lezen | Alle resources in micro soft. Windows. defenderAdvancedThreatProtection lezen. |
+
 ### <a name="global-reader-permissions"></a>Algemene lezers machtigingen
+
 Kan alles lezen dat een globale beheerder wel kan, maar geen bewerkingen kan ondernemen.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie [Beschrijving van rol](#global-reader) hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1179,6 +1248,7 @@ Kan alles lezen dat een globale beheerder wel kan, maar geen bewerkingen kan ond
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen    | Lees de standaard eigenschappen voor alle resources in micro soft. office365. webportal. |
 
 ### <a name="groups-administrator-permissions"></a>Groeps beheerders machtigingen
+
 Kan alle aspecten van groepen en groeps instellingen, zoals naamgeving en verloop beleid, beheren.
 
 > [!div class="mx-tableFixed"]
@@ -1201,6 +1271,7 @@ Kan alle aspecten van groepen en groeps instellingen, zoals naamgeving en verloo
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
 
 ### <a name="guest-inviter-permissions"></a>Machtigingen voor gast Inviter
+
 Kan gast gebruikers uitnodigen onafhankelijk van de instelling leden kunnen gasten uitnodigen.
 
 > [!div class="mx-tableFixed"]
@@ -1300,13 +1371,12 @@ Kan Dash boards en inzichten bekijken en delen via de M365 Insights-app.
 > | micro soft. Insights/rapporten/lezen | Rapporten en dash board in Insights-app weer geven. |
 > | micro soft. Insights/Program ma's/bijwerken | Program ma's implementeren en beheren in Insights-apps. |
 
-### <a name="intune-service-administrator-permissions"></a>Machtigingen voor de intune-service beheerder
+### <a name="intune-administrator-permissions"></a>InTune-beheerders machtigingen
 
 Kan alle aspecten van het intune-product beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1349,7 +1419,6 @@ Kan instellingen voor micro soft Kaizala beheren.
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -1370,33 +1439,12 @@ Kan product licenties voor gebruikers en groepen beheren.
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 
-### <a name="lync-service-administrator-permissions"></a>Beheerders machtigingen voor Lync-service
-
-Kan alle aspecten van het product van Skype voor bedrijven beheren.
-
-> [!NOTE]
-> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
-> | micro soft. Azure. supportTickets/allTasks | Ondersteunings tickets voor Azure maken en beheren. |
-> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
-> | micro soft. office365. skypeForBusiness/cons/allTasks | Beheer alle aspecten van Skype voor bedrijven online. |
-> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-> | micro soft. office365. usageReports/de aflezingen/lezen    | Lees de gebruiks rapporten van Office 365. |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-
-
 ### <a name="message-center-privacy-reader-permissions"></a>Machtigingen voor privacy-lezer in Message Center
 
 Kan berichten centrum berichten, gegevens privacy-berichten, groepen, domeinen en abonnementen lezen.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1406,11 +1454,11 @@ Kan berichten centrum berichten, gegevens privacy-berichten, groepen, domeinen e
 > | micro soft. office365. messageCenter/securityMessages/lezen | Lees securityMessages in micro soft. office365. messageCenter. |
 
 ### <a name="message-center-reader-permissions"></a>Machtigingen voor Message Center-lezer
+
 Kan berichten en updates voor hun organisatie alleen in het berichten centrum lezen. 
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1419,11 +1467,11 @@ Kan berichten en updates voor hun organisatie alleen in het berichten centrum le
 > | micro soft. office365. messageCenter/berichten/lezen | Lees berichten in micro soft. office365. messageCenter. |
 
 ### <a name="modern-commerce-user-permissions"></a>Moderne commerce-gebruikers machtigingen
+
 Kan commerciële aankopen voor een bedrijf, afdeling of team beheren. 
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1433,13 +1481,12 @@ Kan commerciële aankopen voor een bedrijf, afdeling of team beheren.
 > | micro soft. office365. supportTickets/cons/allTasks | Eigen Office 365-ondersteunings tickets maken en weer geven. |
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
-
 ### <a name="network-administrator-permissions"></a>Netwerk beheerders machtigingen
+
 Kan netwerk locaties beheren en ontwerp inzichten van het Enter prise-netwerk controleren voor Microsoft 365-software als een service toepassing.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1448,11 +1495,11 @@ Kan netwerk locaties beheren en ontwerp inzichten van het Enter prise-netwerk co
 > | micro soft. office365. Network/locations/allProperties/allTasks | Lees en configureer de eigenschappen van netwerk locaties voor elke locatie. |
 
 ### <a name="office-apps-administrator-permissions"></a>Beheerders machtigingen voor Office-apps
+
 Kan de Office-apps Cloud Services, waaronder beleid en instellingen beheer, beheren, en de mogelijkheid om de inhoud van ' what's New ' te selecteren, te selecteren en te publiceren op apparaten van eind gebruikers.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1471,7 +1518,6 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1517,7 +1563,6 @@ Niet gebruiken-niet bedoeld voor algemeen gebruik.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1573,7 +1618,7 @@ Kan wacht woorden voor niet-beheerders en wachtwoord beheerders opnieuw instelle
 > | micro soft. map/gebruikers/wacht woord/bijwerken | Wacht woorden bijwerken voor alle gebruikers in Azure Active Directory. Raadpleeg de online documentatie voor meer informatie. |
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
-### <a name="power-bi-service-administrator-permissions"></a>Power BI-service beheerders machtigingen
+### <a name="power-bi-administrator-permissions"></a>Beheerders machtigingen Power BI
 
 Kan alle aspecten van het Power BI product beheren.
 
@@ -1589,7 +1634,6 @@ Kan alle aspecten van het Power BI product beheren.
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-
 
 ### <a name="power-platform-administrator-permissions"></a>Beheerders machtigingen voor Power platform
 
@@ -1661,7 +1705,6 @@ Kan roltoewijzingen in azure AD en alle aspecten van Privileged Identity Managem
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -1682,7 +1725,6 @@ Kan aanmeldings-en controle rapporten lezen.
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -1698,7 +1740,6 @@ Kan alle aspecten van instellingen voor micro soft Search maken en beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1716,7 +1757,6 @@ Kan de redactionele inhoud maken en beheren, zoals blad wijzers, Q en as, locati
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -1729,7 +1769,6 @@ Kan beveiligings gegevens en-rapporten lezen en configuratie in azure AD en Micr
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1764,7 +1803,6 @@ Maakt en beheert beveiligings gebeurtenissen.
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -1779,14 +1817,12 @@ Maakt en beheert beveiligings gebeurtenissen.
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
 > | micro soft. Windows. defenderAdvancedThreatProtection/geleenheden/lezen | Lees en configureer Windows Defender Advanced Threat Protection. |
 
-
 ### <a name="security-reader-permissions"></a>Machtigingen voor beveiligings lezer
 
 Kan beveiligings gegevens en-rapporten in azure AD en Microsoft 365 lezen.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1811,7 +1847,6 @@ Kan informatie over de service status lezen en ondersteunings tickets beheren.
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
 
-
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
@@ -1821,13 +1856,12 @@ Kan informatie over de service status lezen en ondersteunings tickets beheren.
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
 
-### <a name="sharepoint-service-administrator-permissions"></a>Share point-service beheerders machtigingen
+### <a name="sharepoint-administrator-permissions"></a>Share point-beheerders machtigingen
 
 Kan alle aspecten van de share point-service beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1847,80 +1881,30 @@ Kan alle aspecten van de share point-service beheren.
 > | micro soft. office365. usageReports/cons/allProperties/lezen | Lees de gebruiks rapporten van Office 365. |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
-### <a name="teams-communications-administrator-permissions"></a>Beheerders machtigingen voor teams communicatie
+### <a name="skype-for-business-administrator-permissions"></a>Beheerders machtigingen van Skype voor bedrijven
 
-Kan functies voor bellen en vergaderingen binnen de micro soft teams-service beheren.
+Kan alle aspecten van het product van Skype voor bedrijven beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
-> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. Azure. supportTickets/allTasks | Ondersteunings tickets voor Azure maken en beheren. |
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. office365. skypeForBusiness/cons/allTasks | Beheer alle aspecten van Skype voor bedrijven online. |
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-> | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
-> | micro soft. teams/vergaderingen/allProperties/allTasks | Vergaderingen beheren, met inbegrip van beleids regels voor vergaderingen, configuraties en Conferentie bruggen. |
-> | micro soft. teams/stem/allProperties/allTasks | Spraak beheren, met inbegrip van het aanroepen van beleid en de inventaris en toewijzing van het telefoon nummer. |
-> | micro soft. teams/callQuality/allProperties/lezen | Lees alle gegevens in dash board voor oproep kwaliteit (CQD). |
-
-### <a name="teams-communications-support-engineer-permissions"></a>Privileges van de team communicatie technicus
-
-Kan communicatie problemen binnen teams oplossen met behulp van geavanceerde hulp middelen.
-
-> [!NOTE]
-> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. office365. usageReports/de aflezingen/lezen    | Lees de gebruiks rapporten van Office 365. |
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
-> | micro soft. teams/callQuality/allProperties/lezen | Lees alle gegevens in dash board voor oproep kwaliteit (CQD). |
 
-### <a name="teams-communications-support-specialist-permissions"></a>Team communicatie support specialist-machtigingen
-
-Kan communicatie problemen in teams oplossen met behulp van basis hulpprogramma's.
-
-> [!NOTE]
-> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
-> | micro soft. teams/callQuality/basis/lezen | Lees de basis gegevens in dash board voor oproep kwaliteit (CQD). |
-
-### <a name="teams-devices-administrator-permissions"></a>Teams apparaten beheerders machtigingen
-
-Kan beheer taken uitvoeren op apparaten die zijn gecertificeerd voor teams.
-
-> [!NOTE]
-> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
-
-> [!div class="mx-tableFixed"]
-> | Acties | Beschrijving |
-> | --- | --- |
-> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
-> | micro soft. teams/apparaten/basis/lezen | Beheer alle aspecten van teams: gecertificeerde apparaten, waaronder configuratie beleid. |
-
-### <a name="teams-service-administrator-permissions"></a>Team service-beheerders machtigingen
+### <a name="teams-administrator-permissions"></a>Beheerders machtigingen voor teams
 
 Kan de micro soft teams-service beheren.
 
 > [!NOTE]
 > Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
-
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1944,7 +1928,71 @@ Kan de micro soft teams-service beheren.
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 > | micro soft. teams//allProperties/allTasks | Alle resources in teams beheren. |
 
+### <a name="teams-communications-administrator-permissions"></a>Beheerders machtigingen voor teams communicatie
+
+Kan functies voor bellen en vergaderingen binnen de micro soft teams-service beheren.
+
+> [!NOTE]
+> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
+> | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
+> | micro soft. teams/vergaderingen/allProperties/allTasks | Vergaderingen beheren, met inbegrip van beleids regels voor vergaderingen, configuraties en Conferentie bruggen. |
+> | micro soft. teams/stem/allProperties/allTasks | Spraak beheren, met inbegrip van het aanroepen van beleid en de inventaris en toewijzing van het telefoon nummer. |
+> | micro soft. teams/callQuality/allProperties/lezen | Lees alle gegevens in dash board voor oproep kwaliteit (CQD). |
+
+### <a name="teams-communications-support-engineer-permissions"></a>Privileges van de team communicatie technicus
+
+Kan communicatie problemen binnen teams oplossen met behulp van geavanceerde hulp middelen.
+
+> [!NOTE]
+> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. teams/callQuality/allProperties/lezen | Lees alle gegevens in dash board voor oproep kwaliteit (CQD). |
+
+### <a name="teams-communications-support-specialist-permissions"></a>Team communicatie support specialist-machtigingen
+
+Kan communicatie problemen in teams oplossen met behulp van basis hulpprogramma's.
+
+> [!NOTE]
+> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
+> | micro soft. teams/callQuality/basis/lezen | Lees de basis gegevens in dash board voor oproep kwaliteit (CQD). |
+
+### <a name="teams-devices-administrator-permissions"></a>Teams apparaten beheerders machtigingen
+
+Kan beheer taken uitvoeren op apparaten die zijn gecertificeerd voor teams.
+
+> [!NOTE]
+> Deze rol heeft aanvullende machtigingen buiten Azure Active Directory. Zie beschrijving van rol hierboven voor meer informatie.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
+> | micro soft. teams/apparaten/basis/lezen | Beheer alle aspecten van teams: gecertificeerde apparaten, waaronder configuratie beleid. |
+
 ### <a name="usage-summary-reports-reader-permissions"></a>Lees machtigingen voor gebruiks samenvattings rapporten
+
 Alleen aggregaties op Tenant niveau worden weer geven in het M365-gebruiks analyse en de productiviteits Score.
 
 > [!div class="mx-tableFixed"]
@@ -1954,6 +2002,7 @@ Alleen aggregaties op Tenant niveau worden weer geven in het M365-gebruiks analy
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal.|
 
 ### <a name="user-administrator-permissions"></a>Gebruikers beheerders machtigingen
+
 Kan alle aspecten van gebruikers en groepen beheren, met inbegrip van het opnieuw instellen van wacht woorden voor beperkte beheerders.
 
 > [!div class="mx-tableFixed"]
@@ -2001,6 +2050,7 @@ Grafiek weergave naam | Weergave naam Azure Portal | directoryRoleTemplateId
 Toepassingsbeheerder | Toepassings beheerder | 9B895D92-2CD3-44C7-9D02-A6AC2D5EA5C3
 Toepassingsontwikkelaar | Toepassingsontwikkelaar | CF1C38E5-3621-4004-A7CB-879624DCED7C
 Verificatiebeheerder | Verificatie beheerder | c4e39bd9-1100-46d3-8c65-fb160da0071f
+Verificatie beleids beheerder | Verificatie beleids beheerder | 0526716b-113d-4c15-b2c8-68e3c22b9f80
 Auteur van aanvals Payload | Auteur van aanvals Payload | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f
 Simulatie beheerder voor aanvallen | Simulatie beheerder voor aanvallen | c430b396-e693-46cc-96f3-db01bf8bb62a
 Lokale beheerder van lid van Azure AD-apparaat | Lokale beheerder van lid van Azure AD-apparaat | 9f06204d-73c1-4d4c-880a-6edb90606fd8
@@ -2022,6 +2072,7 @@ Gebruikers van het apparaat | Afgeschaft | d405c6df-0af8-4e3b-95e4-4d06e542189e
 Lezers van mappen | Adreslijst lezers | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b
 Adreslijstsynchronisatieaccounts | Niet weer gegeven omdat deze niet mag worden gebruikt | d29b2b05-8046-44ba-8758-1e26182fcf32
 Adreslijstschrijvers | Adreslijstschrijvers | 9360feb5-f418-4baa-8175-e2a00bac4301
+Domein naam beheerder | Domein naam beheerder | 8329153b-31d0-4727-b945-745eb3bc5f31
 Dynamics 365-beheerder | Dynamics 365-beheerder | 44367163-eba1-44c3-98af-f5787879f96a
 Exchange-beheerder | Exchange-beheerder | 29232cdf-9323-42fd-ade2-1d097af3e4de
 Externe ID gebruikers stroom beheerder | Externe ID gebruikers stroom beheerder | 6e591065-9bad-43ed-90f3-e9424366d2f0
@@ -2061,11 +2112,11 @@ Beveiligingslezer | Beveiligingslezer | 5d6b6bb7-de71-4623-b4af-96380a352509
 Serviceondersteuningsbeheerder | Serviceondersteuningsbeheerder | f023fd81-a637-4b56-95fd-791ac0226033
 Share point-beheerder | SharePoint-beheerder | f28a1f50-f6e7-4571-818b-6a12f2af6b6c
 Skype voor bedrijven-beheerder | Skype voor Bedrijven-beheerder | 75941009-915a-4869-abe7-691bff18279e
+Team beheerder | Team beheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Teams-communicatiebeheerder | Teams-communicatiebeheerder | baf37b3a-610e-45da-9e62-d9d1e5e8914b
 Ondersteuningstechnicus voor Teams-communicatie | Ondersteuningstechnicus voor Teams-communicatie | f70938a0-fc10-4177-9e90-2178f8765737
 Ondersteuningsspecialist voor Teams-communicatie | Ondersteuningsspecialist voor Teams-communicatie | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
 Teams-apparaatbeheerder | Teams-apparaatbeheerder | 3d762c5a-1b6c-493f-843e-55a3b42923d4
-Teams-servicebeheerder | Teams-servicebeheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Lezer van gebruiks samenvattings rapporten | Lezer van gebruiks samenvattings rapporten | 75934031-6c7e-415a-99d7-48dbd49e875e
 Gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | a0b1b346-4d3e-4e8b-98f8-753987be4970
 Gebruikersbeheerder | Gebruikersbeheerder | fe930be7-5e62-47db-91af-98c3a49a38b1
@@ -2110,7 +2161,6 @@ Verificatie beheerder | &nbsp; | &nbsp; | :heavy_check_mark: | &nbsp; | :heavy_c
 Lezers van mappen | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Globale beheerder | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:\*
 Groeps beheerder | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-Gast | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Afzender van gastuitnodigingen | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Helpdesk beheerder | &nbsp; | :heavy_check_mark: | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Berichtencentrum-lezer | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
@@ -2118,7 +2168,6 @@ Wachtwoord beheerder | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_ma
 Beheerder van geprivilegieerde authenticatie | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:
 Beheerder van geprivilegieerde rol | &nbsp; | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark:
 Rapportenlezer | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-Beperkte gast | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Gebruiker (geen beheerdersrol) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Gebruikersbeheerder | &nbsp; | &nbsp; | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Lezer van gebruiks samenvattings rapporten | &nbsp; | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:

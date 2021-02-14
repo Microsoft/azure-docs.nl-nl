@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 11/17/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: e47dad8498c48a5da5307517efe493fa5c1aa590
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: e180ecbf5c68dbd9c179244083a641ac6ed42de0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94748060"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371954"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Data science tasks uitvoeren: verkennen, model leren en implementeren
 
@@ -42,7 +42,7 @@ Er zijn talloze tool kits en pakketten voor trainings modellen in diverse talen.
 Nadat er meerdere modellen zijn gebouwd, hebt u doorgaans een systeem nodig voor het registreren en beheren van de modellen. Normaal gesp roken hebt u een combi natie van scripts of Api's en een back-end-data base of versie systeem nodig. Hier volgen enkele opties die u kunt overwegen voor deze beheer taken:
 
 1. [Azure Machine Learning-model beheer service](../index.yml)
-2. [ModelDB van MIT](http://modeldb.csail.mit.edu:3000/projects) 
+2. [ModelDB van MIT](https://people.csail.mit.edu/mvartak/papers/modeldb-hilda.pdf) 
 3. [SQL-Server als model beheersysteem](https://blogs.technet.microsoft.com/dataplatforminsider/2016/10/17/sql-server-as-a-machine-learning-model-management-system/)
 4. [Microsoft Machine Learning Server](/sql/advanced-analytics/r/r-server-standalone)
 

@@ -1,14 +1,14 @@
 ---
 title: Een beheerde service aanbieding naar Azure Marketplace publiceren
 description: Meer informatie over het publiceren van een Managed Service-aanbod waarmee klanten naar Azure Lighthouse worden geleid.
-ms.date: 12/17/2020
+ms.date: 02/10/2021
 ms.topic: how-to
-ms.openlocfilehash: f6bd504185fab3fc698019a3eb8c530ba93f8abc
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 9abac28d982e5b33bc4952f73336810abcb44e45
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791370"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372057"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Een beheerde service aanbieding naar Azure Marketplace publiceren
 
@@ -18,9 +18,7 @@ In dit artikel leert u hoe u een aanbieding voor open bare of privé beheerde se
 
 U hebt een geldig [account in het partner centrum](../../marketplace/partner-center-portal/create-account.md) nodig om aanbiedingen te maken en te publiceren. Als u nog geen account hebt, wordt u door het [aanmeldings proces](https://aka.ms/joinmarketplace) geleid door de stappen voor het maken van een account in partner centrum en het inschrijven van het commerciële Marketplace-programma.
 
-Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#7004-business-requirements)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren. Telkens wanneer een klant uw aanbieding implementeert, moet u ook [een doel voor de lead invoeren die een record in uw CRM-systeem maakt](../../marketplace/plan-managed-service-offer.md#customer-leads) .
-
-Uw Microsoft Partner Network-ID (MPN) wordt [automatisch gekoppeld](../../cost-management-billing/manage/link-partner-id.md) aan de aanbiedingen die u publiceert voor het bijhouden van invloed op de klant afspraken.
+Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#700-managed-services)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren. Telkens wanneer een klant uw aanbieding implementeert, moet u ook [een doel voor de lead invoeren die een record in uw CRM-systeem maakt](../../marketplace/plan-managed-service-offer.md#customer-leads) .
 
 Als u geen aanbieding naar Azure Marketplace wilt publiceren, of als u niet aan alle vereisten voldoet, kunt u klanten hand matig voorbereiden door Azure Resource Manager sjablonen te gebruiken. Zie voor meer informatie [onboarding van een klant naar Azure Lighthouse](onboard-customer.md).
 
@@ -31,16 +29,16 @@ Aan de hand van de volgende tabel kunt u bepalen of u klanten wilt vrijgeven doo
 |Vereist [partner centrum-account](../../marketplace/partner-center-portal/create-account.md)   |Ja         |Nee        |
 |Vereist [zilver of Gold-competentie niveau van het Cloud platform](/partner-center/learn-about-competencies) of [Azure expert msp](https://partner.microsoft.com/membership/azure-expert-msp)      |Ja         |Nee         |
 |Beschikbaar voor nieuwe klanten via Azure Marketplace     |Ja     |Nee       |
-|Aanbieding kan worden beperkt tot specifieke klanten     |Ja (alleen met privé aanbiedingen, die niet kan worden gebruikt met abonnementen die zijn vastgesteld via een wederverkoper van het programma voor Cloud Solution Provider (CSP))         |Ja         |
+|Aanbieding kan worden beperkt tot specifieke klanten     |Ja (alleen met privé aanbiedingen, die niet kan worden gebruikt met abonnementen die zijn vastgesteld via een wederverkoper van het programma voor Cloud Solution Provider (CSP))         |Yes         |
 |Vereist acceptatie van klant in Azure Portal     |Ja     |Nee   |
 |Kan Automation gebruiken om meerdere abonnementen, resource groepen of klanten uit te boarden |Nee     |Ja    |
-|Directe toegang tot nieuwe ingebouwde rollen en Azure Lighthouse-functies     |Niet altijd (algemeen beschikbaar na enige vertraging)         |Ja         |
+|Directe toegang tot nieuwe ingebouwde rollen en Azure Lighthouse-functies     |Niet altijd (algemeen beschikbaar na enige vertraging)         |Yes         |
 
 ## <a name="create-your-offer"></a>Uw aanbieding maken
 
-Zie [een beheerde service aanbieding maken](../../marketplace/plan-managed-service-offer.md)voor gedetailleerde instructies voor het maken van uw aanbieding, inclusief alle informatie en assets die u moet opgeven.
+Zie [een beheerde service aanbieding maken](../../marketplace/create-managed-service-offer.md)voor gedetailleerde instructies voor het maken van uw aanbieding, inclusief alle informatie en assets die u moet opgeven.
 
-Zie de [publicatie handleiding voor Azure Marketplace en AppSource](../../marketplace/overview.md)voor meer informatie over het algemene publicatie proces. U moet ook het [beleid voor commerciële Marketplace-certificerings](/legal/marketplace/certification-policies)instanties, met name de sectie [Managed Services](/legal/marketplace/certification-policies#700-managed-services) , bekijken.
+Raadpleeg de [documentatie voor commerciële Marketplace](../../marketplace/overview.md)voor meer informatie over het algemene publicatie proces. U moet ook het [beleid voor commerciële Marketplace-certificerings](/legal/marketplace/certification-policies)instanties, met name de sectie [Managed Services](/legal/marketplace/certification-policies#700-managed-services) , bekijken.
 
 Zodra een klant uw aanbieding heeft toegevoegd, kunnen ze een of meer abonnementen of resource groepen delegeren, die vervolgens worden uitgevoerd [voor Azure Lighthouse](#the-customer-onboarding-process).
 
@@ -49,7 +47,7 @@ Zodra een klant uw aanbieding heeft toegevoegd, kunnen ze een of meer abonnement
 
 ## <a name="publish-your-offer"></a>Uw aanbieding publiceren
 
-Zodra u alle secties hebt voltooid, is de volgende stap het publiceren van de aanbieding op Azure Marketplace. Selecteer de knop **publiceren** om het proces van het live-aanbod te initiëren. Meer informatie over dit proces vindt u [hier](../../marketplace/plan-managed-service-offer.md). 
+Zodra u alle secties hebt voltooid, is de volgende stap het publiceren van de aanbieding op Azure Marketplace. Selecteer de knop **publiceren** om het proces van het live-aanbod te initiëren. Meer informatie over dit proces vindt u [hier](../../marketplace/review-publish-offer.md).
 
 U kunt op elk gewenst moment [een bijgewerkte versie van uw aanbieding publiceren](../..//marketplace/partner-center-portal/update-existing-offer.md) . U kunt bijvoorbeeld een nieuwe functie definitie toevoegen aan een eerder gepubliceerde aanbieding. Als u dit doet, krijgen klanten die de aanbieding al hebben toegevoegd, een pictogram op de pagina [**service providers**](view-manage-service-providers.md) in de Azure Portal waarmee ze kunnen zien dat er een update beschikbaar is. Elke klant kan [de wijzigingen controleren](view-manage-service-providers.md#update-service-provider-offers) en besluiten of ze willen bijwerken naar de nieuwe versie. 
 
@@ -65,5 +63,6 @@ Zodra de klant een abonnement (of een of meer resource groepen binnen een abonne
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over de [commerciële Marketplace](../../marketplace/overview.md).
+- [Koppel uw partner-id](partner-earned-credit.md) om uw invloed op de klant afspraken bij te houden.
 - Meer informatie over [beheerervaring in meerdere tenants](../concepts/cross-tenant-management-experience.md).
 - [Bekijk en beheer klanten](view-manage-customers.md) door naar **mijn klanten** te gaan in de Azure Portal.

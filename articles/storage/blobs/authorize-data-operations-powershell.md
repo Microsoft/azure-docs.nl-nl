@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/14/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
-ms.openlocfilehash: de42854f512a69b7b70a15a10fe8499ca1d0bf8b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 45fa5cf4c76577cb5e8ba9bf482f4aab7301e3c6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017726"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391487"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-blob-data"></a>Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot BLOB-gegevens
 
@@ -28,6 +28,9 @@ U kunt machtigingen voor BLOB-gegevens toewijzen aan een Azure AD-beveiligings-p
 De Azure Storage-extensies worden ondersteund voor bewerkingen op BLOB-gegevens. Welke bewerkingen u kunt aanroepen, is afhankelijk van de machtigingen die zijn verleend aan de Azure AD-beveiligings-principal waarmee u zich aanmeldt bij Power shell. Machtigingen voor het Azure Storage van containers worden toegewezen via Azure RBAC. Als u bijvoorbeeld de rol **BLOB data Reader** hebt toegewezen, kunt u script opdrachten uitvoeren die gegevens uit een container lezen. Als u de rol **BLOB data contributor** hebt toegewezen, kunt u script opdrachten uitvoeren voor het lezen, schrijven of verwijderen van een container of de gegevens die ze bevatten.
 
 Zie [opslag bewerkingen aanroepen met OAuth-tokens](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens)voor meer informatie over de vereiste machtigingen voor elke Azure Storage bewerking in een container.  
+
+> [!IMPORTANT]
+> Wanneer een opslag account is vergrendeld met een Azure Resource Manager **alleen-lezen** vergrendeling, is de bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) niet toegestaan voor dat opslag account. **Lijst sleutels** is een post-bewerking en alle post-bewerkingen worden voor komen wanneer een **alleen-lezen** vergrendeling voor het account is geconfigureerd. Daarom moeten gebruikers gebruikers die de account sleutels niet al beschikken over Azure AD-referenties gebruiken voor toegang tot BLOB-gegevens, wanneer het account is vergrendeld met een **alleen-lezen** vergrendeling. Neem in Power shell de `-UseConnectedAccount` para meter op voor het maken van een **AzureStorageContext** -object met uw Azure AD-referenties.
 
 ## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Power shell-opdrachten aanroepen met Azure AD-referenties
 

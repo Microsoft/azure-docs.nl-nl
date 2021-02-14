@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: c8d52609043f173e896668eadeb8c59493739859
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: c58b267874f013a4660428e23abd41810a0fbf34
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95521135"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093162"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Ondersteunings beleid voor Azure Red Hat open Shift
 
@@ -26,6 +26,7 @@ Bepaalde configuraties voor Azure Red Hat open Shift 4-clusters kunnen van invlo
 * Het cluster moet mini maal twee werk knooppunten hebben. Schaal de cluster medewerkers niet op nul of probeer het cluster niet correct af te zetten.
 * Verwijder of wijzig de cluster Prometheus-en Alertmanager-Services niet.
 * Verwijder geen service Alertmanager-regels.
+* Verwijder of wijzig geen netwerk beveiligings groepen.
 * Verwijder of wijzig de logboek registratie van Azure Red Hat open Shift-service (mdsd peul) niet.
 * Verwijder of wijzig het arosvc.azurecr.io-cluster pull Secret niet.
 * Alle virtuele cluster machines moeten directe uitgaande internet toegang hebben, ten minste aan de eind punten Azure Resource Manager (ARM) en service logging (Genève).  Er wordt geen vorm van HTTPS-proxy ondersteund.

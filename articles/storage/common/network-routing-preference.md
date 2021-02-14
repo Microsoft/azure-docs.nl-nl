@@ -11,18 +11,21 @@ ms.author: santoshc
 ms.reviewer: tamram
 ms.subservice: common
 ms.custom: references_regions
-ms.openlocfilehash: 9afe58434d60280f635deab75b763077bc76b93c
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 601c8dfb4b4e2f16da5c560f67e2d251a5d3072a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797639"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362740"
 ---
 # <a name="configure-network-routing-preference-for-azure-storage-preview"></a>Netwerk routering configureren voor Azure Storage (preview-versie)
 
 U kunt de [Voorkeurs netwerk routering](../../virtual-network/routing-preference-overview.md) (preview) voor uw Azure Storage-account configureren om op te geven hoe netwerk verkeer via internet naar uw account wordt doorgestuurd. Verkeer van Internet wordt standaard doorgestuurd naar het open bare eind punt van uw opslag account via het [globale micro soft-netwerk](../../networking/microsoft-global-network.md). Azure Storage biedt aanvullende opties voor het configureren van de manier waarop verkeer wordt gerouteerd naar uw opslag account.
 
 Door routerings voorkeur te configureren, hebt u de flexibiliteit om uw verkeer te optimaliseren voor Premium-netwerk prestaties of voor kosten. Wanneer u een routerings voorkeur configureert, geeft u op hoe verkeer standaard wordt omgeleid naar het open bare eind punt voor uw opslag account. U kunt ook route-specifieke eind punten voor uw opslag account publiceren.
+
+> [!NOTE]
+> Deze functie wordt niet ondersteund in opslag accounts die zijn geconfigureerd voor gebruik van de Premium-prestatie tier of zone-redundante opslag (ZRS).
 
 ## <a name="microsoft-global-network-versus-internet-routing"></a>Micro soft wereld wijd netwerk versus Internet Routing
 

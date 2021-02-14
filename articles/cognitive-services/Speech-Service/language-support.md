@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 118ab33c8d8ce46559957236daa21ba494655e69
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 9dfd950303d1cb838d44ae672fed33dd4cd7b5ec
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526276"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381899"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -26,7 +26,7 @@ Taal ondersteuning is afhankelijk van de functionaliteit van de spraak service. 
 
 Zowel de micro soft Speech SDK als de REST API ondersteunen de volgende talen (land instellingen). 
 
-Om de nauw keurigheid te verbeteren, wordt aanpassing aangeboden voor een subset van de talen via het uploaden van **Audio en Transcripten met menselijke labels** of **gerelateerde tekst: zinnen**. Zie aan de [slag met Custom speech](./custom-speech-overview.md)voor meer informatie over aanpassingen.
+Om de nauw keurigheid te verbeteren, wordt aanpassing aangeboden voor een subset van de talen via het uploaden van **Audio en Transcripten met menselijke labels** of **gerelateerde tekst: zinnen**. Ondersteuning voor aanpassing van het akoestische model met **Audio en Transcripten met menselijke labels** is beperkt tot de hieronder vermelde basis modellen. Andere basis modellen en talen gebruiken alleen de tekst van de transcripten voor het trainen van aangepaste modellen, net als bij **Verwante tekst: zinnen**. Zie aan de [slag met Custom speech](./custom-speech-overview.md)voor meer informatie over aanpassingen.
 
 <!--
 To get the AM and ML bits:
@@ -53,48 +53,48 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Arabisch (Verenigde Arabische Emiraten)      | `ar-AE` | Taalmodel                                   |                           |
 | Bulgaars (Bulgarije)               | `bg-BG` | Taalmodel                                   |                           |
 | Catalaans (Spanje)                    | `ca-ES` | Taalmodel                                   | Yes                          |
-| Chinees (Kantonees, traditioneel)   | `zh-HK` | Akoestisch model<br>Taalmodel                 |        Yes                   |
-| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Akoestisch model<br>Taalmodel                 |     Yes                      |
-| Chinees (Taiwan Mandarijn)       | `zh-TW` | Akoestisch model<br>Taalmodel                 |           Yes                |
+| Chinees (Kantonees, traditioneel)   | `zh-HK` | Akoestische model (20201015)<br>Taalmodel                 |        Yes                   |
+| Chinees (Mandarijn, vereenvoudigd)     | `zh-CN` | Akoestische model (20200910)<br>Taalmodel                 |     Yes                      |
+| Chinees (Taiwan Mandarijn)       | `zh-TW` | Akoestische model (20190701, 20201015)<br>Taalmodel                 |           Yes                |
 | Kroatisch (Kroatië)                 | `hr-HR` | Taalmodel                                   |                           |
 | Tsjechisch (Tsjechische Republiek)             | `cs-CZ` | Taal model                                   |                           |
 | Deens (Denemarken)                   | `da-DK` | Taalmodel                                   | Yes                          |
-| Nederlands (Nederland)                | `nl-NL` | Taalmodel                                   |    Yes                       |
-| Engels (Australië)                | `en-AU` | Akoestisch model<br>Taalmodel                 | Yes                          |
-| Engels (Canada)                   | `en-CA` | Akoestisch model<br>Taalmodel                 | Yes                          |
+| Nederlands (Nederland)                | `nl-NL` | Akoestische model (20201015)<br>Taalmodel                                   |    Yes                       |
+| Engels (Australië)                | `en-AU` | Akoestische model (20201019)<br>Taalmodel                 | Yes                          |
+| Engels (Canada)                   | `en-CA` | Akoestische model (20201019)<br>Taalmodel                 | Yes                          |
 | Engels (Hongkong)                | `en-HK` | Taal model                                   |                           |
-| Engels (India)                    | `en-IN` | Akoestisch model<br>Taalmodel                 | Yes                          |
+| Engels (India)                    | `en-IN` | Akoestische model (20200923)<br>Taalmodel                 | Yes                          |
 | Engels (Ierland)                  | `en-IE` | Taal model                                   |                           |
-| Engels (Nieuw-Zeeland)              | `en-NZ` | Akoestisch model<br>Taalmodel                 |  Yes                         |
+| Engels (Nieuw-Zeeland)              | `en-NZ` | Akoestische model (20201019)<br>Taalmodel                 |  Yes                         |
 | Engels (Nigeria)                  | `en-NG` | Taal model                                   |                           |
 | Engels (Filipijnen)              | `en-PH` | Taal model                                   |                           |
 | Engels (Singapore)                | `en-SG` | Taal model                                   |                           |
 | Engels (Zuid-Afrika)             | `en-ZA` | Taal model                                   |                           |
-| Engels (Verenigd Koninkrijk)           | `en-GB` | Akoestisch model<br>Taalmodel<br>Uitspraak van| Yes                          |
-| Engels (Verenigde Staten)            | `en-US` | Akoestisch model<br>Taalmodel<br>Uitspraak van| Yes                          |
+| Engels (Verenigd Koninkrijk)           | `en-GB` | Akoestische model (20201019)<br>Taalmodel<br>Uitspraak van| Yes                          |
+| Engels (Verenigde Staten)            | `en-US` | Akoestische model (20201019)<br>Taalmodel<br>Uitspraak van| Yes                          |
 | Estisch (Estland)                  | `et-EE` | Taal model                                   |                           |
 | Fins (Finland)                  | `fi-FI` | Taalmodel                                   |     Yes                      |
-| Frans (Canada)                    | `fr-CA` | Akoestisch model<br>Taalmodel                 |     Yes                      |
-| Frans (Frankrijk)                    | `fr-FR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|      Yes                     |
-| Duits (Duitsland)                   | `de-DE` | Akoestisch model<br>Taalmodel<br>Uitspraak van|  Yes                         |
+| Frans (Canada)                    | `fr-CA` | Akoestische model (20201015)<br>Taalmodel                 |     Yes                      |
+| Frans (Frankrijk)                    | `fr-FR` | Akoestische model (20201015)<br>Taalmodel<br>Uitspraak van|      Yes                     |
+| Duits (Duitsland)                   | `de-DE` | Akoestische model (20190701, 20200619, 20201127)<br>Taalmodel<br>Uitspraak van|  Yes                         |
 | Grieks (Griekenland)                     | `el-GR` | Taalmodel                                   |                           |
 | Gujarati (Indiase)                  | `gu-IN` | Taalmodel                                   |                           |
-| Hindi (India)                      | `hi-IN` | Akoestisch model<br>Taalmodel                 |     Yes                      |
+| Hindi (India)                      | `hi-IN` | Akoestische model (20200701)<br>Taalmodel                 |     Yes                      |
 | Hongaars (Hongarije)                | `hu-HU` | Taal model                                   |                           |
 | Ierse (Ierland)                     | `ga-IE` | Taalmodel                                   |                           |
-| Italiaans (Italië)                    | `it-IT` | Akoestisch model<br>Taalmodel<br>Uitspraak van|      Yes                     |
-| Japans (Japan)                   | `ja-JP` | Akoestisch model<br>Taalmodel                 |      Yes                     |
-| Koreaans (Korea)                     | `ko-KR` | Akoestisch model<br>Taalmodel                 |      Yes                     |
+| Italiaans (Italië)                    | `it-IT` | Akoestische model (20201016)<br>Taalmodel<br>Uitspraak van|      Yes                     |
+| Japans (Japan)                   | `ja-JP` | Taalmodel                                   |      Yes                     |
+| Koreaans (Korea)                     | `ko-KR` | Akoestische model (20201015)<br>Taalmodel                 |      Yes                     |
 | Lets (Letland)                   | `lv-LV` | Taalmodel                                   |                           |
 | Litouws (Litouwen)             | `lt-LT` | Taalmodel                                   |                           |
 | Maltees (Malta)                     | `mt-MT` | Taalmodel                                   |                           |
 | Marathi (India)                    | `mr-IN` | Taalmodel                                   |                           |
 | Noors (Bokmål, Noorwegen)         | `nb-NO` | Taalmodel                                   |     Yes                      |
 | Pools (Polen)                    | `pl-PL` | Taalmodel                                   |       Yes                    |
-| Portugees (Brazilië)                | `pt-BR` | Akoestisch model<br>Taalmodel<br>Uitspraak van|          Yes                 |
+| Portugees (Brazilië)                | `pt-BR` | Akoestische model (20190620, 20201015)<br>Taalmodel<br>Uitspraak van|          Yes                 |
 | Portugees (Portugal)              | `pt-PT` | Taalmodel                                   |             Yes              |
 | Roemeens (Roemenië)                 | `ro-RO` | Taalmodel                                   |                           |
-| Russisch (Rusland)                   | `ru-RU` | Akoestisch model<br>Taalmodel                 |                Yes           |
+| Russisch (Rusland)                   | `ru-RU` | Akoestische model (20200907)<br>Taalmodel                 |                Yes           |
 | Slowaaks (Slowakije)                  | `sk-SK` | Taalmodel                                   |                           |
 | Sloveens (Slovenië)               | `sl-SI` | Taalmodel                                   |                           |
 | Spaans (Argentinië)                | `es-AR` | Taal model                                   |                           |
@@ -109,13 +109,13 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 | Spaans (Equatoriaal-Guinea)        | `es-GQ` | Taal model                                   |                           |
 | Spaans (Guatemala)                | `es-GT` | Taal model                                   |                           |
 | Spaans (Honduras)                 | `es-HN` | Taal model                                   |                           |
-| Spaans (Mexico)                   | `es-MX` | Akoestisch model<br>Taalmodel                 |    Yes                       |
+| Spaans (Mexico)                   | `es-MX` | Akoestische model (20200907)<br>Taalmodel                 |    Yes                       |
 | Spaans (Nicaragua)                | `es-NI` | Taal model                                   |                           |
 | Spaans (Panama)                   | `es-PA` | Taal model                                   |                           |
 | Spaans (Paraguay)                 | `es-PY` | Taal model                                   |                           |
 | Spaans (Peru)                     | `es-PE` | Taal model                                   |                           |
 | Spaans (Puerto Rico)              | `es-PR` | Taal model                                   |                           |
-| Spaans (Spanje)                    | `es-ES` | Akoestisch model<br>Taalmodel                 |  Yes                         |
+| Spaans (Spanje)                    | `es-ES` | Akoestische model (20201015)<br>Taalmodel                 |  Yes                         |
 | Spaans (Uruguay)                  | `es-UY` | Taal model                                   |                           |
 | Spaans (Verenigde Staten)                      | `es-US` | Taal model                                   |                           |
 | Spaans (Venezuela)                | `es-VE` | Taal model                                   |                           |

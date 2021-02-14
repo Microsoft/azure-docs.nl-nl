@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: 0de0c5d53bd3195a24f75f4a2e65c19602e2a2b3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 103855748c4b5d998dfc81eeb4044f5f53dae9e5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99088918"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372005"
 ---
 # <a name="pricing-and-billing-models-for-azure-logic-apps"></a>Prijzen en facturerings modellen voor Azure Logic Apps
 
@@ -72,8 +72,8 @@ Een vast prijs model is van toepassing op Logic apps die worden uitgevoerd in ee
 
 | ISE SKU | Description |
 |---------|-------------|
-| **Premium** | De basis eenheid heeft vaste capaciteit en wordt [gefactureerd tegen een uurtarief voor de Premium-SKU](https://azure.microsoft.com/pricing/details/logic-apps). Als u meer door voer wilt doen, kunt u [meer schaal eenheden toevoegen](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) wanneer u uw ISE maakt of daarna. Elke schaal eenheid wordt in rekening gebracht tegen een [uurtarief van ongeveer de basis eenheids](https://azure.microsoft.com/pricing/details/logic-apps)prijs. <p><p>Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor meer informatie over de limiet. |
-| **Developer** | De basis eenheid heeft vaste capaciteit en wordt [gefactureerd tegen een uurtarief voor de SKU van de ontwikkel aars](https://azure.microsoft.com/pricing/details/logic-apps). Deze SKU heeft geen ondersteuning voor schalen, een Service Level Agreement (SLA) of gepubliceerde limieten. Gebruik deze SKU alleen voor het verkennen, experimenten, ontwikkelen en testen, niet voor productie-of prestatie tests. |
+| **Premium** | De basis eenheid heeft [vaste capaciteit](logic-apps-limits-and-config.md#integration-service-environment-ise) en wordt [gefactureerd tegen een uurtarief voor de Premium-SKU](https://azure.microsoft.com/pricing/details/logic-apps). Als u meer door voer wilt doen, kunt u [meer schaal eenheden toevoegen](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) wanneer u uw ISE maakt of daarna. Elke schaal eenheid wordt in rekening gebracht tegen een [uurtarief van ongeveer de basis eenheids](https://azure.microsoft.com/pricing/details/logic-apps)prijs. <p><p>Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor informatie over capaciteit en limieten. |
+| **Developer** | De basis eenheid heeft [vaste capaciteit](logic-apps-limits-and-config.md#integration-service-environment-ise) en wordt [gefactureerd tegen een UURTARIEF voor de SKU van de ontwikkel aars](https://azure.microsoft.com/pricing/details/logic-apps). Deze SKU heeft echter geen SLA (Service Level Agreement), schaal baarheid of redundantie tijdens recycling, wat betekent dat u vertragingen of downtime mogelijk ondervindt. Back-end-updates kunnen de service af en toe onderbreken. <p><p>**Belang rijk**: Zorg ervoor dat u deze SKU alleen gebruikt voor onderzoek, experimenten, ontwikkeling en tests, niet voor productie-of prestatie testen. <p><p>Zie [limieten voor ISE in azure Logic apps](logic-apps-limits-and-config.md#integration-service-environment-ise)voor informatie over capaciteit en limieten. |
 |||
 
 ### <a name="included-at-no-extra-cost"></a>Zonder extra kosten inbegrepen

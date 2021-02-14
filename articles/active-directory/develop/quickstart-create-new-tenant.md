@@ -13,12 +13,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 815947b7c1774fb58ca4e3d20a4d1d2b43099cd2
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 83cf8840ffb9d123efa88d4acc304c8af4db5bf8
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593075"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102458"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Quickstart: Een tenant instellen
 
@@ -50,7 +50,7 @@ Veel ontwikkel aars hebben al tenants via Services of abonnementen die zijn geko
 
 De Tenant controleren:
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>. Gebruik het account dat u gebruikt voor het beheren van uw toepassing.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>. Gebruik het account dat u gebruikt voor het beheren van uw toepassing.
 1. Controleer de rechter bovenhoek. Als u een Tenant hebt, wordt u automatisch aangemeld. U ziet de naam van de Tenant rechtstreeks onder uw account naam.
    * Beweeg de muis aanwijzer over de naam van uw account om uw naam, e-mail adres, map of Tenant-ID (GUID) en domein weer te geven.
    * Als uw account is gekoppeld aan meerdere tenants, kunt u de accountnaam selecteren om een menu te openen waarmee u kunt schakelen tussen de tenants. Elke tenant heeft zijn eigen tenant-id.

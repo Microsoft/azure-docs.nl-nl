@@ -12,12 +12,12 @@ ms.date: 11/23/2020
 ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: on-premises, OCR, docker, container
-ms.openlocfilehash: fc5d281a6c0c9dd9620109de9d8deea27462ad0e
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: 843000963bc05cab5415c9bb1db32b3272c8dc9f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100008584"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391764"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Lees de OCR docker-containers (preview) installeren 
 
@@ -41,7 +41,7 @@ De OCR-container lezen 3,2-Preview bevat:
 * Betrouwbaarheids scores.
 * Ondersteuning voor documenten met zowel gedrukte als handgeschreven tekst.
 * De mogelijkheid om alleen tekst uit geselecteerde pagina ('s) in een document op te halen.
-* Kies de uitvoer volgorde van de tekst regel van standaard in een natuurlijke Lees volgorde.
+* Kies tekst regel uitvoer order van standaard in een natuurlijkere Lees volgorde voor Latijnse talen.
 * Tekst lijn classificatie als handgeschreven stijl of niet alleen voor Latijnse talen.
 
 Raadpleeg de [migratie handleiding](read-container-migration-guide.md) voor meer informatie over wijzigingen in de nieuwe versies als u vandaag nog Lees 2,0-containers gebruikt.

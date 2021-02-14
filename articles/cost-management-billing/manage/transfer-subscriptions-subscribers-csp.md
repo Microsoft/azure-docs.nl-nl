@@ -6,14 +6,14 @@ ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 02/11/2021
 ms.author: banders
-ms.openlocfilehash: 4cc213db19a567f18c5ff483b64a75e3bbeef892
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 63fbf76b2211e530707f3598d176b646c317cc53
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94962107"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363046"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Overdracht van Azure-abonnementen tussen abonnees en CSP's
 
@@ -36,6 +36,7 @@ Wanneer de aanvraag is goedgekeurd, kan de CSP een gecombineerde factuur aanbied
 
 Als u andere Azure-abonnementen wilt overdragen naar een CSP-partner, moet de abonnee resources van bronabonnementen verplaatsen naar CSP-abonnementen. Gebruik de volgende richtlijnen voor het verplaatsen van resources tussen abonnementen.
 
+1. Stel een [reseller-relatie](/partner-center/request-a-relationship-with-a-customer) in met de klant. Bekijk het [regionale autorisatie overzicht van CSP](/partner-center/regional-authorization-overview) om ervoor te zorgen dat zowel de Tenant van de klant als de partner zich binnen dezelfde gemachtigde regio's bevindt.
 1. Werk samen met uw CSP-partner om Azure CSP-abonnementen te maken op de doellocatie.
 1. Zorg ervoor dat de bron- en doelabonnementen van de CSP zich in dezelfde Azure Active Directory-tenant (Azure AD) bevinden.  
     U kunt de Azure AD-tenant voor een Azure CSP-abonnement niet wijzigen. In plaats daarvan moet u het bronabonnement toevoegen of koppelen aan de CSP Azure AD-tenant. Zie [Een Azure-abonnement aan uw Azure Active Directory-tenant toevoegen of koppelen](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) voor meer informatie.

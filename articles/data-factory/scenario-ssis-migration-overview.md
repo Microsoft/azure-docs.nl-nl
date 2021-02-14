@@ -1,22 +1,17 @@
 ---
 title: On-premises SQL Server Integration Services (SSIS)-workloads migreren naar SSIS in Azure Data Factory (ADF)
 description: Migratie van on-premises SSIS-workloads naar SSIS in ADF.
-services: data-factory
-documentationcenter: ''
 author: chugugrace
 ms.author: chugu
-ms.reviewer: ''
-manager: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 9/3/2019
-ms.openlocfilehash: ef4b01e38a60d6770ba476988fab934ada0bc631
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 78c488302a874319f79a143e4657d161fe849855
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635691"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373603"
 ---
 # <a name="migrate-on-premises-ssis-workloads-to-ssis-in-adf"></a>On-premises SSIS-workloads migreren naar SSIS in ADF
 
@@ -28,7 +23,7 @@ Wanneer u de werk belasting van uw data base migreert van SQL Server on-premises
 
 Azure-SSIS Integration Runtime (IR) in Azure Data Factory (ADF) ondersteunt actieve SSIS-pakketten. Als Azure-SSIS IR is ingericht, kunt u vervolgens vertrouwde hulpprogram ma's gebruiken, zoals SQL Server Data Tools (SSDT)/SQL Server Management Studio (SSMS) en opdracht regel Programma's, zoals dtinstall/dtutil/dtexec, om uw pakketten te implementeren en uit te voeren in Azure. Zie [Azure SSIS Lift-and-Shift Overview (](/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview)Engelstalig) voor meer informatie.
 
-In dit artikel wordt het migratie proces van de ETL-workloads van on-premises SSIS naar SSIS in ADF uitgelegd. Het migratie proces bestaat uit twee fasen: **evaluatie** en **migratie** .
+In dit artikel wordt het migratie proces van de ETL-workloads van on-premises SSIS naar SSIS in ADF uitgelegd. Het migratie proces bestaat uit twee fasen: **evaluatie** en **migratie**.
 
 ## <a name="assessment"></a>Beoordeling
 
@@ -49,7 +44,7 @@ Data Migration Assistant (DMA) is een vrij downloadbaar hulp programma voor dit 
   - MSDB, een systeem database in SQL Server gebruikt om SSIS-pakketten op te slaan.
   - Beheerd bestands systeem, een specifieke map in SQL Server installatiepad dat wordt gebruikt voor het opslaan van SSIS-pakketten.
 
-DMA ondersteunt momenteel de batch-evaluatie van pakketten die zijn opgeslagen in **Bestands systeem** , **pakket opslag** en **SSIS-catalogus** sinds **DMA versie v 5.0** .
+DMA ondersteunt momenteel de batch-evaluatie van pakketten die zijn opgeslagen in **Bestands systeem**, **pakket opslag** en **SSIS-catalogus** sinds **DMA versie v 5.0**.
 
 U kunt [DMA](/sql/dma/dma-overview)ophalen en [uw pakket evaluatie met IT uitvoeren](/sql/dma/dma-assess-ssis).
 

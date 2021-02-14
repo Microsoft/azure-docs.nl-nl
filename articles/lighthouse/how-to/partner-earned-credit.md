@@ -1,32 +1,30 @@
 ---
 title: Koppel uw partner-ID om uw impact op gedelegeerde resources bij te houden
 description: Meer informatie over hoe u uw partner-ID kunt koppelen aan de klant die u beheert via Azure Lighthouse.
-ms.date: 01/28/2021
+ms.date: 02/12/2021
 ms.topic: how-to
-ms.openlocfilehash: 46338b925b1ad44019c9cc95e4b7f8c0963c07c4
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 4c18aae38570ab3fd84df7d45fb18e35404158be
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98985968"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372090"
 ---
 # <a name="link-your-partner-id-to-track-your-impact-on-delegated-resources"></a>Koppel uw partner-ID om uw impact op gedelegeerde resources bij te houden 
 
 Als u lid bent van de [Microsoft Partner Network](https://partner.microsoft.com/), kunt u uw partner-id koppelen aan de referenties die worden gebruikt voor het beheren van gedelegeerde klant resources, zodat micro soft partners kan identificeren en herkennen die een Azure-klant succes hebben. Met deze koppeling kunnen partners van de [CSP (Cloud Solution Provider)](/partner-center/csp-overview) voor klanten die [de micro soft Customer Agreement (MCA) hebben ondertekend, een door de klant overeengekomen](/partner-center/confirm-customer-agreement) [partner](/partner-center/partner-earned-credit) [ontvangen.](/partner-center/azure-plan-get-started)
 
-Als u [klanten opdoet met beheerde service aanbiedingen in azure Marketplace](publish-managed-services-offers.md), wordt er automatisch een koppeling gemaakt met de MPN-id die is gekoppeld aan het partner centrum-account dat wordt gebruikt voor het publiceren van de aanbiedingen. Er is geen verdere actie nodig om de impact van deze klanten bij te houden.
-
-Als u [klanten onboardt met behulp van Azure resource management-sjablonen](onboard-customer.md), moet u actie ondernemen om deze koppeling te maken. Dit doet u door [uw MPN-id te koppelen](../../cost-management-billing/manage/link-partner-id.md) aan ten minste één gebruikers account in uw Tenant voor beheer die toegang heeft tot elk van de onboarded abonnementen.
+Als u herkenning voor Azure Lighthouse-activiteiten wilt behalen, moet u [uw MPN-id koppelen](../../cost-management-billing/manage/link-partner-id.md) aan ten minste één gebruikers account in uw Tenant beheren en ervoor zorgen dat het gekoppelde account toegang heeft tot elk van de onboarded abonnementen.
 
 ## <a name="associate-your-partner-id-when-you-onboard-new-customers"></a>Uw partner-ID koppelen wanneer u nieuwe klanten onboardeert
 
-Gebruik het volgende proces om uw partner-ID te koppelen (en het tegoed van de partner in te scha kelen, indien van toepassing) bij onboarding van klanten via Azure Resource Manager sjablonen (ARM-sjablonen). U moet weten wat uw [MPN-partner-id](/partner-center/partner-center-account-setup#locate-your-mpn-id) is om deze stappen uit te voeren. Zorg ervoor dat u de **bijbehorende MPN-id** gebruikt die op uw partnerprofiel wordt weergegeven.
+Gebruik het volgende proces om uw partner-ID te koppelen (en het tegoed van de partner in te scha kelen, indien van toepassing). U moet weten wat uw [MPN-partner-id](/partner-center/partner-center-account-setup#locate-your-mpn-id) is om deze stappen uit te voeren. Zorg ervoor dat u de **bijbehorende MPN-id** gebruikt die op uw partnerprofiel wordt weergegeven.
 
 Ter vereenvoudiging raden we u aan om een Service-Principal-account in uw Tenant te maken, deze te koppelen aan de **gekoppelde MPN-id** en vervolgens toegang te verlenen aan elke klant met een [ingebouwde Azure-rol die in aanmerking komt voor PEC](/partner-center/azure-roles-perms-pec).
 
-1. [Maak een Service-Principal-account](../../active-directory/develop/howto-authenticate-service-principal-powershell.md) in uw Tenant beheren. Voor dit voor beeld gebruiken we het *Automation-account* van de naam provider voor deze service-principal.
+1. [Maak een Service-Principal-gebruikers account](../../active-directory/develop/howto-authenticate-service-principal-powershell.md) in uw beheer Tenant. In dit voor beeld gebruiken we het *Automation-account* van de naam provider voor dit Service-Principal-account.
 1. Gebruik het account van de Service-Principal [om een koppeling te maken naar de gekoppelde MPN-id](../../cost-management-billing/manage/link-partner-id.md#link-to-a-partner-id) in uw Tenant voor beheer. U hoeft dit slechts één keer te doen.
-1. Wanneer u [een klant onboardt met arm-sjablonen](onboard-customer.md), moet u een autorisatie opnemen die het provider Automation-account omvat als een gebruiker met een [ingebouwde Azure-rol die in aanmerking komt voor PEC](/partner-center/azure-roles-perms-pec).
+1. Wanneer u een klant onboardt [met arm-sjablonen](onboard-customer.md) of [beheerde service aanbiedingen](publish-managed-services-offers.md), moet u een autorisatie opnemen die het provider Automation-account omvat als een gebruiker met een [ingebouwde Azure-rol die in aanmerking komt voor PEC](/partner-center/azure-roles-perms-pec).
 
 Als u deze stappen volgt, wordt elke Tenant van de klant die u beheert, gekoppeld aan uw partner-ID. Het Automation-account van de provider hoeft geen acties in de Tenant van de klant te verifiëren of uit te voeren.
 

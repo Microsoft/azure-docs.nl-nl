@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: alkohli
-ms.openlocfilehash: e003d0121721838bd5ae038a3a8b4d1b8cd9d1eb
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 9975533e00b0ca184e7cc16c5d8ea51d4eafa0a8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573187"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361703"
 ---
 # <a name="azure-data-box-disk-limits"></a>Azure Data Box Disk limieten
 
@@ -64,7 +64,7 @@ Dit zijn de limieten voor de grootte van gegevens die kunnen worden gekopieerd n
 
 | Type gegevens             | Standaardlimiet          |
 |--------------------------|------------------------|
-| blok-blob, pagina-BLOB    | Zie [Azure Blob-opslag schaal doelen](../storage/blobs/scalability-targets.md#scale-targets-for-blob-storage), [Azure Standard-opslag schaal doelen](../storage/common/scalability-targets-standard-account.md#scale-targets-for-standard-storage-accounts)en [Azure files-schaal doel](../storage/files/storage-files-scale-targets.md#file-share-and-file-scale-targets)voor actuele informatie over deze limieten. <br /><br /> De limieten omvatten gegevens uit alle bronnen, inclusief Data Box Disk.|
+| blok-blob, pagina-BLOB    | Zie [Azure Blob-opslag schaal doelen](../storage/blobs/scalability-targets.md#scale-targets-for-blob-storage), [Azure Standard-opslag schaal doelen](../storage/common/scalability-targets-standard-account.md#scale-targets-for-standard-storage-accounts)en [Azure files-schaal doelen](../storage/files/storage-files-scale-targets.md)voor actuele informatie over deze limieten. <br /><br /> De limieten omvatten gegevens uit alle bronnen, inclusief Data Box Disk.|
 
 
 ## <a name="azure-object-size-limits"></a>Limieten voor Azure-object grootte

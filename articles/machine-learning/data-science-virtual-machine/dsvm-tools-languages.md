@@ -4,19 +4,18 @@ titleSuffix: Azure Data Science Virtual Machine
 description: De ondersteunde programma talen en gerelateerde hulpprogram ma's die vooraf zijn geïnstalleerd op de Data Science Virtual Machine.
 keywords: hulpprogramma's voor datatechnologie, virtuele machine voor datatechnologie, hulpprogramma voor datatechnologie, linux-datatechnologie
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 ms.custom: devx-track-python
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 8a73336ba0a324c65ee0de764d81a8e69ab6079c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42110eb896a751080044247932770f37617174c9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87843263"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516427"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Talen die worden ondersteund op de Data Science Virtual Machine 
 
@@ -111,7 +110,7 @@ De Data Science Virtual Machine (DSVM) wordt geleverd met verschillende vooraf o
 | ------------- | ------------- |
 | Ondersteunde taal versies | Micro soft R open 3. x (100% compatibel met KRANen-R)<br /> Microsoft R Server 9. x Developer Edition (een schaalbaar platform dat geschikt is voor bedrijven)|
 | Ondersteunde DSVM-edities      | Linux, Windows     |
-| Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  | Windows `C:\Program Files\Microsoft\ML Server\R_SERVER` <br />Spreek `/usr/lib64/microsoft-r/3.3/lib64/R`    |
+| Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  | Windows: `C:\Program Files\Microsoft\ML Server\R_SERVER` <br />Linux: `/usr/lib64/microsoft-r/3.3/lib64/R`    |
 | Koppelingen naar voor beelden      | Er zijn voor beelden van Jupyter-notebooks voor R opgenomen.     |
 | Gerelateerde hulpprogram ma's op de DSVM      | Spark, Python, Julia      |
 

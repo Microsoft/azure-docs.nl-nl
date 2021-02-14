@@ -329,9 +329,10 @@
           href: virtual-machine-scale-sets-placement-groups.md
         - name: Een sjabloon voor schaalsets converteren voor gebruik van beheerde schijven
           href: virtual-machine-scale-sets-convert-template-to-md.md
-        - name: Toegewezen hosts gebruiken (preview)
-          href: ../virtual-machines/dedicated-hosts.md
+        - name: Toegewezen hosts gebruiken
           items:
+            - name: Overzicht
+              href: ../virtual-machines/dedicated-hosts.md
             - name: CLI
               href: ../virtual-machines/linux/dedicated-hosts-cli.md
             - name: PowerShell

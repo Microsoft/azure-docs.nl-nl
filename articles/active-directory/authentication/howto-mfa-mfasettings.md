@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 209125a5cc8d86c1af07966d52681aa91ea7dc19
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 584266a8f6aa82d8a47b5e3faff044acf0ef298c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97026996"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361618"
 ---
 # <a name="configure-azure-ad-multi-factor-authentication-settings"></a>Azure AD Multi-Factor Authentication-instellingen configureren
 
@@ -65,9 +65,7 @@ Voer de volgende stappen uit om een gebruiker te blok keren:
 
 1. Blader naar **Azure Active Directory**  >  **beveiliging**  >  **MFA**  >  **blok keren/deblokkeren van gebruikers**.
 1. Selecteer **toevoegen** om een gebruiker te blok keren.
-1. Selecteer de **replicatie groep** en kies vervolgens *Azure-standaard*.
-
-    Voer de gebruikers naam in voor de geblokkeerde gebruiker als `username\@domain.com` en geef een opmerking op in het veld *reden* .
+1. Voer de gebruikers naam in voor de geblokkeerde gebruiker als `username@domain.com` en geef een opmerking op in het veld *reden* .
 1. Wanneer u klaar bent, selecteert u **OK** om de gebruiker te blok keren.
 
 ### <a name="unblock-a-user"></a>Deblokkeren van een gebruiker

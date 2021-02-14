@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 01/07/2021
-ms.openlocfilehash: c2b89450c0e474f5030f8812e888890f1fedde7e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.date: 02/12/2021
+ms.openlocfilehash: 4b431220dbab49b74f38a8f37be8aac1a0c5c460
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019632"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382885"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Connectors voor Azure Logic Apps
 
@@ -452,15 +452,21 @@ Als u Api's wilt aanroepen waarmee aangepaste code wordt uitgevoerd of die niet 
 >
 > Zie [verbinding maken met virtuele Azure-netwerken vanuit Azure Logic apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)voor meer informatie over het maken van ISEs.
 
+## <a name="get-ready-for-deployment"></a>Bereid u voor op implementatie
+
+Hoewel u verbindingen maakt vanuit een logische app, zijn de verbindingen afzonderlijke Azure-resources met hun eigen resource definities. Als u deze resource definities voor verbindingen wilt bekijken, [downloadt u uw logische app van Azure in Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md). Dit is de eenvoudigste manier om een geldige sjabloon voor een logische app met para meters te maken die het meest geschikt is voor implementatie.
+
 <a name="block-connections"></a>
 
 ## <a name="block-creating-connections"></a>Maken van verbindingen blok keren
 
 Als uw organisatie geen verbinding met specifieke bronnen kan maken met behulp van hun connectors in Azure Logic Apps, kunt u [de mogelijkheid blok keren om deze verbindingen](../logic-apps/block-connections-connectors.md) voor specifieke connectors in de werk stromen van logische apps te gebruiken met behulp van [Azure Policy](../governance/policy/overview.md). Zie voor meer informatie [blok keren verbindingen die zijn gemaakt door specifieke connectors in azure Logic apps](../logic-apps/block-connections-connectors.md).
 
-## <a name="get-ready-for-deployment"></a>Bereid u voor op implementatie
+## <a name="known-issues"></a>Bekende problemen
 
-Hoewel u verbindingen maakt vanuit een logische app, zijn de verbindingen afzonderlijke Azure-resources met hun eigen resource definities. Als u deze resource definities voor verbindingen wilt bekijken, [downloadt u uw logische app van Azure in Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md). Dit is de eenvoudigste manier om een geldige sjabloon voor een logische app met para meters te maken die het meest geschikt is voor implementatie.
+#### <a name="error-badgateway-client-request-id-guid"></a>Fout: BadGateway. Client aanvraag-id: {GUID}
+
+Deze fout wordt veroorzaakt door het bijwerken van de tags op een logische app waarbij een of meer verbindingen geen ondersteuning bieden voor Azure Active Directory (Azure AD) OAuth-verificatie, zoals SFTP AD SQL, om deze verbindingen te verbreken. Om dit gedrag te voor komen, moet u voor komen dat deze tags worden bijgewerkt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

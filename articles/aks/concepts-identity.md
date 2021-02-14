@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 3c291d9a9d48b6f75148b673848b8451521bab91
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 8d69033dedc3a45263b087c9b9ee5b156af460be
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97615798"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361057"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Toegangs- en identiteitsopties voor Azure Kubernetes Service (AKS)
 
@@ -166,7 +166,7 @@ Met de integratie van Azure RBAC maakt AKS gebruik van een Kubernetes Authorizat
 
 ![Azure RBAC voor Kubernetes-autorisatie stroom](media/concepts-identity/azure-rbac-k8s-authz-flow.png)
 
-Zoals in het bovenstaande diagram wordt weer gegeven, volgt u bij het gebruik van de Azure RBAC-integratie alle aanvragen voor de Kubernetes-API dezelfde verificatie stroom als wordt uitgelegd in de [sectie Azure Active Integration](#azure-active-directory-integration). 
+Zoals in het bovenstaande diagram wordt weer gegeven, volgt u bij het gebruik van de integratie van Azure RBAC alle aanvragen voor de Kubernetes-API dezelfde verificatie stroom zoals wordt uitgelegd in de [sectie integratie van Azure Active Directory](#azure-active-directory-integration). 
 
 Maar daarna wordt het verzoek door Azure in plaats van Kubernetes RBAC voor autorisatie gebruikt, op voor waarde dat de identiteit die de aanvraag heeft ingediend in AAD voor komt. Als de identiteit niet bestaat in AAD, bijvoorbeeld een Kubernetes-service account, is de Azure RBAC niet in en de normale Kubernetes RBAC.
 
@@ -174,6 +174,8 @@ In dit scenario kunt u gebruikers een van de vier ingebouwde rollen geven of aan
 
 Met deze functie kunt u bijvoorbeeld niet alleen gebruikers machtigingen geven voor de AKS-resource in abonnementen, maar ze instellen en de rol en machtigingen geven die ze zullen hebben in elk van deze clusters die de toegang tot de Kubernetes-API beheren. U kunt bijvoorbeeld de `Azure Kubernetes Service RBAC Viewer` rol voor het abonnements bereik toekennen en de ontvanger kan alle Kubernetes-objecten van alle clusters weer geven, maar niet wijzigen.
 
+> [!IMPORTANT]
+> Houd er rekening mee dat u Azure RBAC voor Kubernetes-autorisatie moet inschakelen voordat u deze functie gebruikt. [Zie hier](manage-azure-rbac.md)voor meer informatie en stapsgewijze instructies.
 
 #### <a name="built-in-roles"></a>Ingebouwde rollen
 
@@ -186,7 +188,6 @@ AKS biedt de volgende vier ingebouwde rollen. Ze zijn vergelijkbaar met de [inge
 | RBAC-beheerder voor Azure Kubernetes service  | Hiermee kan beheerders toegang worden verleend binnen een naam ruimte. Hiermee staat u lees-/schrijftoegang toe voor de meeste bronnen in een naam ruimte (of cluster bereik), inclusief de mogelijkheid om rollen en rollen bindingen te maken binnen de naam ruimte. Deze rol staat geen schrijf toegang tot resource quota of de naam ruimte zelf toe. |
 | De Azure Kubernetes service RBAC-cluster beheerder  | Hiermee kan toegang van Super gebruikers elke actie op elke resource uitvoeren. Hiermee krijgt u volledige controle over elke resource in het cluster en in alle naam ruimten. |
 
-**[Lees hier](manage-azure-rbac.md)voor meer informatie over het inschakelen van Azure RBAC voor Kubernetes-autorisatie.**
 
 ## <a name="summary"></a>Samenvatting
 
@@ -197,7 +198,7 @@ Deze tabel bevat een overzicht van de manieren waarop gebruikers zich kunnen ver
 
 De functie toekenning waarnaar wordt verwezen in de tweede kolom is de Azure RBAC-rol toekenning die wordt weer gegeven op het tabblad **Access Control** in het Azure Portal. De Azure AD-groep Cluster beheer wordt weer gegeven op het tabblad **configuratie** in de portal (of met `--aad-admin-group-object-ids` de parameter naam in de Azure CLI).
 
-| Beschrijving        | Rol toekenning vereist| Azure AD-groep (en) cluster beheer | Wanneer gebruikt u dit? |
+| Description        | Rol toekenning vereist| Azure AD-groep (en) cluster beheer | Wanneer gebruikt u dit? |
 | -------------------|------------|----------------------------|-------------|
 | Verouderde beheerder aanmelden met behulp van client certificaat| **Rol van Azure Kubernetes-beheerder**. Deze rol kan `az aks get-credentials` worden gebruikt met de `--admin` vlag, waarmee een [verouderd (niet-Azure AD) cluster beheer certificaat](control-kubeconfig-access.md) wordt gedownload naar de gebruiker `.kube/config` . Dit is het enige doel van de Azure Kubernetes-beheerdersrol.|n.v.t.|Als u permanent bent geblokkeerd door geen toegang tot een geldige Azure AD-groep met toegang tot uw cluster.| 
 | Azure AD met hands-RoleBindings (cluster)| Gebruikersrol **Azure Kubernetes**. De rol ' gebruiker ' mag `az aks get-credentials` worden gebruikt zonder de `--admin` vlag. (Dit is het enige doel van ' Azure Kubernetes-gebruikersrol '.) Het resultaat van een Azure AD-cluster is het downloaden van [een lege vermelding](control-kubeconfig-access.md) in `.kube/config` , waardoor de browser verificatie wordt geactiveerd wanneer deze voor het eerst wordt gebruikt door `kubectl` .| De gebruiker bevindt zich niet in een van deze groepen. Omdat de gebruiker zich niet in een cluster beheer groepen bevindt, worden hun rechten volledig beheerd door alle RoleBindings of ClusterRoleBindings die zijn ingesteld door cluster beheerders. De (cluster) RoleBindings [benoemt Azure AD-gebruikers of Azure ad-groepen](azure-ad-rbac.md) als hun `subjects` . Als er geen dergelijke bindingen zijn ingesteld, kan de gebruiker geen `kubectl` opdrachten excute.|Als u een nauw keurig toegangs beheer wilt en u geen gebruik maakt van Azure RBAC voor Kubernetes-autorisatie. Houd er rekening mee dat de gebruiker die de bindingen instelt, zich moet aanmelden met een van de andere methoden die in deze tabel worden vermeld.|

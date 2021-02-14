@@ -3,15 +3,15 @@ title: Windows-MSIX-app voor het koppelen van apps-Azure
 description: MSIX-app-koppeling voor Windows Virtual Desktop instellen met behulp van de Azure Portal.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 02/11/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 34bcef24d5e7fbda53984f14a2307859c9210262
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 19ce054ce29b744f900676ecf4e55af3487d9891
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185951"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373467"
 ---
 # <a name="set-up-msix-app-attach-with-the-azure-portal"></a>MSIX-app-koppeling instellen met de Azure-portal
 
@@ -65,7 +65,7 @@ Vervolgens moet u de MSIX-app voor het koppelen van apps voor de Azure Portal do
 
 De beheer interface instellen:
 
-1. [Open de preview Portal](https://preview.portal.azure.com/?feature.msixapplications=true#home).
+1. [Open de Azure Portal](https://portal.azure.com).
 2. Als u wordt gevraagd of u de uitbrei ding betrouwt, selecteert u **toestaan**.
 
       > [!div class="mx-imgBorder"]
@@ -171,6 +171,9 @@ De apps publiceren:
 ## <a name="assign-a-user-to-an-app-group"></a>Een gebruiker toewijzen aan een app-groep
 
 Nadat u MSIX-apps aan een app-groep hebt toegewezen, moet u gebruikers toegang verlenen tot deze toepassingen. U kunt toegang toewijzen door gebruikers of gebruikers groepen toe te voegen aan een app-groep met gepubliceerde MSIX-toepassingen. Volg de instructies in [app-groepen beheren met de Azure Portal](manage-app-groups.md) om uw gebruikers toe te wijzen aan een app-groep.
+
+>[!NOTE]
+>MSIX-app koppelen externe apps worden mogelijk verwijderd uit de feed wanneer u externe apps tijdens de open bare preview test. De apps worden niet weer gegeven omdat de hostgroep die u in de evaluatie omgeving gebruikt, wordt geleverd door een extern bureau blad-Broker in de productie omgeving. Omdat de RD-Broker in de productie omgeving de aanwezigheid van de MSIX-app voor het koppelen van externe apps niet registreert, worden de apps niet weer gegeven in de feed.
 
 ## <a name="change-msix-package-state"></a>Status van MSIX-pakket wijzigen
 

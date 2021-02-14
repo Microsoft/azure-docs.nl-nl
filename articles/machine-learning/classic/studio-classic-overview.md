@@ -7,15 +7,15 @@ ms.author: keli19
 ms.custom: seodec18
 ms.assetid: e65c8fe1-7991-4a2a-86ef-fd80a7a06269
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: overview
 ms.date: 08/19/2020
-ms.openlocfilehash: 0a18f9adb8c3723619b44b30bfa334edf4300c0d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
-ms.translationtype: HT
+ms.openlocfilehash: ad0550dc20edfbc10fb8877ad049c27fc2edf086
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509485"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517532"
 ---
 # <a name="what-can-i-do-with-machine-learning-studio-classic"></a>Wat kan ik doen met Machine Learning Studio (klassiek)?
 
@@ -30,14 +30,14 @@ Machine Learning Studio (klassiek) is een hulpprogramma met functionaliteit op b
 
 Wanneer u een predictive analytics-model ontwikkelt, gebruikt u doorgaans gegevens uit een of meer bronnen. U transformeert en analyseert deze gegevens met diverse functies voor gegevensmanipulatie en statistische functies, en genereert een set resultaten. Het ontwikkelen van een model als dit is een iteratief proces. Terwijl u de verschillende functies en de bijbehorende parameters aanpast, worden de resultaten geconvergeerd tot u een afdoende getraind en doeltreffend model hebt.
 
-Machine Learning Studio (klassiek) beschikt over een interactieve, visuele werkruimte om eenvoudig een predictive analytics-model te bouwen, te testen en te herhalen. U sleept **_gegevenssets_* _ en _*_modules_*_ voor analyse naar een interactief canvas en verbindt deze met elkaar om een _*_experiment_*_ op te zetten, dat u vervolgens uitvoert in Machine Learning Studio (klassiek). Als u het modelontwerp wilt herhalen, kunt u het experiment bewerken, desgewenst een kopie ervan opslaan en het opnieuw uitvoeren. Wanneer u klaar bent, kunt u het _*_trainingsexperiment_*_ converteren naar een _*_voorspellend experiment_*_ en dit vervolgens publiceren als een _*_webservice_*_, zodat het model ook voor anderen toegankelijk is.
+Machine Learning Studio (klassiek) beschikt over een interactieve, visuele werkruimte om eenvoudig een predictive analytics-model te bouwen, te testen en te herhalen. U kunt de **gegevens sets** _ en analyse _*_modules_*_ van het *-en-neerzetten-model naar een interactief canvas slepen, waarmee u elkaar verbindt om een _*_experiment_*_ te maken, dat u in machine learning Studio (klassiek) uitvoert. Als u het modelontwerp wilt herhalen, kunt u het experiment bewerken, desgewenst een kopie ervan opslaan en het opnieuw uitvoeren. Wanneer u klaar bent, kunt u uw _*_trainings experiment_*_ converteren naar een _*_voorspellend experiment_*_ en dit vervolgens publiceren als een _ *_webservice_*, zodat het model door anderen kan worden geopend.
 
 U hoeft niets te programmeren. U hoeft alleen de gegevenssets en modules visueel met elkaar te verbinden om een predictive analytics-model op te zetten.
 
 ![Diagram voor Machine Learning Studio (klassiek): Zet experimenten op, lees gegevens uit verschillende bronnen, schrijf beoordeelde gegevens weg, maak modellen.](./media/what-is-ml-studio/azure-ml-studio-diagram.jpg)
 
 ## <a name="download-the-ml-studio-classic-overview-diagram"></a>Het overzichtsdiagram voor ML Studio (klassiek) downloaden
-Download het diagram _ *Overzicht van de mogelijkheden van Microsoft ML Studio (klassiek)* * voor een algemeen overzicht van de mogelijkheden van Machine Learning Studio (klassiek). Als u het diagram altijd bij de hand wilt hebben, kunt u het in A3-formaat afdrukken.
+Download het diagram **Overzicht van de mogelijkheden van Microsoft ML Studio (klassiek)** voor een algemeen overzicht van de mogelijkheden van Machine Learning Studio (klassiek). Als u het diagram altijd bij de hand wilt hebben, kunt u het in A3-formaat afdrukken.
 
 **Download het diagram hier: [Overzicht van de mogelijkheden van Microsoft Machine Learning Studio (klassiek)](https://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)** 
 ![Overzicht van de mogelijkheden van Microsoft Machine Learning Studio (klassiek)](./media/what-is-ml-studio/ml_studio_overview_v1.1.png)

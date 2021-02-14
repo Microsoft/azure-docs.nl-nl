@@ -8,12 +8,12 @@ ms.date: 10/05/2020
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.openlocfilehash: 96b6467d0d529f5839c33182057f3aa3c39cb6e7
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: a214e91307308e191ce92b6461c1454d2cc7dd2b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132547"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370475"
 ---
 # <a name="link-a-partner-id-to-your-azure-accounts"></a>Een partner-id aan uw Azure-accounts koppelen
 
@@ -162,9 +162,7 @@ Ja, u kunt uw partner-id voor Azure Stack koppelen.
 
 **Hoe koppel ik mijn partner-id, als mijn bedrijf [Azure Lighthouse](../../lighthouse/overview.md) gebruikt voor toegang tot klantresources?**
 
-Als u klanten onboardt voor gedelegeerd resourcebeheer van Azure door [een aanbieding voor beheerde services te publiceren in Azure Marketplace](../../lighthouse/how-to/publish-managed-services-offers.md), wordt uw MPN-id automatisch gekoppeld.
-
-Als u [klanten onboardt door Azure Resource Manager-sjablonen te implementeren](../../lighthouse/how-to/onboard-customer.md), moet u uw MPN-id koppelen met minstens één gebruikersaccount dat toegang heeft tot al uw abonnementen waarvoor onboarding is uitgevoerd. Let op: u moet dit doen in de tenant van de serviceprovider in plaats van in elke klanttenant. Ter vereenvoudiging raden we u aan om een service-principal-account in uw tenant te maken, deze te koppelen aan uw MPN-id en deze vervolgens toegang tot elke klant te geven die u onboardt met een [ingebouwde Azure-rol die in aanmerking komt voor het tegoed van een partner](/partner-center/azure-roles-perms-pec). Zie [Uw partner-id koppelen om de impact op gedelegeerde resources te volgen](../../lighthouse/how-to/partner-earned-credit.md) voor meer informatie.
+Om Azure Lighthouse-activiteiten te herkennen, moet u uw MPN-ID koppelen aan ten minste één gebruikers account dat toegang heeft tot elk van de onboarded abonnementen. Let op: u moet dit doen in de tenant van de serviceprovider in plaats van in elke klanttenant. Ter vereenvoudiging raden we u aan om een service-principal-account in uw tenant te maken, deze te koppelen aan uw MPN-id en deze vervolgens toegang tot elke klant te geven die u onboardt met een [ingebouwde Azure-rol die in aanmerking komt voor het tegoed van een partner](/partner-center/azure-roles-perms-pec). Zie [Uw partner-id koppelen om de impact op gedelegeerde resources te volgen](../../lighthouse/how-to/partner-earned-credit.md) voor meer informatie.
 
 **Hoe kan ik PAL (Partner Admin Link) aan mijn klant uitleggen?**
 

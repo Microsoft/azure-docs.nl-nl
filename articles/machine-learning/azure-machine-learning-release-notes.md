@@ -9,16 +9,46 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: b814c12a0d57230a81a68f6030a26ded93bd0399
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: c54034ef927bb49a955ef6121f5a8d56b57f0bd3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100097072"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375558"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
+
+
+## <a name="2021-02-09"></a>2021-02-09
+
+### <a name="azure-machine-learning-sdk-for-python-v1220"></a>Azure Machine Learning SDK voor python v-1.22.0
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **azureml-automl-core**
+    + Er is een fout opgelost waarbij een extra PIP-afhankelijkheid is toegevoegd aan het Conda yml-bestand voor Vision-modellen.
+  + **azureml-automl-runtime**
+    + Er is een fout opgelost waarbij klassieke prognose modellen (bijvoorbeeld AutoArima) trainings gegevens kunnen ontvangen waarbij rijen met toegerekende doel waarden niet aanwezig zijn. Dit heeft het gegevens contract van deze modellen geschonden. * Verschillende bugs met een vertraagd gedrag van de time-series-operator. Voorheen heeft de bewerking lag per exemplaar niet alle toegerekende rijen correct gemarkeerd en daarom wordt niet altijd de juiste vertragings waarden voor het voorval gegenereerd. Er zijn ook compatibiliteits problemen opgelost tussen de vertragings operator en de operator voor het rollen venster met het gedrag voor herhalingen. Dit heeft eerder geresulteerd in de operator voor het neerzetten van een aantal rijen uit de trainings gegevens die op een andere manier moeten worden gebruikt.
+  + **azureml-core**
+    + Ondersteuning voor token verificatie toevoegen per doel groep.
+    + Voeg toe `process_count` aan [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) om multi-process PyTorch-taken met meerdere knoop punten te ondersteunen.
+  + **azureml-pipeline-steps**
+    + [CommandStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.commandstep?preserve-view=true&view=azure-ml-py) nu en zonder experimenteel.
+    + [ParallelRunConfig](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunconfig?preserve-view=true&view=azure-ml-py): Voeg het argument allowed_failed_count en allowed_failed_percent toe om de fout drempelwaarde op het niveau van de batch te controleren. De drempel waarde voor fouten heeft nu drie versies:
+       + error_threshold: het aantal toegestane, mislukte mini-batch items; 
+       + allowed_failed_count: het aantal mislukte mini batches dat is toegestaan. 
+       + allowed_failed_percent-het percentage toegestane mislukte mini batches. 
+       
+       Een taak wordt gestopt als deze meer dan een waarde overschrijdt. error_threshold is vereist om ervoor te zorgen dat het achterwaarts compatibel is. Stel de waarde in op-1 om deze te negeren.
+    + Vaste spatie verwerking in AutoMLStep-naam.
+    + ScriptRunConfig wordt nu ondersteund door HyperDriveStep
+  + **azureml-train-core**
+    + HyperDrive-uitvoeringen die vanuit een ScriptRun worden aangeroepen, worden nu beschouwd als een onderliggende uitvoering.
+    + Voeg toe `process_count` aan [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) om multi-process PyTorch-taken met meerdere knoop punten te ondersteunen.
+  + **azureml-widgets**
+    + Widget ParallelRunStepDetails toevoegen om de status van een ParallelRunStep te visualiseren.
+    + Hiermee kunnen Hyperdrive-gebruikers een extra as weer geven in het parallel coördinaten diagram met de metrische waarde die overeenkomt met elke set van Hyper parameters voor elke onderliggende uitvoering.
+
 
  ## <a name="2021-01-31"></a>2021-01-31
 ### <a name="azure-machine-learning-studio-notebooks-experience-january-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van januari)
@@ -35,6 +65,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
   + Verbeterde prestaties 
   + Verbeterde snelheid en kernel-betrouw baarheid
   
+
  ## <a name="2021-01-25"></a>2021-01-25
 
 ### <a name="azure-machine-learning-sdk-for-python-v1210"></a>Azure Machine Learning SDK voor python v-1.21.0
@@ -145,7 +176,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
     + HyperDriveRun.get_children_sorted_by_primary_metric () moet nu sneller worden voltooid
     + Verbeterde fout afhandeling in de HyperDrive-SDK.
     +  Alle Estimator-klassen zijn afgeschaft in het voor deel van het gebruik van ScriptRunConfig voor het configureren van experimenten. Afgeschafte klassen zijn:
-        + MMLBaseEstimator
+        + MMLBase
         + Estimator
         + PyTorch 
         + TensorFlow 

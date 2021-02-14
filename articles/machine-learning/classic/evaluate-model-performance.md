@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): Evalueer & Kruis validatie modellen-Azure'
 description: Meer informatie over de metrische gegevens die u kunt gebruiken om de model prestaties in Azure Machine Learning Studio (klassiek) te bewaken.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: ca369f8a3e680a4d2aae49df83dda0cdd3dc4075
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b2ca78d30659fce6e4246c81216cae94b404955e
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310147"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520014"
 ---
 # <a name="evaluate-model-performance-in-azure-machine-learning-studio-classic"></a>Prestaties van model in Azure Machine Learning Studio evalueren (klassiek)
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 In dit artikel vindt u meer informatie over de metrische gegevens die u kunt gebruiken om de model prestaties in Azure Machine Learning Studio (klassiek) te bewaken.  Het evalueren van de prestaties van een model is een van de belangrijkste fasen in het data Science-proces. Hiermee wordt aangegeven hoe de Score (voor spellingen) van een gegevensset is geslaagd door een getraind model. Azure Machine Learning Studio (klassiek) ondersteunt model evaluatie via twee van de belangrijkste machine learning modules: 
@@ -47,7 +47,7 @@ U kunt ook Kruis validatie gebruiken om een aantal verwerkings bewerkingen (10 v
 In de volgende secties bouwen we eenvoudige regressie-en classificatie modellen en evalueren ze hun prestaties met behulp van zowel het [beoordelings model][evaluate-model] als de [Kruis validatie model][cross-validate-model] modules.
 
 ## <a name="evaluating-a-regression-model"></a>Een regressie model evalueren
-Stel dat we de prijs van een auto willen voors pellen met behulp van functies zoals afmetingen, paarden kracht, Engine specificaties, enzovoort. Dit is een typisch regressie probleem, waarbij de doel variabele ( *prijs* ) een doorlopende numerieke waarde is. We kunnen een lineair regressie model passend maken dat, op basis van de functie waarden van een bepaalde auto, de prijs van die auto kan voors pellen. Dit regressie model kan worden gebruikt om te scoren op dezelfde gegevensset die we hebben opgeleid. Zodra we de gedicteerde auto prijzen hebben, kunnen we de prestaties van het model evalueren door te kijken hoeveel de voor spellingen afwijken van de werkelijke prijzen op gemiddeld. Om dit te illustreren, gebruiken we de beschik bare *gegevens over auto Mobile price data (RAW)* in het gedeelte **opgeslagen gegevens sets** in machine learning Studio (klassiek).
+Stel dat we de prijs van een auto willen voors pellen met behulp van functies zoals afmetingen, paarden kracht, Engine specificaties, enzovoort. Dit is een typisch regressie probleem, waarbij de doel variabele (*prijs*) een doorlopende numerieke waarde is. We kunnen een lineair regressie model passend maken dat, op basis van de functie waarden van een bepaalde auto, de prijs van die auto kan voors pellen. Dit regressie model kan worden gebruikt om te scoren op dezelfde gegevensset die we hebben opgeleid. Zodra we de gedicteerde auto prijzen hebben, kunnen we de prestaties van het model evalueren door te kijken hoeveel de voor spellingen afwijken van de werkelijke prijzen op gemiddeld. Om dit te illustreren, gebruiken we de beschik bare *gegevens over auto Mobile price data (RAW)* in het gedeelte **opgeslagen gegevens sets** in machine learning Studio (klassiek).
 
 ### <a name="creating-the-experiment"></a>Het experiment maken
 Voeg de volgende modules toe aan uw werk ruimte in Azure Machine Learning Studio (klassiek):
@@ -65,7 +65,7 @@ Verbind de poorten zoals hieronder wordt weer gegeven in afbeelding 1 en stel de
 Afbeelding 1. Een regressie model evalueren.
 
 ### <a name="inspecting-the-evaluation-results"></a>De evaluatie resultaten controleren
-Nadat u het experiment hebt uitgevoerd, kunt u op de uitvoer poort van de module [Evaluate model][evaluate-model] klikken en *visualiseren* selecteren om de resultaten van de evaluatie te bekijken. De metrische gegevens voor de evaluatie die beschikbaar zijn voor regressie modellen zijn: de *absolute fout* , het *hoofd knooppunt absolute fout* , de *relatieve absolute fout* , de *relatieve kwadratische fout* en de *coëfficiënt van de bepaling*.
+Nadat u het experiment hebt uitgevoerd, kunt u op de uitvoer poort van de module [Evaluate model][evaluate-model] klikken en *visualiseren* selecteren om de resultaten van de evaluatie te bekijken. De metrische gegevens voor de evaluatie die beschikbaar zijn voor regressie modellen zijn: de *absolute fout*, het *hoofd knooppunt absolute fout*, de *relatieve absolute fout*, de *relatieve kwadratische fout* en de *coëfficiënt van de bepaling*.
 
 De term ' error ' vertegenwoordigt het verschil tussen de voorspelde waarde en de waarde True. De absolute waarde of het kwadraat van dit verschil wordt doorgaans berekend om de totale omvang van de fout voor alle instanties vast te leggen, omdat het verschil tussen de voorspelde en de werkelijke waarde in sommige gevallen negatief kan zijn. De metrische fout gegevens meten de voorspellende prestaties van een regressie model in termen van de gemiddelde afwijking van de voor spellingen van de werkelijke waarden. Lagere fout waarden betekent dat het model nauw keuriger is bij het maken van voor spellingen. De totale fout waarde nul betekent dat het model perfect past bij de gegevens.
 
@@ -107,7 +107,7 @@ Verbind de poorten zoals hieronder wordt weer gegeven in afbeelding 5 en stel de
 Afbeelding 5. Een binair classificatie model evalueren.
 
 ### <a name="inspecting-the-evaluation-results"></a>De evaluatie resultaten controleren
-Nadat u het experiment hebt uitgevoerd, kunt u op de uitvoer poort van de module [Evaluate model][evaluate-model] klikken en *visualiseren* selecteren om de resultaten van de evaluatie te bekijken (afbeelding 7). De metrische gegevens van de evaluatie versie die beschikbaar zijn voor binaire classificatie modellen zijn: *nauw keurigheid* , *precisie* , *intrekken* , *F1 Score* en *AUC*. Daarnaast wordt in de module een Verwar ring-matrix uitgevoerd met het aantal True-positieven, fout-negatieven, fout-positieven en echte negatieven, maar ook voor *Roc* , *precisie/terughalen* en *Lift* curven.
+Nadat u het experiment hebt uitgevoerd, kunt u op de uitvoer poort van de module [Evaluate model][evaluate-model] klikken en *visualiseren* selecteren om de resultaten van de evaluatie te bekijken (afbeelding 7). De metrische gegevens van de evaluatie versie die beschikbaar zijn voor binaire classificatie modellen zijn: *nauw keurigheid*, *precisie*, *intrekken*, *F1 Score* en *AUC*. Daarnaast wordt in de module een Verwar ring-matrix uitgevoerd met het aantal True-positieven, fout-negatieven, fout-positieven en echte negatieven, maar ook voor *Roc*, *precisie/terughalen* en *Lift* curven.
 
 Nauw keurigheid is gewoon het aandeel van de juiste geclassificeerde instanties. Doorgaans is dit de eerste metriek die u bekijkt bij het evalueren van een classificatie. Wanneer de test gegevens echter niet in balans zijn (waarbij de meeste instanties tot een van de klassen behoren), of als u geïnteresseerd bent in de prestaties van een van de klassen, legt de nauw keurigheid niet echt de effectiviteit van een classificatie vast. In het scenario voor de classificatie van het inkomens niveau wordt ervan uitgegaan dat u op sommige gegevens test, waarbij 99% van de instanties de mensen vertegenwoordigen die minder dan of gelijk zijn aan 50.000 per jaar. Het is mogelijk om een 0,99 nauw keurigheid te krijgen door de klasse ' <= 50.000 ' voor alle exemplaren te voors pellen. De classificatie in dit geval lijkt een goede taak te zijn, maar in werkelijkheid is het niet mogelijk om een van de hoge inkomsten van personen (de 1%) te classificeren. correct.
 
@@ -117,13 +117,13 @@ Daarom is het handig om extra metrische gegevens te berekenen waarmee meer speci
 
 Afbeelding 6. Verwar ring matrix voor binaire classificatie.
 
-Als u terugkeert naar het probleem met de winst classificatie, willen we verschillende evaluatie vragen stellen die ons helpen de prestaties van de gebruikte classificatie te begrijpen. Een natuurlijke vraag is: ' buiten de personen voor wie het model is voorspeld voor het verdienen van >50 K (TP + FP), hoeveel goed zijn geclassificeerd (TP)? ' Deze vraag kan worden beantwoord door de **nauw keurigheid** van het model te bekijken. Dit is het aandeel van de positieve waarde die juist is geclassificeerd: TP/(TP + FP). Een andere veelgestelde vraag is ' van alle hoge voor delen van werk nemers met inkomsten >50.000 (TP + FN), hoeveel had de classificatie correct geclassificeerd (TP) '. Dit is in feite het **intrekken** , of de werkelijke positieve factor: TP/(TP + FN) van de classificatie. U zult merken dat er sprake is van een duidelijke afweging tussen Precision en intrekken. Als er bijvoorbeeld sprake is van een relatief gebalanceerde gegevensset, zou een classificatie die voornamelijk positieve instanties voorspeld, een hoge terugroep zou hebben, maar een lage nauw keurigheid als veel van de negatieve instanties verkeerd worden geclassificeerd, wat resulteert in een groot aantal fout-positieven. Als u een overzicht wilt zien van de verschillen tussen deze twee gegevens, klikt u op **de curve voor** de resultaten van de evaluatie pagina (linksboven in afbeelding 7).
+Als u terugkeert naar het probleem met de winst classificatie, willen we verschillende evaluatie vragen stellen die ons helpen de prestaties van de gebruikte classificatie te begrijpen. Een natuurlijke vraag is: ' buiten de personen voor wie het model is voorspeld voor het verdienen van >50 K (TP + FP), hoeveel goed zijn geclassificeerd (TP)? ' Deze vraag kan worden beantwoord door de **nauw keurigheid** van het model te bekijken. Dit is het aandeel van de positieve waarde die juist is geclassificeerd: TP/(TP + FP). Een andere veelgestelde vraag is ' van alle hoge voor delen van werk nemers met inkomsten >50.000 (TP + FN), hoeveel had de classificatie correct geclassificeerd (TP) '. Dit is in feite het **intrekken**, of de werkelijke positieve factor: TP/(TP + FN) van de classificatie. U zult merken dat er sprake is van een duidelijke afweging tussen Precision en intrekken. Als er bijvoorbeeld sprake is van een relatief gebalanceerde gegevensset, zou een classificatie die voornamelijk positieve instanties voorspeld, een hoge terugroep zou hebben, maar een lage nauw keurigheid als veel van de negatieve instanties verkeerd worden geclassificeerd, wat resulteert in een groot aantal fout-positieven. Als u een overzicht wilt zien van de verschillen tussen deze twee gegevens, klikt u op **de curve voor** de resultaten van de evaluatie pagina (linksboven in afbeelding 7).
 
 ![Resultaten van evaluatie van binaire classificatie](./media/evaluate-model-performance/7.png)
 
 Afbeelding 7. Evaluatie resultaten van binaire classificatie.
 
-Een andere gerelateerde metrische waarde die vaak wordt gebruikt, is de **F1-Score** , die zowel nauw keurig als in aanmerking komt. Het harmonische gemiddelde van deze twee metrische gegevens en wordt als volgt berekend: F1 = 2 (Precision x intrekken)/(Precision + intrekken). De F1-Score is een goede manier om de evaluatie in één getal samen te vatten, maar het is altijd een goed idee om nauw keurig te kijken en samen te halen om beter inzicht te krijgen in hoe een classificatie zich gedraagt.
+Een andere gerelateerde metrische waarde die vaak wordt gebruikt, is de **F1-Score**, die zowel nauw keurig als in aanmerking komt. Het harmonische gemiddelde van deze twee metrische gegevens en wordt als volgt berekend: F1 = 2 (Precision x intrekken)/(Precision + intrekken). De F1-Score is een goede manier om de evaluatie in één getal samen te vatten, maar het is altijd een goed idee om nauw keurig te kijken en samen te halen om beter inzicht te krijgen in hoe een classificatie zich gedraagt.
 
 Daarnaast kan een de werkelijke positieve verhouding controleren, vergeleken met het onjuiste positieve rente nummer in de curve van de **ontvanger** en het bijbehorende **gebied onder de waarde curve (AUC)** . Hoe dichter deze curve zich bevindt in de linkerbovenhoek, des te beter is de prestaties van de classificatie (waardoor de werkelijke positieve snelheid wordt gemaximaliseerd terwijl het onjuiste positieve tempo wordt geminimaliseerd). Curves die zich dicht bij de diagonaal van het waarnemings punt bevinden, zijn het resultaat van classificaties die doorgaans voor spellingen doen die dicht bij wille keurig raden zijn.
 

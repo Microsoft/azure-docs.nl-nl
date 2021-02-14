@@ -1,26 +1,26 @@
 ---
 title: Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
-description: Meer informatie over het beveiligen van uw Azure VMware-oplossings-Vm's met de systeem eigen beveiligings tools van Azure vanaf één dash board in Azure Security Center.
+description: Bescherm uw Azure VMware-oplossing-Vm's met de systeem eigen beveiligings tools van Azure in het dash board van Azure Security Center.
 ms.topic: how-to
-ms.date: 02/04/2021
-ms.openlocfilehash: 58cfa1e8e7faa56675d966f86d3b390e52acec27
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.date: 02/12/2021
+ms.openlocfilehash: b37d09d6e8f239586a18c0fa3b1dcd7bfee98102
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584954"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516359"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Bescherm uw Azure VMware-oplossing-Vm's met Azure Security Center-integratie
 
-Azure native Security-hulpprogram ma's bieden een veilige infra structuur voor een hybride omgeving van Azure, Azure VMware-oplossing en on-premises virtuele machines (Vm's). In dit artikel wordt beschreven hoe u Azure-hulpprogram ma's instelt voor de beveiliging van hybride omgevingen. U gebruikt verschillende hulp middelen om verschillende soorten bedreigingen te identificeren en op te lossen.
+De systeem eigen beveiligings tools van Azure bieden beveiliging voor een hybride omgeving van Azure, Azure VMware-oplossing en on-premises virtuele machines (Vm's). In dit artikel wordt beschreven hoe u Azure-hulpprogram ma's instelt voor de beveiliging van hybride omgevingen. U gebruikt deze hulpprogram ma's om verschillende bedreigingen te identificeren en te verhelpen.
 
 ## <a name="azure-native-services"></a>Systeem eigen Azure-Services
 
-Hier volgt een korte samen vatting van elke Azure native-service:
+Hier volgt een korte samen vatting van de systeem eigen services van Azure:
 
 - **Log Analytics-werk ruimte:** Log Analytics werk ruimte is een unieke omgeving voor het opslaan van logboek gegevens. Elke werkruimte heeft een eigen gegevensopslagplaats en configuratie. Gegevens bronnen en oplossingen zijn geconfigureerd om hun gegevens op te slaan in een specifieke werk ruimte.
-- **Azure Security Center:** Azure Security Center is een systeem voor geïntegreerde infrastructuur beveiliging. Het verbetert de beveiligings postuur van de data centers en biedt geavanceerde beveiliging tegen bedreigingen in de hybride werk belastingen in de Cloud of on-premises.
-- **Azure-Sentinel:** Azure Sentinel is een Cloud-native, Security Information Event Management (SIEM) en een via-oplossing (Security Orchestration Automated Response). Het biedt intelligente beveiligings analyses en bedreigings informatie in een omgeving. Het is één oplossing voor waarschuwings detectie, zicht baarheid van bedreigingen, proactieve jacht en bedreigings reacties.
+- **Azure Security Center:** Azure Security Center is een systeem voor geïntegreerde infrastructuur beveiliging. Het verbetert de beveiliging van data centers en biedt geavanceerde bedreigings beveiliging voor hybride werk belastingen in de Cloud of on-premises.
+- **Azure-Sentinel:** Azure Sentinel is een Cloud-native, SIEM-oplossing (Security Information Event Management). Het biedt beveiligings analyses, waarschuwings detectie en geautomatiseerd antwoord op bedreigingen in een omgeving.
 
 ## <a name="topology"></a>Topologie
 
@@ -30,13 +30,13 @@ Met de Log Analytics-agent kunt u logboek gegevens verzamelen van Azure, Azure V
 
 Zodra de logboeken zijn verzameld door de Log Analytics-werk ruimte, kunt u de Log Analytics-werk ruimte configureren met Azure Security Center. Azure Security Center kunt de beveiligings status van virtuele machines van Azure VMware-oplossingen evalueren en een waarschuwing genereren voor elk kritiek beveiligings probleem. Zo worden de ontbrekende patches voor het besturings systeem, de configuratie van de beveiliging en [Endpoint Protection](../security-center/security-center-services.md)geëvalueerd.
 
-U kunt de Log Analytics-werk ruimte configureren met Azure Sentinel voor waarschuwings detectie, zicht baarheid van bedreigingen, proactieve jacht en bedreigings reacties. In het voor gaande diagram is Azure Security Center verbonden met Azure Sentinel met behulp van Azure Security Center-connector. Azure Security Center stuurt het probleem van de omgeving door naar Azure Sentinel om een incident te maken en te koppelen aan andere bedreigingen. U kunt ook de geplande regel query maken om ongewenste activiteiten te detecteren en deze naar de incidenten te converteren.
+U kunt de Log Analytics-werk ruimte configureren met Azure Sentinel voor waarschuwings detectie, zicht baarheid van bedreigingen, jacht en bedreigings reacties. In het voor gaande diagram is Azure Security Center verbonden met Azure Sentinel met behulp van Azure Security Center-connector. Azure Security Center stuurt het probleem van de omgeving door naar Azure Sentinel om een incident te maken en te koppelen aan andere bedreigingen. U kunt ook de geplande regel query maken om ongewenste activiteiten te detecteren en deze naar de incidenten te converteren.
 
 ## <a name="benefits"></a>Voordelen
 
 - Systeem eigen services van Azure kunnen worden gebruikt voor de beveiliging van hybride omgevingen in azure, Azure VMware-oplossing en on-premises Services.
 - Met een Log Analytics-werk ruimte kunt u de gegevens of de logboeken op één punt verzamelen en dezelfde gegevens presen teren aan verschillende Azure native-Services.
-- Azure Security Center biedt een aantal functies, waaronder:
+- Azure Security Center biedt veel functies, waaronder:
     - Bestandsintegriteit controleren
     - Detectie van bestanden met een aanval
     - Evaluatie van patch voor besturings systeem 
@@ -54,11 +54,11 @@ U hebt een Log Analytics-werk ruimte nodig voor het verzamelen van gegevens uit 
 
 ## <a name="deploy-security-center-and-configure-azure-vmware-solution-vms"></a>Security Center implementeren en virtuele machines van Azure VMware-oplossingen configureren
 
-Azure Security Center is een vooraf geconfigureerd hulp programma dat geen implementatie vereist. Zoek in het Azure Portal naar **Security Center** en selecteer dit.
+Azure Security Center is een vooraf geconfigureerd hulp programma dat niet hoeft te worden geïmplementeerd. Zoek in het Azure Portal naar **Security Center** en selecteer dit.
 
 ### <a name="enable-azure-defender"></a>Azure Defender inschakelen
 
-Azure Defender breidt de geavanceerde bedreigings beveiliging van Azure Security Center over uw hybride werk belastingen zowel on-premises als in de Cloud uit. Als u uw Azure VMware-oplossing-Vm's wilt beveiligen, moet u Azure Defender inschakelen. 
+Azure Defender breidt de geavanceerde bedreigings beveiliging van Azure Security Center uit in uw hybride werk belastingen, zowel on-premises als in de Cloud. Als u uw Azure VMware-oplossing-Vm's wilt beveiligen, moet u Azure Defender inschakelen. 
 
 1. Selecteer in Security Center **aan** de slag.
 
@@ -149,7 +149,7 @@ Nu bent u klaar om Azure Sentinel te verbinden met uw gegevens bronnen, in dit g
 
 ## <a name="create-rules-to-identify-security-threats"></a>Regels maken om beveiligings Risico's te identificeren
 
-Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken om waarschuwingen te genereren op basis van gedetecteerde bedreigingen. In het volgende voor beeld maken we een regel voor het identificeren van pogingen om zich aan te melden bij Windows Server met het verkeerde wacht woord.
+Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken voor het genereren van waarschuwingen voor gedetecteerde bedreigingen. In het volgende voor beeld maken we een regel voor pogingen om zich aan te melden bij Windows Server met het verkeerde wacht woord.
 
 1. Selecteer op de pagina overzicht van Azure-Sentinel, onder configuraties, **Analytics**.
 
@@ -196,7 +196,7 @@ Nadat u gegevens bronnen hebt verbonden met Azure Sentinel, kunt u regels maken 
 
 Nadat de derde heeft geprobeerd zich aan te melden bij Windows Server, activeert de gemaakte regel een incident voor elke mislukte poging.
 
-## <a name="view-generated-alerts"></a>Gegenereerde waarschuwingen weer geven
+## <a name="view-alerts"></a>Waarschuwingen weergeven
 
 U kunt gegenereerde incidenten weer geven met Azure Sentinel. U kunt ook incidenten toewijzen en deze sluiten zodra ze zijn opgelost, allemaal vanuit Azure Sentinel.
 

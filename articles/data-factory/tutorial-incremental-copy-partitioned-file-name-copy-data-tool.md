@@ -1,24 +1,18 @@
 ---
 title: Incrementeel kopiëren van nieuwe bestanden op basis van een gepartitioneerde bestands naam
 description: Maak een Azure-data factory en gebruik vervolgens het hulp programma Gegevens kopiëren om nieuwe bestanden op basis van een gepartitioneerde bestands naam stapsgewijs te laden.
-services: data-factory
-documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
-ms.reviewer: ''
-manager: ''
 ms.service: data-factory
-ms.workload: data-services
-ms.devlang: na
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/09/2020
-ms.openlocfilehash: ae66bb025f2a49a79120fe86e0de7c4a3ccf26ca
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 8e68852434a4a8bea43b575523a60c9346b2a569
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555373"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384772"
 ---
 # <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Kopieer incrementeel nieuwe bestanden op basis van een gepartitioneerde bestands naam met behulp van het Gegevens kopiëren-hulp programma
 
@@ -38,8 +32,8 @@ In deze zelfstudie voert u de volgende stappen uit:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-abonnement** : Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
-* **Azure-opslag account** : Blob Storage gebruiken als _bron_  -en _sink_ -gegevens archief. Als u geen Azure-opslagaccount hebt, raadpleegt u de instructies in [Een opslagaccount maken](../storage/common/storage-account-create.md).
+* **Azure-abonnement**: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+* **Azure-opslag account**: Blob Storage gebruiken als _bron_  -en _sink_ -gegevens archief. Als u geen Azure-opslagaccount hebt, raadpleegt u de instructies in [Een opslagaccount maken](../storage/common/storage-account-create.md).
 
 ### <a name="create-two-containers-in-blob-storage"></a>Twee containers maken in Blob Storage
 
@@ -56,7 +50,7 @@ Bereid de Blob-opslag voor op de zelf studie door de volgende stappen uit te voe
 
 ## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
-1. Selecteer in het linkermenu **een resource** -  >  **integratie**  >  **Data Factory** maken:
+1. Selecteer in het linkermenu **Een resource maken** > **Integratie** > **Data Factory**:
 
    ![Selectie van Data Factory in het deelvenster Nieuw](./media/doc-common-process/new-azure-data-factory-menu.png)
 
@@ -67,8 +61,8 @@ Bereid de Blob-opslag voor op de zelf studie door de volgende stappen uit te voe
    ![Foutbericht nieuwe data factory](./media/doc-common-process/name-not-available-error.png)
 
    Als u een foutbericht ontvangt dat betrekking heeft op de waarde die bij de naam is ingevuld, voert u een andere naam in voor de data factory. Gebruik bijvoorbeeld de naam _**uwnaam**_**ADFTutorialDataFactory**. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
-3. Selecteer het Azure- **abonnement** waarin u de nieuwe data factory wilt maken.
-4. Voer een van de volgende stappen uit voor **Resourcegroep** :
+3. Selecteer het Azure-**abonnement** waarin u de nieuwe data factory wilt maken.
+4. Voer een van de volgende stappen uit voor **Resourcegroep**:
 
     a. Selecteer **Bestaande gebruiken** en selecteer een bestaande resourcegroep in de vervolgkeuzelijst.
 
@@ -101,7 +95,7 @@ Bereid de Blob-opslag voor op de zelf studie door de volgende stappen uit te voe
 
     d. Voer **1 uur** in onder **terugkeer patroon**.
 
-    e. Selecteer **Volgende**.
+    e. Selecteer **Next**.
 
     De gebruikersinterface van Data Factory maakt een pijplijn met de opgegeven taaknaam.
 
@@ -130,7 +124,7 @@ Bereid de Blob-opslag voor op de zelf studie door de volgende stappen uit te voe
 
     ![Scherm afbeelding toont het dialoog venster invoer bestand of-map kiezen met een geselecteerde map.](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/check-binary-copy.png)     
 
-5. Selecteer op de pagina **doel gegevens archief** de **AzureBlobStorage** , die hetzelfde opslag account als gegevens bron archief is, en klik vervolgens op **volgende**.
+5. Selecteer op de pagina **doel gegevens archief** de **AzureBlobStorage**, die hetzelfde opslag account als gegevens bron archief is, en klik vervolgens op **volgende**.
 
     ![De pagina Doelgegevensarchief](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/destination-data-store-page-select-linkedservice.png)
 6. Voer op de pagina **het uitvoer bestand of de map kiezen** de volgende stappen uit:

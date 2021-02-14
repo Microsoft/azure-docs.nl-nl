@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: e6bbebafab45080a2076f33d66dd96296a761e4f
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: fc5d9cbd02490748c17a9f40a1440c5ad0c46278
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754958"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104107"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Een JavaScript-app met één pagina migreren van impliciete toekenning naar autorisatiecodestroom
 
@@ -41,7 +41,7 @@ Als u uw bestaande app-registratie voor uw toepassingen wilt blijven gebruiken, 
 
 Volg deze stappen voor app-registraties die momenteel zijn geconfigureerd met omleidings-URL’s voor het **Web**-platform:
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a> en selecteer uw **Azure Active Directory** Tenant.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a> en selecteer uw **Azure Active Directory**-tenant.
 1. Selecteer uw toepassing in **App-registraties** en klik vervolgens op **Verificatie**.
 1. Selecteer in de tegel **Web**-platform onder **Omleidings-URL's** de waarschuwingsbanner die aangeeft dat u de URLS's moet migreren.
 

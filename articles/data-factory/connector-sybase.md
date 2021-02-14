@@ -1,22 +1,17 @@
 ---
 title: Gegevens van Sybase kopiëren met behulp van Azure Data Factory
 description: Informatie over het kopiëren van gegevens van Sybase naar ondersteunde Sink-gegevens archieven door gebruik te maken van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/10/2020
 ms.author: jingwang
-ms.openlocfilehash: ac9dff4b16d8ba1b346a2827f3b5487dbf97392e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ef63eded5403c1cf5faddec71ed3503c3ae2138
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84669831"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384806"
 ---
 # <a name="copy-data-from-sybase-using-azure-data-factory"></a>Gegevens van Sybase kopiëren met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -61,12 +56,12 @@ De volgende eigenschappen worden ondersteund voor Sybase-gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Sybase** | Ja |
-| server | De naam van de Sybase-server. |Ja |
-| database | De naam van de Sybase-data base. |Ja |
-| authenticationType | Type verificatie dat wordt gebruikt om verbinding te maken met de Sybase-data base.<br/>Toegestane waarden zijn: **Basic**en **Windows**. |Ja |
-| gebruikersnaam | Geef de gebruikers naam op om verbinding te maken met de Sybase-data base. |Ja |
-| wachtwoord | Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). |Ja |
+| type | De eigenschap type moet worden ingesteld op: **Sybase** | Yes |
+| server | De naam van de Sybase-server. |Yes |
+| database | De naam van de Sybase-data base. |Yes |
+| authenticationType | Type verificatie dat wordt gebruikt om verbinding te maken met de Sybase-data base.<br/>Toegestane waarden zijn: **Basic** en **Windows**. |Yes |
+| gebruikersnaam | Geef de gebruikers naam op om verbinding te maken met de Sybase-data base. |Yes |
+| wachtwoord | Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | connectVia | Het [Integration runtime](concepts-integration-runtime.md) dat moet worden gebruikt om verbinding te maken met het gegevens archief. Een zelf-hostende Integration Runtime is vereist zoals vermeld in de [vereisten](#prerequisites). |Ja |
 
 **Voorbeeld:**
@@ -102,7 +97,7 @@ Als u gegevens wilt kopiëren vanuit Sybase, worden de volgende eigenschappen on
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **SybaseTable** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **SybaseTable** | Yes |
 | tableName | De naam van de tabel in de Sybase-data base. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -134,7 +129,7 @@ Als u gegevens wilt kopiëren van Sybase, worden de volgende eigenschappen onder
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SybaseSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **SybaseSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

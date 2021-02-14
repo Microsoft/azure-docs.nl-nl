@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/15/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 764d75872eb1bad0647235cd70f9984ebd7789bd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 46e5400627e4d2896265ed95410c8afcb918043b
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027933"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100106081"
 ---
 De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service Bus-berichten. Voor informatie over prijzen en andere quota voor Service Bus raadpleegt u [Service Bus-prijzen](https://azure.microsoft.com/pricing/details/service-bus/).
 
@@ -24,7 +24,7 @@ De volgende tabel vermeldt quotuminformatie die specifiek is voor Azure Service 
 | Wachtrij- of onderwerpgrootte |Entiteit |Gedefinieerd bij het maken van de wachtrij of het onderwerp. <br/><br/> Verdere binnenkomende berichten worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. |1, 2, 3, 4 GB of 5 GB.<br /><br />In de Premium-SKU en de Standard-SKU waar [partitioneren](../articles/service-bus-messaging/service-bus-partitioning.md) is ingeschakeld is de maximumgrootte van de wachtrij of het onderwerp 80 GB. |
 | Aantal gelijktijdige verbindingen in een naamruimte |Naamruimte |Volgende aanvragen voor extra verbindingen worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. REST-bewerkingen tellen niet mee voor gelijktijdige TCP-verbindingen. |Netberichten: 1000.<br /><br />AMQP: 5000. |
 | Aantal gelijktijdige ontvangen verzoeken in een wachtrij, onderwerp of abonnementsentiteit |Entiteit |Verdere ontvangstverzoeken worden geweigerd en er wordt een uitzondering ontvangen door de aanroepende code. Dit quotum is van toepassing op het gecombineerde aantal gelijktijdige ontvangstbewerkingen in alle abonnementen op een onderwerp. |5.000 |
-| Aantal onderwerpen of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Als deze wordt aangeroepen vanuit de beheer-API, wordt een uitzondering ontvangen door de aanroepende code. |10.000 voor de Basic- of Standard-laag. Het totale aantal onderwerpen en wachtrijen in een naamruimte moet minder zijn dan of gelijk zijn aan 10.000. <br/><br/>Voor de Premium-laag 1.000 per Messaging-eenheid. De maximumlimiet is 4000. |
+| Aantal onderwerpen of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Als deze wordt aangeroepen vanuit de beheer-API, wordt een uitzondering ontvangen door de aanroepende code. |10.000 voor de Basic- of Standard-laag. Het totale aantal onderwerpen en wachtrijen in een naamruimte moet minder zijn dan of gelijk zijn aan 10.000. <br/><br/>Voor de Premium-laag 1.000 per Messaging-eenheid. |
 | Aantal [gepartitioneerde onderwerpen](../articles/service-bus-messaging/service-bus-partitioning.md) of wachtrijen per naamruimte |Naamruimte |Verdere verzoeken om nieuwe gepartitioneerde onderwerpen of wachtrijen in de naamruimte te maken, worden geweigerd. Als dit wordt geconfigureerd via de [Azure Portal][Azure portal], wordt er een foutbericht gegenereerd. Indien aangeroepen vanuit de beheer-API, wordt de uitzondering **QuotaExceededException** ontvangen door de aanroepende code. |Basic- en Standard-lagen: 100.<br/><br/>Gepartitioneerde entiteiten worden niet ondersteund in de [Premium-laag](../articles/service-bus-messaging/service-bus-premium-messaging.md).<br/><br />Elke gepartitioneerde wachtrij of onderwerp telt voor het quotum van 1000 entiteiten per naamruimte. |
 | Maximale grootte van ieder berichtentiteitspad: wachtrij of onderwerp |Entiteit |- |260 tekens. |
 | Maximale grootte van berichtentiteitsnaam: naamruimte, abonnement of abonnementsregel |Entiteit |- |50 tekens. |

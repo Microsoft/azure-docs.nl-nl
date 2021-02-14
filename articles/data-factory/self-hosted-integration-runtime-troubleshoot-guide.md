@@ -1,18 +1,17 @@
 ---
 title: Problemen met een zelf-hostende Integration runtime in Azure Data Factory oplossen
 description: Meer informatie over het oplossen van problemen met zelf-hostende Integration runtime in Azure Data Factory.
-services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 01/25/2021
 ms.author: lle
-ms.openlocfilehash: 3735d7b21faf62905ed4c06dbef80c9737e7329e
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 2cb0e0870b32270340e37d54dc54a43b22ee014a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99551073"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376459"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration Runtime oplossen
 
@@ -83,8 +82,8 @@ Voorbeeld scenario: de waarde voor het maximum aantal gelijktijdige taken is mom
 De limiet voor het aantal gelijktijdige taken is afhankelijk van de Logic core en het geheugen van de computer. Probeer de waarde omlaag aan te passen aan een waarde zoals 24 en bekijk vervolgens het resultaat.
 
 > [!TIP] 
-> - Zie [vier manieren om het aantal kern geheugens in uw CPU te vinden in Windows 10](https://www.top-password.com/blog/find-number-of-cores-in-your-cpu-on-windows-10/)voor meer informatie over het aantal Logic-kernen en het bepalen van het Logic core-aantal van uw machine.
-> - Ga naar de [logaritmische reken machine](https://www.rapidtables.com/calc/math/Log_Calculator.html)voor meer informatie over het berekenen van Math. log.
+> -    Zie [vier manieren om het aantal kern geheugens in uw CPU te vinden in Windows 10](https://www.top-password.com/blog/find-number-of-cores-in-your-cpu-on-windows-10/)voor meer informatie over het aantal Logic-kernen en het bepalen van het Logic core-aantal van uw machine.
+> -    Ga naar de [logaritmische reken machine](https://www.rapidtables.com/calc/math/Log_Calculator.html)voor meer informatie over het berekenen van Math. log.
 
 
 ### <a name="self-hosted-ir-high-availability-ha-ssl-certificate-issue"></a>Zelf-hostend SSL-certificaat voor hoge Beschik baarheid (HA) met IR

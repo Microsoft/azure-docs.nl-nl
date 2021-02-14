@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: vinigam
 ms.custom: mvc
-ms.openlocfilehash: 0fa5e09dbe7c0a8cd45557d535353ea4a0a00b16
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: ccc2b6baba0e97320a5352013dbecfc121188457
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833096"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361023"
 ---
 # <a name="network-connectivity-monitoring-with-connection-monitor"></a>Netwerk connectiviteit controleren met verbindings monitor
 
@@ -74,11 +74,24 @@ Regels voor een netwerk beveiligings groep (NSG) of firewall kunnen de communica
 
 ### <a name="agents-for-on-premises-machines"></a>Agents voor on-premises machines
 
-Als u wilt dat verbindings monitor uw on-premises computers als bronnen voor bewaking herkent, installeert u de Log Analytics-agent op de computers. Schakel vervolgens de Netwerkprestatiemeter-oplossing in. Deze agents zijn gekoppeld aan Log Analytics werk ruimten, dus u moet de werk ruimte-ID en de primaire sleutel instellen voordat de agents kunnen worden gecontroleerd.
+Als u wilt dat verbindings monitor uw on-premises computers als bronnen voor bewaking herkent, installeert u de Log Analytics-agent op de computers.  Schakel vervolgens de Netwerkprestatiemeter-oplossing in. Deze agents zijn gekoppeld aan Log Analytics werk ruimten, dus u moet de werk ruimte-ID en de primaire sleutel instellen voordat de agents kunnen worden gecontroleerd.
 
 Zie [Azure monitor virtuele-machine-extensie voor Windows](../virtual-machines/extensions/oms-windows.md)om de log Analytics agent voor Windows-computers te installeren.
 
 Als het pad firewalls of virtuele netwerk apparaten (Nva's) bevat, moet u ervoor zorgen dat de bestemming bereikbaar is.
+
+Voor Windows-computers kunt u de poort openen door de [EnableRules.ps1](https://aka.ms/npmpowershellscript) Power shell-script uit te voeren zonder para meters in een Power shell-venster met Administrator bevoegdheden.
+
+Voor Linux-machines moet portNumbers die moeten worden gebruikt, hand matig worden gewijzigd. 
+* Navigeer naar pad:/var/opt/Microsoft/omsagent/npm_state. 
+* Bestand openen: npmdregistry
+* De waarde voor het poort nummer wijzigen ```“PortNumber:<port of your choice>”```
+
+ Houd er rekening mee dat gebruikte poort nummers hetzelfde moeten zijn voor alle agents die worden gebruikt in een werk ruimte. 
+
+Het script maakt register sleutels die vereist zijn voor de oplossing. Er worden ook Windows Firewall regels gemaakt waarmee agents TCP-verbindingen met elkaar kunnen maken. De register sleutels die door het script zijn gemaakt, geven aan of de logboeken voor fout opsporing en het pad voor het logboek bestand moeten worden geregistreerd. Het script definieert ook de TCP-poort van de agent die wordt gebruikt voor communicatie. De waarden voor deze sleutels worden automatisch ingesteld door het script. Wijzig deze sleutels niet hand matig. De poort die standaard wordt geopend, is 8084. U kunt een aangepaste poort gebruiken door de para meter poort nummer toe te voegen aan het script. Gebruik dezelfde poort op alle computers waarop het script wordt uitgevoerd. [Meer](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-requirements) informatie over de netwerk vereisten voor log Analytics agents
+
+Het script configureert alleen Windows Firewall lokaal. Als u een netwerk firewall hebt, controleert u of het verkeer dat is bestemd voor de TCP-poort die wordt gebruikt door Netwerkprestatiemeter, is toegestaan.
 
 ## <a name="enable-network-watcher-on-your-subscription"></a>Network Watcher voor uw abonnement inschakelen
 

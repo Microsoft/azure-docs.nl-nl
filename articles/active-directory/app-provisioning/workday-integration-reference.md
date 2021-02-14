@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
-ms.date: 01/18/2021
+ms.date: 02/09/2021
 ms.author: chmutali
-ms.openlocfilehash: f260bca196839a091ae7d12be6d5f85912bf92db
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 2b1a43ee6b13d32c0eaed92538cf9c25405e061b
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99255981"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104328"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-workday"></a>Hoe Azure Active Directory inrichting integreert met workday
 
@@ -448,6 +448,21 @@ Stel dat u certificeringen wilt ophalen die aan een gebruiker zijn gekoppeld. De
 Stel dat u *inrichtings groepen* wilt ophalen die aan een werk nemer zijn toegewezen. Deze informatie is beschikbaar als onderdeel van de gegevensset voor *account inrichting* . Als u deze gegevensset wilt ophalen als onderdeel van de *Get_Workers* -reactie, gebruikt u het volgende XPath: 
 
 `wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned']/wd:Provisioning_Group/text()`
+
+## <a name="handling-different-hr-scenarios"></a>Verwerken van verschillende HR-scenario's
+
+### <a name="retrieving-international-job-assignments-and-secondary-job-details"></a>Ophalen van internationale taak toewijzingen en secundaire taak gegevens
+
+Standaard haalt de workday-connector kenmerken op die zijn gekoppeld aan de primaire taak van de werk nemer. De connector biedt ook ondersteuning voor het ophalen van *aanvullende taak gegevens* die zijn gekoppeld aan internationale taak toewijzingen of secundaire taken. 
+
+Gebruik de volgende stappen om kenmerken op te halen die zijn gekoppeld aan internationale taak toewijzingen: 
+
+1. Stel de URL voor de werkdag verbinding in met behulp van de workday Web Service API-versie 30,0 of hoger. Stel dienovereenkomstig de [juiste XPath-waarden](workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30) in uw workday-inrichtings-app in. 
+1. Gebruik de selector `@wd:Primary_Job=0` op het `Worker_Job_Data` knoop punt om het juiste kenmerk op te halen. 
+   * **Voor beeld 1:** `SecondaryBusinessTitle` Het XPath gebruiken `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Title/text()`
+   * **Voor beeld 2:** `SecondaryBusinessLocation` Het XPath gebruiken `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Site_Summary_Data/wd:Location_Reference/@wd:Descriptor`
+
+ 
 
 ## <a name="next-steps"></a>Volgende stappen
 

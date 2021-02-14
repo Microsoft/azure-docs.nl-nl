@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: yelevin
-ms.openlocfilehash: 59ef34f9d6d42277d8e83bf4e0ebb8ee29096f52
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 6a1a2a2a7dac961e49e6ced38803649ebf5ad523
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99566767"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096851"
 ---
 # <a name="connect-your-apache-http-server-to-azure-sentinel"></a>Uw Apache HTTP-server verbinden met Azure Sentinel
 
@@ -37,7 +37,7 @@ In dit artikel wordt uitgelegd hoe u uw Apache HTTP-server verbindt met Azure Se
 
 ## <a name="configure-and-integrate-apache-http-server-logs-via-log-analytics-agent"></a>Apache HTTP-server logboeken configureren en integreren via Log Analytics agent
 
-De locatie van de Apache HTTP-server logboek bestanden configureren voor het door sturen van gegevens naar uw Azure-werk ruimte via de Log Analytics-agent.
+De Apache HTTP-server configureren voor het verzenden van logboek bestanden naar uw Azure-werk ruimte via de Log Analytics-agent.
 Log Analytics-agent configureren voor het lezen van Apache HTTP-server logboek bestanden.
 
 1. Volg de instructies in https://httpd.apache.org/docs/2.4/logs.html om de locatie van de logboek bestanden in de Apache HTTP-server in te stellen.

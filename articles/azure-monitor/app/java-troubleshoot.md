@@ -6,12 +6,12 @@ ms.date: 03/14/2019
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 3144633f76d1c4738f2323f1e047d6f32329909f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: df1f58418452ecafacddd013ab815ebca5cb8a35
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133239"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097548"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java-sdk"></a>Probleem oplossing en Q en A voor Application Insights voor Java SDK
 
@@ -170,7 +170,7 @@ Als u [uw app voor Application Insights hebt ingesteld][java], klikt u op Blader
 
 Ja, de server kan via het open bare internet telemetrie verzenden naar de Application Insights Portal.
 
-In uw firewall moet u mogelijk TCP-poorten 80 en 443 openen voor uitgaand verkeer naar dc.services.visualstudio.com en f5.services.visualstudio.com.
+Mogelijk moet u [een aantal uitgaande poorten in de firewall van uw server openen](./ip-addresses.md#outgoing-ports) zodat de SDK gegevens naar de portal kan verzenden.
 
 ## <a name="data-retention"></a>Gegevensretentie
 **Hoe lang worden gegevens in de portal bewaard? Is het veilig?**

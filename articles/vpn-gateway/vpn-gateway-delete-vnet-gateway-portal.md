@@ -4,15 +4,15 @@ description: Een virtuele netwerk gateway verwijderen met behulp van de Azure Po
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.date: 10/16/2020
+ms.date: 02/10/2021
 ms.author: cherylmc
 ms.topic: how-to
-ms.openlocfilehash: 7d9ae31b5701707589d79fd5f3d7eb0802038eb9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 413fd8c7f03ef44abe4bece39ca717c533dea66b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148220"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376378"
 ---
 # <a name="delete-a-virtual-network-gateway-using-the-portal"></a>Een virtuele netwerk gateway verwijderen met behulp van de portal
 
@@ -44,24 +44,24 @@ De volgende stappen helpen u bij het verwijderen van alle resources die niet mee
 
 #### <a name="to-delete-the-local-network-gateway"></a>De lokale netwerk gateway verwijderen
 
-1. Zoek in **alle bronnen**lokale netwerk gateways die zijn gekoppeld aan elke verbinding.
+1. Zoek in **alle bronnen** lokale netwerk gateways die zijn gekoppeld aan elke verbinding.
 1. Klik op de Blade **overzicht** voor de gateway van het lokale netwerk op **verwijderen**.
 
 #### <a name="to-delete-the-public-ip-address-resource-for-the-gateway"></a>De resource voor het open bare IP-adres voor de gateway verwijderen
 
-1. Zoek in **alle bronnen**de open bare IP-adres resource die aan de gateway is gekoppeld. Als de gateway van het virtuele netwerk actief was, worden er twee open bare IP-adressen weer geven.
-1. Klik op de pagina **overzicht** voor het open bare IP-adres op **verwijderen**en vervolgens op **Ja** om te bevestigen.
+1. Zoek in **alle bronnen** de open bare IP-adres resource die aan de gateway is gekoppeld. Als de gateway van het virtuele netwerk actief was, worden er twee open bare IP-adressen weer geven.
+1. Klik op de pagina **overzicht** voor het open bare IP-adres op **verwijderen** en vervolgens op **Ja** om te bevestigen.
 
 #### <a name="to-delete-the-gateway-subnet"></a>Het gateway-subnet verwijderen
 
 1. Zoek het virtuele netwerk in **alle resources**. 
-1. Klik op de Blade **subnetten** op de **GatewaySubnet**en klik vervolgens op **verwijderen**. 
+1. Klik op de Blade **subnetten** op de **GatewaySubnet** en klik vervolgens op **verwijderen**. 
 1. Klik op **Ja** om te bevestigen dat u het gateway-subnet wilt verwijderen.
 
 ## <a name="delete-a-vpn-gateway-by-deleting-the-resource-group"></a><a name="deleterg"></a>Een VPN-gateway verwijderen door de resource groep te verwijderen
 
 Als u zich geen zorgen maakt over het bewaren van uw resources in de resource groep en u alleen opnieuw wilt beginnen, kunt u een hele resource groep verwijderen. Dit is een snelle manier om alles te verwijderen. De volgende stappen zijn alleen van toepassing op het Resource Manager-implementatie model.
 
-1. Zoek de resource groep in **alle resources**en klik op om de Blade te openen.
+1. Zoek de resource groep in **alle resources** en klik op om de Blade te openen.
 1. Klik op **Verwijderen**. Bekijk de betrokken resources op de Blade verwijderen. Zorg ervoor dat u al deze resources wilt verwijderen. Als dat niet het geval is, gebruikt u de stappen in een VPN-gateway verwijderen boven aan dit artikel.
 1. Als u wilt door gaan, typt u de naam van de resource groep die u wilt verwijderen en klikt u vervolgens op **verwijderen**.

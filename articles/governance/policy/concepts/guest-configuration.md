@@ -3,12 +3,12 @@ title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie-client gebruikt om instellingen in virtuele machines te controleren.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: c141169545379f1ac0dd18a97e85652f97b90e6f
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 5d1503680ea2ca7d0ff7c8adae19c05abfe441c0
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210117"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104804"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
 
@@ -142,11 +142,15 @@ Bij het toewijzen van definities die beginnen met _configureren_, moet u ook de 
 
 De controle beleids definities die beschikbaar zijn voor gast configuratie zijn onder andere het resource type **micro soft. HybridCompute/machines** . Computers die worden uitgevoerd op [Azure Arc voor servers](../../../azure-arc/servers/overview.md) die zich binnen het bereik van de beleids toewijzing bevinden, worden automatisch opgenomen.
 
+## <a name="troubleshooting-guest-configuration"></a>Problemen met de gast configuratie oplossen
+
+Zie [Azure Policy Troubleshooting](../troubleshoot/general.md)(Engelstalig) voor meer informatie over het oplossen van problemen met de gast configuratie.
+
 ### <a name="multiple-assignments"></a>Meerdere toewijzingen
 
 Beleids definities voor gast configuraties bieden momenteel alleen ondersteuning voor het toewijzen van dezelfde gast toewijzing per computer, zelfs als de beleids toewijzing gebruikmaakt van verschillende para meters.
 
-## <a name="client-log-files"></a>Client logboek bestanden
+### <a name="client-log-files"></a>Client logboek bestanden
 
 De gast configuratie-extensie schrijft logboek bestanden naar de volgende locaties:
 
@@ -180,6 +184,15 @@ linesToIncludeAfterMatch=10
 logPath=/var/lib/GuestConfig/gc_agent_logs/gc_agent.log
 egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCManagedEngine' $logPath | tail
 ```
+
+### <a name="client-files"></a>Client bestanden
+
+De gast configuratie-client downloadt inhouds pakketten naar een machine en extraheert de inhoud.
+Als u wilt controleren welke inhoud is gedownload en opgeslagen, bekijkt u de hieronder vermelde locaties.
+
+Windows: `c:\programdata\guestconfig\configurations`
+
+Linux: `/var/lib/guestconfig/configurations`
 
 ## <a name="guest-configuration-samples"></a>Voor beelden van gast configuraties
 

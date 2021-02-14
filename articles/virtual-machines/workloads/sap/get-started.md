@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dfd0156907f18dcb7f38246993ddc4abcd508631
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 25d9d53b9bc597b5eb51586c594dd631609f476e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549385"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362145"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -84,6 +84,7 @@ In deze sectie vindt u documenten over integratie van micro soft Power BI in SAP
 
 ## <a name="change-log"></a>Wijzigingslogboek
 
+- 02/11/2021: wijzigingen in [hoge Beschik baarheid van IBM DB2 LUW op Azure vm's op Red Hat Enterprise Linux server](./high-availability-guide-rhel-ibm-db2-luw.md) voor het wijzigen van pacemaker-cluster opdrachten voor RHEL 8. x
 - 02/03/2021: Wijzig bij het [instellen van pacemaker in RHEL in azure](./high-availability-guide-rhel-pacemaker.md) om pcmk_host_map bij te werken in de opdracht stonith Create
 - 02/03/2021: Wijzig bij het [instellen van pacemaker in sles in azure](./high-availability-guide-suse-pacemaker.md) om pcmk_host_map toe te voegen in de opdracht stonith Create 
 - 02/03/2021: meer informatie over de I/O-planner instellingen voor SUSE in artikel [SAP Hana opslag configuraties voor virtuele Azure-machines](./hana-vm-operations-storage.md)

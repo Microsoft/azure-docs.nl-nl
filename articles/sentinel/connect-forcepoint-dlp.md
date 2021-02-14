@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/20/2020
 ms.author: yelevin
-ms.openlocfilehash: 3bdb9d2b23ce05929ba5612e0c6a03fe1aab05de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62ed3915dcaf596d144a2f59817626cdf8ec47e5
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77588243"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092771"
 ---
 # <a name="connect-your-forcepoint-dlp-to-azure-sentinel"></a>Uw Force Point DLP verbinden met Azure Sentinel
 
@@ -46,7 +46,7 @@ Als u het relevante schema in Log Analytics voor Force Point DLP wilt gebruiken,
 
 ## <a name="validate-connectivity"></a>Connectiviteit valideren
 
-Het kan 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven.
+Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

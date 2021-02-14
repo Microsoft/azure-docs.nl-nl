@@ -1,22 +1,18 @@
 ---
 title: Gegevens sets maken in Azure Data Factory
 description: Meer informatie over het maken van gegevens sets in Azure Data Factory, met voor beelden die gebruikmaken van eigenschappen zoals offset en anchorDateTime.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 9bf6ff2971de57338dc299d48e24f6ffebd4b6b5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 4b222b387dad1c078cfe2a063ed310ef463b192e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495936"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376833"
 ---
 # <a name="datasets-in-azure-data-factory-version-1"></a>Gegevens sets in Azure Data Factory (versie 1)
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -79,13 +75,13 @@ In de volgende tabel worden de eigenschappen in de bovenstaande JSON beschreven:
 
 | Eigenschap | Beschrijving | Vereist | Standaard |
 | --- | --- | --- | --- |
-| naam |De naam van de gegevensset. Zie [Azure Data Factory naamgevings regels](data-factory-naming-rules.md) voor naamgevings regels. |Ja |NA |
-| type |Het type van de gegevensset. Geef een van de typen op die worden ondersteund door Data Factory (bijvoorbeeld: AzureBlob, AzureSqlTable). <br/><br/>Zie [type gegevensset](#Type)voor meer informatie. |Ja |NA |
-| structuur |Schema van de gegevensset.<br/><br/>Zie [structuur van gegevensset](#Structure)voor meer informatie. |Nee |NA |
-| typeProperties | De type-eigenschappen verschillen voor elk type (bijvoorbeeld: Azure Blob, Azure SQL-tabel). Zie [type gegevensset](#Type)voor meer informatie over de ondersteunde typen en hun eigenschappen. |Ja |NA |
-| external | Een Booleaanse vlag die aangeeft of een gegevensset expliciet wordt geproduceerd door een data factory pijp lijn of niet. Als de invoer-gegevensset voor een activiteit niet door de huidige pijp lijn wordt geproduceerd, stelt u deze vlag in op True. Stel deze vlag in op True voor de invoer-gegevensset van de eerste activiteit in de pijp lijn.  |Nee |onjuist |
-| availability | Hiermee definieert u het verwerkings venster (bijvoorbeeld per uur of dagelijks) of het segment model voor de productie van de gegevensset. Elke gegevens eenheid die wordt verbruikt en geproduceerd door een uitvoering van een activiteit wordt een gegevens segment genoemd. Als de beschik baarheid van een uitvoer gegevensset dagelijks is ingesteld (Frequency-Day, interval-1), wordt een segment dagelijks geproduceerd. <br/><br/>Zie Beschik baarheid van de gegevensset voor meer informatie. <br/><br/>Zie het artikel [planning en uitvoering](data-factory-scheduling-and-execution.md) voor meer informatie over het model voor het segmenteren van gegevensset. |Ja |NA |
-| policy |Hiermee worden de criteria gedefinieerd of de voor waarde waaraan de segmenten van de gegevensset moeten voldoen. <br/><br/>Zie de sectie [gegevensset Policy](#Policy) voor meer informatie. |Nee |NA |
+| naam |De naam van de gegevensset. Zie [Azure Data Factory naamgevings regels](data-factory-naming-rules.md) voor naamgevings regels. |Yes |NA |
+| type |Het type van de gegevensset. Geef een van de typen op die worden ondersteund door Data Factory (bijvoorbeeld: AzureBlob, AzureSqlTable). <br/><br/>Zie [type gegevensset](#Type)voor meer informatie. |Yes |NA |
+| structuur |Schema van de gegevensset.<br/><br/>Zie [structuur van gegevensset](#Structure)voor meer informatie. |No |NA |
+| typeProperties | De type-eigenschappen verschillen voor elk type (bijvoorbeeld: Azure Blob, Azure SQL-tabel). Zie [type gegevensset](#Type)voor meer informatie over de ondersteunde typen en hun eigenschappen. |Yes |NA |
+| external | Een Booleaanse vlag die aangeeft of een gegevensset expliciet wordt geproduceerd door een data factory pijp lijn of niet. Als de invoer-gegevensset voor een activiteit niet door de huidige pijp lijn wordt geproduceerd, stelt u deze vlag in op True. Stel deze vlag in op True voor de invoer-gegevensset van de eerste activiteit in de pijp lijn.  |No |onjuist |
+| availability | Hiermee definieert u het verwerkings venster (bijvoorbeeld per uur of dagelijks) of het segment model voor de productie van de gegevensset. Elke gegevens eenheid die wordt verbruikt en geproduceerd door een uitvoering van een activiteit wordt een gegevens segment genoemd. Als de beschik baarheid van een uitvoer gegevensset dagelijks is ingesteld (Frequency-Day, interval-1), wordt een segment dagelijks geproduceerd. <br/><br/>Zie Beschik baarheid van de gegevensset voor meer informatie. <br/><br/>Zie het artikel [planning en uitvoering](data-factory-scheduling-and-execution.md) voor meer informatie over het model voor het segmenteren van gegevensset. |Yes |NA |
+| policy |Hiermee worden de criteria gedefinieerd of de voor waarde waaraan de segmenten van de gegevensset moeten voldoen. <br/><br/>Zie de sectie [gegevensset Policy](#Policy) voor meer informatie. |No |NA |
 
 ## <a name="dataset-example"></a>Gegevensset-voor beeld
 In het volgende voor beeld vertegenwoordigt de gegevensset een tabel met de naam **myTable** in een SQL database.
@@ -191,10 +187,10 @@ Elke kolom in de structuur bevat de volgende eigenschappen:
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| naam |De naam van de kolom. |Ja |
-| type |Het gegevens type van de kolom.  |Nee |
-| culturele |Op .NET gebaseerde cultuur die moet worden gebruikt wanneer het type een .NET-type is: `Datetime` of `Datetimeoffset` . De standaardwaarde is `en-us`. |Nee |
-| indeling |Indelings teken reeks die moet worden gebruikt wanneer het type een .NET-type is: `Datetime` of `Datetimeoffset` . |Nee |
+| naam |De naam van de kolom. |Yes |
+| type |Het gegevens type van de kolom.  |No |
+| culturele |. Op netgebaseerde cultuur die moet worden gebruikt wanneer het type een .NET-type is: `Datetime` of `Datetimeoffset` . De standaardwaarde is `en-us`. |No |
+| indeling |Indelings teken reeks die moet worden gebruikt wanneer het type een .NET-type is: `Datetime` of `Datetimeoffset` . |No |
 
 U kunt aan de hand van de volgende richt lijnen bepalen wanneer u structuur informatie moet toevoegen en wat u in de sectie **structuur** wilt toevoegen.
 
@@ -233,11 +229,11 @@ In de volgende tabel worden de eigenschappen beschreven die u kunt gebruiken in 
 
 | Eigenschap | Beschrijving | Vereist | Standaard |
 | --- | --- | --- | --- |
-| frequency |Hiermee geeft u de tijds eenheid voor de segment productie van gegevensset op.<br/><br/><b>Ondersteunde frequentie</b>: minuut, uur, dag, week, maand |Ja |NA |
-| interval |Hiermee geeft u een vermenigvuldigings factor voor frequentie op.<br/><br/>"Frequentie x-interval" bepaalt hoe vaak het segment wordt geproduceerd. Als u bijvoorbeeld wilt dat de gegevensset op elk uur wordt gesegmenteerd, stelt u de <b>frequentie</b> in op <b>uur</b>en het <b>interval</b> op <b>1</b>.<br/><br/>Houd er rekening mee dat als u een **frequentie** opgeeft als **minuut**, het interval moet worden ingesteld op ten minste 15. |Ja |NA |
-| stijl |Hiermee geeft u op of het segment moet worden geproduceerd aan het begin of einde van het interval.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul>Als de **frequentie** is ingesteld op **maand** en **stijl** is ingesteld op **EndOfInterval**, wordt het segment gemaakt op de laatste dag van de maand. Als **stijl** is ingesteld op **StartOfInterval**, wordt het segment gegenereerd op de eerste dag van de maand.<br/><br/>Als de **frequentie** is ingesteld op **dag** en **stijl** is ingesteld op **EndOfInterval**, wordt het segment gemaakt in het afgelopen uur van de dag.<br/><br/>Als de **frequentie** is ingesteld op **uur** en de **stijl** is ingesteld op **EndOfInterval**, wordt het segment aan het einde van het uur geproduceerd. Bijvoorbeeld, voor een segment voor de periode van 1 PM-2 uur, het segment wordt geproduceerd op 2 uur. |Nee |EndOfInterval |
-| anchorDateTime |Definieert de absolute positie in de tijd die door de scheduler wordt gebruikt om segment grenzen van het gegevensset te berekenen. <br/><br/>Houd er rekening mee dat als deze eigenschap datum onderdelen bevat die nauw keuriger zijn dan de opgegeven frequentie, de nauw keurigere delen worden genegeerd. Als het **interval** bijvoorbeeld **elk uur** is (frequentie: uur en interval: 1), en het **anchorDateTime** het **aantal minuten en seconden** bevat, worden de minuten en seconden delen van **anchorDateTime** genegeerd. |Nee |01/01/0001 |
-| offset |Tijds duur waarmee het begin en einde van alle segmenten van de gegevensset worden verschoven. <br/><br/>Houd er rekening mee dat als zowel **anchorDateTime** als **Offset** worden opgegeven, het resultaat de gecombineerde verschuiving is. |Nee |NA |
+| frequency |Hiermee geeft u de tijds eenheid voor de segment productie van gegevensset op.<br/><br/><b>Ondersteunde frequentie</b>: minuut, uur, dag, week, maand |Yes |NA |
+| interval |Hiermee geeft u een vermenigvuldigings factor voor frequentie op.<br/><br/>"Frequentie x-interval" bepaalt hoe vaak het segment wordt geproduceerd. Als u bijvoorbeeld wilt dat de gegevensset op elk uur wordt gesegmenteerd, stelt u de <b>frequentie</b> in op <b>uur</b>en het <b>interval</b> op <b>1</b>.<br/><br/>Houd er rekening mee dat als u een **frequentie** opgeeft als **minuut**, het interval moet worden ingesteld op ten minste 15. |Yes |NA |
+| stijl |Hiermee geeft u op of het segment moet worden geproduceerd aan het begin of einde van het interval.<ul><li>StartOfInterval</li><li>EndOfInterval</li></ul>Als de **frequentie** is ingesteld op **maand** en **stijl** is ingesteld op **EndOfInterval**, wordt het segment gemaakt op de laatste dag van de maand. Als **stijl** is ingesteld op **StartOfInterval**, wordt het segment gegenereerd op de eerste dag van de maand.<br/><br/>Als de **frequentie** is ingesteld op **dag** en **stijl** is ingesteld op **EndOfInterval**, wordt het segment gemaakt in het afgelopen uur van de dag.<br/><br/>Als de **frequentie** is ingesteld op **uur** en de **stijl** is ingesteld op **EndOfInterval**, wordt het segment aan het einde van het uur geproduceerd. Bijvoorbeeld, voor een segment voor de periode van 1 PM-2 uur, het segment wordt geproduceerd op 2 uur. |No |EndOfInterval |
+| anchorDateTime |Definieert de absolute positie in de tijd die door de scheduler wordt gebruikt om segment grenzen van het gegevensset te berekenen. <br/><br/>Houd er rekening mee dat als deze eigenschap datum onderdelen bevat die nauw keuriger zijn dan de opgegeven frequentie, de nauw keurigere delen worden genegeerd. Als het **interval** bijvoorbeeld **elk uur** is (frequentie: uur en interval: 1), en het **anchorDateTime** het **aantal minuten en seconden** bevat, worden de minuten en seconden delen van **anchorDateTime** genegeerd. |No |01/01/0001 |
+| offset |Tijds duur waarmee het begin en einde van alle segmenten van de gegevensset worden verschoven. <br/><br/>Houd er rekening mee dat als zowel **anchorDateTime** als **Offset** worden opgegeven, het resultaat de gecombineerde verschuiving is. |No |NA |
 
 ### <a name="offset-example"></a>offset-voor beeld
 Standaard `"frequency": "Day", "interval": 1` beginnen segmenten van 12 uur (middernacht) Coordinated Universal Time (UTC). Als u wilt dat de begin tijd 6 uur UTC-tijd in plaats daarvan instelt, stelt u de verschuiving in zoals weer gegeven in het volgende code fragment:
@@ -278,10 +274,10 @@ De volgende gegevensset is maandelijks en wordt geproduceerd op het derde van el
 De **beleids** sectie in de definitie van de gegevensset definieert de criteria of de voor waarde waaraan de segmenten van de gegevensset moeten voldoen.
 
 ### <a name="validation-policies"></a>Validatie beleid
-| Beleidsnaam | Beschrijving | Toegepast op | Vereist | Standaard |
+| Beleidsnaam | Description | Toegepast op | Vereist | Standaard |
 | --- | --- | --- | --- | --- |
-| minimumSizeMB |Valideert dat de gegevens in de **Azure Blob-opslag** voldoen aan de minimale grootte vereisten (in mega bytes). |Azure Blob Storage |Nee |NA |
-| minimumRows |Valideert dat de gegevens in een **Azure-SQL database** of een **Azure-tabel** het minimum aantal rijen bevatten. |<ul><li>Azure SQL Database</li><li>Azure Table</li></ul> |Nee |NA |
+| minimumSizeMB |Valideert dat de gegevens in de **Azure Blob-opslag** voldoen aan de minimale grootte vereisten (in mega bytes). |Azure Blob Storage |No |NA |
+| minimumRows |Valideert dat de gegevens in een **Azure-SQL database** of een **Azure-tabel** het minimum aantal rijen bevatten. |<ul><li>Azure SQL Database</li><li>Azure Table</li></ul> |No |NA |
 
 #### <a name="examples"></a>Voorbeelden
 **minimumSizeMB:**
@@ -316,10 +312,10 @@ Tenzij er een gegevensset wordt geproduceerd door Data Factory, moet deze worden
 
 | Naam | Beschrijving | Vereist | Standaardwaarde |
 | --- | --- | --- | --- |
-| dataDelay |De tijd om de controle over de beschik baarheid van de externe gegevens voor het opgegeven segment te vertragen. U kunt bijvoorbeeld een controle op elk uur uitstellen met behulp van deze instelling.<br/><br/>De instelling is alleen van toepassing op de huidige tijd. Als het bijvoorbeeld 1:00 PM nu is en deze waarde 10 minuten is, begint de validatie om 1:10 PM.<br/><br/>Houd er rekening mee dat deze instelling geen invloed heeft op segmenten in het verleden. Segmenten met **eind tijd**  +  **dataDelay**  <  worden **nu** zonder vertraging verwerkt.<br/><br/>Tijden groter dan 23:59 uur moeten worden opgegeven met behulp van de `day.hours:minutes:seconds` notatie. Als u bijvoorbeeld 24 uur wilt opgeven, gebruikt u niet 24:00:00. Gebruik in plaats daarvan 1,00:00:00. Als u 24:00:00 gebruikt, wordt dit beschouwd als 24 dagen (24.00:00:00). Geef voor 1 dag en 4 uur 1:04:00:00 op. |Nee |0 |
-| retryInterval |De wacht tijd tussen een storing en de volgende poging. Deze instelling is van toepassing op de huidige tijd. Als de vorige poging is mislukt, wordt de volgende poging na de **retryInterval** -periode. <br/><br/>Als deze 1:00 PM nu is, beginnen we met de eerste try. Als de duur voor het volt ooien van de eerste validatie controle 1 minuut is en de bewerking is mislukt, is de volgende nieuwe poging bij 1:00 + 1min (duur) + 1min (interval voor opnieuw proberen) = 1:02 PM. <br/><br/>Voor segmenten in het verleden is er geen vertraging. De nieuwe poging vindt direct plaats. |Nee |00:01:00 (1 minuut) |
-| retryTimeout |De time-out voor elke nieuwe poging.<br/><br/>Als deze eigenschap is ingesteld op 10 minuten, moet de validatie binnen 10 minuten worden voltooid. Als het langer dan tien minuten duurt om de validatie uit te voeren, treedt er een time-out op voor de poging.<br/><br/>Als alle pogingen voor de validerings tijd zijn, wordt het segment gemarkeerd als **out**. |Nee |00:10:00 (10 minuten) |
-| maximumRetry |Het aantal keren dat er moet worden gecontroleerd op de beschik baarheid van de externe gegevens. De Maxi maal toegestane waarde is 10. |Nee |3 |
+| dataDelay |De tijd om de controle over de beschik baarheid van de externe gegevens voor het opgegeven segment te vertragen. U kunt bijvoorbeeld een controle op elk uur uitstellen met behulp van deze instelling.<br/><br/>De instelling is alleen van toepassing op de huidige tijd. Als het bijvoorbeeld 1:00 PM nu is en deze waarde 10 minuten is, begint de validatie om 1:10 PM.<br/><br/>Houd er rekening mee dat deze instelling geen invloed heeft op segmenten in het verleden. Segmenten met **eind tijd**  +  **dataDelay**  <  worden **nu** zonder vertraging verwerkt.<br/><br/>Tijden groter dan 23:59 uur moeten worden opgegeven met behulp van de `day.hours:minutes:seconds` notatie. Als u bijvoorbeeld 24 uur wilt opgeven, gebruikt u niet 24:00:00. Gebruik in plaats daarvan 1,00:00:00. Als u 24:00:00 gebruikt, wordt dit beschouwd als 24 dagen (24.00:00:00). Geef voor 1 dag en 4 uur 1:04:00:00 op. |No |0 |
+| retryInterval |De wacht tijd tussen een storing en de volgende poging. Deze instelling is van toepassing op de huidige tijd. Als de vorige poging is mislukt, wordt de volgende poging na de **retryInterval** -periode. <br/><br/>Als deze 1:00 PM nu is, beginnen we met de eerste try. Als de duur voor het volt ooien van de eerste validatie controle 1 minuut is en de bewerking is mislukt, is de volgende nieuwe poging bij 1:00 + 1min (duur) + 1min (interval voor opnieuw proberen) = 1:02 PM. <br/><br/>Voor segmenten in het verleden is er geen vertraging. De nieuwe poging vindt direct plaats. |No |00:01:00 (1 minuut) |
+| retryTimeout |De time-out voor elke nieuwe poging.<br/><br/>Als deze eigenschap is ingesteld op 10 minuten, moet de validatie binnen 10 minuten worden voltooid. Als het langer dan tien minuten duurt om de validatie uit te voeren, treedt er een time-out op voor de poging.<br/><br/>Als alle pogingen voor de validerings tijd zijn, wordt het segment gemarkeerd als **out**. |No |00:10:00 (10 minuten) |
+| maximumRetry |Het aantal keren dat er moet worden gecontroleerd op de beschik baarheid van de externe gegevens. De Maxi maal toegestane waarde is 10. |No |3 |
 
 
 ## <a name="create-datasets"></a>Gegevenssets maken

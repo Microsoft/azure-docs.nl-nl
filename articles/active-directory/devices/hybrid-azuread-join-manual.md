@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5316a1647c96076696b14de157e74e2155a6b368
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: 651e7156faf8305edb0a1541e957dd2abf3a71b8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860011"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365749"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Zelfstudie: Hybride Azure Active Directory-gekoppelde apparaten handmatig configureren
 
@@ -75,7 +75,7 @@ Voor Windows 10-apparaten met versie 1703 of eerder: als uw organisatie toegang 
 
 Vanaf Windows 10 1803 probeert een apparaat het koppelen van de hybride Azure AD te voltooien via de gesynchroniseerde computer of het gesynchroniseerde apparaat, zelfs als het via AD FS koppelen van de hybride Azure AD wordt uitgevoerd vanaf een apparaat in een federatief domein mislukt en Azure AD Connect is geconfigureerd om de computer-/apparaatobjecten te synchroniseren met Azure AD.
 
-Om te controleren of het apparaat toegang heeft tot de bovenstaande Microsoft-resources onder het systeemaccount, kunt u het script [Test Device Registration Connectivity](https://gallery.technet.microsoft.com/Test-Device-Registration-3dc944c0) gebruiken.
+Om te controleren of het apparaat toegang heeft tot de bovenstaande Microsoft-resources onder het systeemaccount, kunt u het script [Test Device Registration Connectivity](https://docs.microsoft.com/samples/azure-samples/testdeviceregconnectivity/testdeviceregconnectivity/) gebruiken.
 
 ## <a name="verify-configuration-steps"></a>Configuratiestappen controleren
 

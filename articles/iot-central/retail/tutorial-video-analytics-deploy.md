@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: f7f1952ab8c98553a447c3ed1955fb556ba48124
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: e524905aaeed54de6501eb6f024bf28dbab9c594
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831940"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362162"
 ---
 # <a name="tutorial-how-to-deploy-an-iot-central-application-using-the-video-analytics---object-and-motion-detection-application-template"></a>Zelf studie: een IoT Central-toepassing implementeren met behulp van de toepassing video Analytics-object-en bewegings detectie
 
@@ -22,6 +22,13 @@ Zie [object-en bewegings detectie video Analytics-toepassings architectuur](arch
 De volgende video biedt een overzicht van het gebruik van de _toepassings sjabloon video Analytics-object en Motion detectie_ om een IOT Central oplossing te implementeren:
 
 > [!VIDEO https://www.youtube.com/embed/Bo3FziU9bSA]
+
+In deze reeks zelf studies leert u het volgende:
+
+> [!div class="checklist"]
+> * De toepassing implementeren
+> * Een IoT Edge-exemplaar implementeren dat verbinding maakt met de toepassing
+> * De toepassing bewaken en beheren
 
 ## <a name="prerequisites"></a>Vereisten
 

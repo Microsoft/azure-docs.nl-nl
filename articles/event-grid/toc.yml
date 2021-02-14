@@ -54,8 +54,12 @@
       href: ensure-tags-exists-on-new-virtual-machines.md
     - name: E-mailbericht wanneer de verbinding met het IoT Hub-apparaat wordt verbroken
       href: publish-iot-hub-events-to-logic-apps.md
-    - name: Reageer op Service Bus-gebeurtenissen
-      href: ../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - name: Service Bus-gebeurtenissen verwerken via Event Grid
+      items:
+        - name: Azure Logic Apps
+          href: ../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json
+        - name: Azure Functions
+          href: ../service-bus-messaging/service-bus-to-event-grid-integration-function.md?toc=%2fazure%2fevent-grid%2ftoc.json
     - name: Gegevens streamen vanuit Event Hubs
       href: event-grid-event-hubs-integration.md
     - name: Media Services-gebeurtenissen doorsturen
@@ -262,14 +266,18 @@
       items:
         - name: Gebeurtenissen veilig publiceren via een privékoppeling
           href: configure-private-endpoints.md
+        - name: Gebeurtenissen leveren met beheerde identiteit
+          href: managed-service-identity.md
+        - name: Gebeurtenissen veilig afleveren via een persoonlijke koppeling
+          href: consume-private-endpoints.md
         - name: IP-firewall configureren
           href: configure-firewall.md
         - name: Beveiligde Webhook met Azure Active Directory
           href: secure-webhook-delivery.md
-        - name: 'Gebeurtenisverzending, beheerde identiteit en privékoppeling'
-          href: managed-service-identity.md
     - name: Problemen oplossen
       items:
+        - name: Problemen met Event Grid oplossen
+          href: troubleshoot-issues.md
         - name: Diagnostische logboeken inschakelen
           href: enable-diagnostic-logs-topic.md
         - name: Problemen oplossen

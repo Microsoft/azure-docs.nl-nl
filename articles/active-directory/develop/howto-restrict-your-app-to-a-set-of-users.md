@@ -13,12 +13,12 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 5f6ac11fc5c7bbe7a8f81e6ea89e2c582ebcf264
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: f3eff6f5660089472ef431bad9a4f05be1fffe24
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178735"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104142"
 ---
 # <a name="how-to-restrict-your-azure-ad-app-to-a-set-of-users-in-an-azure-ad-tenant"></a>Procedure: uw Azure AD-App beperken tot een set gebruikers in een Azure AD-Tenant
 
@@ -47,7 +47,7 @@ Er zijn twee manieren om een toepassing met ingeschakelde gebruikers toewijzing 
 
 ### <a name="enterprise-applications-requires-the-global-administrator-role"></a>Bedrijfs toepassingen (vereist de rol globale beheerder)
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a> als **globale beheerder**.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure Portal</a> als **globale beheerder**.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **beheren** de optie **bedrijfs toepassingen**  >  **alle toepassingen**.
@@ -59,13 +59,13 @@ Er zijn twee manieren om een toepassing met ingeschakelde gebruikers toewijzing 
 
 ### <a name="app-registration"></a>App-registratie
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer **App-registraties** onder **Beheren**.
 1. Maak of selecteer de app die u wilt beheren. U moet de **eigenaar** van deze toepassing zijn.
 1. Selecteer op de **overzichts** pagina van de toepassing de koppeling **beheerde toepassing in lokale map** in de sectie **Essentials** .
-1. Selecteer onder **beheren** de optie **Eigenschappen**.
+1. Selecteer **Eigenschappen** onder **Beheren**.
 1. Zoek de instelling **gebruikers toewijzing vereist?** en stel deze in op **Ja**. Als deze optie is ingesteld op **Ja**, moeten gebruikers in de Tenant eerst worden toegewezen aan deze toepassing of kunnen ze zich niet aanmelden bij deze toepassing.
 1. Selecteer **Opslaan**.
 

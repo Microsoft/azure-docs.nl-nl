@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: procha
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f207509baba2499adf5d5d00df0ccd0503a25491
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 918dd929244c7177790a77bfff32589847073c70
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98665188"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104775"
 ---
 # <a name="azure-synapse-analytics-data-integration-partners"></a>Azure Synapse Analytics-gegevens integratie partners
 
@@ -24,7 +24,7 @@ Als u uw data warehouse-oplossing wilt maken met behulp van de toegewezen SQL-gr
 
 ## <a name="data-integration-partners"></a>Gegevens integratie partners
 
-| Partner | Beschrijving | Website/product koppeling |
+| Partner | Description | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Ab initio](./media/sql-data-warehouse-partner-data-integration/abinitio-logo.png) |**Ab initio**<br> Met het flexibele Digital engineering-platform van ab initio kunt u de zwaarste problemen met gegevens verwerking en gegevens beheer in bedrijfs computing oplossen. Met het Cloud-native platform van ab initio kunt u overal in uw bedrijfs ecosysteem toegang krijgen tot en gebruiken van gegevens, ongeacht of deze zich in azure of on-premises bevinden, inclusief gegevens die op verouderde systemen zijn opgeslagen. Dankzij de combi natie van een intuïtieve interface met krachtige automatisering, gegevens kwaliteit, gegevens beheer en actieve meta gegevens mogelijkheden kunt u snel en op de echte wijze selfservice van de Data Services maken, zodat analisten hun taken snel en effectief kunnen uitvoeren. Neem deel aan de grootste bedrijven in het gebruik van ab initio om big data zinvolle gegevens in te scha kelen. |[Product pagina](https://www.abinitio.com/) |
 | ![Alooma](./media/sql-data-warehouse-partner-data-integration/alooma_logo.png) |**Alooma**<br> Alooma is een oplossing voor het uitpakken, transformeren en laden (ETL) waarmee gegevens teams gegevens van verschillende gegevens silo's kunnen integreren, verrijken en streamen naar een Azure Synapse-data warehouse in real-time. |[Product pagina](https://www.alooma.com/) |
@@ -52,7 +52,8 @@ Als u uw data warehouse-oplossing wilt maken met behulp van de toegewezen SQL-gr
 | ![TimeXtender](./media/sql-data-warehouse-partner-data-integration/timextender-logo.png) |**TimeXtender**<br>De detectie-hub van TimeXtender helpt bedrijven bij het bouwen van een modern gegevens systeem door een geïntegreerd platform voor gegevens beheer te bieden dat sneller tijd tot gegevens inzichten versnelt met Maxi maal tien keer. Het gaat verder dan dagelijks ETL en ELT en biedt mogelijkheden voor gegevens toegang, gegevens modellering en naleving in één platform. Discovery hub biedt een samenhangende gegevens infrastructuur voor Cloud Scale Analytics. Zo kunt u verbinding maken met verschillende gegevens silo's en deze integreren, catalogiseren, model leren, verplaatsen en documenteer gegevens voor analyse en AI. | [Product pagina](https://www.timextender.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?search=timextender&page=1) |
 | ![Trifacta](./media/sql-data-warehouse-partner-data-integration/trifacta_logo.png) |**Trifacta Wrangler**<br> Trifacta helpt individuen en organisaties om diverse gegevens te verkennen en samen te voegen voor analyse. Trifacta Wrangler is ontworpen voor het afhandelen van gegevens wrangling-workloads die gegevens moeten ondersteunen op schaal en een groot aantal eind gebruikers.|[Product pagina](https://www.trifacta.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/trifactainc1587522950142.trifactaazure?tab=Overview) |
 | ![WhereScape](./media/sql-data-warehouse-partner-data-integration/wherescape_logo.png) |**Wherescape rood**<br> WhereScape RED is een IDE die teams voorziet van hulpprogram ma's voor automatisering om ETL-werk stromen te stroom lijnen. De IDE biedt best practice, geoptimaliseerde systeem eigen code voor populaire gegevens doelen. Gebruik WhereScape RED om de tijd te verkorten om uw gegevens infrastructuur te ontwikkelen, implementeren en beheren.|[Product pagina](https://www.wherescape.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/wherescapesoftware.wherescape-red?source=datamarket&tab=Overview) |
-| ![Xplenty](./media/sql-data-warehouse-partner-data-integration/xplenty-logo.png) |**Xplenty**<br> Met het Xplenty ELT-platform kunt u snel en eenvoudig uw gegevens voorbereiden voor analyse-en productie-use cases met behulp van een eenvoudige Cloud service. Xplenty-punt & Klik, Sleep & drop interface maakt gegevens integratie, verwerking en voor bereiding mogelijk zonder dat er software hoeft te worden geïnstalleerd, geïmplementeerd of onderhouden. Maak verbinding en integreer met een grote set gegevensopslag plaatsen en SaaS-toepassingen, waaronder Azure Synapse, Azure Blob Storage en SQL Server. Xplenty biedt ook ondersteuning voor alle webservices die toegankelijk zijn via rest-API.|[Product pagina](https://www.xplenty.com/integrations/azure-synapse-analytics/ )<br> |
+| ![Xpert BI](./media/sql-data-warehouse-partner-data-integration/xpertbi-logo.png) |**Xpert BI**<br> Xpert BI helpt organisaties bij het ontwikkelen en onderhouden van een robuust en schaalbaar gegevens platform in azure, sneller via automatisering op basis van meta gegevens. Azure Synapse wordt uitgebreid met best practices en DataOps, voor flexibele gegevens ontwikkeling met ingebouwde gegevens beheer functies. Gebruik Xpert BI om snel te testen en te scha kelen tussen verschillende Azure-oplossingen, zoals Azure Synapse, Azure Data Lake Storage en Azure SQL Database, omdat uw bedrijf en analyse wijzigingen nodig hebben en groeit.|[Product pagina](https://www.bi-builders.com/adding-automation-and-governance-to-azure-analytics/)<br> |
+| ![Xplenty](./media/sql-data-warehouse-partner-data-integration/xplenty-logo.png) |**Xplenty**<br> Met het Xplenty ELT-platform kunt u snel en eenvoudig uw gegevens voorbereiden voor analyse-en productie-use cases met behulp van een eenvoudige Cloud service. Xplenty-punt & selecteren, & drop interface maakt gegevens integratie, verwerking en voor bereiding mogelijk zonder dat er software hoeft te worden geïnstalleerd, geïmplementeerd of onderhouden. Maak verbinding en integreer met een grote set gegevensopslag plaatsen en SaaS-toepassingen, waaronder Azure Synapse, Azure Blob Storage en SQL Server. Xplenty biedt ook ondersteuning voor alle webservices die toegankelijk zijn via rest-API.|[Product pagina](https://www.xplenty.com/integrations/azure-synapse-analytics/ )<br> |
 
 
 ## <a name="next-steps"></a>Volgende stappen

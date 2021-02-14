@@ -1,6 +1,6 @@
 ---
-title: Problemen met Dual-protocol volumes voor Azure NetApp Files oplossen | Microsoft Docs
-description: Hierin worden fout berichten en oplossingen beschreven die u kunnen helpen bij het oplossen van problemen met dubbele protocollen voor Azure NetApp Files.
+title: Problemen met SMB-of Dual-protocol volumes voor Azure NetApp Files oplossen | Microsoft Docs
+description: Hierin worden fout berichten en oplossingen beschreven die u kunnen helpen bij het oplossen van problemen met SMB of dubbele protocollen voor Azure NetApp Files.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,30 +12,40 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 01/22/2021
+ms.date: 02/02/2021
 ms.author: b-juche
-ms.openlocfilehash: fb4233a87231dddb1e3cb2777ac2ef53a61f833e
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 237fb514229f370fcba79133232e80a6a655048f
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98726612"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104413"
 ---
-# <a name="troubleshoot-dual-protocol-volumes"></a>Problemen met volumes van dubbele protocollen oplossen
+# <a name="troubleshoot-smb-or-dual-protocol-volumes"></a>Problemen met SMB-of Dual-protocol volumes oplossen
 
 In dit artikel worden oplossingen beschreven voor fout situaties die u mogelijk hebt tijdens het maken of beheren van Dual-protocol volumes.
 
-## <a name="error-conditions-and-resolutions"></a>Fout voorwaarden en oplossingen
+## <a name="errors-for-dual-protocol-volumes"></a>Fouten voor Dual-protocol volumes
 
-|     Fout voorwaarden    |     Oplossing    |
+|     Fout voorwaarden    |     Oplossingen    |
 |-|-|
 | LDAP via TLS is ingeschakeld en het maken van een Dual-protocol volume mislukt met de fout `This Active Directory has no Server root CA Certificate` .    |     Als deze fout optreedt wanneer u een Dual-protocol volume maakt, moet u ervoor zorgen dat het basis-CA-certificaat is geüpload in uw NetApp-account.    |
-| Het maken van het volume met twee protocollen mislukt met de fout `Failed to validate LDAP configuration, try again after correcting LDAP configuration` .    |  De PTR-record (pointer) van de computer van de AD-host ontbreekt mogelijk op de DNS-server. U moet een zone voor reverse lookup maken op de DNS-server en vervolgens een PTR-record van de AD-hostcomputer toevoegen in de zone voor reverse lookup. <br> Stel dat het IP-adres van de AD-machine is `1.1.1.1` , de hostnaam van de AD-machine (zoals gevonden met behulp van de `hostname` opdracht) `AD1` en de domein naam `contoso.com` .  De PTR-record die is toegevoegd aan de zone voor reverse lookup moet zijn `1.1.1.1`  ->  `contoso.com` .   |
-| Het maken van het volume met twee protocollen mislukt met de fout `Failed to create the Active Directory machine account \\\"TESTAD-C8DD\\\". Reason: Kerberos Error: Pre-authentication information was invalid Details: Error: Machine account creation procedure failed\\n [ 434] Loaded the preliminary configuration.\\n [ 537] Successfully connected to ip 1.1.1.1, port 88 using TCP\\n**[ 950] FAILURE` . |  Deze fout geeft aan dat het AD-wacht woord onjuist is wanneer Active Directory is gekoppeld aan het NetApp-account. Werk de AD-verbinding bij met het juiste wacht woord en probeer het opnieuw. |
+| Het maken van het volume met twee protocollen mislukt met de fout `Failed to validate LDAP configuration, try again after correcting LDAP configuration` .    |  De PTR-record (pointer) van de computer van de AD-host ontbreekt mogelijk op de DNS-server. U moet een zone voor reverse lookup maken op de DNS-server en vervolgens een PTR-record van de AD-hostcomputer toevoegen in de zone voor reverse lookup. <br> Stel dat het IP-adres van de AD-machine is `10.X.X.X` , de hostnaam van de AD-machine (zoals gevonden met behulp van de `hostname` opdracht) `AD1` en de domein naam `contoso.com` .  De PTR-record die is toegevoegd aan de zone voor reverse lookup moet zijn `10.X.X.X`  ->  `contoso.com` .   |
+| Het maken van het volume met twee protocollen mislukt met de fout `Failed to create the Active Directory machine account \\\"TESTAD-C8DD\\\". Reason: Kerberos Error: Pre-authentication information was invalid Details: Error: Machine account creation procedure failed\\n [ 434] Loaded the preliminary configuration.\\n [ 537] Successfully connected to ip 10.X.X.X, port 88 using TCP\\n**[ 950] FAILURE` . |     Deze fout geeft aan dat het AD-wacht woord onjuist is wanneer Active Directory is gekoppeld aan het NetApp-account. Werk de AD-verbinding bij met het juiste wacht woord en probeer het opnieuw. |
 | Het maken van het volume met twee protocollen mislukt met de fout `Could not query DNS server. Verify that the network configuration is correct and that DNS servers are available` . |   Deze fout geeft aan dat DNS niet bereikbaar is. De reden hiervoor is dat de DNS-IP onjuist is of dat er een probleem is met het netwerk. Controleer het DNS-IP-adres dat is ingevoerd in de AD-verbinding en controleer of het IP-adres juist is. <br> Zorg er ook voor dat de AD en het volume zich in dezelfde regio bevinden en in hetzelfde VNet. Als ze zich in verschillende VNETs bevinden, moet u ervoor zorgen dat VNet-peering tot stand is gebracht tussen de twee VNets.|
 | De machtiging wordt geweigerd bij het koppelen van een Dual-protocol volume. | Een volume met dubbele protocollen ondersteunt zowel de NFS-als de SMB-protocollen.  Wanneer u probeert toegang te krijgen tot het gekoppelde volume op het UNIX-systeem, probeert het systeem de UNIX-gebruiker toe te wijzen die u gebruikt voor een Windows-gebruiker. Als er geen toewijzing wordt gevonden, treedt de fout ' permission denied ' op. <br> Deze situatie is ook van toepassing wanneer u de gebruiker ' root ' gebruikt voor de toegang. <br> Om het probleem ' toestemming geweigerd ' te vermijden, moet u ervoor zorgen dat Windows Active Directory bevat `pcuser` voordat u toegang krijgt tot het koppel punt. Als u toevoegt `pcuser` nadat het probleem ' toestemming geweigerd ' is aangetroffen, wacht u 24 uur totdat de cache vermelding is gewist voordat u de toegang opnieuw probeert. |
 
+## <a name="common-errors-for-smb-and-dual-protocol-volumes"></a>Veelvoorkomende fouten voor SMB-en Dual-protocol volumes
+
+|     Fout voorwaarden    |     Oplossingen    |
+|-|-|
+| Het maken van het SMB-of Dual-protocol volume mislukt met de volgende fout: <br> `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.","details":[{"code":"InternalServerError", "message":"Error when creating - Could not query DNS server. Verify that the network configuration is correct and that DNS servers are available."}]}` | Deze fout geeft aan dat de DNS niet bereikbaar is. <br> Houd rekening met de volgende oplossingen: <ul><li>Controleer of toevoegen en het volume in dezelfde regio worden geïmplementeerd.</li> <li>Controleer of toevoegen en het volume gebruikmaken van hetzelfde VNet. Als ze verschillende VNETs gebruiken, moet u ervoor zorgen dat de VNets met elkaar zijn gekoppeld. Zie de [richt lijnen voor het plannen van Azure NetApp files-netwerken](azure-netapp-files-network-topologies.md). </li> <li>Op de DNS-server zijn mogelijk netwerk beveiligings groepen (Nsg's) toegepast.  Zo staat het niet toe dat het verkeer stroomt. Open in dit geval de Nsg's naar de DNS of AD om verbinding te maken met verschillende poorten. Zie [vereisten voor Active Directory verbindingen](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections)voor poort vereisten. </li></ul> <br>Dezelfde oplossingen zijn van toepassing op Azure-toevoegingen. Azure-toevoegingen moeten in dezelfde regio worden geïmplementeerd. Het VNet moet zich in dezelfde regio bevinden of gelijkwaardig zijn aan het VNet dat door het volume wordt gebruikt. | 
+| Het maken van het SMB-of Dual-protocol volume mislukt met de volgende fout: <br> `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.","details":[{"code":"InternalServerError", "message":"Error when creating - Failed to create the Active Directory machine account \"SMBTESTAD-C1C8\". Reason: Kerberos Error: Invalid credentials were given Details: Error: Machine account creation procedure failed\n [ 563] Loaded the preliminary configuration.\n**[ 670] FAILURE: Could not authenticate as 'test@contoso.com':\n** Unknown user (KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN)\n. "}]}`  |  <ul><li>Controleer of de ingevoerde gebruikers naam juist is. </li> <li>Zorg ervoor dat de gebruiker deel uitmaakt van de groep Administrators die de bevoegdheid heeft om computer accounts te maken. </li> <li> Als u Azure toevoegen gebruikt, moet u ervoor zorgen dat de gebruiker deel uitmaakt van de Azure AD-groep `Azure AD DC Administrators` . </li></ul> | 
+| Het maken van het SMB-of Dual-protocol volume mislukt met de volgende fout: <br> `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.","details":[{"code":"InternalServerError", "message":"Error when creating - Failed to create the Active Directory machine account \"SMBTESTAD-A452\". Reason: Kerberos Error: Pre-authentication information was invalid Details: Error: Machine account creation procedure failed\n [ 567] Loaded the preliminary configuration.\n [ 671] Successfully connected to ip 10.X.X.X, port 88 using TCP\n**[ 1099] FAILURE: Could not authenticate as\n** 'user@contoso.com': CIFS server account password does\n** not match password stored in Active Directory\n** (KRB5KDC_ERR_PREAUTH_FAILED)\n. "}]}` | Zorg ervoor dat het wacht woord dat u hebt ingevoerd om lid te worden van de AD-verbinding juist is. |
+| Het maken van het SMB-of Dual-protocol volume mislukt met de volgende fout: `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.","details":[{"code":"InternalServerError","message":"Error when creating - Failed to create the Active Directory machine account \"SMBTESTAD-D9A2\". Reason: SecD Error: ou not found Details: Error: Machine account creation procedure failed\n [ 561] Loaded the preliminary configuration.\n [ 665] Successfully connected to ip 10.X.X.X, port 88 using TCP\n [ 1039] Successfully connected to ip 10.x.x.x, port 389 using TCP\n**[ 1147] FAILURE: Specifed OU 'OU=AADDC Com' does not exist in\n** contoso.com\n. "}]}` | Zorg ervoor dat het opgegeven OE-pad voor deelname aan de AD-verbinding juist is. Als u Azure toevoegen gebruikt, moet u ervoor zorgen dat het pad van de organisatie-eenheid is `OU=AADDC Computers` . |
+
 ## <a name="next-steps"></a>Volgende stappen  
 
+* [Een SMB-volume maken](azure-netapp-files-create-volumes-smb.md)
 * [Een volume met dubbele protocollen maken](create-volumes-dual-protocol.md)
 * [Een NFS-client voor Azure NetApp Files configureren](configure-nfs-clients.md)

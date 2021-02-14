@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 09/04/2020
+ms.date: 02/12/2021
 ms.author: v-demjoh
-ms.openlocfilehash: 572b3b3459e1d837130f3c987d45ee45629f37ad
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 93a0c171497faa9e87457a03da0b78003feaa533
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485073"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362264"
 ---
 # <a name="test-a-model-using-an-audio-file-in-speech-studio"></a>Een model testen met behulp van een audiobestand in Speech Studio
 
@@ -23,7 +23,7 @@ In deze instructies gebruikt u Speech Studio om spraak uit een audiobestand om t
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u de Speech-portal gebruikt, [volgt u deze instructies om een Azure-account te maken en u te abonneren op de Speech-service](../custom-speech-overview.md#set-up-your-azure-account). Dit uniforme abonnement biedt u toegang tot spraak-naar-tekst, tekst-naar-spraak, spraakomzetting en de Custom Speech-portal.
+Voordat u Speech Studio gebruikt, [volgt u deze instructies om een Azure-account te maken en u te abonneren op de spraak service](../custom-speech-overview.md#set-up-your-azure-account). Dit uniforme abonnement geeft u toegang tot spraak naar tekst, tekst naar spraak, spraak omzetting en de speech Studio.
 
 ## <a name="download-an-audio-file"></a>Een audiobestand downloaden
 
@@ -32,7 +32,7 @@ Volg deze stappen om een audiobestand met spraak te downloaden en dit te verpakk
 1. Download het **[wav-voorbeeldbestand](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-speech-sdk/f9807b1079f3a85f07cbb6d762c6b5449d536027/samples/cpp/windows/console/samples/whatstheweatherlike.wav)** via deze koppeling door met de rechtermuisknop op de koppeling te klikken en **Koppeling opslaan als** te kiezen. Klik op **Opslaan** om het `whatstheweatherlike.wav`-bestand te downloaden.
 2. Maak met behulp van een bestandenverkenner of terminalvenster met een ZIP-programma, een ZIP-bestand met de naam `whatstheweatherlike.zip` dat het `whatstheweatherlike.wav`-bestand bevat dat u hebt gedownload. In Windows opent u Windows Verkenner, gaat u naar de map `Downloads` en klikt u met de rechtermuisknop op `whatstheweatherliike.wav`. Klik op **Verzenden naar**, klik op **Gecomprimeerde (gezipte) map** en druk op Enter om de standaardbestandsnaam te accepteren.
 
-## <a name="create-a-project-in-the-custom-speech-portal"></a>Een project maken in de Custom Speech-portal
+## <a name="create-a-project-in-the-speech-studio"></a>Een project maken in de speech Studio
 
 Volg deze stappen om een project te maken dat uw zip met één audiobestand bevat.
 

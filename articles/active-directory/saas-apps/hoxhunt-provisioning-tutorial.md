@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/28/2021
 ms.author: Zhchia
-ms.openlocfilehash: eb3df574029a7c13488830e01354e738930fcd7f
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 55da26296f0545c8e2c0008185de14230cfee304
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523427"
+ms.locfileid: "100526609"
 ---
 # <a name="tutorial-configure-hoxhunt-for-automatic-user-provisioning"></a>Zelf studie: Hoxhunt configureren voor automatische gebruikers inrichting
 
@@ -42,16 +42,13 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 * Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
 * Een Hoxhunt-Tenant.
 * SCIM-API-sleutel en SCIM-eind punt-URL voor uw organisatie (geconfigureerd door Hoxhunt-ondersteuning).
-?
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
 3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en Hoxhunt](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
 ## <a name="step-2-configure-hoxhunt-to-support-provisioning-with-azure-ad"></a>Stap 2. Hoxhunt configureren voor ondersteuning bij het inrichten met Azure AD
-?
 Neem contact op met [Hoxhunt-ondersteuning](mailto:support@hoxhunt.com) om de scim-API-sleutel en scim-eind punt-URL te ontvangen om Hoxhunt te configureren voor ondersteuning van het inrichten met Azure AD.
-?
 ## <a name="step-3-add-hoxhunt-from-the-azure-ad-application-gallery"></a>Stap 3. Hoxhunt toevoegen vanuit de Azure AD-toepassings galerie
 
 Voeg Hoxhunt toe vanuit de Azure AD-toepassings galerie om het beheren van de inrichting van Hoxhunt te starten. Als u eerder Hoxhunt voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie. 

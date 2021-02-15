@@ -96,10 +96,12 @@
               href: assign-access-policy-powershell.md
             - name: Portal
               href: assign-access-policy-portal.md
-        - name: 'Een Azure RBAC gebruiken om toegang tot sleutels, geheimen en certificaten te beheren (preview)'
-          href: rbac-guide.md
-        - name: Handleiding om kluistoegangsbeleid naar Azure RBAC te migreren
-          href: rbac-migration.md
+        - name: Azure RBAC-machtigings model
+          items:
+            - name: 'Een Azure RBAC gebruiken voor het beheren van de toegang tot sleutels, geheimen en certificaten'
+              href: rbac-guide.md
+            - name: Handleiding om kluistoegangsbeleid naar Azure RBAC te migreren
+              href: rbac-migration.md
         - name: Toegangsproblemen oplossen
           href: troubleshooting-access-issues.md
     - name: Ontwikkelen

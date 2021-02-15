@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 78e9c50cb0601f6be69ae61f3a8e02621c7dd808
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 55814dff5cba572e2e22b5a0f9971bc920e32372
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786036"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526630"
 ---
 # <a name="about-azure-key-vault-secrets"></a>Over Azure Key Vault-geheimen
 
@@ -74,7 +74,7 @@ Instructiegidsen voor het beheren van de toegang in Key Vault:
 - [Key Vault-toegangsbeleid toewijzen met behulp van CLI](../general/assign-access-policy-cli.md)
 - [Key Vault-toegangsbeleid toewijzen met behulp van PowerShell](../general/assign-access-policy-powershell.md)
 - [Key Vault-toegangsbeleid toewijzen met behulp van Azure Portal](../general/assign-access-policy-portal.md)
-- [Toegang bieden tot sleutels, certificaten en geheimen in Key Vault met op rollen gebaseerd toegangsbeheer in Azure (preview)](../general/rbac-guide.md)
+- [Toegang bieden tot Key Vault sleutels, certificaten en geheimen met een op rollen gebaseerd toegangs beheer van Azure](../general/rbac-guide.md)
 
 ## <a name="secret-tags"></a>Geheimtags  
 U kunt aanvullende toepassingsspecifieke metagegevens opgeven in de vorm van tags. Key Vault ondersteunt maximaal 15 tags, die elk een naam van 256 tekens en een waarde van 256 tekens kunnen bevatten.  
@@ -124,7 +124,7 @@ Instructiegidsen voor het beheren van de toegang in Key Vault:
 - [Key Vault-toegangsbeleid toewijzen met behulp van CLI](../general/assign-access-policy-cli.md)
 - [Key Vault-toegangsbeleid toewijzen met behulp van PowerShell](../general/assign-access-policy-powershell.md)
 - [Key Vault-toegangsbeleid toewijzen met behulp van Azure Portal](../general/assign-access-policy-portal.md)
-- [Toegang bieden tot sleutels, certificaten en geheimen in Key Vault met op rollen gebaseerd toegangsbeheer in Azure (preview)](../general/rbac-guide.md)
+- [Toegang bieden tot Key Vault sleutels, certificaten en geheimen met een op rollen gebaseerd toegangs beheer van Azure](../general/rbac-guide.md)
 
 
 ## <a name="next-steps"></a>Volgende stappen

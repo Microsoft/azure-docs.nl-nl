@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: ee1c59c71834ab9d80f1ed66a002e211bdcacbbf
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: f82c7060f703aff6c19f0082454779b8fea1ba76
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796496"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526252"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Veilige toegang tot een sleutelkluis
 
@@ -26,7 +26,7 @@ Zie [Over Azure Key Vault](overview.md) voor meer informatie over Key Vault. Zie
 
 Toegang tot een sleutel kluis wordt beheerd via twee interfaces: het **beheer vlak** en het **gegevens vlak**. Het beheer vlak is waar u Key Vault zichzelf beheert. Bewerkingen in dit vlak zijn onder andere het maken en verwijderen van sleutel kluizen, het ophalen van Key Vault eigenschappen en het bijwerken van het toegangs beleid. Op het gegevens vlak kunt u werken met de gegevens die zijn opgeslagen in een sleutel kluis. U kunt sleutels, geheimen en certificaten toevoegen, verwijderen en wijzigen.
 
-Beide plannen gebruiken [Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md) voor verificatie. Voor autorisatie gebruikt het beheer vlak [Azure RBAC (op rollen gebaseerd toegangs beheer)](../../role-based-access-control/overview.md) en maakt het gegevens vlak gebruik van een [Key Vault toegangs beleid](./assign-access-policy-portal.md) en [Azure RBAC voor Key Vault gegevenslaag bewerkingen (preview)](./rbac-guide.md).
+Beide plannen gebruiken [Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md) voor verificatie. Voor autorisatie gebruikt het beheer vlak [Azure RBAC (op rollen gebaseerd toegangs beheer)](../../role-based-access-control/overview.md) en gebruikt het gegevens vlak een [Key Vault toegangs beleid](./assign-access-policy-portal.md) en [Azure RBAC voor Key Vault gegevensvlak bewerkingen](./rbac-guide.md).
 
 Voor toegang tot een sleutel kluis in een van beide vlieg tuigen moeten alle bellers (gebruikers of toepassingen) de juiste verificatie en autorisatie hebben. Met verificatie wordt de identiteit van de aanroeper bepaald. Autorisatie bepaalt welke bewerkingen de aanroeper kan uitvoeren. Verificatie met Key Vault werkt in combinatie met [Azure AD (Active Directory)](../../active-directory/fundamentals/active-directory-whatis.md), dat verantwoordelijk is voor het verifiëren van de identiteit van elke opgegeven **beveiligingsprincipal**.
 
@@ -62,7 +62,7 @@ Toepassingen hebben toegang tot de abonnementen via eind punten. De toegangs con
 
 De volgende tabel bevat de eind punten voor de beheer-en gegevens abonnementen.
 
-| Toegangs &nbsp; vlak | Eindpunten voor toegang | Bewerkingen | Mechanisme voor toegangs &nbsp; beheer |
+| Toegangs &nbsp; vlak | Eindpunten voor toegang | Operations | Mechanisme voor toegangs &nbsp; beheer |
 | --- | --- | --- | --- |
 | Beheerlaag | **Wereldwijd:**<br> management.azure.com:443<br><br> **Azure China 21Vianet:**<br> management.chinacloudapi.cn:443<br><br> **Azure van de Amerikaanse overheid:**<br> management.usgovcloudapi.net:443<br><br> **Azure Duitsland:**<br> management.microsoftazure.de:443 | Sleutel kluizen maken, lezen, bijwerken en verwijderen<br><br>Key Vault toegangs beleid instellen<br><br>Key Vault Tags instellen | Azure RBAC |
 | Gegevenslaag | **Wereldwijd:**<br> &lt;kluisnaam&gt;.vault.azure.net:443<br><br> **Azure China 21Vianet:**<br> &lt;kluisnaam&gt;.vault.azure.cn:443<br><br> **Azure van de Amerikaanse overheid:**<br> &lt;kluisnaam&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Duitsland:**<br> &lt;kluisnaam&gt;.vault.microsoftazure.de:443 | Sleutels: versleutelen, ontsleutelen, wrapKey, sleutel uitpakken, ondertekenen, verifiëren, ophalen, lijst maken, bijwerken, importeren, verwijderen, herstellen, back-up maken, herstellen, opschonen<br><br> Certificaten: managecontacts, getissuers, listissuers, setissuers, deleteissuers, manageissuers, Get, List, maken, importeren, bijwerken, verwijderen, herstellen, back-up maken, herstellen, opschonen<br><br>  Geheimen: ophalen, lijst, instellen, verwijderen, herstellen, back-ups maken, herstellen, opschonen | Key Vault toegangs beleid of Azure RBAC (preview-versie)|
@@ -111,7 +111,7 @@ Wanneer een Azure-rol is toegewezen aan een Azure AD-beveiligings-principal, ver
 
 Belangrijkste voor delen van het gebruik van Azure RBAC-machtigingen via een kluis toegangs beleid zijn gecentraliseerd toegangs beheer en de integratie met [privileged Identity Management (PIM)](../../active-directory/privileged-identity-management/pim-configure.md). Privileged Identity Management biedt op tijd en goedkeuring gebaseerde rolactiveringen om de risico's van buitensporige, onnodige of verkeerd gebruikte toegangsmachtigingen te beperken voor resources die u belangrijk vindt.
 
-Zie voor meer informatie over Key Vault gegevens vlak met Azure RBAC [Key Vault sleutels, certificaten en geheimen met een op rollen gebaseerd toegangs beheer (preview) van Azure](rbac-guide.md)
+Zie voor meer informatie over Key Vault gegevens vlak met Azure RBAC [Key Vault sleutels, certificaten en geheimen met een op rollen gebaseerd toegangs beheer van Azure](rbac-guide.md)
 
 ## <a name="firewalls-and-virtual-networks"></a>Firewalls en virtuele netwerken
 

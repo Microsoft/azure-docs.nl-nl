@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/13/2020
-ms.openlocfilehash: d06501abe69ce9b06656cfa8949c42bb53a03983
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fdd3886dda794ff9a91e2c2be6a3d810086d0ed2
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019035"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526983"
 ---
 # <a name="azure-monitor-logs-connector-for-logic-apps-and-power-automate"></a>Azure Monitor logs connector voor Logic Apps en energie automatisering
 Met [Azure Logic apps](../../logic-apps/index.yml) en [energie automatisering](https://flow.microsoft.com) kunt u geautomatiseerde werk stromen maken met honderden acties voor diverse services. Met de Azure Monitor logs connector kunt u werk stromen bouwen waarmee gegevens worden opgehaald uit een Log Analytics-werk ruimte of een Application Insights-toepassing in Azure Monitor. In dit artikel worden de acties beschreven die zijn opgenomen in de connector en vindt u een overzicht van het maken van een werk stroom met behulp van deze gegevens.
@@ -25,6 +25,7 @@ De Azure Monitor logs connector heeft de volgende limieten:
 * Maximale grootte van query response 100 MB
 * Maximum aantal records: 500.000
 * Maximale querytime-out 110 seconde.
+* Grafiek visualisaties kunnen beschikbaar zijn op de pagina logboeken en ontbreken in de connector, omdat de pagina connector en logboeken momenteel niet dezelfde grafiek bibliotheken gebruiken.
 
 Afhankelijk van de grootte van uw gegevens en de query die u gebruikt, kan het zijn dat de connector de limieten bereikt en mislukt. U kunt dergelijke gevallen omzeilen wanneer u het terugkeer patroon van de trigger bijwerkt om vaker te worden uitgevoerd en minder gegevens op te vragen. U kunt query's gebruiken om uw gegevens samen te voegen om minder records en kolommen te retour neren.
 
@@ -35,7 +36,7 @@ In de volgende tabel worden de acties beschreven die zijn opgenomen in de Azure 
 > De Azure Monitor logs connector vervangt de [Azure log Analytics-connector](/connectors/azureloganalytics/) en de [Azure-toepassing Insights-connector](/connectors/applicationinsights/). Deze connector biedt dezelfde functionaliteit als de andere, en is de voorkeurs methode voor het uitvoeren van een query op een Log Analytics-werk ruimte of een Application Insights-toepassing.
 
 
-| Actie | Beschrijving |
+| Bewerking | Beschrijving |
 |:---|:---|
 | [Query-en Lijst resultaten uitvoeren](/connectors/azuremonitorlogs/#run-query-and-list-results) | Retourneert elke rij als een eigen object. Gebruik deze actie als u met elke rij afzonderlijk in de rest van de werk stroom wilt werken. De actie wordt doorgaans gevolgd door een [voor elke activiteit](../../logic-apps/logic-apps-control-flow-loops.md#foreach-loop). |
 | [Query's uitvoeren en resultaten visualiseren](/connectors/azuremonitorlogs/#run-query-and-visualize-results) | Retourneert alle rijen in de resultatenset als een enkel opgemaakt object. Gebruik deze actie wanneer u de resultatenset samen in de rest van de werk stroom wilt gebruiken, zoals het verzenden van de resultaten in een e-mail.  |

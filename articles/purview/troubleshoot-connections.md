@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 8be5def6d4780fd8b2ab65c5c9e1104a869f6d5a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: db3954b0368392d63680a8d92f13d6a0423e8ef5
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391589"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526859"
 ---
 # <a name="troubleshoot-your-connections-in-azure-purview"></a>Problemen met uw verbindingen in azure controle sfeer liggen oplossen
 
@@ -53,7 +53,10 @@ Controleer of de juiste machtigingen zijn geconfigureerd voor de beheerde identi
 Voer de volgende stappen uit om dit te controleren:
 
 1. Ga naar de sleutel kluis en de sectie **toegangs beleid**
-1. Controleer of uw door controle sfeer liggen beheerde identiteit wordt weer gegeven in de sectie *huidige toegangs beleid* met de machtigingen **Get** en **List** voor geheimen ten minste
+
+1. Controleer of uw door controle sfeer liggen beheerde identiteit wordt weer gegeven in de sectie *huidige toegangs beleid* met ten minste de machtigingen **Get** en **List** voor geheimen
+
+   :::image type="content" source="./media/troubleshoot-connections/verify-minimum-permissions.png" alt-text="Afbeelding van de keuze lijst met opties voor ophalen en lijsten":::
 
 Als uw beheerde identiteit voor controle sfeer liggen niet wordt weer gegeven, volgt u de stappen in [referenties voor scannen maken en beheren](manage-credentials.md) om deze toe te voegen. 
 

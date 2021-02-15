@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: 6a1a4d13ee9f9032c739773b678600d52dec82b8
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 866ff4cad74b7092dda11a20f8f7bcadf91233ae
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523920"
+ms.locfileid: "100526898"
 ---
 # <a name="manage-alert-events"></a>Waarschuwings gebeurtenissen beheren
 
@@ -126,6 +126,6 @@ Exporteren:
 1. Selecteer Exporteren.
 1. Selecteer Uitgebreide waarschuwingen exporteren om waarschuwings gegevens in afzonderlijke rijen te exporteren voor elke waarschuwing die betrekking heeft op meerdere apparaten. Wanneer uitgebreide waarschuwingen exporteren is geselecteerd, wordt in het CSV-bestand een dubbele rij van de waarschuwings gebeurtenis gemaakt met de unieke items in elke rij. Met deze optie kunt u de geëxporteerde waarschuwings gebeurtenissen gemakkelijker onderzoeken.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Controleren welk verkeer wordt bewaakt](how-to-control-what-traffic-is-monitored.md)

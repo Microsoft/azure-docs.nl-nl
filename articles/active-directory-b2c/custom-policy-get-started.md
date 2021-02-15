@@ -12,12 +12,12 @@ ms.date: 02/28/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ae3865c1ee5e656fc4feda48de9ab67995619593
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 9612a26d7ac2e7a059655636fc1a2a7a43e3b8d7
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936366"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526235"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Aan de slag met aangepast beleid in Azure Active Directory B2C
 
@@ -111,7 +111,7 @@ Vervolgens maakt u de API zichtbaar door een bereik toe te voegen:
 Geef vervolgens op dat de toepassing moet worden behandeld als een open bare client:
 
 1. Selecteer hiervoor **Verificatie** in het linkermenu onder **Beheren**.
-1. Schakel onder **Geavanceerde instellingen** **de optie toepassing behandelen als een open bare client** in (Selecteer **Ja**). Zorg ervoor dat **' allowPublicClient ': True '** is ingesteld in het manifest van de toepassing. 
+1. Stel onder **Geavanceerde instellingen** in het gedeelte **open bare client stromen toestaan** **de volgende mobiele en desktop-stromen** in op **Ja**. Zorg ervoor dat **' allowPublicClient ': True '** is ingesteld in het manifest van de toepassing. 
 1. Selecteer **Opslaan**.
 
 Ken nu machtigingen toe aan het API-bereik dat u eerder hebt weer gegeven in de *IdentityExperienceFramework* -registratie:

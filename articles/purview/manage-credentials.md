@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/11/2021
-ms.openlocfilehash: 091f4d7a4acdcc5d1a2b89a5121ee0cff3ee1f55
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 9ffc450294f186b77cc7a6c44c10eecf266161d3
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381185"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526686"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Referenties voor de verificatie van de bron in azure controle sfeer liggen
 
@@ -67,7 +67,7 @@ Voordat u een referentie kunt maken, moet u eerst een of meer van uw bestaande A
 
 4. Selecteer in de vervolg keuzelijst **geheimen machtigingen** de optie **Get** and **List** permission.
 
-5. Kies voor **Select Principal** de beheerde identiteit controle sfeer liggen.
+5. Kies voor **Select Principal** de beheerde identiteit controle sfeer liggen. U kunt zoeken naar het controle sfeer liggen-MSI-bestand met behulp van de naam van het controle sfeer liggen-exemplaar **of** de toepassings-id van de beheerde identiteit. Er worden momenteel geen samengestelde identiteiten ondersteund (beheerde identiteits naam en toepassings-ID).
 
    :::image type="content" source="media/manage-credentials/add-access-policy.png" alt-text="Toegangsbeleid toevoegen":::
 

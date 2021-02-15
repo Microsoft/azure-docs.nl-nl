@@ -7,17 +7,20 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 12/15/2020
-ms.openlocfilehash: 68c690b9cbd2028f73492550adbe86111f9ec3a7
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: e06a388f2391f4ed94370dd072a66a162ba5240f
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257943"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526660"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Azure Key Vault: overzicht van voorlopig verwijderen
 
 > [!IMPORTANT]
 > U moet voorlopig verwijderen direct inschakelen voor uw sleutel kluizen. De mogelijkheid om te voor komen dat de Soft-software wordt verwijderd, zal binnenkort worden afgeschaft. Bekijk [hier](soft-delete-change.md) de volledige Details
+
+> [!IMPORTANT]
+> Tijdelijke verwijderde kluis triggers verwijderen instellingen voor geïntegreerd met Key Vault Services, dat wil zeggen Azure RBAC-rollen toewijzingen, Event Grid-abonnementen, Azure Monitor Diagnostische instellingen. Nadat het herstel van zacht verwijderde Key Vault instellingen voor geïntegreerde services hand matig opnieuw moet worden gemaakt. 
 
 Met de functie voor het tijdelijk verwijderen van Key Vault kunt u de verwijderde kluizen en verwijderde sleutel kluis objecten (bijvoorbeeld sleutels, geheimen, certificaten), ook wel zacht verwijderen genoemd. We behandelen de volgende scenario's: deze beveiliging biedt de volgende beveiligings problemen:
 
@@ -27,7 +30,7 @@ Met de functie voor het tijdelijk verwijderen van Key Vault kunt u de verwijderd
 
 ## <a name="supporting-interfaces"></a>Ondersteunende interfaces
 
-De functie voor voorlopig verwijderen is beschikbaar via de [rest API](/rest/api/keyvault/), de [Azure cli](./key-vault-recovery.md), [Azure PowerShell](./key-vault-recovery.md)en [.net/C#](/dotnet/api/microsoft.azure.keyvault?view=azure-dotnet) -interfaces, evenals arm- [sjablonen](/azure/templates/microsoft.keyvault/2019-09-01/vaults).
+De functie voor voorlopig verwijderen is beschikbaar via de [rest API](/rest/api/keyvault/), de [Azure cli](./key-vault-recovery.md), [Azure PowerShell](./key-vault-recovery.md)en [.net/C#](/dotnet/api/microsoft.azure.keyvault?view=azure-dotnet&preserve-view=true) -interfaces, evenals arm- [sjablonen](/azure/templates/microsoft.keyvault/2019-09-01/vaults).
 
 ## <a name="scenarios"></a>Scenario's
 

@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 11/19/2020
 ms.author: nanditav
 ms.reviewer: jrasnick
-ms.openlocfilehash: d9a9d3c303739e68b5b8ef28053d6cf0b071f955
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d4bc59a9bd5299698bff9949aaaa881fbdf385ee
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501053"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526269"
 ---
-# <a name="encryption-for-azure-synapse-analytics-workspaces"></a>Versleuteling voor Azure Synapse Analytics-werk ruimten
+# <a name="encryption-for-azure-synapse-analytics-workspaces"></a>Versleuteling voor Azure Synapse Analytics-werkruimten
 
 In dit artikel worden de volgende onderwerpen beschreven:
 * Versleuteling van data-at-rest in Synapse Analytics-werk ruimten.
@@ -39,7 +39,7 @@ De gegevens in de volgende Synapse-onderdelen worden versleuteld met de door de 
 * SQL-pools
  * Toegewezen SQL-groepen
  * SQL-groepen zonder server
-* Apache Spark groepen
+* Apache Spark-pools
 * Azure Data Factory Integration runtimes, pijp lijnen en gegevens sets.
 
 ## <a name="workspace-encryption-configuration"></a>Configuratie van werk ruimte versleuteling
@@ -53,7 +53,7 @@ U kunt werk ruimten configureren om dubbele versleuteling in te scha kelen met e
 
 ### <a name="key-access-and-workspace-activation"></a>Toegang tot sleutels en de werk ruimte activeren
 
-Het Azure Synapse-versleutelings model met door de klant beheerde sleutels omvat de werk ruimte die toegang heeft tot de sleutels in Azure Key Vault om zo nodig te versleutelen en te ontsleutelen. De sleutels worden toegankelijk gemaakt voor de werk ruimte via een toegangs beleid of Azure Key Vault RBAC-toegang ([Preview](../../key-vault/general/rbac-guide.md)). Wanneer u machtigingen verleent via een Azure Key Vault toegangs beleid, kiest u de optie [' alleen toepassing '](../../key-vault/general/secure-your-key-vault.md#key-vault-authentication-options) tijdens het maken van het beleid (Selecteer de beheerde identiteit van de werk ruimte en voeg deze niet toe als een geautoriseerde toepassing).
+Het Azure Synapse-versleutelings model met door de klant beheerde sleutels omvat de werk ruimte die toegang heeft tot de sleutels in Azure Key Vault om zo nodig te versleutelen en te ontsleutelen. De sleutels worden toegankelijk gemaakt voor de werk ruimte via een toegangs beleid of [Azure Key Vault RBAC-toegang](../../key-vault/general/rbac-guide.md). Wanneer u machtigingen verleent via een Azure Key Vault toegangs beleid, kiest u de optie [' alleen toepassing '](../../key-vault/general/secure-your-key-vault.md#key-vault-authentication-options) tijdens het maken van het beleid (Selecteer de beheerde identiteit van de werk ruimte en voeg deze niet toe als een geautoriseerde toepassing).
 
  De beheerde identiteit van de werk ruimte moet de benodigde machtigingen hebben voor de sleutel kluis voordat de werk ruimte kan worden geactiveerd. Deze gefaseerde benadering voor het activeren van werk ruimten zorgt ervoor dat de gegevens in de werk ruimte worden versleuteld met de door de klant beheerde sleutel. Versleuteling kan worden in-of uitgeschakeld voor toegewezen SQL-groepen. elke groep is standaard niet ingeschakeld voor versleuteling.
 

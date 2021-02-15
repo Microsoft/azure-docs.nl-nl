@@ -9,18 +9,18 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 8/30/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 23a36bfc048a6214ccb79b793a23c21d5f8e305e
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: e7a8fd53e78e1aeab9db5af0432d0c3f1d786823
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288261"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526949"
 ---
-# <a name="migrate-from-vault-access-policy-to-an-azure-role-based-access-control-preview-permission-model"></a>Migreren van beleid voor kluis toegang naar een machtigings model op basis van op rollen gebaseerd toegangs beheer (preview-versie)
+# <a name="migrate-from-vault-access-policy-to-an-azure-role-based-access-control-permission-model"></a>Migreren van beleid voor kluis toegang naar een machtigings model op basis van op rollen gebaseerd toegangs beheer
 
 Het beleid model van kluis toegang is een bestaand autorisatie systeem dat is ingebouwd in Key Vault om toegang te bieden tot sleutels, geheimen en certificaten. U kunt de toegang beheren door afzonderlijke machtigingen toe te wijzen aan de beveiligingsprincipal (gebruiker, groep, Service-Principal, beheerde identiteit) op Key Vault bereik. 
 
-Toegangs beheer op basis van rollen (Azure RBAC) van Azure is een autorisatie systeem dat is gebaseerd op [Azure Resource Manager](../../azure-resource-manager/management/overview.md) dat een nauw keurig toegangs beheer van Azure-resources biedt. Azure RBAC voor Key Vault sleutels, geheimen en certificaten toegangs beheer is momenteel beschikbaar als open bare preview. Met Azure RBAC beheert u de toegang tot resources door rollen toewijzingen te maken, die uit drie elementen bestaan: beveiligingsprincipal, roldefinitie (vooraf gedefinieerde set met machtigingen) en bereik (groep resources of afzonderlijke resources). Zie voor meer informatie [Azure Role-based Access Control (Azure RBAC)](../../role-based-access-control/overview.md).
+Toegangs beheer op basis van rollen (Azure RBAC) van Azure is een autorisatie systeem dat is gebaseerd op [Azure Resource Manager](../../azure-resource-manager/management/overview.md) dat een nauw keurig toegangs beheer van Azure-resources biedt. Met Azure RBAC beheert u de toegang tot resources door rollen toewijzingen te maken, die uit drie elementen bestaan: beveiligingsprincipal, roldefinitie (vooraf gedefinieerde set met machtigingen) en bereik (groep resources of afzonderlijke resources). Zie voor meer informatie [Azure Role-based Access Control (Azure RBAC)](../../role-based-access-control/overview.md).
 
 Voordat u migreert naar Azure RBAC, is het belang rijk dat u de voor delen en beperkingen begrijpt.
 
@@ -39,13 +39,14 @@ Nadelen van Azure RBAC:
 Azure RBAC heeft verschillende ingebouwde rollen van Azure die u kunt toewijzen aan gebruikers, groepen, service-principals en beheerde identiteiten. Als de ingebouwde rollen niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen [aangepaste Azure-rollen](../../role-based-access-control/custom-roles.md) maken.
 
 Key Vault ingebouwde rollen voor sleutels, certificaten en geheimen toegangs beheer:
-- Key Vault beheerder (preview-versie)
-- Key Vault lezer (preview-versie)
-- Key Vault-certificerings medewerker (preview-versie)
-- Key Vault crypto-functionaris (preview-versie)
-- Key Vault crypto grafie-gebruiker (preview-versie)
-- Key Vaulte geheimen-auditeur (preview-versie)
-- Key Vault geheimen gebruiker (preview-versie)
+- Key Vault beheerder
+- Key Vault lezer
+- Key Vault-certificerings medewerker
+- Crypto medewerker Key Vault
+- Gebruiker van crypto grafie Key Vault
+- Versleutelings gebruiker van crypto grafie-service Key Vault
+- Functionaris voor Key Vault geheimen
+- Key Vault geheimen gebruiker
 
 Zie [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md) voor meer informatie over bestaande ingebouwde rollen
 
@@ -66,19 +67,19 @@ Vooraf gedefinieerde machtigings sjablonen voor toegangs beleid:
 - Azure Information BYOK
 
 ### <a name="access-policies-templates-to-azure-roles-mapping"></a>Beleids sjablonen voor Azure-rollen toewijzen
-| Access-beleids sjabloon | Bewerkingen | Azure-rol |
+| Access-beleids sjabloon | Operations | Azure-rol |
 | --- | --- | --- |
-| Sleutel, geheim, certificaat beheer | Sleutels: alle bewerkingen <br>Certificaten: alle bewerkingen<br>Geheimen: alle bewerkingen | Key Vault beheerder (preview-versie) |
-| Sleutel &-geheim beheer | Sleutels: alle bewerkingen <br>Geheimen: alle bewerkingen| Key Vault crypto-functionaris (preview-versie)<br> Key Vaulte geheimen-auditeur (preview-versie)|
-| Certificaat beheer van geheime & | Certificaten: alle bewerkingen <br>Geheimen: alle bewerkingen| Key Vaulte-certificerings instanties (preview-versie)<br> Key Vaulte geheimen-auditeur (preview-versie)|
-| Sleutel beheer | Sleutels: alle bewerkingen| Key Vault crypto-functionaris (preview-versie)|
-| Geheim beheer | Geheimen: alle bewerkingen| Key Vaulte geheimen-auditeur (preview-versie)|
-| Certificaatbeheer | Certificaten: alle bewerkingen | Key Vaulte-certificerings instanties (preview-versie)|
-| SQL Server-connector | Sleutels: ophalen, lijst, terugloop sleutel, uitpakken sleutel | Versleuteling van crypto-service Key Vault (preview-versie)|
+| Sleutel, geheim, certificaat beheer | Sleutels: alle bewerkingen <br>Certificaten: alle bewerkingen<br>Geheimen: alle bewerkingen | Key Vault beheerder |
+| Sleutel &-geheim beheer | Sleutels: alle bewerkingen <br>Geheimen: alle bewerkingen| Crypto medewerker Key Vault <br> Functionaris voor Key Vault geheimen |
+| Certificaat beheer van geheime & | Certificaten: alle bewerkingen <br>Geheimen: alle bewerkingen| Key Vault-certificerings medewerker <br> Functionaris voor Key Vault geheimen|
+| Sleutel beheer | Sleutels: alle bewerkingen| Crypto medewerker Key Vault|
+| Geheim beheer | Geheimen: alle bewerkingen| Functionaris voor Key Vault geheimen|
+| Certificaatbeheer | Certificaten: alle bewerkingen | Key Vault-certificerings medewerker|
+| SQL Server-connector | Sleutels: ophalen, lijst, terugloop sleutel, uitpakken sleutel | Versleutelings gebruiker van crypto grafie-service Key Vault|
 | Azure Data Lake Storage of Azure Storage | Sleutels: ophalen, lijst, uitpakken sleutel | N.v.t.<br> Aangepaste rol vereist|
 | Azure Backup | Sleutels: Get, List, backup<br> Certificaat: ophalen, lijst, back-up | N.v.t.<br> Aangepaste rol vereist|
-| Exchange Online-klant sleutel | Sleutels: ophalen, lijst, terugloop sleutel, uitpakken sleutel | Versleuteling van crypto-service Key Vault (preview-versie)|
-| Exchange Online-klant sleutel | Sleutels: ophalen, lijst, terugloop sleutel, uitpakken sleutel | Versleuteling van crypto-service Key Vault (preview-versie)|
+| Exchange Online-klant sleutel | Sleutels: ophalen, lijst, terugloop sleutel, uitpakken sleutel | Versleutelings gebruiker van crypto grafie-service Key Vault|
+| Exchange Online-klant sleutel | Sleutels: ophalen, lijst, terugloop sleutel, uitpakken sleutel | Versleutelings gebruiker van crypto grafie-service Key Vault|
 | Azure Information BYOK | Sleutels: ophalen, ontsleutelen, ondertekenen | N.v.t.<br>Aangepaste rol vereist|
 
 
@@ -102,10 +103,13 @@ Over het algemeen is het best practice een sleutel kluis per toepassing te hebbe
 ## <a name="vault-access-policy-to-azure-rbac-migration-steps"></a>Beleid voor kluis toegang tot Azure RBAC-migratie stappen
 Er zijn veel verschillen tussen het machtigings model voor het toegangs beleid van Azure RBAC en kluis. Om te voor komen dat er storingen optreden tijdens de migratie, wordt u aangeraden om de volgende stappen uit te voeren.
  
-1. **Rollen identificeren en toewijzen** : Bepaal welke ingebouwde rollen zijn gebaseerd op de bovenstaande toewijzings tabel en maak aangepaste rollen wanneer dat nodig is. Wijs rollen toe aan bereiken op basis van de richt lijnen voor het toewijzen van scopes. Zie [toegang bieden tot Key Vault met een op rollen gebaseerd toegangs beheer (preview) van Azure](rbac-guide.md) voor meer informatie over het toewijzen van rollen aan de sleutel kluis
-1. Functie **toewijzing valideren** : roltoewijzingen kunnen enkele minuten in beslag nemen in azure RBAC. Voor instructies voor het controleren van roltoewijzingen raadpleegt u [rollen toewijzingen in het bereik](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-for-a-user-at-a-scope) weer geven
-1. **Bewaking en waarschuwingen voor de sleutel kluis configureren** : het is belang rijk om logboek registratie en installatie waarschuwingen in te scha kelen voor uitzonde ringen voor toegang geweigerd. Zie [controle en waarschuwingen voor Azure Key Vault](./alert.md) voor meer informatie.
-1. **Stel het machtigings model op basis van op rollen gebaseerd toegangs beheer in op Key Vault** : wanneer het Azure RBAC-machtigings model wordt ingeschakeld, worden alle bestaande beleids regels voor toegang ongeldig. Als er een fout optreedt, kan het machtigings model weer worden omgezet met alle bestaande beleids regels voor toegang die ongewijzigd blijven.
+1. **Rollen identificeren en toewijzen**: Bepaal welke ingebouwde rollen zijn gebaseerd op de bovenstaande toewijzings tabel en maak aangepaste rollen wanneer dat nodig is. Wijs rollen toe aan bereiken op basis van de richt lijnen voor het toewijzen van scopes. Zie [toegang bieden tot Key Vault met een op rollen gebaseerd toegangs beheer voor Azure](rbac-guide.md) voor meer informatie over het toewijzen van rollen aan de sleutel kluis
+1. Functie **toewijzing valideren**: roltoewijzingen kunnen enkele minuten in beslag nemen in azure RBAC. Voor instructies voor het controleren van roltoewijzingen raadpleegt u [rollen toewijzingen in het bereik](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-for-a-user-at-a-scope) weer geven
+1. **Bewaking en waarschuwingen voor de sleutel kluis configureren**: het is belang rijk om logboek registratie en installatie waarschuwingen in te scha kelen voor uitzonde ringen voor toegang geweigerd. Zie [controle en waarschuwingen voor Azure Key Vault](./alert.md) voor meer informatie.
+1. **Stel het machtigings model op basis van op rollen gebaseerd toegangs beheer in op Key Vault**: wanneer het Azure RBAC-machtigings model wordt ingeschakeld, worden alle bestaande beleids regels voor toegang ongeldig. Als er een fout optreedt, kan het machtigings model weer worden omgezet met alle bestaande beleids regels voor toegang die ongewijzigd blijven.
+
+> [!NOTE]
+> Voor het wijzigen van het machtigings model is de machtiging ' micro soft. Authorization/roleAssignments/write ' vereist, die deel uitmaakt van beheerders rollen van de [eigenaar](../../role-based-access-control/built-in-roles.md#owner) en de [gebruikers toegang](../../role-based-access-control/built-in-roles.md#user-access-administrator) . Klassieke abonnements beheerders rollen als ' service beheerder ' en ' mede beheerder ' worden niet ondersteund.
 
 > [!NOTE]
 > Wanneer Azure RBAC-machtigings model is ingeschakeld, mislukken alle scripts die het bijwerken van het toegangs beleid proberen uit te voeren. Het is belang rijk dat u deze scripts bijwerkt voor het gebruik van Azure RBAC.
@@ -114,7 +118,7 @@ Er zijn veel verschillen tussen het machtigings model voor het toegangs beleid v
 -  De roltoewijzing werkt niet na enkele minuten: er zijn situaties waarin roltoewijzingen langer kunnen duren. Het is belang rijk om de logica voor opnieuw proberen te schrijven in code om deze gevallen te behandelen.
 - Roltoewijzingen zijn verdwenen toen Key Vault werd verwijderd (zacht verwijderd) en hersteld. het is momenteel een beperking van de functie voor het voorlopig verwijderen van alle Azure-Services. Het is vereist om alle roltoewijzingen na het herstel opnieuw te maken.    
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 - [Overzicht van Azure RBAC](../../role-based-access-control/overview.md)
 - [Zelf studie voor aangepaste rollen](../../role-based-access-control/tutorial-custom-role-cli.md)

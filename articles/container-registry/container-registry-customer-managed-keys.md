@@ -4,12 +4,12 @@ description: Meer informatie over het versleutelen van uw Azure container Regist
 ms.topic: article
 ms.date: 12/03/2020
 ms.custom: ''
-ms.openlocfilehash: fb30610457e539250c33d7d9726fe10f9c0f8c5a
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: bc692dc8df133aa5fae352a7667062f81ceed350
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062725"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526439"
 ---
 # <a name="encrypt-registry-using-a-customer-managed-key"></a>REGI ster versleutelen met een door de klant beheerde sleutel
 
@@ -127,11 +127,11 @@ az keyvault set-policy \
   --key-permissions get unwrapKey wrapKey
 ```
 
-U kunt ook [Azure RBAC voor Key Vault](../key-vault/general/rbac-guide.md) (preview) gebruiken om machtigingen toe te wijzen aan de identiteit voor toegang tot de sleutel kluis. Wijs bijvoorbeeld de Key Vault versleutelings functie van crypto grafie-service toe aan de identiteit met behulp van de opdracht [AZ Role Assignment Create](/cli/azure/role/assignment#az-role-assignment-create) :
+U kunt ook [Azure RBAC gebruiken voor Key Vault](../key-vault/general/rbac-guide.md) om machtigingen toe te wijzen aan de identiteit voor toegang tot de sleutel kluis. Wijs bijvoorbeeld de Key Vault versleutelings functie van crypto grafie-service toe aan de identiteit met behulp van de opdracht [AZ Role Assignment Create](/cli/azure/role/assignment#az-role-assignment-create) :
 
 ```azurecli 
 az role assignment create --assignee $identityPrincipalID \
-  --role "Key Vault Crypto Service Encryption (preview)" \
+  --role "Key Vault Crypto Service Encryption User" \
   --scope $keyvaultID
 ```
 
@@ -267,12 +267,12 @@ Configureer een beleid voor de sleutel kluis zodat de identiteit er toegang toe 
 
 :::image type="content" source="media/container-registry-customer-managed-keys/add-key-vault-access-policy.png" alt-text="Een sleutel kluis toegangs beleid maken":::
 
-U kunt ook [Azure RBAC voor Key Vault](../key-vault/general/rbac-guide.md) (preview) gebruiken om machtigingen toe te wijzen aan de identiteit voor toegang tot de sleutel kluis. Wijs bijvoorbeeld de Key Vault versleutelings functie van crypto grafie-service toe aan de identiteit.
+U kunt ook [Azure RBAC gebruiken voor Key Vault](../key-vault/general/rbac-guide.md) om machtigingen toe te wijzen aan de identiteit voor toegang tot de sleutel kluis. Wijs bijvoorbeeld de Key Vault versleutelings functie van crypto grafie-service toe aan de identiteit.
 
 1. Navigeer naar uw sleutel kluis.
 1. Selecteer **toegangs beheer (IAM)**  >  **+**  >  **toewijzing toevoegen** toevoegen.
 1. In het venster **roltoewijzing toevoegen** :
-    1. Selecteer **Key Vault rol crypto grafie-versleuteling (preview)** . 
+    1. Selecteer **Key Vault versleutelings gebruikersrol van crypto grafie** . 
     1. Toegang toewijzen aan door de **gebruiker toegewezen beheerde identiteit**.
     1. Selecteer de resource naam van de door de gebruiker toegewezen beheerde identiteit en selecteer **Opslaan**.
 

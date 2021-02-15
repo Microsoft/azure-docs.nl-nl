@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/18/2020
 ms.author: Zhchia
-ms.openlocfilehash: 902bd46fcf6efc20c81992e29fd463781fecc15e
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 817b6b373f521543234cf02818cde8c4b4ba40c1
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98731395"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526422"
 ---
 # <a name="tutorial-configure-parsable-for-automatic-user-provisioning"></a>Zelf studie: Parseerbare configureren voor automatische gebruikers inrichting
 
@@ -32,6 +32,7 @@ In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel P
 > * Gebruikers maken in Parseerbare
 > * Gebruikers in Parseerbare verwijderen wanneer ze niet meer toegang nodig hebben
 > * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en Parseerbare
+> * Inrichtings groepen en groepslid maatschappen in Parseerbare
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -107,17 +108,25 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |userName|Tekenreeks|&check;|
    |displayName|Tekenreeks|
 
-10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met parseerbare**.
 
-11. Als u de Azure AD-inrichtings service voor **parseerbare wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Parseerbare in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in parseerbare te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+
+      |Kenmerk|Type|Ondersteund voor filteren|
+      |---|---|---|
+      |displayName|Tekenreeks|&check;|
+      |leden|Naslaginformatie|
+12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+
+13. Als u de Azure AD-inrichtings service voor **parseerbare wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor Parseerbare door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u wilt inrichten voor Parseerbare door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
-13. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
+15. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
     ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
@@ -129,6 +138,10 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
 2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
 3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 02/15/2021-het inrichten van de groep is ingeschakeld.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

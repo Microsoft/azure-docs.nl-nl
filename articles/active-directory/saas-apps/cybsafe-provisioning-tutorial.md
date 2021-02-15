@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/12/2020
 ms.author: Zhchia
-ms.openlocfilehash: 932a94c348c38902c68a6cf8108d8246cdc434ac
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: b79a63d16229c761b29776667c771e940d8f69d7
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673373"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100527119"
 ---
 # <a name="tutorial-configure-cybsafe-for-automatic-user-provisioning"></a>Zelf studie: CybSafe configureren voor automatische gebruikers inrichting
 
@@ -121,6 +121,10 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |landinstelling|Tekenreeks|
    |timezone|Tekenreeks|
    |userType|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
+   
 
 10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met CybSafe**.
 
@@ -153,6 +157,10 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
 2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
 3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 02/15/2021- **afdeling** voor Enter prise-uitbreidings kenmerk, **Divisie** en **organisatie** van de gebruiker zijn toegevoegd.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

@@ -1,22 +1,18 @@
 ---
 title: Gegevens migreren van een on-premises Netezza-server naar Azure
 description: Gebruik Azure Data Factory om gegevens van een on-premises Netezza-server naar Azure te migreren.
-services: data-factory
 author: dearandyxu
 ms.author: yexu
-ms.reviewer: ''
-manager: shwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/09/2020
-ms.openlocfilehash: e65c8c8574edc10f9366611c5b41ba93f609c7e3
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 36ca7b709e0ec945f1fb4a9a8b745d20e6a58fe1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008278"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367772"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-an-on-premises-netezza-server-to-azure"></a>Azure Data Factory gebruiken om gegevens van een on-premises Netezza-server naar Azure te migreren 
 

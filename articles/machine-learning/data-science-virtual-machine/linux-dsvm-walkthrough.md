@@ -3,18 +3,17 @@ title: Linux verkennen
 titleSuffix: Azure Data Science Virtual Machine
 description: Meer informatie over het uitvoeren van verschillende algemene data Science-taken met behulp van de Linux-Data Science Virtual Machine.
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 09/17/2020
-ms.openlocfilehash: b0ee83cdf3ea710974ce6985db3fc8ce8782351c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 42136d0d58dbc318aab0e111fcef46f80751ca88
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315789"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517668"
 ---
 # <a name="data-science-with-an-ubuntu-data-science-virtual-machine-in-azure"></a>Data Wetenschappen met een Ubuntu-Data Science Virtual Machine in azure
 
@@ -62,7 +61,7 @@ mv headers spambaseHeaders.data
 
 De gegevensset heeft verschillende typen statistieken voor elk e-mail bericht:
 
-* Kolommen zoals **Word \_ freq \_ _WORD_** geven het percentage woorden in het e-mail bericht aan dat overeenkomt met *Word*. Als **Word \_ freq \_** bijvoorbeeld **1** is, dan is 1% van alle woorden in het e-mail bericht *gemaakt*.
+* Kolommen zoals **Word \_ freq \_** geven het percentage woorden in het e-mail bericht aan dat overeenkomt met *Word*. Als **Word \_ freq \_** bijvoorbeeld **1** is, dan is 1% van alle woorden in het e-mail bericht *gemaakt*.
 * Kolommen zoals **char \_ freq \_ _char_** geven het percentage van alle tekens in het e-mail bericht dat *char* is.
 * de langste **\_ Run- \_ lengte \_** is de langste lengte van een reeks hoofd letters.
 * **het \_ \_ \_ gemiddelde** van de lengte van een hoofd letter is de gemiddelde lengte van alle reeksen hoofd letters.
@@ -315,7 +314,7 @@ Er zijn al een aantal voor beelden van notitie blokken geïnstalleerd op de DSVM
 
 ### <a name="rattle"></a>Rattle
 
-[Rattle](https://cran.r-project.org/web/packages/rattle/index.html) ( *R* *A* analytische *t* Ool *t* o *L* verdienen *E* asily) is een grafisch hulp programma voor gegevens analyse. Rattle heeft een intuïtieve interface waarmee u eenvoudig gegevens kunt laden, verkennen en transformeren, en modellen kunt bouwen en evalueren. [Rattle: een gegevens analyse-GUI voor R](https://journal.r-project.org/archive/2009-2/RJournal_2009-2_Williams.pdf) biedt een overzicht van de functies van Rattle.
+[Rattle](https://cran.r-project.org/web/packages/rattle/index.html) (*R* *A* analytische *t* Ool *t* o *L* verdienen *E* asily) is een grafisch hulp programma voor gegevens analyse. Rattle heeft een intuïtieve interface waarmee u eenvoudig gegevens kunt laden, verkennen en transformeren, en modellen kunt bouwen en evalueren. [Rattle: een gegevens analyse-GUI voor R](https://journal.r-project.org/archive/2009-2/RJournal_2009-2_Williams.pdf) biedt een overzicht van de functies van Rattle.
 
 Voer de volgende opdrachten uit om Rattle te installeren en te starten:
 
@@ -355,7 +354,7 @@ De **correlatie** punten zijn ook interessant. Een tekening maken:
 1. Selecteer **Uitvoeren**.
 1. Rattle waarschuwt u dat er Maxi maal 40 variabelen worden aanbevolen. Selecteer **Ja** om het waarnemings punt weer te geven.
 
-Er zijn interessante correlaties die beschikbaar zijn: _technologie_ is in het algemeen gecorreleerd aan _HP_ en _Labs_ , bijvoorbeeld. Het is ook sterk gecorreleerd aan _650_ , omdat het netnummer van de gegevensset donateurs is 650.
+Er zijn interessante correlaties die beschikbaar zijn: _technologie_ is in het algemeen gecorreleerd aan _HP_ en _Labs_, bijvoorbeeld. Het is ook sterk gecorreleerd aan _650_ , omdat het netnummer van de gegevensset donateurs is 650.
 
 De numerieke waarden voor de correlaties tussen woorden zijn beschikbaar in het venster **verkennen** . Het is bijvoorbeeld interessant om te weten dat de _technologie_ op een negatieve basis is afgestemd op _uw_ en _geld_.
 
@@ -374,7 +373,7 @@ Rattle kan ook cluster analyse uitvoeren. We gaan enkele functies uitsluiten, zo
 * word_freq_business
 * spam
 
-Ga terug naar het tabblad **cluster** . Selecteer **KMeans** en stel het **aantal clusters** in op **4**. Selecteer **Uitvoeren**. De resultaten worden weer gegeven in het uitvoer venster. Een cluster heeft een hoge frequentie van _George_ en _HP_ , en is waarschijnlijk een rechtmatig zakelijk e-mail adres.
+Ga terug naar het tabblad **cluster** . Selecteer **KMeans** en stel het **aantal clusters** in op **4**. Selecteer **Uitvoeren**. De resultaten worden weer gegeven in het uitvoer venster. Een cluster heeft een hoge frequentie van _George_ en _HP_, en is waarschijnlijk een rechtmatig zakelijk e-mail adres.
 
 Een basis machine learning model voor de beslissings structuur maken:
 
@@ -387,7 +386,7 @@ Een handige functie van Rattle is de mogelijkheid om verschillende machine learn
 
 1. Selecteer **alle** bij **type**.
 1. Selecteer **Uitvoeren**.
-1. Wanneer Rattle is voltooid, kunt u elk **type** waarde selecteren, zoals **SVM** , en de resultaten weer geven.
+1. Wanneer Rattle is voltooid, kunt u elk **type** waarde selecteren, zoals **SVM**, en de resultaten weer geven.
 1. U kunt ook de prestaties van de modellen op de validatieset vergelijken met behulp van het tabblad **evalueren** . De selectie van de **fout matrix** toont bijvoorbeeld de Verwar ring matrix, algemene fout en gemiddeld aantal klassen fouten voor elk model in de validatieset. U kunt ook ROC curven uitzetten, gevoeligheids analyses uitvoeren en andere typen model evaluaties doen.
 
 Wanneer u klaar bent met het bouwen van modellen, selecteert u het tabblad **logboek** om de R-code weer te geven die tijdens uw sessie werd uitgevoerd door Rattle. U kunt de knop **exporteren** selecteren om deze op te slaan.
@@ -416,7 +415,7 @@ host    all             all             127.0.0.1/32            ident
 host    all             all             ::1/128                 ident
 ```
 
-Wijzig de lijn voor **lokale IPv4-verbindingen** voor het gebruik van **MD5** in plaats van **ident** , zodat we zich kunnen aanmelden met een gebruikers naam en wacht woord:
+Wijzig de lijn voor **lokale IPv4-verbindingen** voor het gebruik van **MD5** in plaats van **ident**, zodat we zich kunnen aanmelden met een gebruikers naam en wacht woord:
 
 ```
 # IPv4 local connections:
@@ -464,7 +463,7 @@ Nu gaan we de gegevens verkennen en enkele query's uitvoeren met behulp van SQui
 
 Om aan de slag te gaan, opent u SQuirreL SQL in het menu **toepassingen** . Het stuur programma instellen:
 
-1. Selecteer **Windows**  >  **Stuur Programma's voor Windows-weer gave**.
+1. Selecteer   >  **Stuur Programma's voor Windows-weer gave**.
 1. Klik met de rechter muisknop op **postgresql** en selecteer **stuur programma wijzigen**.
 1. Selecteer **extra klasse-pad**  >  **toevoegen**.
 1. Voer voor **Bestands naam** **/usr/share/java/jdbcdrivers/postgresql-9.4.1208.jre6.jar** in.
@@ -473,7 +472,7 @@ Om aan de slag te gaan, opent u SQuirreL SQL in het menu **toepassingen** . Het 
 
 De verbinding met de lokale server instellen:
 
-1. Selecteer **Windows** -  >  **weergave aliassen.**
+1. Selecteer **Windows**-  >  **weergave aliassen.**
 1. Selecteer de **+** knop om een nieuwe alias te maken. Voer voor de nieuwe alias naam **spam data base** in. 
 1. Selecteer voor **stuur programma** **postgresql**.
 1. Stel de URL in op **JDBC: postgresql://localhost/spam**.

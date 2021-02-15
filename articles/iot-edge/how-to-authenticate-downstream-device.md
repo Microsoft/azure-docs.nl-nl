@@ -8,12 +8,12 @@ ms.date: 10/15/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3876b44bc6bb1ddbc5398126421fb9651003838f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 13ac18abd0a557d02435c3805e1ab86bcbf1ff84
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678820"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391980"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Een downstream-apparaat verifiëren voor Azure IoT Hub
 
@@ -68,6 +68,11 @@ Wanneer u de nieuwe apparaat-id maakt, geeft u de volgende informatie op:
 * Selecteer **een bovenliggend apparaat instellen** en selecteer het IOT Edge gateway apparaat waarmee dit downstream-apparaat verbinding maakt. U kunt het bovenliggende item later altijd wijzigen.
 
    ![Apparaat-ID met symmetrische-sleutel verificatie maken in de portal](./media/how-to-authenticate-downstream-device/symmetric-key-portal.png)
+
+   >[!NOTE]
+   >Het instellen van het bovenliggende apparaat wordt gebruikt als een optionele stap voor downstream-apparaten die gebruikmaken van symmetrische sleutel verificatie. Vanaf IoT Edge versie 1.1.0 moet elk downstream-apparaat echter worden toegewezen aan een bovenliggend apparaat.
+   >
+   >U kunt de IoT Edge hub configureren om terug te gaan naar het vorige gedrag door de omgevings variabele **AuthenticationMode** in te stellen op de waarde **CloudAndScope**.
 
 U kunt ook de [IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension) gebruiken om dezelfde bewerking te volt ooien. In het volgende voor beeld wordt de opdracht [AZ IOT hub apparaat-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) gebruikt voor het maken van een nieuw IOT-apparaat met symmetrische sleutel verificatie en het toewijzen van een bovenliggend apparaat:
 

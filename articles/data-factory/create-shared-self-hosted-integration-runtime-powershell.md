@@ -1,22 +1,18 @@
 ---
 title: Een gedeelde zelf-hostende Integration runtime maken met Power shell
 description: Meer informatie over het maken van een gedeelde zelf-hostende Integration runtime in Azure Data Factory, zodat meerdere gegevens fabrieken toegang hebben tot de Integration runtime.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.author: abnarain
 author: nabhishek
-manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: 3f0cf3de4c2cffca6540fcd727872372103ac98f
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 16feeb124859fa6199303d9d590fa0a286033ef9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118231"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389430"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Een gedeelde zelf-hostende Integration runtime maken in Azure Data Factory
 
@@ -75,7 +71,7 @@ Als u een gedeelde zelf-hostende IR wilt maken met behulp van Azure PowerShell, 
 > [!NOTE]  
 > Voor een lijst met Azure-regio's waarin Data Factory op dit moment beschikbaar is, selecteert u de regio's die u interesseren op de  [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
 
-### <a name="create-a-data-factory"></a>Een data factory maken
+### <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
 1. Start Windows PowerShell ISE (Integrated Scripting Environment).
 

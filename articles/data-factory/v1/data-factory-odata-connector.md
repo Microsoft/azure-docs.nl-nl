@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen uit OData-bronnen
 description: Meer informatie over het verplaatsen van gegevens uit OData-bronnen met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: de28fa56-3204-4546-a4df-21a21de43ed7
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 95f92d4e5616d7754c355610685701a8e089b84e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fae78459a752d78fe47f189bca67667e917ba561
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019647"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380063"
 ---
 # <a name="move-data-from-an-odata-source-using-azure-data-factory"></a>Gegevens verplaatsen vanuit een OData-bron met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]

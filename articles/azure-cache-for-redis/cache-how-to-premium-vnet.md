@@ -1,32 +1,27 @@
 ---
 title: Een virtueel netwerk configureren-Azure-cache voor Premium-tier voor redis-exemplaar
-description: Meer informatie over het maken en beheren van virtuele netwerk ondersteuning voor uw Azure-cache op Premium-laag voor redis-exemplaren.
+description: Meer informatie over het maken en beheren van virtuele netwerk ondersteuning voor uw Azure-cache voor de Premium-laag voor een redis-exemplaar
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
-ms.custom: devx-track-csharp
 ms.topic: conceptual
-ms.date: 10/09/2020
-ms.openlocfilehash: 908254fec0d9e92b0e30c2e4968c3c505bbbdbf8
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.date: 02/08/2021
+ms.openlocfilehash: 94bbb9bb683f40d44d6649802b66bda6feeee218
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833827"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375269"
 ---
-# <a name="configure-virtual-network-support-for-a-premium-tier-azure-cache-for-redis-instance"></a>Ondersteuning voor virtuele netwerken configureren voor een Azure-cache met een Premium-laag voor een redis-exemplaar
+# <a name="configure-virtual-network-support-for-a-premium-azure-cache-for-redis-instance"></a>Ondersteuning voor virtuele netwerken configureren voor een Premium Azure-cache voor een redis-exemplaar
 
-Azure cache voor redis heeft verschillende cache aanbiedingen, die flexibiliteit bieden bij het kiezen van de cache grootte en-functies. De functies van de Premium-laag omvatten Clustering, persistentie en ondersteuning voor virtuele netwerken. Een virtueel netwerk is een privé netwerk in de Cloud. Wanneer een Azure-cache voor redis-exemplaar is geconfigureerd met een virtueel netwerk, kan het niet openbaar worden benaderd en kan alleen worden geopend vanuit virtuele machines en toepassingen binnen het virtuele netwerk. In dit artikel wordt beschreven hoe u ondersteuning voor virtuele netwerken kunt configureren voor een Azure-cache met een Premium-laag voor een redis-exemplaar.
+[Azure Virtual Network](https://azure.microsoft.com/services/virtual-network/) -implementatie biedt verbeterde beveiliging en isolatie naast subnetten, beleid voor toegangs beheer en andere functies om de toegang verder te beperken. Wanneer een Azure-cache voor redis-exemplaar is geconfigureerd met een virtueel netwerk, kan het niet openbaar worden benaderd en kan alleen worden geopend vanuit virtuele machines en toepassingen binnen het virtuele netwerk. In dit artikel wordt beschreven hoe u ondersteuning voor virtuele netwerken kunt configureren voor een Azure-cache met een Premium-laag voor een redis-exemplaar.
 
 > [!NOTE]
 > Azure cache voor redis ondersteunt zowel het klassieke implementatie model als Azure Resource Manager virtuele netwerken.
 > 
 
-## <a name="why-virtual-network"></a>Waarom Virtual Network?
-
-[Azure Virtual Network](https://azure.microsoft.com/services/virtual-network/) -implementatie biedt verbeterde beveiliging en isolatie voor uw Azure-cache voor redis-instantie, samen met subnetten, Toegangs beheer beleid en andere functies om de toegang verder te beperken.
-
-## <a name="virtual-network-support"></a>Ondersteuning voor virtuele netwerken
+## <a name="set-up-virtual-network-support"></a>Ondersteuning voor virtuele netwerken instellen
 
 Ondersteuning voor virtuele netwerken is geconfigureerd in het deel venster **nieuwe Azure-cache voor redis** tijdens het maken van de cache.
 

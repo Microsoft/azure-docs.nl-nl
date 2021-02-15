@@ -13,12 +13,12 @@ ms.date: 10/09/2020
 ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b82e300128a41f8315132e1ff93af33c853edb15
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8bc9773fa7e1b3db2e249e803f4d2a3cf39edb48
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173512"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102543"
 ---
 # <a name="microsoft-identity-web-authentication-library"></a>Micro soft Identity Web authentication-bibliotheek
 
@@ -70,7 +70,7 @@ dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id "00000000-00
 
 #### <a name="github"></a>GitHub
 
-Micro soft Identity web is een open-source project dat wordt gehost op GitHub: <a href="https://github.com/AzureAD/microsoft-identity-web" target="_blank">AzureAD/micro soft <span class="docon docon-navigate-external x-hidden-focus"></span> -Identity-Web</a>
+Micro soft Identity web is een open-source project dat wordt gehost op GitHub: <a href="https://github.com/AzureAD/microsoft-identity-web" target="_blank">AzureAD/micro soft-Identity-Web</a>
 
 De [wiki van de opslag plaats](https://github.com/AzureAD/microsoft-identity-web/wiki) bevat aanvullende documentatie en als u hulp nodig hebt of een bug ontdekt, kunt u [een probleem oplossen](https://github.com/AzureAD/microsoft-identity-web/issues).
 
@@ -82,11 +82,11 @@ Micro soft Identity web bevat verschillende functies die niet worden gegeven als
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [Gebruikers aanmelden](scenario-web-app-sign-user-app-configuration.md) in web-apps             | <li>Werk- of schoolaccounts<li>Sociale identiteiten (met Azure AD B2C) | <li>Werk- of schoolaccounts<li>Persoonlijk Microsoft-account<li>Sociale identiteiten (met Azure AD B2C)     |
 | [Web-Api's beveiligen](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) | <li>Werk- of schoolaccounts<li>Sociale identiteiten (met Azure AD B2C) | <li>Werk- of schoolaccounts<li>Persoonlijk Microsoft-account<li>Sociale identiteiten (met Azure AD B2C)     |
-| Validatie van de verlener in apps met meerdere tenants                                                   | No                                                                   | Ja, voor [alle Clouds](authentication-national-cloud.md) en [Azure AD B2C](../../active-directory-b2c/index.yml) |
+| Validatie van de verlener in apps met meerdere tenants                                                   | Nee                                                                   | Ja, voor [alle Clouds](authentication-national-cloud.md) en [Azure AD B2C](../../active-directory-b2c/index.yml) |
 | Web-app/API [aanroepen van micro soft Graph] [scenario-API-aanroep-Graph]                             | Nee                                                                   | Ja                                                                                                     |
 | Web-app/API [aanroepen van Web-API] [scenario-API-aanroep-API]                                       | Nee                                                                   | Ja                                                                                                     |
-| Ondersteunt certificaat referenties                                                         | No                                                                   | Ja, met inbegrip van Azure Key Vault                                                                          |
-| Ondersteuning voor incrementele toestemming en voorwaardelijke toegang in web-apps                           | No                                                                   | Ja, in MVC, haar pagina's en ultra meer                                                                    |
+| Ondersteunt certificaat referenties                                                         | Nee                                                                   | Ja, met inbegrip van Azure Key Vault                                                                          |
+| Ondersteuning voor incrementele toestemming en voorwaardelijke toegang in web-apps                           | Nee                                                                   | Ja, in MVC, haar pagina's en ultra meer                                                                    |
 | Token versleutelings certificaten in Web-Api's                                                | Nee                                                                   | Ja                                                                                                     |
 | [Bereiken/validatie van app-rollen] [scenario-API-validatie] in Web-Api's                        | Nee                                                                   | Ja                                                                                                     |
 | `WWW-Authenticate` genereren van header in Web-Api's                                         | Nee                                                                   | Ja                                                                                                     |
@@ -99,12 +99,14 @@ Als u micro soft Identity web in actie wilt zien, kunt u de zelf studie voor de 
 
 De micro soft Identity Web-wiki op GitHub bevat een uitgebreide referentie documentatie voor verschillende aspecten van de bibliotheek. U kunt bijvoorbeeld de naslag informatie over het gebruik van certificaten, incrementele toestemming en voorwaardelijke toegang vinden op de volgende locatie:
 
-- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates" target="_blank">Certificaten gebruiken met micro soft. Identity. <span class="docon docon-navigate-external x-hidden-focus"></span> Web</a> GitHub
-- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access" target="_blank">Incrementele toestemming en voorwaardelijke toegang <span class="docon docon-navigate-external x-hidden-focus"></span> </a> GitHub
+- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates" target="_blank">Certificaten gebruiken met micro soft. Identity. Web</a> (github)
+- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access" target="_blank">Incrementele toestemming en voorwaardelijke toegang</a> (github)
 
 <!-- LINKS -->
 <!--  [miw-certs]: microsoft-identity-web-certificates.md  -->
 <!--  [miw-certs-decrypt]: microsoft-identity-web-certificates.md#decryption-certificates  -->
 <!--  [miw-inc-consent-ca-header]: microsoft-identity-web-consent-conditional-access.md#handling-incremental-consent-or-conditional-access-in-web-apis  -->
 <!--  [miw-inc-consent-ca]: microsoft-identity-web-consent-conditional-access.md  -->
-[scenario-API-call-API]: scenario-Web-API-call-API-call-API. MD # optie-1-call-micro soft-Graph-with-the-SDK [scenario-API-call-Graph]: scenario-Web-API-call-API-call-API. MD # optie-1-call-micro soft-Graph-with-the-SDK [scenario-API-Validation]: scenario-protected-web-api-verification-scope-app-roles.md
+[scenario-API-call-API]: scenario-Web-API-call-API-call-API. MD # optie-1-call-micro soft-Graph-with-the-SDK  
+[scenario-API-aanroep-Graph]: scenario-Web-API-call-API-call-API. MD # optie-1-call-micro soft-Graph-with-the-SDK  
+[scenario-API-validatie]: scenario-protected-web-api-verification-scope-app-roles.md  

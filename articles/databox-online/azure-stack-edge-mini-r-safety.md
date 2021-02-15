@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 02/08/2021
+ms.date: 02/12/2021
 ms.author: alkohli
-ms.openlocfilehash: aa363b1eeddff6c3b10d8e36371becb8b690697c
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: eb42a9a77927d8577dfec3c9167294eb8f809fec
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981010"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382618"
 ---
 # <a name="azure-stack-edge-mini-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge mini-R
 
@@ -161,7 +161,6 @@ De bewerking in de band 5150 – 5250 MHz is alleen voor gebruik voor de buiten 
 
 ![Waarschuwing over reglementaire informatie-gebruik in de binnenshuis](./media/azure-stack-edge-mini-r-safety/regulatory-information-indoor-use-only.png)
 
-
 Gebruikers worden geadviseerd dat hoogwaardige radar diagrammen worden toegewezen als primaire gebruikers (prioriteits gebruikers) van de banden 5250 – 5350 MHz en 5650-5850 MHz, en deze radar diagrammen kunnen storingen en/of schade veroorzaken op LE-LAN-apparaten.
 
 Met deze apparatuur worden radio frequentie-energie gegenereerd, gebruikt en gestroomd en, indien niet geïnstalleerd en gebruikt in overeenstemming met de instructies, kan schadelijk storingen voor radio communicatie veroorzaken. Er is echter geen garantie dat storingen in een bepaalde installatie optreden.
@@ -205,11 +204,13 @@ Een tabel met het specifieke absorptie aantal (SAR), gemiddeld meer dan 1 g voor
 
 #### <a name="european-union"></a>EUROPESE UNIE:
 
-Vraag een kopie aan van de EU-verklaring van overeenstemming voor deze apparatuur.
+Vraag een kopie aan van de EU-verklaring van overeenstemming voor deze apparatuur. E-mail verzenden naar [CSI_Compliance@microsoft.com](mailto:CSI_Compliance@microsoft.com).
 
 De Netgear A6150 WiFi USB-adapter die wordt meegeleverd met deze apparatuur is in overeenstemming met richt lijn 2014/53/EU en kan ook op aanvraag worden gegeven.
 
-> ![Waarschuwings pictogram 13 ](./media/azure-stack-edge-mini-r-safety/icon-safety-warning.png) Dit is een klasse van een product. In een binnenlandse omgeving kan dit product radio storingen veroorzaken in welk geval de gebruiker kan worden verplicht om passende maat regelen te nemen.
+![Waarschuwings pictogram 13 ](./media/azure-stack-edge-mini-r-safety/icon-safety-warning.png) **Waarschuwing:**  
+
+Dit is een product klasse. In een binnenlandse omgeving kan dit product radio storingen veroorzaken in welk geval de gebruiker kan worden verplicht om passende maat regelen te nemen.
 
 Verwijdering van afval accu's en elektrische en elektronische apparatuur:
 

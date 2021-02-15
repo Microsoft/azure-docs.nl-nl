@@ -1,22 +1,18 @@
 ---
 title: Gegevens fabrieken bewaken met behulp van Azure Monitor
 description: Meer informatie over het gebruik van Azure Monitor om/Azure Data Factory-pijp lijnen te bewaken door Diagnostische logboeken in te scha kelen met informatie van Data Factory.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: d1325ac1afbca8b30cc640f1f22cb598506a5c91
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 389c0b1fd5a2fde33c2bf19ac2807cca45691523
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555709"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373144"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Data Factory bewaken en waarschuwen door gebruik te maken van Azure Monitor
 
@@ -269,7 +265,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | --- | --- | --- |
 | **storageAccountId** |Tekenreeks | De resource-ID van het opslag account waarnaar u Diagnostische logboeken wilt verzenden. |
 | **Servicebusruleid kunnen** |Tekenreeks | De service bus-regel-ID van de service bus-naam ruimte waarin u Event Hubs wilt maken voor het streamen van Diagnostische logboeken. De regel-ID heeft de indeling `{service bus resource ID}/authorizationrules/{key name}` .|

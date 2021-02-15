@@ -5,7 +5,7 @@
   items:
     - name: Wat is Azure Files?
       href: storage-files-introduction.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Bestandsshares maken/gebruiken - Windows
       href: storage-files-quick-create-use-windows.md
@@ -93,8 +93,6 @@
           href: storage-how-to-create-file-share.md
         - name: Azure Files SYNC implementeren
           href: storage-sync-files-deployment-guide.md
-        - name: Een Premium-bestandsshare maken
-          href: storage-how-to-create-premium-fileshare.md
         - name: Een NFS-share maken
           href: storage-files-how-to-create-nfs-shares.md
         - name: SQL Server FCI met Premium-bestandsshares

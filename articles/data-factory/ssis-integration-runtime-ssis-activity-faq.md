@@ -1,22 +1,19 @@
 ---
 title: Problemen met de uitvoering van pakketten oplossen in SSIS Integration runtime
 description: Dit artikel bevat richt lijnen voor probleem oplossing voor het uitvoeren van SSIS-pakketten in de SSIS Integration runtime
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.author: wenjiefu
 author: wenjiefu
 ms.reviewer: sawinark
-manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 9609c382161514611ddc41af040e8fb438431fdf
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 2bc56d39de392c9e4c20c25b554e3bdeea048bfb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555998"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361873"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Problemen met de uitvoering van pakketten oplossen in SSIS Integration runtime
 

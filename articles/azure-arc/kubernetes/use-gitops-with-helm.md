@@ -2,49 +2,49 @@
 title: Helm-grafieken implementeren met behulp van GitOps op Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 05/19/2020
+ms.date: 02/09/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken met helm voor een Azure Arc-cluster configuratie (preview-versie)
 keywords: GitOps, Kubernetes, K8s, azure, helm, Arc, AKS, Azure Kubernetes service, containers
-ms.openlocfilehash: eea81d458ac6631c4a023134b3198e4cdb04526e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 883eb9c152bdc8a7c0e60e999cf9decf47fb80ec
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541608"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377921"
 ---
 # <a name="deploy-helm-charts-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Helm-grafieken implementeren met behulp van GitOps op Kubernetes-cluster waarvoor Arc is ingeschakeld (preview)
 
-Helm is een open-source-verpakkings programma waarmee u de levens cyclus van Kubernetes-toepassingen kunt installeren en beheren. Net als Linux-pakket beheerders, zoals APT en yum, wordt helm gebruikt voor het beheren van Kubernetes-grafieken, die pakketten van vooraf geconfigureerde Kubernetes-resources zijn.
+Helm is een opensource-inpakprogramma waarmee u Kubernetes-toepassingen kunt installeren en de levenscyclus hiervan kunt beheren. Net als Linux-pakket beheer, zoals APT en yum, wordt helm gebruikt voor het beheren van Kubernetes-grafieken, die pakketten van vooraf geconfigureerde Kubernetes-resources zijn.
 
 In dit artikel wordt beschreven hoe u helm configureert en gebruikt met Azure Arc enabled Kubernetes.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand Kubernetes-verbonden Azure-Arc-cluster. Als u een verbonden cluster nodig hebt, raadpleegt u de [Snelstartgids een cluster verbinden](./connect-cluster.md).
+Controleer of er een bestaand Kubernetes-verbonden Azure-Arc-cluster is ingeschakeld. Als u een verbonden cluster nodig hebt, gaat u naar de [Snelstartgids een Azure-Kubernetes-cluster verbinden](./connect-cluster.md).
 
 ## <a name="overview-of-using-gitops-and-helm-with-azure-arc-enabled-kubernetes"></a>Overzicht van het gebruik van GitOps en helm met Azure Arc enabled Kubernetes
 
- De helm-operator biedt een uitbrei ding van stroom waarmee helm-grafiek releases worden geautomatiseerd. Een grafiek release wordt beschreven via een aangepaste Kubernetes-resource met de naam HelmRelease. Stroom synchroniseert deze resources van Git naar het cluster en de operator helm zorgt ervoor dat helm-grafieken worden vrijgegeven zoals opgegeven in de resources.
+ De helm-operator biedt een uitbrei ding van stroom waarmee helm-grafiek releases worden geautomatiseerd. Een helm-grafiek release wordt beschreven via een aangepaste Kubernetes-resource met de naam HelmRelease. Stroom synchroniseert deze resources van Git naar het cluster, terwijl de helm-operator ervoor zorgt dat helm-grafieken worden vrijgegeven zoals opgegeven in de resources.
 
- De [voor beeld-opslag plaats](https://github.com/Azure/arc-helm-demo) die in dit document wordt gebruikt, is op de volgende manier gestructureerd:
+ De [voor beeld-opslag plaats](https://github.com/Azure/arc-helm-demo) die in dit artikel wordt gebruikt, is op de volgende manier gestructureerd:
 
 ```console
 ├── charts
-│   └── azure-arc-sample
-│       ├── Chart.yaml
-│       ├── templates
-│       │   ├── NOTES.txt
-│       │   ├── deployment.yaml
-│       │   └── service.yaml
-│       └── values.yaml
+│   └── azure-arc-sample
+│       ├── Chart.yaml
+│       ├── templates
+│       │   ├── NOTES.txt
+│       │   ├── deployment.yaml
+│       │   └── service.yaml
+│       └── values.yaml
 └── releases
     └── app.yaml
 ```
 
-In de Git-opslag plaats hebben we twee directory's, een met een helm-grafiek en één die de configuratie van de releases bevat. In de `releases` map bevat de `app.yaml` HelmRelease-configuratie die hieronder wordt weer gegeven:
+In de Git-opslag plaats hebben we twee directory's: één die een helm-grafiek bevat en één die de configuratie van de releases bevat. In de `releases` map bevat de de `app.yaml` HelmRelease-configuratie, zoals hieronder weer gegeven:
 
 ```yaml
 apiVersion: helm.fluxcd.io/v1
@@ -64,19 +64,21 @@ spec:
 
 De helm-release configuratie bevat de volgende velden:
 
-- `metadata.name` is verplicht en moet voldoen aan de Kubernetes-naamgevings conventies
-- `metadata.namespace` is optioneel en bepaalt waar de release wordt gemaakt
-- `spec.releaseName` is optioneel en als niet wordt vermeld, wordt de release naam $namespace-$name
-- `spec.chart.path` is de map met de grafiek, opgegeven ten opzichte van de hoofdmap van de opslag plaats
-- `spec.values` zijn gebruikers aanpassingen van standaard parameter waarden in de grafiek zelf
+| Veld | Description |
+| ------------- | ------------- | 
+| `metadata.name` | Verplicht veld. De naam conventies van Kubernetes moeten volgen. |
+| `metadata.namespace` | Optioneel veld. Bepaalt waar de release wordt gemaakt. |
+| `spec.releaseName` | Optioneel veld. Als u niets opgeeft, wordt de naam van de release `$namespace-$name` . |
+| `spec.chart.path` | De map met de grafiek, opgegeven ten opzichte van de hoofdmap van de opslag plaats. |
+| `spec.values` | Gebruikers aanpassingen van standaard parameter waarden in de grafiek zelf. |
 
-De opties die zijn opgegeven in de HelmRelease spec.-waarden, overschrijven de opties die zijn opgegeven in values. yaml uit de grafiek bron.
+De opties die zijn opgegeven in de HelmRelease `spec.values` , overschrijven de opties die zijn opgegeven in `values.yaml` uit de grafiek bron.
 
-Meer informatie over de HelmRelease vindt u in de officiële [helm-operator documentatie](https://docs.fluxcd.io/projects/helm-operator/en/stable/)
+Meer informatie over de HelmRelease vindt u in de officiële [helm-operator documentatie](https://docs.fluxcd.io/projects/helm-operator/en/stable/).
 
 ## <a name="create-a-configuration"></a>Een configuratie maken
 
-Met de Azure CLI-extensie voor kunt `k8sconfiguration` u ons verbonden cluster koppelen aan de voor beeld van de Git-opslag plaats. We geven deze configuratie een naam `azure-arc-sample` en implementeren de stroom operator in de `arc-k8s-demo` naam ruimte.
+Koppel uw verbonden cluster met de Azure CLI-extensie voor `k8sconfiguration` aan de voor beeld van de Git-opslag plaats. Geef deze configuratie de naam `azure-arc-sample` en implementeer de stroom operator in de `arc-k8s-demo` naam ruimte.
 
 ```console
 az k8sconfiguration create --name azure-arc-sample --cluster-name AzureArcTest1 --resource-group AzureArcTest --operator-instance-name flux --operator-namespace arc-k8s-demo --operator-params='--git-readonly --git-path=releases' --enable-helm-operator --helm-operator-version='0.6.0' --helm-operator-params='--set helm.versions=v3' --repository-url https://github.com/Azure/arc-helm-demo.git --scope namespace --cluster-type connectedClusters
@@ -88,7 +90,7 @@ az k8sconfiguration create --name azure-arc-sample --cluster-name AzureArcTest1 
 
 ## <a name="validate-the-configuration"></a>De configuratie valideren
 
-Controleer met behulp van de Azure CLI of de `sourceControlConfiguration` is gemaakt.
+Controleer of de is gemaakt met behulp van de Azure CLI `sourceControlConfiguration` .
 
 ```console
 az k8sconfiguration show --name azure-arc-sample --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters

@@ -1,23 +1,18 @@
 ---
 title: Hoge Beschik baarheid met Data Management Gateway in Azure Data Factory
 description: In dit artikel wordt uitgelegd hoe u een Data Management Gateway kunt schalen door meer knoop punten toe te voegen en omhoog te schalen door het aantal gelijktijdige taken te verhogen dat op een knoop punt kan worden uitgevoerd.
-services: data-factory
-documentationcenter: ''
 author: nabhishek
-manager: anandsub
-editor: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: b8d05293359cff16bb6d8c9a629a1fbf68104365
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ad34ed14682d729157f45e67eb3e0d3bb3eb39b7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003613"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391725"
 ---
 # <a name="data-management-gateway---high-availability-and-scalability-preview"></a>Data Management Gateway-hoge Beschik baarheid en schaal baarheid (preview-versie)
 > [!NOTE]
@@ -98,7 +93,7 @@ In deze sectie wordt ervan uitgegaan dat u de volgende twee artikelen hebt door 
         > Zie de sectie met [TLS/SSL-certificaat vereisten](#tlsssl-certificate-requirements) voor een lijst met vereisten voor het gebruik van een TLS/SSL-certificaat. 
     5. Nadat de gateway is geïnstalleerd, klikt u op Start Configuration Manager:
     
-        ![Hand matige installatie-Configuration Manager starten](media/data-factory-data-management-gateway-high-availability-scalability/manual-setup-launch-configuration-manager.png)   
+        ![Hand matige installatie-Configuration Manager starten](media/data-factory-data-management-gateway-high-availability-scalability/manual-setup-launch-configuration-manager.png)     
     6. u ziet Data Management Gateway Configuration Manager op het knoop punt (on-premises Windows-machine), waarin de status van de verbinding, de **Gateway naam** en de naam van het **knoop punt** worden weer gegeven.  
 
         ![Data Management Gateway-installatie voltooid](media/data-factory-data-management-gateway-high-availability-scalability/data-factory-gateway-installation-success.png)
@@ -200,11 +195,11 @@ Rol | Er zijn twee soorten rollen: dispatcher en worker. Alle knoop punten zijn 
 
 De volgende tabel bevat mogelijke statussen van een **Gateway knooppunt**: 
 
-Status  | Opmerkingen/Scenario's
+Status    | Opmerkingen/Scenario's
 :------- | :------------------
 Online | Het knoop punt dat is verbonden met Data Factory service.
 Offline | Het knoop punt is offline.
-Abonnement | Het knoop punt wordt automatisch bijgewerkt.
+Upgrade uitvoeren | Het knoop punt wordt automatisch bijgewerkt.
 Beperkt | Vanwege een connectiviteits probleem. Wordt mogelijk veroorzaakt door een probleem met de HTTP-poort 8050, het connectiviteits probleem van de service bus of het probleem met de synchronisatie van referenties. 
 Niet-actief | Het knoop punt bevindt zich in een configuratie die verschilt van de configuratie van andere hoofd knooppunten.<br/><br/> Een knoop punt kan inactief zijn wanneer er geen verbinding kan worden gemaakt met andere knoop punten. 
 

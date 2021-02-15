@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: f2b9f6dfe60aa50eb4ec6da76fe8781ecd8a1f13
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 531917d9c48915f71354b4cd35747ecd9d33a6f8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98951324"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385027"
 ---
 # <a name="use-apprentice-mode-to-train-personalizer-without-affecting-your-existing-application"></a>De leerling-modus gebruiken om uw persoonlijker te trainen zonder dat dit van invloed is op uw bestaande toepassing
 
@@ -63,7 +63,7 @@ De volgende manieren van het verschil in de modus leerlingen van de online modus
 |--|--|--|
 |Gevolgen voor de gebruikers ervaring|U kunt het bestaande gebruikers gedrag gebruiken om uw persoonlijker te trainen door het te laten weten wat uw **standaard actie** zou hebben en wat de beslag is. Dit betekent dat de gebruikers ervaring en de bedrijfs resultaten hiervan niet worden beïnvloed.|De bovenste actie weer geven die wordt geretourneerd door de positie aanroep om het gedrag van de gebruiker te beïnvloeden.|
 |Leer snelheid|Personaler leert langzaamer in de modus van de werk wijze dan bij het leren in de online modus. De praktijk modus kan alleen leren door de door uw **standaard actie** verkregen beloningen te bestuderen, waardoor de snelheid van het leren wordt beperkt omdat er geen onderzoek kan worden uitgevoerd.|Gaat sneller, omdat deze zowel het huidige model kan exploiteren als om nieuwe trends te verkennen.|
-|Doel treffend onderwijs "plafond"|Personaler kan ongeveer even nauw keurig zijn, en nooit de prestaties van uw basis bedrijfs logica overschrijden (de berekenings snelheid die wordt behaald door de **standaard actie** van elke classificatie oproep).|Personaler moet de basis lijn van toepassingen overschrijden, en in de loop van de tijd waarop het afloopt, moet u de evaluatie van offline-evaluatie en-onderdelen uitvoeren om verbeteringen voor het model te blijven ontvangen. |
+|Doel treffend onderwijs "plafond"|Personaler kan ongeveer even nauw keurig zijn, en nooit de prestaties van uw basis bedrijfs logica overschrijden (de berekenings snelheid die wordt behaald door de **standaard actie** van elke classificatie oproep). Dit aanpassings plafond wordt gereduceerd door te verkennen. Met een onderzoek van 20% is het echter zeer onwaarschijnlijker dat de prestaties van de leerlingen-modus meer dan 80% bedragen en 60% een redelijk doel is waarmee u de online modus kunt afbeelden.|Personaler moet de basis lijn van toepassingen overschrijden, en in de loop van de tijd waarop het afloopt, moet u de evaluatie van offline-evaluatie en-onderdelen uitvoeren om verbeteringen voor het model te blijven ontvangen. |
 |Absolute API-waarde voor rewardActionId|De ervaring van de gebruiker wordt niet beïnvloed, omdat _rewardActionId_ altijd de eerste actie is die u in de rang aanvraag verzendt. Met andere woorden, de positie-API doet niets zichtbaar voor uw toepassing tijdens de modus van de leerling. Belonings-Api's in uw toepassing mogen niet wijzigen hoe de belonende API tussen de ene modus en de andere wordt gebruikt.|De gebruikers ervaring wordt gewijzigd door de _rewardActionId_ die personaler kiest voor uw toepassing. |
 |Evaluaties|Personaler houdt een vergelijking bij van de belonings totalen die uw standaard bedrijfs logica krijgt, en de persoonlijke voor uitbetalingen worden opgehaald als in de online modus op dat moment. Er is een vergelijking beschikbaar in de Azure Portal voor die resource|Evalueer de effectiviteit van personalisatie door [offline-evaluaties](concepts-offline-evaluation.md)uit te voeren, waarmee u de totale persoonlijke voor delen kunt vergelijken met de mogelijke voor delen van de basis lijn van de toepassing.|
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/27/2020
+ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 605bae706bbc1db2e008b8d050cbba9eacd16933
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 8546201d21e68fbcf1e519c8fe9ba0de1dc38a96
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702199"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367976"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Gegevens voorbereiden voor Custom Speech
 
@@ -46,9 +46,9 @@ In deze tabel worden de geaccepteerde gegevens typen vermeld, wanneer elk gegeve
 
 | Gegevenstype | Gebruikt voor testen | Aanbevolen aantal | Gebruikt voor training | Aanbevolen aantal |
 |-----------|-----------------|----------|-------------------|----------|
-| [Audio](#audio-data-for-testing) | Ja<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | Nee | N.v.t. |
-| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Ja<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Ja | 1-20 uur aan audio |
-| [Gerelateerde tekst](#related-text-data-for-training) | Nee | N.v.t. | Ja | 1-200 MB aan Verwante tekst |
+| [Audio](#audio-data-for-testing) | Yes<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | No | N.v.t. |
+| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Yes<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Yes | 1-20 uur aan audio |
+| [Gerelateerde tekst](#related-text-data-for-training) | No | N.v.t. | Yes | 1-200 MB aan Verwante tekst |
 
 Wanneer u een nieuw model traint, begint u met [Verwante tekst](#related-text-data-for-training). Met deze gegevens wordt de herkenning van speciale termen en zinsdelen al verbeterd. Training met tekst is veel sneller dan training met audio (minuten versus dagen).
 
@@ -57,9 +57,17 @@ Bestanden moeten worden gegroepeerd op type in een gegevensset en worden geüplo
 > [!TIP]
 > Overweeg om voorbeeld gegevens te gebruiken om snel aan de slag te gaan. Bekijk deze GitHub-opslag plaats voor <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/sampledata/customspeech" target="_target">voorbeeld <span class="docon docon-navigate-external x-hidden-focus"></span> Custom speech gegevens</a>
 
+> [!NOTE]
+> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
+
+> [!NOTE]
+> Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+>
+> Als u het probleem voor komt dat in de bovenstaande alinea wordt beschreven, kunt u de trainings tijd snel verlagen door de hoeveelheid audio in de gegevensset te verminderen of deze volledig te verwijderen en alleen de tekst te verlaten. De laatste optie wordt sterk aanbevolen als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+
 ## <a name="upload-data"></a>Gegevens uploaden
 
-Als u uw gegevens wilt uploaden, gaat u naar de <a href="https://speech.microsoft.com/customspeech" target="_blank">Custom speech Portal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Klik in de portal op **gegevens uploaden** om de wizard te starten en uw eerste gegevensset te maken. U wordt gevraagd een type spraak gegevens voor uw gegevensset te selecteren voordat u uw gegevens kunt uploaden.
+Als u uw gegevens wilt uploaden, gaat u naar de <a href="https://speech.microsoft.com/customspeech" target="_blank">Speech Studio <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Klik in de portal op **gegevens uploaden** om de wizard te starten en uw eerste gegevensset te maken. U wordt gevraagd een type spraak gegevens voor uw gegevensset te selecteren voordat u uw gegevens kunt uploaden.
 
 ![Scherm opname van de Audio-Upload optie van de spraak Portal.](./media/custom-speech/custom-speech-select-audio.png)
 
@@ -93,7 +101,7 @@ Gebruik deze tabel om ervoor te zorgen dat uw audio bestanden correct zijn inged
 
 Gebruik <a href="http://sox.sourceforge.net" target="_blank" rel="noopener">Sox <span class="docon docon-navigate-external x-hidden-focus"></span> </a> om audio-eigenschappen te controleren of bestaande audio om te zetten in de juiste notaties. Hieronder ziet u enkele voor beelden van de manier waarop elk van deze activiteiten kan worden uitgevoerd via de SoX-opdracht regel:
 
-| Activiteit | Beschrijving | SoX-opdracht |
+| Activiteit | Description | SoX-opdracht |
 |----------|-------------|-------------|
 | Audio-indeling controleren | Gebruik deze opdracht om te controleren<br>de indeling van het audio bestand. | `sox --i <filename>` |
 | Audio-indeling converteren | Gebruik deze opdracht om te converteren<br>het audio bestand op één kanaal, 16-bits, 16 KHz. | `sox <input> -b 16 -e signed-integer -c 1 -r 16k -t wav <output>.wav` |
@@ -136,14 +144,14 @@ speech03.wav    the lazy dog was not amused
 
 De tekst van de transcripties wordt genormaliseerd zodat ze door het systeem kunnen worden verwerkt. Er zijn echter enkele belang rijke normalisaties die moeten worden uitgevoerd voordat u de gegevens naar de speech Studio uploadt. Voor de juiste taal die moet worden gebruikt wanneer u uw transcripties voorbereidt, Zie [How to Create a Human-gelabeld transcriptie](how-to-custom-speech-human-labeled-transcriptions.md)
 
-Nadat u uw audio bestanden en bijbehorende transcripties hebt verzameld, pakt u deze als één ZIP-bestand in voordat u het uploadt naar de <a href="https://speech.microsoft.com/customspeech" target="_blank">Custom speech Portal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Hieronder ziet u een voor beeld van een gegevensset met drie audio bestanden en een transcriptie-bestand met menselijke Labels:
+Nadat u uw audio bestanden en bijbehorende transcripties hebt verzameld, pakt u ze als één ZIP-bestand in voordat u het uploadt naar de <a href="https://speech.microsoft.com/customspeech" target="_blank">Speech Studio <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Hieronder ziet u een voor beeld van een gegevensset met drie audio bestanden en een transcriptie-bestand met menselijke Labels:
 
 > [!div class="mx-imgBorder"]
 > ![Audio selecteren in de spraak Portal](./media/custom-speech/custom-speech-audio-transcript-pairs.png)
 
 Zie [uw Azure-account instellen](custom-speech-overview.md#set-up-your-azure-account) voor een lijst met aanbevolen regio's voor uw speech service-abonnementen. Het instellen van de spraak abonnementen in een van deze regio's vermindert de tijd die nodig is om het model te trainen. In deze regio's kan training ongeveer 10 uur aan audio per dag worden verwerkt, vergeleken met slechts één uur per dag in andere regio's. Als model training niet binnen een week kan worden voltooid, wordt het model gemarkeerd als mislukt.
 
-Niet alle basis modellen ondersteunen training met audio gegevens. Als het basis model dit niet ondersteunt, wordt de audio door de service genegeerd en wordt alleen de tekst van de transcriptieser getraind. In dit geval is de training hetzelfde als training met Verwante tekst.
+Niet alle basis modellen ondersteunen training met audio gegevens. Als het basis model dit niet ondersteunt, wordt de audio door de service genegeerd en wordt alleen de tekst van de transcriptieser getraind. In dit geval is de training hetzelfde als training met Verwante tekst. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
 
 ## <a name="related-text-data-for-training"></a>Gerelateerde tekst gegevens voor training
 
@@ -154,7 +162,7 @@ Product namen of-onderdelen die uniek zijn, moeten gerelateerde tekst gegevens b
 | Zinnen (uitingen) | Verbeter de nauw keurigheid bij het herkennen van product namen of branchespecifieke vocabulaire in de context van een zin. |
 | Uitspraak | De uitspraak van ongebruikelijke termen, acroniemen of andere woorden met niet-gedefinieerde uitspraaken verbeteren. |
 
-Zinnen kunnen worden gegeven als één tekst bestand of meerdere tekst bestanden. Gebruik voor het verbeteren van de nauw keurigheid tekst gegevens die zich dichter bij de verwachte gesp roken uitingen bevindt. Uitspraak moet worden gegeven als één tekst bestand. Alles kan worden verpakt als één ZIP-bestand en worden geüpload naar de <a href="https://speech.microsoft.com/customspeech" target="_blank">Custom speech <span class="docon docon-navigate-external x-hidden-focus"></span> Portal </a>.
+Zinnen kunnen worden gegeven als één tekst bestand of meerdere tekst bestanden. Gebruik voor het verbeteren van de nauw keurigheid tekst gegevens die zich dichter bij de verwachte gesp roken uitingen bevindt. Uitspraak moet worden gegeven als één tekst bestand. Alles kan worden verpakt als één ZIP-bestand en worden geüpload naar de <a href="https://speech.microsoft.com/customspeech" target="_blank">Speech <span class="docon docon-navigate-external x-hidden-focus"></span> Studio </a>.
 
 Training met Verwante tekst wordt doorgaans binnen een paar minuten voltooid.
 

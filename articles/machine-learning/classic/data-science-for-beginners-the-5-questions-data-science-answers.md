@@ -3,18 +3,18 @@ title: 'ML Studio (klassiek): gegevens wetenschap voor beginners-Azure'
 description: Data wetenschappen voor beginners is de basis concepten van vijf korte Video's, beginnend met de 5 vragen data Science-antwoorden. Van Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: conceptual
 author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: ae4eca82df498f1aa8f9ef84691cecdf719d0d76
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e9bbadc95be3479da82d91e9a4a4f712fbc32c57
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307491"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520388"
 ---
 # <a name="data-science-for-beginners-video-1-the-5-questions-data-science-answers"></a>Gegevenswetenschap voor beginners, video 1: de 5 vragen waarop gegevenswetenschap antwoord geeft
 
@@ -45,7 +45,7 @@ In deze eerste video wordt gecommuniceerd over ' de 5 vragen met betrekking tot 
 
 Data wetenschappen gebruikt cijfers en namen (ook wel categorieën of labels genoemd) om antwoorden op vragen te voors pellen.
 
-Het kan voor komen dat u, maar *Er zijn slechts vijf vragen die worden beantwoord door data Science* :
+Het kan voor komen dat u, maar *Er zijn slechts vijf vragen die worden beantwoord door data Science*:
 
 * Is dit A of B?
 * Is dit klinken?

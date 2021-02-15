@@ -1,24 +1,28 @@
 ---
-title: Geo-replicatie voor Azure cache instellen voor redis | Microsoft Docs
-description: Meer informatie over het repliceren van uw Azure-cache voor redis-instanties in verschillende geografische regio's.
+title: Geo-replicatie voor Premium Azure cache configureren voor redis-instanties
+description: Meer informatie over het repliceren van uw Azure-cache voor redis Premium-instanties in azure-regio's
 author: yegu-ms
 ms.service: cache
 ms.topic: conceptual
-ms.date: 03/06/2019
+ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: 33d5ec89ef7563df16e0fe9b447eca88b1dba7fe
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 27ccc81ddf0a771de9fb15f60820dfd3efa6146e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536875"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386869"
 ---
-# <a name="how-to-set-up-geo-replication-for-azure-cache-for-redis"></a>Geo-replicatie voor Azure cache instellen voor redis
+# <a name="configure-geo-replication-for-premium-azure-cache-for-redis-instances"></a>Geo-replicatie voor Premium Azure cache configureren voor redis-instanties
 
-Geo-replicatie biedt een mechanisme voor het koppelen van twee Premium-laag Azure-cache voor redis-exemplaren. Eén cache is geselecteerd als de primaire gekoppelde cache en de andere als de secundaire gekoppelde cache. De secundaire gekoppelde cache wordt alleen-lezen en de gegevens die naar de primaire cache worden geschreven, worden gerepliceerd naar de secundaire gekoppelde cache. Gegevens overdracht tussen de primaire en secundaire cache-instanties wordt beveiligd door TLS. Geo-replicatie kan worden gebruikt om een cache in te stellen die twee Azure-regio's omvat. Dit artikel bevat een hand leiding voor het configureren van geo-replicatie voor uw Azure-cache voor de Premium-laag voor redis-exemplaren.
+In dit artikel leert u hoe u een geo-gerepliceerde Azure-cache kunt configureren met behulp van de Azure Portal.
+
+Geo-replicatie koppelingen combi neren twee Premium Azure-cache voor redis-instanties en maakt een gegevens replicatie relatie. Deze cache-instanties bevinden zich doorgaans in verschillende Azure-regio's, maar ze zijn niet vereist voor. De ene instantie fungeert als de primaire en de andere als de secundaire. De primaire ingangen hebben lees-en schrijf aanvragen en wijzigingen worden door gegeven aan de secundaire. Dit proces wordt voortgezet totdat de koppeling tussen de twee exemplaren wordt verwijderd.
 
 > [!NOTE]
-> Geo-replicatie is ontworpen als oplossing voor herstel na nood gevallen. Standaard schrijft uw toepassing naar en wordt de primaire regio gelezen. Het kan eventueel worden geconfigureerd om te lezen uit de secundaire regio. Geo-replicatie biedt geen automatische failover vanwege problemen met de toegevoegde netwerk latentie tussen regio's als de rest van uw toepassing in de primaire regio blijft. U moet de failover beheren en initiëren door de secundaire cache te ontkoppelen. Hiermee wordt het niveau verhoogd als het nieuwe primaire exemplaar.
+> Geo-replicatie is ontworpen als oplossing voor herstel na nood gevallen.
+>
+>
 
 ## <a name="geo-replication-prerequisites"></a>Vereisten voor geo-replicatie
 
@@ -75,7 +79,7 @@ Nadat geo-replicatie is geconfigureerd, zijn de volgende beperkingen van toepass
 
     ![Scherm opname van het weer geven van de koppelings status voor de primaire en secundaire caches.](./media/cache-how-to-geo-replication/cache-geo-location-link-status.png)
 
-    Zodra het replicatie proces is voltooid, verandert de status van de **koppeling** in **geslaagd** .
+    Zodra het replicatie proces is voltooid, verandert de status van de **koppeling** in **geslaagd**.
 
     ![Cache status](./media/cache-how-to-geo-replication/cache-geo-location-link-successful.png)
 

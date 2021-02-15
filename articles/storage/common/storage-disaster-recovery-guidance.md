@@ -10,12 +10,12 @@ ms.date: 05/05/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: f7d7bff1bc85e0dec78a69422d126b86f61b7704
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9a4453c29c52f8821643e93584666c3a6a8e6b4c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92783977"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379825"
 ---
 # <a name="disaster-recovery-and-storage-account-failover"></a>Herstel na noodgeval en failover van opslagaccount
 
@@ -23,7 +23,7 @@ Micro soft streeft ernaar om ervoor te zorgen dat Azure-Services altijd beschikb
 
 Azure Storage ondersteunt de failover van accounts voor geo-redundante opslag accounts. Met account-failover kunt u het failover-proces voor uw opslag account initiëren als het primaire eind punt niet beschikbaar is. De failover werkt het secundaire eind punt bij om het primaire eind punt voor uw opslag account te worden. Zodra de failover is voltooid, kunnen clients naar het nieuwe primaire eind punt gaan schrijven.
 
-Account-failover is beschikbaar voor de typen algemeen-en Blob Storage-opslag accounts voor algemene doel einden met Azure Resource Manager-implementaties. Account-failover wordt ondersteund voor alle open bare regio's, maar is op dit moment niet beschikbaar in soevereine of nationale Clouds.
+Accountfailover is beschikbaar voor de typen algemeen v1, algemeen v2, en Blob-opslagaccount met Azure Resource Manager-implementaties. Account-failover wordt ondersteund voor alle open bare regio's, maar is op dit moment niet beschikbaar in soevereine of nationale Clouds.
 
 In dit artikel worden de concepten en het proces van een failover van een account beschreven en wordt uitgelegd hoe u uw opslag account voorbereidt voor herstel met de minste gevolgen voor de klant. Zie [een account-failover initiëren](storage-initiate-account-failover.md)voor meer informatie over het initiëren van een account-failover in de Azure portal of Power shell.
 
@@ -55,7 +55,7 @@ Houd bovendien de volgende aanbevolen procedures voor het onderhouden van hoge B
 
 - **Schijven:** Gebruik [Azure backup](https://azure.microsoft.com/services/backup/) om een back-up te maken van de VM-schijven die worden gebruikt door uw virtuele Azure-machines. U kunt ook [Azure site Recovery](https://azure.microsoft.com/services/site-recovery/) gebruiken om uw vm's te beschermen in het geval van een regionale nood situatie.
 - **Blok-blobs:** Schakel [zacht verwijderen](../blobs/soft-delete-blob-overview.md) in om te beschermen tegen verwijderingen op object niveau en overschrijvingen, of kopieer blok-blobs naar een ander opslag account in een andere regio met behulp van [AzCopy](./storage-use-azcopy-v10.md), [Azure PowerShell](/powershell/module/az.storage/)of de [Azure data verplaatsings bibliotheek](storage-use-data-movement-library.md).
-- **Bestanden:** Gebruik [AzCopy](./storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) om uw bestanden te kopiëren naar een ander opslag account in een andere regio.
+- **Bestanden:** Gebruik [Azure backup](https://docs.microsoft.com/azure/backup/azure-file-share-backup-overview) om een back-up te maken van uw bestands shares. Schakel ook [zacht verwijderen](https://docs.microsoft.com/azure/storage/files/storage-files-prevent-file-share-deletion) in om te beschermen tegen onbedoelde verwijderingen van de bestands share. Voor geo-redundantie wanneer GRS niet beschikbaar is, gebruikt u [AzCopy](./storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) om uw bestanden te kopiëren naar een ander opslag account in een andere regio.
 - **Tabellen:** gebruik [AzCopy](./storage-use-azcopy-v10.md) om tabel gegevens te exporteren naar een ander opslag account in een andere regio.
 
 ## <a name="track-outages"></a>Uitval bijhouden

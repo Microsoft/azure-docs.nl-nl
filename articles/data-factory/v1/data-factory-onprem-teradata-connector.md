@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van Teradata met Azure Data Factory
 description: Meer informatie over Teradata-connector voor de Data Factory-service waarmee u gegevens kunt verplaatsen vanuit een Teradata-data base
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 98eb76d8-5f3d-4667-b76e-e59ed3eea3ae
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: ecde5784e759ef5259b8c67ed574cef6cae98f30
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ef992ed907bc070643f290e7fd536de05ebf9242
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019596"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387203"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Gegevens verplaatsen van Teradata met Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -297,7 +292,7 @@ Bij het verplaatsen van gegevens naar Teradata, worden de volgende toewijzingen 
 | Decimaal |Decimaal |
 | Dubbel |Dubbel |
 | Geheel getal |Int32 |
-| Getal |Dubbel |
+| Aantal |Dubbel |
 | SmallInt |Int16 |
 | Date |DateTime |
 | Tijd |TimeSpan |

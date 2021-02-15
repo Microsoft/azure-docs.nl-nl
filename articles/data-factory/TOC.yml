@@ -105,6 +105,8 @@
       items:
         - name: Gegevens transformeren met toewijzingsgegevensstromen
           items:
+            - name: Gegevens transformeren in het Lake with Delta Lake
+              href: tutorial-data-flow-delta-lake.md
             - name: Gegevens transformeren met toewijzingsgegevensstromen
               href: tutorial-data-flow.md
             - name: Videozelfstudies om gegevens toe te wijzen
@@ -556,6 +558,8 @@
           href: data-flow-lookup.md
         - name: Nieuwe vertakking
           href: data-flow-new-branch.md
+        - name: Parseren
+          href: data-flow-parse.md
         - name: Draaitabel
           href: data-flow-pivot.md
         - name: Positie
@@ -806,6 +810,8 @@
       href: /azure/templates/microsoft.datafactory/allversions
     - name: Python
       href: /python/api/overview/azure/datafactory
+    - name: Ingebouwde modules voor Azure Policy
+      href: policy-reference.md
 - name: Resources
   items:
     - name: Whitepapers

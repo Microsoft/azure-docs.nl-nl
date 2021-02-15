@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): algoritmen optimaliseren-Azure'
 description: Hierin wordt uitgelegd hoe u de optimale parameterset kiest voor een algoritme in Azure Machine Learning Studio (klassiek).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/29/2017
-ms.openlocfilehash: b08318d4c12fd2e6ea8055771ca6792b0fb280dd
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a216dc7cb17b9e35e412c6bebe34c0cccfb732e4
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307864"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519300"
 ---
 # <a name="choose-parameters-to-optimize-your-algorithms-in-machine-learning-studio-classic"></a>Para meters kiezen voor het optimaliseren van uw algoritmen in Machine Learning Studio (klassiek)
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 In dit onderwerp wordt beschreven hoe u de juiste afstemming kunt instellen voor een algoritme in Azure Machine Learning Studio (klassiek). Voor de meeste machine learning algoritmen zijn para meters ingesteld. Wanneer u een model traint, moet u waarden opgeven voor die para meters. De effectiviteit van het getrainde model is afhankelijk van de model parameters die u kiest. Het proces van het vinden van de optimale set para meters wordt het *model selectie* genoemd.
 
@@ -28,10 +28,10 @@ Er zijn verschillende manieren om een model te selecteren. In machine learning i
 
 Er zijn vier stappen in het proces van het vinden van de beste parameterset:
 
-1. **Definieer de parameter ruimte** : voor de algoritme moet u eerst de exacte parameter waarden bepalen die u wilt overwegen.
-2. **De instellingen voor kruis validatie definiëren** : bepalen hoe u kruis validatie vouwen kiest voor de gegevensset.
-3. **Definieer de metrische gegevens** : Bepaal welke meet waarde moet worden gebruikt voor het bepalen van de beste set para meters, zoals nauw keurigheid, wortel gemiddelde van fout, precisie, intrekken of f-Score.
-4. **Train, evalueer en Compare** : voor elke unieke combi natie van de parameter waarden, worden Kruis validatie uitgevoerd door en op basis van de fout metriek die u definieert. Nadat u de evaluatie en vergelijking hebt uitgevoerd, kunt u het beste model kiezen.
+1. **Definieer de parameter ruimte**: voor de algoritme moet u eerst de exacte parameter waarden bepalen die u wilt overwegen.
+2. **De instellingen voor kruis validatie definiëren**: bepalen hoe u kruis validatie vouwen kiest voor de gegevensset.
+3. **Definieer de metrische gegevens**: Bepaal welke meet waarde moet worden gebruikt voor het bepalen van de beste set para meters, zoals nauw keurigheid, wortel gemiddelde van fout, precisie, intrekken of f-Score.
+4. **Train, evalueer en Compare**: voor elke unieke combi natie van de parameter waarden, worden Kruis validatie uitgevoerd door en op basis van de fout metriek die u definieert. Nadat u de evaluatie en vergelijking hebt uitgevoerd, kunt u het beste model kiezen.
 
 In de volgende afbeelding ziet u hoe dit kan worden bereikt in Azure Machine Learning Studio (klassiek).
 
@@ -66,7 +66,7 @@ De module heeft ook een optionele gegevensset-invoer. Verbind de gegevensset met
 
 ![Classificatie van versterkte beslissings structuur](./media/algorithm-parameters-optimize/fig6a.png)
 
-Het model wordt vervolgens geëvalueerd op de validatie gegevensset. In de linker uitvoer poort van de module worden verschillende metrische gegevens weer gegeven als functies van parameter waarden. De juiste uitvoer poort geeft het getrainde model dat overeenkomt met het best presterende model volgens de gekozen metriek ( **nauw keurigheid** in dit geval).  
+Het model wordt vervolgens geëvalueerd op de validatie gegevensset. In de linker uitvoer poort van de module worden verschillende metrische gegevens weer gegeven als functies van parameter waarden. De juiste uitvoer poort geeft het getrainde model dat overeenkomt met het best presterende model volgens de gekozen metriek (**nauw keurigheid** in dit geval).  
 
 ![Validatie gegevensset](./media/algorithm-parameters-optimize/fig6b.png)
 

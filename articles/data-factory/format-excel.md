@@ -2,19 +2,16 @@
 title: Excel-indeling in Azure Data Factory
 description: In dit onderwerp wordt beschreven hoe u kunt omgaan met Excel-indeling in Azure Data Factory.
 author: linda33wj
-manager: shwang
-ms.reviewer: craigg
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: jingwang
-ms.openlocfilehash: 8f19ccc90c44ef90cee7bb1ae881086321e863b6
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: bef29bc958253be0498442f842dda67105ce799b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902031"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386523"
 ---
 # <a name="excel-format-in-azure-data-factory"></a>Excel-indeling in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -74,7 +71,7 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="excel-as-source"></a>Excel als bron 
 
-De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* bron***.
+De volgende eigenschappen worden ondersteund in de sectie ***\* bron \**** van de Kopieer activiteit.
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
@@ -116,7 +113,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Lijst met bestanden             | Hiermee wordt aangegeven of uw bron verwijst naar een tekst bestand met de bestanden die moeten worden verwerkt | nee       | `true` of `false`                                         | File List                          |
 | Kolom voor het opslaan van de bestands naam | Een nieuwe kolom maken met de naam en het pad van het bron bestand       | nee       | Tekenreeks                                                    | rowUrlColumn                      |
 | Na voltooiing          | De bestanden na de verwerking verwijderen of verplaatsen. Bestandspad wordt gestart vanuit de hoofdmap van de container | nee       | Verwijderen: `true` of `false` <br> Ga `['<from>', '<to>']` | purgeFiles <br> moveFiles         |
-| Filteren op laatst gewijzigd   | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee       | Timestamp                                                 | modifiedAfter <br> modifiedBefore |
+| Filteren op laatst gewijzigd   | Kiezen of bestanden moeten worden gefilterd op basis van het tijdstip waarop deze voor het laatst zijn gewijzigd | nee       | Tijdstempel                                                 | modifiedAfter <br> modifiedBefore |
 | Geen bestanden gevonden | Als deze eigenschap waar is, wordt er geen fout gegenereerd als er geen bestanden worden gevonden | nee | `true` of `false` | ignoreNoFilesFound |
 
 ### <a name="source-example"></a>Bron voorbeeld

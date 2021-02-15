@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/18/2020
+ms.date: 02/10/2021
 ms.author: b-juche
-ms.openlocfilehash: 35fce3723e92a3a7c68aaa62b28b756432182a8c
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 4d992bcc202dc8bdacdda6426371df1adb1ec3e6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629660"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379111"
 ---
 # <a name="manage-snapshots-by-using-azure-netapp-files"></a>Momentopnamen beheren met behulp van Azure NetApp Files
 
@@ -177,7 +177,7 @@ Op dit moment kunt u een moment opname alleen herstellen naar een nieuw volume.
 
     ![Herstellen naar nieuw volume](../media/azure-netapp-files/snapshot-restore-new-volume.png) 
 
-4. Klik op **beoordeling + maken**.  Klik op **Maken**.   
+4. Klik op **beoordeling + maken**.  Klik op **Create**.   
     Het nieuwe volume gebruikt hetzelfde protocol dat door de moment opname wordt gebruikt.   
     Het nieuwe volume waarnaar de moment opname wordt teruggezet, wordt weer gegeven op de Blade volumes.
 
@@ -187,7 +187,9 @@ Als u [de volledige moment opname niet wilt herstellen naar een volume](#restore
 
 Het gekoppelde volume bevat een map met moment opnamen met  `.snapshot` de naam (in NFS-clients) of `~snapshot` (in SMB-clients) die toegankelijk is voor de client. De map met moment opnamen bevat submappen die overeenkomen met de moment opnamen van het volume. Elke submap bevat de bestanden van de moment opname. Als u per ongeluk een bestand verwijdert of overschrijft, kunt u het bestand herstellen naar de bovenliggende map voor lezen/schrijven door het bestand te kopiëren van een submap voor een moment opname naar de map lezen/schrijven. 
 
-Als u de map met moment opnamen niet ziet, is deze mogelijk verborgen omdat de optie pad naar moment opname verbergen momenteel is ingeschakeld. U kunt [de optie pad naar moment opname verbergen bewerken](#edit-the-hide-snapshot-path-option) om dit uit te scha kelen.  
+U kunt de toegang tot de mappen met moment opnamen beheren met de [optie pad naar moment opname verbergen](#edit-the-hide-snapshot-path-option). Met deze optie bepaalt u of de map moet worden verborgen voor de-clients. Daarom beheert het ook de toegang tot bestanden en mappen in de moment opnamen.  
+
+NFSv 4.1 geeft de `.snapshot` Directory () niet weer `ls -la` . Als de optie pad naar moment opname verbergen echter niet is ingesteld, kunt u nog steeds toegang krijgen tot de `.snapshot` map via nfsv 4.1 met behulp `cd <snapshot-path>` van de opdracht vanaf de client opdracht regel. 
 
 ### <a name="restore-a-file-by-using-a-linux-nfs-client"></a>Een bestand herstellen met behulp van een Linux NFS-client 
 
@@ -269,4 +271,4 @@ U kunt moment opnamen verwijderen die u niet meer hoeft te hand haven.
 * [Problemen met momentopnamebeleid oplossen](troubleshoot-snapshot-policies.md)
 * [Resourcelimieten voor Azure NetApp Files](azure-netapp-files-resource-limits.md)
 * [Video over Azure NetApp Files-moment opnamen 101](https://www.youtube.com/watch?v=uxbTXhtXCkw&feature=youtu.be)
-* [Wat is Azure-toepassing consistent momentopname programma?](azacsnap-introduction.md)
+* [Wat is het hulpprogramma Azure Application Consistent Snapshot](azacsnap-introduction.md)

@@ -27,10 +27,10 @@
               href: concepts-pricing-tiers.md
             - name: Vooruitbetalen voor reservecapaciteit
               href: concept-reserved-pricing.md
-    - name: Snelstartgidsen
+    - name: Quickstarts
       expanded: true
       items:
-        - name: Een server maken
+        - name: Eén MySQL-server maken
           items:
             - name: Azure Portal
               href: quickstart-create-mysql-server-database-using-azure-portal.md
@@ -416,11 +416,10 @@
           href: flexible-server/concepts-supported-versions.md
         - name: Berekeningen en opslag
           href: flexible-server/concepts-compute-storage.md
-    - name: Snelstartgidsen
+    - name: Quickstarts
       expanded: true
       items:
-        - name: Een server maken
-          expanded: true
+        - name: Een flexibele MySQL-server maken
           items:
             - name: Azure Portal
               href: flexible-server/quickstart-create-server-portal.md

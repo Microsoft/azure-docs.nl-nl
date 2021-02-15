@@ -6,17 +6,17 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 09/21/2020
-ms.openlocfilehash: 047a24133dfdf68e2176b20cf31a871d11f0d4f9
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: d297d215d4b0edfdd67b603ba4707bf02057ad78
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241154"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516869"
 ---
 # <a name="stopstart-an-azure-database-for-mysql"></a>Een Azure Database for MySQL stoppen/starten
 
 > [!IMPORTANT]
-> De functionaliteit voor stoppen/starten voor Azure Database for MySQL is momenteel beschikbaar als open bare preview.
+>  Wanneer u de server **stopt** , blijft deze voor de volgende zeven dagen in een stretch-status. Als u deze niet hand matig **Start** , wordt de server aan het eind van 7 dagen automatisch gestart. U kunt ervoor kiezen om het opnieuw te **stoppen** als u de-server niet gebruikt.
 
 In dit artikel vindt u stapsgewijze procedures voor het uitvoeren van stoppen en starten van één server.
 
@@ -48,7 +48,7 @@ U hebt het volgende nodig om deze hand leiding te volt ooien:
 
 2.  Klik op de pagina **overzicht** op de knop **Start** op de werk balk.
 
-    :::image type="content" source="./media/howto-stop-start-server/mysql-start-server.png" alt-text="Server Azure Database for MySQL stoppen":::
+    :::image type="content" source="./media/howto-stop-start-server/mysql-start-server.png" alt-text="Server Azure Database for MySQL starten":::
 
     > [!NOTE]
     > Zodra de server is gestart, zijn alle beheer bewerkingen nu beschikbaar voor één server.

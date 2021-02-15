@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: a7b51138abe6d8e97f55ceae11d4cf13b9ebc136
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 096549c37c9f1feb04cd9214e1835956dae53735
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820599"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516835"
 ---
 # <a name="investigate-a-suspicious-iot-device"></a>Een verdacht IoT-apparaat onderzoeken
 
-Defender voor IoT-Service waarschuwingen bieden duidelijke aanwijzingen wanneer IoT-apparaten worden verdacht van betrokkenheid bij verdachte activiteiten of wanneer er aanwijzingen zijn dat een apparaat is aangetast.
+Defender voor IoT-Service waarschuwingen biedt duidelijke aanwijzingen wanneer IoT-apparaten worden verdacht van betrokkenheid bij verdachte activiteiten of wanneer er aanwijzingen zijn dat een apparaat is aangetast.
 
 In deze hand leiding kunt u de suggesties voor onderzoek gebruiken om te helpen bij het bepalen van de mogelijke Risico's voor uw organisatie, het bepalen van de manier waarop u wilt herstellen en het vinden van de beste manieren om in de toekomst soort gelijke aanvallen te voor komen.
 
@@ -39,12 +39,12 @@ De Log Analytics-werk ruimte voor gegevens opslag zoeken:
 1. Open uw IoT-hub,
 1. Selecteer onder **beveiliging** de optie **instellingen** en selecteer vervolgens **gegevens verzameling**.
 1. Wijzig de configuratie gegevens van uw Log Analytics werk ruimte.
-1. Klik op **Opslaan**.
+1. Selecteer **Opslaan**.
 
 Volgende configuratie gaat u als volgt te werk om toegang te krijgen tot gegevens die zijn opgeslagen in uw Log Analytics werkruimte:
 
-1. Selecteer en klik op een Defender voor IoT-waarschuwing in uw IoT Hub.
-1. Klik op **meer onderzoek**.
+1. Selecteer en selecteer een Defender voor IoT-waarschuwing in uw IoT Hub.
+1. Selecteer **verder onderzoek**.
 1. Selecteer **hier om te zien op welke apparaten deze waarschuwing zich bevindt en Bekijk de kolom DeviceID**.
 
 ## <a name="investigation-steps-for-suspicious-iot-devices"></a>Onderzoek stappen voor verdachte IoT-apparaten
@@ -55,7 +55,7 @@ Bekijk de voor beelden van kql query's hieronder om aan de slag te gaan met het 
 
 ### <a name="related-alerts"></a>Gerelateerde waarschuwingen
 
-Als u wilt weten of andere waarschuwingen rond dezelfde tijd zijn geactiveerd, gebruikt u de volgende kql-query:
+U kunt nagaan of andere waarschuwingen rond dezelfde keer zijn geactiveerd via de volgende kql-query:
 
   ```
   let device = "YOUR_DEVICE_ID";
@@ -144,7 +144,7 @@ Als u wilt zoeken naar gebruikers die zijn aangemeld bij het apparaat, gebruikt 
 De query resultaten gebruiken om te detecteren:
 
 - Welke gebruikers zijn aangemeld bij het apparaat?
-- Moeten de gebruikers zich aanmelden om zich aan te melden?
+- Meldt u zich aan bij de gebruikers die zich hebben aangemeld?
 - Hebben de gebruikers die zich hebben aangemeld, verbinding gemaakt vanaf verwachte of onverwachte IP-adressen?
 
 ### <a name="process-list"></a>Proces lijst
@@ -182,7 +182,7 @@ De query resultaten gebruiken om te detecteren:
 
 - Werden er verdachte processen uitgevoerd op het apparaat?
 - Zijn er processen uitgevoerd door de juiste gebruikers?
-- Hebben alle opdracht regel uitvoeringen de juiste en verwachte argumenten?
+- Hebben opdracht regel uitvoeringen de juiste en verwachte argumenten?
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/13/2021
+ms.date: 02/02/2021
 ms.author: jeedes
-ms.openlocfilehash: 18d64e2b2ac359a9036ebd548ef886cb0efd3405
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 3d99ed71e284ae2e986a93591a61c3c9011857eb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98622194"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371290"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Zelfstudie: Azure Active Directory-integratie met Splunk Enterprise en Splunk Cloud
 
@@ -28,10 +28,10 @@ In deze zelf studie leert u hoe u Splunk Enter prise en Splunk Cloud integreert 
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u Azure AD-integratie met Splunk Enter prise en Splunk Cloud wilt configureren, hebt u de volgende items nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Splunk Enter prise-en Splunk-abonnement voor eenmalige aanmelding voor de Cloud.
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Splunk Enter prise en Splunk SSO (single sign-on) ingeschakeld abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Sp
     1. **[Maak Splunk Enter prise en Splunk Cloud test User](#create-splunk-enterprise-and-splunk-cloud-test-user)** -om een soort tegen te brengen van B. Simon in Splunk Enter prise en Splunk Cloud die is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
@@ -111,16 +111,15 @@ In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te ge
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="configure-splunk-enterprise-and-splunk-cloud-sso"></a>Splunk Enter prise en Splunk Cloud SSO configureren
+## <a name="configure-splunk-enterprise-and-splunk-cloud-sso"></a>Splunk Enter prise en Splunk Cloud SSO configureren
 
   Als u eenmalige aanmelding wilt configureren aan de **Splunk Enterprise- en Splunk Cloud**-zijde, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste gekopieerde URL's uit Azure Portal verzenden naar het [Splunk Enterprise- en Splunk Cloud-ondersteuningsteam](https://www.splunk.com/en_us/about-splunk/contact-us.html). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
-
 
 ### <a name="create-splunk-enterprise-and-splunk-cloud-test-user"></a>Een testgebruiker maken voor Splunk Enterprise en Splunk Cloud
 
 In dit gedeelte maakt u de gebruiker Britta Simon in Splunk Enterprise en Splunk Cloud. Neem contact op met het [ondersteuningsteam van Splunk Enterprise en Splunk Cloud](https://www.splunk.com/en_us/about-splunk/contact-us.html) om de gebruikers toe te voegen in het Splunk Enterprise- en Splunk Cloud-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
@@ -132,4 +131,4 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u de Splunk Enter prise-en Splunk-Cloud hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app)
+Nadat u Splunk Enter prise-en Splunk-Cloud hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app)

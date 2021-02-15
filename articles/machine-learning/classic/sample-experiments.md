@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): experimenten van voorbeelden uitvoeren - Azure'
 description: Leer hoe u voorbeeldexperimenten met Machine Learning gebruikt nieuwe experimenten te maken met Azure AI Gallery en Azure Machine Learning Studio (klassiek).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: sample
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: cfee8a32c54bff5aecb1e298db8b4814255418b0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
-ms.translationtype: HT
+ms.openlocfilehash: 40306973dde989862f8dfe9df5c9d873ac18fdd0
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325759"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517498"
 ---
 # <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Experimenten in Azure Machine Learning Studio (klassiek) maken op basis van werkende voorbeelden in Azure AI Gallery
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 
@@ -41,11 +41,11 @@ Op deze pagina ziet u **onlangs toegevoegde** experimenten, of scroll omlaag om 
 Door alle experimenten bladeren:
 
 1. Klik boven aan de pagina op **Browse all**.
-2. Selecteer aan de linkerkant onder **Refine by** , in het gedeelte **Categories** , de optie **Experiment** om alle experimenten in de galerie weer te geven.
+2. Selecteer aan de linkerkant onder **Refine by**, in het gedeelte **Categories**, de optie **Experiment** om alle experimenten in de galerie weer te geven.
 3. U kunt op verschillende manieren experimenten vinden die aan uw vereisten voldoen:
    * **Selecteer filters aan de linkerkant.** Als u bijvoorbeeld door experimenten wilt bladeren die gebruikmaken van een PCA-algoritme voor de detectie van afwijkingen, klikt u onder **Categories** op **Experiment**. Klik vervolgens onder **Algorithms Used** op **Show All** en kies in het dialoogvenster de optie **PCA-Based Anomaly Detection**. Misschien moet u scrollen om de optie te zien.<br></br>
      ![Filters selecteren](./media/sample-experiments/choose-an-algorithm.png)
-   * **Het zoekvak gebruiken.** Als u bijvoorbeeld experimenten wilt vinden die door Microsoft zijn aangedragen en die betrekking hebben op cijferherkenning waarbij gebruik wordt gemaakt van een algoritme van twee klassen voor ondersteuningsvectormachines, voert u 'digit recognition' (cijferherkenning) in het zoekvak in. Selecteer vervolgens de filters **Experiment** , **Microsoft content only** en **Two-Class Support Vector Machine** :<br></br>
+   * **Het zoekvak gebruiken.** Als u bijvoorbeeld experimenten wilt vinden die door Microsoft zijn aangedragen en die betrekking hebben op cijferherkenning waarbij gebruik wordt gemaakt van een algoritme van twee klassen voor ondersteuningsvectormachines, voert u 'digit recognition' (cijferherkenning) in het zoekvak in. Selecteer vervolgens de filters **Experiment**, **Microsoft content only** en **Two-Class Support Vector Machine**:<br></br>
      ![Het zoekvak gebruiken](./media/sample-experiments/search-for-experiments.png)
 4. Klik op een experiment voor meer informatie.
 5. Als u het experiment wilt uitvoeren of wijzigen, klikt u op **Open in Studio** op de pagina van het experiment. <br></br>

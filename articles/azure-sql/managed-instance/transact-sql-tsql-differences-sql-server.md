@@ -9,14 +9,14 @@ ms.topic: reference
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
-ms.date: 11/10/2020
+ms.date: 1/12/2021
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: cc31ad851441c980365841b1131405339a1092fa
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: d43f794d6d73e26d791c5a11961470d2131b8951
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626271"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378618"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -284,6 +284,7 @@ Zie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-file-and
 ### <a name="sql-server-agent"></a>SQL Server Agent
 
 - Het in-en uitschakelen van SQL Server Agent wordt momenteel niet ondersteund in een SQL Managed instance. SQL Agent wordt altijd uitgevoerd.
+- De trigger voor taak planning op basis van een niet-actieve CPU wordt niet ondersteund.
 - SQL Server Agent-instellingen zijn alleen-lezen. De procedure `sp_set_agent_properties` wordt niet ondersteund in een SQL Managed instance. 
 - Taken
   - T-SQL-taak stappen worden ondersteund.
@@ -306,13 +307,7 @@ Zie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-file-and
   - Proxy's worden niet ondersteund.
 - EventLog wordt niet ondersteund.
 - De gebruiker moet rechtstreeks worden toegewezen aan de Azure AD-server principal (login) om SQL-Agent taken te maken, te wijzigen of uit te voeren. Gebruikers die niet rechtstreeks zijn toegewezen, bijvoorbeeld gebruikers die deel uitmaken van een Azure AD-groep die de rechten heeft om SQL-Agent taken te creëren, te wijzigen of uit te voeren, kunnen deze acties niet uitvoeren. Dit wordt veroorzaakt door Managed instance nabootsing en [Execute as-beperkingen](#logins-and-users).
-
-De volgende functies van de SQL-Agent worden momenteel niet ondersteund:
-
-- Proxy's
-- Taken plannen voor een niet-actieve CPU
-- Een agent in-of uitschakelen
-- Waarschuwingen
+- De functie voor het beheer van meerdere servers voor hoofd-en doel taken (MSX/TSX) wordt niet ondersteund.
 
 Zie [SQL Server Agent](/sql/ssms/agent/sql-server-agent) voor meer informatie over SQL Server Agent.
 

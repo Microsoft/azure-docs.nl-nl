@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: a3f6c14b7ed2686a262f28510efb37068cfb9cb3
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: b34fcd66f0b64e2522da69bcfc7d119628b9d9d9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787295"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516699"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
@@ -37,9 +37,8 @@ In deze zelfstudie leert u het volgende:
 De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
 
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Description |
 | --- | --- | --- | --- | --- |
-| ByteCount | Aantal bytes | Aantal | Totaal | Totaal aantal verzonden bytes binnen tijds periode |
 | BytesDroppedDDoS | Binnenkomende bytes verloren DDoS | BytesPerSecond | Maximum | Binnenkomende bytes verloren DDoS| 
 | BytesForwardedDDoS | Doorgestuurde binnenkomende bytes DDoS | BytesPerSecond | Maximum | Doorgestuurde binnenkomende bytes DDoS |
 | BytesInDDoS | Binnenkomende bytes DDoS | BytesPerSecond | Maximum | Binnenkomende bytes DDoS |
@@ -47,11 +46,9 @@ De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#
 | DDoSTriggerTCPPackets | Binnenkomende TCP-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Binnenkomende TCP-pakketten om DDoS-beperking te activeren |
 | DDoSTriggerUDPPackets | Binnenkomende UDP-pakketten om DDoS-beperking te activeren | CountPerSecond | Maximum | Binnenkomende UDP-pakketten om DDoS-beperking te activeren |
 | IfUnderDDoSAttack | Onder DDoS-aanval of niet | Count | Maximum | Onder DDoS-aanval of niet |
-| PacketCount | Aantal pakketten | Aantal | Totaal | Totaal aantal verzonden pakketten binnen tijds periode |
 | PacketsDroppedDDoS | DDoS inkomende pakketten verwijderd | CountPerSecond | Maximum | DDoS inkomende pakketten verwijderd |
 | PacketsForwardedDDoS | DDoS inkomende pakketten doorgestuurd | CountPerSecond | Maximum | DDoS inkomende pakketten doorgestuurd |
 | PacketsInDDoS | DDoS inkomende pakketten | CountPerSecond | Maximum | DDoS inkomende pakketten |
-| SynCount | SYN-aantal | Aantal | Totaal | Totaal aantal SYN-pakketten verzonden binnen tijds periode |
 | TCPBytesDroppedDDoS | DDoS binnenkomende TCP-bytes | BytesPerSecond | Maximum | DDoS binnenkomende TCP-bytes |
 | TCPBytesForwardedDDoS | DDoS doorgestuurde binnenkomende TCP-bytes | BytesPerSecond | Maximum | DDoS doorgestuurde binnenkomende TCP-bytes |
 | TCPBytesInDDoS | DDoS binnenkomende TCP-bytes | BytesPerSecond | Maximum | DDoS binnenkomende TCP-bytes |
@@ -64,7 +61,6 @@ De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#
 | UDPPacketsDroppedDDoS | Verwijderde binnenkomende UDP-pakketten DDoS | CountPerSecond | Maximum | Verwijderde binnenkomende UDP-pakketten DDoS |
 | UDPPacketsForwardedDDoS | Door inkomende UDP-pakketten DDoS doorgestuurd | CountPerSecond | Maximum | Door inkomende UDP-pakketten DDoS doorgestuurd |
 | UDPPacketsInDDoS | Binnenkomende UDP-pakketten DDoS | CountPerSecond | Maximum | Binnenkomende UDP-pakketten DDoS |
-| VipAvailability | Beschikbaarheid van gegevenspad | Count | Gemiddeld | Gemiddelde Beschik baarheid van IP-adressen per tijds duur |
 
 ## <a name="prerequisites"></a>Vereisten
 

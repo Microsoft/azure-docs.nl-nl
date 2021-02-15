@@ -4,22 +4,16 @@ description: Meer informatie over hoe Azure Content Delivery Network de levering
 services: cdn
 documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: ''
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: allensu
-ms.openlocfilehash: 7c7e4ff05307452da67c37b23bf492db8855e2ef
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3d207ee09a76509a65a2645515b182f8d92753b0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004497"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387917"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>Azure CDN optimaliseren voor het type inhouds levering
 
@@ -64,7 +58,11 @@ Micro soft raadt u aan prestatie verschillen tussen verschillende providers te t
 
 ## <a name="select-and-configure-optimization-types"></a>Optimalisatie typen selecteren en configureren
 
-Wanneer u een CDN-eind punt maakt, selecteert u een optimalisatie type dat het beste overeenkomt met het scenario en type inhoud dat door het eind punt moet worden geleverd. **Algemene Internet levering** is de standaard selectie. Voor bestaande **Azure CDN standaard van Akamai** -eind punten kunt u de optimalisatie optie op elk gewenst moment bijwerken. Door deze wijziging wordt de levering van Azure CDN niet onderbroken. 
+Wanneer u een CDN-eind punt maakt, selecteert u een optimalisatie type dat het beste overeenkomt met het scenario en type inhoud dat door het eind punt moet worden geleverd. 
+
+**Algemene Internet levering** is de standaard selectie. U kunt **Azure CDN standaard alleen bijwerken vanuit Akamai** -eind punt optimalisatie op elk gewenst moment. 
+
+Voor **Azure CDN standaard van micro soft** **Azure CDN Standard van Verizon** en **Azure CDN Premium van Verizon**.
 
 1. Selecteer een eind punt in een **Azure CDN standaard van Akamai** profiel.
 

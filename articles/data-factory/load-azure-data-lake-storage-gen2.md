@@ -1,23 +1,18 @@
 ---
 title: Gegevens laden in Azure Data Lake Storage Gen2
 description: Azure Data Factory gebruiken om gegevens te kopi√´ren naar Azure Data Lake Storage Gen2
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/09/2020
-ms.openlocfilehash: ca9ca495f2b3449b5aeb933bbd8d312fc9341fd9
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 61e34d41d9f7a60b6ad74e12331864e6ba08e4f5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554114"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370798"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen2-with-azure-data-factory"></a>Gegevens laden in Azure Data Lake Storage Gen2 met Azure Data Factory
 
@@ -42,17 +37,17 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
 ## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
-1. Selecteer in het linkermenu **een resource** -  >  **integratie**  >  **Data Factory** maken:
+1. Selecteer in het linkermenu **Een resource maken** > **Integratie** > **Data Factory**:
    
    ![Selectie van Data Factory in het deelvenster Nieuw](./media/doc-common-process/new-azure-data-factory-menu.png)
 
 2. Geef op de pagina **nieuw Data Factory** waarden op voor de volgende velden:
  
-    * **Naam** : Voer een wereld wijd unieke naam in voor uw Azure-Data Factory. Als u de fout melding ' Data Factory-naam *naamvanuwgegevensfactory* is niet beschikbaar ' ontvangt, voert u een andere naam in voor de Data Factory. U kunt bijvoorbeeld _**de naam**_**ADFTutorialDataFactory**. Probeer de data factory opnieuw te maken. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
-    * **Abonnement** : Selecteer het Azure-abonnement waarin u de Data Factory wilt maken. 
-    * **Resource groep** : Selecteer een bestaande resource groep in de vervolg keuzelijst of selecteer de optie **nieuwe maken** en voer de naam van een resource groep in. Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie.  
-    * **Versie** : Selecteer **V2**.
-    * **Locatie** : Selecteer de locatie voor de Data Factory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevens archieven die door data factory worden gebruikt, kunnen zich op andere locaties en regio's bevinden. 
+    * **Naam**: Voer een wereld wijd unieke naam in voor uw Azure-Data Factory. Als u de fout melding ' Data Factory-naam *naamvanuwgegevensfactory* is niet beschikbaar ' ontvangt, voert u een andere naam in voor de Data Factory. U kunt bijvoorbeeld _**de naam**_**ADFTutorialDataFactory**. Probeer de data factory opnieuw te maken. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
+    * **Abonnement**: Selecteer het Azure-abonnement waarin u de Data Factory wilt maken. 
+    * **Resource groep**: Selecteer een bestaande resource groep in de vervolg keuzelijst of selecteer de optie **nieuwe maken** en voer de naam van een resource groep in. Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie.  
+    * **Versie**: Selecteer **V2**.
+    * **Locatie**: Selecteer de locatie voor de Data Factory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevens archieven die door data factory worden gebruikt, kunnen zich op andere locaties en regio's bevinden. 
 
 3. Selecteer **Maken**.
 
@@ -80,13 +75,13 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
    3. Klik op **Verbinding testen** om de instellingen te valideren en selecteer vervolgens **Maken**.
 
       ![Amazon S3-account opgeven](./media/load-azure-data-lake-storage-gen2/specify-amazon-s3-account.png)
-   4. U ziet dat er een nieuwe AmazonS3-verbinding wordt gemaakt. Selecteer **Volgende**. 
+   4. U ziet dat er een nieuwe AmazonS3-verbinding wordt gemaakt. Selecteer **Next**. 
 
 5. Blader op de pagina **Het invoerbestand of de invoermap kiezen** naar de map en het bestand dat u wilt kopi√´ren. Selecteer de map/het bestand en selecteer vervolgens **kiezen**.
 
     ![Het invoerbestand of de invoermap kiezen](./media/load-azure-data-lake-storage-gen2/choose-input-folder.png)
 
-6. Geef het Kopieer gedrag op door de **recursief** en **binaire Kopieer** opties te controleren. Selecteer **Volgende**.
+6. Geef het Kopieer gedrag op door de **recursief** en **binaire Kopieer** opties te controleren. Selecteer **Next**.
 
     ![Scherm afbeelding toont het Kies het invoer bestand of de map waarin u binaire kopie en recursief kunt selecteren.](./media/load-azure-data-lake-storage-gen2/specify-binary-copy.png)
     
@@ -119,7 +114,7 @@ Dit artikel laat u zien hoe u met het hulp programma Data Factory Gegevens kopi√
 
     ![Pijplijnuitvoeringen controleren](./media/load-azure-data-lake-storage-gen2/monitor-pipeline-runs.png)
 
-14. Als u de uitvoering van activiteiten wilt zien die zijn gekoppeld aan de pijplijn uitvoering, selecteert u de koppeling **CopyFromAmazonS3ToADLS** onder de kolom pijplijn naam. Selecteer de koppeling **Details** (bril pictogram) onder de kolom activiteit naam voor meer informatie over de Kopieer bewerking. U kunt details, zoals het volume van de gegevens die uit de bron zijn gekopieerd, bewaken naar de sink, gegevens doorvoer, uitvoerings stappen met de overeenkomstige duur en de gebruikte configuratie.
+14. Als u de uitvoering van activiteiten wilt zien die zijn gekoppeld aan de pijplijn uitvoering, selecteert u de koppeling **CopyFromAmazonS3ToADLS** onder de kolom pijplijn naam. Selecteer de koppeling **Details** (pictogram van een bril) in de kolom NAAM ACTIVITEIT om details van de kopieerbewerking te zien. U kunt details, zoals het volume van de gegevens die uit de bron zijn gekopieerd, bewaken naar de sink, gegevens doorvoer, uitvoerings stappen met de overeenkomstige duur en de gebruikte configuratie.
  
     ![Uitvoering van activiteiten controleren](./media/load-azure-data-lake-storage-gen2/monitor-activity-runs.png)
     

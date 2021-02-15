@@ -3,18 +3,18 @@ title: 'ML Studio (klassiek): trainings gegevens importeren-Azure'
 description: Informatie over het importeren van uw gegevens in Azure Machine Learning Studio (klassiek) van verschillende gegevens bronnen. Meer informatie over welke gegevens typen en gegevens indelingen worden ondersteund.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/01/2019
-ms.openlocfilehash: c69ed7b9e2aaa7113637868e1c1329ed2962b931
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: db5f3cc4b9530c4aeac40786756b36cc0ac98728
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302781"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520371"
 ---
 # <a name="import-your-training-data-into-azure-machine-learning-studio-classic-from-various-data-sources"></a>Importeer uw trainings gegevens in Azure Machine Learning Studio (klassiek) van verschillende gegevens bronnen
 
@@ -73,12 +73,12 @@ De volgende gegevens typen worden herkend door Studio (klassiek):
 * DateTime
 * TimeSpan
 
-Studio maakt gebruik van een intern gegevens type met de naam ***Data Table** _ voor het door geven van gegevens tussen modules. U kunt uw gegevens in de indeling van de gegevens tabel expliciet converteren met behulp van de module [converteren naar dataset][convert-to-dataset] .
+Studio gebruikt een intern gegevens type met de naam ***Data Table*** voor het door geven van gegevens tussen modules. U kunt uw gegevens in de indeling van de gegevens tabel expliciet converteren met behulp van de module [converteren naar dataset][convert-to-dataset] .
 
 Alle modules die andere indelingen dan gegevens tabel accepteren, converteren de gegevens naar de gegevens tabel op de achtergrond voordat deze aan de volgende module worden door gegeven.
 
 Indien nodig kunt u de indeling van de gegevens tabel weer omzetten in de CSV-, TSV-, ARFF-of SVMLight-indeling met behulp van andere conversie modules.
-Zoek in de sectie _ *gegevens indeling conversies** van het module palet voor modules die deze functies uitvoeren.
+Zoek in de sectie **gegevens indeling conversies** van het palet module voor modules die deze functies uitvoeren.
 
 ## <a name="data-capacities"></a>Gegevens capaciteit
 
@@ -157,7 +157,7 @@ De online gegevens bronnen die worden ondersteund, worden in de onderstaande tab
 ### <a name="supported-online-data-sources"></a>Ondersteunde online gegevens bronnen
 De module **import data** van Azure machine learning Studio (Classic) ondersteunt de volgende gegevens bronnen:
 
-| Gegevensbron | Beschrijving | Parameters |
+| Gegevensbron | Description | Parameters |
 | --- | --- | --- |
 | Web-URL via HTTP |Hiermee worden gegevens gelezen in CSV-indeling (door komma's gescheiden waarden), door tabs gescheiden waarden (TSV), kenmerk-relation File Format (ARFF) en support vector machines (SVM-licht), van een web-URL die gebruikmaakt van HTTP |<b>URL</b>: Hiermee geeft u de volledige naam van het bestand, met inbegrip van de site-URL en de bestands naam, op met een wille keurige extensie. <br/><br/><b>Gegevens indeling</b>: Hiermee geeft u een van de ondersteunde gegevens indelingen op: CSV, tsv, ARFF of SVM-Light. Als de gegevens een veldnamenrij hebben, wordt deze gebruikt om kolom namen toe te wijzen. |
 | Hadoop/HDFS |Hiermee worden gegevens uit de gedistribueerde opslag in Hadoop gelezen. U geeft de gewenste gegevens op met behulp van HiveQL, een SQL-achtige query taal. HiveQL kan ook worden gebruikt om gegevens samen te voegen en gegevens te filteren voordat u de gegevens toevoegt aan Studio (klassiek). |<b>Hive-database query</b>: Hiermee geeft u de Hive-query op die wordt gebruikt voor het genereren van de gegevens.<br/><br/><b>URI</b> van de HCatalog-server: Geef de naam van uw cluster op met de notatie *&lt; uw cluster naam &gt; . azurehdinsight.net.*<br/><br/><b>Hadoop-gebruikers accountnaam</b>: Hiermee geeft u de naam van het Hadoop-gebruikers account op dat is gebruikt om het cluster in te richten.<br/><br/><b>Hadoop-wacht woord voor gebruikers account</b> : Hiermee geeft u de referenties op die worden gebruikt bij het inrichten van het cluster. Zie [Hadoop-clusters maken in HDInsight](../../hdinsight/hdinsight-hadoop-provision-linux-clusters.md)voor meer informatie.<br/><br/><b>Locatie van uitvoer gegevens</b>: Hiermee geeft u op of de gegevens worden opgeslagen in een Hadoop Distributed File System (HDFS) of in Azure. <br/><ul>Als u uitvoer gegevens opslaat in HDFS, geeft u de URI van de HDFS-server op. (Vergeet niet om de naam van het HDInsight-cluster te gebruiken zonder het HTTPS://-voor voegsel). <br/><br/>Als u de uitvoer gegevens in azure opslaat, moet u de naam van het Azure Storage-account, de toegangs sleutel voor de opslag en de opslag container naam opgeven.</ul> |

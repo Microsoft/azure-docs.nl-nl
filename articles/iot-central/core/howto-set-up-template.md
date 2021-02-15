@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - contperf-fy21q1
 - device-developer
-ms.openlocfilehash: 236acc2ded3fcb651295e0342ab4e1e88174be46
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 22e948a0100f23dbddef8fc138576bb4b9372c77
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202960"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363199"
 ---
 # <a name="define-a-new-iot-device-type-in-your-azure-iot-central-application"></a>Een nieuw IoT-apparaattype definiëren in uw Azure IoT Central-toepassing
 
@@ -31,9 +31,9 @@ Een opbouw functie kan bijvoorbeeld een apparaatprofiel maken voor een verbonden
 - Hiermee wordt de status van de ventilator verzonden
 - Biedt een Beschrijf bare ventilator snelheids eigenschap
 - Biedt een opdracht voor het opnieuw opstarten van het apparaat
-- Geeft een algemeen overzicht van het apparaat via een dash board
+- Geeft een algemene weer gave van het apparaat met behulp van een weer gave
 
-Met deze apparaatprofiel kan een operator echte ventilator apparaten maken en verbinden. Al deze ventilatoren hebben metingen, eigenschappen en opdrachten die Opera tors gebruiken om ze te controleren en te beheren. Opera tors van het [dash board](#add-dashboards) en de formulieren worden gebruikt om te communiceren met de ventilator apparaten. Een ontwikkelaar van het apparaat gebruikt de sjabloon om te begrijpen hoe het apparaat samenwerkt met de toepassing. Zie [telemetrie, Property en Command payloads](concepts-telemetry-properties-commands.md)voor meer informatie.
+Met deze apparaatprofiel kan een operator echte ventilator apparaten maken en verbinden. Al deze ventilatoren hebben metingen, eigenschappen en opdrachten die Opera tors gebruiken om ze te controleren en te beheren. Opera tors gebruiken de [weer gaven](#add-views) en formulieren van het apparaat om te communiceren met de ventilator apparaten. Een ontwikkelaar van het apparaat gebruikt de sjabloon om te begrijpen hoe het apparaat samenwerkt met de toepassing. Zie [telemetrie, Property en Command payloads](concepts-telemetry-properties-commands.md)voor meer informatie.
 
 > [!NOTE]
 > Alleen bouwers en beheerders kunnen sjablonen voor apparaten maken, bewerken en verwijderen. Elke gebruiker kan apparaten op de pagina **apparaten** maken op basis van bestaande Apparaatinstellingen.
@@ -46,8 +46,8 @@ In een IoT Central-toepassing gebruikt een apparaatprofiel een model voor het be
 > Voor IoT Central is het volledige model vereist met alle interfaces waarnaar wordt verwezen in hetzelfde bestand; wanneer u een model uit de model opslagplaats importeert, gebruikt u het tref woord ' uitgebreid ' om de volledige versie op te halen.
 Bijvoorbeeld. https://devicemodels.azure.com/dtmi/com/example/thermostat-1.expanded.json
 
-- Maak een model voor een apparaat met de [Digital Apparaatdubbels Definition Language (DTDL)-versie 2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Visual Studio code heeft een uitbrei ding die ondersteuning biedt voor het ontwerpen van DTDL modellen. Zie voor meer informatie [De DTDL-ontwerptools installeren en gebruiken](../../iot-pnp/howto-use-dtdl-authoring-tools.md). Publiceer het model vervolgens naar de open bare model opslagplaats. Zie [device model-opslag plaats](../../iot-pnp/concepts-model-repository.md)voor meer informatie. Implementeer uw apparaatcode vanuit het model en verbind uw echte apparaat met uw IoT Central-toepassing. IoT Central zoekt en importeert het model van het apparaat uit de open bare opslag plaats en genereert een sjabloon voor het apparaat. U kunt vervolgens alle Cloud eigenschappen, aanpassingen en dash boards toevoegen die uw IoT Central toepassing nodig heeft voor de sjabloon voor het apparaat.
-- Maak een model voor een apparaat met behulp van de DTDL. Implementeer uw apparaatcode vanuit het model. Importeer het model van het apparaat hand matig in uw IoT Central-toepassing en voeg vervolgens alle Cloud eigenschappen, aanpassingen en dash boards toe die uw IoT Central toepassing nodig heeft.
+- Maak een model voor een apparaat met de [Digital Apparaatdubbels Definition Language (DTDL)-versie 2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Visual Studio code heeft een uitbrei ding die ondersteuning biedt voor het ontwerpen van DTDL modellen. Zie voor meer informatie [De DTDL-ontwerptools installeren en gebruiken](../../iot-pnp/howto-use-dtdl-authoring-tools.md). Publiceer het model vervolgens naar de open bare model opslagplaats. Zie [device model-opslag plaats](../../iot-pnp/concepts-model-repository.md)voor meer informatie. Implementeer uw apparaatcode vanuit het model en verbind uw echte apparaat met uw IoT Central-toepassing. IoT Central zoekt en importeert het model van het apparaat uit de open bare opslag plaats en genereert een sjabloon voor het apparaat. U kunt vervolgens alle Cloud eigenschappen, aanpassingen en weer gaven toevoegen aan de IoT Central toepassing die nodig is voor de sjabloon voor het apparaat.
+- Maak een model voor een apparaat met behulp van de DTDL. Implementeer uw apparaatcode vanuit het model. Importeer het model van het apparaat hand matig in uw IoT Central-toepassing en voeg vervolgens alle Cloud eigenschappen, aanpassingen en weer gaven toe die nodig zijn voor uw IoT Central toepassing.
 
 > [!TIP]
 > IoT Central vereist het volledige model met alle interfaces waarnaar wordt verwezen in hetzelfde bestand. Wanneer u een model uit de model opslagplaats importeert, gebruikt u het tref woord *uitgevouwen* om de volledige versie op te halen.
@@ -72,8 +72,8 @@ Een sjabloon voor het apparaat bevat:
 
 - Een _model_ dat de telemetrie, eigenschappen en opdrachten specificeert die het apparaat implementeert. Deze mogelijkheden zijn ingedeeld in een of meer onderdelen.
 - _Cloud eigenschappen_ waarmee informatie wordt gedefinieerd die uw IOT Central-app over uw apparaten opslaat. Een Cloud eigenschap kan bijvoorbeeld de datum vastleggen waarop een apparaat voor het laatst is verwerkt. Deze informatie wordt nooit gedeeld met het apparaat.
-- Met _aanpassingen_ kunnen de opbouw functie sommige definities in het model van het apparaat overschrijven. De opbouw functie kan bijvoorbeeld de naam van een eigenschap apparaat onderdrukken. Eigenschaps namen worden weer gegeven in IoT Central Dash boards en formulieren.
-- Met _Dash boards en formulieren_ kan de opbouw functie een gebruikers interface maken waarmee Opera tors de apparaten kunnen controleren en beheren die zijn verbonden met uw toepassing.
+- Met _aanpassingen_ kunnen de opbouw functie sommige definities in het model van het apparaat overschrijven. De opbouw functie kan bijvoorbeeld de naam van een eigenschap apparaat onderdrukken. Eigenschaps namen worden weer gegeven in IoT Central weer gaven en formulieren.
+- Met _weer gaven en formulieren_ kan de opbouw functie een gebruikers interface maken waarmee Opera tors de apparaten kunnen controleren en beheren die zijn verbonden met uw toepassing.
 
 Een sjabloon voor een apparaat maken in IoT Central:
 
@@ -127,19 +127,19 @@ Telemetrie is een stroom van waarden die van het apparaat worden verzonden, mees
 
 De volgende tabel bevat de configuratie-instellingen voor een telemetrie-mogelijkheid:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | ----- | ----------- |
-| Weergavenaam | De weergave naam voor de telemetrie-waarde die wordt gebruikt voor dash boards en formulieren. |
-| Naam | De naam van het veld in het telemetrie-bericht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
+| Weergavenaam | De weergave naam voor de telemetrie-waarde die wordt gebruikt voor weer gaven en formulieren. |
+| Name | De naam van het veld in het telemetrie-bericht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
 | Type mogelijkheid | Telemetrie. |
 | Semantisch type | Het semantische type van de telemetrie, zoals de Tempe ratuur, de status of de gebeurtenis. De keuze van semantisch type bepaalt welke van de volgende velden beschikbaar zijn. |
 | Schema | Het gegevens type telemetrie, zoals double, String of vector. Welke opties beschikbaar zijn, wordt bepaald door het semantische type. Schema is niet beschikbaar voor de semantische typen gebeurtenis en status. |
 | Severity | Alleen beschikbaar voor het semantische gebeurtenis type. De ernst is **fout**, **informatie** of **waarschuwing**. |
 | Status waarden | Alleen beschikbaar voor het semantische type status. Definieer de mogelijke status waarden, die elk een weergave naam, naam, opsommings type en waarde hebben. |
 | Eenheid | Een eenheid voor de telemetrische waarde, zoals **mph**, **%** of **&deg; C**. |
-| Eenheid weer geven | Een weergave-eenheid voor gebruik in dash boards en formulieren. |
+| Eenheid weer geven | Een weergave-eenheid die wordt gebruikt voor weer gaven en formulieren. |
 | Opmerking | Eventuele opmerkingen over de telemetrie-mogelijkheid. |
-| Beschrijving | Een beschrijving van de telemetrie-mogelijkheid. |
+| Description | Een beschrijving van de telemetrie-mogelijkheid. |
 
 ### <a name="properties"></a>Eigenschappen
 
@@ -147,10 +147,10 @@ Eigenschappen vertegenwoordigen waarden van het tijdstip. Een apparaat kan bijvo
 
 De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogelijkheid:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | ----- | ----------- |
-| Weergavenaam | De weergave naam voor de waarde van de eigenschap die wordt gebruikt in dash boards en formulieren. |
-| Naam | De naam van de eigenschap. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
+| Weergavenaam | De weergave naam voor de waarde van de eigenschap die wordt gebruikt voor weer gaven en formulieren. |
+| Name | De naam van de eigenschap. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
 | Type mogelijkheid | Eigenschap. |
 | Semantisch type | Het semantische type van de eigenschap, zoals de Tempe ratuur, de status of de gebeurtenis. De keuze van semantisch type bepaalt welke van de volgende velden beschikbaar zijn. |
 | Schema | Het gegevens type van de eigenschap, zoals double, String of vector. Welke opties beschikbaar zijn, wordt bepaald door het semantische type. Schema is niet beschikbaar voor de semantische typen gebeurtenis en status. |
@@ -158,9 +158,9 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Severity | Alleen beschikbaar voor het semantische gebeurtenis type. De ernst is **fout**, **informatie** of **waarschuwing**. |
 | Status waarden | Alleen beschikbaar voor het semantische type status. Definieer de mogelijke status waarden, die elk een weergave naam, naam, opsommings type en waarde hebben. |
 | Eenheid | Een eenheid voor de waarde van de eigenschap, zoals **mph**, **%** of **&deg; C**. |
-| Eenheid weer geven | Een weergave-eenheid voor gebruik in dash boards en formulieren. |
+| Eenheid weer geven | Een weergave-eenheid die wordt gebruikt voor weer gaven en formulieren. |
 | Opmerking | Eventuele opmerkingen over de eigenschaps mogelijkheid. |
-| Beschrijving | Een beschrijving van de eigenschaps mogelijkheid. |
+| Description | Een beschrijving van de eigenschaps mogelijkheid. |
 
 ### <a name="commands"></a>Opdracht
 
@@ -168,13 +168,13 @@ U kunt de opdrachten van een apparaat aanroepen vanuit IoT Central. Opdrachten g
 
 De volgende tabel bevat de configuratie-instellingen voor een opdracht mogelijkheid:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | ----- | ----------- |
-| Weergavenaam | De weergave naam voor de opdracht die wordt gebruikt voor dash boards en formulieren. |
-| Naam | De naam van de opdracht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
+| Weergavenaam | De weergave naam voor de opdracht die wordt gebruikt voor weer gaven en formulieren. |
+| Name | De naam van de opdracht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. |
 | Type mogelijkheid | Cmd. |
 | Opmerking | Eventuele opmerkingen over de opdracht mogelijkheid. |
-| Beschrijving | Een beschrijving van de opdracht mogelijkheid. |
+| Description | Een beschrijving van de opdracht mogelijkheid. |
 | Aanvraag | Indien ingeschakeld, een definitie van de aanvraag parameter, met inbegrip van: naam, weergave naam, schema, eenheid en weer gave-eenheid. |
 | Antwoord | Als deze optie is ingeschakeld, wordt een definitie van het opdracht antwoord gegeven, waaronder: naam, weergave naam, schema, eenheid en weer gave-eenheid. |
 
@@ -207,10 +207,10 @@ Gebruik Cloud eigenschappen om informatie over apparaten op te slaan in IoT Cent
 
 De volgende tabel bevat de configuratie-instellingen voor een Cloud eigenschap:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | ----- | ----------- |
-| Weergavenaam | De weergave naam voor de waarde van de Cloud eigenschap die wordt gebruikt in dash boards en formulieren. |
-| Naam | De naam van de Cloud eigenschap. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. |
+| Weergavenaam | De weergave naam voor de waarde van de Cloud eigenschap die wordt gebruikt voor weer gaven en formulieren. |
+| Name | De naam van de Cloud eigenschap. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. |
 | Semantisch type | Het semantische type van de eigenschap, zoals de Tempe ratuur, de status of de gebeurtenis. De keuze van semantisch type bepaalt welke van de volgende velden beschikbaar zijn. |
 | Schema | Het gegevens type van de Cloud eigenschap, zoals double, String of vector. Welke opties beschikbaar zijn, wordt bepaald door het semantische type. |
 
@@ -234,24 +234,24 @@ Het genereren van standaard weergaven is een snelle manier om uw belang rijke ap
 
 Nadat u **Standaard weergaven genereren** hebt geselecteerd, ziet u dat ze automatisch zijn toegevoegd onder het gedeelte **weer gaven** van de sjabloon voor uw apparaat.
 
-## <a name="add-dashboards"></a>Dash boards toevoegen
+## <a name="add-views"></a>Weergaven toevoegen
 
-Voeg Dash boards toe aan een apparaatprofiel om Opera tors in staat te stellen een apparaat te visualiseren met behulp van grafieken en metrische gegevens. U kunt meerdere Dash boards voor een sjabloon voor het apparaat hebben.
+Voeg weer gaven toe aan een apparaatprofiel om Opera tors in staat te stellen een apparaat te visualiseren met behulp van grafieken en metrische gegevens. U kunt meerdere weer gaven voor een apparaatprofiel hebben.
 
-Een dash board toevoegen aan een sjabloon voor het apparaat:
+Een weer gave toevoegen aan een sjabloon voor een apparaat:
 
 1. Ga naar de sjabloon voor het apparaat en selecteer **weer gaven**.
 1. Kies **het apparaat visualiseren**.
-1. Voer een naam in voor uw dash board in de naam van het **dash board**.
-1. Tegels toevoegen aan uw dash board vanuit de lijst met statische, eigenschap, Cloud eigenschap, telemetrie en opdracht tegels. Sleep de tegels die u wilt toevoegen aan uw dash board en zet deze neer.
+1. Voer een naam in voor de weer gave in de **weergave naam**.
+1. Tegels toevoegen aan uw weer gave vanuit de lijst met statische, eigenschap, Cloud eigenschap, telemetrie en opdracht tegels. Sleep de tegels die u wilt toevoegen aan uw weer gave en zet deze neer.
 1. Als u meerdere telemetrie-waarden wilt tekenen op één grafiek tegel, selecteert u de telemetriegegevens en selecteert u vervolgens **combi neren**.
 1. Configureer elke tegel die u toevoegt om de manier aan te passen waarop gegevens worden weer gegeven. Toegang tot deze optie door het tandwiel pictogram te selecteren of door **configuratie wijzigen** te selecteren in de grafiek tegel.
-1. De tegels op uw dash board rangschikken en het formaat ervan wijzigen.
+1. De tegels in uw weer gave rangschikken en het formaat ervan wijzigen.
 1. Sla de wijzigingen op.
 
-### <a name="configure-preview-device-to-view-dashboard"></a>Preview-apparaat configureren om het dash board weer te geven
+### <a name="configure-preview-device-to-view"></a>Preview-apparaat configureren voor weer gave
 
-Selecteer **Preview-apparaat configureren** om uw dash board weer te geven en te testen. Met deze functie kunt u het dash board zien als uw operator ziet nadat het is gepubliceerd. Gebruik deze functie om te controleren of de juiste gegevens in uw weer gaven worden weer gegeven. U kunt een keuze maken uit de volgende opties:
+Selecteer **Preview-apparaat configureren** om uw weer gave te bekijken en te testen. Met deze functie kunt u de weer gave zien als uw operator ziet nadat deze is gepubliceerd. Gebruik deze functie om te controleren of de juiste gegevens in uw weer gaven worden weer gegeven. U kunt een keuze maken uit de volgende opties:
 
 - Geen preview-apparaat.
 - Het echte test apparaat dat u hebt geconfigureerd voor de sjabloon voor het apparaat.

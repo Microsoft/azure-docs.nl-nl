@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: reference
 ms.custom: ''
 ms.date: 01/14/2021
-ms.openlocfilehash: 32ec711309190d4bb7c6c98a05b6a75cf88a8f5c
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: b5d53ec6c6a8002c72a53d6928d56e55d520ef38
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920502"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390824"
 ---
 # <a name="data-source-schema-reference"></a>Verwijzing naar gegevens bron schema
 
@@ -37,6 +37,9 @@ Dit artikel bevat een lijst met ondersteunde Azure-en gegevens bron schema's van
 | **Netwerk**                          | NSG-stroom logboeken          | AzureNetworkAnalytics  | [Schema's en gegevens aggregatie in Traffic Analytics](/azure/network-watcher/traffic-analytics-schema) |
 | | | | |
 
+> [!NOTE]
+> Zie voor meer informatie de volledige [Azure monitor gegevens referentie](/azure/azure-monitor/reference/).
+>
 ## <a name="3rd-party-vendor-data-sources"></a>gegevens bronnen van derden
 
 De volgende tabel bevat een lijst met ondersteunde externe leveranciers en hun syslog-of common Event Format (CEF)-toewijzings documentatie voor verschillende ondersteunde logboek typen, die CEF veld Toewijzingen en voorbeeld logboeken voor elk categorie type bevatten.

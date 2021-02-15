@@ -1,22 +1,17 @@
 ---
 title: Gegevens laden uit Office 365 met behulp van Azure Data Factory
 description: Azure Data Factory gebruiken om gegevens te kopiëren van Office 365
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 05f336af62bc0869249d5b32700ea3515ac5994f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8b98344dcb2321d5d91c9974dc833a735164d428
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459695"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370653"
 ---
 # <a name="load-data-from-office-365-by-using-azure-data-factory"></a>Gegevens laden uit Office 365 met behulp van Azure Data Factory
 
@@ -79,7 +74,7 @@ In dit artikel wordt beschreven hoe u de Data Factory _gegevens uit Office 365 l
 
     ![Tabel met configuratie van Office 365-gegevensset](./media/load-office-365-data/edit-dataset.png)
 
-8. Ga nu terug naar het **pipeline**  >  **tabblad pijplijn bron** om verder te gaan met het configureren van aanvullende eigenschappen voor Office 365-gegevens extractie.  Het filter gebruikers bereik en gebruikers bereik zijn optionele predikaten die u kunt definiëren om de gegevens te beperken die u wilt uitpakken van Office 365. Zie de sectie [Eigenschappen van Office 365-gegevensset](./connector-office-365.md#dataset-properties) voor informatie over het configureren van deze instellingen.
+8. Ga nu terug naar het   >  **tabblad pijplijn bron** om verder te gaan met het configureren van aanvullende eigenschappen voor Office 365-gegevens extractie.  Het filter gebruikers bereik en gebruikers bereik zijn optionele predikaten die u kunt definiëren om de gegevens te beperken die u wilt uitpakken van Office 365. Zie de sectie [Eigenschappen van Office 365-gegevensset](./connector-office-365.md#dataset-properties) voor informatie over het configureren van deze instellingen.
 
 9. U moet een van de datum filters kiezen en de waarden voor de begin-en eind tijd opgeven.
 

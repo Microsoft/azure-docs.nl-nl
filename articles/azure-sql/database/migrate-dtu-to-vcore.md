@@ -9,13 +9,13 @@ ms.custom: sqldbrb=1
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
-ms.date: 05/28/2020
-ms.openlocfilehash: aa236ecaaa9c38c68e66d1813280cd98b85b9463
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 02/09/2021
+ms.openlocfilehash: 332a2273a377268a425619a0cdaa5f4780b46e73
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790386"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361652"
 ---
 # <a name="migrate-azure-sql-database-from-the-dtu-based-model-to-the-vcore-based-model"></a>Azure SQL Database migreren van het DTU-model naar het model op basis van vCore
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -52,24 +52,33 @@ Voer deze query uit in de context van de data base die moet worden gemigreerd, i
 ```SQL
 WITH dtu_vcore_map AS
 (
-SELECT TOP (1) rg.slo_name,
-               CASE WHEN rg.slo_name LIKE '%SQLG4%' THEN 'Gen4'
-                    WHEN rg.slo_name LIKE '%SQLGZ%' THEN 'Gen4'
-                    WHEN rg.slo_name LIKE '%SQLG5%' THEN 'Gen5'
-                    WHEN rg.slo_name LIKE '%SQLG6%' THEN 'Gen5'
-               END AS dtu_hardware_gen,
-               s.scheduler_count * CAST(rg.instance_cap_cpu/100. AS decimal(3,2)) AS dtu_logical_cpus,
-               CAST((jo.process_memory_limit_mb / s.scheduler_count) / 1024. AS decimal(4,2)) AS dtu_memory_per_core_gb
+SELECT rg.slo_name,
+       DATABASEPROPERTYEX(DB_NAME(), 'Edition') AS dtu_service_tier,
+       CASE WHEN rg.slo_name LIKE '%SQLG4%' THEN 'Gen4'
+            WHEN rg.slo_name LIKE '%SQLGZ%' THEN 'Gen4'
+            WHEN rg.slo_name LIKE '%SQLG5%' THEN 'Gen5'
+            WHEN rg.slo_name LIKE '%SQLG6%' THEN 'Gen5'
+            WHEN rg.slo_name LIKE '%SQLG7%' THEN 'Gen5'
+       END AS dtu_hardware_gen,
+       s.scheduler_count * CAST(rg.instance_cap_cpu/100. AS decimal(3,2)) AS dtu_logical_cpus,
+       CAST((jo.process_memory_limit_mb / s.scheduler_count) / 1024. AS decimal(4,2)) AS dtu_memory_per_core_gb
 FROM sys.dm_user_db_resource_governance AS rg
 CROSS JOIN (SELECT COUNT(1) AS scheduler_count FROM sys.dm_os_schedulers WHERE status = 'VISIBLE ONLINE') AS s
 CROSS JOIN sys.dm_os_job_object AS jo
 WHERE dtu_limit > 0
       AND
       DB_NAME() <> 'master'
+      AND
+      rg.database_id = DB_ID()
 )
 SELECT dtu_logical_cpus,
        dtu_hardware_gen,
        dtu_memory_per_core_gb,
+       dtu_service_tier,
+       CASE WHEN dtu_service_tier = 'Basic' THEN 'General Purpose'
+            WHEN dtu_service_tier = 'Standard' THEN 'General Purpose or Hyperscale'
+            WHEN dtu_service_tier = 'Premium' THEN 'Business Critical or Hyperscale'
+       END AS vcore_service_tier,
        CASE WHEN dtu_hardware_gen = 'Gen4' THEN dtu_logical_cpus
             WHEN dtu_hardware_gen = 'Gen5' THEN dtu_logical_cpus * 0.7
        END AS Gen4_vcores,
@@ -97,7 +106,7 @@ Naast het aantal vCores (logische Cpu's) en de generatie van de hardware, kunnen
 - Voor dezelfde hardware-generatie en hetzelfde aantal vCores worden de resource limieten voor IOPS en de doorvoer capaciteit van de vCore-data bases vaak hoger gebruikt dan voor DTU-data bases. Voor i/o-gebonden workloads is het mogelijk om het aantal vCores in het vCore-model te verlagen om hetzelfde prestatie niveau te krijgen. Resource limieten voor DTU-en vCore-data bases in absolute waarden worden weer gegeven in de weer gave [sys.dm_user_db_resource_governance](/sql/relational-databases/system-dynamic-management-views/sys-dm-user-db-resource-governor-azure-sql-database) . Als u deze waarden vergelijkt tussen de DTU-data base die moet worden gemigreerd en een vCore-data base met een ongeveer overeenkomende service doelstelling, kunt u de vCore-service doelstelling nauw keuriger selecteren.
 - De toewijzings query retourneert ook de hoeveelheid geheugen per kern voor de DTU-data base of elastische pool die moet worden gemigreerd, en voor elke generatie van de hardware in het vCore-model. Het is belang rijk om te zorgen dat het totale geheugen van de migratie naar vCore gelijk is aan of hoger is voor werk belastingen die een omvang rijke geheugen cache nodig hebben om voldoende prestaties te verkrijgen, of workloads die grote geheugen subsidies vereisen voor het verwerken van query's. Voor dergelijke werk belastingen, afhankelijk van de werkelijke prestaties, kan het nodig zijn om het aantal vCores te verg Roten om voldoende totaal geheugen te krijgen.
 - Het [historische resource gebruik](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) van de DTU-data base moet worden overwogen bij het kiezen van de vCore-service doelstelling. DTU-data bases met consistente, in gebruik zijnde CPU-bronnen kunnen minder vCores nodig hebben dan het aantal dat door de toewijzings query wordt geretourneerd. Daarentegen kunnen DTU-data bases die voortdurend hoge CPU-gebruik veroorzaken, meer vCores vereisen dan het resultaat van de query.
-- Als u data bases met periodieke of onvoorspelbare gebruiks patronen migreert, overweeg dan het gebruik van een [serverloze](serverless-tier-overview.md) Compute-laag.  Houd er rekening mee dat het maximum aantal gelijktijdige werk rollen (aanvragen) in serverloze is 75% de limiet van de ingerichte Compute voor hetzelfde aantal vcores dat is geconfigureerd.  De Maxi maal beschik bare hoeveelheid geheugen in serverloze is 3 GB keer het maximum aantal geconfigureerde vcores; zo is het maximale geheugen bijvoorbeeld 120 GB wanneer 40 maximum aantal vcores is geconfigureerd.   
+- Als u data bases met periodieke of onvoorspelbare gebruiks patronen migreert, overweeg dan het gebruik van een [serverloze](serverless-tier-overview.md) Compute-laag. Houd er rekening mee dat het maximum aantal gelijktijdige werk rollen (aanvragen) in serverloze is 75% de limiet van de ingerichte Compute voor hetzelfde aantal vcores dat is geconfigureerd. De Maxi maal beschik bare hoeveelheid geheugen in serverloze is 3 GB keer het maximum aantal geconfigureerde vcores; zo is het maximale geheugen bijvoorbeeld 120 GB wanneer 40 maximum aantal vcores is geconfigureerd.   
 - In het vCore-model kan de ondersteunde maximale database grootte variëren, afhankelijk van het genereren van hardware. Voor grote data bases controleert u de ondersteunde maximum groottes in het vCore-model voor [afzonderlijke data bases](resource-limits-vcore-single-databases.md) en [elastische Pools](resource-limits-vcore-elastic-pools.md).
 - Voor elastische Pools hebben de [DTU](resource-limits-dtu-elastic-pools.md) -en [vCore](resource-limits-vcore-elastic-pools.md) -modellen verschillen in het Maxi maal ondersteunde aantal data bases per pool. Dit moet worden overwogen bij het migreren van elastische Pools met veel data bases.
 - Sommige hardware-generaties zijn mogelijk niet in elke regio beschikbaar. Controleer de beschik baarheid onder [Hardware generaties](service-tiers-vcore.md#hardware-generations).
@@ -132,7 +141,7 @@ De toewijzings query retourneert het volgende resultaat (sommige kolommen die ni
 |----------------|----------------|----------------------|-----------|-----------------------|-----------|-----------------------|
 |0,25|Gen4|0,42|0,250|7|0,425|5,05|
 
-We zien dat de DTU-data base het equivalent van 0,25 logische Cpu's (vCores) heeft, met 0,42 GB aan geheugen per vCore en gebruikmaakt van Gen4-hardware. De kleinste vCore-service doelen in de Gen4-en GEN5-hardware generaties, **GP_Gen4_1** en **GP_Gen5_2** , bieden meer reken bronnen dan de standaard S0-data base, zodat er geen rechtstreekse overeenkomst kan worden gevonden. Aangezien Gen4-hardware [buiten gebruik](https://azure.microsoft.com/updates/gen-4-hardware-on-azure-sql-database-approaching-end-of-life-in-2020/)wordt gesteld, is de optie **GP_Gen5_2** de voor keur. Als de werk belasting goed is afgestemd op de [serverloze](serverless-tier-overview.md) Compute-laag, dan is **GP_S_Gen5_1** een dichterbij komt.
+We zien dat de DTU-data base het equivalent van 0,25 logische Cpu's (vCores) heeft, met 0,42 GB aan geheugen per vCore en gebruikmaakt van Gen4-hardware. De kleinste vCore-service doelen in de Gen4-en GEN5-hardware generaties, **GP_Gen4_1** en **GP_Gen5_2**, bieden meer reken bronnen dan de standaard S0-data base, zodat er geen rechtstreekse overeenkomst kan worden gevonden. Aangezien Gen4-hardware [buiten gebruik](https://azure.microsoft.com/updates/gen-4-hardware-on-azure-sql-database-approaching-end-of-life-in-2020/)wordt gesteld, is de optie **GP_Gen5_2** de voor keur. Als de werk belasting goed is afgestemd op de [serverloze](serverless-tier-overview.md) Compute-laag, dan is **GP_S_Gen5_1** een dichterbij komt.
 
 **Een Premium P15-data base migreren**
 
@@ -169,12 +178,12 @@ De volgende tabel bevat richt lijnen voor specifieke migratie scenario's:
 |---|---|---|---|
 |Standard|Algemeen doel|Zij|Kan in een wille keurige volg orde worden gemigreerd, maar moeten de juiste vCore-grootte worden gegarandeerd zoals hierboven wordt beschreven|
 |Premium|Bedrijfskritiek|Zij|Kan in een wille keurige volg orde worden gemigreerd, maar moeten de juiste vCore-grootte worden gegarandeerd zoals hierboven wordt beschreven|
-|Standard|Bedrijfskritiek|Upgrade|Moet secundair eerst worden gemigreerd|
+|Standard|Bedrijfskritiek|Upgraden|Moet secundair eerst worden gemigreerd|
 |Bedrijfskritiek|Standard|Downgrade|Moet primair eerst worden gemigreerd|
 |Premium|Algemeen doel|Downgrade|Moet primair eerst worden gemigreerd|
-|Algemeen doel|Premium|Upgrade|Moet secundair eerst worden gemigreerd|
+|Algemeen doel|Premium|Upgraden|Moet secundair eerst worden gemigreerd|
 |Bedrijfskritiek|Algemeen doel|Downgrade|Moet primair eerst worden gemigreerd|
-|Algemeen doel|Bedrijfskritiek|Upgrade|Moet secundair eerst worden gemigreerd|
+|Algemeen doel|Bedrijfskritiek|Upgraden|Moet secundair eerst worden gemigreerd|
 ||||
 
 ## <a name="migrate-failover-groups"></a>Failover-groepen migreren

@@ -1,23 +1,18 @@
 ---
 title: Terabytes aan gegevens laden in azure Synapse Analytics
 description: Laat zien hoe 1 TB aan gegevens binnen 15 minuten in azure Synapse Analytics kan worden geladen met Azure Data Factory
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: a6c133c0-ced2-463c-86f0-a07b00c9e37f
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 68c9e594201f0d0689a289e13f2c4ebf909c2f87
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5acae7c90efbf178fad199177fa6e0886e497fdf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457105"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371206"
 ---
 # <a name="load-1-tb-into-azure-synapse-analytics-under-15-minutes-with-data-factory"></a>1 TB in azure Synapse Analytics onder 15 minuten laden met Data Factory
 > [!NOTE]
@@ -202,7 +197,7 @@ In deze sectie wordt beschreven hoe u de bestemming configureert: `lineitem` tab
 
     ![Wizard kopiëren-geslaagd dialoog venster](media/data-factory-load-sql-data-warehouse/succeeded-info.png)
 
-## <a name="best-practices"></a>Best practices
+## <a name="best-practices"></a>Aanbevolen procedures
 Hier volgen enkele aanbevolen procedures voor het uitvoeren van uw Azure Synapse Analytics-Data Base:
 
 * Gebruik een grotere resource klasse wanneer u deze in een geclusterde column Store-INDEX laadt.

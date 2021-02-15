@@ -1,14 +1,14 @@
 ---
 title: Index van blauwdrukvoorbeelden
 description: Index van compatibiliteits- en standaardvoorbeelden voor het implementeren van omgevingen, beleidsregels en grondbeginselen voor Cloud Adoptions Framework met Azure Blueprints.
-ms.date: 02/01/2021
+ms.date: 02/08/2020
 ms.topic: sample
-ms.openlocfilehash: 17bacecf8fcf7c0f1969a489561a3a3ac976872e
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: c64bc02c1dea4e2c53d4ff195add2ac7fa57874f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225138"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370951"
 ---
 # <a name="azure-blueprints-samples"></a>Azure Blueprints-voorbeelden
 
@@ -18,9 +18,10 @@ De volgende tabel bevat links naar voorbeelden voor Azure Blueprints. Elk voorbe
 
 | Voorbeeld | Beschrijving |
 |---------|---------|
-| [Australian Government ISM PROTECTED](./ism-protected/index.md) | Voorziet in Guardrails om te voldoen aan de Australische overheids ISM-beveiliging. |
-| [Azure Security Benchmark v1](./azure-security-benchmark.md) | Biedt Guardrails voor naleving van [Azure Security Bench Mark v1](../../../security/benchmarks/overview.md). |
-| [Canada Federal PBMM](./canada-federal-pbmm/index.md) | Voorziet in Guardrails om te voldoen aan de door Canada Federal beveiligde B, gemiddelde integriteit, gemiddelde Beschik baarheid (PBMM). |
+| [Australian Government ISM PROTECTED](./ism-protected/index.md) | Voorziet in richtlijnen om te voldoen aan Australian Government ISM PROTECTED. |
+| [Azure Security-benchmark](./azure-security-benchmark.md) | Biedt richtlijnen voor de naleving van de [Azure Security-benchmark](../../../security/benchmarks/overview.md). |
+| [Azure Security Bench Mark-basis](./azure-security-benchmark-foundation/index.md) | Implementeert en configureert Azure Security Bench Mark Foundation. |
+| [Canada Federal PBMM](./canada-federal-pbmm/index.md) | Voorziet in richtlijnen om te voldoen aan de naleving van PBMM (Canada Federal Protected B, Medium Integrity, Medium Availability). |
 | [CIS Microsoft Azure Foundations Benchmark](./cis-azure-1-1-0.md)| Biedt een set beleidsregels om te voldoen aan de aanbevelingen van CIS Microsoft Azure Foundations Benchmark. |
 | [DoD Impact Level 4](./dod-impact-level-4/index.md) | Bied een set beleidsregels om te helpen voldoen aan DoD Impact Level 4. |
 | [DoD Impact Level 5](./dod-impact-level-5/index.md) | Bied een set beleidsregels om te helpen voldoen aan DoD Impact Level 5. |

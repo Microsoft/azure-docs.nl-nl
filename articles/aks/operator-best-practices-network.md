@@ -5,12 +5,12 @@ description: Meer informatie over de aanbevolen procedures voor cluster operator
 services: container-service
 ms.topic: conceptual
 ms.date: 12/10/2018
-ms.openlocfilehash: 9ec6423a853aacbc8a03cc5472bf1a95a5623b1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f004e0e78d7a626f878ba3651e4c6078f9cd21e8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89482722"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366565"
 ---
 # <a name="best-practices-for-network-connectivity-and-security-in-azure-kubernetes-service-aks"></a>Best practices voor netwerkverbinding en -beveiliging in Azure Kubernetes Service (AKS)
 
@@ -19,7 +19,7 @@ Wanneer u clusters maakt en beheert in azure Kubernetes service (AKS), biedt u n
 In deze best practices wordt het artikel gericht op netwerk connectiviteit en-beveiliging voor cluster operators. In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
-> * De kubenet-en Azure CNI-netwerk modi vergelijken in AKS
+> * Vergelijk de netwerk modi kubenet en Azure container Networking interface (CNI) in AKS
 > * Plan voor vereiste IP-adres sering en connectiviteit
 > * Verkeer distribueren met load balancers, ingangs controllers of een Web Application Firewall (WAF)
 > * Veilig verbinding maken met cluster knooppunten
@@ -33,11 +33,13 @@ Virtuele netwerken bieden de basis connectiviteit voor AKS-knoop punten en klant
 * **Kubenet-netwerken** : Azure beheert de virtuele netwerk resources wanneer het cluster is geïmplementeerd en maakt gebruik van de [Kubenet][kubenet] Kubernetes-invoeg toepassing.
 * **Azure cni-netwerken** : implementeert in een virtueel netwerk en maakt gebruik van de [Azure container Networking interface (cni) Kubernetes-][cni-networking] invoeg toepassing. Elk van de verschillende Ip's ontvangen die kunnen worden doorgestuurd naar andere netwerk services of on-premises bronnen.
 
-De container Networking interface (CNI) is een Vendor-neutraal protocol waarmee de container runtime aanvragen voor een netwerk provider kan indienen. De Azure CNI wijst IP-adressen toe aan de peulen en knoop punten en biedt functies voor IP-adres beheer (IPAM) wanneer u verbinding maakt met bestaande Azure Virtual Networks. Elk knoop punt en pod-resource ontvangt een IP-adres in het virtuele netwerk van Azure en er is geen verdere route ring nodig om te communiceren met andere resources of services.
+Voor productie-implementaties zijn zowel kubenet als Azure CNI geldige opties.
+
+### <a name="cni-networking"></a>CNI-netwerken
+
+De container Networking interface (CNI) is een Vendor-neutraal protocol waarmee de container runtime aanvragen voor een netwerk provider kan indienen. De Azure CNI wijst IP-adressen toe aan de peulen en knoop punten en biedt functies voor IP-adres beheer (IPAM) wanneer u verbinding maakt met bestaande Azure Virtual Networks. Elk knoop punt en pod-resource ontvangt een IP-adres in het virtuele netwerk van Azure en er is geen extra route ring nodig om te communiceren met andere resources of services.
 
 ![Diagram met twee knoop punten met bruggen die elk met één Azure VNet verbinden](media/operator-best-practices-network/advanced-networking-diagram.png)
-
-Voor productie-implementaties zijn zowel kubenet als Azure CNI geldige opties.
 
 Een belang rijk voor deel van Azure CNI Networking voor productie is het netwerk model maakt schei ding van beheer en beheer van resources mogelijk. Vanuit een beveiligings perspectief wilt u vaak dat verschillende teams deze bronnen beheren en beveiligen. Met Azure CNI-netwerken kunt u rechtstreeks verbinding maken met bestaande Azure-resources, on-premises resources of andere services via IP-adressen die zijn toegewezen aan elke pod.
 
@@ -47,9 +49,11 @@ Wanneer u Azure CNI-netwerken gebruikt, bevindt de virtuele netwerk resource zic
 
 Zie [toegang tot andere Azure-resources delegeren][sp-delegation]voor meer informatie over delegering van AKS-Service-Principal. In plaats van een Service-Principal kunt u ook de door het systeem toegewezen beheerde identiteit voor machtigingen gebruiken. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 
-Plan de adresbereiken voor de AKS-subnetten, aangezien elk knoop punt en pod zijn eigen IP-adres ontvangen. Het subnet moet groot genoeg zijn om IP-adressen op te geven voor elk knoop punt, elk van beide en netwerk bronnen die u implementeert. Elk AKS-cluster moet in een eigen subnet worden geplaatst. Om verbinding te kunnen maken met on-premises of peered netwerken in azure, kunt u geen IP-adresbereiken gebruiken die overlappen met bestaande netwerk bronnen. Er zijn standaard limieten voor het aantal peulen dat elke knoop punt wordt uitgevoerd met zowel kubenet als Azure CNI-netwerken. Voor het afhandelen van scale-out gebeurtenissen of cluster upgrades moet u ook extra IP-adressen beschikbaar voor gebruik in het toegewezen subnet. Deze extra adres ruimte is vooral belang rijk als u Windows Server-containers gebruikt, omdat voor deze knooppunt groepen een upgrade moet worden uitgevoerd om de meest recente beveiligings patches toe te passen. Zie [een knooppunt groep bijwerken in AKS][nodepool-upgrade]voor meer informatie over Windows Server-knoop punten.
+Plan de adresbereiken voor de AKS-subnetten, aangezien elk knoop punt en pod zijn eigen IP-adres ontvangen. Het subnet moet groot genoeg zijn om IP-adressen op te geven voor elk knoop punt, elk van beide en netwerk bronnen die u implementeert. Elk AKS-cluster moet in een eigen subnet worden geplaatst. Om verbinding te kunnen maken met on-premises of peered netwerken in azure, kunt u geen IP-adresbereiken gebruiken die overlappen met bestaande netwerk bronnen. Er zijn standaard limieten voor het aantal peulen dat elke knoop punt wordt uitgevoerd met zowel kubenet als Azure CNI-netwerken. Voor het afhandelen van scale-out gebeurtenissen of cluster upgrades hebt u ook extra IP-adressen beschikbaar voor gebruik in het toegewezen subnet. Deze extra adres ruimte is vooral belang rijk als u Windows Server-containers gebruikt, omdat voor deze knooppunt groepen een upgrade moet worden uitgevoerd om de meest recente beveiligings patches toe te passen. Zie [een knooppunt groep bijwerken in AKS][nodepool-upgrade]voor meer informatie over Windows Server-knoop punten.
 
 Zie [Azure cni-netwerken configureren in AKS][advanced-networking]voor het berekenen van het vereiste IP-adres.
+
+Wanneer u een cluster met Azure CNI-netwerken maakt, kunt u andere adresbereiken opgeven voor gebruik door het cluster, zoals het docker-brug adres, de DNS-service-IP en het adres bereik van de service. Over het algemeen mogen deze adresbereiken elkaar niet overlappen en hoeven ze niet te overlappen met netwerken die aan het cluster zijn gekoppeld, met inbegrip van virtuele netwerken, subnetten, on-premises en peered netwerken. Zie [Azure cni-netwerken configureren in AKS][advanced-networking]voor specifieke informatie over de limieten en grootte van deze adresbereiken.
 
 ### <a name="kubenet-networking"></a>Kubenet-netwerken
 
@@ -58,11 +62,13 @@ Hoewel u voor kubenet de virtuele netwerken niet hoeft in te stellen voordat het
 * Knoop punten en peulen worden op verschillende IP-subnetten geplaatst. Door de gebruiker gedefinieerde route ring (UDR) en door sturen via IP wordt gebruikt voor het routeren van verkeer tussen peulen en knoop punten. Deze extra route ring kan de netwerk prestaties verminderen.
 * Verbindingen met bestaande on-premises netwerken of peering met andere virtuele netwerken van Azure kunnen ingewikkeld zijn.
 
-Kubenet is geschikt voor kleine ontwikkel-en test werkbelastingen, omdat u het virtuele netwerk en de subnetten niet afzonderlijk van het AKS-cluster hoeft te maken. Eenvoudige websites met weinig verkeer of voor het optillen en verplaatsen van workloads in containers, kunnen ook profiteren van de eenvoud van AKS-clusters die zijn geïmplementeerd met kubenet-netwerken. Voor de meeste productie-implementaties moet u Azure CNI-netwerken plannen en gebruiken. U kunt ook [uw eigen IP-adresbereiken en virtuele netwerken configureren met behulp van kubenet][aks-configure-kubenet-networking].
+Kubenet is geschikt voor kleine ontwikkel-en test werkbelastingen, omdat u het virtuele netwerk en de subnetten niet afzonderlijk van het AKS-cluster hoeft te maken. Eenvoudige websites met weinig verkeer of voor het optillen en verplaatsen van workloads in containers, kunnen ook profiteren van de eenvoud van AKS-clusters die zijn geïmplementeerd met kubenet-netwerken. Voor de meeste productie-implementaties moet u Azure CNI-netwerken plannen en gebruiken.
+
+U kunt ook [uw eigen IP-adresbereiken en virtuele netwerken configureren met behulp van kubenet][aks-configure-kubenet-networking]. Net als bij Azure CNI-netwerken, mogen deze adresbereiken elkaar niet overlappen en hoeven ze niet overeen te komen met netwerken die aan het cluster zijn gekoppeld, met inbegrip van virtuele netwerken, subnetten, on-premises en peered netwerken. Zie [kubenet-netwerken gebruiken met uw eigen IP-adresbereiken in AKS][aks-configure-kubenet-networking]voor specifieke details over de limieten en grootte van deze adresbereiken.
 
 ## <a name="distribute-ingress-traffic"></a>Binnenkomend verkeer distribueren
 
-**Richt lijnen voor best practices** : als u http-of HTTPS-verkeer naar uw toepassingen wilt distribueren, gebruikt u de bronnen en controllers van de ingang. Ingangs controllers bieden extra functies voor een gewone Azure-load balancer en kunnen worden beheerd als systeem eigen Kubernetes-resources.
+**Richt lijnen voor best practices** : als u http-of HTTPS-verkeer naar uw toepassingen wilt distribueren, gebruikt u de bronnen en controllers van de ingang. Ingangs controllers bieden extra functies via een gewone Azure-load balancer en kunnen worden beheerd als systeem eigen Kubernetes-resources.
 
 Een Azure-load balancer kan klant verkeer distribueren naar toepassingen in uw AKS-cluster, maar dit is beperkt in wat het verkeer begrijpt. Een load balancer resource werkt op laag 4 en distribueert verkeer op basis van protocollen of poorten. De meeste webtoepassingen die gebruikmaken van HTTP of HTTPS, moeten Kubernetes inkomende bronnen en controllers gebruiken, die op laag 7 werken. Bij inkomend verkeer kunnen gegevens worden gedistribueerd op basis van de URL van de toepassing en worden de TLS/SSL-beëindiging afhandeld. Deze mogelijkheid vermindert ook het aantal IP-adressen dat u beschikbaar maakt en toewijst. Met een load balancer moet voor elke toepassing doorgaans een openbaar IP-adres zijn toegewezen en toegewezen aan de service in het AKS-cluster. Met een ingangs resource kan één IP-adres verkeer distribueren naar meerdere toepassingen.
 
@@ -70,7 +76,7 @@ Een Azure-load balancer kan klant verkeer distribueren naar toepassingen in uw A
 
  Er zijn twee onderdelen voor inkomend verkeer:
 
- * Een ingangs *bron*en
+ * Een ingangs *bron* en
  * Een ingangs *controller*
 
 De ingangs resource is een YAML-manifest van `kind: Ingress` waarmee de host, certificaten en regels worden gedefinieerd voor het routeren van verkeer naar services die worden uitgevoerd in uw AKS-cluster. In het volgende voor beeld YAML-manifest wordt het verkeer voor *MyApp.com* gedistribueerd naar een van de twee services, *blogservice* of *storeservice*. De klant wordt omgeleid naar één service of het andere op basis van de URL waartoe ze toegang hebben.

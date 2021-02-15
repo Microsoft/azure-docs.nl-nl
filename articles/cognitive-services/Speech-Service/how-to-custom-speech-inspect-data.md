@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 09/23/2020
+ms.date: 02/12/2021
 ms.author: erhopf
-ms.openlocfilehash: 87bc411903604a7068f346604853a2a61c9a6f1c
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9ce0d3a06846cbc3aa37ab836564150e6f2c34ee
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499183"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362808"
 ---
 # <a name="inspect-custom-speech-data"></a>Custom Speech-gegevens controleren
 
 > [!NOTE]
 > Op deze pagina wordt ervan uitgegaan dat u [test gegevens voorbereiden voor Custom speech](./how-to-custom-speech-test-and-train.md) hebt gelezen en een gegevensset hebt geüpload voor inspectie.
 
-Custom Speech biedt hulp middelen waarmee u de herkennings kwaliteit van een model visueel kunt controleren door audio gegevens te vergelijken met het bijbehorende herkennings resultaat. Vanuit de [Custom speech Portal](https://speech.microsoft.com/customspeech)kunt u geüploade audio afspelen en bepalen of het gegeven herkennings resultaat juist is. Met dit hulp programma kunt u de kwaliteit van het spraak-naar-tekst model van micro soft-basis lijn controleren, een getraind aangepast model controleren of transcriptie vergelijken met twee modellen.
+Custom Speech biedt hulp middelen waarmee u de herkennings kwaliteit van een model visueel kunt controleren door audio gegevens te vergelijken met het bijbehorende herkennings resultaat. Vanuit de [Speech Studio](https://speech.microsoft.com/customspeech)kunt u geüploade audio afspelen en bepalen of het gegeven herkennings resultaat juist is. Met dit hulp programma kunt u de kwaliteit van het spraak-naar-tekst model van micro soft-basis lijn controleren, een getraind aangepast model controleren of transcriptie vergelijken met twee modellen.
 
 In dit document leert u hoe u de kwaliteit van het spraak-naar-tekst model van micro soft en/of aangepaste modellen die u hebt getraind, visueel kunt controleren. U leert ook hoe u de online transcriptie-editor gebruikt om gelabelde audio gegevens sets te maken en te verfijnen.
 
@@ -30,12 +30,12 @@ In dit document leert u hoe u de kwaliteit van het spraak-naar-tekst model van m
 
 Volg deze instructies om een test te maken:
 
-1. Meld u aan bij de [Custom speech Portal](https://speech.microsoft.com/customspeech).
+1. Meld u aan bij de [Speech Studio](https://speech.microsoft.com/customspeech).
 2. Navigeer naar **spraak-naar-tekst > Custom Speech > [name of project] > te testen**.
 3. Klik op **test toevoegen**.
 4. Selecteer **kwaliteit controleren (alleen audio gegevens)**. Geef de test een naam, beschrijving en selecteer uw audio gegevensset.
 5. Selecteer Maxi maal twee modellen die u wilt testen.
-6. Klik op **Maken**.
+6. Klik op **Create**.
 
 Nadat een test is gemaakt, kunt u zien hoe een model de door u opgegeven audio gegevensset transcribeert of resultaten vergelijken van twee modellen naast elkaar.
 
@@ -102,6 +102,6 @@ De bestanden die naar gegevens worden geëxporteerd, worden gebruikt als een mer
 - [Uw model verbeteren](./how-to-custom-speech-evaluate-data.md)
 - [Uw model implementeren](./how-to-custom-speech-train-model.md)
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [Test gegevens voorbereiden voor Custom Speech](./how-to-custom-speech-test-and-train.md)

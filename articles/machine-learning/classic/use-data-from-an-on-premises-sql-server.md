@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): on-premises SQL Server-Azure'
 description: Gebruik gegevens uit een SQL Server-Data Base om geavanceerde analyses uit te voeren met Azure Machine Learning Studio (klassiek).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 03/13/2017
-ms.openlocfilehash: 279c07ff892cb261c8bda1937c6e9f8f1b6c6793
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8cdf1029371e0e11c38616e7800652ca9debbba7
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325699"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517396"
 ---
 # <a name="perform-analytics-with-azure-machine-learning-studio-classic-using-a-sql-server-database"></a>Analyses uitvoeren met Azure Machine Learning Studio (klassiek) met behulp van een SQL Server-Data Base
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Bedrijven die werken met on-premises gegevens, willen vaak profiteren van de schaal en flexibiliteit van de Cloud voor hun machine learning werk belastingen. Maar ze willen hun huidige bedrijfs processen en werk stromen niet verstoren door hun on-premises gegevens naar de cloud te verplaatsen. Azure Machine Learning Studio (klassiek) biedt nu ondersteuning voor het lezen van uw gegevens uit een SQL Server-Data Base en vervolgens de training en het scoren van een model met deze gegevens. U hoeft de gegevens niet meer hand matig te kopiëren en te synchroniseren tussen de Cloud en uw on-premises server. In plaats daarvan kan de module **gegevens importeren** in azure machine learning Studio (klassiek) nu rechtstreeks worden gelezen vanuit uw SQL Server-Data Base voor uw trainings-en Score taken.
@@ -91,7 +91,7 @@ De eerste stap is om de gateway te maken en in te stellen voor toegang tot uw SQ
     ![Gegevens gateway downloaden en registreren](./media/use-data-from-an-on-premises-sql-server/download-and-register-data-gateway.png)
 6. <span id="note-1" class="anchor"></span>Als u de micro soft-Data Management Gateway nog niet hebt gedownload en geïnstalleerd, klikt u op **Data Management Gateway downloaden**. Hiermee gaat u naar het micro soft Download centrum waar u de gateway versie kunt selecteren die u nodig hebt, downloadt u deze en installeert u deze. Meer informatie over de installatie vereisten, installatie stappen en tips voor het oplossen van problemen vindt u in de eerste sectie van het artikel [gegevens verplaatsen tussen on-premises bronnen en Cloud met Data Management Gateway](../../data-factory/tutorial-hybrid-copy-portal.md).
 7. Nadat de gateway is geïnstalleerd, wordt de Data Management Gateway Configuration Manager geopend en wordt het dialoog venster **Gateway registreren** weer gegeven. Plak de **Gateway registratie sleutel** die u hebt gekopieerd naar het klem bord en klik op **registreren**.
-8. Als u al een gateway hebt geïnstalleerd, voert u de Data Management Gateway-Configuration Manager uit. Klik op **sleutel wijzigen** , plak de **Gateway registratie sleutel** die u in de vorige stap naar het klem bord hebt gekopieerd en klik op **OK**.
+8. Als u al een gateway hebt geïnstalleerd, voert u de Data Management Gateway-Configuration Manager uit. Klik op **sleutel wijzigen**, plak de **Gateway registratie sleutel** die u in de vorige stap naar het klem bord hebt gekopieerd en klik op **OK**.
 9. Wanneer de installatie is voltooid, wordt het dialoog venster **Gateway registreren** voor micro soft data management gateway Configuration Manager weer gegeven. Plak de GATEWAY registratie sleutel die u in een vorige stap naar het klem bord hebt gekopieerd en klik op **registreren**.
 
     ![Gateway registreren](./media/use-data-from-an-on-premises-sql-server/data-gateway-configuration-manager-register-gateway.png)

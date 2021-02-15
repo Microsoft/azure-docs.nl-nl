@@ -42,6 +42,14 @@
     - name: Azure Security-benchmark
       displayName: 'standards, azure, benchmark'
       href: ./samples/azure-security-benchmark.md
+    - name: Azure Security Bench Mark-basis
+      items:
+        - name: Overzicht
+          displayName: 'standards, azure, benchmark, foundation'
+          href: ./samples/azure-security-benchmark-foundation/index.md
+        - name: Implementatiestappen
+          displayName: 'standards, azure, benchmark, foundation, deploy'
+          href: ./samples/azure-security-benchmark-foundation/deploy.md
     - name: Australian Government ISM PROTECTED
       items:
         - name: Overzicht

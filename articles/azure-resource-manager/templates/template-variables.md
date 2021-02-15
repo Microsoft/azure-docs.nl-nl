@@ -1,28 +1,82 @@
 ---
 title: Variabelen in sjablonen
-description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
+description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon) en Bicep-bestand.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: feecc4b5df77e6a3bf51294cb12aabf44899dde5
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 02/12/2021
+ms.openlocfilehash: cafd42112e5d296cb73f88e292a66ca2203f3810
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874431"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364457"
 ---
-# <a name="variables-in-arm-template"></a>Variabelen in ARM-sjabloon
+# <a name="variables-in-arm-templates"></a>Variabelen in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u variabelen definieert en gebruikt in uw Azure Resource Manager sjabloon (ARM-sjabloon). U kunt variabelen gebruiken om uw sjabloon te vereenvoudigen. In plaats van ingewikkelde expressies in uw sjabloon te herhalen, definieert u een variabele die de gecompliceerde expressie bevat. Vervolgens verwijst u naar die variabele die u nodig hebt in uw sjabloon.
+In dit artikel wordt beschreven hoe u variabelen definieert en gebruikt in uw Azure Resource Manager sjabloon (ARM-sjabloon) of het Bicep-bestand. U kunt variabelen gebruiken om uw sjabloon te vereenvoudigen. In plaats van ingewikkelde expressies in uw sjabloon te herhalen, definieert u een variabele die de gecompliceerde expressie bevat. Vervolgens gebruikt u die variabele als nodig in de sjabloon.
 
 Met Resource Manager worden variabelen omgezet voordat de implementatie bewerkingen worden gestart. Wanneer de variabele wordt gebruikt in de sjabloon, wordt deze door de Resource Manager vervangen door de omgezette waarde.
 
+[!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
+
 ## <a name="define-variable"></a>Variabele definiëren
 
-Geef bij het definiëren van een variabele een waarde of een sjabloon expressie op die wordt omgezet in een [gegevens type](template-syntax.md#data-types). U kunt de waarde van een para meter of een andere variabele gebruiken bij het samen stellen van de variabele.
+Wanneer u een variabele definieert, geeft u geen [gegevens type](template-syntax.md#data-types) op voor de variabele. Geef in plaats daarvan een waarde of sjabloon expressie op. Het type variabele wordt afgeleid van de omgezette waarde. In het volgende voor beeld wordt een variabele ingesteld op een teken reeks.
 
-U kunt [sjabloon functies](template-functions.md) gebruiken in de declaratie van variabelen, maar u kunt de functie [Reference](template-functions-resource.md#reference) of een van de functies van de [lijst](template-functions-resource.md#list) niet gebruiken. Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
+# <a name="json"></a>[JSON](#tab/json)
 
-In het volgende voor beeld ziet u een definitie van een variabele. Er wordt een teken reeks waarde voor de naam van een opslag account gemaakt. Er worden verschillende sjabloon functies gebruikt om een parameter waarde op te halen en deze aan een unieke teken reeks toe te voegen.
+```json
+"variables": {
+  "stringVar": "example value"
+},
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var stringVar = 'example value'
+```
+
+---
+
+U kunt de waarde van een para meter of een andere variabele gebruiken bij het samen stellen van de variabele.
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+"parameters": {
+  "inputValue": {
+    "defaultValue": "deployment parameter",
+    "type": "string"
+  }
+},
+"variables": {
+  "stringVar": "myVariable",
+  "concatToVar": "[concat(variables('stringVar'), '-addtovar') ]",
+  "concatToParam": "[concat(parameters('inputValue'), '-addtoparam')]"
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param inputValue string = 'deployment parameter'
+
+var stringVar = 'myVariable'
+var concatToVar =  '${stringVar}-addtovar'
+var concatToParam = '${inputValue}-addtoparam'
+```
+
+---
+
+U kunt [sjabloon functies](template-functions.md) gebruiken om de waarde van de variabele te maken.
+
+In JSON-sjablonen kunt u de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies in de variabele declaratie niet gebruiken. Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
+
+De functies Reference en List zijn geldig wanneer u een variabele declareert in een Bicep-bestand.
+
+In het volgende voor beeld wordt een teken reeks waarde gemaakt voor de naam van een opslag account. Er worden verschillende sjabloon functies gebruikt om een parameter waarde op te halen en deze aan een unieke teken reeks toe te voegen.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "variables": {
@@ -30,9 +84,21 @@ In het volgende voor beeld ziet u een definitie van een variabele. Er wordt een 
 },
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var storageName = '${toLower(storageNamePrefix)}${uniqueString(resourceGroup().id)}'
+```
+
+---
+
 ## <a name="use-variable"></a>Variabele gebruiken
 
-In de sjabloon verwijst u naar de waarde voor de para meter met behulp van de functie [Varia bles](template-functions-deployment.md#variables) . In het volgende voor beeld ziet u hoe u de variabele voor een resource-eigenschap gebruikt.
+In het volgende voor beeld ziet u hoe u de variabele voor een resource-eigenschap gebruikt.
+
+# <a name="json"></a>[JSON](#tab/json)
+
+In een JSON-sjabloon verwijst u naar de waarde voor de variabele met behulp van de functie [Varia bles](template-functions-deployment.md#variables) .
 
 ```json
 "resources": [
@@ -44,17 +110,46 @@ In de sjabloon verwijst u naar de waarde voor de para meter met behulp van de fu
 ]
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+In een Bicep-bestand verwijst u naar de waarde voor de variabele door de naam van de variabele op te geven.
+
+```bicep
+resource demoAccount 'Microsoft.Storage/storageAccounts@2019-06-01' = {
+  name: storageName
+```
+
+---
+
 ## <a name="example-template"></a>Voorbeeld sjabloon
 
-Met de volgende sjabloon worden geen resources geïmplementeerd. Er wordt alleen een aantal manieren voor het declareren van variabelen weer gegeven.
+Met de volgende sjabloon worden geen resources geïmplementeerd. Het bevat enkele manieren om variabelen van verschillende typen te declareren.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variables.json":::
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+Bicep biedt momenteel geen ondersteuning voor lussen.
+
+:::code language="bicep" source="~/resourcemanager-templates/azure-resource-manager/variables.bicep":::
+
+---
+
 ## <a name="configuration-variables"></a>Configuratie variabelen
 
-U kunt variabelen definiëren die gerelateerde waarden bevatten voor het configureren van een omgeving. U definieert de variabele als een object met de waarden. In het volgende voor beeld ziet u een object dat waarden voor twee omgevingen bevat: **test** en **Prod**. U geeft een van deze waarden door tijdens de implementatie.
+U kunt variabelen definiëren die gerelateerde waarden bevatten voor het configureren van een omgeving. U definieert de variabele als een object met de waarden. In het volgende voor beeld ziet u een object dat waarden voor twee omgevingen bevat: **test** en **Prod**. Geef tijdens de implementatie een van deze waarden door.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variablesconfigurations.json":::
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variablesconfigurations.bicep":::
+
+---
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 5477aa0c4eb2a66af816b287a8b6d7da8a53952f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ed6d5d676fd2c6eefd3288b7609446eb61611ed6
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534888"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517974"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Server concepten in Azure Database for MySQL
 
@@ -46,7 +46,7 @@ De volgende elementen helpen veilige toegang tot uw data base te garanderen.
 | **Firewall** | Ter bescherming van uw gegevens voor komt een firewall regel alle toegang tot uw database server, totdat u opgeeft welke computers zijn gemachtigd. Zie [Azure database for MySQL Server firewall-regels](./concepts-firewall-rules.md). |
 | **SSL** | De service biedt ondersteuning voor het afdwingen van SSL-verbindingen tussen uw toepassingen en uw database server.  Zie [Configure SSL connectivity in your application to securely connect to Azure Database for MySQL](./howto-configure-ssl.md) (SSL-connectiviteit in uw toepassing configureren om veilig verbinding te maken met Azure-database voor MySQL) voor meer informatie. |
 
-## <a name="stopstart-an-azure-database-for-mysql-preview"></a>Een Azure Database for MySQL stoppen/starten (preview)
+## <a name="stopstart-an-azure-database-for-mysql"></a>Een Azure Database for MySQL stoppen/starten
 
 Azure Database for MySQL biedt u de mogelijkheid om de server te **stoppen** wanneer deze niet wordt gebruikt en de server **te starten** wanneer u de activiteit hervat. Dit is in feite van toepassing op het besparen van kosten op de database servers en betaalt alleen voor de resource wanneer deze wordt gebruikt. Dit wordt nog belang rijker voor werk belastingen voor dev-test en wanneer u alleen de-server gebruikt voor een deel van de dag. Wanneer u de server stopt, worden alle actieve verbindingen verwijderd. Wanneer u de server later weer online wilt zetten, kunt u de [Azure Portal](how-to-stop-start-server.md) of [cli](how-to-stop-start-server.md)gebruiken.
 

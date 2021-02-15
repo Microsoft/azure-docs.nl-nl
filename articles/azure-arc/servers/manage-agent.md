@@ -1,14 +1,14 @@
 ---
 title: De agent voor Azure Arc-servers beheren
 description: In dit artikel worden de verschillende beheer taken beschreven die u normaal gesp roken uitvoert tijdens de levens cyclus van de computer agent die verbonden is met Azure Arc ingeschakeld.
-ms.date: 01/21/2021
+ms.date: 02/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: 27712dcd30857ca8c677de4f99dc4ed7e2e7b292
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: cc42830fc73612e744942bdd8b353832e0ccbf2a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98662123"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368452"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>De verbonden machine agent beheren en onderhouden
 
@@ -48,60 +48,17 @@ Voordat u de computer een andere naam geeft, is het nood zakelijk om de VM-exten
 > [!WARNING]
 > U kunt het beste de naam van de computer wijzigen en deze procedure alleen uitvoeren als dat absoluut nood zakelijk is.
 
-De onderstaande stappen geven een overzicht van de procedure voor het wijzigen van de computer naam.
-
 1. Controleer de VM-extensies die op de computer zijn geïnstalleerd en noteer hun configuratie, met behulp van de [Azure cli](manage-vm-extensions-cli.md#list-extensions-installed) of met behulp van [Azure PowerShell](manage-vm-extensions-powershell.md#list-extensions-installed).
 
-2. Verwijder de VM-extensies met behulp van Power shell, de Azure CLI of de Azure Portal.
+2. VM-extensies verwijderen die zijn geïnstalleerd via de [Azure Portal](manage-vm-extensions-portal.md#uninstall-extension), met behulp van de [Azure cli](manage-vm-extensions-cli.md#remove-an-installed-extension)of met behulp van [Azure PowerShell](manage-vm-extensions-powershell.md#remove-an-installed-extension).
 
-    > [!NOTE]
-    > Als u de Azure Monitor voor VM's-agent (Insights) of de Log Analytics-agent hebt geïmplementeerd met behulp van een Azure Policy gast configuratie beleid, worden de agents opnieuw geïmplementeerd na de volgende [evaluatie cyclus](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers) en nadat de computer waarvan de naam is gewijzigd, is geregistreerd bij servers waarop Arc is ingeschakeld.
+3. Gebruik het hulp programma **azcmagent** met de para meter [Disconnect](manage-agent.md#disconnect) om de verbinding van de machine met Azure Arc te verbreken en de machine resource uit Azure te verwijderen. Als de computer wordt losgekoppeld van de Arc-servers, wordt de verbonden machine agent niet verwijderd. u hoeft de agent niet te verwijderen als onderdeel van dit proces. U kunt dit hand matig uitvoeren terwijl u zich interactief aanmeldt, of u automatiseert met dezelfde service-principal die u hebt gebruikt om meerdere agents uit te voeren, of met een [toegangs token](../../active-directory/develop/access-tokens.md)van een micro soft-identiteits platform. Raadpleeg het volgende [artikel](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) om een service-principal te maken als u geen Service-Principal hebt gebruikt om de machine te registreren met servers die geschikt zijn voor Azure Arc.
 
-3. Verbreek de verbinding met de computer met behulp van Power shell, de Azure CLI of de portal.
+4. Wijzig de computer naam van de machine.
 
-4. Wijzig de naam van de computer.
+5. Registreer de verbonden machine agent opnieuw met servers waarop Arc is ingeschakeld. Voer het `azcmagent` hulp programma uit met de para meter [Connect](manage-agent.md#connect) om deze stap te volt ooien.
 
-5. Verbind de computer met de ingeschakelde Arc-servers met het `Azcmagent` hulp programma om een nieuwe resource te registreren en te maken in Azure.
-
-6. Implementeer VM-extensies die eerder zijn geïnstalleerd op de doel computer.
-
-Gebruik de volgende stappen om deze taak te volt ooien.
-
-1. VM-extensies verwijderen die zijn geïnstalleerd via de [Azure Portal](manage-vm-extensions-portal.md#uninstall-extension), met behulp van de [Azure cli](manage-vm-extensions-cli.md#remove-an-installed-extension)of met behulp van [Azure PowerShell](manage-vm-extensions-powershell.md#remove-an-installed-extension).
-
-2. Gebruik een van de volgende methoden om de computer los te koppelen van Azure Arc. Als de computer wordt losgekoppeld van de Arc-servers, wordt de verbonden machine agent niet verwijderd. u hoeft de agent niet te verwijderen als onderdeel van dit proces. VM-extensies die worden geïmplementeerd op de machine blijven werken tijdens dit proces.
-
-    # <a name="azure-portal"></a>[Azure Portal](#tab/azure-portal)
-
-    1. Ga in uw browser naar de [Azure Portal](https://portal.azure.com).
-    1. Ga in de portal naar **servers-Azure-boog** en selecteer uw hybride machine in de lijst.
-    1. Selecteer **verwijderen** van de geselecteerde server voor geregistreerde Arc-functionaliteit uit de bovenste balk om de resource te verwijderen in Azure.
-
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-    
-    ```azurecli
-    az resource delete \
-      --resource-group ExampleResourceGroup \
-      --name ExampleArcMachine \
-      --resource-type "Microsoft.HybridCompute/machines"
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
-
-    ```powershell
-    Remove-AzResource `
-     -ResourceGroupName ExampleResourceGroup `
-     -ResourceName ExampleArcMachine `
-     -ResourceType Microsoft.HybridCompute/machines
-    ```
-
-3. Wijzig de naam van de computer van de machine.
-
-### <a name="after-renaming-operation"></a>Na het wijzigen van de naam
-
-Nadat de naam van een computer is gewijzigd, moet de verbonden machine agent opnieuw worden geregistreerd met servers met Arc-functionaliteit. Voer het `azcmagent` hulp programma uit met de para meter [Connect](#connect) om deze stap te volt ooien.
-
-Implementeer de VM-extensies die oorspronkelijk zijn geïmplementeerd op de machine van servers waarop Arc is ingeschakeld. Als u de Azure Monitor voor VM's-agent (Insights) of de Log Analytics agent hebt geïmplementeerd met behulp van een Azure Policy gast configuratie beleid, worden de agents na de volgende [evaluatie cyclus](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers)opnieuw geïmplementeerd.
+6. Implementeer de VM-extensies die oorspronkelijk zijn geïmplementeerd op de machine van servers waarop Arc is ingeschakeld. Als u de Azure Monitor voor VM's-agent (Insights) of de Log Analytics agent hebt geïmplementeerd met behulp van een Azure-beleid, worden de agents na de volgende [evaluatie cyclus](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers)opnieuw geïmplementeerd.
 
 ## <a name="upgrading-agent"></a>Agent bijwerken
 

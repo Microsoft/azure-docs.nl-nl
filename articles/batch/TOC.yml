@@ -172,6 +172,11 @@
         - name: Een groep zonder openbare IP-adressen maken
           displayName: private
           href: batch-pool-no-public-ip-address.md
+        - name: Extensies gebruiken met groepen
+          href: create-pool-extensions.md
+        - name: Beheerde identiteiten configureren
+          displayName: user-assigned
+          href: managed-identity-pools.md
         - name: Een virtueel bestandssysteem koppelen
           href: virtual-file-mount.md
         - name: Azure-bestandsshare koppelen

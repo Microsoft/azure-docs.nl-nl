@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 1e5a04d385ba6c6dda5b52b23fd4793860f991dc
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 33661eafee6b180819b18d9a9a980eff1e2aeceb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737198"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371546"
 ---
 # <a name="azure-app-configuration-best-practices"></a>Aanbevolen procedures voor Azure-app configuratie
 
@@ -92,7 +92,7 @@ App-configuratie is regionale service. Voor toepassingen met verschillende confi
 
 ## <a name="client-applications-in-app-configuration"></a>Client toepassingen in app-configuratie 
 
-Buitensporige aanvragen voor app-configuratie kunnen leiden tot beperking of overschrijding kosten. Toepassingen maken gebruik van de cache en intelligent vernieuwen die op dit moment beschikbaar zijn om het aantal verzonden aanvragen te optimaliseren. Dit proces kan worden gespiegeld in client toepassingen met een hoog volume door directe verbindingen met de configuratie opslag te voor komen. Client toepassingen maken in plaats daarvan verbinding met een aangepaste service en deze service communiceert met de configuratie opslag. Deze proxy oplossing kan ervoor zorgen dat de client toepassingen niet de beperkings limiet voor het configuratie archief benadert. Raadpleeg [de veelgestelde vragen](./faq.md#are-there-any-limits-on-the-number-of-requests-made-to-app-configuration)voor meer informatie over beperking.  
+Buitensporige aanvragen voor app-configuratie kunnen leiden tot beperking of overschrijding kosten. Toepassingen maken gebruik van de cache en intelligent vernieuwen die op dit moment beschikbaar zijn om het aantal verzonden aanvragen te optimaliseren. Dit proces kan worden gespiegeld in client toepassingen met een hoog volume door directe verbindingen met de configuratie opslag te voor komen. Client toepassingen maken in plaats daarvan verbinding met een aangepaste service en deze service communiceert met de configuratie opslag. Deze proxy oplossing kan ervoor zorgen dat de client toepassingen niet de beperkings limiet voor het configuratie archief benadert. Raadpleeg [de veelgestelde vragen](./faq.yml#are-there-any-limits-on-the-number-of-requests-made-to-app-configuration)voor meer informatie over beperking.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

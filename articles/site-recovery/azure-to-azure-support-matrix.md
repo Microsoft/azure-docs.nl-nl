@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: 856d8961cbdf77fc848df41502678cb438773dbe
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 78c27292a92152946ba33258d27940e3c1aea47d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550114"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391572"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -35,6 +35,7 @@ In dit artikel vindt u een overzicht van de ondersteuning en vereisten voor hers
 **Virtuele Azure-machines van het ene naar het andere abonnement repliceren voor herstel na nood gevallen** | Ondersteund binnen dezelfde Azure Active Directory Tenant.
 **Vm's migreren tussen regio's binnen ondersteunde geografische clusters (binnen en tussen abonnementen)** | Ondersteund binnen dezelfde Azure Active Directory Tenant.
 **Vm's binnen dezelfde regio migreren** | Wordt niet ondersteund.
+**Met Azure toegewezen hosts** | Wordt niet ondersteund.
 
 ## <a name="region-support"></a>Ondersteuning voor regio
 
@@ -205,7 +206,7 @@ Vm's die zijn gemigreerd met behulp van Site Recovery | Ondersteund | Als een VM
 Azure RBAC-beleid | Niet ondersteund | Beleid voor toegangs beheer op basis van rollen (Azure RBAC) op Vm's wordt niet gerepliceerd naar de failover-VM in de doel regio.
 Uitbreidingen | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
 Proximity-plaatsings groepen | Ondersteund | Virtuele machines die zich in een proximity-plaatsings groep bevinden, kunnen worden beveiligd met Site Recovery.
-Tags  | Ondersteund | Door de gebruiker gegenereerde tags die worden toegepast op virtuele bron machines, worden overgebracht naar doel-virtual machines na testfailover of failover.
+Tags  | Ondersteund | Door de gebruiker gegenereerde tags die worden toegepast op virtuele bron machines, worden overgebracht naar doel-virtual machines na testfailover of failover. Tags op de virtuele machine (s) worden één keer per 24 uur gerepliceerd, zolang de VM ('s) is/aanwezig is in de doel regio.
 
 
 ## <a name="replicated-machines---disk-actions"></a>Gerepliceerde machines-schijf acties
@@ -265,7 +266,7 @@ NVMe-schijven | Niet ondersteund
 Gedeelde Azure-schijven | Niet ondersteund
 Optie voor beveiligde overdracht | Ondersteund
 Schijven met ingeschakelde Accelerators schrijven | Niet ondersteund
-Tags  | Door de gebruiker gegenereerde tags worden elke 24 uur gerepliceerd.
+Tags  | Ondersteund | Door de gebruiker gegenereerde tags worden elke 24 uur gerepliceerd.
 
 >[!IMPORTANT]
 > Om prestatie problemen te voor komen, moet u de schaal baarheid en prestaties van de VM-schijf voor [beheerde schijven](../virtual-machines/disks-scalability-targets.md)volgen. Als u de standaard instellingen gebruikt, Site Recovery de vereiste schijven en opslag accounts maken op basis van de configuratie van de bron. Als u uw eigen instellingen aanpast en selecteert, volgt u de schaal baarheid en prestaties van de schijf voor uw bron-Vm's.

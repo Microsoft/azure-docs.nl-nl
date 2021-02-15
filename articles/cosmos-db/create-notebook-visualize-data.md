@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: e16a738264e64e37cfa42722832dac7e34fee899
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
-ms.translationtype: HT
+ms.openlocfilehash: beb58922172a045242f4f9bcaf647b3cfc8b5551
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339492"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380794"
 ---
 # <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Zelfstudie: Een notebook in Azure Cosmos DB maken om de gegevens te analyseren en visualiseren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -22,7 +22,7 @@ In dit item wordt beschreven hoe u ingebouwde Jupyter-notebooks gebruikt om voor
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Ondersteuning voor notebooks inschakelen bij het maken van het Azure Cosmos-account](enable-notebooks.md)
+* [Notebooks inschakelen op een Azure Cosmos-account](enable-notebooks.md)
 
 ## <a name="create-the-resources-and-import-data"></a>De resources maken en gegevens importeren
  
@@ -30,7 +30,7 @@ In deze sectie gaat u de Azure Cosmos-database en -container maken en de retailg
 
 1. Navigeer naar uw Azure Cosmos-account en open **Data Explorer.**
 
-1. Ga naar het tabblad **Notebooks** , selecteer `…` naast **Mijn notebooks** en maak een **Nieuwe notebook**. Selecteer **Python 3** als de standaard-Kernel.
+1. Ga naar het tabblad **Notebooks**, selecteer `…` naast **Mijn notebooks** en maak een **Nieuwe notebook**. Selecteer **Python 3** als de standaard-Kernel.
 
    :::image type="content" source="./media/create-notebook-visualize-data/create-new-notebook.png" alt-text="Een nieuwe notebook maken":::
 
@@ -143,7 +143,7 @@ df_cosmos.head(10)
 
 In deze sectie gaat u een aantal query's uitvoeren op de opgehaalde gegevens.
 
-* **Query1** : Voer de opdracht Groeperen op query uit in de DataFrame om de som van de totale verkoopomzet voor elk land/elke regio op te halen en vijf items van de resultaten weer te geven. Voer in een nieuwe notebookcel de volgende code uit:
+* **Query1**: Voer de opdracht Groeperen op query uit in de DataFrame om de som van de totale verkoopomzet voor elk land/elke regio op te halen en vijf items van de resultaten weer te geven. Voer in een nieuwe notebookcel de volgende code uit:
 
    ```python
    df_revenue = df_cosmos.groupby("Country").sum().reset_index()

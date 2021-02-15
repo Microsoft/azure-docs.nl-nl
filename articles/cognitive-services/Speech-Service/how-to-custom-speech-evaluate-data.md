@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 54a54dccd82e4f6cfd72a1cc8a71b51f9fd4ed95
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: 078118ec793530720a49a19046854e5ea4b7f5c4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857355"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388937"
 ---
 # <a name="evaluate-and-improve-custom-speech-accuracy"></a>Nauwkeurigheid van Custom Speech beoordelen en verbeteren
 
@@ -115,10 +115,15 @@ Houd rekening met de volgende details:
 * Wanneer de kwaliteit van transcripten verschilt, kunt u uitzonderlijk goede zinnen dupliceren (zoals uitstekende transcripties die sleutel zinnen bevatten) om het gewicht te verg Roten.
 * De transcripten worden door de spraak service automatisch gebruikt voor het verbeteren van de herkenning van domein-specifieke woorden en zinsdelen, alsof ze zijn toegevoegd als gerelateerde tekst.
 * Training met audio biedt de meeste voor delen als de audio ook moeilijk te begrijpen is voor mensen. In de meeste gevallen moet u training starten door alleen de bijbehorende tekst te gebruiken.
-* Het kan enkele dagen duren voordat een trainings bewerking is voltooid. Zorg ervoor dat u uw spraak service-abonnement maakt in een [regio met speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training om de snelheid van de training te verbeteren.
+* Het kan enkele dagen duren voordat een trainings bewerking is voltooid. Als u de snelheid van training wilt verbeteren, moet u uw abonnement op de spraak service maken in een [regio met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 
 > [!NOTE]
-> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd.
+> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
+
+> [!NOTE]
+> Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+>
+> Als u het probleem voor komt dat in de bovenstaande alinea wordt beschreven, kunt u de trainings tijd snel verlagen door de hoeveelheid audio in de gegevensset te verminderen of deze volledig te verwijderen en alleen de tekst te verlaten. De laatste optie wordt sterk aanbevolen als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 
 ### <a name="add-new-words-with-pronunciation"></a>Nieuwe woorden met uitspraak toevoegen
 

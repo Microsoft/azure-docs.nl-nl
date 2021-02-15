@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/07/2020
+ms.date: 02/10/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96d1eaff4d1b93ad3bb489f177020c351fe4d13d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fecf3f1a302a6734d92335bc15722df4d5288a56
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95904032"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362417"
 ---
 # <a name="conditional-access-conditions"></a>Voorwaardelijke toegang: voor waarden
 
@@ -34,7 +34,7 @@ Voor klanten met toegang tot [identiteits beveiliging](../identity-protection/ov
 
 ## <a name="user-risk"></a>Gebruikersrisico 
 
-Voor klanten met toegang tot [identiteits beveiliging](../identity-protection/overview-identity-protection.md)kan gebruikers risico worden geëvalueerd als onderdeel van een beleid voor voorwaardelijke toegang. Gebruikers risico duidt op de kans dat een gegeven identiteit of account is aangetast. Meer informatie over gebruikers risico vindt u in de artikelen, [Wat is Risico's](../identity-protection/concept-identity-protection-risks.md#user-risk) en [procedure: risico beleid configureren en inschakelen](../identity-protection/howto-identity-protection-configure-risk-policies.md).
+Voor klanten met toegang tot [identiteits beveiliging](../identity-protection/overview-identity-protection.md)kan gebruikers risico worden geëvalueerd als onderdeel van een beleid voor voorwaardelijke toegang. Gebruikers risico duidt op de kans dat een bepaalde identiteit of een account is aangetast. Meer informatie over gebruikers risico vindt u in de artikelen, [Wat is Risico's](../identity-protection/concept-identity-protection-risks.md#user-risk) en [procedure: risico beleid configureren en inschakelen](../identity-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## <a name="device-platforms"></a>Apparaatplatformen
 

@@ -8,22 +8,22 @@ author: Microsoft-BradleyWright
 ms.author: brwrigh
 ms.reviewer: anbene
 ms.date: 12/23/2020
-ms.openlocfilehash: 57a6883a2c4fff14507df27b55ac0f6621306bf5
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: f096e53f8054039f361bde1c5f2adffac615c53d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879272"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371937"
 ---
 # <a name="how-to-plan-a-managed-service-offer-for-the-microsoft-commercial-marketplace"></a>Een beheerde service aanbieding plannen voor de micro soft Commercial Marketplace
 
 In dit artikel worden de vereisten geïntroduceerd voor het publiceren van een beheerde service aanbieding naar de micro soft Commercial Marketplace via partner Center.
 
-Beheerde services zijn Azure Marketplace-aanbiedingen waarmee cross-tenants en beheer van meerdere tenants met Azure Lighthouse mogelijk zijn. Zie [Wat is Azure Lighthouse?](../lighthouse/overview.md) voor meer informatie. Wanneer een klant een beheerd service aanbod koopt, kunnen ze een of meer abonnementen of de groep met resources delegeren
+Beheerde services zijn Azure Marketplace-aanbiedingen waarmee cross-tenants en beheer van meerdere tenants met Azure Lighthouse mogelijk zijn. Zie [Wat is Azure Lighthouse?](../lighthouse/overview.md) voor meer informatie. Wanneer een klant een beheerd service aanbod koopt, kunnen ze een of meer abonnementen of resource groepen delegeren. U kunt vervolgens aan deze resources werken met behulp van de beheer mogelijkheden voor [Azure-gedelegeerde resources](../lighthouse/concepts/azure-delegated-resource-management.md) van Azure Lighthouse.
 
 ## <a name="eligibility-requirements"></a>Geschiktheidsvereisten
 
-Als u een beheerde service wilt publiceren, moet u een goud of zilver micro soft-competentie hebben behaald in het Cloud platform. Deze competentie toont uw expertise aan klanten. Zie [Microsoft Partner Network-competenties](https://partner.microsoft.com/membership/competencies)voor meer informatie.
+Als u een beheerd service aanbod wilt publiceren, moet u een goud of zilver micro soft-competentie hebben behaald in het Cloud platform. Deze competentie toont uw expertise aan klanten. Zie [Microsoft Partner Network-competenties](https://partner.microsoft.com/membership/competencies)voor meer informatie.
 
 Aanbiedingen moeten voldoen aan alle toepasselijke [certificerings beleidsregels voor commerciële Marketplace](/legal/marketplace/certification-policies) om te worden gepubliceerd op Azure Marketplace.
 
@@ -46,11 +46,11 @@ Wanneer u een beheerde service aanbieding in het partner centrum maakt, voert u 
 **Beschrijvingen van aanroepen**
 
 1. Logo
-1. Naam
+1. Name
 1. Korte beschrijving
 1. Categorieën
 1. Juridische contracten en privacybeleid
-1. Beschrijving
+1. Description
 1. Scherm afbeeldingen/Video's
 1. Handige koppelingen
 

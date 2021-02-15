@@ -2,13 +2,13 @@
 title: Azure Blob Storage als Event Grid bron
 description: Hierin worden de eigenschappen beschreven die worden gegeven voor Blob Storage-gebeurtenissen met Azure Event Grid
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 1a81b30fcb775f5e8bc99bda70307f7f1aed9796
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.date: 02/11/2021
+ms.openlocfilehash: 893e86ecf220ceb327eed9c6f95be4c7ed1afb1c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452537"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363641"
 ---
 # <a name="azure-blob-storage-as-an-event-grid-source"></a>Azure Blob Storage als Event Grid bron
 
@@ -18,7 +18,7 @@ In dit artikel vindt u de eigenschappen en het schema voor Blob Storage-gebeurte
 >[!NOTE]
 > Alleen opslag accounts van het type **StorageV2 (algemeen gebruik v2)**, **BlockBlobStorage** en **BlobStorage** ondersteunings gebeurtenis integratie. **Storage (algemeen gebruik v1)** biedt *geen* ondersteuning voor integratie met Event grid.
 
-## <a name="event-grid-event-schema"></a>Event Grid-gebeurtenisschema
+## <a name="available-event-types"></a>Beschik bare gebeurtenis typen
 
 ### <a name="list-of-events-for-blob-rest-apis"></a>Lijst met gebeurtenissen voor BLOB REST-Api's
 
@@ -27,7 +27,7 @@ Deze gebeurtenissen worden geactiveerd wanneer een-client een BLOB maakt, vervan
 > [!NOTE]
 > De `$logs` containers en kunnen niet worden `$blobchangefeed` geïntegreerd met Event grid, waardoor de activiteit in deze containers geen gebeurtenissen genereert. Het gebruik van het DFS-eind punt *`(abfss://URI) `* voor niet-hiërarchische naam ruimte ingeschakelde accounts genereert geen gebeurtenissen, maar er worden door het BLOB-eind punt *`(wasb:// URI)`* gebeurtenissen gegenereerd.
 
- |Gebeurtenis naam |Beschrijving|
+ |Gebeurtenis naam |Description|
  |----------|-----------|
  |**Micro soft. storage. BlobCreated** |Wordt geactiveerd wanneer een BLOB wordt gemaakt of vervangen. <br>Deze gebeurtenis wordt met name geactiveerd wanneer clients de `PutBlob` , `PutBlockList` , of bewerkingen gebruiken `CopyBlob` die beschikbaar zijn in de BLOB-rest API.   |
  |**Micro soft. storage. BlobDeleted** |Wordt geactiveerd wanneer een BLOB wordt verwijderd. <br>Deze gebeurtenis wordt met name geactiveerd wanneer clients de bewerking aanroepen `DeleteBlob` die beschikbaar is in de BLOB-rest API. |
@@ -39,7 +39,7 @@ Deze gebeurtenissen worden geactiveerd wanneer een-client een BLOB maakt, vervan
 
 Deze gebeurtenissen worden geactiveerd als u een hiërarchische naam ruimte in het opslag account inschakelt en clients Azure Data Lake Storage Gen2 REST-Api's gebruiken. Zie [Introduction to Azure data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md)voor meer informatie Abou Azure data Lake Storage Gen2.
 
-|Gebeurtenis naam|Beschrijving|
+|Gebeurtenis naam|Description|
 |----------|-----------|
 |**Micro soft. storage. BlobCreated** | Wordt geactiveerd wanneer een BLOB wordt gemaakt of vervangen. <br>Deze gebeurtenis wordt met name geactiveerd wanneer clients de `CreateFile` bewerkingen en gebruiken `FlushWithClose` die beschikbaar zijn in de Azure data Lake Storage Gen2 rest API. |
 |**Micro soft. storage. BlobDeleted** |Wordt geactiveerd wanneer een BLOB wordt verwijderd. <br>Deze gebeurtenis wordt met name ook geactiveerd wanneer clients de bewerking aanroepen `DeleteFile` die beschikbaar is in de Azure Data Lake Storage Gen2 rest API. |
@@ -51,12 +51,10 @@ Deze gebeurtenissen worden geactiveerd als u een hiërarchische naam ruimte in h
 > [!NOTE]
 > Voor **Azure data Lake Storage Gen2**, als u ervoor wilt zorgen dat de gebeurtenis **micro soft. storage. BlobCreated** alleen wordt geactiveerd als een blok-BLOB volledig is doorgevoerd, filtert u de gebeurtenis voor de aanroep van de `FlushWithClose` rest API. Deze API-aanroep activeert de gebeurtenis **micro soft. storage. BlobCreated** alleen nadat de gegevens volledig zijn doorgevoerd in een blok-blob. Zie [gebeurtenissen filteren voor Event grid voor](./how-to-filter-events.md)meer informatie over het maken van een filter.
 
-<a name="example-event"></a>
-### <a name="the-contents-of-an-event-response"></a>De inhoud van een gebeurtenis reactie
+## <a name="example-event"></a>Voorbeeld gebeurtenis
+Wanneer een gebeurtenis wordt geactiveerd, verzendt de Event Grid-Service gegevens over die gebeurtenis om het eind punt te abonneren. Deze sectie bevat een voor beeld van wat de gegevens voor elke Blob-opslag gebeurtenis weer geven.
 
-Wanneer een gebeurtenis wordt geactiveerd, verzendt de Event Grid-Service gegevens over die gebeurtenis om het eind punt te abonneren.
-
-Deze sectie bevat een voor beeld van wat de gegevens voor elke Blob-opslag gebeurtenis weer geven.
+# <a name="event-grid-event-schema"></a>[Event Grid-gebeurtenisschema](#tab/event-grid-event-schema)
 
 ### <a name="microsoftstorageblobcreated-event"></a>Micro soft. storage. BlobCreated-gebeurtenis
 
@@ -287,39 +285,278 @@ Als het Blob Storage-account een hiërarchische naam ruimte heeft, zien de gegev
 }]
 ```
 
-### <a name="event-properties"></a>Gebeurtenis eigenschappen
+# <a name="cloud-event-schema"></a>[Cloudgebeurtenisschema](#tab/cloud-event-schema)
+
+### <a name="microsoftstorageblobcreated-event"></a>Micro soft. storage. BlobCreated-gebeurtenis
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/test-container/blobs/new-file.txt",
+  "type": "Microsoft.Storage.BlobCreated",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "api": "PutBlockList",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "eTag": "\"0x8D4BCC2E4835CD0\"",
+    "contentType": "text/plain",
+    "contentLength": 524288,
+    "blobType": "BlockBlob",
+    "url": "https://my-storage-account.blob.core.windows.net/testcontainer/new-file.txt",
+    "sequencer": "00000000000004420000000000028963",
+    "storageDiagnostics": {
+      "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstorageblobcreated-event-data-lake-storage-gen2"></a>Micro soft. storage. BlobCreated-gebeurtenis (Data Lake Storage Gen2)
+
+Als het Blob Storage-account een hiërarchische naam ruimte heeft, zien de gegevens er ongeveer uit als in het vorige voor beeld, met uitzonde ring van deze wijzigingen:
+
+* De `data.api` sleutel wordt ingesteld op de teken reeks `CreateFile` of `FlushWithClose` .
+* De `contentOffset` sleutel is opgenomen in de gegevensset.
+
+> [!NOTE]
+> Als toepassingen de `PutBlockList` bewerking gebruiken om een nieuwe BLOB naar het account te uploaden, bevatten de gegevens deze wijzigingen niet.
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/my-file-system/blobs/new-file.txt",
+  "type": "Microsoft.Storage.BlobCreated",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "api": "CreateFile",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "eTag": "\"0x8D4BCC2E4835CD0\"",
+    "contentType": "text/plain",
+    "contentLength": 0,
+    "contentOffset": 0,
+    "blobType": "BlockBlob",
+    "url": "https://my-storage-account.dfs.core.windows.net/my-file-system/new-file.txt",
+    "sequencer": "00000000000004420000000000028963",  
+    "storageDiagnostics": {
+    "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstorageblobdeleted-event"></a>Micro soft. storage. BlobDeleted-gebeurtenis
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/testcontainer/blobs/file-to-delete.txt",
+  "type": "Microsoft.Storage.BlobDeleted",
+  "time": "2017-11-07T20:09:22.5674003Z",
+  "id": "4c2359fe-001e-00ba-0e04-58586806d298",
+  "data": {
+    "api": "DeleteBlob",
+    "requestId": "4c2359fe-001e-00ba-0e04-585868000000",
+    "contentType": "text/plain",
+    "blobType": "BlockBlob",
+    "url": "https://my-storage-account.blob.core.windows.net/testcontainer/file-to-delete.txt",
+    "sequencer": "0000000000000281000000000002F5CA",
+    "storageDiagnostics": {
+      "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstorageblobdeleted-event-data-lake-storage-gen2"></a>Micro soft. storage. BlobDeleted-gebeurtenis (Data Lake Storage Gen2)
+
+Als het Blob Storage-account een hiërarchische naam ruimte heeft, zien de gegevens er ongeveer uit als in het vorige voor beeld, met uitzonde ring van deze wijzigingen:
+
+
+* De `data.api` sleutel wordt ingesteld op de teken reeks `DeleteFile` .
+* De `url` sleutel bevat het pad `dfs.core.windows.net` .
+
+> [!NOTE]
+> Als toepassingen de `DeleteBlob` bewerking gebruiken om een BLOB uit het account te verwijderen, bevatten de gegevens deze wijzigingen niet.
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/my-file-system/blobs/file-to-delete.txt",
+  "type": "Microsoft.Storage.BlobDeleted",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+    "data": {
+    "api": "DeleteFile",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "contentType": "text/plain",
+    "blobType": "BlockBlob",
+    "url": "https://my-storage-account.dfs.core.windows.net/my-file-system/file-to-delete.txt",
+    "sequencer": "00000000000004420000000000028963",  
+    "storageDiagnostics": {
+    "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstorageblobrenamed-event"></a>Micro soft. storage. BlobRenamed-gebeurtenis
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/my-file-system/blobs/my-renamed-file.txt",
+  "type": "Microsoft.Storage.BlobRenamed",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "api": "RenameFile",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "destinationUrl": "https://my-storage-account.dfs.core.windows.net/my-file-system/my-renamed-file.txt",
+    "sourceUrl": "https://my-storage-account.dfs.core.windows.net/my-file-system/my-original-file.txt",
+    "sequencer": "00000000000004420000000000028963",  
+    "storageDiagnostics": {
+    "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstoragedirectorycreated-event"></a>Micro soft. storage. DirectoryCreated-gebeurtenis
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/my-file-system/blobs/my-new-directory",
+  "type": "Microsoft.Storage.DirectoryCreated",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "api": "CreateDirectory",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "url": "https://my-storage-account.dfs.core.windows.net/my-file-system/my-new-directory",
+    "sequencer": "00000000000004420000000000028963",  
+    "storageDiagnostics": {
+    "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstoragedirectoryrenamed-event"></a>Micro soft. storage. DirectoryRenamed-gebeurtenis
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/my-file-system/blobs/my-renamed-directory",
+  "type": "Microsoft.Storage.DirectoryRenamed",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "api": "RenameDirectory",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "destinationUrl": "https://my-storage-account.dfs.core.windows.net/my-file-system/my-renamed-directory",
+    "sourceUrl": "https://my-storage-account.dfs.core.windows.net/my-file-system/my-original-directory",
+    "sequencer": "00000000000004420000000000028963",  
+    "storageDiagnostics": {
+    "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftstoragedirectorydeleted-event"></a>Micro soft. storage. DirectoryDeleted-gebeurtenis
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/Storage/providers/Microsoft.Storage/storageAccounts/my-storage-account",
+  "subject": "/blobServices/default/containers/my-file-system/blobs/directory-to-delete",
+  "type": "Microsoft.Storage.DirectoryDeleted",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "api": "DeleteDirectory",
+    "clientRequestId": "6d79dbfb-0e37-4fc4-981f-442c9ca65760",
+    "requestId": "831e1650-001e-001b-66ab-eeb76e000000",
+    "url": "https://my-storage-account.dfs.core.windows.net/my-file-system/directory-to-delete",
+    "recursive": "true", 
+    "sequencer": "00000000000004420000000000028963",  
+    "storageDiagnostics": {
+    "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+---
+
+
+## <a name="event-properties"></a>Gebeurtenis eigenschappen
+
+# <a name="event-grid-event-schema"></a>[Event Grid-gebeurtenisschema](#tab/event-grid-event-schema)
 
 Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| onderwerp | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
-| onderwerp | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
-| eventType | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
-| eventTime | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
-| Id | tekenreeks | De unieke id voor de gebeurtenis. |
-| gegevens | object | Gebeurtenis gegevens van Blob-opslag. |
-| dataVersion | tekenreeks | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
-| metadataVersion | tekenreeks | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
+| `topic` | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
+| `subject` | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| `eventType` | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| `eventTime` | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| `id` | tekenreeks | De unieke id voor de gebeurtenis. |
+| `data` | object | Gebeurtenis gegevens van Blob-opslag. |
+| `dataVersion` | tekenreeks | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
+| `metadataVersion` | tekenreeks | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
+
+# <a name="cloud-event-schema"></a>[Cloudgebeurtenisschema](#tab/cloud-event-schema)
+
+Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
+
+| Eigenschap | Type | Description |
+| -------- | ---- | ----------- |
+| `source` | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
+| `subject` | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| `type` | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| `time` | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| `id` | tekenreeks | De unieke id voor de gebeurtenis. |
+| `data` | object | Gebeurtenis gegevens van Blob-opslag. |
+| `specversion` | tekenreeks | CloudEvents-schema specificatie versie. |
+
+---
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| api | tekenreeks | De bewerking die de gebeurtenis heeft geactiveerd. |
-| clientRequestId | tekenreeks | een aanvraag-ID van de client voor de bewerking van de opslag-API. Deze ID kan worden gebruikt om te correleren Azure Storage Diagnostische logboeken met behulp van het veld ' client-request-id ' in de logboeken, en kan worden verschaft in client aanvragen via de header ' x-MS-Client-Request-id '. Zie de [logboek indeling](/rest/api/storageservices/storage-analytics-log-format). |
-| requestId | tekenreeks | Door de service gegenereerde aanvraag-ID voor de bewerking van de opslag-API. Kan worden gebruikt om te correleren Azure Storage Diagnostische logboeken met behulp van het veld aanvraag-id-header in de logboeken en wordt geretourneerd van het initiëren van de API-aanroep in de header x-MS-Request-id. Zie de [logboek indeling](/rest/api/storageservices/storage-analytics-log-format). |
-| eTag | tekenreeks | De waarde die u kunt gebruiken om bewerkingen voorwaardelijk uit te voeren. |
-| Invoer | tekenreeks | Het opgegeven inhouds type voor de blob. |
-| contentLength | geheel getal | De grootte van de BLOB in bytes. |
-| blobType | tekenreeks | Het type blob. Geldige waarden zijn ' BlockBlob ' of ' PageBlob '. |
-| contentOffset | getal | De offset in bytes van een schrijf bewerking die wordt uitgevoerd op het punt waar de toepassing die de gebeurtenis heeft geactiveerd, het schrijven naar het bestand heeft voltooid. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben.|
-| destinationUrl |tekenreeks | De URL van het bestand dat bestaat nadat de bewerking is voltooid. Als bijvoorbeeld de naam van een bestand wordt gewijzigd, bevat de `destinationUrl` eigenschap de URL van de nieuwe bestands naam. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben.|
-| sourceUrl |tekenreeks | De URL van het bestand dat bestaat voordat de bewerking wordt uitgevoerd. Als bijvoorbeeld de naam van een bestand wordt gewijzigd, bevat de `sourceUrl` URL van de oorspronkelijke bestands naam vóór de naam van de bewerking. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben. |
-| url | tekenreeks | Het pad naar de blob. <br>Als de client gebruikmaakt van een BLOB-REST API, heeft de URL deze structuur: `<storage-account-name>.blob.core.windows.net\<container-name>\<file-name>` . <br>Als de client een Data Lake Storage REST API gebruikt, heeft de URL deze structuur: `<storage-account-name>.dfs.core.windows.net/<file-system-name>/<file-name>` . |
-| recursieve | tekenreeks | `True` de bewerking uitvoeren op alle onderliggende directory's. anders `False` . <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben. |
-| sequencer | tekenreeks | Een ondoorzichtige teken reeks waarde voor de logische reeks gebeurtenissen voor een bepaalde blobnaam.  Gebruikers kunnen standaard teken reeks vergelijking gebruiken om inzicht te krijgen in de relatieve volg orde van twee gebeurtenissen op dezelfde blobnaam. |
-| storageDiagnostics | object | Diagnostische gegevens die af en toe worden opgenomen door de Azure Storage service. Indien aanwezig, moet worden genegeerd door gebeurtenis verbruikers. |
+| `api` | tekenreeks | De bewerking die de gebeurtenis heeft geactiveerd. |
+| `clientRequestId` | tekenreeks | een aanvraag-ID van de client voor de bewerking van de opslag-API. Deze ID kan worden gebruikt om te correleren Azure Storage Diagnostische logboeken met behulp van het veld ' client-request-id ' in de logboeken, en kan worden verschaft in client aanvragen via de header ' x-MS-Client-Request-id '. Zie de [logboek indeling](/rest/api/storageservices/storage-analytics-log-format). |
+| `requestId` | tekenreeks | Door de service gegenereerde aanvraag-ID voor de bewerking van de opslag-API. Kan worden gebruikt om te correleren Azure Storage Diagnostische logboeken met behulp van het veld aanvraag-id-header in de logboeken en wordt geretourneerd van het initiëren van de API-aanroep in de header x-MS-Request-id. Zie de [logboek indeling](/rest/api/storageservices/storage-analytics-log-format). |
+| `eTag` | tekenreeks | De waarde die u kunt gebruiken om bewerkingen voorwaardelijk uit te voeren. |
+| `contentType` | tekenreeks | Het opgegeven inhouds type voor de blob. |
+| `contentLength` | geheel getal | De grootte van de BLOB in bytes. |
+| `blobType` | tekenreeks | Het type blob. Geldige waarden zijn ' BlockBlob ' of ' PageBlob '. |
+| `contentOffset` | getal | De offset in bytes van een schrijf bewerking die wordt uitgevoerd op het punt waar de toepassing die de gebeurtenis heeft geactiveerd, het schrijven naar het bestand heeft voltooid. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben.|
+| `destinationUrl` |tekenreeks | De URL van het bestand dat bestaat nadat de bewerking is voltooid. Als bijvoorbeeld de naam van een bestand wordt gewijzigd, bevat de `destinationUrl` eigenschap de URL van de nieuwe bestands naam. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben.|
+| `sourceUrl` |tekenreeks | De URL van het bestand dat bestaat voordat de bewerking wordt uitgevoerd. Als bijvoorbeeld de naam van een bestand wordt gewijzigd, bevat de `sourceUrl` URL van de oorspronkelijke bestands naam vóór de naam van de bewerking. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben. |
+| `url` | tekenreeks | Het pad naar de blob. <br>Als de client gebruikmaakt van een BLOB-REST API, heeft de URL deze structuur: `<storage-account-name>.blob.core.windows.net\<container-name>\<file-name>` . <br>Als de client een Data Lake Storage REST API gebruikt, heeft de URL deze structuur: `<storage-account-name>.dfs.core.windows.net/<file-system-name>/<file-name>` . |
+| `recursive` | tekenreeks | `True` de bewerking uitvoeren op alle onderliggende directory's. anders `False` . <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben. |
+| `sequencer` | tekenreeks | Een ondoorzichtige teken reeks waarde voor de logische reeks gebeurtenissen voor een bepaalde blobnaam.  Gebruikers kunnen standaard teken reeks vergelijking gebruiken om inzicht te krijgen in de relatieve volg orde van twee gebeurtenissen op dezelfde blobnaam. |
+| `storageDiagnostics` | object | Diagnostische gegevens die af en toe worden opgenomen door de Azure Storage service. Indien aanwezig, moet worden genegeerd door gebeurtenis verbruikers. |
 
 ## <a name="tutorials-and-how-tos"></a>Zelfstudies en handleidingen
 |Titel  |Beschrijving  |

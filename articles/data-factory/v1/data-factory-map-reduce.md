@@ -1,23 +1,18 @@
 ---
 title: MapReduce-programma aanroepen vanuit Azure Data Factory
 description: Meer informatie over hoe u gegevens kunt verwerken door MapReduce-Program ma's uit te voeren op een Azure HDInsight-cluster vanuit een Azure-data factory.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
-ms.assetid: c34db93f-570a-44f1-a7d6-00390f4dc0fa
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 8bdcaf20330a3700681fd96f858370dd7dcdf4c7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f5ad917609d6f9ea401abc898f80631474a44475
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495426"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371070"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>MapReduce-Program Ma's aanroepen vanuit Data Factory
 > [!div class="op_single_selector" title1="Transformatie activiteiten"]
@@ -41,7 +36,7 @@ Met de HDInsight MapReduce-activiteit in een Data Factory [pijp lijn](data-facto
 > [!NOTE] 
 > Als u geen ervaring hebt met Azure Data Factory, lees dan [Inleiding tot Azure Data Factory](data-factory-introduction.md) en voer de zelf studie uit: [bouw uw eerste gegevens pijplijn](data-factory-build-your-first-pipeline.md) voordat u dit artikel leest.  
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Met een pijp lijn in een Azure-data factory worden gegevens verwerkt in gekoppelde opslag Services met behulp van gekoppelde Compute-Services. Het bevat een reeks activiteiten waarbij elke activiteit een specifieke verwerkings bewerking uitvoert. In dit artikel wordt beschreven hoe u de HDInsight MapReduce-activiteit gebruikt.
 
 Zie [Pig](data-factory-pig-activity.md) en [Hive](data-factory-hive-activity.md) voor meer informatie over het uitvoeren van Pig/Hive-scripts op een op Windows/Linux gebaseerd HDInsight-cluster via een pijp lijn met behulp van hdinsight varken en Hive-activiteiten. 

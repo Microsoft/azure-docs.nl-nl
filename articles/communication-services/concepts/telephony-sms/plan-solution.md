@@ -1,7 +1,7 @@
 ---
-title: Uw Azure Communication Services-oplossing voor telefonie en sms plannen
+title: Typen telefoonnummers in Azure Communication Services
 titleSuffix: An Azure Communication Services concept document
-description: Meer informatie over hoe u uw gebruik van telefoonnummers en telefonie effectief kunt plannen.
+description: Meer informatie over het effectief gebruiken van verschillende soorten telefoon nummers voor SMS en telefonie.
 author: prakulka
 manager: nmurav
 services: azure-communication-services
@@ -10,26 +10,21 @@ ms.date: 10/05/2020
 ms.topic: overview
 ms.custom: references_regions
 ms.service: azure-communication-services
-ms.openlocfilehash: 271d7ce38d50fd21975327eb1f21528aeacc485e
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
-ms.translationtype: HT
+ms.openlocfilehash: 97ac8a63740bb3a0df74a2a698cacecf842760e9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937233"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366463"
 ---
-# <a name="plan-your-telephony-and-sms-solution"></a>Uw oplossing voor telefonie en sms plannen
+# <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
 Met Azure Communication Services kunt u telefoonnummers gebruiken om gesprekken te voeren en sms-berichten te verzenden met het openbare telefoonnetwerk (PSTN). In dit document bekijken we de typen telefoonnummers, configuratieopties en beschikbaarheid in regio's voor het plannen van uw telefoon- en sms-oplossing met behulp van Communication Services.
 
-
-
-
-
-## <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
- 
+## <a name="number-types-and-features"></a>Nummer typen en-functies
 Communication Services biedt twee soorten telefoonnummers: **lokaal** en **gratis**. 
 
 ### <a name="local-numbers"></a>Lokale nummers
@@ -52,7 +47,7 @@ In de volgende tabel vindt u een overzicht van deze typen telefoonnummers:
 | Gratis         | \+ 1 (gratis *netnummer*) XXX XX XX | VS                      | Oproepen (uitgaand), sms (inkomend/uitgaand)| Het toewijzen van telefoonnummers aan IVR-systemen (Interactive Voice Response)/bots, sms-toepassingen                                        |
 
 
-## <a name="phone-number-features-in-azure-communication-services"></a>Functies voor telefoonnummers in Azure Communication Services 
+### <a name="phone-number-features-in-azure-communication-services"></a>Functies voor telefoonnummers in Azure Communication Services 
 
 [!INCLUDE [Emergency Calling Notice](../../includes/emergency-calling-notice-include.md)]
 
@@ -92,5 +87,6 @@ Op dit moment is de beschikbaarheid van telefoonnummers beperkt tot Azure-abonne
 ### <a name="conceptual-documentation"></a>Conceptuele documentatie
 
 - [Spraak- en videoconcepten](../voice-video-calling/about-call-types.md)
+- [Telefonie concepten](./telephony-concept.md)
 - [Oproepstromen](../call-flows.md)
 - [Prijzen](../pricing.md)

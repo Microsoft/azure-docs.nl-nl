@@ -990,7 +990,7 @@
       href: ephemeral-os-disks.md
     - name: Migratie en conversie
       items:
-        - name: Een schijf converteren van Standard naar Premium
+        - name: Schijf converteren naar een ander schijf type
           items:
             - name: CLI
               href: ./linux/convert-disk-storage.md

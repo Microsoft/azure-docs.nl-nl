@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 91421b66af441ed2c7e9c8b66c16ee83f489b03e
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: d838425583638aef5199b52df4869923c826553d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538498"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369965"
 ---
 # <a name="resource-model-for-the-azure-cosmos-db-point-in-time-restore-feature-preview"></a>Resource model voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaald tijdstip (preview-versie)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -30,14 +30,14 @@ Het resource model van het database account is bijgewerkt met enkele extra eigen
 
 ### <a name="backuppolicy"></a>BackupPolicy
 
-Een nieuwe eigenschap in het beleid voor back-up op account niveau met de naam ' type ' onder de para meter ' backuppolicy ' maakt continue back-ups en functies voor herstel naar een bepaald tijdstip mogelijk. Deze modus heet **doorlopende back-up**. In de open bare preview-versie kunt u deze modus alleen instellen wanneer u het account maakt. Nadat deze is ingeschakeld, hebben alle containers en data bases die zijn gemaakt in dit account, voortdurend back-ups en functies voor herstel op tijdstippen ingeschakeld.
+Een nieuwe eigenschap in het beleid voor back-up op account niveau met de naam `Type` onder `backuppolicy` para meter zorgt voor continue back-ups en herstel functies op tijdstippen. Deze modus heet **doorlopende back-up**. In de open bare preview-versie kunt u deze modus alleen instellen wanneer u het account maakt. Nadat deze is ingeschakeld, hebben alle containers en data bases die zijn gemaakt in dit account, voortdurend back-ups en functies voor herstel op tijdstippen ingeschakeld.
 
 > [!NOTE]
 > Op dit moment is de functie voor herstel naar een bepaald tijdstip beschikbaar in de open bare preview. deze kan worden gemaakt voor Azure Cosmos DB-API voor MongoDB en SQL-accounts. Nadat u een account met een doorlopende modus hebt gemaakt, kunt u deze niet overschakelen naar een periodieke modus.
 
 ### <a name="createmode"></a>CreateMode
 
-Deze eigenschap geeft aan hoe het account is gemaakt. De mogelijke waarden zijn ' default ' en ' Restore '. Als u een herstel bewerking wilt uitvoeren, stelt u deze waarde in op ' herstellen ' en geeft u de juiste waarden op in de `RestoreParameters` eigenschap.
+Deze eigenschap geeft aan hoe het account is gemaakt. De mogelijke waarden zijn *standaard* en *herstellen*. Als u een herstel bewerking wilt uitvoeren, stelt u deze waarde in op *herstellen* en geeft u de juiste waarden op in de `RestoreParameters` eigenschap.
 
 ### <a name="restoreparameters"></a>RestoreParameters
 
@@ -45,7 +45,7 @@ De `RestoreParameters` resource bevat de details van de herstel bewerking, met i
 
 |Eigenschapsnaam |Description  |
 |---------|---------|
-|restoreMode  | De herstel modus moet ' PointInTime ' zijn |
+|restoreMode  | De herstel modus moet *PointInTime* zijn |
 |restoreSource   |  De instanceId van het bron account waarvan de herstel bewerking wordt gestart.       |
 |restoreTimestampInUtc  | Het tijdstip waarop het account moet worden teruggezet in de UTC-tijd. |
 |databasesToRestore   | Lijst met `DatabaseRestoreSource` objecten om op te geven welke data bases en containers moeten worden hersteld. Als deze waarde leeg is, wordt het hele account hersteld.   |

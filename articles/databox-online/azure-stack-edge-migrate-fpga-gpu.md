@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 02/09/2021
+ms.date: 02/10/2021
 ms.author: alkohli
-ms.openlocfilehash: ce063e27620c3b0ccec9336e7a45ebb2ee1ad10d
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 1db6574f8ca22b6fe60899f00700ee19d61eab3b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100101697"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382817"
 ---
 # <a name="migrate-workloads-from-an-azure-stack-edge-pro-fpga-to-an-azure-stack-edge-pro-gpu"></a>Werk belastingen migreren van een Azure Stack Edge Pro-FPGA naar een Azure Stack Edge Pro GPU
 
@@ -190,8 +190,8 @@ Voer de volgende stappen uit om de gegevens te herstellen vanaf lokale shares:
 
 Zodra de IoT Edge modules zijn voor bereid, moet u IoT Edge workloads op uw doel apparaat implementeren. Als u fouten in de implementatie van IoT Edge-modules ondervindt, raadpleegt u:
 
-- [Veelvoorkomende problemen en oplossingen voor Azure IOT Edge](../iot-edge/troubleshoot-common-errors.md), en 
-- [IoT Edge runtime-fouten] [Een Azure stack Edge Pro GPU-apparaat beheren via Windows Power shell](azure-stack-edge-gpu-troubleshoot.md#troubleshoot-iot-edge-errors).
+- [Veelvoorkomende problemen en oplossingen voor Azure IOT Edge](../iot-edge/troubleshoot-common-errors.md). 
+- [IOT Edge runtime-fouten](azure-stack-edge-gpu-troubleshoot.md#troubleshoot-iot-edge-errors).
 
 ## <a name="verify-data"></a>Gegevens controleren
 

@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 4ba19fdf700790d89fe04867985fb803c3b0a2fc
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: be3c5bc2d178171aaebd322e13b23b3a6f79c442
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760398"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388988"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>RabbitMQ-trigger voor Azure Functions-overzicht
 
@@ -27,7 +27,7 @@ Zie het [overzicht](functions-bindings-rabbitmq.md)voor meer informatie over de 
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-In het volgende voor beeld ziet u een [C#-functie](functions-dotnet-class-library.md) waarmee het RabbitMQ-bericht wordt gelezen en geregistreerd als een [RabbitMQ gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html):
+In het volgende voor beeld ziet u een [C#-functie](functions-dotnet-class-library.md) waarmee het RabbitMQ-bericht wordt gelezen en geregistreerd als een [RabbitMQ gebeurtenis](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.Events.BasicDeliverEventArgs.html):
 
 ```cs
 [FunctionName("RabbitMQTriggerCSharp")]
@@ -229,7 +229,7 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Het standaard bericht type is [RabbitMQ gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html)en de `Body` eigenschap van de gebeurtenis RabbitMQ kan worden gelezen als de onderstaande typen:
+Het standaard bericht type is [RabbitMQ gebeurtenis](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.Events.BasicDeliverEventArgs.html)en de `Body` eigenschap van de gebeurtenis RabbitMQ kan worden gelezen als de onderstaande typen:
 
 * `An object serializable as JSON` -Het bericht wordt geleverd als een geldige JSON-teken reeks.
 * `string`
@@ -238,7 +238,7 @@ Het standaard bericht type is [RabbitMQ gebeurtenis](https://www.rabbitmq.com/re
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
-Het standaard bericht type is [RabbitMQ gebeurtenis](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html)en de `Body` eigenschap van de gebeurtenis RabbitMQ kan worden gelezen als de onderstaande typen:
+Het standaard bericht type is [RabbitMQ gebeurtenis](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.Events.BasicDeliverEventArgs.html)en de `Body` eigenschap van de gebeurtenis RabbitMQ kan worden gelezen als de onderstaande typen:
 
 * `An object serializable as JSON` -Het bericht wordt geleverd als een geldige JSON-teken reeks.
 * `string`

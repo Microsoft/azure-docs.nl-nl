@@ -1,19 +1,17 @@
 ---
 title: De duplicaten van rijen opsporen en Null-waarden zoeken met behulp van gegevens stroom fragmenten
 description: Meer informatie over het eenvoudig ontdubbelen van rijen en het vinden van Null-waarden met behulp van code fragmenten in gegevens stromen
-services: data-factory
 author: kromerm
+ms.author: makromer
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.author: makromer
-ms.openlocfilehash: cdb522cc4be83eadd2c60c91c7fee33e7ccc039b
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 1b49b2584c4cb462c7c0f520fe8d1b5bf69c8674
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632444"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393663"
 ---
 # <a name="dedupe-rows-and-find-nulls-by-using-data-flow-snippets"></a>De duplicaten van rijen opsporen en Null-waarden zoeken met behulp van gegevens stroom fragmenten
 
@@ -25,7 +23,7 @@ Door code fragmenten te gebruiken bij het toewijzen van gegevens stromen, kunt u
 
 ## <a name="create-a-pipeline"></a>Een pijplijn maken
 
-1. Selecteer **nieuwe pijp lijn** .
+1. Selecteer **nieuwe pijp lijn**.
 
 1. Voeg een gegevens stroom activiteit toe.
 

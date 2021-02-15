@@ -1,20 +1,20 @@
 ---
 title: Azure-IoT Central uitbreiden met aangepaste regels en meldingen | Microsoft Docs
 description: Als oplossings ontwikkelaar kunt u een IoT Central-toepassing configureren om e-mail meldingen te verzenden wanneer een apparaat stopt met het verzenden van telemetrie. Deze oplossing maakt gebruik van Azure Stream Analytics, Azure Functions en SendGrid.
-author: dominicbetts
-ms.author: dobett
-ms.date: 12/02/2019
+author: TheJasonAndrew
+ms.author: v-anjaso
+ms.date: 02/09/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc, devx-track-csharp
 manager: philmea
-ms.openlocfilehash: c79367ca8cf9e4a4884c829c675d794b2e734737
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 7e3292a9070e6676faad15e73d357e7f6875b5f4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220262"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371660"
 ---
 # <a name="extend-azure-iot-central-with-custom-rules-using-stream-analytics-azure-functions-and-sendgrid"></a>Azure IoT Central uitbreiden met aangepaste regels met behulp van Stream Analytics, Azure Functions en SendGrid
 
@@ -32,7 +32,7 @@ In deze hand leiding leert u het volgende:
 
 Als u de stappen in deze hand leiding wilt uitvoeren, hebt u een actief Azure-abonnement nodig.
 
-Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 ### <a name="iot-central-application"></a>IoT Central-toepassing
 
@@ -46,7 +46,7 @@ Maak een IoT Central-toepassing op de website van [Azure IOT Central Application
 | URL | Accepteer de standaard waarde of kies uw eigen unieke URL-voor voegsel |
 | Directory | Uw Azure Active Directory-Tenant |
 | Azure-abonnement | Uw Azure-abonnement |
-| Regio | Uw dichtstbijzijnde regio |
+| Region | Uw dichtstbijzijnde regio |
 
 In de voor beelden en scherm afbeeldingen in dit artikel wordt gebruikgemaakt van de **Verenigde Staten** regio. Kies een locatie dicht bij u en zorg ervoor dat u alle resources in dezelfde regio maakt.
 
@@ -97,22 +97,18 @@ Gebruik de [Azure Portal om een functie-app te maken](https://portal.azure.com/#
 | Runtimestack | .NET |
 | Storage | Nieuwe maken |
 
-### <a name="sendgrid-account"></a>SendGrid-account
+### <a name="sendgrid-account-and-api-keys"></a>SendGrid-account en API-sleutels
 
-Gebruik de [Azure Portal om een SendGrid-account te maken](https://portal.azure.com/#create/Sendgrid.sendgrid) met de volgende instellingen:
+Als u geen Sendgrid-account hebt, maakt u een [gratis account](https://app.sendgrid.com/) voordat u begint.
 
-| Instelling | Waarde |
-| ------- | ----- |
-| Naam    | Uw SendGrid-account naam kiezen |
-| Wachtwoord | Een wacht woord maken |
-| Abonnement | Uw abonnement |
-| Resourcegroep | DetectStoppedDevices |
-| Prijscategorie | F1 Free |
-| Contactgegevens | Vereiste gegevens invullen |
+1. Selecteer in de Sendgrid-dashboard instellingen in het menu links **API-sleutels**.
+1. Klik op **API-sleutel maken.**
+1. Noem de nieuwe API-sleutel **AzureFunctionAccess.**
+1. Klik op **& weer gave maken**.
 
-Wanneer u alle vereiste resources hebt gemaakt, ziet uw **DetectStoppedDevices** -resource groep er als volgt uit:
+    :::image type="content" source="media/howto-create-custom-rules/sendgrid-api-keys.png" alt-text="Scherm afbeelding van de SendGrid-API-sleutel maken.":::
 
-![Resource groep voor gestopt apparaten detecteren](media/howto-create-custom-rules/resource-group.png)
+Daarna krijgt u een API-sleutel. Sla deze teken reeks op voor later gebruik.
 
 ## <a name="create-an-event-hub"></a>Een Event Hub maken
 
@@ -121,21 +117,9 @@ U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te expo
 1. Ga in het Azure Portal naar uw Event Hubs-naam ruimte en selecteer **+ Event hub**.
 1. Geef uw Event Hub **centralexport** een naam en selecteer **maken**.
 
-De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding:
+De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding: 
 
-![Event Hubs-naamruimte](media/howto-create-custom-rules/event-hubs-namespace.png)
-
-## <a name="get-sendgrid-api-key"></a>SendGrid-API-sleutel ophalen
-
-De functie-app heeft een SendGrid API-sleutel nodig om e-mail berichten te verzenden. Een SendGrid-API-sleutel maken:
-
-1. Ga in het Azure Portal naar uw SendGrid-account. Kies vervolgens **beheren** om toegang te krijgen tot uw SendGrid-account.
-1. Kies in uw SendGrid-account **instellingen** en vervolgens de **API-sleutels**. Kies **API-sleutel maken**:
-
-    ![SendGrid API-sleutel maken](media/howto-create-custom-rules/sendgrid-api-keys.png)
-
-1. Maak op de pagina **API-sleutel maken** een sleutel met de naam **AzureFunctionAccess** met **volledige toegangs** machtigingen.
-1. Noteer de API-sleutel, u hebt deze nodig bij het configureren van de functie-app.
+    :::image type="content" source="media/howto-create-custom-rules/event-hubs-namespace.png" alt-text="Screenshot of Event Hubs namespace." border="false":::
 
 ## <a name="define-the-function"></a>Definieer de functie
 
@@ -143,37 +127,22 @@ Deze oplossing maakt gebruik van een Azure Functions-app om een e-mail bericht t
 
 1. Ga in het Azure Portal naar de **app service** instantie in de resource groep **DetectStoppedDevices** .
 1. Selecteer deze optie **+** om een nieuwe functie te maken.
-1. Kies op de pagina **een ontwikkel omgeving kiezen** de optie **in-portal** en selecteer vervolgens **door gaan**.
-1. Kies op de pagina **een functie maken** de optie **webhook + API** en selecteer vervolgens **maken**.
+1. Selecteer **http-trigger**.
+1. Selecteer **Toevoegen**.
+
+    :::image type="content" source="media/howto-create-custom-rules/add-function.png" alt-text="Afbeelding van de standaard functie voor HTTP-triggers"::: 
+
+## <a name="edit-code-for-http-trigger"></a>Code voor HTTP-trigger bewerken
 
 De portal maakt een standaard functie met de naam **HttpTrigger1**:
 
-![Standaard functie voor HTTP-triggers](media/howto-create-custom-rules/default-function.png)
+    :::image type="content" source="media/howto-create-custom-rules/default-function.png" alt-text="Screenshot of Edit HTTP trigger function.":::
 
-### <a name="configure-function-bindings"></a>Functie bindingen configureren
-
-Als u e-mail berichten met SendGrid wilt verzenden, moet u de bindingen voor uw functie als volgt configureren:
-
-1. Selecteer **integreren**, kies de uitvoer **http ($Return)** en selecteer vervolgens **verwijderen**.
-1. Kies **+ nieuwe uitvoer**, kies **SendGrid** en kies vervolgens **selecteren**. Kies **installeren** om de SendGrid-extensie te installeren.
-1. Wanneer de installatie is voltooid, selecteert **u functie retour waarde gebruiken**. Voeg een geldig **adres toe** aan om e-mail meldingen te ontvangen.  Voeg een geldig **afzender adres** toe voor gebruik als de afzender van het e-mail bericht.
-1. Selecteer **Nieuw** naast **SendGrid API Key app setting**. Voer **SendGridAPIKey** in als de sleutel en de SENDGRID-API-sleutel die u eerder hebt genoteerd als waarde. Selecteer vervolgens **Maken**.
-1. Kies **Opslaan** om de SendGrid-bindingen voor uw functie op te slaan.
-
-De instellingen voor integreren zien eruit als in de volgende scherm afbeelding:
-
-![Integratie van functie-app](media/howto-create-custom-rules/function-integrate.png)
-
-### <a name="add-the-function-code"></a>De functie code toevoegen
-
-Als u de functie wilt implementeren, voegt u de C#-code toe om de binnenkomende HTTP-aanvraag te parseren en de e-mail berichten te verzenden als volgt:
-
-1. Kies de functie **HttpTrigger1** in de functie-app en vervang de C#-code door de volgende code:
+1. Vervang de C#-code door de volgende code:
 
     ```csharp
     #r "Newtonsoft.Json"
-    #r "..\bin\SendGrid.dll"
-
+    #r "SendGrid"
     using System;
     using SendGrid.Helpers.Mail;
     using Microsoft.Azure.WebJobs.Host;
@@ -196,7 +165,7 @@ Als u de functie wilt implementeren, voegt u de C#-code toe om de binnenkomende 
             content += $"<tr><td>{notification.deviceid}</td><td>{notification.time}</td></tr>";
         }
         content += "</table>";
-        message.AddContent("text/html", content);
+        message.AddContent("text/html", content);  
 
         return message;
     }
@@ -209,8 +178,45 @@ Als u de functie wilt implementeren, voegt u de C#-code toe om de binnenkomende 
     ```
 
     Er wordt mogelijk een fout bericht weer gegeven totdat u de nieuwe code opslaat.
-
 1. Selecteer **Opslaan** om de functie op te slaan.
+
+## <a name="add-sendgrid-key"></a>SendGrid-sleutel toevoegen
+
+Als u uw SendGrid-API-sleutel wilt toevoegen, moet u deze als volgt toevoegen aan de **functie sleutels** :
+
+1. Selecteer **functie toetsen**.
+1. Kies **+ nieuwe functie toets**.
+1. Voer de *naam* en de *waarde* in van de API-sleutel die u eerder hebt gemaakt.
+1. Klik op **OK.**
+
+    :::image type="content" source="media/howto-create-custom-rules/add-key.png" alt-text="Scherm opname van de Sangrid-sleutel toevoegen.":::
+
+
+## <a name="configure-httptrigger-function-to-use-sendgrid"></a>De functie http trigger configureren voor het gebruik van SendGrid
+
+Als u e-mail berichten met SendGrid wilt verzenden, moet u de bindingen voor uw functie als volgt configureren:
+
+1. Selecteer **Integreren**.
+1. Kies **uitvoer toevoegen** onder **http ($Return)**.
+1. Selecteer **verwijderen.**
+1. Kies **+ nieuwe uitvoer**.
+1. Kies voor bindings type de optie **SendGrid**.
+1. Klik voor de SendGrid-API-sleutel instelling op nieuw.
+1. Voer de *naam* en *waarde* van uw SendGrid API-sleutel in.
+1. Voeg de volgende informatie toe:
+
+| Instelling | Waarde |
+| ------- | ----- |
+| Naam van de berichtparameter | Uw naam kiezen |
+| Naar adres | De naam van uw adres kiezen |
+| Van-adres | De naam van uw from-adres kiezen |
+| Onderwerp van bericht | Voer uw koptekst voor het onderwerp in |
+| Berichttekst | Het bericht van uw integratie invoeren |
+
+1. Selecteer **OK**.
+
+    :::image type="content" source="media/howto-create-custom-rules/add-output.png" alt-text="Scherm opname van SandGrid-uitvoer toevoegen.":::
+
 
 ### <a name="test-the-function-works"></a>De functie testen
 
@@ -222,7 +228,7 @@ Als u de functie in de portal wilt testen, kiest u eerst **Logboeken** aan de on
 
 De functie logboek berichten worden weer gegeven in het deel venster **Logboeken** :
 
-![Uitvoer van functie logboek](media/howto-create-custom-rules/function-app-logs.png)
+    :::image type="content" source="media/howto-create-custom-rules/function-app-logs.png" alt-text="Function log output":::
 
 Na enkele minuten ontvangt het e-mail adres **van de e-mail** een e-mail bericht met de volgende inhoud:
 
@@ -303,14 +309,14 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
 1. Selecteer **Opslaan**.
 1. Als u de Stream Analytics taak wilt starten, kiest u **overzicht**, **Start**, vervolgens **nu** en **Start** u het volgende:
 
-    ![Stream Analytics](media/howto-create-custom-rules/stream-analytics.png)
+    :::image type="content" source="media/howto-create-custom-rules/stream-analytics.png" alt-text="Scherm opname van Stream Analytics.":::
 
 ## <a name="configure-export-in-iot-central"></a>Exporteren configureren in IoT Central
 
 Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
 
 1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
-1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**:
+1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**: 
 
     | Instelling | Waarde |
     | ------- | ----- |
@@ -322,7 +328,7 @@ Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotc
     | Apparaten | Aan |
     | Apparaatsjablonen | Aan |
 
-![Configuratie voor continue gegevensexport](media/howto-create-custom-rules/cde-configuration.png)
+    :::image type="content" source="media/howto-create-custom-rules/cde-configuration.png" alt-text="Scherm opname van configuratie van continue gegevens export.":::
 
 Wacht tot de export status **actief** is voordat u doorgaat.
 

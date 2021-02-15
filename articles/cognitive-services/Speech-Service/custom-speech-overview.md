@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 02/12/2021
 ms.author: trbye
-ms.custom: contperf-fy21q2
-ms.openlocfilehash: 51f9ad4fea1c139cee5974ecd81645c9a904feb4
-ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
+ms.custom: contperf-fy21q2; references_regions
+ms.openlocfilehash: f2dca513b4413f1761ea1b21bf71f90bb27d3053
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854890"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388648"
 ---
 # <a name="what-is-custom-speech"></a>Wat is Custom Speech?
 
@@ -26,25 +26,26 @@ ms.locfileid: "97854890"
 
 Voordat u iets met Custom Speech kunt doen, hebt u een Azure-account en een spraak service-abonnement nodig. Nadat u een account hebt, kunt u uw gegevens voorbereiden, uw modellen trainen en testen, de herkennings kwaliteit controleren, de nauw keurigheid evalueren en uiteindelijk het aangepaste spraak-naar-tekst model implementeren en gebruiken.
 
-Dit diagram markeert de onderdelen waaruit de [Custom speech Portal](https://aka.ms/customspeech)is gemaakt. Gebruik de onderstaande koppelingen voor meer informatie over elke stap.
+Dit diagram markeert de onderdelen waaruit het [Custom speech gebied van de speech Studio](https://aka.ms/customspeech)komt. Gebruik de onderstaande koppelingen voor meer informatie over elke stap.
 
-![Diagram dat de onderdelen van de Custom Speech Portal markeert.](./media/custom-speech/custom-speech-overview.png)
+![Diagram dat de onderdelen markeert waaruit het Custom Speech gebied van de speech Studio wordt gemaakt.](./media/custom-speech/custom-speech-overview.png)
 
-1. [Abonneer u en maak een project](#set-up-your-azure-account). Maak een Azure-account en Abonneer u op de spraak service. Dit uniforme abonnement geeft u toegang tot spraak naar tekst, tekst naar spraak, spraak omzetting en de [Custom speech Portal](https://speech.microsoft.com/customspeech). Gebruik vervolgens uw abonnement voor spraak service om uw eerste Custom Speech-project te maken.
+1. [Abonneer u en maak een project](#set-up-your-azure-account). Maak een Azure-account en Abonneer u op de spraak service. Dit uniforme abonnement geeft u toegang tot spraak naar tekst, tekst naar spraak, spraak omzetting en de [Speech Studio](https://speech.microsoft.com/customspeech). Gebruik vervolgens uw abonnement voor spraak service om uw eerste Custom Speech-project te maken.
 
 1. [Test gegevens uploaden](./how-to-custom-speech-test-and-train.md). Upload test gegevens (audio bestanden) om de micro soft-functie voor spraak naar tekst te evalueren voor uw toepassingen, hulpprogram ma's en producten.
 
-1. De [herkennings kwaliteit controleren](how-to-custom-speech-inspect-data.md). Gebruik de [Custom speech Portal](https://speech.microsoft.com/customspeech) om Geüploade audio af te spelen en de kwaliteit van de spraak herkenning van uw test gegevens te controleren. Zie [gegevens controleren](how-to-custom-speech-inspect-data.md)voor kwantitatieve metingen.
+1. De [herkennings kwaliteit controleren](how-to-custom-speech-inspect-data.md). Gebruik de [Speech Studio](https://speech.microsoft.com/customspeech) om Geüploade audio af te spelen en de kwaliteit van de spraak herkenning van uw test gegevens te controleren. Zie [gegevens controleren](how-to-custom-speech-inspect-data.md)voor kwantitatieve metingen.
 
-1. [Evalueer en verbeter nauw keurigheid](how-to-custom-speech-evaluate-data.md). Evalueer de nauw keurigheid van het spraak-naar-tekst model en verbeter deze. De [Custom speech-Portal](https://speech.microsoft.com/customspeech) biedt een *Word-fout*, die u kunt gebruiken om te bepalen of extra training vereist is. Als u tevreden bent met de nauw keurigheid, kunt u de speech service-Api's rechtstreeks gebruiken. Als u de nauw keurigheid wilt verbeteren met een relatief gemiddelde van 5% tot 20%, gebruikt u het tabblad **training** in de portal voor het uploaden van aanvullende trainings gegevens, zoals transcripten met menselijke labels en gerelateerde tekst.
+1. [Evalueer en verbeter nauw keurigheid](how-to-custom-speech-evaluate-data.md). Evalueer de nauw keurigheid van het spraak-naar-tekst model en verbeter deze. De [Speech Studio](https://speech.microsoft.com/customspeech) biedt een *Word-fout*, die u kunt gebruiken om te bepalen of extra training vereist is. Als u tevreden bent met de nauw keurigheid, kunt u de speech service-Api's rechtstreeks gebruiken. Als u de nauw keurigheid wilt verbeteren met een relatief gemiddelde van 5% tot 20%, gebruikt u het tabblad **training** in de portal voor het uploaden van aanvullende trainings gegevens, zoals transcripten met menselijke labels en gerelateerde tekst.
 
 1. [Train en implementeer een model](how-to-custom-speech-train-model.md). Verbeter de nauw keurigheid van uw spraak-naar-tekst model door geschreven transcripten (10 tot 1.000 uur) en gerelateerde tekst (<200 MB) samen met uw audio test gegevens te voorzien. Deze gegevens helpen u bij het trainen van het spraak-naar-tekst-model. Probeer na de training opnieuw te testen. Als u tevreden bent met het resultaat, kunt u uw model naar een aangepast eind punt implementeren.
 
 ## <a name="set-up-your-azure-account"></a>Uw Azure-account instellen
 
-U moet een Azure-account en een spraak service-abonnement hebben voordat u de [Custom speech Portal](https://speech.microsoft.com/customspeech) kunt gebruiken om een aangepast model te maken. Als u geen account en abonnement hebt, [kunt u de Speech-service gratis uitproberen](overview.md#try-the-speech-service-for-free).
+U moet een Azure-account en een spraak service-abonnement hebben voordat u de [Speech Studio](https://speech.microsoft.com/customspeech) kunt gebruiken om een aangepast model te maken. Als u geen account en abonnement hebt, [kunt u de Speech-service gratis uitproberen](overview.md#try-the-speech-service-for-free).
 
-Als u van plan bent een aangepast model met audio gegevens te trainen, kiest u een van de volgende regio's met specifieke hardware die beschikbaar is voor training. Dit verkort de tijd die nodig is voor het trainen van een model.
+> [!NOTE]
+> Als u van plan bent een aangepast model met **Audio gegevens** te trainen, kiest u een van de volgende regio's met specifieke hardware die beschikbaar is voor training. Dit verkort de tijd die nodig is voor het trainen van een model.
 
 * Australië - oost
 * Canada - midden
@@ -53,31 +54,31 @@ Als u van plan bent een aangepast model met audio gegevens te trainen, kiest u e
 * VS - oost 2
 * VS - noord-centraal
 * Europa - noord
-* South Central US
+* VS - zuid-centraal
 * Azië - zuidoost
 * Verenigd Koninkrijk Zuid
 * VS (overheid) - Arizona
 * VS (overheid) - Virginia
 * Europa -west
-* West US 2
+* VS - west 2
 
 > [!NOTE]
 > Zorg ervoor dat u een Standard-abonnement (S0) maakt. Gratis (F0) abonnementen worden niet ondersteund.
 
-Nadat u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u zich aanmelden bij de [Custom speech Portal](https://speech.microsoft.com/customspeech) en uw abonnement verbinden.
+Nadat u een Azure-account en een spraak service-abonnement hebt gemaakt, moet u zich aanmelden bij de [Speech Studio](https://speech.microsoft.com/customspeech) en verbinding maken met uw abonnement.
 
-1. Meld u aan bij de [Custom speech Portal](https://aka.ms/custom-speech).
+1. Meld u aan bij de [Speech Studio](https://aka.ms/custom-speech).
 1. Selecteer het abonnement dat u nodig hebt om te werken en een spraak project te maken.
 1. Als u uw abonnement wilt wijzigen, selecteert u de knop tandwiel in het bovenste menu.
 
 ## <a name="how-to-create-a-project"></a>Een project maken
 
-Inhoud, zoals gegevens, modellen, testen en eind punten, zijn ingedeeld in *projecten* in de [Custom speech Portal](https://speech.microsoft.com/customspeech). Elk project is specifiek voor een domein en land/taal. U kunt bijvoorbeeld een project maken voor call centers die Engels gebruiken in de Verenigde Staten.
+Inhoud, zoals gegevens, modellen, testen en eind punten, zijn ingedeeld in *projecten* in de [Speech Studio](https://speech.microsoft.com/customspeech). Elk project is specifiek voor een domein en land/taal. U kunt bijvoorbeeld een project maken voor call centers die Engels gebruiken in de Verenigde Staten.
 
 Als u uw eerste project wilt maken, selecteert u **spraak naar tekst/aangepaste spraak** en selecteert u vervolgens **Nieuw project**. Volg de instructies in de wizard om het project te maken. Nadat u een project hebt gemaakt, ziet u vier tabbladen: **gegevens**, **testen**, **training** en **implementatie**. Gebruik de koppelingen in de [volgende stappen](#next-steps) voor meer informatie over het gebruik van elk tabblad.
 
 > [!IMPORTANT]
-> De [Custom speech Portal](https://aka.ms/custom-speech) is onlangs bijgewerkt. Als u eerdere gegevens, modellen, tests en gepubliceerde eind punten in de CRIS.ai-portal of met Api's hebt gemaakt, moet u een nieuw project maken in de nieuwe portal om verbinding met deze oude entiteiten te maken.
+> De [Speech Studio](https://aka.ms/custom-speech) , voorheen bekend als ' Custom speech portal ', is onlangs bijgewerkt. Als u eerdere gegevens, modellen, tests en gepubliceerde eind punten in de CRIS.ai-portal of met Api's hebt gemaakt, moet u een nieuw project maken in de nieuwe portal om verbinding met deze oude entiteiten te maken.
 
 ## <a name="model-lifecycle"></a>Levens cyclus van model
 
@@ -106,7 +107,7 @@ Als nieuwe modellen en nieuwe functionaliteit beschikbaar en ouder worden, worde
 * Decodering: twee jaar nadat het model is gemaakt. U kunt het aangepaste model twee jaar gebruiken (batch/realtime/testen) nadat het is gemaakt. Na twee jaar *moet u uw model opnieuw trainen* omdat het basis model meestal is afgeschaft voor aanpassing.  
 * Eind punten: beschikbaar op dezelfde tijd lijn als decoderen.
 
-Wanneer een basis model of aangepast model verloopt, wordt het altijd terugvallen op de *nieuwste versie van het basis model*. Uw implementatie wordt dus nooit onderbroken, maar het kan minder nauw keurig zijn voor *uw specifieke gegevens* als aangepaste modellen de verval datum bereiken. U kunt de verval datum van een model weer geven op de volgende plaatsen in de Custom Speech portal:
+Wanneer een basis model of aangepast model verloopt, wordt het altijd terugvallen op de *nieuwste versie van het basis model*. Uw implementatie wordt dus nooit onderbroken, maar het kan minder nauw keurig zijn voor *uw specifieke gegevens* als aangepaste modellen de verval datum bereiken. U kunt de verval datum van een model weer geven op de volgende plaatsen in het gedeelte Custom Speech van de speech studio:
 
 * Overzicht van model trainingen
 * Details van model training
@@ -115,7 +116,7 @@ Wanneer een basis model of aangepast model verloopt, wordt het altijd terugvalle
 
 U kunt de verval datums ook controleren via de [`GetModel`](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetModel) en [`GetBaseModel`](https://westus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/GetBaseModel) aangepaste spraak-api's onder de `deprecationDates` eigenschap in het JSON-antwoord.
 
-Houd er rekening mee dat u het model op een aangepast spraak eindpunt zonder downtime kunt bijwerken door het model te wijzigen dat door het eind punt wordt gebruikt in de implementatie sectie van de aangepaste spraak portal of via de aangepaste spraak-API.
+Houd er rekening mee dat u het model op een aangepast spraak eindpunt zonder downtime kunt bijwerken door het model dat door het eind punt wordt gebruikt, te wijzigen in de sectie implementatie van de speech Studio of via de aangepaste spraak-API.
 
 ## <a name="next-steps"></a>Volgende stappen
 

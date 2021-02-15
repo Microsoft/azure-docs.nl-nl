@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 01e5095e5ff5c65bff508f4bd526ee5f85e3dc56
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 8fa61855b5647c1caefd939af17b70c9d08c2f8f
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575157"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517821"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Azure SQL Database verkeer migratie naar nieuwere gateways
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,6 +29,22 @@ De meest recente informatie wordt bewaard in de tabel met [IP-adressen van de Az
 ## <a name="status-updates"></a>Status updates
 
 # <a name="in-progress"></a>[Actief](#tab/in-progress-ip)
+## <a name="march-2021"></a>2021 maart
+De volgende SQL-gateways in meerdere regio's worden gedeactiveerd:
+
+- Brazilië-zuid: 104.41.11.5
+- Azië-oost: 191.234.2.139
+- VS-Oost: 191.238.6.43
+- Japan-Oost: 191.237.240.43
+- Japan-West: 191.238.68.11
+- Europa-noord: 191.235.193.75
+- VS Zuid-Centraal: 23.98.162.75
+- Zuidoost-Azië: 23.100.117.95
+- Europa-west: 191.237.232.75
+- VS-West: 23.99.34.75
+
+Er wordt geen invloed op de klant verwacht omdat deze gateways (die worden uitgevoerd op oudere hardware) geen verkeer van de klant door sturen. De IP-adressen voor deze gateways moeten worden gedeactiveerd op 15 maart 2021.
+
 ## <a name="february-2021"></a>Februari 2021
 Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
 
@@ -95,7 +111,7 @@ Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's. Deze SQL-gateways
 - Europa-west: 52.236.184.163 
 - Zuid-Centraal VS: 20.45.121.1, 20.49.88.1 
 
-Bestaande SQL-gateways gaan het verkeer accepteren in de volgende regio's. Deze SQL-gateways beginnen het accepteren van klant verkeer op **1 September 2020** :
+Bestaande SQL-gateways gaan het verkeer accepteren in de volgende regio's. Deze SQL-gateways beginnen het accepteren van klant verkeer op **1 September 2020**:
 - Japan-Oost: 40.79.184.8, 40.79.192.5
 
 

@@ -3,12 +3,12 @@ title: 'Concepten: identiteit en toegang'
 description: Meer informatie over de identiteits-en toegangs concepten van de Azure VMware-oplossing
 ms.topic: conceptual
 ms.date: 02/02/2021
-ms.openlocfilehash: 0f58cbdaa641af24cef53c3cfd9604cf1b0c1c3b
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 68f4ce9136cca1cf9bf0824395e31704d8ed1a17
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538938"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364882"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Concepten van Azure VMware-oplossings identiteiten
 
@@ -49,7 +49,7 @@ De tabel bevat de **CloudAdmin** -en **CloudGlobalAdmin** -bevoegdheden.
 
 ## <a name="nsx-t-manager-access-and-identity"></a>Toegangs-en identiteits beheer NSX-T
 
-Gebruik het account Administrator om toegang te krijgen tot NSX-T-beheer. Het heeft volledige bevoegdheden en stelt u in staat T1-routers, logische switches en alle services te maken en te beheren. De bevoegdheden bieden u toegang tot de NSX-T T0-router. Een wijziging in de T0-router kan leiden tot gedegradeerde netwerk prestaties of geen toegang tot de privécloud. Open een ondersteunings aanvraag in de Azure Portal om eventuele wijzigingen aan uw NSX-T T0-router aan te vragen.
+Gebruik het *beheerders* account om toegang te krijgen tot NSX-T-beheer. Het heeft volledige bevoegdheden en stelt u in staat om laag 1 (T1)-gateways, segmenten (logische switches) en alle services te maken en te beheren. De bevoegdheden bieden u toegang tot de gateway NSX-T-laag-0 (T0). Een wijziging in de T0-gateway kan leiden tot gedegradeerde netwerk prestaties of geen toegang tot de privécloud. Open een ondersteunings aanvraag in de Azure Portal om eventuele wijzigingen aan uw NSX-T T0-gateway aan te vragen.
   
 ## <a name="next-steps"></a>Volgende stappen
 

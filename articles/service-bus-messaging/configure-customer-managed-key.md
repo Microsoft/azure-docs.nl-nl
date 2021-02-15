@@ -2,13 +2,13 @@
 title: Uw eigen sleutel configureren voor het versleutelen van Azure Service Bus gegevens in rust
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Service Bus gegevens rest.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: 132ee3883b818dcc5a5d8e0cc7b372daee41e273
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.date: 02/10/2021
+ms.openlocfilehash: 5d14c8953819575d1c2688520838135efc7121e5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98928095"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378312"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-service-bus-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels configureren voor het versleutelen van Azure Service Bus gegevens op rest door gebruik te maken van de Azure Portal
 Azure Service Bus Premium zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). Service Bus Premium gebruikt Azure Storage om de gegevens op te slaan. Alle gegevens die zijn opgeslagen met Azure Storage, worden versleuteld met door micro soft beheerde sleutels. Als u uw eigen sleutel gebruikt (ook wel Bring Your Own Key (BYOK) of door de klant beheerde sleutel), worden de gegevens nog steeds versleuteld met behulp van de door micro soft beheerde sleutel, maar wordt de door micro soft beheerde sleutel versleuteld met behulp van de door de klant beheerde sleutel. Met deze functie kunt u de toegang tot door de klant beheerde sleutels maken, draaien, uitschakelen en intrekken die worden gebruikt voor het versleutelen van door micro soft beheerde sleutels. Het inschakelen van de functie BYOK is een eenmalige installatie procedure voor uw naam ruimte.
@@ -94,6 +94,17 @@ U kunt de sleutel in de sleutel kluis draaien met behulp van het rotatie mechani
 Als u de toegang tot de versleutelings sleutels intrekt, worden de gegevens niet verwijderd uit Service Bus. De gegevens kunnen echter niet worden geopend vanuit de naam ruimte Service Bus. U kunt de versleutelings sleutel intrekken via toegangs beleid of door de sleutel te verwijderen. Meer informatie over toegangs beleid en het beveiligen van uw sleutel kluis van [beveiligde toegang tot een sleutel kluis](../key-vault/general/secure-your-key-vault.md).
 
 Zodra de versleutelings sleutel is ingetrokken, wordt de Service Bus-service op de versleutelde naam ruimte niet meer bruikbaar. Als de toegang tot de sleutel is ingeschakeld of de verwijderde sleutel is hersteld, wordt de sleutel door Service Bus service gekozen, zodat u toegang hebt tot de gegevens van de versleutelde Service Bus naam ruimte.
+
+## <a name="caching-of-keys"></a>Cache van sleutels
+Het Service Bus exemplaar controleert elke vijf minuten op de vermelde versleutelings sleutels. Ze worden in de cache opgeslagen en gebruikt tot de volgende poll, die na 5 minuten wordt uitgevoerd. Zolang er ten minste één sleutel beschikbaar is, zijn wacht rijen en onderwerpen toegankelijk. Als alle vermelde sleutels niet toegankelijk zijn tijdens het navragen, worden alle wacht rijen en onderwerpen niet meer beschikbaar. 
+
+Hier vindt u meer informatie: 
+
+- De Service Bus-service vraagt om de vijf minuten alle door de klant beheerde sleutels die worden vermeld in de record van de naam ruimte:
+    - Als een sleutel is gedraaid, wordt de record bijgewerkt met de nieuwe sleutel.
+    - Als een sleutel is ingetrokken, wordt de sleutel uit de record verwijderd.
+    - Als alle sleutels zijn ingetrokken, wordt de versleutelings status van de naam ruimte ingesteld op **ingetrokken**. De gegevens kunnen niet worden geopend vanuit de naam ruimte Service Bus.. 
+    
 
 ## <a name="use-resource-manager-template-to-enable-encryption"></a>Resource Manager-sjabloon gebruiken om versleuteling in te scha kelen
 In deze sectie wordt beschreven hoe u de volgende taken kunt uitvoeren met behulp van **Azure Resource Manager sjablonen**. 

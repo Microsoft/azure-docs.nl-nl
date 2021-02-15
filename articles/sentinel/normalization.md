@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: yelevin
-ms.openlocfilehash: 66c315132ef0ef4d320e9edd8e9bcc28b2240924
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 3d9e436d636fbd5414367efb0e122748a8e9e2cb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805087"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390807"
 ---
 # <a name="normalization-in-azure-sentinel"></a>Normalisatie in azure Sentinel
 
@@ -70,6 +70,9 @@ De schema verwijzing bevat ook de standaardisering van value en Format. De bron 
 
 ## <a name="parsers"></a>Parsers
 
+- [Wat is parseren?](#what-is-parsing)
+- [Query tijd parsers gebruiken](#using-query-time-parsers)
+
 ### <a name="what-is-parsing"></a>Wat is parseren?
 
 Als er een basisset gedefinieerde gestandaardiseerde tabellen beschikbaar is, moet u uw gegevens transformeren (parseren/toewijzen) in deze tabellen. Dat wil zeggen dat u specifieke gegevens uit het onbewerkte formulier in bekende kolommen in het genormaliseerde schema kunt ophalen. Parsering in azure Sentinel gebeurt op het moment dat de **query** wordt uitgevoerd. parsers worden gebouwd als log Analytics gebruikers functies (met behulp van Kusto query language-KQL) waarmee gegevens in bestaande tabellen (zoals CommonSecurityLog, aangepaste logboek tabellen, syslog) worden omgezet in het genormaliseerde tabellen schema.
@@ -77,6 +80,10 @@ Als er een basisset gedefinieerde gestandaardiseerde tabellen beschikbaar is, mo
 De andere soort parsering, die nog niet wordt ondersteund in azure Sentinel, is op **opname tijd** , waardoor gegevens rechtstreeks kunnen worden verzameld in de genormaliseerde tabel (len) wanneer deze uit de gegevens bronnen ervan worden opgenomen. Het parseren van opname tijd levert betere prestaties wanneer het gegevens model rechtstreeks wordt opgevraagd zonder dat er functies hoeven te worden gebruikt.
 
 ### <a name="using-query-time-parsers"></a>Query tijd parsers gebruiken
+
+- [Een parser installeren](#installing-a-parser)
+- [De parsers gebruiken](#using-the-parsers)
+- [Parsers aanpassen](#customizing-parsers)
 
 #### <a name="installing-a-parser"></a>Een parser installeren
 
@@ -119,6 +126,12 @@ Vouw in het deel venster aan de rechter kant het gedeelte ' opgeslagen query's '
 
 U kunt op elke afzonderlijke parser klikken en de onderliggende functie zien die wordt gebruikt, en deze uitvoeren (of rechtstreeks toegang krijgen tot de bijbehorende alias, zoals hierboven wordt beschreven). Houd er rekening mee dat sommige parsers de oorspronkelijke velden naast elkaar kunnen bewaren in de genormaliseerde velden voor het gemak. Dit kan eenvoudig worden bewerkt in de query van de parser.
 
+> [!TIP]
+> U kunt uw opgeslagen functies gebruiken in plaats van Azure-Sentinel-tabellen in een query, met inbegrip van jacht-en detectie query's. Zie voor meer informatie:
+>
+> - [Gegevens normalisatie in azure Sentinel](normalization.md#parsers)
+> - [Tekst parseren in Azure Monitor-logboeken](/azure/azure-monitor/log-query/parse-text)
+>
 #### <a name="customizing-parsers"></a>Parsers aanpassen
 
 U kunt de bovenstaande stappen herhalen (Zoek de parser in query Explorer), klikt u op de relevante parser en bekijkt u de functie-implementatie.
@@ -131,6 +144,8 @@ Zodra de functie is gewijzigd, klikt u nogmaals op opslaan en gebruikt u dezelfd
 :::image type="content" source="./media/normalization/are-you-sure.png" alt-text="Weet je het zeker":::
 
 #### <a name="additional-information"></a>Aanvullende informatie
+
+JSON, XML en CSV zijn met name handig voor het parseren van query's. Azure Sentinel heeft ingebouwde functies voor het parseren van JSON, XML en CSV, evenals een hulp programma voor JSON-parsering.  Zie [JSON-velden gebruiken in azure Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/tip-easily-use-json-fields-in-sentinel/ba-p/768747) (blog) voor meer informatie. 
 
 Meer informatie over [opgeslagen query's](../azure-monitor/log-query/example-queries.md) (de implementatie van query's tijd parsers) in log Analytics.
 

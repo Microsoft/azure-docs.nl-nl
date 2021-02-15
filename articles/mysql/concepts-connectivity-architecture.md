@@ -1,17 +1,17 @@
 ---
 title: Connectiviteits architectuur-Azure Database for MySQL
 description: Beschrijft de connectiviteits architectuur voor uw Azure Database for MySQL-server.
-author: mksuni
-ms.author: sumuth
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 03/16/2020
-ms.openlocfilehash: 2a557bb436b3bc10cf83beb450761465b43f621f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.date: 2/11/2021
+ms.openlocfilehash: c888a6882f2a408801492de914c57e3e9a6eeaed
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655353"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375507"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mysql"></a>Connectiviteits architectuur in Azure Database for MySQL
 In dit artikel wordt uitgelegd wat de Azure Database for MySQL connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for MySQL exemplaar van clients, zowel binnen als buiten Azure.
@@ -45,17 +45,17 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Australië-Central2     | 20.36.113.0  | | |
 | Australië - oost | 13.75.149.87, 40.79.161.1     |  | |
 | Australië - zuidoost |191.239.192.109, 13.73.109.251   |  | |
-| Brazil South |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
+| Brazilië - zuid |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
 | Canada - midden |40.85.224.249  | | |
 | Canada - oost | 40.86.226.166    | | |
-| Central US | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
+| VS - centraal | 23.99.160.139, 52.182.136.37, 52.182.136.38 | 13.67.215.62 | |
 | China East | 139.219.130.35    | | |
 | China - oost 2 | 40.73.82.1  | | |
 | China - noord | 139.219.15.17    | | |
 | China - noord 2 | 40.73.50.0     | | |
 | Azië - oost | 191.234.2.139, 52.175.33.150, 13.75.33.20, 13.75.33.21     | | |
 | VS - oost |40.71.8.203, 40.71.83.113 |40.121.158.30|191.238.6.43 |
-| US - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  | | |
+| VS - oost 2 | 40.70.144.38, 52.167.105.38  | 52.177.185.181 | |
 | Frankrijk - centraal | 40.79.137.0, 40.79.129.1  | | |
 | Frankrijk - zuid | 40.79.177.0     | | |
 | Duitsland - centraal | 51.4.144.100     | | |
@@ -63,24 +63,24 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | India - centraal | 104.211.96.159     | | |
 | India - zuid | 104.211.224.146  | | |
 | India - west | 104.211.160.80    | | |
-| Japan East | 13.78.61.196, 191.237.240.43, 40.79.192.23 | | |
-| Japan - west | 104.214.148.156, 191.238.68.11, 40.74.96.6, 40.74.96.7    | | |
-| Korea - centraal | 52.231.32.42   | | |
-| Korea - zuid | 52.231.200.86    | | |
-| VS - noord-centraal | 23.96.178.199, 23.98.55.75, 52.162.104.35, 52.162.104.36    | | |
-| Europa - noord | 52.138.224.6, 52.138.224.7  |40.113.93.91 |191.235.193.75 |
+| Japan - oost | 40.79.192.23 | 13.78.61.196 | |
+| Japan - west | 191.238.68.11, 40.74.96.6, 40.74.96.7     | 104.214.148.156 | |
+| Korea - centraal | 52.231.17.13   | 52.231.32.42 | |
+| Korea - zuid | 52.231.145.3     | 52.231.200.86 | |
+| VS - noord-centraal | 52.162.104.35, 52.162.104.36    | 23.96.178.199 | |
+| Europa - noord | 52.138.224.6, 52.138.224.7  | 40.113.93.91 |191.235.193.75 |
 | Zuid-Afrika - noord  | 102.133.152.0    | | |
 | Zuid-Afrika - west | 102.133.24.0   | | |
-| South Central US |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
-| Azië - zuidoost | 104.43.15.0, 23.100.117.95, 40.78.233.2, 23.98.80.12     | | |
+| VS - zuid-centraal |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
+| Azië - zuidoost | 40.78.233.2, 23.98.80.12     | 104.43.15.0 | |
 | UAE - centraal | 20.37.72.64  | | |
 | VAE - noord | 65.52.248.0    | | |
 | Verenigd Koninkrijk Zuid | 51.140.184.11   | | |
 | Verenigd Koninkrijk West | 51.141.8.11  | | |
 | VS - west-centraal | 13.78.145.25     | | |
-| Europa -west |13.69.105.208,104.40.169.187 |40.68.37.158 | 191.237.232.75|
+| Europa -west |13.69.105.208, 104.40.169.187 | 40.68.37.158 | 191.237.232.75 |
 | VS - west |13.86.216.212, 13.86.217.212 |104.42.238.205  | 23.99.34.75|
-| West US 2 | 13.66.226.202  | | |
+| VS - west 2 | 13.66.226.202  | | |
 ||||
 
 ## <a name="connection-redirection"></a>Verbindings omleiding

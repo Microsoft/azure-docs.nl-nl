@@ -8,22 +8,22 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.author: allensu
-ms.openlocfilehash: 35e32627eaf26eb6f73ca382f119eab61ebd8711
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5196b03ccd513e4afd93b8b8fcf18f7c2580024a
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417827"
+ms.locfileid: "100519215"
 ---
 # <a name="retrieve-load-balancer-metadata-using-the-azure-instance-metadata-service-imds"></a>Load balancer meta gegevens ophalen met behulp van de Azure Instance Metadata Service (IMDS)
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Gebruik de [nieuwste API-versie](/virtual-machines/windows/instance-metadata-service?tabs=windows#supported-api-versions) voor uw aanvraag.
+* Gebruik de [nieuwste API-versie](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#supported-api-versions) voor uw aanvraag.
 
 ## <a name="sample-request-and-response"></a>Voorbeeld aanvraag en-antwoord
 > [!IMPORTANT]
-> In dit voor beeld worden proxy's omzeild. U **moet** proxy's overs Laan bij het uitvoeren van een query op IMDS. Zie [proxy's](/virtual-machines/windows/instance-metadata-service?tabs=windows#proxies)voor meer informatie.
+> In dit voor beeld worden proxy's omzeild. U **moet** proxy's overs Laan bij het uitvoeren van een query op IMDS. Zie [proxy's](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#proxies)voor meer informatie.
 ### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
@@ -82,9 +82,9 @@ curl -H "Metadata:true" --noproxy "*" "http://169.254.169.254:80/metadata/loadba
 ## <a name="next-steps"></a>Volgende stappen
 [Veelvoorkomende fout codes en stappen voor probleem oplossing](troubleshoot-load-balancer-imds.md)
 
-Meer informatie over [Azure instance metadata service](/virtual-machines/windows/instance-metadata-service)
+Meer informatie over [Azure instance metadata service](../virtual-machines/windows/instance-metadata-service.md)
 
-[Alle meta gegevens voor een exemplaar ophalen](/virtual-machines/windows/instance-metadata-service?tabs=windows#access-azure-instance-metadata-service)
+[Alle meta gegevens voor een exemplaar ophalen](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#access-azure-instance-metadata-service)
 
 [Een standaard load balancer implementeren](quickstart-load-balancer-standard-public-portal.md)
 

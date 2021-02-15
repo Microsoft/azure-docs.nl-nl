@@ -9,16 +9,18 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: db7006c01f59e8a11872d99b3a16f24f65ef7588
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 27d9d5d30dc4c96516d23acba6a11b411827071e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413374"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378703"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Het kaartbesturingselement in Azure Maps gebruiken
 
 Met de Map Control java script-bibliotheek aan de client zijde kunt u kaarten en Inge sloten Azure Maps functionaliteit weer geven in uw web-of mobiele toepassing.
+
+In deze documentatie wordt gebruikgemaakt van de Azure Maps Web-SDK, maar de Azure Maps Services kunnen worden gebruikt met elk kaart besturings element. [Hier](open-source-projects.md#third-part-map-control-plugins) vindt u een aantal populaire open-source kaart besturings elementen waarvoor het Azure Maps-team een invoeg toepassing heeft gemaakt.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -198,9 +200,9 @@ U kunt een kaart insluiten in een webpagina met behulp van de Map Control java s
 
    ![Kaart afbeelding die het gegenereerde resultaat weergeeft](./media/how-to-use-map-control/map-of-seattle.png)
 
-## <a name="localizing-the-map"></a>De kaart lokaliseren
+## <a name="localizing-the-map"></a>Lokaliseren van de kaart
 
-Azure Maps biedt twee verschillende manieren om de taal-en regionale weer gave voor de gerenderde kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de globale `atlas` naam ruimte, wat resulteert in alle instanties van de kaart besturing in uw app die standaard worden ingesteld op deze instellingen. Hiermee stelt u de taal in op Frans ("fr-FR") en de regionale weer gave op ' auto ':
+Azure Maps biedt twee verschillende manieren om de taal-en regionale weer gave voor de gerenderde kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de globale `atlas` naam ruimte, wat resulteert in alle instanties van de kaart besturing in uw app die standaard worden ingesteld op deze instellingen. Met de volgende code stelt u de taal in op Frans ('fr-FR') en de regionale weergave op 'Auto':
 
 ```javascript
 atlas.setLanguage('fr-FR');

@@ -2,19 +2,16 @@
 title: Ondersteunde bestands indelingen op basis van de Kopieer activiteit in Azure Data Factory
 description: In dit onderwerp worden de bestands indelingen en compressie codes beschreven die worden ondersteund door de Kopieer activiteit in Azure Data Factory.
 author: linda33wj
-manager: shwang
-ms.reviewer: craigg
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.author: jingwang
-ms.openlocfilehash: c044208699bf5bebb6383cfef00bf53b744369d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb773d01124b99b4837f393b610e00ecbfa510fb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86522433"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364610"
 ---
 # <a name="supported-file-formats-and-compression-codecs-by-copy-activity-in-azure-data-factory"></a>Ondersteunde bestands indelingen en compressie-codecs op basis van de Kopieer activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -37,5 +34,5 @@ Daarnaast kunt u ook bestanden met een bepaalde indeling parseren of genereren. 
 
 Zie de andere artikelen over Kopieer activiteiten:
 
-- [Overzicht van kopieeractiviteiten](copy-activity-overview.md)
+- [Overzicht van de Kopieer activiteit](copy-activity-overview.md)
 - [Prestaties van kopieeractiviteit](copy-activity-performance.md)

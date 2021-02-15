@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 02/04/2021
 ms.author: nicolela
-ms.openlocfilehash: dbe4191b64773b71bc1ae04842d824fbfead8e55
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 8d5356f7fd2661d9743d1058a147a0b20f62850e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99628151"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373705"
 ---
 # <a name="set-up-a-lab-for-arcmaparcgis-desktop"></a>Een Lab instellen voor ArcMap\ArcGIS Desktop
 
@@ -55,7 +55,7 @@ De stappen in deze sectie laten zien hoe u de sjabloon-VM kunt instellen:
 1.  Start de sjabloon-VM en maak verbinding met de computer met behulp van RDP.
 
 2.  Down load en installeer de ArcGIS-bureaublad onderdelen met behulp van instructies van door ESRI.  Deze stappen zijn onder andere het toewijzen van licentie Manager voor gelijktijdig gebruik van licenties: 
-    - [Inleiding tot het installeren en configureren van ArcGIS Desktop](https://desktop.arcgis.com/arcmap/latest/get-started/installation-guide/introduction.htm)
+    - [Inleiding tot het installeren en configureren van ArcGIS Desktop](https://desktop.arcgis.com/en/arcmap/latest/get-started/installation-guide/introduction.htm)
 
 3.  Externe back-upopslag voor studenten instellen.  Studenten kunnen bestanden rechtstreeks opslaan op hun toegewezen VM, omdat alle wijzigingen die ze aanbrengen, worden opgeslagen in verschillende sessies.  We raden u echter aan om een aantal redenen om een back-up van hun werk te maken naar opslag die extern van de VM is:
     - Studenten in staat stellen om toegang te krijgen tot hun werk nadat de klas en het lab zijn beëindigd.  

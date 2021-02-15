@@ -1,25 +1,19 @@
 ---
 title: Voer een SSIS-pakket uit met de activiteit voor het uitvoeren van SSIS-pakketten
 description: In dit artikel wordt beschreven hoe u een SQL Server Integration Services (SSIS)-pakket uitvoert in een Azure Data Factory-pijp lijn met behulp van de activiteit voor het uitvoeren van SSIS-pakketten.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
-ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
 ms.author: sawinark
 author: swinarko
-ms.reviewer: douglasl
-manager: mflasko
 ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.date: 07/20/2020
-ms.openlocfilehash: de9cd7e77e558c4d1a0aa62af17bc612eee5ec56
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 40e7d5c11a2ebc62e59c3d5d20dfefe18a33f9a7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555829"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391606"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Een SSIS-pakket uitvoeren met de activiteit SSIS-pakket uitvoeren in Azure Data Factory
 
@@ -294,7 +288,7 @@ Selecteer **valideren** op de werk balk om de configuratie van de pijp lijn te v
 Als u de pijp lijn naar Data Factory wilt publiceren, selecteert u **Alles publiceren**. 
 
 ### <a name="run-the-pipeline"></a>De pijplijn uitvoeren
-In deze stap activeert u een pijplijn uitvoering. 
+In deze stap activeert u een pijplijnuitvoering. 
 
 1. Als u een pijplijn uitvoering wilt activeren, selecteert u **activeren** op de werk balk en selecteert u **nu activeren**. 
 

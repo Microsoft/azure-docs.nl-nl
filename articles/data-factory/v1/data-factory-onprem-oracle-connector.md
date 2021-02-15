@@ -1,23 +1,18 @@
 ---
 title: Gegevens kopiëren van of naar Oracle met behulp van Data Factory
 description: Meer informatie over het kopiëren van gegevens naar of van een on-premises Oracle-data base met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 3c20aa95-a8a1-4aae-9180-a6a16d64a109
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 1aa8708701af37834ae3b6cdc42de9c691ccacec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02fc142a08176aa577250417c0e394218e832f34
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86084287"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387339"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Gegevens naar of van Oracle on-premises kopiëren met behulp van Azure Data Factory
 
@@ -70,7 +65,7 @@ Deze Oracle-connector ondersteunt twee versies van Stuur Programma's:
 
 - **Oracle-gegevens provider voor .net**: u kunt Oracle data provider gebruiken om gegevens van of naar Oracle te kopiëren. Dit onderdeel is opgenomen in [Oracle Data Access Components voor Windows](https://www.oracle.com/technetwork/topics/dotnet/downloads/). Installeer de relevante versie (32-bits of 64-bits) op de computer waarop de gateway is geïnstalleerd. [Oracle data provider .net 12,1](https://docs.oracle.com/database/121/ODPNT/InstallSystemRequirements.htm#ODPNT149) heeft toegang tot Oracle database 10g versie 2 en hoger.
 
-    Als u **xcopy-installatie**selecteert, voert u de stappen uit die worden beschreven in het readme.htm-bestand. U kunt het beste het installatie programma selecteren dat de gebruikers interface heeft (niet het installatie programma XCopy).
+    Als u **xcopy-installatie** selecteert, voert u de stappen uit die worden beschreven in het readme.htm-bestand. U kunt het beste het installatie programma selecteren dat de gebruikers interface heeft (niet het installatie programma XCopy).
 
     Nadat u de provider hebt geïnstalleerd, start u de Data Management Gateway host-service op uw computer opnieuw met behulp van het onderdeel Services of Data Management Gateway Configuration Manager.
 
@@ -82,7 +77,7 @@ U kunt een pijp lijn met een Kopieer activiteit maken. De pijp lijn verplaatst g
 
 De eenvoudigste manier om een pijp lijn te maken, is met behulp van de wizard kopiëren. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook een van de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, een **Azure Resource Manager sjabloon**, de **.net API**of de **rest API**. Raadpleeg de [zelf studie activiteit kopiëren](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook een van de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, een **Azure Resource Manager sjabloon**, de **.net API** of de **rest API**. Raadpleeg de [zelf studie activiteit kopiëren](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Voer de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst, ongeacht of u de hulpprogram ma's of Api's gebruikt.
 
@@ -101,10 +96,10 @@ De volgende tabel beschrijft de JSON-elementen die specifiek zijn voor de aan Or
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap **type** moet worden ingesteld op **OnPremisesOracle**. |Ja |
-| driverType | Opgeven welk stuur programma moet worden gebruikt voor het kopiëren van gegevens van of naar een Oracle-data base. Toegestane waarden zijn **micro soft** en **ODP** (standaard). Zie de [ondersteunde versie en de installatie](#supported-versions-and-installation) voor details van Stuur Programma's. | Nee |
-| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met het Oracle data base-exemplaar voor de **Connections Tring** -eigenschap. | Ja |
-| gatewayName | De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Oracle-server. |Ja |
+| type |De eigenschap **type** moet worden ingesteld op **OnPremisesOracle**. |Yes |
+| driverType | Opgeven welk stuur programma moet worden gebruikt voor het kopiëren van gegevens van of naar een Oracle-data base. Toegestane waarden zijn **micro soft** en **ODP** (standaard). Zie de [ondersteunde versie en de installatie](#supported-versions-and-installation) voor details van Stuur Programma's. | No |
+| connectionString | Geef de gegevens op die nodig zijn om verbinding te maken met het Oracle data base-exemplaar voor de **Connections Tring** -eigenschap. | Yes |
+| gatewayName | De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Oracle-server. |Yes |
 
 **Voor beeld: het micro soft-stuur programma gebruiken**
 
@@ -171,7 +166,7 @@ Als de bron van het type **OracleSource** in Kopieer activiteit is, zijn de volg
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| oracleReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |Een SQL-query teken reeks. Bijvoorbeeld ' Select \* from **myTable**'. <br/><br/>Als dit niet wordt opgegeven, wordt deze SQL-instructie uitgevoerd: ' Select \* from **myTable**' |Nee<br />(als **TableName** van **gegevensset** is opgegeven) |
+| oracleReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |Een SQL-query teken reeks. Bijvoorbeeld ' Select \* from **myTable**'. <br/><br/>Als dit niet wordt opgegeven, wordt deze SQL-instructie uitgevoerd: ' Select \* from **myTable**' |No<br />(als **TableName** van **gegevensset** is opgegeven) |
 
 ### <a name="oraclesink"></a>OracleSink
 
@@ -179,10 +174,10 @@ Als de bron van het type **OracleSource** in Kopieer activiteit is, zijn de volg
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| writeBatchTimeout |De wacht tijd voor het volt ooien van de batch INSERT-bewerking voordat er een time-out optreedt. |**tijdsbestek**<br/><br/> Voor beeld: 00:30:00 (30 minuten) |Nee |
-| writeBatchSize |Hiermee worden gegevens in de SQL-tabel ingevoegd wanneer de buffer grootte de waarde van **writeBatchSize**bereikt. |Geheel getal (aantal rijen) |Nee (standaard: 100) |
-| sqlWriterCleanupScript |Hiermee geeft u een query op voor het uitvoeren van de Kopieer activiteit, zodat de gegevens van een specifiek segment worden opgeruimd. |Een query-instructie. |Nee |
-| sliceIdentifierColumnName |Hiermee geeft u de kolom naam voor de Kopieer activiteit moet worden gevuld met een segment-id die automatisch is gegenereerd. De waarde voor **sliceIdentifierColumnName** wordt gebruikt voor het opschonen van gegevens van een specifiek segment wanneer het opnieuw wordt uitgevoerd. |De kolom naam van een kolom met het gegevens type **binary (32)**. |Nee |
+| writeBatchTimeout |De wacht tijd voor het volt ooien van de batch INSERT-bewerking voordat er een time-out optreedt. |**tijdsbestek**<br/><br/> Voor beeld: 00:30:00 (30 minuten) |No |
+| writeBatchSize |Hiermee worden gegevens in de SQL-tabel ingevoegd wanneer de buffer grootte de waarde van **writeBatchSize** bereikt. |Geheel getal (aantal rijen) |Nee (standaard: 100) |
+| sqlWriterCleanupScript |Hiermee geeft u een query op voor het uitvoeren van de Kopieer activiteit, zodat de gegevens van een specifiek segment worden opgeruimd. |Een query-instructie. |No |
+| sliceIdentifierColumnName |Hiermee geeft u de kolom naam voor de Kopieer activiteit moet worden gevuld met een segment-id die automatisch is gegenereerd. De waarde voor **sliceIdentifierColumnName** wordt gebruikt voor het opschonen van gegevens van een specifiek segment wanneer het opnieuw wordt uitgevoerd. |De kolom naam van een kolom met het gegevens type **binary (32)**. |No |
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>JSON-voor beelden voor het kopiëren van gegevens van en naar de Oracle-data base
 
@@ -234,7 +229,7 @@ In het voor beeld worden gegevens uit een tabel in een on-premises Oracle-Data B
 
 In het voor beeld wordt ervan uitgegaan dat u een tabel hebt gemaakt met de naam **myTable** in Oracle. Het bevat een kolom met de naam **timestampcolumn** voor time series-gegevens.
 
-Als **extern**instellen: **True** informeert de Data Factory-service dat de gegevensset extern is voor de Data Factory en dat de gegevensset niet wordt geproduceerd door een activiteit in de Data Factory.
+Als **extern** instellen: **True** informeert de Data Factory-service dat de gegevensset extern is voor de Data Factory en dat de gegevensset niet wordt geproduceerd door een activiteit in de Data Factory.
 
 ```json
 {
@@ -572,7 +567,7 @@ Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: 
     1. Open het computer configuratie bestand voor .NET 2,0 vanuit de map <systeem schijf \>:\Windows\Microsoft.NET\Framework64\v2.0.50727\CONFIG\machine.config.
     2. Zoek naar de **Oracle-gegevens provider voor .net**. U moet een vermelding kunnen vinden, zoals wordt weer gegeven in het volgende voor beeld onder **System. data**  >  **DbProviderFactories**:`<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />`
 * Kopieer deze vermelding naar het machine.config-bestand in de volgende .NET 4,0-map: <systeem schijf \>:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config. Wijzig vervolgens de versie in 4. xxx. x.x.
-* Installeer <ODP.NET geïnstalleerd pad \>\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll in de Global assembly cache (GAC) door **gacutil/i**uit te voeren.
+* Installeer <ODP.NET geïnstalleerd pad \>\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll in de Global assembly cache (GAC) door **gacutil/i** uit te voeren.
 
 ### <a name="problem-2-datetime-formatting"></a>Probleem 2: notatie van datum/tijd
 
@@ -619,10 +614,10 @@ Wanneer u gegevens van Oracle verplaatst, worden de volgende toewijzingen gebrui
 | NVARCHAR2 |Tekenreeks |
 | UITGANG |Byte [] |
 | ROWID |Tekenreeks |
-| Neem |DateTime |
+| TIMESTAMP |DateTime |
 | TIJDS TEMPEL MET LOKALE TIJD ZONE |DateTime |
 | TIJDS TEMPEL MET TIJD ZONE |DateTime |
-| NIET-ONDERTEKEND GEHEEL GETAL |Getal |
+| NIET-ONDERTEKEND GEHEEL GETAL |Aantal |
 | VARCHAR2 |Tekenreeks |
 | XML |Tekenreeks |
 

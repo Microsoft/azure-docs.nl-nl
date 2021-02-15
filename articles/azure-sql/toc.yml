@@ -143,8 +143,10 @@
       items:
         - name: Verhogingen van quotum aanvragen
           href: database/quota-increase-request.md
-        - name: Automatisering van taken
+        - name: Taak automatisering met elastische taken
           href: database/job-automation-overview.md
+        - name: Taak automatisering met SQL-Agent
+          href: database/job-automation-managed-instances.md
         - name: Bedrijfscontinuïteit
           items:
             - name: Failovergroep configureren

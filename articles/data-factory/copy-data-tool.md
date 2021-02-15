@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren-hulp programma Azure Data Factory
 description: Bevat informatie over het hulp programma Gegevens kopiëren in Azure Data Factory gebruikers interface
-services: data-factory
-documentationcenter: ''
 author: dearandyxu
-manager: anandsub
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: yexu
-ms.openlocfilehash: b0ba14a05ac42e9fccc1a146ad5943716652104d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18d61c7f51547a524e64fc44c98e70e0f5bc2752
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89434194"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372991"
 ---
 # <a name="copy-data-tool-in-azure-data-factory"></a>Hulpprogramma voor gegevens kopiëren in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -69,7 +64,7 @@ Het schema van de gegevens bron is in veel gevallen niet hetzelfde als het schem
 Het hulp programma Gegevens kopiëren bewaakt en leert uw gedrag wanneer u kolommen tussen de bron-en doel opslag toewijst. Nadat u een of enkele kolommen uit het brongegevens archief hebt gekozen en deze hebt toegewezen aan het doel schema, begint het Gegevens kopiëren-hulp programma met het analyseren van het patroon voor kolom paren die u aan beide zijden hebt gekozen. Vervolgens wordt hetzelfde patroon toegepast op de rest van de kolommen. Daarom ziet u dat alle kolommen zijn toegewezen aan de bestemming op een manier die u net na verschillende klikken hebt.  Als u niet tevreden bent met de keuze van kolom toewijzing die wordt geboden door Gegevens kopiëren tool, kunt u deze negeren en door gaan met het hand matig toewijzen van de kolommen. Ondertussen leert het Gegevens kopiëren-hulp programma het patroon voortdurend te zien en bij te werken, en uiteindelijk bereikt u het juiste patroon voor de kolom toewijzing die u wilt bereiken. 
 
 > [!NOTE]
-> Bij het kopiëren van gegevens uit SQL Server of Azure SQL Database naar Azure Synapse Analytics (voorheen SQL Data Warehouse), als de tabel niet bestaat in het doel archief, ondersteunt Gegevens kopiëren hulp programma automatisch het maken van de tabel met behulp van het bron schema. 
+> Bij het kopiëren van gegevens uit SQL Server of Azure SQL Database naar Azure Synapse Analytics als de tabel niet bestaat in het doel archief, Gegevens kopiëren hulp programma het maken van de tabel automatisch ondersteunt met behulp van het bron schema. 
 
 ## <a name="filter-data"></a>Gegevens filteren
 U kunt bron gegevens filteren om alleen de gegevens te selecteren die moeten worden gekopieerd naar de Sink-gegevens opslag. Filteren vermindert het volume van de gegevens die moeten worden gekopieerd naar de Sink-gegevens opslag en verhoogt daarom de door Voer van de Kopieer bewerking. Gegevens kopiëren tool biedt een flexibele manier om gegevens in een relationele data base te filteren met behulp van de SQL-query taal of bestanden in een Azure Blob-map. 

@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen met behulp van Kopieer activiteit
 description: 'Meer informatie over het verplaatsen van gegevens in Data Factory pijp lijnen: gegevens migratie tussen Cloud archieven en tussen een on-premises Store en een Cloud archief. Kopieer activiteit gebruiken.'
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 67543a20-b7d5-4d19-8b5e-af4c1fd7bc75
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/05/2017
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: a48a6de406f14c5339a4e6d92cd09a12357b73f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a3fe99896ff244d2e35737919e6797141095acb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84195970"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364015"
 ---
 # <a name="move-data-by-using-copy-activity"></a>Gegevens verplaatsen met behulp van Kopieer activiteit
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -96,15 +91,15 @@ Wanneer zowel de bron-als de Sink-gegevens opslag zich in de cloud bevinden, geb
 |:--- |:--- |:--- |
 | Verenigde Staten | VS - oost | VS - oost |
 | &nbsp; | VS - oost 2 | VS - oost 2 |
-| &nbsp; | Central US | Central US |
+| &nbsp; | VS - centraal | VS - centraal |
 | &nbsp; | VS - noord-centraal | VS - noord-centraal |
 | &nbsp; | VS - zuid-centraal | VS - zuid-centraal |
 | &nbsp; | VS - west-centraal | VS - west-centraal |
 | &nbsp; | VS - west | VS - west |
-| &nbsp; | VS - west 2 | West US 2 |
+| &nbsp; | VS - west 2 | VS - west 2 |
 | Canada | Canada - oost | Canada - midden |
 | &nbsp; | Canada - midden | Canada - midden |
-| Brazilië | Brazil South | Brazil South |
+| Brazilië | Brazilië - zuid | Brazilië - zuid |
 | Europa | Europa - noord | Europa - noord |
 | &nbsp; | Europa -west | Europa -west |
 | Verenigd Koninkrijk | Verenigd Koninkrijk West | Verenigd Koninkrijk Zuid |
@@ -112,12 +107,12 @@ Wanneer zowel de bron-als de Sink-gegevens opslag zich in de cloud bevinden, geb
 | Azië en Stille Oceaan | Azië - zuidoost | Azië - zuidoost |
 | &nbsp; | Azië - oost | Azië - zuidoost |
 | Australië | Australië - oost | Australië - oost |
-| &nbsp; | Australië - zuidoost | Australia Southeast |
+| &nbsp; | Australië - zuidoost | Australië - zuidoost |
 | India | India - centraal | India - centraal |
 | &nbsp; | India - west | India - centraal |
 | &nbsp; | India - zuid | India - centraal |
-| Japan | Japan East | Japan - oost |
-| &nbsp; | Japan - west | Japan East |
+| Japan | Japan - oost | Japan - oost |
+| &nbsp; | Japan - west | Japan - oost |
 | Korea | Korea - centraal | Korea - centraal |
 | &nbsp; | Korea - zuid | Korea - centraal |
 
@@ -186,7 +181,7 @@ Hier volgt een voor beeld van een JSON-definitie:
   }
 }
 ```
-De planning die in de uitvoer gegevensset is gedefinieerd, bepaalt wanneer de activiteit wordt uitgevoerd (bijvoorbeeld **dagelijks**, frequentie als **dag**en interval als **1**). Met de activiteit worden gegevens gekopieerd van een invoer-gegevensset (**bron**) naar een uitvoer gegevensset (**sink**).
+De planning die in de uitvoer gegevensset is gedefinieerd, bepaalt wanneer de activiteit wordt uitgevoerd (bijvoorbeeld **dagelijks**, frequentie als **dag** en interval als **1**). Met de activiteit worden gegevens gekopieerd van een invoer-gegevensset (**bron**) naar een uitvoer gegevensset (**sink**).
 
 U kunt meer dan één invoer gegevensset opgeven om de activiteit te kopiëren. Ze worden gebruikt om de afhankelijkheden te controleren voordat de activiteit wordt uitgevoerd. Alleen de gegevens van de eerste gegevensset worden echter gekopieerd naar de doel-DataSet. Zie [planning en uitvoering](data-factory-scheduling-and-execution.md)voor meer informatie.  
 

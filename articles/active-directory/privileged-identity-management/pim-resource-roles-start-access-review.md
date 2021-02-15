@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: pim
-ms.date: 12/08/2020
+ms.date: 02/11/2021
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a618da7c9a66b8f687c1b75914530080ed56bea
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b8f05ca02068c82a3839b22b698e49a7be818a56
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905822"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370543"
 ---
 # <a name="create-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Een toegangs beoordeling van Azure-resource rollen maken in Privileged Identity Management
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u een of meer toegangs beoordelingen maakt v
 
 ## <a name="prerequisites"></a>Vereisten
 
-[Beheerder voor bevoorrechte rollen](../roles/permissions-reference.md#privileged-role-administrator)
+ Als u toegangs beoordelingen wilt maken, moet u worden toegewezen aan de Azure-rol [eigenaar](../../role-based-access-control/built-in-roles.md#owner) of [beheerder voor gebruikers toegang](../../role-based-access-control/built-in-roles.md#user-access-administrator) voor de resource.
 
 ## <a name="open-access-reviews"></a>Toegangs beoordelingen openen
 

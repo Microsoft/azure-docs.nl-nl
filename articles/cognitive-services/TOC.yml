@@ -51,7 +51,7 @@
     - name: Tags en releaseopmerkingen bij containerinstallatiekopieën
       href: ./containers/container-image-tags.md
     - name: Veelgestelde vragen over containers
-      href: ./containers/container-faq.md
+      href: ./containers/container-faq.yml
     - name: Containerrecepten
       items:
         - name: Container opnieuw gebruiken

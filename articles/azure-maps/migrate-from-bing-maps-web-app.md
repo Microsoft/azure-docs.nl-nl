@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: db53e4407674abc1e6c81090dc4a50afa784940d
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2b072107275fba1ff83ab3ddac63ed8bf7766356
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684822"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389107"
 ---
 # <a name="tutorial-migrate-a-web-app-from-bing-maps"></a>Zelfstudie: Een web-app migreren vanuit Bing Kaarten
 
@@ -33,9 +33,9 @@ Web-apps die Bing Kaarten gebruiken, maken vaak gebruik van de Bing Kaarten v8 J
 
 Als u een bestaande webtoepassing wilt migreren, controleert u of deze een opensource-bibliotheek voor kaartbesturingselementen gebruikt, zoals Cesium, Leaflet of OpenLayers. Als dat het geval is en u liever deze bibliotheek wilt blijven gebruiken, kunt u deze verbinden met de Azure Maps-tegelservices ([wegtegels](/rest/api/maps/render/getmaptile) \| [satelliettegels](/rest/api/maps/render/getmapimagerytile)). De onderstaande koppelingen bieden meer informatie over het gebruik van Azure Maps in een aantal veelgebruikte opensource-bibliotheken voor kaartbesturingselementen.
 
-* Cesium: een 3D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [Documentatie](https://cesiumjs.org/)
-* Leaflet: een lichtgewicht 2D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [Documentatie](https://leafletjs.com/)
-* OpenLayers: een 2D-kaartbesturingselement voor het web dat projecties ondersteunt. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [Documentatie](https://openlayers.org/)
+* [Cesium](https://cesiumjs.org/) : een 3D-kaart besturings element voor het web. [Code voorbeelden](https://azuremapscodesamples.azurewebsites.net/?search=Cesium) \| [Invoeg toepassing opslag plaats]()
+* [Bijsluiter](https://leafletjs.com/) : Lightweight 2D map Control voor het web. [Code voorbeelden](https://azuremapscodesamples.azurewebsites.net/?search=leaflet) \| [Invoeg toepassing opslag plaats]()
+* [Openlaags](https://openlayers.org/) : een 2D-kaart besturings element voor het web dat projecties ondersteunt. [Code voorbeelden](https://azuremapscodesamples.azurewebsites.net/?search=openlayers) \| [Invoeg toepassing opslag plaats]()
 
 Bij het ontwikkelen met behulp van een JavaScript-framework kan een van de volgende opensource-projecten nuttig zijn:
 
@@ -64,7 +64,7 @@ De volgende tabel bevat een overzicht van de belangrijkste API-functies in de Bi
 | Tegellagen              | ✓                                                                                      |
 | KML-laag                | ✓                                                                                      |
 | Omtreklaag            | [Voorbeelden](https://azuremapscodesamples.azurewebsites.net/?search=contour)              |
-| Gegevens-binninglaag       | [Voorbeelden](https://azuremapscodesamples.azurewebsites.net/?search=data%20binning)       |
+| Gegevens-binninglaag       | Opgenomen in de module open-source Azure Maps [gridded-gegevens bron](https://github.com/Azure-Samples/azure-maps-gridded-data-source)       |
 | Laag voor tegels met animatie      | Opgenomen in de opensource-module Azure Maps [Animation](https://github.com/Azure-Samples/azure-maps-animations) |
 | Tekenprogramma's            | ✓                                                                                      |
 | Service voor geocodering         | ✓                                                                                      |
@@ -72,10 +72,10 @@ De volgende tabel bevat een overzicht van de belangrijkste API-functies in de Bi
 | Service voor afstandsmatrix  | ✓                                                                                      |
 | Service voor ruimtelijke gegevens     | N.v.t.                                                                                    |
 | Satelliet-/luchtfoto's | ✓                                                                                      |
-| Overzichtsbeelden         | Gepland                                                                                |
-| Straatbeelden       | Gepland                                                                                |
+| Overzichtsbeelden         | N.v.t.                                                                                |
+| Straatbeelden       | N.v.t.                                                                                |
 | GeoJSON-ondersteuning          | ✓                                                                                      |
-| GeoXML-ondersteuning           | ✓                                                                                      |
+| GeoXML-ondersteuning           | ✓ [Spatial IO-module](how-to-use-spatial-io-module.md)                                                                                     |
 | Well-Known Text-ondersteuning  | ✓                                                                                      |
 | Aangepaste kaartstijlen        | Gedeeltelijk                                                                                |
 

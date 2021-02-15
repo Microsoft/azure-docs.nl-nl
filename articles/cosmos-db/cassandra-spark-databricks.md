@@ -8,17 +8,17 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: 5aaf31d8c629e0770b913485de175c38f708390c
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 0a83dd143ae626108fdf8d2645b8cc368a3f3e05
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359622"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516563"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-data-from-azure-databricks"></a>Toegang tot Azure Cosmos DB Cassandra-API gegevens vanuit Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
-In dit artikel wordt beschreven hoe u Azure Cosmos DB Cassandra-API van Spark kunt workwith op [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks).
+In dit artikel wordt beschreven hoe u met Azure Cosmos DB Cassandra-API kunt werken vanuit Spark op [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -62,7 +62,7 @@ Spark-Program ma's die moeten worden uitgevoerd als geautomatiseerde processen o
 
 Hieronder vindt u koppelingen waarmee u aan de slag kunt gaan met het bouwen van Spark scala-Program ma's om te communiceren met Azure Cosmos DB Cassandra-API.
 * [Verbinding maken met Azure Cosmos DB Cassandra-API vanuit een Spark scala-programma](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-api-spark-connector-sample/blob/main/src/main/scala/com/microsoft/azure/cosmosdb/cassandra/SampleCosmosDBApp.scala)
-* [Een Spark scala-programma uitvoeren als een geautomatiseerde taak op Azure Databricks](https://docs.azuredatabricks.net/user-guide/jobs.html)
+* [Een Spark scala-programma uitvoeren als een geautomatiseerde taak op Azure Databricks](/azure/databricks/jobs)
 * [Volledige lijst met code voorbeelden voor het werken met Cassandra-API](cassandra-spark-generic.md#next-steps)
 
 ## <a name="next-steps"></a>Volgende stappen

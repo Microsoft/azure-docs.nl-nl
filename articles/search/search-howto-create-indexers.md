@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/28/2021
-ms.openlocfilehash: 5fc47599d09e5be60311dbda15868d87de4d91d2
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 5381c12253f3f301099d469639cc75e390ebceff
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509381"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100360955"
 ---
 # <a name="creating-indexers-in-azure-cognitive-search"></a>Indexeer functies maken in azure Cognitive Search
 
@@ -142,6 +142,20 @@ Geplande verwerking komt doorgaans overeen met een behoefte aan incrementele ind
 + [Azure Data Lake Storage Gen2](search-howto-index-azure-data-lake-storage.md)
 + [Azure Table Storage](search-howto-indexing-azure-tables.md)
 + [Azure Cosmos DB](search-howto-index-cosmosdb.md)
+
+## <a name="change-detection-and-indexer-state"></a>Detectie van wijzigingen en de status van de Indexeer functie
+
+Indexeer functies kunnen wijzigingen in de onderliggende gegevens detecteren en alleen nieuwe of bijgewerkte documenten verwerken bij de uitvoering van elke Indexeer functie. Als de Indexeer functie bijvoorbeeld aangeeft dat een uitvoering is geslaagd bij het `0/0` verwerken van documenten, betekent dit dat de Indexeer functie geen nieuwe of gewijzigde rijen of blobs in de onderliggende gegevens bron heeft gevonden.
+
+Hoe een Indexeer functie de detectie van wijzigingen ondersteunt, verschilt per gegevens Bron:
+
++ Azure Blob Storage, Azure Table Storage en Azure Data Lake Storage Gen2 stempel elke BLOB of rij bijwerken met een datum en tijd. De verschillende Indexeer functies gebruiken deze informatie om te bepalen welke documenten in de index moeten worden bijgewerkt. De ingebouwde wijzigings detectie houdt in dat een Indexeer functie nieuwe en bijgewerkte documenten kan herkennen, zonder dat er aanvullende configuratie voor uw onderdeel nodig is.
+
++ Azure SQL en Cosmos DB bieden wijzigings detectie functies op hun platformen. U kunt het beleid voor wijzigings detectie opgeven in de definitie van de gegevens bron.
+
+Voor grote indexerings belastingen houdt een Indexeer functie ook het laatste document bij dat is verwerkt via een intern ' hoog water merk '. De markering wordt nooit weer gegeven in de API, maar intern houdt de Indexeer functie bij hoe deze is gestopt. Wanneer het indexeren wordt hervat door middel van een geplande uitvoering of een aanroep op aanvraag, verwijst de Indexeer functie naar het hoge water merk zodat het kan worden opgehaald waar het is gebleven.
+
+Als u het hoge water merk moet wissen om de index volledig opnieuw te indexeren, kunt u de [Reset Indexeer functie](https://docs.microsoft.com/rest/api/searchservice/reset-indexer)gebruiken. Gebruik [vaardig heden opnieuw instellen](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-skills) of [documenten opnieuw instellen](https://docs.microsoft.com/rest/api/searchservice/preview-api/reset-documents)voor meer selectief opnieuw indexeren. Via de reset-Api's kunt u de interne status wissen en ook de cache leegmaken als u [incrementele verrijking](search-howto-incremental-index.md)hebt ingeschakeld. Zie [Indexeer functies, vaardig heden en documenten opnieuw instellen of herstellen](search-howto-run-reset-indexers.md)voor meer achtergrond en vergelijking van elke reset optie.
 
 ## <a name="know-your-data"></a>Uw gegevens weten
 

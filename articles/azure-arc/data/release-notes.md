@@ -7,18 +7,45 @@ ms.reviewer: mikeray
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-ms.date: 12/09/2020
+ms.date: 02/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 2c9b239269aa00255aa08d6c233cd7978b253d94
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: f303ddb4d32da4c4cb6609f3ceec34e5c83529a8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653568"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391453"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Release opmerkingen-Azure Arc ingeschakelde Data Services (preview-versie)
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
+
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="new-capabilities-and-features"></a>Nieuwe mogelijkheden en functies
+
+Azure data CLI ( `azdata` )-versie nummer: 20.3.0. Downloaden op [https://aka.ms/azdata](https://aka.ms/azdata) . U kunt installeren `azdata` vanuit [Azure data cli ( `azdata` ) installeren](/sql/azdata/install/deploy-install-azdata).
+
+
+Aanvullende updates zijn onder andere:
+- Gelokaliseerde portal beschikbaar voor 17 nieuwe talen
+- Kleine wijzigingen in uitvoeren-systeem eigen. YAML-bestanden
+- Nieuwe versies van Grafana en Kibana
+- Problemen met python-omgevingen bij het gebruik van azdata in notitie blokken in Azure Data Studio opgelost
+- De uitbrei ding pg_audit is nu beschikbaar voor PostgreSQL grootschalige
+- Er is geen back-upid meer vereist bij het volledig herstellen van een PostgreSQL grootschalige-data base
+- De status (status) wordt gerapporteerd voor elk van de PostgreSQL-instanties die een server groep vormen
+
+   In eerdere releases is de status geaggregeerd op het niveau van de Server groep en niet op het niveau van het PostgreSQL-knoop punt.
+
+- PostgreSQL-implementaties voldoen nu aan de volume grootte parameters die in Create-opdrachten zijn aangegeven
+- De engine-versie parameters worden nu nageleefd bij het bewerken van een server groep
+- De naam Conventie van het peul voor Azure Arc enabled PostgreSQL grootschalige is gewijzigd
+
+    Het is nu in de vorm: `ServergroupName{c, w}-n` . Bijvoorbeeld een server groep met drie knoop punten, een coördinator knooppunt en twee worker-knoop punten wordt weer gegeven als:
+   - `Postgres01c-0` (coördinator knooppunt)
+   - `Postgres01w-0` (worker-knoop punt)
+   - `Postgres01w-1` (worker-knoop punt)
 
 ## <a name="december-2020"></a>December 2020
 

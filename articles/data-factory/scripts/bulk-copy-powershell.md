@@ -1,21 +1,18 @@
 ---
 title: Gegevens bulksgewijs kopiëren met Power shell
 description: Dit Power shell-script laat zien hoe u Azure Data Factory gebruikt voor het kopiëren van gegevens van een brongegevens archief naar een doel gegevens archief.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: article
 ms.custom: seo-lt-2019
 ms.date: 10/31/2017
-ms.openlocfilehash: 3b06cc68a4de50ae95d8946f32b241d38b4781ea
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 16cb08d49efcd46e2746c5031793af8b747a2b31
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460954"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373569"
 ---
 # <a name="powershell-script---copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Power shell-script: meerdere tabellen bulksgewijs kopiëren met behulp van Azure Data Factory
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: b1f38c5822c62c6b6af18a2cb179ed212cfaf313
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 1af1c990c284c91d8bb8344834991c69ed6f00c5
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583279"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103631"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA met behulp van de verificatiecodestroom
 
@@ -39,7 +39,7 @@ Deze quickstart maakt gebruik van MSAL.js 2.0 met de verificatiecodestroom. Raad
 >
 > ### <a name="option-1-express-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1 (Express): registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar de <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">Azure Portal-app-registraties <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
+> 1. Ga naar de <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">Azure-portal - App-registraties</a>.
 > 1. Voer een naam in voor de toepassing.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**.
@@ -49,7 +49,7 @@ Deze quickstart maakt gebruik van MSAL.js 2.0 met de verificatiecodestroom. Raad
 >
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 >
-> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 > 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
 > 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

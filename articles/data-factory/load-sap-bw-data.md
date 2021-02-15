@@ -1,22 +1,18 @@
 ---
 title: Gegevens laden uit SAP Business Warehouse
 description: Azure Data Factory gebruiken om gegevens te kopiëren van SAP Business Warehouse (BW)
-services: data-factory
 author: linda33wj
 ms.author: jingwang
-manager: shwang
-ms.reviewer: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/22/2019
-ms.openlocfilehash: bad9a706c5289966334af26eacbfa41c418b7ab5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3dabb6d5df0a74cc7ae2fb8b381ad9e0dfe04e63
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360800"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370696"
 ---
 # <a name="copy-data-from-sap-business-warehouse-by-using-azure-data-factory"></a>Gegevens van SAP Business Warehouse kopiëren met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -51,7 +47,7 @@ Ga in Azure Portal naar uw data factory. Selecteer **auteur & monitor** om de Da
 
 1. Selecteer op de pagina **aan de slag** de optie **Gegevens kopiëren** om het gegevens kopiëren-hulp programma te openen.
 
-2. Geef op de pagina **Eigenschappen** een **taak naam**op en selecteer **volgende**.
+2. Geef op de pagina **Eigenschappen** een **taak naam** op en selecteer **volgende**.
 
 3. Selecteer op de pagina **brongegevens archief** de optie **+ nieuwe verbinding maken**. Selecteer **SAP BW hub openen** in de galerie met connectors en selecteer vervolgens **door gaan**. Als u de connectors wilt filteren, kunt u **SAP** in het zoekvak typen.
 
@@ -61,11 +57,11 @@ Ga in Azure Portal naar uw data factory. Selecteer **auteur & monitor** om de Da
 
    1. Selecteer een bestaande zelf-hostende IR in de lijst **verbinding maken via Integration runtime** . Of kies ervoor om er een te maken als u er nog geen hebt.
 
-      Als u een nieuwe zelf-hostende IR wilt maken, selecteert u **+ Nieuw**en selecteert u **zelf gehost**. Voer een **naam**in en selecteer **volgende**. Selecteer **snelle installatie** om te installeren op de huidige computer of volg de **hand matige installatie** stappen die worden meegeleverd.
+      Als u een nieuwe zelf-hostende IR wilt maken, selecteert u **+ Nieuw** en selecteert u **zelf gehost**. Voer een **naam** in en selecteer **volgende**. Selecteer **snelle installatie** om te installeren op de huidige computer of volg de **hand matige installatie** stappen die worden meegeleverd.
 
       Zoals vermeld in [vereisten](#prerequisites), zorgt u ervoor dat SAP-Connector voor Microsoft .net 3,0 is geïnstalleerd op dezelfde computer waarop de zelf-hostende IR wordt uitgevoerd.
 
-   2. Vul de SAP BW **Server naam**, het **systeem nummer**, de **client-id, de** **taal** (indien van een andere dan **en**), **gebruikers naam**en **wacht woord**in.
+   2. Vul de SAP BW **Server naam**, het **systeem nummer**, de **client-id, de** **taal** (indien van een andere dan **en**), **gebruikers naam** en **wacht woord** in.
 
    3. Selecteer **verbinding testen** om de instellingen te valideren en selecteer vervolgens **volt ooien**.
 
@@ -98,7 +94,7 @@ Ga in Azure Portal naar uw data factory. Selecteer **auteur & monitor** om de Da
 
     ![Pagina Sink-indeling opgeven](media/load-sap-bw-data/specify-sink-format.png)
 
-11. Vouw op de pagina **instellingen** de optie **prestatie-instellingen**uit. Voer een waarde in voor de **mate van afparallelie van kopieën** , zoals 5, die parallel moeten worden geladen in SAP BW. Selecteer vervolgens **Volgende**.
+11. Vouw op de pagina **instellingen** de optie **prestatie-instellingen** uit. Voer een waarde in voor de **mate van afparallelie van kopieën** , zoals 5, die parallel moeten worden geladen in SAP BW. Selecteer vervolgens **Volgende**.
 
     ![Kopieer instellingen configureren](media/load-sap-bw-data/configure-copy-settings.png)
 
@@ -120,7 +116,7 @@ Ga in Azure Portal naar uw data factory. Selecteer **auteur & monitor** om de Da
 
     ![Details van activiteiten bewaking](media/load-sap-bw-data/activity-monitoring-details.png)
 
-17. Als u de **maximum aanvraag-id**wilt weer geven, gaat u terug naar de weer gave activiteit-bewaking en selecteert u **uitvoer** onder **acties**.
+17. Als u de **maximum aanvraag-id** wilt weer geven, gaat u terug naar de weer gave activiteit-bewaking en selecteert u **uitvoer** onder **acties**.
 
     ![Uitvoer scherm voor activiteit](media/load-sap-bw-data/activity-output.png)
 
@@ -149,7 +145,7 @@ Selecteer op de pagina data factory **aan de slag** de optie **pijp lijn maken v
 
    ![Incrementele kopie van SAP BW sjabloon](media/load-sap-bw-data/incremental-copy-from-sap-bw-template.png)
 
-3. Met deze sjabloon wordt een pijp lijn gegenereerd met de volgende drie activiteiten en worden ze gekoppeld aan het slagen: *lookup*, *gegevens kopiëren*en *Web*.
+3. Met deze sjabloon wordt een pijp lijn gegenereerd met de volgende drie activiteiten en worden ze gekoppeld aan het slagen: *lookup*, *gegevens kopiëren* en *Web*.
 
    Ga naar het tabblad pijplijn **parameters** . U ziet alle configuraties die u moet opgeven.
 
@@ -175,7 +171,7 @@ Selecteer op de pagina data factory **aan de slag** de optie **pijp lijn maken v
 
       ![Configuratie van logische app](media/load-sap-bw-data/logic-app-config.png)
 
-      1. Ga naar Azure Portal. Selecteer een nieuwe **Logic apps** service. Selecteer **+ lege logische app** om naar **Logic apps Designer**te gaan.
+      1. Ga naar Azure Portal. Selecteer een nieuwe **Logic apps** service. Selecteer **+ lege logische app** om naar **Logic apps Designer** te gaan.
 
       2. Een trigger maken van **Wanneer een HTTP-aanvraag wordt ontvangen**. Geef de HTTP-aanvraag tekst als volgt op:
 
@@ -190,7 +186,7 @@ Selecteer op de pagina data factory **aan de slag** de optie **pijp lijn maken v
          }
          ```
 
-      3. Voeg een actie **Blob maken** toe. Voor **mappad** en **BLOB-naam**gebruikt u dezelfde waarden die u eerder hebt geconfigureerd in *HighWatermarkBlobContainer + HighWatermarkBlobDirectory* en *HighWatermarkBlobName*.
+      3. Voeg een actie **Blob maken** toe. Voor **mappad** en **BLOB-naam** gebruikt u dezelfde waarden die u eerder hebt geconfigureerd in *HighWatermarkBlobContainer + HighWatermarkBlobDirectory* en *HighWatermarkBlobName*.
 
       4. Selecteer **Opslaan**. Kopieer vervolgens de waarde van de **http post-URL** voor gebruik in de Data Factory-pijp lijn.
 
@@ -206,8 +202,8 @@ Als u zowel een historische kopie als een incrementele kopie of alleen een incre
 
 1. Maak het open hub-doel. U kunt de OHD maken in SAP Trans Action RSA1, waarmee automatisch het vereiste proces voor trans formatie en gegevens overdracht wordt gemaakt. Gebruik de volgende instellingen:
 
-   - **Object type: u**kunt elk van de objecten gebruiken. Hier gebruiken we **InfoCube** als voor beeld.
-   - **Doel type**: **database tabel**selecteren.
+   - **Object type: u** kunt elk van de objecten gebruiken. Hier gebruiken we **InfoCube** als voor beeld.
+   - **Doel type**: **database tabel** selecteren.
    - **Sleutel van de tabel**: Selecteer de **technische sleutel**.
    - **Extractie**: Selecteer **gegevens bijeenhouden en records invoegen in tabel**.
 
@@ -237,11 +233,11 @@ Kies voor een volledige belasting OHD andere opties dan voor de Delta-extractie:
 
 - In OHD: Stel de **extractie** optie in om **gegevens te verwijderen en records in te voegen**. Anders worden gegevens meermaals geëxtraheerd wanneer u de DTP in een BW-proces keten herhaalt.
 
-- In de DTP: **extractie modus** op **volledig**instellen. U moet de automatisch gemaakte DTP wijzigen van **Delta** naar **volledig** onmiddellijk nadat de OHD is gemaakt, zoals in deze afbeelding wordt weer gegeven:
+- In de DTP: **extractie modus** op **volledig** instellen. U moet de automatisch gemaakte DTP wijzigen van **Delta** naar **volledig** onmiddellijk nadat de OHD is gemaakt, zoals in deze afbeelding wordt weer gegeven:
 
    ![Het dialoog venster SAP BW OHD maken dat is geconfigureerd voor volledige extractie](media/load-sap-bw-data/create-sap-bw-ohd-full2.png)
 
-- In de ZW open hub-connector van Data Factory: Schakel **laatste aanvraag uitsluiten**uit. Anders wordt niets geëxtraheerd.
+- In de ZW open hub-connector van Data Factory: Schakel **laatste aanvraag uitsluiten** uit. Anders wordt niets geëxtraheerd.
 
 Doorgaans voert u de volledige DTP hand matig uit. U kunt ook een proces keten maken voor de volledige DTP. Het is doorgaans een afzonderlijke keten die onafhankelijk is van uw bestaande proces ketens. In beide gevallen controleert *u of de DTP is voltooid voordat u de extractie start met behulp van Data Factory kopie*. Anders worden alleen gedeeltelijke gegevens gekopieerd.
 

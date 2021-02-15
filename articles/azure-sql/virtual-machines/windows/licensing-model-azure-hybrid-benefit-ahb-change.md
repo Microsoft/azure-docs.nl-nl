@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ea274914ac70540d5763884bbd01e41e349a530d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5813331d5eafd953d776dd19d9cc885ff71b8be0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879827"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361550"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Het licentiemodel voor een virtuele SQL-machine in Azure wijzigen
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -119,7 +119,6 @@ Het wijzigen van het licentie model is:
    - Alleen ondersteund voor de Standard-en Enter prise-edities van SQL Server. Licentie wijzigingen voor Express, Web en Developer worden niet ondersteund. 
    - Alleen ondersteund voor virtuele machines die zijn geïmplementeerd via het Azure Resource Manager model. Virtuele machines die via het klassieke model zijn geïmplementeerd, worden niet ondersteund. 
    - Alleen beschikbaar voor de open bare of Azure Government Clouds. 
-   - Alleen ondersteund op virtuele machines met één netwerk interface (NIC). 
 
 > [!Note]
 > Alleen SQL Server op basis van licenties met Software Assurance of abonnements licenties komen in aanmerking voor Azure Hybrid Benefit. Als u Server + CAL-licentie verlening gebruikt voor SQL Server en u Software Assurance hebt, kunt u uw eigen licentie gebruiken voor een installatie kopie van de virtuele machine van Azure SQL Server voor het gebruik van licentie mobiliteit voor deze servers, maar u kunt niet gebruikmaken van de andere functies van Azure Hybrid Benefit. 
@@ -136,10 +135,6 @@ Deze fout treedt op wanneer u probeert het licentie model op een SQL Server virt
 
 U moet uw abonnement registreren bij de resource provider en vervolgens [uw SQL Server-VM registreren met de extensie van de SQL IaaS-agent](sql-agent-extension-manually-register-single-vm.md). 
 
-
-**Aan de virtuele machine zijn \<vmname\> meer dan één NIC gekoppeld**
-
-Deze fout doet zich voor op virtuele machines met meer dan één NIC. Verwijder een van de Nic's voordat u het licentie model wijzigt. Hoewel u de NIC opnieuw kunt toevoegen aan de VM nadat u het licentie model hebt gewijzigd, worden de bewerkingen in de Azure Portal, zoals automatische back-up en patching, niet meer ondersteund. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 8a6189a613c9a6768428a13e35e0e009894b8b3f
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 77d4a1cad4843578419be54465a06e87834dd186
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988043"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104515"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Aanbevolen procedures voor een QnA Maker Knowledge Base
 
@@ -147,7 +147,7 @@ Met QnA Maker kunnen gebruikers samen werken aan een Knowledge Base. Gebruikers 
 
 ## <a name="active-learning"></a>Actief leren
 
-Met het [actieve leer proces](../How-to/use-active-learning.md) wordt geadviseerd om alternatieve vragen te stellen wanneer het een breed scala van kwaliteit en aantal op gebruikers gebaseerde query's heeft. Het is belang rijk om gebruikers query's van client toepassingen toe te staan om deel te nemen aan de feedback-lus van het actieve Learning zonder dat de censoren. Zodra vragen worden voorgesteld in de QnA Maker Portal, kunt u **[filteren op suggesties](../How-To/improve-knowledge-base.md#accept-an-active-learning-suggestion-in-the-knowledge-base)** en deze suggesties bekijken en accepteren of afwijzen.
+Met het [actieve leer proces](../How-to/use-active-learning.md) wordt geadviseerd om alternatieve vragen te stellen wanneer het een breed scala van kwaliteit en aantal op gebruikers gebaseerde query's heeft. Het is belang rijk om gebruikers query's van client toepassingen toe te staan om deel te nemen aan de feedback-lus van het actieve Learning zonder dat de censoren. Zodra vragen worden voorgesteld in de QnA Maker Portal, kunt u **[filteren op suggesties](../How-To/improve-knowledge-base.md)** en deze suggesties bekijken en accepteren of afwijzen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

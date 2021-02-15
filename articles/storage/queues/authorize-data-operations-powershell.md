@@ -6,16 +6,16 @@ author: tamram
 services: storage
 ms.author: tamram
 ms.reviewer: ozgun
-ms.date: 09/14/2020
+ms.date: 02/10/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: bf2696d329f852741c42219219600dc773090623
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 61bcf7abca2860078bd89da070309a0057360f0c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590712"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370220"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-queue-data"></a>Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot wachtrij gegevens
 
@@ -28,6 +28,9 @@ U kunt machtigingen voor de wachtrij gegevens toewijzen aan een Azure AD-beveili
 De Azure Storage-extensies worden ondersteund voor bewerkingen op wachtrij gegevens. Welke bewerkingen u kunt aanroepen, is afhankelijk van de machtigingen die zijn verleend aan de Azure AD-beveiligings-principal waarmee u zich aanmeldt bij Power shell. Machtigingen voor wacht rijen worden toegewezen via Azure RBAC. Als u bijvoorbeeld de rol **gegevens lezer** van de wachtrij hebt toegewezen, kunt u script opdrachten uitvoeren die gegevens uit een wachtrij lezen. Als u de rol Inzender voor **wachtrij gegevens** hebt toegewezen, kunt u script opdrachten uitvoeren om een wachtrij of de gegevens die ze bevatten, te lezen, schrijven of verwijderen.
 
 Zie [Storage-bewerkingen aanroepen met OAuth-tokens](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens)voor meer informatie over de vereiste machtigingen voor elke Azure Storage bewerking in een wachtrij.
+
+> [!IMPORTANT]
+> Wanneer een opslag account is vergrendeld met een Azure Resource Manager **alleen-lezen** vergrendeling, is de bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) niet toegestaan voor dat opslag account. **Lijst sleutels** is een post-bewerking en alle post-bewerkingen worden voor komen wanneer een **alleen-lezen** vergrendeling voor het account is geconfigureerd. Als het account is vergrendeld met een **alleen-lezen** vergrendeling, moeten gebruikers gebruikers die niet al over de account sleutels beschikken, Azure AD-referenties gebruiken om toegang te krijgen tot de gegevens in de wachtrij. Neem in Power shell de `-UseConnectedAccount` para meter op voor het maken van een **AzureStorageContext** -object met uw Azure AD-referenties.
 
 ## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Power shell-opdrachten aanroepen met Azure AD-referenties
 

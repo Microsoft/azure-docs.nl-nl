@@ -9,18 +9,19 @@ ms.topic: conceptual
 author: FrancescaLazzeri
 ms.author: lazzeri
 ms.date: 03/05/2020
-ms.openlocfilehash: b824604ce9d0171b5612ab559eace4b35fd01eb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+adobe-target: true
+ms.openlocfilehash: 730fcf3fb552b92a02b255ad654f64d5ff7a92fa
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82890983"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367053"
 ---
 # <a name="machine-learning-algorithm-cheat-sheet-for-azure-machine-learning-designer"></a>Machine Learnings Cheat-algoritme voor Azure Machine Learning Designer
 
 Het **Cheat-venster van Azure machine learning-algoritme** helpt u bij het kiezen van het juiste algoritme van de ontwerp functie voor een Predictive Analytics model.
 
-Azure Machine Learning heeft een grote bibliotheek met algoritmen van de ***classificatie***, ***Aanbevolen systemen***, ***clustering***, ***afwijkings detectie***, ***regressie***en ***tekst analyse*** -families. Elk is ontworpen om een ander type machine learning probleem op te lossen.
+Azure Machine Learning heeft een grote bibliotheek met algoritmen van de *-**classificatie** _, _*_Aanbevolen systemen_*_, _*_clustering_*_, _*_afwijkings detectie_*_, _*_regressie_*_ en _ *_tekst analyse_**-families. Elk is ontworpen om een ander type machine learning probleem op te lossen.
 
 Zie [algoritmen selecteren](how-to-select-algorithms.md) voor meer informatie.
 
@@ -42,7 +43,7 @@ Voor meer informatie over de algoritmen in Azure Machine Learning Designer gaat 
 
 ## <a name="kinds-of-machine-learning"></a>Soorten machine learning
 
-Er zijn drie hoofd categorieën van machine learning: *leren*, zonder *toezicht*en leer *leren*.
+Er zijn drie hoofd categorieën van machine learning: *leren*, zonder *toezicht* en leer *leren*.
 
 ### <a name="supervised-learning"></a>Leren met Super visie
 

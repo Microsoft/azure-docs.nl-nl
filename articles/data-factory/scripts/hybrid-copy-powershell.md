@@ -1,21 +1,18 @@
 ---
 title: Gegevens van on-premises naar Azure kopiëren met Power shell
 description: Met dit Power shell-script worden gegevens gekopieerd van een SQL Server Data Base naar een andere Azure-Blob Storage.
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: article
 ms.author: jingwang
 author: linda33wj
-manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 10/31/2017
-ms.openlocfilehash: bc10017da8561cda09658ec9380cc82095f3ef94
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 34c5497a8b059260dfe60e8015e62c0f1511f021
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632229"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373382"
 ---
 # <a name="use-powershell-to-create-a-data-factory-pipeline-to-copy-data-from-sql-server-to-azure"></a>Power shell gebruiken om een data factory pijp lijn te maken voor het kopiëren van gegevens van SQL Server naar Azure
 
@@ -27,9 +24,9 @@ Met dit Power shell-voorbeeld script maakt u een pijp lijn in Azure Data Factory
 
 ## <a name="prerequisites"></a>Vereisten
 
-- **SQL Server** . In dit voor beeld gebruikt u een SQL Server-Data Base als een **brongegevens** opslag.
-- **Een Azure Storage-account** . U gebruikt Azure Blob Storage als een **doel/Sink-** gegevens archief in dit voor beeld. Als u geen Azure Storage-account hebt, raadpleegt u het artikel [een opslag account maken](../../storage/common/storage-account-create.md) voor de stappen om er een te maken.
-- **Zelf-hostende Integration runtime** . Down load het MSI-bestand uit het [Download centrum](https://www.microsoft.com/download/details.aspx?id=39717) en voer het uit om een zelf-hostende Integration runtime op uw computer te installeren.  
+- **SQL Server**. In dit voor beeld gebruikt u een SQL Server-Data Base als een **brongegevens** opslag.
+- **Een Azure Storage-account**. U gebruikt Azure Blob Storage als een **doel/Sink-** gegevens archief in dit voor beeld. Als u geen Azure Storage-account hebt, raadpleegt u het artikel [een opslag account maken](../../storage/common/storage-account-create.md) voor de stappen om er een te maken.
+- **Zelf-hostende Integration runtime**. Down load het MSI-bestand uit het [Download centrum](https://www.microsoft.com/download/details.aspx?id=39717) en voer het uit om een zelf-hostende Integration runtime op uw computer te installeren.  
 
 ### <a name="create-sample-database-in-sql-server"></a>Voorbeeld database maken in SQL Server
 1. Maak in de SQL Server-Data Base een tabel met de naam **EMP** met behulp van het volgende SQL-script:

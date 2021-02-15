@@ -4,16 +4,16 @@ description: Meer informatie over de besturings systemen die de Azure IoT Edge d
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 12/09/2020
+ms.date: 02/11/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b17f1f32a3e49e9161afe92d62b85a162affcd9f
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 9a9361df817db46028259d8792d9a1431df4ce67
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630527"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516322"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Ondersteunde systemen Azure IoT Edge
 
@@ -62,12 +62,11 @@ Azure IoT Edge ondersteunt modules die zijn gebouwd als Linux-of Windows-contain
 
 Modules die zijn gebouwd als Linux-containers kunnen worden geïmplementeerd op Linux-of Windows-apparaten. Voor Linux-apparaten wordt de IoT Edge runtime rechtstreeks op het hostapparaat geïnstalleerd. Voor Windows-apparaten is een virtuele Linux-machine die is gebouwd met de IoT Edge runtime uitgevoerd op het hostapparaat.
 
-IoT Edge voor Linux in Windows is momenteel beschikbaar als open bare preview, maar is de aanbevolen manier om IoT Edge uit te voeren op Windows-apparaten.
+[IOT Edge voor Linux in Windows](iot-edge-for-linux-on-windows.md) is momenteel beschikbaar als open bare preview, maar is de aanbevolen manier om IOT Edge uit te voeren op Windows-apparaten.
 
 | Besturingssysteem | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
 | Raspberry Pi OS Stretch |  | ![Raspberry Pi OS stretch + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
-| Ubuntu Server 16.04 | ![Ubuntu-Server 16,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Open bare preview  |
 | Ubuntu Server 18.04 | ![Ubuntu-Server 18,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Open bare preview |
 | Windows 10 Pro | Open bare preview |  |  |
 | Windows 10 Enterprise | Open bare preview |  |  |
@@ -76,20 +75,26 @@ IoT Edge voor Linux in Windows is momenteel beschikbaar als open bare preview, m
 
 Alle Windows-besturings systemen moeten versie 1809 (build 17763) of hoger zijn.
 
+>[!NOTE]
+>Ondersteuning voor Ubuntu Server 16,04 is gestopt met de release van IoT Edge versie 1,1.
+
 #### <a name="windows-containers"></a>Windows-containers
+
+>[!IMPORTANT]
+>IoT Edge 1,1 LTS is het laatste release kanaal dat ondersteuning biedt voor Windows-containers. Vanaf versie 1,2 worden Windows-containers niet ondersteund. Overweeg het gebruik of verplaatsen van [IOT Edge voor Linux in Windows](iot-edge-for-linux-on-windows.md) om IOT Edge op Windows-apparaten uit te voeren.
 
 Modules die zijn gebouwd als Windows-containers kunnen alleen worden geïmplementeerd op Windows-apparaten.
 
 | Besturingssysteem | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
 | Windows 10 IoT Enterprise | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
-| Windows 10 IoT core<sup>1</sup><br> | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
 | Windows Server 2019  | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
-| Windows Server IoT 2019<br> | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
-
-<sup>1</sup> Windows 10 IOT core wordt niet ondersteund na versie 1.0.10
+| Windows Server IoT 2019 | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
 
 Alle Windows-besturings systemen moeten versie 1809 (build 17763) hebben. De specifieke build van Windows is vereist voor IoT Edge in Windows omdat de versie van de Windows-containers precies moet overeenkomen met de versie van het Windows-host-apparaat. Windows-containers maken momenteel alleen gebruik van build 17763.
+
+>[!NOTE]
+>Windows 10 IoT Core-ondersteuning is gestopt met de release van IoT Edge versie 1,1.
 
 ### <a name="tier-2"></a>Tier 2
 
@@ -98,20 +103,18 @@ De systemen die in de volgende tabel worden vermeld, worden beschouwd als compat
 | Besturingssysteem | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
 | [CentOS 7.5](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.1804) | ![CentOS + AMD64](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM64](./media/tutorial-c-module/green-check.png) |
-| [Debian 8](https://www.debian.org/releases/jessie/) | ![Debian 8 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Ubuntu 20,04 <sup>1</sup>](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes) | ![Ubuntu 20,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Debian 9](https://www.debian.org/releases/stretch/) | ![Debian 9 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Debian 10](https://www.debian.org/releases/buster/) | ![Debian 10 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Inge sloten Linux Flex-besturings systeem voor docenten](https://www.mentor.com/embedded-software/linux/mel-flex-os/) | ![Mentor embedded Linux Flex OS + AMD64](./media/tutorial-c-module/green-check.png) | ![Met begeleiding embedded Linux Flex OS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Met begeleiding embedded Linux Flex OS + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Het universeel-besturings systeem van mentor embedded Linux](https://www.mentor.com/embedded-software/linux/mel-omni-os/) | ![Mentor embedded Linux universeel OS + AMD64](./media/tutorial-c-module/green-check.png) |  | ![Mentor embedded Linux universeel OS + ARM64](./media/tutorial-c-module/green-check.png) |
 | [RHEL 7.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/7.5_release_notes/index) | ![RHEL 7,5 + AMD64](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM64](./media/tutorial-c-module/green-check.png) |
-| [Ubuntu 16.04](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes) | ![Ubuntu 16,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 16,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 16,04 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Ubuntu 18.04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu 18,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Wind River 8](https://docs.windriver.com/category/os-wind_river_linux) | ![Wind stroom 8 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 | [Yocto](https://www.yoctoproject.org/) | ![Yocto + AMD64](./media/tutorial-c-module/green-check.png) | ![Yocto + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Yocto + ARM64](./media/tutorial-c-module/green-check.png) |
 | Raspberry Pi OS Buster |  | ![Raspberry Pi OS Buster + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Raspberry Pi OS Buster + ARM64](./media/tutorial-c-module/green-check.png) |
-| [Ubuntu 20,04 <sup>1</sup>](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes) | ![Ubuntu 20,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM64](./media/tutorial-c-module/green-check.png) |
 
-<sup>1</sup> de Debian 9-pakketten van de [Azure IOT Edge releases opslag plaats](https://github.com/Azure/azure-iotedge/releases) moeten van het vak werken met Ubuntu 20,04.
+<sup>1</sup> de installatie stappen voor Ubuntu Server 18,04 in [Install of uninstall Azure IOT Edge voor Linux](how-to-install-iot-edge.md) werken zonder wijzigingen op Ubuntu 20,04.
 
 ## <a name="releases"></a>Releases
 
@@ -121,23 +124,32 @@ IoT Edge onderdelen kunnen afzonderlijk worden geïnstalleerd of bijgewerkt, en 
 
 | Release | Beveiligings-daemon | Edge hub<br>Edge-agent | Libiothsm | Moby |
 |--|--|--|--|--|
-| **1.0.10** | 1.0.10 | 1.0.10 | 1.0.10 |  |
+| **1.1.0 LTS**<sup>1</sup> | 1.1.0 | 1.1.0 | 1.1.0 |   |
+| **1.0.10** | 1.0.10<br>1.0.10.1<br>1.0.10.2<br><br>1.0.10.4 | 1.0.10<br>1.0.10.1<br>1.0.10.2<br>1.0.10.3<br>1.0.10.4 | 1.0.10<br>1.0.10.1<br>1.0.10.2<br><br>1.0.10.4 |  |
 | **1.0.9** | 1.0.9.5<br>1.0.9.4<br>1.0.9.3<br>1.0.9.2<br>1.0.9.1<br>1.0.9 | 1.0.9.5<br>1.0.9.4<br>1.0.9.3<br>1.0.9.2<br>1.0.9.1<br>1.0.9 | 1.0.9.5<br>1.0.9.4<br>1.0.9.3<br>1.0.9.2<br>1.0.9.1<br>1.0.9 |  |
 | **1.0.8** | 1.0.8 | 1.0.8.5<br>1.0.8.4<br>1.0.8.3<br>1.0.8.2<br>1.0.8.1<br>1.0.8 | 1.0.8 | 3.0.6 |
 | **1.0.7** | 1.0.7.1<br>1.0.7 | 1.0.7.1<br>1.0.7 | 1.0.7.1<br>1.0.7 | 3.0.5<br>3.0.4 (ARMv7hl, CentOS) |
 | **1.0.6** | 1.0.6.1<br>1.0.6 | 1.0.6.1<br>1.0.6 | 1.0.6.1<br>1.0.6 |  |
 | **1.0.5** | 1.0.5 | 1.0.5 | 1.0.5 | 3.0.2 |
 
+<sup>1</sup> IoT Edge 1,1 is het eerste LTS-release kanaal (lange termijn ondersteuning). Deze versie heeft geen nieuwe functies geïntroduceerd, maar ontvangt fout oplossingen en beveiligings patches. IoT Edge 1,1 LTS maakt gebruik van .NET Core 3,1 en wordt tot 3 december 2022 ondersteund om te voldoen aan de [versie levenscyclus van .net core en .net 5](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
+
+>[!IMPORTANT]
+>Met de release van een ondersteunings kanaal voor de lange termijn raden wij aan alle huidige klanten met 1.0. x hun apparaten bij te werken naar 1.1. x om voortdurende ondersteuning te ontvangen.
+
 IoT Edge maakt gebruik van de micro soft. Azure. devices. client-SDK. Zie de [Azure IOT C# SDK github opslag plaats](https://github.com/Azure/azure-iot-sdk-csharp) of de [Azure SDK voor .net-referentie-inhoud](/dotnet/api/overview/azure/iot/client)voor meer informatie. De volgende lijst bevat de versie van de client-SDK waarvoor elke release wordt getest:
 
-* **IOT Edge 1.0.10**: Client SDK 1.28.0
-* **IOT Edge 1.0.9**: Client SDK 1.21.1
-* **IOT Edge 1.0.8**: Client SDK 1.20.3
-* **IOT Edge 1.0.7**: Client SDK 1.20.1
-* **IOT Edge 1.0.6**: Client SDK 1.17.1
-* **IOT Edge 1.0.5**: Client SDK 1.17.1
+| IoT Edge-versie | Micro soft. Azure. devices. client-SDK-versie |
+|------------------|--------------------------------------------|
+| 1.1.0 (LTS)      | 1.28.0                                     |
+| 1.0.10           | 1.28.0                                     |
+| 1.0.9            | 1.21.1                                     |
+| 1.0.8            | 1.20.3                                     |
+| 1.0.7            | 1.20.1                                     |
+| 1.0.6            | 1.17.1                                     |
+| 1.0.5            | 1.17.1                                     |
 
-## <a name="virtual-machines"></a>Virtuele machines
+## <a name="virtual-machines"></a>Virtual Machines
 
 Azure IoT Edge kunnen worden uitgevoerd op virtuele machines. Het gebruik van een virtuele machine als een IoT Edge apparaat is gebruikelijk wanneer klanten bestaande infra structuur willen uitbreiden met Edge Intelligence. De serie van het VM-besturings systeem van de host moet overeenkomen met de familie van het gast besturingssysteem dat in de container van een module wordt gebruikt. Deze vereiste is hetzelfde als wanneer Azure IoT Edge rechtstreeks op een apparaat wordt uitgevoerd. Azure IoT Edge is neutraal van de onderliggende technologie en werkt in Vm's op basis van platforms, zoals Hyper-V en vSphere.
 

@@ -475,6 +475,10 @@
           href: reference-third-party-cookies-spas.md
         - name: SameSite-cookiewijzigingen in Chrome verwerken
           href: howto-handle-samesite-cookie-changes-chrome-browser.md
+    - name: Ondersteuning voor verificatie met een wacht woord
+      items:
+        - name: Ondersteuning voor FIDO2-verificatie
+          href: support-fido2-authentication.md
     - name: Apps en services verifiëren
       items:
         - name: Een service-principal maken met Azure PowerShell

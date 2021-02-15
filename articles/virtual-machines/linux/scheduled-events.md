@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 06/01/2020
 ms.author: ericrad
 ms.reviewer: mimckitt
-ms.openlocfilehash: 99528d1575056917b68bcb38f41a24d065822827
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3bda1e2076e29fc1365bfc236adc9071db2564a1
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792800"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104736"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-linux-vms"></a>Azure Metadata Service: Geplande gebeurtenissen voor Linux-VM’s
 
@@ -71,7 +71,7 @@ Voor VNET-ingeschakelde Vm's is Metadata Service verkrijgbaar via een statisch n
 Als de virtuele machine niet is gemaakt binnen een Virtual Network, zijn de standaard aanvragen voor Cloud Services en klassieke Vm's vereist om het te gebruiken IP-adres te detecteren. Zie dit voor beeld voor meer informatie over [het detecteren van het eind punt van de host](https://github.com/azure-samples/virtual-machines-python-scheduled-events-discover-endpoint-for-non-vnet-vm).
 
 ### <a name="version-and-region-availability"></a>Beschik baarheid van versie en regio
-Er is een versie van de Scheduled Events-service. Versies zijn verplicht. de huidige versie is `2019-01-01` .
+Er is een versie van de Scheduled Events-service. Versies zijn verplicht. de huidige versie is `2019-08-01` .
 
 | Versie | Release type | Regio's | Releaseopmerkingen | 
 | - | - | - | - | 
@@ -138,7 +138,7 @@ Als er geplande gebeurtenissen zijn, bevat het antwoord een matrix met gebeurten
 | Resources| Lijst met resources die deze gebeurtenis beïnvloedt. De lijst is gegarandeerd dat machines uit Maxi maal één [update domein](../manage-availability.md)worden opgenomen, maar bevat mogelijk niet alle computers in de UD. <br><br> Voorbeeld: <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
 | EventStatus | De status van deze gebeurtenis. <br><br> Waarden: <ul><li>`Scheduled`: Deze gebeurtenis is gepland om te starten na het tijdstip dat is opgegeven in de `NotBefore` eigenschap.<li>`Started`: Deze gebeurtenis is gestart.</ul> Er `Completed` is ooit geen of vergelijk bare status. De gebeurtenis wordt niet meer geretourneerd wanneer de gebeurtenis is voltooid.
 | NotBefore| Tijdstip waarna deze gebeurtenis kan worden gestart. <br><br> Voorbeeld: <br><ul><li> Ma, 19 sep 2016 18:29:47 GMT  |
-| Beschrijving | Beschrijving van deze gebeurtenis. <br><br> Voorbeeld: <br><ul><li> De hostserver ondergaat onderhoud. |
+| Description | Beschrijving van deze gebeurtenis. <br><br> Voorbeeld: <br><ul><li> De hostserver ondergaat onderhoud. |
 | Source | Initiator van de gebeurtenis. <br><br> Voorbeeld: <br><ul><li> `Platform`: Deze gebeurtenis wordt gestart door het platform. <li>`User`: Deze gebeurtenis wordt geïnitieerd door de gebruiker. |
 
 ### <a name="event-scheduling"></a>Gebeurtenissen plannen

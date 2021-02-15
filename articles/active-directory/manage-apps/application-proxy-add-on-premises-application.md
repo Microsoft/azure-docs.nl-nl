@@ -8,22 +8,26 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: contperf-fy21q3
-ms.openlocfilehash: f18126448f5a6dca29e798ad80cb53a8760689d8
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.custom: contperf-fy21q3-portal
+ms.openlocfilehash: 6bd44ea0217f11a156598a1a6f3703e528dd82d4
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576512"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095168"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
-Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. In deze zelfstudie wordt uw omgeving voorbereid voor gebruik van Application Proxy. Zodra uw omgeving gereed is, gebruikt u de Azure-portal om een on-premises toepassing toe te voegen aan uw Azure AD-tenant. Als u **uw apps wilt bekijken en snel** aan de slag wilt gaan met app-beheer in azure, raadpleegt u de Quick Start- [serie](view-applications-portal.md).
+Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. Zie [Wat is app proxy?](what-is-application-proxy.md)voor meer informatie over toepassings proxy. In deze zelfstudie wordt uw omgeving voorbereid voor gebruik van Application Proxy. Zodra uw omgeving gereed is, gebruikt u de Azure-portal om een on-premises toepassing toe te voegen aan uw Azure AD-tenant. 
 
 :::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Overzichts diagram toepassings proxy" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
+
+Voordat u aan de slag gaat, moet u ervoor zorgen dat u bekend bent met de concepten voor app-beheer en **Single Sign-On (SSO)** . Bekijk de volgende koppelingen:
+- [Quickstartreeks over app-beheer in Azure AD](view-applications-portal.md)
+- [Wat is single Sign-On (SSO)?](what-is-single-sign-on.md)
 
 Connectors zijn een belangrijk onderdeel van Application Proxy. Zie [Informatie over connectors voor de Azure AD-toepassingsproxy](application-proxy-connectors.md) voor meer informatie over connectors.
 

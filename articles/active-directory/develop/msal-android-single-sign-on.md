@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: hahamil
 ms.reviewer: marsma
-ms.openlocfilehash: c4c98ad377100c35b0c364607bfd3803d07a95a7
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: f3d4ec8db89e9bebfdcd594e842a6c19d3d66d54
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015926"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104090"
 ---
 # <a name="how-to-enable-cross-app-sso-on-android-using-msal"></a>Procedure: cross-app SSO inschakelen op Android met behulp van MSAL
 
@@ -119,7 +119,7 @@ keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.k
 
 Nadat u een hand tekening-hash hebt gegenereerd met het *hulp programma*, gebruikt u de Azure Portal om de omleidings-URI te genereren:
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a> en selecteer uw Android-app in **app-registraties**.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure Portal</a> en selecteer uw Android-app in **app-registraties**.
 1. Selecteer **verificatie**  >  **een platform**  >  **Android** toevoegen.
 1. In het deel venster **uw Android-app configureren** dat wordt geopend, voert u de **hand tekening-hash** in die u eerder hebt gegenereerd en een **pakket naam**.
 1. Selecteer de knop **configureren** .
@@ -191,7 +191,7 @@ Als u de webweergave in-app wilt gebruiken, plaatst u de volgende regel in de JS
 "authorization_user_agent" : "WEBVIEW"
 ```
 
-Wanneer u de in-app gebruikt `WebView` , wordt de gebruiker rechtstreeks aangemeld bij de app. De tokens worden bewaard in de sandbox van de app en zijn niet beschikbaar buiten het cookie jar van de app. Als gevolg hiervan kan de gebruiker geen SSO-ervaring hebben voor toepassingen, tenzij de apps worden geïntegreerd met de verificator of Bedrijfsportal.
+Wanneer u de in-app gebruikt `WebView` , wordt de gebruiker rechtstreeks aangemeld bij de app. De tokens worden bewaard in de sandbox van de app en zijn niet beschikbaar buiten het cookie jar van de app. Als gevolg hiervan kan de gebruiker geen SSO-ervaring hebben voor toepassingen, tenzij de apps worden geïntegreerd met de verificator of bedrijfsportal.
 
 Biedt echter `WebView` de mogelijkheid om het uiterlijk aan te passen aan de gebruikers interface voor aanmelden. Zie [Android-webviewers](https://developer.android.com/reference/android/webkit/WebView) voor meer informatie over hoe u deze aanpassing kunt uitvoeren.
 

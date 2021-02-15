@@ -16,12 +16,12 @@ ms.date: 11/05/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73376994e01ed89891726a8f6e1b727f89dab2fb
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 1957adc0effd5b37d7aff3f813267da6ca065e0a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201719"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368962"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Vereisten voor Azure AD Connect
 In dit artikel worden de vereisten en de hardwarevereisten voor Azure Active Directory (Azure AD)-verbinding beschreven.
@@ -73,6 +73,7 @@ Zie [Aanbevolen procedures voor het beveiligen van Active Directory](/windows-se
     - U moet TLS/SSL-certificaten configureren. Zie [SSL/TLS-protocollen en coderings suites beheren voor AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) en [SSL-certificaten beheren in AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap)voor meer informatie.
     - U moet naam omzetting configureren. 
 - Als voor uw globale beheerders MFA is ingeschakeld, https://secure.aadcdn.microsoftonline-p.com *moet* de URL zich in de lijst met vertrouwde sites bekomen. U wordt gevraagd deze site toe te voegen aan de lijst met vertrouwde websites wanneer u wordt gevraagd om een MFA-Challenge en deze wordt niet eerder toegevoegd. U kunt Internet Explorer gebruiken om het toe te voegen aan uw vertrouwde sites.
+- Als u Azure AD Connect Health voor synchronisatie wilt gebruiken, moet u ervoor zorgen dat aan de vereisten voor Azure AD Connect Health ook wordt voldaan. Zie [Azure AD Connect Health Agent-installatie](how-to-connect-health-agent-install.md)voor meer informatie.
 
 #### <a name="harden-your-azure-ad-connect-server"></a>De beveiliging van uw Azure AD Connect-server 
 We raden u aan uw Azure AD Connect-server te beveiligen om het beveiligings risico te verminderen voor dit kritieke onderdeel van uw IT-omgeving. Aan de hand van deze aanbevelingen kunnen enkele beveiligings Risico's voor uw organisatie worden verholpen.

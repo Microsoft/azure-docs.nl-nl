@@ -212,6 +212,8 @@
       items:
         - name: Een indexeerfunctie maken
           href: search-howto-create-indexers.md
+        - name: Indexeer functies uitvoeren of opnieuw instellen
+          href: search-howto-run-reset-indexers.md
         - name: Een Indexeer functie plannen
           href: search-howto-schedule-indexers.md
         - name: Veld toewijzingen definiëren

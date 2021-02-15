@@ -1,24 +1,18 @@
 ---
 title: Wizard Azure Copy Data Factory
 description: Meer informatie over Data Factory het gebruik van de wizard Azure kopiëren om gegevens te kopiëren van ondersteunde gegevens bronnen naar Sinks.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: 0974eb40-db98-4149-a50d-48db46817076
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 99c7490c4bf842da119a3a0abd4623c64d720ac8
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0f95b0d62bc81a8dddc72239491a05ca78945490
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462221"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393374"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Wizard Azure Data Factory kopiëren
 
@@ -115,7 +109,7 @@ In deze sectie worden algemene probleemoplossings methoden voor de wizard kopië
         8.  Sluit de browser en start opnieuw.
     - Als u de Firefox-browser gebruikt, volgt u de onderstaande instructies om een uitzonde ring voor cookies toe te voegen.
         1. Ga in het menu van Firefox naar **extra**  >  **Opties**.
-        2. Onder **Privacy**  >  **geschiedenis** van privacy ziet u mogelijk dat de huidige instelling **aangepaste instellingen voor geschiedenis gebruikt**.
+        2. Onder   >  **geschiedenis** van privacy ziet u mogelijk dat de huidige instelling **aangepaste instellingen voor geschiedenis gebruikt**.
         3. In **cookies** van derden accepteren is uw huidige instelling mogelijk **nooit**. Klik vervolgens op **uitzonde ringen** aan de rechter kant om de volgende sites toe te voegen.
             - https://login.microsoftonline.com
             - https://login.windows.net

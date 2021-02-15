@@ -1,24 +1,18 @@
 ---
 title: 'Zelfstudie: een pijplijn maken met een Resource Manager-sjabloon '
 description: In deze zelfstudie maakt u een Azure Data Factory-pijplijn met behulp van een Azure Resource Manager-sjabloon. Met deze pijplijn worden gegevens vanuit een Azure-blobopslag gekopieerd naar Azure SQL Database.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: 1274e11a-e004-4df5-af07-850b2de7c15e
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: a007e64a7bd034397c2030c435a5ad349bd4acc7
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: 18e8965a152deb6393d7e3b63ea22994484e100c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608745"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377241"
 ---
 # <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Zelfstudie: een Azure Resource Manager-sjabloon gebruiken voor het maken van een Data Factory-pijplijn om gegevens te kopiëren 
 > [!div class="op_single_selector"]

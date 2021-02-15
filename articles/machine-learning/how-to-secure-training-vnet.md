@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 02045c7ba2373c57213cc7fffb71a5e6bb5979e6
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 9a937336e1628add54ab5f52cdd6ef475d463f7d
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99537997"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515985"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Een Azure Machine Learning-trainings omgeving beveiligen met virtuele netwerken
 
@@ -26,7 +26,7 @@ Dit artikel is deel drie van een serie van vijf delen die u begeleidt bij het be
 
 Zie de andere artikelen in deze serie:
 
-[1. VNet-overzicht](how-to-network-security-overview.md)  >  [Beveilig de werk ruimte](how-to-secure-workspace-vnet.md)  >  **3. De trainings omgeving**  >  [4 beveiligen. Beveilig de vergoedings omgeving](how-to-secure-inferencing-vnet.md)   >  [5. De functionaliteit van Studio inschakelen](how-to-enable-studio-virtual-network.md)
+[1. VNet-overzicht](how-to-network-security-overview.md)  >  [2. Beveilig de werk ruimte](how-to-secure-workspace-vnet.md)  >  **3. De trainings omgeving**  >  [4 beveiligen. Beveilig de vergoedings omgeving](how-to-secure-inferencing-vnet.md)   >  [5. De functionaliteit van Studio inschakelen](how-to-enable-studio-virtual-network.md)
 
 In dit artikel leert u hoe u de volgende trainings Compute-resources in een virtueel netwerk kunt beveiligen:
 > [!div class="checklist"]
@@ -273,7 +273,7 @@ Als u Azure Databricks wilt gebruiken in een virtueel netwerk met uw werk ruimte
 > * Als de Azure Storage account (s) voor de werk ruimte ook worden beveiligd in een virtueel netwerk, moeten ze zich in hetzelfde virtuele netwerk bevinden als het Azure Databricks-cluster.
 > * Naast de __databricks-particuliere__ en __databricks-open bare__ subnetten die worden gebruikt door Azure Databricks, is ook het __standaard__ subnet dat voor het virtuele netwerk is gemaakt, vereist.
 
-Zie [deploying Azure Databricks in uw Azure Virtual Network](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html)voor specifieke informatie over het gebruik van Azure Databricks met een virtueel netwerk.
+Zie [deploying Azure Databricks in uw Azure Virtual Network](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject)voor specifieke informatie over het gebruik van Azure Databricks met een virtueel netwerk.
 
 <a id="vmorhdi"></a>
 

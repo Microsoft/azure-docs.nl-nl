@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9b818b8b46b6ac3af98ff5f25ef69335231744cc
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: c42061520b73966f2cd516716039d78c2b9cbeb8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779036"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375983"
 ---
 # <a name="use-azure-cli-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>Azure CLI gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens
 
@@ -58,8 +58,10 @@ Storage Queue Data Reader                 Allows for read access to Azure Storag
 
 Als u een Azure-rol aan een beveiligingsprincipal wilt toewijzen, gebruikt u de opdracht [AZ Role Assignment Create](/cli/azure/role/assignment#az-role-assignment-create) . De indeling van de opdracht kan verschillen op basis van het bereik van de toewijzing. In de volgende voor beelden ziet u hoe u een rol toewijst aan een gebruiker in verschillende bereiken, maar u kunt dezelfde opdracht gebruiken om een rol toe te wijzen aan een beveiligings-principal.
 
-> [!NOTE]
-> Wanneer u een Azure Storage-account maakt, worden er niet automatisch machtigingen toegewezen om toegang te krijgen tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of container of wachtrij.
+> [!IMPORTANT]
+> Wanneer u een Azure Storage-account maakt, worden er niet automatisch machtigingen toegewezen om toegang te krijgen tot gegevens via Azure AD. U moet uzelf expliciet een Azure RBAC-rol toewijzen voor gegevens toegang. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of container of wachtrij.
+>
+> Als het opslag account is vergrendeld met een Azure Resource Manager alleen-lezen vergrendeling, voor komt de vergren deling dat de toewijzing van Azure RBAC-rollen die zijn afgestemd op het opslag account of aan een gegevens container (BLOB-container of wachtrij) wordt toegewezen.
 
 ### <a name="container-scope"></a>Container bereik
 
@@ -144,4 +146,4 @@ az role assignment create \
 
 - [Azure-roltoewijzingen toevoegen of verwijderen met de module Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [De Azure PowerShell-module gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](storage-auth-aad-rbac-powershell.md)
-- [De Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](storage-auth-aad-rbac-portal.md)
+- [Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot blob- en wachtrijgegevens](storage-auth-aad-rbac-portal.md)

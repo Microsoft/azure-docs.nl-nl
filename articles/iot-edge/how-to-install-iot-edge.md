@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: kgremban
-ms.openlocfilehash: ab783d6cb20f1c2fe31e8556dc57999df20d5637
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: efbae71162bdd0c126287191f7ad35cf903db138
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629807"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378074"
 ---
 # <a name="install-or-uninstall-azure-iot-edge-for-linux"></a>Azure IoT Edge voor Linux installeren of verwijderen
 
@@ -32,7 +32,7 @@ Dit artikel bevat de stappen voor het installeren van de Azure IoT Edge runtime 
 
 * Een Linux-apparaat
 
-  Een x64-, ARM32-of ARM64 Linux-apparaat hebben. Micro soft biedt installatie pakketten voor Ubuntu Server 16,04, Ubuntu Server 18,04 en Raspberry Pi OS stretch-besturings systemen.
+  Een x64-, ARM32-of ARM64 Linux-apparaat hebben. Micro soft biedt installatie pakketten voor Ubuntu Server 18,04 en Raspberry Pi OS stretch-besturings systemen.
 
   Zie [Azure IOT Edge ondersteunde systemen](support.md#operating-systems) voor de meest recente informatie over welke besturings systemen momenteel worden ondersteund voor productie scenario's.
 
@@ -42,12 +42,6 @@ Dit artikel bevat de stappen voor het installeren van de Azure IoT Edge runtime 
 * Bereid uw apparaat voor op toegang tot de micro soft-installatie pakketten.
 
   Installeer de configuratie van de opslagplaats die overeenkomt met het besturingssysteem van uw apparaat.
-
-  * **Ubuntu Server 16.04**:
-
-    ```bash
-    curl https://packages.microsoft.com/config/ubuntu/16.04/multiarch/prod.list > ./microsoft-prod.list
-    ```
 
   * **Ubuntu Server 18.04**:
 

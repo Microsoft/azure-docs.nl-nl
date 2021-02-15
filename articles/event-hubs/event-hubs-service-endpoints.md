@@ -2,13 +2,13 @@
 title: Service-eind punten Virtual Network-Azure Event Hubs | Microsoft Docs
 description: Dit artikel bevat informatie over het toevoegen van een service-eind punt van micro soft. EventHub aan een virtueel netwerk.
 ms.topic: article
-ms.date: 07/29/2020
-ms.openlocfilehash: 029338e3835d03b1a66ff6629e872c84113b0ff2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 02/12/2021
+ms.openlocfilehash: f725c4f4d94cbf7d0463ce49c1d2809444ef6f7a
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015572"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516680"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-from-specific-virtual-networks"></a>Toegang tot Azure Event Hubs-naam ruimten van specifieke virtuele netwerken toestaan 
 
@@ -46,8 +46,8 @@ In deze sectie wordt beschreven hoe u Azure Portal kunt gebruiken om een service
 1. Navigeer naar uw **Event hubs-naam ruimte** in de [Azure Portal](https://portal.azure.com).
 4. Selecteer **netwerken** onder **instellingen** in het menu links. U ziet het tabblad **netwerken** alleen voor **standaard** of **toegewezen** naam ruimten. 
 
-    > [!NOTE]
-    > Standaard is de optie **geselecteerde netwerken** geselecteerd, zoals wordt weer gegeven in de volgende afbeelding. Als u geen IP-firewall regel opgeeft of een virtueel netwerk toevoegt op deze pagina, kunt u toegang krijgen tot de naam ruimte via het **open bare Internet** (met behulp van de toegangs sleutel). 
+    > [!WARNING]
+    > Als u de optie **geselecteerde netwerken** selecteert en ten minste één IP-firewall regel of een virtueel netwerk op deze pagina niet toevoegt, is de naam ruimte toegankelijk via het **open bare Internet** (met behulp van de toegangs sleutel). 
 
     :::image type="content" source="./media/event-hubs-firewall/selected-networks.png" alt-text="Tabblad netwerken-opties voor geselecteerde netwerken" lightbox="./media/event-hubs-firewall/selected-networks.png":::    
 
@@ -79,28 +79,12 @@ In deze sectie wordt beschreven hoe u Azure Portal kunt gebruiken om een service
 [!INCLUDE [event-hubs-trusted-services](../../includes/event-hubs-trusted-services.md)]
 
 ## <a name="use-resource-manager-template"></a>Resource Manager-sjabloon gebruiken
+In het volgende voor beeld van een resource manager-sjabloon wordt een regel voor een virtueel netwerk toegevoegd aan een bestaande Event Hubs naam ruimte. Voor de netwerk regel specificeert deze de ID van een subnet in een virtueel netwerk. 
 
-Met de volgende Resource Manager-sjabloon kan een regel voor een virtueel netwerk worden toegevoegd aan een bestaande Event Hubs naam ruimte.
+De ID is een volledig gekwalificeerd Resource Manager-pad voor het subnet van het virtuele netwerk. Bijvoorbeeld `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` voor het standaard subnet van een virtueel netwerk.
 
-Sjabloon parameters:
+Wanneer u regels voor het virtuele netwerk of firewalls toevoegt, stelt u de waarde `defaultAction` in op `Deny` .
 
-* `namespaceName`: Event Hubs naam ruimte.
-* `vnetRuleName`: Naam voor de Virtual Network regel die moet worden gemaakt.
-* `virtualNetworkingSubnetId`: Volledig gekwalificeerd pad van Resource Manager voor het subnet van het virtuele netwerk; bijvoorbeeld `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` voor het standaard subnet van een virtueel netwerk.
-
-> [!NOTE]
-> Hoewel er geen regels kunnen worden geweigerd, is voor de Azure Resource Manager sjabloon de standaard actie ingesteld op **' toestaan '** , waardoor verbindingen niet worden beperkt.
-> Wanneer u Virtual Network of firewall regels maakt, moeten we de **_' defaultAction '_ wijzigen**
-> 
-> from
-> ```json
-> "defaultAction": "Allow"
-> ```
-> tot
-> ```json
-> "defaultAction": "Deny"
-> ```
->
 
 ```json
 {
@@ -202,6 +186,9 @@ Sjabloon parameters:
 ```
 
 Als u de sjabloon wilt implementeren, volgt u de instructies voor [Azure Resource Manager][lnk-deploy].
+
+> [!IMPORTANT]
+> Als er geen regels voor het IP-en virtueel netwerk zijn, worden alle verkeer naar de naam ruimte stromen, zelfs als u de op hebt ingesteld `defaultAction` `deny` .  De naam ruimte is toegankelijk via het open bare Internet (met behulp van de toegangs sleutel). Geef ten minste één IP-regel of virtuele netwerk regel voor de naam ruimte op om alleen verkeer toe te staan vanaf de opgegeven IP-adressen of het subnet van een virtueel netwerk.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

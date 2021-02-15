@@ -3,18 +3,18 @@ title: 'ML Studio (klassiek): net # aangepaste Neural-netwerken-Azure'
 description: 'Syntaxis handleiding voor de specificatie taal net # Neural Networks. Meer informatie over het maken van aangepaste Neural-netwerk modellen in Azure Machine Learning Studio (klassiek).'
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2018
-ms.openlocfilehash: a36eb21f681aec1cfc52a000b60bdbc30cab0633
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 5137b633f66088efbee41b96ba715eb3b18961dc
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302795"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519249"
 ---
 # <a name="guide-to-net-neural-network-specification-language-for-machine-learning-studio-classic"></a>Hand leiding voor de netwerk specificatie taal net # Neural voor Machine Learning Studio (klassiek)
 
@@ -266,9 +266,9 @@ Antwoord normalisatie wordt gebruikt om de generalisatie in neural-netten te hel
 
 Bundels van antwoord normalisatie ondersteunen alle convolutional-kenmerken behalve **delen**, **MapCount** en **gewichten**.
 
-+ Als de kernel neurons in dezelfde toewijzing bevat als **_x_*_, wordt het normalisatie schema aangeduid als _* dezelfde toewijzings normalisatie**. Als u dezelfde toewijzings normalisatie wilt definiëren, moet de eerste coördinaat in **InputShape** de waarde 1 hebben.
++ Als de kernel neurons in dezelfde kaart bevat als ***x** _, wordt het normalisatie schema aangeduid als _ * dezelfde kaart normalisatie * *. Als u dezelfde toewijzings normalisatie wilt definiëren, moet de eerste coördinaat in **InputShape** de waarde 1 hebben.
 
-+ Als de kernel neurons in dezelfde ruimtelijke positie bevat als **_x_*_, maar de neurons zich in andere kaarten bevinden, wordt het normalisatie-schema de naam _* over kaarten normalisatie genoemd**. Dit type antwoord normalisatie implementeert een vorm van een zijdelingse remming die is geïnspireerd op het type dat in real neurons is gevonden, waardoor er concurrentie wordt gemaakt voor grote activerings niveaus onder neuron uitvoer die op verschillende kaarten zijn berekend. Voor het definiëren van de toewijzings normalisatie moet de eerste coördinaat een geheel getal zijn dat groter is dan één en niet groter is dan het aantal kaarten, en de rest van de coördinaten moet de waarde 1 hebben.
++ Als de kernel neurons in dezelfde ruimtelijke positie bevat als ***x** _, maar de neurons zich in andere kaarten bevinden, wordt het normalisatie-schema de naam _ * genoemd in de vorm van normalisatie * *. Dit type antwoord normalisatie implementeert een vorm van een zijdelingse remming die is geïnspireerd op het type dat in real neurons is gevonden, waardoor er concurrentie wordt gemaakt voor grote activerings niveaus onder neuron uitvoer die op verschillende kaarten zijn berekend. Voor het definiëren van de toewijzings normalisatie moet de eerste coördinaat een geheel getal zijn dat groter is dan één en niet groter is dan het aantal kaarten, en de rest van de coördinaten moet de waarde 1 hebben.
 
 Omdat de bundels van antwoord vragen een vooraf gedefinieerde functie Toep assen op de waarden van het bron knooppunt om de waarde van het doel knooppunt te bepalen, hebben ze geen treinloze status (gewicht of bias).
 

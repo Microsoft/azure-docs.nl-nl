@@ -1,23 +1,18 @@
 ---
 title: Een data factory-pijplijn maken met Azure Portal
 description: Deze zelfstudie bevat stapsgewijze instructies voor het maken van een data factory met een pijplijn met behulp van Azure Portal. In dit voorbeeld gebruikt de pijplijn de kopieeractiviteit om gegevens vanuit Azure Blob Storage naar Azure SQL Database te kopiëren.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 12/14/2020
 ms.author: jingwang
-ms.openlocfilehash: 34eb34a86948a2b4c043d5d9b58b50958855e449
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
-ms.translationtype: HT
+ms.openlocfilehash: ca3250fb54440d6b68a808a3b1b3800bdcfd14eb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508711"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375762"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-database-in-azure-sql-database-by-using-azure-data-factory"></a>Gegevens kopiëren van Azure Blob-opslag naar een database in Azure SQL Database met Azure Data Factory
 

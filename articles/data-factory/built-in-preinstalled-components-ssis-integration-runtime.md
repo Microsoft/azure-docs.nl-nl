@@ -1,23 +1,18 @@
 ---
 title: Ingebouwde en vooraf geïnstalleerde onderdelen op Azure-SSIS Integration Runtime
 description: Een lijst met alle ingebouwde en vooraf geïnstalleerde onderdelen, zoals clients, stuur Programma's, providers, verbindings beheer, gegevens bronnen/doelen/trans formaties en taken op Azure-SSIS Integration Runtime.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: swinarko
 ms.author: sawinark
-ms.reviewer: douglasl
-manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 05/14/2020
-ms.openlocfilehash: 2f152cddf506c160e686e404b9ba199fbc4c4c37
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 2f5ad8deb702e312f7dd7275128e8ca8098ab90c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556321"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393782"
 ---
 # <a name="built-in-and-preinstalled-components-on-azure-ssis-integration-runtime"></a>Ingebouwde en vooraf geïnstalleerde onderdelen op Azure-SSIS Integration Runtime
 

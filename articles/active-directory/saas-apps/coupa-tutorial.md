@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/14/2021
+ms.date: 02/05/2021
 ms.author: jeedes
-ms.openlocfilehash: c6932292b86924cfab6d17c315cbd6946bd63f61
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 0be2e2f6ce22525cb4c3a7e0656ce9ce75fb7f77
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621326"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363472"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Zelfstudie: Azure Active Directory-integratie met Coupa
 
@@ -28,10 +28,10 @@ In deze zelf studie leert u hoe u bijsnijdt kunt integreren met Azure Active Dir
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor het configureren van Azure AD-integratie met Coupa hebt u het volgende nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Het abonnement voor eenmalige aanmelding is ingeschakeld.
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Eenmalige aanmelding (SSO) ingeschakeld abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met ve
     1. **[Maak een gebruiker](#create-coupa-test-user)** van reslaga test om een tegen hanger te hebben van B. Simon inkoppelinga dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
@@ -128,17 +128,17 @@ In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te ge
 1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-### <a name="configure-coupa-sso"></a>Versnijda-SSO configureren
+## <a name="configure-coupa-sso"></a>Versnijda-SSO configureren
 
 1. Meld u als beheerder aan bij de bedrijfssite van Coupa.
 
 2. Ga naar **Setup \> Security controls**.
 
-    ![Beveiligingsmaatregelen](./media/coupa-tutorial/ic791900.png "Beveiligingsmaatregelen")
+    ![Beveiligingsmaatregelen](./media/coupa-tutorial/setup.png "Beveiligingsmaatregelen")
 
 3. Voer de volgende stappen uit in het gedeelte **Log in using Coupa credentials**:
 
-    ![Metagegevens van Coupa SP](./media/coupa-tutorial/ic791901.png "Metagegevens van Coupa SP")
+    ![Metagegevens van Coupa SP](./media/coupa-tutorial/login.png "Metagegevens van Coupa SP")
 
     a. Selecteer **Log in using SAML**.
 
@@ -158,15 +158,15 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Coupa, moeten ze wo
 
 2. Klik in het menu bovenaan op **Setup** en klik vervolgens op **Users**.
 
-    ![Gebruikers](./media/coupa-tutorial/ic791908.png "Gebruikers")
+    ![Gebruikers](./media/coupa-tutorial/user.png "Gebruikers")
 
 3. Klik op **Create**.
 
-    ![Gebruikers maken](./media/coupa-tutorial/ic791909.png "Gebruikers maken")
+    ![Gebruikers maken](./media/coupa-tutorial/create.png "Gebruikers maken")
 
 4. Voer in het gedeelte **User Create** de volgende stappen uit:
 
-    ![Gebruikersdetails](./media/coupa-tutorial/ic791910.png "Gebruikersdetails")
+    ![Gebruikersdetails](./media/coupa-tutorial/details.png "Gebruikersdetails")
 
     a. Typ in de vakken **Login**, **First name**, **Last name**, **Single Sign-On ID** en **Email** kenmerken van een geldig Azure Active Directory-account dat u wilt inrichten.
 
@@ -179,7 +179,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Coupa, moeten ze wo
 >[!NOTE]
 >U kunt andere hulpprogramma's of API's van Coupa gebruiken om Azure AD-gebruikersaccounts in te richten.
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 

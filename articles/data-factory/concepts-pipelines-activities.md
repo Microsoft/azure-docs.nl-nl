@@ -1,20 +1,17 @@
 ---
 title: Pijplijnen en activiteiten in Azure Data Factory
 description: Meer informatie over pijplijnen en activiteiten in Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: ceaced5860976b0fa9f84903804700f778ed9550
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 870c812a68f765f987cfd3d1b953e0afeb3e9055
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500072"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364508"
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Pijplijnen en activiteiten in Azure Data Factory
 
@@ -106,14 +103,14 @@ Een pijplijn wordt als volgt in de JSON-indeling gedefinieerd:
 }
 ```
 
-Label | Beschrijving | Type | Vereist
+Tag | Beschrijving | Type | Vereist
 --- | ----------- | ---- | --------
 naam | Naam van de pijplijn. Geef een naam op die staat voor de actie die de pijplijn uitvoert. <br/><ul><li>Maximum aantal tekens: 140</li><li>Moet beginnen met een letter, cijfer of onderstrepings teken ( \_ )</li><li>De volgende tekens zijn niet toegestaan: '. ', ' + ', '? ', '/', ' < ', ' > ', ' * ', '% ', ' & ', ': ', ' \" </li></ul> | Tekenreeks | Ja
-beschrijving | Voer een beschrijving in van het doel waarvoor de pijplijn wordt gebruikt. | Tekenreeks | Nee
+beschrijving | Voer een beschrijving in van het doel waarvoor de pijplijn wordt gebruikt. | Tekenreeks | No
 activities | De sectie **activities** kan één of meer activiteiten bevatten die zijn gedefinieerd binnen de activiteit. Zie de sectie [Activity in JSON](#activity-json) voor meer informatie over het JSON-element activities. | Matrix | Ja
-parameters | De sectie **parameters** kan één of meer parameters bevatten die zijn gedefinieerd in de pijplijn, waardoor uw pijplijn kan worden hergebruikt. | Lijst | Nee
-gelijktijdigheid | Het maximum aantal gelijktijdige uitvoeringen van de pijp lijn kan hebben. Standaard is er geen maximum. Als de limiet voor gelijktijdigheid is bereikt, worden extra pijplijn uitvoeringen in de wachtrij geplaatst totdat eerdere versies zijn voltooid | Getal | Nee 
-aantekeningen | Een lijst met tags die zijn gekoppeld aan de pijp lijn | Matrix | Nee
+parameters | De sectie **parameters** kan één of meer parameters bevatten die zijn gedefinieerd in de pijplijn, waardoor uw pijplijn kan worden hergebruikt. | Lijst | No
+gelijktijdigheid | Het maximum aantal gelijktijdige uitvoeringen van de pijp lijn kan hebben. Standaard is er geen maximum. Als de limiet voor gelijktijdigheid is bereikt, worden extra pijplijn uitvoeringen in de wachtrij geplaatst totdat eerdere versies zijn voltooid | Aantal | No 
+aantekeningen | Een lijst met tags die zijn gekoppeld aan de pijp lijn | Matrix | No
 
 ## <a name="activity-json"></a>Activity in JSON
 De sectie **activities** kan één of meer activiteiten bevatten die zijn gedefinieerd binnen de activiteit. Er zijn twee soorten activiteiten: uitvoerings- en controleactiviteiten.
@@ -141,15 +138,15 @@ Uitvoeringsactiviteiten zijn [activiteiten voor gegevensverplaatsing](#data-move
 
 De volgende tabel beschrijft de eigenschappen in de JSON-definitie activity:
 
-Label | Beschrijving | Vereist
+Tag | Beschrijving | Vereist
 --- | ----------- | ---------
-naam | De naam van de activiteit. Geef een naam op die staat voor de actie die de activiteit uitvoert. <br/><ul><li>Maximum aantal tekens: 55</li><li>Moet beginnen met een letter-cijfer of een onderstrepings teken ( \_ )</li><li>De volgende tekens zijn niet toegestaan: '. ', ' + ', '? ', '/', ' < ', ' > ', ' * ', '% ', ' & ', ': ', ' \" | Ja</li></ul>
-beschrijving | Beschrijving van het doel waarvoor de activiteit of wordt gebruikt | Ja
-type | Type activiteit. Bekijk de secties [activiteiten voor gegevens verplaatsing](#data-movement-activities), [activiteiten voor gegevens transformatie](#data-transformation-activities)en [controle activiteiten](#control-flow-activities) voor verschillende typen activiteiten. | Ja
+naam | De naam van de activiteit. Geef een naam op die staat voor de actie die de activiteit uitvoert. <br/><ul><li>Maximum aantal tekens: 55</li><li>Moet beginnen met een letter-cijfer of een onderstrepings teken ( \_ )</li><li>De volgende tekens zijn niet toegestaan: '. ', ' + ', '? ', '/', ' < ', ' > ', ' * ', '% ', ' & ', ': ', ' \" | Yes</li></ul>
+beschrijving | Beschrijving van het doel waarvoor de activiteit of wordt gebruikt | Yes
+type | Type activiteit. Bekijk de secties [activiteiten voor gegevens verplaatsing](#data-movement-activities), [activiteiten voor gegevens transformatie](#data-transformation-activities)en [controle activiteiten](#control-flow-activities) voor verschillende typen activiteiten. | Yes
 linkedServiceName | De naam van de gekoppelde service die door de activiteit wordt gebruikt.<br/><br/>Een activiteit kan vereisen dat u de gekoppelde service opgeeft die is gekoppeld aan de vereiste rekenomgeving. | Ja voor HDInsight-activiteit, Azure Machine Learning Studio (klassiek) batch Score activiteit, opgeslagen procedure activiteit. <br/><br/>Nee voor alle andere
-typeProperties | Eigenschappen in de sectie typeProperties zijn afhankelijk van elk type activiteit. Klik op koppelingen naar de activiteiten in de vorige sectie om typeProperties voor een activiteit te bekijken. | Nee
-policy | Beleidsregels die van invloed zijn op het runtimegedrag van de activiteit. Deze eigenschap bevat een time-out en het gedrag voor opnieuw proberen. Als deze niet is opgegeven, worden de standaard waarden gebruikt. Zie voor meer informatie de sectie [Beleidsregels voor activiteiten](#activity-policy). | Nee
-dependsOn | Deze eigenschap wordt gebruikt voor het definiëren van afhankelijkheden van de activiteit, en hoe de volgende activiteiten afhankelijk zijn van vorige activiteiten. Zie voor meer informatie de sectie [Afhankelijkheid van activiteiten](#activity-dependency) | Nee
+typeProperties | Eigenschappen in de sectie typeProperties zijn afhankelijk van elk type activiteit. Klik op koppelingen naar de activiteiten in de vorige sectie om typeProperties voor een activiteit te bekijken. | No
+policy | Beleidsregels die van invloed zijn op het runtimegedrag van de activiteit. Deze eigenschap bevat een time-out en het gedrag voor opnieuw proberen. Als deze niet is opgegeven, worden de standaard waarden gebruikt. Zie voor meer informatie de sectie [Beleidsregels voor activiteiten](#activity-policy). | No
+dependsOn | Deze eigenschap wordt gebruikt voor het definiëren van afhankelijkheden van de activiteit, en hoe de volgende activiteiten afhankelijk zijn van vorige activiteiten. Zie voor meer informatie de sectie [Afhankelijkheid van activiteiten](#activity-dependency) | No
 
 ### <a name="activity-policy"></a>Beleidsregels voor activiteiten
 Beleidsregels beïnvloeden het de runtimegedrag van een activiteit, waarbij configuratiemogelijkheden worden geboden. Beleidsregels voor activiteiten zijn alleen beschikbaar voor uitvoeringsactiviteiten.
@@ -182,12 +179,12 @@ Beleidsregels beïnvloeden het de runtimegedrag van een activiteit, waarbij conf
 }
 ```
 
-JSON-naam | Beschrijving | Toegestane waarden | Vereist
+JSON-naam | Description | Toegestane waarden | Vereist
 --------- | ----------- | -------------- | --------
 timeout | Hiermee geeft u de time-out op voor de activiteit die moet worden uitgevoerd. | Periode | Nee. De standaardwaarde is 7 dagen.
 retry | Maximaal aantal nieuwe pogingen | Geheel getal | Nee. De standaardwaarde is 0
 retryIntervalInSeconds | De vertraging tussen nieuwe pogingen in seconden | Geheel getal | Nee. De standaard waarde is 30 seconden
-secureOutput | Als deze eigenschap is ingesteld op True, wordt de uitvoer van de activiteit beschouwd als beveiligd en niet geregistreerd voor bewaking. | Boolean | Nee. De standaardinstelling is onwaar.
+secureOutput | Als deze eigenschap is ingesteld op True, wordt de uitvoer van de activiteit beschouwd als beveiligd en niet geregistreerd voor bewaking. | Booleaans | Nee. De standaardinstelling is onwaar.
 
 ### <a name="control-activity"></a>Controleactiviteit
 Controleactiviteiten hebben de volgende structuur op het hoogste niveau:
@@ -206,13 +203,13 @@ Controleactiviteiten hebben de volgende structuur op het hoogste niveau:
 }
 ```
 
-Label | Beschrijving | Vereist
+Tag | Beschrijving | Vereist
 --- | ----------- | --------
-naam | De naam van de activiteit. Geef een naam op die staat voor de actie die de activiteit uitvoert.<br/><ul><li>Maximum aantal tekens: 55</li><li>Moet beginnen met een letter nummer of een onderstrepings teken ( \_ )</li><li>De volgende tekens zijn niet toegestaan: '. ', ' + ', '? ', '/', ' < ', ' > ', ' * ', '% ', ' & ', ': ', ' \" | Ja</li><ul>
-beschrijving | Beschrijving van het doel waarvoor de activiteit of wordt gebruikt | Ja
-type | Type activiteit. Bekijk de secties [Activiteiten voor gegevensverplaatsing](#data-movement-activities), [Activiteiten voor gegevenstransformatie](#data-transformation-activities) en [Controleactiviteiten](#control-flow-activities) voor andere typen activiteiten. | Ja
-typeProperties | Eigenschappen in de sectie typeProperties zijn afhankelijk van elk type activiteit. Klik op koppelingen naar de activiteiten in de vorige sectie om typeProperties voor een activiteit te bekijken. | Nee
-dependsOn | Deze eigenschap wordt gebruikt voor het definiëren van afhankelijkheden van de activiteit, en hoe de volgende activiteiten afhankelijk zijn van vorige activiteiten. Zie [afhankelijkheid van activiteiten](#activity-dependency)voor meer informatie. | Nee
+naam | De naam van de activiteit. Geef een naam op die staat voor de actie die de activiteit uitvoert.<br/><ul><li>Maximum aantal tekens: 55</li><li>Moet beginnen met een letter nummer of een onderstrepings teken ( \_ )</li><li>De volgende tekens zijn niet toegestaan: '. ', ' + ', '? ', '/', ' < ', ' > ', ' * ', '% ', ' & ', ': ', ' \" | Yes</li><ul>
+beschrijving | Beschrijving van het doel waarvoor de activiteit of wordt gebruikt | Yes
+type | Type activiteit. Bekijk de secties [Activiteiten voor gegevensverplaatsing](#data-movement-activities), [Activiteiten voor gegevenstransformatie](#data-transformation-activities) en [Controleactiviteiten](#control-flow-activities) voor andere typen activiteiten. | Yes
+typeProperties | Eigenschappen in de sectie typeProperties zijn afhankelijk van elk type activiteit. Klik op koppelingen naar de activiteiten in de vorige sectie om typeProperties voor een activiteit te bekijken. | No
+dependsOn | Deze eigenschap wordt gebruikt voor het definiëren van afhankelijkheden van de activiteit, en hoe de volgende activiteiten afhankelijk zijn van vorige activiteiten. Zie [afhankelijkheid van activiteiten](#activity-dependency)voor meer informatie. | No
 
 ### <a name="activity-dependency"></a>Afhankelijkheid van activiteiten
 De afhankelijkheid van activiteiten bepaalt hoe latere activiteiten afhankelijk zijn van vorige activiteiten, waarbij de voor waarde wordt bepaald of de volgende taak moet blijven uitvoeren. Een activiteit kan afhankelijk zijn van een of meer eerdere activiteiten met verschillende afhankelijkheidsvoorwaarden.

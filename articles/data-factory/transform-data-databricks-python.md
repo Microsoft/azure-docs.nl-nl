@@ -1,27 +1,21 @@
 ---
 title: Gegevens transformeren met Databricks python
-description: Meer informatie over hoe u gegevens verwerkt of transformeert door een Databricks python uit te voeren.
-services: data-factory
-documentationcenter: ''
+description: Meer informatie over hoe u gegevens verwerkt of transformeert door een Databricks python-activiteit uit te voeren in een Azure Data Factory-pijp lijn.
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/15/2018
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
-manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: 7e80fad02a186173868a6aa78aedeac0801f199a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 49dfe11ceb01471e3b5afadd30259dcd63e7b82a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496872"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373943"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Gegevens transformeren door een python-activiteit uit te voeren in Azure Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
-
 
 Met de activiteit python Azure Databricks in een [Data Factory-pijp lijn](concepts-pipelines-activities.md) wordt een python-bestand in uw Azure Databricks-cluster uitgevoerd. In dit artikel vindt u een overzicht van het artikel over de [activiteiten voor gegevens transformatie](transform-data.md) , dat een algemene informatie bevat over de gegevens transformatie en de ondersteunde transformatie activiteiten. Azure Databricks is een beheerd platform voor het uitvoeren van Apache Spark.
 
@@ -66,13 +60,13 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 
 |Eigenschap|Beschrijving|Vereist|
 |---|---|---|
-|naam|De naam van de activiteit in de pijp lijn.|Ja|
-|beschrijving|Tekst die beschrijft wat de activiteit doet.|Nee|
-|type|Voor Databricks python-activiteit is het type activiteit DatabricksSparkPython.|Ja|
-|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de python-activiteit wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Ja|
-|pythonFile|De URI van het python-bestand dat moet worden uitgevoerd. Alleen DBFS-paden worden ondersteund.|Ja|
-|parameters|Opdracht regel parameters die worden door gegeven aan het python-bestand. Dit is een matrix met teken reeksen.|Nee|
-|bibliotheken|Een lijst met bibliotheken die op het cluster moeten worden geïnstalleerd waarmee de taak wordt uitgevoerd. Dit kan een matrix zijn met <teken reeks, object>|Nee|
+|naam|De naam van de activiteit in de pijp lijn.|Yes|
+|beschrijving|Tekst die beschrijft wat de activiteit doet.|No|
+|type|Voor Databricks python-activiteit is het type activiteit DatabricksSparkPython.|Yes|
+|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de python-activiteit wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Yes|
+|pythonFile|De URI van het python-bestand dat moet worden uitgevoerd. Alleen DBFS-paden worden ondersteund.|Yes|
+|parameters|Opdracht regel parameters die worden door gegeven aan het python-bestand. Dit is een matrix met teken reeksen.|No|
+|bibliotheken|Een lijst met bibliotheken die op het cluster moeten worden geïnstalleerd waarmee de taak wordt uitgevoerd. Dit kan een matrix zijn met <teken reeks, object>|No|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Ondersteunde bibliotheken voor databricks-activiteiten
 
@@ -110,18 +104,22 @@ In de bovenstaande definitie van de Databricks-activiteit geeft u deze typen tap
 
 ```
 
-Raadpleeg de Databricks- [documentatie](https://docs.azuredatabricks.net/api/latest/libraries.html#managedlibrarieslibrary) voor bibliotheek typen voor meer informatie.
+Raadpleeg de Databricks- [documentatie](/azure/databricks/dev-tools/api/latest/libraries#managedlibrarieslibrary) voor bibliotheek typen voor meer informatie.
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Een bibliotheek uploaden in Databricks
 
-#### <a name="using-databricks-workspace-ui"></a>[De gebruikers interface van Databricks werk ruimte gebruiken](https://docs.azuredatabricks.net/user-guide/libraries.html#create-a-library)
+### <a name="you-can-use-the-workspace-ui"></a>U kunt de werk ruimte gebruikers interface gebruiken:
 
-Als u het pad naar de dbfs van de bibliotheek wilt ophalen die via de gebruikers interface is toegevoegd, kunt u [DATABRICKS cli (installatie)](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#install-the-cli)gebruiken. 
+1. [De gebruikers interface van de Databricks-werk ruimte gebruiken](/azure/databricks/libraries/#create-a-library)
 
-De jar-bibliotheken worden meestal opgeslagen onder dbfs:/File Store/potten tijdens het gebruik van de gebruikers interface. U kunt alle weer geven via de CLI: *databricks FS ls dbfs:/File Store/potten* 
+2. Als u het pad naar de dbfs van de bibliotheek wilt ophalen die via de gebruikers interface is toegevoegd, kunt u [DATABRICKS cli](/azure/databricks/dev-tools/cli/#install-the-cli)gebruiken.
 
+   De jar-bibliotheken worden meestal opgeslagen onder dbfs:/File Store/potten tijdens het gebruik van de gebruikers interface. U kunt alle weer geven via de CLI: *databricks FS ls dbfs:/File Store/job-Jars*
 
+### <a name="or-you-can-use-the-databricks-cli"></a>U kunt ook de Databricks CLI gebruiken:
 
-#### <a name="copy-library-using-databricks-cli"></a>[Bibliotheek kopiëren met behulp van Databricks CLI](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#copy-a-file-to-dbfs)
+1. Volg [de tape wisselaar met DATABRICKS cli](/azure/databricks/dev-tools/cli/#copy-a-file-to-dbfs)
 
-Voor beeld: *databricks FS CP sparkpi-assembly-0.1. jar dbfs:/File Store/potten*
+2. Databricks CLI gebruiken [(installatie stappen)](/azure/databricks/dev-tools/cli/#install-the-cli)
+
+   Als voor beeld: als u een JAR naar dbfs wilt kopiëren, `dbfs cp SparkPi-assembly-0.1.jar dbfs:/docs/sparkpi.jar`

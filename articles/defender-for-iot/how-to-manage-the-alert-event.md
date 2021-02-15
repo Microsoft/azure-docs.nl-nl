@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: c0670f37da0cead5e3bd05a1d69e17191e8c0ccf
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 6a1a4d13ee9f9032c739773b678600d52dec82b8
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99508740"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523920"
 ---
 # <a name="manage-alert-events"></a>Waarschuwings gebeurtenissen beheren
 
@@ -23,7 +23,8 @@ De volgende opties zijn beschikbaar voor het beheren van waarschuwings gebeurten
  | **Learn** | De gedetecteerde gebeurtenis autoriseren. Zie voor meer informatie [over het leren en voor komen van gebeurtenissen](#about-learning-and-unlearning-events). |
  | **Bevestigen** | De waarschuwing eenmaal verbergen voor de gedetecteerde gebeurtenis. De waarschuwing wordt opnieuw geactiveerd als de gebeurtenis opnieuw wordt gedetecteerd. Zie [informatie over bevestiging en het onbevestigde gebeurtenissen](#about-acknowledging-and-unacknowledging-events)voor meer informatie. |
  | **Dempen** | De activiteit continu negeren met identieke apparaten en vergelijkbaar verkeer. Zie voor meer informatie [over het dempen en dedempen van gebeurtenissen](#about-muting-and-unmuting-events). |
-
+ 
+U kunt ook waarschuwings gegevens exporteren.
 ## <a name="about-learning-and-unlearning-events"></a>Over het leren en voor komen van gebeurtenissen
 
 Gebeurtenissen die duiden op afwijkingen van het geleerde netwerk, kunnen de geldige netwerk wijzigingen weer spie gelen. Voor beelden zijn mogelijk een nieuw geautoriseerd apparaat dat is toegevoegd aan het netwerk of een geautoriseerde firmware-update.
@@ -68,9 +69,9 @@ In deze situaties is Learning niet beschikbaar. Wanneer u niet meer wilt weten e
 > [!NOTE] 
 > U kunt geen gebeurtenissen dempen waarbij een internet apparaat is gedefinieerd als de bron of bestemming.
 
-### <a name="what-traffic-is-muted"></a>Welk verkeer is gedempt?
+### <a name="what-alert-activity-is-muted"></a>Welke waarschuwings activiteit is gedempt?
 
-Een gedempt scenario omvat de netwerk apparaten en verkeer gedetecteerd voor een gebeurtenis. In de titel van de waarschuwing wordt het verkeer beschreven dat wordt gedempt.
+Een gedempt scenario bevat de netwerk apparaten en het verkeer dat voor een gebeurtenis is gedetecteerd. In de titel van de waarschuwing wordt het verkeer beschreven dat wordt gedempt.
 
 Het apparaat of de apparaten die worden gedempt, worden weer gegeven als een afbeelding in de waarschuwing. Als er twee apparaten worden weer gegeven, wordt het specifieke, gewaarschuwde verkeer ertussen gedempt.
 
@@ -88,7 +89,7 @@ Wanneer een gebeurtenis is gedempt, wordt deze genegeerd telkens wanneer de bron
 
 **Nadat een gebeurtenis is gedempt:**
 
-- De waarschuwing wordt weer gegeven in de **bevestigde** waarschuwings weergave totdat deze niet meer wordt gedempt.
+- De waarschuwing is toegankelijk in de **bevestigde** waarschuwings weergave totdat deze niet meer wordt gedempt.
 
 - De dempings actie wordt weer gegeven in de **tijd lijn** van de gebeurtenis.
 
@@ -106,6 +107,25 @@ Wanneer een gebeurtenis is gedempt, wordt deze genegeerd telkens wanneer de bron
 
 2. Beweeg de muis aanwijzer over een waarschuwing om te zien of deze gedempt is.  
 
-## <a name="see-also"></a>Zie ook
+## <a name="export-alert-information"></a>Waarschuwings gegevens exporteren
+
+Waarschuwings gegevens exporteren naar een CSV-bestand. U kunt informatie over alle gedetecteerde waarschuwingen exporteren of informatie exporteren op basis van de gefilterde weer gave. De volgende gegevens worden geëxporteerd:
+
+- Bron adres
+- Doel adres
+- Titel van de waarschuwing
+- Ernst van waarschuwing
+- Waarschuwings bericht
+- Aanvullende informatie
+- Bevestigde status
+- PCAP-Beschik baarheid
+
+Exporteren:
+
+1. Selecteer waarschuwingen in het menu aan de zijkant.
+1. Selecteer Exporteren.
+1. Selecteer Uitgebreide waarschuwingen exporteren om waarschuwings gegevens in afzonderlijke rijen te exporteren voor elke waarschuwing die betrekking heeft op meerdere apparaten. Wanneer uitgebreide waarschuwingen exporteren is geselecteerd, wordt in het CSV-bestand een dubbele rij van de waarschuwings gebeurtenis gemaakt met de unieke items in elke rij. Met deze optie kunt u de geëxporteerde waarschuwings gebeurtenissen gemakkelijker onderzoeken.
+
+## <a name="next-steps"></a>Volgende stappen
 
 [Controleren welk verkeer wordt bewaakt](how-to-control-what-traffic-is-monitored.md)

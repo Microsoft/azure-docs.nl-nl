@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/24/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 20b47204ea8f64bc430f436a9bcf1b2311409aa6
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: c28e2f1c24d39ceb915be9f4f6f222d70de9ee73
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509483"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522220"
 ---
 # <a name="sensor-trends-and-statistics-reports"></a>Sensor trends en statistieken rapporten
 
@@ -93,7 +93,7 @@ Selecteer **Trends & statistieken** in het menu aan de zijkant.
 
 Standaard worden resultaten weer gegeven voor detecties in de afgelopen 7 dagen. U kunt filter hulpprogramma's gebruiken om dit bereik te wijzigen. Bijvoorbeeld een zoek opdracht in de vrije tekst.
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 Rapportage van risico [beoordeling](how-to-create-risk-assessment-reports.md) 
  [Sensor gegevens analyse query's](how-to-create-data-mining-queries.md) 

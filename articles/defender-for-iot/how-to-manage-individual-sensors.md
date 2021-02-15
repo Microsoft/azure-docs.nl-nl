@@ -4,15 +4,15 @@ description: Meer informatie over het beheren van afzonderlijke Sens oren, waaro
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 1/12/2021
+ms.date: 02/02/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b35851bae8db39392d10a302d5f1059ba3ace696
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: ba98eb7e87ba277dcd5279ecf17373a8276b1cb1
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99508757"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523971"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 
@@ -86,7 +86,7 @@ Er wordt een fout bericht weer gegeven als het activerings bestand niet kan word
 
 - **Voor in de Cloud verbonden Sens oren**: de sensor kan geen verbinding maken met internet. Controleer de netwerk configuratie van de sensor. Als uw sensor verbinding moet maken via een webproxy voor toegang tot internet, controleert u of de proxy server correct is geconfigureerd op het scherm **sensor netwerk configuratie** . Controleer of \* . Azure-devices.net:443 is toegestaan in de firewall en/of de proxy. Als joker tekens niet worden ondersteund of als u meer controle wilt, moet de FQDN voor uw specifieke Defender voor IoT hub worden geopend in uw firewall en/of proxy. Zie [referentie-IOT hub-eind punten](../iot-hub/iot-hub-devguide-endpoints.md)voor meer informatie.  
 
-- **Voor met Clouds verbonden Sens oren**: het activerings bestand is geldig, maar Defender voor IOT heeft dit geweigerd. Als dit probleem niet kan worden opgelost, kunt u nog een activering downloaden van de pagina **sensor Management** van de Defender voor IOT-Portal. Als dit niet werkt, neemt u contact op met Microsoft Ondersteuning.
+- **Voor met Clouds verbonden Sens oren**: het activerings bestand is geldig, maar Defender voor IOT heeft dit geweigerd. Als dit probleem niet kan worden opgelost, kunt u een andere activering downloaden vanaf de pagina sites en Sens oren van de Defender voor IoT-Portal. Als dit niet werkt, neemt u contact op met Microsoft Ondersteuning.
 
 ## <a name="manage-certificates"></a>Certificaten beheren
 
@@ -114,7 +114,7 @@ De Defender voor IoT-sensor en de on-premises beheer console gebruiken SSL-en TL
  
  - Beveiligde communicatie tussen Sens oren en een on-premises beheer console. 
 
-Zodra het apparaat is geïnstalleerd, wordt een lokaal zelfondertekend certificaat gegenereerd om voorlopige toegang tot de webconsole toe te staan. Enter prise SSL-en TLS-certificaten kunnen worden geïnstalleerd met behulp van het [`cyberx-xsense-certificate-import`](#cli-commands) opdracht regel programma. 
+Zodra het apparaat is geïnstalleerd, wordt een lokaal zelfondertekend certificaat gegenereerd om voorlopige toegang tot de webconsole toe te staan. Enter prise SSL-en TLS-certificaten kunnen worden geïnstalleerd met behulp van het [`cyberx-xsense-certificate-import`](#cli-commands) opdracht regel programma.
 
  > [!NOTE]
  > Voor integraties en doorstuur regels waarbij het apparaat de client en initiator van de sessie is, worden specifieke certificaten gebruikt en zijn deze niet gerelateerd aan de systeem certificaten.  
@@ -363,15 +363,23 @@ Als uw sensor is geregistreerd als een in de Cloud aangesloten sensor, wordt de 
 
 Ga als volgt te werk om de naam te wijzigen:
 
-1. Ga in de Azure Defender voor IoT-Portal naar de pagina voor het **beheer van Sens oren** .
+1. Ga in de Azure Defender voor IoT-Portal naar de pagina sites en Sens oren.
 
-1. Verwijder de sensor uit het venster **sensor Management** .
+1. Verwijder de sensor van de pagina sites en Sens oren.
 
-1. Meld u opnieuw aan met de nieuwe naam.
+1. Meld u aan met de nieuwe naam door op de pagina aan de slag de optie voor **onboarding** te selecteren.
 
 1. Down load het nieuwe activerings bestand.
 
-1. Meld u aan bij de sensor en upload het nieuwe activerings bestand.
+1. Meld u aan bij de Defender voor IoT-sensor console.
+
+1. Selecteer in de sensor console de optie **systeem instellingen** en selecteer vervolgens opnieuw **activeren**.
+
+   :::image type="content" source="media/how-to-manage-sensors-on-the-cloud/reactivate.png" alt-text="Upload uw activerings bestand om de sensor opnieuw te activeren.":::
+
+1. Selecteer **uploaden** en selecteer het bestand dat u hebt opgeslagen.
+
+1. Selecteer **Activate**.
 
 ## <a name="update-the-sensor-network-configuration"></a>De netwerk configuratie van de sensor bijwerken
 
@@ -387,7 +395,7 @@ De configuratie wijzigen:
 
     :::image type="content" source="media/how-to-manage-individual-sensors/edit-network-configuration-screen.png" alt-text="Configureer uw netwerk instellingen.":::
 
-3. Stel de para meters als volgt in:
+3. Stel de para meters in:
 
     | Parameter | Beschrijving |
     |--|--|
@@ -458,7 +466,7 @@ De back-up opslaan op een externe SMB-server:
 
     - `sudo chmod 777 /<backup_folder_name_on_cyberx_server>/`
 
-3. Bewerken `fstab` : 
+3. Bewerken `fstab` :
 
     - `sudo nano /etc/fstab`
 
@@ -526,7 +534,7 @@ In de volgende procedure wordt beschreven hoe u een zelfstandige sensor bijwerkt
 
     :::image type="content" source="media/how-to-manage-individual-sensors/defender-for-iot-version.png" alt-text="Scherm afbeelding van de upgrade versie die wordt weer gegeven nadat u zich hebt aangemeld.":::
 
-## <a name="forward-sensor-failure-alerts"></a>Fout meldingen van sensor door sturen 
+## <a name="forward-sensor-failure-alerts"></a>Fout meldingen van sensor door sturen
 
 U kunt waarschuwingen door sturen naar derden om informatie te geven over:
 
@@ -562,7 +570,7 @@ Om toegang te krijgen tot systeem eigenschappen:
 
 3. Selecteer **systeem eigenschappen** in de sectie **Algemeen** .
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Onderzoek en pakketten voor bedreigings informatie](how-to-work-with-threat-intelligence-packages.md)
 

@@ -8,12 +8,12 @@ ms.author: nmurav
 ms.date: 01/03/2012
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 60b5a2bf5c0aed3d1a4621e179429a157c2a0962
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: db59a9e7693190582736b9460658f629f4f1e555
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99421505"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369625"
 ---
 # <a name="tutorial-prepare-a-web-app-for-azure-communication-services-nodejs"></a>Zelf studie: een web-app voorbereiden voor Azure Communication Services (Node.js)
 
@@ -106,11 +106,25 @@ Volg dezelfde stappen voor de uitbrei dingen [Azure functions](https://marketpla
 
 ## <a name="set-up-a-local-webserver"></a>Een lokale webserver instellen
 
+### <a name="create-a-new-npm-package"></a>Een nieuw NPM-pakket maken
+
+Typ in de terminal van het pad van de map met de werk ruimte:
+
+``` console
+npm init -y
+```
+
+Met deze opdracht initialiseert u een nieuw NPM-pakket en voegt u toe aan `package.json` de hoofdmap van uw project.
+
+:::image type="content" source="./media/step-one-pic-eight.png" alt-text="JSON van het pakket":::
+
+Aanvullende documentatie over de opdracht NPM init vindt u [hier](https://docs.npmjs.com/cli/v6/commands/npm-init)
+
 ### <a name="install-webpack"></a>Webpakket installeren
 
 met [webpack](https://webpack.js.org/) kunt u code bundelen in statische bestanden die u kunt implementeren in Azure. Het bevat ook een ontwikkel server die wordt geconfigureerd voor gebruik met het aanroepende voor beeld.
 
-Typ het volgende in de open-terminal om webpakket te installeren:
+Typ in het Terminal het volgende om webpakket te installeren:
 
 ``` Console
 npm install webpack@4.42.0 webpack-cli@3.3.11 webpack-dev-server@3.10.3 --save-dev
@@ -175,7 +189,7 @@ De opties voor de bron kaart worden [hier](https://webpack.js.org/configuration/
 
 :::image type="content" source="./media/step-one-pic-11.png" alt-text="Webpakket configureren":::
 
-Als u de ontwikkel server wilt uitvoeren, gaat u naar `package.json.js` en voegt u de volgende code toe onder scripts:
+Als u de ontwikkel server wilt uitvoeren, gaat u naar `package.json` en voegt u de volgende code toe onder scripts:
 
 ```JavaScript
     "build:dev": "webpack-dev-server --config webpack.dev.js"
@@ -206,7 +220,7 @@ Het bestand moet er nu als volgt uitzien:
 
 U hebt de opdracht toegevoegd die kan worden gebruikt vanuit NPM. 
 
-:::image type="content" source="./media/step-one-pic-12.png" alt-text="package-json.jswijzigen ":::
+:::image type="content" source="./media/step-one-pic-12.png" alt-text="package.jswijzigen op":::
 
 ### <a name="testing-the-development-server"></a>De ontwikkelings server testen
 
@@ -261,7 +275,7 @@ Gebruik de volgende Terminal opdracht om uw ontwikkel configuratie te testen:
 npm run build:dev
 ```
 
-In de-console ziet u waar de-server wordt uitgevoerd. Standaard is dit `http://localhost:8080` . De opdracht build: dev is de opdracht die we eerder hebben toegevoegd `package-json.js` .
+In de-console ziet u waar de-server wordt uitgevoerd. Standaard is dit `http://localhost:8080` . De opdracht build: dev is de opdracht die we eerder hebben toegevoegd `package.json` .
 
  :::image type="content" source="./media/step-one-pic-16.png" alt-text="Een ontwikkelings server starten":::
  
@@ -289,26 +303,11 @@ Met deze actie worden de gemeen schappelijke en aanroepende pakketten van Azure 
 
 :::image type="content" source="./media/step-one-pic-nine.png" alt-text="Azure Communication Services-pakketten installeren":::
 
-Deze pakketten worden geleverd door het team van Azure Communication Services en bevatten de verificatie-en aanroepende bibliotheken. De opdracht '--opslaan ' geeft aan dat onze toepassing afhankelijk is van deze pakketten voor productie gebruik en wordt opgenomen in het `dependencies` `package-json.js` bestand. Wanneer de toepassing voor productie wordt gebouwd, worden de pakketten opgenomen in onze productie code.
+Deze pakketten worden geleverd door het team van Azure Communication Services en bevatten de verificatie-en aanroepende bibliotheken. De opdracht '--opslaan ' geeft aan dat onze toepassing afhankelijk is van deze pakketten voor productie gebruik en wordt opgenomen in het `dependencies` `package.json` bestand. Wanneer de toepassing voor productie wordt gebouwd, worden de pakketten opgenomen in onze productie code.
 
 
 ## <a name="publish-your-website-to-azure-static-websites"></a>Uw website publiceren naar statische Azure-websites
 
-### <a name="create-a-new-npm-package"></a>Een nieuw NPM-pakket maken
-
-Typ in de terminal van het pad van de map met de werk ruimte:
-
-``` console
-npm init -y
-```
-
-Met deze opdracht initialiseert u een nieuw NPM-pakket en voegt u toe aan `package.json` de hoofdmap van uw project.
-
-:::image type="content" source="./media/step-one-pic-eight.png" alt-text="JSON van het pakket":::
-
-Aanvullende documentatie over de opdracht NPM init vindt u [hier](https://docs.npmjs.com/cli/v6/commands/npm-init)
-
- 
 ### <a name="create-a-configuration-for-production-deployment"></a>Een configuratie maken voor de productie-implementatie
 
 Voeg de volgende code toe aan de `webpack.prod.js` :

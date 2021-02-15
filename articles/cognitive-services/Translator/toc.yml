@@ -4,7 +4,7 @@
   items:
     - name: Wat is Translator?
       href: translator-info-overview.md
-    - name: Snelstartgids
+    - name: Snelstart
       href: quickstart-translator.md
     - name: Taalondersteuning
       href: language-support.md
@@ -149,4 +149,4 @@
         - name: Naleving
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
         - name: Versleuteling
-          href: translator-encryption-of-data-at-rest.md
+          href: encrypt-data-at-rest.md

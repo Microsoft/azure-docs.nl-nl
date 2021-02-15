@@ -2,19 +2,19 @@
 title: Toegangs beheer instellen voor uw Synapse-werk ruimte
 description: In dit artikel leert u hoe u de toegang tot een Synapse-werk ruimte beheert met behulp van Azure-functies, Synapse-functies, SQL-machtigingen en git-machtigingen.
 services: synapse-analytics
-author: billgib
+author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: security
 ms.date: 12/03/2020
-ms.author: billgib
+ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7dbbe3afb2a5eb19b5c4893bd73eddbf11e788d4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: c6ec84d41d113a38e78ab13404ef19faf625530b
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218073"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102169"
 ---
 # <a name="how-to-set-up-access-control-for-your-synapse-workspace"></a>Toegangs beheer instellen voor uw Synapse-werk ruimte 
 
@@ -43,7 +43,7 @@ Als u een Synapse-werk ruimte wilt beveiligen, volgt u een patroon voor het conf
 
 In dit document worden standaard namen gebruikt om de instructies te vereenvoudigen. Vervang ze door de namen van uw keuze.
 
-|Instelling | Standaard naam | Beschrijving |
+|Instelling | Standaard naam | Description |
 | :------ | :-------------- | :---------- |
 | **Synapse-werkruimte** | `workspace1` |  De naam die de Synapse-werk ruimte heeft. |
 | **ADLSGEN2-account** | `storage1` | Het ADLS-account dat moet worden gebruikt met uw werk ruimte. |

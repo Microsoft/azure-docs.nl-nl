@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions
-ms.openlocfilehash: 93d5d422709fad3d4f732b3b232f67d60d79b507
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 33c767d847d9e70e95b3ee1648be7852aa5cec98
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493716"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522883"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Openbaar IP-adres upgraden
 
@@ -36,7 +36,7 @@ De volgende scenario's worden in dit artikel gecontroleerd:
 Als u een upgrade van een openbaar IP-adres wilt uitvoeren, moet dit niet aan een resource zijn gekoppeld (Zie [Deze pagina](./virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's).
 
 >[!IMPORTANT]
->Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU, blijven geen [beschikbaarheids zones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  Dit betekent dat ze niet kunnen worden gekoppeld aan een Azure-resource die zone-redundant is of is gekoppeld aan een vooraf opgegeven zone in regio's waar deze wordt aangeboden.
+>Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU, blijven geen gegarandeerde [beschikbaarheids zones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  Zorg ervoor dat dit in acht wordt genomen bij het kiezen van de resources waaraan u het IP-adres wilt koppelen.
 
 ---
 # <a name="basic-to-standard---powershell"></a>[**Basic naar Standard-Power shell**](#tab/option-upgrade-powershell)

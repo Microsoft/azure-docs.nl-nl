@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/14/2021
 ms.author: memildin
-ms.openlocfilehash: 8d6cee5e8d9683ca88a71608595b7dfde8261b8d
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 845697b9d2fd8d43caa3a9992fea8a780b7d9b7c
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100520524"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522866"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
@@ -125,11 +125,9 @@ Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.m
 | Starten     | De VM wordt opgestart.                                                                                                                               | Niet gefactureerd            |
 | Wordt uitgevoerd      | Normale werk status voor een virtuele machine                                                                                                                    | Gefactureerd                |
 | Stoppen     | Dit is een overgangs status. Als deze functie is voltooid, wordt deze weer gegeven als gestopt.                                                                           | Gefactureerd                |
-| Gestopt      | De virtuele machine is afgesloten vanuit het gast besturingssysteem of met behulp van de uitgeschakeld-Api's. Er wordt nog steeds hardware toegewezen aan de virtuele machine en deze blijft op de host. | In rekening gebracht (1)            |
-| Vrijgeven | Overgangs status. Als de VM is voltooid, wordt deze weer gegeven als opgeheven.                                                                             | Niet gefactureerd (1)        |
+| Gestopt      | De virtuele machine is afgesloten vanuit het gast besturingssysteem of met behulp van de uitgeschakeld-Api's. Er wordt nog steeds hardware toegewezen aan de virtuele machine en deze blijft op de host. | Gefactureerd                |
+| Vrijgeven | Overgangs status. Als de VM is voltooid, wordt deze weer gegeven als opgeheven.                                                                             | Niet gefactureerd            |
 | Toewijzing ongedaan gemaakt  | De virtuele machine is gestopt en verwijderd van de host.                                                                                  | Niet gefactureerd            |
-
-(1) sommige Azure-resources, zoals schijven en netwerken, maken kosten in rekening. Voor software licenties op het exemplaar worden geen kosten in rekening gebracht.
 
 :::image type="content" source="media/security-center-pricing/deallocated-virtual-machines.png" alt-text="Azure Virtual Machines het weer geven van een ontoegewezen machine":::
 

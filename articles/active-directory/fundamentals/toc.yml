@@ -25,6 +25,8 @@
   items:
     - name: Beveiliging
       items:
+        - name: Microsoft 365 beveiligen tegen on-premisesaanvallen
+          href: protect-m365-from-on-premises-attacks.md
         - name: Veilige externe samenwerking
           items:
             - name: Overzicht van veilige externe toegang
@@ -47,8 +49,20 @@
               href: 8-secure-access-sensitivity-labels.md
             - name: '9. Veilige toegang tot Teams, SharePoint en OneDrive'
               href: 9-secure-access-teams-sharepoint.md
-        - name: Microsoft 365 beveiligen tegen on-premisesaanvallen
-          href: protect-m365-from-on-premises-attacks.md
+        - name: Service accounts beveiligen
+          items:
+            - name: Inleiding tot on-premises service accounts
+              href: service-accounts-on-premises.md
+            - name: Groeps Msa's beveiligen
+              href: service-accounts-group-managed.md
+            - name: Zelfstandige Msa's beveiligen
+              href: service-accounts-standalone-managed.md
+            - name: Computer accounts beveiligen
+              href: service-accounts-computer.md
+            - name: Service accounts op basis van gebruikers beveiligen
+              href: service-accounts-user-on-premises.md
+            - name: On-premises service accounts beheren
+              href: service-accounts-govern-on-premises.md
         - name: MFA inschakelen
           href: concept-fundamentals-mfa-get-started.md
         - name: Standaardinstellingen voor de beveiliging

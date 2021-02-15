@@ -8,12 +8,12 @@ ms.date: 01/27/2021
 ms.topic: how-to
 ms.service: iot-central
 ms.custom: contperf-fy21q1, contperf-fy21q3
-ms.openlocfilehash: d31673b8d789cff5de3ddce63b67a98854b7aabc
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 7152012c7c4a342c7491e5f8b835eaede4269c4c
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100515900"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522611"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export
 
@@ -168,14 +168,14 @@ Nu u een bestemming hebt voor het exporteren van uw gegevens naar, moet u de geg
 
 ## <a name="monitor-your-export"></a>Uw export controleren
 
-Naast het weer geven van de status van uw export in IoT Central, kunt u bewaken hoeveel gegevens tijdens uw export stromen worden uitgevoerd en er fouten in het Azure Monitor gegevens platform worden weer gegeven. U krijgt toegang tot metrische gegevens over uw export en Apparaatstatus in grafieken in de Azure Portal, een REST API of query's in Power shell of de Azure CLI. Op dit moment kunt u deze metrische gegevens voor export bewaken in Azure Monitor:
+Naast het weer geven van de status van uw export in IoT Central, kunt u [Azure monitor](../../azure-monitor/overview.md) gebruiken om te zien hoeveel gegevens er worden geëxporteerd en wat export fouten zijn. U kunt de metrische gegevens over het exporteren en de status van apparaten in grafieken in het Azure Portal openen, met een REST API of met query's in Power shell of de Azure CLI. Op dit moment kunt u de volgende metrische gegevens voor gegevensexport bewaken in Azure Monitor:
 
-1. Aantal inkomende berichten dat moet worden geëxporteerd voordat filters worden toegepast
-2. Aantal berichten dat door filters wordt door gegeven
-3. Aantal berichten dat is geëxporteerd naar bestemmingen
-4. Aantal aangetroffen fouten
- 
-[Meer informatie over het verkrijgen van toegang tot IoT Central metrische gegevens.](howto-monitor-application-health.md)
+- Het aantal inkomende berichten dat moet worden geëxporteerd voordat filters worden toegepast.
+- Aantal berichten dat door filters wordt door gegeven.
+- Aantal berichten dat is geëxporteerd naar bestemmingen.
+- Aantal aangetroffen fouten.
+
+Zie [de algehele status van een IOT Central toepassing bewaken](howto-monitor-application-health.md)voor meer informatie.
 
 ## <a name="destinations"></a>Bestemmingen
 

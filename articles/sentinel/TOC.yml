@@ -210,6 +210,8 @@
                       href: connect-zscaler.md
                 - name: 'STAP 3: de connectiviteit valideren'
                   href: connect-cef-verify.md
+        - name: Aangepaste connectors maken
+          href: create-custom-connector.md
         - name: Verbinding maken met bedreigingsinformatie
           href: connect-threat-intelligence.md
         - name: Verbinding maken met virtuele Azure Stack-machines
@@ -255,8 +257,6 @@
           href: hunting-with-rest-api.md
         - name: Watchlists beheren met REST-API
           href: watchlist-with-rest-api.md
-    - name: Referentie voor Azure Monitor gegevens
-      href: /azure/azure-monitor/reference/
     - name: De Logic Apps-connector van Azure Sentinel verkennen
       href: /connectors/azuresentinel/
     - name: Netwerknormalisatieschema
@@ -275,8 +275,6 @@
   items:
     - name: Nuttige informatie
       href: resources.md
-    - name: Azure-roadmap
-      href: 'https://azure.microsoft.com/updates/?updateType=security&category=security&query=sentinel'
     - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure'
       href: /archive/blogs/azuresecurity/
     - name: Regionale beschikbaarheid

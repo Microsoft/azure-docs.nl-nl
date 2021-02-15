@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: b34fcd66f0b64e2522da69bcfc7d119628b9d9d9
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 0a8c30076231aecb17505dd0d7a2fe4e7be485a3
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100516699"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522662"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
@@ -70,7 +70,7 @@ De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#
 
 ## <a name="view-ddos-protection-telemetry"></a>Telemetrie van DDoS-beveiliging weer geven
 
-Telemetrie voor een aanval wordt via Azure Monitor in realtime verschaft. De telemetrie is alleen beschikbaar voor de duur dat een openbaar IP-adres wordt beperkt. U ziet geen telemetrie voor of nadat een aanval is verholpen.
+Telemetrie voor een aanval wordt via Azure Monitor in realtime verschaft. Telemetrie is alleen beschikbaar wanneer een openbaar IP-adres wordt beperkt. 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) en blader naar uw DDoS Protection-abonnement.
 2. Selecteer **Metrische gegevens** onder **Bewaking**.

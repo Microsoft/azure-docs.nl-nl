@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: dcd8222b46262f6ec70459ec670789ae4a433c1d
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 93f90520f9a5f6ec424a7558418abfa4de4699ee
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99625261"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364831"
 ---
 # <a name="chat-client-library-overview"></a>Overzicht van de chat-clientbibliotheek
 
@@ -44,7 +44,7 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 |                   | Meldingen verzenden en ontvangen wanneer een lid actief een bericht in een chatgesprek typt <br/> *Niet beschikbaar wanneer een chatgesprek meer dan 20 leden bevat*      | ✔️   | ✔️   | ✔️    | ✔️    |
 |                   | Alle berichten in een chatgesprek ophalen <br/> *Ondersteuning voor Unicode-emoji's*                                                  | ✔️   | ✔️  | ✔️    | ✔️  |
 |                   | Emoji's verzenden als onderdeel van de berichtinhoud                                                                              | ✔️   | ✔️  | ✔️    | ✔️  |
-|Realtime-signalering (mogelijk door een bedrijfseigen signaleringspakket)| Melding ontvangen wanneer een gebruiker een nieuw bericht ontvangt in een chatgesprek waarvan hij lid is                                     | ✔️   | ❌    | ❌  | ❌  |
+|Realtime-Signa lering (ingeschakeld door een specifiek signalerings pakket * *)| Melding ontvangen wanneer een gebruiker een nieuw bericht ontvangt in een chatgesprek waarvan hij lid is                                     | ✔️   | ❌    | ❌  | ❌  |
 |                    | Melding ontvangen wanneer een bericht is bewerkt door een ander lid in een chatgesprek waarvan hij lid is                | ✔️   | ❌    | ❌    | ❌  |
 |                    | Melding ontvangen wanneer een bericht is verwijderd door een ander lid in een chatgesprek waarvan hij lid is                | ✔️   | ❌    | ❌    | ❌  |
 |                    | Melding ontvangen wanneer een ander lid van het chatgesprek typt                                                             | ✔️   | ❌    | ❌    | ❌  |
@@ -53,6 +53,8 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 | Bewaking        | Gebruik (aantal verzonden berichten) bewaken                                                                               | ✔️   | ✔️  | ✔️    | ✔️  |
 |                    | De kwaliteit en status van API-aanvragend or uw app bewaken en waarschuwingen configureren via de portal                                                          | ✔️   | ✔️  | ✔️    | ✔️  |
 |Aanvullende functies | [Cognitive Services-API's](../../../cognitive-services/index.yml) gebruiken in combinatie met de chat-clientbibliotheek om intelligente functies in te schakelen: *vertaling en sentimentanalyse van het binnenkomende bericht op een client, spraak-naar-tekst-conversie om een bericht op te stellen wanneer het lid spreekt, enzovoort.*                                                                                         | ✔️   | ✔️  | ✔️    | ✔️  |
+
+* * Het pakket met de eigen signalering wordt geïmplementeerd met behulp van web sockets. Dit leidt tot een lange polling als web sockets niet worden ondersteund.
 
 ## <a name="javascript-chat-client-library-support-by-os-and-browser"></a>Java script chat-client bibliotheek ondersteuning per besturings systeem en browser
 

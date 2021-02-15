@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 1/29/2020
 ms.author: inhenkel
-ms.openlocfilehash: e8d21e57f9a844b3cc0538f4805780829a1350f4
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 96031642efb1248fb3b1acabeb9d7381177a2c70
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428585"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098075"
 ---
 # <a name="trusted-storage-for-media-services"></a>Vertrouwde opslag voor Media Services
 
@@ -22,7 +22,11 @@ Wanneer u een Media Services-account maakt, moet u dit koppelen aan een opslag a
 
 ## <a name="trusted-storage-with-a-firewall"></a>Vertrouwde opslag met een firewall
 
-Als u echter een firewall wilt gebruiken om uw opslag account te beveiligen en vertrouwde opslag in te scha kelen, is [beheerde identiteits](concept-managed-identities.md) verificatie de voorkeurs optie. Hiermee kan Media Services toegang krijgen tot het opslag account dat is geconfigureerd met een firewall of een VNet-beperking via vertrouwde opslag toegang. Hiermee kan Media Services toegang krijgen tot het opslag account dat is geconfigureerd met een firewall of een VNet-beperking via vertrouwde opslag toegang.
+Als u echter een firewall wilt gebruiken om uw opslag account te beveiligen en vertrouwde opslag in te scha kelen, is [beheerde identiteits](concept-managed-identities.md) verificatie de voorkeurs optie. Hiermee kan Media Services toegang krijgen tot het opslag account dat is geconfigureerd met een firewall of een VNet-beperking via vertrouwde opslag toegang.
+
+## <a name="tutorial"></a>Zelfstudie
+
+Meer informatie over het inschakelen van vertrouwde opslag vindt u in de zelf studie voor [vertrouwde opslag Media Services](tutorial-trusted-storage-rest.md) .
 
 > [!NOTE]
 > U moet de AMS Managed Identity opslag BLOB data contributor-toegang verlenen om Media Services in staat te zijn om het opslag account te lezen en te schrijven.  Het verlenen van de rol algemene Inzender werkt niet omdat de juiste machtigingen niet worden ingeschakeld op het gegevens vlak.

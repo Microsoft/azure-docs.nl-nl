@@ -1,18 +1,18 @@
 ---
 title: Waarschuwingen weergeven
-description: Bekijk waarschuwingen op basis van verschillende categorieën en gebruik zoek functies om u te helpen bij het vinden van belang rijke meldingen.
+description: Waarschuwingen weer geven op basis van verschillende categorieën en zoek functies gebruiken om u te helpen bij het vinden van belang rijke meldingen.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
 ms.date: 12/02/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: bce83e11a0d4567d37e78388445c108385ca9a61
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 6dc2a9683a48f20816adc8ce0ee0c1e8dc57b287
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509064"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523665"
 ---
 # <a name="view-alerts"></a>Waarschuwingen weergeven
 
@@ -24,7 +24,7 @@ U kunt ook waarschuwingen van het sensor dashboard weer geven.
 
 Ga als volgt te werk als u waarschuwingen wilt weergeven:
 
-- Selecteer **waarschuwingen** in het menu aan de zijkant. Het venster **waarschuwingen** geeft de waarschuwingen weer die uw sensor heeft gedetecteerd.
+- Selecteer **waarschuwingen** in het menu aan de zijkant. Het venster waarschuwingen geeft de waarschuwingen weer die uw sensor heeft gedetecteerd.
 
   :::image type="content" source="media/how-to-work-with-alerts-sensor/alerts-screen.png" alt-text="Weer gave van het scherm waarschuwingen.":::
 
@@ -42,21 +42,21 @@ U kunt waarschuwingen weer geven op basis van verschillende categorieën in de h
 
 ## <a name="search-for-alerts-of-interest"></a>Zoeken naar interessante meldingen
 
-In de hoofd weergave van **waarschuwingen** vindt u diverse zoek functies die u helpen bij het vinden van belang rijke meldingen.
+In de hoofd weergave van waarschuwingen vindt u diverse zoek functies die u helpen bij het vinden van belang rijke meldingen.
 
 :::image type="content" source="media/how-to-work-with-alerts-sensor/main-alerts-view.png" alt-text="Scherm afbeelding voor het leren van waarschuwingen.":::
 
-### <a name="text-search"></a>Tekst zoeken 
+### <a name="text-search"></a>Tekst zoeken
 
-Gebruik de **gratis Zoek** optie om waarschuwingen te zoeken op tekst, cijfers of tekens.
+Gebruik de gratis zoek optie om waarschuwingen te zoeken op tekst, cijfers of tekens.
 
 Zoeken:
 
-- Typ de vereiste tekst in het veld **gratis zoek opdracht** en druk op ENTER op het toetsen bord.
+- Typ de vereiste tekst in het veld gratis zoek opdracht en druk op ENTER op het toetsen bord.
 
 De zoek opdracht wissen:
 
-- Verwijder de tekst in het veld **gratis zoek opdracht** en druk op ENTER op het toetsen bord.
+- Verwijder de tekst in het veld gratis zoek opdracht en druk op ENTER op het toetsen bord.
 
 ### <a name="device-group-or-device-ip-address-search"></a>IP-adres van apparaatgroep of apparaat zoeken
 
@@ -100,7 +100,7 @@ Waarschuwings berichten bieden de volgende acties:
 
 - Selecteer deze optie :::image type="icon" source="media/how-to-work-with-alerts-sensor/learn-and-acknowledge-all-alerts.png" border="false"::: om alle waarschuwingen te leren en te bevestigen.
 
-- Selecteer de :::image type="icon" source="media/how-to-work-with-alerts-sensor/export-to-csv.png" border="false"::: lijst met waarschuwingen exporteren naar een CSV-bestand en selecteer de optie exporteren. Kies **waarschuwing exporteren** voor de reguliere optie exporteren naar CSV. Of kies **uitgebreide waarschuwing exporteren** voor de mogelijkheid om afzonderlijke rijen toe te voegen voor aanvullende informatie over een waarschuwing in het CSV-bestand.
+- Selecteer deze optie :::image type="icon" source="media/how-to-work-with-alerts-sensor/export-to-csv.png" border="false"::: om waarschuwings gegevens naar een CSV-bestand te exporteren. Gebruik de optie voor het exporteren van de **uitgebreide waarschuwing** om waarschuwings gegevens in afzonderlijke rijen te exporteren voor elke waarschuwing die betrekking heeft op meerdere apparaten.
 
 ## <a name="alert-pop-up-window-options"></a>Pop-upvenster Opties voor waarschuwingen
 

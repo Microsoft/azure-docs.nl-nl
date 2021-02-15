@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: cac8d609272be1d9f34b7e0d6404e0a0ea524df7
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 2083da329c41afbe95ff570194a1c3ad5c2661be
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509028"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523563"
 ---
 # <a name="work-with-device-notifications"></a>Werken met apparaatmeldingen
 
@@ -98,6 +98,6 @@ Onderzoek de aanbevelingen om de besturingssysteem classificatie te verrijken. D
 
 Wanneer u een aanbeveling accepteert, wordt de informatie over het type besturings systeem in de sensor bijgewerkt.
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Waarschuwingen weergeven](how-to-view-alerts.md)

@@ -1,5 +1,5 @@
 ---
-title: Werken met Defender voor IoT CLI-opdrachten
+title: Werken met CLI-opdrachten voor Defender for IoT
 description: In dit artikel wordt Defender beschreven voor IoT CLI-opdrachten voor Sens oren en on-premises beheer consoles.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/12/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 48c525004b095c1e0f498f86a5395d0002be26f1
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 2ec682bf76e35b54f58acc1956972c57128edd75
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845261"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523138"
 ---
-# <a name="work-with-defender-for-iot-cli-commands"></a>Werken met Defender voor IoT CLI-opdrachten
+# <a name="work-with-defender-for-iot-cli-commands"></a>Werken met CLI-opdrachten voor Defender for IoT
 
 In dit artikel worden CLI-opdrachten voor Sens oren en on-premises beheer consoles beschreven. De opdrachten zijn toegankelijk voor beheerders, cyberx-gebruikers en ondersteunings gebruikers.
 
@@ -103,7 +103,7 @@ Het kenmerk dat u kunt definiëren in de opdracht, is het IP-adres van de NTP-se
 
 De volgende tabel beschrijft de opdrachten die beschikbaar zijn voor het configureren van uw netwerk opties voor Azure Defender voor IoT:
 
-|Naam|Opdracht|Beschrijving|
+|Name|Opdracht|Beschrijving|
 |-----------|-------|-----------|
 |Ping|`ping IP `| Pingt adressen buiten het Defender voor IoT-platform.|
 |Blink|`network blink`|Hiermee schakelt u de para meters van de netwerk configuratie in.|
@@ -254,7 +254,7 @@ U kunt de volgende kenmerken gebruiken met de `directions` opdracht:
 ## <a name="system-actions"></a>Systeem acties
 De volgende tabel beschrijft de opdrachten die beschikbaar zijn voor het uitvoeren van verschillende systeem acties binnen Defender voor IoT:
 
-|Naam|Code|Beschrijving|
+|Name|Code|Description|
 |----|----|-----------|
 |De host opnieuw opstarten|`system reboot`|Het hostapparaat wordt opnieuw opgestart.|
 |De host afsluiten|`system shutdown`|De host wordt afgesloten.|
@@ -290,6 +290,6 @@ Wanneer u het hulp programma gebruikt:
 
 - Bevestig het toestel domein (zoals het in het certificaat wordt weer gegeven) met uw DNS-server en het bijbehorende IP-adres. 
     
-## <a name="see-also"></a>Zie tevens
+## <a name="next-steps"></a>Volgende stappen
 
 [Defender voor IoT API-sensor-en beheer console-Api's](references-work-with-defender-for-iot-apis.md)

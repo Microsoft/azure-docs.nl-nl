@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/14/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: e0ae029323d5b64288c5e61ea28a494c1106a53f
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 051ce1be66f91d60f719ca3695f15e6c8001b20f
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839922"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523818"
 ---
 # <a name="set-up-snmp-mib-monitoring"></a>SNMP MIB-bewaking instellen
 
@@ -84,6 +84,6 @@ SNMP v3-status controle definiëren:
 
 5. Selecteer **Opslaan**.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="next-steps"></a>Volgende stappen
 
 [Logboeken voor het oplossen van problemen exporteren](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md)

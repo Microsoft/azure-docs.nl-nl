@@ -4,12 +4,12 @@ description: Meer informatie over hoe IP-adressen en geolocatie worden verwerkt 
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 6131105ef78a8559b0fb95043a87e562e887ebfd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a8969d5d0df2fdacf78815c6f47c7c6bfa73a37
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333304"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521914"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Verwerking van geolocatie en IP-adres
 
@@ -64,7 +64,7 @@ Als u het gedrag voor een enkele Application Insights resource alleen hoeft te w
 
 1. Ga naar de Application Insights resource > **Automation**-  >  **export sjabloon** 
 
-2. **Implementatie** selecteren
+2. Selecteer **Implementeren**
 
     ![Knop met woord ' implementeren ' gemarkeerd in rood](media/ip-collection/deploy.png)
 
@@ -77,9 +77,9 @@ Als u het gedrag voor een enkele Application Insights resource alleen hoeft te w
     ![In de scherm afbeelding wordt een komma toegevoegd na ' IbizaAIExtension ' en een nieuwe regel toegevoegd onder ' DisableIpMasking ': True](media/ip-collection/save.png)
 
     > [!WARNING]
-    > Als er een fout optreedt met de melding: ** _de resource groep bevindt zich op een locatie die niet wordt ondersteund door een of meer resources in de sjabloon. Kies een andere resource groep._** Selecteer tijdelijk een andere resource groep in de vervolg keuzelijst en selecteer vervolgens de oorspronkelijke resource groep om de fout op te lossen.
+    > Als er een fout optreedt met de melding: **_de resource groep bevindt zich op een locatie die niet wordt ondersteund door een of meer resources in de sjabloon. Kies een andere resource groep._** Selecteer tijdelijk een andere resource groep in de vervolg keuzelijst en selecteer vervolgens de oorspronkelijke resource groep om de fout op te lossen.
 
-5. Selecteer **Ik ga akkoord**met  >  **aankopen**. 
+5. Selecteer **Ik ga akkoord** met  >  **aankopen**. 
 
     ![Selectie vakje met de woorden "Ik ga akkoord met de bovenstaande voor waarden" gemarkeerd in rood boven een knop met het woord "aankoop" rood gemarkeerd.](media/ip-collection/purchase.png)
 
@@ -241,7 +241,7 @@ requests
 
 Nieuw verzamelde IP-adressen worden weer gegeven in de `customDimensions_client-ip` kolom. De standaard `client-ip` kolom bevat nog steeds vier octetten van nul. 
 
-Als er wordt getest van localhost en de waarde voor `customDimensions_client-ip` is `::1` , wordt deze waarde verwacht gedrag. `::1` Hiermee wordt het loop back-adres in IPv6 aangeduid. Dit is gelijk aan `127.0.01` in IPv4.
+Als er wordt getest van localhost en de waarde voor `customDimensions_client-ip` is `::1` , wordt deze waarde verwacht gedrag. `::1` Hiermee wordt het loop back-adres in IPv6 aangeduid. Dit is gelijk aan `127.0.0.1` in IPv4.
 
 ## <a name="next-steps"></a>Volgende stappen
 

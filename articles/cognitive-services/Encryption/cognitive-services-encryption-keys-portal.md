@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 1d161c82c087fd86a3774f0d121330260b1574e4
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: fca3fc80411432f2e82a68faa3b6f297b8ca5f9c
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366091"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521999"
 ---
 # <a name="configure-customer-managed-keys-with-azure-key-vault-for-cognitive-services"></a>Door de klant beheerde sleutels configureren met Azure Key Vault voor Cognitive Services
 
@@ -21,20 +21,20 @@ Het proces voor het inschakelen van Customer-Managed sleutels met Azure Key Vaul
 
 ## <a name="vision"></a>Vision
 
-* [Custom Vision versleuteling van gegevens in rust](../Custom-Vision-Service/custom-vision-encryption-of-data-at-rest.md)
-* [Gezichts Services versleuteling van gegevens in rust](../Face/face-encryption-of-data-at-rest.md)
-* [Versleuteling van de gegevens in de rest van de formulier herkenning](../form-recognizer/form-recognizer-encryption-of-data-at-rest.md)
+* [Custom Vision versleuteling van gegevens in rust](../Custom-Vision-Service/encrypt-data-at-rest.md)
+* [Gezichts Services versleuteling van gegevens in rust](../Face/encrypt-data-at-rest.md)
+* [Versleuteling van de gegevens in de rest van de formulier herkenning](../form-recognizer/encrypt-data-at-rest.md)
 
 ## <a name="language"></a>Taal
 
-* [Language Understanding-service versleuteling van gegevens in rust](../LUIS/luis-encryption-of-data-at-rest.md)
-* [QnA Maker versleuteling van gegevens in rust](../QnAMaker/qna-maker-encryption-of-data-at-rest.md)
-* [Conversie van gegevens in rust versleutelen](../translator/translator-encryption-of-data-at-rest.md)
+* [Language Understanding-service versleuteling van gegevens in rust](../LUIS/encrypt-data-at-rest.md)
+* [QnA Maker versleuteling van gegevens in rust](../QnAMaker/encrypt-data-at-rest.md)
+* [Conversie van gegevens in rust versleutelen](../translator/encrypt-data-at-rest.md)
 
 ## <a name="decision"></a>Besluit
 
-* [Content Moderator versleuteling van gegevens in rust](../Content-Moderator/content-moderator-encryption-of-data-at-rest.md)
-* [Personalisatie versleuteling van gegevens in rust](../personalizer/personalizer-encryption-of-data-at-rest.md)
+* [Content Moderator versleuteling van gegevens in rust](../Content-Moderator/encrypt-data-at-rest.md)
+* [Personalisatie versleuteling van gegevens in rust](../personalizer/encrypt-data-at-rest.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

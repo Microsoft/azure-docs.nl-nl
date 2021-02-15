@@ -108,7 +108,7 @@
     - name: Indeling voor batchgewijs testen
       href: reference-tsv-format-batch-testing.md
     - name: Versleuteling
-      href: qna-maker-encryption-of-data-at-rest.md
+      href: encrypt-data-at-rest.md
     - name: Naslaginformatie over REST-API
       items:
         - name: QnA Maker 4.0

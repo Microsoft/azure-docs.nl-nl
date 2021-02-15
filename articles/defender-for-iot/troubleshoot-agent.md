@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: e9904e9157a560e2a4853a1a9cd37977defe73ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9367cf4324d577e4dd44cb9294a8b82b1bceaf74
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90935100"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522950"
 ---
 # <a name="security-agent-troubleshoot-guide-linux"></a>Handleiding voor probleemoplossing voor beveiligingsagenten (Linux)
 
@@ -108,10 +108,4 @@ Defender for IoT agent encountered an error! Error in: {Error Code}, reason: {Er
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Lees het [overzicht](overview.md) van de Defender voor IOT-service
-- Meer informatie over de [architectuur](architecture.md) van Defender voor IOT
-- De Defender voor IoT- [service](quickstart-onboard-iot-hub.md) inschakelen
-- Lees de [Veelgestelde vragen over](resources-frequently-asked-questions.md) Defender voor IOT-service
-- Meer informatie over het openen van [onbewerkte beveiligings gegevens](how-to-security-data-access.md)
-- Meer informatie over [aanbevelingen](concept-recommendations.md)
-- Beveiligings [waarschuwingen](concept-security-alerts.md) begrijpen
+Lees het [overzicht](overview.md) van de Defender voor IOT-service meer informatie over Defender voor IOT- [architectuur](architecture.md) de Defender voor IOT- [service](quickstart-onboard-iot-hub.md) de [Veelgestelde vragen](resources-frequently-asked-questions.md) over Defender voor IOT-service lezen informatie over het verkrijgen van toegang tot [onbewerkte beveiligings gegevens](how-to-security-data-access.md) begrijpen [aanbevelingen](concept-recommendations.md) inzicht in beveiligings [waarschuwingen](concept-security-alerts.md)

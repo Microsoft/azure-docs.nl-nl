@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 73eb693ab9f06535fd523eb386969e2cce961eef
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 10051bfdf7a93a8d6c83d649a7b0ad008b5e2caf
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624588"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523954"
 ---
 # <a name="manage-sensors-from-the-management-console"></a>Sens oren beheren vanuit de beheer console
 
@@ -315,6 +315,6 @@ Als u een SMB-server wilt instellen, kunt u een sensor back-up opslaan op een ex
 
 9. Ingesteld `Backup.shared_location` op `<backup_folder_name_on_cyberx_server>` .
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Afzonderlijke sensoren beheren](how-to-manage-individual-sensors.md)

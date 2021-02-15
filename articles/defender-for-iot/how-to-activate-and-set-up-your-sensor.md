@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 5d2d923fc448beeff8fa165226890d88d97d01ad
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 56f6c9d3ff3093c3acd28b670e37f823ad5e9f9a
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805662"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522509"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Uw sensor activeren en instellen
 
@@ -214,7 +214,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 |----|---|---|
 | Ondersteuning | :::image type="icon" source="media/concept-sensor-console-overview/support-icon-azure.png" border="false"::: | Neem contact op met [Microsoft ondersteuning](https://support.microsoft.com/) voor hulp. |
 
-### <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Een sensor onboarden](getting-started.md#4-onboard-a-sensor)
 

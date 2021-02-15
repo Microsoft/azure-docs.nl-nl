@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: c33b3e5fee19edc5d4ac85284e507b53e96234a0
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: fd0c7b74bea979737644824f93b4dce7a2364b99
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977010"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522339"
 ---
 # <a name="about-defender-for-iot-console-users"></a>Over Defender voor IoT-console gebruikers
 
@@ -185,7 +185,7 @@ Active Directory configureren:
 
 1. Stel de Active Directory server-para meters als volgt in:
 
-   | Server parameter | Beschrijving |
+   | Server parameter | Description |
    |--|--|
    | FQDN van domein controller | Stel de Fully Qualified Domain Name (FQDN) precies zo in als deze op uw LDAP-server wordt weer gegeven. Voer bijvoorbeeld `host1.subdomain.domain.com` in. |
    | Domein controller poort | Definieer de poort waarop uw LDAP is geconfigureerd. |
@@ -249,7 +249,7 @@ Het wacht woord van een gebruiker op de sensor opnieuw instellen:
 
 1. Voer het nieuwe wacht woord in het veld **Nieuw wacht woord** in en **Bevestig nieuwe wacht woord** .
 
-1. Selecteer **Bijwerken**.
+1. Selecteer **Update**.
 
 Het wacht woord van een gebruiker opnieuw instellen op de on-premises beheer console:
 
@@ -263,9 +263,9 @@ Het wacht woord van een gebruiker opnieuw instellen op de on-premises beheer con
 
 1. Voer het nieuwe wacht woord in het veld **Nieuw wacht woord** in en **Bevestig nieuwe wacht woord** .
 
-1. Selecteer **Bijwerken**.
+1. Selecteer **Update**.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="next-steps"></a>Volgende stappen
 
 [Uw sensor](how-to-activate-and-set-up-your-sensor.md) 
  activeren en instellen [Uw on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md) 

@@ -131,8 +131,8 @@
               displayName: 'Active Directory, roles, permissions'
               href: how-to-create-and-manage-users.md
             - name: Algemeen gebruikerstoegangsbeheer definiëren
-              displayName: 'business unit, site, region'
               href: how-to-define-global-user-access-control.md
+              displayName: 'business unit, site, region, user'
         - name: Controleren welk verkeer wordt bewaakt
           displayName: 'Windows, Learning, Smart IT Learning, DNS, DHCP, engines, subnets'
           href: how-to-control-what-traffic-is-monitored.md
@@ -140,8 +140,8 @@
           displayName: 'disconnect, connect, activation file, sensor backup'
           href: how-to-manage-sensors-from-the-on-premises-management-console.md
         - name: Afzonderlijke sensoren beheren
-          displayName: 'activation, certificate, connect, timezone time zone, backup, restore, software update, failure'
           href: how-to-manage-individual-sensors.md
+          displayName: 'activation, certificate, SSL, TLS, connect, timezone time zone, backup, restore, software update, failure'
         - name: Sensoren in de cloud beheren
           href: how-to-manage-sensors-on-the-cloud.md
         - name: De on-premises beheerconsole beheren
@@ -153,10 +153,13 @@
           items:
             - name: Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken
               href: how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md
+              displayName: classification
             - name: Alle sensordetecties in een apparaatinventaris onderzoeken
               href: how-to-investigate-sensor-detections-in-a-device-inventory.md
+              displayName: 'classification, Windows registry'
         - name: Werken met een sensorapparaatkaart
           href: how-to-work-with-the-sensor-device-map.md
+          displayName: 'connections, Purdue, zoom'
         - name: Werken met waarschuwingen die worden gedetecteerd door een sensor
           items:
             - name: Werken met een waarschuwing in uw sensor
@@ -165,8 +168,10 @@
               href: how-to-view-alerts.md
             - name: De informatie in waarschuwingen weergeven
               href: how-to-view-information-provided-in-alerts.md
+              displayName: PCAP
             - name: De waarschuwingsgebeurtenis beheren
               href: how-to-manage-the-alert-event.md
+              displayName: 'PCAP, acknowledge, learn, mute, policy'
             - name: Incidentrespons op waarschuwingen versnellen
               href: how-to-accelerate-alert-incident-response.md
               displayName: 'custom, alerts, comments, groups'
@@ -175,18 +180,21 @@
               displayName: 'integration, partners, vendor, Syslog server, NetWitness,CEF, LEEF, email'
         - name: 'Inzicht krijgen in globale, regionale en lokale bedreigingen'
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
+          displayName: 'site, business unit, region, map'
         - name: Werken met waarschuwingen in de on-premises beheerconsole
           href: how-to-work-with-alerts-on-premises-management-console.md
         - name: Rapporten maken
           items:
             - name: Rapporten voor risico analyse maken
               href: how-to-create-risk-assessment-reports.md
+              displayName: 'vulnerability, security score, score'
             - name: Aanvals vector rapporten maken
               href: how-to-create-attack-vector-reports.md
             - name: Rapporten voor gegevens analyse maken
               href: how-to-create-data-mining-queries.md
             - name: Rapporten met trends en statistieken maken
-              href: how-to-create-data-mining-queries.md
+              href: how-to-create-trends-and-statistics-reports.md
+              displayName: 'widgets, charts'
         - name: Apparaatinformatie verrijken
           items:
             - name: Werken met apparaatmeldingen

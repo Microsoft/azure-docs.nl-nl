@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/02/2020
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: 14d7a0de1cd29b8c07f90c759a4d423d7186fdb9
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 64e81e246ec62c8995d0e31629b4f21a2c1096b0
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839675"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522543"
 ---
 # <a name="accelerate-alert-workflows"></a>Waarschuwings werk stromen versnellen
 
@@ -70,11 +70,11 @@ De relevante waarschuwings groep wordt weer gegeven in oplossingen voor partner 
 
 De waarschuwings groep wordt weer gegeven in ondersteunde partner oplossingen met de volgende voor voegsels:
 
-  - **kat** voor QRadar, ArcSight, syslog CEF, syslog-leef
+- **kat** voor QRadar, ArcSight, syslog CEF, syslog-leef
 
-  - **Waarschuwings groep** voor syslog-tekst berichten
+- **Waarschuwings groep** voor syslog-tekst berichten
 
-  - **alert_group** voor syslog-objecten
+- **alert_group** voor syslog-objecten
 
 Deze velden moeten worden geconfigureerd in de partner oplossing om de naam van de waarschuwings groep weer te geven. Als er geen waarschuwing is gekoppeld aan een waarschuwings groep, wordt in het veld in de partner oplossing **n.v.t.** weer gegeven.
 
@@ -92,11 +92,29 @@ De volgende waarschuwings groepen worden automatisch gedefinieerd:
 | Opdracht fouten | Operationele problemen |  |
 | Configuratiewijzigingen | Programmering |  |
 
-Waarschuwings groepen zijn vooraf gedefinieerd. Neem contact op met [Microsoft ondersteuning](https://support.microsoft.com/supportforbusiness/productselection?sapId=82c88f35-1b8e-f274-ec11-c6efdd6dd099)voor meer informatie over waarschuwingen die zijn gekoppeld aan waarschuwings groepen en over het maken van aangepaste waarschuwings groepen.
+Waarschuwings groepen zijn vooraf gedefinieerd. Neem contact op met [Microsoft ondersteuning](https://support.microsoft.com/supportforbusiness/productselection?sapId=82c8f35-1b8e-f274-ec11-c6efdd6dd099)voor meer informatie over waarschuwingen die zijn gekoppeld aan waarschuwings groepen en over het maken van aangepaste waarschuwings groepen.
 
 ## <a name="customize-alert-rules"></a>Waarschuwings regels aanpassen
 
-U kunt aangepaste waarschuwings regels toevoegen op basis van informatie die afzonderlijke Sens oren detecteert. U kunt bijvoorbeeld een regel definiëren waarmee wordt aangegeven dat een sensor een waarschuwing moet activeren op basis van een bron-IP, doel-IP of opdracht (binnen een Protocol). Wanneer de sensor het verkeer detecteert dat in de regel is gedefinieerd, wordt er een waarschuwing of gebeurtenis gegenereerd.
+Gebruik aangepaste waarschuwings regels voor meer informatie over de activiteit van belang voor u. 
+
+U kunt aangepaste waarschuwings regels toevoegen op basis van:
+
+- Een categorie, bijvoorbeeld een protocol, poort of bestand.
+- Bron-en doel adressen
+- Een voor waarde op basis van de gekozen categorie, bijvoorbeeld een functie die is gekoppeld aan een protocol, een bestands naam, poort of transport nummer.
+- Een voor waarde op basis van de referentie datum en tijd, bijvoorbeeld als er een detectie is uitgevoerd op een specifieke dag of een bepaald deel van de dag.
+
+Als de sensor de activiteit detecteert die in de regel wordt beschreven, wordt de waarschuwing verzonden.
+informatie die door afzonderlijke Sens oren wordt gedetecteerd. U kunt bijvoorbeeld een regel definiëren waarmee wordt aangegeven dat een sensor een waarschuwing moet activeren op basis van een bron-IP, doel-IP of opdracht (binnen een Protocol). Wanneer de sensor het verkeer detecteert dat in de regel is gedefinieerd, wordt er een waarschuwing of gebeurtenis gegenereerd.
+
+U kunt ook waarschuwings regel acties gebruiken om Defender voor IoT te instrueren tot:
+
+- Gebruikers toestaan om toegang te krijgen tot het PCAP-bestand vanuit de waarschuwing.
+- Wijs een ernst van de waarschuwing toe.
+- Genereer een gebeurtenis in plaats van een waarschuwing. De gedetecteerde informatie wordt weer gegeven in de tijd lijn van de gebeurtenis.
+
+:::image type="content" source="media/how-to-work-with-alerts-sensor/user-defined-rule.png" alt-text="Scherm opname waarin een door de gebruiker gedefinieerde regel wordt weer gegeven.":::
 
 Het waarschuwings bericht geeft aan dat een door de gebruiker gedefinieerde regel de waarschuwing heeft geactiveerd.
 
@@ -106,24 +124,24 @@ Een aangepaste waarschuwings regel maken:
 
 1. Selecteer **aangepaste waarschuwingen** in het menu aan de zijkant van een sensor.
 1. Selecteer het plus teken ( **+** ) om een regel te maken.
-
-   :::image type="content" source="media/how-to-work-with-alerts-sensor/user-defined-rule.png" alt-text="Scherm opname waarin een door de gebruiker gedefinieerde regel wordt weer gegeven.":::
-
 1. Definieer een regel naam.
 1. Selecteer een categorie of protocol in het deel venster **Categorieën** .
 1. Definieer een specifiek bron-en doel-IP-of MAC-adres of kies een wille keurig adres.
-1. Een voor waarde toevoegen. Een lijst met voor waarden en hun eigenschappen is uniek voor elke categorie. U kunt meer dan één voor waarde selecteren voor elke waarschuwing.
-1. Geef aan of de regel een **waarschuwing** of **gebeurtenis** activeert.
-1. Wijs een Ernst niveau toe aan de waarschuwing.
-1. Geef aan of de waarschuwing een PCAP-bestand zal bevatten.
+1. Definieer een of meer regel voorwaarden. Er kunnen twee categorieën voor waarden worden gemaakt:
+    - Voor waarden op basis van unieke waarden die zijn gekoppeld aan de geselecteerde categorie. Selecteer toevoegen en definieer de waarden.
+    - Voor waarden gebaseerd op de wanneer de activiteit is gedetecteerd. Selecteer in de sectie detecties een tijds periode en dag waarop de detectie moet plaatsvinden om de waarschuwing te kunnen verzenden. U kunt ervoor kiezen om de waarschuwing te verzenden als de activiteit op elk gewenst moment, tijdens of na het werk uur wordt gedetecteerd. Gebruik de optie werk uren definiëren om Defender te instrueren voor IoT-werk uren voor uw organisatie.
+1. Regel acties definiëren: 
+    - Geef aan of de regel een **waarschuwing** of **gebeurtenis** activeert.
+    - Wijs een Ernst niveau toe aan de waarschuwing.
+    - Geef aan of de waarschuwing een PCAP-bestand zal bevatten.
 1. Selecteer **Opslaan**.
 
 De regel wordt toegevoegd aan de lijst met **aangepaste waarschuwings regels** , waar u de para meters voor de basis regel kunt controleren, de laatste keer dat de regel is geactiveerd, en meer. U kunt de regel ook in de lijst inschakelen en uitschakelen.
 
 :::image type="content" source="media/how-to-work-with-alerts-sensor/customized-alerts-screen.png" alt-text="Scherm afbeelding van een door de gebruiker toegevoegde, aangepaste regel.":::
 
-### <a name="see-also"></a>Zie tevens
+## <a name="next-steps"></a>Volgende stappen
 
-[In waarschuwingen verstrekte informatie weer geven](how-to-view-information-provided-in-alerts.md)
+[De informatie in waarschuwingen weergeven](how-to-view-information-provided-in-alerts.md)
 
-[De waarschuwings gebeurtenis beheren](how-to-manage-the-alert-event.md)
+[De waarschuwingsgebeurtenis beheren](how-to-manage-the-alert-event.md)

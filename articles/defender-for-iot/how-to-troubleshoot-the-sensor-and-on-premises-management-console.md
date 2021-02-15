@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: b91827fc0a6fb8380c9f8aa87a3def3bc1819523
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 624f60441f56646c3633a2afa79d326c92ba1a37
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955430"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523716"
 ---
 # <a name="troubleshoot-the-sensor-and-on-premises-management-console"></a>Problemen met de sensor en on-premises beheerconsole oplossen
 
@@ -258,7 +258,7 @@ Logboeken exporteren:
 
 1. Selecteer de gegevens categorieën om te definiëren welke gegevens u wilt exporteren:  
 
-    | Categorie exporteren | Beschrijving |
+    | Categorie exporteren | Description |
     |--|--|
     | **Logboeken van het besturings systeem** | Selecteer deze optie om informatie over de status van het besturings systeem op te halen. |
     | **Installatie/upgrade-logboeken** | Selecteer deze optie voor het onderzoeken van de configuratie parameters voor de installatie en de upgrade. |
@@ -283,7 +283,7 @@ De geëxporteerde logboeken worden toegevoegd aan de lijst **gearchiveerde logbo
 
 De lijst met gearchiveerde logboeken kan Maxi maal vijf items bevatten. Als het aantal items in de lijst buiten dat aantal valt, wordt het oudste item verwijderd.
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 - [Waarschuwingen weergeven](how-to-view-alerts.md)
 

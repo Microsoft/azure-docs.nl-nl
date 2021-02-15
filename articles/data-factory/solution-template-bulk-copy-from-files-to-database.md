@@ -1,19 +1,17 @@
 ---
 title: Bulkgewijs kopiëren van bestanden naar database
 description: Meer informatie over het gebruik van een oplossings sjabloon voor het bulksgewijs kopiëren van gegevens van Azure Data Lake Storage Gen2 naar Azure Synapse Analytics/Azure SQL Database.
-services: data-factory
 author: linda33wj
 ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/09/2020
-ms.openlocfilehash: e1bd5852ca12ca03e7202cf9cfb89372d076bad9
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 5f68c7b33a26bc8c01f3f413943351ff8d61b380
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920433"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376118"
 ---
 # <a name="bulk-copy-from-files-to-database"></a>Bulkgewijs kopiëren van bestanden naar database
 

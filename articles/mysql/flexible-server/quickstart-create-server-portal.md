@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 10/22/2020
-ms.openlocfilehash: 864152d1f1d0074305cbba448946bc05888b4f3b
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
-ms.translationtype: HT
+ms.openlocfilehash: 074b799a4f0e83c47aac0b2b3fca5386bd45429f
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566755"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521965"
 ---
 # <a name="quickstart-use-the-azure-portal-to-create-an-azure-database-for-mysql-flexible-server"></a>Quickstart: Een Azure Database for MySQL Flexible Server maken met behulp van Azure Portal
 
@@ -85,17 +85,35 @@ Standaard worden deze databases gemaakt voor de server: information_schema, mysq
 
 ## <a name="connect-to-the-server-by-using-mysqlexe"></a>Verbinding maken met de server met behulp van mysql.exe
 
-Als u een flexibele server hebt gemaakt met Persoonlijke toegang (VNet-integratie), moet u verbinding maken met uw server vanuit een resource binnen hetzelfde virtuele netwerk als uw server. U kunt een virtuele machine maken en toevoegen aan het virtuele netwerk dat is gemaakt met uw flexibele server.
+Als u een flexibele server hebt gemaakt met Persoonlijke toegang (VNet-integratie), moet u verbinding maken met uw server vanuit een resource binnen hetzelfde virtuele netwerk als uw server. U kunt een virtuele machine maken en toevoegen aan het virtuele netwerk dat is gemaakt met uw flexibele server. Raadpleeg de documentatie over het configureren van [persoonlijke toegang](how-to-manage-virtual-network-portal.md) voor meer informatie.
 
-Als u uw flexibele server met Openbare toegang (toegestane IP-adressen) hebt gemaakt, kunt u uw lokale IP-adres toevoegen aan de lijst met firewallregels op uw server.
+Als u uw flexibele server met Openbare toegang (toegestane IP-adressen) hebt gemaakt, kunt u uw lokale IP-adres toevoegen aan de lijst met firewallregels op uw server. Raadpleeg de [documentatie over het maken of beheren van firewall regels](how-to-manage-firewall-portal.md) voor stapsgewijze instructies.
 
 U kunt [mysql.exe](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) of [MySQL Workbench](./connect-workbench.md) gebruiken om vanuit uw lokale omgeving verbinding met de server te maken. 
 
-Als u mysql.exe gebruikt, maakt u verbinding met behulp van de volgende opdracht. Gebruik de servernaam, de gebruikersnaam en het wachtwoord in de opdracht. 
-
 ```bash
- mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p
+wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl=true --ssl-ca=DigiCertGlobalRootCA.crt.pem
 ```
+
+Als u uw flexibele server hebt ingericht met behulp van **open bare toegang**, kunt u ook [Azure Cloud shell](https://shell.azure.com/bash) gebruiken om verbinding te maken met uw flexibele server met behulp van een vooraf geïnstalleerde mysql-client, zoals hieronder wordt weer gegeven:
+
+Als u Azure Cloud Shell wilt gebruiken om verbinding te maken met uw flexibele server, moet u toegang tot het netwerk van Azure Cloud Shell op uw flexibele server toestaan. Hiertoe gaat u naar de Blade **netwerk** op Azure portal voor uw flexibele mysql-server en schakelt u het selectie vakje onder **firewall** in, waarbij ' open bare toegang vanaf een Azure-service binnen Azure tot deze server toestaan ' en klik op Opslaan om de instelling te behouden.
+
+> [!NOTE]
+> Het controleren of het toegankelijk is voor het gebruik **van een Azure-service in azure naar deze server** moet alleen worden gebruikt voor ontwikkelen of testen. Hiermee wordt de firewall geconfigureerd om verbindingen toe te staan van IP-adressen die zijn toegewezen aan een Azure-service of-Asset, met inbegrip van verbindingen van de abonnementen van andere klanten.
+
+Klik op **proberen** om de Azure Cloud shell te starten en gebruik de volgende opdrachten om verbinding te maken met uw flexibele server. Gebruik de servernaam, de gebruikersnaam en het wachtwoord in de opdracht. 
+
+```azurecli-interactive
+wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+mysql -h mydemoserver.mysql.database.azure.com -u mydemouser -p --ssl=true --ssl-ca=DigiCertGlobalRootCA.crt.pem
+```
+
+Als het volgende fout bericht wordt weer gegeven wanneer u verbinding maakt met uw flexibele server met behulp van de eerder genoemde opdracht, hebt u de firewall regel niet meer ingesteld met de optie ' open bare toegang vanaf een Azure-service toestaan in azure naar deze server ', maar eerder wel of niet opgeslagen. Stel de firewall opnieuw in en probeer het opnieuw.
+
+FOUT 2002 (HY000): kan geen verbinding maken met MySQL-server op <servername> (115)
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 U hebt nu een flexibele Azure Database for MySQL-server in een resourcegroep gemaakt. Als u deze resources in de toekomst waarschijnlijk niet nodig hebt, kunt u ze verwijderen door de resourcegroep te verwijderen. U kunt ook de MySQL-server verwijderen. Voltooi de volgende stappen om de resourcegroep te verwijderen:
 

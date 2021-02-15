@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 9d30f5325162b9ea447d54aadc092dbd9aa29132
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 82af70547d20509c48f1e07bbc7610fc666a6da1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538690"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393051"
 ---
 # <a name="manage-permissions-to-restore-an-azure-cosmos-db-account"></a>Machtigingen voor het herstellen van een Azure Cosmos DB-account beheren
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -30,7 +30,7 @@ Bereik is een set resources met toegang, zie de documentatie van [Azure RBAC](..
 
 ## <a name="assign-roles-for-restore-using-the-azure-portal"></a>Rollen toewijzen voor herstel met behulp van de Azure Portal
 
-Als u een herstel bewerking wilt uitvoeren, moet een gebruiker of een principal de machtiging voor herstellen (dat wil zeggen ' herstel/actie ') en machtigingen voor het inrichten van een nieuw account (de machtiging schrijven) hebben.  Als u deze machtigingen wilt verlenen, kan de eigenaar de ingebouwde rollen ' CosmosRestoreOperator ' en ' Cosmos DB operator ' aan een principal toewijzen.
+Als u een herstel bewerking wilt uitvoeren, moet een gebruiker of een principal de machtiging voor herstellen (die de machtiging *herstellen/actie* heeft) hebben en toestemming hebben om een nieuw account in te richten (dat *Schrijf* machtiging is).  De eigenaar kan de `CosmosRestoreOperator` en ingebouwde rollen toewijzen aan een principal om deze machtigingen te verlenen `Cosmos DB Operator` .
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/)
 
@@ -40,7 +40,7 @@ Als u een herstel bewerking wilt uitvoeren, moet een gebruiker of een principal 
 
    :::image type="content" source="./media/continuous-backup-restore-permissions/assign-restore-operator-roles.png" alt-text="CosmosRestoreOperator-en Cosmos DB operator rollen toewijzen." border="true":::
 
-1. Selecteer **Opslaan** om de machtiging ' herstellen/actie ' toe te kennen.
+1. Selecteer **Opslaan** om de machtiging voor *herstellen/actie* te verlenen.
 
 1. Herhaal stap 3 met **Cosmos DB operator** rol om de schrijf machtiging te verlenen. Wanneer u deze rol toewijst vanuit de Azure Portal, wordt de machtiging voor terugzetten verleend aan het hele abonnement.
 
@@ -52,7 +52,7 @@ Als u een herstel bewerking wilt uitvoeren, moet een gebruiker of een principal 
 |Resourcegroep | /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-cosmosdb-rg |
 |CosmosDB restorable account resource | /Subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.DocumentDB/locaties/West VS/restorableDatabaseAccounts/23e99a35-cd36-4df4-9614-f767a03b9995|
 
-De herstor bare account bron kan worden geëxtraheerd uit de uitvoer van de `az cosmosdb restorable-database-account list --name <accountname>` opdracht in CLI of `Get-AzCosmosDBRestorableDatabaseAccount -DatabaseAccountName <accountname>` cmdlet in Power shell. Het naam kenmerk in de uitvoer vertegenwoordigt de ' instanceID ' van het restorable-account. Zie het artikel [Power shell](continuous-backup-restore-powershell.md) of [cli](continuous-backup-restore-command-line.md) voor meer informatie.
+De herstor bare account bron kan worden geëxtraheerd uit de uitvoer van de `az cosmosdb restorable-database-account list --name <accountname>` opdracht in CLI of `Get-AzCosmosDBRestorableDatabaseAccount -DatabaseAccountName <accountname>` cmdlet in Power shell. Het naam kenmerk in de uitvoer vertegenwoordigt het `instanceID` restorable-account. Zie het artikel [Power shell](continuous-backup-restore-powershell.md) of [cli](continuous-backup-restore-command-line.md) voor meer informatie.
 
 ## <a name="permissions"></a>Machtigingen
 
@@ -60,11 +60,11 @@ De volgende machtigingen zijn vereist om de verschillende activiteiten uit te vo
 
 |Machtiging  |Impact  |Minimum bereik  |Maximum bereik  |
 |---------|---------|---------|---------|
-|Micro soft. resources/implementaties/valideren/actie, micro soft. resources/implementaties/schrijven | Deze machtigingen zijn vereist voor de implementatie van de ARM-sjabloon om het herstelde account te maken. Zie de [RestorableAction]() hieronder voor meer informatie over het instellen van deze rol. | Niet van toepassing | Niet van toepassing  |
+|`Microsoft.Resources/deployments/validate/action`, `Microsoft.Resources/deployments/write` | Deze machtigingen zijn vereist voor de implementatie van de ARM-sjabloon om het herstelde account te maken. Zie de [RestorableAction](#custom-restorable-action) hieronder voor meer informatie over het instellen van deze rol. | Niet van toepassing | Niet van toepassing  |
 |Microsoft.DocumentDB/databaseAccounts/schrijven | Deze machtiging is vereist voor het herstellen van een account in een resource groep | De resource groep waaronder het teruggezette account is gemaakt. | Het abonnement waarmee het herstelde account is gemaakt |
-|Microsoft.DocumentDB/locaties/restorableDatabaseAccounts/Restore/Action |Deze machtiging is vereist voor het bereik van de bron herstelbaar database account zodat er herstel acties kunnen worden uitgevoerd.  | De resource ' RestorableDatabaseAccount ' behoort tot het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de eigenschap ID van de bron van het database account dat kan worden ontstorbaar. Een voor beeld van een restorable-account is `/subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/regionName/restorableDatabaseAccounts/<guid-instanceid>` | Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik.  |
-|Microsoft.DocumentDB/locaties/restorableDatabaseAccounts/lezen |Deze machtiging is vereist voor het bereik van de bron herstelbaar database account voor het weer geven van de database accounts die kunnen worden hersteld.  | De resource ' RestorableDatabaseAccount ' behoort tot het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de eigenschap ID van de bron van het database account dat kan worden ontstorbaar. Een voor beeld van een restorable-account is `/subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/regionName/restorableDatabaseAccounts/<guid-instanceid>`| Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik.  |
-|Microsoft.DocumentDB/locaties/restorableDatabaseAccounts/*/Read | Deze machtiging is vereist voor het bereik van de bron herstorable om het lezen van mogelijk te maken bronnen, zoals een lijst met data bases en containers, toe te staan voor een restorable-account.  | De resource ' RestorableDatabaseAccount ' behoort tot het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de eigenschap ID van de bron van het database account dat kan worden ontstorbaar. Een voor beeld van een restorable-account is `/subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/regionName/restorableDatabaseAccounts/<guid-instanceid>`| Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik. |
+|`Microsoft.DocumentDB/locations/restorableDatabaseAccounts/restore/action` |Deze machtiging is vereist voor het bereik van de bron herstelbaar database account zodat er herstel acties kunnen worden uitgevoerd.  | De *RestorableDatabaseAccount* -resource die deel uitmaakt van het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de `ID` eigenschap van de bron van het herstorable database account. Een voor beeld van een restorable account is */subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/Region/restorableDatabaseAccounts/<GUID-instanceid>* | Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik.  |
+|`Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read` |Deze machtiging is vereist voor het bereik van de bron herstelbaar database account voor het weer geven van de database accounts die kunnen worden hersteld.  | De *RestorableDatabaseAccount* -resource die deel uitmaakt van het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de `ID` eigenschap van de bron van het herstorable database account. Een voor beeld van een restorable account is */subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/Region/restorableDatabaseAccounts/<GUID-instanceid>*| Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik.  |
+|`Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read` | Deze machtiging is vereist voor het bereik van de bron herstorable om het lezen van mogelijk te maken bronnen, zoals een lijst met data bases en containers, toe te staan voor een restorable-account.  | De *RestorableDatabaseAccount* -resource die deel uitmaakt van het bron account dat wordt hersteld. Deze waarde wordt ook gegeven door de `ID` eigenschap van de bron van het herstorable database account. Een voor beeld van een restorable account is */subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/Region/restorableDatabaseAccounts/<GUID-instanceid>*| Het abonnement met het database account dat kan worden ontstorbaar. De resource groep kan niet worden gekozen als bereik. |
 
 ## <a name="azure-cli-role-assignment-scenarios-to-restore-at-different-scopes"></a>Scenario's voor het toewijzen van Azure CLI-rollen voor het herstellen van verschillende bereiken
 
@@ -82,7 +82,7 @@ az role assignment create --role "CosmosRestoreOperator" --assignee <email> –s
 
 * Wijs een schrijf actie voor een gebruiker toe aan de specifieke resource groep. Deze actie is vereist voor het maken van een nieuw account in de resource groep.
 
-* Wijs de ingebouwde rol ' CosmosRestoreOperator ' toe aan het specifieke restorable database account dat moet worden hersteld. In de volgende opdracht wordt het bereik voor de ' RestorableDatabaseAccount ' opgehaald uit de eigenschap ' ID ' in de uitvoer van `az cosmosdb restorable-database-account` (als u cli gebruikt) of  `Get-AzCosmosDBRestorableDatabaseAccount` (als u Power shell gebruikt).
+* Wijs de ingebouwde rol *CosmosRestoreOperator* toe aan het specifieke restor bare database account dat moet worden hersteld. In de volgende opdracht wordt de scope voor de *RestorableDatabaseAccount* opgehaald uit de `ID` eigenschap in de uitvoer van `az cosmosdb restorable-database-account` (als u cli gebruikt) of  `Get-AzCosmosDBRestorableDatabaseAccount` (als u Power shell gebruikt).
 
   ```azurecli-interactive
    az role assignment create --role "CosmosRestoreOperator" --assignee <email> –scope <RestorableDatabaseAccount>
@@ -91,11 +91,11 @@ az role assignment create --role "CosmosRestoreOperator" --assignee <email> –s
 ### <a name="assign-capability-to-restore-from-any-source-account-in-a-resource-group"></a>Mogelijkheid tot het herstellen van een bron account in een resource groep toewijzen.
 Deze bewerking wordt momenteel niet ondersteund.
 
-## <a name="custom-role-creation-for-restore-action-with-cli"></a>Aangepaste rol maken voor herstel actie met CLI
+## <a name="custom-role-creation-for-restore-action-with-cli"></a><a id="custom-restorable-action"></a>Aangepaste rol maken voor herstel actie met CLI
 
-De eigenaar van het abonnement kan de machtiging bieden voor het herstellen naar een andere Azure AD-identiteit. De machtiging voor terugzetten is gebaseerd op de actie: ' Microsoft.DocumentDB/locations/restorableDatabaseAccounts/Restore/Action ' en moet worden opgenomen in de herstel machtiging. Er is een ingebouwde rol met de naam ' CosmosRestoreOperator ' die deze rol heeft opgenomen. U kunt de machtiging toewijzen met behulp van deze ingebouwde rol of een aangepaste rol maken.
+De eigenaar van het abonnement kan de machtiging bieden voor het herstellen naar een andere Azure AD-identiteit. De machtiging herstellen is gebaseerd op de actie: `Microsoft.DocumentDB/locations/restorableDatabaseAccounts/restore/action` en moet worden opgenomen in de herstel machtiging. Er is een ingebouwde rol met de naam *CosmosRestoreOperator* waarvoor deze rol is opgenomen. U kunt de machtiging toewijzen met behulp van deze ingebouwde rol of een aangepaste rol maken.
 
-De RestorableAction hieronder vertegenwoordigt een aangepaste rol. U moet deze rol expliciet maken. Met de volgende JSON-sjabloon wordt een aangepaste rol ' RestorableAction ' gemaakt met de machtiging voor terugzetten:
+De RestorableAction hieronder vertegenwoordigt een aangepaste rol. U moet deze rol expliciet maken. Met de volgende JSON-sjabloon maakt u een aangepaste *RestorableAction* met herstel machtiging:
 
 ```json
 {

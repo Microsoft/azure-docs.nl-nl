@@ -8,12 +8,12 @@ ms.author: shhazam
 ms.date: 1/13/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 53aafc4146680c89dd01174ec5fde765f1cc0c01
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 06663e12bbcaee2243be75d6aa9ea9cf4fd125bf
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746016"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523359"
 ---
 # <a name="horizon-proprietary-protocol-dissector"></a>Horizon-eigendom protocol Dissector
 
@@ -326,7 +326,7 @@ In deze sectie worden de basis parameters beschreven.
 
 In deze sectie worden andere velden beschreven.
 
-| Parameter label | Beschrijving |
+| Parameter label | Description |
 |-----------------|--------|
 | **lijsten toestaan** | U kunt de protocol waarden indexeren en weer geven in rapporten voor gegevens analyse. Deze rapporten zijn gebaseerd op uw netwerk basislijn. :::image type="content" source="media/references-horizon-sdk/data-mining.png" alt-text="Een voor beeld van de weer gave voor gegevens analyse."::: <br /> Zie [verbinding maken met een Indexing-service (basis lijn)](#connect-to-an-indexing-service-baseline) voor meer informatie. |
 | **firmware** | U kunt firmware gegevens extra heren, index waarden definiëren en firmware waarschuwingen activeren voor het Protocol van de invoeg toepassing. Zie [firmware gegevens extra heren](#extract-firmware-data) voor meer informatie. |
@@ -1146,7 +1146,7 @@ De eigenschappen die in dit bestand kunnen worden geconfigureerd zijn:
 
 ### <a name="fields"></a>Velden
 
-| Veld | Beschrijving |
+| Veld | Description |
 |--|--|
 | sleutel | Geeft de sleutel aan. |
 | waarde | Hiermee wordt het implementatie veld aangegeven dat moet worden gebruikt om de gegevens op te geven. |
@@ -1618,7 +1618,7 @@ Het venster horizon console **Overview** bevat informatie over de invoeg toepass
 
 :::image type="content" source="media/references-horizon-sdk/overview.png" alt-text="Het overzicht van de horizon-console.":::
 
-| Veld | Beschrijving |
+| Veld | Description |
 |--|--|
 | Toepassing | De naam van de invoeg toepassing die u hebt geüpload. |
 | :::image type="content" source="media/references-horizon-sdk/switch.png" alt-text="De schakel optie aan en uit."::: | De invoeg toepassing **in** -of **uitschakelen** . Defender voor IoT verwerkt geen protocol verkeer dat in de invoeg toepassing is gedefinieerd wanneer u de invoeg toepassing uitschakelt. |
@@ -1640,6 +1640,6 @@ Controleren:
 
 Selecteer de knop monitor voor de invoeg toepassing in het overzicht.
 
-Volgende stappen
+## <a name="next-steps"></a>Volgende stappen
 
 Uw horizon- [API](references-horizon-api.md) instellen

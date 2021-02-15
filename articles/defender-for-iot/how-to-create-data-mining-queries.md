@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/20/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: edeb383317d4bdc0e7beef1f8390ddabd350f002
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 0738dc7f2b7012002fc6ddf5cc68dd0c8e42b04d
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507567"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522476"
 ---
 # <a name="sensor-data-mining-queries"></a>Sensor gegevens analyse query's
 
@@ -285,3 +285,7 @@ Een rapport genereren:
 3. Selecteer in de vervolg keuzelijst met de juiste lijst het rapport dat u wilt genereren.
 
 4. Als u een PDF-bestand van de rapport resultaten wilt maken, selecteert u :::image type="icon" source="media/how-to-generate-reports/pdf-report-icon.png" border="false"::: .
+
+## <a name="next-steps"></a>Volgende stappen
+
+[Sensor trends en statistieken rapporten](how-to-create-trends-and-statistics-reports.md).

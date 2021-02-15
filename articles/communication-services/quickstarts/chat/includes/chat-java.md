@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: edf48bc75817b3510264d852eb9cc717ed022f33
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: 6a075ae721d767faf25e4774dd545d36eedfaef4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915201"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379652"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -56,7 +56,7 @@ In uw POM-bestand verwijzen we naar het pakket `azure-communication-chat` met de
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-chat</artifactId>
-    <version>1.0.0-beta.3</version> 
+    <version>1.0.0-beta.4</version> 
 </dependency>
 ```
 
@@ -66,9 +66,8 @@ Voor verificatie moet uw client het pakket `azure-communication-common` verwijze
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-common</artifactId>
-    <version>1.0.0-beta.3</version> 
+    <version>1.0.0-beta.4</version> 
 </dependency>
-
 ```
 
 ## <a name="object-model"></a>Objectmodel
@@ -83,7 +82,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ChatThreadAsyncClient | Deze klasse is vereist voor de functionaliteit van de asynchrone chat-thread. U verkrijgt een instantie via de ChatAsyncClient en gebruikt deze om berichten te verzenden/ontvangen/bijwerken/verwijderen, gebruikers toe te voegen/te verwijderen of te verzenden, getypte meldingen te verzenden en bevestigingen te lezen. |
 
 ## <a name="create-a-chat-client"></a>Een chat-client maken
-Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de klasse CommunicationUserCredential van de gemeenschappelijke clientbibliotheek gebruiken om het token door te geven aan uw chat-client. 
+Als u een chat-client wilt maken, gebruikt u het Communications Service-eindpunt en het toegangstoken dat is gegenereerd als onderdeel van de vereiste stappen. Met toegangstokens voor gebruikers kunt u clienttoepassingen maken die zich rechtstreeks verifiëren bij Azure Communication Services. Zodra u deze tokens op uw server hebt gegenereerd, geeft u ze terug op een clientapparaat. U moet de klasse CommunicationTokenCredential van de gemeen schappelijke client bibliotheek gebruiken om het token door te geven aan uw chat-client. 
 
 Bij het toevoegen van de importinstructies, moet u ervoor zorgen dat u alleen importbewerkingen toevoegt vanuit de com.azure.communication.chat en com.azure.communication.chat.models naamspaties en niet vanuit de com.azure.communication.chat.implementation naamspatie. In het bestand App.java dat is gegenereerd via Maven, kunt u de volgende code gebruiken om te beginnen met:
 
@@ -112,8 +111,8 @@ public class App
         // User access token fetched from your trusted service
         String userAccessToken = "<USER_ACCESS_TOKEN>";
 
-        // Create a CommunicationUserCredential with the given access token, which is only valid until the token is valid
-        CommunicationUserCredential userCredential = new CommunicationUserCredential(userAccessToken);
+        // Create a CommunicationTokenCredential with the given access token, which is only valid until the token is valid
+        CommunicationTokenCredential userCredential = new CommunicationTokenCredential(userAccessToken);
 
         // Initialize the chat client
         final ChatClientBuilder builder = new ChatClientBuilder();
@@ -132,27 +131,27 @@ De methode `createChatThread` gebruiken om een chat-thread te maken.
 `createChatThreadOptions` wordt gebruikt om de thread-aanvraag te beschrijven.
 
 - Gebruik `topic` om een onderwerp te geven aan deze chat. Het onderwerp kan worden bijgewerkt nadat de chat-thread is gemaakt met behulp van de functie `UpdateThread` .
-- Gebruik `members` om de thread-leden weer te geven die aan de thread moeten worden toegevoegd. `ChatThreadMember` neemt u de gebruiker die u hebt gemaakt in de Snelstart [Toegangstoken voor gebruikers](../../access-tokens.md).
+- Gebruik `participants` om de thread deelnemers weer te geven die moeten worden toegevoegd aan de thread. `ChatParticipant` neemt u de gebruiker die u hebt gemaakt in de Snelstart [Toegangstoken voor gebruikers](../../access-tokens.md).
 
-Het antwoord `chatThreadClient` wordt gebruikt om bewerkingen uit te voeren op de gemaakte chat-thread: leden toevoegen aan de chat-thread, een bericht verzenden, een bericht verwijderen, enz. Het bevat een eigenschap `chatThreadId` die de unieke ID van de chat-thread is. De eigenschap is toegankelijk via de openbare methode .getChatThreadId().
+Het antwoord `chatThreadClient` wordt gebruikt om bewerkingen uit te voeren op de gemaakte chat-thread: deel nemers toevoegen aan de chat-thread, een bericht verzenden, een bericht verwijderen, enzovoort. Het bevat een `chatThreadId` eigenschap die de unieke id van de chat thread is. De eigenschap is toegankelijk via de openbare methode .getChatThreadId().
 
 ```Java
-List<ChatThreadMember> members = new ArrayList<ChatThreadMember>();
+List<ChatParticipant> participants = new ArrayList<ChatParticipant>();
 
-ChatThreadMember firstThreadMember = new ChatThreadMember()
+ChatParticipant firstThreadParticipant = new ChatParticipant()
     .setUser(firstUser)
-    .setDisplayName("Member Display Name 1");
+    .setDisplayName("Participant Display Name 1");
     
-ChatThreadMember secondThreadMember = new ChatThreadMember()
+ChatParticipant secondThreadParticipant = new ChatParticipant()
     .setUser(secondUser)
-    .setDisplayName("Member Display Name 2");
+    .setDisplayName("Participant Display Name 2");
 
-members.add(firstThreadMember);
-members.add(secondThreadMember);
+participants.add(firstThreadParticipant);
+participants.add(secondThreadParticipant);
 
 CreateChatThreadOptions createChatThreadOptions = new CreateChatThreadOptions()
     .setTopic("Topic")
-    .setMembers(members);
+    .setParticipants(participants);
 ChatThreadClient chatThreadClient = chatClient.createChatThread(createChatThreadOptions);
 String chatThreadId = chatThreadClient.getChatThreadId();
 ```
@@ -163,7 +162,7 @@ Gebruik de methode `sendMessage` om een bericht te verzenden naar de thread die 
 `sendChatMessageOptions` wordt gebruikt om de aanvraag voor het chatbericht te beschrijven.
 
 - Gebruik `content` om de inhoud van het chatbericht te geven.
-- Gebruik `priority` om het prioriteitsniveau van het chatbericht te geven, zoals “Normaal“ of “Hoog“. Deze eigenschap kan worden gebruikt om een UI-indicator te hebben voor de ontvangende gebruiker in uw app, om de aandacht te vestigen op het bericht of om aangepaste bedrijfslogica uit te voeren.
+- Gebruiken `type` om het inhouds type van het chat bericht, tekst of HTML op te geven.
 - Gebruik `senderDisplayName` om de weergavenaam van de afzender te geven.
 
 Het antwoord `sendChatMessageResult` bevat een `id`, dit is de unieke ID van het bericht.
@@ -171,7 +170,7 @@ Het antwoord `sendChatMessageResult` bevat een `id`, dit is de unieke ID van het
 ```Java
 SendChatMessageOptions sendChatMessageOptions = new SendChatMessageOptions()
     .setContent("Message content")
-    .setPriority(ChatMessagePriority.NORMAL)
+    .setType(ChatMessageType.TEXT)
     .setSenderDisplayName("Sender Display Name");
 
 SendChatMessageResult sendChatMessageResult = chatThreadClient.sendMessage(sendChatMessageOptions);
@@ -181,7 +180,7 @@ String chatMessageId = sendChatMessageResult.getId();
 
 ## <a name="get-a-chat-thread-client"></a>Een chat-thread-client ophalen
 
-De methode `getChatThreadClient` retourneert een thread-client voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: leden toevoegen, bericht verzenden, enz. `chatThreadId` is de unieke ID van de bestaande chat-thread.
+De methode `getChatThreadClient` retourneert een thread-client voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: deel nemers toevoegen, berichten verzenden, enzovoort. `chatThreadId` is de unieke ID van de bestaande chat-thread.
 
 ```Java
 String chatThreadId = "Id";
@@ -206,7 +205,7 @@ chatThreadClient.listMessages().iterableByPage().forEach(resp -> {
 
 `listMessages` retourneert verschillende typen berichten die kunnen worden geïdentificeerd door `chatMessage.getType()`. Deze typen zijn:
 
-- `Text`: Normaal chatbericht verzonden door een thread-lid.
+- `Text`: Het normale chat bericht dat door een thread deelnemer wordt verzonden.
 
 - `ThreadActivity/TopicUpdate`: Systeembericht dat aangeeft dat het onderwerp is bijgewerkt.
 
@@ -216,44 +215,44 @@ chatThreadClient.listMessages().iterableByPage().forEach(resp -> {
 
 Zie [Berichttypen](../../../concepts/chat/concepts.md#message-types)voor meer informatie.
 
-## <a name="add-a-user-as-member-to-the-chat-thread"></a>Een gebruiker toevoegen als lid van de chat-thread
+## <a name="add-a-user-as-participant-to-the-chat-thread"></a>Een gebruiker toevoegen als deel nemer aan de chat thread
 
-Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen. Door gebruikers toe te voegen, kunt u ze toegang geven tot het verzenden van berichten naar de chat-thread, en andere leden toevoegen/verwijderen. U moet beginnen met het ophalen van een nieuw toegangstoken en een nieuwe identiteit voor die gebruiker. Voordat u de methode addMembers aanroept, moet u ervoor zorgen dat u een nieuw toegangstoken en een nieuwe identiteit hebt verkregen voor die gebruiker. De gebruiker heeft het toegangstoken nodig om hun chat-client te initialiseren.
+Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen. Door gebruikers toe te voegen, kunt u hen toegang geven tot het verzenden van berichten naar de chat-thread en andere deel nemers toevoegen/verwijderen. U moet beginnen met het ophalen van een nieuw toegangstoken en een nieuwe identiteit voor die gebruiker. Voordat u de methode addParticipants aanroept, moet u ervoor zorgen dat u een nieuw toegangs token en een nieuwe identiteit hebt verkregen voor die gebruiker. De gebruiker heeft het toegangstoken nodig om hun chat-client te initialiseren.
 
-Gebruik methode `addMembers` om thread-leden toe te voegen aan de thread die wordt geïdentificeerd door threadId.
+Gebruik `addParticipants` methode om deel nemers toe te voegen aan de thread die wordt geïdentificeerd door thread.
 
-- Gebruik `members` om de leden weer te geven die moeten worden toegevoegd aan de chat-thread.
-- `user`, vereist, is de CommunicationUser die u hebt gemaakt door de CommunicationIdentityClient in de Snelstart [Toegangstoken voor gebruikers](../../access-tokens.md).
-- `display_name`, optioneel, is de weergavenaam voor het thread-lid
-- `share_history_time`, optioneel, is de tijd van waaruit de chat-geschiedenis wordt gedeeld met het lid. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen voordat het lid is toegevoegd, stel het dan op de huidige datum in. Als u gedeeltelijke geschiedenis wilt delen, stelt u deze in op de vereiste datum.
+- Gebruik `listParticipants` om de deel nemers weer te geven die moeten worden toegevoegd aan de chat-thread.
+- `user`, vereist, is het CommunicationUserIdentifier dat u hebt gemaakt door de CommunicationIdentityClient in de Snelstartgids voor [gebruikers toegangs tokens](../../access-tokens.md) .
+- `display_name`, optioneel, is de weergave naam voor de deel nemer aan de thread.
+- `share_history_time`, optioneel, is de tijd waarop de chat geschiedenis wordt gedeeld met de deel nemer. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen vóór wanneer de deel nemer is toegevoegd, stelt u deze in op de huidige datum. Als u gedeeltelijke geschiedenis wilt delen, stelt u deze in op de vereiste datum.
 
 ```Java
-List<ChatThreadMember> members = new ArrayList<ChatThreadMember>();
+List<ChatParticipant> participants = new ArrayList<ChatParticipant>();
 
-ChatThreadMember firstThreadMember = new ChatThreadMember()
+ChatParticipant firstThreadParticipant = new ChatParticipant()
     .setUser(user1)
     .setDisplayName("Display Name 1");
 
-ChatThreadMember secondThreadMember = new ChatThreadMember()
+ChatParticipant secondThreadParticipant = new ChatParticipant()
     .setUser(user2)
     .setDisplayName("Display Name 2");
 
-members.add(firstThreadMember);
-members.add(secondThreadMember);
+participants.add(firstThreadParticipant);
+participants.add(secondThreadParticipant);
 
-AddChatThreadMembersOptions addChatThreadMembersOptions = new AddChatThreadMembersOptions()
-    .setMembers(members);
-chatThreadClient.addMembers(addChatThreadMembersOptions);
+AddChatParticipantsOptions addChatParticipantsOptions = new AddChatParticipantsOptions()
+    .setParticipants(participants);
+chatThreadClient.addParticipants(addChatParticipantsOptions);
 ```
 
 ## <a name="remove-user-from-a-chat-thread"></a>Gebruiker verwijderen uit een chat-thread
 
-Net als bij het toevoegen van een gebruiker aan een thread, kunt u gebruikers uit een chat-thread verwijderen. Hiervoor moet u de gebruikersidentiteiten bijhouden van de leden die u hebt toegevoegd.
+Net als bij het toevoegen van een gebruiker aan een thread, kunt u gebruikers uit een chat-thread verwijderen. Hiervoor moet u de gebruikers identiteiten bijhouden van de deel nemers die u hebt toegevoegd.
 
-Gebruik `removeMember`, waarbij `user` de CommunicationUser is die u hebt gemaakt.
+Gebruik `removeParticipant` , waarbij `user` de CommunicationUserIdentifier die u hebt gemaakt.
 
 ```Java
-chatThreadClient.removeMember(user);
+chatThreadClient.removeParticipant(user);
 ```
 
 ## <a name="run-the-code"></a>De code uitvoeren

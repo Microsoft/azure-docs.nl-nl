@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: 1d434697802596a0200dc0cb5f1afe5bc67afef5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c411250f7d850e56c9c54c27e888cba8f3acfece
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379706"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522203"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Samen werken met andere auteurs en editors
 
@@ -25,7 +25,7 @@ Deze Azure RBAC-functie omvat:
 * U kunt snel auteurs en editors toevoegen aan alle kennis grondslagen in de resource, omdat het besturings element op het niveau van de resource staat en niet op het niveau van de Knowledge Base.
 
 > [!NOTE]
-> Zorg ervoor dat u een aangepast subdomein toevoegt aan de resource. Er moet standaard een [aangepast subdomein](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) aanwezig zijn, maar als dat niet het geval is, voegt u dit toe
+> Zorg ervoor dat u een aangepast subdomein toevoegt voor de resource. Er moet standaard een [aangepast subdomein](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) aanwezig zijn, maar als dat niet het geval is, voegt u dit toe
 
 ## <a name="access-is-provided-by-a-defined-role"></a>De toegang wordt verkregen door een gedefinieerde rol
 

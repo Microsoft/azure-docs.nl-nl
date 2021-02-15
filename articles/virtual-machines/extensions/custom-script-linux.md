@@ -3,7 +3,7 @@ title: Aangepaste script extensie uitvoeren op virtuele Linux-machines in azure
 description: Configuratie taken voor Linux-VM'S automatiseren met behulp van de aangepaste script extensie v2
 services: virtual-machines-linux
 documentationcenter: ''
-author: mimckitt
+author: amjads1
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
-ms.author: mimckitt
-ms.openlocfilehash: 94506c4107a157c2b3265a28ffdf5d1eedddd256
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.author: amjads
+ms.openlocfilehash: 5ab312dc6da57279ce5cbd4d8efd7912b8a36503
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954763"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390110"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>De aangepaste scriptextensie van Azure versie 2 gebruiken met virtuele Linux-machines
 De aangepaste script extensie versie 2 downloadt en voert scripts uit op virtuele machines van Azure. Deze uitbrei ding is handig voor configuratie na de implementatie, software-installatie of een andere configuratie/beheer taak. U kunt scripts downloaden van Azure Storage of een andere toegankelijke Internet locatie, of u kunt deze opgeven voor de runtime van de uitbrei ding. 

@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 0d4ccc1a60f9ac3c2183023d3d3772da6a1e307b
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: f66aef64d68bd5d99d7a27d1382306d9202bd350
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99830750"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388053"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Azure Migrate-projecten maken en beheren
 
@@ -87,7 +87,7 @@ Zoek een project op de volgende manier:
 3. Selecteer het juiste abonnement en Azure Migrate project.
 
 
-### <a name="find-a-legacy-project"></a>Een oud project zoeken
+### <a name="find-a-classic-azure-migrate-project"></a>Een klassiek Azure Migrate project zoeken
 
 Als u het project hebt gemaakt in de [vorige versie](migrate-services-overview.md#azure-migrate-versions) van Azure migrate, kunt u het als volgt vinden:
 

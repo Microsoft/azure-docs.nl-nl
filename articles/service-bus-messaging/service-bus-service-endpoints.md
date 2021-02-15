@@ -2,14 +2,14 @@
 title: Service-eind punten voor virtuele netwerken configureren voor Azure Service Bus
 description: Dit artikel bevat informatie over het toevoegen van een service-eind punt van micro soft. ServiceBus aan een virtueel netwerk.
 ms.topic: article
-ms.date: 06/23/2020
+ms.date: 02/12/2021
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 8005a2c43d42908a9ad6ebea10b6a13ef381084c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 6b168bbdc69f2d18a724084d9de694fa83d23dda
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427646"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516138"
 ---
 # <a name="allow-access-to-azure-service-bus-namespace-from-specific-virtual-networks"></a>Toegang tot Azure Service Bus naam ruimte vanuit specifieke virtuele netwerken toestaan
 Dankzij de integratie van Service Bus met de [service-eind punten van Virtual Network (VNet)][vnet-sep] is beveiligde toegang mogelijk tot berichten mogelijkheden van werk belastingen, zoals virtuele machines die zijn gebonden aan virtuele netwerken, waarbij het netwerkpad van het netwerk verkeer aan beide uiteinden wordt beveiligd.
@@ -57,7 +57,8 @@ In deze sectie wordt beschreven hoe u Azure Portal kunt gebruiken om een service
     > [!NOTE]
     > U ziet het tabblad **netwerken** alleen voor **Premium** -naam ruimten.  
     
-    Standaard is de optie **geselecteerde netwerken** geselecteerd. Als u niet ten minste één IP-firewall regel of een virtueel netwerk op deze pagina toevoegt, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel).
+    >[!WARNING]
+    > Als u de optie **geselecteerde netwerken** selecteert en ten minste één IP-firewall regel of een virtueel netwerk op deze pagina niet toevoegt, is de naam ruimte toegankelijk via het open bare Internet (met behulp van de toegangs sleutel).
 
     :::image type="content" source="./media/service-bus-ip-filtering/default-networking-page.png" alt-text="Pagina netwerk-standaard" lightbox="./media/service-bus-ip-filtering/default-networking-page.png":::
     
@@ -88,26 +89,11 @@ In deze sectie wordt beschreven hoe u Azure Portal kunt gebruiken om een service
 [!INCLUDE [service-bus-trusted-services](../../includes/service-bus-trusted-services.md)]
 
 ## <a name="use-resource-manager-template"></a>Resource Manager-sjabloon gebruiken
-Met de volgende Resource Manager-sjabloon kan een regel voor een virtueel netwerk worden toegevoegd aan een bestaande Service Bus naam ruimte.
+In het volgende voor beeld van een resource manager-sjabloon wordt een regel voor een virtueel netwerk toegevoegd aan een bestaande Service Bus naam ruimte. Voor de netwerk regel specificeert deze de ID van een subnet in een virtueel netwerk. 
 
-Sjabloon parameters:
+De ID is een volledig gekwalificeerd Resource Manager-pad voor het subnet van het virtuele netwerk. Bijvoorbeeld `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` voor het standaard subnet van een virtueel netwerk.
 
-* **naam ruimte** : Service Bus naam ruimte.
-* **virtualNetworkingSubnetId** : volledig gekwalificeerd pad van Resource Manager voor het subnet van het virtuele netwerk; bijvoorbeeld `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` voor het standaard subnet van een virtueel netwerk.
-
-> [!NOTE]
-> Hoewel er geen regels kunnen worden geweigerd, is voor de Azure Resource Manager sjabloon de standaard actie ingesteld op **' toestaan '** , waardoor verbindingen niet worden beperkt.
-> Wanneer u Virtual Network of firewall regels maakt, moeten we de **_' defaultAction '_ wijzigen**
-> 
-> from
-> ```json
-> "defaultAction": "Allow"
-> ```
-> in op
-> ```json
-> "defaultAction": "Deny"
-> ```
->
+Wanneer u regels voor het virtuele netwerk of firewalls toevoegt, stelt u de waarde `defaultAction` in op `Deny` .
 
 Sjabloon:
 
@@ -211,6 +197,9 @@ Sjabloon:
 ```
 
 Als u de sjabloon wilt implementeren, volgt u de instructies voor [Azure Resource Manager][lnk-deploy].
+
+> [!IMPORTANT]
+> Als er geen regels voor het IP-en virtueel netwerk zijn, worden alle verkeer naar de naam ruimte stromen, zelfs als u de op hebt ingesteld `defaultAction` `deny` .  De naam ruimte is toegankelijk via het open bare Internet (met behulp van de toegangs sleutel). Geef ten minste één IP-regel of virtuele netwerk regel voor de naam ruimte op om alleen verkeer toe te staan vanaf de opgegeven IP-adressen of het subnet van een virtueel netwerk.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

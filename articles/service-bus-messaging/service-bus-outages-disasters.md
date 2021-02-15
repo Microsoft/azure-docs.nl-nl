@@ -2,13 +2,13 @@
 title: Azure Service Bus toepassingen isoleren tegen storingen en rampen
 description: In deze artikelen vindt u technieken voor het beveiligen van toepassingen tegen een mogelijke Azure Service Bus storing.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 4f3ff89e3ec59ad4445ab0b7ee7eeb45d18fa3b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/10/2021
+ms.openlocfilehash: b9090a54cd58788dbd13f528af4dda4aa96005b7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88065621"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374589"
 ---
 # <a name="best-practices-for-insulating-applications-against-service-bus-outages-and-disasters"></a>Best practices voor de isolatie van toepassingen tegen Service Bus-uitval en -noodgevallen
 
@@ -23,11 +23,13 @@ Concepten voor hoge Beschik baarheid en herstel na nood gevallen zijn ingebouwd 
 
 ### <a name="geo-disaster-recovery"></a>Geo-Disaster herstel
 
-Service Bus Premium ondersteunt geo-nood herstel op het niveau van de naam ruimte. Zie [Azure Service Bus Geo-disaster recovery](service-bus-geo-dr.md) (Geo-herstel na noodgeval in Azure Service Bus) voor meer informatie. De functie voor nood herstel, alleen beschikbaar voor de [Premium-SKU](service-bus-premium-messaging.md) , implementeert herstel na nood gevallen van meta gegevens en maakt gebruik van primaire en secundaire naam ruimten voor nood herstel.
+Service Bus Premium ondersteunt geo-nood herstel op het niveau van de naam ruimte. Zie [Azure Service Bus Geo-disaster recovery](service-bus-geo-dr.md) (Geo-herstel na noodgeval in Azure Service Bus) voor meer informatie. De functie voor nood herstel, alleen beschikbaar voor de [Premium-SKU](service-bus-premium-messaging.md) , implementeert herstel na nood gevallen van meta gegevens en maakt gebruik van primaire en secundaire naam ruimten voor nood herstel. Met Geo-Disaster herstel worden alleen meta gegevens voor entiteiten gerepliceerd tussen de primaire en secundaire naam ruimten.  
 
 ### <a name="availability-zones"></a>Beschikbaarheidszones
 
 De Service Bus Premium SKU ondersteunt [Beschikbaarheidszones](../availability-zones/az-overview.md), waardoor er in dezelfde Azure-regio fout geïsoleerde locaties worden geboden. Service Bus beheert drie kopieën van het berichten archief (1 primaire en 2 secundaire). Service Bus houdt alle drie kopieën synchroon voor gegevens-en beheer bewerkingen. Als de primaire kopie mislukt, wordt een van de secundaire kopieën gepromoveerd tot primair zonder waargenomen uitval tijd. Als de toepassingen tijdelijke verbreken van Service Bus zien, wordt met de logica voor opnieuw proberen in de SDK automatisch opnieuw verbinding gemaakt met Service Bus. 
+
+Wanneer u beschikbaarheids zones gebruikt, worden zowel meta gegevens als gegevens (berichten) gerepliceerd tussen data centers in de beschikbaarheids zone. 
 
 > [!NOTE]
 > De Beschikbaarheidszones ondersteuning voor Azure Service Bus Premium is alleen beschikbaar in [Azure-regio's](../availability-zones/az-region.md) waar beschikbaarheids zones aanwezig zijn.

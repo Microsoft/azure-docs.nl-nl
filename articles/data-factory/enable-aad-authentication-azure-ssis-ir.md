@@ -1,22 +1,19 @@
 ---
 title: AAD inschakelen voor Azure SSIS Integration Runtime
 description: In dit artikel wordt beschreven hoe u Azure Active Directory verificatie inschakelt met de beheerde identiteit voor Azure Data Factory om Azure-SSIS Integration Runtime te maken.
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.devlang: powershell
 ms.topic: conceptual
 author: swinarko
 ms.author: sawinark
-manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/09/2020
-ms.openlocfilehash: 30f5b5990e189cb6942c15b65b6a417ce49f0c2b
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: cd3f590e1869b28f0ac08ce98da32a98160e4e86
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637799"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392728"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Azure Active Directory-verificatie inschakelen voor Azure-SSIS Integration Runtime
 
@@ -86,9 +83,9 @@ U kunt met behulp van de volgende stappen [Azure AD-verificatie met SQL configur
 
 2.  Selecteer uw server in SQL Database moet worden geconfigureerd met Azure AD-verificatie.
 
-3.  Selecteer in de sectie **instellingen** van de Blade de optie **Active Directory beheerder** .
+3.  Selecteer in de sectie **instellingen** van de Blade de optie **Active Directory beheerder**.
 
-4.  Selecteer in de opdracht balk de optie **beheerder instellen** .
+4.  Selecteer in de opdracht balk de optie **beheerder instellen**.
 
 5.  Selecteer een Azure AD-gebruikers account om Administrator van de-server te maken en selecteer **selecteren.**
 
@@ -110,7 +107,7 @@ Voor deze volgende stap hebt u [Microsoft SQL Server Management Studio](/sql/ssm
 
 6. Vouw in de **objectverkenner** de map **data bases**  ->  **System data bases** uit.
 
-7. Klik met de rechter muisknop op de **hoofd** database en selecteer **nieuwe query** .
+7. Klik met de rechter muisknop op de **hoofd** database en selecteer **nieuwe query**.
 
 8. Voer de volgende T-SQL-opdracht in het query venster in en selecteer **uitvoeren** op de werk balk.
 
@@ -128,7 +125,7 @@ Voor deze volgende stap hebt u [Microsoft SQL Server Management Studio](/sql/ssm
 
    De opdracht moet worden voltooid, waardoor de Inge sloten gebruiker de mogelijkheid heeft om een Data Base (SSISDB) te maken.
 
-10. Als uw SSISDB is gemaakt met behulp van SQL-verificatie en u wilt overschakelen op het gebruik van Azure AD-verificatie voor uw Azure-SSIS IR om toegang te krijgen, moet u eerst controleren of de stappen voor het verlenen van machtigingen aan de **hoofd** database zijn voltooid. Klik vervolgens met de rechter muisknop op de **SSISDB** -data base en selecteer **nieuwe query** .
+10. Als uw SSISDB is gemaakt met behulp van SQL-verificatie en u wilt overschakelen op het gebruik van Azure AD-verificatie voor uw Azure-SSIS IR om toegang te krijgen, moet u eerst controleren of de stappen voor het verlenen van machtigingen aan de **hoofd** database zijn voltooid. Klik vervolgens met de rechter muisknop op de **SSISDB** -data base en selecteer **nieuwe query**.
 
 11. Voer de volgende T-SQL-opdracht in het query venster in en selecteer **uitvoeren** op de werk balk.
 
@@ -164,7 +161,7 @@ Voor deze volgende stap hebt u [Microsoft SQL Server Management Studio](/sql/ssm
 
 3.  Vouw in de **objectverkenner** de map **data bases**  ->  **System data bases** uit.
 
-4.  Klik met de rechter muisknop op de **hoofd** database en selecteer **nieuwe query** .
+4.  Klik met de rechter muisknop op de **hoofd** database en selecteer **nieuwe query**.
 
 5.  Voer in het query venster het volgende T-SQL-script uit om de beheerde identiteit voor uw ADF toe te voegen als gebruiker
 
@@ -176,7 +173,7 @@ Voor deze volgende stap hebt u [Microsoft SQL Server Management Studio](/sql/ssm
     
     De opdracht moet worden voltooid, waardoor de beheerde identiteit voor uw ADF de mogelijkheid heeft om een Data Base te maken (SSISDB).
 
-6.  Als uw SSISDB is gemaakt met behulp van SQL-verificatie en u wilt overschakelen op het gebruik van Azure AD-verificatie voor uw Azure-SSIS IR om toegang te krijgen, moet u eerst controleren of de stappen voor het verlenen van machtigingen aan de **hoofd** database zijn voltooid. Klik vervolgens met de rechter muisknop op de **SSISDB** -data base en selecteer **nieuwe query** .
+6.  Als uw SSISDB is gemaakt met behulp van SQL-verificatie en u wilt overschakelen op het gebruik van Azure AD-verificatie voor uw Azure-SSIS IR om toegang te krijgen, moet u eerst controleren of de stappen voor het verlenen van machtigingen aan de **hoofd** database zijn voltooid. Klik vervolgens met de rechter muisknop op de **SSISDB** -data base en selecteer **nieuwe query**.
 
 7.  Voer de volgende T-SQL-opdracht in het query venster in en selecteer **uitvoeren** op de werk balk.
 

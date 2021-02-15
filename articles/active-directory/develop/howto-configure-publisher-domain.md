@@ -13,12 +13,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
-ms.openlocfilehash: d793ed912af1c6fdd6e0da417b8709cad8bf08b9
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 9b3840ffb39a204cfa24dcb0430f20ac16587582
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013631"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104175"
 ---
 # <a name="how-to-configure-an-applications-publisher-domain"></a>Procedure: het domein van de uitgever van een toepassing configureren
 
@@ -48,18 +48,12 @@ Als uw app is geregistreerd vóór 21 mei 2019, wordt de vraag van de toestemmin
 
 Voer de volgende stappen uit om het Uitgever domein van uw app in te stellen.
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a> met behulp van een werk-of school account of een persoonlijke Microsoft-account.
-
-1. Als uw account in meerdere Azure AD-tenants aanwezig is:
-   1. Selecteer uw profiel in het menu in de rechterbovenhoek van de pagina en klik op **Schakelen tussen directory's**.
-   1. Wijzig uw sessie in de Azure AD-tenant waar u de toepassing wilt maken.
-
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de Tenant te selecteren waarin de app is geregistreerd.
 1. Navigeer naar [Azure Active Directory > app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) om de app te zoeken en te selecteren die u wilt configureren.
 
    Zodra u de app hebt geselecteerd, ziet u de **overzichts** pagina van de app.
-
-1. Selecteer op de pagina **overzicht** van de app de sectie **huis stijl** .
-
+1. Selecteer onder **beheren** de **huis stijl**.
 1. Zoek het **domein** veld van de uitgever en selecteer een van de volgende opties:
 
    - Selecteer **een domein configureren** als u nog geen domein hebt geconfigureerd.

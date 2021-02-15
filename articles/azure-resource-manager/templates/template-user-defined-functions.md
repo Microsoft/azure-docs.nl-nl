@@ -2,13 +2,13 @@
 title: Door de gebruiker gedefinieerde functies in sjablonen
 description: Hierin wordt beschreven hoe u door de gebruiker gedefinieerde functies definieert en gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
-ms.date: 03/09/2020
-ms.openlocfilehash: f428fa3bc827af3820ad9f928f4f92b881c9c84c
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 02/11/2021
+ms.openlocfilehash: 9c7480958e6315c8aea1fd8d12613bcf9d606723
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934676"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379621"
 ---
 # <a name="user-defined-functions-in-arm-template"></a>Door de gebruiker gedefinieerde functies in ARM-sjabloon
 
@@ -44,7 +44,7 @@ Uw functies vereisen een naam ruimte waarde om naam conflicten met sjabloon func
 
 ## <a name="use-the-function"></a>Gebruik de functie
 
-In het volgende voor beeld ziet u een sjabloon die een door de gebruiker gedefinieerde functie bevat. Deze functie wordt gebruikt om een unieke naam voor een opslag account op te halen. De sjabloon heeft een para meter met `storageNamePrefix` de naam die wordt door gegeven als een para meter voor de functie.
+In het volgende voor beeld ziet u een sjabloon die een door de gebruiker gedefinieerde functie bevat om een unieke naam voor een opslag account op te halen. De sjabloon heeft een para meter `storageNamePrefix` met de naam die wordt door gegeven als een para meter voor de functie.
 
 ```json
 {
@@ -92,6 +92,12 @@ In het volgende voor beeld ziet u een sjabloon die een door de gebruiker gedefin
  ]
 }
 ```
+
+Tijdens de implementatie `storageNamePrefix` wordt de para meter door gegeven aan de functie:
+
+* De sjabloon definieert een para meter met de naam `storageNamePrefix` .
+* De functie wordt gebruikt `namePrefix` omdat u alleen para meters kunt gebruiken die in de functie zijn gedefinieerd. Zie [beperkingen](#limitations)voor meer informatie.
+* In de sectie van de sjabloon `resources` `name` gebruikt het element de functie en wordt de `storageNamePrefix` waarde door gegeven aan de functie `namePrefix` .
 
 ## <a name="limitations"></a>Beperkingen
 

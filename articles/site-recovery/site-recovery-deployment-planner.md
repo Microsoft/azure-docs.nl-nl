@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: mayg
-ms.openlocfilehash: 9a78b0ec53dfce0a1c1478790f404adb78a8c6b9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 4291e8438f70e2e7190cd4dc6c890b5b325f2324
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359846"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100360904"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>Over de Azure Site Recovery Deployment Planner voor VMware naar Azure
 Dit artikel is de gebruikershandleiding voor de Azure Site Recovery Deployment Planner voor productie-installaties van het type VMware-naar-Azure.
@@ -64,17 +64,17 @@ Het hulpprogramma levert de volgende gegevens:
 
 | **Categorie** | **VMware naar Azure** |**Hyper-V naar Azure**|**Azure naar Azure**|**Hyper-V naar secundaire site**|**VMware naar secundaire site**
 --|--|--|--|--|--
-Ondersteunde scenario's |Ja|Ja|Nee|Ja*|Nee
-Ondersteunde versie | vCenter 6,7, 6,5, 6,0 of 5,5| WindowsServer 2016, Windows Server 2012 R2 | N.v.t. |WindowsServer 2016, Windows Server 2012 R2|N.v.t.
-Ondersteunde configuratie|vCenter, ESXi| Hyper-V-cluster, Hyper-V-host|N.v.t.|Hyper-V-cluster, Hyper-V-host|N.v.t.|
-Aantal servers dat kan worden geprofileerd per actief exemplaar van de Site Recovery Deployment Planner |Eén (virtuele machines die horen bij een VMware vCenter Server of een ESXi-server kunnen worden geprofileerd op een tijdstip)|Meerdere (VM's op meerdere hosts of hostclusters kunnen tegelijk worden geprofileerd)| N.v.t. |Meerdere (VM's op meerdere hosts of hostclusters kunnen tegelijk worden geprofileerd)| N.v.t.
+Ondersteunde scenario's |Ja|Ja|Nee|Ja*|No
+Ondersteunde versie | vCenter 7,0, 6,7, 6,5, 6,0 of 5,5| WindowsServer 2016, Windows Server 2012 R2 | NA |WindowsServer 2016, Windows Server 2012 R2|NA
+Ondersteunde configuratie|vCenter, ESXi| Hyper-V-cluster, Hyper-V-host|NA|Hyper-V-cluster, Hyper-V-host|NA|
+Aantal servers dat kan worden geprofileerd per actief exemplaar van de Site Recovery Deployment Planner |Eén (virtuele machines die horen bij een VMware vCenter Server of een ESXi-server kunnen worden geprofileerd op een tijdstip)|Meerdere (VM's op meerdere hosts of hostclusters kunnen tegelijk worden geprofileerd)| NA |Meerdere (VM's op meerdere hosts of hostclusters kunnen tegelijk worden geprofileerd)| NA
 
 * Het hulpprogramma is voornamelijk bedoeld voor het Hyper-V naar Azure noodherstelscenario. Voor Hyper-V naar secundaire site noodherstel kan deze alleen worden gebruikt voor begrip van aanbevelingen aan de bronzijde, zoals vereiste netwerkbandbreedte, vrije opslagruimte op elk van de Hyper-V-bronservers en de initiële replicatie van batchnummers en batchdefinities. De Azure-aanbevelingen en de kosten van het rapport negeren. De bewerking Ophalen doorvoer is ook niet van toepassing voor het Hyper-V naar secundaire site noodherstelscenario.
 
 ## <a name="prerequisites"></a>Vereisten
 Het hulpprogramma heeft twee belangrijke fasen: profileren en rapporten genereren. Er is ook een derde optie, waarmee alleen doorvoer wordt berekend. Raadpleeg de volgende tabel voor de vereisten voor de server waarop de profilering en meting van de doorvoersnelheid worden uitgevoerd.
 
-| Serververeiste | Beschrijving|
+| Serververeiste | Description|
 |---|---|
 |Profileren en meten van doorvoer| <ul><li>Besturingssysteem: Windows Server 2016 of Windows Server 2012 R2<br>(bij voorkeur met minimaal de [aanbevolen waarden voor de configuratieserver](/en-in/azure/site-recovery/site-recovery-plan-capacity-vmware#size-recommendations-for-the-configuration-server))</li><li>Machineconfiguratie: 8 vCPU's, 16 GB RAM, 300 GB harde schijf</li><li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli)</li><li>[Visual C++ Redistributable voor Visual Studio 2012](https://aka.ms/vcplusplus-redistributable)</li><li>Internet toegang tot Azure (*. blob.core.windows.net) van deze server, poort 443<br>[Dit is optioneel. U kunt ervoor kiezen om de beschik bare band breedte tijdens het hand matig genereren van rapporten op te geven.]</li><li>Azure Storage-account</li><li>Beheerderstoegang op de server</li><li>Minimaal 100 GB vrije schijfruimte (uitgaande van 1000 virtuele machines met een gemiddelde van elk drie schijven, geprofileerd voor 30 dagen)</li><li>Instellingen voor het niveau van VMware vCenter-statistieken kunnen 1 of hoger niveau zijn</li><li>VCenter-poort toestaan (standaard 443): met Site Recovery Deployment Planner wordt deze poort gebruikt om verbinding te maken met de vCenter-Server/ESXi-host</ul></ul>|
 | Rapporten genereren | Een Windows-PC of Windows-Server met Excel 2013 of hoger.<li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Visual C++ Redistributable voor Visual Studio 2012](https://aka.ms/vcplusplus-redistributable)</li><li>[VMware vSphere PowerCLI 6,0 R3](https://aka.ms/download_powercli) is alleen vereist wanneer u de optie-gebruiker door geven in de opdracht rapport genereren voor het ophalen van de meest recente configuratie gegevens van de virtuele machine van de virtuele machines. De Deployment Planner maakt verbinding met de vCenter-Server. Poort voor vCenter-poort (standaard 443) toestaan verbinding te maken met vCenter Server.</li>|

@@ -13,6 +13,8 @@
   items:
     - name: Uw omgeving instellen
       items:
+        - name: Uw Tenant-ID zoeken
+          href: how-to-set-azure-tenant.md
         - name: Uw Azure-abonnement vinden
           href: how-to-set-azure-subscription.md
         - name: Een Media Services-account kunt maken
@@ -70,6 +72,8 @@
           displayName: 'AAD, Active Directory'
     - name: REST
       items:
+        - name: Vertrouwde opslag inschakelen
+          href: tutorial-trusted-storage-rest.md
         - name: Een extern bestand REST coderen en streamen
           href: stream-files-tutorial-with-rest.md
         - name: Door de klant beheerde sleutels met REST API
@@ -305,6 +309,12 @@
           displayName: 'migration, samples'
 - name: Instructiegidsen
   items:
+    - name: Uw Tenant en abonnement zoeken
+      items:
+        - name: Uw Tenant-ID zoeken
+          href: how-to-set-azure-tenant.md
+        - name: Uw abonnements-ID zoeken
+          href: how-to-set-azure-subscription.md
     - name: Assets maken en media uploaden
       items:
         - name: Een asset maken

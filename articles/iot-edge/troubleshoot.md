@@ -8,12 +8,12 @@ ms.date: 11/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 035cf5be4471cad7ac11eb8ce9a8a0ecb13a68da
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c5f28e2c2d370329dbee0fb76284a4b76b2b945e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462370"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376507"
 ---
 # <a name="troubleshoot-your-iot-edge-device"></a>Problemen met uw IoT Edge apparaat oplossen
 
@@ -240,7 +240,7 @@ Het `agent` element ziet er standaard uit als in het volgende voor beeld:
      type: docker
      env: {}
      config:
-       image: mcr.microsoft.com/azureiotedge-agent:1.0
+       image: mcr.microsoft.com/azureiotedge-agent:1.1
        auth: {}
    ```
 
@@ -252,7 +252,7 @@ Vervangen `env: {}` door:
    ```
 
    > [!WARNING]
-   > YAML-bestanden kunnen geen tabs bevatten als identation. Gebruik in plaats daarvan 2 spaties. Items op het hoogste niveau kunnen geen voorloop spaties bevatten.
+   > YAML-bestanden kunnen geen tabbladen als inspringing bevatten. Gebruik in plaats daarvan 2 spaties. Items op het hoogste niveau kunnen geen voorloop spaties bevatten.
 
 Sla het bestand op en start het IoT Edge Security Manager opnieuw.
 

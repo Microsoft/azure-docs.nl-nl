@@ -5,35 +5,32 @@ ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 89ff49b3ea5abae7ced046f714d34943a58c64a6
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 5783f8092a6435b43ab8720df18cc5200e390d46
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428297"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378244"
 ---
-# <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>De prestaties en betrouwbaarheid van Azure Functions verbeteren
+# <a name="best-practices-for-performance-and-reliability-of-azure-functions"></a>Aanbevolen procedures voor de prestaties en betrouw baarheid van Azure Functions
 
 Dit artikel bevat richt lijnen voor het verbeteren van de prestaties en betrouw baarheid van uw [serverloze](https://azure.microsoft.com/solutions/serverless/) functie-apps.  
 
-## <a name="general-best-practices"></a>Algemene best practices
-
 Hieronder vindt u de aanbevolen procedures voor het bouwen en ontwerpen van uw serverloze oplossingen met behulp van Azure Functions.
 
-### <a name="avoid-long-running-functions"></a>Langdurige functies voor komen
+## <a name="avoid-long-running-functions"></a>Langdurige functies voor komen
 
-Grote, langlopende functies kunnen onverwachte time-outproblemen veroorzaken. Zie de time-outperiode van de [functie-app](functions-scale.md#timeout)voor meer informatie over de time-outs voor een bepaald hosting plan. 
+Grote, langlopende functies kunnen onverwachte time-outproblemen veroorzaken. Zie de time-outperiode van de [functie-app](functions-scale.md#timeout)voor meer informatie over de time-outs voor een bepaald hosting plan.
 
-Een functie kan groot worden vanwege veel Node.js afhankelijkheden. Het importeren van afhankelijkheden kan ook leiden tot grotere laad tijden die leiden tot onverwachte time-outs. Afhankelijkheden worden zowel expliciet als impliciet geladen. Eén module die door uw code is geladen, kan zijn eigen extra modules laden. 
+Een functie kan groot worden vanwege veel Node.js afhankelijkheden. Het importeren van afhankelijkheden kan ook leiden tot grotere laad tijden die leiden tot onverwachte time-outs. Afhankelijkheden worden zowel expliciet als impliciet geladen. Eén module die door uw code is geladen, kan zijn eigen extra modules laden.
 
 Als dat mogelijk is, kunnen er in kleinere functie sets grote functies worden gebruikt die samen werken en snel antwoorden retour neren. Zo kan een webhook of HTTP-activerings functie een bevestigings antwoord vereisen binnen een bepaalde tijds limiet; het is gebruikelijk dat webhooks een onmiddellijke reactie vereisen. U kunt de nettolading van de HTTP-trigger door geven aan een wachtrij die moet worden verwerkt door een functie voor wachtrij activering. Met deze benadering kunt u de werkelijke hoeveelheid werk uitstellen en een onmiddellijke reactie retour neren.
 
-
-### <a name="cross-function-communication"></a>Communicatie tussen meerdere functies
+## <a name="cross-function-communication"></a>Communicatie tussen meerdere functies
 
 [Durable functions](durable/durable-functions-overview.md) en [Azure Logic apps](../logic-apps/logic-apps-overview.md) zijn gebouwd om status overgangen en communicatie tussen meerdere functies te beheren.
 
-Als u Durable Functions of Logic Apps niet gebruikt om te integreren met meerdere functies, is het het beste om opslag wachtrijen te gebruiken voor communicatie tussen functies. De belangrijkste reden is dat opslag wachtrijen goed koper zijn en veel eenvoudiger zijn in te richten dan andere opslag opties. 
+Als u Durable Functions of Logic Apps niet gebruikt om te integreren met meerdere functies, is het het beste om opslag wachtrijen te gebruiken voor communicatie tussen functies. De belangrijkste reden is dat opslag wachtrijen goed koper zijn en veel eenvoudiger zijn in te richten dan andere opslag opties.
 
 Afzonderlijke berichten in een opslag wachtrij zijn beperkt tot 64 KB. Als u grotere berichten tussen functies wilt door geven, kan een Azure Service Bus wachtrij worden gebruikt ter ondersteuning van bericht grootten van Maxi maal 256 KB in de laag standaard en Maxi maal 1 MB in de Premium-laag.
 
@@ -41,28 +38,26 @@ Service Bus onderwerpen zijn nuttig als u berichten filtering nodig hebt vóór 
 
 Event hubs zijn handig voor het ondersteunen van de communicatie van grote volumes.
 
+## <a name="write-functions-to-be-stateless"></a>Schrijf functies die stateless zijn
 
-### <a name="write-functions-to-be-stateless"></a>Schrijf functies die stateless zijn 
-
-Functies moeten stateless en idempotent, indien mogelijk, zijn. Koppel alle eventueel vereiste statusgegevens aan uw gegevens. Een order die wordt verwerkt, zou waarschijnlijk een gekoppeld lid hebben `state` . Een functie kan een volg orde op basis van die status verwerken terwijl de functie zelf staat. 
+Functies moeten stateless en idempotent, indien mogelijk, zijn. Koppel alle eventueel vereiste statusgegevens aan uw gegevens. Een order die wordt verwerkt, zou waarschijnlijk een gekoppeld lid hebben `state` . Een functie kan een volg orde op basis van die status verwerken terwijl de functie zelf staat.
 
 Idempotent-functies worden met name aanbevolen met timer-triggers. Als u bijvoorbeeld iets hebt dat absoluut eenmaal per dag moet worden uitgevoerd, schrijft u dit zodat het op elk gewenst moment kan worden uitgevoerd op dezelfde dag met dezelfde resultaten. De functie kan worden afgesloten als er geen werk voor een bepaalde dag is. Ook als een vorige uitvoering niet kon worden voltooid, moet de volgende uitvoering worden opgehaald waar deze is gebleven.
 
-
-### <a name="write-defensive-functions"></a>Verdedigings functies schrijven
+## <a name="write-defensive-functions"></a>Verdedigings functies schrijven
 
 Stel dat uw functie op elk moment een uitzonde ring kan ondervinden. Ontwerp uw functies met de mogelijkheid om vanaf een eerder uitgaand fout punt te blijven tijdens de volgende uitvoering. Overweeg een scenario dat de volgende acties vereist:
 
 1. Query voor 10.000 rijen in een Data Base.
 2. Maak een wachtrij bericht voor elk van deze rijen om de regel verder omlaag te verwerken.
- 
+
 Afhankelijk van hoe complex uw systeem is, hebt u mogelijk de volgende mogelijkheden: de betrokken downstream-services functioneren niet goed, netwerk storingen of quotum limieten, enzovoort. Al deze kunnen van invloed zijn op uw functie op elk gewenst moment. U moet uw functies ontwerpen om hiervoor voor te bereiden.
 
 Hoe reageert uw code als er een fout optreedt nadat u 5.000 van deze items in een wachtrij voor verwerking hebt ingevoegd? Items bijhouden in een set die u hebt voltooid. Als dat niet het geval is, kunt u ze de volgende keer opnieuw invoegen. Deze dubbele invoeging kan een ernstige invloed hebben op uw werk stroom, dus [Zorg ervoor dat uw functies idempotent](functions-idempotent.md)zijn. 
 
 Als een wachtrij-item al is verwerkt, mag de functie niet worden uitgevoerd.
 
-Profiteer van de beschik bare verdedigings maatregelen voor onderdelen die u in het Azure Functions platform gebruikt. Zie bijvoorbeeld het **verwerken van verontreinigde wachtrij berichten** in de documentatie voor [Azure Storage wachtrij Triggers en bindingen](functions-bindings-storage-queue-trigger.md#poison-messages). 
+Profiteer van de beschik bare verdedigings maatregelen voor onderdelen die u in het Azure Functions platform gebruikt. Zie bijvoorbeeld het **verwerken van verontreinigde wachtrij berichten** in de documentatie voor [Azure Storage wachtrij Triggers en bindingen](functions-bindings-storage-queue-trigger.md#poison-messages).
 
 ## <a name="function-organization-best-practices"></a>Best practices voor functie organisatie
 
@@ -85,7 +80,7 @@ Functie-apps hebben een `host.json` bestand, dat wordt gebruikt voor het configu
 
 Alle functies in uw lokale project worden samen met een set bestanden in uw functie-app in azure geïmplementeerd. Mogelijk moet u afzonderlijke functies afzonderlijk implementeren of functies gebruiken, zoals [implementatie sleuven](./functions-deployment-slots.md) voor sommige functies en andere niet. In dergelijke gevallen moet u deze functies (in afzonderlijke code projecten) implementeren in verschillende functie-apps.
 
-### <a name="organize-functions-by-privilege"></a>Functies ordenen op bevoegdheid 
+### <a name="organize-functions-by-privilege"></a>Functies ordenen op bevoegdheid
 
 Verbindings reeksen en andere referenties die zijn opgeslagen in toepassings instellingen, bieden alle functies in de functie-app dezelfde set machtigingen in de bijbehorende resource. Overweeg het aantal functies met toegang tot specifieke referenties te minimaliseren door functies te verplaatsen die deze referenties niet naar een afzonderlijke functie-app gebruiken. U kunt altijd gebruikmaken van technieken als [functie](/learn/modules/chain-azure-functions-data-using-bindings/) koppeling voor het door geven van gegevens tussen functies in verschillende functie-apps.  
 
@@ -99,7 +94,7 @@ Gebruik waar mogelijk verbindingen met externe resources. Zie [verbindingen behe
 
 ### <a name="avoid-sharing-storage-accounts"></a>Vermijd het delen van opslag accounts
 
-Wanneer u een functie-app maakt, moet u deze koppelen aan een opslag account. De verbinding van het opslag account wordt onderhouden in de [toepassings instelling AzureWebJobsStorage](./functions-app-settings.md#azurewebjobsstorage). 
+Wanneer u een functie-app maakt, moet u deze koppelen aan een opslag account. De verbinding van het opslag account wordt onderhouden in de [toepassings instelling AzureWebJobsStorage](./functions-app-settings.md#azurewebjobsstorage).
 
 [!INCLUDE [functions-shared-storage](../../includes/functions-shared-storage.md)]
 
@@ -123,9 +118,9 @@ In C# vermijdt u altijd het verwijzen naar de `Result` eigenschap of aanroep `Wa
 
 ### <a name="use-multiple-worker-processes"></a>Meerdere werk processen gebruiken
 
-Elk exemplaar van een host voor functions maakt standaard gebruik van één werk proces. Om de prestaties te verbeteren, met name met single-threaded Runtimes zoals python, gebruikt u de [FUNCTIONS_WORKER_PROCESS_COUNT](functions-app-settings.md#functions_worker_process_count) om het aantal werk processen per host (Maxi maal 10) te verhogen. Azure Functions probeert vervolgens gelijktijdige functie aanroepen voor deze werk nemers gelijkmatig te verdelen. 
+Elk exemplaar van een host voor functions maakt standaard gebruik van één werk proces. Om de prestaties te verbeteren, met name met single-threaded Runtimes zoals python, gebruikt u de [FUNCTIONS_WORKER_PROCESS_COUNT](functions-app-settings.md#functions_worker_process_count) om het aantal werk processen per host (Maxi maal 10) te verhogen. Azure Functions probeert vervolgens gelijktijdige functie aanroepen voor deze werk nemers gelijkmatig te verdelen.
 
-De FUNCTIONS_WORKER_PROCESS_COUNT is van toepassing op elke host die functies maakt wanneer uw toepassing wordt geschaald om aan de vraag te voldoen. 
+De FUNCTIONS_WORKER_PROCESS_COUNT is van toepassing op elke host die functies maakt wanneer uw toepassing wordt geschaald om aan de vraag te voldoen.
 
 ### <a name="receive-messages-in-batch-whenever-possible"></a>Indien mogelijk berichten in batch ontvangen
 

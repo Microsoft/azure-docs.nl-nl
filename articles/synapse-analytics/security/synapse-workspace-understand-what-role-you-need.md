@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: ba00e6f4fe97b0614483fd04ddee9fc768558db5
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 950a786b29a8144c4bb192fa6078e8c88d67481d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100102101"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384449"
 ---
 # <a name="understand-the-roles-required-to-perform-common-tasks-in-synapse"></a>Meer informatie over de rollen die zijn vereist voor het uitvoeren van algemene taken in Synapse
 
@@ -87,7 +87,7 @@ De logboeken voor het uitvoeren van notebooks en taken weer geven |Synapse Compu
 Een notitie blok of Spark-taak die wordt uitgevoerd op een Apache Spark groep annuleren|Synapse Compute-operator voor de Apache Spark groep.|bigDataPools/useCompute
 Een notitie blok of taak definitie maken|Synapse-gebruiker of </br>Eigenaar, bijdrager of lezer van Azure in de werk ruimte</br> *Er zijn aanvullende machtigingen vereist voor het uitvoeren, publiceren of door voeren van wijzigingen*|lezen</br></br></br></br></br> 
 Een gepubliceerde notitie blok of taak definitie weer geven en openen, inclusief het controleren van de opgeslagen uitvoer|Synapse artefact gebruiker, Synapse artefact Uitgever, Synapse Inzender in de werk ruimte|artefacten/lezen
-Een notitie blok uitvoeren en de uitvoer controleren|Synapse Apache Spark Administrator, Synapse Compute-operator voor de geselecteerde Apache Spark groep|bigDataPools/useCompute 
+Een notitie blok uitvoeren en de uitvoer bekijken, of een Spark-taak verzenden|Synapse Apache Spark Administrator, Synapse Compute-operator voor de geselecteerde Apache Spark groep|bigDataPools/useCompute 
 Een notitie blok of taak definitie (inclusief uitvoer) publiceren of verwijderen voor de service|Publisher voor artefacten in de werk ruimte, Synapse Apache Spark beheerder|notebooks/schrijven, verwijderen
 Wijzigingen door voeren in een notitie blok of taak definitie voor de Git-opslag plaats|Git-machtigingen|geen
 PIJP LIJNEN, INTEGRATION RUNTIMES, GEGEVENS STROMEN, GEGEVENS SETS & TRIGGERS|

@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: b0b0c43039648737b229edc79dd4e0a3dc45f38e
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 014c592713a8568b3bbc7e8e536f81b203271ccc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683337"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388070"
 ---
 # <a name="use-managed-identities-with-azure-machine-learning-preview"></a>Beheerde identiteiten gebruiken met Azure Machine Learning (preview-versie)
 
@@ -29,6 +29,7 @@ In dit artikel leert u hoe u beheerde identiteiten kunt gebruiken voor het volge
 
  * Configureer en gebruik ACR voor uw Azure Machine Learning-werk ruimte zonder beheer gebruikers toegang tot ACR te hoeven inschakelen.
  * Krijg toegang tot een persoonlijke ACR voor uw werk ruimte, zodat u basis afbeeldingen kunt ophalen voor training of demijnen.
+ * Maak een werk ruimte met door de gebruiker toegewezen beheerde identiteit om toegang te krijgen tot gekoppelde resources.
 
 > [!IMPORTANT]
 > Beheerde identiteiten gebruiken om de toegang tot resources te beheren met Azure Machine Learning is momenteel beschikbaar als preview-versie. De Preview-functionaliteit wordt verstrekt "as-is", zonder garanties van ondersteuning of service level agreement. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)voor meer informatie.
@@ -102,7 +103,7 @@ Als u geen eigen ACR meebrengt, maakt Azure Machine Learning service er een voor
 
 ### <a name="create-compute-with-managed-identity-to-access-docker-images-for-training"></a>Een compute with Managed Identity maken voor toegang tot docker-installatie kopieën voor training
 
-Om toegang te krijgen tot de ACR van de werk ruimte, maakt u machine learning Compute-cluster waarvoor door het systeem toegewezen beheerde identiteit is ingeschakeld. U kunt de identiteit van Azure Portal of Studio inschakelen bij het maken van compute, of vanuit Azure CLI met behulp van
+Om toegang te krijgen tot de ACR van de werk ruimte, maakt u machine learning Compute-cluster waarvoor door het systeem toegewezen beheerde identiteit is ingeschakeld. U kunt de identiteit van Azure Portal of Studio inschakelen bij het maken van compute, of vanuit Azure CLI met behulp van de onderstaande. Zie [using Managed identity with compute clusters](how-to-create-attach-compute-cluster.md#managed-identity)voor meer informatie.
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -171,7 +172,7 @@ env.python.user_managed_dependencies = True
 
 ### <a name="build-azure-machine-learning-managed-environment-into-base-image-from-private-acr-for-training-or-inference"></a>Azure Machine Learning beheerde omgeving bouwen in de basis installatie kopie van een privé-ACR voor training of afwijzen
 
-In dit scenario bouwt Azure Machine Learning service de training of de detraining-omgeving boven op een basis installatie kopie die u van een persoonlijke ACR opgeeft. Omdat de taak installatie kopie maken plaatsvindt in de werk ruimte ACR met ACR-taken, moet u extra stappen uitvoeren om toegang toe te staan.
+In dit scenario bouwt Azure Machine Learning service de training of de detraining-omgeving boven op een basis installatie kopie die u van een persoonlijke ACR opgeeft. Omdat de taak installatie kopie maken plaatsvindt in de werk ruimte ACR met ACR-taken, moet u meer stappen uitvoeren om toegang toe te staan.
 
 1. Maak een door de __gebruiker toegewezen beheerde identiteit__ en verleen de identiteit ACRPull toegang tot de __persoonlijke ACR__.  
 1. Verleen de door het __systeem toegewezen beheerde identiteit__ een beheerde identiteits operator rol op de door de __gebruiker toegewezen beheerde identiteit__ uit de vorige stap. Met deze rol kan de werk ruimte de door de gebruiker toegewezen beheerde identiteit toewijzen aan de ACR-taak voor het bouwen van de beheerde omgeving. 
@@ -228,6 +229,41 @@ Zodra u ACR zonder beheer gebruiker hebt geconfigureerd zoals eerder beschreven,
 
 > [!NOTE]
 > Als u uw eigen AKS-cluster meebrengt, moet op het cluster service-principal zijn ingeschakeld in plaats van beheerde identiteit.
+
+## <a name="create-workspace-with-user-assigned-managed-identity"></a>Een werk ruimte maken met een door de gebruiker toegewezen beheerde identiteit
+
+Bij het maken van de werk ruimte kunt u een door de gebruiker toegewezen beheerde identiteit opgeven die wordt gebruikt voor toegang tot de gekoppelde bronnen: ACR, sleutel kluis, opslag en app Insights.
+
+Maak eerst een door de [gebruiker toegewezen beheerde identiteit](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli])en noteer de arm-resource-id van de beheerde identiteit.
+
+Vervolgens gebruikt u de Azure CLI-of python-SDK om de werk ruimte te maken. Wanneer u de CLI gebruikt, geeft u de ID op met behulp van de `--primary-user-assigned-identity` para meter. Gebruik voor het gebruik van de SDK `primary_user_assigned_identity` . Hier volgen enkele voor beelden van het gebruik van de Azure CLI en python om een nieuwe werk ruimte te maken met behulp van de volgende para meters:
+
+__Azure-CLI__
+
+```azurecli-interactive
+az ml workspace create -w <workspace name> -g <resource group> --primary-user-assigned-identity <managed identity ARM ID>
+```
+
+__Python__
+
+```python
+from azureml.core import Workspace
+
+ws = Workspace.create(name="workspace name", 
+    subscription_id="subscription id", 
+    resource_group="resource group name",
+    primary_user_assigned_identity="managed identity ARM ID")
+```
+
+U kunt ook [een arm-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced) gebruiken om een werk ruimte te maken met door de gebruiker toegewezen beheerde identiteit.
+
+> [!IMPORTANT]
+> Als u uw eigen gekoppelde resources meebrengt in plaats van Azure Machine Learning service te maken, moet u de beheerde identiteits rollen voor die resources verlenen. Gebruik de [arm-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-dependencies-role-assignment) voor het toewijzen van rollen om de toewijzingen te maken.
+
+Voor een werk ruimte met (door de klant beheerde sleutels voor versleuteling) [ https://docs.microsoft.com/azure/machine-learning/concept-data-encryption ] kunt u een door de gebruiker toegewezen beheerde identiteit door geven voor verificatie van de opslag tot Key Vault. Gebruik het argument dat door de __gebruiker is toegewezen, Identity-for-CMK-Encryption__ (CLI) of __user_assigned_identity_for_cmk_encryption__ (SDK) om de beheerde identiteit door te geven. Deze beheerde identiteit kan hetzelfde zijn als de door de primaire gebruiker toegewezen beheerde identiteit van de werk ruimte.
+
+Als u een bestaande werk ruimte hebt, kunt u deze bijwerken van het systeem aan een door de gebruiker toegewezen beheerde identiteit met behulp van de ```az ml workspace update``` cli-opdracht of de ```Workspace.update``` python SDK-methode.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren en transformeren in Azure Data Lake Storage Gen2
 description: Informatie over het kopiëren van gegevens van en naar Azure Data Lake Storage Gen2 en het transformeren van gegevens in Azure Data Lake Storage Gen2 met behulp van Azure Data Factory.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/28/2020
-ms.openlocfilehash: c0f7df8db79f549dfeca15e6411ae72cbe66d2bd
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: d773556352a85c125e32d0ee56b4b6f4cf11da32
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346279"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364746"
 ---
 # <a name="copy-and-transform-data-in-azure-data-lake-storage-gen2-using-azure-data-factory"></a>Gegevens in Azure Data Lake Storage Gen2 kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -74,7 +70,7 @@ De volgende eigenschappen worden ondersteund voor het gebruik van verificatie va
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op **AzureBlobFS**. |Yes |
-| URL | Eind punt voor Data Lake Storage Gen2 met het patroon van `https://<accountname>.dfs.core.windows.net` . | Yes |
+| url | Eind punt voor Data Lake Storage Gen2 met het patroon van `https://<accountname>.dfs.core.windows.net` . | Yes |
 | accountKey | Account sleutel voor Data Lake Storage Gen2. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of een zelf-hostende Integration runtime gebruiken als uw gegevens archief zich in een particulier netwerk bevindt. Als deze eigenschap niet is opgegeven, wordt de standaard Azure Integration runtime gebruikt. |No |
 
@@ -126,7 +122,7 @@ Deze eigenschappen worden ondersteund voor de gekoppelde service:
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op **AzureBlobFS**. |Yes |
-| URL | Eind punt voor Data Lake Storage Gen2 met het patroon van `https://<accountname>.dfs.core.windows.net` . | Yes |
+| url | Eind punt voor Data Lake Storage Gen2 met het patroon van `https://<accountname>.dfs.core.windows.net` . | Yes |
 | servicePrincipalId | Geef de client-ID van de toepassing op. | Yes |
 | servicePrincipalCredentialType | Het referentie type dat moet worden gebruikt voor Service-Principal-verificatie. Toegestane waarden zijn **ServicePrincipalKey** en **ServicePrincipalCert**. | Yes |
 | servicePrincipalCredential | De Service-Principal-referentie. <br/> Wanneer u **ServicePrincipalKey** als referentie type gebruikt, geeft u de sleutel van de toepassing op. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). <br/> Wanneer u **ServicePrincipalCert** als referentie gebruikt, verwijst u naar een certificaat in azure Key Vault. | Yes |
@@ -214,7 +210,7 @@ Deze eigenschappen worden ondersteund voor de gekoppelde service:
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type moet worden ingesteld op **AzureBlobFS**. |Yes |
-| URL | Eind punt voor Data Lake Storage Gen2 met het patroon van `https://<accountname>.dfs.core.windows.net` . | Yes |
+| url | Eind punt voor Data Lake Storage Gen2 met het patroon van `https://<accountname>.dfs.core.windows.net` . | Yes |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of een zelf-hostende Integration runtime gebruiken als uw gegevens archief zich in een particulier netwerk bevindt. Als dat niet is opgegeven, wordt de standaard Azure Integration runtime gebruikt. |No |
 
 **Voorbeeld:**
@@ -296,13 +292,13 @@ De volgende eigenschappen worden ondersteund voor Data Lake Storage Gen2 onder `
 | Eigenschap                 | Beschrijving                                                  | Vereist                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
 | type                     | De eigenschap type onder `storeSettings` moet worden ingesteld op **AzureBlobFSReadSettings**. | Yes                                           |
-| **_De te kopiëren bestanden zoeken:_* _ |  |  |
-| OPTIE 1: statisch pad<br> | Kopiëren van het opgegeven bestands systeem of de map of het pad naar het bestand dat is opgegeven in de gegevensset. Als u alle bestanden uit een bestands systeem of map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `_` . |  |
+| ***Zoek de bestanden die moeten worden gekopieerd:*** |  |  |
+| OPTIE 1: statisch pad<br> | Kopiëren van het opgegeven bestands systeem of de map of het pad naar het bestand dat is opgegeven in de gegevensset. Als u alle bestanden uit een bestands systeem of map wilt kopiëren, moet u ook opgeven `wildcardFileName` als `*` . |  |
 | OPTIE 2: Joker teken<br>- wildcardFolderPath | Het mappad met Joker tekens onder het opgegeven bestands systeem dat is geconfigureerd in de gegevensset om bron mappen te filteren. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke mapnaam Joker teken of escape-teken bevat. <br>Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | No                                            |
 | OPTIE 2: Joker teken<br>- wildcardFileName | De naam van het bestand met Joker tekens onder het opgegeven bestands systeem + folderPath/wildcardFolderPath voor het filteren van bron bestanden. <br>Toegestane joker tekens zijn: `*` (komt overeen met nul of meer tekens) en `?` (komt overeen met nul of één teken); gebruik `^` om te escapen als uw werkelijke bestands naam Joker teken of escape-teken bevat.  Bekijk meer voor beelden in [map-en bestands filter voorbeelden](#folder-and-file-filter-examples). | Yes |
 | OPTIE 3: een lijst met bestanden<br>- fileListPath | Hiermee wordt aangegeven dat een opgegeven bestandenset moet worden gekopieerd. Wijs naar een tekst bestand met een lijst met bestanden die u wilt kopiëren, één bestand per regel, het relatieve pad naar het pad dat is geconfigureerd in de gegevensset.<br/>Wanneer u deze optie gebruikt, geeft u geen bestands naam op in DataSet. Meer voor beelden vindt u in [voor beelden van bestands lijsten](#file-list-examples). |No |
-| ***Aanvullende instellingen:** _ |  | |
-| recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Houd er rekening mee dat wanneer recursief is ingesteld op True en de Sink een archief op basis van bestanden is, een lege map of submap niet wordt gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn _ *True*(standaard) en **Onwaar**.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |
+| ***Aanvullende instellingen:*** |  | |
+| recursieve | Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. Houd er rekening mee dat wanneer recursief is ingesteld op True en de Sink een archief op basis van bestanden is, een lege map of submap niet wordt gekopieerd of gemaakt bij de sink. <br>Toegestane waarden zijn **True** (standaard) en **Onwaar**.<br>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . |No |
 | deleteFilesAfterCompletion | Hiermee wordt aangegeven of de binaire bestanden uit het bron archief worden verwijderd nadat naar het doel archief is verplaatst. Het verwijderen van bestanden is per bestand, dus wanneer de Kopieer activiteit mislukt, ziet u dat er al een aantal bestanden naar het doel is gekopieerd en verwijderd uit de bron, terwijl andere nog steeds in het bron archief blijven staan. <br/>Deze eigenschap is alleen geldig in het scenario voor het kopiëren van binaire bestanden. De standaard waarde is False. |No |
 | modifiedDatetimeStart    | Bestanden filteren op basis van het kenmerk: laatst gewijzigd. <br>De bestanden worden geselecteerd als het tijdstip van de laatste wijziging binnen het tijds bereik ligt tussen `modifiedDatetimeStart` en `modifiedDatetimeEnd` . De tijd wordt toegepast op UTC-tijd zone in de notatie "2018-12-01T05:00:00Z". <br> De eigenschappen kunnen NULL zijn, wat betekent dat er geen bestands kenmerk filter op de gegevensset wordt toegepast.  Wanneer `modifiedDatetimeStart` heeft datetime-waarde `modifiedDatetimeEnd` , maar is null, betekent dit dat de bestanden waarvan het kenmerk laatst gewijzigd is groter dan of gelijk is aan de datum/tijd-waarde wordt geselecteerd.  Wanneer `modifiedDatetimeEnd` heeft datetime-waarde `modifiedDatetimeStart` , maar is null, betekent dit dat de bestanden waarvan het kenmerk laatst gewijzigd is kleiner is dan de datum/tijd-waarde wordt geselecteerd.<br/>Deze eigenschap is niet van toepassing wanneer u configureert `fileListPath` . | No                                            |
 | modifiedDatetimeEnd      | Hetzelfde als hierboven.                                               | No                                            |

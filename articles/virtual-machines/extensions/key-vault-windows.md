@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: e1a9f5d08168841d7651a17e2de4995b7a7cf38b
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: f7c8a7eb06490a46e1c5b633944dcd596fa08515
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820718"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093621"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Extensie van de virtuele machine Key Vault voor Windows
 
@@ -35,25 +35,31 @@ De extensie van de Key Vault-VM wordt ook ondersteund op een aangepaste lokale v
 - PKCS #12
 - PEM
 
-## <a name="prerequisities"></a>Prerequisities
+## <a name="prerequisites"></a>Vereisten
+
   - Key Vault-exemplaar met het certificaat. Zie [een Key Vault maken](../../key-vault/general/quick-create-portal.md)
   - De virtuele machine moet een [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) hebben toegewezen
   - Het Key Vault toegangs beleid moet zijn ingesteld met geheimen `get` en `list` machtigingen voor de door de virtuele machine/VMSS beheerde identiteit om een geheim gedeelte van het certificaat op te halen. Zie [verifiëren bij Key Vault](../../key-vault/general/authentication.md) en [een Key Vault toegangs beleid toewijzen](../../key-vault/general/assign-access-policy-cli.md).
-  -  VMSS moet de volgende identiteits instelling hebben: ` 
+  -  Virtual Machine Scale Sets moet de volgende identiteits instelling hebben:
+
+  ``` 
   "identity": {
-  "type": "UserAssigned",
-  "userAssignedIdentities": {
-  "[parameters('userAssignedIdentityResourceId')]": {}
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "[parameters('userAssignedIdentityResourceId')]": {}
+    }
   }
-  }
-  `
+  ```
   
-- De Azure-extensie moet deze instelling hebben: `
-                  "authenticationSettings": {
-                    "msiEndpoint": "[parameters('userAssignedIdentityEndpoint')]",
-                    "msiClientId": "[reference(parameters('userAssignedIdentityResourceId'), variables('msiApiVersion')).clientId]"
-                  }
-   `
+  - De Azure-extensie moet deze instelling hebben:
+
+  ```
+  "authenticationSettings": {
+    "msiEndpoint": "[parameters('userAssignedIdentityEndpoint')]",
+    "msiClientId": "[reference(parameters('userAssignedIdentityResourceId'), variables('msiApiVersion')).clientId]"
+  }
+  ```
+
 ## <a name="extension-schema"></a>Extensieschema
 
 De volgende JSON toont het schema voor de extensie van de Key Vault-VM. Voor de extensie zijn geen beveiligde instellingen vereist: alle instellingen ervan worden beschouwd als open bare informatie. De uitbrei ding vereist een lijst met bewaakte certificaten, polling frequentie en het doel certificaat archief. Met name:  
@@ -102,7 +108,7 @@ De volgende JSON toont het schema voor de extensie van de Key Vault-VM. Voor de 
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Name | Waarde/voor beeld | Gegevenstype |
+| Naam | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
 | apiVersion | 2019-07-01 | date |
 | publisher | Microsoft.Azure.KeyVault | tekenreeks |
@@ -164,7 +170,9 @@ Als u dit wilt inschakelen, stelt u het volgende in:
     ...
 }
 ```
-> Eraan Het gebruik van deze functie is niet compatibel met een ARM-sjabloon die een door het systeem toegewezen identiteit maakt en een Key Vault toegangs beleid met die identiteit bijwerkt. Dit leidt tot een deadlock als het toegangs beleid voor de kluis pas kan worden bijgewerkt als alle uitbrei dingen zijn gestart. U moet in plaats daarvan *één door de gebruiker toegewezen MSI-identiteit* gebruiken en uw kluizen vooraf-ACL met die identiteit voordat u implementeert.
+
+> [!Note] 
+> Het gebruik van deze functie is niet compatibel met een ARM-sjabloon die een door het systeem toegewezen identiteit maakt en een Key Vault toegangs beleid met die identiteit bijwerkt. Dit leidt tot een deadlock als het toegangs beleid voor de kluis pas kan worden bijgewerkt als alle uitbrei dingen zijn gestart. U moet in plaats daarvan *één door de gebruiker toegewezen MSI-identiteit* gebruiken en uw kluizen vooraf-ACL met die identiteit voordat u implementeert.
 
 ## <a name="azure-powershell-deployment"></a>Azure PowerShell-implementatie
 > [!WARNING]
@@ -222,9 +230,9 @@ De Azure CLI kan worden gebruikt om de Key Vault VM-extensie te implementeren op
     
     ```azurecli
        # Start the deployment
-         az vm extension set --name "KeyVaultForWindows" `
+         az vm extension set -name "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
-         --resource-group "<resourcegroup>" `
+         -resource-group "<resourcegroup>" `
          --vm-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCert1> \", \" <observedCert2> \"] }}'
     ```
@@ -233,9 +241,9 @@ De Azure CLI kan worden gebruikt om de Key Vault VM-extensie te implementeren op
 
    ```azurecli
         # Start the deployment
-        az vmss extension set --name "KeyVaultForWindows" `
+        az vmss extension set -name "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
-         --resource-group "<resourcegroup>" `
+         -resource-group "<resourcegroup>" `
          --vmss-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCert1> \", \" <observedCert2> \"] }}'
     ```

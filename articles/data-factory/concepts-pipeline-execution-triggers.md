@@ -1,22 +1,18 @@
 ---
 title: Pijplijnen uitvoeren en triggers in Azure Data Factory
 description: Dit artikel bevat informatie over het uitvoeren van een pijplijn in Azure Data Factory, op aanvraag of door een trigger te maken.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/05/2018
-ms.openlocfilehash: e46b08e31725765d700bf41649d997d7b20e5f95
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: bd36b589424a0d890fc5e1bbab3f234e9b3264c6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065487"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374776"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Pijplijnen uitvoeren en triggers in Azure Data Factory
 
@@ -235,13 +231,13 @@ Als u wilt dat de schematrigger een pijplijnuitvoering activeert, moet u een ver
 ### <a name="schema-overview"></a>Schema-overzicht
 De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die betrekking hebben op het terugkeerpatroon en het schema van een trigger:
 
-| JSON-eigenschap | Beschrijving |
+| JSON-eigenschap | Description |
 | --- | --- |
 | **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime**. |
 | **Tijd** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. <!-- This property is optional. --> |
 | **Tijd zone** | De tijdzone. Zie [een trigger maken waarmee een pijp lijn op een schema wordt uitgevoerd](how-to-create-schedule-trigger.md#time-zone-option)voor een lijst met ondersteunde tijd zones. |
 | **optreden** | Een recurrence-object bepaalt de regels voor het terugkeerpatroon van de trigger. Het recurrence-object ondersteunt de elementen **frequency**, **interval**, **endTime**, **count** en **schedule**. Als een recurrence-object wordt gedefinieerd, is het element **frequency** vereist. De overige elementen van het recurrence-object zijn optioneel. |
-| **ingang** | Hiermee geeft u de frequentie aan waarmee de trigger wordt uitgevoerd. De ondersteunde waarden omvatten 'minuut', 'uur', 'dag', 'week' en 'maand'. |
+| **frequency** | Hiermee geeft u de frequentie aan waarmee de trigger wordt uitgevoerd. De ondersteunde waarden omvatten 'minuut', 'uur', 'dag', 'week' en 'maand'. |
 | **bereik** | Een positief geheel getal dat het interval voor de waarde **frequency** aangeeft. De waarde **frequency** bepaalt hoe vaak de trigger wordt uitgevoerd. Als **interval** bijvoorbeeld 3 is en **frequency** 'week', dan wordt de trigger elke drie weken uitgevoerd. |
 | **planning** | Het terugkeerschema voor de trigger. Een trigger met een opgegeven waarde voor **frequency** wijzigt het terugkeerpatroon op basis van een terugkeerschema. De eigenschap **property** bevat wijzigingen voor het terugkeerpatroon en zijn gebaseerd op minuten, uren, weekdagen, maanddagen en weeknummer. |
 
@@ -283,11 +279,11 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 
 | JSON-eigenschap | Type | Vereist | Standaardwaarde | Geldige waarden | Voorbeeld |
 | --- | --- | --- | --- | --- | --- |
-| **startTime** | tekenreeks | Ja | Geen | Datums en tijden volgens ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **optreden** | object | Ja | Geen | Een recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **bereik** | getal | Nee | 1 | 1 tot 1000 | `"interval":10` |
-| **Tijd** | tekenreeks | Ja | Geen | Een datum/tijdwaarde die een toekomstig tijdstip aangeeft | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **planning** | object | Nee | Geen | Een schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **startTime** | tekenreeks | Yes | Geen | Datums en tijden volgens ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **optreden** | object | Yes | Geen | Een recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **bereik** | getal | No | 1 | 1 tot 1000 | `"interval":10` |
+| **Tijd** | tekenreeks | Yes | Geen | Een datum/tijdwaarde die een toekomstig tijdstip aangeeft | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **planning** | object | No | Geen | Een schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Eigenschap startTime
 In de volgende tabel ziet u hoe de eigenschap **startTime** de uitvoering van een trigger bepaalt:
@@ -314,7 +310,7 @@ Als er meerdere **plannings** elementen worden opgegeven, is de volg orde van de
 
 In de volgende tabel worden de **schedule**-elementen in detail beschreven:
 
-| JSON-element | Beschrijving | Geldige waarden |
+| JSON-element | Description | Geldige waarden |
 | --- | --- | --- |
 | **wachten** | Minuten van het uur waarop de trigger wordt uitgevoerd. |- Geheel getal<br />- Matrix van gehele getallen |
 | **loopt** | Uren van de dag waarop de trigger wordt uitgevoerd. |- Geheel getal<br />- Matrix van gehele getallen |
@@ -377,10 +373,10 @@ In de volgende tabel wordt een vergelijking weergegeven tussen de tumblingvenste
 
 | Item | Tumblingvenstertrigger | Schematrigger |
 | --- | --- | --- |
-| **Backfill-scenario's** | Ondersteund. Pijplijnuitvoeringen kunnen voor tijdvensters in het verleden worden gepland. | Niet ondersteund. Pijplijnuitvoeringen kunnen alleen worden uitgevoerd in perioden vanaf de huidige tijd. |
+| **Backfill-scenario's** | Ondersteund. Pijplijnuitvoeringen kunnen voor tijdvensters in het verleden worden gepland. | Wordt niet ondersteund. Pijplijnuitvoeringen kunnen alleen worden uitgevoerd in perioden vanaf de huidige tijd. |
 | **Betrouwbaarheid** | 100% betrouwbaarheid. Pijplijnuitvoeringen kunnen vanaf een bepaalde begindatum zonder onderbrekingen worden uitgevoerd voor alle tijdvensters. | Minder betrouwbaar. |
-| **Mogelijkheid voor nieuwe uitvoerpogingen** | Ondersteund. Nieuwe pogingen van pijplijnuitvoeringen vinden plaats volgens het standaardbeleid van 0 of volgens een beleid dat de gebruiker in de triggerdefinitie heeft opgegeven. Wordt automatisch opnieuw geprobeerd wanneer de pijp lijn wordt uitgevoerd vanwege gelijktijdigheids-, server-en beperkings limieten (dat wil zeggen, status codes 400: gebruikers fout, 429: te veel aanvragen en 500: interne server fout). | Niet ondersteund. |
-| **Gelijktijdigheid** | Ondersteund. Gebruikers kunnen expliciet gelijktijdigheidsbeperkingen voor de trigger instellen. Het is mogelijk om tussen de 1 en 50 door triggers geactiveerde pijplijnuitvoeringen gelijktijdig uit te voeren. | Niet ondersteund. |
+| **Mogelijkheid voor nieuwe uitvoerpogingen** | Ondersteund. Nieuwe pogingen van pijplijnuitvoeringen vinden plaats volgens het standaardbeleid van 0 of volgens een beleid dat de gebruiker in de triggerdefinitie heeft opgegeven. Wordt automatisch opnieuw geprobeerd wanneer de pijp lijn wordt uitgevoerd vanwege gelijktijdigheids-, server-en beperkings limieten (dat wil zeggen, status codes 400: gebruikers fout, 429: te veel aanvragen en 500: interne server fout). | Wordt niet ondersteund. |
+| **Gelijktijdigheid** | Ondersteund. Gebruikers kunnen expliciet gelijktijdigheidsbeperkingen voor de trigger instellen. Het is mogelijk om tussen de 1 en 50 door triggers geactiveerde pijplijnuitvoeringen gelijktijdig uit te voeren. | Wordt niet ondersteund. |
 | **Systeemvariabelen** | In combi natie met @trigger (). scheduledTime en @trigger (). StartTime, wordt ook het gebruik van de systeem variabelen **WindowStart** en **WindowEnd** ondersteund. Gebruikers kunnen voor de triggerdefinitie gebruikmaken van `trigger().outputs.windowStartTime` en `trigger().outputs.windowEndTime` als systeemvariabelen in de trigger. De waarden worden respectievelijk als de begin- en eindtijd van het tijdvenster gebruikt. Voor bijvoorbeeld een tumblingvenstertrigger die elk uur wordt uitgevoerd in het tijdvenster 1:00 uur tot 2:00 uur, is de definitie `trigger().outputs.windowStartTime = 2017-09-01T01:00:00Z` en `trigger().outputs.windowEndTime = 2017-09-01T02:00:00Z`. | Ondersteunt alleen default @trigger (). scheduledTime en @trigger (). StartTime-variabelen. |
 | **Pipeline-trigger-relatie** | Ondersteunt een een-op-een-relatie. Slechts één pijplijn kan worden geactiveerd. | Ondersteunt veel-op-veel-relaties. Meerdere triggers kunnen één pijplijn activeren. Eén trigger kan meerdere pijplijnen activeren. |
 

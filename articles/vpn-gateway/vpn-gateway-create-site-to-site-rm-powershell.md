@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 0295f1687a328980ccf8ceeb6d6a1f1cbd2b4bad
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 1488aa6f48c05a8c2dfa2c6162c1bd1df35d4f58
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878067"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380481"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Een VNet met een site-naar-site-VPN-verbinding maken met PowerShell
 
@@ -242,7 +242,7 @@ Er zijn een aantal verschillende manieren om uw VPN-verbinding te controleren.
 
 ## <a name="to-modify-ip-address-prefixes-for-a-local-network-gateway"></a><a name="modify"></a>IP-adresvoorvoegsels wijzigen voor de gateway van een lokaal netwerk
 
-Als de IP-adresvoorvoegsels die u wilt routeren naar de locatie van uw on-premises wijzigen, kunt u de gateway van het lokale netwerk wijzigen. Er zijn twee sets met instructies. Welke instructies u kiest, is afhankelijk van de vraag of u uw gatewayverbinding al hebt gemaakt. Wanneer u deze voor beelden gebruikt, wijzigt u de waarden zodat deze overeenkomen met uw omgeving.
+Als de IP-adresvoorvoegsels die u wilt routeren naar de locatie van uw on-premises wijzigen, kunt u de gateway van het lokale netwerk wijzigen. Wanneer u deze voor beelden gebruikt, wijzigt u de waarden zodat deze overeenkomen met uw omgeving.
 
 [!INCLUDE [Modify prefixes](../../includes/vpn-gateway-modify-ip-prefix-rm-include.md)]
 

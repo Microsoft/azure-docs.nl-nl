@@ -1,20 +1,20 @@
 ---
-title: 'Quickstart: Een Azure Cache voor Redis-instantie maken'
-description: In deze quickstart leert u hoe u een instantie van Azure Cache voor Redis maakt
+title: 'Snelstartgids: een open-source redis-cache maken'
+description: In deze Quick Start leert u hoe u een exemplaar van Azure cache maakt voor redis in de laag Basic, Standard of Premium
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 05/12/2020
-ms.openlocfilehash: 829f954fede18da2dbf7b3f2d84f69452294a17a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.date: 02/08/2021
+ms.openlocfilehash: 24de9e4eabfbc03e942868cce7560b5df093e1ad
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "83228260"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365120"
 ---
-# <a name="quickstart-create-an-azure-cache-for-redis-instance"></a>Quickstart: Een instantie van Azure Cache voor Redis maken
+# <a name="quickstart-create-an-open-source-redis-cache"></a>Snelstartgids: een open-source redis-cache maken
 
 Azure Cache voor redis biedt volledig beheerde [opensource-Redis](https://redis.io/) in Azure. U kunt beginnen met een Azure Cache voor Redis-instantie van een willekeurige laag (Basic, Standard of Premium) en grootte, en deze schalen om te voldoen aan de vereiste prestaties voor uw toepassing. In deze quickstart ziet u hoe u de Azure-portal kunt gebruiken om een nieuwe Azure Cache voor Redis te maken.
 
@@ -31,4 +31,3 @@ In deze quickstart hebt u geleerd hoe u een instantie van Azure Cache voor Redis
 
 > [!div class="nextstepaction"]
 > [Maak een ASP.NET-web-app die gebruikmaakt van Azure Cache voor Redis.](./cache-web-app-howto.md)
-

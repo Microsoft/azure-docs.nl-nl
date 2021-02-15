@@ -1,19 +1,19 @@
 ---
 title: Op rollen gebaseerd toegangs beheer op basis van Synapse
 description: Een artikel waarin op rollen gebaseerd toegangs beheer in azure Synapse Analytics wordt uitgelegd
-author: billgib
+author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: security
 ms.date: 12/1/2020
-ms.author: billgib
+ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2d9f3bfe6a273bfb0f3d314d1a4664806bd45ae2
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 9e96d6decba679c7a4764a77f1e9720000faf78c
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118809"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100105144"
 ---
 # <a name="what-is-synapse-role-based-access-control-rbac"></a>Wat is Synapse op rollen gebaseerd toegangs beheer (RBAC)?
 

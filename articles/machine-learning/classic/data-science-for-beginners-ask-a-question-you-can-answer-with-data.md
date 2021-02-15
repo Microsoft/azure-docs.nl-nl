@@ -3,17 +3,17 @@ title: Een vraag stellen gegevens kunnen antwoorden ML Studio (klassiek)-Azure
 description: Meer informatie over het formuleren van een scherpe vraag voor gegevens wetenschap in data Science voor beginners Video 3. Bevat een vergelijking van classificatie-en regressie vragen.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: conceptual
 author: sdgilley
 ms.author: sgilley
 ms.date: 03/22/2019
-ms.openlocfilehash: dbac7c8818300ffb09959969e6b79f949177f457
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2ff440801db7ba8c5bfc1785fc7a399a1d773b73
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307663"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517022"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Stel een vraag die u met gegevens kunt beantwoorden
 ## <a name="video-3-data-science-for-beginners-series"></a>Video 3: gegevens wetenschap voor beginners-serie

@@ -7,14 +7,14 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/05/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f325a43895e1e9d73b11c06662851d7654d31ddb
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 62fe1b3391eb4cb2d409a92b936fd3f1ae56d992
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331818"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518416"
 ---
-# <a name="azure-database-for-postgresql-versioning-policy"></a>Beleid voor Azure Database for PostgreSQL-versie
+# <a name="azure-database-for-postgresql-versioning-policy"></a>Azure Database for PostgreSQL-versiebeleid
 
 Op deze pagina wordt het Azure Database for PostgreSQL-versie beleid beschreven en is van toepassing op de implementatie modi Azure Database for PostgreSQL-één server en Azure Database for PostgreSQL-flexibele server (preview).
 
@@ -28,7 +28,7 @@ Azure Database for PostgreSQL ondersteunt de volgende database versies.
 | PostgreSQL 11 | X | X |
 | PostgreSQL 10 | X |  |
 | PostgreSQL 9,6 | X |  |
-| PostgreSQL 9,5 | X |  |
+| *PostgreSQL 9,5 (buiten gebruik gesteld)* | X |  |
 
 ## <a name="major-version-support"></a>Ondersteuning voor primaire versie
 Elke primaire versie van PostgreSQL wordt ondersteund door Azure Database for PostgreSQL vanaf de datum waarop Azure de versie ondersteunt, totdat de versie wordt ingetrokken door de PostgreSQL-Community, zoals is beschreven in het [postgresql-beleid](https://www.postgresql.org/support/versioning/)voor de Community-versie.
@@ -41,7 +41,7 @@ De onderstaande tabel bevat de details van het pensioen voor PostgreSQL primaire
 
 | Versie | Nieuwe functies | Start datum voor ondersteuning van Azure | Buitengebruikstellings datum|
 | ----- | ----- | ------ | ----- |
-| PostgreSQL 9,5| [Functies](https://www.postgresql.org/docs/9.5/release-9-5.html)  | 18 april 2018    | 11 februari 2021
+| [PostgreSQL 9,5 (buiten gebruik gesteld)](https://www.postgresql.org/about/news/postgresql-132-126-1111-1016-9621-and-9525-released-2165/)| [Functies](https://www.postgresql.org/docs/9.5/release-9-5.html)  | 18 april 2018   | 11 februari 2021
 | [PostgreSQL 9,6](https://www.postgresql.org/about/news/postgresql-96-released-1703/) | [Functies](https://wiki.postgresql.org/wiki/NewIn96) | 18 april 2018  | 11 november 2021
 | [PostgreSQL 10](https://www.postgresql.org/about/news/postgresql-10-released-1786/) | [Functies](https://wiki.postgresql.org/wiki/New_in_postgres_10) | 4 juni 2018  | 10 november 2022
 | [PostgreSQL 11](https://www.postgresql.org/about/news/postgresql-11-released-1894/) | [Functies](https://www.postgresql.org/docs/11/release-11.html) | 24 juli 2019  | 9 november 2023
@@ -49,7 +49,7 @@ De onderstaande tabel bevat de details van het pensioen voor PostgreSQL primaire
 
 ## <a name="retired-postgresql-engine-versions-not-supported-in-azure-database-for-postgresql"></a>Buiten gebruik gestelde PostgreSQL-Engine versies worden niet ondersteund in Azure Database for PostgreSQL
 
-Als u na de datum van uittreding voor elke PostgreSQL-database versie doorgaat, moet u rekening houden met de volgende beperkingen als u de buiten gebruik gestelde versie doorloopt:
+U kunt door gaan met het uitvoeren van de buiten gebruik gestelde versie in Azure Database for PostgreSQL. Houd echter rekening met de volgende beperkingen na de pensionerings datum voor elke PostgreSQL-database versie:
 - Aangezien de community geen verdere oplossingen voor problemen of beveiligingsfixes uitbrengt, zal Azure Database for PostgreSQL de buiten gebruik gestelde data base-engine niet voor eventuele fouten of beveiliging bijwerken of anderszins beveiligings maatregelen treffen met betrekking tot de buiten gebruik gestelde data base-engine. U kunt beveiligings problemen of andere problemen ondervinden als gevolg hiervan. Azure blijft echter periodiek onderhoud en patches uitvoeren voor de host, het besturings systeem, containers en andere service-gerelateerde onderdelen.
 - Als er mogelijk ondersteunings problemen optreden met betrekking tot de PostgreSQL-data base, kunnen we u mogelijk geen ondersteuning bieden voor u. In dergelijke gevallen moet u uw data base upgraden om u te helpen bij het verlenen van ondersteuning.
 - U kunt geen nieuwe database servers maken voor de buiten gebruik gestelde versie. U kunt echter herstel naar een bepaald tijdstip uitvoeren en voor uw bestaande servers Lees replica's maken...

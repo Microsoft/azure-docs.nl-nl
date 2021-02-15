@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/08/2021
 ms.author: memildin
-ms.openlocfilehash: e827178d8ccb0f7de8d32433d03502a7412d1139
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 7034d1b5f06fcbcead79d85df10042eee3581b0b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834047"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369353"
 ---
 # <a name="feature-coverage-for-machines"></a>Functiedekking voor machines
 
@@ -96,10 +96,8 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 | Trend Micro - Deep Security | Windows Server-familie  | Nee | Ja |
 | Symantec v12.1.1100+| Windows Server-familie  | Nee | Ja |
 | McAfee v10+ | Windows Server-familie  | Nee | Ja |
-| McAfee v10+ | Linux Server-familie  | Nee | Ja **\*** |
-| Sophos V9+| Linux Server-familie  | Nee | Ja  **\***  |
-
- **\*** De status van de dekking en de ondersteunende gegevens zijn momenteel alleen beschikbaar in de Log Analytics-werkruimte die aan uw beveiligde abonnementen is gekoppeld. Deze wordt niet weergegeven in de Azure Security Center-portal.
+| McAfee v10+ | Linux Server-familie  | Nee | Ja |
+| Sophos V9+| Linux Server-familie  | Nee | Ja |
 
 > [!NOTE]
 > Voor de detectie van System Center Endpoint Protection (SCEP) op een virtuele machine met Windows Server 2008 R2 moet SCEP worden geïnstalleerd na PowerShell (v 3.0 of nieuwer).
@@ -120,7 +118,7 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Verbinding maken met AWS-accounts](quickstart-onboard-aws.md) (1)|-|-|
 |[Verbinding maken met GCP-accounts](quickstart-onboard-gcp.md) (1)|-|-|
 |[Continue export](continuous-export.md)|✔|✔ (2)|
-|[Werkstroomautomatisering](workflow-automation.md)|✔|✔|
+|[Werkstroomautomatisering](workflow-automation.md)|✔|✔ (2)|
 |[Regels voor uitzonderingen voor aanbevelingen](exempt-resource.md)|-|-|
 |[Regels voor waarschuwingsonderdrukking](alerts-suppression-rules.md)|✔|✔|
 |[E-mailmeldingen voor beveiligingswaarschuwingen](security-center-provide-security-contact-details.md)|✔|✔|
@@ -132,7 +130,7 @@ Zie [Evaluatie van eindpuntbeveiliging en aanbevelingen](security-center-endpoin
 |[Azure Defender voor Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender voor DNS](defender-for-dns-introduction.md)|-|-|
 |[Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
-|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔ (2)|
+|[Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
 |[Beveiliging van Kubernetes-werk belasting](kubernetes-workload-protections.md)|-|-|
 |||
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 09/10/2020
+ms.date: 01/19/2021
 ms.author: curtand
-ms.openlocfilehash: fbe0c2047b3ed52fdd69295fd0fd867cb3a5f0ef
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ef2e79f8c8e7964d04db0dd1a3f9988599fcb130
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370335"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100094114"
 ---
 # <a name="manage-organizations-you-have-access-to-in-the-my-account-portal"></a>Organisaties beheren waartoe u toegang hebt in de portal van mijn account
 
@@ -30,21 +30,26 @@ De pagina **organisaties** van de portal van **Mijn account** helpt u bij het be
 - **Andere organisaties.** De andere organisaties zijn een groep waarbij u zich eerder hebt aangemeld met uw werk-of school account. U kunt deze organisaties op elk gewenst moment verlaten.
 
 >[!Important]
->Dit artikel is bedoeld voor gebruikers die de organisatie gegevens willen bijwerken die worden geopend door een werk-of school account. Als u een beheerder bent die op zoek is naar informatie over groeps-en gebruikers beheer voor uw werk nemers en andere toepassingen, raadpleegt u de [documentatie voor Enter prise-gebruikers beheer](../enterprise-users/index.yml).
+>Dit artikel is bedoeld voor gebruikers die de organisatie gegevens willen bijwerken die worden geopend door een werk-of school account. Als er een fout optreedt tijdens het aanmelden met een persoonlijke Microsoft-account, kunt u zich nog steeds aanmelden met de domein naam voor uw organisatie (zoals contoso.com) of de **Tenant-id** van uw organisatie van uw beheerder in een van de volgende url's:
+>
+>   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+>   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
+>
+>Als u een beheerder bent die op zoek is naar informatie over groeps-en gebruikers beheer voor uw werk nemers en andere toepassingen, raadpleegt u de [documentatie voor Enter prise-gebruikers beheer](../enterprise-users/index.yml).
 
 ## <a name="view-your-organizations"></a>Uw organisaties weer geven
 
-1. Meld u aan bij uw werk-of school account en ga vervolgens naar **Mijn account** ( https://myaccount.microsoft.com/) pagina.
+1. Meld u aan bij uw werk-of school account en ga vervolgens naar **Mijn account** ( https://myaccount.microsoft.com/) pagina. 
 
-2. Selecteer **organisaties** in het navigatie deel venster links of selecteer de koppeling **organisaties beheren** in het blok **organisaties** .
+1. Selecteer **organisaties** in het navigatie deel venster links of selecteer de koppeling **organisaties beheren** in het blok **organisaties** .
 
     ![Pagina Mijn account, koppelingen naar gemarkeerde organisaties weer geven](media/my-account-portal/my-account-portal-organizations.png)
 
-3. Bekijk de informatie voor uw **thuis organisatie**.
+1. Bekijk de informatie voor uw **thuis organisatie**.
 
     ![Pagina organisaties](media/my-account-portal/my-account-portal-organization-page.png)
 
-4. Controleer uw andere organisaties en zorg ervoor dat u alle organisaties herkent waartoe u toegang hebt.
+1. Controleer uw andere organisaties en zorg ervoor dat u alle organisaties herkent waartoe u toegang hebt.
 
 ## <a name="leave-an-organization"></a>Een organisatie verlaten
 

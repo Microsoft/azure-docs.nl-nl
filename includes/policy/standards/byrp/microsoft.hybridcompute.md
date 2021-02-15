@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 0a44b6b69e57c6b4801a95c4a7fb25ee10e8f685
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: d085a6642ef922145e67d7258e8c8978c3e89546
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99561117"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100105728"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -146,6 +146,26 @@ Zie [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html)
 |Toegangsbeheer |9.4.3 |Wachtwoord beheersysteem |[Windows-machines controleren waarop de instelling voor wachtwoordcomplexiteit niet is ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbf16e0bb-31e1-4646-8202-60a235cc7e74) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsPasswordComplexity_AINE.json) |
 |Toegangsbeheer |9.4.3 |Wachtwoord beheersysteem |[Windows-machines controleren waarvoor de minimale wachtwoordlengte niet wordt beperkt tot 14 tekens](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa2d0e922-65d0-40c4-8f87-ea6da2d307a2) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsPasswordLength_AINE.json) |
 |Cryptografie |10.1.1 |Beleid voor het gebruik van cryptografische besturings elementen |[Windows-machines controleren waarop wachtwoorden niet worden opgeslagen met omkeerbare versleuteling](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fda0f98fe-a24b-4ad5-af69-bd0400233661) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsPasswordEncryption_AINE.json) |
+
+## <a name="new-zealand-ism"></a>Nieuw-Zeeland ISM
+
+Zie [Azure Policy regelgevings naleving-Nieuw-Zeeland Information Security-hand leiding voor informatie](../../../../articles/governance/policy/samples/new-zealand-ism.md)over de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services die zijn gekoppeld aan deze nalevings standaard.
+Zie [New-Zeeland Information Security Manual](https://www.nzism.gcsb.govt.nz/)(Engelstalig) voor meer informatie over deze nalevings standaard.
+
+|Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
+|---|---|---|---|---|
+|Access Control en wacht woorden |AC-2 |16.1.32 systeem gebruikers-id |[Linux-machines controleren waarvoor externe verbindingen van accounts zonder wachtwoorden zijn toegestaan](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fea53dbee-c6c9-4f0e-9f9e-de0039b78023) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_LinuxPassword110_AINE.json) |
+|Access Control en wacht woorden |AC-2 |16.1.32 systeem gebruikers-id |[Linux-machines controleren met accounts zonder wachtwoorden](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff6ec09a3-78bf-4f8f-99dc-6c77182d0f99) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_LinuxPassword232_AINE.json) |
+|Access Control en wacht woorden |AC-2 |16.1.32 systeem gebruikers-id |[Windows-machines controleren waarop opgegeven leden van de groep Beheerders ontbreken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F30f71ea1-ac77-4f26-9fc5-2d926bbd4ba7) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembersToInclude_AINE.json) |
+|Access Control en wacht woorden |AC-2 |16.1.32 systeem gebruikers-id |[Windows-machines controleren met extra accounts in de groep Beheerders](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3d2a3320-2a72-4c67-ac5f-caa40fbee2b2) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembers_AINE.json) |
+|Access Control en wacht woorden |AC-2 |16.1.32 systeem gebruikers-id |[Windows-machines controleren die opgegeven leden van de groep Beheerders bevatten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F69bf4abd-ca1e-4cf6-8b5a-762d42e61d4f) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembersToExclude_AINE.json) |
+|Access Control en wacht woorden |AC-4 |16.1.40 beleid voor wachtwoord selectie |[Windows-computers moeten voldoen aan vereisten voor 'Beveiligingsinstellingen - Accountbeleid'](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff2143251-70de-4e81-87a8-36cee5a2f29d) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecuritySettingsAccountPolicies_AINE.json) |
+|Access Control en wacht woorden |AC-9 |16.3.5 gebruik van geprivilegieerde accounts |[Windows-machines controleren waarop opgegeven leden van de groep Beheerders ontbreken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F30f71ea1-ac77-4f26-9fc5-2d926bbd4ba7) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembersToInclude_AINE.json) |
+|Access Control en wacht woorden |AC-9 |16.3.5 gebruik van geprivilegieerde accounts |[Windows-machines controleren met extra accounts in de groep Beheerders](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3d2a3320-2a72-4c67-ac5f-caa40fbee2b2) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembers_AINE.json) |
+|Access Control en wacht woorden |AC-9 |16.3.5 gebruik van geprivilegieerde accounts |[Windows-machines controleren die opgegeven leden van de groep Beheerders bevatten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F69bf4abd-ca1e-4cf6-8b5a-762d42e61d4f) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_AdministratorsGroupMembersToExclude_AINE.json) |
+|Cryptografie |CR-6 |17.4.16 met behulp van TLS |[Windows-webservers moeten worden geconfigureerd voor het gebruik van beveiligde communicatie protocollen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5752e6d6-1206-46d8-8ab1-ecc2f71a8112) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecureWebProtocol_AINE.json) |
+|Gegevensbeheer |DM-4 |20.3.10 virus scans |[Windows Defender exploit Guard moet zijn ingeschakeld op uw computers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbed48b13-6647-468e-aa2f-1af1d3f4dd40) |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsDefenderExploitGuard_AINE.json) |
+|Gegevensbeheer |DM-6 |20.4.4-database bestanden |[Windows-webservers moeten worden geconfigureerd voor het gebruik van beveiligde communicatie protocollen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5752e6d6-1206-46d8-8ab1-ecc2f71a8112) |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_SecureWebProtocol_AINE.json) |
 
 ## <a name="nist-sp-800-171-r2"></a>NIST SP 800-171 R2
 

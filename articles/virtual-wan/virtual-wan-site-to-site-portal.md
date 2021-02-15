@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 02/04/2021
+ms.date: 02/11/2021
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my local site to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: f3458c3b12b3151fd20531282f56ed2f1fd29b6b
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: bd2de052f1913a214ba037b057b72de0e7d8da6e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627696"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362926"
 ---
 # <a name="tutorial-create-a-site-to-site-connection-using-azure-virtual-wan"></a>Zelfstudie: Een site-naar-site-verbinding maken met Azure Virtual WAN
 
@@ -232,7 +232,7 @@ Op de pagina **VPN-gateway bewerken** ziet u de volgende instellingen:
 * Openbaar IP-adres van VPN-gateway (toegewezen door Azure)
 * Privé-IP-adres van VPN-gateway (toegewezen door Azure)
 * Standaard BGP-IP-adres van VPN-gateway (toegewezen door Azure)
-* Configuratie-optie voor aangepast BGP-IP-adres: Dit veld is voorbehouden voor APIPA (Automatic Private IP Addressing). Azure ondersteunt BGP-IP in het bereik 169.254.21.* en 169.254.22.*. Azure accepteert BGP-verbindingen in deze bereiken maar zal verbinding maken met het standaard BGP-IP-adres.
+* Configuratie-optie voor aangepast BGP-IP-adres: Dit veld is voorbehouden voor APIPA (Automatic Private IP Addressing). Azure ondersteunt BGP-IP in de bereiken 169.254.21. * en 169.254.22. *. Azure accepteert BGP-verbindingen in deze bereiken maar zal verbinding maken met het standaard BGP-IP-adres.
 
    :::image type="content" source="media/virtual-wan-site-to-site-portal/view-configuration-2.png" alt-text="Configuratie weergeven" lightbox="media/virtual-wan-site-to-site-portal/view-configuration-2-expand.png":::
 

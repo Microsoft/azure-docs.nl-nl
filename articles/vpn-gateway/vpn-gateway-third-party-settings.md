@@ -6,14 +6,14 @@ author: chadmath
 manager: dcscontentpm
 ms.service: vpn-gateway
 ms.topic: troubleshooting
-ms.date: 06/15/2018
+ms.date: 02/10/2021
 ms.author: delhan
-ms.openlocfilehash: 7e9544fb73c8599b219ef7a566032adfe5e33d08
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 0448cb5442746e5e8fced13be13dbebfc0fe32fd
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658499"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389311"
 ---
 # <a name="community-suggested-third-party-vpn-or-firewall-device-settings-for-azure-vpn-gateway"></a>Door de Community voorgestelde VPN-of firewall-Apparaatinstellingen van derden voor Azure VPN-gateway
 
@@ -26,7 +26,7 @@ Dit artikel bevat verschillende aanbevolen oplossingen voor VPN-of firewall appa
 
 De volgende tabel bevat een lijst met verschillende algemene apparaten en gerelateerde hulp:
 
-|Product    |Naslaginformatie                                                |
+|Product    |Referentie                                                |
 |-----------|-----------------------------------------------------------|
 |Cisco ASA  |[Door de Community voorgestelde oplossingen voor Cisco ASA op Azure VPN](https://search.cisco.com/search?query=%22Azure%20VPN%22%20ASA&locale=enUS&tab=Cisco)   |
 |Cisco ISR  |[Community-voorgestelde oplossingen voor Cisco ISR op Azure VPN](https://search.cisco.com/search?query=%22Azure%20VPN%22%20ISR&locale=enUS&tab=Cisco)   |

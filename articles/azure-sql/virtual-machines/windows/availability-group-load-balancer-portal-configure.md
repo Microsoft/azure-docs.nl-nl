@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 02/16/2017
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 9fa23ca2ae655a11d7aaa4be67e08a6b3fa44394
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 6e53a6a4875b3dde55d1822daa342d6cde536d1c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359384"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096426"
 ---
 # <a name="configure-a-load-balancer-for-a-sql-server-always-on-availability-group-in-azure-virtual-machines"></a>Een load balancer configureren voor een SQL Server AlwaysOn-beschikbaarheids groep in azure Virtual Machines
 
@@ -76,7 +76,7 @@ Maak eerst de load balancer.
    | **Virtueel netwerk** |Selecteer het virtuele netwerk waarin de SQL Server exemplaren zich bevinden. |
    | **Subnet** |Selecteer het subnet waarin de SQL Server-exemplaren zich bevinden. |
    | **IP-adrestoewijzing** |**Statisch** |
-   | **Privé IP-adres** |Geef een beschikbaar IP-adres op in het subnet. Gebruik dit IP-adres wanneer u een listener op het cluster maakt. In een Power shell-script, verderop in dit artikel, gebruikt u dit adres voor de `$ILBIP` variabele. |
+   | **Privé IP-adres** |Geef een beschikbaar IP-adres op in het subnet. Gebruik dit IP-adres wanneer u een listener op het cluster maakt. In een Power shell-script, verderop in dit artikel, gebruikt u dit adres voor de `$ListenerILBIP` variabele. |
    | **Abonnement** |Als u meerdere abonnementen hebt, kan dit veld worden weer gegeven. Selecteer het abonnement dat u aan deze resource wilt koppelen. Dit is normaal gesp roken hetzelfde abonnement als alle resources voor de beschikbaarheids groep. |
    | **Resourcegroep** |Selecteer de resourcegroep waarin de SQL Server-exemplaren zich bevinden. |
    | **Locatie** |Selecteer de Azure-locatie waar de SQL Server-exemplaren zich bevinden. |
@@ -241,7 +241,7 @@ Voer de volgende stappen uit om een IP-adres toe te voegen aan een load balancer
    |**Protocol** |TCP
    |**Poort** |Een ongebruikte TCP-poort, die op alle virtuele machines beschikbaar moet zijn. Het kan niet voor andere doel einden worden gebruikt. Er kunnen niet twee listeners gebruikmaken van dezelfde test poort. 
    |**Interval** |De hoeveelheid tijd tussen de test pogingen. Gebruik de standaard waarde (5).
-   |**Drempelwaarde voor beschadigd** |Het aantal opeenvolgende drempel waarden dat moet mislukken voordat een virtuele machine als een slechte status wordt beschouwd.
+   |**Drempelwaarde voor onjuiste status** |Het aantal opeenvolgende drempel waarden dat moet mislukken voordat een virtuele machine als een slechte status wordt beschouwd.
 
 8. Selecteer **OK** om de test op te slaan. 
 
@@ -255,7 +255,7 @@ Voer de volgende stappen uit om een IP-adres toe te voegen aan een load balancer
     |**Front-end-IP-adres** |Selecteer het IP-adres dat u hebt gemaakt. 
     |**Protocol** |TCP
     |**Poort** |Gebruik de poort die de SQL Server exemplaren gebruiken. Een standaard exemplaar gebruikt poort 1433, tenzij u deze hebt gewijzigd. 
-    |**Back-endpoort** |Gebruik dezelfde waarde als **poort**.
+    |**Poort back-end** |Gebruik dezelfde waarde als **poort**.
     |**Back-endpool** |De groep die de virtuele machines bevat met de SQL Server exemplaren. 
     |**Statustest** |Kies de test die u hebt gemaakt.
     |**Sessiepersistentie** |Geen
@@ -304,7 +304,7 @@ Als een beschikbaarheids groep deelneemt aan een gedistribueerde beschikbaarheid
    |**Front-end-IP-adres** |Gebruik hetzelfde frontend-IP-adres als de beschikbaarheids groep.
    |**Protocol** |TCP
    |**Poort** |5022-de poort voor de [eind punt-listener van de gedistribueerde beschikbaarheids groep](/sql/database-engine/availability-groups/windows/configure-distributed-availability-groups).</br> Dit kan elke beschik bare poort zijn.  
-   |**Back-endpoort** | 5022-gebruik dezelfde waarde als **poort**.
+   |**Poort back-end** | 5022-gebruik dezelfde waarde als **poort**.
    |**Back-endpool** |De groep die de virtuele machines bevat met de SQL Server exemplaren. 
    |**Statustest** |Kies de test die u hebt gemaakt.
    |**Sessiepersistentie** |Geen

@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een AKS-cluster (private Azure K
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 2749e66375fbd808a9e87f252a813f1054ceff21
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: d3b53c860c150b5b67d38cf5d11db9f070ffb81d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525565"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392796"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
 
@@ -66,7 +66,7 @@ Waar `--enable-private-cluster` is een verplichte vlag voor een persoonlijk clus
 > [!NOTE]
 > Als de docker Bridge-adres CIDR (172.17.0.1/16) in conflict is met de CIDR van het subnet, wijzigt u het docker Bridge-adres op de juiste manier.
 
-## <a name="configure-private-dns-zone"></a>Privé-DNS zone configureren
+## <a name="configure-private-dns-zone"></a>Privé-DNS zone configureren 
 
 De volgende para meters kunnen worden gebruikt om Privé-DNS zone te configureren.
 
@@ -79,7 +79,7 @@ De volgende para meters kunnen worden gebruikt om Privé-DNS zone te configurere
 * De AKS preview-versie 0.4.71 of hoger
 * De API-versie 2020-11-01 of hoger
 
-### <a name="create-a-private-aks-cluster-with-private-dns-zone"></a>Een persoonlijk AKS-cluster maken met Privé-DNS zone
+### <a name="create-a-private-aks-cluster-with-private-dns-zone-preview"></a>Een persoonlijk AKS-cluster maken met Privé-DNS zone (preview-versie)
 
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone [none|system|custom private dns zone ResourceId]

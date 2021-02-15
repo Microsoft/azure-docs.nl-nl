@@ -12,12 +12,12 @@ ms.date: 08/07/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73318d1ee14894f5d22f7c4d2e61418e3b1038c1
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 706f759243fd9edbd5f47633cb2638d6b06beec1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636874"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376357"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: release geschiedenis van versie
 Het Azure Active Directory (Azure AD)-team werkt Azure AD Connect regel matig bij met nieuwe functies en functionaliteit. Niet alle toevoegingen zijn van toepassing op alle doel groepen.
@@ -45,17 +45,17 @@ Als u echter alle nieuwste functies en updates wilt, kunt u de beste manier om t
 Volg deze link voor meer informatie over [automatische upgrade](how-to-connect-install-automatic-upgrade.md)
 
 >[!IMPORTANT]
-> Vanaf 1 november 2020 zullen we een afschaffing proces gaan implementeren waarbij versies van Azure AD Connect die meer dan 18 maanden geleden zijn uitgebracht, worden afgeschaft. Op dat moment gaan we dit proces beginnen door alle versies van Azure AD Connect uit te voeren met versie 1.3.20.0 (die is uitgebracht op 4/24/2019) en ouder, waarna we de afschaffing van oudere versies van Azure AD Connect kunnen evalueren wanneer een nieuwe versie wordt vrijgegeven.
+> Vanaf 1 april 2024 zullen we versies van Azure AD Connect buiten gebruik stellen die zijn uitgebracht vóór 1 mei 2018-versie 1.1.751.0 en ouder. 
 >
 > U moet ervoor zorgen dat u een recente versie van Azure AD Connect gebruikt om een optimale ondersteunings ervaring te krijgen. 
 >
->Als u een afgeschafte versie van Azure AD Connect hebt, hebt u mogelijk niet de nieuwste beveiligingsfixes, verbeteringen in prestaties, probleem oplossing en diagnostische hulpprogram ma's en service verbeteringen, en als u ondersteuning nodig hebt, kunnen we u mogelijk niet het service niveau bieden dat uw organisatie nodig heeft.
+>Als u een buiten gebruik gestelde versie van Azure AD Connect hebt, hebt u mogelijk niet de nieuwste beveiligingsfixes, prestatie verbeteringen, probleem oplossing en diagnostische hulpprogram ma's en service verbeteringen, en als u ondersteuning nodig hebt, kunnen we u mogelijk niet het service niveau bieden dat uw organisatie nodig heeft.
 >
->Als u Azure AD Connect voor synchronisatie hebt ingeschakeld, kunt u binnenkort automatisch status meldingen ontvangen die u waarschuwen over toekomstige afschaffing wanneer u een van de oudere versies uitvoert.
+
 >
 >Raadpleeg [dit artikel](./how-to-upgrade-previous-version.md) voor meer informatie over het upgraden van Azure AD Connect naar de nieuwste versie.
 >
->Voor informatie over de versie geschiedenis van gedeprecieerde versies raadpleegt u [Archief met Azure AD Connect versie release geschiedenis](reference-connect-version-history-archive.md)
+>Zie [Azure AD Connect versie geschiedenis archief](reference-connect-version-history-archive.md) voor informatie over de versie geschiedenis van de buiten gebruik gestelde versies
 
 ## <a name="15450"></a>1.5.45.0
 

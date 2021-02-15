@@ -138,6 +138,23 @@
               href: ./scripts/functions-cli-create-function-app-vsts-continuous.md
 - name: Concepten
   items:
+    - name: Aanbevolen procedures
+      items:
+        - name: Prestaties en betrouw baarheid
+          href: functions-best-practices.md
+          displayName: best practices
+        - name: Verbindingen beheren
+          href: manage-connections.md
+          displayName: best practices
+        - name: Opslagoverwegingen
+          href: storage-considerations.md
+          displayName: 'encryption, keys, mount, files'
+        - name: Fout afhandeling en functionele nieuwe pogingen
+          href: functions-bindings-error-pages.md
+          displayName: best practices
+        - name: Beveiliging
+          href: security-concepts.md
+          displayName: best practices
     - name: Runtime-versies vergelijken
       href: functions-versions.md
       displayName: 'migrate, migration, v3'
@@ -212,12 +229,7 @@
       href: functions-diagnostics.md
     - name: Kosten van verbruiksabonnement
       href: functions-consumption-costs.md
-    - name: Prestatieoverwegingen
-      href: functions-best-practices.md
       displayName: best practice
-    - name: Opslagoverwegingen
-      href: storage-considerations.md
-      displayName: 'encryption, keys, mount, files'
     - name: Functions-proxy's
       href: functions-proxies.md
     - name: Netwerkopties

@@ -1,22 +1,17 @@
 ---
 title: SQL Server Integration Services SSIS-taken (on-premises) migreren naar Azure Data Factory
 description: In dit artikel wordt beschreven hoe u SQL Server Integration Services (SSIS)-taken migreert naar Azure Data Factory pijp lijnen/activiteiten/triggers met behulp van SQL Server Management Studio.
-services: data-factory
-documentationcenter: ''
 author: chugugrace
 ms.author: chugu
-ms.reviewer: ''
-manager: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/7/2020
-ms.openlocfilehash: 1072f915c5d8483676874422703820dc75719256
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: ec10abfd6f2fc221a9e86203b2faa0d173d67675
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555743"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379587"
 ---
 # <a name="migrate-sql-server-agent-jobs-to-adf-with-ssms"></a>SQL Server Agent-taken migreren naar ADF met SSMS
 

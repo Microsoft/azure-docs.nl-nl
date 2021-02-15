@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 1/21/2021
 ms.author: cavoeg
-ms.openlocfilehash: 4d071af6f72bfe6136296185e65007d2413ed2c4
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: d83bc653ae8c3ff5a9553de568bc6f2355f18760
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746710"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104617"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Veelgestelde vragen over de Azure API voor FHIR
 
@@ -115,6 +115,9 @@ U vindt meer informatie in deze [Community post](https://chat.fhir.org/#narrow/s
 ### <a name="how-does-export-work"></a>Hoe werkt $export?
 
 $export maakt deel uit van de FHIR-specificatie: https://hl7.org/fhir/uv/bulkdata/export/index.html . Als de FHIR-service is geconfigureerd met een beheerde identiteit en een opslag account, en als de beheerde identiteit toegang heeft tot dat opslag account, kunt u gewoon $export aanroepen in de FHIR-API en alle FHIR-resources worden geëxporteerd naar het opslag account. Raadpleeg het [artikel over $export](./export-data.md)voor meer informatie.
+
+### <a name="is-de-identified-export-available-at-patient-and-group-level-as-well"></a>Is de niet-geïdentificeerde export ook beschikbaar op patiënten en groeps niveau.
+Geanonimiseerd-export wordt momenteel alleen ondersteund op een volledig systeem export (/$export) en niet voor het exporteren van patiënten (/patient/$export). We werken eraan om deze ook beschikbaar te maken op het niveau van de patiënt.
 
 ## <a name="using-azure-api-for-fhir"></a>Azure API voor FHIR gebruiken
 

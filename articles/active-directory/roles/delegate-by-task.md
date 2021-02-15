@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ad48141c69d78096981b89758afd56089093021
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 8d096bcd15254df4081a005b268934659e43037d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742927"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380301"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Beheerders rollen per beheer taak in Azure Active Directory
 
@@ -109,7 +109,7 @@ Metrische gegevens en waarschuwingen voor synchronisatie service weer geven | Le
 
 Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
-Domeinen beheren | Hoofdbeheerder | 
+Domeinen beheren | Domein naam beheerder | 
 Alle configuratie lezen | Adreslijst lezers | Standaard gebruikersrol ([Zie de documentatie](../fundamentals/users-default-permissions.md))
 
 ## <a name="domain-services"></a>Domain Services
@@ -216,9 +216,9 @@ Aanmeld logboeken lezen | Rapport lezer | Beveiligings lezer, beveiligings behee
 Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
 Alle bestaande app-wacht woorden verwijderen die zijn gegenereerd door de geselecteerde gebruikers | Hoofdbeheerder | 
-MFA uitschakelen | Hoofdbeheerder | 
-MFA inschakelen | Hoofdbeheerder | 
-Instellingen voor MFA-service beheren | Hoofdbeheerder | 
+MFA uitschakelen | Verificatie beheerder (via Power shell) | Beheerder van geprivilegieerde authenticatie (via Power shell)
+MFA inschakelen | Verificatie beheerder (via Power shell) | Beheerder van geprivilegieerde authenticatie (via Power shell) 
+Instellingen voor MFA-service beheren | Verificatie beleids beheerder | 
 Vereisen dat geselecteerde gebruikers opnieuw contact methoden opgeven | Verificatiebeheerder | 
 Multi-factor Authentication herstellen op alle onthouden apparaten  | Verificatiebeheerder | 
 
@@ -226,15 +226,15 @@ Multi-factor Authentication herstellen op alle onthouden apparaten  | Verificati
 
 Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
-Gebruikers blok keren/deblokkeren | Hoofdbeheerder | 
-Account vergrendeling configureren | Hoofdbeheerder | 
-Cache regels configureren | Hoofdbeheerder | 
-Fraude waarschuwing configureren | Hoofdbeheerder
-Meldingen configureren | Hoofdbeheerder | 
-Eenmalige bypass configureren | Hoofdbeheerder | 
-Instellingen voor telefoon gesprek configureren | Hoofdbeheerder | 
-Providers configureren | Hoofdbeheerder | 
-Server instellingen configureren | Hoofdbeheerder | 
+Gebruikers blok keren/deblokkeren | Verificatie beleids beheerder | 
+Account vergrendeling configureren | Verificatie beleids beheerder | 
+Cache regels configureren | Verificatie beleids beheerder | 
+Fraude waarschuwing configureren | Verificatie beleids beheerder
+Meldingen configureren | Verificatie beleids beheerder | 
+Eenmalige bypass configureren | Verificatie beleids beheerder | 
+Instellingen voor telefoon gesprek configureren | Verificatie beleids beheerder | 
+Providers configureren | Verificatie beleids beheerder | 
+Server instellingen configureren | Verificatie beleids beheerder | 
 Activiteiten rapport lezen | Algemene lezer | 
 Alle configuratie lezen | Algemene lezer | 
 Server status lezen | Algemene lezer |  

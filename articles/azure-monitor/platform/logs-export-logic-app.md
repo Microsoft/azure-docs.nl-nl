@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/02/2020
-ms.openlocfilehash: 04f1eb0d9db00a2be1a4619cafe38aa18145fc78
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 21b9d73da0df5ada626500a706a19d1025de1dcc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185994"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391963"
 ---
 # <a name="archive-data-from-log-analytics-workspace-to-azure-storage-using-logic-app"></a>Gegevens archiveren van Log Analytics werk ruimte naar Azure Storage met behulp van Logic app
 In dit artikel wordt een methode beschreven voor het gebruik van [Azure Logic apps](../../logic-apps/index.yml) om gegevens op te vragen uit een log Analytics-werk ruimte in azure monitor en te verzenden naar Azure Storage. Gebruik dit proces wanneer u uw Azure Monitor-logboek gegevens wilt exporteren voor controle-en nalevings scenario's of als u wilt toestaan dat een andere service deze gegevens ophaalt.  
@@ -69,7 +69,7 @@ Ga naar **Logic apps** in het Azure Portal en klik op **toevoegen**. Selecteer e
 Klik op **beoordeling + maken** en vervolgens op **maken**. Wanneer de implementatie is voltooid, klikt u op **Ga naar resource** om de **Logic apps Designer** te openen.
 
 ## <a name="create-a-trigger-for-the-logic-app"></a>Een trigger maken voor de logische app
-Selecteer onder **beginnen met een gemeen schappelijke trigger de** optie **terugkeer patroon**. Hiermee maakt u een logische app die automatisch met een regel matig interval wordt uitgevoerd. In het vak **frequentie** van de actie selecteert u **uur** en voert u in het vak **interval** **1** in om de werk stroom eenmaal per dag uit te voeren.
+Selecteer onder **beginnen met een gemeen schappelijke trigger de** optie **terugkeer patroon**. Hiermee maakt u een logische app die automatisch met een regel matig interval wordt uitgevoerd. In het vak **frequentie** van de actie selecteert u **dag** en voert u in het vak **interval** **1** in om de werk stroom eenmaal per dag uit te voeren.
 
 ![Herhalings actie](media/logs-export-logicapp/recurrence-action.png)
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2019
 ms.author: mlottner
-ms.openlocfilehash: 75c6841b7fed354843b955a971f02946be349a02
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 04fe87cd69efc4c064b8fbdc596a5f9e187abbb1
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548882"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102237"
 ---
 # <a name="azure-defender-for-iot-baseline-and-custom-checks"></a>Azure Defender voor IoT-basis lijn en aangepaste controles
 
@@ -35,9 +35,13 @@ Met aangepaste basis controles wordt een aangepaste lijst met controles voor elk
 ## <a name="setting-baseline-properties"></a>Eigenschappen van basis lijn instellen
 
 1. Zoek en selecteer het apparaat dat u wilt wijzigen in de IoT Hub.
+
 1. Klik op het apparaat en klik vervolgens op de module **azureiotsecurity** .
+
 1. Klik op **module identiteit, twee**.
+
 1. Upload het **aangepaste controle** bestand voor de basis lijn naar het apparaat.
+
 1. Voeg eigenschappen van basis lijn toe aan de beveiligings module en klik op **Opslaan**.
 
 ### <a name="baseline-custom-check-file-example"></a>Voor beeld van aangepast controle bestand basis lijn
@@ -62,7 +66,7 @@ Aangepaste controles voor basis lijn configureren:
 
 ## <a name="baseline-custom-check-properties"></a>Aangepaste controle-eigenschappen van basis lijn
 
-| Naam| Status | Geldige waarden| Standaardwaarden| Beschrijving |
+| Naam| Status | Geldige waarden| Standaardwaarden| Description |
 |------|-----|------|-----|-----|
 |baselineCustomChecksEnabled|Vereist: True |Geldige waarden: **Booleaans** |Standaard waarde: **False** |Het maximale tijds interval voor berichten met een hoge prioriteit wordt verzonden.|
 |baselineCustomChecksFilePath |Vereist: True|Geldige waarden: **teken reeks**, **Null** |Standaard waarde: **Null** |Volledig pad van de XML-configuratie voor basis lijn|

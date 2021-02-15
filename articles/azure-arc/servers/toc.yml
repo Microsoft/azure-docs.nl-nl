@@ -59,6 +59,8 @@
           href: managed-identity-authentication.md
         - name: Agent beheren
           href: manage-agent.md
+        - name: Machine migreren naar verschillende regio's
+          href: manage-howto-migrate.md
     - name: Scenario's
       items:
         - name: Onboarding naar Azure Sentinel
@@ -71,7 +73,7 @@
           href: troubleshoot-agent-onboard.md
         - name: Problemen met VM-extensies
           href: troubleshoot-vm-extensions.md
-- name: Verwijzing
+- name: Naslaginformatie
   items:
     - name: Gegevenslocatie
       href: data-residency.md

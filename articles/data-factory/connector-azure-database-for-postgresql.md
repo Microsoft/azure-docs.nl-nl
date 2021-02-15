@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren en transformeren in Azure Database for PostgreSQL
 description: Meer informatie over het kopiëren en transformeren van gegevens in Azure Database for PostgreSQL met behulp van Azure Data Factory.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/01/2021
-ms.openlocfilehash: 8b1177278583bdb46f17119eb59235e70c58e806
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 32c65a3e1063b29ab6458151aec42e4415a73b62
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223085"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381321"
 ---
 # <a name="copy-and-transform-data-in-azure-database-for-postgresql-by-using-azure-data-factory"></a>Gegevens in Azure Database for PostgreSQL kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -73,7 +69,7 @@ Een typische connection string is `Server=<server>.postgres.database.azure.com;D
 
 **Voorbeeld**:
 
-**_Wacht woord opslaan in azure Key Vault_* _
+***Wacht woord opslaan in Azure Key Vault***
 
 ```json
 {
@@ -99,7 +95,7 @@ Een typische connection string is `Server=<server>.postgres.database.azure.com;D
 
 Zie [gegevens sets in azure Data Factory](concepts-datasets-linked-services.md)voor een volledige lijst met secties en eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. In deze sectie vindt u een lijst met eigenschappen die Azure Database for PostgreSQL in gegevens sets ondersteunt.
 
-Als u gegevens wilt kopiëren uit Azure Database for PostgreSQL, stelt u de eigenschap type van de gegevensset in op _ * AzurePostgreSqlTable * *. De volgende eigenschappen worden ondersteund:
+Als u gegevens wilt kopiëren uit Azure Database for PostgreSQL, stelt u de eigenschap type van de gegevensset in op **AzurePostgreSqlTable**. De volgende eigenschappen worden ondersteund:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |

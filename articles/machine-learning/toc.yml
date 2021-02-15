@@ -278,8 +278,16 @@
         - name: Ontwikkelomgevingen instellen
           displayName: 'local, remote, azure notebooks, notebook, Jupyter, dsvm, Databricks, ADB'
           href: how-to-configure-environment.md
-        - name: Jupyter Notebooks uitvoeren
-          href: how-to-run-jupyter-notebooks.md
+        - name: Studio-omgeving instellen
+          items:
+            - name: Bestanden maken en beheren
+              href: how-to-manage-files.md
+              displayName: 'Jupyter, notebooks, clone, samples'
+            - name: Jupyter Notebooks uitvoeren
+              href: how-to-run-jupyter-notebooks.md
+            - name: Een Terminal gebruiken
+              href: how-to-access-terminal.md
+              displayName: 'git, github, clone, kernel, package'
         - name: Softwareomgevingen instellen
           displayName: 'pip, Conda, anaconda'
           href: how-to-use-environments.md

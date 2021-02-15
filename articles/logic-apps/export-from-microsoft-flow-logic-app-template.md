@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, sneshaf, pinath, logicappspm
 ms.topic: conceptual
 ms.date: 01/20/2021
-ms.openlocfilehash: 2192ae5f3de551cb8ff2b6c36e233804c3c56bf1
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: a90f75db6961ea06b1cf9c2958556c1c2ef24805
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633244"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380131"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Stromen exporteren vanuit Power Automate en implementeren in Azure Logic Apps
 
@@ -24,7 +24,7 @@ Om de mogelijkheden van uw stroom uit te breiden en uit te breiden, kunt u die s
 >
 > * Als u wilt weten welke stroom lijnen voor automatische automatisering geen Logic Apps equivalenten hebben, raadpleegt u [connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors)voor het automatiseren van de stroom.
 >
-> * Zie [Logic apps connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors)als u wilt weten welke Logic apps connectors geen energie automatisering hebben.
+> * Zie [Logic apps connectors](/connectors/connector-reference/connector-reference-logicapps-connectors)als u wilt weten welke Logic apps connectors geen energie automatisering hebben.
 
 ## <a name="prerequisites"></a>Vereisten
 

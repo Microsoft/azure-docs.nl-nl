@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren met behulp van het hulpprogramma Azure Copy Data
 description: Maak een Azure-gegevensfactory aan en gebruik vervolgens het hulpprogramma Copy Data om gegevens vanuit de ene locatie in Azure Blob Storage te kopiëren naar een andere locatie.
-services: data-factory
-documentationcenter: ''
 author: dearandyxu
 ms.author: yexu
-manager: anandsub
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: quickstart
 ms.date: 11/09/2020
-ms.openlocfilehash: 282917a6bbf7edb962a87ad87810adde56206d97
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 48624e415649be2fb76aed99c5cb0e1b3b12f04b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013456"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372855"
 ---
 # <a name="quickstart-use-the-copy-data-tool-to-copy-data"></a>Quickstart: Het hulpprogramma Copy Data gebruiken om gegevens te kopiëren
 

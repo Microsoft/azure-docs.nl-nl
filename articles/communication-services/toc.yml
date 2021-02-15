@@ -12,6 +12,8 @@
       href: quickstarts/create-communication-resource.md
     - name: Toegangstokens maken en beheren
       href: quickstarts/access-tokens.md
+    - name: Beheerde identiteiten (.NET) gebruiken
+      href: quickstarts/managed-identity.md
     - name: Chat
       items:
         - name: Chat toevoegen aan uw app
@@ -58,8 +60,6 @@
 - name: Concepten
   expanded: false
   items:
-    - name: Interoperabiliteit met Teams
-      href: concepts/teams-interop.md
     - name: Chat
       items:
         - name: Overzicht van de chat-clientbibliotheek
@@ -72,8 +72,12 @@
           href: concepts/telephony-sms/sdk-features.md
         - name: Sms-concepten
           href: concepts/telephony-sms/concepts.md
-        - name: Uw telefoon- en sms-oplossing plannen
+        - name: Telefonie concepten
+          href: concepts/telephony-sms/telephony-concept.md
+        - name: Typen telefoonnummers in Azure Communication Services
           href: concepts/telephony-sms/plan-solution.md
+        - name: Vereisten voor de infra structuur van de SIP-interface
+          href: concepts/telephony-sms/sip-interface-infrastructure.md
     - name: Audio- en videobellen
       items:
         - name: Overzicht van de aanroepende clientbibliotheek
@@ -86,6 +90,8 @@
           href: concepts/ui-framework/ui-sdk-overview.md
         - name: Mogelijkheden van UI-Framework
           href: concepts/ui-framework/ui-sdk-features.md
+    - name: Interoperabiliteit met Teams
+      href: concepts/teams-interop.md
     - name: Architectuur van client en server
       href: concepts/client-and-server-architecture.md
     - name: Aanroepstromen

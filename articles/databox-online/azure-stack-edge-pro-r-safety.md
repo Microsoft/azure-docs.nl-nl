@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 02/04/2021
+ms.date: 02/12/2021
 ms.author: alkohli
-ms.openlocfilehash: cc24839396116a5b581758b29b087c237a6f902b
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: dacc9ecc28ffa482b60d1e48735fe3620b5b7558
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981337"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363063"
 ---
 # <a name="azure-stack-edge-pro-r-safety-instructions"></a>Beveiligings instructies voor de Azure Stack Edge Pro R
 
@@ -134,6 +134,7 @@ De volgende gevaren pictogrammen moeten worden waargenomen bij het instellen en 
 
 * Voor systemen zonder een niet-onderbroken voeding (UPS) koppelt u alle netstroom kabel (s) los om de AC-stroom van de apparatuur volledig te verwijderen.
 * Ontkoppel alle netstroom kabels voor systemen met UPS en gebruik de voedings schakelaar van de UPS om het systeem te deactiveren. UPS bevat gevaarlijke AC-en DC-spanningen.
+* Als een systeem een UPS bevat, werd de nood voeding geleverd met een afgeschermde invoer stroom kabel. U moet de afgeschermde invoer stroom kabel gebruiken, de kabel niet vervangen of wijzigen.
 
 ![Waarschuwing pictogram Waarschuwing voor ](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png)
  ![ elektrisch schok ](./media/azure-stack-edge-pro-r-safety/icon-safety-electric-shock.png) **:**
@@ -210,21 +211,22 @@ A device that has a UPS installed is designed to operate in the following enviro
 
 > ![Meldings pictogram-2 ](./media/azure-stack-edge-pro-r-safety/icon-safety-notice.png) **kennisgeving:** &nbsp; wijzigingen of wijzigingen aan de apparatuur die niet expliciet door micro soft zijn goedgekeurd, kunnen de bevoegdheid van de gebruiker voor het uitvoeren van de apparatuur ongeldig maken.
 
-CANADA en USA:
+#### <a name="canada-and-usa"></a>CANADA en USA:
 
-Opmerking: dit apparaat is getest en er is vastgesteld dat het voldoet aan de limieten voor een digitaal apparaat van klasse A, conform deel 15 van de FCC-regels. Deze limieten zijn ontworpen om redelijke bescherming te bieden tegen schadelijke interferentie wanneer de apparatuur wordt geëxploiteerd in een commerciële omgeving. Met deze apparatuur worden radio frequentie-energie gegenereerd, gebruikt en gestroomd en, indien niet geïnstalleerd en gebruikt in overeenstemming met de instructie handleiding, kan schadelijk interferentie voor radio communicatie veroorzaken. Het functioneren van deze apparatuur in een woon gebied veroorzaakt waarschijnlijk schadelijke interferentie, in welk geval de gebruiker de interferentie op eigen kosten moet corrigeren.
+> ![Meldings pictogram-2 ](./media/azure-stack-edge-pro-r-safety/icon-safety-notice.png) **kennisgeving:** &nbsp; Dit apparaat is getest en er is vastgesteld dat het voldoet aan de limieten voor een digitaal apparaat van klasse a, overeenkomstig deel 15 van de FCC-regels. Deze limieten zijn ontworpen om redelijke bescherming te bieden tegen schadelijke interferentie wanneer de apparatuur wordt geëxploiteerd in een commerciële omgeving. Met deze apparatuur worden radio frequentie-energie gegenereerd, gebruikt en gestroomd en, indien niet geïnstalleerd en gebruikt in overeenstemming met de instructie handleiding, kan schadelijk interferentie voor radio communicatie veroorzaken. Het functioneren van deze apparatuur in een woon gebied veroorzaakt waarschijnlijk schadelijke interferentie, in welk geval de gebruiker de interferentie op eigen kosten moet corrigeren.
 
 Dit apparaat voldoet aan deel 15 van de FCC-regels en de bedrijfstak van de branche Canada-belaste RSS-norm (en). De bewerking is onderhevig aan de volgende twee voor waarden: (1) dit apparaat veroorzaakt mogelijk geen schadelijk interferentie, en (2) dit apparaat moet alle interferenties ontvangen, inclusief interferentie die een ongewenste werking van het apparaat kan veroorzaken.
 
 ![Waarschuwing voor reglementaire informatie 1](./media/azure-stack-edge-mini-r-safety/regulatory-information-1.png)
 
 
-KAN ICES-3 (A)/NMB-3 (A) micro soft Corporation, One micro soft Way, Redmond, WA 98052, Verenigde Staten.
-Verenigde Staten: (800) 426-9400 Canada: (800) 933-4750
+KAN ICES-3 (A)/NMB-3 (A) micro soft Corporation, One micro soft Way, Redmond, WA 98052, USA Verenigde Staten: (800) 426-9400 Canada: (800) 933-4750
 
-Europese Unie: vraag een kopie aan van de EU-verklaring van overeenstemming. 
+#### <a name="european-union"></a>EUROPESE UNIE:
 
-![Waarschuwings pictogram](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png)
+Vraag een kopie aan van de EU-verklaring van overeenstemming. E-mail verzenden naar [CSI_Compliance@microsoft.com](mailto:CSI_Compliance@microsoft.com).
+
+![Waarschuwing voor waarschuwings pictogram ](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) **.**
 
 Dit is een product klasse. In een binnenlandse omgeving kan dit product radio storingen veroorzaken in welk geval de gebruiker kan worden verplicht om passende maat regelen te nemen.
 
@@ -237,7 +239,6 @@ Dit symbool op het product of de batterijen of het verpakkings materiaal houdt i
 Dit product bevat een munt batterij (s).
 
 Micro soft Ireland Sandyford ind est Dublin D18 KX32 IRL telefoon nummer: + 353 1 295 3826 faxnummer: + 353 1 706 4110
-
 
 
 ## <a name="next-steps"></a>Volgende stappen

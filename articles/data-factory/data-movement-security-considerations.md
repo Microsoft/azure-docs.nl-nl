@@ -1,22 +1,18 @@
 ---
 title: Beveiligingsoverwegingen
 description: Hierin wordt de basis beveiligings infrastructuur beschreven die services voor gegevens verplaatsing in Azure Data Factory gebruiken om uw gegevens te beveiligen.
-services: data-factory
 ms.author: abnarain
 author: nabhishek
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
-ms.openlocfilehash: 08a20349d012652fb15dc1818d0201d93175aed8
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 1a99fbd3d3163808a364e8b26e770563a901dc18
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550569"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371325"
 ---
 # <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Beveiligings overwegingen voor het verplaatsen van gegevens in Azure Data Factory
 

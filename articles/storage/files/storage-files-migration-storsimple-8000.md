@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 76a244810042adf3cec64b15fe847c5b684527c2
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 502776e85eaafa46fb2b5ce45ca3bd937e303566
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631181"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366231"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>StorSimple 8100 en 8600 migratie naar Azure File Sync
 
@@ -33,12 +33,12 @@ Wanneer u begint met het plannen van de migratie, moet u eerst alle StorSimple-a
 
 ### <a name="migration-cost-summary"></a>Samen vatting migratie kosten
 
-Migraties naar Azure-bestands shares van StorSimple-volumes via Data Transformation Service-taken in een StorSimple Data Manager resource zijn gratis. Er kunnen andere kosten in rekening worden gebracht tijdens en na een migratie:
+Migraties naar Azure-bestands shares van StorSimple-volumes via migratie taken in een StorSimple Data Manager resource zijn gratis. Er kunnen andere kosten in rekening worden gebracht tijdens en na een migratie:
 
 * **Netwerk** uitgaand: Uw StorSimple-bestanden bevinden zich in een opslag account binnen een specifieke Azure-regio. Als u de Azure-bestands shares die u hebt gemigreerd naar een opslag account dat zich in dezelfde Azure-regio bevindt, worden er geen kosten voor uitgaand verkeer gegenereerd. U kunt uw bestanden verplaatsen naar een opslag account in een andere regio als onderdeel van deze migratie. In dat geval zijn de kosten voor uitgaand verkeer van toepassing op u.
 * **Azure-bestands share transacties:** Wanneer bestanden worden gekopieerd naar een Azure-bestands share (als onderdeel van een migratie of buiten één), worden de transactie kosten toegepast als bestanden en meta gegevens worden geschreven. Start als best practice uw Azure-bestands share tijdens de migratie op de laag geoptimaliseerd voor trans acties. Schakel over naar de gewenste laag nadat de migratie is voltooid. De volgende fasen zullen dit op het juiste punt aanroepen.
 * **Een Azure-bestands share-laag wijzigen:** De laag van de kosten transacties van een Azure-bestands share wijzigen. In de meeste gevallen is het rendabeler om het advies van het vorige punt te volgen.
-* **Opslag kosten:** Wanneer deze migratie begint met het kopiëren van bestanden naar een Azure-bestands share, wordt Azure Files opslag verbruikt en gefactureerd.
+* **Opslag kosten:** Wanneer deze migratie begint met het kopiëren van bestanden naar een Azure-bestands share, wordt Azure Files opslag verbruikt en gefactureerd. Gemigreerde back-ups worden [moment opnamen van Azure-bestands shares](storage-snapshots-files.md). Moment opnamen van bestands shares gebruiken alleen opslag capaciteit voor de verschillen die ze bevatten.
 * **StorSimple:** Totdat u de mogelijkheid hebt om de inrichting van de StorSimple-apparaten en-opslag accounts ongedaan te maken, blijven de StorSimple kosten voor opslag, back-ups en toestellen gewoon optreden.
 
 ### <a name="direct-share-access-vs-azure-file-sync"></a>Direct delen-toegang versus Azure File Sync
@@ -49,7 +49,7 @@ Een alternatief voor directe toegang is [Azure file sync](./storage-sync-files-p
 
 Azure File Sync is een micro soft-Cloud service, gebaseerd op twee hoofd onderdelen:
 
-* Bestands synchronisatie en Cloud lagen.
+* Bestands synchronisatie en Cloud lagen voor het maken van een prestatie toegangs cache op een Windows-Server.
 * Bestands shares als systeem eigen opslag in azure waartoe toegang kan worden verkregen via meerdere protocollen zoals SMB en de REST van het bestand.
 
 Azure-bestands shares behouden belang rijke aspecten van de bestands kwaliteit van opgeslagen bestanden als kenmerken, machtigingen en tijds tempels. Met Azure-bestands shares is het niet meer nodig om een toepassing of service te interpreteren van de bestanden en mappen die zijn opgeslagen in de Cloud. U kunt deze systeem eigen toegang tot de vertrouwde protocollen en clients, zoals Windows Verkenner. Met Azure-bestands shares kunt u algemene bestands Server gegevens en toepassings gegevens opslaan in de Cloud. Het maken van een back-up van een Azure-bestands share is een ingebouwde functionaliteit die verder kan worden verbeterd door Azure Backup.
@@ -61,14 +61,14 @@ Dit artikel is gericht op de migratie stappen. Raadpleeg de volgende artikelen a
 
 ### <a name="storsimple-service-data-encryption-key"></a>Versleutelings sleutel voor StorSimple-service gegevens
 
-Wanneer u uw StorSimple-apparaat voor het eerst instelt, heeft het een versleutelings sleutel voor service gegevens gegenereerd en wordt u geadviseerd om de sleutel veilig op te slaan. Deze sleutel wordt gebruikt voor het versleutelen van alle gegevens in het gekoppelde Azure Storage-account waar uw bestanden worden opgeslagen met het StorSimple-apparaat.
+Wanneer u uw StorSimple-apparaat voor het eerst instelt, is er een ' service gegevens versleutelings sleutel ' gegenereerd en wordt u geadviseerd om de sleutel veilig op te slaan. Deze sleutel wordt gebruikt voor het versleutelen van alle gegevens in het gekoppelde Azure Storage-account waar uw bestanden worden opgeslagen met het StorSimple-apparaat.
 
-De versleutelings sleutel voor service gegevens is nodig voor een geslaagde migratie. Het is nu een goed moment om deze sleutel op te halen uit uw records, voor elk van de apparaten in uw inventaris.
+De ' service gegevens versleutelings sleutel ' is nodig voor een geslaagde migratie. Het is nu een goed moment om deze sleutel op te halen uit uw records, één voor elk van de apparaten in uw inventaris.
 
 Als u de sleutels niet in uw records vindt, kunt u de sleutel van het apparaat ophalen. Elk apparaat heeft een unieke versleutelings sleutel. De sleutel ophalen:
 
-* Een ondersteunings aanvraag met Microsoft Azure indienen via de Azure Portal. De inhoud van de aanvraag moet de serie nummers van het StorSimple-apparaat en de aanvraag voor het ophalen van de versleutelings sleutel voor de service gegevens hebben.
-* Een StorSimple-ondersteunings technicus neemt contact met u op voor een aanvraag voor een scherm deel van de vergadering.
+* Een ondersteunings aanvraag met Microsoft Azure indienen via de Azure Portal. De aanvraag moet de serie nummers van uw StorSimple-apparaat bevatten en een aanvraag voor het ophalen van de versleutelings sleutel voor service gegevens.
+* Een StorSimple-ondersteunings technicus neemt contact met u op voor een aanvraag voor een virtuele vergadering.
 * Zorg ervoor dat voordat de vergadering begint, u verbinding maakt met uw StorSimple-apparaat [via een seriële console](../../storsimple/storsimple-8000-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console) of via een [externe Power shell-sessie](../../storsimple/storsimple-8000-windows-powershell-administration.md#connect-remotely-to-storsimple-using-windows-powershell-for-storsimple).
 
 > [!CAUTION]
@@ -81,15 +81,21 @@ Als u de sleutels niet in uw records vindt, kunt u de sleutel van het apparaat o
 ### <a name="storsimple-volume-backups"></a>StorSimple volume back-ups
 
 StorSimple biedt differentiële back-ups op volume niveau. Azure-bestands shares hebben ook de mogelijkheid om share-moment opnamen te noemen.
+Uw migratie taken kunnen alleen back-ups verplaatsen, niet van gegevens van het Live volume. De meest recente back-up moet dus altijd op de lijst met back-ups staan die in een migratie zijn verplaatst.
 
-Bepaal of u als onderdeel van de migratie ook een back-up wilt verplaatsen.
+Bepaal of u oudere back-ups tijdens de migratie moet verplaatsen.
+De aanbevolen procedure is om deze lijst zo klein mogelijk te laten, zodat uw migratie taken sneller worden uitgevoerd.
+
+Als u essentiële back-ups wilt identificeren die moeten worden gemigreerd, moet u een controle lijst van uw back-upbeleid maken. Bijvoorbeeld:
+* De meest recente back-up. (Opmerking: de meest recente back-up moet altijd deel uitmaken van deze lijst.)
+* Eén back-up per maand gedurende 12 maanden.
+* Eén back-up per jaar gedurende drie jaar. 
+
+Later, wanneer u uw migratie taken maakt, kunt u deze lijst gebruiken om de exacte StorSimple volume back-ups te identificeren die moeten worden gemigreerd om te voldoen aan de vereisten in uw lijst.
 
 > [!CAUTION]
-> Stop hier als u back-ups van StorSimple-volumes moet migreren.
->
-> U kunt momenteel alleen de meest recente back-up van het volume migreren. Ondersteuning voor back-upmigratie arriveert aan het einde van 2020. Als u nu begint, kunt u later niet meer op uw back-ups flitsen. In de aanstaande versie moeten back-ups worden teruggezet naar de Azure-bestands shares van oudste naar nieuwste, waarbij de moment opnamen van de Azure-bestands shares zijn gemaakt.
-
-Als u alleen de Live gegevens wilt migreren en geen vereisten voor back-ups hebt, kunt u door gaan met het volgen van deze hand leiding. Als u een korte termijn voor het bewaren van back-ups van, bijvoorbeeld een maand of twee, wilt, kunt u ervoor kiezen om door te gaan met uw migratie en de inrichting van uw StorSimple-bronnen na die periode ongedaan te maken. Met deze aanpak kunt u zoveel Back-upgeschiedenis maken op de Azure-bestands share als u dat nodig hebt. Voor de tijd dat u beide systemen actief houdt, zijn er extra kosten van toepassing, waardoor deze methode niet kan worden aangeraden als u meer dan back-ups voor de korte termijn nodig hebt.
+> Het selecteren van meer dan **50** StorSimple volume back-ups wordt niet ondersteund.
+> Uw migratie taken kunnen alleen back-ups verplaatsen, nooit gegevens van het Live volume. Daarom is de meest recente back-up het dichtst bij de actuele gegevens en moet deze altijd deel uitmaken van de lijst met back-ups die moeten worden verplaatst in een migratie.
 
 ### <a name="map-your-existing-storsimple-volumes-to-azure-file-shares"></a>Uw bestaande StorSimple-volumes toewijzen aan Azure-bestands shares
 
@@ -99,31 +105,26 @@ Als u alleen de Live gegevens wilt migreren en geen vereisten voor back-ups hebt
 
 Uw migratie zal waarschijnlijk profiteren van een implementatie van meerdere opslag accounts die elk een kleiner aantal Azure-bestands shares bevatten.
 
-Als uw bestands shares zeer actief zijn (gebruikt door veel gebruikers of toepassingen), kunnen twee Azure-bestands shares de prestatie limiet van uw opslag account bereiken. Daarom is het best practice te migreren naar meerdere opslag accounts, elk met hun eigen afzonderlijke bestands shares en meestal niet meer dan twee of drie shares per opslag account.
+Als uw bestands shares zeer actief zijn (gebruikt door veel gebruikers of toepassingen), kunnen twee Azure-bestands shares de prestatie limiet van uw opslag account bereiken. Daarom is het best practice om te migreren naar meerdere opslag accounts, elk met hun eigen afzonderlijke bestands shares en meestal niet meer dan twee of drie shares per opslag account.
 
 Een best practice is het implementeren van opslag accounts met één bestands share. U kunt meerdere Azure-bestands shares in hetzelfde opslag account groepen als u archiverings shares hebt.
 
-Deze overwegingen zijn van toepassing op [directe Cloud toegang](#direct-share-access-vs-azure-file-sync) (via een Azure VM of service) dan Azure file sync. Als u van plan bent om Azure File Sync alleen te gebruiken voor deze shares, kunt u het groeperen van meerdere accounts in één Azure-opslag account prima. U kunt ook overwegen om een app te verplaatsen naar de Cloud en deze vervolgens rechtstreeks toegang tot een bestands share te geven. U kunt ook beginnen met het gebruik van een service in azure, waardoor er meer IOPS-en doorvoer nummers beschikbaar zouden zijn.
+Deze overwegingen zijn van toepassing op [directe Cloud toegang](#direct-share-access-vs-azure-file-sync) (via een Azure VM of service) dan Azure file sync. Als u van plan bent om alleen Azure File Sync te gebruiken voor deze shares, kunt u het groeperen van meerdere accounts in één Azure-opslag account prima. In de toekomst wilt u mogelijk een app omhoog en omlaag verplaatsen in de cloud die vervolgens rechtstreeks toegang zou hebben tot een bestands share. dit scenario zou kunnen profiteren van hogere IOPS en door voer. U kunt ook beginnen met het gebruik van een service in azure, wat zou kunnen profiteren van hogere IOPS en door voer.
 
 Als u een lijst met shares hebt gemaakt, wijst u elke share toe aan het opslag account waar deze zich bevindt.
 
 > [!IMPORTANT]
 > Beslis op een Azure-regio en zorg ervoor dat elk opslag account en Azure File Sync bron overeenkomen met de regio die u hebt geselecteerd.
+> Configureer de netwerk-en Firewall instellingen voor de opslag accounts nu niet. Als u deze configuraties op dit moment maakt, zou een migratie onmogelijk zijn. Deze instellingen voor Azure Storage configureren nadat de migratie is voltooid.
 
 ### <a name="phase-1-summary"></a>Samen vatting fase 1
 
 Aan het einde van fase 1:
 
 * U hebt een goed overzicht van uw StorSimple-apparaten en-volumes.
-* De service voor gegevens transformatie is gereed om toegang te krijgen tot uw StorSimple-volumes in de Cloud omdat u de versleutelings sleutel voor de service gegevens hebt opgehaald voor elk StorSimple-apparaat.
-* U hebt een abonnement waarvoor volumes moeten worden gemigreerd en ook hoe uw volumes moeten worden toegewezen aan het juiste aantal Azure-bestands shares en-opslag accounts.
-
-> [!CAUTION]
-> Als u back-ups moet migreren van StorSimple-volumes, kunt u **hier stoppen**.
->
-> Deze migratie aanpak is afhankelijk van de nieuwe functies voor gegevens transformatie service die momenteel geen back-ups kunnen migreren. Ondersteuning voor back-upmigratie arriveert aan het einde van 2020. U kunt momenteel alleen uw Live gegevens migreren. Als u nu begint, kunt u later niet meer op uw back-ups flitsen. Back-ups moeten worden ' afgespeeld ' naar de Azure-bestands shares van oudste naar nieuwste tot dynamische gegevens, met moment opnamen van Azure-bestands shares in.
-
-Als u alleen de Live gegevens wilt migreren en geen vereisten voor back-ups hebt, kunt u door gaan met het volgen van deze hand leiding.
+* De Data Manager-service is klaar om toegang te krijgen tot uw StorSimple-volumes in de Cloud omdat u uw ' service gegevens versleutelings sleutel ' hebt opgehaald voor elk StorSimple-apparaat.
+* U hebt een plan voor de migratie van volumes en back-ups (indien aanwezig na de meest recente).
+* U weet hoe u uw volumes kunt toewijzen aan het juiste aantal Azure-bestands shares en-opslag accounts.
 
 ## <a name="phase-2-deploy-azure-storage-and-migration-resources"></a>Fase 2: Azure Storage-en migratie bronnen implementeren
 
@@ -133,9 +134,12 @@ In deze sectie worden de overwegingen beschreven voor het implementeren van de v
 
 Waarschijnlijk moet u verschillende Azure-opslag accounts implementeren. Elk abonnement bevat een kleiner aantal Azure-bestands shares, conform uw implementatie plan, dat u in de vorige sectie van dit artikel hebt voltooid. Ga naar de Azure Portal voor het [implementeren van uw geplande opslag accounts](../common/storage-account-create.md#create-a-storage-account). Houd rekening met de volgende basis instellingen voor een nieuw opslag account.
 
+> [!IMPORTANT]
+> Configureer nu geen netwerk-en Firewall instellingen voor uw opslag accounts. Door deze configuraties op dit moment te maken, zou een migratie onmogelijk zijn. Deze instellingen voor Azure Storage configureren nadat de migratie is voltooid.
+
 #### <a name="subscription"></a>Abonnement
 
-U kunt hetzelfde abonnement gebruiken dat u hebt gebruikt voor uw StorSimple-implementatie of een andere. De enige beperking is dat uw abonnement zich in dezelfde Azure Active Directory Tenant moet bevindt als het StorSimple-abonnement. Overweeg het StorSimple-abonnement te verplaatsen naar de juiste Tenant voordat u een migratie start. U kunt alleen het hele abonnement verplaatsen. Afzonderlijke StorSimple-resources kunnen niet worden verplaatst naar een andere Tenant of een ander abonnement.
+U kunt hetzelfde abonnement gebruiken dat u hebt gebruikt voor uw StorSimple-implementatie of een andere. De enige beperking is dat uw abonnement zich in dezelfde Azure Active Directory Tenant moet bevindt als het StorSimple-abonnement. Overweeg het StorSimple-abonnement te verplaatsen naar de juiste Tenant voordat u een migratie start. U kunt alleen het hele abonnement verplaatsen; afzonderlijke StorSimple-resources kunnen niet worden verplaatst naar een andere Tenant of een ander abonnement.
 
 #### <a name="resource-group"></a>Resourcegroep
 
@@ -197,7 +201,7 @@ Voor de grote, 100-TiB-capaciteits bestands shares geldt een aantal voor delen:
 
 * Uw prestaties worden aanzienlijk verhoogd in vergelijking met de kleinere bestands shares met 5 TiB (bijvoorbeeld 10 keer de IOPS).
 * Uw migratie wordt aanzienlijk sneller voltooid.
-* U kunt ervoor zorgen dat een bestands share voldoende capaciteit heeft om alle gegevens die u naar de bestanden wilt migreren, te bevatten.
+* U kunt ervoor zorgen dat een bestands share voldoende capaciteit heeft voor alle gegevens die u naar de server migreert, inclusief de differentiële back-ups voor opslag capaciteit.
 * Toekomstige groei wordt gedekt.
 
 ### <a name="azure-file-shares"></a>Azure-bestands shares
@@ -232,24 +236,57 @@ Aan het einde van fase 2 hebt u uw opslag accounts en alle Azure-bestands shares
 
 ## <a name="phase-3-create-and-run-a-migration-job"></a>Fase 3: een migratie taak maken en uitvoeren
 
-In deze sectie wordt beschreven hoe u een migratie taak instelt en hoe u de mappen op een StorSimple-volume zorgvuldig toewijst die moeten worden gekopieerd naar de Azure-doel bestands share die u selecteert. Als u aan de slag wilt gaan, gaat u naar uw StorSimple Data Manager, zoekt u naar **taak definities** in het menu en selecteert u **+ taak definitie**. Het doel opslag type is de standaard **Bestands share van Azure**.
+In deze sectie wordt beschreven hoe u een migratie taak instelt en hoe u de mappen op een StorSimple-volume zorgvuldig toewijst die moeten worden gekopieerd naar de Azure-doel bestands share die u selecteert. Als u aan de slag wilt gaan, gaat u naar uw StorSimple Data Manager, zoekt u naar **taak definities** in het menu en selecteert u **+ taak definitie**. Het juiste type voor de doel opslag is de standaard instelling: **Azure-bestands share**.
 
 ![Typen migratie taken StorSimple 8000-serie.](media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-new-job-type.png "Een scherm opname van de taak definities Azure Portal in het dialoog venster nieuwe taak definities waarin wordt gevraagd om het type taak: kopiëren naar een bestands share of een BLOB-container.")
 
-> [!IMPORTANT]
-> Voordat u een migratie taak uitvoert, stopt u automatisch geplande back-ups van uw StorSimple-volumes.
-
 :::row:::
     :::column:::
-        ![Migratie taak voor de StorSimple 8000-serie.](media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-new-job.png "Een scherm opname van het nieuwe formulier voor het maken van een taak voor een gegevens transformatie service taak.")
+        ![Migratie taak voor de StorSimple 8000-serie.](media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-new-job.png "Een scherm opname van het nieuwe formulier voor het maken van een taak voor een migratie taak.")
     :::column-end:::
     :::column:::
-        **Naam van taakdefinitie**</br>Deze naam moet de set bestanden aangeven die u wilt verplaatsen. Het is een goede gewoonte om het een soort gelijke naam te geven als uw Azure-bestands share. </br></br>**Locatie waar de taak wordt uitgevoerd**</br>Wanneer u een regio selecteert, moet u dezelfde regio als uw StorSimple-opslag account selecteren. als dat niet het geval is, wordt er een regio gesloten. </br></br><h3>Bron</h3>**Bron abonnement**</br>Selecteer het abonnement waarin u de StorSimple-Apparaatbeheer resource opslaat. </br></br>**StorSimple-resource**</br>Selecteer uw StorSimple Apparaatbeheer uw apparaat is geregistreerd bij. </br></br>**Versleutelings sleutel voor service gegevens**</br>Raadpleeg deze [vorige sectie in dit artikel](#storsimple-service-data-encryption-key) voor het geval u de sleutel niet in uw records kunt vinden. </br></br>**Apparaat**</br>Selecteer uw StorSimple-apparaat dat het volume bevat waarnaar u wilt migreren. </br></br>**Volume**</br>Selecteer het bron volume. Later beslist u of u het hele volume of de submappen wilt migreren naar de Azure-doel bestands share. </br></br><h3>Doel</h3>Selecteer het abonnement, het opslag account en de Azure-bestands share als doel van deze migratie taak.
+        **Naam van taakdefinitie**</br>Deze naam moet de set bestanden aangeven die u wilt verplaatsen. Het is een goede gewoonte om het een soort gelijke naam te geven als uw Azure-bestands share. </br></br>**Locatie waar de taak wordt uitgevoerd**</br>Wanneer u een regio selecteert, moet u dezelfde regio als uw StorSimple-opslag account selecteren. als dat niet het geval is, wordt er een regio gesloten. </br></br><h3>Bron</h3>**Bron abonnement**</br>Selecteer het abonnement waarin u de StorSimple-Apparaatbeheer resource opslaat. </br></br>**StorSimple-resource**</br>Selecteer uw StorSimple Apparaatbeheer uw apparaat is geregistreerd bij. </br></br>**Versleutelings sleutel voor service gegevens**</br>Raadpleeg deze [vorige sectie in dit artikel](#storsimple-service-data-encryption-key) voor het geval u de sleutel niet in uw records kunt vinden. </br></br>**Apparaat**</br>Selecteer uw StorSimple-apparaat dat het volume bevat waarnaar u wilt migreren. </br></br>**Volume**</br>Selecteer het bron volume. Later beslist u of u het hele volume of de submappen wilt migreren naar de Azure-doel bestands share.</br></br> **Volume back-ups**</br>U kunt Selecteer *volume back-ups selecteren* om specifieke back-ups te kiezen die u als onderdeel van deze taak wilt verplaatsen. In een aanstaande, [toegewezen sectie van dit artikel](#selecting-volume-backups-to-migrate) wordt het proces uitgebreid besproken.</br></br><h3>Doel</h3>Selecteer het abonnement, het opslag account en de Azure-bestands share als doel van deze migratie taak.</br></br><h3>Adreslijst toewijzing</h3>[Een toegewezen sectie in dit artikel](#directory-mapping)bespreekt alle relevante informatie.
     :::column-end:::
 :::row-end:::
 
-> [!IMPORTANT]
-> De meest recente volume back-up wordt gebruikt om de migratie uit te voeren. Zorg ervoor dat er ten minste één volume back-up aanwezig is of dat de taak mislukt. Zorg er ook voor dat de meest recente back-up die u hebt, vrij recent is om de Live-share zo klein mogelijk te houden. Het kan hand matig worden geactiveerd en een ander volume back-up te volt ooien *voordat* u de zojuist gemaakte taak uitvoert.
+### <a name="selecting-volume-backups-to-migrate"></a>Te migreren volume back-ups
+
+Er zijn belang rijke aspecten rond het kiezen van back-ups die moeten worden gemigreerd:
+
+- Uw migratie taken kunnen alleen back-ups verplaatsen, geen gegevens van een actief volume. De meest recente back-up bevindt zich in de buurt van de actuele gegevens en moet altijd voor komt in de lijst met back-ups die zijn verplaatst tijdens een migratie.
+- Zorg ervoor dat de meest recente back-up recent is om de Live-share zo klein mogelijk te laten verschillen. Het kan hand matig worden geactiveerd en een ander volume back-up te volt ooien voordat u een migratie taak maakt. Een kleine Delta met de Live-share zorgt voor een betere migratie. Als deze Delta gelijk kan zijn aan nul = er zijn geen wijzigingen meer aangebracht in het StorSimple-volume nadat de laatste back-up in de lijst is gemaakt. vervolgens fase 5: gebruiker knippen is drastisch vereenvoudigd en sped.
+- Back-ups moeten worden afgespeeld in de Azure-bestands share **van oudste naar nieuwste**. Een oudere back-up kan niet worden gesorteerd in de lijst met back-ups op de Azure-bestands share nadat een migratie taak is uitgevoerd. Daarom moet u controleren of de lijst met back-ups is voltooid *voordat* u een taak maakt. 
+- Deze lijst met back-ups in een taak kan niet worden gewijzigd nadat de taak is gemaakt, zelfs als de taak nooit is uitgevoerd. 
+
+:::row:::
+    :::column:::        
+        :::image type="content" source="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-job-select-backups.png" alt-text="Een scherm opname van het nieuwe formulier voor het maken van een taak en het gedeelte waarin StorSimple-back-ups zijn geselecteerd voor migratie." lightbox="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-job-select-backups-expanded.png":::
+    :::column-end:::
+    :::column:::
+        Als u back-ups van uw StorSimple-volume voor uw migratie taak wilt selecteren, selecteert u de *optie volume back-ups selecteren* op het formulier voor het maken van een taak.
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        :::image type="content" source="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-job-select-backups-annotated.png" alt-text="Een afbeelding die laat zien dat de bovenste helft van de Blade voor het selecteren van back-ups alle beschik bare back-ups bevat. Een geselecteerde back-up wordt grijs weer gegeven in deze lijst en toegevoegd aan een tweede lijst op de onderste helft van de Blade. Het kan ook opnieuw worden verwijderd." lightbox="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-job-select-backups-annotated.png":::
+    :::column-end:::
+    :::column:::
+        Wanneer de Blade back-upselectie wordt geopend, wordt deze onderverdeeld in twee lijsten. In de eerste lijst worden alle beschik bare back-ups weer gegeven. U kunt de resultatenset uitbreiden en beperken door te filteren op een specifiek tijds bereik. (zie volgende sectie) </br></br>Een geselecteerde back-up wordt als grijs weer gegeven en wordt toegevoegd aan een tweede lijst op de onderste helft van de Blade. In de tweede lijst worden alle back-ups weer gegeven die zijn geselecteerd voor migratie. Een back-up die is geselecteerd in fout kan ook opnieuw worden verwijderd.
+        > [!CAUTION]
+        > U moet **alle** back-ups selecteren die u wilt migreren. U kunt later geen oudere back-ups meer toevoegen. U kunt de taak niet wijzigen om uw selectie te wijzigen wanneer de taak is gemaakt.
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        :::image type="content" source="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-job-select-backups-time.png" alt-text="Een scherm opname van de selectie van een tijds bereik van de Blade back-upselectie." lightbox="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-job-select-backups-time-expanded.png":::
+    :::column-end:::
+    :::column:::
+        Standaard wordt de lijst gefilterd om de StorSimple-volume back-ups in de afgelopen zeven dagen weer te geven, zodat u gemakkelijk de meest recente back-up kunt selecteren. Voor back-ups in het verleden gebruikt u het filter tijd bereik boven aan de Blade. U kunt een bestaand filter selecteren of een aangepast tijds bereik instellen om alleen te filteren op back-ups die tijdens deze periode zijn gemaakt.
+    :::column-end:::
+:::row-end:::
+
+> [!CAUTION]
+> Het selecteren van meer dan 50 StorSimple volume back-ups wordt niet ondersteund. Taken met een groot aantal back-ups kunnen mislukken.
 
 ### <a name="directory-mapping"></a>Adreslijst toewijzing
 
@@ -310,11 +347,30 @@ Hiermee worden meerdere bron locaties in een nieuwe mapstructuur gesorteerd:
 * Net als bij Windows zijn mapnamen niet hoofdletter gevoelig, maar worden ze behouden.
 
 > [!NOTE]
-> De inhoud van de map *\System Volume Information* en de *$Recycle. bin* op uw StorSimple-volume worden niet door de transformatie taak gekopieerd.
+> De inhoud van de map *\System Volume Information* en de *$Recycle. bin* op uw StorSimple-volume worden niet gekopieerd door de migratie taak.
+
+### <a name="run-a-migration-job"></a>Een migratie taak uitvoeren
+
+Uw migratie taken worden weer gegeven onder *taak definities* in de Data Manager resource die u hebt geïmplementeerd naar een resource groep.
+Selecteer in de lijst met taak definities de taak die u wilt uitvoeren.
+
+In de Blade taak die wordt geopend, ziet u dat de taken worden uitgevoerd in de onderste lijst. In eerste instantie is deze lijst leeg. Boven aan de Blade ziet u een opdracht met de naam *taak uitvoeren*. Met deze opdracht wordt de taak niet onmiddellijk uitgevoerd, wordt de Blade **taak uitvoeren** geopend:
+
+:::row:::
+    :::column:::
+        :::image type="content" source="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-run-job.png" alt-text="Een afbeelding met de Blade taak uitvoeren met een vervolg keuzelijst geopend, waarin de geselecteerde back-ups worden weer gegeven die moeten worden gemigreerd. De oudste back-up is gemarkeerd en moet eerst worden geselecteerd." lightbox="media/storage-files-migration-storsimple-8000/storage-files-migration-storsimple-8000-run-job-expanded.png":::
+    :::column-end:::
+    :::column:::
+        In deze release moet elke taak meermaals worden uitgevoerd. </br></br>**U moet beginnen met de oudste back-up uit de lijst met back-ups die u wilt migreren.** (gemarkeerd in de afbeelding)</br></br>U voert de taak opnieuw uit, op het moment dat u back-ups hebt geselecteerd, elke keer voor een progressief nieuwere back-up.
+        </br></br>
+        > [!CAUTION]
+        > Het is van belang dat u de migratie taak uitvoert met de oudste back-up die als eerste is geselecteerd en vervolgens weer, telkens met een progressief nieuwere back-up. U moet de volg orde van uw back-ups altijd hand matig behouden, van oudste naar nieuwste.
+    :::column-end:::
+:::row-end:::
 
 ### <a name="phase-3-summary"></a>Samen vatting fase 3
 
-Aan het einde van fase 3 voert u de taken van de gegevens transformatie service uit van StorSimple-volumes naar Azure-bestands shares. U kunt nu zich richten op het instellen van Azure File Sync voor de share (nadat de migratie taken voor een share zijn voltooid) of door de toegang van de share voor uw informatie medewerkers en apps naar de Azure-bestands share te sturen.
+Aan het einde van fase 3 hebt u ten minste één van de migratie taken van StorSimple-volumes uitgevoerd naar Azure-bestands shares. U moet dezelfde migratie taak enkele keer uitvoeren, van oudste naar meest recente back-ups die moeten worden gemigreerd. U kunt zich nu richten op het instellen van Azure File Sync voor de share (zodra de migratie taken voor een share zijn voltooid) of het direct delen van toegang voor uw informatie medewerkers en apps naar de Azure-bestands share.
 
 ## <a name="phase-4-access-your-azure-file-shares"></a>Fase 4: toegang tot uw Azure-bestands shares
 
@@ -371,7 +427,7 @@ Uw geregistreerde on-premises Windows Server-exemplaar moet gereed zijn en zijn 
 
 :::row:::
     :::column:::
-        [![Stapsgewijze hand leiding en demo voor het veilig beschikbaar maken van Azure-bestands shares voor informatie medewerkers en apps-Klik om af te spelen.](./media/storage-files-migration-storsimple-8000/azure-files-direct-access-video-placeholder.png)](https://youtu.be/KG0OX0RgytI)
+        [![Stapsgewijze hand leiding en demo voor het veilig beschikbaar maken van Azure-bestands shares voor informatie medewerkers en apps-Klik om af te spelen.](./media/storage-files-migration-storsimple-8000/azure-files-direct-access-video-placeholder.png)](https://youtu.be/a-Twfus0HWE)
     :::column-end:::
     :::column:::
         Deze video bevat een hand leiding en demo voor het veilig beschikbaar maken van Azure-bestands shares aan informatie medewerkers en apps in vijf eenvoudige stappen.</br>
@@ -391,21 +447,21 @@ Uw geregistreerde on-premises Windows Server-exemplaar moet gereed zijn en zijn 
 
 ### <a name="phase-4-summary"></a>Samen vatting fase 4
 
-In deze fase hebt u meerdere Data Transformation Service-taken in uw StorSimple Data Manager gemaakt en uitgevoerd. Deze taken hebben uw bestanden en mappen gemigreerd naar Azure-bestands shares. U hebt ook Azure File Sync geïmplementeerd of uw netwerk-en opslag accounts voor direct share-toegang voor bereid.
+In deze fase hebt u meerdere migratie taken gemaakt en uitgevoerd in uw StorSimple Data Manager. Deze taken hebben uw bestanden en mappen gemigreerd naar Azure-bestands shares. U hebt ook Azure File Sync geïmplementeerd of uw netwerk-en opslag accounts voor direct share-toegang voor bereid.
 
 ## <a name="phase-5-user-cut-over"></a>Fase 5: gebruikers knippen
 
 In deze fase wordt de migratie afronden:
 
 * Plan uw downtime.
-* Zorg ervoor dat alle wijzigingen die uw gebruikers en apps op de StorSimple zijn gemaakt, worden uitgevoerd terwijl de gegevens transformatie taken in fase 3 actief zijn.
+* Zorg ervoor dat alle wijzigingen die uw gebruikers en apps op de StorSimple zijn gemaakt, worden uitgevoerd terwijl de migratie taken in fase 3 actief zijn.
 * Laat uw gebruikers niet overdoen op het nieuwe Windows Server-exemplaar met Azure File Sync of de Azure-bestands shares via direct share-toegang.
 
 ### <a name="plan-your-downtime"></a>Uw downtime plannen
 
 Deze migratie aanpak vereist enige downtime voor uw gebruikers en apps. Het doel is om de uitval tijd tot een minimum te beperken. De volgende overwegingen kunnen helpen:
 
-* Zorg ervoor dat uw StorSimple-volumes beschikbaar zijn tijdens het uitvoeren van uw gegevens transformatie taken.
+* Zorg ervoor dat uw StorSimple-volumes beschikbaar zijn tijdens het uitvoeren van uw migratie taken.
 * Wanneer u klaar bent met het uitvoeren van uw gegevens migratie taken voor een share, is het tijd om gebruikers toegang te verwijderen (ten minste schrijf toegang) van de StorSimple-volumes of-shares. Met een eind-RoboCopy wordt uw Azure-bestands share opgeteld. Vervolgens kunt u de gebruikers over de gewenste snij rechten beschikken. Waar u RoboCopy uitvoert, is afhankelijk van of u ervoor hebt gekozen om Azure File Sync of direct share-Access te gebruiken. In de komende sectie op RoboCopy vallen deze onderwerpen.
 * Nadat u de RoboCopy-up hebt voltooid, kunt u de nieuwe locatie door de Azure-bestands share rechtstreeks of op een SMB-share op een Windows Server-exemplaar met Azure File Sync beschikbaar maken voor uw gebruikers. Vaak wordt een DFS-N-implementatie gebruikt om snel en efficiënt een knippen uit te voeren. De bestaande share adressen blijven consistent en verwijzen naar een nieuwe locatie die de gemigreerde bestanden en mappen bevat.
 
@@ -438,7 +494,7 @@ Op dit moment zijn er verschillen tussen uw on-premises Windows Server-exemplaar
 
 1. U moet de wijzigingen die gebruikers of apps op de StorSimple hebben geproduceerd tijdens de migratie door lopen.
 1. Voor gevallen waarin u Azure File Sync gebruikt: het StorSimple-apparaat heeft een gevulde cache in plaats van het Windows Server-exemplaar met alleen een naam ruimte zonder bestands inhoud die lokaal is opgeslagen. De laatste RoboCopy kan u helpen uw lokale Azure File Sync-cache te starten door over te halen van de lokaal opgeslagen bestanden in de cache, net zo lang als beschikbaar is en past op de Azure File Sync-server.
-1. Sommige bestanden zijn mogelijk achtergelaten door de gegevens transformatie taak vanwege ongeldige tekens. Als dit het geval is, kopieert u deze naar het Windows Server-exemplaar met Azure File Sync. Later kunt u ze aanpassen zodat ze worden gesynchroniseerd. Als u Azure File Sync niet gebruikt voor een bepaalde share, is het beter om de namen van de bestanden te wijzigen met ongeldige tekens op het StorSimple-volume. Voer vervolgens de RoboCopy rechtstreeks uit op de Azure-bestands share.
+1. Sommige bestanden zijn mogelijk achtergelaten door de migratie taak vanwege ongeldige tekens. Als dit het geval is, kopieert u deze naar het Windows Server-exemplaar met Azure File Sync. Later kunt u ze aanpassen zodat ze worden gesynchroniseerd. Als u Azure File Sync niet gebruikt voor een bepaalde share, is het beter om de namen van de bestanden te wijzigen met ongeldige tekens op het StorSimple-volume. Voer vervolgens de RoboCopy rechtstreeks uit op de Azure-bestands share.
 
 > [!WARNING]
 > Robocopy in Windows Server 2019 heeft momenteel een probleem waardoor bestanden die worden gelaagd door Azure File Sync op de doel server, opnieuw moeten worden gekopieerd van de bron en opnieuw moeten worden geüpload naar Azure wanneer u de functie/MIR van Robocopy gebruikt. Het is essentieel dat u Robocopy gebruikt op een andere Windows-Server dan 2019. Een voorkeurs keuze is Windows Server 2016. Deze notitie wordt bijgewerkt als het probleem wordt opgelost via Windows Update.

@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 09/10/2020
 ms.author: raynew
-ms.openlocfilehash: 6d6f56fb47bfdaadc6704e2a13ebcf0e893b8b1c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7ad0e73a90e733af0dd752100ebc71908f68181a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90602350"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388478"
 ---
 # <a name="manage-resources-created-for-the-vm-move"></a>Resources beheren die zijn gemaakt voor het verplaatsen van de VM
 
@@ -28,7 +28,7 @@ Verwijder hand matig de verzameling verplaatsen en Site Recovery resources die z
 2. Controleer of de virtuele machine en alle andere bron bronnen in de verplaatsings verzameling zijn verplaatst/verwijderd. Zo weet u zeker dat er geen resources in behandeling zijn die hiervan gebruikmaken.
 2. Verwijder deze resources.
 
-    - De naam van de verzameling voor verplaatsen is ```movecollection-<sourceregion>-<target-region>```.
+    - De naam van de verzameling voor verplaatsen is ```movecollection-<sourceregion>-<target-region>-<metadata-region>```.
     - De naam van het cacheopslagaccount is ```resmovecache<guid>```
     - De naam van de kluis is ```ResourceMove-<sourceregion>-<target-region>-GUID```.
 

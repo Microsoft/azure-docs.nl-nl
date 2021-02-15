@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/26/2020
 ms.author: shhazam
-ms.openlocfilehash: 82fcf7f129d5caba471d6d72da83a317b26c638c
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 06cf8b5f35bdebed0ebaa9e6949261d7c0d516f2
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807895"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522560"
 ---
 # <a name="get-started-with-defender-for-iot"></a>Aan de slag met Defender voor IoT
 
@@ -126,9 +126,8 @@ Zie [Sens oren verbinden met de on-premises beheer console](how-to-activate-and-
 ## <a name="7-populate-azure-sentinel-with-alert-information-optional"></a>7. Azure Sentinel vullen met waarschuwings gegevens (optioneel)
 
 Waarschuwings gegevens verzenden naar Azure Sentinel door Azure Sentinel te configureren. Zie [uw gegevens verbinden vanuit Defender voor IOT naar Azure Sentinel](how-to-configure-with-sentinel.md).
+## <a name="next-steps"></a>Volgende stappen
 
-## <a name="see-also"></a>Zie ook
+[Welkom bij Azure Defender voor IoT](overview.md)
 
-- [Welkom bij Azure Defender voor IoT](overview.md)
-
-- [Azure Defender voor IoT-architectuur](architecture.md)
+[Azure Defender voor IoT-architectuur](architecture.md)

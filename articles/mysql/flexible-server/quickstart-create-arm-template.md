@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: sumuth
 ms.date: 10/23/2020
-ms.openlocfilehash: 5be0bf21514dd92c2f980081bb57d873895bbb91
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: def9e4f1b3f1c4e8f88f77dfe6906a8c96a94744
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100099928"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389464"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql---flexible-server-preview"></a>Quickstart: Een ARM-sjabloon gebruiken om een Azure Database for MySQL - Flexible Server (Preview) te maken
 
@@ -204,22 +204,6 @@ read serverName &&
 echo "Enter the resource group where the Azure Database for MySQL server exists:" &&
 read resourcegroupName &&
 az resource show --resource-group $resourcegroupName --name $serverName --resource-type "Microsoft.DbForMySQL/flexibleServers"
-```
-## <a name="exporting-arm-template-from-the-portal"></a>ARM-sjabloon vanuit de portal exporteren
-U kunt [een arm-sjabloon exporteren](../../azure-resource-manager/templates/export-template-portal.md) vanuit de Azure Portal. Er zijn twee manieren om een sjabloon te exporteren:
-
-- [Exporteren uit resource groep of resource](../../azure-resource-manager/templates/export-template-portal.md#export-template-from-a-resource). Met deze optie wordt een nieuwe sjabloon gegenereerd op basis van bestaande resources. De geëxporteerde sjabloon is een moment opname van de huidige status van de resource groep. U kunt een volledige resource groep exporteren of specifieke resources binnen die resource groep.
-- [Exporteren vóór implementatie of van geschiedenis](../../azure-resource-manager/templates/export-template-portal.md#export-template-before-deployment). Met deze optie wordt een exacte kopie van een sjabloon opgehaald die wordt gebruikt voor de implementatie.
-
-Bij het exporteren van de sjabloon ```"parameters":{ }``` ziet u in de sectie van de sjabloon dat ```administratorLogin``` en ```administratorLoginPassword``` zal niet om veiligheids redenen worden opgenomen. U **moet** deze para meters aan uw sjabloon toevoegen voordat u de sjabloon implementeert, anders mislukt de sjabloon.
-
-```
-"administratorLogin": {
-      "type": "String"
-    },
-"administratorLoginPassword": {
-      "type": "SecureString"
-    },
 ```
 
 ## <a name="clean-up-resources"></a>Resources opschonen

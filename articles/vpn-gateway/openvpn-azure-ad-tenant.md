@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3055c9dd1294af81c6c52603dd60bb5aa6075abd
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: bff1eec0152ab0f57edd212adf6b14f7b588fb51
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92777868"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390161"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Een Azure Active Directory-tenant maken voor P2S OpenVPN-protocolverbindingen
 
@@ -42,7 +42,7 @@ Volg de stappen in [gebruikers toevoegen of verwijderen-Azure Active Directory](
 
 1. Zoek de Directory-ID van de map die u voor verificatie wilt gebruiken. Deze wordt weer gegeven in de sectie eigenschappen van de pagina Active Directory.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/directory-id.png" alt-text="Nieuwe Azure AD-Tenant" lightbox="./media/openvpn-create-azure-ad-tenant/directory-id.png":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/directory-id.png" alt-text="Scherm opname van de mapeigenschappen" lightbox="./media/openvpn-create-azure-ad-tenant/directory-id.png":::
 
 1. Kopieer de Map-id.
 
@@ -80,28 +80,28 @@ Volg de stappen in [gebruikers toevoegen of verwijderen-Azure Active Directory](
 
 1. Selecteer het account van de **globale beheerder** als u hierom wordt gevraagd.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/pick.png" alt-text="Nieuwe Azure AD-Tenant" border="false":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/pick.png" alt-text="Een account kiezen" border="false":::
 1. Selecteer **accepteren** wanneer u hierom wordt gevraagd.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/accept.jpg" alt-text="Nieuwe Azure AD-Tenant" border="false":::
-1. Onder uw Azure AD, in **bedrijfs toepassingen** , wordt **Azure VPN** weer gegeven.
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/accept.jpg" alt-text="Scherm afbeelding toont de bericht machtigingen die voor uw organisatie zijn aangevraagd en de optie voor het accepteren van gegevens." border="false":::
+1. Onder uw Azure AD, in **bedrijfs toepassingen**, wordt **Azure VPN** weer gegeven.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azurevpn.png" alt-text="Nieuwe Azure AD-Tenant" lightbox="./media/openvpn-create-azure-ad-tenant/azurevpn.png" :::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azurevpn.png" alt-text="Scherm opname van de pagina alle toepassingen." lightbox="./media/openvpn-create-azure-ad-tenant/azurevpn.png" :::
 1. Als u nog geen werkende Point-to-site-omgeving hebt, volgt u de instructie om er een te maken. Zie [een punt-naar-site-VPN maken](vpn-gateway-howto-point-to-site-resource-manager-portal.md) om een punt-naar-site-VPN-gateway te maken en te configureren.
 
     > [!IMPORTANT]
     > De basis-SKU wordt niet ondersteund voor OpenVPN.
 
-1. Schakel Azure AD-verificatie in op de VPN-gateway door te navigeren naar **punt-naar-site-configuratie** en **openvpn (SSL)** te kiezen als het **Tunnel Type** . Selecteer **Azure Active Directory** als **verificatie type** en vul vervolgens de gegevens in onder de sectie **Azure Active Directory** .
+1. Schakel Azure AD-verificatie in op de VPN-gateway door te navigeren naar **punt-naar-site-configuratie** en **openvpn (SSL)** te kiezen als het **Tunnel Type**. Selecteer **Azure Active Directory** als **verificatie type** en vul vervolgens de gegevens in onder de sectie **Azure Active Directory** .
 
    * **Tenant:** TenantID voor de Azure AD-Tenant ```https://login.microsoftonline.com/{AzureAD TenantID}/```
 
    * **Doel groep:** ApplicationID van de Azure AD Enter prise-app voor Azure VPN ```{AppID of the "Azure VPN" AD Enterprise app}```
 
-   * **Uitgever** : URL van de Secure token service ```https://sts.windows.net/{AzureAD TenantID}/```
+   * **Uitgever**: URL van de Secure token service ```https://sts.windows.net/{AzureAD TenantID}/```
 
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azure-ad-auth-portal.png" alt-text="Nieuwe Azure AD-Tenant" border="false":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azure-ad-auth-portal.png" alt-text="SAzure VPN" border="false":::
 
    > [!NOTE]
    > Zorg ervoor dat u een afsluitende slash aan het einde van de waarde opneemt `AadIssuerUri` . Anders kan de verbinding mislukken.
@@ -117,4 +117,4 @@ Volg de stappen in [gebruikers toevoegen of verwijderen-Azure Active Directory](
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U moet een VPN-client profiel maken en configureren voor het virtuele netwerk. Zie [Configure a VPN client for P2S VPN connections](openvpn-azure-ad-client.md).
+Een VPN-client profiel maken en configureren. Zie [Configure a VPN client for P2S VPN connections](openvpn-azure-ad-client.md).

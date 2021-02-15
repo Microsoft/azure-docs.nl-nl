@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: f51b46efcaf9be4f51e96b038b93562d0e3eae0b
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6321b96cb3db570102f138dcfd949d9c32daedbc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601148"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384466"
 ---
 # <a name="web-sdk-supported-browsers"></a>Browsers die Web-SDK ondersteunen
 
@@ -72,6 +72,8 @@ Zie de pen <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + bijsl
 </iframe>
 
 Meer code voorbeelden die gebruikmaken van Azure Maps in de bijsluiter, vindt u [hier](https://azuremapscodesamples.azurewebsites.net/?search=leaflet).
+
+[Hier](open-source-projects.md#third-part-map-control-plugins) vindt u een aantal populaire open-source kaart besturings elementen waarvoor het Azure Maps-team een invoeg toepassing heeft gemaakt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

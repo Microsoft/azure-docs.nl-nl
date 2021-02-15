@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: shhazam
-ms.openlocfilehash: d11154e26e2ffe97a1ea102a11dddb746db9433a
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 10246277715d23f42eb0bd17d19794b8d4503f3f
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809266"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521863"
 ---
 # <a name="security-recommendations"></a>Aanbevelingen voor beveiliging
 
@@ -60,7 +60,6 @@ Aanbevelings waarschuwingen bieden inzicht en suggesties voor acties om de bevei
 | Normaal | Het standaard IP-filter beleid moet worden geweigerd | IoT Hub | Voor de configuratie van de IP-filter moeten regels worden gedefinieerd voor het toegestane verkeer, en standaard moeten alle andere verkeer standaard worden geweigerd. |
 | Normaal | De IP-filter regel bevat een groot IP-bereik | IoT Hub | Een IP-adres bereik van de bron filter regel toestaan is te groot. Over de regel matig strikte regels kunnen uw IoT-hub beschikbaar maken voor kwaad aardige actors. |
 | Beperkt | Diagnostische logboeken inschakelen in IoT Hub | IoT Hub | Logboeken inschakelen en ze tot een jaar bewaren. Door Logboeken te behouden, kunt u de activiteiten sporen voor onderzoek doeleinden opnieuw maken wanneer er een beveiligings incident optreedt of uw netwerk is aangetast. |
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

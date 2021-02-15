@@ -5,28 +5,28 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/11/2020
+ms.date: 02/12/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aef4ff77eb02723bcd95dcc99a55094bd10acd4c
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 08f560f076caf90c9c930cedfd6a7ba9c6c8b37d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355474"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365443"
 ---
-# <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Inwisseling uitnodiging Azure Active Directory B2B-samen werking
+# <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Uitnodigingsinwisseling voor Azure Active Directory B2B-samenwerking
 
 In dit artikel worden de manieren beschreven waarop gast gebruikers toegang hebben tot uw resources en het toestemmings proces dat ze tegen komen. Als u een uitnodigings-e-mail naar de gast stuurt, bevat de uitnodiging een koppeling die de gast kan inwisselen om toegang te krijgen tot uw app of portal. Het e-mail bericht is slechts een van de manieren waarop gasten toegang kunnen krijgen tot uw resources. Als alternatief kunt u gasten toevoegen aan uw directory en ze een directe koppeling geven naar de portal of app die u wilt delen. Gasten worden door een proces voor de eerste toestemming begeleid, ongeacht de methode die ze gebruiken. Dit proces zorgt ervoor dat uw gasten akkoord gaan met de privacy-voor waarden en alle [gebruiks voorwaarden](../conditional-access/terms-of-use.md) accepteren die u hebt ingesteld.
 
 Wanneer u een gast gebruiker aan uw Directory toevoegt, heeft het gast gebruikers account een toestemmings status (zichtbaar in Power shell) die in eerste instantie is ingesteld op **PendingAcceptance**. Deze instelling blijft actief totdat de gast uw uitnodiging aanvaardt en akkoord gaat met uw privacybeleid en gebruiks voorwaarden. Daarna wordt de status van de toestemming gewijzigd in **geaccepteerd** en worden de pagina's met toestemming niet meer aan de gast gepresenteerd.
 
    > [!IMPORTANT]
-   > - **Vanaf 4 januari 2021** wordt de [ondersteuning voor webweergave van de WEBMODULE voor webmeldingen afgemeld](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Als u gebruikmaakt van Google Federation of Self-Service-aanmelding bij Gmail, moet u [uw line-of-business-toepassingen testen voor compatibiliteit](google-federation.md#deprecation-of-webview-sign-in-support).
-   > - **Vanaf 31 maart 2021** heeft Microsoft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en -tenants voor B2B-samenwerkingsscenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
+   > - **Vanaf 4 januari 2021** wordt [ondersteuning voor WebView-aanmelding afgeschaft](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html) in Google. Als u gebruikmaakt van Google-federatie of selfserviceregistratie met Gmail, moet u [de compatibiliteit van uw systeemeigen Line-of-Business-toepassingen testen](google-federation.md#deprecation-of-webview-sign-in-support).
+   > - **Vanaf 2021 oktober** heeft micro soft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en-tenants voor B2B-samenwerkings scenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
 
 ## <a name="redemption-through-the-invitation-email"></a>Inwisselen via e-mail met uitnodiging
 

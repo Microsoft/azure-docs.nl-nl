@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/19/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 7214a1eb41e4434818123ee26765ceb10ad551a5
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 598673bca5b893236cfd38a7fa220ff25ee9dd7e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99094906"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388512"
 ---
 # <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
@@ -185,6 +185,14 @@ In de volgende tabel wordt aangegeven of uw gegevens duurzaam zijn en beschikbaa
 | Lees toegang tot de secundaire regio is beschikbaar als de primaire regio niet beschikbaar is | Nee | Nee | Ja (met RA-GRS) | Ja (met RA-GZRS) |
 
 <sup>1</sup> failover van het account is vereist voor het herstellen van schrijf beschikbaarheid als de primaire regio niet beschikbaar is. Zie [nood herstel en failover van het opslag account](storage-disaster-recovery-guidance.md)voor meer informatie.
+
+### <a name="supported-azure-storage-services"></a>Ondersteunde Azure Storage services
+
+In de volgende tabel ziet u welke redundantie opties door elke Azure Storage-service worden ondersteund.
+
+| LRS | ZRS | GRS/RA-GRS | GZRS/RA-GZRS |
+|:-|:-|:-|:-|
+| Blob Storage<br />Queue Storage<br />Table Storage<br />Azure Files<br />Azure Managed disks | Blob Storage<br />Queue Storage<br />Table Storage<br />Azure Files | Blob Storage<br />Queue Storage<br />Table Storage<br />Azure Files<br /> | Blob Storage<br />Queue Storage<br />Table Storage<br />Azure Files<br /> |
 
 ### <a name="supported-storage-account-types"></a>Ondersteunde typen opslag accounts
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 9d4eb90d49e8cc671156833f22a85e7c2b4dd15b
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 24671a34214864e253d96c356dc8b2853bf6d560
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626657"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519793"
 ---
 # <a name="scenario-route-traffic-through-an-nva"></a>Scenario: Verkeer routeren via een NVA
 
@@ -30,9 +30,9 @@ Wanneer u werkt met virtuele WAN-hub routering, zijn er heel veel beschik bare s
 
 In dit scenario gebruiken we de naamgevings Conventie:
 
-* ' NVA VNets ' voor virtuele netwerken waarin gebruikers een NVA hebben geïmplementeerd en andere virtuele netwerken hebben verbonden als spokes (VNet 2 en VNet 4 in de **verbindings matrix** hieronder).
-* ' NVA spokes ' voor virtuele netwerken die zijn verbonden met een NVA VNet (VNet 5, VNet 6, VNet 7 en VNet 8 in de **verbindings matrix** hieronder).
-* ' Non-NVA VNets ' voor virtuele netwerken die zijn verbonden met een virtueel WAN zonder NVA of een andere VNets die hieraan zijn gekoppeld (VNet 1 en VNet 3 in de **verbindings matrix** hieronder).
+* ' NVA VNets ' voor virtuele netwerken waarin gebruikers een NVA hebben geïmplementeerd en andere virtuele netwerken hebben verbonden als spokes (VNet 2 en VNet 4 in de **afbeelding 2** verderop in het artikel).
+* ' NVA spokes ' voor virtuele netwerken die zijn verbonden met een NVA VNet (VNet 5, VNet 6, VNet 7 en VNet 8 in de **afbeelding 2** verderop in het artikel).
+* ' Non-NVA VNets ' voor virtuele netwerken die zijn verbonden met een virtueel WAN zonder NVA of een andere VNets die hieraan zijn gekoppeld (VNet 1 en VNet 3 in de **afbeelding 2** verderop in het artikel).
 * Hubs voor door micro soft beheerde virtuele WAN-hubs, waarbij NVA VNets zijn verbonden. NVA spoke VNets hoeft niet te zijn verbonden met virtuele WAN-hubs, alleen op NVA VNets.
 
 De volgende verbindings matrix bevat een overzicht van de stromen die in dit scenario worden ondersteund:
@@ -49,7 +49,7 @@ De volgende verbindings matrix bevat een overzicht van de stromen die in dit sce
 Elk van de cellen in de verbindings matrix beschrijft hoe een VNet of vertakking (de ' van ' kant van de stroom, de rijkoppen in de tabel) communiceert met een doel-VNet of vertakking (de ' aan ' kant van de stroom, de kolom koppen in cursief in de tabel). ' Direct ' betekent dat de connectiviteit systeem eigen wordt ondersteund door Virtual WAN, ' peering ' betekent dat de connectiviteit wordt verschaft door een User-Defined route in het VNet, "via NVA VNet" betekent dat de connectiviteit de NVA implementeert die in het NVA VNet is geïmplementeerd. Overweeg de volgende:
 
 * NVA-spokes worden niet beheerd door virtuele WAN. Als gevolg hiervan worden de mechanismen waarmee ze zullen communiceren met andere VNets of vertakkingen door de gebruiker onderhouden. Connectiviteit met het NVA VNet wordt gegeven door een VNet-peering en een standaard route naar 0.0.0.0/0 die verwijst naar de NVA als volgende hop moet verbinding met internet hebben, andere spokes en vertakkingen
-* NVA VNets kent hun eigen NVA-spokes, maar niet over NVA-spokes die zijn verbonden met andere NVA VNets. In tabel 1 is VNet 2 bijvoorbeeld van de VNet 5 en VNet 6, maar niet over andere spokes, zoals VNet 7 en VNet 8. Er is een statische route vereist om andere voor voegsels van spokes te injecteren in NVA VNets
+* NVA VNets kent hun eigen NVA-spokes, maar niet over NVA-spokes die zijn verbonden met andere NVA VNets. In de afbeelding 2 verderop in dit artikel weet VNet 2 bijvoorbeeld over VNet 5 en VNet 6, maar niet over andere spokes, zoals VNet 7 en VNet 8. Er is een statische route vereist om andere voor voegsels van spokes te injecteren in NVA VNets
 * Daarnaast hebben vertakkingen en niet-NVA VNets geen NVA-spoke, omdat NVA spokes geen verbinding hebben met virtuele WAN-hubs. Als gevolg hiervan zijn er ook statische routes nodig.
 
 Als rekening wordt gehouden met de NVA-spokes worden niet beheerd door virtuele WAN, worden in alle andere rijen hetzelfde connectiviteits patroon weer gegeven. Als gevolg hiervan wordt een enkele route tabel (de standaard instelling):

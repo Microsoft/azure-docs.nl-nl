@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van SQL Server naar Blob-opslag met behulp van de Azure-portal
 description: Meer informatie over het kopiëren van gegevens uit een on-premises gegevensopslag naar de cloud met behulp van de zelf-hostende Integration Runtime in Azure Data Factory.
-services: data-factory
 ms.author: abnarain
 author: nabhishek
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 11/09/2020
-ms.openlocfilehash: 172ebb5f5b7896b6b642c1fe6c5d01afb1dbf479
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
-ms.translationtype: HT
+ms.openlocfilehash: c44d00a5b23bff5e00864b44a396bcedfe5ea668
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553604"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391198"
 ---
 # <a name="copy-data-from-a-sql-server-database-to-azure-blob-storage"></a>Gegevens kopiëren van een SQL Server-database naar Azure Blob-opslag
 

@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
-ms.openlocfilehash: efb91c7b26c67a3672abb3f9cc8992fd45971a25
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 3ddd84f2f73546b42a3925802b3357df16485488
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932452"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521438"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Werken met Azure Functions Core Tools
 
@@ -41,7 +41,7 @@ U kunt slechts één versie van de kern Hulpprogramma's installeren op een bepaa
 
 ## <a name="prerequisites"></a>Vereisten
 
-Azure Functions Core Tools is momenteel afhankelijk van de Azure CLI voor verificatie met uw Azure-account. Dit betekent dat u [de Azure cli lokaal moet installeren](/cli/azure/install-azure-cli) om vanuit Azure functions core tools [naar Azure te kunnen publiceren](#publish) . 
+Azure Functions Core Tools is momenteel afhankelijk van de [Azure cli](/cli/azure/install-azure-cli) of [Azure PowerShell](/powershell/azure/install-az-ps) voor verificatie met uw Azure-account. Dit betekent dat u een van deze hulpprogram ma's moet installeren om vanuit Azure Functions Core Tools [naar Azure](#publish) te kunnen publiceren. 
 
 ## <a name="install-the-azure-functions-core-tools"></a>Azure Functions Core Tools installeren
 
@@ -505,7 +505,7 @@ func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 De Azure Functions Core Tools ondersteunt twee typen implementaties: functie project bestanden rechtstreeks implementeren in uw functie-app via [zip-implementatie](functions-deployment-technologies.md#zip-deploy) en [een aangepaste docker-container implementeren](functions-deployment-technologies.md#docker-container). U moet al [een functie-app hebben gemaakt in uw Azure-abonnement](functions-cli-samples.md#create), waar u uw code gaat implementeren. Projecten waarvoor compilatie vereist is, moeten worden gebouwd zodat de binaire bestanden kunnen worden geïmplementeerd.
 
 >[!IMPORTANT]
->U moet de [Azure cli](/cli/azure/install-azure-cli) lokaal hebben geïnstalleerd om te kunnen publiceren naar Azure vanuit de kern hulpprogramma's.  
+>U moet de [Azure cli](/cli/azure/install-azure-cli) of [Azure PowerShell](/powershell/azure/install-az-ps) lokaal geïnstalleerd hebben om te kunnen publiceren naar Azure vanuit de kern hulpprogramma's.  
 
 Een projectmap kan taalspecifieke bestanden en mappen bevatten die niet mogen worden gepubliceerd. Uitgesloten items worden weer gegeven in een. funcignore-bestand in de hoofdmap van het project.     
 
@@ -520,7 +520,7 @@ func azure functionapp publish <FunctionAppName>
 >[!IMPORTANT]
 > Java maakt gebruik van Maven om uw lokale project naar Azure te publiceren. Gebruik de volgende opdracht om te publiceren naar Azure: `mvn azure-functions:deploy` . Azure-resources worden gemaakt tijdens de eerste implementatie.
 
-Met deze opdracht wordt gepubliceerd naar een bestaande functie-app in Azure. U krijgt een fout melding als u probeert te publiceren naar een `<FunctionAppName>` die niet voor komt in uw abonnement. Zie [een functie-app maken voor serverloze uitvoering voor](./scripts/functions-cli-create-serverless.md)meer informatie over het maken van een functie-app vanuit de opdracht prompt of het Terminal venster met behulp van de Azure cli. Deze opdracht maakt standaard gebruik van [externe build](functions-deployment-technologies.md#remote-build) en implementeert uw app voor [uitvoering vanuit het implementatie pakket](run-functions-from-deployment-package.md). Als u deze aanbevolen implementatie modus wilt uitschakelen, gebruikt u de `--nozip` optie.
+Met deze opdracht wordt gepubliceerd naar een bestaande functie-app in Azure. U krijgt een fout melding als u probeert te publiceren naar een `<FunctionAppName>` die niet voor komt in uw abonnement. Zie [een functie-app maken voor serverloze uitvoering voor](./scripts/functions-cli-create-serverless.md)meer informatie over het maken van een functie-app vanuit de opdracht prompt of het Terminal venster met behulp van Azure CLI of Azure PowerShell. Deze opdracht maakt standaard gebruik van [externe build](functions-deployment-technologies.md#remote-build) en implementeert uw app voor [uitvoering vanuit het implementatie pakket](run-functions-from-deployment-package.md). Als u deze aanbevolen implementatie modus wilt uitschakelen, gebruikt u de `--nozip` optie.
 
 >[!IMPORTANT]
 > Wanneer u een functie-app maakt in de Azure Portal, gebruikt deze standaard versie 3. x van de functie-runtime. Volg de instructies in [uitvoeren op versie 1. x](functions-versions.md#creating-1x-apps)om de functie-app versie 1. x van de runtime te laten gebruiken.

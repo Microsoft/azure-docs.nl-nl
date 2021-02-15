@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 02/12/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f9ea8b1c1346deee9fed591493607270f18ad5b
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 94fd488ceb7ddb3724dd576c97c9070481e95147
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547760"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365630"
 ---
 # <a name="azure-active-directory-b2b-best-practices"></a>Best practices voor Azure Active Directory B2B
 Dit artikel bevat aanbevelingen en aanbevolen procedures voor B2B-samen werking (Business-to-Business) in Azure Active Directory (Azure AD).
 
    > [!IMPORTANT]
-   > **Vanaf 2021 maart** heeft micro soft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde (' virale ' of ' just-in-time ') Azure AD-accounts en tenants voor B2B-samenwerkings scenario's. Op dat moment wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. De functie voor eenmalige e-mail wachtwoord code wordt ingeschakeld, omdat deze een naadloze terugval verificatie methode biedt voor uw gast gebruikers. U hebt echter de mogelijkheid om deze functie uit te scha kelen als u deze niet wilt gebruiken. Zie voor meer informatie [verificatie via e-mail One-time wachtwoord code](one-time-passcode.md)
+   > **Vanaf 2021**: micro soft biedt geen ondersteuning meer voor de terugbetaling van uitnodigingen door het maken van niet-beheerde (' virale ' of ' just-in-time ') Azure AD-accounts en tenants voor B2B-samenwerkings scenario's. Op dat moment wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. De functie voor eenmalige e-mail wachtwoord code wordt ingeschakeld, omdat deze een naadloze terugval verificatie methode biedt voor uw gast gebruikers. U hebt echter de mogelijkheid om deze functie uit te scha kelen als u deze niet wilt gebruiken. Zie voor meer informatie [verificatie via e-mail One-time wachtwoord code](one-time-passcode.md)
 
 
 ## <a name="b2b-recommendations"></a>B2B-aanbevelingen

@@ -1,23 +1,18 @@
 ---
 title: Gegevens uit Google BigQuery kopiëren met behulp van Azure Data Factory
 description: Meer informatie over het kopiëren van gegevens uit Google BigQuery naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een data factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
-ms.openlocfilehash: 6751f64706444176f0df8f8fc0c6132e76b39b2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3fcaa6c1542578d983461623da743724a3114d9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417326"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389685"
 ---
 # <a name="copy-data-from-google-bigquery-by-using-azure-data-factory"></a>Gegevens uit Google BigQuery kopiëren met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -50,21 +45,21 @@ De volgende eigenschappen worden ondersteund voor de Google BigQuery-gekoppelde 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op **GoogleBigQuery**. | Ja |
-| project | De project-ID van het standaard BigQuery-project waarmee een query wordt uitgevoerd.  | Ja |
-| additionalProjects | Een door komma's gescheiden lijst met project-Id's van open bare BigQuery-projecten voor toegang.  | Nee |
-| requestGoogleDriveScope | Of u toegang tot Google Drive wilt aanvragen. Het toestaan van toegang tot Google Drive biedt ondersteuning voor federatieve tabellen die BigQuery gegevens combi neren met gegevens uit Google Drive. De standaardwaarde is **onwaar**.  | Nee |
-| authenticationType | Het OAuth 2,0-verificatie mechanisme dat wordt gebruikt voor verificatie. ServiceAuthentication kan alleen worden gebruikt op zelf-hostende Integration Runtime. <br/>Toegestane waarden zijn **UserAuthentication** en **ServiceAuthentication**. Raadpleeg de secties onder deze tabel voor meer eigenschappen en JSON-voor beelden voor deze verificatie typen. | Ja |
+| type | De eigenschap type moet worden ingesteld op **GoogleBigQuery**. | Yes |
+| project | De project-ID van het standaard BigQuery-project waarmee een query wordt uitgevoerd.  | Yes |
+| additionalProjects | Een door komma's gescheiden lijst met project-Id's van open bare BigQuery-projecten voor toegang.  | No |
+| requestGoogleDriveScope | Of u toegang tot Google Drive wilt aanvragen. Het toestaan van toegang tot Google Drive biedt ondersteuning voor federatieve tabellen die BigQuery gegevens combi neren met gegevens uit Google Drive. De standaardwaarde is **onwaar**.  | No |
+| authenticationType | Het OAuth 2,0-verificatie mechanisme dat wordt gebruikt voor verificatie. ServiceAuthentication kan alleen worden gebruikt op zelf-hostende Integration Runtime. <br/>Toegestane waarden zijn **UserAuthentication** en **ServiceAuthentication**. Raadpleeg de secties onder deze tabel voor meer eigenschappen en JSON-voor beelden voor deze verificatie typen. | Yes |
 
 ### <a name="using-user-authentication"></a>Gebruikers verificatie gebruiken
 
-Stel de eigenschap authenticationType in op **UserAuthentication**en geef de volgende eigenschappen op, samen met algemene eigenschappen die in de vorige sectie zijn beschreven:
+Stel de eigenschap authenticationType in op **UserAuthentication** en geef de volgende eigenschappen op, samen met algemene eigenschappen die in de vorige sectie zijn beschreven:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| clientId | ID van de toepassing die wordt gebruikt voor het genereren van het vernieuwings token. | Nee |
-| clientSecret | Geheim van de toepassing die wordt gebruikt voor het genereren van het vernieuwings token. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
-| refreshToken | Het vernieuwings token dat is verkregen van Google, wordt gebruikt om toegang te verlenen aan BigQuery. Meer informatie over het verkrijgen van [OAuth 2,0-toegangs tokens](https://developers.google.com/identity/protocols/OAuth2WebServer#obtainingaccesstokens) en [deze Community-Blog](https://jpd.ms/getting-your-bigquery-refresh-token-for-azure-datafactory-f884ff815a59). Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| clientId | ID van de toepassing die wordt gebruikt voor het genereren van het vernieuwings token. | No |
+| clientSecret | Geheim van de toepassing die wordt gebruikt voor het genereren van het vernieuwings token. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
+| refreshToken | Het vernieuwings token dat is verkregen van Google, wordt gebruikt om toegang te verlenen aan BigQuery. Meer informatie over het verkrijgen van [OAuth 2,0-toegangs tokens](https://developers.google.com/identity/protocols/OAuth2WebServer#obtainingaccesstokens) en [deze Community-Blog](https://jpd.ms/getting-your-bigquery-refresh-token-for-azure-datafactory-f884ff815a59). Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
 
 **Voorbeeld:**
 
@@ -94,14 +89,14 @@ Stel de eigenschap authenticationType in op **UserAuthentication**en geef de vol
 
 ### <a name="using-service-authentication"></a>Service verificatie gebruiken
 
-Stel de eigenschap authenticationType in op **ServiceAuthentication**en geef de volgende eigenschappen op, samen met algemene eigenschappen die in de vorige sectie worden beschreven. Dit verificatie type kan alleen worden gebruikt op zelf-hostende Integration Runtime.
+Stel de eigenschap authenticationType in op **ServiceAuthentication** en geef de volgende eigenschappen op, samen met algemene eigenschappen die in de vorige sectie worden beschreven. Dit verificatie type kan alleen worden gebruikt op zelf-hostende Integration Runtime.
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| e-mail | De e-mail-ID van het service account die wordt gebruikt voor ServiceAuthentication. Het kan alleen worden gebruikt op zelf-hostende Integration Runtime.  | Nee |
-| keyFilePath | Het volledige pad naar het. p12-sleutel bestand dat wordt gebruikt om het e-mail adres van het service account te verifiëren. | Nee |
-| trustedCertPath | Het volledige pad van het. pem-bestand dat vertrouwde CA-certificaten bevat die worden gebruikt om de server te controleren wanneer u verbinding maakt via TLS. Deze eigenschap kan alleen worden ingesteld wanneer u gebruikmaakt van TLS op zelf-hostende Integration Runtime. De standaard waarde is het cacerts. pem-bestand dat is geïnstalleerd met de Integration runtime.  | Nee |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is **onwaar**.  | Nee |
+| e-mail | De e-mail-ID van het service account die wordt gebruikt voor ServiceAuthentication. Het kan alleen worden gebruikt op zelf-hostende Integration Runtime.  | No |
+| keyFilePath | Het volledige pad naar het. p12-sleutel bestand dat wordt gebruikt om het e-mail adres van het service account te verifiëren. | No |
+| trustedCertPath | Het volledige pad van het. pem-bestand dat vertrouwde CA-certificaten bevat die worden gebruikt om de server te controleren wanneer u verbinding maakt via TLS. Deze eigenschap kan alleen worden ingesteld wanneer u gebruikmaakt van TLS op zelf-hostende Integration Runtime. De standaard waarde is het cacerts. pem-bestand dat is geïnstalleerd met de Integration runtime.  | No |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is **onwaar**.  | No |
 
 **Voorbeeld:**
 
@@ -133,9 +128,9 @@ Als u gegevens wilt kopiëren uit Google BigQuery, stelt u de eigenschap type va
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **GoogleBigQueryObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **GoogleBigQueryObject** | Yes |
 | sets | De naam van de Google BigQuery-gegevensset. |Nee (als "query" in activiteit bron is opgegeven)  |
-| table | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
+| tabel | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik en voor nieuwe werk `dataset` belasting `table` . | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -165,7 +160,7 @@ Als u gegevens wilt kopiëren uit Google BigQuery, stelt u het bron type in de K
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **GoogleBigQuerySource**. | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **GoogleBigQuerySource**. | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Een voorbeeld is `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

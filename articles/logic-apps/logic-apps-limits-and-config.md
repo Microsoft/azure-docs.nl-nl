@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 02/05/2021
-ms.openlocfilehash: 6c064acc44e180d3e99bdcf68d2e1e129d52fd5d
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 19c7d37d62ec54e57127f5993e8bae4d4e9a2908
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805931"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388529"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -193,19 +193,20 @@ Zie [overzicht: de implementatie voor Azure Logic apps automatiseren met behulp 
 
 ### <a name="integration-service-environment-ise"></a>Integration service Environment (ISE)
 
-Dit zijn de doorvoer limieten voor de [Premium ISE-SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level):
+* [Developer ISE SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level): biedt tot 500 uitvoeringen per minuut, maar let op deze overwegingen:
 
-| Name | Limiet | Notities |
-|------|-------|-------|
-| Uitvoerings limiet basis eenheid | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Biedt ~ 4.000 actie-uitvoeringen per minuut, wat ~ 160.000.000 actie uitvoeringen per maand is | |
-| Limiet voor het uitvoeren van schaal eenheden | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Elke schaal eenheid kan ~ 2.000 extra actie-uitvoeringen per minuut bieden, wat ~ 80.000.000 meer actie-uitvoeringen per maand | |
-| Maximale schaal eenheden die u kunt toevoegen | 10 | |
-||||
+  * Zorg ervoor dat u deze SKU alleen gebruikt voor onderzoek, experimenten, ontwikkeling of tests, niet voor productie-of prestatie testen. Deze SKU heeft geen SLA (Service Level Agreement), schaal baarheid of redundantie tijdens recycling, wat betekent dat u vertragingen of downtime mogelijk ondervindt.
 
-[Neem contact op met het Logic apps team](mailto://logicappsemail@microsoft.com) om aan uw vereisten te voldoen, om aan de slag te gaan met de normale verwerking, of om belasting tests uit te voeren.
+  * Back-end-updates kunnen de service af en toe onderbreken.
 
-> [!NOTE]
-> De [ISE-SKU voor ontwikkel aars](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) heeft geen gepubliceerde limieten, geen mogelijkheden voor het schalen van omhoog en geen Service Level Agreement (Sla). Gebruik deze SKU alleen voor experimenteren, ontwikkelen en testen, niet voor productie-of prestatie testen.
+* [Premium ISE SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level): in de volgende tabel worden de doorvoer limieten van deze SKU beschreven, maar als u deze limieten wilt overschrijden bij normale verwerking, of als u belasting tests wilt uitvoeren die boven deze limieten kunnen worden weer geven, [neemt u contact op met het Logic apps team](mailto://logicappsemail@microsoft.com) om aan uw vereisten te voldoen.
+
+  | Name | Limiet | Notities |
+  |------|-------|-------|
+  | Uitvoerings limiet basis eenheid | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Biedt ~ 4.000 actie-uitvoeringen per minuut, wat ~ 160.000.000 actie uitvoeringen per maand is | |
+  | Limiet voor het uitvoeren van schaal eenheden | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Elke schaal eenheid kan ~ 2.000 extra actie-uitvoeringen per minuut bieden, wat ~ 80.000.000 meer actie-uitvoeringen per maand | |
+  | Maximale schaal eenheden die u kunt toevoegen | 10 | |
+  ||||
 
 <a name="gateway-limits"></a>
 

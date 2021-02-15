@@ -8,12 +8,12 @@ ms.date: 10/08/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3f6c12b892e01aafd5beecdff14751481cf7fc96
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 406420fcd517ceda8ea6eedfc955f54b15541f74
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963394"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366599"
 ---
 # <a name="learn-how-to-deploy-modules-and-establish-routes-in-iot-edge"></a>Meer informatie over het implementeren van modules en het vaststellen van routes naar IoT Edge
 
@@ -230,7 +230,7 @@ De eigenschap source kan een van de volgende waarden hebben:
 | `/messages/modules/<moduleId>/outputs/*` | Een apparaat-naar-Cloud-bericht dat door een bepaalde module wordt verzonden via een bepaalde uitvoer |
 | `/messages/modules/<moduleId>/outputs/<output>` | Een apparaat-naar-Cloud-bericht dat door een specifieke module wordt verzonden via een specifieke uitvoer |
 
-### <a name="condition"></a>Conditie
+### <a name="condition"></a>Voorwaarde
 
 De voor waarde is optioneel in een route declaratie. Als u alle berichten van de bron wilt door geven aan de sink, laat u de **where** -component gewoon weg. U kunt ook de [IOT hub query taal](../iot-hub/iot-hub-devguide-routing-query-syntax.md) gebruiken om te filteren op bepaalde berichten of bericht typen die voldoen aan de voor waarde. IoT Edge routes bieden geen ondersteuning voor het filteren van berichten op basis van dubbele Tags of eigenschappen.
 
@@ -256,7 +256,7 @@ De Sink definieert waar de berichten worden verzonden. Alleen modules en IoT Hub
 
 De eigenschap Sink kan een van de volgende waarden hebben:
 
-| Sink | Beschrijving |
+| Sink | Description |
 | ---- | ----------- |
 | `$upstream` | Het bericht naar de IoT Hub verzenden |
 | `BrokeredEndpoint("/modules/<moduleId>/inputs/<input>")` | Het bericht naar een specifieke invoer van een specifieke module verzenden |
@@ -327,7 +327,7 @@ In het volgende voor beeld ziet u hoe een geldig manifest document van de implem
           "edgeAgent": {
             "type": "docker",
             "settings": {
-              "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.1",
               "createOptions": ""
             }
           },
@@ -337,7 +337,7 @@ In het volgende voor beeld ziet u hoe een geldig manifest document van de implem
             "restartPolicy": "always",
             "startupOrder": 0,
             "settings": {
-              "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
               "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
             }
           }

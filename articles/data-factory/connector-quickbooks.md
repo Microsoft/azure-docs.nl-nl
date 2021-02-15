@@ -1,23 +1,18 @@
 ---
 title: Gegevens kopiëren van QuickBooks Online met behulp van Azure Data Factory (preview)
 description: Informatie over het kopiëren van gegevens van QuickBooks Online naar ondersteunde Sink-gegevens archieven door gebruik te maken van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
 ms.author: jingwang
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/15/2021
-ms.openlocfilehash: ecdb0e55aa7127a373e63612908ed58109c1f8e2
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: eecbcb817ad31480f8f6c3c7272328d06b17c081
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233163"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384058"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Gegevens kopiëren van QuickBooks Online met behulp van Azure Data Factory (preview)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -52,7 +47,7 @@ De volgende eigenschappen worden ondersteund voor gekoppelde QuickBooks-Services
 |:--- |:--- |:--- |
 | type | De eigenschap type moet zijn ingesteld op: **QuickBooks** | Yes |
 | connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met QuickBooks. | Yes |
-| **_Onder `connectionProperties` :_* _ | | |
+| ***Onder `connectionProperties` :*** | | |
 | endpoint | Het eind punt van de QuickBooks Online-server. (dat wil zeggen, quickbooks.api.intuit.com)  | Yes |
 | companyId | De bedrijfs-ID van het QuickBooks-bedrijf dat moet worden geautoriseerd. Zie [Hoe kan ik mijn bedrijfs-id zoeken](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551)voor informatie over het vinden van de bedrijfs-id. | Yes |
 | consumerKey | De client-ID van uw QuickBooks Online-toepassing voor OAuth 2,0-verificatie. Meer informatie [vindt u hier](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0#obtain-oauth2-credentials-for-your-app). | Yes |
@@ -60,7 +55,7 @@ De volgende eigenschappen worden ondersteund voor gekoppelde QuickBooks-Services
 | refreshToken | Het OAuth 2,0-vernieuwings token dat is gekoppeld aan de QuickBooks-toepassing. Meer informatie [vindt u hier](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0#obtain-oauth2-credentials-for-your-app). Het token voor het vernieuwen van opmerkingen is na 180 dagen verlopen. De klant moet het vernieuwings token regel matig bijwerken. <br/>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md).| Yes |
 | useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
 
-_ *Voor beeld:**
+**Voorbeeld:**
 
 ```json
 {

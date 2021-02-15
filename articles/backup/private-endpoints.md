@@ -3,12 +3,12 @@ title: Privé-eindpunten
 description: Meer informatie over het proces van het maken van privé-eind punten voor Azure Backup en de scenario's waarbij persoonlijke eind punten worden gebruikt om de beveiliging van uw resources te hand haven.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: 0d9d77c139896f9067f73943dbb213fc655f00f6
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: a22da7341e3ebeff29bc784cfff0cc8aeb87fb9b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054869"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362455"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Privé-eind punten voor Azure Backup
 
@@ -27,26 +27,29 @@ In dit artikel vindt u informatie over het proces van het maken van privé-eind 
 - Virtuele netwerken met netwerk beleidsregels worden niet ondersteund voor privé-eind punten. U moet netwerk beleid uitschakelen voordat u doorgaat.
 - U moet de Recovery Services resource provider bij het abonnement opnieuw registreren als u deze vóór 1 2020 mei hebt geregistreerd. Als u de provider opnieuw wilt registreren, gaat u naar uw abonnement in het Azure Portal, navigeert u naar **resource provider** in de linkernavigatiebalk en selecteert u vervolgens **micro soft. Recovery Services** en selecteert u **opnieuw registreren**.
 - Het [terugzetten van meerdere regio's](backup-create-rs-vault.md#set-cross-region-restore) voor SQL-en SAP Hana database back-ups wordt niet ondersteund als de kluis een persoonlijk eind punt heeft ingeschakeld.
+- Wanneer u een Recovery Services kluis verplaatst die al gebruikmaakt van privé-eind punten naar een nieuwe Tenant, moet u de Recovery Services kluis bijwerken om de beheerde identiteit van de kluis opnieuw te maken en opnieuw te configureren, en zo nodig nieuwe persoonlijke eind punten maken (deze moeten zich in de nieuwe Tenant bevinden). Als dat niet het geval is, mislukken de back-up-en herstel bewerkingen. Daarnaast moeten alle RBAC-machtigingen (op rollen gebaseerd toegangs beheer) die in het abonnement zijn ingesteld, opnieuw worden geconfigureerd.
 
 ## <a name="recommended-and-supported-scenarios"></a>Aanbevolen en ondersteunde scenario's
 
 Hoewel persoonlijke eind punten zijn ingeschakeld voor de kluis, worden ze gebruikt voor het maken van back-ups en het herstellen van SQL-en SAP HANA-workloads in een Azure-VM en alleen back-ups van de MARS-agent. U kunt ook de kluis gebruiken voor het maken van back-ups van andere werk belastingen (er zijn echter geen persoonlijke eind punten nodig). Naast het maken van een back-up van SQL-en SAP HANA-workloads en-back-ups met behulp van de MARS-agent worden persoonlijke eind punten ook gebruikt voor het herstellen van bestanden voor Azure VM-back-ups. Zie de volgende tabel voor meer informatie:
 
-| Back-ups van werk belastingen in azure VM (SQL, SAP HANA), back-up maken met MARS agent | Het gebruik van privé-eind punten wordt aanbevolen voor het toestaan van back-ups en herstel, zonder dat er Ip's/FQDN-namen voor Azure Backup of Azure Storage van uw virtuele netwerken hoeven te worden allowlist. Zorg er in dat scenario voor dat Vm's die SQL-data bases hosten, Azure AD Ip's of FQDN-adressen kunnen bereiken. |
+| Back-ups van werk belastingen in azure VM (SQL, SAP HANA), back-up maken met MARS agent | Het gebruik van privé-eind punten wordt aanbevolen voor het toestaan van back-ups en herstel, zonder dat u de IP-adressen voor Azure Backup of Azure Storage van uw virtuele netwerken hoeft toe te voegen aan een lijst. Zorg er in dat scenario voor dat Vm's die SQL-data bases hosten, Azure AD Ip's of FQDN-adressen kunnen bereiken. |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Back-up van Azure VM**                                         | Voor VM-back-ups is geen toegang tot Ip's of FQDN-adressen toegestaan. Daarom zijn geen persoonlijke eind punten vereist voor het maken van back-ups en het herstellen van schijven.  <br><br>   Bestands herstel vanuit een kluis met persoonlijke eind punten zou echter worden beperkt tot virtuele netwerken die een persoonlijk eind punt voor de kluis bevatten. <br><br>    Wanneer u ACL'ed unmanaged disks gebruikt, moet u ervoor zorgen dat het opslag account met de schijven toegang krijgt tot **vertrouwde micro soft-Services** als het ACL'ed is. |
 | **Azure Files back-up**                                      | Azure Files back-ups worden opgeslagen in het lokale opslag account. Daarom zijn geen persoonlijke eind punten vereist voor back-up en herstel. |
 
-## <a name="creating-and-using-private-endpoints-for-backup"></a>Privé-eind punten maken en gebruiken voor back-up
+## <a name="get-started-with-creating-private-endpoints-for-backup"></a>Aan de slag met het maken van persoonlijke eind punten voor back-up
 
-In deze sectie vindt u informatie over de stappen voor het maken en gebruiken van privé-eind punten voor Azure Backup binnen uw virtuele netwerken.
+In de volgende secties worden de stappen besproken voor het maken en gebruiken van privé-eind punten voor Azure Backup binnen uw virtuele netwerken.
 
 >[!IMPORTANT]
 > Het wordt ten zeerste aangeraden om de stappen uit te voeren in dezelfde volg orde als vermeld in dit document. Als u dit niet doet, kan dit ertoe leiden dat de kluis niet compatibel is met het gebruik van privé-eind punten en dat u het proces opnieuw moet starten met een nieuwe kluis.
 
-[!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
+## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken
 
-Zie [deze sectie](#create-a-recovery-services-vault-using-the-azure-resource-manager-client) voor meer informatie over het maken van een kluis met behulp van de Azure Resource Manager-client. Hiermee maakt u een kluis met de beheerde identiteit al ingeschakeld. Meer informatie over Recovery Services kluizen [vindt u hier](./backup-azure-recovery-services-vault-overview.md).
+Privé-eind punten voor back-up kunnen alleen worden gemaakt voor Recovery Services kluizen waarvoor geen items zijn beveiligd (of waarvoor nog geen items in het verleden zijn beveiligd of geregistreerd). Daarom raden we u aan een nieuwe kluis te maken om te beginnen met. Zie  [een Recovery Services kluis maken en configureren](backup-create-rs-vault.md)voor meer informatie over het maken van een nieuwe kluis.
+
+Zie [deze sectie](#create-a-recovery-services-vault-using-the-azure-resource-manager-client) voor meer informatie over het maken van een kluis met behulp van de Azure Resource Manager-client. Hiermee maakt u een kluis met de beheerde identiteit al ingeschakeld.
 
 ## <a name="enable-managed-identity-for-your-vault"></a>Beheerde identiteit voor uw kluis inschakelen
 
@@ -69,7 +72,7 @@ Als u de vereiste privé-eind punten voor Azure Backup wilt maken, moet de kluis
 
 - De resource groep die het doel-VNet bevat
 - De resource groep waar de persoonlijke eind punten moeten worden gemaakt
-- De resource groep die de Privé-DNS zones bevat, zoals [hier](#creating-private-endpoints-for-backup) wordt beschreven
+- De resource groep die de Privé-DNS zones bevat, zoals [hier](#create-private-endpoints-for-azure-backup) wordt beschreven
 
 We raden u aan de rol **Inzender** voor deze drie resource groepen toe te kennen aan de kluis (beheerde identiteit). In de volgende stappen wordt beschreven hoe u dit doet voor een bepaalde resource groep (dit moet worden gedaan voor elk van de drie resource groepen):
 
@@ -84,41 +87,39 @@ We raden u aan de rol **Inzender** voor deze drie resource groepen toe te kennen
 
 Zie voor het beheren van machtigingen op een meer gedetailleerd niveau [rollen en machtigingen hand matig maken](#create-roles-and-permissions-manually).
 
-## <a name="creating-and-approving-private-endpoints-for-azure-backup"></a>Privé-eind punten voor Azure Backup maken en goed keuren
+## <a name="create-private-endpoints-for-azure-backup"></a>Privé-eind punten maken voor Azure Backup
 
-### <a name="creating-private-endpoints-for-backup"></a>Privé-eind punten voor back-up maken
+In deze sectie wordt uitgelegd hoe u een persoonlijk eind punt maakt voor uw kluis.
 
-In deze sectie wordt het proces voor het maken van een persoonlijk eind punt voor uw kluis beschreven.
+1. Navigeer naar uw kluis die hierboven is gemaakt en ga naar **verbindingen met privé-eind punten** op de linkernavigatiebalk. Selecteer **+ persoonlijk eind punt** aan de bovenkant om een nieuw persoonlijk eind punt te maken voor deze kluis.
 
-1. Zoek in de zoek balk naar en selecteer **privé-koppeling**. Hiermee gaat u naar het **persoonlijke koppelings centrum**.
-
-    ![Zoeken naar persoonlijke koppeling](./media/private-endpoints/search-for-private-link.png)
-
-1. Selecteer **privé-eind punten** op de navigatie balk aan de linkerkant. Selecteer in het deel venster **privé-eind punten** **+ toevoegen** om te beginnen met het maken van een persoonlijk eind punt voor uw kluis.
-
-    ![Persoonlijk eind punt toevoegen in persoonlijk koppelings centrum](./media/private-endpoints/add-private-endpoint.png)
+    ![Nieuw persoonlijk eind punt maken](./media/private-endpoints/new-private-endpoint.png)
 
 1. Eenmaal in het proces voor het maken van een **persoonlijk eind punt** , moet u details opgeven voor het maken van uw verbinding met een privé-eind punt.
+  
+    1. **Basis beginselen**: Vul de basis gegevens in voor uw privé-eind punten. De regio moet hetzelfde zijn als de kluis en de bron waarvan een back-up wordt gemaakt.
 
-    1. **Basis beginselen**: Vul de basis gegevens in voor uw privé-eind punten. De regio moet hetzelfde zijn als de kluis en de resource.
+        ![Basis details invullen](./media/private-endpoints/basics-tab.png)
 
-        ![Basis details invullen](./media/private-endpoints/basic-details.png)
+    1. **Resource**: op dit tabblad moet u de Paas-resource selecteren waarvoor u de verbinding wilt maken. Selecteer **micro soft. Recovery Services/kluizen** van het resource type voor uw gewenste abonnement. Als u klaar bent, kiest u de naam van uw Recovery Services kluis als de **resource** en **AzureBackup** als de **subresource** van het doel.
 
-    1. **Resource**: op dit tabblad moet u de Paas-resource vermelden waarvoor u de verbinding wilt maken. Selecteer **micro soft. Recovery Services/kluizen** van het resource type voor uw gewenste abonnement. Als u klaar bent, kiest u de naam van uw Recovery Services kluis als de **resource** en **AzureBackup** als de **subresource** van het doel.
+        ![De resource voor uw verbinding selecteren](./media/private-endpoints/resource-tab.png)
 
-        ![Het tabblad resource invullen](./media/private-endpoints/resource-tab.png)
+    1. **Configuratie**: Geef in configuratie het virtuele netwerk en het subnet op waar u het persoonlijke eind punt wilt maken. Dit is het Vnet waar de virtuele machine zich bevindt.
 
-    1. **Configuratie**: Geef in configuratie het virtuele netwerk en het subnet op waar u het persoonlijke eind punt wilt maken. Dit is het Vnet waar de virtuele machine zich bevindt. U kunt ervoor kiezen om **uw persoonlijke eind punt te integreren** met een privé-DNS-zone. U kunt ook uw aangepaste DNS-server gebruiken of een privé-DNS-zone maken.
+        Als u een persoonlijke verbinding wilt maken, moet u de vereiste DNS-records hebben. Op basis van uw netwerk installatie kunt u een van de volgende opties kiezen:
 
-        ![Tabblad Configuratie invullen](./media/private-endpoints/configuration-tab.png)
+          - Uw persoonlijke eind punt integreren met een privé-DNS-zone: Selecteer **Ja** als u wilt integreren.
+          - Uw aangepaste DNS-server gebruiken: Selecteer **Nee** als u uw eigen DNS-server wilt gebruiken.
 
-        Raadpleeg [deze sectie](#dns-changes-for-custom-dns-servers) als u uw aangepaste DNS-servers wilt gebruiken in plaats van de integratie met Azure privé-DNS-zones.  
+        Het beheren van DNS-records voor beide wordt [later beschreven](#manage-dns-records).
+
+          ![Het virtuele netwerk en subnet opgeven](./media/private-endpoints/configuration-tab.png)
 
     1. U kunt eventueel **labels** voor uw persoonlijke eind punt toevoegen.
-
     1. Ga door met het invoeren van gegevens en het eenmaal **maken** is voltooid. Wanneer de validatie is voltooid, selecteert u **maken** om het persoonlijke eind punt te maken.
 
-## <a name="approving-private-endpoints"></a>Persoonlijke eind punten goed keuren
+## <a name="approve-private-endpoints"></a>Privé-eind punten goed keuren
 
 Als de gebruiker die het persoonlijke eind punt maakt ook de eigenaar is van de Recovery Services kluis, wordt het persoonlijke eind punt dat hierboven is gemaakt, automatisch goedgekeurd. Anders moet de eigenaar van de kluis het persoonlijke eind punt goed keuren voordat het kan worden gebruikt. In deze sectie wordt de hand matige goed keuring van privé-eind punten in de Azure Portal beschreven.
 
@@ -130,7 +131,90 @@ Zie [hand matige goed keuring van privé-eind punten met behulp van de Azure Res
 
     ![Privé-eind punten goed keuren](./media/private-endpoints/approve-private-endpoints.png)
 
-## <a name="using-private-endpoints-for-backup"></a>Privé-eind punten gebruiken voor back-up
+## <a name="manage-dns-records"></a>DNS-records beheren
+
+Zoals eerder beschreven, hebt u de vereiste DNS-records in uw privé-DNS-zones of-servers nodig om privé verbinding te kunnen maken. U kunt uw persoonlijke eind punt rechtstreeks integreren met Azure privé-DNS-zones of uw aangepaste DNS-servers gebruiken om dit te doen, op basis van uw netwerk voorkeuren. Dit moet worden uitgevoerd voor alle drie de services: back-ups, blobs en wacht rijen.
+
+### <a name="when-integrating-private-endpoints-with-azure-private-dns-zones"></a>Bij het integreren van persoonlijke eind punten met persoonlijke DNS-zones van Azure
+
+Als u ervoor kiest om uw persoonlijke eind punt te integreren met particuliere DNS-zones, worden de vereiste DNS-records toegevoegd. U kunt de privé-DNS-zones weer geven die worden gebruikt onder **DNS-configuratie** van het persoonlijke eind punt. Als deze DNS-zones niet aanwezig zijn, worden deze automatisch gemaakt bij het maken van het persoonlijke eind punt. U moet echter controleren of uw virtuele netwerk (met de bronnen waarvan een back-up moet worden gemaakt) correct is gekoppeld aan alle drie de particuliere DNS-zones, zoals hieronder wordt beschreven.
+
+![DNS-configuratie in de privé-DNS-zone van Azure](./media/private-endpoints/dns-configuration.png)
+
+#### <a name="validate-virtual-network-links-in-private-dns-zones"></a>Koppelingen met virtuele netwerken valideren in particuliere DNS-zones
+
+Ga als volgt te werk voor **elke privé-DNS-** zone die hierboven wordt weer gegeven (voor back-ups, blobs en wacht rijen):
+
+1. Navigeer naar de optie respectieve **koppelingen voor virtuele netwerken** op de linkernavigatiebalk.
+1. U moet een vermelding kunnen zien voor het virtuele netwerk waarvoor u het persoonlijke eind punt hebt gemaakt, zoals hieronder wordt weer gegeven:
+
+    ![Virtueel netwerk voor privé-eind punt](./media/private-endpoints/virtual-network-links.png)
+
+1. Als u geen vermelding ziet, voegt u een virtuele netwerk koppeling toe aan al deze DNS-zones die ze niet hebben.
+
+    ![Virtuele netwerkkoppeling toevoegen](./media/private-endpoints/add-virtual-network-link.png)
+
+### <a name="when-using-custom-dns-server-or-host-files"></a>Wanneer u aangepaste DNS-server-of host-bestanden gebruikt
+
+Als u uw aangepaste DNS-servers gebruikt, moet u de vereiste DNS-zones maken en de DNS-records toevoegen die nodig zijn voor de persoonlijke eind punten op uw DNS-servers. Voor blobs en wacht rijen kunt u ook voorwaardelijke doorstuur servers gebruiken.
+
+#### <a name="for-the-backup-service"></a>Voor de back-upservice
+
+1. Maak in uw DNS-server een DNS-zone voor back-up volgens de volgende naamgevings regels:
+
+    |Zone |Service |
+    |---------|---------|
+    |`privatelink.<geo>.backup.windowsazure.com`   |  Backup        |
+
+    >[!NOTE]
+    > In de bovenstaande tekst `<geo>` verwijst naar de regio code (bijvoorbeeld *Eus* en *ne* voor VS-Oost en Europa-Noord). Raadpleeg de volgende lijsten voor regio codes:
+    >
+    > - [Alle open bare Clouds](https://download.microsoft.com/download/1/2/6/126a410b-0e06-45ed-b2df-84f353034fa1/AzureRegionCodesList.docx)
+    > - [China](https://docs.microsoft.com/azure/china/resources-developer-guide#check-endpoints-in-azure)
+    > - [Duitsland](https://docs.microsoft.com/azure/germany/germany-developer-guide#endpoint-mapping)
+    > - [US Gov](https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide)
+
+1. Daarna moeten de vereiste DNS-records worden toegevoegd. Als u de records wilt weer geven die moeten worden toegevoegd aan de DNS-zone voor back-ups, gaat u naar het persoonlijke eind punt dat u hierboven hebt gemaakt en gaat u naar de optie **DNS-configuratie** onder de linkernavigatiebalk.
+
+    ![DNS-configuratie voor aangepaste DNS-server](./media/private-endpoints/custom-dns-configuration.png)
+
+1. Voeg één vermelding toe voor elke FQDN en IP die wordt weer gegeven als type records in uw DNS-zone voor back-up. Als u een hostbestand gebruikt voor naam omzetting, moet u overeenkomstige vermeldingen in het hostbestand voor elk IP-adres en FQDN maken volgens de volgende notatie:
+
+    `<private ip><space><backup service privatelink FQDN>`
+
+>[!NOTE]
+>Zoals in de bovenstaande scherm afbeelding wordt weer gegeven, zijn de FQDN- `xxxxxxxx.<geo>.backup.windowsazure.com` en niet `xxxxxxxx.privatelink.<geo>.backup. windowsazure.com` . Zorg er in dat geval voor dat u (en indien nodig, toevoegen) `.privatelink.` op basis van de opgegeven notatie.
+
+#### <a name="for-blob-and-queue-services"></a>Voor Blob-en Queue-Services
+
+Voor blobs en wacht rijen kunt u voorwaardelijke doorstuur servers gebruiken of DNS-zones maken op uw DNS-server.
+
+##### <a name="if-using-conditional-forwarders"></a>Als voorwaardelijke doorstuur servers worden gebruikt
+
+Als u voorwaardelijke doorstuur servers gebruikt, voegt u doorstuur servers voor Blob-en wachtrij-FQDN als volgt toe:
+
+|FQDN  |IP  |
+|---------|---------|
+|`privatelink.blob.core.windows.net`     |  168.63.129.16       |
+|`privatelink.queue.core.windows.net`     | 168.63.129.16        |
+
+##### <a name="if-using-private-dns-zones"></a>Als u privé-DNS-zones gebruikt
+
+Als u DNS-zones voor blobs en wacht rijen gebruikt, moet u deze DNS-zones eerst maken en later de vereiste records toevoegen.
+
+|Zone |Service  |
+|---------|---------|
+|`privatelink.blob.core.windows.net`     |  Blob     |
+|`privatelink.queue.core.windows.net`     | Wachtrij        |
+
+Op dit moment worden alleen de zones voor blobs en wacht rijen gemaakt wanneer u aangepaste DNS-servers gebruikt. Het toevoegen van DNS-records wordt later in twee stappen uitgevoerd:
+
+1. Wanneer u de eerste back-upinstantie registreert, dat wil zeggen, wanneer u back-up voor de eerste keer configureert
+1. Wanneer u de eerste back-up uitvoert
+
+We voeren deze stappen uit in de volgende secties.
+
+## <a name="use-private-endpoints-for-backup"></a>Privé-eind punten gebruiken voor back-up
 
 Zodra de privé-eind punten die zijn gemaakt voor de kluis in uw VNet zijn goedgekeurd, kunt u deze gebruiken om uw back-ups te maken en op te slaan.
 
@@ -138,21 +222,80 @@ Zodra de privé-eind punten die zijn gemaakt voor de kluis in uw VNet zijn goedg
 >Zorg ervoor dat u alle hierboven vermelde stappen in het document hebt voltooid voordat u verdergaat. Voor samen vatting moet u de stappen in de volgende controle lijst hebben voltooid:
 >
 >1. Er is een (nieuwe) Recovery Services kluis gemaakt
->1. De kluis is ingeschakeld om een door het systeem toegewezen beheerde identiteit te gebruiken
->1. Relevante machtigingen toegewezen aan de beheerde identiteit van de kluis
->1. Een persoonlijk eind punt voor uw kluis gemaakt
->1. Het persoonlijke eind punt is goedgekeurd (indien niet automatisch goedgekeurd)
+>2. De kluis is ingeschakeld om een door het systeem toegewezen beheerde identiteit te gebruiken
+>3. Relevante machtigingen toegewezen aan de beheerde identiteit van de kluis
+>4. Een persoonlijk eind punt voor uw kluis gemaakt
+>5. Het persoonlijke eind punt is goedgekeurd (indien niet automatisch goedgekeurd)
+>6. Zorg ervoor dat alle DNS-records op de juiste wijze zijn toegevoegd (met uitzonde ring van BLOB-en wachtrij records voor aangepaste servers, die in de volgende secties worden besproken)
 
-### <a name="backup-and-restore-of-workloads-in-azure-vm-sql-sap-hana"></a>Back-ups maken en herstellen van werk belastingen in azure VM (SQL, SAP HANA)
+### <a name="check-vm-connectivity"></a>VM-connectiviteit controleren
 
-Zodra het persoonlijke eind punt is gemaakt en goedgekeurd, zijn er geen aanvullende wijzigingen vereist aan de client zijde om het persoonlijke eind punt te gebruiken. Alle communicatie-en gegevens overdracht van uw beveiligde netwerk naar de kluis wordt uitgevoerd via het persoonlijke eind punt.
-Als u echter persoonlijke eind punten voor de kluis verwijdert nadat er een server (SQL/SAP HANA) is geregistreerd, moet u de container opnieuw registreren bij de kluis. U hoeft de beveiliging niet te stoppen.
+Controleer het volgende in de virtuele machine in het vergrendelde netwerk:
+
+1. De virtuele machine moet toegang hebben tot AAD.
+2. Voer **nslookup** uit op de back-upurl ( `xxxxxxxx.privatelink.<geo>.backup. windowsazure.com` ) van uw virtuele machine om verbinding te maken. Hiermee wordt het privé-IP-adres dat is toegewezen aan het virtuele netwerk geretourneerd.
+
+### <a name="configure-backup"></a>Back-up configureren
+
+Nadat u hebt gecontroleerd of de bovenstaande controle lijst en toegang zijn voltooid, kunt u door gaan met het configureren van de back-up van werk belastingen naar de kluis. Als u een aangepaste DNS-server gebruikt, moet u DNS-vermeldingen toevoegen voor blobs en wacht rijen die beschikbaar zijn na het configureren van de eerste back-up.
+
+#### <a name="dns-records-for-blobs-and-queues-only-for-custom-dns-servershost-files-after-the-first-registration"></a>DNS-records voor blobs en wacht rijen (alleen voor aangepaste DNS-servers/host-bestanden) na de eerste registratie
+
+Nadat u een back-up hebt geconfigureerd voor ten minste één bron op een kluis waarvoor een persoonlijk eind punt is ingeschakeld, voegt u de vereiste DNS-records voor de blobs en wacht rijen toe, zoals hieronder wordt beschreven.
+
+1. Ga naar de resource groep en zoek naar het persoonlijke eind punt dat u hebt gemaakt.
+1. Afgezien van de naam van het persoonlijke eind punt dat u hebt opgegeven, ziet u dat er twee meer privé-eind punten worden gemaakt. Deze beginnen met `<the name of the private endpoint>_ecs` en zijn respectievelijk achtervoegsels `_blob` `_queue` .
+
+    ![Persoonlijke eindpunt resources](./media/private-endpoints/private-endpoint-resources.png)
+
+1. Navigeer naar elk van deze privé-eind punten. In de optie DNS-configuratie voor elk van de twee particuliere eind punten ziet u een record met en een FQDN en een IP-adres. Voeg beide toe aan uw aangepaste DNS-server, naast de eerder beschreven.
+Als u een hostbestand gebruikt, moet u de bijbehorende vermeldingen in het hostbestand voor elke IP/FQDN volgens de volgende notatie:
+
+    `<private ip><space><blob service privatelink FQDN>`<br>
+    `<private ip><space><queue service privatelink FQDN>`
+
+    ![DNS-configuratie van BLOB](./media/private-endpoints/blob-dns-configuration.png)
+
+Naast het bovenstaande is er nog een vermelding nodig na de eerste back-up, die [later](#dns-records-for-blobs-only-for-custom-dns-servershost-files-after-the-first-backup)wordt besproken.
+
+### <a name="backup-and-restore-of-workloads-in-azure-vm-sql-and-sap-hana"></a>Back-ups maken en herstellen van werk belastingen in azure VM (SQL en SAP HANA)
+
+Zodra het persoonlijke eind punt is gemaakt en goedgekeurd, zijn er geen andere wijzigingen vereist aan de client zijde om het persoonlijke eind punt te gebruiken (tenzij u SQL-beschikbaarheids groepen gebruikt, die verderop in deze sectie worden besproken). Alle communicatie-en gegevens overdracht van uw beveiligde netwerk naar de kluis wordt uitgevoerd via het persoonlijke eind punt. Als u echter persoonlijke eind punten voor de kluis verwijdert nadat er een server (SQL of SAP HANA) is geregistreerd, moet u de container opnieuw registreren bij de kluis. U hoeft de beveiliging niet te stoppen.
+
+#### <a name="dns-records-for-blobs-only-for-custom-dns-servershost-files-after-the-first-backup"></a>DNS-records voor blobs (alleen voor aangepaste DNS-servers/host-bestanden) na de eerste back-up
+
+Nadat u de eerste back-up hebt uitgevoerd en u een aangepaste DNS-server gebruikt (zonder voorwaardelijk door sturen), zal de back-up waarschijnlijk mislukken. Als dat gebeurt:
+
+1. Ga naar de resource groep en zoek naar het persoonlijke eind punt dat u hebt gemaakt.
+1. Afgezien van de drie eerder besproken particuliere eind punten, ziet u nu een vierde persoonlijk eind punt met de naam die begint met en waarvan het `<the name of the private endpoint>_prot` achtervoegsel is `_blob` .
+
+    ![Privé-endpoing met achtervoegsel](./media/private-endpoints/private-endpoint-prot.png)
+
+1. Navigeer naar dit nieuwe persoonlijke eind punt. In de optie DNS-configuratie ziet u een record met een FQDN en een IP-adres. Voeg deze toe aan uw privé-DNS-server, naast de eerder beschreven.
+
+    Als u een hostbestand gebruikt, maakt u de corresponderende vermeldingen in het hostbestand voor elk IP-adres en FQDN volgens de volgende notatie:
+
+    `<private ip><space><blob service privatelink FQDN>`
+
+>[!NOTE]
+>Op dit moment moet u **nslookup** kunnen uitvoeren vanaf de VM en moeten worden omgezet naar privé-IP-adressen wanneer u klaar bent met de back-up-en opslag-url's van de kluis.
+
+### <a name="when-using-sql-availability-groups"></a>Bij gebruik van SQL-beschikbaarheids groepen
+
+Bij het gebruik van SQL Availability groups (AG) moet u voorwaardelijk door sturen inrichten in de aangepaste AG DNS, zoals hieronder wordt beschreven:
+
+1. Meld u aan bij uw domein controller.
+1. Voeg onder de DNS-toepassing voorwaardelijke doorstuur servers voor alle drie DNS-zones (back-up, blobs en wacht rijen) toe aan de IP-168.63.129.16 van de host of het IP-adres van de aangepaste DNS-server, indien nodig. De volgende scherm afbeeldingen worden weer gegeven wanneer u doorstuurt naar het IP-adres van de Azure-host. Als u uw eigen DNS-server gebruikt, vervangt u door het IP-adres van uw DNS-server.
+
+    ![Voorwaardelijke doorstuur servers in DNS-beheer](./media/private-endpoints/dns-manager.png)
+
+    ![Nieuwe voorwaardelijke doorstuur server](./media/private-endpoints/new-conditional-forwarder.png)
 
 ### <a name="backup-and-restore-through-mars-agent"></a>Back-ups maken en herstellen via MARS-agent
 
 Wanneer u de MARS-agent gebruikt om een back-up van uw on-premises resources te maken, moet u ervoor zorgen dat uw on-premises netwerk (met uw resources waarvan u een back-up wilt maken) is gekoppeld aan het Azure-VNet dat een persoonlijk eind punt voor de kluis bevat, zodat u het kunt gebruiken. U kunt vervolgens door gaan met de installatie van de MARS-agent en de back-up configureren, zoals hier wordt beschreven. U moet er echter voor zorgen dat alle communicatie voor back-ups alleen via het peered netwerk plaatsvindt.
 
-Als u echter persoonlijke eind punten voor de kluis verwijdert nadat er een MARS-agent is geregistreerd, moet u de container opnieuw registreren bij de kluis. U hoeft de beveiliging niet te stoppen.
+Maar als u persoonlijke eind punten voor de kluis verwijdert nadat er een MARS-agent is geregistreerd, moet u de container opnieuw registreren bij de kluis. U hoeft de beveiliging niet te stoppen.
 
 ## <a name="additional-topics"></a>Extra onderwerpen
 
@@ -337,7 +480,11 @@ $privateEndpointConnection = New-AzPrivateLinkServiceConnection `
         -Name $privateEndpointConnectionName `
         -PrivateLinkServiceId $vault.ID `
         -GroupId "AzureBackup"  
-  
+
+$vnet = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $VMResourceGroupName
+$subnet = $vnet | Select -ExpandProperty subnets | Where-Object {$_.Name -eq '<subnetName>'}
+
+
 $privateEndpoint = New-AzPrivateEndpoint `
         -ResourceGroupName $vmResourceGroupName `
         -Name $privateEndpointName `
@@ -381,64 +528,6 @@ $privateEndpoint = New-AzPrivateEndpoint `
     }
     }
     ```
-
-### <a name="dns-changes-for-custom-dns-servers"></a>DNS-wijzigingen voor aangepaste DNS-servers
-
-#### <a name="create-dns-zones-for-custom-dns-servers"></a>DNS-zones maken voor aangepaste DNS-servers
-
-U moet drie particuliere DNS-zones maken en deze koppelen aan uw virtuele netwerk. Als de open bare Url's van de back-upservice, in tegens telling tot Blob en Queue, worden niet geregistreerd in open bare Azure DNS voor de omleiding naar de DNS-zones van de persoonlijke koppeling. 
-
-| **Zone**                                                     | **Service** |
-| ------------------------------------------------------------ | ----------- |
-| `privatelink.<geo>.backup.windowsazure.com`      | Backup      |
-| `privatelink.blob.core.windows.net`                            | Blob        |
-| `privatelink.queue.core.windows.net`                           | Wachtrij       |
-
->[!NOTE]
->In de bovenstaande tekst verwijst *geo* naar de regio code. Bijvoorbeeld *wcus* en *ne* voor West-Centraal VS en Europa-Noord respectievelijk.
-
-Raadpleeg [deze lijst](https://download.microsoft.com/download/1/2/6/126a410b-0e06-45ed-b2df-84f353034fa1/AzureRegionCodesList.docx) voor regio codes. Raadpleeg de volgende koppelingen voor URL-naamgevings conventies in nationale regio's:
-
-- [China](/azure/china/resources-developer-guide#check-endpoints-in-azure)
-- [Duitsland](../germany/germany-developer-guide.md#endpoint-mapping)
-- [US Gov](../azure-government/documentation-government-developer-guide.md)
-
-#### <a name="adding-dns-records-for-custom-dns-servers"></a>DNS-records toevoegen voor aangepaste DNS-servers
-
-Hiervoor moet u vermeldingen voor elke FQDN in uw privé-eind punt in uw Privé-DNS zone maken.
-
-U moet erop gewezen dat de persoonlijke eind punten die zijn gemaakt voor back-up, Blob en Queue-service, worden gebruikt.
-
-- Het persoonlijke eind punt voor de kluis gebruikt de naam die is opgegeven tijdens het maken van het persoonlijke eind punt
-- De persoonlijke eind punten voor Blob-en Queue-services worden voorafgegaan door de naam van hetzelfde voor de kluis.
-
-In de volgende afbeelding ziet u bijvoorbeeld de drie persoonlijke eind punten die zijn gemaakt voor een privé-eind punt verbinding met de naam *pee2epe*:
-
-![Drie privé-eind punten voor een verbinding met een privé-eind punt](./media/private-endpoints/three-private-endpoints.png)
-
-DNS-zone voor de back-upservice ( `privatelink.<geo>.backup.windowsazure.com` ):
-
-1. Navigeer naar uw persoonlijke eind punt voor back-up in het **persoonlijke koppelings centrum**. Op de overzichts pagina vindt u een lijst met de FQDN-en privé Ip's voor uw persoonlijke eind punt.
-
-1. Voeg één vermelding voor elke FQDN en een persoonlijk IP-adres toe als een type record.
-
-    ![Vermelding voor elke FQDN en privé-IP toevoegen](./media/private-endpoints/add-entry-for-each-fqdn-and-ip.png)
-
-DNS-zone voor de Blob service ( `privatelink.blob.core.windows.net` ):
-
-1. Navigeer naar uw persoonlijke eind punt voor Blob in het **persoonlijke koppelings centrum**. Op de overzichts pagina vindt u een lijst met de FQDN-en privé Ip's voor uw persoonlijke eind punt.
-
-1. Voeg een vermelding voor de FQDN-naam en het persoonlijke IP-adres toe als een type record.
-
-    ![Voeg een vermelding voor de FQDN-naam en het persoonlijke IP-adres toe als een type record voor de Blob service](./media/private-endpoints/add-type-a-record-for-blob.png)
-
-DNS-zone voor de Queue-service ( `privatelink.queue.core.windows.net` ):
-
-1. Navigeer naar het persoonlijke eind punt voor de wachtrij in het **persoonlijke koppelings centrum**. Op de overzichts pagina vindt u een lijst met de FQDN-en privé Ip's voor uw persoonlijke eind punt.
-
-1. Voeg een vermelding voor de FQDN-naam en het persoonlijke IP-adres toe als een type record.
-
-    ![Voeg een vermelding voor de FQDN-naam en het persoonlijke IP-adres toe als een type record voor de Queue-service](./media/private-endpoints/add-type-a-record-for-queue.png)
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

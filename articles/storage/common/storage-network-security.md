@@ -9,12 +9,12 @@ ms.date: 01/27/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 8172abb5e220f28061c7826af24a5d9a2043f4ad
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 5e08af509487188245b0fad9ba2d0f490944868f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219906"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371784"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Azure Storage-firewalls en virtuele netwerken configureren
 
@@ -371,10 +371,12 @@ In sommige gevallen is het mogelijk dat een toepassing afhankelijk is van Azure-
 
 De typen bewerkingen die een bron exemplaar kan uitvoeren op de gegevens van het opslag account, worden bepaald door de [Azure-roltoewijzingen](storage-auth-aad.md#assign-azure-roles-for-access-rights) van het bron exemplaar. Bron exemplaren moeten afkomstig zijn van dezelfde Tenant als uw opslag account, maar ze kunnen deel uitmaken van een abonnement in de Tenant.
 
-De lijst met ondersteunde Azure-Services wordt weer gegeven in de sectie [vertrouwde toegang op basis van door het systeem toegewezen beheerde identiteit](#trusted-access-system-assigned-managed-identity) van dit artikel.
+> [!NOTE]
+> Deze functie bevindt zich in de open bare preview en is beschikbaar in alle open bare Cloud regio's.
 
 > [!NOTE]
-> Deze functie bevindt zich in de open bare preview en is beschikbaar in alle open bare Cloud regio's. 
+> Regels van resource-instanties worden momenteel alleen ondersteund voor Azure Synapse. Ondersteuning voor andere Azure-Services die worden vermeld in de sectie [vertrouwde toegang op basis van door het systeem toegewezen beheerde identiteit](#trusted-access-system-assigned-managed-identity) van dit artikel, is in de komende weken beschikbaar.
+
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 

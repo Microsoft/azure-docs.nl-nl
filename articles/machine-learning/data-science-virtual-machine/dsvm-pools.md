@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Meer informatie over het maken van & een gedeelde groep data Science Virtual Machines (Dsvm) te implementeren als een gedeelde bron voor een team.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 12/10/2018
-ms.openlocfilehash: eb1242189f4c5a38421a7f44e8f5e738c44970b6
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: a118d5a3e716a80bda21ffe82a8cefd1da1202f3
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705520"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519708"
 ---
 # <a name="create-a-shared-pool-of-data-science-virtual-machines"></a>Een gedeelde groep data Science maken Virtual Machines
 

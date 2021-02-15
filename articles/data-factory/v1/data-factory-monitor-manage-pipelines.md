@@ -1,22 +1,18 @@
 ---
 title: Pijp lijnen bewaken en beheren met behulp van de Azure Portal en Power shell
 description: Meer informatie over het gebruik van de Azure Portal en Azure PowerShell voor het bewaken en beheren van de Azure-gegevens fabrieken en-pijp lijnen die u hebt gemaakt.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 2a30c755bc19849ad3a821cbbc75b787a3b0bb98
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 486f12c29c473d46e3aff73abe747f8aa5a2ef8d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495851"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380403"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Azure Data Factory pijp lijnen bewaken en beheren met behulp van de Azure Portal en Power shell
 > [!div class="op_single_selector"]
@@ -46,7 +42,7 @@ Met behulp van de Azure Portal kunt u het volgende doen:
 In deze sectie wordt ook beschreven hoe een segment overgang van een status naar een andere status.   
 
 ### <a name="navigate-to-your-data-factory"></a>Ga naar uw data factory
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Klik op **gegevens fabrieken** in het menu aan de linkerkant. Als u dit niet ziet, klikt u op **meer services >** en klikt u vervolgens op **gegevens fabrieken** onder de categorie **Intelligence en analyse** .
 
    ![Door alle >-gegevens fabrieken bladeren](./media/data-factory-monitor-manage-pipelines/browseall-data-factories.png)
@@ -87,7 +83,7 @@ De segmenten van de gegevensset in de data factory kunnen een van de volgende st
 
 <table>
 <tr>
-    <th align="left">Staat</th><th align="left">Substatus</th><th align="left">Beschrijving</th>
+    <th align="left">Staat</th><th align="left">Substatus</th><th align="left">Description</th>
 </tr>
 <tr>
     <td rowspan="8">Wachten</td><td>ScheduleTime</td><td>De tijd voor het uitvoeren van het segment is niet beschikbaar.</td>
@@ -115,7 +111,7 @@ De segmenten van de gegevensset in de data factory kunnen een van de volgende st
 </tr>
 <tr>
 <tr>
-<td rowspan="2">Wordt uitgevoerd</td><td>Valideren</td><td>De validatie wordt uitgevoerd.</td>
+<td rowspan="2">InProgress</td><td>Valideren</td><td>De validatie wordt uitgevoerd.</td>
 </tr>
 <td>-</td>
 <td>Het segment wordt verwerkt.</td>

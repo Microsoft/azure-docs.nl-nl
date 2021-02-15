@@ -33,8 +33,12 @@
       href: tutorial-load-balancer-standard-public-zonal-portal.md
     - name: Doorsturen via poort configureren in Load Balancer
       href: tutorial-load-balancer-port-forwarding-portal.md
-    - name: Een load balancer voor meerdere regio's maken - Portal
-      href: tutorial-cross-region-portal.md
+    - name: Load balancer voor alle regio's
+      items:
+        - name: Een load balancer voor meerdere regio's maken - Portal
+          href: tutorial-cross-region-portal.md
+        - name: Load balancer voor meerdere regio's maken-Power shell
+          href: tutorial-cross-region-powershell.md
 - name: Voorbeelden
   items:
     - name: Azure CLI
@@ -89,6 +93,8 @@
       href: backend-pool-management.md
     - name: Standard Load Balancer en Virtual Machine Scale Sets
       href: load-balancer-standard-virtual-machine-scale-sets.md
+    - name: Gegevens ophalen met behulp van de Azure-Instance Metadata Service
+      href: instance-metadata-service-load-balancer.md
 - name: Uitleg
   items:
     - name: Portalinstellingen
@@ -144,6 +150,8 @@
           href: move-across-regions-internal-load-balancer-powershell.md
     - name: Load balancer-configuratie voor alleen uitgaand verkeer
       href: egress-only.md
+    - name: Meta gegevens ophalen met de Azure-IMDS
+      href: howto-load-balancer-imds.md
     - name: Problemen oplossen
       items:
         - name: Problemen met Azure Load Balancer oplossen
@@ -181,6 +189,8 @@
     - name: Resource Manager-sjabloon
       href: /azure/templates/microsoft.network/loadbalancers
       displayName: ARM
+    - name: Algemene fout codes voor Azure Instance Metadata Service (IMDS)
+      href: troubleshoot-load-balancer-imds.md
 - name: Resources
   items:
     - name: Uw vaardigheden ontwikkelen met Microsoft Learn

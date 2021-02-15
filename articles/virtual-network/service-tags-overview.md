@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 506e568f44d8dd5354ed7bd3ec20d0c71d484b85
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 41db671e4ab76dc56dc2c01f4852640acfe3fd83
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475181"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389736"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -153,6 +153,7 @@ De IP-adresbereiken in deze bestanden bevinden zich in CIDR-notatie.
 ### <a name="tips"></a>Tips 
 - U kunt updates van de ene publicatie naar de volgende detecteren door verhoogde *changeNumber* -waarden in het JSON-bestand op te nemen. Elke subsectie (bijvoorbeeld **opslag. westus**) heeft een eigen *changeNumber* die wordt verhoogd wanneer er wijzigingen optreden. Het hoogste niveau van de *changeNumber* van het bestand wordt verhoogd wanneer een van de subsecties wordt gewijzigd.
 - Voor voor beelden van het parseren van de servicetag gegevens (bijvoorbeeld het ophalen van alle adresbereiken voor opslag in Westus), raadpleegt u de Help-documentatie voor de [service label detectie-API](/powershell/module/az.network/Get-AzNetworkServiceTag?viewFallbackFrom=azps-2.3.2) .
+- Wanneer er nieuwe IP-adressen aan service tags worden toegevoegd, worden ze niet ten minste één week in azure gebruikt. Dit geeft u tijd om systemen bij te werken die mogelijk de IP-adressen moeten volgen die aan service tags zijn gekoppeld.
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over het [maken van een netwerk beveiligings groep](tutorial-filter-network-traffic.md).

@@ -5,30 +5,31 @@ author: deborahc
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 09/22/2019
+ms.date: 02/09/2021
 ms.author: dech
-ms.openlocfilehash: 7b52a066f80b686a0e424d8f63d520d46691a72a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.custom: references_regions
+ms.openlocfilehash: b8ce745a0a0db96e7f6b9e3a0140d46364246e4a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187813"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379604"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Notebooks inschakelen voor Azure Cosmos DB accounts (preview-versie)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!IMPORTANT]
-> Ingebouwde notitie blokken voor Azure Cosmos DB zijn momenteel beschikbaar in de volgende Azure-regio's: Australië-oost, VS-Oost, VS-Oost 2, Europa-noord, Zuid-Centraal VS, Zuidoost-Azië, UK-zuid, Europa-west en VS-West 2. Als u notebooks wilt gebruiken, [maakt u een nieuw account met notitie blokken](#enable-notebooks-in-a-new-cosmos-account) of [schakelt u notitie blokken in voor een bestaand account](#enable-notebooks-in-an-existing-cosmos-account) in een van deze regio's.
+> Ingebouwde notitie blokken voor Azure Cosmos DB zijn momenteel beschikbaar in [29 regio's](#supported-regions). Als u notitie blokken wilt gebruiken, [maakt u een nieuw Cosmos-account](#create-a-new-cosmos-account) of [schakelt u notitie blokken in voor een bestaand account](#enable-notebooks-in-an-existing-cosmos-account) in een van deze regio's. 
 
 Met ingebouwde Jupyter-notebooks in Azure Cosmos DB kunt u uw gegevens van de Azure Portal analyseren en visualiseren. In dit artikel wordt beschreven hoe u deze functie voor uw Azure Cosmos DB-account kunt inschakelen.
 
-## <a name="enable-notebooks-in-a-new-cosmos-account"></a>Notitie blokken in een nieuw Cosmos-account inschakelen
-
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+## <a name="create-a-new-cosmos-account"></a>Een nieuw Cosmos-account maken
+Vanaf 10 februari 2021 worden voor nieuwe Azure Cosmos-accounts die zijn gemaakt in een van de [ondersteunde regio's](#supported-regions) automatisch notitie blokken ingeschakeld. Er is geen aanvullende configuratie nodig om notebooks in te scha kelen. Gebruik de volgende instructies om een nieuw account te maken:
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 1. Selecteer **Een resource maken** > **Databases** > **Azure Cosmos DB**.
-1. Selecteer op de pagina **Azure Cosmos DB account maken** de optie **notebooks**. 
+1. Voer de basis instellingen voor het account in. 
  
-    :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks.png" alt-text="Selecteer de optie notebooks in Azure Cosmos DB Blade maken":::
+   :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-create-new-account-detail-2.png" alt-text="De pagina Nieuw account voor Azure Cosmos DB":::
 
 1. Selecteer **Controleren + maken**. U kunt de optie **netwerk** en **Tags** overs Laan. 
 1. Controleer de accountinstellingen en selecteer vervolgens **Maken**. Het duurt een paar minuten om het account te maken. Wacht tot de portal-pagina **Uw implementatie is voltooid** weergeeft. 
@@ -74,6 +75,45 @@ U kunt ook **Nieuw notitie blok** selecteren om een nieuw notitie blok te maken 
 
 :::image type="content" source="media/enable-notebooks/create-or-upload-new-notebook.png" alt-text="Een nieuw notitie blok maken of uploaden":::
 
+## <a name="supported-regions"></a>Ondersteunde regio’s
+Ingebouwde notitie blokken voor Azure Cosmos DB zijn momenteel beschikbaar in 29 Azure-regio's. Voor nieuwe Azure Cosmos-accounts die zijn gemaakt in deze regio's, worden automatisch notitie blokken ingeschakeld. Er zijn gratis notitie blokken met uw account. 
+
+- Australië - centraal
+- Australië - centraal 2
+- Australië - oost
+- Australië - zuidoost
+- Brazilië - zuid
+- Canada - midden
+- Canada - oost
+- India - centraal
+- Central US
+- VS - oost
+- VS - oost 2
+- Frankrijk - centraal
+- Frankrijk - zuid
+- Duitsland - noord
+- Duitsland - west-centraal
+- Japan - west
+- Korea - zuid
+- VS Noord-Centraal
+- Europa - noord
+- VS Zuid-Centraal
+- Azië - zuidoost
+- Zwitserland - noord
+- UAE - centraal
+- Verenigd Koninkrijk Zuid
+- Verenigd Koninkrijk West
+- VS-West-Centraal
+- Europa -west
+- India - west
+- VS - west 2
+
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over de voor delen van [Azure Cosmos DB Jupyter-notebooks](cosmosdb-jupyter-notebooks.md)
+* Meer informatie over de voor delen van [Azure Cosmos DB Jupyter-notebooks](cosmosdb-jupyter-notebooks.md)
+* [Galerie met voor beelden van notebook verkennen](https://cosmos.azure.com/gallery.html)
+* [Python-notebookfuncties en-opdrachten gebruiken](use-python-notebook-features-and-commands.md)
+* [C#-notebookfuncties en -opdrachten gebruiken](use-csharp-notebook-features-and-commands.md)
+* [Notitie blokken importeren uit een GitHub-opslag plaats](import-github-notebooks.md)
+
+

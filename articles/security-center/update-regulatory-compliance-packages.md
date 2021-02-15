@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 3fca96c6cf11e0b35cd830fe4c0d8ccac8e66bd2
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 768f686889663d9b1af4b88d84b361ac9460a5a0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99548861"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381729"
 ---
 # <a name="customize-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>De set van standaarden aanpassen in het dash board nalevings regelgeving
 
@@ -92,7 +92,7 @@ In de volgende stappen wordt uitgelegd hoe u een pakket kunt toevoegen om te con
 
     :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Dashboard voor naleving van regelgeving" lightbox="./media/security-center-compliance-dashboard/compliance-dashboard.png":::
 
-## <a name="removing-a-standard-from-your-dashboard"></a>Een standaard van uw dash board verwijderen
+## <a name="remove-a-standard-from-your-dashboard"></a>Een standaard uit uw dash board verwijderen
 
 Als een van de opgegeven regelgevings normen niet relevant is voor uw organisatie, is het een eenvoudig proces om ze te verwijderen uit de gebruikers interface. Zo kunt u het nalevings Dashboard van de regelgeving verder aanpassen en zich richten op de standaarden die van toepassing zijn op u.
 

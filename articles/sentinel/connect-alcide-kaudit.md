@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/21/2020
 ms.author: yelevin
-ms.openlocfilehash: cf8da1d88529a823ff4399fb955c8a5e0abbd20e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d1314b79f09f1bed2de5d6964b0a6224b5962ca
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87038236"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096868"
 ---
 # <a name="connect-your-alcide-kaudit-to-azure-sentinel"></a>Uw Alcide kAudit verbinden met Azure Sentinel
 
@@ -63,7 +63,7 @@ Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **
 
 Als u het relevante schema in Logboeken voor de Alcide kAudit wilt gebruiken, zoekt u naar de hierboven vermelde gegevens typen.
 
-Het kan 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven.
+Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

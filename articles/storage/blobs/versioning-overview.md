@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 02/09/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 267fd57b2fd359a73d5c1e01568aba14594e9290
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 692a820bea69071485a973a988ae91bd70b74f35
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980202"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380811"
 ---
 # <a name="blob-versioning"></a>BLOB-versie beheer
 
@@ -28,7 +28,7 @@ Micro soft raadt aan om BLOB-versie beheer te gebruiken om eerdere versies van e
 Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer informatie over het inschakelen van BLOB-versies.
 
 > [!IMPORTANT]
-> BLOB-versie beheer kan u niet helpen bij het herstellen van een onbedoelde verwijdering van een opslag account of container. Als u onbedoeld verwijderen van het opslag account wilt voor komen, configureert u een **CannotDelete** -vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen](../../azure-resource-manager/management/lock-resources.md)te voor komen voor meer informatie over het vergren delen van Azure-resources.
+> BLOB-versie beheer kan u niet helpen bij het herstellen van een onbedoelde verwijdering van een opslag account of container. Als u onbedoeld verwijderen van het opslag account wilt voor komen, configureert u een vergren deling van de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen](../../azure-resource-manager/management/lock-resources.md)te voor komen voor meer informatie over het vergren delen van Azure-resources. Als u containers wilt beveiligen tegen onbedoeld verwijderen, configureert u de tijdelijke verwijdering van de container voor het opslag account. Zie [voorlopig verwijderen voor containers (preview)](soft-delete-container-overview.md)voor meer informatie.
 
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 

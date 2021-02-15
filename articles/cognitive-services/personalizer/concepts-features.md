@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 10/14/2019
-ms.openlocfilehash: 55d1b7171201c962278d7c526528b36848c19449
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f49abd4ca1cc1ccdcb7ba2b0fab3bad953dede5d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217886"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380539"
 ---
 # <a name="features-are-information-about-actions-and-context"></a>Functies zijn informatie over acties en context
 
@@ -80,7 +80,7 @@ JSON-objecten kunnen geneste JSON-objecten en eenvoudige eigenschappen/waarden b
         { 
             "user": {
                 "profileType":"AnonymousUser",
-                "latlong": ["47.6", "-122.1"]
+                "latlong": ["47.6,-122.1"]
             }
         },
         {
@@ -190,7 +190,7 @@ De acties die u naar de positie-API verzendt, zijn afhankelijk van wat u probeer
 
 Hier volgen enkele voorbeelden:
 
-|Doel|Actie|
+|Doel|Bewerking|
 |--|--|
 |Personaliseer welk artikel op een nieuws website is gemarkeerd.|Elke actie is een mogelijk nieuws artikel.|
 |Optimaliseer de plaatsing van advertenties op een website.|Elke actie is een indeling of regels voor het maken van een indeling voor de advertenties (bijvoorbeeld bovenaan, kleine afbeeldingen, grote afbeeldingen).|

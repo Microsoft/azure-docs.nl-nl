@@ -3,12 +3,12 @@ title: Index van beleidsvoorbeelden
 description: Index van inbouwingen in Azure Policy. Categorietags, naleving van regelgeving, Key Vault, Kubernetes, gastconfiguratie en meer.
 ms.date: 01/29/2021
 ms.topic: sample
-ms.openlocfilehash: ad608f594c544cc8de2d80f7cedaeeffdc2b83ea
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: ae016e42af582847b871624844773ed971ef583d
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99095737"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095593"
 ---
 # <a name="azure-policy-samples"></a>Voorbeelden van Azure Policy
 
@@ -43,6 +43,7 @@ Hieronder vindt u de ingebouwde modules voor [Naleving van regelgeving](../conce
 - [CMMC niveau 3](./cmmc-l3.md)
 - [HIPAA HITRUST 9.2](./hipaa-hitrust-9-2.md)
 - [ISO 27001:2013](./iso-27001.md)
+- [Hand matig informatie beveiliging Nieuw-Zeeland](./new-zealand-ism.md)
 - [NIST SP 800-53 R4](./nist-sp-800-53-r4.md)
 - [NIST SP 800-171 R2](./nist-sp-800-171-r2.md)
 

@@ -1,22 +1,18 @@
 ---
 title: Use case-klant profilering
 description: Meer informatie over hoe Azure Data Factory wordt gebruikt voor het maken van een gegevensgestuurde werk stroom (pijp lijn) om klanten van games te profileren.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 313050035694eaeabaefc8e09383ec3a887eb32b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: bb7f0fb6184a813dd9fd3c193bc5e3bda5628f2d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495919"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376714"
 ---
 # <a name="use-case---customer-profiling"></a>Use case-klant profilering
 Azure Data Factory is een van de vele services die worden gebruikt voor het implementeren van de Cortana Intelligence Suite oplossings versnellers.  Ga voor meer informatie over Cortana Intelligence naar [Cortana Intelligence Suite](https://www.microsoft.com/cortanaanalytics). In dit document beschrijven we een eenvoudige use-case om u te helpen aan de slag te gaan met informatie over hoe Azure Data Factory veelvoorkomende analyse problemen kunt oplossen.

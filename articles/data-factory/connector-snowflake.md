@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren en transformeren in sneeuw vlokken
 description: Meer informatie over het kopiëren en transformeren van gegevens in sneeuw met behulp van Data Factory.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/08/2020
-ms.openlocfilehash: 49e4a6f7f8c268669a94796257d5740ec6f4e6ff
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 816c9ae25034382763e18ea61055a2a18ccc03d6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902082"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388835"
 ---
 # <a name="copy-and-transform-data-in-snowflake-by-using-azure-data-factory"></a>Gegevens kopiëren en transformeren in sneeuw met behulp van Azure Data Factory
 
@@ -111,7 +107,7 @@ De volgende eigenschappen worden ondersteund voor de gegevensset van sneeuw vlok
 | :-------- | :----------------------------------------------------------- | :-------------------------- |
 | type      | De eigenschap type van de DataSet moet worden ingesteld op **SnowflakeTable**. | Yes                         |
 | schema | De naam van het schema. Opmerking: de schema naam is hoofdletter gevoelig in ADF. |Nee voor bron, ja voor Sink  |
-| table | De naam van de tabel/weer gave. Opmerking de naam van de tabel is hoofdletter gevoelig in ADF. |Nee voor bron, ja voor Sink  |
+| tabel | De naam van de tabel/weer gave. Opmerking de naam van de tabel is hoofdletter gevoelig in ADF. |Nee voor bron, ja voor Sink  |
 
 **Voorbeeld:**
 
@@ -150,8 +146,8 @@ Als u gegevens van sneeuw vlokken wilt kopiëren, worden de volgende eigenschapp
 | type                         | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **SnowflakeSource**. | Yes      |
 | query          | Hiermee geeft u de SQL-query op voor het lezen van gegevens van sneeuw. Als de namen van het schema, de tabel en de kolommen een kleine letter bevatten, wordt de object-id in query als aanhalings teken genoteerd, bijvoorbeeld `select * from "schema"."myTable"` .<br>Het uitvoeren van een opgeslagen procedure wordt niet ondersteund. | No       |
 | exportSettings | Geavanceerde instellingen voor het ophalen van gegevens uit sneeuw. U kunt de bestanden configureren die worden ondersteund door de opdracht kopiëren naar, die Data Factory door gegeven wanneer u de instructie aanroept. | No       |
-| ***Onder `exportSettings` :** _ |  |  |
-| type | Het type opdracht voor exporteren, ingesteld op _ * SnowflakeExportCopyCommand * *. | Yes |
+| ***Onder `exportSettings` :*** |  |  |
+| type | Het type export opdracht, ingesteld op **SnowflakeExportCopyCommand**. | Yes |
 | additionalCopyOptions | Aanvullende kopieer opties, gegeven als een woorden lijst met sleutel-waardeparen. Voor beelden: MAX_FILE_SIZE, OVERSCHRIJVEN. Zie Opties voor het [kopiëren van sneeuw vlokken](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location.html#copy-options-copyoptions)voor meer informatie. | No |
 | additionalFormatOptions | Aanvullende opties voor bestands indelingen die als een woorden lijst met sleutel-waardeparen worden meegeleverd. Voor beelden: DATE_FORMAT, TIME_FORMAT TIMESTAMP_FORMAT. Zie [Opties voor type sneeuw-indeling](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location.html#format-type-options-formattypeoptions)voor meer informatie. | No |
 
@@ -280,8 +276,8 @@ Als u gegevens wilt kopiëren naar sneeuw vlokken, worden de volgende eigenschap
 | type              | De eigenschap type van de Sink van de Kopieer activiteit is ingesteld op **SnowflakeSink**. | Yes                                           |
 | preCopyScript     | Geef een SQL-query op voor het uitvoeren van de Kopieer activiteit die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar sneeuw worden geschreven. Gebruik deze eigenschap om de vooraf geladen gegevens op te schonen. | No                                            |
 | importSettings | Geavanceerde instellingen voor het schrijven van gegevens naar sneeuw. U kunt de bestanden configureren die worden ondersteund door de opdracht kopiëren naar, die Data Factory door gegeven wanneer u de instructie aanroept. | No |
-| **_Onder `importSettings` :_* _ |                                                              |  |
-| type | Het type import opdracht, ingesteld op _ * SnowflakeImportCopyCommand * *. | Yes |
+| ***Onder `importSettings` :*** |                                                              |  |
+| type | Het type van de opdracht importeren, ingesteld op **SnowflakeImportCopyCommand**. | Yes |
 | additionalCopyOptions | Aanvullende kopieer opties, gegeven als een woorden lijst met sleutel-waardeparen. Voor beelden: ON_ERROR, FORCEren, LOAD_UNCERTAIN_FILES. Zie Opties voor het [kopiëren van sneeuw vlokken](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table.html#copy-options-copyoptions)voor meer informatie. | No |
 | additionalFormatOptions | Aanvullende opties voor de bestands indeling die worden meegeleverd met de Kopieer opdracht, als een woorden lijst met sleutel-waardeparen. Voor beelden: DATE_FORMAT, TIME_FORMAT TIMESTAMP_FORMAT. Zie [Opties voor type sneeuw-indeling](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table.html#format-type-options-formattypeoptions)voor meer informatie. | No |
 

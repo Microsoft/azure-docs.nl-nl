@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/04/2021
 ms.custom: references_regions
-ms.openlocfilehash: 954d08fa163b481393df28ae22016859badea694
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 46f2035e5f8409cd38faeb9c327b88b06fc7d7a0
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99537303"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097633"
 ---
 # <a name="security-overview-for-azure-cognitive-search"></a>Beveiligings overzicht voor Azure Cognitive Search
 
@@ -113,12 +113,6 @@ Er zijn [drie basis rollen](search-security-rbac.md#management-tasks-by-role) ge
 
 > [!Note]
 > Met behulp van Azure-mechanismen kunt u een abonnement of resource vergren delen om te voor komen dat uw zoek service per ongeluk of onbevoegde wordt verwijderd door gebruikers met beheerders rechten. Zie voor meer informatie [bronnen vergren delen om onverwachte verwijdering te voor komen](../azure-resource-manager/management/lock-resources.md).
-
-## <a name="threat-protection"></a>Bescherming tegen bedreigingen
-
-Toegang tot inhoud in een zoek service vindt alleen gebruik van query's. Als uw zoek service het doel is van een query aanval, worden query's door het systeem verwijderd naarmate de piek capaciteit van het systeem nadert. 
-
-Bandbreedte beperking werkt anders voor verschillende Api's. Query-Api's (zoeken/suggesties/automatisch volt ooien) en het indexeren van Api's worden dynamisch beperkt op basis van de belasting van de service. Index-Api's en service bewerkingen-API hebben limieten voor statisch aantal aanvragen. U kunt de limieten voor de statische frequentie aanvragen bekijken in [beperkings limieten](search-limits-quotas-capacity.md#throttling-limits). Zie [query aanvragen bewaken](search-monitor-queries.md)voor meer inzicht in het beperken van het gedrag.
 
 <a name="encryption"></a>
 

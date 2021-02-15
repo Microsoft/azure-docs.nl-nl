@@ -11,17 +11,17 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 10/21/2020
-ms.openlocfilehash: 1fc5653f08f8fc7916257dfdba570f451c0afa75
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: 95e9ef340328bb4c1835e966cc9c3019bca88c09
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131930"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368826"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell-preview"></a>Een elastische-taakagent maken met behulp van PowerShell (preview)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-[Elastic Jobs (preview-versie)](job-automation-overview.md#elastic-database-jobs-preview) maken het mogelijk om een of meer T-SQL-scripts (Transact-SQL) parallel in veel databases uit te voeren.
+[Elastic Jobs (preview-versie)](job-automation-overview.md) maken het mogelijk om een of meer T-SQL-scripts (Transact-SQL) parallel in veel databases uit te voeren.
 
 In deze zelfstudie leert u welke stappen u moet uitvoeren om een ​​query uit te voeren over meerdere databases:
 
@@ -63,7 +63,7 @@ Voor deze zelfstudie heeft u niet alleen de module **Az.Sql** nodig, maar ook de
 
 ## <a name="create-required-resources"></a>Vereiste resources maken
 
-Voor het maken van een Elastic Jobs-agent is een database (S0 of hoger) vereist om te gebruiken als [taakdatabase](job-automation-overview.md#job-database).
+Voor het maken van een Elastic Jobs-agent is een database (S0 of hoger) vereist om te gebruiken als [taakdatabase](job-automation-overview.md#elastic-job-database).
 
 In het onderstaande script wordt een nieuwe resourcegroep, server en database gemaakt voor gebruik als de taakdatabase. Het tweede script maakt een tweede server met twee lege databases om taken op uit te voeren.
 
@@ -271,7 +271,7 @@ De volgende tabel laat de mogelijke statussen voor taakuitvoering zien:
 |:---|:---|
 |**Aangemaakt** | De taakuitvoering is zojuist aangemaakt maar wordt nog niet uitgevoerd.|
 |**Wordt uitgevoerd** | De taak wordt op dit moment uitgevoerd.|
-|**Wachten op nieuwe poging** | De uitvoerbewerking kon de taak niet afmaken en wacht op een nieuwe poging.|
+|**Wachten op nieuwe poging** | De uitvoering van de taak is niet voltooid en er wordt gewacht op het opnieuw proberen.|
 |**Geslaagd** | De taak is succesvol uitgevoerd.|
 |**Geslaagd met overgeslagen stukken** | De taak is succesvol uitgevoerd, maar een aantal onderliggende elementen zijn overgeslagen.|
 |**Mislukt** | De uitvoering van de taak is mislukt en er zijn geen nieuwe pogingen meer over.|

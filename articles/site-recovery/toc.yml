@@ -216,7 +216,7 @@
               href: azure-to-azure-how-to-reprotect.md
             - name: Herstel na noodgevallen instellen voor virtuele Azure-machines na migratie naar Azure
               href: azure-to-azure-replicate-after-migration.md
-            - name: Herstel na noodgevallen van zone naar zone inschakelen
+            - name: Herstel na nood gevallen van zone naar zone
               href: azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md
         - name: Beheren
           items:

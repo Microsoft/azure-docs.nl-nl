@@ -7,13 +7,13 @@ author: Vkurpad
 ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: 9fb76c5c96795b8092c86e22acbab4ea5963b42e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/09/2021
+ms.openlocfilehash: 2448609b1184c8e91947bffbd13cfea8e3fe5d52
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90971632"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390858"
 ---
 # <a name="incremental-enrichment-and-caching-in-azure-cognitive-search"></a>Incrementele verrijking en caching in azure Cognitive Search
 
@@ -23,7 +23,7 @@ ms.locfileid: "90971632"
 
 *Incrementele verrijking* is een functie die gericht is op [vaardig heden](cognitive-search-working-with-skillsets.md). Het maakt gebruik van Azure Storage om de verwerkings uitvoer die door een verrijkings pijplijn wordt gegenereerd, op te slaan voor hergebruik in toekomstige Indexeer functies. Waar mogelijk gebruikt de Indexeer functie een in cache opgeslagen uitvoer die nog geldig is. 
 
-Bij een incrementele verrijking wordt niet alleen de monetaire investering in verwerking behouden (met name voor OCR-en afbeeldings verwerking), maar dit is ook een efficiënter systeem. Wanneer structuren en inhoud in de cache zijn opgeslagen, kan een Indexeer functie bepalen welke vaardig heden zijn gewijzigd en alleen de aangepaste vaardig heden uitvoeren. 
+Bij een incrementele verrijking wordt niet alleen de monetaire investering in verwerking behouden (met name voor OCR-en afbeeldings verwerking), maar dit is ook een efficiënter systeem. 
 
 Een werk stroom die gebruikmaakt van incrementele caching, omvat de volgende stappen:
 
@@ -95,7 +95,7 @@ Het instellen van deze para meter zorgt ervoor dat alleen updates van de definit
 In het volgende voor beeld ziet u een aanvraag voor het bijwerken van de vaardig heden met de para meter:
 
 ```http
-PUT https://customerdemos.search.windows.net/skillsets/callcenter-text-skillset?api-version=2020-06-30-Preview&disableCacheReprocessingChangeDetection=true
+PUT https://[search service].search.windows.net/skillsets/[skillset name]?api-version=2020-06-30-Preview&disableCacheReprocessingChangeDetection=true
 ```
 
 ### <a name="bypass-data-source-validation-checks"></a>Validatie controles van gegevens bronnen overs Laan
@@ -103,7 +103,7 @@ PUT https://customerdemos.search.windows.net/skillsets/callcenter-text-skillset?
 Bij de meeste wijzigingen in een gegevens bron definitie wordt de cache ongeldig. Voor scenario's waarin u echter weet dat een wijziging de cache niet ongeldig moet maken, zoals het wijzigen van een connection string of het draaien van de sleutel op het opslag account, voegt u de `ignoreResetRequirement` para meter toe aan de update van de gegevens bron. Door deze para meter in te stellen `true` , kan de door voer worden door lopen zonder dat er een reset-voor waarde wordt geactiveerd, waardoor alle objecten opnieuw worden opgebouwd en volledig worden gevuld.
 
 ```http
-PUT https://customerdemos.search.windows.net/datasources/callcenter-ds?api-version=2020-06-30-Preview&ignoreResetRequirement=true
+PUT https://[search service].search.windows.net/datasources/[data source name]?api-version=2020-06-30-Preview&ignoreResetRequirement=true
 ```
 
 ### <a name="force-skillset-evaluation"></a>Evaluatie van vaardig heden forceren
@@ -111,6 +111,10 @@ PUT https://customerdemos.search.windows.net/datasources/callcenter-ds?api-versi
 Het doel van de cache is om onnodige verwerking te voor komen, maar stel dat u een wijziging aanbrengt in een vaardigheid die de Indexeer functie niet detecteert (bijvoorbeeld het wijzigen van iets in externe code, zoals een aangepaste vaardigheid).
 
 In dit geval kunt u de [vaardig heden opnieuw instellen](/rest/api/searchservice/preview-api/reset-skills) gebruiken om het opnieuw verwerken van een bepaalde vaardigheid af te dwingen, inclusief eventuele downstream-vaardig heden die een afhankelijkheid hebben van de uitvoer van die vaardigheid. Deze API accepteert een POST-aanvraag met een lijst met vaardig heden die ongeldig moeten worden gemaakt en moeten worden gemarkeerd voor opnieuw verwerken. Nadat u vaardig heden hebt ingesteld, voert u de Indexeer functie uit om de pijp lijn aan te roepen.
+
+### <a name="reset-documents"></a>Documenten opnieuw instellen
+
+Als u [een Indexeer functie opnieuw instelt](/rest/api/searchservice/reset-indexer) , worden alle documenten in de zoek verzameling opnieuw verwerkt. In scenario's waarin slechts een paar documenten opnieuw moeten worden verwerkt en de gegevens bron kan niet worden bijgewerkt, gebruikt u [Reset documenten (preview)](/rest/api/searchservice/preview-api/reset-documents) om het opnieuw verwerken van specifieke documenten af te dwingen. Wanneer een document opnieuw wordt ingesteld, wordt de cache voor dat document door de Indexeer functie ongeldig gemaakt en wordt het document opnieuw verwerkt door het uit de gegevens bron te lezen. Zie voor meer informatie [Indexeer functies, vaardig heden en documenten uitvoeren of opnieuw instellen](search-howto-run-reset-indexers.md).
 
 ## <a name="change-detection"></a>Wijzigingsdetectie
 

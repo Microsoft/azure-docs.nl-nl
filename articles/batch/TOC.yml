@@ -3,36 +3,48 @@
 - name: Overzicht
   items:
     - name: Wat is Azure Batch?
+      displayName: overview
       href: batch-technical-overview.md
 - name: Snelstartgidsen
   expanded: true
   items:
     - name: Een Batch-taak uitvoeren - CLI
+      displayName: 'quickstart, first, create'
       href: quick-create-cli.md
     - name: Een Batch-taak uitvoeren - Portal
+      displayName: 'quickstart, first, create'
       href: quick-create-portal.md
     - name: Een Batch-taak uitvoeren - .NET
+      displayName: 'quickstart, first, create, c#, csharp'
       href: quick-run-dotnet.md
     - name: Een Batch-taak uitvoeren - Python
+      displayName: 'quickstart, first, create'
       href: quick-run-python.md
     - name: Een Batch-account maken - ARM-sjabloon
       href: quick-create-template.md
-      displayName: Resource Manager
+      displayName: 'Resource Manager, quickstart, first, create'
 - name: Zelfstudies
   items:
     - name: Parallelle bestandsverwerking - .NET
+      displayName: 'tutorial, hpc, high-performance, large, c#, csharp'
       href: tutorial-parallel-dotnet.md
     - name: Parallelle bestandsverwerking - Python
+      displayName: 'tutorial, hpc, high-performance, large'
       href: tutorial-parallel-python.md
     - name: Scènes weergeven met Arnold
+      displayName: tutorial
       href: tutorial-rendering-cli.md
     - name: Weergeven met Batch Explorer
+      displayName: tutorial
       href: tutorial-rendering-batchexplorer-blender.md
     - name: Parallelle R-simulatie
+      displayName: 'tutorial, doAzureParallel, rstudio'
       href: tutorial-r-doazureparallel.md
     - name: OCR met Batch en Functions
+      displayName: 'trigger, optical'
       href: tutorial-batch-functions.md
     - name: Python-scripts met Data Factory
+      displayName: tutorial
       href: tutorial-run-python-batch-azure-data-factory.md
 - name: Voorbeelden
   items:
@@ -68,20 +80,20 @@
         - name: Aanbevolen procedures voor beveiliging
           href: security-best-practices.md
     - name: Workflow en resources van batchservice
-      displayName: developer features
+      displayName: 'developer features, core, component, overview'
       href: batch-service-workflow-features.md
       items:
         - name: Batch-accounts
           displayName: storage account
           href: accounts.md
         - name: Knooppunten en pools
-          displayName: 'compute node, application package, scaling, schedule, os'
+          displayName: 'compute node, application package, scaling, schedule, os, configuration'
           href: nodes-and-pools.md
         - name: Taken
-          displayName: Batch job
+          displayName: 'Batch job, start task, environment'
           href: jobs-and-tasks.md
         - name: Bestanden en mappen
-          displayName: Batch file
+          displayName: 'Batch file, working directory'
           href: files-and-directories.md
     - name: API's en hulpprogramma’s
       href: batch-apis-tools.md
@@ -131,26 +143,34 @@
     - name: Pools maken en beheren
       items:
         - name: Compute-knooppunten automatisch schalen
+          displayName: 'scaling, dynamic, formula'
           href: batch-automatic-scaling.md
         - name: Een VM-grootte voor rekenknooppunten kiezen
           href: batch-pool-vm-sizes.md
         - name: Verplaatsen van Cloudservice naar virtuele machine-pools
+          displayName: migrate
           href: batch-pool-cloud-service-to-virtual-machine-configuration.md
         - name: Toegang tot rekenknooppunten configureren
+          displayName: 'rdp, ssh, network, remote'
           href: pool-endpoint-configuration.md
         - name: Een groep maken met de Shared Image Gallery
+          displayName: 'managed image, sig'
           href: batch-sig-images.md
         - name: Een groep maken met een resource voor een beheerde installatiekopie
           href: batch-custom-images.md
         - name: Een groep maken in Beschikbaarheidszones
+          displayName: 'region, zonal policy'
           href: create-pool-availability-zones.md
         - name: Een pool maken met schijfversleuteling ingeschakeld
           href: disk-encryption.md
         - name: Een pool in een virtueel netwerk maken
+          displayName: vNet
           href: batch-virtual-network.md
         - name: Een groep met openbare IP-adressen maken
+          displayName: static
           href: create-pool-public-ip.md
         - name: Een groep zonder openbare IP-adressen maken
+          displayName: private
           href: batch-pool-no-public-ip-address.md
         - name: Een virtueel bestandssysteem koppelen
           href: virtual-file-mount.md
@@ -161,17 +181,21 @@
         - name: Rekenknooppunten in Linux gebruiken
           href: batch-linux-nodes.md
         - name: Virtuele machines met lage prioriteit gebruiken
+          displayName: 'preempted, surplus, capacity'
           href: batch-low-pri-vms.md
         - name: Controleren op pool- en knooppuntfouten
+          displayName: 'troubleshoot, failure'
           href: batch-pool-node-error-checking.md
     - name: Een CI/CD-pijplijn maken voor Batch
+      displayName: 'Azure DevOps, devops, continuous'
       href: batch-ci-cd.md
     - name: Taken beheren
       items:
         - name: Taken voor taakvoorbereiding- en -voltooiing
+          displayName: 'release, job release'
           href: batch-job-prep-release.md
         - name: Gelijktijdige knooppunttaken
-          displayName: concurrent
+          displayName: 'variable, maximize'
           href: batch-parallel-node-tasks.md
         - name: Taakafhankelijkheden
           href: batch-task-dependencies.md
@@ -182,6 +206,7 @@
         - name: Taken plannen voor efficiëntie
           href: batch-job-schedule.md
         - name: Controleren op taakfouten
+          displayName: 'failure, troubleshoot'
           href: batch-job-task-error-checking.md
     - name: Taken persistent maken
       href: batch-task-output.md
@@ -194,29 +219,37 @@
       href: monitoring-overview.md
       items:
         - name: Metrische gegevens en diagnostische logboeken gebruiken
+          displayName: 'alert, monitor'
           href: batch-diagnostics.md
         - name: Controleren met behulp van Application Insights
+          displayName: debug
           href: monitor-application-insights.md
         - name: Resources per status tellen
           href: batch-get-resource-counts.md
         - name: Efficiënt query's uitvoeren op resources
+          displayName: 'monitor, queries'
           href: batch-efficient-list-queries.md
     - name: Scripthulpprogramma's gebruiken
       items:
         - name: Azure PowerShell gebruiken
+          displayName: 'ps, scripting, cmdlet'
           href: batch-powershell-cmdlets-get-started.md
         - name: Azure CLI gebruiken
+          displayName: command line
           href: batch-cli-get-started.md
-          items:
-            - name: Batch CLI-sjablonen gebruiken
-              href: batch-cli-templates.md
+        - name: Batch CLI-sjablonen gebruiken
+          diplayName: extension
+          href: batch-cli-templates.md
     - name: Batch Node.js-SDK gebruiken
+      displayName: json
       href: batch-nodejs-get-started.md
     - name: Workloads uitvoeren
       items:
-        - name: MPI-taken
+        - name: MPI
+          displayName: 'multi-instance, message passing interface'
           href: batch-mpi.md
         - name: Containerwerkbelastingen
+          displayName: docker
           href: batch-docker-container-workloads.md
         - name: Rendering
           items:
@@ -231,6 +264,7 @@
             - name: Naslaginformatie voor weergavetoepassing
               href: batch-rendering-application-reference.md
             - name: Opslag en gegevensverplaatsing
+              displayName: 'rendering, assets'
               href: batch-rendering-storage-data-movement.md
             - name: Weergave-architecturen
               href: batch-rendering-architectures.md

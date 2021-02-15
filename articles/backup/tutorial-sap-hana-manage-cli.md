@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u met behulp van Azure CLI back-ups 
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: cb552c5a336c3c55652936b87a668b54cfdeb41e
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 665dfc64e750f448fc4c1a2d7e18f0cb6552f223
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507229"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371767"
 ---
 # <a name="tutorial-manage-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Zelfstudie: SAP HANA-databases op een Azure-VM beheren met Azure CLI
 
@@ -95,7 +95,7 @@ Voorbeeld:
 az backup policy create --resource-group saphanaResourceGroup --vault-name saphanaVault --name sappolicy --backup-management-type AzureWorkload --policy sappolicy.json --workload-type SAPHana
 ```
 
-Voor beeld van JSON-uitvoer (sappolicy.js):
+Voor beeld van JSON (sappolicy.jsop):
 
 ```json
   "eTag": null,
@@ -226,11 +226,12 @@ Voor beeld van JSON-uitvoer (sappolicy.js):
     ],
     "workLoadType": "SAPHanaDatabase"
   },
-  "resourceGroup": "azurefiles",
+  "resourceGroup": "saphanaResourceGroup",
   "tags": null,
   "type": "Microsoft.RecoveryServices/vaults/backupPolicies"
 } 
 ```
+Zodra het beleid is gemaakt, wordt in de uitvoer van de opdracht de beleids-JSON weer gegeven die u als para meter hebt door gegeven tijdens het uitvoeren van de opdracht.
 
 U kunt de volgende sectie van het beleid aanpassen om de gewenste back-upfrequentie en retentie voor incrementele back-ups op te geven.
 

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.reviewer: jeking
-ms.openlocfilehash: e289bea6b1a23f1622ced62656164d9865303298
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 0d712dc0ebe91ea8815adf235e02b8945e0dea84
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912821"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518858"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Quickstart: Gegevens analyseren met Databricks
 
@@ -76,7 +76,7 @@ In deze sectie gaat u een Azure Databricks-werkruimte maken met behulp van Azure
 
 4. Selecteer **Cluster maken**. Zodra het cluster wordt uitgevoerd, kunt u notitieblokken koppelen aan het cluster en Spark-taken uitvoeren.
 
-Zie [Een Spark-cluster maken in Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html) voor meer informatie over het maken van clusters.
+Zie [Een Spark-cluster maken in Azure Databricks](/azure/databricks/clusters/create) voor meer informatie over het maken van clusters.
 
 ## <a name="create-notebook"></a>Notebook maken
 
@@ -149,7 +149,7 @@ Voer de volgende taken uit om een Spark SQL-taak op de gegevens uit te voeren.
 
     Zodra de opdracht is voltooid, hebt u alle gegevens van het JSON-bestand als een tabel in het Databricks-cluster.
 
-    De magic-opdracht in de taal `%sql` stelt u in staat u SQL-code uit te voeren vanuit het notitieblok, zelfs als het notitieblok van een ander type is. Zie [Talen combineren in een notitieblok](https://docs.azuredatabricks.net/user-guide/notebooks/index.html#mixing-languages-in-a-notebook) voor meer informatie.
+    De magic-opdracht in de taal `%sql` stelt u in staat u SQL-code uit te voeren vanuit het notitieblok, zelfs als het notitieblok van een ander type is. Zie [Talen combineren in een notitieblok](/azure/databricks/notebooks/notebooks-use#mix-languages) voor meer informatie.
 
 2. Laten we eens een momentopname bekijken van de voorbeeld-JSON-gegevens om een beter begrip te krijgen van de query die u uitvoert. Plak het volgende codefragment in de codecel en druk op **Shift+Enter**.
 
@@ -200,6 +200,6 @@ Ga naar het volgende artikel voor informatie over het uitvoeren van een ETL-bewe
 > [!div class="nextstepaction"]
 >[Gegevens uitpakken, transformeren en laden met Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse).
 
-- Raadpleeg [Spark-gegevensbronnen](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html) voor meer informatie over het importeren van gegevens uit andere gegevensbronnen in Azure Databricks.
+- Raadpleeg [Spark-gegevensbronnen](/azure/databricks/data/data-sources/) voor meer informatie over het importeren van gegevens uit andere gegevensbronnen in Azure Databricks.
 
-- Raadpleeg [Azure Data Lake Storage Gen2](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) voor meer informatie over andere manieren om toegang te krijgen tot Azure Data Lake Storage Gen2 vanuit een Azure Databricks-werkruimte.
+- Raadpleeg [Azure Data Lake Storage Gen2](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) voor meer informatie over andere manieren om toegang te krijgen tot Azure Data Lake Storage Gen2 vanuit een Azure Databricks-werkruimte.

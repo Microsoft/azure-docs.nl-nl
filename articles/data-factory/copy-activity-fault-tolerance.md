@@ -1,22 +1,17 @@
 ---
 title: Fouttolerantie van kopieeractiviteit in Azure Data Factory
 description: Meer informatie over het toevoegen van fout tolerantie aan de Kopieer activiteit in Azure Data Factory door de niet-compatibele gegevens over te slaan.
-services: data-factory
-documentationcenter: ''
 author: dearandyxu
-manager: ''
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: yexu
-ms.openlocfilehash: 0fb6beb776f5a553e85f690d49e3433f93b9ee16
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 0fe1470661c006399ea176af1112d271524b2a1f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809538"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390960"
 ---
 #  <a name="fault-tolerance-of-copy-activity-in-azure-data-factory"></a>Fouttolerantie van kopieeractiviteit in Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -59,7 +54,7 @@ Wanneer u binaire bestanden tussen opslag archieven kopieert, kunt u fout tolera
         "fileMissing": true, 
         "fileForbidden": true, 
         "dataInconsistency": true,
-        "invalidFileName": true     
+        "invalidFileName": true        
     }, 
     "validateDataConsistency": true, 
     "logSettings": {

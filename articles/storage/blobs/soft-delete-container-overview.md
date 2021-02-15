@@ -10,12 +10,12 @@ ms.date: 02/08/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 0c15be86c282451440f9b81d57f17e835559b5ae
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 674a336e79f118d543590fb7514b6bebef72cf47
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979097"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390178"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
@@ -28,11 +28,11 @@ Micro soft raadt u aan de volgende functies voor gegevens beveiliging in te scha
 - Zacht verwijderen van BLOB, voor het herstellen van een BLOB of versie die is verwijderd. Zie voor het inschakelen van het voorlopig verwijderen van blobs de optie [voorlopig verwijderen inschakelen en beheren voor blobs](soft-delete-blob-enable.md).
 
 > [!WARNING]
-> Het verwijderen van een opslag account kan niet ongedaan worden gemaakt. Zacht verwijderen beschermt niet tegen het verwijderen van een opslag account, maar alleen voor het verwijderen van gegevens objecten in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een **CannotDelete** -vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over het vergren delen van Azure Resource Manager resources.
+> Het verwijderen van een opslag account kan niet ongedaan worden gemaakt. Het dynamisch verwijderen van een container biedt geen bescherming tegen het verwijderen van een opslag account, maar alleen voor het verwijderen van containers in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over het vergren delen van Azure Resource Manager resources.
 
 ## <a name="how-container-soft-delete-works"></a>De werking van de functie voor voorlopig verwijderen van containers
 
-Wanneer u de optie voor het voorlopig verwijderen van een container inschakelt, kunt u een Bewaar periode voor verwijderde containers opgeven tussen 1 en 365 dagen. De standaard Bewaar periode is 7 dagen. Tijdens de retentie periode kunt u een verwijderde container herstellen door de bewerking voor het verwijderen van een **container** op te roepen.
+Wanneer u de optie voor het voorlopig verwijderen van een container inschakelt, kunt u een Bewaar periode voor verwijderde containers opgeven tussen 1 en 365 dagen. De standaard Bewaar periode is 7 dagen. Tijdens de retentie periode kunt u een verwijderde container herstellen door de **herstel container** bewerking aan te roepen.
 
 Wanneer u een container herstelt, worden de blobs en BLOB-versies van de container ook hersteld. U kunt de container soft delete echter alleen gebruiken om blobs te herstellen als de container zelf is verwijderd. Als u een verwijderde BLOB wilt herstellen wanneer de bovenliggende container niet is verwijderd, moet u de eigenschap zacht verwijderen of BLOB-versie beheer gebruiken.
 

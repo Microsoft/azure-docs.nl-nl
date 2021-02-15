@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 4fda6c51121838bfa1f3624759b1230d8554d573
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: 719fcca74d2cd048bf170940eff7da6a25425469
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753940"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373280"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Werken met de vorige versie van Azure Migrate
 
@@ -22,7 +22,7 @@ Dit artikel bevat informatie over het werken met de vorige versie van Azure Migr
 Er zijn twee versies van de Azure Migrate-service:
 
 - **Huidige versie**: Gebruik deze versie om Azure Migrate-projecten te maken, on-premises machines te detecteren, en evaluaties en migraties te organiseren. [Lees meer](whats-new.md) over wat er nieuw is in deze versie.
-- **Vorige versie**: Als u de vorige versie van Azure Migrate gebruikt (alleen evaluatie van on-premises VMware-VM's werd ondersteund), kunt u nu beter de huidige versie gaan gebruiken. De projecten uit de vorige versie worden in dit artikel Klassieke projecten genoemd. Als u nog Azure Migrate-projecten moet gebruiken die in de vorige versie zijn gemaakt, kunt u hier lezen wat u wel en niet kunt doen:
+- **Vorige versie**: Als u de vorige versie van Azure Migrate gebruikt (alleen evaluatie van on-premises VMware-VM's werd ondersteund), kunt u nu beter de huidige versie gaan gebruiken. De projecten uit de vorige versie worden in dit artikel Klassieke projecten genoemd. Klassieke Azure Migrate buiten gebruik worden gesteld in februari 2024. Na februari 2024 wordt de klassieke versie van Azure Migrate niet meer ondersteund en worden de meta gegevens van de inventaris in klassieke projecten verwijderd. Als u nog steeds klassieke Azure Migrate projecten moet gebruiken, is dit wat u wel en niet kunt doen:
     - U kunt geen migratieprojecten meer maken.
     - We raden u aan om ook geen nieuwe detecties meer uit te voeren.
     - U houdt toegang tot bestaande projecten.

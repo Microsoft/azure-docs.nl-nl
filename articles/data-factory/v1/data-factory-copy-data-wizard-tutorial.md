@@ -1,23 +1,18 @@
 ---
 title: 'Zelfstudie: een pijplijn maken met de wizard Kopiëren '
 description: In deze zelfstudie maakt u een Azure Data Factory-pijplijn met een kopieeractiviteit. Hiervoor gebruikt u de wizard Kopiëren die wordt ondersteund door Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: b87afb8e-53b7-4e1b-905b-0343dd096198
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 93360e48dad13b9ec57175d31ecb61d32974f066
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
-ms.translationtype: HT
+ms.openlocfilehash: 60a575fc211c512c8657bffd567c96f98cc3d69a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128399"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377003"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-data-factory-copy-wizard"></a>Zelfstudie: een pijplijn maken met de kopieeractiviteit middels de Data Factory-wizard Kopiëren
 > [!div class="op_single_selector"]
@@ -52,7 +47,7 @@ In deze stap gebruikt u Azure Portal om een Azure Data Factory met de naam **ADF
 2. In de blade **Nieuwe gegevensfactory**:
    
    1. Voer **ADFTutorialDataFactory** in als **naam**.
-       De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als dit foutbericht wordt geretourneerd: `Data factory name “ADFTutorialDataFactory” is not available`, wijzigt u de naam van de gegevensfactory (bijvoorbeeld uwnaamADFTutorialDataFactoryDDMMJJJJ) en maakt een nieuwe. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](data-factory-naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.  
+       De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als dit foutbericht wordt geretourneerd: `Data factory name "ADFTutorialDataFactory" is not available`, wijzigt u de naam van de gegevensfactory (bijvoorbeeld uwnaamADFTutorialDataFactoryDDMMJJJJ) en maakt een nieuwe. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](data-factory-naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.  
       
        ![Naam van gegevensfactory niet beschikbaar](./media/data-factory-copy-data-wizard-tutorial/getstarted-data-factory-not-available.png)    
    2. Selecteer uw Azure-**abonnement**.

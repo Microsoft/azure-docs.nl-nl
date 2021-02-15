@@ -5,22 +5,20 @@ description: Een aangepast domein toewijzen aan een Blob Storage-of Web-eind pun
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/23/2020
+ms.date: 02/12/2021
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: dcc6f3bca80cb5860679327226d3e034c3e9b14a
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 52fc7b9c1229421fd46b8110857a0a7a8a4f916a
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95996862"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520422"
 ---
 # <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Een aangepast domein toewijzen aan een Azure Blob Storage-eindpunt
 
 U kunt een aangepast domein toewijzen aan een BLOB service-eind punt of een [statisch website](storage-blob-static-website.md) -eind punt. 
-
-[!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!NOTE] 
 > Deze toewijzing werkt alleen voor subdomeinen (bijvoorbeeld: `www.contoso.com` ). Als u wilt dat uw web-eind punt beschikbaar is in het hoofd domein (bijvoorbeeld: `contoso.com` ), moet u Azure CDN gebruiken. Zie de sectie [een aangepast domein met https-functionaliteit toewijzen](#enable-https) in dit artikel voor meer informatie. Omdat u naar deze sectie van dit artikel gaat om het hoofd domein van uw aangepaste domein in te scha kelen, is de stap in die sectie voor het inschakelen van HTTPS optioneel. 
@@ -61,8 +59,11 @@ De hostnaam is de URL van het opslag eindpunt zonder de protocol-id en de afslui
 2. Selecteer in het menu venster onder **instellingen** de optie **Eigenschappen**.  
 
 3. Kopieer de waarde van het **eind punt van de primaire BLOB-service** of het **eind punt van de primaire statische website** naar een tekst bestand. 
+  
+   > [!NOTE]
+   > Het Data Lake Storage-eind punt wordt niet ondersteund (bijvoorbeeld: `https://mystorageaccount.dfs.core.windows.net/` ).
 
-4. Verwijder de protocol-id (*bijvoorbeeld* https) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
+4. Verwijder de protocol-id (bijvoorbeeld: `HTTPS` ) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
 
    | Type eind punt |  endpoint | hostnaam |
    |------------|-----------------|-------------------|
@@ -75,7 +76,7 @@ De hostnaam is de URL van het opslag eindpunt zonder de protocol-id en de afslui
 
 #### <a name="step-2-create-a-canonical-name-cname-record-with-your-domain-provider"></a>Stap 2: Maak een canonieke-naam record (CNAME) met uw domein provider
 
-Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een soort DNS-record dat een brondomeinnaam toewijst aan een doeldomeinnaam.
+Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een type Domain Name System (DNS)-record dat een naam van een bron domein toewijst aan een doel domein naam.
 
 1. Meld u aan bij de website van uw domein registratie service en ga vervolgens naar de pagina voor het beheren van de DNS-instelling.
 
@@ -95,9 +96,14 @@ Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een soo
 
 #### <a name="step-3-register-your-custom-domain-with-azure"></a>Stap 3: uw aangepaste domein bij Azure registreren
 
+##### <a name="portal"></a>[Portal](#tab/azure-portal)
+
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.  
+2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.
+
+   > [!NOTE]
+   > Deze optie wordt niet weer gegeven in accounts waarvoor de functie voor hiërarchische naam ruimte is ingeschakeld. Voor deze accounts gebruikt u Power shell of de Azure CLI om deze stap te volt ooien.
 
    ![optie voor aangepast domein](./media/storage-custom-domain-name/custom-domain-button.png "aangepast domein")
 
@@ -111,18 +117,60 @@ Maak een CNAME-record die verwijst naar de hostnaam. Een CNAME-record is een soo
 
    Nadat de CNAME-record door de DNS (Domain name servers) is door gegeven, en als uw gebruikers over de juiste machtigingen beschikken, kunnen ze BLOB-gegevens weer geven met behulp van het aangepaste domein.
 
+##### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Voer de volgende PowerShell-opdracht
+
+```powershell
+Set-AzStorageAccount -ResourceGroupName <resource-group-name> -Name <storage-account-name> -CustomDomainName <custom-domain-name> -UseSubDomain $false
+```
+
+- Vervang de `<resource-group-name>` tijdelijke aanduiding door de naam van de resource groep.
+
+- Vervang de `<storage-account-name>` tijdelijke aanduiding door de naam van het opslag account.
+
+- Vervang de `<custom-domain-name>` tijdelijke aanduiding door de naam van uw aangepaste domein, inclusief het subdomein.
+
+  Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's* is, voert u in `photos.contoso.com` .
+
+Nadat de CNAME-record door de DNS (Domain name servers) is door gegeven, en als uw gebruikers over de juiste machtigingen beschikken, kunnen ze BLOB-gegevens weer geven met behulp van het aangepaste domein.
+
+##### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Voer de volgende PowerShell-opdracht
+
+```azurecli
+az storage account update \
+   --resource-group <resource-group-name> \ 
+   --name <storage-account-name> \
+   --custom-domain <custom-domain-name> \
+   --use-subdomain false
+  ```
+
+- Vervang de `<resource-group-name>` tijdelijke aanduiding door de naam van de resource groep.
+
+- Vervang de `<storage-account-name>` tijdelijke aanduiding door de naam van het opslag account.
+
+- Vervang de `<custom-domain-name>` tijdelijke aanduiding door de naam van uw aangepaste domein, inclusief het subdomein.
+
+  Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's* is, voert u in `photos.contoso.com` .
+
+Nadat de CNAME-record door de DNS (Domain name servers) is door gegeven, en als uw gebruikers over de juiste machtigingen beschikken, kunnen ze BLOB-gegevens weer geven met behulp van het aangepaste domein.
+
+---
+
 #### <a name="step-4-test-your-custom-domain"></a>Stap 4: uw aangepaste domein testen
 
 Om te bevestigen dat uw aangepaste domein is toegewezen aan het eind punt van de BLOB-service, maakt u een BLOB in een open bare container in uw opslag account. Ga in een webbrowser naar de blob met behulp van een URI in de volgende indeling: `http://<subdomain.customdomain>/<mycontainer>/<myblob>`
 
-Als u bijvoorbeeld toegang wilt krijgen tot een webformulier in de *myForms* -container in het aangepaste subdomein *Photos.contoso.com* , kunt u de volgende URI gebruiken: `http://photos.contoso.com/myforms/applicationform.htm`
+Als u bijvoorbeeld toegang wilt krijgen tot een webformulier in de `myforms` container in het aangepaste subdomein *Photos.contoso.com* , kunt u de volgende URI gebruiken: `http://photos.contoso.com/myforms/applicationform.htm`
 
 <a id="zero-down-time"></a>
 
 ### <a name="map-a-custom-domain-with-zero-downtime"></a>Een aangepast domein toewijzen met een downtime van nul
 
 > [!NOTE]
-> Als u zich geen zorgen maakt dat het domein kort niet beschikbaar is voor uw gebruikers, kunt u overwegen om de stappen in de sectie [een aangepast domein toewijzen](#map-a-domain) van dit artikel te volgen. Het is een eenvoudigere benadering met minder stappen.  
+> Als u zich geen zorgen maakt dat het domein kort niet beschikbaar is voor uw gebruikers, kunt u de stappen in de sectie [een aangepast domein toewijzen](#map-a-domain) van dit artikel gebruiken. Het is een eenvoudigere benadering met minder stappen.  
 
 Als uw domein momenteel een toepassing ondersteunt met een Service Level Agreement (SLA) die geen downtime vereist, voert u de volgende stappen uit om ervoor te zorgen dat gebruikers toegang hebben tot uw domein terwijl de DNS-toewijzing plaatsvindt. 
 
@@ -148,7 +196,10 @@ De hostnaam is de URL van het opslag eindpunt zonder de protocol-id en de afslui
 
 3. Kopieer de waarde van het **eind punt van de primaire BLOB-service** of het **eind punt van de primaire statische website** naar een tekst bestand. 
 
-4. Verwijder de protocol-id (*bijvoorbeeld* https) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
+   > [!NOTE]
+   > Het Data Lake Storage-eind punt wordt niet ondersteund (bijvoorbeeld: `https://mystorageaccount.dfs.core.windows.net/` ).
+
+4. Verwijder de protocol-id (bijvoorbeeld: `HTTPS` ) en de afsluitende slash uit die teken reeks. De volgende tabel bevat voor beelden.
 
    | Type eind punt |  endpoint | hostnaam |
    |------------|-----------------|-------------------|
@@ -157,7 +208,7 @@ De hostnaam is de URL van het opslag eindpunt zonder de protocol-id en de afslui
   
    Stel deze waarde in voor later.
 
-#### <a name="step-2-create-a-intermediary-canonical-name-cname-record-with-your-domain-provider"></a>Stap 2: Maak een tussenliggend CNAME-record (canonieke naam) met uw domein provider
+#### <a name="step-2-create-an-intermediary-canonical-name-cname-record-with-your-domain-provider"></a>Stap 2: een tussenliggende CNAME-record (canonieke naam) maken met uw domein provider
 
 Maak een tijdelijke CNAME-record die verwijst naar de naam van uw host. Een CNAME-record is een soort DNS-record dat een brondomeinnaam toewijst aan een doeldomeinnaam.
 
@@ -179,17 +230,18 @@ Maak een tijdelijke CNAME-record die verwijst naar de naam van uw host. Een CNAM
 
      Voeg het subdomein toe `asverify` aan de naam van de host. Bijvoorbeeld: `asverify.mystorageaccount.blob.core.windows.net`.
 
-4. Als u het aangepaste domein wilt registreren, klikt u op de knop **Opslaan** .
-
-   Als de registratie is geslaagd, ontvangt de portal een melding dat uw opslag account is bijgewerkt. Uw aangepaste domein is geverifieerd door Azure, maar het verkeer naar uw domein wordt nog niet doorgestuurd naar uw opslag account.
-
 #### <a name="step-3-pre-register-your-custom-domain-with-azure"></a>Stap 3: uw aangepaste domein vooraf registreren bij Azure
 
 Wanneer u uw aangepaste domein vooraf registreert bij Azure, staat u toe dat Azure uw aangepaste domein herkent zonder dat u de DNS-record voor het domein hoeft te wijzigen. Op die manier, wanneer u de DNS-record voor het domein wijzigt, wordt deze toegewezen aan het BLOB-eind punt zonder downtime.
 
+##### <a name="portal"></a>[Portal](#tab/azure-portal)
+
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
-2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.  
+2. Selecteer in het menu venster onder **BLOB-service** de optie **aangepast domein**.
+
+   > [!NOTE]
+   > Deze optie wordt niet weer gegeven in accounts waarvoor de functie voor hiërarchische naam ruimte is ingeschakeld. Voor deze accounts gebruikt u Power shell of de Azure CLI om deze stap te volt ooien.
 
    ![optie voor aangepast domein](./media/storage-custom-domain-name/custom-domain-button.png "aangepast domein")
 
@@ -203,7 +255,49 @@ Wanneer u uw aangepaste domein vooraf registreert bij Azure, staat u toe dat Azu
 
 5. Als u het aangepaste domein wilt registreren, klikt u op de knop **Opslaan** .
   
-   Nadat de CNAME-record door de DNS (Domain name servers) is door gegeven, en als uw gebruikers over de juiste machtigingen beschikken, kunnen ze BLOB-gegevens weer geven met behulp van het aangepaste domein.
+   Als de registratie is geslaagd, ontvangt de portal een melding dat uw opslag account is bijgewerkt. Uw aangepaste domein is geverifieerd door Azure, maar het verkeer naar uw domein wordt nog niet doorgestuurd naar uw opslag account totdat u een CNAME-record met uw domein provider hebt gemaakt. Dit doet u in de volgende sectie.
+
+##### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Voer de volgende PowerShell-opdracht
+
+```powershell
+Set-AzStorageAccount -ResourceGroupName <resource-group-name> -Name <storage-account-name> -CustomDomainName <custom-domain-name> -UseSubDomain $true
+```
+
+- Vervang de `<resource-group-name>` tijdelijke aanduiding door de naam van de resource groep.
+
+- Vervang de `<storage-account-name>` tijdelijke aanduiding door de naam van het opslag account.
+
+- Vervang de `<custom-domain-name>` tijdelijke aanduiding door de naam van uw aangepaste domein, inclusief het subdomein.
+
+  Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's* is, voert u in `photos.contoso.com` .
+
+Verkeer naar uw domein wordt nog niet doorgestuurd naar uw opslag account totdat u een CNAME-record met uw domein provider maakt. Dit doet u in de volgende sectie.
+
+##### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Voer de volgende PowerShell-opdracht
+
+```azurecli
+az storage account update \
+   --resource-group <resource-group-name> \ 
+   --name <storage-account-name> \
+   --custom-domain <custom-domain-name> \
+   --use-subdomain true
+  ```
+
+- Vervang de `<resource-group-name>` tijdelijke aanduiding door de naam van de resource groep.
+
+- Vervang de `<storage-account-name>` tijdelijke aanduiding door de naam van het opslag account.
+
+- Vervang de `<custom-domain-name>` tijdelijke aanduiding door de naam van uw aangepaste domein, inclusief het subdomein.
+
+  Als uw domein bijvoorbeeld *contoso.com* is en uw subdomein alias is *www*, voert u in `www.contoso.com` . Als uw subdomein *Foto's* is, voert u in `photos.contoso.com` .
+
+Verkeer naar uw domein wordt nog niet doorgestuurd naar uw opslag account totdat u een CNAME-record met uw domein provider maakt. Dit doet u in de volgende sectie.
+
+---
 
 #### <a name="step-4-create-a-cname-record-with-your-domain-provider"></a>Stap 4: Maak een CNAME-record met uw domein provider
 
@@ -227,15 +321,13 @@ Maak een tijdelijke CNAME-record die verwijst naar de naam van uw host.
 
 Om te bevestigen dat uw aangepaste domein is toegewezen aan het eind punt van de BLOB-service, maakt u een BLOB in een open bare container in uw opslag account. Ga in een webbrowser naar de blob met behulp van een URI in de volgende indeling: `http://<subdomain.customdomain>/<mycontainer>/<myblob>`
 
-Als u bijvoorbeeld toegang wilt krijgen tot een webformulier in de *myForms* -container in het aangepaste subdomein *Photos.contoso.com* , kunt u de volgende URI gebruiken: `http://photos.contoso.com/myforms/applicationform.htm`
+Als u bijvoorbeeld toegang wilt krijgen tot een webformulier in de `myforms` container in het aangepaste subdomein *Photos.contoso.com* , kunt u de volgende URI gebruiken: `http://photos.contoso.com/myforms/applicationform.htm`
 
 ### <a name="remove-a-custom-domain-mapping"></a>Een aangepaste domein toewijzing verwijderen
 
 Als u een aangepaste domein toewijzing wilt verwijderen, moet u de registratie van het aangepaste domein ongedaan maken. Gebruik een van de volgende procedures.
 
 #### <a name="portal"></a>[Portal](#tab/azure-portal)
-
-Ga als volgt te werk om de aangepaste domein instelling te verwijderen:
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw opslag account.
 
@@ -246,29 +338,7 @@ Ga als volgt te werk om de aangepaste domein instelling te verwijderen:
 
 4. Selecteer de knop **Opslaan**.
 
-Nadat het aangepaste domein is verwijderd, ziet u een portal melding dat uw opslag account is bijgewerkt
-
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-Als u een aangepaste domein registratie wilt verwijderen, gebruikt u de opdracht [AZ Storage account update](/cli/azure/storage/account) CLI en geeft u een lege teken reeks ( `""` ) op voor de `--custom-domain` argument waarde.
-
-* Opdracht indeling:
-
-  ```azurecli
-  az storage account update \
-      --name <storage-account-name> \
-      --resource-group <resource-group-name> \
-      --custom-domain ""
-  ```
-
-* Opdracht voorbeeld:
-
-  ```azurecli
-  az storage account update \
-      --name mystorageaccount \
-      --resource-group myresourcegroup \
-      --custom-domain ""
-  ```
+Nadat het aangepaste domein is verwijderd, ziet u een portal melding dat uw opslag account is bijgewerkt.
 
 #### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -293,6 +363,28 @@ Als u een aangepaste domein registratie wilt verwijderen, gebruikt u de Power sh
       -AccountName "mystorageaccount" `
       -CustomDomainName ""
   ```
+
+#### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u een aangepaste domein registratie wilt verwijderen, gebruikt u de opdracht [AZ Storage account update](/cli/azure/storage/account) CLI en geeft u een lege teken reeks ( `""` ) op voor de `--custom-domain` argument waarde.
+
+* Opdracht indeling:
+
+  ```azurecli
+  az storage account update \
+      --name <storage-account-name> \
+      --resource-group <resource-group-name> \
+      --custom-domain ""
+  ```
+
+* Opdracht voorbeeld:
+
+  ```azurecli
+  az storage account update \
+      --name mystorageaccount \
+      --resource-group myresourcegroup \
+      --custom-domain ""
+  ```
 ---
 
 <a id="enable-https"></a>
@@ -302,8 +394,6 @@ Als u een aangepaste domein registratie wilt verwijderen, gebruikt u de Power sh
 Deze benadering omvat meer stappen, maar biedt HTTPS-toegang. 
 
 Als u geen gebruikers nodig hebt om toegang te krijgen tot uw BLOB of webinhoud met behulp van HTTPS, raadpleegt u de sectie [een aangepast domein toewijzen met alleen HTTP-ingeschakeld](#enable-http) in dit artikel. 
-
-Ga als volgt te werk om een aangepast domein toe te wijzen en HTTPS-toegang in te scha kelen:
 
 1. Schakel [Azure CDN](../../cdn/cdn-overview.md) in op uw BLOB of Web-eind punt. 
 

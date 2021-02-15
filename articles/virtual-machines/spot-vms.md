@@ -1,19 +1,19 @@
 ---
 title: Azure spot-Vm's gebruiken
 description: Meer informatie over het gebruik van Azure spot Vm's om kosten op te slaan.
-author: cynthn
+author: JagVeerappan
+ms.author: jagaveer
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 10/05/2020
-ms.author: cynthn
-ms.reviewer: jagaveer
-ms.openlocfilehash: 1e3934a8ff91d764a5148b3d490b44f30983a284
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.reviewer: cynthn
+ms.openlocfilehash: 1e82da3bc45bc8fb88b3955bd59091372f56d292
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202127"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375456"
 ---
 # <a name="use-spot-vms-in-azure"></a>Gebruik van een spot Vm's in azure
 
@@ -58,7 +58,7 @@ Spot-Vm's kunnen worden geïmplementeerd in elke regio, met uitzonde ring van Mi
 De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-details/) worden momenteel ondersteund:
 
 -   Enterprise Agreement
--   Betalen naar gebruik
+-   Betalen per gebruik-aanbieding code 003P
 -   Gesponsorde
 - Neem contact op met uw partner voor Cloud service provider (CSP)
 

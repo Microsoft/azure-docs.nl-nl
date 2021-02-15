@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d14c9330977296630ee58bc2b508f4304472044c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c4c654f70af2188264465d97abded9cae95e9275
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366357"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364576"
 ---
 # <a name="conditional-access-users-and-groups"></a>Voorwaardelijke toegang: gebruikers en groepen
 
@@ -42,6 +42,9 @@ De volgende opties zijn beschikbaar voor opname bij het maken van beleid voor vo
    - Gebruikers en groepen
       - Hiermee kunnen specifieke sets van gebruikers worden bereikt. Organisaties kunnen bijvoorbeeld een groep selecteren die alle leden van de afdeling HR bevat wanneer een HR-app is geselecteerd als de Cloud-app. Een groep kan elk wille keurig type groep in azure AD zijn, met inbegrip van dynamische of toegewezen beveiligings-en distributie groepen. Het beleid wordt toegepast op geneste gebruikers en groepen.
 
+> [!IMPORTANT]
+> Bij het selecteren van de gebruikers en groepen die zijn opgenomen in een beleid voor voorwaardelijke toegang, geldt een limiet voor het aantal afzonderlijke gebruikers dat rechtstreeks aan een beleid voor voorwaardelijke toegang kan worden toegevoegd. Als er sprake is van een groot aantal afzonderlijke gebruikers dat moet worden toegevoegd aan een beleid voor voorwaardelijke toegang, wordt u aangeraden de gebruikers in een groep te plaatsen en in plaats daarvan de groep toe te wijzen aan het beleid voor voorwaardelijke toegang.
+
 > [!WARNING]
 > Als gebruikers of groepen lid zijn van meer dan 2048 groepen, kan hun toegang worden geblokkeerd. Deze limiet is van toepassing op het directe en geneste groepslid maatschap.
 
@@ -52,7 +55,7 @@ De volgende opties zijn beschikbaar voor opname bij het maken van beleid voor vo
 
 Wanneer organisaties een gebruiker of groep opnemen en uitsluiten, wordt de gebruiker of groep uitgesloten van het beleid, omdat een actie uitsluiten een insluiting in het beleid overschrijft. Uitsluitingen worden vaak gebruikt voor nood toegang of verlopende glazen accounts. Meer informatie over accounts voor toegang in nood gevallen en waarom ze belang rijk zijn, vindt u in de volgende artikelen: 
 
-* [Accounts voor nood toegang beheren in azure AD](../roles/security-emergency-access.md)
+* [Accounts voor noodtoegang beheren in Azure AD](../roles/security-emergency-access.md)
 * [Maak een flexibele toegangs beheer strategie met Azure Active Directory](../authentication/concept-resilient-controls.md)
 
 De volgende opties zijn beschikbaar om uit te sluiten bij het maken van een beleid voor voorwaardelijke toegang.

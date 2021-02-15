@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: overview
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: b42aa3bfaeaa454b5d870dbae3bce539b682028f
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: a5fa6b1c75bee562394af42fcea9ebfabeb732f0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754076"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389532"
 ---
 # <a name="about-azure-migrate"></a>Over Azure Migrate
 
@@ -121,7 +121,7 @@ Als u op zoek bent naar deskundige hulp om aan de slag te gaan, kan Microsoft u 
 Er zijn twee versies van de Azure Migrate-service.
 
 - **Huidige versie**: Gebruik deze versie om Azure Migrate-projecten te maken, on-premises machines te detecteren, en evaluaties en migraties te organiseren. [Lees meer](whats-new.md) over wat er nieuw is in deze versie.
-- **Vorige versie**: De vorige versie van Azure Migrate ondersteunt alleen evaluatie van on-premises VMware-VM's. Als u de vorige versie hebt gebruikt, moet u nu de huidige versie gebruiken. U kunt geen Azure Migrate-projecten meer maken met de vorige versie. En we raden u aan om ook geen nieuwe detecties meer uit te voeren met die versie.
+- **Vorige versie**: de vorige versie van Azure migrate, ook wel klassiek Azure migrate genoemd, ondersteunt alleen de evaluatie van on-premises VMware-vm's. Klassieke Azure Migrate buiten gebruik worden gesteld in februari 2024. Na februari 2024 wordt de klassieke versie van Azure Migrate niet meer ondersteund en worden de meta gegevens van de inventaris in klassieke projecten verwijderd. U kunt projecten of onderdelen in de vorige versie niet upgraden naar de nieuwe versie. U moet [een nieuw Azure Migrate-project maken](create-manage-projects.md) en daar [hulpprogramma's voor evaluatie en migratie aan toevoegen](./create-manage-projects.md). Gebruik de zelfstudies om te begrijpen hoe u de beschikbare hulpprogramma’s voor evaluatie en migratie kunt gebruiken. Als u een Log Analytics werk ruimte aan een klassiek project hebt gekoppeld, kunt u deze koppelen aan een project van de huidige versie nadat u het klassieke project hebt verwijderd.
 
     Als u toegang wilt krijgen tot bestaande projecten in de Azure-portal, zoekt en selecteert u **Azure Migrate**. Het dashboard **Azure Migrate** bevat een melding en een koppeling voor toegang tot oude Azure Migrate-projecten.
 

@@ -9,14 +9,15 @@ ms.topic: tutorial
 author: aminsaied
 ms.author: amsaied
 ms.reviewer: sgilley
-ms.date: 09/15/2020
+ms.date: 02/11/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 0d099d31db3619e14da4fe66e26b25a0e36ee39c
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+adobe-target: true
+ms.openlocfilehash: 5d61f330c823aff755a25e637bb58c132aa58100
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250686"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369113"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Zelfstudie: Aan de slag met Azure Machine Learning in uw ontwikkelomgeving (deel 1 van 4)
 
@@ -68,7 +69,7 @@ pip install azureml-core
 > [!NOTE]
 > Het duurt ongeveer twee minuten voordat de Azure Machine Learning SDK-installatie is voltooid.
 >
-> Als er een fout met betrekking tot een time-out optreedt, probeert u in plaats daarvan `pip install --default-timeout=100 azureml-core`.
+> Als er een time-outfout optreedt, probeert u `pip install --default-timeout=100 azureml-core` in plaats daarvan.
 
 
 > [!div class="nextstepaction"]
@@ -78,20 +79,29 @@ pip install azureml-core
 
 We raden aan dat u de volgende eenvoudige mapstructuur instelt voor deze zelfstudie:
 
-```markdown
-tutorial
-└──.azureml
-```
+:::image type="content" source="media/tutorial-1st-experiment-sdk-local/directory-structure-1.png" alt-text="mapstructuur: zelf studie op het hoogste niveau met de submap voor azureml":::
+
 
 - `tutorial`: Map op het hoogste niveau van het project.
 - `.azureml`: Verborgen submap om Azure Machine Learning-configuratiebestanden op te slaan.
 
+Als u dit bijvoorbeeld wilt maken in een bash-venster:
+
+```bash
+mkdir tutorial
+cd tutorial
+mkdir .azureml
+```
+
 > [!TIP]
-> U kunt de verborgen submap .azureml in een terminalvenster maken.  Of u volgt de onderstaande stappen:
+> Als u de structuur in een grafisch venster wilt maken of weer geven, kunt u eerst verborgen bestanden en mappen bekijken en maken:
 >
-> * Gebruik **Command + Shift + .** in een Mac Finder-venster om de mogelijkheid in/uit te schakelen om mappen te zien en te maken die beginnen met een punt (.).  
+> * Gebruik **Command + Shift + .** in een Mac Finder-venster de weer gave van verborgen bestanden/mappen in-of uitschakelen.  
 > * In een Windows 10-bestandenverkenner raadpleegt u [Hoe kan ik verborgen bestanden en mappen weergeven?](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). 
 > * Gebruik in de grafische interface van Linux **CTRL + h** of het menu **Weergave** en schakel het selectievakje **Verborgen bestanden weergeven** in.
+
+
+
 
 > [!div class="nextstepaction"]
 > [Ik heb een map gemaakt](?success=create-dir#workspace) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=create-dir)
@@ -138,12 +148,7 @@ python ./01-create-workspace.py
 
 Nadat u *01-create-workspace.py* hebt uitgevoerd, ziet uw mapstructuur er als volgt uit:
 
-```markdown
-tutorial
-└──.azureml
-|  └──config.json
-└──01-create-workspace.py
-```
+:::image type="content" source="media/tutorial-1st-experiment-sdk-local/directory-structure-2.png" alt-text="Bestands config.jsop wordt weer gegeven in. de submap azureml na het uitvoeren van 01-create-workspace.py":::
 
 Het bestand `.azureml/config.json` bevat de metagegevens die nodig zijn om verbinding te maken met uw Azure Machine Learning-werkruimte. Anders gezegd, het bevat uw abonnements-ID, resourcegroep en de naam van uw werkruimte. 
 
@@ -196,13 +201,7 @@ python ./02-create-compute.py
 
 De mapstructuur ziet er nu als volgt uit:
 
-```bash
-tutorial
-└──.azureml
-|  └──config.json
-└──01-create-workspace.py
-└──02-create-compute.py
-```
+:::image type="content" source="media/tutorial-1st-experiment-sdk-local/directory-structure-3.png" alt-text="02-create-compute.py toevoegen aan de gids van de zelf studie":::
 
 > [!div class="nextstepaction"]
 > [Ik heb een rekencluster gemaakt](?success=create-compute-cluster#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=create-compute-cluster)

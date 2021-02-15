@@ -1,22 +1,17 @@
 ---
 title: Sessie logboek in Kopieer activiteit
 description: Meer informatie over het inschakelen van sessie logboek in een Kopieer activiteit in Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: dearandyxu
-manager: ''
-ms.reviewer: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: yexu
-ms.openlocfilehash: e56a840da07a2f6e966867699506f0122a0e7956
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 7cb00d62556babbd8e43e2fac2faa815a63943ed
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593638"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385265"
 ---
 #  <a name="session-log-in-copy-activity"></a>Sessie logboek in Kopieer activiteit
 
@@ -101,6 +96,9 @@ Nadat de Kopieer activiteit volledig is uitgevoerd, ziet u het pad van de logboe
         }
 
 ```
+
+> [!NOTE]
+> Wanneer de `enableCopyActivityLog` eigenschap is ingesteld op `Enabled` , worden de namen van het logboek bestand door het systeem gegenereerd.
 
 ### <a name="the-schema-of-the-log-file"></a>Het schema van het logboek bestand
 

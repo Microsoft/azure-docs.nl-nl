@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: b-juche
-ms.openlocfilehash: 69a970b7b088795602dfb842b20ad6457d5f27c4
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: b173342c1c384213e88f216334b5e03cd8b7bea7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99808148"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374487"
 ---
 # <a name="what-changing-to-volume-hard-quota-means-for-your-azure-netapp-files-service"></a>Wat wordt overgeschakeld naar het volume vaste quotum voor uw Azure NetApp Files-service
 
 Vanaf het begin van de service heeft Azure NetApp Files een capaciteits pool inrichten en een mechanisme voor automatische groei gebruikt. Azure NetApp Files volumes worden dun ingericht op een door de klant ingerichte capaciteits groep van een geselecteerde laag en grootte. Volume grootten (quota's) worden gebruikt voor prestaties en capaciteit en de quota's kunnen op elk gewenst moment worden aangepast. Dit gedrag houdt in dat het volume quotum op dit moment een prestatie hendel is die wordt gebruikt om de band breedte naar het volume te beheren. Op dit moment groeien de capaciteits Pools automatisch wanneer de capaciteit omhoog wordt gevuld.   
 
 > [!IMPORTANT] 
-> Het Azure NetApp Files gedrag van het inrichten van het volume en de capaciteits pool wordt gewijzigd in een *hand matig* *en te* bepalen mechanisme. **Vanaf 15 maart 2021 wordt de bandbreedte prestaties door volume grootten (quotum) beheerd, evenals de ingerichte capaciteit, en de onderliggende capaciteits groepen worden niet meer automatisch uitgebreid.** 
+> Het Azure NetApp Files gedrag van het inrichten van het volume en de capaciteits pool wordt gewijzigd in een *hand matig* *en te* bepalen mechanisme. **Vanaf 1 april 2021 worden de bandbreedte prestaties, evenals de ingerichte capaciteit en de onderliggende capaciteits groepen, niet langer automatisch uitgebreid wanneer de grootte van het volume wordt overschreden.** 
 
 ## <a name="reasons-for-the-change-to-volume-hard-quota"></a>Redenen voor de wijziging van het volume vaste quotum
 

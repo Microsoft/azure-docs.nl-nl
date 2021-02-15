@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren van Presto met behulp van Azure Data Factory
 description: Meer informatie over het kopiëren van gegevens uit Presto naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: jingwang
-ms.openlocfilehash: af05983432c0f76a88ff82a3638d86a971ef77f5
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 33e521d418c219be8eb85b79a0e07d999edb1b08
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680703"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374266"
 ---
 # <a name="copy-data-from-presto-using-azure-data-factory"></a>Gegevens kopiëren van Presto met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -46,20 +41,20 @@ De volgende eigenschappen worden ondersteund voor Presto gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Presto** | Ja |
-| host | Het IP-adres of de hostnaam van de Presto-server. (bijvoorbeeld 192.168.222.160)  | Ja |
-| serverVersion | De versie van de Presto-server. (bijvoorbeeld 0,148-t)  | Ja |
-| catalogus | De context van de catalogus voor alle aanvragen bij de server.  | Ja |
-| poort | De TCP-poort die de Presto-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 8080.  | Nee |
-| authenticationType | Het verificatie mechanisme dat wordt gebruikt om verbinding te maken met de Presto-server. <br/>Toegestane waarden zijn: **anoniem**, **LDAP** | Ja |
-| gebruikersnaam | De gebruikers naam die wordt gebruikt om verbinding te maken met de Presto-server.  | Nee |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
-| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | Nee |
-| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | Nee |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | Nee |
-| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | Nee |
-| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | Nee |
-| timeZoneID | De lokale tijd zone die wordt gebruikt door de verbinding. Geldige waarden voor deze optie zijn opgegeven in de data base van de IANA-tijd zone. De standaard waarde is de systeem tijd zone.  | Nee |
+| type | De eigenschap type moet worden ingesteld op: **Presto** | Yes |
+| host | Het IP-adres of de hostnaam van de Presto-server. (bijvoorbeeld 192.168.222.160)  | Yes |
+| serverVersion | De versie van de Presto-server. (bijvoorbeeld 0,148-t)  | Yes |
+| catalogus | De context van de catalogus voor alle aanvragen bij de server.  | Yes |
+| poort | De TCP-poort die de Presto-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 8080.  | No |
+| authenticationType | Het verificatie mechanisme dat wordt gebruikt om verbinding te maken met de Presto-server. <br/>Toegestane waarden zijn: **anoniem**, **LDAP** | Yes |
+| gebruikersnaam | De gebruikers naam die wordt gebruikt om verbinding te maken met de Presto-server.  | No |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
+| enableSsl | Hiermee geeft u op of de verbindingen met de server met behulp van TLS worden versleuteld. De standaardwaarde is false.  | No |
+| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | No |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | No |
+| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is false.  | No |
+| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is false.  | No |
+| timeZoneID | De lokale tijd zone die wordt gebruikt door de verbinding. Geldige waarden voor deze optie zijn opgegeven in de data base van de IANA-tijd zone. De standaard waarde is de systeem tijd zone.  | No |
 
 **Voorbeeld:**
 
@@ -93,9 +88,9 @@ Als u gegevens van Presto wilt kopiëren, stelt u de eigenschap type van de gege
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **PrestoObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **PrestoObject** | Yes |
 | schema | De naam van het schema. |Nee (als "query" in activiteit bron is opgegeven)  |
-| table | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
+| tabel | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik `schema` en `table` voor nieuwe werk belasting. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -125,7 +120,7 @@ Als u gegevens wilt kopiëren uit Presto, stelt u het bron type in de Kopieer ac
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **PrestoSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **PrestoSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

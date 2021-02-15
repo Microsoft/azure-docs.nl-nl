@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/07/2020
+ms.date: 02/03/2021
 ms.author: jeedes
-ms.openlocfilehash: d9e348d456d517cd20e899648b9e92b3cd802ffb
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: dd4114f417fa266d8d638e28167d513fdf01aa97
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806307"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380841"
 ---
 # <a name="tutorial-integrate-bynder-with-azure-active-directory"></a>Zelfstudie: Bynder integreren met Azure Active Directory
 
@@ -30,7 +30,7 @@ In deze zelfstudie leert u hoe u Bynder kunt integreren met Azure Active Directo
 
 U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) een gratis proefversie van één maand ontvangen.
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 * een Bynder-abonnement waarvoor eenmalige aanmelding (SSO) is ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
@@ -40,7 +40,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 * Bynder biedt ondersteuning voor door **SP en IDP** geïnitieerde eenmalige aanmelding
 * Bynder biedt ondersteuning voor het **Just In Time** inrichten van gebruikers
 
-## <a name="adding-bynder-from-the-gallery"></a>Bynder toevoegen vanuit de galerie
+## <a name="add-bynder-from-the-gallery"></a>Bynder toevoegen vanuit de galerie
 
 U moet Bynder uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps om de integratie van Bynder in Azure AD te configureren.
 
@@ -56,7 +56,7 @@ U moet Bynder uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps om de
 
 Configureer en test eenmalige aanmelding van Azure AD met Bynder met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Bynder.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Bynder te configureren en te testen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Bynder:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
@@ -65,13 +65,13 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Bynder te c
    1. **[Testgebruiker voor Bynder maken](#create-bynder-test-user)**: als u een tegenhanger van Britta Simon in Bynder wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
 1. Ga in de Azure-portal op de integratiepagina van de toepassing **Bynder** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -163,4 +163,4 @@ U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurig
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Bynder hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u Bynder hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

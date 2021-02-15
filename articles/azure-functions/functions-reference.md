@@ -4,12 +4,12 @@ description: Meer informatie over de Azure Functions-concepten en-technieken die
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.openlocfilehash: dd9a517749030f9f99731d36947c4d4ff2f13b01
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: fdc898c02cfd20ecfdd72dece4fb1e92d803dbb0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936733"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386897"
 ---
 # <a name="azure-functions-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions
 In Azure Functions delen specifieke functies enkele kern technische concepten en onderdelen, ongeacht de taal of binding die u gebruikt. Lees de informatie in dit overzicht die van toepassing is op alle voor waarden, voordat u naar een bepaalde taal of binding gaat gaan.
@@ -40,11 +40,11 @@ Zie [Azure functions triggers en bindingen concepten](functions-triggers-binding
 
 De `bindings` eigenschap is waar u zowel triggers als bindingen configureert. Elke binding deelt enkele algemene instellingen en enkele instellingen die specifiek zijn voor een bepaald type binding. Voor elke binding zijn de volgende instellingen vereist:
 
-| Eigenschap | Waarden/typen | Opmerkingen |
-| --- | --- | --- |
-| `type` |tekenreeks |Bindings type. Bijvoorbeeld `queueTrigger`. |
-| `direction` |' in ', ' out ' |Geeft aan of de binding is voor het ontvangen van gegevens van de functie of het verzenden van gegevens van de functie. |
-| `name` |tekenreeks |De naam die wordt gebruikt voor de afhankelijke gegevens in de functie. Voor C# is dit een argument naam; voor Java script is het de sleutel in een lijst met sleutel/waarden. |
+| Eigenschap    | Waarden | Type | Opmerkingen|
+|---|---|---|---|
+| type  | Naam van de binding.<br><br>Bijvoorbeeld `queueTrigger`. | tekenreeks | |
+| richting | `in`, `out`  | tekenreeks | Geeft aan of de binding is voor het ontvangen van gegevens van de functie of het verzenden van gegevens van de functie. |
+| naam | Functie-id.<br><br>Bijvoorbeeld `myQueue`. | tekenreeks | De naam die wordt gebruikt voor de afhankelijke gegevens in de functie. Voor C# is dit een argument naam; voor Java script is het de sleutel in een lijst met sleutel/waarden. |
 
 ## <a name="function-app"></a>Functie-app
 Een functie-app biedt een uitvoerings context in azure waarin uw functies worden uitgevoerd. Zo is het de implementatie-en beheer eenheid voor uw functies. Een functie-app bestaat uit een of meer afzonderlijke functies die met elkaar worden beheerd, geïmplementeerd en geschaald. Alle functies in een functie-app delen hetzelfde prijs plan, dezelfde implementatie methode en dezelfde runtime versie. U kunt een functie-app beschouwen als een manier om uw functies te organiseren en gezamenlijk te beheren. Zie [een functie-app beheren](functions-how-to-use-azure-function-app-settings.md)voor meer informatie. 
@@ -91,6 +91,83 @@ Hier volgt een tabel met alle ondersteunde bindingen.
 [!INCLUDE [dynamic compute](../../includes/functions-bindings.md)]
 
 Ondervindt u problemen met de fouten die afkomstig zijn van de bindingen? Raadpleeg de documentatie over de [Azure functions bindings fout codes](functions-bindings-error-pages.md) .
+
+
+## <a name="connections"></a>Verbindingen
+
+Uw functie project verwijst naar de verbindings gegevens op naam van de configuratie provider. De verbindings gegevens worden niet rechtstreeks geaccepteerd, zodat deze kunnen worden gewijzigd tussen omgevingen. Een trigger definitie kan bijvoorbeeld een `connection` eigenschap bevatten. Dit kan verwijzen naar een connection string, maar u kunt de connection string niet rechtstreeks instellen in een `function.json` . In plaats daarvan stelt u `connection` de naam in van een omgevings variabele die de Connection String bevat.
+
+De standaard configuratie provider maakt gebruik van omgevings variabelen. Deze kunnen worden ingesteld door [Toepassings instellingen](./functions-how-to-use-azure-function-app-settings.md?tabs=portal#settings) wanneer ze worden uitgevoerd in de Azure functions-service, of vanuit het [lokale instellingen bestand](functions-run-local.md#local-settings-file) bij het ontwikkelen van lokaal.
+
+### <a name="connection-values"></a>Verbindings waarden
+
+Wanneer de naam van de verbinding wordt omgezet in een enkele exacte waarde, identificeert de runtime de waarde als een _Connection String_, die meestal een geheim bevat. De details van een connection string worden gedefinieerd door de service waarmee u verbinding wilt maken.
+
+Een verbindings naam kan echter ook verwijzen naar een verzameling van meerdere configuratie-items. Omgevings variabelen kunnen worden behandeld als een verzameling met behulp van een gedeeld voor voegsel dat eindigt op dubbele onderstrepings tekens `__` . U kunt vervolgens naar de groep verwijzen door de naam van de verbinding in te stellen op dit voor voegsel.
+
+De `connection` eigenschap voor de definitie van een Azure Blob-trigger kan bijvoorbeeld zijn `Storage1` . Zolang er geen teken reeks waarde is geconfigureerd met `Storage1` de naam, `Storage1__serviceUri` zou worden gebruikt voor de `serviceUri` eigenschap van de verbinding. De verbindings eigenschappen verschillen voor elke service. Raadpleeg de documentatie voor de uitbrei ding die gebruikmaakt van de verbinding.
+
+### <a name="configure-an-identity-based-connection"></a>Een verbinding op basis van een identiteit configureren
+
+Sommige verbindingen in Azure Functions zijn geconfigureerd voor het gebruik van een identiteit in plaats van een geheim. Ondersteuning is afhankelijk van de uitbrei ding via de verbinding. In sommige gevallen is er nog steeds een connection string vereist in functions, zelfs als de service waarmee u verbinding maakt, verbindingen op basis van identiteiten ondersteunt.
+
+> [!IMPORTANT]
+> Zelfs als een bindings extensie verbindingen op basis van een identiteit ondersteunt, wordt die configuratie mogelijk nog niet ondersteund in het verbruiks abonnement. Zie de onderstaande ondersteunings tabel.
+
+Verbindingen op basis van een identiteit worden ondersteund door de volgende trigger-en bindings uitbreidingen:
+
+| Extensie naam | Versie van de extensie                                                                                     | Ondersteunt verbindingen op basis van een identiteit in het verbruiks abonnement |
+|----------------|-------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Azure Blob     | [Versie 5.0.0-beta1 of hoger](./functions-bindings-storage-blob.md#storage-extension-5x-and-higher)  | No                                    |
+| Azure Queue    | [Versie 5.0.0-beta1 of hoger](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) | No                                    |
+
+> [!NOTE]
+> Ondersteuning voor verbindingen op basis van een identiteit is nog niet beschikbaar voor opslag verbindingen die worden gebruikt door de functions-runtime voor kern gedrag. Dit betekent dat de `AzureWebJobsStorage` instelling een Connection String moet zijn.
+
+#### <a name="connection-properties"></a>Verbindingseigenschappen
+
+Een verbinding op basis van een identiteit voor een Azure-service accepteert de volgende eigenschappen:
+
+| Eigenschap    | Omgevingsvariabele | Is vereist | Description |
+|---|---|---|---|
+| Service-URI | `<CONNECTION_NAME_PREFIX>__serviceUri` | Yes | De gegevensfeed-URI van de service waarmee u verbinding maakt. |
+
+Er kunnen extra opties worden ondersteund voor een bepaald verbindings type. Raadpleeg de documentatie voor het onderdeel dat de verbinding maakt.
+
+Bij het hosten van de Azure Functions-service gebruiken verbindingen op basis van een identiteit een [beheerde identiteit](../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json). De door het systeem toegewezen identiteit wordt standaard gebruikt. Bij het uitvoeren in andere contexten, zoals lokale ontwikkeling, wordt de identiteit van uw ontwikkelaar gebruikt, hoewel dit kan worden aangepast met alternatieve verbindings parameters.
+
+##### <a name="local-development"></a>Lokale ontwikkeling
+
+Wanneer lokaal wordt uitgevoerd, geeft de bovenstaande configuratie aan dat de runtime uw lokale identiteit van de ontwikkelaar moet gebruiken. Met de verbinding wordt geprobeerd een token op te halen uit de volgende locaties, in volg orde:
+
+- Een lokale cache die wordt gedeeld tussen micro soft-toepassingen
+- De huidige gebruikers context in Visual Studio
+- De huidige gebruikers context in Visual Studio code
+- De huidige gebruikers context in de Azure CLI
+
+Als geen van deze opties is geslaagd, treedt er een fout op.
+
+In sommige gevallen wilt u het gebruik van een andere identiteit opgeven. U kunt configuratie-eigenschappen toevoegen voor de verbinding die verwijst naar de alternatieve identiteit.
+
+> [!NOTE]
+> De volgende configuratie opties worden niet ondersteund wanneer deze worden gehost in de Azure Functions-service.
+
+Als u verbinding wilt maken met behulp van een Azure Active Directory Service-Principal met een client-ID en een geheim, definieert u de verbinding met de volgende eigenschappen:
+
+| Eigenschap    | Omgevingsvariabele | Is vereist | Description |
+|---|---|---|---|
+| Service-URI | `<CONNECTION_NAME_PREFIX>__serviceUri` | Yes | De gegevensfeed-URI van de service waarmee u verbinding maakt. |
+| Tenant-id | `<CONNECTION_NAME_PREFIX>__tenantId` | Yes | De ID van de Azure Active Directory Tenant (map). |
+| Client-id | `<CONNECTION_NAME_PREFIX>__clientId` | Yes |  De client-ID (toepassing) van een app-registratie in de Tenant. |
+| Clientgeheim | `<CONNECTION_NAME_PREFIX>__clientSecret` | Yes | Een client geheim dat is gegenereerd voor de app-registratie. |
+
+#### <a name="grant-permission-to-the-identity"></a>Toestemming geven voor de identiteit
+
+Welke identiteit wordt gebruikt, moet machtigingen hebben om de bedoelde acties uit te voeren. Dit gebeurt doorgaans door een rol toe te wijzen in azure RBAC of de identiteit op te geven in een toegangs beleid, afhankelijk van de service waarmee u verbinding maakt. Raadpleeg de documentatie voor elke service op welke machtigingen nodig zijn en hoe ze kunnen worden ingesteld.
+
+> [!IMPORTANT]
+> Sommige machtigingen kunnen worden weer gegeven door de service die niet nodig zijn voor alle contexten. Indien mogelijk moet u zich houden aan het **principe van minimale bevoegdheden**, waarbij u de identiteit alleen vereiste bevoegdheden verleent. Als de app bijvoorbeeld alleen uit een BLOB moet lezen, gebruikt u de rol [Storage BLOB data Reader](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) als de eigenaar van de [opslag-BLOB-gegevens](../role-based-access-control/built-in-roles.md#storage-blob-data-owner) overmatige machtigingen voor een lees bewerking bevat.
+
 
 ## <a name="reporting-issues"></a>Rapportage problemen
 [!INCLUDE [Reporting Issues](../../includes/functions-reporting-issues.md)]

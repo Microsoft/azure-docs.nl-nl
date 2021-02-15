@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 01/15/2021
-ms.openlocfilehash: 9ac8a23569d9a85787768419a0377967026e9bd9
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 02/12/2021
+ms.openlocfilehash: 9a3a511a287f093b4fc317213afedd5fdc3c21be
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251567"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520660"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Toegang tot Azure-bronnen verifiëren door beheerde identiteiten te gebruiken in Azure Logic Apps
 
@@ -30,6 +30,9 @@ Op dit moment kunnen alleen [specifieke ingebouwde triggers en acties](../logic-
 * Azure Functions
 * HTTP
 * HTTP + webhook
+
+> [!NOTE]
+> Hoewel de HTTP-trigger en de actie verbindingen kunnen verifiëren met Azure Storage accounts achter Azure-firewalls met behulp van de door het systeem toegewezen beheerde identiteit, kunnen ze de door de gebruiker toegewezen beheerde identiteit niet gebruiken om dezelfde verbindingen te verifiëren.
 
 **Beheerde connectors**
 
@@ -71,7 +74,7 @@ Als u de beheerde identiteit die u wilt gebruiken, wilt instellen, volgt u de ko
 
 In tegens telling tot door de gebruiker toegewezen identiteiten hoeft u de door het systeem toegewezen identiteit niet hand matig te maken. Als u de door het systeem toegewezen identiteit voor uw logische app wilt instellen, kunt u de volgende opties gebruiken:
 
-* [Azure Portal](#azure-portal-system-logic-app)
+* [Azure-portal](#azure-portal-system-logic-app)
 * [Azure Resource Manager-sjablonen](#template-system-logic-app)
 
 <a name="azure-portal-system-logic-app"></a>
@@ -149,7 +152,7 @@ Wanneer Azure de resource definitie van de logische app maakt, `identity` krijgt
 
 Als u een door de gebruiker toegewezen beheerde identiteit voor uw logische app wilt instellen, moet u deze identiteit eerst als afzonderlijke zelfstandige Azure-resource maken. Dit zijn de opties die u kunt gebruiken:
 
-* [Azure Portal](#azure-portal-user-identity)
+* [Azure-portal](#azure-portal-user-identity)
 * [Azure Resource Manager-sjablonen](#template-user-identity)
 * Azure PowerShell
   * [Door de gebruiker toegewezen identiteit maken](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)
@@ -301,7 +304,7 @@ Als uw sjabloon ook de resource definitie van de beheerde identiteit bevat, kunt
 
 Voordat u de beheerde identiteit van de logische app voor verificatie kunt gebruiken, moet u de toegang instellen voor die identiteit op de Azure-resource waar u de identiteit wilt gebruiken. Als u deze taak wilt volt ooien, wijst u de juiste rol toe aan die identiteit op de Azure-doel resource. Dit zijn de opties die u kunt gebruiken:
 
-* [Azure Portal](#azure-portal-assign-access)
+* [Azure-portal](#azure-portal-assign-access)
 * [Azure Resource Manager-sjabloon](../role-based-access-control/role-assignments-template.md)
 * Azure PowerShell ([New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)): Zie [roltoewijzing toevoegen met behulp van Azure RBAC en Azure PowerShell](../role-based-access-control/role-assignments-powershell.md)voor meer informatie.
 * Azure CLI ([AZ Role Assignment maken](/cli/azure/role/assignment?view=azure-cli-latest&preserve-view=true#az-role-assignment-create)): Zie [roltoewijzing toevoegen met behulp van Azure RBAC en Azure cli](../role-based-access-control/role-assignments-cli.md)voor meer informatie.
@@ -552,7 +555,7 @@ Met de Azure Resource Manager actie, **Lees een resource**, kunt u de beheerde i
 
 Als u een beheerde identiteit voor uw logische app niet meer wilt gebruiken, hebt u de volgende opties:
 
-* [Azure Portal](#azure-portal-disable)
+* [Azure-portal](#azure-portal-disable)
 * [Azure Resource Manager-sjablonen](#template-disable)
 * Azure PowerShell
   * [Roltoewijzing verwijderen](../role-based-access-control/role-assignments-powershell.md)

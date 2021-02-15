@@ -1,15 +1,15 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Kubernetes Service
 description: Een overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure Kubernetes Service. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 9ae2339585616c1da993d47a1172d8ec8eddb372
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 749ceb1c6388607bb854548278522092c39881e5
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557546"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096011"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-kubernetes-service"></a>Ingebouwde Azure Policy-definities voor Azure Kubernetes Service
 

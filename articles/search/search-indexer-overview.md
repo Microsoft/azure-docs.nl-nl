@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: df393f54e7dfa83c8fc0feab3dbf42a156b296b7
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: a274e96defa8b6b74c046923d87f198029399dd4
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430459"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098092"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexeerfuncties in Azure Cognitive Search
 
@@ -118,6 +118,7 @@ U kunt de status van de Indexeer functie bewaken in de portal of via de API van 
 Nu u een volgende stap hebt geïntroduceerd, is het mogelijk om de Indexeer functie-eigenschappen en-para meters, planning en indexerings bewaking te controleren. U kunt ook teruggaan naar de lijst met [ondersteunde gegevens bronnen](#supported-data-sources) voor meer informatie over een specifieke bron.
 
 + [Indexeer functies maken](search-howto-create-indexers.md)
++ [Indexeer functies opnieuw instellen en uitvoeren](search-howto-run-reset-indexers.md)
 + [Indexeerfuncties inplannen](search-howto-schedule-indexers.md)
 + [Veld toewijzingen definiëren](search-indexer-field-mappings.md)
 + [Indexeer functie status bewaken](search-howto-monitor-indexers.md)

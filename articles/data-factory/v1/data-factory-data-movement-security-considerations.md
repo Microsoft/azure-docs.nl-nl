@@ -1,29 +1,25 @@
 ---
 title: Beveiligings overwegingen voor het verplaatsen van gegevens in Azure Data Factory
 description: Meer informatie over het beveiligen van gegevens verplaatsing in Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: nabhishek
-manager: anandsub
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: c694cf58f4c6b613cbc183753785a34bc15063bd
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 33b1ad381b3f7865768f9e39295a2985f8aa5234
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375099"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Azure Data Factory-beveiligings overwegingen voor gegevens verplaatsing
 
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [beveiligings overwegingen voor gegevens verplaatsing voor Data Factory](../data-movement-security-considerations.md).
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 In dit artikel wordt een basis beveiligings infrastructuur beschreven die services voor gegevens verplaatsing in Azure Data Factory gebruiken om uw gegevens te beveiligen. Azure Data Factory beheer bronnen zijn gebaseerd op de Azure-beveiligings infrastructuur en gebruiken alle mogelijke beveiligings maatregelen die door Azure worden geboden.
 
 In een Data Factory-oplossing maakt u een of meer gegevens[pijplijnen](data-factory-create-pipelines.md). Een pijplijn is een logische groep activiteiten die samen een taak uitvoeren. Deze pijp lijnen bevinden zich in de regio waar de data factory is gemaakt. 
@@ -33,10 +29,10 @@ Hoewel Data Factory alleen beschikbaar is in de regio's **VS-West**, VS- **Oost*
 Azure Data Factory zichzelf geen gegevens opslaat, met uitzonde ring van de gekoppelde service referenties voor gegevens archieven in de Cloud, die zijn versleuteld met behulp van certificaten. Hiermee kunt u gegevensgestuurde werk stromen maken om de verplaatsing van gegevens te organiseren tussen [ondersteunde gegevens archieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) en gegevens verwerking met behulp van [Compute Services](data-factory-compute-linked-services.md) in andere regio's of in een on-premises omgeving. U kunt hiermee ook [werk stromen bewaken en beheren](data-factory-monitor-manage-pipelines.md) met zowel programmatische als gebruikersinterface mechanismen.
 
 Gegevens verplaatsing met Azure Data Factory is **gecertificeerd** voor:
--   [HIPAA/HITECH](/compliance/regulatory/offering-hipaa-hitech)  
--   [ISO/IEC 27001](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27001)  
--   [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018) 
--   [CSA STER](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification)
+-    [HIPAA/HITECH](/compliance/regulatory/offering-hipaa-hitech)  
+-    [ISO/IEC 27001](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27001)  
+-    [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018) 
+-    [CSA STER](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification)
      
 Ga naar het [vertrouwens centrum van micro soft](https://microsoft.com/en-us/trustcenter/default.aspx)als u geïnteresseerd bent in de naleving van Azure en hoe Azure een eigen infra structuur beveiligt. 
 
@@ -122,7 +118,7 @@ Alle gegevens overdrachten zijn via Secure Channel **https** en **TLS via TCP** 
  
 U kunt ook [IPSec VPN](../../vpn-gateway/vpn-gateway-about-vpn-devices.md) of [Express route](../../expressroute/expressroute-introduction.md) gebruiken om het communicatie kanaal te beveiligen tussen uw on-premises netwerk en Azure.
 
-Virtueel netwerk is een logische weer gave van uw netwerk in de Cloud. U kunt een on-premises netwerk verbinden met uw virtuele Azure-netwerk (VNet) door IPSec VPN in te stellen (site-naar-site) of Express route (persoonlijke peering)     
+Virtueel netwerk is een logische weer gave van uw netwerk in de Cloud. U kunt een on-premises netwerk verbinden met uw virtuele Azure-netwerk (VNet) door IPSec VPN in te stellen (site-naar-site) of Express route (persoonlijke peering)        
 
 De volgende tabel bevat een overzicht van de aanbevelingen voor de netwerk-en gateway configuratie op basis van verschillende combi Naties van bron-en doel locaties voor het verplaatsen van hybride gegevens.
 
@@ -144,7 +140,7 @@ De volgende installatie kopieën tonen het gebruik van Data Management Gateway v
 
 ### <a name="firewall-configurations-and-filtering-ip-address-of-gateway"></a>Firewall configuraties en filteren van het IP-adres van de gateway
 
-#### <a name="firewall-requirements-for-on-premisesprivate-network"></a>Firewall vereisten voor on-premises/particulier netwerk  
+#### <a name="firewall-requirements-for-on-premisesprivate-network"></a>Firewall vereisten voor on-premises/particulier netwerk    
 In een onderneming wordt een **bedrijfs firewall** uitgevoerd op de centrale router van de organisatie. En **Windows Firewall** wordt uitgevoerd als een daemon op de lokale computer waarop de gateway is geïnstalleerd. 
 
 De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **bedrijfs firewall**.
@@ -154,7 +150,7 @@ De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **be
 | `*.servicebus.windows.net` | 443, 80 | Vereist door de gateway om verbinding te maken met Services voor gegevens verplaatsing in Data Factory |
 | `*.core.windows.net` | 443 | Wordt gebruikt door de gateway om verbinding te maken met Azure Storage account wanneer u de functie voor [gefaseerd kopiëren](data-factory-copy-activity-performance.md#staged-copy) gebruikt. | 
 | `*.frontend.clouddatahub.net` | 443 | Vereist door de gateway om verbinding te maken met de Azure Data Factory-service. | 
-| `*.database.windows.net` | 1433   | (Optioneel) vereist wanneer uw bestemming Azure SQL Database/Azure Synapse Analytics is. Gebruik de functie voor gefaseerd kopiëren om gegevens te kopiëren naar Azure SQL Database/Azure Synapse Analytics zonder de poort 1433 te openen. | 
+| `*.database.windows.net` | 1433    | (Optioneel) vereist wanneer uw bestemming Azure SQL Database/Azure Synapse Analytics is. Gebruik de functie voor gefaseerd kopiëren om gegevens te kopiëren naar Azure SQL Database/Azure Synapse Analytics zonder de poort 1433 te openen. | 
 | `*.azuredatalakestore.net` | 443 | (Optioneel) vereist wanneer uw bestemming Azure Data Lake archief is | 
 
 > [!NOTE] 
@@ -162,7 +158,7 @@ De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **be
 
 De volgende tabel bevat de **Binnenkomende poort** vereisten voor de **Windows Firewall**.
 
-| Poorten voor inkomend verkeer | Beschrijving | 
+| Poorten voor inkomend verkeer | Description | 
 | ------------- | ----------- | 
 | 8050 (TCP) | Vereist door de Credential Manager-toepassing om veilig referenties in te stellen voor on-premises gegevens archieven op de gateway. | 
 

@@ -9,12 +9,12 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: daf7a9fe3291850bea8c78680bcf375931383020
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: e926dcd4b05d137c7927bdfe5221923d25d4670c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805594"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093485"
 ---
 # <a name="full-backup-and-restore"></a>Volledige back-up en herstel
 
@@ -44,9 +44,9 @@ Back-up is een langdurige bewerking, maar retourneert onmiddellijk een taak-id. 
 Tijdens het maken van de back-up mag de HSM niet op volle doorvoersnelheid draaien, omdat sommige HSM-partities worden gebruikt voor de back-upbewerking.
 
 ```azurecli-interactive
-# time for 30 minutes later for SAS token expiry
+# time for 500 minutes later for SAS token expiry
 
-end=$(date -u -d "30 minutes" '+%Y-%m-%dT%H:%MZ')
+end=$(date -u -d "500 minutes" '+%Y-%m-%dT%H:%MZ')
 
 # Get storage account key
 
@@ -84,9 +84,9 @@ U moet de volgende informatie opgeven voor het uitvoeren van een volledige herst
 Herstel is een langdurige bewerking, maar retourneert onmiddellijk een taak-id. U kunt de status van het herstelproces controleren met behulp van deze taak-id. Tijdens het herstelproces wordt de HSM in een herstelmodus gezet en worden alle gegevensvlakopdrachten (behalve herstelstatus controleren) uitgeschakeld.
 
 ```azurecli-interactive
-#### time for 30 minutes later for SAS token expiry
+#### time for 500 minutes later for SAS token expiry
 
-end=$(date -u -d "30 minutes" '+%Y-%m-%dT%H:%MZ')
+end=$(date -u -d "500 minutes" '+%Y-%m-%dT%H:%MZ')
 
 # Get storage account key
 

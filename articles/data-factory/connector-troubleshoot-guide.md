@@ -1,20 +1,18 @@
 ---
 title: Problemen met Azure Data Factory-connectors oplossen
 description: Meer informatie over het oplossen van connector problemen in Azure Data Factory.
-services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 02/08/2021
 ms.author: jingwang
-ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: 2395e8e0027755357e65aab247185c02f7b1723d
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 63a690ffaaefc506de296d43e7de13020fbd584a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980708"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366922"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 

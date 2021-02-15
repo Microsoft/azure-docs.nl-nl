@@ -5,7 +5,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: troubleshooting
-ms.date: 12/11/2020
+ms.date: 02/12/2021
 tags: active-directory
 ms.author: mimart
 author: msmimart
@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa0d0d032c2ab6ae1d6c5e6b1c8b1793a6b3bd7c
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 60cd944ecb144a30e872259f6e959a11c3ea6319
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090634"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365426"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Problemen oplossen Azure Active Directory B2B-samen werking
 
@@ -27,7 +27,7 @@ Hier volgen enkele oplossingen voor veelvoorkomende problemen met Azure Active D
 
    > [!IMPORTANT]
    > - **Vanaf 4 januari 2021** wordt [ondersteuning voor WebView-aanmelding afgeschaft](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html) in Google. Als u gebruikmaakt van Google-federatie of selfserviceregistratie met Gmail, moet u [de compatibiliteit van uw systeemeigen Line-of-Business-toepassingen testen](google-federation.md#deprecation-of-webview-sign-in-support).
-   > - **Vanaf 31 maart 2021** heeft Microsoft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en -tenants voor B2B-samenwerkingsscenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
+   > - **Vanaf 2021 oktober** heeft micro soft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en-tenants voor B2B-samenwerkings scenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
 
 ## <a name="ive-added-an-external-user-but-do-not-see-them-in-my-global-address-book-or-in-the-people-picker"></a>Ik heb een externe gebruiker toegevoegd, maar deze wordt niet weer geven in het algemene adres boek of in de kiezer personen
 
@@ -112,7 +112,7 @@ Binnen de Azure-Cloud voor de Amerikaanse overheid wordt B2B-samen werking momen
 
 Wanneer u selfservice aanmeldings functies gebruikt, zoals aangepaste gebruikers kenmerken of gebruikers stromen, `aad-extensions-app. Do not modify. Used by AAD for storing user data.` wordt automatisch een app gemaakt. Het wordt gebruikt door externe Azure AD-identiteiten voor het opslaan van informatie over gebruikers die zich registreren en aangepaste verzamelde kenmerken.
 
-Als u het per ongeluk `aad-extensions-app` hebt verwijderd, hebt u 30 dagen om het te herstellen. U kunt de app herstellen met behulp van de Azure AD Power shell-module.
+Als u de `aad-extensions-app` per ongeluk hebt verwijderd, hebt u 30 dagen de tijd om deze te herstellen. U kunt de app herstellen met behulp van de Azure AD Power shell-module.
 
 1. Start de Azure AD Power shell-module en voer uit `Connect-AzureAD` .
 1. Meld u aan als globale beheerder voor de Azure AD-Tenant waarvan u de verwijderde app wilt herstellen.

@@ -5,15 +5,14 @@ author: ssabat
 ms.author: susabat
 ms.reviewer: susabat
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: troubleshooting
 ms.date: 12/03/2020
-ms.openlocfilehash: e5e1a4ff676a6677357638dc4b67dc94926adbd2
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 091c0cb20877090453f38ab922cc2bd277e90093
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556304"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393748"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
 
@@ -78,14 +77,14 @@ Er is een fout opgetreden in de CI/CD-release-pijp lijn.
 
 #### <a name="cause"></a>Oorzaak
 
-Dit wordt veroorzaakt door een Integration Runtime met dezelfde naam in de doel-Factory, maar met een ander type. Integration Runtime moet van hetzelfde type zijn wanneer u implementeert.
+Dit wordt veroorzaakt door een Integration runtime met dezelfde naam in de doel-Factory, maar met een ander type. Integration Runtime moet van hetzelfde type zijn wanneer u implementeert.
 
 #### <a name="recommendation"></a>Aanbeveling
 
 - Raadpleeg deze aanbevolen procedures voor CI/CD hieronder:
 
     https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd 
-- Integratie-Runtimes worden niet vaak gewijzigd en zijn vergelijkbaar in alle fasen van uw CI/CD, dus Data Factory verwacht dat u dezelfde naam en hetzelfde type Integration runtime hebt in alle stadia van CI/CD. Als de naam en het type & eigenschappen verschillen, moet u ervoor zorgen dat de bron-en doel-IR-configuratie overeenkomen en de release pijplijn implementeren.
+- Integratie-Runtimes worden niet vaak gewijzigd en zijn vergelijkbaar in alle fasen van uw CI/CD, dus Data Factory verwacht dat u dezelfde naam en hetzelfde type Integration runtime hebt in alle stadia van CI/CD. Als de naam en het type & eigenschappen verschillen, moet u ervoor zorgen dat deze overeenkomen met de bron-en doel integratie runtime configuratie en de release pijplijn te implementeren.
 - Als u integratie-Runtimes in alle fasen wilt delen, kunt u overwegen een ternaire fabriek alleen te gebruiken om de gedeelde integratie-runtime te bevatten. U kunt deze gedeelde Factory in al uw omgevingen gebruiken als het type gekoppelde integratie runtime.
 
 ### <a name="document-creation-or-update-failed-because-of-invalid-reference"></a>Het maken of bijwerken van het document is mislukt vanwege een ongeldige verwijzing
@@ -133,7 +132,7 @@ Het is niet mogelijk om Data Factory van de ene resource groep naar de andere te
 
 #### <a name="resolution"></a>Oplossing
 
-U moet de SSIS-IR en gedeelde IRs verwijderen om de verplaatsings bewerking toe te staan. Als u de IRs niet wilt verwijderen, kunt u het beste het document kopiëren en klonen volgen om de kopie uit te voeren en de oude Data Factory te verwijderen.
+U moet de SSIS-IR en gedeelde IRs verwijderen om de verplaatsings bewerking toe te staan. Als u de Integration Runtimes niet wilt verwijderen, kunt u het beste het kopiëren en klonen van het document volgen om de kopie te maken en de oude Data Factory te verwijderen.
 
 ###  <a name="unable-to-export-and-import-arm-template"></a>Kan ARM-sjabloon niet exporteren en importeren
 
@@ -150,6 +149,34 @@ U hebt een klantrol als gebruiker gemaakt en deze heeft niet de benodigde machti
 #### <a name="resolution"></a>Oplossing
 
 Om het probleem op te lossen, moet u de volgende machtiging toevoegen aan uw rol: *micro soft. DataFactory/factories/queryFeaturesValue/Action*. Deze machtiging moet standaard worden opgenomen in de rol ' Data Factory Inzender '.
+
+###  <a name="automatic-publishing-for-cicd-without-clicking-publish-button"></a>Automatische publicatie voor CI/CD zonder te klikken op de knop publiceren  
+
+#### <a name="issue"></a>Probleem
+
+Als u hand matig publiceert met de knop Klik in de ADF-Portal, wordt er geen automatische CI/CD-bewerking ingeschakeld.
+
+#### <a name="cause"></a>Oorzaak
+
+Tot die tijd kunt u alleen ADF-pijp lijn publiceren voor implementaties met behulp van de knop ADF-Portal. Nu kunt u het proces automatisch laten uitvoeren. 
+
+#### <a name="resolution"></a>Oplossing
+
+Het CI/CD-proces is verbeterd. Met de functie voor **automatisch publiceren** worden alle Azure Resource Manager (arm)-sjabloon functies van de ADF UX gevalideerd en geëxporteerd. De logica kan worden verbruikt met behulp van een openbaar beschikbaar NPM-pakket [@microsoft/azure-data-factory-utilities](https://www.npmjs.com/package/@microsoft/azure-data-factory-utilities) . Zo kunt u deze acties programmatisch activeren in plaats van dat u naar de ADF-gebruikers interface hoeft te gaan en op een knop klikt. Dit geeft uw CI/CD-pijp lijnen een **echte** voortdurende integratie-ervaring. Volg de [verbeteringen voor ADF CI/CD-publicatie](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment-improvements) voor meer informatie. 
+
+###  <a name="cannot-publish-because-of-4mb-arm-template-limit"></a>Kan niet publiceren vanwege een limiet van 4 MB ARM-sjablonen  
+
+#### <a name="issue"></a>Probleem
+
+U kunt niet implementeren omdat u Azure Resource Manager limiet van de totale sjabloon grootte van 4 MB hebt bereikt. U hebt een oplossing nodig om te implementeren na overschrijding van de limiet. 
+
+#### <a name="cause"></a>Oorzaak
+
+Azure Resource Manager beperkt de sjabloon grootte tot 4 MB. Beperk de grootte van uw sjabloon tot 4 MB en elk parameter bestand tot 64 KB. De limiet van 4 MB is van toepassing op de uiteindelijke status van de sjabloon nadat deze is uitgebreid met iteratieve resource definities en waarden voor variabelen en para meters. Maar u hebt de limiet overschreden. 
+
+#### <a name="resolution"></a>Oplossing
+
+Voor kleine tot middelgrote oplossingen is één sjabloon eenvoudiger te begrijpen en te onderhouden. U kunt alle resources en waarden in één bestand bekijken. Voor geavanceerde scenario's kunt u met gekoppelde sjablonen de oplossing opsplitsen in de beoogde onderdelen. Voer de best practice uit [met behulp van gekoppelde en geneste sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/linked-templates?tabs=azure-powershell).
 
 ## <a name="next-steps"></a>Volgende stappen
 

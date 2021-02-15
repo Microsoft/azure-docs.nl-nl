@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 4a817f386d68c144968540dd05f3fa6859bb0acc
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 42d388aed618a5a92212152166573719c9e973c6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704166"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371019"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Service-eindpunten voor virtuele netwerken voor Azure Key Vault
 
@@ -52,6 +52,7 @@ Hier volgt een lijst met vertrouwde services die toegang mogen hebben tot een sl
 |Azure SQL Database|[Transparent Data Encryption met Bring your own Key ondersteuning voor Azure SQL database en Azure Synapse Analytics](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&preserve-view=true&viewFallbackFrom=azuresqldb-current).|
 |Azure Storage|[Storage service Encryption door de klant beheerde sleutels gebruiken in azure Key Vault](../../storage/common/customer-managed-keys-configure-key-vault.md).|
 |Azure Data Lake Store|[Versleuteling van gegevens in azure data Lake Store](../../data-lake-store/data-lake-store-encryption.md) met een door de klant beheerde sleutel.|
+|Azure Synapse Analytics|[Versleuteling van gegevens met door de klant beheerde sleutels in Azure Key Vault](../../synapse-analytics/security/workspaces-encryption.md)|
 |Azure Databricks|[Snelle, eenvoudige en samen werkende, Apache Spark-gebaseerde analyse service](/azure/databricks/scenarios/what-is-azure-databricks)|
 |Azure API Management|[Certificaten voor een aangepast domein van Key Vault implementeren met behulp van MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
 |Azure Data Factory|[Referenties voor gegevens opslag ophalen in Key Vault van Data Factory](https://go.microsoft.com/fwlink/?linkid=2109491)|

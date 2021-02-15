@@ -1,22 +1,18 @@
 ---
 title: Variabele activity toevoegen in Azure Data Factory
 description: Meer informatie over het instellen van de activiteit variabele toevoegen om een waarde toe te voegen aan een bestaande matrix variabele die in een Data Factory pijp lijn is gedefinieerd
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.date: 10/09/2018
-ms.openlocfilehash: 16bdd1d31440ed440faf67e939485da613e3886f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 5a9ed44e05c371460ae3ceab721f2236f6ec7fd6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96490938"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383405"
 ---
 # <a name="append-variable-activity-in-azure-data-factory"></a>Variabele activity toevoegen in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -26,7 +22,7 @@ Gebruik de activiteit variabele toevoegen om een waarde toe te voegen aan een be
 
 Eigenschap | Beschrijving | Vereist
 -------- | ----------- | --------
-naam | De naam van de activiteit in de pijp lijn | Ja
+naam | De naam van de activiteit in de pijp lijn | Yes
 beschrijving | Tekst die beschrijft wat de activiteit doet | nee
 type | Type activiteit is AppendVariable | ja
 waarde | Letterlijke teken reeks of expressie object waarde die wordt gebruikt om toe te voegen aan de opgegeven variabele | ja

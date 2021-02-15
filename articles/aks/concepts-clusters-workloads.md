@@ -3,13 +3,13 @@ title: Concepten-Kubernetes-basis beginselen voor Azure Kubernetes Services (AKS
 description: Meer informatie over de basis onderdelen van het cluster en de workload van Kubernetes en hoe deze zijn gerelateerd aan functies in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: conceptual
-ms.date: 06/03/2019
-ms.openlocfilehash: 54d6f4529c236c7ff9f6258122b5b49d6d3723e8
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.date: 12/07/2020
+ms.openlocfilehash: 7485631660395e03c558167c321e6091c6fac755
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674923"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373229"
 ---
 # <a name="kubernetes-core-concepts-for-azure-kubernetes-service-aks"></a>Kubernetes-kernconcepten voor Azure Kubernetes Service (AKS)
 
@@ -31,8 +31,8 @@ Azure Kubernetes service (AKS) biedt een beheerde Kubernetes-service die de comp
 
 Een Kubernetes-cluster is onderverdeeld in twee onderdelen:
 
-- *Beheer vlak* knooppunten bieden de kern Kubernetes Services en de indeling van werk belastingen van toepassingen.
-- *Knoop punten* voeren werk belastingen van uw toepassing uit.
+- Het *besturings vlak* bevat de belangrijkste Kubernetes-Services en de indeling van werk belastingen van toepassingen.
+- *Knoop punten* waarop de werk belasting van uw toepassing wordt uitgevoerd.
 
 ![Kubernetes en knooppunt onderdelen](media/concepts-clusters-workloads/control-plane-and-nodes.png)
 

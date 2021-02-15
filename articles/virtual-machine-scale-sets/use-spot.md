@@ -1,20 +1,20 @@
 ---
 title: Een schaalset maken die gebruikmaakt van Azure spot-Vm's
 description: Meer informatie over het maken van virtuele-machine schaal sets van Azure die gebruikmaken van behulp van de functie voor het besparen van kosten.
-author: cynthn
-ms.author: cynthn
+author: JagVeerappan
+ms.author: jagaveer
 ms.topic: how-to
 ms.service: virtual-machine-scale-sets
 ms.subservice: spot
 ms.date: 03/25/2020
-ms.reviewer: jagaveer
+ms.reviewer: cynthn
 ms.custom: jagaveer, devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 4c5386e2fad0ebdd30ca8f9a8f4933e8adaf5d6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03bf5e0ef7e6268e68139b6d73685f67d88f6231
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91729012"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385928"
 ---
 # <a name="azure-spot-vms-for-virtual-machine-scale-sets"></a>Azure spot-Vm's voor schaal sets voor virtuele machines 
 
@@ -29,6 +29,24 @@ Prijzen voor spot instanties zijn variabel, op basis van de regio en de SKU. Zie
 
 
 Met variabele prijzen kunt u een maximum prijs instellen, in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde `0.98765` is bijvoorbeeld een maximum prijs van $0,98765 USD per uur. Als u de maximale prijs instelt op `-1` , wordt het exemplaar niet op basis van de prijs verwijderd. De prijs voor de instantie is de huidige prijs voor de steun waarde of de prijs voor een standaard exemplaar, die ooit kleiner is, zolang er capaciteit en quota beschikbaar zijn.
+
+
+## <a name="limitations"></a>Beperkingen
+
+De volgende grootten worden niet ondersteund voor Azure spot:
+ - B-serie
+ - Promotie versies van elke grootte (zoals dv2, NV, NC, H promotie grootten)
+
+Azure spot kan worden geïmplementeerd in elke regio, met uitzonde ring van Microsoft Azure-China 21Vianet.
+
+<a name="channel"></a>
+
+De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-details/) worden momenteel ondersteund:
+
+-   Enterprise Agreement
+-   Betalen per gebruik-aanbieding code 003P
+-   Gesponsorde
+- Neem contact op met uw partner voor Cloud service provider (CSP)
 
 ## <a name="eviction-policy"></a>Verwijderingsbeleid
 
@@ -163,22 +181,7 @@ Als u het exemplaar wilt verwijderen nadat het is verwijderd, wijzigt `evictionP
 
 **V:**  Werkt automatisch schalen met beide verwijderings beleidsregels (toewijzing en verwijdering ongedaan maken)?
 
-**A:** Ja, u wordt echter aangeraden het verwijderings beleid in te stellen dat u wilt verwijderen wanneer u automatisch schalen gebruikt. Dit komt doordat niet-toegewezen instanties worden geteld voor het aantal capaciteit van de schaalset. Wanneer u automatisch schalen gebruikt, bereikt u waarschijnlijk snel het aantal doel instanties als gevolg van de opgeheven, verwijderde exemplaren. Ook kunnen uw schaal bewerkingen worden beïnvloed door spot verwijderingen. Zo kunnen VMSS-instanties onder het aantal ingestelde minuten vallen vanwege meerdere spot verwijderingen tijdens schaal bewerkingen. 
-
-**V:** Welke kanalen ondersteunen de ondersteuning van virtuele machines?
-
-**A:** Zie de onderstaande tabel voor meer informatie over de beschik baarheid van spot VM'S.
-
-<a name="channel"></a>
-
-| Azure-kanalen               | Beschik baarheid van Azure spot Vm's       |
-|------------------------------|-----------------------------------|
-| Enterprise Agreement         | Ja                               |
-| Betalen naar gebruik                | Ja                               |
-| Cloud serviceprovider (CSP) | [Neem contact op met uw partner](/partner-center/azure-plan-get-started) |
-| Voordelen                     | Niet beschikbaar                     |
-| Gesponsorde                    | Ja                               |
-| Gratis proefversie                   | Niet beschikbaar                     |
+**A:** Ja, u wordt echter aangeraden het verwijderings beleid in te stellen dat u wilt verwijderen wanneer u automatisch schalen gebruikt. Dit komt doordat niet-toegewezen instanties worden geteld voor het aantal capaciteit van de schaalset. Wanneer u automatisch schalen gebruikt, bereikt u waarschijnlijk snel het aantal doel instanties als gevolg van de opgeheven, verwijderde exemplaren. Ook kunnen uw schaal bewerkingen worden beïnvloed door spot verwijderingen. Zo kunnen instanties van virtuele-machine schaal sets onder het aantal ingestelde minuten vallen vanwege meerdere spot verwijderingen tijdens schaal bewerkingen. 
 
 
 **V:** Waar kan ik vragen plaatsen?

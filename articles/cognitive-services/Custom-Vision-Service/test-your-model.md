@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: pafarley
-ms.openlocfilehash: 5a3aacd1d07ff068fe50312b2c1d47ac080e5c2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 736d135323e2a2df38a13dc46189e2a243fbe381
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85391720"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097531"
 ---
 # <a name="test-and-retrain-a-model-with-custom-vision-service"></a>Een model testen en opnieuw trainen met Custom Vision Service
 
@@ -23,7 +23,7 @@ Nadat u uw model hebt getraind, kunt u het snel testen met een lokaal opgeslagen
 
 ## <a name="test-your-model"></a>Uw model testen
 
-1. Selecteer uw project op de [webpagina Custom Vision](https://customvision.ai). Selecteer **snelle test** aan de rechter kant van de bovenste menu balk. Met deze actie wordt een venster met de naam **snelle test**geopend.
+1. Selecteer uw project op de [webpagina Custom Vision](https://customvision.ai). Selecteer **snelle test** aan de rechter kant van de bovenste menu balk. Met deze actie wordt een venster met de naam **snelle test** geopend.
 
     ![De knop voor snelle test wordt weer gegeven in de rechter bovenhoek van het venster.](./media/test-your-model/quick-test-button.png)
 
@@ -59,4 +59,4 @@ Gebruik de volgende stappen om de installatie kopie te gebruiken die u eerder vo
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[De classificatie verbeteren](getting-started-improving-your-classifier.md)
+[Uw model verbeteren](getting-started-improving-your-classifier.md)

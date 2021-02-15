@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2020
 ms.author: b-juche
-ms.openlocfilehash: aca6899da3c92cca0fd8564da5ec3d1679eb2579
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d90061d6d56e24168bf368498d05962296892342
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75890979"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374861"
 ---
 # <a name="azure-netapp-files-videos"></a>Azure NetApp Files-video’s
 In dit artikel vindt u verwijzingen naar Video's die diep gaande discussies over het gebruik van Azure NetApp Files bevatten. 
 
 Er zijn verschillende Video's beschikbaar om meer te weten te komen over Azure NetApp Files:  
 
-* [Micro soft Ignite 2019: Voer uw meest veeleisende bedrijfs bestanden uit met Azure NetApp files](https://myignite.techcommunity.microsoft.com/sessions/82938?source=sessions) biedt een korte inleiding tot Azure NetApp files, waaronder use cases en demonstratie, en ga vervolgens verder met de mogelijkheden en het schema.
+* [Micro soft Ignite 2019: Voer uw meest veeleisende bedrijfs bestanden uit met Azure NetApp files](https://azure.microsoft.com/resources/videos/ignite-2018-taking-on-the-most-demanding-enterprise-file-workloads-with-azure-netapp-files/) biedt een korte inleiding tot Azure NetApp files, waaronder use cases en demonstratie, en ga vervolgens verder met de mogelijkheden en het schema.
 * [Azure NetApp files lezingen door Kirk Joop](https://www.youtube.com/channel/UCq1jZkyVXqMsMSIvScBE2qg/playlists) zijn een reeks Video's, zelf studies en demonstraties die zijn toegewezen aan Azure NetApp files. 

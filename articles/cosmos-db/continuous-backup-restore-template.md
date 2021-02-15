@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 642c61414d882b9cfe83f585fda8ff5404e8834a
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 4abfdd0209bd9f13fb7bd902b27a53f65156da2e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381814"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-resource-manager-templates"></a>Continue back-ups en herstel naar een tijdstip configureren en beheren (preview)-Azure Resource Manager sjablonen gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u een account met doorlopende back-up-en her
 
 ## <a name="provision-an-account-with-continuous-backup"></a><a id="provision"></a>Een account inrichten met doorlopende back-up
 
-U kunt Azure Resource Manager sjablonen gebruiken om een Azure Cosmos DB account te implementeren met doorlopende modus. Wanneer u de sjabloon voor het inrichten van een account definieert, neemt u de para meter ' backupPolicy ' op zoals weer gegeven in het volgende voor beeld:
+U kunt Azure Resource Manager sjablonen gebruiken om een Azure Cosmos DB account te implementeren met doorlopende modus. Wanneer u de sjabloon voor het inrichten van een account definieert, neemt u de `backupPolicy` para meter op zoals weer gegeven in het volgende voor beeld:
 
 ```json
 {
@@ -66,9 +66,9 @@ az group deployment create -g <ResourceGroup> --template-file <ProvisionTemplate
 
 U kunt ook een account herstellen met behulp van Resource Manager-sjabloon. Bij het definiëren van de sjabloon zijn de volgende para meters:
 
-* Stel de para meter "createMode" in op "herstellen"
-* Definieer de ' restoreParameters ', u ziet dat de waarde ' restoreSource ' is geëxtraheerd uit de uitvoer van de `az cosmosdb restorable-database-account list` opdracht voor uw bron account. Het kenmerk instance ID voor uw account naam wordt gebruikt om de herstel bewerking uit te voeren.
-* Stel de para meter ' restoreMode ' in op ' PointInTime ' en configureer de ' restoreTimestampInUtc-waarde.
+* Stel de `createMode` para meter in op *herstellen*
+* Definieer de `restoreParameters` , Let op: de `restoreSource` waarde wordt opgehaald uit de uitvoer van de `az cosmosdb restorable-database-account list` opdracht voor uw bron account. Het kenmerk instance ID voor uw account naam wordt gebruikt om de herstel bewerking uit te voeren.
+* Stel de `restoreMode` para meter in op *PointInTime* en configureer de `restoreTimestampInUtc` waarde.
 
 ```json
 {

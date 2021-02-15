@@ -1,23 +1,18 @@
 ---
 title: Gegevens transformeren met behulp van Hadoop streaming-activiteit-Azure
 description: Meer informatie over hoe u de activiteit Hadoop streaming kunt gebruiken in een Azure data factory om gegevens te transformeren door Hadoop-streaming-Program ma's uit te voeren op een op aanvraag/uw eigen HDInsight-cluster.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
-ms.assetid: 4c3ff8f2-2c00-434e-a416-06dfca2c41ec
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 80f78e3d2e7fdcd8fef53ca0412676a37c6486c2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 532ece3bcc8c62771511fb2608e824de846b54fe
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495596"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383089"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Gegevens transformeren met behulp van Hadoop streaming-activiteit in Azure Data Factory
 > [!div class="op_single_selector" title1="Transformatie activiteiten"]

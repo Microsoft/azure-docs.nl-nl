@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 41fdb3d2e69ae39dbe80f21a953fd9fdaa6d1127
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 4da93503c32e380adb82028e7c5e11dddb247d6f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968463"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373365"
 ---
 # <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech-model trainen en implementeren
 
@@ -40,7 +40,19 @@ De eerste stap voor het trainen van een model is het uploaden van trainings gege
 3. Selecteer **model voor Train**.
 4. Geef uw training een **naam** en **Beschrijving**.
 5. Selecteer in de lijst **scenario en basislijn model** het scenario dat het meest geschikt is voor uw domein. Als u niet zeker weet welk scenario u moet kiezen, selecteert u **Algemeen**. Het basis model is het begin punt voor training. Het meest recente model is doorgaans de beste keuze.
-6. Kies op de pagina **trainings gegevens selecteren** een of meer gerelateerde tekst gegevens sets of audio en transcriptie gegevens sets met menselijke labels die u wilt gebruiken voor de training. Wanneer u een nieuw model traint, begint u met Verwante tekst. training met audio en menselijk gelabelde transcriptie kan veel langer duren (Maxi maal [enkele dagen](how-to-custom-speech-evaluate-data.md#improve-model-recognition)).
+6. Kies op de pagina **trainings gegevens selecteren** een of meer gerelateerde tekst gegevens sets of audio en transcriptie gegevens sets met menselijke labels die u wilt gebruiken voor de training.
+
+> [!NOTE]
+> Wanneer u een nieuw model traint, begint u met Verwante tekst. training met audio en menselijk gelabelde transcriptie kan veel langer duren **(Maxi maal [enkele dagen](how-to-custom-speech-evaluate-data.md#add-audio-with-human-labeled-transcripts)**).
+
+> [!NOTE]
+> Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens.
+
+> [!NOTE]
+> Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+>
+> Als u het probleem voor komt dat in de bovenstaande alinea wordt beschreven, kunt u de trainings tijd snel verlagen door de hoeveelheid audio in de gegevensset te verminderen of deze volledig te verwijderen en alleen de tekst te verlaten. De laatste optie wordt sterk aanbevolen als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
+
 7. Nadat de training is voltooid, kunt u nauw keurig testen uitvoeren op het nieuwe getrainde model. Deze stap is optioneel.
 8. Selecteer **maken** om uw aangepaste model te maken.
 
@@ -80,7 +92,7 @@ Logboek gegevens kunnen alleen worden geëxporteerd als u naar de pagina van het
 
 * [Meer informatie over het gebruik van uw aangepaste model](how-to-specify-source-language.md)
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 - [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)

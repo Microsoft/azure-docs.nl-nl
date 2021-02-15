@@ -1,23 +1,18 @@
 ---
 title: Gegevens pijplijnen bewaken en beheren-Azure
 description: Meer informatie over het gebruik van de app voor bewaking en beheer voor het bewaken en beheren van Azure-gegevens fabrieken en-pijp lijnen.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
-ms.assetid: f3f07bc4-6dc3-4d4d-ac22-0be62189d578
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: afab2b03d31045b9f49f357b49d15368cde898da
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: be11f742eb99d25cb0e41a3dd0888d62417837dd
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495698"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380369"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Azure Data Factory pijp lijnen bewaken en beheren met behulp van de app voor bewaking en beheer
 > [!div class="op_single_selector"]
@@ -159,7 +154,7 @@ Activiteit Vensters kunnen een van de volgende statussen hebben:
 
 <table>
 <tr>
-    <th align="left">Status</th><th align="left">Substatus</th><th align="left">Beschrijving</th>
+    <th align="left">Status</th><th align="left">Substatus</th><th align="left">Description</th>
 </tr>
 <tr>
     <td rowspan="8">Wachten</td><td>ScheduleTime</td><td>De tijd voor het uitvoeren van het activiteiten venster kan niet worden uitgevoerd.</td>
@@ -187,7 +182,7 @@ Activiteit Vensters kunnen een van de volgende statussen hebben:
 </tr>
 <tr>
 <tr>
-<td rowspan="2">Wordt uitgevoerd</td><td>Valideren</td><td>De validatie wordt uitgevoerd.</td>
+<td rowspan="2">InProgress</td><td>Valideren</td><td>De validatie wordt uitgevoerd.</td>
 </tr>
 <td>-</td>
 <td>Het activiteiten venster wordt verwerkt.</td>

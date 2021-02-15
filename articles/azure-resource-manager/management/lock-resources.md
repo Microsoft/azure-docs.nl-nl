@@ -4,12 +4,12 @@ description: Voor komen dat gebruikers Azure-resources bijwerken of verwijderen 
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 912c7e86d253aa18b9a6c60717ceaa70e32fcf0e
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 6df6aec06fadaacc6b1d08ed9ee33b72c5971359
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428314"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369472"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Resources vergrendelen om onverwachte wijzigingen te voorkomen
 
@@ -32,7 +32,7 @@ Vergrendelingen van Resource Manager gelden alleen voor bewerkingen die zich op 
 
 Het Toep assen van vergren delingen kan leiden tot onverwachte resultaten omdat sommige bewerkingen die niet van invloed zijn op het wijzigen van de resource, acties nodig hebben die door de vergren deling worden geblokkeerd. Met vergren delingen wordt voor komen dat bewerkingen waarvoor een POST-aanvraag naar de Azure Resource Manager-API is vereist. Enkele algemene voor beelden van de bewerkingen die worden geblokkeerd door de vergren delingen zijn:
 
-* Met een alleen-lezen vergrendeling op een **opslag account** kunnen alle gebruikers de sleutels niet weer geven. De bewerking voor het weergeven van de lijst met sleutels wordt verwerkt via een POST-aanvraag, omdat de geretourneerde sleutels beschikbaar zijn voor schrijfbewerkingen.
+* Een alleen-lezen vergrendeling op een **opslag account** voor komt dat gebruikers de account sleutels kunnen weer geven. De bewerking [lijst sleutels](/rest/api/storagerp/storageaccounts/listkeys) Azure Storage wordt verwerkt via een post-aanvraag om de toegang tot de account sleutels te beveiligen, die volledige toegang biedt tot gegevens in het opslag account. Wanneer een alleen-lezen vergrendeling is geconfigureerd voor een opslag account, moeten gebruikers die niet beschikken over de account sleutels Azure AD-referenties gebruiken om toegang te krijgen tot BLOB-of wachtrij gegevens. Een alleen-lezen vergrendeling voor komt ook dat de toewijzing van Azure RBAC-rollen die binnen het bereik van het opslag account of een gegevens container (BLOB-container of wachtrij) vallen.
 
 * Met een alleen-lezen vergrendeling voor een **app service** resource kan Visual Studio Server Explorer bestanden voor de resource niet weer geven omdat die interactie schrijf toegang vereist.
 

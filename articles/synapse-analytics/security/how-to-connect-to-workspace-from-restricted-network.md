@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 10/25/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: 41403a59be0395a6d9874c7369bfe59c22f5ac17
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: de7c5dba5a4868b7a8fdb390f974134cfaef7395
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218362"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384517"
 ---
 # <a name="connect-to-workspace-resources-from-a-restricted-network"></a>Verbinding maken met werkruimte bronnen vanuit een beperkt netwerk
 
@@ -74,7 +74,7 @@ Nadat het eind punt van de persoonlijke koppeling is gemaakt, kunt u toegang kri
 
 Als u toegang wilt krijgen tot de resources in uw Azure Synapse Analytics Studio-werkruimte resource, moet u het volgende maken:
 
-- Ten minste één persoonlijk eind punt met een type **ontwikkelaar** van een **doel-subresource**.
+- Ten minste één persoonlijk eind punt met een **subresource** van het type **dev**.
 - Twee andere optionele persoonlijke koppelings eindpunten met typen **SQL** of **SqlOnDemand**, afhankelijk van de resources in de werk ruimte die u wilt gebruiken.
 
 Het maken van deze in de vorige stap is vergelijkbaar met hoe u het eind punt maakt.  
@@ -146,7 +146,8 @@ Nadat de koppeling met het virtuele netwerk is toegevoegd, moet u de DNS-records
 
 * Voer bij **naam** de toegewezen naam teken reeksen in voor het verschillende persoonlijke eind punt: 
   * **Web** is voor het persoonlijke eind punt van toegang tot Azure Synapse Analytics Studio.
-  * "***YourWorkSpaceName * * _" is voor het persoonlijke eind punt van SQL-query uitvoering in SQL-groep en ook voor het persoonlijke eind punt van toegang tot alles in azure Synapse Analytics studio-werk ruimten. _ "*** YourWorkSpaceName *-OnDemand * *" is voor het persoonlijke eind punt van SQL-query uitvoering in de ingebouwde groep.
+  * '***YourWorkSpaceName***' is voor het persoonlijke eind punt van SQL-query uitvoering in SQL-groep en ook voor het persoonlijke eind punt van toegang tot alles in azure Synapse Analytics studio-werk ruimten.
+  * "***YourWorkSpaceName *-OnDemand**" is voor het persoonlijke eind punt van SQL-query uitvoering in de ingebouwde groep.
 * Selecteer bij **type** alleen DNS-record type **A** . 
 * Voer bij **IP-adres** het bijbehorende IP-adres van elk privé-eind punt in. U kunt het IP-adres in de **netwerk interface** ophalen uit het overzicht van uw persoonlijke eind punt.
 

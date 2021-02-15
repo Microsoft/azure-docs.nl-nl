@@ -2,13 +2,13 @@
 title: Azure Event Hubs-uitzonde ringen (verouderd)
 description: Dit artikel bevat een lijst met uitzonde ringen en voorgestelde acties van Azure Event Hubs Messa ging.
 ms.topic: article
-ms.date: 11/02/2020
-ms.openlocfilehash: 357a87c53023962dd9195a616bd9ce9e01c55bf9
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.date: 02/10/2021
+ms.openlocfilehash: a76c98ec7d6d1f3370ed8787bf10d1d16a7baaa5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340964"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390892"
 ---
 # <a name="event-hubs-messaging-exceptions---net-legacy"></a>Uitzonde ringen voor Event Hubs berichten-.NET (verouderd)
 In deze sectie vindt u de .NET-uitzonde ringen die worden gegenereerd door .NET Framework-Api's. 
@@ -125,14 +125,14 @@ Deze fout kan een van de volgende twee oorzaken hebben:
 
     Als u waarden ziet die hoger zijn dan het aantal TUs * limieten (1 MB per seconde voor ingangen of 1000 aanvragen voor binnenkomend/seconde, 2 MB per seconde voor uitgaand verkeer), verg root u het aantal TUs met behulp van de **schaal** (in de menu balk links van een naam ruimte) om event hubs een hogere waarde hand matig te schalen of om de Event hubs functie voor [automatisch](event-hubs-auto-inflate.md) Houd er rekening mee dat automatisch verg Roten kan Maxi maal 20 TUS verhogen. Dien een [ondersteunings aanvraag](../azure-portal/supportability/how-to-create-azure-support-request.md)in om het te verheffen naar precies 40 TUs.
 
-### <a name="error-code-50001"></a>Fout code 50001
+### <a name="error-code-50008"></a>Fout code 50008
 
 Deze fout moet zelden optreden. Het gebeurt wanneer de container code voor uw naam ruimte op de CPU laag is, niet meer dan een paar seconden voordat de Event Hubs load balancer begint.
 
-**Oplossing**: beperken van aanroepen naar de methode GetRuntimeInformation. Azure Event Hubs ondersteunt Maxi maal 50 oproepen per seconde voor de GetRuntimeInfo per seconde. Er wordt een uitzonde ring weer gegeven die vergelijkbaar is met de volgende wanneer de limiet is bereikt:
+**Oplossing**: Beperk aanroepen naar de methode GetRuntimeInformation. Azure Event Hubs ondersteunt Maxi maal 50 oproepen per seconde per Consumer groep naar de GetRuntimeInfo per seconde. Er wordt een uitzonde ring weer gegeven die vergelijkbaar is met de volgende wanneer de limiet is bereikt:
 
 ```
-ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The request was terminated because the namespace 75248:aaa-default-eventhub-ns-prodb2b is being throttled. Error code : 50001. Please wait 10 seconds and try again.
+ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The request was terminated because the namespace 75248:aaa-default-eventhub-ns-prodb2b is being throttled. Error code : 50008. Please wait 10 seconds and try again.
 ```
 
 

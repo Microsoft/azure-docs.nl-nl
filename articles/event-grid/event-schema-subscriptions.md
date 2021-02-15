@@ -2,17 +2,17 @@
 title: Azure-abonnement als Event Grid bron
 description: Hierin worden de eigenschappen beschreven die worden verschaft voor abonnements gebeurtenissen met Azure Event Grid
 ms.topic: reference
-ms.date: 07/07/2020
-ms.openlocfilehash: 72b1a73bf418b417cd29f88063781e7b45979998
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/12/2021
+ms.openlocfilehash: b9753ecfb46f5ac5f383f19e3d409e703c144d48
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86105894"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363182"
 ---
 # <a name="azure-subscription-as-an-event-grid-source"></a>Azure-abonnement als een Event Grid bron
 
-In dit artikel vindt u de eigenschappen en het schema voor Azure-abonnements gebeurtenissen.Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's.
+In dit artikel vindt u de eigenschappen en het schema voor Azure-abonnements gebeurtenissen. Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's.
 
 Azure-abonnementen en-resource groepen verzenden dezelfde gebeurtenis typen. De gebeurtenis typen zijn gerelateerd aan wijzigingen of acties van resources. Het belangrijkste verschil is dat resource groepen gebeurtenissen verzenden voor resources binnen de resource groep en Azure-abonnementen die gebeurtenissen verzenden voor bronnen in het abonnement.
 
@@ -25,9 +25,8 @@ Als u gebeurtenissen op een programmatische manier wilt afhandelen, kunt u gebeu
 Het gebeurtenis onderwerp is de resource-ID van de resource die het doel van de bewerking is. Als u gebeurtenissen voor een resource wilt filteren, geeft u deze resource-ID op bij het maken van het gebeurtenis abonnement. Als u wilt filteren op een resource type, gebruikt u een waarde in de volgende notatie: `/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.Compute/virtualMachines`
 
 
-## <a name="event-grid-event-schema"></a>Event Grid-gebeurtenisschema
 
-### <a name="available-event-types"></a>Beschik bare gebeurtenis typen
+## <a name="available-event-types"></a>Beschik bare gebeurtenis typen
 
 Azure-abonnementen die beheer gebeurtenissen van Azure Resource Manager verzenden, zoals wanneer een virtuele machine wordt gemaakt of een opslag account wordt verwijderd.
 
@@ -43,7 +42,9 @@ Azure-abonnementen die beheer gebeurtenissen van Azure Resource Manager verzende
 | Micro soft. resources. ResourceWriteFailure | Deze gebeurtenis treedt op wanneer Create-of update-bewerking mislukt. |
 | Micro soft. resources. ResourceWriteSuccess | Deze gebeurtenis treedt op wanneer Create of update is voltooid. |
 
-### <a name="example-event"></a>Voorbeeld gebeurtenis
+## <a name="example-event"></a>Voorbeeld gebeurtenis
+
+# <a name="event-grid-event-schema"></a>[Event Grid-gebeurtenisschema](#tab/event-grid-event-schema)
 
 In het volgende voor beeld ziet u het schema voor een **ResourceWriteSuccess** -gebeurtenis. Hetzelfde schema wordt gebruikt voor **ResourceWriteFailure** -en **ResourceWriteCancel** -gebeurtenissen met verschillende waarden voor `eventType` .
 
@@ -227,35 +228,238 @@ In het volgende voor beeld ziet u het schema voor een **ResourceActionSuccess** 
 }]
 ```
 
+# <a name="cloud-event-schema"></a>[Cloudgebeurtenisschema](#tab/cloud-event-schema)
+
+
+In het volgende voor beeld ziet u het schema voor een **ResourceWriteSuccess** -gebeurtenis. Hetzelfde schema wordt gebruikt voor **ResourceWriteFailure** -en **ResourceWriteCancel** -gebeurtenissen met verschillende waarden voor `eventType` .
+
+```json
+[{
+  "subject": "/subscriptions/{subscription-id}/resourcegroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}",
+  "topic": "/subscriptions/{subscription-id}",
+  "type": "Microsoft.Resources.ResourceWriteSuccess",
+  "time": "2018-07-19T18:38:04.6117357Z",
+  "id": "4db48cba-50a2-455a-93b4-de41a3b5b7f6",
+  "data": {
+    "authorization": {
+      "scope": "/subscriptions/{subscription-id}/resourcegroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}",
+      "action": "Microsoft.Storage/storageAccounts/write",
+      "evidence": {
+        "role": "Subscription Admin"
+      }
+    },
+    "claims": {
+      "aud": "{audience-claim}",
+      "iss": "{issuer-claim}",
+      "iat": "{issued-at-claim}",
+      "nbf": "{not-before-claim}",
+      "exp": "{expiration-claim}",
+      "_claim_names": "{\"groups\":\"src1\"}",
+      "_claim_sources": "{\"src1\":{\"endpoint\":\"{URI}\"}}",
+      "http://schemas.microsoft.com/claims/authnclassreference": "1",
+      "aio": "{token}",
+      "http://schemas.microsoft.com/claims/authnmethodsreferences": "rsa,mfa",
+      "appid": "{ID}",
+      "appidacr": "2",
+      "http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier": "{ID}",
+      "e_exp": "{expiration}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "{last-name}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "{first-name}",
+      "ipaddr": "{IP-address}",
+      "name": "{full-name}",
+      "http://schemas.microsoft.com/identity/claims/objectidentifier": "{ID}",
+      "onprem_sid": "{ID}",
+      "puid": "{ID}",
+      "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "{ID}",
+      "http://schemas.microsoft.com/identity/claims/tenantid": "{ID}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "{user-name}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "{user-name}",
+      "uti": "{ID}",
+      "ver": "1.0"
+    },
+    "correlationId": "{ID}",
+    "resourceProvider": "Microsoft.Storage",
+    "resourceUri": "/subscriptions/{subscription-id}/resourcegroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}",
+    "operationName": "Microsoft.Storage/storageAccounts/write",
+    "status": "Succeeded",
+    "subscriptionId": "{subscription-id}",
+    "tenantId": "{tenant-id}"
+  },
+  "specversion": "`1.0"
+
+}]
+```
+
+In het volgende voor beeld ziet u het schema voor een **ResourceDeleteSuccess** -gebeurtenis. Hetzelfde schema wordt gebruikt voor **ResourceDeleteFailure** -en **ResourceDeleteCancel** -gebeurtenissen met verschillende waarden voor `eventType` .
+
+```json
+[{
+  "subject": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}",
+  "source": "/subscriptions/{subscription-id}",
+  "type": "Microsoft.Resources.ResourceDeleteSuccess",
+  "time": "2018-07-19T19:24:12.763881Z",
+  "id": "19a69642-1aad-4a96-a5ab-8d05494513ce",
+  "data": {
+    "authorization": {
+      "scope": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}",
+      "action": "Microsoft.Storage/storageAccounts/delete",
+      "evidence": {
+        "role": "Subscription Admin"
+      }
+    },
+    "claims": {
+      "aud": "{audience-claim}",
+      "iss": "{issuer-claim}",
+      "iat": "{issued-at-claim}",
+      "nbf": "{not-before-claim}",
+      "exp": "{expiration-claim}",
+      "_claim_names": "{\"groups\":\"src1\"}",
+      "_claim_sources": "{\"src1\":{\"endpoint\":\"{URI}\"}}",
+      "http://schemas.microsoft.com/claims/authnclassreference": "1",
+      "aio": "{token}",
+      "http://schemas.microsoft.com/claims/authnmethodsreferences": "rsa,mfa",
+      "appid": "{ID}",
+      "appidacr": "2",
+      "http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier": "{ID}",
+      "e_exp": "262800",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "{last-name}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "{first-name}",
+      "ipaddr": "{IP-address}",
+      "name": "{full-name}",
+      "http://schemas.microsoft.com/identity/claims/objectidentifier": "{ID}",
+      "onprem_sid": "{ID}",
+      "puid": "{ID}",
+      "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "{ID}",
+      "http://schemas.microsoft.com/identity/claims/tenantid": "{ID}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "{user-name}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "{user-name}",
+      "uti": "{ID}",
+      "ver": "1.0"
+    },
+    "correlationId": "{ID}",
+    "httpRequest": {
+      "clientRequestId": "{ID}",
+      "clientIpAddress": "{IP-address}",
+      "method": "DELETE",
+      "url": "https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}?api-version=2018-02-01"
+    },
+    "resourceProvider": "Microsoft.Storage",
+    "resourceUri": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-name}",
+    "operationName": "Microsoft.Storage/storageAccounts/delete",
+    "status": "Succeeded",
+    "subscriptionId": "{subscription-id}",
+    "tenantId": "{tenant-id}"
+  },
+  "specversion": "1.0"
+}]
+```
+
+In het volgende voor beeld ziet u het schema voor een **ResourceActionSuccess** -gebeurtenis. Hetzelfde schema wordt gebruikt voor **ResourceActionFailure** -en **ResourceActionCancel** -gebeurtenissen met verschillende waarden voor `eventType` .
+
+```json
+[{   
+  "subject": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey",
+  "source": "/subscriptions/{subscription-id}",
+  "type": "Microsoft.Resources.ResourceActionSuccess",
+  "time": "2018-10-08T22:46:22.6022559Z",
+  "id": "{ID}",
+  "data": {
+    "authorization": {
+      "scope": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey",
+      "action": "Microsoft.EventHub/namespaces/AuthorizationRules/listKeys/action",
+      "evidence": {
+        "role": "Contributor",
+        "roleAssignmentScope": "/subscriptions/{subscription-id}",
+        "roleAssignmentId": "{ID}",
+        "roleDefinitionId": "{ID}",
+        "principalId": "{ID}",
+        "principalType": "ServicePrincipal"
+      }     
+    },
+    "claims": {
+      "aud": "{audience-claim}",
+      "iss": "{issuer-claim}",
+      "iat": "{issued-at-claim}",
+      "nbf": "{not-before-claim}",
+      "exp": "{expiration-claim}",
+      "aio": "{token}",
+      "appid": "{ID}",
+      "appidacr": "2",
+      "http://schemas.microsoft.com/identity/claims/identityprovider": "{URL}",
+      "http://schemas.microsoft.com/identity/claims/objectidentifier": "{ID}",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "{ID}",       "http://schemas.microsoft.com/identity/claims/tenantid": "{ID}",
+      "uti": "{ID}",
+      "ver": "1.0"
+    },
+    "correlationId": "{ID}",
+    "httpRequest": {
+      "clientRequestId": "{ID}",
+      "clientIpAddress": "{IP-address}",
+      "method": "POST",
+      "url": "https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey/listKeys?api-version=2017-04-01"
+    },
+    "resourceProvider": "Microsoft.EventHub",
+    "resourceUri": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventHub/namespaces/{namespace}/AuthorizationRules/RootManageSharedAccessKey",
+    "operationName": "Microsoft.EventHub/namespaces/AuthorizationRules/listKeys/action",
+    "status": "Succeeded",
+    "subscriptionId": "{subscription-id}",
+    "tenantId": "{tenant-id}"
+  },
+  "specversion": "1.0"
+}]
+```
+
+---
+
 ### <a name="event-properties"></a>Gebeurtenis eigenschappen
+
+# <a name="event-grid-event-schema"></a>[Event Grid-gebeurtenisschema](#tab/event-grid-event-schema)
 
 Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| onderwerp | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
-| onderwerp | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
-| Type | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
-| eventTime | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
-| id | tekenreeks | De unieke id voor de gebeurtenis. |
-| gegevens | object | Gebeurtenis gegevens van abonnement. |
-| dataVersion | tekenreeks | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
-| metadataVersion | tekenreeks | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
+| `topic` | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
+| `subject` | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| `eventType` | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| `eventTime` | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| `id` | tekenreeks | De unieke id voor de gebeurtenis. |
+| `data` | object | Gebeurtenis gegevens van abonnement. |
+| `dataVersion` | tekenreeks | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
+| `metadataVersion` | tekenreeks | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
+
+# <a name="cloud-event-schema"></a>[Cloudgebeurtenisschema](#tab/cloud-event-schema)
+
+Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
+
+| Eigenschap | Type | Description |
+| -------- | ---- | ----------- |
+| `source` | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
+| `subject` | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| `type` | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| `time` | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| `id` | tekenreeks | De unieke id voor de gebeurtenis. |
+| `data` | object | Gebeurtenis gegevens van abonnement. |
+| `specversion` | tekenreeks | CloudEvents-schema specificatie versie. |
+
+---
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| autorisatie | object | De aangevraagde autorisatie voor de bewerking. |
-| claims | object | De eigenschappen van de claims. Zie [JWT-specificatie](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)voor meer informatie. |
-| correlationId | tekenreeks | Een bewerkings-ID voor het oplossen van problemen. |
-| httpRequest | object | De details van de bewerking. Dit object is alleen opgenomen bij het bijwerken van een bestaande resource of het verwijderen van een resource. |
-| Resource provider | tekenreeks | De resource provider voor de bewerking. |
-| resourceUri | tekenreeks | De URI van de resource in de bewerking. |
-| operationName | tekenreeks | De bewerking die is uitgevoerd. |
-| status | tekenreeks | De status van de bewerking. |
-| subscriptionId | tekenreeks | De abonnements-ID van de resource. |
-| tenantId | tekenreeks | De Tenant-ID van de resource. |
+| `authorization` | object | De aangevraagde autorisatie voor de bewerking. |
+| `claims` | object | De eigenschappen van de claims. Zie [JWT-specificatie](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)voor meer informatie. |
+| `correlationId` | tekenreeks | Een bewerkings-ID voor het oplossen van problemen. |
+| `httpRequest` | object | De details van de bewerking. Dit object is alleen opgenomen bij het bijwerken van een bestaande resource of het verwijderen van een resource. |
+| `resourceProvider` | tekenreeks | De resource provider voor de bewerking. |
+| `resourceUri` | tekenreeks | De URI van de resource in de bewerking. |
+| `operationName` | tekenreeks | De bewerking die is uitgevoerd. |
+| `status` | tekenreeks | De status van de bewerking. |
+| `subscriptionId` | tekenreeks | De abonnements-ID van de resource. |
+| `tenantId` | tekenreeks | De Tenant-ID van de resource. |
 
 ## <a name="tutorials-and-how-tos"></a>Zelfstudies en handleidingen
 |Titel |Beschrijving  |

@@ -1,22 +1,17 @@
 ---
 title: Opzoek activiteit in Azure Data Factory
 description: Leer hoe u de opzoek activiteit kunt gebruiken om een waarde te zoeken vanuit een externe bron. Naar deze uitvoer kan worden verwezen door geslaagde activiteiten.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
 ms.author: jingwang
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 66a17b61fef652160dc6d4a02bf330adbf0c7362
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5f46e2871aa0017f0a4b33df04a8ae9058c59e17
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006816"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385469"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Opzoek activiteit in Azure Data Factory
 

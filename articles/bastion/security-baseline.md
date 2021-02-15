@@ -4,15 +4,15 @@ description: De Azure Bastion Security-basis lijn biedt procedure richtlijnen en
 author: msmbaldwin
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 11/20/2020
+ms.date: 02/12/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 92c57c863cf09fee500b3ea7392757a4f729e4a5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d20a646eb7675efdab4cbdc5f13e929544dceaa3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98723928"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392371"
 ---
 # <a name="azure-security-baseline-for-azure-bastion"></a>Azure-beveiligings basislijn voor Azure Bastion
 
@@ -69,7 +69,11 @@ De verbinding met Gateway beheer en de Azure-servicetag wordt beveiligd (vergren
 
 **Hulp**: Azure Bastion is geïntegreerd met Azure Active Directory (Azure AD), de standaard service voor identiteits-en toegangs beheer van Azure. Gebruikers hebben toegang tot de Azure Portal met behulp van Azure AD-verificatie voor het beheren van de Azure Bastion-service (Bastion-resources maken, bijwerken en verwijderen).
 
-Verbinding maken met virtuele machines met behulp van Azure Bastion is afhankelijk van een SSH-sleutel of gebruikers naam/wacht woord, en biedt momenteel geen ondersteuning voor het gebruik van Azure AD-referenties.
+Verbinding maken met virtuele machines met behulp van Azure Bastion is afhankelijk van een SSH-sleutel of gebruikers naam/wacht woord, en biedt momenteel geen ondersteuning voor het gebruik van Azure AD-referenties. 
+
+U kunt uw SSH-sleutels opslaan als Azure Key Vault geheimen en deze geheimen gebruiken om verbinding te maken met uw virtuele machines met behulp van Azure Bastion. U kunt de gebruikers toegang tot deze geheimen beheren door [Key Vault toegangs beleid toe te wijzen](../key-vault/general/assign-access-policy-portal.md) aan afzonderlijke gebruikers of Azure ad-groepen. Uw gebruikers hebben de volgende machtigingen nodig om deze methode te gebruiken om verbinding te maken met een virtuele machine:
+- Toegang **krijgen** tot de geheimen die zijn opgeslagen in de gekozen Azure Key Vault
+- De toegang tot de geheimen die zijn opgeslagen in de gekozen Azure Key Vault **weer geven**
 
 Naast een SSH-sleutel of gebruikers naam/wacht woord moet de volgende roltoewijzingen worden gebruikt wanneer u verbinding maakt met virtuele machines met behulp van Azure Bastion:
 - Rol van lezer op de virtuele doel machine
@@ -106,7 +110,8 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 ### <a name="im-4-use-strong-authentication-controls-for-all-azure-active-directory-based-access"></a>IM-4: Gebruik krachtige besturingselementen voor verificatie voor alle op Azure Active Directory gebaseerde toegang
 
-**Hulp**: Azure Bastion is geïntegreerd met Azure Active Directory (Azure AD) voor toegang tot en beheer van de service. Azure Multi-Factor Authentication configureren voor uw Azure AD-Tenant. Azure AD biedt ondersteuning voor sterke verificatie controles via multi-factor Authentication (MFA) en krachtige methoden met een eigen wacht woord.  
+**Hulp**: Azure Bastion is geïntegreerd met Azure Active Directory (Azure AD) voor toegang tot en beheer van de service. Azure Active Directory Multi-Factor Authentication configureren voor uw Azure AD-Tenant. Azure AD biedt ondersteuning voor sterke verificatie controles via multi-factor Authentication (MFA) en krachtige methoden met een eigen wacht woord.
+  
 - Multi-factor Authentication: Schakel Azure AD MFA in en volg Azure Security Center aanbevelingen voor identiteits-en toegangs beheer voor uw MFA-installatie. MFA kan worden afgedwongen voor alle gebruikers, gebruikers selecteren of op het niveau per gebruiker op basis van aanmeldings voorwaarden en risico factoren. 
 
 - Verificatie met wacht woord: er zijn drie verificatie opties met een wacht woord beschikbaar: Windows hello voor bedrijven, Microsoft Authenticator-app en on-premises verificatie methoden zoals Smart Cards. 
@@ -375,7 +380,7 @@ NSG-resource Logboeken (netwerk beveiligings groep) en NSG-stroom logboeken insc
 
 - [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
 
-- [Azure-resource logboeken inschakelen voor Azure Bastion ](diagnostic-logs.md)
+- [Azure-resource logboeken inschakelen voor Azure Bastion](diagnostic-logs.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van/naar Azure Cosmos DB
 description: Meer informatie over het verplaatsen van gegevens naar of van Azure Cosmos DB verzameling met behulp van Azure Data Factory
-services: data-factory, cosmosdb
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: c9297b71-1bb4-4b29-ba3c-4cf1f5575fac
-ms.service: multiple
-ms.workload: data-services
+ms.author: jingwang
+ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 91f2b338ac9cda96521a5fe1d555de054826e273
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: a90b26c677c3d53794bce3c2ff48c618415e4cf2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637629"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379366"
 ---
 # <a name="move-data-to-and-from-azure-cosmos-db-using-azure-data-factory"></a>Gegevens verplaatsen van en naar Azure Cosmos DB met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -39,9 +34,9 @@ Zie [JSON-documenten importeren/exporteren](#importexport-json-documents)als u g
 ## <a name="getting-started"></a>Aan de slag
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van/naar Azure Cosmos DB met behulp van verschillende hulpprogram ma's/Api's.
 
-De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren** . Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
+De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio** , **Azure PowerShell** , **Azure Resource Manager sjabloon** , **.net API** en **rest API** . Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -59,7 +54,7 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 | **Eigenschap** | **Beschrijving** | **Vereist** |
 | --- | --- | --- |
 | type |De eigenschap type moet worden ingesteld op: **DocumentDb** |Ja |
-| connectionString |Geef de gegevens op die nodig zijn om verbinding te maken met Azure Cosmos DB Data Base. |Ja |
+| connectionString |Geef de gegevens op die nodig zijn om verbinding te maken met Azure Cosmos DB Data Base. |Yes |
 
 Voorbeeld:
 
@@ -82,7 +77,7 @@ De sectie typeProperties verschilt voor elk type gegevensset en bevat informatie
 
 | **Eigenschap** | **Beschrijving** | **Vereist** |
 | --- | --- | --- |
-| collectionName |De naam van de verzameling Cosmos DB documenten. |Ja |
+| collectionName |De naam van de verzameling Cosmos DB documenten. |Yes |
 
 Voorbeeld:
 
@@ -123,8 +118,8 @@ In het geval van een Kopieer activiteit wanneer de bron van het type **DocumentD
 
 | **Eigenschap** | **Beschrijving** | **Toegestane waarden** | **Vereist** |
 | --- | --- | --- | --- |
-| query |Geef de query op om gegevens te lezen. |De query teken reeks die wordt ondersteund door Azure Cosmos DB. <br/><br/>Voorbeeld: `SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Nee <br/><br/>Indien niet opgegeven, de SQL-instructie die wordt uitgevoerd: `select <columns defined in structure> from mycollection` |
-| nestingSeparator |Speciaal teken om aan te geven dat het document is genest |Wille keurig teken. <br/><br/>Azure Cosmos DB is een NoSQL-Archief voor JSON-documenten, waarbij geneste structuren zijn toegestaan. Azure Data Factory stelt de gebruiker in staat om de hiërarchie aan te duiden via nestingSeparator, dat wil zeggen. in de bovenstaande voor beelden. Met het scheidings teken genereert de Kopieer activiteit het object ' name ' met drie onderliggende elementen eerst, middelste en laatste, volgens ' naam. First ', ' naam. midden ' en ' naam. last ' in de tabel definitie. |Nee |
+| query |Geef de query op om gegevens te lezen. |De query teken reeks die wordt ondersteund door Azure Cosmos DB. <br/><br/>Voorbeeld: `SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |No <br/><br/>Indien niet opgegeven, de SQL-instructie die wordt uitgevoerd: `select <columns defined in structure> from mycollection` |
+| nestingSeparator |Speciaal teken om aan te geven dat het document is genest |Wille keurig teken. <br/><br/>Azure Cosmos DB is een NoSQL-Archief voor JSON-documenten, waarbij geneste structuren zijn toegestaan. Azure Data Factory stelt de gebruiker in staat om hiërarchie te geven via nestingSeparator, dat wil zeggen "." in de bovenstaande voor beelden. Met het scheidings teken genereert de Kopieer activiteit het object ' name ' met drie onderliggende elementen eerst, middelste en laatste, volgens ' naam. First ', ' naam. midden ' en ' naam. last ' in de tabel definitie. |No |
 
 **DocumentDbCollectionSink** ondersteunt de volgende eigenschappen:
 
@@ -132,7 +127,7 @@ In het geval van een Kopieer activiteit wanneer de bron van het type **DocumentD
 | --- | --- | --- | --- |
 | nestingSeparator |Een speciaal teken in de naam van de bron kolom om aan te geven dat genest document nodig is. <br/><br/>Voor beeld: `Name.First` in de uitvoer tabel levert de volgende JSON-structuur in het Cosmos DB document:<br/><br/>"Naam": {<br/>    "Eerste": "John"<br/>}, |Teken dat wordt gebruikt voor het scheiden van geneste niveaus.<br/><br/>De standaard waarde is `.` (dot). |Teken dat wordt gebruikt voor het scheiden van geneste niveaus. <br/><br/>De standaard waarde is `.` (dot). |
 | writeBatchSize |Aantal parallelle aanvragen voor het Azure Cosmos DB-service om documenten te maken.<br/><br/>U kunt de prestaties afstemmen bij het kopiëren van gegevens naar/van Cosmos DB met behulp van deze eigenschap. U kunt een betere prestaties verwachten wanneer u writeBatchSize verhoogt, omdat er meer parallelle aanvragen naar Cosmos DB worden verzonden. U moet er echter voor zorgen dat het fout bericht niet kan worden vertraagd: ' de aanvraag snelheid is groot '.<br/><br/>Beperking wordt bepaald door een aantal factoren, zoals de grootte van documenten, het aantal voor waarden in documenten, het indexerings beleid van de doel verzameling, enzovoort. Voor kopieer bewerkingen kunt u een betere verzameling (bijvoorbeeld S3) gebruiken om de meeste door Voer beschikbaar te hebben (2.500 aanvraag eenheden per seconde). |Geheel getal |Nee (standaard: 5) |
-| writeBatchTimeout |Wacht tijd voordat de bewerking is voltooid voordat er een time-out optreedt. |tijdsbestek<br/><br/> Voor beeld: "00:30:00" (30 minuten). |Nee |
+| writeBatchTimeout |Wacht tijd voordat de bewerking is voltooid voordat er een time-out optreedt. |tijdsbestek<br/><br/> Voor beeld: "00:30:00" (30 minuten). |No |
 
 ## <a name="importexport-json-documents"></a>JSON-documenten importeren/exporteren
 Met deze Cosmos DB-connector kunt u eenvoudig
@@ -478,21 +473,21 @@ De uitvoer JSON in Cosmos DB is dan als volgt:
   "id": "a5e8595c-62ec-4554-a118-3940f4ff70b6"
 }
 ```
-Azure Cosmos DB is een NoSQL-Archief voor JSON-documenten, waarbij geneste structuren zijn toegestaan. Azure Data Factory stelt de gebruiker in staat om de hiërarchie aan te duiden via **nestingSeparator** , dat wil zeggen. in dit voor beeld. Met het scheidings teken genereert de Kopieer activiteit het object ' name ' met drie onderliggende elementen eerst, middelste en laatste, volgens ' naam. First ', ' naam. midden ' en ' naam. last ' in de tabel definitie.
+Azure Cosmos DB is een NoSQL-Archief voor JSON-documenten, waarbij geneste structuren zijn toegestaan. Met Azure Data Factory kan de gebruiker de hiërarchie aanduiden via **nestingSeparator**, dat wil zeggen "." in dit voor beeld. Met het scheidings teken genereert de Kopieer activiteit het object ' name ' met drie onderliggende elementen eerst, middelste en laatste, volgens ' naam. First ', ' naam. midden ' en ' naam. last ' in de tabel definitie.
 
 ## <a name="appendix"></a>Bijlage
 1. **Vraag:** Ondersteunt de Kopieer activiteit een update van bestaande records?
 
-    **Antwoord** : Nee.
+    **Antwoord**: Nee.
 2. **Vraag:** Hoe probeert een kopie opnieuw te Azure Cosmos DB worden verwerkt met al gekopieerde records?
 
     **Antwoord:** Als records een ID-veld hebben en er wordt geprobeerd een record met dezelfde ID in te voegen, wordt er een fout gegenereerd door de Kopieer bewerking.
 3. **Vraag:** Ondersteunt Data Factory [bereik of gegevens partities op basis van hashes](../../cosmos-db/partitioning-overview.md)?
 
-    **Antwoord** : Nee.
+    **Antwoord**: Nee.
 4. **Vraag:** Kan ik meer dan één Azure Cosmos DB verzameling opgeven voor een tabel?
 
-    **Antwoord** : Nee. Op dit moment kan slechts één verzameling worden opgegeven.
+    **Antwoord**: Nee. Op dit moment kan slechts één verzameling worden opgegeven.
 
 ## <a name="performance-and-tuning"></a>Prestaties en afstemming
 Zie [Kopieer activiteit prestaties & afstemmings handleiding](data-factory-copy-activity-performance.md) voor meer informatie over de belangrijkste factoren die invloed hebben op de prestaties van het verplaatsen van gegevens (Kopieer activiteit) in azure Data Factory en verschillende manieren om deze te optimaliseren.

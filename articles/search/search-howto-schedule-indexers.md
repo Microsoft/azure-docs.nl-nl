@@ -7,20 +7,22 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 01/28/2021
-ms.openlocfilehash: dfd8526a035d4eef4d07539e541e37c88023b500
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.date: 02/09/2021
+ms.openlocfilehash: 8ae9a89ddba2010603ae5a5f6b812e3aa1e1e3a6
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063210"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097973"
 ---
 # <a name="how-to-schedule-indexers-in-azure-cognitive-search"></a>Indexeer functies plannen in azure Cognitive Search
 
 Een Indexeer functie wordt normaal gesp roken eenmaal uitgevoerd, direct nadat deze is gemaakt. Daarna kunt u de app op aanvraag opnieuw uitvoeren met behulp van Azure Portal, [Indexeer functie (rest)](/rest/api/searchservice/run-indexer)of een Azure-SDK uitvoeren. U kunt ook een Indexeer functie configureren zodat deze volgens een schema kan worden uitgevoerd. Hieronder vindt u een aantal situaties waarin de planning van de Indexeer functie nuttig is:
 
-* De bron gegevens worden na verloop van tijd gewijzigd en u wilt dat de Delta automatisch door de Indexeer functie wordt verwerkt.
-* De bron gegevens zijn erg groot en u wilt de verwerking van de Indexeer functie gedurende een periode spreiden. Zie voor meer informatie over het indexeren van grote hoeveel heden gegevens [grote gegevens sets indexeren in Azure Cognitive Search](search-howto-large-index.md).
+* De bron gegevens worden na verloop van tijd gewijzigd en u wilt dat de zoek index automatisch het verschil verwerkt.
+
+* De bron gegevens zijn erg groot en u wilt de verwerking van de Indexeer functie gedurende een periode spreiden. Voor indexerings taken geldt een maximale uitvoerings tijd van 24 uur voor reguliere gegevens bronnen en 2 uur voor Indexeer functies met vaardig heden. Als het indexeren niet binnen het maximum interval kan worden voltooid, kunt u een schema configureren dat elke 2 uur wordt uitgevoerd. Indexeer functies kunnen automatisch ophalen waar ze zich bevinden, zoals aangegeven door een interne bovengrens voor het indexeren van de laatste beëindiging. Als u een Indexeer functie uitvoert op een terugkerende periode van 2 uur, kan deze een zeer grote gegevensset (veel miljoenen documenten) verwerken die groter is dan het interval dat is toegestaan voor één taak. Zie voor meer informatie over het indexeren van grote gegevens volumes [grote gegevens sets indexeren in Azure Cognitive Search](search-howto-large-index.md).
+
 * Een zoek index wordt gevuld met meerdere gegevens bronnen en u wilt dat de Indexeer functies op verschillende tijdstippen worden uitgevoerd om conflicten te verminderen.
 
 Een planning kan er als volgt uitzien: vanaf 1 januari en wordt elke 50 minuten uitgevoerd.

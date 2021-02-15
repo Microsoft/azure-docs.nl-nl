@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 1d633b1a9f5fee0a5cceb48f2b37aaec2092069f
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 2833fd44b75f4bebf41b5100eb2350ca69436520
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979526"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362791"
 ---
 # <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
@@ -132,8 +132,8 @@ Zie het volgende voor beeld van een geslaagde JSON-reactie:
 }
 ```
 
-## <a name="natural-reading-order-output"></a>Uitvoer van natuurlijke Lees volgorde
-Met de [Lees-API voor lezen 3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)geeft u de volg orde op waarin de tekst regels worden uitgevoerd met de `readingOrder` query parameter. Gebruik `natural` dit voor een meer mensen vriendelijke Lees volgorde, zoals wordt weer gegeven in het volgende voor beeld.
+## <a name="natural-reading-order-output-latin-only"></a>Uitvoer van natuurlijke Lees volgorde (alleen Latijn)
+Met de [Lees-API voor lezen 3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)geeft u de volg orde op waarin de tekst regels worden uitgevoerd met de `readingOrder` query parameter. Gebruik `natural` dit voor een meer mensen vriendelijke Lees volgorde, zoals wordt weer gegeven in het volgende voor beeld. Deze functie wordt alleen ondersteund voor Latijnse talen.
 
 :::image border type="content" source="./Images/ocr-reading-order-example.png" alt-text="Voor beeld van OCR-Lees volgorde":::
 

@@ -1,22 +1,18 @@
 ---
 title: Spark-Program ma's aanroepen vanuit Azure Data Factory
 description: Meer informatie over het aanroepen van Spark-Program ma's vanuit een Azure-data factory met behulp van de MapReduce-activiteit.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 417306e09a9424b302bb226aea5dd2c1debe96f5
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: a7fcccad039ff6d737e10cfc57ba97f914645a9d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508421"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382664"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Spark-Program ma's aanroepen vanuit Azure Data Factory pijp lijnen
 
@@ -35,7 +31,7 @@ ms.locfileid: "97508421"
 > [!NOTE]
 > Dit artikel is van toepassing op versie 1 van Azure Data Factory, die algemeen beschikbaar is. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [gegevens transformeren met behulp van de Apache Spark-activiteit in Data Factory](../transform-data-using-spark.md).
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 De Spark-activiteit is een van de [activiteiten voor gegevens transformatie](data-factory-data-transformation-activities.md) die door Data Factory worden ondersteund. Met deze activiteit wordt het opgegeven Spark-programma uitgevoerd op uw Spark-cluster in azure HDInsight.
 
 > [!IMPORTANT]
@@ -348,7 +344,7 @@ Maak de volgende mapstructuur in de Blob-opslag waarnaar wordt verwezen door de 
 | Pad | Beschrijving | Vereist | Type |
 | ---- | ----------- | -------- | ---- |
 | . | Het pad naar de hoofdmap van de Spark-taak in de gekoppelde Storage-service. | Ja | Map |
-| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Yes | Bestand |
+| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Yes | File |
 | ./jars | Alle bestanden in deze map worden geüpload en geplaatst op het Java-klassenpad van het cluster. | Nee | Map |
 | ./pyFiles | Alle bestanden in deze map worden geüpload en geplaatst op de PYTHONPATH van het cluster. | Nee | Map |
 | ./files | Alle bestanden in deze map worden geüpload en geplaatst op de werk directory van de uitvoerder. | Nee | Map |

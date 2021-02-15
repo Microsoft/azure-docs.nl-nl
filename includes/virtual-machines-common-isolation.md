@@ -1,6 +1,6 @@
 ---
-title: Include-bestand
-description: Include-bestand
+title: bestand opnemen
+description: bestand opnemen
 services: virtual-machines
 author: styli365
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: sttsinar
 ms.custom: include file
-ms.openlocfilehash: bd31152c6742271658cf4fd7ac2a5e2957651c84
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e22c2b7cb561e30e84ea5ede5481fbdc35be8cdf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96477746"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515015"
 ---
 Azure Compute biedt virtuele machine grootten die zijn geïsoleerd voor een specifiek hardwaretype en die zijn toegewezen aan één klant. De geïsoleerde grootten Live en worden gebruikt voor het genereren van specifieke hardware en worden afgeschaft wanneer het genereren van de hardware buiten gebruik wordt gesteld.
 
@@ -23,14 +23,14 @@ Geïsoleerde virtuele-machine grootten zijn het meest geschikt voor werk belasti
 Daarnaast kunnen klanten er ook voor kiezen om de resources van deze Vm's te onderverdelen met behulp [van Azure-ondersteuning voor geneste virtuele machines](https://azure.microsoft.com/blog/nested-virtualization-in-azure/), omdat de virtuele machines van de geïsoleerde grootte groot zijn.
 
 De huidige, geïsoleerde virtuele-machine-aanbiedingen omvatten:
-* Standard_E64is_v3
-* Standard_E64i_v3
 * Standard_E80ids_v4
 * Standard_E80is_v4
+* Standard_F72s_v2
+* Standard_E64is_v3
+* Standard_E64i_v3
 * Standard_M128ms
 * Standard_GS5
 * Standard_G5
-* Standard_F72s_v2
 
 
 > [!NOTE]
@@ -38,7 +38,7 @@ De huidige, geïsoleerde virtuele-machine-aanbiedingen omvatten:
 
 ## <a name="deprecation-of-isolated-vm-sizes"></a>Afschaffing van geïsoleerde VM-grootten
 
-Net als geïsoleerde VM-grootten zijn hardwarematige grootten een periode van 12 maanden vóór de officiële afschaffing van de grootten.  Azure biedt ook een bijgewerkte, geïsoleerde omvang op onze volgende versie van de hardware die de klant zou kunnen overwegen om de werk belasting naar te verplaatsen.
+Geïsoleerde VM-grootten hebben een beperkte levens duur van de hardware. Azure zal 12 maanden vóór de officiële afschaffing datum van de grootten een melding doen, en biedt een bijgewerkte, geïsoleerde aanbieding voor uw rekening.
 
 | Grootte | Aftredings datum van isolatie | 
 | --- | --- |
@@ -49,7 +49,7 @@ Net als geïsoleerde VM-grootten zijn hardwarematige grootten een periode van 12
 
 
 ## <a name="faq"></a>Veelgestelde vragen
-### <a name="q-is-the-size-going-to-get-retired-or-only-isolation-feature-is"></a>V: is de grootte van de buiten gebruik gestelde of alleen ' isolatie functie '?
+### <a name="q-is-the-size-going-to-get-retired-or-only-its-isolation-feature"></a>V: is de grootte van het buiten gebruik gesteld of alleen de ' isolatie functie '?
 **A**: als de grootte van de virtuele machine niet het subscript ' i ' heeft, wordt alleen de ' isolatie functie ' buiten gebruik gesteld. Als er geen isolatie nodig is, wordt er geen actie ondernomen en blijft de virtuele machine werken zoals verwacht. Voor beelden zijn Standard_DS15_v2, Standard_D15_v2, Standard_M128ms enzovoort. Als de grootte van de virtuele machine ' i ' bevat, wordt de grootte buiten gebruik gesteld.
 
 ### <a name="q-is-there-a-downtime-when-my-vm-lands-on-a-non-isolated-hardware"></a>V: is er sprake van uitval tijd wanneer mijn VM-land op een niet-geïsoleerde hardware wordt gehouden?
@@ -67,7 +67,7 @@ Net als geïsoleerde VM-grootten zijn hardwarematige grootten een periode van 12
 ### <a name="q-what-are-the-milestones-for-d15_v2-or-ds15_v2-isolation-retirement"></a>V: wat zijn de mijl palen voor D15_v2 of DS15_v2 buiten gebruik stellen? 
 **A**: 
  
-| Datum | Actie |
+| Datum | Bewerking |
 |---|---| 
 | 18 november 2019 | Beschik baarheid van D/DS15i_v2 (PAYG, 1-jarige RI) | 
 | 14 mei 2020 | Laatste dag tot aankoop D/DS15i_v2 1 jaar RI | 

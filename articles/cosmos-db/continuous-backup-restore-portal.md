@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: e0fb337defc69354aa625fe63bef9768dbc4cf1f
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: ee6eedbc078e1b9c07ed00922ce1c37b38410128
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538836"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381865"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-portal"></a>Continue back-ups en herstel naar een tijdstip configureren en beheren (preview)-Azure Portal gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -74,7 +74,7 @@ Als u bijvoorbeeld wilt herstellen naar het punt voordat een bepaalde container 
 U kunt Azure Portal gebruiken om een verwijderde account binnen 30 dagen na verwijdering volledig te herstellen. Gebruik de volgende stappen om een verwijderd account te herstellen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/)
-1. Zoek naar bronnen voor ' Azure Cosmos DB ' in de algemene zoek balk. Alle bestaande accounts worden weer gegeven.
+1. Zoek naar *Azure Cosmos DB* resources op de algemene zoek balk. Alle bestaande accounts worden weer gegeven.
 1. Selecteer vervolgens de knop **herstellen** . In het deel venster herstellen wordt een lijst weer gegeven met verwijderde accounts die binnen de retentie periode kunnen worden hersteld. Dit is 30 dagen vanaf de verwijderings tijd.
 1. Kies het account dat u wilt herstellen.
 
@@ -95,7 +95,7 @@ U kunt Azure Portal gebruiken om een verwijderde account binnen 30 dagen na verw
 
 ## <a name="track-the-status-of-restore-operation"></a><a id="track-restore-status"></a>De status van de herstel bewerking bijhouden
 
-Nadat u een herstel bewerking hebt gestart, selecteert u in de rechter bovenhoek van de portal het pictogram met de **meldings** klok. Er wordt een koppeling weer gegeven met de status van het account dat wordt hersteld. Wanneer de herstel bewerking wordt uitgevoerd, wordt de status van het account ' maken ', nadat het herstel is voltooid, wordt de account status gewijzigd in ' online '.
+Nadat u een herstel bewerking hebt gestart, selecteert u in de rechter bovenhoek van de portal het pictogram met de **meldings** klok. Er wordt een koppeling weer gegeven met de status van het account dat wordt hersteld. Wanneer het terugzetten wordt uitgevoerd, wordt de status van het account *gemaakt* nadat de herstel bewerking is voltooid, wordt de account status gewijzigd in *online*.
 
 :::image type="content" source="./media/continuous-backup-restore-portal/track-restore-operation-status.png" alt-text="De status van de herstelde account verandert van maken in online wanneer de bewerking is voltooid." border="true":::
 

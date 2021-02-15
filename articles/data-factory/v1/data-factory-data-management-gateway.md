@@ -1,23 +1,18 @@
 ---
 title: Data Management Gateway voor Data Factory
 description: Gebruik Data Management Gateway in Azure Data Factory om uw gegevens te verplaatsen.
-services: data-factory
-documentationcenter: ''
 author: nabhishek
-manager: anandsub
-ms.assetid: b9084537-2e1c-4e96-b5bc-0e2044388ffd
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 94c1bed8d94f73bc7794037b307618f4c36c4518
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 708d84bdb3ebe8fbba6939aa771a9120868d5d1b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450611"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375201"
 ---
 # <a name="data-management-gateway"></a>Gegevensbeheergateway
 > [!NOTE]
@@ -140,7 +135,7 @@ Er zijn twee firewalls die u moet overwegen: **bedrijfs firewall** die wordt uit
 
 Op het niveau van de bedrijfs firewall moet u de volgende domeinen en uitgaande poorten configureren:
 
-| Domeinnamen | Poorten | Beschrijving |
+| Domeinnamen | Poorten | Description |
 | --- | --- | --- |
 | *.servicebus.windows.net |443 |Wordt gebruikt voor communicatie met de back-end van de service voor gegevens verplaatsing |
 | *.core.windows.net |443 |Gebruikt voor gefaseerde kopie met behulp van Azure-Blob (indien geconfigureerd)|
@@ -366,7 +361,7 @@ De volgende tabel bevat beschrijvingen van de kolommen in de lijst met **Gateway
 
 Bewakings eigenschap | Beschrijving
 :------------------ | :----------
-Naam | De naam van de logische gateway en knoop punten die zijn gekoppeld aan de gateway. Knoop punt is een on-premises Windows-computer waarop de gateway is geïnstalleerd. Zie [Data Management Gateway-hoge Beschik baarheid en schaal baarheid](data-factory-data-management-gateway-high-availability-scalability.md)voor meer informatie over het gebruik van meer dan één knoop punt (Maxi maal vier knoop punten) in één logische gateway.
+Name | De naam van de logische gateway en knoop punten die zijn gekoppeld aan de gateway. Knoop punt is een on-premises Windows-computer waarop de gateway is geïnstalleerd. Zie [Data Management Gateway-hoge Beschik baarheid en schaal baarheid](data-factory-data-management-gateway-high-availability-scalability.md)voor meer informatie over het gebruik van meer dan één knoop punt (Maxi maal vier knoop punten) in één logische gateway.
 Status | Status van de logische gateway en de gateway knooppunten. Voor beeld: online/offline/beperkt/etc. Zie de sectie [Gateway status](#gateway-status) voor meer informatie over deze statussen.
 Versie | Hier wordt de versie van de logische gateway en elk gateway knooppunt weer gegeven. De versie van de logische gateway wordt bepaald op basis van de versie van de knoop punten in de groep. Als er knoop punten met verschillende versies in de installatie van de logische gateway zijn, hebben alleen de knoop punten met hetzelfde versie nummer als de logische gateway goed functioneren. Andere bevinden zich in de beperkte modus en moeten hand matig worden bijgewerkt (alleen als de automatische update mislukt).
 Beschikbaar geheugen | Beschikbaar geheugen op een gateway-knoop punt. Deze waarde is een bijna realtime moment opname.
@@ -380,11 +375,11 @@ Op deze pagina ziet u enkele instellingen die meer inzicht geven wanneer er twee
 ### <a name="gateway-status"></a>Gateway status
 De volgende tabel bevat mogelijke statussen van een **Gateway knooppunt**:
 
-Status  | Opmerkingen/Scenario's
+Status    | Opmerkingen/Scenario's
 :------- | :------------------
 Online | Het knoop punt dat is verbonden met Data Factory service.
 Offline | Het knoop punt is offline.
-Abonnement | Het knoop punt wordt automatisch bijgewerkt.
+Upgrade uitvoeren | Het knoop punt wordt automatisch bijgewerkt.
 Beperkt | Vanwege een connectiviteits probleem. Wordt mogelijk veroorzaakt door een probleem met de HTTP-poort 8050, het connectiviteits probleem van de service bus of het probleem met de synchronisatie van referenties.
 Niet-actief | Het knoop punt bevindt zich in een configuratie die verschilt van de configuratie van andere hoofd knooppunten.<br/><br/> Een knoop punt kan inactief zijn wanneer er geen verbinding kan worden gemaakt met andere knoop punten.
 

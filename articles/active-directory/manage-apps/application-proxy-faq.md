@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 121dcdf51374f625ad7393bb181b1be215775a0b
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 19a5d223b587e47c562977cc9fea34f990eb0e46
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257774"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370815"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)
 
@@ -106,6 +106,15 @@ De standaard lengte is 85 seconden. De instelling ' lang ' is 180 seconden. De t
 
 Nee, dit wordt momenteel niet ondersteund.
 
+### <a name="what-happens-if-i-delete-cwap_authsecret-the-client-secret-in-the-app-registration"></a>Wat gebeurt er als ik CWAP_AuthSecret (het client geheim) in de app-registratie Verwijder?
+
+Het client geheim, ook wel *CWAP_AuthSecret* genoemd, wordt automatisch toegevoegd aan het toepassings object (app-registratie) wanneer de Azure AD-toepassingsproxy-app wordt gemaakt.
+
+Het client geheim is één jaar geldig. Er wordt automatisch een nieuw client geheim van één jaar gemaakt voordat het huidige geldige client geheim verloopt. Drie CWAP_AuthSecret client geheimen worden te allen tijde in het toepassings object bewaard. 
+
+> [!IMPORTANT]
+> Het verwijderen van CWAP_AuthSecret verbreekt vooraf-verificatie voor Azure AD-toepassingsproxy. Verwijder CWAP_AuthSecret niet.
+
 ### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Hoe kan ik de landings pagina wijzigen die door mijn toepassing worden geladen?
 
 Op de pagina Toepassings registraties kunt u de URL van de start pagina wijzigen in de gewenste externe URL van de landings blad. De opgegeven pagina wordt geladen wanneer de toepassing wordt gestart vanuit mijn apps of de Office 365-Portal. Zie voor configuratie stappen [een aangepaste start pagina instellen voor gepubliceerde apps met behulp van Azure AD-toepassingsproxy](./application-proxy-configure-custom-home-page.md)
@@ -187,11 +196,11 @@ Nee. Azure AD-toepassingsproxy is ontworpen voor gebruik met Azure AD en voldoet
 
 ## <a name="websocket"></a>WebSocket
 
-### <a name="does-websocket-support-work-for-applications-other-than-qliksense"></a>Werkt WebSocket ondersteuning voor andere toepassingen dan QlikSense?
+### <a name="does-websocket-support-work-for-applications-other-than-qliksense-and-remote-desktop-web-client-html5"></a>Werkt WebSocket ondersteuning voor andere toepassingen dan QlikSense en de Extern bureaublad-webclient (HTML5)?
 
 WebSocket-protocol ondersteuning is momenteel nog steeds beschikbaar in de open bare preview-versie en werkt mogelijk niet voor andere toepassingen. Sommige klanten hebben het gebruik van WebSocket-protocol met andere toepassingen gemende. Als u dergelijke scenario's test, zullen we uw resultaten graag horen. Stuur ons uw feedback op aadapfeedback@microsoft.com .
 
-Functies (gebeurtenis logboeken, Power shell en Extern bureaublad-services) in Windows-beheer centrum (WAC) of Extern bureaublad web client (HTML5) werken niet via Azure AD-toepassingsproxy.
+Functies (gebeurtenis logboeken, Power shell en Extern bureaublad-services) in Windows-beheer centrum (WAC) werken niet via Azure AD-toepassingsproxy.
 
 ## <a name="link-translation"></a>Conversie van koppelingen
 

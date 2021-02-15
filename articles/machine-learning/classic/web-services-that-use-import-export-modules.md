@@ -4,23 +4,22 @@ description: Meer informatie over het gebruik van de modules gegevens importeren
 services: machine-learning
 author: likebupt
 ms.author: keli19
-editor: cgronlun
 ms.assetid: 3a7ac351-ebd3-43a1-8c5d-18223903d08e
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 ms.date: 03/28/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5dc348318401c9362636893d70294496c7012408
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 4824b7a4233bc65d521e1c6ded7d1ea276b2a929
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308470"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520558"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-web-services-that-use-data-import-and-data-export-modules"></a>Azure Machine Learning Studio (klassieke) webservices implementeren die gebruikmaken van modules voor het importeren en exporteren van gegevens
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Wanneer u een voorspellend experiment maakt, voegt u doorgaans een invoer en uitvoer van een webservice toe. Wanneer u het experiment implementeert, kunnen gebruikers gegevens van de webservice verzenden en ontvangen via de invoer en uitvoer. Voor sommige toepassingen is het mogelijk dat de gegevens van een consument beschikbaar zijn via een gegevensfeed of al aanwezig zijn in een externe gegevens bron, zoals Azure Blob Storage. In deze gevallen hebben ze geen lees-en schrijf gegevens met behulp van de invoer en uitvoer van webservices. Ze kunnen in plaats daarvan de batch Execution Service (BES) gebruiken voor het lezen van gegevens uit de gegevens bron met behulp van een import data-module en de Score resultaten naar een andere gegevens locatie schrijven met behulp van een module export data.
@@ -41,7 +40,7 @@ De gegevens uit de Azure SQL-tabel lezen:
 3. Voeg in de lijst met resultaten een module *import gegevens* toe aan het canvas voor het experiment.
 4. Verbinding maken met de uitvoer van de module *import data* de invoer van de module *clean Missing Data* .
 5. Selecteer in het deel venster Eigenschappen **Azure SQL database** in de vervolg keuzelijst **gegevens bron** .
-6. In de velden **database server naam** , **database naam** , **gebruikers naam** en **wacht woord** voert u de juiste informatie in voor uw data base.
+6. In de velden **database server naam**, **database naam**, **gebruikers naam** en **wacht woord** voert u de juiste informatie in voor uw data base.
 7. Voer in het veld database query de volgende query in.
 
     ```tsql
@@ -73,7 +72,7 @@ Vervolgens stelt u het voorspellende experiment in van waaruit u de-webservice i
 4. Voeg in de lijst met resultaten een module *export gegevens* toe aan het canvas van het experiment.
 5. Verbinding maken met de uitvoer van de module *score model* de invoer van de module *gegevens exporteren* .
 6. Selecteer in het deel venster Eigenschappen **Azure SQL database** in de vervolg keuzelijst gegevens bestemming.
-7. Voer in de velden **database server naam** , **database naam** , **Server gebruikers account naam** en **wacht woord voor Server gebruikers account** de juiste informatie in voor uw data base.
+7. Voer in de velden **database server naam**, **database naam**, **Server gebruikers account naam** en **wacht woord voor Server gebruikers account** de juiste informatie in voor uw data base.
 8. In het veld **door komma's gescheiden lijst met kolommen die moeten worden opgeslagen** , typt u labels met scores.
 9. Typ dbo in het **veld naam van gegevens tabel**. ScoredLabels. Als de tabel niet bestaat, wordt deze gemaakt wanneer het experiment wordt uitgevoerd of de webservice wordt aangeroepen.
 10. Typ ScoredLabels in het veld **door komma's gescheiden lijst met DataTable-kolommen** .

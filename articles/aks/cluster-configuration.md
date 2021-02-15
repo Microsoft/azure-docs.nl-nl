@@ -3,15 +3,15 @@ title: Cluster configuratie in azure Kubernetes Services (AKS)
 description: Meer informatie over het configureren van een cluster in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 01/13/2020
+ms.date: 02/09/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: eacca50e00dfe8625d86362c444544e2fd5d5511
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 5519157b58268b30ecb7a1af7b86d13d587a23b8
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201107"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519402"
 ---
 # <a name="configure-an-aks-cluster"></a>Een AKS-cluster configureren
 
@@ -19,13 +19,19 @@ Als onderdeel van het maken van een AKS-cluster moet u mogelijk uw cluster confi
 
 ## <a name="os-configuration"></a>Configuratie van besturings systeem
 
-AKS ondersteunt nu Ubuntu 18,04 als het besturings systeem van het knoop punt (OS) in algemene Beschik baarheid voor clusters in kubernetes-versies hoger dan 1.18.8. Voor versies onder 1.18. x is AKS Ubuntu 16,04 nog steeds de standaard basis installatie kopie. Van kubernetes v 1.18. x en later is de standaard basis AKS Ubuntu 18,04.
+AKS biedt nu ondersteuning voor Ubuntu 18,04 als het standaard besturings systeem voor knoop punten in algemene Beschik baarheid (GA) voor clusters in kubernetes-versies hoger dan 1,18 voor de volgende versies van 1,18, AKS Ubuntu 16,04 is nog steeds de standaard basis installatie kopie. Van kubernetes v 1.18 en hoger is de standaard basis AKS Ubuntu 18,04.
 
-### <a name="use-aks-ubuntu-1804-generally-available-on-new-clusters"></a>Gebruik AKS Ubuntu 18,04 algemeen beschikbaar in nieuwe clusters
+> [!IMPORTANT]
+> Knooppunt groepen die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie kleiner dan 1,18 `AKS Ubuntu 16.04` worden als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de Kubernetes-versie van de knooppunt groep wordt bijgewerkt naar v 1.18 of hoger.
+> 
+> Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt.
+
+
+### <a name="use-aks-ubuntu-1804-ga-on-new-clusters"></a>AKS Ubuntu 18,04 (GA) gebruiken op nieuwe clusters
 
 Clusters die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,18 worden nog steeds `AKS Ubuntu 16.04` als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de cluster-of knooppunt groep Kubernetes versie wordt bijgewerkt naar v 1.18 of hoger.
 
-Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt. Meer informatie over het [testen van Ubuntu 18,04-knooppunt groepen](#test-aks-ubuntu-1804-generally-available-on-existing-clusters).
+Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt.
 
 Als u een cluster met een `AKS Ubuntu 18.04` knooppunt installatie kopie wilt maken, maakt u gewoon een cluster met kubernetes v 1.18 of hoger, zoals hieronder wordt weer gegeven
 
@@ -33,11 +39,11 @@ Als u een cluster met een `AKS Ubuntu 18.04` knooppunt installatie kopie wilt ma
 az aks create --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
 ```
 
-### <a name="use-aks-ubuntu-1804-generally-available-on-existing-clusters"></a>AKS Ubuntu 18,04 algemeen beschikbaar op bestaande clusters gebruiken
+### <a name="use-aks-ubuntu-1804-ga-on-existing-clusters"></a>AKS Ubuntu 18,04 (GA) gebruiken op bestaande clusters
 
 Clusters die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,18 worden nog steeds `AKS Ubuntu 16.04` als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de cluster-of knooppunt groep Kubernetes versie wordt bijgewerkt naar v 1.18 of hoger.
 
-Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt. Meer informatie over het [testen van Ubuntu 18,04-knooppunt groepen](#test-aks-ubuntu-1804-generally-available-on-existing-clusters).
+Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt.
 
 Als uw clusters of knooppunt groepen gereed zijn voor `AKS Ubuntu 18.04` knooppunt installatie kopie, kunt u ze gewoon upgraden naar een v-1.18 of hoger.
 
@@ -51,7 +57,7 @@ Als u slechts één knooppunt groep wilt upgraden:
 az aks nodepool upgrade -name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
 ```
 
-### <a name="test-aks-ubuntu-1804-generally-available-on-existing-clusters"></a>Test AKS Ubuntu 18,04 algemeen beschikbaar op bestaande clusters
+### <a name="test-aks-ubuntu-1804-ga-on-existing-clusters"></a>AKS Ubuntu 18,04 (GA) testen op bestaande clusters
 
 Knooppunt groepen die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,18 worden nog steeds `AKS Ubuntu 16.04` als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de Kubernetes-versie van de knooppunt groep wordt bijgewerkt naar v 1.18 of hoger.
 
@@ -65,58 +71,6 @@ az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes
 
 az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
 ```
-
-### <a name="use-aks-ubuntu-1804-on-new-clusters-preview"></a>AKS Ubuntu 18,04 gebruiken voor nieuwe clusters (preview-versie)
-
-In het volgende gedeelte wordt uitgelegd hoe u AKS Ubuntu 18,04 gebruikt en test op clusters die nog geen kubernetes-versie 1.18. x of hoger gebruiken, of die zijn gemaakt voordat deze functie algemeen beschikbaar werd, met behulp van de configuratie voorbeeld van het besturings systeem.
-
-U moet de volgende resources hebben geïnstalleerd:
-
-- [De Azure cli][azure-cli-install], versie 2.2.0 of hoger
-- De 0.4.35-uitbrei ding AKS-preview
-
-Gebruik de volgende Azure CLI-opdrachten om de 0.4.35-uitbrei ding AKS-preview of hoger te installeren:
-
-```azurecli
-az extension add --name aks-preview
-az extension list
-```
-
-De `UseCustomizedUbuntuPreview` functie registreren:
-
-```azurecli
-az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.ContainerService
-```
-
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-list):
-
-```azurecli
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedUbuntuPreview')].{Name:name,State:properties.state}"
-```
-
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) :
-
-```azurecli
-az provider register --namespace Microsoft.ContainerService
-```
-
-Configureer het cluster voor het gebruik van Ubuntu 18,04 wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` markering om Ubuntu 18,04 in te stellen als het standaard besturingssysteem.
-
-```azurecli
-az aks create --name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804
-```
-
-Als u clusters wilt maken met de AKS Ubuntu 16,04-installatie kopie, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
-
-### <a name="use-aks-ubuntu-1804-existing-clusters-preview"></a>AKS Ubuntu 18,04-bestaande clusters gebruiken (preview-versie)
-
-Configureer een nieuwe knooppunt groep om Ubuntu 18,04 te gebruiken. Gebruik de `--aks-custom-headers` markering om Ubuntu 18,04 in te stellen als het standaard besturings systeem voor die knooppunt groep.
-
-```azurecli
-az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804
-```
-
-Als u knooppunt Pools met de AKS Ubuntu 16,04-installatie kopie wilt maken, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
 
 ## <a name="container-runtime-configuration"></a>Container-runtime configuratie
 
@@ -139,69 +93,6 @@ Door te gebruiken `containerd` voor AKS-knoop punten, verbetert de opstart laten
 > 
 > Het wordt sterk aanbevolen om uw workloads te testen op AKS-knooppunt Pools met `containerD` voordat u clusters op 1,19 of hoger gebruikt.
 
-In de volgende sectie wordt uitgelegd hoe u AKS kunt gebruiken en testen met `containerD` clusters die nog geen Kubernetes-versie 1,19 of hoger gebruiken, of die zijn gemaakt voordat deze functie algemeen beschikbaar werd, door gebruik te maken van de voor beeld-runtime configuratie van de container.
-
-### <a name="use-containerd-as-your-container-runtime-preview"></a>Gebruiken `containerd` als uw container runtime (preview-versie)
-
-U moet over de volgende vereisten beschikken:
-
-- [De Azure cli][azure-cli-install], versie 2.8.0 of hoger geïnstalleerd
-- De AKS-preview-extensie versie 0.4.53 of hoger
-- De `UseCustomizedContainerRuntime` functie vlag is geregistreerd
-- De `UseCustomizedUbuntuPreview` functie vlag is geregistreerd
-
-Gebruik de volgende Azure CLI-opdrachten om de 0.4.53-uitbrei ding AKS-preview of hoger te installeren:
-
-```azurecli
-az extension add --name aks-preview
-az extension list
-```
-
-De `UseCustomizedContainerRuntime` functies en registreren `UseCustomizedUbuntuPreview` :
-
-```azurecli
-az feature register --name UseCustomizedContainerRuntime --namespace Microsoft.ContainerService
-az feature register --name UseCustomizedUbuntuPreview --namespace Microsoft.ContainerService
-
-```
-
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-list):
-
-```azurecli
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedContainerRuntime')].{Name:name,State:properties.state}"
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UseCustomizedUbuntuPreview')].{Name:name,State:properties.state}"
-```
-
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) :
-
-```azurecli
-az provider register --namespace Microsoft.ContainerService
-```  
-
-### <a name="use-containerd-on-new-clusters-preview"></a>Gebruiken `containerd` op nieuwe clusters (preview-versie)
-
-Configureer het cluster dat moet worden gebruikt `containerd` wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` vlag om in te stellen `containerd` als container runtime.
-
-> [!NOTE]
-> De `containerd` runtime wordt alleen ondersteund voor knoop punten en knooppunt groepen met behulp van de AKS Ubuntu 18,04-installatie kopie.
-
-```azurecli
-az aks create --name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804,ContainerRuntime=containerd
-```
-
-Als u clusters met de Moby (docker)-runtime wilt maken, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
-
-### <a name="use-containerd-on-existing-clusters-preview"></a>Gebruiken `containerd` op bestaande clusters (preview-versie)
-
-Configureer een nieuwe knooppunt groep die moet worden gebruikt `containerd` . Gebruik de `--aks-custom-headers` vlag om in te stellen `containerd` als runtime voor die knooppunt groep.
-
-```azurecli
-az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --aks-custom-headers CustomizedUbuntu=aks-ubuntu-1804,ContainerRuntime=containerd
-```
-
-Als u knooppunt Pools met de Moby (docker)-runtime wilt maken, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
-
-
 ### <a name="containerd-limitationsdifferences"></a>`Containerd` beperkingen/verschillen
 
 * Als `containerd` u de container runtime wilt gebruiken, moet u AKS Ubuntu 18,04 gebruiken als basis installatie kopie van het besturings systeem.
@@ -213,9 +104,9 @@ Als u knooppunt Pools met de Moby (docker)-runtime wilt maken, kunt u dit doen d
 * U hebt geen toegang meer tot de docker-engine, of u kunt `/var/run/docker.sock` docker-in-docker (DinD) niet meer gebruiken.
   * Als u momenteel toepassings Logboeken of bewakings gegevens van de docker-engine uitpakt, kunt u in plaats daarvan iets gebruiken als [Azure monitor voor containers](../azure-monitor/insights/container-insights-enable-new-cluster.md) . Daarnaast biedt AKS geen ondersteuning voor het uitvoeren van out-of-band-opdrachten op de agent knooppunten die instabiliteit kunnen veroorzaken.
   * Zelfs bij gebruik van Moby/docker, het bouwen van installatie kopieën en rechtstreeks gebruikmaken van de docker-engine via de bovenstaande methoden, wordt sterk afgeraden. Kubernetes is niet volledig op de hoogte van deze verbruikte resources en deze benaderingen presen teren hier talloze problemen die [hier](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) [worden beschreven, bijvoorbeeld.](https://securityboulevard.com/2018/05/escaping-the-whale-things-you-probably-shouldnt-do-with-docker-part-1/)
-* Installatie kopieën maken: u kunt uw huidige docker-werk stroom gewoon blijven gebruiken, tenzij u imagages in uw AKS-cluster bouwt. In dit geval kunt u het beste overschakelen naar de aanbevolen benadering voor het bouwen van installatie kopieën met [ACR-taken](../container-registry/container-registry-quickstart-task-cli.md)of een veiligere optie in het cluster, zoals [docker buildx](https://github.com/docker/buildx).
+* Installatie kopieën maken: u kunt uw huidige docker-werk stroom gewoon blijven gebruiken, tenzij u installatie kopieën in uw AKS-cluster bouwt. In dit geval kunt u het beste overschakelen naar de aanbevolen benadering voor het bouwen van installatie kopieën met [ACR-taken](../container-registry/container-registry-quickstart-task-cli.md)of een veiligere optie in het cluster, zoals [docker buildx](https://github.com/docker/buildx).
 
-## <a name="generation-2-virtual-machines-preview"></a>Virtuele machines van de 2e generatie (preview-versie)
+## <a name="generation-2-virtual-machines"></a>Virtuele machines van Generatie 2
 
 Azure biedt ondersteuning voor [generatie 2 (Gen2) virtuele machines (vm's)](../virtual-machines/generation-2.md). Vm's van generatie 2 ondersteunen belang rijke functies die niet worden ondersteund in virtuele machines van de eerste generatie (gen1). Tot deze functies behoren meer geheugen, Intel-software Guard Extensions (Intel SGX) en gevirtualiseerde permanent geheugen (vPMEM).
 
@@ -223,59 +114,6 @@ Vm's van generatie 2 gebruiken de nieuwe op UEFI gebaseerde opstart architectuur
 Alleen specifieke Sku's en grootten bieden ondersteuning voor Gen2-Vm's. Controleer de [lijst met ondersteunde grootten](../virtual-machines/generation-2.md#generation-2-vm-sizes)om te zien of uw SKU Gen2 ondersteunt of vereist.
 
 Niet alle VM-installatie kopieën ondersteunen Gen2, op AKS Gen2-Vm's wordt de nieuwe [AKS Ubuntu 18,04-installatie kopie](#os-configuration)gebruikt. Deze installatie kopie ondersteunt alle Gen2 Sku's en grootten.
-
-Als u Gen2-Vm's wilt gebruiken tijdens de preview, hebt u het volgende nodig:
-- De `aks-preview` cli-extensie is geïnstalleerd.
-- De `Gen2VMPreview` functie vlag is geregistreerd.
-
-De `Gen2VMPreview` functie registreren:
-
-```azurecli
-az feature register --name Gen2VMPreview --namespace Microsoft.ContainerService
-```
-
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-list):
-
-```azurecli
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/Gen2VMPreview')].{Name:name,State:properties.state}"
-```
-
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider#az-provider-register) :
-
-```azurecli
-az provider register --namespace Microsoft.ContainerService
-```
-
-Als u de AKS-preview CLI-extensie wilt installeren, gebruikt u de volgende Azure CLI-opdrachten:
-
-```azurecli
-az extension add --name aks-preview
-```
-
-Gebruik de volgende Azure CLI-opdrachten om de CLI-extensie AKS-preview te installeren:
-
-```azurecli
-az extension update --name aks-preview
-```
-
-### <a name="use-gen2-vms-on-new-clusters-preview"></a>Gen2 Vm's gebruiken in nieuwe clusters (preview-versie)
-Configureer het cluster voor het gebruik van Gen2 Vm's voor de geselecteerde SKU wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` vlag om Gen2 in te stellen als de VM-generatie op een nieuw cluster.
-
-```azurecli
-az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_D2s_v3 --aks-custom-headers usegen2vm=true
-```
-
-Als u een normaal cluster wilt maken met virtuele machines van de eerste generatie (gen1), kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` . U kunt er ook voor kiezen om meer gen1-of Gen2-Vm's toe te voegen.
-
-### <a name="use-gen2-vms-on-existing-clusters-preview"></a>Gen2 Vm's gebruiken op bestaande clusters (preview-versie)
-Configureer een nieuwe knooppunt groep om Gen2 Vm's te gebruiken. Gebruik de `--aks-custom-headers` vlag om Gen2 in te stellen als de VM-generatie voor die knooppunt groep.
-
-```azurecli
-az aks nodepool add --name gen2 --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_D2s_v3 --aks-custom-headers usegen2vm=true
-```
-
-Als u reguliere gen1-knooppunt groepen wilt maken, kunt u dit doen door de aangepaste tag weg te laten `--aks-custom-headers` .
-
 
 ## <a name="ephemeral-os"></a>Kortstondig besturings systeem
 

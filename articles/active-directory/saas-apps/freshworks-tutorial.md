@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/20/2021
+ms.date: 02/11/2021
 ms.author: jeedes
-ms.openlocfilehash: 0070a91706fc7efe81a7679801e8c10ea9a05242
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 07466d6917c184d8fcbb604312f42ef775d9fc08
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624739"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382137"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-freshworks"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Freshworks
 
@@ -40,7 +40,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Freshworks biedt ondersteuning voor met **SP** geïnitieerde eenmalige aanmelding
+* Freshworks ondersteunt SSO die door **SP en IDP** is geïnitieerd
 
 ## <a name="add-freshworks-from-the-gallery"></a>Freshworks toevoegen vanuit de galerie
 
@@ -76,14 +76,18 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
+1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.freshworks.com/login`
+    a. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.freshworks.com/sp/SAML/<MODULE_ID>/metadata`
 
-    b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.freshworks.com/sp/SAML/<MODULE_ID>/metadata`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.freshworks.com/sp/SAML/CUSTOM_URL`
+
+1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
+
+    In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.freshworks.com/login`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en id. Neem contact op met [het klantondersteuningsteam van Freshworks](mailto:support@freshworks.com) om deze waarden op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Deze waarden bijwerken met de daad werkelijke id, antwoord-URL en aanmeldings-URL. Neem contact op met [het klantondersteuningsteam van Freshworks](mailto:support@freshworks.com) om deze waarden op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -157,11 +161,18 @@ In dit gedeelte maakt u in Freshworks een gebruiker met de naam B.Simon. Werk sa
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de Freshworks-aanmeldings-URL waar u de aanmeldings stroom kunt initiëren. 
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
+
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor Freshworks-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
 * Ga rechtstreeks naar de URL voor Freshworks-aanmelding en start de aanmeldings stroom vanaf daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Freshworks in de mijn apps klikt, moet u automatisch worden aangemeld bij de Freshworks waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de Freshworks waarvoor u de SSO hebt ingesteld 
+
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel Freshworks in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze in de IDP-modus is geconfigureerd, moet u automatisch worden aangemeld bij de Freshworks waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

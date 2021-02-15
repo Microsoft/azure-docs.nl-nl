@@ -4,16 +4,16 @@ description: De nieuwe gegevens export gebruiken om uw IoT-gegevens te exportere
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 11/05/2020
+ms.date: 01/27/2021
 ms.topic: how-to
 ms.service: iot-central
 ms.custom: contperf-fy21q1, contperf-fy21q3
-ms.openlocfilehash: 350cd7c14a4f1ee5058a60ccf60c1205ce97916a
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: d31673b8d789cff5de3ddce63b67a98854b7aabc
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226057"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515900"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export
 
@@ -166,6 +166,17 @@ Nu u een bestemming hebt voor het exporteren van uw gegevens naar, moet u de geg
 
 1. Wanneer u klaar bent met het instellen van uw export, selecteert u **Opslaan**. Na een paar minuten worden uw gegevens weer gegeven in uw bestemming.
 
+## <a name="monitor-your-export"></a>Uw export controleren
+
+Naast het weer geven van de status van uw export in IoT Central, kunt u bewaken hoeveel gegevens tijdens uw export stromen worden uitgevoerd en er fouten in het Azure Monitor gegevens platform worden weer gegeven. U krijgt toegang tot metrische gegevens over uw export en Apparaatstatus in grafieken in de Azure Portal, een REST API of query's in Power shell of de Azure CLI. Op dit moment kunt u deze metrische gegevens voor export bewaken in Azure Monitor:
+
+1. Aantal inkomende berichten dat moet worden geëxporteerd voordat filters worden toegepast
+2. Aantal berichten dat door filters wordt door gegeven
+3. Aantal berichten dat is geëxporteerd naar bestemmingen
+4. Aantal aangetroffen fouten
+ 
+[Meer informatie over het verkrijgen van toegang tot IoT Central metrische gegevens.](howto-monitor-application-health.md)
+
 ## <a name="destinations"></a>Bestemmingen
 
 ### <a name="azure-blob-storage-destination"></a>Doel van Azure Blob Storage
@@ -233,7 +244,6 @@ In het volgende voor beeld ziet u een geëxporteerd telemetrie-bericht:
     }
 }
 ```
-
 ### <a name="message-properties"></a>Bericht eigenschappen
 
 Telemetrie-berichten hebben eigenschappen voor meta gegevens naast de telemetrie-nettolading. Het vorige code fragment bevat voor beelden van systeem berichten, zoals `deviceId` en `enqueuedTime` . Zie [systeem eigenschappen van D2C IOT hub-berichten](../../iot-hub/iot-hub-devguide-messages-construct.md#system-properties-of-d2c-iot-hub-messages)voor meer informatie over de eigenschappen van het systeem bericht.

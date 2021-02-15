@@ -1,23 +1,18 @@
 ---
 title: Gegevens kopiëren in Dynamics (Common Data Service)
 description: Informatie over het kopiëren van gegevens van micro soft Dynamics CRM of micro soft Dynamics 365 (Common Data Service) naar ondersteunde Sink-gegevens archieven of van ondersteunde brongegevens archieven naar Dynamics CRM of Dynamics 365 door gebruik te maken van een Kopieer activiteit in een data factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 02/02/2021
-ms.openlocfilehash: 63816a40aa710d26dc036dfe82018883e917beb6
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: d238a232d719c75244e6f9b825272957d2a4a4bc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428467"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380998"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Dynamics 365 (Common Data Service) of Dynamics CRM door gebruik te maken van Azure Data Factory
 
@@ -80,16 +75,16 @@ De volgende eigenschappen worden ondersteund voor de Dynamics gekoppelde service
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op "Dynamics", "DynamicsCrm" of "CommonDataServiceForApps". | Ja |
-| deploymentType | Het implementatie type van het Dynamics-exemplaar. De waarde moet ' online ' zijn voor Dynamics online. | Ja |
-| serviceUri | De service-URL van uw Dynamics-exemplaar, dezelfde versie die u hebt geopend vanuit de browser. Een voor beeld is "https:// \<organization-name> . CRM [x]. Dynamics. com". | Ja |
-| authenticationType | Het verificatie type om verbinding te maken met een Dynamics-Server. Geldige waarden zijn ' AADServicePrincipal ' en ' Office365 '. | Ja |
+| type | De eigenschap type moet worden ingesteld op "Dynamics", "DynamicsCrm" of "CommonDataServiceForApps". | Yes |
+| deploymentType | Het implementatie type van het Dynamics-exemplaar. De waarde moet ' online ' zijn voor Dynamics online. | Yes |
+| serviceUri | De service-URL van uw Dynamics-exemplaar, dezelfde versie die u hebt geopend vanuit de browser. Een voor beeld is "https:// \<organization-name> . CRM [x]. Dynamics. com". | Yes |
+| authenticationType | Het verificatie type om verbinding te maken met een Dynamics-Server. Geldige waarden zijn ' AADServicePrincipal ' en ' Office365 '. | Yes |
 | servicePrincipalId | De client-ID van de Azure AD-toepassing. | Ja wanneer verificatie ' AADServicePrincipal ' is |
 | servicePrincipalCredentialType | Het referentie type dat moet worden gebruikt voor Service-Principal-verificatie. Geldige waarden zijn ' ServicePrincipalKey ' en ' ServicePrincipalCert '. | Ja wanneer verificatie ' AADServicePrincipal ' is |
 | servicePrincipalCredential | De Service-Principal-referentie. <br/><br/>Wanneer u ' ServicePrincipalKey ' als referentie type gebruikt, `servicePrincipalCredential` kan dit een teken reeks zijn die tijdens de implementatie van de gekoppelde service Azure Data Factory versleuteld. Het kan ook een verwijzing naar een geheim in Azure Key Vault zijn. <br/><br/>Wanneer u ' ServicePrincipalCert ' als referentie gebruikt, `servicePrincipalCredential` moet u een verwijzing naar een certificaat in azure Key Vault hebben. | Ja wanneer verificatie ' AADServicePrincipal ' is |
 | gebruikersnaam | De gebruikers naam om verbinding te maken met Dynamics. | Ja wanneer verificatie ' Office365 ' is |
 | wachtwoord | Het wacht woord voor het gebruikers account dat u hebt opgegeven als de gebruikers naam. Markeer dit veld met SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja wanneer verificatie ' Office365 ' is |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Als er geen waarde is opgegeven, gebruikt de eigenschap de standaard Azure Integration runtime. | Nee |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Als er geen waarde is opgegeven, gebruikt de eigenschap de standaard Azure Integration runtime. | No |
 
 >[!NOTE]
 >De Dynamics-connector heeft voorheen de eigenschap **organisatie naam** gebruikt om uw Dynamics CRM-of Dynamics 365 online-exemplaar te identificeren. Hoewel deze eigenschap nog steeds werkt, wordt u aangeraden de nieuwe **serviceUri** -eigenschap op te geven in plaats van de prestaties van de detectie van instanties te verbeteren.
@@ -185,7 +180,7 @@ Aanvullende eigenschappen die worden vergeleken met Dynamics online zijn **hostn
 | authenticationType | Het verificatie type om verbinding te maken met de Dynamics-Server. Geef ' IFD ' op voor on-premises Dynamics met IFD. | Ja. |
 | gebruikersnaam | De gebruikers naam om verbinding te maken met Dynamics. | Ja. |
 | wachtwoord | Het wacht woord voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. U kunt dit veld markeren met SecureString om het veilig op te slaan in Data Factory. Of u kunt een wacht woord opslaan in Key Vault en de Kopieer activiteit laten ophalen wanneer het een gegevens kopie is. Meer informatie over [Store-referenties vindt u in Key Vault](store-credentials-in-key-vault.md). | Ja. |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Als er geen waarde is opgegeven, gebruikt de eigenschap de standaard Azure Integration runtime. | Nee |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Als er geen waarde is opgegeven, gebruikt de eigenschap de standaard Azure Integration runtime. | No |
 
 #### <a name="example-dynamics-on-premises-with-ifd-using-ifd-authentication"></a>Voor beeld: on-premises Dynamics met IFD met IFD-verificatie
 
@@ -223,7 +218,7 @@ Als u gegevens wilt kopiëren van en naar Dynamics, worden de volgende eigenscha
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op "DynamicsEntity", "DynamicsCrmEntity" of "CommonDataServiceForAppsEntity". |Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op "DynamicsEntity", "DynamicsCrmEntity" of "CommonDataServiceForAppsEntity". |Yes |
 | entityName | De logische naam van de entiteit die moet worden opgehaald. | Nee voor bron als de activiteit bron is opgegeven als ' query ' en ja voor Sink |
 
 #### <a name="example"></a>Voorbeeld
@@ -255,7 +250,7 @@ Als u gegevens wilt kopiëren uit Dynamics, ondersteunt het gedeelte **bron** va
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet worden ingesteld op "DynamicsSource", "DynamicsCrmSource" of "CommonDataServiceForAppsSource". | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet worden ingesteld op "DynamicsSource", "DynamicsCrmSource" of "CommonDataServiceForAppsSource". | Yes |
 | query | FetchXML is een eigen query taal die wordt gebruikt in Dynamics online en on-premises. Zie het volgende voorbeeld Zie [Query's bouwen met FetchXML](/previous-versions/dynamicscrm-2016/developers-guide/gg328332(v=crm.8))voor meer informatie. | Nee if `entityName` in de gegevensset is opgegeven |
 
 >[!NOTE]
@@ -324,7 +319,7 @@ Als u gegevens wilt kopiëren naar Dynamics, ondersteunt het gedeelte **sink** v
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
 | type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op ' DynamicsSink ', ' DynamicsCrmSink ' of ' CommonDataServiceForAppsSink '. | Ja. |
-| writeBehavior | Het schrijf gedrag van de bewerking. De waarde moet ' Upsert ' zijn. | Ja |
+| writeBehavior | Het schrijf gedrag van de bewerking. De waarde moet ' Upsert ' zijn. | Yes |
 | alternateKeyName | De alternatieve sleutel naam die op uw entiteit is gedefinieerd om een upsert uit te voeren. | Nee. |
 | writeBatchSize | Het aantal rijen van gegevens dat in elke batch naar Dynamics is geschreven. | Nee. De standaardwaarde is 10. |
 | ignoreNullValues | Hiermee wordt aangegeven of Null-waarden moeten worden genegeerd voor andere invoer gegevens dan de sleutel velden tijdens een schrijf bewerking.<br/><br/>Geldige waarden zijn **True** en **False**:<ul><li>**Waar**: laat de gegevens in het doel object ongewijzigd wanneer u een upsert of update-bewerking doet. Voeg een gedefinieerde standaard waarde in wanneer u een INSERT-bewerking wilt uitvoeren.</li><li>**Onwaar**: werk de gegevens in het doel object bij naar een null-waarde wanneer u een upsert of update-bewerking uitgevoerd. Voeg een null-waarde toe wanneer u een INSERT-bewerking uitgevoerd.</li></ul> | Nee. De standaard waarde is **False**. |

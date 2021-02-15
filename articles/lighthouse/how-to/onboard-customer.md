@@ -1,14 +1,14 @@
 ---
 title: Een klant onboarden in Azure Lighthouse
 description: Meer informatie over hoe u een klant kunt opsturen naar Azure Lighthouse, zodat de resources toegankelijk zijn en kunnen worden beheerd via uw eigen Tenant met behulp van Azure delegated resource management.
-ms.date: 01/14/2021
+ms.date: 02/08/2021
 ms.topic: how-to
-ms.openlocfilehash: 1a7c8fc85819b2c34b5c64dc83cb908b7bee3c41
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c0a886b692b99156cbd53e5f0f5953047560c5b9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232672"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372141"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
 
@@ -311,12 +311,13 @@ Als u na de onboarding van de klant wijzigingen wilt aanbrengen, kunt u [de over
 Als uw klant niet kan worden uitgevoerd of als uw gebruikers problemen hebben met het openen van de gedelegeerde resources, raadpleegt u de volgende tips en vereisten en probeert u het opnieuw.
 
 - De `managedbyTenantId` waarde mag niet gelijk zijn aan de Tenant-id voor het abonnement dat wordt uitgevoerd.
-- U kunt niet meerdere toewijzingen met hetzelfde bereik hebben `mspOfferName` . 
+- U kunt niet meerdere toewijzingen met hetzelfde bereik hebben `mspOfferName` .
 - De resource provider **micro soft. ManagedServices** moet zijn geregistreerd voor het gedelegeerde abonnement. Dit gebeurt automatisch tijdens de implementatie, maar als dat niet het geval is, kunt u [het hand matig registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider).
 - Autorisaties mogen geen gebruikers met de ingebouwde rol van [eigenaar](../../role-based-access-control/built-in-roles.md#owner) of ingebouwde rollen met [DataActions](../../role-based-access-control/role-definitions.md#dataactions)bevatten.
 - Groepen moeten worden gemaakt met [**groeps type**](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md#group-types) ingesteld op **beveiliging** en niet **Microsoft 365**.
 - Er kan een extra vertraging optreden voordat de toegang is ingeschakeld voor [geneste groepen](../..//active-directory/fundamentals/active-directory-groups-membership-azure-portal.md).
 - Gebruikers die resources moeten weer geven in de Azure Portal, moeten beschikken over de rol van [lezer](../../role-based-access-control/built-in-roles.md#reader) (of een andere ingebouwde rol, waaronder lezers toegang).
+- De [ingebouwde Azure-rollen](../../role-based-access-control/built-in-roles.md) die u in autorisaties opneemt, moeten geen afgeschafte rollen bevatten. Als een ingebouwde Azure-rol wordt afgeschaft, verliest u de toegang van alle gebruikers die zijn opgeheven met die rol, en kunt u geen aanvullende delegaties meer vrijgeven. U kunt dit probleem oplossen door uw sjabloon bij te werken zodat alleen ondersteunde ingebouwde rollen worden gebruikt en vervolgens een nieuwe implementatie moet worden uitgevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

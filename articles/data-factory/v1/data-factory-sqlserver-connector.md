@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van en naar SQL Server
 description: Meer informatie over het verplaatsen van gegevens naar/van SQL Server data base on-premises of in een Azure-VM met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 864ece28-93b5-4309-9873-b095bbe6fedd
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b2d69f9f70861799d941bbeaed7eb8d338fa8a5e
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: fbd1e1d652db3bbd91344ea828278d057baeb060
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636167"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368809"
 ---
 # <a name="move-data-to-and-from-sql-server-using-azure-data-factory"></a>Gegevens verplaatsen van en naar SQL Server met behulp van Azure Data Factory
 
@@ -37,7 +32,7 @@ U kunt gegevens **van een SQL Server Data Base** kopiëren naar de volgende gege
 
 [!INCLUDE [data-factory-supported-sink](../../../includes/data-factory-supported-sinks.md)]
 
-U kunt gegevens uit de volgende gegevens archieven kopiëren **naar een SQL Server-Data Base** :
+U kunt gegevens uit de volgende gegevens archieven kopiëren **naar een SQL Server-Data Base**:
 
 [!INCLUDE [data-factory-supported-sources](../../../includes/data-factory-supported-sources.md)]
 
@@ -54,13 +49,13 @@ Hoewel u een gateway kunt installeren op dezelfde lokale machine of in de Cloud-
 ## <a name="getting-started"></a>Aan de slag
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van/naar een SQL Server-Data Base met behulp van verschillende hulpprogram ma's/Api's.
 
-De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren** . Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
+De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio** , **Azure PowerShell** , **Azure Resource Manager sjabloon** , **.net API** en **rest API** . Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
-1. Maak een **Data Factory** . Een data factory kan een of meer pijp lijnen bevatten.
+1. Maak een **Data Factory**. Een data factory kan een of meer pijp lijnen bevatten.
 2. Maak **gekoppelde services** om invoer-en uitvoer gegevens archieven te koppelen aan uw Data Factory. Als u bijvoorbeeld gegevens uit een SQL Server Data Base naar een Azure Blob-opslag kopieert, maakt u twee gekoppelde services om uw SQL Server-Data Base en Azure Storage-account aan uw data factory te koppelen. Zie de sectie [Eigenschappen van gekoppelde service](#linked-service-properties) voor gekoppelde service-eigenschappen die specifiek zijn voor SQL Server Data Base.
 3. Gegevens **sets** maken om invoer-en uitvoer gegevens voor de Kopieer bewerking weer te geven. In het voor beeld in de laatste stap maakt u een gegevensset om de SQL-tabel op te geven in uw SQL Server-Data Base die de invoer gegevens bevat. En u maakt een andere gegevensset om de BLOB-container en de map op te geven die de gegevens bevat die zijn gekopieerd uit de SQL Server Data Base. Zie de sectie [Eigenschappen](#dataset-properties) van gegevensset voor eigenschappen van gegevens sets die specifiek zijn voor SQL Server Data Base.
 4. Maak een **pijp lijn** met een Kopieer activiteit die een gegevensset als invoer en een gegevensset als uitvoer gebruikt. In het eerder genoemde voor beeld gebruikt u SqlSource als bron en BlobSink als Sink voor de Kopieer activiteit. En als u kopieert van Azure Blob Storage naar SQL Server-Data Base, gebruikt u BlobSource en SqlSink in de Kopieer activiteit. Zie de sectie [Eigenschappen van Kopieer](#copy-activity-properties) activiteit voor informatie over de eigenschappen van de Kopieer activiteit die specifiek zijn voor SQL Server Data Base. Voor meer informatie over het gebruik van een gegevens archief als een bron of sink klikt u op de koppeling in de vorige sectie voor uw gegevens archief.
@@ -76,11 +71,11 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **OnPremisesSqlServer** . |Ja |
-| connectionString |Geef Connections Tring-gegevens op die nodig zijn om verbinding te maken met de SQL Server-Data Base via SQL-verificatie of Windows-verificatie. |Ja |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de SQL Server-Data Base. |Ja |
-| gebruikersnaam |Geef de gebruikers naam op als u Windows-verificatie gebruikt. Voor beeld: **domainname \\ gebruikers naam** . |Nee |
-| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |Nee |
+| type |De eigenschap type moet worden ingesteld op: **OnPremisesSqlServer**. |Ja |
+| connectionString |Geef Connections Tring-gegevens op die nodig zijn om verbinding te maken met de SQL Server-Data Base via SQL-verificatie of Windows-verificatie. |Yes |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de SQL Server-Data Base. |Yes |
+| gebruikersnaam |Geef de gebruikers naam op als u Windows-verificatie gebruikt. Voor beeld: **domainname \\ gebruikers naam**. |No |
+| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |No |
 
 U kunt referenties versleutelen met de cmdlet **New-AzDataFactoryEncryptValue** en deze gebruiken in de Connection String, zoals wordt weer gegeven in het volgende voor beeld (eigenschap **EncryptedCredential** ):
 
@@ -133,10 +128,10 @@ De sectie typeProperties verschilt voor elk type gegevensset en bevat informatie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| tableName |De naam van de tabel of weer gave in de SQL Server Data Base-instantie waarnaar de gekoppelde service verwijst. |Ja |
+| tableName |De naam van de tabel of weer gave in de SQL Server Data Base-instantie waarnaar de gekoppelde service verwijst. |Yes |
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
-Als u gegevens verplaatst van een SQL Server Data Base, stelt u het bron type in de Kopieer activiteit in op **SqlSource** . En als u gegevens naar een SQL Server Data Base verplaatst, stelt u het sink-type in de Kopieer activiteit in op **SqlSink** . Deze sectie bevat een lijst met eigenschappen die worden ondersteund door SqlSource en SqlSink.
+Als u gegevens verplaatst van een SQL Server Data Base, stelt u het bron type in de Kopieer activiteit in op **SqlSource**. En als u gegevens naar een SQL Server Data Base verplaatst, stelt u het sink-type in de Kopieer activiteit in op **SqlSink**. Deze sectie bevat een lijst met eigenschappen die worden ondersteund door SqlSource en SqlSink.
 
 Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van activiteiten. Eigenschappen zoals naam, beschrijving, invoer-en uitvoer tabellen en beleids regels zijn beschikbaar voor alle typen activiteiten.
 
@@ -150,9 +145,9 @@ Wanneer de bron in een Kopieer activiteit van het type **SqlSource** is, zijn de
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| sqlReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. Kan verwijzen naar meerdere tabellen vanuit de data base waarnaar wordt verwezen door de invoer gegevensset. Indien niet opgegeven, de SQL-instructie die wordt uitgevoerd: Selecteer een van de MyTable. |Nee |
-| sqlReaderStoredProcedureName |De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. |De naam van de opgeslagen procedure. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. |Nee |
-| storedProcedureParameters |Para meters voor de opgeslagen procedure. |Naam/waarde-paren. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. |Nee |
+| sqlReaderQuery |Gebruik de aangepaste query om gegevens te lezen. |SQL-query teken reeks. Bijvoorbeeld: Select * from MyTable. Kan verwijzen naar meerdere tabellen vanuit de data base waarnaar wordt verwezen door de invoer gegevensset. Indien niet opgegeven, de SQL-instructie die wordt uitgevoerd: Selecteer een van de MyTable. |No |
+| sqlReaderStoredProcedureName |De naam van de opgeslagen procedure waarmee gegevens uit de bron tabel worden gelezen. |De naam van de opgeslagen procedure. De laatste SQL-instructie moet een instructie SELECT in de opgeslagen procedure zijn. |No |
+| storedProcedureParameters |Para meters voor de opgeslagen procedure. |Naam/waarde-paren. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. |No |
 
 Als de **sqlReaderQuery** is opgegeven voor de SqlSource, voert de Kopieer activiteit deze query uit op basis van de SQL Server database bron om de gegevens op te halen.
 
@@ -168,13 +163,13 @@ Als u sqlReaderQuery of sqlReaderStoredProcedureName niet opgeeft, worden de kol
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| writeBatchTimeout |Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt. |tijdsbestek<br/><br/> Voor beeld: "00:30:00" (30 minuten). |Nee |
+| writeBatchTimeout |Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt. |tijdsbestek<br/><br/> Voor beeld: "00:30:00" (30 minuten). |No |
 | writeBatchSize |Hiermee worden gegevens in de SQL-tabel ingevoegd wanneer de buffer grootte writeBatchSize bereikt. |Geheel getal (aantal rijen) |Nee (standaard: 10000) |
-| sqlWriterCleanupScript |Geef een query op om de Kopieer activiteit uit te voeren, zodat de gegevens van een specifiek segment worden opgeruimd. Zie de sectie Herhaal bare [kopieën](#repeatable-copy) voor meer informatie. |Een query-instructie. |Nee |
-| sliceIdentifierColumnName |Geef de kolom naam voor de Kopieer activiteit op die moet worden gevuld met een automatisch gegenereerde segment-id, die wordt gebruikt om gegevens van een specifiek segment op te schonen wanneer het opnieuw wordt uitgevoerd. Zie de sectie Herhaal bare [kopieën](#repeatable-copy) voor meer informatie. |Kolom naam van een kolom met het gegevens type binary (32). |Nee |
-| sqlWriterStoredProcedureName |De naam van de opgeslagen procedure die definieert hoe bron gegevens worden toegepast in de doel tabel, bijvoorbeeld om upsert of trans formatie te gebruiken met uw eigen bedrijfs logica. <br/><br/>Houd er rekening mee dat deze opgeslagen procedure **per batch wordt geactiveerd** . Als u een bewerking wilt uitvoeren die slechts één keer wordt uitgevoerd en niets hoeft te doen met bron gegevens, bijvoorbeeld verwijderen/truncate, gebruikt u de `sqlWriterCleanupScript` eigenschap. |De naam van de opgeslagen procedure. |Nee |
-| storedProcedureParameters |Para meters voor de opgeslagen procedure. |Naam/waarde-paren. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. |Nee |
-| sqlWriterTableType |Geef de naam op van het tabel type dat moet worden gebruikt in de opgeslagen procedure. Als u de Kopieer activiteit uitvoert, worden de gegevens die in een tijdelijke tabel worden verplaatst, met dit tabel type beschikbaar. De opgeslagen procedure code kan vervolgens de gegevens samen voegen die worden gekopieerd met bestaande gegevens. |De naam van een tabel type. |Nee |
+| sqlWriterCleanupScript |Geef een query op om de Kopieer activiteit uit te voeren, zodat de gegevens van een specifiek segment worden opgeruimd. Zie de sectie Herhaal bare [kopieën](#repeatable-copy) voor meer informatie. |Een query-instructie. |No |
+| sliceIdentifierColumnName |Geef de kolom naam voor de Kopieer activiteit op die moet worden gevuld met een automatisch gegenereerde segment-id, die wordt gebruikt om gegevens van een specifiek segment op te schonen wanneer het opnieuw wordt uitgevoerd. Zie de sectie Herhaal bare [kopieën](#repeatable-copy) voor meer informatie. |Kolom naam van een kolom met het gegevens type binary (32). |No |
+| sqlWriterStoredProcedureName |De naam van de opgeslagen procedure die definieert hoe bron gegevens worden toegepast in de doel tabel, bijvoorbeeld om upsert of trans formatie te gebruiken met uw eigen bedrijfs logica. <br/><br/>Houd er rekening mee dat deze opgeslagen procedure **per batch wordt geactiveerd**. Als u een bewerking wilt uitvoeren die slechts één keer wordt uitgevoerd en niets hoeft te doen met bron gegevens, bijvoorbeeld verwijderen/truncate, gebruikt u de `sqlWriterCleanupScript` eigenschap. |De naam van de opgeslagen procedure. |No |
+| storedProcedureParameters |Para meters voor de opgeslagen procedure. |Naam/waarde-paren. Namen en hoofdletter gebruik van para meters moeten overeenkomen met de namen en de behuizing van de opgeslagen procedure parameters. |No |
+| sqlWriterTableType |Geef de naam op van het tabel type dat moet worden gebruikt in de opgeslagen procedure. Als u de Kopieer activiteit uitvoert, worden de gegevens die in een tijdelijke tabel worden verplaatst, met dit tabel type beschikbaar. De opgeslagen procedure code kan vervolgens de gegevens samen voegen die worden gekopieerd met bestaande gegevens. |De naam van een tabel type. |No |
 
 
 ## <a name="json-examples-for-copying-data-from-and-to-sql-server"></a>JSON-voor beelden voor het kopiëren van gegevens van en naar SQL Server
@@ -310,7 +305,7 @@ Gegevens worden elk uur naar een nieuwe BLOB geschreven (frequentie: uur, interv
 ```
 **Pijp lijn met Kopieer activiteit**
 
-De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van deze invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **SqlSource** en het **sink** -type is ingesteld op **BlobSink** . Met de SQL-query die is opgegeven voor de eigenschap **SqlReaderQuery** selecteert u de gegevens in het afgelopen uur om te kopiëren.
+De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van deze invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **SqlSource** en het **sink** -type is ingesteld op **BlobSink**. Met de SQL-query die is opgegeven voor de eigenschap **SqlReaderQuery** selecteert u de gegevens in het afgelopen uur om te kopiëren.
 
 ```json
 {
@@ -492,7 +487,7 @@ In het voor beeld worden gegevens gekopieerd naar een tabel met de naam ' MyTabl
 ```
 **Pijp lijn met Kopieer activiteit**
 
-De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van deze invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **BlobSource** en het **sink** -type is ingesteld op **SqlSink** .
+De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van deze invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **BlobSource** en het **sink** -type is ingesteld op **SqlSink**.
 
 ```json
 {
@@ -542,20 +537,20 @@ De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik
 ```
 
 ## <a name="troubleshooting-connection-issues"></a>Verbindingsproblemen oplossen
-1. Configureer uw SQL Server om externe verbindingen te accepteren. Start **SQL Server Management Studio** , klik met de rechter muisknop op **Server** en klik op **Eigenschappen** . Selecteer **verbindingen** in de lijst en Schakel **externe verbindingen met de server toestaan in** .
+1. Configureer uw SQL Server om externe verbindingen te accepteren. Start **SQL Server Management Studio**, klik met de rechter muisknop op **Server** en klik op **Eigenschappen**. Selecteer **verbindingen** in de lijst en Schakel **externe verbindingen met de server toestaan in**.
 
     ![Externe verbindingen inschakelen](./media/data-factory-sqlserver-connector/AllowRemoteConnections.png)
 
     Zie [de configuratie optie voor de RAS-server configureren](/sql/database-engine/configure-windows/configure-the-remote-access-server-configuration-option) voor gedetailleerde stappen.
-2. Start **SQL Server Configuration Manager** . Vouw **SQL Server netwerk configuratie** voor de gewenste instantie uit en selecteer **protocollen voor MSSQLSERVER** . U ziet de protocollen in het rechterdeel venster. Schakel TCP/IP in door met de rechter muisknop op **TCP/IP** te klikken en op **inschakelen** te klikken.
+2. Start **SQL Server Configuration Manager**. Vouw **SQL Server netwerk configuratie** voor de gewenste instantie uit en selecteer **protocollen voor MSSQLSERVER**. U ziet de protocollen in het rechterdeel venster. Schakel TCP/IP in door met de rechter muisknop op **TCP/IP** te klikken en op **inschakelen** te klikken.
 
     ![TCP/IP inschakelen](./media/data-factory-sqlserver-connector/EnableTCPProptocol.png)
 
     Zie [een server netwerkprotocol in-of uitschakelen](/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol) voor meer informatie en alternatieve manieren om het TCP/IP-protocol in te scha kelen.
 3. Dubbel klik in hetzelfde venster op **TCP/IP** om het venster **TCP/IP-eigenschappen** te openen.
-4. Schakel over naar het tabblad **IP-adressen** . Schuif omlaag om de sectie **IPAll** weer te geven. Noteer de **TCP-poort** (de standaard waarde is **1433** ).
+4. Schakel over naar het tabblad **IP-adressen** . Schuif omlaag om de sectie **IPAll** weer te geven. Noteer de **TCP-poort**(de standaard waarde is **1433**).
 5. Maak een **regel voor de Windows Firewall** op de computer om binnenkomend verkeer via deze poort toe te staan.
-6. **Verbinding controleren** : Gebruik SQL Server Management Studio van een andere computer om verbinding te maken met de SQL Server met behulp van een volledig gekwalificeerde naam. Bijvoorbeeld: " \<machine\> . \<domain\> . Corp. \<company\> . com, 1433. "
+6. **Verbinding controleren**: Gebruik SQL Server Management Studio van een andere computer om verbinding te maken met de SQL Server met behulp van een volledig gekwalificeerde naam. Bijvoorbeeld: " \<machine\> . \<domain\> . Corp. \<company\> . com, 1433. "
 
    > [!IMPORTANT]
    > 
@@ -655,7 +650,7 @@ De toewijzing is hetzelfde als de SQL Server gegevens type toewijzing voor ADO.N
 | --- | --- |
 | bigint |Int64 |
 | binair |Byte [] |
-| bit |Boolean-waarde |
+| bit |Booleaans |
 | char |Teken reeks, char [] |
 | date |DateTime |
 | Datum/tijd |DateTime |
@@ -671,7 +666,7 @@ De toewijzing is hetzelfde als de SQL Server gegevens type toewijzing voor ADO.N
 | ntext |Teken reeks, char [] |
 | numeriek |Decimaal |
 | nvarchar |Teken reeks, char [] |
-| werkelijk |Enkel |
+| werkelijk |Enkelvoudig |
 | rowversion |Byte [] |
 | smalldatetime |DateTime |
 | smallint |Int16 |

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 12/09/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q2, automl
-ms.openlocfilehash: d5556ffb18a7a67e9415310f221e470761bf8cb8
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: c95a75ef48aa9e3db070c6c237f913fabbe893fa
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100098636"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388206"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Resultaten van automatische machine learning experimenten evalueren
 
@@ -234,10 +234,7 @@ In dit voor beeld ziet u dat het betere model een voorspelde en ware lijn heeft 
 
 Hoewel de metrische gegevens voor de evaluatie van modellen en grafieken geschikt zijn voor het meten van de algemene kwaliteit van een model, kunt u controleren welke gegevensset functies een model gebruikt om de voor spellingen te maken. Daarom biedt geautomatiseerd ML een dash board voor het interpreteren van modellen om de relatieve bijdragen van gegevensset-functies te meten en te rapporteren.
 
-![Functie urgentie](./media/how-to-understand-automated-ml/how-to-feature-importance.gif)
-
 Als u het dash board voor interpretaties wilt weer geven in de studio:
-
 1. Meld u aan bij [de Studio](https://ml.azure.com/) en navigeer naar uw werk ruimte
 2. Selecteer in het menu links **experimenten**
 3. Selecteer uw experiment in de lijst met experimenten
@@ -246,10 +243,11 @@ Als u het dash board voor interpretaties wilt weer geven in de studio:
 6. Op het tabblad **uitleg** ziet u mogelijk een uitleg die al is gemaakt als het model het beste is
 7. Als u een nieuwe uitleg wilt maken, selecteert u **model uitleggen** en selecteert u de externe Compute waarmee uitleg moet worden berekend.
 
+Meer [informatie over model verklaringen vindt u in automatische milliliters](how-to-machine-learning-interpretability-automl.md).
+
 > [!NOTE]
 > Het ForecastTCN-model wordt momenteel niet ondersteund door automatische ML-uitleg en andere prognose modellen hebben mogelijk beperkte toegang tot hulpprogram ma's voor interpretatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 * Probeer de [voorbeeld notitieblokken voor automatische machine learning-modellen](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model).
-* Meer informatie over de [verantwoordelijke AI-aanbiedingen in automatische milliliters](how-to-machine-learning-interpretability-automl.md).
 * Neem voor automatische ML specifieke vragen contact op met askautomatedml@microsoft.com .

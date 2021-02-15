@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: f76a05757f86308785d4ca678675b87b3fa9d63e
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 8be5def6d4780fd8b2ab65c5c9e1104a869f6d5a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552905"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391589"
 ---
 # <a name="troubleshoot-your-connections-in-azure-purview"></a>Problemen met uw verbindingen in azure controle sfeer liggen oplossen
 
@@ -53,11 +53,11 @@ Controleer of de juiste machtigingen zijn geconfigureerd voor de beheerde identi
 Voer de volgende stappen uit om dit te controleren:
 
 1. Ga naar de sleutel kluis en de sectie **toegangs beleid**
-1. Controleer of uw beheerde identiteit voor controle sfeer liggen wordt weer gegeven onder de sectie *huidige toegangs beleid* met de machtiging **Get** -machtigingen voor geheimen ten minste
+1. Controleer of uw door controle sfeer liggen beheerde identiteit wordt weer gegeven in de sectie *huidige toegangs beleid* met de machtigingen **Get** en **List** voor geheimen ten minste
 
 Als uw beheerde identiteit voor controle sfeer liggen niet wordt weer gegeven, volgt u de stappen in [referenties voor scannen maken en beheren](manage-credentials.md) om deze toe te voegen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

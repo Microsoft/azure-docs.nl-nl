@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Meer informatie over de hulpprogram ma's voor gegevens opname en hulpprogram ma's die vooraf zijn geïnstalleerd op de Data Science Virtual Machine.
 keywords: hulpprogramma's voor datatechnologie, virtuele machine voor datatechnologie, hulpprogramma voor datatechnologie, linux-datatechnologie
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 89cf81f8d0a66c29a345f56676fbb97601743710
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 21a6efa8108bfd0a317eb955e8b3ffcfba0862a2
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308987"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519368"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Data Science Virtual Machine hulpprogram ma's voor gegevens opname
 
@@ -69,7 +68,7 @@ Hier volgen enkele hulp middelen voor het verplaatsen van gegevens die beschikba
 | Koppelingen naar voor beelden      | [Gegevens CosmosDB importeren](../../cosmos-db/import-data.md)      |
 | Gerelateerde hulpprogram ma's op de DSVM      | AzCopy, AdlCopy      |
 
-## <a name="azure-storage-explorer"></a>Azure Opslagverkenner
+## <a name="azure-storage-explorer"></a>Azure Storage Explorer
 
 | Categorie | Waarde |
 | ------------- | ------------- |
@@ -77,7 +76,7 @@ Hier volgen enkele hulp middelen voor het verplaatsen van gegevens die beschikba
 | Ondersteunde DSVM-versies      | Windows      |
 | Typische toepassingen      | Gegevens importeren en exporteren uit de DSVM.    |
 |  Hoe kunt u het gebruiken/uitvoeren?    | Zoek naar ' Azure Storage Explorer ' in het menu Start. |
-| Koppelingen naar voor beelden      | [Azure Storage Explorer](vm-do-ten-things.md#access-azure-data-and-analytics-services)      |
+| Koppelingen naar voor beelden      | [Azure-opslagverkenner](vm-do-ten-things.md#access-azure-data-and-analytics-services)      |
 
 
 ## <a name="bcp"></a>bcp

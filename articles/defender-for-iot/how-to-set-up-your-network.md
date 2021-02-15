@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/03/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: a71ea75eb603b141c4b28cff5f2b4aa957583bcd
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 3d5a29ed26d58f0cbaa57768d4b8ad236283deb9
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621309"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523852"
 ---
 # <a name="about-azure-defender-for-iot-network-setup"></a>Over de installatie van het Azure Defender for IoT-netwerk
 
@@ -534,24 +534,23 @@ Bekijk deze lijst vóór de site-implementatie:
 
 | **#** | **Taak of activiteit** | **Status** | **Opmerkingen** |
 |--|--|--|--|
-| 1 | Geef globaal op. | ☐ |  |
-| 3 | Order apparaten. | ☐ |  |
-| 4 | Een lijst met subnetten voorbereiden in het netwerk. | ☐ |  |
-| 5 | Geef een VLAN-lijst van de productie netwerken op. | ☐ |  |
-| 6 | Geef een lijst van switch modellen op in het netwerk. | ☐ |  |
-| 7 | Geef een lijst met leveranciers en protocollen van de industriële apparatuur op. | ☐ |  |
-| 8 | Geef netwerk gegevens op voor Sens oren (IP-adres, subnet, D-GW, DNS). | ☐ |  |
-| 9 | Maak de benodigde firewall regels en de toegangs lijst. | ☐ |  |
-| 10 | Maak spanned poorten op switches voor poort bewaking of configureer de netwerk kranen naar wens. | ☐ |  |
-| 11 | Rack ruimte voorbereiden voor sensor apparaten. | ☐ |  |
-| 12 | Een werk station voorbereiden voor personeel. | ☐ |  |
-| 13 | Geef een toetsen bord, monitor en muis op voor de Defender voor IoT-rack apparaten. | ☐ |  |
-| 14 | De apparaten racken en aansluiten. | ☐ |  |
-| 15 | Wijs site bronnen toe om de implementatie te ondersteunen. | ☐ |  |
-| 16 | Maak Active Directory groepen of lokale gebruikers. | ☐ |  |
-| 17 | Training instellen (zelf studie). | ☐ |  |
-| 18 | Go of no-go. | ☐ |  |
-| 19 | De implementatie datum plannen. | ☐ |  |
+| 1 | Order apparaten. | ☐ |  |
+| 2 | Een lijst met subnetten voorbereiden in het netwerk. | ☐ |  |
+| 3 | Geef een VLAN-lijst van de productie netwerken op. | ☐ |  |
+| 4 | Geef een lijst van switch modellen op in het netwerk. | ☐ |  |
+| 5 | Geef een lijst met leveranciers en protocollen van de industriële apparatuur op. | ☐ |  |
+| 6 | Geef netwerk gegevens op voor Sens oren (IP-adres, subnet, D-GW, DNS). | ☐ |  |
+| 7 | Maak de benodigde firewall regels en de toegangs lijst. | ☐ |  |
+| 8 | Maak spanned poorten op switches voor poort bewaking of configureer de netwerk kranen naar wens. | ☐ |  |
+| 9 | Rack ruimte voorbereiden voor sensor apparaten. | ☐ |  |
+| 10 | Een werk station voorbereiden voor personeel. | ☐ |  |
+| 11 | Geef een toetsen bord, monitor en muis op voor de Defender voor IoT-rack apparaten. | ☐ |  |
+| 12 | De apparaten racken en aansluiten. | ☐ |  |
+| 13 | Wijs site bronnen toe om de implementatie te ondersteunen. | ☐ |  |
+| 14 | Maak Active Directory groepen of lokale gebruikers. | ☐ |  |
+| 15 | Training instellen (zelf studie). | ☐ |  |
+| 16 | Go of no-go. | ☐ |  |
+| 17 | De implementatie datum plannen. | ☐ |  |
 
 
 | **Datum** | **Opmerking** | **Implementatie datum** | **Opmerking** |
@@ -696,6 +695,6 @@ Neem contact op met een Active Directory beheerder om een Active Directory site-
 | Camera | |
 | Röntgen computer | |
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 [Over de installatie van Defender voor IoT](how-to-install-software.md)

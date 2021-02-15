@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 8de95a56f3da928997a97ff216b13d522c82afca
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 8e860bf47420f2b58c44df695da7761bcc2aa0ce
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814190"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521778"
 ---
 # <a name="azure-ddos-rapid-response"></a>Azure DDoS Rapid-antwoord
 
@@ -30,7 +30,7 @@ Tijdens een actieve toegang hebben Azure DDoS Protection standaard klanten toega
 
 U moet DRR alleen benaderen als: 
 
-- Tijdens een DDoS-aanval als u merkt dat de prestaties van de beveiligde resource ernstig gedegradeerd zijn of dat de bron niet beschikbaar is. Bekijk stap 2 hierboven over het configureren van monitors om de beschik baarheid en prestatie problemen van resources te detecteren.
+- Tijdens een DDoS-aanval als u merkt dat de prestaties van de beveiligde resource ernstig gedegradeerd zijn of dat de bron niet beschikbaar is. 
 - U denkt dat uw resource zich onder DDoS-aanval bevindt, maar DDoS Protection Service de aanval niet effectief verkleint.
 - U bent bezig met het plannen van een evenement waardoor uw netwerk verkeer aanzienlijk wordt verbeterd.
 - Voor aanvallen met een belang rijke bedrijfs impact.

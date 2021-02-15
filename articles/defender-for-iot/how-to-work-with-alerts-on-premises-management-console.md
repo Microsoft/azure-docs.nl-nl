@@ -1,5 +1,5 @@
 ---
-title: Werken met waarschuwingen op de on-premises beheer console
+title: Werken met waarschuwingen in de on-premises beheerconsole
 description: Gebruik de on-premises beheer console om een Enter prise-weer gave van recente bedreigingen in uw netwerk te verkrijgen en beter te begrijpen hoe de gebruikers van de sensor ze verwerken.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: f52e308199ddb8bc21809009ad71918d077ac5b2
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: ebd5a0c14b6f9e3a57e3a7df888b5f9d24f9a2df
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840578"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523614"
 ---
-# <a name="work-with-alerts-on-the-on-premises-management-console"></a>Werken met waarschuwingen op de on-premises beheer console 
+# <a name="work-with-alerts-on-the-on-premises-management-console"></a>Werken met waarschuwingen in de on-premises beheerconsole 
 
 U kunt het volgende doen vanuit het venster **waarschuwingen** in de-beheer console:
 
@@ -119,13 +119,34 @@ De apparaten in een zone kaart weer geven:
 
 ## <a name="manage-alert-events"></a>Waarschuwings gebeurtenissen beheren
 
-U kunt als volgt waarschuwings gebeurtenissen beheren die zijn gedetecteerd door de organisatie sensoren:
+Er zijn verschillende opties beschikbaar voor het beheren van waarschuwings gebeurtenissen vanuit de on-premises beheer console.
 
 - Waarschuwings gebeurtenissen leren of bevestigen. Selecteer **leren & erken** om alle waarschuwings gebeurtenissen te leren die kunnen worden geautoriseerd en om alle waarschuwings gebeurtenissen te bevestigen die momenteel niet zijn bevestigd.
 
   :::image type="content" source="media/how-to-work-with-alerts-on-premises-management-console/learn-and-acknowledge.png" alt-text="Selecteer leren & erken om alles te leren.":::
 
 - Waarschuwings gebeurtenissen dempen en de demping opheffen.
+
+Zie het artikel over het [beheren van waarschuwings gebeurtenissen](how-to-manage-the-alert-event.md) in de sensor voor meer informatie over het leren, bevestigen en dempen van waarschuwings gebeurtenissen.
+
+## <a name="export-alert-information"></a>Waarschuwings gegevens exporteren
+
+Waarschuwings gegevens exporteren naar een CSV-bestand. U kunt informatie over alle gedetecteerde waarschuwingen exporteren of informatie exporteren op basis van de gefilterde weer gave. De volgende gegevens worden geëxporteerd:
+
+- Bron adres
+- Doel adres
+- Titel van de waarschuwing
+- Ernst van waarschuwing
+- Waarschuwings bericht
+- Aanvullende informatie
+- Bevestigde status
+- PCAP-Beschik baarheid
+
+Exporteren:
+
+1. Selecteer waarschuwingen in het menu aan de zijkant.
+1. Selecteer Exporteren.
+1. Selecteer Uitgebreide waarschuwingen exporteren om waarschuwings gegevens in afzonderlijke rijen te exporteren voor elke waarschuwing die betrekking heeft op meerdere apparaten. Wanneer uitgebreide waarschuwingen exporteren is geselecteerd, wordt in het CSV-bestand een dubbele rij van de waarschuwing gemaakt met de unieke items in elke rij. Met deze optie kunt u de geëxporteerde waarschuwings gebeurtenissen gemakkelijker onderzoeken.  
 
 ## <a name="create-alert-exclusion-rules"></a>Regels voor waarschuwings uitsluiting maken
 
@@ -225,6 +246,6 @@ Regels die u maakt met behulp van de API, worden weer gegeven in het venster **u
 
 :::image type="content" source="media/how-to-work-with-alerts-on-premises-management-console/edit-exclusion-rule-screen.png" alt-text="Scherm opname van de weer gave uitsluitings regel voor bewerken.":::
 
-## <a name="see-also"></a>Zie tevens
+## <a name="next-steps"></a>Volgende stappen
 
 [Werken met waarschuwingen op uw sensor](how-to-work-with-alerts-on-your-sensor.md)

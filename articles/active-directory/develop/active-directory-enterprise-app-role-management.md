@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 076054b7240712fec57d0908615ce7abbfb62013
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 38673df29dd50e77acc4b4d106d69a82cad9c040
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582227"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104345"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: de rol claim configureren die is uitgegeven in het SAML-token voor zakelijke toepassingen
 
@@ -34,7 +34,7 @@ Gebruik deze functie als uw toepassing aangepaste rollen verwacht in het SAML-an
 
 ## <a name="create-roles-for-an-application"></a>Rollen maken voor een toepassing
 
-1. Selecteer in <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>in het linkerdeel venster het **Azure Active Directory** pictogram.
+1. In de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>, selecteert u in het linkerdeelvenster het pictogram **Azure Active Directory**.
 
     ![Azure Active Directory pictogram][1]
 

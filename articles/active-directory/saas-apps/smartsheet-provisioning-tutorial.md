@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/07/2019
 ms.author: jeedes
-ms.openlocfilehash: aa4e8c2baaaa0c8ccc9bcdda595f040fac72682f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: e9ee994564e175d3c41cfd5ce415ead8c67df353
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181438"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103546"
 ---
 # <a name="tutorial-configure-smartsheet-for-automatic-user-provisioning"></a>Zelfstudie: Smartsheet configureren voor automatische gebruikersinrichting
 
@@ -117,7 +117,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
@@ -137,22 +137,20 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Smartsheet worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Smartsheet te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-   |Kenmerk|Type|
-   |---|---|
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
    |actief|Booleaans|
    |title|Tekenreeks|
-   |userName|Tekenreeks|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
    |phoneNumbers[type eq "work"].value|Tekenreeks|
    |phoneNumbers[type eq "mobile"].value|Tekenreeks|
    |phoneNumbers[type eq "fax"].value|Tekenreeks|
+   |emails[type eq "work"].value|Tekenreeks|
    |externalId|Tekenreeks|
-   |roles[primary eq "True"].display|Tekenreeks|
-   |roles[primary eq "True"].type|Tekenreeks|
-   |roles[primary eq "True"].value|Tekenreeks|
    |rollen|Tekenreeks|
-   urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Tekenreeks|
@@ -188,6 +186,7 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 ## <a name="change-log"></a>Wijzigingenlogboek
 
 * 06/16/2020 - Ondersteuning toegevoegd voor bedrijfsextensiekenmerken ‘Kostenplaats’, ‘Divisie’, ‘Manager’ en ‘Afdeling’ voor gebruikers.
+* 02/10/2021-ondersteuning toegevoegd voor kern kenmerken "e-mails [type EQ" werk "]" voor gebruikers.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

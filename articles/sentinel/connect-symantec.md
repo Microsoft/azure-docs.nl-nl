@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: 67fc80b5f34cf3a98fd39ddc352cb2dd9a5e7151
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b32baa23a31342095e542d60745a503b81e89a9
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85564918"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092703"
 ---
 # <a name="connect-your-symantec-icdx-appliance"></a>Verbinding maken met uw Symantec ICDx-apparaat 
 
@@ -45,7 +45,7 @@ Symantec ICDx kan Logboeken rechtstreeks integreren en exporteren naar Azure Sen
     -   **Naam**: Typ een naam voor de doorstuur server die uit niet meer dan 30 tekens bestaat. Kies een unieke, herken bare naam. Deze naam wordt weer gegeven in de lijst met doorstuur servers op het scherm **configuratie** en in de Dash boards op het **dash board** . Bijvoorbeeld: Microsoft Azure Log Analytics East. Dit veld is vereist.
     -   **Beschrijving**: Typ een beschrijving voor de doorstuur server. Deze beschrijving wordt ook weer gegeven in de lijst met doorstuur servers op het **configuratie** scherm. Neem Details op zoals het gebeurtenis type dat wordt doorgestuurd en de groep die de gegevens moet controleren.
     -   **Opstart type**: Selecteer de methode voor opstarten voor de configuratie van de doorstuur server. Uw opties zijn hand matig en automatisch.<br>De standaard instelling is automatisch. 
-6. Onder **gebeurtenissen**gaat u als volgt te werk: 
+6. Onder **gebeurtenissen** gaat u als volgt te werk: 
     - **Bron**: Selecteer een of meer archieven waarvan u gebeurtenissen wilt door sturen. U kunt actieve Collector archieven (inclusief het algemene archief), zwevende Collector archieven (archieven voor de door u verwijderde verzamelaars), ICDx receiver-archieven of het systeem archief selecteren. <br>De standaard waarde is archief.
       > [!NOTE]
       > ICDx ontvanger-archieven worden afzonderlijk vermeld op naam. 
@@ -59,18 +59,18 @@ Symantec ICDx kan Logboeken rechtstreeks integreren en exporteren naar Azure Sen
     - **Uitgesloten kenmerken**: Typ de door komma's gescheiden lijst met kenmerken die moeten worden uitgesloten van de doorgestuurde gegevens.
     - **Batch grootte**: Selecteer het aantal gebeurtenissen dat per batch moet worden verzonden. Uw opties zijn 10, 50, 100, 500 en 1000.<br>De standaardwaarde is 100. 
     - **Frequentie limiet**: Selecteer de snelheid waarmee gebeurtenissen worden doorgestuurd, uitgedrukt als gebeurtenissen per seconde. Uw opties zijn onbeperkt, 500, 1000, 5000 en 10000. <br> De standaard waarde is 5000. 
-7. Onder **Azure Destination**gaat u als volgt te werk: 
+7. Onder **Azure Destination** gaat u als volgt te werk: 
     - **Werk ruimte-id**: plak de werk ruimte-id hieronder. Dit veld is vereist.
     - **Primaire sleutel**: plak de primaire sleutel van hieronder. Dit veld is vereist.
     - **Aangepaste logboek naam**: Typ de naam van het aangepaste logboek in het Microsoft Azure-Portal log Analytics werk ruimte waarnaar u gebeurtenissen wilt door sturen. De standaard waarde is SymantecICDx. Dit veld is vereist.
 8. Klik op *Opslaan* om de configuratie van de doorstuur server te volt ooien. 
-9. Als u de doorstuur server wilt starten, klikt u op **meer** onder **Opties**en vervolgens op **starten**.
+9. Als u de doorstuur server wilt starten, klikt u op **meer** onder **Opties** en vervolgens op **starten**.
 10. Als u het relevante schema in Log Analytics voor de Symantec ICDx-gebeurtenissen wilt gebruiken, zoekt u naar **SymantecICDx_CL**.
 
 
 ## <a name="validate-connectivity"></a>Connectiviteit valideren
 
-Het kan 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven. 
+Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven. 
 
 
 

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/09/2020
+ms.date: 02/10/2021
 ms.author: jeedes
-ms.openlocfilehash: 4d095c3cc7e67938120260c35376b128be73ffa8
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: cd6ba1da92a19a1f73fc67c0165bfb19b3bb77aa
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98726973"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363810"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-perimeter-81"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Perimeter 81
 
@@ -71,13 +71,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Ga in de Azure-portal op de integratiepagina van de toepassing **Perimeter 81** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `urn:auth0:perimeter81:<SUBDOMAIN>`
+    a. Typ in het tekstvak **id** een waarde met behulp van het volgende patroon: `urn:auth0:perimeter81:<SUBDOMAIN>`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://auth.perimeter81.com/login/callback?connection=<SUBDOMAIN>`
 
@@ -88,9 +88,14 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [klantondersteuningsteam van Perimeter 81](mailto:support@perimeter81.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
+1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
-    ![De link om het certificaat te downloaden](common/copy-metadataurl.png)
+    ![De link om het certificaat te downloaden](common/certificatebase64.png)
+
+1. Kopieer de gewenste URL ('s) op basis van uw vereiste op de sectie een **81 instellen** .
+
+    ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
+
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
@@ -117,7 +122,42 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-perimeter-81-sso"></a>Eenmalige aanmelding voor Perimeter 81 configureren
 
-Als u eenmalige aanmelding aan de zijde van **Perimeter 81** wilt configureren, moet u de **URL voor federatieve metagegevens van de app** verzenden naar het [ondersteuningsteam van Perimeter 81](mailto:support@perimeter81.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+1. Als u de configuratie wilt automatiseren binnen het perimeter 81, moet u de **uitbrei ding mijn apps Secure Sign-in browser** installeren door te klikken op **de uitbrei ding installeren**.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Nadat u een uitbrei ding aan de browser hebt toegevoegd, klikt u op het instellen van de **verbinding 81** wordt u doorgestuurd naar de net81-toepassing. Geef de beheerders referenties op om u aan te melden bij het perimeter 81. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3-7 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u de omtrek van 81 hand matig wilt instellen, meldt u zich in een ander webbrowser venster aan bij de bedrijfs site van uw perimeter 81 als beheerder.
+
+4. Ga naar **instellingen** en klik op **id-providers**.
+
+    ![Instellingen voor perimeter 81](./media/perimeter-81-tutorial/settings.png)
+
+5. Klik op de knop **provider toevoegen** .
+
+    ![% Teletrek 81-provider toevoegen](./media/perimeter-81-tutorial/add-provider.png)
+
+6. Selecteer **SAML 2,0-id-providers** en klik op de knop **door gaan** .
+
+    ![Perimeter 81 ID-provider toevoegen](./media/perimeter-81-tutorial/add-identity-provider.png)
+
+7. Voer de volgende stappen uit in de sectie **SAML 2,0-id-providers** :
+
+    ![Perimeter 81 SAML instellen](./media/perimeter-81-tutorial/setting-up-saml.png)
+
+    a. Plak in het tekstvak **URL voor aanmelden** de waarde van de **aanmeldings-URL** die u van Azure Portal hebt gekopieerd.
+
+    b. Voer in het tekstvak **domein aliassen** uw domein alias waarde in.
+
+    c. Open het gedownloade **certificaat (base64)** van de Azure Portal in Klad blok en plak de inhoud in het tekstvak **x509-handtekening certificaat** .
+
+    > [!NOTE]
+    > U kunt ook klikken op **PEM/CERT-bestand uploaden** om het **certificaat (base64)** te uploaden dat u van Azure Portal hebt gedownload.
+    
+    d. Klik op **Gereed**.
 
 ### <a name="create-perimeter-81-test-user"></a>Testgebruiker voor Perimeter 81 maken
 
@@ -135,7 +175,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik op **Deze toepassing testen** in de Azure-portal. U wordt automatisch aangemeld bij de instantie van Perimeter 81 waarvoor u eenmalige aanmelding hebt ingesteld 
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de perimeter 81 waarvoor u de SSO hebt ingesteld.
 
 U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in Mijn apps op de tegel Perimeter 81 klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij de Perimeter 81-instantie waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 

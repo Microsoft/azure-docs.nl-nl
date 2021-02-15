@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 11/19/2020
 ms.author: cshoe
 zone_pivot_groups: programming-languages-set-functions-lang-workers
-ms.openlocfilehash: 78fd13825becfa186960a0dfd3dee83c312c9bcf
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
-ms.translationtype: HT
+ms.openlocfilehash: e969cc4bee9f09f4279d137abb33b75ca0672ffc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326944"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364712"
 ---
 # <a name="getting-started-with-azure-functions"></a>Aan de slag met Azure Functions
 
@@ -28,6 +28,7 @@ Gebruik de volgende bronnen om aan de slag te gaan.
 | **Uw eerste functie maken** | Gebruik een van de volgende tools:<br><br><li>[Visual Studio](./functions-create-your-first-function-visual-studio.md)<li>[Visual Studio Code](./create-first-function-vs-code-csharp.md)<li>[Opdrachtregel](./create-first-function-cli-csharp.md) |
 | **Zie een functie die wordt uitgevoerd** | <li>[Azure-voorbeeldenbrowser](/samples/browse/?expanded=azure&languages=csharp&products=azure-functions)<li>[Bibliotheek van de Azure-community](https://www.serverlesslibrary.net/?technology=Functions%202.x&language=C%23) |
 | **Een zelfstudie verkennen**| <li>[De beste serverloze technologie van Azure kiezen voor uw bedrijfsscenario](/learn/modules/serverless-fundamentals/)<li>[Goed ontworpen Framework - Prestatie-efficiëntie](/learn/modules/azure-well-architected-performance-efficiency/)<li>[Een Azure-functie uitvoeren met triggers](/learn/modules/execute-azure-function-with-triggers/) <br><br>Zie Microsoft Learn voor een [volledige lijst met interactieve zelfstudies](/learn/browse/?expanded=azure&products=azure-functions).|
+| **Best practices beoordelen** |<li>[Prestaties en betrouw baarheid](./functions-best-practices.md)<li>[Verbindingen beheren](./manage-connections.md)<li>[Fout afhandeling en functionele nieuwe pogingen](./functions-bindings-error-pages.md?tabs=csharp)<li>[Beveiliging](./security-concepts.md)|
 | **Meer gedetailleerde informatie** | <li>Meer informatie over hoe functies exemplaren [vergroten of verkleinen](./functions-scale.md) om te voldoen aan de vraag<li>Bekijk de verschillende beschikbare [implementatiemethoden](./functions-deployment-technologies.md)<li>Gebruik ingebouwde [bewakingshulpprogramma's](./functions-monitoring.md) om uw functies te analyseren<li>Lees de [naslaginformatie voor de taal C#](./functions-dotnet-class-library.md)|
 
 ::: zone-end
@@ -38,6 +39,7 @@ Gebruik de volgende bronnen om aan de slag te gaan.
 | **Uw eerste functie maken** | Gebruik een van de volgende tools:<br><br><li>[Visual Studio Code](./create-first-function-vs-code-java.md)<li>[Java/Maven-functie met Terminal/opdrachtprompt](./create-first-function-cli-java.md)<li>[Gradle](./functions-create-first-java-gradle.md)<li>[Eclipse](./functions-create-maven-eclipse.md)<li>[IntelliJ IDEA](./functions-create-maven-intellij.md) |
 | **Zie een functie die wordt uitgevoerd** | <li>[Azure-voorbeeldenbrowser](/samples/browse/?expanded=azure&languages=java&products=azure-functions)<li>[Bibliotheek van de Azure-community](https://www.serverlesslibrary.net/?technology=Functions%202.x&language=Java) |
 | **Een zelfstudie verkennen**| <li>[De beste serverloze technologie van Azure kiezen voor uw bedrijfsscenario](/learn/modules/serverless-fundamentals/)<li>[Goed ontworpen Framework - Prestatie-efficiëntie](/learn/modules/azure-well-architected-performance-efficiency/)<li>[Een app ontwikkelen met de Maven-invoegtoepassing voor Azure Functions](/learn/modules/develop-azure-functions-app-with-maven-plugin/) <br><br>Zie Microsoft Learn voor een [volledige lijst met interactieve zelfstudies](/learn/browse/?expanded=azure&products=azure-functions).|
+| **Best practices beoordelen** |<li>[Prestaties en betrouw baarheid](./functions-best-practices.md)<li>[Verbindingen beheren](./manage-connections.md)<li>[Fout afhandeling en functionele nieuwe pogingen](./functions-bindings-error-pages.md?tabs=java)<li>[Beveiliging](./security-concepts.md)|
 | **Meer gedetailleerde informatie** | <li>Meer informatie over hoe functies exemplaren [vergroten of verkleinen](./functions-scale.md) om te voldoen aan de vraag<li>Bekijk de verschillende beschikbare [implementatiemethoden](./functions-deployment-technologies.md)<li>Gebruik ingebouwde [bewakingshulpprogramma's](./functions-monitoring.md) om uw functies te analyseren<li>Lees de [naslaginformatie voor de taal Java](./functions-reference-java.md)|
 ::: zone-end
 
@@ -47,6 +49,7 @@ Gebruik de volgende bronnen om aan de slag te gaan.
 | **Uw eerste functie maken** | Gebruik een van de volgende tools:<br><br><li>[Visual Studio Code](./create-first-function-vs-code-node.md)<li>[Node.js-terminal/-opdrachtprompt](./create-first-function-cli-java.md) |
 | **Zie een functie die wordt uitgevoerd** | <li>[Azure-voorbeeldenbrowser](/samples/browse/?expanded=azure&languages=javascript%2ctypescript&products=azure-functions)<li>[Bibliotheek van de Azure-community](https://www.serverlesslibrary.net/?technology=Functions%202.x&language=JavaScript%2CTypeScript) |
 | **Een zelfstudie verkennen** | <li>[De beste serverloze technologie van Azure kiezen voor uw bedrijfsscenario](/learn/modules/serverless-fundamentals/)<li>[Goed ontworpen Framework - Prestatie-efficiëntie](/learn/modules/azure-well-architected-performance-efficiency/)<li>[Serverloze API's maken met Azure Functions](/learn/modules/build-api-azure-functions/)<li>[Serverloze logica maken met Azure Functions](/learn/modules/create-serverless-logic-with-azure-functions/)<li>[Node.js- en Express-API's herstructureren naar serverloze API's met Azure Functions](/learn/modules/shift-nodejs-express-apis-serverless/) <br><br>Zie Microsoft Learn voor een [volledige lijst met interactieve zelfstudies](/learn/browse/?expanded=azure&products=azure-functions).|
+| **Best practices beoordelen** |<li>[Prestaties en betrouw baarheid](./functions-best-practices.md)<li>[Verbindingen beheren](./manage-connections.md)<li>[Fout afhandeling en functionele nieuwe pogingen](./functions-bindings-error-pages.md?tabs=javascript)<li>[Beveiliging](./security-concepts.md)|
 | **Meer gedetailleerde informatie** | <li>Meer informatie over hoe functies exemplaren [vergroten of verkleinen](./functions-scale.md) om te voldoen aan de vraag<li>Bekijk de verschillende beschikbare [implementatiemethoden](./functions-deployment-technologies.md)<li>Gebruik ingebouwde [bewakingshulpprogramma's](./functions-monitoring.md) om uw functies te analyseren<li>Lees de naslaginformatie voor de taal [JavaScript](./functions-reference-node.md) of [TypeScript](./functions-reference-node.md#typescript)|
 ::: zone-end
 
@@ -56,6 +59,7 @@ Gebruik de volgende bronnen om aan de slag te gaan.
 | **Uw eerste functie maken** | <li>[Visual Studio Code](./create-first-function-vs-code-powershell.md) gebruiken |
 | **Zie een functie die wordt uitgevoerd** | <li>[Azure-voorbeeldenbrowser](/samples/browse/?expanded=azure&languages=powershell&products=azure-functions)<li>[Bibliotheek van de Azure-community](https://www.serverlesslibrary.net/?technology=Functions%202.x&language=PowerShell) |
 | **Een zelfstudie verkennen** | <li>[De beste serverloze technologie van Azure kiezen voor uw bedrijfsscenario](/learn/modules/serverless-fundamentals/)<li>[Goed ontworpen Framework - Prestatie-efficiëntie](/learn/modules/azure-well-architected-performance-efficiency/)<li>[Serverloze API's maken met Azure Functions](/learn/modules/build-api-azure-functions/)<li>[Serverloze logica maken met Azure Functions](/learn/modules/create-serverless-logic-with-azure-functions/)<li>[Een Azure-functie uitvoeren met triggers](/learn/modules/execute-azure-function-with-triggers/) <br><br>Zie Microsoft Learn voor een [volledige lijst met interactieve zelfstudies](/learn/browse/?expanded=azure&products=azure-functions).|
+| **Best practices beoordelen** |<li>[Prestaties en betrouw baarheid](./functions-best-practices.md)<li>[Verbindingen beheren](./manage-connections.md)<li>[Fout afhandeling en functionele nieuwe pogingen](./functions-bindings-error-pages.md?tabs=powershell)<li>[Beveiliging](./security-concepts.md)|
 | **Meer gedetailleerde informatie** | <li>Meer informatie over hoe functies exemplaren [vergroten of verkleinen](./functions-scale.md) om te voldoen aan de vraag<li>Bekijk de verschillende beschikbare [implementatiemethoden](./functions-deployment-technologies.md)<li>Gebruik ingebouwde [bewakingshulpprogramma's](./functions-monitoring.md) om uw functies te analyseren<li>Lees de [naslaginformatie voor de taal PowerShell](./functions-reference-powershell.md))|
 ::: zone-end
 
@@ -65,6 +69,7 @@ Gebruik de volgende bronnen om aan de slag te gaan.
 | **Uw eerste functie maken** | Gebruik een van de volgende tools:<br><br><li>[Visual Studio Code](./create-first-function-vs-code-csharp.md?pivots=programming-language-python)<li>[Terminal/opdrachtprompt](./create-first-function-cli-csharp.md?pivots=programming-language-python) |
 | **Zie een functie die wordt uitgevoerd** | <li>[Azure-voorbeeldenbrowser](/samples/browse/?expanded=azure&languages=python&products=azure-functions)<li>[Bibliotheek van de Azure-community](https://www.serverlesslibrary.net/?technology=Functions%202.x&language=Python) |
 | **Een zelfstudie verkennen** | <li>[De beste serverloze technologie van Azure kiezen voor uw bedrijfsscenario](/learn/modules/serverless-fundamentals/)<li>[Goed ontworpen Framework - Prestatie-efficiëntie](/learn/modules/azure-well-architected-performance-efficiency/)<li>[Serverloze API's maken met Azure Functions](/learn/modules/build-api-azure-functions/)<li>[Serverloze logica maken met Azure Functions](/learn/modules/create-serverless-logic-with-azure-functions/) <br><br>Zie Microsoft Learn voor een [volledige lijst met interactieve zelfstudies](/learn/browse/?expanded=azure&products=azure-functions).|
+| **Best practices beoordelen** |<li>[Prestaties en betrouw baarheid](./functions-best-practices.md)<li>[Verbindingen beheren](./manage-connections.md)<li>[Fout afhandeling en functionele nieuwe pogingen](./functions-bindings-error-pages.md?tabs=python)<li>[Beveiliging](./security-concepts.md)<li>[De doorvoer prestaties verbeteren](./python-scale-performance-reference.md)|
 | **Meer gedetailleerde informatie** | <li>Meer informatie over hoe functies exemplaren [vergroten of verkleinen](./functions-scale.md) om te voldoen aan de vraag<li>Bekijk de verschillende beschikbare [implementatiemethoden](./functions-deployment-technologies.md)<li>Gebruik ingebouwde [bewakingshulpprogramma's](./functions-monitoring.md) om uw functies te analyseren<li>Lees de [naslaginformatie voor de taal Python](./functions-reference-python.md)|
 ::: zone-end
 

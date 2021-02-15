@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6da6187e59bf028101eac2ea6f09fb1530821bfd
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 82c3dd4ce7f5e7e9f3d5a226bfe65e27eca2d3d4
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937862"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103240"
 ---
 # <a name="azure-portal-registration-fields-for-custom-developed-apps"></a>Registratievelden in Azure-portal voor zelf ontwikkelde apps
 
@@ -25,7 +25,7 @@ In dit artikel vindt u een korte beschrijving van alle beschik bare velden in he
 
 ## <a name="register-a-new-application"></a>Een nieuwe toepassing registreren
 
--   Als u een nieuwe toepassing wilt registreren, gaat u naar de <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
+-   Als u een nieuwe toepassing wilt registreren, gaat u naar de <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
 
 -   Klik in het navigatie deel venster links op **Azure Active Directory.**
 
@@ -45,21 +45,21 @@ Zodra u de bovenstaande velden hebt ingevuld, wordt de toepassing geregistreerd 
 
 ### <a name="overview"></a>Overzicht
 
-| Veld           | Beschrijving        |
+| Veld           | Description        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Toepassings-id  | Wanneer u een toepassing registreert, wijst Azure AD een toepassings-ID toe aan uw toepassing. De toepassings-ID kan worden gebruikt om uw toepassing op unieke wijze te identificeren bij verificatie aanvragen voor Azure AD, en om toegang te krijgen tot resources zoals de Graph API.                                                          |
 | App-id-URI      | Dit moet een unieke URI zijn, doorgaans de naam van de **https://- &lt; Tenant naam van het formulier \_ &gt; / &lt; \_ &gt; .** Dit wordt gebruikt tijdens de autorisatie toekennings stroom, als een unieke id voor het opgeven van de bron waarvoor het token moet worden uitgegeven. Het wordt ook de claim ' AUD ' in het verleende toegangs token. |
 
 ### <a name="branding"></a>Huisstijl
 
-| Veld           | Beschrijving        |
+| Veld           | Description        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Nieuw logo uploaden | U kunt dit gebruiken om een logo te uploaden voor uw toepassing. Het logo moet de indeling. bmp,. jpg of. png hebben en de bestands grootte moet kleiner zijn dan 100 KB. De afmetingen van de afbeelding moeten 215x215 pixels zijn, met de afmetingen van de centrale afbeelding van 94x94 pixels.|
 | URL van start pagina   | Dit is de aanmeldings-URL die is opgegeven tijdens de registratie van de toepassing.|
 
 ### <a name="authentication"></a>Verificatie
 
-| Veld           | Beschrijving        |
+| Veld           | Description        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | URL voor afmelden front kanaal      | Dit is de uitzonderings-URL voor eenmalige afmelding. Azure AD verzendt een afmeldings aanvraag naar deze URL wanneer de gebruiker de sessie met Azure AD wist met behulp van een andere geregistreerde toepassing.|
 | Ondersteunde accounttypen  | Met deze schakel optie geeft u op of de toepassing kan worden gebruikt door meerdere tenants. Dit betekent meestal dat externe organisaties uw toepassing kunnen gebruiken door deze te registreren in hun Tenant en toegang te verlenen tot de gegevens van de organisatie.|
@@ -67,7 +67,7 @@ Zodra u de bovenstaande velden hebt ingevuld, wordt de toepassing geregistreerd 
 
 ### <a name="certificates-and-secrets"></a>Certificaten en geheimen
 
-| Veld           | Beschrijving        |
+| Veld           | Description        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Clientgeheimen            | U kunt client geheimen of-sleutels maken om programmatisch toegang te krijgen tot Web-Api's die zijn beveiligd met Azure AD zonder tussen komst van de gebruiker. Voer op de pagina **Nieuw client geheim** een sleutel beschrijving en de verval datum in en sla het bestand op om de sleutel te genereren. Zorg ervoor dat u het bestand ergens anders opslaat, omdat u het later niet meer kunt openen.             |
 

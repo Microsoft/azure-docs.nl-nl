@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van de Amazon Simple Storage-service met behulp van Data Factory
 description: Meer informatie over het verplaatsen van gegevens uit de Amazon Simple Storage-service (S3) met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 636d3179-eba8-4841-bcb4-3563f6822a26
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b23be9901df7ca435f412d9f49e1a7ad88382ade
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d254a535b1db53478772b481bd029a8c4db6f3c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711915"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361343"
 ---
 # <a name="move-data-from-amazon-simple-storage-service-by-using-azure-data-factory"></a>Gegevens verplaatsen van de Amazon Simple Storage-service met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -44,7 +39,7 @@ U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst va
 
 De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md)voor een snelle walkthrough.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API**en **rest API**. Zie de [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie de [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -64,8 +59,8 @@ Een gekoppelde service koppelt een gegevens archief aan een data factory. U maak
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| accessKeyID |ID van de geheime toegangs sleutel. |tekenreeks |Ja |
-| secretAccessKey |De geheime toegangs sleutel zelf. |Versleutelde geheime teken reeks |Ja |
+| accessKeyID |ID van de geheime toegangs sleutel. |tekenreeks |Yes |
+| secretAccessKey |De geheime toegangs sleutel zelf. |Versleutelde geheime teken reeks |Yes |
 
 >[!NOTE]
 >Deze connector vereist toegangs sleutels voor IAM-account om gegevens te kopiëren van Amazon S3. [Tijdelijke beveiligings referenties](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) worden niet ondersteund.
@@ -94,11 +89,11 @@ Secties zoals structuur, Beschik baarheid en beleid zijn vergelijkbaar voor alle
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
 | Bucket |De naam van de S3-Bucket. |Tekenreeks |Ja |
-| sleutel |De object sleutel S3. |Tekenreeks |Nee |
-| beleids |Voor voegsel voor de object sleutel S3. Objecten waarvan de sleutels beginnen met dit voor voegsel worden geselecteerd. Is alleen van toepassing als de sleutel leeg is. |Tekenreeks |Nee |
-| versie |De versie van het S3-object, als S3-versie beheer is ingeschakeld. |Tekenreeks |Nee |
-| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie de secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en [Parquet-indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) voor meer informatie. <br><br> Als u bestanden wilt kopiëren als-zich bevindt tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. | |Nee |
-| compressie | Geef het type en compressie niveau voor de gegevens op. De ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2**en **ZipDeflate**. De ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. | |Nee |
+| sleutel |De object sleutel S3. |Tekenreeks |No |
+| beleids |Voor voegsel voor de object sleutel S3. Objecten waarvan de sleutels beginnen met dit voor voegsel worden geselecteerd. Is alleen van toepassing als de sleutel leeg is. |Tekenreeks |No |
+| versie |De versie van het S3-object, als S3-versie beheer is ingeschakeld. |Tekenreeks |No |
+| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie de secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en [Parquet-indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) voor meer informatie. <br><br> Als u bestanden wilt kopiëren als-zich bevindt tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. | |No |
+| compressie | Geef het type en compressie niveau voor de gegevens op. De ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. De ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. | |No |
 
 
 > [!NOTE]
@@ -174,7 +169,7 @@ Zie [pijp lijnen maken](data-factory-create-pipelines.md)voor een volledige lijs
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| recursieve |Hiermee geeft u op of S3-objecten in de directory recursief moeten worden weer geven. |waar/onwaar |Nee |
+| recursieve |Hiermee geeft u op of S3-objecten in de directory recursief moeten worden weer geven. |waar/onwaar |No |
 
 ## <a name="json-example-copy-data-from-amazon-s3-to-azure-blob-storage"></a>JSON-voor beeld: gegevens kopiëren van Amazon S3 naar Azure Blob-opslag
 In dit voor beeld ziet u hoe u gegevens van Amazon S3 kopieert naar een Azure Blob-opslag. Gegevens kunnen echter rechtstreeks naar [een van de sinks worden gekopieerd die worden ondersteund](data-factory-data-movement-activities.md#supported-data-stores-and-formats) met behulp van de Kopieer activiteit in Data Factory.
@@ -308,7 +303,7 @@ Gegevens worden elk uur naar een nieuwe BLOB geschreven (frequentie: uur, interv
 
 ### <a name="copy-activity-in-a-pipeline-with-an-amazon-s3-source-and-a-blob-sink"></a>Kopieer activiteit in een pijp lijn met een Amazon S3-bron en een BLOB-Sink
 
-De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **FileSystemSource**en wordt het **sink** -type ingesteld op **BlobSink**.
+De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **FileSystemSource** en wordt het **sink** -type ingesteld op **BlobSink**.
 
 ```json
 {

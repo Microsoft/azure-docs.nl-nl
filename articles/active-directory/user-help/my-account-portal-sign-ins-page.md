@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 08/03/2020
+ms.date: 01/19/2021
 ms.author: curtand
-ms.openlocfilehash: a002254995e42fc586b707e3cb373dac66e678ee
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1062c8dfe416af2d39063bf71f39d52e151e28d3
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94834146"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096069"
 ---
 # <a name="view-and-search-your-recent-sign-in-activity-from-the-my-sign-ins-page"></a>Uw recente aanmeldings activiteit bekijken en doorzoeken vanaf de pagina Mijn aanmeldingen
 
@@ -25,6 +25,12 @@ U kunt al uw recente aanmeldings activiteiten voor werk-of school accounts bekij
 - Als iemand probeert uw wacht woord te raden.
 - Als een aanvaller zich heeft aangemeld bij uw account en vanaf welke locatie.
 - Welke apps de aanvaller probeerde te openen.
+
+>[!Note]
+> Als er een fout optreedt tijdens het aanmelden met een persoonlijke Microsoft-account, kunt u zich nog steeds aanmelden met de domein naam voor uw organisatie (zoals contoso.com) of de **Tenant-id** van uw organisatie van uw beheerder in een van de volgende url's:
+>
+>   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+>   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
 
 ## <a name="view-your-recent-sign-in-activity"></a>Uw recente aanmeldingsactiviteiten bekijken
 

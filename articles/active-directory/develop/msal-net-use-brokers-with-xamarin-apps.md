@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: ee9f374d110115b224c48853f26037dc461e5fa0
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 6958302a429fd88d4e26087b860b7f473bf4a1f9
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583838"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103988"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
 
@@ -183,7 +183,7 @@ Voeg de omleidings-URI toe aan de registratie van de app in de [Azure Portal](ht
 
 **De omleidings-URI genereren:**
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
 1. Selecteer **Azure Active Directory**  >  **app-registraties** > de geregistreerde app
 1. **Verificatie** selecteren  >  **een platform toevoegen**  >  **IOS/macOS**
 1. Voer uw bundel-ID in en selecteer vervolgens **configureren**.

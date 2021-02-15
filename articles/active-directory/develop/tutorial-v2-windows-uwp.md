@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 4c4158fe9c976ca214409ef4c0c9833c610ee34c
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 6383f63d2118d8618f07bf3cb6cd08a0b16140f3
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584328"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102645"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Zelfstudie: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
@@ -345,7 +345,7 @@ private async Task DisplayMessageAsync(string message)
 
 Registreer uw toepassing nu:
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
@@ -356,8 +356,8 @@ Registreer uw toepassing nu:
 
 Verificatie configureren voor uw toepassing:
 
-1. Selecteer als u weer in <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span></a> bent, onder **Beheren**, achtereenvolgens **Verificatie** > **Een platform toevoegen**. Selecteer vervolgens **Mobiele toepassingen en desktoptoepassingen**.
-1. Selecteer **https://login.microsoftonline.com/common/oauth2/nativeclient** in de sectie **Omleidings-URI's**.
+1. Selecteer als u weer in de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a> bent, onder **Beheren**, achtereenvolgens **Verificatie** > **Een platform toevoegen**, en selecteer vervolgens **Mobiele toepassingen en desktoptoepassingen**.
+1. Voer in de sectie **Omleidings-URI's** `https://login.microsoftonline.com/common/oauth2/nativeclient` in.
 1. Selecteer **Configureren**.
 
 API-machtigingen voor uw toepassing configureren:

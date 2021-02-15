@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: e13b251c9bd95a5b52d63d8ea1bbf265c9c46fd8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2c26931db617109c36c19b73bd3ec9263f4b40cc
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023871"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096443"
 ---
 # <a name="connect-your-vmware-carbon-black-cloud-endpoint-standard-to-azure-sentinel-with-azure-function"></a>Uw VMware Carbon Black-Cloud eindpunt standaard koppelen aan Azure Sentinel met Azure function
 
@@ -47,7 +47,7 @@ Azure Functions kunnen gebeurtenissen en logboeken rechtstreeks integreren en op
 Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in Log Analytics onder de tabellen **CarbonBlackAuditLogs_CL**, **CarbonBlackNotifications_CL** en * * * * CarbonBlackEvents_CL * * * * *.
 
 ## <a name="validate-connectivity"></a>Connectiviteit valideren
-Het kan 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven. 
+Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

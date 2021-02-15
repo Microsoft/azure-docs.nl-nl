@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van SAP ECC
 description: Informatie over het kopiëren van gegevens van SAP ECC naar ondersteunde Sink-gegevens opslag met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/28/2020
-ms.openlocfilehash: 1f3ab61c6030c2871356f494db228711305e5466
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: a3e701f3d433b5b52d8992035ac4ad75b78cb795
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92901588"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386693"
 ---
 # <a name="copy-data-from-sap-ecc-by-using-azure-data-factory"></a>Gegevens van SAP ECC kopiëren met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -50,7 +46,7 @@ Deze SAP ECC-connector ondersteunt met name:
 Versie 7,0 of hoger verwijst naar SAP NetWeaver-versie in plaats van SAP ECC-versie. Bijvoorbeeld: SAP ECC 6,0 EHP 7 in het algemeen heeft NetWeaver versie >= 7,4. Als u twijfelt over uw omgeving, kunt u de volgende stappen uitvoeren om de versie van uw SAP-systeem te bevestigen:
 
 1. Gebruik de SAP-GUI om verbinding te maken met het SAP-systeem. 
-2. Ga naar de **systeem**  ->  **status** . 
+2. Ga naar de **systeem**  ->  **status**. 
 3. Controleer de versie van de SAP_BASIS, Controleer of deze gelijk is aan of groter is dan 701.  
       ![SAP_BASIS controleren](./media/connector-sap-table/sap-basis.png)
 
@@ -61,9 +57,9 @@ Versie 7,0 of hoger verwijst naar SAP NetWeaver-versie in plaats van SAP ECC-ver
 
 Als u deze SAP ECC-connector wilt gebruiken, moet u de SAP ECC-entiteiten via OData-services beschikbaar maken via de SAP-gateway. Met name:
 
-- **SAP-gateway instellen** . Voor servers met SAP NetWeaver-versies hoger dan 7,4, is SAP gateway al geïnstalleerd. Voor eerdere versies moet u de Inge sloten SAP-gateway of het SAP gateway-hub systeem installeren voordat u SAP ECC-gegevens via OData-Services weergeeft. Zie de [installatie handleiding](https://help.sap.com/saphelp_gateway20sp12/helpdata/en/c3/424a2657aa4cf58df949578a56ba80/frameset.htm)voor het instellen van SAP gateway.
+- **SAP-gateway instellen**. Voor servers met SAP NetWeaver-versies hoger dan 7,4, is SAP gateway al geïnstalleerd. Voor eerdere versies moet u de Inge sloten SAP-gateway of het SAP gateway-hub systeem installeren voordat u SAP ECC-gegevens via OData-Services weergeeft. Zie de [installatie handleiding](https://help.sap.com/saphelp_gateway20sp12/helpdata/en/c3/424a2657aa4cf58df949578a56ba80/frameset.htm)voor het instellen van SAP gateway.
 
-- **De SAP OData-service activeren en configureren** . U kunt de OData-service binnen enkele seconden activeren via TCODE SICF. U kunt ook configureren welke objecten moeten worden weer gegeven. Raadpleeg de [Stapsgewijze richt lijnen](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/)voor meer informatie.
+- **De SAP OData-service activeren en configureren**. U kunt de OData-service binnen enkele seconden activeren via TCODE SICF. U kunt ook configureren welke objecten moeten worden weer gegeven. Raadpleeg de [Stapsgewijze richt lijnen](https://blogs.sap.com/2012/10/26/step-by-step-guide-to-build-an-odata-service-based-on-rfcs-part-1/)voor meer informatie.
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 

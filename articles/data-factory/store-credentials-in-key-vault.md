@@ -1,21 +1,17 @@
 ---
 title: Referenties opslaan in Azure Key Vault
 description: Meer informatie over het opslaan van referenties voor gegevens archieven die worden gebruikt in een Azure-sleutel kluis die Azure Data Factory automatisch kan ophalen tijdens runtime.
-services: data-factory
 author: linda33wj
-manager: shwang
-editor: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: jingwang
-ms.openlocfilehash: 22ab4433d84db926733fd0b18035875e63322dda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 828794715af1e7676253714da6fdc1a487c7c107
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81451683"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361890"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Referenties opslaan in Azure Key Vault
 
@@ -44,8 +40,8 @@ De volgende eigenschappen worden ondersteund voor Azure Key Vault gekoppelde ser
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **AzureKeyVault**. | Ja |
-| baseUrl | Geef de Azure Key Vault URL op. | Ja |
+| type | De eigenschap type moet worden ingesteld op: **AzureKeyVault**. | Yes |
+| baseUrl | Geef de Azure Key Vault URL op. | Yes |
 
 **Gebruikers interface voor ontwerpen gebruiken:**
 
@@ -77,14 +73,14 @@ De volgende eigenschappen worden ondersteund wanneer u een veld configureert in 
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van het veld moet worden ingesteld op: **AzureKeyVaultSecret**. | Ja |
-| secretName | De naam van het geheim in Azure Key Vault. | Ja |
-| secretVersion | De versie van het geheim in Azure Key Vault.<br/>Als u niets opgeeft, wordt altijd de meest recente versie van het geheim gebruikt.<br/>Als deze is opgegeven, wordt de opgegeven versie weer gegeven.| Nee |
-| winkel | Verwijst naar een Azure Key Vault gekoppelde service die u gebruikt om de referentie op te slaan. | Ja |
+| type | De eigenschap type van het veld moet worden ingesteld op: **AzureKeyVaultSecret**. | Yes |
+| secretName | De naam van het geheim in Azure Key Vault. | Yes |
+| secretVersion | De versie van het geheim in Azure Key Vault.<br/>Als u niets opgeeft, wordt altijd de meest recente versie van het geheim gebruikt.<br/>Als deze is opgegeven, wordt de opgegeven versie weer gegeven.| No |
+| winkel | Verwijst naar een Azure Key Vault gekoppelde service die u gebruikt om de referentie op te slaan. | Yes |
 
 **Gebruikers interface voor ontwerpen gebruiken:**
 
-Selecteer **Azure Key Vault** voor geheime velden tijdens het maken van de verbinding met uw gegevens archief/compute. Selecteer de ingerichte Azure Key Vault gekoppelde service en geef de **geheime naam**op. U kunt eventueel ook een geheime versie opgeven. 
+Selecteer **Azure Key Vault** voor geheime velden tijdens het maken van de verbinding met uw gegevens archief/compute. Selecteer de ingerichte Azure Key Vault gekoppelde service en geef de **geheime naam** op. U kunt eventueel ook een geheime versie opgeven. 
 
 >[!TIP]
 >Voor connectors die gebruikmaken van connection string in gekoppelde service, zoals SQL Server, Blob Storage, enzovoort, kunt u kiezen om alleen het geheime veld op te slaan, bijvoorbeeld een wacht woord in azure, of om de volledige connection string op te slaan in Azure. U kunt beide opties vinden in de gebruikers interface.

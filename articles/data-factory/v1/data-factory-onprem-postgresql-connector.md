@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van PostgreSQL met behulp van Azure Data Factory
 description: Meer informatie over het verplaatsen van gegevens uit de PostgreSQL-data base met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 888d9ebc-2500-4071-b6d1-0f6bd1b5997c
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 37c83e77cadae002ff701a08c4b36a86f7cab9a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ca8770944a12c6e0dd3e4f95d286758ebee5f9e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082831"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387271"
 ---
 # <a name="move-data-from-postgresql-using-azure-data-factory"></a>Gegevens verplaatsen van PostgreSQL met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -72,14 +67,14 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **OnPremisesPostgreSql** |Ja |
-| server |De naam van de PostgreSQL-server. |Ja |
-| database |De naam van de PostgreSQL-data base. |Ja |
-| schema |De naam van het schema in de data base. De schema naam is hoofdletter gevoelig. |Nee |
-| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de PostgreSQL-data base. Mogelijke waarden zijn: anoniem, basis en Windows. |Ja |
-| gebruikersnaam |Geef de gebruikers naam op als u basis-of Windows-verificatie gebruikt. |Nee |
-| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |Nee |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises PostgreSQL-data base. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **OnPremisesPostgreSql** |Yes |
+| server |De naam van de PostgreSQL-server. |Yes |
+| database |De naam van de PostgreSQL-data base. |Yes |
+| schema |De naam van het schema in de data base. De schema naam is hoofdletter gevoelig. |No |
+| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de PostgreSQL-data base. Mogelijke waarden zijn: anoniem, basis en Windows. |Yes |
+| gebruikersnaam |Geef de gebruikers naam op als u basis-of Windows-verificatie gebruikt. |No |
+| wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |No |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises PostgreSQL-data base. |Yes |
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 Zie het artikel [gegevens sets maken](data-factory-create-datasets.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. Secties, zoals structuur, Beschik baarheid en beleid van een gegevensset-JSON, zijn vergelijkbaar voor alle typen gegevensset.
@@ -317,7 +312,7 @@ Bij het verplaatsen van gegevens naar PostgreSQL worden de volgende toewijzingen
 | Cid | |Tekenreeks |
 | cidr | |Tekenreeks |
 | cirkel | |Byte [], teken reeks |
-| datum | |Datum/tijd |
+| date | |Datum/tijd |
 | daterange | |Tekenreeks |
 | dubbele precisie |float8 |Dubbel |
 | inet | |Byte [], teken reeks |

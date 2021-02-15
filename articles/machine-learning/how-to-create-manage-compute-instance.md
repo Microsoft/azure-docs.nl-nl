@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 40882f2a0c1a65650d633d0784214afbeef9ae63
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5fc5b52cb8fb4d654bef136f44d8579036921364
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842886"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097191"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Een Azure Machine Learning Compute-exemplaar maken en beheren
 
@@ -44,7 +44,7 @@ Reken instanties kunnen taken veilig uitvoeren in een [virtuele netwerk omgeving
 
 **Geschatte tijd**: ongeveer 5 minuten.
 
-Het maken van een reken instantie is een eenmalig proces voor uw werk ruimte. U kunt deze berekening opnieuw gebruiken als een ontwikkel werkstation of als reken doel voor training. Er kunnen meerdere reken instanties aan uw werk ruimte zijn gekoppeld.
+Het maken van een reken instantie is een eenmalig proces voor uw werk ruimte. U kunt de compute opnieuw gebruiken als een ontwikkel werkstation of als reken doel voor training. Er kunnen meerdere reken instanties aan uw werk ruimte zijn gekoppeld.
 
 De toegewezen kernen per regio per VM-serie quota en het totale regionale quotum, dat van toepassing is op het maken van een reken instantie, worden gecombineerd en gedeeld met Azure Machine Learning trainings berekenings cluster quotum. Wanneer het reken exemplaar wordt gestopt, wordt er geen quotum vrijgegeven om ervoor te zorgen dat u het reken exemplaar opnieuw kunt starten. Houd er rekening mee dat het niet mogelijk is om de grootte van de virtuele machine van reken instanties te wijzigen nadat deze is gemaakt.
 
@@ -230,68 +230,14 @@ Met [Azure RBAC](../role-based-access-control/overview.md) kunt u bepalen welke 
 
 Deze acties kunnen worden beheerd door Azure RBAC:
 * *Micro soft. MachineLearningServices/werk ruimten/reken-en lees bewerkingen*
-* *Micro soft. MachineLearningServices/werk ruimten/reken kracht/schrijven*
+* *Microsoft.MachineLearningServices/workspaces/computes/write*
 * *Micro soft. MachineLearningServices/werk ruimten/berekenen/verwijderen*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/starten/actie*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/stoppen/actie*
 * *Micro soft. MachineLearningServices/werk ruimten/berekeningen/opnieuw opstarten/actie*
 
-
-## <a name="access-the-terminal-window"></a>Het Terminal venster openen
-
-Open het Terminal venster van uw reken exemplaar op een van de volgende manieren:
-
-* RStudio: Selecteer het tabblad **Terminal** aan de rechter bovenhoek.
-* Jupyter Lab: Selecteer de tegel **Terminal** onder de **andere** kop op het tabblad Start.
-* Jupyter: Selecteer **nieuwe>Terminal** rechtsboven op het tabblad bestanden.
-* SSH naar de computer als u SSH-toegang hebt ingeschakeld toen het reken exemplaar werd gemaakt.
-
-Gebruik het Terminal venster om pakketten te installeren en extra kernels te maken.
-
-## <a name="install-packages"></a>Pakketten installeren
-
-U kunt pakketten rechtstreeks installeren in Jupyter Notebook of RStudio:
-
-* RStudio gebruik het tabblad **pakketten** aan de rechter kant of op het tabblad **console** linksboven.  
-* Python: Voeg een installatie code toe en voer deze uit in een Jupyter Notebook-cel.
-
-U kunt ook installeren vanuit een Terminal venster. Installeer Python-pakketten in de **Python 3,6-AzureML-** omgeving.  R-pakketten installeren in de **R** -omgeving.
-
-> [!NOTE]
-> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd**, in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
-
-## <a name="add-new-kernels"></a>Nieuwe kernels toevoegen
-
-> [!WARNING]
->  Zorg er tijdens het aanpassen van het reken proces voor dat u de **azureml_py36** Conda-omgeving of de **python 3,6-azureml-** kernel niet verwijdert. Dit is nodig voor de functionaliteit van Jupyter/Jjupyterlab
-
-Een nieuwe Jupyter-kernel toevoegen aan het reken exemplaar:
-
-1. Nieuwe terminal maken van het deel venster Jupyter, Jjupyterlab of van notitie blokken of SSH in het reken exemplaar
-2. Gebruik het Terminal venster om een nieuwe omgeving te maken.  De onderstaande code maakt bijvoorbeeld `newenv` :
-
-    ```shell
-    conda create --name newenv
-    ```
-
-3. Activeer de omgeving.  Bijvoorbeeld na het maken van `newenv` :
-
-    ```shell
-    conda activate newenv
-    ```
-
-4. PIP-en ipykernel-pakket installeren in de nieuwe omgeving en een kernel maken voor die Conda env
-
-    ```shell
-    conda install pip
-    conda install ipykernel
-    python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
-    ```
-
-Een van de [beschik bare Jupyter-kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) kan worden geïnstalleerd.
-
-
-
 ## <a name="next-steps"></a>Volgende stappen
 
+* [De terminal van het reken exemplaar openen](how-to-access-terminal.md)
+* [Bestanden maken en beheren](how-to-manage-files.md)
 * [Een trainings uitvoering verzenden](how-to-set-up-training-targets.md)

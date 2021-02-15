@@ -3,12 +3,12 @@ title: Zelfstudie - vSphere-cluster implementeren in Azure
 description: Meer informatie over het implementeren van een vSphere-cluster in Azure met behulp van Azure VMware Solution
 ms.topic: tutorial
 ms.date: 11/19/2020
-ms.openlocfilehash: 93937f8ca0918494810885f5cb45de571a6e1529
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 3c8ae3673ad049153c2b9700bd7efae6c4c286ed
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966306"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093944"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Zelfstudie: Een Azure VMware Solution-privécloud implementeren in Azure
 
@@ -74,25 +74,6 @@ Geef een naam voor de resourcegroep op en een naam voor de privécloud, een loca
 ```azurecli-interactive
 az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --location eastus --cluster-size 3 --network-block xx.xx.xx.xx/22 --sku AV36
 ```
-
-## <a name="delete-an-azure-vmware-solution-private-cloud"></a>Een Azure VMware Solution-privécloud verwijderen
-
-Als u een Azure VMware Solution-privécloud hebt die u niet meer nodig hebt, kunt u deze verwijderen. Een privécloud van Azure VMware Solution bevat een geïsoleerd netwerkdomein, een of meer ingerichte vSphere-clusters op toegewezen serverhosts, en meerdere virtuele machines. Als een privécloud wordt verwijderd, worden alle virtuele machines, hun gegevens en clusters verwijderd. De toegewezen bare-metalhosts worden veilig gewist en geretourneerd naar de gratis pool. Het netwerkdomein dat is ingericht voor de klant wordt verwijderd.  
-
-> [!CAUTION]
-> Het verwijderen van de privécloud is een onomkeerbare bewerking. Zodra de privécloud is verwijderd, kunnen de gegevens niet worden hersteld. Dit komt doordat alle actieve workloads en onderdelen worden beëindigd en alle privécloudgegevens en configuratie-instellingen, met inbegrip van openbare IP-adressen, worden vernietigd.
-
-### <a name="prerequisites"></a>Vereisten
-
-Zodra een privécloud is verwijderd, is er geen manier om de virtuele machines en de bijbehorende gegevens te herstellen. Als de gegevens van de virtuele machine later vereist zijn, moet de beheerder eerst een back-up van alle gegevens maken voordat de privécloud wordt verwijderd.
-
-### <a name="steps-to-delete-an-azure-vmware-solution-private-cloud"></a>Stappen om een Azure VMware Solution-privécloud te verwijderen
-
-1. Open de pagina van Azure VMware Solutions in de Azure Portal.
-
-2. Selecteer de privécloud die u wilt verwijderen.
- 
-3. Voer de naam van de privécloud in en selecteer **Ja**. Binnen een paar uur wordt het verwijderingsproces voltooid.  
 
 ## <a name="azure-vmware-commands"></a>Azure VMware-opdrachten
 

@@ -9,33 +9,29 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/02/2019
+ms.date: 02/05/2021
 ms.author: jeedes
-ms.openlocfilehash: 3d90d35e113b5f9757faf59681bb2532b66f2b09
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
-ms.translationtype: HT
+ms.openlocfilehash: 5e962592779494e1d60d03e9e8a167d53ac8bda2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673863"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364125"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Zelfstudie: Azure Active Directory-integratie met Absorb LMS
 
-In deze zelfstudie leert u hoe u Absorb LMS integreert met Azure Active Directory (Azure AD).
-De integratie van Absorb LMS met Azure AD heeft de volgende voordelen:
+In deze zelf studie leert u hoe u de absorberende LMS integreert met Azure Active Directory (Azure AD). Wanneer u de absorberende LMS integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD bepalen wie er toegang heeft tot Absorb LMS.
-* U kunt instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Absorb LMS (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Controle in azure AD die toegang heeft tot het absorberen van LMS.
+* Stel in dat uw gebruikers zich automatisch kunnen aanmelden om LMS te absorberen met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
 U hebt het volgende nodig om Azure AD-integratie te configureren met Absorb LMS:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u een [gratis account](https://azure.microsoft.com/free/) krijgen
-* Abonnement op Absorb LMS met eenmalige aanmelding (SSO) ingeschakeld
+* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u een [gratis account](https://azure.microsoft.com/free/) krijgen.
+* Abonnement voor eenmalige aanmelding voor de LMS is ingeschakeld.
 
 > [!NOTE]
 > Deze integratie is ook beschikbaar voor gebruik vanuit de Azure AD US Government Cloud-omgeving. U kunt deze toepassing vinden in de toepassingsgalerie van Azure AD US Government Cloud en deze op dezelfde manier configureren als vanuit een openbare cloud.
@@ -46,75 +42,56 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Absorb LMS ondersteunt door **IDP** geïnitieerde SSO
 
-## <a name="adding-absorb-lms-from-the-gallery"></a>Absorb LMS toevoegen vanuit de galerie
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
+
+## <a name="add-absorb-lms-from-the-gallery"></a>Absorberende LMS toevoegen vanuit de galerie
 
 Om de integratie van Absorb LMS in Azure AD te configureren, moet u Absorb LMS vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Ga als volgt te werk om Absorb LMS vanuit de galerie toe te voegen:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie in **de galerie toevoegen** de tekst **absorberen** in het zoekvak.
+1. Selecteer **LMS** in het paneel resultaten absorberen en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
+## <a name="configure-and-test-azure-ad-sso-for-absorb-lms"></a>Azure AD-SSO configureren en testen voor het absorberen van de LMS
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+Azure AD SSO configureren en testen met een geabsorbeerde LMS met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in de absorberende LMS.
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met de geabsorbeerde LMS:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. De eenmalige aanmelding configureren aan de kant van de toepassing van de sign-on- **[SSO](#configure-absorb-lms-sso)** .
+    1. U kunt een gebruiker van de test voor een **[geabsorbeerde LMS maken](#create-absorb-lms-test-user)** , zodat deze een equivalent van B. Simon heeft dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-4. Typ **Absorb LMS** in het zoekvak, selecteer **Absorb LMS** in de lijst met resultaten en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+1. Zoek in het Azure Portal op de pagina de integratie van de toepassing **absorberen** de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-    ![Absorb LMS in de lijst met resultaten](common/search-new-app.png)
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In dit gedeelte gaat u eenmalige aanmelding van Azure AD met Absorb LMS configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Absorb LMS tot stand is gebracht.
-
-Als u eenmalige aanmelding van Azure AD wilt configureren en testen met Absorb LMS, moet u de volgende procedures uitvoeren:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Absorb LMS configureren](#configure-absorb-lms-single-sign-on)**: de instellingen voor eenmalige aanmelding aan de clientzijde configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Absorb LMS maken](#create-absorb-lms-test-user)**: een tegenhanger voor Britta Simon maken in Absorb LMS die wordt gekoppeld aan de Azure AD-voorstelling van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren met Absorb LMS:
-
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Absorb LMS** en selecteer **Eenmalige aanmelding**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. Klik op de pagina **Eenmalige aanmelding met SAML instellen** u de knop **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
 
-    ![Gegevens voor domein en URL's voor eenmalige aanmelding bij Absorb LMS](common/idp-intiated.png)
-
     Gebruik de volgende configuratie als u met **Absorb 5 - UI** werkt:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://company.myabsorb.com/account/saml`
+    a. Typ in het tekstvak **id** een URL met het volgende patroon: `https://<SUBDOMAIN>.myabsorb.com/account/saml`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://company.myabsorb.com/account/saml`
+    b. Typ in het tekstvak **antwoord-URL** een URL met het volgende patroon: `https://<SUBDOMAIN>.myabsorb.com/account/saml`
 
     Gebruik de volgende configuratie als u met **Absorb 5 - New Learner Experience** werkt:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://company.myabsorb.com/api/rest/v2/authentication/saml`
+    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<SUBDOMAIN>.myabsorb.com/api/rest/v2/authentication/saml`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://company.myabsorb.com/api/rest/v2/authentication/saml`
+    b. Typ in het tekstvak **antwoord-URL** een URL met het volgende patroon: `https://<SUBDOMAIN>.myabsorb.com/api/rest/v2/authentication/saml`
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [ondersteuningsteam van Absorb LMS](https://support.absorblms.com/hc/) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -131,27 +108,45 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-    b. Azure AD-id
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-    c. Afmeldings-URL
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
-### <a name="configure-absorb-lms-single-sign-on"></a>Eenmalige aanmelding voor Absorb LMS configureren
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan de absorberende LMS.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen de optie **LMS absorberen**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-absorb-lms-sso"></a>Eenmalige aanmelding voor de microlms configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van Absorb LMS.
 
 2. Selecteer rechtsboven de knop **Account**.
 
-    ![De knop Account](./media/absorblms-tutorial/1.png)
+    ![De knop Account](./media/absorblms-tutorial/account.png)
 
 3. Selecteer **Portal Settings** in het deelvenster Account.
 
-    ![De koppeling Portal Settings](./media/absorblms-tutorial/2.png)
+    ![De koppeling Portal Settings](./media/absorblms-tutorial/portal.png)
 
 4. Selecteer het tabblad **Manage SSO Settings**.
 
-    ![Het tabblad Users](./media/absorblms-tutorial/managesso.png)
+    ![Het tabblad Users](./media/absorblms-tutorial/sso.png)
 
 5. Ga als volgt te werk op de pagina **Manage Single Sign-On Settings**:
 
@@ -179,57 +174,6 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     ![De wisselknop Only Allow SSO Login](./media/absorblms-tutorial/save.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-
-    b. In het veld **Gebruikersnaam** typt u `brittasimon\@yourcompanydomain.extension`  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create**.
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Absorb LMS.
-
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Absorb LMS**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Typ en selecteer **Absorb LMS** in de lijst met toepassingen.
-
-    ![De koppeling Absorb LMS in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-
 ### <a name="create-absorb-lms-test-user"></a>Testgebruiker voor Absorb LMS maken
 
 Azure AD-gebruikers kunnen zich alleen aanmelden bij Absorb LMS als ze zijn ingesteld in Absorb LMS. In het geval van Absorb LMS moet dit handmatig gebeuren.
@@ -240,11 +184,11 @@ Azure AD-gebruikers kunnen zich alleen aanmelden bij Absorb LMS als ze zijn inge
 
 2. Selecteer **Users** in het deelvenster **Users**.
 
-    ![De koppeling Users](./media/absorblms-tutorial/absorblms_userssub.png)
+    ![De koppeling Users](./media/absorblms-tutorial/users.png)
 
 3. Selecteer het tabblad **User**.
 
-    ![De vervolgkeuzelijst Add New](./media/absorblms-tutorial/absorblms_createuser.png)
+    ![De vervolgkeuzelijst Add New](./media/absorblms-tutorial/add.png)
 
 4. Ga als volgt te werk op de pagina **Add User**:
 
@@ -269,16 +213,14 @@ Azure AD-gebruikers kunnen zich alleen aanmelden bij Absorb LMS als ze zijn inge
     > [!NOTE]
     > Standaard is inrichten van gebruikers niet ingeschakeld in SSO. Als de klant deze functie wil inschakelen, moet dit volgens de instructies in [deze](https://support.absorblms.com/hc/en-us/articles/360014083294-Incoming-SAML-2-0-SSO-Account-Provisioning) documentatie. Het inrichten van gebruikers is overigens alleen beschikbaar in **Absorb 5 - New Learner Experience** met ACS URL-`https://company.myabsorb.com/api/rest/v2/authentication/saml`
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-Wanneer u in het toegangsvenster op de tegel Absorb LMS klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van in het toegangsvenster waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik op test deze toepassing in Azure Portal en meld u automatisch aan bij het absorberende LMS waarvoor u de SSO hebt ingesteld.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel LMS opnemen in de mijn apps klikt, moet u automatisch worden aangemeld bij het absorberende LMS waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+## <a name="next-steps"></a>Volgende stappen
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Zodra u de absorberende LMS hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

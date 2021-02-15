@@ -2,19 +2,16 @@
 title: De indeling ORC in Azure Data Factory
 description: In dit onderwerp wordt beschreven hoe u kunt omgaan met de ORC-indeling in Azure Data Factory.
 author: linda33wj
-manager: shwang
-ms.reviewer: craigg
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: jingwang
-ms.openlocfilehash: 4a25a1ec5f2d650501a7c5da8bb1c60f57ad549d
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 8973692b90cc9d6caa852616bf2962371d25abfa
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945784"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386455"
 ---
 # <a name="orc-format-in-azure-data-factory"></a>De indeling ORC in Azure Data Factory
 
@@ -30,9 +27,9 @@ Zie het artikel [gegevens sets](concepts-datasets-linked-services.md) voor een v
 
 | Eigenschap         | Beschrijving                                                  | Vereist |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| type             | De eigenschap type van de DataSet moet worden ingesteld op **Orc**. | Ja      |
-| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . **Zie de sectie Details in connector artikel-> eigenschappen van gegevensset**. | Ja      |
-| compressionCodec         | De compressie-codec die moet worden gebruikt bij het schrijven naar ORC-bestanden. Bij het lezen van ORC-bestanden, bepalen gegevens fabrieken de compressie-codec automatisch op basis van de meta gegevens van het bestand.<br>Ondersteunde typen zijn **geen**, **zlib**, **Snappy** (standaard) en **lzo**. Houd er rekening mee dat de activiteit die momenteel wordt gekopieerd, geen ondersteuning biedt voor LZO wanneer ORC bestanden lezen/schrijven. | Nee      |
+| type             | De eigenschap type van de DataSet moet worden ingesteld op **Orc**. | Yes      |
+| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . **Zie de sectie Details in connector artikel-> eigenschappen van gegevensset**. | Yes      |
+| compressionCodec         | De compressie-codec die moet worden gebruikt bij het schrijven naar ORC-bestanden. Bij het lezen van ORC-bestanden, bepalen gegevens fabrieken de compressie-codec automatisch op basis van de meta gegevens van het bestand.<br>Ondersteunde typen zijn **geen**, **zlib**, **Snappy** (standaard) en **lzo**. Houd er rekening mee dat de activiteit die momenteel wordt gekopieerd, geen ondersteuning biedt voor LZO wanneer ORC bestanden lezen/schrijven. | No      |
 
 Hieronder ziet u een voor beeld van een ORC-gegevensset op Azure Blob Storage:
 
@@ -68,30 +65,30 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="orc-as-source"></a>ORC als bron
 
-De volgende eigenschappen worden ondersteund in de sectie *** \* bron \* *** van de Kopieer activiteit.
+De volgende eigenschappen worden ondersteund in de sectie ***\* bron \**** van de Kopieer activiteit.
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **OrcSource**. | Ja      |
-| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | Nee       |
+| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **OrcSource**. | Yes      |
+| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | No       |
 
 ### <a name="orc-as-sink"></a>ORC als Sink
 
-De volgende eigenschappen worden ondersteund in het gedeelte *** \* sink \* *** van de Kopieer activiteit.
+De volgende eigenschappen worden ondersteund in het gedeelte ***\* sink \**** van de Kopieer activiteit.
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **OrcSink**. | Ja      |
-| formatSettings | Een groep eigenschappen. Raadpleeg de tabel **Orc write Settings** hieronder. |    Nee      |
-| storeSettings | Een groep eigenschappen voor het schrijven van gegevens naar een gegevens archief. Elke connector op basis van bestanden heeft eigen ondersteunde schrijf instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | Nee       |
+| type          | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **OrcSink**. | Yes      |
+| formatSettings | Een groep eigenschappen. Raadpleeg de tabel **Orc write Settings** hieronder. |    No      |
+| storeSettings | Een groep eigenschappen voor het schrijven van gegevens naar een gegevens archief. Elke connector op basis van bestanden heeft eigen ondersteunde schrijf instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | No       |
 
 Ondersteunde **Orc-schrijf instellingen** onder `formatSettings` :
 
 | Eigenschap      | Beschrijving                                                  | Vereist                                              |
 | ------------- | ------------------------------------------------------------ | ----------------------------------------------------- |
-| type          | Het type formatSettings moet zijn ingesteld op **OrcWriteSettings**. | Ja                                                   |
-| maxRowsPerFile | Wanneer u gegevens naar een map schrijft, kunt u ervoor kiezen om naar meerdere bestanden te schrijven en het maximum aantal rijen per bestand op te geven.  | Nee |
-| fileNamePrefix | Van toepassing wanneer `maxRowsPerFile` is geconfigureerd.<br> Geef het voor voegsel van de bestands naam op wanneer u gegevens naar meerdere bestanden schrijft, wat resulteert in dit patroon: `<fileNamePrefix>_00000.<fileExtension>` . Als u niets opgeeft, wordt het voor voegsel van de bestands naam automatisch gegenereerd. Deze eigenschap is niet van toepassing wanneer een bron archief of een [gegevens archief met partitie opties](copy-activity-performance-features.md)is gebaseerd op het bestand.  | Nee |
+| type          | Het type formatSettings moet zijn ingesteld op **OrcWriteSettings**. | Yes                                                   |
+| maxRowsPerFile | Wanneer u gegevens naar een map schrijft, kunt u ervoor kiezen om naar meerdere bestanden te schrijven en het maximum aantal rijen per bestand op te geven.  | No |
+| fileNamePrefix | Van toepassing wanneer `maxRowsPerFile` is geconfigureerd.<br> Geef het voor voegsel van de bestands naam op wanneer u gegevens naar meerdere bestanden schrijft, wat resulteert in dit patroon: `<fileNamePrefix>_00000.<fileExtension>` . Als u niets opgeeft, wordt het voor voegsel van de bestands naam automatisch gegenereerd. Deze eigenschap is niet van toepassing wanneer een bron archief of een [gegevens archief met partitie opties](copy-activity-performance-features.md)is gebaseerd op het bestand.  | No |
 
 ## <a name="mapping-data-flow-properties"></a>Eigenschappen van gegevens stroom toewijzen
 
@@ -163,7 +160,7 @@ Voor een kopie die wordt uitgevoerd op een zelf-hostende IR met ORC-serialisatie
 
 - **Jre gebruiken**: de 64-bits IR vereist een 64-bits jre. U kunt deze [hier](https://go.microsoft.com/fwlink/?LinkId=808605)vinden.
 - **Als u openjdk wilt gebruiken**, wordt dit ondersteund sinds IR-versie 3,13. Verpak de jvm.dll met alle andere vereiste assembly's van OpenJDK op een zelf-hostende IR-computer en stel de systeem omgevings variabele in JAVA_HOME dienovereenkomstig in.
-- **Het herdistribueerbare pakket Visual c++ 2010 installeren: het**herdistribueerbare pakket visual c++ 2010 wordt niet geïnstalleerd met de zelf-HOSTende IR-installaties. U kunt deze [hier](https://www.microsoft.com/download/details.aspx?id=14632)vinden.
+- **Het herdistribueerbare pakket Visual c++ 2010 installeren: het** herdistribueerbare pakket visual c++ 2010 wordt niet geïnstalleerd met de zelf-HOSTende IR-installaties. U kunt deze [hier](https://www.microsoft.com/download/details.aspx?id=14632)vinden.
 
 > [!TIP]
 > Als u gegevens kopieert naar/van ORC-indeling met behulp van zelf-hostende Integration Runtime en de fout melding ' er is een fout opgetreden bij het aanroepen van Java, bericht: **Java. lang. OutOfMemoryError: Java-heap-ruimte**', kunt u een omgevings variabele toevoegen aan `_JAVA_OPTIONS` de computer die als host fungeert voor de zelf-hostende IR om een dergelijke kopie te maken,
@@ -174,6 +171,6 @@ Voor beeld: Stel variabele `_JAVA_OPTIONS` met waarde in `-Xms256m -Xmx16g` . Me
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Overzicht van kopieeractiviteiten](copy-activity-overview.md)
+- [Overzicht van de Kopieer activiteit](copy-activity-overview.md)
 - [Activiteit Lookup](control-flow-lookup-activity.md)
 - [GetMetadata-activiteit](control-flow-get-metadata-activity.md)

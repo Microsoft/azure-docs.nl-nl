@@ -9,22 +9,31 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 07/29/2020
+ms.date: 01/19/2021
 ms.author: curtand
-ms.openlocfilehash: 7dcaae80842f06714759cb5c933a62ccd85aac63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 249b013a35df8978a7296086b4e5ada3b78b2c52
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88798088"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093825"
 ---
 # <a name="view-or-change-your-settings-in-the-my-account-portal"></a>Uw instellingen in de portal van mijn account weer geven of wijzigen
 
 U kunt de account instellingen in de portal van mijn account, zoals taal of tijd zone, bekijken of wijzigen op de pagina **instellingen & privacy** van de portal van **Mijn account** .
 
+>[!Note]
+> Als er een fout optreedt tijdens het aanmelden met een persoonlijke Microsoft-account, kunt u zich nog steeds aanmelden met de domein naam voor uw organisatie (zoals contoso.com) of de **Tenant-id** van uw organisatie van uw beheerder in een van de volgende url's:
+>
+>   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+>   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
+
 ## <a name="view-and-manage-your-language-and-regional-settings"></a>Uw taal-en land instellingen weer geven en beheren
 
-1. Meld u aan bij uw werk-of school account en ga vervolgens naar de https://myaccount.microsoft.com/ pagina.
+1. Meld u aan bij uw werk-of school account en ga vervolgens naar de https://myaccount.microsoft.com/ pagina. Als u zich aanmeldt met een persoonlijke Microsoft-account, kunt u zich nog steeds aanmelden door de domein naam voor uw organisatie (zoals contoso.com) of de **Tenant-id** van uw organisatie te gebruiken in een van de volgende url's:
+
+   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
 
 1. Selecteer **instellingen & privacy** in het navigatie deel venster links of selecteer de koppeling **instellingen en privacy weer geven** in het **privacybeleid van instellingen &** .
 

@@ -1,25 +1,20 @@
 ---
-title: Gids voor de prestaties en schaal baarheid van de Kopieer activiteit
+title: Handleiding voor prestaties en schaalbaarheid van kopieeractiviteit
 description: Meer informatie over de belangrijkste factoren die van invloed zijn op de prestaties van het verplaatsen van gegevens in Azure Data Factory wanneer u de Kopieer activiteit gebruikt.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/15/2020
-ms.openlocfilehash: a6e89883ec0e1e493bad9572876af86f4a0d3853
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c166b99243e5a6ee576100b8470aa38b9535c7a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324428"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387662"
 ---
-# <a name="copy-activity-performance-and-scalability-guide"></a>Gids voor de prestaties en schaal baarheid van de Kopieer activiteit
+# <a name="copy-activity-performance-and-scalability-guide"></a>Handleiding voor prestaties en schaalbaarheid van kopieeractiviteit
 
 > [!div class="op_single_selector" title1="Selecteer de versie van Azure Data Factory die u gebruikt:"]
 > * [Versie 1:](v1/data-factory-copy-activity-performance.md)
@@ -149,7 +144,7 @@ Azure Data Factory biedt de volgende functies voor prestatie optimalisatie:
 
 ### <a name="data-integration-units"></a>Eenheden voor gegevensintegratie
 
-Een DIU (Data Integration Unit) is een meting die de kracht vormt van een enkele eenheid in Azure Data Factory. Kracht is een combi natie van CPU, geheugen en netwerk bron toewijzing. DIU is alleen van toepassing op [Azure Integration runtime](concepts-integration-runtime.md#azure-integration-runtime). DIU is niet van toepassing op [zelf-hostende Integration runtime](concepts-integration-runtime.md#self-hosted-integration-runtime). Meer [informatie vindt u hier](copy-activity-performance-features.md#data-integration-units).
+Een DIU (Data Integration Unit) is een meting die de kracht vormt van een enkele eenheid in Azure Data Factory. Kracht is een combi natie van CPU, geheugen en netwerk bron toewijzing. DIU is alleen van toepassing op [Azure Integration runtime](concepts-integration-runtime.md#azure-integration-runtime). DIU is niet van toepassing op [zelf-hostende Integration runtime](concepts-integration-runtime.md#self-hosted-integration-runtime). [Klik hier voor meer informatie](copy-activity-performance-features.md#data-integration-units).
 
 ### <a name="self-hosted-integration-runtime-scalability"></a>Schaal baarheid van zelf-hostende Integration runtime
 
@@ -176,7 +171,7 @@ Een bewerking voor het kopiëren van gegevens kan de gegevens _rechtstreeks_ naa
 
 Zie de andere artikelen over Kopieer activiteiten:
 
-* [Overzicht van kopieeractiviteiten](copy-activity-overview.md)
+* [Overzicht van de Kopieer activiteit](copy-activity-overview.md)
 * [Prestaties van de Kopieer activiteit oplossen](copy-activity-performance-troubleshooting.md)
 * [Functies voor het optimaliseren van de activiteit prestaties](copy-activity-performance-features.md)
 * [Azure Data Factory gebruiken om gegevens van uw data Lake of Data Warehouse te migreren naar Azure](data-migration-guidance-overview.md)

@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van een FTP-server met behulp van Azure Data Factory
 description: Meer informatie over het verplaatsen van gegevens van een FTP-server met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: eea3bab0-a6e4-4045-ad44-9ce06229c718
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: eeeb122d240d8c3eae4ebe1650f67cf0e4b9dac6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a8a8ca44fbdb7610f85bc53c23d502d2efb01c8b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001640"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363947"
 ---
 # <a name="move-data-from-an-ftp-server-by-using-azure-data-factory"></a>Gegevens verplaatsen van een FTP-server met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -72,8 +67,8 @@ De volgende tabel beschrijft de JSON-elementen die specifiek zijn voor een gekop
 | encryptedCredential |Geef de versleutelde referentie op voor toegang tot de FTP-server. |No |&nbsp; |
 | gatewayName |Geef de naam op van de gateway in Data Management Gateway om verbinding te maken met een on-premises FTP-server. |No |&nbsp; |
 | poort |Geef de poort op waarop de FTP-server luistert. |No |21 |
-| enableSsl |Geef op of FTP via een SSL/TLS-kanaal moet worden gebruikt. |No |waar |
-| enableServerCertificateValidation |Geef op of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld wanneer u FTP via SSL/TLS-kanaal gebruikt. |No |waar |
+| enableSsl |Geef op of FTP via een SSL/TLS-kanaal moet worden gebruikt. |No |true |
+| enableServerCertificateValidation |Geef op of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld wanneer u FTP via SSL/TLS-kanaal gebruikt. |No |true |
 
 >[!NOTE]
 >De FTP-connector ondersteunt toegang tot de FTP-server zonder versleuteling of expliciete SSL/TLS-versleuteling. Het biedt geen ondersteuning voor impliciete SSL/TLS-versleuteling.

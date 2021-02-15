@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/11/2021
+ms.date: 02/14/2021
 ms.author: memildin
-ms.openlocfilehash: c12ad505777111499fb354709ce606189398458f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 8d6cee5e8d9683ca88a71608595b7dfde8261b8d
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391920"
+ms.locfileid: "100520524"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
@@ -118,7 +118,18 @@ Als u al een licentie hebt voor Microsoft Defender for Endpoint, hoeft u niet te
 Neem contact op met het ondersteuningsteam van Security Center en geef de relevante werkruimte-ID, regio en licentiegegevens van elke relevante licentie op om uw korting te bevestigen.
 
 ### <a name="my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers"></a>Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers? 
-Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden er geen kosten in rekening gebracht voor servers die de status ' disallocated ' hebben, terwijl ze in die status zijn.
+Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden er geen kosten in rekening gebracht voor machines die de vrijgekomen energie status hebben wanneer deze zich in die staat bevinden. Computers worden gefactureerd op basis van hun energie status, zoals wordt weer gegeven in de volgende tabel:
+
+| Staat        | Beschrijving                                                                                                                                      | Gebruik van exemplaar gefactureerd |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| Starten     | De VM wordt opgestart.                                                                                                                               | Niet gefactureerd            |
+| Wordt uitgevoerd      | Normale werk status voor een virtuele machine                                                                                                                    | Gefactureerd                |
+| Stoppen     | Dit is een overgangs status. Als deze functie is voltooid, wordt deze weer gegeven als gestopt.                                                                           | Gefactureerd                |
+| Gestopt      | De virtuele machine is afgesloten vanuit het gast besturingssysteem of met behulp van de uitgeschakeld-Api's. Er wordt nog steeds hardware toegewezen aan de virtuele machine en deze blijft op de host. | In rekening gebracht (1)            |
+| Vrijgeven | Overgangs status. Als de VM is voltooid, wordt deze weer gegeven als opgeheven.                                                                             | Niet gefactureerd (1)        |
+| Toewijzing ongedaan gemaakt  | De virtuele machine is gestopt en verwijderd van de host.                                                                                  | Niet gefactureerd            |
+
+(1) sommige Azure-resources, zoals schijven en netwerken, maken kosten in rekening. Voor software licenties op het exemplaar worden geen kosten in rekening gebracht.
 
 :::image type="content" source="media/security-center-pricing/deallocated-virtual-machines.png" alt-text="Azure Virtual Machines het weer geven van een ontoegewezen machine":::
 

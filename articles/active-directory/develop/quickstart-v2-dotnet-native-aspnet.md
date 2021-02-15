@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: ec8fd05c0661178cc07b9165793c9f34f2463948
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9dc787c57ef3ab84d9a2b90cfe059594b0a31d08
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754316"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102509"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform
 
@@ -48,13 +48,12 @@ In deze sectie registreert u uw web-API in **App-registraties** in Azure Portal.
 
 Als u uw apps handmatig wilt registreren, kiest u de Azure AD-tenant (Active Directory) waar u uw apps wilt maken.
 
-1. Meld u bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a> aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Als uw account zich in meer dan één Azure AD-tenant bevindt, selecteert u uw profiel rechtsboven en selecteert u **Schakelen tussen mappen**.
-1. Stel de portalsessie in op de gewenste Azure AD-tenant.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter voor **adres lijst en abonnementen** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de Tenant te selecteren die u wilt gebruiken.
 
 ### <a name="register-the-todolistservice-app"></a>De TodoListService-app registreren
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

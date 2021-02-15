@@ -736,6 +736,8 @@
               href: how-to-sqldb-to-cosmosdb.md
             - name: Dedupliceren en null-checks met snippets
               href: how-to-data-flow-dedupe-nulls-snippets.md
+            - name: Gegevens verwerken vanuit AML-modellen met behulp van de gegevens stroom
+              href: scenario-dataflow-process-data-aml-models.md
         - name: SSIS-migratie van on-premises
           items:
             - name: Overzicht SSIS-gegevensmigratie

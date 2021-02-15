@@ -1,21 +1,17 @@
 ---
 title: Reken omgevingen die worden ondersteund door Azure Data Factory
 description: Reken omgevingen die kunnen worden gebruikt met Azure Data Factory pijp lijnen (zoals Azure HDInsight) om gegevens te transformeren of te verwerken.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: nabhishek
 ms.author: abnarain
-manager: anandsub
 ms.date: 05/08/2019
-ms.openlocfilehash: f2a0784b2795b82131880d73a6d9217acc1d72d3
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 7dae067b5d8648f1441047c26f8792e55591b64d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606212"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368520"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Reken omgevingen die worden ondersteund door Azure Data Factory
 
@@ -41,7 +37,7 @@ De volgende tabel bevat een lijst met reken omgevingen die worden ondersteund do
 
 Raadpleeg de onderstaande tabel voor meer informatie over de ondersteunde opslag typen die worden ondersteund door de service voor configuratie in on-demand en BYOC (uw eigen Compute-omgeving meenemen).
 
-| In Compute-gekoppelde service | Naam van eigenschap                | Beschrijving                                                  | Blob | ADLS Gen2 | Azure SQL Database | ADLS Gen 1 |
+| In Compute-gekoppelde service | Eigenschapsnaam                | Description                                                  | Blob | ADLS Gen2 | Azure SQL Database | ADLS Gen 1 |
 | ------------------------- | ---------------------------- | ------------------------------------------------------------ | ---- | --------- | ------------ | ---------- |
 | Op aanvraag                 | linkedServiceName            | Azure Storage gekoppelde service die moet worden gebruikt door het cluster op aanvraag om gegevens op te slaan en te verwerken. | Ja  | Ja       | Nee           | Nee         |
 |                           | additionalLinkedServiceNames | Hiermee worden extra opslag accounts voor de gekoppelde HDInsight-service opgegeven, zodat de Data Factory-service namens u kan worden geregistreerd. | Ja  | Nee        | Nee           | Nee         |
@@ -114,25 +110,25 @@ De volgende JSON definieert een gekoppelde HDInsight-service op aanvraag van Lin
 
 | Eigenschap                     | Beschrijving                              | Vereist |
 | ---------------------------- | ---------------------------------------- | -------- |
-| type                         | De eigenschap type moet worden ingesteld op **HDInsightOnDemand**. | Ja      |
-| clusterSize                  | Aantal werk-en gegevens knooppunten in het cluster. Het HDInsight-cluster wordt gemaakt met 2 hoofd knooppunten, samen met het aantal worker-knoop punten dat u voor deze eigenschap opgeeft. De knoop punten zijn van grootte Standard_D3 met 4 kern geheugens. een cluster van 4 worker-knoop punten neemt dus 24 kernen (4 \* 4 = 16 kernen voor werk knooppunten, plus 2 \* 4 = 8 kernen voor hoofd knooppunten). Zie [clusters in HDInsight instellen met Hadoop, Spark, Kafka en meer](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md) voor meer informatie. | Ja      |
-| linkedServiceName            | Azure Storage gekoppelde service die moet worden gebruikt door het cluster op aanvraag om gegevens op te slaan en te verwerken. Het HDInsight-cluster wordt gemaakt in dezelfde regio als deze Azure Storage-account. Voor Azure HDInsight geldt een beperking voor het totale aantal kernen dat u kunt gebruiken in elke Azure-regio die wordt ondersteund. Zorg ervoor dat de Azure-regio voldoende kern quota heeft om aan de vereiste clusterSize te voldoen. Raadpleeg [clusters in HDInsight instellen met Hadoop, Spark, Kafka en meer](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md) voor meer informatie<p>Op dit moment kunt u geen HDInsight-cluster op aanvraag maken dat gebruikmaakt van een Azure Data Lake Storage (Gen 2) als opslag. Als u de resultaat gegevens van HDInsight-verwerking wilt opslaan in een Azure Data Lake Storage (Gen 2), gebruikt u een Kopieer activiteit om de gegevens van de Azure-Blob Storage te kopiëren naar de Azure Data Lake Storage (Gen 2). </p> | Ja      |
-| clusterResourceGroup         | Het HDInsight-cluster wordt gemaakt in deze resource groep. | Ja      |
-| timetolive                   | De toegestane tijd niet-actief voor het HDInsight-cluster op aanvraag. Hiermee geeft u op hoe lang het HDInsight-cluster op aanvraag actief blijft na voltooiing van een uitvoering van een activiteit als er geen andere actieve taken in het cluster zijn. De mini maal toegestane waarde is 5 minuten (00:05:00).<br/><br/>Als bijvoorbeeld het uitvoeren van een activiteit zes minuten duurt en timetolive is ingesteld op 5 minuten, blijft het cluster 5 minuten na de 6 minuten van verwerking van de uitvoering van de activiteit actief. Als er een andere uitvoering van de activiteit wordt uitgevoerd met het 6-minuten venster, wordt deze verwerkt door hetzelfde cluster.<br/><br/>Het maken van een HDInsight-cluster op aanvraag is een dure bewerking (kan enige tijd duren). Gebruik deze instelling daarom zo nodig om de prestaties van een data factory te verbeteren door opnieuw gebruik te maken van een on-demand HDInsight-cluster.<br/><br/>Als u timetolive waarde instelt op 0, wordt het cluster verwijderd zodra de uitvoering van de activiteit is voltooid. Als u een hoge waarde instelt, kan het cluster niet actief blijven om u aan te melden voor het oplossen van problemen, maar dit kan leiden tot hoge kosten. Daarom is het belang rijk dat u de juiste waarde instelt op basis van uw behoeften.<br/><br/>Als de waarde van de eigenschap timetolive is ingesteld op de juiste wijze, kunnen meerdere pijp lijnen het exemplaar van het HDInsight-cluster op aanvraag delen. | Ja      |
-| clusterType                  | Het type HDInsight-cluster dat moet worden gemaakt. Toegestane waarden zijn ' Hadoop ' en ' Spark '. Als niet wordt opgegeven, is de standaard waarde Hadoop. Enterprise Security Package ingeschakeld cluster kan niet op aanvraag worden gemaakt. gebruik in plaats daarvan een [bestaand cluster/zet uw eigen reken kracht](#azure-hdinsight-linked-service). | Nee       |
-| versie                      | De versie van het HDInsight-cluster. Als u niets opgeeft, wordt de huidige standaard versie van HDInsight gebruikt. | Nee       |
-| hostSubscriptionId           | De ID van het Azure-abonnement dat wordt gebruikt om een HDInsight-cluster te maken. Als u niets opgeeft, wordt de abonnements-ID van uw Azure-aanmeldings context gebruikt. | Nee       |
-| clusterNamePrefix           | Het voor voegsel van de HDI-cluster naam, een tijds tempel wordt automatisch toegevoegd aan het einde van de cluster naam| Nee       |
-| sparkVersion                 | De versie van Spark als het cluster type Spark is | Nee       |
-| additionalLinkedServiceNames | Hiermee worden extra opslag accounts voor de gekoppelde HDInsight-service opgegeven, zodat de Data Factory-service namens u kan worden geregistreerd. Deze opslag accounts moeten zich in dezelfde regio bevinden als het HDInsight-cluster, dat wordt gemaakt in dezelfde regio als het opslag account dat is opgegeven door linkedServiceName. | Nee       |
-| osType                       | Type besturings systeem. Toegestane waarden zijn: Linux en Windows (alleen voor HDInsight 3,3). De standaard waarde is Linux. | Nee       |
-| hcatalogLinkedServiceName    | De naam van de gekoppelde Azure SQL-service die verwijst naar de HCatalog-data base. Het HDInsight-cluster op aanvraag wordt gemaakt met behulp van de Azure SQL Database als de meta Store. | Nee       |
-| connectVia                   | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde HDInsight-service. Voor de gekoppelde on-demand HDInsight-service ondersteunt deze alleen Azure Integration Runtime. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee       |
-| clusterUserName                   | De gebruikers naam voor toegang tot het cluster. | Nee       |
-| clusterPassword                   | Het wacht woord in het type beveiligde teken reeks voor toegang tot het cluster. | Nee       |
-| clusterSshUserName         | De gebruikers naam voor SSH is extern verbonden met het knoop punt van het cluster (voor Linux). | Nee       |
-| clusterSshPassword         | Het wacht woord in het type beveiligde teken reeks naar SSH extern verbinding maken met het knoop punt van het cluster (voor Linux). | Nee       |
-| scriptActions | Geef het script voor [aanpassingen van HDInsight-clusters](../hdinsight/hdinsight-hadoop-customize-cluster-linux.md) op tijdens het maken van een cluster op aanvraag. <br />Het hulp programma voor het ontwerpen van gebruikers interfaces van Azure Data Factory biedt momenteel ondersteuning voor het opgeven van slechts 1 script actie, maar u kunt deze beperking door lopen in de JSON (meerdere script acties in de JSON opgeven). | Nee |
+| type                         | De eigenschap type moet worden ingesteld op **HDInsightOnDemand**. | Yes      |
+| clusterSize                  | Aantal werk-en gegevens knooppunten in het cluster. Het HDInsight-cluster wordt gemaakt met 2 hoofd knooppunten, samen met het aantal worker-knoop punten dat u voor deze eigenschap opgeeft. De knoop punten zijn van grootte Standard_D3 met 4 kern geheugens. een cluster van 4 worker-knoop punten neemt dus 24 kernen (4 \* 4 = 16 kernen voor werk knooppunten, plus 2 \* 4 = 8 kernen voor hoofd knooppunten). Zie [clusters in HDInsight instellen met Hadoop, Spark, Kafka en meer](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md) voor meer informatie. | Yes      |
+| linkedServiceName            | Azure Storage gekoppelde service die moet worden gebruikt door het cluster op aanvraag om gegevens op te slaan en te verwerken. Het HDInsight-cluster wordt gemaakt in dezelfde regio als deze Azure Storage-account. Voor Azure HDInsight geldt een beperking voor het totale aantal kernen dat u kunt gebruiken in elke Azure-regio die wordt ondersteund. Zorg ervoor dat de Azure-regio voldoende kern quota heeft om aan de vereiste clusterSize te voldoen. Raadpleeg [clusters in HDInsight instellen met Hadoop, Spark, Kafka en meer](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md) voor meer informatie<p>Op dit moment kunt u geen HDInsight-cluster op aanvraag maken dat gebruikmaakt van een Azure Data Lake Storage (Gen 2) als opslag. Als u de resultaat gegevens van HDInsight-verwerking wilt opslaan in een Azure Data Lake Storage (Gen 2), gebruikt u een Kopieer activiteit om de gegevens van de Azure-Blob Storage te kopiëren naar de Azure Data Lake Storage (Gen 2). </p> | Yes      |
+| clusterResourceGroup         | Het HDInsight-cluster wordt gemaakt in deze resource groep. | Yes      |
+| timetolive                   | De toegestane tijd niet-actief voor het HDInsight-cluster op aanvraag. Hiermee geeft u op hoe lang het HDInsight-cluster op aanvraag actief blijft na voltooiing van een uitvoering van een activiteit als er geen andere actieve taken in het cluster zijn. De mini maal toegestane waarde is 5 minuten (00:05:00).<br/><br/>Als bijvoorbeeld het uitvoeren van een activiteit zes minuten duurt en timetolive is ingesteld op 5 minuten, blijft het cluster 5 minuten na de 6 minuten van verwerking van de uitvoering van de activiteit actief. Als er een andere uitvoering van de activiteit wordt uitgevoerd met het 6-minuten venster, wordt deze verwerkt door hetzelfde cluster.<br/><br/>Het maken van een HDInsight-cluster op aanvraag is een dure bewerking (kan enige tijd duren). Gebruik deze instelling daarom zo nodig om de prestaties van een data factory te verbeteren door opnieuw gebruik te maken van een on-demand HDInsight-cluster.<br/><br/>Als u timetolive waarde instelt op 0, wordt het cluster verwijderd zodra de uitvoering van de activiteit is voltooid. Als u een hoge waarde instelt, kan het cluster niet actief blijven om u aan te melden voor het oplossen van problemen, maar dit kan leiden tot hoge kosten. Daarom is het belang rijk dat u de juiste waarde instelt op basis van uw behoeften.<br/><br/>Als de waarde van de eigenschap timetolive is ingesteld op de juiste wijze, kunnen meerdere pijp lijnen het exemplaar van het HDInsight-cluster op aanvraag delen. | Yes      |
+| clusterType                  | Het type HDInsight-cluster dat moet worden gemaakt. Toegestane waarden zijn ' Hadoop ' en ' Spark '. Als niet wordt opgegeven, is de standaard waarde Hadoop. Enterprise Security Package ingeschakeld cluster kan niet op aanvraag worden gemaakt. gebruik in plaats daarvan een [bestaand cluster/zet uw eigen reken kracht](#azure-hdinsight-linked-service). | No       |
+| versie                      | De versie van het HDInsight-cluster. Als u niets opgeeft, wordt de huidige standaard versie van HDInsight gebruikt. | No       |
+| hostSubscriptionId           | De ID van het Azure-abonnement dat wordt gebruikt om een HDInsight-cluster te maken. Als u niets opgeeft, wordt de abonnements-ID van uw Azure-aanmeldings context gebruikt. | No       |
+| clusterNamePrefix           | Het voor voegsel van de HDI-cluster naam, een tijds tempel wordt automatisch toegevoegd aan het einde van de cluster naam| No       |
+| sparkVersion                 | De versie van Spark als het cluster type Spark is | No       |
+| additionalLinkedServiceNames | Hiermee worden extra opslag accounts voor de gekoppelde HDInsight-service opgegeven, zodat de Data Factory-service namens u kan worden geregistreerd. Deze opslag accounts moeten zich in dezelfde regio bevinden als het HDInsight-cluster, dat wordt gemaakt in dezelfde regio als het opslag account dat is opgegeven door linkedServiceName. | No       |
+| osType                       | Type besturings systeem. Toegestane waarden zijn: Linux en Windows (alleen voor HDInsight 3,3). De standaard waarde is Linux. | No       |
+| hcatalogLinkedServiceName    | De naam van de gekoppelde Azure SQL-service die verwijst naar de HCatalog-data base. Het HDInsight-cluster op aanvraag wordt gemaakt met behulp van de Azure SQL Database als de meta Store. | No       |
+| connectVia                   | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde HDInsight-service. Voor de gekoppelde on-demand HDInsight-service ondersteunt deze alleen Azure Integration Runtime. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No       |
+| clusterUserName                   | De gebruikers naam voor toegang tot het cluster. | No       |
+| clusterPassword                   | Het wacht woord in het type beveiligde teken reeks voor toegang tot het cluster. | No       |
+| clusterSshUserName         | De gebruikers naam voor SSH is extern verbonden met het knoop punt van het cluster (voor Linux). | No       |
+| clusterSshPassword         | Het wacht woord in het type beveiligde teken reeks naar SSH extern verbinding maken met het knoop punt van het cluster (voor Linux). | No       |
+| scriptActions | Geef het script voor [aanpassingen van HDInsight-clusters](../hdinsight/hdinsight-hadoop-customize-cluster-linux.md) op tijdens het maken van een cluster op aanvraag. <br />Het hulp programma voor het ontwerpen van gebruikers interfaces van Azure Data Factory biedt momenteel ondersteuning voor het opgeven van slechts 1 script actie, maar u kunt deze beperking door lopen in de JSON (meerdere script acties in de JSON opgeven). | No |
 
 
 > [!IMPORTANT]
@@ -162,9 +158,9 @@ Gebruik Service-Principal-verificatie door de volgende eigenschappen op te geven
 
 | Eigenschap                | Beschrijving                              | Vereist |
 | :---------------------- | :--------------------------------------- | :------- |
-| **servicePrincipalId**  | Geef de client-ID van de toepassing op.     | Ja      |
-| **servicePrincipalKey** | Geef de sleutel van de toepassing op.           | Ja      |
-| **tenant**              | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja      |
+| **servicePrincipalId**  | Geef de client-ID van de toepassing op.     | Yes      |
+| **servicePrincipalKey** | Geef de sleutel van de toepassing op.           | Yes      |
+| **tenant**              | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Yes      |
 
 #### <a name="advanced-properties"></a>Geavanceerde eigenschappen
 
@@ -172,14 +168,14 @@ U kunt ook de volgende eigenschappen opgeven voor de gedetailleerde configuratie
 
 | Eigenschap               | Beschrijving                              | Vereist |
 | :--------------------- | :--------------------------------------- | :------- |
-| coreConfiguration      | Hiermee geeft u de para meters voor de kern configuratie op (zoals in core-site.xml) voor het HDInsight-cluster dat moet worden gemaakt. | Nee       |
-| hBaseConfiguration     | Hiermee geeft u de HBase-configuratie parameters (hbase-site.xml) voor het HDInsight-cluster. | Nee       |
-| hdfsConfiguration      | Hiermee geeft u de HDFS-configuratie parameters (hdfs-site.xml) voor het HDInsight-cluster op. | Nee       |
-| hiveConfiguration      | Hiermee geeft u de Hive-configuratie parameters (hive-site.xml) voor het HDInsight-cluster. | Nee       |
-| mapReduceConfiguration | Hiermee geeft u de MapReduce-configuratie parameters (mapred-site.xml) voor het HDInsight-cluster. | Nee       |
-| oozieConfiguration     | Hiermee geeft u de Oozie-configuratie parameters (oozie-site.xml) voor het HDInsight-cluster. | Nee       |
-| stormConfiguration     | Hiermee geeft u de Storm-configuratie parameters (storm-site.xml) voor het HDInsight-cluster. | Nee       |
-| yarnConfiguration      | Hiermee geeft u de garen configuratie parameters (yarn-site.xml) voor het HDInsight-cluster. | Nee       |
+| coreConfiguration      | Hiermee geeft u de para meters voor de kern configuratie op (zoals in core-site.xml) voor het HDInsight-cluster dat moet worden gemaakt. | No       |
+| hBaseConfiguration     | Hiermee geeft u de HBase-configuratie parameters (hbase-site.xml) voor het HDInsight-cluster. | No       |
+| hdfsConfiguration      | Hiermee geeft u de HDFS-configuratie parameters (hdfs-site.xml) voor het HDInsight-cluster op. | No       |
+| hiveConfiguration      | Hiermee geeft u de Hive-configuratie parameters (hive-site.xml) voor het HDInsight-cluster. | No       |
+| mapReduceConfiguration | Hiermee geeft u de MapReduce-configuratie parameters (mapred-site.xml) voor het HDInsight-cluster. | No       |
+| oozieConfiguration     | Hiermee geeft u de Oozie-configuratie parameters (oozie-site.xml) voor het HDInsight-cluster. | No       |
+| stormConfiguration     | Hiermee geeft u de Storm-configuratie parameters (storm-site.xml) voor het HDInsight-cluster. | No       |
+| yarnConfiguration      | Hiermee geeft u de garen configuratie parameters (yarn-site.xml) voor het HDInsight-cluster. | No       |
 
 * Voor beeld: HDInsight-cluster configuratie op aanvraag met geavanceerde eigenschappen
 
@@ -240,9 +236,9 @@ U kunt de grootte van de hoofd-, gegevens-en Zookeeper-knoop punten opgeven met 
 
 | Eigenschap          | Beschrijving                              | Vereist |
 | :---------------- | :--------------------------------------- | :------- |
-| headNodeSize      | Hiermee wordt de grootte van het hoofd knooppunt opgegeven. De standaard waarde is: Standard_D3. Zie de sectie **knooppunt grootten opgeven** voor meer informatie. | Nee       |
-| dataNodeSize      | Hiermee wordt de grootte van het gegevens knooppunt opgegeven. De standaard waarde is: Standard_D3. | Nee       |
-| zookeeperNodeSize | Hiermee geeft u de grootte van het Zoo keeper-knoop punt. De standaard waarde is: Standard_D3. | Nee       |
+| headNodeSize      | Hiermee wordt de grootte van het hoofd knooppunt opgegeven. De standaard waarde is: Standard_D3. Zie de sectie **knooppunt grootten opgeven** voor meer informatie. | No       |
+| dataNodeSize      | Hiermee wordt de grootte van het gegevens knooppunt opgegeven. De standaard waarde is: Standard_D3. | No       |
+| zookeeperNodeSize | Hiermee geeft u de grootte van het Zoo keeper-knoop punt. De standaard waarde is: Standard_D3. | No       |
 
 * Het opgeven van de grootte van knoop punten ziet u de [grootten van virtual machines](../virtual-machines/sizes.md) artikel voor teken reeks waarden die u moet opgeven voor de eigenschappen die worden vermeld in de vorige sectie. De waarden moeten voldoen aan de **cmdlets & api's** waarnaar in het artikel wordt verwezen. Zoals u in het artikel kunt zien, heeft het gegevens knooppunt van groot (standaard) een capaciteit van 7 GB. Dit is mogelijk niet voldoende voor uw scenario. 
 
@@ -299,13 +295,13 @@ U kunt een gekoppelde Azure HDInsight-service maken om uw eigen HDInsight-cluste
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap          | Beschrijving                                                  | Vereist |
 | ----------------- | ------------------------------------------------------------ | -------- |
-| type              | De eigenschap type moet worden ingesteld op **HDInsight**.            | Ja      |
-| clusterUri        | De URI van het HDInsight-cluster.                            | Ja      |
-| gebruikersnaam          | Geef de naam op van de gebruiker die moet worden gebruikt om verbinding te maken met een bestaand HDInsight-cluster. | Ja      |
-| wachtwoord          | Geef het wacht woord voor het gebruikers account op.                       | Ja      |
-| linkedServiceName | De naam van de gekoppelde Azure Storage-service die verwijst naar de Azure Blob-opslag die wordt gebruikt door het HDInsight-cluster. <p>Op dit moment kunt u geen gekoppelde Azure Data Lake Storage-service (Gen 2) opgeven voor deze eigenschap. Als het HDInsight-cluster toegang heeft tot de Data Lake Store, kunt u toegang krijgen tot gegevens in de Azure Data Lake Storage (Gen 2) van Hive-en Pig-scripts. </p> | Ja      |
-| isEspEnabled      | Geef *waar* op als het HDInsight-cluster [Enterprise Security Package](../hdinsight/domain-joined/apache-domain-joined-architecture.md) ingeschakeld. De standaard waarde is *False*. | Nee       |
-| connectVia        | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. <br />Voor Enterprise Security Package (ESP) ingeschakeld HDInsight-cluster maakt gebruik van een zelf-hostende Integration runtime, die een regel van het gezichts punt naar het cluster heeft of moet worden geïmplementeerd in dezelfde Virtual Network als het ESP HDInsight-cluster. | Nee       |
+| type              | De eigenschap type moet worden ingesteld op **HDInsight**.            | Yes      |
+| clusterUri        | De URI van het HDInsight-cluster.                            | Yes      |
+| gebruikersnaam          | Geef de naam op van de gebruiker die moet worden gebruikt om verbinding te maken met een bestaand HDInsight-cluster. | Yes      |
+| wachtwoord          | Geef het wacht woord voor het gebruikers account op.                       | Yes      |
+| linkedServiceName | De naam van de gekoppelde Azure Storage-service die verwijst naar de Azure Blob-opslag die wordt gebruikt door het HDInsight-cluster. <p>Op dit moment kunt u geen gekoppelde Azure Data Lake Storage-service (Gen 2) opgeven voor deze eigenschap. Als het HDInsight-cluster toegang heeft tot de Data Lake Store, kunt u toegang krijgen tot gegevens in de Azure Data Lake Storage (Gen 2) van Hive-en Pig-scripts. </p> | Yes      |
+| isEspEnabled      | Geef *waar* op als het HDInsight-cluster [Enterprise Security Package](../hdinsight/domain-joined/apache-domain-joined-architecture.md) ingeschakeld. De standaard waarde is *False*. | No       |
+| connectVia        | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. <br />Voor Enterprise Security Package (ESP) ingeschakeld HDInsight-cluster maakt gebruik van een zelf-hostende Integration runtime, die een regel van het gezichts punt naar het cluster heeft of moet worden geïmplementeerd in dezelfde Virtual Network als het ESP HDInsight-cluster. | No       |
 
 > [!IMPORTANT]
 > HDInsight ondersteunt meerdere Hadoop-cluster versies die kunnen worden geïmplementeerd. Met elke versie keuze maakt u een specifieke versie van de HDP-distributie (Hortonworks data platform) en een set onderdelen die zijn opgenomen in die distributie. De lijst met ondersteunde HDInsight-versies blijft bijgewerkt met de nieuwste Hadoop ecosysteem-onderdelen en-oplossingen. Raadpleeg altijd de nieuwste informatie over de [ondersteunde hdinsight-versie en het type besturings systeem](../hdinsight/hdinsight-component-versioning.md#supported-hdinsight-versions) om ervoor te zorgen dat u een ondersteunde versie van hdinsight gebruikt. 
@@ -359,13 +355,13 @@ Zie de volgende artikelen als u geen ervaring hebt met Azure Batch-service:
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap          | Beschrijving                              | Vereist |
 | ----------------- | ---------------------------------------- | -------- |
-| type              | De eigenschap type moet worden ingesteld op **AzureBatch**. | Ja      |
-| accountName       | De naam van het Azure Batch-account.         | Ja      |
-| accessKey         | De toegangs sleutel voor het Azure Batch-account.  | Ja      |
-| batchUri          | URL naar uw Azure Batch-account, in de indeling https://*batchaccountname. Region*. batch.Azure.com. | Ja      |
-| poolName          | De naam van de pool van virtuele machines.    | Ja      |
-| linkedServiceName | De naam van de Azure Storage gekoppelde service die is gekoppeld aan deze Azure Batch gekoppelde service. Deze gekoppelde service wordt gebruikt voor tijdelijke bestanden die vereist zijn om de activiteit uit te voeren. | Ja      |
-| connectVia        | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee       |
+| type              | De eigenschap type moet worden ingesteld op **AzureBatch**. | Yes      |
+| accountName       | De naam van het Azure Batch-account.         | Yes      |
+| accessKey         | De toegangs sleutel voor het Azure Batch-account.  | Yes      |
+| batchUri          | URL naar uw Azure Batch-account, in de indeling https://*batchaccountname. Region*. batch.Azure.com. | Yes      |
+| poolName          | De naam van de pool van virtuele machines.    | Yes      |
+| linkedServiceName | De naam van de Azure Storage gekoppelde service die is gekoppeld aan deze Azure Batch gekoppelde service. Deze gekoppelde service wordt gebruikt voor tijdelijke bestanden die vereist zijn om de activiteit uit te voeren. | Yes      |
+| connectVia        | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No       |
 
 ## <a name="azure-machine-learning-studio-classic-linked-service"></a>Gekoppelde service Azure Machine Learning Studio (klassiek)
 U maakt een gekoppelde Azure Machine Learning Studio-Service (klassiek) om een Machine Learning Studio (klassiek) batch Score-eind punt te registreren voor een data factory.
@@ -395,14 +391,14 @@ U maakt een gekoppelde Azure Machine Learning Studio-Service (klassiek) om een M
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap               | Beschrijving                              | Vereist                                 |
 | ---------------------- | ---------------------------------------- | ---------------------------------------- |
-| Type                   | De eigenschap type moet worden ingesteld op: **AzureML**. | Ja                                      |
-| mlEndpoint             | De batch Score-URL.                   | Ja                                      |
-| apiKey                 | De API van het gepubliceerde werkruimte model.     | Ja                                      |
-| updateResourceEndpoint | De bron-URL van de update voor een webservice-eind punt voor Azure Machine Learning Studio (klassiek) dat wordt gebruikt om de voorspellende webservice bij te werken met het getrainde model bestand | Nee                                       |
+| Type                   | De eigenschap type moet worden ingesteld op: **AzureML**. | Yes                                      |
+| mlEndpoint             | De batch Score-URL.                   | Yes                                      |
+| apiKey                 | De API van het gepubliceerde werkruimte model.     | Yes                                      |
+| updateResourceEndpoint | De bron-URL van de update voor een webservice-eind punt voor Azure Machine Learning Studio (klassiek) dat wordt gebruikt om de voorspellende webservice bij te werken met het getrainde model bestand | No                                       |
 | servicePrincipalId     | Geef de client-ID van de toepassing op.     | Vereist als updateResourceEndpoint is opgegeven |
 | servicePrincipalKey    | Geef de sleutel van de toepassing op.           | Vereist als updateResourceEndpoint is opgegeven |
 | tenant                 | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Vereist als updateResourceEndpoint is opgegeven |
-| connectVia             | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee                                       |
+| connectVia             | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No                                       |
 
 ## <a name="azure-machine-learning-linked-service"></a>Azure Machine Learning gekoppelde service
 U maakt een Azure Machine Learning gekoppelde service om een Azure Machine Learning werk ruimte te verbinden met een data factory.
@@ -439,14 +435,14 @@ U maakt een Azure Machine Learning gekoppelde service om een Azure Machine Learn
 ### <a name="properties"></a>Eigenschappen
 | Eigenschap               | Beschrijving                              | Vereist                                 |
 | ---------------------- | ---------------------------------------- | ---------------------------------------- |
-| Type                   | De eigenschap type moet worden ingesteld op: **AzureMLService**. | Ja                                      |
-| subscriptionId         | Azure-abonnements-ID              | Ja                                      |
-| resourceGroupName      | naam | Ja                                      |
-| mlWorkspaceName        | Naam van Azure Machine Learning werkruimte | Ja  |
-| servicePrincipalId     | Geef de client-ID van de toepassing op.     | Nee |
-| servicePrincipalKey    | Geef de sleutel van de toepassing op.           | Nee |
-| tenant                 | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Vereist als updateResourceEndpoint is opgegeven | Nee |
-| connectVia             | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee |
+| Type                   | De eigenschap type moet worden ingesteld op: **AzureMLService**. | Yes                                      |
+| subscriptionId         | Azure-abonnements-ID              | Yes                                      |
+| resourceGroupName      | naam | Yes                                      |
+| mlWorkspaceName        | Naam van Azure Machine Learning werkruimte | Yes  |
+| servicePrincipalId     | Geef de client-ID van de toepassing op.     | No |
+| servicePrincipalKey    | Geef de sleutel van de toepassing op.           | No |
+| tenant                 | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Vereist als updateResourceEndpoint is opgegeven | No |
+| connectVia             | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No |
 
 ## <a name="azure-data-lake-analytics-linked-service"></a>Azure Data Lake Analytics gekoppelde service
 U maakt een **Azure data Lake Analytics** gekoppelde service om een Azure data Lake Analytics compute-service aan een Azure Data Factory te koppelen. De Data Lake Analytics U-SQL-activiteit in de pijp lijn verwijst naar deze gekoppelde service. 
@@ -482,15 +478,15 @@ U maakt een **Azure data Lake Analytics** gekoppelde service om een Azure data L
 
 | Eigenschap             | Beschrijving                              | Vereist                                 |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
-| type                 | De eigenschap type moet worden ingesteld op: **AzureDataLakeAnalytics**. | Ja                                      |
-| accountName          | Azure Data Lake Analytics account naam.  | Ja                                      |
-| dataLakeAnalyticsUri | Azure Data Lake Analytics-URI.           | Nee                                       |
-| subscriptionId       | Azure-abonnements-ID                    | Nee                                       |
-| resourceGroupName    | Naam van Azure-resourcegroep                | Nee                                       |
-| servicePrincipalId   | Geef de client-ID van de toepassing op.     | Ja                                      |
-| servicePrincipalKey  | Geef de sleutel van de toepassing op.           | Ja                                      |
-| tenant               | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Ja                                      |
-| connectVia           | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee                                       |
+| type                 | De eigenschap type moet worden ingesteld op: **AzureDataLakeAnalytics**. | Yes                                      |
+| accountName          | Azure Data Lake Analytics account naam.  | Yes                                      |
+| dataLakeAnalyticsUri | Azure Data Lake Analytics-URI.           | No                                       |
+| subscriptionId       | Azure-abonnements-ID                    | No                                       |
+| resourceGroupName    | Naam van Azure-resourcegroep                | No                                       |
+| servicePrincipalId   | Geef de client-ID van de toepassing op.     | Yes                                      |
+| servicePrincipalKey  | Geef de sleutel van de toepassing op.           | Yes                                      |
+| tenant               | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. | Yes                                      |
+| connectVia           | Het Integration Runtime dat moet worden gebruikt voor het verzenden van de activiteiten naar deze gekoppelde service. U kunt Azure Integration Runtime of zelf-hostende Integration Runtime gebruiken. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No                                       |
 
 
 
@@ -544,18 +540,18 @@ U kunt **Azure Databricks gekoppelde service** maken om de Databricks-werk ruimt
 
 | Eigenschap             | Beschrijving                              | Vereist                                 |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
-| naam                 | De naam van de gekoppelde service               | Ja   |
-| type                 | De eigenschap type moet worden ingesteld op: **Azure Databricks**. | Ja                                      |
-| domein               | Geef de Azure-regio op op basis van de regio van de Databricks-werk ruimte. Voorbeeld: https://eastus.azuredatabricks.net | Ja                                 |
-| accessToken          | Er is een toegangs token vereist om Data Factory te verifiëren bij Azure Databricks. Het toegangs token moet worden gegenereerd op basis van de databricks-werk ruimte. Meer gedetailleerde stappen om het toegangs token te vinden, vindt u [hier](https://docs.azuredatabricks.net/api/latest/authentication.html#generate-token)  | Nee                                       |
-| MSI          | Gebruik de beheerde identiteit van Data Factory (systeem toegewezen) voor verificatie bij Azure Databricks. U hebt geen toegangs token wanneer u MSI-verificatie gebruikt  | Nee                                       |
-| existingClusterId    | De cluster-ID van een bestaand cluster voor het uitvoeren van alle taken. Dit moet een al gemaakt interactief cluster zijn. Mogelijk moet u het cluster hand matig opnieuw opstarten als het niet meer reageert. Databricks suggereert het uitvoeren van taken op nieuwe clusters voor een grotere betrouw baarheid. U vindt de cluster-ID van een interactief cluster op Databricks werkruimte-> clusters-> interactieve cluster naam-> configuratie->-Tags. [Meer Details](https://docs.databricks.com/user-guide/clusters/tags.html) | Nee 
-| instancePoolId    | ID van de exemplaar groep van een bestaande groep in de databricks-werk ruimte.  | Nee  |
-| newClusterVersion    | De Spark-versie van het cluster. Er wordt een taak cluster gemaakt in databricks. | Nee  |
-| newClusterNumOfWorker| Het aantal worker-knoop punten dat dit cluster moet hebben. Een cluster heeft één Spark-stuur programma en num_workers-uitvoerders voor een totaal van num_workers + 1 Spark-knoop punten. Een teken reeks met de notatie Int32, zoals ' 1 ' betekent dat numOfWorker 1 of ' 1:10 ' betekent dat automatisch wordt geschaald van 1 tot en met 10 als Max.  | Nee                |
-| newClusterNodeType   | Dit veld codeert, via één waarde, de bronnen die beschikbaar zijn voor elk van de Spark-knoop punten in dit cluster. De Spark-knoop punten kunnen bijvoorbeeld worden ingericht en geoptimaliseerd voor geheugen of computerintensieve werk belastingen. Dit veld is vereist voor het nieuwe cluster                | Nee               |
-| newClusterSparkConf  | een set optionele, door de gebruiker opgegeven Spark-configuratie sleutel-waardeparen. Gebruikers kunnen ook een reeks extra JVM-opties door geven aan het stuur programma en de uitvoerendeers via Spark. driver. extraJavaOptions en spark.executor. extraJavaOptions respectievelijk. | Nee  |
-| newClusterInitScripts| een set optionele, door de gebruiker gedefinieerde initialisatie scripts voor het nieuwe cluster. Het DBFS-pad naar de init-scripts opgeven. | Nee  |
+| naam                 | De naam van de gekoppelde service               | Yes   |
+| type                 | De eigenschap type moet worden ingesteld op: **Azure Databricks**. | Yes                                      |
+| domein               | Geef de Azure-regio op op basis van de regio van de Databricks-werk ruimte. Voorbeeld: https://eastus.azuredatabricks.net | Yes                                 |
+| accessToken          | Er is een toegangs token vereist om Data Factory te verifiëren bij Azure Databricks. Het toegangs token moet worden gegenereerd op basis van de databricks-werk ruimte. Meer gedetailleerde stappen om het toegangs token te vinden, vindt u [hier](/azure/databricks/dev-tools/api/latest/authentication#generate-token)  | No                                       |
+| MSI          | Gebruik de beheerde identiteit van Data Factory (systeem toegewezen) voor verificatie bij Azure Databricks. U hebt geen toegangs token wanneer u MSI-verificatie gebruikt  | No                                       |
+| existingClusterId    | De cluster-ID van een bestaand cluster voor het uitvoeren van alle taken. Dit moet een al gemaakt interactief cluster zijn. Mogelijk moet u het cluster hand matig opnieuw opstarten als het niet meer reageert. Databricks suggereert het uitvoeren van taken op nieuwe clusters voor een grotere betrouw baarheid. U vindt de cluster-ID van een interactief cluster op Databricks werkruimte-> clusters-> interactieve cluster naam-> configuratie->-Tags. [Meer Details](https://docs.databricks.com/user-guide/clusters/tags.html) | No 
+| instancePoolId    | ID van de exemplaar groep van een bestaande groep in de databricks-werk ruimte.  | No  |
+| newClusterVersion    | De Spark-versie van het cluster. Er wordt een taak cluster gemaakt in databricks. | No  |
+| newClusterNumOfWorker| Het aantal worker-knoop punten dat dit cluster moet hebben. Een cluster heeft één Spark-stuur programma en num_workers-uitvoerders voor een totaal van num_workers + 1 Spark-knoop punten. Een teken reeks met de notatie Int32, zoals ' 1 ' betekent dat numOfWorker 1 of ' 1:10 ' betekent dat automatisch wordt geschaald van 1 tot en met 10 als Max.  | No                |
+| newClusterNodeType   | Dit veld codeert, via één waarde, de bronnen die beschikbaar zijn voor elk van de Spark-knoop punten in dit cluster. De Spark-knoop punten kunnen bijvoorbeeld worden ingericht en geoptimaliseerd voor geheugen of computerintensieve werk belastingen. Dit veld is vereist voor het nieuwe cluster                | No               |
+| newClusterSparkConf  | een set optionele, door de gebruiker opgegeven Spark-configuratie sleutel-waardeparen. Gebruikers kunnen ook een reeks extra JVM-opties door geven aan het stuur programma en de uitvoerendeers via Spark. driver. extraJavaOptions en spark.executor. extraJavaOptions respectievelijk. | No  |
+| newClusterInitScripts| een set optionele, door de gebruiker gedefinieerde initialisatie scripts voor het nieuwe cluster. Het DBFS-pad naar de init-scripts opgeven. | No  |
 
 
 ## <a name="azure-sql-database-linked-service"></a>Een gekoppelde Azure SQL Database-service

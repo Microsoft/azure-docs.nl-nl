@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 57fda08a996b7d46da74c0ce35bff0df20821b31
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 708c70a5144e4e38dd5de9524711c80ef28cd839
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654826"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092125"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -34,6 +34,16 @@ Voordat u de Text Analytics-API gebruikt, moet u een Azure-resource maken met ee
 2.  Selecteer de regio die u voor het eind punt wilt gebruiken.  Houd er rekening mee dat de `/analyze` `/health` eind punten alleen beschikbaar zijn in de volgende REGIO'S: VS-West 2, VS-Oost 2, VS-midden, Europa-noord en Europa-West.
 
 3.  Maak de Text Analytics resource en ga naar de Blade sleutels en eind punt aan de linkerkant van de pagina. Kopieer de sleutel die u later wilt gebruiken wanneer u de Api's aanroept. U voegt dit later toe als waarde voor de `Ocp-Apim-Subscription-Key` koptekst.
+
+## <a name="change-your-pricing-tier"></a>Uw prijs categorie wijzigen 
+
+Als u een bestaande Text Analytics resource hebt met de prijs categorie S0 via S4, kunt u deze bijwerken om de [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)Standard (S) te gebruiken:
+
+1. Navigeer naar uw Text Analytics-resource in de [Azure Portal](https://portal.azure.com/).
+2. Selecteer **prijs categorie** in het navigatie menu links. Het gaat onder **resource beheer**. 
+3. Kies de prijs categorie Standard (S). Klik vervolgens op **Selecteren**.
+
+U kunt ook een nieuwe Text Analytics resource maken met de prijs categorie Standard (S) en uw toepassingen migreren om de referenties voor de nieuwe resource te gebruiken. 
 
 ## <a name="using-the-api-synchronously"></a>De API synchroon gebruiken
 

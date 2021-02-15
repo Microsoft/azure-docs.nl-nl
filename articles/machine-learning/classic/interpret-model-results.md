@@ -3,21 +3,21 @@ title: 'ML Studio (klassiek): model resultaten interpreteren-Azure'
 description: De optimale parameterset voor een algoritme kiezen met behulp van en het visualiseren van score model uitvoer.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: 74210475cc8c0efd274d6e80c3f1c89b5206a97d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: f824cf6e30ed795ef0fe4468542ae16c801bd61b
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509498"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516121"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Modelresultaten in Azure Machine Learning Studio (klassiek) interpreteren
 
-**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**VAN TOEPASSING OP:**  ![Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek).](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek)   ![Dit is een X, wat betekent dat dit artikel van toepassing is op Azure Machine Learning.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 In dit onderwerp wordt uitgelegd hoe u de Voorspellings resultaten in Azure Machine Learning Studio (klassiek) kunt visualiseren en interpreteren. Nadat u een model hebt getraind en voor spellingen hebt uitgevoerd (het ' gescoorde ' model '), moet u het Voorspellings resultaat begrijpen en interpreteren.
 

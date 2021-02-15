@@ -1,22 +1,18 @@
 ---
 title: Uw eerste gegevensfactory bouwen (REST)
 description: In deze zelfstudie maakt u een Azure Data Factory-voorbeeldpijplijn met behulp van de Data Factory-REST API.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.date: 11/01/2017
-ms.openlocfilehash: 835f72df5c0c693c90b0cf7c45f7805b767d2bcb
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 9aa3e7f2b5f382e1212955479d8e35f91b458bf0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496361"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392014"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-data-factory-rest-api"></a>Zelfstudie: Uw eerste Azure-gegevensfactory bouwen met de Data Factory-REST API
 > [!div class="op_single_selector"]

@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 83e8089073f7e7e7634ddf00f7276e12aaf645b0
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: f95068b66fdd7907bf06086f855473b156738847
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94536435"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371092"
 ---
 # <a name="how-an-iot-edge-device-can-be-used-as-a-gateway"></a>Hoe een IoT Edge-apparaat kan worden gebruikt als gateway
 
@@ -37,7 +37,7 @@ Alle gateway patronen bieden de volgende voor delen:
 
 * **Analytics aan de rand** : gebruik AI-services lokaal om gegevens te verwerken die afkomstig zijn van downstream-apparaten zonder een telemetrie met een volledige kwaliteit naar de cloud te verzenden. Zoek en reageer lokaal op inzichten en verzend alleen een subset van gegevens naar IoT Hub.
 * De isolatie van het **downstream-apparaat** : het gateway apparaat kan alle downstream-apparaten afschermen tegen bloot stelling aan Internet. Het kan liggen tussen een operationeel technologie netwerk (OT) dat geen connectiviteit heeft en een IT-netwerk dat toegang biedt tot het web. Op dezelfde manier kunnen apparaten die geen verbinding kunnen maken met IoT Hub zelf, verbinding maken met een gateway apparaat.
-* **Verbindings multiplexing** : alle apparaten die verbinding maken met IOT hub via een IOT Edge gateway gebruiken dezelfde onderliggende verbinding.
+* **Verbindings multiplexing** : alle apparaten die verbinding maken met IOT hub via een IOT Edge gateway kunnen dezelfde onderliggende verbinding gebruiken. Deze multiplexing-functionaliteit vereist dat de IoT Edge gateway AMQP als upstream-protocol gebruikt.
 * Uitgaand **verkeer** : het IOT edge apparaat implementeert automatisch exponentiële uitstel als IOT hub het verkeer beperkt, terwijl de berichten lokaal worden bewaard. Dit voor deel is uw oplossing robuust voor pieken in het verkeer.
 * **Offline ondersteuning** : het gateway apparaat slaat berichten en dubbele updates op die niet aan IOT hub kunnen worden geleverd.
 
@@ -45,7 +45,9 @@ Alle gateway patronen bieden de volgende voor delen:
 
 In het transparante gateway patroon kunnen apparaten die theoretisch verbinding maken met IoT Hub, in plaats daarvan verbinding maken met een gateway apparaat. De downstream-apparaten hebben hun eigen IoT Hub identiteiten en verbinden met behulp van de MQTT-of AMQP-protocollen. Via de gateway wordt simpelweg communicatie tussen de apparaten en IoT Hub doorgegeven. Zowel de apparaten als de gebruikers die met hen communiceren via IoT Hub, zijn niet op de hoogte van de communicatie van een gateway. Dit gebrek aan bewustzijn betekent dat de gateway als *transparant* wordt beschouwd.
 
-<!-- 1.0.10 -->
+Zie [inzicht in de Azure IOT Edge runtime en de architectuur](iot-edge-runtime.md)voor meer informatie over hoe de IOT Edge hub communicatie beheert tussen downstream-apparaten en de Cloud.
+
+<!-- 1.1 -->
 ::: moniker range="iotedge-2018-06"
 
 IoT Edge apparaten kunnen niet worden downstream van een IoT Edge gateway.
@@ -73,6 +75,11 @@ De bovenliggende/onderliggende relatie wordt tot stand gebracht op drie punten i
 
 Voor alle apparaten in een transparant Gateway scenario zijn Cloud identiteiten vereist zodat ze kunnen worden geverifieerd bij IoT Hub. Wanneer u een apparaat-id maakt of bijwerkt, kunt u de bovenliggende of onderliggende apparaten van het apparaat instellen. Met deze configuratie wordt het bovenliggende gateway apparaat geautoriseerd om verificatie voor de onderliggende apparaten te verwerken.
 
+>[!NOTE]
+>Instellen van het bovenliggende apparaat in IoT Hub gebruikt als een optionele stap voor downstream-apparaten die gebruikmaken van symmetrische sleutel verificatie. Vanaf versie 1.1.0 moet elk downstream-apparaat echter worden toegewezen aan een bovenliggend apparaat.
+>
+>U kunt de IoT Edge hub configureren om terug te gaan naar het vorige gedrag door de omgevings variabele **AuthenticationMode** in te stellen op de waarde **CloudAndScope**.
+
 Onderliggende apparaten kunnen slechts één bovenliggend item hebben. Elk bovenliggend item kan Maxi maal 100 onderliggende items hebben.
 
 <!-- 1.2.0 -->
@@ -82,7 +89,7 @@ IoT Edge-apparaten kunnen zowel ouders als onderliggende items zijn in transpara
 
 #### <a name="gateway-discovery"></a>Gateway detectie
 
-Een onderliggend apparaat moet het bovenliggende apparaat kunnen vinden in het lokale netwerk. Configureer gateway-apparaten met een **hostnaam** , een Fully QUALIFIED domain name (FQDN) of een IP-adres, die door de onderliggende apparaten worden gebruikt om deze te zoeken.
+Een onderliggend apparaat moet het bovenliggende apparaat kunnen vinden in het lokale netwerk. Configureer gateway-apparaten met een **hostnaam**, een Fully QUALIFIED domain name (FQDN) of een IP-adres, die door de onderliggende apparaten worden gebruikt om deze te zoeken.
 
 Gebruik op downstream IoT-apparaten de para meter **gatewayHostname** in de Connection String om naar het bovenliggende apparaat te verwijzen.
 
@@ -106,7 +113,7 @@ Alle IoT Hub primitieven die samen werken met de Messa ging-pijp lijn van IoT Ed
 
 Gebruik de volgende tabel om te zien hoe verschillende IoT Hub mogelijkheden voor apparaten worden ondersteund, vergeleken met apparaten achter gateways.
 
-<!-- 1.0.10 -->
+<!-- 1.1 -->
 ::: moniker range="iotedge-2018-06"
 
 | Mogelijkheid | IoT-apparaat | IoT achter een gateway |
@@ -134,7 +141,7 @@ Gebruik de volgende tabel om te zien hoe verschillende IoT Hub mogelijkheden voo
 
 **Container installatie kopieën** kunnen worden gedownload, opgeslagen en bezorgd van bovenliggende apparaten op onderliggende apparaten.
 
-**Blobs** , waaronder ondersteunings bundels en Logboeken, kunnen worden geüpload van onderliggende apparaten naar bovenliggende apparaten.
+**Blobs**, waaronder ondersteunings bundels en Logboeken, kunnen worden geüpload van onderliggende apparaten naar bovenliggende apparaten.
 
 ::: moniker-end
 

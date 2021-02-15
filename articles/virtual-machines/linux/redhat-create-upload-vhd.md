@@ -8,19 +8,20 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: danis
-ms.openlocfilehash: c6a3385b4347f76d83963ca33fa8485974d3c62a
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 28f82b641216dcd77b650b066c72bef4c4470dd2
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881279"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098959"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Een op Red Hat gebaseerde virtuele machine voor Azure voorbereiden
-In dit artikel wordt beschreven hoe u een virtuele Red Hat Enterprise Linux-machine (RHEL) voorbereidt voor gebruik in Azure. De versies van RHEL die in dit artikel worden behandeld, zijn 6,7 + en 7.1 +. De Hyper visors voor voor bereidingen die in dit artikel worden behandeld, zijn Hyper-V, op kernel gebaseerde virtuele machine (KVM) en VMware. Voor meer informatie over de geschiktheids vereisten voor deelname aan het Cloud Access-programma van Red Hat raadpleegt u [de Cloud Access-website van Red Hat](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) en [voert u RHEL uit op Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Zie de [opbouw functie voor Azure-installatie kopieën](../image-builder-overview.md)voor manieren om het bouwen van RHEL-installatie kopieën te automatiseren.
+
+In dit artikel wordt beschreven hoe u een virtuele Red Hat Enterprise Linux-machine (RHEL) voorbereidt voor gebruik in Azure. De versies van RHEL die in dit artikel worden behandeld, zijn 6,7 + en 7.1 +. De Hyper visors voor voor bereidingen die in dit artikel worden behandeld, zijn Hyper-V, op kernel gebaseerde virtuele machine (KVM) en VMware. Voor meer informatie over de geschiktheids vereisten voor deelname aan het Cloud Access-programma van Red Hat raadpleegt u [de Cloud Access-website van Red Hat](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) en [voert u RHEL uit op Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Zie [Azure Image Builder](../image-builder-overview.md)voor manieren om het bouwen van RHEL-installatie kopieën te automatiseren.
 
 ## <a name="hyper-v-manager"></a>Hyper-V-beheer
 
-In deze sectie wordt beschreven hoe u een virtuele machine met [RHEL 6](#rhel-6-using-hyper-v-manager) of [RHEL 7](#rhel-7-using-hyper-v-manager) voorbereidt met behulp van Hyper-V-beheer.
+In deze sectie wordt beschreven hoe u een virtuele machine met [RHEL 6](#rhel-6-using-hyper-v-manager), [RHEL 7](#rhel-7-using-hyper-v-manager)of [RHEL 8](#rhel-8-using-hyper-v-manager) voorbereidt met behulp van Hyper-V-beheer.
 
 ### <a name="prerequisites"></a>Vereisten
 In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van de website Red Hat en de RHEL-installatie kopie hebt geïnstalleerd op een virtuele harde schijf (VHD). Zie [hyper-v-functie installeren en een virtuele machine configureren](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11))voor meer informatie over het gebruik van Hyper-v-beheer om een installatie kopie van een besturings systeem te installeren.

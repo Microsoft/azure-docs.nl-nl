@@ -1,22 +1,18 @@
 ---
 title: Naslag informatie voor JSON-script Azure Data Factory
 description: Voorziet in JSON-schema's voor Data Factory entiteiten.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 41ba08aef7aed761c3c6063f97768f22bffe3a36
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: f17d851e517e1ea0297bf8169c42496068e57533
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508489"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371257"
 ---
 # <a name="azure-data-factory---json-scripting-reference"></a>Naslag informatie voor JSON-script Azure Data Factory
 > [!NOTE]
@@ -83,7 +79,7 @@ De structuur op hoog niveau voor een activiteit binnen een pijplijn definitie (e
 
 De volgende tabel beschrijft de eigenschappen in de JSON-definitie van de activiteit:
 
-| Label | Beschrijving | Vereist |
+| Tag | Beschrijving | Vereist |
 | --- | --- | --- |
 | naam |De naam van de activiteit. Geef een naam op die staat voor de actie die door de activiteit wordt geconfigureerd<br/><ul><li>Maximum aantal tekens: 260</li><li>Moet beginnen met een letter nummer of een onderstrepings teken ( \_ )</li><li>De volgende tekens zijn niet toegestaan: '. ', ' + ', '? ', '/', ' < ', ' > ', ' * ', '% ', ' & ' \\ , ': ', ' '</li></ul> |Yes |
 | beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt. |No |
@@ -1286,7 +1282,7 @@ Als u een gekoppelde Azure Cognitive Search-service wilt definiëren, stelt u he
 
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
-| URL | URL voor de zoek service. | Yes |
+| url | URL voor de zoek service. | Yes |
 | sleutel | De beheerders sleutel voor de zoek service. | Yes |
 
 #### <a name="example"></a>Voorbeeld
@@ -1388,7 +1384,7 @@ Als u gegevens naar een zoek index kopieert, stelt u het **sink-type** van de Ko
 
 Zie het artikel over [Azure Cognitive Search-connector](data-factory-azure-search-connector.md#copy-activity-properties) voor meer informatie.
 
-## <a name="azure-table-storage"></a>Azure-tabelopslag
+## <a name="azure-table-storage"></a>Azure Table Storage
 
 ### <a name="linked-service"></a>Gekoppelde service
 Er zijn twee soorten gekoppelde services: Azure Storage gekoppelde service en Azure Storage SAS gekoppelde service.
@@ -4071,7 +4067,7 @@ Als u een gekoppelde HTTP-service wilt definiëren, stelt u het **type** van de 
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| URL | Basis-URL naar de webserver | Yes |
+| url | Basis-URL naar de webserver | Yes |
 | authenticationType | Hiermee geeft u het verificatie type op. Toegestane waarden zijn: **Anonymous**, **Basic**, **Digest**, **Windows**, **ClientCertificate**. <br><br> Raadpleeg de secties onder deze tabel voor meer eigenschappen en JSON-voor beelden voor deze verificatie typen. | Yes |
 | enableServerCertificateValidation | Opgeven of de TLS/SSL-certificaat validatie van de server moet worden ingeschakeld als de bron HTTPS-webserver is | Nee, standaard waarde is waar |
 | gatewayName | De naam van de Data Management Gateway om verbinding te maken met een on-premises HTTP-bron. | Ja bij het kopiëren van gegevens uit een on-premises HTTP-bron. |
@@ -4269,7 +4265,7 @@ Als u een gekoppelde OData-service wilt definiëren, stelt u het **type** van de
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| URL |De URL van de OData-service. |Yes |
+| url |De URL van de OData-service. |Yes |
 | authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. <br/><br/> Voor Cloud OData zijn mogelijke waarden anoniem, basis en OAuth (Opmerking Azure Data Factory momenteel alleen op Azure Active Directory gebaseerde OAuth). <br/><br/> Voor on-premises OData zijn mogelijke waarden anoniem, basis en Windows. |Yes |
 | gebruikersnaam |Geef de gebruikers naam op als u basis verificatie gebruikt. |Ja (alleen als u basis verificatie gebruikt) |
 | wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |Ja (alleen als u basis verificatie gebruikt) |
@@ -4717,7 +4713,7 @@ Als u een gekoppelde web-service wilt definiëren, stelt u het **type** van de g
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
 | URL |URL naar de webbron |Yes |
-| authenticationType |Toegang. |Yes |
+| authenticationType |Anoniem. |Yes |
 
 
 #### <a name="example"></a>Voorbeeld
@@ -5057,7 +5053,7 @@ Zie [SQL Server connector](data-factory-sqlserver-connector.md#linked-service-pr
 
 ## <a name="data-transformation-activities"></a>ACTIVITEITEN VOOR GEGEVENS TRANSFORMATIE
 
-Activiteit | Beschrijving
+Activiteit | Description
 -------- | -----------
 [HDInsight Hive-activiteit](#hdinsight-hive-activity) | De HDInsight Hive-activiteit in een Data Factory pijp lijn voert Hive-query's uit op uw eigen of op aanvraag gebaseerd HDInsight-cluster op basis van Windows/Linux.
 [HDInsight Pig-activiteit](#hdinsight-pig-activity) | Met de HDInsight Pig-activiteit in een Data Factory pijp lijn worden Pig-query's uitgevoerd op uw eigen of op aanvraag gebaseerd HDInsight-cluster op basis van Windows/Linux.

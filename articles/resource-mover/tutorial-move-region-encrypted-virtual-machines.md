@@ -5,15 +5,15 @@ manager: evansma
 author: rayne-wiselman
 ms.service: resource-move
 ms.topic: tutorial
-ms.date: 02/04/2021
+ms.date: 02/10/2021
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 0bc70e14e341d9681c75933455eae6b0278724ca
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 014b4d09a991ae4d0bb31ec0b9adee0c9e3b3553
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99982213"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361006"
 ---
 # <a name="tutorial-move-encrypted-azure-vms-across-regions"></a>Zelf studie: versleutelde Azure-Vm's verplaatsen over regio's
 
@@ -54,26 +54,49 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 **Kosten voor de doel regio** | Verifieer prijzen en kosten voor de doelregio waarnaar u virtuele machines verplaatst. Gebruik de [prijscalculator](https://azure.microsoft.com/pricing/calculator/) om u daarbij te helpen.
 
 
-## <a name="verify-key-vault-permissions-azure-disk-encryption"></a>Verifiëren van sleutel kluis machtigingen (Azure Disk Encryption)
+## <a name="verify-user-permissions-on-key-vault-for-vms-using-azure-disk-encryption-ade"></a>Gebruikers machtigingen voor de sleutel kluis voor VM'S controleren met behulp van Azure Disk Encryption (ADE)
 
-Als u Vm's met Azure Disk Encryption hebt ingeschakeld, moet u in de sleutel kluizen in de bron-en doel regio's machtigingen controleren/instellen om ervoor te zorgen dat het verplaatsen van versleutelde Vm's naar verwachting werkt. 
+Als u virtuele machines verplaatst waarvoor Azure Disk Encryption is ingeschakeld, moet u een script uitvoeren zoals [hieronder](#copy-the-keys-to-the-destination-key-vault) wordt vermeld, waarvoor de gebruiker die het script uitvoert, over de juiste machtigingen moet beschikken. Raadpleeg de onderstaande tabel voor meer informatie over de benodigde machtigingen. De opties voor het wijzigen van de machtigingen kunt u vinden door te navigeren naar de sleutel kluis in de Azure Portal onder **instellingen** de optie **toegangs beleid**.
 
-1. Open in de Azure Portal de sleutel kluis in de bron regio.
-2. Selecteer onder **instellingen** **toegangs beleid**.
+:::image type="content" source="./media/tutorial-move-region-encrypted-virtual-machines/key-vault-access-policies.png" alt-text="Om het toegangs beleid voor sleutel kluizen te openen." lightbox="./media/tutorial-move-region-encrypted-virtual-machines/key-vault-access-policies.png":::
 
-    :::image type="content" source="./media/tutorial-move-region-encrypted-virtual-machines/key-vault-access-policies.png" alt-text="Om het toegangs beleid voor sleutel kluizen te openen." lightbox="./media/tutorial-move-region-encrypted-virtual-machines/key-vault-access-policies.png":::
+Als er geen gebruikers machtigingen zijn, selecteert u **toegangs beleid toevoegen** en geeft u de machtigingen op. Als het gebruikers account al een beleid heeft, stelt u onder **gebruiker** de machtigingen in volgens de onderstaande tabel.
 
-3. Als er geen gebruikers machtigingen zijn, selecteert u **toegangs beleid toevoegen** en geeft u de machtigingen op. Als het gebruikers account al een beleid heeft, stelt u onder **gebruiker** de machtigingen in.
+Virtuele Azure-machines die gebruikmaken van ADE kunnen de volgende variaties hebben en de machtigingen moeten dienovereenkomstig worden ingesteld voor relevante onderdelen.
+- Standaard optie waarbij de schijf wordt versleuteld met alleen geheimen
+- Beveiliging is toegevoegd met behulp van [Key Encryption Key](../virtual-machines/windows/disk-encryption-key-vault.md#set-up-a-key-encryption-key-kek)
 
-    - Als de vm's die u wilt verplaatsen, zijn ingeschakeld met behulp van de Azure Disk Encryption (ADE), selecteert u in **sleutel machtigingen**  >  **sleutel beheer** de optie **ophalen** en **lijst** als deze niet is geselecteerd.
-    - Als u gebruikmaakt van door de klant beheerde sleutels (CMKs) voor het versleutelen van de versleutelings sleutels voor schijven die worden gebruikt voor versleuteling-at-rest (versleuteling aan server zijde), selecteert u in **sleutel machtigingen**  >  **sleutel beheer bewerkingen** **ophalen** en **lijst**. In **cryptografische bewerkingen** selecteert u **ontsleutelen** en **versleutelen** .
- 
-    :::image type="content" source="./media/tutorial-move-region-encrypted-virtual-machines/set-vault-permissions.png" alt-text="Vervolg keuzelijst om sleutel kluis machtigingen te selecteren." lightbox="./media/tutorial-move-region-encrypted-virtual-machines/set-vault-permissions.png":::
+### <a name="source-region-keyvault"></a>Sleutel kluis bron regio
 
-4. Selecteer in **geheime machtigingen** de optie **ophalen** **,** **lijst** en **instellen**. 
-5. Als u machtigingen toewijst aan een nieuw gebruikers account, selecteert u in de **Principal selecteren** de gebruiker aan wie u machtigingen toewijst.
-6. Zorg er in **toegangs beleid** voor dat **Azure Disk Encryption voor volume versleuteling** is ingeschakeld.
-7. Herhaal de procedure voor de sleutel kluis in de doel regio.
+De onderstaande machtigingen moeten worden ingesteld voor de gebruiker die het script uitvoert 
+
+**Onderdeel** | **Machtiging vereist**
+--- | ---
+Geheimen|  Machtiging verkrijgen <br> </br> Selecteer in geheime **machtigingen** >   **geheime beheer bewerkingen** **ophalen** 
+Sleutels <br> </br> Als u een sleutel versleutelings sleutel (KEK) gebruikt, moet u naast geheimen ook de volgende machtigingen hebben| Machtiging voor ophalen en ontsleutelen <br> </br> Selecteer bij **sleutel machtigingen**  >  **sleutel beheer bewerkingen** **ophalen**. In **cryptografische bewerkingen** selecteert u **decoderen**.
+
+### <a name="destination-region-keyvault"></a>Sleutel kluis voor het doel gebied
+
+Zorg er in **toegangs beleid** voor dat **Azure Disk Encryption voor volume versleuteling** is ingeschakeld. 
+
+De onderstaande machtigingen moeten worden ingesteld voor de gebruiker die het script uitvoert 
+
+**Onderdeel** | **Machtiging vereist**
+--- | ---
+Geheimen|  Machtiging instellen <br> </br> Selecteer in geheime **machtigingen** >   **geheime beheer bewerkingen** **instellen** 
+Sleutels <br> </br> Als u een sleutel versleutelings sleutel (KEK) gebruikt, moet u naast geheimen ook de volgende machtigingen hebben| Machtigingen ophalen, maken en versleutelen <br> </br> Selecteer in **sleutel machtigingen**  >  **sleutel beheer bewerkingen** **ophalen** en **maken** . Selecteer **versleutelen** in **cryptografische bewerkingen**.
+
+Naast de bovenstaande machtigingen moet u in de doel sleutel kluis machtigingen toevoegen voor de beheerde systeem identiteit die door resource- [bewerkings beheer](./common-questions.md#how-is-managed-identity-used-in-resource-mover) wordt gebruikt om namens u toegang te krijgen tot de Azure-resources. 
+
+1. Onder **instellingen** selecteert u **toegangs beleid toevoegen**. 
+2. Zoek in de **Principal selecteren** naar het MSI-bestand. De MSI-naam is ```movecollection-<sourceregion>-<target-region>-<metadata-region>``` . 
+3. De onderstaande machtigingen voor het MSI toevoegen
+
+**Onderdeel** | **Machtiging vereist**
+--- | ---
+Geheimen|  Machtiging ophalen en weer geven <br> </br> Selecteer in geheime **machtigingen** voor geheime >   **beheer bewerkingen** **ophalen** en **lijst** 
+Sleutels <br> </br> Als u een sleutel versleutelings sleutel (KEK) gebruikt, moet u naast geheimen ook de volgende machtigingen hebben| Get, lijst machtiging <br> </br> Selecteer in **sleutel machtigingen**  >  **sleutel beheer bewerkingen** **ophalen** en **lijst**
+
 
 
 ### <a name="copy-the-keys-to-the-destination-key-vault"></a>De sleutels naar de doel sleutel kluis kopiëren

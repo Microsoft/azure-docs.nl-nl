@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4a35bafd2c5dc78f0d9d1debbf21babb6279545
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: a204db8453ec8126e1aa9033e10f739a6f8a0d43
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740088"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095134"
 ---
 # <a name="use-cloud-groups-to-manage-role-assignments-in-azure-active-directory-preview"></a>Cloud groepen gebruiken voor het beheren van roltoewijzingen in Azure Active Directory (preview-versie)
 
@@ -28,7 +28,7 @@ Bekijk dit voor beeld: contoso heeft personen in de buitenste grafieken voor het
 
 ## <a name="how-this-feature-works"></a>Hoe deze functie werkt
 
-Maak een nieuwe Microsoft 365 of beveiligings groep waarvan de eigenschap ' isAssignableToRole ' is ingesteld op ' True '. U kunt deze eigenschap ook inschakelen bij het maken van een groep in de Azure Portal door **Azure AD-rollen in te scha kelen, kunnen worden toegewezen aan de groep**. In beide gevallen kunt u de groep vervolgens op dezelfde manier toewijzen aan een of meer Azure AD-rollen als u rollen aan gebruikers toewijst. Maxi maal 200 functie-toewijs bare groepen kunnen worden gemaakt in één Azure AD-organisatie (Tenant).
+Maak een nieuwe Microsoft 365 of beveiligings groep waarvan de eigenschap ' isAssignableToRole ' is ingesteld op ' True '. U kunt deze eigenschap ook inschakelen bij het maken van een groep in de Azure Portal door **Azure AD-rollen in te scha kelen, kunnen worden toegewezen aan de groep**. In beide gevallen kunt u de groep vervolgens op dezelfde manier toewijzen aan een of meer Azure AD-rollen als u rollen aan gebruikers toewijst. Maxi maal 250 functie-toewijs bare groepen kunnen worden gemaakt in één Azure AD-organisatie (Tenant).
 
 Als u niet wilt dat leden van de groep permanente toegang tot de rol hebben, kunt u Azure AD Privileged Identity Management gebruiken. Wijs een groep toe als een in aanmerking komend lid van een Azure AD-rol. Elk lid van de groep komt dan in aanmerking om hun toewijzing te activeren voor de rol waaraan de groep is toegewezen. Ze kunnen vervolgens hun roltoewijzing activeren voor een vaste tijds duur.
 

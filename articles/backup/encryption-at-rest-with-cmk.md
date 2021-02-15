@@ -3,12 +3,12 @@ title: Versleuteling van back-upgegevens met door de klant beheerde sleutels
 description: Meer informatie over hoe u met Azure Backup uw back-upgegevens kunt versleutelen met behulp van door de klant beheerde sleutels (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: d5daa88475e3becde6e513391c555471f80396c5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 230669e0a3543a0709dda3f7fee35a0cae300d5a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735857"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369455"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Versleuteling van back-upgegevens met door de klant beheerde sleutels
 
@@ -36,6 +36,7 @@ In dit artikel komen de volgende onderwerpen aan bod:
 - De Recovery Services kluis kan alleen worden versleuteld met sleutels die zijn opgeslagen in een Azure Key Vault, die zich in **dezelfde regio** bevinden. Daarnaast moeten sleutels alleen **RSA 2048-sleutels** zijn en de status **ingeschakeld** hebben.
 
 - Het verplaatsen van CMK versleutelde Recovery Services kluis over resource groepen en abonnementen wordt momenteel niet ondersteund.
+- Wanneer u een Recovery Services kluis verplaatst die al is versleuteld met door de klant beheerde sleutels naar een nieuwe Tenant, moet u de Recovery Services kluis bijwerken om de beheerde identiteit en CMK van de kluis opnieuw te maken en opnieuw te configureren (deze moet zich in de nieuwe Tenant bevinden). Als dat niet het geval is, mislukken de back-up-en herstel bewerkingen. Daarnaast moeten alle RBAC-machtigingen (op rollen gebaseerd toegangs beheer) die in het abonnement zijn ingesteld, opnieuw worden geconfigureerd.
 
 - Deze functie kan worden geconfigureerd via de Azure Portal en Power shell.
 
@@ -119,32 +120,6 @@ U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key
 
 1. Selecteer **Opslaan** om de wijzigingen op te slaan in het toegangs beleid van de Azure Key Vault.
 
-**Met Power shell**:
-
-Gebruik de opdracht [set-AzRecoveryServicesVaultProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) om versleuteling in te scha kelen met door de klant beheerde sleutels en om de versleutelings sleutel die moet worden gebruikt, toe te wijzen of bij te werken.
-
-Voorbeeld:
-
-```azurepowershell
-$keyVault = Get-AzKeyVault -VaultName "testkeyvault" -ResourceGroupName "testrg" 
-$key = Get-AzKeyVaultKey -VaultName $keyVault -Name "testkey" 
-Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -KeyVaultSubscriptionId "xxxx-yyyy-zzzz"  -VaultId $vault.ID
-
-
-$enc=Get-AzRecoveryServicesVaultProperty -VaultId $vault.ID
-$enc.encryptionProperties | fl
-```
-
-Uitvoer:
-
-```output
-EncryptionAtRestType          : CustomerManaged
-KeyUri                        : testkey
-SubscriptionId                : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-LastUpdateStatus              : Succeeded
-InfrastructureEncryptionState : Disabled
-```
-
 ### <a name="enable-soft-delete-and-purge-protection-on-the-azure-key-vault"></a>Zacht verwijderen inschakelen en beveiliging opschonen op de Azure Key Vault
 
 U moet **voorlopig verwijderen en beveiliging opschonen inschakelen** op uw Azure Key Vault waarin uw versleutelings sleutel wordt opgeslagen. U kunt dit doen vanuit de Azure Key Vault-gebruikers interface, zoals hieronder wordt weer gegeven. (U kunt deze eigenschappen ook instellen tijdens het maken van de Key Vault). Meer informatie over deze Key Vault eigenschappen [vindt u hier](../key-vault/general/soft-delete-overview.md).
@@ -197,7 +172,7 @@ U kunt met behulp van de volgende stappen ook de beveiliging van zacht verwijder
 
 Zodra het bovenstaande is gewaarborgd, gaat u door met het selecteren van de versleutelings sleutel voor uw kluis.
 
-De sleutel toewijzen:
+#### <a name="to-assign-the-key-in-the-portal"></a>De sleutel in de portal toewijzen
 
 1. Ga naar uw Recovery Services kluis-> **Eigenschappen**
 
@@ -230,6 +205,32 @@ De sleutel toewijzen:
     De versleutelings sleutel updates worden ook geregistreerd in het activiteiten logboek van de kluis.
 
     ![Activiteitenlogboek](./media/encryption-at-rest-with-cmk/activity-log.png)
+
+#### <a name="to-assign-the-key-with-powershell"></a>De sleutel toewijzen met Power shell
+
+Gebruik de opdracht [set-AzRecoveryServicesVaultProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) om versleuteling in te scha kelen met door de klant beheerde sleutels en om de versleutelings sleutel die moet worden gebruikt, toe te wijzen of bij te werken.
+
+Voorbeeld:
+
+```azurepowershell
+$keyVault = Get-AzKeyVault -VaultName "testkeyvault" -ResourceGroupName "testrg" 
+$key = Get-AzKeyVaultKey -VaultName $keyVault -Name "testkey" 
+Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -KeyVaultSubscriptionId "xxxx-yyyy-zzzz"  -VaultId $vault.ID
+
+
+$enc=Get-AzRecoveryServicesVaultProperty -VaultId $vault.ID
+$enc.encryptionProperties | fl
+```
+
+Uitvoer:
+
+```output
+EncryptionAtRestType          : CustomerManaged
+KeyUri                        : testkey
+SubscriptionId                : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
+LastUpdateStatus              : Succeeded
+InfrastructureEncryptionState : Disabled
+```
 
 >[!NOTE]
 > Dit proces blijft hetzelfde wanneer u de versleutelings sleutel wilt bijwerken of wijzigen. Als u een sleutel van een andere Key Vault wilt bijwerken en gebruiken (anders dan de versie die momenteel wordt gebruikt), zorgt u ervoor dat:

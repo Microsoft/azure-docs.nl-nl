@@ -3,12 +3,12 @@ title: Azure VMware Solution implementeren en configureren
 description: Meer informatie over hoe u gegevens verzameld in de planningsfase kunt gebruiken voor het implementeren van de Azure VMware Solution-privécloud.
 ms.topic: tutorial
 ms.date: 12/24/2020
-ms.openlocfilehash: f2b6f3c4ad82117fee96e0c2e5973a7011384d48
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 4c6929ca59bae022642082e8382203a10bd41309
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760888"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382052"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Azure VMware Solution implementeren en configureren
 
@@ -68,13 +68,13 @@ In dit voorbeeld werd het 10.74.72.0/22-netwerk ingevoerd tijdens de implementat
 
 ## <a name="connect-and-sign-in-to-vcenter-and-nsx-t"></a>Verbinding maken en aanmelden bij vCenter en NSX-T
 
-Meld u aan bij de jumpbox die u in de vorige stap hebt aangemaakt. Zodra u bent aangemeld, opent u een webbrowser en gaat u naar en meldt u zich aan bij de beheerconsole van vCenter en NSX-T.  
+Meld u aan bij de jumpbox die u in de vorige stap hebt aangemaakt. Wanneer u bent aangemeld, opent u een webbrowser en navigeert u naar en meldt u zich aan in de vCenter-en NSX-beheer console.  
 
-U kunt de IP-adressen en referenties van de beheerconsole van vCenter en NSX controleren in het Azure-portaal.  Selecteer uw privécloud en selecteer vervolgens in de weergave **Overzicht** de optie **Identiteit > Standaard**. 
+U kunt de NSX van de vCenter en de IP-adressen en referenties van de beheer console in de Azure Portal identificeren.  Selecteer uw privécloud en selecteer vervolgens in de weergave **Overzicht** de optie **Identiteit > Standaard**. 
 
 ## <a name="create-a-network-segment-on-azure-vmware-solution"></a>Een netwerksegment maken in Azure VMware Solution
 
-U gebruikt NSX-T om nieuwe netwerksegmenten te maken in uw Azure VMware Solution-omgeving.  U hebt de netwerken gedefinieerd die u wilt maken in de [sectie planning](production-ready-deployment-steps.md).  Als u deze nog niet hebt gedefinieerd, gaat u terug naar het gedeelte [planning](production-ready-deployment-steps.md) alvorens verder te gaan.
+U gebruikt NSX-T-beheer om nieuwe netwerk segmenten te maken in uw Azure VMware-oplossings omgeving.  U hebt de netwerken gedefinieerd die u wilt maken in de [sectie planning](production-ready-deployment-steps.md).  Als u deze nog niet hebt gedefinieerd, gaat u terug naar het gedeelte [planning](production-ready-deployment-steps.md) alvorens verder te gaan.
 
 >[!IMPORTANT]
 >Zorg ervoor dat het adresblok dat u hebt gedefinieerd voor het CIDR-netwerk niet overlapt met iets in uw Azure-of on-premises omgevingen.  

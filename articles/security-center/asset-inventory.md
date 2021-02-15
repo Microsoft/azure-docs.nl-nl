@@ -5,15 +5,15 @@ author: memildin
 manager: rkarlin
 services: security-center
 ms.author: memildin
-ms.date: 12/22/2020
+ms.date: 02/10/2021
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: 5b8d167992e57cd0fae35c57212ea700cd677afa
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 873fdba1d24db55b3269cc2c13f0140da4a9b4e3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920423"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393345"
 ---
 # <a name="explore-and-manage-your-resources-with-asset-inventory"></a>Uw resources verkennen en beheren met assetvoorraad
 
@@ -37,7 +37,6 @@ De mogelijkheden voor het beheer van middelen voor dit hulp programma zijn aanzi
 
 
 ## <a name="availability"></a>Beschikbaarheid
-
 |Aspect|Details|
 |----|:----|
 |Releasestatus:|Algemene Beschik baarheid (GA)|
@@ -48,33 +47,36 @@ De mogelijkheden voor het beheer van middelen voor dit hulp programma zijn aanzi
 
 
 ## <a name="what-are-the-key-features-of-asset-inventory"></a>Wat zijn de belangrijkste functies van Asset Inventory?
-
 De pagina inventarisatie bevat de volgende hulpprogram ma's:
 
-- **Samen vattingen** : voordat u filters definieert, ziet u boven aan de inventarisatie weergave een duidelijke Stripe van waarden:
+:::image type="content" source="media/asset-inventory/highlights-of-inventory.png" alt-text="Belangrijkste functies van de pagina Asset Inventory in Azure Security Center" lightbox="media/asset-inventory/highlights-of-inventory.png":::
 
-    - **Totaal resources**: het totale aantal resources dat is verbonden met Security Center.
-    - **Slechte resources**: bronnen met actieve beveiligings aanbevelingen. Meer [informatie over beveiligings aanbevelingen](security-center-recommendations.md).
-    - Niet- **bewaakte resources**: bronnen met problemen met de agent bewaking-ze hebben de log Analytics agent geïmplementeerd, maar de agent verzendt geen gegevens of heeft andere status problemen.
 
-- **Filters** : de meerdere filters boven aan de pagina bieden een manier om de lijst met resources snel te verfijnen op basis van de vraag die u probeert te beantwoorden. Als u bijvoorbeeld de vraag wilt beantwoorden op *welke van mijn machines met het label productie ontbreekt de log Analytics agent?* u kunt het **bewakings** filter van de agent combi neren met het filter **Tags** , zoals wordt weer gegeven in de volgende clip:
+### <a name="1---summaries"></a>1-samen vattingen
+Voordat u filters definieert, ziet u boven aan de inventarisatie weergave een prominente waarde:
 
-    :::image type="content" source="./media/asset-inventory/filtering-to-prod-unmonitored.gif" alt-text="Filteren op productie resources die niet worden bewaakt":::
+- **Totaal resources**: het totale aantal resources dat is verbonden met Security Center.
+- **Slechte resources**: bronnen met actieve beveiligings aanbevelingen. Meer [informatie over beveiligings aanbevelingen](security-center-recommendations.md).
+- Niet- **bewaakte resources**: bronnen met problemen met de agent bewaking-ze hebben de log Analytics agent geïmplementeerd, maar de agent verzendt geen gegevens of heeft andere status problemen.
+- Niet- **geregistreerde abonnementen**: een abonnement in het geselecteerde bereik dat nog niet is verbonden met Azure Security Center.
 
-    Zodra u filters hebt toegepast, worden de samenvattings waarden bijgewerkt om te koppelen aan de query resultaten. 
+### <a name="2---filters"></a>2-filters
+De meerdere filters boven aan de pagina bieden een manier om de lijst met resources snel te verfijnen op basis van de vraag die u probeert te beantwoorden. Als u bijvoorbeeld de vraag wilt beantwoorden *van mijn machines met het label productie, ontbreekt de log Analytics agent?* u kunt het **bewakings** filter van de agent combi neren met het filter **Tags** .
 
-- **Export opties** -inventaris biedt de mogelijkheid om de resultaten van de geselecteerde filter opties te exporteren naar een CSV-bestand. Daarnaast kunt u de query zelf exporteren naar Azure resource Graph Explorer om de KQL-query (Kusto Query Language) verder te verfijnen, op te slaan of te wijzigen.
+Zodra u filters hebt toegepast, worden de samenvattings waarden bijgewerkt om te koppelen aan de query resultaten. 
 
-    :::image type="content" source="./media/asset-inventory/inventory-export-options.png" alt-text="Export opties van de inventaris":::
+### <a name="3---export-and-asset-management-tools"></a>3-hulpprogram ma's voor export en Asset Management
 
-    > [!TIP]
-    > De KQL-documentatie biedt een Data Base met een aantal voorbeeld gegevens in combi natie met enkele eenvoudige query's om het ' gevoel ' voor de taal te krijgen. [Meer informatie vindt u in deze KQL-zelf studie](/azure/data-explorer/kusto/query/tutorial?pivots=azuredataexplorer).
+**Export opties** -inventaris bevat een optie voor het exporteren van de resultaten van de geselecteerde filter opties naar een CSV-bestand. U kunt de query zelf ook exporteren naar Azure resource Graph Explorer om de KQL-query (Kusto Query Language) verder te verfijnen, op te slaan of te wijzigen.
 
-- **Asset Management-opties** : inventaris biedt u de mogelijkheid om complexe detectie query's uit te voeren. Wanneer u de resources hebt gevonden die overeenkomen met uw query's, biedt de inventarisatie snelkoppelingen voor bewerkingen, zoals:
+> [!TIP]
+> De KQL-documentatie biedt een Data Base met een aantal voorbeeld gegevens in combi natie met enkele eenvoudige query's om het ' gevoel ' voor de taal te krijgen. [Meer informatie vindt u in deze KQL-zelf studie](/azure/data-explorer/kusto/query/tutorial?pivots=azuredataexplorer).
 
-    - Tags toewijzen aan de gefilterde resources: Selecteer de selectie vakjes naast de resources die u wilt labelen.
-    - Nieuwe servers onboarden naar Security Center: gebruik de werkbalk knop **niet-Azure-servers toevoegen** .
-    - Werk belastingen automatiseren met Azure Logic Apps: gebruik de knop **trigger Logic app** om een logische app uit te voeren op een of meer resources. Uw logische apps moeten vooraf worden voor bereid en accepteren het relevante trigger type (HTTP-aanvraag). Meer [informatie over Logic apps](../logic-apps/logic-apps-overview.md).
+**Asset Management-opties** : inventaris biedt u de mogelijkheid om complexe detectie query's uit te voeren. Wanneer u de resources hebt gevonden die overeenkomen met uw query's, biedt de inventarisatie snelkoppelingen voor bewerkingen, zoals:
+
+- Tags toewijzen aan de gefilterde resources: Selecteer de selectie vakjes naast de resources die u wilt labelen.
+- Nieuwe servers onboarden naar Security Center: gebruik de werkbalk knop **niet-Azure-servers toevoegen** .
+- Werk belastingen automatiseren met Azure Logic Apps: gebruik de knop **trigger Logic app** om een logische app uit te voeren op een of meer resources. Uw logische apps moeten vooraf worden voor bereid en accepteren het relevante trigger type (HTTP-aanvraag). Meer [informatie over Logic apps](../logic-apps/logic-apps-overview.md).
 
 
 ## <a name="how-does-asset-inventory-work"></a>Hoe werkt Asset Inventory?
@@ -94,14 +96,14 @@ Met behulp van de [Kusto-query taal (KQL)](/azure/data-explorer/kusto/query/)kan
 
 1. Selecteer de relevante opties in de filters om de specifieke query te maken die u wilt uitvoeren.
 
-    :::image type="content" source="./media/asset-inventory/inventory-filters.png" alt-text="Filter opties voor inventaris" lightbox="./media/asset-inventory/inventory-filters.png":::
-
     Standaard worden de resources gesorteerd op het aantal actieve beveiligings aanbevelingen.
 
     > [!IMPORTANT]
     > De opties in elk filter zijn specifiek voor de resources in de momenteel geselecteerde abonnementen **en** uw selecties in de andere filters.
     >
     > Als u bijvoorbeeld slechts één abonnement hebt geselecteerd en het abonnement geen resources heeft met openstaande beveiligings aanbevelingen om te herstellen (0 slechte bronnen), bevat het filter **aanbevelingen** geen opties. 
+
+    :::image type="content" source="./media/asset-inventory/filtering-to-prod-unmonitored.gif" alt-text="De filter opties in de Asset Inventory van Azure Security Center gebruiken om resources te filteren op productie resources die niet worden bewaakt":::
 
 1. Als u de **beveiligings resultaten** wilt gebruiken, moet u de vrije tekst van de id, de beveiligings controle of de CVE-naam van een beveiligings probleem bepalen dat kan worden gefilterd op de betrokken resources:
 

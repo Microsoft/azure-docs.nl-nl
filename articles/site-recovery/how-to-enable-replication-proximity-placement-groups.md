@@ -4,13 +4,13 @@ description: Meer informatie over het repliceren van virtuele Azure-machines die
 author: Sharmistha-Rai
 manager: gaggupta
 ms.topic: how-to
-ms.date: 05/25/2020
-ms.openlocfilehash: 7ac836992db33c6212fd009b914b30b7221249d8
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.date: 02/11/2021
+ms.openlocfilehash: 681b635099d450f061e0bcdb5b2c5d60d56c20a3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98745580"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380725"
 ---
 # <a name="replicate-azure-virtual-machines-running-in-proximity-placement-groups-to-another-region"></a>Virtuele Azure-machines repliceren die worden uitgevoerd in nabijheidsplaatsingsgroepen naar een andere regio
 
@@ -25,21 +25,72 @@ In een typisch scenario is het mogelijk dat uw virtuele machines worden uitgevoe
 ## <a name="considerations"></a>Overwegingen
 
 - De beste poging is om de virtuele machines te failoveren/failback uit te stellen in een proximity-plaatsings groep. Als de virtuele machine tijdens de failover/failback echter niet in de nabijheid kan worden gebracht, worden er nog steeds failover/failback uitgevoerd en worden de virtuele machines gemaakt buiten een proximity-plaatsings groep.
--  Als een Beschikbaarheidsset is vastgemaakt aan een proximity-plaatsings groep en tijdens failover/failback-Vm's in de beschikbaarheidsset een toewijzings beperking hebben, worden de virtuele machines gemaakt buiten de beschikbaarheidsset en proximity-plaatsings groep.
--  Site Recovery voor proximity-plaatsings groepen wordt niet ondersteund voor niet-beheerde schijven.
+- Als een Beschikbaarheidsset is vastgemaakt aan een proximity-plaatsings groep en tijdens failover/failback-Vm's in de beschikbaarheidsset een toewijzings beperking hebben, worden de virtuele machines gemaakt buiten de beschikbaarheidsset en proximity-plaatsings groep.
+- Site Recovery voor proximity-plaatsings groepen wordt niet ondersteund voor niet-beheerde schijven.
 
 > [!NOTE]
 > Azure Site Recovery biedt geen ondersteuning voor failback van beheerde schijven voor Hyper-V naar Azure-scenario's. Daarom wordt failback van proximity-plaatsings groep in azure naar Hyper-V niet ondersteund.
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="set-up-disaster-recovery-for-vms-in-proximity-placement-groups-via-portal"></a>Herstel na nood geval instellen voor Vm's in proximity-plaatsings groepen via de portal
+
+### <a name="azure-to-azure-via-portal"></a>Azure naar Azure via de portal
+
+U kunt ervoor kiezen om replicatie voor een virtuele machine in te scha kelen via de pagina voor nood herstel van de VM of door naar een vooraf gemaakte kluis te gaan en te navigeren naar de sectie Site Recovery en vervolgens replicatie in te scha kelen. Laten we eens kijken hoe Site Recovery kunnen worden ingesteld voor virtuele machines in een PPG met beide benaderingen:
+
+- PPG in de DR-regio selecteren tijdens het inschakelen van replicatie via de IaaS VM-Blade DR:
+  1. Ga naar de virtuele machine. Selecteer op de Blade aan de linkerkant onder bewerkingen de optie herstel na nood geval
+  2. Kies op het tabblad ' basis beginselen ' de DR-regio waarnaar u de virtuele machine wilt repliceren. Ga naar geavanceerde instellingen
+  3. Hier ziet u de plaatsings groep voor proximity van uw virtuele machine en de optie om een PPG te selecteren in de DR-regio. Site Recovery biedt u ook de mogelijkheid om een nieuwe proximity-plaatsings groep te gebruiken die u voor u maakt als u ervoor kiest om deze standaard optie te gebruiken. U kunt kiezen welke plaatsings groep u wilt gebruiken en vervolgens naar ' controleren en replicatie starten ' gaat en vervolgens replicatie inschakelen.
+
+   :::image type="content" source="media/how-to-enable-replication-proximity-placement-groups/proximity-placement-group-a2a-1.png" alt-text="Schakel replicatie in.":::
+
+- PPG in de DR-regio selecteren tijdens het inschakelen van de replicatie via de Blade kluis:
+  1. Ga naar de Recovery Services kluis en ga naar het tabblad Site Recovery
+  2. Klik op + inschakelen Site Recovery en selecteer vervolgens 1: replicatie inschakelen onder virtuele machines van Azure (zoals u wilt repliceren naar een virtuele machine van Azure)
+  3. Vul de vereiste velden in op het tabblad Bron en klik op volgende
+  4. Selecteer de lijst met Vm's waarvoor u replicatie wilt inschakelen op het tabblad virtuele machines en klik op volgende
+  5. Hier ziet u de optie voor het selecteren van een PPG in de DR-regio. Site Recovery biedt u ook de mogelijkheid om een nieuwe PPG te gebruiken die u voor u maakt als u ervoor kiest om deze standaard optie te gebruiken. U kunt de gewenste PPG kiezen en vervolgens de replicatie inschakelen.
+
+   :::image type="content" source="media/how-to-enable-replication-proximity-placement-groups/proximity-placement-group-a2a-2.png" alt-text="Schakel replicatie via de kluis in.":::
+
+Houd er rekening mee dat u de selectie van PPG in de DR-regio eenvoudig kunt bijwerken nadat de replicatie is ingeschakeld voor de virtuele machine.
+
+1. Ga naar de virtuele machine en selecteer op de Blade aan de linkerkant onder bewerkingen de optie herstel na nood geval
+2. Ga naar de Blade Compute and Network en klik boven aan de pagina op bewerken.
+3. U kunt de opties voor het bewerken van meerdere doel instellingen bekijken, inclusief de doel-PPG. Kies de PPG van de virtuele machine waarvoor u een failover wilt en klik op opslaan.
+
+### <a name="vmware-to-azure-via-portal"></a>VMware naar Azure via de portal
+
+De Proximity-plaatsings groep voor de doel-VM kan worden ingesteld nadat de replicatie voor de virtuele machine is ingeschakeld. Zorg ervoor dat u de PPG in de doel regio afzonderlijk maakt op basis van uw vereiste. Daarna kunt u de selectie van PPG in de DR-regio eenvoudig bijwerken nadat de replicatie is ingeschakeld voor de virtuele machine.
+
+1. Selecteer de virtuele machine uit de kluis en klik op de Blade aan de linkerkant onder bewerkingen op herstel na nood geval
+2. Ga naar de Blade Compute and Network en klik boven aan de pagina op bewerken.
+3. U kunt de opties voor het bewerken van meerdere doel instellingen bekijken, inclusief de doel-PPG. Kies de PPG van de virtuele machine waarvoor u een failover wilt en klik op opslaan.
+
+   :::image type="content" source="media/how-to-enable-replication-proximity-placement-groups/proximity-placement-groups-update-v2a.png" alt-text="PPG V2A bijwerken":::
+
+### <a name="hyper-v-to-azure-via-portal"></a>Hyper-V naar Azure via de portal
+
+De Proximity-plaatsings groep voor de doel-VM kan worden ingesteld nadat de replicatie voor de virtuele machine is ingeschakeld. Zorg ervoor dat u de PPG in de doel regio afzonderlijk maakt op basis van uw vereiste. Daarna kunt u de selectie van PPG in de DR-regio eenvoudig bijwerken nadat de replicatie is ingeschakeld voor de virtuele machine.
+
+1. Selecteer de virtuele machine uit de kluis en klik op de Blade aan de linkerkant onder bewerkingen op herstel na nood geval
+2. Ga naar de Blade Compute and Network en klik boven aan de pagina op bewerken.
+3. U kunt de opties voor het bewerken van meerdere doel instellingen bekijken, inclusief de doel-PPG. Kies de PPG van de virtuele machine waarvoor u een failover wilt en klik op opslaan.
+
+   :::image type="content" source="media/how-to-enable-replication-proximity-placement-groups/proximity-placement-groups-update-h2a.png" alt-text="PPG H2A bijwerken":::
+
+## <a name="set-up-disaster-recovery-for-vms-in-proximity-placement-groups-via-powershell"></a>Herstel na nood geval instellen voor Vm's in proximity-plaatsings groepen via Power shell
+
+### <a name="prerequisites"></a>Vereisten 
 
 1. Zorg ervoor dat u beschikt over de Azure PowerShell AZ-module. Als u Azure PowerShell moet installeren of upgraden, volgt u deze [hand leiding voor het installeren en configureren van Azure PowerShell](/powershell/azure/install-az-ps).
 2. De minimale Azure PowerShell AZ-versie moet 4.1.0 zijn. Als u de huidige versie wilt controleren, gebruikt u de onderstaande opdracht:
+
     ```
     Get-InstalledModule -Name Az
     ```
 
-## <a name="set-up-site-recovery-for-virtual-machines-in-proximity-placement-group"></a>Site Recovery instellen voor Virtual Machines in proximity-plaatsings groep
+### <a name="set-up-site-recovery-for-virtual-machines-in-proximity-placement-group"></a>Site Recovery instellen voor Virtual Machines in proximity-plaatsings groep
 
 > [!NOTE]
 > Zorg ervoor dat u beschikt over de unieke ID van de plaatsings groep voor doel gerichte nabijheid. Als u een nieuwe proximity-plaatsings groep wilt maken, controleert u de opdracht [hier](../virtual-machines/windows/proximity-placement-groups.md#create-a-proximity-placement-group) en als u een bestaande proximity-plaatsings groep gebruikt, gebruikt u de opdracht [hier](../virtual-machines/windows/proximity-placement-groups.md#list-proximity-placement-groups).
@@ -165,7 +216,7 @@ Update-AzRecoveryServicesAsrProtectionDirection -ReplicationProtectedItem $Repli
 
 14. Volg [de stappen om](./azure-to-azure-powershell.md#disable-replication)replicatie uit te scha kelen.
 
-### <a name="vmware-to-azure"></a>VMware naar Azure
+### <a name="vmware-to-azure-via-powershell"></a>VMware naar Azure via Power shell
 
 1. Zorg ervoor dat u [de on-premises VMware-servers voorbereidt](./vmware-azure-tutorial-prepare-on-premises.md) op herstel na nood geval naar Azure.
 2. Meld u aan bij uw account en stel uw abonnement in zoals [hier](./vmware-azure-disaster-recovery-powershell.md#log-into-azure)is opgegeven.
@@ -203,7 +254,7 @@ Get-AzRecoveryServicesAsrReplicationProtectedItem -ProtectionContainer $Protecti
 10. [Voer](./vmware-azure-disaster-recovery-powershell.md#run-a-test-failover) een testfailover uit.
 11. Failover naar Azure met behulp van [deze](./vmware-azure-disaster-recovery-powershell.md#fail-over-to-azure) stappen.
 
-### <a name="hyper-v-to-azure"></a>Hyper-V naar Azure
+### <a name="hyper-v-to-azure-via-powershell"></a>Hyper-V naar Azure via Power shell
 
 1. Zorg ervoor dat u [de on-premises Hyper-V-servers voorbereidt](./hyper-v-prepare-on-premises-tutorial.md) op herstel na nood geval naar Azure.
 2. [Meld](./hyper-v-azure-powershell-resource-manager.md#step-1-sign-in-to-your-azure-account) u aan bij Azure.

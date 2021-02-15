@@ -1,14 +1,14 @@
 ---
 title: Gedelegeerde resources op schaal controleren
 description: Meer informatie over het effectief gebruiken van Azure Monitor-logboeken op schaal bare wijze over de tenants van de klant die u beheert.
-ms.date: 02/02/2021
+ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 8847c2e5ee4986d35ad676440720b150794003e8
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: f3a789c855f7b05d24cdacd0fb31ee7d6d3e188b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575903"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379230"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Gedelegeerde resources op schaal controleren
 
@@ -65,7 +65,6 @@ alertsmanagementresources
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Probeer de [activiteiten logboeken](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/workbook-activitylogs-by-domain) uit op de werkmap van het domein op github.
 - Verken deze door [MVP gemaakte voorbeeld werkmap](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks), die de compatibiliteits rapportage voor patches bijhoudt door [updatebeheer logboeken te doorzoeken](../../automation/update-management/query-logs.md) op meerdere log Analytics-werk ruimten. 
-- Meer informatie over [Azure monitor](../../azure-monitor/index.yml).
-- Meer informatie over [Azure monitor-logboeken](../../azure-monitor/platform/data-platform-logs.md).
-- Meer informatie over [beheerervaring in meerdere tenants](../concepts/cross-tenant-management-experience.md).
+- Meer informatie over andere [ervaring op het beheer van cross-tenants](../concepts/cross-tenant-management-experience.md).

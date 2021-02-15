@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: 601b725e5f1fe06c12416ad8ab36ac657f0412f2
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: a7337175241834cef862b4af07c7bcf7c8b845d0
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583413"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103767"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Quickstart: Aanmelden met Microsoft toevoegen aan een Java-webapp
 
@@ -38,7 +38,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 >
 > ### <a name="option-1-register-and-automatically-configure-your-app-and-then-download-the-code-sample"></a>Optie 1: Registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavaQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Ga naar de quickstart-ervaring <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavaQuickstartPage/sourceType/docs" target="_blank">Azure-portal - App-registraties</a>.
 > 1. Voer een naam in voor de toepassing en selecteer dan **Registreren**.
 > 1. Volg de instructies in de quickstart van het portal om de automatisch geconfigureerde toepassingscode te downloaden.
 >
@@ -48,7 +48,7 @@ Als u dit voorbeeld wilt uitvoeren, hebt u het volgende nodig:
 >
 > Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen:
 >
-> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
 > 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement**:::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u de toepassing wilt registreren.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
 > 1. Selecteer **App-registraties** onder **Beheren**.

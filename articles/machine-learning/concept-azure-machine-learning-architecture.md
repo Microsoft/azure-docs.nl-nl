@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.date: 08/20/2020
 ms.custom: seoapril2019, seodec18
-ms.openlocfilehash: a36481b2496060cb12bd755f56680915ec1074bb
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 987b56eb1b258e1c5f2fd7d5bcfdd0e95f6c0730
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540175"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091666"
 ---
 # <a name="how-azure-machine-learning-works-architecture-and-concepts"></a>Hoe Azure Machine Learning werkt: architectuur en concepten
 
@@ -47,28 +47,15 @@ Een werk ruimte bevat andere Azure-resources die worden gebruikt door de werk ru
 
 U kunt een werk ruimte delen met anderen.
 
-### <a name="create-workspace"></a>Werkruimte maken
-
-In het volgende diagram ziet u de werk stroom werk ruimte maken.
-
-* U meldt zich aan bij Azure AD vanaf een van de ondersteunde Azure Machine Learning-clients (Azure CLI, python SDK, Azure Portal) en vraagt het juiste Azure Resource Manager-token op.
-* U roept Azure Resource Manager aan om de werk ruimte te maken. 
-* Azure Resource Manager neemt contact op met de Azure Machine Learning Resource provider om de werk ruimte in te richten.
-* Als u geen bestaande resources opgeeft, worden er aanvullende vereiste resources in uw abonnement gemaakt..
-
-U kunt ook andere reken doelen inrichten die zijn gekoppeld aan een werk ruimte (zoals Azure Kubernetes service of Vm's), indien nodig.
-
-[![Werkruimte werk stroom maken](media/concept-azure-machine-learning-architecture/create-workspace.png)](media/concept-azure-machine-learning-architecture/create-workspace.png#lightbox)
-
 ## <a name="computes"></a>Berekeningen
 
 <a name="compute-targets"></a> Een [Compute-doel](concept-compute-target.md) is een computer of set machines die u gebruikt om uw trainings script uit te voeren of uw service-implementatie te hosten. U kunt uw lokale computer of een externe Compute-resource als reken doel gebruiken.  Met Compute-doelen kunt u training starten op uw lokale machine en uitschalen naar de Cloud zonder uw trainings script te wijzigen.
 
 Azure Machine Learning introduceert twee volledig beheerde virtuele machines in de Cloud (VM) die zijn geconfigureerd voor machine learning taken:
 
-* <a name="compute-instance"></a>**Reken instantie** : een reken instantie is een VM met meerdere hulpprogram ma's en omgevingen die zijn geïnstalleerd voor machine learning. Het primaire gebruik van een reken instantie is voor uw ontwikkel werkstation.  U kunt voorbeeld notitieblokken starten zonder dat Setup is vereist. Een reken instantie kan ook worden gebruikt als een reken doel voor trainings-en detrainings taken.
+* <a name="compute-instance"></a>**Reken instantie**: een reken instantie is een VM met meerdere hulpprogram ma's en omgevingen die zijn geïnstalleerd voor machine learning. Het primaire gebruik van een reken instantie is voor uw ontwikkel werkstation.  U kunt voorbeeld notitieblokken starten zonder dat Setup is vereist. Een reken instantie kan ook worden gebruikt als een reken doel voor trainings-en detrainings taken.
 
-* **Reken clusters** : reken clusters zijn een cluster met virtuele machines met schaal mogelijkheden voor meerdere knoop punten. Reken clusters zijn beter geschikt voor reken doelen voor grote taken en productie.  Het cluster wordt automatisch geschaald wanneer een taak wordt verzonden.  Gebruik als een trainings berekenings doel of voor een dev/test-implementatie.
+* **Reken clusters**: reken clusters zijn een cluster met virtuele machines met schaal mogelijkheden voor meerdere knoop punten. Reken clusters zijn beter geschikt voor reken doelen voor grote taken en productie.  Het cluster wordt automatisch geschaald wanneer een taak wordt verzonden.  Gebruik als een trainings berekenings doel of voor een dev/test-implementatie.
 
 Zie [trainings Compute-doelen](concept-compute-target.md#train)voor meer informatie over de doelen van de trainings compute.  Zie [implementatie doelen](concept-compute-target.md#deploy)voor meer informatie over Compute-doelen voor de implementatie.
 
@@ -126,10 +113,6 @@ Zie [een training configureren voor een](how-to-set-up-training-targets.md)voor 
 [Werk ruimte](#workspace)  >  [Experimenten](#experiments)  >  [Uitvoeren](#runs)  >  **Moment opname**
 
 Wanneer u een uitvoering verzendt, comprimeert Azure Machine Learning de map die het script bevat als een zip-bestand en verzendt het naar het Compute-doel. Het zip-bestand wordt vervolgens geëxtraheerd en het script wordt uitgevoerd. Azure Machine Learning slaat het zip-bestand ook als een moment opname op als onderdeel van de uitvoerings record. Iedereen met toegang tot de werk ruimte kan bladeren in een uitvoerings record en de moment opname downloaden.
-
-In het volgende diagram ziet u de werk stroom voor code momentopnamen.
-
-[![Workflow voor code momentopname](media/concept-azure-machine-learning-architecture/code-snapshot.png)](media/concept-azure-machine-learning-architecture/code-snapshot.png#lightbox)
 
 ### <a name="logging"></a>Logboekregistratie
 
@@ -310,5 +293,5 @@ De studio heeft ook toegang tot de interactieve hulp middelen die deel uitmaken 
 Om aan de slag te gaan met Azure Machine Learning raadpleegt u:
 
 * [Wat is Azure Machine Learning?](overview-what-is-azure-ml.md)
-* [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md)
+* [Een Azure Machine Learning-werk ruimte maken](how-to-manage-workspace.md)
 * [Zelf studie (deel 1): een model trainen](tutorial-train-models-with-aml.md)

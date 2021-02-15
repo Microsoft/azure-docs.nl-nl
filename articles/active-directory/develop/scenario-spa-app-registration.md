@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 05/19/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: 39a675ff4947e7eca64298e1e68160cd6149f081
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 9366bb5b2bb5820245ec1b699bbf2ddda0dd9f9d
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226335"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103172"
 ---
 # <a name="single-page-application-app-registration"></a>Toepassing met één pagina: app-registratie
 
@@ -27,7 +27,7 @@ Voer de volgende stappen uit als u een toepassing met één pagina (SPA) wilt re
 
 Voor zowel MSAL.js 1,0-als 2,0-toepassingen moet u eerst de volgende stappen uitvoeren om de eerste app-registratie te maken.
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

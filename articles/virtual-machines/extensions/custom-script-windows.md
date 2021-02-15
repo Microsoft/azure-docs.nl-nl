@@ -2,21 +2,21 @@
 title: Aangepaste script extensie voor Azure voor Windows
 description: Windows VM-configuratie taken automatiseren met behulp van de aangepaste script extensie
 services: virtual-machines-windows
-manager: carmonm
-author: bobbytreed
+manager: gwallace
+author: amjads1
 ms.service: virtual-machines-windows
 ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/31/2020
-ms.author: robreed
-ms.openlocfilehash: d4cfb8d6a48ac41b4deb8913d4277f07cbb43208
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.author: amjads
+ms.openlocfilehash: d06be4efae895cfe6903be4451f892660ce689f3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258701"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390127"
 ---
 # <a name="custom-script-extension-for-windows"></a>Aangepaste scriptextensie voor Windows
 
@@ -32,6 +32,7 @@ In dit document wordt beschreven hoe u de aangepaste script extensie gebruikt me
 ### <a name="operating-system"></a>Besturingssysteem
 
 De aangepaste script extensie voor Windows wordt uitgevoerd op de extensie OSs die wordt ondersteund.
+
 ### <a name="windows"></a>Windows
 
 * Windows Server 2008 R2
@@ -67,7 +68,7 @@ Als uw script zich op een lokale server bevindt, moet u mogelijk nog steeds extr
 * De extensie voert een script slechts eenmaal uit. Wilt u dat een script bij iedere start wordt uitgevoerd, dan moet u de extensie gebruiken om een geplande Windows-taak te maken.
 * Als u wilt plannen wanneer een script wordt uitgevoerd, dan moet u de extensie gebruiken om een geplande Windows-taak te maken.
 * Wanneer het script wordt uitgevoerd, ziet u alleen de extensiestatus 'overgang maken' van de Azure-portal of CLI. Als u meer statusupdates van een actief script wilt, dan moet u uw eigen oplossing maken.
-* Aangepaste script extensie biedt geen systeem eigen ondersteuning voor proxy servers, maar u kunt wel een hulp programma voor bestands overdracht gebruiken dat proxy servers in uw script ondersteunt, zoals *krul*
+* Aangepaste script extensie biedt geen systeem eigen ondersteuning voor proxy servers, maar u kunt wel een hulp programma voor bestands overdracht gebruiken dat proxy servers in uw script ondersteunt, zoals *invoke-WebRequest*
 * Houd rekening met niet-standaard maplocaties waar uw scripts of opdrachten eventueel gebruik van maken. Pak deze situatie logisch aan.
 * Aangepaste script extensie wordt uitgevoerd onder het LocalSystem-account
 * Als u van plan bent de eigenschappen *storageAccountName* en *storageAccountKey* te gebruiken, moet u deze eigenschappen co in *protectedSettings*.

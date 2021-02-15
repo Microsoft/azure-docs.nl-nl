@@ -2,8 +2,7 @@
 title: Extensie voor desired state Configuration met Azure Resource Manager sjablonen
 description: Meer informatie over de Resource Manager-sjabloon definitie voor de uitbrei ding desired state Configuration (DSC) in Azure.
 services: virtual-machines-windows
-author: bobbytreed
-manager: carmonm
+author: mgoedtel
 tags: azure-resource-manager
 keywords: dsc
 ms.assetid: b5402e5a-1768-4075-8c19-b7f7402687af
@@ -12,14 +11,14 @@ ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: na
-ms.date: 10/05/2018
-ms.author: robreed
-ms.openlocfilehash: 8b862238c0c04fae72659d644dbaf882d00cca19
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 02/09/2021
+ms.author: magoedte
+ms.openlocfilehash: 4e9133697cda4a46a895c7e41eff6d17ccd01e4a
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735687"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093655"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Extensie voor desired state Configuration met Azure Resource Manager sjablonen
 
@@ -37,7 +36,7 @@ Zie [VirtualMachineExtension class](/dotnet/api/microsoft.azure.management.compu
 ```json
 {
   "type": "Microsoft.Compute/virtualMachines/extensions",
-  "name": "Microsoft.Powershell.DSC",
+  "name": "[concat(parameters('VMName'), '/Microsoft.Powershell.DSC')]",
   "apiVersion": "2018-06-01",
   "location": "[parameters('location')]",
   "dependsOn": [
@@ -178,7 +177,7 @@ Zie het [standaard configuratie script](#default-configuration-script)voor een l
 
 ## <a name="details"></a>Details
 
-| Naam van eigenschap | Type | Beschrijving |
+| Naam van eigenschap | Type | Description |
 | --- | --- | --- |
 | Settings. wmfVersion |tekenreeks |Hiermee geeft u de versie van Windows Management Framework (WMF) op die op uw virtuele machine moet worden geïnstalleerd. Als u deze eigenschap instelt op **laatst** , wordt de meest recente versie van WMF geïnstalleerd. Momenteel zijn de enige mogelijke waarden voor deze eigenschap **4,0**, **5,0**, **5,1** en **meest recent**. Deze mogelijke waarden zijn onderhevig aan updates. De standaard waarde is **meest recent**. |
 | settings.configuratie. URL |tekenreeks |Hiermee geeft u de URL-locatie van waaruit u uw DSC-configuratie. zip-bestand wilt downloaden. Als voor de opgegeven URL een SAS-token voor toegang vereist is, stelt u de **protectedSettings.configeigenschap urationUrlSasToken** in op de waarde van uw SAS-token. Deze eigenschap is vereist als **settings.configuratie. script** of **settings.configuratie. functie** zijn gedefinieerd. Als er geen waarde wordt opgegeven voor deze eigenschappen, roept de extensie het standaard configuratie script aan om de meta gegevens van de locatie Configuration Manager (LCM) in te stellen, en moeten er argumenten worden opgegeven. |
@@ -197,7 +196,7 @@ Zie het [standaard configuratie script](#default-configuration-script)voor een l
 Zie [Local Configuration Manager Basic Settings](/powershell/scripting/dsc/managing-nodes/metaConfig#basic-settings)(Engelstalig) voor meer informatie over de volgende waarden.
 U kunt het standaard configuratie script van de DSC-extensie gebruiken om alleen de ICM-eigenschappen te configureren die in de volgende tabel worden weer gegeven.
 
-| Naam van eigenschap | Type | Beschrijving |
+| Naam van eigenschap | Type | Description |
 | --- | --- | --- |
 | protectedSettings.configurationArguments. RegistrationKey |PSCredential |Eigenschap Required. Hiermee geeft u de sleutel op die wordt gebruikt voor een knoop punt om te registreren bij de Azure Automation-Service als het wacht woord van een Power shell-referentie object. Deze waarde kan automatisch worden gedetecteerd met behulp van de **listkeys ophalen** -methode voor het Automation-account.  Zie het [voor beeld](#example-using-referenced-azure-automation-registration-values). |
 | settings.configurationArguments. RegistrationUrl |tekenreeks |Eigenschap Required. Hiermee geeft u de URL op van het Automation-eind punt waar het knoop punt zich probeert te registreren. Deze waarde kan automatisch worden gedetecteerd met behulp van de **referentie** methode voor het Automation-account. |

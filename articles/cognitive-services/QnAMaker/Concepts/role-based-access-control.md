@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: f43fa06cf93d383efcb0fe746de28ab143280e50
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 1d434697802596a0200dc0cb5f1afe5bc67afef5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988021"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379706"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Samen werken met andere auteurs en editors
 
@@ -23,6 +23,9 @@ Alle machtigingen worden bepaald door de machtigingen die op de QnA Maker bron w
 Deze Azure RBAC-functie omvat:
 * Azure Active Directory (AAD) is 100% achterwaarts compatibel met verificatie op basis van sleutels voor eigen aren en inzenders. Klanten kunnen verificatie op basis van een sleutel of op basis van op Azure RBAC gebaseerde verificatie gebruiken in hun aanvragen.
 * U kunt snel auteurs en editors toevoegen aan alle kennis grondslagen in de resource, omdat het besturings element op het niveau van de resource staat en niet op het niveau van de Knowledge Base.
+
+> [!NOTE]
+> Zorg ervoor dat u een aangepast subdomein toevoegt aan de resource. Er moet standaard een [aangepast subdomein](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) aanwezig zijn, maar als dat niet het geval is, voegt u dit toe
 
 ## <a name="access-is-provided-by-a-defined-role"></a>De toegang wordt verkregen door een gedefinieerde rol
 

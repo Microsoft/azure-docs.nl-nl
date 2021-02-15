@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 01/14/2021
-ms.openlocfilehash: 89cd9f46474e8e311f003f317b90bdb21eae55fe
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 2433e62fd1dbf35748483b40958fc3367532102a
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247541"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099231"
 ---
 # <a name="introduction-to-listing-options"></a>Inleiding tot aanbiedings opties
 
@@ -38,7 +38,11 @@ In deze tabel ziet u welke vermeldings opties beschikbaar zijn voor elk type aan
 
 &#42; de optie nu downloaden bevat, kunt u nu downloaden (gratis) gebruiken, uw eigen licentie (BYOL), abonnementen en op gebruik gebaseerde prijzen meenemen. Zie [nu ophalen](#get-it-now)voor meer informatie.
 
-### <a name="free-trial"></a>Gratis proefversie
+## <a name="changing-offer-type"></a>Type aanbieding wijzigen
+
+[!INCLUDE [change-offer-type](./includes/change-offer-type.md)]
+
+## <a name="free-trial"></a>Gratis proefversie
 
 Gebruik de commerciële Marketplace om de detectie te verbeteren en het inrichten van de proef ervaring van uw oplossing te automatiseren. Hierdoor kunnen potentiële klanten uw software als een service (SaaS), IaaS of micro soft in-app-ervaring gratis gebruiken van 30 dagen tot zes maanden, afhankelijk van het type aanbieding.
 
@@ -46,18 +50,18 @@ Klanten gebruiken de _gratis proef versie_ op de aanbiedings pagina van uw aanbi
 
 Voor de aanbiedingen van virtuele machines worden klanten de kosten van Azure-infra structuur in rekening gebracht voor het gebruik van de aanbieding tijdens een proef periode. Nadat de proef periode is verlopen, worden klanten automatisch in rekening gebracht voor het laatste abonnement dat ze hebben geprobeerd op basis van standaard tarieven, tenzij ze vóór het einde van de proef periode worden geannuleerd.
 
-### <a name="test-drive"></a>Test Drive
+## <a name="test-drive"></a>Test Drive
 
 Klanten gebruiken de knop voor het _test station_ op de pagina van uw aanbieding voor een vast aantal uur om toegang te krijgen tot een vooraf geconfigureerde omgeving. Zie [Wat is een test drive?](what-is-test-drive.md) voor meer informatie over test stations.
 
 > [!TIP]
 > Een test drive wijkt af van een gratis proef versie. U kunt een test drive, een gratis proef versie of beide aanbieden. Ze bieden uw klanten uw oplossing voor een vaste periode. Een test drive bevat echter ook een zelf doorgeleide rond leiding door de belangrijkste functies en voor delen van uw product die worden getoond in een scenario met een praktijk implementatie.
 
-### <a name="contact-me"></a>Contact opnemen
+## <a name="contact-me"></a>Contact opnemen
 
 Eenvoudige vermelding van uw toepassing of service. Klanten gebruiken de knop _contact opnemen_ op de pagina van uw aanbieding om u te vragen of u verbinding maakt met hen over uw aanbieding.
 
-### <a name="get-it-now"></a>Nu downloaden
+## <a name="get-it-now"></a>Nu downloaden
 
 Deze aanbiedings optie omvat transactable-aanbiedingen (abonnementen en prijs op basis van gebruikers), uw eigen licentie aanbiedingen meenemen en nu downloaden (gratis). Aanbiedingen die kunnen worden verwerkt via de commerciële Marketplace worden verkocht. Micro soft is verantwoordelijk voor facturering en verzamelingen. Klanten gebruiken de _knop nu downloaden_ om de aanbieding op te halen.
 
@@ -92,28 +96,28 @@ In deze tabel ziet u welke soorten aanbiedingen ondersteuning bieden voor de ext
 
 <sup>2</sup> prijs per uur en maandelijks gefactureerd.
 
-#### <a name="get-it-now-free"></a>Nu downloaden (gratis)
+### <a name="get-it-now-free"></a>Nu downloaden (gratis)
 
 Gebruik deze aanbiedings optie om uw toepassing gratis aan te bieden. Klanten gebruiken de button _nu downloaden_ om je gratis aanbieding te ontvangen.
 
 > [!NOTE]
 > Aanbiedingen die nu beschikbaar zijn (gratis) komen niet in aanmerking voor de voor delen van Marketplace-beloningen voor aanbiedingen die kunnen worden aangeboden. Omdat er geen trans actie via de winkel is, worden deze gecategoriseerd als ' proef versie '. Bekijk onderstaande [Marketplace-beloningen](#marketplace-rewards) .
 
-#### <a name="bring-your-own-license-byol"></a>Bring Your Own License (BYOL)
+### <a name="bring-your-own-license-byol"></a>Bring Your Own License (BYOL)
 
 Gebruik deze aanbiedings optie om klanten uw aanbieding te laten implementeren met behulp van een licentie die buiten de commerciële Marketplace is gekocht. Deze optie is ideaal voor migraties van on-premises naar de Cloud. Klanten gebruiken de knop _nu downloaden_ om uw aanbieding te kopen met een licentie die ze vooraf van u hebben gekocht.
 
 > [!NOTE]
 > BYOL-aanbiedingen komen niet in aanmerking voor voor delen van Marketplace voor aanbiedingen die kunnen worden aangeboden. Omdat deze vereist dat een klant de licentie van de partner moet verkrijgen en er geen trans actie via de commerciële Marketplace-winkel is, worden deze gecategoriseerd als ' lijst '. Bekijk onderstaande [Marketplace-beloningen](#marketplace-rewards) .
 
-#### <a name="subscription"></a>Abonnement
+### <a name="subscription"></a>Abonnement
 
 U kunt een vast bedrag in rekening brengen voor de volgende aanbiedings typen:
 
 - Azure-toepassing (beheerde app) biedt ondersteuning voor maandelijkse abonnementen.
 - SaaS biedt ondersteuning voor zowel maandelijkse als jaarlijkse abonnementen.
 
-#### <a name="usage-based-pricing"></a>Prijs op basis van gebruik
+### <a name="usage-based-pricing"></a>Prijs op basis van gebruik
 
 De volgende aanbiedings typen ondersteunen prijzen op basis van gebruik:
 

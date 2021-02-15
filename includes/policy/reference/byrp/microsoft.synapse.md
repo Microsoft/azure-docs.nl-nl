@@ -2,18 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 4991bb889d4b9a099662b8d46c6d5cd5a89c1c63
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: dcd08c0635eb4a104cc945fbf4025a6807987968
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99555793"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092350"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
+|[Azure Synapse-werk ruimten moeten uitgaand gegevens verkeer alleen toestaan voor goedgekeurde doelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3484ce98-c0c5-4c83-994b-c5ac24785218) |Verbeter de beveiliging van uw Synapse-werk ruimte door uitgaand gegevens verkeer alleen toe te staan op goedgekeurde doelen. Dit helpt bij het voor komen van gegevens exfiltration door het doel te valideren voordat gegevens worden verzonden. |Controleren, uitgeschakeld, weigeren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/Workspace_RestrictOutboundDataTraffic_Audit.json) |
 |[Voor Azure Synapse-werkruimten moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff7d52b2d-e161-4dfa-a82b-55e564167385) |Gebruik door de klant beheerde sleutels om de versleuteling 'at rest' van de opgeslagen gegevens in Azure Synapse-werkruimten te beheren. Door de klant beheerde sleutels bieden dubbele versleuteling door een tweede laag versleuteling toe te voegen boven op de standaard versleuteling met door service beheerde sleutels. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceCMK_Audit.json) |
 |[De IP-firewallregels voor Azure Synapse-werkruimten moeten worden verwijderd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F56fd377d-098c-4f02-8406-81eb055902b8) |Als u alle IP-firewallregels verwijdert, wordt de beveiliging verbeterd door ervoor te zorgen dat uw Azure Synapse-werkruimte alleen toegankelijk is vanuit een privé-eindpunt. Deze configuratie controleert het maken van firewallregels die openbare netwerktoegang tot de werkruimte toestaan. |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceFirewallRules_Audit.json) |
 |[Het virtuele netwerk van de beheerde werkruimte in Azure Synapse-werkruimten moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2d9dbfa3-927b-4cf0-9d0f-08747f971650) |Als u een virtueel netwerk voor een beheerde werkruimte inschakelt zorgt u ervoor dat uw werkruimte binnen het netwerk is afgeschermd van andere werkruimten. Gegevensintegratie en Apache Spark-resources die zijn geïmplementeerd in dit virtuele netwerk, bieden ook isolatie op gebruikersniveau voor Apache Spark-activiteiten. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceManagedVnet_Audit.json) |

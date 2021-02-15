@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: e2ab39f090124aaf590798795f446bda5b0fe48a
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 6faec27bf368b3eb45e05a91307df6027bda93b1
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008551"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093995"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Veelgestelde vragen over Azure App Service on Linux
 
@@ -110,7 +110,7 @@ Ja, tijdens een Git-implementatie moet kudu detecteert dat u een PHP-toepassing 
 
 **Ik gebruik mijn eigen aangepaste container. Ik wil dat het platform een SMB-share koppelt aan de `/home/` Directory.**
 
-Als `WEBSITES_ENABLE_APP_SERVICE_STORAGE` de instelling niet is **opgegeven** of is ingesteld op *True*, `/home/` wordt de map **gedeeld** door schaal instanties en worden de bestanden die zijn geschreven, **bewaard** tijdens het opnieuw opstarten. `WEBSITES_ENABLE_APP_SERVICE_STORAGE`Als u expliciet instelt op *False* , wordt de koppeling uitgeschakeld.
+Als `WEBSITES_ENABLE_APP_SERVICE_STORAGE` de instelling niet is **opgegeven** of is ingesteld op *Onwaar*, `/home/` wordt de map **niet gedeeld** door schaal instanties en worden de bestanden die **zijn geschreven niet behouden** tijdens het opnieuw opstarten. `WEBSITES_ENABLE_APP_SERVICE_STORAGE`Als u expliciet instelt op *True* , wordt de koppeling ingeschakeld.
 
 **Het starten van mijn aangepaste container duurt lang en het platform start de container opnieuw op voordat deze is gestart.**
 

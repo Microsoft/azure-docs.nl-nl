@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.author: trbye
-ms.openlocfilehash: 7d4d1acac591bfe6ce40efcf6166357d43718363
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: eb8d2d956eac23c02201f7fd855dcae71e960e8d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024956"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388580"
 ---
 # <a name="improve-synthesis-with-the-audio-content-creation-tool"></a>De synthese verbeteren met het hulp programma voor het maken van een audio-inhoud
 
@@ -125,7 +125,7 @@ Nadat u de audio-uitvoer hebt gecontroleerd en tevreden bent met uw afstemming e
 
 ## <a name="how-to-addremove-audio-content-creation-users"></a>Hoe kan ik gebruikers voor het maken van audio-inhoud toevoegen/verwijderen?
 
-Als meer dan één gebruiker het maken van audio-inhoud wil gebruiken, kunt u uw Azure-account en wacht woord delen met de gebruiker of gebruikers toegang verlenen tot het Azure-abonnement en de spraak resource. Als u een gebruiker aan een Azure-abonnement toevoegt, heeft de gebruiker toegang tot alle resources onder het Azure-abonnement. Maar als u alleen een gebruiker toevoegt aan een spraak bron, heeft de gebruiker alleen toegang tot de spraak bron en heeft deze geen toegang tot andere bronnen onder dit Azure-abonnement. Een gebruiker met toegang tot de spraak resource kan audio-inhoud maken gebruiken.
+Als meer dan één gebruiker het maken van audio-inhoud wil gebruiken, kunt u gebruikers toegang verlenen tot het Azure-abonnement en de spraak resource. Als u een gebruiker aan een Azure-abonnement toevoegt, heeft de gebruiker toegang tot alle resources onder het Azure-abonnement. Maar als u alleen een gebruiker toevoegt aan een spraak bron, heeft de gebruiker alleen toegang tot de spraak bron en heeft deze geen toegang tot andere bronnen onder dit Azure-abonnement. Een gebruiker met toegang tot de spraak resource kan audio-inhoud maken gebruiken.
 
 ### <a name="add-users-to-a-speech-resource"></a>Gebruikers toevoegen aan een spraak resource
 
@@ -146,7 +146,7 @@ Gebruikers die zich in dezelfde spraak resource bevinden, zien elkaars werk in h
 
 ### <a name="remove-users-from-a-speech-resource"></a>Gebruikers uit een spraak resource verwijderen
 1. Zoek naar **cognitieve Services** in het Azure Portal, selecteer de spraak bron waarvan u gebruikers wilt verwijderen.
-2. Klik op **Toegangsbeheer (IAM)** . Klik op **het tabblad roltoewijzingen om** alle roltoewijzingen voor deze spraak resource weer te geven.
+2. Klik op **Toegangsbeheer (IAM)**. Klik op **het tabblad roltoewijzingen om** alle roltoewijzingen voor deze spraak resource weer te geven.
 3. Selecteer de gebruikers die u wilt verwijderen en klik op **verwijderen**  >  **OK**.
     :::image source="media/audio-content-creation/remove-user.png" alt-text="Knop verwijderen":::
 

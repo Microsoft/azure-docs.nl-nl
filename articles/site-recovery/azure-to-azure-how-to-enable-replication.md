@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/29/2018
-ms.openlocfilehash: 49929cfe0abc634dc4b704aba1c7b11a5d7dd777
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 427b471158e89b2b3ae4ea6477133f1e69247078
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100383582"
+ms.locfileid: "100518841"
 ---
 # <a name="replicate-azure-vms-to-another-azure-region"></a>Virtuele Azure-machines repliceren naar een andere Azure-regio
 
@@ -54,7 +54,7 @@ Schakel replicatie in. Bij deze procedure wordt ervan uitgegaan dat de primaire 
    - **Doel opslag accounts (bron-VM gebruikt geen beheerde schijven)**: standaard maakt site Recovery een nieuw doel-opslag account mimicking de opslag configuratie van de bron-VM. Als het opslag account al bestaat, wordt dit opnieuw gebruikt.
    - **Replica-Managed disks (bron-VM maakt gebruik van beheerde schijven)**: site Recovery maakt nieuwe replica-beheerde schijven in de doel regio om de beheerde schijven van de bron-VM te spie gelen met hetzelfde opslag type (Standard of Premium) als de beheerde schijf van de bron-VM.
    - **Cache opslag accounts**: site Recovery hebt extra opslag account met de naam cache opslag in de bron regio nodig. Alle wijzigingen die zich voordoen op de bron-Vm's, worden bijgehouden en verzonden naar het cache-opslag account voordat ze naar de doel locatie worden gerepliceerd. Dit opslag account moet standaard zijn.
-   - **Doel beschikbaarheids sets**: standaard maakt site Recovery een nieuwe beschikbaarheidsset in de doel regio met het achtervoegsel ' Azure site Recovery ' in de naam, voor virtuele machines die deel uitmaken van een beschikbaarheidsset in de bron regio. Als de beschikbaarheidsset die is gemaakt door Site Recovery al bestaat, wordt deze opnieuw gebruikt.
+   - **Doel beschikbaarheids sets**: standaard maakt site Recovery een nieuwe beschikbaarheidsset in de doel regio met het achtervoegsel ' ASR ' in de naam, voor virtuele machines die deel uitmaken van een beschikbaarheidsset in de bron regio. Als de beschikbaarheidsset die is gemaakt door Site Recovery al bestaat, wordt deze opnieuw gebruikt.
      >[!NOTE]
      >Configureer tijdens het configureren van de doel beschikbaarheids sets een andere beschikbaarheidsset voor virtuele machines met verschillende groottes. 
      >

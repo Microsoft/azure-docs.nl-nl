@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: d20a363a0320ca45f22183e54bcc390d4733c8bc
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 8a4a4153261b93b3b17641e8561962c274570bd0
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99581751"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104209"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Procedure: Gebruik de portal voor het maken van een Azure AD-toepassing en service-principal die toegang hebben tot resources
 
@@ -75,7 +75,7 @@ Uw abonnements machtigingen controleren:
 
 Laten we meteen beginnen met het maken van de identiteit. Als u een probleem ondervindt, controleert u de [vereiste machtigingen](#permissions-required-for-registering-an-app) om te controleren of uw account de identiteit kan maken.
 
-1. Meld u aan bij uw Azure-account via de <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
+1. Meld u aan bij uw Azure-account via de <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>.
 1. Selecteer **Azure Active Directory**.
 1. Selecteer **App-registraties**.
 1. Selecteer **Nieuwe registratie**.
@@ -181,7 +181,7 @@ Als u ervoor kiest geen certificaat te gebruiken, kunt u een nieuw toepassings g
 ## <a name="configure-access-policies-on-resources"></a>Toegangs beleid voor resources configureren
 Houd er rekening mee dat u aanvullende machtigingen moet configureren voor bronnen die voor uw toepassing toegankelijk moeten zijn. U moet bijvoorbeeld ook [het toegangs beleid van een sleutel kluis bijwerken](../../key-vault/general/secure-your-key-vault.md#data-plane-and-access-policies) om uw toepassing toegang te geven tot sleutels, geheimen of certificaten.
 
-1. Navigeer in <a href="https://portal.azure.com/" target="_blank">het <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>naar uw sleutel kluis en selecteer **toegangs beleid**.
+1. Navigeer in het <a href="https://portal.azure.com/" target="_blank">Azure Portal</a>naar uw sleutel kluis en selecteer **toegangs beleid**.
 1. Selecteer **toegangs beleid toevoegen** en selecteer vervolgens de sleutel, het geheim en de certificaat machtigingen die u uw toepassing wilt verlenen.  Selecteer de service-principal die u eerder hebt gemaakt.
 1. Selecteer **toevoegen** om het toegangs beleid toe te voegen en **Sla** vervolgens op om uw wijzigingen door te voeren.
     ![Toegangsbeleid toevoegen](./media/howto-create-service-principal-portal/add-access-policy.png)

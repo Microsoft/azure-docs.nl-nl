@@ -3,19 +3,19 @@ title: 'ML Studio (klassiek): Azure AI Gallery gegevens beheren-Azure'
 description: U kunt de gebruikers gegevens van uw product exporteren en verwijderen uit Azure AI Gallery met behulp van de interface of de AI Gallery Catalog-API. In dit artikel wordt beschreven hoe u dit kunt doen.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 05/25/2018
 ms.reviewer: mldocs
-ms.openlocfilehash: 1c549cd4a4d76e96f16eb04f3cf5aa3368725b8c
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 3461b8026079d089bacca9f12aa94e13f5cb2874
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070538"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519232"
 ---
 # <a name="view-and-delete-in-product-user-data-from-azure-ai-gallery"></a>Gebruikers gegevens in een product weer geven en verwijderen uit Azure AI Gallery
 

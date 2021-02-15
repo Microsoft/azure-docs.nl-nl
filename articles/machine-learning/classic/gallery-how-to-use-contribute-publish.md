@@ -3,22 +3,22 @@ title: 'ML Studio (klassiek): Azure AI Gallery-Azure'
 description: Deel en ontdek analyse bronnen en meer in de Azure AI Gallery. Leer van anderen en maak uw eigen bijdragen aan de community.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: eacc7adae16785049022cd05f04904d97b0b3a6d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 935d0149a4a6b33c5272e57aab5f1cc9c3bb2924
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95486123"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519844"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Resources delen en ontdekken in de Azure AI Gallery
 
-**van toepassing op:** ![ Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek). ](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek) ![ Dit is een X, wat betekent dat dit artikel van toepassing is op Azure machine learning.](../../../includes/media/aml-applies-to-skus/no.png)[ Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**VAN TOEPASSING OP:**  ![Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek).](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek)   ![Dit is een X, wat betekent dat dit artikel van toepassing is op Azure Machine Learning.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 

@@ -6,13 +6,13 @@ ms.author: jlian
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 07/01/2020
-ms.openlocfilehash: c82f98df8fb79fa10f2e30b219c1a02bb646e2de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/12/2021
+ms.openlocfilehash: 27552b2c39f2d1e5d9cc1719a9cc2944e088773a
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85937522"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517124"
 ---
 # <a name="managing-public-network-access-for-your-iot-hub"></a>Open bare netwerk toegang beheren voor uw IoT-hub
 
@@ -28,7 +28,13 @@ Als u de toegang tot alleen [het persoonlijke eind punt voor uw IOT-hub in uw VN
 
 :::image type="content" source="media/iot-hub-publicnetworkaccess/turn-off-public-network-access.png" alt-text="Afbeelding met Azure Portal waar open bare netwerk toegang wordt uitgeschakeld" lightbox="media/iot-hub-publicnetworkaccess/turn-off-public-network-access.png":::
 
-Als u open bare netwerk toegang wilt inschakelen, selecteert u **ingeschakeld**en vervolgens **Opslaan**.
+Als u open bare netwerk toegang wilt inschakelen, selecteert u **alle netwerken** en vervolgens **Opslaan**.
+
+## <a name="iot-hub-endpoint-ip-address-and-ports-after-disabling-public-network-access"></a>IoT Hub-eind punt, IP-adres en poorten na het uitschakelen van de toegang tot het open bare netwerk
+
+IoT Hub is een PaaS (platform-as-a-Service) met meerdere tenants, zodat verschillende klanten dezelfde pool van compute-, netwerk-en opslag hardwarebronnen delen. De hostnamen van IoT Hub worden toegewezen aan een openbaar eind punt met een openbaar routeerbaar IP-adres via internet. Verschillende klanten delen dit IoT Hub open bare eind punt en IoT-apparaten in meer dan Wide Area Networks en on-premises netwerken hebben toegang tot het netwerk. 
+
+Het uitschakelen van open bare netwerk toegang wordt afgedwongen voor een specifieke IoT hub-resource, waardoor isolatie wordt gegarandeerd. Om ervoor te zorgen dat de service actief is voor andere klant bronnen met behulp van het open bare pad, blijft het open bare eind punt oplosbaar, worden IP-adressen detecteerbaar en blijven de poorten geopend. Dit is geen oorzaak van bezorgdheid omdat micro soft meerdere beveiligings lagen integreert om ervoor te zorgen dat tenants volledig worden geïsoleerd. Zie [isolatie in de open bare Azure-Cloud](../security/fundamentals/isolation-choices.md#tenant-level-isolation)voor meer informatie.
 
 ## <a name="ip-filter"></a>IP-filter 
 

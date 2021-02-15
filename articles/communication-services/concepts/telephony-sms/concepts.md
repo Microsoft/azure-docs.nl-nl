@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 35398d60008ac52ba16dca0a0201f8c2f2101a0f
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
-ms.translationtype: HT
+ms.openlocfilehash: 6f03195c801f241a79a6bf68ef9d398370b0d4c6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91758554"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391810"
 ---
 # <a name="sms-concepts"></a>Sms-concepten
 
@@ -29,7 +29,7 @@ De belangrijkste kenmerken van de SMS-clientbibliotheken van Azure Communication
 - **Tweerichtingsgesprekken** voor scenario's zoals klantondersteuning, waarschuwingen en afspraakherinneringen.
 - **Betrouwbare levering** met realtime leveringsrapporten voor berichten die vanuit uw toepassing worden verzonden.
 - **Analytische gegevens** om uw gebruikspatronen en de klantbetrokkenheid bij te houden.
-- **Afmelding**ondersteuning om automatisch afmelding voor gratis nummers te detecteren en te respecteren. Afmeldingen voor Amerikaanse gratis nummers zijn verplicht en worden afgedwongen door Amerikaanse providers.
+- **Afmelding** ondersteuning om automatisch afmelding voor gratis nummers te detecteren en te respecteren. Afmeldingen voor Amerikaanse gratis nummers zijn verplicht en worden afgedwongen door Amerikaanse providers.
   - STOP - Als de ontvanger van een tekstbericht zich wil afmelden, kan deze 'STOP' versturen naar het gratis nummer. De provider verzendt het volgende standaardantwoord op STOP: *‘NETWORK MSG: U hebt gereageerd met het woord 'stop', waarmee alle tekstberichten worden geblokkeerd die vanaf dit nummer worden verzonden. Stuur ‘unstop’ terug om opnieuw berichten te ontvangen.’*
   - START/UNSTOP - Als de ontvanger zich opnieuw wil abonneren op sms-berichten van een gratis nummer, kan hij of zij 'START' of 'UNSTOP' naar het gratis nummer verzenden. De provider verzendt het volgende standaardantwoord op START/UNSTOP: *‘NETWORK MSG: U hebt 'unstop' geantwoord en zal opnieuw berichten ontvangen van dit nummer.'*
   - Azure Communication Services detecteert het STOP-bericht en blokkeert alle verdere berichten aan de ontvanger. Het leveringsrapport geeft een mislukte levering aan met status van het bericht als ‘Afzender geblokkeerd voor deze ontvanger.’
@@ -45,4 +45,4 @@ De volgende documenten zijn mogelijk interessant voor u:
 
 - Uzelf bekend maken met de [sms-clientbibliotheek](../telephony-sms/sdk-features.md)
 - Koop een [telefoonnummer](../../quickstarts/telephony-sms/get-phone-number.md) dat geschikt is voor sms
-- [Plan uw sms-oplossing](../telephony-sms/plan-solution.md)
+- [Typen telefoonnummers in Azure Communication Services](../telephony-sms/plan-solution.md)

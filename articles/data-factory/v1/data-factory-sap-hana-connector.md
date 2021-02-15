@@ -1,23 +1,18 @@
 ---
 title: Gegevens verplaatsen van SAP HANA met behulp van Azure Data Factory
 description: Meer informatie over het verplaatsen van gegevens uit SAP HANA met behulp van Azure Data Factory.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-editor: ''
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c08aeca8e7aaa71e5a2a80cbdece762b989e28c2
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 9c192a5f84f36fbdea0dd1d280928aa40186d4ee
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510138"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386982"
 ---
 # <a name="move-data-from-sap-hana-using-azure-data-factory"></a>Gegevens verplaatsen van SAP HANA met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -298,7 +293,7 @@ ALPHANUM | Tekenreeks
 BLOBCACHE | Byte []
 DATE | DateTime
 TIME | TimeSpan
-Neem | DateTime
+TIMESTAMP | DateTime
 SECONDDATE | DateTime
 
 ## <a name="known-limitations"></a>Bekende beperkingen

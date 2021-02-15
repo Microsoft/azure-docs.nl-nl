@@ -3,12 +3,12 @@ title: Een inhouds bibliotheek maken voor het implementeren van Vm's in azure VM
 description: Maak een inhouds bibliotheek voor het implementeren van een virtuele machine in een privécloud van Azure VMware-oplossing.
 ms.topic: how-to
 ms.date: 02/03/2021
-ms.openlocfilehash: 9e27529ee355ece62f12cc2e6de491dddb5d3f28
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: a50b12ef8e139bf7de171398fd28f74fc3f310c9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550535"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382001"
 ---
 # <a name="create-a-content-library-to-deploy-vms-in-azure-vmware-solution"></a>Een inhouds bibliotheek maken voor het implementeren van Vm's in azure VMware-oplossing
 
@@ -18,7 +18,7 @@ In dit artikel gaan we de procedure voor het maken van een inhouds bibliotheek d
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor het voltooien van deze zelfstudie zijn een NSX-T-segment voor logische switches en een beheerde DHCP-service vereist.  Zie het artikel [DHCP in azure VMware Solution beheren](manage-dhcp.md) voor meer informatie.
+Een NSX-T-segment (logische switch) en een beheerde DHCP-service zijn vereist om deze zelf studie te volt ooien.  Zie het artikel [DHCP in azure VMware Solution beheren](manage-dhcp.md) voor meer informatie.
 
 ## <a name="create-a-content-library"></a>Maak een inhoudsbibliotheek
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 73652f821abfa4a092e4a61ffe2be9e7262a2f10
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 5261075a82eaefd91cbedd2dd2fe08cb1e0a20b4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538541"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381831"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-powershell"></a>Continue back-ups en herstel naar een tijdstip configureren en beheren (preview)-Azure PowerShell gebruiken
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -50,7 +50,7 @@ In dit artikel wordt beschreven hoe u een account met doorlopende back-up-en her
 
 Als u een account met doorlopende back-up wilt inrichten, voegt u een argument `-BackupPolicyType Continuous` samen met de normale inrichtings opdracht toe.
 
-De volgende cmdlet is een voor beeld van een enkele regio schrijf account `pitracct2` met continu back-upbeleid dat is gemaakt in de regio vs-West onder ' myrg-resource groep:
+De volgende cmdlet is een voor beeld van een enkele regio schrijf account `pitracct2` met continu back-upbeleid dat is gemaakt in de regio *VS West* onder *myrg* -resource groep:
 
 ```azurepowershell
 
@@ -65,7 +65,7 @@ New-AzCosmosDBAccount `
 
 ## <a name="provision-a-mongodb-api-account-with-continuous-backup"></a><a id="provision-mongodb-api"></a>Een MongoDB-API-account inrichten met doorlopende back-up
 
-De volgende cmdlet is een voor beeld van een continu back-upaccount "pitracct2" dat is gemaakt in de regio vs-West onder "myrg" resource groep:
+De volgende cmdlet is een voor beeld van een continu back-upaccount *pitracct2* dat is gemaakt in de regio *VS-West* onder *myrg* -resource groep:
 
 ```azurepowershell
 
@@ -162,13 +162,13 @@ Het antwoord bevat alle database accounts (zowel live als verwijderd) die kunnen
   },
 ```
 
-Net als de ' CreationTime ' of ' DeletionTime ' voor het account, is er ook een ' CreationTime ' of ' DeletionTime ' voor de regio. Op deze momenten kunt u de juiste regio en een geldig tijds bereik kiezen om in die regio te herstellen.
+Net als de `CreationTime` of `DeletionTime` voor het account, is er `CreationTime` ook een of `DeletionTime` voor de regio. Op deze momenten kunt u de juiste regio en een geldig tijds bereik kiezen om in die regio te herstellen.
 
 **Alle versies van SQL-data bases in een live-database account weer geven**
 
 Door alle versies van data bases weer te geven, kunt u de juiste data base kiezen in een scenario waarin de werkelijke tijd voor het bestaan van de data base onbekend is.
 
-Voer de volgende Power shell-opdracht uit om alle versies van data bases weer te geven. Deze opdracht werkt alleen met Live-accounts. De para meters ' DatabaseAccountInstanceId ' en ' Locationnaam ' worden opgehaald uit de eigenschappen ' naam ' en ' locatie ' in het antwoord van de `Get-AzCosmosDBRestorableDatabaseAccount` cmdlet. Het kenmerk DatabaseAccountInstanceId verwijst naar de eigenschap instanceId van het bron database account dat wordt hersteld:
+Voer de volgende Power shell-opdracht uit om alle versies van data bases weer te geven. Deze opdracht werkt alleen met Live-accounts. De `DatabaseAccountInstanceId` `LocationName` para meters en worden opgehaald uit `name` de `location` Eigenschappen en in het antwoord van de `Get-AzCosmosDBRestorableDatabaseAccount` cmdlet. Het `DatabaseAccountInstanceId` kenmerk verwijst naar de `instanceId` eigenschap van het bron database account dat wordt hersteld:
 
 
 ```azurepowershell
@@ -181,7 +181,7 @@ Get-AzCosmosdbSqlRestorableDatabase `
 
 **Alle versies van SQL-containers van een data base in een live-database account weer geven.**
 
-Gebruik de volgende opdracht om alle versies van SQL-containers weer te geven. Deze opdracht werkt alleen met Live-accounts. De para meter ' DatabaseRid ' is de ' ResourceId ' van de data base die u wilt herstellen. Het is de waarde van het kenmerk ownerResourceid gevonden in het antwoord van de `Get-AzCosmosdbSqlRestorableDatabase` cmdlet. Het antwoord bevat ook een lijst met bewerkingen die worden uitgevoerd op alle containers in deze data base.
+Gebruik de volgende opdracht om alle versies van SQL-containers weer te geven. Deze opdracht werkt alleen met Live-accounts. De `DatabaseRid` para meter is de `ResourceId` Data Base die u wilt herstellen. Het is de waarde van het kenmerk dat is `ownerResourceid` gevonden in het antwoord van de `Get-AzCosmosdbSqlRestorableDatabase` cmdlet. Het antwoord bevat ook een lijst met bewerkingen die worden uitgevoerd op alle containers in deze data base.
 
 ```azurepowershell
 
@@ -208,7 +208,7 @@ Get-AzCosmosdbSqlRestorableResource `
 
 ## <a name="enumerate-restorable-resources-for-mongodb"></a><a id="enumerate-mongodb-api"></a>Herstorable bronnen voor MongoDB opsommen
 
-Met de opsommings opdrachten die hieronder worden beschreven, kunt u de resources ontdekken die kunnen worden hersteld met verschillende tijds tempels. Daarnaast bieden ze ook een feed van belang rijke gebeurtenissen voor het herstorable account, de data base en de container bronnen. Deze opdrachten werken alleen voor Live-accounts en ze zijn vergelijkbaar met SQL-API-opdrachten, maar met ' MongoDB ' in de opdracht naam in plaats van ' SQL '.
+Met de opsommings opdrachten die hieronder worden beschreven, kunt u de resources ontdekken die kunnen worden hersteld met verschillende tijds tempels. Daarnaast bieden ze ook een feed van belang rijke gebeurtenissen voor het herstorable account, de data base en de container bronnen. Deze opdrachten werken alleen voor Live-accounts en ze zijn vergelijkbaar met SQL-API-opdrachten, maar met `MongoDB` in de opdracht naam in plaats van `sql` .
 
 **Alle versies van MongoDB-data bases in een live-database account weer geven**
 

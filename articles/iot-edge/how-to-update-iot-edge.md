@@ -9,12 +9,12 @@ ms.date: 01/20/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9a739736182713b35c3a5e9e25742aa39c5d1122
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 0adcbf49ff2128fdbe623121838058c5ed89dce2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633134"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378023"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -35,12 +35,6 @@ Controleer de versie van de beveiligings-daemon die op het apparaat wordt uitgev
 Op Linux x64-apparaten gebruikt u apt-get of uw geschikte pakket beheerder om de beveiligings-daemon bij te werken naar de meest recente versie.
 
 De nieuwste opslagplaats configuratie ophalen van micro soft:
-
-* **Ubuntu Server 16.04**:
-
-   ```bash
-   curl https://packages.microsoft.com/config/ubuntu/16.04/multiarch/prod.list > ./microsoft-prod.list
-   ```
 
 * **Ubuntu Server 18.04**:
 
@@ -100,7 +94,7 @@ curl -L <iotedge link> -o iotedge.deb && sudo dpkg -i ./iotedge.deb
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-<!-- 1.0.10 -->
+<!-- 1.1 -->
 ::: moniker range="iotedge-2018-06"
 
 Met IoT Edge voor Linux op Windows wordt IoT Edge uitgevoerd in een virtuele Linux-machine die wordt gehost op een Windows-apparaat. Deze virtuele machine is vooraf geïnstalleerd met IoT Edge en wordt beheerd met Microsoft Update om de onderdelen up-to-date te houden. Er zijn momenteel geen updates beschikbaar.

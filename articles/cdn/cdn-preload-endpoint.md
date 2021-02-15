@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/12/2018
 ms.author: allensu
-ms.openlocfilehash: 7fb414680b8ff64d057f9f68d7b97380baeaa551
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 186ded90b504420a2f315d054551d97821cf8465
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778208"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385044"
 ---
 # <a name="pre-load-assets-on-an-azure-cdn-endpoint"></a>Vooraf assets op een Azure CDN-eindpunt laden
 [!INCLUDE [cdn-verizon-only](../../includes/cdn-verizon-only.md)]
@@ -47,7 +47,7 @@ In deze zelf studie wordt u begeleid bij het vooraf laden van inhoud in de cache
 4. Voor het **pad naar inhoud** voert u het volledige pad in van elk activum dat u wilt laden (bijvoorbeeld `/pictures/kitten.png` ).
    
    > [!TIP]
-   > Wanneer u begint met het invoeren van tekst, worden er meer tekst vakken voor **het inhoudsdistributiepad weer** gegeven, zodat u een lijst met meerdere assets kunt bouwen. Als u assets uit de lijst wilt verwijderen, selecteert u de knop met het weglatings teken (...) en selecteert u vervolgens **verwijderen** .
+   > Wanneer u begint met het invoeren van tekst, worden er meer tekst vakken voor **het inhoudsdistributiepad weer** gegeven, zodat u een lijst met meerdere assets kunt bouwen. Als u assets uit de lijst wilt verwijderen, selecteert u de knop met het weglatings teken (...) en selecteert u vervolgens **verwijderen**.
    > 
    > Elk inhoudsdistributiepad moet een relatieve URL zijn die voldoet aan de volgende [reguliere expressies](/dotnet/standard/base-types/regular-expression-language-quick-reference):  
    > - Laad één bestandspad: `^(?:\/[a-zA-Z0-9-_.%=\u0020]+)+$`  
@@ -58,7 +58,7 @@ In deze zelf studie wordt u begeleid bij het vooraf laden van inhoud in de cache
    > 
    
     ![Knop laden](./media/cdn-preload-endpoint/cdn-load-paths.png)
-5. Wanneer u klaar bent met het invoeren van inhouds paden, selecteert u **laden** .
+5. Wanneer u klaar bent met het invoeren van inhouds paden, selecteert u **laden**.
    
 
 > [!NOTE]
@@ -68,5 +68,5 @@ In deze zelf studie wordt u begeleid bij het vooraf laden van inhoud in de cache
 
 ## <a name="see-also"></a>Zie ook
 * [Een Azure CDN-eind punt verwijderen](cdn-purge-endpoint.md)
-* [Azure CDN REST API verwijzing: inhoud op een eind punt vooraf laden](/rest/api/cdn/endpoints/loadcontent)
-* [Azure CDN REST API verwijzing: inhoud uit een eind punt verwijderen](/rest/api/cdn/endpoints/purgecontent)
+* [Azure CDN REST API verwijzing: inhoud op een eind punt vooraf laden](/rest/api/cdn/cdn/endpoints/loadcontent)
+* [Azure CDN REST API verwijzing: inhoud uit een eind punt verwijderen](/rest/api/cdn/cdn/endpoints/purgecontent)

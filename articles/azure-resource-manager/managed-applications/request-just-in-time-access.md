@@ -5,16 +5,16 @@ author: MSEvanhi
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: evanhi
-ms.openlocfilehash: f839eb04e0c036b5059e35fac16d9c702646cbd7
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: b7c067ca82ea7fbe7eb9c0f3d50b7fe75dfb47df
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435685"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377360"
 ---
 # <a name="enable-and-request-just-in-time-access-for-azure-managed-applications"></a>Just-in-time-toegang inschakelen en aanvragen voor Azure Managed Applications
 
-Consumenten van uw beheerde toepassing kunnen niet alleen permanente toegang tot de beheerde resource groep verlenen. Als uitgever van een beheer toepassing kunt u de voor keur geven aan gebruikers die precies weten wanneer u toegang nodig hebt tot de beheerde bronnen. Azure Managed Applications biedt de mogelijkheid om gebruikers meer controle te geven over het verlenen van toegang tot beheerde resources, een functie die just-in-time (JIT) toegang wordt genoemd. Deze functie is momenteel beschikbaar als preview-product.
+Consumenten van uw beheerde toepassing kunnen niet alleen permanente toegang tot de beheerde resource groep verlenen. Als uitgever van een beheerde toepassing kunt u de voor keur geven aan gebruikers die precies weten wanneer u toegang nodig hebt tot de beheerde bronnen. Azure Managed Applications biedt de mogelijkheid om gebruikers meer controle te geven over het verlenen van toegang tot beheerde resources, een functie die just-in-time (JIT) toegang wordt genoemd. Deze functie is momenteel beschikbaar als preview-product.
 
 Met JIT-toegang kunt u verhoogde toegang tot de resources van een beheerde toepassing aanvragen voor het oplossen van problemen of onderhoud. U hebt altijd alleen-lezen toegang tot de resources, maar gedurende een bepaalde periode kunt u meer toegang hebben.
 

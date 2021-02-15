@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2d668775e8d11faa0b2913cebc41e5217b49c278
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 2d97d02aec84fec92e29e971cd5c667c847b2541
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357322"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368044"
 ---
 # <a name="migration-overview-sql-server-to-sql-database"></a>Migratie overzicht: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -166,7 +166,7 @@ Het hand matig instellen van SQL Server functies voor hoge Beschik baarheid, zoa
 Naast de architectuur met hoge Beschik baarheid die deel uitmaakt van SQL Database, is er ook de functie [groepen voor automatische failover](../../database/auto-failover-group-overview.md) waarmee u de replicatie en failover van data bases in een beheerd exemplaar kunt beheren naar een andere regio. 
 
 #### <a name="sql-agent-jobs"></a>SQL-Agent taken
-SQL-Agent taken worden niet rechtstreeks ondersteund in Azure SQL Database en moeten worden geïmplementeerd op [Elastic database-taken (preview)](../../database/job-automation-overview.md#elastic-database-jobs-preview).
+SQL-Agent taken worden niet rechtstreeks ondersteund in Azure SQL Database en moeten worden geïmplementeerd op [Elastic database-taken (preview)](../../database/job-automation-overview.md).
 
 #### <a name="logins-and-groups"></a>Aanmeldingen en groepen
 Verplaats SQL-aanmeldingen van de bron SQL Server naar Azure SQL Database met behulp van Database Migration Service (DMS) in de offline modus.  Gebruik de Blade **geselecteerde aanmeldingen** in de **migratie wizard** om aanmeldingen naar uw doel-SQL database te migreren. 

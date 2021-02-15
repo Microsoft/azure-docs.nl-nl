@@ -1,23 +1,17 @@
 ---
 title: Activiteit van meta gegevens in Azure Data Factory ophalen
 description: Meer informatie over het gebruik van de activiteit meta gegevens ophalen in een Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: ''
-ms.assetid: 1c46ed69-4049-44ec-9b46-e90e964a4a8e
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: jingwang
-ms.openlocfilehash: e32115c590d73f5c93f322d3bd542096f2964a4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f860225862dcbfb79535acfbd6eeb89a217e7ae9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91297603"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385486"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Activiteit van meta gegevens in Azure Data Factory ophalen
 
@@ -76,7 +70,7 @@ De activiteit meta gegevens ophalen neemt een gegevensset als invoer en retourne
 
 U kunt de volgende typen meta gegevens opgeven in de velden lijst activiteit meta gegevens ophalen om de bijbehorende gegevens op te halen:
 
-| Meta gegevens type | Beschrijving |
+| Meta gegevens type | Description |
 |:--- |:--- |
 | itemName | De naam van het bestand of de map. |
 | Item type | Het type van het bestand of de map. Geretourneerde waarde is `File` of `Folder` . |
@@ -168,10 +162,10 @@ Op dit moment kunnen met de activiteit meta gegevens ophalen de volgende typen m
 
 Eigenschap | Beschrijving | Vereist
 -------- | ----------- | --------
-Velden | De typen meta gegevens die zijn vereist. Zie de sectie [meta gegevens opties](#metadata-options) in dit artikel voor meer informatie over ondersteunde meta gegevens. | Ja 
-sets | De referentie gegevensset waarvan de meta gegevens moeten worden opgehaald door de activiteit meta gegevens ophalen. Zie de sectie [mogelijkheden](#capabilities) voor informatie over ondersteunde connectors. Raadpleeg de onderwerpen over de specifieke connector voor de syntaxis van de gegevensset. | Ja
-formatSettings | Toep assen bij gebruik van gegevensset voor indelings type. | Nee
-storeSettings | Toep assen bij gebruik van gegevensset voor indelings type. | Nee
+Velden | De typen meta gegevens die zijn vereist. Zie de sectie [meta gegevens opties](#metadata-options) in dit artikel voor meer informatie over ondersteunde meta gegevens. | Yes 
+sets | De referentie gegevensset waarvan de meta gegevens moeten worden opgehaald door de activiteit meta gegevens ophalen. Zie de sectie [mogelijkheden](#capabilities) voor informatie over ondersteunde connectors. Raadpleeg de onderwerpen over de specifieke connector voor de syntaxis van de gegevensset. | Yes
+formatSettings | Toep assen bij gebruik van gegevensset voor indelings type. | No
+storeSettings | Toep assen bij gebruik van gegevensset voor indelings type. | No
 
 ## <a name="sample-output"></a>Voorbeelduitvoer
 

@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: c702cb16267d5495feedd8d361092b23b6d4deac
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 569a1365e73acbc2fdaf351f2e2cff21181241e1
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372439"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523456"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Kennismaking met de gebruikersinterface van Azure IoT Central
 
@@ -97,8 +97,8 @@ Het bovenste menu wordt op elke pagina weergegeven:
 
 * Als u wilt zoeken naar apparaatsjablonen en apparaten, geeft u een **Zoek**-waarde op.
 * Als u de taal of het thema van de gebruikersinterface wilt wijzigen, kiest u het pictogram **Instellingen**. Meer informatie over [het beheren van de voorkeuren van uw toepassing](howto-manage-preferences.md)
-* Als u zich wilt afmelden bij de toepassing, kiest u het pictogram **Account**.
 * Als u hulp en ondersteuning nodig hebt, kiest u het keuzemenu **Help** voor een lijst met bronnen. U kunt [informatie over uw toepassing](./howto-get-app-info.md) ophalen uit de koppeling **Over uw app**. In een toepassing met een gratis abonnement bevatten de ondersteuningsresources toegang tot [live chat](howto-show-hide-chat.md).
+* Als u zich wilt afmelden bij de toepassing, kiest u het pictogram **Account**.
 
 Voor de gebruikersinterface kunt u kiezen tussen een licht thema of een donker thema:
 

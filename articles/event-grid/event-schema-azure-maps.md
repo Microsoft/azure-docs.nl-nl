@@ -2,21 +2,19 @@
 title: Azure Maps als Event Grid bron
 description: Hierin worden de eigenschappen en schema's beschreven die voor Azure Maps gebeurtenissen worden gegeven met Azure Event Grid
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 4203bdf5222278b698d656835afebd9769557303
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/11/2021
+ms.openlocfilehash: 88cf0c8274d685a45862bc7b7884b5e4a686c22d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87461983"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363675"
 ---
 # <a name="azure-maps-as-an-event-grid-source"></a>Azure Maps als Event Grid bron
 
 In dit artikel vindt u de eigenschappen en het schema voor Azure Maps gebeurtenissen. Zie [Azure Event grid-gebeurtenis schema](./event-schema.md)voor een inleiding tot gebeurtenis schema's. Het biedt ook een lijst met snel starten en zelf studies om Azure Maps als gebeurtenis bron te gebruiken.
 
-## <a name="event-grid-event-schema"></a>Event Grid-gebeurtenisschema
-
-### <a name="available-event-types"></a>Beschik bare gebeurtenis typen
+## <a name="available-event-types"></a>Beschik bare gebeurtenis typen
 
 Een Azure Maps account verzendt de volgende gebeurtenis typen:
 
@@ -26,8 +24,9 @@ Een Azure Maps account verzendt de volgende gebeurtenis typen:
 | Micro soft. Maps. GeofenceExited | Deze gebeurtenis treedt op wanneer de ontvangen coördinaten van binnen een bepaalde geofence naar buiten zijn verplaatst |
 | Micro soft. Maps. GeofenceResult | Deze gebeurtenis treedt elke keer op wanneer een geoomheinings query een resultaat retourneert, ongeacht de status |
 
-### <a name="event-examples"></a>Gebeurtenis voorbeelden
+## <a name="example-events"></a>Voorbeeld gebeurtenissen
 
+# <a name="event-grid-event-schema"></a>[Event Grid-gebeurtenisschema](#tab/event-grid-event-schema)
 In het volgende voor beeld wordt het schema van een **GeofenceEntered** -gebeurtenis weer gegeven
 
 ```JSON
@@ -96,70 +95,154 @@ In het volgende voor beeld wordt schema voor **GeofenceResult** weer gegeven
 }
 ```
 
-### <a name="event-properties"></a>Gebeurtenis eigenschappen
+# <a name="cloud-event-schema"></a>[Cloudgebeurtenisschema](#tab/cloud-event-schema)
+In het volgende voor beeld wordt het schema van een **GeofenceEntered** -gebeurtenis weer gegeven
 
+```JSON
+{   
+   "id":"7f8446e2-1ac7-4234-8425-303726ea3981", 
+   "source":"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Maps/accounts/{accountName}", 
+   "subject":"/spatial/geofence/udid/{udid}/id/{eventId}", 
+   "data":{   
+      "geometries":[   
+         {   
+            "deviceId":"device_1", 
+            "udId":"1a13b444-4acf-32ab-ce4e-9ca4af20b169", 
+            "geometryId":"2", 
+            "distance":-999.0, 
+            "nearestLat":47.618786, 
+            "nearestLon":-122.132151 
+         } 
+      ], 
+      "expiredGeofenceGeometryId":[   
+      ], 
+      "invalidPeriodGeofenceGeometryId":[   
+      ] 
+   }, 
+   "type":"Microsoft.Maps.GeofenceEntered", 
+   "time":"2018-11-08T00:54:17.6408601Z", 
+   "specversion":"1.0" 
+}
+```
+
+In het volgende voor beeld wordt schema voor **GeofenceResult** weer gegeven 
+
+```JSON
+{   
+   "id":"451675de-a67d-4929-876c-5c2bf0b2c000", 
+   "source":"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Maps/accounts/{accountName}", 
+   "subject":"/spatial/geofence/udid/{udid}/id/{eventId}", 
+   "data":{   
+      "geometries":[   
+         {   
+            "deviceId":"device_1", 
+            "udId":"1a13b444-4acf-32ab-ce4e-9ca4af20b169", 
+            "geometryId":"1", 
+            "distance":999.0, 
+            "nearestLat":47.609833, 
+            "nearestLon":-122.148274 
+         }, 
+         {   
+            "deviceId":"device_1", 
+            "udId":"1a13b444-4acf-32ab-ce4e-9ca4af20b169", 
+            "geometryId":"2", 
+            "distance":999.0, 
+            "nearestLat":47.621954, 
+            "nearestLon":-122.131841 
+         } 
+      ], 
+      "expiredGeofenceGeometryId":[   
+      ], 
+      "invalidPeriodGeofenceGeometryId":[   
+      ] 
+   }, 
+   "type":"Microsoft.Maps.GeofenceResult", 
+   "time":"2018-11-08T00:52:08.0954283Z", 
+   "specversion":"1.0" 
+}
+```
+---
+
+## <a name="event-properties"></a>Gebeurtenis eigenschappen
+
+# <a name="event-grid-event-schema"></a>[Event Grid-gebeurtenisschema](#tab/event-grid-event-schema)
 Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| onderwerp | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld kan niet worden geschreven. Event Grid biedt deze waarde. |
-| onderwerp | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
-| Type | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
-| eventTime | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
-| id | tekenreeks | De unieke id voor de gebeurtenis. |
-| gegevens | object | Gegevens van geoomheinings gebeurtenis. |
-| dataVersion | tekenreeks | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
-| metadataVersion | tekenreeks | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
+| `topic` | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
+| `subject` | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| `eventType` | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| `eventTime` | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| `id` | tekenreeks | De unieke id voor de gebeurtenis. |
+| `data` | object | Gegevens van geoomheinings gebeurtenis. |
+| `dataVersion` | tekenreeks | De schemaversie van het gegevensobject. De uitgever definieert de schemaversie. |
+| `metadataVersion` | tekenreeks | De schemaversie van de metagegevens van de gebeurtenis. Event Grid definieert het schema voor de eigenschappen op het hoogste niveau. Event Grid biedt deze waarde. |
+
+# <a name="cloud-event-schema"></a>[Cloudgebeurtenisschema](#tab/cloud-event-schema)
+Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
+
+| Eigenschap | Type | Description |
+| -------- | ---- | ----------- |
+| `source` | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld is niet beschrijfbaar. Event Grid biedt deze waarde. |
+| `subject` | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
+| `type` | tekenreeks | Een van de geregistreerde gebeurtenistypen voor deze gebeurtenisbron. |
+| `time` | tekenreeks | Het tijdstip waarop de gebeurtenis is gegenereerd op basis van de UTC-tijd van de provider. |
+| `id` | tekenreeks | De unieke id voor de gebeurtenis. |
+| `data` | object | Gegevens van geoomheinings gebeurtenis. |
+| `specversion` | tekenreeks | CloudEvents-schema specificatie versie. |
+
+---
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| apiCategory | tekenreeks | De API-categorie van de gebeurtenis. |
-| apiName | tekenreeks | De API-naam van de gebeurtenis. |
-| issues | object | Geeft een lijst van problemen die zijn opgetreden tijdens de verwerking. Als er problemen worden geretourneerd, worden er geen geometrische elementen geretourneerd met het antwoord. |
-| responseCode | getal | HTTP-antwoord code |
-| geoelementen | object | Hiermee wordt een lijst weer gegeven met geometrieën die de coördinaten positie bevatten of de searchBuffer rond de positie overlappen. |
+| `apiCategory` | tekenreeks | De API-categorie van de gebeurtenis. |
+| `apiName` | tekenreeks | De API-naam van de gebeurtenis. |
+| `issues` | object | Geeft een lijst van problemen die zijn opgetreden tijdens de verwerking. Als er problemen worden geretourneerd, worden er geen geometrische elementen geretourneerd met het antwoord. |
+| `responseCode` | getal | HTTP-antwoord code |
+| `geometries` | object | Hiermee wordt een lijst weer gegeven met geometrieën die de coördinaten positie bevatten of de searchBuffer rond de positie overlappen. |
 
 Het fout object wordt geretourneerd als er een fout optreedt in de Maps-API. Het object Error heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| fout | ErrorDetails |Dit object wordt geretourneerd als er een fout optreedt in de Maps-API  |
+| `error` | ErrorDetails |Dit object wordt geretourneerd als er een fout optreedt in de Maps-API  |
 
 Het error Details-object wordt geretourneerd als er een fout optreedt in de Maps-API. De error Details of het object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| code | tekenreeks | De HTTP-status code. |
-| message | tekenreeks | Indien beschikbaar, een door de mens lees bare beschrijving van de fout. |
-| innererror | InnerError | Indien beschikbaar, een object met servicespecifieke informatie over de fout. |
+| `code` | tekenreeks | De HTTP-status code. |
+| `message` | tekenreeks | Indien beschikbaar, een door de mens lees bare beschrijving van de fout. |
+| `innererror` | InnerError | Indien beschikbaar, een object met servicespecifieke informatie over de fout. |
 
 De InnerError is een object dat informatie over de servicespecifieke bevat over de fout. Het object InnerError heeft de volgende eigenschappen: 
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| code | tekenreeks | Het fout bericht. |
+| `code` | tekenreeks | Het fout bericht. |
 
 Het object geometrische elementen bevat een lijst met geometrie-Id's van de geofences die zijn verlopen ten opzichte van de gebruikers tijd in de aanvraag. Het object geometrische elementen heeft geometrie-items met de volgende eigenschappen: 
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 |:-------- |:---- |:----------- |
-| DeviceID | tekenreeks | ID van het apparaat. |
-| afstand | tekenreeks | <p>Afstand van de coördinaat tot de dichtstbijzijnde rand van de geofence. Positief betekent dat de coördinaat zich buiten de geofence bevindt. Als de coördinaat zich buiten de geofence bevindt, maar meer dan de waarde van searchBuffer verwijderd van de dichtstbijzijnde geofence-rand, is de waarde 999. Negatief betekent dat de coördinaat zich binnen de geofence bevindt. Als de coördinaat zich binnen de veelhoek bevindt, maar meer dan de waarde van searchBuffer verwijderd van de dichtstbijzijnde rand van de geoomheining, is de waarde-999. Een waarde van 999 betekent dat het vertrouwen van de coördinaten goed buiten de geofence ligt. Een waarde van-999 betekent dat het vertrouwen van de coördinaten goed is binnen de geofence.<p> |
-| geometryid |tekenreeks | De unieke id geeft de geometrie van de geofence aan. |
-| nearestlat | getal | De breedte graad van het dichtstbijzijnde punt van de geometrie. |
-| nearestlon | getal | De lengte graad van het dichtstbijzijnde punt van de geometrie. |
-| udId | tekenreeks | De unieke id die wordt geretourneerd door de gebruikers-upload service bij het uploaden van een geofence. Wordt niet opgenomen in een geoomheining van post-API. |
+| `deviceid` | tekenreeks | ID van het apparaat. |
+| `distance` | tekenreeks | <p>Afstand van de coördinaat tot de dichtstbijzijnde rand van de geofence. Positief betekent dat de coördinaat zich buiten de geofence bevindt. Als de coördinaat zich buiten de geofence bevindt, maar meer dan de waarde van searchBuffer verwijderd van de dichtstbijzijnde geofence-rand, is de waarde 999. Negatief betekent dat de coördinaat zich binnen de geofence bevindt. Als de coördinaat zich binnen de veelhoek bevindt, maar meer dan de waarde van searchBuffer verwijderd van de dichtstbijzijnde rand van de geoomheining, is de waarde-999. Een waarde van 999 betekent dat het vertrouwen van de coördinaten goed buiten de geofence ligt. Een waarde van-999 betekent dat het vertrouwen van de coördinaten goed is binnen de geofence.<p> |
+| `geometryid` |tekenreeks | De unieke ID geeft de geometrie van de geofence aan. |
+| `nearestlat` | getal | De breedte graad van het dichtstbijzijnde punt van de geometrie. |
+| `nearestlon` | getal | De lengte graad van het dichtstbijzijnde punt van de geometrie. |
+| `udId` | tekenreeks | De unieke ID die wordt geretourneerd door de gebruikers-upload service bij het uploaden van een geofence. Wordt niet opgenomen in een geoomheining van post-API. |
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
-| expiredGeofenceGeometryId | teken reeks [] | Lijsten van de geometrie-ID van de geofence die is verlopen ten opzichte van de gebruikers tijd in de aanvraag. |
-| geoelementen | geometrieën [] |Hiermee wordt een lijst weer gegeven met geometrieën die de coördinaten positie bevatten of de searchBuffer rond de positie overlappen. |
-| invalidPeriodGeofenceGeometryId | teken reeks []  | Lijsten van de geometrie-ID van de geofence die zich in een ongeldige periode bevindt ten opzichte van de gebruikers tijd in de aanvraag. |
-| isEventPublished | booleaans | Waar als ten minste één gebeurtenis is gepubliceerd naar de abonnee van de Azure Maps-gebeurtenis, False als er geen gebeurtenis is gepubliceerd naar de abonnee van de Azure Maps-gebeurtenis. |
+| `expiredGeofenceGeometryId` | teken reeks [] | Lijsten van de geometrie-ID van de geofence die is verlopen ten opzichte van de gebruikers tijd in de aanvraag. |
+| `geometries` | geometrieën [] |Hiermee wordt een lijst weer gegeven met geometrieën die de coördinaten positie bevatten of de searchBuffer rond de positie overlappen. |
+| `invalidPeriodGeofenceGeometryId` | teken reeks []  | Lijsten van de geometrie-ID van de geofence die zich in een ongeldige periode bevindt ten opzichte van de gebruikers tijd in de aanvraag. |
+| `isEventPublished` | booleaans | Waar als ten minste één gebeurtenis is gepubliceerd naar de abonnee van de Azure Maps-gebeurtenis, False als er geen gebeurtenis is gepubliceerd naar de abonnee van de Azure Maps-gebeurtenis. |
 
 ## <a name="tutorials-and-how-tos"></a>Zelfstudies en handleidingen
 |Titel  |Beschrijving  |

@@ -6,18 +6,18 @@ metadata:
   description: Machine Learning Studio (klassiek) is een hulpprogramma met functionaliteit op basis van slepen en neerzetten waarmee u oplossingen voor predictive analytics kunt ontwikkelen, testen en implementeren.
   services: machine-learning
   ms.service: machine-learning
-  ms.subservice: studio
+  ms.subservice: studio-classic
   ms.topic: landing-page
   ms.collection: collection
   ms.author: peterlu
   author: peterclu
   ms.date: 03/05/2020
-  ms.openlocfilehash: 246196268191d49227f9a46f48bf3c8e1175e33a
-  ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
-  ms.translationtype: HT
+  ms.openlocfilehash: 27be00a986b27f4203e2cbfce568603aa7880802
+  ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/11/2021
-  ms.locfileid: "98071677"
+  ms.lasthandoff: 02/14/2021
+  ms.locfileid: "100520337"
 landingContent:
 - title: Aan de slag met Studio (klassiek)
   linkLists:

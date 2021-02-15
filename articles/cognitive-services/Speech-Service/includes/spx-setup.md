@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: d94b83dd658193069f24202b978d32389eb82ac1
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 1eae40437e06bfb150e202db1f3bb4125baeaa97
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99579737"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515017"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -39,6 +39,16 @@ Als u naar een bestand uitvoert, kunnen in een teksteditor zoals Kladblok of een
 
 #### <a name="linux-install"></a>[Linux-installatie](#tab/linuxinstall)
 
+De volgende Linux-distributies worden ondersteund voor x64-architecturen met behulp van de speech CLI:
+
+* CentOS 7/8
+* Debian 9/10 
+* Red Hat Enterprise Linux (RHEL) 7/8
+* Ubuntu 16.04/18.04/20.04
+
+> [!NOTE]
+> Aanvullende architecturen worden ondersteund door de Speech SDK (niet de speech CLI). Zie [about the Speech SDK](../speech-sdk.md)(Engelstalig) voor meer informatie.
+
 Volg deze stappen om de Speech CLI te installeren voor Linux op een x64 CPU:
 
 1. Installeer [.net Core 3,1](/dotnet/core/install/linux).
@@ -49,7 +59,7 @@ Volg deze stappen om de Speech CLI te installeren voor Linux op een x64 CPU:
 Typ `spx` om Help weer te geven voor de Speech CLI.
 
 > [!NOTE]
-> Als alternatief voor NuGet kunt u de binaire bestanden in het [zip-archief](https://aka.ms/speech/spx-zips.zip)downloaden, uitpakken `spx-netcore-30-linux-x64` naar een nieuwe `~/spx` map, `sudo chmod +r+x spx` het binaire bestand typen en het `~/spx` pad toevoegen aan de systeem variabele PATH.
+> Als alternatief voor NuGet kunt u de binaire bestanden in het [zip-archief](https://aka.ms/speech/spx-zips.zip)downloaden, uitpakken `spx-netcore-30-linux-x64.zip` naar een nieuwe `~/spx` map, `sudo chmod +r+x spx` het binaire bestand typen en het `~/spx` pad toevoegen aan de systeem variabele PATH.
 
 
 #### <a name="docker-install-windows-linux-macos"></a>[Docker-installatie (Windows, Linux, macOS)](#tab/dockerinstall)
@@ -107,7 +117,7 @@ Als u de opdracht `spx` wilt gebruiken in een container, moet u altijd de volled
 In Windows wordt bijvoorbeeld met deze opdracht de sleutel ingesteld:
 
 ```console
-docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
+docker run -it -v c:\spx-data:/data --rm msftspeech/spx config --set @key SUBSCRIPTION-KEY
 ```
 
 Voor uitgebreidere interactie met het opdrachtregelprogramma kunt u een container starten met een interactieve bash shell door een beginpuntparameter toe te voegen.
@@ -160,8 +170,8 @@ Als u de Speech CLI wilt gaan gebruiken, moet u de sleutel voor het spraakabonne
 Zodra u uw abonnementssleutel en regio-id hebt (bijvoorbeeld `eastus`, `westus`), voert u de volgende opdrachten uit.
 
 ```console
-spx config @key --set SUBSCRIPTION-KEY
-spx config @region --set REGION
+spx config --set @key SUBSCRIPTION-KEY
+spx config --set @region REGION
 ```
 
 Uw abonnementsverificatie wordt nu opgeslagen voor toekomstige SPX-aanvragen. Als u een van deze opgeslagen waarden wilt verwijderen, voert u `spx config @region --clear` of `spx config @key --clear` uit.

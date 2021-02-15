@@ -11,12 +11,13 @@ ms.reviewer: larryfr
 ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: e9c691485eb0ec1a0b3c0564f9a8f9a5d2aa255d
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+adobe-target: true
+ms.openlocfilehash: da47967b719b5ce601d8049f54597c207ea732c8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185798"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372031"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -314,13 +315,13 @@ Tijdens de implementatie van het model ziet u mogelijk de wijziging van de servi
 
 In de volgende tabel worden de verschillende service statussen beschreven:
 
-| Status van webservice | Beschrijving | Eind status?
+| Status van webservice | Description | Eind status?
 | ----- | ----- | ----- |
-| Overstappen | De service is in het implementatie proces. | Nee |
-| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | Nee |
-| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | Nee |
-| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Ja |
-| In orde | De service is in orde en het eind punt is beschikbaar. | Ja |
+| Overstappen | De service is in het implementatie proces. | No |
+| Niet in orde | De service is geïmplementeerd, maar is momenteel niet bereikbaar.  | No |
+| Unschedulable | De service kan op dit moment niet worden geïmplementeerd vanwege een gebrek aan resources. | No |
+| Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Yes |
+| In orde | De service is in orde en het eind punt is beschikbaar. | Yes |
 
 > [!TIP]
 > Tijdens de implementatie worden docker-installatie kopieën voor Compute-doelen gemaakt en geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en implementeren in uw reken doelen. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.

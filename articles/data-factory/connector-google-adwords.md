@@ -1,22 +1,18 @@
 ---
 title: Gegevens kopiëren van Google AdWords
 description: Meer informatie over het kopiëren van gegevens uit Google AdWords naar ondersteunde Sink-gegevens archieven door gebruik te maken van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/25/2019
-ms.openlocfilehash: 79e277cb3d512ee17da866a61e9d6d66a50cd902
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b3036f09e41b20bc3c190f06842acd817fcece6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81415026"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380947"
 ---
 # <a name="copy-data-from-google-adwords-using-azure-data-factory"></a>Gegevens uit Google AdWords kopiëren met behulp van Azure Data Factory
 
@@ -49,17 +45,17 @@ De volgende eigenschappen worden ondersteund voor Google AdWords-gekoppelde serv
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **GoogleAdWords** | Ja |
-| clientCustomerID | De klant-ID van de client van het AdWords-account waarvoor u rapport gegevens wilt ophalen.  | Ja |
-| developerToken | Het ontwikkelaars token dat is gekoppeld aan het beheer account dat u gebruikt om toegang te verlenen tot de AdWords-API.  U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Ja |
-| authenticationType | Het OAuth 2,0-verificatie mechanisme dat wordt gebruikt voor verificatie. ServiceAuthentication kan alleen worden gebruikt op zelf-hostende IR. <br/>Toegestane waarden zijn: **ServiceAuthentication**, **UserAuthentication** | Ja |
-| refreshToken | Het vernieuwings token dat is verkregen van Google voor het machtigen van toegang tot AdWords voor UserAuthentication. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Nee |
-| clientId | De client-ID van de Google-toepassing die wordt gebruikt voor het verkrijgen van het vernieuwings token. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Nee |
-| clientSecret | Het client geheim van de Google-toepassing die wordt gebruikt voor het verkrijgen van het vernieuwings token. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Nee |
-| e-mail | De e-mail-ID van het service account die wordt gebruikt voor ServiceAuthentication en kan alleen worden gebruikt op zelf-hostende IR.  | Nee |
-| keyFilePath | Het volledige pad naar het. p12-sleutel bestand dat wordt gebruikt voor verificatie van het e-mail adres van het service account en kan alleen worden gebruikt op zelf-hostende IR.  | Nee |
-| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | Nee |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | Nee |
+| type | De eigenschap type moet worden ingesteld op: **GoogleAdWords** | Yes |
+| clientCustomerID | De klant-ID van de client van het AdWords-account waarvoor u rapport gegevens wilt ophalen.  | Yes |
+| developerToken | Het ontwikkelaars token dat is gekoppeld aan het beheer account dat u gebruikt om toegang te verlenen tot de AdWords-API.  U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | Yes |
+| authenticationType | Het OAuth 2,0-verificatie mechanisme dat wordt gebruikt voor verificatie. ServiceAuthentication kan alleen worden gebruikt op zelf-hostende IR. <br/>Toegestane waarden zijn: **ServiceAuthentication**, **UserAuthentication** | Yes |
+| refreshToken | Het vernieuwings token dat is verkregen van Google voor het machtigen van toegang tot AdWords voor UserAuthentication. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | No |
+| clientId | De client-ID van de Google-toepassing die wordt gebruikt voor het verkrijgen van het vernieuwings token. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | No |
+| clientSecret | Het client geheim van de Google-toepassing die wordt gebruikt voor het verkrijgen van het vernieuwings token. U kunt dit veld markeren als SecureString om het veilig op te slaan in ADF, of het wacht woord op te slaan in Azure Key Vault en de ADF-Kopieer activiteit uit te voeren tijdens het uitvoeren van de gegevens kopie: meer informatie over [referenties voor opslaan in Key Vault](store-credentials-in-key-vault.md). | No |
+| e-mail | De e-mail-ID van het service account die wordt gebruikt voor ServiceAuthentication en kan alleen worden gebruikt op zelf-hostende IR.  | No |
+| keyFilePath | Het volledige pad naar het. p12-sleutel bestand dat wordt gebruikt voor verificatie van het e-mail adres van het service account en kan alleen worden gebruikt op zelf-hostende IR.  | No |
+| trustedCertPath | Het volledige pad van het. pem-bestand met vertrouwde CA-certificaten voor het verifiëren van de server bij het maken van verbinding via TLS. Deze eigenschap kan alleen worden ingesteld wanneer TLS op zelf-hostende IR wordt gebruikt. De standaard waarde is het cacerts. pem-bestand dat met de IR is geïnstalleerd.  | No |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is false.  | No |
 
 **Voorbeeld:**
 
@@ -105,7 +101,7 @@ Als u gegevens wilt kopiëren uit Google AdWords, stelt u de eigenschap type van
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **GoogleAdWordsObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **GoogleAdWordsObject** | Yes |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -136,7 +132,7 @@ Als u gegevens wilt kopiëren uit Google AdWords, stelt u het bron type in de Ko
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **GoogleAdWordsSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **GoogleAdWordsSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

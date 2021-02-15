@@ -6,18 +6,18 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 40003db9c3bd2c736f9cedd73b8b7a31a77f625f
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: d63a31eae57d09f1658f5f19c1518cb0648fa4e8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854577"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373743"
 ---
-# <a name="use-the-azure-portal-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>De Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens
+# <a name="use-the-azure-portal-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot blob- en wachtrijgegevens
 
 Met Azure Active Directory (Azure AD) worden de toegangs rechten voor beveiligde bronnen geautoriseerd via [toegangs beheer op basis van rollen (Azure RBAC)](../../role-based-access-control/overview.md). Azure Storage definieert een set ingebouwde Azure-rollen die algemene sets machtigingen omvatten die worden gebruikt voor toegang tot BLOB-of wachtrij gegevens.
 
@@ -43,10 +43,12 @@ Nadat u het juiste bereik voor een roltoewijzing hebt bepaald, navigeert u naar 
 
 In de volgende secties worden deze stappen uitvoeriger beschreven.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Wanneer u een Azure Storage-account maakt, worden er niet automatisch machtigingen toegewezen om toegang te krijgen tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of container of wachtrij.
 >
 > Voordat u een rol toewijst voor toegang tot gegevens, kunt u via de Azure Portal toegang krijgen tot gegevens in uw opslag account, omdat de Azure Portal ook de account sleutel kan gebruiken voor toegang tot gegevens. Zie [kiezen hoe u de toegang tot BLOB-gegevens in de Azure Portal autoriseren](../blobs/authorize-data-operations-portal.md)voor meer informatie.
+>
+> Als het opslag account is vergrendeld met een Azure Resource Manager alleen-lezen vergrendeling, voor komt de vergren deling dat de toewijzing van Azure RBAC-rollen die zijn afgestemd op het opslag account of aan een gegevens container (BLOB-container of wachtrij) wordt toegewezen.
 
 ### <a name="assign-an-azure-built-in-role"></a>Een ingebouwde Azure-rol toewijzen
 

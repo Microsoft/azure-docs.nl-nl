@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73946eea846b06b28d0a0f017ea1317c8cc7326d
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 550481b9153d8fe8745d2a745fe6b6f00d09cdb1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165141"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365817"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Veelgestelde vragen over het beheer van apparaten Azure Active Directory
 
@@ -298,7 +298,12 @@ UPN-wijzigingen worden ondersteund met update voor Windows 10 2004. Gebruikers o
 **Één** 
 - Voor Windows 10 geregistreerde Azure ad-apparaten gaat u naar **instellingen**  >  **accounts**  >  **toegang tot werk of school**. Selecteer uw account en selecteer **verbinding verbreken**. Apparaatregistratie is per gebruikers profiel in Windows 10.
 - Voor IOS en Android kunt u het apparaat voor de Microsoft Authenticator toepassings **instellingen** gebruiken en de registratie  >   **van apparaat** opheffen selecteren.
-- Voor macOS kunt u de Microsoft Intune Bedrijfsportal toepassing gebruiken om de inschrijving van het apparaat bij beheer ongedaan te maken en alle registraties te verwijderen. 
+- Voor macOS kunt u de Microsoft Intune bedrijfsportal toepassing gebruiken om de inschrijving van het apparaat bij beheer ongedaan te maken en alle registraties te verwijderen. 
+
+Voor Windows 10-apparaten kan dit proces worden geautomatiseerd met het [hulp programma voor het verwijderen van Workplace join (WPJ)](https://download.microsoft.com/download/8/e/f/8ef13ae0-6aa8-48a2-8697-5b1711134730/WPJCleanUp.zip)
+
+> [!NOTE]
+> Met dit hulp programma worden alle SSO-accounts op het apparaat verwijderd. Na deze bewerking worden alle toepassingen de SSO-status kwijt geraakt en wordt het apparaat niet Inge schreven bij beheer hulpprogramma's (MDM) en wordt de registratie van de Cloud ongedaan gemaakt. De volgende keer dat een toepassing zich probeert aan te melden, wordt gebruikers gevraagd het account opnieuw toe te voegen.
 
 ---
 ### <a name="q-how-can-i-block-users-from-adding-additional-work-accounts-azure-ad-registered-on-my-corporate-windows-10-devices"></a>V: hoe kan ik voor komen dat gebruikers extra werk accounts toevoegen (geregistreerd voor Azure AD) op mijn bedrijfs Windows 10-apparaten?

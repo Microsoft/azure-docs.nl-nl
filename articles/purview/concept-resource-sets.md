@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 02/03/2021
-ms.openlocfilehash: e4b48729f13ec0234a7a711032a2db34e55a8bd1
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 39a1400bfe642672ba276686851d4f0edebbeb00
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539464"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387849"
 ---
 # <a name="understanding-resource-sets"></a>Informatie over resourcesets
 
@@ -86,19 +86,19 @@ Wanneer Azure controle sfeer liggen overeenkomt met een groep assets in een reso
 
 ### <a name="example-1"></a>Voorbeeld 1
 
-Gekwalificeerde naam: https://myblob.blob.core.windows.net/sample-data/name-of-spark-output/{SparkPartitions}
+Gekwalificeerde naam: `https://myblob.blob.core.windows.net/sample-data/name-of-spark-output/{SparkPartitions}`
 
 Weergave naam: ' naam van Spark-uitvoer '
 
 ### <a name="example-2"></a>Voorbeeld 2
 
-Gekwalificeerde naam: https://myblob.blob.core.windows.net/my-partitioned-data/{Year}-{Month}-{Day}/{N}-{N}-{N}-{N}/{GUID}
+Gekwalificeerde naam: `https://myblob.blob.core.windows.net/my-partitioned-data/{Year}-{Month}-{Day}/{N}-{N}-{N}-{N}/{GUID}`
 
 Weergave naam: mijn gepartitioneerde gegevens
 
 ### <a name="example-3"></a>Voorbeeld 3
 
-Gekwalificeerde naam: https://myblob.blob.core.windows.net/sample-data/data{N}.csv
+Gekwalificeerde naam: `https://myblob.blob.core.windows.net/sample-data/data{N}.csv`
 
 Weergave naam: "gegevens"
 

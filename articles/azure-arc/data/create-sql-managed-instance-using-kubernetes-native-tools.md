@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: dde2794e459e9375a231b7792bc1bd5ab21561bf
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: cade888d951c2071f8f40c145e28eed3c3a5d27c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955226"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384245"
 ---
 # <a name="create-azure-sql-managed-instance-using-kubernetes-tools"></a>Azure SQL Managed instance maken met behulp van Kubernetes-hulpprogram ma's
 
@@ -45,13 +45,13 @@ data:
   username: <your base64 encoded user name. 'sa' is not allowed>
 kind: Secret
 metadata:
-  name: example-login-secret
+  name: sql1-login-secret
 type: Opaque
 ---
 apiVersion: sql.arcdata.microsoft.com/v1alpha1
 kind: sqlmanagedinstance
 metadata:
-  name: example
+  name: sql1
 spec:
   limits:
     memory: 4Gi
@@ -62,13 +62,7 @@ spec:
   service:
     type: LoadBalancer
   storage:
-    backups:
-      className: default
-      size: 5Gi
     data:
-      className: default
-      size: 5Gi
-    datalogs:
       className: default
       size: 5Gi
     logs:
@@ -107,7 +101,7 @@ echo '<your string to encode here>' | base64
 
 ### <a name="customizing-the-name"></a>De naam aanpassen
 
-De sjabloon heeft de waarde ' example ' voor het naam kenmerk.  U kunt dit wijzigen, maar dit moet tekens zijn die de DNS-naamgevings standaarden volgen.  U moet ook de naam van het geheim wijzigen zodat deze overeenkomt.  Als u bijvoorbeeld de naam van het SQL Managed instance wijzigt in ' sql1 ', moet u de naam van het geheim wijzigen van ' voor beeld-aanmelden-geheim ' in ' sql1-login-Secret '
+De sjabloon heeft de waarde ' sql1 ' voor het naam kenmerk.  U kunt dit wijzigen, maar dit moet tekens zijn die de DNS-naamgevings standaarden volgen.  U moet ook de naam van het geheim wijzigen zodat deze overeenkomt.  Als u bijvoorbeeld de naam van het SQL Managed instance wijzigt in ' sql2 ', moet u de naam van het geheim wijzigen van ' sql1-login-Secret ' in ' sql2-login-Secret '
 
 ### <a name="customizing-the-resource-requirements"></a>De resource vereisten aanpassen
 

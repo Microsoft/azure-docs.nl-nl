@@ -1,22 +1,17 @@
 ---
 title: Gegevens kopiëren van Jira met behulp van Azure Data Factory
 description: Meer informatie over het kopiëren van gegevens uit Jira naar ondersteunde Sink-gegevens archieven met behulp van een Kopieer activiteit in een Azure Data Factory-pijp lijn.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/25/2019
 ms.author: jingwang
-ms.openlocfilehash: ddf752fc78c8c6bb2d7e7a57178b9cf2d719b810
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 16ab0ab0e4c4d647f62b38d71acde69df0ae0d42
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81418198"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378482"
 ---
 # <a name="copy-data-from-jira-using-azure-data-factory"></a>Gegevens kopiëren van Jira met behulp van Azure Data Factory
 
@@ -47,14 +42,14 @@ De volgende eigenschappen worden ondersteund voor Jira gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **Jira** | Ja |
-| host | Het IP-adres of de hostnaam van de Jira-service. (bijvoorbeeld jira.example.com)  | Ja |
-| poort | De TCP-poort die de Jira-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 443 als u verbinding maakt via HTTPS of 8080 als u verbinding maakt via HTTP.  | Nee |
-| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de Jira-service.  | Ja |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in het veld gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
+| type | De eigenschap type moet worden ingesteld op: **Jira** | Yes |
+| host | Het IP-adres of de hostnaam van de Jira-service. (bijvoorbeeld jira.example.com)  | Yes |
+| poort | De TCP-poort die de Jira-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 443 als u verbinding maakt via HTTPS of 8080 als u verbinding maakt via HTTP.  | No |
+| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de Jira-service.  | Yes |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in het veld gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
 
 **Voorbeeld:**
 
@@ -84,7 +79,7 @@ Als u gegevens van Jira wilt kopiëren, stelt u de eigenschap type van de gegeve
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **JiraObject** | Ja |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **JiraObject** | Yes |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld**
@@ -114,7 +109,7 @@ Als u gegevens wilt kopiëren uit Jira, stelt u het bron type in de Kopieer acti
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **JiraSource** | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **JiraSource** | Yes |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 31ca65099d645b7fdfee70275515f0a864cd905f
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: dbe0b5ac207b361a9584603bbe2d59abd5e5ca4e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007394"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390399"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
@@ -26,7 +26,7 @@ Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij d
 ### <a name="read-api-v32-public-preview-with-ocr-support-for-73-languages"></a>Lees API v 3.2 Public Preview met OCR-ondersteuning voor 73 talen
 De open bare preview-versie van Computer Vision Lees-API v 3.2, beschikbaar als Cloud service en docker-container, omvat de volgende updates:
 * [OCR voor 73 talen](./language-support.md#optical-character-recognition-ocr) , waaronder vereenvoudigd en traditioneel Chinees, Japans, Koreaans en Latijns talen.
-* Natuurlijke Lees volgorde voor de tekst regel uitvoer.
+* Natuurlijke Lees volgorde voor de tekst regel uitvoer (alleen Latijnse talen)
 * Classificatie van handschrift stijlen voor tekst regels samen met een betrouwbaarheids Score (alleen Latijnse talen).
 * Alleen tekst extra heren voor geselecteerde pagina's voor een document met meerdere pagina's.
 * Beschikbaar als een [Distroless-container](./computer-vision-how-to-install-containers.md?tabs=version-3-2) voor on-premises implementatie.

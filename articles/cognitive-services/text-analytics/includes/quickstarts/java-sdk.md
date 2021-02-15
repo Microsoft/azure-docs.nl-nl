@@ -10,12 +10,12 @@ ms.date: 01/20/2021
 ms.custom: devx-track-java
 ms.author: aahi
 ms.reviewer: tasharm, assafi, sumeh
-ms.openlocfilehash: 9c719d222e8c38030556214d42f6519768d99f0a
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 92b78cae7d1af5dc71509381afd7eaf3f962a8fa
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090752"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515051"
 ---
 <a name="HOLTop"></a>
 
@@ -678,7 +678,7 @@ Recognized entity: Bill Gates, entity category: Person, entity subcategory: null
 Recognized entity: Paul Allen, entity category: Person, entity subcategory: null, confidence score: 0.990000.
 ```
 
-U kunt ook de bewerking Analyseren ook gebruiken om persoonsgegevens en extractie van sleutelwoorden te detecteren. Zie het [analysevoorbeeld](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics/lro/AnalyzeTasksAsync.java) (Engelstalig) op GitHub.
+U kunt ook de bewerking Analyseren ook gebruiken om persoonsgegevens en extractie van sleutelwoorden te detecteren. Zie het [analysevoorbeeld](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics/src/samples/java/com/azure/ai/textanalytics/lro) (Engelstalig) op GitHub.
 
 # <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 

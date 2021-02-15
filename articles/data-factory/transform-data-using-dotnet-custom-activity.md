@@ -1,21 +1,18 @@
 ---
 title: Aangepaste activiteiten gebruiken in een pijp lijn
 description: Meer informatie over het maken van aangepaste activiteiten met behulp van .NET en het gebruik van de activiteiten in een Azure Data Factory-pijp lijn.
-services: data-factory
 ms.service: data-factory
 author: nabhishek
 ms.author: abnarain
-manager: anandsub
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/26/2018
-ms.openlocfilehash: e84f7a2ee8c2f7a57ce1734ad3392a217d6de5fe
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: ec1e7c77c44cf1969e472a6e7288d1af5d6640e1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632104"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374793"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Use custom activities in an Azure Data Factory pipeline (Aangepaste activiteiten gebruiken in een Azure Data Factory-pijplijn)
 
@@ -102,16 +99,16 @@ In de volgende tabel worden namen en beschrijvingen van eigenschappen beschreven
 
 | Eigenschap              | Beschrijving                              | Vereist |
 | :-------------------- | :--------------------------------------- | :------- |
-| naam                  | Naam van de activiteit in de pijp lijn     | Ja      |
-| beschrijving           | Tekst die beschrijft wat de activiteit doet.  | Nee       |
-| type                  | Voor aangepaste activiteit is het type activiteit **aangepast** . | Ja      |
-| linkedServiceName     | Gekoppelde service aan Azure Batch. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.  | Ja      |
-| command               | Opdracht van de aangepaste toepassing die moet worden uitgevoerd. Als de toepassing al beschikbaar is op het Azure Batch groeps knooppunt, kunnen de resourceLinkedService en folderPath worden overgeslagen. U kunt bijvoorbeeld de opdracht opgeven `cmd /c dir` , die wordt ondersteund door het knoop punt Windows Batch-groep. | Ja      |
+| naam                  | Naam van de activiteit in de pijp lijn     | Yes      |
+| beschrijving           | Tekst die beschrijft wat de activiteit doet.  | No       |
+| type                  | Voor aangepaste activiteit is het type activiteit **aangepast**. | Yes      |
+| linkedServiceName     | Gekoppelde service aan Azure Batch. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.  | Yes      |
+| command               | Opdracht van de aangepaste toepassing die moet worden uitgevoerd. Als de toepassing al beschikbaar is op het Azure Batch groeps knooppunt, kunnen de resourceLinkedService en folderPath worden overgeslagen. U kunt bijvoorbeeld de opdracht opgeven `cmd /c dir` , die wordt ondersteund door het knoop punt Windows Batch-groep. | Yes      |
 | resourceLinkedService | Azure Storage gekoppelde service naar het opslag account waarin de aangepaste toepassing is opgeslagen | Geen &#42;       |
 | folderPath            | Pad naar de map van de aangepaste toepassing en alle bijbehorende afhankelijkheden<br/><br/>Als er afhankelijkheden zijn opgeslagen in submappen, dat wil zeggen, in een hiërarchische mappen structuur onder *FolderPath* : de mapstructuur wordt op dit moment afgevlakt wanneer de bestanden worden gekopieerd naar Azure batch. Dat wil zeggen dat alle bestanden naar één map zonder submappen worden gekopieerd. U kunt dit probleem omzeilen door de bestanden te comprimeren, het gecomprimeerde bestand te kopiëren en deze vervolgens te uitgepakt met aangepaste code op de gewenste locatie. | Geen &#42;       |
-| referenceObjects      | Een matrix met bestaande gekoppelde services en gegevens sets. De gekoppelde services en gegevens sets waarnaar wordt verwezen, worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar resources van de Data Factory | Nee       |
-| extendedProperties    | Door de gebruiker gedefinieerde eigenschappen die kunnen worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar aanvullende eigenschappen | Nee       |
-| retentionTimeInDays | De retentie tijd voor de bestanden die zijn verzonden voor aangepaste activiteit. De standaard waarde is 30 dagen. | Nee |
+| referenceObjects      | Een matrix met bestaande gekoppelde services en gegevens sets. De gekoppelde services en gegevens sets waarnaar wordt verwezen, worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar resources van de Data Factory | No       |
+| extendedProperties    | Door de gebruiker gedefinieerde eigenschappen die kunnen worden door gegeven aan de aangepaste toepassing in JSON-indeling zodat uw aangepaste code kan verwijzen naar aanvullende eigenschappen | No       |
+| retentionTimeInDays | De retentie tijd voor de bestanden die zijn verzonden voor aangepaste activiteit. De standaard waarde is 30 dagen. | No |
 
 &#42; de eigenschappen `resourceLinkedService` en `folderPath` moet beide worden opgegeven of beide worden wegge laten.
 
@@ -310,7 +307,7 @@ U kunt aangepaste waarden van uw code in een aangepaste activiteit naar Azure Da
 
 ## <a name="retrieve-securestring-outputs"></a>SecureString-uitvoer ophalen
 
-Gevoelige eigenschaps waarden die zijn opgegeven als type *SecureString* , zoals wordt weer gegeven in enkele voor beelden in dit artikel, worden gemaskeerd op het tabblad controle in de gebruikers interface van Data Factory.  Bij uitvoering van de werkelijke pijp lijn wordt een *SecureString* -eigenschap echter GESERIALISEERD als JSON in het `activity.json` bestand als tekst zonder opmaak. Bijvoorbeeld:
+Gevoelige eigenschaps waarden die zijn opgegeven als type *SecureString*, zoals wordt weer gegeven in enkele voor beelden in dit artikel, worden gemaskeerd op het tabblad controle in de gebruikers interface van Data Factory.  Bij uitvoering van de werkelijke pijp lijn wordt een *SecureString* -eigenschap echter GESERIALISEERD als JSON in het `activity.json` bestand als tekst zonder opmaak. Bijvoorbeeld:
 
 ```json
 "extendedProperties": {

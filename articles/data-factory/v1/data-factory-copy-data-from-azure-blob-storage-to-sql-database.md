@@ -1,24 +1,18 @@
 ---
 title: Gegevens kopiëren van Blob Storage naar SQL Database-Azure
 description: In deze zelf studie leert u hoe u de Kopieer activiteit in een Azure Data Factory-pijp lijn kunt gebruiken om gegevens uit de Blob-opslag te kopiëren naar SQL database.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: e4035060-93bf-4e8d-bf35-35e2d15c51e0
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 15bce219b96268124729de2f475e33fc386348a8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 24cedc6a1e0be66e9a924a50e25257f18b7f96a6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021211"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376884"
 ---
 # <a name="tutorial-copy-data-from-blob-storage-to-sql-database-using-data-factory"></a>Zelf studie: gegevens kopiëren van Blob Storage naar SQL Database met behulp van Data Factory
 > [!div class="op_single_selector"]
@@ -75,7 +69,7 @@ U hebt de namen van de logische SQL-Server,-data base en-gebruiker nodig om deze
 5. Sluit alle Blades door op **X** te klikken.
 
 ## <a name="allow-azure-services-to-access-sql-server"></a>Azure-Services toegang geven tot SQL Server
-Zorg ervoor dat **toegang tot de Azure-Services** -instelling voor uw server is ingeschakeld, zodat de Data Factory-service toegang heeft tot uw server. **ON** Voer de volgende stappen uit om dit te controleren en de instelling in te schakelen:
+Zorg ervoor dat **toegang tot de Azure-Services** -instelling voor uw server is ingeschakeld, zodat de Data Factory-service toegang heeft tot uw server.  Voer de volgende stappen uit om dit te controleren en de instelling in te schakelen:
 
 1. Klik op **alle services** hub aan de linkerkant en klik op **SQL-servers**.
 2. Selecteer uw server en klik op **Firewall** onder **INSTELLINGEN**.

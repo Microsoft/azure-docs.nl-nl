@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: caa0390dfd3a98e6537a7a60a2895461e2efd52a
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 0dd011d6c1ff631d537dbcadf9a77bbe6d89aa45
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879861"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518796"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Azure-Services die ondersteuning bieden voor Azure Data Lake Storage Gen2
 
@@ -29,7 +29,7 @@ Deze tabel geeft een lijst van de Azure-Services die u kunt gebruiken met Azure 
 |Azure-service |Ondersteunings niveau |Azure AD |Gedeelde sleutel| Verwante artikelen: |
 |---------------|-------------------|---|---|---|
 |Azure Data Factory|Algemeen beschikbaar|Ja|Ja|[Gegevens laden in Azure Data Lake Storage Gen2 met Azure Data Factory](../../data-factory/load-azure-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Azure Databricks|Algemeen beschikbaar|Ja|Ja|[Gebruiken met Azure Databricks](https://docs.azuredatabricks.net/data/data-sources/azure/azure-datalake-gen2.html) <br> [Snelstartgids: gegevens in Azure Data Lake Storage Gen2 analyseren met behulp van Azure Databricks](data-lake-storage-quickstart-create-databricks-account.md) <br>[Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse) <br>[Zelf studie: toegang tot Data Lake Storage Gen2 gegevens met Azure Databricks met Spark](data-lake-storage-use-databricks-spark.md)|
+|Azure Databricks|Algemeen beschikbaar|Ja|Ja|[Gebruiken met Azure Databricks](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) <br> [Snelstartgids: gegevens in Azure Data Lake Storage Gen2 analyseren met behulp van Azure Databricks](data-lake-storage-quickstart-create-databricks-account.md) <br>[Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse) <br>[Zelf studie: toegang tot Data Lake Storage Gen2 gegevens met Azure Databricks met Spark](data-lake-storage-use-databricks-spark.md)|
 |Azure Event Hub|Algemeen beschikbaar|Nee|Ja|[Gebeurtenissen vastleggen via Azure Event Hubs in Azure Blob Storage of Azure Data Lake Storage](../../event-hubs/event-hubs-capture-overview.md)|
 |Azure Event Grid|Algemeen beschikbaar|Ja|Ja|[Zelfstudie: Het Data Lake Capture-patroon implementeren om een Databricks Delta-tabel bij te werken](data-lake-storage-events.md)|
 |Azure Logic Apps|Algemeen beschikbaar|Nee|Ja|[Overzicht - Wat is Azure Logic Apps?](../../logic-apps/logic-apps-overview.md)|

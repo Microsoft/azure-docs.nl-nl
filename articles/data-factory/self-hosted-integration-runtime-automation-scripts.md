@@ -1,22 +1,18 @@
 ---
 title: Zelf-hostende Integration runtime-installatie automatiseren met lokale Power shell-scripts
 description: De installatie van zelf-hostende Integration Runtime op lokale computers automatiseren.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: nabhishek
 ms.author: abnarain
-manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 05/09/2020
-ms.openlocfilehash: 36414c975e97dbaa7d8747da98c31eeb12fbc206
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8cbe54a23cb1c8b55afd86a18b51c0e392c3f78a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636966"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376204"
 ---
 # <a name="automating-self-hosted-integration-runtime-installation-using-local-powershell-scripts"></a>Zelf-hostende Integration runtime-installatie automatiseren met lokale Power shell-scripts
 Als u de installatie van zelf-hostende Integration Runtime op lokale computers (met uitzonde ring van virtuele Azure-machines waar we in plaats daarvan gebruikmaken van het Resource Manager-sjabloon) wilt automatiseren, kunt u lokale Power shell-scripts gebruiken. In dit artikel vindt u een inleiding tot twee scripts die u kunt gebruiken.
@@ -38,7 +34,7 @@ Als u de installatie van zelf-hostende Integration Runtime op lokale computers (
 
 * Voor het automatiseren van hand matige updates: werk het zelf-hostende IR-knoop punt bij met een specifieke versie of naar de meest recente versie **[script-update-gateway.ps1](https://github.com/nabhishek/SelfHosted-IntegrationRuntime_AutomationScripts/blob/master/script-update-gateway.ps1)** . dit wordt ook ondersteund als u de automatische update hebt uitgeschakeld of als u meer controle wilt hebben over updates. Het script kan worden gebruikt om het zelf-hostende Integration runtime-knoop punt bij te werken naar de meest recente versie of naar een opgegeven hogere versie (downgrade werkt niet). Er wordt een argument geaccepteerd voor het opgeven van het versie nummer (voor beeld:-versie 3.13.6942.1). Als er geen versie is opgegeven, wordt de zelf-hostende IR altijd bijgewerkt naar de meest recente versie die in de [down loads](https://www.microsoft.com/download/details.aspx?id=39717)is gevonden.
     > [!NOTE]
-    > Alleen de laatste 3 versies kunnen worden opgegeven. In het ideale geval wordt dit gebruikt om een bestaand knoop punt bij te werken naar de meest recente versie. **hierbij wordt ervan uitgegaan dat u een geregistreerde zelf-hosted IR hebt** . 
+    > Alleen de laatste 3 versies kunnen worden opgegeven. In het ideale geval wordt dit gebruikt om een bestaand knoop punt bij te werken naar de meest recente versie. **hierbij wordt ervan uitgegaan dat u een geregistreerde zelf-hosted IR hebt**. 
 
 ## <a name="usage-examples"></a>Gebruiksvoorbeelden
 

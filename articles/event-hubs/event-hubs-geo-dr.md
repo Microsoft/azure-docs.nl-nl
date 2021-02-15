@@ -2,13 +2,13 @@
 title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 4470b55973f53c924caba8665199d261fe63a8fc
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.date: 02/10/2021
+ms.openlocfilehash: 2fd13ac98e80aa67a2a3150e8406a0b0b1b08d13
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222879"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390671"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
 
@@ -75,24 +75,27 @@ De volgende sectie bevat een overzicht van het failoverproces en legt uit hoe de
 U maakt of gebruikt eerst een bestaande primaire naam ruimte en een nieuwe secundaire naam ruimte en koppelt deze twee. Met deze koppeling krijgt u een alias die u kunt gebruiken om verbinding te maken. Omdat u een alias gebruikt, hoeft u geen verbindings reeksen te wijzigen. U kunt alleen nieuwe naam ruimten toevoegen aan uw failover-koppeling. 
 
 1. Maak de primaire naam ruimte.
-1. Maak de secundaire naam ruimte in het abonnement en de resource groep die de primaire naam ruimte heeft. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
+1. Maak de secundaire naam ruimte in het abonnement en de resource groep die de primaire naam ruimte heeft, maar in een andere regio. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
 1. Ga in het Azure Portal naar uw primaire naam ruimte.
 1. Selecteer **geo-Recovery** in het menu links en selecteer **koppelen starten** op de werk balk. 
 
     :::image type="content" source="./media/event-hubs-geo-dr/primary-namspace-initiate-pairing-button.png" alt-text="Koppeling vanuit de primaire naam ruimte initiëren":::    
-1. Selecteer op de pagina **koppeling** maken een bestaande secundaire naam ruimte of maak er een in het abonnement en de resource groep die de primaire naam ruimte heeft. Ten slotte selecteert u **Create**. In het volgende voor beeld wordt een bestaande secundaire naam ruimte geselecteerd. 
+1. Voer de volgende stappen uit op de pagina **koppeling initiëren** :
+    1. Selecteer een bestaande secundaire naam ruimte of maak er een in het abonnement en de resource groep die de primaire naam ruimte heeft. In dit voor beeld is een bestaande naam ruimte geselecteerd.  
+    1. Voer bij **alias** een alias in voor de geo-Dr-koppeling. 
+    1. Ten slotte selecteert u **Create**. 
 
     :::image type="content" source="./media/event-hubs-geo-dr/initiate-pairing-page.png" alt-text="Secundaire naam ruimte selecteren":::        
-1. Wanneer u vervolgens **geo-Recovery** selecteert voor de primaire naam ruimte, ziet u de pagina **geo-Dr-alias** die eruitziet als de volgende afbeelding:
+1. U ziet de pagina **geo-Dr-alias** . U kunt ook naar deze pagina vanuit de primaire naam ruimte navigeren door **georecovery** te selecteren in het menu links.
 
     :::image type="content" source="./media/event-hubs-geo-dr/geo-dr-alias-page.png" alt-text="Geo-DR-alias pagina":::    
+1. Selecteer op de pagina **geo-Dr-alias** de optie **beleid voor gedeelde toegang** in het linkermenu om toegang te krijgen tot de primaire Connection String voor de alias. Gebruik deze connection string in plaats van de connection string rechtstreeks naar de primaire/secundaire naam ruimte te gebruiken. 
 1. Op deze pagina **overzicht** kunt u de volgende acties uitvoeren: 
     1. Verbreek de koppeling tussen de primaire en secundaire naam ruimte. Selecteer **koppeling verbreekt** op de werk balk. 
     1. Hand matig een failover naar de secundaire naam ruimte. Selecteer **failover** in de werk balk. 
     
         > [!WARNING]
         > Als er een failover wordt uitgevoerd, wordt de secundaire naam ruimte geactiveerd en wordt de primaire naam ruimte verwijderd uit de Geo-Disaster herstel koppeling. Maak een andere naam ruimte om een nieuw geo-nood herstel paar te maken. 
-1. Op de pagina **geo-Dr-alias** selecteert u **beleid voor gedeelde toegang** om toegang te krijgen tot de primaire Connection String voor de alias. Gebruik deze connection string in plaats van de connection string rechtstreeks naar de primaire/secundaire naam ruimte te gebruiken. 
 
 Ten slotte moet u bewaking toevoegen om te detecteren of een failover nood zakelijk is. In de meeste gevallen is de service een deel van een groot ecosysteem, waardoor automatische failovers zelden mogelijk zijn, omdat vaak failovers moeten worden uitgevoerd in synchronisatie met het resterende subsysteem of infra structuur.
 
@@ -133,9 +136,9 @@ Let op de volgende punten als u rekening moet houden:
 
 1. Event Hubs met geo-nood herstel worden geen gegevens gerepliceerd, waardoor u de oude offset waarde van uw primaire Event Hub niet opnieuw kunt gebruiken op uw secundaire Event Hub. Het wordt aangeraden om de ontvanger van uw gebeurtenis opnieuw te starten met een van de volgende methoden:
 
-- *EventPosition. FromStart ()* : als u alle gegevens op de secundaire Event hub wilt lezen.
-- *EventPosition. FromEnd ()* : als u alle nieuwe gegevens wilt lezen vanaf het moment van verbinding met uw secundaire Event hub.
-- *EventPosition. FromEnqueuedTime (datetime)* : als u alle ontvangen gegevens in uw secundaire Event hub wilt lezen vanaf een bepaalde datum en tijd.
+   - *EventPosition. FromStart ()* : als u alle gegevens op de secundaire Event hub wilt lezen.
+   - *EventPosition. FromEnd ()* : als u alle nieuwe gegevens wilt lezen vanaf het moment van verbinding met uw secundaire Event hub.
+   - *EventPosition. FromEnqueuedTime (datetime)* : als u alle ontvangen gegevens in uw secundaire Event hub wilt lezen vanaf een bepaalde datum en tijd.
 
 2. Bij het plannen van de failover moet u ook rekening houden met de tijds factor. Als u bijvoorbeeld langer dan 15 tot 20 minuten geen verbinding meer hebt, kunt u ervoor kiezen om de failover te initiëren. 
  
@@ -153,6 +156,8 @@ De Event Hubs standaard-SKU biedt ondersteuning voor [Beschikbaarheidszones](../
 > De Beschikbaarheidszones ondersteuning voor Azure Event Hubs Standard is alleen beschikbaar in [Azure-regio's](../availability-zones/az-region.md) waar beschikbaarheids zones aanwezig zijn.
 
 U kunt Beschikbaarheidszones alleen inschakelen voor nieuwe naam ruimten, met behulp van de Azure Portal. Event Hubs biedt geen ondersteuning voor de migratie van bestaande naam ruimten. U kunt zone redundantie niet uitschakelen nadat u deze in uw naam ruimte hebt ingeschakeld.
+
+Wanneer u beschikbaarheids zones gebruikt, worden zowel meta gegevens als gegevens (gebeurtenissen) gerepliceerd tussen data centers in de beschikbaarheids zone. 
 
 ![3][]
 

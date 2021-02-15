@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure SQL Database
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure SQL Database en SQL Managed Instance. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.service: sql-database
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 85fe29d4941f438581ea6f1cbb49274ea0096549
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: dbe40c0cc4a098becd78b99bbfcca6aee7c5e64b
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99556817"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098267"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-sql-database--sql-managed-instance"></a>Ingebouwde Azure Policy-definities voor Azure SQL Database en SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]

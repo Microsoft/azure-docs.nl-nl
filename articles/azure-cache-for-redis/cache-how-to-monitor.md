@@ -1,19 +1,19 @@
 ---
-title: Azure Cache voor Redis bewaken
+title: Azure-cache bewaken voor redis
 description: Meer informatie over het controleren van de status en prestaties van uw Azure-cache voor redis-instanties
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
-ms.date: 07/13/2017
-ms.openlocfilehash: 3d19d8f1b6a44f32e92f82e861471ca9b5c8fa41
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.date: 02/08/2021
+ms.openlocfilehash: ea99c34f03cd74185840767605c17ee6c65eb701
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327335"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389702"
 ---
-# <a name="how-to-monitor-azure-cache-for-redis"></a>Azure Cache voor Redis bewaken
+# <a name="monitor-azure-cache-for-redis"></a>Azure-cache bewaken voor redis
 
 Azure cache voor redis maakt gebruik van [Azure monitor](../azure-monitor/index.yml) om verschillende opties te bieden voor het bewaken van uw cache-exemplaren. U kunt metrische gegevens weer geven, metrische grafieken vastmaken aan het start Board, het datum-en tijds bereik van bewakings grafieken aanpassen, metrische gegevens aan de grafieken toevoegen en verwijderen, en waarschuwingen instellen wanneer aan bepaalde voor waarden wordt voldaan. Met deze hulpprogram ma's kunt u de status van uw Azure-cache bewaken voor redis-instanties en helpt u bij het beheren van uw cache toepassingen.
 
@@ -109,7 +109,7 @@ Elke metriek bevat twee versies. Eén meet waarde meet de prestaties voor de vol
 | Ophalingen |Het aantal Get-bewerkingen uit de cache tijdens het opgegeven rapportage-interval. Deze waarde is de som van de volgende waarden uit de redis-info:,,, `cmdstat_get` `cmdstat_hget` ,, `cmdstat_hgetall` `cmdstat_hmget` `cmdstat_mget` `cmdstat_getbit` , en `cmdstat_getrange` , en is gelijk aan de som van cache treffers en missers tijdens het rapportage-interval. |
 | Bewerkingen per seconde | Het totale aantal opdrachten dat per seconde door de cache server is verwerkt tijdens het opgegeven rapportage-interval.  Deze waarde wordt toegewezen aan instantaneous_ops_per_sec van de opdracht redis INFO. |
 | Redis-server belasting |Het percentage cycli waarin de redis-server bezig is met verwerken en niet in afwachting van berichten die niet actief zijn. Als dit item 100 is, betekent dit dat de redis-server een prestatie plafond heeft bereikt en de CPU niet sneller kan werken. Als u een hoge redis-server belasting ziet, ziet u time-outuitzonderingen in de client. In dit geval moet u overwegen om uw gegevens naar meerdere caches te schalen of te partitioneren. |
-| Instellingen |Het aantal ingestelde bewerkingen voor de cache tijdens het opgegeven rapportage-interval. Deze waarde is de som van de volgende waarden uit de redis info:,, `cmdstat_set` `cmdstat_hset` `cmdstat_hmset` , `cmdstat_hsetnx` , `cmdstat_lset` , `cmdstat_mset` , `cmdstat_msetnx` , `cmdstat_setbit` ,, en `cmdstat_setex` `cmdstat_setrange` `cmdstat_setnx` . |
+| Sets |Het aantal ingestelde bewerkingen voor de cache tijdens het opgegeven rapportage-interval. Deze waarde is de som van de volgende waarden uit de redis info:,, `cmdstat_set` `cmdstat_hset` `cmdstat_hmset` , `cmdstat_hsetnx` , `cmdstat_lset` , `cmdstat_mset` , `cmdstat_msetnx` , `cmdstat_setbit` ,, en `cmdstat_setex` `cmdstat_setrange` `cmdstat_setnx` . |
 | Totaal aantal sleutels  | Het maximum aantal sleutels in de cache gedurende de laatste rapportage periode. Dit nummer wordt toegewezen aan `keyspace` via de opdracht REDIS info. Als gevolg van een beperking van het onderliggende systeem voor metrische gegevens, voor caches waarvoor Clustering is ingeschakeld, retourneert Total Keys het maximum aantal sleutels van de Shard dat het maximum aantal sleutels tijdens het rapportage-interval heeft.  |
 | Totaalaantal bewerkingen |Het totale aantal opdrachten dat door de cache server is verwerkt tijdens het opgegeven rapportage-interval. Deze waarde wordt toegewezen aan `total_commands_processed` via de opdracht REDIS info. Wanneer Azure cache voor redis alleen voor pub/sub wordt gebruikt, zijn er geen metrische gegevens voor `Cache Hits` , `Cache Misses` , `Gets` , of `Sets` , maar zijn er `Total Operations` metrische gegevens die het cache gebruik voor pub/sub-bewerkingen weer spie gelen. |
 | Gebruikt geheugen |De hoeveelheid cache geheugen die wordt gebruikt voor sleutel/waarde-paren in de cache in MB tijdens het opgegeven rapportage-interval. Deze waarde wordt toegewezen aan `used_memory` via de opdracht REDIS info. Deze waarde bevat geen meta gegevens of fragmentatie. |

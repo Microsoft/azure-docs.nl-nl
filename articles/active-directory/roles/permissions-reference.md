@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb8533f4ca714402482c666c520c1d0bd745e8cf
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 509eae7acf0dd9f6b8ae80befb7423422f778710
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100363267"
+ms.locfileid: "100518824"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -83,11 +83,11 @@ De rol [privileged Authentication Administrator](#privileged-authentication-admi
 
 De rol [authenticatie beleids beheerder](#authentication-policy-administrator) heeft machtigingen om het beleid voor de verificatie methode van de Tenant in te stellen dat bepaalt welke methoden elke gebruiker kan registreren en gebruiken.
 
-| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |  
+| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |
 | ---- | ---- | ---- | ---- | ---- | ---- | 
 | Verificatie beheerder | Ja voor sommige gebruikers (zie hierboven) | Ja voor sommige gebruikers (zie hierboven) | Nee | Nee | Nee | 
-| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers  |Nee | Nee  |Nee | 
-| Verificatie beleids beheerder | Nee  |Nee | Ja | Ja | Ja | 
+| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers | Nee | Nee | Nee | 
+| Verificatie beleids beheerder | Nee |Nee | Ja | Ja | Ja | 
 
 > [!IMPORTANT]
 > Gebruikers met deze rol kunnen referenties wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van de referenties van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
@@ -107,11 +107,11 @@ Gebruikers met deze rol kunnen het beleid voor verificatie methoden, MFA-instell
 
 De rollen [verificatie beheerder](#authentication-administrator) en [bevoegde authenticatie beheerder](#privileged-authentication-administrator) hebben machtigingen voor het beheren van geregistreerde verificatie methoden voor gebruikers en kunnen herregistratie en multi-factor Authentication afdwingen voor alle gebruikers. 
 
-| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |  
+| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |
 | ---- | ---- | ---- | ---- | ---- | ---- | 
 | Verificatie beheerder | Ja voor sommige gebruikers (zie hierboven) | Ja voor sommige gebruikers (zie hierboven) | Nee | Nee | Nee | 
-| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers  |Nee | Nee  |Nee | 
-| Verificatie beleids beheerder | Nee  |Nee | Ja | Ja | Ja | 
+| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers | Nee | Nee | Nee | 
+| Verificatie beleids beheerder | Nee | Nee | Ja | Ja | Ja | 
 
 > [!IMPORTANT]
 > Deze rol is momenteel niet geschikt voor het beheren van MFA-instellingen in de verouderde MFA-beheer Portal.
@@ -293,7 +293,7 @@ Deze rol heette voorheen ' Wachtwoord beheerder ' in de [Azure Portal](https://p
 
 ### <a name="hybrid-identity-administrator"></a>[Hybrid Identity-beheerder](#hybrid-identity-administrator-permissions)
 
-Gebruikers met deze rol kunnen configuratie-instellingen voor het inrichten van AD naar Azure AD maken, beheren en implementeren met behulp van Cloud inrichting en Federatie-instellingen beheren. Gebruikers kunnen ook logboeken met deze rol oplossen en controleren.  
+Gebruikers met deze rol kunnen configuratie-instellingen voor het inrichten van AD naar Azure AD maken, beheren en implementeren met behulp van Cloud inrichting en Federatie-instellingen beheren. Gebruikers kunnen ook logboeken met deze rol oplossen en controleren.
 
 ### <a name="insights-administrator"></a>[Insights-beheerder](#insights-administrator-permissions)
 Gebruikers met deze rol hebben toegang tot de volledige set beheer mogelijkheden in de [M365 Insights-toepassing](https://go.microsoft.com/fwlink/?linkid=2129521). Deze rol heeft de mogelijkheid om mapgegevens te lezen, de service status te bewaken, tickets voor bestands ondersteuning en toegang te krijgen tot de aspecten van de Insights-beheer instellingen.
@@ -336,10 +336,10 @@ Gebruikers met de moderne commerce-gebruikersrol hebben doorgaans beheerders mac
 
 **Wanneer is de moderne commerce-gebruikersrol toegewezen?**
 
-* **Self-service aankopen in Microsoft 365-beheer centrum** : met self-service aankopen kunnen gebruikers nieuwe producten uitproberen door ze te kopen of zich zelf aan te melden. Deze producten worden beheerd in het beheer centrum. Gebruikers die een self-service aankoop doen, krijgen een rol in het commerce-systeem en de moderne commerce gebruikersrol, zodat ze hun aankopen kunnen beheren in het beheer centrum. Beheerders kunnen de inkopen van self-service (voor Power BI, Power apps, energie automatisering) blok keren via [Power shell](/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell). Zie [Veelgestelde vragen over aankopen via self-service](/microsoft-365/commerce/subscriptions/self-service-purchase-faq) voor meer informatie.  
-* **Aankopen van micro soft Commercial Marketplace**  : net als bij self-service aankopen, wanneer een gebruiker een product of service koopt van Microsoft AppSource of Azure Marketplace, wordt de moderne commerce-gebruikersrol toegewezen als deze niet de rol van globale beheerder of facturerings beheerder hebben. In sommige gevallen kunnen gebruikers worden geblokkeerd voor het aanbrengen van deze aankopen. Zie [micro soft Commercial Marketplace](../../marketplace/marketplace-faq-publisher-guide.md#what-could-block-a-customer-from-completing-a-purchase)(Engelstalig) voor meer informatie.
-* **Voorst Ellen van micro soft**  : een voor stel is een formeel aanbod van micro soft voor uw organisatie om micro soft-producten en-services te kopen. Wanneer de persoon die het voor stel accepteert geen rol voor globale beheerder of facturerings beheerder heeft in azure AD, krijgen ze zowel een bedrijfsspecifieke rol toegewezen om het voor stel als de moderne commerce-gebruikersrol voor toegang tot het beheer centrum te volt ooien. Wanneer ze toegang krijgen tot het beheer centrum, kunnen ze alleen functies gebruiken die zijn geautoriseerd door hun specifieke commerce rol.
-* **Commerce-specifieke rollen** : aan sommige gebruikers worden commerce-specifieke rollen toegewezen. Als een gebruiker geen globale of facturerings beheerder is, krijgen ze de moderne commerce-gebruikersrol, zodat ze toegang hebben tot het beheer centrum.  
+* **Self-service aankopen in Microsoft 365-beheer centrum** : met self-service aankopen kunnen gebruikers nieuwe producten uitproberen door ze te kopen of zich zelf aan te melden. Deze producten worden beheerd in het beheer centrum. Gebruikers die een self-service aankoop doen, krijgen een rol in het commerce-systeem en de moderne commerce gebruikersrol, zodat ze hun aankopen kunnen beheren in het beheer centrum. Beheerders kunnen de inkopen van self-service (voor Power BI, Power apps, energie automatisering) blok keren via [Power shell](/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell). Zie [Veelgestelde vragen over aankopen via self-service](/microsoft-365/commerce/subscriptions/self-service-purchase-faq) voor meer informatie.
+* **Aankopen van micro soft Commercial Marketplace** : net als bij self-service aankopen, wanneer een gebruiker een product of service koopt van Microsoft AppSource of Azure Marketplace, wordt de moderne commerce-gebruikersrol toegewezen als deze niet de rol van globale beheerder of facturerings beheerder hebben. In sommige gevallen kunnen gebruikers worden geblokkeerd voor het aanbrengen van deze aankopen. Zie [micro soft Commercial Marketplace](../../marketplace/marketplace-faq-publisher-guide.md#what-could-block-a-customer-from-completing-a-purchase)(Engelstalig) voor meer informatie.
+* **Voorst Ellen van micro soft** : een voor stel is een formeel aanbod van micro soft voor uw organisatie om micro soft-producten en-services te kopen. Wanneer de persoon die het voor stel accepteert geen rol voor globale beheerder of facturerings beheerder heeft in azure AD, krijgen ze zowel een bedrijfsspecifieke rol toegewezen om het voor stel als de moderne commerce-gebruikersrol voor toegang tot het beheer centrum te volt ooien. Wanneer ze toegang krijgen tot het beheer centrum, kunnen ze alleen functies gebruiken die zijn geautoriseerd door hun specifieke commerce rol.
+* **Commerce-specifieke rollen** : aan sommige gebruikers worden commerce-specifieke rollen toegewezen. Als een gebruiker geen globale of facturerings beheerder is, krijgen ze de moderne commerce-gebruikersrol, zodat ze toegang hebben tot het beheer centrum.
 
 Als de moderne commerce-gebruikersrol niet is toegewezen aan een gebruiker, verliest deze toegang tot Microsoft 365-beheer centrum. Als ze producten voor zichzelf of voor uw organisatie beheren, kunnen ze deze niet beheren. Dit kunnen bijvoorbeeld het toewijzen van licenties zijn, het wijzigen van de betalings methoden, het betalen van facturen of andere taken voor het beheren van abonnementen.
 
@@ -389,11 +389,11 @@ De rol [authenticatie beheerder](#authentication-administrator) heeft machtiging
 
 De rol [authenticatie beleids beheerder](#authentication-policy-administrator) heeft machtigingen om het beleid voor de verificatie methode van de Tenant in te stellen dat bepaalt welke methoden elke gebruiker kan registreren en gebruiken.
 
-| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |  
+| Rol | Verificatie methoden van gebruikers beheren | MFA per gebruiker beheren | MFA-instellingen beheren | Beleid voor verificatie methode beheren | Wachtwoord beveiligings beleid beheren |
 | ---- | ---- | ---- | ---- | ---- | ---- | 
 | Verificatie beheerder | Ja voor sommige gebruikers (zie hierboven) | Ja voor sommige gebruikers (zie hierboven) | Nee | Nee | Nee | 
-| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers  |Nee | Nee  |Nee | 
-| Verificatie beleids beheerder | Nee  |Nee | Ja | Ja | Ja | 
+| Beheerder voor geprivilegieerde authenticatie| Ja voor alle gebruikers | Ja voor alle gebruikers | Nee | Nee | Nee | 
+| Verificatie beleids beheerder | Nee | Nee | Ja | Ja | Ja | 
 
 > [!IMPORTANT]
 > Gebruikers met deze rol kunnen referenties wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van de referenties van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
@@ -992,7 +992,7 @@ Kan basis informatie over de Directory lezen & schrijven. Voor het verlenen van 
 > | --- | --- |
 > | micro soft. Directory/groepen/appRoleAssignments/update | Werk de eigenschap groups. appRoleAssignments bij in Azure Active Directory. |
 > | micro soft. Directory/groepen/assignLicense | Licenties beheren op groepen in Azure Active Directory. |
-> | micro soft. Directory/groepen/basis/bijwerken | Basis eigenschappen van groepen in Azure Active Directory bijwerken.  |
+> | micro soft. Directory/groepen/basis/bijwerken | Basis eigenschappen van groepen in Azure Active Directory bijwerken. |
 > | micro soft. Directory/groepen/classificatie/bijwerken | Update de classificatie-eigenschap van de groep in Azure Active Directory. |
 > | micro soft. map/groepen/maken | Groepen maken in Azure Active Directory. |
 > | micro soft. Directory/groepen/groupType/update | Werk de eigenschap groupType van een groep bij in Azure Active Directory. |
@@ -1183,69 +1183,69 @@ Kan alles lezen dat een globale beheerder wel kan, maar geen bewerkingen kan ond
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | micro soft. commerce. facturering/toerekeningen/lezen    | Lees alle aspecten van de facturering. |
-> | micro soft. map/administrativeUnits/Basic/lezen    | Lees de basis eigenschappen van administrativeUnits in Azure Active Directory. |
-> | micro soft. map/administrativeUnits/leden/lezen    | Lees de eigenschap administrativeUnits. members in Azure Active Directory. |
-> | micro soft. Directory/toepassingen/basis/lezen    | Lees de basis eigenschappen van toepassingen in Azure Active Directory. |
-> | micro soft. Directory/toepassingen/eigen aren/lezen    | Lees de eigenschap Applications. Owners in Azure Active Directory. |
-> | micro soft. Directory/toepassingen/beleid/lezen    | Lees de eigenschap toepassingen. policies in Azure Active Directory. |
+> | micro soft. commerce. facturering/toerekeningen/lezen | Lees alle aspecten van de facturering. |
+> | micro soft. map/administrativeUnits/Basic/lezen | Lees de basis eigenschappen van administrativeUnits in Azure Active Directory. |
+> | micro soft. map/administrativeUnits/leden/lezen | Lees de eigenschap administrativeUnits. members in Azure Active Directory. |
+> | micro soft. Directory/toepassingen/basis/lezen | Lees de basis eigenschappen van toepassingen in Azure Active Directory. |
+> | micro soft. Directory/toepassingen/eigen aren/lezen | Lees de eigenschap Applications. Owners in Azure Active Directory. |
+> | micro soft. Directory/toepassingen/beleid/lezen | Lees de eigenschap toepassingen. policies in Azure Active Directory. |
 > | micro soft. map/bitlockerKeys/sleutel/lezen | Lees de BitLocker-sleutel objecten en-eigenschappen (met inbegrip van de herstel sleutel) in Azure Active Directory. |
-> | micro soft. map/Contacts/basis/lezen    | Lees de basis eigenschappen van contact personen in Azure Active Directory. |
-> | micro soft. map/contact personen/memberOf/lezen    | Lees de eigenschap Contacts. memberOf in Azure Active Directory. |
-> | micro soft. map/contracten/basis/lezen    | Lees de basis eigenschappen voor contracten in Azure Active Directory. |
-> | micro soft. map/apparaten/basis/lezen    | Lees de basis eigenschappen van apparaten in Azure Active Directory. |
-> | micro soft. Directory/apparaten/memberOf/lezen    | Lees de eigenschap devices. memberOf in Azure Active Directory. |
-> | micro soft. Directory/apparaten/registeredOwners/lezen    | Lees de eigenschap devices. registeredOwners in Azure Active Directory. |
-> | micro soft. Directory/apparaten/registeredUsers/lezen    | Lees de eigenschap devices. registeredUsers in Azure Active Directory. |
-> | micro soft. map/directoryRoles/Basic/lezen    | Lees de basis eigenschappen van directoryRoles in Azure Active Directory. |
-> | micro soft. map/directoryRoles/eligibleMembers/lezen    | Lees de eigenschap directoryRoles. eligibleMembers in Azure Active Directory. |
-> | micro soft. map/directoryRoles/leden/lezen    | Lees de eigenschap directoryRoles. members in Azure Active Directory. |
-> | micro soft. Directory/domeinen/basis/lezen    | Lees de basis eigenschappen van domeinen in Azure Active Directory. |
+> | micro soft. map/Contacts/basis/lezen | Lees de basis eigenschappen van contact personen in Azure Active Directory. |
+> | micro soft. map/contact personen/memberOf/lezen | Lees de eigenschap Contacts. memberOf in Azure Active Directory. |
+> | micro soft. map/contracten/basis/lezen | Lees de basis eigenschappen voor contracten in Azure Active Directory. |
+> | micro soft. map/apparaten/basis/lezen | Lees de basis eigenschappen van apparaten in Azure Active Directory. |
+> | micro soft. Directory/apparaten/memberOf/lezen | Lees de eigenschap devices. memberOf in Azure Active Directory. |
+> | micro soft. Directory/apparaten/registeredOwners/lezen | Lees de eigenschap devices. registeredOwners in Azure Active Directory. |
+> | micro soft. Directory/apparaten/registeredUsers/lezen | Lees de eigenschap devices. registeredUsers in Azure Active Directory. |
+> | micro soft. map/directoryRoles/Basic/lezen | Lees de basis eigenschappen van directoryRoles in Azure Active Directory. |
+> | micro soft. map/directoryRoles/eligibleMembers/lezen | Lees de eigenschap directoryRoles. eligibleMembers in Azure Active Directory. |
+> | micro soft. map/directoryRoles/leden/lezen | Lees de eigenschap directoryRoles. members in Azure Active Directory. |
+> | micro soft. Directory/domeinen/basis/lezen | Lees de basis eigenschappen van domeinen in Azure Active Directory. |
 > | micro soft. map/entitlementManagement/allProperties/lezen | Lees alle eigenschappen in het beheer van rechten van Azure AD. |
-> | micro soft. Directory/groepen/appRoleAssignments/lezen    | Lees de eigenschap groups. appRoleAssignments in Azure Active Directory. |
-> | micro soft. map/groepen/basis/lezen    | Lees de basis eigenschappen voor groepen in Azure Active Directory. |
-> | micro soft. Directory/groepen/hiddenMembers/lezen    | Lees de eigenschap groups. hiddenMembers in Azure Active Directory. |
-> | micro soft. Directory/groepen/memberOf/lezen    | Lees de eigenschap groups. memberOf in Azure Active Directory. |
-> | micro soft. map/groepen/leden/lezen    | Lees de eigenschap groups. members in Azure Active Directory. |
-> | micro soft. map/groepen/eigen aren/lezen    | Lees de eigenschap groups. Owners in Azure Active Directory. |
-> | micro soft. map/groepen/instellingen/lezen    | Lees de eigenschap groups. settings in Azure Active Directory. |
-> | micro soft. map/groupSettings/Basic/lezen    | Lees de basis eigenschappen van groupSettings in Azure Active Directory. |
-> | micro soft. map/groupSettingTemplates/Basic/lezen    | Lees de basis eigenschappen van groupSettingTemplates in Azure Active Directory. |
-> | micro soft. map/oAuth2PermissionGrants/Basic/lezen    | Lees de basis eigenschappen van oAuth2PermissionGrants in Azure Active Directory. |
-> | micro soft. map/organisatie/basis/lezen    | Lees de basis eigenschappen van de organisatie in Azure Active Directory. |
-> | micro soft. map/organisatie/trustedCAsForPasswordlessAuth/lezen    | Lees de eigenschap Organization. trustedCAsForPasswordlessAuth in Azure Active Directory. |
-> | micro soft. Directory/beleid/standaard/lezen    | Lees het standaard beleid in Azure Active Directory. |
+> | micro soft. Directory/groepen/appRoleAssignments/lezen | Lees de eigenschap groups. appRoleAssignments in Azure Active Directory. |
+> | micro soft. map/groepen/basis/lezen | Lees de basis eigenschappen voor groepen in Azure Active Directory. |
+> | micro soft. Directory/groepen/hiddenMembers/lezen | Lees de eigenschap groups. hiddenMembers in Azure Active Directory. |
+> | micro soft. Directory/groepen/memberOf/lezen | Lees de eigenschap groups. memberOf in Azure Active Directory. |
+> | micro soft. map/groepen/leden/lezen | Lees de eigenschap groups. members in Azure Active Directory. |
+> | micro soft. map/groepen/eigen aren/lezen | Lees de eigenschap groups. Owners in Azure Active Directory. |
+> | micro soft. map/groepen/instellingen/lezen | Lees de eigenschap groups. settings in Azure Active Directory. |
+> | micro soft. map/groupSettings/Basic/lezen | Lees de basis eigenschappen van groupSettings in Azure Active Directory. |
+> | micro soft. map/groupSettingTemplates/Basic/lezen | Lees de basis eigenschappen van groupSettingTemplates in Azure Active Directory. |
+> | micro soft. map/oAuth2PermissionGrants/Basic/lezen | Lees de basis eigenschappen van oAuth2PermissionGrants in Azure Active Directory. |
+> | micro soft. map/organisatie/basis/lezen | Lees de basis eigenschappen van de organisatie in Azure Active Directory. |
+> | micro soft. map/organisatie/trustedCAsForPasswordlessAuth/lezen | Lees de eigenschap Organization. trustedCAsForPasswordlessAuth in Azure Active Directory. |
+> | micro soft. Directory/beleid/standaard/lezen | Lees het standaard beleid in Azure Active Directory. |
 > | microsoft.directory/provisioningLogs/allProperties/read | Alle eigenschappen van inrichtings logboeken lezen. |
-> | micro soft. map/roleAssignments/Basic/lezen    | Lees de basis eigenschappen van roleAssignments in Azure Active Directory. |
-> | micro soft. map/roleDefinitions/Basic/lezen    | Lees de basis eigenschappen van roleDefinitions in Azure Active Directory. |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/read    | Lees de eigenschap servicePrincipals. appRoleAssignedTo in Azure Active Directory. |
-> | microsoft.directory/servicePrincipals/appRoleAssignments/read    | Lees de eigenschap servicePrincipals. appRoleAssignments in Azure Active Directory. |
-> | micro soft. map/servicePrincipals/Basic/lezen    | Lees de basis eigenschappen van servicePrincipals in Azure Active Directory. |
-> | micro soft. map/servicePrincipals/memberOf/lezen    | Lees de eigenschap servicePrincipals. memberOf in Azure Active Directory. |
-> | micro soft. map/servicePrincipals/oAuth2PermissionGrants/Basic/lezen    | Lees de eigenschap servicePrincipals. oAuth2PermissionGrants in Azure Active Directory. |
-> | micro soft. map/servicePrincipals/ownedObjects/lezen    | Lees de eigenschap servicePrincipals. ownedObjects in Azure Active Directory. |
-> | microsoft.directory/servicePrincipals/owners/read    | Lees de eigenschap servicePrincipals. Owners in Azure Active Directory. |
-> | microsoft.directory/servicePrincipals/policies/read    | Lees de eigenschap servicePrincipals. policies in Azure Active Directory. |
-> | microsoft.directory/signInReports/allProperties/read    | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
-> | micro soft. map/subscribedSkus/Basic/lezen    | Lees de basis eigenschappen van subscribedSkus in Azure Active Directory. |
-> | micro soft. map/gebruikers/appRoleAssignments/lezen    | Lees de eigenschap users. appRoleAssignments in Azure Active Directory. |
-> | micro soft. map/gebruikers/basis/lezen    | Lees de basis eigenschappen van gebruikers in Azure Active Directory. |
-> | micro soft. map/gebruikers/directReports/lezen    | Lees de eigenschap users. directReports in Azure Active Directory. |
-> | micro soft. map/gebruikers/manager/lezen    | Lees de eigenschap users. manager in Azure Active Directory. |
-> | micro soft. map/gebruikers/memberOf/lezen    | Lees de eigenschap users. memberOf in Azure Active Directory. |
-> | micro soft. map/users/oAuth2PermissionGrants/Basic/lezen    | Lees de eigenschap users. oAuth2PermissionGrants in Azure Active Directory. |
-> | micro soft. map/gebruikers/ownedDevices/lezen    | Lees de eigenschap users. ownedDevices in Azure Active Directory. |
-> | micro soft. map/gebruikers/ownedObjects/lezen    | Lees de eigenschap users. ownedObjects in Azure Active Directory. |
-> | micro soft. map/gebruikers/registeredDevices/lezen    | Lees de eigenschap users. registeredDevices in Azure Active Directory. |
-> | micro soft. map/gebruikers/strongAuthentication/lezen    | Lees sterke verificatie-eigenschappen, zoals MFA-referentie gegevens. |
-> | micro soft. office365. Exchange//lezen    | Lees alle aspecten van Exchange Online. |
-> | micro soft. office365. messageCenter/berichten/lezen    | Lees berichten in micro soft. office365. messageCenter. |
-> | micro soft. office365. messageCenter/securityMessages/lezen    | Lees securityMessages in micro soft. office365. messageCenter. |
+> | micro soft. map/roleAssignments/Basic/lezen | Lees de basis eigenschappen van roleAssignments in Azure Active Directory. |
+> | micro soft. map/roleDefinitions/Basic/lezen | Lees de basis eigenschappen van roleDefinitions in Azure Active Directory. |
+> | microsoft.directory/servicePrincipals/appRoleAssignedTo/read | Lees de eigenschap servicePrincipals. appRoleAssignedTo in Azure Active Directory. |
+> | microsoft.directory/servicePrincipals/appRoleAssignments/read | Lees de eigenschap servicePrincipals. appRoleAssignments in Azure Active Directory. |
+> | micro soft. map/servicePrincipals/Basic/lezen | Lees de basis eigenschappen van servicePrincipals in Azure Active Directory. |
+> | micro soft. map/servicePrincipals/memberOf/lezen | Lees de eigenschap servicePrincipals. memberOf in Azure Active Directory. |
+> | micro soft. map/servicePrincipals/oAuth2PermissionGrants/Basic/lezen | Lees de eigenschap servicePrincipals. oAuth2PermissionGrants in Azure Active Directory. |
+> | micro soft. map/servicePrincipals/ownedObjects/lezen | Lees de eigenschap servicePrincipals. ownedObjects in Azure Active Directory. |
+> | microsoft.directory/servicePrincipals/owners/read | Lees de eigenschap servicePrincipals. Owners in Azure Active Directory. |
+> | microsoft.directory/servicePrincipals/policies/read | Lees de eigenschap servicePrincipals. policies in Azure Active Directory. |
+> | microsoft.directory/signInReports/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op signInReports in Azure Active Directory. |
+> | micro soft. map/subscribedSkus/Basic/lezen | Lees de basis eigenschappen van subscribedSkus in Azure Active Directory. |
+> | micro soft. map/gebruikers/appRoleAssignments/lezen | Lees de eigenschap users. appRoleAssignments in Azure Active Directory. |
+> | micro soft. map/gebruikers/basis/lezen | Lees de basis eigenschappen van gebruikers in Azure Active Directory. |
+> | micro soft. map/gebruikers/directReports/lezen | Lees de eigenschap users. directReports in Azure Active Directory. |
+> | micro soft. map/gebruikers/manager/lezen | Lees de eigenschap users. manager in Azure Active Directory. |
+> | micro soft. map/gebruikers/memberOf/lezen | Lees de eigenschap users. memberOf in Azure Active Directory. |
+> | micro soft. map/users/oAuth2PermissionGrants/Basic/lezen | Lees de eigenschap users. oAuth2PermissionGrants in Azure Active Directory. |
+> | micro soft. map/gebruikers/ownedDevices/lezen | Lees de eigenschap users. ownedDevices in Azure Active Directory. |
+> | micro soft. map/gebruikers/ownedObjects/lezen | Lees de eigenschap users. ownedObjects in Azure Active Directory. |
+> | micro soft. map/gebruikers/registeredDevices/lezen | Lees de eigenschap users. registeredDevices in Azure Active Directory. |
+> | micro soft. map/gebruikers/strongAuthentication/lezen | Lees sterke verificatie-eigenschappen, zoals MFA-referentie gegevens. |
+> | micro soft. office365. Exchange//lezen | Lees alle aspecten van Exchange Online. |
+> | micro soft. office365. messageCenter/berichten/lezen | Lees berichten in micro soft. office365. messageCenter. |
+> | micro soft. office365. messageCenter/securityMessages/lezen | Lees securityMessages in micro soft. office365. messageCenter. |
 > | micro soft. office365. netwerk/prestaties/allProperties/lezen | Lees de pagina netwerk prestaties in Microsoft 365 beheer centrum. |
-> | micro soft. office365. protectionCenter/de aflezingen/lezen    | Lees alle aspecten van Office 365 Protection Center. |
-> | micro soft. office365. securityComplianceCenter/de aflezingen/lezen    | Lees alle standaard eigenschappen in micro soft. office365. securityComplianceCenter. |
-> | micro soft. office365. usageReports/de aflezingen/lezen    | Lees de gebruiks rapporten van Office 365. |
-> | micro soft. office365. webportal/de beleen baarheid/standaard/lezen    | Lees de standaard eigenschappen voor alle resources in micro soft. office365. webportal. |
+> | micro soft. office365. protectionCenter/de aflezingen/lezen | Lees alle aspecten van Office 365 Protection Center. |
+> | micro soft. office365. securityComplianceCenter/de aflezingen/lezen | Lees alle standaard eigenschappen in micro soft. office365. securityComplianceCenter. |
+> | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
+> | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de standaard eigenschappen voor alle resources in micro soft. office365. webportal. |
 
 ### <a name="groups-administrator-permissions"></a>Groeps beheerders machtigingen
 
@@ -1313,8 +1313,8 @@ Kan AD naar Azure AD Cloud-inrichting en Federatie-instellingen beheren.
 > | --- | --- |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren. |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets voor services op Directory niveau maken en beheren. |
-> | micro soft. Directory/toepassingen/publiek/update  | Werk de eigenschap Applications. Audience bij in Azure Active Directory. |
-> | microsoft.directory/applications/authentication/update | Werk de eigenschap Applications. Authentication bij in Azure Active Directory.  |
+> | micro soft. Directory/toepassingen/publiek/update | Werk de eigenschap Applications. Audience bij in Azure Active Directory. |
+> | microsoft.directory/applications/authentication/update | Werk de eigenschap Applications. Authentication bij in Azure Active Directory. |
 > | micro soft. Directory/toepassingen/basis/bijwerken | Basis eigenschappen van toepassingen in Azure Active Directory bijwerken. |
 > | micro soft. Directory/toepassingen/maken | Toepassingen maken in Azure Active Directory. |
 > | microsoft.directory/applications/credentials/update | Werk de eigenschap Applications. credentials bij in Azure Active Directory. |
@@ -1491,7 +1491,7 @@ Kan netwerk locaties beheren en ontwerp inzichten van het Enter prise-netwerk co
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
-> | micro soft. office365. netwerk/prestaties/allProperties/lezen | Lees de pagina netwerk prestaties in het M365-beheer centrum.  |
+> | micro soft. office365. netwerk/prestaties/allProperties/lezen | Lees de pagina netwerk prestaties in het M365-beheer centrum. |
 > | micro soft. office365. Network/locations/allProperties/allTasks | Lees en configureer de eigenschappen van netwerk locaties voor elke locatie. |
 
 ### <a name="office-apps-administrator-permissions"></a>Beheerders machtigingen voor Office-apps
@@ -1896,7 +1896,7 @@ Kan alle aspecten van het product van Skype voor bedrijven beheren.
 > | micro soft. office365. serviceHealth/cons/allTasks | Microsoft 365 Service Health lezen en configureren. |
 > | micro soft. office365. skypeForBusiness/cons/allTasks | Beheer alle aspecten van Skype voor bedrijven online. |
 > | micro soft. office365. supportTickets/cons/allTasks | Office 365-ondersteunings tickets maken en beheren. |
-> | micro soft. office365. usageReports/de aflezingen/lezen    | Lees de gebruiks rapporten van Office 365. |
+> | micro soft. office365. usageReports/de aflezingen/lezen | Lees de gebruiks rapporten van Office 365. |
 > | micro soft. office365. webportal/de beleen baarheid/basis/lezen | Lees de basis eigenschappen van alle resources in micro soft. office365. webportal. |
 
 ### <a name="teams-administrator-permissions"></a>Beheerders machtigingen voor teams
@@ -2144,7 +2144,7 @@ Apparaat toevoegen | Afgeschaft | [Documentatie over afgeschafte functies](permi
 Apparaatbeheer | Afgeschaft | [Documentatie over afgeschafte functies](permissions-reference.md#deprecated-roles)
 Gebruikers van het apparaat | Afgeschaft | [Documentatie over afgeschafte functies](permissions-reference.md#deprecated-roles)
 Adreslijstsynchronisatieaccounts | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor Directory Synchronization accounts](permissions-reference.md#directory-synchronization-accounts)
-Gastgebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt  | NA
+Gastgebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | NA
 Ondersteuning voor partner Tier 1 | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor partner Tier1-ondersteuning](permissions-reference.md#partner-tier1-support)
 Ondersteuning voor partner Tier 2 | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor partner Tier2-ondersteuning](permissions-reference.md#partner-tier2-support)
 Beperkte gast gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | NA

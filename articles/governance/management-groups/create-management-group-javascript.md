@@ -4,12 +4,12 @@ description: In deze quickstart gebruikt u JavaScript om een beheergroep te make
 ms.date: 02/05/2021
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 25fd93e51c1b49519bb315aab28cdfc44a2a0c58
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 99a2ed406d4837f6fc346e68b3b400003feed38c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593973"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099146"
 ---
 # <a name="quickstart-create-a-management-group-with-javascript"></a>Quickstart: Een beheergroep maken met JavaScript
 
@@ -29,7 +29,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 ## <a name="application-setup"></a>Installatie van toepassing
 
-Als u JavaScript wilt inschakelen om een query uit te voeren in Azure Resource Graph, moet de omgeving worden ingesteld. Deze instelling werkt overal waar JavaScript kan worden gebruikt, met inbegrip van [bash in Windows 10](/windows/wsl/install-win10).
+Als u Java script wilt inschakelen om beheer groepen te beheren, moet u de omgeving instellen. Deze instelling werkt overal waar JavaScript kan worden gebruikt, met inbegrip van [bash in Windows 10](/windows/wsl/install-win10).
 
 1. Stel een nieuw Node.js-project in door de volgende opdracht uit te voeren.
 

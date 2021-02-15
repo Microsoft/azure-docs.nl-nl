@@ -1,24 +1,19 @@
 ---
 title: Use custom activities in an Azure Data Factory pipeline (Aangepaste activiteiten gebruiken in een Azure Data Factory-pijplijn)
 description: Meer informatie over het maken van aangepaste activiteiten en het gebruik ervan in een Azure Data Factory pijp lijn.
-services: data-factory
-documentationcenter: ''
-ms.assetid: 8dd7ba14-15d2-4fd9-9ada-0b2c684327e9
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 author: nabhishek
 ms.author: abnarain
 ms.custom: devx-track-csharp
-manager: anandsub
 robots: noindex
-ms.openlocfilehash: 0ef6c97f7924c890bb6665100259970372f1cd26
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 3832175910f3a6d3e6a7de8da932b32436cc2452
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606943"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393017"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-version-1-pipeline"></a>Aangepaste activiteiten gebruiken in een Azure Data Factory versie 1-pijp lijn
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -247,7 +242,7 @@ De-methode retourneert een woorden lijst die kan worden gebruikt om aangepaste a
                                      null);
 
             // Calculate method returns the number of occurrences of
-            // the search term (“Microsoft”) in each blob associated
+            // the search term ("Microsoft") in each blob associated
             // with the data slice. definition of the method is shown in the next step.
 
             output = Calculate(blobList, logger, folderPath, ref continuationToken, "Microsoft");

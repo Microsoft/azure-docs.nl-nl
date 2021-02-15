@@ -405,7 +405,7 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2092089'
     - name: Woordenlijst
       href: luis-glossary.md
-    - name: Probleemoplossing
+    - name: Problemen oplossen
       href: troubleshooting.md
       displayName: 'FAQ, import'
     - name: Prijzen en beperkingen
@@ -413,7 +413,7 @@
     - name: Naleving
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Versleuteling
-      href: luis-encryption-of-data-at-rest.md
+      href: encrypt-data-at-rest.md
     - name: Virtuele netwerken configureren
       maintainContext: true
       href: ../cognitive-services-virtual-networks.md

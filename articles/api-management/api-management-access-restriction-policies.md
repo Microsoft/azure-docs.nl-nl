@@ -7,14 +7,14 @@ author: vladvino
 ms.assetid: 034febe3-465f-4840-9fc6-c448ef520b0f
 ms.service: api-management
 ms.topic: article
-ms.date: 11/23/2020
+ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: e38dcf1e12629405ae5f28a987ba20557037ee67
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 0b18a73d0357b5dd90b329ba55c6601e60df5bbc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683437"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367568"
 ---
 # <a name="api-management-access-restriction-policies"></a>API Management access restriction policies (Beleid voor toegangsbeperking API Management)
 
@@ -58,17 +58,17 @@ Gebruik het `check-header` beleid om af te dwingen dat een aanvraag een opgegeve
 
 | Naam         | Beschrijving                                                                                                                                   | Vereist |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| check-header | Hoofd element.                                                                                                                                 | Ja      |
-| waarde        | Toegestane waarde voor de HTTP-header. Als er meerdere waarde-elementen zijn opgegeven, wordt de controle als geslaagd beschouwd als een van de waarden een overeenkomst is. | Nee       |
+| check-header | Hoofd element.                                                                                                                                 | Yes      |
+| waarde        | Toegestane waarde voor de HTTP-header. Als er meerdere waarde-elementen zijn opgegeven, wordt de controle als geslaagd beschouwd als een van de waarden een overeenkomst is. | No       |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                       | Beschrijving                                                                                                                                                            | Vereist | Standaard |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| mislukt-controle-fout-bericht | Fout bericht dat moet worden geretourneerd in de tekst van het HTTP-antwoord als de header niet bestaat of een ongeldige waarde heeft. Dit bericht moet speciale tekens op de juiste manier hebben geescapet. | Ja      | N.v.t.     |
-| mislukt-controle-httpcode      | HTTP-status code die moet worden geretourneerd als de koptekst niet bestaat of een ongeldige waarde heeft.                                                                                        | Ja      | N.v.t.     |
-| header-naam                | De naam van de HTTP-header die moet worden gecontroleerd.                                                                                                                                  | Ja      | N.v.t.     |
-| negeren-Case                | Kan worden ingesteld op True of false. Als deze eigenschap is ingesteld op True, wordt genegeerd wanneer de waarde van de header wordt vergeleken met de set acceptabele waarden.                                    | Ja      | N.v.t.     |
+| mislukt-controle-fout-bericht | Fout bericht dat moet worden geretourneerd in de tekst van het HTTP-antwoord als de header niet bestaat of een ongeldige waarde heeft. Dit bericht moet speciale tekens op de juiste manier hebben geescapet. | Yes      | N.v.t.     |
+| mislukt-controle-httpcode      | HTTP-status code die moet worden geretourneerd als de koptekst niet bestaat of een ongeldige waarde heeft.                                                                                        | Yes      | N.v.t.     |
+| header-naam                | De naam van de HTTP-header die moet worden gecontroleerd.                                                                                                                                  | Yes      | N.v.t.     |
+| negeren-Case                | Kan worden ingesteld op True of false. Als deze eigenschap is ingesteld op True, wordt genegeerd wanneer de waarde van de header wordt vergeleken met de set acceptabele waarden.                                    | Yes      | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -80,7 +80,7 @@ Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management
 
 ## <a name="limit-call-rate-by-subscription"></a><a name="LimitCallRate"></a> Oproep frequentie per abonnement beperken
 
-Het `rate-limit` beleid voor komt dat het API-gebruik piekt per abonnement door de oproep frequentie te beperken tot een opgegeven aantal per opgegeven periode. Wanneer dit beleid wordt geactiveerd, ontvangt de aanroeper een `429 Too Many Requests` status code voor de reactie.
+Het `rate-limit` beleid voor komt dat het API-gebruik piekt per abonnement door de oproep frequentie te beperken tot een opgegeven aantal per opgegeven periode. Wanneer de aanroep frequentie wordt overschreden, ontvangt de aanroeper een `429 Too Many Requests` status code voor de reactie.
 
 > [!IMPORTANT]
 > Dit beleid kan slechts eenmaal per beleids document worden gebruikt.
@@ -98,18 +98,25 @@ Het `rate-limit` beleid voor komt dat het API-gebruik piekt per abonnement door 
 ```xml
 <rate-limit calls="number" renewal-period="seconds">
     <api name="API name" id="API id" calls="number" renewal-period="seconds" />
-        <operation name="operation name" id="operation id" calls="number" renewal-period="seconds" />
+        <operation name="operation name" id="operation id" calls="number" renewal-period="seconds" 
+        retry-after-header-name="header name" 
+        retry-after-variable-name="policy expression variable name"
+        remaining-calls-header-name="header name"  
+        remaining-calls-variable-name="policy expression variable name"
+        total-calls-header-name="header name"/>
     </api>
 </rate-limit>
 ```
 
 ### <a name="example"></a>Voorbeeld
 
+In het volgende voor beeld is de frequentie limiet per abonnement 20 aanroepen per 90 seconden. Na elke uitvoering van elk beleid, worden de resterende aanroepen die in de tijds periode zijn toegestaan, opgeslagen in de variabele `remainingCallsPerSubscription` .
+
 ```xml
 <policies>
     <inbound>
         <base />
-        <rate-limit calls="20" renewal-period="90" />
+        <rate-limit calls="20" renewal-period="90" remaining-calls-variable-name="remainingCallsPerSubscription"/>
     </inbound>
     <outbound>
         <base />
@@ -121,17 +128,22 @@ Het `rate-limit` beleid voor komt dat het API-gebruik piekt per abonnement door 
 
 | Naam       | Beschrijving                                                                                                                                                                                                                                                                                              | Vereist |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| frequentie limiet | Hoofd element.                                                                                                                                                                                                                                                                                            | Ja      |
-| api        | Voeg een of meer van deze elementen toe om een aanroep frequentie limiet te leggen voor Api's binnen het product. De limieten voor product-en API-aanroepen worden onafhankelijk toegepast. Naar de API kan worden verwezen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd.                    | Nee       |
-| bewerking  | Voeg een of meer van deze elementen toe om een aanroep frequentie limiet in te stellen voor bewerkingen binnen een API. Product-, API-en bewerkings frequentie limieten worden onafhankelijk toegepast. U kunt naar de bewerking verwijzen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd. | Nee       |
+| frequentie limiet | Hoofd element.                                                                                                                                                                                                                                                                                            | Yes      |
+| api        | Voeg een of meer van deze elementen toe om een aanroep frequentie limiet te leggen voor Api's binnen het product. De limieten voor product-en API-aanroepen worden onafhankelijk toegepast. Naar de API kan worden verwezen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd.                    | No       |
+| bewerking  | Voeg een of meer van deze elementen toe om een aanroep frequentie limiet in te stellen voor bewerkingen binnen een API. Product-, API-en bewerkings frequentie limieten worden onafhankelijk toegepast. U kunt naar de bewerking verwijzen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd. | No       |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam           | Beschrijving                                                                                           | Vereist | Standaard |
 | -------------- | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
-| naam           | De naam van de API waarvoor de frequentie limiet moet worden toegepast.                                                | Ja      | N.v.t.     |
-| rpc's          | Het maximale aantal aanroepen dat is toegestaan tijdens het tijds interval dat is opgegeven in de `renewal-period` . | Ja      | N.v.t.     |
-| verlenging-periode | De tijds periode in seconden waarna het quotum opnieuw wordt ingesteld.                                              | Ja      | N.v.t.     |
+| naam           | De naam van de API waarvoor de frequentie limiet moet worden toegepast.                                                | Yes      | N.v.t.     |
+| rpc's          | Het maximale aantal aanroepen dat is toegestaan tijdens het tijds interval dat is opgegeven in de `renewal-period` . | Yes      | N.v.t.     |
+| verlenging-periode | De tijds periode in seconden waarna het aantal opnieuw wordt ingesteld.                                              | Yes      | N.v.t.     |
+| opnieuw proberen na-header-naam    | De naam van een antwoord header waarvan de waarde het aanbevolen interval voor nieuwe pogingen in seconden na het overschrijden van de opgegeven oproep frequentie is overschreden. |  No | N.v.t.  |
+| opnieuw proberen na variabele-naam    | De naam van een beleid-expressie variabele waarin het aanbevolen interval voor nieuwe pogingen in seconden wordt opgeslagen nadat de opgegeven oproep frequentie is overschreden. |  No | N.v.t.  |
+| resterend-aanroepen-header-name    | De naam van een antwoord header waarvan de waarde na elke uitvoering van elk beleid het aantal resterende aanroepen is dat is toegestaan voor het tijds interval dat is opgegeven in de `renewal-period` . |  No | N.v.t.  |
+| resterend-aanroepen-variabele-name    | De naam van een beleids expressie-variabele die na elke uitvoering van elk beleid het aantal resterende aanroepen opslaat dat is toegestaan voor het tijds interval dat is opgegeven in de `renewal-period` . |  No | N.v.t.  |
+| totaal-calls-header-name    | De naam van een antwoord header waarvan de waarde de waarde is die is opgegeven in `calls` . |  No | N.v.t.  |
 
 ### <a name="usage"></a>Gebruik
 
@@ -146,7 +158,7 @@ Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management
 > [!IMPORTANT]
 > Deze functie is niet beschikbaar in de laag **verbruik** van API management.
 
-Het `rate-limit-by-key` beleid voor komt dat het API-gebruik pieken per sleutel oploopt door de oproep frequentie te beperken tot een opgegeven getal per een opgegeven periode. De sleutel kan een wille keurige teken reeks waarde hebben en wordt doorgaans verschaft met een beleids expressie. Optionele increment condition kan worden toegevoegd om aan te geven welke aanvragen bij de limiet moeten worden geteld. Wanneer dit beleid wordt geactiveerd, ontvangt de aanroeper een `429 Too Many Requests` status code voor de reactie.
+Het `rate-limit-by-key` beleid voor komt dat het API-gebruik pieken per sleutel oploopt door de oproep frequentie te beperken tot een opgegeven getal per een opgegeven periode. De sleutel kan een wille keurige teken reeks waarde hebben en wordt doorgaans verschaft met een beleids expressie. Optionele increment condition kan worden toegevoegd om aan te geven welke aanvragen bij de limiet moeten worden geteld. Als deze aanroep frequentie wordt overschreden, ontvangt de aanroeper een `429 Too Many Requests` status code voor de reactie.
 
 Zie [Geavanceerde aanvraag beperking met Azure API Management](./api-management-sample-flexible-throttling.md)voor meer informatie en voor beelden van dit beleid.
 
@@ -162,13 +174,16 @@ Zie [Geavanceerde aanvraag beperking met Azure API Management](./api-management-
 <rate-limit-by-key calls="number"
                    renewal-period="seconds"
                    increment-condition="condition"
-                   counter-key="key value" />
+                   counter-key="key value" 
+                   retry-after-header-name="header name" retry-after-variable-name="policy expression variable name"
+                   remaining-calls-header-name="header name"  remaining-calls-variable-name="policy expression variable name"
+                   total-calls-header-name="header name"/> 
 
 ```
 
 ### <a name="example"></a>Voorbeeld
 
-In het volgende voor beeld wordt de frequentie limiet ingesteld op basis van het IP-adres van de beller.
+In het volgende voor beeld wordt de frequentie limiet van 10 aanroepen per 60 seconden ingesteld op basis van het IP-adres van de beller. Na elke uitvoering van elk beleid, worden de resterende aanroepen die in de tijds periode zijn toegestaan, opgeslagen in de variabele `remainingCallsPerIP` .
 
 ```xml
 <policies>
@@ -177,7 +192,8 @@ In het volgende voor beeld wordt de frequentie limiet ingesteld op basis van het
         <rate-limit-by-key  calls="10"
               renewal-period="60"
               increment-condition="@(context.Response.StatusCode == 200)"
-              counter-key="@(context.Request.IpAddress)"/>
+              counter-key="@(context.Request.IpAddress)"
+              remaining-calls-variable-name="remainingCallsPerIP"/>
     </inbound>
     <outbound>
         <base />
@@ -189,16 +205,21 @@ In het volgende voor beeld wordt de frequentie limiet ingesteld op basis van het
 
 | Naam              | Beschrijving   | Vereist |
 | ----------------- | ------------- | -------- |
-| frequentie per sleutel | Hoofd element. | Ja      |
+| frequentie per sleutel | Hoofd element. | Yes      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                | Beschrijving                                                                                           | Vereist | Standaard |
 | ------------------- | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
-| rpc's               | Het maximale aantal aanroepen dat is toegestaan tijdens het tijds interval dat is opgegeven in de `renewal-period` . | Ja      | N.v.t.     |
-| teller-sleutel         | De sleutel die moet worden gebruikt voor het beleid voor frequentie limieten.                                                             | Ja      | N.v.t.     |
-| Increment-condition | De booleaanse expressie waarmee wordt aangegeven of de aanvraag moet worden geteld bij de quota ( `true` ).        | Nee       | N.v.t.     |
-| verlenging-periode      | De tijds periode in seconden waarna het quotum opnieuw wordt ingesteld.                                              | Ja      | N.v.t.     |
+| rpc's               | Het maximale aantal aanroepen dat is toegestaan tijdens het tijds interval dat is opgegeven in de `renewal-period` . | Yes      | N.v.t.     |
+| teller-sleutel         | De sleutel die moet worden gebruikt voor het beleid voor frequentie limieten.                                                             | Yes      | N.v.t.     |
+| Increment-condition | De booleaanse expressie waarmee wordt aangegeven of de aanvraag moet worden geteld bij het aantal ( `true` ).        | No       | N.v.t.     |
+| verlenging-periode      | De tijds periode in seconden waarna het aantal opnieuw wordt ingesteld.                                              | Yes      | N.v.t.     |
+| opnieuw proberen na-header-naam    | De naam van een antwoord header waarvan de waarde het aanbevolen interval voor nieuwe pogingen in seconden na het overschrijden van de opgegeven oproep frequentie is overschreden. |  No | N.v.t.  |
+| opnieuw proberen na variabele-naam    | De naam van een beleid-expressie variabele waarin het aanbevolen interval voor nieuwe pogingen in seconden wordt opgeslagen nadat de opgegeven oproep frequentie is overschreden. |  No | N.v.t.  |
+| resterend-aanroepen-header-name    | De naam van een antwoord header waarvan de waarde na elke uitvoering van elk beleid het aantal resterende aanroepen is dat is toegestaan voor het tijds interval dat is opgegeven in de `renewal-period` . |  No | N.v.t.  |
+| resterend-aanroepen-variabele-name    | De naam van een beleids expressie-variabele die na elke uitvoering van elk beleid het aantal resterende aanroepen opslaat dat is toegestaan voor het tijds interval dat is opgegeven in de `renewal-period` . |  No | N.v.t.  |
+| totaal-calls-header-name    | De naam van een antwoord header waarvan de waarde de waarde is die is opgegeven in `calls` . |  No | N.v.t.  |
 
 ### <a name="usage"></a>Gebruik
 
@@ -236,7 +257,7 @@ In het volgende voor beeld staat het beleid alleen toe dat aanvragen afkomstig z
 
 | Naam                                      | Beschrijving                                         | Vereist                                                       |
 | ----------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------- |
-| IP-filter                                 | Hoofd element.                                       | Ja                                                            |
+| IP-filter                                 | Hoofd element.                                       | Yes                                                            |
 | adres                                   | Hiermee geeft u één IP-adres op waarop moet worden gefilterd.   | Er is ten minste één `address` `address-range` element vereist. |
 | adres bereik van = "adres" naar = "adres" | Hiermee geeft u een bereik van IP-adres op waarop moet worden gefilterd. | Er is ten minste één `address` `address-range` element vereist. |
 
@@ -245,7 +266,7 @@ In het volgende voor beeld staat het beleid alleen toe dat aanvragen afkomstig z
 | Naam                                      | Beschrijving                                                                                 | Vereist                                           | Standaard |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------- | ------- |
 | adres bereik van = "adres" naar = "adres" | Een bereik van IP-adressen voor het toestaan of weigeren van toegang voor.                                        | Vereist wanneer het `address-range` element wordt gebruikt. | N.v.t.     |
-| IP-filter actie = "toestaan &#124; verbieden"    | Hiermee geeft u op of aanroepen moeten worden toegestaan of niet voor de opgegeven IP-adressen en-bereiken. | Ja                                                | N.v.t.     |
+| IP-filter actie = "toestaan &#124; verbieden"    | Hiermee geeft u op of aanroepen moeten worden toegestaan of niet voor de opgegeven IP-adressen en-bereiken. | Yes                                                | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -294,18 +315,18 @@ Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management
 
 | Naam      | Beschrijving                                                                                                                                                                                                                                                                                  | Vereist |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| quota     | Hoofd element.                                                                                                                                                                                                                                                                                | Ja      |
-| api       | Voeg een of meer van deze elementen toe om het gespreks quotum voor Api's binnen het product in te stellen. Product-en API-oproep quota worden onafhankelijk toegepast. Naar de API kan worden verwezen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd.                    | Nee       |
-| bewerking | Voeg een of meer van deze elementen toe om het aanroepen van quota voor bewerkingen in een API in te stellen. Product-, API-en bewerkings oproep quota worden onafhankelijk toegepast. U kunt naar de bewerking verwijzen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd. | Nee       |
+| quota     | Hoofd element.                                                                                                                                                                                                                                                                                | Yes      |
+| api       | Voeg een of meer van deze elementen toe om het gespreks quotum voor Api's binnen het product in te stellen. Product-en API-oproep quota worden onafhankelijk toegepast. Naar de API kan worden verwezen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd.                    | No       |
+| bewerking | Voeg een of meer van deze elementen toe om het aanroepen van quota voor bewerkingen in een API in te stellen. Product-, API-en bewerkings oproep quota worden onafhankelijk toegepast. U kunt naar de bewerking verwijzen via `name` of `id` . Als beide kenmerken worden gegeven, `id` wordt gebruikt en `name` wordt deze genegeerd. | No       |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam           | Beschrijving                                                                                               | Vereist                                                         | Standaard |
 | -------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------- |
-| naam           | De naam van de API of bewerking waarvoor het quotum geldt.                                             | Ja                                                              | N.v.t.     |
+| naam           | De naam van de API of bewerking waarvoor het quotum geldt.                                             | Yes                                                              | N.v.t.     |
 | BAP      | Het Maxi maal toegestane aantal kilo bytes tijdens het tijds interval dat is opgegeven in de `renewal-period` . | Ofwel `calls` , `bandwidth` of beide moeten worden opgegeven. | N.v.t.     |
 | rpc's          | Het maximale aantal aanroepen dat is toegestaan tijdens het tijds interval dat is opgegeven in de `renewal-period` .     | Ofwel `calls` , `bandwidth` of beide moeten worden opgegeven. | N.v.t.     |
-| verlenging-periode | De tijds periode in seconden waarna het quotum opnieuw wordt ingesteld.                                                  | Ja                                                              | N.v.t.     |
+| verlenging-periode | De tijds periode in seconden waarna het quotum opnieuw wordt ingesteld.                                                  | Yes                                                              | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -319,7 +340,7 @@ Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management
 > [!IMPORTANT]
 > Deze functie is niet beschikbaar in de laag **verbruik** van API management.
 
-`quota-by-key`Met het beleid wordt een Verleng volume en/of een levens duur van het gesprek en/of het quotum voor de band breedte afgedwongen op basis van per sleutel. De sleutel kan een wille keurige teken reeks waarde hebben en wordt doorgaans verschaft met een beleids expressie. Optionele increment condition kan worden toegevoegd om aan te geven welke aanvragen bij het quotum moeten worden geteld. Als meerdere beleids regels dezelfde sleutel waarde zouden verhogen, wordt deze slechts eenmaal per aanvraag verhoogd. Wanneer de oproep limiet wordt bereikt, ontvangt de aanroeper een `403 Forbidden` status code voor de reactie.
+`quota-by-key`Met het beleid wordt een Verleng volume en/of een levens duur van het gesprek en/of het quotum voor de band breedte afgedwongen op basis van per sleutel. De sleutel kan een wille keurige teken reeks waarde hebben en wordt doorgaans verschaft met een beleids expressie. Optionele increment condition kan worden toegevoegd om aan te geven welke aanvragen bij het quotum moeten worden geteld. Als meerdere beleids regels dezelfde sleutel waarde zouden verhogen, wordt deze slechts eenmaal per aanvraag verhoogd. Wanneer de aanroep frequentie wordt overschreden, ontvangt de aanroeper een `403 Forbidden` status code voor de reactie.
 
 Zie [Geavanceerde aanvraag beperking met Azure API Management](./api-management-sample-flexible-throttling.md)voor meer informatie en voor beelden van dit beleid.
 
@@ -359,7 +380,7 @@ In het volgende voor beeld wordt het quotum door het IP-adres van de beller gesl
 
 | Naam  | Beschrijving   | Vereist |
 | ----- | ------------- | -------- |
-| quota | Hoofd element. | Ja      |
+| quota | Hoofd element. | Yes      |
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -367,9 +388,9 @@ In het volgende voor beeld wordt het quotum door het IP-adres van de beller gesl
 | ------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------- |
 | BAP           | Het Maxi maal toegestane aantal kilo bytes tijdens het tijds interval dat is opgegeven in de `renewal-period` . | Ofwel `calls` , `bandwidth` of beide moeten worden opgegeven. | N.v.t.     |
 | rpc's               | Het maximale aantal aanroepen dat is toegestaan tijdens het tijds interval dat is opgegeven in de `renewal-period` .     | Ofwel `calls` , `bandwidth` of beide moeten worden opgegeven. | N.v.t.     |
-| teller-sleutel         | De sleutel die moet worden gebruikt voor het quotum beleid.                                                                      | Ja                                                              | N.v.t.     |
-| Increment-condition | De booleaanse expressie waarmee wordt aangegeven of de aanvraag moet worden geteld bij het quotum ( `true` )             | Nee                                                               | N.v.t.     |
-| verlenging-periode      | De tijds periode in seconden waarna het quotum opnieuw wordt ingesteld.                                                  | Ja                                                              | N.v.t.     |
+| teller-sleutel         | De sleutel die moet worden gebruikt voor het quotum beleid.                                                                      | Yes                                                              | N.v.t.     |
+| Increment-condition | De booleaanse expressie waarmee wordt aangegeven of de aanvraag moet worden geteld bij het quotum ( `true` )             | No                                                               | N.v.t.     |
+| verlenging-periode      | De tijds periode in seconden waarna het quotum opnieuw wordt ingesteld.                                                  | Yes                                                              | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -529,32 +550,32 @@ In dit voor beeld ziet u hoe u het JWT-beleid [valideren](api-management-access-
 
 | Element             | Beschrijving                                                                                                                                                                                                                                                                                                                                           | Vereist |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| validate-JWT        | Hoofd element.                                                                                                                                                                                                                                                                                                                                         | Ja      |
-| doel groepen           | Bevat een lijst met acceptabele claim claims die aanwezig kunnen zijn op het token. Als er meerdere Audience-waarden aanwezig zijn, wordt elke waarde geprobeerd totdat alle gegevens zijn uitgeput (in welk geval de validatie mislukt) of totdat er een slaagt. Er moet ten minste één doel groep worden opgegeven.                                                                     | Nee       |
-| verlener-handtekening sleutels | Een lijst met met base64 gecodeerde beveiligings sleutels die worden gebruikt voor het valideren van ondertekende tokens. Als er meerdere beveiligings sleutels aanwezig zijn, wordt elke sleutel geprobeerd totdat alle sleutels zijn uitgeput (in het geval dat de validatie mislukt) of een geslaagd (handig voor de rollover van tokens). Sleutel elementen hebben een optioneel `id` kenmerk dat wordt gebruikt om te matchen op `kid` claim. <br/><br/>U kunt ook een handtekening sleutel voor de verlener opgeven met:<br/><br/> - `certificate-id` in indeling `<key certificate-id="mycertificate" />` om de id op te geven van een certificaat entiteit die is [geüpload](/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity#Add) naar API Management<br/>-Combi natie van RSA-modulus `n` en exponent `e` in indeling `<key n="<modulus>" e="<exponent>" />` om de RSA-para meters op te geven in een met base64url gecodeerde indeling               | Nee       |
-| ontsleuteling-sleutels     | Een lijst met met base64 gecodeerde sleutels die worden gebruikt om de tokens te ontsleutelen. Als er meerdere beveiligings sleutels aanwezig zijn, wordt elke sleutel geprobeerd totdat alle sleutels zijn uitgeput (in het geval dat de validatie mislukt) of een sleutel slaagt. Sleutel elementen hebben een optioneel `id` kenmerk dat wordt gebruikt om te matchen op `kid` claim.<br/><br/>U kunt ook een ontsleutelings sleutel opgeven met:<br/><br/> - `certificate-id` in indeling `<key certificate-id="mycertificate" />` om de id op te geven van een certificaat entiteit die is [geüpload](/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity#Add) naar API Management                                                 | Nee       |
-| verleners             | Een lijst met acceptabele principals die het token hebben uitgegeven. Als er meerdere Issuer-waarden aanwezig zijn, wordt elke waarde geprobeerd totdat alle gegevens zijn uitgeput (in het geval dat de validatie mislukt) of totdat er een slaagt.                                                                                                                                         | Nee       |
-| OpenID Connect-config       | Het element dat wordt gebruikt voor het opgeven van een compatibel Open ID-configuratie-eind punt waarvan de handtekening sleutels en de certificaat verlener kunnen worden verkregen.                                                                                                                                                                                                                        | Nee       |
-| vereist: claims     | Bevat een lijst met claims die naar verwachting aanwezig zijn op het token om als geldig te worden beschouwd. Wanneer het `match` kenmerk is ingesteld op `all` elke claim waarde in het beleid, moet aanwezig zijn in het token om de validatie te volt ooien. Wanneer het `match` kenmerk is ingesteld op `any` ten minste één claim moet aanwezig zijn in het token om de validatie te volt ooien. | Nee       |
+| validate-JWT        | Hoofd element.                                                                                                                                                                                                                                                                                                                                         | Yes      |
+| doel groepen           | Bevat een lijst met acceptabele claim claims die aanwezig kunnen zijn op het token. Als er meerdere Audience-waarden aanwezig zijn, wordt elke waarde geprobeerd totdat alle gegevens zijn uitgeput (in welk geval de validatie mislukt) of totdat er een slaagt. Er moet ten minste één doel groep worden opgegeven.                                                                     | No       |
+| verlener-handtekening sleutels | Een lijst met met base64 gecodeerde beveiligings sleutels die worden gebruikt voor het valideren van ondertekende tokens. Als er meerdere beveiligings sleutels aanwezig zijn, wordt elke sleutel geprobeerd totdat alle sleutels zijn uitgeput (in het geval dat de validatie mislukt) of een geslaagd (handig voor de rollover van tokens). Sleutel elementen hebben een optioneel `id` kenmerk dat wordt gebruikt om te matchen op `kid` claim. <br/><br/>U kunt ook een handtekening sleutel voor de verlener opgeven met:<br/><br/> - `certificate-id` in indeling `<key certificate-id="mycertificate" />` om de id op te geven van een certificaat entiteit die is [geüpload](/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity#Add) naar API Management<br/>-Combi natie van RSA-modulus `n` en exponent `e` in indeling `<key n="<modulus>" e="<exponent>" />` om de RSA-para meters op te geven in een met base64url gecodeerde indeling               | No       |
+| ontsleuteling-sleutels     | Een lijst met met base64 gecodeerde sleutels die worden gebruikt om de tokens te ontsleutelen. Als er meerdere beveiligings sleutels aanwezig zijn, wordt elke sleutel geprobeerd totdat alle sleutels zijn uitgeput (in het geval dat de validatie mislukt) of een sleutel slaagt. Sleutel elementen hebben een optioneel `id` kenmerk dat wordt gebruikt om te matchen op `kid` claim.<br/><br/>U kunt ook een ontsleutelings sleutel opgeven met:<br/><br/> - `certificate-id` in indeling `<key certificate-id="mycertificate" />` om de id op te geven van een certificaat entiteit die is [geüpload](/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity#Add) naar API Management                                                 | No       |
+| verleners             | Een lijst met acceptabele principals die het token hebben uitgegeven. Als er meerdere Issuer-waarden aanwezig zijn, wordt elke waarde geprobeerd totdat alle gegevens zijn uitgeput (in het geval dat de validatie mislukt) of totdat er een slaagt.                                                                                                                                         | No       |
+| OpenID Connect-config       | Het element dat wordt gebruikt voor het opgeven van een compatibel Open ID-configuratie-eind punt waarvan de handtekening sleutels en de certificaat verlener kunnen worden verkregen.                                                                                                                                                                                                                        | No       |
+| vereist: claims     | Bevat een lijst met claims die naar verwachting aanwezig zijn op het token om als geldig te worden beschouwd. Wanneer het `match` kenmerk is ingesteld op `all` elke claim waarde in het beleid, moet aanwezig zijn in het token om de validatie te volt ooien. Wanneer het `match` kenmerk is ingesteld op `any` ten minste één claim moet aanwezig zijn in het token om de validatie te volt ooien. | No       |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Naam                            | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                                            | Vereist                                                                         | Standaard                                                                           |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| klok scheef trekken                      | Duur. Gebruik dit om het maximale verwachte tijd verschil tussen de systeem klokken van de token Uitgever en het API Management-exemplaar op te geven.                                                                                                                                                                                                                                                                                                               | Nee                                                                               | 0 seconden                                                                         |
-| mislukt-validatie-fout-bericht | Fout bericht dat moet worden geretourneerd in de hoofd tekst van het HTTP-antwoord als de JWT geen validatie doorgeeft. Dit bericht moet speciale tekens op de juiste manier hebben geescapet.                                                                                                                                                                                                                                                                                                 | Nee                                                                               | Het standaard fout bericht is afhankelijk van het validatie probleem, bijvoorbeeld ' JWT niet aanwezig '. |
-| mislukt: validatie-httpcode      | HTTP-status code die moet worden geretourneerd als de JWT-validatie niet is geslaagd.                                                                                                                                                                                                                                                                                                                                                                                         | Nee                                                                               | 401                                                                               |
+| klok scheef trekken                      | Duur. Gebruik dit om het maximale verwachte tijd verschil tussen de systeem klokken van de token Uitgever en het API Management-exemplaar op te geven.                                                                                                                                                                                                                                                                                                               | No                                                                               | 0 seconden                                                                         |
+| mislukt-validatie-fout-bericht | Fout bericht dat moet worden geretourneerd in de hoofd tekst van het HTTP-antwoord als de JWT geen validatie doorgeeft. Dit bericht moet speciale tekens op de juiste manier hebben geescapet.                                                                                                                                                                                                                                                                                                 | No                                                                               | Het standaard fout bericht is afhankelijk van het validatie probleem, bijvoorbeeld ' JWT niet aanwezig '. |
+| mislukt: validatie-httpcode      | HTTP-status code die moet worden geretourneerd als de JWT-validatie niet is geslaagd.                                                                                                                                                                                                                                                                                                                                                                                         | No                                                                               | 401                                                                               |
 | header-naam                     | De naam van de HTTP-header die het token heeft.                                                                                                                                                                                                                                                                                                                                                                                                         | Een van `header-name` `query-parameter-name` of `token-value` moet worden opgegeven. | N.v.t.                                                                               |
 | query-para meter-naam            | De naam van de query parameter die het token bewaart.                                                                                                                                                                                                                                                                                                                                                                                                     | Een van `header-name` `query-parameter-name` of `token-value` moet worden opgegeven. | N.v.t.                                                                               |
 | token-waarde                     | Expressie die een teken reeks met een JWT-token retourneert                                                                                                                                                                                                                                                                                                                                                                                                     | Een van `header-name` `query-parameter-name` of `token-value` moet worden opgegeven. | N.v.t.                                                                               |
-| id                              | Met het `id` kenmerk van het `key` element kunt u de teken reeks opgeven die overeenkomt met de `kid` claim in het token (indien aanwezig) om de juiste sleutel te vinden die moet worden gebruikt voor handtekening validatie.                                                                                                                                                                                                                                           | Nee                                                                               | N.v.t.                                                                               |
-| overeen met                           | Het `match` kenmerk van het `claim` element geeft aan of elke claim waarde in het beleid aanwezig moet zijn in het token om de validatie te kunnen volt ooien. Mogelijke waarden zijn:<br /><br /> - `all` -elke claim waarde in het beleid moet aanwezig zijn in het token om de validatie te volt ooien.<br /><br /> - `any` -Er moet ten minste één claim waarde aanwezig zijn in het token om de validatie te volt ooien.                                                       | Nee                                                                               | all                                                                               |
-| vereisen-verval tijd         | True. Hiermee geeft u op of er een verval claim vereist is in het token.                                                                                                                                                                                                                                                                                                                                                                               | Nee                                                                               | true                                                                              |
-| vereisen-schema                  | De naam van het token schema, bijvoorbeeld ' Bearer '. Als dit kenmerk is ingesteld, zorgt het beleid ervoor dat het opgegeven schema aanwezig is in de waarde van de autorisatie-header.                                                                                                                                                                                                                                                                                    | Nee                                                                               | N.v.t.                                                                               |
-| vereisen: ondertekende tokens           | True. Hiermee geeft u op of een token moet worden ondertekend.                                                                                                                                                                                                                                                                                                                                                                                           | Nee                                                                               | true                                                                              |
-| scheiding                       | Tekenreeks. Hiermee geeft u een scheidings teken (bijvoorbeeld ",") op dat moet worden gebruikt voor het extra heren van een set waarden uit een claim met meerdere waarden.                                                                                                                                                                                                                                                                                                                                          | Nee                                                                               | N.v.t.                                                                               |
-| url                             | Open ID configuratie eind punt URL van waar de meta gegevens van de configuratie van de Open-ID kunnen worden verkregen. Het antwoord moet overeenkomen met de specificaties zoals gedefinieerd op URL: `https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata` . Voor Azure Active Directory gebruikt u de volgende URL: de `https://login.microsoftonline.com/{tenant-name}/.well-known/openid-configuration` naam van uw adreslijst Tenant vervangen, bijvoorbeeld `contoso.onmicrosoft.com` . | Ja                                                                              | N.v.t.                                                                               |
-| uitvoer-token-variabele-naam      | Tekenreeks. De naam van de context variabele waarmee de token waarde wordt ontvangen als een object van het type [`Jwt`](api-management-policy-expressions.md) bij een geslaagde token validatie                                                                                                                                                                                                                                                                                     | Nee                                                                               | N.v.t.                                                                               |
+| id                              | Met het `id` kenmerk van het `key` element kunt u de teken reeks opgeven die overeenkomt met de `kid` claim in het token (indien aanwezig) om de juiste sleutel te vinden die moet worden gebruikt voor handtekening validatie.                                                                                                                                                                                                                                           | No                                                                               | N.v.t.                                                                               |
+| overeen met                           | Het `match` kenmerk van het `claim` element geeft aan of elke claim waarde in het beleid aanwezig moet zijn in het token om de validatie te kunnen volt ooien. Mogelijke waarden zijn:<br /><br /> - `all` -elke claim waarde in het beleid moet aanwezig zijn in het token om de validatie te volt ooien.<br /><br /> - `any` -Er moet ten minste één claim waarde aanwezig zijn in het token om de validatie te volt ooien.                                                       | No                                                                               | all                                                                               |
+| vereisen-verval tijd         | True. Hiermee geeft u op of er een verval claim vereist is in het token.                                                                                                                                                                                                                                                                                                                                                                               | No                                                                               | true                                                                              |
+| vereisen-schema                  | De naam van het token schema, bijvoorbeeld ' Bearer '. Als dit kenmerk is ingesteld, zorgt het beleid ervoor dat het opgegeven schema aanwezig is in de waarde van de autorisatie-header.                                                                                                                                                                                                                                                                                    | No                                                                               | N.v.t.                                                                               |
+| vereisen: ondertekende tokens           | True. Hiermee geeft u op of een token moet worden ondertekend.                                                                                                                                                                                                                                                                                                                                                                                           | No                                                                               | true                                                                              |
+| scheiding                       | Tekenreeks. Hiermee geeft u een scheidings teken (bijvoorbeeld ",") op dat moet worden gebruikt voor het extra heren van een set waarden uit een claim met meerdere waarden.                                                                                                                                                                                                                                                                                                                                          | No                                                                               | N.v.t.                                                                               |
+| url                             | Open ID configuratie eind punt URL van waar de meta gegevens van de configuratie van de Open-ID kunnen worden verkregen. Het antwoord moet overeenkomen met de specificaties zoals gedefinieerd op URL: `https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata` . Voor Azure Active Directory gebruikt u de volgende URL: de `https://login.microsoftonline.com/{tenant-name}/.well-known/openid-configuration` naam van uw adreslijst Tenant vervangen, bijvoorbeeld `contoso.onmicrosoft.com` . | Yes                                                                              | N.v.t.                                                                               |
+| uitvoer-token-variabele-naam      | Tekenreeks. De naam van de context variabele waarmee de token waarde wordt ontvangen als een object van het type [`Jwt`](api-management-policy-expressions.md) bij een geslaagde token validatie                                                                                                                                                                                                                                                                                     | No                                                                               | N.v.t.                                                                               |
 
 ### <a name="usage"></a>Gebruik
 

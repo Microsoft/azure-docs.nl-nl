@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 037e7fd13f55a0f5de939197f71324221392bd55
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: bc548d4cc728611387b36451d563be6ca0e21530
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601062"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388189"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Een grafiek van digitale apparaatdubbels beheren met behulp van relaties
 
@@ -116,6 +116,21 @@ U kunt deze functie nu als volgt aanroepen in de methode Main:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseFetchAndPrint":::
 
+## <a name="update-relationships"></a>Relaties bijwerken
+
+Relaties worden bijgewerkt met behulp van de- `UpdateRelationship` methode. 
+
+>[!NOTE]
+>Deze methode is voor het bijwerken van de **Eigenschappen** van een relatie. Als u de bron dubbel of doel van de relatie wilt wijzigen, moet u [de relatie verwijderen](#delete-relationships) en [er een opnieuw maken](#create-relationships) met behulp van de nieuwe apparaatdubbels.
+
+De vereiste para meters voor de client aanroep zijn de ID van de bron, twee (de dubbele locatie van de relatie), de ID van de relatie die moet worden bijgewerkt en een [JSON-patch](http://jsonpatch.com/) document met de eigenschappen en nieuwe waarden die u wilt bijwerken.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UpdateRelationshipMethod":::
+
+Hier volgt een voor beeld van een aanroep van deze methode, waarbij een JSON-patch-document wordt door gegeven met de informatie voor het bijwerken van een eigenschap.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseUpdateRelationship":::
+
 ## <a name="delete-relationships"></a>Relaties verwijderen
 
 Met de eerste para meter geeft u de bron op, twee (de dubbele locatie van de relatie). De andere para meter is de relatie-ID. U hebt zowel de dubbele ID als de relatie-ID nodig, omdat relatie-Id's alleen uniek zijn binnen het bereik van een dubbele.
@@ -137,7 +152,7 @@ Het fragment maakt gebruik van de [*Room.jsop*](https://github.com/Azure-Samples
 Ga als volgt te werk voordat u het voor beeld uitvoert:
 1. Down load de model bestanden, plaats deze in uw project en vervang de `<path-to>` tijdelijke aanduidingen in de onderstaande code om uw programma te laten weten waar ze zich bevinden.
 2. Vervang de tijdelijke aanduiding door de `<your-instance-hostname>` hostnaam van uw Azure Digital apparaatdubbels-exemplaar.
-3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste is het pakket voor de [Azure Digital APPARAATDUBBELS SDK voor .net](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede bevat hulpprogram ma's om te helpen bij de verificatie van Azure.
+3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede biedt hulpmiddelen voor de verificatie met Azure.
 
       ```cmd/sh
       dotnet add package Azure.DigitalTwins.Core

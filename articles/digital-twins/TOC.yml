@@ -52,7 +52,11 @@
             - name: Scriptversie
               href: how-to-set-up-instance-scripted.md
         - name: Privétoegang inschakelen met Private Link
-          href: how-to-enable-private-link.md
+          items:
+            - name: Portalversie
+              href: how-to-enable-private-link-portal.md
+            - name: CLI-versie
+              href: how-to-enable-private-link-cli.md
         - name: Verificatiecode voor app schrijven
           href: how-to-authenticate-client.md
         - name: Een app-registratie maken
@@ -103,12 +107,16 @@
       items:
         - name: Eindpunten en routes beheren
           items:
-            - name: API- en CLI-versie
-              href: how-to-manage-routes-apis-cli.md
             - name: Portalversie
               href: how-to-manage-routes-portal.md
+            - name: API- en CLI-versie
+              href: how-to-manage-routes-apis-cli.md
         - name: Een beheerde identiteit voor routerings gebeurtenissen inschakelen
-          href: how-to-enable-managed-identities.md
+          items:
+            - name: Portalversie
+              href: how-to-enable-managed-identities-portal.md
+            - name: CLI-versie
+              href: how-to-enable-managed-identities-cli.md
         - name: Integreren met Azure Maps
           href: how-to-integrate-maps.md
         - name: Integreren met Azure Time Series Insights

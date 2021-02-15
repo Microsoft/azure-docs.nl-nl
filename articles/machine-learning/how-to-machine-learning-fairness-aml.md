@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, responsible-ml
-ms.openlocfilehash: ee589aed2b8f3c53d21c1f762a5d2027f3762649
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 322b036fee840db58ed610795155af6c9e1320cc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222765"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366951"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Gebruik Azure Machine Learning met het open-source pakket Fairlearn om de verdeling van ML-modellen te beoordelen (preview-versie)
 
@@ -214,10 +214,15 @@ In het volgende voor beeld ziet u hoe u het verdeling-pakket gebruikt. We upload
     1. Selecteer **experimenten** in het linkerdeel venster om een lijst met experimenten te bekijken die u op Azure machine learning hebt uitgevoerd.
     1. Selecteer een bepaald experiment om alle uitvoeringen in dat experiment weer te geven.
     1. Selecteer een run en vervolgens het tabblad **verdeling** naar het visualisatie Dashboard van de toelichting.
+    1. Klik na de overloop op het tabblad **verdeling** op een **verdeling-id** in het menu aan de rechter kant.
+    1. Configureer uw dash board door uw gevoelige kenmerk, de metrische gegevens over prestaties en de verdeling-waarde van belang voor land te selecteren op de pagina verdeling Assessment.
+    1. Schakel het grafiek type over van de ene naar de andere om te zien hoe goed de **toewijzing** is en de **kwaliteit van de service** .
 
 
-    [![Verdeling-dash board](./media/how-to-machine-learning-fairness-aml/dashboard.png)](./media/how-to-machine-learning-fairness-aml/dashboard.png#lightbox)
+
+    [![Toewijzing van verdeling-dash board](./media/how-to-machine-learning-fairness-aml/dashboard-1.png)](./media/how-to-machine-learning-fairness-aml/dashboard-1.png#lightbox)
     
+    [![Verdeling-Dash Board Quality of Service](./media/how-to-machine-learning-fairness-aml/dashboard-2.png)](./media/how-to-machine-learning-fairness-aml/dashboard-2.png#lightbox)
     * **Deel venster modellen**
     1. Als u het oorspronkelijke model hebt geregistreerd door de vorige stappen te volgen, kunt u **modellen** selecteren in het linkerdeel venster om de app weer te geven.
     1. Selecteer een model en klik vervolgens op het tabblad **verdeling** om het visualisatie Dashboard van de uitleg weer te geven.

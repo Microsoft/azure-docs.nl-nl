@@ -8,22 +8,22 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: e4231f5c4e947f29a72e581cf461ff737c1a0c82
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 5b537b88052ce4042e346732f3dc63aaec6621cc
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97956472"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100529704"
 ---
-1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en selecteer **publiceren** en in **doel**, selecteer **Azure** en vervolgens **volgende**.
 
-1. In **Doel** selecteert u **Azure** en :::image type="content" source="media/functions-vstools-publish/functions-visual-studio-publish-profile-step-1.png" alt-text="Azure-doel selecteren":::
+1. Kies voor het **specifieke doel** **Azure functie-app (Windows)**, waarmee u een functie-app maakt die wordt uitgevoerd op Windows.
 
-1. In **Specifiek doel** selecteert u **Azure Functie-app (Windows)**
+1. Kies in **functie**-exemplaar **een nieuwe Azure-functie maken...** 
 
-    :::image type="content" source="media/functions-vstools-publish/functions-visual-studio-publish-profile-step-2.png" alt-text="Selecteer Azure Functie-app":::
+    :::image type="content" source="media/functions-vstools-publish/functions-visual-studio-publish-new-resource.png" alt-text="Een nieuw exemplaar van de functie-app maken":::
 
-1. In **Functie-exemplaar** selecteert u **Een nieuwe Azure-functie maken...** en vervolgens gebruikt u de waarden die in de volgende tabel zijn opgegeven:
+1. Maak een nieuw exemplaar met behulp van de waarden die zijn opgegeven in de volgende tabel:
 
     | Instelling      | Waarde  | Beschrijving                                |
     | ------------ |  ------- | -------------------------------------------------- |
@@ -36,8 +36,9 @@ ms.locfileid: "97956472"
 
     ![Het dialoogvenster Create App Service](./media/functions-vstools-publish/functions-visual-studio-publish.png)
 
-1. Selecteer **Maken** om een functie-app en de bijbehorende resources te maken in Azure. 
-1. Controleer in **Functie-exemplaar** of **Uitvoeren vanuit pakketbestand** is aangevinkt. Uw functie-app wordt geïmplementeerd met [Zip-implementeren](../articles/azure-functions/functions-deployment-technologies.md#zip-deploy) met de modus [Uitvoeren vanuit pakket](../articles/azure-functions/run-functions-from-deployment-package.md) ingeschakeld. Dit is de aanbevolen implementatiemethode voor uw functieproject, aangezien deze leidt tot betere prestaties. 
+1. Selecteer **Maken** om een functie-app en de bijbehorende resources te maken in Azure. De status van het maken van resources wordt linksonder in het venster weer gegeven. 
+
+1. Terug in het **functie-exemplaar**, zorg ervoor dat **uitvoeren vanuit pakket bestand** is ingeschakeld. Uw functie-app wordt geïmplementeerd met [Zip-implementeren](../articles/azure-functions/functions-deployment-technologies.md#zip-deploy) met de modus [Uitvoeren vanuit pakket](../articles/azure-functions/run-functions-from-deployment-package.md) ingeschakeld. Dit is de aanbevolen implementatiemethode voor uw functieproject, aangezien deze leidt tot betere prestaties. 
 
     :::image type="content" source="media/functions-vstools-publish/functions-visual-studio-publish-profile-step-4.png" alt-text="Profiel maken afronden":::
 

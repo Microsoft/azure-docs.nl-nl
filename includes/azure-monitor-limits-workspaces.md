@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: 86c5c6fff06f43bf66427ba1935852fcf97a71c6
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
-ms.translationtype: HT
+ms.openlocfilehash: 1f461c4870b398a49387472c49d45b90929405c7
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356207"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100529702"
 ---
 **Volume gegevensverzameling en gegevensretentie** 
 
@@ -56,13 +56,19 @@ ms.locfileid: "96356207"
 | Maximale uitvoeringstijd van query | 10 minuten | Zie [Time-outs](https://dev.loganalytics.io/documentation/Using-the-API/Timeouts) voor meer informatie.  |
 | Maximale aanvraagsnelheid | 200 aanvragen per 30 seconden per IP-adres van Azure AD-gebruikers of client | Zie [Snelheidslimieten](https://dev.loganalytics.io/documentation/Using-the-API/Limits) voor meer informatie. |
 
+**Connector voor Azure Monitor-logboeken**
+| Categorie | Limiet | Opmerkingen |
+|:---|:---|:---|
+| Maximum aantal records | 500.000 | |
+| Maximale querytime-out | 110 seconde | |
+| Grafieken | | Visualisatie op de pagina logboeken en de connector gebruiken verschillende grafiek bibliotheken en sommige functies zijn momenteel niet beschikbaar in de connector. |
+
 **Algemene limieten voor werkruimten**
 
 | Categorie | Limiet | Opmerkingen |
 |:---|:---|:---|
 | Maximum aantal kolommen in een tabel         | 500 | |
 | Maximum aantal tekens voor de kolomnaam | 500 | |
-| Gegevensexport | Momenteel niet beschikbaar | Gebruik Azure-functie of logische app om gegevens samen te voegen en te exporteren. | 
 
 **<a name="data-ingestion-volume-rate">Gegevensopnamevolume</a>**
 

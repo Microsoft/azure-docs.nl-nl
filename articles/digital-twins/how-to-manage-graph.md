@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e5009e59477e6862c4441090a6480075c9e22385
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: b713a19cbe572998bb6e5050ab2d7721a844f07a
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526780"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530447"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Een grafiek van digitale apparaatdubbels beheren met behulp van relaties
 
@@ -49,11 +49,11 @@ Als u een relatie wilt maken, moet u het volgende opgeven:
 De relatie-ID moet uniek zijn binnen de opgegeven bron. Het hoeft niet wereld wijd uniek te zijn.
 Voor de dubbele *Foo* moet elke specifieke relatie-id bijvoorbeeld uniek zijn. Een andere dubbele *balk* kan echter een uitgaande relatie hebben die overeenkomt met dezelfde id van een *Foo* -relatie.
 
-In het volgende code voorbeeld ziet u hoe u een relatie maakt in uw Azure Digital Apparaatdubbels-exemplaar.
+In het volgende code voorbeeld ziet u hoe u een relatie maakt in uw Azure Digital Apparaatdubbels-exemplaar. De SDK-aanroep (gemarkeerd) wordt gebruikt in een aangepaste methode die kan worden weer gegeven in de context van een groter programma.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="CreateRelationshipMethod":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="CreateRelationshipMethod" highlight="13":::
 
-In uw hoofd methode kunt u nu de aangepaste functie aanroepen om een _contains_ -relatie te maken, zoals: 
+Deze aangepaste functie kan nu worden aangeroepen om een _contains_ -relatie te maken, zoals: 
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseCreateRelationship":::
 
@@ -82,9 +82,9 @@ Als u toegang wilt krijgen tot de lijst met **uitgaande** relaties voor een bepa
 
 Dit retourneert een `Azure.Pageable<T>` of `Azure.AsyncPageable<T>` , afhankelijk van of u de synchrone of asynchrone versie van de aanroep gebruikt.
 
-Hier volgt een voor beeld van het ophalen van een lijst met relaties:
+Hier volgt een voor beeld waarin een lijst met relaties wordt opgehaald. De SDK-aanroep (gemarkeerd) wordt gebruikt in een aangepaste methode die kan worden weer gegeven in de context van een groter programma.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindOutgoingRelationshipsMethod":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindOutgoingRelationshipsMethod" highlight="8":::
 
 U kunt deze aangepaste methode nu aanroepen om de uitgaande relaties van het apparaatdubbels als volgt te bekijken:
 
@@ -96,11 +96,12 @@ U kunt de opgehaalde relaties gebruiken om naar andere apparaatdubbels in uw gra
 
 Azure Digital Apparaatdubbels heeft ook een API voor het zoeken van alle **inkomende** relaties naar een opgegeven dubbele. Dit is vaak handig voor omgekeerde navigatie of bij het verwijderen van een dubbele.
 
-Het vorige code voorbeeld is gericht op het vinden van uitgaande relaties van een dubbele. Het volgende voor beeld is op dezelfde manier gestructureerd, maar detecteert *inkomende* relaties met de dubbele plaats.
+>[!NOTE]
+> `IncomingRelationship` oproepen retour neren niet de volledige hoofd tekst van de relatie. Zie de documentatie van het document voor meer informatie over de `IncomingRelationship` -klasse. [](/dotnet/api/azure.digitaltwins.core.incomingrelationship?view=azure-dotnet&preserve-view=true)
 
-Houd er rekening mee dat de `IncomingRelationship` aanroepen de volledige hoofd tekst van de relatie niet retour neren.
+Het code voorbeeld in de vorige sectie is gericht op het vinden van uitgaande relaties van een dubbele. Het volgende voor beeld is op dezelfde manier gestructureerd, maar detecteert *inkomende* relaties met de dubbele plaats. In dit voor beeld wordt ook de SDK-aanroep (gemarkeerd) gebruikt in een aangepaste methode die kan worden weer gegeven in de context van een groter programma.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindIncomingRelationshipsMethod":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindIncomingRelationshipsMethod" highlight="8":::
 
 U kunt deze aangepaste methode nu aanroepen om de binnenkomende relaties van het apparaatdubbels als volgt te bekijken:
 
@@ -108,11 +109,11 @@ U kunt deze aangepaste methode nu aanroepen om de binnenkomende relaties van het
 
 ### <a name="list-all-twin-properties-and-relationships"></a>Alle dubbele eigenschappen en relaties weer geven
 
-Met behulp van de bovenstaande methoden voor het weer geven van uitgaande en inkomende relaties naar een dubbele, kunt u een methode maken waarmee de volledige dubbele gegevens worden afgedrukt, met inbegrip van de eigenschappen van de twee en beide typen relaties. Hier volgt een voor beeld van een aangepaste methode die laat zien hoe u dit doet.
+Met behulp van de bovenstaande methoden voor het weer geven van uitgaande en inkomende relaties naar een dubbele, kunt u een methode maken waarmee de volledige dubbele gegevens worden afgedrukt, met inbegrip van de eigenschappen van de twee en beide typen relaties. Hier volgt een voor beeld van een aangepaste methode voor het combi neren van de bovenstaande aangepaste methoden voor dit doel einde.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FetchAndPrintMethod":::
 
-U kunt deze aangepaste functie nu als volgt aanroepen in de methode Main: 
+U kunt deze aangepaste functie nu als volgt aanroepen: 
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseFetchAndPrint":::
 
@@ -125,7 +126,9 @@ Relaties worden bijgewerkt met behulp van de- `UpdateRelationship` methode.
 
 De vereiste para meters voor de client aanroep zijn de ID van de bron, twee (de dubbele locatie van de relatie), de ID van de relatie die moet worden bijgewerkt en een [JSON-patch](http://jsonpatch.com/) document met de eigenschappen en nieuwe waarden die u wilt bijwerken.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UpdateRelationshipMethod":::
+Hier volgt een voorbeeld code waarin wordt getoond hoe u deze methode gebruikt. In dit voor beeld wordt de SDK-aanroep (gemarkeerd) gebruikt in een aangepaste methode die kan worden weer gegeven in de context van een groter programma.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UpdateRelationshipMethod" highlight="6":::
 
 Hier volgt een voor beeld van een aanroep van deze aangepaste methode, waarbij een JSON-patch-document wordt door gegeven met de informatie voor het bijwerken van een eigenschap.
 
@@ -135,7 +138,9 @@ Hier volgt een voor beeld van een aanroep van deze aangepaste methode, waarbij e
 
 Met de eerste para meter geeft u de bron op, twee (de dubbele locatie van de relatie). De andere para meter is de relatie-ID. U hebt zowel de dubbele ID als de relatie-ID nodig, omdat relatie-Id's alleen uniek zijn binnen het bereik van een dubbele.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="DeleteRelationshipMethod":::
+Hier volgt een voorbeeld code waarin wordt getoond hoe u deze methode gebruikt. In dit voor beeld wordt de SDK-aanroep (gemarkeerd) gebruikt in een aangepaste methode die kan worden weer gegeven in de context van een groter programma.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="DeleteRelationshipMethod" highlight="5":::
 
 U kunt deze aangepaste methode nu aanroepen om een relatie als volgt te verwijderen:
 

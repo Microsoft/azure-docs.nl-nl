@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: 35c8c2aa31887feb294b04b8a88bbe5478659e5e
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: f249a95551916311fab51ebef72b55d9a4343c0b
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807900"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530515"
 ---
 # <a name="collect-data-from-linux-based-sources-using-syslog"></a>Gegevens verzamelen van op Linux gebaseerde bronnen met behulp van syslog
 
@@ -67,17 +67,17 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
 
 ### <a name="configure-the-log-analytics-agent"></a>De Log Analytics-agent configureren
 
-1. Klik onder aan de Blade syslog-connector op de koppeling **configuratie van geavanceerde instellingen van uw werk ruimte openen >** .
+1. Klik onder aan de Blade syslog-connector op de koppeling de **configuratie van uw werkruimte agent openen >** .
 
-1. Selecteer op de Blade **Geavanceerde instellingen** de optie **gegevens**  >  **syslog**. Voeg vervolgens de voorzieningen toe die door de connector moeten worden verzameld.
+1. Selecteer op de Blade **agent configuratie** het tabblad **syslog** . Voeg vervolgens de voorzieningen toe die door de connector moeten worden verzameld. Selecteer **faciliteit toevoegen** en kies uit de vervolg keuzelijst met faciliteiten.
     
     - Voeg de faciliteiten toe die uw syslog-apparaat in de logboek headers heeft opgenomen. 
     
     - Als u afwijkende SSH-aanmeldings detectie wilt gebruiken met de gegevens die u verzamelt, voegt u **auth** en **authpriv** toe. Raadpleeg de [volgende sectie](#configure-the-syslog-connector-for-anomalous-ssh-login-detection) voor meer informatie.
 
-1. Wanneer u alle faciliteiten hebt toegevoegd die u wilt bewaken en de ernst opties voor elke functie hebt aangepast, schakelt u het selectie vakje **op de onderstaande configuratie Toep assen op mijn computers in**.
+1. Wanneer u alle faciliteiten hebt toegevoegd die u wilt bewaken, controleert u of de selectie vakjes voor alle gewenste ernst zijn gemarkeerd.
 
-1. Selecteer **Opslaan**. 
+1. Selecteer **Toepassen**. 
 
 1. Controleer op uw virtuele machine of apparaat of u de door u opgegeven faciliteiten wilt verzenden.
 
@@ -88,7 +88,6 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
 > [!NOTE]
 > **Dezelfde computer gebruiken voor het door sturen van zowel normale syslog- *als* CEF-berichten**
 >
->
 > U kunt uw bestaande [CEF-logboek-doorstuur machine](connect-cef-agent.md) gebruiken voor het verzamelen en door sturen van logboeken van normale syslog-bronnen. U moet echter wel de volgende stappen uitvoeren om te voor komen dat gebeurtenissen in beide indelingen naar Azure Sentinel worden verzonden. Dit leidt ertoe dat gebeurtenissen worden gedupliceerd.
 >
 >    Het [verzamelen van gegevens is al ingesteld op basis van uw CEF-bronnen en u](connect-common-event-format.md)hebt de log Analytics agent zo geconfigureerd:
@@ -97,7 +96,6 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
 >
 > 1. U moet de volgende opdracht uitvoeren op die computers om de synchronisatie van de agent met de syslog-configuratie in azure Sentinel uit te scha kelen. Dit zorgt ervoor dat de configuratie wijziging die u in de vorige stap hebt aangebracht, niet wordt overschreven.<br>
 > `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable'`
-
 
 ### <a name="configure-the-syslog-connector-for-anomalous-ssh-login-detection"></a>De syslog-connector configureren voor de detectie van afwijkende SSH-aanmeldingen
 
@@ -113,10 +111,7 @@ Azure Sentinel kan machine learning (ML) Toep assen op de syslog-gegevens om de 
  
 Voor deze detectie is een specifieke configuratie van de syslog-gegevens connector vereist: 
 
-1. Zorg ervoor dat voor stap 5 in de vorige procedure zowel **auth** als **authpriv** zijn geselecteerd als te bewaken faciliteiten. Behoud de standaard instellingen voor de ernst opties, zodat deze allemaal zijn geselecteerd. Bijvoorbeeld:
-    
-    > [!div class="mx-imgBorder"]
-    > ![Voorzieningen die zijn vereist voor afwijkende SSH-aanmeldings detectie](./media/connect-syslog/facilities-ssh-detection.png)
+1. Voor stap 2 onder [Configure the log Analytics agent](#configure-the-log-analytics-agent) hierboven, moet u ervoor zorgen dat zowel **auth** als **authpriv** zijn geselecteerd als te bewaken faciliteiten en dat alle ernst zijn geselecteerd. 
 
 2. Zorg dat er voldoende tijd is om syslog-gegevens te verzamelen. Ga vervolgens naar **Azure Sentinel-logs** en kopieer en plak de volgende query:
     

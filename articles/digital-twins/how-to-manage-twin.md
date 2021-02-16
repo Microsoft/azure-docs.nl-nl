@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 4e8ba291f32456bf2b8432620d1f9ea313629c9d
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 46c41a4868c80bf9ba1c2c6d4a8286c3a8f47c3d
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600505"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530430"
 ---
 # <a name="manage-digital-twins"></a>Digitale tweelingen beheren
 
@@ -86,7 +86,7 @@ U kunt toegang krijgen tot de gegevens van een digitale dubbele manier door de m
 
 Deze aanroep retourneert dubbele gegevens als een sterk getypeerd object type, zoals `BasicDigitalTwin` . `BasicDigitalTwin` is een serialisatiefunctie voor serialisatie die deel uitmaakt van de SDK, waardoor de belangrijkste dubbele meta gegevens en eigenschappen in een vooraf geparseerd formulier worden geretourneerd. Hier volgt een voor beeld van hoe u dit kunt gebruiken om dubbele details te bekijken:
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="GetTwin":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="GetTwin" highlight="2":::
 
 Alleen eigenschappen die ten minste eenmaal zijn ingesteld, worden geretourneerd wanneer u een dubbele waarde ophaalt met de- `GetDigitalTwin()` methode.
 
@@ -208,9 +208,9 @@ De twee aanroepen die *Twin1* wijzigen, worden na elkaar uitgevoerd en er worden
 
 U kunt apparaatdubbels verwijderen met behulp van de- `DeleteDigitalTwin()` methode. U kunt echter alleen een dubbele waarde verwijderen als deze geen relaties meer heeft. Verwijder de dubbele en uitgaande relaties eerst.
 
-Hier volgt een voor beeld van de code voor het verwijderen van apparaatdubbels en hun relaties:
+Hier volgt een voor beeld van de code voor het verwijderen van apparaatdubbels en hun relaties. De `DeleteDigitalTwin` SDK-aanroep is gemarkeerd om te verduidelijken waar deze zich in de bredere voorbeeld context bevindt.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="DeleteTwin":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="DeleteTwin" highlight="7":::
 
 ### <a name="delete-all-digital-twins"></a>Alle digitale apparaatdubbels verwijderen
 
@@ -227,7 +227,7 @@ Het fragment maakt gebruik van de [Room.jsop](https://github.com/Azure-Samples/d
 Ga als volgt te werk voordat u het voor beeld uitvoert:
 1. Down load het model bestand, plaats het in uw project en vervang de `<path-to>` tijdelijke aanduiding in de onderstaande code om uw programma te laten weten waar het zich bevindt.
 2. Vervang de tijdelijke aanduiding door de `<your-instance-hostname>` hostnaam van uw Azure Digital apparaatdubbels-exemplaar.
-3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste is het pakket voor de [Azure Digital APPARAATDUBBELS SDK voor .net](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede bevat hulpprogram ma's om te helpen bij de verificatie van Azure.
+3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede biedt hulpmiddelen voor de verificatie met Azure.
 
       ```cmd/sh
       dotnet add package Azure.DigitalTwins.Core

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/08/2020
 ms.topic: quickstart
-ms.openlocfilehash: b469f0cae1e356c47bfe60af99c4fa2e73eab78d
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: b340a180927b3df9ad51295383b09b03dbbb2d98
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594024"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530583"
 ---
 # <a name="quickstart-deploy-native-c-sample-to-hololens"></a>Quickstart: Systeemeigen C++-voorbeeld implementeren in HoloLens
 
@@ -81,7 +81,7 @@ Omdat de accountreferenties worden vastgelegd in de broncode van de zelfstudie, 
 Wijzig met name de volgende waarden:
 * `init.AccountId`, `init.AccountKey` en `init.AccountDomain` om uw accountgegevens te gebruiken. Zie de informatie over het [ophalen van accountgegevens](../../../how-tos/create-an-account.md#retrieve-the-account-information).
 * Geef op waar de Remote Rendering-sessie moet worden gemaakt door het regiogedeelte van de tekenreeks `init.RemoteRenderingDomain` te wijzigen in andere regio's dan `westus2`, bijvoorbeeld `"westeurope.mixedreality.azure.com"`.
-* Daarnaast kan `m_sessionOverride` worden gewijzigd in een bestaande sessie-id. Sessies kunnen buiten dit voorbeeld worden gemaakt, bijvoorbeeld door [het PowerShell-script ](../../../samples/powershell-example-scripts.md#script-renderingsessionps1) te gebruiken of door rechtstreeks de [sessie-REST API](../../../how-tos/session-rest-api.md#create-a-session) te gebruiken.
+* Daarnaast kan `m_sessionOverride` worden gewijzigd in een bestaande sessie-id. Sessies kunnen buiten dit voorbeeld worden gemaakt, bijvoorbeeld door [het PowerShell-script ](../../../samples/powershell-example-scripts.md#script-renderingsessionps1) te gebruiken of door rechtstreeks de [sessie-REST API](../../../how-tos/session-rest-api.md) te gebruiken.
 Het maken van een sessie buiten het voorbeeld wordt aanbevolen wanneer het voorbeeld meerdere keren moet worden uitgevoerd. Als er geen sessie wordt doorgegeven, maakt het voorbeeld een nieuwe sessie bij elke keer opstarten. Dit kan enkele minuten duren.
 
 U kunt nu de toepassing compileren.

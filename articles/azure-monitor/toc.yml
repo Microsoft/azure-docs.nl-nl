@@ -584,6 +584,8 @@
                   href: platform/itsmc-dashboard-errors.md
                 - name: ITSM-connector synchroniseren
                   href: platform/itsmc-resync-servicenow.md
+                - name: Connector verwijderen
+                  href: platform/itsmc-connector-deletion.md
             - name: Integreren met beveiligde export
               items:
                 - name: Overzicht

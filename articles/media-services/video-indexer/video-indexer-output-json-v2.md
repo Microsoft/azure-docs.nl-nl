@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 11/16/2020
 ms.author: juliako
-ms.openlocfilehash: bf48f873127a12c3cabb28da33d34cedcda2793b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 2ac7c3c2149ce43c860c7726381733ef377de8d3
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831563"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530736"
 ---
 # <a name="examine-the-video-indexer-output"></a>De Video Indexer uitvoer controleren
 
@@ -104,7 +104,7 @@ In deze sectie vindt u een overzicht van de inzichten.
 |gezichten/animatedCharacters|Kan nul of meer gezichten bevatten. Zie [gezichten/animatedCharacters](#facesanimatedcharacters)voor meer gedetailleerde informatie.|
 |trefwoorden|Kan nul of meer tref woorden bevatten. Zie [tref woorden](#keywords)voor meer gedetailleerde informatie.|
 |gevoel|Kan nul of meer gevoel bevatten. Zie [gevoel](#sentiments)voor meer gedetailleerde informatie.|
-|audioEffects| Kan nul of meer audioEffects bevatten. Zie [audioEffects](#audioeffects)voor meer gedetailleerde informatie.|
+|audioEffects| Kan nul of meer audioEffects bevatten. Zie [audioEffects](#audioeffects-public-preview)voor meer gedetailleerde informatie.|
 |Labels| Mag niet meer dan nul labels bevatten. Zie [labels](#labels)voor meer informatie.|
 |merken| Kan nul of meer merken bevatten. Zie [Brands](#brands)voor meer gedetailleerde informatie.|
 |statistieken | Zie [Statistieken](#statistics)voor meer informatie.|
@@ -181,7 +181,7 @@ Een gezicht kan een ID, een naam, een miniatuur, andere meta gegevens en een lij
 |Labels|De [labels](#labels) begrijpen.|
 |afzonderlijke|De [Foto's](#shots) begrijpen.|
 |merken|De [Brands](#brands) begrijpen.|
-|audioEffects|[AudioEffects](#audioeffects) Insight.|
+|audioEffects|[AudioEffects](#audioeffects-public-preview) Insight.|
 |gevoel|[Gevoel](#sentiments) Insight.|
 |visualContentModeration|[VisualContentModeration](#visualcontentmoderation) Insight.|
 |textualContentModeration|[TextualContentModeration](#textualcontentmoderation) Insight.|
@@ -590,26 +590,28 @@ Merk namen van bedrijven en producten die worden herkend in de spraak naar tekst
 |SpeakerLongestMonolog|De langste monolog van de spreker. Als de spreker stiltes bevat in de monolog, is deze opgenomen. Stilte aan het begin en het einde van de monolog wordt verwijderd.| 
 |SpeakerTalkToListenRatio|De berekening is gebaseerd op de tijd die is besteed aan de monolog van de spreker (zonder de stilte in tussen) gedeeld door de totale tijd van de video. De tijd wordt afgerond op het derde decimale punt.|
 
-#### <a name="audioeffects"></a>audioEffects
+#### <a name="audioeffects-public-preview"></a>audioEffects (open bare preview)
 
-|Naam|Beschrijving|
+|Naam|Beschrijving
 |---|---|
-|id|De audio-effect-ID.|
-|type|Het type audio-effect (bijvoorbeeld Clapping, Speech, stilte).|
-|vaak|Een lijst met peri Oden waarin dit audio-effect is opgetreden.|
+|id|De audio-effect-ID|
+|type|Het type audio-effect|
+|vaak|Een lijst met peri Oden waarin dit audio-effect is opgetreden. Elk exemplaar heeft een veld betrouw baarheid.|
 
 ```json
 "audioEffects": [
 {
     "id": 0,
-    "type": "Clapping",
+    "type": "Siren",
     "instances": [
     {
+       "confidence": 0.87,
         "start": "00:00:00",
         "end": "00:00:03"
     },
     {
-        "start": "00:01:13",
+       "confidence": 0.87,
+       "start": "00:01:13",
         "end": "00:01:21"
     }
     ]

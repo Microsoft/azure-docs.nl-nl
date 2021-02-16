@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: 0583846fcd847e92a6f001dae828d31d9d11cb00
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: b10c47a31bf1be10c278d4d9e0dce633bc7bff6c
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567889"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530634"
 ---
 # <a name="connect-your-juniper-srx-firewall-to-azure-sentinel"></a>Uw Juniper SRX-firewall verbinden met Azure Sentinel
 
@@ -53,7 +53,7 @@ Configureer Juniper SRX om syslog-berichten door te sturen naar uw Azure Sentine
 
     1. De logboeken configureren die moeten worden verzameld
 
-        - Selecteer de faciliteiten en ernst in de configuratie van de geavanceerde instellingen voor de werk ruimte
+        - Selecteer de faciliteiten en ernst in de configuratie van de werkruimte agent.
 
     1. De Juniper-SRX configureren en verbinden
 

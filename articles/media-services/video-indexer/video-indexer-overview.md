@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 09/11/2020
+ms.date: 02/05/2021
 ms.author: juliako
-ms.openlocfilehash: 06f5e19718445f44dd2302faf280f083cce0774f
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 12d23ec471329bd4e0ecb502750198e946e58872
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98783798"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530226"
 ---
 # <a name="what-is-azure-media-services-video-indexer"></a>Wat is Azure Media Services Video Indexer?
 
@@ -84,7 +84,7 @@ In de volgende lijst ziet u de inzichten die u uit uw Video's kunt ophalen met V
 * **Opsomming van de luid sprekers**: kaarten en begrijpen welke sprekers Spaak zijn die woorden en wanneer. Zestien luid sprekers kunnen worden gedetecteerd in één audio bestand.
 * **Sprekers statistieken**: biedt statistieken voor de spraak verhoudingen van de luid sprekers.
 * **Tekstueel inhoudsbeheer**: detecteert expliciete tekst in het audiotranscript.
-* **Audio-effecten**: identificeert audio-effecten zoals hand claps, spraak en stilte.
+* **Audio-effecten** (open bare preview): detecteert de volgende audio-effecten in de niet-spraak segmenten van de inhoud: Gunshot, glas Brokers, alarm, Siren, explosie, honden schors, alinea, laughter, massa reacties (cheering, Clapping en booing) en stilte. Opmerking: de volledige set gebeurtenissen is alleen beschikbaar wanneer u ' geavanceerde audio-analyse ' kiest in de upload voorinstelling, anders wordt alleen ' stilte ' en ' massa reactie ' beschikbaar.
 * **Detectie van Emotion**: identificeert emoties op basis van de spraak (wat wordt gezegd) en de gesp roken Toon (hoe dit wordt genoemd). De EMOTION kan Joy, verdriet, boosheid of vrezen zijn.
 * **Vertaling**: maakt vertalingen van het audiotranscript in 54 verschillende talen.
 

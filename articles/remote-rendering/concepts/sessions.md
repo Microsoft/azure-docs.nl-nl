@@ -6,12 +6,12 @@ ms.author: jakras
 ms.date: 02/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 321d73c78d0192dcb7a303f4aa70a4ff0f18ecea
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 79f3f93338d15562dcc37857d63bc8b2d7e96b05
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593702"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530549"
 ---
 # <a name="remote-rendering-sessions"></a>Remote Rendering-sessies
 
@@ -39,9 +39,9 @@ Elke sessie ondergaat meerdere fasen.
 
 ### <a name="session-startup"></a>Sessie starten
 
-Wanneer u ARR vraagt om [een nieuwe sessie te maken](../how-tos/session-rest-api.md#create-a-session), is het voor de eerste keer dat u een sessie- [uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier)retourneert. Met deze UUID kunt u informatie opvragen over de sessie. De UUID en enkele basis informatie over de sessie worden gedurende 30 dagen bewaard, zodat u deze gegevens zelfs nadat de sessie is gestopt, kunt opvragen. Op dit moment wordt de **sessie status** gerapporteerd als **starten**.
+Wanneer u ARR vraagt om [een nieuwe sessie te maken](../how-tos/session-rest-api.md), is het voor de eerste keer dat u een sessie- [uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier)retourneert. Met deze UUID kunt u informatie opvragen over de sessie. De UUID en enkele basis informatie over de sessie worden gedurende 30 dagen bewaard, zodat u deze gegevens zelfs nadat de sessie is gestopt, kunt opvragen. Op dit moment wordt de **sessie status** gerapporteerd als **starten**.
 
-Vervolgens probeert de externe rendering van Azure een server te vinden die uw sessie kan hosten. Er zijn twee para meters voor deze zoek opdracht. Eerst worden alleen servers in uw [regio](../reference/regions.md)gereserveerd. Dat komt doordat de netwerk latentie voor verschillende regio's te hoog is om een goede ervaring te garanderen. De tweede factor is de gewenste *grootte* die u hebt opgegeven. In elke regio is er een beperkt aantal servers dat kan voldoen aan de aanvraag voor de [*standaard*](../reference/vm-sizes.md) -of [*Premium*](../reference/vm-sizes.md) -grootte. Als alle servers van de gevraagde grootte momenteel worden gebruikt in uw regio, mislukt het maken van de sessie. De reden voor de fout [kan worden opgevraagd](../how-tos/session-rest-api.md#get-sessions-properties).
+Vervolgens probeert de externe rendering van Azure een server te vinden die uw sessie kan hosten. Er zijn twee para meters voor deze zoek opdracht. Eerst worden alleen servers in uw [regio](../reference/regions.md)gereserveerd. Dat komt doordat de netwerk latentie voor verschillende regio's te hoog is om een goede ervaring te garanderen. De tweede factor is de gewenste *grootte* die u hebt opgegeven. In elke regio is er een beperkt aantal servers dat kan voldoen aan de aanvraag voor de [*standaard*](../reference/vm-sizes.md) -of [*Premium*](../reference/vm-sizes.md) -grootte. Als alle servers van de gevraagde grootte momenteel worden gebruikt in uw regio, mislukt het maken van de sessie. De reden voor de fout [kan worden opgevraagd](../how-tos/session-rest-api.md).
 
 > [!IMPORTANT]
 > Als u een *standaard* server grootte aanvraagt en de aanvraag mislukt als gevolg van een hoge vraag, is dat niet het geval dat het aanvragen van een *Premium* -server mislukt. Als dit een optie voor u is, kunt u proberen terug te gaan naar een *Premium* -server grootte.
@@ -77,7 +77,7 @@ In alle gevallen wordt u niet meer gefactureerd wanneer een sessie wordt gestopt
 
 #### <a name="extend-a-sessions-lease-time"></a>De lease tijd van een sessie verlengen
 
-U kunt [de lease tijd](../how-tos/session-rest-api.md#modify-and-query-session-properties) van een actieve sessie verlengen als deze uitvalt.
+U kunt [de lease tijd](../how-tos/session-rest-api.md) van een actieve sessie verlengen als deze uitvalt.
 
 ## <a name="example-code"></a>Voorbeeldcode
 

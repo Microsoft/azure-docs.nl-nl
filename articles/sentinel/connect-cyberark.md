@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/25/2020
 ms.author: yelevin
-ms.openlocfilehash: c375595951eb760d5341db424c5572719b97046a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: aa57963ce369e4c8f84f4aae5f99fe343181ff6b
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93102984"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530498"
 ---
 # <a name="connect-cyberark-enterprise-password-vault-epv-to-azure-sentinel"></a>CyberArk Enter prise-wachtwoord kluis (EPV) verbinden met Azure Sentinel
 
@@ -36,15 +36,15 @@ Met de CyberArk syslog-connector kunt u eenvoudig al uw CyberArk Security-oploss
 
 CyberArk EPV-logboeken worden verzonden vanuit de kluis naar een op Linux gebaseerde logboek server (met rsyslog of syslog-ng) waarop de Log Analytics-agent is geïnstalleerd, die de logboeken naar Azure Sentinel exporteert. Als u een dergelijke server voor het door sturen van logboeken niet hebt, raadpleegt u [deze instructies](connect-cef-agent.md) om er een te maken en uit te voeren.
 
-1. Klik in de Azure Sentinel-Portal op **Data connectors** , selecteer **CyberArk Enter prise Password kluis (EPV) Events (preview)** en open vervolgens de **pagina connector** .
+1. Klik in de Azure Sentinel-Portal op **Data connectors**, selecteer **CyberArk Enter prise Password kluis (EPV) Events (preview)** en open vervolgens de **pagina connector**.
 
-1. Volg de instructies in de CyberArk EPV voor het configureren van het verzenden van syslog-gegevens naar de server voor logboek forwarding.
+1. Volg de [instructies in de CYBERARK EPV](https://docs.cyberark.com/Product-Doc/OnlineHelp/PAS/Latest/en/Content/PASIMP/DV-Integrating-with-SIEM-Applications.htm) voor het configureren van het verzenden van syslog-gegevens naar de server voor logboek forwarding.
 
 1. Valideer uw verbinding en controleer de gegevens opname met behulp van [deze instructies](connect-cef-verify.md). Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven.
 
 ## <a name="find-your-data"></a>Uw gegevens zoeken
 
-Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **Logboeken** , onder de sectie voor het **Sentinel van Azure** in de tabel *CommonSecurityLog* .
+Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **Logboeken**, onder de sectie voor het **Sentinel van Azure** in de tabel *CommonSecurityLog* .
 
 Als u een query wilt uitvoeren voor de CyberArk EPV-Logboeken in Log Analytics, typt u `CommonSecurityLog` boven in het query venster.
 

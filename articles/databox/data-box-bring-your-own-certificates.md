@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 12/11/2020
 ms.author: alkohli
-ms.openlocfilehash: deb52c8716f97874beae4accbf6f34f72e20ca04
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 1836ed57305fd7e168961eb81670b56d4ce296cd
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516472"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545170"
 ---
 # <a name="use-your-own-certificates-with-data-box-and-data-box-heavy-devices"></a>Uw eigen certificaten gebruiken met Data Box en Data Box Heavy apparaten
 
@@ -50,7 +50,7 @@ De certificaten moeten voldoen aan de volgende vereisten:
   |Blob Storage|`*.blob.<DeviceName>.<DNSdomain>`|`*.blob.< DeviceName>.<DNSdomain>`|`*.blob.mydevice1.microsoftdatabox.com` |
   |Multi-SAN enkel certificaat|`<DeviceName>.<DNSdomain>`|`<DeviceName>.<DNSdomain>`<br>`*.blob.<DeviceName>.<DNSdomain>`|`mydevice1.microsoftdatabox.com` |
 
-Zie [certificaat vereisten](../../articles/databox-online/azure-stack-edge-j-series-certificate-requirements.md)voor meer informatie.
+Zie [certificaat vereisten](../../articles/databox-online/azure-stack-edge-gpu-certificate-requirements.md)voor meer informatie.
 
 ## <a name="add-certificates-to-device"></a>Certificaten toevoegen aan apparaat
 

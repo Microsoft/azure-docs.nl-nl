@@ -2,19 +2,19 @@
 title: Verifiëren bij Azure Communication Services
 titleSuffix: An Azure Communication Services concept document
 description: Meer informatie over de verschillende manieren waarop een app of service kan worden geverifieerd bij communicatie Services.
-author: matthewrobertson
+author: GrantMeStrength
 manager: jken
 services: azure-communication-services
-ms.author: marobert
+ms.author: jken
 ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 4d6e02852dcd2d30a764417a4b5e0e012a1d2ab5
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e20c822c2e792c67ed655080385a3c90794d53fd
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571093"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545136"
 ---
 # <a name="authenticate-to-azure-communication-services"></a>Verifiëren bij Azure Communication Services
 
@@ -72,11 +72,11 @@ Als u geen client bibliotheek gebruikt om HTTP-aanvragen te maken voor de REST A
 
 Met tokens voor gebruikers toegang kunnen uw client toepassingen rechtstreeks worden geverifieerd op Azure Communication Services. Hiervoor moet u een vertrouwde service instellen waarmee uw toepassings gebruikers worden geverifieerd en de tokens voor gebruikers toegang worden verleend aan de beheer-client bibliotheek. Ga naar de conceptuele documentatie over de [client-en server architectuur](./client-and-server-architecture.md) voor meer informatie over onze architectuur overwegingen.
 
-De `CommunicationUserCredential` klasse bevat de logica voor het verstrekken van token referenties voor gebruikers toegang aan de client bibliotheken en het beheren van hun levens duur.
+De `CommunicationTokenCredential` klasse bevat de logica voor het verstrekken van token referenties voor gebruikers toegang aan de client bibliotheken en het beheren van hun levens duur.
 
 ### <a name="initialize-the-client-libraries"></a>De client bibliotheken initialiseren
 
-Voor het initialiseren van Azure Communication Services-client bibliotheken waarvoor token authenticatie van gebruikers toegang is vereist, maakt u eerst een instantie van de `CommunicationUserCredential` klasse en gebruikt u deze om een API-client te initialiseren.
+Voor het initialiseren van Azure Communication Services-client bibliotheken waarvoor token authenticatie van gebruikers toegang is vereist, maakt u eerst een instantie van de `CommunicationTokenCredential` klasse en gebruikt u deze om een API-client te initialiseren.
 
 De volgende code fragmenten laten zien hoe u de chat-client bibliotheek met een token voor gebruikers toegang initialiseert:
 
@@ -86,8 +86,8 @@ De volgende code fragmenten laten zien hoe u de chat-client bibliotheek met een 
 // user access tokens should be created by a trusted service using the Administration client library
 var token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance
-var userCredential = new CommunicationUserCredential(token);
+// create a CommunicationTokenCredential instance
+var userCredential = new CommunicationTokenCredential(token);
 
 // initialize the chat client library with the credential
 var chatClient = new ChatClient(ENDPOINT_URL, userCredential);
@@ -99,8 +99,8 @@ var chatClient = new ChatClient(ENDPOINT_URL, userCredential);
 // user access tokens should be created by a trusted service using the Administration client library
 const token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance with the AzureCommunicationUserCredential class
-const userCredential = new AzureCommunicationUserCredential(token);
+// create a CommunicationTokenCredential instance with the AzureCommunicationTokenCredential class
+const userCredential = new AzureCommunicationTokenCredential(token);
 
 // initialize the chat client library with the credential
 let chatClient = new ChatClient(ENDPOINT_URL, userCredential);
@@ -112,8 +112,8 @@ let chatClient = new ChatClient(ENDPOINT_URL, userCredential);
 // user access tokens should be created by a trusted service using the Administration client library
 let token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance
-let userCredential = try CommunicationUserCredential(token: token)
+// create a CommunicationTokenCredential instance
+let userCredential = try CommunicationTokenCredential(token: token)
 
 // initialize the chat client library with the credential
 let chatClient = try CommunicationChatClient(credential: userCredential, endpoint: ENDPOINT_URL)
@@ -125,8 +125,8 @@ let chatClient = try CommunicationChatClient(credential: userCredential, endpoin
 // user access tokens should be created by a trusted service using the Administration client library
 String token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance
-CommunicationUserCredential userCredential = new CommunicationUserCredential(token);
+// create a CommunicationTokenCredential instance
+CommunicationTokenCredential userCredential = new CommunicationTokenCredential(token);
 
 // Initialize the chat client
 final ChatClientBuilder builder = new ChatClientBuilder();
@@ -140,12 +140,12 @@ ChatClient chatClient = builder.buildClient();
 
 ### <a name="refreshing-user-access-tokens"></a>Tokens voor gebruikers toegang vernieuwen
 
-Tokens voor gebruikers toegang zijn korte wacht referenties die opnieuw moeten worden uitgegeven om te voor komen dat uw gebruikers service storingen ondervinden. De `CommunicationUserCredential` constructor accepteert een reverse-call back functie waarmee u de tokens van gebruikers toegang kunt bijwerken voordat ze verlopen. U moet deze terugbellen gebruiken om een nieuw gebruikers toegangs token op te halen uit uw vertrouwde service.
+Tokens voor gebruikers toegang zijn korte wacht referenties die opnieuw moeten worden uitgegeven om te voor komen dat uw gebruikers service storingen ondervinden. De `CommunicationTokenCredential` constructor accepteert een reverse-call back functie waarmee u de tokens van gebruikers toegang kunt bijwerken voordat ze verlopen. U moet deze terugbellen gebruiken om een nieuw gebruikers toegangs token op te halen uit uw vertrouwde service.
 
 #### <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
-var userCredential = new CommunicationUserCredential(
+var userCredential = new CommunicationTokenCredential(
     initialToken: token,
     refreshProactively: true,
     tokenRefresher: cancellationToken => fetchNewTokenForCurrentUser(cancellationToken)
@@ -155,7 +155,7 @@ var userCredential = new CommunicationUserCredential(
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
-const userCredential = new AzureCommunicationUserCredential({
+const userCredential = new AzureCommunicationTokenCredential({
   tokenRefresher: async () => fetchNewTokenForCurrentUser(),
   refreshProactively: true,
   initialToken: token
@@ -165,7 +165,7 @@ const userCredential = new AzureCommunicationUserCredential({
 #### <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
- let userCredential = try CommunicationUserCredential(initialToken: token, refreshProactively: true) { |completionHandler|
+ let userCredential = try CommunicationTokenCredential(initialToken: token, refreshProactively: true) { |completionHandler|
    let updatedToken = fetchTokenForCurrentUser()
    completionHandler(updatedToken, nil)
  }
@@ -181,7 +181,7 @@ TokenRefresher tokenRefresher = new TokenRefresher() {
     }
 }
 
-CommunicationUserCredential credential = new CommunicationUserCredential(tokenRefresher, token, true);
+CommunicationTokenCredential credential = new CommunicationTokenCredential(tokenRefresher, token, true);
 ```
 ---
 

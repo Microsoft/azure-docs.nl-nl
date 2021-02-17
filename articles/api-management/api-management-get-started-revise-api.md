@@ -8,14 +8,14 @@ author: vladvino
 ms.service: api-management
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 10/30/2020
+ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 3804bfb2a269c431b1a00947f5c7613566a78f49
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
-ms.translationtype: HT
+ms.openlocfilehash: acb121bb00df481c926ebed9594bf0fe1b9b17ed
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377484"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546632"
 ---
 # <a name="tutorial-use-revisions-to-make-non-breaking-api-changes-safely"></a>Zelfstudie: Revisies gebruiken om vaste API-wijzigingen veilig aan te brengen
 Wanneer uw API klaar is voor gebruik en daadwerkelijk wordt ingezet door ontwikkelaars, moet u op een bepaald moment wijzigingen aanbrengen aan die API, zonder dat dit gevolgen heeft voor clients die de API aanroepen. Het is ook handig om ontwikkelaars te informeren over de aangebrachte wijzigingen. 
@@ -78,6 +78,8 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="make-your-revision-current-and-add-a-change-log-entry"></a>Uw revisie actualiseren en een logboekvermelding over de wijziging toevoegen
 
+### <a name="portal"></a>[Portal](#tab/azure-portal)
+
 1. Klik op het tabblad **Revisies** in het menu aan de bovenkant van de pagina.
 1. Open het contextmenu ( **...** ) voor **Revisie 2**.
 1. Selecteer **Instellen als huidige**.
@@ -86,6 +88,61 @@ In deze zelfstudie leert u het volgende:
 
     :::image type="content" source="media/api-management-getstarted-revise-api/revisions-menu.png" alt-text="Het menu Revisie in het venster Revisies":::
 
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u Azure CLI wilt gaan gebruiken:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Gebruik deze procedure om een release te maken en bij te werken.
+
+1. Voer de opdracht [AZ APIM API List](/cli/azure/apim/api#az_apim_api_list) uit om uw API-id's te bekijken:
+
+   ```azurecli
+   az apim api list --resource-group apim-hello-word-resource-group \
+       --service-name apim-hello-world --output table
+   ```
+
+   De API-ID voor gebruik in de volgende opdracht is de `Name` waarde. De API-revisie bevindt zich in de `ApiRevision` kolom.
+
+1. Als u de release wilt maken, met een release opmerking, voert u de opdracht [AZ APIM API release Create](/cli/azure/apim/api/release#az_apim_api_release_create) uit:
+
+   ```azurecli
+   az apim api release create --resource-group apim-hello-word-resource-group \
+       --api-id demo-conference-api --api-revision 2 --service-name apim-hello-world \
+       --notes 'Testing revisions. Added new "test" operation.'
+   ```
+
+   De revisie die u uitgeeft, wordt de huidige revisie.
+
+1. Als u uw releases wilt bekijken, gebruikt u de opdracht [AZ APIM API release List](/cli/azure/apim/api/release#az_apim_api_release_list) :
+
+   ```azurecli
+   az apim api release list --resource-group apim-hello-word-resource-group \
+       --api-id echo-api --service-name apim-hello-world --output table
+   ```
+
+   De notities die u opgeeft, worden weer gegeven in de wijzigingen logboek. U kunt deze weer geven in de uitvoer van de vorige opdracht.
+
+1. Wanneer u een release maakt, `--notes` is de para meter optioneel. U kunt de notities later toevoegen of wijzigen met behulp van de opdracht [AZ APIM API Release Update](/cli/azure/apim/api/release#az_apim_api_release_update) :
+
+   ```azurecli
+   az apim api release update --resource-group apim-hello-word-resource-group \
+       --api-id demo-conference-api --release-id 00000000000000000000000000000000 \
+       --service-name apim-hello-world --notes "Revised notes."
+   ```
+
+   Gebruik de waarde in de `Name` kolom voor de release-id.
+
+U kunt elke wille keurige versie verwijderen door de opdracht [AZ APIM API release delete ](/cli/azure/apim/api/release#az_apim_api_release_delete) uit te voeren:
+
+```azurecli
+az apim api release delete --resource-group apim-hello-word-resource-group \
+    --api-id demo-conference-api --release-id 00000000000000000000000000000000 
+    --service-name apim-hello-world
+```
+
+---
 
 ## <a name="browse-the-developer-portal-to-see-changes-and-change-log"></a>Door de portal voor ontwikkelaars browsen om de wijzigingen en het logboek in te zien
 

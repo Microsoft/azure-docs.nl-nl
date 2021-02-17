@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 12/16/2020
 ms.author: rolyon
-ms.openlocfilehash: 1444ee3643222ceebc67298bdb580955b1432104
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: d58398c42cdc6faed758e5dba3431e0841fc0b03
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526412"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555554"
 ---
 # <a name="best-practices-for-azure-rbac"></a>Aanbevolen procedures voor Azure RBAC
 
@@ -30,7 +30,7 @@ Het volgende diagram toont een voorgesteld patroon voor het gebruik van Azure RB
 
 ![Azure RBAC en minimale bevoegdheid](./media/best-practices/rbac-least-privilege.png)
 
-Voor informatie over het toevoegen van roltoewijzingen, raadpleegt u [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](role-assignments-portal.md).
+Zie [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)voor meer informatie over het toewijzen van rollen.
 
 ## <a name="limit-the-number-of-subscription-owners"></a>Het aantal abonnements eigenaren beperken
 

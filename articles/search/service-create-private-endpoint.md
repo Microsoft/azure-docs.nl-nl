@@ -3,17 +3,17 @@ title: Een persoonlijk eind punt maken voor een beveiligde verbinding
 titleSuffix: Azure Cognitive Search
 description: Stel een persoonlijk eind punt in een virtueel netwerk in voor een beveiligde verbinding met een Azure Cognitive Search-service.
 manager: nitinme
-author: mrcarter8
-ms.author: mcarter
+author: markheff
+ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/19/2020
-ms.openlocfilehash: 6ee72a25fc8435159ae75ac3296742eda58617b6
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.date: 02/16/2021
+ms.openlocfilehash: 7445ac5d750ac29d3e6ce466a48e82efd1bcde40
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779937"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545527"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Een persoonlijk eind punt maken voor een beveiligde verbinding met Azure Cognitive Search
 
@@ -21,8 +21,10 @@ In dit artikel gebruikt u de Azure Portal voor het maken van een nieuw exemplaar
 
 Privé-eind punten worden als een afzonderlijke service verzorgd door een [persoonlijke Azure-koppeling](../private-link/private-link-overview.md). Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/private-link/)voor meer informatie over de kosten.
 
-> [!Important]
-> Ondersteuning voor privé-eind punten voor Azure Cognitive Search kan worden geconfigureerd met behulp van de Azure Portal of het [beheer rest API versie 2020-03-13](/rest/api/searchmanagement/). Wanneer het service-eind punt privé is, zijn sommige Portal functies uitgeschakeld. U kunt informatie over het service niveau weer geven en beheren, maar de toegang tot de portal voor het indexeren van gegevens en de verschillende onderdelen in de service, zoals de definities index, Indexer en vaardigheids, is beperkt om veiligheids redenen. Als alternatief voor de portal kunt u de [VS code-extensie](https://aka.ms/vscode-search) gebruiken om te communiceren met de verschillende onderdelen in de service.
+U kunt een persoonlijk eind punt maken in de Azure Portal, zoals beschreven in dit artikel. U kunt ook de [beheer rest API versie 2020-03-13](/rest/api/searchmanagement/), [Azure POWERSHELL](/powershell/module/az.search)of [Azure cli](/cli/azure/search)gebruiken.
+
+> [!NOTE]
+> Wanneer het service-eind punt privé is, zijn sommige Portal functies uitgeschakeld. U kunt informatie over service niveaus weer geven en beheren, maar index, Indexeer functie en vaardigheidset-informatie is om veiligheids redenen verborgen. Als alternatief voor de portal kunt u de [VS code-extensie](https://aka.ms/vscode-search) gebruiken om te communiceren met de verschillende onderdelen in de service.
 
 ## <a name="why-use-a-private-endpoint-for-secure-access"></a>Waarom een persoonlijk eind punt gebruiken voor beveiligde toegang?
 
@@ -46,8 +48,8 @@ In deze sectie maakt u een virtueel netwerk en een subnet voor het hosten van de
     | ------- | ----- |
     | Abonnement | Selecteer uw abonnement|
     | Resourcegroep | Selecteer **nieuwe maken**, Voer *myResourceGroup* in en selecteer **OK** . |
-    | Naam | *MyVirtualNetwork* invoeren |
-    | Regio | Selecteer de gewenste regio |
+    | Name | *MyVirtualNetwork* invoeren |
+    | Region | Selecteer de gewenste regio |
     |||
 
 1. Laat de standaard waarden voor de overige instellingen ongewijzigd. Klik op **beoordeling + maken** en vervolgens op **maken**
@@ -110,7 +112,7 @@ In deze sectie maakt u een nieuwe Azure Cognitive Search-service met een persoon
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >  **Compute**  >  **virtuele machine** voor het berekenen van een resource maken.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >    >  **virtuele machine** voor het berekenen van een resource maken.
 
 1. Typ of selecteer in **Een virtuele machine maken - Basisprincipes** de volgende gegevens:
 

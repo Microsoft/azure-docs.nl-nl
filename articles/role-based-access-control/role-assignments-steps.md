@@ -1,5 +1,5 @@
 ---
-title: Stappen voor het toevoegen van een roltoewijzing-Azure RBAC
+title: Stappen voor het toewijzen van een Azure-rol-Azure RBAC
 description: Meer informatie over de stappen voor het toewijzen van Azure-rollen aan gebruikers, groepen, service-principals of beheerde identiteiten met behulp van Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 services: active-directory
 author: rolyon
@@ -7,18 +7,18 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/30/2020
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: e746c7d09bb568d457ab1037b56c7c2973b29ad7
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 081335779ffc4b3a6ddf09e56b773c6d34b210be
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117245"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556042"
 ---
-# <a name="steps-to-add-a-role-assignment"></a>Stappen om een roltoewijzing toe te voegen
+# <a name="steps-to-assign-an-azure-role"></a>Stappen voor het toewijzen van een Azure-rol
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel worden de stappen op hoog niveau beschreven voor het toevoegen van een roltoewijzing met behulp van de [Azure Portal](role-assignments-portal.md), [Azure POWERSHELL](role-assignments-powershell.md), [Azure cli](role-assignments-cli.md)of de [rest API](role-assignments-rest.md).
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] In dit artikel wordt beschreven hoe u Azure-functies toewijst met behulp van de [Azure Portal](role-assignments-portal.md), [Azure POWERSHELL](role-assignments-powershell.md), [Azure cli](role-assignments-cli.md)of de [rest API](role-assignments-rest.md).
 
 ## <a name="step-1-determine-who-needs-access"></a>Stap 1: bepalen wie toegang moet hebben
 
@@ -79,16 +79,16 @@ Als u rollen wilt toewijzen, moet u zijn aangemeld met een gebruiker aan wie een
 
 Als uw gebruikers account geen machtiging heeft voor het toewijzen van een rol binnen uw abonnement, ziet u een fout bericht dat uw account niet is gemachtigd om de actie micro soft. Authorization/roleAssignments/write uit te voeren. Neem in dit geval contact op met de beheerders van uw abonnement, aangezien deze namens u de machtigingen kunnen toewijzen.
 
-## <a name="step-5-add-role-assignment"></a>Stap 5. Roltoewijzing toevoegen
+## <a name="step-5-assign-role"></a>Stap 5. Rol toewijzen
 
-Zodra u de beveiligingsprincipal, de rol en het bereik kent, kunt u de rol toewijzen. U kunt roltoewijzingen toevoegen met behulp van de Azure Portal, Azure PowerShell, Azure CLI, Azure Sdk's of REST Api's. U kunt maximaal **2000** roltoewijzingen in elk abonnement hebben. Deze limiet omvat roltoewijzingen voor het abonnement, de resourcegroep en het resourcebereik. U kunt maximaal **500** roltoewijzingen in elke beheergroep hebben.
+Zodra u de beveiligingsprincipal, de rol en het bereik kent, kunt u de rol toewijzen. U kunt rollen toewijzen met behulp van de Azure Portal, Azure PowerShell, Azure CLI, Azure Sdk's of REST Api's. U kunt maximaal **2000** roltoewijzingen in elk abonnement hebben. Deze limiet omvat roltoewijzingen voor het abonnement, de resourcegroep en het resourcebereik. U kunt maximaal **500** roltoewijzingen in elke beheergroep hebben.
 
-Bekijk de volgende artikelen voor gedetailleerde stappen voor het toevoegen van roltoewijzingen.
+Bekijk de volgende artikelen voor gedetailleerde stappen voor het toewijzen van rollen.
 
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](role-assignments-portal.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure PowerShell](role-assignments-powershell.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure CLI](role-assignments-cli.md)
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de REST API](role-assignments-rest.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)
+- [Azure-rollen toewijzen met behulp van Azure PowerShell](role-assignments-powershell.md)
+- [Azure-rollen toewijzen met behulp van Azure CLI](role-assignments-cli.md)
+- [Azure-rollen toewijzen met behulp van de REST API](role-assignments-rest.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

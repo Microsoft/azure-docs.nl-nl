@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 10/08/2020
+ms.date: 02/16/2021
 ms.author: victorh
-ms.openlocfilehash: 69eaf3ca60378afd810d712d85ea7ef732e41e3e
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 9f89d84fc7033645b2b094e9f40a1d85b076623b
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788227"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544830"
 ---
 # <a name="azure-firewall-features"></a>Azure Firewall-functies
 
@@ -22,24 +22,25 @@ ms.locfileid: "98788227"
 
 Azure Firewall bevat de volgende functies:
 
-- [Ingebouwde hoge Beschik baarheid](#built-in-high-availability)
-- [Beschikbaarheidszones](#availability-zones)
-- [Onbeperkte schaal baarheid van Cloud](#unrestricted-cloud-scalability)
-- [Regels voor het filteren van de FQDN van toepassingen](#application-fqdn-filtering-rules)
-- [Regels voor het filteren van netwerkverkeer](#network-traffic-filtering-rules)
-- [FQDN-tags](#fqdn-tags)
-- [Servicetags](#service-tags)
-- [Bedreigings informatie](#threat-intelligence)
-- [Ondersteuning voor uitgaande SNAT](#outbound-snat-support)
-- [Ondersteuning voor inkomende DNAT](#inbound-dnat-support)
-- [Meerdere openbare IP-adressen](#multiple-public-ip-addresses)
-- [Azure Monitor logboek registratie](#azure-monitor-logging)
-- [Geforceerde tunneling](#forced-tunneling)
-- [Certificeringen](#certifications)
+- Ingebouwde hoge beschikbaarheid
+- Beschikbaarheidszones
+- Onbeperkte cloudschaalbaarheid
+- Regels voor het filteren van de FQDN van toepassingen
+- Regels voor het filteren van netwerkverkeer
+- FQDN-tags
+- Servicetags
+- Informatie over bedreigingen
+- Ondersteuning voor uitgaande SNAT
+- Ondersteuning voor inkomende DNAT
+- Meerdere openbare IP-adressen
+- Logboekregistratie van Azure Monitor
+- Geforceerde tunneling
+- Webcategorieën (preview-versie)
+- Certificeringen
 
 ## <a name="built-in-high-availability"></a>Ingebouwde hoge beschikbaarheid
 
-Hoge beschikbaarheid is ingebouwd, zodat er geen extra load balancers vereist zijn en u niets hoeft te configureren.
+Hoge Beschik baarheid is ingebouwd, zodat er geen extra load balancers zijn vereist en er niets hoeft te worden geconfigureerd.
 
 ## <a name="availability-zones"></a>Beschikbaarheidszones
 
@@ -47,7 +48,7 @@ Azure Firewall kan tijdens de implementatie worden geconfigureerd om zich uit te
 
 U kunt Azure Firewall ook koppelen aan een specifieke zone om redenen van nabijheid, met behulp van Service Standard SLA van 99,95%.
 
-Er zijn geen extra kosten verbonden aan een firewall die is geïmplementeerd in een beschikbaarheidszone. Er zijn echter extra kosten voor inkomende en uitgaande gegevensoverdrachten die zijn gekoppeld aan Beschikbaarheidszones. Zie [Prijsinformatie voor bandbreedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor meer informatie.
+Er zijn geen extra kosten verbonden aan een firewall die is geïmplementeerd in een beschikbaarheidszone. Er zijn echter kosten toegevoegd voor inkomende en uitgaande gegevens overdrachten die zijn gekoppeld aan Beschikbaarheidszones. Zie [Prijsinformatie voor bandbreedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor meer informatie.
 
 Azure Firewall-beschikbaarheidszones zijn beschikbaar in regio's die ondersteuning bieden voor beschikbaarheidszones. Zie [Regio's die beschikbaarheidszones ondersteunen in Azure](../availability-zones/az-region.md) voor meer informatie
 
@@ -97,7 +98,7 @@ U kunt [meerdere openbare IP-adressen](deploy-multi-public-ip-powershell.md) (ma
 Dit maakt de volgende scenario's mogelijk:
 
 - **DNAT**: u kunt meerdere exemplaren van de standaardpoort naar uw back-endservers omzetten. Als u bijvoorbeeld twee openbare IP-adressen hebt, kunt u TCP-poort 3389 (RDP) voor beide IP-adressen omzetten.
-- **SNAT**: er zijn extra poorten beschikbaar voor uitgaande SNAT-verbindingen, waardoor de kans op SNAT-poortuitputting wordt verlaagd. Op dit moment selecteert Azure Firewall op een willekeurige manier het openbare IP-adres van de bron dat moet worden gebruikt voor een verbinding. Als u een downstream-filter op uw netwerk hebt, moet u alle openbare IP-adressen toestaan die zijn gekoppeld aan uw firewall. U kunt een [openbaar IP-adresvoorvoegsel](../virtual-network/public-ip-address-prefix.md) gebruiken om deze configuratie te vereenvoudigen.
+- **SNAT** -er zijn meer poorten beschikbaar voor uitgaande SNAT-verbindingen, waardoor de kans op een SNAT-poort uitgeput wordt verminderd. Op dit moment selecteert Azure Firewall op een willekeurige manier het openbare IP-adres van de bron dat moet worden gebruikt voor een verbinding. Als u een downstream-filter op uw netwerk hebt, moet u alle openbare IP-adressen toestaan die zijn gekoppeld aan uw firewall. U kunt een [openbaar IP-adresvoorvoegsel](../virtual-network/public-ip-address-prefix.md) gebruiken om deze configuratie te vereenvoudigen.
 
 ## <a name="azure-monitor-logging"></a>Logboekregistratie van Azure Monitor
 
@@ -110,6 +111,24 @@ Azure Firewall werkmap biedt een flexibel canvas voor het Azure Firewall van geg
 ## <a name="forced-tunneling"></a>Geforceerde tunneling
 
 U kunt Azure Firewall zo configureren dat al het internetverkeer wordt gerouteerd naar een aangewezen volgende hop in plaats van rechtstreeks naar internet te gaan. U kunt bijvoorbeeld een on-premises edge-firewall of een ander virtueel netwerkapparaat (NVA) hebben om netwerkverkeer te verwerken voordat het wordt doorgegeven aan internet. Zie [Geforceerde tunneling van Azure Firewall](forced-tunneling.md) voor meer informatie.
+
+## <a name="web-categories-preview"></a>Webcategorieën (preview-versie)
+
+Met webcategorieën kunnen beheerders gebruikers toegang tot website categorieën toestaan of weigeren, zoals gokken websites, sociale media websites en anderen. Webcategorieën zijn opgenomen in Azure Firewall Standard, maar het is beter in Azure Firewall Premium preview. In tegens telling tot de mogelijkheden van webcategorieën in de standaard-SKU die overeenkomt met de categorie op basis van een FQDN, komt de Premium-SKU overeen met de categorie volgens de volledige URL voor HTTP-en HTTPS-verkeer. Zie [Azure Firewall Premium preview-functies](premium-features.md)voor meer informatie over de preview-versie van Azure Firewall Premium.
+
+Als Azure Firewall bijvoorbeeld een HTTPS-aanvraag onderschept voor `www.google.com/news` , wordt de volgende categorisatie verwacht: 
+
+- Firewall standaard: alleen het FQDN-deel wordt onderzocht, dus `www.google.com` gecategoriseerd als *Zoek machine*. 
+
+- Firewall Premium: de volledige URL wordt onderzocht en wordt dus `www.google.com/news` gecategoriseerd als *Nieuws*.
+
+De categorieën zijn ingedeeld op basis van Ernst onder **aansprakelijkheid**, **hoge band breedte**, **bedrijfs gebruik**, **productiviteits verlies**, **Algemeen surfen** en niet- **gecategoriseerd**.
+
+### <a name="category-exceptions"></a>Categorie uitzonderingen
+
+U kunt uitzonde ringen maken voor de Web Category-regels. Maak een afzonderlijke regel verzameling voor toestaan of weigeren met een hogere prioriteit in de regel verzamelings groep. U kunt bijvoorbeeld een regel verzameling configureren die `www.linkedin.com` met prioriteit 100 is toegestaan, met een regel verzameling die **sociale netwerken** met prioriteit 200 weigert. Hiermee maakt u de uitzonde ring voor de website van de vooraf gedefinieerde categorie voor **sociale netwerken** .
+
+
 
 ## <a name="certifications"></a>Certificeringen
 

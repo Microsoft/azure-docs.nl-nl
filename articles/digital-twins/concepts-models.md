@@ -1,22 +1,22 @@
 ---
-title: Aangepaste modellen
+title: DTDL modellen
 titleSuffix: Azure Digital Twins
-description: Begrijp hoe Azure Digital Apparaatdubbels de door de gebruiker gedefinieerde modellen gebruikt om entiteiten in uw omgeving te beschrijven.
+description: Krijg inzicht in de manier waarop Azure Digital Apparaatdubbels gebruikmaakt van aangepaste modellen om entiteiten in uw omgeving te beschrijven.
 author: baanders
 ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 599bb93e747acf504a4ebf43aaea771ed5064886
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 9abf389eb7f8862440f860c53a0dbd8b10315c67
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131386"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558151"
 ---
-# <a name="understand-twin-models-in-azure-digital-twins"></a>Meer informatie over dubbele modellen in azure Digital Apparaatdubbels
+# <a name="understand-twin-models-in-azure-digital-twins"></a>Meer informatie over dubbel-modellen in Azure Digital Twins
 
-Een belang rijk kenmerk van Azure Digital Apparaatdubbels is de mogelijkheid om uw eigen woorden lijst te definiëren en uw dubbele grafiek te bouwen in de zelfgedefinieerde voor waarden van uw bedrijf. Deze mogelijkheid wordt gegeven via door de gebruiker gedefinieerde **modellen**. U kunt modellen beschouwen als de zelfstandige naam woorden in een beschrijving van uw wereld. 
+Een belang rijk kenmerk van Azure Digital Apparaatdubbels is de mogelijkheid om uw eigen woorden lijst te definiëren en uw dubbele grafiek te bouwen in de zelfgedefinieerde voor waarden van uw bedrijf. Deze mogelijkheid wordt gegeven via door de gebruiker verschafte **modellen**. U kunt modellen beschouwen als de zelfstandige naam woorden in een beschrijving van uw wereld. 
 
 Een model is vergelijkbaar met een **klasse** in een object georiënteerde programmeer taal en definieert een gegevensshape voor een bepaald concept in uw echte werk omgeving. Modellen hebben namen (zoals *room* of *temperatuur sensor*) en bevatten elementen zoals eigenschappen, telemetrie/gebeurtenissen en opdrachten die beschrijven wat dit type entiteit in uw omgeving kan doen. Later gaat u deze modellen gebruiken om [**digitale apparaatdubbels**](concepts-twins-graph.md) te maken die specifieke entiteiten vertegenwoordigen die aan deze type beschrijving voldoen.
 
@@ -24,7 +24,7 @@ Azure Digital Apparaatdubbels-modellen worden weer gegeven in de JSON-LD-based *
 
 ## <a name="digital-twin-definition-language-dtdl-for-models"></a>Digital-dubbele-definitie taal (DTDL) voor modellen
 
-Modellen voor Azure Digital Apparaatdubbels worden gedefinieerd met behulp van de Digital Apparaatdubbels Definition Language (DTDL). DTDL is gebaseerd op JSON-LD en is onafhankelijk van programmeer taal. DTDL is niet exclusief voor Azure Digital Apparaatdubbels, maar wordt ook gebruikt voor het weer geven van apparaatgegevens in andere IoT-Services, zoals [IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md). 
+Modellen voor Azure Digital Twins worden gedefinieerd met behulp van de Digital Twins Definition Language (DTDL). DTDL is gebaseerd op JSON-LD en is computertaalonafhankelijk. DTDL is niet exclusief voor Azure Digital Apparaatdubbels, maar wordt ook gebruikt voor het weer geven van apparaatgegevens in andere IoT-Services, zoals [IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md). 
 
 Azure Digital Apparaatdubbels maakt gebruik van **DTDL _versie 2_**. Voor meer informatie over deze versie van DTDL raadpleegt u de documentatie van de specificatie in GitHub: [*Digital Apparaatdubbels Definition Language (DTDL)-versie 2*](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Het gebruik van DTDL- _versie 1_ met Azure Digital apparaatdubbels is nu afgeschaft.
 
@@ -35,7 +35,7 @@ Azure Digital Apparaatdubbels maakt gebruik van **DTDL _versie 2_**. Voor meer i
 
 ## <a name="elements-of-a-model"></a>Elementen van een model
 
-Binnen een model definitie is het code-item op het hoogste niveau een **Interface**. Hiermee wordt het volledige model ingekapseld en de rest van het model gedefinieerd in de interface. 
+Binnen een model definitie is het code-item op het hoogste niveau een **Interface**. Hiermee wordt het volledige model ingekapseld en wordt de rest van het model gedefinieerd in de interface. 
 
 Een DTDL-model interface kan nul, één of veel van de volgende velden bevatten:
 * **Eigenschap** -eigenschappen zijn gegevens velden die de status van een entiteit vertegenwoordigen (zoals de eigenschappen in veel object-georiënteerde programmeer talen). Eigenschappen hebben een back-up van de opslag en kunnen op elk gewenst moment worden gelezen.
@@ -92,7 +92,7 @@ Houd er rekening mee dat plan eten ook kunnen communiceren met **manen** die hun
 
 De velden van het model zijn:
 
-| Veld | Beschrijving |
+| Veld | Description |
 | --- | --- |
 | `@id` | Een id voor het model. Moet de indeling hebben `dtmi:<domain>:<unique model identifier>;<model version number>` . |
 | `@type` | Hiermee wordt het type informatie aangegeven dat wordt beschreven. Voor een interface is het type *Interface*. |
@@ -136,23 +136,31 @@ Bij het ontwerpen van modellen om de entiteiten in uw omgeving weer te geven, ka
 
 [!INCLUDE [Azure Digital Twins: validate models info](../../includes/digital-twins-validate.md)]
 
-## <a name="integrating-with-industry-standard-models"></a>Integreren met industrie standaard modellen
+## <a name="tools-for-models"></a>Hulp middelen voor modellen 
 
-Het gebruik van modellen die zijn gebaseerd op industrie normen of het gebruik van de standaard Ontology-vertegenwoordiging, zoals RDF of OWL, biedt een rijk begin punt bij het ontwerpen van uw Azure Digital Apparaatdubbels-modellen. Het gebruik van industrie modellen helpt ook bij standaardisatie en het delen van gegevens.
+Er zijn verschillende voor beelden beschikbaar waarmee u eenvoudiger kunt omgaan met modellen en Ontologies. Ze bevinden zich in deze opslag plaats: [Hulpprogram ma's voor Digital Apparaatdubbels Definition Language (DTDL)](https://github.com/Azure/opendigitaltwins-tools).
 
-Als u wilt gebruiken met Azure Digital Apparaatdubbels, moet een model worden weer gegeven in de op JSON-LD gebaseerde [**Digital Apparaatdubbels Definition Language (DTDL)**](concepts-models.md). Daarom moet u deze eerst converteren naar DTDL, zodat deze door Azure Digital Apparaatdubbels kunnen worden gebruikt. Het DTDL-model fungeert vervolgens als de bron van waarheid voor het model in azure Digital Apparaatdubbels.
+In deze sectie wordt de huidige set voor beelden uitvoeriger beschreven.
 
-Er zijn twee hoofd paden voor het integreren van industrie standaard modellen met DTDL, afhankelijk van uw situatie:
-* Als u uw modellen nog hebt gemaakt, kunt u deze ontwerpen rond **bestaande starter DTDL-Ontologies** die taalspecifieke taal voor uw branche bevatten.
-* Als u al bestaande modellen hebt die zijn gebaseerd op een industrie standaard, moet u **deze converteren naar DTDL** om ze naar Azure Digital apparaatdubbels te brengen.
+### <a name="model-uploader"></a>Model Uploader 
 
-Zie voor meer informatie over beide processen [*How-to: industrie-standaard modellen integreren*](how-to-integrate-models.md).
+_**Voor het uploaden van modellen naar Azure Digital Apparaatdubbels**_
+
+Zodra u klaar bent met het maken, uitbreiden of selecteren van uw modellen, kunt u ze uploaden naar uw Azure Digital Apparaatdubbels-exemplaar om ze beschikbaar te maken voor gebruik in uw oplossing. Dit wordt gedaan met behulp van de [apparaatdubbels-api's van Azure](how-to-use-apis-sdks.md), zoals beschreven in [*How to: Manage DTDL models*](how-to-manage-model.md#upload-models).
+
+Als u echter veel modellen wilt uploaden, of als ze veel onderlinge afhankelijkheden hebben waardoor afzonderlijke uploads gecompliceerd worden uitgevoerd, kunt u dit voor beeld gebruiken om een groot aantal modellen tegelijk te uploaden: [**Azure Digital Apparaatdubbels model Uploader**](https://github.com/Azure/opendigitaltwins-building-tools/tree/master/ModelUploader). Volg de instructies in het voor beeld voor het configureren en gebruiken van dit project voor het uploaden van modellen in uw eigen exemplaar.
+
+### <a name="model-visualizer"></a>Model visualer 
+
+_**Voor het visualiseren van modellen**_
+
+Zodra u modellen hebt geüpload naar uw Azure Digital Apparaatdubbels-exemplaar, kunt u de modellen weer geven in uw Azure Digital Apparaatdubbels-exemplaar, inclusief eventuele overname-en model relaties, met behulp van de [**ADT model visualer**](https://github.com/Azure/opendigitaltwins-building-tools/tree/master/AdtModelVisualizer). Dit voor beeld bevindt zich momenteel in een concept status. We raden aan de Digital apparaatdubbels Development Community uit te breiden en bijdragen te leveren aan het voor beeld. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie modellen beheren met de DigitalTwinModels-Api's:
-* [*Instructies: Aangepaste modellen beheren*](how-to-manage-model.md)
+* Meer informatie over het maken van modellen op basis van Ontologies: [ *concepten: wat is een Ontology?*](concepts-ontologies.md)
 
-Of leer hoe digitale apparaatdubbels worden gemaakt op basis van modellen:
-* [*Concepten: Digital apparaatdubbels en het dubbele diagram*](concepts-twins-graph.md)
+* Meer informatie over het beheren van modellen met API-bewerkingen: [ *instructies: DTDL-modellen beheren*](how-to-manage-model.md)
+
+* Meer informatie over hoe modellen worden gebruikt voor het maken van Digital apparaatdubbels: [ *concepten: Digital apparaatdubbels en de dubbele grafiek*](concepts-twins-graph.md)
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
-ms.openlocfilehash: 17d48b6093d88a926569d5cfe84475fc0c306a0d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 4fb4981925593a22ed65df9d3ed0da5f45062f23
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874380"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578927"
 ---
 # <a name="azure-network-security-overview"></a>Overzicht van Azure-netwerkbeveiliging
 
@@ -395,7 +395,7 @@ Meer informatie:
 
 Logboek registratie op netwerk niveau is een belang rijke functie voor elk netwerk beveiligings scenario. In azure kunt u logboek gegevens ophalen die zijn verkregen voor Nsg's om logboek registratie gegevens op netwerk niveau op te halen. Met NSG-logboek registratie krijgt u informatie over:
 
-* [Activiteiten logboeken](../../azure-monitor/platform/platform-logs-overview.md). Gebruik deze logboeken om alle bewerkingen weer te geven die zijn verzonden naar uw Azure-abonnementen. Deze logboeken zijn standaard ingeschakeld en kunnen worden gebruikt binnen het Azure Portal. Voorheen bekend als audit of operationele Logboeken.
+* [Activiteiten logboeken](../../azure-monitor/essentials/platform-logs-overview.md). Gebruik deze logboeken om alle bewerkingen weer te geven die zijn verzonden naar uw Azure-abonnementen. Deze logboeken zijn standaard ingeschakeld en kunnen worden gebruikt binnen het Azure Portal. Voorheen bekend als audit of operationele Logboeken.
 * Gebeurtenis Logboeken. Deze logboeken bevatten informatie over welke NSG-regels zijn toegepast.
 * Item Logboeken. In deze logboeken kunt u zien hoe vaak elke NSG regel is toegepast om verkeer te weigeren of toe te staan.
 

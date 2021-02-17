@@ -12,12 +12,12 @@ ms.date: 11/13/2018
 ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 094ecd88c8b493d44b756d03d700b43cbcba1ee9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 683367251c220abe36660d61463bce9e5a0c52f9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362396"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577757"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Een Azure Active Directory rapportage en bewakings implementatie plannen
 
@@ -47,25 +47,25 @@ Met Azure AD monitoring kunt u Logboeken routeren naar:
 * een Azure-Event Hub waar u kunt integreren met uw bestaande SIEM-hulpprogram ma's zoals Splunk, Sumologic of QRadar.
 
 > [!NOTE]
-We hebben onlangs begonnen met het gebruik van de term Azure Monitor Logboeken in plaats van Log Analytics. Logboekgegevens worden nog steeds opgeslagen in een Log Analytics-werkruimte, en worden nog steeds verzameld en geanalyseerd met dezelfde Log Analytics-service. De terminologie wordt bijgewerkt om de rol van [logboeken in Azure Monitor](../../azure-monitor/platform/data-platform.md) beter te weerspiegelen. Zie [Wijzigingen in Azure Monitor-terminologie](../../azure-monitor/terminology.md) voor meer informatie.
+We hebben onlangs begonnen met het gebruik van de term Azure Monitor Logboeken in plaats van Log Analytics. Logboekgegevens worden nog steeds opgeslagen in een Log Analytics-werkruimte, en worden nog steeds verzameld en geanalyseerd met dezelfde Log Analytics-service. De terminologie wordt bijgewerkt om de rol van [logboeken in Azure Monitor](../../azure-monitor/data-platform.md) beter te weerspiegelen. Zie [Wijzigingen in Azure Monitor-terminologie](../../azure-monitor/terminology.md) voor meer informatie.
 
 Meer [informatie over het Bewaar beleid voor rapporten](./reference-reports-data-retention.md).
 
 ### <a name="licensing-and-prerequisites-for-azure-ad-reporting-and-monitoring"></a>Licenties en vereisten voor Azure AD-rapportage en-bewaking
 
-U hebt een Azure AD Premium-licentie nodig om toegang te krijgen tot de logboeken van Azure AD-aanmelding.
+U hebt een premium-licentie van Azure AD nodig om toegang te krijgen tot de logboeken voor Azure AD-aanmelding.
 
-Voor gedetailleerde informatie over functies en licenties vindt u in de [Azure Active Directory-prijs gids](https://azure.microsoft.com/pricing/details/active-directory/).
+Gedetailleerde informatie over functies en licenties vindt u in de [prijsgids voor Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
-Als u Azure AD-bewaking en-rapportage wilt implementeren, hebt u een gebruiker nodig die een globale beheerder of beveiligings beheerder voor de Azure AD-Tenant is.
+Als u Azure AD-bewaking en-rapportage wilt implementeren, hebt u een gebruiker nodig met de rol van globale beheerder of beveiligingsbeheerder voor de Azure AD-tenant.
 
-Afhankelijk van de uiteindelijke bestemming van uw logboek gegevens, hebt u een van de volgende opties nodig:
+Afhankelijk van de uiteindelijke bestemming van uw logboekgegevens, hebt u een van de volgende opties nodig:
 
 * Een Azure-opslagaccount waarop u ListKeys-machtigingen hebt. We raden u aan om een algemeen opslagaccount te gebruiken en geen Blob Storage-account. Zie de [Prijscalculator voor Azure Storage](https://azure.microsoft.com/pricing/calculator/?service=storage) voor prijsinformatie over opslag.
 
-* Een Azure Event Hubs-naam ruimte om te integreren met SIEM-oplossingen van derden.
+* Een Azure Event Hubs-naamruimte om te integreren met SIEM-oplossingen van derden.
 
-* Een Azure Log Analytics-werk ruimte om logboeken naar Azure Monitor-logboeken te verzenden.
+* Een Azure Log Analytics-werkruimte om logboeken naar Azure Monitor-logboeken te verzenden.
 
 ## <a name="plan-an-azure-reporting-and-monitoring-deployment-project"></a>Een Azure Reporting and monitoring-implementatie project plannen
 
@@ -121,7 +121,7 @@ Ontdek hoe u [gegevens routeert naar uw opslagaccount](./quickstart-azure-monito
 
 #### <a name="send-logs-to-azure-monitor-logs"></a>Logboeken verzenden naar logboeken van Azure Monitor
 
-Met [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md) worden controle gegevens uit verschillende bronnen geconsolideerd. Het bevat ook een query taal en analyse-engine waarmee u inzicht krijgt in de werking van uw toepassingen en het gebruik van resources. Door Azure AD-activiteiten logboeken naar Azure Monitor-logboeken te verzenden, kunt u snel verzamelde gegevens ophalen, bewaken en er waarschuwingen op ontvangen. Gebruik deze methode als u geen bestaande SIEM-oplossing hebt waarnaar u uw gegevens rechtstreeks wilt verzenden, maar query's en analyse wilt uitvoeren. Zodra uw gegevens zich in Azure Monitor logboeken bevinden, kunt u deze vervolgens naar Event Hub en van daaruit verzenden naar een SIEM als u wilt.
+Met [Azure monitor logboeken](../../azure-monitor/logs/log-query-overview.md) worden controle gegevens uit verschillende bronnen geconsolideerd. Het bevat ook een query taal en analyse-engine waarmee u inzicht krijgt in de werking van uw toepassingen en het gebruik van resources. Door Azure AD-activiteiten logboeken naar Azure Monitor-logboeken te verzenden, kunt u snel verzamelde gegevens ophalen, bewaken en er waarschuwingen op ontvangen. Gebruik deze methode als u geen bestaande SIEM-oplossing hebt waarnaar u uw gegevens rechtstreeks wilt verzenden, maar query's en analyse wilt uitvoeren. Zodra uw gegevens zich in Azure Monitor logboeken bevinden, kunt u deze vervolgens naar Event Hub en van daaruit verzenden naar een SIEM als u wilt.
 
 Lees meer over [het verzenden van gegevens naar de logboeken van Azure Monitor](./howto-integrate-activity-logs-with-log-analytics.md).
 

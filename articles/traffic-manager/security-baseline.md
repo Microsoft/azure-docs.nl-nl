@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 13515f2428b1fc95c31b04c984dd77dd316a4315
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: bc121b3f5aadad1e68315acac5daade5337b701b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202195"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580356"
 ---
 # <a name="azure-security-baseline-for-azure-traffic-manager"></a>Azure-beveiligings basislijn voor Azure Traffic Manager
 
@@ -32,7 +32,7 @@ Opname logboeken via Azure Monitor voor het verzamelen van beveiligings gegevens
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -48,9 +48,9 @@ Schakel Diagnostische instellingen in Azure Monitor in voor toegang tot controle
 
 - [Metrische gegevens en waarschuwingen Traffic Manager](traffic-manager-metrics-alerts.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -60,7 +60,7 @@ Schakel Diagnostische instellingen in Azure Monitor in voor toegang tot controle
 
 **Richt lijnen**: stel in azure monitor uw Bewaar periode voor log Analytics werkruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage accounts voor lange termijn-en archiverings opslag.
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -76,9 +76,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Aan de slag met Log Analytics query's](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -96,7 +96,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -288,7 +288,7 @@ Azure Traffic Manager heeft een vooraf gedefinieerde Azure-rol met de naam ' Tra
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer er wijzigingen worden aangebracht in azure Traffic Manager en andere kritieke of gerelateerde resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 

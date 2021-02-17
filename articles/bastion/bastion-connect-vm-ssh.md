@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.author: cherylmc
-ms.openlocfilehash: 5d61c2a1a0f5d7b26809621af6dfa88cf5080320
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: a5cda5d4d447bc04f853ea4a9abd15be75e7e177
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518178"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588657"
 ---
 # <a name="connect-using-ssh-to-a-linux-virtual-machine-using-azure-bastion"></a>Via SSH verbinding maken met een virtuele Linux-machine met behulp van Azure Bastion
 
@@ -50,34 +50,34 @@ Om via SSH verbinding te maken met de virtuele Linux-machine, moeten de volgende
 1. Open de [Azure Portal](https://portal.azure.com). Navigeer naar de virtuele machine waarmee u verbinding wilt maken en klik vervolgens op **verbinding maken** en selecteer **Bastion** in de vervolg keuzelijst.
 
    :::image type="content" source="./media/bastion-connect-vm-ssh/connect.png" alt-text="Scherm afbeelding toont het overzicht van een virtuele machine in Azure Portal met geselecteerde verbinding":::
-1. Nadat u Bastion hebt geselecteerd, wordt er een kantlijn balk weer gegeven met drie tabbladen: RDP, SSH en Bastion. Als Bastion is ingericht voor het virtuele netwerk, is het tabblad Bastion standaard actief. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./tutorial-create-host-portal.md).
+1. Nadat u Bastion hebt geselecteerd, klikt u op **Bastion gebruiken**. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./quickstart-host-portal.md).
+1. Voer op de pagina **verbinding maken met Azure Bastion** de **gebruikers naam** en het **wacht woord** in.
 
-   :::image type="content" source="./media/bastion-connect-vm-ssh/bastion.png" alt-text="Scherm afbeelding toont het dialoog venster verbinding maken met virtuele machine met BASTION geselecteerd":::
-1. Voer de gebruikers naam en het wacht woord voor SSH in voor de virtuele machine.
-1. Selecteer de knop **verbinding maken** nadat u de sleutel hebt ingevoerd.
+   :::image type="content" source="./media/bastion-connect-vm-ssh/password.png" alt-text="Wachtwoordverificatie":::
+1. Selecteer **verbinding maken** om verbinding te maken met de virtuele machine.
 
 ## <a name="connect-manually-enter-a-private-key"></a><a name="privatekey"></a>Verbinden: Voer een persoonlijke sleutel hand matig in
 
 1. Open de [Azure Portal](https://portal.azure.com). Navigeer naar de virtuele machine waarmee u verbinding wilt maken en klik vervolgens op **verbinding maken** en selecteer **Bastion** in de vervolg keuzelijst.
 
    :::image type="content" source="./media/bastion-connect-vm-ssh/connect.png" alt-text="Scherm afbeelding toont het overzicht van een virtuele machine in Azure Portal met geselecteerde verbinding":::
-1. Nadat u Bastion hebt geselecteerd, wordt er een kantlijn balk weer gegeven met drie tabbladen: RDP, SSH en Bastion. Als Bastion is ingericht voor het virtuele netwerk, is het tabblad Bastion standaard actief. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./tutorial-create-host-portal.md).
+1. Nadat u Bastion hebt geselecteerd, klikt u op **Bastion gebruiken**. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./quickstart-host-portal.md).
+1. Voer op de pagina **verbinding maken met Azure Bastion** de **gebruikers naam** en de **persoonlijke SSH-sleutel** in.
 
-   :::image type="content" source="./media/bastion-connect-vm-ssh/bastion.png" alt-text="Verbinding maken met het dialoog venster virtuele machine met BASTION geselecteerd.":::
-1. Voer de gebruikers naam in en selecteer **persoonlijke SSH-sleutel**.
+   :::image type="content" source="./media/bastion-connect-vm-ssh/ssh-private-key.png" alt-text="Verificatie van de persoonlijke SSH-sleutel":::
 1. Voer uw persoonlijke sleutel in de **persoonlijke SSH-sleutel** van het tekst gebied in (of plak deze direct).
-1. Selecteer de knop **verbinding maken** nadat u de sleutel hebt ingevoerd.
+1. Selecteer **verbinding maken** om verbinding te maken met de virtuele machine.
 
 ## <a name="connect-using-a-private-key-file"></a><a name="ssh"></a>Verbinding maken: een persoonlijke-sleutel bestand gebruiken
 
 1. Open de [Azure Portal](https://portal.azure.com). Navigeer naar de virtuele machine waarmee u verbinding wilt maken en klik vervolgens op **verbinding maken** en selecteer **Bastion** in de vervolg keuzelijst.
 
-   :::image type="content" source="./media/bastion-connect-vm-ssh/connect.png" alt-text="Geselecteerde verbinding maken":::
-1. Nadat u Bastion hebt geselecteerd, wordt er een kantlijn balk weer gegeven met drie tabbladen: RDP, SSH en Bastion. Als Bastion is ingericht voor het virtuele netwerk, is het tabblad Bastion standaard actief. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./tutorial-create-host-portal.md).
+   :::image type="content" source="./media/bastion-connect-vm-ssh/connect.png" alt-text="Scherm afbeelding toont het overzicht van een virtuele machine in Azure Portal met geselecteerde verbinding":::
+1. Nadat u Bastion hebt geselecteerd, klikt u op **Bastion gebruiken**. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./quickstart-host-portal.md).
+1. Voer op de pagina **verbinding maken met Azure Bastion** de **gebruikers naam** en de **persoonlijke SSH-sleutel van het lokale bestand** in.
 
-   :::image type="content" source="./media/bastion-connect-vm-ssh/bastion.png" alt-text="BASTION geselecteerd.":::
-1. Voer de gebruikers naam in en selecteer een **persoonlijke SSH-sleutel uit het lokale bestand**.
-1. Selecteer de **Blader** knop (het mappictogram in het lokale bestand).
+   :::image type="content" source="./media/bastion-connect-vm-ssh/private-key-file.png" alt-text="Bestand met persoonlijke SSH-sleutel":::
+
 1. Blader naar het bestand en selecteer **openen**.
 1. Selecteer **verbinding maken** om verbinding te maken met de virtuele machine. Nadat u op verbinding maken hebt geklikt, wordt SSH naar deze virtuele machine rechtstreeks in de Azure Portal geopend. Deze verbinding is meer dan HTML5 via poort 443 van de Bastion-service via het privé-IP-adres van uw virtuele machine.
 
@@ -88,19 +88,20 @@ Om via SSH verbinding te maken met de virtuele Linux-machine, moeten de volgende
 >
 
 1. Open de [Azure Portal](https://portal.azure.com). Navigeer naar de virtuele machine waarmee u verbinding wilt maken en klik vervolgens op **verbinding maken** en selecteer **Bastion** in de vervolg keuzelijst.
-1. Nadat u Bastion hebt geselecteerd, wordt er een kantlijn balk weer gegeven met drie tabbladen: RDP, SSH en Bastion. Als Bastion is ingericht voor het virtuele netwerk, is het tabblad Bastion standaard actief. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](bastion-create-host-portal.md).
 
-   :::image type="content" source="./media/bastion-connect-vm-ssh/bastion.png" alt-text="Tabblad Bastion":::
-1. Voer de gebruikers naam in en selecteer **persoonlijke SSH-sleutel van Azure Key Vault**.
+   :::image type="content" source="./media/bastion-connect-vm-ssh/connect.png" alt-text="Scherm afbeelding toont het overzicht van een virtuele machine in Azure Portal met geselecteerde verbinding":::
+1. Nadat u Bastion hebt geselecteerd, klikt u op **Bastion gebruiken**. Als u Bastion niet hebt ingericht voor het virtuele netwerk, raadpleegt u [Bastion configureren](./quickstart-host-portal.md).
+1. Op de pagina **verbinding maken met Azure Bastion voert u** de **gebruikers naam** in en selecteert u de **persoonlijke SSH-sleutel van Azure Key Vault**.
+
+   :::image type="content" source="./media/bastion-connect-vm-ssh/ssh-key-vault.png" alt-text="Persoonlijke SSH-sleutel van Azure Key Vault":::
 1. Selecteer de vervolg keuzelijst **Azure Key Vault** en selecteer de resource waarin u uw persoonlijke SSH-sleutel hebt opgeslagen. Als u geen Azure Key Vault resource hebt ingesteld, raadpleegt u [een sleutel kluis maken](../key-vault/general/quick-create-portal.md) en uw persoonlijke SSH-sleutel opslaan als waarde voor een nieuw Key Vault geheim.
 
    :::image type="content" source="./media/bastion-connect-vm-ssh/key-vault.png" alt-text="Azure Key Vault":::
 
-Zorg ervoor dat u beschikt over een **lijst** en toegang **krijgt** tot de geheimen die zijn opgeslagen in de Key Vault resource. Zie [een Key Vault toegangs beleid toewijzen](../key-vault/general/assign-access-policy-portal.md)om toegangs beleid voor uw Key Vault-bron toe te wijzen en te wijzigen.
-
+   Zorg ervoor dat u beschikt over een **lijst** en toegang **krijgt** tot de geheimen die zijn opgeslagen in de Key Vault resource. Zie [een Key Vault toegangs beleid toewijzen](../key-vault/general/assign-access-policy-portal.md)om toegangs beleid voor uw Key Vault-bron toe te wijzen en te wijzigen.
 1. Selecteer de vervolg keuzelijst **Azure Key Vault geheim** en selecteer het Key Vault geheim met de waarde van uw persoonlijke SSH-sleutel.
-1. Selecteer **verbinding maken** om verbinding te maken met de virtuele machine. Nadat u op verbinding maken hebt geklikt, wordt SSH naar deze virtuele machine rechtstreeks in de Azure Portal geopend. Deze verbinding is meer dan HTML5 via poort 443 van de Bastion-service via het privé-IP-adres van uw virtuele machine.
+1. Selecteer **verbinding maken** om verbinding te maken met de virtuele machine. Nadat u op **verbinding maken** hebt geklikt, wordt SSH naar deze virtuele machine rechtstreeks in de Azure portal geopend. Deze verbinding is meer dan HTML5 via poort 443 van de Bastion-service via het privé-IP-adres van uw virtuele machine.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Lees de [Veelgestelde vragen over Bastion](bastion-faq.md)
+Zie de [Veelgestelde vragen over Bastion](bastion-faq.md)voor meer informatie over Azure Bastion. 

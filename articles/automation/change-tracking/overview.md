@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0ef821634669739ff5aed58e4404d7c21b8d8222
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: e2371f3de8ed73250bca6639e6c749811c5559ad
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896626"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572615"
 ---
 # <a name="change-tracking-and-inventory-overview"></a>Overzicht Wijzigingen bijhouden en Inventaris
 
@@ -34,9 +34,9 @@ Wijzigingen bijhouden en inventarisatie maakt gebruik van [Azure Security Center
 
 Het inschakelen van alle functies in Wijzigingen bijhouden en de inventarisatie kan extra kosten in beslag nemen. Bekijk de [prijzen voor Automation](https://azure.microsoft.com/pricing/details/automation/) en [Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/)voordat u doorgaat.
 
-Wijzigingen bijhouden-en inventarisatie gegevens worden door gegeven naar Azure Monitor-logboeken en deze verzamelde gegevens worden opgeslagen in een Log Analytics-werk ruimte. De functie File Integrity Monitoring (FIM) is alleen beschikbaar als **Azure Defender voor servers** is ingeschakeld. Zie Azure Security Center [prijzen](../../security-center/security-center-pricing.md) voor meer informatie. FIM uploadt gegevens naar dezelfde Log Analytics werkruimte als de werk ruimte die is gemaakt om gegevens op te slaan vanuit Wijzigingen bijhouden en de inventaris. U wordt aangeraden uw gekoppelde Log Analytics-werk ruimte te bewaken om uw exacte gebruik bij te houden. Zie [verbruik en kosten beheren](../../azure-monitor/platform/manage-cost-storage.md)voor meer informatie over het analyseren van het gegevens gebruik van Azure monitor Logboeken.
+Wijzigingen bijhouden-en inventarisatie gegevens worden door gegeven naar Azure Monitor-logboeken en deze verzamelde gegevens worden opgeslagen in een Log Analytics-werk ruimte. De functie File Integrity Monitoring (FIM) is alleen beschikbaar als **Azure Defender voor servers** is ingeschakeld. Zie Azure Security Center [prijzen](../../security-center/security-center-pricing.md) voor meer informatie. FIM uploadt gegevens naar dezelfde Log Analytics werkruimte als de werk ruimte die is gemaakt om gegevens op te slaan vanuit Wijzigingen bijhouden en de inventaris. U wordt aangeraden uw gekoppelde Log Analytics-werk ruimte te bewaken om uw exacte gebruik bij te houden. Zie [verbruik en kosten beheren](../../azure-monitor/logs/manage-cost-storage.md)voor meer informatie over het analyseren van het gegevens gebruik van Azure monitor Logboeken.
 
-Computers die zijn verbonden met de Log Analytics-werk ruimte, gebruiken de [log Analytics agent](../../azure-monitor/platform/log-analytics-agent.md) voor het verzamelen van gegevens over wijzigingen in geïnstalleerde software, micro soft-Services, Windows-REGI ster en-bestanden en Linux-daemons op bewaakte servers. Wanneer de gegevens beschikbaar zijn, verzendt de agent deze naar Azure Monitor logboeken voor verwerking. Azure Monitor logboeken past logica toe op de ontvangen gegevens, registreert deze en maakt deze beschikbaar voor analyse.
+Computers die zijn verbonden met de Log Analytics-werk ruimte, gebruiken de [log Analytics agent](../../azure-monitor/agents/log-analytics-agent.md) voor het verzamelen van gegevens over wijzigingen in geïnstalleerde software, micro soft-Services, Windows-REGI ster en-bestanden en Linux-daemons op bewaakte servers. Wanneer de gegevens beschikbaar zijn, verzendt de agent deze naar Azure Monitor logboeken voor verwerking. Azure Monitor logboeken past logica toe op de ontvangen gegevens, registreert deze en maakt deze beschikbaar voor analyse.
 
 > [!NOTE]
 > Voor Wijzigingen bijhouden en inventarisatie moet u een Log Analytics werkruimte koppelen aan uw Automation-account. Zie [Azure Workspace-toewijzingen](../how-to/region-mappings.md)voor een definitieve lijst met ondersteunde regio's. De regio toewijzingen hebben geen invloed op de mogelijkheid om Vm's te beheren in een andere regio dan uw Automation-account.
@@ -48,7 +48,7 @@ Wijzigingen bijhouden en inventarisatie biedt geen ondersteuning voor of heeft d
 - Recursie voor het bijhouden van Windows-REGI ster
 - Netwerk bestands systemen
 - Verschillende installatie methoden
-- **_exe_* -bestanden die zijn opgeslagen in Windows
+- ***exe** -bestanden die zijn opgeslagen in Windows
 - De kolom en waarden voor de **maximale bestands grootte** worden niet gebruikt in de huidige implementatie.
 - Als u probeert meer dan 2500 bestanden te verzamelen in een verzamelings cyclus van 30 minuten, kunnen de prestaties van Wijzigingen bijhouden en de inventaris worden verslechterd.
 - Als het netwerk verkeer hoog is, kan het tot zes uur duren voordat wijzigings records worden weer gegeven.
@@ -58,7 +58,7 @@ Wijzigingen bijhouden en inventarisatie biedt geen ondersteuning voor of heeft d
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-Wijzigingen bijhouden en inventarisatie wordt ondersteund op alle besturings systemen die voldoen aan de vereisten van Log Analytics agent. Zie [ondersteunde besturings systemen](../../azure-monitor/platform/agents-overview.md#supported-operating-systems) voor een lijst met versies van het Windows-en Linux-besturings systeem die momenteel worden ondersteund door de log Analytics-agent.
+Wijzigingen bijhouden en inventarisatie wordt ondersteund op alle besturings systemen die voldoen aan de vereisten van Log Analytics agent. Zie [ondersteunde besturings systemen](../../azure-monitor/agents/agents-overview.md#supported-operating-systems) voor een lijst met versies van het Windows-en Linux-besturings systeem die momenteel worden ondersteund door de log Analytics-agent.
 
 Zie [TLS 1,2 Enforcement voor Azure Automation](../automation-managing-data.md#tls-12-enforcement-for-azure-automation)voor meer informatie over de client vereisten voor TLS 1,2.
 
@@ -159,7 +159,7 @@ De volgende tabel bevat de limieten voor bijgehouden items per computer voor Wij
 |Services|250|
 |Daemons|250|
 
-Het gemiddelde Log Analytics gegevens gebruik voor een machine met Wijzigingen bijhouden en inventaris is ongeveer 40 MB per maand, afhankelijk van uw omgeving. Met de functie voor gebruik en geschatte kosten van de Log Analytics-werk ruimte kunt u de gegevens weer geven die zijn opgenomen door Wijzigingen bijhouden en inventaris in een gebruiks diagram. Gebruik deze gegevens weergave om uw gegevens gebruik te evalueren en te bepalen hoe deze van invloed is op uw factuur. Bekijk [inzicht in uw gebruik en geschatte kosten](../../azure-monitor/platform/manage-cost-storage.md#understand-your-usage-and-estimate-costs).
+Het gemiddelde Log Analytics gegevens gebruik voor een machine met Wijzigingen bijhouden en inventaris is ongeveer 40 MB per maand, afhankelijk van uw omgeving. Met de functie voor gebruik en geschatte kosten van de Log Analytics-werk ruimte kunt u de gegevens weer geven die zijn opgenomen door Wijzigingen bijhouden en inventaris in een gebruiks diagram. Gebruik deze gegevens weergave om uw gegevens gebruik te evalueren en te bepalen hoe deze van invloed is op uw factuur. Bekijk [inzicht in uw gebruik en geschatte kosten](../../azure-monitor/logs/manage-cost-storage.md#understand-your-usage-and-estimate-costs).
 
 ### <a name="microsoft-service-data"></a>Micro soft-service gegevens
 
@@ -176,7 +176,7 @@ Om de prestaties te optimaliseren, houdt de Log Analytics agent alleen wijziging
 
 Een belang rijke mogelijkheid van Wijzigingen bijhouden en inventarisatie wordt gewaarschuwd voor wijzigingen in de configuratie status van uw hybride omgeving. Er zijn veel nuttige acties beschikbaar om te activeren als reactie op waarschuwingen. Bijvoorbeeld acties voor Azure functions, Automation-runbooks, webhooks en dergelijke. Een waarschuwing over wijzigingen in het **c:\Windows\System32\drivers\etc\hosts** -bestand voor een machine is een goede toepassing van waarschuwingen voor wijzigingen bijhouden-en inventaris gegevens. Er zijn veel meer scenario's voor waarschuwingen, zoals de query scenario's die in de volgende tabel zijn gedefinieerd.
 
-|Query’s uitvoeren  |Beschrijving  |
+|Query’s uitvoeren  |Description  |
 |---------|---------|
 |ConfigurationChange <br>&#124; waarbij ConfigChangeType = = "files" en FileSystemPath bevat "c: \\ Windows \\ System32 \\ drivers \\ "|Dit is handig voor het bijhouden van wijzigingen in essentiële bestanden van het systeem.|
 |ConfigurationChange <br>&#124; waarbij FieldsChanged ' FileContentChecksum ' en FileSystemPath = = "c: \\ Windows \\ System32 \\ drivers etc- \\ \\ hosts ' bevat.|Dit is handig voor het bijhouden van wijzigingen in sleutel configuratie bestanden.|

@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: d14ae86d41caec3c1bd897c2c81bee748dcc312c
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 6ead00a0979d81ef11ac81fb13a1abe31317691d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050881"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571326"
 ---
 # <a name="azure-monitor-insights-for-virtual-wan"></a>Inzichten Azure Monitor voor virtuele WAN
 
@@ -87,5 +87,5 @@ U kunt **gedetailleerde metrische gegevens weer geven** selecteren om toegang te
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [metrische gegevens in azure monitor](../azure-monitor/platform/data-platform-metrics.md)voor meer informatie.
+* Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md)voor meer informatie.
 * Zie [virtuele WAN-logboeken en metrische](logs-metrics.md)gegevens voor een volledige beschrijving van alle virtuele WAN-metrische gegevens.

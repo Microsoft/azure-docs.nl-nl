@@ -3,12 +3,12 @@ title: Details van de structuur van de beleids toewijzing
 description: Beschrijft de beleids toewijzings definitie die door Azure Policy wordt gebruikt om beleids definities en-para meters te koppelen aan resources voor evaluatie.
 ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 1151c931863e1139b76c34ced12c4e2842f83cc6
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 625314a8b83a4d0cc76eae51eae8d357e39d2a6a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558448"
+ms.locfileid: "100581951"
 ---
 # <a name="azure-policy-assignment-structure"></a>Azure Policy-toewijzingsstructuur
 
@@ -63,7 +63,7 @@ U gebruikt **DisplayName** en **Beschrijving** om de beleids toewijzing te ident
 
 ## <a name="enforcement-mode"></a>Afdwingings modus
 
-De eigenschap **enforcementMode** biedt klanten de mogelijkheid om het resultaat van een beleid op bestaande bronnen te testen zonder het beleids effect of de trigger vermeldingen in het [Azure-activiteiten logboek](../../../azure-monitor/platform/platform-logs-overview.md)te initiëren. Dit scenario wordt meestal ' What If ' genoemd en is afgestemd op veilige implementatie procedures. **enforcementMode** wijkt af van het [Uitgeschakelde](./effects.md#disabled) effect, wat betekent dat de resource-evaluatie helemaal niet kan plaatsvinden.
+De eigenschap **enforcementMode** biedt klanten de mogelijkheid om het resultaat van een beleid op bestaande bronnen te testen zonder het beleids effect of de trigger vermeldingen in het [Azure-activiteiten logboek](../../../azure-monitor/essentials/platform-logs-overview.md)te initiëren. Dit scenario wordt meestal ' What If ' genoemd en is afgestemd op veilige implementatie procedures. **enforcementMode** wijkt af van het [Uitgeschakelde](./effects.md#disabled) effect, wat betekent dat de resource-evaluatie helemaal niet kan plaatsvinden.
 
 Deze eigenschap heeft de volgende waarden:
 

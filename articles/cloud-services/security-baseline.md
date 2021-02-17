@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e6a42a39e55e379865332fce8a9aed8dfe78f57b
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 28be34e9323697759b2492d86b968f8e3d47a28e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201328"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572045"
 ---
 # <a name="azure-security-baseline-for-azure-cloud-services"></a>Azure-beveiligings basislijn voor Azure Cloud Services
 
@@ -175,9 +175,9 @@ Verzamel inzicht van het activiteiten logboek, een platform logboek in azure, in
 
 Een diagnostische instelling maken om het activiteiten logboek te verzenden naar Azure Monitor, Azure Event Hubs om buiten Azure te worden doorgestuurd of om te Azure Storage voor archivering. Configureer Azure Monitor voor meldings waarschuwingen wanneer kritieke resources in uw Azure-Cloud Services worden gewijzigd. 
 
-- [Azure-activiteitenlogboek](../azure-monitor/platform/activity-log.md)
+- [Azure-activiteitenlogboek](../azure-monitor/essentials/activity-log.md)
 
-- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen voor activiteiten logboek maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Traffic Manager bewaking](../traffic-manager/traffic-manager-monitoring.md)
 
@@ -233,7 +233,7 @@ Azure Cloud Services kan worden bewaakt door Application Insights voor Beschik b
 
 - [Diagnostische gegevens inschakelen in Visual Studio vóór de implementatie](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?preserve-view=true#to-turn-on-diagnostics-in-visual-studio-before-deployment)
 
-- [Wijzigings overzicht weer geven](../azure-monitor/platform/activity-log.md#view-change-history)
+- [Wijzigings overzicht weer geven](../azure-monitor/essentials/activity-log.md#view-change-history)
 
 - [Application Insights voor Azure-Cloud service (klassiek)](../azure-monitor/app/cloudservices.md)
 
@@ -465,9 +465,9 @@ De toepassings gegevens die zijn opgeslagen op de tijdelijke schijven, worden ni
 
 Daarnaast kunt Application Insights Azure Cloud Services-apps bewaken voor Beschik baarheid, prestaties, fouten en gebruik. Dit maakt gebruik van gecombineerde gegevens van Application Insights Sdk's met Azure Diagnostics gegevens uit uw Azure-Cloud Services.
 
-- [Klassieke metrische waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/platform/alerts-classic-portal.md)
+- [Klassieke metrische waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor](../azure-monitor/alerts/alerts-classic-portal.md)
 
-- [Overzicht van metrische waarschuwingen](../azure-monitor/platform/alerts-metric-overview.md) 
+- [Overzicht van metrische waarschuwingen](../azure-monitor/alerts/alerts-metric-overview.md) 
 
 - [Application Insights voor Azure-Cloud service (klassiek)](../azure-monitor/app/cloudservices.md)
 

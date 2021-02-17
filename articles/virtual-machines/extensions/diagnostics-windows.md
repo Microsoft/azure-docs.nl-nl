@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: mimckitt
-ms.openlocfilehash: 9561f96dafd936244831cff2ed05cda4d915d27d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 990bd7c21bec0f42034a0044b58d1589665700ec
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955970"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580166"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Power shell gebruiken om Azure Diagnostics in te scha kelen op een virtuele machine met Windows
 
@@ -213,4 +213,4 @@ De configuratie moet worden bijgewerkt om het volgende te kunnen bevatten:
 
 ## <a name="next-steps"></a>Volgende stappen
 * Zie voor meer informatie over het gebruik van de Azure Diagnostics mogelijkheden en andere technieken voor het oplossen van problemen [Diagnostische gegevens inschakelen in Azure Cloud Services en virtual machines](../../cloud-services/cloud-services-dotnet-diagnostics.md).
-* In [schema voor diagnostische configuraties](../../azure-monitor/platform/diagnostics-extension-versions.md) worden de verschillende opties voor XML-configuraties voor de uitbrei ding van diagnostische gegevens uitgelegd.
+* In [schema voor diagnostische configuraties](../../azure-monitor/agents/diagnostics-extension-versions.md) worden de verschillende opties voor XML-configuraties voor de uitbrei ding van diagnostische gegevens uitgelegd.

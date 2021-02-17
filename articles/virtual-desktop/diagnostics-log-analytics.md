@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 05/27/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5d8b696b175c4ef841eef1a51f1d357d1781cba7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 37990cc4322717f090c7a35c62512ba0e1a04293
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018287"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576146"
 ---
 # <a name="use-log-analytics-for-the-diagnostics-feature"></a>Log Analytics gebruiken voor de functie voor diagnostische gegevens
 
@@ -39,23 +39,23 @@ Verbindingen die zich niet in het virtuele bureau blad van Windows bevinden, wor
 Met Azure Monitor kunt u gegevens van Windows virtueel bureau blad analyseren en de prestatie meter items van virtuele machines (VM) controleren, allemaal binnen hetzelfde hulp programma. In dit artikel vindt u meer informatie over het inschakelen van diagnostische gegevens voor uw virtuele Windows-desktop omgeving.
 
 >[!NOTE]
->Zie [Azure virtual machines bewaken met Azure monitor](../azure-monitor/insights/monitor-vm-azure.md)voor meer informatie over het bewaken van uw Vm's in Azure. Zorg er ook voor dat u [de drempel waarden voor prestatie meter items bekijkt](../virtual-desktop/virtual-desktop-fall-2019/deploy-diagnostics.md#windows-performance-counter-thresholds) voor een beter inzicht in uw gebruikers ervaring op de sessiehost.
+>Zie [Azure virtual machines bewaken met Azure monitor](../azure-monitor/vm/monitor-vm-azure.md)voor meer informatie over het bewaken van uw Vm's in Azure. Zorg er ook voor dat u [de drempel waarden voor prestatie meter items bekijkt](../virtual-desktop/virtual-desktop-fall-2019/deploy-diagnostics.md#windows-performance-counter-thresholds) voor een beter inzicht in uw gebruikers ervaring op de sessiehost.
 
 ## <a name="before-you-get-started"></a>Voordat u aan de slag gaat
 
 Voordat u Log Analytics kunt gebruiken, moet u een werk ruimte maken. Volg hiervoor de instructies in een van de volgende twee artikelen:
 
-- Als u liever Azure Portal gebruikt, raadpleegt u [een log Analytics-werk ruimte maken in azure Portal](../azure-monitor/learn/quick-create-workspace.md).
-- Zie [een log Analytics-werk ruimte maken met Power shell als u de voor](../azure-monitor/platform/powershell-workspace-configuration.md)keur geeft aan Power shell.
+- Als u liever Azure Portal gebruikt, raadpleegt u [een log Analytics-werk ruimte maken in azure Portal](../azure-monitor/logs/quick-create-workspace.md).
+- Zie [een log Analytics-werk ruimte maken met Power shell als u de voor](../azure-monitor/logs/powershell-workspace-configuration.md)keur geeft aan Power shell.
 
-Nadat u uw werk ruimte hebt gemaakt, volgt u de instructies in [Windows-computers verbinden met Azure monitor](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key) om de volgende informatie te verkrijgen:
+Nadat u uw werk ruimte hebt gemaakt, volgt u de instructies in [Windows-computers verbinden met Azure monitor](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key) om de volgende informatie te verkrijgen:
 
 - De werk ruimte-ID
 - De primaire sleutel van uw werk ruimte
 
 U hebt deze gegevens later nodig in het installatie proces.
 
-Zorg ervoor dat u het machtigings beheer voor Azure Monitor controleert om gegevens toegang in te scha kelen voor degenen die uw virtuele Windows-desktop omgeving controleren en onderhouden. Zie [aan de slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/platform/roles-permissions-security.md)voor meer informatie.
+Zorg ervoor dat u het machtigings beheer voor Azure Monitor controleert om gegevens toegang in te scha kelen voor degenen die uw virtuele Windows-desktop omgeving controleren en onderhouden. Zie [aan de slag met rollen, machtigingen en beveiliging met Azure monitor](../azure-monitor/roles-permissions-security.md)voor meer informatie.
 
 ## <a name="push-diagnostics-data-to-your-workspace"></a>Diagnostische gegevens naar uw werk ruimte pushen
 
@@ -73,7 +73,7 @@ Log Analytics instellen voor een nieuw object:
 
     De opties die worden weer gegeven op de pagina Diagnostische instellingen variëren, afhankelijk van het soort object dat u bewerkt.
 
-    Wanneer u bijvoorbeeld diagnostische gegevens inschakelt voor een app-groep, ziet u opties voor het configureren van controle punten, fouten en beheer. Voor werk ruimten configureren deze categorieën een feed om te volgen wanneer gebruikers zich abonneren op de lijst met apps. Zie voor meer informatie over diagnostische instellingen [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../azure-monitor/platform/diagnostic-settings.md).
+    Wanneer u bijvoorbeeld diagnostische gegevens inschakelt voor een app-groep, ziet u opties voor het configureren van controle punten, fouten en beheer. Voor werk ruimten configureren deze categorieën een feed om te volgen wanneer gebruikers zich abonneren op de lijst met apps. Zie voor meer informatie over diagnostische instellingen [Diagnostische instelling maken om bron logboeken en metrische gegevens in azure te verzamelen](../azure-monitor/essentials/diagnostic-settings.md).
 
      >[!IMPORTANT]
      >Vergeet niet om diagnostische gegevens in te scha kelen voor elk Azure Resource Manager object dat u wilt bewaken. Er zijn gegevens beschikbaar voor activiteiten nadat de diagnose is ingeschakeld. Het kan enkele uren duren voordat de eerste keer is ingesteld.
@@ -83,7 +83,7 @@ Log Analytics instellen voor een nieuw object:
 6. Selecteer **Opslaan**.
 
 >[!NOTE]
->Log Analytics biedt u de mogelijkheid om gegevens te streamen naar [Event hubs](../event-hubs/event-hubs-about.md) of deze te archiveren in een opslag account. Zie [Azure-bewakings gegevens streamen naar een event hub](../azure-monitor/platform/stream-monitoring-data-event-hubs.md) en [Azure-resource logboeken archiveren in een opslag account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)voor meer informatie over deze functie.
+>Log Analytics biedt u de mogelijkheid om gegevens te streamen naar [Event hubs](../event-hubs/event-hubs-about.md) of deze te archiveren in een opslag account. Zie [Azure-bewakings gegevens streamen naar een event hub](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md) en [Azure-resource logboeken archiveren in een opslag account](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)voor meer informatie over deze functie.
 
 ## <a name="how-to-access-log-analytics"></a>Toegang tot Log Analytics
 
@@ -134,9 +134,9 @@ Access-voorbeeld query's via de Azure Monitor Log Analytics gebruikers interface
 1. Selecteer **virtueel bureau blad voor Windows** om beschik bare query's te controleren.
 1. Selecteer **uitvoeren** om de geselecteerde query uit te voeren.
 
-Meer informatie over de voorbeeld query interface in [opgeslagen query's in Azure Monitor Log Analytics](../azure-monitor/log-query/example-queries.md).
+Meer informatie over de voorbeeld query interface in [opgeslagen query's in Azure Monitor Log Analytics](../azure-monitor/logs/example-queries.md).
 
-Met de volgende query lijst kunt u verbindings gegevens of-problemen voor één gebruiker controleren. U kunt deze query's uitvoeren in de [log Analytics query-editor](../azure-monitor/log-query/log-analytics-tutorial.md#write-a-query). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
+Met de volgende query lijst kunt u verbindings gegevens of-problemen voor één gebruiker controleren. U kunt deze query's uitvoeren in de [log Analytics query-editor](../azure-monitor/logs/log-analytics-tutorial.md#write-a-query). Vervang elke query door `userupn` de UPN van de gebruiker die u wilt zoeken.
 
 
 Alle verbindingen voor één gebruiker zoeken:

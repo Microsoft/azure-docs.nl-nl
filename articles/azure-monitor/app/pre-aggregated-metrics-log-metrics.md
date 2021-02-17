@@ -6,12 +6,12 @@ author: vgorbenko
 ms.author: vitalyg
 ms.date: 09/18/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 9b93ac774dffb837d93853353e83b8da4ab4d8d4
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: c419411b0956cdc42055f0e97a47fc8e4ddb38c9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027156"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589734"
 ---
 # <a name="log-based-and-pre-aggregated-metrics-in-application-insights"></a>Vooraf samengevoegde metrische gegevens op basis van logboeken in Application Insights
 
@@ -30,12 +30,12 @@ Op hetzelfde moment kan het verzamelen van een complete set gebeurtenissen niet 
 
 ## <a name="pre-aggregated-metrics"></a>Vooraf samengestelde metrische gegevens
 
-Naast de metrische gegevens op basis van een logboek, heeft het Application Insights team een open bare preview-versie van metrische gegevens die is opgeslagen in een gespecialiseerde opslag plaats die is geoptimaliseerd voor tijd reeksen, in het eind 2018. De nieuwe metrische gegevens worden niet langer bewaard als afzonderlijke gebeurtenissen met een groot aantal eigenschappen. In plaats daarvan worden ze opgeslagen als vooraf geaggregeerde time series en alleen met belang rijke dimensies. Dit zorgt ervoor dat de nieuwe metrische gegevens zich op het moment van de query kunnen voordoen: het ophaal proces verloopt veel sneller en vereist minder reken kracht. Hierdoor kunnen nieuwe scenario's, zoals [bijna realtime waarschuwingen over dimensies van metrische gegevens](../platform/alerts-metric-near-real-time.md), snellere [Dash boards](./overview-dashboard.md)en meer, worden ingeschakeld.
+Naast de metrische gegevens op basis van een logboek, heeft het Application Insights team een open bare preview-versie van metrische gegevens die is opgeslagen in een gespecialiseerde opslag plaats die is geoptimaliseerd voor tijd reeksen, in het eind 2018. De nieuwe metrische gegevens worden niet langer bewaard als afzonderlijke gebeurtenissen met een groot aantal eigenschappen. In plaats daarvan worden ze opgeslagen als vooraf geaggregeerde time series en alleen met belang rijke dimensies. Dit zorgt ervoor dat de nieuwe metrische gegevens zich op het moment van de query kunnen voordoen: het ophaal proces verloopt veel sneller en vereist minder reken kracht. Hierdoor kunnen nieuwe scenario's, zoals [bijna realtime waarschuwingen over dimensies van metrische gegevens](../alerts/alerts-metric-near-real-time.md), snellere [Dash boards](./overview-dashboard.md)en meer, worden ingeschakeld.
 
 > [!IMPORTANT]
 > Beide, op logboek gebaseerde en vooraf geaggregeerde metrische gegevens bestaan naast elkaar in Application Insights. Om de twee te onderscheiden, worden in de Application Insights UX de vooraf samengestelde metrische gegevens nu ' standaard meet waarden (preview) ' genoemd, terwijl de traditionele metrische gegevens van de gebeurtenissen zijn gewijzigd in metrische gegevens op basis van een logboek.
 
-De nieuwere Sdk's ([Application Insights 2,7](https://www.nuget.org/packages/Microsoft.ApplicationInsights/2.7.2) SDK of hoger voor .net) vooraf samengestelde metrische gegevens tijdens het verzamelen. Dit geldt voor  [standaard metrische gegevens die standaard worden verzonden](../platform/metrics-supported.md#microsoftinsightscomponents) , zodat de nauw keurigheid niet wordt beïnvloed door steek proeven of filters. Het is ook van toepassing op aangepaste metrische gegevens die worden verzonden met behulp van [GetMetric](./api-custom-events-metrics.md#getmetric) , wat resulteert in minder gegevensopname en lagere kosten.
+De nieuwere Sdk's ([Application Insights 2,7](https://www.nuget.org/packages/Microsoft.ApplicationInsights/2.7.2) SDK of hoger voor .net) vooraf samengestelde metrische gegevens tijdens het verzamelen. Dit geldt voor  [standaard metrische gegevens die standaard worden verzonden](../essentials/metrics-supported.md#microsoftinsightscomponents) , zodat de nauw keurigheid niet wordt beïnvloed door steek proeven of filters. Het is ook van toepassing op aangepaste metrische gegevens die worden verzonden met behulp van [GetMetric](./api-custom-events-metrics.md#getmetric) , wat resulteert in minder gegevensopname en lagere kosten.
 
 Voor de Sdk's die geen vooraf aggregatie implementeren (dat wil zeggen, oudere versies van Application Insights Sdk's of voor browser instrumentatie), vult de Application Insights back-end de nieuwe metrische gegevens in door het samen voegen van de gebeurtenissen die worden ontvangen door het Application Insights eind punt voor gebeurtenis verzameling. Dit betekent dat u niet profiteert van de gereduceerde hoeveelheid gegevens die via de kabel wordt verzonden, maar u kunt nog steeds gebruikmaken van de vooraf geaggregeerde metrieken en betere prestaties en ondersteuning bieden voor de nabije real-time driedimensionale waarschuwing met Sdk's die geen prestatistische metrische gegevens tijdens de verzameling hebben.
 
@@ -81,7 +81,7 @@ Het verzamelen van dimensies met aangepaste metrische gegevens is standaard uitg
 
 ## <a name="creating-charts-and-exploring-log-based-and-standard-pre-aggregated-metrics"></a>Grafieken maken en op logboek gebaseerde en standaard vooraf samengestelde metrische gegevens verkennen
 
-Gebruik [Azure Monitor Metrics Explorer](../platform/metrics-getting-started.md) voor het uitzetten van grafieken van vooraf geaggregeerde en op Logboeken gebaseerde metrische gegevens en om Dash boards te ontwerpen met grafieken. Nadat u de gewenste Application Insights resource hebt geselecteerd, gebruikt u de naam ruimte kiezer om te scha kelen tussen Standard (preview) en metrische gegevens op basis van een logboek of selecteert u een aangepaste metrische naam ruimte:
+Gebruik [Azure Monitor Metrics Explorer](../essentials/metrics-getting-started.md) voor het uitzetten van grafieken van vooraf geaggregeerde en op Logboeken gebaseerde metrische gegevens en om Dash boards te ontwerpen met grafieken. Nadat u de gewenste Application Insights resource hebt geselecteerd, gebruikt u de naam ruimte kiezer om te scha kelen tussen Standard (preview) en metrische gegevens op basis van een logboek of selecteert u een aangepaste metrische naam ruimte:
 
 ![Metrische naam ruimte](./media/pre-aggregated-metrics-log-metrics/002-metric-namespace.png)
 
@@ -93,5 +93,5 @@ Als u de optie [waarschuwingen inschakelen op aangepaste metrische dimensies ins
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Bijna realtime waarschuwingen](../platform/alerts-metric-near-real-time.md)
+* [Bijna realtime waarschuwingen](../alerts/alerts-metric-near-real-time.md)
 * [GetMetric en TrackValue](./api-custom-events-metrics.md#getmetric)

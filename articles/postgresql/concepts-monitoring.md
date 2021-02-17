@@ -6,23 +6,23 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 4d4287b877f5327b7fd485358b26148686b9515b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 7ccd01f8c351ac2a7326a3b893bd78d14599db50
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487922"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588310"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>Azure Database for PostgreSQL-één server bewaken en afstemmen
 Het bewaken van gegevens over uw servers helpt u bij het oplossen en optimaliseren van uw werk belasting. Azure Database for PostgreSQL biedt verschillende bewakings opties om inzicht te krijgen in het gedrag van uw server.
 
 ## <a name="metrics"></a>Metrische gegevens
-Azure Database for PostgreSQL biedt diverse metrische gegevens die inzicht geven in het gedrag van de bronnen die de PostgreSQL-Server ondersteunen. Elke metriek wordt verzonden met een frequentie van één minuut en heeft een [geschiedenis van Maxi maal 93 dagen](../azure-monitor/platform/data-platform-metrics.md#retention-of-metrics). U kunt waarschuwingen configureren voor de metrische gegevens. Zie voor stapsgewijze instructies voor [het instellen van waarschuwingen](howto-alert-on-metric.md). Andere taken zijn onder andere het instellen van geautomatiseerde acties, het uitvoeren van geavanceerde analyses en het archiveren van de geschiedenis. Zie het overzicht van Azure- [metrische](../azure-monitor/platform/data-platform.md)gegevens voor meer informatie.
+Azure Database for PostgreSQL biedt diverse metrische gegevens die inzicht geven in het gedrag van de bronnen die de PostgreSQL-Server ondersteunen. Elke metriek wordt verzonden met een frequentie van één minuut en heeft een [geschiedenis van Maxi maal 93 dagen](../azure-monitor/essentials/data-platform-metrics.md#retention-of-metrics). U kunt waarschuwingen configureren voor de metrische gegevens. Zie voor stapsgewijze instructies voor [het instellen van waarschuwingen](howto-alert-on-metric.md). Andere taken zijn onder andere het instellen van geautomatiseerde acties, het uitvoeren van geavanceerde analyses en het archiveren van de geschiedenis. Zie het overzicht van Azure- [metrische](../azure-monitor/data-platform.md)gegevens voor meer informatie.
 
 ### <a name="list-of-metrics"></a>Lijst met metrische gegevens
 Deze metrische gegevens zijn beschikbaar voor Azure Database for PostgreSQL:
 
-|Gegevens|Weergave naam voor metrische gegevens|Eenheid|Beschrijving|
+|Metrisch|Weergave naam voor metrische gegevens|Eenheid|Description|
 |---|---|---|---|
 |cpu_percent|CPU-percentage|Percentage|Het percentage CPU-gebruik.|
 |memory_percent|Geheugen percentage|Percentage|Het percentage geheugen dat in gebruik is.|
@@ -33,8 +33,8 @@ Deze metrische gegevens zijn beschikbaar voor Azure Database for PostgreSQL:
 |serverlog_storage_percent|Percentage server logboek opslag|Percentage|Het percentage server logboek opslag dat is gebruikt voor de maximale server logboek opslag van de server.|
 |serverlog_storage_usage|Gebruikte server logboek opslag|Bytes|De hoeveelheid server logboek opslag die in gebruik is.|
 |serverlog_storage_limit|Opslag limiet voor server logboek|Bytes|De maximale server logboek opslag voor deze server.|
-|active_connections|Actieve verbindingen|Aantal|Het aantal actieve verbindingen met de server.|
-|connections_failed|Mislukte verbindingen|Aantal|Het aantal gemaakte verbindingen dat is mislukt.|
+|active_connections|Actieve verbindingen|Count|Het aantal actieve verbindingen met de server.|
+|connections_failed|Mislukte verbindingen|Count|Het aantal gemaakte verbindingen dat is mislukt.|
 |network_bytes_egress|Netwerk uit|Bytes|Netwerk uit over actieve verbindingen.|
 |network_bytes_ingress|Netwerk in|Bytes|Netwerk in meerdere actieve verbindingen.|
 |backup_storage_used|Gebruikte back-upopslag|Bytes|De hoeveelheid back-upopslag die wordt gebruikt. Deze waarde vertegenwoordigt de som van de opslag die wordt gebruikt door alle back-ups van de volledige data base, differentiële back-ups en logboek back-ups die worden bewaard op basis van de Bewaar periode voor back-ups die is ingesteld voor de server. De frequentie van de back-ups wordt beheerd door de service en uitgelegd in het [artikel concepten](concepts-backup.md). Voor geo-redundante opslag is het gebruik van back-upopslag twee keer zo dat van de lokaal redundante opslag.|
@@ -42,7 +42,7 @@ Deze metrische gegevens zijn beschikbaar voor Azure Database for PostgreSQL:
 |pg_replica_log_delay_in_seconds|Replica vertraging|Seconden|De tijd sinds de laatste geplayte trans actie. Deze metriek is alleen beschikbaar voor replica servers.|
 
 ## <a name="server-logs"></a>Serverlogboeken
-U kunt logboek registratie inschakelen op uw server. Deze bron logboeken kunnen worden verzonden naar [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md), Event hubs en een opslag account. Ga naar de pagina [Server logboeken](concepts-server-logs.md) voor meer informatie over logboek registratie.
+U kunt logboek registratie inschakelen op uw server. Deze bron logboeken kunnen worden verzonden naar [Azure monitor-logboeken](../azure-monitor/logs/log-query-overview.md), Event hubs en een opslag account. Ga naar de pagina [Server logboeken](concepts-server-logs.md) voor meer informatie over logboek registratie.
 
 ## <a name="query-store"></a>Query Store
 In het [query archief](concepts-query-store.md) worden de query prestaties in de loop van de tijd bijgehouden, inclusief de statistieken voor query runtime en wacht gebeurtenissen. Met de functie wordt de prestatie gegevens van query runtime persistent gemaakt in een systeem database met de naam **azure_sys** onder het query_store-schema. U kunt het verzamelen en opslaan van gegevens beheren via verschillende configuratie knoppen.
@@ -61,6 +61,6 @@ Meer informatie over het instellen van meldingen in het document [geplande onder
 
 ## <a name="next-steps"></a>Volgende stappen
 - Zie [waarschuwingen instellen](howto-alert-on-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
-- Zie het [overzicht van Azure-metrische](../azure-monitor/platform/data-platform.md) gegevens voor meer informatie over het openen en exporteren van metrische gegevens met behulp van de Azure Portal, rest API of cli.
+- Zie het [overzicht van Azure-metrische](../azure-monitor/data-platform.md) gegevens voor meer informatie over het openen en exporteren van metrische gegevens met behulp van de Azure Portal, rest API of cli.
 - Lees onze blog [voor de aanbevolen procedures voor het bewaken van uw server](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-postgresql-monitoring/).
 - Meer informatie over [geplande onderhouds meldingen](./concepts-planned-maintenance-notification.md) in azure database for PostgreSQL-één server.

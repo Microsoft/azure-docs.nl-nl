@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/6/2020
-ms.openlocfilehash: 0b00db8e89afda8682ddedccfec7e5a6147b7125
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: efabb3de69e96ec1a8955b2691af20a36fbabfe4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534973"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595936"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Logboekregistratie voor trage query's in Azure Database for MySQL
 In Azure Database for MySQL is het langzame query logboek beschikbaar voor gebruikers. Toegang tot het transactie logboek wordt niet ondersteund. Het logboek met trage query's kan worden gebruikt om prestatie knelpunten voor het oplossen van problemen te identificeren.
@@ -25,11 +25,11 @@ Het logboek voor langzame query's is standaard uitgeschakeld. Als u deze wilt in
 
 Andere para meters die u kunt aanpassen zijn onder andere:
 
-- **long_query_time** : als een query langer duurt dan long_query_time (in seconden) dat de query wordt geregistreerd. De standaardinstelling is 10 seconden.
-- **log_slow_admin_statements** : als u beheer instructies zoals ALTER_TABLE en ANALYZE_TABLE in de instructies bevat die naar de slow_query_log zijn geschreven.
-- **log_queries_not_using_indexes** : bepaalt of query's die geen indexen gebruiken, worden geregistreerd in het slow_query_log
-- **log_throttle_queries_not_using_indexes** : deze para meter beperkt het aantal niet-index query's dat naar het langzame query logboek kan worden geschreven. Deze para meter wordt van kracht als log_queries_not_using_indexes is ingesteld op aan.
-- **log_output** : als ' bestand ' is, kan het langzame query logboek worden geschreven naar zowel de lokale server opslag als Azure monitor Diagnostische logboeken. Als 'None' wordt opgegeven, wordt het logboek voor trage query's alleen naar Diagnostische logboeken van Azure Monitor geschreven. 
+- **long_query_time**: als een query langer duurt dan long_query_time (in seconden) dat de query wordt geregistreerd. De standaardinstelling is 10 seconden.
+- **log_slow_admin_statements**: als u beheer instructies zoals ALTER_TABLE en ANALYZE_TABLE in de instructies bevat die naar de slow_query_log zijn geschreven.
+- **log_queries_not_using_indexes**: bepaalt of query's die geen indexen gebruiken, worden geregistreerd in het slow_query_log
+- **log_throttle_queries_not_using_indexes**: deze para meter beperkt het aantal niet-index query's dat naar het langzame query logboek kan worden geschreven. Deze para meter wordt van kracht als log_queries_not_using_indexes is ingesteld op aan.
+- **log_output**: als ' bestand ' is, kan het langzame query logboek worden geschreven naar zowel de lokale server opslag als Azure monitor Diagnostische logboeken. Als 'None' wordt opgegeven, wordt het logboek voor trage query's alleen naar Diagnostische logboeken van Azure Monitor geschreven. 
 
 > [!IMPORTANT]
 > Als uw tabellen niet zijn geïndexeerd, worden het `log_queries_not_using_indexes` instellen `log_throttle_queries_not_using_indexes` van de para meters op in mogelijk beïnvloed door de MySQL-prestaties, omdat alle query's die worden uitgevoerd op deze niet-geïndexeerde tabellen, worden geschreven naar het logboek voor langzame query's.<br><br>
@@ -53,7 +53,7 @@ Logboeken worden elke 24 uur of 7 GB gedraaid, afhankelijk van wat het eerste ko
 > De bovenstaande logboek bewaaring is niet van toepassing op Logboeken die worden gepiped met behulp van Azure Monitor Diagnostische logboeken. U kunt de Bewaar periode wijzigen voor de gegevens-sinks die worden verzonden naar (bijvoorbeeld Azure Storage).
 
 ## <a name="diagnostic-logs"></a>Diagnostische logboeken
-Azure Database for MySQL is geïntegreerd met Azure Monitor Diagnostische logboeken. Zodra u langzame query Logboeken hebt ingeschakeld op de MySQL-server, kunt u ervoor kiezen om deze te laten uitbrengen naar Azure Monitor-logboeken, Event Hubs of Azure Storage. Zie de sectie over de [documentatie van Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over het inschakelen van Diagnostische logboeken.
+Azure Database for MySQL is geïntegreerd met Azure Monitor Diagnostische logboeken. Zodra u langzame query Logboeken hebt ingeschakeld op de MySQL-server, kunt u ervoor kiezen om deze te laten uitbrengen naar Azure Monitor-logboeken, Event Hubs of Azure Storage. Zie de sectie over de [documentatie van Diagnostische logboeken](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over het inschakelen van Diagnostische logboeken.
 
 In de volgende tabel wordt de inhoud van elk logboek beschreven. Afhankelijk van de uitvoer methode worden de opgenomen velden en de volg orde waarin ze worden weer gegeven, mogelijk verschillend.
 

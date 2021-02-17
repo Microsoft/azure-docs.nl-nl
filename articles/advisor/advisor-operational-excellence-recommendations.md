@@ -3,12 +3,12 @@ title: Verbeter de operationele Excellency met Advisor
 description: Gebruik Azure Advisor om uw operationele uitmuntendheid voor uw Azure-abonnementen te optimaliseren en verouderd.
 ms.topic: article
 ms.date: 10/24/2019
-ms.openlocfilehash: 63e88129a7418e82ea13429c33d8735e96616476
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 0b938a0c7a42182bb8d2a50b48d65a0844d952a6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122616"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579953"
 ---
 # <a name="achieve-operational-excellence-by-using-azure-advisor"></a>Behaal de operationele uitmuntendheid met behulp van Azure Advisor
 
@@ -38,7 +38,7 @@ Als uw pool gebruikmaakt van een afgeschaft intern onderdeel, verwijdert u de gr
 
 ## <a name="repair-invalid-log-alert-rules"></a>Ongeldige regels voor logboek waarschuwingen herstellen
 
-Azure Advisor detecteert waarschuwings regels waarvoor ongeldige query's zijn opgegeven in de sectie voor waarde. U kunt waarschuwings regels voor logboeken maken in Azure Monitor en ze gebruiken om analyse query's uit te voeren op basis van opgegeven intervallen. De resultaten van de query bepalen of er een waarschuwing moet worden gegeven. Analytische query's kunnen na verloop van tijd ongeldig worden vanwege wijzigingen in resources, tabellen of opdrachten waarnaar wordt verwezen. Advisor raadt u aan de query in de waarschuwings regel te corrigeren om te voor komen dat deze automatisch wordt uitgeschakeld en de bewakings dekking van uw resources in azure te controleren. [Meer informatie over het oplossen van waarschuwings regels.](../azure-monitor/platform/alerts-troubleshoot-log.md)
+Azure Advisor detecteert waarschuwings regels waarvoor ongeldige query's zijn opgegeven in de sectie voor waarde. U kunt waarschuwings regels voor logboeken maken in Azure Monitor en ze gebruiken om analyse query's uit te voeren op basis van opgegeven intervallen. De resultaten van de query bepalen of er een waarschuwing moet worden gegeven. Analytische query's kunnen na verloop van tijd ongeldig worden vanwege wijzigingen in resources, tabellen of opdrachten waarnaar wordt verwezen. Advisor raadt u aan de query in de waarschuwings regel te corrigeren om te voor komen dat deze automatisch wordt uitgeschakeld en de bewakings dekking van uw resources in azure te controleren. [Meer informatie over het oplossen van waarschuwings regels.](../azure-monitor/alerts/alerts-troubleshoot-log.md)
 
 ## <a name="use-azure-policy-recommendations"></a>Azure Policy aanbevelingen gebruiken
 
@@ -52,7 +52,7 @@ Azure Policy is een service in azure die u kunt gebruiken om beleid te maken, to
 
 **Controle-Vm's afdwingen *die geen beheerde schijven gebruiken*.**
 
-**Schakel *een tag overnemen van resource groepen*in.** Met dit beleid kunt u de opgegeven tag en waarde van de bovenliggende resourcegroep toevoegen of vervangen wanneer een resource wordt gemaakt of bijgewerkt. U kunt bestaande resources herstellen door een herstel taak te activeren.
+**Schakel *een tag overnemen van resource groepen* in.** Met dit beleid kunt u de opgegeven tag en waarde van de bovenliggende resourcegroep toevoegen of vervangen wanneer een resource wordt gemaakt of bijgewerkt. U kunt bestaande resources herstellen door een herstel taak te activeren.
 
 Advisor raadt een aantal afzonderlijke Azure-beleids regels aan die klanten helpen bij het bezorgen van operationele uitmuntendheid door aanbevolen procedures vast te stellen. Als een klant besluit een aanbevolen beleid toe te wijzen, zullen we de aanbeveling onderdrukken. Als de klant besluit het beleid later te verwijderen, zal Advisor de aanbeveling blijven onderdrukken omdat de verwijdering wordt geïnterpreteerd als een sterk signaal van het volgende:
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b38d86402f418e5c2b484bb9101e2b4cc3575d6e
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 692b52e8ea6a88a119ca98985864cb9e1daa14c3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196619"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595755"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Azure-beveiligings basislijn voor persoonlijke Azure-koppeling
 
@@ -28,9 +28,9 @@ Deze beveiligings basislijn past richt lijnen toe van de [Azure Security Bench M
 
 Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke resources plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -50,7 +50,7 @@ U kunt ook gegevens voor Azure Sentinel of een SIEM van derden inschakelen op ba
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Logboek registratie en controle voor persoonlijke koppeling](private-link-overview.md#logging-and-monitoring)
 
@@ -66,9 +66,9 @@ U kunt ook gegevens voor Azure Sentinel of een SIEM van derden inschakelen op ba
 
 **Hulp** bij het inschakelen van Azure monitor activiteiten logboeken, de logboek bewerkingen die worden uitgevoerd op persoonlijke koppelings resources, zoals, die de bewerking hebben gestart toen de bewerking plaatsvond, de status van de bewerking en andere nuttige controle-informatie. 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure bekijken en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 - [Logboek registratie en controle voor persoonlijke koppeling](private-link-overview.md#logging-and-monitoring)
 
@@ -80,7 +80,7 @@ U kunt ook gegevens voor Azure Sentinel of een SIEM van derden inschakelen op ba
 
 **Richt lijnen**: voor logboeken die betrekking hebben op persoonlijke koppeling, stelt u de Bewaar periode voor log Analytics werk ruimte in op basis van de nalevings regels van uw organisatie in azure monitor. Gebruik Azure Storage-accounts voor lange termijn/archiverings opslag van Logboeken.
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -96,9 +96,9 @@ Een andere mogelijkheid is om gegevens in te scha kelen naar Azure Sentinel of e
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Log Analytics-werk ruimte begrijpen](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -114,7 +114,7 @@ Schakel gegevens naar Azure Sentinel of een SIEM van derden in op basis van de z
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -192,7 +192,7 @@ Schakel ook Just-in-time/alleen-voldoende toegang in met behulp van Azure Active
 
 - [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../azure-monitor/platform/action-groups.md)
+- [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../azure-monitor/alerts/action-groups.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -318,7 +318,7 @@ Zorg ervoor dat uw service privé is voor het gebruik van uw andere virtuele net
 
 - [Diagnostische logboek registratie voor een netwerk beveiligings groep](private-link-overview.md#logging-and-monitoring)
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

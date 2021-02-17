@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: a4f3e0bbd282fb1253e206e71c2eb1667773248e
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: b734c4cdec022f2bf43ee7123b06331f67c10390
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834082"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570843"
 ---
 # <a name="tutorial-monitor-network-communication-between-two-virtual-machines-using-the-azure-portal"></a>Zelfstudie: Netwerkcommunicatie tussen twee virtuele machines bewaken met behulp van de Azure-portal
 
@@ -137,7 +137,7 @@ Waarschuwingen worden gemaakt door regels voor waarschuwingen in Azure Monitor e
 2. Klik op **Doel selecteren** en selecteer vervolgens de resources die u als doel wilt instellen. Selecteer het **Abonnement** en stel **Resourcetype** in om te filteren op de verbindingsmonitor die u wilt gebruiken.
 
     ![waarschuwingsscherm met een geselecteerd doel](./media/connection-monitor/set-alert-rule.png)
-1. Nadat u een doelresource hebt geselecteerd, selecteert u **Criteria toevoegen**. Network Watcher heeft [metrische gegevens over welke waarschuwingen u kunt maken](../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported). Stel **Beschikbare signalen** in op de metrische gegevens ProbesFailedPercent en AverageRoundtripMs:
+1. Nadat u een doelresource hebt geselecteerd, selecteert u **Criteria toevoegen**. Network Watcher heeft [metrische gegevens over welke waarschuwingen u kunt maken](../azure-monitor/alerts/alerts-metric-near-real-time.md#metrics-and-dimensions-supported). Stel **Beschikbare signalen** in op de metrische gegevens ProbesFailedPercent en AverageRoundtripMs:
 
     ![waarschuwingspagina met geselecteerde signalen](./media/connection-monitor/set-alert-signals.png)
 1. Vul de waarschuwingsdetails in, zoals de naam, beschrijving en ernst van de waarschuwingsregel. U kunt ook een actiegroep toevoegen aan de waarschuwing om het waarschuwingsantwoord te automatiseren en aan te passen.

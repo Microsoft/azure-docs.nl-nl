@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 34bbf34d53c44dcef7b8e128a93ee64201423c3e
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 0afe349473bcddcbf1ac35136f2991ffe82670c6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897034"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576070"
 ---
 # <a name="integrate-with-azure-monitor-logs"></a>Integreren met Azure Monitor-logboeken
 
@@ -36,7 +36,7 @@ U hebt het volgende nodig om de configuratie Rapporten van de Automation-status 
 
 - De release van [Azure PowerShell](/powershell/azure/) november 2016 of hoger (v 2.3.0).
 - Een Azure Automation-account. Zie [een inleiding tot Azure Automation](automation-intro.md)voor meer informatie.
-- Een Log Analytics-werk ruimte met een Automation & Control service-aanbieding. Zie [aan de slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie.
+- Een Log Analytics-werk ruimte met een Automation & Control service-aanbieding. Zie [aan de slag met log Analytics in azure monitor](../azure-monitor/logs/log-analytics-tutorial.md)voor meer informatie.
 - Ten minste één configuratie knooppunt voor Azure Automation status. Zie voor meer informatie [onboarding machines voor beheer door Azure Automation status configuratie](automation-dsc-onboarding.md).
 - De [xDscDiagnostics](https://www.powershellgallery.com/packages/xDscDiagnostics/2.7.0.0) -module, versie 2.7.0.0 of hoger. Zie voor installatie stappen [problemen oplossen Azure Automation desired state Configuration](./troubleshoot/desired-state-configuration.md).
 
@@ -91,7 +91,7 @@ Details filteren:
 * Filter op `DscResourceStatusData` om bewerkingen te retour neren voor elke DSC-resource met de naam in de knooppunt configuratie die is toegepast op die resource. 
 * Filteren op `DscResourceStatusData` om fout gegevens te retour neren voor eventuele DSC-resources die mislukken.
 
-Zie [overzicht van logboek query's in azure monitor](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over het maken van logboek query's om gegevens te zoeken.
+Zie [overzicht van logboek query's in azure monitor](../azure-monitor/logs/log-query-overview.md)voor meer informatie over het maken van logboek query's om gegevens te zoeken.
 
 ### <a name="send-an-email-when-a-state-configuration-compliance-check-fails"></a>Een e-mail verzenden wanneer een controle op naleving van de status configuratie mislukt
 
@@ -105,7 +105,7 @@ Als u een waarschuwings regel wilt maken, moet u beginnen met het maken van een 
    Als u logboeken van meer dan één Automation-account of abonnement op uw werk ruimte hebt ingesteld, kunt u uw waarschuwingen groeperen op abonnement en Automation-account. De naam van het Automation-account afleiden van het `Resource` veld in de zoek actie van de `DscNodeStatusData` records.
 1. Als u het scherm **regel maken** wilt openen, klikt u op **nieuwe waarschuwings regel** boven aan de pagina. 
 
-Zie [een waarschuwings regel maken](../azure-monitor/platform/alerts-metric.md)voor meer informatie over de opties voor het configureren van de waarschuwing.
+Zie [een waarschuwings regel maken](../azure-monitor/alerts/alerts-metric.md)voor meer informatie over de opties voor het configureren van de waarschuwing.
 
 ### <a name="find-failed-dsc-resources-across-all-nodes"></a>Niet-werkende DSC-resources zoeken op alle knoop punten
 
@@ -199,5 +199,5 @@ Met Azure Automation diagnostische gegevens worden twee categorieën records gem
 - Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.
 - Zie [continue implementatie instellen met chocolade](automation-dsc-cd-chocolatey.md)voor een voor beeld van het gebruik van Azure Automation status configuratie in een pijp lijn voor continue implementatie.
-- Zie [Zoek opdrachten in Logboeken in azure monitor logboeken](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over het maken van verschillende Zoek query's en het controleren van de configuratie logboeken voor de automatiserings status met Azure monitor Logboeken.
-- Zie [Azure Storage-gegevens verzamelen in azure monitor logs Overview](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie over Azure monitor logboeken en bronnen voor gegevens verzameling.
+- Zie [Zoek opdrachten in Logboeken in azure monitor logboeken](../azure-monitor/logs/log-query-overview.md)voor meer informatie over het maken van verschillende Zoek query's en het controleren van de configuratie logboeken voor de automatiserings status met Azure monitor Logboeken.
+- Zie [Azure Storage-gegevens verzamelen in azure monitor logs Overview](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace)voor meer informatie over Azure monitor logboeken en bronnen voor gegevens verzameling.

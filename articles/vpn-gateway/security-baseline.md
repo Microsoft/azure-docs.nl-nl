@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8221e814b4555a75d596cec3ab00aa3b63e41a14
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: caff705a03f7c4645eedc9423f6a9f9649c1167e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197401"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571290"
 ---
 # <a name="azure-security-baseline-for-vpn-gateway"></a>Azure-beveiligings basislijn voor VPN Gateway
 
@@ -78,9 +78,9 @@ U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties t
 
 **Hulp**: Azure-activiteiten logboek gebruiken om resource configuraties te bewaken en wijzigingen in uw virtuele netwerk bronnen te detecteren. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in essentiële resources met betrekking tot uw VPN-gateway plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -100,7 +100,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -112,9 +112,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Hulp**: Schakel Diagnostische instellingen in op uw VPN gateway-resources voor toegang tot controle-, beveiligings-en Diagnostische logboeken. Activiteiten logboeken, die automatisch beschikbaar zijn, omvatten gebeurtenis bron, datum, gebruiker, tijds tempel, bron adressen, doel adressen en andere nuttige elementen. 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -124,7 +124,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Richt lijnen**: stel in azure monitor uw Bewaar periode voor log Analytics werkruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage accounts voor lange termijn-en archiverings opslag. 
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) 
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period) 
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -140,9 +140,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md) 
 
-- [Aan de slag met Log Analytics query's](../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Aan de slag met Log Analytics query's](../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -158,7 +158,7 @@ U kunt ook gegevens naar Azure-Sentinel inschakelen en op het bord zetten.
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -382,7 +382,7 @@ Volg Azure Security Center aanbevelingen voor versleuteling bij rest en versleut
 
 - [Waarschuwingen instellen voor diagnostische logboek gebeurtenissen van VPN Gateway](vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md)
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

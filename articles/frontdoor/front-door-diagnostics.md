@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: yuajia
-ms.openlocfilehash: cd99be40700ab1c34176f2bf7497e4debf5cd424
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d1f3e59cc88ea9cb30e7eacbd26591e08d71be61
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483794"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575253"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door"></a>Metrische gegevens en logboeken bewaken in azure front deur
 
@@ -29,16 +29,16 @@ Met behulp van de voor deur van Azure kunt u resources op de volgende manieren c
 
 Metrische gegevens zijn een functie voor bepaalde Azure-resources waarmee u prestatie meter items in de portal kunt weer geven. Hieronder vindt u de beschik bare metrische gegevens voor de voor deur:
 
-| Gegevens | Weergave naam voor metrische gegevens | Eenheid | Dimensies | Beschrijving |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Dimensies | Beschrijving |
 | --- | --- | --- | --- | --- |
-| RequestCount | Aantal aanvragen | Aantal | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal client aanvragen dat door de voor deur wordt geleverd.  |
+| RequestCount | Aantal aanvragen | Count | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal client aanvragen dat door de voor deur wordt geleverd.  |
 | RequestSize | Aanvraag grootte | Bytes | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal bytes dat is verzonden als aanvragen van clients naar de voor deur. |
 | ResponseSize | Grootte van antwoord | Bytes | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal bytes dat is verzonden als reacties van de voor deur naar clients. |
 | TotalLatency | Totale latentie | Milliseconden | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | De totale tijd van de client aanvraag die wordt ontvangen door de voor deur tot de laatste reactie byte die van AFD naar de client is verzonden. |
-| BackendRequestCount | Aantal back-aanvragen | Aantal | Http status</br>HttpStatusGroup</br>Back-end | Het aantal aanvragen dat van de voor deur naar de back-end wordt verzonden. |
+| BackendRequestCount | Aantal back-aanvragen | Count | Http status</br>HttpStatusGroup</br>Back-end | Het aantal aanvragen dat van de voor deur naar de back-end wordt verzonden. |
 | BackendRequestLatency | Latentie van back-upaanvraag | Milliseconden | Back-end | De tijd die wordt berekend vanaf het moment dat de aanvraag door de voor deur naar de back-end is verzonden tot de voor deur de laatste reactie byte van de back-end heeft ontvangen. |
 | BackendHealthPercentage | Back-status percentage | Percentage | Back-end</br>Hosts | Het percentage geslaagde status tests van front-deur naar back-end. |
-| WebApplicationFirewallRequestCount | Aantal aanvragen voor Web Application firewall | Aantal | PolicyName</br>RuleName</br>Actie | Het aantal client aanvragen dat is verwerkt door de beveiligingslaag van de toepassingslaag. |
+| WebApplicationFirewallRequestCount | Aantal aanvragen voor Web Application firewall | Count | PolicyName</br>RuleName</br>Bewerking | Het aantal client aanvragen dat is verwerkt door de beveiligingslaag van de toepassingslaag. |
 
 ## <a name="activity-logs"></a><a name="activity-log"></a>Activiteiten logboeken
 
@@ -59,7 +59,7 @@ U krijgt toegang tot activiteiten Logboeken in uw voor deur of in alle logboeken
 ## <a name="diagnostic-logs"></a><a name="diagnostic-logging"></a>Diagnostische logboeken
 Diagnostische logboeken bieden uitgebreide informatie over bewerkingen en fouten die belang rijk zijn voor controle en probleem oplossing. Diagnostische logboeken verschillen van activiteiten Logboeken.
 
-Activiteiten logboeken bieden inzicht in de bewerkingen die worden uitgevoerd op Azure-resources. Diagnostische logboeken bieden inzicht in de bewerkingen die uw resource heeft voltooid. Zie [Azure monitor Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
+Activiteiten logboeken bieden inzicht in de bewerkingen die worden uitgevoerd op Azure-resources. Diagnostische logboeken bieden inzicht in de bewerkingen die uw resource heeft voltooid. Zie [Azure monitor Diagnostische logboeken](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie.
 
 :::image type="content" source="./media/front-door-diagnostics/diagnostic-log.png" alt-text="Diagnostische logboeken":::
 

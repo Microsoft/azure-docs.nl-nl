@@ -3,12 +3,12 @@ title: Azure-beveiligings basislijn voor Azure DevTest Labs
 description: Azure-beveiligings basislijn voor Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 09b4e28437c79961d53cf07b068e3169d20fe0c4
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: c192f881dd4a8544b9c833eece56fb3765cd07f8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789901"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582024"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Azure-beveiligings basislijn voor Azure DevTest Labs
 
@@ -34,7 +34,7 @@ Zie het volgende artikel voor meer informatie over het configureren van tijd syn
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 **Hulp:** Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure DevTest Labs exemplaren op het niveau van het beheer vlak. Met Azure activiteiten logboek gegevens kunt u bepalen ' wat, wie en wanneer ' voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het beheer vlak voor uw DevTest Labs-instanties.
 
-Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/platform/diagnostic-settings.md) voor meer informatie.
+Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/essentials/diagnostic-settings.md) voor meer informatie.
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -43,7 +43,7 @@ Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens v
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 **Hulp:** Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. Activiteiten logboeken bieden inzicht in de bewerkingen die zijn uitgevoerd op uw Azure DevTest Labs exemplaren op het niveau van het beheer vlak. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het beheer vlak voor uw DevTest Labs-instanties.
 
-Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/platform/diagnostic-settings.md) voor meer informatie.
+Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](../azure-monitor/essentials/diagnostic-settings.md) voor meer informatie.
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -54,7 +54,7 @@ Raadpleeg [Diagnostische instellingen maken om logboeken en metrische gegevens v
 
 Raadpleeg voor meer informatie de volgende artikelen: 
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 - [Meer informatie over het verzamelen van Azure Security Center gegevens](../security-center/security-center-enable-data-collection.md)
 
 **Azure Security Center bewaking:** Klikt
@@ -62,9 +62,9 @@ Raadpleeg voor meer informatie de volgende artikelen:
 **Verantwoordelijkheid:** Gebruikers
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
-**_Hulp:_* Stel in Azure Monitor de Bewaar periode voor logboek registratie in voor Log Analytics werk ruimten die zijn gekoppeld aan uw Azure DevTest Labs-instanties volgens de nalevings voorschriften van uw organisatie.
+***Hulp:** Stel in Azure Monitor de Bewaar periode voor logboek registratie in voor Log Analytics werk ruimten die zijn gekoppeld aan uw Azure DevTest Labs-instanties volgens de nalevings voorschriften van uw organisatie.
 
-Zie het volgende artikel: [para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) voor meer informatie.
+Zie het volgende artikel: [para meters voor het bewaren van Logboeken instellen](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period) voor meer informatie.
 
 **Azure Security Center bewaking:** Niet van toepassing
 
@@ -75,8 +75,8 @@ Zie het volgende artikel: [para meters voor het bewaren van Logboeken instellen]
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/diagnostic-settings.md)
-- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/platform/activity-log.md)
+- [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/essentials/diagnostic-settings.md)
+- [Azure-activiteiten logboeken verzamelen en analyseren in Log Analytics werk ruimte in Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Azure Security Center bewaking:** Niet van toepassing
 
@@ -85,7 +85,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteit
 **Hulp:** Gebruik Azure Log Analytics-werk ruimte voor het bewaken en waarschuwen over afwijkende activiteiten in beveiligings logboeken en gebeurtenissen met betrekking tot uw Azure DevTest Labs.
 
-Zie het volgende artikel voor meer informatie: een [waarschuwing geven over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
+Zie het volgende artikel voor meer informatie: een [waarschuwing geven over logboek gegevens van log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -109,8 +109,8 @@ Zie het volgende artikel voor meer informatie: een [waarschuwing geven over logb
 **Hulp:** Azure DevTest Labs maakt Azure Compute-machines die eigendom zijn van en worden beheerd door de klant. Gebruik micro soft Monitoring Agent op alle ondersteunde Azure Windows-Vm's om de gebeurtenis voor het maken van processen en het veld te registreren `CommandLine` . Voor ondersteunde virtuele machines van Azure Linux kunt u hand matig console logboek registratie configureren op basis van per knoop punt en syslog gebruiken om de gegevens op te slaan. U kunt ook de werk ruimte Log Analytics van Azure Monitor gebruiken om logboeken te controleren en query's uit te voeren op geregistreerde gegevens van Azure-Vm's.
 
 - [Gegevensverzameling in Azure Security Center](../security-center/security-center-enable-data-collection.md#data-collection-tier)
-- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
-- [Syslog-gegevensbronnen in Azure Monitor](../azure-monitor/platform/data-sources-syslog.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/logs/get-started-queries.md)
+- [Syslog-gegevensbronnen in Azure Monitor](../azure-monitor/agents/data-sources-syslog.md)
 
 **Azure Security Center bewaking:** Klikt
 
@@ -175,9 +175,9 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 - [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)  
 - [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Azure Security Center bewaking:** _ Ja
+**Azure Security Center bewaking:*** Ja
 
-_ *Verantwoordelijkheid:** klant
+**Verantwoordelijkheid:** Gebruikers
 
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
@@ -353,7 +353,7 @@ Standaard zijn alle besturings systeem-en gegevens schijven voor Lab versleuteld
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 **Hulp:** Gebruik Azure Monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in DevTest Labs-instanties en andere kritieke of verwante resources.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/alerts/alerts-activity-log.md)
 - [Waarschuwingen maken voor activiteiten logboek gebeurtenissen van DevTest Labs](create-alerts.md)
 
 **Azure Security Center bewaking:** Niet van toepassing
@@ -387,7 +387,7 @@ Micro soft voert beveiligings beheer uit op de onderliggende resources die Azure
 **Verantwoordelijkheid:** Gebruikers
 
 ### <a name="53-deploy-automated-third-party-software-patch-management-solution"></a>5,3: Implementeer een geautomatiseerde oplossing voor software patch beheer van derden
-**_Richt lijnen:_* _ als test beheerder kunt u [DevTest Labs-artefacten](add-artifact-vm.md) gebruiken om updates te automatiseren voor aangepaste Lab-installatie kopieën, waaronder beveiligings patches en andere updates. 
+***Hulp:*** Als test beheerder kunt u [DevTest Labs-artefacten](add-artifact-vm.md) gebruiken om updates te automatiseren voor aangepaste Lab-installatie kopieën, waaronder beveiligings patches en andere updates. 
 
 Meer informatie over [Image Factory in DevTest Labs](image-factory-create.md), een oplossing voor configuratie-as-code waarmee automatisch installatie kopieën worden gebouwd en gedistribueerd op regel matige basis met alle gewenste configuraties. 
 
@@ -396,7 +396,7 @@ Als abonnements beheerder kunt u ook de Azure Updatebeheer-oplossing gebruiken o
 - [Updatebeheer oplossing in azure](../automation/update-management/overview.md)
 - [Updates en patches voor uw virtuele machines beheren](../automation/update-management/overview.md)
 
-_ *Azure Security Center bewaking:** niet van toepassing
+**Azure Security Center bewaking:** Niet van toepassing
 
 **Verantwoordelijkheid:** Gebruikers
 

@@ -11,21 +11,16 @@ ms.topic: how-to
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/15/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 3f319c35631f8c85cab4613df0f1c14f98356caa
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: a47ece762f2df3fa18cf2b79d338c28d4069c4ad
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563344"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633471"
 ---
-# <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Beveiligings waarschuwingen beheren en erop reageren in Azure Security Center
-
-> [!TIP]
-> De informatie op deze pagina verwijst naar de nieuwe meldings ervaring (preview) die beschikbaar is via de banner aan de bovenkant van de pagina beveiligings waarschuwingen. 
->
-> :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Banner met koppeling naar de nieuwe preview-waarschuwingen":::
+# <a name="manage-and-respond-to-security-alerts-in-azure-security-center"></a>Beveiligingswaarschuwingen beheren en erop reageren in Azure Security Center
 
 In dit onderwerp wordt beschreven hoe u de waarschuwingen van Security Center kunt weer geven en verwerken en uw resources kunt beveiligen.
 

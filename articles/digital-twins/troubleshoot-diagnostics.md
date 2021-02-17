@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/9/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d988617fcaf7479c7bb3356e6ef6f87824ed23a7
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: c600ced8896a3847b80d854c9e230310cca4c98d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616651"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588592"
 ---
 # <a name="troubleshooting-azure-digital-twins-diagnostics-logging"></a>Problemen oplossen met Azure Digital Apparaatdubbels: logboek registratie van diagnostische gegevens
 
@@ -35,8 +35,8 @@ Schakel Diagnostische instellingen in om te beginnen met het verzamelen van Logb
     :::image type="content" source="media/troubleshoot-diagnostics/diagnostic-settings.png" alt-text="Scherm opname van de pagina met Diagnostische instellingen en de knop die u wilt toevoegen" lightbox="media/troubleshoot-diagnostics/diagnostic-settings.png":::
 
 3. Vul op de onderstaande pagina de volgende waarden in:
-     * **Naam van de diagnostische instelling** : Geef de diagnostische instellingen een naam.
-     * **Categorie Details** : Kies welke bewerkingen u wilt bewaken en schakel de selectie vakjes in om diagnostische gegevens voor deze bewerkingen in te scha kelen. De bewerkingen waarvan de diagnostische instellingen kunnen rapporteren, zijn:
+     * **Naam van de diagnostische instelling**: Geef de diagnostische instellingen een naam.
+     * **Categorie Details**: Kies welke bewerkingen u wilt bewaken en schakel de selectie vakjes in om diagnostische gegevens voor deze bewerkingen in te scha kelen. De bewerkingen waarvan de diagnostische instellingen kunnen rapporteren, zijn:
         - DigitalTwinsOperation
         - EventRoutesOperation
         - ModelsOperation
@@ -44,7 +44,7 @@ Schakel Diagnostische instellingen in om te beginnen met het verzamelen van Logb
         - AllMetrics
         
         Zie de sectie [*logboek categorieën*](#log-categories) hieronder voor meer informatie over deze categorieën en de informatie die ze bevatten.
-     * **Doel Details** : Kies waar u de logboeken wilt verzenden. U kunt een combi natie van de drie opties selecteren:
+     * **Doel Details**: Kies waar u de logboeken wilt verzenden. U kunt een combi natie van de drie opties selecteren:
         - Verzenden naar Log Analytics
         - Archiveren naar een opslagaccount
         - Streamen naar een Event Hub
@@ -57,7 +57,7 @@ Schakel Diagnostische instellingen in om te beginnen met het verzamelen van Logb
 
 Nieuwe instellingen worden in ongeveer 10 minuten van kracht. Daarna worden logboeken weer gegeven in de geconfigureerde doel weer op de pagina **Diagnostische instellingen** voor uw exemplaar. 
 
-Ga voor meer informatie over diagnostische instellingen en de bijbehorende installatie opties naar [*Diagnostische instellingen maken om platform logboeken en metrische gegevens naar verschillende bestemmingen te verzenden*](../azure-monitor/platform/diagnostic-settings.md).
+Ga voor meer informatie over diagnostische instellingen en de bijbehorende installatie opties naar [*Diagnostische instellingen maken om platform logboeken en metrische gegevens naar verschillende bestemmingen te verzenden*](../azure-monitor/essentials/diagnostic-settings.md).
 
 ## <a name="log-categories"></a>Logboek Categorieën
 
@@ -255,10 +255,10 @@ Hier vindt u informatie over het uitvoeren van een query op de logboeken voor uw
     - Het tabblad *query's* bevat de voorbeeld query's die u in de editor kunt laden.
     - Op het tabblad *filter* kunt u een gefilterde weer gave van de gegevens aanpassen die de query retourneert.
 
-Voor gedetailleerde informatie over logboek query's en hoe u deze schrijft, kunt u een [*overzicht van logboek query's in azure monitor*](../azure-monitor/log-query/log-query-overview.md)bekijken.
+Voor gedetailleerde informatie over logboek query's en hoe u deze schrijft, kunt u een [*overzicht van logboek query's in azure monitor*](../azure-monitor/logs/log-query-overview.md)bekijken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [*logboek gegevens verzamelen en gebruiken van uw Azure-resources*](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over het configureren van diagnostiek.
+* Zie [*logboek gegevens verzamelen en gebruiken van uw Azure-resources*](../azure-monitor/essentials/platform-logs-overview.md)voor meer informatie over het configureren van diagnostiek.
 * Zie voor meer informatie over de metrische gegevens van de Azure Digital Apparaatdubbels [*problemen oplossen: metrische gegevens weer geven met Azure monitor*](troubleshoot-metrics.md).
 * Zie [*probleem oplossing: waarschuwingen instellen*](troubleshoot-alerts.md)voor meer informatie over het inschakelen van waarschuwingen voor uw metrische gegevens.

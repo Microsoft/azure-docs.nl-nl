@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: bdc9cbf942b88af93befa34f73eb3a90469cfcef
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 73a9d9c7ab321aebd615922e5d4395c0318e809c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98873498"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580452"
 ---
 # <a name="connect-your-proofpoint-on-demand-email-security-pod-solution-to-azure-sentinel"></a>Verbind uw Proofpoint-oplossing voor e-mail beveiliging (POD) op aanvraag met Azure Sentinel
 
@@ -35,7 +35,7 @@ In dit artikel wordt uitgelegd hoe u uw Proofpoint-e-mail beveiligings apparaat 
 
 - U moet lees-en schrijf machtigingen hebben voor de Azure Sentinel-werk ruimte.
 
-- U moet Lees machtigingen hebben voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
+- U moet Lees machtigingen hebben voor gedeelde sleutels voor de werk ruimte. [Meer informatie over werkruimte sleutels](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key).
 
 - U moet lees-en schrijf machtigingen hebben voor Azure Functions om een functie-app te kunnen maken. Meer [informatie over Azure functions](../azure-functions/index.yml).
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: da3386692d2d02015c0d3f59c88ae78a6c84b9ab
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d6ffeeb1470fbe51885c81f30ab8b96c4e27d707
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203096"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586980"
 ---
 # <a name="azure-security-baseline-for-azure-monitor"></a>Azure-beveiligings basislijn voor Azure Monitor
 
@@ -34,9 +34,9 @@ Met regels voor virtuele netwerken kunnen Azure Monitor alleen communicatie acce
 
 Gebruik Log Analytics gateway om gegevens te verzenden naar een Log Analytics-werk ruimte in Azure Monitor namens de computers die niet rechtstreeks verbinding kunnen maken met internet om te voor komen dat computers verbinding met internet hebben. 
 
-- [Privé-koppeling instellen voor Azure Monitor](platform/private-link-security.md)
+- [Privé-koppeling instellen voor Azure Monitor](logs/private-link-security.md)
 
-- [Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor](platform/gateway.md)
+- [Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor](agents/gateway.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -48,9 +48,9 @@ Gebruik Log Analytics gateway om gegevens te verzenden naar een Log Analytics-we
 
 Wanneer u Azure Monitor met een persoonlijke koppeling gebruikt, krijgt u toegang tot netwerk logboek registratie, zoals ' gegevens verwerkt door het persoonlijke eind punt (IN/uit) '.
 
-- [Netwerk vereisten voor Azure Monitor agents](platform/log-analytics-agent.md#network-requirements)
+- [Netwerk vereisten voor Azure Monitor agents](agents/log-analytics-agent.md#network-requirements)
 
-- [Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor](platform/gateway.md)
+- [Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor](agents/gateway.md)
 
 - [Stroom logboeken van netwerk beveiligings groepen inschakelen](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
@@ -76,9 +76,9 @@ Wanneer u Azure Monitor met een persoonlijke koppeling gebruikt, krijgt u toegan
 
 **Hulp**: Azure monitor maakt deel uit van de Azure Core-Services en kan niet afzonderlijk als een service worden geïmplementeerd. Azure Monitor onderdelen, met inbegrip van de Azure Monitor-agent, en Application Insights SDK kunnen worden geïmplementeerd met uw resources, en dit kan van invloed zijn op de beveiligings postuur van die bronnen.
 
-- [Netwerk vereisten voor Azure Monitor agents](platform/log-analytics-agent.md#network-requirements)
+- [Netwerk vereisten voor Azure Monitor agents](agents/log-analytics-agent.md#network-requirements)
 
-- [Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor](platform/gateway.md) 
+- [Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor](agents/gateway.md) 
 
 - [Zie aan de slag met Application Insights](./app/app-insights-overview.md#get-started)
 
@@ -92,9 +92,9 @@ Wanneer u Azure Monitor met een persoonlijke koppeling gebruikt, krijgt u toegan
 
 **Hulp**: gebruik het Azure-activiteiten logboek om resource configuraties te bewaken en wijzigingen in uw netwerk bronnen te detecteren die zijn gerelateerd aan Azure monitor. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer wijzigingen aan die kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](./platform/activity-log.md#view-the-activity-log)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](./essentials/activity-log.md#view-the-activity-log)
 
-- [Waarschuwingen maken in Azure Monitor](platform/alerts-activity-log.md)
+- [Waarschuwingen maken in Azure Monitor](alerts/alerts-activity-log.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -110,9 +110,9 @@ Wanneer u Azure Monitor met een persoonlijke koppeling gebruikt, krijgt u toegan
 
 U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derden.
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](essentials/diagnostic-settings.md)
 
-- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](learn/quick-collect-azurevm.md)
+- [Interne host-logboeken van de virtuele machine van Azure verzamelen met Azure Monitor](vm/quick-collect-azurevm.md)
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
@@ -126,9 +126,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Hulp**: Azure monitor activiteiten logboeken gebruikt, wordt het activiteiten logboek automatisch ingeschakeld en worden de bewerkingen geregistreerd die op Azure monitor resources zijn uitgevoerd, zoals: wie de bewerking heeft gestart, wanneer de bewerking is uitgevoerd, de status van de bewerking en andere nuttige controle-informatie. 
 
-- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](platform/diagnostic-settings.md)
+- [Platform logboeken en metrische gegevens verzamelen met Azure Monitor](essentials/diagnostic-settings.md)
 
-- [Logboek registratie en verschillende logboek typen in azure](platform/platform-logs-overview.md)
+- [Logboek registratie en verschillende logboek typen in azure](essentials/platform-logs-overview.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -138,7 +138,7 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 **Richt lijnen**: stel in azure monitor uw Bewaar periode voor log Analytics werkruimte in volgens de nalevings voorschriften van uw organisatie. Gebruik Azure Storage accounts voor een lange termijn/archief opslag van uw logboeken.
 
-- [De Bewaar periode voor gegevens wijzigen in Log Analytics](platform/manage-cost-storage.md#change-the-data-retention-period)
+- [De Bewaar periode voor gegevens wijzigen in Log Analytics](logs/manage-cost-storage.md#change-the-data-retention-period)
 
 - [Bewaar beleid configureren voor logboeken van Azure Storage-account](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -154,9 +154,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-- [Aan de slag met Log Analytics query's](./log-query/log-analytics-tutorial.md)
+- [Aan de slag met Log Analytics query's](./logs/log-analytics-tutorial.md)
 
-- [Aangepaste query's uitvoeren in Azure Monitor](log-query/get-started-queries.md)
+- [Aangepaste query's uitvoeren in Azure Monitor](logs/get-started-queries.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -170,7 +170,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Waarschuwingen beheren in Azure Security Center](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Een waarschuwing over logboek gegevens van log Analytics](learn/tutorial-response.md)
+- [Een waarschuwing over logboek gegevens van log Analytics](alerts/tutorial-response.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -316,7 +316,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-- [Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor](platform/manage-access.md)
+- [Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor](logs/manage-access.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -342,7 +342,7 @@ U kunt ook Just-in-time/alleen-voldoende toegang inschakelen met behulp van Azur
 
 Application Insights en Log Analytics beide blijven toestaan dat TLS 1,1-en TLS 1,0-gegevens worden opgenomen. Gegevens kunnen worden beperkt tot TLS 1,2 door te configureren aan de client zijde.
 
-- [Veilig verzenden van gegevens met behulp van TLS 1,2](platform/data-security.md#sending-data-securely-using-tls-12)
+- [Veilig verzenden van gegevens met behulp van TLS 1,2](logs/data-security.md#sending-data-securely-using-tls-12)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -363,7 +363,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Richt lijnen**: gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) voor het beheren van de toegang tot Azure monitor.
 
-- [Rollen, machtigingen en beveiliging in Azure Monitor](platform/roles-permissions-security.md)
+- [Rollen, machtigingen en beveiliging in Azure Monitor](/roles-permissions-security.md)
 
 - [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md)
 
@@ -375,9 +375,9 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: Azure monitor zorgt ervoor dat alle gegevens en opgeslagen query's op rest worden versleuteld met behulp van door micro soft beheerde sleutels (MMK). Azure Monitor biedt ook een optie voor versleuteling met behulp van uw eigen sleutel die is opgeslagen in uw Azure Key Vault en die toegankelijk is voor opslag met door het systeem toegewezen beheerde identiteits verificatie. Deze door de klant beheerde sleutel (CMK) kan software of hardware-HSM zijn beveiligd.
 
-- [Azure Monitor door de klant beheerde sleutels](platform/customer-managed-keys.md)
+- [Azure Monitor door de klant beheerde sleutels](logs/customer-managed-keys.md)
 
-- [Log Analytics gegevens beveiliging](platform/data-security.md)
+- [Log Analytics gegevens beveiliging](logs/data-security.md)
 
 - [Verzameling, retentie en opslag van gegevens in Application Insights](app/data-retention-privacy.md)
 
@@ -391,7 +391,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 **Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen in azure monitor en gerelateerde resources plaatsvinden.
 
-- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](platform/alerts-activity-log.md)
+- [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](alerts/alerts-activity-log.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -423,7 +423,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-- [Rollen, machtigingen en beveiliging in Azure Monitor](platform/roles-permissions-security.md)
+- [Rollen, machtigingen en beveiliging in Azure Monitor](/roles-permissions-security.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -479,7 +479,7 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 **Hulp**: regel matig een afstemming van de inventaris en zorg ervoor dat niet-geautoriseerde Azure monitor gerelateerde resources op tijd worden verwijderd uit het abonnement.  
 
-- [Azure Log Analytics-werk ruimte verwijderen](platform/delete-workspace.md)
+- [Azure Log Analytics-werk ruimte verwijderen](logs/delete-workspace.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -647,7 +647,7 @@ Gebruik Azure Security Center bedreigings detectie voor gegevens Services om mal
 
 **Hulp**: gebruik Azure Resource Manager om de Azure monitor en gerelateerde resources te exporteren in een JavaScript object NOTATION (JSON)-sjabloon die kan worden gebruikt als back-up voor Azure monitor en gerelateerde configuraties.  Gebruik Azure Automation om de back-upscripts automatisch uit te voeren. 
 
-- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](./samples/resource-manager-workspace.md)
+- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](./logs/resource-manager-workspace.md)
 
 - [Eén en meerdere resources exporteren naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md)
 
@@ -661,7 +661,7 @@ Gebruik Azure Security Center bedreigings detectie voor gegevens Services om mal
 
 **Hulp**: gebruik Azure Resource Manager om de Azure monitor en gerelateerde resources te exporteren in een JavaScript object NOTATION (JSON)-sjabloon die kan worden gebruikt als back-up voor Azure monitor en gerelateerde configuraties.  Back-ups van door de klant beheerde sleutels binnen Azure Key Vault als Azure Monitor gerelateerde bronnen gebruikmaken van door de klant beheerde sleutels, 
 
-- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](./samples/resource-manager-workspace.md)
+- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](./logs/resource-manager-workspace.md)
 
 - [Eén en meerdere resources exporteren naar een sjabloon in Azure Portal](../azure-resource-manager/templates/export-template-portal.md)
 
@@ -675,7 +675,7 @@ Gebruik Azure Security Center bedreigings detectie voor gegevens Services om mal
 
 **Richt lijnen**: Zorg ervoor dat u regel matig herstel kunt uitvoeren met Azure Resource Manager back-upsjabloon bestanden.  Het herstellen van een back-up van door de klant beheerde sleutels testen.
 
-- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](./samples/resource-manager-workspace.md)
+- [Log Analytics-werk ruimte beheren met Azure Resource Manager sjablonen](./logs/resource-manager-workspace.md)
 
 - [Sleutel kluis sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 

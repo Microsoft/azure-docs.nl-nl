@@ -4,12 +4,12 @@ description: Hiermee wordt u gewaarschuwd voor ongebruikelijke wijzigingen in de
 ms.topic: conceptual
 ms.date: 12/18/2018
 ms.reviewer: yalavi
-ms.openlocfilehash: 978b63d74e6be4104ff53eef66e9633c78b90eb8
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0f4de3aaba4acf86df37048134089326196e87ff
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510631"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587542"
 ---
 # <a name="smart-detection---failure-anomalies"></a>Slimme detectie-fout afwijkingen
 [Application Insights](./app-insights-overview.md) waarschuwt u automatisch in bijna realtime als uw web-app een abnormale toename in de frequentie van mislukte aanvragen ondervindt. Er wordt een ongebruikelijke toename gedetecteerd met het aantal HTTP-aanvragen of afhankelijkheids aanroepen dat als mislukt wordt gerapporteerd. Voor aanvragen bevat mislukte aanvragen meestal antwoord codes van 400 of hoger. Om u te helpen het probleem te sorteren en te diagnosticeren, wordt een analyse van de kenmerken van de fouten en gerelateerde toepassings gegevens weer gegeven in de waarschuwings Details. Er zijn ook koppelingen naar de Application Insights portal voor verdere diagnose. De functie heeft geen instellingen of configuratie nodig, omdat deze machine learning algoritmen gebruikt om het normale fout aantal te voors pellen.
@@ -31,7 +31,7 @@ In de details van de waarschuwing ziet u het volgende:
 * Hiermee worden rechtstreeks koppelingen naar relevante Zoek opdrachten op de gegevens in Application Insights.
 
 ## <a name="benefits-of-smart-detection"></a>Voor delen van Slimme detectie
-Normale [metrische waarschuwingen](../platform/alerts-log.md) geven aan dat er mogelijk een probleem is. Met Slimme detectie wordt het diagnostische werk voor u gestart, waarbij veel van de analyse wordt uitgevoerd die u anders zou moeten uitvoeren. U krijgt de resultaten die u netjes kunt bundelen, zodat u snel aan de slag kunt met het probleem.
+Normale [metrische waarschuwingen](../alerts/alerts-log.md) geven aan dat er mogelijk een probleem is. Met Slimme detectie wordt het diagnostische werk voor u gestart, waarbij veel van de analyse wordt uitgevoerd die u anders zou moeten uitvoeren. U krijgt de resultaten die u netjes kunt bundelen, zodat u snel aan de slag kunt met het probleem.
 
 ## <a name="how-it-works"></a>Uitleg
 Slimme detectie bewaakt de gegevens die van uw app zijn ontvangen, met name de uitval snelheid. Deze regel telt het aantal aanvragen waarvoor de `Successful request` eigenschap False is en het aantal afhankelijkheids aanroepen waarvoor de `Successful call` eigenschap False is. Voor aanvragen standaard `Successful request == (resultCode < 400)` (tenzij u aangepaste code hebt geschreven om uw eigen [TrackRequest](./api-custom-events-metrics.md#trackrequest) -aanroepen te [filteren](./api-filtering-sampling.md#filtering) of te genereren). 
@@ -48,7 +48,7 @@ Als uw service wordt gebruikt met deze aanroepen, zoekt de Analyzer naar een uit
 
 De resulterende analyse wordt naar u verzonden als waarschuwing, tenzij u deze hebt geconfigureerd.
 
-Net als de [waarschuwingen die u hand matig hebt ingesteld](../platform/alerts-log.md), kunt u de status van de geactiveerde waarschuwing inspecteren, die kan worden opgelost als het probleem is opgelost. Configureer de waarschuwings regels op de pagina waarschuwingen van uw Application Insights-resource. Maar in tegens telling tot andere waarschuwingen hoeft u geen slimme detectie in te stellen of te configureren. Als u wilt, kunt u deze uitschakelen of de e-mail adressen van het doel wijzigen.
+Net als de [waarschuwingen die u hand matig hebt ingesteld](../alerts/alerts-log.md), kunt u de status van de geactiveerde waarschuwing inspecteren, die kan worden opgelost als het probleem is opgelost. Configureer de waarschuwings regels op de pagina waarschuwingen van uw Application Insights-resource. Maar in tegens telling tot andere waarschuwingen hoeft u geen slimme detectie in te stellen of te configureren. Als u wilt, kunt u deze uitschakelen of de e-mail adressen van het doel wijzigen.
 
 ### <a name="alert-logic-details"></a>Details van waarschuwings logica
 
@@ -64,11 +64,11 @@ De waarschuwingen worden geactiveerd door onze eigen machine learning-algoritme,
 
 U kunt de waarschuwings regel voor slimme detectie uitschakelen vanuit de portal of met behulp van Azure Resource Manager ([Zie voor beeld van sjabloon](./proactive-arm-config.md)).
 
-Deze waarschuwings regel wordt gemaakt met een bijbehorende [actie groep](../platform/action-groups.md) met de naam ' Application Insights Slimme detectie ' die e-mail en webhook-acties bevat, en kan worden uitgebreid om aanvullende acties te activeren wanneer de waarschuwing wordt geactiveerd.
+Deze waarschuwings regel wordt gemaakt met een bijbehorende [actie groep](../alerts/action-groups.md) met de naam ' Application Insights Slimme detectie ' die e-mail en webhook-acties bevat, en kan worden uitgebreid om aanvullende acties te activeren wanneer de waarschuwing wordt geactiveerd.
 
 > [!NOTE]
 > E-mail meldingen die vanuit deze waarschuwings regel worden verzonden, worden nu standaard verzonden naar gebruikers die zijn gekoppeld aan de bewakings-en bewakings functies van het abonnement. Hier vindt u meer informatie over dit [onderwerp](./proactive-email-notification.md).
-> Meldingen die vanuit deze waarschuwings regel worden verzonden, volgen het [algemene waarschuwings schema](../platform/alerts-common-schema.md).
+> Meldingen die vanuit deze waarschuwings regel worden verzonden, volgen het [algemene waarschuwings schema](../alerts/alerts-common-schema.md).
 >
 
 Open de pagina waarschuwingen. Waarschuwings regels voor fout afwijkingen zijn opgenomen in alle waarschuwingen die u hand matig hebt ingesteld en u kunt zien of deze zich momenteel in de status van de waarschuwing bevindt.
@@ -410,7 +410,7 @@ Klik op **waarschuwingen** op de pagina Application Insights resource om de mees
 ## <a name="whats-the-difference-"></a>Wat is het verschil...
 Slimme detectie van fout afwijkingen is een aanvulling op andere vergelijk bare functies van Application Insights.
 
-* [metrische waarschuwingen](../platform/alerts-log.md) worden door u ingesteld en kunnen een breed scala aan metrische gegevens bewaken, zoals CPU-bezetting, aanvraag tarieven, pagina laad tijden, enzovoort. U kunt deze gebruiken om u te waarschuwen als u bijvoorbeeld meer resources wilt toevoegen. Slimme detectie van fout afwijkingen is daarentegen van toepassing op een klein aantal kritische metrische gegevens (momenteel alleen mislukte aanvragen), ontworpen om u vrijwel realtime te informeren wanneer de frequentie van de mislukte aanvragen van de web-app toeneemt in vergelijking met het normale gedrag van de web-app. In tegens telling tot metrische waarschuwingen worden door slimme detectie automatisch drempel waarden ingesteld en bijgewerkt als reactie wijzigingen in het gedrag optreden. Slimme detectie start ook het diagnostische werk voor u en bespaart u tijd bij het oplossen van problemen.
+* [metrische waarschuwingen](../alerts/alerts-log.md) worden door u ingesteld en kunnen een breed scala aan metrische gegevens bewaken, zoals CPU-bezetting, aanvraag tarieven, pagina laad tijden, enzovoort. U kunt deze gebruiken om u te waarschuwen als u bijvoorbeeld meer resources wilt toevoegen. Slimme detectie van fout afwijkingen is daarentegen van toepassing op een klein aantal kritische metrische gegevens (momenteel alleen mislukte aanvragen), ontworpen om u vrijwel realtime te informeren wanneer de frequentie van de mislukte aanvragen van de web-app toeneemt in vergelijking met het normale gedrag van de web-app. In tegens telling tot metrische waarschuwingen worden door slimme detectie automatisch drempel waarden ingesteld en bijgewerkt als reactie wijzigingen in het gedrag optreden. Slimme detectie start ook het diagnostische werk voor u en bespaart u tijd bij het oplossen van problemen.
 
 * [Slimme detectie van prestatie afwijkingen](proactive-performance-diagnostics.md) maakt ook gebruik van machine Intelligence om ongebruikelijke patronen in uw metrische gegevens te ontdekken. u hoeft hiervoor geen configuratie op te nemen. Maar in tegens telling tot Slimme detectie van fout afwijkingen, is het doel van de detectie van de prestatie afwijkingen te bepalen van de segmenten van uw gebruiks fragmenten die mogelijk niet goed worden aangeboden, bijvoorbeeld door specifieke pagina's van een specifiek type browser. De analyse wordt dagelijks uitgevoerd en als er een resultaat wordt gevonden, is het waarschijnlijk veel minder urgent dan een waarschuwing. Daarentegen wordt de analyse voor fout afwijkingen doorlopend uitgevoerd op binnenkomende toepassings gegevens en wordt u binnen enkele minuten gewaarschuwd als de snelheid van de server fouten groter is dan verwacht.
 
@@ -441,16 +441,16 @@ Slimme detectie van fout afwijkingen is een aanvulling op andere vergelijk bare 
 
 *Sommige waarschuwingen zijn te vinden op bekende problemen en ik wil ze niet ontvangen.*
 
-* U kunt de functie voor het onderdrukken van [waarschuwings regels](../platform/alerts-action-rules.md) gebruiken.
+* U kunt de functie voor het onderdrukken van [waarschuwings regels](../alerts/alerts-action-rules.md) gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 Deze diagnostische hulpprogram ma's helpen u bij het controleren van de gegevens in uw app:
 
-* [Metrische Explorer](../platform/metrics-charts.md)
+* [Metrische Explorer](../essentials/metrics-charts.md)
 * [Zoek Verkenner](./diagnostic-search.md)
-* [Analyse-krachtige query taal](../log-query/log-analytics-tutorial.md)
+* [Analyse-krachtige query taal](../logs/log-analytics-tutorial.md)
 
 Slimme detecties zijn automatisch. Maar misschien wilt u nog meer waarschuwingen instellen?
 
-* [Hand matig geconfigureerde metrische waarschuwingen](../platform/alerts-log.md)
+* [Hand matig geconfigureerde metrische waarschuwingen](../alerts/alerts-log.md)
 * [Webtests voor beschikbaarheid](./monitor-web-app-availability.md)

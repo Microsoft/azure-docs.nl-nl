@@ -9,18 +9,41 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 01/12/2021
-ms.openlocfilehash: f416fe8ef4f6e89d07e6065d4c9435642d9bacb9
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: ef9cb083c9bbe6eae5c34cd3799debde771231b6
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179636"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558221"
 ---
-# <a name="correct-misspelled-words-with-bing-search-resource"></a>Verkeerd gespelde woorden corrigeren met Bing Search resource
+# <a name="correct-misspelled-words-with-bing-resource"></a>Verkeerd gespelde woorden corrigeren met Bing-resource
 
-U kunt uw LUIS-app integreren met [Bing Search](https://ms.portal.azure.com/#create/Microsoft.BingSearch) om verkeerd gespelde woorden in uitingen te corrigeren voordat Luis de score en entiteiten van de utterance voor spelt.
+De V3 API voor voor spellingen ondersteunt nu de [Bing-spelling-API](https://docs.microsoft.com/bing/search-apis/bing-spell-check/overview). Voeg de spelling controle toe aan uw toepassing door de sleutel van de Bing zoeken-resource op te nemen in de koptekst van uw aanvragen. U kunt een bestaande Bing-Resource gebruiken als u er al een hebt of [een nieuwe bron maakt](https://portal.azure.com/#create/Microsoft.BingSearch) om deze functie te gebruiken. 
 
-## <a name="create-endpoint-key"></a>Eindpunt sleutel maken
+Voor beeld van voor spelling uitvoer voor een verkeerd gespelde query:
+
+```json
+{
+  "query": "bouk me a fliht to kayro",
+  "prediction": {
+    "alteredQuery": "book me a flight to cairo",
+    "topIntent": "book a flight",
+    "intents": {
+      "book a flight": {
+        "score": 0.9480589
+      }
+      "None": {
+        "score": 0.0332136229
+      }
+    },
+    "entities": {}
+  }
+}
+```
+
+Correcties voor de spelling worden uitgevoerd voordat de LUIS-gebruiker utterance voor spelling. U kunt alle wijzigingen in de oorspronkelijke utterance zien, inclusief de spelling, in het antwoord.
+
+## <a name="create-bing-search-resource"></a>Bing Search resource maken
 
 Volg de volgende instructies om een Bing Search resource in de Azure Portal te maken:
 
@@ -32,7 +55,8 @@ Volg de volgende instructies om een Bing Search resource in de Azure Portal te m
 
 4. Er wordt rechts een informatie venster weer gegeven met daarin informatie, inclusief de juridische kennisgeving. Selecteer **maken** om het proces voor het maken van het abonnement te starten.
 
-    :::image type="content" source="./media/luis-tutorial-bing-spellcheck/bing-search-resource-portal.png" alt-text="Bing Spellingcontrole-API V7-resource":::
+> [!div class="mx-imgBorder"]
+> ![Bing Spellingcontrole-API V7-resource](./media/luis-tutorial-bing-spellcheck/bing-search-resource-portal.png)
 
 5. Geef in het volgende deel venster uw service-instellingen op. Wacht totdat het proces voor het maken van de service is voltooid.
 
@@ -40,15 +64,23 @@ Volg de volgende instructies om een Bing Search resource in de Azure Portal te m
 
 7. Kopieer een van de sleutels die moeten worden toegevoegd aan de koptekst van uw Voorspellings aanvraag. U hebt slechts een van de twee sleutels nodig.
 
-8. Voeg de sleutel toe aan `mkt-bing-spell-check-key` in de koptekst van de Voorspellings aanvraag.
-
 <!--
 ## Using the key in LUIS test panel
 There are two places in LUIS to use the key. The first is in the [test panel](luis-interactive-test.md#view-bing-spell-check-corrections-in-test-panel). The key isn't saved into LUIS but instead is a session variable. You need to set the key every time you want the test panel to apply the Bing Spell Check API v7 service to the utterance. See [instructions](luis-interactive-test.md#view-bing-spell-check-corrections-in-test-panel) in the test panel for setting the key.
 -->
+## <a name="enable-spell-check-from-ui"></a>Spelling controle van de gebruikers interface inschakelen 
+U kunt de spelling controle voor uw voorbeeld query inschakelen met behulp van de [Luis-Portal](https://www.luis.ai). Selecteer **beheren** boven aan het scherm en **Azure-resources** in de linkernavigatiebalk. Nadat u een Voorspellings bron aan uw toepassing hebt gekoppeld, kunt u **query parameters wijzigen** selecteren onder aan de pagina en de resource sleutel plakken in het veld **spelling controle inschakelen** .
+    
+   > [!div class="mx-imgBorder"]
+   > ![Spelling controle inschakelen](./media/luis-tutorial-bing-spellcheck/spellcheck-query-params.png)
+
+
 ## <a name="adding-the-key-to-the-endpoint-url"></a>De sleutel toevoegen aan de eind punt-URL
 Voor elke query waarop u een spelling correctie wilt Toep assen, moet de bron sleutel voor de Bing-spelling controle worden door gegeven aan de query header-para meter. Mogelijk hebt u een chatbot die LUIS aanroept of u kunt de LUIS endpoint API rechtstreeks aanroepen. Ongeacht hoe het eind punt wordt aangeroepen, moeten elke aanroep de vereiste informatie bevatten in de aanvraag van de koptekst voor het goed functioneren van spelling correcties. U moet de waarde met **MKT-Bing-spelling controle** op de sleutel waarde instellen.
 
+|Header sleutel|Header waarde|
+|--|--|
+|`mkt-bing-spell-check-key`|Sleutels gevonden in de sleutels en de Blade van het **eind punt** van uw resource|
 
 ## <a name="send-misspelled-utterance-to-luis"></a>Verkeerd gespeld utterance naar LUIS verzenden
 1. Voeg een foutief gespeld utterance toe aan de Voorspellings query die u verzendt, zoals ' hoe ver is de mountaine? '. In het Engels `mountain` is, met een `n` , de juiste spelling.

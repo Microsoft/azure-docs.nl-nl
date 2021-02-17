@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 01/11/2021
 ms.author: rolyon
-ms.openlocfilehash: b15238a4308fe055f914d1a684b79b38a2c64870
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: dec5888127ed1fc291bec244a44cfb71e343e3bb
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122098"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556833"
 ---
 # <a name="assign-a-user-as-an-administrator-of-an-azure-subscription"></a>Een gebruiker toewijzen als beheerder van een Azure-abonnement
 
@@ -26,7 +26,7 @@ Als u een gebruiker een beheerder van een Azure-abonnement wilt maken, wijst u d
 
 ## <a name="step-1-open-the-subscription"></a>Stap 1: het abonnement openen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek in het zoekvak bovenaan op abonnementen.
 
@@ -89,6 +89,6 @@ De rol [eigenaar](built-in-roles.md#owner) verleent volledige toegang tot het be
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure-portal](role-assignments-portal.md)
+- [Azure-rollen toewijzen met behulp van de Azure Portal](role-assignments-portal.md)
 - [Azure-roltoewijzingen vermelden met behulp van Azure Portal](role-assignments-list-portal.md)
 - [Uw resources organiseren met Azure-beheergroepen](../governance/management-groups/overview.md)
